@@ -1,0 +1,27 @@
+<div class="sample-wrapper">
+  <section class="sample-content">
+    <article class="sample-column">
+      <div class="igx-form-group">
+          <input class="igx-form-group__input--search" placeholder="Search Contacts" [(ngModel)]="search1" />
+          <label igxLabel>
+              <igx-icon fontSet="material" name="search"></igx-icon>
+          </label>
+          <span class="igx-form-group__clear--hidden">
+              <igx-icon fontSet="material" name="clear"></igx-icon>
+          </span>
+      </div>
+      <div class="list-sample">
+          <igx-list allowLeftPanning="true" allowRightPanning="true">
+              <igx-list-item [isHeader]="true">Contacts</igx-list-item>
+              <igx-list-item options="true" igxRipple="pink" igxRippleTarget=".igx-list__item" *ngFor="let item of navItems | igxFilter: fo1">
+                  <div class="item">
+                      <igx-avatar [src]="item.avatar" roundShape="true"></igx-avatar>
+                      <span igxLabel>{{item.text}}</span>
+                      <igx-icon name="star" [class.favorite]="item.favorite"></igx-icon>
+                  </div>
+              </igx-list-item>
+          </igx-list>
+      </div>
+  </article>
+  </section>
+</div>
