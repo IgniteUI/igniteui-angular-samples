@@ -4,7 +4,7 @@
             <h4 class="sample-title">Bottom Position</h4>
             <div class="preview bottom"></div>
             <div class="btn-group">
-                <button igxButton="raised" igxRipple="white" (click)="showToast(toast)" [disabled]="toast.isVisible">Show Toast</button>
+                <button igxButton="raised" igxRipple="white" (click)="showToast(toast, 'bottom')" [disabled]="toast.isVisible">Show Toast</button>
                 <button igxButton="raised" igxRipple="white" (click)="toast.hide()" [disabled]="!toast.isVisible">Hide Toast</button>
             </div>
         </article>

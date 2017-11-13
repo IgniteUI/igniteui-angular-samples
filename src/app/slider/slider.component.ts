@@ -15,7 +15,7 @@ export class SliderComponent implements OnInit {
         upper: 60
     };
 
-    private task: Task = new Task('Slider Title', 30);
+    public task: Task = new Task('Slider Title', 30);
 
     constructor() { }
 
