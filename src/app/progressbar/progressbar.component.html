@@ -1,0 +1,28 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="linear-samples sample-column">
+            <h4 class="sample-title">Linear progress bar</h4>
+            <div class="linear-container">
+                <h5>Max value: 200</h5>
+                <igx-linear-bar [striped]="false" [value]="currentValue" [max]="200"></igx-linear-bar>
+            </div>
+            <div class="linear-container">
+                <h5>Max value: 100</h5>
+                <igx-linear-bar type="danger" [striped]="true" [value]="currentValue"></igx-linear-bar>
+            </div>
+        </article>
+        <article class="sample-column">
+            <h4 class="sample-title">Circular progress indicator</h4>
+            <div class="circular-samples">
+                <div class="circular-container">
+                    <igx-circular-bar [value]="currentValue"></igx-circular-bar>
+                </div>
+            </div>
+        </article>
+    </section>
+    <div class="button-container">
+        <button igxButton="fab" igxRipple="white" (click)="generateNewProgressValues()">
+            <igx-icon fontSet="material" name="refresh"></igx-icon>
+        </button>
+    </div>
+</div>
