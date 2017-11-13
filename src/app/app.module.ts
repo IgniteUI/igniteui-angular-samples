@@ -16,12 +16,17 @@ import {
     IgxIconModule,
     IgxInput,
     IgxLabelModule,
+    IgxLayout,
     IgxListModule,
+    IgxNavigationDirectives,
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    NavigationDrawerModule,
+    IgxToastModule,
+    IgxSliderModule
 } from 'igniteui-js-blocks/main';
 
 
@@ -38,6 +43,11 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { BadgeComponent } from './badge/badge.component';
 import { FormElementsComponent } from './form-elements/form-elements.component';
+import { LayoutComponent } from './layout/layout.component';
+import { NavdrawerComponent } from './navdrawer/navdrawer.component';
+import { ToastComponent } from './toast/toast.component';
+import { SliderComponent } from './slider/slider.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 
 @NgModule({
@@ -53,7 +63,12 @@ import { FormElementsComponent } from './form-elements/form-elements.component';
     SnackbarComponent,
     AvatarComponent,
     BadgeComponent,
-    FormElementsComponent
+    FormElementsComponent,
+    LayoutComponent,
+    NavdrawerComponent,
+    ToastComponent,
+    SliderComponent,
+    ProgressbarComponent
   ],
   imports: [
     AppRoutingModule,
@@ -62,8 +77,11 @@ import { FormElementsComponent } from './form-elements/form-elements.component';
     IgxGridModule,
     IgxCarouselModule,
     IgxInput,
+    IgxLayout,
     IgxRadioModule,
     IgxSwitchModule,
+    IgxNavigationDirectives,
+    NavigationDrawerModule,
     IgxProgressBarModule,
     IgxAvatarModule,
     IgxFilterModule,
@@ -78,7 +96,9 @@ import { FormElementsComponent } from './form-elements/form-elements.component';
     IgxCardModule,
     IgxListModule,
     IgxLabelModule,
-    IgxCheckboxModule
+    IgxCheckboxModule,
+    IgxToastModule,
+    IgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

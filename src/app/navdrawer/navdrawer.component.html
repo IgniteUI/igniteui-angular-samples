@@ -1,0 +1,23 @@
+<div class="main">
+  <igx-nav-drawer id="navigation">
+    <div class="ig-drawer-content">
+      <nav class="nav">
+        <span class="nav-item header">Components</span>
+
+        <span *ngFor="let item of navItems" [ngClass]="{'active': item.text === selected }" class="nav-item" (click)="navigate(item)">
+          <igx-icon fontSet="material" name="{{ item.name }}"></igx-icon>
+          <span>{{ item.text }}</span>
+        </span>
+    </nav>
+    </div>
+  </igx-nav-drawer>
+
+  <div>
+    <button igxButton="icon" igxNavToggle="navigation" class="ham-button">
+      <igx-icon fontSet="material" name="menu"></igx-icon>
+    </button>
+    <h2>
+      Currently viewing {{ selected }} component.
+    </h2>
+  </div>
+</div>

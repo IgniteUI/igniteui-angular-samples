@@ -11,6 +11,11 @@ import { GridComponent } from './grid/grid.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { NavdrawerComponent } from './navdrawer/navdrawer.component';
+import { ToastComponent } from './toast/toast.component';
+import { SliderComponent } from './slider/slider.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 
 const appRoutes: Routes = [
@@ -35,8 +40,16 @@ const appRoutes: Routes = [
         component: DialogComponent
     },
     {
+        path: 'layout',
+        component: LayoutComponent
+    },
+    {
         path: 'list',
         component: ListComponent
+    },
+    {
+        path: 'navigation-drawer',
+        component: NavdrawerComponent
     },
     {
         path: 'grid',
@@ -57,6 +70,18 @@ const appRoutes: Routes = [
     {
         path: 'form-elements',
         component: FormElementsComponent
+    },
+    {
+        path: 'toast',
+        component: ToastComponent
+    },
+    {
+        path: 'slider',
+        component: SliderComponent
+    },
+    {
+        path: 'progressbar',
+        component: ProgressbarComponent
     }
 ];
 
