@@ -15,7 +15,7 @@ export class FormElementsComponent implements OnInit {
         firstName: 'John',
         lastName: 'Doe',
         password: '1337s3cr3t'
-    }
+    };
   }
 
   ngOnInit() {
