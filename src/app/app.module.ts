@@ -15,12 +15,15 @@ import {
     IgxIconModule,
     IgxInput,
     IgxLabelModule,
+    IgxLayout,
     IgxListModule,
+    IgxNavigationDirectives,
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    NavigationDrawerModule,
 } from 'igniteui-js-blocks/main';
 
 
@@ -34,6 +37,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { NavdrawerComponent } from './navdrawer/navdrawer.component';
 
 
 @NgModule({
@@ -46,7 +51,9 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     CalendarComponent,
     DialogComponent,
     DatepickerComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    LayoutComponent,
+    NavdrawerComponent
   ],
   imports: [
     AppRoutingModule,
@@ -55,8 +62,11 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     IgxGridModule,
     IgxCarouselModule,
     IgxInput,
+    IgxLayout,
     IgxRadioModule,
     IgxSwitchModule,
+    IgxNavigationDirectives,
+    NavigationDrawerModule,
     IgxProgressBarModule,
     IgxAvatarModule,
     IgxFilterModule,

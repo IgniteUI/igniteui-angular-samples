@@ -8,7 +8,8 @@ import { GridComponent } from './grid/grid.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
-
+import { LayoutComponent } from './layout/layout.component';
+import { NavdrawerComponent } from './navdrawer/navdrawer.component';
 
 const appRoutes: Routes = [
     {
@@ -32,8 +33,16 @@ const appRoutes: Routes = [
         component: DialogComponent
     },
     {
+        path: 'layout',
+        component: LayoutComponent
+    },
+    {
         path: 'list',
         component: ListComponent
+    },
+    {
+        path: 'navigation-drawer',
+        component: NavdrawerComponent
     },
     {
         path: 'grid',
