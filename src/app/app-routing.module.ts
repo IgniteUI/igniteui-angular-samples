@@ -19,6 +19,7 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { TabbarComponent } from './tabbar/tabbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ScrollComponent } from './scroll/scroll.component';
+import { ButtonsComponent } from './buttons/buttons.component';
 
 const appRoutes: Routes = [
     {
@@ -96,6 +97,10 @@ const appRoutes: Routes = [
     {
         path: 'scroll',
         component: ScrollComponent
+    },
+    {
+        path: 'buttons',
+        component: ButtonsComponent
     }
 ];
 

@@ -19,5 +19,6 @@ export class AppComponent {
     'avatar',
     'badge',
     'form-elements',
+    'buttons'
   ];
 }

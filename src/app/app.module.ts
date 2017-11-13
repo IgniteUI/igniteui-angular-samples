@@ -5,6 +5,7 @@ import {
     IgxAvatarModule,
     IgxBadgeModule,
     IgxButtonModule,
+    IgxButtonGroupModule,
     IgxCalendarModule,
     IgxCardModule,
     IgxCarouselModule,
@@ -54,6 +55,7 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { TabbarComponent } from './tabbar/tabbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ScrollComponent } from './scroll/scroll.component';
+import { ButtonsComponent } from './buttons/buttons.component';
 
 
 @NgModule({
@@ -77,7 +79,8 @@ import { ScrollComponent } from './scroll/scroll.component';
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
-    ScrollComponent
+    ScrollComponent,
+    ButtonsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -96,6 +99,7 @@ import { ScrollComponent } from './scroll/scroll.component';
     IgxFilterModule,
     IgxBadgeModule,
     IgxButtonModule,
+    IgxButtonGroupModule,
     IgxRippleModule,
     IgxIconModule,
     IgxDialogModule,
