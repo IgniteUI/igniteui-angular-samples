@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Angular demos</id>
+    <id>AngularDemos</id>
     <title>Infragistics AngularDemos</title>
     <version>1.0.0</version>
     <authors>Infragistics</authors>
@@ -10,6 +10,6 @@
     <description>This is a package that can be used with Octopus deployer</description>
     </metadata>
     <files>
-        <file src="src\_site\**\*.*" target="\" />
+        <file src="dist\**\*.*" target="\" />
     </files>
 </package>
