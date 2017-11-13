@@ -15,6 +15,9 @@ export class AppComponent {
     'dialog',
     'grid',
     'list',
-    'snackbar'
+    'snackbar',
+    'avatar',
+    'badge',
+    'form-elements',
   ];
 }

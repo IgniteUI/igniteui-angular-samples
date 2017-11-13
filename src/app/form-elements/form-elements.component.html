@@ -1,0 +1,72 @@
+<section class="sample-content">
+  <article class="sample-column">
+    <div class="input-sample">
+      <h4 class="form-title">Switch component</h4>
+      <h4>Settings</h4>
+      <br />
+      <div class="switch-sample">
+        <igx-icon name="wifi"></igx-icon>
+        <span igxLabel>WiFi</span>
+        <igx-switch [checked]="true"></igx-switch>
+      </div>
+      <div class="switch-sample">
+        <igx-icon name="bluetooth"></igx-icon>
+        <span igxLabel>Bluetooth</span>
+        <igx-switch></igx-switch>
+      </div>
+      <div class="switch-sample">
+        <igx-icon name="visibility"></igx-icon>
+        <span igxLabel>Device visibility</span>
+        <igx-switch></igx-switch>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="sample-content">
+  <article class="sample-column">
+    <form class="input-sample" action="/" method="POST">
+      <h4 class="form-title">Label and Input components</h4>
+      <h4>Personal Info</h4>
+      <br />
+      <div class="igx-form-group">
+        <input igxInput name="firstName" type="text" [(ngModel)]="user.firstName" required/>
+        <label igxLabel for="firstName">First Name*</label>
+      </div>
+      <div class="igx-form-group">
+        <input igxInput name="lastName" type="text" [(ngModel)]="user.lastName" required/>
+        <label igxLabel for="lastName">Last Name*</label>
+      </div>
+      <div class="igx-form-group">
+        <input igxInput name="password" type="password" placeholder="{{placeholder}}" [(ngModel)]="user.password" required/>
+        <label igxLabel for="password">Password*</label>
+      </div>
+    </form>
+  </article>
+</section>
+<section class="sample-content">
+  <article class="sample-column">
+    <div class="input-sample">
+      <h4 class="form-title">Checkbox component</h4>
+      <h4>Contacts</h4>
+      <br />
+      <div class="switch-sample">
+        <igx-avatar src="https://cdn.rawgit.com/IgniteUI/igniteui-js-blocks/6cd4cc79/demos/images/avatar/22.jpg" roundShape="true">
+        </igx-avatar>
+        <span igxLabel>Alicia Keys</span>
+        <igx-checkbox [checked]="true"></igx-checkbox>
+      </div>
+      <div class="switch-sample">
+        <igx-avatar src="https://cdn.rawgit.com/IgniteUI/igniteui-js-blocks/6cd4cc79/demos/images/avatar/8.jpg" roundShape="true">
+        </igx-avatar>
+        <span igxLabel>Petar Vasilev</span>
+        <igx-checkbox></igx-checkbox>
+      </div>
+      <div class="switch-sample">
+        <igx-avatar src="https://cdn.rawgit.com/IgniteUI/igniteui-js-blocks/6cd4cc79/demos/images/avatar/17.jpg" roundShape="true">
+        </igx-avatar>
+        <span igxLabel>Brian Vaughan</span>
+        <igx-checkbox [checked]="true"></igx-checkbox>
+      </div>
+    </div>
+  </article>
+</section>
