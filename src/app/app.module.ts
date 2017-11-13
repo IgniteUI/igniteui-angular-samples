@@ -8,6 +8,7 @@ import {
     IgxCalendarModule,
     IgxCardModule,
     IgxCarouselModule,
+    IgxCheckboxModule,
     IgxDatePickerModule,
     IgxDialogModule,
     IgxFilterModule,
@@ -34,6 +35,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { AvatarComponent } from './avatar/avatar.component';
+import { BadgeComponent } from './badge/badge.component';
+import { FormElementsComponent } from './form-elements/form-elements.component';
 
 
 @NgModule({
@@ -46,7 +50,10 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     CalendarComponent,
     DialogComponent,
     DatepickerComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    AvatarComponent,
+    BadgeComponent,
+    FormElementsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -69,7 +76,9 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     IgxCalendarModule,
     IgxSnackbarModule,
     IgxCardModule,
-    IgxListModule
+    IgxListModule,
+    IgxLabelModule,
+    IgxCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

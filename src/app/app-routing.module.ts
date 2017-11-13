@@ -1,3 +1,6 @@
+import { FormElementsComponent } from './form-elements/form-elements.component';
+import { AvatarComponent } from './avatar/avatar.component';
+import { BadgeComponent } from './badge/badge.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ListComponent } from './list/list.component';
@@ -42,6 +45,18 @@ const appRoutes: Routes = [
     {
         path: 'snackbar',
         component: SnackbarComponent
+    },
+    {
+        path: 'avatar',
+        component: AvatarComponent
+    },
+    {
+        path: 'badge',
+        component: BadgeComponent
+    },
+    {
+        path: 'form-elements',
+        component: FormElementsComponent
     }
 ];
 
