@@ -26,7 +26,10 @@ import {
     IgxSwitchModule,
     NavigationDrawerModule,
     IgxToastModule,
-    IgxSliderModule
+    IgxSliderModule,
+    IgxTabBarModule,
+    IgxNavbarModule,
+    IgxScrollModule
 } from 'igniteui-js-blocks/main';
 
 
@@ -48,6 +51,9 @@ import { NavdrawerComponent } from './navdrawer/navdrawer.component';
 import { ToastComponent } from './toast/toast.component';
 import { SliderComponent } from './slider/slider.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { TabbarComponent } from './tabbar/tabbar.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ScrollComponent } from './scroll/scroll.component';
 
 
 @NgModule({
@@ -68,7 +74,10 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     NavdrawerComponent,
     ToastComponent,
     SliderComponent,
-    ProgressbarComponent
+    ProgressbarComponent,
+    TabbarComponent,
+    NavbarComponent,
+    ScrollComponent
   ],
   imports: [
     AppRoutingModule,
@@ -98,7 +107,10 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     IgxLabelModule,
     IgxCheckboxModule,
     IgxToastModule,
-    IgxSliderModule
+    IgxSliderModule,
+    IgxTabBarModule,
+    IgxNavbarModule,
+    IgxScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

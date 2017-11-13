@@ -1,0 +1,13 @@
+.list {
+    width: 200px;
+}
+
+.list-item {
+    height: 50px;
+    list-style: none;
+    text-align: center;   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
