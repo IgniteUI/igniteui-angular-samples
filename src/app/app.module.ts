@@ -15,12 +15,15 @@ import {
     IgxIconModule,
     IgxInput,
     IgxLabelModule,
+    IgxLayout,
     IgxListModule,
+    IgxNavigationDirectives,
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    NavigationDrawerModule,
     IgxToastModule,
     IgxSliderModule
 } from 'igniteui-js-blocks/main';
@@ -36,6 +39,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { NavdrawerComponent } from './navdrawer/navdrawer.component';
 import { ToastComponent } from './toast/toast.component';
 import { SliderComponent } from './slider/slider.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
@@ -52,6 +57,8 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     DialogComponent,
     DatepickerComponent,
     SnackbarComponent,
+    LayoutComponent,
+    NavdrawerComponent,
     ToastComponent,
     SliderComponent,
     ProgressbarComponent
@@ -63,8 +70,11 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     IgxGridModule,
     IgxCarouselModule,
     IgxInput,
+    IgxLayout,
     IgxRadioModule,
     IgxSwitchModule,
+    IgxNavigationDirectives,
+    NavigationDrawerModule,
     IgxProgressBarModule,
     IgxAvatarModule,
     IgxFilterModule,
