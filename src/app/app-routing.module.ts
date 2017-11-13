@@ -8,6 +8,9 @@ import { GridComponent } from './grid/grid.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ToastComponent } from './toast/toast.component';
+import { SliderComponent } from './slider/slider.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 
 const appRoutes: Routes = [
@@ -42,6 +45,18 @@ const appRoutes: Routes = [
     {
         path: 'snackbar',
         component: SnackbarComponent
+    },
+    {
+        path: 'toast',
+        component: ToastComponent
+    },
+    {
+        path: 'slider',
+        component: SliderComponent
+    },
+    {
+        path: 'progressbar',
+        component: ProgressbarComponent
     }
 ];
 

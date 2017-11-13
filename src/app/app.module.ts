@@ -21,6 +21,8 @@ import {
     IgxRippleModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    IgxToastModule,
+    IgxSliderModule
 } from 'igniteui-js-blocks/main';
 
 
@@ -34,6 +36,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ToastComponent } from './toast/toast.component';
+import { SliderComponent } from './slider/slider.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 
 @NgModule({
@@ -46,7 +51,10 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     CalendarComponent,
     DialogComponent,
     DatepickerComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    ToastComponent,
+    SliderComponent,
+    ProgressbarComponent
   ],
   imports: [
     AppRoutingModule,
@@ -69,7 +77,9 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     IgxCalendarModule,
     IgxSnackbarModule,
     IgxCardModule,
-    IgxListModule
+    IgxListModule,
+    IgxToastModule,
+    IgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
