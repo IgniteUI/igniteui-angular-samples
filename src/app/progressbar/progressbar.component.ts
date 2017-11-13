@@ -16,7 +16,7 @@ export class ProgressbarComponent implements OnInit {
         this.generateNewProgressValues();
     }
 
-    private generateNewProgressValues() {
+    public generateNewProgressValues() {
         const value = this.randomIntFromInterval(this.currentValue, 100);
 
         this.currentValue = value;
