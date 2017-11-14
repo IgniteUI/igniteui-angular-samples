@@ -41,12 +41,12 @@ class Button {
   encapsulation: ViewEncapsulation.None
 })
 export class ButtonsComponent implements OnInit {
-  private multi = true;
-  private alignment = ButtonGroupAlignment.vertical;
-  private alignOptions: Button[];
-  private fontOptions: Button[];
-  private cities: Button[];
-  private borders: Button[];
+  public multi = true;
+  public alignment = ButtonGroupAlignment.vertical;
+  public alignOptions: Button[];
+  public fontOptions: Button[];
+  public cities: Button[];
+  public borders: Button[];
 
   constructor() { }
 
