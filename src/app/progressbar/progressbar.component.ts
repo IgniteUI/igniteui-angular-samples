@@ -1,6 +1,5 @@
 import { IgxCircularProgressBar, IgxLinearProgressBar } from 'igniteui-js-blocks/main';
 import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
-import { setInterval, clearInterval } from 'timers';
 
 @Component({
     selector: 'app-progressbar',
