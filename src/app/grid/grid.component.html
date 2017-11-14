@@ -10,7 +10,7 @@
                 </div>
               </span>
               <span class="titleFilter">
-                <input id="globalFilter" igxInput (input)="doGlobalFiltering($event)" placeholder="..filter by athlete number" />
+                <input id="globalFilter" igxInput (input)="doGlobalFiltering($event)" placeholder="Filter by athlete number" />
               </span>
             </div>
             <br />
@@ -21,12 +21,12 @@
                   <div>
                     <span *ngIf="ri < 1 && grid1.state.paging.index == 0" class="cup">
                       <svg id="circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <image x="0" y="0" height="24" width="24" xlink:href="http://svgur.com/i/3iP.svg" />
+                        <image x="0" y="0" height="24" width="24" xlink:href="assets/images/grid/3iP.svg" />
                       </svg>
                     </span>
                     <span *ngIf="ri > 0 && ri < 3 && grid1.state.paging.index == 0" class="cup">
                       <svg id="circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <image x="0" y="0" height="24" width="24" xlink:href="http://svgur.com/i/3hz.svg" />
+                        <image x="0" y="0" height="24" width="24" xlink:href="assets/images/grid/3hz.svg" />
                       </svg>
                     </span>
                     <span class="rowIndex">

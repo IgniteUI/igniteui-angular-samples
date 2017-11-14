@@ -17,6 +17,14 @@ export class SliderComponent implements OnInit {
 
     public task: Task = new Task('Slider Title', 30);
 
+    updateTask(event) {
+        if (!isNaN(parseInt(event.value, 10))) {
+            this.task.percentCompleted = event.value;
+        } else {
+            event.value = this.task.percentCompleted;
+        }
+    }
+
     constructor() { }
 
     ngOnInit() {

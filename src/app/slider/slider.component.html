@@ -2,31 +2,27 @@
     <section class="sample-content">
         <div>
             <article class="sample-column">
-                <h4 class="sample-title">Slider</h4>
+                <h4 class="sample-title">Slider bound to an input field with a step of 5</h4>
                 <igx-slider #slider [(ngModel)]="task.percentCompleted" [step]="5" [lowerBound]="20">
                 </igx-slider>
+                <div class="igx-form-group">
+                    <input igxInput required type="text" name="task" [value]="task.percentCompleted" (blur)="updateTask($event.target)" />
+                    <label igxLabel for="task">Change the input to update the slider</label>
+                </div>
             </article>
 
             <article class="sample-column">
                 <h4 class="sample-title">Range slider</h4>
                 <igx-slider #slider2 [type]="sliderType" [(ngModel)]="rangeValue" [minValue]="0" [maxValue]="100">
                 </igx-slider>
-            </article>
-        </div>
-
-        <div>
-            <article class="sample-column">
-                <h3>Task</h3>
-                <div>name: {{ task.title }}</div>
-
-                <div>completed: {{ task.percentCompleted }}</div>
-                <input type="text" [(ngModel)]="task.title" />
-                <input type="text" [(ngModel)]="task.percentCompleted" />
-            </article>
-
-            <article class="sample-column">
-                <input type="text" [(ngModel)]="rangeValue.lower" />
-                <input type="text" [(ngModel)]="rangeValue.upper" />
+                <div class="igx-form-group">
+                    <input igxInput type="text" name="lower" [(ngModel)]="rangeValue.lower" />
+                    <label igxLabel for="lower">Lower value</label>
+                </div>
+                <div class="igx-form-group">
+                    <input igxInput type="text" name="upper" [(ngModel)]="rangeValue.upper" />
+                    <label igxLabel for="upper">Upper value</label>
+                </div>
             </article>
         </div>
     </section>
