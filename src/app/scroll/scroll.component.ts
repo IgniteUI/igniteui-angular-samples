@@ -12,7 +12,7 @@ export class ScrollComponent implements OnInit {
 
     public visibleItems: ListItem[] = [];
 
-    public visibleItemsCount = 5;
+    public visibleItemsCount = 10;
 
     constructor() {
         for (let j = 1, i = 0; i <= 5000; i++, j++) {
@@ -20,7 +20,7 @@ export class ScrollComponent implements OnInit {
             this.items.push(new ListItem(`User: ${i + 1}`, `/assets/images/avatar/${imageIndex}.jpg`));
         }
 
-        this.visibleItems = this.items.slice(0, 5);
+        this.visibleItems = this.items.slice(0, 10);
     }
 
     ngOnInit() {
