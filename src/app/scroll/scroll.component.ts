@@ -17,7 +17,7 @@ export class ScrollComponent implements OnInit {
     constructor() {
         for (let j = 1, i = 0; i <= 5000; i++, j++) {
             const imageIndex = j > 21 ? j = 1 : j;
-            this.items.push(new ListItem(`User: ${i + 1}`, `/assets/images/avatar/${imageIndex}.jpg`));
+            this.items.push(new ListItem(`User: ${i + 1}`, `assets/images/avatar/${imageIndex}.jpg`));
         }
 
         this.visibleItems = this.items.slice(0, 10);
