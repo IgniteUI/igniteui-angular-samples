@@ -40,6 +40,7 @@
         <input igxInput name="password" type="password" [(ngModel)]="user.password" required/>
         <label igxLabel for="password">Password*</label>
       </div>
+        <igx-radio *ngFor="let item of ['Male', 'Female']" value="{{item}}" name="group" [(ngModel)]="user.gender">{{item}}</igx-radio>
     </form>
   </article>
 </section>
