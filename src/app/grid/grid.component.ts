@@ -43,7 +43,6 @@ export class GridComponent implements OnInit {
     this.live = true;
     this.disabled = false;
     this.sortedByTrackProgress = true;
-
     this.SortByTrackProgress();
   }
   private SortByTrackProgress() {
@@ -62,7 +61,9 @@ export class GridComponent implements OnInit {
 
   private tickerFunc(tick) {
     if (tick % 3 === 0) {
-      const idx = this.getRandomNumber(5, 0);
+      const size = this.grid1.dataContainer.transformedData.length - 1;
+      const min = Math.min(5, size);
+      const idx = this.getRandomNumber(min, 0);
       const newValue = this.grid1.getCell(idx, 'TrackProgress').dataItem + 15;
 
       if (newValue >= 100) {
@@ -96,8 +97,10 @@ export class GridComponent implements OnInit {
   }
   private resetPositions() {
     let index = 0;
+    const size = this.grid1.dataContainer.transformedData.length - 1;
+    const min = Math.min(size, 6);
 
-    while (index < 6) {
+    while (index < min) {
         this.grid1.updateCell(index, 'Position', 'current');
         index++;
     }
@@ -143,9 +146,21 @@ export class GridComponent implements OnInit {
       });
 
       if (this.grid1.paginator.isFirst && this.sortedByTrackProgress) {
-        rowElements.slice(1, 4).forEach((tr: HTMLElement) => tr.style.backgroundColor = '#E7F5FE' );
+        const size = this.grid1.dataContainer.transformedData.length - 1;
+        const min = Math.min(3, size);
+        for (let i = 0; i < min; i++) {
+          if (this.grid1.getRow(i).record.Id < 4) {
+            this.grid1.getRow(i).element.style.backgroundColor = '#E7F5FE';
+          }
+        }
       }
     }, 1);
+
+    if (this.sortedByTrackProgress) {
+      this.localData.forEach((value, index) => {
+        value.Id = index + 1;
+      });
+    }
   }
 
 
@@ -157,7 +172,6 @@ export class GridComponent implements OnInit {
     const direction = event.direction;
 
     this.sortedByTrackProgress = false;
-
     if (event.column.field === 'Id' && direction === 0) {
       const column = this.grid1.getColumnByField('TrackProgress');
       this.grid1.sortColumn(column, SortingDirection.Desc);
