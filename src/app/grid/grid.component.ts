@@ -12,7 +12,8 @@ import {
   SortingDirection,
   StableSortingStrategy,
   IgxAvatar,
-  IgxBadge
+  IgxBadge,
+  IgxGridSortEvent
 } from 'igniteui-js-blocks/main';
 import { IgxColumnComponent } from 'igniteui-js-blocks/grid/column.component';
 import { athletesData } from './data';
@@ -30,6 +31,7 @@ export class GridComponent implements OnInit {
   public timer: any;
   public live: boolean;
   public disabled: boolean;
+  public sortedByTrackProgress: boolean;
 
   @ViewChild('grid1') public grid1: IgxGridComponent;
   constructor() { }
@@ -40,7 +42,11 @@ export class GridComponent implements OnInit {
     this.timerSubscription = this.timer.subscribe(t => this.tickerFunc(t));
     this.live = true;
     this.disabled = false;
+    this.sortedByTrackProgress = true;
 
+    this.SortByTrackProgress();
+  }
+  private SortByTrackProgress() {
     this.grid1.state = {
       sorting: {
         expressions: [
@@ -53,6 +59,7 @@ export class GridComponent implements OnInit {
       }
     };
   }
+
   private tickerFunc(tick) {
     if (tick % 3 === 0) {
       const idx = this.getRandomNumber(5, 0);
@@ -99,11 +106,16 @@ export class GridComponent implements OnInit {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  public showRank(columnName) {
+    const rv = this.grid1.state.sorting.expressions.filter((col) => col.fieldName === columnName);
+    return rv.length > 0;
+  }
+
   public doGlobalFiltering(event) {
     const search = event.target.value;
 
     this.grid1.columns.forEach((col) => {
-      if (col.field === 'AthleteNumber') {
+      if (col.field === 'CountryName') {
         this.grid1.filterData(search, col);
       }
     });
@@ -125,12 +137,12 @@ export class GridComponent implements OnInit {
 
       rowElements.forEach(function(tr) {
         tr.style.backgroundColor = '';
-        if (arguments[1] % 2 === 1) {
+        if (arguments[1] % 2 === 0) {
           tr.style.backgroundColor = '#F5F5F5';
         }
       });
 
-      if (this.grid1.paginator.isFirst) {
+      if (this.grid1.paginator.isFirst && this.sortedByTrackProgress) {
         rowElements.slice(1, 4).forEach((tr: HTMLElement) => tr.style.backgroundColor = '#E7F5FE' );
       }
     }, 1);
@@ -141,4 +153,15 @@ export class GridComponent implements OnInit {
     const column: IgxColumnComponent = event.column;
   }
 
+  public sort(event: IgxGridSortEvent) {
+    const direction = event.direction;
+
+    this.sortedByTrackProgress = false;
+
+    if (event.column.field === 'Id' && direction === 0) {
+      const column = this.grid1.getColumnByField('TrackProgress');
+      this.grid1.sortColumn(column, SortingDirection.Desc);
+      this.sortedByTrackProgress = true;
+    }
+  }
 }
