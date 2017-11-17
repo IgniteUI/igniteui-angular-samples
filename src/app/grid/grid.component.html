@@ -14,17 +14,17 @@
               </span>
             </div>
             <br />
-            <igx-grid #grid1 [data]="localData" [autoGenerate]="false" [paging]="true" [perPage]="6" (onColumnInit)="initColumns($event)"
-              (onBeforeProcess)="applyAlternateStyling()" class="fontWeight" (onSortingDone)="sort($event)">
+            <igx-grid #grid1 [data]="localData" [autoGenerate]="false" [paging]="true" [perPage]="6"
+              class="fontWeight" (onBeforeProcess)="applyAlternateStyling()" (onSortingDone)="sortRank($event)">
               <igx-column [header]="'Rank'" [field]="'Id'" [sortable]="true" >
                 <ng-template igxCell let-col="column" let-ri="rowIndex" let-item="item">
                   <div>
-                    <span *ngIf="grid1.state.paging.index == 0 && sortedByTrackProgress && item === 1" class="cup">
+                    <span *ngIf="item === 1" class="cup">
                       <svg id="circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <image x="0" y="0" height="24" width="24" xlink:href="assets/images/grid/3iP.svg" />
                       </svg>
                     </span>
-                    <span *ngIf="grid1.state.paging.index == 0 && sortedByTrackProgress && (item === 2 || item === 3)" class="cup">
+                    <span *ngIf="(item === 2 || item === 3)" class="cup">
                       <svg id="circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <image x="0" y="0" height="24" width="24" xlink:href="assets/images/grid/3hz.svg" />
                       </svg>
@@ -53,7 +53,7 @@
               <igx-column [field]="'BeatsPerMinute'" [sortable]="false" [header]="'Beats per minute'"></igx-column>
               <igx-column [field]="'TopSpeed'" [sortable]="false" [header]="'Top speed'"></igx-column>
               <igx-column [field]="'CountryName'" [hidden]="true"></igx-column>
-              <igx-column [field]="'TrackProgress'" [header]="'Track progress'">
+              <igx-column field="TrackProgress" header="Track progress">
                 <ng-template igxCell let-col="column" let-ri="rowIndex" let-item="item">
                   <igx-linear-bar [striped]="false" [value]="item" [max]="100">
                   </igx-linear-bar>
