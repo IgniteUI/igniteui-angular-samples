@@ -36,7 +36,6 @@ export class GridComponent implements OnInit, AfterViewInit {
   @ViewChild('grid1') public grid1: IgxGridComponent;
 
   constructor(private zone: NgZone) {
-    this.windowWidth = (window.innerWidth);
   }
 
   ngOnInit() {
@@ -73,6 +72,7 @@ export class GridComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.applyAlternateStyling();
+    this.windowWidth = (window.innerWidth);
   }
 
   @HostListener('window:resize', ['$event'])
