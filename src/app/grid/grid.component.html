@@ -49,8 +49,8 @@
                 </ng-template>
               </igx-column>
               <igx-column [field]="'Name'" [sortable]="false" [header]="' '" [filtering]="true"></igx-column>
-              <igx-column [field]="'AthleteNumber'" [sortable]="false" [header]="'Athlete number'" ></igx-column>
-              <igx-column [field]="'BeatsPerMinute'" [sortable]="false" [header]="'Beats per minute'"></igx-column>
+              <igx-column [field]="'AthleteNumber'" [sortable]="false" [header]="'Athlete number'" [hidden]="windowWidth < 785" ></igx-column>
+              <igx-column [field]="'BeatsPerMinute'" [sortable]="false" [header]="'Beats per minute'" [hidden]="windowWidth < 785"></igx-column>
               <igx-column [field]="'TopSpeed'" [sortable]="false" [header]="'Top speed'"></igx-column>
               <igx-column [field]="'CountryName'" [hidden]="true"></igx-column>
               <igx-column field="TrackProgress" header="Track progress">
