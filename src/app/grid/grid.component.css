@@ -34,7 +34,7 @@
 .fontWeight
 {
     font-weight: bold;
-    min-width: 955px;
+    /* min-width: 680px; */
 }
 
 
@@ -77,4 +77,8 @@
 
 .switch-sample > [igxSwitch] {
     padding-left: 79px;
+}
+
+.columnWidth {
+    width:250px;
 }

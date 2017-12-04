@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs/Subject';
 import { timer } from 'rxjs/observable/timer';
-import { AfterViewInit, Component, NgZone, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, HostListener, NgZone, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
   IgxGridComponent,
   IgxGridColumnInitEvent,
@@ -31,10 +31,13 @@ export class GridComponent implements OnInit, AfterViewInit {
   public timer: any;
   public live: boolean;
   public disabled: boolean;
+  public windowWidth: any;
 
   @ViewChild('grid1') public grid1: IgxGridComponent;
 
-  constructor(private zone: NgZone) { }
+  constructor(private zone: NgZone) {
+    this.windowWidth = (window.innerWidth);
+  }
 
   ngOnInit() {
 
@@ -70,6 +73,11 @@ export class GridComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.applyAlternateStyling();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.windowWidth = (event.target.innerWidth);
   }
 
   private getRandomNumber(max, min) {
