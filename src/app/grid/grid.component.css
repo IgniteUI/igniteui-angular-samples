@@ -12,6 +12,7 @@
 .flagParent
 {
   display:flex;
+  padding-left: 23px;
 }
 
 .flag
@@ -81,4 +82,13 @@
 
 .columnWidth {
     width:250px;
+}
+
+.cellAlignSyle {
+    text-align: right;
+    width: 100%;
+}
+
+.centerPosition {
+    margin-top: 14px;
 }
