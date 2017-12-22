@@ -56,6 +56,8 @@ import { TabbarComponent } from './tabbar/tabbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ScrollComponent } from './scroll/scroll.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { DataService } from './grid/services/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -114,9 +116,10 @@ import { ButtonsComponent } from './buttons/buttons.component';
     IgxSliderModule,
     IgxTabBarModule,
     IgxNavbarModule,
-    IgxScrollModule
+    IgxScrollModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

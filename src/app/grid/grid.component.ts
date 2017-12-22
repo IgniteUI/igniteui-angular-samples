@@ -16,12 +16,14 @@ import {
   IgxGridSortEvent
 } from 'igniteui-js-blocks/main';
 import { IgxColumnComponent } from 'igniteui-js-blocks/grid/column.component';
-import { athletesData } from './data';
+import { DataService } from './services/data.service';
+import { athletesData } from './services/data';
 
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css'],
+  providers: [DataService],
   encapsulation: ViewEncapsulation.None
 })
 export class GridComponent implements OnInit, AfterViewInit {
@@ -34,21 +36,25 @@ export class GridComponent implements OnInit, AfterViewInit {
   public windowWidth: any;
 
   @ViewChild('grid1') public grid1: IgxGridComponent;
+  @ViewChild('showBadges') public showBadges: boolean;
 
-  constructor(private zone: NgZone) {
+  constructor(private zone: NgZone, private dataService: DataService) {
   }
 
   ngOnInit() {
-
     this.localData = athletesData;
 
     this.timer = new Subject().pipe(() => timer(0, 3000));
-    this.timerSubscription = this.timer.subscribe(() => {
+    this.timerSubscription = this.timer.subscribe(tick => {
       if (this.live) {
+        if (tick === 1) {
+          this.showBadges = true;
+        }
         this.ticker();
       }
     });
     this.live = true;
+    this.showBadges = false;
     this.disabled = false;
     this.SortByTrackProgress();
   }
@@ -113,7 +119,7 @@ export class GridComponent implements OnInit, AfterViewInit {
           tr.style.backgroundColor = '#F5F5F5';
         }
         if (parseInt(tr.querySelector('.rowIndex').textContent, 10) < 4) {
-          tr.style.backgroundColor = '#E7F5FE';
+          tr.style.backgroundColor = '#FCF1FB';
         }
       });
     });
