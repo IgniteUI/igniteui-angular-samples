@@ -59,6 +59,8 @@ import { ListSample1Component } from './list/list-sample-1/list-sample-1.compone
 import { ListSample2Component } from './list/list-sample-2/list-sample-2.component';
 import { ListSample3Component } from './list/list-sample-3/list-sample-3.component';
 import { ListSample4Component } from './list/list-sample-4/list-sample-4.component';
+import { DataService } from './grid/services/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -120,9 +122,10 @@ import { ListSample4Component } from './list/list-sample-4/list-sample-4.compone
     IgxSliderModule,
     IgxTabBarModule,
     IgxNavbarModule,
-    IgxScrollModule
+    IgxScrollModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

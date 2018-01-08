@@ -12,6 +12,7 @@
 .flagParent
 {
   display:flex;
+  padding-left: 23px;
 }
 
 .flag
@@ -34,7 +35,7 @@
 .fontWeight
 {
     font-weight: bold;
-    min-width: 955px;
+    /* min-width: 680px; */
 }
 
 
@@ -77,4 +78,17 @@
 
 .switch-sample > [igxSwitch] {
     padding-left: 79px;
+}
+
+.columnWidth {
+    width:250px;
+}
+
+.cellAlignSyle {
+    text-align: right;
+    width: 100%;
+}
+
+.centerPosition {
+    margin-top: 14px;
 }
