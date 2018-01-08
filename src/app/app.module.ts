@@ -2,37 +2,36 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {
-    IgxAvatarModule,
-    IgxBadgeModule,
-    IgxButtonModule,
-    IgxButtonGroupModule,
-    IgxCalendarModule,
-    IgxCardModule,
-    IgxCarouselModule,
-    IgxCheckboxModule,
-    IgxDatePickerModule,
-    IgxDialogModule,
-    IgxFilterModule,
-    IgxGridModule,
-    IgxIconModule,
-    IgxInput,
-    IgxLabelModule,
-    IgxLayout,
-    IgxListModule,
-    IgxNavigationDirectives,
-    IgxProgressBarModule,
-    IgxRadioModule,
-    IgxRippleModule,
-    IgxSnackbarModule,
-    IgxSwitchModule,
-    NavigationDrawerModule,
-    IgxToastModule,
-    IgxSliderModule,
-    IgxTabBarModule,
-    IgxNavbarModule,
-    IgxScrollModule
+  IgxAvatarModule,
+  IgxBadgeModule,
+  IgxButtonModule,
+  IgxButtonGroupModule,
+  IgxCalendarModule,
+  IgxCardModule,
+  IgxCarouselModule,
+  IgxCheckboxModule,
+  IgxDatePickerModule,
+  IgxDialogModule,
+  IgxFilterModule,
+  IgxGridModule,
+  IgxIconModule,
+  IgxInput,
+  IgxLabelModule,
+  IgxLayout,
+  IgxListModule,
+  IgxNavigationDirectives,
+  IgxProgressBarModule,
+  IgxRadioModule,
+  IgxRippleModule,
+  IgxSnackbarModule,
+  IgxSwitchModule,
+  NavigationDrawerModule,
+  IgxToastModule,
+  IgxSliderModule,
+  IgxTabBarModule,
+  IgxNavbarModule,
+  IgxScrollModule
 } from 'igniteui-js-blocks/main';
-
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
@@ -56,13 +55,20 @@ import { TabbarComponent } from './tabbar/tabbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ScrollComponent } from './scroll/scroll.component';
 import { ButtonsComponent } from './buttons/buttons.component';
-
+import { ListSample1Component } from './list/list-sample-1/list-sample-1.component';
+import { ListSample2Component } from './list/list-sample-2/list-sample-2.component';
+import { ListSample3Component } from './list/list-sample-3/list-sample-3.component';
+import { ListSample4Component } from './list/list-sample-4/list-sample-4.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     ListComponent,
+    ListSample1Component,
+    ListSample2Component,
+    ListSample3Component,
+    ListSample4Component,
     GridComponent,
     CarouselComponent,
     CalendarComponent,
@@ -119,4 +125,4 @@ import { ButtonsComponent } from './buttons/buttons.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
