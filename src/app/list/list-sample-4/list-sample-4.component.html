@@ -1,0 +1,24 @@
+<div class="igx-form-group" style="margin: 4px">
+  <input class="igx-form-group__input--search" placeholder="Search Contacts" [(ngModel)]="searchContact">
+  <label class="igx-form-group__label">
+    <igx-icon name="search"></igx-icon>
+  </label>
+</div>
+
+<igx-list>
+  <igx-list-item isHeader="true">
+    Contacts
+  </igx-list-item>
+  <igx-list-item *ngFor="let contact of contacts | igxFilter: filterContacts; let i = index">
+    <div class="item-container">
+      <div class="contact">
+        <igx-avatar [src]="contact.photo" roundShape="true"></igx-avatar>
+        <div class="contact__info">
+          <span class="name">{{ contact.name }}</span>
+          <span class="phone">{{ contact.phone }}</span>
+        </div>
+      </div>
+      <igx-icon name="star" [color]="contact.isFavorite ? 'orange' : 'lightgray'" (click)="toggleFavorite(i)"></igx-icon>
+    </div>
+  </igx-list-item>
+</igx-list>

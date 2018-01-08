@@ -1,0 +1,3 @@
+<igx-list [emptyListMessage]="emptyListMsg" (emptyListButtonClick)="addItem(itemInput)">
+  <igx-list-item *ngFor="let item of listItems" [isHeader]="item.heading" [options]="{}">{{item.name}}</igx-list-item>
+</igx-list>
