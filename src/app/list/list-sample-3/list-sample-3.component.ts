@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-sample-3.component.css']
 })
 export class ListSample3Component implements OnInit {
-  private contacts = [
+  public contacts = [
     {
       name: 'Terrance Orta',
       phone: '770-504-2217'
@@ -28,7 +28,7 @@ export class ListSample3Component implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

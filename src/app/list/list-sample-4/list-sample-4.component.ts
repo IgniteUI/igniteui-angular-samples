@@ -6,9 +6,9 @@ import { IgxFilterOptions, IgxListItem } from 'igniteui-js-blocks/main';
   styleUrls: ['./list-sample-4.component.css']
 })
 export class ListSample4Component implements OnInit {
-  private searchContact: string;
+  public searchContact: string;
 
-  private contacts = [
+  public contacts = [
     {
       name: 'Terrance Orta',
       phone: '770-504-2217',
@@ -41,9 +41,9 @@ export class ListSample4Component implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   toggleFavorite(item: IgxListItem) {
     const contact = this.contacts[item.index - 1];
