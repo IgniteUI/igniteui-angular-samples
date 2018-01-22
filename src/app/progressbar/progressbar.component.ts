@@ -1,10 +1,10 @@
-import { IgxCircularProgressBar, IgxLinearProgressBar } from 'igniteui-js-blocks/main';
-import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from "@angular/core";
+import { IgxCircularProgressBar, IgxLinearProgressBar } from "igniteui-js-blocks/main";
 
 @Component({
-    selector: 'app-progressbar',
-    templateUrl: './progressbar.component.html',
-    styleUrls: ['./progressbar.component.css'],
+    selector: "app-progressbar",
+    templateUrl: "./progressbar.component.html",
+    styleUrls: ["./progressbar.component.css"],
     encapsulation: ViewEncapsulation.None
 })
 export class ProgressbarComponent implements OnInit {
@@ -14,10 +14,10 @@ export class ProgressbarComponent implements OnInit {
     public interval: any;
 
     @ViewChildren(IgxLinearProgressBar, { read: IgxLinearProgressBar })
-    linearBars: QueryList<IgxLinearProgressBar>;
+    public linearBars: QueryList<IgxLinearProgressBar>;
 
     @ViewChildren(IgxCircularProgressBar, { read: IgxCircularProgressBar })
-    circularBars: QueryList<IgxCircularProgressBar>;
+    public circularBars: QueryList<IgxCircularProgressBar>;
 
     constructor() {
         this.currentValue = 0;
@@ -27,11 +27,11 @@ export class ProgressbarComponent implements OnInit {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    changeIcon() {
-        return this.interval ? 'pause' : 'play_arrow';
+    public changeIcon() {
+        return this.interval ? "pause" : "play_arrow";
     }
 
-    updateValue() {
+    public updateValue() {
         this.linearBars.map((bar) => bar.value += this.randomIntFromInterval(1, 3));
         this.circularBars.map((bar) => this.currentValue += this.randomIntFromInterval(1, 3));
         const shouldStop = this.linearBars.toArray().every((bar) => bar.value >= bar.max);
@@ -40,7 +40,7 @@ export class ProgressbarComponent implements OnInit {
         }
     }
 
-    tick() {
+    public tick() {
         if (this.interval) {
             this.interval = clearInterval(this.interval);
             return;
@@ -48,7 +48,7 @@ export class ProgressbarComponent implements OnInit {
         this.interval = setInterval(this.updateValue.bind(this), 60);
     }
 
-    ngOnInit() {
+    public ngOnInit() {
     }
 
 }

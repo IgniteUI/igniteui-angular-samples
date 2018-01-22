@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ScrollComponent } from './scroll.component';
+import { ScrollComponent } from "./scroll.component";
 
-describe('ScrollComponent', () => {
+describe("ScrollComponent", () => {
   let component: ScrollComponent;
   let fixture: ComponentFixture<ScrollComponent>;
 
@@ -19,7 +19,7 @@ describe('ScrollComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

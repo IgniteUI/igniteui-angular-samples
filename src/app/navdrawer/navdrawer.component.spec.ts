@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { NavdrawerComponent } from './navdrawer.component';
+import { NavdrawerComponent } from "./navdrawer.component";
 
-describe('NavdrawerComponent', () => {
+describe("NavdrawerComponent", () => {
   let component: NavdrawerComponent;
   let fixture: ComponentFixture<NavdrawerComponent>;
 
@@ -19,7 +19,7 @@ describe('NavdrawerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,125 +1,125 @@
-import { FormElementsComponent } from './form-elements/form-elements.component';
-import { AvatarComponent } from './avatar/avatar.component';
-import { BadgeComponent } from './badge/badge.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { ListComponent } from './list/list.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CardComponent } from './card/card.component';
-import { GridComponent } from './grid/grid.component';
-import { CalendarComponent } from './calendar/calendar.component';
-import { DatepickerComponent } from './datepicker/datepicker.component';
-import { SnackbarComponent } from './snackbar/snackbar.component';
-import { LayoutComponent } from './layout/layout.component';
-import { NavdrawerComponent } from './navdrawer/navdrawer.component';
-import { ToastComponent } from './toast/toast.component';
-import { SliderComponent } from './slider/slider.component';
-import { ProgressbarComponent } from './progressbar/progressbar.component';
-import { TabbarComponent } from './tabbar/tabbar.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ScrollComponent } from './scroll/scroll.component';
-import { ButtonsComponent } from './buttons/buttons.component';
-import { ListSample1Component } from './list/list-sample-1/list-sample-1.component';
-import { ListSample2Component } from './list/list-sample-2/list-sample-2.component';
-import { ListSample3Component } from './list/list-sample-3/list-sample-3.component';
-import { ListSample4Component } from './list/list-sample-4/list-sample-4.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { AvatarComponent } from "./avatar/avatar.component";
+import { BadgeComponent } from "./badge/badge.component";
+import { ButtonsComponent } from "./buttons/buttons.component";
+import { CalendarComponent } from "./calendar/calendar.component";
+import { CardComponent } from "./card/card.component";
+import { CarouselComponent } from "./carousel/carousel.component";
+import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DialogComponent } from "./dialog/dialog.component";
+import { FormElementsComponent } from "./form-elements/form-elements.component";
+import { GridComponent } from "./grid/grid.component";
+import { LayoutComponent } from "./layout/layout.component";
+import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
+import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
+import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
+import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
+import { ListComponent } from "./list/list.component";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { ProgressbarComponent } from "./progressbar/progressbar.component";
+import { ScrollComponent } from "./scroll/scroll.component";
+import { SliderComponent } from "./slider/slider.component";
+import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { TabbarComponent } from "./tabbar/tabbar.component";
+import { ToastComponent } from "./toast/toast.component";
 
 const appRoutes: Routes = [
   {
-    path: 'card',
+    path: "card",
     component: CardComponent
   },
   {
-    path: 'calendar',
+    path: "calendar",
     component: CalendarComponent
   },
   {
-    path: 'carousel',
+    path: "carousel",
     component: CarouselComponent
   },
   {
-    path: 'datepicker',
+    path: "datepicker",
     component: DatepickerComponent
   },
   {
-    path: 'dialog',
+    path: "dialog",
     component: DialogComponent
   },
   {
-    path: 'layout',
+    path: "layout",
     component: LayoutComponent
   },
   {
-    path: 'list',
+    path: "list",
     component: ListComponent
   },
   {
-    path: 'list-sample-1',
+    path: "list-sample-1",
     component: ListSample1Component
   },
   {
-    path: 'list-sample-2',
+    path: "list-sample-2",
     component: ListSample2Component
   },
   {
-    path: 'list-sample-3',
+    path: "list-sample-3",
     component: ListSample3Component
   },
   {
-    path: 'list-sample-4',
+    path: "list-sample-4",
     component: ListSample4Component
   },
   {
-    path: 'navigation-drawer',
+    path: "navigation-drawer",
     component: NavdrawerComponent
   },
   {
-    path: 'grid',
+    path: "grid",
     component: GridComponent
   },
   {
-    path: 'snackbar',
+    path: "snackbar",
     component: SnackbarComponent
   },
   {
-    path: 'avatar',
+    path: "avatar",
     component: AvatarComponent
   },
   {
-    path: 'badge',
+    path: "badge",
     component: BadgeComponent
   },
   {
-    path: 'form-elements',
+    path: "form-elements",
     component: FormElementsComponent
   },
   {
-    path: 'toast',
+    path: "toast",
     component: ToastComponent
   },
   {
-    path: 'slider',
+    path: "slider",
     component: SliderComponent
   },
   {
-    path: 'progressbar',
+    path: "progressbar",
     component: ProgressbarComponent
   },
   {
-    path: 'tabbar',
+    path: "tabbar",
     component: TabbarComponent
   },
   {
-    path: 'navbar',
+    path: "navbar",
     component: NavbarComponent
   },
   {
-    path: 'scroll',
+    path: "scroll",
     component: ScrollComponent
   },
   {
-    path: 'buttons',
+    path: "buttons",
     component: ButtonsComponent
   }
 ];

@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ButtonGroupAlignment } from 'igniteui-js-blocks/main';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { ButtonGroupAlignment } from "igniteui-js-blocks/main";
 
 interface IButton {
   ripple?: string;
@@ -23,21 +23,21 @@ class Button {
   private icon: string;
 
   constructor(obj?: IButton) {
-      this.ripple = obj.ripple || 'gray';
+      this.ripple = obj.ripple || "gray";
       this.label = obj.label;
       this.selected = obj.selected || false;
       this.togglable = obj.togglable;
       this.disabled = obj.disabled || false;
       this.color = obj.color;
-      this.bgcolor = obj.bgcolor || 'white';
+      this.bgcolor = obj.bgcolor || "white";
       this.icon = obj.icon;
   }
 }
 
 @Component({
-  selector: 'app-buttons',
-  templateUrl: './buttons.component.html',
-  styleUrls: ['./buttons.component.css'],
+  selector: "app-buttons",
+  templateUrl: "./buttons.component.html",
+  styleUrls: ["./buttons.component.css"],
   encapsulation: ViewEncapsulation.None
 })
 export class ButtonsComponent implements OnInit {
@@ -50,92 +50,92 @@ export class ButtonsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.alignOptions = [
       new Button({
           disabled: false,
-          icon: 'format_align_left',
+          icon: "format_align_left",
           selected: false
       }),
       new Button({
           disabled: false,
-          icon: 'format_align_center',
+          icon: "format_align_center",
           selected: true
       }),
       new Button({
           disabled: false,
-          icon: 'format_align_right',
+          icon: "format_align_right",
           selected: false
       }),
       new Button({
           disabled: false,
-          icon: 'format_align_justify',
+          icon: "format_align_justify",
           selected: true
       })
   ];
 
-  this.fontOptions = [
+    this.fontOptions = [
       new Button({
           disabled: false,
-          icon: 'format_bold',
+          icon: "format_bold",
           selected: false
       }),
       new Button({
           disabled: false,
-          icon: 'format_italic',
+          icon: "format_italic",
           selected: true,
           togglable: false
       }),
       new Button({
           disabled: false,
-          icon: 'format_underlined',
+          icon: "format_underlined",
           selected: false
       })
   ];
 
-  this.cities = [
+    this.cities = [
       new Button({
           disabled: false,
-          label: 'Sofia',
+          label: "Sofia",
           selected: false,
           togglable: false
       }),
       new Button({
           disabled: false,
-          label: 'London',
+          label: "London",
           selected: false
       }),
       new Button({
           disabled: false,
-          label: 'New York',
+          label: "New York",
           selected: false
       }),
       new Button({
           disabled: true,
-          label: 'Tokyo',
+          label: "Tokyo",
           selected: false
       })
   ];
 
-  this.borders = [
+    this.borders = [
       new Button({
           disabled: false,
-          icon: 'border_top',
+          icon: "border_top",
           selected: true
       }),
       new Button({
           disabled: false,
-          icon: 'border_right',
+          icon: "border_right",
           selected: false
       }),
       new Button({
           disabled: false,
-          icon: 'border_bottom',
+          icon: "border_bottom",
           selected: false
       }),
       new Button({
           disabled: false,
-          icon: 'border_left',
+          icon: "border_left",
           selected: false
       })
   ];

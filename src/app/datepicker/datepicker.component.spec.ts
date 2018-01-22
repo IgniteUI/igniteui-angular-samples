@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DatepickerComponent } from './datepicker.component';
+import { DatepickerComponent } from "./datepicker.component";
 
-describe('DatepickerComponent', () => {
+describe("DatepickerComponent", () => {
   let component: DatepickerComponent;
   let fixture: ComponentFixture<DatepickerComponent>;
 
@@ -19,7 +19,7 @@ describe('DatepickerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
