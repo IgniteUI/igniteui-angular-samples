@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-form-elements",
-  templateUrl: "./form-elements.component.html",
   styleUrls: ["./form-elements.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./form-elements.component.html"
 })
 export class FormElementsComponent implements OnInit {
 

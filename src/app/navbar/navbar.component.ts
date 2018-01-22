@@ -4,10 +4,10 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 const CURRENT_VIEW = "Ignite UI JS Blocks";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "app-navbar",
-    templateUrl: "./navbar.component.html",
     styleUrls: ["./navbar.component.css"],
-    encapsulation: ViewEncapsulation.None
+    templateUrl: "./navbar.component.html"
 })
 export class NavbarComponent implements OnInit {
 

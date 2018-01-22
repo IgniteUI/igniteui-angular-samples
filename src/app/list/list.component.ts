@@ -2,10 +2,10 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { IgxFilterOptions } from "igniteui-js-blocks/main";
 
 @Component({
-  selector: "app-list",
-  templateUrl: "./list.component.html",
-  styleUrls: ["./list.component.css"],
-  encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    selector: "app-list",
+    styleUrls: ["./list.component.css"],
+    templateUrl: "./list.component.html"
 })
 export class ListComponent implements OnInit {
 

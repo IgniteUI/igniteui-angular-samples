@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-contact-list",
-  templateUrl: "./list-sample-3.component.html",
-  styleUrls: ["./list-sample-3.component.css"]
+  styleUrls: ["./list-sample-3.component.css"],
+  templateUrl: "./list-sample-3.component.html"
 })
 export class ListSample3Component implements OnInit {
   public contacts = [

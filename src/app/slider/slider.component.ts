@@ -9,10 +9,10 @@ class Task {
     }
 }
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "app-slider",
-    templateUrl: "./slider.component.html",
     styleUrls: ["./slider.component.css"],
-    encapsulation: ViewEncapsulation.None
+    templateUrl: "./slider.component.html"
 })
 export class SliderComponent implements OnInit {
     public sliderType: SliderType = SliderType.RANGE;
@@ -24,6 +24,8 @@ export class SliderComponent implements OnInit {
 
     public task: Task = new Task("Slider Title", 30);
 
+    constructor() { }
+
     public updateTask(event) {
         if (!isNaN(parseInt(event.value, 10))) {
             this.task.percentCompleted = event.value;
@@ -31,8 +33,6 @@ export class SliderComponent implements OnInit {
             event.value = this.task.percentCompleted;
         }
     }
-
-    constructor() { }
 
     public ngOnInit() {
     }

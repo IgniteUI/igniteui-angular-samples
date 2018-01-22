@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { NavigationDrawer } from "igniteui-js-blocks/main";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-navdrawer",
-  templateUrl: "./navdrawer.component.html",
   styleUrls: ["./navdrawer.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./navdrawer.component.html"
 })
 export class NavdrawerComponent implements OnInit {
 

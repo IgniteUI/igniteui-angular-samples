@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-badge",
-  templateUrl: "./badge.component.html",
   styleUrls: ["./badge.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./badge.component.html"
 })
 export class BadgeComponent implements OnInit {
 

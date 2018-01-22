@@ -63,6 +63,7 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     CardComponent,
@@ -125,7 +126,6 @@ import { ToastComponent } from "./toast/toast.component";
     IgxScrollModule,
     HttpClientModule
   ],
-  providers: [DataService],
-  bootstrap: [AppComponent]
+  providers: [DataService]
 })
 export class AppModule {}

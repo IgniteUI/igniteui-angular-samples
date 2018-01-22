@@ -9,10 +9,10 @@ import {
 import { Router, RouterModule } from "@angular/router";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "app-tabbar",
-    templateUrl: "./tabbar.component.html",
     styleUrls: ["./tabbar.component.css"],
-    encapsulation: ViewEncapsulation.None
+    templateUrl: "./tabbar.component.html"
 })
 export class TabbarComponent implements AfterViewInit {
     @ViewChildren("tabbarEl") public tabbar: QueryList<ElementRef>;

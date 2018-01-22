@@ -20,11 +20,11 @@ import { athletesData } from "./services/data";
 import { DataService } from "./services/data.service";
 
 @Component({
-  selector: "app-grid",
-  templateUrl: "./grid.component.html",
-  styleUrls: ["./grid.component.css"],
+  encapsulation: ViewEncapsulation.None,
   providers: [DataService],
-  encapsulation: ViewEncapsulation.None
+  selector: "app-grid",
+  styleUrls: ["./grid.component.css"],
+  templateUrl: "./grid.component.html"
 })
 export class GridComponent implements OnInit, AfterViewInit {
 
@@ -59,6 +59,53 @@ export class GridComponent implements OnInit, AfterViewInit {
     this.SortByTrackProgress();
   }
 
+  public ngAfterViewInit() {
+    this.applyAlternateStyling();
+    this.windowWidth = (window.innerWidth);
+  }
+
+  @HostListener("window:resize", ["$event"])
+  public onResize(event) {
+    this.windowWidth = (event.target.innerWidth);
+  }
+
+  public doGlobalFiltering(event) {
+    const search = event.target.value;
+
+    this.grid1.columns.forEach((col) => {
+      if (col.field === "CountryName") {
+        this.grid1.filterData(search, col);
+      }
+    });
+    this.applyAlternateStyling();
+  }
+
+  public doSwitch(evt) {
+    this.live = evt.target.checked ? true : false;
+  }
+
+  public applyAlternateStyling() {
+    requestAnimationFrame(() => {
+      const rowElements: HTMLElement[] = Array.from(document.querySelectorAll("#igx-grid-1 tbody tr")) as HTMLElement[];
+
+      rowElements.forEach((tr, rowIndex) => {
+        tr.style.backgroundColor = "";
+        if (rowIndex % 2 === 0) {
+          tr.style.backgroundColor = "#F5F5F5";
+        }
+        if (parseInt(tr.querySelector(".rowIndex").textContent, 10) < 4) {
+          tr.style.backgroundColor = "#FCF1FB";
+        }
+      });
+    });
+  }
+
+  public sortRank(event) {
+    if (event.column.field === "Id" && event.direction === 0) {
+      this.grid1.sortColumn(event.column, SortingDirection.Asc);
+    }
+  }
+
   private ticker() {
     this.zone.runOutsideAngular(() => {
       this.updateData();
@@ -75,59 +122,8 @@ export class GridComponent implements OnInit, AfterViewInit {
     };
   }
 
-  public ngAfterViewInit() {
-    this.applyAlternateStyling();
-    this.windowWidth = (window.innerWidth);
-  }
-
-  @HostListener("window:resize", ["$event"])
-  public onResize(event) {
-    this.windowWidth = (event.target.innerWidth);
-  }
-
   private getRandomNumber(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  public doGlobalFiltering(event) {
-    const search = event.target.value;
-
-    this.grid1.columns.forEach((col) => {
-      if (col.field === "CountryName") {
-        this.grid1.filterData(search, col);
-      }
-    });
-    this.applyAlternateStyling();
-  }
-
-  public doSwitch(evt) {
-    if (evt.target.checked) {
-      this.live = true;
-    } else {
-      this.live = false;
-    }
-  }
-
-  public applyAlternateStyling() {
-    requestAnimationFrame(() => {
-      const rowElements: HTMLElement[] = Array.from(document.querySelectorAll("#igx-grid-1 tbody tr")) as HTMLElement[];
-
-      rowElements.forEach(function(tr) {
-        tr.style.backgroundColor = "";
-        if (arguments[1] % 2 === 0) {
-          tr.style.backgroundColor = "#F5F5F5";
-        }
-        if (parseInt(tr.querySelector(".rowIndex").textContent, 10) < 4) {
-          tr.style.backgroundColor = "#FCF1FB";
-        }
-      });
-    });
-  }
-
-  public sortRank(event) {
-    if (event.column.field === "Id" && event.direction === 0) {
-      this.grid1.sortColumn(event.column, SortingDirection.Asc);
-    }
   }
 
   private updateData() {

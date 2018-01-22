@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-calendar",
-  templateUrl: "./calendar.component.html",
   styleUrls: ["./calendar.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./calendar.component.html"
 })
 export class CalendarComponent implements OnInit {
 

@@ -27,105 +27,105 @@ import { ToastComponent } from "./toast/toast.component";
 
 const appRoutes: Routes = [
   {
-    path: "card",
-    component: CardComponent
+    component: CardComponent,
+    path: "card"
   },
   {
-    path: "calendar",
-    component: CalendarComponent
+    component: CalendarComponent,
+    path: "calendar"
   },
   {
-    path: "carousel",
-    component: CarouselComponent
+    component: CarouselComponent,
+    path: "carousel"
   },
   {
-    path: "datepicker",
-    component: DatepickerComponent
+    component: DatepickerComponent,
+    path: "datepicker"
   },
   {
-    path: "dialog",
-    component: DialogComponent
+    component: DialogComponent,
+    path: "dialog"
   },
   {
-    path: "layout",
-    component: LayoutComponent
+    component: LayoutComponent,
+    path: "layout"
   },
   {
-    path: "list",
-    component: ListComponent
+    component: ListComponent,
+    path: "list"
   },
   {
-    path: "list-sample-1",
-    component: ListSample1Component
+    component: ListSample1Component,
+    path: "list-sample-1"
   },
   {
-    path: "list-sample-2",
-    component: ListSample2Component
+    component: ListSample2Component,
+    path: "list-sample-2"
   },
   {
-    path: "list-sample-3",
-    component: ListSample3Component
+    component: ListSample3Component,
+    path: "list-sample-3"
   },
   {
-    path: "list-sample-4",
-    component: ListSample4Component
+    component: ListSample4Component,
+    path: "list-sample-4"
   },
   {
-    path: "navigation-drawer",
-    component: NavdrawerComponent
+    component: NavdrawerComponent,
+    path: "navigation-drawer"
   },
   {
-    path: "grid",
-    component: GridComponent
+    component: GridComponent,
+    path: "grid"
   },
   {
-    path: "snackbar",
-    component: SnackbarComponent
+    component: SnackbarComponent,
+    path: "snackbar"
   },
   {
-    path: "avatar",
-    component: AvatarComponent
+    component: AvatarComponent,
+    path: "avatar"
   },
   {
-    path: "badge",
-    component: BadgeComponent
+    component: BadgeComponent,
+    path: "badge"
   },
   {
-    path: "form-elements",
-    component: FormElementsComponent
+    component: FormElementsComponent,
+    path: "form-elements"
   },
   {
-    path: "toast",
-    component: ToastComponent
+    component: ToastComponent,
+    path: "toast"
   },
   {
-    path: "slider",
-    component: SliderComponent
+    component: SliderComponent,
+    path: "slider"
   },
   {
-    path: "progressbar",
-    component: ProgressbarComponent
+    component: ProgressbarComponent,
+    path: "progressbar"
   },
   {
-    path: "tabbar",
-    component: TabbarComponent
+    component: TabbarComponent,
+    path: "tabbar"
   },
   {
-    path: "navbar",
-    component: NavbarComponent
+    component: NavbarComponent,
+    path: "navbar"
   },
   {
-    path: "scroll",
-    component: ScrollComponent
+    component: ScrollComponent,
+    path: "scroll"
   },
   {
-    path: "buttons",
-    component: ButtonsComponent
+    component: ButtonsComponent,
+    path: "buttons"
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(appRoutes)]
 })
 export class AppRoutingModule {}

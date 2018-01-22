@@ -32,10 +32,10 @@ class Card {
 }
 
 @Component({
-  selector: "app-card",
-  templateUrl: "./card.component.html",
-  styleUrls: ["./card.component.css"],
-  encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    selector: "app-card",
+    styleUrls: ["./card.component.css"],
+    templateUrl: "./card.component.html"
 })
 export class CardComponent implements OnInit {
 

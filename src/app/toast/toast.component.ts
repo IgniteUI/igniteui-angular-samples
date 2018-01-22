@@ -2,10 +2,10 @@ import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
 import { IgxToastPosition } from "igniteui-js-blocks/main";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "app-toast",
-    templateUrl: "./toast.component.html",
     styleUrls: ["./toast.component.css"],
-    encapsulation: ViewEncapsulation.None
+    templateUrl: "./toast.component.html"
 })
 export class ToastComponent implements OnInit {
 

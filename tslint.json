@@ -7,8 +7,9 @@
 	  "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
     "no-empty": false,
 		"no-bitwise": false,
-		"no-submodule-imports": [true, "rxjs", "@angular/platform-browser", "@angular/core/testing"],
+		"no-submodule-imports": [false],
 	  "max-classes-per-file": [false],
-		"prefer-object-spread": false
+    "prefer-object-spread": false,
+    "no-console": false
   }
 }

@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-avatar",
-  templateUrl: "./avatar.component.html",
   styleUrls: ["./avatar.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./avatar.component.html"
 })
 export class AvatarComponent implements OnInit {
 

@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-dialog",
-  templateUrl: "./dialog.component.html",
   styleUrls: ["./dialog.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./dialog.component.html"
 })
 export class DialogComponent implements OnInit {
 

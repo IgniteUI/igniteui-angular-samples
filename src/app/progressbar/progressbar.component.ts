@@ -2,10 +2,10 @@ import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from "@
 import { IgxCircularProgressBar, IgxLinearProgressBar } from "igniteui-js-blocks/main";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "app-progressbar",
-    templateUrl: "./progressbar.component.html",
     styleUrls: ["./progressbar.component.css"],
-    encapsulation: ViewEncapsulation.None
+    templateUrl: "./progressbar.component.html"
 })
 export class ProgressbarComponent implements OnInit {
 
@@ -21,10 +21,6 @@ export class ProgressbarComponent implements OnInit {
 
     constructor() {
         this.currentValue = 0;
-    }
-
-    private randomIntFromInterval(min: number, max: number) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     public changeIcon() {
@@ -49,6 +45,10 @@ export class ProgressbarComponent implements OnInit {
     }
 
     public ngOnInit() {
+    }
+
+    private randomIntFromInterval(min: number, max: number) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
 }

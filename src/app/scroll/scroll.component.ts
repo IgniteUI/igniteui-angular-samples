@@ -9,10 +9,10 @@ class ListItem {
 }
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "app-scroll",
-    templateUrl: "./scroll.component.html",
     styleUrls: ["./scroll.component.css"],
-    encapsulation: ViewEncapsulation.None
+    templateUrl: "./scroll.component.html"
 })
 export class ScrollComponent implements OnInit {
     public items: ListItem[] = [];

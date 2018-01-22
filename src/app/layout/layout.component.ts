@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-layout",
-  templateUrl: "./layout.component.html",
   styleUrls: ["./layout.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./layout.component.html"
 })
 export class LayoutComponent implements OnInit {
 

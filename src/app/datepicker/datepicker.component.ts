@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-datepicker",
-  templateUrl: "./datepicker.component.html",
   styleUrls: ["./datepicker.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./datepicker.component.html"
 })
 export class DatepickerComponent implements OnInit {
 
@@ -13,10 +13,12 @@ export class DatepickerComponent implements OnInit {
   private dayFormatter = new Intl.DateTimeFormat("en", { weekday: "long"});
   private monthFormatter = new Intl.DateTimeFormat("en", { month: "long"});
 
+  constructor() { }
+
   public formatter = (_: Date) => {
+      // tslint:disable-next-line:max-line-length
       return `You selected ${this.dayFormatter.format(_)}, ${_.getDate()} ${this.monthFormatter.format(_)}, ${_.getFullYear()}`;
   }
-  constructor() { }
 
   public ngOnInit() {
   }

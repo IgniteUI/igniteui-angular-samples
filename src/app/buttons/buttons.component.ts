@@ -35,10 +35,10 @@ class Button {
 }
 
 @Component({
-  selector: "app-buttons",
-  templateUrl: "./buttons.component.html",
-  styleUrls: ["./buttons.component.css"],
-  encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    selector: "app-buttons",
+    styleUrls: ["./buttons.component.css"],
+    templateUrl: "./buttons.component.html"
 })
 export class ButtonsComponent implements OnInit {
   public multi = true;

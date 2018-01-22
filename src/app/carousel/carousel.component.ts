@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-carousel",
-  templateUrl: "./carousel.component.html",
   styleUrls: ["./carousel.component.css"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./carousel.component.html"
 })
 export class CarouselComponent implements OnInit {
 

@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxSnackbar } from "igniteui-js-blocks/main";
 
 @Component({
-  selector: "app-snackbar",
-  templateUrl: "./snackbar.component.html",
-  styleUrls: ["./snackbar.component.css"],
-  encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    selector: "app-snackbar",
+    styleUrls: ["./snackbar.component.css"],
+    templateUrl: "./snackbar.component.html"
 })
 export class SnackbarComponent implements OnInit {
 
