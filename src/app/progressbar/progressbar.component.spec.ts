@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ProgressbarComponent } from './progressbar.component';
+import { ProgressbarComponent } from "./progressbar.component";
 
-describe('ProgressbarComponent', () => {
+describe("ProgressbarComponent", () => {
   let component: ProgressbarComponent;
   let fixture: ComponentFixture<ProgressbarComponent>;
 
@@ -19,7 +19,7 @@ describe('ProgressbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

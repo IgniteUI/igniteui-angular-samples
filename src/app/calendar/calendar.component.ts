@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
-  selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  selector: "app-calendar",
+  styleUrls: ["./calendar.component.css"],
+  templateUrl: "./calendar.component.html"
 })
 export class CalendarComponent implements OnInit {
 
@@ -12,7 +12,7 @@ export class CalendarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.val = new Date(Date.now());
   }
 

@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  selector: "app-dialog",
+  styleUrls: ["./dialog.component.css"],
+  templateUrl: "./dialog.component.html"
 })
 export class DialogComponent implements OnInit {
 
@@ -13,7 +13,7 @@ export class DialogComponent implements OnInit {
   public onDialogOKSelected(event) {
     event.dialog.close();
   }
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }

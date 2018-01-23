@@ -1,58 +1,58 @@
-import { Component, OnInit } from '@angular/core';
-import { IgxFilterOptions, IgxListItem } from 'igniteui-js-blocks/main';
+import { Component, OnInit } from "@angular/core";
+import { IgxFilterOptions, IgxListItem } from "igniteui-js-blocks/main";
 @Component({
-  selector: 'app-contact-list2',
-  templateUrl: './list-sample-4.component.html',
-  styleUrls: ['./list-sample-4.component.css']
+  selector: "app-contact-list2",
+  styleUrls: ["./list-sample-4.component.css"],
+  templateUrl: "./list-sample-4.component.html"
 })
 export class ListSample4Component implements OnInit {
   public searchContact: string;
 
   public contacts = [
     {
-      name: 'Terrance Orta',
-      phone: '770-504-2217',
-      photo: 'https://randomuser.me/api/portraits/men/27.jpg',
-      isFavorite: false
+      isFavorite: false,
+      name: "Terrance Orta",
+      phone: "770-504-2217",
+      photo: "https://randomuser.me/api/portraits/men/27.jpg"
     },
     {
-      name: 'Richard Mahoney',
-      phone: '423-676-2869',
-      photo: 'https://randomuser.me/api/portraits/men/1.jpg',
-      isFavorite: true
+      isFavorite: true,
+      name: "Richard Mahoney",
+      phone: "423-676-2869",
+      photo: "https://randomuser.me/api/portraits/men/1.jpg"
     },
     {
-      name: 'Donna Price',
-      phone: '859-496-2817',
-      photo: 'https://randomuser.me/api/portraits/women/50.jpg',
-      isFavorite: false
+      isFavorite: false,
+      name: "Donna Price",
+      phone: "859-496-2817",
+      photo: "https://randomuser.me/api/portraits/women/50.jpg"
     },
     {
-      name: 'Lisa Landers',
-      phone: '901-747-3428',
-      photo: 'https://randomuser.me/api/portraits/women/3.jpg',
-      isFavorite: false
+      isFavorite: false,
+      name: "Lisa Landers",
+      phone: "901-747-3428",
+      photo: "https://randomuser.me/api/portraits/women/3.jpg"
     },
     {
-      name: 'Dorothy H. Spencer',
-      phone: '573-394-9254',
-      photo: 'https://randomuser.me/api/portraits/women/67.jpg',
-      isFavorite: true
+      isFavorite: true,
+      name: "Dorothy H. Spencer",
+      phone: "573-394-9254",
+      photo: "https://randomuser.me/api/portraits/women/67.jpg"
     }
   ];
 
   constructor() { }
 
-  ngOnInit() { }
+  public ngOnInit() { }
 
-  toggleFavorite(item: IgxListItem) {
+  public toggleFavorite(item: IgxListItem) {
     const contact = this.contacts[item.index - 1];
     contact.isFavorite = !contact.isFavorite;
   }
 
   get filterContacts() {
     const fo = new IgxFilterOptions();
-    fo.key = 'name';
+    fo.key = "name";
     fo.inputValue = this.searchContact;
     return fo;
   }
