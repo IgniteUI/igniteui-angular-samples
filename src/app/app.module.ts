@@ -95,7 +95,7 @@ import { ToastComponent } from "./toast/toast.component";
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    IgxGridModule,
+    IgxGridModule.forRoot(),
     IgxCarouselModule,
     IgxInput,
     IgxLayout,

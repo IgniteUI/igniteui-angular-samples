@@ -58,7 +58,7 @@
             <span style="padding-left: 30px; width: 100%;">Athlete</span>
           </ng-template>
         </igx-column>
-        <igx-column [field]="'Name'" [sortable]="false" [header]="' '" [filtering]="true"></igx-column>
+        <igx-column [field]="'Name'" [sortable]="false" [header]="' '" [filterable]="true"></igx-column>
         <igx-column [field]="'AthleteNumber'" [sortable]="false" [header]="'Athlete number'" [hidden]="windowWidth < 785">
           <ng-template igxCell let-col="column" let-item="item">
             <span class="cellAlignSyle">{{item}}</span>

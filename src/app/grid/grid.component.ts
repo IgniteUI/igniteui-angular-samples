@@ -1,13 +1,11 @@
 import { AfterViewInit, Component, HostListener, NgZone, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
+import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import {
   DataContainer,
   IDataState,
   IgxAvatar,
   IgxBadge,
-  IgxGridColumnInitEvent,
-  IgxGridComponent,
-  IgxGridSortEvent,
   IgxProgressBarModule,
   IPagingState,
   PagingError,
@@ -56,7 +54,6 @@ export class GridComponent implements OnInit, AfterViewInit {
     this.live = true;
     this.showBadges = false;
     this.disabled = false;
-    this.SortByTrackProgress();
   }
 
   public ngAfterViewInit() {
@@ -74,7 +71,7 @@ export class GridComponent implements OnInit, AfterViewInit {
 
     this.grid1.columns.forEach((col) => {
       if (col.field === "CountryName") {
-        this.grid1.filterData(search, col);
+        this.grid1.filter(search, col);
       }
     });
     this.applyAlternateStyling();
@@ -102,7 +99,7 @@ export class GridComponent implements OnInit, AfterViewInit {
 
   public sortRank(event) {
     if (event.column.field === "Id" && event.direction === 0) {
-      this.grid1.sortColumn(event.column, SortingDirection.Asc);
+      this.grid1.sort(event.column, SortingDirection.Asc);
     }
   }
 
@@ -111,15 +108,6 @@ export class GridComponent implements OnInit, AfterViewInit {
       this.updateData();
       this.zone.run(() => {});
     });
-  }
-
-  private SortByTrackProgress() {
-    this.grid1.state = {
-      sorting: {
-        expressions: [],
-        strategy: new StableSortingStrategy()
-      }
-    };
   }
 
   private getRandomNumber(max, min) {
