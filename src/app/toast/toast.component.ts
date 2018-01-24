@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
-import { IgxToastPosition } from "igniteui-js-blocks/main";
+import { IgxToastPosition } from "igniteui-angular/main";
 
 @Component({
     encapsulation: ViewEncapsulation.None,

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { ButtonGroupAlignment } from "igniteui-js-blocks/main";
+import { ButtonGroupAlignment } from "igniteui-angular/main";
 
 interface IButton {
   ripple?: string;

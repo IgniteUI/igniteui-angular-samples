@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IgxFilterOptions, IgxListItem } from "igniteui-js-blocks/main";
+import { IgxFilterOptions, IgxListItem } from "igniteui-angular/main";
 @Component({
   selector: "app-contact-list2",
   styleUrls: ["./list-sample-4.component.css"],

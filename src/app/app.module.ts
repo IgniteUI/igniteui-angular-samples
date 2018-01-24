@@ -31,7 +31,7 @@ import {
   IgxTabBarModule,
   IgxToastModule,
   NavigationDrawerModule
-} from "igniteui-js-blocks/main";
+} from "igniteui-angular/main";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -95,7 +95,7 @@ import { ToastComponent } from "./toast/toast.component";
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    IgxGridModule,
+    IgxGridModule.forRoot(),
     IgxCarouselModule,
     IgxInput,
     IgxLayout,
