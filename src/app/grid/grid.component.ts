@@ -1,17 +1,14 @@
-import { AfterViewInit, Component, HostListener, NgZone, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import {
-  DataContainer,
-  IDataState,
-  IgxAvatar,
-  IgxBadge,
-  IgxProgressBarModule,
-  IPagingState,
-  PagingError,
-  SortingDirection,
-  StableSortingStrategy
-} from "igniteui-angular/main";
+  AfterViewInit,
+  Component,
+  HostListener,
+  NgZone,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation
+} from "@angular/core";
+import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { timer } from "rxjs/observable/timer";
 import { Subject } from "rxjs/Subject";
 import { athletesData } from "./services/data";
@@ -19,7 +16,6 @@ import { DataService } from "./services/data.service";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
-  providers: [DataService],
   selector: "app-grid",
   styleUrls: ["./grid.component.css"],
   templateUrl: "./grid.component.html"
@@ -33,8 +29,11 @@ export class GridComponent implements OnInit, AfterViewInit {
   public disabled: boolean;
   public windowWidth: any;
 
-  @ViewChild("grid1") public grid1: IgxGridComponent;
-  @ViewChild("showBadges") public showBadges: boolean;
+  @ViewChild("grid1", { read: IgxGridComponent })
+  public grid1: IgxGridComponent;
+
+  @ViewChild("pager", { read: TemplateRef })
+  public pager: TemplateRef<any>;
 
   constructor(private zone: NgZone, private dataService: DataService) {
   }
@@ -45,19 +44,27 @@ export class GridComponent implements OnInit, AfterViewInit {
     this.timer = new Subject().pipe(() => timer(0, 3000));
     this.timerSubscription = this.timer.subscribe((tick) => {
       if (this.live) {
-        if (tick === 1) {
-          this.showBadges = true;
-        }
         this.ticker();
       }
     });
     this.live = true;
-    this.showBadges = false;
     this.disabled = false;
   }
 
+  public isTop3(cell): boolean {
+    if ([1, 2, 3].includes(cell.value)) {
+      cell.nativeElement.parentElement.classList.add("top3");
+      return true;
+    }
+  }
+
+  public getPositionDelta(cell) {
+    return cell.row.rowData.Position;
+  }
+
   public ngAfterViewInit() {
-    this.applyAlternateStyling();
+    this.grid1.paginationTemplate = this.pager;
+    this.grid1.perPage = 6;
     this.windowWidth = (window.innerWidth);
   }
 
@@ -68,39 +75,11 @@ export class GridComponent implements OnInit, AfterViewInit {
 
   public doGlobalFiltering(event) {
     const search = event.target.value;
-
-    this.grid1.columns.forEach((col) => {
-      if (col.field === "CountryName") {
-        this.grid1.filter(search, col);
-      }
-    });
-    this.applyAlternateStyling();
-  }
+    this.grid1.filter("CountryName", search);
+    }
 
   public doSwitch(evt) {
     this.live = evt.target.checked ? true : false;
-  }
-
-  public applyAlternateStyling() {
-    requestAnimationFrame(() => {
-      const rowElements: HTMLElement[] = Array.from(document.querySelectorAll("#igx-grid-1 tbody tr")) as HTMLElement[];
-
-      rowElements.forEach((tr, rowIndex) => {
-        tr.style.backgroundColor = "";
-        if (rowIndex % 2 === 0) {
-          tr.style.backgroundColor = "#F5F5F5";
-        }
-        if (parseInt(tr.querySelector(".rowIndex").textContent, 10) < 4) {
-          tr.style.backgroundColor = "#FCF1FB";
-        }
-      });
-    });
-  }
-
-  public sortRank(event) {
-    if (event.column.field === "Id" && event.direction === 0) {
-      this.grid1.sort(event.column, SortingDirection.Asc);
-    }
   }
 
   private ticker() {
@@ -132,7 +111,7 @@ export class GridComponent implements OnInit, AfterViewInit {
           break;
       }
       rec.TrackProgress += newValue;
-      return rec;
+      return {...rec};
     };
 
     this.localData = this.localData
