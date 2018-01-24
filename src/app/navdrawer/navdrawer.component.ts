@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { NavigationDrawer } from "igniteui-js-blocks/main";
+import { NavigationDrawer } from "igniteui-angular/main";
 
 @Component({
   encapsulation: ViewEncapsulation.None,

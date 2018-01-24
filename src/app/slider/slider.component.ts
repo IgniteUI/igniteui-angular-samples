@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { SliderType } from "igniteui-js-blocks/main";
+import { SliderType } from "igniteui-angular/main";
 
 class Task {
     constructor(

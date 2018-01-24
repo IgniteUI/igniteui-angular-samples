@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { IgxScrollEvent } from "igniteui-js-blocks/main";
+import { IgxScrollEvent } from "igniteui-angular/main";
 
 class ListItem {
     constructor(

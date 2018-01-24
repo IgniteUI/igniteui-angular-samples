@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxSnackbar } from "igniteui-js-blocks/main";
+import { IgxSnackbar } from "igniteui-angular/main";
 
 @Component({
     encapsulation: ViewEncapsulation.None,

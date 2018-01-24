@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { IgxFilterOptions } from "igniteui-js-blocks/main";
+import { IgxFilterOptions } from "igniteui-angular/main";
 
 @Component({
     encapsulation: ViewEncapsulation.None,

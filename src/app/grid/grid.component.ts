@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, HostListener, NgZone, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-js-blocks/grid/column.component";
+import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import {
   DataContainer,
   IDataState,
@@ -13,7 +13,7 @@ import {
   PagingError,
   SortingDirection,
   StableSortingStrategy
-} from "igniteui-js-blocks/main";
+} from "igniteui-angular/main";
 import { timer } from "rxjs/observable/timer";
 import { Subject } from "rxjs/Subject";
 import { athletesData } from "./services/data";
