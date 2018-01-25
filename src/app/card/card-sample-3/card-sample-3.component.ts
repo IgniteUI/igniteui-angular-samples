@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-card-sample-3',
-  templateUrl: './card-sample-3.component.html',
-  styleUrls: ['./card-sample-3.component.css']
+  selector: "app-card-sample-3",
+  styleUrls: ["./card-sample-3.component.css"],
+  templateUrl: "./card-sample-3.component.html"
 })
 export class CardSample3Component implements OnInit {
 
-  public icons = ['add', 'star'];
+  public icons = ["add", "star"];
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }
