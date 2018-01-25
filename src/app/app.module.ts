@@ -103,7 +103,7 @@ import { ToastComponent } from "./toast/toast.component";
     SliderSample2Component,
     SliderSample3Component,
     SliderSample4Component,
-    SliderSample5Component
+    SliderSample5Component,
     CardSample1Component,
     CardSample2Component,
     CardSample3Component
