@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { SliderType } from 'igniteui-angular/main';
+import { Component, OnInit } from "@angular/core";
+import { SliderType } from "igniteui-angular/main";
 
 @Component({
-  selector: 'app-slider-sample-4',
-  templateUrl: './slider-sample-4.component.html',
-  styleUrls: ['./slider-sample-4.component.css'],
+  selector: "app-slider-sample-4",
+  styleUrls: ["./slider-sample-4.component.css"],
+  templateUrl: "./slider-sample-4.component.html"
 })
 export class SliderSample4Component implements OnInit {
-  sliderType = SliderType;
+  public sliderType = SliderType;
   public priceRange: PriceRange = new PriceRange(200, 800);
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }
@@ -20,8 +20,7 @@ export class SliderSample4Component implements OnInit {
 class PriceRange {
   constructor(
     public lower: number,
-    public upper: number,
+    public upper: number
   ) {
   }
 }
-

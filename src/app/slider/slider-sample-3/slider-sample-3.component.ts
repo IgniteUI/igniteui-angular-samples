@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-slider-sample-3',
-  templateUrl: './slider-sample-3.component.html',
-  styleUrls: ['./slider-sample-3.component.css'],
+  selector: "app-slider-sample-3",
+  styleUrls: ["./slider-sample-3.component.css"],
+  templateUrl: "./slider-sample-3.component.html"
 })
 export class SliderSample3Component implements OnInit {
   public task: Task = new Task(10);
 
-  updateTask(event) {
+  constructor() { }
+
+  public updateTask(event) {
     if (!isNaN(parseInt(event.value, 10))) {
       this.task.completion = event.value;
     } else {
@@ -16,9 +18,7 @@ export class SliderSample3Component implements OnInit {
     }
   }
 
-  constructor() { }
-
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }
