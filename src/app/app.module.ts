@@ -1,11 +1,11 @@
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
 import {
   IgxAvatarModule,
   IgxBadgeModule,
-  IgxButtonModule,
   IgxButtonGroupModule,
+  IgxButtonModule,
   IgxCalendarModule,
   IgxCardModule,
   IgxCarouselModule,
@@ -19,19 +19,19 @@ import {
   IgxLabelModule,
   IgxLayout,
   IgxListModule,
+  IgxNavbarModule,
   IgxNavigationDirectives,
   IgxProgressBarModule,
   IgxRadioModule,
   IgxRippleModule,
+  IgxScrollModule,
+  IgxSliderModule,
   IgxSnackbarModule,
   IgxSwitchModule,
-  NavigationDrawerModule,
-  IgxToastModule,
-  IgxSliderModule,
   IgxTabBarModule,
-  IgxNavbarModule,
-  IgxScrollModule
-} from 'igniteui-js-blocks/main';
+  IgxToastModule,
+  NavigationDrawerModule
+} from "igniteui-angular/main";
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
@@ -66,6 +66,7 @@ import { CardSample2Component } from './card/card-sample-2/card-sample-2.compone
 import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     CardComponent,
@@ -103,7 +104,7 @@ import { CardSample3Component } from './card/card-sample-3/card-sample-3.compone
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    IgxGridModule,
+    IgxGridModule.forRoot(),
     IgxCarouselModule,
     IgxInput,
     IgxLayout,
@@ -134,7 +135,6 @@ import { CardSample3Component } from './card/card-sample-3/card-sample-3.compone
     IgxScrollModule,
     HttpClientModule
   ],
-  providers: [DataService],
-  bootstrap: [AppComponent]
+  providers: [DataService]
 })
 export class AppModule {}

@@ -1,11 +1,18 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { IgxScrollEvent } from 'igniteui-js-blocks/main';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { IgxScrollEvent } from "igniteui-angular/main";
+
+class ListItem {
+    constructor(
+        public text: string,
+        public avatar: string
+    ) {}
+}
 
 @Component({
-    selector: 'app-scroll',
-    templateUrl: './scroll.component.html',
-    styleUrls: ['./scroll.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    selector: "app-scroll",
+    styleUrls: ["./scroll.component.css"],
+    templateUrl: "./scroll.component.html"
 })
 export class ScrollComponent implements OnInit {
     public items: ListItem[] = [];
@@ -23,17 +30,10 @@ export class ScrollComponent implements OnInit {
         this.visibleItems = this.items.slice(0, 10);
     }
 
-    ngOnInit() {
+    public ngOnInit() {
     }
 
     public updateList($event: IgxScrollEvent): void {
         this.visibleItems = this.items.slice($event.currentTop, $event.currentTop + this.visibleItemsCount);
     }
-}
-
-class ListItem {
-    constructor (
-        public text: string,
-        public avatar: string
-    ) {}
 }

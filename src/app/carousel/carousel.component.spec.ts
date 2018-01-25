@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { CarouselComponent } from './carousel.component';
+import { CarouselComponent } from "./carousel.component";
 
-describe('CarouselComponent', () => {
+describe("CarouselComponent", () => {
   let component: CarouselComponent;
   let fixture: ComponentFixture<CarouselComponent>;
 
@@ -19,7 +19,7 @@ describe('CarouselComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

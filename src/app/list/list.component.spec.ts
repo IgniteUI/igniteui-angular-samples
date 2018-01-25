@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ListComponent } from './list.component';
+import { ListComponent } from "./list.component";
 
-describe('ListComponent', () => {
+describe("ListComponent", () => {
   let component: ListComponent;
   let fixture: ComponentFixture<ListComponent>;
 
@@ -19,7 +19,7 @@ describe('ListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

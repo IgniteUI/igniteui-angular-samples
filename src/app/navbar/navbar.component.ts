@@ -1,13 +1,13 @@
-import { Location } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Location } from "@angular/common";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
-const CURRENT_VIEW = 'Ignite UI JS Blocks';
+const CURRENT_VIEW = "Ignite UI JS Blocks";
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    selector: "app-navbar",
+    styleUrls: ["./navbar.component.css"],
+    templateUrl: "./navbar.component.html"
 })
 export class NavbarComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
     constructor(private _location: Location) { }
 
-    ngOnInit() {
+    public ngOnInit() {
         this.currentView = CURRENT_VIEW;
     }
 

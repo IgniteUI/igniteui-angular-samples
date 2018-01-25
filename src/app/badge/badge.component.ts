@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
-  selector: 'app-badge',
-  templateUrl: './badge.component.html',
-  styleUrls: ['./badge.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  selector: "app-badge",
+  styleUrls: ["./badge.component.css"],
+  templateUrl: "./badge.component.html"
 })
 export class BadgeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }
