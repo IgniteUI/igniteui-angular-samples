@@ -4,6 +4,9 @@ import { AvatarComponent } from "./avatar/avatar.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CalendarComponent } from "./calendar/calendar.component";
+import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
+import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
+import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardComponent } from "./card/card.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
@@ -121,6 +124,18 @@ const appRoutes: Routes = [
   {
     component: ButtonsComponent,
     path: "buttons"
+  },
+  {
+    component: CardSample1Component,
+    path: "card-sample-1"
+  },
+  {
+    component: CardSample2Component,
+    path: "card-sample-2"
+  },
+  {
+    component: CardSample3Component,
+    path: "card-sample-3"
   }
 ];
 

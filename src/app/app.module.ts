@@ -40,6 +40,9 @@ import { AvatarComponent } from "./avatar/avatar.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CalendarComponent } from "./calendar/calendar.component";
+import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
+import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
+import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardComponent } from "./card/card.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
@@ -67,6 +70,9 @@ import { ToastComponent } from "./toast/toast.component";
   declarations: [
     AppComponent,
     CardComponent,
+    CardSample1Component,
+    CardSample2Component,
+    CardSample3Component,
     ListComponent,
     ListSample1Component,
     ListSample2Component,
@@ -89,7 +95,10 @@ import { ToastComponent } from "./toast/toast.component";
     TabbarComponent,
     NavbarComponent,
     ScrollComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    CardSample1Component,
+    CardSample2Component,
+    CardSample3Component
   ],
   imports: [
     AppRoutingModule,
