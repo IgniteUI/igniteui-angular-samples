@@ -24,6 +24,9 @@ import { ListSample1Component } from './list/list-sample-1/list-sample-1.compone
 import { ListSample2Component } from './list/list-sample-2/list-sample-2.component';
 import { ListSample3Component } from './list/list-sample-3/list-sample-3.component';
 import { ListSample4Component } from './list/list-sample-4/list-sample-4.component';
+import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
+import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
+import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
 
 const appRoutes: Routes = [
   {
@@ -121,6 +124,18 @@ const appRoutes: Routes = [
   {
     path: 'buttons',
     component: ButtonsComponent
+  },
+  {
+    path: 'card-sample-1',
+    component: CardSample1Component
+  },
+  {
+    path: 'card-sample-2',
+    component: CardSample2Component
+  },
+  {
+    path: 'card-sample-3',
+    component: CardSample3Component
   }
 ];
 

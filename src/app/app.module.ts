@@ -61,11 +61,17 @@ import { ListSample3Component } from './list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from './list/list-sample-4/list-sample-4.component';
 import { DataService } from './grid/services/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
+import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
+import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
+    CardSample1Component,
+    CardSample2Component,
+    CardSample3Component,
     ListComponent,
     ListSample1Component,
     ListSample2Component,
@@ -88,7 +94,10 @@ import { HttpClientModule } from '@angular/common/http';
     TabbarComponent,
     NavbarComponent,
     ScrollComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    CardSample1Component,
+    CardSample2Component,
+    CardSample3Component
   ],
   imports: [
     AppRoutingModule,
