@@ -24,6 +24,11 @@ import { SliderComponent } from "./slider/slider.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
+import { SliderSample1Component } from './slider/slider-sample-1/slider-sample-1.component';
+import { SliderSample2Component } from './slider/slider-sample-2/slider-sample-2.component';
+import { SliderSample3Component } from './slider/slider-sample-3/slider-sample-3.component';
+import { SliderSample4Component } from './slider/slider-sample-4/slider-sample-4.component';
+import { SliderSample5Component } from './slider/slider-sample-5/slider-sample-5.component';
 
 const appRoutes: Routes = [
   {
@@ -99,12 +104,28 @@ const appRoutes: Routes = [
     path: "toast"
   },
   {
-    component: SliderComponent,
-    path: "slider"
+    path: 'slider-sample-1',
+    component: SliderSample1Component
   },
   {
-    component: ProgressbarComponent,
-    path: "progressbar"
+    path: 'slider-sample-2',
+    component: SliderSample2Component
+  },
+  {
+    path: 'slider-sample-3',
+    component: SliderSample3Component
+  },
+  {
+    path: 'slider-sample-4',
+    component: SliderSample4Component
+  },
+  {
+    path: 'slider-sample-5',
+    component: SliderSample5Component
+  },
+  {
+    path: 'progressbar',
+    component: ProgressbarComponent
   },
   {
     component: TabbarComponent,

@@ -1,0 +1,13 @@
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.titleLabel
+{
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
