@@ -1,14 +1,8 @@
 .container {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-.lowerInput {
-    clear:both; 
-    float:left;
+    margin: 30px 20px;
 }
-.upperInput {
-    clear:none; 
-    float: right;
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }

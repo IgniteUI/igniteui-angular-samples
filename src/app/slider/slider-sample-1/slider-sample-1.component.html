@@ -1,14 +1,16 @@
 <div class="container">
-    <label igxLabel class="titleLabel">Price Range Filter</label>
+    <label igxLabel>Price Range Filter</label>
 </div>
 <div class="container">
     <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000" [lowerBound]="100" [upperBound]="900" [(ngModel)]="priceRange"></igx-slider>
-    <div class="lowerInput">
-      <label igxLabel for="lowerInput">Lower price:</label>
-      <input igxInput id="lowerInput" type="text" [ngModel]="priceRange.lower | currency" (blur)="updatePriceRange($event.target)" />
-    </div>
-    <div class="upperInput">
-      <label igxLabel for="upperInput">Upper price:</label>
-      <input igxInput id="upperInput" type="text" [ngModel]="priceRange.upper | currency" (blur)="updatePriceRange($event.target)" />
-    </div>
+    <div class="wrapper">
+      <div class="igx-form-group">
+        <input igxInput id="lowerInput" type="text" [ngModel]="priceRange.lower | currency" (blur)="updatePriceRange($event.target)" />
+        <label igxLabel for="lowerInput">Lower price:</label>
+      </div>
+      <div class="igx-form-group">
+        <input igxInput id="upperInput" type="text" [ngModel]="priceRange.upper | currency" (blur)="updatePriceRange($event.target)" />
+        <label igxLabel for="upperInput">Upper price:</label>
+      </div>
   </div>
+</div>
