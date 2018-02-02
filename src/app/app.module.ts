@@ -60,7 +60,11 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { ScrollComponent } from "./scroll/scroll.component";
-import { SliderComponent } from "./slider/slider.component";
+import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
+import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
+import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
+import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
+import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
@@ -90,12 +94,16 @@ import { ToastComponent } from "./toast/toast.component";
     LayoutComponent,
     NavdrawerComponent,
     ToastComponent,
-    SliderComponent,
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
     ScrollComponent,
     ButtonsComponent,
+    SliderSample1Component,
+    SliderSample2Component,
+    SliderSample3Component,
+    SliderSample4Component,
+    SliderSample5Component,
     CardSample1Component,
     CardSample2Component,
     CardSample3Component
