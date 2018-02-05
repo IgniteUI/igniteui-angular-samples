@@ -27,6 +27,7 @@ import { SliderComponent } from "./slider/slider.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
+import { LabelInputComponent } from "./label-input/label-input.component";
 
 const appRoutes: Routes = [
   {
@@ -136,6 +137,10 @@ const appRoutes: Routes = [
   {
     component: CardSample3Component,
     path: "card-sample-3"
+  },
+  {
+    component: LabelInputComponent,
+    path: "label-input"
   }
 ];
 

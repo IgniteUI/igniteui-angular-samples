@@ -64,6 +64,7 @@ import { SliderComponent } from "./slider/slider.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
+import { LabelInputComponent } from "./label-input/label-input.component";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -98,7 +99,8 @@ import { ToastComponent } from "./toast/toast.component";
     ButtonsComponent,
     CardSample1Component,
     CardSample2Component,
-    CardSample3Component
+    CardSample3Component,
+    LabelInputComponent
   ],
   imports: [
     AppRoutingModule,
