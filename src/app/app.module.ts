@@ -21,6 +21,7 @@ import {
   IgxListModule,
   IgxNavbarModule,
   IgxNavigationDirectives,
+  IgxNavigationDrawerModule,
   IgxProgressBarModule,
   IgxRadioModule,
   IgxRippleModule,
@@ -29,11 +30,11 @@ import {
   IgxSnackbarModule,
   IgxSwitchModule,
   IgxTabBarModule,
-  IgxToastModule,
-  NavigationDrawerModule
+  IgxToastModule
 } from "igniteui-angular/main";
 
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AvatarComponent } from "./avatar/avatar.component";
@@ -119,7 +120,7 @@ import { ToastComponent } from "./toast/toast.component";
     IgxRadioModule,
     IgxSwitchModule,
     IgxNavigationDirectives,
-    NavigationDrawerModule,
+    IgxNavigationDrawerModule,
     IgxProgressBarModule,
     IgxAvatarModule,
     IgxFilterModule,
@@ -141,8 +142,9 @@ import { ToastComponent } from "./toast/toast.component";
     IgxTabBarModule,
     IgxNavbarModule,
     IgxScrollModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [DataService]
 })
-export class AppModule {}
+export class AppModule { }
