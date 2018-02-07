@@ -1,8 +1,7 @@
-import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { IgxToastPosition } from "igniteui-angular/main";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-toast",
     styleUrls: ["./toast.component.css"],
     templateUrl: "./toast.component.html"
@@ -19,7 +18,7 @@ export class ToastComponent implements OnInit {
 
     public showToast(toast, position) {
         switch (position) {
-            case "middle" :
+            case "middle":
                 this.toastPosition = IgxToastPosition.Middle;
                 break;
             case "top":

@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-avatar",
   styleUrls: ["./avatar.component.css"],
   templateUrl: "./avatar.component.html"

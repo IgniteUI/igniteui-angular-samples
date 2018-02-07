@@ -3,13 +3,11 @@ import {
     Component,
     ElementRef,
     QueryList, Renderer2,
-    ViewChildren,
-    ViewEncapsulation
+    ViewChildren
 } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-tabbar",
     styleUrls: ["./tabbar.component.css"],
     templateUrl: "./tabbar.component.html"

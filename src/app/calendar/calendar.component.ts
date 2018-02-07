@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-calendar",
   styleUrls: ["./calendar.component.css"],
   templateUrl: "./calendar.component.html"

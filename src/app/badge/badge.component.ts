@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-badge",
   styleUrls: ["./badge.component.css"],
   templateUrl: "./badge.component.html"

@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { NavigationDrawer } from "igniteui-angular/main";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxNavigationDrawer } from "igniteui-angular/main";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-navdrawer",
   styleUrls: ["./navdrawer.component.css"],
   templateUrl: "./navdrawer.component.html"
@@ -11,7 +10,7 @@ export class NavdrawerComponent implements OnInit {
 
   public navItems: any[];
   public selected = "Avatar";
-  @ViewChild(NavigationDrawer) public drawer: NavigationDrawer;
+  @ViewChild(IgxNavigationDrawer) public drawer: IgxNavigationDrawer;
 
   constructor() { }
 

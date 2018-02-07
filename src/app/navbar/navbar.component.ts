@@ -1,10 +1,9 @@
 import { Location } from "@angular/common";
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 const CURRENT_VIEW = "Ignite UI JS Blocks";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-navbar",
     styleUrls: ["./navbar.component.css"],
     templateUrl: "./navbar.component.html"

@@ -1,15 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IgxScrollEvent } from "igniteui-angular/main";
 
 class ListItem {
     constructor(
         public text: string,
         public avatar: string
-    ) {}
+    ) { }
 }
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-scroll",
     styleUrls: ["./scroll.component.css"],
     templateUrl: "./scroll.component.html"
@@ -22,7 +21,7 @@ export class ScrollComponent implements OnInit {
     public visibleItemsCount = 10;
 
     constructor() {
-        for (let j = 1, i = 0; i <= 5000; i++, j++) {
+        for (let j = 1, i = 0; i <= 5000; i++ , j++) {
             const imageIndex = j > 21 ? j = 1 : j;
             this.items.push(new ListItem(`User: ${i + 1}`, `assets/images/avatar/${imageIndex}.jpg`));
         }

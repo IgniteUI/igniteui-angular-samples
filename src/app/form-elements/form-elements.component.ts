@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-form-elements",
   styleUrls: ["./form-elements.component.css"],
   templateUrl: "./form-elements.component.html"
@@ -12,9 +11,9 @@ export class FormElementsComponent implements OnInit {
 
   constructor() {
     this.user = {
-        firstName: "John",
-        lastName: "Doe",
-        password: "1337s3cr3t"
+      firstName: "John",
+      lastName: "Doe",
+      password: "1337s3cr3t"
     };
   }
 
