@@ -9,7 +9,7 @@ import { slides } from "../mock-slides";
   templateUrl: "./carousel-details.component.html"
 })
 export class CarouselDetailsViewComponent implements OnInit {
-  public slide: IgxSlide;
+  public slide: any;
   public index: number;
   private sub: any;
 
