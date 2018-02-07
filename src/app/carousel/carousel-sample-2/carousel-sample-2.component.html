@@ -1,0 +1,7 @@
+<igx-carousel #carousel>
+    <igx-slide *ngFor="let slide of slides;">
+        <h3>{{slide.heading}}</h3>
+        <p>{{slide.description}}</p>
+        <img [src]="slide.image">
+    </igx-slide>
+</igx-carousel>
