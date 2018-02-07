@@ -8,6 +8,11 @@ import { CardSample1Component } from "./card/card-sample-1/card-sample-1.compone
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardComponent } from "./card/card.component";
+import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
+import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
+import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-sample-2.component";
+import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
+import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
 import { DialogComponent } from "./dialog/dialog.component";
@@ -50,6 +55,26 @@ const appRoutes: Routes = [
   {
     component: CarouselComponent,
     path: "carousel"
+  },
+  {
+    component: CarouselDetailsViewComponent,
+    path: "details/:index"
+  },
+  {
+    component: CarouselSample1Component,
+    path: "carousel-sample-1"
+  },
+  {
+    component: CarouselSample2Component,
+    path: "carousel-sample-2"
+  },
+  {
+    component: CarouselSample3Component,
+    path: "carousel-sample-3"
+  },
+  {
+    component: CarouselSample4Component,
+    path: "carousel-sample-4"
   },
   {
     component: CheckboxSample1Component,
