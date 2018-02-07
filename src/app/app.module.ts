@@ -45,6 +45,8 @@ import { CardSample2Component } from "./card/card-sample-2/card-sample-2.compone
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardComponent } from "./card/card.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
+import { CheckboxSample2Component } from './form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component';
 import { DatepickerComponent } from "./datepicker/datepicker.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { FormElementsComponent } from "./form-elements/form-elements.component";
@@ -68,6 +70,11 @@ import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
+import { SwitchSample1Component } from './form-elements/switch/switch-sample-1/switch-sample-1.component';
+import { SwitchSample2Component } from './form-elements/switch/switch-sample-2/switch-sample-2.component';
+import { RadioSample1Component } from './form-elements/radio/radio-sample-1/radio-sample-1.component';
+import { RadioSample2Component } from './form-elements/radio/radio-sample-2/radio-sample-2.component'
+
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -77,6 +84,8 @@ import { ToastComponent } from "./toast/toast.component";
     CardSample1Component,
     CardSample2Component,
     CardSample3Component,
+    CheckboxSample1Component,
+    CheckboxSample2Component,
     ListComponent,
     ListSample1Component,
     ListSample2Component,
@@ -106,7 +115,11 @@ import { ToastComponent } from "./toast/toast.component";
     SliderSample5Component,
     CardSample1Component,
     CardSample2Component,
-    CardSample3Component
+    CardSample3Component,
+    SwitchSample1Component,
+    SwitchSample2Component,
+    RadioSample1Component,
+    RadioSample2Component
   ],
   imports: [
     AppRoutingModule,
