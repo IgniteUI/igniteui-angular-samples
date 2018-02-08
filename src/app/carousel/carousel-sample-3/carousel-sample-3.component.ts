@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation } from "@angular/core";
-import { Direction, IgxCarousel, IgxLinearProgressBar } from "igniteui-angular/main";
+import { Direction, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular/main";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -8,8 +8,8 @@ import { Direction, IgxCarousel, IgxLinearProgressBar } from "igniteui-angular/m
   templateUrl: "./carousel-sample-3.component.html"
 })
 export class CarouselSample3Component implements OnInit {
-  @ViewChild("carousel") public carousel: IgxCarousel;
-  @ViewChild("linearbar") public linearbar: IgxLinearProgressBar;
+  @ViewChild("carousel") public carousel: IgxCarouselComponent;
+  @ViewChild("linearbar") public linearbar: IgxLinearProgressBarComponent;
 
   public slides: any[] = [];
   public loop = true;
@@ -20,29 +20,33 @@ export class CarouselSample3Component implements OnInit {
   constructor() { }
 
   public ngOnInit() {
-     this.addNewSlide();
-     this.carousel.stop();
-     this.total = this.slides.length;
-     this.current = this.carousel.current;
+    this.addNewSlide();
+    this.carousel.stop();
+    this.total = this.slides.length;
+    this.current = this.carousel.current;
   }
 
   public addNewSlide() {
     this.slides.push(
-      { description: "30+ Material-based Angular components to code speedy web apps faster.",
+      {
+        description: "30+ Material-based Angular components to code speedy web apps faster.",
         heading: "Ignite UI for Angular",
         image: "assets/images/carousel/slide1-angular.png"
-        },
-      { description: "A complete JavaScript UI library empowering you to build data-rich responsive web apps.",
+      },
+      {
+        description: "A complete JavaScript UI library empowering you to build data-rich responsive web apps.",
         heading: "Ignite UI for Javascript",
         image: "assets/images/carousel/slide2-ignite.png"
-        },
-      { description: "Build full-featured business apps with the most versatile set of ASP.NET AJAX UI controls",
+      },
+      {
+        description: "Build full-featured business apps with the most versatile set of ASP.NET AJAX UI controls",
         heading: "Ultimate UI for ASP.NET",
-        image: "assets/images/carousel/slide3-aspnet.png"}
+        image: "assets/images/carousel/slide3-aspnet.png"
+      }
     );
   }
 
-  public onSlideChanged(carousel: IgxCarousel) {
+  public onSlideChanged(carousel: IgxCarouselComponent) {
     this.current = carousel.current + 1;
     this.linearbar.value = carousel.current + 1;
   }

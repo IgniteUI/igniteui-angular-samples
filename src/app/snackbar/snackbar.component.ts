@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxSnackbar } from "igniteui-angular/main";
+import { IgxSnackbarComponent } from "igniteui-angular/main";
 
 @Component({
     selector: "app-snackbar",
@@ -8,8 +8,8 @@ import { IgxSnackbar } from "igniteui-angular/main";
 })
 export class SnackbarComponent implements OnInit {
 
-    @ViewChild(IgxSnackbar)
-    public snackbar: IgxSnackbar;
+    @ViewChild(IgxSnackbarComponent)
+    public snackbar: IgxSnackbarComponent;
     public navItems: any[];
     public deletedItems = [];
     constructor() { }
