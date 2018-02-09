@@ -36,6 +36,7 @@ import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
+import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 
 const appRoutes: Routes = [
   {
@@ -181,6 +182,10 @@ const appRoutes: Routes = [
   {
     component: CardSample3Component,
     path: "card-sample-3"
+  },
+  {
+    component: IconSample1Component,
+    path: "icon-sample-1"
   }
 ];
 
