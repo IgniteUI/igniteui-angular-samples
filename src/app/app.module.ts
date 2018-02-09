@@ -55,6 +55,7 @@ import { DialogComponent } from "./dialog/dialog.component";
 import { FormElementsComponent } from "./form-elements/form-elements.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
+import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
@@ -73,7 +74,6 @@ import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
-import { IconSample1Component } from './icon/icon-sample-1/icon-sample-1.component';
 
 @NgModule({
   bootstrap: [AppComponent],
