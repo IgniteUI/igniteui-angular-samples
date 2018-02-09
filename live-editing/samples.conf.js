@@ -23,18 +23,6 @@
 
 module.exports = {
   samplesAssetsConfig: [
-    // template
-    //{
-    //  componentPath: "//",
-    //  componentRoutePath: "",
-    //  appModuleConfig: {
-    //    imports: [
-    //      { import: "", from: "igniteui-angular/main" },
-    //      { import: "", from: ".//.component" }],
-    //    ngDeclarations: "",
-    //    ngImports: ""
-    //  }
-    //},
     {
       componentPath: "/avatar/",
       componentRoutePath: "avatar",
