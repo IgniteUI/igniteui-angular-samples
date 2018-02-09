@@ -37,7 +37,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AvatarComponent } from "./avatar/avatar.component";
-import { BadgeComponent } from "./badge/badge.component";
+import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
+import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
+import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
@@ -73,6 +75,7 @@ import { ToastComponent } from "./toast/toast.component";
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
+    BadgeSample1Component,
     CardComponent,
     CardSample1Component,
     CardSample2Component,
@@ -89,7 +92,6 @@ import { ToastComponent } from "./toast/toast.component";
     DatepickerComponent,
     SnackbarComponent,
     AvatarComponent,
-    BadgeComponent,
     FormElementsComponent,
     LayoutComponent,
     NavdrawerComponent,
@@ -106,7 +108,9 @@ import { ToastComponent } from "./toast/toast.component";
     SliderSample5Component,
     CardSample1Component,
     CardSample2Component,
-    CardSample3Component
+    CardSample3Component,
+    BadgeSample2Component,
+    BadgeSample3Component
   ],
   imports: [
     AppRoutingModule,
