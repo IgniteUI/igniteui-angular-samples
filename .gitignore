@@ -9,7 +9,7 @@
 /node_modules
 
 # samples assets
-/src/assets
+/src/assets/samples
 
 # IDEs and editors
 /.idea
