@@ -8,7 +8,7 @@
     "serve": "ng serve",
     "start": "npm-run-all -p serve watch-live-editing",
     "watch-live-editing": "gulp watch-live-editing",
-    "build": "ng build --prod --aot=true && gulp generate-live-editing",
+    "build": "gulp generate-live-editing && ng build --prod --aot=true",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
