@@ -123,7 +123,7 @@ import { ToastComponent } from "./toast/toast.component";
     CardSample2Component,
     CardSample3Component,
     BadgeSample2Component,
-    BadgeSample3Component
+    BadgeSample3Component,
     IconSample1Component
   ],
   imports: [
