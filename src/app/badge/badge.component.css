@@ -1,14 +1,84 @@
 .avatars-wrapper {
-    display: flex;
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 960px;
+  height: calc(100vh - 32px);
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1 0 30%;
 }
 
 .avatar-sample {
-    display: flex;
-    flex: 1 0 30%;
-    width: 88px;
-    height: 88px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 72px;
+  min-width: 30%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
 }
+
+.avatar-sample__inner {
+  position: relative;
+}
+
+.badge-1,
+.badge-2,
+.badge-3,
+.badge-4,
+.badge-5,
+.badge-6,
+.badge-7,
+.badge-8,
+.badge-9
+{
+  position: absolute;
+}
+
+.badge-1 {
+  top: -6px;
+  left: -6px;
+}
+
+.badge-2 {
+  top: -6px;
+  right: -6px;
+}
+
+.badge-3 {
+  bottom: 3px;
+  left: 3px;
+}
+
+.badge-4 {
+  bottom: -6px;
+  right: -6px;
+}
+
+.badge-5 {
+  top: 0;
+  left: 0;
+}
+
+.badge-6 {
+  top: -6px;
+  right: -6px;
+}
+
+.badge-7 {
+  bottom: -10px;
+  left: -10px;
+}
+
+.badge-8 {
+  bottom: -6px;
+  right: -6px;
+}
+
+.badge-9 {
+  top: 3px;
+  left: 3px;
+}
+
+
