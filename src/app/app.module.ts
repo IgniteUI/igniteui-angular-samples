@@ -137,8 +137,7 @@ import { LabelInputComponent } from "./label-input/label-input.component";
     SwitchSample2Component,
     RadioSample1Component,
     RadioSample2Component,
-    IconSample1Component
-    CardSample3Component,
+    IconSample1Component,
     LabelInputComponent
   ],
   imports: [
