@@ -1,6 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes  } from "@angular/router";
 import { AvatarComponent } from "./avatar/avatar.component";
+import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
+import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
+import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CalendarComponent } from "./calendar/calendar.component";
@@ -24,6 +27,7 @@ import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radi
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
+import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
@@ -44,6 +48,18 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 
 const appRoutes: Routes = [
+  {
+    component: BadgeSample1Component,
+    path: "badge-sample-1"
+  },
+  {
+    component: BadgeSample2Component,
+    path: "badge-sample-2"
+  },
+  {
+    component: BadgeSample3Component,
+    path: "badge-sample-3"
+  },
   {
     component: CardComponent,
     path: "card"
@@ -149,10 +165,6 @@ const appRoutes: Routes = [
     path: "avatar"
   },
   {
-    component: BadgeComponent,
-    path: "badge"
-  },
-  {
     component: FormElementsComponent,
     path: "form-elements"
   },
@@ -211,6 +223,10 @@ const appRoutes: Routes = [
   {
     component: CardSample3Component,
     path: "card-sample-3"
+  },
+  {
+    component: IconSample1Component,
+    path: "icon-sample-1"
   }
 ];
 
