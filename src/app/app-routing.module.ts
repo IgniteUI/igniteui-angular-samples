@@ -2,7 +2,13 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes  } from "@angular/router";
 import { AvatarComponent } from "./avatar/avatar.component";
 import { BadgeComponent } from "./badge/badge.component";
-import { ButtonsComponent } from "./buttons/buttons.component";
+import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
+import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
+import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
+import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-sample-4.component";
+import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
+import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
+import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -168,10 +174,6 @@ const appRoutes: Routes = [
     path: "scroll"
   },
   {
-    component: ButtonsComponent,
-    path: "buttons"
-  },
-  {
     component: CardSample1Component,
     path: "card-sample-1"
   },
@@ -186,6 +188,34 @@ const appRoutes: Routes = [
   {
     component: IconSample1Component,
     path: "icon-sample-1"
+  },
+  {
+    component: ButtonsSample1Component,
+    path: "buttons-sample-1"
+  },
+  {
+    component: ButtonsSample2Component,
+    path: "buttons-sample-2"
+  },
+  {
+    component: ButtonsSample3Component,
+    path: "buttons-sample-3"
+  },
+  {
+    component: ButtonsSample4Component,
+    path: "buttons-sample-4"
+  },
+  {
+    component: ButtonsSample5Component,
+    path: "buttons-sample-5"
+  },
+  {
+    component: ButtonsSample6Component,
+    path: "buttons-sample-6"
+  },
+  {
+    component: ButtonsSample7Component,
+    path: "buttons-sample-7"
   }
 ];
 

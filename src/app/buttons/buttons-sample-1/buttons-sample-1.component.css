@@ -3,6 +3,12 @@
     flex-flow: row wrap;
 }
 
+.button-sample-custom {
+    display: flex;
+    flex: 1 0 30%;
+    margin-top: 14px;
+    margin-bottom: 48px;
+}
 .button-sample {
     display: flex;
     flex: 1 0 30%;
@@ -37,4 +43,7 @@
 .ripple-sample.light {
     color: rgba(0, 0, 0, 90);
     background: #fbb13c;
+}
+.disabledFlatButton{
+    width: 5em;
 }
