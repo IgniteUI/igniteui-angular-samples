@@ -1,0 +1,17 @@
+<igx-list>
+  <igx-list-item isHeader="true">
+    Team Members (4)
+  </igx-list-item>
+  <igx-list-item *ngFor="let member of members">
+    <div class="wrapper">
+      <div>
+        <igx-avatar icon="person" roundShape="true" size="small">
+          <igx-badge position="bottom-right" [icon]="member.icon" [type]="member.type"></igx-badge>
+        </igx-avatar>
+      </div>
+      <div class="contact-container">
+        <span class="contact-name">{{ member.name }}</span>
+      </div>
+    </div>
+  </igx-list-item>
+</igx-list>
