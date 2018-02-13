@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.contact-name {
+    font-weight: 600;
+}
+.contact-container{
+    margin-left: 20px;
+}
+

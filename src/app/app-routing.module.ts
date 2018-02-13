@@ -1,6 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes  } from "@angular/router";
 import { AvatarComponent } from "./avatar/avatar.component";
+import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
+import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
+import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CalendarComponent } from "./calendar/calendar.component";
@@ -39,6 +42,18 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 
 const appRoutes: Routes = [
+  {
+    component: BadgeSample1Component,
+    path: "badge-sample-1"
+  },
+  {
+    component: BadgeSample2Component,
+    path: "badge-sample-2"
+  },
+  {
+    component: BadgeSample3Component,
+    path: "badge-sample-3"
+  },
   {
     component: CardComponent,
     path: "card"
@@ -118,10 +133,6 @@ const appRoutes: Routes = [
   {
     component: AvatarComponent,
     path: "avatar"
-  },
-  {
-    component: BadgeComponent,
-    path: "badge"
   },
   {
     component: FormElementsComponent,
