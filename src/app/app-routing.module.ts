@@ -19,7 +19,13 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
+import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { FormElementsComponent } from "./form-elements/form-elements.component";
+import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
+import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
+import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
+import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { LayoutComponent } from "./layout/layout.component";
@@ -87,6 +93,14 @@ const appRoutes: Routes = [
     path: "carousel-sample-4"
   },
   {
+    component: CheckboxSample1Component,
+    path: "checkbox-sample-1"
+  },
+  {
+    component: CheckboxSample2Component,
+    path: "checkbox-sample-2"
+  },
+  {
     component: DatepickerComponent,
     path: "datepicker"
   },
@@ -129,6 +143,22 @@ const appRoutes: Routes = [
   {
     component: SnackbarComponent,
     path: "snackbar"
+  },
+  {
+    component: SwitchSample1Component,
+    path: "switch-sample-1"
+  },
+  {
+    component: SwitchSample2Component,
+    path: "switch-sample-2"
+  },
+  {
+    component: RadioSample1Component,
+    path: "radio-sample-1"
+  },
+  {
+    component: RadioSample2Component,
+    path: "radio-sample-2"
   },
   {
     component: AvatarComponent,
