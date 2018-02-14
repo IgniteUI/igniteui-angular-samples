@@ -1,8 +1,17 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes  } from "@angular/router";
 import { AvatarComponent } from "./avatar/avatar.component";
+import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
+import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
+import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { BadgeComponent } from "./badge/badge.component";
-import { ButtonsComponent } from "./buttons/buttons.component";
+import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
+import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
+import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
+import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-sample-4.component";
+import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
+import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
+import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -16,7 +25,13 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
+import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { FormElementsComponent } from "./form-elements/form-elements.component";
+import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
+import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
+import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
+import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { LayoutComponent } from "./layout/layout.component";
@@ -39,6 +54,18 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 
 const appRoutes: Routes = [
+  {
+    component: BadgeSample1Component,
+    path: "badge-sample-1"
+  },
+  {
+    component: BadgeSample2Component,
+    path: "badge-sample-2"
+  },
+  {
+    component: BadgeSample3Component,
+    path: "badge-sample-3"
+  },
   {
     component: CardComponent,
     path: "card"
@@ -70,6 +97,14 @@ const appRoutes: Routes = [
   {
     component: CarouselSample4Component,
     path: "carousel-sample-4"
+  },
+  {
+    component: CheckboxSample1Component,
+    path: "checkbox-sample-1"
+  },
+  {
+    component: CheckboxSample2Component,
+    path: "checkbox-sample-2"
   },
   {
     component: DatepickerComponent,
@@ -116,12 +151,24 @@ const appRoutes: Routes = [
     path: "snackbar"
   },
   {
-    component: AvatarComponent,
-    path: "avatar"
+    component: SwitchSample1Component,
+    path: "switch-sample-1"
   },
   {
-    component: BadgeComponent,
-    path: "badge"
+    component: SwitchSample2Component,
+    path: "switch-sample-2"
+  },
+  {
+    component: RadioSample1Component,
+    path: "radio-sample-1"
+  },
+  {
+    component: RadioSample2Component,
+    path: "radio-sample-2"
+  },
+  {
+    component: AvatarComponent,
+    path: "avatar"
   },
   {
     component: FormElementsComponent,
@@ -168,10 +215,6 @@ const appRoutes: Routes = [
     path: "scroll"
   },
   {
-    component: ButtonsComponent,
-    path: "buttons"
-  },
-  {
     component: CardSample1Component,
     path: "card-sample-1"
   },
@@ -186,6 +229,34 @@ const appRoutes: Routes = [
   {
     component: IconSample1Component,
     path: "icon-sample-1"
+  },
+  {
+    component: ButtonsSample1Component,
+    path: "buttons-sample-1"
+  },
+  {
+    component: ButtonsSample2Component,
+    path: "buttons-sample-2"
+  },
+  {
+    component: ButtonsSample3Component,
+    path: "buttons-sample-3"
+  },
+  {
+    component: ButtonsSample4Component,
+    path: "buttons-sample-4"
+  },
+  {
+    component: ButtonsSample5Component,
+    path: "buttons-sample-5"
+  },
+  {
+    component: ButtonsSample6Component,
+    path: "buttons-sample-6"
+  },
+  {
+    component: ButtonsSample7Component,
+    path: "buttons-sample-7"
   }
 ];
 
