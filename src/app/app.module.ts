@@ -143,7 +143,7 @@ import { ToastComponent } from "./toast/toast.component";
     ButtonsSample4Component,
     ButtonsSample5Component,
     ButtonsSample6Component,
-    ButtonsSample7Component
+    ButtonsSample7Component,
     SwitchSample1Component,
     SwitchSample2Component,
     RadioSample1Component,
