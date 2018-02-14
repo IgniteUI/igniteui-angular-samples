@@ -37,6 +37,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AvatarComponent } from "./avatar/avatar.component";
+import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
+import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
+import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CalendarComponent } from "./calendar/calendar.component";
@@ -52,7 +55,13 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
+import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { FormElementsComponent } from "./form-elements/form-elements.component";
+import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
+import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
+import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
+import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -79,10 +88,16 @@ import { ToastComponent } from "./toast/toast.component";
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
+    BadgeComponent,
+    BadgeSample1Component,
+    BadgeSample2Component,
+    BadgeSample3Component,
     CardComponent,
     CardSample1Component,
     CardSample2Component,
     CardSample3Component,
+    CheckboxSample1Component,
+    CheckboxSample2Component,
     ListComponent,
     ListSample1Component,
     ListSample2Component,
@@ -100,7 +115,6 @@ import { ToastComponent } from "./toast/toast.component";
     DatepickerComponent,
     SnackbarComponent,
     AvatarComponent,
-    BadgeComponent,
     FormElementsComponent,
     LayoutComponent,
     NavdrawerComponent,
@@ -118,6 +132,10 @@ import { ToastComponent } from "./toast/toast.component";
     CardSample1Component,
     CardSample2Component,
     CardSample3Component,
+    SwitchSample1Component,
+    SwitchSample2Component,
+    RadioSample1Component,
+    RadioSample2Component,
     IconSample1Component
   ],
   imports: [
