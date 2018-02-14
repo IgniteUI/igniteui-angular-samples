@@ -45,17 +45,17 @@ module.exports = {
         ngImports: "IgxAvatarModule, IgxBadgeModule"
       }
     },
-    {
-      componentPath: "/buttons/",
-      componentRoutePath: "buttons",
-      appModuleConfig: {
-        imports: [
-          { import: "IgxButtonModule, IgxButtonGroupModule, IgxIconModule, IgxRippleModule", from: "igniteui-angular/main" },
-          { import: "ButtonsComponent", from: "./buttons/buttons.component" }],
-        ngDeclarations: "ButtonsComponent",
-        ngImports: "IgxButtonModule, IgxButtonGroupModule, IgxIconModule, IgxRippleModule"
-      }
-    },
+    // {
+    //   componentPath: "/buttons/",
+    //   componentRoutePath: "buttons",
+    //   appModuleConfig: {
+    //     imports: [
+    //       { import: "IgxButtonModule, IgxButtonGroupModule, IgxIconModule, IgxRippleModule", from: "igniteui-angular/main" },
+    //       { import: "ButtonsComponent", from: "./buttons/buttons.component" }],
+    //     ngDeclarations: "ButtonsComponent",
+    //     ngImports: "IgxButtonModule, IgxButtonGroupModule, IgxIconModule, IgxRippleModule"
+    //   }
+    // },
       {
       componentPath: "/calendar/",
       componentRoutePath: "calendar",
