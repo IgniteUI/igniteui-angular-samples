@@ -346,5 +346,52 @@ module.exports = {
         ngImports: "IgxButtonModule, IgxRippleModule, IgxToastModule"
       }
     },
+    {
+      componentPath: "/toggle/",
+      componentRoutePath: "toggle",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "ToggleComponent", from: "./toggle/toggle.component" }],
+        ngDeclarations: "ToggleComponent",
+        ngImports: "IgxButtonModule, IgxToggleModule"
+      }
+    },
+    {
+      componentPath: "/toggle/toggle-sample-1/",
+      componentRoutePath: "toggle-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "ToggleSample1Component", from: "./toggle/toggle-sample-1/toggle-sample-1.component" }],
+        ngDeclarations: "ToggleSample1Component",
+        ngImports: "IgxButtonModule, IgxToggleModule"
+      },
+      shortenComponentPathBy: "/toggle/"
+    },
+    {
+      componentPath: "/toggle/toggle-sample-2/",
+      componentRoutePath: "toggle-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "ToggleSample2Component", from: "./toggle/toggle-sample-2/toggle-sample-2.component" }],
+        ngDeclarations: "ToggleSample2Component",
+        ngImports: "IgxButtonModule, IgxToggleModule"
+      },
+      shortenComponentPathBy: "/toggle/"
+    },
+    {
+      componentPath: "/toggle/toggle-sample-3/",
+      componentRoutePath: "toggle-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "ToggleSample3Component", from: "./toggle/toggle-sample-3/toggle-sample-3.component" }],
+        ngDeclarations: "ToggleSample3Component",
+        ngImports: "IgxButtonModule, IgxToggleModule"
+      },
+      shortenComponentPathBy: "/toggle/"
+    },
   ]
 }
