@@ -31,7 +31,8 @@ import {
   IgxSnackbarModule,
   IgxSwitchModule,
   IgxTabBarModule,
-  IgxToastModule
+  IgxToastModule,
+  IgxToggleModule
 } from "igniteui-angular/main";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -193,6 +194,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxTabBarModule,
     IgxNavbarModule,
     IgxScrollModule,
+    IgxToggleModule,
     HttpClientModule
   ],
   providers: [DataService]
