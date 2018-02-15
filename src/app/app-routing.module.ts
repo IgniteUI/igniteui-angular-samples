@@ -52,10 +52,10 @@ import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
-import { ToggleComponent } from "./toggle/toggle.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
+import { ToggleComponent } from "./toggle/toggle.component";
 
 const appRoutes: Routes = [
   {
