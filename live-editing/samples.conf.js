@@ -363,7 +363,7 @@ module.exports = {
       appModuleConfig: {
         imports: [
           { import: "IgxButtonModule, IgxToggleModule", from: "igniteui-angular/main" },
-          { import: "ToggleSample1Component", from: "./toggle/toggle-sample-1.component" }],
+          { import: "ToggleSample1Component", from: "./toggle/toggle-sample-1/toggle-sample-1.component" }],
         ngDeclarations: "ToggleSample1Component",
         ngImports: "IgxButtonModule, IgxToggleModule"
       },
@@ -375,7 +375,7 @@ module.exports = {
       appModuleConfig: {
         imports: [
           { import: "IgxButtonModule, IgxToggleModule", from: "igniteui-angular/main" },
-          { import: "ToggleSample2Component", from: "./toggle/toggle-sample-2.component" }],
+          { import: "ToggleSample2Component", from: "./toggle/toggle-sample-2/toggle-sample-2.component" }],
         ngDeclarations: "ToggleSample2Component",
         ngImports: "IgxButtonModule, IgxToggleModule"
       },
@@ -387,7 +387,7 @@ module.exports = {
       appModuleConfig: {
         imports: [
           { import: "IgxButtonModule, IgxToggleModule", from: "igniteui-angular/main" },
-          { import: "ToggleSample3Component", from: "./toggle/toggle-sample-3.component" }],
+          { import: "ToggleSample3Component", from: "./toggle/toggle-sample-3/toggle-sample-3.component" }],
         ngDeclarations: "ToggleSample3Component",
         ngImports: "IgxButtonModule, IgxToggleModule"
       },
