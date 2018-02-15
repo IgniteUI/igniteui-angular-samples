@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   IgxAvatarModule,
   IgxBadgeModule,
@@ -15,12 +16,13 @@ import {
   IgxFilterModule,
   IgxGridModule,
   IgxIconModule,
-  IgxInput,
+  IgxInputModule,
   IgxLabelModule,
-  IgxLayout,
+  IgxLayoutModule,
   IgxListModule,
   IgxNavbarModule,
-  IgxNavigationDirectives,
+  IgxNavigationDrawerModule,
+  IgxNavigationModule,
   IgxProgressBarModule,
   IgxRadioModule,
   IgxRippleModule,
@@ -29,8 +31,7 @@ import {
   IgxSnackbarModule,
   IgxSwitchModule,
   IgxTabBarModule,
-  IgxToastModule,
-  NavigationDrawerModule
+  IgxToastModule
 } from "igniteui-angular/main";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -41,7 +42,13 @@ import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.com
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { BadgeComponent } from "./badge/badge.component";
-import { ButtonsComponent } from "./buttons/buttons.component";
+import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
+import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
+import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
+import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-sample-4.component";
+import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
+import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
+import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -124,7 +131,6 @@ import { ToastComponent } from "./toast/toast.component";
     TabbarComponent,
     NavbarComponent,
     ScrollComponent,
-    ButtonsComponent,
     SliderSample1Component,
     SliderSample2Component,
     SliderSample3Component,
@@ -133,6 +139,13 @@ import { ToastComponent } from "./toast/toast.component";
     CardSample1Component,
     CardSample2Component,
     CardSample3Component,
+    ButtonsSample1Component,
+    ButtonsSample2Component,
+    ButtonsSample3Component,
+    ButtonsSample4Component,
+    ButtonsSample5Component,
+    ButtonsSample6Component,
+    ButtonsSample7Component,
     SwitchSample1Component,
     SwitchSample2Component,
     RadioSample1Component,
@@ -143,15 +156,16 @@ import { ToastComponent } from "./toast/toast.component";
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     IgxGridModule.forRoot(),
     IgxCarouselModule,
-    IgxInput,
-    IgxLayout,
+    IgxInputModule,
+    IgxLayoutModule,
     IgxRadioModule,
     IgxSwitchModule,
-    IgxNavigationDirectives,
-    NavigationDrawerModule,
+    IgxNavigationModule,
+    IgxNavigationDrawerModule,
     IgxProgressBarModule,
     IgxAvatarModule,
     IgxFilterModule,
