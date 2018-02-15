@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { NavigationDrawer } from "igniteui-angular/main";
+import { IgxNavigationDrawerComponent } from "igniteui-angular/main";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -11,7 +11,7 @@ export class NavdrawerComponent implements OnInit {
 
   public navItems: any[];
   public selected = "Avatar";
-  @ViewChild(NavigationDrawer) public drawer: NavigationDrawer;
+  @ViewChild(IgxNavigationDrawerComponent) public drawer: IgxNavigationDrawerComponent;
 
   constructor() { }
 
