@@ -1,5 +1,5 @@
 import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from "@angular/core";
-import { IgxCircularProgressBar, IgxLinearProgressBar } from "igniteui-angular/main";
+import { IgxCircularProgressBarComponent, IgxLinearProgressBarComponent } from "igniteui-angular/main";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -13,11 +13,11 @@ export class ProgressbarComponent implements OnInit {
     public type: string;
     public interval: any;
 
-    @ViewChildren(IgxLinearProgressBar, { read: IgxLinearProgressBar })
-    public linearBars: QueryList<IgxLinearProgressBar>;
+    @ViewChildren(IgxLinearProgressBarComponent, { read: IgxLinearProgressBarComponent })
+    public linearBars: QueryList<IgxLinearProgressBarComponent>;
 
-    @ViewChildren(IgxCircularProgressBar, { read: IgxCircularProgressBar })
-    public circularBars: QueryList<IgxCircularProgressBar>;
+    @ViewChildren(IgxCircularProgressBarComponent, { read: IgxCircularProgressBarComponent })
+    public circularBars: QueryList<IgxCircularProgressBarComponent>;
 
     constructor() {
         this.currentValue = 0;
