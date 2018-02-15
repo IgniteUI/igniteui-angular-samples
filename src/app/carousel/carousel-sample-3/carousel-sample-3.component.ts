@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation } from "@angular/core";
-import { Direction, IgxCarousel, IgxLinearProgressBar } from "igniteui-angular/main";
+import { Direction, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular/main";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -8,8 +8,8 @@ import { Direction, IgxCarousel, IgxLinearProgressBar } from "igniteui-angular/m
   templateUrl: "./carousel-sample-3.component.html"
 })
 export class CarouselSample3Component implements OnInit {
-  @ViewChild("carousel") public carousel: IgxCarousel;
-  @ViewChild("linearbar") public linearbar: IgxLinearProgressBar;
+  @ViewChild("carousel") public carousel: IgxCarouselComponent;
+  @ViewChild("linearbar") public linearbar: IgxLinearProgressBarComponent;
 
   public slides: any[] = [];
   public loop = true;
@@ -42,7 +42,7 @@ export class CarouselSample3Component implements OnInit {
     );
   }
 
-  public onSlideChanged(carousel: IgxCarousel) {
+  public onSlideChanged(carousel: IgxCarouselComponent) {
     this.current = carousel.current + 1;
     this.linearbar.value = carousel.current + 1;
   }
