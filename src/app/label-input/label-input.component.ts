@@ -12,9 +12,9 @@ export class LabelInputComponent implements OnInit {
 
   constructor() {
     this.user = {
+        email: "johnDoe@mail.com",
         firstName: "John",
         lastName: "Doe",
-        email: "johnDoe@mail.com",
         password: "1337s3cr3t"
     };
   }
