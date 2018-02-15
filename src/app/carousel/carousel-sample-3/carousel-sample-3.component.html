@@ -1,0 +1,10 @@
+<igx-carousel #carousel [loop]="loop" [pause]="pause" 
+    (onSlideChanged)="onSlideChanged(carousel)">
+    <igx-slide *ngFor="let slide of slides;">
+        <h3>{{slide.heading}}</h3>
+        <p>{{slide.description}}</p>
+        <img [src]="slide.image">
+    </igx-slide>
+    <igx-linear-bar #linearbar [striped]="false" [max]="total" animate="true"></igx-linear-bar>
+    <span>{{current}} out of {{total}}</span>
+</igx-carousel>

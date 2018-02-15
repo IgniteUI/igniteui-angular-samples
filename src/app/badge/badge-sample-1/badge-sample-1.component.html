@@ -1,0 +1,13 @@
+<igx-list>
+  <igx-list-item isHeader="true">
+    Team Members (4)
+  </igx-list-item>
+  <igx-list-item *ngFor="let member of members">
+    <div>
+      <div>
+        <span class="contact-name">{{ member.name }}</span>
+        <span>({{ member.status }})</span>
+      </div>
+    </div>
+  </igx-list-item>
+</igx-list>
