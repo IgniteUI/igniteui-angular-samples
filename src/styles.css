@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* Styles go here */
-
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 .sample-wrapper {
     width: inherit;
     position: relative;
