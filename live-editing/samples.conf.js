@@ -358,7 +358,7 @@ module.exports = {
       }
     },
     {
-      componentPath: "/toggle/toggle-sample-1",
+      componentPath: "/toggle/toggle-sample-1/",
       componentRoutePath: "toggle-sample-1",
       appModuleConfig: {
         imports: [
@@ -370,7 +370,7 @@ module.exports = {
       shortenComponentPathBy: "/toggle/"
     },
     {
-      componentPath: "/toggle/toggle-sample-2",
+      componentPath: "/toggle/toggle-sample-2/",
       componentRoutePath: "toggle-sample-2",
       appModuleConfig: {
         imports: [
@@ -382,7 +382,7 @@ module.exports = {
       shortenComponentPathBy: "/toggle/"
     },
     {
-      componentPath: "/toggle/toggle-sample-3",
+      componentPath: "/toggle/toggle-sample-3/",
       componentRoutePath: "toggle-sample-3",
       appModuleConfig: {
         imports: [
