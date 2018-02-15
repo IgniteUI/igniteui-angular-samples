@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { Direction, IgxCarousel } from "igniteui-angular/main";
+import { Direction, IgxCarouselComponent } from "igniteui-angular/main";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -8,7 +8,7 @@ import { Direction, IgxCarousel } from "igniteui-angular/main";
   templateUrl: "./carousel-sample-2.component.html"
 })
 export class CarouselSample2Component implements OnInit {
-  @ViewChild("carousel") public carousel: IgxCarousel;
+  @ViewChild("carousel") public carousel: IgxCarouselComponent;
 
   public slides: any[] = [];
 

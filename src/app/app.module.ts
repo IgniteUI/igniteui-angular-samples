@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   IgxAvatarModule,
   IgxBadgeModule,
@@ -15,12 +16,13 @@ import {
   IgxFilterModule,
   IgxGridModule,
   IgxIconModule,
-  IgxInput,
+  IgxInputModule,
   IgxLabelModule,
-  IgxLayout,
+  IgxLayoutModule,
   IgxListModule,
   IgxNavbarModule,
-  IgxNavigationDirectives,
+  IgxNavigationDrawerModule,
+  IgxNavigationModule,
   IgxProgressBarModule,
   IgxRadioModule,
   IgxRippleModule,
@@ -29,8 +31,7 @@ import {
   IgxSnackbarModule,
   IgxSwitchModule,
   IgxTabBarModule,
-  IgxToastModule,
-  NavigationDrawerModule
+  IgxToastModule
 } from "igniteui-angular/main";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -161,15 +162,16 @@ import { ToggleComponent } from "./toggle/toggle.component";
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     IgxGridModule.forRoot(),
     IgxCarouselModule,
-    IgxInput,
-    IgxLayout,
+    IgxInputModule,
+    IgxLayoutModule,
     IgxRadioModule,
     IgxSwitchModule,
-    IgxNavigationDirectives,
-    NavigationDrawerModule,
+    IgxNavigationModule,
+    IgxNavigationDrawerModule,
     IgxProgressBarModule,
     IgxAvatarModule,
     IgxFilterModule,

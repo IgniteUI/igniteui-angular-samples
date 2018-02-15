@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IgxFilterOptions, IgxListItem } from "igniteui-angular/main";
+import { IgxFilterOptions, IgxListItemComponent } from "igniteui-angular/main";
 @Component({
   selector: "app-contact-list2",
   styleUrls: ["./list-sample-4.component.css"],
@@ -45,7 +45,7 @@ export class ListSample4Component implements OnInit {
 
   public ngOnInit() { }
 
-  public toggleFavorite(item: IgxListItem) {
+  public toggleFavorite(item: IgxListItemComponent) {
     const contact = this.contacts[item.index - 1];
     contact.isFavorite = !contact.isFavorite;
   }
