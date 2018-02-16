@@ -45,6 +45,48 @@ module.exports = {
         ngImports: "IgxAvatarModule, IgxBadgeModule"
       }
     },
+    {
+      componentPath: "/badge/badge-sample-1/",
+      componentRoutePath: "badge-sample-1",
+      additionalFiles: ["/badge/model/member.model.ts"],
+      appModuleConfig: {
+        imports: [
+          { import: "IgxAvatarModule, IgxBadgeModule, IgxListModule", from: "igniteui-angular/main" },
+          { import: "BadgeSample1Component", from: "./badge/badge-sample-1/badge-sample-1.component" },
+          { import: "Member", from: "./badge/model/member.model.ts" }],
+        ngDeclarations: "BadgeSample1Component",
+        ngImports: "IgxAvatarModule, IgxBadgeModule, IgxListModule"
+      },
+      shortenComponentPathBy: "/badge/"
+    },
+    {
+      componentPath: "/badge/badge-sample-2/",
+      componentRoutePath: "badge-sample-2",
+      additionalFiles: ["/badge/model/member.model.ts"],
+      appModuleConfig: {
+        imports: [
+          { import: "IgxAvatarModule, IgxBadgeModule, IgxListModule", from: "igniteui-angular/main" },
+          { import: "BadgeSample2Component", from: "./badge/badge-sample-2/badge-sample-2.component" },
+          { import: "Member", from: "./badge/model/member.model.ts" }],
+        ngDeclarations: "BadgeSample2Component",
+        ngImports: "IgxAvatarModule, IgxBadgeModule, IgxListModule"
+      },
+      shortenComponentPathBy: "/badge/"
+    },
+    {
+      componentPath: "/badge/badge-sample-3/",
+      componentRoutePath: "badge-sample-3",
+      additionalFiles: ["/badge/model/member.model.ts"],
+      appModuleConfig: {
+        imports: [
+          { import: "IgxAvatarModule, IgxBadgeModule, IgxListModule", from: "igniteui-angular/main" },
+          { import: "BadgeSample3Component", from: "./badge/badge-sample-3/badge-sample-3.component" },
+          { import: "Member", from: "./badge/model/member.model.ts" }],
+        ngDeclarations: "BadgeSample3Component",
+        ngImports: "IgxAvatarModule, IgxBadgeModule, IgxListModule"
+      },
+      shortenComponentPathBy: "/badge/"
+    },
     // {
     //   componentPath: "/buttons/",
     //   componentRoutePath: "buttons",
@@ -115,6 +157,53 @@ module.exports = {
       shortenComponentPathBy: "/card/"
     },
     {
+      componentPath: "/carousel/",
+      componentRoutePath: "carousel",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCarouselModule, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "CarouselComponent", from: "./carousel/carousel.component" }],
+        ngDeclarations: "CarouselComponent",
+        ngImports: "IgxCarouselModule, IgxSliderModule"
+      }
+    },
+    {
+      componentPath: "/carousel/carousel-sample-1/",
+      componentRoutePath: "carousel-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCarouselModule, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "CarouselSample1Component", from: "./carousel/carousel-sample-1/carousel-sample-1.component" }],
+        ngDeclarations: "CarouselSample1Component",
+        ngImports: "IgxCarouselModule, IgxSliderModule"
+      },
+      shortenComponentPathBy: "/carousel/"
+    },
+    {
+      componentPath: "/carousel/carousel-sample-2/",
+      componentRoutePath: "carousel-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "Direction, IgxCarouselComponent, IgxCarouselModule, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "CarouselSample2Component", from: "./carousel/carousel-sample-2/carousel-sample-2.component" }],
+        ngDeclarations: "CarouselSample2Component",
+        ngImports: "IgxCarouselModule, IgxSliderModule"
+      },
+      shortenComponentPathBy: "/carousel/"
+    },
+    {
+      componentPath: "/carousel/carousel-sample-3/",
+      componentRoutePath: "carousel-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "Direction, IgxCarouselComponent, IgxCarouselModule, IgxLinearProgressBarComponent, IgxProgressBarModule, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "CarouselSample3Component", from: "./carousel/carousel-sample-3/carousel-sample-3.component" }],
+        ngDeclarations: "CarouselSample3Component",
+        ngImports: "IgxCarouselModule, IgxProgressBarModule, IgxSliderModule"
+      },
+      shortenComponentPathBy: "/carousel/"
+    },
+    {
       componentPath: "/datepicker/",
       componentRoutePath: "datepicker",
       appModuleConfig: {
@@ -130,10 +219,10 @@ module.exports = {
       componentRoutePath: "dialog",
       appModuleConfig: {
         imports: [
-          { import: "IgxButtonModule, IgxDialogModule, IgxInput, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule", from: "igniteui-angular/main" },
           { import: "DialogComponent", from: "./dialog/dialog.component" }],
         ngDeclarations: "DialogComponent",
-        ngImports: "IgxButtonModule, IgxDialogModule, IgxInput, IgxRippleModule"
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule"
       }
     },
     {
@@ -141,10 +230,10 @@ module.exports = {
       componentRoutePath: "form-elements",
       appModuleConfig: {
         imports: [
-          { import: "IgxAvatarModule, IgxCheckboxModule, IgxIconModule, IgxInput, IgxRadioModule, IgxSwitchModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "IgxAvatarModule, IgxCheckboxModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxRadioModule, IgxSwitchModule, IgxRippleModule", from: "igniteui-angular/main" },
           { import: "FormElementsComponent", from: "./form-elements/form-elements.component" }],
         ngDeclarations: "FormElementsComponent",
-        ngImports: "IgxAvatarModule, IgxCheckboxModule, IgxIconModule, IgxInput, IgxRadioModule, IgxSwitchModule, IgxRippleModule"
+        ngImports: "IgxAvatarModule, IgxCheckboxModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxRadioModule, IgxSwitchModule, IgxRippleModule"
       }
     },
     {
@@ -154,23 +243,47 @@ module.exports = {
       appModuleConfig: {
         imports: [
           { import: "HttpClientModule", from: "@angular/common/http" },
-          { import: "IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule, IgxIconModule, IgxInput, IgxProgressBarModule, IgxRippleModule, IgxSwitchModule", from: "igniteui-angular/main" },
+          { import: "IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule, IgxRippleModule, IgxSwitchModule", from: "igniteui-angular/main" },
           { import: "GridComponent", from: "./grid/grid.component" },
           { import: "DataService", from: "./grid/services/data.service" }],
         ngDeclarations: "GridComponent",
-        ngImports: "IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(), IgxIconModule, IgxInput, IgxProgressBarModule, IgxRippleModule, IgxSwitchModule, HttpClientModule",
+        ngImports: "IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(), IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule, IgxRippleModule, IgxSwitchModule, HttpClientModule",
         ngProviders: "DataService"
       }
+    },
+    {
+      componentPath: "/icon/icon-sample-1/",
+      componentRoutePath: "icon-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxIconModule", from: "igniteui-angular/main" },
+          { import: "IconSample1Component", from: "./icon/icon-sample-1/icon-sample-1.component" }],
+        ngDeclarations: "IconSample1Component",
+        ngImports: "IgxIconModule"
+      },
+      shortenComponentPathBy: "/icon/"
+    },
+    {
+      componentPath: "/label-input/",
+      componentRoutePath: "label-input",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxInputModule, IgxLabelModule", from: "igniteui-angular/main" },
+          { import: "LabelInputComponent", from: "./label-input/label-input.component" }],
+        ngDeclarations: "LabelInputComponent",
+        ngImports: "IgxInputModule, IgxLabelModule"
+      },
+      shortenComponentPathBy: "/icon/"
     },
     {
       componentPath: "/layout/",
       componentRoutePath: "layout",
       appModuleConfig: {
         imports: [
-          { import: "IgxLayout", from: "igniteui-angular/main" },
+          { import: "IgxLayoutModule", from: "igniteui-angular/main" },
           { import: "LayoutComponent", from: "./layout/layout.component" }],
         ngDeclarations: "LayoutComponent",
-        ngImports: "IgxLayout"
+        ngImports: "IgxLayoutModule"
       }
     },
     {
