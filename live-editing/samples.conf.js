@@ -23,28 +23,28 @@
 
 module.exports = {
   samplesAssetsConfig: [
-    {
-      componentPath: "/avatar/",
-      componentRoutePath: "avatar",
-      appModuleConfig: {
-        imports: [
-          { import: "IgxAvatarModule", from: "igniteui-angular/main" },
-          { import: "AvatarComponent", from: "./avatar/avatar.component" }],
-        ngDeclarations: "AvatarComponent",
-        ngImports: "IgxAvatarModule"
-      }
-    },
-    {
-      componentPath: "/badge/",
-      componentRoutePath: "badge",
-      appModuleConfig: {
-        imports: [
-          { import: "IgxAvatarModule, IgxBadgeModule", from: "igniteui-angular/main" },
-          { import: "BadgeComponent", from: "./badge/badge.component" }],
-        ngDeclarations: "BadgeComponent",
-        ngImports: "IgxAvatarModule, IgxBadgeModule"
-      }
-    },
+    // {
+    //   componentPath: "/avatar/",
+    //   componentRoutePath: "avatar",
+    //   appModuleConfig: {
+    //     imports: [
+    //       { import: "IgxAvatarModule", from: "igniteui-angular/main" },
+    //       { import: "AvatarComponent", from: "./avatar/avatar.component" }],
+    //     ngDeclarations: "AvatarComponent",
+    //     ngImports: "IgxAvatarModule"
+    //   }
+    // },
+    // {
+    //   componentPath: "/badge/",
+    //   componentRoutePath: "badge",
+    //   appModuleConfig: {
+    //     imports: [
+    //       { import: "IgxAvatarModule, IgxBadgeModule", from: "igniteui-angular/main" },
+    //       { import: "BadgeComponent", from: "./badge/badge.component" }],
+    //     ngDeclarations: "BadgeComponent",
+    //     ngImports: "IgxAvatarModule, IgxBadgeModule"
+    //   }
+    // },
     // {
     //   componentPath: "/buttons/",
     //   componentRoutePath: "buttons",
