@@ -237,6 +237,28 @@ module.exports = {
       }
     },
     {
+      componentPath: "/form-elements/checkbox/checkbox-sample-1/",
+      componentRoutePath: "checkbox-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCheckboxModule", from: "igniteui-angular/main" },
+          { import: "CheckboxSample1Component", from: "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component" }],
+        ngDeclarations: "CheckboxSample1Component",
+        ngImports: "IgxCheckboxModule"
+      }
+    },
+    {
+      componentPath: "/form-elements/checkbox/checkbox-sample-2/",
+      componentRoutePath: "checkbox-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCheckboxModule", from: "igniteui-angular/main" },
+          { import: "CheckboxSample2Component", from: "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component" }],
+        ngDeclarations: "CheckboxSample2Component",
+        ngImports: "IgxCheckboxModule"
+      }
+    },
+    {
       componentPath: "/grid/",
       componentRoutePath: "grid",
       additionalFiles: ["/grid/services/data.service.ts", "/grid/services/data.ts"],
