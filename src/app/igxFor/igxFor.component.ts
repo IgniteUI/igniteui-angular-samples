@@ -7,7 +7,7 @@ import { IgxFilterOptions } from "igniteui-angular/main";
     styleUrls: ["./igxFor.component.css"],
     templateUrl: "./igxFor.component.html"
 })
-export class igxForComponent implements OnInit {
+export class IgxForComponent implements OnInit {
 
   public search1: string;
   public data: object[] = [];
@@ -92,12 +92,13 @@ export class igxForComponent implements OnInit {
   constructor() { }
 
   public ngOnInit() {
-    let data = this.navItems;
-    for(let i = 10; i < 100000; i++) {
-        var obj = Object.assign({}, data[i % 10]);
-        obj["key"] = i;
+    const data = this.navItems;
+    for (let i = 10; i < 100000; i++) {
+        const obj = Object.assign({}, data[i % 10]);
+        const key = "key";
+        obj[key] = i;
         data.push(obj);
-	}
+    }
     this.data = data;
   }
 
