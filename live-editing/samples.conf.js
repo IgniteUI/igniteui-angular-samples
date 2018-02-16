@@ -98,6 +98,90 @@ module.exports = {
     //     ngImports: "IgxButtonModule, IgxButtonGroupModule, IgxIconModule, IgxRippleModule"
     //   }
     // },
+    {
+      componentPath: "/buttons/buttons-sample-1/",
+      componentRoutePath: "buttons-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "ButtonsSample1Component", from: "./buttons/buttons-sample-1/buttons-sample-1.component" }],
+        ngDeclarations: "ButtonsSample1Component",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
+      componentPath: "/buttons/buttons-sample-2/",
+      componentRoutePath: "buttons-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule", from: "igniteui-angular/main" },
+          { import: "ButtonsSample2Component", from: "./buttons/buttons-sample-2/buttons-sample-2.component" }],
+        ngDeclarations: "ButtonsSample2Component",
+        ngImports: "IgxButtonModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
+      componentPath: "/buttons/buttons-sample-3/",
+      componentRoutePath: "buttons-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "ButtonsSample3Component", from: "./buttons/buttons-sample-3/buttons-sample-3.component" }],
+        ngDeclarations: "ButtonsSample3Component",
+        ngImports: "IgxButtonModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
+      componentPath: "/buttons/buttons-sample-4/",
+      componentRoutePath: "buttons-sample-4",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "ButtonsSample4Component", from: "./buttons/buttons-sample-4/buttons-sample-4.component" }],
+        ngDeclarations: "ButtonsSample4Component",
+        ngImports: "IgxButtonModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
+      componentPath: "/buttons/buttons-sample-5/",
+      componentRoutePath: "buttons-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "ButtonsSample5Component", from: "./buttons/buttons-sample-5/buttons-sample-5.component" }],
+        ngDeclarations: "ButtonsSample5Component",
+        ngImports: "IgxButtonModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
+      componentPath: "/buttons/buttons-sample-6/",
+      componentRoutePath: "buttons-sample-6",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "ButtonsSample6Component", from: "./buttons/buttons-sample-6/buttons-sample-6.component" }],
+        ngDeclarations: "ButtonsSample6Component",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
+      componentPath: "/buttons/buttons-sample-7/",
+      componentRoutePath: "buttons-sample-7",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "ButtonsSample7Component", from: "./buttons/buttons-sample-7/buttons-sample-7.component" }],
+        ngDeclarations: "ButtonsSample7Component",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
       {
       componentPath: "/calendar/",
       componentRoutePath: "calendar",
