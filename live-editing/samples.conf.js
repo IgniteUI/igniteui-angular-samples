@@ -281,6 +281,28 @@ module.exports = {
       }
     },
     {
+      componentPath: "/form-elements/switch/switch-sample-1/",
+      componentRoutePath: "switch-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxSwitchModule", from: "igniteui-angular/main" },
+          { import: "SwitchSample1Component", from: "./form-elements/switch/switch-sample-1/switch-sample-1.component" }],
+        ngDeclarations: "SwitchSample1Component",
+        ngImports: "IgxSwitchModule"
+      }
+    },
+    {
+      componentPath: "/form-elements/switch/switch-sample-2/",
+      componentRoutePath: "switch-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxSwitchModule", from: "igniteui-angular/main" },
+          { import: "SwitchSample2Component", from: "./form-elements/switch/switch-sample-2/switch-sample-2.component" }],
+        ngDeclarations: "SwitchSample2Component",
+        ngImports: "IgxSwitchModule"
+      }
+    },
+    {
       componentPath: "/grid/",
       componentRoutePath: "grid",
       additionalFiles: ["/grid/services/data.service.ts", "/grid/services/data.ts"],
