@@ -60,6 +60,10 @@ import { ToggleComponent } from "./toggle/toggle.component";
 
 const appRoutes: Routes = [
   {
+    component: BadgeComponent,
+    path: "badge"
+  },
+  {
     component: BadgeSample1Component,
     path: "badge-sample-1"
   },
