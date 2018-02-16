@@ -38,7 +38,9 @@ import {
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { AvatarComponent } from "./avatar/avatar.component";
+import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
+import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
+import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
@@ -127,7 +129,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     DialogComponent,
     DatepickerComponent,
     SnackbarComponent,
-    AvatarComponent,
     FormElementsComponent,
     LayoutComponent,
     NavdrawerComponent,
@@ -160,7 +161,10 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ToggleSample1Component,
     ToggleSample2Component,
     ToggleSample3Component,
-    LabelInputComponent
+    LabelInputComponent,
+    AvatarSample1Component,
+    AvatarSample2Component,
+    AvatarSample3Component
   ],
   imports: [
     AppRoutingModule,

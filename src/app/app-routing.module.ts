@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes  } from "@angular/router";
-import { AvatarComponent } from "./avatar/avatar.component";
+import { AvatarSample1Component} from "./avatar/avatar-sample-1/avatar-sample-1.component";
+import { AvatarSample2Component} from "./avatar/avatar-sample-2/avatar-sample-2.component";
+import { AvatarSample3Component} from "./avatar/avatar-sample-3/avatar-sample-3.component";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
@@ -59,6 +61,18 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 
 const appRoutes: Routes = [
+  {
+    component: AvatarSample1Component,
+    path: "avatar-sample-1"
+  },
+  {
+    component: AvatarSample2Component,
+    path: "avatar-sample-2"
+  },
+  {
+    component: AvatarSample3Component,
+    path: "avatar-sample-3"
+  },
   {
     component: BadgeSample1Component,
     path: "badge-sample-1"
@@ -170,10 +184,6 @@ const appRoutes: Routes = [
   {
     component: RadioSample2Component,
     path: "radio-sample-2"
-  },
-  {
-    component: AvatarComponent,
-    path: "avatar"
   },
   {
     component: FormElementsComponent,
