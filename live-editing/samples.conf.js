@@ -24,18 +24,6 @@
 module.exports = {
   samplesAssetsConfig: [
     {
-      componentPath: "/avatar/avatar-sample-1/",
-      componentRoutePath: "avatar-sample-1",
-      appModuleConfig: {
-        imports: [
-          { import: "IgxAvatarModule", from: "igniteui-angular/main" },
-          { import: "AvatarSample1Component", from: "./avatar/avatar-sample-1/avatar-sample-1.component" }],
-        ngDeclarations: "AvatarSample1Component",
-        ngImports: "IgxAvatarModule"
-      },
-      shortenComponentPathBy: "/avatar/"
-    },
-    {
       componentPath: "/avatar/avatar-sample-2/",
       componentRoutePath: "avatar-sample-2",
       appModuleConfig: {
