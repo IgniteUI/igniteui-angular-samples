@@ -259,6 +259,28 @@ module.exports = {
       }
     },
     {
+      componentPath: "/form-elements/radio/radio-sample-1/",
+      componentRoutePath: "radio-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxRadioModule", from: "igniteui-angular/main" },
+          { import: "RadioSample1Component", from: "./form-elements/radio/radio-sample-1/radio-sample-1.component" }],
+        ngDeclarations: "RadioSample1Component",
+        ngImports: "IgxRadioModule"
+      }
+    },
+    {
+      componentPath: "/form-elements/radio/radio-sample-2/",
+      componentRoutePath: "radio-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxRadioModule", from: "igniteui-angular/main" },
+          { import: "RadioSample2Component", from: "./form-elements/radio/radio-sample-2/radio-sample-2.component" }],
+        ngDeclarations: "RadioSample2Component",
+        ngImports: "IgxRadioModule"
+      }
+    },
+    {
       componentPath: "/grid/",
       componentRoutePath: "grid",
       additionalFiles: ["/grid/services/data.service.ts", "/grid/services/data.ts"],
