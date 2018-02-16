@@ -79,3 +79,9 @@
         opacity: 1;
     }
 }
+.error > div > div {
+    background-color: red !important;
+}
+.headerAlignSyle {
+    text-align: right !important;
+}
