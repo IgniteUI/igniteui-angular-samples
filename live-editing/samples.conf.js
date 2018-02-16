@@ -353,6 +353,30 @@ module.exports = {
       }
     },
     {
+      componentPath: "/list/",
+      componentRoutePath: "list",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxAvatarModule, IgxFilterOptions, IgxFilterModule, IgxIconModule, IgxLabelModule, IgxListModule", from: "igniteui-angular/main" },
+          { import: "ListComponent", from: "./list/list.component" }],
+        ngDeclarations: "ListComponent",
+        ngImports: "IgxAvatarModule, IgxFilterModule, IgxIconModule, IgxLabelModule, IgxListModule"
+      },
+      shortenComponentPathBy: "/list/"
+    },
+    {
+      componentPath: "/list/list-sample-1/",
+      componentRoutePath: "list-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxListModule", from: "igniteui-angular/main" },
+          { import: "ListSample1Component", from: "./list/list-sample-1/list-sample-1.component" }],
+        ngDeclarations: "ListSample1Component",
+        ngImports: "IgxListModule"
+      },
+      shortenComponentPathBy: "/list/"
+    },
+    {
       componentPath: "/list/list-sample-2/",
       componentRoutePath: "list-sample-2",
       appModuleConfig: {
@@ -393,10 +417,10 @@ module.exports = {
       componentRoutePath: "navbar",
       appModuleConfig: {
         imports: [
-          { import: "IgxNavbarModule", from: "igniteui-angular/main" },
+          { import: "IgxIconModule, IgxNavbarModule", from: "igniteui-angular/main" },
           { import: "NavbarComponent", from: "./navbar/navbar.component" }],
         ngDeclarations: "NavbarComponent",
-        ngImports: "IgxNavbarModule"
+        ngImports: "IgxIconModule, IgxNavbarModule"
       }
     },
     {
@@ -404,10 +428,10 @@ module.exports = {
       componentRoutePath: "navigation-drawer",
       appModuleConfig: {
         imports: [
-          { import: "IgxButtonModule, IgxIconModule, NavigationDrawerModule, IgxRippleModule, IgxNavigationDirectives", from: "igniteui-angular/main" },
+          { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule", from: "igniteui-angular/main" },
           { import: "NavdrawerComponent", from: "./navdrawer/navdrawer.component" }],
         ngDeclarations: "NavdrawerComponent",
-        ngImports: "IgxButtonModule, IgxIconModule, NavigationDrawerModule, IgxRippleModule, IgxNavigationDirectives"
+        ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule"
       }
     },
     {
@@ -426,10 +450,10 @@ module.exports = {
       componentRoutePath: "scroll",
       appModuleConfig: {
         imports: [
-          { import: "IgxAvatarModule, IgxLayout, IgxScrollModule", from: "igniteui-angular/main" },
+          { import: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule", from: "igniteui-angular/main" },
           { import: "ScrollComponent", from: "./scroll/scroll.component" }],
         ngDeclarations: "ScrollComponent",
-        ngImports: "IgxAvatarModule, IgxLayout, IgxScrollModule"
+        ngImports: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule"
       }
     },
     {
@@ -437,10 +461,10 @@ module.exports = {
       componentRoutePath: "slider-sample-1",
       appModuleConfig: {
         imports: [
-          { import: "IgxInput, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "IgxInputModule, IgxSliderModule", from: "igniteui-angular/main" },
           { import: "SliderSample1Component", from: "./slider/slider-sample-1/slider-sample-1.component" }],
         ngDeclarations: "SliderSample1Component",
-        ngImports: "IgxInput, IgxSliderModule"
+        ngImports: "IgxInputModule, IgxSliderModule"
       },
       shortenComponentPathBy: "/slider/"
     },
@@ -461,10 +485,10 @@ module.exports = {
       componentRoutePath: "slider-sample-3",
       appModuleConfig: {
         imports: [
-          { import: "IgxInput, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "IgxInputModule, IgxSliderModule", from: "igniteui-angular/main" },
           { import: "SliderSample3Component", from: "./slider/slider-sample-3/slider-sample-3.component" }],
         ngDeclarations: "SliderSample3Component",
-        ngImports: "IgxInput, IgxSliderModule"
+        ngImports: "IgxInputModule, IgxSliderModule"
       },
       shortenComponentPathBy: "/slider/"
     },
