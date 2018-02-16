@@ -532,10 +532,11 @@ module.exports = {
       componentRoutePath: "tabbar",
       appModuleConfig: {
         imports: [
-          { import: "IgxTabBarModule", from: "igniteui-angular/main" },
+          { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule", from: "igniteui-angular/main" },
+          { import: " Router, RouterModule", from: "@angular/router"},
           { import: "TabbarComponent", from: "./tabbar/tabbar.component" }],
         ngDeclarations: "TabbarComponent",
-        ngImports: "IgxTabBarModule"
+        ngImports: "RouterModule, IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule"
       }
     },
     {
