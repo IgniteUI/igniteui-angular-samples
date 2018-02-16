@@ -32,7 +32,8 @@ import {
   IgxSwitchModule,
   IgxTabBarModule,
   IgxToastModule,
-  IgxToggleModule
+  IgxToggleModule,
+  IgxForOfModule
 } from "igniteui-angular/main";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -96,6 +97,7 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { igxForComponent } from "./igxFor/igxFor.component";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -160,7 +162,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ToggleSample1Component,
     ToggleSample2Component,
     ToggleSample3Component,
-    LabelInputComponent
+    LabelInputComponent,
+    igxForComponent
   ],
   imports: [
     AppRoutingModule,
@@ -197,7 +200,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxNavbarModule,
     IgxScrollModule,
     IgxToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    IgxForOfModule
   ],
   providers: [DataService]
 })

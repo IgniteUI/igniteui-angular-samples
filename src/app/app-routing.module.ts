@@ -57,6 +57,7 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { igxForComponent } from "./igxFor/igxFor.component";
 
 const appRoutes: Routes = [
   {
@@ -282,6 +283,10 @@ const appRoutes: Routes = [
   {
     component: ToggleSample3Component,
     path: "toggle-sample-3"
+  },
+  {
+    component: igxForComponent,
+    path: "igx-for-sample-1"
   }
 ];
 
