@@ -14,6 +14,7 @@ import {
   IgxDatePickerModule,
   IgxDialogModule,
   IgxFilterModule,
+  IgxForOfModule,
   IgxGridModule,
   IgxIconModule,
   IgxInputModule,
@@ -74,6 +75,7 @@ import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.com
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
+import { IgxForComponent } from "./igxFor/igxFor.component";
 import { LabelInputComponent } from "./label-input/label-input.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
@@ -162,6 +164,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     AvatarSample1Component,
     AvatarSample2Component,
     AvatarSample3Component,
+    IgxForComponent,
     FinancialSampleComponent
   ],
   imports: [
@@ -199,7 +202,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxNavbarModule,
     IgxScrollModule,
     IgxToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    IgxForOfModule
   ],
   providers: [DataService]
 })

@@ -35,6 +35,7 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
+import { IgxForComponent } from "./igxFor/igxFor.component";
 import { LabelInputComponent } from "./label-input/label-input.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
@@ -287,6 +288,10 @@ const appRoutes: Routes = [
   {
     component: ToggleSample3Component,
     path: "toggle-sample-3"
+  },
+  {
+    component: IgxForComponent,
+    path: "igx-for-sample-1"
   },
   {
     component: FinancialSampleComponent,
