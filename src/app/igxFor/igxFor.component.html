@@ -2,7 +2,7 @@
   <section class="sample-content">
     <article class="sample-column">
       <div class="igx-form-group">
-          <input class="igx-form-group__input--search" placeholder="Search Contacts" [(ngModel)]="search1" />
+          <input class="igx-form-group__input--search" placeholder="Search Contacts" [(ngModel)]="search" />
           <label igxLabel>
               <igx-icon fontSet="material" name="search"></igx-icon>
           </label>
@@ -12,13 +12,13 @@
       </div>
         <div class="list-sample">
              <igx-list>
-                <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo1).length}} </igx-list-item>
+                <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
                 <div [style.height]="'518px'">
                     <igx-list-item igxRipple="pink" igxRippleTarget=".igx-list__item"
-                    *igxFor="let item of data | igxFilter: fo1; scrollOrientation : 'vertical'; containerSize: '500px'; itemSize: '50px'">
+                    *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'vertical'; containerSize: '500px'; itemSize: '50px'">
                         <div class="item">
                             <igx-avatar [src]="item.avatar" roundShape="true"></igx-avatar>
-                            <span igxLabel>{{item.text}}</span>
+                            <span igxLabel>{{item.name}}</span>
                             <igx-icon name="star" [class.favorite]="item.favorite"></igx-icon>
                         </div>
                     </igx-list-item>
