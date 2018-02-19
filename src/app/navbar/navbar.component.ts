@@ -1,11 +1,10 @@
-import { Location, LocationStrategy, PathLocationStrategy } from "@angular/common";
+import { Location } from "@angular/common";
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 const CURRENT_VIEW = "Ignite UI JS Blocks";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
-    providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
     selector: "app-navbar",
     styleUrls: ["./navbar.component.css"],
     templateUrl: "./navbar.component.html"
