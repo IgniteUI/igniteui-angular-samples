@@ -70,6 +70,7 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -160,7 +161,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ToggleSample1Component,
     ToggleSample2Component,
     ToggleSample3Component,
-    LabelInputComponent
+    LabelInputComponent,
+    FinancialSampleComponent
   ],
   imports: [
     AppRoutingModule,
