@@ -1,3 +1,6 @@
-<igx-list [emptyListMessage]="emptyListMsg">
-  <igx-list-item *ngFor="let item of listItems" [isHeader]="item.heading" [options]="{}">{{item.name}}</igx-list-item>
+<igx-list>
+  <ng-template igxEmptyList>
+      <p>{{emptyListMsg}}</p>
+  </ng-template>
+  <igx-list-item *ngFor="let item of listItems" [isHeader]="item.heading">{{item.name}}</igx-list-item>
 </igx-list>
