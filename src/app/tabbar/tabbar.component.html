@@ -7,7 +7,7 @@
                         <igx-tab-panel icon="phone">
                             <igx-list [allowRightPanning]="true" [allowLeftPanning]="true">
                                 <igx-list-item [isHeader]="true">History</igx-list-item>
-                                <igx-list-item igxRipple="pink" igxRippleTarget=".igx-list__item" *ngFor="let contact of userContacts" [options]="options">
+                                <igx-list-item igxRipple="pink" igxRippleTarget=".igx-list__item" *ngFor="let contact of userContacts">
                                     <div class="item">
                                         <igx-avatar [src]="contact.avatar" roundShape="true"></igx-avatar>
                                         <div class="person">
