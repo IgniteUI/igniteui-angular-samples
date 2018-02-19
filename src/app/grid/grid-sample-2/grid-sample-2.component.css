@@ -1,0 +1,16 @@
+.cellAlignSyle {
+    text-align: right;
+    float:right;
+}
+.cellAlignSyle > span {
+    float:right;
+}
+.up {
+    color: green;
+}
+.down {
+    color: red;
+}
+.headerAlignSyle {
+    text-align: right !important;
+}
