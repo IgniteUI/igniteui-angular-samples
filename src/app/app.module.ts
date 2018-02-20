@@ -83,6 +83,12 @@ import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
+import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
+import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
+import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
+import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
+import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
+import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
 import { ScrollComponent } from "./scroll/scroll.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
@@ -96,7 +102,6 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-import { RippleSample1Component } from './ripple/ripple-sample-1/ripple-sample-1.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -162,7 +167,12 @@ import { RippleSample1Component } from './ripple/ripple-sample-1/ripple-sample-1
     ToggleSample2Component,
     ToggleSample3Component,
     LabelInputComponent,
-    RippleSample1Component
+    RippleSample1Component,
+    RippleSample2Component,
+    RippleSample3Component,
+    RippleSample4Component,
+    RippleSample5Component,
+    RippleSample6Component
   ],
   imports: [
     AppRoutingModule,
