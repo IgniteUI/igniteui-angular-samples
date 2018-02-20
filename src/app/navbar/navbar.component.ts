@@ -11,7 +11,6 @@ const CURRENT_VIEW = "Ignite UI JS Blocks";
     templateUrl: "./navbar.component.html"
 })
 export class NavbarComponent implements OnInit {
-
     public currentView: string;
 
     constructor(private _location: Location) { }
