@@ -47,14 +47,14 @@
             <span style="padding-left: 30px; width: 100%;">Athlete</span>
           </ng-template>
 
-          <ng-template igxCell let-cell="cell">
-            <span style="padding-left: 20px; width: 100%;">
+          <ng-template igxCell let-cell="cell">            
               <igx-avatar [src]="cell.value" roundShape="true" size="medium">
                   <igx-badge *ngIf="live && getPositionDelta(cell)=== 'up'" type="success" position="top-right" icon="arrow_upward"></igx-badge>
                   <igx-badge *ngIf="live && getPositionDelta(cell) === 'current'" type="warning" position="top-right" icon="arrow_forward"></igx-badge>
                   <igx-badge *ngIf="live && getPositionDelta(cell) === 'down'" type="error" position="top-right" icon="arrow_downward"></igx-badge>
               </igx-avatar>
-            </span>
+              <span style="padding-left: 20px; width: 100%;">
+              </span>
           </ng-template>
         </igx-column>
 
