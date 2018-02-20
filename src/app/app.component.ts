@@ -7,18 +7,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   public title = "Samples";
-  public paths = [
-    "calendar",
-    "card",
-    "carousel",
-    "datepicker",
-    "dialog",
-    "grid",
-    "list",
-    "snackbar",
-    "avatar",
-    "badge",
-    "form-elements",
-    "buttons"
-  ];
 }
