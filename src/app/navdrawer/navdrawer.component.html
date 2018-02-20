@@ -1,21 +1,21 @@
 <div class="main">
-  <igx-nav-drawer id="navigation">
-    <div class="igx-drawer-content">
-      <nav class="nav">
-        <span class="nav-item header">Components</span>
+  <igx-nav-drawer id="navigation" [isOpen]="drawerState.open">
+    <ng-template igxDrawer>
+      <nav>
+        <span igxDrawerItem [isHeader]="true" igxRipple>Components</span>
 
-        <span *ngFor="let item of navItems" [ngClass]="{'active': item.text === selected }" class="nav-item" (click)="navigate(item)">
+        <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
           <igx-icon fontSet="material" name="{{ item.name }}"></igx-icon>
           <span>{{ item.text }}</span>
         </span>
     </nav>
-    </div>
+    </ng-template>
   </igx-nav-drawer>
 
   <div>
-    <button igxButton="icon" igxNavToggle="navigation" class="ham-button">
+    <span igxButton="icon" igxToggleAction="navigation" [closeOnOutsideClick]="false">
       <igx-icon fontSet="material" name="menu"></igx-icon>
-    </button>
+    </span>
     <h2>
       Currently viewing {{ selected }} component.
     </h2>
