@@ -276,6 +276,23 @@ module.exports = {
       shortenComponentPathBy: "/carousel/"
     },
     {
+      componentPath: "/carousel/carousel-sample-4/",
+      componentRoutePath: "carousel-sample-4",
+      additionalFiles: ["/carousel/carousel-details/carousel-details.component.ts", "/carousel/carousel-details/carousel-details.component.html",
+      "/carousel/mock-slides.ts"],
+      appModuleConfig: {
+        imports: [
+          { import: "Direction, IgxButtonModule, IgxCarouselComponent, IgxCarouselModule, IgxLinearProgressBarComponent, IgxProgressBarModule, IgxRippleModule, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "CarouselDetailsViewComponent", from: "./carousel/carousel-details/carousel-details.component"},
+          { import: "Routes, Router, RouterModule", from: "@angular/router"},
+          { import: "CarouselSample4Component", from: "./carousel/carousel-sample-4/carousel-sample-4.component" }],
+        ngDeclarations: "CarouselDetailsViewComponent, CarouselSample4Component",
+        ngImports: `RouterModule.forRoot(Routes = [\{component: CarouselDetailsViewComponent, path: 'details/:index'}]),
+        IgxButtonModule, IgxCarouselModule, IgxProgressBarModule, IgxRippleModule, IgxSliderModule`
+      },
+      shortenComponentPathBy: "/carousel/"
+    },
+    {
       componentPath: "/datepicker/",
       componentRoutePath: "datepicker",
       appModuleConfig: {
@@ -593,11 +610,12 @@ module.exports = {
       componentRoutePath: "tabbar",
       appModuleConfig: {
         imports: [
-          { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule", from: "igniteui-angular/main" },
-          { import: " Router, RouterModule", from: "@angular/router"},
+          { import: "IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule, IgxListModule, IgxTabBarModule", from: "igniteui-angular/main" },
+          { import: "Routes, Router, RouterModule", from: "@angular/router"},
           { import: "TabbarComponent", from: "./tabbar/tabbar.component" }],
         ngDeclarations: "TabbarComponent",
-        ngImports: "RouterModule, IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule"
+        ngImports: `RouterModule.forRoot(Routes = [\{component: TabbarComponent, path: 'tabbar'}]), 
+        IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule, IgxListModule, IgxTabBarModule`
       }
     },
     {
