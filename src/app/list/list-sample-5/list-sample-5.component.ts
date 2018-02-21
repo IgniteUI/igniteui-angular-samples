@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-list-sample-5",
-  templateUrl: './list-sample-5.component.html',
-  styleUrls: ['./list-sample-5.component.css']
+  styleUrls: ["./list-sample-5.component.css"],
+  templateUrl: "./list-sample-5.component.html"
 })
 export class ListSample5Component implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }
