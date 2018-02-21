@@ -50,7 +50,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-1/",
       componentRoutePath: "badge-sample-1",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule", from: "igniteui-angular/main" },
@@ -63,7 +63,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-2/",
       componentRoutePath: "badge-sample-2",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule, IgxAvatarModule", from: "igniteui-angular/main" },
@@ -76,7 +76,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-3/",
       componentRoutePath: "badge-sample-3",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule, IgxAvatarModule", from: "igniteui-angular/main" },
