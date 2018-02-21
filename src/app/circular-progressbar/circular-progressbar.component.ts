@@ -17,7 +17,7 @@ export class CircularProgressbarComponent implements OnInit {
   constructor() { }
 
   public ngOnInit() {
-    this.currentValue = 30;
+    this.currentValue = 0;
   }
   public changeIcon() {
     return this.interval ? "pause" : "play_arrow";
@@ -34,6 +34,8 @@ export class CircularProgressbarComponent implements OnInit {
      if (this.circularBar.value > this.circularBar.max + 3) {
        this.interval = clearInterval(this.interval);
      }
+  }
+  public progresChanged(progress) {
   }
   private randomIntFromInterval(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
