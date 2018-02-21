@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { CircularProgressbarComponent } from './circular-progressbar.component';
+import { CircularProgressbarComponent } from "./circular-progressbar.component";
 
-describe('CircularProgressbarComponent', () => {
+describe("CircularProgressbarComponent", () => {
   let component: CircularProgressbarComponent;
   let fixture: ComponentFixture<CircularProgressbarComponent>;
 
@@ -19,7 +19,7 @@ describe('CircularProgressbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
