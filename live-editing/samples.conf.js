@@ -474,6 +474,18 @@ module.exports = {
       shortenComponentPathBy: "/list/"
     },
     {
+      componentPath: "/list/list-sample-5/",
+      componentRoutePath: "list-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxListModule", from: "igniteui-angular/main" },
+          { import: "ListSample5Component", from: "./list/list-sample-5/list-sample-5.component" }],
+        ngDeclarations: "ListSample5Component",
+        ngImports: "IgxListModule"
+      },
+      shortenComponentPathBy: "/list/"
+    },
+    {
       componentPath: "/navbar/",
       componentRoutePath: "navbar",
       appModuleConfig: {
