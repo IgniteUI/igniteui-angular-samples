@@ -513,6 +513,17 @@ module.exports = {
       }
     },
     {
+      componentPath: "/navdrawer/nav-drawer-simple/",
+      componentRoutePath: "navigation-drawer-simple",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "NavdrawerComponent", from: "./navdrawer/nav-drawer-simple/navdrawer-simple.component" }],
+        ngDeclarations: "NavdrawerComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
+      }
+    },
+    {
       componentPath: "/progressbar/",
       componentRoutePath: "progressbar",
       appModuleConfig: {
