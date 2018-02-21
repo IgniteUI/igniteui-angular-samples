@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { IgxSlideComponent } from "igniteui-angular/main";
+import { IgxButtonModule, IgxSlideComponent } from "igniteui-angular/main";
 import { slides } from "../mock-slides";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
-  selector: "app-carousel",
+  selector: "app-details",
   templateUrl: "./carousel-details.component.html"
 })
 export class CarouselDetailsViewComponent implements OnInit {

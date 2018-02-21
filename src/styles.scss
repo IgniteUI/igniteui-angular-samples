@@ -1,4 +1,7 @@
-@import 'themes';
+@import '~igniteui-angular/core/styles/themes/index';
+
+@include igx-core();
+@include igx-theme();
 
 .sample-wrapper {
     width: inherit;
@@ -77,4 +80,10 @@
     100% {
         opacity: 1;
     }
+}
+.error > div > div {
+    background-color: red !important;
+}
+.headerAlignSyle {
+    text-align: right !important;
 }

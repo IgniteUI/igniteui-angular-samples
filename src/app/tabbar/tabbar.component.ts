@@ -15,8 +15,6 @@ import { Router, RouterModule } from "@angular/router";
 export class TabbarComponent implements AfterViewInit {
     @ViewChildren("tabbarEl") public tabbar: QueryList<ElementRef>;
 
-    public options: object = {};
-
     private contacts: object[] = [{
         avatar: "assets/images/avatar/1.jpg",
         favorite: true,

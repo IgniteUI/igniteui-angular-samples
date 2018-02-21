@@ -97,7 +97,7 @@ module.exports = (function () {
   var getStyleCss = function (stylesFile, packageFile) {
     var igniteuiAngularVersion = packageFile.dependencies[igniteUIAngularPackageName];
     var unpkgIgniteUIAngularCssUrl = "https://unpkg.com/" + igniteUIAngularPackageName +
-      "@" + igniteuiAngularVersion + "/igniteui-angular.css";
+      "@" + igniteuiAngularVersion + "/styles/igniteui-angular.css";
     var cssImport = '@import url("' + unpkgIgniteUIAngularCssUrl + '");\r\n';
     stylesFile = cssImport.concat(stylesFile);
     return stylesFile;
