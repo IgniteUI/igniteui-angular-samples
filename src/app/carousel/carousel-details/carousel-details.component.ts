@@ -5,7 +5,7 @@ import { slides } from "../mock-slides";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
-  selector: "app-carousel",
+  selector: "app-details",
   templateUrl: "./carousel-details.component.html"
 })
 export class CarouselDetailsViewComponent implements OnInit {

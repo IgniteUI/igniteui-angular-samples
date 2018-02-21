@@ -50,7 +50,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-1/",
       componentRoutePath: "badge-sample-1",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule", from: "igniteui-angular/main" },
@@ -63,7 +63,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-2/",
       componentRoutePath: "badge-sample-2",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule, IgxAvatarModule", from: "igniteui-angular/main" },
@@ -76,7 +76,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-3/",
       componentRoutePath: "badge-sample-3",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule, IgxAvatarModule", from: "igniteui-angular/main" },
@@ -272,6 +272,23 @@ module.exports = {
           { import: "CarouselSample3Component", from: "./carousel/carousel-sample-3/carousel-sample-3.component" }],
         ngDeclarations: "CarouselSample3Component",
         ngImports: "IgxCarouselModule, IgxProgressBarModule, IgxSliderModule"
+      },
+      shortenComponentPathBy: "/carousel/"
+    },
+    {
+      componentPath: "/carousel/carousel-sample-4/",
+      componentRoutePath: "carousel-sample-4",
+      additionalFiles: ["/carousel/carousel-details/carousel-details.component.ts", "/carousel/carousel-details/carousel-details.component.html",
+      "/carousel/mock-slides.ts"],
+      appModuleConfig: {
+        imports: [
+          { import: "Direction, IgxButtonModule, IgxCarouselComponent, IgxCarouselModule, IgxLinearProgressBarComponent, IgxProgressBarModule, IgxRippleModule, IgxSliderModule", from: "igniteui-angular/main" },
+          { import: "CarouselDetailsViewComponent", from: "./carousel/carousel-details/carousel-details.component"},
+          { import: "Routes, Router, RouterModule", from: "@angular/router"},
+          { import: "CarouselSample4Component", from: "./carousel/carousel-sample-4/carousel-sample-4.component" }],
+        ngDeclarations: "CarouselDetailsViewComponent, CarouselSample4Component",
+        ngImports: `RouterModule.forRoot(Routes = [\{component: CarouselDetailsViewComponent, path: 'details/:index'}]),
+        IgxButtonModule, IgxCarouselModule, IgxProgressBarModule, IgxRippleModule, IgxSliderModule`
       },
       shortenComponentPathBy: "/carousel/"
     },
@@ -519,6 +536,18 @@ module.exports = {
       }
     },
     {
+      componentPath: "/ripple/ripple-sample-1/",
+      componentRoutePath: "ripple-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule", from: "igniteui-angular/main" },
+          { import: "RippleSample1Component", from: "./ripple/ripple-sample-1/ripple-sample-1.component" }],
+        ngDeclarations: "RippleSample1Component",
+        ngImports: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
       componentPath: "/scroll/",
       componentRoutePath: "scroll",
       appModuleConfig: {
@@ -605,11 +634,12 @@ module.exports = {
       componentRoutePath: "tabbar",
       appModuleConfig: {
         imports: [
-          { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule", from: "igniteui-angular/main" },
-          { import: " Router, RouterModule", from: "@angular/router"},
+          { import: "IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule, IgxListModule, IgxTabBarModule", from: "igniteui-angular/main" },
+          { import: "Routes, Router, RouterModule", from: "@angular/router"},
           { import: "TabbarComponent", from: "./tabbar/tabbar.component" }],
         ngDeclarations: "TabbarComponent",
-        ngImports: "RouterModule, IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule"
+        ngImports: `RouterModule.forRoot(Routes = [\{component: TabbarComponent, path: 'tabbar'}]), 
+        IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule, IgxListModule, IgxTabBarModule`
       }
     },
     {

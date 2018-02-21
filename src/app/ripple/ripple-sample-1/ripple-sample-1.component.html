@@ -1,0 +1,95 @@
+<div class="sample-wrapper">
+    <section style="flex-flow: row wrap; display: flex; justify-content: center;">
+        <article class="sample-column">
+            <h4 class="sample-title">Buttons</h4>
+            <div class="buttons-sample">
+                <div class="button-sample">
+                    <button igxButton="flat" igxRipple>Flat</button>
+                </div>
+                <div class="button-sample">
+                    <button igxButton="raised" igxRipple="white">Raised</button>
+                </div>   
+                <div class="button-sample">
+                    <button igxButton="raised" igxButtonColor="yellow" igxButtonBackground="black" igxRipple="#FBB13C">Click Me</button>
+                </div>                
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h4 class="sample-title">Floating Buttons</h4>
+            <div class="buttons-sample">
+                <div class="button-sample">
+                    <button igxButton="fab" igxRipple="white">
+                        <igx-icon fontSet="material" name="favorite"></igx-icon>
+                    </button>
+                </div>
+                <div class="button-sample">
+                    <button igxButton="fab" igxButtonColor="#FBB13C" igxButtonBackground="#340068" igxRipple="#FBB13C">
+                        <igx-icon fontSet="material" name="edit"></igx-icon>
+                    </button>
+                </div>
+                <div class="button-sample">
+                    <button igxButton="fab" igxButtonColor="yellow" igxButtonBackground="black" igxRipple="yellow">
+                        <igx-icon fontSet="material" name="add"></igx-icon>
+                    </button>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section style="flex-flow: row wrap; display: flex; justify-content: center;">
+        <article class="sample-column">
+            <h4 class="sample-title">Icon Buttons</h4>
+            <div class="buttons-sample">                
+                <div class="button-sample">
+                    <button igxButton="icon" igxButtonColor="white" igxButtonBackground="#E41D78" igxRipple="white" igxRippleCentered="true">
+                        <igx-icon fontSet="material" name="search"></igx-icon>
+                    </button>
+                </div>
+                <div class="button-sample">
+                    <button igxButton="icon" igxButtonColor="#FBB13C" igxButtonBackground="#340068" igxRipple="#FBB13C" igxRippleCentered="true">
+                        <igx-icon fontSet="material" name="favorite"></igx-icon>
+                    </button>
+                </div>
+                <div class="button-sample">
+                    <button igxButton="icon" igxButtonColor="yellow" igxButtonBackground="black" igxRipple="yellow" igxRippleCentered="true">
+                        <igx-icon fontSet="material" name="more_vert"></igx-icon>
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h4 class="sample-title">Avatar</h4> 
+            <div class="button-sample">
+                <div class="button-sample">
+                    <igx-avatar igxRipple="rgb(52, 0, 104)" initials="AZ" [roundShape]="'true'" bgColor="#BDBDBD" color="#e41c77"></igx-avatar>
+                  </div>
+            
+                  <div class="button-sample">
+                    <igx-avatar igxRipple="#e41c77" initials="AZ" bgColor="rgb(52, 0, 104)" color="white" size="medium"></igx-avatar>
+                  </div>
+
+                  <div class="button-sample">
+                    <igx-avatar igxRipple src="https://randomuser.me/api/portraits/men/3.jpg" roundShape="true" size="large"></igx-avatar>
+                  </div>
+            </div>         
+        </article>
+    </section> 
+
+    <section class="custom-height" style="flex-flow: row wrap; display: flex; justify-content: center;">
+        <article class="sample-column">
+            <h4 class="sample-title">Light Ripple on Dark Background (div)</h4>
+            <div class="ripple-sample dark" igxRipple="white">
+               <p style="margin-bottom:0">Click me to see my ripple!</p>
+            </div>
+        </article>
+
+        <article class="sample-column">
+            <h4 class="sample-title">Dark Ripple on Light Background (div)</h4>
+            <div class="ripple-sample light" igxRipple="black">
+               <p style="margin-bottom:0">Click me to see my ripple!</p>
+            </div>
+        </article>
+    </section> 
+
+</div>
