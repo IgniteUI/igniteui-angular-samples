@@ -1,0 +1,25 @@
+.parent-div {
+    width: 300px;
+    height: 140px;
+    color: white;
+    font-size: 1.5em;
+    padding: 16px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    transition: all .35s cubic-bezier(0.0, 0.0, 0.2, 1);
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    background: #fbb13c;
+}
+
+.child-div{
+    background: red;
+    text-align: center;
+    color:white;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    font-size: 0.6em;
+    padding: 5px;
+    margin: 10px;
+}

@@ -524,6 +524,18 @@ module.exports = {
       }
     },
     {
+      componentPath: "/ripple/ripple-sample-1/",
+      componentRoutePath: "ripple-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule", from: "igniteui-angular/main" },
+          { import: "RippleSample1Component", from: "./ripple/ripple-sample-1/ripple-sample-1.component" }],
+        ngDeclarations: "RippleSample1Component",
+        ngImports: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule"
+      },
+      shortenComponentPathBy: "/button/"
+    },
+    {
       componentPath: "/scroll/",
       componentRoutePath: "scroll",
       appModuleConfig: {
