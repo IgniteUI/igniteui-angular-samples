@@ -167,7 +167,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     AvatarSample2Component,
     AvatarSample3Component,
     IgxForComponent,
-    FinancialSampleComponent    
+    FinancialSampleComponent
   ],
   imports: [
     AppRoutingModule,
