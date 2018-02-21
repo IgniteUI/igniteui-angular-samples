@@ -1,8 +1,8 @@
-<div class="main">
-  <igx-nav-drawer id="navigation" [isOpen]="drawerState.open">
+<div class="main" igxLayout>
+  <igx-nav-drawer id="navigation" [isOpen]="drawerState.open" [(pin)]="drawerState.pin">
     <ng-template igxDrawer>
       <nav>
-        <span igxDrawerItem [isHeader]="true" igxRipple>Components</span>
+        <span igxDrawerItem [isHeader]="true">Components</span>
 
         <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
           <igx-icon fontSet="material" name="{{ item.name }}"></igx-icon>
@@ -10,14 +10,59 @@
         </span>
     </nav>
     </ng-template>
+
+    <ng-template igxDrawerMini *ngIf="drawerState.miniTemplate">
+        <nav>
+          <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
+            <igx-icon fontSet="material" name="{{ item.name }}"></igx-icon>
+          </span>
+      </nav>
+      </ng-template>
   </igx-nav-drawer>
 
-  <div>
+  <section igxFlex [class.mini-padding]="!drawerState.pin && drawerState.miniTemplate">
     <span igxButton="icon" igxToggleAction="navigation" [closeOnOutsideClick]="false">
       <igx-icon fontSet="material" name="menu"></igx-icon>
     </span>
+
     <h2>
-      Currently viewing {{ selected }} component.
+      Currently selected - {{ selected }} component.
     </h2>
-  </div>
+    <article>
+      <h5 class="setting-title">Mode</h5>
+      <div>
+          <igx-switch (ngModelChange)="drawer.toggle()"  [(ngModel)]="drawerState.pin">
+              Pinned nav drawer
+          </igx-switch>
+      </div>
+      <div>
+          <igx-switch (ngModelChange)="drawer.toggle()"  [(ngModel)]="drawerState.miniTemplate">
+              Mini variant
+          </igx-switch>
+      </div>
+    </article>
+    <article>
+      <h5 class="setting-title">Touch gestures</h5>
+      <div>
+          <igx-switch [(ngModel)]="drawer.enableGestures" [checked]="true" [disabled]="drawerState.pin">
+              Enable gestures
+          </igx-switch>
+          <p class="setting-note">
+            Swipe or drag from the edge area to open.
+            Swipe or pan to close.
+            Only active when not pinned.
+        </p>
+      </div>
+    </article>
+    <article>
+      <h5 class="setting-title">Position</h5>
+      <div class="setting-container radio">
+          <igx-radio *ngFor="let item of ['left', 'right']" value="{{item}}" name="group" [(ngModel)]="drawer.position"
+              [disabled]="drawerState.pin">{{item}}</igx-radio>
+          <p class="setting-note">
+              Can be "left"(default) or "right". Only has effect when not pinned.
+          </p>
+      </div>
+    </article>
+  </section>
 </div>

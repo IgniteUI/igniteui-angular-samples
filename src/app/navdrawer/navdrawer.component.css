@@ -1,20 +1,37 @@
-nav ::-webkit-scrollbar {
+.igx-nav-drawer__aside::-webkit-scrollbar {
     width: 3px;
     background: #e4e4e4;
 }
 
-nav ::-webkit-scrollbar-thumb {
+.igx-nav-drawer__aside::-webkit-scrollbar-thumb {
     background: #ec6f74;
     border-radius: 0;
 }
 
 .main {
     position: absolute;
-    display: flex;
-    flex-flow: row nowrap;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     overflow: hidden;
+}
+
+section {
+    padding: 1rem 2rem;
+}
+
+section.mini-padding {
+    padding: 1rem calc(1rem + 60px);
+}
+
+.setting-title {
+    margin-bottom: 0;
+    color: #EC6F74;
+}
+
+.setting-note {
+    font-size: 14px;
+    color: #484848;
+    margin: 4px 0;
 }
