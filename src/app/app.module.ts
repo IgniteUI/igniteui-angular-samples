@@ -63,6 +63,7 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
@@ -78,6 +79,7 @@ import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.compone
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { LabelInputComponent } from "./label-input/label-input.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
@@ -113,6 +115,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     CardSample3Component,
     CheckboxSample1Component,
     CheckboxSample2Component,
+    CircularProgressbarComponent,
+    LinearProgressbarComponent,
     ListComponent,
     ListSample1Component,
     ListSample2Component,
