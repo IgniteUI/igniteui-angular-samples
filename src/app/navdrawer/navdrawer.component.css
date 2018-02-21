@@ -1,13 +1,3 @@
-.igx-nav-drawer__aside::-webkit-scrollbar {
-    width: 3px;
-    background: #e4e4e4;
-}
-
-.igx-nav-drawer__aside::-webkit-scrollbar-thumb {
-    background: #ec6f74;
-    border-radius: 0;
-}
-
 .main {
     position: absolute;
     top: 0;
@@ -17,21 +7,32 @@
     overflow: hidden;
 }
 
-section {
+main {
     padding: 1rem 2rem;
 }
 
-section.mini-padding {
+main.mini-padding {
     padding: 1rem calc(1rem + 60px);
 }
 
+/* Sample styling */
 .setting-title {
     margin-bottom: 0;
-    color: #EC6F74;
+    color: rgba(228, 28, 119, 0.8) /*#e41c77cc*/ ;
 }
 
 .setting-note {
     font-size: 14px;
     color: #484848;
     margin: 4px 0;
+}
+
+.igx-nav-drawer__aside::-webkit-scrollbar {
+    width: 3px;
+    background: #e4e4e4;
+}
+
+.igx-nav-drawer__aside::-webkit-scrollbar-thumb {
+    background: #0375be;
+    border-radius: 0;
 }

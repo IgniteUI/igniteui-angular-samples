@@ -506,10 +506,10 @@ module.exports = {
       componentRoutePath: "navigation-drawer",
       appModuleConfig: {
         imports: [
-          { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule", from: "igniteui-angular/main" },
           { import: "NavdrawerComponent", from: "./navdrawer/navdrawer.component" }],
         ngDeclarations: "NavdrawerComponent",
-        ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule"
+        ngImports: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule"
       }
     },
     {
