@@ -53,7 +53,7 @@ export class ButtonGroupSample3Component implements OnInit {
           togglable: false
       }),
       new Button({
-          icon: "format_align_center",
+          icon: "format_align_center"
       }),
       new Button({
           icon: "format_align_right",
@@ -61,7 +61,7 @@ export class ButtonGroupSample3Component implements OnInit {
       }),
       new Button({
           disabled: true,
-          icon: "format_align_justify",
+          icon: "format_align_justify"
       })
   ];
   }
