@@ -64,7 +64,11 @@ import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
-import { ToastComponent } from "./toast/toast.component";
+import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
+import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
+import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
+import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -212,8 +216,24 @@ const appRoutes: Routes = [
     path: "radio-sample-2"
   },
   {
-    component: ToastComponent,
-    path: "toast"
+    component: ToastSample1Component,
+    path: "toast-sample-1"
+  },
+  {
+    component: ToastSample2Component,
+    path: "toast-sample-2"
+  },
+  {
+    component: ToastSample3Component,
+    path: "toast-sample-3"
+  },
+  {
+    component: ToastSample4Component,
+    path: "toast-sample-4"
+  },
+  {
+    component: ToastSample5Component,
+    path: "toast-sample-5"
   },
   {
     component: SliderSample1Component,
