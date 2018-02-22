@@ -530,8 +530,8 @@ module.exports = {
       appModuleConfig: {
         imports: [
           { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
-          { import: "NavdrawerComponent", from: "./navdrawer/nav-drawer-simple/navdrawer-simple.component" }],
-        ngDeclarations: "NavdrawerComponent",
+          { import: "NavDrawerSimpleComponent", from: "./navdrawer/nav-drawer-simple/nav-drawer-simple.component" }],
+        ngDeclarations: "NavDrawerSimpleComponent",
         ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
       }
     },
@@ -540,10 +540,10 @@ module.exports = {
       componentRoutePath: "navigation-drawer-pin",
       appModuleConfig: {
         imports: [
-          { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
-          { import: "NavdrawerComponent", from: "./navdrawer/nav-drawer-pin/navdrawer-pin.component" }],
-        ngDeclarations: "NavdrawerComponent",
-        ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
+          { import: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "NavDrawerPinComponent", from: "./navdrawer/nav-drawer-pin/nav-drawer-pin.component" }],
+        ngDeclarations: "NavDrawerPinComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
       }
     },
     {
@@ -551,10 +551,10 @@ module.exports = {
       componentRoutePath: "navigation-drawer-mini",
       appModuleConfig: {
         imports: [
-          { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
-          { import: "NavdrawerComponent", from: "./navdrawer/nav-drawer-mini/navdrawer-mini.component" }],
-        ngDeclarations: "NavdrawerComponent",
-        ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
+          { import: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "NavDrawerMiniComponent", from: "./navdrawer/nav-drawer-mini/nav-drawer-mini.component" }],
+        ngDeclarations: "NavDrawerMiniComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
       }
     },
     {
