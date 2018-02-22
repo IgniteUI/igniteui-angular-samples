@@ -45,6 +45,9 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
@@ -59,7 +62,10 @@ import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
-import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
+import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
+import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
+import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
@@ -173,12 +179,36 @@ const appRoutes: Routes = [
     path: "navigation-drawer"
   },
   {
+    component: NavDrawerSimpleComponent,
+    path: "navigation-drawer-simple"
+  },
+  {
+    component: NavDrawerPinComponent,
+    path: "navigation-drawer-pin"
+  },
+  {
+    component: NavDrawerMiniComponent,
+    path: "navigation-drawer-mini"
+  },
+  {
     component: GridComponent,
     path: "grid"
   },
   {
-    component: SnackbarComponent,
-    path: "snackbar"
+    component: SnackbarSample1Component,
+    path: "snackbar-sample-1"
+  },
+  {
+    component: SnackbarSample2Component,
+    path: "snackbar-sample-2"
+  },
+  {
+    component: SnackbarSample3Component,
+    path: "snackbar-sample-3"
+  },
+  {
+    component: SnackbarSample4Component,
+    path: "snackbar-sample-4"
   },
   {
     component: SwitchSample1Component,
