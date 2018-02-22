@@ -17,7 +17,7 @@ import { Router, RouterModule } from "@angular/router";
 export class TabbarComponent implements AfterViewInit {
     @ViewChildren("tabbarEl") public tabbar: QueryList<ElementRef>;
 
-    private contacts: object[] = [{
+    public contactsList: object[] = [{
         avatar: "assets/images/avatar/1.jpg",
         favorite: true,
         key: "1",
@@ -67,10 +67,6 @@ export class TabbarComponent implements AfterViewInit {
         phone: "401-661-3742",
         text: "Marianne Taylor"
     }];
-
-    public get userContacts() {
-        return this.contacts;
-    }
 
     constructor(private router: Router, private renderer: Renderer2) { }
 

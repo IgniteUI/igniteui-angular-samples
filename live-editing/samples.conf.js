@@ -601,6 +601,32 @@ module.exports = {
       }
     },
     {
+      componentPath: "/tabbar/tabbar-sample-1/",
+      componentRoutePath: "tabbar-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule", from: "igniteui-angular/main" },
+          { import: "Router, RouterModule", from: "@angular/router"},
+          { import: "TabbarSample1Component", from: "./tabbar/tabbar-sample-1/tabbar-sample-1.component" }],
+        ngDeclarations: "TabbarSample1Component",
+        ngImports: "RouterModule, IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule"
+      },
+      shortenComponentPathBy: "/tabbar/"
+    },
+    {
+      componentPath: "/tabbar/tabbar-sample-2/",
+      componentRoutePath: "tabbar-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule", from: "igniteui-angular/main" },
+          { import: "Router, RouterModule", from: "@angular/router"},
+          { import: "TabbarSample2Component", from: "./tabbar/tabbar-sample-2/tabbar-sample-2.component" }],
+        ngDeclarations: "TabbarSample2Component",
+        ngImports: "RouterModule, IgxAvatarModule, IgxIconModule, IgxListModule, IgxTabBarModule"
+      },
+      shortenComponentPathBy: "/tabbar/"
+    },
+    {
       componentPath: "/toast/",
       componentRoutePath: "toast",
       appModuleConfig: {

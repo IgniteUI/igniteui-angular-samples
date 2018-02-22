@@ -93,6 +93,8 @@ import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
+import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
@@ -134,6 +136,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ToastComponent,
     ProgressbarComponent,
     TabbarComponent,
+    TabbarSample1Component,
+    TabbarSample2Component,
     NavbarComponent,
     ScrollComponent,
     SliderSample1Component,
