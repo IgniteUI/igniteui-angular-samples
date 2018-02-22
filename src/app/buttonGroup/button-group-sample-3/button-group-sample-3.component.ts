@@ -39,7 +39,7 @@ class Button {
   templateUrl: "./button-group-sample-3.component.html"
 })
 export class ButtonGroupSample3Component implements OnInit {
-  
+
   public multi = true;
   public alignOptions: Button[];
 

@@ -50,17 +50,17 @@ export class ButtonGroupSample2Component implements OnInit {
   public ngOnInit() {
     this.cities = [
       new Button({
-          label: "Sofia",
+          label: "Sofia"
       }),
       new Button({
-          label: "London",
+          label: "London"
       }),
       new Button({
           label: "New York",
           selected: true
       }),
       new Button({
-          label: "Tokyo",
+          label: "Tokyo"
       })
   ];
   }
