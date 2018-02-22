@@ -44,6 +44,8 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
@@ -165,6 +167,14 @@ const appRoutes: Routes = [
   {
     component: NavDrawerSimpleComponent,
     path: "navigation-drawer-simple"
+  },
+  {
+    component: NavDrawerPinComponent,
+    path: "navigation-drawer-pin"
+  },
+  {
+    component: NavDrawerMiniComponent,
+    path: "navigation-drawer-mini"
   },
   {
     component: GridComponent,

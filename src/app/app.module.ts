@@ -84,6 +84,8 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
@@ -132,6 +134,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     SnackbarComponent,
     LayoutComponent,
     NavdrawerComponent,
+    NavDrawerMiniComponent,
+    NavDrawerPinComponent,
     NavDrawerSimpleComponent,
     ToastComponent,
     ProgressbarComponent,
