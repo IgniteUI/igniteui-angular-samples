@@ -525,6 +525,18 @@ module.exports = {
       shortenComponentPathBy: "/linear-progressbar/"
     },
     {
+      componentPath: "/linear-progressbar/linear-progressbar-sample-2/",
+      componentRoutePath: "linear-progressbar-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "LinearProgressbarSample2Component", from: "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component" }],
+        ngDeclarations: "LinearProgressbarSample2Component",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/linear-progressbar/"
+    },
+    {
       componentPath: "/list/list-sample-5/",
       componentRoutePath: "list-sample-5",
       appModuleConfig: {

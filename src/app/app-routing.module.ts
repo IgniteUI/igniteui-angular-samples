@@ -41,6 +41,8 @@ import { LabelInputComponent } from "./label-input/label-input.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
+import { LinearProgressbarSample2Component
+} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
@@ -162,6 +164,10 @@ const appRoutes: Routes = [
   {
     component: LinearProgressbarSample1Component,
     path: "linear-progressbar-sample-1"
+  },
+  {
+    component: LinearProgressbarSample2Component,
+    path: "linear-progressbar-sample-2"
   },
   {
     component: ListComponent,

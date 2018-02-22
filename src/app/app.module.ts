@@ -79,6 +79,10 @@ import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.compone
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { LabelInputComponent } from "./label-input/label-input.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { LinearProgressbarSample1Component
+} from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
+import { LinearProgressbarSample2Component
+} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
@@ -105,14 +109,12 @@ import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
-
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-import { LinearProgressbarSample1Component } from './linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -182,6 +184,7 @@ import { LinearProgressbarSample1Component } from './linear-progressbar/linear-p
     IgxForComponent,
     FinancialSampleComponent,
     LinearProgressbarSample1Component,
+    LinearProgressbarSample2Component,
     LabelInputComponent,
     RippleSample1Component,
     RippleSample2Component,
