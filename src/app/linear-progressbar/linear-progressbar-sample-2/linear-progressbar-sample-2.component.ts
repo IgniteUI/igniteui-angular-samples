@@ -1,20 +1,25 @@
-import { Component, QueryList, ViewChildren, ViewEncapsulation } from "@angular/core";
-import { IgxCircularProgressBarComponent, IgxLinearProgressBarComponent } from "igniteui-angular/main";
+import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from "@angular/core";
+import { IgxLinearProgressBarComponent, IgxTextAlign } from "igniteui-angular/main";
 
 @Component({
   selector: "app-linear-progressbar-sample-2",
   styleUrls: ["./linear-progressbar-sample-2.component.css"],
   templateUrl: "./linear-progressbar-sample-2.component.html"
 })
-export class LinearProgressbarSample2Component {
+export class LinearProgressbarSample2Component implements OnInit {
 
   public disable = false;
   public interval: any;
+  public positionCenter: IgxTextAlign;
+  public positionEnd: IgxTextAlign;
 
   @ViewChildren(IgxLinearProgressBarComponent, { read: IgxLinearProgressBarComponent })
   public linearBars: QueryList<IgxLinearProgressBarComponent>;
 
-  constructor() { }
+  public ngOnInit() {
+    this.positionCenter = IgxTextAlign.CENTER;
+    this.positionEnd = IgxTextAlign.END;
+  }
 
   public changeIcon() {
     return this.interval ? "pause" : "play_arrow";
