@@ -48,25 +48,20 @@ export class ButtonGroupSample3Component implements OnInit {
   public ngOnInit() {
     this.alignOptions = [
       new Button({
-          disabled: false,
           icon: "format_align_left",
           selected: true,
           togglable: false
       }),
       new Button({
-          disabled: false,
           icon: "format_align_center",
-          selected: false
       }),
       new Button({
-          disabled: false,
           icon: "format_align_right",
           selected: true
       }),
       new Button({
           disabled: true,
           icon: "format_align_justify",
-          selected: false
       })
   ];
   }
