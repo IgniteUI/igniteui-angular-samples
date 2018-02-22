@@ -46,17 +46,27 @@ import { ListSample1Component } from "./list/list-sample-1/list-sample-1.compone
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
+import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
+import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
+import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
+import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
+import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
+import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
+import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
 import { ScrollComponent } from "./scroll/scroll.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
-import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
+import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
+import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
+import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastComponent } from "./toast/toast.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
@@ -174,6 +184,10 @@ const appRoutes: Routes = [
     path: "list-sample-4"
   },
   {
+    component: ListSample5Component,
+    path: "list-sample-5"
+  },
+  {
     component: NavdrawerComponent,
     path: "navigation-drawer"
   },
@@ -182,8 +196,20 @@ const appRoutes: Routes = [
     path: "grid"
   },
   {
-    component: SnackbarComponent,
-    path: "snackbar"
+    component: SnackbarSample1Component,
+    path: "snackbar-sample-1"
+  },
+  {
+    component: SnackbarSample2Component,
+    path: "snackbar-sample-2"
+  },
+  {
+    component: SnackbarSample3Component,
+    path: "snackbar-sample-3"
+  },
+  {
+    component: SnackbarSample4Component,
+    path: "snackbar-sample-4"
   },
   {
     component: SwitchSample1Component,
@@ -302,8 +328,28 @@ const appRoutes: Routes = [
     path: "toggle-sample-2"
   },
   {
-    component: ToggleSample3Component,
-    path: "toggle-sample-3"
+    component: RippleSample1Component,
+    path: "ripple-sample-1"
+  },
+  {
+    component: RippleSample2Component,
+    path: "ripple-sample-2"
+  },
+  {
+    component: RippleSample3Component,
+    path: "ripple-sample-3"
+  },
+  {
+    component: RippleSample4Component,
+    path: "ripple-sample-4"
+  },
+  {
+    component: RippleSample5Component,
+    path: "ripple-sample-5"
+  },
+  {
+    component: RippleSample6Component,
+    path: "ripple-sample-6"
   },
   {
     component: IgxForComponent,
