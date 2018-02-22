@@ -6,6 +6,9 @@ import { AvatarSample3Component} from "./avatar/avatar-sample-3/avatar-sample-3.
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
+import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
+import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -13,7 +16,6 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
-import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -326,7 +328,15 @@ const appRoutes: Routes = [
   },
   {
     component: ButtonGroupSample1Component,
-    path: "buttonGroup-sample-1"
+    path: "button-group-sample-1"
+  },
+  {
+    component: ButtonGroupSample2Component,
+    path: "button-group-sample-2"
+  },
+  {
+    component: ButtonGroupSample3Component,
+    path: "button-group-sample-3"
   }
 ];
 
