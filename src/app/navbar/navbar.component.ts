@@ -1,7 +1,7 @@
 import { Location, LocationStrategy, PathLocationStrategy } from "@angular/common";
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
-const CURRENT_VIEW = "Ignite UI JS Blocks";
+const CURRENT_VIEW = "Ignite UI for Angular";
 
 @Component({
     encapsulation: ViewEncapsulation.None,

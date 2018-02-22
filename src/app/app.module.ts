@@ -83,6 +83,7 @@ import { ListSample2Component } from "./list/list-sample-2/list-sample-2.compone
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListComponent } from "./list/list.component";
+import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
@@ -141,6 +142,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
+    NavbarSample1Component,
     ScrollComponent,
     SliderSample1Component,
     SliderSample2Component,
@@ -177,7 +179,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     RippleSample3Component,
     RippleSample4Component,
     RippleSample5Component,
-    RippleSample6Component
+    RippleSample6Component,
+    NavbarSample1Component
   ],
   imports: [
     AppRoutingModule,

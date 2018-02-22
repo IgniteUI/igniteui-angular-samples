@@ -43,6 +43,7 @@ import { ListSample2Component } from "./list/list-sample-2/list-sample-2.compone
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListComponent } from "./list/list.component";
+import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
@@ -322,6 +323,10 @@ const appRoutes: Routes = [
   {
     component: FinancialSampleComponent,
     path: "grid-sample-2"
+  },
+  {
+    component: NavbarSample1Component,
+    path: "navbar-sample-1"
   }
 ];
 
