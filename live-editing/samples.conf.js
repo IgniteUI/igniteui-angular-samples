@@ -527,6 +527,18 @@ module.exports = {
       shortenComponentPathBy: "/list/"
     },
     {
+      componentPath: "/list/list-sample-5/",
+      componentRoutePath: "list-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxListModule", from: "igniteui-angular/main" },
+          { import: "ListSample5Component", from: "./list/list-sample-5/list-sample-5.component" }],
+        ngDeclarations: "ListSample5Component",
+        ngImports: "IgxListModule"
+      },
+      shortenComponentPathBy: "/list/"
+    },
+    {
       componentPath: "/navbar/",
       componentRoutePath: "navbar",
       appModuleConfig: {
@@ -643,15 +655,16 @@ module.exports = {
       shortenComponentPathBy: "/slider/"
     },
     {
-      componentPath: "/snackbar/",
-      componentRoutePath: "snackbar",
+      componentPath: "/snackbar/snackbar-sample-4/",
+      componentRoutePath: "snackbar-sample-4",
       appModuleConfig: {
         imports: [
           { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxRippleModule, IgxSnackbarModule", from: "igniteui-angular/main" },
-          { import: "SnackbarComponent", from: "./snackbar/snackbar.component" }],
-        ngDeclarations: "SnackbarComponent",
+          { import: "SnackbarSample4Component", from: "./snackbar/snackbar-sample-4/snackbar-sample-4.component" }],
+        ngDeclarations: "SnackbarSample4Component",
         ngImports: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxRippleModule, IgxSnackbarModule"
-      }
+      },
+      shortenComponentPathBy: "/snackbar/"
     },
     {
       componentPath: "/tabbar/",
