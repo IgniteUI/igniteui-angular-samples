@@ -50,7 +50,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-1/",
       componentRoutePath: "badge-sample-1",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule", from: "igniteui-angular/main" },
@@ -63,7 +63,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-2/",
       componentRoutePath: "badge-sample-2",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule, IgxAvatarModule", from: "igniteui-angular/main" },
@@ -76,7 +76,7 @@ module.exports = {
     {
       componentPath: "/badge/badge-sample-3/",
       componentRoutePath: "badge-sample-3",
-      additionalFiles:["./badge/model/member.model.ts"],
+      additionalFiles:["/badge/model/member.model.ts"],
       appModuleConfig: {
         imports: [
           { import: "IgxBadgeModule, IgxListModule, IgxAvatarModule", from: "igniteui-angular/main" },
@@ -491,6 +491,18 @@ module.exports = {
       shortenComponentPathBy: "/list/"
     },
     {
+      componentPath: "/list/list-sample-5/",
+      componentRoutePath: "list-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxListModule", from: "igniteui-angular/main" },
+          { import: "ListSample5Component", from: "./list/list-sample-5/list-sample-5.component" }],
+        ngDeclarations: "ListSample5Component",
+        ngImports: "IgxListModule"
+      },
+      shortenComponentPathBy: "/list/"
+    },
+    {
       componentPath: "/navbar/",
       componentRoutePath: "navbar",
       appModuleConfig: {
@@ -555,6 +567,18 @@ module.exports = {
         ngDeclarations: "ProgressbarComponent",
         ngImports: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule"
       }
+    },
+    {
+      componentPath: "/ripple/ripple-sample-1/",
+      componentRoutePath: "ripple-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule", from: "igniteui-angular/main" },
+          { import: "RippleSample1Component", from: "./ripple/ripple-sample-1/ripple-sample-1.component" }],
+        ngDeclarations: "RippleSample1Component",
+        ngImports: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule"
+      },
+      shortenComponentPathBy: "/button/"
     },
     {
       componentPath: "/scroll/",
@@ -628,15 +652,16 @@ module.exports = {
       shortenComponentPathBy: "/slider/"
     },
     {
-      componentPath: "/snackbar/",
-      componentRoutePath: "snackbar",
+      componentPath: "/snackbar/snackbar-sample-4/",
+      componentRoutePath: "snackbar-sample-4",
       appModuleConfig: {
         imports: [
           { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxRippleModule, IgxSnackbarModule", from: "igniteui-angular/main" },
-          { import: "SnackbarComponent", from: "./snackbar/snackbar.component" }],
-        ngDeclarations: "SnackbarComponent",
+          { import: "SnackbarSample4Component", from: "./snackbar/snackbar-sample-4/snackbar-sample-4.component" }],
+        ngDeclarations: "SnackbarSample4Component",
         ngImports: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxRippleModule, IgxSnackbarModule"
-      }
+      },
+      shortenComponentPathBy: "/snackbar/"
     },
     {
       componentPath: "/tabbar/",
