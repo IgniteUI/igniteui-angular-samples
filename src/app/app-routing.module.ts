@@ -44,7 +44,7 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
-import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/navdrawer-simple.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { ScrollComponent } from "./scroll/scroll.component";
