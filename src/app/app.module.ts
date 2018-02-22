@@ -88,6 +88,9 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
@@ -145,6 +148,9 @@ import { ToggleComponent } from "./toggle/toggle.component";
     DatepickerComponent,
     LayoutComponent,
     NavdrawerComponent,
+    NavDrawerMiniComponent,
+    NavDrawerPinComponent,
+    NavDrawerSimpleComponent,
     ToastComponent,
     ProgressbarComponent,
     TabbarComponent,
