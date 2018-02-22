@@ -315,6 +315,42 @@ module.exports = {
       }
     },
     {
+      componentPath: "/dialog/dialog-sample-1/",
+      componentRoutePath: "dialog-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample1Component", from: "./dialog/dialog-sample-1/dialog-sample-1.component" }],
+        ngDeclarations: "DialogSample1Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
+      componentPath: "/dialog/dialog-sample-2/",
+      componentRoutePath: "dialog-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample2Component", from: "./dialog/dialog-sample-2/dialog-sample-2.component" }],
+        ngDeclarations: "DialogSample2Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
+      componentPath: "/dialog/dialog-sample-3/",
+      componentRoutePath: "dialog-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample3Component", from: "./dialog/dialog-sample-3/dialog-sample-3.component" }],
+        ngDeclarations: "DialogSample3Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
       componentPath: "/form-elements/checkbox/checkbox-sample-1/",
       componentRoutePath: "checkbox-sample-1",
       appModuleConfig: {

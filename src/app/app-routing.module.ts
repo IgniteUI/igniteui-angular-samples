@@ -25,6 +25,9 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
+import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
+import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -138,6 +141,18 @@ const appRoutes: Routes = [
   {
     component: DialogComponent,
     path: "dialog"
+  },
+  {
+    component: DialogSample1Component,
+    path: "dialog-sample-1"
+  },
+  {
+    component: DialogSample2Component,
+    path: "dialog-sample-2"
+  },
+  {
+    component: DialogSample3Component,
+    path: "dialog-sample-3"
   },
   {
     component: LayoutComponent,
