@@ -4,18 +4,11 @@
           <h4 class="sample-title">Linear progress bar</h4>
           <div class="linear-container">
               <h5>Max value: 200</h5>
-              <igx-linear-bar [striped]="false" [max]="200" [value]="20"></igx-linear-bar>
+              <igx-linear-bar [striped]="false" [max]="200" [value]="0"></igx-linear-bar>
           </div>
           <div class="linear-container">
               <h5>Max value: 100</h5>
-              <igx-linear-bar type="danger" [striped]="true"></igx-linear-bar>
-          </div>
-          <div class="linear-container">
-              <igx-linear-bar type="default"></igx-linear-bar>
-              <igx-linear-bar type="info"></igx-linear-bar>
-              <igx-linear-bar type="success"></igx-linear-bar>
-              <igx-linear-bar type="warning"></igx-linear-bar>
-              <igx-linear-bar type="danger"></igx-linear-bar>
+              <igx-linear-bar [striped]="false" [max]="100" [value]="0" type="danger" ></igx-linear-bar>
           </div>
       </article>
     </section>
@@ -25,12 +18,6 @@
                 <p>Press the button to start updating the bars</p>
                 <button igxButton="fab" igxButtonBackground="#333" igxRipple="white" (click)="tick()">
                     <igx-icon fontSet="material" [name]="changeIcon()"></igx-icon>
-                </button>
-            </div>
-            <div class="button-container">
-                <p>Press the button to reset the bars</p>
-                <button igxButton="fab" igxButtonBackground="#333" igxRipple="white" (click)="reset()" [disabled]="disable">
-                    <igx-icon name="replay" color="white" isActive="true" ></igx-icon>
                 </button>
             </div>
         </article>
