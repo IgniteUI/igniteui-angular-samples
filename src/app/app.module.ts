@@ -67,7 +67,11 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
-import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
+import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
+import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
+import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
+import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
@@ -112,7 +116,6 @@ import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
-
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
@@ -160,7 +163,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     DialogSample1Component,
     DialogSample2Component,
     DialogSample3Component,
-    DatepickerComponent,
     LayoutComponent,
     NavdrawerComponent,
     NavDrawerMiniComponent,
@@ -205,6 +207,11 @@ import { ToggleComponent } from "./toggle/toggle.component";
     RippleSample4Component,
     RippleSample5Component,
     RippleSample6Component,
+    DatepickerSample1Component,
+    DatepickerSample2Component,
+    DatepickerSample3Component,
+    DatepickerSample4Component,
+    DatepickerSample5Component,
     SnackbarSample1Component,
     SnackbarSample2Component,
     SnackbarSample3Component,

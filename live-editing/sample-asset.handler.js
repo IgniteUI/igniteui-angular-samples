@@ -56,7 +56,7 @@ module.exports = (function () {
   }
 
   var getAppComponentHtml = function (componentTsContent) {
-    var componentSelectorRegex = /selector:[\s]*"([a-zA-Z0-9-]+)"/g;
+    var componentSelectorRegex = /selector:[\s]*["']([a-zA-Z0-9-]+)["']/g;
     var componentSeletcor = componentSelectorRegex.exec(componentTsContent)[1];
     var appComponentHtml = "<" + componentSeletcor + "></" + componentSeletcor + ">";
     return appComponentHtml;
