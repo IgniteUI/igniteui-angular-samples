@@ -63,7 +63,6 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
-import { DatepickerComponent } from "./datepicker/datepicker.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -106,6 +105,11 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { DatepickerSample1Component } from './datepicker/datepicker-sample-1/datepicker-sample-1.component';
+import { DatepickerSample2Component } from './datepicker/datepicker-sample-2/datepicker-sample-2.component';
+import { DatepickerSample3Component } from './datepicker/datepicker-sample-3/datepicker-sample-3.component';
+import { DatepickerSample4Component } from './datepicker/datepicker-sample-4/datepicker-sample-4.component';
+import { DatepickerSample5Component } from './datepicker/datepicker-sample-5/datepicker-sample-5.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -135,7 +139,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     CarouselSample4Component,
     CalendarComponent,
     DialogComponent,
-    DatepickerComponent,
     SnackbarComponent,
     LayoutComponent,
     NavdrawerComponent,
@@ -179,7 +182,12 @@ import { ToggleComponent } from "./toggle/toggle.component";
     RippleSample3Component,
     RippleSample4Component,
     RippleSample5Component,
-    RippleSample6Component
+    RippleSample6Component,
+    DatepickerSample1Component,
+    DatepickerSample2Component,
+    DatepickerSample3Component,
+    DatepickerSample4Component,
+    DatepickerSample5Component
   ],
   imports: [
     AppRoutingModule,
