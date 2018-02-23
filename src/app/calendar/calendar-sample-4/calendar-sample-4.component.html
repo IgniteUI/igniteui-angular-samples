@@ -1,0 +1,17 @@
+<div class="sample-wrapper">
+    <div class="sample-content">
+        <!-- Single selection mode -->
+        <article class="sample-column calendar-wrapper">
+            <igx-calendar>
+                <ng-template igxCalendarHeader let-parts>
+                    {{ parts.month.combined | titlecase }} {{parts.day.combined }} {{ parts.weekday.combined }}
+                </ng-template>
+                <ng-template igxCalendarSubheader let-parts>
+                    <span class="date__el" (click)="parts.monthView()">{{ parts.month.combined }}</span>            
+                    <span class="date__el" (click)="parts.yearView()">{{ parts.year.combined }}</span>
+                </ng-template>
+            </igx-calendar>                     
+        </article>
+    </div>
+</div>
+    
