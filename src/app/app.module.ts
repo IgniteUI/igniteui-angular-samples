@@ -205,7 +205,7 @@ import { DatepickerSample5Component } from './datepicker/datepicker-sample-5/dat
     DatepickerSample2Component,
     DatepickerSample3Component,
     DatepickerSample4Component,
-    DatepickerSample5Component
+    DatepickerSample5Component,
     SnackbarSample1Component,
     SnackbarSample2Component,
     SnackbarSample3Component,
