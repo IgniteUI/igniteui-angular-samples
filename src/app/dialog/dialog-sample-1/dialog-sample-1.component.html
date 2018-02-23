@@ -1,0 +1,9 @@
+<div class="sample-wrapper">
+    <article class="sample-column">
+            <h4 class="sample-title">Alert</h4>
+            <p class="sample-description">Notification for completed action.</p>
+            <button igxButton="raised" igxButtonColor="white" igxButtonBackground="#EC6F74" igxRipple="white" (click)="alert.open()">Show Dialog</button>
+            <igx-dialog #alert title="Notification" message="Your email has been sent successfully!" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
+            </igx-dialog>
+    </article>
+</div>

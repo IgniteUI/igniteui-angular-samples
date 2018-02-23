@@ -67,6 +67,9 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
+import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
+import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -88,6 +91,9 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
@@ -142,9 +148,15 @@ import { ToggleComponent } from "./toggle/toggle.component";
     CarouselSample4Component,
     CalendarComponent,
     DialogComponent,
+    DialogSample1Component,
+    DialogSample2Component,
+    DialogSample3Component,
     DatepickerComponent,
     LayoutComponent,
     NavdrawerComponent,
+    NavDrawerMiniComponent,
+    NavDrawerPinComponent,
+    NavDrawerSimpleComponent,
     ToastComponent,
     ProgressbarComponent,
     TabbarComponent,
