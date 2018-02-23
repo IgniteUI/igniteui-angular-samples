@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-carousel",
   styleUrls: ["./carousel.component.css"],
   templateUrl: "./carousel.component.html"
@@ -19,11 +18,11 @@ export class CarouselComponent implements OnInit {
   }
 
   public addNewSlide() {
-      this.slides.push(
-          {image: "assets/images/carousel/slide1@x2.jpg"},
-          {image: "assets/images/carousel/slide2@x2.jpg"},
-          {image: "assets/images/carousel/slide3@x2.jpg"},
-          {image: "assets/images/carousel/slide4@x2.jpg"}
-      );
+    this.slides.push(
+      { image: "assets/images/carousel/slide1@x2.jpg" },
+      { image: "assets/images/carousel/slide2@x2.jpg" },
+      { image: "assets/images/carousel/slide3@x2.jpg" },
+      { image: "assets/images/carousel/slide4@x2.jpg" }
+    );
   }
 }
