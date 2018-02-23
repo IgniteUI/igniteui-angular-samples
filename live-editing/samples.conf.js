@@ -389,15 +389,64 @@ module.exports = {
       shortenComponentPathBy: "/carousel/"
     },
     {
-      componentPath: "/datepicker/",
-      componentRoutePath: "datepicker",
+      componentPath: "/datepicker/datepicker-sample-1/",
+      componentRoutePath: "datepicker-sample-1",
       appModuleConfig: {
         imports: [
           { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
-          { import: "DatepickerComponent", from: "./datepicker/datepicker.component" }],
-        ngDeclarations: "DatepickerComponent",
+          { import: "DatepickerSample1Component", from: "./datepicker/datepicker-sample-1/datepicker-sample-1.component" }],
+        ngDeclarations: "DatepickerSample1Component",
         ngImports: "IgxDatePickerModule"
-      }
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-2/",
+      componentRoutePath: "datepicker-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample2Component", from: "./datepicker/datepicker-sample-2/datepicker-sample-2.component" }],
+        ngDeclarations: "DatepickerSample2Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-3/",
+      componentRoutePath: "datepicker-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample3Component", from: "./datepicker/datepicker-sample-3/datepicker-sample-3.component" }],
+        ngDeclarations: "DatepickerSample3Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-4/",
+      componentRoutePath: "datepicker-sample-4",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample4Component", from: "./datepicker/datepicker-sample-4/datepicker-sample-4.component" }],
+        ngDeclarations: "DatepickerSample4Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-5/",
+      componentRoutePath: "datepicker-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample5Component", from: "./datepicker/datepicker-sample-5/datepicker-sample-5.component" }],
+        ngDeclarations: "DatepickerSample5Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
     },
     {
       componentPath: "/dialog/",

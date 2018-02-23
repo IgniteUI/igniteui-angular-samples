@@ -32,7 +32,11 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
-import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
+import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
+import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
+import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
+import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
@@ -173,8 +177,24 @@ const appRoutes: Routes = [
     path: "checkbox-sample-2"
   },
   {
-    component: DatepickerComponent,
-    path: "datepicker"
+    component: DatepickerSample1Component,
+    path: "datepicker-sample-1"
+  },
+  {
+    component: DatepickerSample2Component,
+    path: "datepicker-sample-2"
+  },
+  {
+    component: DatepickerSample3Component,
+    path: "datepicker-sample-3"
+  },
+  {
+    component: DatepickerSample4Component,
+    path: "datepicker-sample-4"
+  },
+  {
+    component: DatepickerSample5Component,
+    path: "datepicker-sample-5"
   },
   {
     component: DialogComponent,
