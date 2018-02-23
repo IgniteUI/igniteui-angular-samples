@@ -3,13 +3,13 @@ import {
   Component,
   HostListener,
   NgZone,
-  OnInit,
   OnDestroy,
+  OnInit,
   ViewChild,
   ViewEncapsulation
 } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { STRING_FILTERS } from 'igniteui-angular/main';
+import { STRING_FILTERS } from "igniteui-angular/main";
 import { athletesData } from "./services/data";
 import { DataService } from "./services/data.service";
 
@@ -20,6 +20,9 @@ import { DataService } from "./services/data.service";
   templateUrl: "./grid.component.html"
 })
 export class GridComponent implements OnInit, OnDestroy {
+
+  @ViewChild("grid1", { read: IgxGridComponent })
+  public grid1: IgxGridComponent;
 
   public localData: any[];
   private _live = true;
@@ -39,10 +42,6 @@ export class GridComponent implements OnInit, OnDestroy {
     return this.windowWidth && this.windowWidth < 785;
   }
 
-  @ViewChild("grid1", { read: IgxGridComponent })
-  public grid1: IgxGridComponent;
-
-
   constructor(private zone: NgZone, private dataService: DataService) {}
 
   public ngOnInit() {
@@ -57,33 +56,32 @@ export class GridComponent implements OnInit, OnDestroy {
   public isTop3(cell): boolean {
     const top = cell.value > 0 && cell.value < 4;
     if (top) {
-      cell.row.nativeElement.classList.add('top3');
-    }
-    else {
-      cell.row.nativeElement.classList.remove('top3');
+      cell.row.nativeElement.classList.add("top3");
+    } else {
+      cell.row.nativeElement.classList.remove("top3");
     }
     return top;
   }
 
-  getIconType(cell) {
-    switch(cell.row.rowData.Position) {
-      case 'up':
-        return 'arrow_upward';
-      case 'current':
-        return 'arrow_forward';
-      case 'down':
-        return 'arrow_downward';
+  public getIconType(cell) {
+    switch (cell.row.rowData.Position) {
+      case "up":
+        return "arrow_upward";
+      case "current":
+        return "arrow_forward";
+      case "down":
+        return "arrow_downward";
     }
   }
 
-  getBadgeType(cell) {
-    switch(cell.row.rowData.Position) {
-      case 'up':
-        return 'success';
-      case 'current':
-        return 'warning';
-      case 'down':
-        return 'error';
+  public getBadgeType(cell) {
+    switch (cell.row.rowData.Position) {
+      case "up":
+        return "success";
+      case "current":
+        return "warning";
+      case "down":
+        return "error";
     }
   }
 
@@ -108,25 +106,27 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 
   private updateData() {
-    this.localData.map(rec => {
+    this.localData.map((rec) => {
       let val = this.generateRandomNumber(-1, 1);
       switch (val) {
         case -1:
-          rec.Position = 'down';
+          rec.Position = "down";
           val = 0;
           break;
         case 0:
-          rec.Position = 'current';
+          rec.Position = "current";
           val = 1;
           break;
         case 1:
-          rec.Position = 'up';
+          rec.Position = "up";
           val = 3;
           break;
       }
       rec.TrackProgress += val;
     });
+
     this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
+
     if (this.localData[0].TrackProgress >= 100) {
       this.live = false;
     }
