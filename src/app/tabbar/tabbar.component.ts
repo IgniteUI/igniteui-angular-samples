@@ -1,23 +1,13 @@
-import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    QueryList, Renderer2,
-    ViewChildren,
-    ViewEncapsulation
-} from "@angular/core";
-import { Router, RouterModule } from "@angular/router";
+import { Component } from "@angular/core";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-tabbar",
     styleUrls: ["./tabbar.component.css"],
     templateUrl: "./tabbar.component.html"
 })
-export class TabbarComponent implements AfterViewInit {
-    @ViewChildren("tabbarEl") public tabbar: QueryList<ElementRef>;
+export class TabbarComponent {
 
-    private contacts: object[] = [{
+    public contactsList: object[] = [{
         avatar: "assets/images/avatar/1.jpg",
         favorite: true,
         key: "1",
@@ -68,22 +58,6 @@ export class TabbarComponent implements AfterViewInit {
         text: "Marianne Taylor"
     }];
 
-    public get userContacts() {
-        return this.contacts;
-    }
+    constructor() { }
 
-    constructor(private router: Router, private renderer: Renderer2) { }
-
-    public route(event) {
-        if (event.panel.index === 2) {
-            this.router.navigate(["/tabbar", { outlets: { tabPanelOutlet: ["tabbarInnerPath"] } }]);
-        }
-    }
-
-    public ngAfterViewInit() {
-        this.tabbar.map((e) => {
-            menubar = e.nativeElement.querySelector(".igx-tab-bar__menu");
-            this.renderer.setStyle(menubar, "position", "absolute");
-        });
-    }
 }
