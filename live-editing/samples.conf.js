@@ -617,17 +617,6 @@ module.exports = {
       shortenComponentPathBy: "/button/"
     },
     {
-      componentPath: "/scroll/",
-      componentRoutePath: "scroll",
-      appModuleConfig: {
-        imports: [
-          { import: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule", from: "igniteui-angular/main" },
-          { import: "ScrollComponent", from: "./scroll/scroll.component" }],
-        ngDeclarations: "ScrollComponent",
-        ngImports: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule"
-      }
-    },
-    {
       componentPath: "/slider/slider-sample-1/",
       componentRoutePath: "slider-sample-1",
       appModuleConfig: {
