@@ -27,7 +27,6 @@ import {
   IgxProgressBarModule,
   IgxRadioModule,
   IgxRippleModule,
-  IgxScrollModule,
   IgxSliderModule,
   IgxSnackbarModule,
   IgxSwitchModule,
@@ -45,6 +44,9 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
+import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
+import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -52,6 +54,11 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
+import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
+import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
+import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
+import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
+import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -63,7 +70,14 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
-import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
+import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
+import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
+import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
+import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
+import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
+import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -82,9 +96,13 @@ import { ListSample1Component } from "./list/list-sample-1/list-sample-1.compone
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
+import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
@@ -93,15 +111,21 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
-import { ScrollComponent } from "./scroll/scroll.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
-import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
+import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
+import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
+import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
-import { ToastComponent } from "./toast/toast.component";
+import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
+import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
+import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
+import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -125,6 +149,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ListSample2Component,
     ListSample3Component,
     ListSample4Component,
+    ListSample5Component,
     GridComponent,
     CarouselComponent,
     CarouselDetailsViewComponent,
@@ -132,18 +157,25 @@ import { ToggleComponent } from "./toggle/toggle.component";
     CarouselSample2Component,
     CarouselSample3Component,
     CarouselSample4Component,
+    CalendarSample1Component,
+    CalendarSample2Component,
+    CalendarSample3Component,
+    CalendarSample4Component,
+    CalendarSample5Component,
     CalendarComponent,
     DialogComponent,
-    DatepickerComponent,
-    SnackbarComponent,
+    DialogSample1Component,
+    DialogSample2Component,
+    DialogSample3Component,
     LayoutComponent,
     NavdrawerComponent,
-    ToastComponent,
+    NavDrawerMiniComponent,
+    NavDrawerPinComponent,
+    NavDrawerSimpleComponent,
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
     NavbarSample1Component,
-    ScrollComponent,
     SliderSample1Component,
     SliderSample2Component,
     SliderSample3Component,
@@ -180,7 +212,24 @@ import { ToggleComponent } from "./toggle/toggle.component";
     RippleSample4Component,
     RippleSample5Component,
     RippleSample6Component,
-    NavbarSample1Component
+    NavbarSample1Component,
+    DatepickerSample1Component,
+    DatepickerSample2Component,
+    DatepickerSample3Component,
+    DatepickerSample4Component,
+    DatepickerSample5Component,
+    SnackbarSample1Component,
+    SnackbarSample2Component,
+    SnackbarSample3Component,
+    SnackbarSample4Component,
+    ToastSample1Component,
+    ToastSample2Component,
+    ToastSample3Component,
+    ToastSample4Component,
+    ToastSample5Component,
+    ButtonGroupSample1Component,
+    ButtonGroupSample2Component,
+    ButtonGroupSample3Component
   ],
   imports: [
     AppRoutingModule,
@@ -215,7 +264,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxSliderModule,
     IgxTabBarModule,
     IgxNavbarModule,
-    IgxScrollModule,
     IgxToggleModule,
     HttpClientModule,
     IgxForOfModule
