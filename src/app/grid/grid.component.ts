@@ -47,7 +47,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.localData = athletesData;
-    this._timer = setInterval(() => this.ticker(), 1000);
+    this._timer = setInterval(() => this.ticker(), 3000);
   }
 
   public ngOnDestroy() {
