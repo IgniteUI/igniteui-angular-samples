@@ -152,7 +152,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     NavDrawerMiniComponent,
     NavDrawerPinComponent,
     NavDrawerSimpleComponent,
-    ToastComponent,
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
