@@ -63,6 +63,9 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
+import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
+import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -84,6 +87,9 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
@@ -98,9 +104,17 @@ import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
-import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
+import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
+import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
+import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
+
 import { TabbarComponent } from "./tabbar/tabbar.component";
-import { ToastComponent } from "./toast/toast.component";
+import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
+import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
+import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
+import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -139,10 +153,14 @@ import { DatepickerSample5Component } from './datepicker/datepicker-sample-5/dat
     CarouselSample4Component,
     CalendarComponent,
     DialogComponent,
-    SnackbarComponent,
+    DialogSample1Component,
+    DialogSample2Component,
+    DialogSample3Component,
     LayoutComponent,
     NavdrawerComponent,
-    ToastComponent,
+    NavDrawerMiniComponent,
+    NavDrawerPinComponent,
+    NavDrawerSimpleComponent,
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
@@ -188,6 +206,15 @@ import { DatepickerSample5Component } from './datepicker/datepicker-sample-5/dat
     DatepickerSample3Component,
     DatepickerSample4Component,
     DatepickerSample5Component
+    SnackbarSample1Component,
+    SnackbarSample2Component,
+    SnackbarSample3Component,
+    SnackbarSample4Component,
+    ToastSample1Component,
+    ToastSample2Component,
+    ToastSample3Component,
+    ToastSample4Component,
+    ToastSample5Component
   ],
   imports: [
     AppRoutingModule,

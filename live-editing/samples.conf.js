@@ -364,6 +364,42 @@ module.exports = {
       }
     },
     {
+      componentPath: "/dialog/dialog-sample-1/",
+      componentRoutePath: "dialog-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample1Component", from: "./dialog/dialog-sample-1/dialog-sample-1.component" }],
+        ngDeclarations: "DialogSample1Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
+      componentPath: "/dialog/dialog-sample-2/",
+      componentRoutePath: "dialog-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample2Component", from: "./dialog/dialog-sample-2/dialog-sample-2.component" }],
+        ngDeclarations: "DialogSample2Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
+      componentPath: "/dialog/dialog-sample-3/",
+      componentRoutePath: "dialog-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample3Component", from: "./dialog/dialog-sample-3/dialog-sample-3.component" }],
+        ngDeclarations: "DialogSample3Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
       componentPath: "/form-elements/checkbox/checkbox-sample-1/",
       componentRoutePath: "checkbox-sample-1",
       appModuleConfig: {
@@ -567,10 +603,43 @@ module.exports = {
       componentRoutePath: "navigation-drawer",
       appModuleConfig: {
         imports: [
-          { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule", from: "igniteui-angular/main" },
           { import: "NavdrawerComponent", from: "./navdrawer/navdrawer.component" }],
         ngDeclarations: "NavdrawerComponent",
-        ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule"
+        ngImports: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule"
+      }
+    },
+    {
+      componentPath: "/navdrawer/nav-drawer-simple/",
+      componentRoutePath: "navigation-drawer-simple",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "NavDrawerSimpleComponent", from: "./navdrawer/nav-drawer-simple/nav-drawer-simple.component" }],
+        ngDeclarations: "NavDrawerSimpleComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
+      }
+    },
+    {
+      componentPath: "/navdrawer/nav-drawer-pin/",
+      componentRoutePath: "navigation-drawer-pin",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "NavDrawerPinComponent", from: "./navdrawer/nav-drawer-pin/nav-drawer-pin.component" }],
+        ngDeclarations: "NavDrawerPinComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
+      }
+    },
+    {
+      componentPath: "/navdrawer/nav-drawer-mini/",
+      componentRoutePath: "navigation-drawer-mini",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule", from: "igniteui-angular/main" },
+          { import: "NavDrawerMiniComponent", from: "./navdrawer/nav-drawer-mini/nav-drawer-mini.component" }],
+        ngDeclarations: "NavDrawerMiniComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule"
       }
     },
     {
@@ -668,15 +737,16 @@ module.exports = {
       shortenComponentPathBy: "/slider/"
     },
     {
-      componentPath: "/snackbar/",
-      componentRoutePath: "snackbar",
+      componentPath: "/snackbar/snackbar-sample-4/",
+      componentRoutePath: "snackbar-sample-4",
       appModuleConfig: {
         imports: [
           { import: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxRippleModule, IgxSnackbarModule", from: "igniteui-angular/main" },
-          { import: "SnackbarComponent", from: "./snackbar/snackbar.component" }],
-        ngDeclarations: "SnackbarComponent",
+          { import: "SnackbarSample4Component", from: "./snackbar/snackbar-sample-4/snackbar-sample-4.component" }],
+        ngDeclarations: "SnackbarSample4Component",
         ngImports: "IgxAvatarModule, IgxIconModule, IgxListModule, IgxRippleModule, IgxSnackbarModule"
-      }
+      },
+      shortenComponentPathBy: "/snackbar/"
     },
     {
       componentPath: "/tabbar/",
@@ -692,15 +762,28 @@ module.exports = {
       }
     },
     {
-      componentPath: "/toast/",
-      componentRoutePath: "toast",
+      componentPath: "/toast/toast-sample-1/",
+      componentRoutePath: "toast-sample-1",
       appModuleConfig: {
         imports: [
           { import: "IgxButtonModule, IgxRippleModule, IgxToastModule", from: "igniteui-angular/main" },
-          { import: "ToastComponent", from: "./toast/toast.component" }],
-        ngDeclarations: "ToastComponent",
+          { import: "ToastSample1Component", from: "./toast/toast-sample-1/toast-sample-1.component" }],
+        ngDeclarations: "ToastSample1Component",
         ngImports: "IgxButtonModule, IgxRippleModule, IgxToastModule"
-      }
+      },
+      shortenComponentPathBy: "/toast/"
+    },
+    {
+      componentPath: "/toast/toast-sample-5/",
+      componentRoutePath: "toast-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxRippleModule, IgxToastModule", from: "igniteui-angular/main" },
+          { import: "ToastSample5Component", from: "./toast/toast-sample-5/toast-sample-5.component" }],
+        ngDeclarations: "ToastSample5Component",
+        ngImports: "IgxButtonModule, IgxRippleModule, IgxToastModule"
+      },
+      shortenComponentPathBy: "/toast/"
     },
     {
       componentPath: "/toggle/",

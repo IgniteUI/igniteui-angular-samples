@@ -29,6 +29,9 @@ import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/dat
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
 import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
+import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
+import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -49,6 +52,9 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
@@ -63,9 +69,16 @@ import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
-import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
+import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
+import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
+import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
-import { ToastComponent } from "./toast/toast.component";
+import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
+import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
+import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
+import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -161,6 +174,18 @@ const appRoutes: Routes = [
     path: "dialog"
   },
   {
+    component: DialogSample1Component,
+    path: "dialog-sample-1"
+  },
+  {
+    component: DialogSample2Component,
+    path: "dialog-sample-2"
+  },
+  {
+    component: DialogSample3Component,
+    path: "dialog-sample-3"
+  },
+  {
     component: LayoutComponent,
     path: "layout"
   },
@@ -193,12 +218,36 @@ const appRoutes: Routes = [
     path: "navigation-drawer"
   },
   {
+    component: NavDrawerSimpleComponent,
+    path: "navigation-drawer-simple"
+  },
+  {
+    component: NavDrawerPinComponent,
+    path: "navigation-drawer-pin"
+  },
+  {
+    component: NavDrawerMiniComponent,
+    path: "navigation-drawer-mini"
+  },
+  {
     component: GridComponent,
     path: "grid"
   },
   {
-    component: SnackbarComponent,
-    path: "snackbar"
+    component: SnackbarSample1Component,
+    path: "snackbar-sample-1"
+  },
+  {
+    component: SnackbarSample2Component,
+    path: "snackbar-sample-2"
+  },
+  {
+    component: SnackbarSample3Component,
+    path: "snackbar-sample-3"
+  },
+  {
+    component: SnackbarSample4Component,
+    path: "snackbar-sample-4"
   },
   {
     component: SwitchSample1Component,
@@ -217,8 +266,24 @@ const appRoutes: Routes = [
     path: "radio-sample-2"
   },
   {
-    component: ToastComponent,
-    path: "toast"
+    component: ToastSample1Component,
+    path: "toast-sample-1"
+  },
+  {
+    component: ToastSample2Component,
+    path: "toast-sample-2"
+  },
+  {
+    component: ToastSample3Component,
+    path: "toast-sample-3"
+  },
+  {
+    component: ToastSample4Component,
+    path: "toast-sample-4"
+  },
+  {
+    component: ToastSample5Component,
+    path: "toast-sample-5"
   },
   {
     component: SliderSample1Component,
