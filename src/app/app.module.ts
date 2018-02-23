@@ -204,14 +204,24 @@ import { ToggleComponent } from "./toggle/toggle.component";
     SnackbarSample2Component,
     SnackbarSample3Component,
     SnackbarSample4Component,
+<<<<<<< HEAD
+=======
+    ButtonGroupSample1Component,
+    ButtonGroupSample2Component,
+    ButtonGroupSample3Component,
+>>>>>>> d7d385719a1c276d598c0ca45dc638bda54d2b4b
     ToastSample1Component,
     ToastSample2Component,
     ToastSample3Component,
     ToastSample4Component,
+<<<<<<< HEAD
     ToastSample5Component,
     ButtonGroupSample1Component,
     ButtonGroupSample2Component,
     ButtonGroupSample3Component
+=======
+    ToastSample5Component
+>>>>>>> d7d385719a1c276d598c0ca45dc638bda54d2b4b
   ],
   imports: [
     AppRoutingModule,
