@@ -12,6 +12,11 @@ export class DialogComponent implements OnInit {
   public onDialogOKSelected(event) {
     event.dialog.close();
   }
+
+  public signIn(event) {
+    event.dialog.close();
+  }
+
   public ngOnInit() {
   }
 
