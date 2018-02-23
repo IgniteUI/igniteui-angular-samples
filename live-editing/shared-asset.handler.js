@@ -1,11 +1,11 @@
 module.exports = (function () {
   var fs = require("fs");
   var path = require("path");
-  
+
   var packagesConfigPath = path.join(__dirname, "../package.json");
   var indexFilePath = path.join(__dirname, "../src/index.html");
   var polyfillsFilePath = path.join(__dirname, "../src/polyfills.ts");
-  var stylesFilePath = path.join(__dirname, "../src/styles.css");
+  var stylesFilePath = path.join(__dirname, "../src/styles.scss");
   var angularCliTemplatePath = path.join(__dirname, "../live-editing/templates/angular-cli.json.template");
   var mainTsFilePath = path.join(__dirname, "../live-editing/templates/main.ts.template");
   var appComponentCssPath = path.join(__dirname, "../src/app/app.component.css");
@@ -32,7 +32,8 @@ module.exports = (function () {
     "intl",
     "rxjs",
     "web-animations-js",
-    "zone.js"];
+    "zone.js"
+  ];
 
   var LiveEditingFile = require(path.join(__dirname, "file.js")).LiveEditingFile;
 
@@ -64,7 +65,7 @@ module.exports = (function () {
 
     files.push(new LiveEditingFile("index.html", fs.readFileSync(indexFilePath, "utf8")));
     files.push(new LiveEditingFile("polyfills.ts", fs.readFileSync(polyfillsFilePath, "utf8")));
-    files.push(new LiveEditingFile("styles.css", getStyleCss(fs.readFileSync(stylesFilePath, "utf8"), packageFile)));
+    files.push(new LiveEditingFile("styles.scss", fs.readFileSync(stylesFilePath, "utf8")));
     files.push(new LiveEditingFile(".angular-cli.json", fs.readFileSync(angularCliTemplatePath, "utf8")));
     files.push(new LiveEditingFile("main.ts", fs.readFileSync(mainTsFilePath, "utf8")));
     files.push(new LiveEditingFile("app/app.component.css", fs.readFileSync(appComponentCssPath, "utf8")));
@@ -92,15 +93,6 @@ module.exports = (function () {
     }
 
     return packageFileDependencies;
-  }
-
-  var getStyleCss = function (stylesFile, packageFile) {
-    var igniteuiAngularVersion = packageFile.dependencies[igniteUIAngularPackageName];
-    var unpkgIgniteUIAngularCssUrl = "https://unpkg.com/" + igniteUIAngularPackageName +
-      "@" + igniteuiAngularVersion + "/styles/igniteui-angular.css";
-    var cssImport = '@import url("' + unpkgIgniteUIAngularCssUrl + '");\r\n';
-    stylesFile = cssImport.concat(stylesFile);
-    return stylesFile;
   }
 
   return {

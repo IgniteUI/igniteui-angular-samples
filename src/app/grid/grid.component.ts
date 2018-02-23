@@ -5,8 +5,7 @@ import {
   NgZone,
   OnInit,
   TemplateRef,
-  ViewChild,
-  ViewEncapsulation
+  ViewChild
 } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { timer } from "rxjs/observable/timer";
@@ -15,7 +14,6 @@ import { athletesData } from "./services/data";
 import { DataService } from "./services/data.service";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-grid",
   styleUrls: ["./grid.component.css"],
   templateUrl: "./grid.component.html"
@@ -76,7 +74,7 @@ export class GridComponent implements OnInit, AfterViewInit {
   public doGlobalFiltering(event) {
     const search = event.target.value;
     this.grid1.filter("CountryName", search);
-    }
+  }
 
   public doSwitch(evt) {
     this.live = evt.target.checked ? true : false;
@@ -85,7 +83,7 @@ export class GridComponent implements OnInit, AfterViewInit {
   private ticker() {
     this.zone.runOutsideAngular(() => {
       this.updateData();
-      this.zone.run(() => {});
+      this.zone.run(() => { });
     });
   }
 
@@ -111,7 +109,7 @@ export class GridComponent implements OnInit, AfterViewInit {
           break;
       }
       rec.TrackProgress += newValue;
-      return {...rec};
+      return { ...rec };
     };
 
     this.localData = this.localData

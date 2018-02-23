@@ -1,6 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-/* Styles go here */
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~igniteui-angular/core/styles/themes/index';
+
+@include igx-core();
+@include igx-theme();
+
 .sample-wrapper {
     width: inherit;
     position: relative;

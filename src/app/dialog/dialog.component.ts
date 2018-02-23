@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-dialog",
   styleUrls: ["./dialog.component.css"],
   templateUrl: "./dialog.component.html"
