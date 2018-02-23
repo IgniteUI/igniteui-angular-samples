@@ -69,6 +69,9 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
+import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
+import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -113,7 +116,11 @@ import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 
 import { TabbarComponent } from "./tabbar/tabbar.component";
-import { ToastComponent } from "./toast/toast.component";
+import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
+import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
+import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
+import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -152,13 +159,15 @@ import { ToggleComponent } from "./toggle/toggle.component";
     CalendarSample5Component,
     CalendarComponent,
     DialogComponent,
+    DialogSample1Component,
+    DialogSample2Component,
+    DialogSample3Component,
     DatepickerComponent,
     LayoutComponent,
     NavdrawerComponent,
     NavDrawerMiniComponent,
     NavDrawerPinComponent,
     NavDrawerSimpleComponent,
-    ToastComponent,
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
@@ -202,7 +211,12 @@ import { ToggleComponent } from "./toggle/toggle.component";
     SnackbarSample1Component,
     SnackbarSample2Component,
     SnackbarSample3Component,
-    SnackbarSample4Component
+    SnackbarSample4Component,
+    ToastSample1Component,
+    ToastSample2Component,
+    ToastSample3Component,
+    ToastSample4Component,
+    ToastSample5Component
   ],
   imports: [
     AppRoutingModule,
