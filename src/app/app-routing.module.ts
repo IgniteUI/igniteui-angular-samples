@@ -6,6 +6,9 @@ import { AvatarSample3Component} from "./avatar/avatar-sample-3/avatar-sample-3.
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
+import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
+import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -29,7 +32,11 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
-import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
+import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
+import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
+import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
+import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
@@ -64,7 +71,6 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
-import { ScrollComponent } from "./scroll/scroll.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -171,8 +177,24 @@ const appRoutes: Routes = [
     path: "checkbox-sample-2"
   },
   {
-    component: DatepickerComponent,
-    path: "datepicker"
+    component: DatepickerSample1Component,
+    path: "datepicker-sample-1"
+  },
+  {
+    component: DatepickerSample2Component,
+    path: "datepicker-sample-2"
+  },
+  {
+    component: DatepickerSample3Component,
+    path: "datepicker-sample-3"
+  },
+  {
+    component: DatepickerSample4Component,
+    path: "datepicker-sample-4"
+  },
+  {
+    component: DatepickerSample5Component,
+    path: "datepicker-sample-5"
   },
   {
     component: DialogComponent,
@@ -323,10 +345,6 @@ const appRoutes: Routes = [
     path: "navbar"
   },
   {
-    component: ScrollComponent,
-    path: "scroll"
-  },
-  {
     component: CardSample1Component,
     path: "card-sample-1"
   },
@@ -417,6 +435,18 @@ const appRoutes: Routes = [
   {
     component: FinancialSampleComponent,
     path: "grid-sample-2"
+  },
+  {
+    component: ButtonGroupSample1Component,
+    path: "button-group-sample-1"
+  },
+  {
+    component: ButtonGroupSample2Component,
+    path: "button-group-sample-2"
+  },
+  {
+    component: ButtonGroupSample3Component,
+    path: "button-group-sample-3"
   }
 ];
 

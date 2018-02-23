@@ -171,6 +171,42 @@ module.exports = {
       shortenComponentPathBy: "/button/"
     },
     {
+      componentPath: "/buttonGroup/button-group-sample-1/",
+      componentRoutePath: "button-group-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonGroupModule", from: "igniteui-angular/main" },
+          { import: "ButtonGroupSample1Component", from: "./buttonGroup/button-group-sample-1/button-group-sample-1.component" }],
+        ngDeclarations: "ButtonGroupSample1Component",
+        ngImports: "IgxButtonGroupModule"
+      },
+      shortenComponentPathBy: "/buttonGroup/"
+    },
+    {
+      componentPath: "/buttonGroup/button-group-sample-2/",
+      componentRoutePath: "button-group-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonGroupModule", from: "igniteui-angular/main" },
+          { import: "ButtonGroupSample2Component", from: "./buttonGroup/button-group-sample-2/button-group-sample-2.component" }],
+        ngDeclarations: "ButtonGroupSample2Component",
+        ngImports: "IgxButtonGroupModule"
+      },
+      shortenComponentPathBy: "/buttonGroup/"
+    },
+    {
+      componentPath: "/buttonGroup/button-group-sample-3/",
+      componentRoutePath: "button-group-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonGroupModule", from: "igniteui-angular/main" },
+          { import: "ButtonGroupSample3Component", from: "./buttonGroup/button-group-sample-3/button-group-sample-3.component" }],
+        ngDeclarations: "ButtonGroupSample3Component",
+        ngImports: "IgxButtonGroupModule"
+      },
+      shortenComponentPathBy: "/buttonGroup/"
+    },
+    {
       componentPath: "/calendar/",
       componentRoutePath: "calendar",
       appModuleConfig: {
@@ -353,15 +389,64 @@ module.exports = {
       shortenComponentPathBy: "/carousel/"
     },
     {
-      componentPath: "/datepicker/",
-      componentRoutePath: "datepicker",
+      componentPath: "/datepicker/datepicker-sample-1/",
+      componentRoutePath: "datepicker-sample-1",
       appModuleConfig: {
         imports: [
           { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
-          { import: "DatepickerComponent", from: "./datepicker/datepicker.component" }],
-        ngDeclarations: "DatepickerComponent",
+          { import: "DatepickerSample1Component", from: "./datepicker/datepicker-sample-1/datepicker-sample-1.component" }],
+        ngDeclarations: "DatepickerSample1Component",
         ngImports: "IgxDatePickerModule"
-      }
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-2/",
+      componentRoutePath: "datepicker-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample2Component", from: "./datepicker/datepicker-sample-2/datepicker-sample-2.component" }],
+        ngDeclarations: "DatepickerSample2Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-3/",
+      componentRoutePath: "datepicker-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample3Component", from: "./datepicker/datepicker-sample-3/datepicker-sample-3.component" }],
+        ngDeclarations: "DatepickerSample3Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-4/",
+      componentRoutePath: "datepicker-sample-4",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample4Component", from: "./datepicker/datepicker-sample-4/datepicker-sample-4.component" }],
+        ngDeclarations: "DatepickerSample4Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
+    },
+    {
+      componentPath: "/datepicker/datepicker-sample-5/",
+      componentRoutePath: "datepicker-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxDatePickerModule", from: "igniteui-angular/main" },
+          { import: "DatepickerSample5Component", from: "./datepicker/datepicker-sample-5/datepicker-sample-5.component" }],
+        ngDeclarations: "DatepickerSample5Component",
+        ngImports: "IgxDatePickerModule"
+      },
+      shortenComponentPathBy: "/datepicker/"
     },
     {
       componentPath: "/dialog/",
@@ -675,17 +760,6 @@ module.exports = {
         ngImports: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule"
       },
       shortenComponentPathBy: "/button/"
-    },
-    {
-      componentPath: "/scroll/",
-      componentRoutePath: "scroll",
-      appModuleConfig: {
-        imports: [
-          { import: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule", from: "igniteui-angular/main" },
-          { import: "ScrollComponent", from: "./scroll/scroll.component" }],
-        ngDeclarations: "ScrollComponent",
-        ngImports: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule"
-      }
     },
     {
       componentPath: "/slider/slider-sample-1/",
