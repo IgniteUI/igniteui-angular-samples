@@ -4,13 +4,12 @@ import {
   HostListener,
   NgZone,
   OnInit,
-  TemplateRef,
+  OnDestroy,
   ViewChild,
   ViewEncapsulation
 } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { timer } from "rxjs/observable/timer";
-import { Subject } from "rxjs/Subject";
+import { STRING_FILTERS } from 'igniteui-angular/main';
 import { athletesData } from "./services/data";
 import { DataService } from "./services/data.service";
 
@@ -20,110 +19,116 @@ import { DataService } from "./services/data.service";
   styleUrls: ["./grid.component.css"],
   templateUrl: "./grid.component.html"
 })
-export class GridComponent implements OnInit, AfterViewInit {
+export class GridComponent implements OnInit, OnDestroy {
 
   public localData: any[];
-  public timerSubscription: any;
-  public timer: any;
-  public live: boolean;
-  public disabled: boolean;
-  public windowWidth: any;
+  private _live = true;
+  private _timer;
+  private windowWidth: any;
+
+  get live() {
+    return this._live;
+  }
+
+  set live(val) {
+    this._live = val;
+    clearInterval(this._timer);
+  }
+
+  get hideColumn() {
+    return this.windowWidth && this.windowWidth < 785;
+  }
 
   @ViewChild("grid1", { read: IgxGridComponent })
   public grid1: IgxGridComponent;
 
-  @ViewChild("pager", { read: TemplateRef })
-  public pager: TemplateRef<any>;
 
-  constructor(private zone: NgZone, private dataService: DataService) {
-  }
+  constructor(private zone: NgZone, private dataService: DataService) {}
 
   public ngOnInit() {
     this.localData = athletesData;
+    this._timer = setInterval(() => this.ticker(), 1000);
+  }
 
-    this.timer = new Subject().pipe(() => timer(0, 3000));
-    this.timerSubscription = this.timer.subscribe((tick) => {
-      if (this.live) {
-        this.ticker();
-      }
-    });
-    this.live = true;
-    this.disabled = false;
+  public ngOnDestroy() {
+    clearInterval(this._timer);
   }
 
   public isTop3(cell): boolean {
-    if ([1, 2, 3].includes(cell.value)) {
-      cell.nativeElement.parentElement.classList.add("top3");
-      return true;
+    const top = cell.value > 0 && cell.value < 4;
+    if (top) {
+      cell.row.nativeElement.classList.add('top3');
+    }
+    else {
+      cell.row.nativeElement.classList.remove('top3');
+    }
+    return top;
+  }
+
+  getIconType(cell) {
+    switch(cell.row.rowData.Position) {
+      case 'up':
+        return 'arrow_upward';
+      case 'current':
+        return 'arrow_forward';
+      case 'down':
+        return 'arrow_downward';
     }
   }
 
-  public getPositionDelta(cell) {
-    return cell.row.rowData.Position;
-  }
-
-  public ngAfterViewInit() {
-    this.grid1.paginationTemplate = this.pager;
-    this.grid1.perPage = 6;
-    this.windowWidth = (window.innerWidth);
+  getBadgeType(cell) {
+    switch(cell.row.rowData.Position) {
+      case 'up':
+        return 'success';
+      case 'current':
+        return 'warning';
+      case 'down':
+        return 'error';
+    }
   }
 
   @HostListener("window:resize", ["$event"])
   public onResize(event) {
-    this.windowWidth = (event.target.innerWidth);
+    this.windowWidth = event.target.innerWidth;
   }
 
-  public doGlobalFiltering(event) {
-    const search = event.target.value;
-    this.grid1.filter("CountryName", search);
-    }
-
-  public doSwitch(evt) {
-    this.live = evt.target.checked ? true : false;
+  public filter(term) {
+    this.grid1.filter("CountryName", term, STRING_FILTERS.contains);
   }
 
   private ticker() {
     this.zone.runOutsideAngular(() => {
       this.updateData();
-      this.zone.run(() => {});
+      this.zone.run(() => this.grid1.markForCheck());
     });
   }
 
-  private getRandomNumber(max, min) {
+  private generateRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   private updateData() {
-    const incr = (rec) => {
-      let newValue = this.getRandomNumber(-2, 2);
-      switch (newValue) {
+    this.localData.map(rec => {
+      let val = this.generateRandomNumber(-1, 1);
+      switch (val) {
         case -1:
-          rec.Position = "down";
-          newValue = 0;
+          rec.Position = 'down';
+          val = 0;
           break;
         case 0:
-          rec.Position = "current";
-          newValue = 1;
+          rec.Position = 'current';
+          val = 1;
           break;
         case 1:
-          rec.Position = "up";
-          newValue = 5;
+          rec.Position = 'up';
+          val = 3;
           break;
       }
-      rec.TrackProgress += newValue;
-      return {...rec};
-    };
-
-    this.localData = this.localData
-      .map((rec) => incr(rec))
-      .sort((a, b) => a.TrackProgress - b.TrackProgress);
-
-    this.localData.reverse().forEach((rec, idx) => rec.Id = idx + 1);
-
+      rec.TrackProgress += val;
+    });
+    this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
     if (this.localData[0].TrackProgress >= 100) {
-      this.timerSubscription.unsubscribe();
       this.live = false;
-      this.disabled = true;
     }
   }
 }
