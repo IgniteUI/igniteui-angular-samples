@@ -225,7 +225,7 @@ module.exports = {
           { import: "IgxCalendarModule", from: "igniteui-angular/main" },
           { import: "CalendarSample4Component", from: "./calendar/calendar-sample-4/calendar-sample-4.component" }],
         ngDeclarations: "CalendarSample4Component",
-        ngImports: "IgxCalendarModule, IgxDialogModule"
+        ngImports: "IgxCalendarModule"
       },
       shortenComponentPathBy: "/calendar/"
     },
