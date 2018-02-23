@@ -27,7 +27,6 @@ import {
   IgxProgressBarModule,
   IgxRadioModule,
   IgxRippleModule,
-  IgxScrollModule,
   IgxSliderModule,
   IgxSnackbarModule,
   IgxSwitchModule,
@@ -104,7 +103,6 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
-import { ScrollComponent } from "./scroll/scroll.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -171,7 +169,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
-    ScrollComponent,
     SliderSample1Component,
     SliderSample2Component,
     SliderSample3Component,
@@ -251,7 +248,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxSliderModule,
     IgxTabBarModule,
     IgxNavbarModule,
-    IgxScrollModule,
     IgxToggleModule,
     HttpClientModule,
     IgxForOfModule
