@@ -326,6 +326,42 @@ module.exports = {
       }
     },
     {
+      componentPath: "/dialog/dialog-sample-1/",
+      componentRoutePath: "dialog-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample1Component", from: "./dialog/dialog-sample-1/dialog-sample-1.component" }],
+        ngDeclarations: "DialogSample1Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
+      componentPath: "/dialog/dialog-sample-2/",
+      componentRoutePath: "dialog-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample2Component", from: "./dialog/dialog-sample-2/dialog-sample-2.component" }],
+        ngDeclarations: "DialogSample2Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
+      componentPath: "/dialog/dialog-sample-3/",
+      componentRoutePath: "dialog-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "DialogSample3Component", from: "./dialog/dialog-sample-3/dialog-sample-3.component" }],
+        ngDeclarations: "DialogSample3Component",
+        ngImports: "IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/dialog/"
+    },
+    {
       componentPath: "/form-elements/checkbox/checkbox-sample-1/",
       componentRoutePath: "checkbox-sample-1",
       appModuleConfig: {
@@ -723,15 +759,28 @@ module.exports = {
       }
     },
     {
-      componentPath: "/toast/",
-      componentRoutePath: "toast",
+      componentPath: "/toast/toast-sample-1/",
+      componentRoutePath: "toast-sample-1",
       appModuleConfig: {
         imports: [
           { import: "IgxButtonModule, IgxRippleModule, IgxToastModule", from: "igniteui-angular/main" },
-          { import: "ToastComponent", from: "./toast/toast.component" }],
-        ngDeclarations: "ToastComponent",
+          { import: "ToastSample1Component", from: "./toast/toast-sample-1/toast-sample-1.component" }],
+        ngDeclarations: "ToastSample1Component",
         ngImports: "IgxButtonModule, IgxRippleModule, IgxToastModule"
-      }
+      },
+      shortenComponentPathBy: "/toast/"
+    },
+    {
+      componentPath: "/toast/toast-sample-5/",
+      componentRoutePath: "toast-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxRippleModule, IgxToastModule", from: "igniteui-angular/main" },
+          { import: "ToastSample5Component", from: "./toast/toast-sample-5/toast-sample-5.component" }],
+        ngDeclarations: "ToastSample5Component",
+        ngImports: "IgxButtonModule, IgxRippleModule, IgxToastModule"
+      },
+      shortenComponentPathBy: "/toast/"
     },
     {
       componentPath: "/toggle/",
