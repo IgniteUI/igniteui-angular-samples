@@ -1,17 +1,16 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IgxFilterOptions } from "igniteui-angular/main";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-list",
     styleUrls: ["./list.component.css"],
     templateUrl: "./list.component.html"
 })
 export class ListComponent implements OnInit {
 
-  public search1: string;
+    public search1: string;
 
-  public navItems: object[] = [{
+    public navItems: object[] = [{
         avatar: "assets/images/avatar/1.jpg",
         favorite: true,
         key: "1",
@@ -83,15 +82,15 @@ export class ListComponent implements OnInit {
         text: "Ward Riley"
     }];
 
-  get fo1() {
+    get fo1() {
         const _fo = new IgxFilterOptions();
         _fo.key = "text";
         _fo.inputValue = this.search1;
         return _fo;
     }
-  constructor() { }
+    constructor() { }
 
-  public ngOnInit() {
-  }
+    public ngOnInit() {
+    }
 
 }

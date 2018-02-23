@@ -274,4 +274,4 @@ import { ToggleComponent } from "./toggle/toggle.component";
   ],
   providers: [DataService]
 })
-export class AppModule {}
+export class AppModule { }
