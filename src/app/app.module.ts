@@ -27,7 +27,6 @@ import {
   IgxProgressBarModule,
   IgxRadioModule,
   IgxRippleModule,
-  IgxScrollModule,
   IgxSliderModule,
   IgxSnackbarModule,
   IgxSwitchModule,
@@ -55,6 +54,11 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
+import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
+import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
+import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
+import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
+import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -102,7 +106,6 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
-import { ScrollComponent } from "./scroll/scroll.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -149,6 +152,11 @@ import { ToggleComponent } from "./toggle/toggle.component";
     CarouselSample2Component,
     CarouselSample3Component,
     CarouselSample4Component,
+    CalendarSample1Component,
+    CalendarSample2Component,
+    CalendarSample3Component,
+    CalendarSample4Component,
+    CalendarSample5Component,
     CalendarComponent,
     DialogComponent,
     DialogSample1Component,
@@ -163,7 +171,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ProgressbarComponent,
     TabbarComponent,
     NavbarComponent,
-    ScrollComponent,
     SliderSample1Component,
     SliderSample2Component,
     SliderSample3Component,
@@ -246,7 +253,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxSliderModule,
     IgxTabBarModule,
     IgxNavbarModule,
-    IgxScrollModule,
     IgxToggleModule,
     HttpClientModule,
     IgxForOfModule

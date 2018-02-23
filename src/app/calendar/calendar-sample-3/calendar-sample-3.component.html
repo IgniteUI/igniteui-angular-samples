@@ -1,0 +1,27 @@
+<div class="sample-wrapper">
+        <div class="sample-content">
+            <!-- Single selection mode -->
+            <article class="sample-column calendar-wrapper">
+                <igx-calendar #calendar
+                    selection="range"
+                    [locale]="locale"
+                    [formatOptions]="formatOptions"
+                    [formatViews]="formatViews"
+                    (onSelection)="verifyRange($event)">
+                </igx-calendar>
+                <igx-dialog #alert title="Notification" message="Please select a range of max to 5 days!" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
+                </igx-dialog>
+            </article>
+            <article class="sample-column calendar-wrapper">
+                <span>Select a date range of up to 5 days to continue. Selecting a date range consisting of more than 5 days will alert the user.</span>
+                <span>Choose your location: </span>
+                <select id="locations" (change)="changeLocale($event)">
+                    <option value="is-Is">Iceland</option>
+                    <option value="de-LI">Liechtenstein</option>
+                    <option value="nn-NO">Norway</option>
+                    <option value="fr-CH">Switzerland</option>
+                </select>
+            </article>
+        </div>
+    </div>
+    

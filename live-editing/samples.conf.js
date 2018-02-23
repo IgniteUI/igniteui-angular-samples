@@ -218,6 +218,66 @@ module.exports = {
       }
     },
     {
+      componentPath: "/calendar/calendar-sample-1/",
+      componentRoutePath: "calendar-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCalendarModule", from: "igniteui-angular/main" },
+          { import: "CalendarSample1Component", from: "./calendar/calendar-sample-1/calendar-sample-1.component" }],
+        ngDeclarations: "CalendarSample1Component",
+        ngImports: "IgxCalendarModule"
+      },
+      shortenComponentPathBy: "/calendar/"
+    },
+    {
+      componentPath: "/calendar/calendar-sample-2/",
+      componentRoutePath: "calendar-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCalendarModule", from: "igniteui-angular/main" },
+          { import: "CalendarSample2Component", from: "./calendar/calendar-sample-2/calendar-sample-2.component" }],
+        ngDeclarations: "CalendarSample2Component",
+        ngImports: "IgxCalendarModule"
+      },
+      shortenComponentPathBy: "/calendar/"
+    },
+    {
+      componentPath: "/calendar/calendar-sample-3/",
+      componentRoutePath: "calendar-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCalendarModule, IgxDialogModule", from: "igniteui-angular/main" },
+          { import: "CalendarSample3Component", from: "./calendar/calendar-sample-3/calendar-sample-3.component" }],
+        ngDeclarations: "CalendarSample3Component",
+        ngImports: "IgxCalendarModule, IgxDialogModule"
+      },
+      shortenComponentPathBy: "/calendar/"
+    },
+    {
+      componentPath: "/calendar/calendar-sample-4/",
+      componentRoutePath: "calendar-sample-4",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCalendarModule", from: "igniteui-angular/main" },
+          { import: "CalendarSample4Component", from: "./calendar/calendar-sample-4/calendar-sample-4.component" }],
+        ngDeclarations: "CalendarSample4Component",
+        ngImports: "IgxCalendarModule"
+      },
+      shortenComponentPathBy: "/calendar/"
+    },
+    {
+      componentPath: "/calendar/calendar-sample-5/",
+      componentRoutePath: "calendar-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxCalendarModule, IgxDialogModule", from: "igniteui-angular/main" },
+          { import: "CalendarSample5Component", from: "./calendar/calendar-sample-5/calendar-sample-5.component" }],
+        ngDeclarations: "CalendarSample5Component",
+        ngImports: "IgxCalendarModule, IgxDialogModule"
+      },
+      shortenComponentPathBy: "/calendar/"
+    },
+    {
       componentPath: "/card/",
       componentRoutePath: "card",
       appModuleConfig: {
@@ -651,17 +711,6 @@ module.exports = {
         ngImports: "IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule"
       },
       shortenComponentPathBy: "/button/"
-    },
-    {
-      componentPath: "/scroll/",
-      componentRoutePath: "scroll",
-      appModuleConfig: {
-        imports: [
-          { import: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule", from: "igniteui-angular/main" },
-          { import: "ScrollComponent", from: "./scroll/scroll.component" }],
-        ngDeclarations: "ScrollComponent",
-        ngImports: "IgxAvatarModule, IgxLayoutModule, IgxScrollModule"
-      }
     },
     {
       componentPath: "/slider/slider-sample-1/",
