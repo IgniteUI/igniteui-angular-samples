@@ -749,15 +749,28 @@ module.exports = {
       }
     },
     {
-      componentPath: "/toast/",
-      componentRoutePath: "toast",
+      componentPath: "/toast/toast-sample-1/",
+      componentRoutePath: "toast-sample-1",
       appModuleConfig: {
         imports: [
           { import: "IgxButtonModule, IgxRippleModule, IgxToastModule", from: "igniteui-angular/main" },
-          { import: "ToastComponent", from: "./toast/toast.component" }],
-        ngDeclarations: "ToastComponent",
+          { import: "ToastSample1Component", from: "./toast/toast-sample-1/toast-sample-1.component" }],
+        ngDeclarations: "ToastSample1Component",
         ngImports: "IgxButtonModule, IgxRippleModule, IgxToastModule"
-      }
+      },
+      shortenComponentPathBy: "/toast/"
+    },
+    {
+      componentPath: "/toast/toast-sample-5/",
+      componentRoutePath: "toast-sample-5",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxRippleModule, IgxToastModule", from: "igniteui-angular/main" },
+          { import: "ToastSample5Component", from: "./toast/toast-sample-5/toast-sample-5.component" }],
+        ngDeclarations: "ToastSample5Component",
+        ngImports: "IgxButtonModule, IgxRippleModule, IgxToastModule"
+      },
+      shortenComponentPathBy: "/toast/"
     },
     {
       componentPath: "/toggle/",
