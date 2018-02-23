@@ -1,9 +1,9 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component } from "@angular/core";
 
 @Component({
-  selector: 'app-datepicker-sample-4',
-  templateUrl: './datepicker-sample-4.component.html',
-  styleUrls: ['./datepicker-sample-4.component.css']
+  selector: "app-datepicker-sample-4",
+  styleUrls: ["./datepicker-sample-4.component.css"],
+  templateUrl: "./datepicker-sample-4.component.html"
 })
 export class DatepickerSample4Component implements AfterViewInit {
 
@@ -19,7 +19,7 @@ export class DatepickerSample4Component implements AfterViewInit {
     return `You selected ${this.dayFormatter.format(date)}, ${date.getDate()} ${this.monthFormatter.format(date)}, ${date.getFullYear()}`;
   }
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     (document.getElementById("date-picker")
       .getElementsByClassName("igx-date-picker__input-date")[0] as HTMLElement)
       .click();
