@@ -13,6 +13,11 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
+import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
+import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
+import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
+import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
+import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -112,6 +117,26 @@ const appRoutes: Routes = [
   {
     component: CardComponent,
     path: "card"
+  },
+  {
+    component: CalendarSample1Component,
+    path: "calendar-sample-1"
+  },
+  {
+    component: CalendarSample2Component,
+    path: "calendar-sample-2"
+  },
+  {
+    component: CalendarSample3Component,
+    path: "calendar-sample-3"
+  },
+  {
+    component: CalendarSample4Component,
+    path: "calendar-sample-4"
+  },
+  {
+    component: CalendarSample5Component,
+    path: "calendar-sample-5"
   },
   {
     component: CalendarComponent,
