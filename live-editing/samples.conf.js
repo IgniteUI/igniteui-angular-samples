@@ -171,6 +171,42 @@ module.exports = {
       shortenComponentPathBy: "/button/"
     },
     {
+      componentPath: "/buttonGroup/button-group-sample-1/",
+      componentRoutePath: "button-group-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonGroupModule", from: "igniteui-angular/main" },
+          { import: "ButtonGroupSample1Component", from: "./buttonGroup/button-group-sample-1/button-group-sample-1.component" }],
+        ngDeclarations: "ButtonGroupSample1Component",
+        ngImports: "IgxButtonGroupModule"
+      },
+      shortenComponentPathBy: "/buttonGroup/"
+    },
+    {
+      componentPath: "/buttonGroup/button-group-sample-2/",
+      componentRoutePath: "button-group-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonGroupModule", from: "igniteui-angular/main" },
+          { import: "ButtonGroupSample2Component", from: "./buttonGroup/button-group-sample-2/button-group-sample-2.component" }],
+        ngDeclarations: "ButtonGroupSample2Component",
+        ngImports: "IgxButtonGroupModule"
+      },
+      shortenComponentPathBy: "/buttonGroup/"
+    },
+    {
+      componentPath: "/buttonGroup/button-group-sample-3/",
+      componentRoutePath: "button-group-sample-3",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonGroupModule", from: "igniteui-angular/main" },
+          { import: "ButtonGroupSample3Component", from: "./buttonGroup/button-group-sample-3/button-group-sample-3.component" }],
+        ngDeclarations: "ButtonGroupSample3Component",
+        ngImports: "IgxButtonGroupModule"
+      },
+      shortenComponentPathBy: "/buttonGroup/"
+    },
+    {
       componentPath: "/calendar/",
       componentRoutePath: "calendar",
       appModuleConfig: {
