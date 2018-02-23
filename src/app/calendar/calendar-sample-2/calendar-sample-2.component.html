@@ -1,0 +1,22 @@
+<div class="sample-wrapper">
+        <div class="sample-content">
+            <!-- Single selection mode -->
+            <article class="sample-column calendar-wrapper">
+                <igx-calendar #calendar
+                    [locale]="locale"
+                    [formatOptions]="formatOptions"
+                    [formatViews]="formatViews">
+                </igx-calendar>
+            </article>
+            <article class="sample-column calendar-wrapper">
+                <span>Choose your location: </span>
+                <select id="locations" (change)="changeLocale($event)">
+                    <option value="is-Is">Iceland</option>
+                    <option value="de-LI">Liechtenstein</option>
+                    <option value="nn-NO">Norway</option>
+                    <option value="fr-CH">Switzerland</option>
+                </select>
+            </article>
+        </div>
+    </div>
+    

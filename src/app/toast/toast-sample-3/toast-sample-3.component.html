@@ -1,0 +1,5 @@
+<div>
+    <button igxButton="raised" (click)="toast.show()">SHOW TOAST</button>
+    <button igxButton="raised" (click)="toast.hide()">HIDE TOAST</button>
+    <igx-toast #toast message="Notification displayed" [autoHide]="false"></igx-toast>
+</div>
