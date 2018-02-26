@@ -8,7 +8,6 @@ interface IButton {
   togglable?: boolean;
   selected?: boolean;
   color?: string;
-  bgcolor?: string;
   icon?: string;
 }
 

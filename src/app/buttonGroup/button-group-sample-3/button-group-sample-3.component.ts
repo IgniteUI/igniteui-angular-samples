@@ -17,7 +17,6 @@ class Button {
   private togglable: boolean;
   private selected: boolean;
   private color: string;
-  private bgcolor: string;
   private icon: string;
 
   constructor(obj?: IButton) {
