@@ -88,7 +88,6 @@
             <igx-column field="CountryFlag" header="Country">
                 <ng-template igxCell let-cell="cell">
                   <div class="cell__inner_2">
-                    <span class="elipsis">{{ cell.row.rowData.CountryName }}</span>
                     <span>
                         <img [src]="cell.value" class="flag" />
                     </span>
