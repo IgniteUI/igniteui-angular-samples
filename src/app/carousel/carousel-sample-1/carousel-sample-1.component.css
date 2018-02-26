@@ -2,6 +2,6 @@
     width: 100%;
     text-align: center; 
 }
-a > igx-icon > span{
-    color: black;
+span.igx-icon{
+    color: #e41c77;
 }

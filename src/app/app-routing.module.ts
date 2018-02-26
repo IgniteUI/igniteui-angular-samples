@@ -6,6 +6,9 @@ import { AvatarSample3Component} from "./avatar/avatar-sample-3/avatar-sample-3.
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
+import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
+import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -13,6 +16,11 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
+import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
+import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
+import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
+import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
+import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -26,6 +34,14 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerComponent } from "./datepicker/datepicker.component";
+import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
+import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
+import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
+import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
+import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
+import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
+import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -51,6 +67,9 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
@@ -59,7 +78,6 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
-import { ScrollComponent } from "./scroll/scroll.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -69,8 +87,14 @@ import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
+import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
+import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
-import { ToastComponent } from "./toast/toast.component";
+import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
+import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
+import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
+import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -104,6 +128,26 @@ const appRoutes: Routes = [
   {
     component: CardComponent,
     path: "card"
+  },
+  {
+    component: CalendarSample1Component,
+    path: "calendar-sample-1"
+  },
+  {
+    component: CalendarSample2Component,
+    path: "calendar-sample-2"
+  },
+  {
+    component: CalendarSample3Component,
+    path: "calendar-sample-3"
+  },
+  {
+    component: CalendarSample4Component,
+    path: "calendar-sample-4"
+  },
+  {
+    component: CalendarSample5Component,
+    path: "calendar-sample-5"
   },
   {
     component: CalendarComponent,
@@ -150,8 +194,40 @@ const appRoutes: Routes = [
     path: "datepicker"
   },
   {
+    component: DatepickerSample1Component,
+    path: "datepicker-sample-1"
+  },
+  {
+    component: DatepickerSample2Component,
+    path: "datepicker-sample-2"
+  },
+  {
+    component: DatepickerSample3Component,
+    path: "datepicker-sample-3"
+  },
+  {
+    component: DatepickerSample4Component,
+    path: "datepicker-sample-4"
+  },
+  {
+    component: DatepickerSample5Component,
+    path: "datepicker-sample-5"
+  },
+  {
     component: DialogComponent,
     path: "dialog"
+  },
+  {
+    component: DialogSample1Component,
+    path: "dialog-sample-1"
+  },
+  {
+    component: DialogSample2Component,
+    path: "dialog-sample-2"
+  },
+  {
+    component: DialogSample3Component,
+    path: "dialog-sample-3"
   },
   {
     component: LayoutComponent,
@@ -198,6 +274,18 @@ const appRoutes: Routes = [
     path: "navigation-drawer"
   },
   {
+    component: NavDrawerSimpleComponent,
+    path: "navigation-drawer-simple"
+  },
+  {
+    component: NavDrawerPinComponent,
+    path: "navigation-drawer-pin"
+  },
+  {
+    component: NavDrawerMiniComponent,
+    path: "navigation-drawer-mini"
+  },
+  {
     component: GridComponent,
     path: "grid"
   },
@@ -234,8 +322,24 @@ const appRoutes: Routes = [
     path: "radio-sample-2"
   },
   {
-    component: ToastComponent,
-    path: "toast"
+    component: ToastSample1Component,
+    path: "toast-sample-1"
+  },
+  {
+    component: ToastSample2Component,
+    path: "toast-sample-2"
+  },
+  {
+    component: ToastSample3Component,
+    path: "toast-sample-3"
+  },
+  {
+    component: ToastSample4Component,
+    path: "toast-sample-4"
+  },
+  {
+    component: ToastSample5Component,
+    path: "toast-sample-5"
   },
   {
     component: SliderSample1Component,
@@ -266,12 +370,16 @@ const appRoutes: Routes = [
     path: "tabbar"
   },
   {
-    component: NavbarComponent,
-    path: "navbar"
+    component: TabbarSample1Component,
+    path: "tabbar-sample-1"
   },
   {
-    component: ScrollComponent,
-    path: "scroll"
+    component: TabbarSample2Component,
+    path: "tabbar-sample-2"
+  },
+  {
+    component: NavbarComponent,
+    path: "navbar"
   },
   {
     component: CardSample1Component,
@@ -364,6 +472,18 @@ const appRoutes: Routes = [
   {
     component: FinancialSampleComponent,
     path: "grid-sample-2"
+  },
+  {
+    component: ButtonGroupSample1Component,
+    path: "button-group-sample-1"
+  },
+  {
+    component: ButtonGroupSample2Component,
+    path: "button-group-sample-2"
+  },
+  {
+    component: ButtonGroupSample3Component,
+    path: "button-group-sample-3"
   }
 ];
 
