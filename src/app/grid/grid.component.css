@@ -15,7 +15,7 @@
 }
 
 .grid__wrapper {
-  width: 80%;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -108,7 +108,7 @@ igx-badge {
   height: 48px;
 }
 
-.switch-sample .igx-control .igx-control__text {
+.igx-control__text {
   margin-right: 8px;
 }
 
