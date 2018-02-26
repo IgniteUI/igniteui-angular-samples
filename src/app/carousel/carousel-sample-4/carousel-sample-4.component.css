@@ -2,7 +2,7 @@
     width: 100%;
     text-align: center; 
 }
-span.igx-icon{
+igx-icon.igx-icon{
     color: #e41c77;
 }
 span.progress-linear__value {
