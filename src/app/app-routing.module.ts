@@ -438,6 +438,10 @@ const appRoutes: Routes = [
     path: "toggle-sample-2"
   },
   {
+    component: ToggleSample3Component,
+    path: "toggle-sample-3"
+  },
+  {
     component: RippleSample1Component,
     path: "ripple-sample-1"
   },
