@@ -125,6 +125,7 @@ export class GridComponent implements OnInit, OnDestroy {
     });
 
     this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
+    this.localData = this.localData.slice(0);
 
     if (this.localData[0].TrackProgress >= 100) {
       this.live = false;

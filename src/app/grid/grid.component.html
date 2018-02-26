@@ -7,14 +7,13 @@
         <div class="sample__header">
           <div class="switch-sample">
             <h2 igxLabel>Boston Marathon 2017</h2>
-            <igx-switch [(ngModel)]="live" [disabled]="!live" title="Start/Stop the marathon">Live</igx-switch>
+            <igx-switch [(ngModel)]="live" [disabled]="!live" title="Start/Stop the marathon"> Live </igx-switch>
           </div>
 
           <input class="gridSample__filter" igxInput type="text" placeholder="Filter by country" (input)="filter($event.target.value)">
         </div>
 
-
-        <igx-grid #grid1 [data]="localData" [rowHeight]="72" height="732px">
+        <igx-grid #grid1 [data]="localData"  [paging]="true" [perPage]="6" [paginationTemplate]="pager">
           <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
             <ng-template igxCell let-cell="cell">
               <div class="cell__inner">
@@ -87,19 +86,33 @@
             <igx-column field="CountryName" hidden="true"></igx-column>
 
             <igx-column field="CountryFlag" header="Country">
-
                 <ng-template igxCell let-cell="cell">
                   <div class="cell__inner_2">
-                    <span class="elipsis">{{ cell.row.rowData.CountryName }}</span>
                     <span>
                         <img [src]="cell.value" class="flag" />
                     </span>
                   </div>
                 </ng-template>
-
             </igx-column>
         </igx-grid>
-
+        
+        <ng-template #pager let-grid>
+          <div *ngIf="grid.paging && grid.totalPages > 0" class="igx-paginator">
+              <button [disabled]="grid.isFirstPage" (click)="grid.paginate(0)" igxButton="icon" igxRipple igxRippleCentered="true">
+                  <igx-icon fontSet="material" name="first_page"></igx-icon>
+              </button>
+              <button [disabled]="grid.isFirstPage" (click)="grid.previousPage()" igxButton="icon" igxRipple igxRippleCentered="true">
+                  <igx-icon fontSet="material" name="chevron_left"></igx-icon>
+              </button>
+              <span>{{ grid.page + 1 }} of {{ grid.totalPages }}</span>
+              <button [disabled]="grid.isLastPage" (click)="grid.nextPage()" igxRipple igxRippleCentered="true" igxButton="icon">
+                  <igx-icon fontSet="material" name="chevron_right"></igx-icon>
+              </button>
+              <button [disabled]="grid.isLastPage" (click)="grid.paginate(grid.totalPages - 1)" igxButton="icon" igxRipple igxRippleCentered="true">
+                  <igx-icon fontSet="material" name="last_page"></igx-icon>
+              </button>
+          </div>
+      </ng-template>
       </div>
     </article>
   </section>
