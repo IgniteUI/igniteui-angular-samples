@@ -65,6 +65,7 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
+import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -467,6 +468,10 @@ const appRoutes: Routes = [
   {
     component: FinancialSampleComponent,
     path: "grid-sample-2"
+  },
+  {
+    component: NavbarSample1Component,
+    path: "navbar-sample-1"
   },
   {
     component: ButtonGroupSample1Component,
