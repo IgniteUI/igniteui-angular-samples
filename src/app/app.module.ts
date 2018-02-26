@@ -98,6 +98,7 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
+import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -178,6 +179,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     TabbarSample1Component,
     TabbarSample2Component,
     NavbarComponent,
+    NavbarSample1Component,
     SliderSample1Component,
     SliderSample2Component,
     SliderSample3Component,
@@ -214,6 +216,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     RippleSample4Component,
     RippleSample5Component,
     RippleSample6Component,
+    NavbarSample1Component,
     DatepickerSample1Component,
     DatepickerSample2Component,
     DatepickerSample3Component,

@@ -1,7 +1,7 @@
 import { Location, LocationStrategy, PathLocationStrategy } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 
-const CURRENT_VIEW = "Ignite UI JS Blocks";
+const CURRENT_VIEW = "Ignite UI for Angular";
 
 @Component({
   providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }],
@@ -24,6 +24,6 @@ export class NavbarComponent implements OnInit {
   }
 
   public canGoBack() {
-    return window.history.length === 0;
+      return window.history.length > 0;
   }
 }

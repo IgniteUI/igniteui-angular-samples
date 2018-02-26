@@ -1,6 +1,6 @@
 /*
     This configuration helps to create a JSON file in the assets folder for each sample. Each JSON file contains the
-    source code of each file used by the sample. These files are used for live sample editing or 
+    source code of each file used by the sample. These files are used for live sample editing or
     whenever you'll need a sample's code in a human-readable form.
 
     Properties:
@@ -70,7 +70,7 @@ module.exports = {
           { import: "BadgeSample2Component", from: "./badge/badge-sample-2/badge-sample-2.component" }],
         ngDeclarations: "BadgeSample2Component",
         ngImports: "IgxBadgeModule, IgxListModule, IgxAvatarModule"
-      },      
+      },
       shortenComponentPathBy: "/badge/"
     },
     {
@@ -695,6 +695,17 @@ module.exports = {
       }
     },
     {
+      componentPath: "/navbar/navbar-sample-1/",
+      componentRoutePath: "navbar-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxNavbarModule", from: "igniteui-angular/main" },
+          { import: "NavbarSample1Component", from: "./navbar/navbar-sample-1/navbar-sample-1.component" }],
+        ngDeclarations: "NavbarSample1Component",
+        ngImports: "IgxNavbarModule"
+      }
+    },
+    {
       componentPath: "/navdrawer/",
       componentRoutePath: "navigation-drawer",
       appModuleConfig: {
@@ -842,7 +853,7 @@ module.exports = {
           { import: "Routes, Router, RouterModule", from: "@angular/router"},
           { import: "TabbarComponent", from: "./tabbar/tabbar.component" }],
         ngDeclarations: "TabbarComponent",
-        ngImports: `RouterModule.forRoot(Routes = [\{component: TabbarComponent, path: 'tabbar'}]), 
+        ngImports: `RouterModule.forRoot(Routes = [\{component: TabbarComponent, path: 'tabbar'}]),
         IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule, IgxListModule, IgxTabBarModule`
       }
     },
