@@ -389,6 +389,19 @@ module.exports = {
       shortenComponentPathBy: "/carousel/"
     },
     {
+      componentPath: "/circular-progressbar/",
+      componentRoutePath: "circular-progressbar",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "CircularProgressbarComponent", from: "./circular-progressbar/circular-progressbar.component" }],
+        ngDeclarations: "CircularProgressbarComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule"
+      }
+    },
+    {
+      componentPath: "/datepicker/",
+      componentRoutePath: "datepicker",
       componentPath: "/datepicker/datepicker-sample-1/",
       componentRoutePath: "datepicker-sample-1",
       appModuleConfig: {
@@ -670,6 +683,41 @@ module.exports = {
         ngImports: "IgxAvatarModule, IgxFilterModule, IgxIconModule, IgxListModule"
       },
       shortenComponentPathBy: "/list/"
+    },
+    {
+      componentPath: "/linear-progressbar/",
+      componentRoutePath: "linear-progressbar",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "LinearProgressbarComponent", from: "./linear-progressbar/linear-progressbar.component" }],
+        ngDeclarations: "LinearProgressbarComponent",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule"
+      }
+    },
+    {
+      componentPath: "/linear-progressbar/linear-progressbar-sample-1/",
+      componentRoutePath: "linear-progressbar-sample-1",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "LinearProgressbarSample1Component", from: "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component" }],
+        ngDeclarations: "LinearProgressbarSample1Component",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/linear-progressbar/"
+    },
+    {
+      componentPath: "/linear-progressbar/linear-progressbar-sample-2/",
+      componentRoutePath: "linear-progressbar-sample-2",
+      appModuleConfig: {
+        imports: [
+          { import: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule", from: "igniteui-angular/main" },
+          { import: "LinearProgressbarSample2Component", from: "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component" }],
+        ngDeclarations: "LinearProgressbarSample2Component",
+        ngImports: "IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule"
+      },
+      shortenComponentPathBy: "/linear-progressbar/"
     },
     {
       componentPath: "/list/list-sample-5/",

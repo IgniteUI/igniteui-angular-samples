@@ -70,6 +70,7 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -92,6 +93,11 @@ import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.compone
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { LabelInputComponent } from "./label-input/label-input.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { LinearProgressbarSample1Component
+} from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
+import { LinearProgressbarSample2Component
+} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
+import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
@@ -146,6 +152,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     CardSample3Component,
     CheckboxSample1Component,
     CheckboxSample2Component,
+    CircularProgressbarComponent,
+    LinearProgressbarComponent,
     ListComponent,
     ListSample1Component,
     ListSample2Component,
@@ -209,6 +217,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     AvatarSample3Component,
     IgxForComponent,
     FinancialSampleComponent,
+    LinearProgressbarSample1Component,
+    LinearProgressbarSample2Component,
     LabelInputComponent,
     RippleSample1Component,
     RippleSample2Component,
