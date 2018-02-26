@@ -7,7 +7,6 @@ interface IButton {
   togglable?: boolean;
   selected?: boolean;
   color?: string;
-  bgcolor?: string;
   icon?: string;
 }
 
@@ -18,7 +17,6 @@ class Button {
   private togglable: boolean;
   private selected: boolean;
   private color: string;
-  private bgcolor: string;
   private icon: string;
 
   constructor(obj?: IButton) {
@@ -28,7 +26,6 @@ class Button {
       this.togglable = obj.togglable;
       this.disabled = obj.disabled || false;
       this.color = obj.color;
-      this.bgcolor = obj.bgcolor || "white";
       this.icon = obj.icon;
   }
 }
