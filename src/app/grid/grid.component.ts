@@ -25,6 +25,7 @@ export class GridComponent implements OnInit, OnDestroy {
   public grid1: IgxGridComponent;
 
   public localData: any[];
+  public isFinished = false;
   private _live = true;
   private _timer;
   private windowWidth: any;
@@ -35,17 +36,25 @@ export class GridComponent implements OnInit, OnDestroy {
 
   set live(val) {
     this._live = val;
-    clearInterval(this._timer);
+    if (this._live) {
+      this._timer = setInterval(() => this.ticker(), 3000);
+    } else {
+      clearInterval(this._timer);
+    }
   }
 
-  get hideColumn() {
-    return this.windowWidth && this.windowWidth < 785;
+  get hideAthleteNumber() {
+    return this.windowWidth && this.windowWidth < 960;
+  }
+  get hideBeatsPerMinute() {
+    return this.windowWidth && this.windowWidth < 860;
   }
 
   constructor(private zone: NgZone, private dataService: DataService) {}
 
   public ngOnInit() {
     this.localData = athletesData;
+    this.windowWidth = window.innerWidth;
     this._timer = setInterval(() => this.ticker(), 3000);
   }
 
@@ -130,6 +139,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
     if (this.localData[0].TrackProgress >= 100) {
       this.live = false;
+      this.isFinished = true;
     }
   }
 }
