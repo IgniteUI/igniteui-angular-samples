@@ -51,7 +51,7 @@
                 </ng-template>
             </igx-column>
 
-            <igx-column field="AthleteNumber" header="Athlete Number" [hidden]="hideColumn" dataType="number">
+            <igx-column field="AthleteNumber" header="Athlete Number" [hidden]="hideAthleteNumber" dataType="number">
               <ng-template igxCell let-val>
                 <div class="cell__inner">
                     {{ val }}
@@ -59,7 +59,7 @@
               </ng-template>
             </igx-column>
 
-            <igx-column field="BeatsPerMinute" header="Beats per minute" [hidden]="hideColumn">
+            <igx-column field="BeatsPerMinute" header="Beats per minute" [hidden]="hideBeatsPerMinute">
               <ng-template igxCell let-val>
                 <div class="cell__inner">
                   {{ val }}

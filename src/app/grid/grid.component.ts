@@ -42,14 +42,18 @@ export class GridComponent implements OnInit, OnDestroy {
     }
   }
 
-  get hideColumn() {
-    return this.windowWidth && this.windowWidth < 785;
+  get hideAthleteNumber() {
+    return this.windowWidth && this.windowWidth < 960;
+  }
+  get hideBeatsPerMinute() {
+    return this.windowWidth && this.windowWidth < 860;
   }
 
   constructor(private zone: NgZone, private dataService: DataService) {}
 
   public ngOnInit() {
     this.localData = athletesData;
+    this.windowWidth = window.innerWidth;
     this._timer = setInterval(() => this.ticker(), 3000);
   }
 
