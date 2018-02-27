@@ -4,7 +4,7 @@ import { IgxCircularProgressBarComponent, IgxLinearProgressBarComponent } from "
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: "app-circular-progressbar",
-  styleUrls: ["./circular-progressbar.component.css"],
+  styleUrls: ["./circular-progressbar.component.scss"],
   templateUrl: "./circular-progressbar.component.html"
 })
 export class CircularProgressbarComponent implements OnInit {

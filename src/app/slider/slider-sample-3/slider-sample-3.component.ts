@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-slider-sample-3",
-  styleUrls: ["./slider-sample-3.component.css"],
+  styleUrls: ["./slider-sample-3.component.scss"],
   templateUrl: "./slider-sample-3.component.html"
 })
 export class SliderSample3Component implements OnInit {

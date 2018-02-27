@@ -2,7 +2,7 @@ import { AfterViewInit, Component } from "@angular/core";
 
 @Component({
   selector: "app-datepicker-sample-4",
-  styleUrls: ["./datepicker-sample-4.component.css"],
+  styleUrls: ["./datepicker-sample-4.component.scss"],
   templateUrl: "./datepicker-sample-4.component.html"
 })
 export class DatepickerSample4Component implements AfterViewInit {

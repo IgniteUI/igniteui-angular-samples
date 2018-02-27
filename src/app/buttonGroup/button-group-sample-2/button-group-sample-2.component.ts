@@ -33,7 +33,7 @@ class Button {
 
 @Component({
   selector: "app-button-group-sample-2",
-  styleUrls: ["./button-group-sample-2.component.css"],
+  styleUrls: ["./button-group-sample-2.component.scss"],
   templateUrl: "./button-group-sample-2.component.html"
 })
 export class ButtonGroupSample2Component implements OnInit {

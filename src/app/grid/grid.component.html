@@ -40,7 +40,7 @@
       </ng-template>
     </igx-column>
 
-    <igx-column field="Name" header="Athlete" filterable="true" width="250">
+    <igx-column field="Name" header="Athlete" filterable="true" width="350">
 
       <ng-template igxCell let-cell="cell">
 
@@ -71,16 +71,14 @@
     </igx-column>
 
     <igx-column field="TopSpeed" header="Top Speed">
-
       <ng-template igxCell let-val>
         <div class="cell__inner">
           {{ val | number: '1.1-5' }}
         </div>
       </ng-template>
-
     </igx-column>
 
-    <igx-column field="TrackProgress" sortable="true" header="Track Progress">
+    <igx-column field="TrackProgress" sortable="true" header="Track Progress" width="300px">
       <ng-template igxCell let-val>
         <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val"></igx-linear-bar>
       </ng-template>

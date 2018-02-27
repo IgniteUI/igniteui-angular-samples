@@ -22,12 +22,6 @@ $progressBar-sample-theme: igx-progress-linear-theme(
   @include igx-progress-linear($progressBar-sample-theme);
 }
 
-%elipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .switch-sample__title {
   margin-right: rem(20px);
 }
@@ -54,7 +48,11 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 .athlete_name {
   width: rem(100px);
   margin:0 rem(30px);
-  @extend %elipsis;
+}
+
+.athlete_name,
+.title {
+  @include ellipsis();
 }
 
 .badge_wrap,

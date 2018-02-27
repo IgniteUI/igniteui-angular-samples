@@ -4,7 +4,7 @@ module.exports = (function () {
 
   var basePath = path.join(__dirname, "../src/app/");
   var assetsSamplesDir = path.join(__dirname, "../src/assets/samples/");
-  var componentFilesExtensions = ["ts", "html", "css"];
+  var componentFilesExtensions = ["ts", "html", "scss"];
   var appModuleTemplatePath = path.join(__dirname, "/templates/app.module.ts.template");
   var appModulePath = path.join(__dirname, "../src/app/app.module.ts");
 
@@ -72,7 +72,7 @@ module.exports = (function () {
         ' } from "' + sampleConfig.appModuleConfig.imports[i].from + '";';
       imports = imports + appModuleImport;
     }
-    
+
     var ngDeclarations = "," + formatAppModuleTypes(sampleConfig.appModuleConfig.ngDeclarations.split(','), true, 2);
     var ngImports = "," + formatAppModuleTypes(sampleConfig.appModuleConfig.ngImports.split(","), true, 2);
 
@@ -94,7 +94,7 @@ module.exports = (function () {
     if (types.length === 1 && !multiline) {
       return types.join("");
     }
-    
+
     var formattedTypes = "\r\n";
     var tabs = "";
     for (var i = 0; i < tabsCount; i++) {
@@ -128,7 +128,7 @@ module.exports = (function () {
   // - /componentPath/componentName.component.ts
   // - /componentPath/componentName.component.html
   // - /componentPath/componentName.component.css
-  var getComponentFilesPaths = function (componentPath) {    
+  var getComponentFilesPaths = function (componentPath) {
     var filePaths = [];
     var componentPathWithoutTrailingSlash = componentPath.substring(0, componentPath.length - 1);
     var componentName = componentPathWithoutTrailingSlash.substring(

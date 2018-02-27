@@ -8,7 +8,7 @@ module.exports = (function () {
   var stylesFilePath = path.join(__dirname, "../src/styles.scss");
   var angularCliTemplatePath = path.join(__dirname, "../live-editing/templates/angular-cli.json.template");
   var mainTsFilePath = path.join(__dirname, "../live-editing/templates/main.ts.template");
-  var appComponentCssPath = path.join(__dirname, "../src/app/app.component.css");
+  var appComponentScssPath = path.join(__dirname, "../src/app/app.component.scss");
   var appComponentTsPath = path.join(__dirname, "../src/app/app.component.ts");
 
   var assetsSamplesDir = path.join(__dirname, "../src/assets/samples/");
@@ -53,7 +53,7 @@ module.exports = (function () {
     dependencies[stylesFilePath] = true;
     dependencies[angularCliTemplatePath] = true;
     dependencies[mainTsFilePath] = true;
-    dependencies[appComponentCssPath] = true;
+    dependencies[appComponentScssPath] = true;
     dependencies[appComponentTsPath] = true;
 
     return dependencies;
@@ -68,7 +68,7 @@ module.exports = (function () {
     files.push(new LiveEditingFile("styles.scss", fs.readFileSync(stylesFilePath, "utf8")));
     files.push(new LiveEditingFile(".angular-cli.json", fs.readFileSync(angularCliTemplatePath, "utf8")));
     files.push(new LiveEditingFile("main.ts", fs.readFileSync(mainTsFilePath, "utf8")));
-    files.push(new LiveEditingFile("app/app.component.css", fs.readFileSync(appComponentCssPath, "utf8")));
+    files.push(new LiveEditingFile("app/app.component.scss", fs.readFileSync(appComponentScssPath, "utf8")));
     files.push(new LiveEditingFile("app/app.component.ts", fs.readFileSync(appComponentTsPath, "utf8")));
 
     var sharedFile = {

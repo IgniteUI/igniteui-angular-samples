@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-switch-sample-2",
-  styleUrls: ["./switch-sample-2.component.css"],
+  styleUrls: ["./switch-sample-2.component.scss"],
   templateUrl: "./switch-sample-2.component.html"
 })
 export class SwitchSample2Component implements OnInit {

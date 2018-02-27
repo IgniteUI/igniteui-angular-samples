@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-label-input",
-  styleUrls: ["./label-input.component.css"],
+  styleUrls: ["./label-input.component.scss"],
   templateUrl: "./label-input.component.html"
 })
 export class LabelInputComponent implements OnInit {
