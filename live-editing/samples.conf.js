@@ -1,4 +1,4 @@
-/*
+﻿/*
     This configuration helps to create a JSON file in the assets folder for each sample. Each JSON file contains the
     source code of each file used by the sample. These files are used for live sample editing or
     whenever you'll need a sample's code in a human-readable form.
@@ -1001,6 +1001,18 @@ module.exports = {
         ngImports: "IgxButtonModule, IgxToggleModule"
       },
       shortenComponentPathBy: "/toggle/"
+    },
+    {
+        componentPath: "/igxFor/",
+        componentRoutePath: "igx-for-sample-1",
+        additionalFiles: ["/igxFor/names.ts"],
+        appModuleConfig: {
+            imports: [
+                { import: "IgxAvatarModule, IgxFilterModule, IgxListModule, IgxIconModule, IgxRippleModule, IgxForOfModule", from: "igniteui-angular/main" },
+                { import: "IgxForComponent", from: "./igxFor/igxFor.component" }],
+            ngDeclarations: "IgxForComponent",
+            ngImports: "IgxAvatarModule, IgxFilterModule, IgxListModule, IgxIconModule, IgxRippleModule, IgxForOfModule"
+        }
     },
   ]
 }
