@@ -18,6 +18,7 @@
   width: 1000px;
   margin: 0 auto;
 }
+
 @media (max-width: 1000px) {
   .grid__wrapper {
     width: 99%;
@@ -25,6 +26,7 @@
     padding-right: 1%;
   }
 }
+
 @media (max-width: 675px) {
   .grid__wrapper {
     width: 675px;
@@ -32,9 +34,11 @@
     padding-right: 5px;
   }
 }
+
 .sample-column {
   margin: 0 !important;
 }
+
 .sample__header {
   display: flex;
   align-self: flex-start;
