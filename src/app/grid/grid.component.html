@@ -7,13 +7,13 @@
         <div class="sample__header">
           <div class="switch-sample">
             <h2 igxLabel>Boston Marathon 2017</h2>
-            <igx-switch [(ngModel)]="live" [disabled]="!live" title="Start/Stop the marathon"> Live </igx-switch>
+            <igx-switch [(ngModel)]="live" [disabled]="isFinished" title="Start/Stop the marathon"> Live </igx-switch>
           </div>
 
           <input class="gridSample__filter" igxInput type="text" placeholder="Filter by country" (input)="filter($event.target.value)">
         </div>
 
-        <igx-grid #grid1 [data]="localData"  [paging]="true" [perPage]="6" [paginationTemplate]="pager">
+        <igx-grid #grid1 [data]="localData"  [paging]="true" [perPage]="6" [paginationTemplate]="pager" height="505" >
           <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
             <ng-template igxCell let-cell="cell">
               <div class="cell__inner">
