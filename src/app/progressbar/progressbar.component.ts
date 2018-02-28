@@ -4,7 +4,7 @@ import { IgxCircularProgressBarComponent, IgxLinearProgressBarComponent } from "
 
 @Component({
   selector: "app-progressbar",
-  styleUrls: ["./progressbar.component.css"],
+  styleUrls: ["./progressbar.component.scss"],
   templateUrl: "./progressbar.component.html"
 })
 export class ProgressbarComponent implements OnInit {

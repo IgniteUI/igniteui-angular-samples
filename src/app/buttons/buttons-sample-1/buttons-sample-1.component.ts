@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-buttons-sample-1",
-  styleUrls: ["./buttons-sample-1.component.css"],
+  styleUrls: ["./buttons-sample-1.component.scss"],
   templateUrl: "./buttons-sample-1.component.html"
 
 })

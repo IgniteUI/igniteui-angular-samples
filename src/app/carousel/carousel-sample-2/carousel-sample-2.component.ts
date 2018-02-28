@@ -4,7 +4,7 @@ import { Direction, IgxCarouselComponent } from "igniteui-angular/main";
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: "app-carousel",
-  styleUrls: ["./carousel-sample-2.component.css"],
+  styleUrls: ["./carousel-sample-2.component.scss"],
   templateUrl: "./carousel-sample-2.component.html"
 })
 export class CarouselSample2Component implements OnInit {

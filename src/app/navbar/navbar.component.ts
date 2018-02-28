@@ -6,7 +6,7 @@ const CURRENT_VIEW = "Ignite UI for Angular";
 @Component({
   providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }],
   selector: "app-navbar",
-  styleUrls: ["./navbar.component.css"],
+  styleUrls: ["./navbar.component.scss"],
   templateUrl: "./navbar.component.html"
 })
 export class NavbarComponent implements OnInit {

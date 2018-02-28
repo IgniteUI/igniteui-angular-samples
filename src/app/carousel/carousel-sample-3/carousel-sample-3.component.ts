@@ -4,7 +4,7 @@ import { Direction, IgxCarouselComponent, IgxLinearProgressBarComponent } from "
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: "app-carousel",
-  styleUrls: ["./carousel-sample-3.component.css"],
+  styleUrls: ["./carousel-sample-3.component.scss"],
   templateUrl: "./carousel-sample-3.component.html"
 })
 export class CarouselSample3Component implements OnInit {

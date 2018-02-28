@@ -63,7 +63,7 @@ export class LocalService {
 @Component({
     providers: [LocalService],
     selector: "grid-sample",
-    styleUrls: ["./grid-sample-2.component.css"],
+    styleUrls: ["./grid-sample-2.component.scss"],
     templateUrl: "grid-sample-2.component.html"
 })
 
