@@ -9,8 +9,8 @@
     <input class="gridSample__filter" igxInput type="text" placeholder="Filter by country" (input)="filter($event.target.value)">
   </div>
 
-        <igx-grid #grid1 [data]="localData"  [paging]="true" [perPage]="6" [paginationTemplate]="pager" height="520" width="100%">
-          <igx-column header="Rank" headerClasses="myClass" width="120px" field="Id" sortable="true">
+        <igx-grid #grid1 [data]="localData"  [paging]="true" [perPage]="6" [paginationTemplate]="pager" height="505" width="100%">
+          <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
             <ng-template igxCell let-cell="cell">
               <div class="cell__inner">
                 <div>{{ cell.value }}</div>
@@ -35,7 +35,7 @@
             </ng-template>
           </igx-column>
 
-          <igx-column field="Name" header="Athlete" filterable="true" width="350">
+          <igx-column field="Name" header="Athlete" filterable="true" width="280">
             <ng-template igxCell let-cell="cell">
               <div class="cell__inner">
                 <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"> </igx-avatar><span class="athlete_name">{{ cell.value }}</span>
@@ -61,7 +61,7 @@
             </ng-template>
           </igx-column>
 
-          <igx-column field="TopSpeed" header="Top Speed" >
+          <igx-column field="TopSpeed" header="Top Speed" width="103px">
 
             <ng-template igxCell let-val>
               <div class="cell__inner">
@@ -71,7 +71,7 @@
 
           </igx-column>
 
-          <igx-column field="TrackProgress" sortable="true" header="Track Progress" width="300px">
+          <igx-column field="TrackProgress" sortable="true" header="Track Progress" >
             <ng-template igxCell let-val>
               <igx-linear-bar [textVisibility]="false"class="cell__inner_2" [value]="val"></igx-linear-bar>
             </ng-template>
@@ -79,7 +79,7 @@
 
           <igx-column field="CountryName" hidden="true"></igx-column>
 
-          <igx-column field="CountryFlag" header="Country" width="120px">
+          <igx-column field="CountryFlag" header="Country" width="90px">
             <ng-template igxCell let-cell="cell">
               <div class="cell__inner_2">
                 <span>
