@@ -20,6 +20,18 @@ gulp.task("watch-live-editing", ["generate-live-editing"], () => {
     ["generate-live-editing"]);
 });
 
+gulp.task("conf", function () {
+    var tsNode = require('ts-node').register({
+        fast: true,
+        ignore: [/\/node_modules\/(?!igniteui-angular)/],
+        compilerOptions: {
+            allowJs: true
+        }
+    })
+
+    require("./live-editing/LiveEditingManager.ts");
+});
+
 function requireFile(path) {
   delete require.cache[require.resolve(path)];
   return require(path);

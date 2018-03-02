@@ -100,7 +100,7 @@ import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   {
     component: AvatarSample1Component,
     path: "avatar-sample-1"
