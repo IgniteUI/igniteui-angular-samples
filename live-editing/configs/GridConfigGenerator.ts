@@ -20,18 +20,19 @@ import { DataService } from "../../src/app/grid/services/data.service";
 export class GridConfigGenerator implements IConfigGenerator {
     generateConfigs(): Config[] {
         let configs = new Array<Config>();
+
         configs.push(new Config({
             component: GridComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputModule, IgxLabelModule,
-                    IgxProgressBarModule, IgxRippleModule, IgxSwitchModule],
+                    IgxGridModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, GridComponent, DataService],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
-                ngProviders: [DataService]          
+                ngProviders: [DataService]
             })
         }));
 

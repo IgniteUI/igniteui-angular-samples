@@ -8,7 +8,7 @@ export class Config {
     public shortenComponentPathBy: string;
 
     constructor(fields: {
-        component: Type<any>, additionalFiles: Array<string>,
+        component: Type<any>, additionalFiles?: Array<string>,
         appModuleConfig: AppModuleConfig, shortenComponentPathBy?: string
     }) {
         this.component = fields.component;

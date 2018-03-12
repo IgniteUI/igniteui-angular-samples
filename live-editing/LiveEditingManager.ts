@@ -11,7 +11,7 @@ class LiveEditingManager {
     }
 
     public run() {
-        //this.sharedAssetsGenerator.generateSharedAssets();
+        this.sharedAssetsGenerator.generateSharedAssets();
         this.sampleAssetsGenerator.generateSamplesAssets();
     }
 }

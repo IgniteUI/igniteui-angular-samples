@@ -1,4 +1,31 @@
+import { AvatarConfigGenerator } from "./configs/AvatarConfigGenerator";
+import { BadgeConfigGenerator } from "./configs/BadgeConfigGenerator";
+import { ButtonConfigGenerator } from "./configs/ButtonConfigGenerator";
+import { ButtonGroupConfigGenerator } from "./configs/ButtonGroupConfigGenerator";
+import { CalendarConfigGenerator } from "./configs/CalendarConfigGenerator";
+import { CardConfigGenerator } from "./configs/CardConfigGenerator";
+import { CarouselConfigGenerator } from "./configs/CarouselConfigGenerator";
+import { CheckboxConfigGenerator } from "./configs/CheckboxConfigGenerator";
+import { CircularProgressbarConfigGenerator } from "./configs/CircularProgressbarConfigGenerator";
+import { DatePickerConfigGenerator } from "./configs/DatePickerConfigGenerator";
+import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
+import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
+import { IconConfigGenerator } from "./configs/IconConfigGenerator";
+import { LabelAndInputConfigGenerator } from "./configs/LabelAndInputConfigGenerator";
+import { LayoutConfigGenerator } from "./configs/LayoutConfigGenerator";
+import { LinearProgressbarConfigGenerator } from "./configs/LinearProgressbarConfigGenerator";
+import { ListConfigGenerator } from "./configs/ListConfigGenerator";
+import { NavbarConfigGenerator } from "./configs/NavbarConfigGenerator";
+import { NavdrawerConfigGenerator } from "./configs/NavDrawerConfigGenerator";
+import { RadioConfigGenerator } from "./configs/RadioConfigGenerator";
+import { RippleConfigGenerator } from "./configs/RippleConfigGenerator";
+import { SliderConfigGenerator } from "./configs/SliderConfigGenerator";
+import { SnackbarConfigGenerator } from "./configs/SnackbarConfigGenerator";
+import { SwitchConfigGenerator } from "./configs/SwitchConfigGenerator";
+import { TabBarConfigGenerator } from "./configs/TabBarConfigGenerator";
+import { ToastConfigGenerator } from "./configs/ToastConfigGenerator";
+import { ToggleConfigGenerator } from "./configs/ToggleConfigGenerator";
 
 import * as fs from "fs";
 import * as path from "path";
@@ -7,10 +34,13 @@ import { LiveEditingFile } from "./LiveEditingFile";
 import { IConfigGenerator } from "./configs/core/IConfigGenerator";
 import { Config } from "./configs/core/Config";
 import { TsImportsService } from "./TsImportsService";
+
 import { Type } from "@angular/core/src/type";
+import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
+
+import * as Routing from "../src/app/app-routing.module";
 
 const BASE_PATH = path.join(__dirname, "../");
-//const BASE_PATH = path.join(__dirname, "../src/app/");
 const ASSETS_SAMPLES_DIR = path.join(__dirname, "../src/assets/samples/");
 const APP_MODULE_TEMPLATE_PATH = path.join(__dirname, "/templates/app.module.ts.template");
 const APP_MODULE_PATH = path.join(__dirname, "../src/app/app.module.ts");
@@ -18,11 +48,19 @@ const APP_MODULE_PATH = path.join(__dirname, "../src/app/app.module.ts");
 const COMPONENT_FILE_EXTENSIONS = ["ts", "html", "scss"];
 const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 
-const SAMPLE_ASSETS_BASE_DIR = "app/";
-const CONFIG_GENERATORS = [GridConfigGenerator];
+const SAMPLE_ASSETS_BASE_DIR: string = "app/";
+const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
+    ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
+    CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
+    DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
+    LabelAndInputConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
+    ListConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
+    RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
+    TabBarConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator];
 
 export class SampleAssetsGenerator {
     private tsImportsService: TsImportsService;
+    private componentRoutes: Collections.Dictionary<string, string>;
 
     constructor() {
         if (!fs.existsSync(ASSETS_SAMPLES_DIR)) {
@@ -30,6 +68,12 @@ export class SampleAssetsGenerator {
         }
 
         this.tsImportsService = new TsImportsService();
+
+        this.componentRoutes = new Collections.Dictionary<string, string>();
+        for (let i = 0; i < Routing.appRoutes.length; i++) {
+            this.componentRoutes.setValue(Routing.appRoutes[i].component.name,
+                Routing.appRoutes[i].path);
+        }
     }
 
     public generateSamplesAssets() {
@@ -38,7 +82,7 @@ export class SampleAssetsGenerator {
             let configGeneratorFilePath = path.join(__dirname, currentFileImports.getValue(CONFIG_GENERATORS[i].name) + ".ts");
             let configGeneratorImports = this.tsImportsService.getFileImports(configGeneratorFilePath);
             let configs = (new CONFIG_GENERATORS[i]).generateConfigs();
-            for (var j = 0; j < configs.length; j++) {
+            for (let j = 0; j < configs.length; j++) {
                 this.generateSampleAssets(configs[j], configGeneratorImports);
             }
         }
@@ -48,7 +92,7 @@ export class SampleAssetsGenerator {
         let componentModuleSpecifier = configImports.getValue(config.component.name);
         let componentPath = componentModuleSpecifier.replace(GO_DIR_BACK_REG_EX, "");
         let componentFilesPaths = new Array<string>();
-        for (var i = 0; i < COMPONENT_FILE_EXTENSIONS.length; i++) {
+        for (let i = 0; i < COMPONENT_FILE_EXTENSIONS.length; i++) {
             componentFilesPaths.push(componentPath + "." + COMPONENT_FILE_EXTENSIONS[i]);
         }
 
@@ -60,64 +104,126 @@ export class SampleAssetsGenerator {
             let file = new LiveEditingFile(filePath, fileContent);
             this.shortenComponentPath(config, file);
             sampleFiles.push(file);
-            //if (componentFilesPaths[i].indexOf(".ts") !== -1) {
-            //    componentTsContent = fileContent;
-            //}
+            if (componentFilesPaths[i].indexOf(".ts") !== -1) {
+                componentTsContent = fileContent;
+            }
         }
 
-        if (config.additionalFiles !== null && config.additionalFiles.length > 0) {
+        if (config.additionalFiles !== undefined && config.additionalFiles.length > 0) {
             for (let i = 0; i < config.additionalFiles.length; i++) {
-                var filePath = config.additionalFiles[i].substring(config.additionalFiles[i].indexOf(SAMPLE_ASSETS_BASE_DIR));
-                var fileContent = fs.readFileSync(path.join(BASE_PATH, config.additionalFiles[i]), "utf8");
-                var file = new LiveEditingFile(filePath, fileContent);
+                let filePath = config.additionalFiles[i].substring(config.additionalFiles[i].indexOf(SAMPLE_ASSETS_BASE_DIR));
+                let fileContent = fs.readFileSync(path.join(BASE_PATH, config.additionalFiles[i]), "utf8");
+                let file = new LiveEditingFile(filePath, fileContent);
                 this.shortenComponentPath(config, file);
                 sampleFiles.push(file);
             }
         }
+        
+        let appModuleFile = new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.module.ts", this.getAppModuleConfig(config, configImports));
+        this.shortenComponentPath(config, appModuleFile)
+        sampleFiles.push(appModuleFile);
+        sampleFiles.push(new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.component.html", this.getAppComponentHtml(componentTsContent)));
 
-        //var appModuleFile = new LiveEditingFile("app/app.module.ts", getAppModuleConfig(sampleConfig));
-        //sampleFiles.push(shortenComponentPath(sampleConfig, appModuleFile, appModulePath, shortenComponentPathExceptions));
-        //sampleFiles.push(new LiveEditingFile("app/app.component.html", getAppComponentHtml(componentTsContent)));
-
-        //fs.writeFileSync(assetsSamplesDir + sampleConfig.componentRoutePath + ".json", JSON.stringify(sampleFiles));
+        fs.writeFileSync(ASSETS_SAMPLES_DIR + this.componentRoutes.getValue(config.component.name) + ".json",
+            JSON.stringify(sampleFiles));
     }
 
-    //private getAppComponentHtml(componentTsContent) {
-    //    var componentSelectorRegex = /selector:[\s]*["']([a-zA-Z0-9-]+)["']/g;
-    //    var componentSeletcor = componentSelectorRegex.exec(componentTsContent)[1];
-    //    var appComponentHtml = "<" + componentSeletcor + "></" + componentSeletcor + ">";
-    //    return appComponentHtml;
-    //}
+    private getAppComponentHtml(componentTsContent) {
+        let componentSelectorRegex = /selector:[\s]*["']([a-zA-Z0-9-]+)["']/g;
+        let componentSeletcor = componentSelectorRegex.exec(componentTsContent)[1];
+        let appComponentHtml = "<" + componentSeletcor + "></" + componentSeletcor + ">";
+        return appComponentHtml;
+    }
 
-    //private getAppModuleConfig(sampleConfig) {
-    //    var appModuleTemplate = fs.readFileSync(APP_MODULE_TEMPLATE_PATH, "utf8");
+    private getAppModuleConfig(config: Config, configImports: Collections.Dictionary<string, string>) {
+        let appModuleTemplate = fs.readFileSync(APP_MODULE_TEMPLATE_PATH, "utf8");
 
-    //    var imports = "";
-    //    for (var i = 0; i < sampleConfig.appModuleConfig.imports.length; i++) {
-    //        var appModuleImport = '\r\nimport { ' +
-    //            this.formatAppModuleTypes(sampleConfig.appModuleConfig.imports[i].import.split(","), false, 1, "\r\n") +
-    //            ' } from "' + sampleConfig.appModuleConfig.imports[i].from + '";';
-    //        imports = imports + appModuleImport;
-    //    }
+        let imports = this.getAppModuleImports(config, configImports);
 
-    //    var ngDeclarations = "," + this.formatAppModuleTypes(sampleConfig.appModuleConfig.ngDeclarations.split(','), true, 2);
-    //    var ngImports = "," + this.formatAppModuleTypes(sampleConfig.appModuleConfig.ngImports.split(","), true, 2);
+        let appModuleNgDeclarations: Array<string> = config.appModuleConfig.ngDeclarations.map(d => d.name);
+        let ngDeclarations = "," + this.formatAppModuleTypes(appModuleNgDeclarations, true, 2);
 
-    //    var ngProviders = "";
-    //    if (sampleConfig.appModuleConfig.ngProviders) {
-    //        ngProviders = this.formatAppModuleTypes(sampleConfig.appModuleConfig.ngProviders.split(","), false, 2, "\r\n\t");
-    //    }
+        let appModuleNgImports: Array<string> = this.getAppModuleNgImports(config);
 
-    //    appModuleTemplate = appModuleTemplate
-    //        .replace("{imports}", imports)
-    //        .replace("{ngDeclarations}", ngDeclarations)
-    //        .replace("{ngImports}", ngImports)
-    //        .replace("{ngProviders}", ngProviders);
+        let ngImports = "," + this.formatAppModuleTypes(appModuleNgImports, true, 2);        
 
-    //    return appModuleTemplate;
-    //}
+        let ngProviders = "";
+        if (config.appModuleConfig.ngProviders !== undefined &&
+            config.appModuleConfig.ngProviders.length > 0) {
+            let appModuleNgProviders: Array<string> = config.appModuleConfig.ngProviders
+                .map(p => p as Type<any>).map(p => p.name);
+            ngProviders = this.formatAppModuleTypes(appModuleNgProviders, false, 2, "\r\n\t");
+        }
 
-    private formatAppModuleTypes(types, multiline, tabsCount, suffixIfMultiple) {
+        appModuleTemplate = appModuleTemplate
+            .replace("{imports}", imports)
+            .replace("{ngDeclarations}", ngDeclarations)
+            .replace("{ngImports}", ngImports)
+            .replace("{ngProviders}", ngProviders);
+
+        return appModuleTemplate;
+    }
+
+    private getAppModuleNgImports(config: Config) {
+        let appModuleNgImports: Array<string> = new Array<string>();
+        for (let i = 0; i < config.appModuleConfig.ngImports.length; i++) {
+            if (typeof config.appModuleConfig.ngImports[i] === "string") {
+                appModuleNgImports.push(config.appModuleConfig.ngImports[i]);
+            }
+            else {
+                let appModuleNgImport: Type<any> = config.appModuleConfig.ngImports[i] as Type<any>;
+                if (appModuleNgImport.name !== undefined) {
+                    appModuleNgImports.push(appModuleNgImport.name);
+                }
+                else {
+                    let appModuleNgImportWithProviders: ModuleWithProviders = config.appModuleConfig.ngImports[i] as ModuleWithProviders;
+                    appModuleNgImports.push(appModuleNgImportWithProviders.ngModule.name + ".forRoot()");
+                }
+            }
+        }
+
+        return appModuleNgImports;
+    }
+
+    private getAppModuleImports(config: Config, configImports: Collections.Dictionary<string, string>): string {
+        let sampleImports = new Collections.Dictionary<string, string[]>();
+
+        for (let i = 0; i < config.appModuleConfig.imports.length; i++) {
+            let importName;
+            if (typeof config.appModuleConfig.imports[i] === "string") {
+                importName = config.appModuleConfig.imports[i];
+            } else {
+                importName = config.appModuleConfig.imports[i].name;
+            }
+
+            let importModuleSpecifier = configImports.getValue(importName);
+            if (sampleImports.containsKey(importModuleSpecifier)) {
+                sampleImports.getValue(importModuleSpecifier).push(importName);
+            }
+            else {
+                sampleImports.setValue(importModuleSpecifier, [importName]);
+            }
+        }
+
+        let imports = "";
+        let sampleImportsKeys = sampleImports.keys();
+        for (let i = 0; i < sampleImportsKeys.length; i++) {
+            let currentImportModuleSpecifier: string = sampleImportsKeys[i];
+            let baseDirIndex: number = currentImportModuleSpecifier.indexOf(SAMPLE_ASSETS_BASE_DIR);
+            if (baseDirIndex !== -1) {
+                currentImportModuleSpecifier = "." + currentImportModuleSpecifier.substring(baseDirIndex + SAMPLE_ASSETS_BASE_DIR.length - 1);
+            }
+            let currentImportModules: Array<string> = sampleImports.getValue(sampleImportsKeys[i]);
+            let currentImport = '\r\nimport { ' + this.formatAppModuleTypes(currentImportModules, false, 1, "\r\n") +
+                ' } from "' + currentImportModuleSpecifier + '";';
+            imports = imports + currentImport;
+        }
+
+        return imports;
+    }
+
+    private formatAppModuleTypes(types: Array<string>, multiline: boolean, tabsCount: number,
+        suffixIfMultiple: string = null): string {
         if (types.length === 1 && !multiline) {
             return types.join("");
         }

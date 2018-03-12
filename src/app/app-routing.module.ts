@@ -71,7 +71,6 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
-import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -356,10 +355,6 @@ export const appRoutes: Routes = [
   {
     component: SliderSample5Component,
     path: "slider-sample-5"
-  },
-  {
-    component: ProgressbarComponent,
-    path: "progressbar"
   },
   {
     component: TabbarComponent,
