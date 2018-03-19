@@ -31,6 +31,7 @@ import {
   IgxSnackbarModule,
   IgxSwitchModule,
   IgxTabBarModule,
+  IgxTimePicker,
   IgxToastModule,
   IgxToggleModule
 } from "igniteui-angular/main";
@@ -128,6 +129,10 @@ import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
+import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
+import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
+import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -137,6 +142,7 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -241,7 +247,11 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ToastSample5Component,
     ButtonGroupSample1Component,
     ButtonGroupSample2Component,
-    ButtonGroupSample3Component
+    ButtonGroupSample3Component,
+    TimePickerSample1Component,
+    TimePickerSample2Component,
+    TimePickerSample3Component,
+    TimePickerSample4Component
   ],
   imports: [
     AppRoutingModule,
@@ -278,7 +288,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxNavbarModule,
     IgxToggleModule,
     HttpClientModule,
-    IgxForOfModule
+    IgxForOfModule,
+    IgxTimePickerModule
   ],
   providers: [DataService]
 })
