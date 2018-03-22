@@ -2,25 +2,25 @@
     <div class="sample-content">
         <!-- Single selection mode -->
         <article class="sample-column calendar-wrapper">
-            <igx-calendar>
-                <div *ngIf="supportIntl; else customParse">
+            <igx-calendar #component locale="fr">
+                <div *ngIf="formatParts; else parseTemplate">
                     <ng-template igxCalendarHeader let-parts>
-                        {{ parts.month.combined | titlecase }} {{parts.day.combined }} {{ parts.weekday.combined }}
+                        {{ parts.month.combined | titlecase }} {{ parts.day.combined }} {{ parts.weekday.combined }}
                     </ng-template>
                     <ng-template igxCalendarSubheader let-parts>
                         <span class="date__el" (click)="parts.monthView()">{{ parts.month.combined }}</span>            
                         <span class="date__el" (click)="parts.yearView()">{{ parts.year.combined }}</span>
-                    </ng-template>     
+                    </ng-template>
                 </div>
 
-                <!-- Displaying template with custom aprsing of the date-->
-                <ng-template #customParse>
+                <!-- Parse template for browsers not supporting Intl -->
+                <ng-template #parseTemplate>
                     <ng-template igxCalendarHeader let-parts>
-                        {{ parseHeaderTemplate(parts) }}
+                        {{ parser.getDatePart(parts, component, 'month') | titlecase }} {{ parts.date.getDate() }} {{ parser.getDatePart(parts, component, 'weekday') }}
                     </ng-template>
                     <ng-template igxCalendarSubheader let-parts>
-                        <span class="date__el" (click)="parts.monthView()">{{ parseMonth(parts) }}</span> 
-                        <span class="date__el" (click)="parts.yearView()">{{ parseYear(parts) }}</span>
+                        <span class="date__el" (click)="parts.monthView()">{{ parser.getDatePart(parts, component, 'month') }}</span> 
+                        <span class="date__el" (click)="parts.yearView()">{{ parser.getDatePart(parts, component, 'year') }}</span>
                     </ng-template>
                 </ng-template>
 
