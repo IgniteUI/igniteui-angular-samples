@@ -6,15 +6,14 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./mask-sample-3.component.html"
 })
 export class MaskSample3Component implements OnInit {
-
   public socialSecurityNumber: string = "123-45-6789";
   public includeLiterals: boolean = true;
+
+  constructor() { }
 
   public clear() {
     this.socialSecurityNumber = "";
   }
-
-  constructor() { }
 
   public ngOnInit() {
   }
