@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "app-tabbar",
-    styleUrls: ["./tabbar.component.css"],
+    styleUrls: ["./tabbar.component.scss"],
     templateUrl: "./tabbar.component.html"
 })
 export class TabbarComponent {

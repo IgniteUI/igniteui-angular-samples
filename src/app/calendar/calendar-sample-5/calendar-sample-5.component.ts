@@ -3,7 +3,7 @@ import { IgxCalendarComponent, IgxDialogComponent } from "igniteui-angular/main"
 
 @Component({
   selector: "app-calendar",
-  styleUrls: ["./calendar-sample-5.component.css"],
+  styleUrls: ["./calendar-sample-5.component.scss"],
   templateUrl: "./calendar-sample-5.component.html"
 })
 export class CalendarSample5Component {

@@ -3,7 +3,7 @@ import { Member } from "../model/member.model";
 
 @Component({
   selector: "app-badge-sample-1",
-  styleUrls: ["./badge-sample-1.component.css"],
+  styleUrls: ["./badge-sample-1.component.scss"],
   templateUrl: "./badge-sample-1.component.html"
 })
 export class BadgeSample1Component implements OnInit {

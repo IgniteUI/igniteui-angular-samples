@@ -4,7 +4,7 @@ import { IgxNavigationDrawerComponent } from "igniteui-angular/main";
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: "app-navdrawer",
-  styleUrls: ["./navdrawer.component.css"],
+  styleUrls: ["./navdrawer.component.scss"],
   templateUrl: "./navdrawer.component.html"
 })
 export class NavdrawerComponent  {

@@ -3,7 +3,7 @@ import { IgxLinearProgressBarComponent, IgxTextAlign } from "igniteui-angular/ma
 
 @Component({
   selector: "app-linear-progressbar-sample-2",
-  styleUrls: ["./linear-progressbar-sample-2.component.css"],
+  styleUrls: ["./linear-progressbar-sample-2.component.scss"],
   templateUrl: "./linear-progressbar-sample-2.component.html"
 })
 export class LinearProgressbarSample2Component implements OnInit {

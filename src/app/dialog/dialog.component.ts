@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-dialog",
-  styleUrls: ["./dialog.component.css"],
+  styleUrls: ["./dialog.component.scss"],
   templateUrl: "./dialog.component.html"
 })
 export class DialogComponent implements OnInit {

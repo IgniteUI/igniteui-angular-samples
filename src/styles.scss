@@ -1,7 +1,7 @@
 @import '~igniteui-angular/core/styles/themes/index';
 
 @include igx-core();
-@include igx-theme();
+@include igx-theme($default-palette);
 
 .sample-wrapper {
     width: inherit;

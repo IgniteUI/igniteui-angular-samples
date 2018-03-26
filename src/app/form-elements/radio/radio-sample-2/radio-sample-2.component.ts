@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-radio-sample-2",
-  styleUrls: ["./radio-sample-2.component.css"],
+  styleUrls: ["./radio-sample-2.component.scss"],
   templateUrl: "./radio-sample-2.component.html"
 })
 export class RadioSample2Component implements OnInit {

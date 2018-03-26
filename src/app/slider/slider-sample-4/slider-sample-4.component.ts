@@ -3,7 +3,7 @@ import { SliderType } from "igniteui-angular/main";
 
 @Component({
   selector: "app-slider-sample-4",
-  styleUrls: ["./slider-sample-4.component.css"],
+  styleUrls: ["./slider-sample-4.component.scss"],
   templateUrl: "./slider-sample-4.component.html"
 })
 export class SliderSample4Component implements OnInit {

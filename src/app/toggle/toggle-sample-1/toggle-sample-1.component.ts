@@ -3,7 +3,7 @@ import { IgxToggleDirective } from "igniteui-angular/main";
 
 @Component({
   selector: "app-toggle-sample-1",
-  styleUrls: ["./toggle-sample-1.component.css"],
+  styleUrls: ["./toggle-sample-1.component.scss"],
   templateUrl: "./toggle-sample-1.component.html"
 })
 export class ToggleSample1Component implements OnInit {
