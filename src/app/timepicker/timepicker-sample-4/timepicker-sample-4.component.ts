@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild} from "@angular/core";
 import { IgxTimePickerComponent, IgxToastComponent } from "igniteui-angular/main";
 
 @Component({
-  selector: "app-timepicker-sample-4",
+  selector: "app-timepicker",
   styleUrls: ["./timepicker-sample-4.component.scss"],
   templateUrl: "./timepicker-sample-4.component.html"
 })
@@ -24,8 +24,6 @@ export class TimePickerSample4Component implements AfterViewInit {
   }
 
   public ngAfterViewInit(): void {
-    (document.getElementById("time-picker")
-      .getElementsByClassName("igx-time-picker")[0] as HTMLElement)
-      .click();
+    (document.getElementsByClassName("igx-form-group__input")[0] as HTMLElement).click();
   }
 }
