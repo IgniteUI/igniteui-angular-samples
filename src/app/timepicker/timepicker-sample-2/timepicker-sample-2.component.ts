@@ -7,9 +7,10 @@ import { IgxTimePickerComponent } from "igniteui-angular/main";
   templateUrl: "./timepicker-sample-2.component.html"
 })
 export class TimePickerSample2Component implements AfterViewInit {
-  constructor() { }
 
   public date: Date = new Date(Date.now());
+
+  constructor() { }
 
   public ngAfterViewInit(): void {
     (document.getElementById("time-picker")

@@ -24,6 +24,7 @@ import { SliderConfigGenerator } from "./configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "./configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "./configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "./configs/TabBarConfigGenerator";
+import { TimePickerConfigGenerator } from "./configs/TimePickerConfigGenerator";
 import { ToastConfigGenerator } from "./configs/ToastConfigGenerator";
 import { ToggleConfigGenerator } from "./configs/ToggleConfigGenerator";
 
