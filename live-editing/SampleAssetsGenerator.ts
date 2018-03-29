@@ -17,6 +17,7 @@ import { LayoutConfigGenerator } from "./configs/LayoutConfigGenerator";
 import { LinearProgressbarConfigGenerator } from "./configs/LinearProgressbarConfigGenerator";
 import { ListConfigGenerator } from "./configs/ListConfigGenerator";
 import { NavbarConfigGenerator } from "./configs/NavbarConfigGenerator";
+import { MaskConfigGenerator } from "./configs/MaskConfigGenerator";
 import { NavdrawerConfigGenerator } from "./configs/NavDrawerConfigGenerator";
 import { RadioConfigGenerator } from "./configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "./configs/RippleConfigGenerator";
@@ -55,7 +56,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
     DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
     LabelAndInputConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
-    ListConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
+    ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
     TabBarConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
 
@@ -119,7 +120,7 @@ export class SampleAssetsGenerator {
                 sampleFiles.push(file);
             }
         }
-        
+
         let appModuleFile = new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.module.ts", this.getAppModuleConfig(config, configImports));
         this.shortenComponentPath(config, appModuleFile)
         sampleFiles.push(appModuleFile);
@@ -146,7 +147,7 @@ export class SampleAssetsGenerator {
 
         let appModuleNgImports: Array<string> = this.getAppModuleNgImports(config);
 
-        let ngImports = "," + this.formatAppModuleTypes(appModuleNgImports, true, 2);        
+        let ngImports = "," + this.formatAppModuleTypes(appModuleNgImports, true, 2);
 
         let ngProviders = "";
         if (config.appModuleConfig.ngProviders !== undefined &&
