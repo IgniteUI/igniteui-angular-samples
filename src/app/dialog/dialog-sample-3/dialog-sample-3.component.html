@@ -5,7 +5,7 @@
         <button igxButton="raised" igxButtonColor="white" igxButtonBackground="#EC6F74" igRipple="white" (click)="form.open()">Show Dialog</button>
 
         <igx-dialog #form title="Sign In" leftButtonLabel="Cancel" (onLeftButtonSelect)="form.close()" (onRightButtonSelect)="signIn($event)" rightButtonLabel="Sign In"
-            rightButtonBackgroundColor="#0375be" rightButtonColor="#ffffff" closeOnOutsideSelect="true">
+            rightButtonBackgroundColor="#0375be" rightButtonColor="#ffffff" [closeOnOutsideSelect]="true">
             <div class="igx-form-group">
                 <input type="text" igxInput />
                 <label igxLabel>Username</label>
