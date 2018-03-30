@@ -34,7 +34,10 @@ import {
   IgxTimePickerModule,
   IgxToastModule,
   IgxToggleModule
+
 } from "igniteui-angular/main";
+
+import { IgxMaskModule } from "igniteui-angular/directives/mask/mask.directive";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -105,6 +108,9 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
+import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
+import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
+import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
@@ -247,6 +253,9 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ButtonGroupSample1Component,
     ButtonGroupSample2Component,
     ButtonGroupSample3Component,
+    MaskSample1Component,
+    MaskSample2Component,
+    MaskSample3Component,
     TimePickerSample1Component,
     TimePickerSample2Component,
     TimePickerSample3Component,
@@ -288,6 +297,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxToggleModule,
     HttpClientModule,
     IgxForOfModule,
+    IgxMaskModule,
     IgxTimePickerModule
   ],
   providers: [DataService]
