@@ -12,7 +12,6 @@ import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
 import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./configs/IconConfigGenerator";
-import { LabelAndInputConfigGenerator } from "./configs/LabelAndInputConfigGenerator";
 import { LayoutConfigGenerator } from "./configs/LayoutConfigGenerator";
 import { LinearProgressbarConfigGenerator } from "./configs/LinearProgressbarConfigGenerator";
 import { ListConfigGenerator } from "./configs/ListConfigGenerator";
@@ -55,7 +54,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
     DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
-    LabelAndInputConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
+    LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
     TabBarConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
@@ -171,8 +170,7 @@ export class SampleAssetsGenerator {
         for (let i = 0; i < config.appModuleConfig.ngImports.length; i++) {
             if (typeof config.appModuleConfig.ngImports[i] === "string") {
                 appModuleNgImports.push(config.appModuleConfig.ngImports[i]);
-            }
-            else {
+            } else {
                 let appModuleNgImport: Type<any> = config.appModuleConfig.ngImports[i] as Type<any>;
                 if (appModuleNgImport.name !== undefined) {
                     appModuleNgImports.push(appModuleNgImport.name);

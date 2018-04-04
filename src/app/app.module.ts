@@ -15,12 +15,14 @@ import {
   IgxDialogModule,
   IgxFilterModule,
   IgxForOfModule,
+    IgxInputGroupModule,
   IgxGridModule,
   IgxIconModule,
   IgxInputModule,
   IgxLabelModule,
   IgxLayoutModule,
   IgxListModule,
+    IgxMaskModule,
   IgxNavbarModule,
   IgxNavigationDrawerModule,
   IgxNavigationModule,
@@ -34,11 +36,9 @@ import {
   IgxTimePickerModule,
   IgxToastModule,
   IgxToggleModule
-
 } from "igniteui-angular/main";
 
 import { IgxMaskModule } from "igniteui-angular/directives/mask/mask.directive";
-
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -96,11 +96,14 @@ import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { LabelInputComponent } from "./label-input/label-input.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { LinearProgressbarSample1Component
+import {
+    LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
-import { LinearProgressbarSample2Component
+import {
+    LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
@@ -261,7 +264,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     TimePickerSample1Component,
     TimePickerSample2Component,
     TimePickerSample3Component,
-    TimePickerSample4Component
+        TimePickerSample4Component,
+        InputGroupSample1Component
   ],
   imports: [
     AppRoutingModule,
@@ -270,7 +274,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     FormsModule,
     IgxGridModule.forRoot(),
     IgxCarouselModule,
-    IgxInputModule,
     IgxLayoutModule,
     IgxRadioModule,
     IgxSwitchModule,
@@ -290,7 +293,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxSnackbarModule,
     IgxCardModule,
     IgxListModule,
-    IgxLabelModule,
     IgxCheckboxModule,
     IgxToastModule,
     IgxSliderModule,
@@ -300,7 +302,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     HttpClientModule,
     IgxForOfModule,
     IgxMaskModule,
-    IgxTimePickerModule
+        IgxTimePickerModule,
+        IgxInputGroupModule
   ],
   providers: [DataService]
 })

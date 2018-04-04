@@ -7,7 +7,7 @@
                     <igx-list-item options="true" igxRipple="pink" igxRippleTarget=".igx-list__item" *ngFor="let item of navItems">
                         <div class="item">
                             <igx-avatar [src]="item.avatar" roundShape="true"></igx-avatar>
-                            <span igxLabel>{{item.text}}</span>
+                            <span>{{item.text}}</span>
                             <span igxButton="icon" igxRipple igxRippleCentered="true" (click)="delete(item)">
                                 <igx-icon fontSet="material" color="#ff5252" name="delete"></igx-icon>
                             </span>
