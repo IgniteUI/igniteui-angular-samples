@@ -91,6 +91,7 @@ import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radi
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
+import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -226,6 +227,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     AvatarSample3Component,
     IgxForComponent,
     FinancialSampleComponent,
+    GridSelectionSampleComponent,
     LinearProgressbarSample1Component,
     LinearProgressbarSample2Component,
     LabelInputComponent,

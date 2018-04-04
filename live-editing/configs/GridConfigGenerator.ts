@@ -3,6 +3,7 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { FinancialSampleComponent } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
+import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { HttpClientModule } from "@angular/common/http";
 import {
     IgxAvatarModule,
@@ -41,6 +42,21 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: FinancialSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sample-2/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                    IgxGridModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, FinancialSampleComponent, LocalService],
+                ngDeclarations: [FinancialSampleComponent],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngProviders: [LocalService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridSelectionSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
