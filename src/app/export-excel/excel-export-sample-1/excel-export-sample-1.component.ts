@@ -15,28 +15,27 @@ import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 })
 export class ExcelExportSample1Component {
 
-  @ViewChild("igxGrid1") igxGrid1: IgxGridComponent;
+  @ViewChild("igxGrid1") public igxGrid1: IgxGridComponent;
   public localData = [
     { Name: "Eric Ridley", Age: "26" },
     { Name: "Alanis Brook", Age: "22" },
     { Name: "Jonathan Morris", Age: "23" }
   ];
 
-  constructor() {
+  constructor(private excelExportService: IgxExcelExporterService) {
   }
 
   public exportButtonHandler() {
-    let ees: IgxExcelExporterService = new IgxExcelExporterService();
-    //ees.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
-    //  if (args.header == "Age" && args.columnIndex == 1) {
-    //    args.cancel = true;
-    //  }
-    //});
-    //ees.onRowExport.subscribe((args: IRowExportingEventArgs) => {
-    //});
-    //ees.onExportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
-    //});
-    ees.export(this.igxGrid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
+    // this.excelExportService.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
+    //   if (args.header == "Age" && args.columnIndex == 1) {
+    //     args.cancel = true;
+    //   }
+    // });
+    // this.excelExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
+    // });
+    // this.excelExportService.onExportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
+    // });
+    this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
   }
 
 }

@@ -15,19 +15,17 @@ export class CsvExportComponent {
     { Name: "Jonathan Morris", Age: "23" }
   ];
 
-  constructor() {
+  constructor(private csvExportService: IgxCsvExporterService) {
   }
 
   public exportCsvButtonHandler() {
-    let ces: IgxCsvExporterService = new IgxCsvExporterService();
-    let opt: IgxCsvExporterOptions = new IgxCsvExporterOptions("CSVExportFileFromData", CsvFileTypes.CSV);
-    ces.exportData(this.localData, opt);
+    const opt: IgxCsvExporterOptions = new IgxCsvExporterOptions("CSVExportFileFromData", CsvFileTypes.CSV);
+    this.csvExportService.exportData(this.localData, opt);
   }
 
   public exportTsvButtonHandler() {
-    let ces: IgxCsvExporterService = new IgxCsvExporterService();
-    let opt: IgxCsvExporterOptions = new IgxCsvExporterOptions("CSVExportFileFromData", CsvFileTypes.TSV);
-    ces.exportData(this.localData, opt);
+    const opt: IgxCsvExporterOptions = new IgxCsvExporterOptions("CSVExportFileFromData", CsvFileTypes.TSV);
+    this.csvExportService.exportData(this.localData, opt);
   }
 
 }

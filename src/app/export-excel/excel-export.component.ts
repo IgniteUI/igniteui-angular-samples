@@ -15,12 +15,11 @@ export class ExcelExportComponent {
     { Name: "Jonathan Morris", Age: "23" }
   ];
   
-  constructor() {
+  constructor(private excelExportService: IgxExcelExporterService) {
   }
 
   public exportButtonHandler() {
-    let ees: IgxExcelExporterService = new IgxExcelExporterService();
-    ees.exportData(this.localData, new IgxExcelExporterOptions("ExportFileFromData"));
+    this.excelExportService.exportData(this.localData, new IgxExcelExporterOptions("ExportFileFromData"));
   }
 
 }

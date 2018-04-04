@@ -309,6 +309,10 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxMaskModule,
     IgxTimePickerModule
   ],
-  providers: [DataService]
+  providers: [
+    DataService,
+    IgxCsvExporterService,
+    IgxExcelExporterService
+  ]
 })
 export class AppModule { }
