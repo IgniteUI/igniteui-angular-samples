@@ -10,8 +10,7 @@ import {
     IgxButtonModule,
     IgxGridModule,
     IgxIconModule,
-    IgxInputModule,
-    IgxLabelModule,
+    IgxInputGroupModule,
     IgxProgressBarModule,
     IgxRippleModule,
     IgxSwitchModule
@@ -28,12 +27,12 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, GridComponent, DataService],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
-                    IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
+                    IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
             })
         }));
@@ -43,11 +42,11 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid/grid-sample-2/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, FinancialSampleComponent, LocalService],
                 ngDeclarations: [FinancialSampleComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
-                    IgxIconModule, IgxInputModule, IgxLabelModule, IgxProgressBarModule,
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [LocalService]
             })

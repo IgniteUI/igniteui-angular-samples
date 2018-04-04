@@ -1,7 +1,7 @@
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { Config } from "./core/Config";
 import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxInputModule, IgxSliderModule } from "igniteui-angular/main";
+import { IgxInputGroupModule, IgxSliderModule } from "igniteui-angular/main";
 import { SliderSample1Component } from "../../src/app/slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "../../src/app/slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "../../src/app/slider/slider-sample-3/slider-sample-3.component";
@@ -16,9 +16,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: SliderSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxInputModule, IgxSliderModule, SliderSample1Component],
+                imports: [IgxInputGroupModule, IgxSliderModule, SliderSample1Component],
                 ngDeclarations: [SliderSample1Component],
-                ngImports: [IgxInputModule, IgxSliderModule]
+                ngImports: [IgxInputGroupModule, IgxSliderModule]
             }),
             shortenComponentPathBy: "/slider/"
         }));
@@ -38,9 +38,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: SliderSample3Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxInputModule, IgxSliderModule, SliderSample3Component],
+                imports: [IgxInputGroupModule, IgxSliderModule, SliderSample3Component],
                 ngDeclarations: [SliderSample3Component],
-                ngImports: [IgxInputModule, IgxSliderModule]
+                ngImports: [IgxInputGroupModule, IgxSliderModule]
             }),
             shortenComponentPathBy: "/slider/"
         }));
