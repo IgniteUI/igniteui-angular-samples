@@ -17,8 +17,6 @@ import {
   IgxForOfModule,
   IgxGridModule,
   IgxIconModule,
-  IgxInputModule,
-  IgxLabelModule,
   IgxLayoutModule,
   IgxListModule,
   IgxNavbarModule,
@@ -36,6 +34,11 @@ import {
   IgxToggleModule
 
 } from "igniteui-angular/main";
+
+import {
+  IgxCsvExporterService,
+  IgxExcelExporterService,
+} from "igniteui-angular/services/index"
 
 import { IgxMaskModule } from "igniteui-angular/directives/mask/mask.directive";
 
@@ -75,6 +78,8 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { CsvExportComponent } from "./export-csv/csv-export.component";
+import { CsvExportSample1Component } from './export-csv/csv-export-sample-1/csv-export-sample-1.component';
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -84,6 +89,8 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { ExcelExportComponent } from './export-excel/excel-export.component';
+import { ExcelExportSample1Component } from './export-excel/excel-export-sample-1/excel-export-sample-1.component';
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -259,7 +266,11 @@ import { ToggleComponent } from "./toggle/toggle.component";
     TimePickerSample1Component,
     TimePickerSample2Component,
     TimePickerSample3Component,
-    TimePickerSample4Component
+    TimePickerSample4Component,
+    ExcelExportComponent,
+    ExcelExportSample1Component,
+    CsvExportComponent,
+    CsvExportSample1Component
   ],
   imports: [
     AppRoutingModule,
@@ -268,7 +279,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     FormsModule,
     IgxGridModule.forRoot(),
     IgxCarouselModule,
-    IgxInputModule,
     IgxLayoutModule,
     IgxRadioModule,
     IgxSwitchModule,
@@ -288,7 +298,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxSnackbarModule,
     IgxCardModule,
     IgxListModule,
-    IgxLabelModule,
     IgxCheckboxModule,
     IgxToastModule,
     IgxSliderModule,

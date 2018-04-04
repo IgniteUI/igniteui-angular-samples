@@ -33,6 +33,8 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
+import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -42,6 +44,8 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
+import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -196,6 +200,14 @@ export const appRoutes: Routes = [
     path: "circular-progressbar"
   },
   {
+    component: CsvExportComponent,
+    path: "export-csv"
+  },
+  {
+    component: CsvExportSample1Component,
+    path: "export-csv-sample-1"
+  },
+  {
     component: DatepickerSample1Component,
     path: "datepicker-sample-1"
   },
@@ -230,6 +242,14 @@ export const appRoutes: Routes = [
   {
     component: DialogSample3Component,
     path: "dialog-sample-3"
+  },
+  {
+    component: ExcelExportComponent,
+    path: "export-excel"
+  },
+  {
+    component: ExcelExportSample1Component,
+    path: "export-excel-sample-1"
   },
   {
     component: LayoutComponent,
