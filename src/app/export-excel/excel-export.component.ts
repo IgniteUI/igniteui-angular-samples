@@ -14,7 +14,7 @@ export class ExcelExportComponent {
     { Name: "Alanis Brook", Age: "22" },
     { Name: "Jonathan Morris", Age: "23" }
   ];
-  
+
   constructor(private excelExportService: IgxExcelExporterService) {
   }
 
