@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ExcelExportSample1Component } from './excel-export-sample-1.component';
+import { ExcelExportSample1Component } from "./excel-export-sample-1.component";
 
-describe('ExcelExportSample1Component', () => {
+describe("ExcelExportSample1Component", () => {
   let component: ExcelExportSample1Component;
   let fixture: ComponentFixture<ExcelExportSample1Component>;
 
@@ -19,7 +19,7 @@ describe('ExcelExportSample1Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

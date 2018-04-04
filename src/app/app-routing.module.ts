@@ -33,8 +33,8 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
+import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";

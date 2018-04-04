@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ExcelExportComponent } from './excel-export.component';
+import { ExcelExportComponent } from "./excel-export.component";
 
-describe('ExcelExportComponent', () => {
+describe("ExcelExportComponent", () => {
   let component: ExcelExportComponent;
   let fixture: ComponentFixture<ExcelExportComponent>;
 
@@ -19,7 +19,7 @@ describe('ExcelExportComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
