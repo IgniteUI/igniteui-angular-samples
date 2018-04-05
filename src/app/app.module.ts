@@ -3,44 +3,43 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
-  IgxAvatarModule,
-  IgxBadgeModule,
-  IgxButtonGroupModule,
-  IgxButtonModule,
-  IgxCalendarModule,
-  IgxCardModule,
-  IgxCarouselModule,
-  IgxCheckboxModule,
-  IgxDatePickerModule,
-  IgxDialogModule,
-  IgxFilterModule,
-  IgxForOfModule,
-  IgxGridModule,
-  IgxIconModule,
-  IgxLayoutModule,
-  IgxListModule,
-  IgxNavbarModule,
-  IgxNavigationDrawerModule,
-  IgxNavigationModule,
-  IgxProgressBarModule,
-  IgxRadioModule,
-  IgxRippleModule,
-  IgxSliderModule,
-  IgxSnackbarModule,
-  IgxSwitchModule,
-  IgxTabBarModule,
-  IgxTimePickerModule,
-  IgxToastModule,
-  IgxToggleModule
-
+    IgxAvatarModule,
+    IgxBadgeModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCalendarModule,
+    IgxCardModule,
+    IgxCarouselModule,
+    IgxCheckboxModule,
+    IgxDatePickerModule,
+    IgxDialogModule,
+    IgxFilterModule,
+    IgxForOfModule,
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxLayoutModule,
+    IgxListModule,
+    IgxMaskModule,
+    IgxNavbarModule,
+    IgxNavigationDrawerModule,
+    IgxNavigationModule,
+    IgxProgressBarModule,
+    IgxRadioModule,
+    IgxRippleModule,
+    IgxSliderModule,
+    IgxSnackbarModule,
+    IgxSwitchModule,
+    IgxTabBarModule,
+    IgxTimePickerModule,
+    IgxToastModule,
+    IgxToggleModule
 } from "igniteui-angular/main";
 
 import {
-  IgxCsvExporterService,
-  IgxExcelExporterService
+    IgxCsvExporterService,
+    IgxExcelExporterService
 } from "igniteui-angular/services/index";
-
-import { IgxMaskModule } from "igniteui-angular/directives/mask/mask.directive";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -102,11 +101,18 @@ import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
-import { LabelInputComponent } from "./label-input/label-input.component";
+import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
+import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
+import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
+import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
+import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
+import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { LinearProgressbarSample1Component
+import {
+    LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
-import { LinearProgressbarSample2Component
+import {
+    LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
@@ -235,7 +241,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     FinancialSampleComponent,
     LinearProgressbarSample1Component,
     LinearProgressbarSample2Component,
-    LabelInputComponent,
     RippleSample1Component,
     RippleSample2Component,
     RippleSample3Component,
@@ -267,6 +272,12 @@ import { ToggleComponent } from "./toggle/toggle.component";
     TimePickerSample2Component,
     TimePickerSample3Component,
     TimePickerSample4Component,
+    InputGroupSample1Component,
+    InputGroupSample2Component,
+    InputGroupSample3Component,
+    InputGroupSample4Component,
+    InputGroupSample5Component,
+    InputGroupSample6Component,
     ExcelExportComponent,
     ExcelExportSample1Component,
     CsvExportComponent,
@@ -307,7 +318,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
     HttpClientModule,
     IgxForOfModule,
     IgxMaskModule,
-    IgxTimePickerModule
+    IgxTimePickerModule,
+    IgxInputGroupModule
   ],
   providers: [
     DataService,

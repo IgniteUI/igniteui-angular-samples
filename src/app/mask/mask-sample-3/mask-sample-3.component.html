@@ -1,8 +1,10 @@
 <div>
-  <igx-switch class="switch-style" [(ngModel)]="includeLiterals" (change)="clear()">
-    <div style="width: 150px">Include Literals</div>
-  </igx-switch>
-  <input igxInput #ssn name="socialSecurityNumber" type="text" [igxMask]="'###-##-####'" [(ngModel)]="socialSecurityNumber"
-    [includeLiterals]="includeLiterals" />
-  <p>Value: {{ socialSecurityNumber }}</p>
+    <igx-switch class="switch-style" [(ngModel)]="includeLiterals" (change)="clear()">
+        <div style="width: 150px">Include Literals</div>
+    </igx-switch>
+    <igx-input-group>
+        <input igxInput #ssn name="socialSecurityNumber" type="text" [igxMask]="'###-##-####'" [(ngModel)]="socialSecurityNumber"
+               [includeLiterals]="includeLiterals" />
+    </igx-input-group>
+    <p>Value: {{ socialSecurityNumber }}</p>
 </div>
