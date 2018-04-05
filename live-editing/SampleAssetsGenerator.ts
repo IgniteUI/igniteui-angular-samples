@@ -12,6 +12,7 @@ import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
 import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./configs/IconConfigGenerator";
+import { InputGroupConfigGenerator } from "./configs/InputGroupConfigGenerator";
 import { LayoutConfigGenerator } from "./configs/LayoutConfigGenerator";
 import { LinearProgressbarConfigGenerator } from "./configs/LinearProgressbarConfigGenerator";
 import { ListConfigGenerator } from "./configs/ListConfigGenerator";
@@ -54,7 +55,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
     DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
-    LayoutConfigGenerator, LinearProgressbarConfigGenerator,
+    InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
     TabBarConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];

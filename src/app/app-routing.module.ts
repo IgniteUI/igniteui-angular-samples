@@ -53,7 +53,10 @@ import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
-import { LabelInputComponent } from "./label-input/label-input.component";
+import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
+import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
+import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
+import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { LayoutComponent } from "./layout/layout.component";
 import {
     LinearProgressbarSample1Component
@@ -108,6 +111,7 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 
 export const appRoutes: Routes = [
     {
@@ -415,10 +419,6 @@ export const appRoutes: Routes = [
         path: "icon-sample-1"
     },
     {
-        component: LabelInputComponent,
-        path: "label-input"
-    },
-    {
         component: ButtonsSample1Component,
         path: "buttons-sample-1"
     },
@@ -525,6 +525,26 @@ export const appRoutes: Routes = [
     {
         component: InputGroupSample1Component,
         path: "input-group-sample-1"
+    },
+    {
+        component: InputGroupSample2Component,
+        path: "input-group-sample-2"
+    },
+    {
+        component: InputGroupSample3Component,
+        path: "input-group-sample-3"
+    },
+    {
+        component: InputGroupSample4Component,
+        path: "input-group-sample-4"
+    },
+    {
+        component: InputGroupSample5Component,
+        path: "input-group-sample-5"
+    },
+    {
+        component: InputGroupSample6Component,
+        path: "input-group-sample-6"
     }
 ];
 
