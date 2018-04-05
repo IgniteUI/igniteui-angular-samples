@@ -1,7 +1,7 @@
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { Config } from "./core/Config";
 import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxAvatarModule, IgxFilterOptions, IgxFilterModule, IgxIconModule, IgxLabelModule, IgxListModule } from "igniteui-angular/main";
+import { IgxAvatarModule, IgxFilterOptions, IgxFilterModule, IgxIconModule, IgxInputGroupModule, IgxListModule } from "igniteui-angular/main";
 import { ListComponent } from "../../src/app/list/list.component";
 import { ListSample1Component } from "../../src/app/list/list-sample-1/list-sample-1.component";
 import { ListSample3Component } from "../../src/app/list/list-sample-3/list-sample-3.component";
@@ -18,9 +18,9 @@ export class ListConfigGenerator implements IConfigGenerator {
             component: ListComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAvatarModule, IgxFilterOptions, IgxFilterModule, IgxIconModule,
-                    IgxLabelModule, IgxListModule, ListComponent],
+                    IgxInputGroupModule, IgxListModule, ListComponent],
                 ngDeclarations: [ListComponent],
-                ngImports: [IgxAvatarModule, IgxFilterModule, IgxIconModule, IgxLabelModule, IgxListModule]
+                ngImports: [IgxAvatarModule, IgxFilterModule, IgxIconModule, IgxInputGroupModule, IgxListModule]
             })
         }));
 
@@ -62,9 +62,10 @@ export class ListConfigGenerator implements IConfigGenerator {
             component: ListSample4Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAvatarModule, IgxFilterModule, IgxIconModule, IgxListModule,
-                    ListSample4Component],
+                    IgxInputGroupModule, ListSample4Component],
                 ngDeclarations: [ListSample4Component],
-                ngImports: [IgxAvatarModule, IgxFilterModule, IgxIconModule, IgxListModule]
+                ngImports: [IgxAvatarModule, IgxFilterModule, IgxIconModule, IgxListModule,
+                    IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/list/"
         }));
