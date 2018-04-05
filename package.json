@@ -33,7 +33,8 @@
     "rxjs": "^5.5.6",
     "typescript-collections": "^1.3.2",
     "web-animations-js": "^2.3.1",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "jszip": "^3.1.5"
   },
   "devDependencies": {
     "@angular/cli": "1.7.3",
