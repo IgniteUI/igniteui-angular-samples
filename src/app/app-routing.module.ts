@@ -57,6 +57,7 @@ import { InputGroupSample2Component } from "./input-group/input-group-sample-2/i
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
+import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { LayoutComponent } from "./layout/layout.component";
 import {
     LinearProgressbarSample1Component
@@ -111,7 +112,6 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 
 export const appRoutes: Routes = [
     {
