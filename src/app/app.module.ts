@@ -31,9 +31,13 @@ import {
   IgxSnackbarModule,
   IgxSwitchModule,
   IgxTabBarModule,
+  IgxTimePickerModule,
   IgxToastModule,
   IgxToggleModule
+
 } from "igniteui-angular/main";
+
+import { IgxMaskModule } from "igniteui-angular/directives/mask/mask.directive";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -104,6 +108,9 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
+import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
+import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
+import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
@@ -128,6 +135,10 @@ import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
+import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
+import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
+import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -241,7 +252,14 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ToastSample5Component,
     ButtonGroupSample1Component,
     ButtonGroupSample2Component,
-    ButtonGroupSample3Component
+    ButtonGroupSample3Component,
+    MaskSample1Component,
+    MaskSample2Component,
+    MaskSample3Component,
+    TimePickerSample1Component,
+    TimePickerSample2Component,
+    TimePickerSample3Component,
+    TimePickerSample4Component
   ],
   imports: [
     AppRoutingModule,
@@ -278,7 +296,9 @@ import { ToggleComponent } from "./toggle/toggle.component";
     IgxNavbarModule,
     IgxToggleModule,
     HttpClientModule,
-    IgxForOfModule
+    IgxForOfModule,
+    IgxMaskModule,
+    IgxTimePickerModule
   ],
   providers: [DataService]
 })
