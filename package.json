@@ -23,6 +23,7 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@infragistics/igniteui-angular-charts": "^18.1.0-dev.884",
     "@types/hammerjs": "^2.0.35",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.4.1",
