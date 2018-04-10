@@ -27,15 +27,19 @@ export class CsvExportSample1Component {
   }
 
   public exportButtonHandler() {
-    // this.csvExportService.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
-    //   if (args.header == "Age" && args.columnIndex == 1) {
-    //     args.cancel = true;
-    //   }
-    // });
-    // this.csvExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
-    // });
-    // this.csvExportService.onExportEnded.subscribe((args: ICsvExportEndedEventArgs) => {
-    // });
+    /*
+    The following code demonstrates how to attach event handlers to exporter specific events
+    and also how to customize the column export process.
+    this.csvExportService.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
+      if (args.header == "Age" && args.columnIndex == 1) {
+        args.cancel = true;
+      }
+    });
+    this.csvExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
+    });
+    this.csvExportService.onExportEnded.subscribe((args: ICsvExportEndedEventArgs) => {
+    });
+    */
     this.csvExportService.export(this.igxGrid1, new IgxCsvExporterOptions("ExportFileFromGrid", CsvFileTypes.CSV));
   }
 

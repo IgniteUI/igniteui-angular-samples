@@ -26,15 +26,19 @@ export class ExcelExportSample1Component {
   }
 
   public exportButtonHandler() {
-    // this.excelExportService.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
-    //   if (args.header == "Age" && args.columnIndex == 1) {
-    //     args.cancel = true;
-    //   }
-    // });
-    // this.excelExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
-    // });
-    // this.excelExportService.onExportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
-    // });
+    /*
+    The following code demonstrates how to attach event handlers to exporter specific events
+    and also how to customize the column export process.
+    this.excelExportService.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
+      if (args.header == "Age" && args.columnIndex == 1) {
+        args.cancel = true;
+      }
+    });
+    this.excelExportService.onRowExport.subscribe((args: IRowExportingEventArgs) => {
+    });
+    this.excelExportService.onExportEnded.subscribe((args: IExcelExportEndedEventArgs) => {
+    });
+    */
     this.excelExportService.export(this.igxGrid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
   }
 
