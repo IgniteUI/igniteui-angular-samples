@@ -15,11 +15,9 @@ import {
   IgxDialogModule,
   IgxFilterModule,
   IgxForOfModule,
-    IgxInputGroupModule,
   IgxGridModule,
   IgxIconModule,
-  IgxInputModule,
-  IgxLabelModule,
+    IgxInputGroupModule,
   IgxLayoutModule,
   IgxListModule,
     IgxMaskModule,
@@ -38,7 +36,6 @@ import {
   IgxToggleModule
 } from "igniteui-angular/main";
 
-import { IgxMaskModule } from "igniteui-angular/directives/mask/mask.directive";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -97,7 +94,11 @@ import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
-import { LabelInputComponent } from "./label-input/label-input.component";
+import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
+import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
+import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
+import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
+import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { LayoutComponent } from "./layout/layout.component";
 import {
     LinearProgressbarSample1Component
@@ -233,7 +234,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
     GridSelectionSampleComponent,
     LinearProgressbarSample1Component,
     LinearProgressbarSample2Component,
-    LabelInputComponent,
     RippleSample1Component,
     RippleSample2Component,
     RippleSample3Component,
@@ -265,7 +265,12 @@ import { ToggleComponent } from "./toggle/toggle.component";
     TimePickerSample2Component,
     TimePickerSample3Component,
         TimePickerSample4Component,
-        InputGroupSample1Component
+        InputGroupSample1Component,
+        InputGroupSample2Component,
+        InputGroupSample3Component,
+        InputGroupSample4Component,
+        InputGroupSample5Component,
+        InputGroupSample6Component
   ],
   imports: [
     AppRoutingModule,
