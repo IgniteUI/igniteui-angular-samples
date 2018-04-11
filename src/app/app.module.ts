@@ -154,6 +154,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
+import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -309,7 +310,8 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
-        CategoryChartSamplesModule.forRoot()
+        CategoryChartSamplesModule.forRoot(),
+        FinancialChartSamplesModule.forRoot()
     ],
     providers: [DataService]
 })
