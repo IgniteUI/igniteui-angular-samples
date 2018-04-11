@@ -11,8 +11,7 @@ import { DataService } from "./services/data.service";
         CategoryChartOverviewComponent
     ],
     exports: [ CategoryChartOverviewComponent ],
-    imports: [ CommonModule, FormsModule, IgxCategoryChartModule ],
-    providers: [ DataService ]
+    imports: [ CommonModule, FormsModule, IgxCategoryChartModule ]
 })
 export class CategoryChartSamplesModule {
     public static forRoot(): ModuleWithProviders {

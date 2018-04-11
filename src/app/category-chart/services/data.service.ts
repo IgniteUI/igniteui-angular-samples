@@ -1,10 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class DataService {
-
-    constructor() { }
 
     public getData(): any[] {
         return [
