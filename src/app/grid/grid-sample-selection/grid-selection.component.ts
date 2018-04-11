@@ -84,10 +84,11 @@ export class GridSelectionSampleComponent {
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
     }
-    public handleRowSelection(cell: IgxGridCellComponent) {
+    public handleRowSelection(event) {
+        const targetCell = event.cell;
         if (!this.selection) {
             this.grid1.deselectAllRows();
-            this.grid1.selectRows([cell.row]);
+            this.grid1.selectRows([targetCell.row]);
         }
     }
 }
