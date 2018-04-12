@@ -10,7 +10,6 @@ import { DataService } from "./services/data.service";
     declarations: [
         CategoryChartOverviewComponent
     ],
-    exports: [ CategoryChartOverviewComponent ],
     imports: [ CommonModule, FormsModule, IgxCategoryChartModule ]
 })
 export class CategoryChartSamplesModule {
