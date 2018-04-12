@@ -8,6 +8,7 @@ import {
   ViewChild,
   ViewEncapsulation
 } from "@angular/core";
+import { IgxNumberSummaryOperand, IgxSummaryResult} from "igniteui-angular/grid/grid-summary";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
 import { athletesData } from "./services/data";
@@ -24,6 +25,7 @@ export class GridComponent implements OnInit, OnDestroy {
   @ViewChild("grid1", { read: IgxGridComponent })
   public grid1: IgxGridComponent;
 
+  public customSummary = CustomSummary;
   public localData: any[];
   public isFinished = false;
   private _live = true;
@@ -159,4 +161,21 @@ export class GridComponent implements OnInit, OnDestroy {
       this.isFinished = true;
     }
   }
+}
+
+class CustomSummary extends IgxNumberSummaryOperand {
+
+    constructor() {
+        super();
+    }
+
+    public operate(data?: any[]): IgxSummaryResult[] {
+        const result = [];
+        result.push({
+            key: "average",
+            label: "average",
+            summaryResult: this.sum(data) / this.count(data)
+        });
+        return result;
+    }
 }

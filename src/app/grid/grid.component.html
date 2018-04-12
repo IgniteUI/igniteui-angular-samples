@@ -62,7 +62,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed" width="103px">
+        <igx-column field="TopSpeed" header="Top Speed" width="103px" dataType="number" [hasSummary]="true" [summaries]="customSummary">
 
             <ng-template igxCell let-val>
                 <div class="cell__inner">
