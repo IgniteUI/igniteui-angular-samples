@@ -5,11 +5,12 @@ export class DataService {
 
     public getData(): any[] {
         return [
-            { CountryName: "China", Pop1995: 1216, Pop2005: 1297, Pop2015: 1361, Pop2025: 1394 },
-            { CountryName: "India", Pop1995: 920, Pop2005: 1090, Pop2015: 1251, Pop2025: 1396 },
-            { CountryName: "United States", Pop1995: 266, Pop2005: 295, Pop2015: 322, Pop2025: 351 },
-            { CountryName: "Indonesia", Pop1995: 197, Pop2005: 229, Pop2015: 256, Pop2025: 277 },
-            { CountryName: "Brazil", Pop1995: 161, Pop2005: 186, Pop2015: 204, Pop2025: 218 }
+            { Country: "Canada", Coal: 400, Oil: 100, Gas: 175, Nuclear: 225, Hydro: 350 },
+            { Country: "China", Coal: 925, Oil: 200, Gas: 350, Nuclear: 400, Hydro: 625 },
+            { Country: "Russia", Coal: 550, Oil: 200, Gas: 250, Nuclear: 475, Hydro: 425 },
+            { Country: "Australia", Coal: 450, Oil: 100, Gas: 150, Nuclear: 175, Hydro: 350 },
+            { Country: "United States", Coal: 800, Oil: 250, Gas: 475, Nuclear: 575, Hydro: 750 },
+            { Country: "France", Coal: 375, Oil: 150, Gas: 350, Nuclear: 275, Hydro: 325 }
         ];
     }
 }
