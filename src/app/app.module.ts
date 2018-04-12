@@ -30,7 +30,7 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
-    IgxTabBarModule,
+    IgxBottomNavModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
@@ -301,7 +301,7 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
         IgxCheckboxModule,
         IgxToastModule,
         IgxSliderModule,
-        IgxTabBarModule,
+        IgxBottomNavModule,
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
