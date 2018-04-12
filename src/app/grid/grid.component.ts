@@ -116,26 +116,43 @@ export class GridComponent implements OnInit, OnDestroy {
 
   private updateData() {
     this.localData.map((rec) => {
-      let val = this.generateRandomNumber(-1, 1);
-      switch (val) {
+        let val = this.generateRandomNumber(-1, 1);
+        switch (val) {
         case -1:
-          rec.Position = "down";
-          val = 0;
-          break;
+            val = 0;
+            break;
         case 0:
-          rec.Position = "current";
-          val = 1;
-          break;
+            val = 1;
+            break;
         case 1:
-          rec.Position = "up";
-          val = 3;
-          break;
-      }
-      rec.TrackProgress += val;
+            val = 3;
+            break;
+        }
+
+        rec.TrackProgress += val;
     });
+    const unsortedData = this.localData.slice(0);
 
     this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
     this.localData = this.localData.slice(0);
+
+    unsortedData.forEach((element, index) => {
+        this.localData.some((elem, ind) => {
+            if (element.Id === elem.Id) {
+                const position = index - ind;
+
+                if (position < 0) {
+                    elem.Position = "down";
+                } else if (position === 0) {
+                    elem.Position = "current";
+                } else {
+                    elem.Position = "up";
+                }
+
+                return true;
+            }
+        });
+    });
 
     if (this.localData[0].TrackProgress >= 100) {
       this.live = false;

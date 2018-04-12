@@ -32,6 +32,7 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { CategoryChartOverviewComponent } from "./category-chart/overview/category-chart-overview-sample.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -565,6 +566,10 @@ export const appRoutes: Routes = [
     {
         component: InputGroupSample6Component,
         path: "input-group-sample-6"
+    },
+    {
+        component: CategoryChartOverviewComponent,
+        path: "category-chart-overview-sample"
     }
 ];
 
