@@ -13,7 +13,7 @@
           {{val}}
         </ng-template>
     </igx-column>
-      <igx-column field="UnitPrice" header="Price" width="180px" [sortable]="true" [filterable]="false" [formatter]="multiplier" editable="true" [dataType]="'number'" [hasSummary]="true">
+      <igx-column field="UnitPrice" header="Price" width="180px" [sortable]="true" [filterable]="false"  editable="true" [dataType]="'number'" [hasSummary]="true">
           <ng-template igxCell let-cell="cell" let-val let-row>
             ${{val}}
           </ng-template>
