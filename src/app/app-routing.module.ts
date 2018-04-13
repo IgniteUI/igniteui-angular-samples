@@ -49,6 +49,7 @@ import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radi
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
+import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -297,6 +298,10 @@ export const appRoutes: Routes = [
     {
         component: GridComponent,
         path: "grid"
+    },
+    {
+        component: GridSample3Component,
+        path: "grid-summary"
     },
     {
         component: SnackbarSample1Component,
