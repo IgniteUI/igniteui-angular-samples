@@ -154,6 +154,8 @@ import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 
+import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
+
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -308,7 +310,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         IgxForOfModule,
         IgxMaskModule,
         IgxTimePickerModule,
-        IgxInputGroupModule
+        IgxInputGroupModule,
+        CategoryChartSamplesModule.forRoot()
     ],
     providers: [DataService]
 })

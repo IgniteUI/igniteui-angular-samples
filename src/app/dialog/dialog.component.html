@@ -1,38 +1,55 @@
-<div class="sample-wrapper">
-    <section class="sample-content">
-        <article class="sample-column">
-            <h4 class="sample-title">Alert</h4>
-            <p class="sample-description">Notification for completed action.</p>
-            <button igxButton="raised" igxButtonColor="white" igxButtonBackground="#EC6F74" igxRipple="white" (click)="alert.open()">Show Dialog</button>
-            <igx-dialog #alert title="Notification" message="Your email has been sent successfully!" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
-            </igx-dialog>
-        </article>
+<div class="dialog-sample">
+    <h4 class="sample-title">Alert</h4>
+    <p class="sample-description">Notification for completed action.</p>
+    <button igxButton="raised" igxRipple="white" (click)="alert.open()">Show Dialog</button>
 
-        <article class="sample-column">
-            <h4 class="sample-title">Standard Dialog</h4>
-            <p class="sample-description">Confirmation dialog.</p>
-            <button igxButton="raised" igxButtonColor="white" igxButtonBackground="#EC6F74" igxRipple="white" (click)="dialog.open()">Show Dialog</button>
-            <igx-dialog #dialog title="Confirmation" leftButtonLabel="Cancel" (onLeftButtonSelect)="dialog.close()" rightButtonLabel="OK"
-                rightButtonRipple="#4CAF50" (onRightButtonSelect)="onDialogOKSelected($event)" message="Are you sure you want to delete the Annual_Report_2016.pdf and Annual_Report_2017.pdf files?">
-            </igx-dialog>
-        </article>
+    <igx-dialog #alert title="Notification"
+        message="Your email has been sent successfully!"
+        leftButtonLabel="OK"
+        (onLeftButtonSelect)="alert.close()">
+    </igx-dialog>
+</div>
 
-        <article class="sample-column">
-            <h4 class="sample-title">Custom Dialog</h4>
-            <p class="sample-description">Sign in form.</p>
-            <button igxButton="raised" igxButtonColor="white" igxButtonBackground="#EC6F74" igRipple="white" (click)="form.open()">Show Dialog</button>
+<div class="dialog-sample">
+    <h4 class="sample-title">Standard Dialog</h4>
+    <p class="sample-description">Confirmation dialog.</p>
+    <button igxButton="raised" igxRipple="white" (click)="dialog.open()">Show Dialog</button>
 
-            <igx-dialog #form title="Sign In" leftButtonLabel="Cancel" (onLeftButtonSelect)="form.close()" (onRightButtonSelect)="signIn($event)" rightButtonLabel="Sign In"
-                rightButtonBackgroundColor="#0375be" rightButtonColor="#ffffff" closeOnOutsideSelect="true">
-                <igx-input-group>
-                    <input type="text" igxInput />
-                    <label igxLabel>Username</label>
-                </igx-input-group>
-                <igx-input-group>
-                    <input type="password" igxInput />
-                    <label igxLabel>Password</label>
-                </igx-input-group>
-            </igx-dialog>
-        </article>
-    </section>
+    <igx-dialog #dialog title="Confirmation"
+        leftButtonLabel="Cancel"
+        (onLeftButtonSelect)="dialog.close()"
+        rightButtonLabel="OK"
+        (onRightButtonSelect)="onDialogOKSelected($event)"
+        message="Are you sure you want to delete the Annual_Report_2016.pdf and Annual_Report_2017.pdf files?">
+    </igx-dialog>
+</div>
+
+<div class="dialog-sample">
+    <h4 class="sample-title">Custom Dialog</h4>
+    <p class="sample-description">Sign in form.</p>
+    <button igxButton="raised" igRipple="white" (click)="form.open()">Show Dialog</button>
+
+    <igx-dialog #form title="Sign In"
+        leftButtonLabel="Cancel"
+        (onLeftButtonSelect)="form.close()"
+        (onRightButtonSelect)="signIn($event)"
+        rightButtonLabel="Sign In"
+        closeOnOutsideSelect="true">
+        <form class="signInForm">
+            <igx-input-group>
+                <igx-prefix>
+                    <igx-icon>person</igx-icon>
+                </igx-prefix>
+                <label igxLabel for="username">Username</label>
+                <input igxInput id="username" type="text" />
+            </igx-input-group>
+            <igx-input-group>
+                <igx-prefix>
+                    <igx-icon>lock</igx-icon>
+                </igx-prefix>
+                <label igxLabel>Password</label>
+                <input igxInput id="password" type="password" />
+            </igx-input-group>
+        </form>
+    </igx-dialog>
 </div>
