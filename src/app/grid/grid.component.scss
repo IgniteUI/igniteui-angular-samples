@@ -100,19 +100,6 @@ $progressBar-sample-theme: igx-progress-linear-theme(
   width: rem(200px);
 }
 
-.igx-paginator {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  margin: 1rem auto;
-  width: 100%;
-  >* {
-    margin: 0 rem(5px);
-  }
-}
-
 .flagParent {
   display: flex;
   padding-left: rem(23px);
