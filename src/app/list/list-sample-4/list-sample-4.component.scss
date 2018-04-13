@@ -1,6 +1,16 @@
+:host {
+    display: block;
+    padding: 16px;
+}
+
+.list-sample {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
 igx-icon {
   cursor: pointer;
-  user-select: none;
 }
 
 .item-container {
@@ -13,12 +23,12 @@ igx-icon {
   display: flex;
   flex: 1 0 240px;
   align-items: center;
-}
 
-.contact__info {
-  display: flex;
-  flex-flow: column nowrap;
-  margin-left: 24px;
+  &__info {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 24px;
+  }
 }
 
 .name {
@@ -27,4 +37,9 @@ igx-icon {
 
 .phone {
   font-size: 0.875em;
+  line-height: 1;
+}
+
+.search {
+    margin-bottom: 16px;
 }

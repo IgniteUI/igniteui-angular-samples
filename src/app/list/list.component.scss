@@ -1,38 +1,54 @@
-.list-sample {
+:host {
     display: block;
-    position: relative;
-    height: 640px;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+}
+
+.search {
+    margin-bottom: 12px;
+}
+
+.list-sample {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
 .item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
 
-.item > [igxLabel],
-.item > .person {
-    position: absolute;
-    margin-left: 72px;
-}
+    &__detail {
+        display: flex;
+        align-items: center;
+    }
 
-.person .name {
-    padding: 0;
-    margin: 0;
-}
+    &__detail-info {
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1 0 auto;
+        padding: 0 16px;
+    }
 
-.person .phone {
-    font-size: 12px;
-    color: gray;
-}
+    &__detail-name {
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, .87);
+    }
 
-.item igx-icon {
-    color: lightgray;
-}
+    &__detail-phone {
+        font-size: 12px;
+        line-height: 1;
+        color: rgba(0, 0, 0, .56);
+    }
 
-.item igx-icon.favorite {
-    color: orange;
+    igx-icon {
+        color: lightgray;
+
+        &.favorite {
+            color: orange;
+        }
+    }
 }
 
 .item .delete-item:hover {
