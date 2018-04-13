@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IgxFilterOptions } from "igniteui-angular/main";
-import {femaleFNames, lastName, maleFNames, middleNames} from "./names";
+import { femaleFNames, lastName, maleFNames, middleNames } from "./names";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "igxFor-list",
     styleUrls: ["./igxFor.component.scss"],
     templateUrl: "./igxFor.component.html"
@@ -32,8 +31,8 @@ export class IgxForComponent implements OnInit {
         const gender = index % 2 === 0 ? "M" : "F";
         item.name = this.generateName(gender);
         item.avatar = "https://randomuser.me/api/portraits/" +
-        (gender === "M" ? "men" : "women") +
-        "/" + Math.floor((Math.random() * 100)) + ".jpg";
+            (gender === "M" ? "men" : "women") +
+            "/" + Math.floor((Math.random() * 100)) + ".jpg";
         item.favorite = Math.floor((Math.random() * 3)) % 3 === 0;
         return item;
     }
@@ -48,8 +47,8 @@ export class IgxForComponent implements OnInit {
 }
 
 export class Person {
-  public key: number;
-  public name: string;
-  public favorite: boolean;
-  public avatar: string;
+    public key: number;
+    public name: string;
+    public favorite: boolean;
+    public avatar: string;
 }

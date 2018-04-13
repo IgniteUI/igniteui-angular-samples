@@ -1,3 +1,19 @@
-[igxButton] {
-    max-width: 200px;
+:host {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0 16px;
 }
+
+.dialog-sample {
+    min-width: 300px;
+}
+
+.signInForm {
+    padding: 12px 24px 24px;
+
+    igx-input-group + igx-input-group {
+        margin-top: 24px;
+    }
+}
+
