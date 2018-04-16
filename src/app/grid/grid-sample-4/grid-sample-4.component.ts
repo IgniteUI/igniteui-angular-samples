@@ -1,5 +1,5 @@
 import { Component, Injectable, ViewChild, ChangeDetectorRef } from "@angular/core";
-import { Http } from "@angular/http";
+import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs/Rx";
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
@@ -14,7 +14,7 @@ export class RemoteService {
     private url: string = "http://services.odata.org/V4/Northwind/Northwind.svc/Products";
     private _remoteData: BehaviorSubject<any[]>;
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
         this._remoteData = new BehaviorSubject([]);
         this.remoteData = this._remoteData.asObservable();
     }
@@ -23,12 +23,8 @@ export class RemoteService {
         var dataState = data;
         return this.http
             .get(this.buildUrl(dataState))
-            .map((response) => response.json())
-            .map((response) => {
-                return response;
-            })
             .subscribe((data) => {
-                this._remoteData.next(data.value);
+                this._remoteData.next(data['value']);
                 if (cb) {
                     cb(data);
                 }
@@ -53,8 +49,8 @@ export class RemoteService {
 @Component({
 	providers: [RemoteService],
 	selector: "grid-remote-virtualizatiuon-sample",
-	styleUrls: ["../app.samples.css", "sample.component.css"],
-	templateUrl: "sample.component.html"
+	styleUrls: ["grid-sample-4.component.scss"],
+	templateUrl: "grid-sample-4.component.html"
 })
 
 export class GridRemoteVirtualizationSampleComponent {
