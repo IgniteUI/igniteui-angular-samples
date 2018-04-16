@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
+    IgxBottomNavModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCalendarModule,
@@ -30,7 +31,6 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
-    IgxBottomNavModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
