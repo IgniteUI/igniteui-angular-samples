@@ -7,9 +7,17 @@ import { Component } from "@angular/core";
 })
 export class InputGroupSample6Component {
     public user = {
+        dateTime: new Date(),
         email: "",
         fullName: "",
-        password: "",
         phone: ""
     };
+
+    public onDateSelection(value) {
+        this.user.dateTime.setDate((value as Date).getDate());
+    }
+
+    public onTimeSelection(event) {
+        this.user.dateTime.setTime((event.newValue as Date).getTime());
+    }
 }

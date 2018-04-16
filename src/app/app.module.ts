@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
+    IgxBottomNavModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCalendarModule,
@@ -30,11 +31,15 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
-    IgxTabBarModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
 } from "igniteui-angular/main";
+
+import {
+    IgxCsvExporterService,
+    IgxExcelExporterService
+} from "igniteui-angular/services/index";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -81,6 +86,10 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
+import { CsvExportComponent } from "./export-csv/csv-export.component";
+import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
+import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -271,7 +280,11 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         InputGroupSample3Component,
         InputGroupSample4Component,
         InputGroupSample5Component,
-        InputGroupSample6Component
+        InputGroupSample6Component,
+        ExcelExportComponent,
+        ExcelExportSample1Component,
+        CsvExportComponent,
+        CsvExportSample1Component
     ],
     imports: [
         AppRoutingModule,
@@ -302,7 +315,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         IgxCheckboxModule,
         IgxToastModule,
         IgxSliderModule,
-        IgxTabBarModule,
+        IgxBottomNavModule,
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
@@ -313,6 +326,10 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         CategoryChartSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot()
     ],
-    providers: [DataService]
+    providers: [
+        DataService,
+        IgxCsvExporterService,
+        IgxExcelExporterService
+    ]
 })
 export class AppModule { }
