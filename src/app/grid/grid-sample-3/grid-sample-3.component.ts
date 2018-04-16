@@ -9,7 +9,7 @@ import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 @Component({
 	providers: [],
 	selector: "grid-sample",
-	styleUrls: ["grid-sample-3.component.css"],
+	styleUrls: ["grid-sample-3.component.scss"],
 	templateUrl: "grid-sample-3.component.html"
 })
 

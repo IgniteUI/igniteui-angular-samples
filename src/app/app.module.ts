@@ -30,7 +30,7 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
-    IgxTabBarModule,
+    IgxTabsModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
@@ -164,6 +164,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { PinningSampleComponent } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -243,6 +244,7 @@ import { PinningSampleComponent } from "./grid/grid-sample-3/grid-sample-3.compo
         IgxForComponent,
         FinancialSampleComponent,
         PinningSampleComponent,
+        GridRemoteVirtualizationSampleComponent,
         LinearProgressbarSample1Component,
         LinearProgressbarSample2Component,
         RippleSample1Component,
@@ -316,7 +318,7 @@ import { PinningSampleComponent } from "./grid/grid-sample-3/grid-sample-3.compo
         IgxCheckboxModule,
         IgxToastModule,
         IgxSliderModule,
-        IgxTabBarModule,
+        IgxTabsModule,
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,

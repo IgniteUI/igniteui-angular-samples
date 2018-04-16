@@ -118,6 +118,7 @@ import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 import { PinningSampleComponent } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
 
 export const appRoutes: Routes = [
     {
@@ -519,6 +520,10 @@ export const appRoutes: Routes = [
     {
         component: PinningSampleComponent,
         path: "grid-sample-3"
+    },
+    {
+        component: GridRemoteVirtualizationSampleComponent,
+        path: "grid-sample-4"
     },
     {
         component: NavbarSample1Component,
