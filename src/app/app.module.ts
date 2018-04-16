@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   IgxAvatarModule,
   IgxBadgeModule,
+  IgxBottomNavModule,
   IgxButtonGroupModule,
   IgxButtonModule,
   IgxCalendarModule,
@@ -16,11 +17,11 @@ import {
   IgxFilterModule,
   IgxForOfModule,
   IgxGridModule,
-  IgxIconModule,
-    IgxInputGroupModule,
+    IgxIconModule,
+  IgxInputGroupModule,
   IgxLayoutModule,
-  IgxListModule,
-    IgxMaskModule,
+    IgxListModule,
+  IgxMaskModule,
   IgxNavbarModule,
   IgxNavigationDrawerModule,
   IgxNavigationModule,
@@ -29,8 +30,7 @@ import {
   IgxRippleModule,
   IgxSliderModule,
   IgxSnackbarModule,
-  IgxSwitchModule,
-    IgxBottomNavModule,
+    IgxSwitchModule,
   IgxTimePickerModule,
   IgxToastModule,
   IgxToggleModule
@@ -326,7 +326,7 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot()
   ],
-    providers: [
+  providers: [
         DataService,
         IgxCsvExporterService,
         IgxExcelExporterService
