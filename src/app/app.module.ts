@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
+    IgxBottomNavModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCalendarModule,
@@ -30,7 +31,6 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
-    IgxTabsModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
@@ -318,7 +318,7 @@ import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/gr
         IgxCheckboxModule,
         IgxToastModule,
         IgxSliderModule,
-        IgxTabsModule,
+        IgxBottomNavModule,
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
