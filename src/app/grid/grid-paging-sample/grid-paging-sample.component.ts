@@ -1,6 +1,5 @@
-import { Component, Injectable, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { DATA } from "../grid-filtering-sample/employeesData";
 import { athletesData } from "../services/data";
 import { DataService } from "../services/data.service";
 

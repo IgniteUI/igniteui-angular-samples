@@ -1,8 +1,6 @@
-import { Component, Injectable, ViewChild } from "@angular/core";
-import { Http } from "@angular/http";
+import { Component, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
-import { BehaviorSubject, Observable } from "rxjs/Rx";
 import { DATA } from "./employeesData";
 
 @Component({
