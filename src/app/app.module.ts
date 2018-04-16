@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   IgxAvatarModule,
   IgxBadgeModule,
-  IgxBottomNavModule,
+    IgxBottomNavModule,
   IgxButtonGroupModule,
   IgxButtonModule,
   IgxCalendarModule,
