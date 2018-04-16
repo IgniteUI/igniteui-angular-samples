@@ -5,6 +5,7 @@ import { ButtonGroupConfigGenerator } from "./configs/ButtonGroupConfigGenerator
 import { CalendarConfigGenerator } from "./configs/CalendarConfigGenerator";
 import { CardConfigGenerator } from "./configs/CardConfigGenerator";
 import { CarouselConfigGenerator } from "./configs/CarouselConfigGenerator";
+import { CategoryChartConfigGenerator } from "./configs/CategoryChartConfigGenerator";
 import { CheckboxConfigGenerator } from "./configs/CheckboxConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./configs/CircularProgressbarConfigGenerator";
 import { DatePickerConfigGenerator } from "./configs/DatePickerConfigGenerator";
@@ -53,7 +54,7 @@ const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
-    CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
+    CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
     DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,

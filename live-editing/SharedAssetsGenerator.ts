@@ -19,9 +19,11 @@ const SAMPLES_PACKAGE_DEPENDENCIES = [
     "core-js",
     "hammerjs",
     "igniteui-angular",
+    "igniteui-angular-charts",
     "intl",
     "jszip",
     "rxjs",
+    "tslib",
     "web-animations-js",
     "zone.js"
 ];
