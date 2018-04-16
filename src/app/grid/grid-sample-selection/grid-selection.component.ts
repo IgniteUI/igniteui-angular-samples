@@ -88,7 +88,7 @@ export class GridSelectionSampleComponent {
         const targetCell = event.cell;
         if (!this.selection) {
             this.grid1.deselectAllRows();
-            this.grid1.selectRows([targetCell.row]);
+            this.grid1.selectRows([targetCell.row.rowID]);
         }
     }
 }
