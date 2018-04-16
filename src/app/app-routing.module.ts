@@ -118,6 +118,10 @@ import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 
+import { FinancialChartPerformanceComponent } from "./financial-chart/samples/financial-chart-performance.component";
+import { FinancialChartTitlesComponent } from "./financial-chart/samples/financial-chart-titles.component";
+import { FinancialChartPanesComponent } from "./financial-chart/samples/financial-chart-panes.component";
+
 export const appRoutes: Routes = [
     {
         component: AvatarSample1Component,
@@ -570,6 +574,18 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartOverviewComponent,
         path: "category-chart-overview-sample"
+    },
+    {
+        component: FinancialChartPerformanceComponent,
+        path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartTitlesComponent,
+        path: "financial-chart-titles"
+    },
+    {
+        component: FinancialChartPanesComponent,
+        path: "financial-chart-panes"
     }
 ];
 
