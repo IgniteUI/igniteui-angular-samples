@@ -37,6 +37,8 @@ import { LiveEditingFile } from "./LiveEditingFile";
 import { IConfigGenerator } from "./configs/core/IConfigGenerator";
 import { Config } from "./configs/core/Config";
 import { TsImportsService } from "./TsImportsService";
+import { DependencyResolver } from "./DependencyResolver";
+import { SampleDefinitionFile } from "./SampleDefinitionFile";
 
 import { Type } from "@angular/core/src/type";
 import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
@@ -127,8 +129,10 @@ export class SampleAssetsGenerator {
         sampleFiles.push(appModuleFile);
         sampleFiles.push(new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.component.html", this.getAppComponentHtml(componentTsContent)));
 
+        let dependencies = DependencyResolver.resolveSampleDependencies(config.additionalDependencies);
+        let sampleDef = new SampleDefinitionFile(sampleFiles, dependencies);
         fs.writeFileSync(ASSETS_SAMPLES_DIR + this.componentRoutes.getValue(config.component.name) + ".json",
-            JSON.stringify(sampleFiles));
+            JSON.stringify(sampleDef));
     }
 
     private getAppComponentHtml(componentTsContent) {

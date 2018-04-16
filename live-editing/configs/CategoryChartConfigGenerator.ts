@@ -7,6 +7,13 @@ import { CategoryChartOverviewComponent } from "../../src/app/category-chart/ove
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     generateConfigs(): Config[] {
         let configs = new Array<Config>();
+        let deps = new Array<string>();
+
+        debugger;
+        //deps.push("@angular/forms");
+        deps.push("@angular/animations");
+        deps.push("igniteui-angular-charts");
+        deps.push("tslib");
 
         configs.push(new Config({
             component: CategoryChartOverviewComponent,
@@ -14,7 +21,8 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 imports: [IgxCategoryChartModule, CategoryChartOverviewComponent],
                 ngDeclarations: [CategoryChartOverviewComponent],
                 ngImports: [IgxCategoryChartModule]
-            })
+            }),
+            packageDependencies: deps
         }));
 
         return configs;
