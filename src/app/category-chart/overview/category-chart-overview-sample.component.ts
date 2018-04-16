@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, ViewChild } from "@angular/core";
-import { DataService } from "../services/data.service";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,

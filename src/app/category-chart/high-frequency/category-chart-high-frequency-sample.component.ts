@@ -9,11 +9,9 @@ import {
     ViewChild
 } from "@angular/core";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
-import { DataService } from "../services/data.service";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [ DataService ],
     selector: "app-category-chart-high-frequency-sample",
     styleUrls: ["./category-chart-high-frequency-sample.component.scss"],
     templateUrl: "./category-chart-high-frequency-sample.component.html"
