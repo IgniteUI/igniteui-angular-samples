@@ -53,6 +53,8 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -101,9 +103,6 @@ import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
-import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
-import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -392,18 +391,6 @@ export const appRoutes: Routes = [
         path: "slider-sample-5"
     },
     {
-        component: TabbarComponent,
-        path: "tabbar"
-    },
-    {
-        component: TabbarSample1Component,
-        path: "tabbar-sample-1"
-    },
-    {
-        component: TabbarSample2Component,
-        path: "tabbar-sample-2"
-    },
-    {
         component: TimePickerSample1Component,
         path: "timepicker-sample-1"
     },
@@ -482,6 +469,14 @@ export const appRoutes: Routes = [
     {
         component: ToggleSample3Component,
         path: "toggle-sample-3"
+    },
+    {
+        component: FilteringSampleComponent,
+        path: "grid-filtering-sample"
+    },
+    {
+        component: PagingSampleComponent,
+        path: "grid-paging-sample"
     },
     {
         component: RippleSample1Component,

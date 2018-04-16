@@ -96,6 +96,8 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
@@ -145,9 +147,6 @@ import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
-import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
-import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -207,9 +206,6 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
         NavDrawerMiniComponent,
         NavDrawerPinComponent,
         NavDrawerSimpleComponent,
-        TabbarComponent,
-        TabbarSample1Component,
-        TabbarSample2Component,
         NavbarComponent,
         NavbarSample1Component,
         SliderSample1Component,
@@ -227,6 +223,8 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
         ButtonsSample5Component,
         ButtonsSample6Component,
         ButtonsSample7Component,
+        FilteringSampleComponent,
+        PagingSampleComponent,
         SwitchSample1Component,
         SwitchSample2Component,
         RadioSample1Component,
