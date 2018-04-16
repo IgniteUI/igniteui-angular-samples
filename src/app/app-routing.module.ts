@@ -53,6 +53,7 @@ import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
+import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -576,6 +577,10 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartOverviewComponent,
         path: "category-chart-overview-sample"
+    },
+    {
+        component: FinancialChartOverviewComponent,
+        path: "financial-chart-overview-sample"
     },
     {
         component: CategoryChartHighFrequencyComponent,
