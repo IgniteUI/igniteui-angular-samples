@@ -3,6 +3,7 @@ import { IgxFinancialChartComponent } from "igniteui-angular-charts/ES5/igx-fina
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-financial-chart-multiple-data",
     styleUrls: ["./financial-chart-multiple-data.component.scss"],
     templateUrl: "./financial-chart-multiple-data.component.html"
