@@ -10,6 +10,7 @@
 		"no-submodule-imports": [false],
 	  "max-classes-per-file": [false],
     "prefer-object-spread": false,
-    "no-console": false
+		"no-console": false,
+		"prefer-conditional-expression": false
   }
 }

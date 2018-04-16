@@ -1,0 +1,31 @@
+<div class="sample-container">
+    <igx-category-chart 
+      [dataSource]="data"
+      [pixelScalingRatio]="scalingRatio"
+      yAxisLabelExtent="40" 
+      #chart>
+    </igx-category-chart>
+
+    <div class="sample-controls">
+      <span #fpsSpan class="label">FPS: </span> 
+      <input type="button" value="Change Amount" (click)="onChangeAmountClicked()" />
+      <span class="label">Optimize Scaling: </span>
+      <input type="checkbox" (change)="onOptimizeScalingChanged($event.target.checked)" checked/>
+      <br/>
+      <span class="label">Data amount: {{ maxPoints }}</span><input 
+        type="range" 
+        class="max-points-slider"
+        [value]="maxPoints" 
+        min="5000"
+        max="2000000"
+        (change)="onMaxPointsChanged($event.target.value)" />
+      <span class="label">Refresh frequency (ms): {{ refreshMilliseconds }} </span><input 
+        type="range" 
+        class="frequency-slider"
+        [value]="refreshMilliseconds" 
+        min="10"
+        max="1000"
+        (change)="onRefreshFrequencyChanged($event.target.value)" />
+      
+    </div>
+</div>
