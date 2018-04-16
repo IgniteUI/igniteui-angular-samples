@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
+    IgxBottomNavModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCalendarModule,
@@ -30,7 +31,6 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
-    IgxTabBarModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
@@ -314,7 +314,7 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
         IgxCheckboxModule,
         IgxToastModule,
         IgxSliderModule,
-        IgxTabBarModule,
+        IgxBottomNavModule,
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
