@@ -103,6 +103,9 @@ import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
+import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";	
+import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";	
+import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -389,6 +392,18 @@ export const appRoutes: Routes = [
     {
         component: SliderSample5Component,
         path: "slider-sample-5"
+    },
+    {
+        component: TabbarComponent,
+        path: "tabbar"
+    },
+    {
+        component: TabbarSample1Component,
+        path: "tabbar-sample-1"
+    },
+    {
+        component: TabbarSample2Component,
+        path: "tabbar-sample-2"
     },
     {
         component: TimePickerSample1Component,
