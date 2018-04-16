@@ -3,37 +3,43 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
-  IgxAvatarModule,
-  IgxBadgeModule,
-  IgxButtonGroupModule,
-  IgxButtonModule,
-  IgxCalendarModule,
-  IgxCardModule,
-  IgxCarouselModule,
-  IgxCheckboxModule,
-  IgxDatePickerModule,
-  IgxDialogModule,
-  IgxFilterModule,
-  IgxForOfModule,
-  IgxGridModule,
-  IgxIconModule,
-  IgxInputModule,
-  IgxLabelModule,
-  IgxLayoutModule,
-  IgxListModule,
-  IgxNavbarModule,
-  IgxNavigationDrawerModule,
-  IgxNavigationModule,
-  IgxProgressBarModule,
-  IgxRadioModule,
-  IgxRippleModule,
-  IgxSliderModule,
-  IgxSnackbarModule,
-  IgxSwitchModule,
-  IgxTabBarModule,
-  IgxToastModule,
-  IgxToggleModule
+    IgxAvatarModule,
+    IgxBadgeModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCalendarModule,
+    IgxCardModule,
+    IgxCarouselModule,
+    IgxCheckboxModule,
+    IgxDatePickerModule,
+    IgxDialogModule,
+    IgxFilterModule,
+    IgxForOfModule,
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxLayoutModule,
+    IgxListModule,
+    IgxMaskModule,
+    IgxNavbarModule,
+    IgxNavigationDrawerModule,
+    IgxNavigationModule,
+    IgxProgressBarModule,
+    IgxRadioModule,
+    IgxRippleModule,
+    IgxSliderModule,
+    IgxSnackbarModule,
+    IgxSwitchModule,
+    IgxTabBarModule,
+    IgxTimePickerModule,
+    IgxToastModule,
+    IgxToggleModule
 } from "igniteui-angular/main";
+
+import {
+    IgxCsvExporterService,
+    IgxExcelExporterService
+} from "igniteui-angular/services/index";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -80,6 +86,10 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
+import { CsvExportComponent } from "./export-csv/csv-export.component";
+import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
+import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -91,11 +101,18 @@ import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
-import { LabelInputComponent } from "./label-input/label-input.component";
+import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
+import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
+import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
+import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
+import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
+import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { LinearProgressbarSample1Component
+import {
+    LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
-import { LinearProgressbarSample2Component
+import {
+    LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
@@ -104,6 +121,9 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListComponent } from "./list/list.component";
+import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
+import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
+import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
@@ -128,6 +148,10 @@ import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
+import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
+import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
+import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -138,148 +162,172 @@ import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 
+import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
+
 @NgModule({
-  bootstrap: [AppComponent],
-  declarations: [
-    AppComponent,
-    BadgeSample1Component,
-    BadgeSample2Component,
-    BadgeSample3Component,
-    CardComponent,
-    CardSample1Component,
-    CardSample2Component,
-    CardSample3Component,
-    CheckboxSample1Component,
-    CheckboxSample2Component,
-    CircularProgressbarComponent,
-    LinearProgressbarComponent,
-    ListComponent,
-    ListSample1Component,
-    ListSample2Component,
-    ListSample3Component,
-    ListSample4Component,
-    ListSample5Component,
-    GridComponent,
-    CarouselComponent,
-    CarouselDetailsViewComponent,
-    CarouselSample1Component,
-    CarouselSample2Component,
-    CarouselSample3Component,
-    CarouselSample4Component,
-    CalendarSample1Component,
-    CalendarSample2Component,
-    CalendarSample3Component,
-    CalendarSample4Component,
-    CalendarSample5Component,
-    CalendarComponent,
-    DialogComponent,
-    DialogSample1Component,
-    DialogSample2Component,
-    DialogSample3Component,
-    LayoutComponent,
-    NavdrawerComponent,
-    NavDrawerMiniComponent,
-    NavDrawerPinComponent,
-    NavDrawerSimpleComponent,
-    TabbarComponent,
-    TabbarSample1Component,
-    TabbarSample2Component,
-    NavbarComponent,
-    NavbarSample1Component,
-    SliderSample1Component,
-    SliderSample2Component,
-    SliderSample3Component,
-    SliderSample4Component,
-    SliderSample5Component,
-    CardSample1Component,
-    CardSample2Component,
-    CardSample3Component,
-    ButtonsSample1Component,
-    ButtonsSample2Component,
-    ButtonsSample3Component,
-    ButtonsSample4Component,
-    ButtonsSample5Component,
-    ButtonsSample6Component,
-    ButtonsSample7Component,
-    SwitchSample1Component,
-    SwitchSample2Component,
-    RadioSample1Component,
-    RadioSample2Component,
-    IconSample1Component,
-    ToggleComponent,
-    ToggleSample1Component,
-    ToggleSample2Component,
-    ToggleSample3Component,
-    AvatarSample1Component,
-    AvatarSample2Component,
-    AvatarSample3Component,
-    IgxForComponent,
-    FinancialSampleComponent,
-    LinearProgressbarSample1Component,
-    LinearProgressbarSample2Component,
-    LabelInputComponent,
-    RippleSample1Component,
-    RippleSample2Component,
-    RippleSample3Component,
-    RippleSample4Component,
-    RippleSample5Component,
-    RippleSample6Component,
-    NavbarSample1Component,
-    DatepickerSample1Component,
-    DatepickerSample2Component,
-    DatepickerSample3Component,
-    DatepickerSample4Component,
-    DatepickerSample5Component,
-    SnackbarSample1Component,
-    SnackbarSample2Component,
-    SnackbarSample3Component,
-    SnackbarSample4Component,
-    ToastSample1Component,
-    ToastSample2Component,
-    ToastSample3Component,
-    ToastSample4Component,
-    ToastSample5Component,
-    ButtonGroupSample1Component,
-    ButtonGroupSample2Component,
-    ButtonGroupSample3Component
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    IgxGridModule.forRoot(),
-    IgxCarouselModule,
-    IgxInputModule,
-    IgxLayoutModule,
-    IgxRadioModule,
-    IgxSwitchModule,
-    IgxNavigationModule,
-    IgxNavigationDrawerModule,
-    IgxProgressBarModule,
-    IgxAvatarModule,
-    IgxFilterModule,
-    IgxBadgeModule,
-    IgxButtonModule,
-    IgxButtonGroupModule,
-    IgxRippleModule,
-    IgxIconModule,
-    IgxDialogModule,
-    IgxDatePickerModule,
-    IgxCalendarModule,
-    IgxSnackbarModule,
-    IgxCardModule,
-    IgxListModule,
-    IgxLabelModule,
-    IgxCheckboxModule,
-    IgxToastModule,
-    IgxSliderModule,
-    IgxTabBarModule,
-    IgxNavbarModule,
-    IgxToggleModule,
-    HttpClientModule,
-    IgxForOfModule
-  ],
-  providers: [DataService]
+    bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        BadgeSample1Component,
+        BadgeSample2Component,
+        BadgeSample3Component,
+        CardComponent,
+        CardSample1Component,
+        CardSample2Component,
+        CardSample3Component,
+        CheckboxSample1Component,
+        CheckboxSample2Component,
+        CircularProgressbarComponent,
+        LinearProgressbarComponent,
+        ListComponent,
+        ListSample1Component,
+        ListSample2Component,
+        ListSample3Component,
+        ListSample4Component,
+        ListSample5Component,
+        GridComponent,
+        CarouselComponent,
+        CarouselDetailsViewComponent,
+        CarouselSample1Component,
+        CarouselSample2Component,
+        CarouselSample3Component,
+        CarouselSample4Component,
+        CalendarSample1Component,
+        CalendarSample2Component,
+        CalendarSample3Component,
+        CalendarSample4Component,
+        CalendarSample5Component,
+        CalendarComponent,
+        DialogComponent,
+        DialogSample1Component,
+        DialogSample2Component,
+        DialogSample3Component,
+        LayoutComponent,
+        NavdrawerComponent,
+        NavDrawerMiniComponent,
+        NavDrawerPinComponent,
+        NavDrawerSimpleComponent,
+        TabbarComponent,
+        TabbarSample1Component,
+        TabbarSample2Component,
+        NavbarComponent,
+        NavbarSample1Component,
+        SliderSample1Component,
+        SliderSample2Component,
+        SliderSample3Component,
+        SliderSample4Component,
+        SliderSample5Component,
+        CardSample1Component,
+        CardSample2Component,
+        CardSample3Component,
+        ButtonsSample1Component,
+        ButtonsSample2Component,
+        ButtonsSample3Component,
+        ButtonsSample4Component,
+        ButtonsSample5Component,
+        ButtonsSample6Component,
+        ButtonsSample7Component,
+        SwitchSample1Component,
+        SwitchSample2Component,
+        RadioSample1Component,
+        RadioSample2Component,
+        IconSample1Component,
+        ToggleComponent,
+        ToggleSample1Component,
+        ToggleSample2Component,
+        ToggleSample3Component,
+        AvatarSample1Component,
+        AvatarSample2Component,
+        AvatarSample3Component,
+        IgxForComponent,
+        FinancialSampleComponent,
+        LinearProgressbarSample1Component,
+        LinearProgressbarSample2Component,
+        RippleSample1Component,
+        RippleSample2Component,
+        RippleSample3Component,
+        RippleSample4Component,
+        RippleSample5Component,
+        RippleSample6Component,
+        NavbarSample1Component,
+        DatepickerSample1Component,
+        DatepickerSample2Component,
+        DatepickerSample3Component,
+        DatepickerSample4Component,
+        DatepickerSample5Component,
+        SnackbarSample1Component,
+        SnackbarSample2Component,
+        SnackbarSample3Component,
+        SnackbarSample4Component,
+        ToastSample1Component,
+        ToastSample2Component,
+        ToastSample3Component,
+        ToastSample4Component,
+        ToastSample5Component,
+        ButtonGroupSample1Component,
+        ButtonGroupSample2Component,
+        ButtonGroupSample3Component,
+        MaskSample1Component,
+        MaskSample2Component,
+        MaskSample3Component,
+        TimePickerSample1Component,
+        TimePickerSample2Component,
+        TimePickerSample3Component,
+        TimePickerSample4Component,
+        InputGroupSample1Component,
+        InputGroupSample2Component,
+        InputGroupSample3Component,
+        InputGroupSample4Component,
+        InputGroupSample5Component,
+        InputGroupSample6Component,
+        ExcelExportComponent,
+        ExcelExportSample1Component,
+        CsvExportComponent,
+        CsvExportSample1Component
+    ],
+    imports: [
+        AppRoutingModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        IgxGridModule.forRoot(),
+        IgxCarouselModule,
+        IgxLayoutModule,
+        IgxRadioModule,
+        IgxSwitchModule,
+        IgxNavigationModule,
+        IgxNavigationDrawerModule,
+        IgxProgressBarModule,
+        IgxAvatarModule,
+        IgxFilterModule,
+        IgxBadgeModule,
+        IgxButtonModule,
+        IgxButtonGroupModule,
+        IgxRippleModule,
+        IgxIconModule,
+        IgxDialogModule,
+        IgxDatePickerModule,
+        IgxCalendarModule,
+        IgxSnackbarModule,
+        IgxCardModule,
+        IgxListModule,
+        IgxCheckboxModule,
+        IgxToastModule,
+        IgxSliderModule,
+        IgxTabBarModule,
+        IgxNavbarModule,
+        IgxToggleModule,
+        HttpClientModule,
+        IgxForOfModule,
+        IgxMaskModule,
+        IgxTimePickerModule,
+        IgxInputGroupModule,
+        CategoryChartSamplesModule.forRoot()
+    ],
+    providers: [
+        DataService,
+        IgxCsvExporterService,
+        IgxExcelExporterService
+    ]
 })
 export class AppModule { }

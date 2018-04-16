@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LabelInputComponent } from "./label-input.component";
+import { ExcelExportComponent } from "./excel-export.component";
 
-describe("LabelInputComponent", () => {
-  let component: LabelInputComponent;
-  let fixture: ComponentFixture<LabelInputComponent>;
+describe("ExcelExportComponent", () => {
+  let component: ExcelExportComponent;
+  let fixture: ComponentFixture<ExcelExportComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LabelInputComponent ]
+      declarations: [ ExcelExportComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LabelInputComponent);
+    fixture = TestBed.createComponent(ExcelExportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

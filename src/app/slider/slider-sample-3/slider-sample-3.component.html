@@ -1,7 +1,7 @@
 <div class="container">
   <igx-slider [minValue]="0" [maxValue]="100" [step]="10" [(ngModel)]="task.completion"></igx-slider>
-  <div class="igx-form-group">
-    <input igxInput id="percentInput" type="text" [value]="task.completion / 100 | percent" (blur)="updateTask($event.target)" />
-    <label igxLabel for="percentInput">Task Completion</label>
-  </div>
+  <igx-input-group>
+      <input igxInput id="percentInput" type="text" [value]="task.completion / 100 | percent" (blur)="updateTask($event.target)" />
+      <label igxLabel for="percentInput">Task Completion</label>
+  </igx-input-group>
 </div>

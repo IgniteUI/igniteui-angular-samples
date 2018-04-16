@@ -1,7 +1,7 @@
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { Config } from "./core/Config";
 import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule } from "igniteui-angular/main";
+import { IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule } from "igniteui-angular/main";
 import { DialogComponent } from "../../src/app/dialog/dialog.component";
 import { DialogSample1Component } from "../../src/app/dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "../../src/app/dialog/dialog-sample-2/dialog-sample-2.component";
@@ -15,10 +15,10 @@ export class DialogConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DialogComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule,
+                imports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule,
                     DialogComponent],
                 ngDeclarations: [DialogComponent],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule]
+                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule]
             })
         }));
 
@@ -50,10 +50,10 @@ export class DialogConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DialogSample3Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule,
+                imports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule,
                     DialogSample3Component],
                 ngDeclarations: [DialogSample3Component],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputModule, IgxRippleModule]
+                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule]
             }),
             shortenComponentPathBy: "/dialog/"
         }));

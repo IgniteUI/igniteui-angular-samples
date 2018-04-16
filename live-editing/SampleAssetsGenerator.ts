@@ -12,11 +12,12 @@ import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
 import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./configs/IconConfigGenerator";
-import { LabelAndInputConfigGenerator } from "./configs/LabelAndInputConfigGenerator";
+import { InputGroupConfigGenerator } from "./configs/InputGroupConfigGenerator";
 import { LayoutConfigGenerator } from "./configs/LayoutConfigGenerator";
 import { LinearProgressbarConfigGenerator } from "./configs/LinearProgressbarConfigGenerator";
 import { ListConfigGenerator } from "./configs/ListConfigGenerator";
 import { NavbarConfigGenerator } from "./configs/NavbarConfigGenerator";
+import { MaskConfigGenerator } from "./configs/MaskConfigGenerator";
 import { NavdrawerConfigGenerator } from "./configs/NavDrawerConfigGenerator";
 import { RadioConfigGenerator } from "./configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "./configs/RippleConfigGenerator";
@@ -24,6 +25,7 @@ import { SliderConfigGenerator } from "./configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "./configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "./configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "./configs/TabBarConfigGenerator";
+import { TimePickerConfigGenerator } from "./configs/TimePickerConfigGenerator";
 import { ToastConfigGenerator } from "./configs/ToastConfigGenerator";
 import { ToggleConfigGenerator } from "./configs/ToggleConfigGenerator";
 
@@ -53,10 +55,10 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
     DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
-    LabelAndInputConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
-    ListConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
+    InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
+    ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
-    TabBarConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator];
+    TabBarConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
 
 export class SampleAssetsGenerator {
     private tsImportsService: TsImportsService;
@@ -118,7 +120,7 @@ export class SampleAssetsGenerator {
                 sampleFiles.push(file);
             }
         }
-        
+
         let appModuleFile = new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.module.ts", this.getAppModuleConfig(config, configImports));
         this.shortenComponentPath(config, appModuleFile)
         sampleFiles.push(appModuleFile);
@@ -145,7 +147,7 @@ export class SampleAssetsGenerator {
 
         let appModuleNgImports: Array<string> = this.getAppModuleNgImports(config);
 
-        let ngImports = "," + this.formatAppModuleTypes(appModuleNgImports, true, 2);        
+        let ngImports = "," + this.formatAppModuleTypes(appModuleNgImports, true, 2);
 
         let ngProviders = "";
         if (config.appModuleConfig.ngProviders !== undefined &&
@@ -169,8 +171,7 @@ export class SampleAssetsGenerator {
         for (let i = 0; i < config.appModuleConfig.ngImports.length; i++) {
             if (typeof config.appModuleConfig.ngImports[i] === "string") {
                 appModuleNgImports.push(config.appModuleConfig.ngImports[i]);
-            }
-            else {
+            } else {
                 let appModuleNgImport: Type<any> = config.appModuleConfig.ngImports[i] as Type<any>;
                 if (appModuleNgImport.name !== undefined) {
                     appModuleNgImports.push(appModuleNgImport.name);
