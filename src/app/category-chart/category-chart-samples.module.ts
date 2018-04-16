@@ -5,22 +5,18 @@ import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-categ
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { CategoryChartHighFrequencyComponent } from "./high-frequency/category-chart-high-frequency-sample.component";
 import { CategoryChartOverviewComponent } from "./overview/category-chart-overview-sample.component";
-import { DataService } from "./services/data.service";
 
 @NgModule({
     declarations: [
         CategoryChartOverviewComponent,
         CategoryChartHighFrequencyComponent
     ],
-    exports: [ CategoryChartOverviewComponent, CategoryChartHighFrequencyComponent ],
-    imports: [ CommonModule, FormsModule, IgxCategoryChartModule ],
-    providers: [ DataService ]
+    imports: [ CommonModule, FormsModule, IgxCategoryChartModule ]
 })
 export class CategoryChartSamplesModule {
     public static forRoot(): ModuleWithProviders {
         return {
-            ngModule: CategoryChartSamplesModule,
-            providers: [ DataService ]
+            ngModule: CategoryChartSamplesModule
         };
     }
 }

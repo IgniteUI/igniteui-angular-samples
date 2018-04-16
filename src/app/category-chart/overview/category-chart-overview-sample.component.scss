@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.chart {
+    flex: 1;
+}
