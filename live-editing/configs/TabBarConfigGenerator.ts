@@ -1,11 +1,12 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { TabbarComponent } from "../../src/app/tabbar/tabbar.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Routes, Router, RouterModule } from "@angular/router";
-import { IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule, IgxListModule, IgxTabBarModule } from "igniteui-angular/main";
+import { Router, RouterModule, Routes } from "@angular/router";
+import { IgxAvatarModule, IgxButtonModule,
+    IgxIconModule, IgxListModule, IgxRippleModule, IgxTabsModule } from "igniteui-angular/main";
 import { TabbarSample1Component } from "../../src/app/tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "../../src/app/tabbar/tabbar-sample-2/tabbar-sample-2.component";
+import { TabbarComponent } from "../../src/app/tabbar/tabbar.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class TabBarConfigGenerator implements IConfigGenerator {
     generateConfigs(): Config[] {
@@ -16,12 +17,12 @@ export class TabBarConfigGenerator implements IConfigGenerator {
             component: TabbarComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAvatarModule, IgxButtonModule, IgxIconModule,
-                    IgxRippleModule, IgxListModule, IgxTabBarModule, "Routes",
+                    IgxRippleModule, IgxListModule, IgxTabsModule, "Routes",
                     Router, RouterModule, TabbarComponent],
                 ngDeclarations: [TabbarComponent],
                 ngImports: [ "RouterModule.forRoot(Routes = [\{component: TabbarComponent, path: 'tabbar'}])",
                     IgxAvatarModule, IgxButtonModule, IgxIconModule,
-                    IgxRippleModule, IgxListModule, IgxTabBarModule]
+                    IgxRippleModule, IgxListModule, IgxTabsModule]
             })
         }));
 
@@ -30,10 +31,10 @@ export class TabBarConfigGenerator implements IConfigGenerator {
             component: TabbarSample1Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAvatarModule, IgxIconModule, IgxListModule,
-                    IgxTabBarModule, Router, RouterModule, TabbarSample1Component],
+                    IgxTabsModule, Router, RouterModule, TabbarSample1Component],
                 ngDeclarations: [TabbarSample1Component],
                 ngImports: [RouterModule, IgxAvatarModule, IgxIconModule,
-                    IgxListModule, IgxTabBarModule]
+                    IgxListModule, IgxTabsModule]
             }),
             shortenComponentPathBy: "/tabbar/"
         }));
@@ -43,10 +44,10 @@ export class TabBarConfigGenerator implements IConfigGenerator {
             component: TabbarSample2Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAvatarModule, IgxIconModule, IgxListModule,
-                    IgxTabBarModule, Router, RouterModule, TabbarSample2Component],
+                    IgxTabsModule, Router, RouterModule, TabbarSample2Component],
                 ngDeclarations: [TabbarSample2Component],
                 ngImports: [RouterModule, IgxAvatarModule, IgxIconModule,
-                    IgxListModule, IgxTabBarModule]
+                    IgxListModule, IgxTabsModule]
             }),
             shortenComponentPathBy: "/tabbar/"
         }));
