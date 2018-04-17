@@ -96,6 +96,8 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
@@ -165,6 +167,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { PinningSampleComponent } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
+import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -229,6 +232,8 @@ import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/gr
         ButtonsSample5Component,
         ButtonsSample6Component,
         ButtonsSample7Component,
+        FilteringSampleComponent,
+        PagingSampleComponent,
         SwitchSample1Component,
         SwitchSample2Component,
         RadioSample1Component,
@@ -326,7 +331,8 @@ import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/gr
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
-        CategoryChartSamplesModule.forRoot()
+        CategoryChartSamplesModule.forRoot(),
+        FinancialChartSamplesModule.forRoot()
     ],
     providers: [
         DataService,
