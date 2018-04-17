@@ -1,0 +1,11 @@
+<div class="grid__wrapper">
+    <igx-grid #grid1 [data]="data" [width]="'1200px'" [height]="'800px'">
+        <igx-column #col *ngFor="let c of columns" [field]="c.field" [header]="c.field" [width]="c.width" [pinned]='c.pinned'
+            [hidden]='c.hidden' [headerClasses]="'customHeaderSyle'">
+            <ng-template igxHeader>
+                {{col.field}}
+                <igx-icon class="header-icon" (click)="toggleColumn(col)">{{col.pinned ? 'lock' : 'lock_open' }}</igx-icon>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>

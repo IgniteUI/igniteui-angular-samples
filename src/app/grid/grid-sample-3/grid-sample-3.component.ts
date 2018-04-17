@@ -1,41 +1,55 @@
-import { Component, Injectable, ViewChild } from "@angular/core";
-import { Http } from "@angular/http";
-import { DataType } from "igniteui-angular/data-operations/data-util";
-import { IgxButtonDirective } from "igniteui-angular/directives/button/button.directive";
+import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
+import { IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular/grid/grid-summary";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { BehaviorSubject, Observable } from "rxjs/Rx";
-import { DATA } from "./data";
+import { LOCAL_DATA } from "./data";
+
+class MySummary extends IgxNumberSummaryOperand {
+
+  constructor() {
+    super();
+  }
+
+  public operate(data?: any[]): IgxSummaryResult[] {
+    const result = super.operate(data);
+    result.push({
+      key: "test",
+      label: "Test",
+      summaryResult: data.filter((rec) => rec > 10 && rec < 30).length
+    });
+
+    return result;
+  }
+}
 @Component({
-    providers: [],
-    selector: "grid-sample",
-    styleUrls: ["grid-sample-3.component.scss"],
-    templateUrl: "grid-sample-3.component.html"
+  encapsulation: ViewEncapsulation.None,
+  selector: "app-grid-sample-3",
+  styleUrls: ["./grid-sample-3.component.scss"],
+  templateUrl: "./grid-sample-3.component.html"
 })
+export class GridSample3Component implements OnInit {
 
-export class PinningSampleComponent {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+  @ViewChild("grid1", { read: IgxGridComponent })
+  public grid1: IgxGridComponent;
+  public mySummary = MySummary;
+  public data;
+  public productId = 0;
+  public labels = ["Disable", "Disable", "Enable", "Disable", "Disable"];
+  constructor() {
+    this.data = LOCAL_DATA;
+    this.productId = LOCAL_DATA.length;
+   }
 
-    public data: any[];
-    public columns: any[];
-    public ngOnInit(): void {
-        this.columns = [
-            { field: "ID", width: 100, hidden: true },
-            { field: "CompanyName", width: 300 },
-            { field: "ContactName", width: 200, pinned: true },
-            { field: "ContactTitle", width: 200, pinned: true },
-            { field: "Address", width: 300 },
-            { field: "City", width: 100 },
-            { field: "Region", width: 100 },
-            { field: "PostalCode", width: 150 },
-            { field: "Phone", width: 150 },
-            { field: "Fax", width: 150 }
-        ];
-        this.data = DATA;
-    }
+  public ngOnInit() {
+  }
+  public enableSummary(name, id) {
+      if (this.grid1.getColumnByName(name).hasSummary) {
+        this.grid1.disableSummaries(name);
+        this.labels[id] = "Enable";
+      } else {
+        this.grid1.enableSummaries(name, this.mySummary);
+        this.labels[id] = "Disable";
+      }
 
-    public toggleColumn(col: IgxColumnComponent) {
-        col.pinned ? col.unpin() : col.pin();
-    }
-
+  }
 }
