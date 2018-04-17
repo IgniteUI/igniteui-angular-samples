@@ -57,6 +57,9 @@ import {
     FinancialChartCustomTooltipsComponent
 } from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
 import {
+    FinancialChartHighVolumeComponent
+} from "./financial-chart/high-volume/financial-chart-high-volume.component";
+import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
@@ -640,7 +643,12 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartCustomTooltipsComponent,
         path: "financial-chart-custom-tooltips"
+    },
+    {
+        component: FinancialChartHighVolumeComponent,
+        path: "financial-chart-high-volume"
     }
+
 ];
 
 @NgModule({
