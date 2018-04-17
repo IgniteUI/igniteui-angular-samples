@@ -54,8 +54,14 @@ import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import {
+    FinancialChartAxisTypesComponent
+} from "./financial-chart/axis-types/financial-chart-axis-types.component";
+import {
     FinancialChartCustomTooltipsComponent
 } from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
+import {
+    FinancialChartHighFrequencyComponent
+} from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
 import {
     FinancialChartHighVolumeComponent
 } from "./financial-chart/high-volume/financial-chart-high-volume.component";
@@ -647,6 +653,14 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartHighVolumeComponent,
         path: "financial-chart-high-volume"
+    },
+    {
+        component: FinancialChartHighFrequencyComponent,
+        path: "financial-chart-high-frequency"
+    },
+    {
+        component: FinancialChartAxisTypesComponent,
+        path: "financial-chart-axis-types"
     }
 
 ];
