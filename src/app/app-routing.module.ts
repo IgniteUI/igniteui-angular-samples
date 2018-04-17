@@ -60,6 +60,11 @@ import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
+import {
+    FinancialChartPerformanceComponent
+} from "./financial-chart/performance/financial-chart-performance.component";
+import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -615,6 +620,18 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartHighFrequencyComponent,
         path: "category-chart-high-frequency-sample"
+    },
+    {
+        component: FinancialChartPerformanceComponent,
+        path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartTitlesComponent,
+        path: "financial-chart-titles"
+    },
+    {
+        component: FinancialChartPanesComponent,
+        path: "financial-chart-panes"
     },
     {
         component: FinancialChartMultipleDataComponent,
