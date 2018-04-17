@@ -32,6 +32,12 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import {
+    CategoryChartHighFrequencyComponent
+} from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
+import {
+    CategoryChartHighVolumeComponent
+} from "./category-chart/high-volume/category-chart-high-volume-sample.component";
 import { CategoryChartOverviewComponent } from "./category-chart/overview/category-chart-overview-sample.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
@@ -47,6 +53,7 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -56,6 +63,8 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
+import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -322,6 +331,10 @@ export const appRoutes: Routes = [
         path: "grid"
     },
     {
+        component: GridSample3Component,
+        path: "grid-summary"
+    },
+    {
         component: SnackbarSample1Component,
         path: "snackbar-sample-1"
     },
@@ -526,6 +539,10 @@ export const appRoutes: Routes = [
         path: "grid-sample-2"
     },
     {
+        component: GridSelectionSampleComponent,
+        path: "grid-selection"
+    },
+    {
         component: NavbarSample1Component,
         path: "navbar-sample-1"
     },
@@ -580,6 +597,18 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartOverviewComponent,
         path: "category-chart-overview-sample"
+    },
+    {
+        component: CategoryChartHighVolumeComponent,
+        path: "category-chart-high-volume-sample"
+    },
+    {
+        component: FinancialChartOverviewComponent,
+        path: "financial-chart-overview-sample"
+    },
+    {
+        component: CategoryChartHighFrequencyComponent,
+        path: "category-chart-high-frequency-sample"
     }
 ];
 
