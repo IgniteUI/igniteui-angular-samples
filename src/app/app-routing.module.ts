@@ -63,6 +63,7 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
+import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -330,6 +331,10 @@ export const appRoutes: Routes = [
     path: "grid"
   },
   {
+        component: GridSample3Component,
+        path: "grid-summary"
+    },
+    {
     component: SnackbarSample1Component,
     path: "snackbar-sample-1"
   },

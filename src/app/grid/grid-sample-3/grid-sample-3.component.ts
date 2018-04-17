@@ -1,0 +1,55 @@
+import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
+import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
+import { IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular/grid/grid-summary";
+import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
+import { LOCAL_DATA } from "./data";
+
+class MySummary extends IgxNumberSummaryOperand {
+
+  constructor() {
+    super();
+  }
+
+  public operate(data?: any[]): IgxSummaryResult[] {
+    const result = super.operate(data);
+    result.push({
+      key: "test",
+      label: "Test",
+      summaryResult: data.filter((rec) => rec > 10 && rec < 30).length
+    });
+
+    return result;
+  }
+}
+@Component({
+  encapsulation: ViewEncapsulation.None,
+  selector: "app-grid-sample-3",
+  styleUrls: ["./grid-sample-3.component.scss"],
+  templateUrl: "./grid-sample-3.component.html"
+})
+export class GridSample3Component implements OnInit {
+
+  @ViewChild("grid1", { read: IgxGridComponent })
+  public grid1: IgxGridComponent;
+  public mySummary = MySummary;
+  public data;
+  public productId = 0;
+  public labels = ["Disable", "Disable", "Enable", "Disable", "Disable"];
+  constructor() {
+    this.data = LOCAL_DATA;
+    this.productId = LOCAL_DATA.length;
+   }
+
+  public ngOnInit() {
+  }
+  public enableSummary(name, id) {
+      if (this.grid1.getColumnByName(name).hasSummary) {
+        this.grid1.disableSummaries(name);
+        this.labels[id] = "Enable";
+      } else {
+        this.grid1.enableSummaries(name, this.mySummary);
+        this.labels[id] = "Disable";
+      }
+
+  }
+}
