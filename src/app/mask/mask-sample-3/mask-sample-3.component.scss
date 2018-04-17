@@ -1,7 +1,4 @@
-.switch-style {
-    display: flex;
-    flex-flow: row nowrap;
-    align-self: flex-end;
-    width: 100%;
-    height: 48px;
+:host {
+    display: block;
+    padding: 16px;
 }

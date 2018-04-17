@@ -1,3 +1,7 @@
 <igx-input-group>
-    <input igxInput name="phone" type="text" [igxMask]="'(####) 00-00-00 Ext. 9999'" placeholder="Enter phone number" />
+    <igx-prefix>
+        <igx-icon>phone</igx-icon>
+    </igx-prefix>
+    <label igxLabel>Phone</label>
+    <input igxInput type="text" [igxMask]="'(####) 00-00-00 Ext. 9999'"/>
 </igx-input-group>
