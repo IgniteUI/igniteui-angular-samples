@@ -8,10 +8,14 @@ const COMMON_PACKAGE_DEPENDENCIES = [
     "@angular/common",
     "@angular/compiler",
     "@angular/core",
+    "@angular/forms", // included in app.module.ts.template
     "@angular/platform-browser",
     "@angular/platform-browser-dynamic",
     "rxjs",
     "zone.js",
+
+    "igniteui-angular", // needed for all samples because of styles.scss
+    "jszip", // dependency for igniteui-angular
     
     // For polyfills
     "classlist.js",
