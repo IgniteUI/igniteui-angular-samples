@@ -99,6 +99,8 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
+import { PinningSampleComponent } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -165,8 +167,6 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
-import { PinningSampleComponent } from "./grid/grid-sample-3/grid-sample-3.component";
-import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 
 @NgModule({
