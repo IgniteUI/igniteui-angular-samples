@@ -5,22 +5,20 @@ import * as Collections from "typescript-collections";
 const PACKAGES_CONFIG_PATH = path.join(__dirname, "../package.json");
 
 const COMMON_PACKAGE_DEPENDENCIES = [
-    //"@angular/animations",
     "@angular/common",
     "@angular/compiler",
     "@angular/core",
-    //"@angular/http",
     "@angular/platform-browser",
     "@angular/platform-browser-dynamic",
-    //"@angular/router",
-    // "@types/hammerjs",
-    // "classlist.js",
-    "core-js",
-    // "hammerjs",
     "rxjs",
-    // "web-animations-js",
     "zone.js",
-    // "intl"
+    
+    // For polyfills
+    "classlist.js",
+    "core-js",
+    "hammerjs",
+    "intl",
+    "web-animations-js"
 ];
 
 const DEFAULT_DEPENDENCIES = [
@@ -28,10 +26,8 @@ const DEFAULT_DEPENDENCIES = [
     "@angular/forms",
     "@angular/http",
     "@angular/router",
-    "@types/hammerjs",
     "classlist.js",
     "igniteui-angular",
-    "igniteui-angular-charts",
     "hammerjs",
     "web-animations-js",
     "jszip",

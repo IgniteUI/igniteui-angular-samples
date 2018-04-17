@@ -9,11 +9,12 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         let configs = new Array<Config>();
         let deps = new Array<string>();
 
-        debugger;
-        //deps.push("@angular/forms");
+        deps.push("@angular/forms");
         deps.push("@angular/animations");
+        deps.push("igniteui-angular");
         deps.push("igniteui-angular-charts");
         deps.push("tslib");
+        deps.push("jszip");
 
         configs.push(new Config({
             component: CategoryChartOverviewComponent,
