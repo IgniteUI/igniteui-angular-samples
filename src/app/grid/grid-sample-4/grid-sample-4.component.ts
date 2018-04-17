@@ -4,7 +4,8 @@ import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import {
     DataContainer,
-    IForOfState
+    IForOfState,
+    IgxToastComponent
 } from "igniteui-angular/main";
 import { BehaviorSubject, Observable } from "rxjs/Rx";
 
@@ -60,6 +61,7 @@ export class GridRemoteVirtualizationSampleComponent {
     public columns: any;
 
     @ViewChild("grid1") public grid: IgxGridComponent;
+    @ViewChild("toast") public toast: IgxToastComponent;
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
     public ngOnInit(): void {
         this.columns = [
@@ -83,7 +85,12 @@ export class GridRemoteVirtualizationSampleComponent {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
+        this.toast.message = "Loading remote data";
+        this.toast.position = 1;
+        this.toast.show();
+        this.cdr.detectChanges();
         this.prevRequest = this.remoteService.getData(evt, () => {
+            this.toast.hide();
             this.cdr.detectChanges();
         });
     }
