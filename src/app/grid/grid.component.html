@@ -79,7 +79,7 @@
         </igx-column>
 
         <igx-column field="CountryName" hidden="true"></igx-column>
-
+        <igx-column field="Registered" [dataType]="'date'" [filterable]="true"></igx-column>
         <igx-column field="CountryFlag" header="Country" width="90px">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
