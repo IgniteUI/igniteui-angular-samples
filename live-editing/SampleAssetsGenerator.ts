@@ -11,6 +11,7 @@ import { CircularProgressbarConfigGenerator } from "./configs/CircularProgressba
 import { DatePickerConfigGenerator } from "./configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
 import { ForConfigGenerator } from "./configs/ForConfigGenerator";
+import { FinancialChartConfigGenerator } from "./configs/FinancialChartConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "./configs/InputGroupConfigGenerator";
@@ -57,7 +58,7 @@ const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
-    DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
+    DialogConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
