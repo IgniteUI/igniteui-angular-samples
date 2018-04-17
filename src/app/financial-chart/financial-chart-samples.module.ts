@@ -2,6 +2,8 @@ import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule  } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
+import { FinancialChartCustomTooltipsComponent } from "./custom-tooltips/financial-chart-custom-tooltips.component";
+import { FinancialChartMultipleDataComponent } from "./multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
 import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
 import { FinancialChartPerformanceComponent } from "./performance/financial-chart-performance.component";
@@ -12,15 +14,13 @@ import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.c
 @NgModule({
     declarations: [
         FinancialChartOverviewComponent,
+        FinancialChartMultipleDataComponent, 
+        FinancialChartCustomTooltipsComponent,
         FinancialChartPerformanceComponent,
         FinancialChartTitlesComponent,
         FinancialChartPanesComponent
     ],
     exports: [
-          FinancialChartOverviewComponent,
-          FinancialChartPerformanceComponent,
-          FinancialChartTitlesComponent,
-          FinancialChartPanesComponent
     ],
     imports: [ CommonModule, FormsModule, IgxFinancialChartModule ]
 })
