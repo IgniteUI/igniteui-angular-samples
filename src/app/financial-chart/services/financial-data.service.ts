@@ -22,7 +22,7 @@ export class FinancialDataService {
         return [ this.getAmzn(), this.getGoog(), this.getMsft(), this.getTgt(), this.getTsla() ];
     }
     public getAmzn(): any[] {
-        let result: any = [
+        const result: any = [
     { time: new Date(2013, 1, 1), open: 268.93, high: 268.93, low: 262.80, close: 265.00, volume: 6118146 },
     { time: new Date(2013, 1, 4), open: 262.78, high: 264.68, low: 259.07, close: 259.98, volume: 3723793 },
     { time: new Date(2013, 1, 5), open: 262.00, high: 268.03, low: 261.46, close: 266.89, volume: 4013780 },
@@ -1287,7 +1287,7 @@ export class FinancialDataService {
         return result;
     }
     public getGoog(): any {
-        let result: any = [
+        const result: any = [
     { time: new Date(2013, 1, 1), open: 378.70, high: 387.90, low: 378.70, close: 387.40, volume: 0 },
     { time: new Date(2013, 1, 4), open: 383.46, high: 384.85, low: 378.76, close: 379.13, volume: 0 },
     { time: new Date(2013, 1, 5), open: 380.18, high: 385.17, low: 379.35, close: 382.49, volume: 0 },
@@ -2552,7 +2552,7 @@ export class FinancialDataService {
         return result;
     }
     public getMsft(): any {
-        let result: any = [
+        const result: any = [
     { time: new Date(2013, 1, 1), open: 27.67, high: 28.05, low: 27.55, close: 27.93, volume: 55566440 },
     { time: new Date(2013, 1, 4), open: 27.87, high: 28.02, low: 27.42, close: 27.44, volume: 50539942 },
     { time: new Date(2013, 1, 5), open: 27.62, high: 27.66, low: 27.36, close: 27.50, volume: 35410361 },
@@ -3817,7 +3817,7 @@ export class FinancialDataService {
         return result;
     }
     public getTgt(): any {
-        let result: any = [
+        const result: any = [
     { time: new Date(2013, 1, 1), open: 60.94, high: 61.56, low: 60.82, close: 61.15, volume: 4708158 },
     { time: new Date(2013, 1, 4), open: 61.00, high: 61.10, low: 60.33, close: 60.85, volume: 4085120 },
     { time: new Date(2013, 1, 5), open: 61.44, high: 62.66, low: 61.34, close: 62.40, volume: 6970029 },
@@ -5076,12 +5076,12 @@ export class FinancialDataService {
     { time: new Date(2018, 0, 29), open: 76.67, high: 77.14, low: 76.38, close: 76.80, volume: 3489411 },
     { time: new Date(2018, 0, 30), open: 76.39, high: 76.70, low: 74.82, close: 75.10, volume: 5626261 },
     { time: new Date(2018, 0, 31), open: 75.39, high: 75.75, low: 74.60, close: 75.22, volume: 8706323 }
-        ];    
+        ];
         result.title = "TGT";
         return result;
     }
     public getTsla(): any {
-        let result: any = [
+        const result: any = [
     { time: new Date(2013, 1, 1), open: 38.17, high: 38.50, low: 37.62, close: 38.30, volume: 1100590 },
     { time: new Date(2013, 1, 4), open: 38.40, high: 38.42, low: 37.59, close: 37.74, volume: 1127989 },
     { time: new Date(2013, 1, 5), open: 38.00, high: 38.65, low: 37.68, close: 38.13, volume: 1310192 },
