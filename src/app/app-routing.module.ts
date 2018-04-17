@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes  } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
@@ -130,95 +130,95 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 
 export const appRoutes: Routes = [
-  {
-    component: AvatarSample1Component,
-    path: "avatar-sample-1"
-  },
-  {
-    component: AvatarSample2Component,
-    path: "avatar-sample-2"
-  },
-  {
-    component: AvatarSample3Component,
-    path: "avatar-sample-3"
-  },
-  {
-    component: BadgeSample1Component,
-    path: "badge-sample-1"
-  },
-  {
-    component: BadgeSample2Component,
-    path: "badge-sample-2"
-  },
-  {
-    component: BadgeSample3Component,
-    path: "badge-sample-3"
-  },
-  {
-    component: CardComponent,
-    path: "card"
-  },
-  {
-    component: CalendarSample1Component,
-    path: "calendar-sample-1"
-  },
-  {
-    component: CalendarSample2Component,
-    path: "calendar-sample-2"
-  },
-  {
-    component: CalendarSample3Component,
-    path: "calendar-sample-3"
-  },
-  {
-    component: CalendarSample4Component,
-    path: "calendar-sample-4"
-  },
-  {
-    component: CalendarSample5Component,
-    path: "calendar-sample-5"
-  },
-  {
-    component: CalendarComponent,
-    path: "calendar"
-  },
-  {
-    component: CarouselComponent,
-    path: "carousel"
-  },
-  {
-    component: CarouselDetailsViewComponent,
-    path: "details/:index"
-  },
-  {
-    component: CarouselSample1Component,
-    path: "carousel-sample-1"
-  },
-  {
-    component: CarouselSample2Component,
-    path: "carousel-sample-2"
-  },
-  {
-    component: CarouselSample3Component,
-    path: "carousel-sample-3"
-  },
-  {
-    component: CarouselSample4Component,
-    path: "carousel-sample-4"
-  },
-  {
-    component: CheckboxSample1Component,
-    path: "checkbox-sample-1"
-  },
-  {
-    component: CheckboxSample2Component,
-    path: "checkbox-sample-2"
-  },
-  {
-    component: CircularProgressbarComponent,
-    path: "circular-progressbar"
-  },
-  {
+    {
+        component: AvatarSample1Component,
+        path: "avatar-sample-1"
+    },
+    {
+        component: AvatarSample2Component,
+        path: "avatar-sample-2"
+    },
+    {
+        component: AvatarSample3Component,
+        path: "avatar-sample-3"
+    },
+    {
+        component: BadgeSample1Component,
+        path: "badge-sample-1"
+    },
+    {
+        component: BadgeSample2Component,
+        path: "badge-sample-2"
+    },
+    {
+        component: BadgeSample3Component,
+        path: "badge-sample-3"
+    },
+    {
+        component: CardComponent,
+        path: "card"
+    },
+    {
+        component: CalendarSample1Component,
+        path: "calendar-sample-1"
+    },
+    {
+        component: CalendarSample2Component,
+        path: "calendar-sample-2"
+    },
+    {
+        component: CalendarSample3Component,
+        path: "calendar-sample-3"
+    },
+    {
+        component: CalendarSample4Component,
+        path: "calendar-sample-4"
+    },
+    {
+        component: CalendarSample5Component,
+        path: "calendar-sample-5"
+    },
+    {
+        component: CalendarComponent,
+        path: "calendar"
+    },
+    {
+        component: CarouselComponent,
+        path: "carousel"
+    },
+    {
+        component: CarouselDetailsViewComponent,
+        path: "details/:index"
+    },
+    {
+        component: CarouselSample1Component,
+        path: "carousel-sample-1"
+    },
+    {
+        component: CarouselSample2Component,
+        path: "carousel-sample-2"
+    },
+    {
+        component: CarouselSample3Component,
+        path: "carousel-sample-3"
+    },
+    {
+        component: CarouselSample4Component,
+        path: "carousel-sample-4"
+    },
+    {
+        component: CheckboxSample1Component,
+        path: "checkbox-sample-1"
+    },
+    {
+        component: CheckboxSample2Component,
+        path: "checkbox-sample-2"
+    },
+    {
+        component: CircularProgressbarComponent,
+        path: "circular-progressbar"
+    },
+    {
         component: CsvExportComponent,
         path: "export-csv"
     },
@@ -227,42 +227,42 @@ export const appRoutes: Routes = [
         path: "export-csv-sample-1"
     },
     {
-    component: DatepickerSample1Component,
-    path: "datepicker-sample-1"
-  },
-  {
-    component: DatepickerSample2Component,
-    path: "datepicker-sample-2"
-  },
-  {
-    component: DatepickerSample3Component,
-    path: "datepicker-sample-3"
-  },
-  {
-    component: DatepickerSample4Component,
-    path: "datepicker-sample-4"
-  },
-  {
-    component: DatepickerSample5Component,
-    path: "datepicker-sample-5"
-  },
-  {
-    component: DialogComponent,
-    path: "dialog"
-  },
-  {
-    component: DialogSample1Component,
-    path: "dialog-sample-1"
-  },
-  {
-    component: DialogSample2Component,
-    path: "dialog-sample-2"
-  },
-  {
-    component: DialogSample3Component,
-    path: "dialog-sample-3"
-  },
-  {
+        component: DatepickerSample1Component,
+        path: "datepicker-sample-1"
+    },
+    {
+        component: DatepickerSample2Component,
+        path: "datepicker-sample-2"
+    },
+    {
+        component: DatepickerSample3Component,
+        path: "datepicker-sample-3"
+    },
+    {
+        component: DatepickerSample4Component,
+        path: "datepicker-sample-4"
+    },
+    {
+        component: DatepickerSample5Component,
+        path: "datepicker-sample-5"
+    },
+    {
+        component: DialogComponent,
+        path: "dialog"
+    },
+    {
+        component: DialogSample1Component,
+        path: "dialog-sample-1"
+    },
+    {
+        component: DialogSample2Component,
+        path: "dialog-sample-2"
+    },
+    {
+        component: DialogSample3Component,
+        path: "dialog-sample-3"
+    },
+    {
         component: ExcelExportComponent,
         path: "export-excel"
     },
@@ -271,234 +271,234 @@ export const appRoutes: Routes = [
         path: "export-excel-sample-1"
     },
     {
-    component: LayoutComponent,
-    path: "layout"
-  },
-  {
-    component: LinearProgressbarComponent,
-    path: "linear-progressbar"
-  },
-  {
-    component: LinearProgressbarSample1Component,
-    path: "linear-progressbar-sample-1"
-  },
-  {
-    component: LinearProgressbarSample2Component,
-    path: "linear-progressbar-sample-2"
-  },
-  {
-    component: ListComponent,
-    path: "list"
-  },
-  {
-    component: ListSample1Component,
-    path: "list-sample-1"
-  },
-  {
-    component: ListSample2Component,
-    path: "list-sample-2"
-  },
-  {
-    component: ListSample3Component,
-    path: "list-sample-3"
-  },
-  {
-    component: ListSample4Component,
-    path: "list-sample-4"
-  },
-  {
-    component: ListSample5Component,
-    path: "list-sample-5"
-  },
-  {
-    component: NavdrawerComponent,
-    path: "navigation-drawer"
-  },
-  {
-    component: NavDrawerSimpleComponent,
-    path: "navigation-drawer-simple"
-  },
-  {
-    component: NavDrawerPinComponent,
-    path: "navigation-drawer-pin"
-  },
-  {
-    component: NavDrawerMiniComponent,
-    path: "navigation-drawer-mini"
-  },
-  {
-    component: GridComponent,
-    path: "grid"
-  },
-  {
+        component: LayoutComponent,
+        path: "layout"
+    },
+    {
+        component: LinearProgressbarComponent,
+        path: "linear-progressbar"
+    },
+    {
+        component: LinearProgressbarSample1Component,
+        path: "linear-progressbar-sample-1"
+    },
+    {
+        component: LinearProgressbarSample2Component,
+        path: "linear-progressbar-sample-2"
+    },
+    {
+        component: ListComponent,
+        path: "list"
+    },
+    {
+        component: ListSample1Component,
+        path: "list-sample-1"
+    },
+    {
+        component: ListSample2Component,
+        path: "list-sample-2"
+    },
+    {
+        component: ListSample3Component,
+        path: "list-sample-3"
+    },
+    {
+        component: ListSample4Component,
+        path: "list-sample-4"
+    },
+    {
+        component: ListSample5Component,
+        path: "list-sample-5"
+    },
+    {
+        component: NavdrawerComponent,
+        path: "navigation-drawer"
+    },
+    {
+        component: NavDrawerSimpleComponent,
+        path: "navigation-drawer-simple"
+    },
+    {
+        component: NavDrawerPinComponent,
+        path: "navigation-drawer-pin"
+    },
+    {
+        component: NavDrawerMiniComponent,
+        path: "navigation-drawer-mini"
+    },
+    {
+        component: GridComponent,
+        path: "grid"
+    },
+    {
         component: GridSample3Component,
         path: "grid-summary"
     },
     {
-    component: SnackbarSample1Component,
-    path: "snackbar-sample-1"
-  },
-  {
-    component: SnackbarSample2Component,
-    path: "snackbar-sample-2"
-  },
-  {
-    component: SnackbarSample3Component,
-    path: "snackbar-sample-3"
-  },
-  {
-    component: SnackbarSample4Component,
-    path: "snackbar-sample-4"
-  },
-  {
-    component: SwitchSample1Component,
-    path: "switch-sample-1"
-  },
-  {
-    component: SwitchSample2Component,
-    path: "switch-sample-2"
-  },
-  {
-    component: RadioSample1Component,
-    path: "radio-sample-1"
-  },
-  {
-    component: RadioSample2Component,
-    path: "radio-sample-2"
-  },
-  {
-    component: ToastSample1Component,
-    path: "toast-sample-1"
-  },
-  {
-    component: ToastSample2Component,
-    path: "toast-sample-2"
-  },
-  {
-    component: ToastSample3Component,
-    path: "toast-sample-3"
-  },
-  {
-    component: ToastSample4Component,
-    path: "toast-sample-4"
-  },
-  {
-    component: ToastSample5Component,
-    path: "toast-sample-5"
-  },
-  {
-    component: SliderSample1Component,
-    path: "slider-sample-1"
-  },
-  {
-    component: SliderSample2Component,
-    path: "slider-sample-2"
-  },
-  {
-    component: SliderSample3Component,
-    path: "slider-sample-3"
-  },
-  {
-    component: SliderSample4Component,
-    path: "slider-sample-4"
-  },
-  {
-    component: SliderSample5Component,
-    path: "slider-sample-5"
-  },
-  {
-    component: TabbarComponent,
-    path: "tabbar"
-  },
-  {
-    component: TabbarSample1Component,
-    path: "tabbar-sample-1"
-  },
-  {
-    component: TabbarSample2Component,
-    path: "tabbar-sample-2"
-  },
-  {
-    component: TimePickerSample1Component,
-    path: "timepicker-sample-1"
-  },
-  {
-    component: TimePickerSample2Component,
-    path: "timepicker-sample-2"
-  },
-  {
-    component: TimePickerSample3Component,
-    path: "timepicker-sample-3"
-  },
-  {
-    component: TimePickerSample4Component,
-    path: "timepicker-sample-4"
-  },
-  {
-    component: NavbarComponent,
-    path: "navbar"
-  },
-  {
-    component: CardSample1Component,
-    path: "card-sample-1"
-  },
-  {
-    component: CardSample2Component,
-    path: "card-sample-2"
-  },
-  {
-    component: CardSample3Component,
-    path: "card-sample-3"
-  },
-  {
-    component: IconSample1Component,
-    path: "icon-sample-1"
-  },
-  {
-    component: ButtonsSample1Component,
-    path: "buttons-sample-1"
-  },
-  {
-    component: ButtonsSample2Component,
-    path: "buttons-sample-2"
-  },
-  {
-    component: ButtonsSample3Component,
-    path: "buttons-sample-3"
-  },
-  {
-    component: ButtonsSample4Component,
-    path: "buttons-sample-4"
-  },
-  {
-    component: ButtonsSample5Component,
-    path: "buttons-sample-5"
-  },
-  {
-    component: ButtonsSample6Component,
-    path: "buttons-sample-6"
-  },
-  {
-    component: ButtonsSample7Component,
-    path: "buttons-sample-7"
-  },
-  {
-    component: ToggleComponent,
-    path: "toggle"
-  },
-  {
-    component: ToggleSample1Component,
-    path: "toggle-sample-1"
-  },
-  {
-    component: ToggleSample2Component,
-    path: "toggle-sample-2"
-  },
-  {
-    component: ToggleSample3Component,
-    path: "toggle-sample-3"
-  },
-  {
+        component: SnackbarSample1Component,
+        path: "snackbar-sample-1"
+    },
+    {
+        component: SnackbarSample2Component,
+        path: "snackbar-sample-2"
+    },
+    {
+        component: SnackbarSample3Component,
+        path: "snackbar-sample-3"
+    },
+    {
+        component: SnackbarSample4Component,
+        path: "snackbar-sample-4"
+    },
+    {
+        component: SwitchSample1Component,
+        path: "switch-sample-1"
+    },
+    {
+        component: SwitchSample2Component,
+        path: "switch-sample-2"
+    },
+    {
+        component: RadioSample1Component,
+        path: "radio-sample-1"
+    },
+    {
+        component: RadioSample2Component,
+        path: "radio-sample-2"
+    },
+    {
+        component: ToastSample1Component,
+        path: "toast-sample-1"
+    },
+    {
+        component: ToastSample2Component,
+        path: "toast-sample-2"
+    },
+    {
+        component: ToastSample3Component,
+        path: "toast-sample-3"
+    },
+    {
+        component: ToastSample4Component,
+        path: "toast-sample-4"
+    },
+    {
+        component: ToastSample5Component,
+        path: "toast-sample-5"
+    },
+    {
+        component: SliderSample1Component,
+        path: "slider-sample-1"
+    },
+    {
+        component: SliderSample2Component,
+        path: "slider-sample-2"
+    },
+    {
+        component: SliderSample3Component,
+        path: "slider-sample-3"
+    },
+    {
+        component: SliderSample4Component,
+        path: "slider-sample-4"
+    },
+    {
+        component: SliderSample5Component,
+        path: "slider-sample-5"
+    },
+    {
+        component: TabbarComponent,
+        path: "tabbar"
+    },
+    {
+        component: TabbarSample1Component,
+        path: "tabbar-sample-1"
+    },
+    {
+        component: TabbarSample2Component,
+        path: "tabbar-sample-2"
+    },
+    {
+        component: TimePickerSample1Component,
+        path: "timepicker-sample-1"
+    },
+    {
+        component: TimePickerSample2Component,
+        path: "timepicker-sample-2"
+    },
+    {
+        component: TimePickerSample3Component,
+        path: "timepicker-sample-3"
+    },
+    {
+        component: TimePickerSample4Component,
+        path: "timepicker-sample-4"
+    },
+    {
+        component: NavbarComponent,
+        path: "navbar"
+    },
+    {
+        component: CardSample1Component,
+        path: "card-sample-1"
+    },
+    {
+        component: CardSample2Component,
+        path: "card-sample-2"
+    },
+    {
+        component: CardSample3Component,
+        path: "card-sample-3"
+    },
+    {
+        component: IconSample1Component,
+        path: "icon-sample-1"
+    },
+    {
+        component: ButtonsSample1Component,
+        path: "buttons-sample-1"
+    },
+    {
+        component: ButtonsSample2Component,
+        path: "buttons-sample-2"
+    },
+    {
+        component: ButtonsSample3Component,
+        path: "buttons-sample-3"
+    },
+    {
+        component: ButtonsSample4Component,
+        path: "buttons-sample-4"
+    },
+    {
+        component: ButtonsSample5Component,
+        path: "buttons-sample-5"
+    },
+    {
+        component: ButtonsSample6Component,
+        path: "buttons-sample-6"
+    },
+    {
+        component: ButtonsSample7Component,
+        path: "buttons-sample-7"
+    },
+    {
+        component: ToggleComponent,
+        path: "toggle"
+    },
+    {
+        component: ToggleSample1Component,
+        path: "toggle-sample-1"
+    },
+    {
+        component: ToggleSample2Component,
+        path: "toggle-sample-2"
+    },
+    {
+        component: ToggleSample3Component,
+        path: "toggle-sample-3"
+    },
+    {
         component: FilteringSampleComponent,
         path: "grid-filtering-sample"
     },
@@ -507,68 +507,68 @@ export const appRoutes: Routes = [
         path: "grid-paging-sample"
     },
     {
-    component: RippleSample1Component,
-    path: "ripple-sample-1"
-  },
-  {
-    component: RippleSample2Component,
-    path: "ripple-sample-2"
-  },
-  {
-    component: RippleSample3Component,
-    path: "ripple-sample-3"
-  },
-  {
-    component: RippleSample4Component,
-    path: "ripple-sample-4"
-  },
-  {
-    component: RippleSample5Component,
-    path: "ripple-sample-5"
-  },
-  {
-    component: RippleSample6Component,
-    path: "ripple-sample-6"
-  },
-  {
-    component: IgxForComponent,
-    path: "igx-for-sample-1"
-  },
-  {
-    component: FinancialSampleComponent,
-    path: "grid-sample-2"
-  },
-  {
-    component: GridSelectionSampleComponent,
-    path: "grid-selection"
-  },
-  {
-    component: NavbarSample1Component,
-    path: "navbar-sample-1"
-  },
-  {
-    component: ButtonGroupSample1Component,
-    path: "button-group-sample-1"
-  },
-  {
-    component: ButtonGroupSample2Component,
-    path: "button-group-sample-2"
-  },
-  {
-    component: ButtonGroupSample3Component,
-    path: "button-group-sample-3"
-  },
-  {
-    component: MaskSample1Component,
-    path: "mask-sample-1"
-  },
-  {
-    component: MaskSample2Component,
-    path: "mask-sample-2"
-  },
-  {
-    component: MaskSample3Component,
-    path: "mask-sample-3"
+        component: RippleSample1Component,
+        path: "ripple-sample-1"
+    },
+    {
+        component: RippleSample2Component,
+        path: "ripple-sample-2"
+    },
+    {
+        component: RippleSample3Component,
+        path: "ripple-sample-3"
+    },
+    {
+        component: RippleSample4Component,
+        path: "ripple-sample-4"
+    },
+    {
+        component: RippleSample5Component,
+        path: "ripple-sample-5"
+    },
+    {
+        component: RippleSample6Component,
+        path: "ripple-sample-6"
+    },
+    {
+        component: IgxForComponent,
+        path: "igx-for-sample-1"
+    },
+    {
+        component: FinancialSampleComponent,
+        path: "grid-sample-2"
+    },
+    {
+        component: GridSelectionSampleComponent,
+        path: "grid-selection"
+    },
+    {
+        component: NavbarSample1Component,
+        path: "navbar-sample-1"
+    },
+    {
+        component: ButtonGroupSample1Component,
+        path: "button-group-sample-1"
+    },
+    {
+        component: ButtonGroupSample2Component,
+        path: "button-group-sample-2"
+    },
+    {
+        component: ButtonGroupSample3Component,
+        path: "button-group-sample-3"
+    },
+    {
+        component: MaskSample1Component,
+        path: "mask-sample-1"
+    },
+    {
+        component: MaskSample2Component,
+        path: "mask-sample-2"
+    },
+    {
+        component: MaskSample3Component,
+        path: "mask-sample-3"
     },
     {
         component: InputGroupSample1Component,
@@ -609,11 +609,11 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartHighFrequencyComponent,
         path: "category-chart-high-frequency-sample"
-  }
+    }
 ];
 
 @NgModule({
-  exports: [RouterModule],
-  imports: [RouterModule.forRoot(appRoutes)]
+    exports: [RouterModule],
+    imports: [RouterModule.forRoot(appRoutes)]
 })
 export class AppRoutingModule { }
