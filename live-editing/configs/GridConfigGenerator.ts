@@ -72,7 +72,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: FilteringSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-filtering-sample/employeesData.ts"],
+            additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [ IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
                 ngDeclarations: [FilteringSampleComponent],
