@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
 import { DATA } from "./nwindData";
