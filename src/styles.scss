@@ -3,6 +3,10 @@
 @include igx-core();
 @include igx-theme($default-palette);
 
+html, body {
+    height: 100%;
+}
+
 .sample-wrapper {
     width: inherit;
     position: relative;
