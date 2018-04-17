@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ViewChild } from "@angular/core";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-category-chart-overview-sample",
     styleUrls: ["./category-chart-overview-sample.component.scss"],
     templateUrl: "./category-chart-overview-sample.component.html"
