@@ -25,6 +25,7 @@ import { SliderConfigGenerator } from "./configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "./configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "./configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "./configs/TabBarConfigGenerator";
+import { TabsConfigGenerator } from "./configs/TabsConfigGenerator";
 import { TimePickerConfigGenerator } from "./configs/TimePickerConfigGenerator";
 import { ToastConfigGenerator } from "./configs/ToastConfigGenerator";
 import { ToggleConfigGenerator } from "./configs/ToggleConfigGenerator";
@@ -58,7 +59,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
-    TabBarConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
+    TabBarConfigGenerator, TabsConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
 
 export class SampleAssetsGenerator {
     private tsImportsService: TsImportsService;
