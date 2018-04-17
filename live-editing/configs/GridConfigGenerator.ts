@@ -4,6 +4,8 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 import { FinancialSampleComponent } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
+import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
+import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import { HttpClientModule } from "@angular/common/http";
 import {
     IgxAvatarModule,
@@ -62,6 +64,32 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridSample3Component],
                 ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: FilteringSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-filtering-sample/employeesData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
+                ngDeclarations: [FilteringSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxInputGroupModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: PagingSampleComponent,
+            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, PagingSampleComponent, DataService],
+                ngDeclarations: [PagingSampleComponent],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngProviders: [DataService]
             })
         }));
 
