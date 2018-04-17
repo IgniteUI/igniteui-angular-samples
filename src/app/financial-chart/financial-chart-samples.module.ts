@@ -14,7 +14,7 @@ import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.c
 @NgModule({
     declarations: [
         FinancialChartOverviewComponent,
-        FinancialChartMultipleDataComponent, 
+        FinancialChartMultipleDataComponent,
         FinancialChartCustomTooltipsComponent,
         FinancialChartPerformanceComponent,
         FinancialChartTitlesComponent,
