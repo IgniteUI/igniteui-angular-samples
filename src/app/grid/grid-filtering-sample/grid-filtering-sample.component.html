@@ -1,0 +1,25 @@
+<div class="grid__wrapper">
+  <div class="sample__header">
+    <igx-input-group>
+        <input class="gridSample__filter" igxInput type="text" placeholder="Filter by country" (input)="filter($event.target.value)">
+    </igx-input-group>
+</div>
+  
+  <igx-grid #grid1 [data]="data" [height]="'450px'" [autoGenerate]='false'>
+      <igx-column [field]="'FirstName'" header="First Name" width="150px" [dataType]="'string'" filterable="true"></igx-column>
+      <igx-column [field]="'LastName'" header="Last Name" width="150px" [dataType]="'string'" filterable="true"></igx-column>        
+      <igx-column [field]="'RegistererDate'" header="Subscription date" width="200px" [dataType]="'date'" filterable="true"></igx-column>
+      <igx-column [field]="'Country'" width="150px" [dataType]="'string'" filterable="true"></igx-column>
+      <igx-column [field]="'Age'" width="120px" [dataType]="'number'" filterable="true"></igx-column>
+      <igx-column [field]="'IsActive'" width="150px" header="Subscription" [dataType]="'boolean'" filterable="true">
+        <ng-template igxCell let-cell="cell">
+          <div class="cell__inner_2">
+              <span>
+                  {{ cell.value ? 'active' : 'expired' }}
+                </span>
+          </div>
+      </ng-template>
+    </igx-column>
+  </igx-grid>
+  <br/>
+</div>

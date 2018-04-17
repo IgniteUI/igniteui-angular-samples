@@ -96,6 +96,8 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
@@ -228,6 +230,8 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         ButtonsSample5Component,
         ButtonsSample6Component,
         ButtonsSample7Component,
+        FilteringSampleComponent,
+        PagingSampleComponent,
         SwitchSample1Component,
         SwitchSample2Component,
         RadioSample1Component,
