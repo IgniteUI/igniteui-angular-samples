@@ -54,6 +54,11 @@ import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
+import {
+    FinancialChartPerformanceComponent
+} from "./financial-chart/performance/financial-chart-performance.component";
+import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -128,10 +133,6 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-
-import { FinancialChartPerformanceComponent } from "./financial-chart/samples/financial-chart-performance.component";
-import { FinancialChartTitlesComponent } from "./financial-chart/samples/financial-chart-titles.component";
-import { FinancialChartPanesComponent } from "./financial-chart/samples/financial-chart-panes.component";
 
 export const appRoutes: Routes = [
     {

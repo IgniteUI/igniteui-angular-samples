@@ -3,11 +3,11 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 
-export class StockData extends Array<object> {
+export class StockData extends Array<any> {
     // specify title of stock including stock symbol
-    title: string;
+    public title: string;
 
-    public constructor(items?: Array<object>) {
+    public constructor(items?: any[]) {
         super(...items);
     }
 }

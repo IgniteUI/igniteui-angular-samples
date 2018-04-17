@@ -3,11 +3,11 @@ import { ModuleWithProviders, NgModule  } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
 import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
+import { FinancialChartPerformanceComponent } from "./performance/financial-chart-performance.component";
 import { FinancialDataService } from "./services/financial-data.service";
-import { FinancialChartPerformanceComponent }   from "./samples/financial-chart-performance.component";
-import { FinancialChartTitlesComponent } from "./samples/financial-chart-titles.component";
-import { FinancialChartPanesComponent } from "./samples/financial-chart-panes.component";
 import { StockDataService } from "./services/stock-data.service";
+import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
 
 @NgModule({
     declarations: [
@@ -16,7 +16,7 @@ import { StockDataService } from "./services/stock-data.service";
         FinancialChartTitlesComponent,
         FinancialChartPanesComponent
     ],
-    exports: [ 
+    exports: [
           FinancialChartOverviewComponent,
           FinancialChartPerformanceComponent,
           FinancialChartTitlesComponent,
