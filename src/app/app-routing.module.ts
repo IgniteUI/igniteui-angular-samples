@@ -53,7 +53,18 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import {
+    FinancialChartCustomTooltipsComponent
+} from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
+import {
+    FinancialChartMultipleDataComponent
+} from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
+import {
+    FinancialChartPerformanceComponent
+} from "./financial-chart/performance/financial-chart-performance.component";
+import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -619,6 +630,26 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartHighFrequencyComponent,
         path: "category-chart-high-frequency-sample"
+    },
+    {
+        component: FinancialChartPerformanceComponent,
+        path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartTitlesComponent,
+        path: "financial-chart-titles"
+    },
+    {
+        component: FinancialChartPanesComponent,
+        path: "financial-chart-panes"
+    },
+    {
+        component: FinancialChartMultipleDataComponent,
+        path: "financial-chart-multiple-data"
+    },
+    {
+        component: FinancialChartCustomTooltipsComponent,
+        path: "financial-chart-custom-tooltips"
     }
 ];
 
