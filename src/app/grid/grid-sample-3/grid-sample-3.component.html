@@ -30,7 +30,7 @@
       </igx-column>
       <igx-column field="OrderDate" width="200px" [dataType]="'date'" [sortable]="true" [hasSummary]="true">
         <ng-template igxCell let-cell="cell" let-val let-row>
-          {{val | date: 'dd/MM/yyyy'}}
+          {{val}}
         </ng-template>
       </igx-column>
     </igx-grid>

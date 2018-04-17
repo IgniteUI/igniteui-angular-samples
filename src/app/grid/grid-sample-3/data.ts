@@ -2,7 +2,7 @@ export const LOCAL_DATA = [
     {
     CategoryID: 1,
     Discontinued: false,
-    OrderDate: new Date("2012-02-12"),
+    OrderDate: "07/25/2012",
     ProductID: 1,
     ProductName: "Chai",
     QuantityPerUnit: "10 boxes x 20 bags",
@@ -14,7 +14,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 1,
     Discontinued: false,
-    OrderDate: new Date("2003-03-17"),
+    OrderDate: "03/17/2003",
     ProductID: 2,
     ProductName: "Chang",
     QuantityPerUnit: "24 - 12 oz bottles",
@@ -26,7 +26,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 2,
     Discontinued: false,
-    OrderDate: new Date("2006-03-17"),
+    OrderDate: "03/17/2006",
     ProductID: 3,
     ProductName: "Aniseed Syrup",
     QuantityPerUnit: "12 - 550 ml bottles",
@@ -38,7 +38,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 2,
     Discontinued: false,
-    OrderDate: new Date("2020-03-17"),
+    OrderDate: "07/17/2020",
     ProductID: 4,
     ProductName: "Chef Antons Cajun Seasoning",
     QuantityPerUnit: "48 - 6 oz jars",
@@ -50,7 +50,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 2,
     Discontinued: true,
-    OrderDate: new Date("2011-11-11"),
+    OrderDate: "11/11/2011",
     ProductID: 5,
     ProductName: "Chef Antons Gumbo Mix",
     QuantityPerUnit: "36 boxes",
@@ -62,7 +62,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 2,
     Discontinued: false,
-    OrderDate: new Date("2017-12-17"),
+    OrderDate: "12/17/2007",
     ProductID: 6,
     ProductName: "Grandmas Boysenberry Spread",
     QuantityPerUnit: "12 - 8 oz jars",
@@ -74,7 +74,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 7,
     Discontinued: false,
-    OrderDate: new Date("2016-07-17"),
+    OrderDate: "12/17/2016",
     ProductID: 7,
     ProductName: "Uncle Bobs Organic Dried Pears",
     QuantityPerUnit: "12 - 1 lb pkgs.",
@@ -86,7 +86,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 2,
     Discontinued: false,
-    OrderDate: new Date("2025-01-17"),
+    OrderDate: "01/17/2025",
     ProductID: 8,
     ProductName: "Northwoods Cranberry Sauce",
     QuantityPerUnit: "12 - 12 oz jars",
@@ -98,7 +98,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 6,
     Discontinued: true,
-    OrderDate: new Date("2010-02-17"),
+    OrderDate: "02/17/2010",
     ProductID: 9,
     ProductName: "Chips",
     QuantityPerUnit: "18 - 500 g pkgs.",
@@ -110,7 +110,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 8,
     Discontinued: false,
-    OrderDate: new Date("2008-05-17"),
+    OrderDate: "05/27/2008",
     ProductID: 10,
     ProductName: "Dulce de Leche",
     QuantityPerUnit: "12 - 200 ml jars",
@@ -122,7 +122,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 4,
     Discontinued: false,
-    OrderDate: new Date("2009-01-17"),
+    OrderDate: "01/01/2009",
     ProductID: 11,
     ProductName: "Queso Cabrales",
     QuantityPerUnit: "1 kg pkg.",
@@ -134,7 +134,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 4,
     Discontinued: false,
-    OrderDate: new Date("2015-11-17"),
+    OrderDate: "11/17/2012",
     ProductID: 12,
     ProductName: "Queso Manchego La Pastora",
     QuantityPerUnit: "10 - 500 g pkgs.",
@@ -146,7 +146,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 8,
     Discontinued: false,
-    OrderDate: new Date("2025-03-17"),
+    OrderDate: "05/19/2013",
     ProductID: 13,
     ProductName: "Chocolate",
     QuantityPerUnit: "2 kg box",
@@ -158,7 +158,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 7,
     Discontinued: false,
-    OrderDate: new Date("2019-06-17"),
+    OrderDate: "06/17/2016",
     ProductID: 14,
     ProductName: "Tofu",
     QuantityPerUnit: "40 - 100 g pkgs.",
@@ -170,7 +170,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 2,
     Discontinued: false,
-    OrderDate: new Date("1995-03-17"),
+    OrderDate: "12/12/2012",
     ProductID: 15,
     ProductName: "Yogurt",
     QuantityPerUnit: "24 - 250 ml bottles",
@@ -182,7 +182,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 3,
     Discontinued: false,
-    OrderDate: new Date("2018-03-28"),
+    OrderDate: "07/17/2007",
     ProductID: 16,
     ProductName: "Pavlova",
     QuantityPerUnit: "32 - 500 g boxes",
@@ -194,7 +194,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 6,
     Discontinued: true,
-    OrderDate: new Date("2015-08-17"),
+    OrderDate: "11/21/2021",
     ProductID: 17,
     ProductName: "Alice Mutton",
     QuantityPerUnit: "20 - 1 kg tins",
@@ -206,7 +206,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 8,
     Discontinued: false,
-    OrderDate: new Date("2005-09-27"),
+    OrderDate: "10/13/2014",
     ProductID: 18,
     ProductName: "Carnarvon Tigers",
     QuantityPerUnit: "16 kg pkg.",
@@ -218,7 +218,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 3,
     Discontinued: false,
-    OrderDate: new Date("2001-03-17"),
+    OrderDate: "12/15/1995",
     ProductID: 19,
     ProductName: "Teatime Chocolate Biscuits",
     QuantityPerUnit: "",
@@ -230,7 +230,7 @@ export const LOCAL_DATA = [
     }, {
     CategoryID: 3,
     Discontinued: false,
-    OrderDate: new Date("2005-03-17"),
+    OrderDate: "12/17/2001",
     ProductID: 20,
     ProductName: "Sir Rodneys Marmalade",
     QuantityPerUnit: "",
