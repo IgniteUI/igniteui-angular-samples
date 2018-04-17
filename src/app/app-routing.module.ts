@@ -53,6 +53,9 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import { 
+    FinancialChartCustomTooltipsComponent 
+} from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
 import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
@@ -596,6 +599,10 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartMultipleDataComponent,
         path: "financial-chart-multiple-data"
+    },
+    {
+        component: FinancialChartCustomTooltipsComponent,
+        path: "financial-chart-custom-tooltips"
     }
 ];
 
