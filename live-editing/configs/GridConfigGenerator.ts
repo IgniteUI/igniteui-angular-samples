@@ -6,6 +6,7 @@ import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-samp
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
+import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { HttpClientModule } from "@angular/common/http";
 import {
     IgxAvatarModule,
@@ -16,7 +17,8 @@ import {
     IgxInputGroupModule,
     IgxProgressBarModule,
     IgxRippleModule,
-    IgxSwitchModule
+    IgxSwitchModule,
+    IgxInputDirective
 } from "igniteui-angular/main";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
@@ -90,6 +92,21 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridSelectionSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, FinancialSampleComponent, LocalService],
+                ngDeclarations: [FinancialSampleComponent],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngProviders: [LocalService]
             })
         }));
 

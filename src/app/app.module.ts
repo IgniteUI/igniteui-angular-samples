@@ -100,6 +100,7 @@ import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filt
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -247,6 +248,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         AvatarSample3Component,
         IgxForComponent,
         FinancialSampleComponent,
+        GridSelectionSampleComponent,
         LinearProgressbarSample1Component,
         LinearProgressbarSample2Component,
         RippleSample1Component,
