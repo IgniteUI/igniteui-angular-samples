@@ -3,7 +3,7 @@
       <p>Toggle Multiple Selection</p>
       <igx-switch [(ngModel)]="selection"></igx-switch>
     </div>
-      <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="70%" [autoGenerate]='false' [rowSelectable]="selection"
+      <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="90%" [autoGenerate]='false' [rowSelectable]="selection"
         (onSelection)="handleRowSelection($event)">
         <igx-column [field]="'Category'" [width]="'150px'" [filterable]='true'></igx-column>
         <igx-column [field]="'Type'" [width]="'120px'"></igx-column>
