@@ -1,7 +1,7 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, OnInit } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
-import { DATA } from "./employeesData";
+import { DATA } from "./nwindData";
 
 @Component({
     selector: "grid-sample",
@@ -9,16 +9,22 @@ import { DATA } from "./employeesData";
     templateUrl: "grid-filtering-sample.component.html"
 })
 
-export class FilteringSampleComponent {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+export class FilteringSampleComponent implements OnInit {
+    @ViewChild("grid1", { read: IgxGridComponent })
+    public grid1: IgxGridComponent;
     public data: any[];
+
     constructor() {
-        this.data = DATA;
     }
     public ngOnInit(): void {
+        this.data = DATA;
     }
 
     public filter(term) {
-        this.grid1.filter("Country", term, STRING_FILTERS.contains);
-      }
+       this.grid1.filter("ProductName", term, STRING_FILTERS.contains);
+    }
+
+    public formatDate(val: Date) {
+        return new Intl.DateTimeFormat("en-US").format(val);
+    }
 }

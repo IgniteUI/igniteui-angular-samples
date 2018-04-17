@@ -17,36 +17,4 @@ export class PagingSampleComponent {
     public ngOnInit(): void {
         this.data = athletesData;
     }
-
-    public isTop3(cell): boolean {
-        const top = cell.value > 0 && cell.value < 4;
-        if (top) {
-          cell.row.nativeElement.classList.add("top3");
-        } else {
-          cell.row.nativeElement.classList.remove("top3");
-        }
-        return top;
-      }
-
-    public getIconType(cell) {
-        switch (cell.row.rowData.Position) {
-            case "up":
-            return "arrow_upward";
-            case "current":
-            return "arrow_forward";
-            case "down":
-            return "arrow_downward";
-        }
-    }
-
-    public getBadgeType(cell) {
-        switch (cell.row.rowData.Position) {
-            case "up":
-            return "success";
-            case "current":
-            return "warning";
-            case "down":
-            return "error";
-        }
-    }
 }
