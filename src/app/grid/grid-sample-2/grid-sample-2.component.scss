@@ -20,6 +20,15 @@
   margin: 0 auto;
 }
 
+.currency-badge-container {
+    width: 80px; 
+    float: right;
+}
+
+.badge-left {
+    float: left;
+}
+
 @media (max-width: 1000px) {
   .grid__wrapper {
     width: 98% !important;
