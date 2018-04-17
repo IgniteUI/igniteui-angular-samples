@@ -24,10 +24,18 @@ const COMMON_PACKAGE_DEPENDENCIES = [
 ];
 
 const DEFAULT_DEPENDENCIES = [
+    "@angular/animations",
     "@angular/forms",
+    "@angular/http",
+    "@angular/router",
+    "@types/hammerjs",
+    "classlist.js",
     "igniteui-angular",
     "igniteui-angular-charts",
+    "hammerjs",
+    "web-animations-js",
     "jszip",
+    "intl",
     "tslib"
 ];
 
