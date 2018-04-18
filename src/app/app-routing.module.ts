@@ -54,6 +54,9 @@ import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import {
+    FinancialChartCustomIndicatorsComponent
+} from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
+import {
     FinancialChartCustomTooltipsComponent
 } from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
 import {
@@ -640,6 +643,10 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartCustomTooltipsComponent,
         path: "financial-chart-custom-tooltips"
+    },
+    {
+        component: FinancialChartCustomIndicatorsComponent,
+        path: "financial-chart-custom-indicators"
     }
 ];
 
