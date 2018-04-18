@@ -5,20 +5,30 @@ import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financi
 import { FinancialChartCustomTooltipsComponent } from "./custom-tooltips/financial-chart-custom-tooltips.component";
 import { FinancialChartMultipleDataComponent } from "./multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
+import { FinancialChartPerformanceComponent } from "./performance/financial-chart-performance.component";
 import { FinancialDataService } from "./services/financial-data.service";
+import { StockDataService } from "./services/stock-data.service";
+import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
 
 @NgModule({
     declarations: [
-        FinancialChartOverviewComponent, FinancialChartMultipleDataComponent, FinancialChartCustomTooltipsComponent
+        FinancialChartOverviewComponent,
+        FinancialChartMultipleDataComponent,
+        FinancialChartCustomTooltipsComponent,
+        FinancialChartPerformanceComponent,
+        FinancialChartTitlesComponent,
+        FinancialChartPanesComponent
     ],
-    exports: [ FinancialChartOverviewComponent ],
+    exports: [
+    ],
     imports: [ CommonModule, FormsModule, IgxFinancialChartModule ]
 })
 export class FinancialChartSamplesModule {
     public static forRoot(): ModuleWithProviders {
         return {
             ngModule: FinancialChartSamplesModule,
-            providers: [ FinancialDataService ]
+            providers: [ StockDataService, FinancialDataService ]
         };
     }
 }
