@@ -1,4 +1,4 @@
-/* tslint:disable:no-trailing-whitespace max-line-length */
+/* tslint:disable:max-line-length */
 
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
@@ -20,8 +20,8 @@ export class StockDataService {
     public GetMultipleStocks(): any[] {
         return [
              this.GetStockTSLA(),
-             this.GetStockMSFT(), 
-             this.GetStockTGT() 
+             this.GetStockMSFT(),
+             this.GetStockTGT()
         ];
     }
 
@@ -1286,10 +1286,10 @@ export class StockDataService {
             { time: new Date(2018, 0, 29), open: 1409.18, high: 1431.39, low: 1400.44, close: 1417.68, volume: 5701898 },
             { time: new Date(2018, 0, 30), open: 1403.17, high: 1439.25, low: 1392.00, close: 1437.82, volume: 5871942 },
             { time: new Date(2018, 0, 31), open: 1451.30, high: 1472.58, low: 1450.04, close: 1450.89, volume: 6424693 }
-        ]; 
+        ];
         const stock = new StockData(data);
         stock.title = "Amazon Company (AMZN)";
-        return stock; 
+        return stock;
     }
 
     public GetStockMSFT(): StockData {
@@ -3820,9 +3820,9 @@ export class StockDataService {
             { time: new Date(2018, 0, 29), open: 339.85, high: 350.85, low: 338.28, close: 349.53, volume: 4747149 },
             { time: new Date(2018, 0, 30), open: 345.14, high: 348.27, low: 342.17, close: 345.82, volume: 4717700 },
             { time: new Date(2018, 0, 31), open: 347.51, high: 356.19, low: 345.19, close: 354.31, volume: 6214069 }
-        ]; 
+        ];
         const stock = new StockData(data);
-        stock.title = "Tesla Company (TSLA)"; 
+        stock.title = "Tesla Company (TSLA)";
         return stock;
     }
 
@@ -5088,7 +5088,7 @@ export class StockDataService {
             { time: new Date(2018, 0, 31), open: 75.39, high: 75.75, low: 74.60, close: 75.22, volume: 8706323 }
         ];
         const stock = new StockData(data);
-        stock.title = "Target Corporation (TGT)"; 
+        stock.title = "Target Corporation (TGT)";
         return stock;
     }
 
