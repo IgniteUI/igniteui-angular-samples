@@ -2,6 +2,8 @@ import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule  } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
+import { IgxPercentChangeYAxisDynamicModule
+ } from "igniteui-angular-charts/ES5/igx-percent-change-y-axis-dynamic-module";
 import { FinancialChartAxisTypesComponent } from "./axis-types/financial-chart-axis-types.component";
 import { FinancialChartCustomTooltipsComponent } from "./custom-tooltips/financial-chart-custom-tooltips.component";
 import { FinancialChartHighFrequencyComponent } from "./high-frequency/financial-chart-high-frequency.component";
@@ -28,7 +30,10 @@ import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.c
     ],
     exports: [
     ],
-    imports: [ CommonModule, FormsModule, IgxFinancialChartModule ]
+    imports: [ CommonModule, FormsModule,
+        IgxFinancialChartModule,
+        IgxPercentChangeYAxisDynamicModule
+    ]
 })
 export class FinancialChartSamplesModule {
     public static forRoot(): ModuleWithProviders {

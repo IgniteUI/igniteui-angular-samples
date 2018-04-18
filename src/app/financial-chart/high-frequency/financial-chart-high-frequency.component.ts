@@ -17,41 +17,23 @@ import { IgxFinancialChartComponent } from "igniteui-angular-charts/ES5/igx-fina
     templateUrl: "./financial-chart-high-frequency.component.html"
 })
 export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDestroy {
-    @Input()
-    public scalingRatio: number = 1;
-
     public data: any[];
 
     @ViewChild("chart")
     public chart: IgxFinancialChartComponent;
 
-    @ViewChild("fpsSpan")
-    public fpsSpan: ElementRef;
-
-    private currValue: number = 15;
+    private currValue: number = 150;
     private currIndex: number = 0;
-    private currDate: Date = new Date(2000, 1, 1);
+    private currDate: Date = new Date(2018, 3, 1);
 
-    private _maxPoints: number = 1000;
+    private _maxPoints: number = 250;
 
-    private _refreshMilliseconds: number = 10;
+    private _refreshMilliseconds: number = 100;
     private _interval: number = -1;
     private _frames: number = 0;
     private _time: Date;
 
     constructor(private _zone: NgZone) {
-        this.data = this.generateData();
-    }
-
-    public onOptimizeScalingChanged(checked: boolean) {
-        if (checked) {
-            this.scalingRatio = 1.0;
-        } else {
-            this.scalingRatio = NaN;
-        }
-    }
-
-    public onChangeAmountClicked() {
         this.data = this.generateData();
     }
 
@@ -70,44 +52,21 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
         this.setupInterval();
     }
 
-    public onMaxPointsChanged(val: string) {
-        let num: number = parseInt(val, 10);
-        if (isNaN(num)) {
-            num = 1000;
-        }
-        if (num <= 0) {
-            num = 1000;
-        }
-        if (num > 20000) {
-            num = 20000;
-        }
-        this.maxPoints = num;
-    }
-
     public get maxPoints(): number {
         return this._maxPoints;
-    }
-    @Input()
-    public set maxPoints(v: number) {
-        this._maxPoints = v;
     }
 
     public get refreshMilliseconds(): number {
         return this._refreshMilliseconds;
     }
-    @Input()
-    public set refreshMilliseconds(v: number) {
-        this._refreshMilliseconds = v;
-        this.setupInterval();
-    }
 
     public ngOnDestroy(): void {
-    if (this._interval >= 0) {
-        this._zone.runOutsideAngular(() => {
-        window.clearInterval(this._interval);
-        });
-        this._interval = -1;
-    }
+        if (this._interval >= 0) {
+            this._zone.runOutsideAngular(() => {
+                window.clearInterval(this._interval);
+            });
+            this._interval = -1;
+        }
     }
 
     public ngAfterViewInit(): void {
@@ -118,7 +77,7 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
     private setupInterval(): void {
         if (this._interval >= 0) {
             this._zone.runOutsideAngular(() => {
-            window.clearInterval(this._interval);
+                window.clearInterval(this._interval);
             });
             this._interval = -1;
         }
@@ -143,11 +102,12 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
     }
 
     private getValue(): any {
-        const o = this.currValue;
+        const o = this.currValue + ((Math.random() - 0.5) * 1);
         const h = this.currValue + (Math.random() * 2);
         const l = this.currValue - (Math.random() * 2);
-        const c = this.currValue + ((Math.random() - 0.5) * 5);
-        const newVal = { Date: this.currDate, Open: o, High: h, Low: l, Close: c };
+        const c = this.currValue + ((Math.random() - 0.5) * 2);
+        const v = this.currValue*10000 + ((Math.random() - 0.5) * 50000);
+        const newVal = { Date: this.currDate, Open: o, High: h, Low: l, Close: c, Volume: v };
         return newVal;
     }
 
@@ -170,8 +130,6 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
             const fps = this._frames / (elapsed / 1000.0);
             this._time = currTime;
             this._frames = 0;
-
-            this.fpsSpan.nativeElement.textContent = "FPS: " + Math.round(fps).toString();
         }
     }
 }
