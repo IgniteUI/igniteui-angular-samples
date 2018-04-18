@@ -1,0 +1,101 @@
+<div class="grid__wrapper">
+
+    <div class="sample__header">
+        <div class="switch-sample">
+            <h2 class="switch-sample__title">Business propeller</h2>
+        </div>
+    </div>
+
+    <igx-grid #grid1 [data]="localData" height="505" width="100%" rowSelectable="true">
+        <igx-column field="id" header="Customer Number" filterable="true" width="180" pinned="true">
+        </igx-column>
+
+        <igx-column field="avatar" header="Photo" width="80" pinned="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner">
+                    <igx-avatar [src]="cell.row.rowData.avatar" roundShape="true" size="small"></igx-avatar>
+                </div>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field="name" header="Name" sortable="true" filterable="true" width="200" pinned="true">
+        </igx-column>
+
+        <igx-column field="position" header="Position" filterable="true" width="200">
+        </igx-column>
+
+        <igx-column field="company" header="Company" sortable="true" filterable="true" width="130">
+        </igx-column>
+
+        <igx-column field="email" header="Email" width="240">
+        </igx-column>
+
+        <igx-column field="work_phone" header="Work Phone" width="160">
+        </igx-column>
+
+        <igx-column field="mobile_phone" header="Mobile Phone" width="160">
+        </igx-column>
+
+        <igx-column field="fax" header="Fax" width="160">
+        </igx-column>
+
+        <igx-column field="tags" filterable="true" header="Tags" filterable="true" width="160">
+        </igx-column>
+
+        <igx-column field="street" header="Street" width="160">
+        </igx-column>
+
+        <igx-column field="city" header="City" filterable="true" width="160">
+        </igx-column>
+
+        <igx-column field="post_code" header="Post Code" width="100">
+        </igx-column>
+
+        <igx-column field="state" header="State" filterable="true" width="80">
+        </igx-column>
+
+        <igx-column field="country" header="Country" sortable="true" filterable="true" width="160">
+        </igx-column>
+
+        <igx-column field="created_on" header="Created On" sortable="true" width="150">
+        </igx-column>
+
+        <igx-column field="referred_by" header="Referred By" filterable="true" width="160">
+        </igx-column>
+
+        <igx-column field="birthday" header="Birthday" filterable="true" width="150">
+        </igx-column>
+
+        <igx-column field="last_activity" header="Last Activity" sortable="true" width="150">
+        </igx-column>
+
+        <igx-column field="next_activity" header="Next Activity" sortable="true" width="150">
+        </igx-column>
+
+        <igx-column field="deals_total" header="Total Deals" sortable="true" width="110">
+        </igx-column>
+
+        <igx-column field="deals_won" header="Won Deals" sortable="true" width="110">
+        </igx-column>
+
+        <igx-column field="ratio" header="Ratio" width="150">
+            <ng-template igxCell let-val>
+                <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val"></igx-linear-bar>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field="deals_lost" header="Lost Deals" sortable="true" width="110">
+        </igx-column>
+
+        <igx-column field="deals_pending" header="Pending Deals" sortable="true" width="130">
+        </igx-column>
+
+        <igx-column field="estimated_sales" header="Possible Sales ($)" sortable="true" width="150">
+        </igx-column>
+
+        <igx-column field="actual_sales" header="Actual Sales ($)" sortable="true" width="150">
+        </igx-column>
+    </igx-grid>
+
+
+</div>
