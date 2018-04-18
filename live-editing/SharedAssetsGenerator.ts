@@ -2,31 +2,8 @@ import * as fs from "fs";
 import * as path from "path";
 import { LiveEditingFile } from "./LiveEditingFile";
 import { SharedAssetsFile } from "./SharedAssetsFile";
-import * as Collections from "typescript-collections";
+import { DependencyResolver } from "./DependencyResolver";
 
-const SAMPLES_PACKAGE_DEPENDENCIES = [
-    "@angular/animations",
-    "@angular/common",
-    "@angular/compiler",
-    "@angular/core",
-    "@angular/forms",
-    "@angular/http",
-    "@angular/platform-browser",
-    "@angular/platform-browser-dynamic",
-    "@angular/router",
-    "@types/hammerjs",
-    "classlist.js",
-    "core-js",
-    "hammerjs",
-    "igniteui-angular",
-    "intl",
-    "jszip",
-    "rxjs",
-    "web-animations-js",
-    "zone.js"
-];
-
-const PACKAGES_CONFIG_PATH = path.join(__dirname, "../package.json");
 const INDEX_FILE_PATH = path.join(__dirname, "../src/index.html");
 const POLYPFILLS_FILE_PATH = path.join(__dirname, "../src/polyfills.ts");
 const STYLES_FILE_PATH = path.join(__dirname, "../src/styles.scss");
@@ -54,25 +31,7 @@ export class SharedAssetsGenerator {
         files.push(new LiveEditingFile("app/app.component.scss", fs.readFileSync(APP_COMPONENT_SCSS_PATH, "utf8")));
         files.push(new LiveEditingFile("app/app.component.ts", fs.readFileSync(APP_COMPONENT_TS_PATH, "utf8")));
 
-        let sharedFile = new SharedAssetsFile(JSON.stringify(this.getSamplesPackageDependencies()), files);
+        let sharedFile = new SharedAssetsFile(files);
         fs.writeFileSync(ASSETS_SAMPLES_DIR + "/shared.json", JSON.stringify(sharedFile));
-    }
-
-    private getSamplesPackageDependencies() {
-        let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
-        let packageFileDependencies = packageFile.dependencies;
-        let dependenciesNeeded = new Collections.Set<string>();
-
-        for (let i = 0; i < SAMPLES_PACKAGE_DEPENDENCIES.length; i++) {
-            dependenciesNeeded.add(SAMPLES_PACKAGE_DEPENDENCIES[i]);
-        }
-
-        for (let key in packageFileDependencies) {
-            if (!dependenciesNeeded.contains(key)) {
-                delete packageFileDependencies[key];
-            }
-        }
-        
-        return packageFileDependencies;
     }
 }
