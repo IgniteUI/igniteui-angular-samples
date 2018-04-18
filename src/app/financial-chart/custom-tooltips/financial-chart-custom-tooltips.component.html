@@ -1,0 +1,10 @@
+<ng-template let-series="series" let-item="item" #valueTooltip>
+    <div>
+        <span [style.color]="series.actualBrush">{{series.title}}</span>
+        <span> stock opened on {{item.time | date}} with a value of ${{item.open | number}} and closed with a value of ${{item.close | number}}.</span>
+    </div>
+</ng-template>
+<igx-financial-chart height="100%" width="100%"
+    [tooltipTemplate]="valueTooltip"
+    [dataSource]="data">
+</igx-financial-chart>

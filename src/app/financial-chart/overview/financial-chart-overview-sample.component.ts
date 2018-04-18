@@ -12,6 +12,6 @@ export class FinancialChartOverviewComponent {
     public data: any;
 
     constructor(private dataService: FinancialDataService) {
-        this.data = this.dataService.getData();
+        this.data = this.dataService.getThree();
     }
 }
