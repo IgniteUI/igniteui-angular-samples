@@ -5,11 +5,13 @@ import { ButtonGroupConfigGenerator } from "./configs/ButtonGroupConfigGenerator
 import { CalendarConfigGenerator } from "./configs/CalendarConfigGenerator";
 import { CardConfigGenerator } from "./configs/CardConfigGenerator";
 import { CarouselConfigGenerator } from "./configs/CarouselConfigGenerator";
+import { CategoryChartConfigGenerator } from "./configs/CategoryChartConfigGenerator";
 import { CheckboxConfigGenerator } from "./configs/CheckboxConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./configs/CircularProgressbarConfigGenerator";
 import { DatePickerConfigGenerator } from "./configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
 import { ForConfigGenerator } from "./configs/ForConfigGenerator";
+import { FinancialChartConfigGenerator } from "./configs/FinancialChartConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "./configs/InputGroupConfigGenerator";
@@ -37,6 +39,8 @@ import { LiveEditingFile } from "./LiveEditingFile";
 import { IConfigGenerator } from "./configs/core/IConfigGenerator";
 import { Config } from "./configs/core/Config";
 import { TsImportsService } from "./TsImportsService";
+import { DependencyResolver } from "./DependencyResolver";
+import { SampleDefinitionFile } from "./SampleDefinitionFile";
 
 import { Type } from "@angular/core/src/type";
 import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
@@ -54,8 +58,8 @@ const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
-    CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
-    DialogConfigGenerator, ForConfigGenerator, GridConfigGenerator, IconConfigGenerator,
+    CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
+    DialogConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
@@ -127,8 +131,10 @@ export class SampleAssetsGenerator {
         sampleFiles.push(appModuleFile);
         sampleFiles.push(new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.component.html", this.getAppComponentHtml(componentTsContent)));
 
+        let dependencies = DependencyResolver.resolveSampleDependencies(config.additionalDependencies);
+        let sampleDef = new SampleDefinitionFile(sampleFiles, dependencies);
         fs.writeFileSync(ASSETS_SAMPLES_DIR + this.componentRoutes.getValue(config.component.name) + ".json",
-            JSON.stringify(sampleFiles));
+            JSON.stringify(sampleDef));
     }
 
     private getAppComponentHtml(componentTsContent) {
