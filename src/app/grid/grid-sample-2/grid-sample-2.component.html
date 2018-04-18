@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data | async" [height]="'500px'" width="'100%'" [autoGenerate]='false'>
+    <igx-grid #grid1 [data]="data | async" [height]="'500px'" width="1000px" [autoGenerate]='false'>
         <igx-column [field]="'Category'" [width]="'120px'" [filterable]='true' ></igx-column>
         <igx-column [field]="'Type'" [width]="'150px'"></igx-column>        
         <igx-column [field]="'Open Price'" [width]="'120px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency">
