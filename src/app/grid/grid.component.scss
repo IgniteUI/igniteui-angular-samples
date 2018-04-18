@@ -119,3 +119,7 @@ $progressBar-sample-theme: igx-progress-linear-theme(
     width: rem(960px);
   }
 }
+
+.igx-paginator>* {
+    margin: 0 .3125rem;
+}
