@@ -5,19 +5,26 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class GenerateOhlcPricesService {
 
-    constructor() { }
+    constructor() {
+        this.daysInterval = 1;
+        this.priceStart = 300;
+        this.priceRange = 5;
+        this.volumeRange = 100;
+        this.volumeStart = 10000;
+    }
+
+    public daysInterval: number;
+    public priceStart: number;
+    public priceRange: number;
+    public volumeRange: number;
+    public volumeStart: number;
 
     public GetStockHistoryBetween(dateStart: Date, dateEnd: Date): any {
-        const daysInterval: number = 1;
-        const priceStart: number = 300;
-        const priceRange: number = 5;
-        const volumeRange: number = 100;
-        const volumeStart: number = 10000;
         let time = this.AddDays(dateStart, 0);
-        let v = volumeStart;
-        let o = priceStart;
-        let h = o + (Math.random() * priceRange);
-        let l = o - (Math.random() * priceRange);
+        let v = this.volumeStart;
+        let o = this.priceStart;
+        let h = o + (Math.random() * this.priceRange);
+        let l = o - (Math.random() * this.priceRange);
         let c = l + (Math.random() * (h - l));
 
         const stock = [];
@@ -25,12 +32,12 @@ export class GenerateOhlcPricesService {
         while (time.getTime() < dateEnd.getTime()) {
             stock.push({ date: time, open: o, high: h, low: l, close: c, volume: v });
 
-            o = c + ((Math.random() - 0.5) * priceRange);
-            h = o + (Math.random() * priceRange);
-            l = o - (Math.random() * priceRange);
+            o = c + ((Math.random() - 0.5) * this.priceRange);
+            h = o + (Math.random() * this.priceRange);
+            l = o - (Math.random() * this.priceRange);
             c = l + (Math.random() * (h - l));
-            v = v + ((Math.random() - 0.5) * volumeRange);
-            time = this.AddDays(time, daysInterval);
+            v = v + ((Math.random() - 0.5) * this.volumeRange);
+            time = this.AddDays(time, this.daysInterval);
         }
         // setting data intent for Series Title
         (stock as any).__dataIntents = {
