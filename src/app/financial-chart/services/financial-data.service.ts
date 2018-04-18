@@ -21,6 +21,9 @@ export class FinancialDataService {
     public getMulti(): any[] {
         return [ this.getAmzn(), this.getGoog(), this.getMsft(), this.getTgt(), this.getTsla() ];
     }
+    public getThree(): any[] {
+        return [ this.getAmzn(), this.getMsft(), this.getTsla() ];
+    }
     public getAmzn(): any[] {
         const result: any = [
     { time: new Date(2013, 1, 1), open: 268.93, high: 268.93, low: 262.80, close: 265.00, volume: 6118146 },
