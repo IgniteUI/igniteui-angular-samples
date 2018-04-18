@@ -6,6 +6,7 @@ import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-samp
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
+import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { HttpClientModule } from "@angular/common/http";
@@ -109,6 +110,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [LocalService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: ResizingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-resizing-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, ResizingSampleComponent],
+                ngDeclarations: [ResizingSampleComponent],
+                ngImports: [IgxGridModule.forRoot()],
+                ngProviders: []
             })
         }));
 
