@@ -82,6 +82,7 @@ import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/s
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
@@ -135,6 +136,9 @@ import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
+import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
+import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -439,6 +443,18 @@ export const appRoutes: Routes = [
         path: "tabbar-sample-2"
     },
     {
+        component: TabsSample1Component,
+        path: "tabs-sample-1"
+    },
+    {
+        component: TabsSample2Component,
+        path: "tabs-sample-2"
+    },
+    {
+        component: TabsSample3Component,
+        path: "tabs-sample-3"
+    },
+    {
         component: TimePickerSample1Component,
         path: "timepicker-sample-1"
     },
@@ -525,6 +541,10 @@ export const appRoutes: Routes = [
     {
         component: PagingSampleComponent,
         path: "grid-paging-sample"
+    },
+    {
+        component: ResizingSampleComponent,
+        path: "grid-resizing-sample"
     },
     {
         component: RippleSample1Component,
