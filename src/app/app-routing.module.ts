@@ -76,6 +76,7 @@ import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sam
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
+import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -640,6 +641,10 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartCustomTooltipsComponent,
         path: "financial-chart-custom-tooltips"
+    },
+    {
+        component: SortingSampleComponent,
+        path: "grid-sorting-sample"
     }
 ];
 
