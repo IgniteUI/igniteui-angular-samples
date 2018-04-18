@@ -19,8 +19,8 @@
     </igx-column>
     <igx-column field="Discontinued" header="In Stock" filterable="true" [dataType]="'boolean'">
         <ng-template igxCell let-cell="cell" let-val>
-          <img *ngIf="val" src="../../../assets/images/grid/active.png" title="In stock" alt="In stock" />
-          <img *ngIf="!val" src="../../../assets/images/grid/expired.png" title="Out of stock" alt="Out of stock" />
+          <img *ngIf="val" src="assets/images/grid/active.png" title="In stock" alt="In stock" />
+          <img *ngIf="!val" src="assets/images/grid/expired.png" title="Out of stock" alt="Out of stock" />
         </ng-template>
     </igx-column>
   </igx-grid>
