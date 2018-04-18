@@ -106,7 +106,7 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
         const h = this.currValue + (Math.random() * 2);
         const l = this.currValue - (Math.random() * 2);
         const c = this.currValue + ((Math.random() - 0.5) * 2);
-        const v = this.currValue*10000 + ((Math.random() - 0.5) * 50000);
+        const v = this.currValue * 10000 + ((Math.random() - 0.5) * 50000);
         const newVal = { Date: this.currDate, Open: o, High: h, Low: l, Close: c, Volume: v };
         return newVal;
     }

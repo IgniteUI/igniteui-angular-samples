@@ -5,6 +5,12 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class GenerateOhlcPricesService {
 
+    public daysInterval: number;
+    public priceStart: number;
+    public priceRange: number;
+    public volumeRange: number;
+    public volumeStart: number;
+
     constructor() {
         this.daysInterval = 1;
         this.priceStart = 300;
@@ -12,12 +18,6 @@ export class GenerateOhlcPricesService {
         this.volumeRange = 100;
         this.volumeStart = 10000;
     }
-
-    public daysInterval: number;
-    public priceStart: number;
-    public priceRange: number;
-    public volumeRange: number;
-    public volumeStart: number;
 
     public GetStockHistoryBetween(dateStart: Date, dateEnd: Date): any {
         let time = this.AddDays(dateStart, 0);
