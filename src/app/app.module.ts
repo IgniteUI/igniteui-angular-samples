@@ -31,6 +31,7 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    IgxTabsModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
@@ -155,6 +156,9 @@ import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
+import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
+import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -218,6 +222,9 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         TabbarComponent,
         TabbarSample1Component,
         TabbarSample2Component,
+        TabsSample1Component,
+        TabsSample2Component,
+        TabsSample3Component,
         NavbarComponent,
         NavbarSample1Component,
         SliderSample1Component,
@@ -330,6 +337,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         IgxToastModule,
         IgxSliderModule,
         IgxBottomNavModule,
+        IgxTabsModule,
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
