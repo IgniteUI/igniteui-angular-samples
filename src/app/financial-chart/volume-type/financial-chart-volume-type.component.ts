@@ -11,6 +11,6 @@ import { FinancialDataService } from "../services/financial-data.service";
 export class FinancialChartVolumeTypeComponent {
     public data: any;
     constructor(private dataService: FinancialDataService) {
-        this.data = this.dataService.getGoog();
+        this.data = this.dataService.getAmzn();
     }
 }
