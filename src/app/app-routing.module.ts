@@ -79,6 +79,7 @@ import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.compone
 import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
+import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -670,6 +671,10 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartCustomTooltipsComponent,
         path: "financial-chart-custom-tooltips"
+    },
+    {
+        component: SortingSampleComponent,
+        path: "grid-sorting-sample"
     }
 ];
 

@@ -105,6 +105,8 @@ import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.compone
 import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
+import { GridContextmenuComponent } from "./grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
+import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -305,7 +307,9 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         ExcelExportComponent,
         ExcelExportSample1Component,
         CsvExportComponent,
-        CsvExportSample1Component
+        CsvExportSample1Component,
+        SortingSampleComponent,
+        GridContextmenuComponent
     ],
     imports: [
         AppRoutingModule,
