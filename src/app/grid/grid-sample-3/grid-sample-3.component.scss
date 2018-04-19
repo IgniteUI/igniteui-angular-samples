@@ -1,15 +1,13 @@
 .grid-controls {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: space-between;
     margin: 0 16px 24px;
 
-    [igxButton] {
-        height: auto;
+    igx-switch {
+        margin-top: 24px;
     }
 
-    [igxButton] + [igxButton] {
-        margin-left: 8px;
-    }
 }
 
 .grid__wrapper {

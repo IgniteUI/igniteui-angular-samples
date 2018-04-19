@@ -71,7 +71,7 @@ export class LocalService {
 export class GridSelectionSampleComponent {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     public data: Observable<any[]>;
-    public selection;
+    public selection = true;
     constructor(private localService: LocalService) {
         this.localService.getData(100000);
         this.data = this.localService.records;

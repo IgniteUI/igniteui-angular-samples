@@ -1,0 +1,22 @@
+.grid__wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  
+  @media (max-width: 1000px) {
+    .grid__wrapper {
+      width: 98% !important;
+      margin: 0 auto;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .grid__wrapper {
+      width: 720px !important;
+      margin: 0 3px;
+      padding-right: 5px;
+    }
+  }
