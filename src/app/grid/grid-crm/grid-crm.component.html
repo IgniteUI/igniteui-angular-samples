@@ -3,6 +3,30 @@
     <div class="sample__header">
         <div class="switch-sample">
             <h2 class="switch-sample__title">Business propeller</h2>
+
+            <button class="toggle-button"  igxButton="raised" (click)="toggleHidingContent()"><igx-icon class="header-icon">visibility_off</igx-icon>{{hiddenColsLength}} hidden</button>
+            <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
+              <section class="toggle-section">
+                <h4>Visible columns:</h4>
+                <ul>
+                    <li *ngFor="let col of cols">
+                        <igx-checkbox (change)="toggleVisibility(col)" [checked]="!col.hidden">{{col.header}}</igx-checkbox>
+                    </li>
+                </ul>
+              </section>
+            </div>
+
+            <button class="toggle-button"  igxButton="raised" (click)="togglePinningContent()"><igx-icon class="header-icon">lock</igx-icon>{{pinnedColsLength}} pinned</button>
+            <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
+              <section class="toggle-section">
+                <h4>Pinned columns:</h4>
+                <ul>
+                  <li *ngFor="let col of cols">
+                        <igx-checkbox (change)="togglePin(col)" [checked]="col.pinned">{{col.header}}</igx-checkbox>
+                  </li>
+                </ul>
+              </section>
+            </div>
         </div>
     </div>
 
@@ -10,7 +34,7 @@
         <igx-column field="id" header="Customer Number" filterable="true" width="180" pinned="true" hasSummary="true">
         </igx-column>
 
-        <igx-column field="avatar" header="Photo" width="80" pinned="true">
+        <igx-column field="avatar" header="Photo" width="88" pinned="true">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
                     <igx-avatar [src]="cell.row.rowData.avatar" roundShape="true" size="small"></igx-avatar>
