@@ -65,6 +65,9 @@ import {
     FinancialChartAxisTypesComponent
 } from "./financial-chart/axis-types/financial-chart-axis-types.component";
 import {
+    FinancialChartCustomIndicatorsComponent
+} from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
+import {
     FinancialChartCustomTooltipsComponent
 } from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
 import {
@@ -702,6 +705,10 @@ export const appRoutes: Routes = [
         path: "financial-chart-volume-type"
     },
     { 
+        component: FinancialChartCustomIndicatorsComponent,
+        path: "financial-chart-custom-indicators"
+    },
+    {
         component: FinancialChartHighVolumeComponent,
         path: "financial-chart-high-volume"
     },
