@@ -1,13 +1,16 @@
 <div class="grid__wrapper">
 
-  <igx-grid #grid1 [data]="data" [paging]="true" [perPage]="6" [paginationTemplate]="pager" width="1000px">
-      <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
-      </igx-column>
+  <igx-grid #grid1 [data]="data" [paging]="true" [perPage]="6" [paginationTemplate]="pager" width="90%">
+    <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
+    </igx-column>
 
-      <igx-column field="Name" header="Athlete" width="280">
-      </igx-column>
+    <igx-column field="Name" header="Athlete" width="180px">
+    </igx-column>
 
-      <igx-column field="AthleteNumber" header="Athlete Number" [hidden]="true" dataType="number">
+    <igx-column field="AthleteNumber" header="Athlete Number" dataType="number" width="120px">
+    </igx-column>
+
+      <igx-column field="BeatsPerMinute" header="Beats per minute" width="140px" dataType="number">
           <ng-template igxCell let-val>
               <div class="cell__inner">
                   {{ val }}
@@ -15,31 +18,19 @@
           </ng-template>
       </igx-column>
 
-      <igx-column field="BeatsPerMinute" header="Beats per minute" [hidden]="false">
-          <ng-template igxCell let-val>
-              <div class="cell__inner">
-                  {{ val }}
-              </div>
-          </ng-template>
-      </igx-column>
-
-      <igx-column field="TopSpeed" header="Top Speed" width="103px">
-
+      <igx-column field="TopSpeed" header="Top Speed" width="103px" dataType="number">
           <ng-template igxCell let-val>
               <div class="cell__inner">
                   {{ val | number: '1.1-5' }}
               </div>
           </ng-template>
-
       </igx-column>
 
-      <igx-column field="TrackProgress" sortable="true" header="Track Progress">
+      <igx-column field="TrackProgress" header="Track Progress" width="250px">
           <ng-template igxCell let-val>
               <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val"></igx-linear-bar>
           </ng-template>
       </igx-column>
-
-      <igx-column field="CountryName" hidden="true"></igx-column>
 
       <igx-column field="CountryFlag" header="Country" width="90px">
           <ng-template igxCell let-cell="cell">

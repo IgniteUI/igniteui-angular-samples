@@ -1,9 +1,10 @@
-<div class="sample-wrapper">
-    <div class="sample-container">
-      <p>Toggle Multiple Selection</p>
-      <igx-switch [(ngModel)]="selection"></igx-switch>
-    </div>
-      <igx-grid #grid1 [data]="data | async" [height]="'80%'" width="1000px" [autoGenerate]='false' [rowSelectable]="selection"
+
+<div class="grid-controls">
+    <p>Toggle Multiple Selection</p>
+    <igx-switch [(ngModel)]="selection"></igx-switch>
+</div>
+<div class="grid__wrapper">
+    <igx-grid #grid1 [data]="data | async" [height]="'550px'" width="100%" [autoGenerate]='false' [rowSelectable]="selection"
         (onSelection)="handleRowSelection($event)">
         <igx-column [field]="'Category'" [width]="'150px'" [filterable]='true'></igx-column>
         <igx-column [field]="'Type'" [width]="'120px'"></igx-column>
@@ -11,31 +12,30 @@
         <igx-column [field]="'Buy'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency"></igx-column>
         <igx-column [field]="'Sell'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency"></igx-column>
         <igx-column [field]="'Change'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [headerClasses]="'headerAlignSyle'">
-          <ng-template igxHeader>
-            <span class="cellAlignSyle">Change</span>
-          </ng-template>
-          <ng-template igxCell let-val>
-            <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
-            <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"></igx-badge>
-            <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error"></igx-badge>
-          </ng-template>
+            <ng-template igxHeader>
+                <span class="cellAlignSyle">Change</span>
+            </ng-template>
+            <ng-template igxCell let-val>
+                <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
+                <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"></igx-badge>
+                <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error"></igx-badge>
+            </ng-template>
         </igx-column>
         <igx-column [field]="'Change(%)'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber">
-          <ng-template igxHeader>
-            <span class="cellAlignSyle">Change(%)</span>
-          </ng-template>
-  
-          <ng-template igxCell let-val>
-            <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
-          </ng-template>
+            <ng-template igxHeader>
+                <span class="cellAlignSyle">Change(%)</span>
+            </ng-template>
+
+            <ng-template igxCell let-val>
+                <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
+            </ng-template>
         </igx-column>
         <igx-column [field]="'Change On Year(%)'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber">
-          <ng-template igxCell let-val>
-            <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
-            <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"></igx-badge>
-            <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error"></igx-badge>
-          </ng-template>
+            <ng-template igxCell let-val>
+                <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
+                <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"></igx-badge>
+                <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error"></igx-badge>
+            </ng-template>
         </igx-column>
-      </igx-grid>
-      <br/>
-  </div>
+    </igx-grid>
+</div>

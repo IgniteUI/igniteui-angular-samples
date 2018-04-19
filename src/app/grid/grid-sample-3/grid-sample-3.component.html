@@ -1,11 +1,12 @@
-<div class="grid__wrapper">
-  <div class="content_wrapper">
+<div class="grid-controls">
     <button igxButton="raised" igxRipple="white" (click)="enableSummary('ProductName', 0)"> {{labels[0]}} Summary for "ProductName" </button>
     <button igxButton="raised" igxRipple="white" (click)="enableSummary('UnitPrice', 1)"> {{labels[1]}} Summary for "Price" </button>
     <button igxButton="raised" igxRipple="white" (click)="enableSummary('UnitsInStock', 2)"> {{labels[2]}} Summary for "UnitsInStock" </button>
     <button igxButton="raised" igxRipple="white" (click)="enableSummary('Discontinued', 3)"> {{labels[3]}} Summary for "Discontinued" </button>
-    <button igxButton="raised" igxRipple="white" (click)="enableSummary('OrderDate', 4)"> {{labels[4]}} Summary for "OrderDate" </button>
-    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="600px" width="1000px" [paging]="true">
+    <button igxButton="raised" igxRipple="white" (click)="enableSummary('OrderDate', 4)"> {{labels[4]}} Summary for "OrderDate" </button>    
+</div>
+<div class="grid__wrapper">
+  <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%" [paging]="true">
       <igx-column field="ProductID" header="Product ID" width="100px" [headerClasses]="'prodId'">
       </igx-column>
       <igx-column field="ProductName" header="Product Name" width="200px" [headerClasses]="'prodId'" [hasSummary]="true">
@@ -33,6 +34,5 @@
           {{val}}
         </ng-template>
       </igx-column>
-    </igx-grid>
-  </div>
+    </igx-grid> 
 </div>

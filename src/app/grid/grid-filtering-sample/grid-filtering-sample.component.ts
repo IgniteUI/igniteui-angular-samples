@@ -1,3 +1,4 @@
+import { CurrencyPipe } from "@angular/common";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
@@ -26,5 +27,9 @@ export class FilteringSampleComponent implements OnInit {
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat("en-US").format(val);
+    }
+
+    public formatCurrency(val: string) {
+        return parseInt(val, 10).toFixed(2);
     }
 }
