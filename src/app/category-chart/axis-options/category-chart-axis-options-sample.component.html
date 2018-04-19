@@ -1,0 +1,59 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <span>Chart Type:</span>
+        <select [(ngModel)]="chartType">
+            <option>Auto</option>
+            <option>Line</option>
+            <option>Column</option>
+            <option>Point</option>
+            <option>Spline</option>
+            <option>SplineArea</option>
+            <option>StepArea</option>
+            <option>StepLine</option>
+            <option>Waterfall</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-category-chart height="98%" width="98%"
+            [dataSource]="data"
+            [chartType]="chartType"
+            title="Energy Production by Country"
+
+            xAxisLabelTextStyle="10pt Verdana"
+            xAxisLabelTopMargin="5"
+            xAxisLabelTextColor="gray"
+            yAxisLabelTextStyle="10pt Verdana"
+            yAxisLabelRightMargin="5"
+            yAxisLabelTextColor="gray"
+
+            xAxisTitle="Countries"
+            xAxisTitleTextColor="gray"
+            xAxisTitleTextStyle="12pt Verdana"
+            xAxisTitleAngle="0"
+            yAxisTitle="Trillions of Watt-hours (TWh)"
+            yAxisTitleTextStyle="12pt Verdana"
+            yAxisTitleTextColor="gray"
+            yAxisTitleAngle="90"
+            yAxisTitleLeftMargin="5"
+
+            xAxisTickLength="15"
+            xAxisTickStrokeThickness="2"
+            xAxisTickStroke="gray"
+            yAxisTickLength="0"
+
+            yAxisMinimumValue="0"
+            yAxisMaximumValue="1000"
+
+            yAxisInterval="100"
+            yAxisMajorStroke="black"
+            yAxisMajorStrokeThickness="1"
+            yAxisMinorInterval="20"
+            yAxisMinorStroke="gray"
+            yAxisMinorStrokeThickness="0.5"
+
+            xAxisGap="0.125"
+            xAxisOverlap="0"
+        >
+        </igx-category-chart>
+    </div>
+</div>
