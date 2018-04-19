@@ -102,6 +102,8 @@ import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sam
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
+import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
@@ -595,6 +597,14 @@ export const appRoutes: Routes = [
     {
         component: FinancialSampleComponent,
         path: "grid-sample-2"
+    },
+    {
+        component: PinningSampleComponent,
+        path: "grid-sample-pinning"
+    },
+    {
+        component: GridRemoteVirtualizationSampleComponent,
+        path: "grid-sample-4"
     },
     {
         component: GridSelectionSampleComponent,
