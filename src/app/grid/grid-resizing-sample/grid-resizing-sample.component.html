@@ -1,0 +1,14 @@
+<div class="grid__wrapper">
+    <igx-grid [data]="data" (onColumnResized)="onResize($event)" [autoGenerate]="false">
+        <igx-column [field]="'ID'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'CompanyName'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'ContactName'" width="100px" [resizable]="true" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
+        <igx-column [field]="'ContactTitle'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'Address'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'City'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'Region'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'PostalCode'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'Phone'" width="100px" [resizable]="true"></igx-column>
+        <igx-column [field]="'Fax'" width="100px" [resizable]="true"></igx-column>
+    </igx-grid>
+</div>

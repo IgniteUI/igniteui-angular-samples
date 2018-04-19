@@ -1,25 +1,28 @@
 <div class="grid__wrapper">
   <div class="sample__header">
     <igx-input-group>
-        <input class="gridSample__filter" igxInput type="text" placeholder="Filter by country" (input)="filter($event.target.value)">
+        <input class="gridSample__filter" igxInput type="text" placeholder="Filter by product name" (input)="filter($event.target.value)">
     </igx-input-group>
-</div>
+  </div>
   
-  <igx-grid #grid1 [data]="data" [height]="'450px'" [autoGenerate]='false'>
-      <igx-column [field]="'FirstName'" header="First Name" width="150px" [dataType]="'string'" filterable="true"></igx-column>
-      <igx-column [field]="'LastName'" header="Last Name" width="150px" [dataType]="'string'" filterable="true"></igx-column>        
-      <igx-column [field]="'RegistererDate'" header="Subscription date" width="200px" [dataType]="'date'" filterable="true"></igx-column>
-      <igx-column [field]="'Country'" width="150px" [dataType]="'string'" filterable="true"></igx-column>
-      <igx-column [field]="'Age'" width="120px" [dataType]="'number'" filterable="true"></igx-column>
-      <igx-column [field]="'IsActive'" width="150px" header="Subscription" [dataType]="'boolean'" filterable="true">
-        <ng-template igxCell let-cell="cell">
-          <div class="cell__inner_2">
-              <span>
-                  {{ cell.value ? 'active' : 'expired' }}
-                </span>
-          </div>
-      </ng-template>
+  <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="450px" width="100%">
+
+    <igx-column field="ProductID" header="Product ID"  [headerClasses]="'prodId'"></igx-column>
+    <igx-column field="ProductName" header="Product Name" [dataType]="'string'" filterable="true">
+    </igx-column>
+    <igx-column field="UnitsInStock" header="UnitsInStock" [dataType]="'number'" filterable="true">
+        <ng-template igxCell let-cell="cell" let-val let-row>
+        ${{val}}
+        </ng-template>
+    </igx-column>
+    <igx-column field="OrderDate" [dataType]="'date'" [formatter]="formatDate" filterable="true">
+    </igx-column>
+    <igx-column field="Discontinued" header="In Stock" filterable="true" [dataType]="'boolean'">
+        <ng-template igxCell let-cell="cell" let-val>
+          <img *ngIf="val" src="assets/images/grid/active.png" title="In stock" alt="In stock" />
+          <img *ngIf="!val" src="assets/images/grid/expired.png" title="Out of stock" alt="Out of stock" />
+        </ng-template>
     </igx-column>
   </igx-grid>
-  <br/>
+
 </div>

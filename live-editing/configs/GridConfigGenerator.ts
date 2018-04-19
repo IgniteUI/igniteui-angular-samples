@@ -1,10 +1,14 @@
 import { Config } from "./core/Config";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridComponent } from "../../src/app/grid/grid.component";
 import { FinancialSampleComponent } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
+import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
+import { GridComponent } from "../../src/app/grid/grid.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
+import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
+import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
+import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { HttpClientModule } from "@angular/common/http";
 import {
     IgxAvatarModule,
@@ -15,10 +19,12 @@ import {
     IgxInputGroupModule,
     IgxProgressBarModule,
     IgxRippleModule,
-    IgxSwitchModule
+    IgxSwitchModule,
+    IgxInputDirective
 } from "igniteui-angular/main";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
+import { GridContextmenuComponent } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     generateConfigs(): Config[] {
@@ -55,8 +61,20 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridSample3Component,
+            additionalFiles: ["/src/app/grid/grid-sample-3/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
+                    IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService],
+                ngDeclarations: [GridSample3Component],
+                ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxInputGroupModule, IgxRippleModule, HttpClientModule]
+            })
+        }));
+
+        configs.push(new Config({
             component: FilteringSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-filtering-sample/employeesData.ts"],
+            additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [ IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
                 ngDeclarations: [FilteringSampleComponent],
@@ -77,6 +95,47 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridSelectionSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, FinancialSampleComponent, LocalService],
+                ngDeclarations: [FinancialSampleComponent],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngProviders: [LocalService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: ResizingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-resizing-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, ResizingSampleComponent],
+                ngDeclarations: [ResizingSampleComponent],
+                ngImports: [IgxGridModule.forRoot()],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: SortingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sorting-sample/nwindData.ts",
+                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
+                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
+                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss",
+                            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ IgxGridModule, IgxIconModule, IgxRippleModule, SortingSampleComponent, IgxInputGroupModule, GridContextmenuComponent],
+                ngDeclarations: [SortingSampleComponent, GridContextmenuComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxIconModule, IgxInputGroupModule],
+                ngProviders: []
             })
         }));
 

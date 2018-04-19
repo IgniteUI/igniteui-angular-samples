@@ -1,0 +1,28 @@
+import { Component } from "@angular/core";
+import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
+import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
+import { DATA } from "./data";
+
+@Component({
+    selector: "grid-resizing-sample",
+    styleUrls: ["./grid-resizing-sample.component.scss"],
+    templateUrl: "grid-resizing-sample.component.html"
+})
+
+export class ResizingSampleComponent {
+    public data: any[];
+
+    public col: IgxColumnComponent;
+    public pWidth: string;
+    public nWidth: string;
+
+    constructor() {
+        this.data = DATA;
+    }
+
+    public onResize(event) {
+        this.col = event.column;
+        this.pWidth = event.prevWidth;
+        this.nWidth = event.newWidth;
+    }
+}

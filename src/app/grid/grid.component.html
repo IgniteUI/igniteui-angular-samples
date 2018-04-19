@@ -10,10 +10,10 @@
         </igx-input-group>
     </div>
 
-    <igx-grid #grid1 [data]="localData" [paging]="true" [perPage]="6" [columnWidth]="'130px'" [paginationTemplate]="pager" height="505" width="100%">
+    <igx-grid #grid1 [data]="localData" [paging]="true" [perPage]="6" [columnWidth]="'130px'" [paginationTemplate]="pager" width="100%">
         <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner">
+                <ng-template igxCell let-cell="cell">
+                    <div class="cell__inner">
                     <div>{{ cell.value }}</div>
                     <ng-container *ngIf="isTop3(cell)">
                         <span class="cup" *ngIf="cell.value === 1">
@@ -79,7 +79,7 @@
         </igx-column>
 
         <igx-column field="CountryName" hidden="true"></igx-column>
-
+        <igx-column field="Registered" [dataType]="'date'" [filterable]="true"></igx-column>
         <igx-column field="CountryFlag" header="Country" width="90px">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">

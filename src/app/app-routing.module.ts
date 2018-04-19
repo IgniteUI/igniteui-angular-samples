@@ -33,12 +33,20 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import {
+    CategoryChartAxisOptionsComponent
+} from "./category-chart/axis-options/category-chart-axis-options-sample.component";
+import {
+    CategoryChartConfigOptionsComponent
+} from "./category-chart/config-options/category-chart-config-options-sample.component";
+import {
     CategoryChartHighFrequencyComponent
 } from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
     CategoryChartHighVolumeComponent
 } from "./category-chart/high-volume/category-chart-high-volume-sample.component";
-import { CategoryChartOverviewComponent } from "./category-chart/overview/category-chart-overview-sample.component";
+import {
+    CategoryChartOverviewComponent
+} from "./category-chart/overview/category-chart-overview-sample.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -53,7 +61,36 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import {
+    FinancialChartAxisTypesComponent
+} from "./financial-chart/axis-types/financial-chart-axis-types.component";
+import {
+    FinancialChartCustomIndicatorsComponent
+} from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
+import {
+    FinancialChartCustomTooltipsComponent
+} from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
+import {
+    FinancialChartHighFrequencyComponent
+} from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
+import {
+    FinancialChartHighVolumeComponent
+} from "./financial-chart/high-volume/financial-chart-high-volume.component";
+import {
+    FinancialChartIndicatorTypesComponent
+} from "./financial-chart/indicator-types/financial-chart-indicator-types.component";
+import {
+    FinancialChartMultipleDataComponent
+} from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
+import {
+    FinancialChartPerformanceComponent
+} from "./financial-chart/performance/financial-chart-performance.component";
+import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartVolumeTypeComponent
+} from "./financial-chart/volume-type/financial-chart-volume-type.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -62,7 +99,11 @@ import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/s
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
+import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
+import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -113,6 +154,9 @@ import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
+import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
+import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -329,6 +373,10 @@ export const appRoutes: Routes = [
         path: "grid"
     },
     {
+        component: GridSample3Component,
+        path: "grid-summary"
+    },
+    {
         component: SnackbarSample1Component,
         path: "snackbar-sample-1"
     },
@@ -411,6 +459,18 @@ export const appRoutes: Routes = [
     {
         component: TabbarSample2Component,
         path: "tabbar-sample-2"
+    },
+    {
+        component: TabsSample1Component,
+        path: "tabs-sample-1"
+    },
+    {
+        component: TabsSample2Component,
+        path: "tabs-sample-2"
+    },
+    {
+        component: TabsSample3Component,
+        path: "tabs-sample-3"
     },
     {
         component: TimePickerSample1Component,
@@ -501,6 +561,10 @@ export const appRoutes: Routes = [
         path: "grid-paging-sample"
     },
     {
+        component: ResizingSampleComponent,
+        path: "grid-resizing-sample"
+    },
+    {
         component: RippleSample1Component,
         path: "ripple-sample-1"
     },
@@ -531,6 +595,10 @@ export const appRoutes: Routes = [
     {
         component: FinancialSampleComponent,
         path: "grid-sample-2"
+    },
+    {
+        component: GridSelectionSampleComponent,
+        path: "grid-selection"
     },
     {
         component: NavbarSample1Component,
@@ -599,6 +667,62 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartHighFrequencyComponent,
         path: "category-chart-high-frequency-sample"
+    },
+    {
+        component: CategoryChartAxisOptionsComponent,
+        path: "category-chart-axis-options-sample"
+    },
+    {
+        component: CategoryChartConfigOptionsComponent,
+        path: "category-chart-config-options-sample"
+    },
+    {
+        component: FinancialChartPerformanceComponent,
+        path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartTitlesComponent,
+        path: "financial-chart-titles"
+    },
+    {
+        component: FinancialChartPanesComponent,
+        path: "financial-chart-panes"
+    },
+    {
+        component: FinancialChartMultipleDataComponent,
+        path: "financial-chart-multiple-data"
+    },
+    {
+        component: FinancialChartCustomTooltipsComponent,
+        path: "financial-chart-custom-tooltips"
+    },
+    {
+        component: FinancialChartIndicatorTypesComponent,
+        path: "financial-chart-indicator-types"
+    },
+    {
+        component: FinancialChartVolumeTypeComponent,
+        path: "financial-chart-volume-type"
+    },
+    {
+        component: FinancialChartCustomIndicatorsComponent,
+        path: "financial-chart-custom-indicators"
+    },
+    {
+        component: FinancialChartHighVolumeComponent,
+        path: "financial-chart-high-volume"
+    },
+    {
+        component: FinancialChartHighFrequencyComponent,
+        path: "financial-chart-high-frequency"
+    },
+    {
+        component: FinancialChartAxisTypesComponent,
+        path: "financial-chart-axis-types"
+    },
+    {
+        component: SortingSampleComponent,
+        path: "grid-sorting-sample"
     }
 ];
 
