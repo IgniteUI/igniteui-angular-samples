@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { IgxTimePickerComponent, IgxToastComponent } from "igniteui-angular/main";
 
 @Component({
@@ -6,7 +6,7 @@ import { IgxTimePickerComponent, IgxToastComponent } from "igniteui-angular/main
     styleUrls: ["./timepicker-sample-4.component.scss"],
     templateUrl: "./timepicker-sample-4.component.html"
 })
-export class TimePickerSample4Component implements AfterViewInit {
+export class TimePickerSample4Component implements OnInit {
 
     public min: string = "09:00";
     public max: string = "18:00";
@@ -23,7 +23,5 @@ export class TimePickerSample4Component implements AfterViewInit {
         this.show(this.toast);
     }
 
-    public ngAfterViewInit(): void {
-        (document.getElementsByClassName("igx-input-group__input")[0] as HTMLElement).click();
-    }
+    public ngOnInit(): void {}
 }
