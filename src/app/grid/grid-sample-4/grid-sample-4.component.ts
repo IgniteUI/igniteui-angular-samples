@@ -65,12 +65,12 @@ export class GridRemoteVirtualizationSampleComponent {
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
     public ngOnInit(): void {
         this.columns = [
-            { field: "ProductID", width: "100px" },
-            { field: "ProductName", width: "200px" },
-            { field: "UnitPrice", width: "100px" },
-            { field: "UnitsInStock", width: "50px" },
-            { field: "QuantityPerUnit", width: "200px" },
-            { field: "Discontinued", width: "50px" }
+            { field: "ProductID", header: "Product ID", width: "100px" },
+            { field: "ProductName", header: "Product Name", width: "200px" },
+            { field: "UnitPrice", header: "Unit Price", width: "100px" },
+            { field: "UnitsInStock", header: "Units In Stock", width: "50px" },
+            { field: "QuantityPerUnit", header: "Quantity Per Unit", width: "200px" },
+            { field: "Discontinued", header: "Discontinued", width: "50px" }
         ];
         this.remoteData = this.remoteService.remoteData;
     }
@@ -85,7 +85,7 @@ export class GridRemoteVirtualizationSampleComponent {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.toast.message = "Loading remote data";
+        this.toast.message = "Loading Remote Data...";
         this.toast.position = 1;
         this.toast.show();
         this.cdr.detectChanges();

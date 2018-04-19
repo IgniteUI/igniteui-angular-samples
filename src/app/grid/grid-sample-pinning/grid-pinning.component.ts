@@ -20,16 +20,16 @@ export class PinningSampleComponent {
     public columns: any[];
     public ngOnInit(): void {
         this.columns = [
-            { field: "ID", width: 100, hidden: true },
-            { field: "CompanyName", width: 300 },
-            { field: "ContactName", width: 200, pinned: true },
-            { field: "ContactTitle", width: 200, pinned: true },
-            { field: "Address", width: 300 },
-            { field: "City", width: 100 },
-            { field: "Region", width: 100 },
-            { field: "PostalCode", width: 150 },
-            { field: "Phone", width: 150 },
-            { field: "Fax", width: 150 }
+            { field: "ID", header: "ID", width: 100, hidden: true },
+            { field: "CompanyName", header: "Company Name", width: 300 },
+            { field: "ContactName", header: "Contact Name", width: 200, pinned: true },
+            { field: "ContactTitle", header: "Contact Title", width: 200, pinned: true },
+            { field: "Address", header: "Address", width: 300 },
+            { field: "City", header: "City", width: 100 },
+            { field: "Region", header: "Region", width: 100 },
+            { field: "PostalCode", header: "Postal Code", width: 150 },
+            { field: "Phone", header: "Phone", width: 150 },
+            { field: "Fax", header: "Fax", width: 150 }
         ];
         this.data = DATA;
     }
