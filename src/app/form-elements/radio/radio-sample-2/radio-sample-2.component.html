@@ -1,10 +1,8 @@
-<h2>{{title}}</h2>
-<div [style.background-color]="selectedColor">
-    <igx-radio *ngFor="let color of colors" 
-                name="color group" 
-                checked="selectedColor" 
-                [value] = "color" 
-                [(ngModel)]="selectedColor">
-        <div>{{color}}</div>
-    </igx-radio>
-</div>
+<igx-radio *ngFor="let color of colors"
+    name="color"
+    [value]="color.hex"
+    [(ngModel)]="selectedColor">
+    {{color.name}}
+</igx-radio>
+
+<div class="box" [style.background-color]="selectedColor"></div>
