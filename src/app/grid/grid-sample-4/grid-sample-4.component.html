@@ -1,0 +1,8 @@
+<div class="sample-wrapper dark-grid">
+    <igx-grid #grid1 [data]="remoteData | async" (onDataPreLoad)="dataLoading($event)" [height]="'550px'">
+        <igx-column *ngFor="let c of columns" [field]="c.field" [header]="c.header">
+        </igx-column>
+    </igx-grid>
+
+    <igx-toast #toast></igx-toast>
+</div>

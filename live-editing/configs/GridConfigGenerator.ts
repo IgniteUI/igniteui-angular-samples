@@ -9,13 +9,16 @@ import {
     IgxInputGroupModule,
     IgxProgressBarModule,
     IgxRippleModule,
-    IgxSwitchModule
+    IgxSwitchModule,
+    IgxToastModule
 } from "igniteui-angular/main";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
+import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
+import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import {
     GridContextmenuComponent
@@ -137,6 +140,27 @@ export class GridConfigGenerator implements IConfigGenerator {
                     SortingSampleComponent, IgxInputGroupModule, GridContextmenuComponent],
                 ngDeclarations: [SortingSampleComponent, GridContextmenuComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxIconModule, IgxInputGroupModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRemoteVirtualizationSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, HttpClientModule],
+                ngDeclarations: [GridRemoteVirtualizationSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, HttpClientModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: PinningSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ PinningSampleComponent, IgxGridModule, IgxIconModule],
+                ngDeclarations: [PinningSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxIconModule],
                 ngProviders: []
             })
         }));
