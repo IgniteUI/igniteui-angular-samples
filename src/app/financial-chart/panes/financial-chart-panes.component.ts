@@ -39,8 +39,8 @@ export class FinancialChartPanesComponent implements AfterViewInit {
 
     public ngAfterViewInit(): void {
 
-        this.chart.chartType = FinancialChartType.Line;
-        this.chart.zoomSliderType = FinancialChartZoomSliderType.Line;
+        this.chart.chartType = FinancialChartType.Candle;
+        this.chart.zoomSliderType = FinancialChartZoomSliderType.Candle;
         this.chart.volumeType = FinancialChartVolumeType.Area;
         this.chart.indicatorTypes.add(FinancialIndicatorType.ForceIndex);
         this.chart.overlayTypes.add(FinancialOverlayType.PriceChannel);

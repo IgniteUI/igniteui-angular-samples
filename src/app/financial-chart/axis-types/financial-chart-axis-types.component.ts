@@ -1,22 +1,22 @@
-import { Component } from "@angular/core";
-import { FinancialDataService } from "../services/financial-data.service";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { GenerateOhlcPricesService } from "../services/generate-ohlc-prices.service";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ GenerateOhlcPricesService ],
-    selector: "app-financial-chart-overview-sample",
-    styleUrls: ["./financial-chart-overview-sample.component.scss"],
-    templateUrl: "./financial-chart-overview-sample.component.html"
+    selector: "app-financial-chart-axis-types",
+    styleUrls: ["./financial-chart-axis-types.component.scss"],
+    templateUrl: "./financial-chart-axis-types.component.html"
 })
-export class FinancialChartOverviewComponent {
+export class FinancialChartAxisTypesComponent {
 
+    public xAxisMode: string = "Ordinal";
+    public yAxisMode: string = "Numeric";
     public data: any;
 
     constructor(private dataService: GenerateOhlcPricesService) {
-        this.dataService.daysInterval = 60;
-
-        const dateStart = new Date(2000, 1, 1);
-        const dateStop = new Date(2025, 11, 1);
+        const dateStart = new Date(2017, 1, 1);
+        const dateStop = new Date(2018, 4, 1);
         const stock1 = this.dataService.GetStockHistoryBetween(dateStart, dateStop);
         const stock2 = this.dataService.GetStockHistoryBetween(dateStart, dateStop);
         stock1.title = "General Motors (GM)";
