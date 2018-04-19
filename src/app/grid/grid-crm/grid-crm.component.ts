@@ -5,7 +5,7 @@ import {
     ViewEncapsulation
 } from "@angular/core";
 
-import { IgxNumberSummaryOperand, IgxSummaryResult, IgxDateSummaryOperand } from "igniteui-angular/grid/grid-summary";
+import { IgxDateSummaryOperand, IgxNumberSummaryOperand, IgxSummaryResult } from "igniteui-angular/grid/grid-summary";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
 import { data } from "./data";
@@ -15,11 +15,11 @@ class DealsSummary extends IgxNumberSummaryOperand {
         super();
     }
 
-    public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data).filter((obj) => {
+    public operate(summaries?: any[]): IgxSummaryResult[] {
+        const result = super.operate(summaries).filter((obj) => {
             if (obj.key === "average" || obj.key === "sum") {
-                let summaryResult = obj.summaryResult;
-                //apply formatting to float numbers
+                const summaryResult = obj.summaryResult;
+                // apply formatting to float numbers
                 if (Number(summaryResult) === summaryResult && summaryResult % 1 !== 0) {
                     obj.summaryResult = summaryResult.toFixed(2);
                 }
@@ -35,8 +35,8 @@ class EarliestSummary extends IgxDateSummaryOperand {
         super();
     }
 
-    public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data).filter((obj) => {
+    public operate(summaries?: any[]): IgxSummaryResult[] {
+        const result = super.operate(summaries).filter((obj) => {
             if (obj.key === "earliest") {
                 return obj;
             }
@@ -50,8 +50,8 @@ class SoonSummary extends IgxDateSummaryOperand {
         super();
     }
 
-    public operate(data?: any[]): IgxSummaryResult[] {
-        const result = super.operate(data).filter((obj) => {
+    public operate(summaries?: any[]): IgxSummaryResult[] {
+        const result = super.operate(summaries).filter((obj) => {
             if (obj.key === "latest") {
                 obj.label = "Soon";
                 return obj;
