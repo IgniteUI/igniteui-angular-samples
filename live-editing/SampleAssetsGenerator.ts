@@ -1,3 +1,5 @@
+// tslint:disable:prefer-for-of
+// tslint:disable:prefer-const
 import { AvatarConfigGenerator } from "./configs/AvatarConfigGenerator";
 import { BadgeConfigGenerator } from "./configs/BadgeConfigGenerator";
 import { ButtonConfigGenerator } from "./configs/ButtonConfigGenerator";
@@ -10,16 +12,16 @@ import { CheckboxConfigGenerator } from "./configs/CheckboxConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./configs/CircularProgressbarConfigGenerator";
 import { DatePickerConfigGenerator } from "./configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
-import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { FinancialChartConfigGenerator } from "./configs/FinancialChartConfigGenerator";
+import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "./configs/InputGroupConfigGenerator";
 import { LayoutConfigGenerator } from "./configs/LayoutConfigGenerator";
 import { LinearProgressbarConfigGenerator } from "./configs/LinearProgressbarConfigGenerator";
 import { ListConfigGenerator } from "./configs/ListConfigGenerator";
-import { NavbarConfigGenerator } from "./configs/NavbarConfigGenerator";
 import { MaskConfigGenerator } from "./configs/MaskConfigGenerator";
+import { NavbarConfigGenerator } from "./configs/NavbarConfigGenerator";
 import { NavdrawerConfigGenerator } from "./configs/NavDrawerConfigGenerator";
 import { RadioConfigGenerator } from "./configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "./configs/RippleConfigGenerator";
@@ -35,15 +37,15 @@ import { ToggleConfigGenerator } from "./configs/ToggleConfigGenerator";
 import * as fs from "fs";
 import * as path from "path";
 import * as Collections from "typescript-collections";
-import { LiveEditingFile } from "./LiveEditingFile";
-import { IConfigGenerator } from "./configs/core/IConfigGenerator";
 import { Config } from "./configs/core/Config";
-import { TsImportsService } from "./TsImportsService";
+import { IConfigGenerator } from "./configs/core/IConfigGenerator";
 import { DependencyResolver } from "./DependencyResolver";
+import { LiveEditingFile } from "./LiveEditingFile";
 import { SampleDefinitionFile } from "./SampleDefinitionFile";
+import { TsImportsService } from "./TsImportsService";
 
-import { Type } from "@angular/core/src/type";
 import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
+import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../src/app/app-routing.module";
 
@@ -58,12 +60,13 @@ const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
-    CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
-    DialogConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
-    InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
-    ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
-    RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
-    TabBarConfigGenerator, TabsConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
+    CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator,
+    DatePickerConfigGenerator, DialogConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator,
+    GridConfigGenerator, IconConfigGenerator, InputGroupConfigGenerator, LayoutConfigGenerator,
+    LinearProgressbarConfigGenerator, ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
+    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
+    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
+    ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
 
 export class SampleAssetsGenerator {
     private tsImportsService: TsImportsService;
@@ -86,9 +89,10 @@ export class SampleAssetsGenerator {
     public generateSamplesAssets() {
         let currentFileImports = this.tsImportsService.getFileImports(__filename);
         for (let i = 0; i < CONFIG_GENERATORS.length; i++) {
-            let configGeneratorFilePath = path.join(__dirname, currentFileImports.getValue(CONFIG_GENERATORS[i].name) + ".ts");
+            let configGeneratorFilePath = path.join(__dirname,
+                currentFileImports.getValue(CONFIG_GENERATORS[i].name) + ".ts");
             let configGeneratorImports = this.tsImportsService.getFileImports(configGeneratorFilePath);
-            let configs = (new CONFIG_GENERATORS[i]).generateConfigs();
+            let configs = (new CONFIG_GENERATORS[i]()).generateConfigs();
             for (let j = 0; j < configs.length; j++) {
                 this.generateSampleAssets(configs[j], configGeneratorImports);
             }
@@ -118,7 +122,8 @@ export class SampleAssetsGenerator {
 
         if (config.additionalFiles !== undefined && config.additionalFiles.length > 0) {
             for (let i = 0; i < config.additionalFiles.length; i++) {
-                let filePath = config.additionalFiles[i].substring(config.additionalFiles[i].indexOf(SAMPLE_ASSETS_BASE_DIR));
+                let filePath = config.additionalFiles[i].substring(
+                    config.additionalFiles[i].indexOf(SAMPLE_ASSETS_BASE_DIR));
                 let fileContent = fs.readFileSync(path.join(BASE_PATH, config.additionalFiles[i]), "utf8");
                 let file = new LiveEditingFile(filePath, fileContent);
                 this.shortenComponentPath(config, file);
@@ -126,10 +131,12 @@ export class SampleAssetsGenerator {
             }
         }
 
-        let appModuleFile = new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.module.ts", this.getAppModuleConfig(config, configImports));
-        this.shortenComponentPath(config, appModuleFile)
+        let appModuleFile = new LiveEditingFile(
+            SAMPLE_ASSETS_BASE_DIR + "app.module.ts", this.getAppModuleConfig(config, configImports));
+        this.shortenComponentPath(config, appModuleFile);
         sampleFiles.push(appModuleFile);
-        sampleFiles.push(new LiveEditingFile(SAMPLE_ASSETS_BASE_DIR + "app.component.html", this.getAppComponentHtml(componentTsContent)));
+        sampleFiles.push(new LiveEditingFile(
+            SAMPLE_ASSETS_BASE_DIR + "app.component.html", this.getAppComponentHtml(componentTsContent)));
 
         let dependencies = DependencyResolver.resolveSampleDependencies(config.additionalDependencies);
         let sampleDef = new SampleDefinitionFile(sampleFiles, dependencies);
@@ -149,18 +156,18 @@ export class SampleAssetsGenerator {
 
         let imports = this.getAppModuleImports(config, configImports);
 
-        let appModuleNgDeclarations: Array<string> = config.appModuleConfig.ngDeclarations.map(d => d.name);
+        let appModuleNgDeclarations: string[] = config.appModuleConfig.ngDeclarations.map((d) => d.name);
         let ngDeclarations = "," + this.formatAppModuleTypes(appModuleNgDeclarations, true, 2);
 
-        let appModuleNgImports: Array<string> = this.getAppModuleNgImports(config);
+        let appModuleNgImports: string[] = this.getAppModuleNgImports(config);
 
         let ngImports = "," + this.formatAppModuleTypes(appModuleNgImports, true, 2);
 
         let ngProviders = "";
         if (config.appModuleConfig.ngProviders !== undefined &&
             config.appModuleConfig.ngProviders.length > 0) {
-            let appModuleNgProviders: Array<string> = config.appModuleConfig.ngProviders
-                .map(p => p as Type<any>).map(p => p.name);
+            let appModuleNgProviders: string[] = config.appModuleConfig.ngProviders
+                .map((p) => p as Type<any>).map((p) => p.name);
             ngProviders = this.formatAppModuleTypes(appModuleNgProviders, false, 2, "\r\n\t");
         }
 
@@ -174,7 +181,7 @@ export class SampleAssetsGenerator {
     }
 
     private getAppModuleNgImports(config: Config) {
-        let appModuleNgImports: Array<string> = new Array<string>();
+        let appModuleNgImports: string[] = new Array<string>();
         for (let i = 0; i < config.appModuleConfig.ngImports.length; i++) {
             if (typeof config.appModuleConfig.ngImports[i] === "string") {
                 appModuleNgImports.push(config.appModuleConfig.ngImports[i]);
@@ -182,9 +189,9 @@ export class SampleAssetsGenerator {
                 let appModuleNgImport: Type<any> = config.appModuleConfig.ngImports[i] as Type<any>;
                 if (appModuleNgImport.name !== undefined) {
                     appModuleNgImports.push(appModuleNgImport.name);
-                }
-                else {
-                    let appModuleNgImportWithProviders: ModuleWithProviders = config.appModuleConfig.ngImports[i] as ModuleWithProviders;
+                } else {
+                    let appModuleNgImportWithProviders: ModuleWithProviders =
+                        config.appModuleConfig.ngImports[i] as ModuleWithProviders;
                     appModuleNgImports.push(appModuleNgImportWithProviders.ngModule.name + ".forRoot()");
                 }
             }
@@ -207,8 +214,7 @@ export class SampleAssetsGenerator {
             let importModuleSpecifier = configImports.getValue(importName);
             if (sampleImports.containsKey(importModuleSpecifier)) {
                 sampleImports.getValue(importModuleSpecifier).push(importName);
-            }
-            else {
+            } else {
                 sampleImports.setValue(importModuleSpecifier, [importName]);
             }
         }
@@ -219,10 +225,11 @@ export class SampleAssetsGenerator {
             let currentImportModuleSpecifier: string = sampleImportsKeys[i];
             let baseDirIndex: number = currentImportModuleSpecifier.indexOf(SAMPLE_ASSETS_BASE_DIR);
             if (baseDirIndex !== -1) {
-                currentImportModuleSpecifier = "." + currentImportModuleSpecifier.substring(baseDirIndex + SAMPLE_ASSETS_BASE_DIR.length - 1);
+                currentImportModuleSpecifier = "." +
+                    currentImportModuleSpecifier.substring(baseDirIndex + SAMPLE_ASSETS_BASE_DIR.length - 1);
             }
-            let currentImportModules: Array<string> = sampleImports.getValue(sampleImportsKeys[i]);
-            let currentImport = '\r\nimport { ' + this.formatAppModuleTypes(currentImportModules, false, 1, "\r\n") +
+            let currentImportModules: string[] = sampleImports.getValue(sampleImportsKeys[i]);
+            let currentImport = "\r\nimport { " + this.formatAppModuleTypes(currentImportModules, false, 1, "\r\n") +
                 ' } from "' + currentImportModuleSpecifier + '";';
             imports = imports + currentImport;
         }
@@ -230,8 +237,8 @@ export class SampleAssetsGenerator {
         return imports;
     }
 
-    private formatAppModuleTypes(types: Array<string>, multiline: boolean, tabsCount: number,
-        suffixIfMultiple: string = null): string {
+    private formatAppModuleTypes(types: string[], multiline: boolean, tabsCount: number,
+                                 suffixIfMultiple: string = null): string {
         if (types.length === 1 && !multiline) {
             return types.join("");
         }

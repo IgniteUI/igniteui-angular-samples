@@ -1,18 +1,19 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { CardComponent } from "../../src/app/card/card.component";
+/* tslint:disable:object-literal-sort-keys */
 import {
-    IgxAvatarModule, IgxButtonModule, IgxIconModule,
-    IgxCardModule, IgxRippleModule
+    IgxAvatarModule, IgxButtonModule, IgxCardModule,
+    IgxIconModule, IgxRippleModule
 } from "igniteui-angular/main";
 import { CardSample1Component } from "../../src/app/card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "../../src/app/card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "../../src/app/card/card-sample-3/card-sample-3.component";
+import { CardComponent } from "../../src/app/card/card.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class CardConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // card sample
         configs.push(new Config({

@@ -1,14 +1,21 @@
+/* tslint:disable:object-literal-sort-keys */
+import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
+import {
+    CategoryChartHighFrequencyComponent
+} from "../../src/app/category-chart/high-frequency/category-chart-high-frequency-sample.component";
+import {
+    CategoryChartHighVolumeComponent
+} from "../../src/app/category-chart/high-volume/category-chart-high-volume-sample.component";
+import {
+    CategoryChartOverviewComponent
+} from "../../src/app/category-chart/overview/category-chart-overview-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
-import { CategoryChartOverviewComponent } from "../../src/app/category-chart/overview/category-chart-overview-sample.component";
-import { CategoryChartHighVolumeComponent } from "../../src/app/category-chart/high-volume/category-chart-high-volume-sample.component";
-import { CategoryChartHighFrequencyComponent } from "../../src/app/category-chart/high-frequency/category-chart-high-frequency-sample.component";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
         let deps = new Array<string>();
 
         deps.push("@angular/animations");

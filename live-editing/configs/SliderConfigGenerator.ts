@@ -1,16 +1,17 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxInputGroupModule, IgxSliderModule } from "igniteui-angular/main";
 import { SliderSample1Component } from "../../src/app/slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "../../src/app/slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "../../src/app/slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "../../src/app/slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "../../src/app/slider/slider-sample-5/slider-sample-5.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class SliderConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // slider sample 1
         configs.push(new Config({

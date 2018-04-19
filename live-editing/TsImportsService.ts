@@ -1,10 +1,14 @@
-import * as Collections from "typescript-collections";
-import * as ts from "typescript";
+// tslint:disable:prefer-const
+// tslint:disable:prefer-for-of
 import * as fs from "fs";
+// tslint:disable-next-line:no-implicit-dependencies
+import * as ts from "typescript";
+import * as Collections from "typescript-collections";
 
 export class TsImportsService {
     public getFileImports(filePath: string): Collections.Dictionary<string, string> {
-        let sourceFile = ts.createSourceFile(filePath, fs.readFileSync(filePath).toString(), ts.ScriptTarget.ES2015, true);
+        let sourceFile = ts.createSourceFile(
+            filePath, fs.readFileSync(filePath).toString(), ts.ScriptTarget.ES2015, true);
         let imports = new Collections.Dictionary<string, string>();
         let children = sourceFile.getChildren()[0].getChildren();
         for (let i = 0; i < children.length; i++) {
@@ -16,7 +20,7 @@ export class TsImportsService {
 
     private getImports(node: ts.Node, imports: Collections.Dictionary<string, string>) {
         if (node.kind === ts.SyntaxKind.ImportDeclaration) {
-            let importDeclaration = (<ts.ImportDeclaration>node);
+            let importDeclaration = (node as ts.ImportDeclaration);
             let moduleSpecifier = importDeclaration.moduleSpecifier.getText();
             moduleSpecifier = moduleSpecifier.substring(1, moduleSpecifier.length - 1);
             let importSpecifiers = new Array<string>();
@@ -31,9 +35,9 @@ export class TsImportsService {
         }
     }
 
-    private getImportSpecifiers(node: ts.Node, importSpecifiers: Array<string>) {
+    private getImportSpecifiers(node: ts.Node, importSpecifiers: string[]) {
         if (node.kind === ts.SyntaxKind.ImportSpecifier) {
-            let importSpecifier = (<ts.ImportSpecifier>node);
+            let importSpecifier = (node as ts.ImportSpecifier);
             importSpecifiers.push(importSpecifier.getText());
             return;
         }

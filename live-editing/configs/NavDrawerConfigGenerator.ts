@@ -1,18 +1,19 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { NavdrawerComponent } from "../../src/app/navdrawer/navdrawer.component";
+/* tslint:disable:object-literal-sort-keys */
 import {
     IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule,
     IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule
 } from "igniteui-angular/main";
-import { NavDrawerSimpleComponent } from "../../src/app/navdrawer/nav-drawer-simple/nav-drawer-simple.component";
-import { NavDrawerPinComponent } from "../../src/app/navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerMiniComponent } from "../../src/app/navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "../../src/app/navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "../../src/app/navdrawer/nav-drawer-simple/nav-drawer-simple.component";
+import { NavdrawerComponent } from "../../src/app/navdrawer/navdrawer.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class NavdrawerConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: NavdrawerComponent,

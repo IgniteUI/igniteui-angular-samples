@@ -1,15 +1,16 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxTimePickerModule, IgxToastModule } from "igniteui-angular/main";
 import { TimePickerSample1Component } from "../../src/app/timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "../../src/app/timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "../../src/app/timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "../../src/app/timepicker/timepicker-sample-4/timepicker-sample-4.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class TimePickerConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // time picker sample 1
         configs.push(new Config({
