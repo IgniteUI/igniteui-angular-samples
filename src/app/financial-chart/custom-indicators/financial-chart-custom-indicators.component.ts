@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
+import {
+    FinancialChartCustomIndicatorArgs
+} from "igniteui-angular-charts/ES5/igx-financial-chart-custom-indicator-args";
+import { FinancialEventArgs } from "igniteui-angular-charts/ES5/igx-financial-event-args";
 import { FinancialDataService } from "../services/financial-data.service";
-import { FinancialChartCustomIndicatorArgs } from 'igniteui-angular-charts/ES5/igx-financial-chart-custom-indicator-args';
-import { FinancialEventArgs } from 'igniteui-angular-charts/ES5/igx-financial-event-args';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,25 +14,29 @@ import { FinancialEventArgs } from 'igniteui-angular-charts/ES5/igx-financial-ev
 })
 export class FinancialChartCustomIndicatorsComponent {
     public data: any;
-    
+
+    constructor(private dataService: FinancialDataService) {
+        this.data = this.dataService.getGoog();
+    }
+
     public applyCustomIndicators(event: { sender: any, args: FinancialChartCustomIndicatorArgs }) {
-        if (event.args.index == 0) {
-            let info: FinancialEventArgs = event.args.indicatorInfo;
-            let ds = info.dataSource;
-            let open = ds.openColumn;
+        if (event.args.index === 0) {
+            const info: FinancialEventArgs = event.args.indicatorInfo;
+            const ds = info.dataSource;
+            const open = ds.openColumn;
             for (let i = 0; i < ds.indicatorColumn.length; i++) {
-            ds.indicatorColumn[i] = open[i];
+                ds.indicatorColumn[i] = open[i];
             }
         } else {
-            let info: FinancialEventArgs = event.args.indicatorInfo;
-            let ds = info.dataSource;
-            let close = ds.closeColumn;
+            const info: FinancialEventArgs = event.args.indicatorInfo;
+            const ds = info.dataSource;
+            const close = ds.closeColumn;
             for (let i = 0; i < ds.indicatorColumn.length; i++) {
                 let startIndex = i - 9;
                 if (startIndex < 0) {
                     startIndex = 0;
                 }
-                let count = (i - startIndex) + 1;
+                const count = (i - startIndex) + 1;
 
                 let sum = 0;
                 for (let j = startIndex; j <= i; j++) {
@@ -38,10 +44,7 @@ export class FinancialChartCustomIndicatorsComponent {
                 }
                 ds.indicatorColumn[i] = sum / count;
             }
-        }   
+        }
     }
 
-    constructor(private dataService: FinancialDataService) {
-        this.data = this.dataService.getGoog();
-    }
 }
