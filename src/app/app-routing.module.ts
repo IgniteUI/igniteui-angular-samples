@@ -77,6 +77,9 @@ import {
     FinancialChartHighVolumeComponent
 } from "./financial-chart/high-volume/financial-chart-high-volume.component";
 import {
+    FinancialChartIndicatorTypesComponent
+} from "./financial-chart/indicator-types/financial-chart-indicator-types.component";
+import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
@@ -85,6 +88,9 @@ import {
     FinancialChartPerformanceComponent
 } from "./financial-chart/performance/financial-chart-performance.component";
 import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartVolumeTypeComponent
+} from "./financial-chart/volume-type/financial-chart-volume-type.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
@@ -689,6 +695,14 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartCustomTooltipsComponent,
         path: "financial-chart-custom-tooltips"
+    },
+    {
+        component: FinancialChartIndicatorTypesComponent,
+        path: "financial-chart-indicator-types"
+    },
+    {
+        component: FinancialChartVolumeTypeComponent,
+        path: "financial-chart-volume-type"
     },
     {
         component: FinancialChartCustomIndicatorsComponent,

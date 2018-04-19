@@ -12,6 +12,7 @@ import {
 import { FinancialChartCustomTooltipsComponent } from "./custom-tooltips/financial-chart-custom-tooltips.component";
 import { FinancialChartHighFrequencyComponent } from "./high-frequency/financial-chart-high-frequency.component";
 import { FinancialChartHighVolumeComponent } from "./high-volume/financial-chart-high-volume.component";
+import { FinancialChartIndicatorTypesComponent } from "./indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartMultipleDataComponent } from "./multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
 import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
@@ -19,6 +20,7 @@ import { FinancialChartPerformanceComponent } from "./performance/financial-char
 import { FinancialDataService } from "./services/financial-data.service";
 import { StockDataService } from "./services/stock-data.service";
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
+import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
 
 @NgModule({
     declarations: [
@@ -28,6 +30,8 @@ import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.c
         FinancialChartPerformanceComponent,
         FinancialChartTitlesComponent,
         FinancialChartPanesComponent,
+        FinancialChartIndicatorTypesComponent,
+        FinancialChartVolumeTypeComponent,
         FinancialChartCustomIndicatorsComponent,
         FinancialChartHighVolumeComponent,
         FinancialChartHighFrequencyComponent,
