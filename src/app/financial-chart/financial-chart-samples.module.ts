@@ -5,7 +5,13 @@ import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financi
 import {
     FinancialChartCustomIndicatorsComponent
 } from "./custom-indicators/financial-chart-custom-indicators.component";
+import {
+    IgxPercentChangeYAxisDynamicModule
+} from "igniteui-angular-charts/ES5/igx-percent-change-y-axis-dynamic-module";
+import { FinancialChartAxisTypesComponent } from "./axis-types/financial-chart-axis-types.component";
 import { FinancialChartCustomTooltipsComponent } from "./custom-tooltips/financial-chart-custom-tooltips.component";
+import { FinancialChartHighFrequencyComponent } from "./high-frequency/financial-chart-high-frequency.component";
+import { FinancialChartHighVolumeComponent } from "./high-volume/financial-chart-high-volume.component";
 import { FinancialChartMultipleDataComponent } from "./multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
 import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
@@ -22,11 +28,17 @@ import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.c
         FinancialChartPerformanceComponent,
         FinancialChartTitlesComponent,
         FinancialChartPanesComponent,
-        FinancialChartCustomIndicatorsComponent
+        FinancialChartCustomIndicatorsComponent,
+        FinancialChartHighVolumeComponent,
+        FinancialChartHighFrequencyComponent,
+        FinancialChartAxisTypesComponent
     ],
     exports: [
     ],
-    imports: [ CommonModule, FormsModule, IgxFinancialChartModule ]
+    imports: [ CommonModule, FormsModule,
+        IgxFinancialChartModule,
+        IgxPercentChangeYAxisDynamicModule
+    ]
 })
 export class FinancialChartSamplesModule {
     public static forRoot(): ModuleWithProviders {

@@ -1,0 +1,15 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <span >yAxis Mode: </span>
+        <select [(ngModel)]="yAxisMode">
+            <option>Numeric</option>
+            <option>PercentChange</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-financial-chart height="100%" width="100%"
+            [dataSource]="data"
+            [yAxisMode]="yAxisMode">
+        </igx-financial-chart>
+    </div>
+</div>

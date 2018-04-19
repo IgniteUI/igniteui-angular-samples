@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.checkbox {
+    margin: 5;
+}
+.chart {
+    flex: 1;
+}
+.options {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
