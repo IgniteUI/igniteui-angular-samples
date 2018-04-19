@@ -71,14 +71,14 @@ import {
     FinancialChartCustomTooltipsComponent
 } from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
 import {
-    FinancialChartIndicatorTypesComponent
-} from "./financial-chart/indicator-types/financial-chart-indicator-types.component";
-import {
     FinancialChartHighFrequencyComponent
 } from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
 import {
     FinancialChartHighVolumeComponent
 } from "./financial-chart/high-volume/financial-chart-high-volume.component";
+import {
+    FinancialChartIndicatorTypesComponent
+} from "./financial-chart/indicator-types/financial-chart-indicator-types.component";
 import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
@@ -704,7 +704,7 @@ export const appRoutes: Routes = [
         component: FinancialChartVolumeTypeComponent,
         path: "financial-chart-volume-type"
     },
-    { 
+    {
         component: FinancialChartCustomIndicatorsComponent,
         path: "financial-chart-custom-indicators"
     },
