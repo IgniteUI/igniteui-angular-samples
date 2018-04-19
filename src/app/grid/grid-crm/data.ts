@@ -24,7 +24,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 7,
       "deals_total": 25,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 686210,
       "actual_sales": 421105
     },
@@ -52,7 +52,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 29,
       "deals_total": 35,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2008801,
       "actual_sales": 186592
     },
@@ -80,7 +80,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 7,
       "deals_total": 44,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 950873,
       "actual_sales": 3395844
     },
@@ -108,7 +108,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 2,
       "deals_total": 47,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 170852,
       "actual_sales": 3020337
     },
@@ -136,7 +136,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 11,
       "deals_total": 45,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1734161,
       "actual_sales": 1006212
     },
@@ -164,7 +164,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 6,
       "deals_total": 22,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 459672,
       "actual_sales": 1387575
     },
@@ -192,7 +192,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 8,
       "deals_total": 58,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 557944,
       "actual_sales": 4693923
     },
@@ -220,7 +220,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 14,
       "deals_total": 58,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 2673790,
       "actual_sales": 2290946
     },
@@ -248,7 +248,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 13,
       "deals_total": 33,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 901030,
       "actual_sales": 1105824
     },
@@ -276,7 +276,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 0,
       "deals_total": 48,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 0,
       "actual_sales": 3573592
     },
@@ -304,7 +304,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 10,
       "deals_total": 29,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 1057020,
       "actual_sales": 1350090
     },
@@ -332,7 +332,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 23,
       "deals_total": 51,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 1512112,
       "actual_sales": 271018
     },
@@ -360,7 +360,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 5,
       "deals_total": 43,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 701695,
       "actual_sales": 2694864
     },
@@ -388,7 +388,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 21,
       "deals_total": 49,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2511201,
       "actual_sales": 2140164
     },
@@ -416,7 +416,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 88,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3292440,
       "actual_sales": 2691388
     },
@@ -444,7 +444,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 25,
       "deals_total": 61,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 4851650,
       "actual_sales": 3161029
     },
@@ -472,7 +472,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 30,
       "deals_total": 86,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2864850,
       "actual_sales": 3328011
     },
@@ -500,7 +500,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 7,
       "deals_total": 23,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 794122,
       "actual_sales": 923508
     },
@@ -528,7 +528,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 0,
       "deals_total": 54,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 0,
       "actual_sales": 4943021
     },
@@ -556,7 +556,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 20,
       "deals_total": 52,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 3827040,
       "actual_sales": 883463
     },
@@ -612,7 +612,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 5,
       "deals_total": 42,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 447200,
       "actual_sales": 3497445
     },
@@ -640,7 +640,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 11,
       "deals_total": 34,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 1374648,
       "actual_sales": 3622626
     },
@@ -668,7 +668,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 13,
       "deals_total": 46,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 939731,
       "actual_sales": 4735052
     },
@@ -696,7 +696,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 21,
       "deals_total": 42,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1771476,
       "actual_sales": 1283424
     },
@@ -724,7 +724,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 11,
       "deals_total": 30,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 1282578,
       "actual_sales": 1273872
     },
@@ -752,7 +752,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 5,
       "deals_total": 35,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 870600,
       "actual_sales": 2156231
     },
@@ -780,7 +780,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 26,
       "deals_total": 34,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 4697628,
       "actual_sales": 147204
     },
@@ -808,7 +808,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 5,
       "deals_total": 34,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 551540,
       "actual_sales": 997100
     },
@@ -836,7 +836,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 21,
       "deals_total": 58,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3628422,
       "actual_sales": 1417267
     },
@@ -864,7 +864,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 17,
       "deals_total": 29,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2458761,
       "actual_sales": 354696
     },
@@ -892,7 +892,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 4977386,
       "actual_sales": 163577
     },
@@ -920,7 +920,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 18,
       "deals_total": 43,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1431054,
       "actual_sales": 504924
     },
@@ -948,7 +948,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 30,
       "deals_total": 59,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 2192640,
       "actual_sales": 1561904
     },
@@ -1004,7 +1004,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 17,
       "deals_total": 33,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2460886,
       "actual_sales": 976764
     },
@@ -1032,7 +1032,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 5,
       "deals_total": 21,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 851975,
       "actual_sales": 579500
     },
@@ -1060,7 +1060,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 20,
       "deals_total": 55,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1737780,
       "actual_sales": 1710384
     },
@@ -1088,7 +1088,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 7,
       "deals_total": 16,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 356503,
       "actual_sales": 609956
     },
@@ -1116,7 +1116,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 16,
       "deals_total": 62,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 3134544,
       "actual_sales": 3120450
     },
@@ -1144,7 +1144,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 14,
       "deals_total": 46,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 2692368,
       "actual_sales": 5775570
     },
@@ -1172,7 +1172,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 1,
       "deals_total": 36,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 65359,
       "actual_sales": 2337804
     },
@@ -1200,7 +1200,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 8,
       "deals_total": 29,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1081936,
       "actual_sales": 2128148
     },
@@ -1228,7 +1228,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1515576,
       "actual_sales": 1515635
     },
@@ -1256,7 +1256,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 2,
       "deals_total": 6,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 284054,
       "actual_sales": 464196
     },
@@ -1284,7 +1284,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 26,
       "deals_total": 79,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1441180,
       "actual_sales": 3417960
     },
@@ -1312,7 +1312,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 10,
       "deals_total": 56,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 990030,
       "actual_sales": 4172931
     },
@@ -1340,7 +1340,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 2,
       "deals_total": 44,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 388396,
       "actual_sales": 4518825
     },
@@ -1368,7 +1368,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 13,
       "deals_total": 51,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1501760,
       "actual_sales": 2678701
     },
@@ -1396,7 +1396,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 9,
       "deals_total": 57,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1054476,
       "actual_sales": 1898666
     },
@@ -1424,7 +1424,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 5,
       "deals_total": 33,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 355155,
       "actual_sales": 2360110
     },
@@ -1452,7 +1452,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 28,
       "deals_total": 30,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4174828,
       "actual_sales": 187960
     },
@@ -1480,7 +1480,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 49,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 894474,
       "actual_sales": 4664418
     },
@@ -1508,7 +1508,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 19,
       "deals_total": 68,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 3179669,
       "actual_sales": 1938279
     },
@@ -1536,7 +1536,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 3,
       "deals_total": 31,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 150252,
       "actual_sales": 670580
     },
@@ -1564,7 +1564,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 10,
       "deals_total": 38,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1898010,
       "actual_sales": 2612840
     },
@@ -1620,7 +1620,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 18,
       "deals_total": 40,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 3420072,
       "actual_sales": 313548
     },
@@ -1648,7 +1648,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 22,
       "deals_total": 54,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 3677278,
       "actual_sales": 1747108
     },
@@ -1676,7 +1676,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 15,
       "deals_total": 55,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2490840,
       "actual_sales": 3033900
     },
@@ -1704,7 +1704,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 27,
       "deals_total": 59,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3547287,
       "actual_sales": 1301440
     },
@@ -1732,7 +1732,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 28,
       "deals_total": 57,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 3626196,
       "actual_sales": 2823849
     },
@@ -1760,7 +1760,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 26,
       "deals_total": 54,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 2852928,
       "actual_sales": 4581096
     },
@@ -1788,7 +1788,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 14,
       "deals_total": 55,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1884918,
       "actual_sales": 1082730
     },
@@ -1816,7 +1816,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 30,
       "deals_total": 48,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2401050,
       "actual_sales": 2235468
     },
@@ -1844,7 +1844,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 33,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 0,
       "actual_sales": 3207787
     },
@@ -1872,7 +1872,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 20,
       "deals_total": 35,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1572000,
       "actual_sales": 209878
     },
@@ -1900,7 +1900,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 27,
       "deals_total": 50,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 1400166,
       "actual_sales": 61337
     },
@@ -1928,7 +1928,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 29,
       "deals_total": 67,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2749374,
       "actual_sales": 714571
     },
@@ -1956,7 +1956,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 25,
       "deals_total": 60,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 4323875,
       "actual_sales": 2746800
     },
@@ -1984,7 +1984,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 0,
       "deals_total": 12,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 0,
       "actual_sales": 1598400
     },
@@ -2012,7 +2012,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 2,
       "deals_total": 32,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 115192,
       "actual_sales": 451728
     },
@@ -2040,7 +2040,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 21,
       "deals_total": 41,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2045631,
       "actual_sales": 1248336
     },
@@ -2068,7 +2068,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 16,
       "deals_total": 53,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1574176,
       "actual_sales": 1160025
     },
@@ -2096,7 +2096,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 9,
       "deals_total": 42,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 538875,
       "actual_sales": 1733590
     },
@@ -2124,7 +2124,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 12,
       "deals_total": 28,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1643220,
       "actual_sales": 951342
     },
@@ -2152,7 +2152,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 15,
       "deals_total": 32,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1222830,
       "actual_sales": 1138104
     },
@@ -2180,7 +2180,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 8,
       "deals_total": 34,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 950984,
       "actual_sales": 2280513
     },
@@ -2208,7 +2208,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 26,
       "deals_total": 30,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 3642366,
       "actual_sales": 195156
     },
@@ -2236,7 +2236,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 24,
       "deals_total": 48,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1986888,
       "actual_sales": 2213760
     },
@@ -2264,7 +2264,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 22,
       "deals_total": 49,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 4032248,
       "actual_sales": 794038
     },
@@ -2292,7 +2292,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 12,
       "deals_total": 46,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1882284,
       "actual_sales": 433880
     },
@@ -2320,7 +2320,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 26,
       "deals_total": 57,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 3368196,
       "actual_sales": 2038825
     },
@@ -2348,7 +2348,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 8,
       "deals_total": 65,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1213264,
       "actual_sales": 3278968
     },
@@ -2376,7 +2376,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 12,
       "deals_total": 26,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1948260,
       "actual_sales": 1611643
     },
@@ -2404,7 +2404,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 22,
       "deals_total": 42,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1296262,
       "actual_sales": 301030
     },
@@ -2432,7 +2432,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 1,
       "deals_total": 46,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 168833,
       "actual_sales": 3745014
     },
@@ -2460,7 +2460,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 27,
       "deals_total": 59,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 4789557,
       "actual_sales": 2129000
     },
@@ -2488,7 +2488,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 6,
       "deals_total": 44,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 881670,
       "actual_sales": 1350960
     },
@@ -2516,7 +2516,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 9,
       "deals_total": 45,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1433790,
       "actual_sales": 881398
     },
@@ -2544,7 +2544,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 29,
       "deals_total": 51,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 1900863,
       "actual_sales": 3880989
     },
@@ -2572,7 +2572,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 18,
       "deals_total": 57,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 3301614,
       "actual_sales": 687087
     },
@@ -2600,7 +2600,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 21,
       "deals_total": 54,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 3337971,
       "actual_sales": 1152010
     },
@@ -2628,7 +2628,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 13,
       "deals_total": 35,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 2098044,
       "actual_sales": 2270006
     },
@@ -2656,7 +2656,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 26,
       "deals_total": 44,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1605162,
       "actual_sales": 758405
     },
@@ -2684,7 +2684,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 19,
       "deals_total": 41,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3732816,
       "actual_sales": 1634364
     },
@@ -2740,7 +2740,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 5,
       "deals_total": 52,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 893040,
       "actual_sales": 3140006
     },
@@ -2768,7 +2768,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 19,
       "deals_total": 35,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 1951110,
       "actual_sales": 758225
     },
@@ -2796,7 +2796,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 24,
       "deals_total": 47,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1299528,
       "actual_sales": 427320
     },
@@ -2824,7 +2824,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.05,
+      "ratio": 5,
       "estimated_sales": 1188520,
       "actual_sales": 128638
     },
@@ -2852,7 +2852,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 9,
       "deals_total": 30,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 570366,
       "actual_sales": 1520931
     },
@@ -2880,7 +2880,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 18,
       "deals_total": 64,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1812744,
       "actual_sales": 3443440
     },
@@ -2908,7 +2908,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 1,
       "deals_total": 13,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 162316,
       "actual_sales": 415392
     },
@@ -2936,7 +2936,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 0,
       "deals_total": 48,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 0,
       "actual_sales": 2988909
     },
@@ -2964,7 +2964,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 8,
       "deals_total": 15,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1588296,
       "actual_sales": 301318
     },
@@ -2992,7 +2992,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 29,
       "deals_total": 49,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 4890183,
       "actual_sales": 1847888
     },
@@ -3020,7 +3020,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 17,
       "deals_total": 41,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1380451,
       "actual_sales": 2263815
     },
@@ -3048,7 +3048,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 19,
       "deals_total": 61,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1602460,
       "actual_sales": 3069384
     },
@@ -3104,7 +3104,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 72,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1770160,
       "actual_sales": 2626420
     },
@@ -3132,7 +3132,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 25,
       "deals_total": 64,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2549350,
       "actual_sales": 3993800
     },
@@ -3160,7 +3160,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 28,
       "deals_total": 84,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2679656,
       "actual_sales": 1860390
     },
@@ -3188,7 +3188,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 19,
       "deals_total": 63,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 2605128,
       "actual_sales": 1623468
     },
@@ -3216,7 +3216,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 8,
       "deals_total": 33,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 420656,
       "actual_sales": 2915895
     },
@@ -3244,7 +3244,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 7,
       "deals_total": 34,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 409983,
       "actual_sales": 3269976
     },
@@ -3272,7 +3272,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 9,
       "deals_total": 25,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 913356,
       "actual_sales": 1984695
     },
@@ -3300,7 +3300,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 3,
       "deals_total": 46,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 449664,
       "actual_sales": 3766365
     },
@@ -3328,7 +3328,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 16,
       "deals_total": 29,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1617904,
       "actual_sales": 963879
     },
@@ -3356,7 +3356,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 21,
       "deals_total": 60,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2677416,
       "actual_sales": 2440783
     },
@@ -3384,7 +3384,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 19,
       "deals_total": 45,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 2130565,
       "actual_sales": 1985298
     },
@@ -3412,7 +3412,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 30,
       "deals_total": 48,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 5639880,
       "actual_sales": 2149360
     },
@@ -3440,7 +3440,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 13,
       "deals_total": 50,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1308450,
       "actual_sales": 3988580
     },
@@ -3468,7 +3468,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 12,
       "deals_total": 29,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 2101320,
       "actual_sales": 736176
     },
@@ -3496,7 +3496,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 15,
       "deals_total": 48,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1312935,
       "actual_sales": 1226431
     },
@@ -3524,7 +3524,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 7,
       "deals_total": 39,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1096641,
       "actual_sales": 1426176
     },
@@ -3552,7 +3552,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 22,
       "deals_total": 30,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1650924,
       "actual_sales": 826308
     },
@@ -3580,7 +3580,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 8,
       "deals_total": 17,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 500616,
       "actual_sales": 329451
     },
@@ -3608,7 +3608,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 6,
       "deals_total": 48,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 713838,
       "actual_sales": 4569298
     },
@@ -3636,7 +3636,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 10,
       "deals_total": 34,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1513590,
       "actual_sales": 1165095
     },
@@ -3664,7 +3664,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 7,
       "deals_total": 50,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1347920,
       "actual_sales": 3184758
     },
@@ -3692,7 +3692,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 76,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 5488380,
       "actual_sales": 1626180
     },
@@ -3720,7 +3720,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 25,
       "deals_total": 46,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 3296025,
       "actual_sales": 1365140
     },
@@ -3748,7 +3748,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 9,
       "deals_total": 45,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 721710,
       "actual_sales": 1020397
     },
@@ -3776,7 +3776,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 15,
       "deals_total": 57,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1987155,
       "actual_sales": 1172610
     },
@@ -3804,7 +3804,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 23,
       "deals_total": 63,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 2153306,
       "actual_sales": 2254830
     },
@@ -3832,7 +3832,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 5,
       "deals_total": 50,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 897310,
       "actual_sales": 3698296
     },
@@ -3860,7 +3860,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 26,
       "deals_total": 49,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 4579432,
       "actual_sales": 796284
     },
@@ -3888,7 +3888,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 15,
       "deals_total": 24,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1213890,
       "actual_sales": 1063752
     },
@@ -3916,7 +3916,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 14,
       "deals_total": 46,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1268722,
       "actual_sales": 841776
     },
@@ -3944,7 +3944,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 1,
       "deals_total": 32,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 63836,
       "actual_sales": 4367550
     },
@@ -3972,7 +3972,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 17,
       "deals_total": 22,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 2531572,
       "actual_sales": 327484
     },
@@ -4000,7 +4000,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 17,
       "deals_total": 30,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2999820,
       "actual_sales": 582484
     },
@@ -4028,7 +4028,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 11,
       "deals_total": 55,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 823603,
       "actual_sales": 2346374
     },
@@ -4056,7 +4056,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 23,
       "deals_total": 56,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3627468,
       "actual_sales": 1979152
     },
@@ -4084,7 +4084,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 16,
       "deals_total": 71,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1083200,
       "actual_sales": 5078034
     },
@@ -4112,7 +4112,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 8,
       "deals_total": 30,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1469472,
       "actual_sales": 1040508
     },
@@ -4140,7 +4140,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 20,
       "deals_total": 42,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 1516120,
       "actual_sales": 2711456
     },
@@ -4168,7 +4168,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 18,
       "deals_total": 43,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 1004922,
       "actual_sales": 2680956
     },
@@ -4196,7 +4196,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 0,
       "deals_total": 17,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 0,
       "actual_sales": 1721110
     },
@@ -4224,7 +4224,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 6,
       "deals_total": 44,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 651822,
       "actual_sales": 1877136
     },
@@ -4252,7 +4252,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 8,
       "deals_total": 32,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1582400,
       "actual_sales": 1393172
     },
@@ -4280,7 +4280,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 8,
       "deals_total": 45,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1276160,
       "actual_sales": 1472489
     },
@@ -4308,7 +4308,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 28,
       "deals_total": 58,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 3862572,
       "actual_sales": 151914
     },
@@ -4336,7 +4336,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 2,
       "deals_total": 20,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 266636,
       "actual_sales": 744032
     },
@@ -4364,7 +4364,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 0,
       "deals_total": 19,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 0,
       "actual_sales": 1270213
     },
@@ -4420,7 +4420,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 21,
       "deals_total": 27,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 2872989,
       "actual_sales": 57512
     },
@@ -4448,7 +4448,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 19,
       "deals_total": 57,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1061188,
       "actual_sales": 4486920
     },
@@ -4476,7 +4476,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 18,
       "deals_total": 55,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 3510486,
       "actual_sales": 959364
     },
@@ -4504,7 +4504,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 0,
       "deals_total": 30,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 0,
       "actual_sales": 1070082
     },
@@ -4532,7 +4532,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 26,
       "deals_total": 61,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 2379182,
       "actual_sales": 5099790
     },
@@ -4560,7 +4560,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 7,
       "deals_total": 49,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 752031,
       "actual_sales": 4486638
     },
@@ -4588,7 +4588,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 7,
       "deals_total": 22,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 921004,
       "actual_sales": 1736826
     },
@@ -4644,7 +4644,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 26,
       "deals_total": 36,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 2821182,
       "actual_sales": 167645
     },
@@ -4672,7 +4672,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 1,
       "deals_total": 31,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 76703,
       "actual_sales": 2947854
     },
@@ -4700,7 +4700,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 30,
       "deals_total": 39,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 1985460,
       "actual_sales": 103250
     },
@@ -4728,7 +4728,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 19,
       "deals_total": 49,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2191270,
       "actual_sales": 2004216
     },
@@ -4756,7 +4756,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 14,
       "deals_total": 46,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1125530,
       "actual_sales": 1256730
     },
@@ -4784,7 +4784,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 22,
       "deals_total": 36,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2178550,
       "actual_sales": 524524
     },
@@ -4812,7 +4812,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 24,
       "deals_total": 78,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1646928,
       "actual_sales": 5130729
     },
@@ -4840,7 +4840,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 2,
       "deals_total": 27,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 238510,
       "actual_sales": 1360996
     },
@@ -4868,7 +4868,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 25,
       "deals_total": 39,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 3030000,
       "actual_sales": 257280
     },
@@ -4924,7 +4924,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 4,
       "deals_total": 54,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 745968,
       "actual_sales": 1614668
     },
@@ -4952,7 +4952,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 12,
       "deals_total": 40,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1300020,
       "actual_sales": 763460
     },
@@ -5008,7 +5008,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 1,
       "deals_total": 31,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 188979,
       "actual_sales": 2027940
     },
@@ -5036,7 +5036,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 30,
       "deals_total": 47,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3944820,
       "actual_sales": 852194
     },
@@ -5064,7 +5064,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 5,
       "deals_total": 23,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 834545,
       "actual_sales": 710168
     },
@@ -5092,7 +5092,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 12,
       "deals_total": 37,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1415508,
       "actual_sales": 1756017
     },
@@ -5120,7 +5120,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 13,
       "deals_total": 37,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2403583,
       "actual_sales": 791384
     },
@@ -5148,7 +5148,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 0,
       "deals_total": 35,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 0,
       "actual_sales": 4449212
     },
@@ -5176,7 +5176,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 7,
       "deals_total": 25,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 798189,
       "actual_sales": 176377
     },
@@ -5204,7 +5204,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 19,
       "deals_total": 34,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 3112542,
       "actual_sales": 291996
     },
@@ -5232,7 +5232,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 14,
       "deals_total": 47,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 950180,
       "actual_sales": 2592928
     },
@@ -5260,7 +5260,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 5,
       "deals_total": 21,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 735850,
       "actual_sales": 392082
     },
@@ -5288,7 +5288,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 24,
       "deals_total": 52,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2030160,
       "actual_sales": 2136615
     },
@@ -5316,7 +5316,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 0,
       "deals_total": 31,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 0,
       "actual_sales": 1543312
     },
@@ -5344,7 +5344,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 3,
       "deals_total": 42,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 262398,
       "actual_sales": 821674
     },
@@ -5372,7 +5372,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 8,
       "deals_total": 57,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1511584,
       "actual_sales": 3815300
     },
@@ -5400,7 +5400,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 5,
       "deals_total": 17,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 555055,
       "actual_sales": 661165
     },
@@ -5428,7 +5428,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 29,
       "deals_total": 76,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 4356699,
       "actual_sales": 3193134
     },
@@ -5456,7 +5456,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 16,
       "deals_total": 41,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 807616,
       "actual_sales": 2448144
     },
@@ -5484,7 +5484,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 17,
       "deals_total": 58,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2380867,
       "actual_sales": 4535890
     },
@@ -5512,7 +5512,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 28,
       "deals_total": 66,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 4226348,
       "actual_sales": 5085522
     },
@@ -5540,7 +5540,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 21,
       "deals_total": 65,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 3262413,
       "actual_sales": 5387175
     },
@@ -5568,7 +5568,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 6,
       "deals_total": 31,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 960516,
       "actual_sales": 2818336
     },
@@ -5596,7 +5596,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 9,
       "deals_total": 62,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1143297,
       "actual_sales": 4244049
     },
@@ -5624,7 +5624,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 29,
       "deals_total": 46,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 5167220,
       "actual_sales": 812365
     },
@@ -5652,7 +5652,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 12,
       "deals_total": 56,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1389072,
       "actual_sales": 2744442
     },
@@ -5680,7 +5680,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 24,
       "deals_total": 70,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 3102096,
       "actual_sales": 2386944
     },
@@ -5708,7 +5708,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 9,
       "deals_total": 39,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 719010,
       "actual_sales": 1590057
     },
@@ -5736,7 +5736,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 10,
       "deals_total": 42,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 739970,
       "actual_sales": 3171056
     },
@@ -5764,7 +5764,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 16,
       "deals_total": 30,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 1104080,
       "actual_sales": 676224
     },
@@ -5792,7 +5792,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 3,
       "deals_total": 9,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 509445,
       "actual_sales": 369884
     },
@@ -5820,7 +5820,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 21,
       "deals_total": 47,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1201662,
       "actual_sales": 917904
     },
@@ -5848,7 +5848,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 3,
       "deals_total": 46,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 243390,
       "actual_sales": 3501928
     },
@@ -5876,7 +5876,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 8,
       "deals_total": 44,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 567480,
       "actual_sales": 1320760
     },
@@ -5904,7 +5904,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 29,
       "deals_total": 44,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 4065365,
       "actual_sales": 703816
     },
@@ -5932,7 +5932,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 51,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 125270,
       "actual_sales": 3451420
     },
@@ -5960,7 +5960,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 29,
       "deals_total": 75,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 4039874,
       "actual_sales": 3943896
     },
@@ -5988,7 +5988,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 20,
       "deals_total": 64,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 3615200,
       "actual_sales": 2791395
     },
@@ -6016,7 +6016,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 8,
       "deals_total": 59,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 708136,
       "actual_sales": 4101250
     },
@@ -6072,7 +6072,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 30,
       "deals_total": 47,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 2988330,
       "actual_sales": 797533
     },
@@ -6100,7 +6100,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 10,
       "deals_total": 66,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1166430,
       "actual_sales": 3518032
     },
@@ -6128,7 +6128,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 29,
       "deals_total": 53,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 4187716,
       "actual_sales": 1870272
     },
@@ -6184,7 +6184,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 16,
       "deals_total": 73,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1525488,
       "actual_sales": 1824536
     },
@@ -6212,7 +6212,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 10,
       "deals_total": 49,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1598350,
       "actual_sales": 741942
     },
@@ -6240,7 +6240,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 4,
       "deals_total": 53,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 283012,
       "actual_sales": 2322660
     },
@@ -6268,7 +6268,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 4,
       "deals_total": 34,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 329872,
       "actual_sales": 1962306
     },
@@ -6324,7 +6324,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 22,
       "deals_total": 67,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2004244,
       "actual_sales": 5332200
     },
@@ -6352,7 +6352,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 12,
       "deals_total": 43,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2382600,
       "actual_sales": 1415974
     },
@@ -6380,7 +6380,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 29,
       "deals_total": 54,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 5233572,
       "actual_sales": 552954
     },
@@ -6408,7 +6408,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 14,
       "deals_total": 50,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 2170980,
       "actual_sales": 1075110
     },
@@ -6436,7 +6436,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 24,
       "deals_total": 39,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 4575528,
       "actual_sales": 365964
     },
@@ -6464,7 +6464,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 19,
       "deals_total": 40,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 2334910,
       "actual_sales": 450455
     },
@@ -6492,7 +6492,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 5,
       "deals_total": 24,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 937210,
       "actual_sales": 1271930
     },
@@ -6520,7 +6520,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 3,
       "deals_total": 40,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 175857,
       "actual_sales": 2268825
     },
@@ -6548,7 +6548,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 22,
       "deals_total": 55,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2308504,
       "actual_sales": 1564944
     },
@@ -6576,7 +6576,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 20,
       "deals_total": 54,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 2979320,
       "actual_sales": 3780063
     },
@@ -6604,7 +6604,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 22,
       "deals_total": 50,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 3289286,
       "actual_sales": 949728
     },
@@ -6632,7 +6632,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 23,
       "deals_total": 48,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 1252350,
       "actual_sales": 3071040
     },
@@ -6660,7 +6660,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 7,
       "deals_total": 40,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1285620,
       "actual_sales": 1251760
     },
@@ -6688,7 +6688,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 22,
       "deals_total": 37,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 3298790,
       "actual_sales": 268098
     },
@@ -6716,7 +6716,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 30,
       "deals_total": 62,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 3578670,
       "actual_sales": 3710377
     },
@@ -6744,7 +6744,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 9,
       "deals_total": 21,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1208142,
       "actual_sales": 437234
     },
@@ -6772,7 +6772,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 18,
       "deals_total": 48,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 3440826,
       "actual_sales": 361452
     },
@@ -6800,7 +6800,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 8,
       "deals_total": 34,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1004816,
       "actual_sales": 821088
     },
@@ -6828,7 +6828,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 6,
       "deals_total": 43,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 361296,
       "actual_sales": 2519132
     },
@@ -6856,7 +6856,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 0,
       "actual_sales": 3736642
     },
@@ -6884,7 +6884,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 1,
       "deals_total": 22,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 110038,
       "actual_sales": 781316
     },
@@ -6912,7 +6912,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 32,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 0,
       "actual_sales": 3808755
     },
@@ -6940,7 +6940,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 2,
       "deals_total": 50,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 120282,
       "actual_sales": 3000442
     },
@@ -6968,7 +6968,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 25,
       "deals_total": 47,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 3020200,
       "actual_sales": 202444
     },
@@ -6996,7 +6996,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 19,
       "deals_total": 67,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 3746705,
       "actual_sales": 1820900
     },
@@ -7024,7 +7024,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 26,
       "deals_total": 80,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3548402,
       "actual_sales": 3531580
     },
@@ -7052,7 +7052,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 28,
       "deals_total": 38,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 1905484,
       "actual_sales": 1330700
     },
@@ -7080,7 +7080,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 27,
       "deals_total": 50,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 4735287,
       "actual_sales": 1160698
     },
@@ -7108,7 +7108,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 17,
       "deals_total": 36,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 1015886,
       "actual_sales": 1068690
     },
@@ -7136,7 +7136,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 2,
       "deals_total": 34,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 190244,
       "actual_sales": 1596924
     },
@@ -7164,7 +7164,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 19,
       "deals_total": 39,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 2467511,
       "actual_sales": 751428
     },
@@ -7192,7 +7192,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 15,
       "deals_total": 62,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1873470,
       "actual_sales": 3191400
     },
@@ -7220,7 +7220,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 25,
       "deals_total": 53,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 2165350,
       "actual_sales": 238221
     },
@@ -7248,7 +7248,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 7,
       "deals_total": 18,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1179374,
       "actual_sales": 332826
     },
@@ -7276,7 +7276,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 10,
       "deals_total": 57,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 938890,
       "actual_sales": 4977720
     },
@@ -7304,7 +7304,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 22,
       "deals_total": 68,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 3950936,
       "actual_sales": 4639712
     },
@@ -7332,7 +7332,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 21,
       "deals_total": 60,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1653288,
       "actual_sales": 1799580
     },
@@ -7360,7 +7360,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 22,
       "deals_total": 35,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 3103298,
       "actual_sales": 1153776
     },
@@ -7388,7 +7388,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 23,
       "deals_total": 50,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 3220391,
       "actual_sales": 3818050
     },
@@ -7416,7 +7416,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 0,
       "deals_total": 41,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 0,
       "actual_sales": 1846140
     },
@@ -7444,7 +7444,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 26,
       "deals_total": 40,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 3280576,
       "actual_sales": 705663
     },
@@ -7472,7 +7472,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 11,
       "deals_total": 45,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1651859,
       "actual_sales": 1685409
     },
@@ -7500,7 +7500,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 6,
       "deals_total": 51,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 333948,
       "actual_sales": 952866
     },
@@ -7528,7 +7528,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 5,
       "deals_total": 19,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 440445,
       "actual_sales": 351034
     },
@@ -7556,7 +7556,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 5,
       "deals_total": 36,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 833855,
       "actual_sales": 3849153
     },
@@ -7584,7 +7584,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 28,
       "deals_total": 54,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 3094224,
       "actual_sales": 709998
     },
@@ -7612,7 +7612,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 12,
       "deals_total": 22,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1488624,
       "actual_sales": 336148
     },
@@ -7640,7 +7640,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 21,
       "deals_total": 24,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1857429,
       "actual_sales": 197636
     },
@@ -7668,7 +7668,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 25,
       "deals_total": 54,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 4845700,
       "actual_sales": 1248024
     },
@@ -7696,7 +7696,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 20,
       "deals_total": 69,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2488920,
       "actual_sales": 3567806
     },
@@ -7724,7 +7724,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 2,
       "deals_total": 35,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 239896,
       "actual_sales": 1684188
     },
@@ -7752,7 +7752,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 25,
       "deals_total": 48,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 4781550,
       "actual_sales": 1207162
     },
@@ -7780,7 +7780,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 27,
       "deals_total": 52,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 4239648,
       "actual_sales": 2462526
     },
@@ -7808,7 +7808,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 27,
       "deals_total": 49,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 2064312,
       "actual_sales": 3288348
     },
@@ -7836,7 +7836,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 1,
       "deals_total": 31,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 155090,
       "actual_sales": 1168350
     },
@@ -7864,7 +7864,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 17,
       "deals_total": 69,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2366655,
       "actual_sales": 3426655
     },
@@ -7892,7 +7892,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 20,
       "deals_total": 53,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 2290140,
       "actual_sales": 760602
     },
@@ -7920,7 +7920,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 21,
       "deals_total": 78,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1546062,
       "actual_sales": 3467664
     },
@@ -7948,7 +7948,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 8,
       "deals_total": 52,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1445176,
       "actual_sales": 3224560
     },
@@ -7976,7 +7976,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 13,
       "deals_total": 51,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1840319,
       "actual_sales": 1980828
     },
@@ -8004,7 +8004,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 17,
       "deals_total": 43,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1495405,
       "actual_sales": 950201
     },
@@ -8032,7 +8032,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 29,
       "deals_total": 85,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3944000,
       "actual_sales": 4134078
     },
@@ -8060,7 +8060,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 12,
       "deals_total": 57,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2229372,
       "actual_sales": 918525
     },
@@ -8088,7 +8088,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 0,
       "deals_total": 25,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 0,
       "actual_sales": 1184027
     },
@@ -8116,7 +8116,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 20,
       "deals_total": 59,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 3350320,
       "actual_sales": 1540552
     },
@@ -8144,7 +8144,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 27,
       "deals_total": 49,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 3897612,
       "actual_sales": 1384416
     },
@@ -8172,7 +8172,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 22,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 0,
       "actual_sales": 1364233
     },
@@ -8200,7 +8200,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 13,
       "deals_total": 51,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1992991,
       "actual_sales": 939048
     },
@@ -8228,7 +8228,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 0,
       "deals_total": 31,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 0,
       "actual_sales": 848544
     },
@@ -8256,7 +8256,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 17,
       "deals_total": 59,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2467805,
       "actual_sales": 2334633
     },
@@ -8284,7 +8284,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 22,
       "deals_total": 58,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 3012614,
       "actual_sales": 1770810
     },
@@ -8312,7 +8312,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 22,
       "deals_total": 48,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2495900,
       "actual_sales": 855030
     },
@@ -8340,7 +8340,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 20,
       "deals_total": 51,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1737460,
       "actual_sales": 732573
     },
@@ -8368,7 +8368,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 48,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1035584,
       "actual_sales": 1890350
     },
@@ -8424,7 +8424,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 17,
       "deals_total": 46,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 919581,
       "actual_sales": 1988074
     },
@@ -8452,7 +8452,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 3,
       "deals_total": 23,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 587517,
       "actual_sales": 578772
     },
@@ -8480,7 +8480,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 23,
       "deals_total": 58,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 3153300,
       "actual_sales": 2667336
     },
@@ -8508,7 +8508,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 13,
       "deals_total": 24,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1314690,
       "actual_sales": 258932
     },
@@ -8536,7 +8536,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 13,
       "deals_total": 43,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 652782,
       "actual_sales": 1497600
     },
@@ -8564,7 +8564,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 10,
       "deals_total": 63,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 537900,
       "actual_sales": 4803246
     },
@@ -8592,7 +8592,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 69,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 833064,
       "actual_sales": 4902630
     },
@@ -8620,7 +8620,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 11,
       "deals_total": 64,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1902879,
       "actual_sales": 5429293
     },
@@ -8676,7 +8676,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 19,
       "deals_total": 78,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1187386,
       "actual_sales": 3225510
     },
@@ -8704,7 +8704,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 22,
       "deals_total": 57,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2714184,
       "actual_sales": 1713914
     },
@@ -8732,7 +8732,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 6,
       "deals_total": 41,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 695478,
       "actual_sales": 1439614
     },
@@ -8760,7 +8760,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 16,
       "deals_total": 50,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1440736,
       "actual_sales": 2113518
     },
@@ -8788,7 +8788,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 30,
       "deals_total": 64,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1519140,
       "actual_sales": 1373790
     },
@@ -8816,7 +8816,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 20,
       "deals_total": 76,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1030600,
       "actual_sales": 2565584
     },
@@ -8844,7 +8844,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 23,
       "deals_total": 73,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 4039260,
       "actual_sales": 3939210
     },
@@ -8872,7 +8872,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 4,
       "deals_total": 50,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 402772,
       "actual_sales": 1624896
     },
@@ -8900,7 +8900,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 21,
       "deals_total": 58,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 3111843,
       "actual_sales": 4637825
     },
@@ -8928,7 +8928,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 28,
       "deals_total": 67,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2479596,
       "actual_sales": 1491980
     },
@@ -8956,7 +8956,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 19,
       "deals_total": 66,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2139970,
       "actual_sales": 3976420
     },
@@ -8984,7 +8984,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 11,
       "deals_total": 62,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 894850,
       "actual_sales": 4514053
     },
@@ -9012,7 +9012,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 3,
       "deals_total": 41,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 507147,
       "actual_sales": 2576574
     },
@@ -9040,7 +9040,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 14,
       "deals_total": 55,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1992900,
       "actual_sales": 1462824
     },
@@ -9068,7 +9068,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 9,
       "deals_total": 35,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 551268,
       "actual_sales": 147118
     },
@@ -9096,7 +9096,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 15,
       "deals_total": 46,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 2939100,
       "actual_sales": 914480
     },
@@ -9124,7 +9124,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 25,
       "deals_total": 79,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 3289500,
       "actual_sales": 3669892
     },
@@ -9152,7 +9152,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 10,
       "deals_total": 50,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1548310,
       "actual_sales": 3143016
     },
@@ -9180,7 +9180,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 13,
       "deals_total": 58,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2238639,
       "actual_sales": 1521253
     },
@@ -9208,7 +9208,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 20,
       "deals_total": 73,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2769660,
       "actual_sales": 3281460
     },
@@ -9236,7 +9236,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 14,
       "deals_total": 28,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1453984,
       "actual_sales": 1267488
     },
@@ -9264,7 +9264,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 25,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 1206416,
       "actual_sales": 184068
     },
@@ -9292,7 +9292,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 53,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 180129,
       "actual_sales": 2333630
     },
@@ -9320,7 +9320,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 11,
       "deals_total": 35,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 724603,
       "actual_sales": 3157019
     },
@@ -9348,7 +9348,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 5,
       "deals_total": 32,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 983620,
       "actual_sales": 2902225
     },
@@ -9376,7 +9376,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 1,
       "deals_total": 43,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 67636,
       "actual_sales": 2840568
     },
@@ -9404,7 +9404,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 10,
       "deals_total": 44,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 693220,
       "actual_sales": 1317780
     },
@@ -9432,7 +9432,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 15,
       "deals_total": 35,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 1952070,
       "actual_sales": 1023200
     },
@@ -9460,7 +9460,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 0,
       "actual_sales": 4052525
     },
@@ -9488,7 +9488,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 15,
       "deals_total": 35,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 1827300,
       "actual_sales": 452601
     },
@@ -9516,7 +9516,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 19,
       "deals_total": 41,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1222498,
       "actual_sales": 1806744
     },
@@ -9544,7 +9544,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 1,
       "deals_total": 56,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 177212,
       "actual_sales": 1717794
     },
@@ -9572,7 +9572,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 3,
       "deals_total": 36,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 516813,
       "actual_sales": 839340
     },
@@ -9600,7 +9600,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 9,
       "deals_total": 41,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1384821,
       "actual_sales": 736496
     },
@@ -9628,7 +9628,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 15,
       "deals_total": 64,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1557690,
       "actual_sales": 1465086
     },
@@ -9656,7 +9656,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 21,
       "deals_total": 70,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1352400,
       "actual_sales": 2498928
     },
@@ -9684,7 +9684,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 30,
       "deals_total": 80,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2483700,
       "actual_sales": 4461250
     },
@@ -9712,7 +9712,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 6,
       "deals_total": 31,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 348222,
       "actual_sales": 862935
     },
@@ -9740,7 +9740,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 29,
       "deals_total": 60,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1550398,
       "actual_sales": 1445160
     },
@@ -9796,7 +9796,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 26,
       "deals_total": 60,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 4249700,
       "actual_sales": 1603935
     },
@@ -9824,7 +9824,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 19,
       "deals_total": 50,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1781231,
       "actual_sales": 703548
     },
@@ -9852,7 +9852,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 17,
       "deals_total": 39,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 1541492,
       "actual_sales": 1528560
     },
@@ -9880,7 +9880,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 30,
       "deals_total": 66,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1647300,
       "actual_sales": 3980784
     },
@@ -9908,7 +9908,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 19,
       "deals_total": 28,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 3728978,
       "actual_sales": 1196573
     },
@@ -9936,7 +9936,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 15,
       "deals_total": 63,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 1230180,
       "actual_sales": 2199080
     },
@@ -9964,7 +9964,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 11,
       "deals_total": 47,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1572571,
       "actual_sales": 2601841
     },
@@ -9992,7 +9992,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 10,
       "deals_total": 43,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 1017590,
       "actual_sales": 574360
     },
@@ -10020,7 +10020,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 23,
       "deals_total": 54,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1520829,
       "actual_sales": 208320
     },
@@ -10048,7 +10048,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 24,
       "deals_total": 63,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1427424,
       "actual_sales": 3357060
     },
@@ -10076,7 +10076,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 27,
       "deals_total": 59,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3966678,
       "actual_sales": 1797380
     },
@@ -10104,7 +10104,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 13,
       "deals_total": 55,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1181427,
       "actual_sales": 3766446
     },
@@ -10132,7 +10132,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 1,
       "deals_total": 42,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 78688,
       "actual_sales": 2716720
     },
@@ -10160,7 +10160,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 19,
       "deals_total": 25,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3450115,
       "actual_sales": 613324
     },
@@ -10188,7 +10188,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 4,
       "deals_total": 44,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 434144,
       "actual_sales": 5445356
     },
@@ -10216,7 +10216,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 0,
       "actual_sales": 1251972
     },
@@ -10244,7 +10244,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 76,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 3629610,
       "actual_sales": 2184096
     },
@@ -10272,7 +10272,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 7,
       "deals_total": 45,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1258432,
       "actual_sales": 1861560
     },
@@ -10300,7 +10300,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 27,
       "deals_total": 46,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 5066334,
       "actual_sales": 2632630
     },
@@ -10328,7 +10328,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 1,
       "deals_total": 18,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 107254,
       "actual_sales": 128329
     },
@@ -10356,7 +10356,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 17,
       "deals_total": 67,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2329204,
       "actual_sales": 3610200
     },
@@ -10384,7 +10384,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 27,
       "deals_total": 42,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 4828221,
       "actual_sales": 120508
     },
@@ -10412,7 +10412,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 18,
       "deals_total": 63,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 3334734,
       "actual_sales": 4911875
     },
@@ -10440,7 +10440,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 4,
       "deals_total": 38,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 689176,
       "actual_sales": 1534086
     },
@@ -10468,7 +10468,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 24,
       "deals_total": 56,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1327296,
       "actual_sales": 1596275
     },
@@ -10496,7 +10496,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 13,
       "deals_total": 53,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1915654,
       "actual_sales": 4882050
     },
@@ -10524,7 +10524,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 11,
       "deals_total": 50,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2169189,
       "actual_sales": 3741525
     },
@@ -10552,7 +10552,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 6,
       "deals_total": 25,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 724164,
       "actual_sales": 1561021
     },
@@ -10608,7 +10608,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 11,
       "deals_total": 28,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 1219449,
       "actual_sales": 2505255
     },
@@ -10636,7 +10636,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 19,
       "deals_total": 59,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1846287,
       "actual_sales": 1583352
     },
@@ -10664,7 +10664,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 15,
       "deals_total": 50,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1782825,
       "actual_sales": 1868660
     },
@@ -10692,7 +10692,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 1,
       "deals_total": 19,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 107416,
       "actual_sales": 894870
     },
@@ -10720,7 +10720,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 30,
       "deals_total": 63,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 5766090,
       "actual_sales": 4497288
     },
@@ -10776,7 +10776,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 24,
       "deals_total": 57,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 4014936,
       "actual_sales": 4360902
     },
@@ -10804,7 +10804,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 25,
       "deals_total": 43,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 3145750,
       "actual_sales": 1283536
     },
@@ -10832,7 +10832,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 25,
       "deals_total": 67,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 4854200,
       "actual_sales": 3840399
     },
@@ -10860,7 +10860,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 20,
       "deals_total": 52,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 2578880,
       "actual_sales": 4731031
     },
@@ -10888,7 +10888,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 1,
       "deals_total": 40,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 108931,
       "actual_sales": 3545880
     },
@@ -10916,7 +10916,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 4,
       "deals_total": 42,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 299488,
       "actual_sales": 843648
     },
@@ -10944,7 +10944,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 17,
       "deals_total": 53,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2473653,
       "actual_sales": 2065349
     },
@@ -10972,7 +10972,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 13,
       "deals_total": 36,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 2002221,
       "actual_sales": 2596208
     },
@@ -11000,7 +11000,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 10,
       "deals_total": 55,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1231100,
       "actual_sales": 2020420
     },
@@ -11028,7 +11028,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 27,
       "deals_total": 84,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 4475790,
       "actual_sales": 5240970
     },
@@ -11056,7 +11056,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 14,
       "deals_total": 22,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 2182544,
       "actual_sales": 1007629
     },
@@ -11084,7 +11084,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 22,
       "deals_total": 52,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 2190540,
       "actual_sales": 4935216
     },
@@ -11112,7 +11112,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 29,
       "deals_total": 49,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 2671190,
       "actual_sales": 937554
     },
@@ -11140,7 +11140,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 18,
       "deals_total": 41,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1040976,
       "actual_sales": 1429460
     },
@@ -11168,7 +11168,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 29,
       "deals_total": 65,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 4427227,
       "actual_sales": 3162063
     },
@@ -11196,7 +11196,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 14,
       "deals_total": 44,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 850934,
       "actual_sales": 2981425
     },
@@ -11224,7 +11224,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 17,
       "deals_total": 56,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 945506,
       "actual_sales": 1376064
     },
@@ -11252,7 +11252,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 9,
       "deals_total": 42,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 719631,
       "actual_sales": 2335872
     },
@@ -11280,7 +11280,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 1,
       "deals_total": 32,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 139949,
       "actual_sales": 1396056
     },
@@ -11308,7 +11308,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 3,
       "deals_total": 29,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 350460,
       "actual_sales": 734488
     },
@@ -11336,7 +11336,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 21,
       "deals_total": 68,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 3830547,
       "actual_sales": 4828404
     },
@@ -11364,7 +11364,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 10,
       "deals_total": 66,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1703760,
       "actual_sales": 3875004
     },
@@ -11392,7 +11392,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 19,
       "deals_total": 42,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2146506,
       "actual_sales": 1281660
     },
@@ -11420,7 +11420,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 24,
       "deals_total": 50,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1330608,
       "actual_sales": 2332893
     },
@@ -11448,7 +11448,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 15,
       "deals_total": 52,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 973260,
       "actual_sales": 1618731
     },
@@ -11476,7 +11476,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 8,
       "deals_total": 57,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 790064,
       "actual_sales": 3351606
     },
@@ -11504,7 +11504,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 22,
       "deals_total": 59,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 4245934,
       "actual_sales": 1480160
     },
@@ -11532,7 +11532,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 10,
       "deals_total": 54,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 895270,
       "actual_sales": 4582278
     },
@@ -11560,7 +11560,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 2,
       "deals_total": 13,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 155772,
       "actual_sales": 379671
     },
@@ -11588,7 +11588,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 17,
       "deals_total": 49,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1438370,
       "actual_sales": 1291407
     },
@@ -11616,7 +11616,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 14,
       "deals_total": 74,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1048614,
       "actual_sales": 2644800
     },
@@ -11644,7 +11644,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 1,
       "deals_total": 29,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 192134,
       "actual_sales": 1297520
     },
@@ -11672,7 +11672,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 21,
       "deals_total": 36,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2784222,
       "actual_sales": 605500
     },
@@ -11700,7 +11700,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 24,
       "deals_total": 65,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 2580648,
       "actual_sales": 1101100
     },
@@ -11728,7 +11728,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 6,
       "deals_total": 15,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 531066,
       "actual_sales": 533312
     },
@@ -11756,7 +11756,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 12,
       "deals_total": 26,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 2026416,
       "actual_sales": 714549
     },
@@ -11784,7 +11784,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 23,
       "deals_total": 71,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2287442,
       "actual_sales": 2014247
     },
@@ -11812,7 +11812,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 53,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1588785,
       "actual_sales": 3199264
     },
@@ -11840,7 +11840,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 17,
       "deals_total": 45,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 2482221,
       "actual_sales": 963306
     },
@@ -11868,7 +11868,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 24,
       "deals_total": 70,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 2909784,
       "actual_sales": 2828214
     },
@@ -11896,7 +11896,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 24,
       "deals_total": 56,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4104696,
       "actual_sales": 1659440
     },
@@ -11924,7 +11924,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 2,
       "deals_total": 16,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 301678,
       "actual_sales": 1144536
     },
@@ -11952,7 +11952,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 9,
       "deals_total": 56,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1273689,
       "actual_sales": 3388068
     },
@@ -11980,7 +11980,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 9,
       "deals_total": 31,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 1182708,
       "actual_sales": 3594680
     },
@@ -12008,7 +12008,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 27,
       "deals_total": 58,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 4817826,
       "actual_sales": 275194
     },
@@ -12036,7 +12036,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 59,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1908864,
       "actual_sales": 3166620
     },
@@ -12064,7 +12064,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 0,
       "deals_total": 48,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 0,
       "actual_sales": 3503682
     },
@@ -12092,7 +12092,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 3,
       "deals_total": 33,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 574755,
       "actual_sales": 2134110
     },
@@ -12120,7 +12120,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 16,
       "deals_total": 56,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 895680,
       "actual_sales": 1317854
     },
@@ -12148,7 +12148,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 11,
       "deals_total": 51,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1163822,
       "actual_sales": 929170
     },
@@ -12176,7 +12176,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 7,
       "deals_total": 39,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 920458,
       "actual_sales": 905681
     },
@@ -12204,7 +12204,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 22,
       "deals_total": 58,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3756478,
       "actual_sales": 3491660
     },
@@ -12232,7 +12232,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 15,
       "deals_total": 48,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2828175,
       "actual_sales": 2923662
     },
@@ -12260,7 +12260,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2787876,
       "actual_sales": 822435
     },
@@ -12288,7 +12288,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 17,
       "deals_total": 45,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 3219086,
       "actual_sales": 3343840
     },
@@ -12316,7 +12316,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 16,
       "deals_total": 22,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 2176512,
       "actual_sales": 165808
     },
@@ -12344,7 +12344,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 6,
       "deals_total": 49,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1007424,
       "actual_sales": 4040316
     },
@@ -12372,7 +12372,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 25,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1108074,
       "actual_sales": 735200
     },
@@ -12400,7 +12400,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 9,
       "deals_total": 28,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1224927,
       "actual_sales": 2493491
     },
@@ -12428,7 +12428,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 17,
       "deals_total": 40,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1276785,
       "actual_sales": 2073222
     },
@@ -12456,7 +12456,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 19,
       "deals_total": 60,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 2521775,
       "actual_sales": 2098225
     },
@@ -12484,7 +12484,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 14,
       "deals_total": 43,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 793282,
       "actual_sales": 971960
     },
@@ -12512,7 +12512,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 15,
       "deals_total": 66,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 2240265,
       "actual_sales": 1491150
     },
@@ -12540,7 +12540,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 18,
       "deals_total": 25,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2418570,
       "actual_sales": 573820
     },
@@ -12568,7 +12568,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 21,
       "deals_total": 52,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2043783,
       "actual_sales": 1491672
     },
@@ -12596,7 +12596,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 63,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1789095,
       "actual_sales": 1462656
     },
@@ -12624,7 +12624,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 19,
       "deals_total": 52,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1600845,
       "actual_sales": 910485
     },
@@ -12652,7 +12652,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 2,
       "deals_total": 15,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 269990,
       "actual_sales": 319632
     },
@@ -12680,7 +12680,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 11,
       "deals_total": 32,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1639594,
       "actual_sales": 1256145
     },
@@ -12708,7 +12708,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 5,
       "deals_total": 45,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 474130,
       "actual_sales": 3567278
     },
@@ -12736,7 +12736,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 17,
       "deals_total": 63,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2466598,
       "actual_sales": 4936620
     },
@@ -12764,7 +12764,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 2,
       "deals_total": 27,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 300438,
       "actual_sales": 1338988
     },
@@ -12792,7 +12792,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 9,
       "deals_total": 36,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1716966,
       "actual_sales": 668928
     },
@@ -12820,7 +12820,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 8,
       "deals_total": 26,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1423424,
       "actual_sales": 949815
     },
@@ -12848,7 +12848,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 49,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1648350,
       "actual_sales": 1498884
     },
@@ -12876,7 +12876,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 2,
       "deals_total": 57,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 251774,
       "actual_sales": 4972812
     },
@@ -12904,7 +12904,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 16,
       "deals_total": 57,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 2477088,
       "actual_sales": 3820527
     },
@@ -12932,7 +12932,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 5,
       "deals_total": 11,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 682215,
       "actual_sales": 864330
     },
@@ -12960,7 +12960,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 8,
       "deals_total": 51,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1434840,
       "actual_sales": 1308195
     },
@@ -12988,7 +12988,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 29,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 185456,
       "actual_sales": 1086618
     },
@@ -13016,7 +13016,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 14,
       "deals_total": 47,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2732072,
       "actual_sales": 1806432
     },
@@ -13044,7 +13044,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 12,
       "deals_total": 46,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1207776,
       "actual_sales": 1007952
     },
@@ -13072,7 +13072,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 23,
       "deals_total": 77,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2946576,
       "actual_sales": 1950561
     },
@@ -13100,7 +13100,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 19,
       "deals_total": 35,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 2898469,
       "actual_sales": 1588240
     },
@@ -13128,7 +13128,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 14,
       "deals_total": 39,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1519378,
       "actual_sales": 1009150
     },
@@ -13156,7 +13156,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 5,
       "deals_total": 31,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 723260,
       "actual_sales": 727884
     },
@@ -13184,7 +13184,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 18,
       "deals_total": 41,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 3026952,
       "actual_sales": 2054175
     },
@@ -13212,7 +13212,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 5,
       "deals_total": 49,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 377450,
       "actual_sales": 2635110
     },
@@ -13240,7 +13240,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 28,
       "deals_total": 48,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 3607184,
       "actual_sales": 1448060
     },
@@ -13268,7 +13268,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 20,
       "deals_total": 52,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 1119960,
       "actual_sales": 408969
     },
@@ -13296,7 +13296,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 30,
       "deals_total": 51,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 5204730,
       "actual_sales": 2539888
     },
@@ -13324,7 +13324,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 21,
       "deals_total": 50,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 2059176,
       "actual_sales": 88910
     },
@@ -13352,7 +13352,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 882032,
       "actual_sales": 1932240
     },
@@ -13380,7 +13380,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 6,
       "deals_total": 29,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 925674,
       "actual_sales": 864072
     },
@@ -13408,7 +13408,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 23,
       "deals_total": 39,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2637295,
       "actual_sales": 490088
     },
@@ -13436,7 +13436,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 17,
       "deals_total": 57,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1632085,
       "actual_sales": 1433552
     },
@@ -13464,7 +13464,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 27,
       "deals_total": 71,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 4941405,
       "actual_sales": 1549940
     },
@@ -13492,7 +13492,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 19,
       "deals_total": 51,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 1461043,
       "actual_sales": 1805244
     },
@@ -13520,7 +13520,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 23,
       "deals_total": 48,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 3240332,
       "actual_sales": 239349
     },
@@ -13548,7 +13548,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 19,
       "deals_total": 48,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1462620,
       "actual_sales": 1238211
     },
@@ -13576,7 +13576,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 6,
       "deals_total": 16,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 694530,
       "actual_sales": 330480
     },
@@ -13604,7 +13604,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 11,
       "deals_total": 32,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1624997,
       "actual_sales": 797489
     },
@@ -13632,7 +13632,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 6,
       "deals_total": 46,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 434748,
       "actual_sales": 2753925
     },
@@ -13660,7 +13660,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 3,
       "deals_total": 52,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 524079,
       "actual_sales": 2186602
     },
@@ -13688,7 +13688,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 5,
       "deals_total": 23,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 983760,
       "actual_sales": 652740
     },
@@ -13716,7 +13716,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 13,
       "deals_total": 40,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 2470650,
       "actual_sales": 1304075
     },
@@ -13744,7 +13744,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 19,
       "deals_total": 39,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2706018,
       "actual_sales": 691496
     },
@@ -13772,7 +13772,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 19,
       "deals_total": 40,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3787042,
       "actual_sales": 1761740
     },
@@ -13800,7 +13800,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 25,
       "deals_total": 61,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 1641125,
       "actual_sales": 1131844
     },
@@ -13828,7 +13828,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 11,
       "deals_total": 53,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1850915,
       "actual_sales": 2996879
     },
@@ -13856,7 +13856,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 15,
       "deals_total": 23,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 921465,
       "actual_sales": 416542
     },
@@ -13884,7 +13884,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 22,
       "deals_total": 78,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1480930,
       "actual_sales": 3612726
     },
@@ -13912,7 +13912,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 14,
       "deals_total": 49,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2061570,
       "actual_sales": 1183734
     },
@@ -13940,7 +13940,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 17,
       "deals_total": 47,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3233043,
       "actual_sales": 3960300
     },
@@ -13968,7 +13968,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 10,
       "deals_total": 23,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 722930,
       "actual_sales": 1450936
     },
@@ -13996,7 +13996,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 17,
       "deals_total": 47,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2118863,
       "actual_sales": 2625588
     },
@@ -14024,7 +14024,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 12,
       "deals_total": 29,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1236108,
       "actual_sales": 573849
     },
@@ -14052,7 +14052,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 13,
       "deals_total": 37,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 1506791,
       "actual_sales": 229532
     },
@@ -14080,7 +14080,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 29,
       "deals_total": 56,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 2252053,
       "actual_sales": 749082
     },
@@ -14108,7 +14108,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 19,
       "deals_total": 64,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 979146,
       "actual_sales": 1820272
     },
@@ -14136,7 +14136,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 0,
       "deals_total": 40,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 0,
       "actual_sales": 838368
     },
@@ -14164,7 +14164,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 18,
       "deals_total": 37,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 3139146,
       "actual_sales": 1437354
     },
@@ -14192,7 +14192,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 3,
       "deals_total": 36,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 151218,
       "actual_sales": 589000
     },
@@ -14220,7 +14220,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 26,
       "deals_total": 54,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 4978116,
       "actual_sales": 653760
     },
@@ -14248,7 +14248,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 17,
       "deals_total": 41,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2406044,
       "actual_sales": 616161
     },
@@ -14276,7 +14276,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 1,
       "deals_total": 54,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 184562,
       "actual_sales": 4246881
     },
@@ -14304,7 +14304,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 7,
       "deals_total": 43,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 624309,
       "actual_sales": 723424
     },
@@ -14332,7 +14332,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 11,
       "deals_total": 32,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2039015,
       "actual_sales": 1531125
     },
@@ -14360,7 +14360,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 10,
       "deals_total": 27,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 830310,
       "actual_sales": 722696
     },
@@ -14388,7 +14388,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 26,
       "deals_total": 68,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 4347174,
       "actual_sales": 1799750
     },
@@ -14416,7 +14416,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 25,
       "deals_total": 68,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 4867875,
       "actual_sales": 2311988
     },
@@ -14444,7 +14444,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 5,
       "deals_total": 16,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 478835,
       "actual_sales": 641400
     },
@@ -14472,7 +14472,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 30,
       "deals_total": 58,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1581900,
       "actual_sales": 404505
     },
@@ -14500,7 +14500,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 12,
       "deals_total": 26,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1286040,
       "actual_sales": 413384
     },
@@ -14528,7 +14528,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 29,
       "deals_total": 71,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1571597,
       "actual_sales": 5404224
     },
@@ -14556,7 +14556,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 13,
       "deals_total": 45,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1989325,
       "actual_sales": 1337004
     },
@@ -14584,7 +14584,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 8,
       "deals_total": 44,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 836928,
       "actual_sales": 1692585
     },
@@ -14612,7 +14612,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 0,
       "deals_total": 18,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 0,
       "actual_sales": 2354466
     },
@@ -14640,7 +14640,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 27,
       "deals_total": 61,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2465802,
       "actual_sales": 918342
     },
@@ -14668,7 +14668,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 27,
       "deals_total": 52,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1959093,
       "actual_sales": 1391728
     },
@@ -14696,7 +14696,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 12,
       "deals_total": 53,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 651780,
       "actual_sales": 2778531
     },
@@ -14724,7 +14724,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 18,
       "deals_total": 45,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 1867482,
       "actual_sales": 345228
     },
@@ -14752,7 +14752,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 21,
       "deals_total": 60,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 2230872,
       "actual_sales": 1347564
     },
@@ -14780,7 +14780,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 3,
       "deals_total": 51,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 260550,
       "actual_sales": 1593753
     },
@@ -14808,7 +14808,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 1995000,
       "actual_sales": 2766417
     },
@@ -14836,7 +14836,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 23,
       "deals_total": 60,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 3803142,
       "actual_sales": 2925640
     },
@@ -14864,7 +14864,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 30,
       "deals_total": 48,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 2545890,
       "actual_sales": 1291647
     },
@@ -14892,7 +14892,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 15,
       "deals_total": 27,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1567485,
       "actual_sales": 1465816
     },
@@ -14920,7 +14920,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 12,
       "deals_total": 42,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 1396500,
       "actual_sales": 4727525
     },
@@ -14948,7 +14948,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 30,
       "deals_total": 58,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 2677350,
       "actual_sales": 564040
     },
@@ -14976,7 +14976,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 9,
       "deals_total": 30,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1574361,
       "actual_sales": 2524691
     },
@@ -15004,7 +15004,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 7,
       "deals_total": 42,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 697900,
       "actual_sales": 5547900
     },
@@ -15032,7 +15032,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 9,
       "deals_total": 34,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 907074,
       "actual_sales": 745269
     },
@@ -15060,7 +15060,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 28,
       "deals_total": 61,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 4003776,
       "actual_sales": 5089630
     },
@@ -15088,7 +15088,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 21,
       "deals_total": 77,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2424387,
       "actual_sales": 3281283
     },
@@ -15116,7 +15116,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 0,
       "deals_total": 40,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 0,
       "actual_sales": 1492824
     },
@@ -15144,7 +15144,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 1,
       "deals_total": 31,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 91127,
       "actual_sales": 416300
     },
@@ -15172,7 +15172,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 28,
       "deals_total": 54,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2431996,
       "actual_sales": 1807605
     },
@@ -15200,7 +15200,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 21,
       "deals_total": 48,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 2261763,
       "actual_sales": 370824
     },
@@ -15228,7 +15228,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 9,
       "deals_total": 38,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1114515,
       "actual_sales": 3386214
     },
@@ -15256,7 +15256,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 14,
       "deals_total": 45,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1073632,
       "actual_sales": 2272780
     },
@@ -15284,7 +15284,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 23,
       "deals_total": 54,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 2607809,
       "actual_sales": 2188021
     },
@@ -15312,7 +15312,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 0,
       "deals_total": 40,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 0,
       "actual_sales": 2730525
     },
@@ -15340,7 +15340,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 16,
       "deals_total": 44,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 803952,
       "actual_sales": 1450148
     },
@@ -15368,7 +15368,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 25,
       "deals_total": 58,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 3818850,
       "actual_sales": 860742
     },
@@ -15396,7 +15396,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 1,
       "deals_total": 43,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 53815,
       "actual_sales": 1173123
     },
@@ -15424,7 +15424,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 24,
       "deals_total": 68,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 2437440,
       "actual_sales": 772772
     },
@@ -15452,7 +15452,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 15,
       "deals_total": 30,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 1009485,
       "actual_sales": 993900
     },
@@ -15480,7 +15480,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 42,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 53912,
       "actual_sales": 1645725
     },
@@ -15508,7 +15508,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 28,
       "deals_total": 82,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2520980,
       "actual_sales": 2132850
     },
@@ -15536,7 +15536,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 26,
       "deals_total": 52,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 2083094,
       "actual_sales": 2402096
     },
@@ -15564,7 +15564,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 0,
       "deals_total": 40,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 0,
       "actual_sales": 2061480
     },
@@ -15592,7 +15592,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 25,
       "deals_total": 45,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 3811325,
       "actual_sales": 701460
     },
@@ -15620,7 +15620,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 1,
       "deals_total": 57,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 143035,
       "actual_sales": 2826846
     },
@@ -15676,7 +15676,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 5,
       "deals_total": 31,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 504810,
       "actual_sales": 2591942
     },
@@ -15704,7 +15704,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 11,
       "deals_total": 42,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1820830,
       "actual_sales": 214456
     },
@@ -15760,7 +15760,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 28,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 3061248,
       "actual_sales": 267648
     },
@@ -15816,7 +15816,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 18,
       "deals_total": 41,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 975852,
       "actual_sales": 2128500
     },
@@ -15844,7 +15844,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 11,
       "deals_total": 29,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 595815,
       "actual_sales": 881150
     },
@@ -15872,7 +15872,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 17,
       "deals_total": 70,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2302480,
       "actual_sales": 3270807
     },
@@ -15900,7 +15900,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 65,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 4368000,
       "actual_sales": 1675492
     },
@@ -15928,7 +15928,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 13,
       "deals_total": 28,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 993265,
       "actual_sales": 546111
     },
@@ -15956,7 +15956,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 29,
       "deals_total": 63,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 4771718,
       "actual_sales": 1074612
     },
@@ -15984,7 +15984,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 2,
       "deals_total": 20,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 237462,
       "actual_sales": 486402
     },
@@ -16012,7 +16012,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 14,
       "deals_total": 33,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2312016,
       "actual_sales": 1864775
     },
@@ -16040,7 +16040,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 2,
       "deals_total": 37,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 153312,
       "actual_sales": 2469054
     },
@@ -16068,7 +16068,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 5,
       "deals_total": 32,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 298895,
       "actual_sales": 2109492
     },
@@ -16096,7 +16096,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 11,
       "deals_total": 54,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 1417559,
       "actual_sales": 1386944
     },
@@ -16124,7 +16124,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 20,
       "deals_total": 71,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2963000,
       "actual_sales": 4909502
     },
@@ -16152,7 +16152,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 2,
       "deals_total": 28,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 393142,
       "actual_sales": 1010251
     },
@@ -16180,7 +16180,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 5,
       "deals_total": 37,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 277700,
       "actual_sales": 1220584
     },
@@ -16208,7 +16208,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 26,
       "deals_total": 61,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 4066842,
       "actual_sales": 793480
     },
@@ -16236,7 +16236,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 63,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 1571910,
       "actual_sales": 489307
     },
@@ -16264,7 +16264,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 3,
       "deals_total": 20,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 536598,
       "actual_sales": 2334045
     },
@@ -16292,7 +16292,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 26,
       "deals_total": 58,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2559050,
       "actual_sales": 2487651
     },
@@ -16320,7 +16320,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 16,
       "deals_total": 55,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 2752976,
       "actual_sales": 3721032
     },
@@ -16348,7 +16348,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 1,
       "deals_total": 56,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 78961,
       "actual_sales": 3839732
     },
@@ -16376,7 +16376,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 8,
       "deals_total": 32,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 447680,
       "actual_sales": 943811
     },
@@ -16404,7 +16404,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 11,
       "deals_total": 53,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1488575,
       "actual_sales": 1674078
     },
@@ -16432,7 +16432,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 16,
       "deals_total": 22,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 825744,
       "actual_sales": 228920
     },
@@ -16460,7 +16460,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 9,
       "deals_total": 31,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1276605,
       "actual_sales": 1018512
     },
@@ -16488,7 +16488,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 3,
       "deals_total": 55,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 490458,
       "actual_sales": 3272276
     },
@@ -16516,7 +16516,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 27,
       "deals_total": 59,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1636362,
       "actual_sales": 3963825
     },
@@ -16544,7 +16544,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 7,
       "deals_total": 57,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1132397,
       "actual_sales": 1322132
     },
@@ -16572,7 +16572,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 27,
       "deals_total": 84,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1962684,
       "actual_sales": 2652775
     },
@@ -16600,7 +16600,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 15,
       "deals_total": 24,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 2922045,
       "actual_sales": 408072
     },
@@ -16656,7 +16656,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 25,
       "deals_total": 41,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 3164625,
       "actual_sales": 290914
     },
@@ -16684,7 +16684,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 30,
       "deals_total": 83,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 4962150,
       "actual_sales": 2710675
     },
@@ -16712,7 +16712,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 9,
       "deals_total": 41,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 996282,
       "actual_sales": 3291264
     },
@@ -16740,7 +16740,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 19,
       "deals_total": 53,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 969551,
       "actual_sales": 1471095
     },
@@ -16768,7 +16768,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 17,
       "deals_total": 41,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1945684,
       "actual_sales": 1668184
     },
@@ -16796,7 +16796,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 10,
       "deals_total": 37,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 821390,
       "actual_sales": 1488942
     },
@@ -16824,7 +16824,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 28,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 888239,
       "actual_sales": 1295910
     },
@@ -16852,7 +16852,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 4,
       "deals_total": 14,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 322576,
       "actual_sales": 287139
     },
@@ -16880,7 +16880,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 7,
       "deals_total": 41,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1204777,
       "actual_sales": 3369282
     },
@@ -16908,7 +16908,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 27,
       "deals_total": 78,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 4452219,
       "actual_sales": 4068900
     },
@@ -16936,7 +16936,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 7,
       "deals_total": 39,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 385798,
       "actual_sales": 1108156
     },
@@ -16964,7 +16964,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 12,
       "deals_total": 40,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 899496,
       "actual_sales": 2281600
     },
@@ -16992,7 +16992,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 6,
       "deals_total": 62,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 306894,
       "actual_sales": 4630220
     },
@@ -17020,7 +17020,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 7,
       "deals_total": 30,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1030484,
       "actual_sales": 2078999
     },
@@ -17048,7 +17048,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 5,
       "deals_total": 57,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 308380,
       "actual_sales": 4440632
     },
@@ -17104,7 +17104,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 25,
       "deals_total": 47,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 3351725,
       "actual_sales": 751035
     },
@@ -17132,7 +17132,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 25,
       "deals_total": 59,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 3446950,
       "actual_sales": 395634
     },
@@ -17160,7 +17160,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 17,
       "deals_total": 51,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1189575,
       "actual_sales": 2750050
     },
@@ -17188,7 +17188,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 13,
       "deals_total": 44,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 891696,
       "actual_sales": 2648996
     },
@@ -17216,7 +17216,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 17,
       "deals_total": 67,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2481490,
       "actual_sales": 4189978
     },
@@ -17244,7 +17244,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 8,
       "deals_total": 63,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1031464,
       "actual_sales": 3835988
     },
@@ -17272,7 +17272,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 15,
       "deals_total": 27,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1451610,
       "actual_sales": 311324
     },
@@ -17300,7 +17300,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 30,
       "deals_total": 63,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 4648170,
       "actual_sales": 3605125
     },
@@ -17328,7 +17328,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 2,
       "deals_total": 7,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 357902,
       "actual_sales": 604556
     },
@@ -17356,7 +17356,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 30,
       "deals_total": 40,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 3778560,
       "actual_sales": 121421
     },
@@ -17384,7 +17384,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 68,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 2873760,
       "actual_sales": 1218780
     },
@@ -17412,7 +17412,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 30,
       "deals_total": 49,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 5818290,
       "actual_sales": 3056787
     },
@@ -17440,7 +17440,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 4,
       "deals_total": 27,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 246980,
       "actual_sales": 482560
     },
@@ -17468,7 +17468,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 11,
       "deals_total": 45,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 1108921,
       "actual_sales": 246776
     },
@@ -17496,7 +17496,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 20,
       "deals_total": 44,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 3113840,
       "actual_sales": 916655
     },
@@ -17524,7 +17524,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 20,
       "deals_total": 49,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3007540,
       "actual_sales": 854196
     },
@@ -17552,7 +17552,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 27,
       "deals_total": 58,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 4337766,
       "actual_sales": 1267920
     },
@@ -17580,7 +17580,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 8,
       "deals_total": 32,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 633688,
       "actual_sales": 492505
     },
@@ -17608,7 +17608,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 1,
       "deals_total": 47,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 132573,
       "actual_sales": 3657969
     },
@@ -17636,7 +17636,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 19,
       "deals_total": 29,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1815203,
       "actual_sales": 363933
     },
@@ -17664,7 +17664,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 7,
       "deals_total": 30,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 1039878,
       "actual_sales": 610808
     },
@@ -17692,7 +17692,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 22,
       "deals_total": 69,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2002770,
       "actual_sales": 3830652
     },
@@ -17720,7 +17720,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 2,
       "deals_total": 46,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 263066,
       "actual_sales": 1918000
     },
@@ -17748,7 +17748,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 21,
       "deals_total": 32,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 1500849,
       "actual_sales": 897090
     },
@@ -17776,7 +17776,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 27,
       "deals_total": 61,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 3292326,
       "actual_sales": 1654110
     },
@@ -17804,7 +17804,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 24,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 655404,
       "actual_sales": 323836
     },
@@ -17832,7 +17832,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 23,
       "deals_total": 74,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1940579,
       "actual_sales": 2325596
     },
@@ -17860,7 +17860,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 7,
       "deals_total": 61,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1272565,
       "actual_sales": 1800630
     },
@@ -17888,7 +17888,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 6,
       "deals_total": 15,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 608874,
       "actual_sales": 1044156
     },
@@ -17916,7 +17916,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 16,
       "deals_total": 52,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1938992,
       "actual_sales": 1996644
     },
@@ -17944,7 +17944,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 14,
       "deals_total": 58,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1115156,
       "actual_sales": 3015819
     },
@@ -17972,7 +17972,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 2,
       "deals_total": 20,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 164072,
       "actual_sales": 454444
     },
@@ -18000,7 +18000,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 3,
       "deals_total": 49,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 577035,
       "actual_sales": 5684280
     },
@@ -18028,7 +18028,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 21,
       "deals_total": 66,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 4082358,
       "actual_sales": 4384800
     },
@@ -18056,7 +18056,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 90,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4130790,
       "actual_sales": 4398300
     },
@@ -18084,7 +18084,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 18,
       "deals_total": 28,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 1775304,
       "actual_sales": 178945
     },
@@ -18112,7 +18112,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 6,
       "deals_total": 17,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 945456,
       "actual_sales": 1047600
     },
@@ -18140,7 +18140,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 10,
       "deals_total": 28,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1496520,
       "actual_sales": 2522100
     },
@@ -18168,7 +18168,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 0,
       "deals_total": 27,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 0,
       "actual_sales": 396008
     },
@@ -18196,7 +18196,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 1,
       "deals_total": 38,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 109481,
       "actual_sales": 1575512
     },
@@ -18224,7 +18224,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 42,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 1961795,
       "actual_sales": 3126925
     },
@@ -18252,7 +18252,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 14,
       "deals_total": 61,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1509466,
       "actual_sales": 1695668
     },
@@ -18280,7 +18280,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 14,
       "deals_total": 59,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2125004,
       "actual_sales": 5393101
     },
@@ -18308,7 +18308,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 10,
       "deals_total": 41,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 803870,
       "actual_sales": 1247913
     },
@@ -18336,7 +18336,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 10,
       "deals_total": 25,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1916950,
       "actual_sales": 331475
     },
@@ -18364,7 +18364,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 7,
       "deals_total": 23,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 898233,
       "actual_sales": 1615365
     },
@@ -18392,7 +18392,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 14,
       "deals_total": 68,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1025388,
       "actual_sales": 2241824
     },
@@ -18420,7 +18420,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 11,
       "deals_total": 36,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 598631,
       "actual_sales": 354320
     },
@@ -18448,7 +18448,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 29,
       "deals_total": 71,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 4379609,
       "actual_sales": 1030946
     },
@@ -18476,7 +18476,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 8,
       "deals_total": 43,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 969296,
       "actual_sales": 912394
     },
@@ -18504,7 +18504,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 15,
       "deals_total": 41,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 2286615,
       "actual_sales": 479304
     },
@@ -18532,7 +18532,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 29,
       "deals_total": 61,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 2980417,
       "actual_sales": 2251171
     },
@@ -18560,7 +18560,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 14,
       "deals_total": 66,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2001944,
       "actual_sales": 3727176
     },
@@ -18588,7 +18588,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 12,
       "deals_total": 53,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 1568700,
       "actual_sales": 4774626
     },
@@ -18616,7 +18616,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 3,
       "deals_total": 28,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 240333,
       "actual_sales": 2208738
     },
@@ -18644,7 +18644,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 6,
       "deals_total": 46,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 502638,
       "actual_sales": 1940428
     },
@@ -18672,7 +18672,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 17,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 0,
       "actual_sales": 1442832
     },
@@ -18700,7 +18700,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 24,
       "deals_total": 66,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 3628008,
       "actual_sales": 1946160
     },
@@ -18728,7 +18728,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 20,
       "deals_total": 56,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 3265060,
       "actual_sales": 2704366
     },
@@ -18756,7 +18756,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 19,
       "deals_total": 25,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2723422,
       "actual_sales": 541245
     },
@@ -18784,7 +18784,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 8,
       "deals_total": 29,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 816176,
       "actual_sales": 1520520
     },
@@ -18812,7 +18812,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 25,
       "deals_total": 65,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 4403800,
       "actual_sales": 3263058
     },
@@ -18840,7 +18840,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 29,
       "deals_total": 40,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 2139504,
       "actual_sales": 524619
     },
@@ -18868,7 +18868,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 11,
       "deals_total": 18,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1304622,
       "actual_sales": 358660
     },
@@ -18896,7 +18896,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 7,
       "deals_total": 31,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 627466,
       "actual_sales": 2287224
     },
@@ -18924,7 +18924,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 5,
       "deals_total": 51,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 833230,
       "actual_sales": 5642269
     },
@@ -18952,7 +18952,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 64,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 3587670,
       "actual_sales": 1019992
     },
@@ -18980,7 +18980,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 16,
       "deals_total": 56,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1897760,
       "actual_sales": 1988038
     },
@@ -19008,7 +19008,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 23,
       "deals_total": 64,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 3956161,
       "actual_sales": 3093896
     },
@@ -19036,7 +19036,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 10,
       "deals_total": 32,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1525880,
       "actual_sales": 947908
     },
@@ -19064,7 +19064,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 24,
       "deals_total": 62,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 3949800,
       "actual_sales": 1592060
     },
@@ -19092,7 +19092,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 2,
       "deals_total": 34,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 274612,
       "actual_sales": 1886565
     },
@@ -19120,7 +19120,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 8,
       "deals_total": 54,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 863544,
       "actual_sales": 5246310
     },
@@ -19148,7 +19148,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 26,
       "deals_total": 47,
-      "ratio": 0.05,
+      "ratio": 5,
       "estimated_sales": 4983966,
       "actual_sales": 96196
     },
@@ -19176,7 +19176,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 25,
       "deals_total": 71,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1987125,
       "actual_sales": 1964850
     },
@@ -19204,7 +19204,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 3,
       "deals_total": 51,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 495201,
       "actual_sales": 4720525
     },
@@ -19232,7 +19232,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 6,
       "deals_total": 36,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 531276,
       "actual_sales": 1328380
     },
@@ -19260,7 +19260,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 23,
       "deals_total": 42,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 1215872,
       "actual_sales": 449373
     },
@@ -19288,7 +19288,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 10,
       "deals_total": 26,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1627530,
       "actual_sales": 1516664
     },
@@ -19316,7 +19316,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 8,
       "deals_total": 20,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 1286560,
       "actual_sales": 1144240
     },
@@ -19344,7 +19344,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 22,
       "deals_total": 39,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 1106710,
       "actual_sales": 113928
     },
@@ -19372,7 +19372,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 17,
       "deals_total": 56,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 1285931,
       "actual_sales": 3025566
     },
@@ -19400,7 +19400,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 12,
       "deals_total": 45,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 919968,
       "actual_sales": 2036580
     },
@@ -19428,7 +19428,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 10,
       "deals_total": 55,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1837590,
       "actual_sales": 1341582
     },
@@ -19456,7 +19456,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 25,
       "deals_total": 52,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 1770125,
       "actual_sales": 4136136
     },
@@ -19484,7 +19484,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 20,
       "deals_total": 31,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3555460,
       "actual_sales": 714460
     },
@@ -19512,7 +19512,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 27,
       "deals_total": 75,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 4030317,
       "actual_sales": 2795860
     },
@@ -19540,7 +19540,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 12,
       "deals_total": 26,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1418616,
       "actual_sales": 760032
     },
@@ -19568,7 +19568,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 23,
       "deals_total": 61,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 2388642,
       "actual_sales": 1407552
     },
@@ -19596,7 +19596,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 22,
       "deals_total": 57,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 2621102,
       "actual_sales": 511050
     },
@@ -19624,7 +19624,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 26,
       "deals_total": 60,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3808194,
       "actual_sales": 1913184
     },
@@ -19652,7 +19652,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 2,
       "deals_total": 43,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 339538,
       "actual_sales": 1641371
     },
@@ -19680,7 +19680,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 30,
       "deals_total": 54,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 3632160,
       "actual_sales": 1633914
     },
@@ -19708,7 +19708,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 0,
       "deals_total": 23,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 0,
       "actual_sales": 67931
     },
@@ -19736,7 +19736,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 17,
       "deals_total": 32,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2621808,
       "actual_sales": 860454
     },
@@ -19764,7 +19764,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 17,
       "deals_total": 58,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1382474,
       "actual_sales": 1880516
     },
@@ -19792,7 +19792,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 11,
       "deals_total": 27,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1595066,
       "actual_sales": 798555
     },
@@ -19848,7 +19848,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 26,
       "deals_total": 68,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 4233190,
       "actual_sales": 976769
     },
@@ -19876,7 +19876,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 18,
       "deals_total": 31,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 2649564,
       "actual_sales": 147110
     },
@@ -19904,7 +19904,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 28,
       "deals_total": 68,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1412236,
       "actual_sales": 2156382
     },
@@ -19932,7 +19932,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 1,
       "deals_total": 26,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 136259,
       "actual_sales": 1063520
     },
@@ -19960,7 +19960,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 2,
       "deals_total": 33,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 147498,
       "actual_sales": 64379
     },
@@ -19988,7 +19988,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 25,
       "deals_total": 58,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 2177475,
       "actual_sales": 1232232
     },
@@ -20016,7 +20016,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 20,
       "deals_total": 36,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 2586580,
       "actual_sales": 1609764
     },
@@ -20044,7 +20044,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 4,
       "deals_total": 33,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 680324,
       "actual_sales": 4313972
     },
@@ -20072,7 +20072,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 21,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 0,
       "actual_sales": 1329636
     },
@@ -20100,7 +20100,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 24,
       "deals_total": 50,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1250832,
       "actual_sales": 798080
     },
@@ -20128,7 +20128,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 27,
       "deals_total": 40,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 1796661,
       "actual_sales": 991161
     },
@@ -20156,7 +20156,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 4,
       "deals_total": 20,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 658868,
       "actual_sales": 194278
     },
@@ -20184,7 +20184,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 2,
       "deals_total": 28,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 196368,
       "actual_sales": 2023348
     },
@@ -20212,7 +20212,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 8,
       "deals_total": 20,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 1051232,
       "actual_sales": 137571
     },
@@ -20240,7 +20240,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 26,
       "deals_total": 70,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1846468,
       "actual_sales": 2970902
     },
@@ -20268,7 +20268,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 11,
       "deals_total": 57,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 756668,
       "actual_sales": 4603125
     },
@@ -20296,7 +20296,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 10,
       "deals_total": 44,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1364480,
       "actual_sales": 1596870
     },
@@ -20324,7 +20324,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 4,
       "deals_total": 35,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 741528,
       "actual_sales": 2820768
     },
@@ -20352,7 +20352,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 1158048,
       "actual_sales": 1959862
     },
@@ -20380,7 +20380,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 30,
       "deals_total": 79,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3914550,
       "actual_sales": 3425682
     },
@@ -20408,7 +20408,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 9,
       "deals_total": 24,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1281384,
       "actual_sales": 1280784
     },
@@ -20436,7 +20436,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 11,
       "deals_total": 28,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 2150929,
       "actual_sales": 640176
     },
@@ -20464,7 +20464,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 1,
       "deals_total": 33,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 118990,
       "actual_sales": 2612664
     },
@@ -20492,7 +20492,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 1,
       "deals_total": 47,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 180563,
       "actual_sales": 3389512
     },
@@ -20520,7 +20520,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 3,
       "deals_total": 40,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 531138,
       "actual_sales": 4311960
     },
@@ -20548,7 +20548,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 13,
       "deals_total": 58,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1832662,
       "actual_sales": 4341988
     },
@@ -20576,7 +20576,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 20,
       "deals_total": 70,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2121920,
       "actual_sales": 2717381
     },
@@ -20604,7 +20604,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 18,
       "deals_total": 71,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2504520,
       "actual_sales": 1615800
     },
@@ -20632,7 +20632,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 12,
       "deals_total": 41,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 1865412,
       "actual_sales": 551430
     },
@@ -20660,7 +20660,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 10,
       "deals_total": 46,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 955900,
       "actual_sales": 1978700
     },
@@ -20688,7 +20688,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 2,
       "deals_total": 31,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 285998,
       "actual_sales": 1233405
     },
@@ -20716,7 +20716,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 17,
       "deals_total": 43,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2120954,
       "actual_sales": 1529038
     },
@@ -20744,7 +20744,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 13,
       "deals_total": 22,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 2583048,
       "actual_sales": 1276264
     },
@@ -20772,7 +20772,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 2,
       "deals_total": 48,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 297988,
       "actual_sales": 3560961
     },
@@ -20800,7 +20800,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 2,
       "deals_total": 35,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 369004,
       "actual_sales": 1982880
     },
@@ -20828,7 +20828,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 19,
       "deals_total": 46,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 3065441,
       "actual_sales": 561225
     },
@@ -20856,7 +20856,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 5,
       "deals_total": 48,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 762255,
       "actual_sales": 1788915
     },
@@ -20884,7 +20884,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 7,
       "deals_total": 47,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 1318142,
       "actual_sales": 2957913
     },
@@ -20912,7 +20912,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 0,
       "deals_total": 36,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 0,
       "actual_sales": 2263248
     },
@@ -20940,7 +20940,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 1,
       "deals_total": 17,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 120763,
       "actual_sales": 1611260
     },
@@ -20968,7 +20968,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 14,
       "deals_total": 48,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 718242,
       "actual_sales": 5067060
     },
@@ -20996,7 +20996,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 23,
       "deals_total": 72,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 3509041,
       "actual_sales": 3081690
     },
@@ -21024,7 +21024,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 15,
       "deals_total": 52,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 2038275,
       "actual_sales": 4606008
     },
@@ -21052,7 +21052,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 19,
       "deals_total": 37,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 3389980,
       "actual_sales": 548135
     },
@@ -21080,7 +21080,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 0,
       "actual_sales": 2410590
     },
@@ -21108,7 +21108,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 11,
       "deals_total": 31,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 793397,
       "actual_sales": 2537080
     },
@@ -21136,7 +21136,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 26,
       "deals_total": 69,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2170558,
       "actual_sales": 2391598
     },
@@ -21164,7 +21164,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 19,
       "deals_total": 73,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2440341,
       "actual_sales": 5208487
     },
@@ -21192,7 +21192,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 22,
       "deals_total": 58,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 4233966,
       "actual_sales": 2403576
     },
@@ -21220,7 +21220,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 8,
       "deals_total": 20,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1534328,
       "actual_sales": 1030911
     },
@@ -21248,7 +21248,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 30,
       "deals_total": 61,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 2128800,
       "actual_sales": 4836127
     },
@@ -21276,7 +21276,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 15,
       "deals_total": 39,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1622220,
       "actual_sales": 2402244
     },
@@ -21304,7 +21304,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 8,
       "deals_total": 38,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 423400,
       "actual_sales": 774270
     },
@@ -21332,7 +21332,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 9,
       "deals_total": 31,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 947259,
       "actual_sales": 493850
     },
@@ -21360,7 +21360,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 14,
       "deals_total": 66,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1312864,
       "actual_sales": 1380943
     },
@@ -21388,7 +21388,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 24,
       "deals_total": 68,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 3193320,
       "actual_sales": 3452928
     },
@@ -21416,7 +21416,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 29,
       "deals_total": 71,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 4872377,
       "actual_sales": 1955184
     },
@@ -21444,7 +21444,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 20,
       "deals_total": 53,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1451480,
       "actual_sales": 3483818
     },
@@ -21472,7 +21472,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 28,
       "deals_total": 48,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 2641324,
       "actual_sales": 2657060
     },
@@ -21500,7 +21500,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 29,
       "deals_total": 67,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 5473866,
       "actual_sales": 5728740
     },
@@ -21528,7 +21528,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 28,
       "deals_total": 64,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1569848,
       "actual_sales": 1318061
     },
@@ -21556,7 +21556,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 4,
       "deals_total": 37,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 251216,
       "actual_sales": 702396
     },
@@ -21584,7 +21584,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 8,
       "deals_total": 39,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1365312,
       "actual_sales": 1404990
     },
@@ -21612,7 +21612,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 17,
       "deals_total": 33,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 1221552,
       "actual_sales": 118455
     },
@@ -21640,7 +21640,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 7,
       "deals_total": 42,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 711648,
       "actual_sales": 4050872
     },
@@ -21668,7 +21668,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 17,
       "deals_total": 71,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3200777,
       "actual_sales": 2366820
     },
@@ -21696,7 +21696,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 26,
       "deals_total": 60,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4867824,
       "actual_sales": 1134614
     },
@@ -21724,7 +21724,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 2,
       "deals_total": 35,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 128074,
       "actual_sales": 281360
     },
@@ -21752,7 +21752,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 22,
       "deals_total": 57,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1521322,
       "actual_sales": 4557050
     },
@@ -21780,7 +21780,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 5,
       "deals_total": 35,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 376695,
       "actual_sales": 3174402
     },
@@ -21808,7 +21808,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 14,
       "deals_total": 43,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 2332120,
       "actual_sales": 4745184
     },
@@ -21836,7 +21836,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 3,
       "deals_total": 24,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 555549,
       "actual_sales": 1785576
     },
@@ -21864,7 +21864,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 2,
       "deals_total": 23,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 183960,
       "actual_sales": 797958
     },
@@ -21892,7 +21892,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 25,
       "deals_total": 34,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2867275,
       "actual_sales": 630120
     },
@@ -21920,7 +21920,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 10,
       "deals_total": 39,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 716180,
       "actual_sales": 609750
     },
@@ -21948,7 +21948,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 27,
       "deals_total": 69,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 5230980,
       "actual_sales": 1379264
     },
@@ -21976,7 +21976,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 11,
       "deals_total": 28,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2069133,
       "actual_sales": 477135
     },
@@ -22004,7 +22004,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 6,
       "deals_total": 26,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 416148,
       "actual_sales": 1606710
     },
@@ -22032,7 +22032,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 2,
       "deals_total": 43,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 248662,
       "actual_sales": 4053106
     },
@@ -22060,7 +22060,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 25,
       "deals_total": 38,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 4643375,
       "actual_sales": 1483040
     },
@@ -22088,7 +22088,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 11,
       "deals_total": 57,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1452561,
       "actual_sales": 2899120
     },
@@ -22116,7 +22116,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 0,
       "deals_total": 36,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 0,
       "actual_sales": 1314525
     },
@@ -22144,7 +22144,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 4,
       "deals_total": 19,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 739524,
       "actual_sales": 827970
     },
@@ -22172,7 +22172,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 26,
       "deals_total": 57,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 4984668,
       "actual_sales": 654728
     },
@@ -22200,7 +22200,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 28,
       "deals_total": 42,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2027256,
       "actual_sales": 1591940
     },
@@ -22228,7 +22228,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 12,
       "deals_total": 64,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1458996,
       "actual_sales": 2097976
     },
@@ -22256,7 +22256,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 2,
       "deals_total": 48,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 351070,
       "actual_sales": 2141046
     },
@@ -22284,7 +22284,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 29,
       "deals_total": 43,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 4756928,
       "actual_sales": 957033
     },
@@ -22312,7 +22312,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 25,
       "deals_total": 56,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 3067275,
       "actual_sales": 1503892
     },
@@ -22340,7 +22340,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 2,
       "deals_total": 57,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 242592,
       "actual_sales": 3557260
     },
@@ -22368,7 +22368,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 13,
       "deals_total": 43,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 2315508,
       "actual_sales": 1047064
     },
@@ -22396,7 +22396,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 57,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 67073,
       "actual_sales": 4953660
     },
@@ -22424,7 +22424,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 30,
       "deals_total": 67,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 4105260,
       "actual_sales": 2719520
     },
@@ -22452,7 +22452,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 14,
       "deals_total": 49,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 2428888,
       "actual_sales": 3710736
     },
@@ -22480,7 +22480,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 17,
       "deals_total": 53,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 1164670,
       "actual_sales": 1197756
     },
@@ -22508,7 +22508,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 10,
       "deals_total": 57,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1677800,
       "actual_sales": 1552167
     },
@@ -22536,7 +22536,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 4,
       "deals_total": 23,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 777400,
       "actual_sales": 1571715
     },
@@ -22564,7 +22564,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 30,
       "deals_total": 74,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1757610,
       "actual_sales": 3302976
     },
@@ -22592,7 +22592,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 1,
       "deals_total": 27,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 148472,
       "actual_sales": 153990
     },
@@ -22620,7 +22620,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 13,
       "deals_total": 61,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2284243,
       "actual_sales": 2612750
     },
@@ -22648,7 +22648,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 16,
       "deals_total": 44,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1866832,
       "actual_sales": 2304675
     },
@@ -22676,7 +22676,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 6,
       "deals_total": 52,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 812982,
       "actual_sales": 2420649
     },
@@ -22704,7 +22704,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 14,
       "deals_total": 49,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1987580,
       "actual_sales": 1179024
     },
@@ -22732,7 +22732,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 19,
       "deals_total": 55,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3226770,
       "actual_sales": 3437190
     },
@@ -22788,7 +22788,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 20,
       "deals_total": 51,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 1688300,
       "actual_sales": 2629004
     },
@@ -22816,7 +22816,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 10,
       "deals_total": 68,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1937420,
       "actual_sales": 2804648
     },
@@ -22844,7 +22844,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 8,
       "deals_total": 44,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1382808,
       "actual_sales": 3201623
     },
@@ -22872,7 +22872,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 25,
       "deals_total": 60,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 4637200,
       "actual_sales": 1455864
     },
@@ -22900,7 +22900,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 19,
       "deals_total": 40,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1659365,
       "actual_sales": 2070552
     },
@@ -22928,7 +22928,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 0,
       "deals_total": 30,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 0,
       "actual_sales": 3078159
     },
@@ -22956,7 +22956,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 8,
       "deals_total": 42,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1545360,
       "actual_sales": 1476991
     },
@@ -22984,7 +22984,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 4,
       "deals_total": 41,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 734312,
       "actual_sales": 1732809
     },
@@ -23012,7 +23012,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 2,
       "deals_total": 55,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 135618,
       "actual_sales": 3049225
     },
@@ -23040,7 +23040,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 26,
       "deals_total": 71,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 3808532,
       "actual_sales": 1580116
     },
@@ -23068,7 +23068,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 19,
       "deals_total": 64,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1173592,
       "actual_sales": 2053038
     },
@@ -23096,7 +23096,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 29,
       "deals_total": 75,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 5279044,
       "actual_sales": 2082500
     },
@@ -23124,7 +23124,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 16,
       "deals_total": 51,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 1644464,
       "actual_sales": 4514981
     },
@@ -23152,7 +23152,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 9,
       "deals_total": 20,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1766484,
       "actual_sales": 706975
     },
@@ -23180,7 +23180,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 1,
       "deals_total": 30,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 181622,
       "actual_sales": 1549856
     },
@@ -23208,7 +23208,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 14,
       "deals_total": 41,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 2147894,
       "actual_sales": 3800602
     },
@@ -23236,7 +23236,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 4,
       "deals_total": 32,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 694212,
       "actual_sales": 1150672
     },
@@ -23264,7 +23264,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 9,
       "deals_total": 68,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 927324,
       "actual_sales": 2955564
     },
@@ -23292,7 +23292,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 1,
       "deals_total": 28,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 107693,
       "actual_sales": 2963950
     },
@@ -23376,7 +23376,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 2,
       "deals_total": 39,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 395544,
       "actual_sales": 4624944
     },
@@ -23404,7 +23404,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 5,
       "deals_total": 41,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 881955,
       "actual_sales": 3349168
     },
@@ -23432,7 +23432,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 0,
       "deals_total": 31,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 0,
       "actual_sales": 1732080
     },
@@ -23460,7 +23460,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 12,
       "deals_total": 20,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 1481292,
       "actual_sales": 1334585
     },
@@ -23488,7 +23488,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 2,
       "deals_total": 39,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 375366,
       "actual_sales": 721966
     },
@@ -23544,7 +23544,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 6,
       "deals_total": 30,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 1107570,
       "actual_sales": 923315
     },
@@ -23572,7 +23572,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 12,
       "deals_total": 19,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 1287432,
       "actual_sales": 859074
     },
@@ -23600,7 +23600,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 9,
       "deals_total": 38,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1007289,
       "actual_sales": 1577103
     },
@@ -23628,7 +23628,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 8,
       "deals_total": 27,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 1324864,
       "actual_sales": 2584818
     },
@@ -23656,7 +23656,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 12,
       "deals_total": 51,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1827012,
       "actual_sales": 4854977
     },
@@ -23684,7 +23684,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 2,
       "deals_total": 36,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 366742,
       "actual_sales": 1405407
     },
@@ -23712,7 +23712,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 5,
       "deals_total": 52,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 583660,
       "actual_sales": 3174200
     },
@@ -23740,7 +23740,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 29,
       "deals_total": 74,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 4990378,
       "actual_sales": 2615502
     },
@@ -23768,7 +23768,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 28,
       "deals_total": 35,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 4417672,
       "actual_sales": 242484
     },
@@ -23796,7 +23796,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 9,
       "deals_total": 46,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 556254,
       "actual_sales": 2930172
     },
@@ -23824,7 +23824,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 30,
       "deals_total": 55,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 3953910,
       "actual_sales": 411712
     },
@@ -23852,7 +23852,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 16,
       "deals_total": 36,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 3096112,
       "actual_sales": 3383272
     },
@@ -23880,7 +23880,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 27,
       "deals_total": 45,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 1640655,
       "actual_sales": 409612
     },
@@ -23908,7 +23908,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 2,
       "deals_total": 10,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 104736,
       "actual_sales": 780660
     },
@@ -23936,7 +23936,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 11,
       "deals_total": 60,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1637086,
       "actual_sales": 3905202
     },
@@ -23964,7 +23964,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 28,
       "deals_total": 70,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2348892,
       "actual_sales": 1729728
     },
@@ -23992,7 +23992,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 16,
       "deals_total": 34,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 2897568,
       "actual_sales": 1411501
     },
@@ -24020,7 +24020,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 26,
       "deals_total": 86,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3142568,
       "actual_sales": 4335720
     },
@@ -24048,7 +24048,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 8,
       "deals_total": 55,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 829040,
       "actual_sales": 3151155
     },
@@ -24076,7 +24076,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 10,
       "deals_total": 43,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 756280,
       "actual_sales": 3732480
     },
@@ -24104,7 +24104,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 27,
       "deals_total": 68,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3170907,
       "actual_sales": 3566679
     },
@@ -24132,7 +24132,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 14,
       "deals_total": 53,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1997030,
       "actual_sales": 3701390
     },
@@ -24160,7 +24160,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 18,
       "deals_total": 45,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1006884,
       "actual_sales": 3320856
     },
@@ -24188,7 +24188,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 26,
       "deals_total": 59,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1439022,
       "actual_sales": 3953900
     },
@@ -24216,7 +24216,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 6,
       "deals_total": 38,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 455982,
       "actual_sales": 192060
     },
@@ -24244,7 +24244,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 6,
       "deals_total": 21,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 703062,
       "actual_sales": 181980
     },
@@ -24272,7 +24272,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 23,
       "deals_total": 53,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 2947404,
       "actual_sales": 3930720
     },
@@ -24300,7 +24300,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 9,
       "deals_total": 54,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1193274,
       "actual_sales": 1330144
     },
@@ -24328,7 +24328,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 7,
       "deals_total": 24,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1018703,
       "actual_sales": 1665560
     },
@@ -24356,7 +24356,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 8,
       "deals_total": 43,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 589616,
       "actual_sales": 3072076
     },
@@ -24384,7 +24384,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 13,
       "deals_total": 35,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1554631,
       "actual_sales": 1036532
     },
@@ -24412,7 +24412,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 12,
       "deals_total": 45,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 741096,
       "actual_sales": 627580
     },
@@ -24440,7 +24440,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 16,
       "deals_total": 35,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 2711872,
       "actual_sales": 1215240
     },
@@ -24468,7 +24468,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 2,
       "deals_total": 59,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 302274,
       "actual_sales": 4370787
     },
@@ -24496,7 +24496,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 30,
       "deals_total": 40,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 3822690,
       "actual_sales": 309342
     },
@@ -24524,7 +24524,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 21,
       "deals_total": 60,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3357417,
       "actual_sales": 2269916
     },
@@ -24552,7 +24552,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 1,
       "deals_total": 22,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 163604,
       "actual_sales": 895050
     },
@@ -24580,7 +24580,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 29,
       "deals_total": 65,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1826246,
       "actual_sales": 2234364
     },
@@ -24608,7 +24608,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 2,
       "deals_total": 34,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 295832,
       "actual_sales": 515752
     },
@@ -24636,7 +24636,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 26,
       "deals_total": 65,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1690052,
       "actual_sales": 3042371
     },
@@ -24664,7 +24664,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 9,
       "deals_total": 40,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 626769,
       "actual_sales": 2210365
     },
@@ -24692,7 +24692,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 26,
       "deals_total": 77,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 3634540,
       "actual_sales": 5524904
     },
@@ -24720,7 +24720,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 0,
       "deals_total": 46,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 0,
       "actual_sales": 1783340
     },
@@ -24748,7 +24748,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 12,
       "deals_total": 65,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2179920,
       "actual_sales": 4803450
     },
@@ -24776,7 +24776,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 27,
       "deals_total": 45,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1790316,
       "actual_sales": 399847
     },
@@ -24804,7 +24804,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 34,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1717177,
       "actual_sales": 1399253
     },
@@ -24832,7 +24832,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 24,
       "deals_total": 56,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 4558680,
       "actual_sales": 3448056
     },
@@ -24860,7 +24860,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 17,
       "deals_total": 50,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1744302,
       "actual_sales": 793350
     },
@@ -24888,7 +24888,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 30,
       "deals_total": 41,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 4693290,
       "actual_sales": 1669608
     },
@@ -24916,7 +24916,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 0,
       "deals_total": 27,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 0,
       "actual_sales": 1396736
     },
@@ -24944,7 +24944,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 6,
       "deals_total": 54,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 561648,
       "actual_sales": 2143702
     },
@@ -24972,7 +24972,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 6,
       "deals_total": 43,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 970848,
       "actual_sales": 3438760
     },
@@ -25000,7 +25000,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 17,
       "deals_total": 44,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1449743,
       "actual_sales": 1915536
     },
@@ -25028,7 +25028,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 8,
       "deals_total": 20,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 1339584,
       "actual_sales": 1639730
     },
@@ -25056,7 +25056,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 18,
       "deals_total": 45,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 1958868,
       "actual_sales": 3064828
     },
@@ -25084,7 +25084,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 28,
       "deals_total": 66,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 4565008,
       "actual_sales": 4675060
     },
@@ -25112,7 +25112,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 49,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 188943,
       "actual_sales": 3695516
     },
@@ -25140,7 +25140,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 21,
       "deals_total": 34,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 3786678,
       "actual_sales": 1341296
     },
@@ -25168,7 +25168,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 11,
       "deals_total": 25,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1992067,
       "actual_sales": 1050534
     },
@@ -25196,7 +25196,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 30,
       "deals_total": 67,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 4930830,
       "actual_sales": 2529282
     },
@@ -25224,7 +25224,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 10,
       "deals_total": 38,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1102090,
       "actual_sales": 1023944
     },
@@ -25252,7 +25252,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 24,
       "deals_total": 51,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1759248,
       "actual_sales": 969752
     },
@@ -25280,7 +25280,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 15,
       "deals_total": 46,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 1321245,
       "actual_sales": 371634
     },
@@ -25308,7 +25308,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 21,
       "deals_total": 73,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 3136434,
       "actual_sales": 1973511
     },
@@ -25336,7 +25336,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 11,
       "deals_total": 65,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1882353,
       "actual_sales": 3069099
     },
@@ -25364,7 +25364,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 19,
       "deals_total": 67,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2398085,
       "actual_sales": 3311875
     },
@@ -25392,7 +25392,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 29,
       "deals_total": 77,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2320899,
       "actual_sales": 3463182
     },
@@ -25420,7 +25420,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 9,
       "deals_total": 53,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1464822,
       "actual_sales": 2652780
     },
@@ -25448,7 +25448,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 13,
       "deals_total": 26,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1710774,
       "actual_sales": 635065
     },
@@ -25476,7 +25476,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 26,
       "deals_total": 34,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 3615690,
       "actual_sales": 67875
     },
@@ -25504,7 +25504,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 2,
       "deals_total": 34,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 209314,
       "actual_sales": 1721902
     },
@@ -25532,7 +25532,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 4,
       "deals_total": 34,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 661716,
       "actual_sales": 1177872
     },
@@ -25560,7 +25560,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 8,
       "deals_total": 30,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1308016,
       "actual_sales": 492858
     },
@@ -25588,7 +25588,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 22,
       "deals_total": 59,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1956592,
       "actual_sales": 2720900
     },
@@ -25616,7 +25616,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 6,
       "deals_total": 28,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1067382,
       "actual_sales": 3299088
     },
@@ -25644,7 +25644,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 12,
       "deals_total": 68,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 653460,
       "actual_sales": 3532356
     },
@@ -25672,7 +25672,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 7,
       "deals_total": 58,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1022693,
       "actual_sales": 2884904
     },
@@ -25700,7 +25700,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 12,
       "deals_total": 67,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2365824,
       "actual_sales": 3066325
     },
@@ -25728,7 +25728,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 15,
       "deals_total": 43,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 819705,
       "actual_sales": 3708621
     },
@@ -25756,7 +25756,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 25,
       "deals_total": 48,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1257025,
       "actual_sales": 803421
     },
@@ -25812,7 +25812,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 9,
       "deals_total": 37,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1158426,
       "actual_sales": 1560768
     },
@@ -25840,7 +25840,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 1,
       "deals_total": 49,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 66248,
       "actual_sales": 3448413
     },
@@ -25868,7 +25868,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 20,
       "deals_total": 52,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3033420,
       "actual_sales": 2584720
     },
@@ -25896,7 +25896,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 29,
       "deals_total": 57,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 5133261,
       "actual_sales": 3085668
     },
@@ -25924,7 +25924,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 4,
       "deals_total": 26,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 363608,
       "actual_sales": 519624
     },
@@ -25952,7 +25952,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 10,
       "deals_total": 50,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1899510,
       "actual_sales": 2427414
     },
@@ -25980,7 +25980,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 5,
       "deals_total": 42,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 370295,
       "actual_sales": 4129356
     },
@@ -26008,7 +26008,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 24,
       "deals_total": 65,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1914360,
       "actual_sales": 1431980
     },
@@ -26036,7 +26036,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 8,
       "deals_total": 38,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 913776,
       "actual_sales": 2929995
     },
@@ -26064,7 +26064,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 1,
       "deals_total": 43,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 66396,
       "actual_sales": 1554630
     },
@@ -26092,7 +26092,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 5,
       "deals_total": 7,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 790560,
       "actual_sales": 61902
     },
@@ -26120,7 +26120,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 3,
       "deals_total": 22,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 220116,
       "actual_sales": 540710
     },
@@ -26148,7 +26148,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 2,
       "deals_total": 38,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 235194,
       "actual_sales": 1297729
     },
@@ -26176,7 +26176,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 18,
       "deals_total": 64,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 3581838,
       "actual_sales": 3601110
     },
@@ -26204,7 +26204,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 12,
       "deals_total": 47,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 1469472,
       "actual_sales": 913535
     },
@@ -26232,7 +26232,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 25,
       "deals_total": 59,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 3601500,
       "actual_sales": 3873269
     },
@@ -26260,7 +26260,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 5,
       "deals_total": 29,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 270340,
       "actual_sales": 1228798
     },
@@ -26288,7 +26288,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 26,
       "deals_total": 55,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1431768,
       "actual_sales": 2279430
     },
@@ -26316,7 +26316,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 3,
       "deals_total": 43,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 200199,
       "actual_sales": 5219340
     },
@@ -26344,7 +26344,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 21,
       "deals_total": 53,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 3656898,
       "actual_sales": 471882
     },
@@ -26372,7 +26372,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 7,
       "deals_total": 45,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 847441,
       "actual_sales": 4224069
     },
@@ -26400,7 +26400,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 15,
       "deals_total": 56,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2059155,
       "actual_sales": 1039500
     },
@@ -26428,7 +26428,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 23,
       "deals_total": 46,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 2429007,
       "actual_sales": 486678
     },
@@ -26456,7 +26456,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 8,
       "deals_total": 17,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 1597824,
       "actual_sales": 65685
     },
@@ -26484,7 +26484,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 30,
       "deals_total": 76,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 4186110,
       "actual_sales": 4054020
     },
@@ -26512,7 +26512,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 27,
       "deals_total": 66,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 4743009,
       "actual_sales": 1603910
     },
@@ -26540,7 +26540,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 24,
       "deals_total": 50,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 4166880,
       "actual_sales": 633185
     },
@@ -26568,7 +26568,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 13,
       "deals_total": 54,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1519531,
       "actual_sales": 3648266
     },
@@ -26596,7 +26596,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 12,
       "deals_total": 41,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 812568,
       "actual_sales": 662285
     },
@@ -26652,7 +26652,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 1,
       "deals_total": 27,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 97180,
       "actual_sales": 4267350
     },
@@ -26680,7 +26680,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 29,
       "deals_total": 52,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1773379,
       "actual_sales": 469700
     },
@@ -26708,7 +26708,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 5,
       "deals_total": 42,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 587300,
       "actual_sales": 1479742
     },
@@ -26736,7 +26736,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 0,
       "deals_total": 21,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 0,
       "actual_sales": 2658670
     },
@@ -26764,7 +26764,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 29,
       "deals_total": 65,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3197424,
       "actual_sales": 1178456
     },
@@ -26792,7 +26792,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 29,
       "deals_total": 76,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 5177080,
       "actual_sales": 3088926
     },
@@ -26820,7 +26820,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 26,
       "deals_total": 40,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1774032,
       "actual_sales": 869078
     },
@@ -26848,7 +26848,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 29,
       "deals_total": 41,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 5324168,
       "actual_sales": 1420938
     },
@@ -26876,7 +26876,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 6,
       "deals_total": 53,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1076298,
       "actual_sales": 1675934
     },
@@ -26904,7 +26904,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 23,
       "deals_total": 66,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1775876,
       "actual_sales": 3714300
     },
@@ -26932,7 +26932,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 27,
       "deals_total": 53,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 4019301,
       "actual_sales": 1370685
     },
@@ -26960,7 +26960,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 27,
       "deals_total": 55,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 4645647,
       "actual_sales": 3496414
     },
@@ -26988,7 +26988,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 6,
       "deals_total": 22,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1198872,
       "actual_sales": 256212
     },
@@ -27016,7 +27016,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 22,
       "deals_total": 61,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 1467400,
       "actual_sales": 3591324
     },
@@ -27044,7 +27044,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 12,
       "deals_total": 45,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1449600,
       "actual_sales": 2989858
     },
@@ -27072,7 +27072,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 19,
       "deals_total": 70,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1321184,
       "actual_sales": 3663660
     },
@@ -27100,7 +27100,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 8,
       "deals_total": 49,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 630536,
       "actual_sales": 1703988
     },
@@ -27128,7 +27128,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 0,
       "deals_total": 49,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 0,
       "actual_sales": 4007354
     },
@@ -27156,7 +27156,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 23,
       "deals_total": 54,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1775071,
       "actual_sales": 2660640
     },
@@ -27184,7 +27184,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 29,
       "deals_total": 61,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 5266661,
       "actual_sales": 1893640
     },
@@ -27212,7 +27212,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 19,
       "deals_total": 38,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 2031879,
       "actual_sales": 221482
     },
@@ -27240,7 +27240,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 16,
       "deals_total": 33,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1199296,
       "actual_sales": 918590
     },
@@ -27268,7 +27268,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 10,
       "deals_total": 41,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 1101170,
       "actual_sales": 1474470
     },
@@ -27296,7 +27296,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 12,
       "deals_total": 47,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 802824,
       "actual_sales": 919955
     },
@@ -27324,7 +27324,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 13,
       "deals_total": 41,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 1491061,
       "actual_sales": 1709084
     },
@@ -27352,7 +27352,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 12,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 0,
       "actual_sales": 1398621
     },
@@ -27380,7 +27380,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 10,
       "deals_total": 29,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 884720,
       "actual_sales": 783497
     },
@@ -27408,7 +27408,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 4,
       "deals_total": 25,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 358896,
       "actual_sales": 465876
     },
@@ -27436,7 +27436,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 30,
       "deals_total": 78,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2693670,
       "actual_sales": 4138824
     },
@@ -27464,7 +27464,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 20,
       "deals_total": 33,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 3818620,
       "actual_sales": 770664
     },
@@ -27492,7 +27492,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 8,
       "deals_total": 42,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 864304,
       "actual_sales": 5668253
     },
@@ -27520,7 +27520,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 6,
       "deals_total": 29,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 1008000,
       "actual_sales": 2953302
     },
@@ -27548,7 +27548,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 26,
       "deals_total": 52,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 3872700,
       "actual_sales": 319466
     },
@@ -27576,7 +27576,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 21,
       "deals_total": 66,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 4165035,
       "actual_sales": 3165519
     },
@@ -27604,7 +27604,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 20,
       "deals_total": 45,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 1076000,
       "actual_sales": 311288
     },
@@ -27632,7 +27632,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 18,
       "deals_total": 55,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 1329516,
       "actual_sales": 3846660
     },
@@ -27660,7 +27660,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 12,
       "deals_total": 51,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1423320,
       "actual_sales": 3206725
     },
@@ -27688,7 +27688,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 23,
       "deals_total": 62,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 2122325,
       "actual_sales": 1058129
     },
@@ -27716,7 +27716,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 0,
       "deals_total": 33,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 0,
       "actual_sales": 791091
     },
@@ -27744,7 +27744,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 27,
       "deals_total": 59,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 3223854,
       "actual_sales": 1478470
     },
@@ -27772,7 +27772,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 20,
       "deals_total": 63,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1727120,
       "actual_sales": 1161638
     },
@@ -27800,7 +27800,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 18,
       "deals_total": 35,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 2316744,
       "actual_sales": 203904
     },
@@ -27828,7 +27828,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 18,
       "deals_total": 57,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1406502,
       "actual_sales": 1336984
     },
@@ -27856,7 +27856,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 26,
       "deals_total": 57,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 2195804,
       "actual_sales": 138526
     },
@@ -27884,7 +27884,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 11,
       "deals_total": 33,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 813890,
       "actual_sales": 1012826
     },
@@ -27912,7 +27912,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 27,
       "deals_total": 49,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2804652,
       "actual_sales": 1211840
     },
@@ -27940,7 +27940,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 10,
       "deals_total": 51,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1205850,
       "actual_sales": 1649043
     },
@@ -27968,7 +27968,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 17,
       "deals_total": 34,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 2184228,
       "actual_sales": 513136
     },
@@ -27996,7 +27996,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 19,
       "deals_total": 33,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1532483,
       "actual_sales": 164806
     },
@@ -28024,7 +28024,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 20,
       "deals_total": 57,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 2409480,
       "actual_sales": 3025466
     },
@@ -28052,7 +28052,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 0,
       "deals_total": 26,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 0,
       "actual_sales": 573120
     },
@@ -28080,7 +28080,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 28,
       "deals_total": 68,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 2442496,
       "actual_sales": 2572533
     },
@@ -28108,7 +28108,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 5,
       "deals_total": 14,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 831420,
       "actual_sales": 254937
     },
@@ -28136,7 +28136,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 28,
       "deals_total": 54,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 2870420,
       "actual_sales": 384786
     },
@@ -28164,7 +28164,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 16,
       "deals_total": 54,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1370128,
       "actual_sales": 1385648
     },
@@ -28192,7 +28192,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 14,
       "deals_total": 53,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 2447522,
       "actual_sales": 3810832
     },
@@ -28220,7 +28220,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 6,
       "deals_total": 62,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 910272,
       "actual_sales": 5387940
     },
@@ -28248,7 +28248,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 11,
       "deals_total": 49,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1316634,
       "actual_sales": 4347574
     },
@@ -28276,7 +28276,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 17,
       "deals_total": 39,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1986416,
       "actual_sales": 282905
     },
@@ -28304,7 +28304,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 17,
       "deals_total": 58,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 2708542,
       "actual_sales": 2311652
     },
@@ -28332,7 +28332,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 0,
       "deals_total": 24,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 0,
       "actual_sales": 484815
     },
@@ -28360,7 +28360,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 3,
       "deals_total": 28,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 521613,
       "actual_sales": 915012
     },
@@ -28388,7 +28388,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 18,
       "deals_total": 38,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1305648,
       "actual_sales": 1892657
     },
@@ -28416,7 +28416,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 2,
       "deals_total": 32,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 340802,
       "actual_sales": 1107008
     },
@@ -28444,7 +28444,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 0,
       "deals_total": 29,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 0,
       "actual_sales": 3296225
     },
@@ -28472,7 +28472,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 27,
       "deals_total": 35,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1415448,
       "actual_sales": 127963
     },
@@ -28500,7 +28500,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 22,
       "deals_total": 50,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2686662,
       "actual_sales": 901420
     },
@@ -28528,7 +28528,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 30,
       "deals_total": 68,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3574680,
       "actual_sales": 3165001
     },
@@ -28556,7 +28556,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 27,
       "deals_total": 46,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 4632444,
       "actual_sales": 298864
     },
@@ -28584,7 +28584,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 28,
       "deals_total": 45,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3329228,
       "actual_sales": 1291779
     },
@@ -28612,7 +28612,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 22,
       "deals_total": 32,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3336300,
       "actual_sales": 265395
     },
@@ -28640,7 +28640,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 12,
       "deals_total": 31,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 917088,
       "actual_sales": 155242
     },
@@ -28668,7 +28668,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 27,
       "deals_total": 68,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 1507005,
       "actual_sales": 5369112
     },
@@ -28696,7 +28696,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 3,
       "deals_total": 34,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 292800,
       "actual_sales": 982620
     },
@@ -28724,7 +28724,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 28,
       "deals_total": 38,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 2254112,
       "actual_sales": 105718
     },
@@ -28752,7 +28752,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 28,
       "deals_total": 49,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 5386388,
       "actual_sales": 2075120
     },
@@ -28780,7 +28780,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 7,
       "deals_total": 15,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 363545,
       "actual_sales": 180061
     },
@@ -28808,7 +28808,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 23,
       "deals_total": 28,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 3990914,
       "actual_sales": 236256
     },
@@ -28836,7 +28836,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 13,
       "deals_total": 52,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2529709,
       "actual_sales": 4078250
     },
@@ -28864,7 +28864,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 17,
       "deals_total": 45,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 1382576,
       "actual_sales": 591369
     },
@@ -28892,7 +28892,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 24,
       "deals_total": 66,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1429968,
       "actual_sales": 2427450
     },
@@ -28920,7 +28920,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 3,
       "deals_total": 35,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 390855,
       "actual_sales": 2511152
     },
@@ -28948,7 +28948,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 29,
       "deals_total": 55,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 2013789,
       "actual_sales": 4372346
     },
@@ -28976,7 +28976,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 14,
       "deals_total": 62,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2363074,
       "actual_sales": 4502225
     },
@@ -29004,7 +29004,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 17,
       "deals_total": 51,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 2214148,
       "actual_sales": 955505
     },
@@ -29032,7 +29032,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 16,
       "deals_total": 42,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 875424,
       "actual_sales": 164136
     },
@@ -29060,7 +29060,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 1,
       "deals_total": 11,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 61901,
       "actual_sales": 411710
     },
@@ -29088,7 +29088,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 0,
       "deals_total": 18,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 0,
       "actual_sales": 1811248
     },
@@ -29116,7 +29116,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 8,
       "deals_total": 36,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 1429536,
       "actual_sales": 4783212
     },
@@ -29144,7 +29144,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 18,
       "deals_total": 69,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 958320,
       "actual_sales": 4740336
     },
@@ -29172,7 +29172,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 6,
       "deals_total": 48,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 483828,
       "actual_sales": 1190711
     },
@@ -29200,7 +29200,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 22,
       "deals_total": 24,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3520968,
       "actual_sales": 121636
     },
@@ -29228,7 +29228,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 19,
       "deals_total": 58,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1905529,
       "actual_sales": 2656388
     },
@@ -29256,7 +29256,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 28,
       "deals_total": 49,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 4421900,
       "actual_sales": 1119762
     },
@@ -29284,7 +29284,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 18,
       "deals_total": 34,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 2190636,
       "actual_sales": 56371
     },
@@ -29312,7 +29312,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 25,
       "deals_total": 48,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 3562525,
       "actual_sales": 148035
     },
@@ -29368,7 +29368,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 5,
       "deals_total": 32,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 358900,
       "actual_sales": 2489120
     },
@@ -29396,7 +29396,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 1,
       "deals_total": 47,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 63865,
       "actual_sales": 2970565
     },
@@ -29424,7 +29424,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 20,
       "deals_total": 49,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 3024720,
       "actual_sales": 229482
     },
@@ -29452,7 +29452,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 0,
       "deals_total": 36,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 0,
       "actual_sales": 3076898
     },
@@ -29480,7 +29480,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 6,
       "deals_total": 40,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 671982,
       "actual_sales": 1740725
     },
@@ -29508,7 +29508,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 30,
       "deals_total": 85,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 3255510,
       "actual_sales": 3112304
     },
@@ -29536,7 +29536,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 20,
       "deals_total": 35,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 1824020,
       "actual_sales": 2191629
     },
@@ -29564,7 +29564,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 20,
       "deals_total": 29,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1177640,
       "actual_sales": 438596
     },
@@ -29592,7 +29592,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 15,
       "deals_total": 49,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 1129890,
       "actual_sales": 2318463
     },
@@ -29620,7 +29620,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 19,
       "deals_total": 64,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1982555,
       "actual_sales": 4981284
     },
@@ -29648,7 +29648,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 1,
       "deals_total": 56,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 121187,
       "actual_sales": 5235944
     },
@@ -29676,7 +29676,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 13,
       "deals_total": 51,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 948857,
       "actual_sales": 1661296
     },
@@ -29704,7 +29704,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 33,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 0,
       "actual_sales": 3560239
     },
@@ -29732,7 +29732,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 7,
       "deals_total": 57,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 423689,
       "actual_sales": 4346860
     },
@@ -29760,7 +29760,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 24,
       "deals_total": 54,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 4412064,
       "actual_sales": 4265800
     },
@@ -29788,7 +29788,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 17,
       "deals_total": 47,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1372529,
       "actual_sales": 1621638
     },
@@ -29816,7 +29816,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 78,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 3810390,
       "actual_sales": 1928124
     },
@@ -29844,7 +29844,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 22,
       "deals_total": 68,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2708420,
       "actual_sales": 3771378
     },
@@ -29872,7 +29872,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 23,
       "deals_total": 32,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 4548250,
       "actual_sales": 1277430
     },
@@ -29900,7 +29900,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 2,
       "deals_total": 52,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 218124,
       "actual_sales": 5675938
     },
@@ -29928,7 +29928,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 21,
       "deals_total": 51,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 3565779,
       "actual_sales": 1064508
     },
@@ -29956,7 +29956,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 5,
       "deals_total": 46,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 689280,
       "actual_sales": 3171860
     },
@@ -29984,7 +29984,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 30,
       "deals_total": 41,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 5615460,
       "actual_sales": 1162848
     },
@@ -30012,7 +30012,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 2,
       "deals_total": 34,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 264724,
       "actual_sales": 3208824
     },
@@ -30040,7 +30040,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 17,
       "deals_total": 43,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 2848299,
       "actual_sales": 1597932
     },
@@ -30068,7 +30068,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 1,
       "deals_total": 35,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 164733,
       "actual_sales": 3881358
     },
@@ -30096,7 +30096,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 10,
       "deals_total": 25,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1003230,
       "actual_sales": 515727
     },
@@ -30124,7 +30124,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 19,
       "deals_total": 38,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 2151313,
       "actual_sales": 660653
     },
@@ -30152,7 +30152,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 7,
       "deals_total": 14,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 419524,
       "actual_sales": 289155
     },
@@ -30180,7 +30180,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 21,
       "deals_total": 42,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1067136,
       "actual_sales": 266463
     },
@@ -30208,7 +30208,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 14,
       "deals_total": 73,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1496782,
       "actual_sales": 4295460
     },
@@ -30236,7 +30236,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 14,
       "deals_total": 55,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1064210,
       "actual_sales": 2992000
     },
@@ -30292,7 +30292,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 16,
       "deals_total": 37,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 3175872,
       "actual_sales": 1060128
     },
@@ -30348,7 +30348,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 12,
       "deals_total": 39,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 628344,
       "actual_sales": 837900
     },
@@ -30376,7 +30376,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 23,
       "deals_total": 64,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 4361122,
       "actual_sales": 2556205
     },
@@ -30404,7 +30404,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 7,
       "deals_total": 24,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1170533,
       "actual_sales": 514314
     },
@@ -30432,7 +30432,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 14,
       "deals_total": 60,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 1414770,
       "actual_sales": 870740
     },
@@ -30460,7 +30460,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 15,
       "deals_total": 54,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 2463945,
       "actual_sales": 1150644
     },
@@ -30488,7 +30488,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 10,
       "deals_total": 53,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 644130,
       "actual_sales": 5246390
     },
@@ -30516,7 +30516,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 26,
       "deals_total": 66,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 5189678,
       "actual_sales": 2603550
     },
@@ -30544,7 +30544,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 18,
       "deals_total": 48,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 1401156,
       "actual_sales": 505440
     },
@@ -30572,7 +30572,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 14,
       "deals_total": 55,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1121960,
       "actual_sales": 4555536
     },
@@ -30600,7 +30600,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 18,
       "deals_total": 56,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1618146,
       "actual_sales": 3894705
     },
@@ -30628,7 +30628,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 2,
       "deals_total": 43,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 179010,
       "actual_sales": 3472266
     },
@@ -30656,7 +30656,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 28,
       "deals_total": 43,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1788780,
       "actual_sales": 331008
     },
@@ -30684,7 +30684,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 18,
       "deals_total": 31,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 2890854,
       "actual_sales": 1853140
     },
@@ -30712,7 +30712,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 22,
       "deals_total": 54,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 2512378,
       "actual_sales": 2461644
     },
@@ -30740,7 +30740,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 3,
       "deals_total": 26,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 188853,
       "actual_sales": 756430
     },
@@ -30768,7 +30768,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 3,
       "deals_total": 38,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 311523,
       "actual_sales": 2997450
     },
@@ -30796,7 +30796,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 2,
       "deals_total": 26,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 132180,
       "actual_sales": 3613220
     },
@@ -30824,7 +30824,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 52,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1887776,
       "actual_sales": 4030012
     },
@@ -30852,7 +30852,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 8,
       "deals_total": 45,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1334568,
       "actual_sales": 2481297
     },
@@ -30908,7 +30908,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 18,
       "deals_total": 60,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3204432,
       "actual_sales": 3126396
     },
@@ -30936,7 +30936,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 6,
       "deals_total": 27,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 648756,
       "actual_sales": 2396953
     },
@@ -30964,7 +30964,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 0,
       "deals_total": 43,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 0,
       "actual_sales": 715470
     },
@@ -30992,7 +30992,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 21,
       "deals_total": 29,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2863833,
       "actual_sales": 585747
     },
@@ -31020,7 +31020,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 18,
       "deals_total": 68,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 2767680,
       "actual_sales": 2572668
     },
@@ -31048,7 +31048,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 26,
       "deals_total": 74,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 5181358,
       "actual_sales": 1989414
     },
@@ -31076,7 +31076,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 18,
       "deals_total": 43,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2792574,
       "actual_sales": 796650
     },
@@ -31104,7 +31104,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 13,
       "deals_total": 42,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1793025,
       "actual_sales": 1869076
     },
@@ -31132,7 +31132,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 68,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 2267580,
       "actual_sales": 1014128
     },
@@ -31160,7 +31160,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 76,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1597740,
       "actual_sales": 1379536
     },
@@ -31188,7 +31188,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 11,
       "deals_total": 51,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 2056648,
       "actual_sales": 1794578
     },
@@ -31216,7 +31216,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 22,
       "deals_total": 57,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 3812248,
       "actual_sales": 2885762
     },
@@ -31244,7 +31244,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 9,
       "deals_total": 61,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 785295,
       "actual_sales": 3428820
     },
@@ -31272,7 +31272,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 26,
       "deals_total": 68,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 3686852,
       "actual_sales": 2949183
     },
@@ -31300,7 +31300,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 12,
       "deals_total": 56,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2396100,
       "actual_sales": 1430225
     },
@@ -31328,7 +31328,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 30,
       "deals_total": 42,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 5628750,
       "actual_sales": 419238
     },
@@ -31356,7 +31356,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 0,
       "deals_total": 13,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 0,
       "actual_sales": 385320
     },
@@ -31384,7 +31384,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 4506908,
       "actual_sales": 5410710
     },
@@ -31412,7 +31412,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 17,
       "deals_total": 43,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 2739873,
       "actual_sales": 978020
     },
@@ -31440,7 +31440,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 48,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 2365952,
       "actual_sales": 4636896
     },
@@ -31468,7 +31468,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 9,
       "deals_total": 30,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1751634,
       "actual_sales": 2146695
     },
@@ -31496,7 +31496,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 10,
       "deals_total": 15,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 890000,
       "actual_sales": 273292
     },
@@ -31524,7 +31524,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 28,
       "deals_total": 76,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2232356,
       "actual_sales": 3792844
     },
@@ -31580,7 +31580,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 21,
       "deals_total": 38,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 3300759,
       "actual_sales": 445788
     },
@@ -31608,7 +31608,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 9,
       "deals_total": 30,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1763991,
       "actual_sales": 567908
     },
@@ -31636,7 +31636,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 16,
       "deals_total": 44,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2943456,
       "actual_sales": 1585792
     },
@@ -31664,7 +31664,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 3,
       "deals_total": 16,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 504180,
       "actual_sales": 884322
     },
@@ -31692,7 +31692,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 5,
       "deals_total": 37,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 693150,
       "actual_sales": 2828093
     },
@@ -31720,7 +31720,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 5,
       "deals_total": 18,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 667805,
       "actual_sales": 438648
     },
@@ -31748,7 +31748,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 6,
       "deals_total": 57,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 738270,
       "actual_sales": 5493209
     },
@@ -31776,7 +31776,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 1,
       "deals_total": 19,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 72278,
       "actual_sales": 188886
     },
@@ -31804,7 +31804,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 19,
       "deals_total": 60,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 2283097,
       "actual_sales": 4389866
     },
@@ -31832,7 +31832,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 1,
       "deals_total": 28,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 186699,
       "actual_sales": 948555
     },
@@ -31860,7 +31860,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 23,
       "deals_total": 42,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 4355763,
       "actual_sales": 2204220
     },
@@ -31888,7 +31888,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 24,
       "deals_total": 39,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2586456,
       "actual_sales": 1754820
     },
@@ -31916,7 +31916,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 10,
       "deals_total": 17,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 627330,
       "actual_sales": 133955
     },
@@ -31944,7 +31944,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 29,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 58131,
       "actual_sales": 1048914
     },
@@ -31972,7 +31972,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 9,
       "deals_total": 40,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 710370,
       "actual_sales": 819414
     },
@@ -32028,7 +32028,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 20,
       "deals_total": 65,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 3681500,
       "actual_sales": 3370104
     },
@@ -32056,7 +32056,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 5,
       "deals_total": 29,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 728135,
       "actual_sales": 1994718
     },
@@ -32084,7 +32084,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 12,
       "deals_total": 52,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2363016,
       "actual_sales": 2122860
     },
@@ -32112,7 +32112,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 30,
       "deals_total": 77,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2284680,
       "actual_sales": 2115510
     },
@@ -32140,7 +32140,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 11,
       "deals_total": 38,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 1194314,
       "actual_sales": 769832
     },
@@ -32168,7 +32168,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 9,
       "deals_total": 39,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 1057347,
       "actual_sales": 5059601
     },
@@ -32196,7 +32196,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 0,
       "actual_sales": 5203122
     },
@@ -32224,7 +32224,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 22,
       "deals_total": 80,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2947120,
       "actual_sales": 5003220
     },
@@ -32252,7 +32252,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 23,
       "deals_total": 59,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 4455997,
       "actual_sales": 2252380
     },
@@ -32280,7 +32280,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 10,
       "deals_total": 25,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 515340,
       "actual_sales": 353840
     },
@@ -32308,7 +32308,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 5061892,
       "actual_sales": 2598816
     },
@@ -32336,7 +32336,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 27,
       "deals_total": 57,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 2806758,
       "actual_sales": 4514076
     },
@@ -32364,7 +32364,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 22,
       "deals_total": 63,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1111528,
       "actual_sales": 3012160
     },
@@ -32392,7 +32392,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 29,
       "deals_total": 71,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4498480,
       "actual_sales": 1684746
     },
@@ -32420,7 +32420,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 1,
       "deals_total": 30,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 198241,
       "actual_sales": 1791864
     },
@@ -32448,7 +32448,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 12,
       "deals_total": 52,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 780732,
       "actual_sales": 3408660
     },
@@ -32476,7 +32476,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 12,
       "deals_total": 57,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1173576,
       "actual_sales": 5083961
     },
@@ -32504,7 +32504,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 4,
       "deals_total": 41,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 604356,
       "actual_sales": 3133676
     },
@@ -32532,7 +32532,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 26,
       "deals_total": 81,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 4920760,
       "actual_sales": 1868049
     },
@@ -32588,7 +32588,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 4,
       "deals_total": 39,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 582420,
       "actual_sales": 2292324
     },
@@ -32616,7 +32616,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 23,
       "deals_total": 65,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2026208,
       "actual_sales": 3241033
     },
@@ -32644,7 +32644,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 27,
       "deals_total": 75,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 4699539,
       "actual_sales": 2563164
     },
@@ -32672,7 +32672,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 6,
       "deals_total": 22,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 508836,
       "actual_sales": 1289400
     },
@@ -32700,7 +32700,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 19,
       "deals_total": 50,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 3061926,
       "actual_sales": 3263448
     },
@@ -32728,7 +32728,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 29,
       "deals_total": 42,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1701024,
       "actual_sales": 584637
     },
@@ -32756,7 +32756,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 29,
       "deals_total": 51,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 2207567,
       "actual_sales": 1103676
     },
@@ -32784,7 +32784,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 14,
       "deals_total": 43,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2441376,
       "actual_sales": 719620
     },
@@ -32812,7 +32812,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 30,
       "deals_total": 82,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 4428720,
       "actual_sales": 4073382
     },
@@ -32840,7 +32840,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 26,
       "deals_total": 47,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 4537546,
       "actual_sales": 1545630
     },
@@ -32868,7 +32868,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 4,
       "deals_total": 15,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 303584,
       "actual_sales": 646260
     },
@@ -32896,7 +32896,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 18,
       "deals_total": 47,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1459800,
       "actual_sales": 1121926
     },
@@ -32924,7 +32924,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 16,
       "deals_total": 60,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1017264,
       "actual_sales": 2915952
     },
@@ -32980,7 +32980,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 25,
       "deals_total": 67,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3565625,
       "actual_sales": 4108293
     },
@@ -33008,7 +33008,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 25,
       "deals_total": 60,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2204400,
       "actual_sales": 1894035
     },
@@ -33036,7 +33036,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 9,
       "deals_total": 37,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 609300,
       "actual_sales": 1149862
     },
@@ -33064,7 +33064,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 0,
       "deals_total": 43,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 0,
       "actual_sales": 1715810
     },
@@ -33092,7 +33092,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2274354,
       "actual_sales": 567435
     },
@@ -33120,7 +33120,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 24,
       "deals_total": 53,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 2848728,
       "actual_sales": 165901
     },
@@ -33148,7 +33148,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 29,
       "deals_total": 54,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 2580652,
       "actual_sales": 1411452
     },
@@ -33176,7 +33176,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 10,
       "deals_total": 54,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1036180,
       "actual_sales": 2603214
     },
@@ -33204,7 +33204,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 13,
       "deals_total": 59,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 718926,
       "actual_sales": 5048703
     },
@@ -33232,7 +33232,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 2,
       "deals_total": 40,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 189068,
       "actual_sales": 1488824
     },
@@ -33260,7 +33260,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 13,
       "deals_total": 55,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1308073,
       "actual_sales": 1092612
     },
@@ -33288,7 +33288,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 40,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 165587,
       "actual_sales": 1494402
     },
@@ -33316,7 +33316,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 19,
       "deals_total": 47,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 2586394,
       "actual_sales": 492714
     },
@@ -33344,7 +33344,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 6,
       "deals_total": 60,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 735144,
       "actual_sales": 1502098
     },
@@ -33372,7 +33372,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 19,
       "deals_total": 46,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 1556803,
       "actual_sales": 360270
     },
@@ -33400,7 +33400,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 10,
       "deals_total": 70,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 728900,
       "actual_sales": 5978940
     },
@@ -33428,7 +33428,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 5,
       "deals_total": 51,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 485500,
       "actual_sales": 2974878
     },
@@ -33456,7 +33456,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 8,
       "deals_total": 58,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1454128,
       "actual_sales": 5086458
     },
@@ -33484,7 +33484,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 37,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 0,
       "actual_sales": 3972618
     },
@@ -33512,7 +33512,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 18,
       "deals_total": 65,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2657808,
       "actual_sales": 4921050
     },
@@ -33540,7 +33540,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 4,
       "deals_total": 48,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 228344,
       "actual_sales": 1878433
     },
@@ -33568,7 +33568,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 19,
       "deals_total": 39,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 3302941,
       "actual_sales": 1319532
     },
@@ -33596,7 +33596,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 11,
       "deals_total": 48,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1824394,
       "actual_sales": 1163617
     },
@@ -33624,7 +33624,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 25,
       "deals_total": 54,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1366425,
       "actual_sales": 942912
     },
@@ -33652,7 +33652,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 25,
       "deals_total": 64,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 1528225,
       "actual_sales": 2977632
     },
@@ -33680,7 +33680,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 29,
       "deals_total": 39,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 4023083,
       "actual_sales": 56195
     },
@@ -33708,7 +33708,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 22,
       "deals_total": 60,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2306260,
       "actual_sales": 1688016
     },
@@ -33736,7 +33736,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 25,
       "deals_total": 35,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 2909675,
       "actual_sales": 999964
     },
@@ -33764,7 +33764,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 15,
       "deals_total": 28,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2088645,
       "actual_sales": 1256318
     },
@@ -33792,7 +33792,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 30,
       "deals_total": 67,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 5730270,
       "actual_sales": 1178968
     },
@@ -33820,7 +33820,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 27,
       "deals_total": 71,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1940463,
       "actual_sales": 3589480
     },
@@ -33848,7 +33848,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 6,
       "deals_total": 42,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1021596,
       "actual_sales": 2707560
     },
@@ -33876,7 +33876,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 1,
       "deals_total": 30,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 142122,
       "actual_sales": 881196
     },
@@ -33904,7 +33904,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 28,
       "deals_total": 65,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 3221792,
       "actual_sales": 1840248
     },
@@ -33932,7 +33932,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 4,
       "deals_total": 36,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 417996,
       "actual_sales": 600564
     },
@@ -33960,7 +33960,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 29,
       "deals_total": 36,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 5544510,
       "actual_sales": 844910
     },
@@ -33988,7 +33988,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 13,
       "deals_total": 45,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1964079,
       "actual_sales": 786555
     },
@@ -34016,7 +34016,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 10,
       "deals_total": 52,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1822340,
       "actual_sales": 1945191
     },
@@ -34044,7 +34044,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 9,
       "deals_total": 46,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 566991,
       "actual_sales": 5471508
     },
@@ -34072,7 +34072,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 8,
       "deals_total": 38,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1454048,
       "actual_sales": 1487560
     },
@@ -34128,7 +34128,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 17,
       "deals_total": 52,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 3005447,
       "actual_sales": 2473254
     },
@@ -34156,7 +34156,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 29,
       "deals_total": 82,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 3963169,
       "actual_sales": 3147716
     },
@@ -34184,7 +34184,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 13,
       "deals_total": 53,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1121224,
       "actual_sales": 1484130
     },
@@ -34212,7 +34212,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 9,
       "deals_total": 51,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 761166,
       "actual_sales": 2090571
     },
@@ -34240,7 +34240,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 27,
       "deals_total": 75,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 3487887,
       "actual_sales": 3243204
     },
@@ -34268,7 +34268,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 14,
       "deals_total": 40,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 2002070,
       "actual_sales": 3465252
     },
@@ -34296,7 +34296,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 12,
       "deals_total": 61,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 2037312,
       "actual_sales": 1949438
     },
@@ -34324,7 +34324,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 3,
       "deals_total": 37,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 217896,
       "actual_sales": 3341796
     },
@@ -34352,7 +34352,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 18,
       "deals_total": 38,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2886732,
       "actual_sales": 1835472
     },
@@ -34380,7 +34380,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 27,
       "deals_total": 48,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 3364578,
       "actual_sales": 670564
     },
@@ -34408,7 +34408,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 10,
       "deals_total": 57,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1425790,
       "actual_sales": 2034414
     },
@@ -34436,7 +34436,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 22,
       "deals_total": 59,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 3833654,
       "actual_sales": 2609112
     },
@@ -34464,7 +34464,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 25,
       "deals_total": 49,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2246350,
       "actual_sales": 2585016
     },
@@ -34492,7 +34492,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 23,
       "deals_total": 67,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 4556185,
       "actual_sales": 2636448
     },
@@ -34520,7 +34520,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 27,
       "deals_total": 61,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 4763772,
       "actual_sales": 993445
     },
@@ -34548,7 +34548,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 12,
       "deals_total": 42,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1467204,
       "actual_sales": 1049544
     },
@@ -34576,7 +34576,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 20,
       "deals_total": 36,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 2025160,
       "actual_sales": 680350
     },
@@ -34604,7 +34604,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 20,
       "deals_total": 58,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1972160,
       "actual_sales": 1012752
     },
@@ -34632,7 +34632,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 12,
       "deals_total": 68,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1730724,
       "actual_sales": 4861388
     },
@@ -34660,7 +34660,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 3,
       "deals_total": 41,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 199404,
       "actual_sales": 2144472
     },
@@ -34688,7 +34688,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 25,
       "deals_total": 78,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2549425,
       "actual_sales": 3818325
     },
@@ -34716,7 +34716,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 3,
       "deals_total": 26,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 521895,
       "actual_sales": 3146178
     },
@@ -34744,7 +34744,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 18,
       "deals_total": 35,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1171926,
       "actual_sales": 1418280
     },
@@ -34772,7 +34772,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 5,
       "deals_total": 40,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 447360,
       "actual_sales": 1081296
     },
@@ -34800,7 +34800,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 5,
       "deals_total": 24,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 500065,
       "actual_sales": 499364
     },
@@ -34828,7 +34828,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 4,
       "deals_total": 39,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 518444,
       "actual_sales": 4214125
     },
@@ -34884,7 +34884,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 23,
       "deals_total": 64,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3295417,
       "actual_sales": 2134537
     },
@@ -34912,7 +34912,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 25,
       "deals_total": 76,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3796875,
       "actual_sales": 3781024
     },
@@ -34940,7 +34940,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 66,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 4811310,
       "actual_sales": 1035006
     },
@@ -34968,7 +34968,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 9,
       "deals_total": 53,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 1135953,
       "actual_sales": 3430033
     },
@@ -34996,7 +34996,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 7,
       "deals_total": 50,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 658686,
       "actual_sales": 3372495
     },
@@ -35024,7 +35024,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 24,
       "deals_total": 54,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 4498416,
       "actual_sales": 1549792
     },
@@ -35052,7 +35052,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 23,
       "deals_total": 69,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 2844525,
       "actual_sales": 1334430
     },
@@ -35080,7 +35080,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 16,
       "deals_total": 60,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1114192,
       "actual_sales": 3042640
     },
@@ -35108,7 +35108,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 15,
       "deals_total": 35,
-      "ratio": 0.05,
+      "ratio": 5,
       "estimated_sales": 1218285,
       "actual_sales": 64546
     },
@@ -35136,7 +35136,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 4,
       "deals_total": 32,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 470120,
       "actual_sales": 2263926
     },
@@ -35164,7 +35164,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 6,
       "deals_total": 50,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1090062,
       "actual_sales": 1545912
     },
@@ -35192,7 +35192,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 1,
       "deals_total": 34,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 175927,
       "actual_sales": 801515
     },
@@ -35220,7 +35220,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 9,
       "deals_total": 35,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1492551,
       "actual_sales": 3493600
     },
@@ -35248,7 +35248,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 26,
       "deals_total": 71,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3588494,
       "actual_sales": 1660945
     },
@@ -35276,7 +35276,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 23,
       "deals_total": 43,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 3729818,
       "actual_sales": 2046642
     },
@@ -35304,7 +35304,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 0,
       "deals_total": 11,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 0,
       "actual_sales": 791988
     },
@@ -35332,7 +35332,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 13,
       "deals_total": 44,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 1487239,
       "actual_sales": 1880882
     },
@@ -35360,7 +35360,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 8,
       "deals_total": 15,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 699776,
       "actual_sales": 1155480
     },
@@ -35388,7 +35388,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 5,
       "deals_total": 57,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 568165,
       "actual_sales": 2603048
     },
@@ -35416,7 +35416,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 6,
       "deals_total": 46,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 484044,
       "actual_sales": 2985318
     },
@@ -35444,7 +35444,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 9,
       "deals_total": 33,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1709001,
       "actual_sales": 2043126
     },
@@ -35472,7 +35472,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 14,
       "deals_total": 34,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 2364530,
       "actual_sales": 375168
     },
@@ -35500,7 +35500,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 21,
       "deals_total": 60,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2097543,
       "actual_sales": 1899086
     },
@@ -35528,7 +35528,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 1,
       "deals_total": 33,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 142167,
       "actual_sales": 3350870
     },
@@ -35556,7 +35556,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 18,
       "deals_total": 24,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 1434168,
       "actual_sales": 759825
     },
@@ -35584,7 +35584,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 20,
       "deals_total": 49,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 3322280,
       "actual_sales": 322906
     },
@@ -35612,7 +35612,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 6,
       "deals_total": 39,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1097706,
       "actual_sales": 4342702
     },
@@ -35640,7 +35640,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 21,
       "deals_total": 70,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1236858,
       "actual_sales": 3628344
     },
@@ -35668,7 +35668,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 17,
       "deals_total": 55,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 2869719,
       "actual_sales": 2278356
     },
@@ -35696,7 +35696,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 0,
       "deals_total": 23,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 0,
       "actual_sales": 493856
     },
@@ -35724,7 +35724,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 19,
       "deals_total": 41,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 1786608,
       "actual_sales": 4066146
     },
@@ -35752,7 +35752,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 15,
       "deals_total": 55,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 2763540,
       "actual_sales": 2639966
     },
@@ -35780,7 +35780,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 25,
       "deals_total": 60,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 4221250,
       "actual_sales": 1937768
     },
@@ -35808,7 +35808,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 6,
       "deals_total": 25,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 895632,
       "actual_sales": 852537
     },
@@ -35836,7 +35836,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 5,
       "deals_total": 46,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 916980,
       "actual_sales": 1942188
     },
@@ -35864,7 +35864,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 18,
       "deals_total": 58,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 3418758,
       "actual_sales": 1621545
     },
@@ -35892,7 +35892,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 25,
       "deals_total": 77,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2941375,
       "actual_sales": 5018706
     },
@@ -35920,7 +35920,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 17,
       "deals_total": 49,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 2730319,
       "actual_sales": 3260124
     },
@@ -35948,7 +35948,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 24,
       "deals_total": 83,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3771192,
       "actual_sales": 2598600
     },
@@ -35976,7 +35976,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 3,
       "deals_total": 22,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 448254,
       "actual_sales": 2726625
     },
@@ -36004,7 +36004,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 1,
       "deals_total": 36,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 56271,
       "actual_sales": 3078495
     },
@@ -36032,7 +36032,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 27,
       "deals_total": 71,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3994623,
       "actual_sales": 1809920
     },
@@ -36060,7 +36060,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 18,
       "deals_total": 62,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 1146006,
       "actual_sales": 2784975
     },
@@ -36088,7 +36088,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 5,
       "deals_total": 49,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 578175,
       "actual_sales": 2665970
     },
@@ -36116,7 +36116,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 29,
       "deals_total": 65,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 5691453,
       "actual_sales": 1838643
     },
@@ -36144,7 +36144,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 20,
       "deals_total": 46,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 3057740,
       "actual_sales": 3493400
     },
@@ -36172,7 +36172,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 5,
       "deals_total": 43,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 608270,
       "actual_sales": 1257570
     },
@@ -36200,7 +36200,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 10,
       "deals_total": 37,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1778160,
       "actual_sales": 1336944
     },
@@ -36228,7 +36228,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 5,
       "deals_total": 28,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 348190,
       "actual_sales": 1455426
     },
@@ -36256,7 +36256,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 14,
       "deals_total": 45,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2163280,
       "actual_sales": 1906995
     },
@@ -36284,7 +36284,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 16,
       "deals_total": 40,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 990560,
       "actual_sales": 1042855
     },
@@ -36312,7 +36312,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 44,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 833264,
       "actual_sales": 2862840
     },
@@ -36340,7 +36340,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 12,
       "deals_total": 34,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1784844,
       "actual_sales": 821425
     },
@@ -36368,7 +36368,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 9,
       "deals_total": 52,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 616491,
       "actual_sales": 1016820
     },
@@ -36396,7 +36396,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 15,
       "deals_total": 47,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1427280,
       "actual_sales": 2455388
     },
@@ -36424,7 +36424,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 25,
       "deals_total": 53,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 1769675,
       "actual_sales": 3656784
     },
@@ -36452,7 +36452,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 0,
       "deals_total": 17,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 0,
       "actual_sales": 746020
     },
@@ -36480,7 +36480,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 2,
       "deals_total": 40,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 318906,
       "actual_sales": 3570720
     },
@@ -36508,7 +36508,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 29,
       "deals_total": 51,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 4823657,
       "actual_sales": 1099312
     },
@@ -36536,7 +36536,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 13,
       "deals_total": 59,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1946126,
       "actual_sales": 2299379
     },
@@ -36564,7 +36564,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 1,
       "deals_total": 27,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 125845,
       "actual_sales": 3410964
     },
@@ -36592,7 +36592,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 29,
       "deals_total": 73,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 3624565,
       "actual_sales": 4643475
     },
@@ -36620,7 +36620,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 26,
       "deals_total": 40,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1870232,
       "actual_sales": 176388
     },
@@ -36648,7 +36648,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 8,
       "deals_total": 37,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1188728,
       "actual_sales": 3034526
     },
@@ -36676,7 +36676,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 28,
       "deals_total": 68,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 5514964,
       "actual_sales": 3028992
     },
@@ -36704,7 +36704,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 26,
       "deals_total": 58,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 5049096,
       "actual_sales": 1260330
     },
@@ -36732,7 +36732,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 3,
       "deals_total": 33,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 516012,
       "actual_sales": 4161450
     },
@@ -36760,7 +36760,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 12,
       "deals_total": 41,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 1381212,
       "actual_sales": 1700740
     },
@@ -36788,7 +36788,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 0,
       "deals_total": 25,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 0,
       "actual_sales": 3404184
     },
@@ -36816,7 +36816,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 0,
       "deals_total": 18,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 0,
       "actual_sales": 961740
     },
@@ -36844,7 +36844,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 27,
       "deals_total": 47,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1683855,
       "actual_sales": 1129400
     },
@@ -36872,7 +36872,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 25,
       "deals_total": 42,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 3361400,
       "actual_sales": 692216
     },
@@ -36900,7 +36900,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 0,
       "deals_total": 18,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 0,
       "actual_sales": 372348
     },
@@ -36928,7 +36928,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 30,
       "deals_total": 44,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 2847780,
       "actual_sales": 239367
     },
@@ -36956,7 +36956,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 3,
       "deals_total": 22,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 546666,
       "actual_sales": 2297344
     },
@@ -36984,7 +36984,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 6,
       "deals_total": 24,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 408972,
       "actual_sales": 188452
     },
@@ -37012,7 +37012,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 5,
       "deals_total": 42,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 321400,
       "actual_sales": 5094348
     },
@@ -37040,7 +37040,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 25,
       "deals_total": 44,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 2898600,
       "actual_sales": 3116112
     },
@@ -37068,7 +37068,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 16,
       "deals_total": 30,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2260352,
       "actual_sales": 618920
     },
@@ -37096,7 +37096,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 12,
       "deals_total": 62,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1694664,
       "actual_sales": 4266243
     },
@@ -37124,7 +37124,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 4,
       "deals_total": 30,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 448608,
       "actual_sales": 150194
     },
@@ -37180,7 +37180,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 23,
       "deals_total": 55,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 4011154,
       "actual_sales": 1618870
     },
@@ -37208,7 +37208,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 1,
       "deals_total": 30,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 185568,
       "actual_sales": 1355925
     },
@@ -37236,7 +37236,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 17,
       "deals_total": 37,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 3026272,
       "actual_sales": 195681
     },
@@ -37264,7 +37264,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 29,
       "deals_total": 70,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 5432744,
       "actual_sales": 918372
     },
@@ -37292,7 +37292,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 21,
       "deals_total": 72,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2182887,
       "actual_sales": 4194528
     },
@@ -37320,7 +37320,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 14,
       "deals_total": 62,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2639588,
       "actual_sales": 3466882
     },
@@ -37348,7 +37348,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 21,
       "deals_total": 62,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 1645917,
       "actual_sales": 1808490
     },
@@ -37376,7 +37376,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 1,
       "deals_total": 33,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 165163,
       "actual_sales": 1683416
     },
@@ -37404,7 +37404,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 15,
       "deals_total": 32,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 2307285,
       "actual_sales": 211082
     },
@@ -37432,7 +37432,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 6,
       "deals_total": 48,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1199784,
       "actual_sales": 4344340
     },
@@ -37460,7 +37460,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 25,
       "deals_total": 59,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 4902425,
       "actual_sales": 1884492
     },
@@ -37488,7 +37488,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 5,
       "deals_total": 49,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 646210,
       "actual_sales": 959070
     },
@@ -37516,7 +37516,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 6,
       "deals_total": 25,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 491550,
       "actual_sales": 1464050
     },
@@ -37544,7 +37544,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 30,
       "deals_total": 53,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1913100,
       "actual_sales": 3394254
     },
@@ -37572,7 +37572,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 11,
       "deals_total": 39,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 811228,
       "actual_sales": 1281008
     },
@@ -37600,7 +37600,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 25,
       "deals_total": 56,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 4278625,
       "actual_sales": 5502518
     },
@@ -37628,7 +37628,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 7,
       "deals_total": 38,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1384033,
       "actual_sales": 3114384
     },
@@ -37656,7 +37656,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 0,
       "deals_total": 35,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 0,
       "actual_sales": 4559230
     },
@@ -37684,7 +37684,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 26,
       "deals_total": 50,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 3183362,
       "actual_sales": 2171790
     },
@@ -37712,7 +37712,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 27,
       "deals_total": 76,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 4410774,
       "actual_sales": 3705048
     },
@@ -37740,7 +37740,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 1,
       "deals_total": 10,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 158688,
       "actual_sales": 197562
     },
@@ -37768,7 +37768,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 16,
       "deals_total": 56,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 2531696,
       "actual_sales": 1886016
     },
@@ -37796,7 +37796,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 25,
       "deals_total": 48,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1946875,
       "actual_sales": 1748256
     },
@@ -37824,7 +37824,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 14,
       "deals_total": 45,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1177330,
       "actual_sales": 1171098
     },
@@ -37852,7 +37852,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 6,
       "deals_total": 51,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1070202,
       "actual_sales": 1069245
     },
@@ -37880,7 +37880,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 3,
       "deals_total": 21,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 226962,
       "actual_sales": 548348
     },
@@ -37908,7 +37908,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 20,
       "deals_total": 23,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3550400,
       "actual_sales": 263378
     },
@@ -37936,7 +37936,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 9,
       "deals_total": 57,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1159839,
       "actual_sales": 2311247
     },
@@ -37964,7 +37964,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 1,
       "deals_total": 49,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 124537,
       "actual_sales": 1860462
     },
@@ -37992,7 +37992,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 8,
       "deals_total": 48,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 760336,
       "actual_sales": 3194548
     },
@@ -38020,7 +38020,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 3,
       "deals_total": 48,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 213279,
       "actual_sales": 2571975
     },
@@ -38048,7 +38048,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 2861517,
       "actual_sales": 2081690
     },
@@ -38076,7 +38076,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 17,
       "deals_total": 52,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 1880727,
       "actual_sales": 4720320
     },
@@ -38104,7 +38104,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 29,
       "deals_total": 73,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2298511,
       "actual_sales": 4746140
     },
@@ -38132,7 +38132,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 11,
       "deals_total": 44,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1133011,
       "actual_sales": 1607088
     },
@@ -38160,7 +38160,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 8,
       "deals_total": 18,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1089168,
       "actual_sales": 558789
     },
@@ -38216,7 +38216,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 22,
       "deals_total": 53,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 3268980,
       "actual_sales": 1176056
     },
@@ -38244,7 +38244,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 27,
       "deals_total": 58,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 5272425,
       "actual_sales": 608244
     },
@@ -38272,7 +38272,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 7,
       "deals_total": 27,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 917539,
       "actual_sales": 1538340
     },
@@ -38300,7 +38300,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 11,
       "deals_total": 18,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 555192,
       "actual_sales": 504423
     },
@@ -38328,7 +38328,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 27,
       "deals_total": 51,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4300182,
       "actual_sales": 1911516
     },
@@ -38356,7 +38356,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 23,
       "deals_total": 74,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3638324,
       "actual_sales": 1473759
     },
@@ -38384,7 +38384,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 25,
       "deals_total": 57,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 4972250,
       "actual_sales": 358665
     },
@@ -38412,7 +38412,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 27,
       "deals_total": 59,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1953396,
       "actual_sales": 792904
     },
@@ -38440,7 +38440,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 5,
       "deals_total": 36,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 480180,
       "actual_sales": 1143225
     },
@@ -38496,7 +38496,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 20,
       "deals_total": 38,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 2069140,
       "actual_sales": 237856
     },
@@ -38524,7 +38524,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 0,
       "deals_total": 26,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 0,
       "actual_sales": 1844580
     },
@@ -38552,7 +38552,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 23,
       "deals_total": 53,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 2690862,
       "actual_sales": 755392
     },
@@ -38580,7 +38580,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 2180444,
       "actual_sales": 723600
     },
@@ -38608,7 +38608,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 30,
       "deals_total": 47,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 4835580,
       "actual_sales": 937434
     },
@@ -38636,7 +38636,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 14,
       "deals_total": 30,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2546390,
       "actual_sales": 1361374
     },
@@ -38664,7 +38664,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 4,
       "deals_total": 31,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 275596,
       "actual_sales": 1624545
     },
@@ -38692,7 +38692,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 65,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1826580,
       "actual_sales": 1231230
     },
@@ -38720,7 +38720,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 25,
       "deals_total": 56,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 2303900,
       "actual_sales": 2565408
     },
@@ -38748,7 +38748,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 13,
       "deals_total": 24,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1052363,
       "actual_sales": 1256360
     },
@@ -38776,7 +38776,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 10,
       "deals_total": 33,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 656500,
       "actual_sales": 178269
     },
@@ -38804,7 +38804,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 9,
       "deals_total": 41,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1509282,
       "actual_sales": 2432850
     },
@@ -38832,7 +38832,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 17,
       "deals_total": 62,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1981282,
       "actual_sales": 4126671
     },
@@ -38860,7 +38860,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 11,
       "deals_total": 42,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1738649,
       "actual_sales": 4458648
     },
@@ -38888,7 +38888,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 19,
       "deals_total": 63,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2229517,
       "actual_sales": 3985300
     },
@@ -38916,7 +38916,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 12,
       "deals_total": 42,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1143252,
       "actual_sales": 1491757
     },
@@ -38944,7 +38944,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 29,
       "deals_total": 64,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1913391,
       "actual_sales": 1713140
     },
@@ -38972,7 +38972,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 13,
       "deals_total": 45,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 1352884,
       "actual_sales": 2178330
     },
@@ -39000,7 +39000,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 16,
       "deals_total": 47,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 1566832,
       "actual_sales": 841088
     },
@@ -39028,7 +39028,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 20,
       "deals_total": 41,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 2415740,
       "actual_sales": 493300
     },
@@ -39056,7 +39056,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 21,
       "deals_total": 57,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1951320,
       "actual_sales": 2658632
     },
@@ -39084,7 +39084,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 25,
       "deals_total": 60,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 4116775,
       "actual_sales": 2628463
     },
@@ -39112,7 +39112,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 20,
       "deals_total": 43,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1675920,
       "actual_sales": 1130346
     },
@@ -39140,7 +39140,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 13,
       "deals_total": 34,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1267110,
       "actual_sales": 1256544
     },
@@ -39168,7 +39168,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 12,
       "deals_total": 58,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 668340,
       "actual_sales": 5125926
     },
@@ -39196,7 +39196,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 0,
       "deals_total": 37,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 0,
       "actual_sales": 5178630
     },
@@ -39224,7 +39224,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 27,
       "deals_total": 84,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1493910,
       "actual_sales": 2375100
     },
@@ -39252,7 +39252,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 9,
       "deals_total": 47,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 1473480,
       "actual_sales": 1276688
     },
@@ -39280,7 +39280,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 26,
       "deals_total": 66,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 4296734,
       "actual_sales": 2413116
     },
@@ -39308,7 +39308,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 49,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 989700,
       "actual_sales": 501940
     },
@@ -39336,7 +39336,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 22,
       "deals_total": 44,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2601060,
       "actual_sales": 912262
     },
@@ -39364,7 +39364,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 11,
       "deals_total": 40,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 956252,
       "actual_sales": 3002260
     },
@@ -39392,7 +39392,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 10,
       "deals_total": 36,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 996110,
       "actual_sales": 147215
     },
@@ -39420,7 +39420,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 17,
       "deals_total": 54,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 893248,
       "actual_sales": 1261323
     },
@@ -39448,7 +39448,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 8,
       "deals_total": 41,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 906888,
       "actual_sales": 2260320
     },
@@ -39476,7 +39476,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 18,
       "deals_total": 71,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1595970,
       "actual_sales": 4840668
     },
@@ -39504,7 +39504,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 21,
       "deals_total": 42,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 2113419,
       "actual_sales": 3607960
     },
@@ -39532,7 +39532,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 22,
       "deals_total": 52,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3287020,
       "actual_sales": 1455780
     },
@@ -39560,7 +39560,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 10,
       "deals_total": 45,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 952440,
       "actual_sales": 1537130
     },
@@ -39588,7 +39588,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 16,
       "deals_total": 40,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 2948640,
       "actual_sales": 161892
     },
@@ -39616,7 +39616,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 0,
       "deals_total": 41,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 0,
       "actual_sales": 1668199
     },
@@ -39644,7 +39644,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 15,
       "deals_total": 30,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1806450,
       "actual_sales": 860715
     },
@@ -39672,7 +39672,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 12,
       "deals_total": 53,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1751100,
       "actual_sales": 1971750
     },
@@ -39700,7 +39700,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 9,
       "deals_total": 45,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1348200,
       "actual_sales": 2318760
     },
@@ -39728,7 +39728,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 14,
       "deals_total": 44,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 1081598,
       "actual_sales": 128192
     },
@@ -39784,7 +39784,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 27,
       "deals_total": 61,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 4066173,
       "actual_sales": 3290659
     },
@@ -39812,7 +39812,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 27,
       "deals_total": 70,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3370140,
       "actual_sales": 1855216
     },
@@ -39840,7 +39840,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 29,
       "deals_total": 40,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3990632,
       "actual_sales": 268860
     },
@@ -39868,7 +39868,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 6,
       "deals_total": 51,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1101366,
       "actual_sales": 1366959
     },
@@ -39896,7 +39896,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 3,
       "deals_total": 11,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 428172,
       "actual_sales": 477250
     },
@@ -39924,7 +39924,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 27,
       "deals_total": 74,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2122524,
       "actual_sales": 1460260
     },
@@ -39952,7 +39952,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 19,
       "deals_total": 74,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 2882053,
       "actual_sales": 3667380
     },
@@ -39980,7 +39980,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 6,
       "deals_total": 41,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 326886,
       "actual_sales": 627816
     },
@@ -40008,7 +40008,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 25,
       "deals_total": 70,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2440925,
       "actual_sales": 1357377
     },
@@ -40036,7 +40036,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 15,
       "deals_total": 38,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 2377605,
       "actual_sales": 1651636
     },
@@ -40064,7 +40064,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 18,
       "deals_total": 46,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2331810,
       "actual_sales": 1245840
     },
@@ -40092,7 +40092,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 11,
       "deals_total": 56,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1119151,
       "actual_sales": 1757781
     },
@@ -40120,7 +40120,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 20,
       "deals_total": 33,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 2099460,
       "actual_sales": 117028
     },
@@ -40148,7 +40148,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 7,
       "deals_total": 52,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 484974,
       "actual_sales": 3749486
     },
@@ -40176,7 +40176,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 21,
       "deals_total": 56,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2158044,
       "actual_sales": 2852595
     },
@@ -40204,7 +40204,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 21,
       "deals_total": 56,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2417898,
       "actual_sales": 1477965
     },
@@ -40232,7 +40232,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 24,
       "deals_total": 51,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 4116864,
       "actual_sales": 1798128
     },
@@ -40260,7 +40260,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 5,
       "deals_total": 22,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 524540,
       "actual_sales": 2307774
     },
@@ -40288,7 +40288,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 19,
       "deals_total": 49,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2694713,
       "actual_sales": 1295030
     },
@@ -40316,7 +40316,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 29,
       "deals_total": 54,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 5463571,
       "actual_sales": 1137160
     },
@@ -40344,7 +40344,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 15,
       "deals_total": 40,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1238925,
       "actual_sales": 1744457
     },
@@ -40372,7 +40372,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 2,
       "deals_total": 26,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 279362,
       "actual_sales": 2492586
     },
@@ -40400,7 +40400,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 20,
       "deals_total": 30,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 2437120,
       "actual_sales": 962064
     },
@@ -40428,7 +40428,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 17,
       "deals_total": 48,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 3141498,
       "actual_sales": 1423390
     },
@@ -40456,7 +40456,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 26,
       "deals_total": 50,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 3155776,
       "actual_sales": 2449176
     },
@@ -40484,7 +40484,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 28,
       "deals_total": 76,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2606604,
       "actual_sales": 4110100
     },
@@ -40512,7 +40512,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 21,
       "deals_total": 43,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 2911293,
       "actual_sales": 1017260
     },
@@ -40540,7 +40540,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 20,
       "deals_total": 55,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 3312700,
       "actual_sales": 2585925
     },
@@ -40568,7 +40568,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 24,
       "deals_total": 37,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 4299648,
       "actual_sales": 1641101
     },
@@ -40596,7 +40596,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 29,
       "deals_total": 70,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 5548164,
       "actual_sales": 1656120
     },
@@ -40624,7 +40624,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 8,
       "deals_total": 41,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 945480,
       "actual_sales": 3484676
     },
@@ -40652,7 +40652,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 20,
       "deals_total": 71,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2360200,
       "actual_sales": 4767810
     },
@@ -40680,7 +40680,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 11,
       "deals_total": 35,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 586927,
       "actual_sales": 274893
     },
@@ -40736,7 +40736,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 30,
       "deals_total": 56,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 5131110,
       "actual_sales": 170163
     },
@@ -40764,7 +40764,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 29,
       "deals_total": 41,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3596435,
       "actual_sales": 625818
     },
@@ -40792,7 +40792,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 30,
       "deals_total": 57,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 2975310,
       "actual_sales": 2291951
     },
@@ -40820,7 +40820,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 15,
       "deals_total": 23,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1598310,
       "actual_sales": 194630
     },
@@ -40848,7 +40848,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 14,
       "deals_total": 51,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1925406,
       "actual_sales": 2126012
     },
@@ -40876,7 +40876,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 19,
       "deals_total": 73,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 3240925,
       "actual_sales": 3735192
     },
@@ -40932,7 +40932,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 15,
       "deals_total": 41,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 2330115,
       "actual_sales": 1561232
     },
@@ -40960,7 +40960,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 25,
       "deals_total": 52,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3120150,
       "actual_sales": 1233583
     },
@@ -40988,7 +40988,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 25,
       "deals_total": 62,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1403000,
       "actual_sales": 2189471
     },
@@ -41016,7 +41016,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 12,
       "deals_total": 26,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 1369344,
       "actual_sales": 92147
     },
@@ -41044,7 +41044,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 24,
       "deals_total": 44,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 3985152,
       "actual_sales": 927924
     },
@@ -41072,7 +41072,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 9,
       "deals_total": 41,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 654219,
       "actual_sales": 1773072
     },
@@ -41100,7 +41100,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 23,
       "deals_total": 56,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 3057390,
       "actual_sales": 1478853
     },
@@ -41156,7 +41156,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 24,
       "deals_total": 42,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 2889384,
       "actual_sales": 1308748
     },
@@ -41184,7 +41184,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1069576,
       "actual_sales": 2568384
     },
@@ -41212,7 +41212,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 13,
       "deals_total": 42,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 2529709,
       "actual_sales": 2338470
     },
@@ -41240,7 +41240,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 27,
       "deals_total": 71,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 5254173,
       "actual_sales": 804300
     },
@@ -41268,7 +41268,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 25,
       "deals_total": 54,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2128825,
       "actual_sales": 2274538
     },
@@ -41296,7 +41296,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 18,
       "deals_total": 39,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2838474,
       "actual_sales": 615130
     },
@@ -41324,7 +41324,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 14,
       "deals_total": 49,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 1465296,
       "actual_sales": 3986820
     },
@@ -41352,7 +41352,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 17,
       "deals_total": 54,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1835014,
       "actual_sales": 1903344
     },
@@ -41380,7 +41380,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 19,
       "deals_total": 53,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 2149603,
       "actual_sales": 2790397
     },
@@ -41408,7 +41408,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 26,
       "deals_total": 77,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1942278,
       "actual_sales": 4353712
     },
@@ -41436,7 +41436,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 19,
       "deals_total": 70,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2489665,
       "actual_sales": 2256116
     },
@@ -41464,7 +41464,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 10,
       "deals_total": 53,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1177500,
       "actual_sales": 2765752
     },
@@ -41492,7 +41492,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 1,
       "deals_total": 45,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 132067,
       "actual_sales": 1923541
     },
@@ -41520,7 +41520,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 21,
       "deals_total": 53,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2362794,
       "actual_sales": 1297770
     },
@@ -41548,7 +41548,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 1,
       "deals_total": 42,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 94303,
       "actual_sales": 5598264
     },
@@ -41576,7 +41576,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 23,
       "deals_total": 50,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 4530977,
       "actual_sales": 639306
     },
@@ -41604,7 +41604,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 5,
       "deals_total": 29,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 769080,
       "actual_sales": 611568
     },
@@ -41632,7 +41632,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 18,
       "deals_total": 54,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 3521682,
       "actual_sales": 2952784
     },
@@ -41660,7 +41660,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 24,
       "deals_total": 70,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 4773672,
       "actual_sales": 3359115
     },
@@ -41688,7 +41688,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 4,
       "deals_total": 35,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 765392,
       "actual_sales": 2412144
     },
@@ -41716,7 +41716,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 25,
       "deals_total": 72,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 4619425,
       "actual_sales": 2532600
     },
@@ -41744,7 +41744,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 19,
       "deals_total": 59,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2840424,
       "actual_sales": 1905568
     },
@@ -41772,7 +41772,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 30,
       "deals_total": 68,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 1905180,
       "actual_sales": 967161
     },
@@ -41800,7 +41800,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 18,
       "deals_total": 28,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2247210,
       "actual_sales": 656304
     },
@@ -41828,7 +41828,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 28,
       "deals_total": 59,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 3784004,
       "actual_sales": 2788668
     },
@@ -41856,7 +41856,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 5,
       "deals_total": 35,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 848965,
       "actual_sales": 4767168
     },
@@ -41884,7 +41884,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 13,
       "deals_total": 50,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1093573,
       "actual_sales": 3647715
     },
@@ -41912,7 +41912,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 27,
       "deals_total": 33,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 4671135,
       "actual_sales": 747736
     },
@@ -41940,7 +41940,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 16,
       "deals_total": 63,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 924560,
       "actual_sales": 3803410
     },
@@ -41968,7 +41968,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 13,
       "deals_total": 67,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2284438,
       "actual_sales": 2233812
     },
@@ -41996,7 +41996,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 28,
       "deals_total": 49,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1466360,
       "actual_sales": 430720
     },
@@ -42024,7 +42024,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 11,
       "deals_total": 32,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1060499,
       "actual_sales": 335589
     },
@@ -42052,7 +42052,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 23,
       "deals_total": 45,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 3078803,
       "actual_sales": 2034802
     },
@@ -42080,7 +42080,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 3,
       "deals_total": 35,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 432927,
       "actual_sales": 1249935
     },
@@ -42108,7 +42108,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 7,
       "deals_total": 33,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 801906,
       "actual_sales": 1992996
     },
@@ -42164,7 +42164,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 16,
       "deals_total": 41,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 2080224,
       "actual_sales": 473916
     },
@@ -42192,7 +42192,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 20,
       "deals_total": 63,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 3257980,
       "actual_sales": 4821050
     },
@@ -42220,7 +42220,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 30,
       "deals_total": 67,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3427740,
       "actual_sales": 1298805
     },
@@ -42248,7 +42248,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 14,
       "deals_total": 27,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1804236,
       "actual_sales": 563949
     },
@@ -42276,7 +42276,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 56,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1462076,
       "actual_sales": 510688
     },
@@ -42304,7 +42304,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 15,
       "deals_total": 55,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 2800395,
       "actual_sales": 4786911
     },
@@ -42332,7 +42332,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 14,
       "deals_total": 43,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 2116688,
       "actual_sales": 3877938
     },
@@ -42360,7 +42360,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 21,
       "deals_total": 44,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 2932398,
       "actual_sales": 1078425
     },
@@ -42388,7 +42388,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 7,
       "deals_total": 33,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 826567,
       "actual_sales": 1878090
     },
@@ -42416,7 +42416,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 12,
       "deals_total": 37,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1350792,
       "actual_sales": 854971
     },
@@ -42444,7 +42444,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 20,
       "deals_total": 48,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 2754200,
       "actual_sales": 1499319
     },
@@ -42472,7 +42472,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 3,
       "deals_total": 22,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 581130,
       "actual_sales": 592314
     },
@@ -42500,7 +42500,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 8,
       "deals_total": 54,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1474064,
       "actual_sales": 2710334
     },
@@ -42528,7 +42528,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 19,
       "deals_total": 23,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1760844,
       "actual_sales": 90427
     },
@@ -42556,7 +42556,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 24,
       "deals_total": 48,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 1303608,
       "actual_sales": 4288328
     },
@@ -42584,7 +42584,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 28,
       "deals_total": 51,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 3082520,
       "actual_sales": 1475906
     },
@@ -42612,7 +42612,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 0,
       "deals_total": 39,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 0,
       "actual_sales": 2632297
     },
@@ -42640,7 +42640,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 8,
       "deals_total": 60,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 890352,
       "actual_sales": 3114358
     },
@@ -42668,7 +42668,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 12,
       "deals_total": 56,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 689340,
       "actual_sales": 4929525
     },
@@ -42696,7 +42696,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 63,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2024268,
       "actual_sales": 3228840
     },
@@ -42724,7 +42724,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 22,
       "deals_total": 57,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 2403148,
       "actual_sales": 1321188
     },
@@ -42752,7 +42752,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 36,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 60241,
       "actual_sales": 823590
     },
@@ -42780,7 +42780,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 30,
       "deals_total": 75,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 4971930,
       "actual_sales": 4613336
     },
@@ -42808,7 +42808,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 6,
       "deals_total": 36,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 904638,
       "actual_sales": 2779665
     },
@@ -42836,7 +42836,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 25,
       "deals_total": 79,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 3102300,
       "actual_sales": 4483574
     },
@@ -42864,7 +42864,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 3,
       "deals_total": 39,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 234195,
       "actual_sales": 2995278
     },
@@ -42892,7 +42892,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 4,
       "deals_total": 45,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 513948,
       "actual_sales": 1848660
     },
@@ -42920,7 +42920,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 9,
       "deals_total": 37,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1281033,
       "actual_sales": 701350
     },
@@ -42948,7 +42948,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 0,
       "deals_total": 31,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 0,
       "actual_sales": 1983497
     },
@@ -42976,7 +42976,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 7,
       "deals_total": 53,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 733719,
       "actual_sales": 2122146
     },
@@ -43004,7 +43004,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 25,
       "deals_total": 82,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2449325,
       "actual_sales": 2444634
     },
@@ -43032,7 +43032,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 0,
       "deals_total": 16,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 0,
       "actual_sales": 273705
     },
@@ -43060,7 +43060,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 16,
       "deals_total": 45,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 1355776,
       "actual_sales": 2856560
     },
@@ -43088,7 +43088,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 1,
       "deals_total": 19,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 165243,
       "actual_sales": 634770
     },
@@ -43116,7 +43116,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 7,
       "deals_total": 42,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 815843,
       "actual_sales": 1080016
     },
@@ -43144,7 +43144,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 15,
       "deals_total": 24,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 2071170,
       "actual_sales": 229976
     },
@@ -43172,7 +43172,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 6,
       "deals_total": 45,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1137576,
       "actual_sales": 1597926
     },
@@ -43200,7 +43200,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 19,
       "deals_total": 50,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3670990,
       "actual_sales": 2659140
     },
@@ -43228,7 +43228,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 19,
       "deals_total": 47,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 3282421,
       "actual_sales": 1872600
     },
@@ -43256,7 +43256,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 21,
       "deals_total": 44,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 3318315,
       "actual_sales": 1465623
     },
@@ -43284,7 +43284,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 1,
       "deals_total": 6,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 170454,
       "actual_sales": 236742
     },
@@ -43312,7 +43312,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 20,
       "deals_total": 37,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3427240,
       "actual_sales": 1219401
     },
@@ -43368,7 +43368,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 21,
       "deals_total": 42,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 1587789,
       "actual_sales": 1637097
     },
@@ -43396,7 +43396,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 20,
       "deals_total": 60,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 3542120,
       "actual_sales": 1654320
     },
@@ -43424,7 +43424,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 21,
       "deals_total": 43,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1263969,
       "actual_sales": 488568
     },
@@ -43452,7 +43452,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 9,
       "deals_total": 48,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 628830,
       "actual_sales": 1772118
     },
@@ -43480,7 +43480,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 57,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1734708,
       "actual_sales": 1100754
     },
@@ -43508,7 +43508,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 18,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 0,
       "actual_sales": 1007344
     },
@@ -43536,7 +43536,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 12,
       "deals_total": 28,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 665208,
       "actual_sales": 316112
     },
@@ -43564,7 +43564,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 22,
       "deals_total": 45,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1629760,
       "actual_sales": 776802
     },
@@ -43592,7 +43592,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 17,
       "deals_total": 66,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1162120,
       "actual_sales": 1428829
     },
@@ -43620,7 +43620,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 38,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1087856,
       "actual_sales": 804692
     },
@@ -43648,7 +43648,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 14,
       "deals_total": 27,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2274566,
       "actual_sales": 977065
     },
@@ -43676,7 +43676,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 17,
       "deals_total": 53,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 3116610,
       "actual_sales": 3179020
     },
@@ -43704,7 +43704,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 7,
       "deals_total": 48,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 1169602,
       "actual_sales": 5049459
     },
@@ -43732,7 +43732,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 15,
       "deals_total": 46,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 1128405,
       "actual_sales": 4385680
     },
@@ -43760,7 +43760,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 26,
       "deals_total": 75,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1535872,
       "actual_sales": 2834952
     },
@@ -43788,7 +43788,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 3,
       "deals_total": 19,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 350757,
       "actual_sales": 1025304
     },
@@ -43816,7 +43816,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 59,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 939876,
       "actual_sales": 2035360
     },
@@ -43844,7 +43844,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 23,
       "deals_total": 56,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1801360,
       "actual_sales": 4058714
     },
@@ -43872,7 +43872,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 10,
       "deals_total": 25,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 869590,
       "actual_sales": 1570074
     },
@@ -43900,7 +43900,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 18,
       "deals_total": 61,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 2399436,
       "actual_sales": 4802028
     },
@@ -43928,7 +43928,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 30,
       "deals_total": 45,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 2302710,
       "actual_sales": 331024
     },
@@ -43956,7 +43956,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 5,
       "deals_total": 36,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 753390,
       "actual_sales": 2681928
     },
@@ -43984,7 +43984,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 17,
       "deals_total": 55,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 2755360,
       "actual_sales": 5681490
     },
@@ -44012,7 +44012,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 9,
       "deals_total": 25,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 708210,
       "actual_sales": 1243080
     },
@@ -44040,7 +44040,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 12,
       "deals_total": 54,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1559964,
       "actual_sales": 2264419
     },
@@ -44068,7 +44068,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 36,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 751686,
       "actual_sales": 3171760
     },
@@ -44096,7 +44096,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 18,
       "deals_total": 25,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2913678,
       "actual_sales": 119212
     },
@@ -44124,7 +44124,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 14,
       "deals_total": 42,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2708300,
       "actual_sales": 1776336
     },
@@ -44152,7 +44152,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 11,
       "deals_total": 40,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 596244,
       "actual_sales": 1592808
     },
@@ -44180,7 +44180,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 21,
       "deals_total": 71,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 3452253,
       "actual_sales": 1738557
     },
@@ -44208,7 +44208,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 10,
       "deals_total": 15,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 1727230,
       "actual_sales": 169552
     },
@@ -44236,7 +44236,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 25,
       "deals_total": 41,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 2852450,
       "actual_sales": 240939
     },
@@ -44264,7 +44264,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 3,
       "deals_total": 28,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 225639,
       "actual_sales": 173462
     },
@@ -44292,7 +44292,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 19,
       "deals_total": 58,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1936423,
       "actual_sales": 2706808
     },
@@ -44320,7 +44320,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 15,
       "deals_total": 37,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1183335,
       "actual_sales": 2025972
     },
@@ -44348,7 +44348,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 8,
       "deals_total": 29,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1245168,
       "actual_sales": 1315240
     },
@@ -44376,7 +44376,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 14,
       "deals_total": 70,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1975638,
       "actual_sales": 3730916
     },
@@ -44404,7 +44404,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 21,
       "deals_total": 54,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 4196472,
       "actual_sales": 1584631
     },
@@ -44432,7 +44432,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 25,
       "deals_total": 47,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3986325,
       "actual_sales": 1004113
     },
@@ -44460,7 +44460,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 0,
       "deals_total": 32,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 0,
       "actual_sales": 4920450
     },
@@ -44488,7 +44488,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 16,
       "deals_total": 53,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 854496,
       "actual_sales": 680512
     },
@@ -44516,7 +44516,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 11,
       "deals_total": 27,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1541727,
       "actual_sales": 1054539
     },
@@ -44544,7 +44544,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 4,
       "deals_total": 29,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 463540,
       "actual_sales": 1599097
     },
@@ -44572,7 +44572,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 22,
       "deals_total": 51,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1941346,
       "actual_sales": 731436
     },
@@ -44600,7 +44600,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 15,
       "deals_total": 56,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2094990,
       "actual_sales": 946812
     },
@@ -44628,7 +44628,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 7,
       "deals_total": 62,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 761124,
       "actual_sales": 4779270
     },
@@ -44656,7 +44656,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 20,
       "deals_total": 35,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 2450860,
       "actual_sales": 2150470
     },
@@ -44684,7 +44684,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 13,
       "deals_total": 37,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 2523300,
       "actual_sales": 1707855
     },
@@ -44712,7 +44712,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 25,
       "deals_total": 38,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 3738150,
       "actual_sales": 332367
     },
@@ -44740,7 +44740,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 25,
       "deals_total": 41,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3370000,
       "actual_sales": 1492920
     },
@@ -44768,7 +44768,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 13,
       "deals_total": 55,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1288521,
       "actual_sales": 2873104
     },
@@ -44824,7 +44824,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 62,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1888236,
       "actual_sales": 4595101
     },
@@ -44852,7 +44852,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 19,
       "deals_total": 31,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 1285578,
       "actual_sales": 487020
     },
@@ -44880,7 +44880,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 6,
       "deals_total": 40,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 762966,
       "actual_sales": 1278216
     },
@@ -44908,7 +44908,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 27,
       "deals_total": 62,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 4658175,
       "actual_sales": 3550430
     },
@@ -44936,7 +44936,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 26,
       "deals_total": 43,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 3956134,
       "actual_sales": 925150
     },
@@ -44964,7 +44964,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 19,
       "deals_total": 51,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2066307,
       "actual_sales": 3316070
     },
@@ -44992,7 +44992,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 14,
       "deals_total": 29,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 2122498,
       "actual_sales": 1665960
     },
@@ -45020,7 +45020,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 7,
       "deals_total": 26,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 908383,
       "actual_sales": 878764
     },
@@ -45048,7 +45048,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 22,
       "deals_total": 40,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1145628,
       "actual_sales": 792820
     },
@@ -45076,7 +45076,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 27,
       "deals_total": 49,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 3251637,
       "actual_sales": 344688
     },
@@ -45132,7 +45132,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 23,
       "deals_total": 58,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2675705,
       "actual_sales": 1203804
     },
@@ -45160,7 +45160,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 30,
       "deals_total": 80,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1571370,
       "actual_sales": 3236951
     },
@@ -45188,7 +45188,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 13,
       "deals_total": 26,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1367587,
       "actual_sales": 1360210
     },
@@ -45216,7 +45216,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 19,
       "deals_total": 61,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2211125,
       "actual_sales": 4343500
     },
@@ -45244,7 +45244,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 14,
       "deals_total": 39,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1944838,
       "actual_sales": 2508779
     },
@@ -45272,7 +45272,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 28,
       "deals_total": 50,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 1496656,
       "actual_sales": 3357288
     },
@@ -45328,7 +45328,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 20,
       "deals_total": 72,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2832420,
       "actual_sales": 2458263
     },
@@ -45356,7 +45356,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 20,
       "deals_total": 73,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2296220,
       "actual_sales": 3132660
     },
@@ -45384,7 +45384,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 16,
       "deals_total": 35,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 1917168,
       "actual_sales": 514864
     },
@@ -45412,7 +45412,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 18,
       "deals_total": 57,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 2417742,
       "actual_sales": 1708347
     },
@@ -45440,7 +45440,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 29,
       "deals_total": 42,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 4078618,
       "actual_sales": 631240
     },
@@ -45468,7 +45468,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 24,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 0,
       "actual_sales": 2683104
     },
@@ -45496,7 +45496,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 14,
       "deals_total": 59,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 2080764,
       "actual_sales": 3044332
     },
@@ -45552,7 +45552,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 13,
       "deals_total": 52,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1499836,
       "actual_sales": 1614024
     },
@@ -45580,7 +45580,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 1,
       "deals_total": 43,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 148453,
       "actual_sales": 953748
     },
@@ -45608,7 +45608,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 19,
       "deals_total": 40,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1781060,
       "actual_sales": 600530
     },
@@ -45636,7 +45636,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 4,
       "deals_total": 31,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 368452,
       "actual_sales": 3744426
     },
@@ -45664,7 +45664,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 25,
       "deals_total": 56,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 1578225,
       "actual_sales": 3230928
     },
@@ -45692,7 +45692,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 24,
       "deals_total": 55,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 3565368,
       "actual_sales": 812553
     },
@@ -45720,7 +45720,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 17,
       "deals_total": 66,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2161720,
       "actual_sales": 1444378
     },
@@ -45748,7 +45748,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 15,
       "deals_total": 62,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2714280,
       "actual_sales": 4209060
     },
@@ -45776,7 +45776,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 5,
       "deals_total": 56,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 252075,
       "actual_sales": 1455000
     },
@@ -45804,7 +45804,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 4,
       "deals_total": 30,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 742028,
       "actual_sales": 1041489
     },
@@ -45832,7 +45832,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 9,
       "deals_total": 11,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1742571,
       "actual_sales": 65771
     },
@@ -45860,7 +45860,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 9,
       "deals_total": 55,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 712179,
       "actual_sales": 3221086
     },
@@ -45888,7 +45888,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 0,
       "deals_total": 42,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 0,
       "actual_sales": 1848119
     },
@@ -45916,7 +45916,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 23,
       "deals_total": 35,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 4445486,
       "actual_sales": 1932610
     },
@@ -45944,7 +45944,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 48,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 199917,
       "actual_sales": 4308925
     },
@@ -45972,7 +45972,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 4,
       "deals_total": 41,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 227848,
       "actual_sales": 1110750
     },
@@ -46000,7 +46000,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 23,
       "deals_total": 54,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 4303116,
       "actual_sales": 1249440
     },
@@ -46028,7 +46028,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 20,
       "deals_total": 52,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 3329400,
       "actual_sales": 719262
     },
@@ -46056,7 +46056,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 16,
       "deals_total": 31,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1072192,
       "actual_sales": 1109799
     },
@@ -46084,7 +46084,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 4,
       "deals_total": 58,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 502316,
       "actual_sales": 3988341
     },
@@ -46112,7 +46112,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 28,
       "deals_total": 63,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 5355980,
       "actual_sales": 965872
     },
@@ -46140,7 +46140,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 11,
       "deals_total": 69,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2032349,
       "actual_sales": 5605350
     },
@@ -46168,7 +46168,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 2,
       "deals_total": 42,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 117018,
       "actual_sales": 5436750
     },
@@ -46196,7 +46196,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 19,
       "deals_total": 33,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1559349,
       "actual_sales": 213128
     },
@@ -46224,7 +46224,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 1,
       "deals_total": 55,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 113569,
       "actual_sales": 2903550
     },
@@ -46252,7 +46252,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 1,
       "deals_total": 42,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 130036,
       "actual_sales": 2355192
     },
@@ -46280,7 +46280,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 18,
       "deals_total": 48,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 3381120,
       "actual_sales": 2179128
     },
@@ -46308,7 +46308,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 23,
       "deals_total": 58,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 1886759,
       "actual_sales": 497934
     },
@@ -46336,7 +46336,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 18,
       "deals_total": 48,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1744470,
       "actual_sales": 1734471
     },
@@ -46364,7 +46364,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 1,
       "deals_total": 33,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 64790,
       "actual_sales": 2218996
     },
@@ -46392,7 +46392,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 16,
       "deals_total": 37,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 2696752,
       "actual_sales": 2914686
     },
@@ -46420,7 +46420,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 24,
       "deals_total": 60,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 2286384,
       "actual_sales": 5405940
     },
@@ -46448,7 +46448,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 6,
       "deals_total": 26,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 598218,
       "actual_sales": 658944
     },
@@ -46476,7 +46476,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 15,
       "deals_total": 23,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1751130,
       "actual_sales": 714000
     },
@@ -46504,7 +46504,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 24,
       "deals_total": 78,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 4375008,
       "actual_sales": 4441060
     },
@@ -46532,7 +46532,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 16,
       "deals_total": 50,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2437312,
       "actual_sales": 3173271
     },
@@ -46560,7 +46560,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 4,
       "deals_total": 17,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 638736,
       "actual_sales": 784770
     },
@@ -46588,7 +46588,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 18,
       "deals_total": 41,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 2037258,
       "actual_sales": 3607220
     },
@@ -46616,7 +46616,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 29,
       "deals_total": 66,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3458975,
       "actual_sales": 1096455
     },
@@ -46644,7 +46644,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 0,
       "actual_sales": 876537
     },
@@ -46672,7 +46672,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 9,
       "deals_total": 28,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 715212,
       "actual_sales": 2712458
     },
@@ -46700,7 +46700,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 3,
       "deals_total": 32,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 213624,
       "actual_sales": 2474446
     },
@@ -46728,7 +46728,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 0,
       "deals_total": 37,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 0,
       "actual_sales": 2058984
     },
@@ -46756,7 +46756,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 1,
       "deals_total": 40,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 61260,
       "actual_sales": 1666885
     },
@@ -46784,7 +46784,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 8,
       "deals_total": 24,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 890856,
       "actual_sales": 169569
     },
@@ -46812,7 +46812,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 42,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 1139105,
       "actual_sales": 4450375
     },
@@ -46840,7 +46840,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 2,
       "deals_total": 31,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 394608,
       "actual_sales": 4390724
     },
@@ -46868,7 +46868,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 11,
       "deals_total": 43,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1980330,
       "actual_sales": 525536
     },
@@ -46896,7 +46896,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 26,
       "deals_total": 77,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2539836,
       "actual_sales": 1633242
     },
@@ -46924,7 +46924,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 21,
       "deals_total": 55,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 2375247,
       "actual_sales": 597894
     },
@@ -46952,7 +46952,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 5,
       "deals_total": 45,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 601980,
       "actual_sales": 4355858
     },
@@ -46980,7 +46980,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 39,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 3032352,
       "actual_sales": 1296360
     },
@@ -47008,7 +47008,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 3,
       "deals_total": 20,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 387369,
       "actual_sales": 330320
     },
@@ -47036,7 +47036,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 19,
       "deals_total": 74,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1630390,
       "actual_sales": 4523370
     },
@@ -47064,7 +47064,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 13,
       "deals_total": 22,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 2584192,
       "actual_sales": 288770
     },
@@ -47092,7 +47092,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 32,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1155108,
       "actual_sales": 872856
     },
@@ -47120,7 +47120,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 30,
       "deals_total": 57,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 2367960,
       "actual_sales": 690124
     },
@@ -47148,7 +47148,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 17,
       "deals_total": 64,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1005091,
       "actual_sales": 2863201
     },
@@ -47204,7 +47204,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 10,
       "deals_total": 51,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 554190,
       "actual_sales": 1966628
     },
@@ -47232,7 +47232,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 12,
       "deals_total": 51,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2035704,
       "actual_sales": 1810307
     },
@@ -47288,7 +47288,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 8,
       "deals_total": 67,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1298552,
       "actual_sales": 4518490
     },
@@ -47316,7 +47316,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 3,
       "deals_total": 25,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 324300,
       "actual_sales": 1054818
     },
@@ -47344,7 +47344,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 18,
       "deals_total": 56,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 2107062,
       "actual_sales": 1966020
     },
@@ -47372,7 +47372,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 14,
       "deals_total": 57,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2780372,
       "actual_sales": 5582471
     },
@@ -47400,7 +47400,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 3,
       "deals_total": 33,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 328551,
       "actual_sales": 1111950
     },
@@ -47428,7 +47428,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 28,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 705372,
       "actual_sales": 657736
     },
@@ -47456,7 +47456,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 46,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 162101,
       "actual_sales": 2549363
     },
@@ -47484,7 +47484,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 17,
       "deals_total": 54,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 3316020,
       "actual_sales": 2701860
     },
@@ -47512,7 +47512,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 28,
       "deals_total": 48,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4203808,
       "actual_sales": 1521710
     },
@@ -47540,7 +47540,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 8,
       "deals_total": 52,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 855760,
       "actual_sales": 1514188
     },
@@ -47568,7 +47568,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 26,
       "deals_total": 48,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 3645408,
       "actual_sales": 3357249
     },
@@ -47596,7 +47596,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 25,
       "deals_total": 71,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2016450,
       "actual_sales": 2383047
     },
@@ -47652,7 +47652,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 9,
       "deals_total": 51,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 450522,
       "actual_sales": 2418505
     },
@@ -47680,7 +47680,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 0,
       "deals_total": 29,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 0,
       "actual_sales": 571590
     },
@@ -47708,7 +47708,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 18,
       "deals_total": 68,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1609974,
       "actual_sales": 2039424
     },
@@ -47736,7 +47736,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 23,
       "deals_total": 36,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 3615922,
       "actual_sales": 176400
     },
@@ -47764,7 +47764,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 19,
       "deals_total": 61,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 3416656,
       "actual_sales": 4371125
     },
@@ -47792,7 +47792,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 11,
       "deals_total": 48,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 739332,
       "actual_sales": 3676722
     },
@@ -47820,7 +47820,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 13,
       "deals_total": 50,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1464554,
       "actual_sales": 1009881
     },
@@ -47848,7 +47848,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 18,
       "deals_total": 45,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 2532888,
       "actual_sales": 3372243
     },
@@ -47876,7 +47876,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 28,
       "deals_total": 65,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3399144,
       "actual_sales": 2135201
     },
@@ -47904,7 +47904,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 6,
       "deals_total": 27,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 423042,
       "actual_sales": 1142748
     },
@@ -47932,7 +47932,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 29,
       "deals_total": 63,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 4021662,
       "actual_sales": 1848112
     },
@@ -47960,7 +47960,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 16,
       "deals_total": 65,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 2465312,
       "actual_sales": 2341161
     },
@@ -47988,7 +47988,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 3,
       "deals_total": 28,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 344634,
       "actual_sales": 1596844
     },
@@ -48016,7 +48016,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 11,
       "deals_total": 56,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2056164,
       "actual_sales": 1377040
     },
@@ -48044,7 +48044,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 15,
       "deals_total": 42,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2673060,
       "actual_sales": 1176528
     },
@@ -48072,7 +48072,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 19,
       "deals_total": 64,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 3039107,
       "actual_sales": 3402386
     },
@@ -48100,7 +48100,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 21,
       "deals_total": 68,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 3252564,
       "actual_sales": 4796344
     },
@@ -48128,7 +48128,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 20,
       "deals_total": 40,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 3185020,
       "actual_sales": 686119
     },
@@ -48156,7 +48156,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 26,
       "deals_total": 36,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 4580784,
       "actual_sales": 1467810
     },
@@ -48184,7 +48184,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 1034440,
       "actual_sales": 165708
     },
@@ -48212,7 +48212,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 23,
       "deals_total": 61,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1806144,
       "actual_sales": 3841240
     },
@@ -48240,7 +48240,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 7,
       "deals_total": 24,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 795893,
       "actual_sales": 1558305
     },
@@ -48268,7 +48268,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 10,
       "deals_total": 41,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 1071450,
       "actual_sales": 2488416
     },
@@ -48296,7 +48296,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 5,
       "deals_total": 31,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 800480,
       "actual_sales": 1051137
     },
@@ -48324,7 +48324,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 12,
       "deals_total": 27,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1570080,
       "actual_sales": 678797
     },
@@ -48352,7 +48352,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 60,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 722414,
       "actual_sales": 2273320
     },
@@ -48380,7 +48380,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 7,
       "deals_total": 40,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 404103,
       "actual_sales": 2522520
     },
@@ -48408,7 +48408,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 0,
       "actual_sales": 5710796
     },
@@ -48436,7 +48436,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 9,
       "deals_total": 45,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1709163,
       "actual_sales": 2385018
     },
@@ -48492,7 +48492,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 20,
       "deals_total": 47,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3208740,
       "actual_sales": 1151082
     },
@@ -48520,7 +48520,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 21,
       "deals_total": 50,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 1838487,
       "actual_sales": 194782
     },
@@ -48548,7 +48548,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 10,
       "deals_total": 29,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1639240,
       "actual_sales": 1671600
     },
@@ -48576,7 +48576,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 17,
       "deals_total": 69,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1069640,
       "actual_sales": 5664773
     },
@@ -48604,7 +48604,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 15,
       "deals_total": 46,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2606340,
       "actual_sales": 1024740
     },
@@ -48632,7 +48632,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 26,
       "deals_total": 57,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3247062,
       "actual_sales": 1146735
     },
@@ -48660,7 +48660,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 1,
       "deals_total": 33,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 118285,
       "actual_sales": 828848
     },
@@ -48688,7 +48688,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 24,
       "deals_total": 36,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 1308912,
       "actual_sales": 1072120
     },
@@ -48716,7 +48716,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 13,
       "deals_total": 34,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 719836,
       "actual_sales": 2408193
     },
@@ -48744,7 +48744,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 28,
       "deals_total": 58,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 3244416,
       "actual_sales": 4219050
     },
@@ -48772,7 +48772,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 27,
       "deals_total": 46,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 2566593,
       "actual_sales": 1873840
     },
@@ -48800,7 +48800,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 20,
       "deals_total": 66,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1550140,
       "actual_sales": 1067580
     },
@@ -48828,7 +48828,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 26,
       "deals_total": 66,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 2667886,
       "actual_sales": 3904992
     },
@@ -48856,7 +48856,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 28,
       "deals_total": 61,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 1440124,
       "actual_sales": 3495486
     },
@@ -48884,7 +48884,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 11,
       "deals_total": 39,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 2043932,
       "actual_sales": 1517964
     },
@@ -48912,7 +48912,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 6,
       "deals_total": 53,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 710778,
       "actual_sales": 3032260
     },
@@ -48940,7 +48940,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 26,
       "deals_total": 72,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2173496,
       "actual_sales": 2579564
     },
@@ -48968,7 +48968,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 20,
       "deals_total": 46,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2343180,
       "actual_sales": 1645596
     },
@@ -48996,7 +48996,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 3,
       "deals_total": 33,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 409890,
       "actual_sales": 805855
     },
@@ -49024,7 +49024,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 14,
       "deals_total": 61,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 847602,
       "actual_sales": 4682137
     },
@@ -49052,7 +49052,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 0,
       "deals_total": 23,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 0,
       "actual_sales": 1993504
     },
@@ -49080,7 +49080,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 16,
       "deals_total": 39,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 3070688,
       "actual_sales": 1345200
     },
@@ -49108,7 +49108,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 28,
       "deals_total": 78,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3515596,
       "actual_sales": 4561475
     },
@@ -49136,7 +49136,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 10,
       "deals_total": 45,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 875800,
       "actual_sales": 2350270
     },
@@ -49164,7 +49164,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 27,
       "deals_total": 57,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 5377401,
       "actual_sales": 1494888
     },
@@ -49192,7 +49192,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 6,
       "deals_total": 37,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 818256,
       "actual_sales": 2402148
     },
@@ -49220,7 +49220,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 1,
       "deals_total": 13,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 98326,
       "actual_sales": 326438
     },
@@ -49248,7 +49248,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 13,
       "deals_total": 33,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 2247882,
       "actual_sales": 1716517
     },
@@ -49276,7 +49276,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 11,
       "deals_total": 36,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 691691,
       "actual_sales": 4336904
     },
@@ -49304,7 +49304,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 27,
       "deals_total": 56,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 4014765,
       "actual_sales": 1758072
     },
@@ -49332,7 +49332,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 17,
       "deals_total": 50,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1747226,
       "actual_sales": 1551060
     },
@@ -49360,7 +49360,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 18,
       "deals_total": 58,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 2694690,
       "actual_sales": 3780452
     },
@@ -49388,7 +49388,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 30,
       "deals_total": 70,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 4746960,
       "actual_sales": 1344312
     },
@@ -49416,7 +49416,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 1,
       "deals_total": 10,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 61430,
       "actual_sales": 464240
     },
@@ -49444,7 +49444,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 29,
       "deals_total": 57,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 5477230,
       "actual_sales": 1979054
     },
@@ -49472,7 +49472,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 14,
       "deals_total": 26,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1085238,
       "actual_sales": 856710
     },
@@ -49500,7 +49500,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 9,
       "deals_total": 34,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 1195452,
       "actual_sales": 309852
     },
@@ -49528,7 +49528,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 3,
       "deals_total": 43,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 382800,
       "actual_sales": 3803280
     },
@@ -49556,7 +49556,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 22,
       "deals_total": 49,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2451064,
       "actual_sales": 2277328
     },
@@ -49584,7 +49584,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 5,
       "deals_total": 54,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 474620,
       "actual_sales": 3273143
     },
@@ -49612,7 +49612,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 3,
       "deals_total": 30,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 156138,
       "actual_sales": 1097532
     },
@@ -49640,7 +49640,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 8,
       "deals_total": 47,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1471888,
       "actual_sales": 2016444
     },
@@ -49668,7 +49668,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 18,
       "deals_total": 33,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2544318,
       "actual_sales": 479151
     },
@@ -49696,7 +49696,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 7,
       "deals_total": 36,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 1288140,
       "actual_sales": 539160
     },
@@ -49724,7 +49724,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 14,
       "deals_total": 45,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 1038786,
       "actual_sales": 1552716
     },
@@ -49752,7 +49752,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 18,
       "deals_total": 49,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1270854,
       "actual_sales": 1540605
     },
@@ -49808,7 +49808,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 17,
       "deals_total": 56,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 3224985,
       "actual_sales": 5825070
     },
@@ -49836,7 +49836,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 12,
       "deals_total": 55,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2067900,
       "actual_sales": 1222088
     },
@@ -49864,7 +49864,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 2,
       "deals_total": 21,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 110992,
       "actual_sales": 889119
     },
@@ -49892,7 +49892,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 29,
       "deals_total": 55,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 5238270,
       "actual_sales": 1810672
     },
@@ -49920,7 +49920,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 30,
       "deals_total": 77,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3015990,
       "actual_sales": 2573715
     },
@@ -49948,7 +49948,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 13,
       "deals_total": 48,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2468895,
       "actual_sales": 2728425
     },
@@ -49976,7 +49976,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 6,
       "deals_total": 46,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 646536,
       "actual_sales": 3410770
     },
@@ -50032,7 +50032,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 11,
       "deals_total": 55,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1026179,
       "actual_sales": 2712820
     },
@@ -50060,7 +50060,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 17,
       "deals_total": 47,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2864568,
       "actual_sales": 3427720
     },
@@ -50088,7 +50088,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 4,
       "deals_total": 46,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 422664,
       "actual_sales": 4501440
     },
@@ -50116,7 +50116,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 27,
       "deals_total": 64,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 4956147,
       "actual_sales": 389312
     },
@@ -50144,7 +50144,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 28,
       "deals_total": 68,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2292360,
       "actual_sales": 2674858
     },
@@ -50172,7 +50172,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 29,
       "deals_total": 68,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 2633461,
       "actual_sales": 1211553
     },
@@ -50200,7 +50200,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 13,
       "deals_total": 53,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 2495090,
       "actual_sales": 1768648
     },
@@ -50284,7 +50284,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 25,
       "deals_total": 53,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 1600925,
       "actual_sales": 366426
     },
@@ -50312,7 +50312,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 26,
       "deals_total": 77,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1621646,
       "actual_sales": 1637532
     },
@@ -50340,7 +50340,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 25,
       "deals_total": 70,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 3700375,
       "actual_sales": 2265516
     },
@@ -50368,7 +50368,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 13,
       "deals_total": 50,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1114685,
       "actual_sales": 1878830
     },
@@ -50396,7 +50396,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 5,
       "deals_total": 22,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 365210,
       "actual_sales": 145618
     },
@@ -50424,7 +50424,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 10,
       "deals_total": 18,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 835460,
       "actual_sales": 1091902
     },
@@ -50452,7 +50452,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 26,
       "deals_total": 44,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 1643694,
       "actual_sales": 371421
     },
@@ -50480,7 +50480,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 3,
       "deals_total": 47,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 252390,
       "actual_sales": 2441595
     },
@@ -50508,7 +50508,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 24,
       "deals_total": 51,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 4294752,
       "actual_sales": 4376632
     },
@@ -50536,7 +50536,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 9,
       "deals_total": 38,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1071261,
       "actual_sales": 779920
     },
@@ -50564,7 +50564,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 29,
       "deals_total": 78,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3270330,
       "actual_sales": 1727856
     },
@@ -50592,7 +50592,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 20,
       "deals_total": 35,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 3569720,
       "actual_sales": 1597816
     },
@@ -50620,7 +50620,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 10,
       "deals_total": 51,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1098890,
       "actual_sales": 3011120
     },
@@ -50648,7 +50648,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 29,
       "deals_total": 67,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1822998,
       "actual_sales": 3189560
     },
@@ -50676,7 +50676,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 14,
       "deals_total": 46,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 2660728,
       "actual_sales": 4041752
     },
@@ -50704,7 +50704,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 8,
       "deals_total": 56,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1045288,
       "actual_sales": 3941487
     },
@@ -50732,7 +50732,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 19,
       "deals_total": 46,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1574435,
       "actual_sales": 2631264
     },
@@ -50760,7 +50760,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 28,
       "deals_total": 74,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 4350416,
       "actual_sales": 1429717
     },
@@ -50788,7 +50788,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 21,
       "deals_total": 53,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 2770299,
       "actual_sales": 1012116
     },
@@ -50816,7 +50816,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 29,
       "deals_total": 48,
-      "ratio": 0.05,
+      "ratio": 5,
       "estimated_sales": 5051974,
       "actual_sales": 155772
     },
@@ -50844,7 +50844,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 26,
       "deals_total": 50,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 2760992,
       "actual_sales": 616698
     },
@@ -50872,7 +50872,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 1,
       "deals_total": 27,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 100497,
       "actual_sales": 1803626
     },
@@ -50900,7 +50900,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 9,
       "deals_total": 30,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 624627,
       "actual_sales": 2516355
     },
@@ -50928,7 +50928,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 17,
       "deals_total": 26,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1333837,
       "actual_sales": 352045
     },
@@ -50956,7 +50956,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 40,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 763914,
       "actual_sales": 2545080
     },
@@ -50984,7 +50984,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 26,
       "deals_total": 80,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4381546,
       "actual_sales": 1472445
     },
@@ -51040,7 +51040,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 10,
       "deals_total": 44,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 1465340,
       "actual_sales": 1264445
     },
@@ -51068,7 +51068,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 8,
       "deals_total": 45,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1545728,
       "actual_sales": 4165386
     },
@@ -51096,7 +51096,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 11,
       "deals_total": 58,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 920205,
       "actual_sales": 3303941
     },
@@ -51124,7 +51124,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 12,
       "deals_total": 29,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 1820820,
       "actual_sales": 1085776
     },
@@ -51152,7 +51152,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 21,
       "deals_total": 43,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 3061107,
       "actual_sales": 1026239
     },
@@ -51180,7 +51180,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 21,
       "deals_total": 61,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 3938466,
       "actual_sales": 3739434
     },
@@ -51208,7 +51208,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 1,
       "deals_total": 32,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 61847,
       "actual_sales": 3388374
     },
@@ -51236,7 +51236,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 16,
       "deals_total": 48,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3159696,
       "actual_sales": 1001070
     },
@@ -51264,7 +51264,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 26,
       "deals_total": 45,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 1738490,
       "actual_sales": 1204360
     },
@@ -51292,7 +51292,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 14,
       "deals_total": 62,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1509998,
       "actual_sales": 2589440
     },
@@ -51320,7 +51320,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 57,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 1901550,
       "actual_sales": 146264
     },
@@ -51348,7 +51348,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 83,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 4691760,
       "actual_sales": 4622616
     },
@@ -51376,7 +51376,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 24,
       "deals_total": 55,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 2091336,
       "actual_sales": 181849
     },
@@ -51404,7 +51404,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 23,
       "deals_total": 68,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2879531,
       "actual_sales": 2802700
     },
@@ -51432,7 +51432,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 60,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 922130,
       "actual_sales": 3531604
     },
@@ -51460,7 +51460,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 7,
       "deals_total": 46,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 551957,
       "actual_sales": 600550
     },
@@ -51488,7 +51488,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 16,
       "deals_total": 50,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2385632,
       "actual_sales": 1470726
     },
@@ -51516,7 +51516,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 16,
       "deals_total": 36,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 1705648,
       "actual_sales": 1951056
     },
@@ -51544,7 +51544,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 16,
       "deals_total": 54,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 1900880,
       "actual_sales": 405656
     },
@@ -51572,7 +51572,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 17,
       "deals_total": 54,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1567842,
       "actual_sales": 4666004
     },
@@ -51600,7 +51600,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 24,
       "deals_total": 65,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 3474288,
       "actual_sales": 3629142
     },
@@ -51628,7 +51628,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 3039084,
       "actual_sales": 3835593
     },
@@ -51656,7 +51656,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 4510544,
       "actual_sales": 1003992
     },
@@ -51684,7 +51684,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 13,
       "deals_total": 56,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 2592824,
       "actual_sales": 2352324
     },
@@ -51712,7 +51712,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 2,
       "deals_total": 28,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 385218,
       "actual_sales": 510855
     },
@@ -51740,7 +51740,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 19,
       "deals_total": 30,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 2156215,
       "actual_sales": 914990
     },
@@ -51768,7 +51768,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 29,
       "deals_total": 77,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1787937,
       "actual_sales": 1005138
     },
@@ -51796,7 +51796,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 25,
       "deals_total": 63,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 3589275,
       "actual_sales": 3472222
     },
@@ -51824,7 +51824,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 6,
       "deals_total": 35,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 765522,
       "actual_sales": 1563269
     },
@@ -51852,7 +51852,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 3,
       "deals_total": 47,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 369927,
       "actual_sales": 2686833
     },
@@ -51880,7 +51880,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 8,
       "deals_total": 54,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1246784,
       "actual_sales": 2315580
     },
@@ -51908,7 +51908,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 6,
       "deals_total": 36,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 709674,
       "actual_sales": 2293144
     },
@@ -51936,7 +51936,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 16,
       "deals_total": 42,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 2994272,
       "actual_sales": 185881
     },
@@ -51964,7 +51964,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 15,
       "deals_total": 43,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 866385,
       "actual_sales": 1038226
     },
@@ -51992,7 +51992,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 17,
       "deals_total": 20,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2435471,
       "actual_sales": 199034
     },
@@ -52020,7 +52020,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 1,
       "deals_total": 27,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 145246,
       "actual_sales": 2991200
     },
@@ -52048,7 +52048,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 20,
       "deals_total": 50,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1977740,
       "actual_sales": 1372980
     },
@@ -52076,7 +52076,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 12,
       "deals_total": 56,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1872480,
       "actual_sales": 1875325
     },
@@ -52104,7 +52104,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 36,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 994386,
       "actual_sales": 1005488
     },
@@ -52132,7 +52132,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 1,
       "deals_total": 44,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 193482,
       "actual_sales": 1309081
     },
@@ -52160,7 +52160,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 11,
       "deals_total": 37,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 751465,
       "actual_sales": 652848
     },
@@ -52188,7 +52188,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 2,
       "deals_total": 48,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 112950,
       "actual_sales": 4521204
     },
@@ -52216,7 +52216,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 18,
       "deals_total": 55,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 3332142,
       "actual_sales": 1207044
     },
@@ -52244,7 +52244,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 9,
       "deals_total": 25,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1490274,
       "actual_sales": 260776
     },
@@ -52272,7 +52272,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 17,
       "deals_total": 35,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3023025,
       "actual_sales": 1151030
     },
@@ -52300,7 +52300,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 5,
       "deals_total": 29,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 405400,
       "actual_sales": 1949832
     },
@@ -52328,7 +52328,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 26,
       "deals_total": 39,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 3510208,
       "actual_sales": 1416108
     },
@@ -52384,7 +52384,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 3,
       "deals_total": 21,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 333234,
       "actual_sales": 1820235
     },
@@ -52412,7 +52412,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 5,
       "deals_total": 31,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 559760,
       "actual_sales": 1367616
     },
@@ -52440,7 +52440,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 19,
       "deals_total": 56,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 3396668,
       "actual_sales": 2301990
     },
@@ -52468,7 +52468,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 25,
       "deals_total": 60,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 2502850,
       "actual_sales": 515305
     },
@@ -52496,7 +52496,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 19,
       "deals_total": 62,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1120867,
       "actual_sales": 2367360
     },
@@ -52524,7 +52524,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 4,
       "deals_total": 33,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 681796,
       "actual_sales": 1581921
     },
@@ -52552,7 +52552,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 7,
       "deals_total": 31,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 775425,
       "actual_sales": 118973
     },
@@ -52580,7 +52580,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 21,
       "deals_total": 37,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1468761,
       "actual_sales": 307066
     },
@@ -52608,7 +52608,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 11,
       "deals_total": 43,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1386561,
       "actual_sales": 800352
     },
@@ -52636,7 +52636,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 17,
       "deals_total": 50,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 3151137,
       "actual_sales": 906336
     },
@@ -52664,7 +52664,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 36,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 71508,
       "actual_sales": 1017341
     },
@@ -52692,7 +52692,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 7,
       "deals_total": 43,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1027992,
       "actual_sales": 1669560
     },
@@ -52720,7 +52720,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 5,
       "deals_total": 49,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 321295,
       "actual_sales": 2565288
     },
@@ -52748,7 +52748,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 8,
       "deals_total": 51,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1399272,
       "actual_sales": 2623248
     },
@@ -52776,7 +52776,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 12,
       "deals_total": 39,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 1752696,
       "actual_sales": 888738
     },
@@ -52804,7 +52804,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 19,
       "deals_total": 53,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 3612033,
       "actual_sales": 3125960
     },
@@ -52832,7 +52832,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 21,
       "deals_total": 37,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 1320354,
       "actual_sales": 416169
     },
@@ -52860,7 +52860,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 24,
       "deals_total": 74,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 1314192,
       "actual_sales": 3586947
     },
@@ -52888,7 +52888,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 10,
       "deals_total": 55,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1863690,
       "actual_sales": 1006608
     },
@@ -52916,7 +52916,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 6,
       "deals_total": 57,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 304632,
       "actual_sales": 3670731
     },
@@ -52944,7 +52944,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 3,
       "deals_total": 36,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 284184,
       "actual_sales": 2057967
     },
@@ -52972,7 +52972,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 25,
       "deals_total": 70,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 3041650,
       "actual_sales": 2521433
     },
@@ -53000,7 +53000,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 24,
       "deals_total": 72,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 4017000,
       "actual_sales": 3106800
     },
@@ -53056,7 +53056,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 8,
       "deals_total": 31,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1349184,
       "actual_sales": 336204
     },
@@ -53084,7 +53084,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 27,
       "deals_total": 58,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 3706020,
       "actual_sales": 1384275
     },
@@ -53112,7 +53112,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 25,
       "deals_total": 48,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 2930650,
       "actual_sales": 490372
     },
@@ -53140,7 +53140,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 3,
       "deals_total": 53,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 440805,
       "actual_sales": 4089264
     },
@@ -53168,7 +53168,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 11,
       "deals_total": 50,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1815748,
       "actual_sales": 3543120
     },
@@ -53196,7 +53196,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 29,
       "deals_total": 38,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 2811521,
       "actual_sales": 89795
     },
@@ -53224,7 +53224,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 19,
       "deals_total": 45,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 1972523,
       "actual_sales": 3676128
     },
@@ -53252,7 +53252,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 20,
       "deals_total": 52,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 1029880,
       "actual_sales": 2972288
     },
@@ -53280,7 +53280,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 16,
       "deals_total": 67,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1247584,
       "actual_sales": 4403475
     },
@@ -53308,7 +53308,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 21,
       "deals_total": 54,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 3279297,
       "actual_sales": 534540
     },
@@ -53336,7 +53336,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 26,
       "deals_total": 56,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 2213692,
       "actual_sales": 4008444
     },
@@ -53364,7 +53364,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 25,
       "deals_total": 59,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 3495225,
       "actual_sales": 811360
     },
@@ -53392,7 +53392,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 5,
       "deals_total": 28,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 357280,
       "actual_sales": 137406
     },
@@ -53420,7 +53420,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 857032,
       "actual_sales": 2344011
     },
@@ -53448,7 +53448,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 2,
       "deals_total": 47,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 181000,
       "actual_sales": 4081550
     },
@@ -53476,7 +53476,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 28,
       "deals_total": 44,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 2178316,
       "actual_sales": 607572
     },
@@ -53504,7 +53504,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 7,
       "deals_total": 56,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 852509,
       "actual_sales": 2302692
     },
@@ -53532,7 +53532,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 13,
       "deals_total": 67,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1459003,
       "actual_sales": 3036020
     },
@@ -53560,7 +53560,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 23,
       "deals_total": 72,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1944098,
       "actual_sales": 4449971
     },
@@ -53588,7 +53588,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 30,
       "deals_total": 46,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 4626660,
       "actual_sales": 495606
     },
@@ -53616,7 +53616,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 8,
       "deals_total": 50,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1283216,
       "actual_sales": 2422820
     },
@@ -53644,7 +53644,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 21,
       "deals_total": 50,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 3729810,
       "actual_sales": 3074975
     },
@@ -53672,7 +53672,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 23,
       "deals_total": 63,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 3453197,
       "actual_sales": 2007808
     },
@@ -53700,7 +53700,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 12,
       "deals_total": 28,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1124556,
       "actual_sales": 545485
     },
@@ -53728,7 +53728,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 14,
       "deals_total": 68,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1068228,
       "actual_sales": 4531744
     },
@@ -53756,7 +53756,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 19,
       "deals_total": 43,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3006161,
       "actual_sales": 1195936
     },
@@ -53784,7 +53784,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 27,
       "deals_total": 54,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1587384,
       "actual_sales": 2751465
     },
@@ -53812,7 +53812,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 45,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 1787313,
       "actual_sales": 3468248
     },
@@ -53840,7 +53840,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 10,
       "deals_total": 42,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1973710,
       "actual_sales": 3678343
     },
@@ -53868,7 +53868,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 9,
       "deals_total": 45,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1416663,
       "actual_sales": 789480
     },
@@ -53896,7 +53896,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 16,
       "deals_total": 74,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2477680,
       "actual_sales": 3558968
     },
@@ -53924,7 +53924,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 23,
       "deals_total": 53,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 3022890,
       "actual_sales": 1548020
     },
@@ -53952,7 +53952,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 0,
       "deals_total": 15,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 0,
       "actual_sales": 814814
     },
@@ -53980,7 +53980,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 27,
       "deals_total": 56,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 4772493,
       "actual_sales": 5171180
     },
@@ -54008,7 +54008,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 1,
       "deals_total": 25,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 150271,
       "actual_sales": 1242912
     },
@@ -54064,7 +54064,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 9,
       "deals_total": 52,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1780488,
       "actual_sales": 3666039
     },
@@ -54092,7 +54092,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 18,
       "deals_total": 23,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 3103884,
       "actual_sales": 100801
     },
@@ -54120,7 +54120,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 2,
       "deals_total": 58,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 245360,
       "actual_sales": 1674378
     },
@@ -54148,7 +54148,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 8,
       "deals_total": 37,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 499440,
       "actual_sales": 1129132
     },
@@ -54176,7 +54176,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 22,
       "deals_total": 73,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1264384,
       "actual_sales": 2475300
     },
@@ -54204,7 +54204,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 2,
       "deals_total": 23,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 140386,
       "actual_sales": 1907340
     },
@@ -54232,7 +54232,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 14,
       "deals_total": 71,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1707720,
       "actual_sales": 3225204
     },
@@ -54260,7 +54260,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 5,
       "deals_total": 45,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 462845,
       "actual_sales": 2635034
     },
@@ -54288,7 +54288,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 26,
       "deals_total": 46,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 3761238,
       "actual_sales": 212715
     },
@@ -54316,7 +54316,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 5,
       "deals_total": 34,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 272110,
       "actual_sales": 1903010
     },
@@ -54344,7 +54344,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 45,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 92130,
       "actual_sales": 2669370
     },
@@ -54372,7 +54372,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 5,
       "deals_total": 19,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 752150,
       "actual_sales": 706040
     },
@@ -54400,7 +54400,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 17,
       "deals_total": 37,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 1959301,
       "actual_sales": 436686
     },
@@ -54428,7 +54428,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 18,
       "deals_total": 27,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3426192,
       "actual_sales": 984414
     },
@@ -54456,7 +54456,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 4,
       "deals_total": 51,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 700472,
       "actual_sales": 2550217
     },
@@ -54484,7 +54484,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 0,
       "deals_total": 35,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 0,
       "actual_sales": 922640
     },
@@ -54512,7 +54512,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 15,
       "deals_total": 25,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1951050,
       "actual_sales": 333780
     },
@@ -54540,7 +54540,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 27,
       "deals_total": 72,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 4509054,
       "actual_sales": 3656920
     },
@@ -54568,7 +54568,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 21,
       "deals_total": 53,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 3815721,
       "actual_sales": 1009840
     },
@@ -54596,7 +54596,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 12,
       "deals_total": 25,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 652368,
       "actual_sales": 584535
     },
@@ -54624,7 +54624,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 38,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1652937,
       "actual_sales": 2432787
     },
@@ -54652,7 +54652,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 26,
       "deals_total": 40,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 4601792,
       "actual_sales": 1056090
     },
@@ -54680,7 +54680,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 21,
       "deals_total": 45,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 3506097,
       "actual_sales": 1853808
     },
@@ -54708,7 +54708,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 29,
       "deals_total": 72,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3841253,
       "actual_sales": 1456429
     },
@@ -54736,7 +54736,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 5,
       "deals_total": 40,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 321795,
       "actual_sales": 409256
     },
@@ -54764,7 +54764,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 14,
       "deals_total": 66,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1809136,
       "actual_sales": 1322712
     },
@@ -54792,7 +54792,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 25,
       "deals_total": 52,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 4395425,
       "actual_sales": 4234626
     },
@@ -54820,7 +54820,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 26,
       "deals_total": 62,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 4512898,
       "actual_sales": 2206242
     },
@@ -54848,7 +54848,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 3,
       "deals_total": 32,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 554298,
       "actual_sales": 134808
     },
@@ -54876,7 +54876,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 15,
       "deals_total": 53,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1125210,
       "actual_sales": 3758040
     },
@@ -54904,7 +54904,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 16,
       "deals_total": 43,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 2730096,
       "actual_sales": 77486
     },
@@ -54932,7 +54932,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 22,
       "deals_total": 68,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1544972,
       "actual_sales": 3635324
     },
@@ -54960,7 +54960,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 19,
       "deals_total": 36,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1959527,
       "actual_sales": 1865472
     },
@@ -54988,7 +54988,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 20,
       "deals_total": 46,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 3887600,
       "actual_sales": 56862
     },
@@ -55044,7 +55044,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 8,
       "deals_total": 39,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1207304,
       "actual_sales": 1743722
     },
@@ -55072,7 +55072,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 5,
       "deals_total": 19,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 579590,
       "actual_sales": 672408
     },
@@ -55100,7 +55100,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 29,
       "deals_total": 46,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 4877829,
       "actual_sales": 670480
     },
@@ -55128,7 +55128,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 24,
       "deals_total": 64,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 3432072,
       "actual_sales": 2385650
     },
@@ -55156,7 +55156,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 13,
       "deals_total": 47,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1066208,
       "actual_sales": 2158609
     },
@@ -55184,7 +55184,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 14,
       "deals_total": 44,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1838592,
       "actual_sales": 1835130
     },
@@ -55212,7 +55212,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 10,
       "deals_total": 36,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1539910,
       "actual_sales": 3234120
     },
@@ -55240,7 +55240,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 4,
       "deals_total": 48,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 728632,
       "actual_sales": 5228793
     },
@@ -55268,7 +55268,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 4,
       "deals_total": 30,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 660588,
       "actual_sales": 352860
     },
@@ -55296,7 +55296,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 11,
       "deals_total": 24,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 666963,
       "actual_sales": 578010
     },
@@ -55324,7 +55324,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 26,
       "deals_total": 41,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2977338,
       "actual_sales": 1858520
     },
@@ -55352,7 +55352,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 26,
       "deals_total": 66,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 4896268,
       "actual_sales": 1253928
     },
@@ -55380,7 +55380,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 18,
       "deals_total": 53,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 2865024,
       "actual_sales": 3677577
     },
@@ -55408,7 +55408,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 38,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 188423,
       "actual_sales": 1910106
     },
@@ -55436,7 +55436,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 6,
       "deals_total": 26,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 610218,
       "actual_sales": 818939
     },
@@ -55464,7 +55464,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 12,
       "deals_total": 57,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1312860,
       "actual_sales": 4992550
     },
@@ -55492,7 +55492,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 18,
       "deals_total": 45,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 3321594,
       "actual_sales": 1736720
     },
@@ -55520,7 +55520,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 19,
       "deals_total": 46,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 3261616,
       "actual_sales": 1903251
     },
@@ -55548,7 +55548,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 30,
       "deals_total": 65,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 3577770,
       "actual_sales": 1884484
     },
@@ -55576,7 +55576,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 8,
       "deals_total": 45,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1019008,
       "actual_sales": 2808512
     },
@@ -55604,7 +55604,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 20,
       "deals_total": 69,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3691780,
       "actual_sales": 2720450
     },
@@ -55632,7 +55632,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 0,
       "deals_total": 36,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 0,
       "actual_sales": 2563660
     },
@@ -55660,7 +55660,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 2,
       "deals_total": 26,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 205932,
       "actual_sales": 1129051
     },
@@ -55688,7 +55688,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 10,
       "deals_total": 44,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1094520,
       "actual_sales": 2009786
     },
@@ -55716,7 +55716,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 5,
       "deals_total": 17,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 256450,
       "actual_sales": 1662400
     },
@@ -55744,7 +55744,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 25,
       "deals_total": 60,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 3398775,
       "actual_sales": 853314
     },
@@ -55772,7 +55772,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 7,
       "deals_total": 36,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1345834,
       "actual_sales": 1928432
     },
@@ -55800,7 +55800,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 14,
       "deals_total": 47,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1037316,
       "actual_sales": 1190236
     },
@@ -55828,7 +55828,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 18,
       "deals_total": 35,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 2012958,
       "actual_sales": 107829
     },
@@ -55856,7 +55856,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 1,
       "deals_total": 17,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 58663,
       "actual_sales": 1940736
     },
@@ -55884,7 +55884,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 2,
       "deals_total": 36,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 276828,
       "actual_sales": 895419
     },
@@ -55912,7 +55912,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 2,
       "deals_total": 26,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 271540,
       "actual_sales": 3080480
     },
@@ -55940,7 +55940,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 15,
       "deals_total": 62,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1286385,
       "actual_sales": 4274016
     },
@@ -55968,7 +55968,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 4,
       "deals_total": 37,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 550384,
       "actual_sales": 2514015
     },
@@ -55996,7 +55996,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 4,
       "deals_total": 47,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 747996,
       "actual_sales": 3105864
     },
@@ -56024,7 +56024,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 9,
       "deals_total": 46,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 814104,
       "actual_sales": 1197551
     },
@@ -56052,7 +56052,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 4,
       "deals_total": 14,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 459980,
       "actual_sales": 1015504
     },
@@ -56080,7 +56080,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 21,
       "deals_total": 63,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 3210879,
       "actual_sales": 1613154
     },
@@ -56108,7 +56108,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 2,
       "deals_total": 46,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 383496,
       "actual_sales": 2454000
     },
@@ -56136,7 +56136,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 18,
       "deals_total": 51,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 2213208,
       "actual_sales": 4487575
     },
@@ -56192,7 +56192,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 9,
       "deals_total": 26,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 937962,
       "actual_sales": 2582860
     },
@@ -56220,7 +56220,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 3,
       "deals_total": 7,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 233397,
       "actual_sales": 104785
     },
@@ -56248,7 +56248,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 30,
       "deals_total": 51,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 4545060,
       "actual_sales": 1791420
     },
@@ -56276,7 +56276,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 29,
       "deals_total": 55,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 4062117,
       "actual_sales": 461274
     },
@@ -56304,7 +56304,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 24,
       "deals_total": 60,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 1672704,
       "actual_sales": 953592
     },
@@ -56332,7 +56332,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 24,
       "deals_total": 49,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 4228296,
       "actual_sales": 3578868
     },
@@ -56360,7 +56360,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 15,
       "deals_total": 54,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 1694010,
       "actual_sales": 2280000
     },
@@ -56388,7 +56388,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 26,
       "deals_total": 71,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2613806,
       "actual_sales": 1683900
     },
@@ -56416,7 +56416,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 17,
       "deals_total": 61,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1556180,
       "actual_sales": 3538236
     },
@@ -56444,7 +56444,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 3,
       "deals_total": 46,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 337995,
       "actual_sales": 1389836
     },
@@ -56472,7 +56472,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 11,
       "deals_total": 36,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 821898,
       "actual_sales": 1703086
     },
@@ -56500,7 +56500,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 12,
       "deals_total": 43,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 1871748,
       "actual_sales": 4801590
     },
@@ -56528,7 +56528,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 5,
       "deals_total": 39,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 729155,
       "actual_sales": 1389300
     },
@@ -56556,7 +56556,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 21,
       "deals_total": 48,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 2146725,
       "actual_sales": 1554509
     },
@@ -56584,7 +56584,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 22,
       "deals_total": 63,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2107336,
       "actual_sales": 1512437
     },
@@ -56612,7 +56612,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 11,
       "deals_total": 28,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1157321,
       "actual_sales": 1275928
     },
@@ -56668,7 +56668,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 6,
       "deals_total": 25,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 1089828,
       "actual_sales": 1948132
     },
@@ -56696,7 +56696,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 19,
       "deals_total": 56,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 1172585,
       "actual_sales": 3257550
     },
@@ -56724,7 +56724,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 11,
       "deals_total": 58,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1566224,
       "actual_sales": 3746088
     },
@@ -56752,7 +56752,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 1,
       "deals_total": 54,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 122491,
       "actual_sales": 2290776
     },
@@ -56780,7 +56780,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 4,
       "deals_total": 33,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 455440,
       "actual_sales": 1398270
     },
@@ -56808,7 +56808,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 3,
       "deals_total": 18,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 532362,
       "actual_sales": 1146210
     },
@@ -56836,7 +56836,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 17,
       "deals_total": 59,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2392614,
       "actual_sales": 1435686
     },
@@ -56864,7 +56864,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 7,
       "deals_total": 65,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 798455,
       "actual_sales": 2659740
     },
@@ -56892,7 +56892,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 14,
       "deals_total": 49,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 2241512,
       "actual_sales": 5115890
     },
@@ -56920,7 +56920,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 20,
       "deals_total": 38,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 1518000,
       "actual_sales": 2082964
     },
@@ -56948,7 +56948,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 4,
       "deals_total": 15,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 703976,
       "actual_sales": 550735
     },
@@ -56976,7 +56976,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 7,
       "deals_total": 20,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 461174,
       "actual_sales": 541275
     },
@@ -57004,7 +57004,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 12,
       "deals_total": 19,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1185168,
       "actual_sales": 546804
     },
@@ -57032,7 +57032,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 28,
       "deals_total": 47,
-      "ratio": 0.05,
+      "ratio": 5,
       "estimated_sales": 2326044,
       "actual_sales": 77078
     },
@@ -57060,7 +57060,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 29,
       "deals_total": 65,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 4190587,
       "actual_sales": 2586924
     },
@@ -57088,7 +57088,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 15,
       "deals_total": 41,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 2357175,
       "actual_sales": 1474944
     },
@@ -57116,7 +57116,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 18,
       "deals_total": 72,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1057338,
       "actual_sales": 4135185
     },
@@ -57144,7 +57144,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 10,
       "deals_total": 43,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 542660,
       "actual_sales": 613296
     },
@@ -57172,7 +57172,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 26,
       "deals_total": 41,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 3307382,
       "actual_sales": 2129640
     },
@@ -57200,7 +57200,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 6,
       "deals_total": 28,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 693450,
       "actual_sales": 439338
     },
@@ -57228,7 +57228,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 9,
       "deals_total": 33,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 857133,
       "actual_sales": 1174936
     },
@@ -57256,7 +57256,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 10,
       "deals_total": 39,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 928040,
       "actual_sales": 3743208
     },
@@ -57284,7 +57284,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 25,
       "deals_total": 61,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2918150,
       "actual_sales": 2848688
     },
@@ -57312,7 +57312,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 26,
       "deals_total": 41,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 3892642,
       "actual_sales": 1047294
     },
@@ -57340,7 +57340,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 22,
       "deals_total": 44,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 2225630,
       "actual_sales": 457936
     },
@@ -57368,7 +57368,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 24,
       "deals_total": 50,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 3893352,
       "actual_sales": 2321949
     },
@@ -57396,7 +57396,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 22,
       "deals_total": 44,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 2709146,
       "actual_sales": 2083880
     },
@@ -57424,7 +57424,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 25,
       "deals_total": 56,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1837250,
       "actual_sales": 1305616
     },
@@ -57452,7 +57452,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 18,
       "deals_total": 53,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1100772,
       "actual_sales": 2621762
     },
@@ -57480,7 +57480,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 2,
       "deals_total": 19,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 281648,
       "actual_sales": 347190
     },
@@ -57508,7 +57508,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 17,
       "deals_total": 47,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2802586,
       "actual_sales": 2684900
     },
@@ -57536,7 +57536,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 25,
       "deals_total": 66,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 3274450,
       "actual_sales": 3271990
     },
@@ -57564,7 +57564,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 4,
       "deals_total": 26,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 534676,
       "actual_sales": 3636700
     },
@@ -57592,7 +57592,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 26,
       "deals_total": 55,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 4671160,
       "actual_sales": 1390137
     },
@@ -57620,7 +57620,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 26,
       "deals_total": 53,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 4790526,
       "actual_sales": 1815210
     },
@@ -57648,7 +57648,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 25,
       "deals_total": 54,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 3138850,
       "actual_sales": 1953728
     },
@@ -57676,7 +57676,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 11,
       "deals_total": 36,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 750662,
       "actual_sales": 1015362
     },
@@ -57704,7 +57704,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 15,
       "deals_total": 30,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1085895,
       "actual_sales": 1208550
     },
@@ -57732,7 +57732,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 24,
       "deals_total": 63,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 4681056,
       "actual_sales": 1858984
     },
@@ -57760,7 +57760,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 0,
       "deals_total": 42,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 0,
       "actual_sales": 2583480
     },
@@ -57788,7 +57788,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 19,
       "deals_total": 43,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 3077620,
       "actual_sales": 2410420
     },
@@ -57816,7 +57816,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 16,
       "deals_total": 31,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 1191888,
       "actual_sales": 534255
     },
@@ -57844,7 +57844,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 14,
       "deals_total": 57,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1469118,
       "actual_sales": 2749964
     },
@@ -57872,7 +57872,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 22,
       "deals_total": 45,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 3938000,
       "actual_sales": 2371754
     },
@@ -57900,7 +57900,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 29,
       "deals_total": 62,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 5422768,
       "actual_sales": 267042
     },
@@ -57928,7 +57928,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 10,
       "deals_total": 39,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 570440,
       "actual_sales": 786280
     },
@@ -57956,7 +57956,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 16,
       "deals_total": 45,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 854816,
       "actual_sales": 4953250
     },
@@ -57984,7 +57984,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 11,
       "deals_total": 27,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 764104,
       "actual_sales": 1748149
     },
@@ -58012,7 +58012,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 20,
       "deals_total": 36,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 1555800,
       "actual_sales": 930050
     },
@@ -58040,7 +58040,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 7,
       "deals_total": 35,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1293040,
       "actual_sales": 1022704
     },
@@ -58068,7 +58068,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 0,
       "deals_total": 30,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 0,
       "actual_sales": 1093235
     },
@@ -58124,7 +58124,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 16,
       "deals_total": 36,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 2120272,
       "actual_sales": 2110890
     },
@@ -58152,7 +58152,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 13,
       "deals_total": 52,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1945970,
       "actual_sales": 3501768
     },
@@ -58180,7 +58180,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 27,
       "deals_total": 52,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 1939545,
       "actual_sales": 520075
     },
@@ -58208,7 +58208,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 7,
       "deals_total": 43,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1234975,
       "actual_sales": 1997892
     },
@@ -58236,7 +58236,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 7,
       "deals_total": 34,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 500766,
       "actual_sales": 472400
     },
@@ -58264,7 +58264,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 14,
       "deals_total": 26,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2777110,
       "actual_sales": 290012
     },
@@ -58292,7 +58292,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 22,
       "deals_total": 47,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3961672,
       "actual_sales": 1640583
     },
@@ -58320,7 +58320,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 14,
       "deals_total": 69,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1625890,
       "actual_sales": 2629648
     },
@@ -58348,7 +58348,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 1,
       "deals_total": 28,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 167398,
       "actual_sales": 1457475
     },
@@ -58376,7 +58376,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 3,
       "deals_total": 56,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 382359,
       "actual_sales": 2280636
     },
@@ -58404,7 +58404,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 9,
       "deals_total": 37,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1473066,
       "actual_sales": 2600892
     },
@@ -58432,7 +58432,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 29,
       "deals_total": 55,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 2810999,
       "actual_sales": 3286424
     },
@@ -58460,7 +58460,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 4,
       "deals_total": 52,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 438128,
       "actual_sales": 1191402
     },
@@ -58488,7 +58488,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 0,
       "deals_total": 19,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 0,
       "actual_sales": 3017034
     },
@@ -58516,7 +58516,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 19,
       "deals_total": 38,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 1287592,
       "actual_sales": 3160929
     },
@@ -58572,7 +58572,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 27,
       "deals_total": 71,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3696894,
       "actual_sales": 1251033
     },
@@ -58600,7 +58600,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 13,
       "deals_total": 47,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 2530229,
       "actual_sales": 1555389
     },
@@ -58628,7 +58628,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 19,
       "deals_total": 51,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 3434136,
       "actual_sales": 2512473
     },
@@ -58656,7 +58656,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 26,
       "deals_total": 41,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 4833842,
       "actual_sales": 1326780
     },
@@ -58684,7 +58684,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 1,
       "deals_total": 33,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 55258,
       "actual_sales": 4288113
     },
@@ -58712,7 +58712,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 22,
       "deals_total": 56,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1156584,
       "actual_sales": 2540496
     },
@@ -58740,7 +58740,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 11,
       "deals_total": 51,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2153657,
       "actual_sales": 1601522
     },
@@ -58768,7 +58768,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 1,
       "deals_total": 18,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 127680,
       "actual_sales": 312825
     },
@@ -58796,7 +58796,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1860628,
       "actual_sales": 2387780
     },
@@ -58852,7 +58852,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 20,
       "deals_total": 62,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2637280,
       "actual_sales": 2167560
     },
@@ -58880,7 +58880,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 9,
       "deals_total": 46,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1010466,
       "actual_sales": 1812384
     },
@@ -58908,7 +58908,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 6,
       "deals_total": 53,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1187742,
       "actual_sales": 5068794
     },
@@ -58936,7 +58936,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 2,
       "deals_total": 32,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 236322,
       "actual_sales": 2504678
     },
@@ -58964,7 +58964,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 14,
       "deals_total": 29,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2438156,
       "actual_sales": 1197176
     },
@@ -58992,7 +58992,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 24,
       "deals_total": 65,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 4399488,
       "actual_sales": 2847517
     },
@@ -59020,7 +59020,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 14,
       "deals_total": 37,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 1219106,
       "actual_sales": 167718
     },
@@ -59048,7 +59048,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 5,
       "deals_total": 60,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 898430,
       "actual_sales": 3072550
     },
@@ -59076,7 +59076,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 10,
       "deals_total": 59,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1789980,
       "actual_sales": 2697574
     },
@@ -59104,7 +59104,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 2,
       "deals_total": 38,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 395532,
       "actual_sales": 2765955
     },
@@ -59132,7 +59132,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 16,
       "deals_total": 42,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 2025456,
       "actual_sales": 2059704
     },
@@ -59160,7 +59160,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 6,
       "deals_total": 29,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 456810,
       "actual_sales": 624885
     },
@@ -59188,7 +59188,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 2,
       "deals_total": 13,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 218966,
       "actual_sales": 370482
     },
@@ -59216,7 +59216,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 9,
       "deals_total": 61,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 480717,
       "actual_sales": 4383704
     },
@@ -59244,7 +59244,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 25,
       "deals_total": 59,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 2129125,
       "actual_sales": 3322890
     },
@@ -59272,7 +59272,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 7,
       "deals_total": 60,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 484638,
       "actual_sales": 4152800
     },
@@ -59300,7 +59300,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 21,
       "deals_total": 36,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1506561,
       "actual_sales": 866544
     },
@@ -59328,7 +59328,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 17,
       "deals_total": 63,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1466726,
       "actual_sales": 1327898
     },
@@ -59356,7 +59356,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 10,
       "deals_total": 41,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 1388350,
       "actual_sales": 349233
     },
@@ -59384,7 +59384,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 21,
       "deals_total": 57,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2778216,
       "actual_sales": 3037464
     },
@@ -59412,7 +59412,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 6,
       "deals_total": 23,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 666786,
       "actual_sales": 692030
     },
@@ -59468,7 +59468,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 1,
       "deals_total": 32,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 143161,
       "actual_sales": 1588510
     },
@@ -59496,7 +59496,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 22,
       "deals_total": 67,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 4104518,
       "actual_sales": 2687728
     },
@@ -59524,7 +59524,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 13,
       "deals_total": 65,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 798005,
       "actual_sales": 2856766
     },
@@ -59552,7 +59552,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 22,
       "deals_total": 51,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 3405974,
       "actual_sales": 321460
     },
@@ -59580,7 +59580,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 20,
       "deals_total": 64,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1595500,
       "actual_sales": 1304200
     },
@@ -59608,7 +59608,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 16,
       "deals_total": 57,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2971376,
       "actual_sales": 1870968
     },
@@ -59636,7 +59636,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 30,
       "deals_total": 55,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 4519800,
       "actual_sales": 3509370
     },
@@ -59664,7 +59664,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 1,
       "deals_total": 32,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 62904,
       "actual_sales": 4895436
     },
@@ -59692,7 +59692,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 1,
       "deals_total": 27,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 194914,
       "actual_sales": 1178700
     },
@@ -59720,7 +59720,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 20,
       "deals_total": 44,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 1800120,
       "actual_sales": 3050145
     },
@@ -59748,7 +59748,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 23,
       "deals_total": 65,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1680012,
       "actual_sales": 3586700
     },
@@ -59776,7 +59776,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 0,
       "deals_total": 40,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 0,
       "actual_sales": 4677845
     },
@@ -59804,7 +59804,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 19,
       "deals_total": 69,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2837004,
       "actual_sales": 3940970
     },
@@ -59832,7 +59832,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 23,
       "deals_total": 76,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2555990,
       "actual_sales": 5752860
     },
@@ -59860,7 +59860,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 25,
       "deals_total": 72,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2770850,
       "actual_sales": 1955718
     },
@@ -59916,7 +59916,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 25,
       "deals_total": 57,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 3100975,
       "actual_sales": 538848
     },
@@ -59944,7 +59944,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 36,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 143562,
       "actual_sales": 693095
     },
@@ -59972,7 +59972,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 29,
       "deals_total": 64,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 4494014,
       "actual_sales": 1527980
     },
@@ -60000,7 +60000,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 29,
       "deals_total": 80,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 2502497,
       "actual_sales": 2337975
     },
@@ -60028,7 +60028,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 0,
       "deals_total": 47,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 0,
       "actual_sales": 1067808
     },
@@ -60056,7 +60056,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 30,
       "deals_total": 54,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 3906840,
       "actual_sales": 568942
     },
@@ -60084,7 +60084,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 4,
       "deals_total": 51,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 538912,
       "actual_sales": 2214754
     },
@@ -60112,7 +60112,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 1,
       "deals_total": 34,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 136748,
       "actual_sales": 2714454
     },
@@ -60140,7 +60140,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 7,
       "deals_total": 40,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 436485,
       "actual_sales": 2762850
     },
@@ -60168,7 +60168,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 11,
       "deals_total": 23,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1181862,
       "actual_sales": 333844
     },
@@ -60196,7 +60196,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 2,
       "deals_total": 50,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 217790,
       "actual_sales": 1352040
     },
@@ -60224,7 +60224,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 16,
       "deals_total": 32,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 2800160,
       "actual_sales": 269468
     },
@@ -60252,7 +60252,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 30,
       "deals_total": 71,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1644600,
       "actual_sales": 2891553
     },
@@ -60280,7 +60280,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 19,
       "deals_total": 48,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 1475426,
       "actual_sales": 1908603
     },
@@ -60308,7 +60308,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 23,
       "deals_total": 78,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1355045,
       "actual_sales": 4840500
     },
@@ -60336,7 +60336,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 18,
       "deals_total": 49,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 3470274,
       "actual_sales": 2303528
     },
@@ -60364,7 +60364,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 16,
       "deals_total": 49,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 3082032,
       "actual_sales": 1344340
     },
@@ -60392,7 +60392,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 37,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 536370,
       "actual_sales": 2997831
     },
@@ -60420,7 +60420,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 15,
       "deals_total": 40,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 2600265,
       "actual_sales": 602188
     },
@@ -60448,7 +60448,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 15,
       "deals_total": 69,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2856885,
       "actual_sales": 4948450
     },
@@ -60476,7 +60476,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 11,
       "deals_total": 44,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 2099933,
       "actual_sales": 959630
     },
@@ -60504,7 +60504,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 5,
       "deals_total": 30,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 250750,
       "actual_sales": 782054
     },
@@ -60532,7 +60532,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 23,
       "deals_total": 49,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 2222996,
       "actual_sales": 469736
     },
@@ -60560,7 +60560,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 27,
       "deals_total": 72,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3534813,
       "actual_sales": 2987456
     },
@@ -60588,7 +60588,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 7,
       "deals_total": 60,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1261421,
       "actual_sales": 2202115
     },
@@ -60616,7 +60616,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 14,
       "deals_total": 52,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 2052120,
       "actual_sales": 2602496
     },
@@ -60644,7 +60644,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 12,
       "deals_total": 22,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 699672,
       "actual_sales": 451640
     },
@@ -60672,7 +60672,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 27,
       "deals_total": 73,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1585926,
       "actual_sales": 3669892
     },
@@ -60700,7 +60700,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 28,
       "deals_total": 46,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 4916016,
       "actual_sales": 77158
     },
@@ -60728,7 +60728,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 23,
       "deals_total": 29,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1205292,
       "actual_sales": 447696
     },
@@ -60756,7 +60756,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 10,
       "deals_total": 23,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 934840,
       "actual_sales": 824944
     },
@@ -60784,7 +60784,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 24,
       "deals_total": 63,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1850664,
       "actual_sales": 1599598
     },
@@ -60812,7 +60812,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 7,
       "deals_total": 33,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 737366,
       "actual_sales": 1494216
     },
@@ -60840,7 +60840,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 21,
       "deals_total": 61,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 3036936,
       "actual_sales": 3224043
     },
@@ -60868,7 +60868,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 25,
       "deals_total": 69,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2151800,
       "actual_sales": 2306000
     },
@@ -60896,7 +60896,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 14,
       "deals_total": 49,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 781480,
       "actual_sales": 1719840
     },
@@ -60924,7 +60924,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 26,
       "deals_total": 31,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2993302,
       "actual_sales": 347224
     },
@@ -60952,7 +60952,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 6,
       "deals_total": 25,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 571530,
       "actual_sales": 1533705
     },
@@ -60980,7 +60980,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 0,
       "deals_total": 31,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 0,
       "actual_sales": 956527
     },
@@ -61008,7 +61008,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 11,
       "deals_total": 32,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 1849804,
       "actual_sales": 2796948
     },
@@ -61064,7 +61064,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 25,
       "deals_total": 64,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1257125,
       "actual_sales": 1450783
     },
@@ -61092,7 +61092,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 27,
       "deals_total": 54,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 2776545,
       "actual_sales": 1353720
     },
@@ -61120,7 +61120,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 22,
       "deals_total": 78,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2678676,
       "actual_sales": 5168467
     },
@@ -61148,7 +61148,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 22,
       "deals_total": 61,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1782220,
       "actual_sales": 2844330
     },
@@ -61176,7 +61176,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 23,
       "deals_total": 67,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1532214,
       "actual_sales": 2400864
     },
@@ -61204,7 +61204,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 25,
       "deals_total": 29,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3107475,
       "actual_sales": 255876
     },
@@ -61232,7 +61232,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 18,
       "deals_total": 69,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3078198,
       "actual_sales": 1939854
     },
@@ -61260,7 +61260,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 2,
       "deals_total": 31,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 277944,
       "actual_sales": 1193013
     },
@@ -61288,7 +61288,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 25,
       "deals_total": 42,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 4579775,
       "actual_sales": 1106655
     },
@@ -61316,7 +61316,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 26,
       "deals_total": 41,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 4886492,
       "actual_sales": 1382524
     },
@@ -61344,7 +61344,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 0,
       "deals_total": 24,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 0,
       "actual_sales": 3190608
     },
@@ -61372,7 +61372,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 1,
       "deals_total": 40,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 186903,
       "actual_sales": 1529748
     },
@@ -61400,7 +61400,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 4,
       "deals_total": 35,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 620760,
       "actual_sales": 2218075
     },
@@ -61428,7 +61428,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 12,
       "deals_total": 17,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 884976,
       "actual_sales": 56223
     },
@@ -61456,7 +61456,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 23,
       "deals_total": 64,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2283417,
       "actual_sales": 3042408
     },
@@ -61484,7 +61484,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 4,
       "deals_total": 56,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 444344,
       "actual_sales": 1657975
     },
@@ -61512,7 +61512,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 17,
       "deals_total": 34,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 2053821,
       "actual_sales": 770980
     },
@@ -61540,7 +61540,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 4,
       "deals_total": 51,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 442536,
       "actual_sales": 2347228
     },
@@ -61568,7 +61568,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 23,
       "deals_total": 27,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 3809375,
       "actual_sales": 440652
     },
@@ -61596,7 +61596,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 20,
       "deals_total": 39,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 3953140,
       "actual_sales": 361988
     },
@@ -61624,7 +61624,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 38,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 90005,
       "actual_sales": 2120932
     },
@@ -61652,7 +61652,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 18,
       "deals_total": 32,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 958842,
       "actual_sales": 103501
     },
@@ -61680,7 +61680,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 21,
       "deals_total": 50,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 3224760,
       "actual_sales": 897520
     },
@@ -61708,7 +61708,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 18,
       "deals_total": 54,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 3161250,
       "actual_sales": 1550296
     },
@@ -61736,7 +61736,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 19,
       "deals_total": 52,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 3641084,
       "actual_sales": 1298451
     },
@@ -61764,7 +61764,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 12,
       "deals_total": 27,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 635640,
       "actual_sales": 388824
     },
@@ -61792,7 +61792,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 15,
       "deals_total": 33,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 1270845,
       "actual_sales": 2684980
     },
@@ -61820,7 +61820,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 29,
       "deals_total": 64,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1459019,
       "actual_sales": 1272440
     },
@@ -61848,7 +61848,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 19,
       "deals_total": 34,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 3447037,
       "actual_sales": 1926480
     },
@@ -61876,7 +61876,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 17,
       "deals_total": 44,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 2744922,
       "actual_sales": 2905518
     },
@@ -61932,7 +61932,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 2,
       "deals_total": 33,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 302012,
       "actual_sales": 2680986
     },
@@ -61960,7 +61960,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 23,
       "deals_total": 73,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2344459,
       "actual_sales": 4537320
     },
@@ -61988,7 +61988,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 22,
       "deals_total": 45,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 1633280,
       "actual_sales": 797895
     },
@@ -62016,7 +62016,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 1,
       "deals_total": 33,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 56682,
       "actual_sales": 1846044
     },
@@ -62044,7 +62044,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 2,
       "deals_total": 36,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 139246,
       "actual_sales": 1118698
     },
@@ -62072,7 +62072,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 12,
       "deals_total": 29,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 840876,
       "actual_sales": 1390172
     },
@@ -62100,7 +62100,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 7,
       "deals_total": 47,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 872025,
       "actual_sales": 2747489
     },
@@ -62128,7 +62128,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 24,
       "deals_total": 56,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 3418032,
       "actual_sales": 5116440
     },
@@ -62156,7 +62156,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 24,
       "deals_total": 38,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1862592,
       "actual_sales": 2180607
     },
@@ -62184,7 +62184,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 27,
       "deals_total": 70,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 3111102,
       "actual_sales": 2673006
     },
@@ -62212,7 +62212,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 21,
       "deals_total": 51,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 1886010,
       "actual_sales": 750695
     },
@@ -62240,7 +62240,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 29,
       "deals_total": 51,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 4396777,
       "actual_sales": 645957
     },
@@ -62268,7 +62268,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 2,
       "deals_total": 30,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 167290,
       "actual_sales": 2047725
     },
@@ -62296,7 +62296,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 12,
       "deals_total": 55,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1927428,
       "actual_sales": 801885
     },
@@ -62324,7 +62324,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 20,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 0,
       "actual_sales": 2304180
     },
@@ -62352,7 +62352,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 12,
       "deals_total": 27,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 922872,
       "actual_sales": 738715
     },
@@ -62380,7 +62380,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 17,
       "deals_total": 49,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 1096551,
       "actual_sales": 1683920
     },
@@ -62408,7 +62408,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 13,
       "deals_total": 41,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1944280,
       "actual_sales": 591101
     },
@@ -62436,7 +62436,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 16,
       "deals_total": 46,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 3096304,
       "actual_sales": 435162
     },
@@ -62464,7 +62464,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 20,
       "deals_total": 55,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1753920,
       "actual_sales": 456185
     },
@@ -62492,7 +62492,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 7,
       "deals_total": 45,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 753494,
       "actual_sales": 1333448
     },
@@ -62520,7 +62520,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 1,
       "deals_total": 24,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 152930,
       "actual_sales": 1584590
     },
@@ -62548,7 +62548,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 20,
       "deals_total": 52,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1579600,
       "actual_sales": 2177760
     },
@@ -62604,7 +62604,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 16,
       "deals_total": 49,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1463312,
       "actual_sales": 1573164
     },
@@ -62632,7 +62632,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 15,
       "deals_total": 48,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1777950,
       "actual_sales": 1234999
     },
@@ -62660,7 +62660,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 24,
       "deals_total": 62,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 2286408,
       "actual_sales": 1351196
     },
@@ -62688,7 +62688,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 17,
       "deals_total": 44,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 2216205,
       "actual_sales": 381045
     },
@@ -62716,7 +62716,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 6,
       "deals_total": 35,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 921876,
       "actual_sales": 1260204
     },
@@ -62744,7 +62744,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 3,
       "deals_total": 32,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 552606,
       "actual_sales": 3422170
     },
@@ -62772,7 +62772,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 5,
       "deals_total": 17,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 934925,
       "actual_sales": 1327921
     },
@@ -62800,7 +62800,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 9,
       "deals_total": 33,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1137384,
       "actual_sales": 914820
     },
@@ -62828,7 +62828,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 25,
       "deals_total": 61,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 3361600,
       "actual_sales": 781448
     },
@@ -62856,7 +62856,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 12,
       "deals_total": 46,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1644504,
       "actual_sales": 1827410
     },
@@ -62884,7 +62884,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 15,
       "deals_total": 29,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1339155,
       "actual_sales": 772222
     },
@@ -62912,7 +62912,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 17,
       "deals_total": 44,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1493722,
       "actual_sales": 1503348
     },
@@ -62940,7 +62940,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 0,
       "deals_total": 17,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 0,
       "actual_sales": 769384
     },
@@ -62968,7 +62968,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 8,
       "deals_total": 32,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1092184,
       "actual_sales": 1523874
     },
@@ -62996,7 +62996,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 8,
       "deals_total": 52,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1405720,
       "actual_sales": 2322964
     },
@@ -63024,7 +63024,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 14,
       "deals_total": 24,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1303540,
       "actual_sales": 955595
     },
@@ -63052,7 +63052,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 5,
       "deals_total": 19,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 932815,
       "actual_sales": 514074
     },
@@ -63080,7 +63080,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 7,
       "deals_total": 39,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 367542,
       "actual_sales": 430990
     },
@@ -63108,7 +63108,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 44,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 803920,
       "actual_sales": 3634480
     },
@@ -63136,7 +63136,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 12,
       "deals_total": 23,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 784692,
       "actual_sales": 762524
     },
@@ -63164,7 +63164,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 1,
       "deals_total": 23,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 50306,
       "actual_sales": 2821914
     },
@@ -63192,7 +63192,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 19,
       "deals_total": 73,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3339972,
       "actual_sales": 1765686
     },
@@ -63220,7 +63220,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 6,
       "deals_total": 22,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 590898,
       "actual_sales": 965006
     },
@@ -63248,7 +63248,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 0,
       "deals_total": 11,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 0,
       "actual_sales": 1199429
     },
@@ -63276,7 +63276,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 10,
       "deals_total": 46,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 659360,
       "actual_sales": 3131986
     },
@@ -63304,7 +63304,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 13,
       "deals_total": 41,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1185366,
       "actual_sales": 1443992
     },
@@ -63332,7 +63332,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 1,
       "deals_total": 39,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 145698,
       "actual_sales": 4200025
     },
@@ -63360,7 +63360,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 17,
       "deals_total": 53,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2513467,
       "actual_sales": 3307791
     },
@@ -63416,7 +63416,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 4,
       "deals_total": 47,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 319000,
       "actual_sales": 4032964
     },
@@ -63444,7 +63444,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 5,
       "deals_total": 29,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 669205,
       "actual_sales": 1982920
     },
@@ -63472,7 +63472,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 11,
       "deals_total": 69,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 1954711,
       "actual_sales": 3361624
     },
@@ -63528,7 +63528,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 16,
       "deals_total": 52,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 912240,
       "actual_sales": 4058678
     },
@@ -63556,7 +63556,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 7,
       "deals_total": 54,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 377979,
       "actual_sales": 4254885
     },
@@ -63584,7 +63584,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 4,
       "deals_total": 33,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 767360,
       "actual_sales": 2438912
     },
@@ -63612,7 +63612,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 1,
       "deals_total": 24,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 85673,
       "actual_sales": 1479280
     },
@@ -63640,7 +63640,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 0,
       "deals_total": 37,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 0,
       "actual_sales": 2214702
     },
@@ -63668,7 +63668,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 7,
       "deals_total": 42,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 1226960,
       "actual_sales": 2151030
     },
@@ -63696,7 +63696,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 20,
       "deals_total": 38,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2234000,
       "actual_sales": 469719
     },
@@ -63724,7 +63724,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 8,
       "deals_total": 18,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 683376,
       "actual_sales": 186631
     },
@@ -63752,7 +63752,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 28,
       "deals_total": 56,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 2367260,
       "actual_sales": 3339873
     },
@@ -63780,7 +63780,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 2,
       "deals_total": 55,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 100300,
       "actual_sales": 4074575
     },
@@ -63808,7 +63808,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 21,
       "deals_total": 36,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1148721,
       "actual_sales": 341868
     },
@@ -63836,7 +63836,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 12,
       "deals_total": 39,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 1537548,
       "actual_sales": 4309360
     },
@@ -63864,7 +63864,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 15,
       "deals_total": 29,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 2511225,
       "actual_sales": 1415700
     },
@@ -63892,7 +63892,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 4,
       "deals_total": 43,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 373540,
       "actual_sales": 707876
     },
@@ -63920,7 +63920,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 8,
       "deals_total": 36,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 983984,
       "actual_sales": 3017196
     },
@@ -63948,7 +63948,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 22,
       "deals_total": 46,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 3616536,
       "actual_sales": 1341768
     },
@@ -63976,7 +63976,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 1,
       "deals_total": 4,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 147668,
       "actual_sales": 83238
     },
@@ -64004,7 +64004,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 30,
       "deals_total": 73,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 3109080,
       "actual_sales": 2161348
     },
@@ -64032,7 +64032,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 10,
       "deals_total": 52,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1833350,
       "actual_sales": 664118
     },
@@ -64060,7 +64060,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 11,
       "deals_total": 39,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 2144582,
       "actual_sales": 767910
     },
@@ -64088,7 +64088,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 15,
       "deals_total": 55,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1319685,
       "actual_sales": 3520035
     },
@@ -64116,7 +64116,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 21,
       "deals_total": 51,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1076607,
       "actual_sales": 1344720
     },
@@ -64144,7 +64144,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 7,
       "deals_total": 53,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1268316,
       "actual_sales": 3070137
     },
@@ -64172,7 +64172,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 30,
       "deals_total": 67,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 3683100,
       "actual_sales": 3053196
     },
@@ -64200,7 +64200,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 12,
       "deals_total": 43,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1709868,
       "actual_sales": 1572312
     },
@@ -64256,7 +64256,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 0,
       "deals_total": 28,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 0,
       "actual_sales": 893032
     },
@@ -64284,7 +64284,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 14,
       "deals_total": 47,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1279782,
       "actual_sales": 1585512
     },
@@ -64312,7 +64312,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 24,
       "deals_total": 59,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2537736,
       "actual_sales": 1305856
     },
@@ -64340,7 +64340,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 15,
       "deals_total": 35,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 1830060,
       "actual_sales": 2321840
     },
@@ -64368,7 +64368,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 24,
       "deals_total": 41,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 2201976,
       "actual_sales": 665820
     },
@@ -64396,7 +64396,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 22,
       "deals_total": 72,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 3975796,
       "actual_sales": 4300452
     },
@@ -64424,7 +64424,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 20,
       "deals_total": 69,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 3944240,
       "actual_sales": 4515129
     },
@@ -64452,7 +64452,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 22,
       "deals_total": 47,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 2752728,
       "actual_sales": 181264
     },
@@ -64480,7 +64480,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 13,
       "deals_total": 28,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 956839,
       "actual_sales": 2587144
     },
@@ -64508,7 +64508,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 15,
       "deals_total": 34,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1557045,
       "actual_sales": 2217026
     },
@@ -64536,7 +64536,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 6,
       "deals_total": 31,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 344424,
       "actual_sales": 826191
     },
@@ -64564,7 +64564,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 13,
       "deals_total": 63,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1535547,
       "actual_sales": 3570034
     },
@@ -64592,7 +64592,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 29,
       "deals_total": 37,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2064597,
       "actual_sales": 676400
     },
@@ -64620,7 +64620,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 23,
       "deals_total": 44,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 3739639,
       "actual_sales": 892089
     },
@@ -64648,7 +64648,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 53,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 179760,
       "actual_sales": 3624750
     },
@@ -64676,7 +64676,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 12,
       "deals_total": 50,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 1205820,
       "actual_sales": 446488
     },
@@ -64704,7 +64704,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 26,
       "deals_total": 40,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 4342832,
       "actual_sales": 397308
     },
@@ -64732,7 +64732,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 28,
       "deals_total": 59,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 4908456,
       "actual_sales": 1970892
     },
@@ -64760,7 +64760,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 14,
       "deals_total": 63,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 2216116,
       "actual_sales": 1681320
     },
@@ -64788,7 +64788,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 2,
       "deals_total": 29,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 345668,
       "actual_sales": 271617
     },
@@ -64816,7 +64816,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 14,
       "deals_total": 44,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 2750300,
       "actual_sales": 238188
     },
@@ -64844,7 +64844,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 14,
       "deals_total": 60,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1889706,
       "actual_sales": 4347700
     },
@@ -64872,7 +64872,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 3104769,
       "actual_sales": 4022018
     },
@@ -64900,7 +64900,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 13,
       "deals_total": 30,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2320968,
       "actual_sales": 1177656
     },
@@ -64928,7 +64928,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 19,
       "deals_total": 47,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 1664058,
       "actual_sales": 102414
     },
@@ -64984,7 +64984,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 14,
       "deals_total": 60,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1780226,
       "actual_sales": 3365901
     },
@@ -65012,7 +65012,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 13,
       "deals_total": 34,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 1216514,
       "actual_sales": 2896000
     },
@@ -65040,7 +65040,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 7,
       "deals_total": 24,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1121680,
       "actual_sales": 1304984
     },
@@ -65068,7 +65068,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 0,
       "deals_total": 26,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 0,
       "actual_sales": 849824
     },
@@ -65096,7 +65096,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 22,
       "deals_total": 52,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 4340358,
       "actual_sales": 363318
     },
@@ -65124,7 +65124,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 23,
       "deals_total": 51,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 2897034,
       "actual_sales": 281752
     },
@@ -65152,7 +65152,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 24,
       "deals_total": 51,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 2973888,
       "actual_sales": 214347
     },
@@ -65180,7 +65180,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 17,
       "deals_total": 33,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 2058836,
       "actual_sales": 998280
     },
@@ -65208,7 +65208,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 11,
       "deals_total": 42,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 953018,
       "actual_sales": 2861379
     },
@@ -65236,7 +65236,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 22,
       "deals_total": 54,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 3467442,
       "actual_sales": 1063811
     },
@@ -65264,7 +65264,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 13,
       "deals_total": 43,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 1778764,
       "actual_sales": 350574
     },
@@ -65292,7 +65292,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 26,
       "deals_total": 42,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 4506580,
       "actual_sales": 293624
     },
@@ -65320,7 +65320,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 13,
       "deals_total": 30,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 2403960,
       "actual_sales": 853350
     },
@@ -65348,7 +65348,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 7,
       "deals_total": 54,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 926506,
       "actual_sales": 3339752
     },
@@ -65376,7 +65376,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 16,
       "deals_total": 53,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 1399024,
       "actual_sales": 1192906
     },
@@ -65404,7 +65404,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 17,
       "deals_total": 68,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1779696,
       "actual_sales": 4995875
     },
@@ -65432,7 +65432,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 9,
       "deals_total": 45,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1074717,
       "actual_sales": 2149938
     },
@@ -65460,7 +65460,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 22,
       "deals_total": 34,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 3171476,
       "actual_sales": 455700
     },
@@ -65516,7 +65516,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 6,
       "deals_total": 47,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 908928,
       "actual_sales": 1274196
     },
@@ -65544,7 +65544,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 18,
       "deals_total": 57,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2806524,
       "actual_sales": 3442502
     },
@@ -65572,7 +65572,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 5,
       "deals_total": 26,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 843525,
       "actual_sales": 2014144
     },
@@ -65600,7 +65600,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 29,
       "deals_total": 50,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 5300330,
       "actual_sales": 2355150
     },
@@ -65628,7 +65628,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 4,
       "deals_total": 22,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 715012,
       "actual_sales": 159540
     },
@@ -65656,7 +65656,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 39,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 167484,
       "actual_sales": 750084
     },
@@ -65684,7 +65684,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 24,
       "deals_total": 73,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3548064,
       "actual_sales": 3231020
     },
@@ -65712,7 +65712,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 29,
       "deals_total": 58,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 3312525,
       "actual_sales": 3634968
     },
@@ -65740,7 +65740,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 27,
       "deals_total": 42,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2530008,
       "actual_sales": 1027878
     },
@@ -65768,7 +65768,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 5,
       "deals_total": 21,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 664460,
       "actual_sales": 295012
     },
@@ -65796,7 +65796,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 16,
       "deals_total": 44,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 2061424,
       "actual_sales": 158048
     },
@@ -65824,7 +65824,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 16,
       "deals_total": 55,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1073584,
       "actual_sales": 1949388
     },
@@ -65852,7 +65852,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 2,
       "deals_total": 26,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 303742,
       "actual_sales": 1134732
     },
@@ -65880,7 +65880,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 20,
       "deals_total": 24,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1937360,
       "actual_sales": 124690
     },
@@ -65908,7 +65908,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 7,
       "deals_total": 46,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1378405,
       "actual_sales": 1288677
     },
@@ -65936,7 +65936,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 30,
       "deals_total": 70,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 5197350,
       "actual_sales": 4631358
     },
@@ -65964,7 +65964,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 19,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 0,
       "actual_sales": 646623
     },
@@ -65992,7 +65992,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 10,
       "deals_total": 44,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1313470,
       "actual_sales": 1984240
     },
@@ -66020,7 +66020,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 29,
       "deals_total": 51,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3770696,
       "actual_sales": 1966712
     },
@@ -66048,7 +66048,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 15,
       "deals_total": 36,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 784455,
       "actual_sales": 402660
     },
@@ -66076,7 +66076,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 17,
       "deals_total": 68,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1292833,
       "actual_sales": 5171889
     },
@@ -66132,7 +66132,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 7,
       "deals_total": 39,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 657895,
       "actual_sales": 387836
     },
@@ -66160,7 +66160,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 25,
       "deals_total": 57,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 1388675,
       "actual_sales": 812330
     },
@@ -66188,7 +66188,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 20,
       "deals_total": 58,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 2232620,
       "actual_sales": 2295120
     },
@@ -66216,7 +66216,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 10,
       "deals_total": 48,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1150620,
       "actual_sales": 1953228
     },
@@ -66244,7 +66244,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 14,
       "deals_total": 39,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1970234,
       "actual_sales": 2472656
     },
@@ -66272,7 +66272,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 11,
       "deals_total": 22,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 763719,
       "actual_sales": 503712
     },
@@ -66300,7 +66300,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 25,
       "deals_total": 71,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1389175,
       "actual_sales": 2423085
     },
@@ -66328,7 +66328,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 58,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 4393928,
       "actual_sales": 418362
     },
@@ -66356,7 +66356,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 7,
       "deals_total": 30,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 469259,
       "actual_sales": 100251
     },
@@ -66384,7 +66384,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 21,
       "deals_total": 65,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 3893505,
       "actual_sales": 4372758
     },
@@ -66412,7 +66412,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 20,
       "deals_total": 65,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3610840,
       "actual_sales": 4972320
     },
@@ -66440,7 +66440,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 2,
       "deals_total": 47,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 164944,
       "actual_sales": 3121307
     },
@@ -66496,7 +66496,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 0,
       "deals_total": 52,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 0,
       "actual_sales": 4166932
     },
@@ -66524,7 +66524,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 10,
       "deals_total": 32,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1606720,
       "actual_sales": 1622970
     },
@@ -66552,7 +66552,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 3,
       "deals_total": 18,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 380451,
       "actual_sales": 746008
     },
@@ -66580,7 +66580,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 16,
       "deals_total": 62,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2642352,
       "actual_sales": 3552200
     },
@@ -66608,7 +66608,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 9,
       "deals_total": 24,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1282680,
       "actual_sales": 753893
     },
@@ -66636,7 +66636,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 8,
       "deals_total": 31,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 819208,
       "actual_sales": 125059
     },
@@ -66664,7 +66664,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 3,
       "deals_total": 28,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 524607,
       "actual_sales": 1843968
     },
@@ -66692,7 +66692,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 24,
       "deals_total": 59,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1743432,
       "actual_sales": 3422232
     },
@@ -66720,7 +66720,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 23,
       "deals_total": 76,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1389200,
       "actual_sales": 3295536
     },
@@ -66748,7 +66748,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 11,
       "deals_total": 63,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1303071,
       "actual_sales": 3394832
     },
@@ -66776,7 +66776,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 25,
       "deals_total": 52,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 1374250,
       "actual_sales": 292734
     },
@@ -66804,7 +66804,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 6,
       "deals_total": 43,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 900090,
       "actual_sales": 2223084
     },
@@ -66832,7 +66832,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 8,
       "deals_total": 55,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 576016,
       "actual_sales": 2144232
     },
@@ -66860,7 +66860,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 2,
       "deals_total": 38,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 333388,
       "actual_sales": 1850415
     },
@@ -66888,7 +66888,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 8,
       "deals_total": 58,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1259720,
       "actual_sales": 1535912
     },
@@ -66916,7 +66916,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 13,
       "deals_total": 55,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2318810,
       "actual_sales": 3458158
     },
@@ -66944,7 +66944,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 21,
       "deals_total": 62,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1166172,
       "actual_sales": 2561010
     },
@@ -66972,7 +66972,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 8,
       "deals_total": 30,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 599656,
       "actual_sales": 301456
     },
@@ -67000,7 +67000,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 20,
       "deals_total": 35,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 1421400,
       "actual_sales": 887133
     },
@@ -67028,7 +67028,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 11,
       "deals_total": 68,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2041171,
       "actual_sales": 1913085
     },
@@ -67056,7 +67056,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 12,
       "deals_total": 65,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1805148,
       "actual_sales": 1963257
     },
@@ -67084,7 +67084,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 14,
       "deals_total": 47,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 968408,
       "actual_sales": 2562246
     },
@@ -67112,7 +67112,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 26,
       "deals_total": 76,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3633578,
       "actual_sales": 1557024
     },
@@ -67140,7 +67140,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 7,
       "deals_total": 39,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1135421,
       "actual_sales": 2366298
     },
@@ -67168,7 +67168,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 10,
       "deals_total": 67,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1374370,
       "actual_sales": 1517936
     },
@@ -67196,7 +67196,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 7,
       "deals_total": 36,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 767641,
       "actual_sales": 2297148
     },
@@ -67224,7 +67224,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 24,
       "deals_total": 45,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 4744248,
       "actual_sales": 963024
     },
@@ -67252,7 +67252,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 21,
       "deals_total": 36,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3436776,
       "actual_sales": 1627830
     },
@@ -67280,7 +67280,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 26,
       "deals_total": 61,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 3218462,
       "actual_sales": 2139912
     },
@@ -67308,7 +67308,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 5,
       "deals_total": 62,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 939510,
       "actual_sales": 2629676
     },
@@ -67336,7 +67336,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 13,
       "deals_total": 40,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 2449135,
       "actual_sales": 2192311
     },
@@ -67364,7 +67364,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 11,
       "deals_total": 45,
-      "ratio": 0.82,
+      "ratio": 82,
       "estimated_sales": 2078252,
       "actual_sales": 5379584
     },
@@ -67392,7 +67392,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 19,
       "deals_total": 47,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2701401,
       "actual_sales": 1623600
     },
@@ -67420,7 +67420,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 8,
       "deals_total": 28,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 1562088,
       "actual_sales": 212818
     },
@@ -67448,7 +67448,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 2,
       "deals_total": 36,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 218748,
       "actual_sales": 2465610
     },
@@ -67476,7 +67476,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 22,
       "deals_total": 51,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 3622322,
       "actual_sales": 2710818
     },
@@ -67504,7 +67504,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 11,
       "deals_total": 24,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 1593559,
       "actual_sales": 755040
     },
@@ -67532,7 +67532,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 19,
       "deals_total": 42,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 2478227,
       "actual_sales": 2306192
     },
@@ -67560,7 +67560,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 25,
       "deals_total": 43,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 4557625,
       "actual_sales": 476280
     },
@@ -67588,7 +67588,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 5,
       "deals_total": 32,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 306710,
       "actual_sales": 1027144
     },
@@ -67616,7 +67616,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 4,
       "deals_total": 40,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 313320,
       "actual_sales": 4142204
     },
@@ -67644,7 +67644,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 27,
       "deals_total": 39,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 4978476,
       "actual_sales": 377820
     },
@@ -67672,7 +67672,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 3,
       "deals_total": 41,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 428550,
       "actual_sales": 4924472
     },
@@ -67700,7 +67700,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 4,
       "deals_total": 29,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 730560,
       "actual_sales": 4081374
     },
@@ -67728,7 +67728,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 8,
       "deals_total": 21,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 690680,
       "actual_sales": 1370007
     },
@@ -67756,7 +67756,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 20,
       "deals_total": 69,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1822640,
       "actual_sales": 4624410
     },
@@ -67784,7 +67784,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 18,
       "deals_total": 67,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 938898,
       "actual_sales": 2340849
     },
@@ -67812,7 +67812,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 10,
       "deals_total": 42,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 618860,
       "actual_sales": 4072320
     },
@@ -67840,7 +67840,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 5,
       "deals_total": 31,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 289970,
       "actual_sales": 1220400
     },
@@ -67868,7 +67868,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 10,
       "deals_total": 40,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 1620230,
       "actual_sales": 2734632
     },
@@ -67896,7 +67896,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 17,
       "deals_total": 77,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3111629,
       "actual_sales": 4468050
     },
@@ -67924,7 +67924,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 10,
       "deals_total": 48,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 1660520,
       "actual_sales": 3999475
     },
@@ -67952,7 +67952,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 59,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1269433,
       "actual_sales": 3470632
     },
@@ -67980,7 +67980,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 7,
       "deals_total": 48,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 670103,
       "actual_sales": 3303240
     },
@@ -68008,7 +68008,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 11,
       "deals_total": 50,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 1021042,
       "actual_sales": 3082248
     },
@@ -68036,7 +68036,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 10,
       "deals_total": 32,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 1808830,
       "actual_sales": 1660984
     },
@@ -68064,7 +68064,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 29,
       "deals_total": 35,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3607397,
       "actual_sales": 400497
     },
@@ -68092,7 +68092,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 10,
       "deals_total": 25,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1840530,
       "actual_sales": 982095
     },
@@ -68120,7 +68120,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 7,
       "deals_total": 29,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 578361,
       "actual_sales": 345964
     },
@@ -68148,7 +68148,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 29,
       "deals_total": 78,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 2730669,
       "actual_sales": 3409650
     },
@@ -68176,7 +68176,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 13,
       "deals_total": 36,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 2549703,
       "actual_sales": 2246400
     },
@@ -68204,7 +68204,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 3,
       "deals_total": 25,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 258075,
       "actual_sales": 2707952
     },
@@ -68232,7 +68232,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 10,
       "deals_total": 67,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1195910,
       "actual_sales": 4880628
     },
@@ -68260,7 +68260,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 22,
       "deals_total": 62,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2947846,
       "actual_sales": 1616256
     },
@@ -68288,7 +68288,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 7,
       "deals_total": 33,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 1099679,
       "actual_sales": 443607
     },
@@ -68316,7 +68316,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 3,
       "deals_total": 33,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 333453,
       "actual_sales": 3590532
     },
@@ -68344,7 +68344,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 15,
       "deals_total": 39,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 2520120,
       "actual_sales": 3329722
     },
@@ -68372,7 +68372,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 13,
       "deals_total": 59,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1987583,
       "actual_sales": 1006920
     },
@@ -68400,7 +68400,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 28,
       "deals_total": 67,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1515500,
       "actual_sales": 2041767
     },
@@ -68428,7 +68428,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 29,
       "deals_total": 79,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 5283887,
       "actual_sales": 2107292
     },
@@ -68456,7 +68456,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 24,
       "deals_total": 52,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 4665120,
       "actual_sales": 1974456
     },
@@ -68484,7 +68484,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 17,
       "deals_total": 46,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 1721760,
       "actual_sales": 198081
     },
@@ -68512,7 +68512,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 14,
       "deals_total": 21,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 875420,
       "actual_sales": 165252
     },
@@ -68540,7 +68540,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 10,
       "deals_total": 62,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1973480,
       "actual_sales": 2050272
     },
@@ -68568,7 +68568,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 4,
       "deals_total": 33,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 516960,
       "actual_sales": 2517627
     },
@@ -68596,7 +68596,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 21,
       "deals_total": 51,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 1117725,
       "actual_sales": 4992553
     },
@@ -68624,7 +68624,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 23,
       "deals_total": 51,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 2797306,
       "actual_sales": 5104269
     },
@@ -68652,7 +68652,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 12,
       "deals_total": 43,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1203864,
       "actual_sales": 3341228
     },
@@ -68680,7 +68680,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 23,
       "deals_total": 58,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 2518500,
       "actual_sales": 550896
     },
@@ -68708,7 +68708,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 2,
       "deals_total": 42,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 154812,
       "actual_sales": 3335598
     },
@@ -68736,7 +68736,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 8,
       "deals_total": 51,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1356552,
       "actual_sales": 2751966
     },
@@ -68764,7 +68764,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 8,
       "deals_total": 33,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 1231184,
       "actual_sales": 3355608
     },
@@ -68792,7 +68792,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 29,
       "deals_total": 73,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 5126736,
       "actual_sales": 3838860
     },
@@ -68820,7 +68820,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 5,
       "deals_total": 29,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 410115,
       "actual_sales": 125894
     },
@@ -68848,7 +68848,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 7,
       "deals_total": 33,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1087562,
       "actual_sales": 977074
     },
@@ -68876,7 +68876,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 6,
       "deals_total": 58,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 927384,
       "actual_sales": 3402783
     },
@@ -68904,7 +68904,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2603608,
       "actual_sales": 2928114
     },
@@ -68932,7 +68932,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 20,
       "deals_total": 27,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1214800,
       "actual_sales": 146804
     },
@@ -68960,7 +68960,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 4,
       "deals_total": 30,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 286116,
       "actual_sales": 1478896
     },
@@ -68988,7 +68988,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 7,
       "deals_total": 36,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 730583,
       "actual_sales": 567756
     },
@@ -69016,7 +69016,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 21,
       "deals_total": 57,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 3825780,
       "actual_sales": 1464592
     },
@@ -69044,7 +69044,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 14,
       "deals_total": 68,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 1481508,
       "actual_sales": 2365675
     },
@@ -69072,7 +69072,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 28,
       "deals_total": 59,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 4237268,
       "actual_sales": 266892
     },
@@ -69100,7 +69100,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 26,
       "deals_total": 70,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 2319252,
       "actual_sales": 4738872
     },
@@ -69128,7 +69128,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 1,
       "deals_total": 13,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 119233,
       "actual_sales": 1163670
     },
@@ -69156,7 +69156,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 28,
       "deals_total": 84,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2101372,
       "actual_sales": 1660888
     },
@@ -69184,7 +69184,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 11,
       "deals_total": 20,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 1368466,
       "actual_sales": 638890
     },
@@ -69212,7 +69212,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 15,
       "deals_total": 43,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1887585,
       "actual_sales": 1360590
     },
@@ -69240,7 +69240,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 23,
       "deals_total": 66,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1622075,
       "actual_sales": 2616243
     },
@@ -69268,7 +69268,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 2,
       "deals_total": 39,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 226686,
       "actual_sales": 3888400
     },
@@ -69296,7 +69296,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 22,
       "deals_total": 46,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 2137696,
       "actual_sales": 510675
     },
@@ -69324,7 +69324,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 25,
       "deals_total": 65,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 3021650,
       "actual_sales": 3577689
     },
@@ -69352,7 +69352,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 22,
       "deals_total": 28,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 4232008,
       "actual_sales": 751996
     },
@@ -69380,7 +69380,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 4,
       "deals_total": 56,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 677816,
       "actual_sales": 3049959
     },
@@ -69408,7 +69408,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 9,
       "deals_total": 39,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1328742,
       "actual_sales": 1818825
     },
@@ -69436,7 +69436,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 11,
       "deals_total": 39,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 2120844,
       "actual_sales": 1418508
     },
@@ -69464,7 +69464,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 19,
       "deals_total": 37,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1077528,
       "actual_sales": 1497402
     },
@@ -69492,7 +69492,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 10,
       "deals_total": 26,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 1556570,
       "actual_sales": 258021
     },
@@ -69520,7 +69520,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 14,
       "deals_total": 20,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2288216,
       "actual_sales": 225034
     },
@@ -69548,7 +69548,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 25,
       "deals_total": 52,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 4191825,
       "actual_sales": 1882518
     },
@@ -69576,7 +69576,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 21,
       "deals_total": 48,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 3615066,
       "actual_sales": 3046224
     },
@@ -69604,7 +69604,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 15,
       "deals_total": 58,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 2001735,
       "actual_sales": 2970810
     },
@@ -69632,7 +69632,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 3,
       "deals_total": 18,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 244935,
       "actual_sales": 326105
     },
@@ -69660,7 +69660,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 2,
       "deals_total": 36,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 252002,
       "actual_sales": 1661575
     },
@@ -69688,7 +69688,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 15,
       "deals_total": 57,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2862030,
       "actual_sales": 1827342
     },
@@ -69716,7 +69716,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 2,
       "deals_total": 56,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 151012,
       "actual_sales": 4001060
     },
@@ -69744,7 +69744,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 10,
       "deals_total": 55,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 1716850,
       "actual_sales": 1152350
     },
@@ -69772,7 +69772,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 13,
       "deals_total": 50,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 779194,
       "actual_sales": 3755046
     },
@@ -69800,7 +69800,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 21,
       "deals_total": 68,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 1889181,
       "actual_sales": 4663890
     },
@@ -69828,7 +69828,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 20,
       "deals_total": 58,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1543700,
       "actual_sales": 3456804
     },
@@ -69856,7 +69856,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 4,
       "deals_total": 36,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 406768,
       "actual_sales": 1264248
     },
@@ -69884,7 +69884,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 8,
       "deals_total": 32,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1142224,
       "actual_sales": 2229251
     },
@@ -69912,7 +69912,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 24,
       "deals_total": 82,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1264344,
       "actual_sales": 3207570
     },
@@ -69940,7 +69940,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 6,
       "deals_total": 23,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 484416,
       "actual_sales": 124436
     },
@@ -69968,7 +69968,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 28,
       "deals_total": 45,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 5550972,
       "actual_sales": 870723
     },
@@ -69996,7 +69996,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 5,
       "deals_total": 54,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 617565,
       "actual_sales": 3953850
     },
@@ -70024,7 +70024,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 14,
       "deals_total": 58,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1591100,
       "actual_sales": 3680136
     },
@@ -70052,7 +70052,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 22,
       "deals_total": 46,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 2870252,
       "actual_sales": 2835332
     },
@@ -70080,7 +70080,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 21,
       "deals_total": 65,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 1907619,
       "actual_sales": 2484570
     },
@@ -70108,7 +70108,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 13,
       "deals_total": 42,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 1205594,
       "actual_sales": 1826664
     },
@@ -70136,7 +70136,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 12,
       "deals_total": 50,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1937484,
       "actual_sales": 621927
     },
@@ -70164,7 +70164,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 1,
       "deals_total": 28,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 67879,
       "actual_sales": 1147992
     },
@@ -70192,7 +70192,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 18,
       "deals_total": 40,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 2882934,
       "actual_sales": 655948
     },
@@ -70220,7 +70220,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 23,
       "deals_total": 31,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1800877,
       "actual_sales": 201280
     },
@@ -70248,7 +70248,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 4,
       "deals_total": 30,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 259136,
       "actual_sales": 72872
     },
@@ -70276,7 +70276,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 24,
       "deals_total": 66,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1252464,
       "actual_sales": 1369168
     },
@@ -70304,7 +70304,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 30,
       "deals_total": 53,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 3779370,
       "actual_sales": 542697
     },
@@ -70332,7 +70332,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 6,
       "deals_total": 31,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 380622,
       "actual_sales": 2967912
     },
@@ -70360,7 +70360,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 3,
       "deals_total": 44,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 331383,
       "actual_sales": 1928550
     },
@@ -70388,7 +70388,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 9,
       "deals_total": 33,
-      "ratio": 0.96,
+      "ratio": 96,
       "estimated_sales": 1310931,
       "actual_sales": 1525015
     },
@@ -70416,7 +70416,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 23,
       "deals_total": 72,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 3380218,
       "actual_sales": 3492261
     },
@@ -70444,7 +70444,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 29,
       "deals_total": 50,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 3080264,
       "actual_sales": 952835
     },
@@ -70472,7 +70472,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 13,
       "deals_total": 54,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1446861,
       "actual_sales": 3101658
     },
@@ -70500,7 +70500,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 5,
       "deals_total": 30,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 404170,
       "actual_sales": 2903532
     },
@@ -70528,7 +70528,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 24,
       "deals_total": 37,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 2666424,
       "actual_sales": 1022290
     },
@@ -70556,7 +70556,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 14,
       "deals_total": 57,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 2766708,
       "actual_sales": 2632256
     },
@@ -70584,7 +70584,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 6,
       "deals_total": 57,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1085520,
       "actual_sales": 3185520
     },
@@ -70612,7 +70612,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 25,
       "deals_total": 59,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 1507200,
       "actual_sales": 581980
     },
@@ -70640,7 +70640,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 5,
       "deals_total": 42,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 446370,
       "actual_sales": 1589954
     },
@@ -70668,7 +70668,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 7,
       "deals_total": 33,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 852502,
       "actual_sales": 975375
     },
@@ -70696,7 +70696,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 11,
       "deals_total": 49,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 2128324,
       "actual_sales": 1142076
     },
@@ -70724,7 +70724,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 25,
       "deals_total": 46,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 4572025,
       "actual_sales": 187500
     },
@@ -70752,7 +70752,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 7,
       "deals_total": 31,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 1265775,
       "actual_sales": 656058
     },
@@ -70780,7 +70780,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 27,
       "deals_total": 58,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 3424248,
       "actual_sales": 2774576
     },
@@ -70836,7 +70836,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 16,
       "deals_total": 33,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2076992,
       "actual_sales": 1315856
     },
@@ -70864,7 +70864,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 6,
       "deals_total": 52,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1118832,
       "actual_sales": 1612464
     },
@@ -70892,7 +70892,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 12,
       "deals_total": 42,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1204716,
       "actual_sales": 2290050
     },
@@ -70920,7 +70920,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 26,
       "deals_total": 73,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 3060668,
       "actual_sales": 1484900
     },
@@ -70948,7 +70948,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 8,
       "deals_total": 31,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 590808,
       "actual_sales": 2610619
     },
@@ -70976,7 +70976,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 14,
       "deals_total": 50,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2139872,
       "actual_sales": 4159608
     },
@@ -71032,7 +71032,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 12,
       "deals_total": 36,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 940224,
       "actual_sales": 1224288
     },
@@ -71060,7 +71060,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 13,
       "deals_total": 31,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 1374750,
       "actual_sales": 1640925
     },
@@ -71088,7 +71088,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 25,
       "deals_total": 46,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 4734225,
       "actual_sales": 1005240
     },
@@ -71116,7 +71116,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 1,
       "deals_total": 31,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 197118,
       "actual_sales": 1179234
     },
@@ -71144,7 +71144,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 23,
       "deals_total": 71,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2947151,
       "actual_sales": 2107488
     },
@@ -71200,7 +71200,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 17,
       "deals_total": 60,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 2553740,
       "actual_sales": 1239200
     },
@@ -71256,7 +71256,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 30,
       "deals_total": 50,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 4559760,
       "actual_sales": 1457733
     },
@@ -71284,7 +71284,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 25,
       "deals_total": 66,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 2796775,
       "actual_sales": 4007772
     },
@@ -71312,7 +71312,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 28,
       "deals_total": 35,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 4981592,
       "actual_sales": 172706
     },
@@ -71340,7 +71340,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 28,
       "deals_total": 82,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 3016692,
       "actual_sales": 4609525
     },
@@ -71368,7 +71368,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 5,
       "deals_total": 16,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 852450,
       "actual_sales": 564628
     },
@@ -71396,7 +71396,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 9,
       "deals_total": 17,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1242504,
       "actual_sales": 511383
     },
@@ -71452,7 +71452,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 10,
       "deals_total": 46,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 1533990,
       "actual_sales": 1951328
     },
@@ -71480,7 +71480,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 9,
       "deals_total": 64,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1460205,
       "actual_sales": 3780218
     },
@@ -71508,7 +71508,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 0,
       "deals_total": 33,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 0,
       "actual_sales": 1573132
     },
@@ -71536,7 +71536,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 25,
       "deals_total": 53,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 1315150,
       "actual_sales": 1793928
     },
@@ -71564,7 +71564,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 10,
       "deals_total": 65,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1493090,
       "actual_sales": 3580612
     },
@@ -71592,7 +71592,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 18,
       "deals_total": 51,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 2482596,
       "actual_sales": 2131260
     },
@@ -71620,7 +71620,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 23,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1027920,
       "actual_sales": 278811
     },
@@ -71648,7 +71648,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 46,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 2177552,
       "actual_sales": 3195940
     },
@@ -71676,7 +71676,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 29,
       "deals_total": 61,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 2397604,
       "actual_sales": 365215
     },
@@ -71704,7 +71704,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 15,
       "deals_total": 48,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1140225,
       "actual_sales": 634914
     },
@@ -71732,7 +71732,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 22,
       "deals_total": 46,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 3917496,
       "actual_sales": 718968
     },
@@ -71760,7 +71760,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 8,
       "deals_total": 24,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1297688,
       "actual_sales": 604728
     },
@@ -71788,7 +71788,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 21,
       "deals_total": 40,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 3770298,
       "actual_sales": 2091510
     },
@@ -71816,7 +71816,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 48,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 164092,
       "actual_sales": 1756050
     },
@@ -71844,7 +71844,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 18,
       "deals_total": 56,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 1810224,
       "actual_sales": 4872896
     },
@@ -71872,7 +71872,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 4,
       "deals_total": 28,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 767132,
       "actual_sales": 2036086
     },
@@ -71900,7 +71900,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 6,
       "deals_total": 46,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 827604,
       "actual_sales": 776446
     },
@@ -71928,7 +71928,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 30,
       "deals_total": 42,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 2096610,
       "actual_sales": 98521
     },
@@ -71956,7 +71956,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 6,
       "deals_total": 51,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 839292,
       "actual_sales": 2925758
     },
@@ -71984,7 +71984,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 23,
       "deals_total": 58,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 3091384,
       "actual_sales": 996955
     },
@@ -72012,7 +72012,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 28,
       "deals_total": 56,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 2255400,
       "actual_sales": 2287771
     },
@@ -72040,7 +72040,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 16,
       "deals_total": 50,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 2506496,
       "actual_sales": 4891300
     },
@@ -72068,7 +72068,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 11,
       "deals_total": 56,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 2037068,
       "actual_sales": 2185700
     },
@@ -72096,7 +72096,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 2,
       "deals_total": 18,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 293398,
       "actual_sales": 283130
     },
@@ -72124,7 +72124,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 27,
       "deals_total": 64,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 4852116,
       "actual_sales": 2253252
     },
@@ -72152,7 +72152,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 17,
       "deals_total": 60,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 1401140,
       "actual_sales": 4105024
     },
@@ -72180,7 +72180,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 18,
       "deals_total": 54,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 2733426,
       "actual_sales": 1193925
     },
@@ -72208,7 +72208,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 29,
       "deals_total": 53,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 1460469,
       "actual_sales": 350148
     },
@@ -72236,7 +72236,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 21,
       "deals_total": 26,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2215794,
       "actual_sales": 305286
     },
@@ -72264,7 +72264,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 13,
       "deals_total": 26,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1837459,
       "actual_sales": 1022864
     },
@@ -72292,7 +72292,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 16,
       "deals_total": 31,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 2774112,
       "actual_sales": 1174129
     },
@@ -72320,7 +72320,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 25,
       "deals_total": 58,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2750500,
       "actual_sales": 1609461
     },
@@ -72348,7 +72348,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 7,
       "deals_total": 23,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 569527,
       "actual_sales": 962650
     },
@@ -72376,7 +72376,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 3,
       "deals_total": 21,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 410622,
       "actual_sales": 1551286
     },
@@ -72404,7 +72404,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 21,
       "deals_total": 49,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 3146619,
       "actual_sales": 2410278
     },
@@ -72432,7 +72432,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 3,
       "deals_total": 11,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 173604,
       "actual_sales": 202008
     },
@@ -72460,7 +72460,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 21,
       "deals_total": 34,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 3367329,
       "actual_sales": 803327
     },
@@ -72488,7 +72488,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 9,
       "deals_total": 36,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 529740,
       "actual_sales": 3123468
     },
@@ -72516,7 +72516,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 14,
       "deals_total": 53,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 733908,
       "actual_sales": 2163008
     },
@@ -72544,7 +72544,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 30,
       "deals_total": 53,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 4409880,
       "actual_sales": 754488
     },
@@ -72572,7 +72572,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 3,
       "deals_total": 19,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 483594,
       "actual_sales": 1393686
     },
@@ -72600,7 +72600,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 1,
       "deals_total": 20,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 81744,
       "actual_sales": 103574
     },
@@ -72628,7 +72628,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 1,
       "deals_total": 25,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 166735,
       "actual_sales": 693294
     },
@@ -72656,7 +72656,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 0,
       "deals_total": 43,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 0,
       "actual_sales": 2825672
     },
@@ -72684,7 +72684,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 27,
       "deals_total": 63,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 4913298,
       "actual_sales": 898125
     },
@@ -72712,7 +72712,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 29,
       "deals_total": 41,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 5703227,
       "actual_sales": 296102
     },
@@ -72740,7 +72740,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 7,
       "deals_total": 50,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 592305,
       "actual_sales": 2854635
     },
@@ -72768,7 +72768,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 25,
       "deals_total": 52,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 2979125,
       "actual_sales": 75185
     },
@@ -72796,7 +72796,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 13,
       "deals_total": 29,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 2155647,
       "actual_sales": 307460
     },
@@ -72824,7 +72824,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 10,
       "deals_total": 45,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 1751920,
       "actual_sales": 967694
     },
@@ -72852,7 +72852,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 8,
       "deals_total": 67,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1354576,
       "actual_sales": 4327583
     },
@@ -72880,7 +72880,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 26,
       "deals_total": 57,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 3228316,
       "actual_sales": 458304
     },
@@ -72908,7 +72908,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 2,
       "deals_total": 26,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 241930,
       "actual_sales": 801660
     },
@@ -72936,7 +72936,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 30,
       "deals_total": 56,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1672740,
       "actual_sales": 1362615
     },
@@ -72964,7 +72964,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 25,
       "deals_total": 42,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1359100,
       "actual_sales": 1270377
     },
@@ -72992,7 +72992,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 22,
       "deals_total": 55,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1496352,
       "actual_sales": 2743860
     },
@@ -73020,7 +73020,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 26,
       "deals_total": 52,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 2689180,
       "actual_sales": 1371680
     },
@@ -73048,7 +73048,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 18,
       "deals_total": 49,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 3185352,
       "actual_sales": 1278284
     },
@@ -73076,7 +73076,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 26,
       "deals_total": 70,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 4027036,
       "actual_sales": 3243825
     },
@@ -73104,7 +73104,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 25,
       "deals_total": 50,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 4198075,
       "actual_sales": 52309
     },
@@ -73132,7 +73132,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 16,
       "deals_total": 32,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1151824,
       "actual_sales": 684545
     },
@@ -73160,7 +73160,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 10,
       "deals_total": 38,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 1770220,
       "actual_sales": 787728
     },
@@ -73188,7 +73188,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 25,
       "deals_total": 57,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1706225,
       "actual_sales": 886850
     },
@@ -73216,7 +73216,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 9,
       "deals_total": 46,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 1213857,
       "actual_sales": 4150557
     },
@@ -73244,7 +73244,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 26,
       "deals_total": 44,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 1712048,
       "actual_sales": 53204
     },
@@ -73272,7 +73272,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 28,
       "deals_total": 63,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 3975916,
       "actual_sales": 4435734
     },
@@ -73300,7 +73300,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 11,
       "deals_total": 57,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 630399,
       "actual_sales": 3670674
     },
@@ -73328,7 +73328,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 1,
       "deals_total": 23,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 185208,
       "actual_sales": 1576250
     },
@@ -73356,7 +73356,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 21,
       "deals_total": 58,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1202775,
       "actual_sales": 2987225
     },
@@ -73384,7 +73384,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 5330136,
       "actual_sales": 1394328
     },
@@ -73412,7 +73412,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 18,
       "deals_total": 28,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1875312,
       "actual_sales": 478040
     },
@@ -73440,7 +73440,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 6,
       "deals_total": 11,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 822930,
       "actual_sales": 137092
     },
@@ -73468,7 +73468,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 2,
       "deals_total": 19,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 260780,
       "actual_sales": 99833
     },
@@ -73496,7 +73496,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 31,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2016080,
       "actual_sales": 840189
     },
@@ -73524,7 +73524,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 19,
       "deals_total": 38,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2527589,
       "actual_sales": 1694968
     },
@@ -73552,7 +73552,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 17,
       "deals_total": 47,
-      "ratio": 0.07,
+      "ratio": 7,
       "estimated_sales": 2516731,
       "actual_sales": 240426
     },
@@ -73580,7 +73580,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 5,
       "deals_total": 38,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 296910,
       "actual_sales": 1480401
     },
@@ -73608,7 +73608,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 11,
       "deals_total": 34,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 1010735,
       "actual_sales": 501810
     },
@@ -73636,7 +73636,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 13,
       "deals_total": 65,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1361646,
       "actual_sales": 5069550
     },
@@ -73664,7 +73664,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 14,
       "deals_total": 57,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 872438,
       "actual_sales": 2515854
     },
@@ -73692,7 +73692,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 22,
       "deals_total": 46,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1895564,
       "actual_sales": 483707
     },
@@ -73720,7 +73720,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 0,
       "deals_total": 32,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 0,
       "actual_sales": 2316912
     },
@@ -73748,7 +73748,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 9,
       "deals_total": 22,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1514124,
       "actual_sales": 523136
     },
@@ -73776,7 +73776,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 8,
       "deals_total": 14,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 911896,
       "actual_sales": 385568
     },
@@ -73804,7 +73804,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 30,
       "deals_total": 61,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 4484070,
       "actual_sales": 1190340
     },
@@ -73832,7 +73832,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 14,
       "deals_total": 54,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 1675618,
       "actual_sales": 1009448
     },
@@ -73860,7 +73860,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 5,
       "deals_total": 40,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 794280,
       "actual_sales": 3073617
     },
@@ -73888,7 +73888,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 21,
       "deals_total": 44,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 2916648,
       "actual_sales": 182888
     },
@@ -73916,7 +73916,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 16,
       "deals_total": 56,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2740992,
       "actual_sales": 3298844
     },
@@ -73944,7 +73944,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 12,
       "deals_total": 61,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1342500,
       "actual_sales": 1513980
     },
@@ -73972,7 +73972,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 13,
       "deals_total": 30,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 1762696,
       "actual_sales": 109000
     },
@@ -74000,7 +74000,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 7,
       "deals_total": 39,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 731178,
       "actual_sales": 236996
     },
@@ -74028,7 +74028,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 19,
       "deals_total": 43,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1918962,
       "actual_sales": 1895760
     },
@@ -74056,7 +74056,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 1,
       "deals_total": 45,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 114865,
       "actual_sales": 2770978
     },
@@ -74084,7 +74084,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 20,
       "deals_total": 63,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 3352100,
       "actual_sales": 2509360
     },
@@ -74112,7 +74112,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 13,
       "deals_total": 45,
-      "ratio": 0.81,
+      "ratio": 81,
       "estimated_sales": 1465282,
       "actual_sales": 2760576
     },
@@ -74140,7 +74140,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 27,
       "deals_total": 37,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 2557656,
       "actual_sales": 822736
     },
@@ -74168,7 +74168,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 26,
       "deals_total": 76,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 3075592,
       "actual_sales": 1304208
     },
@@ -74196,7 +74196,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 20,
       "deals_total": 50,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2535900,
       "actual_sales": 2063184
     },
@@ -74224,7 +74224,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 7,
       "deals_total": 26,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 543144,
       "actual_sales": 1158354
     },
@@ -74252,7 +74252,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 23,
       "deals_total": 35,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 2946576,
       "actual_sales": 1575153
     },
@@ -74280,7 +74280,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 18,
       "deals_total": 67,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 2607012,
       "actual_sales": 4716870
     },
@@ -74308,7 +74308,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 11,
       "deals_total": 68,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 1726461,
       "actual_sales": 5091184
     },
@@ -74336,7 +74336,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 15,
       "deals_total": 54,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2897715,
       "actual_sales": 1123356
     },
@@ -74364,7 +74364,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 14,
       "deals_total": 51,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2687496,
       "actual_sales": 3843504
     },
@@ -74392,7 +74392,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 5,
       "deals_total": 34,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 852230,
       "actual_sales": 1063410
     },
@@ -74420,7 +74420,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 2,
       "deals_total": 49,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 262296,
       "actual_sales": 2351850
     },
@@ -74448,7 +74448,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 18,
       "deals_total": 57,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 2729466,
       "actual_sales": 1467790
     },
@@ -74476,7 +74476,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 25,
       "deals_total": 59,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 2699125,
       "actual_sales": 1945278
     },
@@ -74504,7 +74504,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 28,
       "deals_total": 54,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 4774336,
       "actual_sales": 956520
     },
@@ -74532,7 +74532,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 22,
       "deals_total": 51,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 4267494,
       "actual_sales": 445851
     },
@@ -74560,7 +74560,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 3,
       "deals_total": 26,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 513798,
       "actual_sales": 2022696
     },
@@ -74588,7 +74588,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 8,
       "deals_total": 64,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1415616,
       "actual_sales": 5148167
     },
@@ -74616,7 +74616,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 27,
       "deals_total": 58,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 2691252,
       "actual_sales": 2333124
     },
@@ -74644,7 +74644,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 17,
       "deals_total": 48,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 896937,
       "actual_sales": 1533584
     },
@@ -74672,7 +74672,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 15,
       "deals_total": 59,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1790010,
       "actual_sales": 4121324
     },
@@ -74700,7 +74700,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 13,
       "deals_total": 55,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 921609,
       "actual_sales": 3407690
     },
@@ -74728,7 +74728,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 22,
       "deals_total": 58,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 3622630,
       "actual_sales": 1497775
     },
@@ -74756,7 +74756,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 5,
       "deals_total": 51,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 997470,
       "actual_sales": 2468655
     },
@@ -74784,7 +74784,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 2,
       "deals_total": 47,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 278504,
       "actual_sales": 2133912
     },
@@ -74812,7 +74812,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 9,
       "deals_total": 62,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1320381,
       "actual_sales": 3140900
     },
@@ -74840,7 +74840,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 23,
       "deals_total": 49,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1300880,
       "actual_sales": 848946
     },
@@ -74868,7 +74868,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 27,
       "deals_total": 36,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 3743712,
       "actual_sales": 969185
     },
@@ -74896,7 +74896,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 28,
       "deals_total": 58,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 2973292,
       "actual_sales": 3652883
     },
@@ -74924,7 +74924,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 1,
       "deals_total": 40,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 64676,
       "actual_sales": 2639208
     },
@@ -74952,7 +74952,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 3,
       "deals_total": 21,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 493779,
       "actual_sales": 1550612
     },
@@ -74980,7 +74980,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 1,
       "deals_total": 42,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 67364,
       "actual_sales": 971115
     },
@@ -75008,7 +75008,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 12,
       "deals_total": 31,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1615548,
       "actual_sales": 860004
     },
@@ -75036,7 +75036,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 19,
       "deals_total": 52,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1119328,
       "actual_sales": 3650033
     },
@@ -75064,7 +75064,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 24,
       "deals_total": 57,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 3571992,
       "actual_sales": 1185512
     },
@@ -75092,7 +75092,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 6,
       "deals_total": 35,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 384600,
       "actual_sales": 737163
     },
@@ -75120,7 +75120,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 24,
       "deals_total": 71,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 4174632,
       "actual_sales": 2816748
     },
@@ -75148,7 +75148,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 7,
       "deals_total": 56,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1342110,
       "actual_sales": 2127684
     },
@@ -75176,7 +75176,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 16,
       "deals_total": 53,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1553136,
       "actual_sales": 2035436
     },
@@ -75204,7 +75204,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 26,
       "deals_total": 58,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 2005744,
       "actual_sales": 396908
     },
@@ -75232,7 +75232,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 15,
       "deals_total": 35,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 1885365,
       "actual_sales": 1230782
     },
@@ -75260,7 +75260,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 20,
       "deals_total": 58,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 1070160,
       "actual_sales": 1170481
     },
@@ -75288,7 +75288,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 23,
       "deals_total": 34,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 4482861,
       "actual_sales": 800984
     },
@@ -75316,7 +75316,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 9,
       "deals_total": 24,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1085949,
       "actual_sales": 521048
     },
@@ -75344,7 +75344,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 23,
       "deals_total": 43,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2844893,
       "actual_sales": 2313996
     },
@@ -75372,7 +75372,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 4,
       "deals_total": 28,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 360016,
       "actual_sales": 337540
     },
@@ -75400,7 +75400,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 10,
       "deals_total": 46,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 913400,
       "actual_sales": 2236220
     },
@@ -75428,7 +75428,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 27,
       "deals_total": 78,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 1513917,
       "actual_sales": 3963372
     },
@@ -75456,7 +75456,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 20,
       "deals_total": 54,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 3296180,
       "actual_sales": 2338098
     },
@@ -75484,7 +75484,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 10,
       "deals_total": 39,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1658840,
       "actual_sales": 760734
     },
@@ -75512,7 +75512,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 18,
       "deals_total": 64,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2925774,
       "actual_sales": 3090441
     },
@@ -75540,7 +75540,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 16,
       "deals_total": 47,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1381360,
       "actual_sales": 909810
     },
@@ -75568,7 +75568,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 41,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 483492,
       "actual_sales": 2530227
     },
@@ -75596,7 +75596,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 25,
       "deals_total": 52,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 3488175,
       "actual_sales": 1012080
     },
@@ -75624,7 +75624,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 13,
       "deals_total": 29,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 1716507,
       "actual_sales": 2163240
     },
@@ -75652,7 +75652,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 16,
       "deals_total": 30,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1368880,
       "actual_sales": 568800
     },
@@ -75708,7 +75708,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 28,
       "deals_total": 65,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1956472,
       "actual_sales": 1719578
     },
@@ -75736,7 +75736,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 24,
       "deals_total": 75,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 3778992,
       "actual_sales": 4591560
     },
@@ -75764,7 +75764,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 24,
       "deals_total": 37,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 3127896,
       "actual_sales": 533615
     },
@@ -75792,7 +75792,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 8,
       "deals_total": 46,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 1219968,
       "actual_sales": 1813656
     },
@@ -75820,7 +75820,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 1,
       "deals_total": 28,
-      "ratio": 0.19,
+      "ratio": 19,
       "estimated_sales": 190583,
       "actual_sales": 923365
     },
@@ -75848,7 +75848,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 10,
       "deals_total": 25,
-      "ratio": 0.87,
+      "ratio": 87,
       "estimated_sales": 565650,
       "actual_sales": 1313377
     },
@@ -75876,7 +75876,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 19,
       "deals_total": 67,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 974358,
       "actual_sales": 1881027
     },
@@ -75904,7 +75904,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 24,
       "deals_total": 56,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1204800,
       "actual_sales": 3147264
     },
@@ -75932,7 +75932,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 23,
       "deals_total": 70,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3822140,
       "actual_sales": 2205950
     },
@@ -75960,7 +75960,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 30,
       "deals_total": 83,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 3660870,
       "actual_sales": 3384342
     },
@@ -75988,7 +75988,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 84,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 4364550,
       "actual_sales": 1649088
     },
@@ -76016,7 +76016,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 8,
       "deals_total": 34,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 926816,
       "actual_sales": 1809150
     },
@@ -76044,7 +76044,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 12,
       "deals_total": 23,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1670772,
       "actual_sales": 554868
     },
@@ -76072,7 +76072,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 7,
       "deals_total": 49,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 711116,
       "actual_sales": 3551020
     },
@@ -76100,7 +76100,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 4,
       "deals_total": 33,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 720424,
       "actual_sales": 905850
     },
@@ -76128,7 +76128,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 66,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 3696672,
       "actual_sales": 1829366
     },
@@ -76156,7 +76156,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 2,
       "deals_total": 46,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 288240,
       "actual_sales": 5034876
     },
@@ -76184,7 +76184,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 10,
       "deals_total": 19,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 942820,
       "actual_sales": 593328
     },
@@ -76212,7 +76212,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 3,
       "deals_total": 54,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 414252,
       "actual_sales": 1819664
     },
@@ -76240,7 +76240,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 30,
       "deals_total": 40,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 5572200,
       "actual_sales": 611200
     },
@@ -76268,7 +76268,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 30,
       "deals_total": 78,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 3000780,
       "actual_sales": 1360296
     },
@@ -76296,7 +76296,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 18,
       "deals_total": 53,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 3235968,
       "actual_sales": 263115
     },
@@ -76324,7 +76324,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 12,
       "deals_total": 47,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 1265112,
       "actual_sales": 1543860
     },
@@ -76352,7 +76352,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 22,
       "deals_total": 64,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 4237310,
       "actual_sales": 3565985
     },
@@ -76380,7 +76380,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 23,
       "deals_total": 38,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2061191,
       "actual_sales": 981197
     },
@@ -76408,7 +76408,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 11,
       "deals_total": 40,
-      "ratio": 0.66,
+      "ratio": 66,
       "estimated_sales": 1757888,
       "actual_sales": 1704433
     },
@@ -76436,7 +76436,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 19,
       "deals_total": 39,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 2582119,
       "actual_sales": 1622796
     },
@@ -76464,7 +76464,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 15,
       "deals_total": 46,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2943345,
       "actual_sales": 3014286
     },
@@ -76492,7 +76492,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 4,
       "deals_total": 25,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 220088,
       "actual_sales": 141988
     },
@@ -76520,7 +76520,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 7,
       "deals_total": 15,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 633759,
       "actual_sales": 471720
     },
@@ -76548,7 +76548,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 27,
       "deals_total": 51,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 4040442,
       "actual_sales": 782290
     },
@@ -76576,7 +76576,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 22,
       "deals_total": 62,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1823998,
       "actual_sales": 3470760
     },
@@ -76604,7 +76604,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 28,
       "deals_total": 61,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2189124,
       "actual_sales": 1101463
     },
@@ -76632,7 +76632,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 3,
       "deals_total": 47,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 599073,
       "actual_sales": 4011903
     },
@@ -76660,7 +76660,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 9,
       "deals_total": 56,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1474677,
       "actual_sales": 2777454
     },
@@ -76688,7 +76688,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 19,
       "deals_total": 43,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 3447911,
       "actual_sales": 1238580
     },
@@ -76716,7 +76716,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 13,
       "deals_total": 44,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 2543983,
       "actual_sales": 2321868
     },
@@ -76744,7 +76744,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 10,
       "deals_total": 41,
-      "ratio": 0.03,
+      "ratio": 3,
       "estimated_sales": 995290,
       "actual_sales": 92669
     },
@@ -76772,7 +76772,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 3,
       "deals_total": 19,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 569187,
       "actual_sales": 736890
     },
@@ -76800,7 +76800,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 4,
       "deals_total": 18,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 443352,
       "actual_sales": 420459
     },
@@ -76828,7 +76828,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 15,
       "deals_total": 55,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 1716750,
       "actual_sales": 3880590
     },
@@ -76856,7 +76856,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 8,
       "deals_total": 47,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1490912,
       "actual_sales": 2062476
     },
@@ -76884,7 +76884,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 6,
       "deals_total": 55,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 416154,
       "actual_sales": 4067896
     },
@@ -76912,7 +76912,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 24,
       "deals_total": 73,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 2247912,
       "actual_sales": 2323636
     },
@@ -76940,7 +76940,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 1,
       "deals_total": 46,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 155628,
       "actual_sales": 1816297
     },
@@ -76968,7 +76968,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 24,
       "deals_total": 45,
-      "ratio": 0.05,
+      "ratio": 5,
       "estimated_sales": 2206800,
       "actual_sales": 193629
     },
@@ -76996,7 +76996,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 9,
       "deals_total": 53,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 906606,
       "actual_sales": 4273304
     },
@@ -77024,7 +77024,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 0,
       "deals_total": 31,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 0,
       "actual_sales": 5450010
     },
@@ -77052,7 +77052,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 28,
       "deals_total": 60,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2512160,
       "actual_sales": 1189650
     },
@@ -77080,7 +77080,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 11,
       "deals_total": 42,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 1554047,
       "actual_sales": 1316965
     },
@@ -77108,7 +77108,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 22,
       "deals_total": 41,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 3484404,
       "actual_sales": 690129
     },
@@ -77136,7 +77136,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 18,
       "deals_total": 50,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 1484478,
       "actual_sales": 2222400
     },
@@ -77164,7 +77164,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 17,
       "deals_total": 26,
-      "ratio": 0.89,
+      "ratio": 89,
       "estimated_sales": 3194691,
       "actual_sales": 1265304
     },
@@ -77192,7 +77192,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 27,
       "deals_total": 63,
-      "ratio": 0.22,
+      "ratio": 22,
       "estimated_sales": 3346029,
       "actual_sales": 1195472
     },
@@ -77220,7 +77220,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 7,
       "deals_total": 50,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 1208634,
       "actual_sales": 2869218
     },
@@ -77248,7 +77248,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 0,
       "deals_total": 51,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 0,
       "actual_sales": 3383401
     },
@@ -77276,7 +77276,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 19,
       "deals_total": 53,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2174873,
       "actual_sales": 2059635
     },
@@ -77304,7 +77304,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 2,
       "deals_total": 40,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 235586,
       "actual_sales": 3401769
     },
@@ -77332,7 +77332,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 1,
       "deals_total": 18,
-      "ratio": 0.06,
+      "ratio": 6,
       "estimated_sales": 65050,
       "actual_sales": 81710
     },
@@ -77360,7 +77360,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 20,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 0,
       "actual_sales": 1452370
     },
@@ -77388,7 +77388,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 4,
       "deals_total": 49,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 768036,
       "actual_sales": 1179549
     },
@@ -77416,7 +77416,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 6,
       "deals_total": 50,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 699816,
       "actual_sales": 5330520
     },
@@ -77444,7 +77444,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 15,
       "deals_total": 66,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1633635,
       "actual_sales": 1605722
     },
@@ -77472,7 +77472,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 8,
       "deals_total": 52,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 979208,
       "actual_sales": 2234544
     },
@@ -77500,7 +77500,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 5,
       "deals_total": 24,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 555415,
       "actual_sales": 1289760
     },
@@ -77528,7 +77528,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 9,
       "deals_total": 61,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 895464,
       "actual_sales": 4792772
     },
@@ -77556,7 +77556,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 10,
       "deals_total": 36,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 1130560,
       "actual_sales": 1947500
     },
@@ -77584,7 +77584,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 5,
       "deals_total": 15,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 389505,
       "actual_sales": 347738
     },
@@ -77612,7 +77612,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 24,
       "deals_total": 48,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 3535872,
       "actual_sales": 1378430
     },
@@ -77640,7 +77640,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 7,
       "deals_total": 57,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 1024632,
       "actual_sales": 4705428
     },
@@ -77668,7 +77668,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 11,
       "deals_total": 47,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 621390,
       "actual_sales": 2419596
     },
@@ -77696,7 +77696,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 3,
       "deals_total": 44,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 432510,
       "actual_sales": 1082856
     },
@@ -77752,7 +77752,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 20,
       "deals_total": 69,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 3419140,
       "actual_sales": 3370972
     },
@@ -77780,7 +77780,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 12,
       "deals_total": 42,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 1753236,
       "actual_sales": 3657258
     },
@@ -77808,7 +77808,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 17,
       "deals_total": 47,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 3279793,
       "actual_sales": 485304
     },
@@ -77836,7 +77836,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 19,
       "deals_total": 51,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 3096411,
       "actual_sales": 1136314
     },
@@ -77864,7 +77864,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 20,
       "deals_total": 67,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 2250120,
       "actual_sales": 1136720
     },
@@ -77892,7 +77892,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 2,
       "deals_total": 58,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 384534,
       "actual_sales": 2217969
     },
@@ -77920,7 +77920,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 16,
       "deals_total": 29,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 3097136,
       "actual_sales": 177452
     },
@@ -77948,7 +77948,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 15,
       "deals_total": 38,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 2538120,
       "actual_sales": 1665750
     },
@@ -77976,7 +77976,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 7,
       "deals_total": 33,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 907704,
       "actual_sales": 4399325
     },
@@ -78004,7 +78004,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 14,
       "deals_total": 53,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 2323356,
       "actual_sales": 1301166
     },
@@ -78032,7 +78032,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 14,
       "deals_total": 63,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1355788,
       "actual_sales": 2074968
     },
@@ -78060,7 +78060,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 2,
       "deals_total": 35,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 193064,
       "actual_sales": 2579962
     },
@@ -78088,7 +78088,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 18,
       "deals_total": 38,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 2637738,
       "actual_sales": 792608
     },
@@ -78116,7 +78116,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 1,
       "deals_total": 28,
-      "ratio": 0.74,
+      "ratio": 74,
       "estimated_sales": 108574,
       "actual_sales": 2189500
     },
@@ -78144,7 +78144,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 25,
       "deals_total": 57,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 3152500,
       "actual_sales": 2426017
     },
@@ -78172,7 +78172,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 18,
       "deals_total": 43,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 2112822,
       "actual_sales": 2720048
     },
@@ -78200,7 +78200,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 21,
       "deals_total": 34,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 2445660,
       "actual_sales": 958610
     },
@@ -78228,7 +78228,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 22,
       "deals_total": 70,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 4070880,
       "actual_sales": 3656775
     },
@@ -78256,7 +78256,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 5,
       "deals_total": 40,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 636165,
       "actual_sales": 3837264
     },
@@ -78284,7 +78284,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 15,
       "deals_total": 19,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2908665,
       "actual_sales": 119592
     },
@@ -78312,7 +78312,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 15,
       "deals_total": 32,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 889425,
       "actual_sales": 1263500
     },
@@ -78340,7 +78340,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 2,
       "deals_total": 33,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 256178,
       "actual_sales": 1928208
     },
@@ -78368,7 +78368,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 8,
       "deals_total": 43,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 718208,
       "actual_sales": 1721610
     },
@@ -78396,7 +78396,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 26,
       "deals_total": 49,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 2639442,
       "actual_sales": 1163346
     },
@@ -78424,7 +78424,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 11,
       "deals_total": 42,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 1682890,
       "actual_sales": 358500
     },
@@ -78452,7 +78452,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 29,
       "deals_total": 72,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 4778736,
       "actual_sales": 4744104
     },
@@ -78480,7 +78480,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 25,
       "deals_total": 49,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 2537925,
       "actual_sales": 2606562
     },
@@ -78508,7 +78508,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 81,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 4932368,
       "actual_sales": 3894294
     },
@@ -78536,7 +78536,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 28,
       "deals_total": 47,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 1765288,
       "actual_sales": 1746592
     },
@@ -78564,7 +78564,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 24,
       "deals_total": 61,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 4227264,
       "actual_sales": 1433860
     },
@@ -78592,7 +78592,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 22,
       "deals_total": 45,
-      "ratio": 0.7,
+      "ratio": 7,
       "estimated_sales": 1195546,
       "actual_sales": 2516064
     },
@@ -78620,7 +78620,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 14,
       "deals_total": 35,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1160866,
       "actual_sales": 1774908
     },
@@ -78648,7 +78648,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 25,
       "deals_total": 44,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 3480375,
       "actual_sales": 487200
     },
@@ -78676,7 +78676,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 16,
       "deals_total": 50,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 2438560,
       "actual_sales": 1088580
     },
@@ -78704,7 +78704,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 12,
       "deals_total": 49,
-      "ratio": 0.3,
+      "ratio": 3,
       "estimated_sales": 987552,
       "actual_sales": 1489444
     },
@@ -78732,7 +78732,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 16,
       "deals_total": 20,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1704640,
       "actual_sales": 149336
     },
@@ -78760,7 +78760,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 30,
       "deals_total": 65,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 4040160,
       "actual_sales": 1217982
     },
@@ -78788,7 +78788,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 26,
       "deals_total": 72,
-      "ratio": 0.43,
+      "ratio": 43,
       "estimated_sales": 3420534,
       "actual_sales": 2523380
     },
@@ -78816,7 +78816,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 24,
       "deals_total": 51,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 2031624,
       "actual_sales": 2648289
     },
@@ -78844,7 +78844,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 9,
       "deals_total": 23,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 1519416,
       "actual_sales": 679590
     },
@@ -78872,7 +78872,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 8,
       "deals_total": 48,
-      "ratio": 0.28,
+      "ratio": 28,
       "estimated_sales": 486056,
       "actual_sales": 1821270
     },
@@ -78900,7 +78900,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 26,
       "deals_total": 60,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 2224976,
       "actual_sales": 1303528
     },
@@ -78928,7 +78928,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 6,
       "deals_total": 56,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 677598,
       "actual_sales": 2916232
     },
@@ -78956,7 +78956,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 10,
       "deals_total": 19,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 790250,
       "actual_sales": 1037071
     },
@@ -78984,7 +78984,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 19,
       "deals_total": 30,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3325836,
       "actual_sales": 402128
     },
@@ -79012,7 +79012,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 18,
       "deals_total": 23,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 2425392,
       "actual_sales": 240864
     },
@@ -79040,7 +79040,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 28,
       "deals_total": 46,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 4398408,
       "actual_sales": 718176
     },
@@ -79068,7 +79068,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 25,
       "deals_total": 45,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2569125,
       "actual_sales": 1257204
     },
@@ -79096,7 +79096,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 13,
       "deals_total": 38,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 2359461,
       "actual_sales": 1125567
     },
@@ -79124,7 +79124,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 2,
       "deals_total": 15,
-      "ratio": 0.92,
+      "ratio": 92,
       "estimated_sales": 206740,
       "actual_sales": 1472292
     },
@@ -79152,7 +79152,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 0,
       "deals_total": 34,
-      "ratio": 0.26,
+      "ratio": 26,
       "estimated_sales": 0,
       "actual_sales": 949941
     },
@@ -79180,7 +79180,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 5,
       "deals_total": 41,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 930055,
       "actual_sales": 1487798
     },
@@ -79208,7 +79208,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 6,
       "deals_total": 29,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 525108,
       "actual_sales": 105812
     },
@@ -79236,7 +79236,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 5,
       "deals_total": 19,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 365740,
       "actual_sales": 1834400
     },
@@ -79264,7 +79264,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 26,
       "deals_total": 68,
-      "ratio": 0.52,
+      "ratio": 52,
       "estimated_sales": 2805608,
       "actual_sales": 3224782
     },
@@ -79292,7 +79292,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 23,
       "deals_total": 64,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 4587879,
       "actual_sales": 3201632
     },
@@ -79320,7 +79320,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 12,
       "deals_total": 32,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 2013336,
       "actual_sales": 1578228
     },
@@ -79348,7 +79348,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 25,
       "deals_total": 69,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 4382675,
       "actual_sales": 1708668
     },
@@ -79376,7 +79376,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 11,
       "deals_total": 54,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2175052,
       "actual_sales": 1799440
     },
@@ -79404,7 +79404,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 20,
       "deals_total": 68,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 3811780,
       "actual_sales": 2619000
     },
@@ -79432,7 +79432,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 9,
       "deals_total": 52,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1262502,
       "actual_sales": 3678075
     },
@@ -79460,7 +79460,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 15,
       "deals_total": 49,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 1286625,
       "actual_sales": 934800
     },
@@ -79488,7 +79488,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 24,
       "deals_total": 48,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2035416,
       "actual_sales": 1196288
     },
@@ -79516,7 +79516,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 7,
       "deals_total": 21,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 705201,
       "actual_sales": 1279733
     },
@@ -79544,7 +79544,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 21,
       "deals_total": 25,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1850625,
       "actual_sales": 312024
     },
@@ -79572,7 +79572,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 15,
       "deals_total": 42,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2536695,
       "actual_sales": 3303810
     },
@@ -79600,7 +79600,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 13,
       "deals_total": 56,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 846222,
       "actual_sales": 1613895
     },
@@ -79628,7 +79628,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 7,
       "deals_total": 44,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 966189,
       "actual_sales": 3075853
     },
@@ -79656,7 +79656,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 4,
       "deals_total": 7,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 494900,
       "actual_sales": 209786
     },
@@ -79684,7 +79684,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 19,
       "deals_total": 50,
-      "ratio": 0.48,
+      "ratio": 48,
       "estimated_sales": 2615103,
       "actual_sales": 1448895
     },
@@ -79712,7 +79712,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 9,
       "deals_total": 51,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 930294,
       "actual_sales": 2002440
     },
@@ -79740,7 +79740,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 0,
       "deals_total": 17,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 0,
       "actual_sales": 1046960
     },
@@ -79768,7 +79768,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 28,
       "deals_total": 54,
-      "ratio": 0.69,
+      "ratio": 69,
       "estimated_sales": 1475040,
       "actual_sales": 3515418
     },
@@ -79796,7 +79796,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 13,
       "deals_total": 45,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1062100,
       "actual_sales": 1117900
     },
@@ -79824,7 +79824,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 22,
       "deals_total": 54,
-      "ratio": 0.75,
+      "ratio": 75,
       "estimated_sales": 1361162,
       "actual_sales": 2942832
     },
@@ -79852,7 +79852,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 11,
       "deals_total": 21,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 554147,
       "actual_sales": 218174
     },
@@ -79880,7 +79880,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 4,
       "deals_total": 19,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 444344,
       "actual_sales": 1494896
     },
@@ -79908,7 +79908,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 7,
       "deals_total": 61,
-      "ratio": 0.46,
+      "ratio": 46,
       "estimated_sales": 366436,
       "actual_sales": 2383175
     },
@@ -79964,7 +79964,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 12,
       "deals_total": 43,
-      "ratio": 0.35,
+      "ratio": 35,
       "estimated_sales": 1490796,
       "actual_sales": 1277265
     },
@@ -79992,7 +79992,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 19,
       "deals_total": 38,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 3434668,
       "actual_sales": 2393790
     },
@@ -80020,7 +80020,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 21,
       "deals_total": 38,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2581236,
       "actual_sales": 1763088
     },
@@ -80048,7 +80048,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 0,
       "deals_total": 13,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 0,
       "actual_sales": 1023664
     },
@@ -80076,7 +80076,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 18,
       "deals_total": 58,
-      "ratio": 0.63,
+      "ratio": 63,
       "estimated_sales": 1892394,
       "actual_sales": 3165025
     },
@@ -80104,7 +80104,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 13,
       "deals_total": 60,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 1661647,
       "actual_sales": 1978758
     },
@@ -80132,7 +80132,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 27,
       "deals_total": 54,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 4991922,
       "actual_sales": 1052370
     },
@@ -80160,7 +80160,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 3,
       "deals_total": 24,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 315348,
       "actual_sales": 628560
     },
@@ -80188,7 +80188,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 2,
       "deals_total": 59,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 310562,
       "actual_sales": 1507680
     },
@@ -80216,7 +80216,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 28,
       "deals_total": 56,
-      "ratio": 0.14,
+      "ratio": 14,
       "estimated_sales": 3382820,
       "actual_sales": 695204
     },
@@ -80244,7 +80244,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 10,
       "deals_total": 32,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 523420,
       "actual_sales": 558290
     },
@@ -80272,7 +80272,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 5,
       "deals_total": 62,
-      "ratio": 0.53,
+      "ratio": 53,
       "estimated_sales": 424895,
       "actual_sales": 3172350
     },
@@ -80300,7 +80300,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 17,
       "deals_total": 35,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1565275,
       "actual_sales": 1740750
     },
@@ -80328,7 +80328,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 0,
       "deals_total": 29,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 0,
       "actual_sales": 3120384
     },
@@ -80356,7 +80356,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 24,
       "deals_total": 54,
-      "ratio": 0.93,
+      "ratio": 93,
       "estimated_sales": 1367832,
       "actual_sales": 4120592
     },
@@ -80384,7 +80384,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 4,
       "deals_total": 18,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 570344,
       "actual_sales": 682780
     },
@@ -80412,7 +80412,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 12,
       "deals_total": 34,
-      "ratio": 0.59,
+      "ratio": 59,
       "estimated_sales": 2179836,
       "actual_sales": 1666288
     },
@@ -80440,7 +80440,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 20,
       "deals_total": 46,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2703900,
       "actual_sales": 1193855
     },
@@ -80468,7 +80468,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 6,
       "deals_total": 42,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 763236,
       "actual_sales": 2743041
     },
@@ -80496,7 +80496,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 9,
       "deals_total": 38,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1475109,
       "actual_sales": 1689727
     },
@@ -80524,7 +80524,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 15,
       "deals_total": 56,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 1987215,
       "actual_sales": 2451984
     },
@@ -80552,7 +80552,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 1,
       "deals_total": 41,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 113900,
       "actual_sales": 1627940
     },
@@ -80580,7 +80580,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 28,
       "deals_total": 54,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 1971088,
       "actual_sales": 69970
     },
@@ -80608,7 +80608,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 29,
       "deals_total": 70,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2741283,
       "actual_sales": 5256975
     },
@@ -80636,7 +80636,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 15,
       "deals_total": 35,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 2001645,
       "actual_sales": 1158944
     },
@@ -80664,7 +80664,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 2,
       "deals_total": 17,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 149576,
       "actual_sales": 1026096
     },
@@ -80692,7 +80692,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 18,
       "deals_total": 44,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1802070,
       "actual_sales": 596001
     },
@@ -80720,7 +80720,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 5,
       "deals_total": 59,
-      "ratio": 0.54,
+      "ratio": 54,
       "estimated_sales": 723445,
       "actual_sales": 2849105
     },
@@ -80748,7 +80748,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 4,
       "deals_total": 18,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 699676,
       "actual_sales": 311588
     },
@@ -80776,7 +80776,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 23,
       "deals_total": 52,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 1221944,
       "actual_sales": 1964752
     },
@@ -80804,7 +80804,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 7,
       "deals_total": 34,
-      "ratio": 0.44,
+      "ratio": 44,
       "estimated_sales": 829066,
       "actual_sales": 2156916
     },
@@ -80832,7 +80832,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 8,
       "deals_total": 53,
-      "ratio": 0.6,
+      "ratio": 6,
       "estimated_sales": 1105400,
       "actual_sales": 2635983
     },
@@ -80860,7 +80860,7 @@ export const data: any[] = [
       "deals_lost": 7,
       "deals_pending": 9,
       "deals_total": 40,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 482184,
       "actual_sales": 3977808
     },
@@ -80888,7 +80888,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 27,
       "deals_total": 65,
-      "ratio": 0.61,
+      "ratio": 61,
       "estimated_sales": 1826199,
       "actual_sales": 1156072
     },
@@ -80916,7 +80916,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 25,
       "deals_total": 70,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 1645800,
       "actual_sales": 1439024
     },
@@ -80944,7 +80944,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 15,
       "deals_total": 42,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 2848425,
       "actual_sales": 2931624
     },
@@ -80972,7 +80972,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 5,
       "deals_total": 47,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 732005,
       "actual_sales": 2104570
     },
@@ -81000,7 +81000,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 1,
       "deals_total": 32,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 118954,
       "actual_sales": 3607760
     },
@@ -81028,7 +81028,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 13,
       "deals_total": 19,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 1221987,
       "actual_sales": 343896
     },
@@ -81056,7 +81056,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 28,
       "deals_total": 75,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 5385268,
       "actual_sales": 3624270
     },
@@ -81084,7 +81084,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 4,
       "deals_total": 43,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 418464,
       "actual_sales": 2082480
     },
@@ -81112,7 +81112,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 22,
       "deals_total": 67,
-      "ratio": 0.47,
+      "ratio": 47,
       "estimated_sales": 2691612,
       "actual_sales": 2593542
     },
@@ -81140,7 +81140,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 3,
       "deals_total": 35,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 319500,
       "actual_sales": 5137580
     },
@@ -81168,7 +81168,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 19,
       "deals_total": 64,
-      "ratio": 0.36,
+      "ratio": 36,
       "estimated_sales": 3042109,
       "actual_sales": 1313648
     },
@@ -81196,7 +81196,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 14,
       "deals_total": 19,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 1439718,
       "actual_sales": 318270
     },
@@ -81224,7 +81224,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 16,
       "deals_total": 29,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 1916624,
       "actual_sales": 566192
     },
@@ -81252,7 +81252,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 1,
       "deals_total": 34,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 117065,
       "actual_sales": 1947240
     },
@@ -81280,7 +81280,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 24,
       "deals_total": 55,
-      "ratio": 0.94,
+      "ratio": 94,
       "estimated_sales": 1538016,
       "actual_sales": 4912832
     },
@@ -81308,7 +81308,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 9,
       "deals_total": 59,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 1681092,
       "actual_sales": 2730060
     },
@@ -81336,7 +81336,7 @@ export const data: any[] = [
       "deals_lost": 5,
       "deals_pending": 27,
       "deals_total": 59,
-      "ratio": 0.84,
+      "ratio": 84,
       "estimated_sales": 2724057,
       "actual_sales": 4714281
     },
@@ -81364,7 +81364,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 18,
       "deals_total": 51,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 2673450,
       "actual_sales": 392344
     },
@@ -81392,7 +81392,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 30,
       "deals_total": 83,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 3325470,
       "actual_sales": 5897760
     },
@@ -81420,7 +81420,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 27,
       "deals_total": 66,
-      "ratio": 0.72,
+      "ratio": 72,
       "estimated_sales": 1914867,
       "actual_sales": 5005644
     },
@@ -81448,7 +81448,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 29,
       "deals_total": 62,
-      "ratio": 0.67,
+      "ratio": 67,
       "estimated_sales": 3347934,
       "actual_sales": 1117248
     },
@@ -81476,7 +81476,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 29,
       "deals_total": 49,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 5479985,
       "actual_sales": 2038266
     },
@@ -81504,7 +81504,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 3,
       "deals_total": 31,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 262095,
       "actual_sales": 1323864
     },
@@ -81532,7 +81532,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 12,
       "deals_total": 36,
-      "ratio": 0.04,
+      "ratio": 4,
       "estimated_sales": 1386828,
       "actual_sales": 151055
     },
@@ -81560,7 +81560,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 6,
       "deals_total": 58,
-      "ratio": 0.56,
+      "ratio": 56,
       "estimated_sales": 941214,
       "actual_sales": 2904060
     },
@@ -81588,7 +81588,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 2,
       "deals_total": 31,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 365642,
       "actual_sales": 231963
     },
@@ -81616,7 +81616,7 @@ export const data: any[] = [
       "deals_lost": 23,
       "deals_pending": 5,
       "deals_total": 31,
-      "ratio": 0.12,
+      "ratio": 12,
       "estimated_sales": 524100,
       "actual_sales": 540054
     },
@@ -81644,7 +81644,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 30,
       "deals_total": 54,
-      "ratio": 0.17,
+      "ratio": 17,
       "estimated_sales": 1898790,
       "actual_sales": 437276
     },
@@ -81672,7 +81672,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 27,
       "deals_total": 48,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 4795983,
       "actual_sales": 286040
     },
@@ -81700,7 +81700,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 13,
       "deals_total": 40,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 671138,
       "actual_sales": 1843017
     },
@@ -81728,7 +81728,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 16,
       "deals_total": 48,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2478320,
       "actual_sales": 2278464
     },
@@ -81756,7 +81756,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 28,
       "deals_total": 61,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 5258316,
       "actual_sales": 3723426
     },
@@ -81784,7 +81784,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 23,
       "deals_total": 65,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 2856324,
       "actual_sales": 1970024
     },
@@ -81812,7 +81812,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 15,
       "deals_total": 37,
-      "ratio": 0.95,
+      "ratio": 95,
       "estimated_sales": 1516440,
       "actual_sales": 3695895
     },
@@ -81840,7 +81840,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 13,
       "deals_total": 40,
-      "ratio": 0.85,
+      "ratio": 85,
       "estimated_sales": 1061645,
       "actual_sales": 2648335
     },
@@ -81896,7 +81896,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 14,
       "deals_total": 25,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 1203244,
       "actual_sales": 280359
     },
@@ -81924,7 +81924,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 30,
       "deals_total": 62,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 3345750,
       "actual_sales": 1786598
     },
@@ -81952,7 +81952,7 @@ export const data: any[] = [
       "deals_lost": 30,
       "deals_pending": 18,
       "deals_total": 73,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1647882,
       "actual_sales": 4357825
     },
@@ -81980,7 +81980,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 18,
       "deals_total": 34,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 1487052,
       "actual_sales": 529860
     },
@@ -82008,7 +82008,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 20,
       "deals_total": 36,
-      "ratio": 0.13,
+      "ratio": 13,
       "estimated_sales": 3176220,
       "actual_sales": 257368
     },
@@ -82036,7 +82036,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 1,
       "deals_total": 35,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 118749,
       "actual_sales": 1390294
     },
@@ -82064,7 +82064,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 5,
       "deals_total": 29,
-      "ratio": 0.42,
+      "ratio": 42,
       "estimated_sales": 923100,
       "actual_sales": 863150
     },
@@ -82120,7 +82120,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 21,
       "deals_total": 45,
-      "ratio": 0.08,
+      "ratio": 8,
       "estimated_sales": 1989897,
       "actual_sales": 359986
     },
@@ -82148,7 +82148,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 0,
       "deals_total": 28,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 0,
       "actual_sales": 2072882
     },
@@ -82176,7 +82176,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 28,
       "deals_total": 47,
-      "ratio": 0.11,
+      "ratio": 11,
       "estimated_sales": 3396092,
       "actual_sales": 292944
     },
@@ -82204,7 +82204,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 24,
       "deals_total": 45,
-      "ratio": 0.1,
+      "ratio": 1,
       "estimated_sales": 4485480,
       "actual_sales": 251748
     },
@@ -82232,7 +82232,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 19,
       "deals_total": 28,
-      "ratio": 0.33,
+      "ratio": 33,
       "estimated_sales": 1244519,
       "actual_sales": 411786
     },
@@ -82260,7 +82260,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 8,
       "deals_total": 37,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 533040,
       "actual_sales": 1814550
     },
@@ -82288,7 +82288,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 26,
       "deals_total": 68,
-      "ratio": 0.31,
+      "ratio": 31,
       "estimated_sales": 2679768,
       "actual_sales": 1326169
     },
@@ -82316,7 +82316,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 22,
       "deals_total": 63,
-      "ratio": 0.71,
+      "ratio": 71,
       "estimated_sales": 2184248,
       "actual_sales": 4453936
     },
@@ -82344,7 +82344,7 @@ export const data: any[] = [
       "deals_lost": 14,
       "deals_pending": 20,
       "deals_total": 64,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 1414820,
       "actual_sales": 5326110
     },
@@ -82372,7 +82372,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 22,
       "deals_total": 32,
-      "ratio": 0.2,
+      "ratio": 2,
       "estimated_sales": 1734590,
       "actual_sales": 250270
     },
@@ -82400,7 +82400,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 28,
       "deals_total": 42,
-      "ratio": 0.29,
+      "ratio": 29,
       "estimated_sales": 4346300,
       "actual_sales": 484688
     },
@@ -82428,7 +82428,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 29,
       "deals_total": 81,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 3110453,
       "actual_sales": 4275150
     },
@@ -82484,7 +82484,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 27,
       "deals_total": 55,
-      "ratio": 0.25,
+      "ratio": 25,
       "estimated_sales": 2726487,
       "actual_sales": 845642
     },
@@ -82512,7 +82512,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 27,
       "deals_total": 37,
-      "ratio": 0.9,
+      "ratio": 9,
       "estimated_sales": 3398355,
       "actual_sales": 1510920
     },
@@ -82540,7 +82540,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 11,
       "deals_total": 64,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1071169,
       "actual_sales": 3174792
     },
@@ -82568,7 +82568,7 @@ export const data: any[] = [
       "deals_lost": 12,
       "deals_pending": 1,
       "deals_total": 20,
-      "ratio": 0.37,
+      "ratio": 37,
       "estimated_sales": 159320,
       "actual_sales": 1127392
     },
@@ -82596,7 +82596,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 22,
       "deals_total": 54,
-      "ratio": 0.91,
+      "ratio": 91,
       "estimated_sales": 4357386,
       "actual_sales": 3962502
     },
@@ -82624,7 +82624,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 12,
       "deals_total": 47,
-      "ratio": 0.83,
+      "ratio": 83,
       "estimated_sales": 2097732,
       "actual_sales": 2863431
     },
@@ -82652,7 +82652,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 2,
       "deals_total": 16,
-      "ratio": 0.79,
+      "ratio": 79,
       "estimated_sales": 105124,
       "actual_sales": 659604
     },
@@ -82680,7 +82680,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 23,
       "deals_total": 69,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 2815545,
       "actual_sales": 2354043
     },
@@ -82708,7 +82708,7 @@ export const data: any[] = [
       "deals_lost": 1,
       "deals_pending": 4,
       "deals_total": 33,
-      "ratio": 0.97,
+      "ratio": 97,
       "estimated_sales": 407480,
       "actual_sales": 3233188
     },
@@ -82736,7 +82736,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 1,
       "deals_total": 27,
-      "ratio": 0.77,
+      "ratio": 77,
       "estimated_sales": 185077,
       "actual_sales": 3489880
     },
@@ -82764,7 +82764,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 1,
       "deals_total": 49,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 147002,
       "actual_sales": 1852368
     },
@@ -82792,7 +82792,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 8,
       "deals_total": 41,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 1270328,
       "actual_sales": 721482
     },
@@ -82820,7 +82820,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 25,
       "deals_total": 35,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 3119425,
       "actual_sales": 234332
     },
@@ -82848,7 +82848,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 0,
       "deals_total": 11,
-      "ratio": 0.09,
+      "ratio": 9,
       "estimated_sales": 0,
       "actual_sales": 174726
     },
@@ -82876,7 +82876,7 @@ export const data: any[] = [
       "deals_lost": 6,
       "deals_pending": 13,
       "deals_total": 23,
-      "ratio": 0.4,
+      "ratio": 4,
       "estimated_sales": 2588300,
       "actual_sales": 691964
     },
@@ -82904,7 +82904,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 2,
       "deals_total": 37,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 207096,
       "actual_sales": 2624958
     },
@@ -82932,7 +82932,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 4,
       "deals_total": 30,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 549988,
       "actual_sales": 3116416
     },
@@ -82960,7 +82960,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 9,
       "deals_total": 29,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1000620,
       "actual_sales": 818298
     },
@@ -82988,7 +82988,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 17,
       "deals_total": 36,
-      "ratio": 0.05,
+      "ratio": 5,
       "estimated_sales": 3306262,
       "actual_sales": 172040
     },
@@ -83016,7 +83016,7 @@ export const data: any[] = [
       "deals_lost": 2,
       "deals_pending": 29,
       "deals_total": 39,
-      "ratio": 0.8,
+      "ratio": 8,
       "estimated_sales": 1907997,
       "actual_sales": 414600
     },
@@ -83044,7 +83044,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 29,
       "deals_total": 67,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 1657872,
       "actual_sales": 5402990
     },
@@ -83072,7 +83072,7 @@ export const data: any[] = [
       "deals_lost": 17,
       "deals_pending": 25,
       "deals_total": 63,
-      "ratio": 0.55,
+      "ratio": 55,
       "estimated_sales": 4761600,
       "actual_sales": 2427684
     },
@@ -83100,7 +83100,7 @@ export const data: any[] = [
       "deals_lost": 16,
       "deals_pending": 22,
       "deals_total": 51,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1795134,
       "actual_sales": 1408784
     },
@@ -83128,7 +83128,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 16,
       "deals_total": 53,
-      "ratio": 0.78,
+      "ratio": 78,
       "estimated_sales": 1564192,
       "actual_sales": 4783608
     },
@@ -83156,7 +83156,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 25,
       "deals_total": 64,
-      "ratio": 0.51,
+      "ratio": 51,
       "estimated_sales": 3900300,
       "actual_sales": 2699720
     },
@@ -83184,7 +83184,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 8,
       "deals_total": 38,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 1524992,
       "actual_sales": 1985634
     },
@@ -83212,7 +83212,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 24,
       "deals_total": 61,
-      "ratio": 0.49,
+      "ratio": 49,
       "estimated_sales": 3598680,
       "actual_sales": 3393738
     },
@@ -83240,7 +83240,7 @@ export const data: any[] = [
       "deals_lost": 19,
       "deals_pending": 28,
       "deals_total": 73,
-      "ratio": 0.58,
+      "ratio": 58,
       "estimated_sales": 5039048,
       "actual_sales": 1455272
     },
@@ -83268,7 +83268,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 8,
       "deals_total": 21,
-      "ratio": 0.23,
+      "ratio": 23,
       "estimated_sales": 1106064,
       "actual_sales": 411708
     },
@@ -83296,7 +83296,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 29,
       "deals_total": 51,
-      "ratio": 0.64,
+      "ratio": 64,
       "estimated_sales": 4055418,
       "actual_sales": 1364118
     },
@@ -83324,7 +83324,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 5,
       "deals_total": 45,
-      "ratio": 0.68,
+      "ratio": 68,
       "estimated_sales": 715635,
       "actual_sales": 5092713
     },
@@ -83352,7 +83352,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 10,
       "deals_total": 48,
-      "ratio": 0.34,
+      "ratio": 34,
       "estimated_sales": 627700,
       "actual_sales": 662103
     },
@@ -83380,7 +83380,7 @@ export const data: any[] = [
       "deals_lost": 20,
       "deals_pending": 22,
       "deals_total": 56,
-      "ratio": 0.41,
+      "ratio": 41,
       "estimated_sales": 2363658,
       "actual_sales": 1270136
     },
@@ -83408,7 +83408,7 @@ export const data: any[] = [
       "deals_lost": 18,
       "deals_pending": 22,
       "deals_total": 44,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 2196832,
       "actual_sales": 635088
     },
@@ -83436,7 +83436,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 30,
       "deals_total": 61,
-      "ratio": 0.16,
+      "ratio": 16,
       "estimated_sales": 1955550,
       "actual_sales": 971040
     },
@@ -83464,7 +83464,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 18,
       "deals_total": 56,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 3464982,
       "actual_sales": 2063018
     },
@@ -83492,7 +83492,7 @@ export const data: any[] = [
       "deals_lost": 26,
       "deals_pending": 27,
       "deals_total": 65,
-      "ratio": 0.32,
+      "ratio": 32,
       "estimated_sales": 3053079,
       "actual_sales": 1831788
     },
@@ -83520,7 +83520,7 @@ export const data: any[] = [
       "deals_lost": 4,
       "deals_pending": 2,
       "deals_total": 17,
-      "ratio": 0.73,
+      "ratio": 73,
       "estimated_sales": 258764,
       "actual_sales": 1325555
     },
@@ -83548,7 +83548,7 @@ export const data: any[] = [
       "deals_lost": 22,
       "deals_pending": 10,
       "deals_total": 39,
-      "ratio": 0.24,
+      "ratio": 24,
       "estimated_sales": 1823080,
       "actual_sales": 1046976
     },
@@ -83576,7 +83576,7 @@ export const data: any[] = [
       "deals_lost": 21,
       "deals_pending": 4,
       "deals_total": 53,
-      "ratio": 0.57,
+      "ratio": 57,
       "estimated_sales": 454840,
       "actual_sales": 3434760
     },
@@ -83604,7 +83604,7 @@ export const data: any[] = [
       "deals_lost": 13,
       "deals_pending": 30,
       "deals_total": 64,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 4751070,
       "actual_sales": 1109955
     },
@@ -83632,7 +83632,7 @@ export const data: any[] = [
       "deals_lost": 29,
       "deals_pending": 14,
       "deals_total": 48,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 2135560,
       "actual_sales": 907040
     },
@@ -83660,7 +83660,7 @@ export const data: any[] = [
       "deals_lost": 10,
       "deals_pending": 23,
       "deals_total": 49,
-      "ratio": 0.62,
+      "ratio": 62,
       "estimated_sales": 2259635,
       "actual_sales": 1327488
     },
@@ -83688,7 +83688,7 @@ export const data: any[] = [
       "deals_lost": 24,
       "deals_pending": 30,
       "deals_total": 69,
-      "ratio": 0.38,
+      "ratio": 38,
       "estimated_sales": 3910050,
       "actual_sales": 2230575
     },
@@ -83716,7 +83716,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 17,
       "deals_total": 43,
-      "ratio": 0.88,
+      "ratio": 88,
       "estimated_sales": 927265,
       "actual_sales": 2331027
     },
@@ -83744,7 +83744,7 @@ export const data: any[] = [
       "deals_lost": 27,
       "deals_pending": 12,
       "deals_total": 45,
-      "ratio": 0.18,
+      "ratio": 18,
       "estimated_sales": 2267580,
       "actual_sales": 697458
     },
@@ -83772,7 +83772,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 28,
       "deals_total": 48,
-      "ratio": 0.45,
+      "ratio": 45,
       "estimated_sales": 1777832,
       "actual_sales": 1148373
     },
@@ -83800,7 +83800,7 @@ export const data: any[] = [
       "deals_lost": 15,
       "deals_pending": 1,
       "deals_total": 20,
-      "ratio": 0.21,
+      "ratio": 21,
       "estimated_sales": 95017,
       "actual_sales": 220792
     },
@@ -83828,7 +83828,7 @@ export const data: any[] = [
       "deals_lost": 25,
       "deals_pending": 21,
       "deals_total": 71,
-      "ratio": 0.5,
+      "ratio": 5,
       "estimated_sales": 2481423,
       "actual_sales": 4127250
     },
@@ -83856,7 +83856,7 @@ export const data: any[] = [
       "deals_lost": 3,
       "deals_pending": 30,
       "deals_total": 52,
-      "ratio": 0.86,
+      "ratio": 86,
       "estimated_sales": 4237470,
       "actual_sales": 1061207
     },
@@ -83884,7 +83884,7 @@ export const data: any[] = [
       "deals_lost": 11,
       "deals_pending": 15,
       "deals_total": 30,
-      "ratio": 0.27,
+      "ratio": 27,
       "estimated_sales": 2139045,
       "actual_sales": 613492
     },
@@ -83912,7 +83912,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 14,
       "deals_total": 47,
-      "ratio": 0.15,
+      "ratio": 15,
       "estimated_sales": 2147306,
       "actual_sales": 875535
     },
@@ -83940,7 +83940,7 @@ export const data: any[] = [
       "deals_lost": 8,
       "deals_pending": 15,
       "deals_total": 48,
-      "ratio": 0.76,
+      "ratio": 76,
       "estimated_sales": 2812845,
       "actual_sales": 3295300
     },
@@ -83968,7 +83968,7 @@ export const data: any[] = [
       "deals_lost": 9,
       "deals_pending": 28,
       "deals_total": 54,
-      "ratio": 0.65,
+      "ratio": 65,
       "estimated_sales": 4536672,
       "actual_sales": 1524866
     },
@@ -83996,7 +83996,7 @@ export const data: any[] = [
       "deals_lost": 28,
       "deals_pending": 0,
       "deals_total": 46,
-      "ratio": 0.39,
+      "ratio": 39,
       "estimated_sales": 0,
       "actual_sales": 2643930
     }
