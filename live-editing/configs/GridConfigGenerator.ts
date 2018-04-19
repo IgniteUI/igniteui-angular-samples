@@ -4,6 +4,7 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 import { FinancialSampleComponent } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
+import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -17,8 +18,7 @@ import {
     IgxInputGroupModule,
     IgxProgressBarModule,
     IgxRippleModule,
-    IgxSwitchModule,
-    IgxInputDirective
+    IgxSwitchModule
 } from "igniteui-angular/main";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
@@ -107,6 +107,21 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [LocalService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCRMComponent,
+            additionalFiles: ["/src/app/grid/grid-crm/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, GridCRMComponent],
+                ngDeclarations: [GridCRMComponent],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngProviders: []
             })
         }));
 
