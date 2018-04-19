@@ -1,6 +1,6 @@
 # Live Editing Documentation
 
-This feature helps us provide each sample as a separate application to external consumers.
+This feature helps us to provide each sample as a separate application to external consumers.
 
 ## Configurations
 
@@ -31,7 +31,7 @@ API description of the `Config` class, needed by the live editing engine to conv
 | appModuleConfig | AppModuleConfig | required | Description of the `app.module.ts` file. |
 | additionalFiles | string[] | optional | Additional files, besides the three sample component files. Each path should start from `/src/`, for example `/src/app/grid/data.ts`. |
 | packageDependencies | string[] | optional | A list of dependencies to be used instead of the default ones. |
-| shortenComponentPathBy | string | optional | Directory/directories to be removed from the application. |
+| shortenComponentPathBy | string | optional | Directory/directories to be shortened from the sample component path. |
 
 
 ### AppModuleConfig API
