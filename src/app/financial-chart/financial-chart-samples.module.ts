@@ -10,9 +10,9 @@ import {
     FinancialChartCustomIndicatorsComponent
 } from "./custom-indicators/financial-chart-custom-indicators.component";
 import { FinancialChartCustomTooltipsComponent } from "./custom-tooltips/financial-chart-custom-tooltips.component";
-import { FinancialChartIndicatorTypesComponent } from "./indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartHighFrequencyComponent } from "./high-frequency/financial-chart-high-frequency.component";
 import { FinancialChartHighVolumeComponent } from "./high-volume/financial-chart-high-volume.component";
+import { FinancialChartIndicatorTypesComponent } from "./indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartMultipleDataComponent } from "./multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
 import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
