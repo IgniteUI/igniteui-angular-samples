@@ -53,14 +53,6 @@ $progressBar-sample-theme: igx-progress-linear-theme(
   margin:0 rem(20px) 0 0;
 }
 
-.sample__header {
-  display: flex;
-  align-self: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: rem(20px);
-}
-
 .switch-sample {
   display: flex;
   flex-flow: row nowrap;
@@ -105,8 +97,9 @@ $progressBar-sample-theme: igx-progress-linear-theme(
   padding-left: rem(23px);
 }
 
-.flag {
-  width: rem(24px);
+.subscr {
+  width: rem(15px);
+  height: rem(15px);
 }
 
 .rowIndex {
@@ -118,8 +111,4 @@ $progressBar-sample-theme: igx-progress-linear-theme(
   .grid__wrapper {
     width: rem(960px);
   }
-}
-
-.igx-paginator>* {
-    margin: 0 .3125rem;
 }

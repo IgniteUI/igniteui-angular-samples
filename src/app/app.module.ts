@@ -31,6 +31,7 @@ import {
     IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    IgxTabsModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
@@ -98,9 +99,12 @@ import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/s
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
+import { GridContextmenuComponent } from "./grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
+import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -152,6 +156,9 @@ import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
+import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
+import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
+import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -215,6 +222,9 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         TabbarComponent,
         TabbarSample1Component,
         TabbarSample2Component,
+        TabsSample1Component,
+        TabsSample2Component,
+        TabsSample3Component,
         NavbarComponent,
         NavbarSample1Component,
         SliderSample1Component,
@@ -234,6 +244,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         ButtonsSample7Component,
         FilteringSampleComponent,
         PagingSampleComponent,
+        ResizingSampleComponent,
         SwitchSample1Component,
         SwitchSample2Component,
         RadioSample1Component,
@@ -292,7 +303,9 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         ExcelExportComponent,
         ExcelExportSample1Component,
         CsvExportComponent,
-        CsvExportSample1Component
+        CsvExportSample1Component,
+        SortingSampleComponent,
+        GridContextmenuComponent
     ],
     imports: [
         AppRoutingModule,
@@ -324,6 +337,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         IgxToastModule,
         IgxSliderModule,
         IgxBottomNavModule,
+        IgxTabsModule,
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,

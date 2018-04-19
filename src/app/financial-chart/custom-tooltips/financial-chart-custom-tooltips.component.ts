@@ -10,9 +10,7 @@ import { FinancialDataService } from "../services/financial-data.service";
 })
 export class FinancialChartCustomTooltipsComponent {
     public data: any;
-    public hello: string;
     constructor(private dataService: FinancialDataService) {
         this.data = this.dataService.getGoog();
-        this.hello = "YO";
     }
 }
