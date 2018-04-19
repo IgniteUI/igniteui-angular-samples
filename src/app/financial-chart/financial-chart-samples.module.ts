@@ -20,6 +20,7 @@ import { FinancialChartPerformanceComponent } from "./performance/financial-char
 import { FinancialDataService } from "./services/financial-data.service";
 import { StockDataService } from "./services/stock-data.service";
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
+import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart
         FinancialChartCustomIndicatorsComponent,
         FinancialChartHighVolumeComponent,
         FinancialChartHighFrequencyComponent,
-        FinancialChartAxisTypesComponent
+        FinancialChartAxisTypesComponent,
+        FinancialChartTrendlinesComponent
     ],
     exports: [
     ],

@@ -82,12 +82,21 @@ import {
 import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
-import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
-import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
+import {
+    FinancialChartOverviewComponent
+} from "./financial-chart/overview/financial-chart-overview-sample.component";
+import {
+    FinancialChartPanesComponent
+} from "./financial-chart/panes/financial-chart-panes.component";
 import {
     FinancialChartPerformanceComponent
 } from "./financial-chart/performance/financial-chart-performance.component";
-import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTitlesComponent
+} from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTrendlinesComponent
+} from "./financial-chart/trendlines/financial-chart-trendlines.component";
 import {
     FinancialChartVolumeTypeComponent
 } from "./financial-chart/volume-type/financial-chart-volume-type.component";
@@ -729,6 +738,10 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartAxisTypesComponent,
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTrendlinesComponent,
+        path: "financial-chart-trendlines"
     },
     {
         component: SortingSampleComponent,
