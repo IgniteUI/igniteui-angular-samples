@@ -33,12 +33,20 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import {
+    CategoryChartAxisOptionsComponent
+} from "./category-chart/axis-options/category-chart-axis-options-sample.component";
+import {
+    CategoryChartConfigOptionsComponent
+} from "./category-chart/config-options/category-chart-config-options-sample.component";
+import {
     CategoryChartHighFrequencyComponent
 } from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
     CategoryChartHighVolumeComponent
 } from "./category-chart/high-volume/category-chart-high-volume-sample.component";
-import { CategoryChartOverviewComponent } from "./category-chart/overview/category-chart-overview-sample.component";
+import {
+    CategoryChartOverviewComponent
+} from "./category-chart/overview/category-chart-overview-sample.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -644,6 +652,14 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartHighFrequencyComponent,
         path: "category-chart-high-frequency-sample"
+    },
+    {
+        component: CategoryChartAxisOptionsComponent,
+        path: "category-chart-axis-options-sample"
+    },
+    {
+        component: CategoryChartConfigOptionsComponent,
+        path: "category-chart-config-options-sample"
     },
     {
         component: FinancialChartPerformanceComponent,
