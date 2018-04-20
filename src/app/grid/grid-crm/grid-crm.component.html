@@ -33,10 +33,10 @@
         </div>
     
         <igx-grid #grid1 [data]="localData" height="697" width="100%" rowSelectable="true">
-            <igx-column field="id" header="Customer Number" filterable="true" width="180" pinned="true" hasSummary="true">
+            <igx-column field="id" header="Customer Number" filterable="true" width="180" pinned="true" hasSummary="true" resizable="true">
             </igx-column>
     
-            <igx-column field="avatar" header="Photo" width="88" pinned="true">
+            <igx-column field="avatar" header="Photo" width="88" pinned="true" resizable="true">
                 <ng-template igxCell let-cell="cell">
                     <div class="cell__inner">
                         <igx-avatar [src]="cell.row.rowData.avatar" roundShape="true" size="small"></igx-avatar>
@@ -44,82 +44,82 @@
                 </ng-template>
             </igx-column>
     
-            <igx-column field="name" header="Name" sortable="true" filterable="true" width="200" pinned="true" hasSummary="true">
+            <igx-column field="name" header="Name" sortable="true" filterable="true" width="200" pinned="true" resizable="true">
             </igx-column>
     
-            <igx-column field="position" header="Position" filterable="true" width="200">
+            <igx-column field="position" header="Position" filterable="true" width="200" resizable="true">
             </igx-column>
     
-            <igx-column field="company" header="Company" sortable="true" filterable="true" width="130" hasSummary="true">
+            <igx-column field="company" header="Company" sortable="true" filterable="true" width="130" hasSummary="true" resizable="true">
             </igx-column>
     
-            <igx-column field="email" header="Email" width="240">
+            <igx-column field="email" header="Email" width="240" resizable="true">
             </igx-column>
     
-            <igx-column field="work_phone" header="Work Phone" width="160">
+            <igx-column field="work_phone" header="Work Phone" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="mobile_phone" header="Mobile Phone" width="160">
+            <igx-column field="mobile_phone" header="Mobile Phone" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="fax" header="Fax" width="160">
+            <igx-column field="fax" header="Fax" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="tags" filterable="true" header="Tags" filterable="true" width="160">
+            <igx-column field="tags" filterable="true" header="Tags" filterable="true" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="street" header="Street" width="160">
+            <igx-column field="street" header="Street" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="city" header="City" filterable="true" width="160">
+            <igx-column field="city" header="City" filterable="true" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="post_code" header="Post Code" width="100">
+            <igx-column field="post_code" header="Post Code" width="100" resizable="true">
             </igx-column>
     
-            <igx-column field="state" header="State" filterable="true" width="105">
+            <igx-column field="state" header="State" filterable="true" width="105" resizable="true">
             </igx-column>
     
-            <igx-column field="country" header="Country" sortable="true" filterable="true" width="160">
+            <igx-column field="country" header="Country" sortable="true" filterable="true" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="created_on" header="Created On" sortable="true" width="150">
+            <igx-column field="created_on" header="Created On" sortable="true" width="150" resizable="true">
             </igx-column>
     
-            <igx-column field="referred_by" header="Referred By" filterable="true" width="160">
+            <igx-column field="referred_by" header="Referred By" filterable="true" width="160" resizable="true">
             </igx-column>
     
-            <igx-column field="birthday" header="Birthday" filterable="true" width="140" dataType="date" hasSummary="true" [summaries]="soonSummary">
+            <igx-column field="birthday" header="Birthday" filterable="true" width="140" dataType="date" hasSummary="true" [summaries]="soonSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="last_activity" header="Last Activity" sortable="true" width="140" dataType="date" hasSummary="true" [summaries]="earliestSummary">
+            <igx-column field="last_activity" header="Last Activity" sortable="true" width="140" dataType="date" hasSummary="true" [summaries]="earliestSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="next_activity" header="Next Activity" sortable="true" width="140" dataType="date" hasSummary="true" [summaries]="earliestSummary">
+            <igx-column field="next_activity" header="Next Activity" sortable="true" width="140" dataType="date" hasSummary="true" [summaries]="earliestSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="deals_total" header="Total Deals" sortable="true" width="110" dataType="number" hasSummary="true" [summaries]="dealsSummary">
+            <igx-column field="deals_total" header="Total Deals" sortable="true" width="110" dataType="number" hasSummary="true" [summaries]="dealsSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="deals_won" header="Won Deals" sortable="true" width="110" dataType="number" hasSummary="true" [summaries]="dealsSummary">
+            <igx-column field="deals_won" header="Won Deals" sortable="true" width="110" dataType="number" hasSummary="true" [summaries]="dealsSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="ratio" header="Ratio" width="150">
+            <igx-column field="ratio" header="Ratio" width="150" resizable="true">
                 <ng-template igxCell let-val>
                     <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val" [animate]="false"></igx-linear-bar>
                 </ng-template>
             </igx-column>
     
-            <igx-column field="deals_lost" header="Lost Deals" sortable="true" width="110" dataType="number" hasSummary="true" [summaries]="dealsSummary">
+            <igx-column field="deals_lost" header="Lost Deals" sortable="true" width="110" dataType="number" hasSummary="true" [summaries]="dealsSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="deals_pending" header="Pending Deals" sortable="true" width="130" dataType="number" hasSummary="true" [summaries]="dealsSummary">
+            <igx-column field="deals_pending" header="Pending Deals" sortable="true" width="130" dataType="number" hasSummary="true" [summaries]="dealsSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="estimated_sales" header="Possible Sales ($)" sortable="true" width="150" dataType="number" hasSummary="true" [summaries]="dealsSummary">
+            <igx-column field="estimated_sales" header="Possible Sales ($)" sortable="true" width="150" dataType="number" hasSummary="true" [summaries]="dealsSummary" resizable="true">
             </igx-column>
     
-            <igx-column field="actual_sales" header="Actual Sales ($)" sortable="true" width="150" dataType="number" hasSummary="true" [summaries]="dealsSummary">
+            <igx-column field="actual_sales" header="Actual Sales ($)" sortable="true" width="150" dataType="number" hasSummary="true" [summaries]="dealsSummary" resizable="true">
             </igx-column>
         </igx-grid>
     
