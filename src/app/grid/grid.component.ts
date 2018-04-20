@@ -180,15 +180,10 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
         result.push({
             key: "average",
             label: "average",
-            summaryResult: this.avgValue(data)
+            summaryResult: this.average(data).toFixed(2)
         });
 
         return result;
-    }
-
-    private avgValue(data) {
-        const value = this.sum(data) / this.count(data);
-        return value.toFixed(2);
     }
 }
 
@@ -204,22 +199,17 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
             {
                 key: "min",
                 label: "min",
-                summaryResult: this.min(data);
+                summaryResult: this.min(data)
             }, {
                 key: "max",
                 label: "max",
-                summaryResult: this.max(data);
+                summaryResult: this.max(data)
             }, {
                 key: "average",
                 label: "average",
-                summaryResult: this.average(data);
+                summaryResult: this.average(data).toFixed(2)
             });
 
         return result;
-    }
-
-    private average(data) {
-        const value = this.sum(data) / this.count(data);
-        return value.toFixed(2);
     }
 }
