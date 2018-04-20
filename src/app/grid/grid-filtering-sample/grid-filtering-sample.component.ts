@@ -1,5 +1,5 @@
 import { CurrencyPipe } from "@angular/common";
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, OnInit, ViewChild, ViewChildren } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
 import { DATA } from "./nwindData";
@@ -13,6 +13,7 @@ import { DATA } from "./nwindData";
 export class FilteringSampleComponent implements OnInit {
     @ViewChild("grid1", { read: IgxGridComponent })
     public grid1: IgxGridComponent;
+
     public data: any[];
 
     constructor() {
