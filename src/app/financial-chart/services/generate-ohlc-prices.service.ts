@@ -47,7 +47,7 @@ export class GenerateOhlcPricesService {
         }
         // setting data intent for Series Title
         (stock as any).__dataIntents = {
-            Open: ["SeriesTitle/Stock Prices"]
+            close: ["SeriesTitle/Stock Prices"]
         };
 
         return stock;
