@@ -11,6 +11,6 @@ import { FinancialDataService } from "../services/financial-data.service";
 export class FinancialChartMultipleDataComponent {
     public data: any;
     constructor(private dataService: FinancialDataService) {
-        this.data = this.dataService.getMulti();
+        this.data = [ this.dataService.getAmzn(), this.dataService.getGoog() ];
     }
 }

@@ -1,0 +1,42 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <span >yAxis Mode: </span>
+        <select [(ngModel)]="yAxisMode">
+            <option>Numeric</option>
+            <option>PercentChange</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-financial-chart height="100%" width="100%"
+            [dataSource]="data"
+            [yAxisMode]="yAxisMode"
+
+            yAxisInterval="200"
+            yAxisMinorInterval="50"
+            yAxisMajorStroke="Black"
+            yAxisMinorStroke="Gray"
+            yAxisMinorStrokeThickness="0.5"
+            yAxisMajorStrokeThickness="0.5"
+
+            xAxisTickLength="10"
+            xAxisTickStrokeThickness="1"
+            xAxisTickStroke="Gray"
+
+            xAxisLabelTextStyle="8pt Verdana"
+            xAxisLabelTextColor="Gray"
+            xAxisLabelTopMargin="5"
+            xAxisLabeleAngle="0"
+            yAxisLabelTextStyle="8pt Verdana"
+            yAxisLabelTextColor="Gray"
+            yAxisLabelLeftMargin="5"
+            yAxisLabeleAngle="0"
+
+            yAxisTitle="Stock Prices ($)"
+            yAxisTitleTextStyle="15pt Times New Roman|Georgia|Serif"
+            yAxisTitleRightMargin="10"
+            yAxisTitleTextColor="Black"
+            yAxisTitleAngle="90"
+            zoomSliderType="none">
+        </igx-financial-chart>
+    </div>
+</div>

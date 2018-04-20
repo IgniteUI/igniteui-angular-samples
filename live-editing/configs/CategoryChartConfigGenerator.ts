@@ -5,6 +5,7 @@ import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category
 import { CategoryChartOverviewComponent } from "../../src/app/category-chart/overview/category-chart-overview-sample.component";
 import { CategoryChartHighVolumeComponent } from "../../src/app/category-chart/high-volume/category-chart-high-volume-sample.component";
 import { CategoryChartHighFrequencyComponent } from "../../src/app/category-chart/high-frequency/category-chart-high-frequency-sample.component";
+import { CategoryChartCustomTooltipsComponent } from "../../src/app/category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     generateConfigs(): Config[] {
@@ -26,6 +27,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         }));
 
         deps = new Array<string>();
+        deps.push("@angular/animations");
         deps.push("igniteui-angular-charts");
         deps.push("tslib");
 
@@ -40,6 +42,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         }));
 
         deps = new Array<string>();
+        deps.push("@angular/animations");
         deps.push("igniteui-angular-charts");
         deps.push("tslib");
 
@@ -48,6 +51,16 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxCategoryChartModule, CategoryChartHighFrequencyComponent],
                 ngDeclarations: [CategoryChartHighFrequencyComponent],
+                ngImports: [IgxCategoryChartModule]
+            }),
+            packageDependencies: deps
+        }));
+
+        configs.push(new Config({
+            component: CategoryChartCustomTooltipsComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCategoryChartModule, CategoryChartCustomTooltipsComponent],
+                ngDeclarations: [CategoryChartCustomTooltipsComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
             packageDependencies: deps

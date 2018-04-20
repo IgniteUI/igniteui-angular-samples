@@ -72,6 +72,11 @@ export class GridComponent implements OnInit, OnDestroy {
     return top;
   }
 
+  public cellSelection(evt) {
+      const cell = evt.cell;
+      this.grid1.selectRows([cell.row.rowID], true);
+  }
+
   public getIconType(cell) {
     switch (cell.row.rowData.Position) {
       case "up":
