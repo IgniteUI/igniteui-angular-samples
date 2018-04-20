@@ -10,6 +10,7 @@ import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import { IgxDateSummaryOperand, IgxNumberSummaryOperand, IgxSummaryResult } from "igniteui-angular/grid/grid-summary";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { IgxToggleDirective, STRING_FILTERS } from "igniteui-angular/main";
+import { IgxExcelExporterOptions, IgxExcelExporterService } from "igniteui-angular/services";
 import { data } from "./data";
 
 class DealsSummary extends IgxNumberSummaryOperand {
@@ -86,7 +87,7 @@ export class GridCRMComponent implements OnInit {
     public hiddenColsLength: number;
     public pinnedColsLength: number;
 
-    constructor() { }
+    constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
         this.localData = data;
@@ -137,5 +138,9 @@ export class GridCRMComponent implements OnInit {
             this.grid1.pinColumn(col.field);
             this.pinnedColsLength++;
         }
+    }
+
+    public exportData() {
+        this.excelExporterService.exportData(this.localData, new IgxExcelExporterOptions("Report"));
     }
 }
