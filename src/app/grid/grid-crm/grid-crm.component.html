@@ -33,7 +33,7 @@
         </div>
     
         <igx-grid #grid1 [data]="localData" height="650" width="100%" rowSelectable="true">
-            <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true">
+            <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true">
             </igx-column>
     
             <igx-column field="avatar" header="Photo" width="88" pinned="true" resizable="true">
@@ -44,7 +44,7 @@
                 </ng-template>
             </igx-column>
     
-            <igx-column field="name" header="Name" sortable="true" filterable="true" width="149" pinned="true" resizable="true">
+            <igx-column field="name" header="Name" sortable="true" filterable="true" width="149" pinned="true" resizable="true " hasSummary="true">
             </igx-column>
     
             <igx-column field="position" header="Position" filterable="true" width="200" resizable="true">
