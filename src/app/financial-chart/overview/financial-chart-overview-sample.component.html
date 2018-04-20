@@ -1,4 +1,18 @@
+<ng-template let-series="series" let-item="item" #valueTooltip>
+    <table>
+        <tr>
+            <td colspan="2" >{{item.date | date}}</td>
+        </tr>
+        <tr><td colspan="2" [style.color]="series.actualBrush"> {{series.title}}</td></tr>
+        <tr><td>Open:</td><td>${{item.open | number}}</td></tr>
+        <tr><td>High:</td><td>${{item.high | number}}</td></tr>
+        <tr><td>Low:</td><td>${{item.low | number}}</td> </tr>
+        <tr><td>Close:</td><td>${{item.close | number}}</td></tr>
+        <tr><td>Volume:</td><td>{{item.volume | number}}</td></tr>
+    </table>
+</ng-template>
 <igx-financial-chart height="100%" width="100%"
+    [tooltipTemplate]="valueTooltip"
     [dataSource]="data"
     volumeType="line"
     overlayTypes="BollingerBands">
