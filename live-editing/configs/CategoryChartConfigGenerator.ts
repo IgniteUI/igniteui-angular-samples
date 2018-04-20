@@ -1,6 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import {
+     CategoryChartCustomTooltipsComponent
+} from "../../src/app/category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
+import {
     CategoryChartHighFrequencyComponent
 } from "../../src/app/category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
@@ -12,7 +15,6 @@ import {
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { CategoryChartCustomTooltipsComponent } from "../../src/app/category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
