@@ -125,7 +125,8 @@ $crm-linear-bar-theme: igx-progress-linear-theme(
 .dd-title {
     color: $primary-600;
     margin:0;
-    padding: 15px;
+    padding: 16px;
+    font-size: 14px;
 }
 
 .dd-list {
@@ -135,7 +136,7 @@ $crm-linear-bar-theme: igx-progress-linear-theme(
 .dd-list__item {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 16px;
     
     &:hover {
         background: lighten($primary-100, 10);
