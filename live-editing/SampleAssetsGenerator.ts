@@ -12,6 +12,9 @@ import { CheckboxConfigGenerator } from "./configs/CheckboxConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./configs/CircularProgressbarConfigGenerator";
 import { DatePickerConfigGenerator } from "./configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
+import { ExportCsvConfigGenerator } from "./configs/ExportCsvConfigGenerator";
+import { ExportExcelConfigGenerator } from "./configs/ExportExcelConfigGenerator";
+import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { FinancialChartConfigGenerator } from "./configs/FinancialChartConfigGenerator";
 import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
@@ -60,13 +63,13 @@ const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
-    CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator,
-    DatePickerConfigGenerator, DialogConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator,
-    GridConfigGenerator, IconConfigGenerator, InputGroupConfigGenerator, LayoutConfigGenerator,
-    LinearProgressbarConfigGenerator, ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
-    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
-    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
-    ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
+    CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator, DatePickerConfigGenerator,
+    DialogConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator,
+    GridConfigGenerator, IconConfigGenerator,
+    InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
+    ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
+    RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
+    TabBarConfigGenerator, TabsConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
 
 export class SampleAssetsGenerator {
     private tsImportsService: TsImportsService;
