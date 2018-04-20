@@ -36,8 +36,8 @@
             </div>
         </div>
 
-        <igx-grid #grid1 [data]="localData" height="650" width="100%" rowSelectable="true">
-            <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true">
+        <igx-grid #grid1 [data]="localData" height="650" [width]="'1172px'" rowSelectable="true">
+                <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true">
             </igx-column>
 
             <igx-column field="avatar" header="Photo" width="88" pinned="true" resizable="true">
