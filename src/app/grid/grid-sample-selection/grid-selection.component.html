@@ -1,4 +1,3 @@
-
 <div class="grid-controls">
     <p>Toggle Multiple Selection</p>
     <igx-switch [(ngModel)]="selection"></igx-switch>
@@ -16,9 +15,11 @@
                 <span class="cellAlignSyle">Change</span>
             </ng-template>
             <ng-template igxCell let-val>
-                <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
-                <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"></igx-badge>
-                <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error"></igx-badge>
+                <div class="currency-badge-container">
+                    <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
+                    <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
+                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}</span>
+                </div>
             </ng-template>
         </igx-column>
         <igx-column [field]="'Change(%)'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber">
@@ -30,11 +31,13 @@
                 <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Change On Year(%)'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber">
+        <igx-column [field]="'Change On Year(%)'" [width]="'170px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber">
             <ng-template igxCell let-val>
-                <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
-                <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward"></igx-badge>
-                <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error"></igx-badge>
+                <div class="currency-badge-container">
+                    <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
+                    <igx-badge *ngIf="val<0" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
+                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<0">{{ formatNumber(val) }}%</span>
+                </div>
             </ng-template>
         </igx-column>
     </igx-grid>
