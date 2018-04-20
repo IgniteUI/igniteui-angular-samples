@@ -25,7 +25,8 @@ export class GridComponent implements OnInit, OnDestroy {
   @ViewChild("grid1", { read: IgxGridComponent })
   public grid1: IgxGridComponent;
 
-  public customSummary = CustomSummary;
+  public topSpeedSummary = CustomTopSpeedSummary;
+  public bnpSummary = CustomBPMSummary;
   public localData: any[];
   public isFinished = false;
   private _live = true;
@@ -168,7 +169,7 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 }
 
-class CustomSummary extends IgxNumberSummaryOperand {
+class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
 
     constructor() {
         super();
@@ -186,6 +187,39 @@ class CustomSummary extends IgxNumberSummaryOperand {
     }
 
     private avgValue(data) {
+        const value = this.sum(data) / this.count(data);
+        return value.toFixed(2);
+    }
+}
+
+export class CustomBPMSummary extends IgxNumberSummaryOperand {
+    
+    constructor() {
+        super();
+    }
+
+    public operate(data?: any[]): IgxSummaryResult[] {
+        const result = [];
+        result.push(
+            {
+                key: "min",
+                label: "min",
+                summaryResult: this.min(data);
+            }, {
+                key: "max",
+                label: "max",
+                summaryResult: this.max(data);
+            }, {
+                key: "average",
+                label: "average",
+                summaryResult: this.average(data); 
+            }
+        )
+
+        return result;
+    }
+
+    private average(data) {
         const value = this.sum(data) / this.count(data);
         return value.toFixed(2);
     }

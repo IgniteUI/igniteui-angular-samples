@@ -54,7 +54,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="BeatsPerMinute" header="Beats per minute" [hidden]="hideBeatsPerMinute">
+        <igx-column field="BeatsPerMinute" header="Beats per minute" [hasSummary]="true" dataType="number" [summaries]="bnpSummary" [hidden]="hideBeatsPerMinute">
             <ng-template igxCell let-val>
                 <div class="cell__inner">
                     {{ val }}
@@ -62,7 +62,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed" width="150px" dataType="number" [hasSummary]="true" [summaries]="customSummary">
+        <igx-column field="TopSpeed" header="Top Speed" width="150px" dataType="number" [hasSummary]="true" [summaries]="topSpeedSummary">
 
             <ng-template igxCell let-val>
                 <div class="cell__inner">
