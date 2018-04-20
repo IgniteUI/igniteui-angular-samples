@@ -29,7 +29,7 @@
                 <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col.field)">functions</igx-icon>
             </ng-template>
       </igx-column>
-      <igx-column #col field="Discontinued" header="Discontinued" width="140px" [dataType]="'boolean'">
+      <igx-column #col field="Discontinued" header="Discontinued" width="140px" [hasSummary]="true" [dataType]="'boolean'">
         <ng-template igxCell let-cell="cell" let-val>
           {{val}}
         </ng-template>
