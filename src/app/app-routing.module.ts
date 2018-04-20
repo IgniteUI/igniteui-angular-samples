@@ -39,6 +39,9 @@ import {
     CategoryChartConfigOptionsComponent
 } from "./category-chart/config-options/category-chart-config-options-sample.component";
 import {
+    CategoryChartCustomTooltipsComponent
+} from "./category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
+import {
     CategoryChartHighFrequencyComponent
 } from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
@@ -674,6 +677,10 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartOverviewComponent,
         path: "category-chart-overview-sample"
+    },
+    {
+        component: CategoryChartCustomTooltipsComponent,
+        path: "category-chart-custom-tooltips-sample"
     },
     {
         component: CategoryChartHighVolumeComponent,
