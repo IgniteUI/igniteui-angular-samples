@@ -14,7 +14,7 @@
     </igx-column>
     <igx-column field="UnitPrice" header="Unit Price" width="150px" [dataType]="'number'" filterable="true">
         <ng-template igxCell let-cell="cell" let-val let-row>
-        {{val | currency}}
+        {{+val | currency}}
         </ng-template>
     </igx-column>
     <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" width="200px" [formatter]="formatDate" filterable="true">
