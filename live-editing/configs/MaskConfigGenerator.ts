@@ -1,5 +1,5 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxInputGroupModule, IgxMaskModule, IgxSnackbarModule, IgxSwitchModule } from "igniteui-angular/main";
 import { MaskSample1Component } from "../../src/app/mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "../../src/app/mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "../../src/app/mask/mask-sample-3/mask-sample-3.component";
@@ -7,8 +7,8 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { IgxSnackbarModule, IgxMaskModule, IgxInputGroupModule, IgxSwitchModule, IgxIconModule } from "igniteui-angular/main";
 
 export class MaskConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // mask sample 1
         configs.push(new Config({

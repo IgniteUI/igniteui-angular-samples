@@ -1,21 +1,28 @@
+/* tslint:disable:object-literal-sort-keys */
+import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
+import {
+    FinancialChartCustomTooltipsComponent
+} from "../../src/app/financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
+import {
+    FinancialChartMultipleDataComponent
+} from "../../src/app/financial-chart/multiple-data/financial-chart-multiple-data.component";
+import {
+    FinancialChartOverviewComponent
+} from "../../src/app/financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "../../src/app/financial-chart/panes/financial-chart-panes.component";
+import {
+    FinancialChartPerformanceComponent
+} from "../../src/app/financial-chart/performance/financial-chart-performance.component";
+import { FinancialDataService } from "../../src/app/financial-chart/services/financial-data.service";
+import { StockDataService } from "../../src/app/financial-chart/services/stock-data.service";
+import { FinancialChartTitlesComponent } from "../../src/app/financial-chart/titles/financial-chart-titles.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
-import { FinancialChartCustomTooltipsComponent } from "../../src/app/financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
-import { FinancialChartMultipleDataComponent } from "../../src/app/financial-chart/multiple-data/financial-chart-multiple-data.component";
-import { FinancialChartOverviewComponent } from "../../src/app/financial-chart/overview/financial-chart-overview-sample.component";
-import { FinancialChartPanesComponent } from "../../src/app/financial-chart/panes/financial-chart-panes.component";
-import { FinancialChartPerformanceComponent } from "../../src/app/financial-chart/performance/financial-chart-performance.component";
-import { FinancialChartTitlesComponent } from "../../src/app/financial-chart/titles/financial-chart-titles.component";
-
-import { FinancialDataService } from "../../src/app/financial-chart/services/financial-data.service";
-import { StockDataService } from "../../src/app/financial-chart/services/stock-data.service";
-
 
 export class FinancialChartConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
         let deps = new Array<string>();
 
         deps.push("@angular/animations");

@@ -1,10 +1,10 @@
 import { LiveEditingFile } from "./LiveEditingFile";
 
 export class SampleDefinitionFile {
-    public sampleFiles: Array<LiveEditingFile>;
+    public sampleFiles: LiveEditingFile[];
     public sampleDependencies: string;
 
-    constructor(files: Array<LiveEditingFile>, dependencies: Array<string>) {
+    constructor(files: LiveEditingFile[], dependencies: string[]) {
         this.sampleFiles = files;
         this.sampleDependencies = JSON.stringify(dependencies);
     }

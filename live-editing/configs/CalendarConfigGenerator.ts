@@ -1,17 +1,18 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { CalendarComponent } from "../../src/app/calendar/calendar.component";
-import { IgxCardModule, IgxCalendarModule, IgxDialogModule } from "igniteui-angular/main";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxCalendarModule, IgxCardModule, IgxDialogModule } from "igniteui-angular/main";
 import { CalendarSample1Component } from "../../src/app/calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "../../src/app/calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "../../src/app/calendar/calendar-sample-3/calendar-sample-3.component";
 import { CalendarSample4Component } from "../../src/app/calendar/calendar-sample-4/calendar-sample-4.component";
 import { CalendarSample5Component } from "../../src/app/calendar/calendar-sample-5/calendar-sample-5.component";
+import { CalendarComponent } from "../../src/app/calendar/calendar.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class CalendarConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: CalendarComponent,
@@ -19,7 +20,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 imports: [IgxCardModule, IgxCalendarModule, CalendarComponent],
                 ngDeclarations: [CalendarComponent],
                 ngImports: [IgxCardModule, IgxCalendarModule]
-            }),
+            })
         }));
 
         configs.push(new Config({
@@ -74,4 +75,4 @@ export class CalendarConfigGenerator implements IConfigGenerator {
 
         return configs;
     }
-} 
+}
