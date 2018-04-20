@@ -1,8 +1,9 @@
-.switch-sample {
+:host {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+    padding: 16px;
+}
 
-    align-self: flex-end;
-    width: 100%;
-    height: 48px;
+igx-switch + igx-switch {
+    margin-top: 24px;
 }

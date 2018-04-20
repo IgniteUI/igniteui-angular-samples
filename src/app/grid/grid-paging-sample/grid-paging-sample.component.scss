@@ -24,6 +24,7 @@ $progressBar-sample-theme: igx-progress-linear-theme(
   @include igx-grid($grid-sample-theme);
   @include igx-progress-linear($progressBar-sample-theme);
     margin: 0 16px;
+    padding-top: 10px;
 }
 
 .cell__inner,
