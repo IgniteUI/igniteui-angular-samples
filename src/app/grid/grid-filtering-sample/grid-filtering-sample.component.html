@@ -5,7 +5,7 @@
     </igx-input-group><br>
   </div>
   
-  <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="450px" width="100%">
+  <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="520px" width="100%">
 
     <igx-column field="ProductID" header="Product ID" width="120px" [headerClasses]="'prodId'"></igx-column>
     <igx-column field="ProductName" header="Product Name" width="250px" [dataType]="'string'" filterable="true">
@@ -14,7 +14,7 @@
     </igx-column>
     <igx-column field="UnitPrice" header="Unit Price" width="150px" [dataType]="'number'" filterable="true">
         <ng-template igxCell let-cell="cell" let-val let-row>
-        {{val | currency}}
+        {{+val | currency}}
         </ng-template>
     </igx-column>
     <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" width="200px" [formatter]="formatDate" filterable="true">

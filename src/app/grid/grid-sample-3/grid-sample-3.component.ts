@@ -34,7 +34,7 @@ export class GridSample3Component implements OnInit {
   public mySummary = MySummary;
   public data;
   public productId = 0;
-  public labels = ["Disable", "Disable", "Enable", "Disable", "Disable"];
+
   constructor() {
     this.data = LOCAL_DATA;
     this.productId = LOCAL_DATA.length;
@@ -42,13 +42,11 @@ export class GridSample3Component implements OnInit {
 
   public ngOnInit() {
   }
-  public enableSummary(name, id) {
+  public toggleSummary(name, id) {
       if (this.grid1.getColumnByName(name).hasSummary) {
         this.grid1.disableSummaries(name);
-        this.labels[id] = "Enable";
       } else {
         this.grid1.enableSummaries(name, this.mySummary);
-        this.labels[id] = "Disable";
       }
 
   }
