@@ -44,8 +44,7 @@ export class CardConfigGenerator implements IConfigGenerator {
                 imports: [IgxAvatarModule, IgxCardModule, CardSample2Component],
                 ngDeclarations: [CardSample2Component],
                 ngImports: [IgxAvatarModule, IgxCardModule]
-            }),
-            shortenComponentPathBy: "/card/"
+            })
         }));
 
         // card sample 3
@@ -57,8 +56,7 @@ export class CardConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CardSample3Component],
                 ngImports: [IgxAvatarModule, IgxButtonModule, IgxIconModule,
                     IgxCardModule, IgxRippleModule]
-            }),
-            shortenComponentPathBy: "/card/"
+            })
         }));
 
         return configs;

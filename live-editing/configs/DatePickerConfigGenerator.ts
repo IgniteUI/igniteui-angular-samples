@@ -58,13 +58,13 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
 
         // date picker sample 5
         configs.push(new Config({
+            additionalFiles: ["/src/app/date-parser.ts"],
             component: DatepickerSample5Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDatePickerModule, DatepickerSample5Component],
                 ngDeclarations: [DatepickerSample5Component],
                 ngImports: [IgxDatePickerModule]
-            }),
-            shortenComponentPathBy: "/datepicker/"
+            })
         }));
 
         return configs;

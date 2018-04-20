@@ -53,13 +53,13 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: ["/src/app/date-parser.ts"],
             component: CalendarSample4Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxCalendarModule, CalendarSample4Component],
                 ngDeclarations: [CalendarSample4Component],
                 ngImports: [IgxCalendarModule]
-            }),
-            shortenComponentPathBy: "/calendar/"
+            })
         }));
 
         configs.push(new Config({

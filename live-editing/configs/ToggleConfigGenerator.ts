@@ -39,8 +39,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxToggleModule, ToggleSample2Component],
                 ngDeclarations: [ToggleSample2Component],
                 ngImports: [IgxButtonModule, IgxToggleModule]
-            }),
-            shortenComponentPathBy: "/toggle/"
+            })
         }));
 
         // toggle sample 3
