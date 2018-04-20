@@ -1,21 +1,27 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-radio-sample-2",
-  styleUrls: ["./radio-sample-2.component.scss"],
-  templateUrl: "./radio-sample-2.component.html"
+    selector: "app-radio-sample-2",
+    styleUrls: ["./radio-sample-2.component.scss"],
+    templateUrl: "./radio-sample-2.component.html"
 })
-export class RadioSample2Component implements OnInit {
+export class RadioSample2Component {
+    public title = "Select Background";
 
-public title = "Select Background";
+    public colors = [{
+        hex: "#f06a2f",
+        name: "Carrot"
+    }, {
+        hex: "#ff134a",
+        name: "Watermelon"
+    }, {
+        hex: "#7bc96f",
+        name: "Grass"
+    },
+    {
+        hex: "transparent",
+        name: "No color"
+    }];
 
-public colors = ["Yellow", "Red", "Green", "Transparent"];
-
-public selectedColor: string = this.colors[3];
-
-constructor() { }
-
-public ngOnInit() {
-  }
-
+    public selectedColor: string = this.colors[3].hex;
 }
