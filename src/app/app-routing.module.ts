@@ -39,6 +39,9 @@ import {
     CategoryChartConfigOptionsComponent
 } from "./category-chart/config-options/category-chart-config-options-sample.component";
 import {
+    CategoryChartCustomTooltipsComponent
+} from "./category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
+import {
     CategoryChartHighFrequencyComponent
 } from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
@@ -82,12 +85,21 @@ import {
 import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
-import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
-import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
+import {
+    FinancialChartOverviewComponent
+} from "./financial-chart/overview/financial-chart-overview-sample.component";
+import {
+    FinancialChartPanesComponent
+} from "./financial-chart/panes/financial-chart-panes.component";
 import {
     FinancialChartPerformanceComponent
 } from "./financial-chart/performance/financial-chart-performance.component";
-import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTitlesComponent
+} from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTrendlinesComponent
+} from "./financial-chart/trendlines/financial-chart-trendlines.component";
 import {
     FinancialChartVolumeTypeComponent
 } from "./financial-chart/volume-type/financial-chart-volume-type.component";
@@ -102,6 +114,8 @@ import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sam
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
+import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
+import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
@@ -597,6 +611,14 @@ export const appRoutes: Routes = [
         path: "grid-sample-2"
     },
     {
+        component: PinningSampleComponent,
+        path: "grid-sample-pinning"
+    },
+    {
+        component: GridRemoteVirtualizationSampleComponent,
+        path: "grid-sample-4"
+    },
+    {
         component: GridSelectionSampleComponent,
         path: "grid-selection"
     },
@@ -655,6 +677,10 @@ export const appRoutes: Routes = [
     {
         component: CategoryChartOverviewComponent,
         path: "category-chart-overview-sample"
+    },
+    {
+        component: CategoryChartCustomTooltipsComponent,
+        path: "category-chart-custom-tooltips-sample"
     },
     {
         component: CategoryChartHighVolumeComponent,
@@ -719,6 +745,10 @@ export const appRoutes: Routes = [
     {
         component: FinancialChartAxisTypesComponent,
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTrendlinesComponent,
+        path: "financial-chart-trendlines"
     },
     {
         component: SortingSampleComponent,

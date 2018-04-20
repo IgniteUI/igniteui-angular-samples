@@ -10,7 +10,11 @@
         </igx-input-group>
     </div>
 
+<<<<<<< HEAD
+    <igx-grid #grid1 [data]="localData" [paging]="true" [perPage]="6" [columnWidth]="'130px'" [paginationTemplate]="pager" width="100%">
+=======
     <igx-grid #grid1 [data]="localData" [paging]="true" [perPage]="6" (onSelection)="cellSelection($event)" [columnWidth]="'130px'" [paginationTemplate]="pager" width="100%">
+>>>>>>> 64241bde92cc26b90e342f2e84cedc811c1c85dc
         <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
                 <ng-template igxCell let-cell="cell">
                     <div class="cell__inner">
@@ -62,7 +66,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed" width="150px" dataType="number" [hasSummary]="true" [summaries]="customSummary">
+        <igx-column field="TopSpeed" header="Top Speed" width="103px" dataType="number" [hasSummary]="true" [summaries]="customSummary">
 
             <ng-template igxCell let-val>
                 <div class="cell__inner">

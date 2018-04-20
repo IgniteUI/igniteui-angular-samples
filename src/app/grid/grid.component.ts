@@ -74,6 +74,11 @@ export class GridComponent implements OnInit, OnDestroy {
     return top;
   }
 
+  public cellSelection(evt) {
+      const cell = evt.cell;
+      this.grid1.selectRows([cell.row.rowID], true);
+  }
+
   public getIconType(cell) {
     switch (cell.row.rowData.Position) {
       case "up":
@@ -174,8 +179,14 @@ class CustomSummary extends IgxNumberSummaryOperand {
         result.push({
             key: "average",
             label: "average",
-            summaryResult: this.sum(data) / this.count(data)
+            summaryResult: this.avgValue(data)
         });
+
         return result;
     }
+
+    avgValue(data) {
+        const value = this.sum(data) / this.count(data);
+        return value.toFixed(2);
+    };
 }
