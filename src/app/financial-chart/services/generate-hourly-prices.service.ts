@@ -24,7 +24,8 @@ export class GenerateHourlyPricesService {
         while (time.getTime() < dateEnd.getTime()) {
             stock.push({ date: time, close: price });
 
-            price = Math.round(price + ((Math.random() - 0.5) * priceRange));
+            price = price + ((Math.random() - 0.5) * priceRange);
+            price = Math.round(price * 100) / 100;
             time = this.AddHours(time, hoursInterval);
         }
         // setting data intent for Series Title

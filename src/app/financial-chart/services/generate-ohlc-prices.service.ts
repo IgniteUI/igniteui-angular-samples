@@ -38,11 +38,11 @@ export class GenerateOhlcPricesService {
             c = l + (Math.random() * (h - l));
             v = v + ((Math.random() - 0.5) * this.volumeRange);
 
-            o = Math.round(o);
-            h = Math.round(h);
-            l = Math.round(l);
-            c = Math.round(c);
-            v = Math.round(v);
+            o = Math.round(o * 100) / 100;
+            h = Math.round(h * 100) / 100;
+            l = Math.round(l * 100) / 100;
+            c = Math.round(c * 100) / 100;
+            v = Math.round(v * 100) / 100;
             time = this.AddDays(time, this.daysInterval);
         }
         // setting data intent for Series Title
