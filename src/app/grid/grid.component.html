@@ -10,7 +10,7 @@
         </igx-input-group>
     </div>
 
-    <igx-grid #grid1 [data]="localData" [paging]="true" [perPage]="6" (onSelection)="cellSelection($event)" [columnWidth]="'130px'" [paginationTemplate]="pager" width="100%">
+    <igx-grid #grid1 [data]="localData" [paging]="true" [perPage]="6" [columnWidth]="'130px'" (onSelection)="cellSelection($event)" [paginationTemplate]="pager" width="100%">
         <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
                 <ng-template igxCell let-cell="cell">
                     <div class="cell__inner">
@@ -54,7 +54,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="BeatsPerMinute" header="Beats per minute" [hidden]="hideBeatsPerMinute">
+        <igx-column field="BeatsPerMinute" header="Beats per minute" [hasSummary]="true" dataType="number" [summaries]="bnpSummary" [hidden]="hideBeatsPerMinute">
             <ng-template igxCell let-val>
                 <div class="cell__inner">
                     {{ val }}
@@ -62,7 +62,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed" width="103px">
+        <igx-column field="TopSpeed" header="Top Speed" width="150px" dataType="number" [hasSummary]="true" [summaries]="topSpeedSummary">
 
             <ng-template igxCell let-val>
                 <div class="cell__inner">
