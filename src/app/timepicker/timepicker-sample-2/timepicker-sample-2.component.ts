@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxTimePickerComponent } from "igniteui-angular/main";
 
 @Component({
@@ -6,13 +6,11 @@ import { IgxTimePickerComponent } from "igniteui-angular/main";
     styleUrls: ["./timepicker-sample-2.component.scss"],
     templateUrl: "./timepicker-sample-2.component.html"
 })
-export class TimePickerSample2Component implements AfterViewInit {
+export class TimePickerSample2Component implements OnInit {
 
     public date: Date = new Date(Date.now());
 
     constructor() { }
 
-    public ngAfterViewInit(): void {
-        (document.getElementsByClassName("igx-input-group__input")[0] as HTMLElement).click();
-    }
+    public ngOnInit(): void {}
 }
