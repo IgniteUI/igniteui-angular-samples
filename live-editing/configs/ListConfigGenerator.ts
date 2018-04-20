@@ -1,17 +1,19 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxAvatarModule, IgxFilterOptions, IgxFilterModule, IgxIconModule, IgxInputGroupModule, IgxListModule } from "igniteui-angular/main";
-import { ListComponent } from "../../src/app/list/list.component";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxAvatarModule, IgxFilterModule, IgxFilterOptions,
+    IgxIconModule, IgxInputGroupModule, IgxListModule } from "igniteui-angular/main";
 import { ListSample1Component } from "../../src/app/list/list-sample-1/list-sample-1.component";
+import { ListSample2Component } from "../../src/app/list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "../../src/app/list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "../../src/app/list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "../../src/app/list/list-sample-5/list-sample-5.component";
-import { ListSample2Component } from "../../src/app/list/list-sample-2/list-sample-2.component";
+import { ListComponent } from "../../src/app/list/list.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ListConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // list
         configs.push(new Config({

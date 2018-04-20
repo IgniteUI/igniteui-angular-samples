@@ -1,12 +1,13 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular/main";
 import { RippleSample1Component } from "../../src/app/ripple/ripple-sample-1/ripple-sample-1.component";
-import { IgxRippleModule, IgxAvatarModule, IgxIconModule, IgxButtonModule } from "igniteui-angular/main";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class RippleConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: RippleSample1Component,

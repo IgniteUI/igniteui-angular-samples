@@ -1,16 +1,17 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxDatePickerModule } from "igniteui-angular/main";
 import { DatepickerSample1Component } from "../../src/app/datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "../../src/app/datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "../../src/app/datepicker/datepicker-sample-3/datepicker-sample-3.component";
 import { DatepickerSample4Component } from "../../src/app/datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "../../src/app/datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class DatePickerConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // date picker sample 1
         configs.push(new Config({

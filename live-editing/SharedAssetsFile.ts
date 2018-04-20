@@ -1,9 +1,9 @@
 import { LiveEditingFile } from "./LiveEditingFile";
 
 export class SharedAssetsFile {
-    public files: Array<LiveEditingFile>;
+    public files: LiveEditingFile[];
 
-    constructor(files: Array<LiveEditingFile>) {
+    constructor(files: LiveEditingFile[]) {
         this.files = files;
     }
 }

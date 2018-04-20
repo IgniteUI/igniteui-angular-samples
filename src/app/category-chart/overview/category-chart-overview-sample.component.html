@@ -3,6 +3,7 @@
         <span>Chart Type:</span>
         <select [(ngModel)]="chartType">
             <option>Auto</option>
+            <option>Area</option>
             <option>Line</option>
             <option>Column</option>
             <option>Point</option>
@@ -15,8 +16,8 @@
     </div>
     <div class="chart">
         <igx-category-chart height="100%" width="100%"
-            [dataSource]="data" title="Energy Production"
-            subtitle="by Country"
+            [dataSource]="data"
+            chartTitle="Olympic Medals By Country"
             [chartType]="chartType">
         </igx-category-chart>
     </div>

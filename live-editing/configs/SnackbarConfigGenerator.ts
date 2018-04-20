@@ -1,12 +1,14 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxAvatarModule, IgxIconModule, IgxListModule,
+    IgxRippleModule, IgxSnackbarModule } from "igniteui-angular/main";
 import { SnackbarSample4Component } from "../../src/app/snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxAvatarModule, IgxIconModule, IgxListModule, IgxRippleModule, IgxSnackbarModule } from "igniteui-angular/main";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class SnackbarConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: SnackbarSample4Component,

@@ -1,15 +1,16 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { ToggleComponent } from "../../src/app/toggle/toggle.component";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxToggleModule } from "igniteui-angular/main";
 import { ToggleSample1Component } from "../../src/app/toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "../../src/app/toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "../../src/app/toggle/toggle-sample-3/toggle-sample-3.component";
+import { ToggleComponent } from "../../src/app/toggle/toggle.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ToggleConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // toggle sample
         configs.push(new Config({

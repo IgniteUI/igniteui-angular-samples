@@ -3,6 +3,7 @@
         <span>Chart Type:</span>
         <select [(ngModel)]="chartType">
             <option>Auto</option>
+            <option>Area</option>
             <option>Line</option>
             <option>Column</option>
             <option>Point</option>
@@ -15,7 +16,7 @@
     </div>
     <div class="chart">
         <igx-category-chart height="100%" width="100%"
-            [dataSource]="data" title="Energy Production"
+            [dataSource]="data" chartTitle="Energy Production"
             subtitle="by Country"
             [tooltipTemplate]="valueTooltip"
             [chartType]="chartType">
