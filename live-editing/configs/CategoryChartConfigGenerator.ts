@@ -12,6 +12,7 @@ import {
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { CategoryChartCustomTooltipsComponent } from "../../src/app/category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -57,6 +58,16 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxCategoryChartModule, CategoryChartHighFrequencyComponent],
                 ngDeclarations: [CategoryChartHighFrequencyComponent],
+                ngImports: [IgxCategoryChartModule]
+            }),
+            packageDependencies: deps
+        }));
+
+        configs.push(new Config({
+            component: CategoryChartCustomTooltipsComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCategoryChartModule, CategoryChartCustomTooltipsComponent],
+                ngDeclarations: [CategoryChartCustomTooltipsComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
             packageDependencies: deps

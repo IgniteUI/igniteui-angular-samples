@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxDatePickerComponent } from "igniteui-angular/main";
 
 @Component({
@@ -6,12 +6,8 @@ import { IgxDatePickerComponent } from "igniteui-angular/main";
   styleUrls: ["./datepicker-sample-1.component.scss"],
   templateUrl: "./datepicker-sample-1.component.html"
 })
-export class DatepickerSample1Component implements AfterViewInit {
+export class DatepickerSample1Component implements OnInit {
   constructor() { }
 
-  public ngAfterViewInit(): void {
-    (document.getElementById("date-picker")
-      .getElementsByClassName("igx-date-picker__input-date")[0] as HTMLElement)
-      .click();
-  }
+  public ngOnInit(): void {}
 }
