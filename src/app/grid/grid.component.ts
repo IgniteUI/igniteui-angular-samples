@@ -185,8 +185,8 @@ class CustomSummary extends IgxNumberSummaryOperand {
         return result;
     }
 
-    avgValue(data) {
+    private avgValue(data) {
         const value = this.sum(data) / this.count(data);
         return value.toFixed(2);
-    };
+    }
 }
