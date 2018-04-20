@@ -3,6 +3,7 @@
         <span>Chart Type:</span>
         <select [(ngModel)]="chartType">
             <option>Auto</option>
+            <option>Area</option>
             <option>Line</option>
             <option>Column</option>
             <option>Point</option>
@@ -17,7 +18,7 @@
         <igx-category-chart height="98%" width="98%"
             [dataSource]="data"
             [chartType]="chartType"
-            chartTitle="Energy Production by Country"
+            title="Olympic Medals By Country"
 
             xAxisLabelTextStyle="10pt Verdana"
             xAxisLabelTopMargin="5"
@@ -26,11 +27,11 @@
             yAxisLabelRightMargin="5"
             yAxisLabelTextColor="gray"
 
-            xAxisTitle="Countries"
+            xAxisTitle="Years"
             xAxisTitleTextColor="gray"
             xAxisTitleTextStyle="12pt Verdana"
             xAxisTitleAngle="0"
-            yAxisTitle="Trillions of Watt-hours (TWh)"
+            yAxisTitle="Total Medals"
             yAxisTitleTextStyle="12pt Verdana"
             yAxisTitleTextColor="gray"
             yAxisTitleAngle="90"
@@ -41,13 +42,13 @@
             xAxisTickStroke="gray"
             yAxisTickLength="0"
 
-            yAxisMinimumValue="0"
-            yAxisMaximumValue="1000"
+            yAxisMinimumValue="50"
+            yAxisMaximumValue="150"
 
-            yAxisInterval="100"
+            yAxisInterval="25"
             yAxisMajorStroke="black"
             yAxisMajorStrokeThickness="1"
-            yAxisMinorInterval="20"
+            yAxisMinorInterval="5"
             yAxisMinorStroke="gray"
             yAxisMinorStrokeThickness="0.5"
 
