@@ -99,28 +99,6 @@ export class GridCRMComponent implements OnInit {
         this.pinnedColsLength = this.grid1.pinnedColumns.length;
     }
 
-    public toggleHidingContent() {
-        if (this.toggleHiding.collapsed) {
-            if (!this.togglePinning.collapsed) {
-                this.togglePinning.close(true);
-            }
-            this.toggleHiding.open(true);
-        } else {
-            this.toggleHiding.close(true);
-        }
-    }
-
-    public togglePinningContent() {
-        if (this.togglePinning.collapsed) {
-            if (!this.toggleHiding.collapsed) {
-                this.toggleHiding.close(true);
-            }
-            this.togglePinning.open(true);
-        } else {
-            this.togglePinning.close(true);
-        }
-    }
-
     public toggleVisibility(col: IgxColumnComponent) {
         if (col.hidden) {
             this.hiddenColsLength--;

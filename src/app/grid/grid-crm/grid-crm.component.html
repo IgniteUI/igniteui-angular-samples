@@ -5,7 +5,7 @@
                 <span>Business propeller</span>
 
                 <div class="relative-container">
-                    <button class="toggle-button"  igxButton="flat" igxRipple="#09f" (click)="toggleHidingContent()"><igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}} hidden</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
+                    <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefHiding"><igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}} hidden</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
                     <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
                         <div class="toggle-section">
                             <h4 class="dd-title">Visible columns:</h4>
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="relative-container">
-                    <button class="toggle-button"  igxButton="flat" igxRipple="#09f" (click)="togglePinningContent()"><igx-icon class="header-icon">lock</igx-icon><span>{{pinnedColsLength}} pinned</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
+                    <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefPinning"><igx-icon class="header-icon">lock</igx-icon><span>{{pinnedColsLength}} pinned</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
                     <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
                         <div class="toggle-section">
                             <h4 class="dd-title">Pinned columns:</h4>
@@ -37,7 +37,7 @@
         </div>
 
         <igx-grid #grid1 [data]="localData" height="650" [width]="'1172px'" rowSelectable="true">
-                <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true">
+            <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true">
             </igx-column>
 
             <igx-column field="avatar" header="Photo" width="88" pinned="true" resizable="true">
