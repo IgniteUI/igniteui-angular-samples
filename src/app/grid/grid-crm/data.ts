@@ -26,7 +26,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 28,
       "estimated_sales": 686210,
-      "actual_sales": 421105
+      "actual_sales": 421105,
+      "tags": "warm, engineering"
     },
     {
       "id": 863241310,
@@ -54,7 +55,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 33,
       "estimated_sales": 2008801,
-      "actual_sales": 186592
+      "actual_sales": 186592,
+      "tags": "demo, medical"
     },
     {
       "id": 905500122,
@@ -82,7 +84,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 49,
       "estimated_sales": 950873,
-      "actual_sales": 3395844
+      "actual_sales": 3395844,
+      "tags": "demo, retail"
     },
     {
       "id": 507049693,
@@ -110,7 +113,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 51,
       "estimated_sales": 170852,
-      "actual_sales": 3020337
+      "actual_sales": 3020337,
+      "tags": "cold, construction"
     },
     {
       "id": 379956513,
@@ -138,7 +142,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 18,
       "estimated_sales": 1734161,
-      "actual_sales": 1006212
+      "actual_sales": 1006212,
+      "tags": "demo, engineering"
     },
     {
       "id": 291588694,
@@ -166,7 +171,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 44,
       "estimated_sales": 459672,
-      "actual_sales": 1387575
+      "actual_sales": 1387575,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 204849533,
@@ -194,7 +200,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 54,
       "estimated_sales": 557944,
-      "actual_sales": 4693923
+      "actual_sales": 4693923,
+      "tags": "retail"
     },
     {
       "id": 971237211,
@@ -222,7 +229,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 32,
       "estimated_sales": 2673790,
-      "actual_sales": 2290946
+      "actual_sales": 2290946,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 943082773,
@@ -250,7 +258,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 4,
       "estimated_sales": 901030,
-      "actual_sales": 1105824
+      "actual_sales": 1105824,
+      "tags": "hot, financial"
     },
     {
       "id": 139562867,
@@ -278,7 +287,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 46,
       "estimated_sales": 0,
-      "actual_sales": 3573592
+      "actual_sales": 3573592,
+      "tags": "hot, construction"
     },
     {
       "id": 384626517,
@@ -306,7 +316,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 95,
       "estimated_sales": 1057020,
-      "actual_sales": 1350090
+      "actual_sales": 1350090,
+      "tags": "cool, retail"
     },
     {
       "id": 708074714,
@@ -334,7 +345,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 7,
       "estimated_sales": 1512112,
-      "actual_sales": 271018
+      "actual_sales": 271018,
+      "tags": "retail"
     },
     {
       "id": 784577926,
@@ -362,7 +374,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 61,
       "estimated_sales": 701695,
-      "actual_sales": 2694864
+      "actual_sales": 2694864,
+      "tags": "pro, engineering"
     },
     {
       "id": 628634306,
@@ -390,7 +403,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 43,
       "estimated_sales": 2511201,
-      "actual_sales": 2140164
+      "actual_sales": 2140164,
+      "tags": "cool, medical"
     },
     {
       "id": 783203189,
@@ -418,7 +432,8 @@ export const data: any[] = [
       "deals_total": 88,
       "ratio": 48,
       "estimated_sales": 3292440,
-      "actual_sales": 2691388
+      "actual_sales": 2691388,
+      "tags": "subscriber, construction"
     },
     {
       "id": 277837180,
@@ -446,7 +461,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 81,
       "estimated_sales": 4851650,
-      "actual_sales": 3161029
+      "actual_sales": 3161029,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 516140284,
@@ -474,7 +490,8 @@ export const data: any[] = [
       "deals_total": 86,
       "ratio": 52,
       "estimated_sales": 2864850,
-      "actual_sales": 3328011
+      "actual_sales": 3328011,
+      "tags": ""
     },
     {
       "id": 791301636,
@@ -502,7 +519,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 38,
       "estimated_sales": 794122,
-      "actual_sales": 923508
+      "actual_sales": 923508,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 118347444,
@@ -530,7 +548,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 54,
       "estimated_sales": 0,
-      "actual_sales": 4943021
+      "actual_sales": 4943021,
+      "tags": "cold, medical"
     },
     {
       "id": 131949787,
@@ -558,7 +577,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 22,
       "estimated_sales": 3827040,
-      "actual_sales": 883463
+      "actual_sales": 883463,
+      "tags": "pro, engineering"
     },
     {
       "id": 658168789,
@@ -586,7 +606,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 0,
       "estimated_sales": 2125904,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, retail"
     },
     {
       "id": 584436787,
@@ -614,7 +635,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 73,
       "estimated_sales": 447200,
-      "actual_sales": 3497445
+      "actual_sales": 3497445,
+      "tags": "pro, construction"
     },
     {
       "id": 868982214,
@@ -642,7 +664,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 91,
       "estimated_sales": 1374648,
-      "actual_sales": 3622626
+      "actual_sales": 3622626,
+      "tags": "pro, construction"
     },
     {
       "id": 443932207,
@@ -670,7 +693,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 85,
       "estimated_sales": 939731,
-      "actual_sales": 4735052
+      "actual_sales": 4735052,
+      "tags": "subscriber, financial"
     },
     {
       "id": 865960075,
@@ -698,7 +722,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 76,
       "estimated_sales": 1771476,
-      "actual_sales": 1283424
+      "actual_sales": 1283424,
+      "tags": "hot, engineering"
     },
     {
       "id": 359209632,
@@ -726,7 +751,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 84,
       "estimated_sales": 1282578,
-      "actual_sales": 1273872
+      "actual_sales": 1273872,
+      "tags": "warm, financial"
     },
     {
       "id": 274966895,
@@ -754,7 +780,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 37,
       "estimated_sales": 870600,
-      "actual_sales": 2156231
+      "actual_sales": 2156231,
+      "tags": "pro, retail"
     },
     {
       "id": 213491893,
@@ -782,7 +809,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 13,
       "estimated_sales": 4697628,
-      "actual_sales": 147204
+      "actual_sales": 147204,
+      "tags": "demo, engineering"
     },
     {
       "id": 320452212,
@@ -810,7 +838,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 45,
       "estimated_sales": 551540,
-      "actual_sales": 997100
+      "actual_sales": 997100,
+      "tags": "demo, retail"
     },
     {
       "id": 51663196,
@@ -838,7 +867,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 51,
       "estimated_sales": 3628422,
-      "actual_sales": 1417267
+      "actual_sales": 1417267,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 751762440,
@@ -866,7 +896,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 33,
       "estimated_sales": 2458761,
-      "actual_sales": 354696
+      "actual_sales": 354696,
+      "tags": "demo, financial"
     },
     {
       "id": 378738789,
@@ -894,7 +925,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 3,
       "estimated_sales": 4977386,
-      "actual_sales": 163577
+      "actual_sales": 163577,
+      "tags": "subscriber, construction"
     },
     {
       "id": 259368814,
@@ -922,7 +954,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 24,
       "estimated_sales": 1431054,
-      "actual_sales": 504924
+      "actual_sales": 504924,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 669889487,
@@ -950,7 +983,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 28,
       "estimated_sales": 2192640,
-      "actual_sales": 1561904
+      "actual_sales": 1561904,
+      "tags": "cool, medical"
     },
     {
       "id": 996195134,
@@ -978,7 +1012,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 0,
       "estimated_sales": 1596804,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, retail"
     },
     {
       "id": 203483816,
@@ -1006,7 +1041,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 38,
       "estimated_sales": 2460886,
-      "actual_sales": 976764
+      "actual_sales": 976764,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 652718947,
@@ -1034,7 +1070,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 63,
       "estimated_sales": 851975,
-      "actual_sales": 579500
+      "actual_sales": 579500,
+      "tags": ""
     },
     {
       "id": 141237612,
@@ -1062,7 +1099,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 46,
       "estimated_sales": 1737780,
-      "actual_sales": 1710384
+      "actual_sales": 1710384,
+      "tags": "pro, financial"
     },
     {
       "id": 65129205,
@@ -1090,7 +1128,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 44,
       "estimated_sales": 356503,
-      "actual_sales": 609956
+      "actual_sales": 609956,
+      "tags": "subscriber, medical"
     },
     {
       "id": 317962954,
@@ -1118,7 +1157,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 65,
       "estimated_sales": 3134544,
-      "actual_sales": 3120450
+      "actual_sales": 3120450,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 754512920,
@@ -1146,7 +1186,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 94,
       "estimated_sales": 2692368,
-      "actual_sales": 5775570
+      "actual_sales": 5775570,
+      "tags": "warm, financial"
     },
     {
       "id": 487658833,
@@ -1174,7 +1215,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 6,
       "estimated_sales": 65359,
-      "actual_sales": 2337804
+      "actual_sales": 2337804,
+      "tags": "cool, engineering"
     },
     {
       "id": 297796630,
@@ -1202,7 +1244,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 52,
       "estimated_sales": 1081936,
-      "actual_sales": 2128148
+      "actual_sales": 2128148,
+      "tags": ""
     },
     {
       "id": 298047164,
@@ -1230,7 +1273,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 55,
       "estimated_sales": 1515576,
-      "actual_sales": 1515635
+      "actual_sales": 1515635,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 766132212,
@@ -1258,7 +1302,8 @@ export const data: any[] = [
       "deals_total": 6,
       "ratio": 75,
       "estimated_sales": 284054,
-      "actual_sales": 464196
+      "actual_sales": 464196,
+      "tags": "cool, financial"
     },
     {
       "id": 794881867,
@@ -1286,7 +1331,8 @@ export const data: any[] = [
       "deals_total": 79,
       "ratio": 49,
       "estimated_sales": 1441180,
-      "actual_sales": 3417960
+      "actual_sales": 3417960,
+      "tags": "cool, retail"
     },
     {
       "id": 442665449,
@@ -1314,7 +1360,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 59,
       "estimated_sales": 990030,
-      "actual_sales": 4172931
+      "actual_sales": 4172931,
+      "tags": "hot, construction"
     },
     {
       "id": 148724233,
@@ -1342,7 +1389,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 6,
       "estimated_sales": 388396,
-      "actual_sales": 4518825
+      "actual_sales": 4518825,
+      "tags": "demo, engineering"
     },
     {
       "id": 476172606,
@@ -1370,7 +1418,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 76,
       "estimated_sales": 1501760,
-      "actual_sales": 2678701
+      "actual_sales": 2678701,
+      "tags": "engineering"
     },
     {
       "id": 672186492,
@@ -1398,7 +1447,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 46,
       "estimated_sales": 1054476,
-      "actual_sales": 1898666
+      "actual_sales": 1898666,
+      "tags": "demo, retail"
     },
     {
       "id": 751652610,
@@ -1426,7 +1476,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 61,
       "estimated_sales": 355155,
-      "actual_sales": 2360110
+      "actual_sales": 2360110,
+      "tags": ""
     },
     {
       "id": 260931205,
@@ -1454,7 +1505,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 5,
       "estimated_sales": 4174828,
-      "actual_sales": 187960
+      "actual_sales": 187960,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 530445829,
@@ -1482,7 +1534,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 67,
       "estimated_sales": 894474,
-      "actual_sales": 4664418
+      "actual_sales": 4664418,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 425656541,
@@ -1510,7 +1563,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 47,
       "estimated_sales": 3179669,
-      "actual_sales": 1938279
+      "actual_sales": 1938279,
+      "tags": "subscriber, financial"
     },
     {
       "id": 915429938,
@@ -1538,7 +1592,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 14,
       "estimated_sales": 150252,
-      "actual_sales": 670580
+      "actual_sales": 670580,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 653923840,
@@ -1566,7 +1621,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 71,
       "estimated_sales": 1898010,
-      "actual_sales": 2612840
+      "actual_sales": 2612840,
+      "tags": "cold, retail"
     },
     {
       "id": 185035041,
@@ -1594,7 +1650,8 @@ export const data: any[] = [
       "deals_total": 10,
       "ratio": 0,
       "estimated_sales": 1289280,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, construction"
     },
     {
       "id": 109623,
@@ -1622,7 +1679,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 9,
       "estimated_sales": 3420072,
-      "actual_sales": 313548
+      "actual_sales": 313548,
+      "tags": "subscriber, retail"
     },
     {
       "id": 356968052,
@@ -1650,7 +1708,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 69,
       "estimated_sales": 3677278,
-      "actual_sales": 1747108
+      "actual_sales": 1747108,
+      "tags": "demo, retail"
     },
     {
       "id": 929773684,
@@ -1678,7 +1737,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 5,
       "estimated_sales": 2490840,
-      "actual_sales": 3033900
+      "actual_sales": 3033900,
+      "tags": "medical"
     },
     {
       "id": 709072297,
@@ -1706,7 +1766,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 5,
       "estimated_sales": 3547287,
-      "actual_sales": 1301440
+      "actual_sales": 1301440,
+      "tags": "demo, financial"
     },
     {
       "id": 628030366,
@@ -1734,7 +1795,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 93,
       "estimated_sales": 3626196,
-      "actual_sales": 2823849
+      "actual_sales": 2823849,
+      "tags": "warm, medical"
     },
     {
       "id": 115434000,
@@ -1762,7 +1824,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 86,
       "estimated_sales": 2852928,
-      "actual_sales": 4581096
+      "actual_sales": 4581096,
+      "tags": "demo, medical"
     },
     {
       "id": 781474958,
@@ -1790,7 +1853,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 27,
       "estimated_sales": 1884918,
-      "actual_sales": 1082730
+      "actual_sales": 1082730,
+      "tags": "hot, construction"
     },
     {
       "id": 716652088,
@@ -1818,7 +1882,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 67,
       "estimated_sales": 2401050,
-      "actual_sales": 2235468
+      "actual_sales": 2235468,
+      "tags": "hot, financial"
     },
     {
       "id": 926110582,
@@ -1846,7 +1911,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 7,
       "estimated_sales": 0,
-      "actual_sales": 3207787
+      "actual_sales": 3207787,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 382757519,
@@ -1874,7 +1940,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 13,
       "estimated_sales": 1572000,
-      "actual_sales": 209878
+      "actual_sales": 209878,
+      "tags": "pro, retail"
     },
     {
       "id": 563374905,
@@ -1902,7 +1969,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 4,
       "estimated_sales": 1400166,
-      "actual_sales": 61337
+      "actual_sales": 61337,
+      "tags": "subscriber, retail"
     },
     {
       "id": 787253389,
@@ -1930,7 +1998,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 29,
       "estimated_sales": 2749374,
-      "actual_sales": 714571
+      "actual_sales": 714571,
+      "tags": "demo, engineering"
     },
     {
       "id": 470959772,
@@ -1958,7 +2027,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 71,
       "estimated_sales": 4323875,
-      "actual_sales": 2746800
+      "actual_sales": 2746800,
+      "tags": "demo, medical"
     },
     {
       "id": 304897422,
@@ -1986,7 +2056,8 @@ export const data: any[] = [
       "deals_total": 12,
       "ratio": 75,
       "estimated_sales": 0,
-      "actual_sales": 1598400
+      "actual_sales": 1598400,
+      "tags": "pro, retail"
     },
     {
       "id": 113000277,
@@ -2014,7 +2085,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 1,
       "estimated_sales": 115192,
-      "actual_sales": 451728
+      "actual_sales": 451728,
+      "tags": "cold, construction"
     },
     {
       "id": 115567478,
@@ -2042,7 +2114,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 45,
       "estimated_sales": 2045631,
-      "actual_sales": 1248336
+      "actual_sales": 1248336,
+      "tags": "cool, engineering"
     },
     {
       "id": 327823716,
@@ -2070,7 +2143,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 41,
       "estimated_sales": 1574176,
-      "actual_sales": 1160025
+      "actual_sales": 1160025,
+      "tags": "warm, construction"
     },
     {
       "id": 622175884,
@@ -2098,7 +2172,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 3,
       "estimated_sales": 538875,
-      "actual_sales": 1733590
+      "actual_sales": 1733590,
+      "tags": ""
     },
     {
       "id": 712619219,
@@ -2126,7 +2201,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 38,
       "estimated_sales": 1643220,
-      "actual_sales": 951342
+      "actual_sales": 951342,
+      "tags": "cool, engineering"
     },
     {
       "id": 409767062,
@@ -2154,7 +2230,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 71,
       "estimated_sales": 1222830,
-      "actual_sales": 1138104
+      "actual_sales": 1138104,
+      "tags": "cool, medical"
     },
     {
       "id": 226394719,
@@ -2182,7 +2259,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 73,
       "estimated_sales": 950984,
-      "actual_sales": 2280513
+      "actual_sales": 2280513,
+      "tags": "subscriber, construction"
     },
     {
       "id": 950707960,
@@ -2210,7 +2288,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 75,
       "estimated_sales": 3642366,
-      "actual_sales": 195156
+      "actual_sales": 195156,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 900932268,
@@ -2238,7 +2317,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 67,
       "estimated_sales": 1986888,
-      "actual_sales": 2213760
+      "actual_sales": 2213760,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 614294465,
@@ -2266,7 +2346,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 52,
       "estimated_sales": 4032248,
-      "actual_sales": 794038
+      "actual_sales": 794038,
+      "tags": ""
     },
     {
       "id": 377106801,
@@ -2294,7 +2375,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 24,
       "estimated_sales": 1882284,
-      "actual_sales": 433880
+      "actual_sales": 433880,
+      "tags": "demo, engineering"
     },
     {
       "id": 262450597,
@@ -2322,7 +2404,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 81,
       "estimated_sales": 3368196,
-      "actual_sales": 2038825
+      "actual_sales": 2038825,
+      "tags": "retail"
     },
     {
       "id": 235852051,
@@ -2350,7 +2433,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 49,
       "estimated_sales": 1213264,
-      "actual_sales": 3278968
+      "actual_sales": 3278968,
+      "tags": "medical"
     },
     {
       "id": 664568769,
@@ -2378,7 +2462,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 79,
       "estimated_sales": 1948260,
-      "actual_sales": 1611643
+      "actual_sales": 1611643,
+      "tags": "pharmaceutical"
     },
     {
       "id": 752959468,
@@ -2406,7 +2491,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 25,
       "estimated_sales": 1296262,
-      "actual_sales": 301030
+      "actual_sales": 301030,
+      "tags": "cold, medical"
     },
     {
       "id": 786276070,
@@ -2434,7 +2520,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 58,
       "estimated_sales": 168833,
-      "actual_sales": 3745014
+      "actual_sales": 3745014,
+      "tags": "medical"
     },
     {
       "id": 520466635,
@@ -2462,7 +2549,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 78,
       "estimated_sales": 4789557,
-      "actual_sales": 2129000
+      "actual_sales": 2129000,
+      "tags": "subscriber, construction"
     },
     {
       "id": 638218995,
@@ -2490,7 +2578,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 32,
       "estimated_sales": 881670,
-      "actual_sales": 1350960
+      "actual_sales": 1350960,
+      "tags": "subscriber, retail"
     },
     {
       "id": 65067568,
@@ -2518,7 +2607,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 39,
       "estimated_sales": 1433790,
-      "actual_sales": 881398
+      "actual_sales": 881398,
+      "tags": "construction"
     },
     {
       "id": 686424181,
@@ -2546,7 +2636,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 95,
       "estimated_sales": 1900863,
-      "actual_sales": 3880989
+      "actual_sales": 3880989,
+      "tags": "warm, financial"
     },
     {
       "id": 691627486,
@@ -2574,7 +2665,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 23,
       "estimated_sales": 3301614,
-      "actual_sales": 687087
+      "actual_sales": 687087,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 63326034,
@@ -2602,7 +2694,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 3,
       "estimated_sales": 3337971,
-      "actual_sales": 1152010
+      "actual_sales": 1152010,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 526212097,
@@ -2630,7 +2723,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 86,
       "estimated_sales": 2098044,
-      "actual_sales": 2270006
+      "actual_sales": 2270006,
+      "tags": "cold, medical"
     },
     {
       "id": 929137195,
@@ -2658,7 +2752,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 28,
       "estimated_sales": 1605162,
-      "actual_sales": 758405
+      "actual_sales": 758405,
+      "tags": "cold, medical"
     },
     {
       "id": 410422512,
@@ -2686,7 +2781,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 41,
       "estimated_sales": 3732816,
-      "actual_sales": 1634364
+      "actual_sales": 1634364,
+      "tags": "cool, engineering"
     },
     {
       "id": 208556148,
@@ -2714,7 +2810,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 0,
       "estimated_sales": 1515024,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 785897213,
@@ -2742,7 +2839,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 49,
       "estimated_sales": 893040,
-      "actual_sales": 3140006
+      "actual_sales": 3140006,
+      "tags": "cold, financial"
     },
     {
       "id": 991109245,
@@ -2770,7 +2868,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 81,
       "estimated_sales": 1951110,
-      "actual_sales": 758225
+      "actual_sales": 758225,
+      "tags": ""
     },
     {
       "id": 229156059,
@@ -2798,7 +2897,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 35,
       "estimated_sales": 1299528,
-      "actual_sales": 427320
+      "actual_sales": 427320,
+      "tags": "pro, financial"
     },
     {
       "id": 890157389,
@@ -2826,7 +2926,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 5,
       "estimated_sales": 1188520,
-      "actual_sales": 128638
+      "actual_sales": 128638,
+      "tags": "demo, medical"
     },
     {
       "id": 499268085,
@@ -2854,7 +2955,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 9,
       "estimated_sales": 570366,
-      "actual_sales": 1520931
+      "actual_sales": 1520931,
+      "tags": "cold, construction"
     },
     {
       "id": 748064736,
@@ -2882,7 +2984,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 48,
       "estimated_sales": 1812744,
-      "actual_sales": 3443440
+      "actual_sales": 3443440,
+      "tags": "warm, engineering"
     },
     {
       "id": 271540773,
@@ -2910,7 +3013,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 67,
       "estimated_sales": 162316,
-      "actual_sales": 415392
+      "actual_sales": 415392,
+      "tags": "hot, medical"
     },
     {
       "id": 759693536,
@@ -2938,7 +3042,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 44,
       "estimated_sales": 0,
-      "actual_sales": 2988909
+      "actual_sales": 2988909,
+      "tags": "hot, retail"
     },
     {
       "id": 765687550,
@@ -2966,7 +3071,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 29,
       "estimated_sales": 1588296,
-      "actual_sales": 301318
+      "actual_sales": 301318,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 402736165,
@@ -2994,7 +3100,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 8,
       "estimated_sales": 4890183,
-      "actual_sales": 1847888
+      "actual_sales": 1847888,
+      "tags": "pro, construction"
     },
     {
       "id": 792872282,
@@ -3022,7 +3129,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 63,
       "estimated_sales": 1380451,
-      "actual_sales": 2263815
+      "actual_sales": 2263815,
+      "tags": "pro, engineering"
     },
     {
       "id": 937592691,
@@ -3050,7 +3158,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 4,
       "estimated_sales": 1602460,
-      "actual_sales": 3069384
+      "actual_sales": 3069384,
+      "tags": "warm, construction"
     },
     {
       "id": 464905609,
@@ -3078,7 +3187,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 0,
       "estimated_sales": 2818728,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, retail"
     },
     {
       "id": 725670652,
@@ -3106,7 +3216,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 45,
       "estimated_sales": 1770160,
-      "actual_sales": 2626420
+      "actual_sales": 2626420,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 12502390,
@@ -3134,7 +3245,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 51,
       "estimated_sales": 2549350,
-      "actual_sales": 3993800
+      "actual_sales": 3993800,
+      "tags": "cold, medical"
     },
     {
       "id": 204473265,
@@ -3162,7 +3274,8 @@ export const data: any[] = [
       "deals_total": 84,
       "ratio": 54,
       "estimated_sales": 2679656,
-      "actual_sales": 1860390
+      "actual_sales": 1860390,
+      "tags": "cool, retail"
     },
     {
       "id": 359071419,
@@ -3190,7 +3303,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 32,
       "estimated_sales": 2605128,
-      "actual_sales": 1623468
+      "actual_sales": 1623468,
+      "tags": "cool, construction"
     },
     {
       "id": 551639525,
@@ -3218,7 +3332,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 6,
       "estimated_sales": 420656,
-      "actual_sales": 2915895
+      "actual_sales": 2915895,
+      "tags": "cool, financial"
     },
     {
       "id": 17613310,
@@ -3246,7 +3361,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 89,
       "estimated_sales": 409983,
-      "actual_sales": 3269976
+      "actual_sales": 3269976,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 819567118,
@@ -3274,7 +3390,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 94,
       "estimated_sales": 913356,
-      "actual_sales": 1984695
+      "actual_sales": 1984695,
+      "tags": "demo, engineering"
     },
     {
       "id": 175852789,
@@ -3302,7 +3419,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 53,
       "estimated_sales": 449664,
-      "actual_sales": 3766365
+      "actual_sales": 3766365,
+      "tags": "pro, construction"
     },
     {
       "id": 888244427,
@@ -3330,7 +3448,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 54,
       "estimated_sales": 1617904,
-      "actual_sales": 963879
+      "actual_sales": 963879,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 721676406,
@@ -3358,7 +3477,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 59,
       "estimated_sales": 2677416,
-      "actual_sales": 2440783
+      "actual_sales": 2440783,
+      "tags": "medical"
     },
     {
       "id": 238633854,
@@ -3386,7 +3506,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 81,
       "estimated_sales": 2130565,
-      "actual_sales": 1985298
+      "actual_sales": 1985298,
+      "tags": "hot, engineering"
     },
     {
       "id": 442189261,
@@ -3414,7 +3535,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 89,
       "estimated_sales": 5639880,
-      "actual_sales": 2149360
+      "actual_sales": 2149360,
+      "tags": "cold, financial"
     },
     {
       "id": 278785545,
@@ -3442,7 +3564,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 54,
       "estimated_sales": 1308450,
-      "actual_sales": 3988580
+      "actual_sales": 3988580,
+      "tags": "hot, construction"
     },
     {
       "id": 354558788,
@@ -3470,7 +3593,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 35,
       "estimated_sales": 2101320,
-      "actual_sales": 736176
+      "actual_sales": 736176,
+      "tags": "warm, financial"
     },
     {
       "id": 406938625,
@@ -3498,7 +3622,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 58,
       "estimated_sales": 1312935,
-      "actual_sales": 1226431
+      "actual_sales": 1226431,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 191811557,
@@ -3526,7 +3651,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 5,
       "estimated_sales": 1096641,
-      "actual_sales": 1426176
+      "actual_sales": 1426176,
+      "tags": "hot, engineering"
     },
     {
       "id": 361861864,
@@ -3554,7 +3680,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 75,
       "estimated_sales": 1650924,
-      "actual_sales": 826308
+      "actual_sales": 826308,
+      "tags": "cool, financial"
     },
     {
       "id": 606612904,
@@ -3582,7 +3709,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 33,
       "estimated_sales": 500616,
-      "actual_sales": 329451
+      "actual_sales": 329451,
+      "tags": "cool, medical"
     },
     {
       "id": 683579157,
@@ -3610,7 +3738,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 69,
       "estimated_sales": 713838,
-      "actual_sales": 4569298
+      "actual_sales": 4569298,
+      "tags": "hot, construction"
     },
     {
       "id": 734230268,
@@ -3638,7 +3767,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 38,
       "estimated_sales": 1513590,
-      "actual_sales": 1165095
+      "actual_sales": 1165095,
+      "tags": "subscriber, medical"
     },
     {
       "id": 838951712,
@@ -3666,7 +3796,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 63,
       "estimated_sales": 1347920,
-      "actual_sales": 3184758
+      "actual_sales": 3184758,
+      "tags": "cool, medical"
     },
     {
       "id": 931789304,
@@ -3694,7 +3825,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 43,
       "estimated_sales": 5488380,
-      "actual_sales": 1626180
+      "actual_sales": 1626180,
+      "tags": "demo, financial"
     },
     {
       "id": 308215970,
@@ -3722,7 +3854,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 95,
       "estimated_sales": 3296025,
-      "actual_sales": 1365140
+      "actual_sales": 1365140,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 820972604,
@@ -3750,7 +3883,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 19,
       "estimated_sales": 721710,
-      "actual_sales": 1020397
+      "actual_sales": 1020397,
+      "tags": "hot, retail"
     },
     {
       "id": 107747029,
@@ -3778,7 +3912,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 43,
       "estimated_sales": 1987155,
-      "actual_sales": 1172610
+      "actual_sales": 1172610,
+      "tags": "warm, retail"
     },
     {
       "id": 441028366,
@@ -3806,7 +3941,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 75,
       "estimated_sales": 2153306,
-      "actual_sales": 2254830
+      "actual_sales": 2254830,
+      "tags": "cool, retail"
     },
     {
       "id": 762178654,
@@ -3834,7 +3970,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 62,
       "estimated_sales": 897310,
-      "actual_sales": 3698296
+      "actual_sales": 3698296,
+      "tags": "warm, medical"
     },
     {
       "id": 648514338,
@@ -3862,7 +3999,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 17,
       "estimated_sales": 4579432,
-      "actual_sales": 796284
+      "actual_sales": 796284,
+      "tags": "retail"
     },
     {
       "id": 800873151,
@@ -3890,7 +4028,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 67,
       "estimated_sales": 1213890,
-      "actual_sales": 1063752
+      "actual_sales": 1063752,
+      "tags": "cold, engineering"
     },
     {
       "id": 532232775,
@@ -3918,7 +4057,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 41,
       "estimated_sales": 1268722,
-      "actual_sales": 841776
+      "actual_sales": 841776,
+      "tags": "retail"
     },
     {
       "id": 859910869,
@@ -3946,7 +4086,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 97,
       "estimated_sales": 63836,
-      "actual_sales": 4367550
+      "actual_sales": 4367550,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 699657284,
@@ -3974,7 +4115,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 8,
       "estimated_sales": 2531572,
-      "actual_sales": 327484
+      "actual_sales": 327484,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 72405625,
@@ -4002,7 +4144,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 54,
       "estimated_sales": 2999820,
-      "actual_sales": 582484
+      "actual_sales": 582484,
+      "tags": "warm, financial"
     },
     {
       "id": 22421037,
@@ -4030,7 +4173,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 39,
       "estimated_sales": 823603,
-      "actual_sales": 2346374
+      "actual_sales": 2346374,
+      "tags": "cold, medical"
     },
     {
       "id": 647824990,
@@ -4058,7 +4202,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 48,
       "estimated_sales": 3627468,
-      "actual_sales": 1979152
+      "actual_sales": 1979152,
+      "tags": "construction"
     },
     {
       "id": 126964452,
@@ -4086,7 +4231,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 47,
       "estimated_sales": 1083200,
-      "actual_sales": 5078034
+      "actual_sales": 5078034,
+      "tags": "hot, financial"
     },
     {
       "id": 585165069,
@@ -4114,7 +4260,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 55,
       "estimated_sales": 1469472,
-      "actual_sales": 1040508
+      "actual_sales": 1040508,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 373945754,
@@ -4142,7 +4289,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 73,
       "estimated_sales": 1516120,
-      "actual_sales": 2711456
+      "actual_sales": 2711456,
+      "tags": "demo, medical"
     },
     {
       "id": 130543223,
@@ -4170,7 +4318,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 72,
       "estimated_sales": 1004922,
-      "actual_sales": 2680956
+      "actual_sales": 2680956,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 149962559,
@@ -4198,7 +4347,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 59,
       "estimated_sales": 0,
-      "actual_sales": 1721110
+      "actual_sales": 1721110,
+      "tags": "hot, medical"
     },
     {
       "id": 389288503,
@@ -4226,7 +4376,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 32,
       "estimated_sales": 651822,
-      "actual_sales": 1877136
+      "actual_sales": 1877136,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 180511968,
@@ -4254,7 +4405,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 46,
       "estimated_sales": 1582400,
-      "actual_sales": 1393172
+      "actual_sales": 1393172,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 181756398,
@@ -4282,7 +4434,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 46,
       "estimated_sales": 1276160,
-      "actual_sales": 1472489
+      "actual_sales": 1472489,
+      "tags": "construction"
     },
     {
       "id": 804031140,
@@ -4310,7 +4463,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 3,
       "estimated_sales": 3862572,
-      "actual_sales": 151914
+      "actual_sales": 151914,
+      "tags": "pro, medical"
     },
     {
       "id": 578774224,
@@ -4338,7 +4492,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 22,
       "estimated_sales": 266636,
-      "actual_sales": 744032
+      "actual_sales": 744032,
+      "tags": "construction"
     },
     {
       "id": 601969277,
@@ -4366,7 +4521,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 37,
       "estimated_sales": 0,
-      "actual_sales": 1270213
+      "actual_sales": 1270213,
+      "tags": "cool, medical"
     },
     {
       "id": 586367555,
@@ -4394,7 +4550,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 0,
       "estimated_sales": 255040,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 93561147,
@@ -4422,7 +4579,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 17,
       "estimated_sales": 2872989,
-      "actual_sales": 57512
+      "actual_sales": 57512,
+      "tags": "cool, construction"
     },
     {
       "id": 728523139,
@@ -4450,7 +4608,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 79,
       "estimated_sales": 1061188,
-      "actual_sales": 4486920
+      "actual_sales": 4486920,
+      "tags": "hot, financial"
     },
     {
       "id": 960390649,
@@ -4478,7 +4637,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 19,
       "estimated_sales": 3510486,
-      "actual_sales": 959364
+      "actual_sales": 959364,
+      "tags": "subscriber, construction"
     },
     {
       "id": 672264673,
@@ -4506,7 +4666,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 43,
       "estimated_sales": 0,
-      "actual_sales": 1070082
+      "actual_sales": 1070082,
+      "tags": "hot, medical"
     },
     {
       "id": 344604647,
@@ -4534,7 +4695,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 86,
       "estimated_sales": 2379182,
-      "actual_sales": 5099790
+      "actual_sales": 5099790,
+      "tags": "warm, retail"
     },
     {
       "id": 324652117,
@@ -4562,7 +4724,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 62,
       "estimated_sales": 752031,
-      "actual_sales": 4486638
+      "actual_sales": 4486638,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 924731971,
@@ -4590,7 +4753,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 93,
       "estimated_sales": 921004,
-      "actual_sales": 1736826
+      "actual_sales": 1736826,
+      "tags": "cold, financial"
     },
     {
       "id": 183612557,
@@ -4618,7 +4782,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 0,
       "estimated_sales": 238072,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, financial"
     },
     {
       "id": 688020164,
@@ -4646,7 +4811,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 1,
       "estimated_sales": 2821182,
-      "actual_sales": 167645
+      "actual_sales": 167645,
+      "tags": "cool, construction"
     },
     {
       "id": 277521465,
@@ -4674,7 +4840,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 7,
       "estimated_sales": 76703,
-      "actual_sales": 2947854
+      "actual_sales": 2947854,
+      "tags": ""
     },
     {
       "id": 676394332,
@@ -4702,7 +4869,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 11,
       "estimated_sales": 1985460,
-      "actual_sales": 103250
+      "actual_sales": 103250,
+      "tags": "demo, financial"
     },
     {
       "id": 164510718,
@@ -4730,7 +4898,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 4,
       "estimated_sales": 2191270,
-      "actual_sales": 2004216
+      "actual_sales": 2004216,
+      "tags": "financial"
     },
     {
       "id": 956059485,
@@ -4758,7 +4927,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 47,
       "estimated_sales": 1125530,
-      "actual_sales": 1256730
+      "actual_sales": 1256730,
+      "tags": "engineering"
     },
     {
       "id": 530982849,
@@ -4786,7 +4956,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 29,
       "estimated_sales": 2178550,
-      "actual_sales": 524524
+      "actual_sales": 524524,
+      "tags": "subscriber, retail"
     },
     {
       "id": 771387349,
@@ -4814,7 +4985,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 5,
       "estimated_sales": 1646928,
-      "actual_sales": 5130729
+      "actual_sales": 5130729,
+      "tags": "pro, retail"
     },
     {
       "id": 807635223,
@@ -4842,7 +5014,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 28,
       "estimated_sales": 238510,
-      "actual_sales": 1360996
+      "actual_sales": 1360996,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 679882681,
@@ -4870,7 +5043,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 29,
       "estimated_sales": 3030000,
-      "actual_sales": 257280
+      "actual_sales": 257280,
+      "tags": ""
     },
     {
       "id": 940027548,
@@ -4898,7 +5072,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 0,
       "estimated_sales": 1260295,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, construction"
     },
     {
       "id": 148381427,
@@ -4926,7 +5101,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 44,
       "estimated_sales": 745968,
-      "actual_sales": 1614668
+      "actual_sales": 1614668,
+      "tags": "warm, financial"
     },
     {
       "id": 62564531,
@@ -4954,7 +5130,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 14,
       "estimated_sales": 1300020,
-      "actual_sales": 763460
+      "actual_sales": 763460,
+      "tags": "warm, construction"
     },
     {
       "id": 104451830,
@@ -4982,7 +5159,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 0,
       "estimated_sales": 3027414,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 27428660,
@@ -5010,7 +5188,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 67,
       "estimated_sales": 188979,
-      "actual_sales": 2027940
+      "actual_sales": 2027940,
+      "tags": ""
     },
     {
       "id": 246388708,
@@ -5038,7 +5217,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 41,
       "estimated_sales": 3944820,
-      "actual_sales": 852194
+      "actual_sales": 852194,
+      "tags": "cool, medical"
     },
     {
       "id": 815679935,
@@ -5066,7 +5246,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 22,
       "estimated_sales": 834545,
-      "actual_sales": 710168
+      "actual_sales": 710168,
+      "tags": "financial"
     },
     {
       "id": 630253914,
@@ -5094,7 +5275,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 36,
       "estimated_sales": 1415508,
-      "actual_sales": 1756017
+      "actual_sales": 1756017,
+      "tags": "medical"
     },
     {
       "id": 618159805,
@@ -5122,7 +5304,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 33,
       "estimated_sales": 2403583,
-      "actual_sales": 791384
+      "actual_sales": 791384,
+      "tags": "hot, financial"
     },
     {
       "id": 149111031,
@@ -5150,7 +5333,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 66,
       "estimated_sales": 0,
-      "actual_sales": 4449212
+      "actual_sales": 4449212,
+      "tags": "cold, retail"
     },
     {
       "id": 498427870,
@@ -5178,7 +5362,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 6,
       "estimated_sales": 798189,
-      "actual_sales": 176377
+      "actual_sales": 176377,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 518465012,
@@ -5206,7 +5391,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 27,
       "estimated_sales": 3112542,
-      "actual_sales": 291996
+      "actual_sales": 291996,
+      "tags": "hot, retail"
     },
     {
       "id": 719986428,
@@ -5234,7 +5420,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 7,
       "estimated_sales": 950180,
-      "actual_sales": 2592928
+      "actual_sales": 2592928,
+      "tags": "cool, construction"
     },
     {
       "id": 524733894,
@@ -5262,7 +5449,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 19,
       "estimated_sales": 735850,
-      "actual_sales": 392082
+      "actual_sales": 392082,
+      "tags": "retail"
     },
     {
       "id": 474390453,
@@ -5290,7 +5478,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 46,
       "estimated_sales": 2030160,
-      "actual_sales": 2136615
+      "actual_sales": 2136615,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 736695558,
@@ -5318,7 +5507,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 52,
       "estimated_sales": 0,
-      "actual_sales": 1543312
+      "actual_sales": 1543312,
+      "tags": "cold, financial"
     },
     {
       "id": 954896380,
@@ -5346,7 +5536,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 36,
       "estimated_sales": 262398,
-      "actual_sales": 821674
+      "actual_sales": 821674,
+      "tags": "demo, retail"
     },
     {
       "id": 821322340,
@@ -5374,7 +5565,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 41,
       "estimated_sales": 1511584,
-      "actual_sales": 3815300
+      "actual_sales": 3815300,
+      "tags": "engineering"
     },
     {
       "id": 822407223,
@@ -5402,7 +5594,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 42,
       "estimated_sales": 555055,
-      "actual_sales": 661165
+      "actual_sales": 661165,
+      "tags": "pro, medical"
     },
     {
       "id": 71376805,
@@ -5430,7 +5623,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 45,
       "estimated_sales": 4356699,
-      "actual_sales": 3193134
+      "actual_sales": 3193134,
+      "tags": "construction"
     },
     {
       "id": 292053763,
@@ -5458,7 +5652,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 96,
       "estimated_sales": 807616,
-      "actual_sales": 2448144
+      "actual_sales": 2448144,
+      "tags": "hot, construction"
     },
     {
       "id": 246449654,
@@ -5486,7 +5681,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 71,
       "estimated_sales": 2380867,
-      "actual_sales": 4535890
+      "actual_sales": 4535890,
+      "tags": "cold, construction"
     },
     {
       "id": 238685733,
@@ -5514,7 +5710,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 68,
       "estimated_sales": 4226348,
-      "actual_sales": 5085522
+      "actual_sales": 5085522,
+      "tags": "cold, medical"
     },
     {
       "id": 454903039,
@@ -5542,7 +5739,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 61,
       "estimated_sales": 3262413,
-      "actual_sales": 5387175
+      "actual_sales": 5387175,
+      "tags": "retail"
     },
     {
       "id": 227674915,
@@ -5570,7 +5768,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 64,
       "estimated_sales": 960516,
-      "actual_sales": 2818336
+      "actual_sales": 2818336,
+      "tags": "cool, retail"
     },
     {
       "id": 448332641,
@@ -5598,7 +5797,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 51,
       "estimated_sales": 1143297,
-      "actual_sales": 4244049
+      "actual_sales": 4244049,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 822694825,
@@ -5626,7 +5826,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 29,
       "estimated_sales": 5167220,
-      "actual_sales": 812365
+      "actual_sales": 812365,
+      "tags": "subscriber, retail"
     },
     {
       "id": 508648017,
@@ -5654,7 +5855,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 41,
       "estimated_sales": 1389072,
-      "actual_sales": 2744442
+      "actual_sales": 2744442,
+      "tags": "pro, engineering"
     },
     {
       "id": 943463753,
@@ -5682,7 +5884,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 61,
       "estimated_sales": 3102096,
-      "actual_sales": 2386944
+      "actual_sales": 2386944,
+      "tags": "construction"
     },
     {
       "id": 966100711,
@@ -5710,7 +5913,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 9,
       "estimated_sales": 719010,
-      "actual_sales": 1590057
+      "actual_sales": 1590057,
+      "tags": "warm, construction"
     },
     {
       "id": 606918441,
@@ -5738,7 +5942,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 88,
       "estimated_sales": 739970,
-      "actual_sales": 3171056
+      "actual_sales": 3171056,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 981043741,
@@ -5766,7 +5971,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 86,
       "estimated_sales": 1104080,
-      "actual_sales": 676224
+      "actual_sales": 676224,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 287021995,
@@ -5794,7 +6000,8 @@ export const data: any[] = [
       "deals_total": 9,
       "ratio": 33,
       "estimated_sales": 509445,
-      "actual_sales": 369884
+      "actual_sales": 369884,
+      "tags": "demo, engineering"
     },
     {
       "id": 129109837,
@@ -5822,7 +6029,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 23,
       "estimated_sales": 1201662,
-      "actual_sales": 917904
+      "actual_sales": 917904,
+      "tags": "subscriber, medical"
     },
     {
       "id": 311210365,
@@ -5850,7 +6058,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 44,
       "estimated_sales": 243390,
-      "actual_sales": 3501928
+      "actual_sales": 3501928,
+      "tags": "pro, financial"
     },
     {
       "id": 497270043,
@@ -5878,7 +6087,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 19,
       "estimated_sales": 567480,
-      "actual_sales": 1320760
+      "actual_sales": 1320760,
+      "tags": "cold, financial"
     },
     {
       "id": 766595087,
@@ -5906,7 +6116,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 53,
       "estimated_sales": 4065365,
-      "actual_sales": 703816
+      "actual_sales": 703816,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 178617469,
@@ -5934,7 +6145,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 56,
       "estimated_sales": 125270,
-      "actual_sales": 3451420
+      "actual_sales": 3451420,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 214333861,
@@ -5962,7 +6174,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 48,
       "estimated_sales": 4039874,
-      "actual_sales": 3943896
+      "actual_sales": 3943896,
+      "tags": "hot, construction"
     },
     {
       "id": 979569607,
@@ -5990,7 +6203,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 66,
       "estimated_sales": 3615200,
-      "actual_sales": 2791395
+      "actual_sales": 2791395,
+      "tags": "warm, medical"
     },
     {
       "id": 536972234,
@@ -6018,7 +6232,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 49,
       "estimated_sales": 708136,
-      "actual_sales": 4101250
+      "actual_sales": 4101250,
+      "tags": "demo, construction"
     },
     {
       "id": 109262856,
@@ -6046,7 +6261,8 @@ export const data: any[] = [
       "deals_total": 7,
       "ratio": 0,
       "estimated_sales": 571076,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, medical"
     },
     {
       "id": 597266756,
@@ -6074,7 +6290,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 65,
       "estimated_sales": 2988330,
-      "actual_sales": 797533
+      "actual_sales": 797533,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 858447413,
@@ -6102,7 +6319,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 5,
       "estimated_sales": 1166430,
-      "actual_sales": 3518032
+      "actual_sales": 3518032,
+      "tags": "demo, engineering"
     },
     {
       "id": 33137395,
@@ -6130,7 +6348,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 71,
       "estimated_sales": 4187716,
-      "actual_sales": 1870272
+      "actual_sales": 1870272,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 392362001,
@@ -6158,7 +6377,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 0,
       "estimated_sales": 1558300,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, construction"
     },
     {
       "id": 25850773,
@@ -6186,7 +6406,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 49,
       "estimated_sales": 1525488,
-      "actual_sales": 1824536
+      "actual_sales": 1824536,
+      "tags": "hot, construction"
     },
     {
       "id": 61005077,
@@ -6214,7 +6435,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 23,
       "estimated_sales": 1598350,
-      "actual_sales": 741942
+      "actual_sales": 741942,
+      "tags": "cold, retail"
     },
     {
       "id": 971590649,
@@ -6242,7 +6464,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 41,
       "estimated_sales": 283012,
-      "actual_sales": 2322660
+      "actual_sales": 2322660,
+      "tags": "demo, financial"
     },
     {
       "id": 871351468,
@@ -6270,7 +6493,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 9,
       "estimated_sales": 329872,
-      "actual_sales": 1962306
+      "actual_sales": 1962306,
+      "tags": "cold, construction"
     },
     {
       "id": 490817920,
@@ -6298,7 +6522,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 0,
       "estimated_sales": 1439628,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": ""
     },
     {
       "id": 997405052,
@@ -6326,7 +6551,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 67,
       "estimated_sales": 2004244,
-      "actual_sales": 5332200
+      "actual_sales": 5332200,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 399911766,
@@ -6354,7 +6580,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 45,
       "estimated_sales": 2382600,
-      "actual_sales": 1415974
+      "actual_sales": 1415974,
+      "tags": "demo, retail"
     },
     {
       "id": 444539770,
@@ -6382,7 +6609,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 24,
       "estimated_sales": 5233572,
-      "actual_sales": 552954
+      "actual_sales": 552954,
+      "tags": "pro, medical"
     },
     {
       "id": 916295802,
@@ -6410,7 +6638,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 42,
       "estimated_sales": 2170980,
-      "actual_sales": 1075110
+      "actual_sales": 1075110,
+      "tags": "subscriber, retail"
     },
     {
       "id": 281553143,
@@ -6438,7 +6667,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 4,
       "estimated_sales": 4575528,
-      "actual_sales": 365964
+      "actual_sales": 365964,
+      "tags": "cold, construction"
     },
     {
       "id": 877908385,
@@ -6466,7 +6696,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 24,
       "estimated_sales": 2334910,
-      "actual_sales": 450455
+      "actual_sales": 450455,
+      "tags": "cold, financial"
     },
     {
       "id": 976960961,
@@ -6494,7 +6725,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 58,
       "estimated_sales": 937210,
-      "actual_sales": 1271930
+      "actual_sales": 1271930,
+      "tags": "warm, engineering"
     },
     {
       "id": 140736990,
@@ -6522,7 +6754,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 68,
       "estimated_sales": 175857,
-      "actual_sales": 2268825
+      "actual_sales": 2268825,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 42463986,
@@ -6550,7 +6783,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 36,
       "estimated_sales": 2308504,
-      "actual_sales": 1564944
+      "actual_sales": 1564944,
+      "tags": ""
     },
     {
       "id": 149066006,
@@ -6578,7 +6812,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 85,
       "estimated_sales": 2979320,
-      "actual_sales": 3780063
+      "actual_sales": 3780063,
+      "tags": "pro, construction"
     },
     {
       "id": 106443944,
@@ -6606,7 +6841,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 46,
       "estimated_sales": 3289286,
-      "actual_sales": 949728
+      "actual_sales": 949728,
+      "tags": "subscriber, financial"
     },
     {
       "id": 70003653,
@@ -6634,7 +6870,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 8,
       "estimated_sales": 1252350,
-      "actual_sales": 3071040
+      "actual_sales": 3071040,
+      "tags": "hot, medical"
     },
     {
       "id": 396589856,
@@ -6662,7 +6899,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 24,
       "estimated_sales": 1285620,
-      "actual_sales": 1251760
+      "actual_sales": 1251760,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 348051287,
@@ -6690,7 +6928,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 2,
       "estimated_sales": 3298790,
-      "actual_sales": 268098
+      "actual_sales": 268098,
+      "tags": "retail"
     },
     {
       "id": 883333369,
@@ -6718,7 +6957,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 59,
       "estimated_sales": 3578670,
-      "actual_sales": 3710377
+      "actual_sales": 3710377,
+      "tags": "demo, medical"
     },
     {
       "id": 602801761,
@@ -6746,7 +6986,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 58,
       "estimated_sales": 1208142,
-      "actual_sales": 437234
+      "actual_sales": 437234,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 759568371,
@@ -6774,7 +7015,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 13,
       "estimated_sales": 3440826,
-      "actual_sales": 361452
+      "actual_sales": 361452,
+      "tags": "pro, financial"
     },
     {
       "id": 821161097,
@@ -6802,7 +7044,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 35,
       "estimated_sales": 1004816,
-      "actual_sales": 821088
+      "actual_sales": 821088,
+      "tags": "demo, financial"
     },
     {
       "id": 808451402,
@@ -6830,7 +7073,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 76,
       "estimated_sales": 361296,
-      "actual_sales": 2519132
+      "actual_sales": 2519132,
+      "tags": "pro, medical"
     },
     {
       "id": 927715122,
@@ -6858,7 +7102,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 76,
       "estimated_sales": 0,
-      "actual_sales": 3736642
+      "actual_sales": 3736642,
+      "tags": "hot, medical"
     },
     {
       "id": 778307520,
@@ -6886,7 +7131,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 19,
       "estimated_sales": 110038,
-      "actual_sales": 781316
+      "actual_sales": 781316,
+      "tags": "pro, construction"
     },
     {
       "id": 549963182,
@@ -6914,7 +7160,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 84,
       "estimated_sales": 0,
-      "actual_sales": 3808755
+      "actual_sales": 3808755,
+      "tags": "pharmaceutical"
     },
     {
       "id": 123197709,
@@ -6942,7 +7189,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 48,
       "estimated_sales": 120282,
-      "actual_sales": 3000442
+      "actual_sales": 3000442,
+      "tags": ""
     },
     {
       "id": 793669485,
@@ -6970,7 +7218,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 9,
       "estimated_sales": 3020200,
-      "actual_sales": 202444
+      "actual_sales": 202444,
+      "tags": "cool, engineering"
     },
     {
       "id": 413037345,
@@ -6998,7 +7247,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 52,
       "estimated_sales": 3746705,
-      "actual_sales": 1820900
+      "actual_sales": 1820900,
+      "tags": "warm, retail"
     },
     {
       "id": 93774824,
@@ -7026,7 +7276,8 @@ export const data: any[] = [
       "deals_total": 80,
       "ratio": 48,
       "estimated_sales": 3548402,
-      "actual_sales": 3531580
+      "actual_sales": 3531580,
+      "tags": "cool, retail"
     },
     {
       "id": 661545359,
@@ -7054,7 +7305,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 7,
       "estimated_sales": 1905484,
-      "actual_sales": 1330700
+      "actual_sales": 1330700,
+      "tags": "subscriber, retail"
     },
     {
       "id": 700279733,
@@ -7082,7 +7334,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 61,
       "estimated_sales": 4735287,
-      "actual_sales": 1160698
+      "actual_sales": 1160698,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 13312601,
@@ -7110,7 +7363,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 37,
       "estimated_sales": 1015886,
-      "actual_sales": 1068690
+      "actual_sales": 1068690,
+      "tags": ""
     },
     {
       "id": 64619946,
@@ -7138,7 +7392,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 28,
       "estimated_sales": 190244,
-      "actual_sales": 1596924
+      "actual_sales": 1596924,
+      "tags": ""
     },
     {
       "id": 688165314,
@@ -7166,7 +7421,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 2,
       "estimated_sales": 2467511,
-      "actual_sales": 751428
+      "actual_sales": 751428,
+      "tags": ""
     },
     {
       "id": 25399066,
@@ -7194,7 +7450,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 64,
       "estimated_sales": 1873470,
-      "actual_sales": 3191400
+      "actual_sales": 3191400,
+      "tags": "hot, construction"
     },
     {
       "id": 418093498,
@@ -7222,7 +7479,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 11,
       "estimated_sales": 2165350,
-      "actual_sales": 238221
+      "actual_sales": 238221,
+      "tags": "cool, financial"
     },
     {
       "id": 366425575,
@@ -7250,7 +7508,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 18,
       "estimated_sales": 1179374,
-      "actual_sales": 332826
+      "actual_sales": 332826,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 731432221,
@@ -7278,7 +7537,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 64,
       "estimated_sales": 938890,
-      "actual_sales": 4977720
+      "actual_sales": 4977720,
+      "tags": "demo, retail"
     },
     {
       "id": 362776729,
@@ -7306,7 +7566,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 61,
       "estimated_sales": 3950936,
-      "actual_sales": 4639712
+      "actual_sales": 4639712,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 534127963,
@@ -7334,7 +7595,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 51,
       "estimated_sales": 1653288,
-      "actual_sales": 1799580
+      "actual_sales": 1799580,
+      "tags": "demo, construction"
     },
     {
       "id": 272390458,
@@ -7362,7 +7624,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 92,
       "estimated_sales": 3103298,
-      "actual_sales": 1153776
+      "actual_sales": 1153776,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 615808529,
@@ -7390,7 +7653,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 93,
       "estimated_sales": 3220391,
-      "actual_sales": 3818050
+      "actual_sales": 3818050,
+      "tags": "warm, financial"
     },
     {
       "id": 932103730,
@@ -7418,7 +7682,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 71,
       "estimated_sales": 0,
-      "actual_sales": 1846140
+      "actual_sales": 1846140,
+      "tags": "pro, medical"
     },
     {
       "id": 930102625,
@@ -7446,7 +7711,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 64,
       "estimated_sales": 3280576,
-      "actual_sales": 705663
+      "actual_sales": 705663,
+      "tags": "cool, engineering"
     },
     {
       "id": 273661383,
@@ -7474,7 +7740,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 32,
       "estimated_sales": 1651859,
-      "actual_sales": 1685409
+      "actual_sales": 1685409,
+      "tags": "cool, engineering"
     },
     {
       "id": 399150893,
@@ -7502,7 +7769,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 4,
       "estimated_sales": 333948,
-      "actual_sales": 952866
+      "actual_sales": 952866,
+      "tags": "hot, engineering"
     },
     {
       "id": 239955233,
@@ -7530,7 +7798,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 14,
       "estimated_sales": 440445,
-      "actual_sales": 351034
+      "actual_sales": 351034,
+      "tags": "subscriber, construction"
     },
     {
       "id": 330609096,
@@ -7558,7 +7827,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 68,
       "estimated_sales": 833855,
-      "actual_sales": 3849153
+      "actual_sales": 3849153,
+      "tags": "pharmaceutical"
     },
     {
       "id": 49462033,
@@ -7586,7 +7856,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 23,
       "estimated_sales": 3094224,
-      "actual_sales": 709998
+      "actual_sales": 709998,
+      "tags": "hot, financial"
     },
     {
       "id": 1643291,
@@ -7614,7 +7885,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 4,
       "estimated_sales": 1488624,
-      "actual_sales": 336148
+      "actual_sales": 336148,
+      "tags": "cool, engineering"
     },
     {
       "id": 357844237,
@@ -7642,7 +7914,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 67,
       "estimated_sales": 1857429,
-      "actual_sales": 197636
+      "actual_sales": 197636,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 716685978,
@@ -7670,7 +7943,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 41,
       "estimated_sales": 4845700,
-      "actual_sales": 1248024
+      "actual_sales": 1248024,
+      "tags": "subscriber, medical"
     },
     {
       "id": 980081236,
@@ -7698,7 +7972,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 45,
       "estimated_sales": 2488920,
-      "actual_sales": 3567806
+      "actual_sales": 3567806,
+      "tags": "demo, construction"
     },
     {
       "id": 812587719,
@@ -7726,7 +8001,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 27,
       "estimated_sales": 239896,
-      "actual_sales": 1684188
+      "actual_sales": 1684188,
+      "tags": "cool, medical"
     },
     {
       "id": 612490757,
@@ -7754,7 +8030,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 48,
       "estimated_sales": 4781550,
-      "actual_sales": 1207162
+      "actual_sales": 1207162,
+      "tags": "cold, retail"
     },
     {
       "id": 248836181,
@@ -7782,7 +8059,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 72,
       "estimated_sales": 4239648,
-      "actual_sales": 2462526
+      "actual_sales": 2462526,
+      "tags": ""
     },
     {
       "id": 867676006,
@@ -7810,7 +8088,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 82,
       "estimated_sales": 2064312,
-      "actual_sales": 3288348
+      "actual_sales": 3288348,
+      "tags": "hot, retail"
     },
     {
       "id": 131899188,
@@ -7838,7 +8117,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 33,
       "estimated_sales": 155090,
-      "actual_sales": 1168350
+      "actual_sales": 1168350,
+      "tags": "cool, medical"
     },
     {
       "id": 598630682,
@@ -7866,7 +8146,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 44,
       "estimated_sales": 2366655,
-      "actual_sales": 3426655
+      "actual_sales": 3426655,
+      "tags": "demo, construction"
     },
     {
       "id": 933367627,
@@ -7894,7 +8175,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 18,
       "estimated_sales": 2290140,
-      "actual_sales": 760602
+      "actual_sales": 760602,
+      "tags": "hot, financial"
     },
     {
       "id": 172437592,
@@ -7922,7 +8204,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 47,
       "estimated_sales": 1546062,
-      "actual_sales": 3467664
+      "actual_sales": 3467664,
+      "tags": "hot, financial"
     },
     {
       "id": 54373871,
@@ -7950,7 +8233,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 39,
       "estimated_sales": 1445176,
-      "actual_sales": 3224560
+      "actual_sales": 3224560,
+      "tags": "subscriber, retail"
     },
     {
       "id": 172692034,
@@ -7978,7 +8262,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 71,
       "estimated_sales": 1840319,
-      "actual_sales": 1980828
+      "actual_sales": 1980828,
+      "tags": "warm, medical"
     },
     {
       "id": 552081785,
@@ -8006,7 +8291,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 27,
       "estimated_sales": 1495405,
-      "actual_sales": 950201
+      "actual_sales": 950201,
+      "tags": "hot, financial"
     },
     {
       "id": 837958890,
@@ -8034,7 +8320,8 @@ export const data: any[] = [
       "deals_total": 85,
       "ratio": 48,
       "estimated_sales": 3944000,
-      "actual_sales": 4134078
+      "actual_sales": 4134078,
+      "tags": "cold, engineering"
     },
     {
       "id": 35840654,
@@ -8062,7 +8349,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 33,
       "estimated_sales": 2229372,
-      "actual_sales": 918525
+      "actual_sales": 918525,
+      "tags": "warm, financial"
     },
     {
       "id": 265369662,
@@ -8090,7 +8378,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 52,
       "estimated_sales": 0,
-      "actual_sales": 1184027
+      "actual_sales": 1184027,
+      "tags": "subscriber, financial"
     },
     {
       "id": 741598002,
@@ -8118,7 +8407,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 33,
       "estimated_sales": 3350320,
-      "actual_sales": 1540552
+      "actual_sales": 1540552,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 423264672,
@@ -8146,7 +8436,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 86,
       "estimated_sales": 3897612,
-      "actual_sales": 1384416
+      "actual_sales": 1384416,
+      "tags": ""
     },
     {
       "id": 351543741,
@@ -8174,7 +8465,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 77,
       "estimated_sales": 0,
-      "actual_sales": 1364233
+      "actual_sales": 1364233,
+      "tags": "subscriber, financial"
     },
     {
       "id": 46014339,
@@ -8202,7 +8494,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 32,
       "estimated_sales": 1992991,
-      "actual_sales": 939048
+      "actual_sales": 939048,
+      "tags": "demo, engineering"
     },
     {
       "id": 101414303,
@@ -8230,7 +8523,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 52,
       "estimated_sales": 0,
-      "actual_sales": 848544
+      "actual_sales": 848544,
+      "tags": "cold, medical"
     },
     {
       "id": 588653404,
@@ -8258,7 +8552,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 5,
       "estimated_sales": 2467805,
-      "actual_sales": 2334633
+      "actual_sales": 2334633,
+      "tags": ""
     },
     {
       "id": 727958751,
@@ -8286,7 +8581,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 28,
       "estimated_sales": 3012614,
-      "actual_sales": 1770810
+      "actual_sales": 1770810,
+      "tags": "construction"
     },
     {
       "id": 523493556,
@@ -8314,7 +8610,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 58,
       "estimated_sales": 2495900,
-      "actual_sales": 855030
+      "actual_sales": 855030,
+      "tags": "demo, medical"
     },
     {
       "id": 724383624,
@@ -8342,7 +8639,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 29,
       "estimated_sales": 1737460,
-      "actual_sales": 732573
+      "actual_sales": 732573,
+      "tags": "warm, construction"
     },
     {
       "id": 408897332,
@@ -8370,7 +8668,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 3,
       "estimated_sales": 1035584,
-      "actual_sales": 1890350
+      "actual_sales": 1890350,
+      "tags": "subscriber, medical"
     },
     {
       "id": 209271194,
@@ -8398,7 +8697,8 @@ export const data: any[] = [
       "deals_total": 12,
       "ratio": 0,
       "estimated_sales": 1123986,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 770583380,
@@ -8426,7 +8726,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 38,
       "estimated_sales": 919581,
-      "actual_sales": 1988074
+      "actual_sales": 1988074,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 469803012,
@@ -8454,7 +8755,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 15,
       "estimated_sales": 587517,
-      "actual_sales": 578772
+      "actual_sales": 578772,
+      "tags": "subscriber, construction"
     },
     {
       "id": 576835437,
@@ -8482,7 +8784,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 4,
       "estimated_sales": 3153300,
-      "actual_sales": 2667336
+      "actual_sales": 2667336,
+      "tags": "demo, construction"
     },
     {
       "id": 859117140,
@@ -8510,7 +8813,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 18,
       "estimated_sales": 1314690,
-      "actual_sales": 258932
+      "actual_sales": 258932,
+      "tags": "construction"
     },
     {
       "id": 163356197,
@@ -8538,7 +8842,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 8,
       "estimated_sales": 652782,
-      "actual_sales": 1497600
+      "actual_sales": 1497600,
+      "tags": "retail"
     },
     {
       "id": 848325641,
@@ -8566,7 +8871,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 51,
       "estimated_sales": 537900,
-      "actual_sales": 4803246
+      "actual_sales": 4803246,
+      "tags": "hot, engineering"
     },
     {
       "id": 269109261,
@@ -8594,7 +8900,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 53,
       "estimated_sales": 833064,
-      "actual_sales": 4902630
+      "actual_sales": 4902630,
+      "tags": "pharmaceutical"
     },
     {
       "id": 479312655,
@@ -8622,7 +8929,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 55,
       "estimated_sales": 1902879,
-      "actual_sales": 5429293
+      "actual_sales": 5429293,
+      "tags": "demo, engineering"
     },
     {
       "id": 941982434,
@@ -8650,7 +8958,8 @@ export const data: any[] = [
       "deals_total": 12,
       "ratio": 0,
       "estimated_sales": 179359,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, financial"
     },
     {
       "id": 330480477,
@@ -8678,7 +8987,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 51,
       "estimated_sales": 1187386,
-      "actual_sales": 3225510
+      "actual_sales": 3225510,
+      "tags": "demo, medical"
     },
     {
       "id": 962909787,
@@ -8706,7 +9016,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 54,
       "estimated_sales": 2714184,
-      "actual_sales": 1713914
+      "actual_sales": 1713914,
+      "tags": "construction"
     },
     {
       "id": 933111738,
@@ -8734,7 +9045,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 63,
       "estimated_sales": 695478,
-      "actual_sales": 1439614
+      "actual_sales": 1439614,
+      "tags": "pro, financial"
     },
     {
       "id": 435959533,
@@ -8762,7 +9074,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 65,
       "estimated_sales": 1440736,
-      "actual_sales": 2113518
+      "actual_sales": 2113518,
+      "tags": "warm, engineering"
     },
     {
       "id": 63878506,
@@ -8790,7 +9103,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 29,
       "estimated_sales": 1519140,
-      "actual_sales": 1373790
+      "actual_sales": 1373790,
+      "tags": "demo, construction"
     },
     {
       "id": 527913496,
@@ -8818,7 +9132,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 5,
       "estimated_sales": 1030600,
-      "actual_sales": 2565584
+      "actual_sales": 2565584,
+      "tags": "pro, financial"
     },
     {
       "id": 2283205,
@@ -8846,7 +9161,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 6,
       "estimated_sales": 4039260,
-      "actual_sales": 3939210
+      "actual_sales": 3939210,
+      "tags": ""
     },
     {
       "id": 374637037,
@@ -8874,7 +9190,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 46,
       "estimated_sales": 402772,
-      "actual_sales": 1624896
+      "actual_sales": 1624896,
+      "tags": "demo, engineering"
     },
     {
       "id": 820255848,
@@ -8902,7 +9219,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 78,
       "estimated_sales": 3111843,
-      "actual_sales": 4637825
+      "actual_sales": 4637825,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 776402424,
@@ -8930,7 +9248,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 36,
       "estimated_sales": 2479596,
-      "actual_sales": 1491980
+      "actual_sales": 1491980,
+      "tags": "cool, retail"
     },
     {
       "id": 523146434,
@@ -8958,7 +9277,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 6,
       "estimated_sales": 2139970,
-      "actual_sales": 3976420
+      "actual_sales": 3976420,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 100504119,
@@ -8986,7 +9306,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 57,
       "estimated_sales": 894850,
-      "actual_sales": 4514053
+      "actual_sales": 4514053,
+      "tags": "cold, construction"
     },
     {
       "id": 16897469,
@@ -9014,7 +9335,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 68,
       "estimated_sales": 507147,
-      "actual_sales": 2576574
+      "actual_sales": 2576574,
+      "tags": "subscriber, medical"
     },
     {
       "id": 659485460,
@@ -9042,7 +9364,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 44,
       "estimated_sales": 1992900,
-      "actual_sales": 1462824
+      "actual_sales": 1462824,
+      "tags": "subscriber, financial"
     },
     {
       "id": 98023833,
@@ -9070,7 +9393,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 8,
       "estimated_sales": 551268,
-      "actual_sales": 147118
+      "actual_sales": 147118,
+      "tags": "cool, engineering"
     },
     {
       "id": 416702210,
@@ -9098,7 +9422,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 26,
       "estimated_sales": 2939100,
-      "actual_sales": 914480
+      "actual_sales": 914480,
+      "tags": "warm, engineering"
     },
     {
       "id": 230876269,
@@ -9126,7 +9451,8 @@ export const data: any[] = [
       "deals_total": 79,
       "ratio": 54,
       "estimated_sales": 3289500,
-      "actual_sales": 3669892
+      "actual_sales": 3669892,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 239039654,
@@ -9154,7 +9480,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 6,
       "estimated_sales": 1548310,
-      "actual_sales": 3143016
+      "actual_sales": 3143016,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 678755845,
@@ -9182,7 +9509,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 64,
       "estimated_sales": 2238639,
-      "actual_sales": 1521253
+      "actual_sales": 1521253,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 506534287,
@@ -9210,7 +9538,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 57,
       "estimated_sales": 2769660,
-      "actual_sales": 3281460
+      "actual_sales": 3281460,
+      "tags": "cold, construction"
     },
     {
       "id": 446555818,
@@ -9238,7 +9567,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 57,
       "estimated_sales": 1453984,
-      "actual_sales": 1267488
+      "actual_sales": 1267488,
+      "tags": "hot, construction"
     },
     {
       "id": 459720013,
@@ -9266,7 +9596,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 11,
       "estimated_sales": 1206416,
-      "actual_sales": 184068
+      "actual_sales": 184068,
+      "tags": "demo, retail"
     },
     {
       "id": 885293616,
@@ -9294,7 +9625,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 5,
       "estimated_sales": 180129,
-      "actual_sales": 2333630
+      "actual_sales": 2333630,
+      "tags": ""
     },
     {
       "id": 133151012,
@@ -9322,7 +9654,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 71,
       "estimated_sales": 724603,
-      "actual_sales": 3157019
+      "actual_sales": 3157019,
+      "tags": "cold, construction"
     },
     {
       "id": 272707639,
@@ -9350,7 +9683,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 93,
       "estimated_sales": 983620,
-      "actual_sales": 2902225
+      "actual_sales": 2902225,
+      "tags": "financial"
     },
     {
       "id": 879914607,
@@ -9378,7 +9712,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 57,
       "estimated_sales": 67636,
-      "actual_sales": 2840568
+      "actual_sales": 2840568,
+      "tags": "engineering"
     },
     {
       "id": 949461851,
@@ -9406,7 +9741,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 26,
       "estimated_sales": 693220,
-      "actual_sales": 1317780
+      "actual_sales": 1317780,
+      "tags": ""
     },
     {
       "id": 360417880,
@@ -9434,7 +9770,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 8,
       "estimated_sales": 1952070,
-      "actual_sales": 1023200
+      "actual_sales": 1023200,
+      "tags": "cold, engineering"
     },
     {
       "id": 79418685,
@@ -9462,7 +9799,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 74,
       "estimated_sales": 0,
-      "actual_sales": 4052525
+      "actual_sales": 4052525,
+      "tags": "warm, engineering"
     },
     {
       "id": 133869987,
@@ -9490,7 +9828,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 15,
       "estimated_sales": 1827300,
-      "actual_sales": 452601
+      "actual_sales": 452601,
+      "tags": "cool, engineering"
     },
     {
       "id": 306182552,
@@ -9518,7 +9857,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 55,
       "estimated_sales": 1222498,
-      "actual_sales": 1806744
+      "actual_sales": 1806744,
+      "tags": "cold, medical"
     },
     {
       "id": 531115282,
@@ -9546,7 +9886,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 49,
       "estimated_sales": 177212,
-      "actual_sales": 1717794
+      "actual_sales": 1717794,
+      "tags": "hot, financial"
     },
     {
       "id": 619634946,
@@ -9574,7 +9915,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 27,
       "estimated_sales": 516813,
-      "actual_sales": 839340
+      "actual_sales": 839340,
+      "tags": "pro, medical"
     },
     {
       "id": 445175839,
@@ -9602,7 +9944,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 25,
       "estimated_sales": 1384821,
-      "actual_sales": 736496
+      "actual_sales": 736496,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 369157580,
@@ -9630,7 +9973,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 43,
       "estimated_sales": 1557690,
-      "actual_sales": 1465086
+      "actual_sales": 1465086,
+      "tags": "subscriber, financial"
     },
     {
       "id": 447120748,
@@ -9658,7 +10002,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 49,
       "estimated_sales": 1352400,
-      "actual_sales": 2498928
+      "actual_sales": 2498928,
+      "tags": "cold, engineering"
     },
     {
       "id": 759355194,
@@ -9686,7 +10031,8 @@ export const data: any[] = [
       "deals_total": 80,
       "ratio": 5,
       "estimated_sales": 2483700,
-      "actual_sales": 4461250
+      "actual_sales": 4461250,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 702716732,
@@ -9714,7 +10060,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 2,
       "estimated_sales": 348222,
-      "actual_sales": 862935
+      "actual_sales": 862935,
+      "tags": "financial"
     },
     {
       "id": 799745855,
@@ -9742,7 +10089,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 39,
       "estimated_sales": 1550398,
-      "actual_sales": 1445160
+      "actual_sales": 1445160,
+      "tags": "demo, financial"
     },
     {
       "id": 79591490,
@@ -9770,7 +10118,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 0,
       "estimated_sales": 2789160,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 326443068,
@@ -9798,7 +10147,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 26,
       "estimated_sales": 4249700,
-      "actual_sales": 1603935
+      "actual_sales": 1603935,
+      "tags": "pro, engineering"
     },
     {
       "id": 935239637,
@@ -9826,7 +10176,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 13,
       "estimated_sales": 1781231,
-      "actual_sales": 703548
+      "actual_sales": 703548,
+      "tags": "cold, retail"
     },
     {
       "id": 261622406,
@@ -9854,7 +10205,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 82,
       "estimated_sales": 1541492,
-      "actual_sales": 1528560
+      "actual_sales": 1528560,
+      "tags": "hot, engineering"
     },
     {
       "id": 746073710,
@@ -9882,7 +10234,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 67,
       "estimated_sales": 1647300,
-      "actual_sales": 3980784
+      "actual_sales": 3980784,
+      "tags": "pro, medical"
     },
     {
       "id": 791639379,
@@ -9910,7 +10263,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 78,
       "estimated_sales": 3728978,
-      "actual_sales": 1196573
+      "actual_sales": 1196573,
+      "tags": "cold, engineering"
     },
     {
       "id": 494706105,
@@ -9938,7 +10292,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 42,
       "estimated_sales": 1230180,
-      "actual_sales": 2199080
+      "actual_sales": 2199080,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 741289382,
@@ -9966,7 +10321,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 53,
       "estimated_sales": 1572571,
-      "actual_sales": 2601841
+      "actual_sales": 2601841,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 87960722,
@@ -9994,7 +10350,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 15,
       "estimated_sales": 1017590,
-      "actual_sales": 574360
+      "actual_sales": 574360,
+      "tags": "hot, retail"
     },
     {
       "id": 163100113,
@@ -10022,7 +10379,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 13,
       "estimated_sales": 1520829,
-      "actual_sales": 208320
+      "actual_sales": 208320,
+      "tags": "subscriber, medical"
     },
     {
       "id": 259122892,
@@ -10050,7 +10408,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 54,
       "estimated_sales": 1427424,
-      "actual_sales": 3357060
+      "actual_sales": 3357060,
+      "tags": "pro, construction"
     },
     {
       "id": 35395381,
@@ -10078,7 +10437,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 41,
       "estimated_sales": 3966678,
-      "actual_sales": 1797380
+      "actual_sales": 1797380,
+      "tags": "medical"
     },
     {
       "id": 334621474,
@@ -10106,7 +10466,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 45,
       "estimated_sales": 1181427,
-      "actual_sales": 3766446
+      "actual_sales": 3766446,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 276493415,
@@ -10134,7 +10495,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 71,
       "estimated_sales": 78688,
-      "actual_sales": 2716720
+      "actual_sales": 2716720,
+      "tags": "medical"
     },
     {
       "id": 247761381,
@@ -10162,7 +10524,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 67,
       "estimated_sales": 3450115,
-      "actual_sales": 613324
+      "actual_sales": 613324,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 915419891,
@@ -10190,7 +10553,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 7,
       "estimated_sales": 434144,
-      "actual_sales": 5445356
+      "actual_sales": 5445356,
+      "tags": "hot, medical"
     },
     {
       "id": 60912701,
@@ -10218,7 +10582,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 53,
       "estimated_sales": 0,
-      "actual_sales": 1251972
+      "actual_sales": 1251972,
+      "tags": ""
     },
     {
       "id": 831883361,
@@ -10246,7 +10611,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 35,
       "estimated_sales": 3629610,
-      "actual_sales": 2184096
+      "actual_sales": 2184096,
+      "tags": "subscriber, financial"
     },
     {
       "id": 629884137,
@@ -10274,7 +10640,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 79,
       "estimated_sales": 1258432,
-      "actual_sales": 1861560
+      "actual_sales": 1861560,
+      "tags": "warm, engineering"
     },
     {
       "id": 608359162,
@@ -10302,7 +10669,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 74,
       "estimated_sales": 5066334,
-      "actual_sales": 2632630
+      "actual_sales": 2632630,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 858699289,
@@ -10330,7 +10698,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 6,
       "estimated_sales": 107254,
-      "actual_sales": 128329
+      "actual_sales": 128329,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 981396346,
@@ -10358,7 +10727,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 5,
       "estimated_sales": 2329204,
-      "actual_sales": 3610200
+      "actual_sales": 3610200,
+      "tags": "pro, construction"
     },
     {
       "id": 110733817,
@@ -10386,7 +10756,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 7,
       "estimated_sales": 4828221,
-      "actual_sales": 120508
+      "actual_sales": 120508,
+      "tags": "cool, construction"
     },
     {
       "id": 168966906,
@@ -10414,7 +10785,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 64,
       "estimated_sales": 3334734,
-      "actual_sales": 4911875
+      "actual_sales": 4911875,
+      "tags": "hot, medical"
     },
     {
       "id": 44231428,
@@ -10442,7 +10814,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 79,
       "estimated_sales": 689176,
-      "actual_sales": 1534086
+      "actual_sales": 1534086,
+      "tags": "warm, medical"
     },
     {
       "id": 848133048,
@@ -10470,7 +10843,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 78,
       "estimated_sales": 1327296,
-      "actual_sales": 1596275
+      "actual_sales": 1596275,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 355778038,
@@ -10498,7 +10872,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 75,
       "estimated_sales": 1915654,
-      "actual_sales": 4882050
+      "actual_sales": 4882050,
+      "tags": "pharmaceutical"
     },
     {
       "id": 545952597,
@@ -10526,7 +10901,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 64,
       "estimated_sales": 2169189,
-      "actual_sales": 3741525
+      "actual_sales": 3741525,
+      "tags": "subscriber, medical"
     },
     {
       "id": 997387852,
@@ -10554,7 +10930,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 58,
       "estimated_sales": 724164,
-      "actual_sales": 1561021
+      "actual_sales": 1561021,
+      "tags": "warm, retail"
     },
     {
       "id": 796268762,
@@ -10582,7 +10959,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 0,
       "estimated_sales": 1891760,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": ""
     },
     {
       "id": 803558887,
@@ -10610,7 +10988,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 88,
       "estimated_sales": 1219449,
-      "actual_sales": 2505255
+      "actual_sales": 2505255,
+      "tags": "subscriber, financial"
     },
     {
       "id": 186726855,
@@ -10638,7 +11017,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 3,
       "estimated_sales": 1846287,
-      "actual_sales": 1583352
+      "actual_sales": 1583352,
+      "tags": "cold, financial"
     },
     {
       "id": 279330489,
@@ -10666,7 +11046,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 29,
       "estimated_sales": 1782825,
-      "actual_sales": 1868660
+      "actual_sales": 1868660,
+      "tags": "retail"
     },
     {
       "id": 823731807,
@@ -10694,7 +11075,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 33,
       "estimated_sales": 107416,
-      "actual_sales": 894870
+      "actual_sales": 894870,
+      "tags": "hot, medical"
     },
     {
       "id": 655466928,
@@ -10722,7 +11104,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 73,
       "estimated_sales": 5766090,
-      "actual_sales": 4497288
+      "actual_sales": 4497288,
+      "tags": "hot, retail"
     },
     {
       "id": 306347563,
@@ -10750,7 +11133,8 @@ export const data: any[] = [
       "deals_total": 7,
       "ratio": 0,
       "estimated_sales": 165478,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 415972421,
@@ -10778,7 +11162,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 79,
       "estimated_sales": 4014936,
-      "actual_sales": 4360902
+      "actual_sales": 4360902,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 248153248,
@@ -10806,7 +11191,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 44,
       "estimated_sales": 3145750,
-      "actual_sales": 1283536
+      "actual_sales": 1283536,
+      "tags": "cool, construction"
     },
     {
       "id": 565107723,
@@ -10834,7 +11220,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 64,
       "estimated_sales": 4854200,
-      "actual_sales": 3840399
+      "actual_sales": 3840399,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 174012602,
@@ -10862,7 +11249,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 91,
       "estimated_sales": 2578880,
-      "actual_sales": 4731031
+      "actual_sales": 4731031,
+      "tags": "pro, financial"
     },
     {
       "id": 352405080,
@@ -10890,7 +11278,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 77,
       "estimated_sales": 108931,
-      "actual_sales": 3545880
+      "actual_sales": 3545880,
+      "tags": "pro, financial"
     },
     {
       "id": 206882678,
@@ -10918,7 +11307,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 34,
       "estimated_sales": 299488,
-      "actual_sales": 843648
+      "actual_sales": 843648,
+      "tags": "subscriber, financial"
     },
     {
       "id": 333962964,
@@ -10946,7 +11336,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 36,
       "estimated_sales": 2473653,
-      "actual_sales": 2065349
+      "actual_sales": 2065349,
+      "tags": "demo, financial"
     },
     {
       "id": 348573592,
@@ -10974,7 +11365,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 7,
       "estimated_sales": 2002221,
-      "actual_sales": 2596208
+      "actual_sales": 2596208,
+      "tags": "pro, engineering"
     },
     {
       "id": 157148389,
@@ -11002,7 +11394,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 44,
       "estimated_sales": 1231100,
-      "actual_sales": 2020420
+      "actual_sales": 2020420,
+      "tags": "cold, engineering"
     },
     {
       "id": 136073623,
@@ -11030,7 +11423,8 @@ export const data: any[] = [
       "deals_total": 84,
       "ratio": 53,
       "estimated_sales": 4475790,
-      "actual_sales": 5240970
+      "actual_sales": 5240970,
+      "tags": "pro, medical"
     },
     {
       "id": 584953855,
@@ -11058,7 +11452,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 88,
       "estimated_sales": 2182544,
-      "actual_sales": 1007629
+      "actual_sales": 1007629,
+      "tags": "warm, engineering"
     },
     {
       "id": 297357317,
@@ -11086,7 +11481,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 87,
       "estimated_sales": 2190540,
-      "actual_sales": 4935216
+      "actual_sales": 4935216,
+      "tags": "demo, medical"
     },
     {
       "id": 168215764,
@@ -11114,7 +11510,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 3,
       "estimated_sales": 2671190,
-      "actual_sales": 937554
+      "actual_sales": 937554,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 213982884,
@@ -11142,7 +11539,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 43,
       "estimated_sales": 1040976,
-      "actual_sales": 1429460
+      "actual_sales": 1429460,
+      "tags": "demo, medical"
     },
     {
       "id": 435236192,
@@ -11170,7 +11568,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 64,
       "estimated_sales": 4427227,
-      "actual_sales": 3162063
+      "actual_sales": 3162063,
+      "tags": "demo, medical"
     },
     {
       "id": 854469582,
@@ -11198,7 +11597,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 83,
       "estimated_sales": 850934,
-      "actual_sales": 2981425
+      "actual_sales": 2981425,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 858053633,
@@ -11226,7 +11626,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 23,
       "estimated_sales": 945506,
-      "actual_sales": 1376064
+      "actual_sales": 1376064,
+      "tags": ""
     },
     {
       "id": 487696186,
@@ -11254,7 +11655,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 48,
       "estimated_sales": 719631,
-      "actual_sales": 2335872
+      "actual_sales": 2335872,
+      "tags": ""
     },
     {
       "id": 846533188,
@@ -11282,7 +11684,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 77,
       "estimated_sales": 139949,
-      "actual_sales": 1396056
+      "actual_sales": 1396056,
+      "tags": "pro, engineering"
     },
     {
       "id": 26002585,
@@ -11310,7 +11713,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 15,
       "estimated_sales": 350460,
-      "actual_sales": 734488
+      "actual_sales": 734488,
+      "tags": "hot, engineering"
     },
     {
       "id": 301647435,
@@ -11338,7 +11742,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 6,
       "estimated_sales": 3830547,
-      "actual_sales": 4828404
+      "actual_sales": 4828404,
+      "tags": "cool, construction"
     },
     {
       "id": 396781254,
@@ -11366,7 +11771,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 5,
       "estimated_sales": 1703760,
-      "actual_sales": 3875004
+      "actual_sales": 3875004,
+      "tags": "cool, financial"
     },
     {
       "id": 134661355,
@@ -11394,7 +11800,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 43,
       "estimated_sales": 2146506,
-      "actual_sales": 1281660
+      "actual_sales": 1281660,
+      "tags": "warm, medical"
     },
     {
       "id": 660114437,
@@ -11422,7 +11829,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 65,
       "estimated_sales": 1330608,
-      "actual_sales": 2332893
+      "actual_sales": 2332893,
+      "tags": "pro, construction"
     },
     {
       "id": 663665147,
@@ -11450,7 +11858,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 73,
       "estimated_sales": 973260,
-      "actual_sales": 1618731
+      "actual_sales": 1618731,
+      "tags": "demo, engineering"
     },
     {
       "id": 134664561,
@@ -11478,7 +11887,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 47,
       "estimated_sales": 790064,
-      "actual_sales": 3351606
+      "actual_sales": 3351606,
+      "tags": "pro, retail"
     },
     {
       "id": 120226758,
@@ -11506,7 +11916,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 59,
       "estimated_sales": 4245934,
-      "actual_sales": 1480160
+      "actual_sales": 1480160,
+      "tags": "cold, retail"
     },
     {
       "id": 670709385,
@@ -11534,7 +11945,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 61,
       "estimated_sales": 895270,
-      "actual_sales": 4582278
+      "actual_sales": 4582278,
+      "tags": "subscriber, retail"
     },
     {
       "id": 376886566,
@@ -11562,7 +11974,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 27,
       "estimated_sales": 155772,
-      "actual_sales": 379671
+      "actual_sales": 379671,
+      "tags": "demo, medical"
     },
     {
       "id": 604382784,
@@ -11590,7 +12003,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 41,
       "estimated_sales": 1438370,
-      "actual_sales": 1291407
+      "actual_sales": 1291407,
+      "tags": "retail"
     },
     {
       "id": 646063244,
@@ -11618,7 +12032,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 5,
       "estimated_sales": 1048614,
-      "actual_sales": 2644800
+      "actual_sales": 2644800,
+      "tags": "warm, construction"
     },
     {
       "id": 998901008,
@@ -11646,7 +12061,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 5,
       "estimated_sales": 192134,
-      "actual_sales": 1297520
+      "actual_sales": 1297520,
+      "tags": "cold, financial"
     },
     {
       "id": 851846477,
@@ -11674,7 +12090,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 47,
       "estimated_sales": 2784222,
-      "actual_sales": 605500
+      "actual_sales": 605500,
+      "tags": "cool, financial"
     },
     {
       "id": 226687678,
@@ -11702,7 +12119,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 27,
       "estimated_sales": 2580648,
-      "actual_sales": 1101100
+      "actual_sales": 1101100,
+      "tags": "cool, medical"
     },
     {
       "id": 461155215,
@@ -11730,7 +12148,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 44,
       "estimated_sales": 531066,
-      "actual_sales": 533312
+      "actual_sales": 533312,
+      "tags": "warm, financial"
     },
     {
       "id": 47818637,
@@ -11758,7 +12177,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 79,
       "estimated_sales": 2026416,
-      "actual_sales": 714549
+      "actual_sales": 714549,
+      "tags": "demo, retail"
     },
     {
       "id": 485432833,
@@ -11786,7 +12206,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 4,
       "estimated_sales": 2287442,
-      "actual_sales": 2014247
+      "actual_sales": 2014247,
+      "tags": "financial"
     },
     {
       "id": 914957339,
@@ -11814,7 +12235,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 38,
       "estimated_sales": 1588785,
-      "actual_sales": 3199264
+      "actual_sales": 3199264,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 638757315,
@@ -11842,7 +12264,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 21,
       "estimated_sales": 2482221,
-      "actual_sales": 963306
+      "actual_sales": 963306,
+      "tags": "financial"
     },
     {
       "id": 848169608,
@@ -11870,7 +12293,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 39,
       "estimated_sales": 2909784,
-      "actual_sales": 2828214
+      "actual_sales": 2828214,
+      "tags": "demo, retail"
     },
     {
       "id": 534699420,
@@ -11898,7 +12322,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 5,
       "estimated_sales": 4104696,
-      "actual_sales": 1659440
+      "actual_sales": 1659440,
+      "tags": "construction"
     },
     {
       "id": 437885504,
@@ -11926,7 +12351,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 86,
       "estimated_sales": 301678,
-      "actual_sales": 1144536
+      "actual_sales": 1144536,
+      "tags": "warm, medical"
     },
     {
       "id": 254316624,
@@ -11954,7 +12380,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 57,
       "estimated_sales": 1273689,
-      "actual_sales": 3388068
+      "actual_sales": 3388068,
+      "tags": "retail"
     },
     {
       "id": 173572590,
@@ -11982,7 +12409,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 91,
       "estimated_sales": 1182708,
-      "actual_sales": 3594680
+      "actual_sales": 3594680,
+      "tags": "retail"
     },
     {
       "id": 939055594,
@@ -12010,7 +12438,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 6,
       "estimated_sales": 4817826,
-      "actual_sales": 275194
+      "actual_sales": 275194,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 272081327,
@@ -12038,7 +12467,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 43,
       "estimated_sales": 1908864,
-      "actual_sales": 3166620
+      "actual_sales": 3166620,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 523801691,
@@ -12066,7 +12496,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 48,
       "estimated_sales": 0,
-      "actual_sales": 3503682
+      "actual_sales": 3503682,
+      "tags": "pro, engineering"
     },
     {
       "id": 927404028,
@@ -12094,7 +12525,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 73,
       "estimated_sales": 574755,
-      "actual_sales": 2134110
+      "actual_sales": 2134110,
+      "tags": "cool, financial"
     },
     {
       "id": 148184996,
@@ -12122,7 +12554,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 58,
       "estimated_sales": 895680,
-      "actual_sales": 1317854
+      "actual_sales": 1317854,
+      "tags": "pro, medical"
     },
     {
       "id": 596832097,
@@ -12150,7 +12583,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 28,
       "estimated_sales": 1163822,
-      "actual_sales": 929170
+      "actual_sales": 929170,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 84996821,
@@ -12178,7 +12612,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 22,
       "estimated_sales": 920458,
-      "actual_sales": 905681
+      "actual_sales": 905681,
+      "tags": "subscriber, construction"
     },
     {
       "id": 368277950,
@@ -12206,7 +12641,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 56,
       "estimated_sales": 3756478,
-      "actual_sales": 3491660
+      "actual_sales": 3491660,
+      "tags": "cold, medical"
     },
     {
       "id": 870353677,
@@ -12234,7 +12670,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 64,
       "estimated_sales": 2828175,
-      "actual_sales": 2923662
+      "actual_sales": 2923662,
+      "tags": "demo, engineering"
     },
     {
       "id": 270599150,
@@ -12262,7 +12699,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 47,
       "estimated_sales": 2787876,
-      "actual_sales": 822435
+      "actual_sales": 822435,
+      "tags": "warm, financial"
     },
     {
       "id": 831697087,
@@ -12290,7 +12728,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 71,
       "estimated_sales": 3219086,
-      "actual_sales": 3343840
+      "actual_sales": 3343840,
+      "tags": "cold, engineering"
     },
     {
       "id": 363732230,
@@ -12318,7 +12757,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 17,
       "estimated_sales": 2176512,
-      "actual_sales": 165808
+      "actual_sales": 165808,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 501490394,
@@ -12346,7 +12786,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 49,
       "estimated_sales": 1007424,
-      "actual_sales": 4040316
+      "actual_sales": 4040316,
+      "tags": "hot, financial"
     },
     {
       "id": 380298828,
@@ -12374,7 +12815,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 57,
       "estimated_sales": 1108074,
-      "actual_sales": 735200
+      "actual_sales": 735200,
+      "tags": "financial"
     },
     {
       "id": 87382037,
@@ -12402,7 +12844,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 68,
       "estimated_sales": 1224927,
-      "actual_sales": 2493491
+      "actual_sales": 2493491,
+      "tags": "subscriber, medical"
     },
     {
       "id": 379632492,
@@ -12430,7 +12873,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 78,
       "estimated_sales": 1276785,
-      "actual_sales": 2073222
+      "actual_sales": 2073222,
+      "tags": "pro, retail"
     },
     {
       "id": 28273168,
@@ -12458,7 +12902,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 41,
       "estimated_sales": 2521775,
-      "actual_sales": 2098225
+      "actual_sales": 2098225,
+      "tags": "subscriber, financial"
     },
     {
       "id": 242917374,
@@ -12486,7 +12931,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 34,
       "estimated_sales": 793282,
-      "actual_sales": 971960
+      "actual_sales": 971960,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 653296974,
@@ -12514,7 +12960,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 49,
       "estimated_sales": 2240265,
-      "actual_sales": 1491150
+      "actual_sales": 1491150,
+      "tags": "construction"
     },
     {
       "id": 566023741,
@@ -12542,7 +12989,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 71,
       "estimated_sales": 2418570,
-      "actual_sales": 573820
+      "actual_sales": 573820,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 18133342,
@@ -12570,7 +13018,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 45,
       "estimated_sales": 2043783,
-      "actual_sales": 1491672
+      "actual_sales": 1491672,
+      "tags": "financial"
     },
     {
       "id": 27891491,
@@ -12598,7 +13047,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 5,
       "estimated_sales": 1789095,
-      "actual_sales": 1462656
+      "actual_sales": 1462656,
+      "tags": "financial"
     },
     {
       "id": 639109531,
@@ -12626,7 +13076,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 45,
       "estimated_sales": 1600845,
-      "actual_sales": 910485
+      "actual_sales": 910485,
+      "tags": "hot, engineering"
     },
     {
       "id": 754217072,
@@ -12654,7 +13105,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 46,
       "estimated_sales": 269990,
-      "actual_sales": 319632
+      "actual_sales": 319632,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 520274335,
@@ -12682,7 +13134,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 52,
       "estimated_sales": 1639594,
-      "actual_sales": 1256145
+      "actual_sales": 1256145,
+      "tags": ""
     },
     {
       "id": 716523610,
@@ -12710,7 +13163,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 55,
       "estimated_sales": 474130,
-      "actual_sales": 3567278
+      "actual_sales": 3567278,
+      "tags": "financial"
     },
     {
       "id": 329842916,
@@ -12738,7 +13192,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 57,
       "estimated_sales": 2466598,
-      "actual_sales": 4936620
+      "actual_sales": 4936620,
+      "tags": ""
     },
     {
       "id": 75323534,
@@ -12766,7 +13221,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 56,
       "estimated_sales": 300438,
-      "actual_sales": 1338988
+      "actual_sales": 1338988,
+      "tags": "cool, engineering"
     },
     {
       "id": 46063202,
@@ -12794,7 +13250,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 48,
       "estimated_sales": 1716966,
-      "actual_sales": 668928
+      "actual_sales": 668928,
+      "tags": "cold, medical"
     },
     {
       "id": 743401827,
@@ -12822,7 +13279,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 28,
       "estimated_sales": 1423424,
-      "actual_sales": 949815
+      "actual_sales": 949815,
+      "tags": "subscriber, construction"
     },
     {
       "id": 724149802,
@@ -12850,7 +13308,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 32,
       "estimated_sales": 1648350,
-      "actual_sales": 1498884
+      "actual_sales": 1498884,
+      "tags": "pro, construction"
     },
     {
       "id": 419960596,
@@ -12878,7 +13337,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 47,
       "estimated_sales": 251774,
-      "actual_sales": 4972812
+      "actual_sales": 4972812,
+      "tags": "hot, medical"
     },
     {
       "id": 981446652,
@@ -12906,7 +13366,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 66,
       "estimated_sales": 2477088,
-      "actual_sales": 3820527
+      "actual_sales": 3820527,
+      "tags": "subscriber, retail"
     },
     {
       "id": 827120655,
@@ -12934,7 +13395,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 83,
       "estimated_sales": 682215,
-      "actual_sales": 864330
+      "actual_sales": 864330,
+      "tags": "hot, medical"
     },
     {
       "id": 746984581,
@@ -12962,7 +13424,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 35,
       "estimated_sales": 1434840,
-      "actual_sales": 1308195
+      "actual_sales": 1308195,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 386366730,
@@ -12990,7 +13453,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 21,
       "estimated_sales": 185456,
-      "actual_sales": 1086618
+      "actual_sales": 1086618,
+      "tags": "pro, construction"
     },
     {
       "id": 129114020,
@@ -13018,7 +13482,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 36,
       "estimated_sales": 2732072,
-      "actual_sales": 1806432
+      "actual_sales": 1806432,
+      "tags": "cool, medical"
     },
     {
       "id": 644275779,
@@ -13046,7 +13511,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 18,
       "estimated_sales": 1207776,
-      "actual_sales": 1007952
+      "actual_sales": 1007952,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 593467287,
@@ -13074,7 +13540,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 5,
       "estimated_sales": 2946576,
-      "actual_sales": 1950561
+      "actual_sales": 1950561,
+      "tags": "demo, retail"
     },
     {
       "id": 501134956,
@@ -13102,7 +13569,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 63,
       "estimated_sales": 2898469,
-      "actual_sales": 1588240
+      "actual_sales": 1588240,
+      "tags": "warm, financial"
     },
     {
       "id": 711363320,
@@ -13130,7 +13598,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 4,
       "estimated_sales": 1519378,
-      "actual_sales": 1009150
+      "actual_sales": 1009150,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 168511561,
@@ -13158,7 +13627,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 15,
       "estimated_sales": 723260,
-      "actual_sales": 727884
+      "actual_sales": 727884,
+      "tags": "retail"
     },
     {
       "id": 504576837,
@@ -13186,7 +13656,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 65,
       "estimated_sales": 3026952,
-      "actual_sales": 2054175
+      "actual_sales": 2054175,
+      "tags": "pharmaceutical"
     },
     {
       "id": 455194728,
@@ -13214,7 +13685,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 34,
       "estimated_sales": 377450,
-      "actual_sales": 2635110
+      "actual_sales": 2635110,
+      "tags": "warm, engineering"
     },
     {
       "id": 903634145,
@@ -13242,7 +13714,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 85,
       "estimated_sales": 3607184,
-      "actual_sales": 1448060
+      "actual_sales": 1448060,
+      "tags": "cool, medical"
     },
     {
       "id": 176359802,
@@ -13270,7 +13743,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 9,
       "estimated_sales": 1119960,
-      "actual_sales": 408969
+      "actual_sales": 408969,
+      "tags": "demo, construction"
     },
     {
       "id": 102211910,
@@ -13298,7 +13772,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 76,
       "estimated_sales": 5204730,
-      "actual_sales": 2539888
+      "actual_sales": 2539888,
+      "tags": "demo, engineering"
     },
     {
       "id": 654333236,
@@ -13326,7 +13801,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 3,
       "estimated_sales": 2059176,
-      "actual_sales": 88910
+      "actual_sales": 88910,
+      "tags": "warm, engineering"
     },
     {
       "id": 499879842,
@@ -13354,7 +13830,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 75,
       "estimated_sales": 882032,
-      "actual_sales": 1932240
+      "actual_sales": 1932240,
+      "tags": "warm, construction"
     },
     {
       "id": 986074981,
@@ -13382,7 +13859,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 26,
       "estimated_sales": 925674,
-      "actual_sales": 864072
+      "actual_sales": 864072,
+      "tags": "cool, financial"
     },
     {
       "id": 935144107,
@@ -13410,7 +13888,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 5,
       "estimated_sales": 2637295,
-      "actual_sales": 490088
+      "actual_sales": 490088,
+      "tags": "demo, medical"
     },
     {
       "id": 159227635,
@@ -13438,7 +13917,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 4,
       "estimated_sales": 1632085,
-      "actual_sales": 1433552
+      "actual_sales": 1433552,
+      "tags": "hot, medical"
     },
     {
       "id": 924814221,
@@ -13466,7 +13946,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 45,
       "estimated_sales": 4941405,
-      "actual_sales": 1549940
+      "actual_sales": 1549940,
+      "tags": "demo, financial"
     },
     {
       "id": 846056544,
@@ -13494,7 +13975,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 88,
       "estimated_sales": 1461043,
-      "actual_sales": 1805244
+      "actual_sales": 1805244,
+      "tags": ""
     },
     {
       "id": 213523198,
@@ -13522,7 +14004,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 12,
       "estimated_sales": 3240332,
-      "actual_sales": 239349
+      "actual_sales": 239349,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 439001046,
@@ -13550,7 +14033,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 45,
       "estimated_sales": 1462620,
-      "actual_sales": 1238211
+      "actual_sales": 1238211,
+      "tags": "demo, financial"
     },
     {
       "id": 658576385,
@@ -13578,7 +14062,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 2,
       "estimated_sales": 694530,
-      "actual_sales": 330480
+      "actual_sales": 330480,
+      "tags": "demo, medical"
     },
     {
       "id": 290763749,
@@ -13606,7 +14091,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 52,
       "estimated_sales": 1624997,
-      "actual_sales": 797489
+      "actual_sales": 797489,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 154279887,
@@ -13634,7 +14120,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 63,
       "estimated_sales": 434748,
-      "actual_sales": 2753925
+      "actual_sales": 2753925,
+      "tags": "warm, retail"
     },
     {
       "id": 815443859,
@@ -13662,7 +14149,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 45,
       "estimated_sales": 524079,
-      "actual_sales": 2186602
+      "actual_sales": 2186602,
+      "tags": "subscriber, medical"
     },
     {
       "id": 703173361,
@@ -13690,7 +14178,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 22,
       "estimated_sales": 983760,
-      "actual_sales": 652740
+      "actual_sales": 652740,
+      "tags": "cool, retail"
     },
     {
       "id": 60375789,
@@ -13718,7 +14207,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 93,
       "estimated_sales": 2470650,
-      "actual_sales": 1304075
+      "actual_sales": 1304075,
+      "tags": "hot, financial"
     },
     {
       "id": 282022016,
@@ -13746,7 +14236,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 4,
       "estimated_sales": 2706018,
-      "actual_sales": 691496
+      "actual_sales": 691496,
+      "tags": ""
     },
     {
       "id": 822933783,
@@ -13774,7 +14265,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 48,
       "estimated_sales": 3787042,
-      "actual_sales": 1761740
+      "actual_sales": 1761740,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 933742982,
@@ -13802,7 +14294,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 19,
       "estimated_sales": 1641125,
-      "actual_sales": 1131844
+      "actual_sales": 1131844,
+      "tags": "cold, retail"
     },
     {
       "id": 948095328,
@@ -13830,7 +14323,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 4,
       "estimated_sales": 1850915,
-      "actual_sales": 2996879
+      "actual_sales": 2996879,
+      "tags": "cold, retail"
     },
     {
       "id": 532922237,
@@ -13858,7 +14352,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 88,
       "estimated_sales": 921465,
-      "actual_sales": 416542
+      "actual_sales": 416542,
+      "tags": "cold, medical"
     },
     {
       "id": 542378311,
@@ -13886,7 +14381,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 46,
       "estimated_sales": 1480930,
-      "actual_sales": 3612726
+      "actual_sales": 3612726,
+      "tags": "retail"
     },
     {
       "id": 608970712,
@@ -13914,7 +14410,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 51,
       "estimated_sales": 2061570,
-      "actual_sales": 1183734
+      "actual_sales": 1183734,
+      "tags": "subscriber, medical"
     },
     {
       "id": 155095199,
@@ -13942,7 +14439,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 67,
       "estimated_sales": 3233043,
-      "actual_sales": 3960300
+      "actual_sales": 3960300,
+      "tags": "hot, construction"
     },
     {
       "id": 459221028,
@@ -13970,7 +14468,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 62,
       "estimated_sales": 722930,
-      "actual_sales": 1450936
+      "actual_sales": 1450936,
+      "tags": "demo, construction"
     },
     {
       "id": 233375639,
@@ -13998,7 +14497,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 6,
       "estimated_sales": 2118863,
-      "actual_sales": 2625588
+      "actual_sales": 2625588,
+      "tags": "cool, medical"
     },
     {
       "id": 575612391,
@@ -14026,7 +14526,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 53,
       "estimated_sales": 1236108,
-      "actual_sales": 573849
+      "actual_sales": 573849,
+      "tags": "pro, retail"
     },
     {
       "id": 26743733,
@@ -14054,7 +14555,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 17,
       "estimated_sales": 1506791,
-      "actual_sales": 229532
+      "actual_sales": 229532,
+      "tags": "cool, financial"
     },
     {
       "id": 19940855,
@@ -14082,7 +14584,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 22,
       "estimated_sales": 2252053,
-      "actual_sales": 749082
+      "actual_sales": 749082,
+      "tags": "warm, construction"
     },
     {
       "id": 870104737,
@@ -14110,7 +14613,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 36,
       "estimated_sales": 979146,
-      "actual_sales": 1820272
+      "actual_sales": 1820272,
+      "tags": "subscriber, construction"
     },
     {
       "id": 755568208,
@@ -14138,7 +14642,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 4,
       "estimated_sales": 0,
-      "actual_sales": 838368
+      "actual_sales": 838368,
+      "tags": "pro, construction"
     },
     {
       "id": 816023123,
@@ -14166,7 +14671,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 47,
       "estimated_sales": 3139146,
-      "actual_sales": 1437354
+      "actual_sales": 1437354,
+      "tags": "pro, construction"
     },
     {
       "id": 159909527,
@@ -14194,7 +14700,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 24,
       "estimated_sales": 151218,
-      "actual_sales": 589000
+      "actual_sales": 589000,
+      "tags": "demo, engineering"
     },
     {
       "id": 46342517,
@@ -14222,7 +14729,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 18,
       "estimated_sales": 4978116,
-      "actual_sales": 653760
+      "actual_sales": 653760,
+      "tags": "construction"
     },
     {
       "id": 366182961,
@@ -14250,7 +14758,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 29,
       "estimated_sales": 2406044,
-      "actual_sales": 616161
+      "actual_sales": 616161,
+      "tags": "hot, retail"
     },
     {
       "id": 619273889,
@@ -14278,7 +14787,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 43,
       "estimated_sales": 184562,
-      "actual_sales": 4246881
+      "actual_sales": 4246881,
+      "tags": "demo, financial"
     },
     {
       "id": 728042592,
@@ -14306,7 +14816,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 36,
       "estimated_sales": 624309,
-      "actual_sales": 723424
+      "actual_sales": 723424,
+      "tags": "subscriber, retail"
     },
     {
       "id": 51969231,
@@ -14334,7 +14845,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 43,
       "estimated_sales": 2039015,
-      "actual_sales": 1531125
+      "actual_sales": 1531125,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 275336048,
@@ -14362,7 +14874,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 24,
       "estimated_sales": 830310,
-      "actual_sales": 722696
+      "actual_sales": 722696,
+      "tags": "hot, medical"
     },
     {
       "id": 260250438,
@@ -14390,7 +14903,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 55,
       "estimated_sales": 4347174,
-      "actual_sales": 1799750
+      "actual_sales": 1799750,
+      "tags": "engineering"
     },
     {
       "id": 644940322,
@@ -14418,7 +14932,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 33,
       "estimated_sales": 4867875,
-      "actual_sales": 2311988
+      "actual_sales": 2311988,
+      "tags": "demo, engineering"
     },
     {
       "id": 909527267,
@@ -14446,7 +14961,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 91,
       "estimated_sales": 478835,
-      "actual_sales": 641400
+      "actual_sales": 641400,
+      "tags": "medical"
     },
     {
       "id": 939308147,
@@ -14474,7 +14990,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 18,
       "estimated_sales": 1581900,
-      "actual_sales": 404505
+      "actual_sales": 404505,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 201823109,
@@ -14502,7 +15019,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 57,
       "estimated_sales": 1286040,
-      "actual_sales": 413384
+      "actual_sales": 413384,
+      "tags": "pro, engineering"
     },
     {
       "id": 292088709,
@@ -14530,7 +15048,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 67,
       "estimated_sales": 1571597,
-      "actual_sales": 5404224
+      "actual_sales": 5404224,
+      "tags": "retail"
     },
     {
       "id": 519625049,
@@ -14558,7 +15077,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 56,
       "estimated_sales": 1989325,
-      "actual_sales": 1337004
+      "actual_sales": 1337004,
+      "tags": "cold, engineering"
     },
     {
       "id": 882795224,
@@ -14586,7 +15106,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 25,
       "estimated_sales": 836928,
-      "actual_sales": 1692585
+      "actual_sales": 1692585,
+      "tags": "cold, engineering"
     },
     {
       "id": 57605702,
@@ -14614,7 +15135,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 94,
       "estimated_sales": 0,
-      "actual_sales": 2354466
+      "actual_sales": 2354466,
+      "tags": "pro, retail"
     },
     {
       "id": 558624466,
@@ -14642,7 +15164,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 53,
       "estimated_sales": 2465802,
-      "actual_sales": 918342
+      "actual_sales": 918342,
+      "tags": "warm, engineering"
     },
     {
       "id": 797028791,
@@ -14670,7 +15193,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 52,
       "estimated_sales": 1959093,
-      "actual_sales": 1391728
+      "actual_sales": 1391728,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 93837377,
@@ -14698,7 +15222,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 41,
       "estimated_sales": 651780,
-      "actual_sales": 2778531
+      "actual_sales": 2778531,
+      "tags": "hot, financial"
     },
     {
       "id": 770404463,
@@ -14726,7 +15251,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 22,
       "estimated_sales": 1867482,
-      "actual_sales": 345228
+      "actual_sales": 345228,
+      "tags": "pro, financial"
     },
     {
       "id": 286658179,
@@ -14754,7 +15280,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 31,
       "estimated_sales": 2230872,
-      "actual_sales": 1347564
+      "actual_sales": 1347564,
+      "tags": "demo, construction"
     },
     {
       "id": 630548743,
@@ -14782,7 +15309,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 6,
       "estimated_sales": 260550,
-      "actual_sales": 1593753
+      "actual_sales": 1593753,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 916615964,
@@ -14810,7 +15338,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 72,
       "estimated_sales": 1995000,
-      "actual_sales": 2766417
+      "actual_sales": 2766417,
+      "tags": "demo, medical"
     },
     {
       "id": 788703336,
@@ -14838,7 +15367,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 54,
       "estimated_sales": 3803142,
-      "actual_sales": 2925640
+      "actual_sales": 2925640,
+      "tags": "demo, medical"
     },
     {
       "id": 461970024,
@@ -14866,7 +15396,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 39,
       "estimated_sales": 2545890,
-      "actual_sales": 1291647
+      "actual_sales": 1291647,
+      "tags": "cold, medical"
     },
     {
       "id": 640952475,
@@ -14894,7 +15425,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 67,
       "estimated_sales": 1567485,
-      "actual_sales": 1465816
+      "actual_sales": 1465816,
+      "tags": "demo, medical"
     },
     {
       "id": 492372145,
@@ -14922,7 +15454,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 83,
       "estimated_sales": 1396500,
-      "actual_sales": 4727525
+      "actual_sales": 4727525,
+      "tags": ""
     },
     {
       "id": 738496891,
@@ -14950,7 +15483,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 18,
       "estimated_sales": 2677350,
-      "actual_sales": 564040
+      "actual_sales": 564040,
+      "tags": "pro, construction"
     },
     {
       "id": 653308590,
@@ -14978,7 +15512,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 62,
       "estimated_sales": 1574361,
-      "actual_sales": 2524691
+      "actual_sales": 2524691,
+      "tags": "engineering"
     },
     {
       "id": 311798456,
@@ -15006,7 +15541,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 86,
       "estimated_sales": 697900,
-      "actual_sales": 5547900
+      "actual_sales": 5547900,
+      "tags": ""
     },
     {
       "id": 319440478,
@@ -15034,7 +15570,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 28,
       "estimated_sales": 907074,
-      "actual_sales": 745269
+      "actual_sales": 745269,
+      "tags": "warm, financial"
     },
     {
       "id": 721713368,
@@ -15062,7 +15599,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 79,
       "estimated_sales": 4003776,
-      "actual_sales": 5089630
+      "actual_sales": 5089630,
+      "tags": "hot, construction"
     },
     {
       "id": 380114369,
@@ -15090,7 +15628,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 48,
       "estimated_sales": 2424387,
-      "actual_sales": 3281283
+      "actual_sales": 3281283,
+      "tags": "retail"
     },
     {
       "id": 585193712,
@@ -15118,7 +15657,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 6,
       "estimated_sales": 0,
-      "actual_sales": 1492824
+      "actual_sales": 1492824,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 421672687,
@@ -15146,7 +15686,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 17,
       "estimated_sales": 91127,
-      "actual_sales": 416300
+      "actual_sales": 416300,
+      "tags": "hot, engineering"
     },
     {
       "id": 578058010,
@@ -15174,7 +15715,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 58,
       "estimated_sales": 2431996,
-      "actual_sales": 1807605
+      "actual_sales": 1807605,
+      "tags": "subscriber, medical"
     },
     {
       "id": 282014590,
@@ -15202,7 +15744,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 7,
       "estimated_sales": 2261763,
-      "actual_sales": 370824
+      "actual_sales": 370824,
+      "tags": ""
     },
     {
       "id": 765245267,
@@ -15230,7 +15773,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 62,
       "estimated_sales": 1114515,
-      "actual_sales": 3386214
+      "actual_sales": 3386214,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 704739628,
@@ -15258,7 +15802,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 61,
       "estimated_sales": 1073632,
-      "actual_sales": 2272780
+      "actual_sales": 2272780,
+      "tags": "demo, financial"
     },
     {
       "id": 422156526,
@@ -15286,7 +15831,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 35,
       "estimated_sales": 2607809,
-      "actual_sales": 2188021
+      "actual_sales": 2188021,
+      "tags": "cold, retail"
     },
     {
       "id": 143871231,
@@ -15314,7 +15860,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 63,
       "estimated_sales": 0,
-      "actual_sales": 2730525
+      "actual_sales": 2730525,
+      "tags": "cold, engineering"
     },
     {
       "id": 763677916,
@@ -15342,7 +15889,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 5,
       "estimated_sales": 803952,
-      "actual_sales": 1450148
+      "actual_sales": 1450148,
+      "tags": "cool, retail"
     },
     {
       "id": 80708746,
@@ -15370,7 +15918,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 18,
       "estimated_sales": 3818850,
-      "actual_sales": 860742
+      "actual_sales": 860742,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 966281269,
@@ -15398,7 +15947,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 5,
       "estimated_sales": 53815,
-      "actual_sales": 1173123
+      "actual_sales": 1173123,
+      "tags": "warm, medical"
     },
     {
       "id": 634356726,
@@ -15426,7 +15976,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 32,
       "estimated_sales": 2437440,
-      "actual_sales": 772772
+      "actual_sales": 772772,
+      "tags": "cold, construction"
     },
     {
       "id": 335555443,
@@ -15454,7 +16005,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 8,
       "estimated_sales": 1009485,
-      "actual_sales": 993900
+      "actual_sales": 993900,
+      "tags": "cold, financial"
     },
     {
       "id": 104061086,
@@ -15482,7 +16034,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 37,
       "estimated_sales": 53912,
-      "actual_sales": 1645725
+      "actual_sales": 1645725,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 629836858,
@@ -15510,7 +16063,8 @@ export const data: any[] = [
       "deals_total": 82,
       "ratio": 46,
       "estimated_sales": 2520980,
-      "actual_sales": 2132850
+      "actual_sales": 2132850,
+      "tags": "warm, medical"
     },
     {
       "id": 879328736,
@@ -15538,7 +16092,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 62,
       "estimated_sales": 2083094,
-      "actual_sales": 2402096
+      "actual_sales": 2402096,
+      "tags": "cold, medical"
     },
     {
       "id": 944619884,
@@ -15566,7 +16121,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 6,
       "estimated_sales": 0,
-      "actual_sales": 2061480
+      "actual_sales": 2061480,
+      "tags": "financial"
     },
     {
       "id": 976519644,
@@ -15594,7 +16150,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 3,
       "estimated_sales": 3811325,
-      "actual_sales": 701460
+      "actual_sales": 701460,
+      "tags": "cold, medical"
     },
     {
       "id": 556511321,
@@ -15622,7 +16179,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 48,
       "estimated_sales": 143035,
-      "actual_sales": 2826846
+      "actual_sales": 2826846,
+      "tags": "subscriber, financial"
     },
     {
       "id": 990234596,
@@ -15650,7 +16208,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 0,
       "estimated_sales": 3440736,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 231330744,
@@ -15678,7 +16237,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 73,
       "estimated_sales": 504810,
-      "actual_sales": 2591942
+      "actual_sales": 2591942,
+      "tags": "demo, construction"
     },
     {
       "id": 571525330,
@@ -15706,7 +16266,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 13,
       "estimated_sales": 1820830,
-      "actual_sales": 214456
+      "actual_sales": 214456,
+      "tags": "hot, construction"
     },
     {
       "id": 424561539,
@@ -15734,7 +16295,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 0,
       "estimated_sales": 556210,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, engineering"
     },
     {
       "id": 467840928,
@@ -15762,7 +16324,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 33,
       "estimated_sales": 3061248,
-      "actual_sales": 267648
+      "actual_sales": 267648,
+      "tags": ""
     },
     {
       "id": 861111928,
@@ -15790,7 +16353,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 0,
       "estimated_sales": 2160091,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 9848335,
@@ -15818,7 +16382,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 52,
       "estimated_sales": 975852,
-      "actual_sales": 2128500
+      "actual_sales": 2128500,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 560169163,
@@ -15846,7 +16411,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 28,
       "estimated_sales": 595815,
-      "actual_sales": 881150
+      "actual_sales": 881150,
+      "tags": "subscriber, medical"
     },
     {
       "id": 342443408,
@@ -15874,7 +16440,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 51,
       "estimated_sales": 2302480,
-      "actual_sales": 3270807
+      "actual_sales": 3270807,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 250571747,
@@ -15902,7 +16469,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 35,
       "estimated_sales": 4368000,
-      "actual_sales": 1675492
+      "actual_sales": 1675492,
+      "tags": "demo, engineering"
     },
     {
       "id": 151114143,
@@ -15930,7 +16498,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 6,
       "estimated_sales": 993265,
-      "actual_sales": 546111
+      "actual_sales": 546111,
+      "tags": ""
     },
     {
       "id": 969984594,
@@ -15958,7 +16527,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 62,
       "estimated_sales": 4771718,
-      "actual_sales": 1074612
+      "actual_sales": 1074612,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 635916298,
@@ -15986,7 +16556,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 33,
       "estimated_sales": 237462,
-      "actual_sales": 486402
+      "actual_sales": 486402,
+      "tags": "retail"
     },
     {
       "id": 882743886,
@@ -16014,7 +16585,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 58,
       "estimated_sales": 2312016,
-      "actual_sales": 1864775
+      "actual_sales": 1864775,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 932196805,
@@ -16042,7 +16614,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 6,
       "estimated_sales": 153312,
-      "actual_sales": 2469054
+      "actual_sales": 2469054,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 757626545,
@@ -16070,7 +16643,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 67,
       "estimated_sales": 298895,
-      "actual_sales": 2109492
+      "actual_sales": 2109492,
+      "tags": "demo, retail"
     },
     {
       "id": 278706234,
@@ -16098,7 +16672,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 37,
       "estimated_sales": 1417559,
-      "actual_sales": 1386944
+      "actual_sales": 1386944,
+      "tags": "pro, financial"
     },
     {
       "id": 758315337,
@@ -16126,7 +16701,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 51,
       "estimated_sales": 2963000,
-      "actual_sales": 4909502
+      "actual_sales": 4909502,
+      "tags": "financial"
     },
     {
       "id": 744930260,
@@ -16154,7 +16730,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 42,
       "estimated_sales": 393142,
-      "actual_sales": 1010251
+      "actual_sales": 1010251,
+      "tags": "subscriber, retail"
     },
     {
       "id": 93500726,
@@ -16182,7 +16759,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 25,
       "estimated_sales": 277700,
-      "actual_sales": 1220584
+      "actual_sales": 1220584,
+      "tags": "subscriber, retail"
     },
     {
       "id": 627916750,
@@ -16210,7 +16788,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 14,
       "estimated_sales": 4066842,
-      "actual_sales": 793480
+      "actual_sales": 793480,
+      "tags": "warm, medical"
     },
     {
       "id": 820091290,
@@ -16238,7 +16817,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 21,
       "estimated_sales": 1571910,
-      "actual_sales": 489307
+      "actual_sales": 489307,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 183825658,
@@ -16266,7 +16846,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 88,
       "estimated_sales": 536598,
-      "actual_sales": 2334045
+      "actual_sales": 2334045,
+      "tags": ""
     },
     {
       "id": 387278732,
@@ -16294,7 +16875,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 59,
       "estimated_sales": 2559050,
-      "actual_sales": 2487651
+      "actual_sales": 2487651,
+      "tags": "financial"
     },
     {
       "id": 724204520,
@@ -16322,7 +16904,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 72,
       "estimated_sales": 2752976,
-      "actual_sales": 3721032
+      "actual_sales": 3721032,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 63182328,
@@ -16350,7 +16933,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 47,
       "estimated_sales": 78961,
-      "actual_sales": 3839732
+      "actual_sales": 3839732,
+      "tags": "pro, financial"
     },
     {
       "id": 580677045,
@@ -16378,7 +16962,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 46,
       "estimated_sales": 447680,
-      "actual_sales": 943811
+      "actual_sales": 943811,
+      "tags": "hot, retail"
     },
     {
       "id": 433741983,
@@ -16406,7 +16991,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 5,
       "estimated_sales": 1488575,
-      "actual_sales": 1674078
+      "actual_sales": 1674078,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 176135129,
@@ -16434,7 +17020,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 33,
       "estimated_sales": 825744,
-      "actual_sales": 228920
+      "actual_sales": 228920,
+      "tags": "pro, financial"
     },
     {
       "id": 46069217,
@@ -16462,7 +17049,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 41,
       "estimated_sales": 1276605,
-      "actual_sales": 1018512
+      "actual_sales": 1018512,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 18904899,
@@ -16490,7 +17078,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 54,
       "estimated_sales": 490458,
-      "actual_sales": 3272276
+      "actual_sales": 3272276,
+      "tags": "hot, medical"
     },
     {
       "id": 575585759,
@@ -16518,7 +17107,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 78,
       "estimated_sales": 1636362,
-      "actual_sales": 3963825
+      "actual_sales": 3963825,
+      "tags": "subscriber, construction"
     },
     {
       "id": 161426380,
@@ -16546,7 +17136,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 46,
       "estimated_sales": 1132397,
-      "actual_sales": 1322132
+      "actual_sales": 1322132,
+      "tags": "hot, retail"
     },
     {
       "id": 913431154,
@@ -16574,7 +17165,8 @@ export const data: any[] = [
       "deals_total": 84,
       "ratio": 51,
       "estimated_sales": 1962684,
-      "actual_sales": 2652775
+      "actual_sales": 2652775,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 112150648,
@@ -16602,7 +17194,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 78,
       "estimated_sales": 2922045,
-      "actual_sales": 408072
+      "actual_sales": 408072,
+      "tags": "pro, retail"
     },
     {
       "id": 354596793,
@@ -16630,7 +17223,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 0,
       "estimated_sales": 882000,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "construction"
     },
     {
       "id": 958560158,
@@ -16658,7 +17252,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 13,
       "estimated_sales": 3164625,
-      "actual_sales": 290914
+      "actual_sales": 290914,
+      "tags": "demo, medical"
     },
     {
       "id": 713121423,
@@ -16686,7 +17281,8 @@ export const data: any[] = [
       "deals_total": 83,
       "ratio": 47,
       "estimated_sales": 4962150,
-      "actual_sales": 2710675
+      "actual_sales": 2710675,
+      "tags": "retail"
     },
     {
       "id": 788332701,
@@ -16714,7 +17310,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 75,
       "estimated_sales": 996282,
-      "actual_sales": 3291264
+      "actual_sales": 3291264,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 19441128,
@@ -16742,7 +17339,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 44,
       "estimated_sales": 969551,
-      "actual_sales": 1471095
+      "actual_sales": 1471095,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 606191252,
@@ -16770,7 +17368,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 58,
       "estimated_sales": 1945684,
-      "actual_sales": 1668184
+      "actual_sales": 1668184,
+      "tags": "demo, engineering"
     },
     {
       "id": 504739665,
@@ -16798,7 +17397,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 96,
       "estimated_sales": 821390,
-      "actual_sales": 1488942
+      "actual_sales": 1488942,
+      "tags": "hot, retail"
     },
     {
       "id": 91463132,
@@ -16826,7 +17426,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 65,
       "estimated_sales": 888239,
-      "actual_sales": 1295910
+      "actual_sales": 1295910,
+      "tags": "demo, medical"
     },
     {
       "id": 219096907,
@@ -16854,7 +17455,8 @@ export const data: any[] = [
       "deals_total": 14,
       "ratio": 3,
       "estimated_sales": 322576,
-      "actual_sales": 287139
+      "actual_sales": 287139,
+      "tags": "warm, construction"
     },
     {
       "id": 213574814,
@@ -16882,7 +17484,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 62,
       "estimated_sales": 1204777,
-      "actual_sales": 3369282
+      "actual_sales": 3369282,
+      "tags": "cold, retail"
     },
     {
       "id": 31287593,
@@ -16910,7 +17513,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 49,
       "estimated_sales": 4452219,
-      "actual_sales": 4068900
+      "actual_sales": 4068900,
+      "tags": "cool, financial"
     },
     {
       "id": 673285758,
@@ -16938,7 +17542,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 59,
       "estimated_sales": 385798,
-      "actual_sales": 1108156
+      "actual_sales": 1108156,
+      "tags": "cool, medical"
     },
     {
       "id": 462825628,
@@ -16966,7 +17571,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 89,
       "estimated_sales": 899496,
-      "actual_sales": 2281600
+      "actual_sales": 2281600,
+      "tags": "warm, retail"
     },
     {
       "id": 58100425,
@@ -16994,7 +17600,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 5,
       "estimated_sales": 306894,
-      "actual_sales": 4630220
+      "actual_sales": 4630220,
+      "tags": "subscriber, retail"
     },
     {
       "id": 924098459,
@@ -17022,7 +17629,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 57,
       "estimated_sales": 1030484,
-      "actual_sales": 2078999
+      "actual_sales": 2078999,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 437520083,
@@ -17050,7 +17658,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 54,
       "estimated_sales": 308380,
-      "actual_sales": 4440632
+      "actual_sales": 4440632,
+      "tags": "cold, financial"
     },
     {
       "id": 648883375,
@@ -17078,7 +17687,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 0,
       "estimated_sales": 4178748,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "retail"
     },
     {
       "id": 51861659,
@@ -17106,7 +17716,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 23,
       "estimated_sales": 3351725,
-      "actual_sales": 751035
+      "actual_sales": 751035,
+      "tags": "retail"
     },
     {
       "id": 940403279,
@@ -17134,7 +17745,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 18,
       "estimated_sales": 3446950,
-      "actual_sales": 395634
+      "actual_sales": 395634,
+      "tags": "construction"
     },
     {
       "id": 758640685,
@@ -17162,7 +17774,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 74,
       "estimated_sales": 1189575,
-      "actual_sales": 2750050
+      "actual_sales": 2750050,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 570745222,
@@ -17190,7 +17803,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 45,
       "estimated_sales": 891696,
-      "actual_sales": 2648996
+      "actual_sales": 2648996,
+      "tags": "retail"
     },
     {
       "id": 995770658,
@@ -17218,7 +17832,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 58,
       "estimated_sales": 2481490,
-      "actual_sales": 4189978
+      "actual_sales": 4189978,
+      "tags": "pro, retail"
     },
     {
       "id": 185847175,
@@ -17246,7 +17861,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 47,
       "estimated_sales": 1031464,
-      "actual_sales": 3835988
+      "actual_sales": 3835988,
+      "tags": "pro, medical"
     },
     {
       "id": 427155235,
@@ -17274,7 +17890,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 33,
       "estimated_sales": 1451610,
-      "actual_sales": 311324
+      "actual_sales": 311324,
+      "tags": ""
     },
     {
       "id": 908060250,
@@ -17302,7 +17919,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 76,
       "estimated_sales": 4648170,
-      "actual_sales": 3605125
+      "actual_sales": 3605125,
+      "tags": "engineering"
     },
     {
       "id": 502469700,
@@ -17330,7 +17948,8 @@ export const data: any[] = [
       "deals_total": 7,
       "ratio": 8,
       "estimated_sales": 357902,
-      "actual_sales": 604556
+      "actual_sales": 604556,
+      "tags": "pharmaceutical"
     },
     {
       "id": 703787879,
@@ -17358,7 +17977,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 1,
       "estimated_sales": 3778560,
-      "actual_sales": 121421
+      "actual_sales": 121421,
+      "tags": "warm, retail"
     },
     {
       "id": 686831607,
@@ -17386,7 +18006,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 32,
       "estimated_sales": 2873760,
-      "actual_sales": 1218780
+      "actual_sales": 1218780,
+      "tags": "hot, engineering"
     },
     {
       "id": 632607499,
@@ -17414,7 +18035,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 89,
       "estimated_sales": 5818290,
-      "actual_sales": 3056787
+      "actual_sales": 3056787,
+      "tags": ""
     },
     {
       "id": 922449454,
@@ -17442,7 +18064,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 17,
       "estimated_sales": 246980,
-      "actual_sales": 482560
+      "actual_sales": 482560,
+      "tags": "cold, construction"
     },
     {
       "id": 376915888,
@@ -17470,7 +18093,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 12,
       "estimated_sales": 1108921,
-      "actual_sales": 246776
+      "actual_sales": 246776,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 647407036,
@@ -17498,7 +18122,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 21,
       "estimated_sales": 3113840,
-      "actual_sales": 916655
+      "actual_sales": 916655,
+      "tags": "subscriber, retail"
     },
     {
       "id": 165711080,
@@ -17526,7 +18151,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 48,
       "estimated_sales": 3007540,
-      "actual_sales": 854196
+      "actual_sales": 854196,
+      "tags": "warm, construction"
     },
     {
       "id": 883564201,
@@ -17554,7 +18180,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 48,
       "estimated_sales": 4337766,
-      "actual_sales": 1267920
+      "actual_sales": 1267920,
+      "tags": "retail"
     },
     {
       "id": 991063499,
@@ -17582,7 +18209,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 21,
       "estimated_sales": 633688,
-      "actual_sales": 492505
+      "actual_sales": 492505,
+      "tags": "demo, medical"
     },
     {
       "id": 531917711,
@@ -17610,7 +18238,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 46,
       "estimated_sales": 132573,
-      "actual_sales": 3657969
+      "actual_sales": 3657969,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 997057619,
@@ -17638,7 +18267,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 3,
       "estimated_sales": 1815203,
-      "actual_sales": 363933
+      "actual_sales": 363933,
+      "tags": "cold, engineering"
     },
     {
       "id": 125881681,
@@ -17666,7 +18296,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 17,
       "estimated_sales": 1039878,
-      "actual_sales": 610808
+      "actual_sales": 610808,
+      "tags": "demo, engineering"
     },
     {
       "id": 319263801,
@@ -17694,7 +18325,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 57,
       "estimated_sales": 2002770,
-      "actual_sales": 3830652
+      "actual_sales": 3830652,
+      "tags": "financial"
     },
     {
       "id": 305255979,
@@ -17722,7 +18354,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 57,
       "estimated_sales": 263066,
-      "actual_sales": 1918000
+      "actual_sales": 1918000,
+      "tags": "construction"
     },
     {
       "id": 97656501,
@@ -17750,7 +18383,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 91,
       "estimated_sales": 1500849,
-      "actual_sales": 897090
+      "actual_sales": 897090,
+      "tags": "pro, engineering"
     },
     {
       "id": 417883211,
@@ -17778,7 +18412,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 88,
       "estimated_sales": 3292326,
-      "actual_sales": 1654110
+      "actual_sales": 1654110,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 14051557,
@@ -17806,7 +18441,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 22,
       "estimated_sales": 655404,
-      "actual_sales": 323836
+      "actual_sales": 323836,
+      "tags": "pro, medical"
     },
     {
       "id": 894238604,
@@ -17834,7 +18470,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 51,
       "estimated_sales": 1940579,
-      "actual_sales": 2325596
+      "actual_sales": 2325596,
+      "tags": "cool, retail"
     },
     {
       "id": 336926497,
@@ -17862,7 +18499,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 48,
       "estimated_sales": 1272565,
-      "actual_sales": 1800630
+      "actual_sales": 1800630,
+      "tags": "construction"
     },
     {
       "id": 705666235,
@@ -17890,7 +18528,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 67,
       "estimated_sales": 608874,
-      "actual_sales": 1044156
+      "actual_sales": 1044156,
+      "tags": "cold, engineering"
     },
     {
       "id": 947728585,
@@ -17918,7 +18557,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 36,
       "estimated_sales": 1938992,
-      "actual_sales": 1996644
+      "actual_sales": 1996644,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 421497817,
@@ -17946,7 +18586,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 61,
       "estimated_sales": 1115156,
-      "actual_sales": 3015819
+      "actual_sales": 3015819,
+      "tags": "demo, financial"
     },
     {
       "id": 530587553,
@@ -17974,7 +18615,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 22,
       "estimated_sales": 164072,
-      "actual_sales": 454444
+      "actual_sales": 454444,
+      "tags": "hot, medical"
     },
     {
       "id": 774226600,
@@ -18002,7 +18644,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 65,
       "estimated_sales": 577035,
-      "actual_sales": 5684280
+      "actual_sales": 5684280,
+      "tags": "warm, engineering"
     },
     {
       "id": 453830196,
@@ -18030,7 +18673,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 6,
       "estimated_sales": 4082358,
-      "actual_sales": 4384800
+      "actual_sales": 4384800,
+      "tags": "medical"
     },
     {
       "id": 26247225,
@@ -18058,7 +18702,8 @@ export const data: any[] = [
       "deals_total": 90,
       "ratio": 5,
       "estimated_sales": 4130790,
-      "actual_sales": 4398300
+      "actual_sales": 4398300,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 654048825,
@@ -18086,7 +18731,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 1,
       "estimated_sales": 1775304,
-      "actual_sales": 178945
+      "actual_sales": 178945,
+      "tags": "demo, engineering"
     },
     {
       "id": 211345430,
@@ -18114,7 +18760,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 73,
       "estimated_sales": 945456,
-      "actual_sales": 1047600
+      "actual_sales": 1047600,
+      "tags": "demo, engineering"
     },
     {
       "id": 657846986,
@@ -18142,7 +18789,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 78,
       "estimated_sales": 1496520,
-      "actual_sales": 2522100
+      "actual_sales": 2522100,
+      "tags": "cool, engineering"
     },
     {
       "id": 592029954,
@@ -18170,7 +18818,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 7,
       "estimated_sales": 0,
-      "actual_sales": 396008
+      "actual_sales": 396008,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 302897057,
@@ -18198,7 +18847,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 78,
       "estimated_sales": 109481,
-      "actual_sales": 1575512
+      "actual_sales": 1575512,
+      "tags": "demo, medical"
     },
     {
       "id": 865311401,
@@ -18226,7 +18876,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 81,
       "estimated_sales": 1961795,
-      "actual_sales": 3126925
+      "actual_sales": 3126925,
+      "tags": "cold, engineering"
     },
     {
       "id": 394323073,
@@ -18254,7 +18905,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 55,
       "estimated_sales": 1509466,
-      "actual_sales": 1695668
+      "actual_sales": 1695668,
+      "tags": "pharmaceutical"
     },
     {
       "id": 543278261,
@@ -18282,7 +18934,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 64,
       "estimated_sales": 2125004,
-      "actual_sales": 5393101
+      "actual_sales": 5393101,
+      "tags": "construction"
     },
     {
       "id": 639059543,
@@ -18310,7 +18963,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 29,
       "estimated_sales": 803870,
-      "actual_sales": 1247913
+      "actual_sales": 1247913,
+      "tags": "cold, retail"
     },
     {
       "id": 482149894,
@@ -18338,7 +18992,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 33,
       "estimated_sales": 1916950,
-      "actual_sales": 331475
+      "actual_sales": 331475,
+      "tags": "subscriber, financial"
     },
     {
       "id": 52670535,
@@ -18366,7 +19021,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 56,
       "estimated_sales": 898233,
-      "actual_sales": 1615365
+      "actual_sales": 1615365,
+      "tags": "demo, financial"
     },
     {
       "id": 924141695,
@@ -18394,7 +19050,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 48,
       "estimated_sales": 1025388,
-      "actual_sales": 2241824
+      "actual_sales": 2241824,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 265926908,
@@ -18422,7 +19079,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 16,
       "estimated_sales": 598631,
-      "actual_sales": 354320
+      "actual_sales": 354320,
+      "tags": "warm, financial"
     },
     {
       "id": 864893245,
@@ -18450,7 +19108,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 33,
       "estimated_sales": 4379609,
-      "actual_sales": 1030946
+      "actual_sales": 1030946,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 101066732,
@@ -18478,7 +19137,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 2,
       "estimated_sales": 969296,
-      "actual_sales": 912394
+      "actual_sales": 912394,
+      "tags": "pharmaceutical"
     },
     {
       "id": 712190707,
@@ -18506,7 +19166,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 12,
       "estimated_sales": 2286615,
-      "actual_sales": 479304
+      "actual_sales": 479304,
+      "tags": "construction"
     },
     {
       "id": 855964003,
@@ -18534,7 +19195,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 41,
       "estimated_sales": 2980417,
-      "actual_sales": 2251171
+      "actual_sales": 2251171,
+      "tags": "subscriber, financial"
     },
     {
       "id": 868066743,
@@ -18562,7 +19224,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 46,
       "estimated_sales": 2001944,
-      "actual_sales": 3727176
+      "actual_sales": 3727176,
+      "tags": "cold, retail"
     },
     {
       "id": 975287621,
@@ -18590,7 +19253,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 66,
       "estimated_sales": 1568700,
-      "actual_sales": 4774626
+      "actual_sales": 4774626,
+      "tags": "construction"
     },
     {
       "id": 3265931,
@@ -18618,7 +19282,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 56,
       "estimated_sales": 240333,
-      "actual_sales": 2208738
+      "actual_sales": 2208738,
+      "tags": "financial"
     },
     {
       "id": 168347702,
@@ -18646,7 +19311,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 35,
       "estimated_sales": 502638,
-      "actual_sales": 1940428
+      "actual_sales": 1940428,
+      "tags": "warm, engineering"
     },
     {
       "id": 699223289,
@@ -18674,7 +19340,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 71,
       "estimated_sales": 0,
-      "actual_sales": 1442832
+      "actual_sales": 1442832,
+      "tags": "subscriber, financial"
     },
     {
       "id": 732367333,
@@ -18702,7 +19369,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 71,
       "estimated_sales": 3628008,
-      "actual_sales": 1946160
+      "actual_sales": 1946160,
+      "tags": "demo, financial"
     },
     {
       "id": 159402845,
@@ -18730,7 +19398,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 81,
       "estimated_sales": 3265060,
-      "actual_sales": 2704366
+      "actual_sales": 2704366,
+      "tags": "demo, medical"
     },
     {
       "id": 921284216,
@@ -18758,7 +19427,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 5,
       "estimated_sales": 2723422,
-      "actual_sales": 541245
+      "actual_sales": 541245,
+      "tags": "cool, financial"
     },
     {
       "id": 308514347,
@@ -18786,7 +19456,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 71,
       "estimated_sales": 816176,
-      "actual_sales": 1520520
+      "actual_sales": 1520520,
+      "tags": "cold, medical"
     },
     {
       "id": 241814664,
@@ -18814,7 +19485,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 45,
       "estimated_sales": 4403800,
-      "actual_sales": 3263058
+      "actual_sales": 3263058,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 599148123,
@@ -18842,7 +19514,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 27,
       "estimated_sales": 2139504,
-      "actual_sales": 524619
+      "actual_sales": 524619,
+      "tags": "subscriber, financial"
     },
     {
       "id": 88992933,
@@ -18870,7 +19543,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 57,
       "estimated_sales": 1304622,
-      "actual_sales": 358660
+      "actual_sales": 358660,
+      "tags": "hot, construction"
     },
     {
       "id": 116505088,
@@ -18898,7 +19572,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 75,
       "estimated_sales": 627466,
-      "actual_sales": 2287224
+      "actual_sales": 2287224,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 506076082,
@@ -18926,7 +19601,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 63,
       "estimated_sales": 833230,
-      "actual_sales": 5642269
+      "actual_sales": 5642269,
+      "tags": "demo, construction"
     },
     {
       "id": 416288780,
@@ -18954,7 +19630,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 24,
       "estimated_sales": 3587670,
-      "actual_sales": 1019992
+      "actual_sales": 1019992,
+      "tags": "demo, retail"
     },
     {
       "id": 772549596,
@@ -18982,7 +19659,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 65,
       "estimated_sales": 1897760,
-      "actual_sales": 1988038
+      "actual_sales": 1988038,
+      "tags": "subscriber, medical"
     },
     {
       "id": 983025929,
@@ -19010,7 +19688,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 63,
       "estimated_sales": 3956161,
-      "actual_sales": 3093896
+      "actual_sales": 3093896,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 111741465,
@@ -19038,7 +19717,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 59,
       "estimated_sales": 1525880,
-      "actual_sales": 947908
+      "actual_sales": 947908,
+      "tags": "cold, financial"
     },
     {
       "id": 424130137,
@@ -19066,7 +19746,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 61,
       "estimated_sales": 3949800,
-      "actual_sales": 1592060
+      "actual_sales": 1592060,
+      "tags": "retail"
     },
     {
       "id": 930946617,
@@ -19094,7 +19775,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 47,
       "estimated_sales": 274612,
-      "actual_sales": 1886565
+      "actual_sales": 1886565,
+      "tags": "subscriber, construction"
     },
     {
       "id": 692623961,
@@ -19122,7 +19804,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 65,
       "estimated_sales": 863544,
-      "actual_sales": 5246310
+      "actual_sales": 5246310,
+      "tags": "cool, financial"
     },
     {
       "id": 625584698,
@@ -19150,7 +19833,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 5,
       "estimated_sales": 4983966,
-      "actual_sales": 96196
+      "actual_sales": 96196,
+      "tags": "demo, medical"
     },
     {
       "id": 228286355,
@@ -19178,7 +19862,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 65,
       "estimated_sales": 1987125,
-      "actual_sales": 1964850
+      "actual_sales": 1964850,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 112554811,
@@ -19206,7 +19891,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 52,
       "estimated_sales": 495201,
-      "actual_sales": 4720525
+      "actual_sales": 4720525,
+      "tags": "hot, medical"
     },
     {
       "id": 456371674,
@@ -19234,7 +19920,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 57,
       "estimated_sales": 531276,
-      "actual_sales": 1328380
+      "actual_sales": 1328380,
+      "tags": "cool, construction"
     },
     {
       "id": 756887917,
@@ -19262,7 +19949,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 16,
       "estimated_sales": 1215872,
-      "actual_sales": 449373
+      "actual_sales": 449373,
+      "tags": "demo, construction"
     },
     {
       "id": 976718737,
@@ -19290,7 +19978,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 5,
       "estimated_sales": 1627530,
-      "actual_sales": 1516664
+      "actual_sales": 1516664,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 398147776,
@@ -19318,7 +20007,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 83,
       "estimated_sales": 1286560,
-      "actual_sales": 1144240
+      "actual_sales": 1144240,
+      "tags": "retail"
     },
     {
       "id": 321467824,
@@ -19346,7 +20036,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 6,
       "estimated_sales": 1106710,
-      "actual_sales": 113928
+      "actual_sales": 113928,
+      "tags": "subscriber, financial"
     },
     {
       "id": 778899408,
@@ -19374,7 +20065,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 69,
       "estimated_sales": 1285931,
-      "actual_sales": 3025566
+      "actual_sales": 3025566,
+      "tags": "pro, construction"
     },
     {
       "id": 157466999,
@@ -19402,7 +20094,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 61,
       "estimated_sales": 919968,
-      "actual_sales": 2036580
+      "actual_sales": 2036580,
+      "tags": "cold, financial"
     },
     {
       "id": 592983733,
@@ -19430,7 +20123,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 49,
       "estimated_sales": 1837590,
-      "actual_sales": 1341582
+      "actual_sales": 1341582,
+      "tags": "warm, retail"
     },
     {
       "id": 250888230,
@@ -19458,7 +20152,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 89,
       "estimated_sales": 1770125,
-      "actual_sales": 4136136
+      "actual_sales": 4136136,
+      "tags": "medical"
     },
     {
       "id": 486889577,
@@ -19486,7 +20181,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 36,
       "estimated_sales": 3555460,
-      "actual_sales": 714460
+      "actual_sales": 714460,
+      "tags": "medical"
     },
     {
       "id": 729985942,
@@ -19514,7 +20210,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 42,
       "estimated_sales": 4030317,
-      "actual_sales": 2795860
+      "actual_sales": 2795860,
+      "tags": "warm, engineering"
     },
     {
       "id": 860186909,
@@ -19542,7 +20239,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 5,
       "estimated_sales": 1418616,
-      "actual_sales": 760032
+      "actual_sales": 760032,
+      "tags": ""
     },
     {
       "id": 391051242,
@@ -19570,7 +20268,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 63,
       "estimated_sales": 2388642,
-      "actual_sales": 1407552
+      "actual_sales": 1407552,
+      "tags": "cool, financial"
     },
     {
       "id": 281103519,
@@ -19598,7 +20297,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 17,
       "estimated_sales": 2621102,
-      "actual_sales": 511050
+      "actual_sales": 511050,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 927210809,
@@ -19626,7 +20326,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 53,
       "estimated_sales": 3808194,
-      "actual_sales": 1913184
+      "actual_sales": 1913184,
+      "tags": "cold, medical"
     },
     {
       "id": 390907369,
@@ -19654,7 +20355,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 71,
       "estimated_sales": 339538,
-      "actual_sales": 1641371
+      "actual_sales": 1641371,
+      "tags": "cold, financial"
     },
     {
       "id": 59273682,
@@ -19682,7 +20384,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 75,
       "estimated_sales": 3632160,
-      "actual_sales": 1633914
+      "actual_sales": 1633914,
+      "tags": "cold, financial"
     },
     {
       "id": 663270675,
@@ -19710,7 +20413,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 4,
       "estimated_sales": 0,
-      "actual_sales": 67931
+      "actual_sales": 67931,
+      "tags": "demo, construction"
     },
     {
       "id": 125633460,
@@ -19738,7 +20442,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 6,
       "estimated_sales": 2621808,
-      "actual_sales": 860454
+      "actual_sales": 860454,
+      "tags": "cold, engineering"
     },
     {
       "id": 244681227,
@@ -19766,7 +20471,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 54,
       "estimated_sales": 1382474,
-      "actual_sales": 1880516
+      "actual_sales": 1880516,
+      "tags": ""
     },
     {
       "id": 349972826,
@@ -19794,7 +20500,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 31,
       "estimated_sales": 1595066,
-      "actual_sales": 798555
+      "actual_sales": 798555,
+      "tags": "demo, retail"
     },
     {
       "id": 145961534,
@@ -19822,7 +20529,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 0,
       "estimated_sales": 3409056,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, construction"
     },
     {
       "id": 355112564,
@@ -19850,7 +20558,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 4,
       "estimated_sales": 4233190,
-      "actual_sales": 976769
+      "actual_sales": 976769,
+      "tags": "hot, retail"
     },
     {
       "id": 759105753,
@@ -19878,7 +20587,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 15,
       "estimated_sales": 2649564,
-      "actual_sales": 147110
+      "actual_sales": 147110,
+      "tags": "cool, retail"
     },
     {
       "id": 713108235,
@@ -19906,7 +20616,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 45,
       "estimated_sales": 1412236,
-      "actual_sales": 2156382
+      "actual_sales": 2156382,
+      "tags": "pro, medical"
     },
     {
       "id": 36712806,
@@ -19934,7 +20645,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 68,
       "estimated_sales": 136259,
-      "actual_sales": 1063520
+      "actual_sales": 1063520,
+      "tags": "medical"
     },
     {
       "id": 641335526,
@@ -19962,7 +20674,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 3,
       "estimated_sales": 147498,
-      "actual_sales": 64379
+      "actual_sales": 64379,
+      "tags": "subscriber, medical"
     },
     {
       "id": 224854218,
@@ -19990,7 +20703,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 73,
       "estimated_sales": 2177475,
-      "actual_sales": 1232232
+      "actual_sales": 1232232,
+      "tags": "subscriber, medical"
     },
     {
       "id": 126281483,
@@ -20018,7 +20732,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 81,
       "estimated_sales": 2586580,
-      "actual_sales": 1609764
+      "actual_sales": 1609764,
+      "tags": "hot, medical"
     },
     {
       "id": 294724135,
@@ -20046,7 +20761,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 79,
       "estimated_sales": 680324,
-      "actual_sales": 4313972
+      "actual_sales": 4313972,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 276794980,
@@ -20074,7 +20790,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 52,
       "estimated_sales": 0,
-      "actual_sales": 1329636
+      "actual_sales": 1329636,
+      "tags": ""
     },
     {
       "id": 196642015,
@@ -20102,7 +20819,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 38,
       "estimated_sales": 1250832,
-      "actual_sales": 798080
+      "actual_sales": 798080,
+      "tags": "cool, retail"
     },
     {
       "id": 467705596,
@@ -20130,7 +20848,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 69,
       "estimated_sales": 1796661,
-      "actual_sales": 991161
+      "actual_sales": 991161,
+      "tags": "pro, engineering"
     },
     {
       "id": 921009484,
@@ -20158,7 +20877,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 13,
       "estimated_sales": 658868,
-      "actual_sales": 194278
+      "actual_sales": 194278,
+      "tags": ""
     },
     {
       "id": 278678503,
@@ -20186,7 +20906,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 73,
       "estimated_sales": 196368,
-      "actual_sales": 2023348
+      "actual_sales": 2023348,
+      "tags": "medical"
     },
     {
       "id": 574529254,
@@ -20214,7 +20935,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 8,
       "estimated_sales": 1051232,
-      "actual_sales": 137571
+      "actual_sales": 137571,
+      "tags": "construction"
     },
     {
       "id": 88389770,
@@ -20242,7 +20964,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 5,
       "estimated_sales": 1846468,
-      "actual_sales": 2970902
+      "actual_sales": 2970902,
+      "tags": "cold, medical"
     },
     {
       "id": 150365288,
@@ -20270,7 +20993,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 54,
       "estimated_sales": 756668,
-      "actual_sales": 4603125
+      "actual_sales": 4603125,
+      "tags": "pro, construction"
     },
     {
       "id": 552715116,
@@ -20298,7 +21022,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 44,
       "estimated_sales": 1364480,
-      "actual_sales": 1596870
+      "actual_sales": 1596870,
+      "tags": "warm, construction"
     },
     {
       "id": 718261003,
@@ -20326,7 +21051,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 52,
       "estimated_sales": 741528,
-      "actual_sales": 2820768
+      "actual_sales": 2820768,
+      "tags": "demo, retail"
     },
     {
       "id": 257384455,
@@ -20354,7 +21080,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 85,
       "estimated_sales": 1158048,
-      "actual_sales": 1959862
+      "actual_sales": 1959862,
+      "tags": "subscriber, construction"
     },
     {
       "id": 683626623,
@@ -20382,7 +21109,8 @@ export const data: any[] = [
       "deals_total": 79,
       "ratio": 53,
       "estimated_sales": 3914550,
-      "actual_sales": 3425682
+      "actual_sales": 3425682,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 600942833,
@@ -20410,7 +21138,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 53,
       "estimated_sales": 1281384,
-      "actual_sales": 1280784
+      "actual_sales": 1280784,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 414356682,
@@ -20438,7 +21167,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 24,
       "estimated_sales": 2150929,
-      "actual_sales": 640176
+      "actual_sales": 640176,
+      "tags": "pro, retail"
     },
     {
       "id": 755815241,
@@ -20466,7 +21196,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 56,
       "estimated_sales": 118990,
-      "actual_sales": 2612664
+      "actual_sales": 2612664,
+      "tags": "cold, financial"
     },
     {
       "id": 339223944,
@@ -20494,7 +21225,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 61,
       "estimated_sales": 180563,
-      "actual_sales": 3389512
+      "actual_sales": 3389512,
+      "tags": "demo, engineering"
     },
     {
       "id": 378974185,
@@ -20522,7 +21254,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 65,
       "estimated_sales": 531138,
-      "actual_sales": 4311960
+      "actual_sales": 4311960,
+      "tags": "hot, financial"
     },
     {
       "id": 557343351,
@@ -20550,7 +21283,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 62,
       "estimated_sales": 1832662,
-      "actual_sales": 4341988
+      "actual_sales": 4341988,
+      "tags": "hot, engineering"
     },
     {
       "id": 703152040,
@@ -20578,7 +21312,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 46,
       "estimated_sales": 2121920,
-      "actual_sales": 2717381
+      "actual_sales": 2717381,
+      "tags": "cold, construction"
     },
     {
       "id": 881286208,
@@ -20606,7 +21341,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 45,
       "estimated_sales": 2504520,
-      "actual_sales": 1615800
+      "actual_sales": 1615800,
+      "tags": "demo, financial"
     },
     {
       "id": 209861266,
@@ -20634,7 +21370,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 34,
       "estimated_sales": 1865412,
-      "actual_sales": 551430
+      "actual_sales": 551430,
+      "tags": "warm, financial"
     },
     {
       "id": 124827193,
@@ -20662,7 +21399,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 28,
       "estimated_sales": 955900,
-      "actual_sales": 1978700
+      "actual_sales": 1978700,
+      "tags": "cold, medical"
     },
     {
       "id": 39951043,
@@ -20690,7 +21428,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 31,
       "estimated_sales": 285998,
-      "actual_sales": 1233405
+      "actual_sales": 1233405,
+      "tags": "pharmaceutical"
     },
     {
       "id": 848679501,
@@ -20718,7 +21457,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 54,
       "estimated_sales": 2120954,
-      "actual_sales": 1529038
+      "actual_sales": 1529038,
+      "tags": "pro, engineering"
     },
     {
       "id": 900125151,
@@ -20746,7 +21486,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 89,
       "estimated_sales": 2583048,
-      "actual_sales": 1276264
+      "actual_sales": 1276264,
+      "tags": "retail"
     },
     {
       "id": 241136409,
@@ -20774,7 +21515,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 41,
       "estimated_sales": 297988,
-      "actual_sales": 3560961
+      "actual_sales": 3560961,
+      "tags": "pro, financial"
     },
     {
       "id": 692416798,
@@ -20802,7 +21544,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 3,
       "estimated_sales": 369004,
-      "actual_sales": 1982880
+      "actual_sales": 1982880,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 484286772,
@@ -20830,7 +21573,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 26,
       "estimated_sales": 3065441,
-      "actual_sales": 561225
+      "actual_sales": 561225,
+      "tags": "subscriber, construction"
     },
     {
       "id": 549816723,
@@ -20858,7 +21602,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 35,
       "estimated_sales": 762255,
-      "actual_sales": 1788915
+      "actual_sales": 1788915,
+      "tags": "hot, construction"
     },
     {
       "id": 840091922,
@@ -20886,7 +21631,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 73,
       "estimated_sales": 1318142,
-      "actual_sales": 2957913
+      "actual_sales": 2957913,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 128788605,
@@ -20914,7 +21660,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 75,
       "estimated_sales": 0,
-      "actual_sales": 2263248
+      "actual_sales": 2263248,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 361141944,
@@ -20942,7 +21689,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 88,
       "estimated_sales": 120763,
-      "actual_sales": 1611260
+      "actual_sales": 1611260,
+      "tags": "warm, retail"
     },
     {
       "id": 570975145,
@@ -20970,7 +21718,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 88,
       "estimated_sales": 718242,
-      "actual_sales": 5067060
+      "actual_sales": 5067060,
+      "tags": "pro, engineering"
     },
     {
       "id": 600332169,
@@ -20998,7 +21747,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 61,
       "estimated_sales": 3509041,
-      "actual_sales": 3081690
+      "actual_sales": 3081690,
+      "tags": "demo, construction"
     },
     {
       "id": 738881183,
@@ -21026,7 +21776,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 65,
       "estimated_sales": 2038275,
-      "actual_sales": 4606008
+      "actual_sales": 4606008,
+      "tags": "pro, engineering"
     },
     {
       "id": 171755436,
@@ -21054,7 +21805,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 28,
       "estimated_sales": 3389980,
-      "actual_sales": 548135
+      "actual_sales": 548135,
+      "tags": "cool, engineering"
     },
     {
       "id": 884878637,
@@ -21082,7 +21834,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 38,
       "estimated_sales": 0,
-      "actual_sales": 2410590
+      "actual_sales": 2410590,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 255956599,
@@ -21110,7 +21863,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 65,
       "estimated_sales": 793397,
-      "actual_sales": 2537080
+      "actual_sales": 2537080,
+      "tags": "warm, construction"
     },
     {
       "id": 556451129,
@@ -21138,7 +21892,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 51,
       "estimated_sales": 2170558,
-      "actual_sales": 2391598
+      "actual_sales": 2391598,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 872709130,
@@ -21166,7 +21921,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 54,
       "estimated_sales": 2440341,
-      "actual_sales": 5208487
+      "actual_sales": 5208487,
+      "tags": "hot, medical"
     },
     {
       "id": 143319160,
@@ -21194,7 +21950,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 58,
       "estimated_sales": 4233966,
-      "actual_sales": 2403576
+      "actual_sales": 2403576,
+      "tags": "pharmaceutical"
     },
     {
       "id": 360584510,
@@ -21222,7 +21979,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 58,
       "estimated_sales": 1534328,
-      "actual_sales": 1030911
+      "actual_sales": 1030911,
+      "tags": "warm, retail"
     },
     {
       "id": 415152376,
@@ -21250,7 +22008,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 94,
       "estimated_sales": 2128800,
-      "actual_sales": 4836127
+      "actual_sales": 4836127,
+      "tags": "hot, construction"
     },
     {
       "id": 419458432,
@@ -21278,7 +22037,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 54,
       "estimated_sales": 1622220,
-      "actual_sales": 2402244
+      "actual_sales": 2402244,
+      "tags": ""
     },
     {
       "id": 384543999,
@@ -21306,7 +22066,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 3,
       "estimated_sales": 423400,
-      "actual_sales": 774270
+      "actual_sales": 774270,
+      "tags": "cold, retail"
     },
     {
       "id": 81825674,
@@ -21334,7 +22095,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 32,
       "estimated_sales": 947259,
-      "actual_sales": 493850
+      "actual_sales": 493850,
+      "tags": "engineering"
     },
     {
       "id": 165892216,
@@ -21362,7 +22124,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 44,
       "estimated_sales": 1312864,
-      "actual_sales": 1380943
+      "actual_sales": 1380943,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 676730627,
@@ -21390,7 +22153,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 55,
       "estimated_sales": 3193320,
-      "actual_sales": 3452928
+      "actual_sales": 3452928,
+      "tags": "hot, financial"
     },
     {
       "id": 263094121,
@@ -21418,7 +22182,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 38,
       "estimated_sales": 4872377,
-      "actual_sales": 1955184
+      "actual_sales": 1955184,
+      "tags": "hot, construction"
     },
     {
       "id": 757805927,
@@ -21446,7 +22211,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 79,
       "estimated_sales": 1451480,
-      "actual_sales": 3483818
+      "actual_sales": 3483818,
+      "tags": "pro, medical"
     },
     {
       "id": 226451253,
@@ -21474,7 +22240,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 7,
       "estimated_sales": 2641324,
-      "actual_sales": 2657060
+      "actual_sales": 2657060,
+      "tags": "hot, medical"
     },
     {
       "id": 588260969,
@@ -21502,7 +22269,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 79,
       "estimated_sales": 5473866,
-      "actual_sales": 5728740
+      "actual_sales": 5728740,
+      "tags": "medical"
     },
     {
       "id": 92600329,
@@ -21530,7 +22298,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 64,
       "estimated_sales": 1569848,
-      "actual_sales": 1318061
+      "actual_sales": 1318061,
+      "tags": "pro, financial"
     },
     {
       "id": 29550005,
@@ -21558,7 +22327,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 12,
       "estimated_sales": 251216,
-      "actual_sales": 702396
+      "actual_sales": 702396,
+      "tags": "cool, medical"
     },
     {
       "id": 723036905,
@@ -21586,7 +22356,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 48,
       "estimated_sales": 1365312,
-      "actual_sales": 1404990
+      "actual_sales": 1404990,
+      "tags": "cool, financial"
     },
     {
       "id": 33796883,
@@ -21614,7 +22385,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 6,
       "estimated_sales": 1221552,
-      "actual_sales": 118455
+      "actual_sales": 118455,
+      "tags": "warm, engineering"
     },
     {
       "id": 224492946,
@@ -21642,7 +22414,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 8,
       "estimated_sales": 711648,
-      "actual_sales": 4050872
+      "actual_sales": 4050872,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 480604951,
@@ -21670,7 +22443,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 5,
       "estimated_sales": 3200777,
-      "actual_sales": 2366820
+      "actual_sales": 2366820,
+      "tags": "cool, construction"
     },
     {
       "id": 411159580,
@@ -21698,7 +22472,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 5,
       "estimated_sales": 4867824,
-      "actual_sales": 1134614
+      "actual_sales": 1134614,
+      "tags": "demo, medical"
     },
     {
       "id": 150091555,
@@ -21726,7 +22501,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 15,
       "estimated_sales": 128074,
-      "actual_sales": 281360
+      "actual_sales": 281360,
+      "tags": "demo, construction"
     },
     {
       "id": 190111586,
@@ -21754,7 +22530,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 71,
       "estimated_sales": 1521322,
-      "actual_sales": 4557050
+      "actual_sales": 4557050,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 502261728,
@@ -21782,7 +22559,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 7,
       "estimated_sales": 376695,
-      "actual_sales": 3174402
+      "actual_sales": 3174402,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 86701824,
@@ -21810,7 +22588,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 83,
       "estimated_sales": 2332120,
-      "actual_sales": 4745184
+      "actual_sales": 4745184,
+      "tags": "warm, medical"
     },
     {
       "id": 171711948,
@@ -21838,7 +22617,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 57,
       "estimated_sales": 555549,
-      "actual_sales": 1785576
+      "actual_sales": 1785576,
+      "tags": ""
     },
     {
       "id": 92179799,
@@ -21866,7 +22646,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 43,
       "estimated_sales": 183960,
-      "actual_sales": 797958
+      "actual_sales": 797958,
+      "tags": "cool, financial"
     },
     {
       "id": 563096756,
@@ -21894,7 +22675,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 44,
       "estimated_sales": 2867275,
-      "actual_sales": 630120
+      "actual_sales": 630120,
+      "tags": "cold, engineering"
     },
     {
       "id": 600671420,
@@ -21922,7 +22704,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 21,
       "estimated_sales": 716180,
-      "actual_sales": 609750
+      "actual_sales": 609750,
+      "tags": "cold, financial"
     },
     {
       "id": 317509063,
@@ -21950,7 +22733,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 38,
       "estimated_sales": 5230980,
-      "actual_sales": 1379264
+      "actual_sales": 1379264,
+      "tags": "pro, financial"
     },
     {
       "id": 175448736,
@@ -21978,7 +22762,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 29,
       "estimated_sales": 2069133,
-      "actual_sales": 477135
+      "actual_sales": 477135,
+      "tags": "hot, engineering"
     },
     {
       "id": 67784778,
@@ -22006,7 +22791,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 7,
       "estimated_sales": 416148,
-      "actual_sales": 1606710
+      "actual_sales": 1606710,
+      "tags": ""
     },
     {
       "id": 967256711,
@@ -22034,7 +22820,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 56,
       "estimated_sales": 248662,
-      "actual_sales": 4053106
+      "actual_sales": 4053106,
+      "tags": "warm, medical"
     },
     {
       "id": 325777995,
@@ -22062,7 +22849,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 62,
       "estimated_sales": 4643375,
-      "actual_sales": 1483040
+      "actual_sales": 1483040,
+      "tags": "cold, financial"
     },
     {
       "id": 202270548,
@@ -22090,7 +22878,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 35,
       "estimated_sales": 1452561,
-      "actual_sales": 2899120
+      "actual_sales": 2899120,
+      "tags": "demo, engineering"
     },
     {
       "id": 328990007,
@@ -22118,7 +22907,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 69,
       "estimated_sales": 0,
-      "actual_sales": 1314525
+      "actual_sales": 1314525,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 296528267,
@@ -22146,7 +22936,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 73,
       "estimated_sales": 739524,
-      "actual_sales": 827970
+      "actual_sales": 827970,
+      "tags": "cool, medical"
     },
     {
       "id": 412117090,
@@ -22174,7 +22965,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 26,
       "estimated_sales": 4984668,
-      "actual_sales": 654728
+      "actual_sales": 654728,
+      "tags": ""
     },
     {
       "id": 70611061,
@@ -22202,7 +22994,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 71,
       "estimated_sales": 2027256,
-      "actual_sales": 1591940
+      "actual_sales": 1591940,
+      "tags": "retail"
     },
     {
       "id": 996171956,
@@ -22230,7 +23023,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 56,
       "estimated_sales": 1458996,
-      "actual_sales": 2097976
+      "actual_sales": 2097976,
+      "tags": "pro, financial"
     },
     {
       "id": 467028299,
@@ -22258,7 +23052,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 59,
       "estimated_sales": 351070,
-      "actual_sales": 2141046
+      "actual_sales": 2141046,
+      "tags": "cold, medical"
     },
     {
       "id": 229065701,
@@ -22286,7 +23081,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 64,
       "estimated_sales": 4756928,
-      "actual_sales": 957033
+      "actual_sales": 957033,
+      "tags": "warm, construction"
     },
     {
       "id": 714728131,
@@ -22314,7 +23110,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 42,
       "estimated_sales": 3067275,
-      "actual_sales": 1503892
+      "actual_sales": 1503892,
+      "tags": "demo, engineering"
     },
     {
       "id": 493376493,
@@ -22342,7 +23139,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 51,
       "estimated_sales": 242592,
-      "actual_sales": 3557260
+      "actual_sales": 3557260,
+      "tags": "construction"
     },
     {
       "id": 232416003,
@@ -22370,7 +23168,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 27,
       "estimated_sales": 2315508,
-      "actual_sales": 1047064
+      "actual_sales": 1047064,
+      "tags": "cold, financial"
     },
     {
       "id": 854340381,
@@ -22398,7 +23197,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 54,
       "estimated_sales": 67073,
-      "actual_sales": 4953660
+      "actual_sales": 4953660,
+      "tags": ""
     },
     {
       "id": 782880732,
@@ -22426,7 +23226,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 62,
       "estimated_sales": 4105260,
-      "actual_sales": 2719520
+      "actual_sales": 2719520,
+      "tags": "cold, construction"
     },
     {
       "id": 988354717,
@@ -22454,7 +23255,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 69,
       "estimated_sales": 2428888,
-      "actual_sales": 3710736
+      "actual_sales": 3710736,
+      "tags": "pro, construction"
     },
     {
       "id": 820441847,
@@ -22482,7 +23284,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 19,
       "estimated_sales": 1164670,
-      "actual_sales": 1197756
+      "actual_sales": 1197756,
+      "tags": "subscriber, medical"
     },
     {
       "id": 347578209,
@@ -22510,7 +23313,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 4,
       "estimated_sales": 1677800,
-      "actual_sales": 1552167
+      "actual_sales": 1552167,
+      "tags": "cool, financial"
     },
     {
       "id": 427319323,
@@ -22538,7 +23342,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 47,
       "estimated_sales": 777400,
-      "actual_sales": 1571715
+      "actual_sales": 1571715,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 901186932,
@@ -22566,7 +23371,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 55,
       "estimated_sales": 1757610,
-      "actual_sales": 3302976
+      "actual_sales": 3302976,
+      "tags": "engineering"
     },
     {
       "id": 350397603,
@@ -22594,7 +23400,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 12,
       "estimated_sales": 148472,
-      "actual_sales": 153990
+      "actual_sales": 153990,
+      "tags": "warm, construction"
     },
     {
       "id": 467484491,
@@ -22622,7 +23429,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 52,
       "estimated_sales": 2284243,
-      "actual_sales": 2612750
+      "actual_sales": 2612750,
+      "tags": "demo, financial"
     },
     {
       "id": 974859410,
@@ -22650,7 +23458,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 54,
       "estimated_sales": 1866832,
-      "actual_sales": 2304675
+      "actual_sales": 2304675,
+      "tags": "demo, financial"
     },
     {
       "id": 181476686,
@@ -22678,7 +23487,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 46,
       "estimated_sales": 812982,
-      "actual_sales": 2420649
+      "actual_sales": 2420649,
+      "tags": "cold, construction"
     },
     {
       "id": 37211977,
@@ -22706,7 +23516,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 6,
       "estimated_sales": 1987580,
-      "actual_sales": 1179024
+      "actual_sales": 1179024,
+      "tags": "demo, engineering"
     },
     {
       "id": 201087464,
@@ -22734,7 +23545,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 5,
       "estimated_sales": 3226770,
-      "actual_sales": 3437190
+      "actual_sales": 3437190,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 523682841,
@@ -22762,7 +23574,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 0,
       "estimated_sales": 435966,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, financial"
     },
     {
       "id": 657054347,
@@ -22790,7 +23603,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 9,
       "estimated_sales": 1688300,
-      "actual_sales": 2629004
+      "actual_sales": 2629004,
+      "tags": ""
     },
     {
       "id": 718424060,
@@ -22818,7 +23632,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 48,
       "estimated_sales": 1937420,
-      "actual_sales": 2804648
+      "actual_sales": 2804648,
+      "tags": ""
     },
     {
       "id": 657385185,
@@ -22846,7 +23661,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 64,
       "estimated_sales": 1382808,
-      "actual_sales": 3201623
+      "actual_sales": 3201623,
+      "tags": ""
     },
     {
       "id": 734560146,
@@ -22874,7 +23690,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 23,
       "estimated_sales": 4637200,
-      "actual_sales": 1455864
+      "actual_sales": 1455864,
+      "tags": "medical"
     },
     {
       "id": 629312212,
@@ -22902,7 +23719,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 52,
       "estimated_sales": 1659365,
-      "actual_sales": 2070552
+      "actual_sales": 2070552,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 187839770,
@@ -22930,7 +23748,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 77,
       "estimated_sales": 0,
-      "actual_sales": 3078159
+      "actual_sales": 3078159,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 449429768,
@@ -22958,7 +23777,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 68,
       "estimated_sales": 1545360,
-      "actual_sales": 1476991
+      "actual_sales": 1476991,
+      "tags": "warm, construction"
     },
     {
       "id": 829373835,
@@ -22986,7 +23806,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 35,
       "estimated_sales": 734312,
-      "actual_sales": 1732809
+      "actual_sales": 1732809,
+      "tags": "cold, retail"
     },
     {
       "id": 17576496,
@@ -23014,7 +23835,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 47,
       "estimated_sales": 135618,
-      "actual_sales": 3049225
+      "actual_sales": 3049225,
+      "tags": "hot, medical"
     },
     {
       "id": 944964743,
@@ -23042,7 +23864,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 42,
       "estimated_sales": 3808532,
-      "actual_sales": 1580116
+      "actual_sales": 1580116,
+      "tags": "demo, financial"
     },
     {
       "id": 963844363,
@@ -23070,7 +23893,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 58,
       "estimated_sales": 1173592,
-      "actual_sales": 2053038
+      "actual_sales": 2053038,
+      "tags": "cold, financial"
     },
     {
       "id": 579477268,
@@ -23098,7 +23922,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 54,
       "estimated_sales": 5279044,
-      "actual_sales": 2082500
+      "actual_sales": 2082500,
+      "tags": "subscriber, construction"
     },
     {
       "id": 327232258,
@@ -23126,7 +23951,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 83,
       "estimated_sales": 1644464,
-      "actual_sales": 4514981
+      "actual_sales": 4514981,
+      "tags": "cool, construction"
     },
     {
       "id": 629806265,
@@ -23154,7 +23980,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 45,
       "estimated_sales": 1766484,
-      "actual_sales": 706975
+      "actual_sales": 706975,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 21000922,
@@ -23182,7 +24009,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 28,
       "estimated_sales": 181622,
-      "actual_sales": 1549856
+      "actual_sales": 1549856,
+      "tags": "hot, retail"
     },
     {
       "id": 98807973,
@@ -23210,7 +24038,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 96,
       "estimated_sales": 2147894,
-      "actual_sales": 3800602
+      "actual_sales": 3800602,
+      "tags": "financial"
     },
     {
       "id": 14151980,
@@ -23238,7 +24067,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 29,
       "estimated_sales": 694212,
-      "actual_sales": 1150672
+      "actual_sales": 1150672,
+      "tags": "pro, financial"
     },
     {
       "id": 88771622,
@@ -23266,7 +24096,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 49,
       "estimated_sales": 927324,
-      "actual_sales": 2955564
+      "actual_sales": 2955564,
+      "tags": "hot, engineering"
     },
     {
       "id": 773835616,
@@ -23294,7 +24125,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 93,
       "estimated_sales": 107693,
-      "actual_sales": 2963950
+      "actual_sales": 2963950,
+      "tags": "subscriber, retail"
     },
     {
       "id": 535063682,
@@ -23322,7 +24154,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 0,
       "estimated_sales": 4689975,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, engineering"
     },
     {
       "id": 809383816,
@@ -23350,7 +24183,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 0,
       "estimated_sales": 2125493,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, engineering"
     },
     {
       "id": 179054914,
@@ -23378,7 +24212,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 65,
       "estimated_sales": 395544,
-      "actual_sales": 4624944
+      "actual_sales": 4624944,
+      "tags": "cold, engineering"
     },
     {
       "id": 610473528,
@@ -23406,7 +24241,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 53,
       "estimated_sales": 881955,
-      "actual_sales": 3349168
+      "actual_sales": 3349168,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 935635211,
@@ -23434,7 +24270,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 48,
       "estimated_sales": 0,
-      "actual_sales": 1732080
+      "actual_sales": 1732080,
+      "tags": "hot, retail"
     },
     {
       "id": 112548076,
@@ -23462,7 +24299,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 88,
       "estimated_sales": 1481292,
-      "actual_sales": 1334585
+      "actual_sales": 1334585,
+      "tags": "cool, engineering"
     },
     {
       "id": 43764251,
@@ -23490,7 +24328,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 38,
       "estimated_sales": 375366,
-      "actual_sales": 721966
+      "actual_sales": 721966,
+      "tags": "hot, financial"
     },
     {
       "id": 406649502,
@@ -23518,7 +24357,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 0,
       "estimated_sales": 1012128,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, medical"
     },
     {
       "id": 795740789,
@@ -23546,7 +24386,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 21,
       "estimated_sales": 1107570,
-      "actual_sales": 923315
+      "actual_sales": 923315,
+      "tags": "cool, engineering"
     },
     {
       "id": 694372608,
@@ -23574,7 +24415,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 86,
       "estimated_sales": 1287432,
-      "actual_sales": 859074
+      "actual_sales": 859074,
+      "tags": "warm, financial"
     },
     {
       "id": 416073434,
@@ -23602,7 +24444,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 38,
       "estimated_sales": 1007289,
-      "actual_sales": 1577103
+      "actual_sales": 1577103,
+      "tags": "cool, construction"
     },
     {
       "id": 737915993,
@@ -23630,7 +24473,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 95,
       "estimated_sales": 1324864,
-      "actual_sales": 2584818
+      "actual_sales": 2584818,
+      "tags": "warm, medical"
     },
     {
       "id": 726409946,
@@ -23658,7 +24502,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 74,
       "estimated_sales": 1827012,
-      "actual_sales": 4854977
+      "actual_sales": 4854977,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 972659023,
@@ -23686,7 +24531,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 5,
       "estimated_sales": 366742,
-      "actual_sales": 1405407
+      "actual_sales": 1405407,
+      "tags": ""
     },
     {
       "id": 192685108,
@@ -23714,7 +24560,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 43,
       "estimated_sales": 583660,
-      "actual_sales": 3174200
+      "actual_sales": 3174200,
+      "tags": "hot, medical"
     },
     {
       "id": 949728318,
@@ -23742,7 +24589,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 42,
       "estimated_sales": 4990378,
-      "actual_sales": 2615502
+      "actual_sales": 2615502,
+      "tags": "engineering"
     },
     {
       "id": 963492061,
@@ -23770,7 +24618,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 43,
       "estimated_sales": 4417672,
-      "actual_sales": 242484
+      "actual_sales": 242484,
+      "tags": "pro, retail"
     },
     {
       "id": 132704842,
@@ -23798,7 +24647,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 57,
       "estimated_sales": 556254,
-      "actual_sales": 2930172
+      "actual_sales": 2930172,
+      "tags": "warm, engineering"
     },
     {
       "id": 727078696,
@@ -23826,7 +24676,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 32,
       "estimated_sales": 3953910,
-      "actual_sales": 411712
+      "actual_sales": 411712,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 864600282,
@@ -23854,7 +24705,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 85,
       "estimated_sales": 3096112,
-      "actual_sales": 3383272
+      "actual_sales": 3383272,
+      "tags": "subscriber, construction"
     },
     {
       "id": 93795677,
@@ -23882,7 +24734,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 22,
       "estimated_sales": 1640655,
-      "actual_sales": 409612
+      "actual_sales": 409612,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 297926757,
@@ -23910,7 +24763,8 @@ export const data: any[] = [
       "deals_total": 10,
       "ratio": 63,
       "estimated_sales": 104736,
-      "actual_sales": 780660
+      "actual_sales": 780660,
+      "tags": "retail"
     },
     {
       "id": 384441130,
@@ -23938,7 +24792,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 43,
       "estimated_sales": 1637086,
-      "actual_sales": 3905202
+      "actual_sales": 3905202,
+      "tags": "financial"
     },
     {
       "id": 768189161,
@@ -23966,7 +24821,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 57,
       "estimated_sales": 2348892,
-      "actual_sales": 1729728
+      "actual_sales": 1729728,
+      "tags": "hot, engineering"
     },
     {
       "id": 956009897,
@@ -23994,7 +24850,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 72,
       "estimated_sales": 2897568,
-      "actual_sales": 1411501
+      "actual_sales": 1411501,
+      "tags": ""
     },
     {
       "id": 167340397,
@@ -24022,7 +24879,8 @@ export const data: any[] = [
       "deals_total": 86,
       "ratio": 5,
       "estimated_sales": 3142568,
-      "actual_sales": 4335720
+      "actual_sales": 4335720,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 547674421,
@@ -24050,7 +24908,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 45,
       "estimated_sales": 829040,
-      "actual_sales": 3151155
+      "actual_sales": 3151155,
+      "tags": "financial"
     },
     {
       "id": 531084392,
@@ -24078,7 +24937,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 82,
       "estimated_sales": 756280,
-      "actual_sales": 3732480
+      "actual_sales": 3732480,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 415571945,
@@ -24106,7 +24966,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 56,
       "estimated_sales": 3170907,
-      "actual_sales": 3566679
+      "actual_sales": 3566679,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 457769617,
@@ -24134,7 +24995,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 59,
       "estimated_sales": 1997030,
-      "actual_sales": 3701390
+      "actual_sales": 3701390,
+      "tags": "cool, engineering"
     },
     {
       "id": 717743189,
@@ -24162,7 +25024,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 78,
       "estimated_sales": 1006884,
-      "actual_sales": 3320856
+      "actual_sales": 3320856,
+      "tags": "warm, financial"
     },
     {
       "id": 553613694,
@@ -24190,7 +25053,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 61,
       "estimated_sales": 1439022,
-      "actual_sales": 3953900
+      "actual_sales": 3953900,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 524204838,
@@ -24218,7 +25082,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 9,
       "estimated_sales": 455982,
-      "actual_sales": 192060
+      "actual_sales": 192060,
+      "tags": "hot, medical"
     },
     {
       "id": 853035250,
@@ -24246,7 +25111,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 13,
       "estimated_sales": 703062,
-      "actual_sales": 181980
+      "actual_sales": 181980,
+      "tags": "warm, financial"
     },
     {
       "id": 532007006,
@@ -24274,7 +25140,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 8,
       "estimated_sales": 2947404,
-      "actual_sales": 3930720
+      "actual_sales": 3930720,
+      "tags": "cold, construction"
     },
     {
       "id": 180219390,
@@ -24302,7 +25169,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 36,
       "estimated_sales": 1193274,
-      "actual_sales": 1330144
+      "actual_sales": 1330144,
+      "tags": "subscriber, medical"
     },
     {
       "id": 458464965,
@@ -24330,7 +25198,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 76,
       "estimated_sales": 1018703,
-      "actual_sales": 1665560
+      "actual_sales": 1665560,
+      "tags": ""
     },
     {
       "id": 820146107,
@@ -24358,7 +25227,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 8,
       "estimated_sales": 589616,
-      "actual_sales": 3072076
+      "actual_sales": 3072076,
+      "tags": "cold, engineering"
     },
     {
       "id": 492644472,
@@ -24386,7 +25256,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 32,
       "estimated_sales": 1554631,
-      "actual_sales": 1036532
+      "actual_sales": 1036532,
+      "tags": "construction"
     },
     {
       "id": 661546493,
@@ -24414,7 +25285,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 15,
       "estimated_sales": 741096,
-      "actual_sales": 627580
+      "actual_sales": 627580,
+      "tags": "hot, construction"
     },
     {
       "id": 147098527,
@@ -24442,7 +25314,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 63,
       "estimated_sales": 2711872,
-      "actual_sales": 1215240
+      "actual_sales": 1215240,
+      "tags": "cold, retail"
     },
     {
       "id": 945525011,
@@ -24470,7 +25343,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 47,
       "estimated_sales": 302274,
-      "actual_sales": 4370787
+      "actual_sales": 4370787,
+      "tags": "hot, engineering"
     },
     {
       "id": 273103033,
@@ -24498,7 +25372,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 3,
       "estimated_sales": 3822690,
-      "actual_sales": 309342
+      "actual_sales": 309342,
+      "tags": "cold, construction"
     },
     {
       "id": 951198245,
@@ -24526,7 +25401,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 56,
       "estimated_sales": 3357417,
-      "actual_sales": 2269916
+      "actual_sales": 2269916,
+      "tags": "hot, construction"
     },
     {
       "id": 594297986,
@@ -24554,7 +25430,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 81,
       "estimated_sales": 163604,
-      "actual_sales": 895050
+      "actual_sales": 895050,
+      "tags": "demo, medical"
     },
     {
       "id": 851939166,
@@ -24582,7 +25459,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 61,
       "estimated_sales": 1826246,
-      "actual_sales": 2234364
+      "actual_sales": 2234364,
+      "tags": "subscriber, medical"
     },
     {
       "id": 400998690,
@@ -24610,7 +25488,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 13,
       "estimated_sales": 295832,
-      "actual_sales": 515752
+      "actual_sales": 515752,
+      "tags": "hot, engineering"
     },
     {
       "id": 591128634,
@@ -24638,7 +25517,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 59,
       "estimated_sales": 1690052,
-      "actual_sales": 3042371
+      "actual_sales": 3042371,
+      "tags": "pro, engineering"
     },
     {
       "id": 240916960,
@@ -24666,7 +25546,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 61,
       "estimated_sales": 626769,
-      "actual_sales": 2210365
+      "actual_sales": 2210365,
+      "tags": "pro, financial"
     },
     {
       "id": 830594104,
@@ -24694,7 +25575,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 55,
       "estimated_sales": 3634540,
-      "actual_sales": 5524904
+      "actual_sales": 5524904,
+      "tags": "warm, construction"
     },
     {
       "id": 585091432,
@@ -24722,7 +25604,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 43,
       "estimated_sales": 0,
-      "actual_sales": 1783340
+      "actual_sales": 1783340,
+      "tags": "hot, retail"
     },
     {
       "id": 68991694,
@@ -24750,7 +25633,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 47,
       "estimated_sales": 2179920,
-      "actual_sales": 4803450
+      "actual_sales": 4803450,
+      "tags": "warm, construction"
     },
     {
       "id": 865744634,
@@ -24778,7 +25662,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 39,
       "estimated_sales": 1790316,
-      "actual_sales": 399847
+      "actual_sales": 399847,
+      "tags": "financial"
     },
     {
       "id": 507780702,
@@ -24806,7 +25691,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 74,
       "estimated_sales": 1717177,
-      "actual_sales": 1399253
+      "actual_sales": 1399253,
+      "tags": "warm, medical"
     },
     {
       "id": 582297042,
@@ -24834,7 +25720,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 75,
       "estimated_sales": 4558680,
-      "actual_sales": 3448056
+      "actual_sales": 3448056,
+      "tags": "warm, engineering"
     },
     {
       "id": 393285725,
@@ -24862,7 +25749,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 45,
       "estimated_sales": 1744302,
-      "actual_sales": 793350
+      "actual_sales": 793350,
+      "tags": "pro, financial"
     },
     {
       "id": 938189666,
@@ -24890,7 +25778,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 82,
       "estimated_sales": 4693290,
-      "actual_sales": 1669608
+      "actual_sales": 1669608,
+      "tags": "hot, financial"
     },
     {
       "id": 301661373,
@@ -24918,7 +25807,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 59,
       "estimated_sales": 0,
-      "actual_sales": 1396736
+      "actual_sales": 1396736,
+      "tags": ""
     },
     {
       "id": 821539485,
@@ -24946,7 +25836,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 46,
       "estimated_sales": 561648,
-      "actual_sales": 2143702
+      "actual_sales": 2143702,
+      "tags": "demo, financial"
     },
     {
       "id": 437425892,
@@ -24974,7 +25865,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 54,
       "estimated_sales": 970848,
-      "actual_sales": 3438760
+      "actual_sales": 3438760,
+      "tags": "warm, financial"
     },
     {
       "id": 709457514,
@@ -25002,7 +25894,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 52,
       "estimated_sales": 1449743,
-      "actual_sales": 1915536
+      "actual_sales": 1915536,
+      "tags": "retail"
     },
     {
       "id": 492070538,
@@ -25030,7 +25923,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 83,
       "estimated_sales": 1339584,
-      "actual_sales": 1639730
+      "actual_sales": 1639730,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 383074777,
@@ -25058,7 +25952,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 96,
       "estimated_sales": 1958868,
-      "actual_sales": 3064828
+      "actual_sales": 3064828,
+      "tags": "cool, construction"
     },
     {
       "id": 101397835,
@@ -25086,7 +25981,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 68,
       "estimated_sales": 4565008,
-      "actual_sales": 4675060
+      "actual_sales": 4675060,
+      "tags": "cold, retail"
     },
     {
       "id": 215763044,
@@ -25114,7 +26010,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 46,
       "estimated_sales": 188943,
-      "actual_sales": 3695516
+      "actual_sales": 3695516,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 292323681,
@@ -25142,7 +26039,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 85,
       "estimated_sales": 3786678,
-      "actual_sales": 1341296
+      "actual_sales": 1341296,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 764862845,
@@ -25170,7 +26068,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 64,
       "estimated_sales": 1992067,
-      "actual_sales": 1050534
+      "actual_sales": 1050534,
+      "tags": "demo, medical"
     },
     {
       "id": 349426178,
@@ -25198,7 +26097,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 38,
       "estimated_sales": 4930830,
-      "actual_sales": 2529282
+      "actual_sales": 2529282,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 932432616,
@@ -25226,7 +26126,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 61,
       "estimated_sales": 1102090,
-      "actual_sales": 1023944
+      "actual_sales": 1023944,
+      "tags": "cold, construction"
     },
     {
       "id": 414592687,
@@ -25254,7 +26155,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 3,
       "estimated_sales": 1759248,
-      "actual_sales": 969752
+      "actual_sales": 969752,
+      "tags": "pro, retail"
     },
     {
       "id": 97043406,
@@ -25282,7 +26184,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 6,
       "estimated_sales": 1321245,
-      "actual_sales": 371634
+      "actual_sales": 371634,
+      "tags": ""
     },
     {
       "id": 958045891,
@@ -25310,7 +26213,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 52,
       "estimated_sales": 3136434,
-      "actual_sales": 1973511
+      "actual_sales": 1973511,
+      "tags": "subscriber, construction"
     },
     {
       "id": 599434218,
@@ -25338,7 +26242,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 54,
       "estimated_sales": 1882353,
-      "actual_sales": 3069099
+      "actual_sales": 3069099,
+      "tags": "demo, retail"
     },
     {
       "id": 670227370,
@@ -25366,7 +26271,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 52,
       "estimated_sales": 2398085,
-      "actual_sales": 3311875
+      "actual_sales": 3311875,
+      "tags": "pharmaceutical"
     },
     {
       "id": 368341970,
@@ -25394,7 +26300,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 38,
       "estimated_sales": 2320899,
-      "actual_sales": 3463182
+      "actual_sales": 3463182,
+      "tags": "pro, construction"
     },
     {
       "id": 503372053,
@@ -25422,7 +26329,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 68,
       "estimated_sales": 1464822,
-      "actual_sales": 2652780
+      "actual_sales": 2652780,
+      "tags": "demo, financial"
     },
     {
       "id": 808272275,
@@ -25450,7 +26358,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 38,
       "estimated_sales": 1710774,
-      "actual_sales": 635065
+      "actual_sales": 635065,
+      "tags": "pro, medical"
     },
     {
       "id": 190096203,
@@ -25478,7 +26387,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 13,
       "estimated_sales": 3615690,
-      "actual_sales": 67875
+      "actual_sales": 67875,
+      "tags": "demo, medical"
     },
     {
       "id": 349601737,
@@ -25506,7 +26416,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 41,
       "estimated_sales": 209314,
-      "actual_sales": 1721902
+      "actual_sales": 1721902,
+      "tags": "cold, engineering"
     },
     {
       "id": 184857215,
@@ -25534,7 +26445,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 4,
       "estimated_sales": 661716,
-      "actual_sales": 1177872
+      "actual_sales": 1177872,
+      "tags": "warm, engineering"
     },
     {
       "id": 19525612,
@@ -25562,7 +26474,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 14,
       "estimated_sales": 1308016,
-      "actual_sales": 492858
+      "actual_sales": 492858,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 558134765,
@@ -25590,7 +26503,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 54,
       "estimated_sales": 1956592,
-      "actual_sales": 2720900
+      "actual_sales": 2720900,
+      "tags": "cold, retail"
     },
     {
       "id": 291225311,
@@ -25618,7 +26532,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 77,
       "estimated_sales": 1067382,
-      "actual_sales": 3299088
+      "actual_sales": 3299088,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 674720634,
@@ -25646,7 +26561,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 48,
       "estimated_sales": 653460,
-      "actual_sales": 3532356
+      "actual_sales": 3532356,
+      "tags": "warm, medical"
     },
     {
       "id": 895306657,
@@ -25674,7 +26590,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 43,
       "estimated_sales": 1022693,
-      "actual_sales": 2884904
+      "actual_sales": 2884904,
+      "tags": "subscriber, construction"
     },
     {
       "id": 909460587,
@@ -25702,7 +26619,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 45,
       "estimated_sales": 2365824,
-      "actual_sales": 3066325
+      "actual_sales": 3066325,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 851368889,
@@ -25730,7 +26648,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 75,
       "estimated_sales": 819705,
-      "actual_sales": 3708621
+      "actual_sales": 3708621,
+      "tags": "hot, engineering"
     },
     {
       "id": 406653702,
@@ -25758,7 +26677,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 39,
       "estimated_sales": 1257025,
-      "actual_sales": 803421
+      "actual_sales": 803421,
+      "tags": "cool, retail"
     },
     {
       "id": 813583293,
@@ -25786,7 +26706,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 0,
       "estimated_sales": 4225721,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, construction"
     },
     {
       "id": 669419722,
@@ -25814,7 +26735,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 57,
       "estimated_sales": 1158426,
-      "actual_sales": 1560768
+      "actual_sales": 1560768,
+      "tags": "pro, medical"
     },
     {
       "id": 91509090,
@@ -25842,7 +26764,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 48,
       "estimated_sales": 66248,
-      "actual_sales": 3448413
+      "actual_sales": 3448413,
+      "tags": "engineering"
     },
     {
       "id": 227508131,
@@ -25870,7 +26793,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 5,
       "estimated_sales": 3033420,
-      "actual_sales": 2584720
+      "actual_sales": 2584720,
+      "tags": "pro, financial"
     },
     {
       "id": 232521282,
@@ -25898,7 +26822,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 96,
       "estimated_sales": 5133261,
-      "actual_sales": 3085668
+      "actual_sales": 3085668,
+      "tags": "cold, financial"
     },
     {
       "id": 645314285,
@@ -25926,7 +26851,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 32,
       "estimated_sales": 363608,
-      "actual_sales": 519624
+      "actual_sales": 519624,
+      "tags": "warm, financial"
     },
     {
       "id": 459997929,
@@ -25954,7 +26880,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 55,
       "estimated_sales": 1899510,
-      "actual_sales": 2427414
+      "actual_sales": 2427414,
+      "tags": ""
     },
     {
       "id": 769444821,
@@ -25982,7 +26909,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 59,
       "estimated_sales": 370295,
-      "actual_sales": 4129356
+      "actual_sales": 4129356,
+      "tags": "construction"
     },
     {
       "id": 695291993,
@@ -26010,7 +26938,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 49,
       "estimated_sales": 1914360,
-      "actual_sales": 1431980
+      "actual_sales": 1431980,
+      "tags": "subscriber, medical"
     },
     {
       "id": 94409500,
@@ -26038,7 +26967,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 5,
       "estimated_sales": 913776,
-      "actual_sales": 2929995
+      "actual_sales": 2929995,
+      "tags": "warm, retail"
     },
     {
       "id": 441204497,
@@ -26066,7 +26996,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 52,
       "estimated_sales": 66396,
-      "actual_sales": 1554630
+      "actual_sales": 1554630,
+      "tags": ""
     },
     {
       "id": 474444980,
@@ -26094,7 +27025,8 @@ export const data: any[] = [
       "deals_total": 7,
       "ratio": 5,
       "estimated_sales": 790560,
-      "actual_sales": 61902
+      "actual_sales": 61902,
+      "tags": "hot, engineering"
     },
     {
       "id": 519782327,
@@ -26122,7 +27054,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 53,
       "estimated_sales": 220116,
-      "actual_sales": 540710
+      "actual_sales": 540710,
+      "tags": "engineering"
     },
     {
       "id": 987859077,
@@ -26150,7 +27083,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 47,
       "estimated_sales": 235194,
-      "actual_sales": 1297729
+      "actual_sales": 1297729,
+      "tags": "cold, engineering"
     },
     {
       "id": 216752017,
@@ -26178,7 +27112,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 65,
       "estimated_sales": 3581838,
-      "actual_sales": 3601110
+      "actual_sales": 3601110,
+      "tags": "construction"
     },
     {
       "id": 836190757,
@@ -26206,7 +27141,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 2,
       "estimated_sales": 1469472,
-      "actual_sales": 913535
+      "actual_sales": 913535,
+      "tags": "warm, financial"
     },
     {
       "id": 58704019,
@@ -26234,7 +27170,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 85,
       "estimated_sales": 3601500,
-      "actual_sales": 3873269
+      "actual_sales": 3873269,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 749894709,
@@ -26262,7 +27199,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 96,
       "estimated_sales": 270340,
-      "actual_sales": 1228798
+      "actual_sales": 1228798,
+      "tags": ""
     },
     {
       "id": 960027162,
@@ -26290,7 +27228,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 62,
       "estimated_sales": 1431768,
-      "actual_sales": 2279430
+      "actual_sales": 2279430,
+      "tags": "pro, retail"
     },
     {
       "id": 740709876,
@@ -26318,7 +27257,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 75,
       "estimated_sales": 200199,
-      "actual_sales": 5219340
+      "actual_sales": 5219340,
+      "tags": "subscriber, medical"
     },
     {
       "id": 383257129,
@@ -26346,7 +27286,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 9,
       "estimated_sales": 3656898,
-      "actual_sales": 471882
+      "actual_sales": 471882,
+      "tags": "hot, construction"
     },
     {
       "id": 307578899,
@@ -26374,7 +27315,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 71,
       "estimated_sales": 847441,
-      "actual_sales": 4224069
+      "actual_sales": 4224069,
+      "tags": "pharmaceutical"
     },
     {
       "id": 64115653,
@@ -26402,7 +27344,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 44,
       "estimated_sales": 2059155,
-      "actual_sales": 1039500
+      "actual_sales": 1039500,
+      "tags": ""
     },
     {
       "id": 468708752,
@@ -26430,7 +27373,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 13,
       "estimated_sales": 2429007,
-      "actual_sales": 486678
+      "actual_sales": 486678,
+      "tags": "cold, medical"
     },
     {
       "id": 121034142,
@@ -26458,7 +27402,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 11,
       "estimated_sales": 1597824,
-      "actual_sales": 65685
+      "actual_sales": 65685,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 639265426,
@@ -26486,7 +27431,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 65,
       "estimated_sales": 4186110,
-      "actual_sales": 4054020
+      "actual_sales": 4054020,
+      "tags": ""
     },
     {
       "id": 562437103,
@@ -26514,7 +27460,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 26,
       "estimated_sales": 4743009,
-      "actual_sales": 1603910
+      "actual_sales": 1603910,
+      "tags": "demo, medical"
     },
     {
       "id": 177320207,
@@ -26542,7 +27489,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 27,
       "estimated_sales": 4166880,
-      "actual_sales": 633185
+      "actual_sales": 633185,
+      "tags": "hot, construction"
     },
     {
       "id": 980450310,
@@ -26570,7 +27518,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 46,
       "estimated_sales": 1519531,
-      "actual_sales": 3648266
+      "actual_sales": 3648266,
+      "tags": "cool, construction"
     },
     {
       "id": 743836867,
@@ -26598,7 +27547,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 45,
       "estimated_sales": 812568,
-      "actual_sales": 662285
+      "actual_sales": 662285,
+      "tags": ""
     },
     {
       "id": 406754566,
@@ -26626,7 +27576,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 0,
       "estimated_sales": 1162392,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "financial"
     },
     {
       "id": 739881584,
@@ -26654,7 +27605,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 96,
       "estimated_sales": 97180,
-      "actual_sales": 4267350
+      "actual_sales": 4267350,
+      "tags": "demo, medical"
     },
     {
       "id": 165933856,
@@ -26682,7 +27634,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 3,
       "estimated_sales": 1773379,
-      "actual_sales": 469700
+      "actual_sales": 469700,
+      "tags": ""
     },
     {
       "id": 353001719,
@@ -26710,7 +27663,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 59,
       "estimated_sales": 587300,
-      "actual_sales": 1479742
+      "actual_sales": 1479742,
+      "tags": "cool, construction"
     },
     {
       "id": 999740577,
@@ -26738,7 +27692,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 67,
       "estimated_sales": 0,
-      "actual_sales": 2658670
+      "actual_sales": 2658670,
+      "tags": "cold, medical"
     },
     {
       "id": 383863920,
@@ -26766,7 +27721,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 53,
       "estimated_sales": 3197424,
-      "actual_sales": 1178456
+      "actual_sales": 1178456,
+      "tags": "pro, construction"
     },
     {
       "id": 407625414,
@@ -26794,7 +27750,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 38,
       "estimated_sales": 5177080,
-      "actual_sales": 3088926
+      "actual_sales": 3088926,
+      "tags": "pro, medical"
     },
     {
       "id": 575305913,
@@ -26822,7 +27779,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 5,
       "estimated_sales": 1774032,
-      "actual_sales": 869078
+      "actual_sales": 869078,
+      "tags": "hot, retail"
     },
     {
       "id": 734936101,
@@ -26850,7 +27808,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 75,
       "estimated_sales": 5324168,
-      "actual_sales": 1420938
+      "actual_sales": 1420938,
+      "tags": ""
     },
     {
       "id": 547304788,
@@ -26878,7 +27837,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 55,
       "estimated_sales": 1076298,
-      "actual_sales": 1675934
+      "actual_sales": 1675934,
+      "tags": "financial"
     },
     {
       "id": 982298852,
@@ -26906,7 +27866,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 47,
       "estimated_sales": 1775876,
-      "actual_sales": 3714300
+      "actual_sales": 3714300,
+      "tags": "cool, financial"
     },
     {
       "id": 266231700,
@@ -26934,7 +27895,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 88,
       "estimated_sales": 4019301,
-      "actual_sales": 1370685
+      "actual_sales": 1370685,
+      "tags": "cool, financial"
     },
     {
       "id": 955122699,
@@ -26962,7 +27924,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 82,
       "estimated_sales": 4645647,
-      "actual_sales": 3496414
+      "actual_sales": 3496414,
+      "tags": "subscriber, financial"
     },
     {
       "id": 89355765,
@@ -26990,7 +27953,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 25,
       "estimated_sales": 1198872,
-      "actual_sales": 256212
+      "actual_sales": 256212,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 182957254,
@@ -27018,7 +27982,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 69,
       "estimated_sales": 1467400,
-      "actual_sales": 3591324
+      "actual_sales": 3591324,
+      "tags": ""
     },
     {
       "id": 563238478,
@@ -27046,7 +28011,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 52,
       "estimated_sales": 1449600,
-      "actual_sales": 2989858
+      "actual_sales": 2989858,
+      "tags": "subscriber, retail"
     },
     {
       "id": 765000160,
@@ -27074,7 +28040,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 43,
       "estimated_sales": 1321184,
-      "actual_sales": 3663660
+      "actual_sales": 3663660,
+      "tags": "subscriber, construction"
     },
     {
       "id": 706858503,
@@ -27102,7 +28069,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 63,
       "estimated_sales": 630536,
-      "actual_sales": 1703988
+      "actual_sales": 1703988,
+      "tags": "medical"
     },
     {
       "id": 327197661,
@@ -27130,7 +28098,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 53,
       "estimated_sales": 0,
-      "actual_sales": 4007354
+      "actual_sales": 4007354,
+      "tags": ""
     },
     {
       "id": 59917320,
@@ -27158,7 +28127,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 65,
       "estimated_sales": 1775071,
-      "actual_sales": 2660640
+      "actual_sales": 2660640,
+      "tags": "demo, construction"
     },
     {
       "id": 937659868,
@@ -27186,7 +28156,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 88,
       "estimated_sales": 5266661,
-      "actual_sales": 1893640
+      "actual_sales": 1893640,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 479308830,
@@ -27214,7 +28185,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 11,
       "estimated_sales": 2031879,
-      "actual_sales": 221482
+      "actual_sales": 221482,
+      "tags": "demo, financial"
     },
     {
       "id": 451302517,
@@ -27242,7 +28214,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 59,
       "estimated_sales": 1199296,
-      "actual_sales": 918590
+      "actual_sales": 918590,
+      "tags": "hot, engineering"
     },
     {
       "id": 238891931,
@@ -27270,7 +28243,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 87,
       "estimated_sales": 1101170,
-      "actual_sales": 1474470
+      "actual_sales": 1474470,
+      "tags": "cool, engineering"
     },
     {
       "id": 280195564,
@@ -27298,7 +28272,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 49,
       "estimated_sales": 802824,
-      "actual_sales": 919955
+      "actual_sales": 919955,
+      "tags": "pro, medical"
     },
     {
       "id": 688886318,
@@ -27326,7 +28301,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 82,
       "estimated_sales": 1491061,
-      "actual_sales": 1709084
+      "actual_sales": 1709084,
+      "tags": ""
     },
     {
       "id": 49992026,
@@ -27354,7 +28330,8 @@ export const data: any[] = [
       "deals_total": 12,
       "ratio": 58,
       "estimated_sales": 0,
-      "actual_sales": 1398621
+      "actual_sales": 1398621,
+      "tags": "hot, construction"
     },
     {
       "id": 799902143,
@@ -27382,7 +28359,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 68,
       "estimated_sales": 884720,
-      "actual_sales": 783497
+      "actual_sales": 783497,
+      "tags": "demo, construction"
     },
     {
       "id": 29132626,
@@ -27410,7 +28388,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 43,
       "estimated_sales": 358896,
-      "actual_sales": 465876
+      "actual_sales": 465876,
+      "tags": "cool, medical"
     },
     {
       "id": 936008552,
@@ -27438,7 +28417,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 5,
       "estimated_sales": 2693670,
-      "actual_sales": 4138824
+      "actual_sales": 4138824,
+      "tags": "cool, engineering"
     },
     {
       "id": 673057455,
@@ -27466,7 +28446,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 31,
       "estimated_sales": 3818620,
-      "actual_sales": 770664
+      "actual_sales": 770664,
+      "tags": "cool, construction"
     },
     {
       "id": 479196692,
@@ -27494,7 +28475,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 85,
       "estimated_sales": 864304,
-      "actual_sales": 5668253
+      "actual_sales": 5668253,
+      "tags": "subscriber, medical"
     },
     {
       "id": 118338666,
@@ -27522,7 +28504,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 96,
       "estimated_sales": 1008000,
-      "actual_sales": 2953302
+      "actual_sales": 2953302,
+      "tags": "hot, construction"
     },
     {
       "id": 300076743,
@@ -27550,7 +28533,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 8,
       "estimated_sales": 3872700,
-      "actual_sales": 319466
+      "actual_sales": 319466,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 129356096,
@@ -27578,7 +28562,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 38,
       "estimated_sales": 4165035,
-      "actual_sales": 3165519
+      "actual_sales": 3165519,
+      "tags": "cold, engineering"
     },
     {
       "id": 471971618,
@@ -27606,7 +28591,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 16,
       "estimated_sales": 1076000,
-      "actual_sales": 311288
+      "actual_sales": 311288,
+      "tags": "warm, medical"
     },
     {
       "id": 153933673,
@@ -27634,7 +28620,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 81,
       "estimated_sales": 1329516,
-      "actual_sales": 3846660
+      "actual_sales": 3846660,
+      "tags": "engineering"
     },
     {
       "id": 896539281,
@@ -27662,7 +28649,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 49,
       "estimated_sales": 1423320,
-      "actual_sales": 3206725
+      "actual_sales": 3206725,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 475456708,
@@ -27690,7 +28678,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 49,
       "estimated_sales": 2122325,
-      "actual_sales": 1058129
+      "actual_sales": 1058129,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 906231353,
@@ -27718,7 +28707,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 27,
       "estimated_sales": 0,
-      "actual_sales": 791091
+      "actual_sales": 791091,
+      "tags": "demo, engineering"
     },
     {
       "id": 637560277,
@@ -27746,7 +28736,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 44,
       "estimated_sales": 3223854,
-      "actual_sales": 1478470
+      "actual_sales": 1478470,
+      "tags": "retail"
     },
     {
       "id": 974899662,
@@ -27774,7 +28765,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 53,
       "estimated_sales": 1727120,
-      "actual_sales": 1161638
+      "actual_sales": 1161638,
+      "tags": "demo, engineering"
     },
     {
       "id": 239846352,
@@ -27802,7 +28794,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 24,
       "estimated_sales": 2316744,
-      "actual_sales": 203904
+      "actual_sales": 203904,
+      "tags": "cool, financial"
     },
     {
       "id": 847804633,
@@ -27830,7 +28823,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 56,
       "estimated_sales": 1406502,
-      "actual_sales": 1336984
+      "actual_sales": 1336984,
+      "tags": "engineering"
     },
     {
       "id": 965575865,
@@ -27858,7 +28852,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 6,
       "estimated_sales": 2195804,
-      "actual_sales": 138526
+      "actual_sales": 138526,
+      "tags": "hot, engineering"
     },
     {
       "id": 406060783,
@@ -27886,7 +28881,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 77,
       "estimated_sales": 813890,
-      "actual_sales": 1012826
+      "actual_sales": 1012826,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 176898098,
@@ -27914,7 +28910,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 45,
       "estimated_sales": 2804652,
-      "actual_sales": 1211840
+      "actual_sales": 1211840,
+      "tags": "cold, retail"
     },
     {
       "id": 516416185,
@@ -27942,7 +28939,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 27,
       "estimated_sales": 1205850,
-      "actual_sales": 1649043
+      "actual_sales": 1649043,
+      "tags": "pro, construction"
     },
     {
       "id": 395688184,
@@ -27970,7 +28968,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 24,
       "estimated_sales": 2184228,
-      "actual_sales": 513136
+      "actual_sales": 513136,
+      "tags": "medical"
     },
     {
       "id": 871290023,
@@ -27998,7 +28997,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 14,
       "estimated_sales": 1532483,
-      "actual_sales": 164806
+      "actual_sales": 164806,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 13089477,
@@ -28026,7 +29026,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 62,
       "estimated_sales": 2409480,
-      "actual_sales": 3025466
+      "actual_sales": 3025466,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 51831276,
@@ -28054,7 +29055,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 35,
       "estimated_sales": 0,
-      "actual_sales": 573120
+      "actual_sales": 573120,
+      "tags": "subscriber, financial"
     },
     {
       "id": 726764247,
@@ -28082,7 +29084,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 68,
       "estimated_sales": 2442496,
-      "actual_sales": 2572533
+      "actual_sales": 2572533,
+      "tags": "pharmaceutical"
     },
     {
       "id": 42627732,
@@ -28110,7 +29113,8 @@ export const data: any[] = [
       "deals_total": 14,
       "ratio": 33,
       "estimated_sales": 831420,
-      "actual_sales": 254937
+      "actual_sales": 254937,
+      "tags": "cold, retail"
     },
     {
       "id": 843581135,
@@ -28138,7 +29142,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 23,
       "estimated_sales": 2870420,
-      "actual_sales": 384786
+      "actual_sales": 384786,
+      "tags": "pro, engineering"
     },
     {
       "id": 832341329,
@@ -28166,7 +29171,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 58,
       "estimated_sales": 1370128,
-      "actual_sales": 1385648
+      "actual_sales": 1385648,
+      "tags": ""
     },
     {
       "id": 294255122,
@@ -28194,7 +29200,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 74,
       "estimated_sales": 2447522,
-      "actual_sales": 3810832
+      "actual_sales": 3810832,
+      "tags": "hot, retail"
     },
     {
       "id": 795881131,
@@ -28222,7 +29229,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 54,
       "estimated_sales": 910272,
-      "actual_sales": 5387940
+      "actual_sales": 5387940,
+      "tags": "pro, medical"
     },
     {
       "id": 952070521,
@@ -28250,7 +29258,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 58,
       "estimated_sales": 1316634,
-      "actual_sales": 4347574
+      "actual_sales": 4347574,
+      "tags": "demo, financial"
     },
     {
       "id": 709913006,
@@ -28278,7 +29287,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 23,
       "estimated_sales": 1986416,
-      "actual_sales": 282905
+      "actual_sales": 282905,
+      "tags": "warm, medical"
     },
     {
       "id": 227908263,
@@ -28306,7 +29316,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 34,
       "estimated_sales": 2708542,
-      "actual_sales": 2311652
+      "actual_sales": 2311652,
+      "tags": "cool, retail"
     },
     {
       "id": 80698070,
@@ -28334,7 +29345,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 21,
       "estimated_sales": 0,
-      "actual_sales": 484815
+      "actual_sales": 484815,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 304833113,
@@ -28362,7 +29374,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 72,
       "estimated_sales": 521613,
-      "actual_sales": 915012
+      "actual_sales": 915012,
+      "tags": "demo, engineering"
     },
     {
       "id": 723710428,
@@ -28390,7 +29403,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 65,
       "estimated_sales": 1305648,
-      "actual_sales": 1892657
+      "actual_sales": 1892657,
+      "tags": "warm, medical"
     },
     {
       "id": 566292899,
@@ -28418,7 +29432,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 23,
       "estimated_sales": 340802,
-      "actual_sales": 1107008
+      "actual_sales": 1107008,
+      "tags": "pro, engineering"
     },
     {
       "id": 370038320,
@@ -28446,7 +29461,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 86,
       "estimated_sales": 0,
-      "actual_sales": 3296225
+      "actual_sales": 3296225,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 620948074,
@@ -28474,7 +29490,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 13,
       "estimated_sales": 1415448,
-      "actual_sales": 127963
+      "actual_sales": 127963,
+      "tags": "financial"
     },
     {
       "id": 974677648,
@@ -28502,7 +29519,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 36,
       "estimated_sales": 2686662,
-      "actual_sales": 901420
+      "actual_sales": 901420,
+      "tags": "pro, engineering"
     },
     {
       "id": 262736147,
@@ -28530,7 +29548,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 5,
       "estimated_sales": 3574680,
-      "actual_sales": 3165001
+      "actual_sales": 3165001,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 949494512,
@@ -28558,7 +29577,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 21,
       "estimated_sales": 4632444,
-      "actual_sales": 298864
+      "actual_sales": 298864,
+      "tags": "warm, medical"
     },
     {
       "id": 347418471,
@@ -28586,7 +29606,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 53,
       "estimated_sales": 3329228,
-      "actual_sales": 1291779
+      "actual_sales": 1291779,
+      "tags": "cold, medical"
     },
     {
       "id": 551607895,
@@ -28614,7 +29635,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 5,
       "estimated_sales": 3336300,
-      "actual_sales": 265395
+      "actual_sales": 265395,
+      "tags": "demo, engineering"
     },
     {
       "id": 97119324,
@@ -28642,7 +29664,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 11,
       "estimated_sales": 917088,
-      "actual_sales": 155242
+      "actual_sales": 155242,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 696393472,
@@ -28670,7 +29693,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 66,
       "estimated_sales": 1507005,
-      "actual_sales": 5369112
+      "actual_sales": 5369112,
+      "tags": "hot, construction"
     },
     {
       "id": 878453297,
@@ -28698,7 +29722,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 19,
       "estimated_sales": 292800,
-      "actual_sales": 982620
+      "actual_sales": 982620,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 922816224,
@@ -28726,7 +29751,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 1,
       "estimated_sales": 2254112,
-      "actual_sales": 105718
+      "actual_sales": 105718,
+      "tags": "medical"
     },
     {
       "id": 861762976,
@@ -28754,7 +29780,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 76,
       "estimated_sales": 5386388,
-      "actual_sales": 2075120
+      "actual_sales": 2075120,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 677449722,
@@ -28782,7 +29809,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 13,
       "estimated_sales": 363545,
-      "actual_sales": 180061
+      "actual_sales": 180061,
+      "tags": "hot, construction"
     },
     {
       "id": 29057902,
@@ -28810,7 +29838,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 4,
       "estimated_sales": 3990914,
-      "actual_sales": 236256
+      "actual_sales": 236256,
+      "tags": "cool, retail"
     },
     {
       "id": 340680109,
@@ -28838,7 +29867,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 64,
       "estimated_sales": 2529709,
-      "actual_sales": 4078250
+      "actual_sales": 4078250,
+      "tags": "cold, retail"
     },
     {
       "id": 631598776,
@@ -28866,7 +29896,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 11,
       "estimated_sales": 1382576,
-      "actual_sales": 591369
+      "actual_sales": 591369,
+      "tags": "cool, medical"
     },
     {
       "id": 492260333,
@@ -28894,7 +29925,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 6,
       "estimated_sales": 1429968,
-      "actual_sales": 2427450
+      "actual_sales": 2427450,
+      "tags": "pro, construction"
     },
     {
       "id": 576018130,
@@ -28922,7 +29954,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 88,
       "estimated_sales": 390855,
-      "actual_sales": 2511152
+      "actual_sales": 2511152,
+      "tags": "demo, engineering"
     },
     {
       "id": 549401630,
@@ -28950,7 +29983,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 88,
       "estimated_sales": 2013789,
-      "actual_sales": 4372346
+      "actual_sales": 4372346,
+      "tags": "subscriber, retail"
     },
     {
       "id": 686456242,
@@ -28978,7 +30012,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 52,
       "estimated_sales": 2363074,
-      "actual_sales": 4502225
+      "actual_sales": 4502225,
+      "tags": "warm, engineering"
     },
     {
       "id": 496035305,
@@ -29006,7 +30041,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 15,
       "estimated_sales": 2214148,
-      "actual_sales": 955505
+      "actual_sales": 955505,
+      "tags": "subscriber, retail"
     },
     {
       "id": 819249487,
@@ -29034,7 +30070,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 12,
       "estimated_sales": 875424,
-      "actual_sales": 164136
+      "actual_sales": 164136,
+      "tags": "pharmaceutical"
     },
     {
       "id": 89705981,
@@ -29062,7 +30099,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 5,
       "estimated_sales": 61901,
-      "actual_sales": 411710
+      "actual_sales": 411710,
+      "tags": "pro, engineering"
     },
     {
       "id": 106190856,
@@ -29090,7 +30128,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 89,
       "estimated_sales": 0,
-      "actual_sales": 1811248
+      "actual_sales": 1811248,
+      "tags": "cool, retail"
     },
     {
       "id": 537555376,
@@ -29118,7 +30157,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 96,
       "estimated_sales": 1429536,
-      "actual_sales": 4783212
+      "actual_sales": 4783212,
+      "tags": "cool, engineering"
     },
     {
       "id": 775952101,
@@ -29146,7 +30186,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 47,
       "estimated_sales": 958320,
-      "actual_sales": 4740336
+      "actual_sales": 4740336,
+      "tags": "cold, medical"
     },
     {
       "id": 946981102,
@@ -29174,7 +30215,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 45,
       "estimated_sales": 483828,
-      "actual_sales": 1190711
+      "actual_sales": 1190711,
+      "tags": "cool, engineering"
     },
     {
       "id": 132824404,
@@ -29202,7 +30244,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 5,
       "estimated_sales": 3520968,
-      "actual_sales": 121636
+      "actual_sales": 121636,
+      "tags": "warm, retail"
     },
     {
       "id": 48390738,
@@ -29230,7 +30273,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 36,
       "estimated_sales": 1905529,
-      "actual_sales": 2656388
+      "actual_sales": 2656388,
+      "tags": "cool, medical"
     },
     {
       "id": 314462798,
@@ -29258,7 +30302,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 33,
       "estimated_sales": 4421900,
-      "actual_sales": 1119762
+      "actual_sales": 1119762,
+      "tags": "hot, retail"
     },
     {
       "id": 201372243,
@@ -29286,7 +30331,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 6,
       "estimated_sales": 2190636,
-      "actual_sales": 56371
+      "actual_sales": 56371,
+      "tags": "subscriber, medical"
     },
     {
       "id": 835069176,
@@ -29314,7 +30360,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 4,
       "estimated_sales": 3562525,
-      "actual_sales": 148035
+      "actual_sales": 148035,
+      "tags": "demo, engineering"
     },
     {
       "id": 428071505,
@@ -29342,7 +30389,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 0,
       "estimated_sales": 1648361,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, engineering"
     },
     {
       "id": 123617970,
@@ -29370,7 +30418,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 59,
       "estimated_sales": 358900,
-      "actual_sales": 2489120
+      "actual_sales": 2489120,
+      "tags": "hot, construction"
     },
     {
       "id": 837075463,
@@ -29398,7 +30447,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 5,
       "estimated_sales": 63865,
-      "actual_sales": 2970565
+      "actual_sales": 2970565,
+      "tags": "cold, financial"
     },
     {
       "id": 621371566,
@@ -29426,7 +30476,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 1,
       "estimated_sales": 3024720,
-      "actual_sales": 229482
+      "actual_sales": 229482,
+      "tags": "demo, medical"
     },
     {
       "id": 520661618,
@@ -29454,7 +30505,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 61,
       "estimated_sales": 0,
-      "actual_sales": 3076898
+      "actual_sales": 3076898,
+      "tags": "financial"
     },
     {
       "id": 482252489,
@@ -29482,7 +30534,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 74,
       "estimated_sales": 671982,
-      "actual_sales": 1740725
+      "actual_sales": 1740725,
+      "tags": "warm, construction"
     },
     {
       "id": 319304064,
@@ -29510,7 +30563,8 @@ export const data: any[] = [
       "deals_total": 85,
       "ratio": 47,
       "estimated_sales": 3255510,
-      "actual_sales": 3112304
+      "actual_sales": 3112304,
+      "tags": "hot, engineering"
     },
     {
       "id": 656220062,
@@ -29538,7 +30592,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 73,
       "estimated_sales": 1824020,
-      "actual_sales": 2191629
+      "actual_sales": 2191629,
+      "tags": "financial"
     },
     {
       "id": 400462495,
@@ -29566,7 +30621,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 44,
       "estimated_sales": 1177640,
-      "actual_sales": 438596
+      "actual_sales": 438596,
+      "tags": "cool, medical"
     },
     {
       "id": 250964460,
@@ -29594,7 +30650,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 85,
       "estimated_sales": 1129890,
-      "actual_sales": 2318463
+      "actual_sales": 2318463,
+      "tags": "subscriber, medical"
     },
     {
       "id": 201644613,
@@ -29622,7 +30679,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 6,
       "estimated_sales": 1982555,
-      "actual_sales": 4981284
+      "actual_sales": 4981284,
+      "tags": "warm, retail"
     },
     {
       "id": 529552157,
@@ -29650,7 +30708,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 51,
       "estimated_sales": 121187,
-      "actual_sales": 5235944
+      "actual_sales": 5235944,
+      "tags": "retail"
     },
     {
       "id": 392295834,
@@ -29678,7 +30737,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 37,
       "estimated_sales": 948857,
-      "actual_sales": 1661296
+      "actual_sales": 1661296,
+      "tags": "hot, construction"
     },
     {
       "id": 647935828,
@@ -29706,7 +30766,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 7,
       "estimated_sales": 0,
-      "actual_sales": 3560239
+      "actual_sales": 3560239,
+      "tags": "warm, financial"
     },
     {
       "id": 366453956,
@@ -29734,7 +30795,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 56,
       "estimated_sales": 423689,
-      "actual_sales": 4346860
+      "actual_sales": 4346860,
+      "tags": "cold, financial"
     },
     {
       "id": 761967894,
@@ -29762,7 +30824,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 83,
       "estimated_sales": 4412064,
-      "actual_sales": 4265800
+      "actual_sales": 4265800,
+      "tags": "warm, financial"
     },
     {
       "id": 186071366,
@@ -29790,7 +30853,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 77,
       "estimated_sales": 1372529,
-      "actual_sales": 1621638
+      "actual_sales": 1621638,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 653225193,
@@ -29818,7 +30882,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 38,
       "estimated_sales": 3810390,
-      "actual_sales": 1928124
+      "actual_sales": 1928124,
+      "tags": "cool, engineering"
     },
     {
       "id": 108783336,
@@ -29846,7 +30911,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 57,
       "estimated_sales": 2708420,
-      "actual_sales": 3771378
+      "actual_sales": 3771378,
+      "tags": "warm, medical"
     },
     {
       "id": 346466652,
@@ -29874,7 +30940,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 78,
       "estimated_sales": 4548250,
-      "actual_sales": 1277430
+      "actual_sales": 1277430,
+      "tags": "subscriber, financial"
     },
     {
       "id": 763277331,
@@ -29902,7 +30969,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 58,
       "estimated_sales": 218124,
-      "actual_sales": 5675938
+      "actual_sales": 5675938,
+      "tags": "pharmaceutical"
     },
     {
       "id": 661662584,
@@ -29930,7 +30998,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 4,
       "estimated_sales": 3565779,
-      "actual_sales": 1064508
+      "actual_sales": 1064508,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 390321787,
@@ -29958,7 +31027,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 49,
       "estimated_sales": 689280,
-      "actual_sales": 3171860
+      "actual_sales": 3171860,
+      "tags": "cool, financial"
     },
     {
       "id": 817473910,
@@ -29986,7 +31056,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 73,
       "estimated_sales": 5615460,
-      "actual_sales": 1162848
+      "actual_sales": 1162848,
+      "tags": "cool, retail"
     },
     {
       "id": 568965765,
@@ -30014,7 +31085,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 75,
       "estimated_sales": 264724,
-      "actual_sales": 3208824
+      "actual_sales": 3208824,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 114762676,
@@ -30042,7 +31114,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 81,
       "estimated_sales": 2848299,
-      "actual_sales": 1597932
+      "actual_sales": 1597932,
+      "tags": "subscriber, financial"
     },
     {
       "id": 92856004,
@@ -30070,7 +31143,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 76,
       "estimated_sales": 164733,
-      "actual_sales": 3881358
+      "actual_sales": 3881358,
+      "tags": "demo, construction"
     },
     {
       "id": 521986936,
@@ -30098,7 +31172,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 6,
       "estimated_sales": 1003230,
-      "actual_sales": 515727
+      "actual_sales": 515727,
+      "tags": ""
     },
     {
       "id": 815244846,
@@ -30126,7 +31201,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 37,
       "estimated_sales": 2151313,
-      "actual_sales": 660653
+      "actual_sales": 660653,
+      "tags": "cold, financial"
     },
     {
       "id": 455949151,
@@ -30154,7 +31230,8 @@ export const data: any[] = [
       "deals_total": 14,
       "ratio": 71,
       "estimated_sales": 419524,
-      "actual_sales": 289155
+      "actual_sales": 289155,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 805377516,
@@ -30182,7 +31259,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 14,
       "estimated_sales": 1067136,
-      "actual_sales": 266463
+      "actual_sales": 266463,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 392155176,
@@ -30210,7 +31288,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 51,
       "estimated_sales": 1496782,
-      "actual_sales": 4295460
+      "actual_sales": 4295460,
+      "tags": "cold, retail"
     },
     {
       "id": 948089678,
@@ -30238,7 +31317,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 54,
       "estimated_sales": 1064210,
-      "actual_sales": 2992000
+      "actual_sales": 2992000,
+      "tags": "hot, engineering"
     },
     {
       "id": 528039846,
@@ -30266,7 +31346,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 0,
       "estimated_sales": 2698728,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": ""
     },
     {
       "id": 107423816,
@@ -30294,7 +31375,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 43,
       "estimated_sales": 3175872,
-      "actual_sales": 1060128
+      "actual_sales": 1060128,
+      "tags": "cold, financial"
     },
     {
       "id": 84619235,
@@ -30322,7 +31404,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 0,
       "estimated_sales": 428124,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": ""
     },
     {
       "id": 278429377,
@@ -30350,7 +31433,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 52,
       "estimated_sales": 628344,
-      "actual_sales": 837900
+      "actual_sales": 837900,
+      "tags": "demo, retail"
     },
     {
       "id": 710342449,
@@ -30378,7 +31462,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 71,
       "estimated_sales": 4361122,
-      "actual_sales": 2556205
+      "actual_sales": 2556205,
+      "tags": "cold, engineering"
     },
     {
       "id": 879391705,
@@ -30406,7 +31491,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 35,
       "estimated_sales": 1170533,
-      "actual_sales": 514314
+      "actual_sales": 514314,
+      "tags": "hot, medical"
     },
     {
       "id": 595182574,
@@ -30434,7 +31520,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 37,
       "estimated_sales": 1414770,
-      "actual_sales": 870740
+      "actual_sales": 870740,
+      "tags": "cool, engineering"
     },
     {
       "id": 706807384,
@@ -30462,7 +31549,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 28,
       "estimated_sales": 2463945,
-      "actual_sales": 1150644
+      "actual_sales": 1150644,
+      "tags": "pro, retail"
     },
     {
       "id": 227273450,
@@ -30490,7 +31578,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 67,
       "estimated_sales": 644130,
-      "actual_sales": 5246390
+      "actual_sales": 5246390,
+      "tags": "warm, medical"
     },
     {
       "id": 91647098,
@@ -30518,7 +31607,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 75,
       "estimated_sales": 5189678,
-      "actual_sales": 2603550
+      "actual_sales": 2603550,
+      "tags": "warm, financial"
     },
     {
       "id": 959292832,
@@ -30546,7 +31636,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 2,
       "estimated_sales": 1401156,
-      "actual_sales": 505440
+      "actual_sales": 505440,
+      "tags": "cold, financial"
     },
     {
       "id": 806351508,
@@ -30574,7 +31665,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 59,
       "estimated_sales": 1121960,
-      "actual_sales": 4555536
+      "actual_sales": 4555536,
+      "tags": "warm, construction"
     },
     {
       "id": 954933386,
@@ -30602,7 +31694,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 61,
       "estimated_sales": 1618146,
-      "actual_sales": 3894705
+      "actual_sales": 3894705,
+      "tags": "cool, retail"
     },
     {
       "id": 837111953,
@@ -30630,7 +31723,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 51,
       "estimated_sales": 179010,
-      "actual_sales": 3472266
+      "actual_sales": 3472266,
+      "tags": "hot, engineering"
     },
     {
       "id": 747842837,
@@ -30658,7 +31752,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 13,
       "estimated_sales": 1788780,
-      "actual_sales": 331008
+      "actual_sales": 331008,
+      "tags": "pharmaceutical"
     },
     {
       "id": 321539427,
@@ -30686,7 +31781,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 77,
       "estimated_sales": 2890854,
-      "actual_sales": 1853140
+      "actual_sales": 1853140,
+      "tags": ""
     },
     {
       "id": 200245977,
@@ -30714,7 +31810,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 84,
       "estimated_sales": 2512378,
-      "actual_sales": 2461644
+      "actual_sales": 2461644,
+      "tags": "cool, construction"
     },
     {
       "id": 87832879,
@@ -30742,7 +31839,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 22,
       "estimated_sales": 188853,
-      "actual_sales": 756430
+      "actual_sales": 756430,
+      "tags": "warm, medical"
     },
     {
       "id": 31041460,
@@ -30770,7 +31868,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 71,
       "estimated_sales": 311523,
-      "actual_sales": 2997450
+      "actual_sales": 2997450,
+      "tags": "demo, retail"
     },
     {
       "id": 425655765,
@@ -30798,7 +31897,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 83,
       "estimated_sales": 132180,
-      "actual_sales": 3613220
+      "actual_sales": 3613220,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 352902386,
@@ -30826,7 +31926,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 78,
       "estimated_sales": 1887776,
-      "actual_sales": 4030012
+      "actual_sales": 4030012,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 141359147,
@@ -30854,7 +31955,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 35,
       "estimated_sales": 1334568,
-      "actual_sales": 2481297
+      "actual_sales": 2481297,
+      "tags": "demo, engineering"
     },
     {
       "id": 207214954,
@@ -30882,7 +31984,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 0,
       "estimated_sales": 1199333,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, financial"
     },
     {
       "id": 603281219,
@@ -30910,7 +32013,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 5,
       "estimated_sales": 3204432,
-      "actual_sales": 3126396
+      "actual_sales": 3126396,
+      "tags": "warm, medical"
     },
     {
       "id": 697681599,
@@ -30938,7 +32042,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 62,
       "estimated_sales": 648756,
-      "actual_sales": 2396953
+      "actual_sales": 2396953,
+      "tags": "pro, engineering"
     },
     {
       "id": 321952773,
@@ -30966,7 +32071,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 33,
       "estimated_sales": 0,
-      "actual_sales": 715470
+      "actual_sales": 715470,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 389246020,
@@ -30994,7 +32100,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 38,
       "estimated_sales": 2863833,
-      "actual_sales": 585747
+      "actual_sales": 585747,
+      "tags": "hot, construction"
     },
     {
       "id": 388606856,
@@ -31022,7 +32129,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 42,
       "estimated_sales": 2767680,
-      "actual_sales": 2572668
+      "actual_sales": 2572668,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 433787971,
@@ -31050,7 +32158,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 44,
       "estimated_sales": 5181358,
-      "actual_sales": 1989414
+      "actual_sales": 1989414,
+      "tags": "cold, construction"
     },
     {
       "id": 704400293,
@@ -31078,7 +32187,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 4,
       "estimated_sales": 2792574,
-      "actual_sales": 796650
+      "actual_sales": 796650,
+      "tags": "cold, construction"
     },
     {
       "id": 987657736,
@@ -31106,7 +32216,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 76,
       "estimated_sales": 1793025,
-      "actual_sales": 1869076
+      "actual_sales": 1869076,
+      "tags": "cold, financial"
     },
     {
       "id": 248029843,
@@ -31134,7 +32245,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 21,
       "estimated_sales": 2267580,
-      "actual_sales": 1014128
+      "actual_sales": 1014128,
+      "tags": "cool, medical"
     },
     {
       "id": 757109518,
@@ -31162,7 +32274,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 35,
       "estimated_sales": 1597740,
-      "actual_sales": 1379536
+      "actual_sales": 1379536,
+      "tags": "warm, medical"
     },
     {
       "id": 260135245,
@@ -31190,7 +32303,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 73,
       "estimated_sales": 2056648,
-      "actual_sales": 1794578
+      "actual_sales": 1794578,
+      "tags": "warm, financial"
     },
     {
       "id": 327879546,
@@ -31218,7 +32332,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 63,
       "estimated_sales": 3812248,
-      "actual_sales": 2885762
+      "actual_sales": 2885762,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 18215161,
@@ -31246,7 +32361,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 58,
       "estimated_sales": 785295,
-      "actual_sales": 3428820
+      "actual_sales": 3428820,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 328223646,
@@ -31274,7 +32390,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 64,
       "estimated_sales": 3686852,
-      "actual_sales": 2949183
+      "actual_sales": 2949183,
+      "tags": "hot, financial"
     },
     {
       "id": 232027045,
@@ -31302,7 +32419,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 57,
       "estimated_sales": 2396100,
-      "actual_sales": 1430225
+      "actual_sales": 1430225,
+      "tags": ""
     },
     {
       "id": 24734874,
@@ -31330,7 +32448,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 5,
       "estimated_sales": 5628750,
-      "actual_sales": 419238
+      "actual_sales": 419238,
+      "tags": "cold, engineering"
     },
     {
       "id": 217783836,
@@ -31358,7 +32477,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 15,
       "estimated_sales": 0,
-      "actual_sales": 385320
+      "actual_sales": 385320,
+      "tags": "cool, retail"
     },
     {
       "id": 826435847,
@@ -31386,7 +32506,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 94,
       "estimated_sales": 4506908,
-      "actual_sales": 5410710
+      "actual_sales": 5410710,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 494040256,
@@ -31414,7 +32535,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 19,
       "estimated_sales": 2739873,
-      "actual_sales": 978020
+      "actual_sales": 978020,
+      "tags": "demo, retail"
     },
     {
       "id": 362093111,
@@ -31442,7 +32564,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 75,
       "estimated_sales": 2365952,
-      "actual_sales": 4636896
+      "actual_sales": 4636896,
+      "tags": "retail"
     },
     {
       "id": 221347735,
@@ -31470,7 +32593,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 71,
       "estimated_sales": 1751634,
-      "actual_sales": 2146695
+      "actual_sales": 2146695,
+      "tags": "cold, engineering"
     },
     {
       "id": 792479900,
@@ -31498,7 +32622,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 8,
       "estimated_sales": 890000,
-      "actual_sales": 273292
+      "actual_sales": 273292,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 579295372,
@@ -31526,7 +32651,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 46,
       "estimated_sales": 2232356,
-      "actual_sales": 3792844
+      "actual_sales": 3792844,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 175301975,
@@ -31554,7 +32680,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 0,
       "estimated_sales": 1416316,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, medical"
     },
     {
       "id": 339963161,
@@ -31582,7 +32709,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 18,
       "estimated_sales": 3300759,
-      "actual_sales": 445788
+      "actual_sales": 445788,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 442727682,
@@ -31610,7 +32738,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 52,
       "estimated_sales": 1763991,
-      "actual_sales": 567908
+      "actual_sales": 567908,
+      "tags": "cold, medical"
     },
     {
       "id": 189177171,
@@ -31638,7 +32767,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 29,
       "estimated_sales": 2943456,
-      "actual_sales": 1585792
+      "actual_sales": 1585792,
+      "tags": "pro, financial"
     },
     {
       "id": 623274035,
@@ -31666,7 +32796,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 69,
       "estimated_sales": 504180,
-      "actual_sales": 884322
+      "actual_sales": 884322,
+      "tags": "pro, retail"
     },
     {
       "id": 717553709,
@@ -31694,7 +32825,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 59,
       "estimated_sales": 693150,
-      "actual_sales": 2828093
+      "actual_sales": 2828093,
+      "tags": "cool, financial"
     },
     {
       "id": 479248097,
@@ -31722,7 +32854,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 62,
       "estimated_sales": 667805,
-      "actual_sales": 438648
+      "actual_sales": 438648,
+      "tags": "cool, medical"
     },
     {
       "id": 282819510,
@@ -31750,7 +32883,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 57,
       "estimated_sales": 738270,
-      "actual_sales": 5493209
+      "actual_sales": 5493209,
+      "tags": "pro, financial"
     },
     {
       "id": 565692152,
@@ -31778,7 +32912,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 11,
       "estimated_sales": 72278,
-      "actual_sales": 188886
+      "actual_sales": 188886,
+      "tags": "financial"
     },
     {
       "id": 616172645,
@@ -31806,7 +32941,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 63,
       "estimated_sales": 2283097,
-      "actual_sales": 4389866
+      "actual_sales": 4389866,
+      "tags": "hot, engineering"
     },
     {
       "id": 165590948,
@@ -31834,7 +32970,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 56,
       "estimated_sales": 186699,
-      "actual_sales": 948555
+      "actual_sales": 948555,
+      "tags": "cold, engineering"
     },
     {
       "id": 986113507,
@@ -31862,7 +32999,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 63,
       "estimated_sales": 4355763,
-      "actual_sales": 2204220
+      "actual_sales": 2204220,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 529293676,
@@ -31890,7 +33028,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 6,
       "estimated_sales": 2586456,
-      "actual_sales": 1754820
+      "actual_sales": 1754820,
+      "tags": ""
     },
     {
       "id": 926550990,
@@ -31918,7 +33057,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 14,
       "estimated_sales": 627330,
-      "actual_sales": 133955
+      "actual_sales": 133955,
+      "tags": "medical"
     },
     {
       "id": 675114517,
@@ -31946,7 +33086,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 21,
       "estimated_sales": 58131,
-      "actual_sales": 1048914
+      "actual_sales": 1048914,
+      "tags": "hot, financial"
     },
     {
       "id": 119811855,
@@ -31974,7 +33115,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 19,
       "estimated_sales": 710370,
-      "actual_sales": 819414
+      "actual_sales": 819414,
+      "tags": "cool, financial"
     },
     {
       "id": 745297919,
@@ -32002,7 +33144,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 0,
       "estimated_sales": 3035720,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, retail"
     },
     {
       "id": 291266081,
@@ -32030,7 +33173,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 4,
       "estimated_sales": 3681500,
-      "actual_sales": 3370104
+      "actual_sales": 3370104,
+      "tags": "cold, financial"
     },
     {
       "id": 176172199,
@@ -32058,7 +33202,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 46,
       "estimated_sales": 728135,
-      "actual_sales": 1994718
+      "actual_sales": 1994718,
+      "tags": "cold, construction"
     },
     {
       "id": 885015421,
@@ -32086,7 +33231,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 38,
       "estimated_sales": 2363016,
-      "actual_sales": 2122860
+      "actual_sales": 2122860,
+      "tags": "cold, engineering"
     },
     {
       "id": 44132318,
@@ -32114,7 +33260,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 64,
       "estimated_sales": 2284680,
-      "actual_sales": 2115510
+      "actual_sales": 2115510,
+      "tags": "demo, retail"
     },
     {
       "id": 159471663,
@@ -32142,7 +33289,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 15,
       "estimated_sales": 1194314,
-      "actual_sales": 769832
+      "actual_sales": 769832,
+      "tags": "demo, construction"
     },
     {
       "id": 445670390,
@@ -32170,7 +33318,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 97,
       "estimated_sales": 1057347,
-      "actual_sales": 5059601
+      "actual_sales": 5059601,
+      "tags": "hot, engineering"
     },
     {
       "id": 116655532,
@@ -32198,7 +33347,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 85,
       "estimated_sales": 0,
-      "actual_sales": 5203122
+      "actual_sales": 5203122,
+      "tags": "warm, engineering"
     },
     {
       "id": 627657261,
@@ -32226,7 +33376,8 @@ export const data: any[] = [
       "deals_total": 80,
       "ratio": 52,
       "estimated_sales": 2947120,
-      "actual_sales": 5003220
+      "actual_sales": 5003220,
+      "tags": "demo, financial"
     },
     {
       "id": 577313679,
@@ -32254,7 +33405,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 36,
       "estimated_sales": 4455997,
-      "actual_sales": 2252380
+      "actual_sales": 2252380,
+      "tags": "cool, financial"
     },
     {
       "id": 683309622,
@@ -32282,7 +33434,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 13,
       "estimated_sales": 515340,
-      "actual_sales": 353840
+      "actual_sales": 353840,
+      "tags": "warm, retail"
     },
     {
       "id": 300969936,
@@ -32310,7 +33463,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 83,
       "estimated_sales": 5061892,
-      "actual_sales": 2598816
+      "actual_sales": 2598816,
+      "tags": "subscriber, retail"
     },
     {
       "id": 876536781,
@@ -32338,7 +33492,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 93,
       "estimated_sales": 2806758,
-      "actual_sales": 4514076
+      "actual_sales": 4514076,
+      "tags": "hot, engineering"
     },
     {
       "id": 803755683,
@@ -32366,7 +33521,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 39,
       "estimated_sales": 1111528,
-      "actual_sales": 3012160
+      "actual_sales": 3012160,
+      "tags": "hot, engineering"
     },
     {
       "id": 166755065,
@@ -32394,7 +33550,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 5,
       "estimated_sales": 4498480,
-      "actual_sales": 1684746
+      "actual_sales": 1684746,
+      "tags": "cool, engineering"
     },
     {
       "id": 786877264,
@@ -32422,7 +33579,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 41,
       "estimated_sales": 198241,
-      "actual_sales": 1791864
+      "actual_sales": 1791864,
+      "tags": "cool, engineering"
     },
     {
       "id": 461266101,
@@ -32450,7 +33608,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 5,
       "estimated_sales": 780732,
-      "actual_sales": 3408660
+      "actual_sales": 3408660,
+      "tags": "warm, financial"
     },
     {
       "id": 188256465,
@@ -32478,7 +33637,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 64,
       "estimated_sales": 1173576,
-      "actual_sales": 5083961
+      "actual_sales": 5083961,
+      "tags": "hot, financial"
     },
     {
       "id": 588906588,
@@ -32506,7 +33666,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 7,
       "estimated_sales": 604356,
-      "actual_sales": 3133676
+      "actual_sales": 3133676,
+      "tags": "pro, construction"
     },
     {
       "id": 95898901,
@@ -32534,7 +33695,8 @@ export const data: any[] = [
       "deals_total": 81,
       "ratio": 49,
       "estimated_sales": 4920760,
-      "actual_sales": 1868049
+      "actual_sales": 1868049,
+      "tags": "cold, medical"
     },
     {
       "id": 446258326,
@@ -32562,7 +33724,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 0,
       "estimated_sales": 1370430,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 509186088,
@@ -32590,7 +33753,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 34,
       "estimated_sales": 582420,
-      "actual_sales": 2292324
+      "actual_sales": 2292324,
+      "tags": "hot, retail"
     },
     {
       "id": 62328140,
@@ -32618,7 +33782,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 4,
       "estimated_sales": 2026208,
-      "actual_sales": 3241033
+      "actual_sales": 3241033,
+      "tags": "construction"
     },
     {
       "id": 996773664,
@@ -32646,7 +33811,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 56,
       "estimated_sales": 4699539,
-      "actual_sales": 2563164
+      "actual_sales": 2563164,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 74786752,
@@ -32674,7 +33840,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 88,
       "estimated_sales": 508836,
-      "actual_sales": 1289400
+      "actual_sales": 1289400,
+      "tags": "cold, engineering"
     },
     {
       "id": 4472569,
@@ -32702,7 +33869,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 77,
       "estimated_sales": 3061926,
-      "actual_sales": 3263448
+      "actual_sales": 3263448,
+      "tags": ""
     },
     {
       "id": 524109870,
@@ -32730,7 +33898,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 23,
       "estimated_sales": 1701024,
-      "actual_sales": 584637
+      "actual_sales": 584637,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 593422418,
@@ -32758,7 +33927,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 95,
       "estimated_sales": 2207567,
-      "actual_sales": 1103676
+      "actual_sales": 1103676,
+      "tags": ""
     },
     {
       "id": 828234786,
@@ -32786,7 +33956,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 38,
       "estimated_sales": 2441376,
-      "actual_sales": 719620
+      "actual_sales": 719620,
+      "tags": "pro, construction"
     },
     {
       "id": 424185966,
@@ -32814,7 +33985,8 @@ export const data: any[] = [
       "deals_total": 82,
       "ratio": 52,
       "estimated_sales": 4428720,
-      "actual_sales": 4073382
+      "actual_sales": 4073382,
+      "tags": "demo, financial"
     },
     {
       "id": 952297310,
@@ -32842,7 +34014,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 71,
       "estimated_sales": 4537546,
-      "actual_sales": 1545630
+      "actual_sales": 1545630,
+      "tags": "hot, medical"
     },
     {
       "id": 200789897,
@@ -32870,7 +34043,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 91,
       "estimated_sales": 303584,
-      "actual_sales": 646260
+      "actual_sales": 646260,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 710700543,
@@ -32898,7 +34072,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 45,
       "estimated_sales": 1459800,
-      "actual_sales": 1121926
+      "actual_sales": 1121926,
+      "tags": "subscriber, construction"
     },
     {
       "id": 29537449,
@@ -32926,7 +34101,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 59,
       "estimated_sales": 1017264,
-      "actual_sales": 2915952
+      "actual_sales": 2915952,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 91326740,
@@ -32954,7 +34130,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 0,
       "estimated_sales": 4703994,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 45194132,
@@ -32982,7 +34159,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 5,
       "estimated_sales": 3565625,
-      "actual_sales": 4108293
+      "actual_sales": 4108293,
+      "tags": "pharmaceutical"
     },
     {
       "id": 344277315,
@@ -33010,7 +34188,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 43,
       "estimated_sales": 2204400,
-      "actual_sales": 1894035
+      "actual_sales": 1894035,
+      "tags": "demo, construction"
     },
     {
       "id": 791123544,
@@ -33038,7 +34217,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 25,
       "estimated_sales": 609300,
-      "actual_sales": 1149862
+      "actual_sales": 1149862,
+      "tags": "hot, engineering"
     },
     {
       "id": 837116871,
@@ -33066,7 +34246,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 4,
       "estimated_sales": 0,
-      "actual_sales": 1715810
+      "actual_sales": 1715810,
+      "tags": "pro, retail"
     },
     {
       "id": 638897358,
@@ -33094,7 +34275,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 38,
       "estimated_sales": 2274354,
-      "actual_sales": 567435
+      "actual_sales": 567435,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 941607151,
@@ -33122,7 +34304,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 3,
       "estimated_sales": 2848728,
-      "actual_sales": 165901
+      "actual_sales": 165901,
+      "tags": "pharmaceutical"
     },
     {
       "id": 488065182,
@@ -33150,7 +34333,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 84,
       "estimated_sales": 2580652,
-      "actual_sales": 1411452
+      "actual_sales": 1411452,
+      "tags": "cold, financial"
     },
     {
       "id": 765802794,
@@ -33178,7 +34362,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 41,
       "estimated_sales": 1036180,
-      "actual_sales": 2603214
+      "actual_sales": 2603214,
+      "tags": "subscriber, medical"
     },
     {
       "id": 200842685,
@@ -33206,7 +34391,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 59,
       "estimated_sales": 718926,
-      "actual_sales": 5048703
+      "actual_sales": 5048703,
+      "tags": "pro, construction"
     },
     {
       "id": 824023101,
@@ -33234,7 +34420,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 21,
       "estimated_sales": 189068,
-      "actual_sales": 1488824
+      "actual_sales": 1488824,
+      "tags": "cold, engineering"
     },
     {
       "id": 227194084,
@@ -33262,7 +34449,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 29,
       "estimated_sales": 1308073,
-      "actual_sales": 1092612
+      "actual_sales": 1092612,
+      "tags": "cold, retail"
     },
     {
       "id": 227227810,
@@ -33290,7 +34478,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 33,
       "estimated_sales": 165587,
-      "actual_sales": 1494402
+      "actual_sales": 1494402,
+      "tags": "demo, construction"
     },
     {
       "id": 541983303,
@@ -33318,7 +34507,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 11,
       "estimated_sales": 2586394,
-      "actual_sales": 492714
+      "actual_sales": 492714,
+      "tags": "pro, engineering"
     },
     {
       "id": 51983439,
@@ -33346,7 +34536,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 48,
       "estimated_sales": 735144,
-      "actual_sales": 1502098
+      "actual_sales": 1502098,
+      "tags": "cool, financial"
     },
     {
       "id": 778645102,
@@ -33374,7 +34565,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 11,
       "estimated_sales": 1556803,
-      "actual_sales": 360270
+      "actual_sales": 360270,
+      "tags": ""
     },
     {
       "id": 56390732,
@@ -33402,7 +34594,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 5,
       "estimated_sales": 728900,
-      "actual_sales": 5978940
+      "actual_sales": 5978940,
+      "tags": "demo, retail"
     },
     {
       "id": 170772743,
@@ -33430,7 +34623,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 63,
       "estimated_sales": 485500,
-      "actual_sales": 2974878
+      "actual_sales": 2974878,
+      "tags": ""
     },
     {
       "id": 720485790,
@@ -33458,7 +34652,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 52,
       "estimated_sales": 1454128,
-      "actual_sales": 5086458
+      "actual_sales": 5086458,
+      "tags": "warm, construction"
     },
     {
       "id": 510823687,
@@ -33486,7 +34681,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 73,
       "estimated_sales": 0,
-      "actual_sales": 3972618
+      "actual_sales": 3972618,
+      "tags": "subscriber, medical"
     },
     {
       "id": 747819718,
@@ -33514,7 +34710,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 53,
       "estimated_sales": 2657808,
-      "actual_sales": 4921050
+      "actual_sales": 4921050,
+      "tags": "subscriber, construction"
     },
     {
       "id": 523701333,
@@ -33542,7 +34739,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 52,
       "estimated_sales": 228344,
-      "actual_sales": 1878433
+      "actual_sales": 1878433,
+      "tags": "warm, medical"
     },
     {
       "id": 985375682,
@@ -33570,7 +34768,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 6,
       "estimated_sales": 3302941,
-      "actual_sales": 1319532
+      "actual_sales": 1319532,
+      "tags": "hot, engineering"
     },
     {
       "id": 352460746,
@@ -33598,7 +34797,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 35,
       "estimated_sales": 1824394,
-      "actual_sales": 1163617
+      "actual_sales": 1163617,
+      "tags": "hot, financial"
     },
     {
       "id": 559647160,
@@ -33626,7 +34826,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 41,
       "estimated_sales": 1366425,
-      "actual_sales": 942912
+      "actual_sales": 942912,
+      "tags": "warm, engineering"
     },
     {
       "id": 337964500,
@@ -33654,7 +34855,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 72,
       "estimated_sales": 1528225,
-      "actual_sales": 2977632
+      "actual_sales": 2977632,
+      "tags": "pro, medical"
     },
     {
       "id": 562087105,
@@ -33682,7 +34884,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 1,
       "estimated_sales": 4023083,
-      "actual_sales": 56195
+      "actual_sales": 56195,
+      "tags": "engineering"
     },
     {
       "id": 195254731,
@@ -33710,7 +34913,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 29,
       "estimated_sales": 2306260,
-      "actual_sales": 1688016
+      "actual_sales": 1688016,
+      "tags": "warm, medical"
     },
     {
       "id": 54475644,
@@ -33738,7 +34942,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 7,
       "estimated_sales": 2909675,
-      "actual_sales": 999964
+      "actual_sales": 999964,
+      "tags": "retail"
     },
     {
       "id": 348869183,
@@ -33766,7 +34971,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 54,
       "estimated_sales": 2088645,
-      "actual_sales": 1256318
+      "actual_sales": 1256318,
+      "tags": "demo, engineering"
     },
     {
       "id": 650052646,
@@ -33794,7 +35000,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 38,
       "estimated_sales": 5730270,
-      "actual_sales": 1178968
+      "actual_sales": 1178968,
+      "tags": "demo, financial"
     },
     {
       "id": 649207378,
@@ -33822,7 +35029,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 43,
       "estimated_sales": 1940463,
-      "actual_sales": 3589480
+      "actual_sales": 3589480,
+      "tags": "cold, retail"
     },
     {
       "id": 400257811,
@@ -33850,7 +35058,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 5,
       "estimated_sales": 1021596,
-      "actual_sales": 2707560
+      "actual_sales": 2707560,
+      "tags": "medical"
     },
     {
       "id": 834892450,
@@ -33878,7 +35087,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 41,
       "estimated_sales": 142122,
-      "actual_sales": 881196
+      "actual_sales": 881196,
+      "tags": "pro, construction"
     },
     {
       "id": 706037228,
@@ -33906,7 +35116,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 32,
       "estimated_sales": 3221792,
-      "actual_sales": 1840248
+      "actual_sales": 1840248,
+      "tags": "cool, financial"
     },
     {
       "id": 269909062,
@@ -33934,7 +35145,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 19,
       "estimated_sales": 417996,
-      "actual_sales": 600564
+      "actual_sales": 600564,
+      "tags": "engineering"
     },
     {
       "id": 190555818,
@@ -33962,7 +35174,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 71,
       "estimated_sales": 5544510,
-      "actual_sales": 844910
+      "actual_sales": 844910,
+      "tags": "cool, medical"
     },
     {
       "id": 632050231,
@@ -33990,7 +35203,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 28,
       "estimated_sales": 1964079,
-      "actual_sales": 786555
+      "actual_sales": 786555,
+      "tags": "hot, retail"
     },
     {
       "id": 804541265,
@@ -34018,7 +35232,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 4,
       "estimated_sales": 1822340,
-      "actual_sales": 1945191
+      "actual_sales": 1945191,
+      "tags": "demo, medical"
     },
     {
       "id": 125828905,
@@ -34046,7 +35261,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 76,
       "estimated_sales": 566991,
-      "actual_sales": 5471508
+      "actual_sales": 5471508,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 548133724,
@@ -34074,7 +35290,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 67,
       "estimated_sales": 1454048,
-      "actual_sales": 1487560
+      "actual_sales": 1487560,
+      "tags": "cold, construction"
     },
     {
       "id": 268566431,
@@ -34102,7 +35319,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 0,
       "estimated_sales": 1017531,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 240976119,
@@ -34130,7 +35348,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 6,
       "estimated_sales": 3005447,
-      "actual_sales": 2473254
+      "actual_sales": 2473254,
+      "tags": "demo, retail"
     },
     {
       "id": 414328092,
@@ -34158,7 +35377,8 @@ export const data: any[] = [
       "deals_total": 82,
       "ratio": 49,
       "estimated_sales": 3963169,
-      "actual_sales": 3147716
+      "actual_sales": 3147716,
+      "tags": "pro, retail"
     },
     {
       "id": 31612934,
@@ -34186,7 +35406,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 38,
       "estimated_sales": 1121224,
-      "actual_sales": 1484130
+      "actual_sales": 1484130,
+      "tags": "warm, retail"
     },
     {
       "id": 248883686,
@@ -34214,7 +35435,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 5,
       "estimated_sales": 761166,
-      "actual_sales": 2090571
+      "actual_sales": 2090571,
+      "tags": "cool, engineering"
     },
     {
       "id": 254429335,
@@ -34242,7 +35464,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 38,
       "estimated_sales": 3487887,
-      "actual_sales": 3243204
+      "actual_sales": 3243204,
+      "tags": "cold, retail"
     },
     {
       "id": 665478117,
@@ -34270,7 +35493,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 69,
       "estimated_sales": 2002070,
-      "actual_sales": 3465252
+      "actual_sales": 3465252,
+      "tags": "hot, medical"
     },
     {
       "id": 166331914,
@@ -34298,7 +35522,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 39,
       "estimated_sales": 2037312,
-      "actual_sales": 1949438
+      "actual_sales": 1949438,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 973254402,
@@ -34326,7 +35551,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 56,
       "estimated_sales": 217896,
-      "actual_sales": 3341796
+      "actual_sales": 3341796,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 490304587,
@@ -34354,7 +35580,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 6,
       "estimated_sales": 2886732,
-      "actual_sales": 1835472
+      "actual_sales": 1835472,
+      "tags": "pro, financial"
     },
     {
       "id": 710251005,
@@ -34382,7 +35609,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 19,
       "estimated_sales": 3364578,
-      "actual_sales": 670564
+      "actual_sales": 670564,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 628802568,
@@ -34410,7 +35638,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 38,
       "estimated_sales": 1425790,
-      "actual_sales": 2034414
+      "actual_sales": 2034414,
+      "tags": "subscriber, financial"
     },
     {
       "id": 11944375,
@@ -34438,7 +35667,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 59,
       "estimated_sales": 3833654,
-      "actual_sales": 2609112
+      "actual_sales": 2609112,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 269578518,
@@ -34466,7 +35696,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 58,
       "estimated_sales": 2246350,
-      "actual_sales": 2585016
+      "actual_sales": 2585016,
+      "tags": "cool, construction"
     },
     {
       "id": 182106518,
@@ -34494,7 +35725,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 55,
       "estimated_sales": 4556185,
-      "actual_sales": 2636448
+      "actual_sales": 2636448,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 346996463,
@@ -34522,7 +35754,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 15,
       "estimated_sales": 4763772,
-      "actual_sales": 993445
+      "actual_sales": 993445,
+      "tags": "pharmaceutical"
     },
     {
       "id": 221742691,
@@ -34550,7 +35783,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 3,
       "estimated_sales": 1467204,
-      "actual_sales": 1049544
+      "actual_sales": 1049544,
+      "tags": "cool, retail"
     },
     {
       "id": 590995930,
@@ -34578,7 +35812,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 31,
       "estimated_sales": 2025160,
-      "actual_sales": 680350
+      "actual_sales": 680350,
+      "tags": "cool, retail"
     },
     {
       "id": 877005878,
@@ -34606,7 +35841,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 32,
       "estimated_sales": 1972160,
-      "actual_sales": 1012752
+      "actual_sales": 1012752,
+      "tags": "cold, engineering"
     },
     {
       "id": 130024267,
@@ -34634,7 +35870,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 5,
       "estimated_sales": 1730724,
-      "actual_sales": 4861388
+      "actual_sales": 4861388,
+      "tags": "cold, construction"
     },
     {
       "id": 544659380,
@@ -34662,7 +35899,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 29,
       "estimated_sales": 199404,
-      "actual_sales": 2144472
+      "actual_sales": 2144472,
+      "tags": ""
     },
     {
       "id": 632950585,
@@ -34690,7 +35928,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 47,
       "estimated_sales": 2549425,
-      "actual_sales": 3818325
+      "actual_sales": 3818325,
+      "tags": "cool, retail"
     },
     {
       "id": 839152954,
@@ -34718,7 +35957,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 91,
       "estimated_sales": 521895,
-      "actual_sales": 3146178
+      "actual_sales": 3146178,
+      "tags": "warm, financial"
     },
     {
       "id": 421314342,
@@ -34746,7 +35986,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 59,
       "estimated_sales": 1171926,
-      "actual_sales": 1418280
+      "actual_sales": 1418280,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 820321926,
@@ -34774,7 +36015,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 23,
       "estimated_sales": 447360,
-      "actual_sales": 1081296
+      "actual_sales": 1081296,
+      "tags": "cold, construction"
     },
     {
       "id": 755149048,
@@ -34802,7 +36044,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 21,
       "estimated_sales": 500065,
-      "actual_sales": 499364
+      "actual_sales": 499364,
+      "tags": ""
     },
     {
       "id": 64806073,
@@ -34830,7 +36073,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 71,
       "estimated_sales": 518444,
-      "actual_sales": 4214125
+      "actual_sales": 4214125,
+      "tags": "hot, construction"
     },
     {
       "id": 797321082,
@@ -34858,7 +36102,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 0,
       "estimated_sales": 418338,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, engineering"
     },
     {
       "id": 250458481,
@@ -34886,7 +36131,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 41,
       "estimated_sales": 3295417,
-      "actual_sales": 2134537
+      "actual_sales": 2134537,
+      "tags": "hot, medical"
     },
     {
       "id": 53414673,
@@ -34914,7 +36160,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 51,
       "estimated_sales": 3796875,
-      "actual_sales": 3781024
+      "actual_sales": 3781024,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 275355677,
@@ -34942,7 +36189,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 17,
       "estimated_sales": 4811310,
-      "actual_sales": 1035006
+      "actual_sales": 1035006,
+      "tags": "pro, financial"
     },
     {
       "id": 309394800,
@@ -34970,7 +36218,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 66,
       "estimated_sales": 1135953,
-      "actual_sales": 3430033
+      "actual_sales": 3430033,
+      "tags": "warm, medical"
     },
     {
       "id": 99552621,
@@ -34998,7 +36247,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 49,
       "estimated_sales": 658686,
-      "actual_sales": 3372495
+      "actual_sales": 3372495,
+      "tags": "pro, financial"
     },
     {
       "id": 756113612,
@@ -35026,7 +36276,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 27,
       "estimated_sales": 4498416,
-      "actual_sales": 1549792
+      "actual_sales": 1549792,
+      "tags": "demo, engineering"
     },
     {
       "id": 689566297,
@@ -35054,7 +36305,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 39,
       "estimated_sales": 2844525,
-      "actual_sales": 1334430
+      "actual_sales": 1334430,
+      "tags": "pharmaceutical"
     },
     {
       "id": 179032138,
@@ -35082,7 +36334,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 36,
       "estimated_sales": 1114192,
-      "actual_sales": 3042640
+      "actual_sales": 3042640,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 569072162,
@@ -35110,7 +36363,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 5,
       "estimated_sales": 1218285,
-      "actual_sales": 64546
+      "actual_sales": 64546,
+      "tags": "hot, medical"
     },
     {
       "id": 803563064,
@@ -35138,7 +36392,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 75,
       "estimated_sales": 470120,
-      "actual_sales": 2263926
+      "actual_sales": 2263926,
+      "tags": "pro, medical"
     },
     {
       "id": 701058511,
@@ -35166,7 +36421,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 41,
       "estimated_sales": 1090062,
-      "actual_sales": 1545912
+      "actual_sales": 1545912,
+      "tags": "pro, financial"
     },
     {
       "id": 155672272,
@@ -35194,7 +36450,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 15,
       "estimated_sales": 175927,
-      "actual_sales": 801515
+      "actual_sales": 801515,
+      "tags": "demo, medical"
     },
     {
       "id": 15604881,
@@ -35222,7 +36479,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 77,
       "estimated_sales": 1492551,
-      "actual_sales": 3493600
+      "actual_sales": 3493600,
+      "tags": ""
     },
     {
       "id": 541569268,
@@ -35250,7 +36508,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 51,
       "estimated_sales": 3588494,
-      "actual_sales": 1660945
+      "actual_sales": 1660945,
+      "tags": "retail"
     },
     {
       "id": 746741503,
@@ -35278,7 +36537,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 95,
       "estimated_sales": 3729818,
-      "actual_sales": 2046642
+      "actual_sales": 2046642,
+      "tags": "engineering"
     },
     {
       "id": 139545882,
@@ -35306,7 +36566,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 36,
       "estimated_sales": 0,
-      "actual_sales": 791988
+      "actual_sales": 791988,
+      "tags": "medical"
     },
     {
       "id": 10952370,
@@ -35334,7 +36595,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 94,
       "estimated_sales": 1487239,
-      "actual_sales": 1880882
+      "actual_sales": 1880882,
+      "tags": "cold, financial"
     },
     {
       "id": 519124047,
@@ -35362,7 +36624,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 86,
       "estimated_sales": 699776,
-      "actual_sales": 1155480
+      "actual_sales": 1155480,
+      "tags": "hot, engineering"
     },
     {
       "id": 260656514,
@@ -35390,7 +36653,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 44,
       "estimated_sales": 568165,
-      "actual_sales": 2603048
+      "actual_sales": 2603048,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 359128128,
@@ -35418,7 +36682,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 73,
       "estimated_sales": 484044,
-      "actual_sales": 2985318
+      "actual_sales": 2985318,
+      "tags": "subscriber, financial"
     },
     {
       "id": 685147520,
@@ -35446,7 +36711,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 75,
       "estimated_sales": 1709001,
-      "actual_sales": 2043126
+      "actual_sales": 2043126,
+      "tags": "engineering"
     },
     {
       "id": 678919638,
@@ -35474,7 +36740,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 3,
       "estimated_sales": 2364530,
-      "actual_sales": 375168
+      "actual_sales": 375168,
+      "tags": "cold, retail"
     },
     {
       "id": 765032049,
@@ -35502,7 +36769,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 36,
       "estimated_sales": 2097543,
-      "actual_sales": 1899086
+      "actual_sales": 1899086,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 902168076,
@@ -35530,7 +36798,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 53,
       "estimated_sales": 142167,
-      "actual_sales": 3350870
+      "actual_sales": 3350870,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 753502079,
@@ -35558,7 +36827,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 83,
       "estimated_sales": 1434168,
-      "actual_sales": 759825
+      "actual_sales": 759825,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 149470237,
@@ -35586,7 +36856,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 7,
       "estimated_sales": 3322280,
-      "actual_sales": 322906
+      "actual_sales": 322906,
+      "tags": "subscriber, financial"
     },
     {
       "id": 773213207,
@@ -35614,7 +36885,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 79,
       "estimated_sales": 1097706,
-      "actual_sales": 4342702
+      "actual_sales": 4342702,
+      "tags": "pro, financial"
     },
     {
       "id": 160880842,
@@ -35642,7 +36914,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 49,
       "estimated_sales": 1236858,
-      "actual_sales": 3628344
+      "actual_sales": 3628344,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 324809189,
@@ -35670,7 +36943,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 76,
       "estimated_sales": 2869719,
-      "actual_sales": 2278356
+      "actual_sales": 2278356,
+      "tags": "retail"
     },
     {
       "id": 420397478,
@@ -35698,7 +36972,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 35,
       "estimated_sales": 0,
-      "actual_sales": 493856
+      "actual_sales": 493856,
+      "tags": "cool, medical"
     },
     {
       "id": 428715462,
@@ -35726,7 +37001,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 95,
       "estimated_sales": 1786608,
-      "actual_sales": 4066146
+      "actual_sales": 4066146,
+      "tags": "medical"
     },
     {
       "id": 7712414,
@@ -35754,7 +37030,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 35,
       "estimated_sales": 2763540,
-      "actual_sales": 2639966
+      "actual_sales": 2639966,
+      "tags": "demo, financial"
     },
     {
       "id": 325261072,
@@ -35782,7 +37059,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 4,
       "estimated_sales": 4221250,
-      "actual_sales": 1937768
+      "actual_sales": 1937768,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 495420923,
@@ -35810,7 +37088,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 37,
       "estimated_sales": 895632,
-      "actual_sales": 852537
+      "actual_sales": 852537,
+      "tags": "cool, retail"
     },
     {
       "id": 597730737,
@@ -35838,7 +37117,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 29,
       "estimated_sales": 916980,
-      "actual_sales": 1942188
+      "actual_sales": 1942188,
+      "tags": "pro, medical"
     },
     {
       "id": 447372231,
@@ -35866,7 +37146,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 43,
       "estimated_sales": 3418758,
-      "actual_sales": 1621545
+      "actual_sales": 1621545,
+      "tags": "warm, financial"
     },
     {
       "id": 255878971,
@@ -35894,7 +37175,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 52,
       "estimated_sales": 2941375,
-      "actual_sales": 5018706
+      "actual_sales": 5018706,
+      "tags": ""
     },
     {
       "id": 864983681,
@@ -35922,7 +37204,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 56,
       "estimated_sales": 2730319,
-      "actual_sales": 3260124
+      "actual_sales": 3260124,
+      "tags": "subscriber, medical"
     },
     {
       "id": 470945886,
@@ -35950,7 +37233,8 @@ export const data: any[] = [
       "deals_total": 83,
       "ratio": 51,
       "estimated_sales": 3771192,
-      "actual_sales": 2598600
+      "actual_sales": 2598600,
+      "tags": "cold, medical"
     },
     {
       "id": 965780967,
@@ -35978,7 +37262,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 79,
       "estimated_sales": 448254,
-      "actual_sales": 2726625
+      "actual_sales": 2726625,
+      "tags": "engineering"
     },
     {
       "id": 475448545,
@@ -36006,7 +37291,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 83,
       "estimated_sales": 56271,
-      "actual_sales": 3078495
+      "actual_sales": 3078495,
+      "tags": "warm, retail"
     },
     {
       "id": 495339942,
@@ -36034,7 +37320,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 36,
       "estimated_sales": 3994623,
-      "actual_sales": 1809920
+      "actual_sales": 1809920,
+      "tags": ""
     },
     {
       "id": 690578180,
@@ -36062,7 +37349,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 34,
       "estimated_sales": 1146006,
-      "actual_sales": 2784975
+      "actual_sales": 2784975,
+      "tags": "hot, engineering"
     },
     {
       "id": 888003387,
@@ -36090,7 +37378,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 66,
       "estimated_sales": 578175,
-      "actual_sales": 2665970
+      "actual_sales": 2665970,
+      "tags": "cold, retail"
     },
     {
       "id": 359851843,
@@ -36118,7 +37407,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 64,
       "estimated_sales": 5691453,
-      "actual_sales": 1838643
+      "actual_sales": 1838643,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 140055026,
@@ -36146,7 +37436,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 77,
       "estimated_sales": 3057740,
-      "actual_sales": 3493400
+      "actual_sales": 3493400,
+      "tags": "cool, construction"
     },
     {
       "id": 948109725,
@@ -36174,7 +37465,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 39,
       "estimated_sales": 608270,
-      "actual_sales": 1257570
+      "actual_sales": 1257570,
+      "tags": "demo, construction"
     },
     {
       "id": 830523124,
@@ -36202,7 +37494,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 3,
       "estimated_sales": 1778160,
-      "actual_sales": 1336944
+      "actual_sales": 1336944,
+      "tags": ""
     },
     {
       "id": 579467040,
@@ -36230,7 +37523,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 61,
       "estimated_sales": 348190,
-      "actual_sales": 1455426
+      "actual_sales": 1455426,
+      "tags": "warm, construction"
     },
     {
       "id": 149632389,
@@ -36258,7 +37552,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 48,
       "estimated_sales": 2163280,
-      "actual_sales": 1906995
+      "actual_sales": 1906995,
+      "tags": "demo, engineering"
     },
     {
       "id": 18968651,
@@ -36286,7 +37581,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 46,
       "estimated_sales": 990560,
-      "actual_sales": 1042855
+      "actual_sales": 1042855,
+      "tags": "medical"
     },
     {
       "id": 597027742,
@@ -36314,7 +37610,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 71,
       "estimated_sales": 833264,
-      "actual_sales": 2862840
+      "actual_sales": 2862840,
+      "tags": "warm, medical"
     },
     {
       "id": 237861983,
@@ -36342,7 +37639,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 23,
       "estimated_sales": 1784844,
-      "actual_sales": 821425
+      "actual_sales": 821425,
+      "tags": "subscriber, construction"
     },
     {
       "id": 436549848,
@@ -36370,7 +37668,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 35,
       "estimated_sales": 616491,
-      "actual_sales": 1016820
+      "actual_sales": 1016820,
+      "tags": "subscriber, medical"
     },
     {
       "id": 522597757,
@@ -36398,7 +37697,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 41,
       "estimated_sales": 1427280,
-      "actual_sales": 2455388
+      "actual_sales": 2455388,
+      "tags": "pro, construction"
     },
     {
       "id": 156228749,
@@ -36426,7 +37726,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 86,
       "estimated_sales": 1769675,
-      "actual_sales": 3656784
+      "actual_sales": 3656784,
+      "tags": "subscriber, construction"
     },
     {
       "id": 834316405,
@@ -36454,7 +37755,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 29,
       "estimated_sales": 0,
-      "actual_sales": 746020
+      "actual_sales": 746020,
+      "tags": "hot, retail"
     },
     {
       "id": 602789178,
@@ -36482,7 +37784,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 63,
       "estimated_sales": 318906,
-      "actual_sales": 3570720
+      "actual_sales": 3570720,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 389192948,
@@ -36510,7 +37813,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 36,
       "estimated_sales": 4823657,
-      "actual_sales": 1099312
+      "actual_sales": 1099312,
+      "tags": "warm, financial"
     },
     {
       "id": 142823015,
@@ -36538,7 +37842,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 5,
       "estimated_sales": 1946126,
-      "actual_sales": 2299379
+      "actual_sales": 2299379,
+      "tags": "pro, engineering"
     },
     {
       "id": 101540146,
@@ -36566,7 +37871,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 69,
       "estimated_sales": 125845,
-      "actual_sales": 3410964
+      "actual_sales": 3410964,
+      "tags": "hot, engineering"
     },
     {
       "id": 307432632,
@@ -36594,7 +37900,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 57,
       "estimated_sales": 3624565,
-      "actual_sales": 4643475
+      "actual_sales": 4643475,
+      "tags": ""
     },
     {
       "id": 336145305,
@@ -36622,7 +37929,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 14,
       "estimated_sales": 1870232,
-      "actual_sales": 176388
+      "actual_sales": 176388,
+      "tags": ""
     },
     {
       "id": 169113071,
@@ -36650,7 +37958,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 76,
       "estimated_sales": 1188728,
-      "actual_sales": 3034526
+      "actual_sales": 3034526,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 253517066,
@@ -36678,7 +37987,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 6,
       "estimated_sales": 5514964,
-      "actual_sales": 3028992
+      "actual_sales": 3028992,
+      "tags": "demo, financial"
     },
     {
       "id": 235227884,
@@ -36706,7 +38016,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 31,
       "estimated_sales": 5049096,
-      "actual_sales": 1260330
+      "actual_sales": 1260330,
+      "tags": "cool, engineering"
     },
     {
       "id": 153684027,
@@ -36734,7 +38045,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 83,
       "estimated_sales": 516012,
-      "actual_sales": 4161450
+      "actual_sales": 4161450,
+      "tags": ""
     },
     {
       "id": 286585236,
@@ -36762,7 +38074,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 69,
       "estimated_sales": 1381212,
-      "actual_sales": 1700740
+      "actual_sales": 1700740,
+      "tags": "medical"
     },
     {
       "id": 888450885,
@@ -36790,7 +38103,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 96,
       "estimated_sales": 0,
-      "actual_sales": 3404184
+      "actual_sales": 3404184,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 472490081,
@@ -36818,7 +38132,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 56,
       "estimated_sales": 0,
-      "actual_sales": 961740
+      "actual_sales": 961740,
+      "tags": "pro, engineering"
     },
     {
       "id": 570907453,
@@ -36846,7 +38161,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 5,
       "estimated_sales": 1683855,
-      "actual_sales": 1129400
+      "actual_sales": 1129400,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 334086999,
@@ -36874,7 +38190,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 47,
       "estimated_sales": 3361400,
-      "actual_sales": 692216
+      "actual_sales": 692216,
+      "tags": "warm, retail"
     },
     {
       "id": 998506812,
@@ -36902,7 +38219,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 22,
       "estimated_sales": 0,
-      "actual_sales": 372348
+      "actual_sales": 372348,
+      "tags": "demo, retail"
     },
     {
       "id": 734416239,
@@ -36930,7 +38248,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 21,
       "estimated_sales": 2847780,
-      "actual_sales": 239367
+      "actual_sales": 239367,
+      "tags": "retail"
     },
     {
       "id": 1169281,
@@ -36958,7 +38277,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 74,
       "estimated_sales": 546666,
-      "actual_sales": 2297344
+      "actual_sales": 2297344,
+      "tags": "demo, financial"
     },
     {
       "id": 661075729,
@@ -36986,7 +38306,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 6,
       "estimated_sales": 408972,
-      "actual_sales": 188452
+      "actual_sales": 188452,
+      "tags": "hot, financial"
     },
     {
       "id": 703349621,
@@ -37014,7 +38335,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 76,
       "estimated_sales": 321400,
-      "actual_sales": 5094348
+      "actual_sales": 5094348,
+      "tags": "hot, medical"
     },
     {
       "id": 61569759,
@@ -37042,7 +38364,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 84,
       "estimated_sales": 2898600,
-      "actual_sales": 3116112
+      "actual_sales": 3116112,
+      "tags": "subscriber, retail"
     },
     {
       "id": 585582146,
@@ -37070,7 +38393,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 29,
       "estimated_sales": 2260352,
-      "actual_sales": 618920
+      "actual_sales": 618920,
+      "tags": "hot, medical"
     },
     {
       "id": 255285047,
@@ -37098,7 +38422,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 54,
       "estimated_sales": 1694664,
-      "actual_sales": 4266243
+      "actual_sales": 4266243,
+      "tags": "demo, engineering"
     },
     {
       "id": 235585571,
@@ -37126,7 +38451,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 8,
       "estimated_sales": 448608,
-      "actual_sales": 150194
+      "actual_sales": 150194,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 401229380,
@@ -37154,7 +38480,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 0,
       "estimated_sales": 707966,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, retail"
     },
     {
       "id": 181533798,
@@ -37182,7 +38509,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 31,
       "estimated_sales": 4011154,
-      "actual_sales": 1618870
+      "actual_sales": 1618870,
+      "tags": ""
     },
     {
       "id": 179285200,
@@ -37210,7 +38538,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 52,
       "estimated_sales": 185568,
-      "actual_sales": 1355925
+      "actual_sales": 1355925,
+      "tags": "pro, retail"
     },
     {
       "id": 67221714,
@@ -37238,7 +38567,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 15,
       "estimated_sales": 3026272,
-      "actual_sales": 195681
+      "actual_sales": 195681,
+      "tags": "demo, construction"
     },
     {
       "id": 411600412,
@@ -37266,7 +38596,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 32,
       "estimated_sales": 5432744,
-      "actual_sales": 918372
+      "actual_sales": 918372,
+      "tags": "cold, construction"
     },
     {
       "id": 840293892,
@@ -37294,7 +38625,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 51,
       "estimated_sales": 2182887,
-      "actual_sales": 4194528
+      "actual_sales": 4194528,
+      "tags": "pro, financial"
     },
     {
       "id": 615755585,
@@ -37322,7 +38654,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 48,
       "estimated_sales": 2639588,
-      "actual_sales": 3466882
+      "actual_sales": 3466882,
+      "tags": "pro, engineering"
     },
     {
       "id": 458822737,
@@ -37350,7 +38683,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 37,
       "estimated_sales": 1645917,
-      "actual_sales": 1808490
+      "actual_sales": 1808490,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 191939415,
@@ -37378,7 +38712,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 44,
       "estimated_sales": 165163,
-      "actual_sales": 1683416
+      "actual_sales": 1683416,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 13853584,
@@ -37406,7 +38741,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 12,
       "estimated_sales": 2307285,
-      "actual_sales": 211082
+      "actual_sales": 211082,
+      "tags": "warm, medical"
     },
     {
       "id": 651531209,
@@ -37434,7 +38770,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 62,
       "estimated_sales": 1199784,
-      "actual_sales": 4344340
+      "actual_sales": 4344340,
+      "tags": "demo, retail"
     },
     {
       "id": 904400069,
@@ -37462,7 +38799,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 79,
       "estimated_sales": 4902425,
-      "actual_sales": 1884492
+      "actual_sales": 1884492,
+      "tags": "hot, medical"
     },
     {
       "id": 442656830,
@@ -37490,7 +38828,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 32,
       "estimated_sales": 646210,
-      "actual_sales": 959070
+      "actual_sales": 959070,
+      "tags": "cold, financial"
     },
     {
       "id": 413317960,
@@ -37518,7 +38857,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 74,
       "estimated_sales": 491550,
-      "actual_sales": 1464050
+      "actual_sales": 1464050,
+      "tags": "cold, engineering"
     },
     {
       "id": 251482765,
@@ -37546,7 +38886,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 74,
       "estimated_sales": 1913100,
-      "actual_sales": 3394254
+      "actual_sales": 3394254,
+      "tags": "hot, engineering"
     },
     {
       "id": 377397243,
@@ -37574,7 +38915,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 57,
       "estimated_sales": 811228,
-      "actual_sales": 1281008
+      "actual_sales": 1281008,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 453330232,
@@ -37602,7 +38944,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 94,
       "estimated_sales": 4278625,
-      "actual_sales": 5502518
+      "actual_sales": 5502518,
+      "tags": "cold, construction"
     },
     {
       "id": 347074933,
@@ -37630,7 +38973,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 77,
       "estimated_sales": 1384033,
-      "actual_sales": 3114384
+      "actual_sales": 3114384,
+      "tags": "hot, financial"
     },
     {
       "id": 916119987,
@@ -37658,7 +39002,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 74,
       "estimated_sales": 0,
-      "actual_sales": 4559230
+      "actual_sales": 4559230,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 806614243,
@@ -37686,7 +39031,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 63,
       "estimated_sales": 3183362,
-      "actual_sales": 2171790
+      "actual_sales": 2171790,
+      "tags": "cool, medical"
     },
     {
       "id": 692616721,
@@ -37714,7 +39060,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 49,
       "estimated_sales": 4410774,
-      "actual_sales": 3705048
+      "actual_sales": 3705048,
+      "tags": "cold, medical"
     },
     {
       "id": 259702852,
@@ -37742,7 +39089,8 @@ export const data: any[] = [
       "deals_total": 10,
       "ratio": 33,
       "estimated_sales": 158688,
-      "actual_sales": 197562
+      "actual_sales": 197562,
+      "tags": "subscriber, retail"
     },
     {
       "id": 372112217,
@@ -37770,7 +39118,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 28,
       "estimated_sales": 2531696,
-      "actual_sales": 1886016
+      "actual_sales": 1886016,
+      "tags": "financial"
     },
     {
       "id": 777360133,
@@ -37798,7 +39147,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 52,
       "estimated_sales": 1946875,
-      "actual_sales": 1748256
+      "actual_sales": 1748256,
+      "tags": "hot, retail"
     },
     {
       "id": 657665435,
@@ -37826,7 +39176,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 29,
       "estimated_sales": 1177330,
-      "actual_sales": 1171098
+      "actual_sales": 1171098,
+      "tags": "demo, financial"
     },
     {
       "id": 961904757,
@@ -37854,7 +39205,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 33,
       "estimated_sales": 1070202,
-      "actual_sales": 1069245
+      "actual_sales": 1069245,
+      "tags": "pro, construction"
     },
     {
       "id": 255184784,
@@ -37882,7 +39234,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 22,
       "estimated_sales": 226962,
-      "actual_sales": 548348
+      "actual_sales": 548348,
+      "tags": "pro, engineering"
     },
     {
       "id": 409909891,
@@ -37910,7 +39263,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 67,
       "estimated_sales": 3550400,
-      "actual_sales": 263378
+      "actual_sales": 263378,
+      "tags": "demo, retail"
     },
     {
       "id": 517525333,
@@ -37938,7 +39292,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 48,
       "estimated_sales": 1159839,
-      "actual_sales": 2311247
+      "actual_sales": 2311247,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 808517071,
@@ -37966,7 +39321,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 56,
       "estimated_sales": 124537,
-      "actual_sales": 1860462
+      "actual_sales": 1860462,
+      "tags": "hot, medical"
     },
     {
       "id": 845224761,
@@ -37994,7 +39350,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 7,
       "estimated_sales": 760336,
-      "actual_sales": 3194548
+      "actual_sales": 3194548,
+      "tags": "hot, retail"
     },
     {
       "id": 232965163,
@@ -38022,7 +39379,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 33,
       "estimated_sales": 213279,
-      "actual_sales": 2571975
+      "actual_sales": 2571975,
+      "tags": "financial"
     },
     {
       "id": 463905444,
@@ -38050,7 +39408,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 9,
       "estimated_sales": 2861517,
-      "actual_sales": 2081690
+      "actual_sales": 2081690,
+      "tags": "demo, engineering"
     },
     {
       "id": 982881491,
@@ -38078,7 +39437,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 86,
       "estimated_sales": 1880727,
-      "actual_sales": 4720320
+      "actual_sales": 4720320,
+      "tags": "hot, financial"
     },
     {
       "id": 599335770,
@@ -38106,7 +39466,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 64,
       "estimated_sales": 2298511,
-      "actual_sales": 4746140
+      "actual_sales": 4746140,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 754363780,
@@ -38134,7 +39495,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 36,
       "estimated_sales": 1133011,
-      "actual_sales": 1607088
+      "actual_sales": 1607088,
+      "tags": "warm, construction"
     },
     {
       "id": 671821274,
@@ -38162,7 +39524,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 3,
       "estimated_sales": 1089168,
-      "actual_sales": 558789
+      "actual_sales": 558789,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 24288608,
@@ -38190,7 +39553,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 0,
       "estimated_sales": 5225100,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, construction"
     },
     {
       "id": 45804968,
@@ -38218,7 +39582,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 23,
       "estimated_sales": 3268980,
-      "actual_sales": 1176056
+      "actual_sales": 1176056,
+      "tags": "medical"
     },
     {
       "id": 52346250,
@@ -38246,7 +39611,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 39,
       "estimated_sales": 5272425,
-      "actual_sales": 608244
+      "actual_sales": 608244,
+      "tags": "cold, construction"
     },
     {
       "id": 659961526,
@@ -38274,7 +39640,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 6,
       "estimated_sales": 917539,
-      "actual_sales": 1538340
+      "actual_sales": 1538340,
+      "tags": "hot, medical"
     },
     {
       "id": 46850426,
@@ -38302,7 +39669,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 43,
       "estimated_sales": 555192,
-      "actual_sales": 504423
+      "actual_sales": 504423,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 354620050,
@@ -38330,7 +39698,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 5,
       "estimated_sales": 4300182,
-      "actual_sales": 1911516
+      "actual_sales": 1911516,
+      "tags": "subscriber, retail"
     },
     {
       "id": 999269778,
@@ -38358,7 +39727,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 41,
       "estimated_sales": 3638324,
-      "actual_sales": 1473759
+      "actual_sales": 1473759,
+      "tags": "demo, construction"
     },
     {
       "id": 224650610,
@@ -38386,7 +39756,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 16,
       "estimated_sales": 4972250,
-      "actual_sales": 358665
+      "actual_sales": 358665,
+      "tags": "cool, medical"
     },
     {
       "id": 520474982,
@@ -38414,7 +39785,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 44,
       "estimated_sales": 1953396,
-      "actual_sales": 792904
+      "actual_sales": 792904,
+      "tags": "pro, retail"
     },
     {
       "id": 266132602,
@@ -38442,7 +39814,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 48,
       "estimated_sales": 480180,
-      "actual_sales": 1143225
+      "actual_sales": 1143225,
+      "tags": "warm, medical"
     },
     {
       "id": 127454416,
@@ -38470,7 +39843,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 0,
       "estimated_sales": 1013535,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, construction"
     },
     {
       "id": 113367058,
@@ -38498,7 +39872,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 11,
       "estimated_sales": 2069140,
-      "actual_sales": 237856
+      "actual_sales": 237856,
+      "tags": "subscriber, medical"
     },
     {
       "id": 973063494,
@@ -38526,7 +39901,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 77,
       "estimated_sales": 0,
-      "actual_sales": 1844580
+      "actual_sales": 1844580,
+      "tags": "hot, construction"
     },
     {
       "id": 428998966,
@@ -38554,7 +39930,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 13,
       "estimated_sales": 2690862,
-      "actual_sales": 755392
+      "actual_sales": 755392,
+      "tags": "construction"
     },
     {
       "id": 261319253,
@@ -38582,7 +39959,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 28,
       "estimated_sales": 2180444,
-      "actual_sales": 723600
+      "actual_sales": 723600,
+      "tags": "cold, engineering"
     },
     {
       "id": 307712780,
@@ -38610,7 +39988,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 35,
       "estimated_sales": 4835580,
-      "actual_sales": 937434
+      "actual_sales": 937434,
+      "tags": "warm, engineering"
     },
     {
       "id": 217484082,
@@ -38638,7 +40017,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 44,
       "estimated_sales": 2546390,
-      "actual_sales": 1361374
+      "actual_sales": 1361374,
+      "tags": "pro, medical"
     },
     {
       "id": 333299847,
@@ -38666,7 +40046,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 48,
       "estimated_sales": 275596,
-      "actual_sales": 1624545
+      "actual_sales": 1624545,
+      "tags": "cold, financial"
     },
     {
       "id": 475591474,
@@ -38694,7 +40075,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 35,
       "estimated_sales": 1826580,
-      "actual_sales": 1231230
+      "actual_sales": 1231230,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 93332110,
@@ -38722,7 +40104,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 77,
       "estimated_sales": 2303900,
-      "actual_sales": 2565408
+      "actual_sales": 2565408,
+      "tags": "cold, financial"
     },
     {
       "id": 869318054,
@@ -38750,7 +40133,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 64,
       "estimated_sales": 1052363,
-      "actual_sales": 1256360
+      "actual_sales": 1256360,
+      "tags": "hot, financial"
     },
     {
       "id": 108575536,
@@ -38778,7 +40162,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 4,
       "estimated_sales": 656500,
-      "actual_sales": 178269
+      "actual_sales": 178269,
+      "tags": "demo, medical"
     },
     {
       "id": 895640752,
@@ -38806,7 +40191,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 78,
       "estimated_sales": 1509282,
-      "actual_sales": 2432850
+      "actual_sales": 2432850,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 750983244,
@@ -38834,7 +40220,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 64,
       "estimated_sales": 1981282,
-      "actual_sales": 4126671
+      "actual_sales": 4126671,
+      "tags": "warm, retail"
     },
     {
       "id": 969850567,
@@ -38862,7 +40249,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 77,
       "estimated_sales": 1738649,
-      "actual_sales": 4458648
+      "actual_sales": 4458648,
+      "tags": "hot, financial"
     },
     {
       "id": 154563059,
@@ -38890,7 +40278,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 57,
       "estimated_sales": 2229517,
-      "actual_sales": 3985300
+      "actual_sales": 3985300,
+      "tags": "hot, construction"
     },
     {
       "id": 494404479,
@@ -38918,7 +40307,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 77,
       "estimated_sales": 1143252,
-      "actual_sales": 1491757
+      "actual_sales": 1491757,
+      "tags": "hot, construction"
     },
     {
       "id": 938241592,
@@ -38946,7 +40336,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 29,
       "estimated_sales": 1913391,
-      "actual_sales": 1713140
+      "actual_sales": 1713140,
+      "tags": "cold, engineering"
     },
     {
       "id": 735570146,
@@ -38974,7 +40365,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 34,
       "estimated_sales": 1352884,
-      "actual_sales": 2178330
+      "actual_sales": 2178330,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 269065071,
@@ -39002,7 +40394,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 26,
       "estimated_sales": 1566832,
-      "actual_sales": 841088
+      "actual_sales": 841088,
+      "tags": "hot, financial"
     },
     {
       "id": 874504487,
@@ -39030,7 +40423,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 19,
       "estimated_sales": 2415740,
-      "actual_sales": 493300
+      "actual_sales": 493300,
+      "tags": "cold, engineering"
     },
     {
       "id": 917310858,
@@ -39058,7 +40452,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 53,
       "estimated_sales": 1951320,
-      "actual_sales": 2658632
+      "actual_sales": 2658632,
+      "tags": ""
     },
     {
       "id": 127823993,
@@ -39086,7 +40481,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 66,
       "estimated_sales": 4116775,
-      "actual_sales": 2628463
+      "actual_sales": 2628463,
+      "tags": "warm, financial"
     },
     {
       "id": 855665518,
@@ -39114,7 +40510,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 78,
       "estimated_sales": 1675920,
-      "actual_sales": 1130346
+      "actual_sales": 1130346,
+      "tags": ""
     },
     {
       "id": 828771429,
@@ -39142,7 +40539,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 57,
       "estimated_sales": 1267110,
-      "actual_sales": 1256544
+      "actual_sales": 1256544,
+      "tags": "warm, construction"
     },
     {
       "id": 944529478,
@@ -39170,7 +40568,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 57,
       "estimated_sales": 668340,
-      "actual_sales": 5125926
+      "actual_sales": 5125926,
+      "tags": "pro, medical"
     },
     {
       "id": 278611648,
@@ -39198,7 +40597,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 81,
       "estimated_sales": 0,
-      "actual_sales": 5178630
+      "actual_sales": 5178630,
+      "tags": "pharmaceutical"
     },
     {
       "id": 367274255,
@@ -39226,7 +40626,8 @@ export const data: any[] = [
       "deals_total": 84,
       "ratio": 49,
       "estimated_sales": 1493910,
-      "actual_sales": 2375100
+      "actual_sales": 2375100,
+      "tags": "cold, engineering"
     },
     {
       "id": 480500860,
@@ -39254,7 +40655,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 37,
       "estimated_sales": 1473480,
-      "actual_sales": 1276688
+      "actual_sales": 1276688,
+      "tags": "construction"
     },
     {
       "id": 816439162,
@@ -39282,7 +40684,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 43,
       "estimated_sales": 4296734,
-      "actual_sales": 2413116
+      "actual_sales": 2413116,
+      "tags": "cool, construction"
     },
     {
       "id": 644051879,
@@ -39310,7 +40713,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 27,
       "estimated_sales": 989700,
-      "actual_sales": 501940
+      "actual_sales": 501940,
+      "tags": "hot, engineering"
     },
     {
       "id": 691527974,
@@ -39338,7 +40742,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 59,
       "estimated_sales": 2601060,
-      "actual_sales": 912262
+      "actual_sales": 912262,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 207236826,
@@ -39366,7 +40771,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 69,
       "estimated_sales": 956252,
-      "actual_sales": 3002260
+      "actual_sales": 3002260,
+      "tags": "cool, retail"
     },
     {
       "id": 932659384,
@@ -39394,7 +40800,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 4,
       "estimated_sales": 996110,
-      "actual_sales": 147215
+      "actual_sales": 147215,
+      "tags": "cool, financial"
     },
     {
       "id": 655011545,
@@ -39422,7 +40829,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 57,
       "estimated_sales": 893248,
-      "actual_sales": 1261323
+      "actual_sales": 1261323,
+      "tags": "hot, retail"
     },
     {
       "id": 257786990,
@@ -39450,7 +40858,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 36,
       "estimated_sales": 906888,
-      "actual_sales": 2260320
+      "actual_sales": 2260320,
+      "tags": "hot, medical"
     },
     {
       "id": 569056301,
@@ -39478,7 +40887,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 51,
       "estimated_sales": 1595970,
-      "actual_sales": 4840668
+      "actual_sales": 4840668,
+      "tags": "cold, construction"
     },
     {
       "id": 930060319,
@@ -39506,7 +40916,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 95,
       "estimated_sales": 2113419,
-      "actual_sales": 3607960
+      "actual_sales": 3607960,
+      "tags": "demo, financial"
     },
     {
       "id": 528419551,
@@ -39534,7 +40945,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 5,
       "estimated_sales": 3287020,
-      "actual_sales": 1455780
+      "actual_sales": 1455780,
+      "tags": "pro, financial"
     },
     {
       "id": 957926800,
@@ -39562,7 +40974,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 4,
       "estimated_sales": 952440,
-      "actual_sales": 1537130
+      "actual_sales": 1537130,
+      "tags": "demo, retail"
     },
     {
       "id": 502437553,
@@ -39590,7 +41003,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 8,
       "estimated_sales": 2948640,
-      "actual_sales": 161892
+      "actual_sales": 161892,
+      "tags": "pharmaceutical"
     },
     {
       "id": 258982810,
@@ -39618,7 +41032,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 32,
       "estimated_sales": 0,
-      "actual_sales": 1668199
+      "actual_sales": 1668199,
+      "tags": "cold, financial"
     },
     {
       "id": 137559798,
@@ -39646,7 +41061,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 6,
       "estimated_sales": 1806450,
-      "actual_sales": 860715
+      "actual_sales": 860715,
+      "tags": "demo, construction"
     },
     {
       "id": 729588891,
@@ -39674,7 +41090,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 61,
       "estimated_sales": 1751100,
-      "actual_sales": 1971750
+      "actual_sales": 1971750,
+      "tags": "subscriber, retail"
     },
     {
       "id": 187867822,
@@ -39702,7 +41119,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 53,
       "estimated_sales": 1348200,
-      "actual_sales": 2318760
+      "actual_sales": 2318760,
+      "tags": "medical"
     },
     {
       "id": 379570782,
@@ -39730,7 +41148,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 7,
       "estimated_sales": 1081598,
-      "actual_sales": 128192
+      "actual_sales": 128192,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 469616831,
@@ -39758,7 +41177,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 0,
       "estimated_sales": 4385130,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, engineering"
     },
     {
       "id": 429289663,
@@ -39786,7 +41206,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 85,
       "estimated_sales": 4066173,
-      "actual_sales": 3290659
+      "actual_sales": 3290659,
+      "tags": "hot, engineering"
     },
     {
       "id": 343898899,
@@ -39814,7 +41235,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 51,
       "estimated_sales": 3370140,
-      "actual_sales": 1855216
+      "actual_sales": 1855216,
+      "tags": "subscriber, construction"
     },
     {
       "id": 457552946,
@@ -39842,7 +41264,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 36,
       "estimated_sales": 3990632,
-      "actual_sales": 268860
+      "actual_sales": 268860,
+      "tags": ""
     },
     {
       "id": 761500164,
@@ -39870,7 +41293,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 51,
       "estimated_sales": 1101366,
-      "actual_sales": 1366959
+      "actual_sales": 1366959,
+      "tags": "subscriber, construction"
     },
     {
       "id": 333581398,
@@ -39898,7 +41322,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 63,
       "estimated_sales": 428172,
-      "actual_sales": 477250
+      "actual_sales": 477250,
+      "tags": "pro, construction"
     },
     {
       "id": 808412015,
@@ -39926,7 +41351,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 43,
       "estimated_sales": 2122524,
-      "actual_sales": 1460260
+      "actual_sales": 1460260,
+      "tags": "warm, engineering"
     },
     {
       "id": 575078814,
@@ -39954,7 +41380,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 55,
       "estimated_sales": 2882053,
-      "actual_sales": 3667380
+      "actual_sales": 3667380,
+      "tags": ""
     },
     {
       "id": 976436308,
@@ -39982,7 +41409,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 23,
       "estimated_sales": 326886,
-      "actual_sales": 627816
+      "actual_sales": 627816,
+      "tags": "cold, medical"
     },
     {
       "id": 469870780,
@@ -40010,7 +41438,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 47,
       "estimated_sales": 2440925,
-      "actual_sales": 1357377
+      "actual_sales": 1357377,
+      "tags": "cool, retail"
     },
     {
       "id": 880582042,
@@ -40038,7 +41467,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 61,
       "estimated_sales": 2377605,
-      "actual_sales": 1651636
+      "actual_sales": 1651636,
+      "tags": "warm, construction"
     },
     {
       "id": 857901990,
@@ -40066,7 +41496,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 57,
       "estimated_sales": 2331810,
-      "actual_sales": 1245840
+      "actual_sales": 1245840,
+      "tags": "cool, financial"
     },
     {
       "id": 722179636,
@@ -40094,7 +41525,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 6,
       "estimated_sales": 1119151,
-      "actual_sales": 1757781
+      "actual_sales": 1757781,
+      "tags": "cool, medical"
     },
     {
       "id": 18211557,
@@ -40122,7 +41554,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 15,
       "estimated_sales": 2099460,
-      "actual_sales": 117028
+      "actual_sales": 117028,
+      "tags": "pro, financial"
     },
     {
       "id": 816650166,
@@ -40150,7 +41583,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 58,
       "estimated_sales": 484974,
-      "actual_sales": 3749486
+      "actual_sales": 3749486,
+      "tags": "subscriber, medical"
     },
     {
       "id": 986457040,
@@ -40178,7 +41612,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 43,
       "estimated_sales": 2158044,
-      "actual_sales": 2852595
+      "actual_sales": 2852595,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 673187114,
@@ -40206,7 +41641,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 43,
       "estimated_sales": 2417898,
-      "actual_sales": 1477965
+      "actual_sales": 1477965,
+      "tags": "demo, engineering"
     },
     {
       "id": 887166536,
@@ -40234,7 +41670,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 33,
       "estimated_sales": 4116864,
-      "actual_sales": 1798128
+      "actual_sales": 1798128,
+      "tags": "warm, medical"
     },
     {
       "id": 806006960,
@@ -40262,7 +41699,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 82,
       "estimated_sales": 524540,
-      "actual_sales": 2307774
+      "actual_sales": 2307774,
+      "tags": "cold, construction"
     },
     {
       "id": 445551143,
@@ -40290,7 +41728,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 33,
       "estimated_sales": 2694713,
-      "actual_sales": 1295030
+      "actual_sales": 1295030,
+      "tags": "hot, financial"
     },
     {
       "id": 982736665,
@@ -40318,7 +41757,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 8,
       "estimated_sales": 5463571,
-      "actual_sales": 1137160
+      "actual_sales": 1137160,
+      "tags": "demo, financial"
     },
     {
       "id": 145397689,
@@ -40346,7 +41786,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 52,
       "estimated_sales": 1238925,
-      "actual_sales": 1744457
+      "actual_sales": 1744457,
+      "tags": "hot, engineering"
     },
     {
       "id": 117891874,
@@ -40374,7 +41815,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 75,
       "estimated_sales": 279362,
-      "actual_sales": 2492586
+      "actual_sales": 2492586,
+      "tags": "subscriber, financial"
     },
     {
       "id": 20422204,
@@ -40402,7 +41844,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 8,
       "estimated_sales": 2437120,
-      "actual_sales": 962064
+      "actual_sales": 962064,
+      "tags": "demo, engineering"
     },
     {
       "id": 205144602,
@@ -40430,7 +41873,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 32,
       "estimated_sales": 3141498,
-      "actual_sales": 1423390
+      "actual_sales": 1423390,
+      "tags": "warm, engineering"
     },
     {
       "id": 99673219,
@@ -40458,7 +41902,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 79,
       "estimated_sales": 3155776,
-      "actual_sales": 2449176
+      "actual_sales": 2449176,
+      "tags": "construction"
     },
     {
       "id": 779676670,
@@ -40486,7 +41931,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 52,
       "estimated_sales": 2606604,
-      "actual_sales": 4110100
+      "actual_sales": 4110100,
+      "tags": "cold, engineering"
     },
     {
       "id": 672785625,
@@ -40514,7 +41960,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 91,
       "estimated_sales": 2911293,
-      "actual_sales": 1017260
+      "actual_sales": 1017260,
+      "tags": ""
     },
     {
       "id": 19138979,
@@ -40542,7 +41989,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 71,
       "estimated_sales": 3312700,
-      "actual_sales": 2585925
+      "actual_sales": 2585925,
+      "tags": "demo, construction"
     },
     {
       "id": 518865426,
@@ -40570,7 +42018,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 85,
       "estimated_sales": 4299648,
-      "actual_sales": 1641101
+      "actual_sales": 1641101,
+      "tags": "cold, engineering"
     },
     {
       "id": 267812630,
@@ -40598,7 +42047,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 59,
       "estimated_sales": 5548164,
-      "actual_sales": 1656120
+      "actual_sales": 1656120,
+      "tags": "cool, financial"
     },
     {
       "id": 288631525,
@@ -40626,7 +42076,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 58,
       "estimated_sales": 945480,
-      "actual_sales": 3484676
+      "actual_sales": 3484676,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 940746141,
@@ -40654,7 +42105,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 59,
       "estimated_sales": 2360200,
-      "actual_sales": 4767810
+      "actual_sales": 4767810,
+      "tags": "demo, construction"
     },
     {
       "id": 375465886,
@@ -40682,7 +42134,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 13,
       "estimated_sales": 586927,
-      "actual_sales": 274893
+      "actual_sales": 274893,
+      "tags": "pharmaceutical"
     },
     {
       "id": 842707459,
@@ -40710,7 +42163,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 0,
       "estimated_sales": 329884,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, medical"
     },
     {
       "id": 865567189,
@@ -40738,7 +42192,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 4,
       "estimated_sales": 5131110,
-      "actual_sales": 170163
+      "actual_sales": 170163,
+      "tags": ""
     },
     {
       "id": 532611947,
@@ -40766,7 +42221,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 5,
       "estimated_sales": 3596435,
-      "actual_sales": 625818
+      "actual_sales": 625818,
+      "tags": "pro, retail"
     },
     {
       "id": 24271783,
@@ -40794,7 +42250,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 7,
       "estimated_sales": 2975310,
-      "actual_sales": 2291951
+      "actual_sales": 2291951,
+      "tags": "cool, financial"
     },
     {
       "id": 2778573,
@@ -40822,7 +42279,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 25,
       "estimated_sales": 1598310,
-      "actual_sales": 194630
+      "actual_sales": 194630,
+      "tags": "hot, retail"
     },
     {
       "id": 889496116,
@@ -40850,7 +42308,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 38,
       "estimated_sales": 1925406,
-      "actual_sales": 2126012
+      "actual_sales": 2126012,
+      "tags": ""
     },
     {
       "id": 449653680,
@@ -40878,7 +42337,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 44,
       "estimated_sales": 3240925,
-      "actual_sales": 3735192
+      "actual_sales": 3735192,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 236290886,
@@ -40906,7 +42366,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 0,
       "estimated_sales": 666690,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 730972505,
@@ -40934,7 +42395,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 62,
       "estimated_sales": 2330115,
-      "actual_sales": 1561232
+      "actual_sales": 1561232,
+      "tags": "pro, engineering"
     },
     {
       "id": 216746976,
@@ -40962,7 +42424,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 48,
       "estimated_sales": 3120150,
-      "actual_sales": 1233583
+      "actual_sales": 1233583,
+      "tags": "subscriber, financial"
     },
     {
       "id": 150990352,
@@ -40990,7 +42453,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 78,
       "estimated_sales": 1403000,
-      "actual_sales": 2189471
+      "actual_sales": 2189471,
+      "tags": "cold, retail"
     },
     {
       "id": 126728228,
@@ -41018,7 +42482,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 7,
       "estimated_sales": 1369344,
-      "actual_sales": 92147
+      "actual_sales": 92147,
+      "tags": "cool, construction"
     },
     {
       "id": 553436649,
@@ -41046,7 +42511,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 3,
       "estimated_sales": 3985152,
-      "actual_sales": 927924
+      "actual_sales": 927924,
+      "tags": "financial"
     },
     {
       "id": 320582148,
@@ -41074,7 +42540,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 38,
       "estimated_sales": 654219,
-      "actual_sales": 1773072
+      "actual_sales": 1773072,
+      "tags": "demo, medical"
     },
     {
       "id": 133626759,
@@ -41102,7 +42569,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 27,
       "estimated_sales": 3057390,
-      "actual_sales": 1478853
+      "actual_sales": 1478853,
+      "tags": "demo, retail"
     },
     {
       "id": 904356455,
@@ -41130,7 +42598,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 0,
       "estimated_sales": 1796004,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, financial"
     },
     {
       "id": 667262677,
@@ -41158,7 +42627,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 78,
       "estimated_sales": 2889384,
-      "actual_sales": 1308748
+      "actual_sales": 1308748,
+      "tags": "warm, retail"
     },
     {
       "id": 474601891,
@@ -41186,7 +42656,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 65,
       "estimated_sales": 1069576,
-      "actual_sales": 2568384
+      "actual_sales": 2568384,
+      "tags": "warm, retail"
     },
     {
       "id": 220349186,
@@ -41214,7 +42685,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 93,
       "estimated_sales": 2529709,
-      "actual_sales": 2338470
+      "actual_sales": 2338470,
+      "tags": "subscriber, financial"
     },
     {
       "id": 141471233,
@@ -41242,7 +42714,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 32,
       "estimated_sales": 5254173,
-      "actual_sales": 804300
+      "actual_sales": 804300,
+      "tags": "warm, financial"
     },
     {
       "id": 785509021,
@@ -41270,7 +42743,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 48,
       "estimated_sales": 2128825,
-      "actual_sales": 2274538
+      "actual_sales": 2274538,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 901746832,
@@ -41298,7 +42772,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 48,
       "estimated_sales": 2838474,
-      "actual_sales": 615130
+      "actual_sales": 615130,
+      "tags": "warm, construction"
     },
     {
       "id": 370584337,
@@ -41326,7 +42801,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 66,
       "estimated_sales": 1465296,
-      "actual_sales": 3986820
+      "actual_sales": 3986820,
+      "tags": "pro, financial"
     },
     {
       "id": 87146103,
@@ -41354,7 +42830,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 43,
       "estimated_sales": 1835014,
-      "actual_sales": 1903344
+      "actual_sales": 1903344,
+      "tags": "demo, medical"
     },
     {
       "id": 197778474,
@@ -41382,7 +42859,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 56,
       "estimated_sales": 2149603,
-      "actual_sales": 2790397
+      "actual_sales": 2790397,
+      "tags": "demo, construction"
     },
     {
       "id": 372535176,
@@ -41410,7 +42888,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 43,
       "estimated_sales": 1942278,
-      "actual_sales": 4353712
+      "actual_sales": 4353712,
+      "tags": "retail"
     },
     {
       "id": 874722013,
@@ -41438,7 +42917,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 45,
       "estimated_sales": 2489665,
-      "actual_sales": 2256116
+      "actual_sales": 2256116,
+      "tags": "cool, financial"
     },
     {
       "id": 344214823,
@@ -41466,7 +42946,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 51,
       "estimated_sales": 1177500,
-      "actual_sales": 2765752
+      "actual_sales": 2765752,
+      "tags": "pro, engineering"
     },
     {
       "id": 847143173,
@@ -41494,7 +42975,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 43,
       "estimated_sales": 132067,
-      "actual_sales": 1923541
+      "actual_sales": 1923541,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 176324501,
@@ -41522,7 +43004,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 47,
       "estimated_sales": 2362794,
-      "actual_sales": 1297770
+      "actual_sales": 1297770,
+      "tags": "pharmaceutical"
     },
     {
       "id": 115437704,
@@ -41550,7 +43033,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 68,
       "estimated_sales": 94303,
-      "actual_sales": 5598264
+      "actual_sales": 5598264,
+      "tags": "construction"
     },
     {
       "id": 561877670,
@@ -41578,7 +43062,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 33,
       "estimated_sales": 4530977,
-      "actual_sales": 639306
+      "actual_sales": 639306,
+      "tags": "cold, financial"
     },
     {
       "id": 707022237,
@@ -41606,7 +43091,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 33,
       "estimated_sales": 769080,
-      "actual_sales": 611568
+      "actual_sales": 611568,
+      "tags": "demo, retail"
     },
     {
       "id": 186670660,
@@ -41634,7 +43120,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 44,
       "estimated_sales": 3521682,
-      "actual_sales": 2952784
+      "actual_sales": 2952784,
+      "tags": "financial"
     },
     {
       "id": 570292405,
@@ -41662,7 +43149,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 37,
       "estimated_sales": 4773672,
-      "actual_sales": 3359115
+      "actual_sales": 3359115,
+      "tags": "cold, engineering"
     },
     {
       "id": 981387050,
@@ -41690,7 +43178,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 9,
       "estimated_sales": 765392,
-      "actual_sales": 2412144
+      "actual_sales": 2412144,
+      "tags": "warm, construction"
     },
     {
       "id": 175407369,
@@ -41718,7 +43207,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 51,
       "estimated_sales": 4619425,
-      "actual_sales": 2532600
+      "actual_sales": 2532600,
+      "tags": "retail"
     },
     {
       "id": 438159947,
@@ -41746,7 +43236,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 4,
       "estimated_sales": 2840424,
-      "actual_sales": 1905568
+      "actual_sales": 1905568,
+      "tags": "hot, retail"
     },
     {
       "id": 609955194,
@@ -41774,7 +43265,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 34,
       "estimated_sales": 1905180,
-      "actual_sales": 967161
+      "actual_sales": 967161,
+      "tags": "retail"
     },
     {
       "id": 513977603,
@@ -41802,7 +43294,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 4,
       "estimated_sales": 2247210,
-      "actual_sales": 656304
+      "actual_sales": 656304,
+      "tags": "engineering"
     },
     {
       "id": 138160685,
@@ -41830,7 +43323,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 58,
       "estimated_sales": 3784004,
-      "actual_sales": 2788668
+      "actual_sales": 2788668,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 954118547,
@@ -41858,7 +43352,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 8,
       "estimated_sales": 848965,
-      "actual_sales": 4767168
+      "actual_sales": 4767168,
+      "tags": "demo, engineering"
     },
     {
       "id": 616978661,
@@ -41886,7 +43381,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 51,
       "estimated_sales": 1093573,
-      "actual_sales": 3647715
+      "actual_sales": 3647715,
+      "tags": "demo, medical"
     },
     {
       "id": 142063764,
@@ -41914,7 +43410,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 67,
       "estimated_sales": 4671135,
-      "actual_sales": 747736
+      "actual_sales": 747736,
+      "tags": "construction"
     },
     {
       "id": 901850606,
@@ -41942,7 +43439,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 55,
       "estimated_sales": 924560,
-      "actual_sales": 3803410
+      "actual_sales": 3803410,
+      "tags": "warm, engineering"
     },
     {
       "id": 314303735,
@@ -41970,7 +43468,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 52,
       "estimated_sales": 2284438,
-      "actual_sales": 2233812
+      "actual_sales": 2233812,
+      "tags": "hot, engineering"
     },
     {
       "id": 16456198,
@@ -41998,7 +43497,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 24,
       "estimated_sales": 1466360,
-      "actual_sales": 430720
+      "actual_sales": 430720,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 318296601,
@@ -42026,7 +43526,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 14,
       "estimated_sales": 1060499,
-      "actual_sales": 335589
+      "actual_sales": 335589,
+      "tags": "cool, retail"
     },
     {
       "id": 231401331,
@@ -42054,7 +43555,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 64,
       "estimated_sales": 3078803,
-      "actual_sales": 2034802
+      "actual_sales": 2034802,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 619125233,
@@ -42082,7 +43584,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 72,
       "estimated_sales": 432927,
-      "actual_sales": 1249935
+      "actual_sales": 1249935,
+      "tags": "demo, engineering"
     },
     {
       "id": 959625075,
@@ -42110,7 +43613,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 46,
       "estimated_sales": 801906,
-      "actual_sales": 1992996
+      "actual_sales": 1992996,
+      "tags": "hot, medical"
     },
     {
       "id": 531546473,
@@ -42138,7 +43642,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 0,
       "estimated_sales": 1613650,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, medical"
     },
     {
       "id": 526413857,
@@ -42166,7 +43671,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 24,
       "estimated_sales": 2080224,
-      "actual_sales": 473916
+      "actual_sales": 473916,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 345635652,
@@ -42194,7 +43700,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 58,
       "estimated_sales": 3257980,
-      "actual_sales": 4821050
+      "actual_sales": 4821050,
+      "tags": "cool, construction"
     },
     {
       "id": 982765196,
@@ -42222,7 +43729,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 41,
       "estimated_sales": 3427740,
-      "actual_sales": 1298805
+      "actual_sales": 1298805,
+      "tags": "demo, retail"
     },
     {
       "id": 397130110,
@@ -42250,7 +43758,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 23,
       "estimated_sales": 1804236,
-      "actual_sales": 563949
+      "actual_sales": 563949,
+      "tags": "hot, engineering"
     },
     {
       "id": 476526340,
@@ -42278,7 +43787,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 14,
       "estimated_sales": 1462076,
-      "actual_sales": 510688
+      "actual_sales": 510688,
+      "tags": "subscriber, medical"
     },
     {
       "id": 877824757,
@@ -42306,7 +43816,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 68,
       "estimated_sales": 2800395,
-      "actual_sales": 4786911
+      "actual_sales": 4786911,
+      "tags": "warm, financial"
     },
     {
       "id": 761826673,
@@ -42334,7 +43845,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 79,
       "estimated_sales": 2116688,
-      "actual_sales": 3877938
+      "actual_sales": 3877938,
+      "tags": "hot, retail"
     },
     {
       "id": 895633326,
@@ -42362,7 +43874,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 39,
       "estimated_sales": 2932398,
-      "actual_sales": 1078425
+      "actual_sales": 1078425,
+      "tags": "hot, construction"
     },
     {
       "id": 841896625,
@@ -42390,7 +43903,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 58,
       "estimated_sales": 826567,
-      "actual_sales": 1878090
+      "actual_sales": 1878090,
+      "tags": "cool, medical"
     },
     {
       "id": 383236797,
@@ -42418,7 +43932,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 52,
       "estimated_sales": 1350792,
-      "actual_sales": 854971
+      "actual_sales": 854971,
+      "tags": "subscriber, financial"
     },
     {
       "id": 730697545,
@@ -42446,7 +43961,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 32,
       "estimated_sales": 2754200,
-      "actual_sales": 1499319
+      "actual_sales": 1499319,
+      "tags": "construction"
     },
     {
       "id": 744275584,
@@ -42474,7 +43990,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 32,
       "estimated_sales": 581130,
-      "actual_sales": 592314
+      "actual_sales": 592314,
+      "tags": "hot, retail"
     },
     {
       "id": 186444821,
@@ -42502,7 +44019,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 48,
       "estimated_sales": 1474064,
-      "actual_sales": 2710334
+      "actual_sales": 2710334,
+      "tags": "cool, financial"
     },
     {
       "id": 339622120,
@@ -42530,7 +44048,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 25,
       "estimated_sales": 1760844,
-      "actual_sales": 90427
+      "actual_sales": 90427,
+      "tags": "financial"
     },
     {
       "id": 607426425,
@@ -42558,7 +44077,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 92,
       "estimated_sales": 1303608,
-      "actual_sales": 4288328
+      "actual_sales": 4288328,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 661147848,
@@ -42586,7 +44106,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 74,
       "estimated_sales": 3082520,
-      "actual_sales": 1475906
+      "actual_sales": 1475906,
+      "tags": "warm, engineering"
     },
     {
       "id": 874746248,
@@ -42614,7 +44135,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 44,
       "estimated_sales": 0,
-      "actual_sales": 2632297
+      "actual_sales": 2632297,
+      "tags": "hot, medical"
     },
     {
       "id": 426500862,
@@ -42642,7 +44164,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 5,
       "estimated_sales": 890352,
-      "actual_sales": 3114358
+      "actual_sales": 3114358,
+      "tags": "medical"
     },
     {
       "id": 665468720,
@@ -42670,7 +44193,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 57,
       "estimated_sales": 689340,
-      "actual_sales": 4929525
+      "actual_sales": 4929525,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 189087767,
@@ -42698,7 +44222,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 47,
       "estimated_sales": 2024268,
-      "actual_sales": 3228840
+      "actual_sales": 3228840,
+      "tags": "pro, construction"
     },
     {
       "id": 98126649,
@@ -42726,7 +44251,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 34,
       "estimated_sales": 2403148,
-      "actual_sales": 1321188
+      "actual_sales": 1321188,
+      "tags": "subscriber, medical"
     },
     {
       "id": 356196997,
@@ -42754,7 +44280,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 26,
       "estimated_sales": 60241,
-      "actual_sales": 823590
+      "actual_sales": 823590,
+      "tags": "hot, financial"
     },
     {
       "id": 370067071,
@@ -42782,7 +44309,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 58,
       "estimated_sales": 4971930,
-      "actual_sales": 4613336
+      "actual_sales": 4613336,
+      "tags": "cool, engineering"
     },
     {
       "id": 983607030,
@@ -42810,7 +44338,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 77,
       "estimated_sales": 904638,
-      "actual_sales": 2779665
+      "actual_sales": 2779665,
+      "tags": "hot, construction"
     },
     {
       "id": 575066011,
@@ -42838,7 +44367,8 @@ export const data: any[] = [
       "deals_total": 79,
       "ratio": 54,
       "estimated_sales": 3102300,
-      "actual_sales": 4483574
+      "actual_sales": 4483574,
+      "tags": ""
     },
     {
       "id": 438831578,
@@ -42866,7 +44396,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 72,
       "estimated_sales": 234195,
-      "actual_sales": 2995278
+      "actual_sales": 2995278,
+      "tags": "construction"
     },
     {
       "id": 793218449,
@@ -42894,7 +44425,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 37,
       "estimated_sales": 513948,
-      "actual_sales": 1848660
+      "actual_sales": 1848660,
+      "tags": "hot, engineering"
     },
     {
       "id": 153673670,
@@ -42922,7 +44454,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 18,
       "estimated_sales": 1281033,
-      "actual_sales": 701350
+      "actual_sales": 701350,
+      "tags": "demo, medical"
     },
     {
       "id": 712612019,
@@ -42950,7 +44483,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 74,
       "estimated_sales": 0,
-      "actual_sales": 1983497
+      "actual_sales": 1983497,
+      "tags": "cool, construction"
     },
     {
       "id": 946720446,
@@ -42978,7 +44512,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 59,
       "estimated_sales": 733719,
-      "actual_sales": 2122146
+      "actual_sales": 2122146,
+      "tags": "retail"
     },
     {
       "id": 22923442,
@@ -43006,7 +44541,8 @@ export const data: any[] = [
       "deals_total": 82,
       "ratio": 47,
       "estimated_sales": 2449325,
-      "actual_sales": 2444634
+      "actual_sales": 2444634,
+      "tags": "subscriber, medical"
     },
     {
       "id": 53365533,
@@ -43034,7 +44570,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 31,
       "estimated_sales": 0,
-      "actual_sales": 273705
+      "actual_sales": 273705,
+      "tags": "cool, retail"
     },
     {
       "id": 861722660,
@@ -43062,7 +44599,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 97,
       "estimated_sales": 1355776,
-      "actual_sales": 2856560
+      "actual_sales": 2856560,
+      "tags": "subscriber, construction"
     },
     {
       "id": 482262757,
@@ -43090,7 +44628,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 28,
       "estimated_sales": 165243,
-      "actual_sales": 634770
+      "actual_sales": 634770,
+      "tags": "hot, construction"
     },
     {
       "id": 506564262,
@@ -43118,7 +44657,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 2,
       "estimated_sales": 815843,
-      "actual_sales": 1080016
+      "actual_sales": 1080016,
+      "tags": "cool, medical"
     },
     {
       "id": 993231478,
@@ -43146,7 +44686,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 22,
       "estimated_sales": 2071170,
-      "actual_sales": 229976
+      "actual_sales": 229976,
+      "tags": "cold, engineering"
     },
     {
       "id": 843818892,
@@ -43174,7 +44715,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 28,
       "estimated_sales": 1137576,
-      "actual_sales": 1597926
+      "actual_sales": 1597926,
+      "tags": "warm, engineering"
     },
     {
       "id": 882119525,
@@ -43202,7 +44744,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 48,
       "estimated_sales": 3670990,
-      "actual_sales": 2659140
+      "actual_sales": 2659140,
+      "tags": "cold, financial"
     },
     {
       "id": 986309794,
@@ -43230,7 +44773,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 71,
       "estimated_sales": 3282421,
-      "actual_sales": 1872600
+      "actual_sales": 1872600,
+      "tags": "hot, medical"
     },
     {
       "id": 479666969,
@@ -43258,7 +44802,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 39,
       "estimated_sales": 3318315,
-      "actual_sales": 1465623
+      "actual_sales": 1465623,
+      "tags": "subscriber, financial"
     },
     {
       "id": 447554903,
@@ -43286,7 +44831,8 @@ export const data: any[] = [
       "deals_total": 6,
       "ratio": 6,
       "estimated_sales": 170454,
-      "actual_sales": 236742
+      "actual_sales": 236742,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 967671059,
@@ -43314,7 +44860,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 53,
       "estimated_sales": 3427240,
-      "actual_sales": 1219401
+      "actual_sales": 1219401,
+      "tags": "pro, engineering"
     },
     {
       "id": 217984215,
@@ -43342,7 +44889,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 0,
       "estimated_sales": 3656701,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, construction"
     },
     {
       "id": 719801749,
@@ -43370,7 +44918,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 9,
       "estimated_sales": 1587789,
-      "actual_sales": 1637097
+      "actual_sales": 1637097,
+      "tags": "financial"
     },
     {
       "id": 345614659,
@@ -43398,7 +44947,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 38,
       "estimated_sales": 3542120,
-      "actual_sales": 1654320
+      "actual_sales": 1654320,
+      "tags": "medical"
     },
     {
       "id": 741678382,
@@ -43426,7 +44976,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 18,
       "estimated_sales": 1263969,
-      "actual_sales": 488568
+      "actual_sales": 488568,
+      "tags": "cold, retail"
     },
     {
       "id": 338068559,
@@ -43454,7 +45005,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 23,
       "estimated_sales": 628830,
-      "actual_sales": 1772118
+      "actual_sales": 1772118,
+      "tags": "warm, financial"
     },
     {
       "id": 821494346,
@@ -43482,7 +45034,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 4,
       "estimated_sales": 1734708,
-      "actual_sales": 1100754
+      "actual_sales": 1100754,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 68879865,
@@ -43510,7 +45063,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 44,
       "estimated_sales": 0,
-      "actual_sales": 1007344
+      "actual_sales": 1007344,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 493366045,
@@ -43538,7 +45092,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 25,
       "estimated_sales": 665208,
-      "actual_sales": 316112
+      "actual_sales": 316112,
+      "tags": "hot, engineering"
     },
     {
       "id": 953082081,
@@ -43566,7 +45121,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 57,
       "estimated_sales": 1629760,
-      "actual_sales": 776802
+      "actual_sales": 776802,
+      "tags": "cool, retail"
     },
     {
       "id": 790044613,
@@ -43594,7 +45150,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 47,
       "estimated_sales": 1162120,
-      "actual_sales": 1428829
+      "actual_sales": 1428829,
+      "tags": "subscriber, retail"
     },
     {
       "id": 944777793,
@@ -43622,7 +45179,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 64,
       "estimated_sales": 1087856,
-      "actual_sales": 804692
+      "actual_sales": 804692,
+      "tags": "warm, retail"
     },
     {
       "id": 940438040,
@@ -43650,7 +45208,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 38,
       "estimated_sales": 2274566,
-      "actual_sales": 977065
+      "actual_sales": 977065,
+      "tags": "warm, retail"
     },
     {
       "id": 290396928,
@@ -43678,7 +45237,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 72,
       "estimated_sales": 3116610,
-      "actual_sales": 3179020
+      "actual_sales": 3179020,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 275098843,
@@ -43706,7 +45266,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 66,
       "estimated_sales": 1169602,
-      "actual_sales": 5049459
+      "actual_sales": 5049459,
+      "tags": ""
     },
     {
       "id": 656294308,
@@ -43734,7 +45295,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 84,
       "estimated_sales": 1128405,
-      "actual_sales": 4385680
+      "actual_sales": 4385680,
+      "tags": "hot, retail"
     },
     {
       "id": 7401113,
@@ -43762,7 +45324,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 39,
       "estimated_sales": 1535872,
-      "actual_sales": 2834952
+      "actual_sales": 2834952,
+      "tags": "hot, medical"
     },
     {
       "id": 276031180,
@@ -43790,7 +45353,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 88,
       "estimated_sales": 350757,
-      "actual_sales": 1025304
+      "actual_sales": 1025304,
+      "tags": "cool, financial"
     },
     {
       "id": 250541456,
@@ -43818,7 +45382,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 43,
       "estimated_sales": 939876,
-      "actual_sales": 2035360
+      "actual_sales": 2035360,
+      "tags": "cold, medical"
     },
     {
       "id": 422199913,
@@ -43846,7 +45411,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 67,
       "estimated_sales": 1801360,
-      "actual_sales": 4058714
+      "actual_sales": 4058714,
+      "tags": "cold, engineering"
     },
     {
       "id": 547270527,
@@ -43874,7 +45440,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 73,
       "estimated_sales": 869590,
-      "actual_sales": 1570074
+      "actual_sales": 1570074,
+      "tags": "demo, engineering"
     },
     {
       "id": 266469344,
@@ -43902,7 +45469,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 65,
       "estimated_sales": 2399436,
-      "actual_sales": 4802028
+      "actual_sales": 4802028,
+      "tags": "pro, engineering"
     },
     {
       "id": 250606731,
@@ -43930,7 +45498,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 13,
       "estimated_sales": 2302710,
-      "actual_sales": 331024
+      "actual_sales": 331024,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 413601430,
@@ -43958,7 +45527,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 77,
       "estimated_sales": 753390,
-      "actual_sales": 2681928
+      "actual_sales": 2681928,
+      "tags": "demo, construction"
     },
     {
       "id": 203715571,
@@ -43986,7 +45556,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 79,
       "estimated_sales": 2755360,
-      "actual_sales": 5681490
+      "actual_sales": 5681490,
+      "tags": "warm, retail"
     },
     {
       "id": 646203766,
@@ -44014,7 +45585,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 5,
       "estimated_sales": 708210,
-      "actual_sales": 1243080
+      "actual_sales": 1243080,
+      "tags": "medical"
     },
     {
       "id": 660417002,
@@ -44042,7 +45614,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 55,
       "estimated_sales": 1559964,
-      "actual_sales": 2264419
+      "actual_sales": 2264419,
+      "tags": "cold, construction"
     },
     {
       "id": 733151511,
@@ -44070,7 +45643,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 53,
       "estimated_sales": 751686,
-      "actual_sales": 3171760
+      "actual_sales": 3171760,
+      "tags": "hot, medical"
     },
     {
       "id": 405583110,
@@ -44098,7 +45672,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 29,
       "estimated_sales": 2913678,
-      "actual_sales": 119212
+      "actual_sales": 119212,
+      "tags": "demo, financial"
     },
     {
       "id": 91493592,
@@ -44126,7 +45701,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 57,
       "estimated_sales": 2708300,
-      "actual_sales": 1776336
+      "actual_sales": 1776336,
+      "tags": "medical"
     },
     {
       "id": 364611604,
@@ -44154,7 +45730,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 28,
       "estimated_sales": 596244,
-      "actual_sales": 1592808
+      "actual_sales": 1592808,
+      "tags": "hot, medical"
     },
     {
       "id": 851778392,
@@ -44182,7 +45759,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 54,
       "estimated_sales": 3452253,
-      "actual_sales": 1738557
+      "actual_sales": 1738557,
+      "tags": "cold, medical"
     },
     {
       "id": 485738416,
@@ -44210,7 +45788,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 2,
       "estimated_sales": 1727230,
-      "actual_sales": 169552
+      "actual_sales": 169552,
+      "tags": "pro, medical"
     },
     {
       "id": 615281499,
@@ -44238,7 +45817,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 19,
       "estimated_sales": 2852450,
-      "actual_sales": 240939
+      "actual_sales": 240939,
+      "tags": "demo, medical"
     },
     {
       "id": 296427847,
@@ -44266,7 +45846,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 8,
       "estimated_sales": 225639,
-      "actual_sales": 173462
+      "actual_sales": 173462,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 744050138,
@@ -44294,7 +45875,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 44,
       "estimated_sales": 1936423,
-      "actual_sales": 2706808
+      "actual_sales": 2706808,
+      "tags": ""
     },
     {
       "id": 186098226,
@@ -44322,7 +45904,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 55,
       "estimated_sales": 1183335,
-      "actual_sales": 2025972
+      "actual_sales": 2025972,
+      "tags": "hot, medical"
     },
     {
       "id": 337287512,
@@ -44350,7 +45933,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 48,
       "estimated_sales": 1245168,
-      "actual_sales": 1315240
+      "actual_sales": 1315240,
+      "tags": "pro, retail"
     },
     {
       "id": 777432545,
@@ -44378,7 +45962,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 5,
       "estimated_sales": 1975638,
-      "actual_sales": 3730916
+      "actual_sales": 3730916,
+      "tags": "hot, financial"
     },
     {
       "id": 260606193,
@@ -44406,7 +45991,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 7,
       "estimated_sales": 4196472,
-      "actual_sales": 1584631
+      "actual_sales": 1584631,
+      "tags": "warm, financial"
     },
     {
       "id": 262225813,
@@ -44434,7 +46020,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 5,
       "estimated_sales": 3986325,
-      "actual_sales": 1004113
+      "actual_sales": 1004113,
+      "tags": "retail"
     },
     {
       "id": 752609942,
@@ -44462,7 +46049,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 94,
       "estimated_sales": 0,
-      "actual_sales": 4920450
+      "actual_sales": 4920450,
+      "tags": "cold, retail"
     },
     {
       "id": 586890092,
@@ -44490,7 +46078,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 22,
       "estimated_sales": 854496,
-      "actual_sales": 680512
+      "actual_sales": 680512,
+      "tags": "cold, financial"
     },
     {
       "id": 972463528,
@@ -44518,7 +46107,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 56,
       "estimated_sales": 1541727,
-      "actual_sales": 1054539
+      "actual_sales": 1054539,
+      "tags": "medical"
     },
     {
       "id": 468687741,
@@ -44546,7 +46136,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 76,
       "estimated_sales": 463540,
-      "actual_sales": 1599097
+      "actual_sales": 1599097,
+      "tags": "cold, medical"
     },
     {
       "id": 41010818,
@@ -44574,7 +46165,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 14,
       "estimated_sales": 1941346,
-      "actual_sales": 731436
+      "actual_sales": 731436,
+      "tags": "warm, engineering"
     },
     {
       "id": 777900041,
@@ -44602,7 +46194,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 29,
       "estimated_sales": 2094990,
-      "actual_sales": 946812
+      "actual_sales": 946812,
+      "tags": "cool, financial"
     },
     {
       "id": 669939496,
@@ -44630,7 +46223,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 49,
       "estimated_sales": 761124,
-      "actual_sales": 4779270
+      "actual_sales": 4779270,
+      "tags": "demo, financial"
     },
     {
       "id": 407984214,
@@ -44658,7 +46252,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 93,
       "estimated_sales": 2450860,
-      "actual_sales": 2150470
+      "actual_sales": 2150470,
+      "tags": "cold, retail"
     },
     {
       "id": 739162169,
@@ -44686,7 +46281,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 63,
       "estimated_sales": 2523300,
-      "actual_sales": 1707855
+      "actual_sales": 1707855,
+      "tags": "demo, retail"
     },
     {
       "id": 634555179,
@@ -44714,7 +46310,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 23,
       "estimated_sales": 3738150,
-      "actual_sales": 332367
+      "actual_sales": 332367,
+      "tags": ""
     },
     {
       "id": 902555867,
@@ -44742,7 +46339,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 56,
       "estimated_sales": 3370000,
-      "actual_sales": 1492920
+      "actual_sales": 1492920,
+      "tags": ""
     },
     {
       "id": 883680890,
@@ -44770,7 +46368,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 38,
       "estimated_sales": 1288521,
-      "actual_sales": 2873104
+      "actual_sales": 2873104,
+      "tags": "hot, retail"
     },
     {
       "id": 152279720,
@@ -44798,7 +46397,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 0,
       "estimated_sales": 1000041,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, retail"
     },
     {
       "id": 917574056,
@@ -44826,7 +46426,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 46,
       "estimated_sales": 1888236,
-      "actual_sales": 4595101
+      "actual_sales": 4595101,
+      "tags": "construction"
     },
     {
       "id": 210375210,
@@ -44854,7 +46455,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 42,
       "estimated_sales": 1285578,
-      "actual_sales": 487020
+      "actual_sales": 487020,
+      "tags": "demo, construction"
     },
     {
       "id": 498102372,
@@ -44882,7 +46484,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 35,
       "estimated_sales": 762966,
-      "actual_sales": 1278216
+      "actual_sales": 1278216,
+      "tags": "cold, engineering"
     },
     {
       "id": 606386448,
@@ -44910,7 +46513,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 74,
       "estimated_sales": 4658175,
-      "actual_sales": 3550430
+      "actual_sales": 3550430,
+      "tags": "cool, medical"
     },
     {
       "id": 694569936,
@@ -44938,7 +46542,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 59,
       "estimated_sales": 3956134,
-      "actual_sales": 925150
+      "actual_sales": 925150,
+      "tags": "cool, retail"
     },
     {
       "id": 996849944,
@@ -44966,7 +46571,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 59,
       "estimated_sales": 2066307,
-      "actual_sales": 3316070
+      "actual_sales": 3316070,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 259311047,
@@ -44994,7 +46600,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 8,
       "estimated_sales": 2122498,
-      "actual_sales": 1665960
+      "actual_sales": 1665960,
+      "tags": "hot, retail"
     },
     {
       "id": 864382563,
@@ -45022,7 +46629,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 89,
       "estimated_sales": 908383,
-      "actual_sales": 878764
+      "actual_sales": 878764,
+      "tags": "subscriber, construction"
     },
     {
       "id": 232410212,
@@ -45050,7 +46658,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 56,
       "estimated_sales": 1145628,
-      "actual_sales": 792820
+      "actual_sales": 792820,
+      "tags": "construction"
     },
     {
       "id": 586026751,
@@ -45078,7 +46687,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 9,
       "estimated_sales": 3251637,
-      "actual_sales": 344688
+      "actual_sales": 344688,
+      "tags": "cold, financial"
     },
     {
       "id": 341973889,
@@ -45106,7 +46716,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 0,
       "estimated_sales": 1908056,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, engineering"
     },
     {
       "id": 309726403,
@@ -45134,7 +46745,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 4,
       "estimated_sales": 2675705,
-      "actual_sales": 1203804
+      "actual_sales": 1203804,
+      "tags": "cool, retail"
     },
     {
       "id": 836701031,
@@ -45162,7 +46774,8 @@ export const data: any[] = [
       "deals_total": 80,
       "ratio": 46,
       "estimated_sales": 1571370,
-      "actual_sales": 3236951
+      "actual_sales": 3236951,
+      "tags": "hot, construction"
     },
     {
       "id": 771819564,
@@ -45190,7 +46803,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 77,
       "estimated_sales": 1367587,
-      "actual_sales": 1360210
+      "actual_sales": 1360210,
+      "tags": "demo, construction"
     },
     {
       "id": 462698525,
@@ -45218,7 +46832,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 67,
       "estimated_sales": 2211125,
-      "actual_sales": 4343500
+      "actual_sales": 4343500,
+      "tags": "warm, financial"
     },
     {
       "id": 299505315,
@@ -45246,7 +46861,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 76,
       "estimated_sales": 1944838,
-      "actual_sales": 2508779
+      "actual_sales": 2508779,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 53004691,
@@ -45274,7 +46890,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 82,
       "estimated_sales": 1496656,
-      "actual_sales": 3357288
+      "actual_sales": 3357288,
+      "tags": "pro, retail"
     },
     {
       "id": 473188729,
@@ -45302,7 +46919,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 0,
       "estimated_sales": 1428098,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, retail"
     },
     {
       "id": 984001167,
@@ -45330,7 +46948,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 44,
       "estimated_sales": 2832420,
-      "actual_sales": 2458263
+      "actual_sales": 2458263,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 510691399,
@@ -45358,7 +46977,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 57,
       "estimated_sales": 2296220,
-      "actual_sales": 3132660
+      "actual_sales": 3132660,
+      "tags": "demo, engineering"
     },
     {
       "id": 949685769,
@@ -45386,7 +47006,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 42,
       "estimated_sales": 1917168,
-      "actual_sales": 514864
+      "actual_sales": 514864,
+      "tags": "cool, medical"
     },
     {
       "id": 408374406,
@@ -45414,7 +47035,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 49,
       "estimated_sales": 2417742,
-      "actual_sales": 1708347
+      "actual_sales": 1708347,
+      "tags": "pharmaceutical"
     },
     {
       "id": 178379638,
@@ -45442,7 +47064,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 38,
       "estimated_sales": 4078618,
-      "actual_sales": 631240
+      "actual_sales": 631240,
+      "tags": "medical"
     },
     {
       "id": 992060824,
@@ -45470,7 +47093,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 79,
       "estimated_sales": 0,
-      "actual_sales": 2683104
+      "actual_sales": 2683104,
+      "tags": "hot, medical"
     },
     {
       "id": 336274632,
@@ -45498,7 +47122,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 42,
       "estimated_sales": 2080764,
-      "actual_sales": 3044332
+      "actual_sales": 3044332,
+      "tags": "cold, retail"
     },
     {
       "id": 793567012,
@@ -45526,7 +47151,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 0,
       "estimated_sales": 1160880,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, financial"
     },
     {
       "id": 169728752,
@@ -45554,7 +47180,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 23,
       "estimated_sales": 1499836,
-      "actual_sales": 1614024
+      "actual_sales": 1614024,
+      "tags": "warm, financial"
     },
     {
       "id": 658298234,
@@ -45582,7 +47209,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 43,
       "estimated_sales": 148453,
-      "actual_sales": 953748
+      "actual_sales": 953748,
+      "tags": "engineering"
     },
     {
       "id": 882784439,
@@ -45610,7 +47238,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 24,
       "estimated_sales": 1781060,
-      "actual_sales": 600530
+      "actual_sales": 600530,
+      "tags": "medical"
     },
     {
       "id": 708242760,
@@ -45638,7 +47267,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 78,
       "estimated_sales": 368452,
-      "actual_sales": 3744426
+      "actual_sales": 3744426,
+      "tags": "cool, medical"
     },
     {
       "id": 796105925,
@@ -45666,7 +47296,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 87,
       "estimated_sales": 1578225,
-      "actual_sales": 3230928
+      "actual_sales": 3230928,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 363996993,
@@ -45694,7 +47325,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 23,
       "estimated_sales": 3565368,
-      "actual_sales": 812553
+      "actual_sales": 812553,
+      "tags": "warm, construction"
     },
     {
       "id": 959363122,
@@ -45722,7 +47354,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 53,
       "estimated_sales": 2161720,
-      "actual_sales": 1444378
+      "actual_sales": 1444378,
+      "tags": ""
     },
     {
       "id": 22467500,
@@ -45750,7 +47383,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 64,
       "estimated_sales": 2714280,
-      "actual_sales": 4209060
+      "actual_sales": 4209060,
+      "tags": "cold, construction"
     },
     {
       "id": 813329542,
@@ -45778,7 +47412,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 47,
       "estimated_sales": 252075,
-      "actual_sales": 1455000
+      "actual_sales": 1455000,
+      "tags": ""
     },
     {
       "id": 450150024,
@@ -45806,7 +47441,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 35,
       "estimated_sales": 742028,
-      "actual_sales": 1041489
+      "actual_sales": 1041489,
+      "tags": "warm, retail"
     },
     {
       "id": 213254550,
@@ -45834,7 +47470,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 5,
       "estimated_sales": 1742571,
-      "actual_sales": 65771
+      "actual_sales": 65771,
+      "tags": "demo, construction"
     },
     {
       "id": 905855681,
@@ -45862,7 +47499,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 48,
       "estimated_sales": 712179,
-      "actual_sales": 3221086
+      "actual_sales": 3221086,
+      "tags": "demo, financial"
     },
     {
       "id": 251079309,
@@ -45890,7 +47528,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 55,
       "estimated_sales": 0,
-      "actual_sales": 1848119
+      "actual_sales": 1848119,
+      "tags": "subscriber, medical"
     },
     {
       "id": 166582450,
@@ -45918,7 +47557,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 83,
       "estimated_sales": 4445486,
-      "actual_sales": 1932610
+      "actual_sales": 1932610,
+      "tags": "demo, financial"
     },
     {
       "id": 877336422,
@@ -45946,7 +47586,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 53,
       "estimated_sales": 199917,
-      "actual_sales": 4308925
+      "actual_sales": 4308925,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 13105389,
@@ -45974,7 +47615,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 27,
       "estimated_sales": 227848,
-      "actual_sales": 1110750
+      "actual_sales": 1110750,
+      "tags": "retail"
     },
     {
       "id": 881898321,
@@ -46002,7 +47644,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 39,
       "estimated_sales": 4303116,
-      "actual_sales": 1249440
+      "actual_sales": 1249440,
+      "tags": "pharmaceutical"
     },
     {
       "id": 775356163,
@@ -46030,7 +47673,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 28,
       "estimated_sales": 3329400,
-      "actual_sales": 719262
+      "actual_sales": 719262,
+      "tags": "cool, financial"
     },
     {
       "id": 853068256,
@@ -46058,7 +47702,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 6,
       "estimated_sales": 1072192,
-      "actual_sales": 1109799
+      "actual_sales": 1109799,
+      "tags": "cool, financial"
     },
     {
       "id": 777171915,
@@ -46086,7 +47731,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 54,
       "estimated_sales": 502316,
-      "actual_sales": 3988341
+      "actual_sales": 3988341,
+      "tags": "cold, construction"
     },
     {
       "id": 923922541,
@@ -46114,7 +47760,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 46,
       "estimated_sales": 5355980,
-      "actual_sales": 965872
+      "actual_sales": 965872,
+      "tags": "cold, engineering"
     },
     {
       "id": 404141427,
@@ -46142,7 +47789,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 52,
       "estimated_sales": 2032349,
-      "actual_sales": 5605350
+      "actual_sales": 5605350,
+      "tags": "cold, construction"
     },
     {
       "id": 71039651,
@@ -46170,7 +47818,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 75,
       "estimated_sales": 117018,
-      "actual_sales": 5436750
+      "actual_sales": 5436750,
+      "tags": "cool, retail"
     },
     {
       "id": 744072248,
@@ -46198,7 +47847,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 14,
       "estimated_sales": 1559349,
-      "actual_sales": 213128
+      "actual_sales": 213128,
+      "tags": "demo, medical"
     },
     {
       "id": 61729681,
@@ -46226,7 +47876,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 56,
       "estimated_sales": 113569,
-      "actual_sales": 2903550
+      "actual_sales": 2903550,
+      "tags": "retail"
     },
     {
       "id": 272928213,
@@ -46254,7 +47905,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 44,
       "estimated_sales": 130036,
-      "actual_sales": 2355192
+      "actual_sales": 2355192,
+      "tags": "cold, engineering"
     },
     {
       "id": 479773457,
@@ -46282,7 +47934,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 8,
       "estimated_sales": 3381120,
-      "actual_sales": 2179128
+      "actual_sales": 2179128,
+      "tags": "cool, medical"
     },
     {
       "id": 846473481,
@@ -46310,7 +47963,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 26,
       "estimated_sales": 1886759,
-      "actual_sales": 497934
+      "actual_sales": 497934,
+      "tags": "pro, construction"
     },
     {
       "id": 168074972,
@@ -46338,7 +47992,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 3,
       "estimated_sales": 1744470,
-      "actual_sales": 1734471
+      "actual_sales": 1734471,
+      "tags": "cold, retail"
     },
     {
       "id": 71380892,
@@ -46366,7 +48021,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 81,
       "estimated_sales": 64790,
-      "actual_sales": 2218996
+      "actual_sales": 2218996,
+      "tags": "financial"
     },
     {
       "id": 22211703,
@@ -46394,7 +48050,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 86,
       "estimated_sales": 2696752,
-      "actual_sales": 2914686
+      "actual_sales": 2914686,
+      "tags": "hot, retail"
     },
     {
       "id": 942564246,
@@ -46422,7 +48079,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 83,
       "estimated_sales": 2286384,
-      "actual_sales": 5405940
+      "actual_sales": 5405940,
+      "tags": "warm, engineering"
     },
     {
       "id": 417898109,
@@ -46450,7 +48108,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 55,
       "estimated_sales": 598218,
-      "actual_sales": 658944
+      "actual_sales": 658944,
+      "tags": "pro, financial"
     },
     {
       "id": 343920699,
@@ -46478,7 +48137,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 63,
       "estimated_sales": 1751130,
-      "actual_sales": 714000
+      "actual_sales": 714000,
+      "tags": "warm, engineering"
     },
     {
       "id": 534540694,
@@ -46506,7 +48166,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 54,
       "estimated_sales": 4375008,
-      "actual_sales": 4441060
+      "actual_sales": 4441060,
+      "tags": "cold, construction"
     },
     {
       "id": 940136899,
@@ -46534,7 +48195,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 5,
       "estimated_sales": 2437312,
-      "actual_sales": 3173271
+      "actual_sales": 3173271,
+      "tags": "hot, engineering"
     },
     {
       "id": 686748815,
@@ -46562,7 +48224,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 54,
       "estimated_sales": 638736,
-      "actual_sales": 784770
+      "actual_sales": 784770,
+      "tags": "engineering"
     },
     {
       "id": 388300127,
@@ -46590,7 +48253,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 87,
       "estimated_sales": 2037258,
-      "actual_sales": 3607220
+      "actual_sales": 3607220,
+      "tags": "warm, medical"
     },
     {
       "id": 614660210,
@@ -46618,7 +48282,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 41,
       "estimated_sales": 3458975,
-      "actual_sales": 1096455
+      "actual_sales": 1096455,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 844136129,
@@ -46646,7 +48311,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 26,
       "estimated_sales": 0,
-      "actual_sales": 876537
+      "actual_sales": 876537,
+      "tags": "cold, construction"
     },
     {
       "id": 11180050,
@@ -46674,7 +48340,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 74,
       "estimated_sales": 715212,
-      "actual_sales": 2712458
+      "actual_sales": 2712458,
+      "tags": "hot, construction"
     },
     {
       "id": 816986321,
@@ -46702,7 +48369,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 66,
       "estimated_sales": 213624,
-      "actual_sales": 2474446
+      "actual_sales": 2474446,
+      "tags": "warm, construction"
     },
     {
       "id": 438442379,
@@ -46730,7 +48398,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 65,
       "estimated_sales": 0,
-      "actual_sales": 2058984
+      "actual_sales": 2058984,
+      "tags": "pro, retail"
     },
     {
       "id": 113699503,
@@ -46758,7 +48427,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 28,
       "estimated_sales": 61260,
-      "actual_sales": 1666885
+      "actual_sales": 1666885,
+      "tags": "cold, financial"
     },
     {
       "id": 947537980,
@@ -46786,7 +48456,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 19,
       "estimated_sales": 890856,
-      "actual_sales": 169569
+      "actual_sales": 169569,
+      "tags": "cold, retail"
     },
     {
       "id": 422601066,
@@ -46814,7 +48485,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 81,
       "estimated_sales": 1139105,
-      "actual_sales": 4450375
+      "actual_sales": 4450375,
+      "tags": "financial"
     },
     {
       "id": 774175484,
@@ -46842,7 +48514,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 9,
       "estimated_sales": 394608,
-      "actual_sales": 4390724
+      "actual_sales": 4390724,
+      "tags": "cool, retail"
     },
     {
       "id": 761819541,
@@ -46870,7 +48543,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 13,
       "estimated_sales": 1980330,
-      "actual_sales": 525536
+      "actual_sales": 525536,
+      "tags": ""
     },
     {
       "id": 291804557,
@@ -46898,7 +48572,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 51,
       "estimated_sales": 2539836,
-      "actual_sales": 1633242
+      "actual_sales": 1633242,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 97067987,
@@ -46926,7 +48601,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 32,
       "estimated_sales": 2375247,
-      "actual_sales": 597894
+      "actual_sales": 597894,
+      "tags": "cold, financial"
     },
     {
       "id": 584928869,
@@ -46954,7 +48630,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 73,
       "estimated_sales": 601980,
-      "actual_sales": 4355858
+      "actual_sales": 4355858,
+      "tags": "cold, medical"
     },
     {
       "id": 392956414,
@@ -46982,7 +48659,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 65,
       "estimated_sales": 3032352,
-      "actual_sales": 1296360
+      "actual_sales": 1296360,
+      "tags": "financial"
     },
     {
       "id": 165485784,
@@ -47010,7 +48688,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 29,
       "estimated_sales": 387369,
-      "actual_sales": 330320
+      "actual_sales": 330320,
+      "tags": "cold, construction"
     },
     {
       "id": 869168286,
@@ -47038,7 +48717,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 55,
       "estimated_sales": 1630390,
-      "actual_sales": 4523370
+      "actual_sales": 4523370,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 821701301,
@@ -47066,7 +48746,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 22,
       "estimated_sales": 2584192,
-      "actual_sales": 288770
+      "actual_sales": 288770,
+      "tags": "cool, medical"
     },
     {
       "id": 271140416,
@@ -47094,7 +48775,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 46,
       "estimated_sales": 1155108,
-      "actual_sales": 872856
+      "actual_sales": 872856,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 165487175,
@@ -47122,7 +48804,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 15,
       "estimated_sales": 2367960,
-      "actual_sales": 690124
+      "actual_sales": 690124,
+      "tags": "pro, medical"
     },
     {
       "id": 872657236,
@@ -47150,7 +48833,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 49,
       "estimated_sales": 1005091,
-      "actual_sales": 2863201
+      "actual_sales": 2863201,
+      "tags": "pro, financial"
     },
     {
       "id": 581999773,
@@ -47178,7 +48862,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 0,
       "estimated_sales": 2075568,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "medical"
     },
     {
       "id": 183071088,
@@ -47206,7 +48891,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 41,
       "estimated_sales": 554190,
-      "actual_sales": 1966628
+      "actual_sales": 1966628,
+      "tags": "cool, construction"
     },
     {
       "id": 497896839,
@@ -47234,7 +48920,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 59,
       "estimated_sales": 2035704,
-      "actual_sales": 1810307
+      "actual_sales": 1810307,
+      "tags": "warm, financial"
     },
     {
       "id": 373251245,
@@ -47262,7 +48949,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 0,
       "estimated_sales": 1802650,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, medical"
     },
     {
       "id": 357992615,
@@ -47290,7 +48978,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 49,
       "estimated_sales": 1298552,
-      "actual_sales": 4518490
+      "actual_sales": 4518490,
+      "tags": "pharmaceutical"
     },
     {
       "id": 856777047,
@@ -47318,7 +49007,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 41,
       "estimated_sales": 324300,
-      "actual_sales": 1054818
+      "actual_sales": 1054818,
+      "tags": "cool, retail"
     },
     {
       "id": 390878998,
@@ -47346,7 +49036,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 74,
       "estimated_sales": 2107062,
-      "actual_sales": 1966020
+      "actual_sales": 1966020,
+      "tags": "warm, medical"
     },
     {
       "id": 546639385,
@@ -47374,7 +49065,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 67,
       "estimated_sales": 2780372,
-      "actual_sales": 5582471
+      "actual_sales": 5582471,
+      "tags": "warm, retail"
     },
     {
       "id": 997918754,
@@ -47402,7 +49094,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 33,
       "estimated_sales": 328551,
-      "actual_sales": 1111950
+      "actual_sales": 1111950,
+      "tags": "warm, retail"
     },
     {
       "id": 602955726,
@@ -47430,7 +49123,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 36,
       "estimated_sales": 705372,
-      "actual_sales": 657736
+      "actual_sales": 657736,
+      "tags": "demo, financial"
     },
     {
       "id": 217233349,
@@ -47458,7 +49152,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 42,
       "estimated_sales": 162101,
-      "actual_sales": 2549363
+      "actual_sales": 2549363,
+      "tags": "demo, engineering"
     },
     {
       "id": 1489511,
@@ -47486,7 +49181,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 54,
       "estimated_sales": 3316020,
-      "actual_sales": 2701860
+      "actual_sales": 2701860,
+      "tags": "warm, financial"
     },
     {
       "id": 702915543,
@@ -47514,7 +49210,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 5,
       "estimated_sales": 4203808,
-      "actual_sales": 1521710
+      "actual_sales": 1521710,
+      "tags": "warm, retail"
     },
     {
       "id": 184690976,
@@ -47542,7 +49239,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 59,
       "estimated_sales": 855760,
-      "actual_sales": 1514188
+      "actual_sales": 1514188,
+      "tags": "cool, medical"
     },
     {
       "id": 377859639,
@@ -47570,7 +49268,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 95,
       "estimated_sales": 3645408,
-      "actual_sales": 3357249
+      "actual_sales": 3357249,
+      "tags": "demo, engineering"
     },
     {
       "id": 753429595,
@@ -47598,7 +49297,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 59,
       "estimated_sales": 2016450,
-      "actual_sales": 2383047
+      "actual_sales": 2383047,
+      "tags": "warm, medical"
     },
     {
       "id": 507278055,
@@ -47626,7 +49326,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 0,
       "estimated_sales": 1189990,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, construction"
     },
     {
       "id": 952358821,
@@ -47654,7 +49355,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 4,
       "estimated_sales": 450522,
-      "actual_sales": 2418505
+      "actual_sales": 2418505,
+      "tags": "cool, construction"
     },
     {
       "id": 202522009,
@@ -47682,7 +49384,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 21,
       "estimated_sales": 0,
-      "actual_sales": 571590
+      "actual_sales": 571590,
+      "tags": "cool, financial"
     },
     {
       "id": 229264232,
@@ -47710,7 +49413,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 48,
       "estimated_sales": 1609974,
-      "actual_sales": 2039424
+      "actual_sales": 2039424,
+      "tags": "hot, financial"
     },
     {
       "id": 441065277,
@@ -47738,7 +49442,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 23,
       "estimated_sales": 3615922,
-      "actual_sales": 176400
+      "actual_sales": 176400,
+      "tags": "cold, financial"
     },
     {
       "id": 202789288,
@@ -47766,7 +49471,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 6,
       "estimated_sales": 3416656,
-      "actual_sales": 4371125
+      "actual_sales": 4371125,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 680169847,
@@ -47794,7 +49500,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 57,
       "estimated_sales": 739332,
-      "actual_sales": 3676722
+      "actual_sales": 3676722,
+      "tags": "financial"
     },
     {
       "id": 885365260,
@@ -47822,7 +49529,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 24,
       "estimated_sales": 1464554,
-      "actual_sales": 1009881
+      "actual_sales": 1009881,
+      "tags": ""
     },
     {
       "id": 926318209,
@@ -47850,7 +49558,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 78,
       "estimated_sales": 2532888,
-      "actual_sales": 3372243
+      "actual_sales": 3372243,
+      "tags": "construction"
     },
     {
       "id": 366018254,
@@ -47878,7 +49587,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 51,
       "estimated_sales": 3399144,
-      "actual_sales": 2135201
+      "actual_sales": 2135201,
+      "tags": "pro, medical"
     },
     {
       "id": 323637662,
@@ -47906,7 +49616,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 43,
       "estimated_sales": 423042,
-      "actual_sales": 1142748
+      "actual_sales": 1142748,
+      "tags": "warm, medical"
     },
     {
       "id": 613561217,
@@ -47934,7 +49645,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 41,
       "estimated_sales": 4021662,
-      "actual_sales": 1848112
+      "actual_sales": 1848112,
+      "tags": "cool, financial"
     },
     {
       "id": 535092974,
@@ -47962,7 +49674,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 39,
       "estimated_sales": 2465312,
-      "actual_sales": 2341161
+      "actual_sales": 2341161,
+      "tags": "hot, construction"
     },
     {
       "id": 449728646,
@@ -47990,7 +49703,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 92,
       "estimated_sales": 344634,
-      "actual_sales": 1596844
+      "actual_sales": 1596844,
+      "tags": "warm, medical"
     },
     {
       "id": 113114092,
@@ -48018,7 +49732,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 44,
       "estimated_sales": 2056164,
-      "actual_sales": 1377040
+      "actual_sales": 1377040,
+      "tags": "warm, financial"
     },
     {
       "id": 361682120,
@@ -48046,7 +49761,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 44,
       "estimated_sales": 2673060,
-      "actual_sales": 1176528
+      "actual_sales": 1176528,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 2824959,
@@ -48074,7 +49790,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 58,
       "estimated_sales": 3039107,
-      "actual_sales": 3402386
+      "actual_sales": 3402386,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 744385701,
@@ -48102,7 +49819,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 6,
       "estimated_sales": 3252564,
-      "actual_sales": 4796344
+      "actual_sales": 4796344,
+      "tags": "pro, engineering"
     },
     {
       "id": 578109455,
@@ -48130,7 +49848,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 35,
       "estimated_sales": 3185020,
-      "actual_sales": 686119
+      "actual_sales": 686119,
+      "tags": "medical"
     },
     {
       "id": 983372993,
@@ -48158,7 +49877,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 9,
       "estimated_sales": 4580784,
-      "actual_sales": 1467810
+      "actual_sales": 1467810,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 570783488,
@@ -48186,7 +49906,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 15,
       "estimated_sales": 1034440,
-      "actual_sales": 165708
+      "actual_sales": 165708,
+      "tags": ""
     },
     {
       "id": 662707424,
@@ -48214,7 +49935,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 53,
       "estimated_sales": 1806144,
-      "actual_sales": 3841240
+      "actual_sales": 3841240,
+      "tags": ""
     },
     {
       "id": 644875851,
@@ -48242,7 +49964,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 88,
       "estimated_sales": 795893,
-      "actual_sales": 1558305
+      "actual_sales": 1558305,
+      "tags": ""
     },
     {
       "id": 949202963,
@@ -48270,7 +49993,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 9,
       "estimated_sales": 1071450,
-      "actual_sales": 2488416
+      "actual_sales": 2488416,
+      "tags": "cold, engineering"
     },
     {
       "id": 454809194,
@@ -48298,7 +50022,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 73,
       "estimated_sales": 800480,
-      "actual_sales": 1051137
+      "actual_sales": 1051137,
+      "tags": "subscriber, retail"
     },
     {
       "id": 934454628,
@@ -48326,7 +50051,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 47,
       "estimated_sales": 1570080,
-      "actual_sales": 678797
+      "actual_sales": 678797,
+      "tags": "cold, retail"
     },
     {
       "id": 184786583,
@@ -48354,7 +50080,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 47,
       "estimated_sales": 722414,
-      "actual_sales": 2273320
+      "actual_sales": 2273320,
+      "tags": "medical"
     },
     {
       "id": 697841838,
@@ -48382,7 +50109,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 39,
       "estimated_sales": 404103,
-      "actual_sales": 2522520
+      "actual_sales": 2522520,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 203650726,
@@ -48410,7 +50138,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 85,
       "estimated_sales": 0,
-      "actual_sales": 5710796
+      "actual_sales": 5710796,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 502009470,
@@ -48438,7 +50167,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 5,
       "estimated_sales": 1709163,
-      "actual_sales": 2385018
+      "actual_sales": 2385018,
+      "tags": "cool, retail"
     },
     {
       "id": 357969636,
@@ -48466,7 +50196,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 0,
       "estimated_sales": 0,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 958694819,
@@ -48494,7 +50225,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 67,
       "estimated_sales": 3208740,
-      "actual_sales": 1151082
+      "actual_sales": 1151082,
+      "tags": "construction"
     },
     {
       "id": 892858567,
@@ -48522,7 +50254,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 3,
       "estimated_sales": 1838487,
-      "actual_sales": 194782
+      "actual_sales": 194782,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 752337581,
@@ -48550,7 +50283,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 74,
       "estimated_sales": 1639240,
-      "actual_sales": 1671600
+      "actual_sales": 1671600,
+      "tags": "subscriber, retail"
     },
     {
       "id": 62964323,
@@ -48578,7 +50312,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 56,
       "estimated_sales": 1069640,
-      "actual_sales": 5664773
+      "actual_sales": 5664773,
+      "tags": "demo, engineering"
     },
     {
       "id": 819416951,
@@ -48606,7 +50341,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 29,
       "estimated_sales": 2606340,
-      "actual_sales": 1024740
+      "actual_sales": 1024740,
+      "tags": "cool, engineering"
     },
     {
       "id": 135143978,
@@ -48634,7 +50370,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 48,
       "estimated_sales": 3247062,
-      "actual_sales": 1146735
+      "actual_sales": 1146735,
+      "tags": "cold, retail"
     },
     {
       "id": 751195353,
@@ -48662,7 +50399,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 5,
       "estimated_sales": 118285,
-      "actual_sales": 828848
+      "actual_sales": 828848,
+      "tags": "pro, construction"
     },
     {
       "id": 85175190,
@@ -48690,7 +50428,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 83,
       "estimated_sales": 1308912,
-      "actual_sales": 1072120
+      "actual_sales": 1072120,
+      "tags": "hot, engineering"
     },
     {
       "id": 993713394,
@@ -48718,7 +50457,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 9,
       "estimated_sales": 719836,
-      "actual_sales": 2408193
+      "actual_sales": 2408193,
+      "tags": ""
     },
     {
       "id": 996853756,
@@ -48746,7 +50486,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 73,
       "estimated_sales": 3244416,
-      "actual_sales": 4219050
+      "actual_sales": 4219050,
+      "tags": "demo, medical"
     },
     {
       "id": 216763327,
@@ -48774,7 +50515,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 84,
       "estimated_sales": 2566593,
-      "actual_sales": 1873840
+      "actual_sales": 1873840,
+      "tags": "subscriber, retail"
     },
     {
       "id": 852958276,
@@ -48802,7 +50544,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 39,
       "estimated_sales": 1550140,
-      "actual_sales": 1067580
+      "actual_sales": 1067580,
+      "tags": "demo, retail"
     },
     {
       "id": 916987002,
@@ -48830,7 +50573,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 65,
       "estimated_sales": 2667886,
-      "actual_sales": 3904992
+      "actual_sales": 3904992,
+      "tags": "demo, construction"
     },
     {
       "id": 426504785,
@@ -48858,7 +50602,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 88,
       "estimated_sales": 1440124,
-      "actual_sales": 3495486
+      "actual_sales": 3495486,
+      "tags": "retail"
     },
     {
       "id": 841060493,
@@ -48886,7 +50631,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 75,
       "estimated_sales": 2043932,
-      "actual_sales": 1517964
+      "actual_sales": 1517964,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 379581285,
@@ -48914,7 +50660,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 47,
       "estimated_sales": 710778,
-      "actual_sales": 3032260
+      "actual_sales": 3032260,
+      "tags": "retail"
     },
     {
       "id": 431592574,
@@ -48942,7 +50689,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 57,
       "estimated_sales": 2173496,
-      "actual_sales": 2579564
+      "actual_sales": 2579564,
+      "tags": "subscriber, retail"
     },
     {
       "id": 709507515,
@@ -48970,7 +50718,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 46,
       "estimated_sales": 2343180,
-      "actual_sales": 1645596
+      "actual_sales": 1645596,
+      "tags": "pharmaceutical"
     },
     {
       "id": 615496518,
@@ -48998,7 +50747,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 17,
       "estimated_sales": 409890,
-      "actual_sales": 805855
+      "actual_sales": 805855,
+      "tags": "cool, engineering"
     },
     {
       "id": 114378935,
@@ -49026,7 +50776,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 62,
       "estimated_sales": 847602,
-      "actual_sales": 4682137
+      "actual_sales": 4682137,
+      "tags": "hot, retail"
     },
     {
       "id": 983254596,
@@ -49054,7 +50805,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 7,
       "estimated_sales": 0,
-      "actual_sales": 1993504
+      "actual_sales": 1993504,
+      "tags": "hot, financial"
     },
     {
       "id": 185965053,
@@ -49082,7 +50834,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 35,
       "estimated_sales": 3070688,
-      "actual_sales": 1345200
+      "actual_sales": 1345200,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 151143161,
@@ -49110,7 +50863,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 5,
       "estimated_sales": 3515596,
-      "actual_sales": 4561475
+      "actual_sales": 4561475,
+      "tags": ""
     },
     {
       "id": 351537799,
@@ -49138,7 +50892,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 37,
       "estimated_sales": 875800,
-      "actual_sales": 2350270
+      "actual_sales": 2350270,
+      "tags": ""
     },
     {
       "id": 713557206,
@@ -49166,7 +50921,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 27,
       "estimated_sales": 5377401,
-      "actual_sales": 1494888
+      "actual_sales": 1494888,
+      "tags": "cold, engineering"
     },
     {
       "id": 182562296,
@@ -49194,7 +50950,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 45,
       "estimated_sales": 818256,
-      "actual_sales": 2402148
+      "actual_sales": 2402148,
+      "tags": "cool, construction"
     },
     {
       "id": 705685208,
@@ -49222,7 +50979,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 17,
       "estimated_sales": 98326,
-      "actual_sales": 326438
+      "actual_sales": 326438,
+      "tags": ""
     },
     {
       "id": 827246885,
@@ -49250,7 +51008,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 95,
       "estimated_sales": 2247882,
-      "actual_sales": 1716517
+      "actual_sales": 1716517,
+      "tags": "cold, medical"
     },
     {
       "id": 253646192,
@@ -49278,7 +51037,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 88,
       "estimated_sales": 691691,
-      "actual_sales": 4336904
+      "actual_sales": 4336904,
+      "tags": "demo, engineering"
     },
     {
       "id": 916266567,
@@ -49306,7 +51066,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 59,
       "estimated_sales": 4014765,
-      "actual_sales": 1758072
+      "actual_sales": 1758072,
+      "tags": "pro, financial"
     },
     {
       "id": 475345504,
@@ -49334,7 +51095,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 3,
       "estimated_sales": 1747226,
-      "actual_sales": 1551060
+      "actual_sales": 1551060,
+      "tags": "retail"
     },
     {
       "id": 11624637,
@@ -49362,7 +51124,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 65,
       "estimated_sales": 2694690,
-      "actual_sales": 3780452
+      "actual_sales": 3780452,
+      "tags": "demo, financial"
     },
     {
       "id": 994155145,
@@ -49390,7 +51153,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 3,
       "estimated_sales": 4746960,
-      "actual_sales": 1344312
+      "actual_sales": 1344312,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 873663015,
@@ -49418,7 +51182,8 @@ export const data: any[] = [
       "deals_total": 10,
       "ratio": 78,
       "estimated_sales": 61430,
-      "actual_sales": 464240
+      "actual_sales": 464240,
+      "tags": "demo, medical"
     },
     {
       "id": 294131234,
@@ -49446,7 +51211,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 39,
       "estimated_sales": 5477230,
-      "actual_sales": 1979054
+      "actual_sales": 1979054,
+      "tags": "subscriber, construction"
     },
     {
       "id": 584152166,
@@ -49474,7 +51240,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 75,
       "estimated_sales": 1085238,
-      "actual_sales": 856710
+      "actual_sales": 856710,
+      "tags": "demo, financial"
     },
     {
       "id": 40996489,
@@ -49502,7 +51269,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 16,
       "estimated_sales": 1195452,
-      "actual_sales": 309852
+      "actual_sales": 309852,
+      "tags": "hot, financial"
     },
     {
       "id": 819540756,
@@ -49530,7 +51298,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 6,
       "estimated_sales": 382800,
-      "actual_sales": 3803280
+      "actual_sales": 3803280,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 313898223,
@@ -49558,7 +51327,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 59,
       "estimated_sales": 2451064,
-      "actual_sales": 2277328
+      "actual_sales": 2277328,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 505421040,
@@ -49586,7 +51356,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 59,
       "estimated_sales": 474620,
-      "actual_sales": 3273143
+      "actual_sales": 3273143,
+      "tags": "retail"
     },
     {
       "id": 819657991,
@@ -49614,7 +51385,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 67,
       "estimated_sales": 156138,
-      "actual_sales": 1097532
+      "actual_sales": 1097532,
+      "tags": "cool, financial"
     },
     {
       "id": 208130421,
@@ -49642,7 +51414,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 31,
       "estimated_sales": 1471888,
-      "actual_sales": 2016444
+      "actual_sales": 2016444,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 479388422,
@@ -49670,7 +51443,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 6,
       "estimated_sales": 2544318,
-      "actual_sales": 479151
+      "actual_sales": 479151,
+      "tags": "subscriber, financial"
     },
     {
       "id": 530252933,
@@ -49698,7 +51472,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 34,
       "estimated_sales": 1288140,
-      "actual_sales": 539160
+      "actual_sales": 539160,
+      "tags": "cold, medical"
     },
     {
       "id": 80582748,
@@ -49726,7 +51501,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 87,
       "estimated_sales": 1038786,
-      "actual_sales": 1552716
+      "actual_sales": 1552716,
+      "tags": ""
     },
     {
       "id": 190457518,
@@ -49754,7 +51530,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 48,
       "estimated_sales": 1270854,
-      "actual_sales": 1540605
+      "actual_sales": 1540605,
+      "tags": "pharmaceutical"
     },
     {
       "id": 659063468,
@@ -49782,7 +51559,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 0,
       "estimated_sales": 2197349,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, retail"
     },
     {
       "id": 332066344,
@@ -49810,7 +51588,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 77,
       "estimated_sales": 3224985,
-      "actual_sales": 5825070
+      "actual_sales": 5825070,
+      "tags": "cool, financial"
     },
     {
       "id": 740738218,
@@ -49838,7 +51617,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 33,
       "estimated_sales": 2067900,
-      "actual_sales": 1222088
+      "actual_sales": 1222088,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 949513329,
@@ -49866,7 +51646,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 37,
       "estimated_sales": 110992,
-      "actual_sales": 889119
+      "actual_sales": 889119,
+      "tags": "hot, engineering"
     },
     {
       "id": 551410517,
@@ -49894,7 +51675,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 62,
       "estimated_sales": 5238270,
-      "actual_sales": 1810672
+      "actual_sales": 1810672,
+      "tags": "demo, retail"
     },
     {
       "id": 446389365,
@@ -49922,7 +51704,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 36,
       "estimated_sales": 3015990,
-      "actual_sales": 2573715
+      "actual_sales": 2573715,
+      "tags": ""
     },
     {
       "id": 934942998,
@@ -49950,7 +51733,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 43,
       "estimated_sales": 2468895,
-      "actual_sales": 2728425
+      "actual_sales": 2728425,
+      "tags": "pro, retail"
     },
     {
       "id": 221389487,
@@ -49978,7 +51762,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 55,
       "estimated_sales": 646536,
-      "actual_sales": 3410770
+      "actual_sales": 3410770,
+      "tags": "subscriber, financial"
     },
     {
       "id": 535962981,
@@ -50006,7 +51791,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 0,
       "estimated_sales": 1599767,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, construction"
     },
     {
       "id": 753891874,
@@ -50034,7 +51820,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 43,
       "estimated_sales": 1026179,
-      "actual_sales": 2712820
+      "actual_sales": 2712820,
+      "tags": "medical"
     },
     {
       "id": 20006162,
@@ -50062,7 +51849,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 67,
       "estimated_sales": 2864568,
-      "actual_sales": 3427720
+      "actual_sales": 3427720,
+      "tags": "pro, retail"
     },
     {
       "id": 858640313,
@@ -50090,7 +51878,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 71,
       "estimated_sales": 422664,
-      "actual_sales": 4501440
+      "actual_sales": 4501440,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 59925790,
@@ -50118,7 +51907,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 19,
       "estimated_sales": 4956147,
-      "actual_sales": 389312
+      "actual_sales": 389312,
+      "tags": "cold, retail"
     },
     {
       "id": 736177757,
@@ -50146,7 +51936,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 48,
       "estimated_sales": 2292360,
-      "actual_sales": 2674858
+      "actual_sales": 2674858,
+      "tags": "demo, construction"
     },
     {
       "id": 829482430,
@@ -50174,7 +51965,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 23,
       "estimated_sales": 2633461,
-      "actual_sales": 1211553
+      "actual_sales": 1211553,
+      "tags": "pharmaceutical"
     },
     {
       "id": 339440119,
@@ -50202,7 +51994,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 35,
       "estimated_sales": 2495090,
-      "actual_sales": 1768648
+      "actual_sales": 1768648,
+      "tags": "cool, construction"
     },
     {
       "id": 407340270,
@@ -50230,7 +52023,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 0,
       "estimated_sales": 2593728,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, retail"
     },
     {
       "id": 25680081,
@@ -50258,7 +52052,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 0,
       "estimated_sales": 773536,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "retail"
     },
     {
       "id": 353389163,
@@ -50286,7 +52081,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 7,
       "estimated_sales": 1600925,
-      "actual_sales": 366426
+      "actual_sales": 366426,
+      "tags": "cool, construction"
     },
     {
       "id": 122501414,
@@ -50314,7 +52110,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 51,
       "estimated_sales": 1621646,
-      "actual_sales": 1637532
+      "actual_sales": 1637532,
+      "tags": "subscriber, financial"
     },
     {
       "id": 208907848,
@@ -50342,7 +52139,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 6,
       "estimated_sales": 3700375,
-      "actual_sales": 2265516
+      "actual_sales": 2265516,
+      "tags": "hot, engineering"
     },
     {
       "id": 578919126,
@@ -50370,7 +52168,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 27,
       "estimated_sales": 1114685,
-      "actual_sales": 1878830
+      "actual_sales": 1878830,
+      "tags": "demo, medical"
     },
     {
       "id": 829821812,
@@ -50398,7 +52197,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 12,
       "estimated_sales": 365210,
-      "actual_sales": 145618
+      "actual_sales": 145618,
+      "tags": "pro, medical"
     },
     {
       "id": 899832149,
@@ -50426,7 +52226,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 88,
       "estimated_sales": 835460,
-      "actual_sales": 1091902
+      "actual_sales": 1091902,
+      "tags": "demo, retail"
     },
     {
       "id": 801119008,
@@ -50454,7 +52255,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 17,
       "estimated_sales": 1643694,
-      "actual_sales": 371421
+      "actual_sales": 371421,
+      "tags": "pro, retail"
     },
     {
       "id": 153077513,
@@ -50482,7 +52284,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 34,
       "estimated_sales": 252390,
-      "actual_sales": 2441595
+      "actual_sales": 2441595,
+      "tags": "subscriber, construction"
     },
     {
       "id": 869116310,
@@ -50510,7 +52313,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 96,
       "estimated_sales": 4294752,
-      "actual_sales": 4376632
+      "actual_sales": 4376632,
+      "tags": "warm, medical"
     },
     {
       "id": 87483936,
@@ -50538,7 +52342,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 28,
       "estimated_sales": 1071261,
-      "actual_sales": 779920
+      "actual_sales": 779920,
+      "tags": ""
     },
     {
       "id": 42130927,
@@ -50566,7 +52371,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 53,
       "estimated_sales": 3270330,
-      "actual_sales": 1727856
+      "actual_sales": 1727856,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 207288522,
@@ -50594,7 +52400,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 73,
       "estimated_sales": 3569720,
-      "actual_sales": 1597816
+      "actual_sales": 1597816,
+      "tags": "financial"
     },
     {
       "id": 416305895,
@@ -50622,7 +52429,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 68,
       "estimated_sales": 1098890,
-      "actual_sales": 3011120
+      "actual_sales": 3011120,
+      "tags": "engineering"
     },
     {
       "id": 25810323,
@@ -50650,7 +52458,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 58,
       "estimated_sales": 1822998,
-      "actual_sales": 3189560
+      "actual_sales": 3189560,
+      "tags": "cold, construction"
     },
     {
       "id": 761384247,
@@ -50678,7 +52487,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 69,
       "estimated_sales": 2660728,
-      "actual_sales": 4041752
+      "actual_sales": 4041752,
+      "tags": ""
     },
     {
       "id": 935064874,
@@ -50706,7 +52516,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 56,
       "estimated_sales": 1045288,
-      "actual_sales": 3941487
+      "actual_sales": 3941487,
+      "tags": "hot, engineering"
     },
     {
       "id": 394919620,
@@ -50734,7 +52545,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 59,
       "estimated_sales": 1574435,
-      "actual_sales": 2631264
+      "actual_sales": 2631264,
+      "tags": "pro, medical"
     },
     {
       "id": 943818054,
@@ -50762,7 +52574,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 37,
       "estimated_sales": 4350416,
-      "actual_sales": 1429717
+      "actual_sales": 1429717,
+      "tags": "cool, retail"
     },
     {
       "id": 423038833,
@@ -50790,7 +52603,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 19,
       "estimated_sales": 2770299,
-      "actual_sales": 1012116
+      "actual_sales": 1012116,
+      "tags": "subscriber, financial"
     },
     {
       "id": 31929751,
@@ -50818,7 +52632,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 5,
       "estimated_sales": 5051974,
-      "actual_sales": 155772
+      "actual_sales": 155772,
+      "tags": "hot, engineering"
     },
     {
       "id": 89387212,
@@ -50846,7 +52661,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 25,
       "estimated_sales": 2760992,
-      "actual_sales": 616698
+      "actual_sales": 616698,
+      "tags": "demo, construction"
     },
     {
       "id": 644116138,
@@ -50874,7 +52690,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 42,
       "estimated_sales": 100497,
-      "actual_sales": 1803626
+      "actual_sales": 1803626,
+      "tags": "medical"
     },
     {
       "id": 683021979,
@@ -50902,7 +52719,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 71,
       "estimated_sales": 624627,
-      "actual_sales": 2516355
+      "actual_sales": 2516355,
+      "tags": "hot, retail"
     },
     {
       "id": 373649964,
@@ -50930,7 +52748,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 56,
       "estimated_sales": 1333837,
-      "actual_sales": 352045
+      "actual_sales": 352045,
+      "tags": "pro, medical"
     },
     {
       "id": 663806981,
@@ -50958,7 +52777,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 59,
       "estimated_sales": 763914,
-      "actual_sales": 2545080
+      "actual_sales": 2545080,
+      "tags": "pro, medical"
     },
     {
       "id": 725942608,
@@ -50986,7 +52806,8 @@ export const data: any[] = [
       "deals_total": 80,
       "ratio": 5,
       "estimated_sales": 4381546,
-      "actual_sales": 1472445
+      "actual_sales": 1472445,
+      "tags": "medical"
     },
     {
       "id": 159217625,
@@ -51014,7 +52835,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 0,
       "estimated_sales": 2540484,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, construction"
     },
     {
       "id": 255861135,
@@ -51042,7 +52864,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 21,
       "estimated_sales": 1465340,
-      "actual_sales": 1264445
+      "actual_sales": 1264445,
+      "tags": "warm, engineering"
     },
     {
       "id": 960071224,
@@ -51070,7 +52893,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 78,
       "estimated_sales": 1545728,
-      "actual_sales": 4165386
+      "actual_sales": 4165386,
+      "tags": "hot, construction"
     },
     {
       "id": 222372984,
@@ -51098,7 +52922,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 62,
       "estimated_sales": 920205,
-      "actual_sales": 3303941
+      "actual_sales": 3303941,
+      "tags": "pro, financial"
     },
     {
       "id": 579735596,
@@ -51126,7 +52951,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 94,
       "estimated_sales": 1820820,
-      "actual_sales": 1085776
+      "actual_sales": 1085776,
+      "tags": "warm, financial"
     },
     {
       "id": 546918051,
@@ -51154,7 +52980,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 77,
       "estimated_sales": 3061107,
-      "actual_sales": 1026239
+      "actual_sales": 1026239,
+      "tags": "demo, construction"
     },
     {
       "id": 59927809,
@@ -51182,7 +53009,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 73,
       "estimated_sales": 3938466,
-      "actual_sales": 3739434
+      "actual_sales": 3739434,
+      "tags": "cool, medical"
     },
     {
       "id": 93660447,
@@ -51210,7 +53038,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 71,
       "estimated_sales": 61847,
-      "actual_sales": 3388374
+      "actual_sales": 3388374,
+      "tags": "cool, engineering"
     },
     {
       "id": 800330845,
@@ -51238,7 +53067,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 56,
       "estimated_sales": 3159696,
-      "actual_sales": 1001070
+      "actual_sales": 1001070,
+      "tags": "warm, financial"
     },
     {
       "id": 859697906,
@@ -51266,7 +53096,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 42,
       "estimated_sales": 1738490,
-      "actual_sales": 1204360
+      "actual_sales": 1204360,
+      "tags": "pro, retail"
     },
     {
       "id": 353262155,
@@ -51294,7 +53125,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 58,
       "estimated_sales": 1509998,
-      "actual_sales": 2589440
+      "actual_sales": 2589440,
+      "tags": "hot, retail"
     },
     {
       "id": 291213871,
@@ -51322,7 +53154,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 4,
       "estimated_sales": 1901550,
-      "actual_sales": 146264
+      "actual_sales": 146264,
+      "tags": "hot, retail"
     },
     {
       "id": 545401878,
@@ -51350,7 +53183,8 @@ export const data: any[] = [
       "deals_total": 83,
       "ratio": 51,
       "estimated_sales": 4691760,
-      "actual_sales": 4622616
+      "actual_sales": 4622616,
+      "tags": "subscriber, retail"
     },
     {
       "id": 543965511,
@@ -51378,7 +53212,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 3,
       "estimated_sales": 2091336,
-      "actual_sales": 181849
+      "actual_sales": 181849,
+      "tags": "hot, medical"
     },
     {
       "id": 296439939,
@@ -51406,7 +53241,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 44,
       "estimated_sales": 2879531,
-      "actual_sales": 2802700
+      "actual_sales": 2802700,
+      "tags": "cold, medical"
     },
     {
       "id": 541110001,
@@ -51434,7 +53270,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 47,
       "estimated_sales": 922130,
-      "actual_sales": 3531604
+      "actual_sales": 3531604,
+      "tags": "pro, construction"
     },
     {
       "id": 490582842,
@@ -51462,7 +53299,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 26,
       "estimated_sales": 551957,
-      "actual_sales": 600550
+      "actual_sales": 600550,
+      "tags": "demo, engineering"
     },
     {
       "id": 978464814,
@@ -51490,7 +53328,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 53,
       "estimated_sales": 2385632,
-      "actual_sales": 1470726
+      "actual_sales": 1470726,
+      "tags": "cold, engineering"
     },
     {
       "id": 183448848,
@@ -51518,7 +53357,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 85,
       "estimated_sales": 1705648,
-      "actual_sales": 1951056
+      "actual_sales": 1951056,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 479061901,
@@ -51546,7 +53386,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 21,
       "estimated_sales": 1900880,
-      "actual_sales": 405656
+      "actual_sales": 405656,
+      "tags": "cool, retail"
     },
     {
       "id": 707071455,
@@ -51574,7 +53415,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 76,
       "estimated_sales": 1567842,
-      "actual_sales": 4666004
+      "actual_sales": 4666004,
+      "tags": "warm, engineering"
     },
     {
       "id": 682057436,
@@ -51602,7 +53444,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 54,
       "estimated_sales": 3474288,
-      "actual_sales": 3629142
+      "actual_sales": 3629142,
+      "tags": ""
     },
     {
       "id": 568566334,
@@ -51630,7 +53473,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 93,
       "estimated_sales": 3039084,
-      "actual_sales": 3835593
+      "actual_sales": 3835593,
+      "tags": "hot, engineering"
     },
     {
       "id": 485722904,
@@ -51658,7 +53502,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 28,
       "estimated_sales": 4510544,
-      "actual_sales": 1003992
+      "actual_sales": 1003992,
+      "tags": "cool, retail"
     },
     {
       "id": 674626882,
@@ -51686,7 +53531,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 3,
       "estimated_sales": 2592824,
-      "actual_sales": 2352324
+      "actual_sales": 2352324,
+      "tags": "pharmaceutical"
     },
     {
       "id": 160402051,
@@ -51714,7 +53560,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 19,
       "estimated_sales": 385218,
-      "actual_sales": 510855
+      "actual_sales": 510855,
+      "tags": "hot, construction"
     },
     {
       "id": 144179287,
@@ -51742,7 +53589,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 45,
       "estimated_sales": 2156215,
-      "actual_sales": 914990
+      "actual_sales": 914990,
+      "tags": "demo, engineering"
     },
     {
       "id": 450847914,
@@ -51770,7 +53618,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 4,
       "estimated_sales": 1787937,
-      "actual_sales": 1005138
+      "actual_sales": 1005138,
+      "tags": "hot, medical"
     },
     {
       "id": 967385099,
@@ -51798,7 +53647,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 68,
       "estimated_sales": 3589275,
-      "actual_sales": 3472222
+      "actual_sales": 3472222,
+      "tags": "demo, retail"
     },
     {
       "id": 594054202,
@@ -51826,7 +53676,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 59,
       "estimated_sales": 765522,
-      "actual_sales": 1563269
+      "actual_sales": 1563269,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 607293929,
@@ -51854,7 +53705,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 39,
       "estimated_sales": 369927,
-      "actual_sales": 2686833
+      "actual_sales": 2686833,
+      "tags": "hot, medical"
     },
     {
       "id": 888546482,
@@ -51882,7 +53734,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 43,
       "estimated_sales": 1246784,
-      "actual_sales": 2315580
+      "actual_sales": 2315580,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 31633684,
@@ -51910,7 +53763,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 47,
       "estimated_sales": 709674,
-      "actual_sales": 2293144
+      "actual_sales": 2293144,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 275594546,
@@ -51938,7 +53792,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 4,
       "estimated_sales": 2994272,
-      "actual_sales": 185881
+      "actual_sales": 185881,
+      "tags": "financial"
     },
     {
       "id": 95689293,
@@ -51966,7 +53821,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 5,
       "estimated_sales": 866385,
-      "actual_sales": 1038226
+      "actual_sales": 1038226,
+      "tags": "cool, retail"
     },
     {
       "id": 735241989,
@@ -51994,7 +53850,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 67,
       "estimated_sales": 2435471,
-      "actual_sales": 199034
+      "actual_sales": 199034,
+      "tags": "cold, engineering"
     },
     {
       "id": 680822088,
@@ -52022,7 +53879,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 62,
       "estimated_sales": 145246,
-      "actual_sales": 2991200
+      "actual_sales": 2991200,
+      "tags": "subscriber, financial"
     },
     {
       "id": 71141102,
@@ -52050,7 +53908,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 33,
       "estimated_sales": 1977740,
-      "actual_sales": 1372980
+      "actual_sales": 1372980,
+      "tags": "demo, financial"
     },
     {
       "id": 959367949,
@@ -52078,7 +53937,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 57,
       "estimated_sales": 1872480,
-      "actual_sales": 1875325
+      "actual_sales": 1875325,
+      "tags": "pro, engineering"
     },
     {
       "id": 888342403,
@@ -52106,7 +53966,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 53,
       "estimated_sales": 994386,
-      "actual_sales": 1005488
+      "actual_sales": 1005488,
+      "tags": "demo, financial"
     },
     {
       "id": 179601095,
@@ -52134,7 +53995,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 44,
       "estimated_sales": 193482,
-      "actual_sales": 1309081
+      "actual_sales": 1309081,
+      "tags": "cold, financial"
     },
     {
       "id": 466209069,
@@ -52162,7 +54024,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 15,
       "estimated_sales": 751465,
-      "actual_sales": 652848
+      "actual_sales": 652848,
+      "tags": "pro, retail"
     },
     {
       "id": 656651627,
@@ -52190,7 +54053,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 59,
       "estimated_sales": 112950,
-      "actual_sales": 4521204
+      "actual_sales": 4521204,
+      "tags": "cold, financial"
     },
     {
       "id": 277472221,
@@ -52218,7 +54082,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 32,
       "estimated_sales": 3332142,
-      "actual_sales": 1207044
+      "actual_sales": 1207044,
+      "tags": "demo, engineering"
     },
     {
       "id": 676976318,
@@ -52246,7 +54111,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 13,
       "estimated_sales": 1490274,
-      "actual_sales": 260776
+      "actual_sales": 260776,
+      "tags": "warm, construction"
     },
     {
       "id": 320130076,
@@ -52274,7 +54140,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 56,
       "estimated_sales": 3023025,
-      "actual_sales": 1151030
+      "actual_sales": 1151030,
+      "tags": "hot, medical"
     },
     {
       "id": 280758279,
@@ -52302,7 +54169,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 71,
       "estimated_sales": 405400,
-      "actual_sales": 1949832
+      "actual_sales": 1949832,
+      "tags": "hot, retail"
     },
     {
       "id": 341384637,
@@ -52330,7 +54198,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 92,
       "estimated_sales": 3510208,
-      "actual_sales": 1416108
+      "actual_sales": 1416108,
+      "tags": "demo, engineering"
     },
     {
       "id": 33854435,
@@ -52358,7 +54227,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 0,
       "estimated_sales": 3255109,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, retail"
     },
     {
       "id": 903545885,
@@ -52386,7 +54256,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 83,
       "estimated_sales": 333234,
-      "actual_sales": 1820235
+      "actual_sales": 1820235,
+      "tags": "demo, retail"
     },
     {
       "id": 469253471,
@@ -52414,7 +54285,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 62,
       "estimated_sales": 559760,
-      "actual_sales": 1367616
+      "actual_sales": 1367616,
+      "tags": "pharmaceutical"
     },
     {
       "id": 265052351,
@@ -52442,7 +54314,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 81,
       "estimated_sales": 3396668,
-      "actual_sales": 2301990
+      "actual_sales": 2301990,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 446389336,
@@ -52470,7 +54343,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 2,
       "estimated_sales": 2502850,
-      "actual_sales": 515305
+      "actual_sales": 515305,
+      "tags": "hot, medical"
     },
     {
       "id": 450151588,
@@ -52498,7 +54372,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 47,
       "estimated_sales": 1120867,
-      "actual_sales": 2367360
+      "actual_sales": 2367360,
+      "tags": "cool, engineering"
     },
     {
       "id": 957626782,
@@ -52526,7 +54401,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 38,
       "estimated_sales": 681796,
-      "actual_sales": 1581921
+      "actual_sales": 1581921,
+      "tags": "warm, medical"
     },
     {
       "id": 620474395,
@@ -52554,7 +54430,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 4,
       "estimated_sales": 775425,
-      "actual_sales": 118973
+      "actual_sales": 118973,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 193617467,
@@ -52582,7 +54459,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 13,
       "estimated_sales": 1468761,
-      "actual_sales": 307066
+      "actual_sales": 307066,
+      "tags": "hot, medical"
     },
     {
       "id": 506140388,
@@ -52610,7 +54488,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 38,
       "estimated_sales": 1386561,
-      "actual_sales": 800352
+      "actual_sales": 800352,
+      "tags": "cold, engineering"
     },
     {
       "id": 319368333,
@@ -52638,7 +54517,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 24,
       "estimated_sales": 3151137,
-      "actual_sales": 906336
+      "actual_sales": 906336,
+      "tags": "demo, retail"
     },
     {
       "id": 229448384,
@@ -52666,7 +54546,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 37,
       "estimated_sales": 71508,
-      "actual_sales": 1017341
+      "actual_sales": 1017341,
+      "tags": "financial"
     },
     {
       "id": 997388157,
@@ -52694,7 +54575,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 56,
       "estimated_sales": 1027992,
-      "actual_sales": 1669560
+      "actual_sales": 1669560,
+      "tags": "cool, retail"
     },
     {
       "id": 290029034,
@@ -52722,7 +54604,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 41,
       "estimated_sales": 321295,
-      "actual_sales": 2565288
+      "actual_sales": 2565288,
+      "tags": "cold, financial"
     },
     {
       "id": 374436192,
@@ -52750,7 +54633,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 56,
       "estimated_sales": 1399272,
-      "actual_sales": 2623248
+      "actual_sales": 2623248,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 603792247,
@@ -52778,7 +54662,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 22,
       "estimated_sales": 1752696,
-      "actual_sales": 888738
+      "actual_sales": 888738,
+      "tags": ""
     },
     {
       "id": 19576214,
@@ -52806,7 +54691,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 59,
       "estimated_sales": 3612033,
-      "actual_sales": 3125960
+      "actual_sales": 3125960,
+      "tags": "warm, engineering"
     },
     {
       "id": 71719819,
@@ -52834,7 +54720,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 19,
       "estimated_sales": 1320354,
-      "actual_sales": 416169
+      "actual_sales": 416169,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 90731572,
@@ -52862,7 +54749,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 42,
       "estimated_sales": 1314192,
-      "actual_sales": 3586947
+      "actual_sales": 3586947,
+      "tags": "retail"
     },
     {
       "id": 827855392,
@@ -52890,7 +54778,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 36,
       "estimated_sales": 1863690,
-      "actual_sales": 1006608
+      "actual_sales": 1006608,
+      "tags": "cold, engineering"
     },
     {
       "id": 546607316,
@@ -52918,7 +54807,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 45,
       "estimated_sales": 304632,
-      "actual_sales": 3670731
+      "actual_sales": 3670731,
+      "tags": "cool, medical"
     },
     {
       "id": 310374010,
@@ -52946,7 +54836,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 82,
       "estimated_sales": 284184,
-      "actual_sales": 2057967
+      "actual_sales": 2057967,
+      "tags": "demo, financial"
     },
     {
       "id": 430286400,
@@ -52974,7 +54865,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 42,
       "estimated_sales": 3041650,
-      "actual_sales": 2521433
+      "actual_sales": 2521433,
+      "tags": "hot, construction"
     },
     {
       "id": 897011183,
@@ -53002,7 +54894,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 63,
       "estimated_sales": 4017000,
-      "actual_sales": 3106800
+      "actual_sales": 3106800,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 915110303,
@@ -53030,7 +54923,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 0,
       "estimated_sales": 1146390,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pharmaceutical"
     },
     {
       "id": 380973476,
@@ -53058,7 +54952,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 13,
       "estimated_sales": 1349184,
-      "actual_sales": 336204
+      "actual_sales": 336204,
+      "tags": "demo, construction"
     },
     {
       "id": 983871664,
@@ -53086,7 +54981,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 81,
       "estimated_sales": 3706020,
-      "actual_sales": 1384275
+      "actual_sales": 1384275,
+      "tags": "demo, financial"
     },
     {
       "id": 602746127,
@@ -53114,7 +55010,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 17,
       "estimated_sales": 2930650,
-      "actual_sales": 490372
+      "actual_sales": 490372,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 171051943,
@@ -53142,7 +55039,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 48,
       "estimated_sales": 440805,
-      "actual_sales": 4089264
+      "actual_sales": 4089264,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 176408139,
@@ -53170,7 +55068,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 54,
       "estimated_sales": 1815748,
-      "actual_sales": 3543120
+      "actual_sales": 3543120,
+      "tags": "hot, engineering"
     },
     {
       "id": 991867527,
@@ -53198,7 +55097,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 11,
       "estimated_sales": 2811521,
-      "actual_sales": 89795
+      "actual_sales": 89795,
+      "tags": "subscriber, retail"
     },
     {
       "id": 916779258,
@@ -53226,7 +55126,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 92,
       "estimated_sales": 1972523,
-      "actual_sales": 3676128
+      "actual_sales": 3676128,
+      "tags": "construction"
     },
     {
       "id": 521672891,
@@ -53254,7 +55155,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 69,
       "estimated_sales": 1029880,
-      "actual_sales": 2972288
+      "actual_sales": 2972288,
+      "tags": "financial"
     },
     {
       "id": 106373644,
@@ -53282,7 +55184,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 49,
       "estimated_sales": 1247584,
-      "actual_sales": 4403475
+      "actual_sales": 4403475,
+      "tags": ""
     },
     {
       "id": 879854921,
@@ -53310,7 +55213,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 9,
       "estimated_sales": 3279297,
-      "actual_sales": 534540
+      "actual_sales": 534540,
+      "tags": "hot, retail"
     },
     {
       "id": 926887081,
@@ -53338,7 +55242,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 73,
       "estimated_sales": 2213692,
-      "actual_sales": 4008444
+      "actual_sales": 4008444,
+      "tags": "financial"
     },
     {
       "id": 669865856,
@@ -53366,7 +55271,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 29,
       "estimated_sales": 3495225,
-      "actual_sales": 811360
+      "actual_sales": 811360,
+      "tags": "pro, medical"
     },
     {
       "id": 423662244,
@@ -53394,7 +55300,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 4,
       "estimated_sales": 357280,
-      "actual_sales": 137406
+      "actual_sales": 137406,
+      "tags": "cool, construction"
     },
     {
       "id": 625214257,
@@ -53422,7 +55329,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 85,
       "estimated_sales": 857032,
-      "actual_sales": 2344011
+      "actual_sales": 2344011,
+      "tags": "warm, engineering"
     },
     {
       "id": 232816668,
@@ -53450,7 +55358,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 56,
       "estimated_sales": 181000,
-      "actual_sales": 4081550
+      "actual_sales": 4081550,
+      "tags": "cold, financial"
     },
     {
       "id": 57970082,
@@ -53478,7 +55387,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 25,
       "estimated_sales": 2178316,
-      "actual_sales": 607572
+      "actual_sales": 607572,
+      "tags": "demo, retail"
     },
     {
       "id": 963537436,
@@ -53506,7 +55416,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 43,
       "estimated_sales": 852509,
-      "actual_sales": 2302692
+      "actual_sales": 2302692,
+      "tags": "hot, financial"
     },
     {
       "id": 434895268,
@@ -53534,7 +55445,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 48,
       "estimated_sales": 1459003,
-      "actual_sales": 3036020
+      "actual_sales": 3036020,
+      "tags": "subscriber, financial"
     },
     {
       "id": 671130428,
@@ -53562,7 +55474,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 47,
       "estimated_sales": 1944098,
-      "actual_sales": 4449971
+      "actual_sales": 4449971,
+      "tags": "hot, financial"
     },
     {
       "id": 516558195,
@@ -53590,7 +55503,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 38,
       "estimated_sales": 4626660,
-      "actual_sales": 495606
+      "actual_sales": 495606,
+      "tags": "warm, construction"
     },
     {
       "id": 618245276,
@@ -53618,7 +55532,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 48,
       "estimated_sales": 1283216,
-      "actual_sales": 2422820
+      "actual_sales": 2422820,
+      "tags": "demo, financial"
     },
     {
       "id": 211023817,
@@ -53646,7 +55561,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 86,
       "estimated_sales": 3729810,
-      "actual_sales": 3074975
+      "actual_sales": 3074975,
+      "tags": "cold, retail"
     },
     {
       "id": 442464482,
@@ -53674,7 +55590,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 4,
       "estimated_sales": 3453197,
-      "actual_sales": 2007808
+      "actual_sales": 2007808,
+      "tags": "pro, financial"
     },
     {
       "id": 457593748,
@@ -53702,7 +55619,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 31,
       "estimated_sales": 1124556,
-      "actual_sales": 545485
+      "actual_sales": 545485,
+      "tags": "warm, construction"
     },
     {
       "id": 283497827,
@@ -53730,7 +55648,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 52,
       "estimated_sales": 1068228,
-      "actual_sales": 4531744
+      "actual_sales": 4531744,
+      "tags": "cold, construction"
     },
     {
       "id": 814782861,
@@ -53758,7 +55677,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 67,
       "estimated_sales": 3006161,
-      "actual_sales": 1195936
+      "actual_sales": 1195936,
+      "tags": "hot, construction"
     },
     {
       "id": 54395410,
@@ -53786,7 +55706,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 56,
       "estimated_sales": 1587384,
-      "actual_sales": 2751465
+      "actual_sales": 2751465,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 159320115,
@@ -53814,7 +55735,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 82,
       "estimated_sales": 1787313,
-      "actual_sales": 3468248
+      "actual_sales": 3468248,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 101671512,
@@ -53842,7 +55764,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 59,
       "estimated_sales": 1973710,
-      "actual_sales": 3678343
+      "actual_sales": 3678343,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 584814781,
@@ -53870,7 +55793,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 28,
       "estimated_sales": 1416663,
-      "actual_sales": 789480
+      "actual_sales": 789480,
+      "tags": ""
     },
     {
       "id": 609874581,
@@ -53898,7 +55822,8 @@ export const data: any[] = [
       "deals_total": 74,
       "ratio": 48,
       "estimated_sales": 2477680,
-      "actual_sales": 3558968
+      "actual_sales": 3558968,
+      "tags": "demo, construction"
     },
     {
       "id": 6826791,
@@ -53926,7 +55851,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 33,
       "estimated_sales": 3022890,
-      "actual_sales": 1548020
+      "actual_sales": 1548020,
+      "tags": "hot, construction"
     },
     {
       "id": 742954984,
@@ -53954,7 +55880,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 93,
       "estimated_sales": 0,
-      "actual_sales": 814814
+      "actual_sales": 814814,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 623420749,
@@ -53982,7 +55909,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 97,
       "estimated_sales": 4772493,
-      "actual_sales": 5171180
+      "actual_sales": 5171180,
+      "tags": ""
     },
     {
       "id": 2310464,
@@ -54010,7 +55938,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 92,
       "estimated_sales": 150271,
-      "actual_sales": 1242912
+      "actual_sales": 1242912,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 107574404,
@@ -54038,7 +55967,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 0,
       "estimated_sales": 4066020,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, retail"
     },
     {
       "id": 741914286,
@@ -54066,7 +55996,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 53,
       "estimated_sales": 1780488,
-      "actual_sales": 3666039
+      "actual_sales": 3666039,
+      "tags": "hot, financial"
     },
     {
       "id": 833044449,
@@ -54094,7 +56025,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 2,
       "estimated_sales": 3103884,
-      "actual_sales": 100801
+      "actual_sales": 100801,
+      "tags": "cool, retail"
     },
     {
       "id": 23200918,
@@ -54122,7 +56054,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 48,
       "estimated_sales": 245360,
-      "actual_sales": 1674378
+      "actual_sales": 1674378,
+      "tags": "pro, construction"
     },
     {
       "id": 334715831,
@@ -54150,7 +56083,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 66,
       "estimated_sales": 499440,
-      "actual_sales": 1129132
+      "actual_sales": 1129132,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 580714946,
@@ -54178,7 +56112,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 59,
       "estimated_sales": 1264384,
-      "actual_sales": 2475300
+      "actual_sales": 2475300,
+      "tags": "warm, retail"
     },
     {
       "id": 887099364,
@@ -54206,7 +56141,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 48,
       "estimated_sales": 140386,
-      "actual_sales": 1907340
+      "actual_sales": 1907340,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 687796084,
@@ -54234,7 +56170,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 47,
       "estimated_sales": 1707720,
-      "actual_sales": 3225204
+      "actual_sales": 3225204,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 425511588,
@@ -54262,7 +56199,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 43,
       "estimated_sales": 462845,
-      "actual_sales": 2635034
+      "actual_sales": 2635034,
+      "tags": "warm, medical"
     },
     {
       "id": 409938491,
@@ -54290,7 +56228,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 15,
       "estimated_sales": 3761238,
-      "actual_sales": 212715
+      "actual_sales": 212715,
+      "tags": "demo, medical"
     },
     {
       "id": 810748454,
@@ -54318,7 +56257,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 34,
       "estimated_sales": 272110,
-      "actual_sales": 1903010
+      "actual_sales": 1903010,
+      "tags": "financial"
     },
     {
       "id": 573430559,
@@ -54346,7 +56286,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 5,
       "estimated_sales": 92130,
-      "actual_sales": 2669370
+      "actual_sales": 2669370,
+      "tags": "demo, engineering"
     },
     {
       "id": 359931687,
@@ -54374,7 +56315,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 36,
       "estimated_sales": 752150,
-      "actual_sales": 706040
+      "actual_sales": 706040,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 727594467,
@@ -54402,7 +56344,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 15,
       "estimated_sales": 1959301,
-      "actual_sales": 436686
+      "actual_sales": 436686,
+      "tags": "warm, financial"
     },
     {
       "id": 717090872,
@@ -54430,7 +56373,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 67,
       "estimated_sales": 3426192,
-      "actual_sales": 984414
+      "actual_sales": 984414,
+      "tags": "hot, retail"
     },
     {
       "id": 97019228,
@@ -54458,7 +56402,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 49,
       "estimated_sales": 700472,
-      "actual_sales": 2550217
+      "actual_sales": 2550217,
+      "tags": "cold, medical"
     },
     {
       "id": 308607572,
@@ -54486,7 +56431,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 29,
       "estimated_sales": 0,
-      "actual_sales": 922640
+      "actual_sales": 922640,
+      "tags": "cool, medical"
     },
     {
       "id": 389623812,
@@ -54514,7 +56460,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 5,
       "estimated_sales": 1951050,
-      "actual_sales": 333780
+      "actual_sales": 333780,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 154084332,
@@ -54542,7 +56489,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 44,
       "estimated_sales": 4509054,
-      "actual_sales": 3656920
+      "actual_sales": 3656920,
+      "tags": "construction"
     },
     {
       "id": 819657730,
@@ -54570,7 +56518,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 31,
       "estimated_sales": 3815721,
-      "actual_sales": 1009840
+      "actual_sales": 1009840,
+      "tags": "cool, engineering"
     },
     {
       "id": 883675507,
@@ -54598,7 +56547,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 23,
       "estimated_sales": 652368,
-      "actual_sales": 584535
+      "actual_sales": 584535,
+      "tags": "subscriber, medical"
     },
     {
       "id": 272027427,
@@ -54626,7 +56576,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 78,
       "estimated_sales": 1652937,
-      "actual_sales": 2432787
+      "actual_sales": 2432787,
+      "tags": "medical"
     },
     {
       "id": 569839837,
@@ -54654,7 +56605,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 5,
       "estimated_sales": 4601792,
-      "actual_sales": 1056090
+      "actual_sales": 1056090,
+      "tags": "financial"
     },
     {
       "id": 486644369,
@@ -54682,7 +56634,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 46,
       "estimated_sales": 3506097,
-      "actual_sales": 1853808
+      "actual_sales": 1853808,
+      "tags": "cold, retail"
     },
     {
       "id": 261690070,
@@ -54710,7 +56663,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 53,
       "estimated_sales": 3841253,
-      "actual_sales": 1456429
+      "actual_sales": 1456429,
+      "tags": "cold, financial"
     },
     {
       "id": 585457124,
@@ -54738,7 +56692,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 23,
       "estimated_sales": 321795,
-      "actual_sales": 409256
+      "actual_sales": 409256,
+      "tags": "cool, construction"
     },
     {
       "id": 160729720,
@@ -54766,7 +56721,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 46,
       "estimated_sales": 1809136,
-      "actual_sales": 1322712
+      "actual_sales": 1322712,
+      "tags": "warm, construction"
     },
     {
       "id": 860651876,
@@ -54794,7 +56750,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 81,
       "estimated_sales": 4395425,
-      "actual_sales": 4234626
+      "actual_sales": 4234626,
+      "tags": ""
     },
     {
       "id": 80916500,
@@ -54822,7 +56779,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 53,
       "estimated_sales": 4512898,
-      "actual_sales": 2206242
+      "actual_sales": 2206242,
+      "tags": ""
     },
     {
       "id": 592316605,
@@ -54850,7 +56808,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 7,
       "estimated_sales": 554298,
-      "actual_sales": 134808
+      "actual_sales": 134808,
+      "tags": "subscriber, construction"
     },
     {
       "id": 747160016,
@@ -54878,7 +56837,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 79,
       "estimated_sales": 1125210,
-      "actual_sales": 3758040
+      "actual_sales": 3758040,
+      "tags": "warm, financial"
     },
     {
       "id": 443142384,
@@ -54906,7 +56866,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 4,
       "estimated_sales": 2730096,
-      "actual_sales": 77486
+      "actual_sales": 77486,
+      "tags": "hot, construction"
     },
     {
       "id": 142669598,
@@ -54934,7 +56895,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 61,
       "estimated_sales": 1544972,
-      "actual_sales": 3635324
+      "actual_sales": 3635324,
+      "tags": "pro, medical"
     },
     {
       "id": 23794910,
@@ -54962,7 +56924,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 71,
       "estimated_sales": 1959527,
-      "actual_sales": 1865472
+      "actual_sales": 1865472,
+      "tags": "hot, retail"
     },
     {
       "id": 13159249,
@@ -54990,7 +56953,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 4,
       "estimated_sales": 3887600,
-      "actual_sales": 56862
+      "actual_sales": 56862,
+      "tags": "medical"
     },
     {
       "id": 765469739,
@@ -55018,7 +56982,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 0,
       "estimated_sales": 194784,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "medical"
     },
     {
       "id": 180234698,
@@ -55046,7 +57011,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 74,
       "estimated_sales": 1207304,
-      "actual_sales": 1743722
+      "actual_sales": 1743722,
+      "tags": ""
     },
     {
       "id": 197444988,
@@ -55074,7 +57040,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 57,
       "estimated_sales": 579590,
-      "actual_sales": 672408
+      "actual_sales": 672408,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 526935184,
@@ -55102,7 +57069,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 59,
       "estimated_sales": 4877829,
-      "actual_sales": 670480
+      "actual_sales": 670480,
+      "tags": "hot, engineering"
     },
     {
       "id": 256974425,
@@ -55130,7 +57098,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 63,
       "estimated_sales": 3432072,
-      "actual_sales": 2385650
+      "actual_sales": 2385650,
+      "tags": "cold, financial"
     },
     {
       "id": 399586360,
@@ -55158,7 +57127,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 5,
       "estimated_sales": 1066208,
-      "actual_sales": 2158609
+      "actual_sales": 2158609,
+      "tags": "cool, financial"
     },
     {
       "id": 96478028,
@@ -55186,7 +57156,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 33,
       "estimated_sales": 1838592,
-      "actual_sales": 1835130
+      "actual_sales": 1835130,
+      "tags": "warm, financial"
     },
     {
       "id": 63697209,
@@ -55214,7 +57185,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 77,
       "estimated_sales": 1539910,
-      "actual_sales": 3234120
+      "actual_sales": 3234120,
+      "tags": ""
     },
     {
       "id": 280099994,
@@ -55242,7 +57214,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 61,
       "estimated_sales": 728632,
-      "actual_sales": 5228793
+      "actual_sales": 5228793,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 961449508,
@@ -55270,7 +57243,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 23,
       "estimated_sales": 660588,
-      "actual_sales": 352860
+      "actual_sales": 352860,
+      "tags": "warm, engineering"
     },
     {
       "id": 132124348,
@@ -55298,7 +57272,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 46,
       "estimated_sales": 666963,
-      "actual_sales": 578010
+      "actual_sales": 578010,
+      "tags": "hot, retail"
     },
     {
       "id": 893216895,
@@ -55326,7 +57301,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 67,
       "estimated_sales": 2977338,
-      "actual_sales": 1858520
+      "actual_sales": 1858520,
+      "tags": "pharmaceutical"
     },
     {
       "id": 367299450,
@@ -55354,7 +57330,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 33,
       "estimated_sales": 4896268,
-      "actual_sales": 1253928
+      "actual_sales": 1253928,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 229351751,
@@ -55382,7 +57359,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 83,
       "estimated_sales": 2865024,
-      "actual_sales": 3677577
+      "actual_sales": 3677577,
+      "tags": "subscriber, medical"
     },
     {
       "id": 387594591,
@@ -55410,7 +57388,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 3,
       "estimated_sales": 188423,
-      "actual_sales": 1910106
+      "actual_sales": 1910106,
+      "tags": "retail"
     },
     {
       "id": 661709509,
@@ -55438,7 +57417,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 55,
       "estimated_sales": 610218,
-      "actual_sales": 818939
+      "actual_sales": 818939,
+      "tags": "cold, financial"
     },
     {
       "id": 305098114,
@@ -55466,7 +57446,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 56,
       "estimated_sales": 1312860,
-      "actual_sales": 4992550
+      "actual_sales": 4992550,
+      "tags": "subscriber, medical"
     },
     {
       "id": 305162283,
@@ -55494,7 +57475,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 74,
       "estimated_sales": 3321594,
-      "actual_sales": 1736720
+      "actual_sales": 1736720,
+      "tags": "hot, financial"
     },
     {
       "id": 923859619,
@@ -55522,7 +57504,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 78,
       "estimated_sales": 3261616,
-      "actual_sales": 1903251
+      "actual_sales": 1903251,
+      "tags": "cool, financial"
     },
     {
       "id": 597324745,
@@ -55550,7 +57533,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 49,
       "estimated_sales": 3577770,
-      "actual_sales": 1884484
+      "actual_sales": 1884484,
+      "tags": "hot, engineering"
     },
     {
       "id": 206836816,
@@ -55578,7 +57562,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 76,
       "estimated_sales": 1019008,
-      "actual_sales": 2808512
+      "actual_sales": 2808512,
+      "tags": "pro, medical"
     },
     {
       "id": 124021016,
@@ -55606,7 +57591,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 51,
       "estimated_sales": 3691780,
-      "actual_sales": 2720450
+      "actual_sales": 2720450,
+      "tags": "construction"
     },
     {
       "id": 775100768,
@@ -55634,7 +57620,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 61,
       "estimated_sales": 0,
-      "actual_sales": 2563660
+      "actual_sales": 2563660,
+      "tags": "medical"
     },
     {
       "id": 354377359,
@@ -55662,7 +57649,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 29,
       "estimated_sales": 205932,
-      "actual_sales": 1129051
+      "actual_sales": 1129051,
+      "tags": "cool, engineering"
     },
     {
       "id": 771291730,
@@ -55690,7 +57678,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 68,
       "estimated_sales": 1094520,
-      "actual_sales": 2009786
+      "actual_sales": 2009786,
+      "tags": "subscriber, medical"
     },
     {
       "id": 342458852,
@@ -55718,7 +57707,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 83,
       "estimated_sales": 256450,
-      "actual_sales": 1662400
+      "actual_sales": 1662400,
+      "tags": "hot, medical"
     },
     {
       "id": 464621809,
@@ -55746,7 +57736,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 2,
       "estimated_sales": 3398775,
-      "actual_sales": 853314
+      "actual_sales": 853314,
+      "tags": "warm, retail"
     },
     {
       "id": 477921575,
@@ -55774,7 +57765,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 38,
       "estimated_sales": 1345834,
-      "actual_sales": 1928432
+      "actual_sales": 1928432,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 32602192,
@@ -55802,7 +57794,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 58,
       "estimated_sales": 1037316,
-      "actual_sales": 1190236
+      "actual_sales": 1190236,
+      "tags": ""
     },
     {
       "id": 730188239,
@@ -55830,7 +57823,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 6,
       "estimated_sales": 2012958,
-      "actual_sales": 107829
+      "actual_sales": 107829,
+      "tags": "demo, engineering"
     },
     {
       "id": 365816563,
@@ -55858,7 +57852,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 75,
       "estimated_sales": 58663,
-      "actual_sales": 1940736
+      "actual_sales": 1940736,
+      "tags": ""
     },
     {
       "id": 777451290,
@@ -55886,7 +57881,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 26,
       "estimated_sales": 276828,
-      "actual_sales": 895419
+      "actual_sales": 895419,
+      "tags": "demo, medical"
     },
     {
       "id": 141577013,
@@ -55914,7 +57910,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 83,
       "estimated_sales": 271540,
-      "actual_sales": 3080480
+      "actual_sales": 3080480,
+      "tags": "pro, financial"
     },
     {
       "id": 898221760,
@@ -55942,7 +57939,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 51,
       "estimated_sales": 1286385,
-      "actual_sales": 4274016
+      "actual_sales": 4274016,
+      "tags": "medical"
     },
     {
       "id": 21295024,
@@ -55970,7 +57968,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 7,
       "estimated_sales": 550384,
-      "actual_sales": 2514015
+      "actual_sales": 2514015,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 545139249,
@@ -55998,7 +57997,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 42,
       "estimated_sales": 747996,
-      "actual_sales": 3105864
+      "actual_sales": 3105864,
+      "tags": "pro, financial"
     },
     {
       "id": 200448075,
@@ -56026,7 +58026,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 51,
       "estimated_sales": 814104,
-      "actual_sales": 1197551
+      "actual_sales": 1197551,
+      "tags": "pharmaceutical"
     },
     {
       "id": 21562177,
@@ -56054,7 +58055,8 @@ export const data: any[] = [
       "deals_total": 14,
       "ratio": 8,
       "estimated_sales": 459980,
-      "actual_sales": 1015504
+      "actual_sales": 1015504,
+      "tags": "cool, retail"
     },
     {
       "id": 27103977,
@@ -56082,7 +58084,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 69,
       "estimated_sales": 3210879,
-      "actual_sales": 1613154
+      "actual_sales": 1613154,
+      "tags": "hot, construction"
     },
     {
       "id": 709672871,
@@ -56110,7 +58113,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 55,
       "estimated_sales": 383496,
-      "actual_sales": 2454000
+      "actual_sales": 2454000,
+      "tags": "subscriber, retail"
     },
     {
       "id": 33820667,
@@ -56138,7 +58142,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 76,
       "estimated_sales": 2213208,
-      "actual_sales": 4487575
+      "actual_sales": 4487575,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 937001990,
@@ -56166,7 +58171,8 @@ export const data: any[] = [
       "deals_total": 10,
       "ratio": 0,
       "estimated_sales": 680988,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, retail"
     },
     {
       "id": 299937896,
@@ -56194,7 +58200,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 82,
       "estimated_sales": 937962,
-      "actual_sales": 2582860
+      "actual_sales": 2582860,
+      "tags": "retail"
     },
     {
       "id": 425084070,
@@ -56222,7 +58229,8 @@ export const data: any[] = [
       "deals_total": 7,
       "ratio": 25,
       "estimated_sales": 233397,
-      "actual_sales": 104785
+      "actual_sales": 104785,
+      "tags": "cold, financial"
     },
     {
       "id": 118817193,
@@ -56250,7 +58258,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 71,
       "estimated_sales": 4545060,
-      "actual_sales": 1791420
+      "actual_sales": 1791420,
+      "tags": ""
     },
     {
       "id": 32788499,
@@ -56278,7 +58287,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 12,
       "estimated_sales": 4062117,
-      "actual_sales": 461274
+      "actual_sales": 461274,
+      "tags": "cold, financial"
     },
     {
       "id": 202176155,
@@ -56306,7 +58316,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 22,
       "estimated_sales": 1672704,
-      "actual_sales": 953592
+      "actual_sales": 953592,
+      "tags": "demo, financial"
     },
     {
       "id": 757397266,
@@ -56334,7 +58345,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 72,
       "estimated_sales": 4228296,
-      "actual_sales": 3578868
+      "actual_sales": 3578868,
+      "tags": "warm, medical"
     },
     {
       "id": 121836246,
@@ -56362,7 +58374,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 77,
       "estimated_sales": 1694010,
-      "actual_sales": 2280000
+      "actual_sales": 2280000,
+      "tags": "warm, retail"
     },
     {
       "id": 852092235,
@@ -56390,7 +58403,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 44,
       "estimated_sales": 2613806,
-      "actual_sales": 1683900
+      "actual_sales": 1683900,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 854795708,
@@ -56418,7 +58432,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 59,
       "estimated_sales": 1556180,
-      "actual_sales": 3538236
+      "actual_sales": 3538236,
+      "tags": "hot, retail"
     },
     {
       "id": 188647489,
@@ -56446,7 +58461,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 33,
       "estimated_sales": 337995,
-      "actual_sales": 1389836
+      "actual_sales": 1389836,
+      "tags": "cold, retail"
     },
     {
       "id": 326050098,
@@ -56474,7 +58490,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 44,
       "estimated_sales": 821898,
-      "actual_sales": 1703086
+      "actual_sales": 1703086,
+      "tags": "medical"
     },
     {
       "id": 112745903,
@@ -56502,7 +58519,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 97,
       "estimated_sales": 1871748,
-      "actual_sales": 4801590
+      "actual_sales": 4801590,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 995059844,
@@ -56530,7 +58548,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 59,
       "estimated_sales": 729155,
-      "actual_sales": 1389300
+      "actual_sales": 1389300,
+      "tags": "warm, financial"
     },
     {
       "id": 643173592,
@@ -56558,7 +58577,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 41,
       "estimated_sales": 2146725,
-      "actual_sales": 1554509
+      "actual_sales": 1554509,
+      "tags": "construction"
     },
     {
       "id": 316606071,
@@ -56586,7 +58606,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 71,
       "estimated_sales": 2107336,
-      "actual_sales": 1512437
+      "actual_sales": 1512437,
+      "tags": "subscriber, medical"
     },
     {
       "id": 630395308,
@@ -56614,7 +58635,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 47,
       "estimated_sales": 1157321,
-      "actual_sales": 1275928
+      "actual_sales": 1275928,
+      "tags": ""
     },
     {
       "id": 598845765,
@@ -56642,7 +58664,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 0,
       "estimated_sales": 1909500,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, construction"
     },
     {
       "id": 505910137,
@@ -56670,7 +58693,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 89,
       "estimated_sales": 1089828,
-      "actual_sales": 1948132
+      "actual_sales": 1948132,
+      "tags": "cold, retail"
     },
     {
       "id": 662187547,
@@ -56698,7 +58722,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 81,
       "estimated_sales": 1172585,
-      "actual_sales": 3257550
+      "actual_sales": 3257550,
+      "tags": "subscriber, financial"
     },
     {
       "id": 613861991,
@@ -56726,7 +58751,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 51,
       "estimated_sales": 1566224,
-      "actual_sales": 3746088
+      "actual_sales": 3746088,
+      "tags": "cool, financial"
     },
     {
       "id": 282804021,
@@ -56754,7 +58780,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 45,
       "estimated_sales": 122491,
-      "actual_sales": 2290776
+      "actual_sales": 2290776,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 836260320,
@@ -56782,7 +58809,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 34,
       "estimated_sales": 455440,
-      "actual_sales": 1398270
+      "actual_sales": 1398270,
+      "tags": "subscriber, construction"
     },
     {
       "id": 113907576,
@@ -56810,7 +58838,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 4,
       "estimated_sales": 532362,
-      "actual_sales": 1146210
+      "actual_sales": 1146210,
+      "tags": "hot, retail"
     },
     {
       "id": 536343421,
@@ -56838,7 +58867,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 33,
       "estimated_sales": 2392614,
-      "actual_sales": 1435686
+      "actual_sales": 1435686,
+      "tags": "hot, retail"
     },
     {
       "id": 801307742,
@@ -56866,7 +58896,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 52,
       "estimated_sales": 798455,
-      "actual_sales": 2659740
+      "actual_sales": 2659740,
+      "tags": "pro, medical"
     },
     {
       "id": 443507480,
@@ -56894,7 +58925,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 74,
       "estimated_sales": 2241512,
-      "actual_sales": 5115890
+      "actual_sales": 5115890,
+      "tags": "warm, medical"
     },
     {
       "id": 102759883,
@@ -56922,7 +58954,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 72,
       "estimated_sales": 1518000,
-      "actual_sales": 2082964
+      "actual_sales": 2082964,
+      "tags": "hot, financial"
     },
     {
       "id": 910052866,
@@ -56950,7 +58983,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 45,
       "estimated_sales": 703976,
-      "actual_sales": 550735
+      "actual_sales": 550735,
+      "tags": ""
     },
     {
       "id": 237840055,
@@ -56978,7 +59012,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 23,
       "estimated_sales": 461174,
-      "actual_sales": 541275
+      "actual_sales": 541275,
+      "tags": "cold, engineering"
     },
     {
       "id": 710970263,
@@ -57006,7 +59041,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 43,
       "estimated_sales": 1185168,
-      "actual_sales": 546804
+      "actual_sales": 546804,
+      "tags": "cold, retail"
     },
     {
       "id": 175973080,
@@ -57034,7 +59070,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 5,
       "estimated_sales": 2326044,
-      "actual_sales": 77078
+      "actual_sales": 77078,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 72950963,
@@ -57062,7 +59099,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 75,
       "estimated_sales": 4190587,
-      "actual_sales": 2586924
+      "actual_sales": 2586924,
+      "tags": "cold, engineering"
     },
     {
       "id": 748119756,
@@ -57090,7 +59128,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 88,
       "estimated_sales": 2357175,
-      "actual_sales": 1474944
+      "actual_sales": 1474944,
+      "tags": "demo, medical"
     },
     {
       "id": 230658960,
@@ -57118,7 +59157,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 5,
       "estimated_sales": 1057338,
-      "actual_sales": 4135185
+      "actual_sales": 4135185,
+      "tags": "hot, engineering"
     },
     {
       "id": 948519877,
@@ -57146,7 +59186,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 18,
       "estimated_sales": 542660,
-      "actual_sales": 613296
+      "actual_sales": 613296,
+      "tags": "subscriber, construction"
     },
     {
       "id": 679607020,
@@ -57174,7 +59215,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 8,
       "estimated_sales": 3307382,
-      "actual_sales": 2129640
+      "actual_sales": 2129640,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 688159540,
@@ -57202,7 +59244,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 14,
       "estimated_sales": 693450,
-      "actual_sales": 439338
+      "actual_sales": 439338,
+      "tags": "cold, construction"
     },
     {
       "id": 257087504,
@@ -57230,7 +59273,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 29,
       "estimated_sales": 857133,
-      "actual_sales": 1174936
+      "actual_sales": 1174936,
+      "tags": ""
     },
     {
       "id": 899373590,
@@ -57258,7 +59302,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 83,
       "estimated_sales": 928040,
-      "actual_sales": 3743208
+      "actual_sales": 3743208,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 415834964,
@@ -57286,7 +59331,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 64,
       "estimated_sales": 2918150,
-      "actual_sales": 2848688
+      "actual_sales": 2848688,
+      "tags": "warm, engineering"
     },
     {
       "id": 578025583,
@@ -57314,7 +59360,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 4,
       "estimated_sales": 3892642,
-      "actual_sales": 1047294
+      "actual_sales": 1047294,
+      "tags": "warm, engineering"
     },
     {
       "id": 257893965,
@@ -57342,7 +59389,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 18,
       "estimated_sales": 2225630,
-      "actual_sales": 457936
+      "actual_sales": 457936,
+      "tags": "hot, financial"
     },
     {
       "id": 316188956,
@@ -57370,7 +59418,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 81,
       "estimated_sales": 3893352,
-      "actual_sales": 2321949
+      "actual_sales": 2321949,
+      "tags": "cold, financial"
     },
     {
       "id": 120870320,
@@ -57398,7 +59447,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 91,
       "estimated_sales": 2709146,
-      "actual_sales": 2083880
+      "actual_sales": 2083880,
+      "tags": "demo, retail"
     },
     {
       "id": 135714300,
@@ -57426,7 +59476,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 52,
       "estimated_sales": 1837250,
-      "actual_sales": 1305616
+      "actual_sales": 1305616,
+      "tags": "retail"
     },
     {
       "id": 506310554,
@@ -57454,7 +59505,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 74,
       "estimated_sales": 1100772,
-      "actual_sales": 2621762
+      "actual_sales": 2621762,
+      "tags": ""
     },
     {
       "id": 177383899,
@@ -57482,7 +59534,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 29,
       "estimated_sales": 281648,
-      "actual_sales": 347190
+      "actual_sales": 347190,
+      "tags": "pharmaceutical"
     },
     {
       "id": 65056677,
@@ -57510,7 +59563,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 67,
       "estimated_sales": 2802586,
-      "actual_sales": 2684900
+      "actual_sales": 2684900,
+      "tags": "cool, engineering"
     },
     {
       "id": 98095095,
@@ -57538,7 +59592,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 46,
       "estimated_sales": 3274450,
-      "actual_sales": 3271990
+      "actual_sales": 3271990,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 717479972,
@@ -57566,7 +59621,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 91,
       "estimated_sales": 534676,
-      "actual_sales": 3636700
+      "actual_sales": 3636700,
+      "tags": "cool, engineering"
     },
     {
       "id": 815802281,
@@ -57594,7 +59650,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 24,
       "estimated_sales": 4671160,
-      "actual_sales": 1390137
+      "actual_sales": 1390137,
+      "tags": "cold, financial"
     },
     {
       "id": 65730929,
@@ -57622,7 +59679,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 56,
       "estimated_sales": 4790526,
-      "actual_sales": 1815210
+      "actual_sales": 1815210,
+      "tags": "demo, financial"
     },
     {
       "id": 302733670,
@@ -57650,7 +59708,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 97,
       "estimated_sales": 3138850,
-      "actual_sales": 1953728
+      "actual_sales": 1953728,
+      "tags": "cool, retail"
     },
     {
       "id": 874551598,
@@ -57678,7 +59737,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 24,
       "estimated_sales": 750662,
-      "actual_sales": 1015362
+      "actual_sales": 1015362,
+      "tags": "warm, engineering"
     },
     {
       "id": 998456484,
@@ -57706,7 +59766,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 67,
       "estimated_sales": 1085895,
-      "actual_sales": 1208550
+      "actual_sales": 1208550,
+      "tags": "demo, retail"
     },
     {
       "id": 945496346,
@@ -57734,7 +59795,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 44,
       "estimated_sales": 4681056,
-      "actual_sales": 1858984
+      "actual_sales": 1858984,
+      "tags": "cool, financial"
     },
     {
       "id": 701662967,
@@ -57762,7 +59824,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 48,
       "estimated_sales": 0,
-      "actual_sales": 2583480
+      "actual_sales": 2583480,
+      "tags": "medical"
     },
     {
       "id": 33059455,
@@ -57790,7 +59853,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 83,
       "estimated_sales": 3077620,
-      "actual_sales": 2410420
+      "actual_sales": 2410420,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 920322107,
@@ -57818,7 +59882,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 2,
       "estimated_sales": 1191888,
-      "actual_sales": 534255
+      "actual_sales": 534255,
+      "tags": "demo, engineering"
     },
     {
       "id": 814447598,
@@ -57846,7 +59911,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 65,
       "estimated_sales": 1469118,
-      "actual_sales": 2749964
+      "actual_sales": 2749964,
+      "tags": "demo, financial"
     },
     {
       "id": 263608406,
@@ -57874,7 +59940,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 96,
       "estimated_sales": 3938000,
-      "actual_sales": 2371754
+      "actual_sales": 2371754,
+      "tags": "demo, construction"
     },
     {
       "id": 219781734,
@@ -57902,7 +59969,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 9,
       "estimated_sales": 5422768,
-      "actual_sales": 267042
+      "actual_sales": 267042,
+      "tags": "cool, retail"
     },
     {
       "id": 802342612,
@@ -57930,7 +59998,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 14,
       "estimated_sales": 570440,
-      "actual_sales": 786280
+      "actual_sales": 786280,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 827940147,
@@ -57958,7 +60027,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 86,
       "estimated_sales": 854816,
-      "actual_sales": 4953250
+      "actual_sales": 4953250,
+      "tags": "pharmaceutical"
     },
     {
       "id": 26225336,
@@ -57986,7 +60056,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 81,
       "estimated_sales": 764104,
-      "actual_sales": 1748149
+      "actual_sales": 1748149,
+      "tags": "warm, financial"
     },
     {
       "id": 71736311,
@@ -58014,7 +60085,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 69,
       "estimated_sales": 1555800,
-      "actual_sales": 930050
+      "actual_sales": 930050,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 651633945,
@@ -58042,7 +60114,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 57,
       "estimated_sales": 1293040,
-      "actual_sales": 1022704
+      "actual_sales": 1022704,
+      "tags": "subscriber, financial"
     },
     {
       "id": 840839497,
@@ -58070,7 +60143,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 37,
       "estimated_sales": 0,
-      "actual_sales": 1093235
+      "actual_sales": 1093235,
+      "tags": "financial"
     },
     {
       "id": 695284663,
@@ -58098,7 +60172,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 0,
       "estimated_sales": 4224136,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, construction"
     },
     {
       "id": 63398446,
@@ -58126,7 +60201,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 75,
       "estimated_sales": 2120272,
-      "actual_sales": 2110890
+      "actual_sales": 2110890,
+      "tags": "cold, medical"
     },
     {
       "id": 336919153,
@@ -58154,7 +60230,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 62,
       "estimated_sales": 1945970,
-      "actual_sales": 3501768
+      "actual_sales": 3501768,
+      "tags": "cool, financial"
     },
     {
       "id": 775136032,
@@ -58182,7 +60259,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 2,
       "estimated_sales": 1939545,
-      "actual_sales": 520075
+      "actual_sales": 520075,
+      "tags": "hot, retail"
     },
     {
       "id": 769394365,
@@ -58210,7 +60288,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 5,
       "estimated_sales": 1234975,
-      "actual_sales": 1997892
+      "actual_sales": 1997892,
+      "tags": ""
     },
     {
       "id": 310937142,
@@ -58238,7 +60317,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 15,
       "estimated_sales": 500766,
-      "actual_sales": 472400
+      "actual_sales": 472400,
+      "tags": ""
     },
     {
       "id": 553253367,
@@ -58266,7 +60346,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 33,
       "estimated_sales": 2777110,
-      "actual_sales": 290012
+      "actual_sales": 290012,
+      "tags": "cold, financial"
     },
     {
       "id": 28550050,
@@ -58294,7 +60375,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 36,
       "estimated_sales": 3961672,
-      "actual_sales": 1640583
+      "actual_sales": 1640583,
+      "tags": "hot, engineering"
     },
     {
       "id": 386612195,
@@ -58322,7 +60404,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 51,
       "estimated_sales": 1625890,
-      "actual_sales": 2629648
+      "actual_sales": 2629648,
+      "tags": "demo, financial"
     },
     {
       "id": 495396840,
@@ -58350,7 +60433,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 93,
       "estimated_sales": 167398,
-      "actual_sales": 1457475
+      "actual_sales": 1457475,
+      "tags": ""
     },
     {
       "id": 696304135,
@@ -58378,7 +60462,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 51,
       "estimated_sales": 382359,
-      "actual_sales": 2280636
+      "actual_sales": 2280636,
+      "tags": ""
     },
     {
       "id": 692943140,
@@ -58406,7 +60491,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 64,
       "estimated_sales": 1473066,
-      "actual_sales": 2600892
+      "actual_sales": 2600892,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 77190575,
@@ -58434,7 +60520,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 88,
       "estimated_sales": 2810999,
-      "actual_sales": 3286424
+      "actual_sales": 3286424,
+      "tags": "hot, medical"
     },
     {
       "id": 79250746,
@@ -58462,7 +60549,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 38,
       "estimated_sales": 438128,
-      "actual_sales": 1191402
+      "actual_sales": 1191402,
+      "tags": "cold, retail"
     },
     {
       "id": 858323435,
@@ -58490,7 +60578,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 95,
       "estimated_sales": 0,
-      "actual_sales": 3017034
+      "actual_sales": 3017034,
+      "tags": "hot, construction"
     },
     {
       "id": 874049854,
@@ -58518,7 +60607,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 89,
       "estimated_sales": 1287592,
-      "actual_sales": 3160929
+      "actual_sales": 3160929,
+      "tags": "cool, construction"
     },
     {
       "id": 769987202,
@@ -58546,7 +60636,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 0,
       "estimated_sales": 5248098,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, engineering"
     },
     {
       "id": 777655151,
@@ -58574,7 +60665,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 48,
       "estimated_sales": 3696894,
-      "actual_sales": 1251033
+      "actual_sales": 1251033,
+      "tags": "cold, engineering"
     },
     {
       "id": 142255358,
@@ -58602,7 +60694,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 26,
       "estimated_sales": 2530229,
-      "actual_sales": 1555389
+      "actual_sales": 1555389,
+      "tags": "warm, engineering"
     },
     {
       "id": 452134876,
@@ -58630,7 +60723,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 91,
       "estimated_sales": 3434136,
-      "actual_sales": 2512473
+      "actual_sales": 2512473,
+      "tags": "engineering"
     },
     {
       "id": 518286642,
@@ -58658,7 +60752,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 47,
       "estimated_sales": 4833842,
-      "actual_sales": 1326780
+      "actual_sales": 1326780,
+      "tags": ""
     },
     {
       "id": 364609872,
@@ -58686,7 +60781,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 84,
       "estimated_sales": 55258,
-      "actual_sales": 4288113
+      "actual_sales": 4288113,
+      "tags": "cool, construction"
     },
     {
       "id": 258612925,
@@ -58714,7 +60810,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 62,
       "estimated_sales": 1156584,
-      "actual_sales": 2540496
+      "actual_sales": 2540496,
+      "tags": "pro, construction"
     },
     {
       "id": 114819065,
@@ -58742,7 +60839,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 33,
       "estimated_sales": 2153657,
-      "actual_sales": 1601522
+      "actual_sales": 1601522,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 448224740,
@@ -58770,7 +60868,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 18,
       "estimated_sales": 127680,
-      "actual_sales": 312825
+      "actual_sales": 312825,
+      "tags": ""
     },
     {
       "id": 343104517,
@@ -58798,7 +60897,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 63,
       "estimated_sales": 1860628,
-      "actual_sales": 2387780
+      "actual_sales": 2387780,
+      "tags": "demo, engineering"
     },
     {
       "id": 256398654,
@@ -58826,7 +60926,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 0,
       "estimated_sales": 2085360,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, medical"
     },
     {
       "id": 205778160,
@@ -58854,7 +60955,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 48,
       "estimated_sales": 2637280,
-      "actual_sales": 2167560
+      "actual_sales": 2167560,
+      "tags": "cold, medical"
     },
     {
       "id": 985835818,
@@ -58882,7 +60984,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 57,
       "estimated_sales": 1010466,
-      "actual_sales": 1812384
+      "actual_sales": 1812384,
+      "tags": "financial"
     },
     {
       "id": 60321439,
@@ -58910,7 +61013,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 62,
       "estimated_sales": 1187742,
-      "actual_sales": 5068794
+      "actual_sales": 5068794,
+      "tags": "engineering"
     },
     {
       "id": 361001322,
@@ -58938,7 +61042,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 57,
       "estimated_sales": 236322,
-      "actual_sales": 2504678
+      "actual_sales": 2504678,
+      "tags": "subscriber, financial"
     },
     {
       "id": 39957828,
@@ -58966,7 +61071,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 53,
       "estimated_sales": 2438156,
-      "actual_sales": 1197176
+      "actual_sales": 1197176,
+      "tags": "pro, medical"
     },
     {
       "id": 201257460,
@@ -58994,7 +61100,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 41,
       "estimated_sales": 4399488,
-      "actual_sales": 2847517
+      "actual_sales": 2847517,
+      "tags": "medical"
     },
     {
       "id": 243839137,
@@ -59022,7 +61129,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 13,
       "estimated_sales": 1219106,
-      "actual_sales": 167718
+      "actual_sales": 167718,
+      "tags": "subscriber, retail"
     },
     {
       "id": 593251705,
@@ -59050,7 +61158,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 53,
       "estimated_sales": 898430,
-      "actual_sales": 3072550
+      "actual_sales": 3072550,
+      "tags": "pro, medical"
     },
     {
       "id": 537310268,
@@ -59078,7 +61187,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 45,
       "estimated_sales": 1789980,
-      "actual_sales": 2697574
+      "actual_sales": 2697574,
+      "tags": "cold, retail"
     },
     {
       "id": 404221441,
@@ -59106,7 +61216,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 42,
       "estimated_sales": 395532,
-      "actual_sales": 2765955
+      "actual_sales": 2765955,
+      "tags": "demo, medical"
     },
     {
       "id": 709218613,
@@ -59134,7 +61245,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 92,
       "estimated_sales": 2025456,
-      "actual_sales": 2059704
+      "actual_sales": 2059704,
+      "tags": "cold, construction"
     },
     {
       "id": 998108338,
@@ -59162,7 +61274,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 22,
       "estimated_sales": 456810,
-      "actual_sales": 624885
+      "actual_sales": 624885,
+      "tags": "cool, retail"
     },
     {
       "id": 921263213,
@@ -59190,7 +61303,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 55,
       "estimated_sales": 218966,
-      "actual_sales": 370482
+      "actual_sales": 370482,
+      "tags": "cool, retail"
     },
     {
       "id": 707099696,
@@ -59218,7 +61332,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 5,
       "estimated_sales": 480717,
-      "actual_sales": 4383704
+      "actual_sales": 4383704,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 854338294,
@@ -59246,7 +61361,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 88,
       "estimated_sales": 2129125,
-      "actual_sales": 3322890
+      "actual_sales": 3322890,
+      "tags": "cool, construction"
     },
     {
       "id": 646715375,
@@ -59274,7 +61390,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 55,
       "estimated_sales": 484638,
-      "actual_sales": 4152800
+      "actual_sales": 4152800,
+      "tags": "pro, medical"
     },
     {
       "id": 845754908,
@@ -59302,7 +61419,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 4,
       "estimated_sales": 1506561,
-      "actual_sales": 866544
+      "actual_sales": 866544,
+      "tags": "cool, medical"
     },
     {
       "id": 390334163,
@@ -59330,7 +61448,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 48,
       "estimated_sales": 1466726,
-      "actual_sales": 1327898
+      "actual_sales": 1327898,
+      "tags": "pro, construction"
     },
     {
       "id": 893106590,
@@ -59358,7 +61477,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 1,
       "estimated_sales": 1388350,
-      "actual_sales": 349233
+      "actual_sales": 349233,
+      "tags": "warm, financial"
     },
     {
       "id": 20067987,
@@ -59386,7 +61506,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 5,
       "estimated_sales": 2778216,
-      "actual_sales": 3037464
+      "actual_sales": 3037464,
+      "tags": "pharmaceutical"
     },
     {
       "id": 33053221,
@@ -59414,7 +61535,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 59,
       "estimated_sales": 666786,
-      "actual_sales": 692030
+      "actual_sales": 692030,
+      "tags": "hot, construction"
     },
     {
       "id": 605461722,
@@ -59442,7 +61564,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 0,
       "estimated_sales": 1934890,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 485682004,
@@ -59470,7 +61593,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 71,
       "estimated_sales": 143161,
-      "actual_sales": 1588510
+      "actual_sales": 1588510,
+      "tags": "subscriber, financial"
     },
     {
       "id": 613845670,
@@ -59498,7 +61622,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 36,
       "estimated_sales": 4104518,
-      "actual_sales": 2687728
+      "actual_sales": 2687728,
+      "tags": "medical"
     },
     {
       "id": 925768034,
@@ -59526,7 +61651,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 42,
       "estimated_sales": 798005,
-      "actual_sales": 2856766
+      "actual_sales": 2856766,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 716934478,
@@ -59554,7 +61680,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 14,
       "estimated_sales": 3405974,
-      "actual_sales": 321460
+      "actual_sales": 321460,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 432450444,
@@ -59582,7 +61709,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 45,
       "estimated_sales": 1595500,
-      "actual_sales": 1304200
+      "actual_sales": 1304200,
+      "tags": "subscriber, medical"
     },
     {
       "id": 237392613,
@@ -59610,7 +61738,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 54,
       "estimated_sales": 2971376,
-      "actual_sales": 1870968
+      "actual_sales": 1870968,
+      "tags": "demo, retail"
     },
     {
       "id": 79199874,
@@ -59638,7 +61767,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 72,
       "estimated_sales": 4519800,
-      "actual_sales": 3509370
+      "actual_sales": 3509370,
+      "tags": ""
     },
     {
       "id": 795963314,
@@ -59666,7 +61796,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 84,
       "estimated_sales": 62904,
-      "actual_sales": 4895436
+      "actual_sales": 4895436,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 47582979,
@@ -59694,7 +61825,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 23,
       "estimated_sales": 194914,
-      "actual_sales": 1178700
+      "actual_sales": 1178700,
+      "tags": "cold, engineering"
     },
     {
       "id": 678013318,
@@ -59722,7 +61854,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 88,
       "estimated_sales": 1800120,
-      "actual_sales": 3050145
+      "actual_sales": 3050145,
+      "tags": "hot, engineering"
     },
     {
       "id": 848881026,
@@ -59750,7 +61883,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 48,
       "estimated_sales": 1680012,
-      "actual_sales": 3586700
+      "actual_sales": 3586700,
+      "tags": "cool, engineering"
     },
     {
       "id": 690781993,
@@ -59778,7 +61912,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 73,
       "estimated_sales": 0,
-      "actual_sales": 4677845
+      "actual_sales": 4677845,
+      "tags": "demo, financial"
     },
     {
       "id": 90970119,
@@ -59806,7 +61941,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 44,
       "estimated_sales": 2837004,
-      "actual_sales": 3940970
+      "actual_sales": 3940970,
+      "tags": ""
     },
     {
       "id": 698803114,
@@ -59834,7 +61970,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 57,
       "estimated_sales": 2555990,
-      "actual_sales": 5752860
+      "actual_sales": 5752860,
+      "tags": "hot, construction"
     },
     {
       "id": 642171313,
@@ -59862,7 +61999,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 57,
       "estimated_sales": 2770850,
-      "actual_sales": 1955718
+      "actual_sales": 1955718,
+      "tags": "warm, financial"
     },
     {
       "id": 430072271,
@@ -59890,7 +62028,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 0,
       "estimated_sales": 2248020,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "warm, financial"
     },
     {
       "id": 269222776,
@@ -59918,7 +62057,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 25,
       "estimated_sales": 3100975,
-      "actual_sales": 538848
+      "actual_sales": 538848,
+      "tags": "medical"
     },
     {
       "id": 254871982,
@@ -59946,7 +62086,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 37,
       "estimated_sales": 143562,
-      "actual_sales": 693095
+      "actual_sales": 693095,
+      "tags": "cool, construction"
     },
     {
       "id": 996327742,
@@ -59974,7 +62115,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 29,
       "estimated_sales": 4494014,
-      "actual_sales": 1527980
+      "actual_sales": 1527980,
+      "tags": "warm, retail"
     },
     {
       "id": 297385986,
@@ -60002,7 +62144,8 @@ export const data: any[] = [
       "deals_total": 80,
       "ratio": 49,
       "estimated_sales": 2502497,
-      "actual_sales": 2337975
+      "actual_sales": 2337975,
+      "tags": "financial"
     },
     {
       "id": 343168489,
@@ -60030,7 +62173,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 45,
       "estimated_sales": 0,
-      "actual_sales": 1067808
+      "actual_sales": 1067808,
+      "tags": "warm, medical"
     },
     {
       "id": 570862011,
@@ -60058,7 +62202,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 46,
       "estimated_sales": 3906840,
-      "actual_sales": 568942
+      "actual_sales": 568942,
+      "tags": "subscriber, medical"
     },
     {
       "id": 75033530,
@@ -60086,7 +62231,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 4,
       "estimated_sales": 538912,
-      "actual_sales": 2214754
+      "actual_sales": 2214754,
+      "tags": "pro, retail"
     },
     {
       "id": 217306654,
@@ -60114,7 +62260,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 55,
       "estimated_sales": 136748,
-      "actual_sales": 2714454
+      "actual_sales": 2714454,
+      "tags": "hot, financial"
     },
     {
       "id": 415213116,
@@ -60142,7 +62289,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 45,
       "estimated_sales": 436485,
-      "actual_sales": 2762850
+      "actual_sales": 2762850,
+      "tags": "subscriber, medical"
     },
     {
       "id": 693428539,
@@ -60170,7 +62318,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 33,
       "estimated_sales": 1181862,
-      "actual_sales": 333844
+      "actual_sales": 333844,
+      "tags": "demo, medical"
     },
     {
       "id": 436545896,
@@ -60198,7 +62347,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 4,
       "estimated_sales": 217790,
-      "actual_sales": 1352040
+      "actual_sales": 1352040,
+      "tags": ""
     },
     {
       "id": 798187386,
@@ -60226,7 +62376,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 25,
       "estimated_sales": 2800160,
-      "actual_sales": 269468
+      "actual_sales": 269468,
+      "tags": "pro, construction"
     },
     {
       "id": 718421975,
@@ -60254,7 +62405,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 46,
       "estimated_sales": 1644600,
-      "actual_sales": 2891553
+      "actual_sales": 2891553,
+      "tags": "engineering"
     },
     {
       "id": 815915409,
@@ -60282,7 +62434,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 93,
       "estimated_sales": 1475426,
-      "actual_sales": 1908603
+      "actual_sales": 1908603,
+      "tags": "cold, construction"
     },
     {
       "id": 82576760,
@@ -60310,7 +62463,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 55,
       "estimated_sales": 1355045,
-      "actual_sales": 4840500
+      "actual_sales": 4840500,
+      "tags": ""
     },
     {
       "id": 552448358,
@@ -60338,7 +62492,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 94,
       "estimated_sales": 3470274,
-      "actual_sales": 2303528
+      "actual_sales": 2303528,
+      "tags": "cool, financial"
     },
     {
       "id": 455242907,
@@ -60366,7 +62521,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 3,
       "estimated_sales": 3082032,
-      "actual_sales": 1344340
+      "actual_sales": 1344340,
+      "tags": "demo, construction"
     },
     {
       "id": 754931437,
@@ -60394,7 +62550,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 55,
       "estimated_sales": 536370,
-      "actual_sales": 2997831
+      "actual_sales": 2997831,
+      "tags": "pharmaceutical"
     },
     {
       "id": 623116366,
@@ -60422,7 +62579,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 16,
       "estimated_sales": 2600265,
-      "actual_sales": 602188
+      "actual_sales": 602188,
+      "tags": "demo, medical"
     },
     {
       "id": 553481844,
@@ -60450,7 +62608,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 48,
       "estimated_sales": 2856885,
-      "actual_sales": 4948450
+      "actual_sales": 4948450,
+      "tags": "cool, retail"
     },
     {
       "id": 510750764,
@@ -60478,7 +62637,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 42,
       "estimated_sales": 2099933,
-      "actual_sales": 959630
+      "actual_sales": 959630,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 115825766,
@@ -60506,7 +62666,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 28,
       "estimated_sales": 250750,
-      "actual_sales": 782054
+      "actual_sales": 782054,
+      "tags": "warm, financial"
     },
     {
       "id": 544564388,
@@ -60534,7 +62695,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 15,
       "estimated_sales": 2222996,
-      "actual_sales": 469736
+      "actual_sales": 469736,
+      "tags": "subscriber, medical"
     },
     {
       "id": 628097368,
@@ -60562,7 +62724,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 36,
       "estimated_sales": 3534813,
-      "actual_sales": 2987456
+      "actual_sales": 2987456,
+      "tags": "hot, retail"
     },
     {
       "id": 931842512,
@@ -60590,7 +62753,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 55,
       "estimated_sales": 1261421,
-      "actual_sales": 2202115
+      "actual_sales": 2202115,
+      "tags": "cool, financial"
     },
     {
       "id": 5585674,
@@ -60618,7 +62782,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 68,
       "estimated_sales": 2052120,
-      "actual_sales": 2602496
+      "actual_sales": 2602496,
+      "tags": "warm, construction"
     },
     {
       "id": 72339566,
@@ -60646,7 +62811,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 8,
       "estimated_sales": 699672,
-      "actual_sales": 451640
+      "actual_sales": 451640,
+      "tags": ""
     },
     {
       "id": 901841913,
@@ -60674,7 +62840,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 63,
       "estimated_sales": 1585926,
-      "actual_sales": 3669892
+      "actual_sales": 3669892,
+      "tags": "engineering"
     },
     {
       "id": 687667951,
@@ -60702,7 +62869,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 6,
       "estimated_sales": 4916016,
-      "actual_sales": 77158
+      "actual_sales": 77158,
+      "tags": "medical"
     },
     {
       "id": 302584044,
@@ -60730,7 +62898,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 5,
       "estimated_sales": 1205292,
-      "actual_sales": 447696
+      "actual_sales": 447696,
+      "tags": "pharmaceutical"
     },
     {
       "id": 218799166,
@@ -60758,7 +62927,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 62,
       "estimated_sales": 934840,
-      "actual_sales": 824944
+      "actual_sales": 824944,
+      "tags": "cool, retail"
     },
     {
       "id": 365240322,
@@ -60786,7 +62956,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 28,
       "estimated_sales": 1850664,
-      "actual_sales": 1599598
+      "actual_sales": 1599598,
+      "tags": "retail"
     },
     {
       "id": 839938106,
@@ -60814,7 +62985,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 46,
       "estimated_sales": 737366,
-      "actual_sales": 1494216
+      "actual_sales": 1494216,
+      "tags": "cool, construction"
     },
     {
       "id": 952142951,
@@ -60842,7 +63014,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 68,
       "estimated_sales": 3036936,
-      "actual_sales": 3224043
+      "actual_sales": 3224043,
+      "tags": "subscriber, construction"
     },
     {
       "id": 701662335,
@@ -60870,7 +63043,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 36,
       "estimated_sales": 2151800,
-      "actual_sales": 2306000
+      "actual_sales": 2306000,
+      "tags": "hot, engineering"
     },
     {
       "id": 437758124,
@@ -60898,7 +63072,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 46,
       "estimated_sales": 781480,
-      "actual_sales": 1719840
+      "actual_sales": 1719840,
+      "tags": ""
     },
     {
       "id": 378003581,
@@ -60926,7 +63101,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 4,
       "estimated_sales": 2993302,
-      "actual_sales": 347224
+      "actual_sales": 347224,
+      "tags": "pro, construction"
     },
     {
       "id": 350532347,
@@ -60954,7 +63130,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 79,
       "estimated_sales": 571530,
-      "actual_sales": 1533705
+      "actual_sales": 1533705,
+      "tags": "subscriber, medical"
     },
     {
       "id": 240909874,
@@ -60982,7 +63159,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 35,
       "estimated_sales": 0,
-      "actual_sales": 956527
+      "actual_sales": 956527,
+      "tags": "demo, construction"
     },
     {
       "id": 324223280,
@@ -61010,7 +63188,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 86,
       "estimated_sales": 1849804,
-      "actual_sales": 2796948
+      "actual_sales": 2796948,
+      "tags": "warm, medical"
     },
     {
       "id": 313216078,
@@ -61038,7 +63217,8 @@ export const data: any[] = [
       "deals_total": 9,
       "ratio": 0,
       "estimated_sales": 185225,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 985469886,
@@ -61066,7 +63246,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 49,
       "estimated_sales": 1257125,
-      "actual_sales": 1450783
+      "actual_sales": 1450783,
+      "tags": "cold, financial"
     },
     {
       "id": 954931244,
@@ -61094,7 +63275,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 89,
       "estimated_sales": 2776545,
-      "actual_sales": 1353720
+      "actual_sales": 1353720,
+      "tags": "cool, construction"
     },
     {
       "id": 236800383,
@@ -61122,7 +63304,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 52,
       "estimated_sales": 2678676,
-      "actual_sales": 5168467
+      "actual_sales": 5168467,
+      "tags": "cool, financial"
     },
     {
       "id": 217842953,
@@ -61150,7 +63333,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 38,
       "estimated_sales": 1782220,
-      "actual_sales": 2844330
+      "actual_sales": 2844330,
+      "tags": "cool, retail"
     },
     {
       "id": 705451996,
@@ -61178,7 +63362,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 36,
       "estimated_sales": 1532214,
-      "actual_sales": 2400864
+      "actual_sales": 2400864,
+      "tags": "cold, construction"
     },
     {
       "id": 117294878,
@@ -61206,7 +63391,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 5,
       "estimated_sales": 3107475,
-      "actual_sales": 255876
+      "actual_sales": 255876,
+      "tags": "cold, engineering"
     },
     {
       "id": 301347271,
@@ -61234,7 +63420,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 41,
       "estimated_sales": 3078198,
-      "actual_sales": 1939854
+      "actual_sales": 1939854,
+      "tags": "engineering"
     },
     {
       "id": 830073465,
@@ -61262,7 +63449,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 31,
       "estimated_sales": 277944,
-      "actual_sales": 1193013
+      "actual_sales": 1193013,
+      "tags": "warm, medical"
     },
     {
       "id": 49639576,
@@ -61290,7 +63478,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 65,
       "estimated_sales": 4579775,
-      "actual_sales": 1106655
+      "actual_sales": 1106655,
+      "tags": "pro, financial"
     },
     {
       "id": 841382414,
@@ -61318,7 +63507,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 73,
       "estimated_sales": 4886492,
-      "actual_sales": 1382524
+      "actual_sales": 1382524,
+      "tags": "pharmaceutical"
     },
     {
       "id": 201138690,
@@ -61346,7 +63536,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 67,
       "estimated_sales": 0,
-      "actual_sales": 3190608
+      "actual_sales": 3190608,
+      "tags": "financial"
     },
     {
       "id": 62375308,
@@ -61374,7 +63565,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 28,
       "estimated_sales": 186903,
-      "actual_sales": 1529748
+      "actual_sales": 1529748,
+      "tags": "demo, construction"
     },
     {
       "id": 592549226,
@@ -61402,7 +63594,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 81,
       "estimated_sales": 620760,
-      "actual_sales": 2218075
+      "actual_sales": 2218075,
+      "tags": ""
     },
     {
       "id": 634259288,
@@ -61430,7 +63623,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 2,
       "estimated_sales": 884976,
-      "actual_sales": 56223
+      "actual_sales": 56223,
+      "tags": "warm, engineering"
     },
     {
       "id": 419602497,
@@ -61458,7 +63652,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 59,
       "estimated_sales": 2283417,
-      "actual_sales": 3042408
+      "actual_sales": 3042408,
+      "tags": "pharmaceutical"
     },
     {
       "id": 538739998,
@@ -61486,7 +63681,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 48,
       "estimated_sales": 444344,
-      "actual_sales": 1657975
+      "actual_sales": 1657975,
+      "tags": "cool, medical"
     },
     {
       "id": 459995677,
@@ -61514,7 +63710,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 82,
       "estimated_sales": 2053821,
-      "actual_sales": 770980
+      "actual_sales": 770980,
+      "tags": "demo, construction"
     },
     {
       "id": 134843525,
@@ -61542,7 +63739,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 55,
       "estimated_sales": 442536,
-      "actual_sales": 2347228
+      "actual_sales": 2347228,
+      "tags": "warm, medical"
     },
     {
       "id": 835582318,
@@ -61570,7 +63768,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 75,
       "estimated_sales": 3809375,
-      "actual_sales": 440652
+      "actual_sales": 440652,
+      "tags": "cold, financial"
     },
     {
       "id": 135155842,
@@ -61598,7 +63797,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 11,
       "estimated_sales": 3953140,
-      "actual_sales": 361988
+      "actual_sales": 361988,
+      "tags": "cold, financial"
     },
     {
       "id": 468455792,
@@ -61626,7 +63826,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 3,
       "estimated_sales": 90005,
-      "actual_sales": 2120932
+      "actual_sales": 2120932,
+      "tags": "cold, engineering"
     },
     {
       "id": 44021315,
@@ -61654,7 +63855,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 7,
       "estimated_sales": 958842,
-      "actual_sales": 103501
+      "actual_sales": 103501,
+      "tags": ""
     },
     {
       "id": 926402482,
@@ -61682,7 +63884,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 55,
       "estimated_sales": 3224760,
-      "actual_sales": 897520
+      "actual_sales": 897520,
+      "tags": ""
     },
     {
       "id": 889223499,
@@ -61710,7 +63913,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 61,
       "estimated_sales": 3161250,
-      "actual_sales": 1550296
+      "actual_sales": 1550296,
+      "tags": "engineering"
     },
     {
       "id": 861391451,
@@ -61738,7 +63942,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 64,
       "estimated_sales": 3641084,
-      "actual_sales": 1298451
+      "actual_sales": 1298451,
+      "tags": "subscriber, financial"
     },
     {
       "id": 970837070,
@@ -61766,7 +63971,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 4,
       "estimated_sales": 635640,
-      "actual_sales": 388824
+      "actual_sales": 388824,
+      "tags": "pro, construction"
     },
     {
       "id": 459700202,
@@ -61794,7 +64000,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 94,
       "estimated_sales": 1270845,
-      "actual_sales": 2684980
+      "actual_sales": 2684980,
+      "tags": "hot, construction"
     },
     {
       "id": 329716005,
@@ -61822,7 +64029,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 29,
       "estimated_sales": 1459019,
-      "actual_sales": 1272440
+      "actual_sales": 1272440,
+      "tags": "subscriber, retail"
     },
     {
       "id": 62814132,
@@ -61850,7 +64058,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 8,
       "estimated_sales": 3447037,
-      "actual_sales": 1926480
+      "actual_sales": 1926480,
+      "tags": "pro, engineering"
     },
     {
       "id": 634256385,
@@ -61878,7 +64087,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 78,
       "estimated_sales": 2744922,
-      "actual_sales": 2905518
+      "actual_sales": 2905518,
+      "tags": "cool, engineering"
     },
     {
       "id": 656961734,
@@ -61906,7 +64116,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 0,
       "estimated_sales": 102509,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "financial"
     },
     {
       "id": 580342868,
@@ -61934,7 +64145,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 68,
       "estimated_sales": 302012,
-      "actual_sales": 2680986
+      "actual_sales": 2680986,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 549796581,
@@ -61962,7 +64174,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 48,
       "estimated_sales": 2344459,
-      "actual_sales": 4537320
+      "actual_sales": 4537320,
+      "tags": "cool, financial"
     },
     {
       "id": 158050583,
@@ -61990,7 +64203,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 22,
       "estimated_sales": 1633280,
-      "actual_sales": 797895
+      "actual_sales": 797895,
+      "tags": "cold, retail"
     },
     {
       "id": 450618902,
@@ -62018,7 +64232,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 38,
       "estimated_sales": 56682,
-      "actual_sales": 1846044
+      "actual_sales": 1846044,
+      "tags": "demo, retail"
     },
     {
       "id": 895387256,
@@ -62046,7 +64261,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 41,
       "estimated_sales": 139246,
-      "actual_sales": 1118698
+      "actual_sales": 1118698,
+      "tags": "pharmaceutical"
     },
     {
       "id": 331927736,
@@ -62074,7 +64290,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 41,
       "estimated_sales": 840876,
-      "actual_sales": 1390172
+      "actual_sales": 1390172,
+      "tags": "pro, engineering"
     },
     {
       "id": 172279612,
@@ -62102,7 +64319,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 73,
       "estimated_sales": 872025,
-      "actual_sales": 2747489
+      "actual_sales": 2747489,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 249056739,
@@ -62130,7 +64348,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 94,
       "estimated_sales": 3418032,
-      "actual_sales": 5116440
+      "actual_sales": 5116440,
+      "tags": "retail"
     },
     {
       "id": 830808536,
@@ -62158,7 +64377,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 79,
       "estimated_sales": 1862592,
-      "actual_sales": 2180607
+      "actual_sales": 2180607,
+      "tags": "demo, engineering"
     },
     {
       "id": 298231842,
@@ -62186,7 +64406,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 33,
       "estimated_sales": 3111102,
-      "actual_sales": 2673006
+      "actual_sales": 2673006,
+      "tags": "warm, engineering"
     },
     {
       "id": 312699295,
@@ -62214,7 +64435,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 37,
       "estimated_sales": 1886010,
-      "actual_sales": 750695
+      "actual_sales": 750695,
+      "tags": "subscriber, construction"
     },
     {
       "id": 252465109,
@@ -62242,7 +64464,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 41,
       "estimated_sales": 4396777,
-      "actual_sales": 645957
+      "actual_sales": 645957,
+      "tags": "hot, medical"
     },
     {
       "id": 177788469,
@@ -62270,7 +64493,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 89,
       "estimated_sales": 167290,
-      "actual_sales": 2047725
+      "actual_sales": 2047725,
+      "tags": ""
     },
     {
       "id": 111864710,
@@ -62298,7 +64522,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 35,
       "estimated_sales": 1927428,
-      "actual_sales": 801885
+      "actual_sales": 801885,
+      "tags": "medical"
     },
     {
       "id": 783595676,
@@ -62326,7 +64551,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 75,
       "estimated_sales": 0,
-      "actual_sales": 2304180
+      "actual_sales": 2304180,
+      "tags": "pro, retail"
     },
     {
       "id": 593582299,
@@ -62354,7 +64580,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 33,
       "estimated_sales": 922872,
-      "actual_sales": 738715
+      "actual_sales": 738715,
+      "tags": "cool, engineering"
     },
     {
       "id": 646837411,
@@ -62382,7 +64609,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 88,
       "estimated_sales": 1096551,
-      "actual_sales": 1683920
+      "actual_sales": 1683920,
+      "tags": "pro, construction"
     },
     {
       "id": 880782513,
@@ -62410,7 +64638,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 25,
       "estimated_sales": 1944280,
-      "actual_sales": 591101
+      "actual_sales": 591101,
+      "tags": "pro, engineering"
     },
     {
       "id": 78841901,
@@ -62438,7 +64667,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 1,
       "estimated_sales": 3096304,
-      "actual_sales": 435162
+      "actual_sales": 435162,
+      "tags": "cold, engineering"
     },
     {
       "id": 611247512,
@@ -62466,7 +64696,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 14,
       "estimated_sales": 1753920,
-      "actual_sales": 456185
+      "actual_sales": 456185,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 398420060,
@@ -62494,7 +64725,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 21,
       "estimated_sales": 753494,
-      "actual_sales": 1333448
+      "actual_sales": 1333448,
+      "tags": "demo, medical"
     },
     {
       "id": 421218417,
@@ -62522,7 +64754,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 61,
       "estimated_sales": 152930,
-      "actual_sales": 1584590
+      "actual_sales": 1584590,
+      "tags": "pro, retail"
     },
     {
       "id": 359846029,
@@ -62550,7 +64783,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 41,
       "estimated_sales": 1579600,
-      "actual_sales": 2177760
+      "actual_sales": 2177760,
+      "tags": "demo, construction"
     },
     {
       "id": 347300199,
@@ -62578,7 +64812,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 0,
       "estimated_sales": 3141432,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, medical"
     },
     {
       "id": 675299739,
@@ -62606,7 +64841,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 27,
       "estimated_sales": 1463312,
-      "actual_sales": 1573164
+      "actual_sales": 1573164,
+      "tags": "pro, engineering"
     },
     {
       "id": 749340887,
@@ -62634,7 +64870,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 52,
       "estimated_sales": 1777950,
-      "actual_sales": 1234999
+      "actual_sales": 1234999,
+      "tags": "cool, construction"
     },
     {
       "id": 441683484,
@@ -62662,7 +64899,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 37,
       "estimated_sales": 2286408,
-      "actual_sales": 1351196
+      "actual_sales": 1351196,
+      "tags": ""
     },
     {
       "id": 934238254,
@@ -62690,7 +64928,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 19,
       "estimated_sales": 2216205,
-      "actual_sales": 381045
+      "actual_sales": 381045,
+      "tags": "cool, engineering"
     },
     {
       "id": 859041474,
@@ -62718,7 +64957,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 38,
       "estimated_sales": 921876,
-      "actual_sales": 1260204
+      "actual_sales": 1260204,
+      "tags": "financial"
     },
     {
       "id": 531561132,
@@ -62746,7 +64986,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 79,
       "estimated_sales": 552606,
-      "actual_sales": 3422170
+      "actual_sales": 3422170,
+      "tags": "cold, engineering"
     },
     {
       "id": 578625612,
@@ -62774,7 +65015,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 58,
       "estimated_sales": 934925,
-      "actual_sales": 1327921
+      "actual_sales": 1327921,
+      "tags": "warm, engineering"
     },
     {
       "id": 745632585,
@@ -62802,7 +65044,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 63,
       "estimated_sales": 1137384,
-      "actual_sales": 914820
+      "actual_sales": 914820,
+      "tags": "retail"
     },
     {
       "id": 545531236,
@@ -62830,7 +65073,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 22,
       "estimated_sales": 3361600,
-      "actual_sales": 781448
+      "actual_sales": 781448,
+      "tags": "subscriber, construction"
     },
     {
       "id": 555961765,
@@ -62858,7 +65102,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 38,
       "estimated_sales": 1644504,
-      "actual_sales": 1827410
+      "actual_sales": 1827410,
+      "tags": "hot, construction"
     },
     {
       "id": 622475684,
@@ -62886,7 +65131,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 79,
       "estimated_sales": 1339155,
-      "actual_sales": 772222
+      "actual_sales": 772222,
+      "tags": "demo, engineering"
     },
     {
       "id": 806585542,
@@ -62914,7 +65160,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 41,
       "estimated_sales": 1493722,
-      "actual_sales": 1503348
+      "actual_sales": 1503348,
+      "tags": "cold, retail"
     },
     {
       "id": 751648191,
@@ -62942,7 +65189,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 65,
       "estimated_sales": 0,
-      "actual_sales": 769384
+      "actual_sales": 769384,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 659053458,
@@ -62970,7 +65218,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 46,
       "estimated_sales": 1092184,
-      "actual_sales": 1523874
+      "actual_sales": 1523874,
+      "tags": "cold, retail"
     },
     {
       "id": 164223213,
@@ -62998,7 +65247,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 32,
       "estimated_sales": 1405720,
-      "actual_sales": 2322964
+      "actual_sales": 2322964,
+      "tags": "demo, retail"
     },
     {
       "id": 569938087,
@@ -63026,7 +65276,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 5,
       "estimated_sales": 1303540,
-      "actual_sales": 955595
+      "actual_sales": 955595,
+      "tags": "pharmaceutical"
     },
     {
       "id": 357605430,
@@ -63054,7 +65305,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 21,
       "estimated_sales": 932815,
-      "actual_sales": 514074
+      "actual_sales": 514074,
+      "tags": "cold, retail"
     },
     {
       "id": 434075915,
@@ -63082,7 +65334,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 16,
       "estimated_sales": 367542,
-      "actual_sales": 430990
+      "actual_sales": 430990,
+      "tags": "cool, medical"
     },
     {
       "id": 727852315,
@@ -63110,7 +65363,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 71,
       "estimated_sales": 803920,
-      "actual_sales": 3634480
+      "actual_sales": 3634480,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 443480694,
@@ -63138,7 +65392,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 36,
       "estimated_sales": 784692,
-      "actual_sales": 762524
+      "actual_sales": 762524,
+      "tags": "pro, engineering"
     },
     {
       "id": 636810699,
@@ -63166,7 +65421,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 82,
       "estimated_sales": 50306,
-      "actual_sales": 2821914
+      "actual_sales": 2821914,
+      "tags": "hot, medical"
     },
     {
       "id": 800560349,
@@ -63194,7 +65450,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 48,
       "estimated_sales": 3339972,
-      "actual_sales": 1765686
+      "actual_sales": 1765686,
+      "tags": "demo, financial"
     },
     {
       "id": 578600494,
@@ -63222,7 +65479,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 44,
       "estimated_sales": 590898,
-      "actual_sales": 965006
+      "actual_sales": 965006,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 527773227,
@@ -63250,7 +65508,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 64,
       "estimated_sales": 0,
-      "actual_sales": 1199429
+      "actual_sales": 1199429,
+      "tags": "subscriber, financial"
     },
     {
       "id": 376987193,
@@ -63278,7 +65537,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 61,
       "estimated_sales": 659360,
-      "actual_sales": 3131986
+      "actual_sales": 3131986,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 614759722,
@@ -63306,7 +65566,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 79,
       "estimated_sales": 1185366,
-      "actual_sales": 1443992
+      "actual_sales": 1443992,
+      "tags": "hot, medical"
     },
     {
       "id": 614751811,
@@ -63334,7 +65595,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 66,
       "estimated_sales": 145698,
-      "actual_sales": 4200025
+      "actual_sales": 4200025,
+      "tags": "warm, medical"
     },
     {
       "id": 485903069,
@@ -63362,7 +65624,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 64,
       "estimated_sales": 2513467,
-      "actual_sales": 3307791
+      "actual_sales": 3307791,
+      "tags": "subscriber, medical"
     },
     {
       "id": 902584654,
@@ -63390,7 +65653,8 @@ export const data: any[] = [
       "deals_total": 12,
       "ratio": 0,
       "estimated_sales": 508722,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, retail"
     },
     {
       "id": 19940520,
@@ -63418,7 +65682,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 6,
       "estimated_sales": 319000,
-      "actual_sales": 4032964
+      "actual_sales": 4032964,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 891543298,
@@ -63446,7 +65711,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 83,
       "estimated_sales": 669205,
-      "actual_sales": 1982920
+      "actual_sales": 1982920,
+      "tags": "cool, engineering"
     },
     {
       "id": 53315047,
@@ -63474,7 +65740,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 48,
       "estimated_sales": 1954711,
-      "actual_sales": 3361624
+      "actual_sales": 3361624,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 284303119,
@@ -63502,7 +65769,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 0,
       "estimated_sales": 0,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, engineering"
     },
     {
       "id": 824055457,
@@ -63530,7 +65798,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 72,
       "estimated_sales": 912240,
-      "actual_sales": 4058678
+      "actual_sales": 4058678,
+      "tags": ""
     },
     {
       "id": 111298370,
@@ -63558,7 +65827,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 49,
       "estimated_sales": 377979,
-      "actual_sales": 4254885
+      "actual_sales": 4254885,
+      "tags": "cold, construction"
     },
     {
       "id": 661700975,
@@ -63586,7 +65856,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 55,
       "estimated_sales": 767360,
-      "actual_sales": 2438912
+      "actual_sales": 2438912,
+      "tags": "warm, medical"
     },
     {
       "id": 277375914,
@@ -63614,7 +65885,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 7,
       "estimated_sales": 85673,
-      "actual_sales": 1479280
+      "actual_sales": 1479280,
+      "tags": ""
     },
     {
       "id": 955570948,
@@ -63642,7 +65914,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 57,
       "estimated_sales": 0,
-      "actual_sales": 2214702
+      "actual_sales": 2214702,
+      "tags": "cold, engineering"
     },
     {
       "id": 841982719,
@@ -63670,7 +65943,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 86,
       "estimated_sales": 1226960,
-      "actual_sales": 2151030
+      "actual_sales": 2151030,
+      "tags": "engineering"
     },
     {
       "id": 259469819,
@@ -63698,7 +65972,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 5,
       "estimated_sales": 2234000,
-      "actual_sales": 469719
+      "actual_sales": 469719,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 536560806,
@@ -63726,7 +66001,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 1,
       "estimated_sales": 683376,
-      "actual_sales": 186631
+      "actual_sales": 186631,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 370432519,
@@ -63754,7 +66030,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 96,
       "estimated_sales": 2367260,
-      "actual_sales": 3339873
+      "actual_sales": 3339873,
+      "tags": "construction"
     },
     {
       "id": 578245623,
@@ -63782,7 +66059,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 47,
       "estimated_sales": 100300,
-      "actual_sales": 4074575
+      "actual_sales": 4074575,
+      "tags": "retail"
     },
     {
       "id": 217368707,
@@ -63810,7 +66088,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 4,
       "estimated_sales": 1148721,
-      "actual_sales": 341868
+      "actual_sales": 341868,
+      "tags": "hot, construction"
     },
     {
       "id": 209508838,
@@ -63838,7 +66117,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 81,
       "estimated_sales": 1537548,
-      "actual_sales": 4309360
+      "actual_sales": 4309360,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 4194689,
@@ -63866,7 +66146,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 86,
       "estimated_sales": 2511225,
-      "actual_sales": 1415700
+      "actual_sales": 1415700,
+      "tags": "cool, financial"
     },
     {
       "id": 378214168,
@@ -63894,7 +66175,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 33,
       "estimated_sales": 373540,
-      "actual_sales": 707876
+      "actual_sales": 707876,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 279567511,
@@ -63922,7 +66204,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 64,
       "estimated_sales": 983984,
-      "actual_sales": 3017196
+      "actual_sales": 3017196,
+      "tags": "subscriber, retail"
     },
     {
       "id": 180541683,
@@ -63950,7 +66233,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 33,
       "estimated_sales": 3616536,
-      "actual_sales": 1341768
+      "actual_sales": 1341768,
+      "tags": "cool, retail"
     },
     {
       "id": 553534855,
@@ -63978,7 +66262,8 @@ export const data: any[] = [
       "deals_total": 4,
       "ratio": 33,
       "estimated_sales": 147668,
-      "actual_sales": 83238
+      "actual_sales": 83238,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 241886331,
@@ -64006,7 +66291,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 65,
       "estimated_sales": 3109080,
-      "actual_sales": 2161348
+      "actual_sales": 2161348,
+      "tags": "hot, medical"
     },
     {
       "id": 685414534,
@@ -64034,7 +66320,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 31,
       "estimated_sales": 1833350,
-      "actual_sales": 664118
+      "actual_sales": 664118,
+      "tags": "hot, retail"
     },
     {
       "id": 214590272,
@@ -64062,7 +66349,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 54,
       "estimated_sales": 2144582,
-      "actual_sales": 767910
+      "actual_sales": 767910,
+      "tags": "pro, retail"
     },
     {
       "id": 13942867,
@@ -64090,7 +66378,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 58,
       "estimated_sales": 1319685,
-      "actual_sales": 3520035
+      "actual_sales": 3520035,
+      "tags": "pharmaceutical"
     },
     {
       "id": 231395665,
@@ -64118,7 +66407,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 27,
       "estimated_sales": 1076607,
-      "actual_sales": 1344720
+      "actual_sales": 1344720,
+      "tags": "cool, construction"
     },
     {
       "id": 456412150,
@@ -64146,7 +66436,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 46,
       "estimated_sales": 1268316,
-      "actual_sales": 3070137
+      "actual_sales": 3070137,
+      "tags": "cool, financial"
     },
     {
       "id": 476723867,
@@ -64174,7 +66465,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 49,
       "estimated_sales": 3683100,
-      "actual_sales": 3053196
+      "actual_sales": 3053196,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 856673310,
@@ -64202,7 +66494,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 45,
       "estimated_sales": 1709868,
-      "actual_sales": 1572312
+      "actual_sales": 1572312,
+      "tags": "cool, construction"
     },
     {
       "id": 368790211,
@@ -64230,7 +66523,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 0,
       "estimated_sales": 538220,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pharmaceutical"
     },
     {
       "id": 196947169,
@@ -64258,7 +66552,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 5,
       "estimated_sales": 0,
-      "actual_sales": 893032
+      "actual_sales": 893032,
+      "tags": "cool, medical"
     },
     {
       "id": 197199119,
@@ -64286,7 +66581,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 55,
       "estimated_sales": 1279782,
-      "actual_sales": 1585512
+      "actual_sales": 1585512,
+      "tags": "pro, medical"
     },
     {
       "id": 992379800,
@@ -64314,7 +66610,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 46,
       "estimated_sales": 2537736,
-      "actual_sales": 1305856
+      "actual_sales": 1305856,
+      "tags": "pro, financial"
     },
     {
       "id": 450988885,
@@ -64342,7 +66639,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 8,
       "estimated_sales": 1830060,
-      "actual_sales": 2321840
+      "actual_sales": 2321840,
+      "tags": "pro, retail"
     },
     {
       "id": 851080187,
@@ -64370,7 +66668,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 29,
       "estimated_sales": 2201976,
-      "actual_sales": 665820
+      "actual_sales": 665820,
+      "tags": "subscriber, retail"
     },
     {
       "id": 366980029,
@@ -64398,7 +66697,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 52,
       "estimated_sales": 3975796,
-      "actual_sales": 4300452
+      "actual_sales": 4300452,
+      "tags": "hot, retail"
     },
     {
       "id": 569679473,
@@ -64426,7 +66726,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 55,
       "estimated_sales": 3944240,
-      "actual_sales": 4515129
+      "actual_sales": 4515129,
+      "tags": "pro, engineering"
     },
     {
       "id": 667579902,
@@ -64454,7 +66755,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 4,
       "estimated_sales": 2752728,
-      "actual_sales": 181264
+      "actual_sales": 181264,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 634266033,
@@ -64482,7 +66784,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 93,
       "estimated_sales": 956839,
-      "actual_sales": 2587144
+      "actual_sales": 2587144,
+      "tags": "cool, construction"
     },
     {
       "id": 719558529,
@@ -64510,7 +66813,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 74,
       "estimated_sales": 1557045,
-      "actual_sales": 2217026
+      "actual_sales": 2217026,
+      "tags": "hot, financial"
     },
     {
       "id": 883602084,
@@ -64538,7 +66842,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 36,
       "estimated_sales": 344424,
-      "actual_sales": 826191
+      "actual_sales": 826191,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 922453642,
@@ -64566,7 +66871,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 52,
       "estimated_sales": 1535547,
-      "actual_sales": 3570034
+      "actual_sales": 3570034,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 791953432,
@@ -64594,7 +66900,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 5,
       "estimated_sales": 2064597,
-      "actual_sales": 676400
+      "actual_sales": 676400,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 749808688,
@@ -64622,7 +66929,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 52,
       "estimated_sales": 3739639,
-      "actual_sales": 892089
+      "actual_sales": 892089,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 131413223,
@@ -64650,7 +66958,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 58,
       "estimated_sales": 179760,
-      "actual_sales": 3624750
+      "actual_sales": 3624750,
+      "tags": "demo, financial"
     },
     {
       "id": 663936629,
@@ -64678,7 +66987,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 21,
       "estimated_sales": 1205820,
-      "actual_sales": 446488
+      "actual_sales": 446488,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 653379198,
@@ -64706,7 +67016,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 43,
       "estimated_sales": 4342832,
-      "actual_sales": 397308
+      "actual_sales": 397308,
+      "tags": "demo, construction"
     },
     {
       "id": 445854486,
@@ -64734,7 +67045,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 45,
       "estimated_sales": 4908456,
-      "actual_sales": 1970892
+      "actual_sales": 1970892,
+      "tags": ""
     },
     {
       "id": 974852951,
@@ -64762,7 +67074,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 49,
       "estimated_sales": 2216116,
-      "actual_sales": 1681320
+      "actual_sales": 1681320,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 254107443,
@@ -64790,7 +67103,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 11,
       "estimated_sales": 345668,
-      "actual_sales": 271617
+      "actual_sales": 271617,
+      "tags": "cool, engineering"
     },
     {
       "id": 506381351,
@@ -64818,7 +67132,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 7,
       "estimated_sales": 2750300,
-      "actual_sales": 238188
+      "actual_sales": 238188,
+      "tags": "subscriber, medical"
     },
     {
       "id": 8336154,
@@ -64846,7 +67161,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 61,
       "estimated_sales": 1889706,
-      "actual_sales": 4347700
+      "actual_sales": 4347700,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 121614176,
@@ -64874,7 +67190,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 76,
       "estimated_sales": 3104769,
-      "actual_sales": 4022018
+      "actual_sales": 4022018,
+      "tags": "warm, financial"
     },
     {
       "id": 800050473,
@@ -64902,7 +67219,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 47,
       "estimated_sales": 2320968,
-      "actual_sales": 1177656
+      "actual_sales": 1177656,
+      "tags": "pro, retail"
     },
     {
       "id": 170855478,
@@ -64930,7 +67248,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 4,
       "estimated_sales": 1664058,
-      "actual_sales": 102414
+      "actual_sales": 102414,
+      "tags": "pro, medical"
     },
     {
       "id": 313414805,
@@ -64958,7 +67277,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 0,
       "estimated_sales": 2286108,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "demo, construction"
     },
     {
       "id": 761366795,
@@ -64986,7 +67306,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 46,
       "estimated_sales": 1780226,
-      "actual_sales": 3365901
+      "actual_sales": 3365901,
+      "tags": "demo, construction"
     },
     {
       "id": 462876854,
@@ -65014,7 +67335,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 95,
       "estimated_sales": 1216514,
-      "actual_sales": 2896000
+      "actual_sales": 2896000,
+      "tags": "warm, engineering"
     },
     {
       "id": 780650510,
@@ -65042,7 +67364,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 47,
       "estimated_sales": 1121680,
-      "actual_sales": 1304984
+      "actual_sales": 1304984,
+      "tags": "cold, engineering"
     },
     {
       "id": 852079449,
@@ -65070,7 +67393,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 31,
       "estimated_sales": 0,
-      "actual_sales": 849824
+      "actual_sales": 849824,
+      "tags": "demo, construction"
     },
     {
       "id": 439842037,
@@ -65098,7 +67422,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 2,
       "estimated_sales": 4340358,
-      "actual_sales": 363318
+      "actual_sales": 363318,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 724126571,
@@ -65126,7 +67451,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 7,
       "estimated_sales": 2897034,
-      "actual_sales": 281752
+      "actual_sales": 281752,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 889565603,
@@ -65154,7 +67480,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 11,
       "estimated_sales": 2973888,
-      "actual_sales": 214347
+      "actual_sales": 214347,
+      "tags": "pro, retail"
     },
     {
       "id": 515410067,
@@ -65182,7 +67509,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 56,
       "estimated_sales": 2058836,
-      "actual_sales": 998280
+      "actual_sales": 998280,
+      "tags": "medical"
     },
     {
       "id": 895889986,
@@ -65210,7 +67538,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 87,
       "estimated_sales": 953018,
-      "actual_sales": 2861379
+      "actual_sales": 2861379,
+      "tags": "demo, construction"
     },
     {
       "id": 890779505,
@@ -65238,7 +67567,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 22,
       "estimated_sales": 3467442,
-      "actual_sales": 1063811
+      "actual_sales": 1063811,
+      "tags": "warm, construction"
     },
     {
       "id": 492678275,
@@ -65266,7 +67596,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 7,
       "estimated_sales": 1778764,
-      "actual_sales": 350574
+      "actual_sales": 350574,
+      "tags": ""
     },
     {
       "id": 358192989,
@@ -65294,7 +67625,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 25,
       "estimated_sales": 4506580,
-      "actual_sales": 293624
+      "actual_sales": 293624,
+      "tags": "demo, construction"
     },
     {
       "id": 9078511,
@@ -65322,7 +67654,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 88,
       "estimated_sales": 2403960,
-      "actual_sales": 853350
+      "actual_sales": 853350,
+      "tags": "hot, medical"
     },
     {
       "id": 541599490,
@@ -65350,7 +67683,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 36,
       "estimated_sales": 926506,
-      "actual_sales": 3339752
+      "actual_sales": 3339752,
+      "tags": "cool, financial"
     },
     {
       "id": 654581111,
@@ -65378,7 +67712,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 3,
       "estimated_sales": 1399024,
-      "actual_sales": 1192906
+      "actual_sales": 1192906,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 889559221,
@@ -65406,7 +67741,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 49,
       "estimated_sales": 1779696,
-      "actual_sales": 4995875
+      "actual_sales": 4995875,
+      "tags": "cold, engineering"
     },
     {
       "id": 483822927,
@@ -65434,7 +67770,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 39,
       "estimated_sales": 1074717,
-      "actual_sales": 2149938
+      "actual_sales": 2149938,
+      "tags": ""
     },
     {
       "id": 153468291,
@@ -65462,7 +67799,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 42,
       "estimated_sales": 3171476,
-      "actual_sales": 455700
+      "actual_sales": 455700,
+      "tags": "cool, engineering"
     },
     {
       "id": 960798578,
@@ -65490,7 +67828,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 0,
       "estimated_sales": 1460328,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, construction"
     },
     {
       "id": 956609912,
@@ -65518,7 +67857,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 27,
       "estimated_sales": 908928,
-      "actual_sales": 1274196
+      "actual_sales": 1274196,
+      "tags": "subscriber, financial"
     },
     {
       "id": 533297373,
@@ -65546,7 +67886,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 59,
       "estimated_sales": 2806524,
-      "actual_sales": 3442502
+      "actual_sales": 3442502,
+      "tags": ""
     },
     {
       "id": 111729918,
@@ -65574,7 +67915,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 76,
       "estimated_sales": 843525,
-      "actual_sales": 2014144
+      "actual_sales": 2014144,
+      "tags": "financial"
     },
     {
       "id": 731686010,
@@ -65602,7 +67944,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 67,
       "estimated_sales": 5300330,
-      "actual_sales": 2355150
+      "actual_sales": 2355150,
+      "tags": "warm, engineering"
     },
     {
       "id": 239008931,
@@ -65630,7 +67973,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 6,
       "estimated_sales": 715012,
-      "actual_sales": 159540
+      "actual_sales": 159540,
+      "tags": "warm, financial"
     },
     {
       "id": 122010828,
@@ -65658,7 +68002,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 32,
       "estimated_sales": 167484,
-      "actual_sales": 750084
+      "actual_sales": 750084,
+      "tags": "hot, construction"
     },
     {
       "id": 608916672,
@@ -65686,7 +68031,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 53,
       "estimated_sales": 3548064,
-      "actual_sales": 3231020
+      "actual_sales": 3231020,
+      "tags": "warm, financial"
     },
     {
       "id": 458083879,
@@ -65714,7 +68060,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 83,
       "estimated_sales": 3312525,
-      "actual_sales": 3634968
+      "actual_sales": 3634968,
+      "tags": ""
     },
     {
       "id": 948260229,
@@ -65742,7 +68089,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 4,
       "estimated_sales": 2530008,
-      "actual_sales": 1027878
+      "actual_sales": 1027878,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 944484205,
@@ -65770,7 +68118,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 25,
       "estimated_sales": 664460,
-      "actual_sales": 295012
+      "actual_sales": 295012,
+      "tags": "warm, retail"
     },
     {
       "id": 666249372,
@@ -65798,7 +68147,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 4,
       "estimated_sales": 2061424,
-      "actual_sales": 158048
+      "actual_sales": 158048,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 29954123,
@@ -65826,7 +68176,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 59,
       "estimated_sales": 1073584,
-      "actual_sales": 1949388
+      "actual_sales": 1949388,
+      "tags": "pro, retail"
     },
     {
       "id": 384778998,
@@ -65854,7 +68205,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 25,
       "estimated_sales": 303742,
-      "actual_sales": 1134732
+      "actual_sales": 1134732,
+      "tags": "hot, medical"
     },
     {
       "id": 899380465,
@@ -65882,7 +68234,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 25,
       "estimated_sales": 1937360,
-      "actual_sales": 124690
+      "actual_sales": 124690,
+      "tags": "cool, engineering"
     },
     {
       "id": 288794472,
@@ -65910,7 +68263,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 33,
       "estimated_sales": 1378405,
-      "actual_sales": 1288677
+      "actual_sales": 1288677,
+      "tags": "warm, medical"
     },
     {
       "id": 258763062,
@@ -65938,7 +68292,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 73,
       "estimated_sales": 5197350,
-      "actual_sales": 4631358
+      "actual_sales": 4631358,
+      "tags": "cool, financial"
     },
     {
       "id": 547132110,
@@ -65966,7 +68321,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 47,
       "estimated_sales": 0,
-      "actual_sales": 646623
+      "actual_sales": 646623,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 531622435,
@@ -65994,7 +68350,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 29,
       "estimated_sales": 1313470,
-      "actual_sales": 1984240
+      "actual_sales": 1984240,
+      "tags": "demo, medical"
     },
     {
       "id": 35879081,
@@ -66022,7 +68379,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 5,
       "estimated_sales": 3770696,
-      "actual_sales": 1966712
+      "actual_sales": 1966712,
+      "tags": "hot, construction"
     },
     {
       "id": 980030093,
@@ -66050,7 +68408,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 14,
       "estimated_sales": 784455,
-      "actual_sales": 402660
+      "actual_sales": 402660,
+      "tags": "cold, medical"
     },
     {
       "id": 848592149,
@@ -66078,7 +68437,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 57,
       "estimated_sales": 1292833,
-      "actual_sales": 5171889
+      "actual_sales": 5171889,
+      "tags": "demo, engineering"
     },
     {
       "id": 529557831,
@@ -66106,7 +68466,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 0,
       "estimated_sales": 2830527,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, medical"
     },
     {
       "id": 691009309,
@@ -66134,7 +68495,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 6,
       "estimated_sales": 657895,
-      "actual_sales": 387836
+      "actual_sales": 387836,
+      "tags": "warm, medical"
     },
     {
       "id": 850083534,
@@ -66162,7 +68524,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 16,
       "estimated_sales": 1388675,
-      "actual_sales": 812330
+      "actual_sales": 812330,
+      "tags": "hot, financial"
     },
     {
       "id": 933182449,
@@ -66190,7 +68553,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 79,
       "estimated_sales": 2232620,
-      "actual_sales": 2295120
+      "actual_sales": 2295120,
+      "tags": "hot, retail"
     },
     {
       "id": 227153445,
@@ -66218,7 +68582,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 32,
       "estimated_sales": 1150620,
-      "actual_sales": 1953228
+      "actual_sales": 1953228,
+      "tags": "pro, financial"
     },
     {
       "id": 203560658,
@@ -66246,7 +68611,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 64,
       "estimated_sales": 1970234,
-      "actual_sales": 2472656
+      "actual_sales": 2472656,
+      "tags": "warm, engineering"
     },
     {
       "id": 395735219,
@@ -66274,7 +68640,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 27,
       "estimated_sales": 763719,
-      "actual_sales": 503712
+      "actual_sales": 503712,
+      "tags": "cool, engineering"
     },
     {
       "id": 827337591,
@@ -66302,7 +68669,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 46,
       "estimated_sales": 1389175,
-      "actual_sales": 2423085
+      "actual_sales": 2423085,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 864646928,
@@ -66330,7 +68698,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 2,
       "estimated_sales": 4393928,
-      "actual_sales": 418362
+      "actual_sales": 418362,
+      "tags": "pro, medical"
     },
     {
       "id": 952766806,
@@ -66358,7 +68727,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 4,
       "estimated_sales": 469259,
-      "actual_sales": 100251
+      "actual_sales": 100251,
+      "tags": "hot, financial"
     },
     {
       "id": 664234894,
@@ -66386,7 +68756,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 59,
       "estimated_sales": 3893505,
-      "actual_sales": 4372758
+      "actual_sales": 4372758,
+      "tags": "hot, construction"
     },
     {
       "id": 544824821,
@@ -66414,7 +68785,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 67,
       "estimated_sales": 3610840,
-      "actual_sales": 4972320
+      "actual_sales": 4972320,
+      "tags": "retail"
     },
     {
       "id": 466768169,
@@ -66442,7 +68814,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 51,
       "estimated_sales": 164944,
-      "actual_sales": 3121307
+      "actual_sales": 3121307,
+      "tags": "cool, construction"
     },
     {
       "id": 980643453,
@@ -66470,7 +68843,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 0,
       "estimated_sales": 3528630,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, engineering"
     },
     {
       "id": 537945116,
@@ -66498,7 +68872,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 54,
       "estimated_sales": 0,
-      "actual_sales": 4166932
+      "actual_sales": 4166932,
+      "tags": "warm, construction"
     },
     {
       "id": 267560520,
@@ -66526,7 +68901,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 45,
       "estimated_sales": 1606720,
-      "actual_sales": 1622970
+      "actual_sales": 1622970,
+      "tags": "demo, financial"
     },
     {
       "id": 611471289,
@@ -66554,7 +68930,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 53,
       "estimated_sales": 380451,
-      "actual_sales": 746008
+      "actual_sales": 746008,
+      "tags": ""
     },
     {
       "id": 313115893,
@@ -66582,7 +68959,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 43,
       "estimated_sales": 2642352,
-      "actual_sales": 3552200
+      "actual_sales": 3552200,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 517690823,
@@ -66610,7 +68988,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 47,
       "estimated_sales": 1282680,
-      "actual_sales": 753893
+      "actual_sales": 753893,
+      "tags": "cold, engineering"
     },
     {
       "id": 223479838,
@@ -66638,7 +69017,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 4,
       "estimated_sales": 819208,
-      "actual_sales": 125059
+      "actual_sales": 125059,
+      "tags": "demo, engineering"
     },
     {
       "id": 590778266,
@@ -66666,7 +69046,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 64,
       "estimated_sales": 524607,
-      "actual_sales": 1843968
+      "actual_sales": 1843968,
+      "tags": "pro, financial"
     },
     {
       "id": 844381261,
@@ -66694,7 +69075,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 51,
       "estimated_sales": 1743432,
-      "actual_sales": 3422232
+      "actual_sales": 3422232,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 346754546,
@@ -66722,7 +69104,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 45,
       "estimated_sales": 1389200,
-      "actual_sales": 3295536
+      "actual_sales": 3295536,
+      "tags": "subscriber, retail"
     },
     {
       "id": 448237082,
@@ -66750,7 +69133,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 54,
       "estimated_sales": 1303071,
-      "actual_sales": 3394832
+      "actual_sales": 3394832,
+      "tags": "cool, medical"
     },
     {
       "id": 997950342,
@@ -66778,7 +69162,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 7,
       "estimated_sales": 1374250,
-      "actual_sales": 292734
+      "actual_sales": 292734,
+      "tags": "cool, financial"
     },
     {
       "id": 141612137,
@@ -66806,7 +69191,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 32,
       "estimated_sales": 900090,
-      "actual_sales": 2223084
+      "actual_sales": 2223084,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 148624222,
@@ -66834,7 +69220,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 38,
       "estimated_sales": 576016,
-      "actual_sales": 2144232
+      "actual_sales": 2144232,
+      "tags": "warm, retail"
     },
     {
       "id": 645313917,
@@ -66862,7 +69249,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 42,
       "estimated_sales": 333388,
-      "actual_sales": 1850415
+      "actual_sales": 1850415,
+      "tags": "demo, financial"
     },
     {
       "id": 424787971,
@@ -66890,7 +69278,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 56,
       "estimated_sales": 1259720,
-      "actual_sales": 1535912
+      "actual_sales": 1535912,
+      "tags": "cold, medical"
     },
     {
       "id": 371479606,
@@ -66918,7 +69307,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 52,
       "estimated_sales": 2318810,
-      "actual_sales": 3458158
+      "actual_sales": 3458158,
+      "tags": "hot, financial"
     },
     {
       "id": 202377416,
@@ -66946,7 +69336,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 46,
       "estimated_sales": 1166172,
-      "actual_sales": 2561010
+      "actual_sales": 2561010,
+      "tags": "pro, retail"
     },
     {
       "id": 549936715,
@@ -66974,7 +69365,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 9,
       "estimated_sales": 599656,
-      "actual_sales": 301456
+      "actual_sales": 301456,
+      "tags": "cool, medical"
     },
     {
       "id": 970899797,
@@ -67002,7 +69394,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 87,
       "estimated_sales": 1421400,
-      "actual_sales": 887133
+      "actual_sales": 887133,
+      "tags": "pro, construction"
     },
     {
       "id": 867357780,
@@ -67030,7 +69423,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 47,
       "estimated_sales": 2041171,
-      "actual_sales": 1913085
+      "actual_sales": 1913085,
+      "tags": "cool, financial"
     },
     {
       "id": 781202013,
@@ -67058,7 +69452,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 43,
       "estimated_sales": 1805148,
-      "actual_sales": 1963257
+      "actual_sales": 1963257,
+      "tags": ""
     },
     {
       "id": 590521708,
@@ -67086,7 +69481,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 82,
       "estimated_sales": 968408,
-      "actual_sales": 2562246
+      "actual_sales": 2562246,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 780616467,
@@ -67114,7 +69510,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 56,
       "estimated_sales": 3633578,
-      "actual_sales": 1557024
+      "actual_sales": 1557024,
+      "tags": "hot, financial"
     },
     {
       "id": 353083409,
@@ -67142,7 +69539,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 56,
       "estimated_sales": 1135421,
-      "actual_sales": 2366298
+      "actual_sales": 2366298,
+      "tags": "subscriber, construction"
     },
     {
       "id": 550049803,
@@ -67170,7 +69568,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 49,
       "estimated_sales": 1374370,
-      "actual_sales": 1517936
+      "actual_sales": 1517936,
+      "tags": "pro, engineering"
     },
     {
       "id": 326864418,
@@ -67198,7 +69597,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 41,
       "estimated_sales": 767641,
-      "actual_sales": 2297148
+      "actual_sales": 2297148,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 605871247,
@@ -67226,7 +69626,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 38,
       "estimated_sales": 4744248,
-      "actual_sales": 963024
+      "actual_sales": 963024,
+      "tags": "subscriber, retail"
     },
     {
       "id": 578719898,
@@ -67254,7 +69655,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 67,
       "estimated_sales": 3436776,
-      "actual_sales": 1627830
+      "actual_sales": 1627830,
+      "tags": "warm, engineering"
     },
     {
       "id": 346048013,
@@ -67282,7 +69684,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 34,
       "estimated_sales": 3218462,
-      "actual_sales": 2139912
+      "actual_sales": 2139912,
+      "tags": "subscriber, financial"
     },
     {
       "id": 371575310,
@@ -67310,7 +69713,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 49,
       "estimated_sales": 939510,
-      "actual_sales": 2629676
+      "actual_sales": 2629676,
+      "tags": "cool, medical"
     },
     {
       "id": 117116949,
@@ -67338,7 +69742,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 41,
       "estimated_sales": 2449135,
-      "actual_sales": 2192311
+      "actual_sales": 2192311,
+      "tags": "subscriber, construction"
     },
     {
       "id": 460658023,
@@ -67366,7 +69771,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 82,
       "estimated_sales": 2078252,
-      "actual_sales": 5379584
+      "actual_sales": 5379584,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 76033722,
@@ -67394,7 +69800,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 57,
       "estimated_sales": 2701401,
-      "actual_sales": 1623600
+      "actual_sales": 1623600,
+      "tags": "pro, medical"
     },
     {
       "id": 543598533,
@@ -67422,7 +69829,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 1,
       "estimated_sales": 1562088,
-      "actual_sales": 212818
+      "actual_sales": 212818,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 345940195,
@@ -67450,7 +69858,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 41,
       "estimated_sales": 218748,
-      "actual_sales": 2465610
+      "actual_sales": 2465610,
+      "tags": ""
     },
     {
       "id": 5396817,
@@ -67478,7 +69887,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 62,
       "estimated_sales": 3622322,
-      "actual_sales": 2710818
+      "actual_sales": 2710818,
+      "tags": "pro, retail"
     },
     {
       "id": 978369533,
@@ -67506,7 +69916,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 85,
       "estimated_sales": 1593559,
-      "actual_sales": 755040
+      "actual_sales": 755040,
+      "tags": "cold, construction"
     },
     {
       "id": 952754049,
@@ -67534,7 +69945,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 61,
       "estimated_sales": 2478227,
-      "actual_sales": 2306192
+      "actual_sales": 2306192,
+      "tags": "subscriber, financial"
     },
     {
       "id": 387121973,
@@ -67562,7 +69974,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 17,
       "estimated_sales": 4557625,
-      "actual_sales": 476280
+      "actual_sales": 476280,
+      "tags": "cool, financial"
     },
     {
       "id": 255726539,
@@ -67590,7 +70003,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 3,
       "estimated_sales": 306710,
-      "actual_sales": 1027144
+      "actual_sales": 1027144,
+      "tags": "pro, engineering"
     },
     {
       "id": 743888100,
@@ -67618,7 +70032,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 61,
       "estimated_sales": 313320,
-      "actual_sales": 4142204
+      "actual_sales": 4142204,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 251181687,
@@ -67646,7 +70061,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 25,
       "estimated_sales": 4978476,
-      "actual_sales": 377820
+      "actual_sales": 377820,
+      "tags": "hot, construction"
     },
     {
       "id": 168133895,
@@ -67674,7 +70090,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 74,
       "estimated_sales": 428550,
-      "actual_sales": 4924472
+      "actual_sales": 4924472,
+      "tags": "cold, construction"
     },
     {
       "id": 192809315,
@@ -67702,7 +70119,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 88,
       "estimated_sales": 730560,
-      "actual_sales": 4081374
+      "actual_sales": 4081374,
+      "tags": "pro, medical"
     },
     {
       "id": 663608541,
@@ -67730,7 +70148,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 69,
       "estimated_sales": 690680,
-      "actual_sales": 1370007
+      "actual_sales": 1370007,
+      "tags": "pro, financial"
     },
     {
       "id": 817197530,
@@ -67758,7 +70177,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 61,
       "estimated_sales": 1822640,
-      "actual_sales": 4624410
+      "actual_sales": 4624410,
+      "tags": "hot, engineering"
     },
     {
       "id": 184815299,
@@ -67786,7 +70206,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 43,
       "estimated_sales": 938898,
-      "actual_sales": 2340849
+      "actual_sales": 2340849,
+      "tags": "pro, construction"
     },
     {
       "id": 525091613,
@@ -67814,7 +70235,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 88,
       "estimated_sales": 618860,
-      "actual_sales": 4072320
+      "actual_sales": 4072320,
+      "tags": ""
     },
     {
       "id": 186160714,
@@ -67842,7 +70264,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 62,
       "estimated_sales": 289970,
-      "actual_sales": 1220400
+      "actual_sales": 1220400,
+      "tags": "hot, financial"
     },
     {
       "id": 237886616,
@@ -67870,7 +70293,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 8,
       "estimated_sales": 1620230,
-      "actual_sales": 2734632
+      "actual_sales": 2734632,
+      "tags": "cool, retail"
     },
     {
       "id": 221714952,
@@ -67898,7 +70322,8 @@ export const data: any[] = [
       "deals_total": 77,
       "ratio": 5,
       "estimated_sales": 3111629,
-      "actual_sales": 4468050
+      "actual_sales": 4468050,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 807076921,
@@ -67926,7 +70351,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 66,
       "estimated_sales": 1660520,
-      "actual_sales": 3999475
+      "actual_sales": 3999475,
+      "tags": "demo, medical"
     },
     {
       "id": 968737596,
@@ -67954,7 +70380,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 46,
       "estimated_sales": 1269433,
-      "actual_sales": 3470632
+      "actual_sales": 3470632,
+      "tags": "cool, financial"
     },
     {
       "id": 564261721,
@@ -67982,7 +70409,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 49,
       "estimated_sales": 670103,
-      "actual_sales": 3303240
+      "actual_sales": 3303240,
+      "tags": "retail"
     },
     {
       "id": 563913146,
@@ -68010,7 +70438,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 67,
       "estimated_sales": 1021042,
-      "actual_sales": 3082248
+      "actual_sales": 3082248,
+      "tags": "construction"
     },
     {
       "id": 742713858,
@@ -68038,7 +70467,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 59,
       "estimated_sales": 1808830,
-      "actual_sales": 1660984
+      "actual_sales": 1660984,
+      "tags": ""
     },
     {
       "id": 496645226,
@@ -68066,7 +70496,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 5,
       "estimated_sales": 3607397,
-      "actual_sales": 400497
+      "actual_sales": 400497,
+      "tags": "subscriber, retail"
     },
     {
       "id": 663820453,
@@ -68094,7 +70525,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 33,
       "estimated_sales": 1840530,
-      "actual_sales": 982095
+      "actual_sales": 982095,
+      "tags": "demo, construction"
     },
     {
       "id": 230431280,
@@ -68122,7 +70554,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 9,
       "estimated_sales": 578361,
-      "actual_sales": 345964
+      "actual_sales": 345964,
+      "tags": "cold, engineering"
     },
     {
       "id": 451467474,
@@ -68150,7 +70583,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 51,
       "estimated_sales": 2730669,
-      "actual_sales": 3409650
+      "actual_sales": 3409650,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 773695234,
@@ -68178,7 +70612,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 7,
       "estimated_sales": 2549703,
-      "actual_sales": 2246400
+      "actual_sales": 2246400,
+      "tags": "warm, financial"
     },
     {
       "id": 754816185,
@@ -68206,7 +70641,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 73,
       "estimated_sales": 258075,
-      "actual_sales": 2707952
+      "actual_sales": 2707952,
+      "tags": "cool, medical"
     },
     {
       "id": 253734272,
@@ -68234,7 +70670,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 47,
       "estimated_sales": 1195910,
-      "actual_sales": 4880628
+      "actual_sales": 4880628,
+      "tags": "subscriber, financial"
     },
     {
       "id": 86449256,
@@ -68262,7 +70699,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 4,
       "estimated_sales": 2947846,
-      "actual_sales": 1616256
+      "actual_sales": 1616256,
+      "tags": "warm, financial"
     },
     {
       "id": 478528221,
@@ -68290,7 +70728,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 12,
       "estimated_sales": 1099679,
-      "actual_sales": 443607
+      "actual_sales": 443607,
+      "tags": "pro, engineering"
     },
     {
       "id": 630218072,
@@ -68318,7 +70757,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 6,
       "estimated_sales": 333453,
-      "actual_sales": 3590532
+      "actual_sales": 3590532,
+      "tags": "retail"
     },
     {
       "id": 913114447,
@@ -68346,7 +70786,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 92,
       "estimated_sales": 2520120,
-      "actual_sales": 3329722
+      "actual_sales": 3329722,
+      "tags": "demo, construction"
     },
     {
       "id": 352231617,
@@ -68374,7 +70815,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 43,
       "estimated_sales": 1987583,
-      "actual_sales": 1006920
+      "actual_sales": 1006920,
+      "tags": "subscriber, construction"
     },
     {
       "id": 920745397,
@@ -68402,7 +70844,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 33,
       "estimated_sales": 1515500,
-      "actual_sales": 2041767
+      "actual_sales": 2041767,
+      "tags": "warm, construction"
     },
     {
       "id": 74053167,
@@ -68430,7 +70873,8 @@ export const data: any[] = [
       "deals_total": 79,
       "ratio": 44,
       "estimated_sales": 5283887,
-      "actual_sales": 2107292
+      "actual_sales": 2107292,
+      "tags": "engineering"
     },
     {
       "id": 569060293,
@@ -68458,7 +70902,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 64,
       "estimated_sales": 4665120,
-      "actual_sales": 1974456
+      "actual_sales": 1974456,
+      "tags": ""
     },
     {
       "id": 733928429,
@@ -68486,7 +70931,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 1,
       "estimated_sales": 1721760,
-      "actual_sales": 198081
+      "actual_sales": 198081,
+      "tags": "cold, engineering"
     },
     {
       "id": 375177595,
@@ -68514,7 +70960,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 29,
       "estimated_sales": 875420,
-      "actual_sales": 165252
+      "actual_sales": 165252,
+      "tags": "demo, medical"
     },
     {
       "id": 604218205,
@@ -68542,7 +70989,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 54,
       "estimated_sales": 1973480,
-      "actual_sales": 2050272
+      "actual_sales": 2050272,
+      "tags": ""
     },
     {
       "id": 264512847,
@@ -68570,7 +71018,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 72,
       "estimated_sales": 516960,
-      "actual_sales": 2517627
+      "actual_sales": 2517627,
+      "tags": "warm, medical"
     },
     {
       "id": 455899027,
@@ -68598,7 +71047,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 97,
       "estimated_sales": 1117725,
-      "actual_sales": 4992553
+      "actual_sales": 4992553,
+      "tags": "demo, medical"
     },
     {
       "id": 241246879,
@@ -68626,7 +71076,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 96,
       "estimated_sales": 2797306,
-      "actual_sales": 5104269
+      "actual_sales": 5104269,
+      "tags": "demo, financial"
     },
     {
       "id": 917190645,
@@ -68654,7 +71105,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 71,
       "estimated_sales": 1203864,
-      "actual_sales": 3341228
+      "actual_sales": 3341228,
+      "tags": "cold, construction"
     },
     {
       "id": 266489768,
@@ -68682,7 +71134,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 23,
       "estimated_sales": 2518500,
-      "actual_sales": 550896
+      "actual_sales": 550896,
+      "tags": "construction"
     },
     {
       "id": 453889995,
@@ -68710,7 +71163,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 58,
       "estimated_sales": 154812,
-      "actual_sales": 3335598
+      "actual_sales": 3335598,
+      "tags": "demo, construction"
     },
     {
       "id": 426544152,
@@ -68738,7 +71192,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 33,
       "estimated_sales": 1356552,
-      "actual_sales": 2751966
+      "actual_sales": 2751966,
+      "tags": "subscriber, financial"
     },
     {
       "id": 735856530,
@@ -68766,7 +71221,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 92,
       "estimated_sales": 1231184,
-      "actual_sales": 3355608
+      "actual_sales": 3355608,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 156698797,
@@ -68794,7 +71250,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 61,
       "estimated_sales": 5126736,
-      "actual_sales": 3838860
+      "actual_sales": 3838860,
+      "tags": "subscriber, retail"
     },
     {
       "id": 667296276,
@@ -68822,7 +71279,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 8,
       "estimated_sales": 410115,
-      "actual_sales": 125894
+      "actual_sales": 125894,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 369476376,
@@ -68850,7 +71308,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 27,
       "estimated_sales": 1087562,
-      "actual_sales": 977074
+      "actual_sales": 977074,
+      "tags": "pro, construction"
     },
     {
       "id": 33758885,
@@ -68878,7 +71337,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 52,
       "estimated_sales": 927384,
-      "actual_sales": 3402783
+      "actual_sales": 3402783,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 108546705,
@@ -68906,7 +71366,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 53,
       "estimated_sales": 2603608,
-      "actual_sales": 2928114
+      "actual_sales": 2928114,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 303232389,
@@ -68934,7 +71395,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 14,
       "estimated_sales": 1214800,
-      "actual_sales": 146804
+      "actual_sales": 146804,
+      "tags": "warm, engineering"
     },
     {
       "id": 54845625,
@@ -68962,7 +71424,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 31,
       "estimated_sales": 286116,
-      "actual_sales": 1478896
+      "actual_sales": 1478896,
+      "tags": ""
     },
     {
       "id": 253726748,
@@ -68990,7 +71453,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 21,
       "estimated_sales": 730583,
-      "actual_sales": 567756
+      "actual_sales": 567756,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 359873454,
@@ -69018,7 +71482,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 22,
       "estimated_sales": 3825780,
-      "actual_sales": 1464592
+      "actual_sales": 1464592,
+      "tags": "cold, engineering"
     },
     {
       "id": 895605333,
@@ -69046,7 +71511,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 46,
       "estimated_sales": 1481508,
-      "actual_sales": 2365675
+      "actual_sales": 2365675,
+      "tags": "demo, financial"
     },
     {
       "id": 624963238,
@@ -69074,7 +71540,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 1,
       "estimated_sales": 4237268,
-      "actual_sales": 266892
+      "actual_sales": 266892,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 73014360,
@@ -69102,7 +71569,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 55,
       "estimated_sales": 2319252,
-      "actual_sales": 4738872
+      "actual_sales": 4738872,
+      "tags": "cool, construction"
     },
     {
       "id": 591454288,
@@ -69130,7 +71598,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 5,
       "estimated_sales": 119233,
-      "actual_sales": 1163670
+      "actual_sales": 1163670,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 754193348,
@@ -69158,7 +71627,8 @@ export const data: any[] = [
       "deals_total": 84,
       "ratio": 52,
       "estimated_sales": 2101372,
-      "actual_sales": 1660888
+      "actual_sales": 1660888,
+      "tags": "cold, construction"
     },
     {
       "id": 306067807,
@@ -69186,7 +71656,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 56,
       "estimated_sales": 1368466,
-      "actual_sales": 638890
+      "actual_sales": 638890,
+      "tags": "hot, engineering"
     },
     {
       "id": 52645715,
@@ -69214,7 +71685,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 25,
       "estimated_sales": 1887585,
-      "actual_sales": 1360590
+      "actual_sales": 1360590,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 284189043,
@@ -69242,7 +71714,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 49,
       "estimated_sales": 1622075,
-      "actual_sales": 2616243
+      "actual_sales": 2616243,
+      "tags": "cool, financial"
     },
     {
       "id": 41957064,
@@ -69270,7 +71743,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 54,
       "estimated_sales": 226686,
-      "actual_sales": 3888400
+      "actual_sales": 3888400,
+      "tags": "warm, retail"
     },
     {
       "id": 658827912,
@@ -69298,7 +71772,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 13,
       "estimated_sales": 2137696,
-      "actual_sales": 510675
+      "actual_sales": 510675,
+      "tags": "construction"
     },
     {
       "id": 341786989,
@@ -69326,7 +71801,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 68,
       "estimated_sales": 3021650,
-      "actual_sales": 3577689
+      "actual_sales": 3577689,
+      "tags": "engineering"
     },
     {
       "id": 939672334,
@@ -69354,7 +71830,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 67,
       "estimated_sales": 4232008,
-      "actual_sales": 751996
+      "actual_sales": 751996,
+      "tags": "warm, construction"
     },
     {
       "id": 434741736,
@@ -69382,7 +71859,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 56,
       "estimated_sales": 677816,
-      "actual_sales": 3049959
+      "actual_sales": 3049959,
+      "tags": "subscriber, financial"
     },
     {
       "id": 184554799,
@@ -69410,7 +71888,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 5,
       "estimated_sales": 1328742,
-      "actual_sales": 1818825
+      "actual_sales": 1818825,
+      "tags": "cool, construction"
     },
     {
       "id": 896078803,
@@ -69438,7 +71917,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 46,
       "estimated_sales": 2120844,
-      "actual_sales": 1418508
+      "actual_sales": 1418508,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 594658816,
@@ -69466,7 +71946,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 5,
       "estimated_sales": 1077528,
-      "actual_sales": 1497402
+      "actual_sales": 1497402,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 338343384,
@@ -69494,7 +71975,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 19,
       "estimated_sales": 1556570,
-      "actual_sales": 258021
+      "actual_sales": 258021,
+      "tags": "cold, construction"
     },
     {
       "id": 460655986,
@@ -69522,7 +72004,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 33,
       "estimated_sales": 2288216,
-      "actual_sales": 225034
+      "actual_sales": 225034,
+      "tags": "cool, engineering"
     },
     {
       "id": 53339658,
@@ -69550,7 +72033,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 81,
       "estimated_sales": 4191825,
-      "actual_sales": 1882518
+      "actual_sales": 1882518,
+      "tags": "engineering"
     },
     {
       "id": 709397179,
@@ -69578,7 +72062,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 59,
       "estimated_sales": 3615066,
-      "actual_sales": 3046224
+      "actual_sales": 3046224,
+      "tags": "hot, retail"
     },
     {
       "id": 894998978,
@@ -69606,7 +72091,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 7,
       "estimated_sales": 2001735,
-      "actual_sales": 2970810
+      "actual_sales": 2970810,
+      "tags": "cool, medical"
     },
     {
       "id": 457807635,
@@ -69634,7 +72120,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 33,
       "estimated_sales": 244935,
-      "actual_sales": 326105
+      "actual_sales": 326105,
+      "tags": "cold, medical"
     },
     {
       "id": 701451005,
@@ -69662,7 +72149,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 74,
       "estimated_sales": 252002,
-      "actual_sales": 1661575
+      "actual_sales": 1661575,
+      "tags": "subscriber, construction"
     },
     {
       "id": 146968326,
@@ -69690,7 +72178,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 52,
       "estimated_sales": 2862030,
-      "actual_sales": 1827342
+      "actual_sales": 1827342,
+      "tags": "cold, medical"
     },
     {
       "id": 449820003,
@@ -69718,7 +72207,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 52,
       "estimated_sales": 151012,
-      "actual_sales": 4001060
+      "actual_sales": 4001060,
+      "tags": "warm, financial"
     },
     {
       "id": 289320047,
@@ -69746,7 +72236,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 42,
       "estimated_sales": 1716850,
-      "actual_sales": 1152350
+      "actual_sales": 1152350,
+      "tags": "construction"
     },
     {
       "id": 895999522,
@@ -69774,7 +72265,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 51,
       "estimated_sales": 779194,
-      "actual_sales": 3755046
+      "actual_sales": 3755046,
+      "tags": "hot, medical"
     },
     {
       "id": 787701699,
@@ -69802,7 +72294,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 64,
       "estimated_sales": 1889181,
-      "actual_sales": 4663890
+      "actual_sales": 4663890,
+      "tags": ""
     },
     {
       "id": 935210043,
@@ -69830,7 +72323,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 68,
       "estimated_sales": 1543700,
-      "actual_sales": 3456804
+      "actual_sales": 3456804,
+      "tags": "financial"
     },
     {
       "id": 573722321,
@@ -69858,7 +72352,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 25,
       "estimated_sales": 406768,
-      "actual_sales": 1264248
+      "actual_sales": 1264248,
+      "tags": "pro, medical"
     },
     {
       "id": 932826700,
@@ -69886,7 +72381,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 79,
       "estimated_sales": 1142224,
-      "actual_sales": 2229251
+      "actual_sales": 2229251,
+      "tags": "engineering"
     },
     {
       "id": 719208501,
@@ -69914,7 +72410,8 @@ export const data: any[] = [
       "deals_total": 82,
       "ratio": 52,
       "estimated_sales": 1264344,
-      "actual_sales": 3207570
+      "actual_sales": 3207570,
+      "tags": "demo, engineering"
     },
     {
       "id": 257127145,
@@ -69942,7 +72439,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 12,
       "estimated_sales": 484416,
-      "actual_sales": 124436
+      "actual_sales": 124436,
+      "tags": "hot, engineering"
     },
     {
       "id": 341584492,
@@ -69970,7 +72468,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 53,
       "estimated_sales": 5550972,
-      "actual_sales": 870723
+      "actual_sales": 870723,
+      "tags": "subscriber, medical"
     },
     {
       "id": 800536672,
@@ -69998,7 +72497,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 51,
       "estimated_sales": 617565,
-      "actual_sales": 3953850
+      "actual_sales": 3953850,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 798818018,
@@ -70026,7 +72526,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 55,
       "estimated_sales": 1591100,
-      "actual_sales": 3680136
+      "actual_sales": 3680136,
+      "tags": "engineering"
     },
     {
       "id": 225699834,
@@ -70054,7 +72555,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 79,
       "estimated_sales": 2870252,
-      "actual_sales": 2835332
+      "actual_sales": 2835332,
+      "tags": "medical"
     },
     {
       "id": 697480477,
@@ -70082,7 +72584,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 34,
       "estimated_sales": 1907619,
-      "actual_sales": 2484570
+      "actual_sales": 2484570,
+      "tags": "hot, engineering"
     },
     {
       "id": 925544353,
@@ -70110,7 +72613,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 41,
       "estimated_sales": 1205594,
-      "actual_sales": 1826664
+      "actual_sales": 1826664,
+      "tags": "hot, retail"
     },
     {
       "id": 427696704,
@@ -70138,7 +72642,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 24,
       "estimated_sales": 1937484,
-      "actual_sales": 621927
+      "actual_sales": 621927,
+      "tags": "cool, financial"
     },
     {
       "id": 801169282,
@@ -70166,7 +72671,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 44,
       "estimated_sales": 67879,
-      "actual_sales": 1147992
+      "actual_sales": 1147992,
+      "tags": "cool, engineering"
     },
     {
       "id": 649102560,
@@ -70194,7 +72700,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 18,
       "estimated_sales": 2882934,
-      "actual_sales": 655948
+      "actual_sales": 655948,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 864022925,
@@ -70222,7 +72729,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 25,
       "estimated_sales": 1800877,
-      "actual_sales": 201280
+      "actual_sales": 201280,
+      "tags": "warm, retail"
     },
     {
       "id": 479108712,
@@ -70250,7 +72758,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 4,
       "estimated_sales": 259136,
-      "actual_sales": 72872
+      "actual_sales": 72872,
+      "tags": "hot, financial"
     },
     {
       "id": 731955482,
@@ -70278,7 +72787,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 38,
       "estimated_sales": 1252464,
-      "actual_sales": 1369168
+      "actual_sales": 1369168,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 858868425,
@@ -70306,7 +72816,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 13,
       "estimated_sales": 3779370,
-      "actual_sales": 542697
+      "actual_sales": 542697,
+      "tags": "hot, construction"
     },
     {
       "id": 441830263,
@@ -70334,7 +72845,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 72,
       "estimated_sales": 380622,
-      "actual_sales": 2967912
+      "actual_sales": 2967912,
+      "tags": "pro, construction"
     },
     {
       "id": 789162140,
@@ -70362,7 +72874,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 73,
       "estimated_sales": 331383,
-      "actual_sales": 1928550
+      "actual_sales": 1928550,
+      "tags": "warm, medical"
     },
     {
       "id": 186544266,
@@ -70390,7 +72903,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 96,
       "estimated_sales": 1310931,
-      "actual_sales": 1525015
+      "actual_sales": 1525015,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 12862347,
@@ -70418,7 +72932,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 55,
       "estimated_sales": 3380218,
-      "actual_sales": 3492261
+      "actual_sales": 3492261,
+      "tags": "financial"
     },
     {
       "id": 317462802,
@@ -70446,7 +72961,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 24,
       "estimated_sales": 3080264,
-      "actual_sales": 952835
+      "actual_sales": 952835,
+      "tags": "engineering"
     },
     {
       "id": 679179839,
@@ -70474,7 +72990,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 51,
       "estimated_sales": 1446861,
-      "actual_sales": 3101658
+      "actual_sales": 3101658,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 153944167,
@@ -70502,7 +73019,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 68,
       "estimated_sales": 404170,
-      "actual_sales": 2903532
+      "actual_sales": 2903532,
+      "tags": "subscriber, retail"
     },
     {
       "id": 740098489,
@@ -70530,7 +73048,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 77,
       "estimated_sales": 2666424,
-      "actual_sales": 1022290
+      "actual_sales": 1022290,
+      "tags": "cool, construction"
     },
     {
       "id": 502019647,
@@ -70558,7 +73077,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 37,
       "estimated_sales": 2766708,
-      "actual_sales": 2632256
+      "actual_sales": 2632256,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 226134053,
@@ -70586,7 +73106,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 47,
       "estimated_sales": 1085520,
-      "actual_sales": 3185520
+      "actual_sales": 3185520,
+      "tags": "subscriber, medical"
     },
     {
       "id": 823539165,
@@ -70614,7 +73135,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 21,
       "estimated_sales": 1507200,
-      "actual_sales": 581980
+      "actual_sales": 581980,
+      "tags": "warm, financial"
     },
     {
       "id": 28436893,
@@ -70642,7 +73164,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 78,
       "estimated_sales": 446370,
-      "actual_sales": 1589954
+      "actual_sales": 1589954,
+      "tags": "subscriber, financial"
     },
     {
       "id": 800076355,
@@ -70670,7 +73193,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 65,
       "estimated_sales": 852502,
-      "actual_sales": 975375
+      "actual_sales": 975375,
+      "tags": "medical"
     },
     {
       "id": 488261717,
@@ -70698,7 +73222,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 34,
       "estimated_sales": 2128324,
-      "actual_sales": 1142076
+      "actual_sales": 1142076,
+      "tags": "cool, financial"
     },
     {
       "id": 601231589,
@@ -70726,7 +73251,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 1,
       "estimated_sales": 4572025,
-      "actual_sales": 187500
+      "actual_sales": 187500,
+      "tags": "pharmaceutical"
     },
     {
       "id": 268604843,
@@ -70754,7 +73280,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 54,
       "estimated_sales": 1265775,
-      "actual_sales": 656058
+      "actual_sales": 656058,
+      "tags": "warm, medical"
     },
     {
       "id": 346962627,
@@ -70782,7 +73309,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 45,
       "estimated_sales": 3424248,
-      "actual_sales": 2774576
+      "actual_sales": 2774576,
+      "tags": "cold, medical"
     },
     {
       "id": 754802181,
@@ -70810,7 +73338,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 0,
       "estimated_sales": 1769283,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, financial"
     },
     {
       "id": 313624784,
@@ -70838,7 +73367,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 47,
       "estimated_sales": 2076992,
-      "actual_sales": 1315856
+      "actual_sales": 1315856,
+      "tags": "warm, construction"
     },
     {
       "id": 152080290,
@@ -70866,7 +73396,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 61,
       "estimated_sales": 1118832,
-      "actual_sales": 1612464
+      "actual_sales": 1612464,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 193568819,
@@ -70894,7 +73425,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 6,
       "estimated_sales": 1204716,
-      "actual_sales": 2290050
+      "actual_sales": 2290050,
+      "tags": "cold, retail"
     },
     {
       "id": 922440963,
@@ -70922,7 +73454,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 43,
       "estimated_sales": 3060668,
-      "actual_sales": 1484900
+      "actual_sales": 1484900,
+      "tags": "pro, medical"
     },
     {
       "id": 951847411,
@@ -70950,7 +73483,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 83,
       "estimated_sales": 590808,
-      "actual_sales": 2610619
+      "actual_sales": 2610619,
+      "tags": "subscriber, financial"
     },
     {
       "id": 771848040,
@@ -70978,7 +73512,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 67,
       "estimated_sales": 2139872,
-      "actual_sales": 4159608
+      "actual_sales": 4159608,
+      "tags": "hot, engineering"
     },
     {
       "id": 898167436,
@@ -71006,7 +73541,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 0,
       "estimated_sales": 1278800,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pro, financial"
     },
     {
       "id": 881349627,
@@ -71034,7 +73570,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 67,
       "estimated_sales": 940224,
-      "actual_sales": 1224288
+      "actual_sales": 1224288,
+      "tags": "pro, medical"
     },
     {
       "id": 337662078,
@@ -71062,7 +73599,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 72,
       "estimated_sales": 1374750,
-      "actual_sales": 1640925
+      "actual_sales": 1640925,
+      "tags": "demo, retail"
     },
     {
       "id": 741614056,
@@ -71090,7 +73628,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 48,
       "estimated_sales": 4734225,
-      "actual_sales": 1005240
+      "actual_sales": 1005240,
+      "tags": "cold, financial"
     },
     {
       "id": 654025011,
@@ -71118,7 +73657,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 23,
       "estimated_sales": 197118,
-      "actual_sales": 1179234
+      "actual_sales": 1179234,
+      "tags": "pro, medical"
     },
     {
       "id": 715888330,
@@ -71146,7 +73686,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 5,
       "estimated_sales": 2947151,
-      "actual_sales": 2107488
+      "actual_sales": 2107488,
+      "tags": "warm, financial"
     },
     {
       "id": 80238206,
@@ -71174,7 +73715,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 0,
       "estimated_sales": 786924,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, engineering"
     },
     {
       "id": 343575825,
@@ -71202,7 +73744,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 37,
       "estimated_sales": 2553740,
-      "actual_sales": 1239200
+      "actual_sales": 1239200,
+      "tags": "cool, financial"
     },
     {
       "id": 456356688,
@@ -71230,7 +73773,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 0,
       "estimated_sales": 1847160,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, construction"
     },
     {
       "id": 706313682,
@@ -71258,7 +73802,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 85,
       "estimated_sales": 4559760,
-      "actual_sales": 1457733
+      "actual_sales": 1457733,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 401600597,
@@ -71286,7 +73831,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 66,
       "estimated_sales": 2796775,
-      "actual_sales": 4007772
+      "actual_sales": 4007772,
+      "tags": "cold, engineering"
     },
     {
       "id": 58406162,
@@ -71314,7 +73860,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 14,
       "estimated_sales": 4981592,
-      "actual_sales": 172706
+      "actual_sales": 172706,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 293940089,
@@ -71342,7 +73889,8 @@ export const data: any[] = [
       "deals_total": 82,
       "ratio": 46,
       "estimated_sales": 3016692,
-      "actual_sales": 4609525
+      "actual_sales": 4609525,
+      "tags": "hot, financial"
     },
     {
       "id": 693727344,
@@ -71370,7 +73918,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 36,
       "estimated_sales": 852450,
-      "actual_sales": 564628
+      "actual_sales": 564628,
+      "tags": "subscriber, construction"
     },
     {
       "id": 5731978,
@@ -71398,7 +73947,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 38,
       "estimated_sales": 1242504,
-      "actual_sales": 511383
+      "actual_sales": 511383,
+      "tags": "pro, construction"
     },
     {
       "id": 655981363,
@@ -71426,7 +73976,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 0,
       "estimated_sales": 3905791,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cool, medical"
     },
     {
       "id": 631016940,
@@ -71454,7 +74005,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 44,
       "estimated_sales": 1533990,
-      "actual_sales": 1951328
+      "actual_sales": 1951328,
+      "tags": "cool, retail"
     },
     {
       "id": 544522686,
@@ -71482,7 +74034,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 47,
       "estimated_sales": 1460205,
-      "actual_sales": 3780218
+      "actual_sales": 3780218,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 168093815,
@@ -71510,7 +74063,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 67,
       "estimated_sales": 0,
-      "actual_sales": 1573132
+      "actual_sales": 1573132,
+      "tags": "pro, medical"
     },
     {
       "id": 348458029,
@@ -71538,7 +74092,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 43,
       "estimated_sales": 1315150,
-      "actual_sales": 1793928
+      "actual_sales": 1793928,
+      "tags": "pro, financial"
     },
     {
       "id": 334452725,
@@ -71566,7 +74121,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 51,
       "estimated_sales": 1493090,
-      "actual_sales": 3580612
+      "actual_sales": 3580612,
+      "tags": "warm, engineering"
     },
     {
       "id": 713209278,
@@ -71594,7 +74150,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 91,
       "estimated_sales": 2482596,
-      "actual_sales": 2131260
+      "actual_sales": 2131260,
+      "tags": "warm, financial"
     },
     {
       "id": 99802331,
@@ -71622,7 +74179,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 18,
       "estimated_sales": 1027920,
-      "actual_sales": 278811
+      "actual_sales": 278811,
+      "tags": "hot, engineering"
     },
     {
       "id": 796579853,
@@ -71650,7 +74208,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 73,
       "estimated_sales": 2177552,
-      "actual_sales": 3195940
+      "actual_sales": 3195940,
+      "tags": "hot, construction"
     },
     {
       "id": 354726961,
@@ -71678,7 +74237,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 16,
       "estimated_sales": 2397604,
-      "actual_sales": 365215
+      "actual_sales": 365215,
+      "tags": "engineering"
     },
     {
       "id": 710619901,
@@ -71706,7 +74266,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 18,
       "estimated_sales": 1140225,
-      "actual_sales": 634914
+      "actual_sales": 634914,
+      "tags": "engineering"
     },
     {
       "id": 86672523,
@@ -71734,7 +74295,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 17,
       "estimated_sales": 3917496,
-      "actual_sales": 718968
+      "actual_sales": 718968,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 696197114,
@@ -71762,7 +74324,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 75,
       "estimated_sales": 1297688,
-      "actual_sales": 604728
+      "actual_sales": 604728,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 945574604,
@@ -71790,7 +74353,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 95,
       "estimated_sales": 3770298,
-      "actual_sales": 2091510
+      "actual_sales": 2091510,
+      "tags": "subscriber, retail"
     },
     {
       "id": 730456969,
@@ -71818,7 +74382,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 53,
       "estimated_sales": 164092,
-      "actual_sales": 1756050
+      "actual_sales": 1756050,
+      "tags": "medical"
     },
     {
       "id": 258171196,
@@ -71846,7 +74411,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 74,
       "estimated_sales": 1810224,
-      "actual_sales": 4872896
+      "actual_sales": 4872896,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 33726344,
@@ -71874,7 +74440,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 54,
       "estimated_sales": 767132,
-      "actual_sales": 2036086
+      "actual_sales": 2036086,
+      "tags": "demo, engineering"
     },
     {
       "id": 90046186,
@@ -71902,7 +74469,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 28,
       "estimated_sales": 827604,
-      "actual_sales": 776446
+      "actual_sales": 776446,
+      "tags": "hot, engineering"
     },
     {
       "id": 424408201,
@@ -71930,7 +74498,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 8,
       "estimated_sales": 2096610,
-      "actual_sales": 98521
+      "actual_sales": 98521,
+      "tags": "pro, medical"
     },
     {
       "id": 427512683,
@@ -71958,7 +74527,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 49,
       "estimated_sales": 839292,
-      "actual_sales": 2925758
+      "actual_sales": 2925758,
+      "tags": "subscriber, retail"
     },
     {
       "id": 487525660,
@@ -71986,7 +74556,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 14,
       "estimated_sales": 3091384,
-      "actual_sales": 996955
+      "actual_sales": 996955,
+      "tags": "subscriber, medical"
     },
     {
       "id": 811228695,
@@ -72014,7 +74585,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 68,
       "estimated_sales": 2255400,
-      "actual_sales": 2287771
+      "actual_sales": 2287771,
+      "tags": "hot, medical"
     },
     {
       "id": 471786283,
@@ -72042,7 +74614,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 74,
       "estimated_sales": 2506496,
-      "actual_sales": 4891300
+      "actual_sales": 4891300,
+      "tags": "warm, financial"
     },
     {
       "id": 639449615,
@@ -72070,7 +74643,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 49,
       "estimated_sales": 2037068,
-      "actual_sales": 2185700
+      "actual_sales": 2185700,
+      "tags": "subscriber, financial"
     },
     {
       "id": 347645530,
@@ -72098,7 +74672,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 13,
       "estimated_sales": 293398,
-      "actual_sales": 283130
+      "actual_sales": 283130,
+      "tags": "pro, construction"
     },
     {
       "id": 217143692,
@@ -72126,7 +74701,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 32,
       "estimated_sales": 4852116,
-      "actual_sales": 2253252
+      "actual_sales": 2253252,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 195438167,
@@ -72154,7 +74730,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 65,
       "estimated_sales": 1401140,
-      "actual_sales": 4105024
+      "actual_sales": 4105024,
+      "tags": "subscriber, construction"
     },
     {
       "id": 734463779,
@@ -72182,7 +74759,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 42,
       "estimated_sales": 2733426,
-      "actual_sales": 1193925
+      "actual_sales": 1193925,
+      "tags": "demo, construction"
     },
     {
       "id": 862907588,
@@ -72210,7 +74788,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 25,
       "estimated_sales": 1460469,
-      "actual_sales": 350148
+      "actual_sales": 350148,
+      "tags": "hot, engineering"
     },
     {
       "id": 326047855,
@@ -72238,7 +74817,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 6,
       "estimated_sales": 2215794,
-      "actual_sales": 305286
+      "actual_sales": 305286,
+      "tags": "cool, engineering"
     },
     {
       "id": 407989691,
@@ -72266,7 +74846,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 62,
       "estimated_sales": 1837459,
-      "actual_sales": 1022864
+      "actual_sales": 1022864,
+      "tags": "cool, engineering"
     },
     {
       "id": 737348649,
@@ -72294,7 +74875,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 73,
       "estimated_sales": 2774112,
-      "actual_sales": 1174129
+      "actual_sales": 1174129,
+      "tags": "cold, engineering"
     },
     {
       "id": 634265132,
@@ -72322,7 +74904,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 64,
       "estimated_sales": 2750500,
-      "actual_sales": 1609461
+      "actual_sales": 1609461,
+      "tags": "pharmaceutical"
     },
     {
       "id": 23834621,
@@ -72350,7 +74933,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 63,
       "estimated_sales": 569527,
-      "actual_sales": 962650
+      "actual_sales": 962650,
+      "tags": "demo, construction"
     },
     {
       "id": 325315098,
@@ -72378,7 +74962,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 61,
       "estimated_sales": 410622,
-      "actual_sales": 1551286
+      "actual_sales": 1551286,
+      "tags": ""
     },
     {
       "id": 768090743,
@@ -72406,7 +74991,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 93,
       "estimated_sales": 3146619,
-      "actual_sales": 2410278
+      "actual_sales": 2410278,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 552799264,
@@ -72434,7 +75020,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 5,
       "estimated_sales": 173604,
-      "actual_sales": 202008
+      "actual_sales": 202008,
+      "tags": "pro, engineering"
     },
     {
       "id": 96247919,
@@ -72462,7 +75049,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 54,
       "estimated_sales": 3367329,
-      "actual_sales": 803327
+      "actual_sales": 803327,
+      "tags": "pro, engineering"
     },
     {
       "id": 549366448,
@@ -72490,7 +75078,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 67,
       "estimated_sales": 529740,
-      "actual_sales": 3123468
+      "actual_sales": 3123468,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 781101374,
@@ -72518,7 +75107,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 41,
       "estimated_sales": 733908,
-      "actual_sales": 2163008
+      "actual_sales": 2163008,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 627202533,
@@ -72546,7 +75136,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 39,
       "estimated_sales": 4409880,
-      "actual_sales": 754488
+      "actual_sales": 754488,
+      "tags": "hot, retail"
     },
     {
       "id": 166148858,
@@ -72574,7 +75165,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 88,
       "estimated_sales": 483594,
-      "actual_sales": 1393686
+      "actual_sales": 1393686,
+      "tags": "subscriber, medical"
     },
     {
       "id": 583872559,
@@ -72602,7 +75194,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 11,
       "estimated_sales": 81744,
-      "actual_sales": 103574
+      "actual_sales": 103574,
+      "tags": "warm, medical"
     },
     {
       "id": 366005506,
@@ -72630,7 +75223,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 25,
       "estimated_sales": 166735,
-      "actual_sales": 693294
+      "actual_sales": 693294,
+      "tags": "hot, medical"
     },
     {
       "id": 341125428,
@@ -72658,7 +75252,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 4,
       "estimated_sales": 0,
-      "actual_sales": 2825672
+      "actual_sales": 2825672,
+      "tags": "warm, retail"
     },
     {
       "id": 447555734,
@@ -72686,7 +75281,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 42,
       "estimated_sales": 4913298,
-      "actual_sales": 898125
+      "actual_sales": 898125,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 507611813,
@@ -72714,7 +75310,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 17,
       "estimated_sales": 5703227,
-      "actual_sales": 296102
+      "actual_sales": 296102,
+      "tags": ""
     },
     {
       "id": 953944037,
@@ -72742,7 +75339,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 35,
       "estimated_sales": 592305,
-      "actual_sales": 2854635
+      "actual_sales": 2854635,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 983728989,
@@ -72770,7 +75368,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 4,
       "estimated_sales": 2979125,
-      "actual_sales": 75185
+      "actual_sales": 75185,
+      "tags": ""
     },
     {
       "id": 719201357,
@@ -72798,7 +75397,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 31,
       "estimated_sales": 2155647,
-      "actual_sales": 307460
+      "actual_sales": 307460,
+      "tags": ""
     },
     {
       "id": 385123373,
@@ -72826,7 +75426,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 2,
       "estimated_sales": 1751920,
-      "actual_sales": 967694
+      "actual_sales": 967694,
+      "tags": "warm, financial"
     },
     {
       "id": 8620815,
@@ -72854,7 +75455,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 49,
       "estimated_sales": 1354576,
-      "actual_sales": 4327583
+      "actual_sales": 4327583,
+      "tags": "cold, engineering"
     },
     {
       "id": 666594041,
@@ -72882,7 +75484,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 1,
       "estimated_sales": 3228316,
-      "actual_sales": 458304
+      "actual_sales": 458304,
+      "tags": "engineering"
     },
     {
       "id": 96082775,
@@ -72910,7 +75513,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 63,
       "estimated_sales": 241930,
-      "actual_sales": 801660
+      "actual_sales": 801660,
+      "tags": "demo, medical"
     },
     {
       "id": 849888538,
@@ -72938,7 +75542,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 58,
       "estimated_sales": 1672740,
-      "actual_sales": 1362615
+      "actual_sales": 1362615,
+      "tags": "cool, financial"
     },
     {
       "id": 968429387,
@@ -72966,7 +75571,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 53,
       "estimated_sales": 1359100,
-      "actual_sales": 1270377
+      "actual_sales": 1270377,
+      "tags": "subscriber, retail"
     },
     {
       "id": 596750294,
@@ -72994,7 +75600,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 45,
       "estimated_sales": 1496352,
-      "actual_sales": 2743860
+      "actual_sales": 2743860,
+      "tags": ""
     },
     {
       "id": 364444309,
@@ -73022,7 +75629,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 31,
       "estimated_sales": 2689180,
-      "actual_sales": 1371680
+      "actual_sales": 1371680,
+      "tags": "cool, construction"
     },
     {
       "id": 228006077,
@@ -73050,7 +75658,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 45,
       "estimated_sales": 3185352,
-      "actual_sales": 1278284
+      "actual_sales": 1278284,
+      "tags": "warm, construction"
     },
     {
       "id": 23277304,
@@ -73078,7 +75687,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 57,
       "estimated_sales": 4027036,
-      "actual_sales": 3243825
+      "actual_sales": 3243825,
+      "tags": ""
     },
     {
       "id": 806886717,
@@ -73106,7 +75716,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 4,
       "estimated_sales": 4198075,
-      "actual_sales": 52309
+      "actual_sales": 52309,
+      "tags": "subscriber, construction"
     },
     {
       "id": 555292047,
@@ -73134,7 +75745,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 31,
       "estimated_sales": 1151824,
-      "actual_sales": 684545
+      "actual_sales": 684545,
+      "tags": "demo, retail"
     },
     {
       "id": 435814463,
@@ -73162,7 +75774,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 14,
       "estimated_sales": 1770220,
-      "actual_sales": 787728
+      "actual_sales": 787728,
+      "tags": "hot, engineering"
     },
     {
       "id": 364713891,
@@ -73190,7 +75803,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 31,
       "estimated_sales": 1706225,
-      "actual_sales": 886850
+      "actual_sales": 886850,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 322658138,
@@ -73218,7 +75832,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 62,
       "estimated_sales": 1213857,
-      "actual_sales": 4150557
+      "actual_sales": 4150557,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 785422013,
@@ -73246,7 +75861,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 6,
       "estimated_sales": 1712048,
-      "actual_sales": 53204
+      "actual_sales": 53204,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 308142878,
@@ -73274,7 +75890,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 66,
       "estimated_sales": 3975916,
-      "actual_sales": 4435734
+      "actual_sales": 4435734,
+      "tags": ""
     },
     {
       "id": 660234179,
@@ -73302,7 +75919,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 46,
       "estimated_sales": 630399,
-      "actual_sales": 3670674
+      "actual_sales": 3670674,
+      "tags": ""
     },
     {
       "id": 326411278,
@@ -73330,7 +75948,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 45,
       "estimated_sales": 185208,
-      "actual_sales": 1576250
+      "actual_sales": 1576250,
+      "tags": "warm, construction"
     },
     {
       "id": 737990882,
@@ -73358,7 +75977,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 68,
       "estimated_sales": 1202775,
-      "actual_sales": 2987225
+      "actual_sales": 2987225,
+      "tags": "demo, financial"
     },
     {
       "id": 186632830,
@@ -73386,7 +76006,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 38,
       "estimated_sales": 5330136,
-      "actual_sales": 1394328
+      "actual_sales": 1394328,
+      "tags": "hot, medical"
     },
     {
       "id": 123825141,
@@ -73414,7 +76035,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 5,
       "estimated_sales": 1875312,
-      "actual_sales": 478040
+      "actual_sales": 478040,
+      "tags": "warm, construction"
     },
     {
       "id": 372217717,
@@ -73442,7 +76064,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 2,
       "estimated_sales": 822930,
-      "actual_sales": 137092
+      "actual_sales": 137092,
+      "tags": "warm, financial"
     },
     {
       "id": 52831818,
@@ -73470,7 +76093,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 6,
       "estimated_sales": 260780,
-      "actual_sales": 99833
+      "actual_sales": 99833,
+      "tags": ""
     },
     {
       "id": 857833074,
@@ -73498,7 +76122,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 47,
       "estimated_sales": 2016080,
-      "actual_sales": 840189
+      "actual_sales": 840189,
+      "tags": "demo, financial"
     },
     {
       "id": 800179885,
@@ -73526,7 +76151,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 58,
       "estimated_sales": 2527589,
-      "actual_sales": 1694968
+      "actual_sales": 1694968,
+      "tags": "hot, construction"
     },
     {
       "id": 644919987,
@@ -73554,7 +76180,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 7,
       "estimated_sales": 2516731,
-      "actual_sales": 240426
+      "actual_sales": 240426,
+      "tags": "cold, construction"
     },
     {
       "id": 206706661,
@@ -73582,7 +76209,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 39,
       "estimated_sales": 296910,
-      "actual_sales": 1480401
+      "actual_sales": 1480401,
+      "tags": "demo, financial"
     },
     {
       "id": 696566661,
@@ -73610,7 +76238,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 22,
       "estimated_sales": 1010735,
-      "actual_sales": 501810
+      "actual_sales": 501810,
+      "tags": "cold, medical"
     },
     {
       "id": 329982808,
@@ -73638,7 +76267,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 58,
       "estimated_sales": 1361646,
-      "actual_sales": 5069550
+      "actual_sales": 5069550,
+      "tags": "hot, medical"
     },
     {
       "id": 118422951,
@@ -73666,7 +76296,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 51,
       "estimated_sales": 872438,
-      "actual_sales": 2515854
+      "actual_sales": 2515854,
+      "tags": "cold, construction"
     },
     {
       "id": 33633458,
@@ -73694,7 +76325,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 29,
       "estimated_sales": 1895564,
-      "actual_sales": 483707
+      "actual_sales": 483707,
+      "tags": "pharmaceutical"
     },
     {
       "id": 672414163,
@@ -73722,7 +76354,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 75,
       "estimated_sales": 0,
-      "actual_sales": 2316912
+      "actual_sales": 2316912,
+      "tags": "hot, medical"
     },
     {
       "id": 119847682,
@@ -73750,7 +76383,8 @@ export const data: any[] = [
       "deals_total": 22,
       "ratio": 31,
       "estimated_sales": 1514124,
-      "actual_sales": 523136
+      "actual_sales": 523136,
+      "tags": "pro, medical"
     },
     {
       "id": 296845367,
@@ -73778,7 +76412,8 @@ export const data: any[] = [
       "deals_total": 14,
       "ratio": 67,
       "estimated_sales": 911896,
-      "actual_sales": 385568
+      "actual_sales": 385568,
+      "tags": "pharmaceutical"
     },
     {
       "id": 62764503,
@@ -73806,7 +76441,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 29,
       "estimated_sales": 4484070,
-      "actual_sales": 1190340
+      "actual_sales": 1190340,
+      "tags": "warm, medical"
     },
     {
       "id": 507331735,
@@ -73834,7 +76470,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 28,
       "estimated_sales": 1675618,
-      "actual_sales": 1009448
+      "actual_sales": 1009448,
+      "tags": "demo, construction"
     },
     {
       "id": 240383280,
@@ -73862,7 +76499,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 49,
       "estimated_sales": 794280,
-      "actual_sales": 3073617
+      "actual_sales": 3073617,
+      "tags": "engineering"
     },
     {
       "id": 690945251,
@@ -73890,7 +76528,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 9,
       "estimated_sales": 2916648,
-      "actual_sales": 182888
+      "actual_sales": 182888,
+      "tags": "pharmaceutical"
     },
     {
       "id": 349182142,
@@ -73918,7 +76557,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 58,
       "estimated_sales": 2740992,
-      "actual_sales": 3298844
+      "actual_sales": 3298844,
+      "tags": "demo, construction"
     },
     {
       "id": 642289550,
@@ -73946,7 +76586,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 61,
       "estimated_sales": 1342500,
-      "actual_sales": 1513980
+      "actual_sales": 1513980,
+      "tags": "subscriber, medical"
     },
     {
       "id": 630958892,
@@ -73974,7 +76615,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 6,
       "estimated_sales": 1762696,
-      "actual_sales": 109000
+      "actual_sales": 109000,
+      "tags": "demo, financial"
     },
     {
       "id": 296619893,
@@ -74002,7 +76644,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 13,
       "estimated_sales": 731178,
-      "actual_sales": 236996
+      "actual_sales": 236996,
+      "tags": "engineering"
     },
     {
       "id": 167017078,
@@ -74030,7 +76673,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 63,
       "estimated_sales": 1918962,
-      "actual_sales": 1895760
+      "actual_sales": 1895760,
+      "tags": "pro, engineering"
     },
     {
       "id": 472860165,
@@ -74058,7 +76702,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 32,
       "estimated_sales": 114865,
-      "actual_sales": 2770978
+      "actual_sales": 2770978,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 6020656,
@@ -74086,7 +76731,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 47,
       "estimated_sales": 3352100,
-      "actual_sales": 2509360
+      "actual_sales": 2509360,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 290045689,
@@ -74114,7 +76760,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 81,
       "estimated_sales": 1465282,
-      "actual_sales": 2760576
+      "actual_sales": 2760576,
+      "tags": "demo, construction"
     },
     {
       "id": 78815579,
@@ -74142,7 +76789,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 8,
       "estimated_sales": 2557656,
-      "actual_sales": 822736
+      "actual_sales": 822736,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 43540479,
@@ -74170,7 +76818,8 @@ export const data: any[] = [
       "deals_total": 76,
       "ratio": 48,
       "estimated_sales": 3075592,
-      "actual_sales": 1304208
+      "actual_sales": 1304208,
+      "tags": "retail"
     },
     {
       "id": 654847846,
@@ -74198,7 +76847,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 53,
       "estimated_sales": 2535900,
-      "actual_sales": 2063184
+      "actual_sales": 2063184,
+      "tags": "hot, medical"
     },
     {
       "id": 159931523,
@@ -74226,7 +76876,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 95,
       "estimated_sales": 543144,
-      "actual_sales": 1158354
+      "actual_sales": 1158354,
+      "tags": "hot, engineering"
     },
     {
       "id": 115648050,
@@ -74254,7 +76905,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 75,
       "estimated_sales": 2946576,
-      "actual_sales": 1575153
+      "actual_sales": 1575153,
+      "tags": "hot, financial"
     },
     {
       "id": 982158809,
@@ -74282,7 +76934,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 61,
       "estimated_sales": 2607012,
-      "actual_sales": 4716870
+      "actual_sales": 4716870,
+      "tags": "warm, financial"
     },
     {
       "id": 990934966,
@@ -74310,7 +76963,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 49,
       "estimated_sales": 1726461,
-      "actual_sales": 5091184
+      "actual_sales": 5091184,
+      "tags": "subscriber, retail"
     },
     {
       "id": 379511310,
@@ -74338,7 +76992,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 33,
       "estimated_sales": 2897715,
-      "actual_sales": 1123356
+      "actual_sales": 1123356,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 479937183,
@@ -74366,7 +77021,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 57,
       "estimated_sales": 2687496,
-      "actual_sales": 3843504
+      "actual_sales": 3843504,
+      "tags": "warm, financial"
     },
     {
       "id": 504359022,
@@ -74394,7 +77050,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 21,
       "estimated_sales": 852230,
-      "actual_sales": 1063410
+      "actual_sales": 1063410,
+      "tags": "warm, financial"
     },
     {
       "id": 559695769,
@@ -74422,7 +77079,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 53,
       "estimated_sales": 262296,
-      "actual_sales": 2351850
+      "actual_sales": 2351850,
+      "tags": "engineering"
     },
     {
       "id": 308593062,
@@ -74450,7 +77108,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 26,
       "estimated_sales": 2729466,
-      "actual_sales": 1467790
+      "actual_sales": 1467790,
+      "tags": "hot, financial"
     },
     {
       "id": 241322268,
@@ -74478,7 +77137,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 53,
       "estimated_sales": 2699125,
-      "actual_sales": 1945278
+      "actual_sales": 1945278,
+      "tags": "hot, medical"
     },
     {
       "id": 259733403,
@@ -74506,7 +77166,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 46,
       "estimated_sales": 4774336,
-      "actual_sales": 956520
+      "actual_sales": 956520,
+      "tags": "hot, construction"
     },
     {
       "id": 933816413,
@@ -74534,7 +77195,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 1,
       "estimated_sales": 4267494,
-      "actual_sales": 445851
+      "actual_sales": 445851,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 720713746,
@@ -74562,7 +77224,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 52,
       "estimated_sales": 513798,
-      "actual_sales": 2022696
+      "actual_sales": 2022696,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 206579710,
@@ -74590,7 +77253,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 52,
       "estimated_sales": 1415616,
-      "actual_sales": 5148167
+      "actual_sales": 5148167,
+      "tags": "demo, construction"
     },
     {
       "id": 977805723,
@@ -74618,7 +77282,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 58,
       "estimated_sales": 2691252,
-      "actual_sales": 2333124
+      "actual_sales": 2333124,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 572267299,
@@ -74646,7 +77311,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 26,
       "estimated_sales": 896937,
-      "actual_sales": 1533584
+      "actual_sales": 1533584,
+      "tags": "warm, financial"
     },
     {
       "id": 990202128,
@@ -74674,7 +77340,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 52,
       "estimated_sales": 1790010,
-      "actual_sales": 4121324
+      "actual_sales": 4121324,
+      "tags": "cool, medical"
     },
     {
       "id": 817057772,
@@ -74702,7 +77369,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 62,
       "estimated_sales": 921609,
-      "actual_sales": 3407690
+      "actual_sales": 3407690,
+      "tags": "cold, retail"
     },
     {
       "id": 72730849,
@@ -74730,7 +77398,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 69,
       "estimated_sales": 3622630,
-      "actual_sales": 1497775
+      "actual_sales": 1497775,
+      "tags": ""
     },
     {
       "id": 737031971,
@@ -74758,7 +77427,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 46,
       "estimated_sales": 997470,
-      "actual_sales": 2468655
+      "actual_sales": 2468655,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 967380797,
@@ -74786,7 +77456,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 49,
       "estimated_sales": 278504,
-      "actual_sales": 2133912
+      "actual_sales": 2133912,
+      "tags": "warm, financial"
     },
     {
       "id": 707104282,
@@ -74814,7 +77485,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 53,
       "estimated_sales": 1320381,
-      "actual_sales": 3140900
+      "actual_sales": 3140900,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 164122103,
@@ -74842,7 +77514,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 23,
       "estimated_sales": 1300880,
-      "actual_sales": 848946
+      "actual_sales": 848946,
+      "tags": "warm, construction"
     },
     {
       "id": 658265085,
@@ -74870,7 +77543,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 56,
       "estimated_sales": 3743712,
-      "actual_sales": 969185
+      "actual_sales": 969185,
+      "tags": "subscriber, retail"
     },
     {
       "id": 530177205,
@@ -74898,7 +77572,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 63,
       "estimated_sales": 2973292,
-      "actual_sales": 3652883
+      "actual_sales": 3652883,
+      "tags": ""
     },
     {
       "id": 823789414,
@@ -74926,7 +77601,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 67,
       "estimated_sales": 64676,
-      "actual_sales": 2639208
+      "actual_sales": 2639208,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 6272083,
@@ -74954,7 +77630,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 78,
       "estimated_sales": 493779,
-      "actual_sales": 1550612
+      "actual_sales": 1550612,
+      "tags": "cold, construction"
     },
     {
       "id": 105266752,
@@ -74982,7 +77659,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 37,
       "estimated_sales": 67364,
-      "actual_sales": 971115
+      "actual_sales": 971115,
+      "tags": ""
     },
     {
       "id": 921367357,
@@ -75010,7 +77688,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 63,
       "estimated_sales": 1615548,
-      "actual_sales": 860004
+      "actual_sales": 860004,
+      "tags": "construction"
     },
     {
       "id": 793381205,
@@ -75038,7 +77717,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 58,
       "estimated_sales": 1119328,
-      "actual_sales": 3650033
+      "actual_sales": 3650033,
+      "tags": "cool, medical"
     },
     {
       "id": 204505770,
@@ -75066,7 +77746,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 7,
       "estimated_sales": 3571992,
-      "actual_sales": 1185512
+      "actual_sales": 1185512,
+      "tags": "subscriber, financial"
     },
     {
       "id": 394077730,
@@ -75094,7 +77775,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 24,
       "estimated_sales": 384600,
-      "actual_sales": 737163
+      "actual_sales": 737163,
+      "tags": "cold, construction"
     },
     {
       "id": 309507343,
@@ -75122,7 +77804,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 57,
       "estimated_sales": 4174632,
-      "actual_sales": 2816748
+      "actual_sales": 2816748,
+      "tags": "demo, medical"
     },
     {
       "id": 750642815,
@@ -75150,7 +77833,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 47,
       "estimated_sales": 1342110,
-      "actual_sales": 2127684
+      "actual_sales": 2127684,
+      "tags": "cold, financial"
     },
     {
       "id": 118638221,
@@ -75178,7 +77862,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 35,
       "estimated_sales": 1553136,
-      "actual_sales": 2035436
+      "actual_sales": 2035436,
+      "tags": "pro, construction"
     },
     {
       "id": 443979964,
@@ -75206,7 +77891,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 6,
       "estimated_sales": 2005744,
-      "actual_sales": 396908
+      "actual_sales": 396908,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 901698944,
@@ -75234,7 +77920,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 7,
       "estimated_sales": 1885365,
-      "actual_sales": 1230782
+      "actual_sales": 1230782,
+      "tags": "subscriber, financial"
     },
     {
       "id": 899725367,
@@ -75262,7 +77949,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 34,
       "estimated_sales": 1070160,
-      "actual_sales": 1170481
+      "actual_sales": 1170481,
+      "tags": "warm, construction"
     },
     {
       "id": 22072085,
@@ -75290,7 +77978,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 73,
       "estimated_sales": 4482861,
-      "actual_sales": 800984
+      "actual_sales": 800984,
+      "tags": "cold, construction"
     },
     {
       "id": 911012548,
@@ -75318,7 +78007,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 27,
       "estimated_sales": 1085949,
-      "actual_sales": 521048
+      "actual_sales": 521048,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 269283224,
@@ -75346,7 +78036,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 6,
       "estimated_sales": 2844893,
-      "actual_sales": 2313996
+      "actual_sales": 2313996,
+      "tags": "cool, engineering"
     },
     {
       "id": 647577262,
@@ -75374,7 +78065,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 8,
       "estimated_sales": 360016,
-      "actual_sales": 337540
+      "actual_sales": 337540,
+      "tags": "medical"
     },
     {
       "id": 707400967,
@@ -75402,7 +78094,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 56,
       "estimated_sales": 913400,
-      "actual_sales": 2236220
+      "actual_sales": 2236220,
+      "tags": "subscriber, construction"
     },
     {
       "id": 158739852,
@@ -75430,7 +78123,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 55,
       "estimated_sales": 1513917,
-      "actual_sales": 3963372
+      "actual_sales": 3963372,
+      "tags": "hot, financial"
     },
     {
       "id": 770135224,
@@ -75458,7 +78152,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 41,
       "estimated_sales": 3296180,
-      "actual_sales": 2338098
+      "actual_sales": 2338098,
+      "tags": "warm, retail"
     },
     {
       "id": 989459332,
@@ -75486,7 +78181,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 31,
       "estimated_sales": 1658840,
-      "actual_sales": 760734
+      "actual_sales": 760734,
+      "tags": "demo, construction"
     },
     {
       "id": 894477922,
@@ -75514,7 +78210,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 5,
       "estimated_sales": 2925774,
-      "actual_sales": 3090441
+      "actual_sales": 3090441,
+      "tags": "pro, engineering"
     },
     {
       "id": 955370419,
@@ -75542,7 +78239,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 32,
       "estimated_sales": 1381360,
-      "actual_sales": 909810
+      "actual_sales": 909810,
+      "tags": "subscriber, medical"
     },
     {
       "id": 462567206,
@@ -75570,7 +78268,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 6,
       "estimated_sales": 483492,
-      "actual_sales": 2530227
+      "actual_sales": 2530227,
+      "tags": "hot, retail"
     },
     {
       "id": 109080926,
@@ -75598,7 +78297,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 22,
       "estimated_sales": 3488175,
-      "actual_sales": 1012080
+      "actual_sales": 1012080,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 396608994,
@@ -75626,7 +78326,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 94,
       "estimated_sales": 1716507,
-      "actual_sales": 2163240
+      "actual_sales": 2163240,
+      "tags": "hot, medical"
     },
     {
       "id": 619750375,
@@ -75654,7 +78355,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 29,
       "estimated_sales": 1368880,
-      "actual_sales": 568800
+      "actual_sales": 568800,
+      "tags": ""
     },
     {
       "id": 630048199,
@@ -75682,7 +78384,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 0,
       "estimated_sales": 4712181,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "hot, construction"
     },
     {
       "id": 466844022,
@@ -75710,7 +78413,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 38,
       "estimated_sales": 1956472,
-      "actual_sales": 1719578
+      "actual_sales": 1719578,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 834834063,
@@ -75738,7 +78442,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 47,
       "estimated_sales": 3778992,
-      "actual_sales": 4591560
+      "actual_sales": 4591560,
+      "tags": "pro, financial"
     },
     {
       "id": 933789885,
@@ -75766,7 +78471,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 38,
       "estimated_sales": 3127896,
-      "actual_sales": 533615
+      "actual_sales": 533615,
+      "tags": "pro, engineering"
     },
     {
       "id": 191534654,
@@ -75794,7 +78500,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 32,
       "estimated_sales": 1219968,
-      "actual_sales": 1813656
+      "actual_sales": 1813656,
+      "tags": ""
     },
     {
       "id": 232023102,
@@ -75822,7 +78529,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 19,
       "estimated_sales": 190583,
-      "actual_sales": 923365
+      "actual_sales": 923365,
+      "tags": "retail"
     },
     {
       "id": 365421386,
@@ -75850,7 +78558,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 87,
       "estimated_sales": 565650,
-      "actual_sales": 1313377
+      "actual_sales": 1313377,
+      "tags": ""
     },
     {
       "id": 36475528,
@@ -75878,7 +78587,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 6,
       "estimated_sales": 974358,
-      "actual_sales": 1881027
+      "actual_sales": 1881027,
+      "tags": "cold, construction"
     },
     {
       "id": 443215543,
@@ -75906,7 +78616,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 75,
       "estimated_sales": 1204800,
-      "actual_sales": 3147264
+      "actual_sales": 3147264,
+      "tags": "warm, construction"
     },
     {
       "id": 329931907,
@@ -75934,7 +78645,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 53,
       "estimated_sales": 3822140,
-      "actual_sales": 2205950
+      "actual_sales": 2205950,
+      "tags": "pro, financial"
     },
     {
       "id": 88001819,
@@ -75962,7 +78674,8 @@ export const data: any[] = [
       "deals_total": 83,
       "ratio": 49,
       "estimated_sales": 3660870,
-      "actual_sales": 3384342
+      "actual_sales": 3384342,
+      "tags": "subscriber, construction"
     },
     {
       "id": 899579265,
@@ -75990,7 +78703,8 @@ export const data: any[] = [
       "deals_total": 84,
       "ratio": 52,
       "estimated_sales": 4364550,
-      "actual_sales": 1649088
+      "actual_sales": 1649088,
+      "tags": "cold, construction"
     },
     {
       "id": 888163694,
@@ -76018,7 +78732,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 38,
       "estimated_sales": 926816,
-      "actual_sales": 1809150
+      "actual_sales": 1809150,
+      "tags": "cool, construction"
     },
     {
       "id": 734762575,
@@ -76046,7 +78761,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 27,
       "estimated_sales": 1670772,
-      "actual_sales": 554868
+      "actual_sales": 554868,
+      "tags": "subscriber, financial"
     },
     {
       "id": 775294052,
@@ -76074,7 +78790,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 48,
       "estimated_sales": 711116,
-      "actual_sales": 3551020
+      "actual_sales": 3551020,
+      "tags": "cold, retail"
     },
     {
       "id": 645480811,
@@ -76102,7 +78819,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 31,
       "estimated_sales": 720424,
-      "actual_sales": 905850
+      "actual_sales": 905850,
+      "tags": "demo, medical"
     },
     {
       "id": 266290284,
@@ -76130,7 +78848,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 37,
       "estimated_sales": 3696672,
-      "actual_sales": 1829366
+      "actual_sales": 1829366,
+      "tags": "pro, financial"
     },
     {
       "id": 767684512,
@@ -76158,7 +78877,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 64,
       "estimated_sales": 288240,
-      "actual_sales": 5034876
+      "actual_sales": 5034876,
+      "tags": "cold, medical"
     },
     {
       "id": 264795538,
@@ -76186,7 +78906,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 67,
       "estimated_sales": 942820,
-      "actual_sales": 593328
+      "actual_sales": 593328,
+      "tags": ""
     },
     {
       "id": 822741518,
@@ -76214,7 +78935,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 43,
       "estimated_sales": 414252,
-      "actual_sales": 1819664
+      "actual_sales": 1819664,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 329679958,
@@ -76242,7 +78964,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 5,
       "estimated_sales": 5572200,
-      "actual_sales": 611200
+      "actual_sales": 611200,
+      "tags": "pro, construction"
     },
     {
       "id": 440238319,
@@ -76270,7 +78993,8 @@ export const data: any[] = [
       "deals_total": 78,
       "ratio": 44,
       "estimated_sales": 3000780,
-      "actual_sales": 1360296
+      "actual_sales": 1360296,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 945106513,
@@ -76298,7 +79022,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 14,
       "estimated_sales": 3235968,
-      "actual_sales": 263115
+      "actual_sales": 263115,
+      "tags": "retail"
     },
     {
       "id": 293027408,
@@ -76326,7 +79051,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 29,
       "estimated_sales": 1265112,
-      "actual_sales": 1543860
+      "actual_sales": 1543860,
+      "tags": "cool, retail"
     },
     {
       "id": 388096141,
@@ -76354,7 +79080,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 69,
       "estimated_sales": 4237310,
-      "actual_sales": 3565985
+      "actual_sales": 3565985,
+      "tags": "hot, construction"
     },
     {
       "id": 28089528,
@@ -76382,7 +79109,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 47,
       "estimated_sales": 2061191,
-      "actual_sales": 981197
+      "actual_sales": 981197,
+      "tags": "pro, financial"
     },
     {
       "id": 442576450,
@@ -76410,7 +79138,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 66,
       "estimated_sales": 1757888,
-      "actual_sales": 1704433
+      "actual_sales": 1704433,
+      "tags": "subscriber, retail"
     },
     {
       "id": 384352874,
@@ -76438,7 +79167,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 7,
       "estimated_sales": 2582119,
-      "actual_sales": 1622796
+      "actual_sales": 1622796,
+      "tags": "subscriber, medical"
     },
     {
       "id": 700669511,
@@ -76466,7 +79196,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 71,
       "estimated_sales": 2943345,
-      "actual_sales": 3014286
+      "actual_sales": 3014286,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 561265905,
@@ -76494,7 +79225,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 1,
       "estimated_sales": 220088,
-      "actual_sales": 141988
+      "actual_sales": 141988,
+      "tags": "cool, retail"
     },
     {
       "id": 28920637,
@@ -76522,7 +79254,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 5,
       "estimated_sales": 633759,
-      "actual_sales": 471720
+      "actual_sales": 471720,
+      "tags": "demo, medical"
     },
     {
       "id": 113803923,
@@ -76550,7 +79283,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 21,
       "estimated_sales": 4040442,
-      "actual_sales": 782290
+      "actual_sales": 782290,
+      "tags": "warm, engineering"
     },
     {
       "id": 377206581,
@@ -76578,7 +79312,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 6,
       "estimated_sales": 1823998,
-      "actual_sales": 3470760
+      "actual_sales": 3470760,
+      "tags": "warm, engineering"
     },
     {
       "id": 502155369,
@@ -76606,7 +79341,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 33,
       "estimated_sales": 2189124,
-      "actual_sales": 1101463
+      "actual_sales": 1101463,
+      "tags": "cool, retail"
     },
     {
       "id": 608769100,
@@ -76634,7 +79370,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 61,
       "estimated_sales": 599073,
-      "actual_sales": 4011903
+      "actual_sales": 4011903,
+      "tags": "medical"
     },
     {
       "id": 74862108,
@@ -76662,7 +79399,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 38,
       "estimated_sales": 1474677,
-      "actual_sales": 2777454
+      "actual_sales": 2777454,
+      "tags": "warm, construction"
     },
     {
       "id": 287078746,
@@ -76690,7 +79428,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 88,
       "estimated_sales": 3447911,
-      "actual_sales": 1238580
+      "actual_sales": 1238580,
+      "tags": "pro, construction"
     },
     {
       "id": 424369042,
@@ -76718,7 +79457,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 39,
       "estimated_sales": 2543983,
-      "actual_sales": 2321868
+      "actual_sales": 2321868,
+      "tags": "pharmaceutical"
     },
     {
       "id": 904190439,
@@ -76746,7 +79486,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 3,
       "estimated_sales": 995290,
-      "actual_sales": 92669
+      "actual_sales": 92669,
+      "tags": "retail"
     },
     {
       "id": 94784815,
@@ -76774,7 +79515,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 31,
       "estimated_sales": 569187,
-      "actual_sales": 736890
+      "actual_sales": 736890,
+      "tags": "subscriber, retail"
     },
     {
       "id": 407299229,
@@ -76802,7 +79544,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 21,
       "estimated_sales": 443352,
-      "actual_sales": 420459
+      "actual_sales": 420459,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 945800001,
@@ -76830,7 +79573,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 53,
       "estimated_sales": 1716750,
-      "actual_sales": 3880590
+      "actual_sales": 3880590,
+      "tags": "pro, financial"
     },
     {
       "id": 248804893,
@@ -76858,7 +79602,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 31,
       "estimated_sales": 1490912,
-      "actual_sales": 2062476
+      "actual_sales": 2062476,
+      "tags": "hot, retail"
     },
     {
       "id": 849152992,
@@ -76886,7 +79631,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 57,
       "estimated_sales": 416154,
-      "actual_sales": 4067896
+      "actual_sales": 4067896,
+      "tags": "cold, medical"
     },
     {
       "id": 385558401,
@@ -76914,7 +79660,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 57,
       "estimated_sales": 2247912,
-      "actual_sales": 2323636
+      "actual_sales": 2323636,
+      "tags": "hot, medical"
     },
     {
       "id": 492122630,
@@ -76942,7 +79689,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 38,
       "estimated_sales": 155628,
-      "actual_sales": 1816297
+      "actual_sales": 1816297,
+      "tags": "demo, retail"
     },
     {
       "id": 382453897,
@@ -76970,7 +79718,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 5,
       "estimated_sales": 2206800,
-      "actual_sales": 193629
+      "actual_sales": 193629,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 715928348,
@@ -76998,7 +79747,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 64,
       "estimated_sales": 906606,
-      "actual_sales": 4273304
+      "actual_sales": 4273304,
+      "tags": ""
     },
     {
       "id": 376851547,
@@ -77026,7 +79776,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 97,
       "estimated_sales": 0,
-      "actual_sales": 5450010
+      "actual_sales": 5450010,
+      "tags": "hot, financial"
     },
     {
       "id": 57294257,
@@ -77054,7 +79805,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 44,
       "estimated_sales": 2512160,
-      "actual_sales": 1189650
+      "actual_sales": 1189650,
+      "tags": "demo, financial"
     },
     {
       "id": 820204096,
@@ -77082,7 +79834,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 42,
       "estimated_sales": 1554047,
-      "actual_sales": 1316965
+      "actual_sales": 1316965,
+      "tags": "cool, engineering"
     },
     {
       "id": 155650101,
@@ -77110,7 +79863,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 47,
       "estimated_sales": 3484404,
-      "actual_sales": 690129
+      "actual_sales": 690129,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 805290805,
@@ -77138,7 +79892,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 47,
       "estimated_sales": 1484478,
-      "actual_sales": 2222400
+      "actual_sales": 2222400,
+      "tags": "hot, financial"
     },
     {
       "id": 856244687,
@@ -77166,7 +79921,8 @@ export const data: any[] = [
       "deals_total": 26,
       "ratio": 89,
       "estimated_sales": 3194691,
-      "actual_sales": 1265304
+      "actual_sales": 1265304,
+      "tags": "subscriber, retail"
     },
     {
       "id": 872502440,
@@ -77194,7 +79950,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 22,
       "estimated_sales": 3346029,
-      "actual_sales": 1195472
+      "actual_sales": 1195472,
+      "tags": "pro, medical"
     },
     {
       "id": 69628552,
@@ -77222,7 +79979,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 51,
       "estimated_sales": 1208634,
-      "actual_sales": 2869218
+      "actual_sales": 2869218,
+      "tags": "cold, construction"
     },
     {
       "id": 823058598,
@@ -77250,7 +80008,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 57,
       "estimated_sales": 0,
-      "actual_sales": 3383401
+      "actual_sales": 3383401,
+      "tags": "subscriber, retail"
     },
     {
       "id": 52668036,
@@ -77278,7 +80037,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 5,
       "estimated_sales": 2174873,
-      "actual_sales": 2059635
+      "actual_sales": 2059635,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 372369508,
@@ -77306,7 +80066,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 61,
       "estimated_sales": 235586,
-      "actual_sales": 3401769
+      "actual_sales": 3401769,
+      "tags": "subscriber, construction"
     },
     {
       "id": 811058858,
@@ -77334,7 +80095,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 6,
       "estimated_sales": 65050,
-      "actual_sales": 81710
+      "actual_sales": 81710,
+      "tags": "hot, engineering"
     },
     {
       "id": 328357106,
@@ -77362,7 +80124,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 5,
       "estimated_sales": 0,
-      "actual_sales": 1452370
+      "actual_sales": 1452370,
+      "tags": "engineering"
     },
     {
       "id": 101504641,
@@ -77390,7 +80153,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 47,
       "estimated_sales": 768036,
-      "actual_sales": 1179549
+      "actual_sales": 1179549,
+      "tags": "cool, retail"
     },
     {
       "id": 161477204,
@@ -77418,7 +80182,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 68,
       "estimated_sales": 699816,
-      "actual_sales": 5330520
+      "actual_sales": 5330520,
+      "tags": "hot, construction"
     },
     {
       "id": 893636538,
@@ -77446,7 +80211,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 45,
       "estimated_sales": 1633635,
-      "actual_sales": 1605722
+      "actual_sales": 1605722,
+      "tags": "warm, medical"
     },
     {
       "id": 504485819,
@@ -77474,7 +80240,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 36,
       "estimated_sales": 979208,
-      "actual_sales": 2234544
+      "actual_sales": 2234544,
+      "tags": "warm, medical"
     },
     {
       "id": 945936446,
@@ -77502,7 +80269,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 63,
       "estimated_sales": 555415,
-      "actual_sales": 1289760
+      "actual_sales": 1289760,
+      "tags": "warm, construction"
     },
     {
       "id": 512001142,
@@ -77530,7 +80298,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 56,
       "estimated_sales": 895464,
-      "actual_sales": 4792772
+      "actual_sales": 4792772,
+      "tags": "warm, engineering"
     },
     {
       "id": 196323470,
@@ -77558,7 +80327,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 73,
       "estimated_sales": 1130560,
-      "actual_sales": 1947500
+      "actual_sales": 1947500,
+      "tags": "cold, medical"
     },
     {
       "id": 864075728,
@@ -77586,7 +80356,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 2,
       "estimated_sales": 389505,
-      "actual_sales": 347738
+      "actual_sales": 347738,
+      "tags": "subscriber, financial"
     },
     {
       "id": 656955009,
@@ -77614,7 +80385,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 42,
       "estimated_sales": 3535872,
-      "actual_sales": 1378430
+      "actual_sales": 1378430,
+      "tags": "hot, retail"
     },
     {
       "id": 690888300,
@@ -77642,7 +80414,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 52,
       "estimated_sales": 1024632,
-      "actual_sales": 4705428
+      "actual_sales": 4705428,
+      "tags": ""
     },
     {
       "id": 240183500,
@@ -77670,7 +80443,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 5,
       "estimated_sales": 621390,
-      "actual_sales": 2419596
+      "actual_sales": 2419596,
+      "tags": "cool, financial"
     },
     {
       "id": 415579646,
@@ -77698,7 +80472,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 29,
       "estimated_sales": 432510,
-      "actual_sales": 1082856
+      "actual_sales": 1082856,
+      "tags": "hot, financial"
     },
     {
       "id": 258620025,
@@ -77726,7 +80501,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 0,
       "estimated_sales": 2350368,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "subscriber, financial"
     },
     {
       "id": 476095372,
@@ -77754,7 +80530,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 45,
       "estimated_sales": 3419140,
-      "actual_sales": 3370972
+      "actual_sales": 3370972,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 605275139,
@@ -77782,7 +80559,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 73,
       "estimated_sales": 1753236,
-      "actual_sales": 3657258
+      "actual_sales": 3657258,
+      "tags": "engineering"
     },
     {
       "id": 259648723,
@@ -77810,7 +80588,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 13,
       "estimated_sales": 3279793,
-      "actual_sales": 485304
+      "actual_sales": 485304,
+      "tags": "warm, medical"
     },
     {
       "id": 396861505,
@@ -77838,7 +80617,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 53,
       "estimated_sales": 3096411,
-      "actual_sales": 1136314
+      "actual_sales": 1136314,
+      "tags": "pro, medical"
     },
     {
       "id": 487751168,
@@ -77866,7 +80646,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 43,
       "estimated_sales": 2250120,
-      "actual_sales": 1136720
+      "actual_sales": 1136720,
+      "tags": "retail"
     },
     {
       "id": 414158231,
@@ -77894,7 +80675,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 48,
       "estimated_sales": 384534,
-      "actual_sales": 2217969
+      "actual_sales": 2217969,
+      "tags": "hot, financial"
     },
     {
       "id": 904187837,
@@ -77922,7 +80704,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 8,
       "estimated_sales": 3097136,
-      "actual_sales": 177452
+      "actual_sales": 177452,
+      "tags": "construction"
     },
     {
       "id": 856916706,
@@ -77950,7 +80733,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 65,
       "estimated_sales": 2538120,
-      "actual_sales": 1665750
+      "actual_sales": 1665750,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 903908885,
@@ -77978,7 +80762,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 88,
       "estimated_sales": 907704,
-      "actual_sales": 4399325
+      "actual_sales": 4399325,
+      "tags": "construction"
     },
     {
       "id": 272477187,
@@ -78006,7 +80791,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 23,
       "estimated_sales": 2323356,
-      "actual_sales": 1301166
+      "actual_sales": 1301166,
+      "tags": "subscriber, retail"
     },
     {
       "id": 458831416,
@@ -78034,7 +80820,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 57,
       "estimated_sales": 1355788,
-      "actual_sales": 2074968
+      "actual_sales": 2074968,
+      "tags": "demo, retail"
     },
     {
       "id": 700893600,
@@ -78062,7 +80849,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 67,
       "estimated_sales": 193064,
-      "actual_sales": 2579962
+      "actual_sales": 2579962,
+      "tags": "warm, construction"
     },
     {
       "id": 334806061,
@@ -78090,7 +80878,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 2,
       "estimated_sales": 2637738,
-      "actual_sales": 792608
+      "actual_sales": 792608,
+      "tags": "hot, financial"
     },
     {
       "id": 411138094,
@@ -78118,7 +80907,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 74,
       "estimated_sales": 108574,
-      "actual_sales": 2189500
+      "actual_sales": 2189500,
+      "tags": ""
     },
     {
       "id": 970115447,
@@ -78146,7 +80936,8 @@ export const data: any[] = [
       "deals_total": 57,
       "ratio": 72,
       "estimated_sales": 3152500,
-      "actual_sales": 2426017
+      "actual_sales": 2426017,
+      "tags": "subscriber, financial"
     },
     {
       "id": 610429984,
@@ -78174,7 +80965,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 64,
       "estimated_sales": 2112822,
-      "actual_sales": 2720048
+      "actual_sales": 2720048,
+      "tags": "construction"
     },
     {
       "id": 709667129,
@@ -78202,7 +80994,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 38,
       "estimated_sales": 2445660,
-      "actual_sales": 958610
+      "actual_sales": 958610,
+      "tags": "demo, construction"
     },
     {
       "id": 37385560,
@@ -78230,7 +81023,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 52,
       "estimated_sales": 4070880,
-      "actual_sales": 3656775
+      "actual_sales": 3656775,
+      "tags": ""
     },
     {
       "id": 2557363,
@@ -78258,7 +81052,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 69,
       "estimated_sales": 636165,
-      "actual_sales": 3837264
+      "actual_sales": 3837264,
+      "tags": "warm, financial"
     },
     {
       "id": 821847494,
@@ -78286,7 +81081,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 5,
       "estimated_sales": 2908665,
-      "actual_sales": 119592
+      "actual_sales": 119592,
+      "tags": "cold, engineering"
     },
     {
       "id": 227174690,
@@ -78314,7 +81110,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 41,
       "estimated_sales": 889425,
-      "actual_sales": 1263500
+      "actual_sales": 1263500,
+      "tags": ""
     },
     {
       "id": 873440542,
@@ -78342,7 +81139,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 52,
       "estimated_sales": 256178,
-      "actual_sales": 1928208
+      "actual_sales": 1928208,
+      "tags": "retail"
     },
     {
       "id": 242374295,
@@ -78370,7 +81168,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 31,
       "estimated_sales": 718208,
-      "actual_sales": 1721610
+      "actual_sales": 1721610,
+      "tags": "warm, financial"
     },
     {
       "id": 544013333,
@@ -78398,7 +81197,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 26,
       "estimated_sales": 2639442,
-      "actual_sales": 1163346
+      "actual_sales": 1163346,
+      "tags": "cool, construction"
     },
     {
       "id": 822754189,
@@ -78426,7 +81226,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 16,
       "estimated_sales": 1682890,
-      "actual_sales": 358500
+      "actual_sales": 358500,
+      "tags": "demo, medical"
     },
     {
       "id": 379319015,
@@ -78454,7 +81255,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 56,
       "estimated_sales": 4778736,
-      "actual_sales": 4744104
+      "actual_sales": 4744104,
+      "tags": "retail"
     },
     {
       "id": 27572171,
@@ -78482,7 +81284,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 75,
       "estimated_sales": 2537925,
-      "actual_sales": 2606562
+      "actual_sales": 2606562,
+      "tags": "warm, engineering"
     },
     {
       "id": 104962652,
@@ -78510,7 +81313,8 @@ export const data: any[] = [
       "deals_total": 81,
       "ratio": 55,
       "estimated_sales": 4932368,
-      "actual_sales": 3894294
+      "actual_sales": 3894294,
+      "tags": "demo, engineering"
     },
     {
       "id": 10461515,
@@ -78538,7 +81342,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 84,
       "estimated_sales": 1765288,
-      "actual_sales": 1746592
+      "actual_sales": 1746592,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 903108497,
@@ -78566,7 +81371,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 54,
       "estimated_sales": 4227264,
-      "actual_sales": 1433860
+      "actual_sales": 1433860,
+      "tags": "cold, engineering"
     },
     {
       "id": 218732576,
@@ -78594,7 +81400,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 7,
       "estimated_sales": 1195546,
-      "actual_sales": 2516064
+      "actual_sales": 2516064,
+      "tags": "pro, medical"
     },
     {
       "id": 474845660,
@@ -78622,7 +81429,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 57,
       "estimated_sales": 1160866,
-      "actual_sales": 1774908
+      "actual_sales": 1774908,
+      "tags": "subscriber, retail"
     },
     {
       "id": 656698987,
@@ -78650,7 +81458,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 21,
       "estimated_sales": 3480375,
-      "actual_sales": 487200
+      "actual_sales": 487200,
+      "tags": "pro, retail"
     },
     {
       "id": 58327556,
@@ -78678,7 +81487,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 44,
       "estimated_sales": 2438560,
-      "actual_sales": 1088580
+      "actual_sales": 1088580,
+      "tags": "demo, retail"
     },
     {
       "id": 71290774,
@@ -78706,7 +81516,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 3,
       "estimated_sales": 987552,
-      "actual_sales": 1489444
+      "actual_sales": 1489444,
+      "tags": "pharmaceutical"
     },
     {
       "id": 547446510,
@@ -78734,7 +81545,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 5,
       "estimated_sales": 1704640,
-      "actual_sales": 149336
+      "actual_sales": 149336,
+      "tags": "demo, financial"
     },
     {
       "id": 798295299,
@@ -78762,7 +81574,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 49,
       "estimated_sales": 4040160,
-      "actual_sales": 1217982
+      "actual_sales": 1217982,
+      "tags": "cool, construction"
     },
     {
       "id": 890438527,
@@ -78790,7 +81603,8 @@ export const data: any[] = [
       "deals_total": 72,
       "ratio": 43,
       "estimated_sales": 3420534,
-      "actual_sales": 2523380
+      "actual_sales": 2523380,
+      "tags": "pro, engineering"
     },
     {
       "id": 157958906,
@@ -78818,7 +81632,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 78,
       "estimated_sales": 2031624,
-      "actual_sales": 2648289
+      "actual_sales": 2648289,
+      "tags": "subscriber, construction"
     },
     {
       "id": 187174193,
@@ -78846,7 +81661,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 71,
       "estimated_sales": 1519416,
-      "actual_sales": 679590
+      "actual_sales": 679590,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 671775530,
@@ -78874,7 +81690,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 28,
       "estimated_sales": 486056,
-      "actual_sales": 1821270
+      "actual_sales": 1821270,
+      "tags": "subscriber, retail"
     },
     {
       "id": 650863048,
@@ -78902,7 +81719,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 24,
       "estimated_sales": 2224976,
-      "actual_sales": 1303528
+      "actual_sales": 1303528,
+      "tags": "demo, construction"
     },
     {
       "id": 269838751,
@@ -78930,7 +81748,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 44,
       "estimated_sales": 677598,
-      "actual_sales": 2916232
+      "actual_sales": 2916232,
+      "tags": "demo, medical"
     },
     {
       "id": 344553720,
@@ -78958,7 +81777,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 78,
       "estimated_sales": 790250,
-      "actual_sales": 1037071
+      "actual_sales": 1037071,
+      "tags": "construction"
     },
     {
       "id": 558245784,
@@ -78986,7 +81806,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 36,
       "estimated_sales": 3325836,
-      "actual_sales": 402128
+      "actual_sales": 402128,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 926089959,
@@ -79014,7 +81835,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 8,
       "estimated_sales": 2425392,
-      "actual_sales": 240864
+      "actual_sales": 240864,
+      "tags": "hot, financial"
     },
     {
       "id": 359521941,
@@ -79042,7 +81864,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 67,
       "estimated_sales": 4398408,
-      "actual_sales": 718176
+      "actual_sales": 718176,
+      "tags": "demo, retail"
     },
     {
       "id": 498819612,
@@ -79070,7 +81893,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 6,
       "estimated_sales": 2569125,
-      "actual_sales": 1257204
+      "actual_sales": 1257204,
+      "tags": "cold, medical"
     },
     {
       "id": 114761229,
@@ -79098,7 +81922,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 36,
       "estimated_sales": 2359461,
-      "actual_sales": 1125567
+      "actual_sales": 1125567,
+      "tags": "demo, construction"
     },
     {
       "id": 4894853,
@@ -79126,7 +81951,8 @@ export const data: any[] = [
       "deals_total": 15,
       "ratio": 92,
       "estimated_sales": 206740,
-      "actual_sales": 1472292
+      "actual_sales": 1472292,
+      "tags": "pro, medical"
     },
     {
       "id": 978102108,
@@ -79154,7 +81980,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 26,
       "estimated_sales": 0,
-      "actual_sales": 949941
+      "actual_sales": 949941,
+      "tags": "pro, medical"
     },
     {
       "id": 107398674,
@@ -79182,7 +82009,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 72,
       "estimated_sales": 930055,
-      "actual_sales": 1487798
+      "actual_sales": 1487798,
+      "tags": "demo, retail"
     },
     {
       "id": 593581881,
@@ -79210,7 +82038,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 4,
       "estimated_sales": 525108,
-      "actual_sales": 105812
+      "actual_sales": 105812,
+      "tags": "financial"
     },
     {
       "id": 531289980,
@@ -79238,7 +82067,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 71,
       "estimated_sales": 365740,
-      "actual_sales": 1834400
+      "actual_sales": 1834400,
+      "tags": "cold, financial"
     },
     {
       "id": 850069053,
@@ -79266,7 +82096,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 52,
       "estimated_sales": 2805608,
-      "actual_sales": 3224782
+      "actual_sales": 3224782,
+      "tags": "pharmaceutical"
     },
     {
       "id": 355931548,
@@ -79294,7 +82125,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 68,
       "estimated_sales": 4587879,
-      "actual_sales": 3201632
+      "actual_sales": 3201632,
+      "tags": "engineering"
     },
     {
       "id": 956752905,
@@ -79322,7 +82154,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 6,
       "estimated_sales": 2013336,
-      "actual_sales": 1578228
+      "actual_sales": 1578228,
+      "tags": "warm, construction"
     },
     {
       "id": 206143829,
@@ -79350,7 +82183,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 59,
       "estimated_sales": 4382675,
-      "actual_sales": 1708668
+      "actual_sales": 1708668,
+      "tags": "subscriber, financial"
     },
     {
       "id": 979901269,
@@ -79378,7 +82212,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 47,
       "estimated_sales": 2175052,
-      "actual_sales": 1799440
+      "actual_sales": 1799440,
+      "tags": "retail"
     },
     {
       "id": 777819430,
@@ -79406,7 +82241,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 5,
       "estimated_sales": 3811780,
-      "actual_sales": 2619000
+      "actual_sales": 2619000,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 274982861,
@@ -79434,7 +82270,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 63,
       "estimated_sales": 1262502,
-      "actual_sales": 3678075
+      "actual_sales": 3678075,
+      "tags": "medical"
     },
     {
       "id": 593935207,
@@ -79462,7 +82299,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 15,
       "estimated_sales": 1286625,
-      "actual_sales": 934800
+      "actual_sales": 934800,
+      "tags": "demo, retail"
     },
     {
       "id": 38981456,
@@ -79490,7 +82328,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 67,
       "estimated_sales": 2035416,
-      "actual_sales": 1196288
+      "actual_sales": 1196288,
+      "tags": "cool, construction"
     },
     {
       "id": 676613219,
@@ -79518,7 +82357,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 93,
       "estimated_sales": 705201,
-      "actual_sales": 1279733
+      "actual_sales": 1279733,
+      "tags": "retail"
     },
     {
       "id": 926967855,
@@ -79546,7 +82386,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 75,
       "estimated_sales": 1850625,
-      "actual_sales": 312024
+      "actual_sales": 312024,
+      "tags": "engineering"
     },
     {
       "id": 673711250,
@@ -79574,7 +82415,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 67,
       "estimated_sales": 2536695,
-      "actual_sales": 3303810
+      "actual_sales": 3303810,
+      "tags": "subscriber, retail"
     },
     {
       "id": 517268628,
@@ -79602,7 +82444,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 4,
       "estimated_sales": 846222,
-      "actual_sales": 1613895
+      "actual_sales": 1613895,
+      "tags": "retail"
     },
     {
       "id": 641196265,
@@ -79630,7 +82473,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 51,
       "estimated_sales": 966189,
-      "actual_sales": 3075853
+      "actual_sales": 3075853,
+      "tags": "demo, engineering"
     },
     {
       "id": 507677141,
@@ -79658,7 +82502,8 @@ export const data: any[] = [
       "deals_total": 7,
       "ratio": 67,
       "estimated_sales": 494900,
-      "actual_sales": 209786
+      "actual_sales": 209786,
+      "tags": "hot, financial"
     },
     {
       "id": 153309761,
@@ -79686,7 +82531,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 48,
       "estimated_sales": 2615103,
-      "actual_sales": 1448895
+      "actual_sales": 1448895,
+      "tags": "cool, retail"
     },
     {
       "id": 90679394,
@@ -79714,7 +82560,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 71,
       "estimated_sales": 930294,
-      "actual_sales": 2002440
+      "actual_sales": 2002440,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 417181611,
@@ -79742,7 +82589,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 94,
       "estimated_sales": 0,
-      "actual_sales": 1046960
+      "actual_sales": 1046960,
+      "tags": "warm, construction"
     },
     {
       "id": 936877506,
@@ -79770,7 +82618,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 69,
       "estimated_sales": 1475040,
-      "actual_sales": 3515418
+      "actual_sales": 3515418,
+      "tags": "pro, medical"
     },
     {
       "id": 773626934,
@@ -79798,7 +82647,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 63,
       "estimated_sales": 1062100,
-      "actual_sales": 1117900
+      "actual_sales": 1117900,
+      "tags": "subscriber, construction"
     },
     {
       "id": 32790114,
@@ -79826,7 +82676,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 75,
       "estimated_sales": 1361162,
-      "actual_sales": 2942832
+      "actual_sales": 2942832,
+      "tags": "subscriber, construction"
     },
     {
       "id": 700908237,
@@ -79854,7 +82705,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 2,
       "estimated_sales": 554147,
-      "actual_sales": 218174
+      "actual_sales": 218174,
+      "tags": "cool, construction"
     },
     {
       "id": 672375656,
@@ -79882,7 +82734,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 53,
       "estimated_sales": 444344,
-      "actual_sales": 1494896
+      "actual_sales": 1494896,
+      "tags": "warm, retail"
     },
     {
       "id": 286772729,
@@ -79910,7 +82763,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 46,
       "estimated_sales": 366436,
-      "actual_sales": 2383175
+      "actual_sales": 2383175,
+      "tags": "demo, engineering"
     },
     {
       "id": 461060683,
@@ -79938,7 +82792,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 0,
       "estimated_sales": 1576288,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "retail"
     },
     {
       "id": 19908437,
@@ -79966,7 +82821,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 35,
       "estimated_sales": 1490796,
-      "actual_sales": 1277265
+      "actual_sales": 1277265,
+      "tags": "hot, medical"
     },
     {
       "id": 677217336,
@@ -79994,7 +82850,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 79,
       "estimated_sales": 3434668,
-      "actual_sales": 2393790
+      "actual_sales": 2393790,
+      "tags": "cold, engineering"
     },
     {
       "id": 961230235,
@@ -80022,7 +82879,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 71,
       "estimated_sales": 2581236,
-      "actual_sales": 1763088
+      "actual_sales": 1763088,
+      "tags": "warm, financial"
     },
     {
       "id": 105097263,
@@ -80050,7 +82908,8 @@ export const data: any[] = [
       "deals_total": 13,
       "ratio": 62,
       "estimated_sales": 0,
-      "actual_sales": 1023664
+      "actual_sales": 1023664,
+      "tags": "cool, engineering"
     },
     {
       "id": 328118388,
@@ -80078,7 +82937,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 63,
       "estimated_sales": 1892394,
-      "actual_sales": 3165025
+      "actual_sales": 3165025,
+      "tags": "pro, engineering"
     },
     {
       "id": 710255410,
@@ -80106,7 +82966,8 @@ export const data: any[] = [
       "deals_total": 60,
       "ratio": 38,
       "estimated_sales": 1661647,
-      "actual_sales": 1978758
+      "actual_sales": 1978758,
+      "tags": "construction"
     },
     {
       "id": 744787156,
@@ -80134,7 +82995,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 41,
       "estimated_sales": 4991922,
-      "actual_sales": 1052370
+      "actual_sales": 1052370,
+      "tags": "warm, engineering"
     },
     {
       "id": 922656734,
@@ -80162,7 +83024,8 @@ export const data: any[] = [
       "deals_total": 24,
       "ratio": 38,
       "estimated_sales": 315348,
-      "actual_sales": 628560
+      "actual_sales": 628560,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 747367256,
@@ -80190,7 +83053,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 53,
       "estimated_sales": 310562,
-      "actual_sales": 1507680
+      "actual_sales": 1507680,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 891338528,
@@ -80218,7 +83082,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 14,
       "estimated_sales": 3382820,
-      "actual_sales": 695204
+      "actual_sales": 695204,
+      "tags": "cool, financial"
     },
     {
       "id": 13037188,
@@ -80246,7 +83111,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 23,
       "estimated_sales": 523420,
-      "actual_sales": 558290
+      "actual_sales": 558290,
+      "tags": "cool, construction"
     },
     {
       "id": 109784091,
@@ -80274,7 +83140,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 53,
       "estimated_sales": 424895,
-      "actual_sales": 3172350
+      "actual_sales": 3172350,
+      "tags": "pro, retail"
     },
     {
       "id": 797333752,
@@ -80302,7 +83169,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 61,
       "estimated_sales": 1565275,
-      "actual_sales": 1740750
+      "actual_sales": 1740750,
+      "tags": "cold, medical"
     },
     {
       "id": 733138333,
@@ -80330,7 +83198,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 59,
       "estimated_sales": 0,
-      "actual_sales": 3120384
+      "actual_sales": 3120384,
+      "tags": "pro, engineering"
     },
     {
       "id": 847075239,
@@ -80358,7 +83227,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 93,
       "estimated_sales": 1367832,
-      "actual_sales": 4120592
+      "actual_sales": 4120592,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 152116551,
@@ -80386,7 +83256,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 5,
       "estimated_sales": 570344,
-      "actual_sales": 682780
+      "actual_sales": 682780,
+      "tags": "hot, construction"
     },
     {
       "id": 251735171,
@@ -80414,7 +83285,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 59,
       "estimated_sales": 2179836,
-      "actual_sales": 1666288
+      "actual_sales": 1666288,
+      "tags": "cold, construction"
     },
     {
       "id": 57754470,
@@ -80442,7 +83314,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 5,
       "estimated_sales": 2703900,
-      "actual_sales": 1193855
+      "actual_sales": 1193855,
+      "tags": "hot, medical"
     },
     {
       "id": 721008414,
@@ -80470,7 +83343,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 58,
       "estimated_sales": 763236,
-      "actual_sales": 2743041
+      "actual_sales": 2743041,
+      "tags": "cold, pharmaceutical"
     },
     {
       "id": 181123909,
@@ -80498,7 +83372,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 45,
       "estimated_sales": 1475109,
-      "actual_sales": 1689727
+      "actual_sales": 1689727,
+      "tags": "cold, retail"
     },
     {
       "id": 10967087,
@@ -80526,7 +83401,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 39,
       "estimated_sales": 1987215,
-      "actual_sales": 2451984
+      "actual_sales": 2451984,
+      "tags": "retail"
     },
     {
       "id": 65261487,
@@ -80554,7 +83430,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 25,
       "estimated_sales": 113900,
-      "actual_sales": 1627940
+      "actual_sales": 1627940,
+      "tags": "financial"
     },
     {
       "id": 816864297,
@@ -80582,7 +83459,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 4,
       "estimated_sales": 1971088,
-      "actual_sales": 69970
+      "actual_sales": 69970,
+      "tags": "financial"
     },
     {
       "id": 103232237,
@@ -80610,7 +83488,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 71,
       "estimated_sales": 2741283,
-      "actual_sales": 5256975
+      "actual_sales": 5256975,
+      "tags": "cold, medical"
     },
     {
       "id": 993700557,
@@ -80638,7 +83517,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 8,
       "estimated_sales": 2001645,
-      "actual_sales": 1158944
+      "actual_sales": 1158944,
+      "tags": "hot, financial"
     },
     {
       "id": 81723973,
@@ -80666,7 +83546,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 8,
       "estimated_sales": 149576,
-      "actual_sales": 1026096
+      "actual_sales": 1026096,
+      "tags": "demo, retail"
     },
     {
       "id": 540296022,
@@ -80694,7 +83575,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 27,
       "estimated_sales": 1802070,
-      "actual_sales": 596001
+      "actual_sales": 596001,
+      "tags": "hot, engineering"
     },
     {
       "id": 480480652,
@@ -80722,7 +83604,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 54,
       "estimated_sales": 723445,
-      "actual_sales": 2849105
+      "actual_sales": 2849105,
+      "tags": "medical"
     },
     {
       "id": 483071584,
@@ -80750,7 +83633,8 @@ export const data: any[] = [
       "deals_total": 18,
       "ratio": 29,
       "estimated_sales": 699676,
-      "actual_sales": 311588
+      "actual_sales": 311588,
+      "tags": "construction"
     },
     {
       "id": 415240023,
@@ -80778,7 +83662,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 79,
       "estimated_sales": 1221944,
-      "actual_sales": 1964752
+      "actual_sales": 1964752,
+      "tags": "cold, construction"
     },
     {
       "id": 610299041,
@@ -80806,7 +83691,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 44,
       "estimated_sales": 829066,
-      "actual_sales": 2156916
+      "actual_sales": 2156916,
+      "tags": "cool, engineering"
     },
     {
       "id": 44455287,
@@ -80834,7 +83720,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 6,
       "estimated_sales": 1105400,
-      "actual_sales": 2635983
+      "actual_sales": 2635983,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 462737954,
@@ -80862,7 +83749,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 77,
       "estimated_sales": 482184,
-      "actual_sales": 3977808
+      "actual_sales": 3977808,
+      "tags": "financial"
     },
     {
       "id": 210979308,
@@ -80890,7 +83778,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 61,
       "estimated_sales": 1826199,
-      "actual_sales": 1156072
+      "actual_sales": 1156072,
+      "tags": "subscriber, construction"
     },
     {
       "id": 758685982,
@@ -80918,7 +83807,8 @@ export const data: any[] = [
       "deals_total": 70,
       "ratio": 36,
       "estimated_sales": 1645800,
-      "actual_sales": 1439024
+      "actual_sales": 1439024,
+      "tags": "construction"
     },
     {
       "id": 968883304,
@@ -80946,7 +83836,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 67,
       "estimated_sales": 2848425,
-      "actual_sales": 2931624
+      "actual_sales": 2931624,
+      "tags": "cold, financial"
     },
     {
       "id": 651529305,
@@ -80974,7 +83865,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 31,
       "estimated_sales": 732005,
-      "actual_sales": 2104570
+      "actual_sales": 2104570,
+      "tags": "subscriber, pharmaceutical"
     },
     {
       "id": 399087564,
@@ -81002,7 +83894,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 84,
       "estimated_sales": 118954,
-      "actual_sales": 3607760
+      "actual_sales": 3607760,
+      "tags": "warm, construction"
     },
     {
       "id": 452158890,
@@ -81030,7 +83923,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 5,
       "estimated_sales": 1221987,
-      "actual_sales": 343896
+      "actual_sales": 343896,
+      "tags": "warm, medical"
     },
     {
       "id": 342047584,
@@ -81058,7 +83952,8 @@ export const data: any[] = [
       "deals_total": 75,
       "ratio": 64,
       "estimated_sales": 5385268,
-      "actual_sales": 3624270
+      "actual_sales": 3624270,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 130435883,
@@ -81086,7 +83981,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 62,
       "estimated_sales": 418464,
-      "actual_sales": 2082480
+      "actual_sales": 2082480,
+      "tags": "cold, medical"
     },
     {
       "id": 61493693,
@@ -81114,7 +84010,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 47,
       "estimated_sales": 2691612,
-      "actual_sales": 2593542
+      "actual_sales": 2593542,
+      "tags": "financial"
     },
     {
       "id": 854294946,
@@ -81142,7 +84039,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 88,
       "estimated_sales": 319500,
-      "actual_sales": 5137580
+      "actual_sales": 5137580,
+      "tags": "hot, construction"
     },
     {
       "id": 777983454,
@@ -81170,7 +84068,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 36,
       "estimated_sales": 3042109,
-      "actual_sales": 1313648
+      "actual_sales": 1313648,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 972445758,
@@ -81198,7 +84097,8 @@ export const data: any[] = [
       "deals_total": 19,
       "ratio": 4,
       "estimated_sales": 1439718,
-      "actual_sales": 318270
+      "actual_sales": 318270,
+      "tags": "subscriber, retail"
     },
     {
       "id": 26374428,
@@ -81226,7 +84126,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 85,
       "estimated_sales": 1916624,
-      "actual_sales": 566192
+      "actual_sales": 566192,
+      "tags": "cold, construction"
     },
     {
       "id": 814915832,
@@ -81254,7 +84155,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 45,
       "estimated_sales": 117065,
-      "actual_sales": 1947240
+      "actual_sales": 1947240,
+      "tags": ""
     },
     {
       "id": 926373851,
@@ -81282,7 +84184,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 94,
       "estimated_sales": 1538016,
-      "actual_sales": 4912832
+      "actual_sales": 4912832,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 825053799,
@@ -81310,7 +84213,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 58,
       "estimated_sales": 1681092,
-      "actual_sales": 2730060
+      "actual_sales": 2730060,
+      "tags": "warm, retail"
     },
     {
       "id": 785371414,
@@ -81338,7 +84242,8 @@ export const data: any[] = [
       "deals_total": 59,
       "ratio": 84,
       "estimated_sales": 2724057,
-      "actual_sales": 4714281
+      "actual_sales": 4714281,
+      "tags": "pro, retail"
     },
     {
       "id": 889932849,
@@ -81366,7 +84271,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 12,
       "estimated_sales": 2673450,
-      "actual_sales": 392344
+      "actual_sales": 392344,
+      "tags": "warm, financial"
     },
     {
       "id": 188210221,
@@ -81394,7 +84300,8 @@ export const data: any[] = [
       "deals_total": 83,
       "ratio": 57,
       "estimated_sales": 3325470,
-      "actual_sales": 5897760
+      "actual_sales": 5897760,
+      "tags": "retail"
     },
     {
       "id": 776046186,
@@ -81422,7 +84329,8 @@ export const data: any[] = [
       "deals_total": 66,
       "ratio": 72,
       "estimated_sales": 1914867,
-      "actual_sales": 5005644
+      "actual_sales": 5005644,
+      "tags": ""
     },
     {
       "id": 391966638,
@@ -81450,7 +84358,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 67,
       "estimated_sales": 3347934,
-      "actual_sales": 1117248
+      "actual_sales": 1117248,
+      "tags": "demo, medical"
     },
     {
       "id": 315814108,
@@ -81478,7 +84387,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 85,
       "estimated_sales": 5479985,
-      "actual_sales": 2038266
+      "actual_sales": 2038266,
+      "tags": "cold, construction"
     },
     {
       "id": 660973059,
@@ -81506,7 +84416,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 32,
       "estimated_sales": 262095,
-      "actual_sales": 1323864
+      "actual_sales": 1323864,
+      "tags": "hot, construction"
     },
     {
       "id": 164074895,
@@ -81534,7 +84445,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 4,
       "estimated_sales": 1386828,
-      "actual_sales": 151055
+      "actual_sales": 151055,
+      "tags": "engineering"
     },
     {
       "id": 140163622,
@@ -81562,7 +84474,8 @@ export const data: any[] = [
       "deals_total": 58,
       "ratio": 56,
       "estimated_sales": 941214,
-      "actual_sales": 2904060
+      "actual_sales": 2904060,
+      "tags": "hot, financial"
     },
     {
       "id": 381296704,
@@ -81590,7 +84503,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 1,
       "estimated_sales": 365642,
-      "actual_sales": 231963
+      "actual_sales": 231963,
+      "tags": ""
     },
     {
       "id": 947565452,
@@ -81618,7 +84532,8 @@ export const data: any[] = [
       "deals_total": 31,
       "ratio": 12,
       "estimated_sales": 524100,
-      "actual_sales": 540054
+      "actual_sales": 540054,
+      "tags": "pro, financial"
     },
     {
       "id": 685736728,
@@ -81646,7 +84561,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 17,
       "estimated_sales": 1898790,
-      "actual_sales": 437276
+      "actual_sales": 437276,
+      "tags": "cool, medical"
     },
     {
       "id": 621356407,
@@ -81674,7 +84590,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 24,
       "estimated_sales": 4795983,
-      "actual_sales": 286040
+      "actual_sales": 286040,
+      "tags": "demo, pharmaceutical"
     },
     {
       "id": 515883261,
@@ -81702,7 +84619,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 41,
       "estimated_sales": 671138,
-      "actual_sales": 1843017
+      "actual_sales": 1843017,
+      "tags": "pro, financial"
     },
     {
       "id": 155398051,
@@ -81730,7 +84648,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 5,
       "estimated_sales": 2478320,
-      "actual_sales": 2278464
+      "actual_sales": 2278464,
+      "tags": "cool, engineering"
     },
     {
       "id": 468651926,
@@ -81758,7 +84677,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 64,
       "estimated_sales": 5258316,
-      "actual_sales": 3723426
+      "actual_sales": 3723426,
+      "tags": ""
     },
     {
       "id": 353884633,
@@ -81786,7 +84706,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 33,
       "estimated_sales": 2856324,
-      "actual_sales": 1970024
+      "actual_sales": 1970024,
+      "tags": "warm, financial"
     },
     {
       "id": 334530353,
@@ -81814,7 +84735,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 95,
       "estimated_sales": 1516440,
-      "actual_sales": 3695895
+      "actual_sales": 3695895,
+      "tags": "pro, retail"
     },
     {
       "id": 457578548,
@@ -81842,7 +84764,8 @@ export const data: any[] = [
       "deals_total": 40,
       "ratio": 85,
       "estimated_sales": 1061645,
-      "actual_sales": 2648335
+      "actual_sales": 2648335,
+      "tags": "demo, financial"
     },
     {
       "id": 493371465,
@@ -81870,7 +84793,8 @@ export const data: any[] = [
       "deals_total": 50,
       "ratio": 0,
       "estimated_sales": 4686950,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "pharmaceutical"
     },
     {
       "id": 287187635,
@@ -81898,7 +84822,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 27,
       "estimated_sales": 1203244,
-      "actual_sales": 280359
+      "actual_sales": 280359,
+      "tags": "demo, financial"
     },
     {
       "id": 812646596,
@@ -81926,7 +84851,8 @@ export const data: any[] = [
       "deals_total": 62,
       "ratio": 34,
       "estimated_sales": 3345750,
-      "actual_sales": 1786598
+      "actual_sales": 1786598,
+      "tags": "engineering"
     },
     {
       "id": 96543135,
@@ -81954,7 +84880,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 45,
       "estimated_sales": 1647882,
-      "actual_sales": 4357825
+      "actual_sales": 4357825,
+      "tags": "hot, retail"
     },
     {
       "id": 194283065,
@@ -81982,7 +84909,8 @@ export const data: any[] = [
       "deals_total": 34,
       "ratio": 31,
       "estimated_sales": 1487052,
-      "actual_sales": 529860
+      "actual_sales": 529860,
+      "tags": "hot, financial"
     },
     {
       "id": 169563917,
@@ -82010,7 +84938,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 13,
       "estimated_sales": 3176220,
-      "actual_sales": 257368
+      "actual_sales": 257368,
+      "tags": "hot, engineering"
     },
     {
       "id": 15427848,
@@ -82038,7 +84967,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 5,
       "estimated_sales": 118749,
-      "actual_sales": 1390294
+      "actual_sales": 1390294,
+      "tags": "cold, medical"
     },
     {
       "id": 115743364,
@@ -82066,7 +84996,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 42,
       "estimated_sales": 923100,
-      "actual_sales": 863150
+      "actual_sales": 863150,
+      "tags": "cold, retail"
     },
     {
       "id": 611264893,
@@ -82094,7 +85025,8 @@ export const data: any[] = [
       "deals_total": 25,
       "ratio": 0,
       "estimated_sales": 79455,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "cold, engineering"
     },
     {
       "id": 618648519,
@@ -82122,7 +85054,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 8,
       "estimated_sales": 1989897,
-      "actual_sales": 359986
+      "actual_sales": 359986,
+      "tags": "hot, financial"
     },
     {
       "id": 820142069,
@@ -82150,7 +85083,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 5,
       "estimated_sales": 0,
-      "actual_sales": 2072882
+      "actual_sales": 2072882,
+      "tags": "construction"
     },
     {
       "id": 831207174,
@@ -82178,7 +85112,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 11,
       "estimated_sales": 3396092,
-      "actual_sales": 292944
+      "actual_sales": 292944,
+      "tags": "hot, engineering"
     },
     {
       "id": 162256204,
@@ -82206,7 +85141,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 1,
       "estimated_sales": 4485480,
-      "actual_sales": 251748
+      "actual_sales": 251748,
+      "tags": "cold, engineering"
     },
     {
       "id": 203596473,
@@ -82234,7 +85170,8 @@ export const data: any[] = [
       "deals_total": 28,
       "ratio": 33,
       "estimated_sales": 1244519,
-      "actual_sales": 411786
+      "actual_sales": 411786,
+      "tags": "warm, financial"
     },
     {
       "id": 348218858,
@@ -82262,7 +85199,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 34,
       "estimated_sales": 533040,
-      "actual_sales": 1814550
+      "actual_sales": 1814550,
+      "tags": "hot, construction"
     },
     {
       "id": 85877200,
@@ -82290,7 +85228,8 @@ export const data: any[] = [
       "deals_total": 68,
       "ratio": 31,
       "estimated_sales": 2679768,
-      "actual_sales": 1326169
+      "actual_sales": 1326169,
+      "tags": "subscriber, medical"
     },
     {
       "id": 324631033,
@@ -82318,7 +85257,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 71,
       "estimated_sales": 2184248,
-      "actual_sales": 4453936
+      "actual_sales": 4453936,
+      "tags": "subscriber, financial"
     },
     {
       "id": 204994550,
@@ -82346,7 +85286,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 68,
       "estimated_sales": 1414820,
-      "actual_sales": 5326110
+      "actual_sales": 5326110,
+      "tags": ""
     },
     {
       "id": 925695591,
@@ -82374,7 +85315,8 @@ export const data: any[] = [
       "deals_total": 32,
       "ratio": 2,
       "estimated_sales": 1734590,
-      "actual_sales": 250270
+      "actual_sales": 250270,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 269665803,
@@ -82402,7 +85344,8 @@ export const data: any[] = [
       "deals_total": 42,
       "ratio": 29,
       "estimated_sales": 4346300,
-      "actual_sales": 484688
+      "actual_sales": 484688,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 585418430,
@@ -82430,7 +85373,8 @@ export const data: any[] = [
       "deals_total": 81,
       "ratio": 58,
       "estimated_sales": 3110453,
-      "actual_sales": 4275150
+      "actual_sales": 4275150,
+      "tags": "subscriber, financial"
     },
     {
       "id": 228010444,
@@ -82458,7 +85402,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 0,
       "estimated_sales": 2867688,
-      "actual_sales": 0
+      "actual_sales": 0,
+      "tags": "engineering"
     },
     {
       "id": 219814398,
@@ -82486,7 +85431,8 @@ export const data: any[] = [
       "deals_total": 55,
       "ratio": 25,
       "estimated_sales": 2726487,
-      "actual_sales": 845642
+      "actual_sales": 845642,
+      "tags": "hot, financial"
     },
     {
       "id": 924304083,
@@ -82514,7 +85460,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 9,
       "estimated_sales": 3398355,
-      "actual_sales": 1510920
+      "actual_sales": 1510920,
+      "tags": "warm, pharmaceutical"
     },
     {
       "id": 613244590,
@@ -82542,7 +85489,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 45,
       "estimated_sales": 1071169,
-      "actual_sales": 3174792
+      "actual_sales": 3174792,
+      "tags": "engineering"
     },
     {
       "id": 973108683,
@@ -82570,7 +85518,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 37,
       "estimated_sales": 159320,
-      "actual_sales": 1127392
+      "actual_sales": 1127392,
+      "tags": "pro, retail"
     },
     {
       "id": 771475630,
@@ -82598,7 +85547,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 91,
       "estimated_sales": 4357386,
-      "actual_sales": 3962502
+      "actual_sales": 3962502,
+      "tags": "subscriber, engineering"
     },
     {
       "id": 25984728,
@@ -82626,7 +85576,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 83,
       "estimated_sales": 2097732,
-      "actual_sales": 2863431
+      "actual_sales": 2863431,
+      "tags": "subscriber, financial"
     },
     {
       "id": 505258220,
@@ -82654,7 +85605,8 @@ export const data: any[] = [
       "deals_total": 16,
       "ratio": 79,
       "estimated_sales": 105124,
-      "actual_sales": 659604
+      "actual_sales": 659604,
+      "tags": ""
     },
     {
       "id": 680251327,
@@ -82682,7 +85634,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 41,
       "estimated_sales": 2815545,
-      "actual_sales": 2354043
+      "actual_sales": 2354043,
+      "tags": "cool, engineering"
     },
     {
       "id": 88467064,
@@ -82710,7 +85663,8 @@ export const data: any[] = [
       "deals_total": 33,
       "ratio": 97,
       "estimated_sales": 407480,
-      "actual_sales": 3233188
+      "actual_sales": 3233188,
+      "tags": "pro, engineering"
     },
     {
       "id": 114136474,
@@ -82738,7 +85692,8 @@ export const data: any[] = [
       "deals_total": 27,
       "ratio": 77,
       "estimated_sales": 185077,
-      "actual_sales": 3489880
+      "actual_sales": 3489880,
+      "tags": "cool, engineering"
     },
     {
       "id": 668181636,
@@ -82766,7 +85721,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 58,
       "estimated_sales": 147002,
-      "actual_sales": 1852368
+      "actual_sales": 1852368,
+      "tags": "warm, medical"
     },
     {
       "id": 791302631,
@@ -82794,7 +85750,8 @@ export const data: any[] = [
       "deals_total": 41,
       "ratio": 18,
       "estimated_sales": 1270328,
-      "actual_sales": 721482
+      "actual_sales": 721482,
+      "tags": "cool, retail"
     },
     {
       "id": 626200587,
@@ -82822,7 +85779,8 @@ export const data: any[] = [
       "deals_total": 35,
       "ratio": 4,
       "estimated_sales": 3119425,
-      "actual_sales": 234332
+      "actual_sales": 234332,
+      "tags": "financial"
     },
     {
       "id": 129073339,
@@ -82850,7 +85808,8 @@ export const data: any[] = [
       "deals_total": 11,
       "ratio": 9,
       "estimated_sales": 0,
-      "actual_sales": 174726
+      "actual_sales": 174726,
+      "tags": "cool, pharmaceutical"
     },
     {
       "id": 792264167,
@@ -82878,7 +85837,8 @@ export const data: any[] = [
       "deals_total": 23,
       "ratio": 4,
       "estimated_sales": 2588300,
-      "actual_sales": 691964
+      "actual_sales": 691964,
+      "tags": "hot, financial"
     },
     {
       "id": 432460315,
@@ -82906,7 +85866,8 @@ export const data: any[] = [
       "deals_total": 37,
       "ratio": 51,
       "estimated_sales": 207096,
-      "actual_sales": 2624958
+      "actual_sales": 2624958,
+      "tags": "demo, medical"
     },
     {
       "id": 34379589,
@@ -82934,7 +85895,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 62,
       "estimated_sales": 549988,
-      "actual_sales": 3116416
+      "actual_sales": 3116416,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 619645004,
@@ -82962,7 +85924,8 @@ export const data: any[] = [
       "deals_total": 29,
       "ratio": 45,
       "estimated_sales": 1000620,
-      "actual_sales": 818298
+      "actual_sales": 818298,
+      "tags": "warm, financial"
     },
     {
       "id": 571689108,
@@ -82990,7 +85953,8 @@ export const data: any[] = [
       "deals_total": 36,
       "ratio": 5,
       "estimated_sales": 3306262,
-      "actual_sales": 172040
+      "actual_sales": 172040,
+      "tags": "subscriber, financial"
     },
     {
       "id": 869087643,
@@ -83018,7 +85982,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 8,
       "estimated_sales": 1907997,
-      "actual_sales": 414600
+      "actual_sales": 414600,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 157267102,
@@ -83046,7 +86011,8 @@ export const data: any[] = [
       "deals_total": 67,
       "ratio": 76,
       "estimated_sales": 1657872,
-      "actual_sales": 5402990
+      "actual_sales": 5402990,
+      "tags": "demo, financial"
     },
     {
       "id": 79804380,
@@ -83074,7 +86040,8 @@ export const data: any[] = [
       "deals_total": 63,
       "ratio": 55,
       "estimated_sales": 4761600,
-      "actual_sales": 2427684
+      "actual_sales": 2427684,
+      "tags": "demo, construction"
     },
     {
       "id": 721034917,
@@ -83102,7 +86069,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 45,
       "estimated_sales": 1795134,
-      "actual_sales": 1408784
+      "actual_sales": 1408784,
+      "tags": "hot, construction"
     },
     {
       "id": 143134459,
@@ -83130,7 +86098,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 78,
       "estimated_sales": 1564192,
-      "actual_sales": 4783608
+      "actual_sales": 4783608,
+      "tags": "hot, construction"
     },
     {
       "id": 818764523,
@@ -83158,7 +86127,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 51,
       "estimated_sales": 3900300,
-      "actual_sales": 2699720
+      "actual_sales": 2699720,
+      "tags": ""
     },
     {
       "id": 418149069,
@@ -83186,7 +86156,8 @@ export const data: any[] = [
       "deals_total": 38,
       "ratio": 57,
       "estimated_sales": 1524992,
-      "actual_sales": 1985634
+      "actual_sales": 1985634,
+      "tags": "pro, medical"
     },
     {
       "id": 767550913,
@@ -83214,7 +86185,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 49,
       "estimated_sales": 3598680,
-      "actual_sales": 3393738
+      "actual_sales": 3393738,
+      "tags": "cold, financial"
     },
     {
       "id": 471479025,
@@ -83242,7 +86214,8 @@ export const data: any[] = [
       "deals_total": 73,
       "ratio": 58,
       "estimated_sales": 5039048,
-      "actual_sales": 1455272
+      "actual_sales": 1455272,
+      "tags": "demo, financial"
     },
     {
       "id": 272206340,
@@ -83270,7 +86243,8 @@ export const data: any[] = [
       "deals_total": 21,
       "ratio": 23,
       "estimated_sales": 1106064,
-      "actual_sales": 411708
+      "actual_sales": 411708,
+      "tags": "medical"
     },
     {
       "id": 241963246,
@@ -83298,7 +86272,8 @@ export const data: any[] = [
       "deals_total": 51,
       "ratio": 64,
       "estimated_sales": 4055418,
-      "actual_sales": 1364118
+      "actual_sales": 1364118,
+      "tags": "hot, pharmaceutical"
     },
     {
       "id": 625605250,
@@ -83326,7 +86301,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 68,
       "estimated_sales": 715635,
-      "actual_sales": 5092713
+      "actual_sales": 5092713,
+      "tags": "subscriber, financial"
     },
     {
       "id": 582376604,
@@ -83354,7 +86330,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 34,
       "estimated_sales": 627700,
-      "actual_sales": 662103
+      "actual_sales": 662103,
+      "tags": "demo, medical"
     },
     {
       "id": 811138411,
@@ -83382,7 +86359,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 41,
       "estimated_sales": 2363658,
-      "actual_sales": 1270136
+      "actual_sales": 1270136,
+      "tags": "demo, retail"
     },
     {
       "id": 17265002,
@@ -83410,7 +86388,8 @@ export const data: any[] = [
       "deals_total": 44,
       "ratio": 18,
       "estimated_sales": 2196832,
-      "actual_sales": 635088
+      "actual_sales": 635088,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 564816684,
@@ -83438,7 +86417,8 @@ export const data: any[] = [
       "deals_total": 61,
       "ratio": 16,
       "estimated_sales": 1955550,
-      "actual_sales": 971040
+      "actual_sales": 971040,
+      "tags": "warm, engineering"
     },
     {
       "id": 461863986,
@@ -83466,7 +86446,8 @@ export const data: any[] = [
       "deals_total": 56,
       "ratio": 45,
       "estimated_sales": 3464982,
-      "actual_sales": 2063018
+      "actual_sales": 2063018,
+      "tags": ""
     },
     {
       "id": 15133909,
@@ -83494,7 +86475,8 @@ export const data: any[] = [
       "deals_total": 65,
       "ratio": 32,
       "estimated_sales": 3053079,
-      "actual_sales": 1831788
+      "actual_sales": 1831788,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 814783757,
@@ -83522,7 +86504,8 @@ export const data: any[] = [
       "deals_total": 17,
       "ratio": 73,
       "estimated_sales": 258764,
-      "actual_sales": 1325555
+      "actual_sales": 1325555,
+      "tags": "cold, engineering"
     },
     {
       "id": 438186904,
@@ -83550,7 +86533,8 @@ export const data: any[] = [
       "deals_total": 39,
       "ratio": 24,
       "estimated_sales": 1823080,
-      "actual_sales": 1046976
+      "actual_sales": 1046976,
+      "tags": "pro, engineering"
     },
     {
       "id": 29179528,
@@ -83578,7 +86562,8 @@ export const data: any[] = [
       "deals_total": 53,
       "ratio": 57,
       "estimated_sales": 454840,
-      "actual_sales": 3434760
+      "actual_sales": 3434760,
+      "tags": "cool, retail"
     },
     {
       "id": 365897914,
@@ -83606,7 +86591,8 @@ export const data: any[] = [
       "deals_total": 64,
       "ratio": 62,
       "estimated_sales": 4751070,
-      "actual_sales": 1109955
+      "actual_sales": 1109955,
+      "tags": "subscriber, construction"
     },
     {
       "id": 535247914,
@@ -83634,7 +86620,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 15,
       "estimated_sales": 2135560,
-      "actual_sales": 907040
+      "actual_sales": 907040,
+      "tags": "subscriber, financial"
     },
     {
       "id": 727885195,
@@ -83662,7 +86649,8 @@ export const data: any[] = [
       "deals_total": 49,
       "ratio": 62,
       "estimated_sales": 2259635,
-      "actual_sales": 1327488
+      "actual_sales": 1327488,
+      "tags": "subscriber, medical"
     },
     {
       "id": 158980495,
@@ -83690,7 +86678,8 @@ export const data: any[] = [
       "deals_total": 69,
       "ratio": 38,
       "estimated_sales": 3910050,
-      "actual_sales": 2230575
+      "actual_sales": 2230575,
+      "tags": "hot, financial"
     },
     {
       "id": 166517719,
@@ -83718,7 +86707,8 @@ export const data: any[] = [
       "deals_total": 43,
       "ratio": 88,
       "estimated_sales": 927265,
-      "actual_sales": 2331027
+      "actual_sales": 2331027,
+      "tags": "medical"
     },
     {
       "id": 395914957,
@@ -83746,7 +86736,8 @@ export const data: any[] = [
       "deals_total": 45,
       "ratio": 18,
       "estimated_sales": 2267580,
-      "actual_sales": 697458
+      "actual_sales": 697458,
+      "tags": "pro, pharmaceutical"
     },
     {
       "id": 85894015,
@@ -83774,7 +86765,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 45,
       "estimated_sales": 1777832,
-      "actual_sales": 1148373
+      "actual_sales": 1148373,
+      "tags": "subscriber, construction"
     },
     {
       "id": 287973769,
@@ -83802,7 +86794,8 @@ export const data: any[] = [
       "deals_total": 20,
       "ratio": 21,
       "estimated_sales": 95017,
-      "actual_sales": 220792
+      "actual_sales": 220792,
+      "tags": ""
     },
     {
       "id": 706158734,
@@ -83830,7 +86823,8 @@ export const data: any[] = [
       "deals_total": 71,
       "ratio": 5,
       "estimated_sales": 2481423,
-      "actual_sales": 4127250
+      "actual_sales": 4127250,
+      "tags": "cold, financial"
     },
     {
       "id": 716812369,
@@ -83858,7 +86852,8 @@ export const data: any[] = [
       "deals_total": 52,
       "ratio": 86,
       "estimated_sales": 4237470,
-      "actual_sales": 1061207
+      "actual_sales": 1061207,
+      "tags": "hot, medical"
     },
     {
       "id": 572323752,
@@ -83886,7 +86881,8 @@ export const data: any[] = [
       "deals_total": 30,
       "ratio": 27,
       "estimated_sales": 2139045,
-      "actual_sales": 613492
+      "actual_sales": 613492,
+      "tags": ""
     },
     {
       "id": 757879830,
@@ -83914,7 +86910,8 @@ export const data: any[] = [
       "deals_total": 47,
       "ratio": 15,
       "estimated_sales": 2147306,
-      "actual_sales": 875535
+      "actual_sales": 875535,
+      "tags": ""
     },
     {
       "id": 864670894,
@@ -83942,7 +86939,8 @@ export const data: any[] = [
       "deals_total": 48,
       "ratio": 76,
       "estimated_sales": 2812845,
-      "actual_sales": 3295300
+      "actual_sales": 3295300,
+      "tags": "subscriber, construction"
     },
     {
       "id": 289231148,
@@ -83970,7 +86968,8 @@ export const data: any[] = [
       "deals_total": 54,
       "ratio": 65,
       "estimated_sales": 4536672,
-      "actual_sales": 1524866
+      "actual_sales": 1524866,
+      "tags": "demo, financial"
     },
     {
       "id": 295593578,
@@ -83998,7 +86997,8 @@ export const data: any[] = [
       "deals_total": 46,
       "ratio": 39,
       "estimated_sales": 0,
-      "actual_sales": 2643930
+      "actual_sales": 2643930,
+      "tags": "demo, retail"
     }
   ];
 /* tslint:enable */
