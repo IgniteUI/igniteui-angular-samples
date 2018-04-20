@@ -1,13 +1,14 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { NavbarComponent } from "../../src/app/navbar/navbar.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxIconModule, IgxNavbarModule } from "igniteui-angular/main";
 import { NavbarSample1Component } from "../../src/app/navbar/navbar-sample-1/navbar-sample-1.component";
+import { NavbarComponent } from "../../src/app/navbar/navbar.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class NavbarConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: NavbarComponent,

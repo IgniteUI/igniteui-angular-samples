@@ -1,12 +1,13 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxRadioModule } from "igniteui-angular/main";
 import { RadioSample2Component } from "../../src/app/form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxRadioModule } from "igniteui-angular/main";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class RadioConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // radio sample 2
         configs.push(new Config({

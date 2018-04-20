@@ -1,3 +1,5 @@
+// tslint:disable:prefer-const
+// tslint:disable:prefer-for-of
 import * as fs from "fs";
 import * as path from "path";
 import * as Collections from "typescript-collections";
@@ -16,7 +18,7 @@ const COMMON_PACKAGE_DEPENDENCIES = [
 
     "igniteui-angular", // needed for all samples because of styles.scss
     "jszip", // dependency for igniteui-angular
-    
+
     // For polyfills
     "classlist.js",
     "core-js",
@@ -41,9 +43,9 @@ const DEFAULT_DEPENDENCIES = [
 
 export class DependencyResolver {
 
-    public static resolveSampleDependencies(configDependencies: Array<string>) {
+    public static resolveSampleDependencies(configDependencies: string[]) {
         configDependencies = configDependencies || DEFAULT_DEPENDENCIES;
- 
+
         let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
         let packageFileDependencies = packageFile.dependencies;
         let dependenciesNeeded = new Collections.Set<string>();
@@ -63,7 +65,7 @@ export class DependencyResolver {
                 delete packageFileDependencies[key];
             }
         }
-        
+
         return packageFileDependencies;
     }
 }

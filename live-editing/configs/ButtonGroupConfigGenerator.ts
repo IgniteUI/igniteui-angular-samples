@@ -1,14 +1,21 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxButtonGroupModule } from "igniteui-angular/main";
-import { ButtonGroupSample1Component } from "../../src/app/buttonGroup/button-group-sample-1/button-group-sample-1.component";
-import { ButtonGroupSample2Component } from "../../src/app/buttonGroup/button-group-sample-2/button-group-sample-2.component";
-import { ButtonGroupSample3Component } from "../../src/app/buttonGroup/button-group-sample-3/button-group-sample-3.component";
+import {
+    ButtonGroupSample1Component
+ } from "../../src/app/buttonGroup/button-group-sample-1/button-group-sample-1.component";
+import {
+    ButtonGroupSample2Component
+} from "../../src/app/buttonGroup/button-group-sample-2/button-group-sample-2.component";
+import {
+    ButtonGroupSample3Component
+} from "../../src/app/buttonGroup/button-group-sample-3/button-group-sample-3.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ButtonGroupConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // button group 1
         configs.push(new Config({
@@ -42,7 +49,6 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
             }),
             shortenComponentPathBy: "/buttonGroup/"
         }));
-
 
         return configs;
     }
