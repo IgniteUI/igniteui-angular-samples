@@ -11,6 +11,6 @@ import { FinancialDataService } from "../services/financial-data.service";
 export class FinancialChartCustomTooltipsComponent {
     public data: any;
     constructor(private dataService: FinancialDataService) {
-        this.data = [ this.dataService.getTsla() ];
+        this.data = this.dataService.getTsla();
     }
 }

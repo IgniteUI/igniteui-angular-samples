@@ -3,15 +3,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 
-export class StockData extends Array<any> {
-    // specify title of stock including stock symbol
-    public title: string;
-
-    public constructor(items?: any[]) {
-        super(...items);
-    }
-}
-
 @Injectable()
 export class StockDataService {
 
@@ -25,7 +16,7 @@ export class StockDataService {
         ];
     }
 
-    public GetStockAMZN(): StockData {
+    public GetStockAMZN(): any {
         const data = [
             { time: new Date(2013, 1, 1), open: 268.93, high: 268.93, low: 262.80, close: 265.00, volume: 6118146 },
             { time: new Date(2013, 1, 4), open: 262.78, high: 264.68, low: 259.07, close: 259.98, volume: 3723793 },
@@ -1287,12 +1278,13 @@ export class StockDataService {
             { time: new Date(2018, 0, 30), open: 1403.17, high: 1439.25, low: 1392.00, close: 1437.82, volume: 5871942 },
             { time: new Date(2018, 0, 31), open: 1451.30, high: 1472.58, low: 1450.04, close: 1450.89, volume: 6424693 }
         ];
-        const stock = new StockData(data);
-        stock.title = "Amazon Company (AMZN)";
-        return stock;
+        (data as any).__dataIntents = {
+            open: ["SeriesTitle/Amazon Company (AMZN)"]
+        };
+        return data;
     }
 
-    public GetStockMSFT(): StockData {
+    public GetStockMSFT(): any {
         const data = [
             { time: new Date(2013, 1, 1), open: 27.67, high: 28.05, low: 27.55, close: 27.93, volume: 55566440 },
             { time: new Date(2013, 1, 4), open: 27.87, high: 28.02, low: 27.42, close: 27.44, volume: 50539942 },
@@ -2554,12 +2546,14 @@ export class StockDataService {
             { time: new Date(2018, 0, 30), open: 93.30, high: 93.66, low: 92.10, close: 92.74, volume: 38635053 },
             { time: new Date(2018, 0, 31), open: 93.75, high: 95.40, low: 93.51, close: 95.01, volume: 48756338 }
         ];
-        const stock = new StockData(data);
-        stock.title = "Microsoft Corporation (MSFT)";
-        return stock;
+        // setting data intent for Series Title
+        (data as any).__dataIntents = {
+            open: ["SeriesTitle/Microsoft Corporation (MSFT)"]
+        };
+        return data;
     }
 
-    public GetStockTSLA(): StockData {
+    public GetStockTSLA(): any {
         const data = [
             { time: new Date(2013, 1, 1), open: 38.17, high: 38.50, low: 37.62, close: 38.30, volume: 1100590 },
             { time: new Date(2013, 1, 4), open: 38.40, high: 38.42, low: 37.59, close: 37.74, volume: 1127989 },
@@ -3821,12 +3815,14 @@ export class StockDataService {
             { time: new Date(2018, 0, 30), open: 345.14, high: 348.27, low: 342.17, close: 345.82, volume: 4717700 },
             { time: new Date(2018, 0, 31), open: 347.51, high: 356.19, low: 345.19, close: 354.31, volume: 6214069 }
         ];
-        const stock = new StockData(data);
-        stock.title = "Tesla Company (TSLA)";
-        return stock;
+        // setting data intent for Series Title
+        (data as any).__dataIntents = {
+            open: ["SeriesTitle/Tesla Company (TSLA)"]
+        };
+        return data;
     }
 
-    public GetStockTGT(): StockData {
+    public GetStockTGT(): any {
         const data = [
             { time: new Date(2013, 1, 1), open: 60.94, high: 61.56, low: 60.82, close: 61.15, volume: 4708158 },
             { time: new Date(2013, 1, 4), open: 61.00, high: 61.10, low: 60.33, close: 60.85, volume: 4085120 },
@@ -5087,9 +5083,11 @@ export class StockDataService {
             { time: new Date(2018, 0, 30), open: 76.39, high: 76.70, low: 74.82, close: 75.10, volume: 5626261 },
             { time: new Date(2018, 0, 31), open: 75.39, high: 75.75, low: 74.60, close: 75.22, volume: 8706323 }
         ];
-        const stock = new StockData(data);
-        stock.title = "Target Corporation (TGT)";
-        return stock;
+        // setting data intent for Series Title
+        (data as any).__dataIntents = {
+            open: ["SeriesTitle/Target Corporation (TGT)"]
+        };
+        return data;
     }
 
 }

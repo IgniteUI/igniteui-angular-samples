@@ -30,7 +30,7 @@ export class GenerateHourlyPricesService {
         }
         // setting data intent for Series Title
         (stock as any).__dataIntents = {
-            price: ["SeriesTitle/Stock Prices"]
+            close: ["SeriesTitle/Stock Prices"]
         };
 
         return stock;
