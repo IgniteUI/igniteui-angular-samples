@@ -193,7 +193,7 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
 }
 
 export class CustomBPMSummary extends IgxNumberSummaryOperand {
-    
+
     constructor() {
         super();
     }
@@ -212,9 +212,8 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
             }, {
                 key: "average",
                 label: "average",
-                summaryResult: this.average(data); 
-            }
-        )
+                summaryResult: this.average(data);
+            });
 
         return result;
     }
