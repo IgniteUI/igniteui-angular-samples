@@ -1,18 +1,12 @@
 @import '~igniteui-angular/core/styles/themes/index';
 
-
-// Todo: Remve this after we add !optional in the list
-%igx-list-item--inactive {
-  content: "";
-}
-
 $grid-sample-theme: igx-grid-theme(
   $row-selected-background: #333,
   $row-selected-text-color: #ddd,
   $row-hover-background: #f8f8f8,
   $row-border-color: #f8f8f8,
 
-  $cell-selected-background: rgba(255,255,255, .1),
+  $cell-selected-background: igx-color($default-palette, grays, 800),
   $cell-selected-text-color: #fff
 );
 
