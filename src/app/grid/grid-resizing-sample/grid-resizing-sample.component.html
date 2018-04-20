@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid [data]="data" (onColumnResized)="onResize($event)" [autoGenerate]="false" width="100%">
+    <igx-grid [data]="data" (onColumnResized)="onResize($event)" [autoGenerate]="false" height="500px" width="100%">
         <igx-column [field]="'ID'" width="100px" [resizable]="true"></igx-column>
         <igx-column [field]="'CompanyName'" width="100px" [resizable]="true"></igx-column>
         <igx-column [field]="'ContactName'" width="100px" [resizable]="true" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
