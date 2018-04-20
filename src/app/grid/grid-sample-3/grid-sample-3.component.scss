@@ -1,14 +1,15 @@
-button {
-    font-size: 0.708rem !important;
-    text-transform: inherit !important;
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+.grid-controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin: 0 16px 24px;
+
+    igx-switch {
+        margin-top: 24px;
+    }
 
 }
-.igx-grid__th span{
-    color: #e41c77 !important;
-}
 
-.igx-grid-summary__label {
-    color: #e41c77 !important;
+.grid__wrapper {
+    margin: 0 16px;
 }
