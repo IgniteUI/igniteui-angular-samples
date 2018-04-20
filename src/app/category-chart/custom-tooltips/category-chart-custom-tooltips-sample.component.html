@@ -1,0 +1,35 @@
+<div class="sample-wrapper container">
+    <div>
+        <span>Chart Type:</span>
+        <select [(ngModel)]="chartType">
+            <option>Auto</option>
+            <option>Line</option>
+            <option>Column</option>
+            <option>Point</option>
+            <option>Spline</option>
+            <option>SplineArea</option>
+            <option>StepArea</option>
+            <option>StepLine</option>
+            <option>Waterfall</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-category-chart height="100%" width="100%"
+            [dataSource]="data" title="Energy Production"
+            subtitle="by Country"
+            [tooltipTemplate]="valueTooltip"
+            [chartType]="chartType">
+        </igx-category-chart>
+    </div>
+
+    <ng-template let-series="series" let-item="item" #valueTooltip>
+        <div>
+            <span> {{item.Country}} energy use: <br/></span>
+            <span> Coal :{{item.Coal | number}}<br/></span>
+            <span> Oil :{{item.Oil | number}}<br/></span>
+            <span> Gas :{{item.Gas | number}}<br/></span>
+            <span> Nuclear :{{item.Nuclear | number}}<br/></span>
+            <span> Hyrdo :{{item.Hydro | number}}<br/></span>
+        </div>
+    </ng-template>
+</div>
