@@ -1,6 +1,4 @@
-<igx-switch class="switch-sample" *ngFor="let setting of settings" [checked]="setting.state">
-  <div style="width: 150px">
-      {{ setting.name }}
-  </div>
+<igx-switch *ngFor="let setting of settings" [checked]="setting.state">
+  {{ setting.name }}
 </igx-switch>
 
