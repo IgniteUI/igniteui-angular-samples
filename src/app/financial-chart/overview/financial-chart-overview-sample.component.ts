@@ -13,10 +13,8 @@ export class FinancialChartOverviewComponent {
     public data: any;
 
     constructor(private dataService: GenerateOhlcPricesService) {
-        this.dataService.daysInterval = 60;
-
-        const dateStart = new Date(2000, 1, 1);
-        const dateStop = new Date(2025, 11, 1);
+        const dateStart = new Date(2017, 0, 1);
+        const dateStop = new Date(2018, 11, 31);
         const stock1 = this.dataService.GetStockHistoryBetween(dateStart, dateStop);
         const stock2 = this.dataService.GetStockHistoryBetween(dateStart, dateStop);
         stock1.title = "General Motors (GM)";

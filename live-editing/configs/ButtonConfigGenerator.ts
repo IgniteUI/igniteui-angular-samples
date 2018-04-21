@@ -1,12 +1,13 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { ButtonsSample1Component } from "../../src/app/buttons/buttons-sample-1/buttons-sample-1.component";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular/main";
+import { ButtonsSample1Component } from "../../src/app/buttons/buttons-sample-1/buttons-sample-1.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ButtonConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // buttons sample 1
         configs.push(new Config({

@@ -13,6 +13,6 @@ export class FinancialChartTitlesComponent {
     public data: any;
 
     constructor(private dataService: StockDataService) {
-        this.data = [ this.dataService.GetStockTSLA() ];
+        this.data = this.dataService.GetStockTSLA();
     }
 }

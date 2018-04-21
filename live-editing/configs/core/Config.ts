@@ -1,16 +1,17 @@
+import { Type } from "@angular/core/src/type";
 import { AppModuleConfig } from "./AppModuleConfig";
-import { Type } from '@angular/core/src/type';
 
 export class Config {
     public component: Type<any>;
-    public additionalFiles: Array<string>;
+    public additionalFiles: string[];
     public appModuleConfig: AppModuleConfig;
     public shortenComponentPathBy: string;
-    public additionalDependencies: Array<string>;
+    public additionalDependencies: string[];
 
     constructor(fields: {
-        component: Type<any>, additionalFiles?: Array<string>,
-        appModuleConfig: AppModuleConfig, shortenComponentPathBy?: string, packageDependencies: Array<string>
+        component: Type<any>, additionalFiles?: string[],
+        appModuleConfig: AppModuleConfig, shortenComponentPathBy?: string,
+        packageDependencies?: string[]
     }) {
         this.component = fields.component;
         this.additionalFiles = fields.additionalFiles;

@@ -1,12 +1,13 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { LayoutComponent } from "../../src/app/layout/layout.component";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxLayoutModule } from "igniteui-angular/main";
+import { LayoutComponent } from "../../src/app/layout/layout.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class LayoutConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: LayoutComponent,

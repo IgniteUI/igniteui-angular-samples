@@ -1,14 +1,21 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule } from "igniteui-angular/main";
-import { LinearProgressbarComponent } from "../../src/app/linear-progressbar/linear-progressbar.component";
-import { LinearProgressbarSample1Component } from "../../src/app/linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
-import { LinearProgressbarSample2Component } from "../../src/app/linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
+import {
+    LinearProgressbarSample1Component
+} from "../../src/app/linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
+import {
+    LinearProgressbarSample2Component
+} from "../../src/app/linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
+import {
+    LinearProgressbarComponent
+} from "../../src/app/linear-progressbar/linear-progressbar.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class LinearProgressbarConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: LinearProgressbarComponent,
