@@ -33,7 +33,7 @@ export class FinancialChartPanesComponent implements AfterViewInit {
     public chart: IgxFinancialChartComponent;
 
     constructor(private dataService: StockDataService) {
-        this.data = [ this.dataService.GetStockTSLA() ];
+        this.data = this.dataService.GetStockTSLA();
 
     }
 
