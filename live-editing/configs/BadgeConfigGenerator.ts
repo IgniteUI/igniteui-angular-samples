@@ -1,14 +1,15 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxBadgeModule, IgxListModule, IgxAvatarModule } from "igniteui-angular/main";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxAvatarModule, IgxBadgeModule, IgxListModule } from "igniteui-angular/main";
 import { BadgeSample1Component } from "../../src/app/badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "../../src/app/badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "../../src/app/badge/badge-sample-3/badge-sample-3.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class BadgeConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // badge sample 1
         configs.push(new Config({

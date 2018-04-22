@@ -1,13 +1,14 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { ToastSample1Component } from "../../src/app/toast/toast-sample-1/toast-sample-1.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxRippleModule, IgxToastModule } from "igniteui-angular/main";
+import { ToastSample1Component } from "../../src/app/toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample5Component } from "../../src/app/toast/toast-sample-5/toast-sample-5.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ToastConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // toast sample 1
         configs.push(new Config({
@@ -37,4 +38,3 @@ export class ToastConfigGenerator implements IConfigGenerator {
         return configs;
     }
 }
-

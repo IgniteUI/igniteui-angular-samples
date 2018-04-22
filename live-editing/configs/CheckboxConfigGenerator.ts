@@ -1,12 +1,15 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { CheckboxSample2Component } from "../../src/app/form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
-import { AppModuleConfig } from "./core/AppModuleConfig";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxCheckboxModule } from "igniteui-angular/checkbox/checkbox.component";
+import {
+    CheckboxSample2Component
+} from "../../src/app/form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class CheckboxConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // checkbox sample 2
         configs.push(new Config({

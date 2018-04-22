@@ -1,24 +1,25 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule } from "igniteui-angular/main";
-import { DialogComponent } from "../../src/app/dialog/dialog.component";
+/* tslint:disable:object-literal-sort-keys */
+import { IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule } from "igniteui-angular/main";
 import { DialogSample1Component } from "../../src/app/dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "../../src/app/dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "../../src/app/dialog/dialog-sample-3/dialog-sample-3.component";
+import { DialogComponent } from "../../src/app/dialog/dialog.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class DialogConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // dialog sample
         configs.push(new Config({
             component: DialogComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule,
-                    DialogComponent],
+                    DialogComponent, IgxIconModule],
                 ngDeclarations: [DialogComponent],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule]
+                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
             })
         }));
 
@@ -51,9 +52,9 @@ export class DialogConfigGenerator implements IConfigGenerator {
             component: DialogSample3Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule,
-                    DialogSample3Component],
+                    DialogSample3Component, IgxIconModule],
                 ngDeclarations: [DialogSample3Component],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule]
+                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/dialog/"
         }));

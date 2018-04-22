@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { CurrencyPipe } from "@angular/common";
+import { AfterViewInit, Component, OnInit, ViewChild, ViewChildren } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { STRING_FILTERS } from "igniteui-angular/main";
 import { DATA } from "./nwindData";
@@ -12,6 +13,7 @@ import { DATA } from "./nwindData";
 export class FilteringSampleComponent implements OnInit {
     @ViewChild("grid1", { read: IgxGridComponent })
     public grid1: IgxGridComponent;
+
     public data: any[];
 
     constructor() {
@@ -26,5 +28,9 @@ export class FilteringSampleComponent implements OnInit {
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat("en-US").format(val);
+    }
+
+    public formatCurrency(val: string) {
+        return parseInt(val, 10).toFixed(2);
     }
 }

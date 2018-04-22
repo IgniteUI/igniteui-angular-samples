@@ -3,6 +3,7 @@
         <span>Chart Type:</span>
         <select [(ngModel)]="chartType">
             <option>Auto</option>
+            <option>Area</option>
             <option>Line</option>
             <option>Column</option>
             <option>Point</option>
@@ -17,21 +18,21 @@
         <igx-category-chart height="98%" width="98%"
             [dataSource]="data"
             [chartType]="chartType"
-            chartTitle="Energy Production by Country"
-            yAxisMinimumValue="0"
-            yAxisMaximumValue="1000"
+            chartTitle="Olympic Medals By Country"
+            yAxisMinimumValue="50"
+            yAxisMaximumValue="150"
             xAxisOverlap="0"
 
-            negativeBrushes="red"
-            negativeOutlines="#555657, #F14027, #F7A30B, #0BA50B, #059CFA"
-            brushes="#555657, #F14027, #F7A30B, #0BA50B, #059CFA"
-            outlines="#555657, #F14027, #F7A30B, #0BA50B, #059CFA"
-            markerOutlines="#555657, #F14027, #F7A30B, #0BA50B, #059CFA"
-            markerBrushes="#555657, #F14027, #F7A30B, #0BA50B, #059CFA"
-            markerTypes="diamond"
-            thickness="3"
+            negativeBrushes="Red"
+            negativeOutlines="Red"
+            brushes="#4286f4, #e8b220, #11c111"
+            outlines="#4286f4, #e8b220, #11c111"
+            markerOutlines="#4286f4, #e8b220, #11c111"
+            markerBrushes="White"
+            markerTypes="Diamond"
+            thickness="2"
             isTransitionInEnabled="true"
-            transitionInDuration="2000"
+            transitionInDuration="1500"
             transitionInMode="AccordionFromBottom" >
         </igx-category-chart>
     </div>

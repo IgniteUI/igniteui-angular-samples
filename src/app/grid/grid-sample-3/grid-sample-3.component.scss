@@ -1,14 +1,32 @@
-button {
-    font-size: 0.708rem !important;
-    text-transform: inherit !important;
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+.grid-controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin: 0 16px 24px;
+
+    igx-switch {
+        margin-top: 24px;
+    }
 
 }
-.igx-grid__th span{
-    color: #e41c77 !important;
+
+.grid__wrapper {
+    margin: 0 16px;
 }
 
-.igx-grid-summary__label {
-    color: #e41c77 !important;
+.header-icon {
+    font-size: 1.4em;
+    width: 1.1em;
+    height: 1.1em;
+    float: right;
+    cursor: pointer;
+}
+
+.header {
+    height: 100%;
+}
+
+.igx-grid__th .title {
+    width: 100%;
+    cursor: auto;
 }

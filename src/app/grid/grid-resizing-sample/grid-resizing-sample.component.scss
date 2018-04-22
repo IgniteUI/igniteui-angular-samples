@@ -12,6 +12,5 @@ $grid-sample-theme: igx-grid-theme(
 
 .grid__wrapper {
     @include igx-grid($grid-sample-theme);
-    width: 1000px;
-    margin: 0 auto;
+    margin: 0 16px;
 }

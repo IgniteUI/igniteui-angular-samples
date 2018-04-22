@@ -18,7 +18,27 @@
 .sample-container {
     width: 20%;
     display: flex;
+
+    margin: 0% 0% 20px 10px
+}
+
+.grid-controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px 24px;
     flex-flow: column;
     align-items: flex-start;
-    margin: 0% 0% 20px 10px
+}
+
+.grid__wrapper {
+    margin: 0 16px;
+}
+
+.currency-badge-container {
+    width: 80px; 
+    float: right;
+}
+
+.badge-left {
+    float: left;
 }

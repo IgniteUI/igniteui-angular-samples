@@ -1,12 +1,13 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IconSample1Component } from "../../src/app/icon/icon-sample-1/icon-sample-1.component";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxIconModule } from "igniteui-angular/main";
+import { IconSample1Component } from "../../src/app/icon/icon-sample-1/icon-sample-1.component";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class IconConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         // icon sample 1
         configs.push(new Config({

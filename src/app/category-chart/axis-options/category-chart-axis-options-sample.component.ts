@@ -12,13 +12,30 @@ export class CategoryChartAxisOptionsComponent {
     public data: any;
 
     constructor() {
-        this.data = [
-            { Country: "Canada", Coal: 400, Oil: 100, Gas: 175, Nuclear: 225, Hydro: 350 },
-            { Country: "China", Coal: 925, Oil: 200, Gas: 350, Nuclear: 400, Hydro: 625 },
-            { Country: "Russia", Coal: 550, Oil: 200, Gas: 250, Nuclear: 475, Hydro: 425 },
-            { Country: "Australia", Coal: 450, Oil: 100, Gas: 150, Nuclear: 175, Hydro: 350 },
-            { Country: "United States", Coal: 800, Oil: 250, Gas: 475, Nuclear: 575, Hydro: 750 },
-            { Country: "France", Coal: 375, Oil: 150, Gas: 350, Nuclear: 275, Hydro: 325 }
+        const usaMedals: any = [
+            { Year: "1996", UnitedStates: 148 },
+            { Year: "2000", UnitedStates: 142 },
+            { Year: "2004", UnitedStates: 134 },
+            { Year: "2008", UnitedStates: 131 },
+            { Year: "2012", UnitedStates: 135 },
+            { Year: "2016", UnitedStates: 146 }
         ];
+        const chinaMedals: any = [
+            { Year: "1996", China: 110 },
+            { Year: "2000", China: 115 },
+            { Year: "2004", China: 121 },
+            { Year: "2008", China: 129 },
+            { Year: "2012", China: 115 },
+            { Year: "2016", China: 112 }
+        ];
+        const russiaMedals: any = [
+            { Year: "1996", Russia: 95 },
+            { Year: "2000", Russia: 91 },
+            { Year: "2004", Russia: 86 },
+            { Year: "2008", Russia: 65 },
+            { Year: "2012", Russia: 77 },
+            { Year: "2016", Russia: 88 }
+        ];
+        this.data = [ usaMedals, chinaMedals, russiaMedals ];
     }
 }

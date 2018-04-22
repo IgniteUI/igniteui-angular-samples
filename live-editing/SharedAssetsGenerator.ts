@@ -1,8 +1,9 @@
+// tslint:disable:prefer-const
 import * as fs from "fs";
 import * as path from "path";
+import { DependencyResolver } from "./DependencyResolver";
 import { LiveEditingFile } from "./LiveEditingFile";
 import { SharedAssetsFile } from "./SharedAssetsFile";
-import { DependencyResolver } from "./DependencyResolver";
 
 const INDEX_FILE_PATH = path.join(__dirname, "../src/index.html");
 const POLYPFILLS_FILE_PATH = path.join(__dirname, "../src/polyfills.ts");
