@@ -68,7 +68,7 @@ export class GridRemoteVirtualizationSampleComponent {
 
     public ngAfterViewInit() {
         this.remoteService.getData(this.grid.virtualizationState, (data) => {
-            this.grid.totalItemCount = data["count"];
+            this.grid.totalItemCount = data.count;
         });
     }
 
