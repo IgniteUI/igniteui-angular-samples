@@ -353,7 +353,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
-        InMemoryWebApiModule.forRoot(MockDataService, { delay: 1500 })
+        InMemoryWebApiModule.forRoot(MockDataService)
     ],
     providers: [
         DataService,

@@ -26,9 +26,11 @@ import {
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { DataService } from "../../src/app/grid/services/data.service";
+import { MockDataService } from "../../src/app/grid/services/mock-data.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -51,7 +53,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: FinancialSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sample-2/financialData.ts"],
+            additionalFiles: ["/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
@@ -146,10 +148,11 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridRemoteVirtualizationSampleComponent,
+            additionalFiles: ["/src/app/grid/services/mock-data.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, HttpClientModule],
+                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxToastModule, HttpClientModule],
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule, InMemoryWebApiModule.forRoot(MockDataService, { delay: 700 })],
                 ngProviders: []
             })
         }));
