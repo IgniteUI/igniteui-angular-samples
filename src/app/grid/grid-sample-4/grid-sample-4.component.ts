@@ -12,7 +12,7 @@ import { BehaviorSubject, Observable } from "rxjs/Rx";
 @Injectable()
 export class RemoteService {
     public remoteData: Observable<any[]>;
-    private url: string = "http://services.odata.org/V4/Northwind/Northwind.svc/Products";
+    private url: string = "/api/financial";
     private _remoteData: BehaviorSubject<any[]>;
 
     constructor(private http: HttpClient) {
@@ -58,26 +58,17 @@ export class RemoteService {
 export class GridRemoteVirtualizationSampleComponent {
     public remoteData: any;
     public prevRequest: any;
-    public columns: any;
 
     @ViewChild("grid1") public grid: IgxGridComponent;
     @ViewChild("toast") public toast: IgxToastComponent;
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
     public ngOnInit(): void {
-        this.columns = [
-            { field: "ProductID", header: "Product ID", width: "100px" },
-            { field: "ProductName", header: "Product Name", width: "200px" },
-            { field: "UnitPrice", header: "Unit Price", width: "100px" },
-            { field: "UnitsInStock", header: "Units In Stock", width: "50px" },
-            { field: "QuantityPerUnit", header: "Quantity Per Unit", width: "200px" },
-            { field: "Discontinued", header: "Discontinued", width: "50px" }
-        ];
         this.remoteData = this.remoteService.remoteData;
     }
 
     public ngAfterViewInit() {
         this.remoteService.getData(this.grid.virtualizationState, (data) => {
-            this.grid.totalItemCount = data["@odata.count"];
+            this.grid.totalItemCount = data["count"];
         });
     }
 
@@ -93,5 +84,12 @@ export class GridRemoteVirtualizationSampleComponent {
             this.toast.hide();
             this.cdr.detectChanges();
         });
+    }
+
+    public formatNumber(value: number) {
+        return value.toFixed(2);
+    }
+    public formatCurrency(value: number) {
+        return "$" + value.toFixed(2);
     }
 }
