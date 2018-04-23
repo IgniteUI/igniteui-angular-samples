@@ -1,10 +1,10 @@
 <div class="grid__wrapper">
 
-  <igx-grid #grid1 [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="585px" width="100%">
+  <igx-grid #grid1 [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="590px" width="100%">
       <igx-column header="Rank" headerClasses="myClass" width="100px" field="Id" sortable="true">
       </igx-column>
 
-    <igx-column field="Name" header="Athlete" width="180px">
+    <igx-column field="Name" header="Athlete" width="150px">
     </igx-column>
 
     <igx-column field="AthleteNumber" header="Athlete Number" dataType="number" width="120px">
@@ -26,7 +26,7 @@
           </ng-template>
       </igx-column>
 
-      <igx-column field="TrackProgress" header="Track Progress" width="250px">
+      <igx-column field="TrackProgress" header="Track Progress" width="180px">
           <ng-template igxCell let-val>
               <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val"></igx-linear-bar>
           </ng-template>

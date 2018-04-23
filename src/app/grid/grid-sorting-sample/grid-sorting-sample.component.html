@@ -11,7 +11,11 @@
         </igx-column>
         <igx-column field="OrderDate" [dataType]="'date'" [formatter]="formatDate" sortable="true">
         </igx-column>
-        <igx-column field="Discontinued" header="In Stock" sortable="true" [dataType]="'boolean'">
+        <igx-column field="Discontinued" header="Discontinued" width="150px" filterable="true" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
         </igx-column>
     </igx-grid>
     <div *ngIf="contextmenu==true">

@@ -6,18 +6,16 @@
   </div>
   
   <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="520px" width="100%">
-
-    <igx-column field="ProductID" header="Product ID" width="120px" [headerClasses]="'prodId'"></igx-column>
     <igx-column field="ProductName" header="Product Name" width="250px" [dataType]="'string'" filterable="true">
     </igx-column>
-    <igx-column field="QuantityPerUnit" header="Quantity Per Unit" width="250px" [dataType]="'string'" filterable="true">
+    <igx-column field="QuantityPerUnit" header="Quantity Per Unit" width="200px" [dataType]="'string'" filterable="true">
     </igx-column>
     <igx-column field="UnitPrice" header="Unit Price" width="150px" [dataType]="'number'" filterable="true">
         <ng-template igxCell let-cell="cell" let-val let-row>
         {{+val | currency}}
         </ng-template>
     </igx-column>
-    <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" width="200px" [formatter]="formatDate" filterable="true">
+    <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" width="150px" [formatter]="formatDate" filterable="true">
     </igx-column>
     <igx-column field="Discontinued" header="Discontinued" width="150px" filterable="true" [dataType]="'boolean'">
         <ng-template igxCell let-cell="cell" let-val>
