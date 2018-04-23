@@ -10,7 +10,9 @@ import {
     IgxProgressBarModule,
     IgxRippleModule,
     IgxSwitchModule,
-    IgxToastModule
+    IgxToastModule,
+    IgxToggleModule,
+    IgxCheckboxModule
 } from "igniteui-angular/main";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -18,6 +20,7 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
+import { IgxExcelExporterService } from "igniteui-angular/services";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import {
@@ -29,6 +32,7 @@ import { DataService } from "../../src/app/grid/services/data.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -114,6 +118,21 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCRMComponent,
+            additionalFiles: ["/src/app/grid/grid-crm/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, IgxExcelExporterService, GridCRMComponent],
+                ngDeclarations: [GridCRMComponent],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, HttpClientModule],
+                ngProviders: [IgxExcelExporterService]
             })
         }));
 
