@@ -17,4 +17,9 @@ export class PagingSampleComponent {
     public ngOnInit(): void {
         this.data = athletesData;
     }
+
+    public cellSelection(evt) {
+        const cell = evt.cell;
+        this.grid1.selectRows([cell.row.rowID], true);
+    }
 }
