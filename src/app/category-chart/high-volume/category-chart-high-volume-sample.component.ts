@@ -100,7 +100,7 @@ export class CategoryChartHighVolumeComponent implements AfterViewInit, OnDestro
                     this._zone.runOutsideAngular(() => {
                         window.setTimeout(() => {
                             const elapsed = new Date().getTime() - this._time.getTime();
-                            this.loadTimeSpan.nativeElement.textContent = elapsed.toFixed(2) + "ms";
+                            this.loadTimeSpan.nativeElement.textContent = "Load Time: " + elapsed.toFixed(2) + "ms";
                         }, 0);
                     });
                 }
