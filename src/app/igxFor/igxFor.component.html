@@ -12,12 +12,12 @@
 
     <igx-list>
         <igx-list-item [isHeader]="true">Contacts: {{(data | igxFilter: fo).length}} </igx-list-item>
-        <div [style.height]="'500px'">
+        <div [style.height]="'500px'" [style.overflow]="'hidden'" [style.position]="'relative'">
             <igx-list-item
+                [style.width]="'calc(100% - 18px)'"
                 igxRipple="pink"
                 igxRippleTarget=".igx-list__item"
                 *igxFor="let item of data | igxFilter: fo; scrollOrientation : 'vertical'; containerSize: '500px'; itemSize: '50px'">
-
                 <div class="item-container">
                     <div class="contact">
                         <igx-avatar [src]="item.avatar" roundShape="true"></igx-avatar>
