@@ -145,7 +145,7 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
         const oldVal = this.data[0];
         this.data.push(newVal);
         this.chart.notifyInsertItem(this.data, this.data.length - 1, newVal);
-        this.data.splice(0, 1);
+        this.data.shift();
         this.chart.notifyRemoveItem(this.data, 0, oldVal);
 
         this._frames++;

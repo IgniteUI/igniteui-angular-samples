@@ -1,5 +1,5 @@
 /* tslint:disable */
-export const DATA: any[] = [
+const DATA: any[] = [
  {
    "Category": "Metal",
    "Type": "Gold",
@@ -811,4 +811,43 @@ export const DATA: any[] = [
    "Change On Year(%)": 0.2781
  }
 ];
+
 /* tslint:enable */
+export class FinancialData {
+    public generateData(count: number): any[] {
+        const currData = [];
+        for (let i = 0; i < count; i++) {
+            const rand = Math.floor(Math.random() * Math.floor(DATA.length));
+            const dataObj = Object.assign({}, DATA[rand]);
+            this.randomizeObjectData(dataObj);
+            currData.push(dataObj);
+        }
+        return currData;
+    }
+    private randomizeObjectData(dataObj) {
+        const changeP = "Change(%)";
+        const res = this.generateNewPrice(dataObj.Price);
+        dataObj.Change = res.Price - dataObj.Price;
+        dataObj.Price = res.Price;
+        dataObj[changeP] = res.ChangePercent;
+    }
+    private generateNewPrice(oldPrice): any {
+        const rnd = parseFloat(Math.random().toFixed(2));
+        const volatility = 2;
+        let newPrice = 0;
+
+        let changePercent = 2 * volatility * rnd;
+        if (changePercent > volatility) {
+            changePercent -= (2 * volatility);
+        }
+
+        const changeAmount = oldPrice * (changePercent / 100);
+        newPrice = oldPrice + changeAmount;
+
+        const result = {Price: 0, ChangePercent: 0};
+        result.Price = parseFloat(newPrice.toFixed(2));
+        result.ChangePercent = parseFloat(changePercent.toFixed(2));
+
+        return result;
+    }
+}
