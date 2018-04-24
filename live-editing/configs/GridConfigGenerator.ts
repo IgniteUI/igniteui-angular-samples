@@ -10,7 +10,9 @@ import {
     IgxProgressBarModule,
     IgxRippleModule,
     IgxSwitchModule,
-    IgxToastModule
+    IgxToastModule,
+    IgxToggleModule,
+    IgxCheckboxModule
 } from "igniteui-angular/main";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -18,6 +20,7 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
+import { IgxExcelExporterService } from "igniteui-angular/services";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import {
@@ -26,9 +29,12 @@ import {
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { DataService } from "../../src/app/grid/services/data.service";
+import { MockDataService } from "../../src/app/grid/services/mock-data.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -51,7 +57,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: FinancialSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sample-2/financialData.ts"],
+            additionalFiles: ["/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
@@ -118,6 +124,21 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridCRMComponent,
+            additionalFiles: ["/src/app/grid/grid-crm/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, IgxExcelExporterService, GridCRMComponent],
+                ngDeclarations: [GridCRMComponent],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, HttpClientModule],
+                ngProviders: [IgxExcelExporterService]
+            })
+        }));
+
+        configs.push(new Config({
             component: ResizingSampleComponent,
             additionalFiles: ["/src/app/grid/grid-resizing-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -146,13 +167,36 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridRemoteVirtualizationSampleComponent,
+            additionalFiles: ["/src/app/grid/services/mock-data.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, HttpClientModule],
+                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxToastModule, HttpClientModule],
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule, InMemoryWebApiModule.forRoot(MockDataService)],
                 ngProviders: []
-            })
+            }),
+            packageDependencies: [
+                "@angular/common",
+                "@angular/compiler",
+                "@angular/core",
+                "@angular/forms", // included in app.module.ts.template
+                "@angular/platform-browser",
+                "@angular/platform-browser-dynamic",
+                "@angular/http",
+                "@angular/animations",
+                "rxjs",
+                "zone.js",
+                "igniteui-angular", // needed for all samples because of styles.scss
+                "jszip", // dependency for igniteui-angular
+                "classlist.js",
+                "core-js",
+                "hammerjs",
+                "intl",
+                "web-animations-js",
+                "angular-in-memory-web-api"
+            ]
         }));
+
+
 
         configs.push(new Config({
             component: PinningSampleComponent,

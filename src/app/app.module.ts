@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -97,6 +98,7 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
@@ -109,6 +111,7 @@ import { GridContextmenuComponent } from "./grid/grid-sorting-sample/grid-contex
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
+import { MockDataService } from "./grid/services/mock-data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
@@ -199,6 +202,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         ListSample3Component,
         ListSample4Component,
         ListSample5Component,
+        GridCRMComponent,
         GridComponent,
         CarouselComponent,
         CarouselDetailsViewComponent,
@@ -350,7 +354,8 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         IgxTimePickerModule,
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot()
+        FinancialChartSamplesModule.forRoot(),
+        InMemoryWebApiModule.forRoot(MockDataService)
     ],
     providers: [
         DataService,
