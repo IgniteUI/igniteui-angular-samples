@@ -171,10 +171,32 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule, InMemoryWebApiModule.forRoot(MockDataService, { delay: 700 })],
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule, InMemoryWebApiModule.forRoot(MockDataService)],
                 ngProviders: []
-            })
+            }),
+            packageDependencies: [
+                "@angular/common",
+                "@angular/compiler",
+                "@angular/core",
+                "@angular/forms", // included in app.module.ts.template
+                "@angular/platform-browser",
+                "@angular/platform-browser-dynamic",
+                "@angular/http",
+                "@angular/animations",
+                "rxjs",
+                "zone.js",
+                "igniteui-angular", // needed for all samples because of styles.scss
+                "jszip", // dependency for igniteui-angular
+                "classlist.js",
+                "core-js",
+                "hammerjs",
+                "intl",
+                "web-animations-js",
+                "angular-in-memory-web-api"
+            ]
         }));
+
+
 
         configs.push(new Config({
             component: PinningSampleComponent,
