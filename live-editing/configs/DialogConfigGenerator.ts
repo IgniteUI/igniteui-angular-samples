@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule } from "igniteui-angular/main";
+import { IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule } from "igniteui-angular/main";
 import { DialogSample1Component } from "../../src/app/dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "../../src/app/dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "../../src/app/dialog/dialog-sample-3/dialog-sample-3.component";
@@ -17,9 +17,9 @@ export class DialogConfigGenerator implements IConfigGenerator {
             component: DialogComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule,
-                    DialogComponent],
+                    DialogComponent, IgxIconModule],
                 ngDeclarations: [DialogComponent],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule]
+                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
             })
         }));
 
@@ -52,9 +52,9 @@ export class DialogConfigGenerator implements IConfigGenerator {
             component: DialogSample3Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule,
-                    DialogSample3Component],
+                    DialogSample3Component, IgxIconModule],
                 ngDeclarations: [DialogSample3Component],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule]
+                ngImports: [IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/dialog/"
         }));

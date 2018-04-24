@@ -25,11 +25,12 @@ export class GenerateHourlyPricesService {
             stock.push({ date: time, close: price });
 
             price = price + ((Math.random() - 0.5) * priceRange);
+            price = Math.round(price * 100) / 100;
             time = this.AddHours(time, hoursInterval);
         }
         // setting data intent for Series Title
         (stock as any).__dataIntents = {
-            Open: ["SeriesTitle/Stock Prices"]
+            close: ["SeriesTitle/Stock Prices"]
         };
 
         return stock;
