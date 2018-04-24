@@ -1,6 +1,7 @@
 .max-points-slider {
     margin-left: 5px;
-    width: 100px;
+    display: inline-block;
+    width: 180px;
     vertical-align: middle;
   }
 .sample-container {
@@ -17,4 +18,8 @@ igx-category-chart {
 .label {
     margin-left: 10px;
     margin-right: 5px;
+}
+.load-time {
+  display: inline-block;
+  width: 160px;
 }

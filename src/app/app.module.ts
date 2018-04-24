@@ -178,6 +178,7 @@ import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 
+import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 
@@ -354,6 +355,7 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         IgxTimePickerModule,
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
+        CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
         InMemoryWebApiModule.forRoot(MockDataService)
     ],

@@ -44,6 +44,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         deps = new Array<string>();
         deps.push("@angular/animations");
         deps.push("igniteui-angular-charts");
+        deps.push("igniteui-angular");
         deps.push("tslib");
 
         configs.push(new Config({
@@ -59,6 +60,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         deps = new Array<string>();
         deps.push("@angular/animations");
         deps.push("igniteui-angular-charts");
+        deps.push("igniteui-angular");
         deps.push("tslib");
 
         configs.push(new Config({

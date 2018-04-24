@@ -1,31 +1,38 @@
 <div class="sample-container">
     <igx-category-chart 
-      [dataSource]="data"
-      [pixelScalingRatio]="scalingRatio"
-      yAxisLabelExtent="40" 
-      #chart>
+        [dataSource]="data"
+        [pixelScalingRatio]="scalingRatio"
+        yAxisLabelExtent="40" 
+        #chart>
     </igx-category-chart>
 
-    <div class="sample-controls">
-      <span #fpsSpan class="label">FPS: </span> 
-      <input type="button" value="Change Amount" (click)="onChangeAmountClicked()" />
-      <span class="label">Optimize Scaling: </span>
-      <input type="checkbox" (change)="onOptimizeScalingChanged($event.target.checked)" checked/>
-      <br/>
-      <span class="label">Data amount: {{ maxPoints }}</span><input 
-        type="range" 
-        class="max-points-slider"
+    <div class="sample-controls"> 
+        <button igxButton="raised" 
+        igxRipple="white"
+        (click)="onChangeAmountClicked()"
+        >Change Amount</button>
+        <span #fpsSpan class="fpslabel">FPS:</span>
+        <div class="max-points-slider">
+        <span class="label">Data amount: {{ maxPoints }}</span>
+        <br/>
+        <igx-slider id="slider"
+        [minValue]="5000" 
+        [maxValue]="2000000" 
         [value]="maxPoints" 
-        min="5000"
-        max="2000000"
-        (change)="onMaxPointsChanged($event.target.value)" />
-      <span class="label">Refresh frequency (ms): {{ refreshMilliseconds }} </span><input 
-        type="range" 
-        class="frequency-slider"
+        [isContinuous]=true
+        (onValueChange)="onMaxPointsChanged($event.value)"></igx-slider>
+        </div>
+        
+        <div class="frequency-slider">
+
+        <span class="label">Refresh frequency (ms): {{ refreshMilliseconds }} </span>
+        <igx-slider id="slider"
+        [minValue]="10" 
+        [maxValue]="1000" 
         [value]="refreshMilliseconds" 
-        min="10"
-        max="1000"
-        (change)="onRefreshFrequencyChanged($event.target.value)" />
-      
+        [isContinuous]=true
+        (onValueChange)="onRefreshFrequencyChanged($event.value)"></igx-slider>
+        </div>
+        
     </div>
 </div>

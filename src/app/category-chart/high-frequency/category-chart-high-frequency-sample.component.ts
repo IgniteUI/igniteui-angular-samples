@@ -156,7 +156,7 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
             this._time = currTime;
             this._frames = 0;
 
-            this.fpsSpan.nativeElement.textContent = "fps: " + Math.round(fps).toString();
+            this.fpsSpan.nativeElement.textContent = "FPS: " + Math.round(fps).toString();
         }
     }
 }
