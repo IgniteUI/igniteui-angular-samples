@@ -13,7 +13,7 @@
     
          <div>
             <div class="max-points-slider flex__item">
-            <span class="label">Data amount: <strong>{{ maxPoints }}</strong></span>
+            <span class="label">Data amount: <strong>{{ maxPoints | number }}</strong></span>
             <br/>
             <igx-slider id="slider"
             [minValue]="5000" 

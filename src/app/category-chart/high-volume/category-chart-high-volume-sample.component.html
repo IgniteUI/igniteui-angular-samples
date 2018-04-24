@@ -16,7 +16,7 @@
           >Assign Data</button>
     
           <div class="max-points-slider">
-            <span class="label">Data amount: {{ maxPoints }}</span>
+            <span class="label">Data amount: {{ maxPoints | number }}</span>
             <igx-slider id="slider"
                 [minValue]="5000"
                 [maxValue]="2000000"
