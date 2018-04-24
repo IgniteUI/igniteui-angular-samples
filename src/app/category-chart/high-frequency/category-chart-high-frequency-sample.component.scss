@@ -4,58 +4,26 @@
     display: inline-block;
     margin-right: 12px;
   }
-  
-  .sample-container {
-    width: 100%;
-    height: 550px;
-  }
-  
-  .sample-controls {
-    margin-left: 10px;
-    height: 50px;
-    font: "16px 'Titillium Web', sans-serif"
-  }
-  
-  igx-category-chart {
+.sample-container {
+width: 100%;
+height: 550px;
+}
+.sample-controls {
+  margin-left: 10px;
+  height: 50px;
+  font: "16px 'Titillium Web', sans-serif"
+}
+igx-category-chart {
     max-width: 900px;
     width: 100%;
     height: calc(100% - 50px);
-  }
-  
-  .label {
-    margin-left: -5px;
+}
+.label {
     width: 100%;
     display: inline-block;
     text-align: center;
-    white-space: nowrap
-  }
-  
-  .label
-  button {
-    white-space: nowrap;
-  }
-  
-  .fpslabel {
+}
+.fpslabel {
     display: inline-block;
     width: 65px;
-  }
-  
-  .flex {
-    max-width: 700px;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  
-    > * {
-      margin-right:20px;
-      margin-bottom:20px;
-    }
-  }
-  
-  .flex__item {
-    flex: 1;
-    min-width: 200px;
-    max-width: 200px;
-    
-  }
+}

@@ -1,19 +1,19 @@
 <div class="sample-container">
         <igx-category-chart 
-          [dataSource]="data"
-          [pixelScalingRatio]="scalingRatio"
-          yAxisLabelExtent="40" 
-          #chart>
+            [dataSource]="data"
+            [pixelScalingRatio]="scalingRatio"
+            yAxisLabelExtent="40" 
+            #chart>
         </igx-category-chart>
     
-        <div class="sample-controls flex"> 
-          <button igxButton="raised" igxRipple="white" (click)="onChangeAmountClicked()">Change Amount</button>
-    
-          <div #fpsSpan class="fpslabel">FPS:</div>
-    
-         <div>
-            <div class="max-points-slider flex__item">
-            <span class="label">Data amount: <strong>{{ maxPoints | number }}</strong></span>
+        <div class="sample-controls"> 
+            <button igxButton="raised" 
+            igxRipple="white"
+            (click)="onChangeAmountClicked()"
+            >Change Amount</button>
+            <span #fpsSpan class="fpslabel">FPS:</span>
+            <div class="max-points-slider">
+            <span class="label">Data amount: {{ maxPoints | number }}</span>
             <br/>
             <igx-slider id="slider"
             [minValue]="5000" 
@@ -21,19 +21,17 @@
             [value]="maxPoints" 
             [isContinuous]=true
             (onValueChange)="onMaxPointsChanged($event.value)"></igx-slider>
-          </div>
-          
-          <div class="frequency-slider flex__item">
-    
-            <span class="label">Refresh frequency (ms): <strong>{{ refreshMilliseconds }}</strong> </span>
+        </div>
+            
+        <div class="frequency-slider">
+            <span class="label">Refresh frequency (ms): {{ refreshMilliseconds }} </span>
             <igx-slider id="slider"
             [minValue]="10" 
             [maxValue]="1000" 
             [value]="refreshMilliseconds" 
             [isContinuous]=true
             (onValueChange)="onRefreshFrequencyChanged($event.value)"></igx-slider>
-          </div>
-         </div>
-          
         </div>
+        
     </div>
+</div>
