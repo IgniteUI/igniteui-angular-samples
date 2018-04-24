@@ -194,8 +194,15 @@ export class SampleAssetsGenerator {
                     appModuleNgImports.push(appModuleNgImport.name);
                 } else {
                     let appModuleNgImportWithProviders: ModuleWithProviders =
-                        config.appModuleConfig.ngImports[i] as ModuleWithProviders;
-                    appModuleNgImports.push(appModuleNgImportWithProviders.ngModule.name + ".forRoot()");
+                        config.appModuleConfig.ngImports[i] as ModuleWithProviders,
+                        useClass = "", forRoot = ".forRoot()";
+                    if (appModuleNgImportWithProviders.providers.length > 0
+                        && appModuleNgImportWithProviders.providers[0].useClass 
+                        && appModuleNgImportWithProviders.providers[0].useClass.name) {
+                        useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
+                        forRoot = `.forRoot(\"${useClass}\")`;
+                    }
+                    appModuleNgImports.push(appModuleNgImportWithProviders.ngModule.name + forRoot);
                 }
             }
         }
