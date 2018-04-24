@@ -200,7 +200,7 @@ export class SampleAssetsGenerator {
                         && appModuleNgImportWithProviders.providers[0].useClass 
                         && appModuleNgImportWithProviders.providers[0].useClass.name) {
                         useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
-                        forRoot = `.forRoot(\"${useClass}\")`;
+                        forRoot = `.forRoot(${useClass})`;
                     }
                     appModuleNgImports.push(appModuleNgImportWithProviders.ngModule.name + forRoot);
                 }
