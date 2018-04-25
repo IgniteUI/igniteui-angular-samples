@@ -1,12 +1,11 @@
 @import '~igniteui-angular/core/styles/themes/index';
 
+@include igx-core();
+
 $crm-grid-palette: igx-palette(
     $primary: #09f,
     $secondary: #ffc800
 );
-
-@include igx-core();
-@include igx-theme($crm-grid-palette);
 
 $primary-100: igx-color($crm-grid-palette, "primary", 100);
 $primary-200: igx-color($crm-grid-palette, "primary", 200);
@@ -24,6 +23,14 @@ $secondary-500: igx-color($crm-grid-palette, "secondary", 500);
 $secondary-600: igx-color($crm-grid-palette, "secondary", 600);
 $secondary-700: igx-color($crm-grid-palette, "secondary", 700);
 
+
+$checkbox-theme: igx-checkbox-theme(
+    $fill-color: $secondary-500
+);
+
+@include igx-checkbox($checkbox-theme, $crm-grid-palette);
+
+
 // grid theme
 $crm-grid-theme: igx-grid-theme(
     $header-background: lighten($primary-100, 15),
@@ -33,7 +40,7 @@ $crm-grid-theme: igx-grid-theme(
     $row-hover-background: lighten($primary-100, 10)
 );
 
-@include igx-grid($crm-grid-theme);
+@include igx-grid($crm-grid-theme, $crm-grid-palette);
 
 // button theme
 $crm-button-theme: igx-button-theme(
@@ -44,8 +51,9 @@ $crm-button-theme: igx-button-theme(
     $flat-focus-background: $primary-200,
     $flat-focus-text-color: $primary-100
 );
+
 // Pass the theme to the igx-button component mixin
-@include igx-button($crm-button-theme);
+@include igx-button($crm-button-theme, $crm-grid-palette);
 
 // linear bar theme
 $crm-linear-bar-theme: igx-progress-linear-theme(
@@ -53,7 +61,7 @@ $crm-linear-bar-theme: igx-progress-linear-theme(
     $track-color: igx-color($crm-grid-palette, "error", 500)
 );
 
-@include igx-progress-linear($crm-linear-bar-theme);
+@include igx-progress-linear($crm-linear-bar-theme, $crm-grid-palette);
 
 .sample-wrapper {
     width: inherit;
