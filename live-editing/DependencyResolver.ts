@@ -27,7 +27,7 @@ const COMMON_PACKAGE_DEPENDENCIES = [
     "web-animations-js"
 ];
 
-const DEFAULT_DEPENDENCIES = [
+export const DEFAULT_DEPENDENCIES = [
     "@angular/animations",
     "@angular/forms",
     "@angular/http",
