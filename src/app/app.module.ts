@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -110,6 +111,7 @@ import { GridContextmenuComponent } from "./grid/grid-sorting-sample/grid-contex
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { DataService } from "./grid/services/data.service";
+import { MockDataService } from "./grid/services/mock-data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
@@ -176,6 +178,7 @@ import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
 
+import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 
@@ -352,7 +355,9 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         IgxTimePickerModule,
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot()
+        CategoryChartPerformanceSamplesModule.forRoot(),
+        FinancialChartSamplesModule.forRoot(),
+        InMemoryWebApiModule.forRoot(MockDataService)
     ],
     providers: [
         DataService,

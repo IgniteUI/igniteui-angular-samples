@@ -1,20 +1,29 @@
 <div class="sample-container">
-    <igx-category-chart 
-      yAxisLabelExtent="40" 
-      #chart>
-    </igx-category-chart>
-
-    <div class="sample-controls">
-      <span #loadTimeSpan class="label">Load Time: </span> 
-      <input type="button" value="Generate Data" (click)="onGenerateDataClicked()" />
-      <input type="button" value="Assign Data" (click)="onAssignDataClicked()" />
-      <br/>
-      <span class="label">Data amount: {{ maxPoints }}</span><input 
-        type="range" 
-        class="max-points-slider"
-        [value]="maxPoints" 
-        min="5000"
-        max="2000000"
-        (change)="onMaxPointsChanged($event.target.value)" /> 
+        <igx-category-chart 
+          yAxisLabelExtent="40" 
+          #chart>
+        </igx-category-chart>
+    
+        <div class="sample-controls">
+          <span #loadTimeSpan class="load-time">Load Time: </span> 
+          <button igxButton="raised" 
+            igxRipple="white"
+            (click)="onGenerateDataClicked()"
+          >Generate Data</button>
+          <button igxButton="raised" 
+            igxRipple="white"
+            (click)="onAssignDataClicked()"
+          >Assign Data</button>
+    
+          <div class="max-points-slider">
+            <span class="label">Data amount: {{ maxPoints | number }}</span>
+            <igx-slider id="slider"
+                [minValue]="5000"
+                [maxValue]="2000000"
+                [value]="maxPoints" 
+                [isContinuous]=true
+                (onValueChange)="onMaxPointsChanged($event.value)">
+            </igx-slider>
+          </div>
+        </div>
     </div>
-</div>

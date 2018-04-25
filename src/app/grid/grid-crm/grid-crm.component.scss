@@ -142,3 +142,9 @@ $crm-linear-bar-theme: igx-progress-linear-theme(
         background: lighten($primary-100, 10);
     }
 }
+
+//resize handle
+
+.igx-grid__th-resize-line {
+    background: $secondary-500;
+}

@@ -8,15 +8,11 @@ import { CategoryChartConfigOptionsComponent } from "./config-options/category-c
 import {
     CategoryChartCustomTooltipsComponent
 } from "./custom-tooltips/category-chart-custom-tooltips-sample.component";
-import { CategoryChartHighFrequencyComponent } from "./high-frequency/category-chart-high-frequency-sample.component";
-import { CategoryChartHighVolumeComponent } from "./high-volume/category-chart-high-volume-sample.component";
 import { CategoryChartOverviewComponent } from "./overview/category-chart-overview-sample.component";
 
 @NgModule({
     declarations: [
         CategoryChartOverviewComponent,
-        CategoryChartHighVolumeComponent,
-        CategoryChartHighFrequencyComponent,
         CategoryChartAxisOptionsComponent,
         CategoryChartConfigOptionsComponent,
         CategoryChartCustomTooltipsComponent

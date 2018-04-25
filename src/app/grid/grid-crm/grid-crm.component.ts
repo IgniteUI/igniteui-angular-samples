@@ -96,7 +96,7 @@ export class GridCRMComponent implements OnInit {
     public ngAfterViewInit() {
         this.cols = this.grid1.columnList;
         this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
-        this.pinnedColsLength = this.grid1.pinnedColumns.length;
+        this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
     }
 
     public toggleVisibility(col: IgxColumnComponent) {
