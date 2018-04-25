@@ -108,13 +108,17 @@ export class GridCRMComponent implements OnInit {
         col.hidden = !col.hidden;
     }
 
-    public togglePin(col: IgxColumnComponent) {
+    public togglePin(col: IgxColumnComponent, evt) {
         if (col.pinned) {
             this.grid1.unpinColumn(col.field);
             this.pinnedColsLength--;
         } else {
-            this.grid1.pinColumn(col.field);
-            this.pinnedColsLength++;
+            if (this.grid1.pinColumn(col.field)) {
+                this.pinnedColsLength++;
+            } else {
+                // if pinning fails uncheck the checkbox
+                evt.checkbox.checked = false;
+            }
         }
     }
 
