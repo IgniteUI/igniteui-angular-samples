@@ -25,7 +25,7 @@
                             <h4 class="dd-title">Pinned columns:</h4>
                             <ul class="dd-list">
                                 <li class="dd-list__item" *ngFor="let col of cols">
-                                    <igx-checkbox (change)="togglePin(col)" [checked]="col.pinned">{{col.header}}</igx-checkbox>
+                                    <igx-checkbox (change)="togglePin(col, $event)" [checked]="col.pinned">{{col.header}}</igx-checkbox>
                                 </li>
                             </ul>
                         </div>
