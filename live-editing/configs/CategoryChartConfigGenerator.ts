@@ -21,6 +21,7 @@ import {
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { IgxSliderModule } from "igniteui-angular/main";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -50,9 +51,9 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CategoryChartHighVolumeComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCategoryChartModule, CategoryChartHighVolumeComponent],
+                imports: [IgxCategoryChartModule, CategoryChartHighVolumeComponent, IgxSliderModule],
                 ngDeclarations: [CategoryChartHighVolumeComponent],
-                ngImports: [IgxCategoryChartModule]
+                ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
             packageDependencies: deps
         }));
@@ -66,9 +67,9 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CategoryChartHighFrequencyComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCategoryChartModule, CategoryChartHighFrequencyComponent],
+                imports: [IgxCategoryChartModule, CategoryChartHighFrequencyComponent, IgxSliderModule],
                 ngDeclarations: [CategoryChartHighFrequencyComponent],
-                ngImports: [IgxCategoryChartModule]
+                ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
             packageDependencies: deps
         }));
