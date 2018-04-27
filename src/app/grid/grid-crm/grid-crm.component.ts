@@ -2,8 +2,7 @@ import {
     Component,
     OnInit,
     QueryList,
-    ViewChild,
-    ViewEncapsulation
+    ViewChild
 } from "@angular/core";
 
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
@@ -65,7 +64,6 @@ class SoonSummary extends IgxDateSummaryOperand {
 }
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-grid",
     styleUrls: ["./grid-crm.component.scss"],
     templateUrl: "./grid-crm.component.html"
