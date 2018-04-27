@@ -166,19 +166,18 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
-        let dependencies = DR.DEFAULT_DEPENDENCIES.slice();
-        dependencies.push("angular-in-memory-web-api");
-
         configs.push(new Config({
             component: GridRemoteVirtualizationSampleComponent,
             additionalFiles: ["/src/app/grid/services/mock-data.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
+                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
+                     IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule, InMemoryWebApiModule.forRoot(MockDataService)],
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule,
+                     InMemoryWebApiModule.forRoot(MockDataService)],
                 ngProviders: []
             }),
-            packageDependencies: dependencies
+            additionalDependencies: ["angular-in-memory-web-api"]
         }));
 
         configs.push(new Config({
