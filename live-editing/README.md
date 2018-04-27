@@ -48,6 +48,7 @@ API description of the `AppModuleConfig` class, used in the `Config` class.
 ### DependenciesType API
 
 API description of the `DependenciesType` enum, used in the `Config` class.
+
 | Constant | Description |
 | --- | --- |
 | Default | Loads `igniteui-angular` package and its dependencies. |
