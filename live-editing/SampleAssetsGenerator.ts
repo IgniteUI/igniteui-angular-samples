@@ -39,6 +39,7 @@ import { ToggleConfigGenerator } from "./configs/ToggleConfigGenerator";
 import * as fs from "fs";
 import * as path from "path";
 import * as Collections from "typescript-collections";
+import * as async from "async";
 import { Config } from "./configs/core/Config";
 import { IConfigGenerator } from "./configs/core/IConfigGenerator";
 import { DependencyResolver } from "./DependencyResolver";
@@ -89,16 +90,26 @@ export class SampleAssetsGenerator {
     }
 
     public generateSamplesAssets() {
+        let self = this;
         let currentFileImports = this.tsImportsService.getFileImports(__filename);
-        for (let i = 0; i < CONFIG_GENERATORS.length; i++) {
-            let configGeneratorFilePath = path.join(__dirname,
-                currentFileImports.getValue(CONFIG_GENERATORS[i].name) + ".ts");
-            let configGeneratorImports = this.tsImportsService.getFileImports(configGeneratorFilePath);
-            let configs = (new CONFIG_GENERATORS[i]()).generateConfigs();
-            for (let j = 0; j < configs.length; j++) {
-                this.generateSampleAssets(configs[j], configGeneratorImports);
-            }
+        let parallelTasks = [];
+        for (let key in CONFIG_GENERATORS) {
+            parallelTasks.push(function (callback) {
+                let configGeneratorFilePath = path.join(__dirname,
+                    currentFileImports.getValue(CONFIG_GENERATORS[key].name) + ".ts");
+                let configGeneratorImports = self.tsImportsService.getFileImports(configGeneratorFilePath);
+                let configs = (new CONFIG_GENERATORS[key]()).generateConfigs();
+                for (let j = 0; j < configs.length; j++) {
+                    self.generateSampleAssets(configs[j], configGeneratorImports);
+                }
+
+                callback();
+            });
         }
+
+        async.parallel(parallelTasks, function (err, results) {
+            if(err) console.error(err.message);
+        });
     }
 
     private generateSampleAssets(config: Config, configImports: Collections.Dictionary<string, string>) {
