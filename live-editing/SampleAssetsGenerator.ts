@@ -15,6 +15,7 @@ import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
 import { ExportCsvConfigGenerator } from "./configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "./configs/ExportExcelConfigGenerator";
 import { FinancialChartConfigGenerator } from "./configs/FinancialChartConfigGenerator";
+import { ForConfigGenerator } from "./configs/ForConfigGenerator";
 import { GridConfigGenerator } from "./configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "./configs/InputGroupConfigGenerator";
@@ -89,19 +90,25 @@ export class SampleAssetsGenerator {
     }
 
     public generateSamplesAssets() {
+        let self = this;
         let currentFileImports = this.tsImportsService.getFileImports(__filename);
-        async.forEachOf(CONFIG_GENERATORS, (value, key, callback) => {
-            let configGeneratorFilePath = path.join(__dirname,
-                currentFileImports.getValue(value.name) + ".ts");
-            let configGeneratorImports = this.tsImportsService.getFileImports(configGeneratorFilePath);
-            let configs = (new value()).generateConfigs();
-            for (let j = 0; j < configs.length; j++) {
-                this.generateSampleAssets(configs[j], configGeneratorImports);
-            }
+        let parallelTasks = [];
+        for (let key in CONFIG_GENERATORS) {
+            parallelTasks.push(function (callback) {
+                let configGeneratorFilePath = path.join(__dirname,
+                    currentFileImports.getValue(CONFIG_GENERATORS[key].name) + ".ts");
+                let configGeneratorImports = self.tsImportsService.getFileImports(configGeneratorFilePath);
+                let configs = (new CONFIG_GENERATORS[key]()).generateConfigs();
+                for (let j = 0; j < configs.length; j++) {
+                    self.generateSampleAssets(configs[j], configGeneratorImports);
+                }
 
-            callback();
-        }, err => {
-            if (err) console.error(err.message);
+                callback();
+            });
+        }
+
+        async.parallel(parallelTasks, function (err, results) {
+            if(err) console.error(err.message);
         });
     }
 
