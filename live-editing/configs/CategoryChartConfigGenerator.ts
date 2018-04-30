@@ -1,6 +1,12 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import {
+    CategoryChartAxisOptionsComponent
+} from "../../src/app/category-chart/axis-options/category-chart-axis-options-sample.component";
+import {
+    CategoryChartConfigOptionsComponent
+} from "../../src/app/category-chart/config-options/category-chart-config-options-sample.component";
+import {
      CategoryChartCustomTooltipsComponent
 } from "../../src/app/category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
 import {
@@ -12,24 +18,15 @@ import {
 import {
     CategoryChartOverviewComponent
 } from "../../src/app/category-chart/overview/category-chart-overview-sample.component";
-import {
-    CategoryChartConfigOptionsComponent
-} from "../../src/app/category-chart/config-options/category-chart-config-options-sample.component";
-import {
-    CategoryChartAxisOptionsComponent
-} from "../../src/app/category-chart/axis-options/category-chart-axis-options-sample.component";
+import { DependenciesType } from "../DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { IgxSliderModule } from "igniteui-angular/main";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
-        let deps = new Array<string>();
-
-        deps.push("@angular/animations");
-        deps.push("igniteui-angular-charts");
-        deps.push("tslib");
 
         configs.push(new Config({
             component: CategoryChartOverviewComponent,
@@ -38,45 +35,30 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartOverviewComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            packageDependencies: deps
+            dependenciesType: DependenciesType.Charts
         }));
-
-        deps = new Array<string>();
-        deps.push("@angular/animations");
-        deps.push("igniteui-angular-charts");
-        deps.push("igniteui-angular");
-        deps.push("tslib");
 
         configs.push(new Config({
             component: CategoryChartHighVolumeComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCategoryChartModule, CategoryChartHighVolumeComponent],
+                imports: [IgxCategoryChartModule, CategoryChartHighVolumeComponent, IgxSliderModule],
                 ngDeclarations: [CategoryChartHighVolumeComponent],
-                ngImports: [IgxCategoryChartModule]
+                ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
-            packageDependencies: deps
+            dependenciesType: DependenciesType.Charts,
+            additionalDependencies: ["igniteui-angular"]
         }));
-
-        deps = new Array<string>();
-        deps.push("@angular/animations");
-        deps.push("igniteui-angular-charts");
-        deps.push("igniteui-angular");
-        deps.push("tslib");
 
         configs.push(new Config({
             component: CategoryChartHighFrequencyComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCategoryChartModule, CategoryChartHighFrequencyComponent],
+                imports: [IgxCategoryChartModule, CategoryChartHighFrequencyComponent, IgxSliderModule],
                 ngDeclarations: [CategoryChartHighFrequencyComponent],
-                ngImports: [IgxCategoryChartModule]
+                ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
-            packageDependencies: deps
+            dependenciesType: DependenciesType.Charts,
+            additionalDependencies: ["igniteui-angular"]
         }));
-
-        deps = new Array<string>();
-        deps.push("@angular/animations");
-        deps.push("igniteui-angular-charts");
-        deps.push("tslib");
 
         configs.push(new Config({
             component: CategoryChartCustomTooltipsComponent,
@@ -85,13 +67,8 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartCustomTooltipsComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            packageDependencies: deps
+            dependenciesType: DependenciesType.Charts
         }));
-
-        deps = new Array<string>();
-        deps.push("@angular/animations");
-        deps.push("igniteui-angular-charts");
-        deps.push("tslib");
 
         configs.push(new Config({
             component: CategoryChartConfigOptionsComponent,
@@ -100,13 +77,8 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartConfigOptionsComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            packageDependencies: deps
+            dependenciesType: DependenciesType.Charts
         }));
-
-        deps = new Array<string>();
-        deps.push("@angular/animations");
-        deps.push("igniteui-angular-charts");
-        deps.push("tslib");
 
         configs.push(new Config({
             component: CategoryChartAxisOptionsComponent,
@@ -115,7 +87,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartAxisOptionsComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            packageDependencies: deps
+            dependenciesType: DependenciesType.Charts
         }));
 
         return configs;

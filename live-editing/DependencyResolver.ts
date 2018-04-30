@@ -3,6 +3,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as Collections from "typescript-collections";
+import { DependenciesType } from "./DependenciesType";
 
 const PACKAGES_CONFIG_PATH = path.join(__dirname, "../package.json");
 
@@ -41,11 +42,15 @@ const DEFAULT_DEPENDENCIES = [
     "tslib"
 ];
 
+const CHARTS_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-charts",
+    "tslib"
+];
+
 export class DependencyResolver {
-
-    public static resolveSampleDependencies(configDependencies: string[]) {
-        configDependencies = configDependencies || DEFAULT_DEPENDENCIES;
-
+    public static resolveSampleDependencies(type: DependenciesType = DependenciesType.Default,
+                                            additionalDependencies?: string[]) {
         let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
         let packageFileDependencies = packageFile.dependencies;
         let dependenciesNeeded = new Collections.Set<string>();
@@ -56,8 +61,28 @@ export class DependencyResolver {
         }
 
         // Add sample dependencies.
-        for (let i = 0; i < configDependencies.length; i++) {
-            dependenciesNeeded.add(configDependencies[i]);
+        switch (type) {
+            case DependenciesType.Default:
+                for (let i = 0; i < DEFAULT_DEPENDENCIES.length; i++) {
+                    dependenciesNeeded.add(DEFAULT_DEPENDENCIES[i]);
+                }
+
+                break;
+            case DependenciesType.Charts:
+                for (let i = 0; i < CHARTS_DEPENDENCIES.length; i++) {
+                    dependenciesNeeded.add(CHARTS_DEPENDENCIES[i]);
+                }
+
+                break;
+            default:
+                throw new Error("Unrecognized dependency type.");
+        }
+
+        // Add extra dependencies
+        if (additionalDependencies) {
+            for (let i = 0; i < additionalDependencies.length; i++) {
+                dependenciesNeeded.add(additionalDependencies[i]);
+            }
         }
 
         for (let key in packageFileDependencies) {

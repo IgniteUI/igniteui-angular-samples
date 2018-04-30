@@ -1,14 +1,16 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxCsvExporterService } from "igniteui-angular/services/index";
-import { CsvExportComponent } from "../../src/app/export-csv/csv-export.component";
-import { CsvExportSample1Component } from "../../src/app/export-csv/csv-export-sample-1/csv-export-sample-1.component";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxGridModule } from "igniteui-angular/main";
+import { IgxCsvExporterService } from "igniteui-angular/services/index";
+import { CsvExportSample1Component } from "../../src/app/export-csv/csv-export-sample-1/csv-export-sample-1.component";
+import { CsvExportComponent } from "../../src/app/export-csv/csv-export.component";
+import * as DR from "../DependencyResolver";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ExportCsvConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: CsvExportComponent,
@@ -17,7 +19,8 @@ export class ExportCsvConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CsvExportComponent],
                 ngImports: [],
                 ngProviders: [IgxCsvExporterService]
-            })
+            }),
+            additionalDependencies: ["immediate"]
         }));
 
         configs.push(new Config({
@@ -28,17 +31,10 @@ export class ExportCsvConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule],
                 ngProviders: [IgxCsvExporterService]
             }),
-            shortenComponentPathBy: "/export-csv/"
+            shortenComponentPathBy: "/export-csv/",
+            additionalDependencies: ["immediate"]
         }));
 
         return configs;
     }
 }
-
-
-
-
-
-
-
-

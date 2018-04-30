@@ -1,14 +1,18 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxExcelExporterService } from "igniteui-angular/services/index";
-import { ExcelExportComponent } from "../../src/app/export-excel/excel-export.component";
-import { ExcelExportSample1Component } from "../../src/app/export-excel/excel-export-sample-1/excel-export-sample-1.component";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxGridModule } from "igniteui-angular/main";
+import { IgxExcelExporterService } from "igniteui-angular/services/index";
+import {
+    ExcelExportSample1Component
+} from "../../src/app/export-excel/excel-export-sample-1/excel-export-sample-1.component";
+import { ExcelExportComponent } from "../../src/app/export-excel/excel-export.component";
+import * as DR from "../DependencyResolver";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ExportExcelConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: ExcelExportComponent,
@@ -17,7 +21,8 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelExportComponent],
                 ngImports: [],
                 ngProviders: [IgxExcelExporterService]
-            })
+            }),
+            additionalDependencies: ["immediate"]
         }));
 
         configs.push(new Config({
@@ -28,7 +33,8 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule],
                 ngProviders: [IgxExcelExporterService]
             }),
-            shortenComponentPathBy: "/export-excel/"
+            shortenComponentPathBy: "/export-excel/",
+            additionalDependencies: ["immediate"]
         }));
 
         return configs;

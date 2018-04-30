@@ -35,6 +35,7 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import * as DR from "../DependencyResolver";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -169,34 +170,15 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridRemoteVirtualizationSampleComponent,
             additionalFiles: ["/src/app/grid/services/mock-data.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule, IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
+                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
+                     IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule, InMemoryWebApiModule.forRoot(MockDataService)],
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule,
+                     InMemoryWebApiModule.forRoot(MockDataService)],
                 ngProviders: []
             }),
-            packageDependencies: [
-                "@angular/common",
-                "@angular/compiler",
-                "@angular/core",
-                "@angular/forms", // included in app.module.ts.template
-                "@angular/platform-browser",
-                "@angular/platform-browser-dynamic",
-                "@angular/http",
-                "@angular/animations",
-                "rxjs",
-                "zone.js",
-                "igniteui-angular", // needed for all samples because of styles.scss
-                "jszip", // dependency for igniteui-angular
-                "classlist.js",
-                "core-js",
-                "hammerjs",
-                "intl",
-                "web-animations-js",
-                "angular-in-memory-web-api"
-            ]
+            additionalDependencies: ["angular-in-memory-web-api"]
         }));
-
-
 
         configs.push(new Config({
             component: PinningSampleComponent,

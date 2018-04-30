@@ -2,8 +2,7 @@ import {
     Component,
     OnInit,
     QueryList,
-    ViewChild,
-    ViewEncapsulation
+    ViewChild
 } from "@angular/core";
 
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
@@ -65,7 +64,6 @@ class SoonSummary extends IgxDateSummaryOperand {
 }
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-grid",
     styleUrls: ["./grid-crm.component.scss"],
     templateUrl: "./grid-crm.component.html"
@@ -108,13 +106,17 @@ export class GridCRMComponent implements OnInit {
         col.hidden = !col.hidden;
     }
 
-    public togglePin(col: IgxColumnComponent) {
+    public togglePin(col: IgxColumnComponent, evt) {
         if (col.pinned) {
             this.grid1.unpinColumn(col.field);
             this.pinnedColsLength--;
         } else {
-            this.grid1.pinColumn(col.field);
-            this.pinnedColsLength++;
+            if (this.grid1.pinColumn(col.field)) {
+                this.pinnedColsLength++;
+            } else {
+                // if pinning fails uncheck the checkbox
+                evt.checkbox.checked = false;
+            }
         }
     }
 
