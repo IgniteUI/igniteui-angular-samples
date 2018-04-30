@@ -1,20 +1,18 @@
-import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Config } from "./core/Config";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { IgxExcelExporterService } from "igniteui-angular/services/index";
-import { ExcelExportComponent } from "../../src/app/export-excel/excel-export.component";
-import { ExcelExportSample1Component } from "../../src/app/export-excel/excel-export-sample-1/excel-export-sample-1.component";
+/* tslint:disable:object-literal-sort-keys */
 import { IgxGridModule } from "igniteui-angular/main";
+import { IgxExcelExporterService } from "igniteui-angular/services/index";
+import {
+    ExcelExportSample1Component
+} from "../../src/app/export-excel/excel-export-sample-1/excel-export-sample-1.component";
+import { ExcelExportComponent } from "../../src/app/export-excel/excel-export.component";
 import * as DR from "../DependencyResolver";
+import { AppModuleConfig } from "./core/AppModuleConfig";
+import { Config } from "./core/Config";
+import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ExportExcelConfigGenerator implements IConfigGenerator {
-    generateConfigs(): Config[] {
-        let configs = new Array<Config>();
-
-        // Including this because of the immediate package. Will remove it as soon as
-        // we resolve the issue with it.
-        let dependencies = DR.DEFAULT_DEPENDENCIES.slice();
-        dependencies.push("immediate");
+    public generateConfigs(): Config[] {
+        const configs = new Array<Config>();
 
         configs.push(new Config({
             component: ExcelExportComponent,
@@ -24,7 +22,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngImports: [],
                 ngProviders: [IgxExcelExporterService]
             }),
-            packageDependencies: dependencies
+            additionalDependencies: ["immediate"]
         }));
 
         configs.push(new Config({
@@ -36,7 +34,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngProviders: [IgxExcelExporterService]
             }),
             shortenComponentPathBy: "/export-excel/",
-            packageDependencies: dependencies
+            additionalDependencies: ["immediate"]
         }));
 
         return configs;
