@@ -8,10 +8,10 @@
                     <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefHiding"><igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}} hidden</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
                     <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
                         <div class="toggle-section">
-                            <h4 class="dd-title">Visible columns:</h4>
+                            <h4 class="dd-title">Hidden columns:</h4>
                             <ul class="dd-list">
                                 <li class="dd-list__item" *ngFor="let col of cols">
-                                    <igx-checkbox (change)="toggleVisibility(col)" [checked]="!col.hidden">{{col.header}}</igx-checkbox>
+                                    <igx-checkbox (change)="toggleVisibility(col)" [checked]="col.hidden">{{col.header}}</igx-checkbox>
                                 </li>
                             </ul>
                         </div>
