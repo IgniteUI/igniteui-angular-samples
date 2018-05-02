@@ -16,8 +16,9 @@
     </div>
     <div class="chart">
         <igx-category-chart height="100%" width="100%"
-            [dataSource]="data" chartTitle="Energy Production"
-            subtitle="by Country"
+            [dataSource]="data"
+            chartTitle="Energy Production by Country"
+            yAxisMinimumValue="0"
             [tooltipTemplate]="valueTooltip"
             [chartType]="chartType">
         </igx-category-chart>
@@ -25,12 +26,12 @@
 
     <ng-template let-series="series" let-item="item" #valueTooltip>
         <div>
-            <span> {{item.Country}} energy use: <br/></span>
-            <span> Coal :{{item.Coal | number}}<br/></span>
-            <span> Oil :{{item.Oil | number}}<br/></span>
-            <span> Gas :{{item.Gas | number}}<br/></span>
-            <span> Nuclear :{{item.Nuclear | number}}<br/></span>
-            <span> Hyrdo :{{item.Hydro | number}}<br/></span>
+            <span [style.color]="series.actualBrush">Production of {{item.Country}}<br/></span>
+            <span> Coal: {{item.Coal | number}}<br/></span>
+            <span> Oil: {{item.Oil | number}}<br/></span>
+            <span> Gas: {{item.Gas | number}}<br/></span>
+            <span> Nuclear: {{item.Nuclear | number}}<br/></span>
+            <span> Hyrdo: {{item.Hydro | number}}<br/></span>
         </div>
     </ng-template>
 </div>

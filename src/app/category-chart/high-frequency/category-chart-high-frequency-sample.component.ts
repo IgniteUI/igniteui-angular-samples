@@ -167,16 +167,18 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
     }
 
     private toShortString(largeValue: number): string {
-        let multiplier = "";
-        let roundValue = largeValue;
+        let roundValue: number;
+
         if (largeValue >= 1000000) {
-            multiplier = "m";
             roundValue = Math.round(largeValue / 100000) / 10;
+            return roundValue + "m";
         }
         if (largeValue >= 1000) {
-            multiplier = "k";
             roundValue = Math.round(largeValue / 100) / 10;
+            return roundValue + "k";
         }
-        return roundValue + multiplier;
+
+        roundValue = Math.round(largeValue);
+        return roundValue + "";
     }
 }
