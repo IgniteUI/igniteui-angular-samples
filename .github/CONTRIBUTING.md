@@ -4,7 +4,7 @@ When working on an issue for the Ignite UI Angular Samples, you need to be aware
 
 ## Development - applicable to issues and pull requests
 1. `status: in-review` this is the initial status of an issue. If the label is not placed, go ahead and place it.
-2. `status: in-development` this is the status once you start working on an issue. Assign the issue to yourself if it hasn't been assigned already and remove the previous status and assign status: in-development.
+2. `status: in-development` this is the status once you start working on an issue. Assign the issue to yourself if it hasn't been assigned already, remove the previous status and assign status: in-development.
 3. `status: by-design` this is the status of an issue that has been reviewed and has been determined that the current design of the feature is such that the issue describes the correct behavior as incorrect. Remove other statuses and place this status if you've reviewed the issue.
 4. `status: third-party-issue` this is the status of an issue that has been reviewed, has been determined to be an issue, but the root case is not in the Ignite UI for Angular code. Example would be browser specific bugs caused by the particular browser's rendering or JavaScript engines, or an issue with the Angular framework. Remove other statuses and place only this one if you're the one performing the investigation.
 5. `status: not-to-fix` this is the status of issues that derive from our code, but have been decided to leave as is. This is done when fixes require general design and/or architecture changes and are very risky.
