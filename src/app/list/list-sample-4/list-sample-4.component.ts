@@ -45,8 +45,7 @@ export class ListSample4Component implements OnInit {
 
   public ngOnInit() { }
 
-  public toggleFavorite(item: IgxListItemComponent) {
-    const contact = this.contacts[item.index - 1];
+  public toggleFavorite(contact: any) {
     contact.isFavorite = !contact.isFavorite;
   }
 
