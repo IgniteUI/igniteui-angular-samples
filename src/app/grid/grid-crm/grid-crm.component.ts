@@ -123,4 +123,8 @@ export class GridCRMComponent implements OnInit {
     public exportData() {
         this.excelExporterService.exportData(this.localData, new IgxExcelExporterOptions("Report"));
     }
+
+    public formatDate(val: Date) {
+        return new Intl.DateTimeFormat("en-US").format(val);
+    }
 }
