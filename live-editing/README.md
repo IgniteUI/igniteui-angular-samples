@@ -30,9 +30,9 @@ API description of the `Config` class, needed by the live editing engine to conv
 | component | Type&lt;any&gt; | required | The sample component. It should be located in a `.ts` file and should have a complimentary `.html` and `.scss` file. Each of the three files should follow this naming convention - `component-name/component-name.component.extension`.|
 | appModuleConfig | AppModuleConfig | required | Description of the `app.module.ts` file. |
 | additionalFiles | string[] | optional | Additional files, besides the three sample component files. Each path should start from `/src/`, for example `/src/app/grid/data.ts`. |
-| packageDependencies | string[] | optional | A list of dependencies to be used instead of the default ones. |
+| dependenciesType | DependenciesType | optional | The set of dependencies you want your sample to load. The default type is `Default`. |
+| additionalDependencies | string[] | optional | A list of additional dependencies. |
 | shortenComponentPathBy | string | optional | Directory/directories to be shortened from the sample component path. |
-
 
 ### AppModuleConfig API
 
@@ -43,7 +43,17 @@ API description of the `AppModuleConfig` class, used in the `Config` class.
 | imports | Array&lt;Type&lt;any&gt; &#124; any&gt; | required | TypeScript imports. For example the type `HttpClientModule` will result in `import { HttpClientModule } from "@angular/common/http";` |
 | ngDeclarations | Array&lt;Type&lt;any&gt;&gt; | required | Angular declarations. Used in the `@NgModule` decorator. |
 | ngImports | Array&lt;Type&lt;any&gt; &#124; ModuleWithProviders &#124; any&gt;| required | Angular imports. Used in the `@NgModule` decorator. |
-| ngProviders | Provider[] | optional | Angular providers. Used in the `@NgModule` decorator.
+| ngProviders | Provider[] | optional | Angular providers. Used in the `@NgModule` decorator. |
+
+### DependenciesType API
+
+API description of the `DependenciesType` enum, used in the `Config` class.
+
+| Constant | Description |
+| --- | --- |
+| Default | Loads `igniteui-angular` package and its dependencies. |
+| Charts | Loads `igniteui-angular-charts` package and its dependencies. |
+
 
 ### Configuration Generator
 

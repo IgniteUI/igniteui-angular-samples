@@ -61,15 +61,19 @@ export class CategoryChartHighVolumeComponent implements AfterViewInit, OnDestro
     public onMaxPointsChanged(val: string) {
         let num: number = parseInt(val, 10);
         if (isNaN(num)) {
-            num = 500000;
+            num = 5000;
         }
-        if (num <= 0) {
-            num = 500000;
+        if (num < 5000) {
+            num = 5000;
         }
         if (num > 2000000) {
             num = 2000000;
         }
         this.maxPoints = num;
+    }
+
+    public get maxPointsText(): string {
+        return this.toShortString(this._maxPoints);
     }
 
     public get maxPoints(): number {
@@ -118,10 +122,25 @@ export class CategoryChartHighVolumeComponent implements AfterViewInit, OnDestro
 
     private generateData(): any[] {
         const data: any[] = [];
-        for (this.currIndex = 0; this.currIndex < this.maxPoints; this.currIndex++) {
+        for (this.currIndex = 0; this.currIndex <= this.maxPoints; this.currIndex++) {
             this.currValue += Math.random() * 4.0 - 2.0;
-            data.push({ Label: this.currIndex.toString(), Value: this.currValue });
+            const label = this.toShortString(this.currIndex);
+            data.push({ Label: label, Value: this.currValue });
         }
         return data;
+    }
+
+    private toShortString(largeValue: number): string {
+        let multiplier = "";
+        let roundValue = largeValue;
+        if (largeValue >= 1000000) {
+            multiplier = "m";
+            roundValue = Math.round(largeValue / 100000) / 10;
+        }
+        if (largeValue >= 1000) {
+            multiplier = "k";
+            roundValue = Math.round(largeValue / 100) / 10;
+        }
+        return roundValue + multiplier;
     }
 }
