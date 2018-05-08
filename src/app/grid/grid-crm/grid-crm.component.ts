@@ -2,8 +2,7 @@ import {
     Component,
     OnInit,
     QueryList,
-    ViewChild,
-    ViewEncapsulation
+    ViewChild
 } from "@angular/core";
 
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
@@ -65,7 +64,6 @@ class SoonSummary extends IgxDateSummaryOperand {
 }
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-grid",
     styleUrls: ["./grid-crm.component.scss"],
     templateUrl: "./grid-crm.component.html"
@@ -124,5 +122,9 @@ export class GridCRMComponent implements OnInit {
 
     public exportData() {
         this.excelExporterService.exportData(this.localData, new IgxExcelExporterOptions("Report"));
+    }
+
+    public formatDate(val: Date) {
+        return new Intl.DateTimeFormat("en-US").format(val);
     }
 }
