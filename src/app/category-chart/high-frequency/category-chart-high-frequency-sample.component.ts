@@ -56,14 +56,15 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
 
     public onRefreshFrequencyChanged(val: string) {
         let num: number = parseInt(val, 10);
+
         if (isNaN(num)) {
             num = 10;
         }
-        if (num <= 0) {
+        if (num < 10) {
             num = 10;
         }
-        if (num > 50000) {
-            num = 50000;
+        if (num > 500) {
+            num = 500;
         }
         this._refreshMilliseconds = num;
         this.setupInterval();
@@ -71,16 +72,21 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
 
     public onMaxPointsChanged(val: string) {
         let num: number = parseInt(val, 10);
+
         if (isNaN(num)) {
             num = 5000;
         }
-        if (num <= 0) {
+        if (num < 5000) {
             num = 5000;
         }
         if (num > 2000000) {
             num = 2000000;
         }
         this.maxPoints = num;
+    }
+
+    public get maxPointsText(): string {
+        return this.toShortString(this._maxPoints);
     }
 
     public get maxPoints(): number {
@@ -158,5 +164,21 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
 
             this.fpsSpan.nativeElement.textContent = "FPS: " + Math.round(fps).toString();
         }
+    }
+
+    private toShortString(largeValue: number): string {
+        let roundValue: number;
+
+        if (largeValue >= 1000000) {
+            roundValue = Math.round(largeValue / 100000) / 10;
+            return roundValue + "m";
+        }
+        if (largeValue >= 1000) {
+            roundValue = Math.round(largeValue / 100) / 10;
+            return roundValue + "k";
+        }
+
+        roundValue = Math.round(largeValue);
+        return roundValue + "";
     }
 }
