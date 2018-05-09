@@ -1,0 +1,8 @@
+<div class="sample-wrapper drop-down-wrapper">
+    <button igxButton="raised" igxRipple (click)="toggleDropDown()">Countries</button>
+    <igx-drop-down>
+        <igx-drop-down-item *ngFor="let item of items" isDisabled={{item.disabled}} isHeader={{item.header}}>
+            {{ item.field }}
+        </igx-drop-down-item>
+    </igx-drop-down>
+</div>
