@@ -1,4 +1,6 @@
-@import '~igniteui-angular/core/styles/themes/index';
+$fa-font-path: "../node_modules/@fortawesome/fontawesome-free-webfonts/webfonts";
+@import "~igniteui-angular/core/styles/themes/index";
+@import url("../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css");
 
 @include igx-core();
 @include igx-theme($default-palette);
@@ -92,3 +94,4 @@ html, body {
 .headerAlignSyle {
     text-align: right !important;
 }
+
