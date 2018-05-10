@@ -1,4 +1,4 @@
-import { Component, Injectable, ViewChild } from "@angular/core";
+import { Component, Injectable, ViewChild, ViewEncapsulation } from "@angular/core";
 import { Http } from "@angular/http";
 import { DataType } from "igniteui-angular/data-operations/data-util";
 import { IgxButtonDirective } from "igniteui-angular/directives/button/button.directive";
@@ -6,11 +6,14 @@ import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { BehaviorSubject, Observable } from "rxjs/Rx";
 import { DATA } from "./data";
+
 @Component({
     providers: [],
     selector: "grid-sample",
     styleUrls: ["grid-pinning.component.scss"],
-    templateUrl: "grid-pinning.component.html"
+    templateUrl: "grid-pinning.component.html",
+    encapsulation: ViewEncapsulation.None,
+    
 })
 
 export class PinningSampleComponent {
