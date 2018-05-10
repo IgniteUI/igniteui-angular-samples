@@ -13,7 +13,11 @@ export class DropDownSample3Component implements OnInit {
         { field: "EU", header: true },
         { field: "Germany" },
         { field: "Bulgaria" },
-        { field: "UK", disabled: true }];
+        { field: "UK", disabled: true },
+        { field: "NA", header: true },
+        { field: "Canada" },
+        { field: "USA" },
+        { field: "Mexico" }];
 
     constructor() {
     }
