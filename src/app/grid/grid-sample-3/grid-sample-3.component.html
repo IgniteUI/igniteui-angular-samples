@@ -39,7 +39,7 @@
                 <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col.field)">functions</igx-icon>
             </ng-template>
       </igx-column>
-      <igx-column #col field="OrderDate" [dataType]="'date'" [hasSummary]="true">
+      <igx-column #col field="OrderDate" width="15%" [dataType]="'date'" [hasSummary]="true">
         <ng-template igxCell let-cell="cell" let-val let-row>
           {{val}}
         </ng-template>
