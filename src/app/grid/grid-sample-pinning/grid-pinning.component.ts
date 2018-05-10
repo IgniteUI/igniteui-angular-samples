@@ -8,12 +8,12 @@ import { BehaviorSubject, Observable } from "rxjs/Rx";
 import { DATA } from "./data";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     providers: [],
     selector: "grid-sample",
     styleUrls: ["grid-pinning.component.scss"],
-    templateUrl: "grid-pinning.component.html",
-    encapsulation: ViewEncapsulation.None,
-    
+    templateUrl: "grid-pinning.component.html"
+
 })
 
 export class PinningSampleComponent {
