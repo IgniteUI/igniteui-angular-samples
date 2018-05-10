@@ -176,7 +176,7 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
-        if (!data.length) {
+        if (data && !data.length) {
             return;
         }
 
@@ -198,7 +198,7 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
-        if (!data.length) {
+        if (data && !data.length) {
             return;
         }
 
