@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="relative-container">
-                    <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefPinning"><igx-icon class="header-icon">lock</igx-icon><span>{{pinnedColsLength}} pinned</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
+                    <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefPinning"><igx-icon class="pin-icon" fontSet="fas" iconName="fa-thumbtack"></igx-icon><span>{{pinnedColsLength}} pinned</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
                     <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
                         <div class="toggle-section">
                             <h4 class="dd-title">Pinned columns:</h4>
