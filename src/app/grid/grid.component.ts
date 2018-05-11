@@ -176,6 +176,10 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
+        if (data && !data.length) {
+            return;
+        }
+
         const result = [];
         result.push({
             key: "average",
@@ -194,6 +198,10 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
+        if (data && !data.length) {
+            return;
+        }
+
         const result = [];
         result.push(
             {
