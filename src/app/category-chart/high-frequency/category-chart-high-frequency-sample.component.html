@@ -20,7 +20,7 @@
             maxValue="2000000"
             [value]="maxPoints"
             [isContinuous]=true
-            (onValueChange)="onMaxPointsChanged($event.value)"></igx-slider>
+            (onValueChange)="onMaxPointsChanged($event.value)"></igx-slider>            
         </div>
 
         <div class="frequency-slider">
@@ -30,8 +30,11 @@
             maxValue="500"
             [value]="refreshMilliseconds"
             [isContinuous]=true
-            (onValueChange)="onRefreshFrequencyChanged($event.value)"></igx-slider>
+            (onValueChange)="onRefreshFrequencyChanged($event.value)"></igx-slider>             
         </div>
-
+        <div class="optimizeCheckbox">
+            <span class="label">Optimize Scaling: </span>
+            <input class="checkbox" type="checkbox" (change)="onOptimizeScalingChanged($event.target.checked)"/>
+        </div> 
     </div>
 </div>
