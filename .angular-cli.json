@@ -18,7 +18,10 @@
     "testTsconfig": "tsconfig.spec.json",
     "prefix": "app",
     "styles": [
-      "styles.scss"
+      "styles.scss",
+      "../node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
+      "../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
+      "../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css"
     ],
     "scripts": [],
     "environmentSource": "environments/environment.ts",

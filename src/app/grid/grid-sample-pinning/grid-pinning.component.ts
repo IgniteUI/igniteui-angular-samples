@@ -1,4 +1,4 @@
-import { Component, Injectable, ViewChild } from "@angular/core";
+import { Component, Injectable, ViewChild, ViewEncapsulation } from "@angular/core";
 import { Http } from "@angular/http";
 import { DataType } from "igniteui-angular/data-operations/data-util";
 import { IgxButtonDirective } from "igniteui-angular/directives/button/button.directive";
@@ -6,11 +6,14 @@ import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { BehaviorSubject, Observable } from "rxjs/Rx";
 import { DATA } from "./data";
+
 @Component({
+    encapsulation: ViewEncapsulation.None,
     providers: [],
     selector: "grid-sample",
     styleUrls: ["grid-pinning.component.scss"],
     templateUrl: "grid-pinning.component.html"
+
 })
 
 export class PinningSampleComponent {
@@ -25,8 +28,8 @@ export class PinningSampleComponent {
             { field: "ContactName", header: "Contact Name", width: 200, pinned: true },
             { field: "ContactTitle", header: "Contact Title", width: 200, pinned: true },
             { field: "Address", header: "Address", width: 300 },
-            { field: "City", header: "City", width: 100 },
-            { field: "Region", header: "Region", width: 100 },
+            { field: "City", header: "City", width: 120 },
+            { field: "Region", header: "Region", width: 120 },
             { field: "PostalCode", header: "Postal Code", width: 150 },
             { field: "Phone", header: "Phone", width: 150 },
             { field: "Fax", header: "Fax", width: 150 }
