@@ -39,15 +39,15 @@ import { ToggleConfigGenerator } from "./../configs/ToggleConfigGenerator";
 import * as fs from "fs";
 import * as path from "path";
 import * as Collections from "typescript-collections";
+import { SassCompiler } from "../services/SassCompiler";
 import { Config } from "./../configs/core/Config";
 import { IConfigGenerator } from "./../configs/core/IConfigGenerator";
 import { DependencyResolver } from "./../services/DependencyResolver";
+import { TsImportsService } from "./../services/TsImportsService";
+import { Generator } from "./Generator";
 import { LiveEditingFile } from "./LiveEditingFile";
 import { SampleDefinitionFile } from "./SampleDefinitionFile";
-import { TsImportsService } from "./../services/TsImportsService";
 import { StyleSyntax } from "./StyleSyntax";
-import { SassCompiler } from "../services/SassCompiler";
-import { Generator } from "./Generator";
 
 import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
@@ -136,7 +136,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _getComponentFiles(config: Config,
-            configImports: Collections.Dictionary<string, string>): Array<LiveEditingFile> {
+                               configImports: Collections.Dictionary<string, string>): LiveEditingFile[] {
         let componentFiles = new Array<LiveEditingFile>();
         let componentModuleSpecifier = configImports.getValue(config.component.name);
         let componentPath = componentModuleSpecifier.replace(GO_DIR_BACK_REG_EX, "");
@@ -148,11 +148,11 @@ export class SampleAssetsGenerator extends Generator {
             this._shortenComponentPath(config, file);
             componentFiles.push(file);
         }
-        
+
         return componentFiles;
     }
 
-    private _processComponentFilesStyles(componentFiles: Array<LiveEditingFile>) {
+    private _processComponentFilesStyles(componentFiles: LiveEditingFile[]) {
         if (this.styleSyntax === StyleSyntax.CSS) {
             let tsFile: LiveEditingFile;
             let styleFile: LiveEditingFile;
@@ -172,7 +172,7 @@ export class SampleAssetsGenerator extends Generator {
         }
     }
 
-    private _getAdditionalFiles(config: Config): Array<LiveEditingFile> {
+    private _getAdditionalFiles(config: Config): LiveEditingFile[] {
         let additionalFiles = new Array<LiveEditingFile>();
         for (let i = 0; i < config.additionalFiles.length; i++) {
             let filePath = config.additionalFiles[i].substring(
@@ -186,7 +186,7 @@ export class SampleAssetsGenerator extends Generator {
         return additionalFiles;
     }
 
-    private _processAdditionalFilesStyles(additionalFiles: Array<LiveEditingFile>) {
+    private _processAdditionalFilesStyles(additionalFiles: LiveEditingFile[]) {
         if (this.styleSyntax === StyleSyntax.CSS) {
             for (let i = 0; i < additionalFiles.length; i++) {
                 if (additionalFiles[i].path.indexOf("." + COMPONENT_STYLE_FILE_EXTENSION) !== -1) {
@@ -312,7 +312,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _formatAppModuleTypes(types: string[], multiline: boolean, tabsCount: number,
-                                 suffixIfMultiple: string = null): string {
+                                  suffixIfMultiple: string = null): string {
         if (types.length === 1 && !multiline) {
             return types.join("");
         }

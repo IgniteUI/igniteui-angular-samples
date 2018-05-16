@@ -1,14 +1,14 @@
 export class SharedAssetsGeneratorArgs {
-    stylesFileName: string;
-    stylesFileContent: string;
-    angularCliFilePath: string;
-    appComponentStylesFileName: string;
-    appComponentStylesFileContent: string;
-    appComponentTsFileContent: string;
+    public stylesFileName: string;
+    public stylesFileContent: string;
+    public angularCliFilePath: string;
+    public appComponentStylesFileName: string;
+    public appComponentStylesFileContent: string;
+    public appComponentTsFileContent: string;
 
     constructor(stylesFileName: string, stylesFileContent: string,
-        angularCliFilePath: string, appComponentStylesFileName: string,
-        appComponentStylesFileContent: string, appComponentTsFileContent: string) {
+                angularCliFilePath: string, appComponentStylesFileName: string,
+                appComponentStylesFileContent: string, appComponentTsFileContent: string) {
         this.stylesFileName = stylesFileName;
         this.stylesFileContent = stylesFileContent;
         this.angularCliFilePath = angularCliFilePath;

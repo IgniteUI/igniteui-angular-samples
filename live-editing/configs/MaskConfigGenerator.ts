@@ -1,5 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxInputGroupModule, IgxMaskModule, IgxSnackbarModule, IgxSwitchModule, IgxIconModule } from "igniteui-angular/main";
+import {
+    IgxIconModule, IgxInputGroupModule, IgxMaskModule, IgxSnackbarModule, IgxSwitchModule
+} from "igniteui-angular/main";
 import { MaskSample1Component } from "../../src/app/mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "../../src/app/mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "../../src/app/mask/mask-sample-3/mask-sample-3.component";

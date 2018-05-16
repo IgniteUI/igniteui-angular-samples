@@ -1,12 +1,12 @@
-import { argv } from 'yargs';
+import { argv } from "yargs";
 import { SampleAssetsGenerator } from "./generators/SampleAssetsGenerator";
 import { SharedAssetsGenerator } from "./generators/SharedAssetsGenerator";
-import { StyleSyntax } from './generators/StyleSyntax';
+import { StyleSyntax } from "./generators/StyleSyntax";
 
 class LiveEditingManager {
     public run() {
         if (argv.styles) {
-            let styles = argv.styles.trim().toLowerCase();
+            const styles = argv.styles.trim().toLowerCase();
             if (styles === "css") {
                 this._run(StyleSyntax.CSS);
             } else if (styles === "sass") {

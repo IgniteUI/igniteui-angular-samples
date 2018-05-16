@@ -1,19 +1,20 @@
 // tslint:disable:prefer-const
 import * as fs from "fs";
 import * as path from "path";
+import { SassCompiler } from "../services/SassCompiler";
 import { DependencyResolver } from "./../services/DependencyResolver";
+import { Generator } from "./Generator";
 import { LiveEditingFile } from "./LiveEditingFile";
 import { SharedAssetsFile } from "./SharedAssetsFile";
-import { StyleSyntax } from "./StyleSyntax";
 import { SharedAssetsGeneratorArgs } from "./SharedAssetsGeneratorArgs";
-import { SassCompiler } from "../services/SassCompiler";
-import { Generator } from "./Generator";
+import { StyleSyntax } from "./StyleSyntax";
 
 const INDEX_FILE_PATH = path.join(__dirname, "../../src/index.html");
 const POLYPFILLS_FILE_PATH = path.join(__dirname, "../../src/polyfills.ts");
 const STYLES_FILE_PATH = path.join(__dirname, "../../src/styles.scss");
 const ANGULAR_CLI_TEMPLATE_PATH = path.join(__dirname, "../templates/angular-cli.json.template");
-const ANGULAR_CLI_TEMPLATE_CSS_SUPPORT_PATH = path.join(__dirname, "../templates/angular-cli-css-support.json.template");
+const ANGULAR_CLI_TEMPLATE_CSS_SUPPORT_PATH =
+    path.join(__dirname, "../templates/angular-cli-css-support.json.template");
 const MAIN_TS_FILE_PATH = path.join(__dirname, "../templates/main.ts.template");
 const APP_COMPONENT_SCSS_PATH = path.join(__dirname, "../../src/app/app.component.scss");
 const APP_COMPONENT_TS_PATH = path.join(__dirname, "../../src/app/app.component.ts");
@@ -52,7 +53,7 @@ export class SharedAssetsGenerator extends Generator {
     private _generateSharedAssetsWithCSS() {
         let sassCompiler: SassCompiler = new SassCompiler();
 
-        let styles = fs.readFileSync(STYLES_FILE_PATH, "utf8");        
+        let styles = fs.readFileSync(STYLES_FILE_PATH, "utf8");
         styles = sassCompiler.compile(styles);
 
         let appComponentStylesFileContent = fs.readFileSync(APP_COMPONENT_SCSS_PATH, "utf8");

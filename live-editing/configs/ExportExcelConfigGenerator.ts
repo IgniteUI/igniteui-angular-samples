@@ -5,7 +5,6 @@ import {
     ExcelExportSample1Component
 } from "../../src/app/export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "../../src/app/export-excel/excel-export.component";
-import * as DR from "../DependencyResolver";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";

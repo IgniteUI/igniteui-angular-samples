@@ -7,6 +7,8 @@ const ASSETS_SAMPLES_DIR = path.join(__dirname, "../../src/assets/samples/");
 const ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../../src/assets/samples/css-support/");
 
 export abstract class Generator {
+    protected styleSyntax: StyleSyntax;
+
     constructor(styleSyntax: StyleSyntax) {
         this.styleSyntax = styleSyntax;
         if (!fs.existsSync(ASSETS_SAMPLES_DIR)) {
@@ -25,6 +27,4 @@ export abstract class Generator {
 
         return ASSETS_SAMPLES_DIR;
     }
-
-    protected styleSyntax: StyleSyntax;
 }

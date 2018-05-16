@@ -1,9 +1,11 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
+import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
     IgxButtonModule,
+    IgxCheckboxModule,
     IgxGridModule,
     IgxIconModule,
     IgxInputGroupModule,
@@ -11,16 +13,16 @@ import {
     IgxRippleModule,
     IgxSwitchModule,
     IgxToastModule,
-    IgxToggleModule,
-    IgxCheckboxModule
+    IgxToggleModule
 } from "igniteui-angular/main";
+import { IgxExcelExporterService } from "igniteui-angular/services";
+import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
-import { IgxExcelExporterService } from "igniteui-angular/services";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import {
@@ -33,8 +35,6 @@ import { MockDataService } from "../../src/app/grid/services/mock-data.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -129,7 +129,8 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, IgxExcelExporterService, GridCRMComponent],
+                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule,
+                    IgxExcelExporterService, GridCRMComponent],
                 ngDeclarations: [GridCRMComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
