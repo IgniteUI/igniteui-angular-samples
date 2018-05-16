@@ -35,7 +35,6 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import * as DR from "../DependencyResolver";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {

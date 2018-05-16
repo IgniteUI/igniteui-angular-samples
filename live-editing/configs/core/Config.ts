@@ -1,5 +1,5 @@
 import { Type } from "@angular/core/src/type";
-import { DependenciesType } from "../../DependenciesType";
+import { DependenciesType } from "../../services/DependenciesType";
 import { AppModuleConfig } from "./AppModuleConfig";
 
 export class Config {
