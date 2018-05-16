@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
 
 // this data service generates stock prices at 1-hour interval between specified range of dates
 @Injectable()
