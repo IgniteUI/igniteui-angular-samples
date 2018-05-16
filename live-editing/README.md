@@ -97,4 +97,8 @@ The engine will create a `grid.json` file describing the path and content of the
 
 ### Consuming Live Editing JSON files
 
-For each sample you have to request two files - `shared.json` and `sample.json` files. Both of the files are located under `/assets/samples/` folder. The naming of the sample's JSON file is the same used in the routing engine to request the sample - for a sample accessed by `sample-website/grid`, the JSON file will be named `grid.json`. After having both of the files, combine them and you will have all of the files required for a stand-alone Angular application.
+For each sample you have to request two files - `shared.json` and `sample.json` files. Both of the files are located in `/assets/samples/` folder. The naming of the sample's JSON file is the same used in the routing engine to request the sample - for a sample accessed by `sample-website/grid`, the JSON file will be named `grid.json`. After having both of the files, combine them and you will have all of the files required for a stand-alone Angular application.
+
+### CSS Support
+
+By default the live editing generates samples with Sass. CSS is also supported. The samples with CSS have the same structure and are located in `/assets/samples/css-support/` folder.
