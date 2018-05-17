@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
 
 // this data service generates OHLC prices with 1 day interval between specified range of dates
 @Injectable()
