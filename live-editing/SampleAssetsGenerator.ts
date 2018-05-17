@@ -12,6 +12,7 @@ import { CheckboxConfigGenerator } from "./configs/CheckboxConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./configs/CircularProgressbarConfigGenerator";
 import { DatePickerConfigGenerator } from "./configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./configs/DialogConfigGenerator";
+import { DropDownConfigGenerator } from "./configs/DropDownConfigGenerator";
 import { ExportCsvConfigGenerator } from "./configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "./configs/ExportExcelConfigGenerator";
 import { FinancialChartConfigGenerator } from "./configs/FinancialChartConfigGenerator";
@@ -68,7 +69,8 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
-    TabBarConfigGenerator, TabsConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TimePickerConfigGenerator];
+    TabBarConfigGenerator, TabsConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator,
+    TimePickerConfigGenerator, DropDownConfigGenerator];
 
 export class SampleAssetsGenerator {
     private tsImportsService: TsImportsService;
@@ -197,7 +199,7 @@ export class SampleAssetsGenerator {
                         config.appModuleConfig.ngImports[i] as ModuleWithProviders,
                         useClass = "", forRoot = ".forRoot()";
                     if (appModuleNgImportWithProviders.providers.length > 0
-                        && appModuleNgImportWithProviders.providers[0].useClass 
+                        && appModuleNgImportWithProviders.providers[0].useClass
                         && appModuleNgImportWithProviders.providers[0].useClass.name) {
                         useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
                         forRoot = `.forRoot(${useClass})`;
