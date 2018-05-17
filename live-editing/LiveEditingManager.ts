@@ -1,18 +1,26 @@
-import { SampleAssetsGenerator } from "./SampleAssetsGenerator";
-import { SharedAssetsGenerator } from "./SharedAssetsGenerator";
+import { argv } from "yargs";
+import { SampleAssetsGenerator } from "./generators/SampleAssetsGenerator";
+import { SharedAssetsGenerator } from "./generators/SharedAssetsGenerator";
+import { StyleSyntax } from "./generators/StyleSyntax";
 
 class LiveEditingManager {
-    private sharedAssetsGenerator: SharedAssetsGenerator;
-    private sampleAssetsGenerator: SampleAssetsGenerator;
-
-    constructor() {
-        this.sharedAssetsGenerator = new SharedAssetsGenerator();
-        this.sampleAssetsGenerator = new SampleAssetsGenerator();
+    public run() {
+        if (argv.styles) {
+            const styles = argv.styles.trim().toLowerCase();
+            if (styles === "css") {
+                this._run(StyleSyntax.CSS);
+            } else if (styles === "sass") {
+                this._run(StyleSyntax.Sass);
+            }
+        } else {
+            this._run(StyleSyntax.CSS);
+            this._run(StyleSyntax.Sass);
+        }
     }
 
-    public run() {
-        this.sharedAssetsGenerator.generateSharedAssets();
-        this.sampleAssetsGenerator.generateSamplesAssets();
+    public _run(styleSyntax: StyleSyntax) {
+        new SharedAssetsGenerator(styleSyntax).generateSharedAssets();
+        new SampleAssetsGenerator(styleSyntax).generateSamplesAssets();
     }
 }
 

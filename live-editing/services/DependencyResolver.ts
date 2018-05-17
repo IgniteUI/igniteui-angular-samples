@@ -5,7 +5,7 @@ import * as path from "path";
 import * as Collections from "typescript-collections";
 import { DependenciesType } from "./DependenciesType";
 
-const PACKAGES_CONFIG_PATH = path.join(__dirname, "../package.json");
+const PACKAGES_CONFIG_PATH = path.join(__dirname, "../../package.json");
 
 const COMMON_PACKAGE_DEPENDENCIES = [
     "@angular/common",

@@ -3,7 +3,7 @@ import { Http } from "@angular/http";
 
 import { IgxGridCellComponent } from "igniteui-angular/grid/cell.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { BehaviorSubject, Observable } from "rxjs/Rx";
+import { BehaviorSubject, Observable } from "rxjs";
 import { DATA } from "./financialData";
 
 @Injectable()

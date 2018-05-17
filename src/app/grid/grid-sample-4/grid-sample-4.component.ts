@@ -7,7 +7,7 @@ import {
     IForOfState,
     IgxToastComponent
 } from "igniteui-angular/main";
-import { BehaviorSubject, Observable } from "rxjs/Rx";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()
 export class RemoteService {
