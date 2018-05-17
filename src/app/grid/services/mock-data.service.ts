@@ -1,5 +1,4 @@
 import { getStatusText, InMemoryDbService, RequestInfo, ResponseOptions, STATUS } from "angular-in-memory-web-api";
-import { BehaviorSubject, Observable } from "rxjs/Rx";
 import { FinancialData } from "./financialData";
 
 export class MockDataService implements InMemoryDbService {
