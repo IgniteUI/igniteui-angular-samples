@@ -1,0 +1,33 @@
+<div class="grid__wrapper">
+    <igx-input-group type="search" class="offset">
+        <igx-prefix>
+            <igx-icon>search</igx-icon>
+        </igx-prefix>
+
+        <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid.findNext(searchText, caseSensitive)"
+               (keydown)="searchKeyDown($event)" />
+
+        <igx-suffix *ngIf="searchText.length > 0" (click)="clearSearch()">
+            <igx-icon>clear</igx-icon>
+        </igx-suffix>
+    </igx-input-group>
+
+    <igx-checkbox class="offset" [checked]="caseSensitive" (change)="updateSearch()">
+        <span>Case sensitive</span>
+    </igx-checkbox>
+
+    <div class="offset">
+        <input class="searchButton" type="button" value="Previous" (click)="grid.findPrev(searchText, caseSensitive)" />
+        <input class="searchButton" type="button" value="Next" (click)="grid.findNext(searchText, caseSensitive)" />
+        <span *ngIf="grid.lastSearchInfo.matchInfoCache.length > 0">Results: {{ grid.lastSearchInfo.matchInfoCache.length }}</span>
+    </div>
+
+    <igx-grid #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="500px" width="100%">
+        <igx-column [field]="'IndustrySector'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'IndustryGroup'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'SectorType'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'KRD'" dataType="number" [filterable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'MarketNotion'" dataType="number" [filterable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Date'" dataType="date" [filterable]="true" [sortable]="true"></igx-column>
+    </igx-grid>
+</div>

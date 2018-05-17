@@ -181,6 +181,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -314,7 +315,8 @@ import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-s
         CsvExportComponent,
         CsvExportSample1Component,
         SortingSampleComponent,
-        GridContextmenuComponent
+        GridContextmenuComponent,
+        GridSearchSampleComponent
     ],
     imports: [
         AppRoutingModule,
