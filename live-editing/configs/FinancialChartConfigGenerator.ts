@@ -39,7 +39,7 @@ import {
 import {
     FinancialChartVolumeTypeComponent
 } from "../../src/app/financial-chart/volume-type/financial-chart-volume-type.component";
-import { DependenciesType } from "../DependenciesType";
+import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";

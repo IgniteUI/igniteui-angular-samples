@@ -18,7 +18,7 @@ import {
 import {
     CategoryChartOverviewComponent
 } from "../../src/app/category-chart/overview/category-chart-overview-sample.component";
-import { DependenciesType } from "../DependenciesType";
+import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";

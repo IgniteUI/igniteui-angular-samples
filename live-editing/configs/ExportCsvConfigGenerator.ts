@@ -3,7 +3,6 @@ import { IgxGridModule } from "igniteui-angular/main";
 import { IgxCsvExporterService } from "igniteui-angular/services/index";
 import { CsvExportSample1Component } from "../../src/app/export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "../../src/app/export-csv/csv-export.component";
-import * as DR from "../DependencyResolver";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";

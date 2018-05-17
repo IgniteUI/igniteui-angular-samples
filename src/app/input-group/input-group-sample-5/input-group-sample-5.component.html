@@ -32,7 +32,7 @@
                     <igx-prefix>
                         <igx-icon>search</igx-icon>
                     </igx-prefix>
-                    <igx-suffix *ngIf="input1.value.length > 0" (click)="input1.value = ''">
+                    <igx-suffix *ngIf="input1.value.length > 0" (click)="clearSearchInput()">
                         <igx-icon>clear</igx-icon>
                     </igx-suffix>
                     <igx-suffix>

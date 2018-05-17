@@ -48,3 +48,9 @@
     width: 5em;
     padding: 0.5em 0.5em;
 }
+
+.section {
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: center;
+}
