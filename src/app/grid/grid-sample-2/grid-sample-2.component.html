@@ -1,13 +1,13 @@
 <div class="grid__wrapper">
         <igx-grid #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false'>
             <igx-column [field]="'Category'" [width]="'120px'" [filterable]='true' ></igx-column>
-            <igx-column [field]="'Type'" [width]="'150px'"></igx-column>        
+            <igx-column [field]="'Type'" [width]="'150px'"></igx-column>
             <igx-column [field]="'Open Price'" [width]="'120px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency">
             </igx-column>
             <igx-column [field]="'Price'" [width]="'120px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency"></igx-column>
             <igx-column [field]="'Change'" [width]="'120px'" [dataType]="'number'" [filterable]='true' [headerClasses]="'headerAlignSyle'">
                 <ng-template igxHeader>
-                <span class="cellAlignSyle">Change</span>
+                <span>Change</span>
             </ng-template>
 
             <ng-template igxCell let-val>
@@ -20,7 +20,7 @@
             </igx-column>
             <igx-column [field]="'Change(%)'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber">
                 <ng-template igxHeader>
-                <span class="cellAlignSyle">Change(%)</span>
+                <span>Change(%)</span>
             </ng-template>
 
             <ng-template igxCell let-val>
