@@ -128,13 +128,12 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridSearchSampleComponent,
             additionalFiles: ["/src/app/grid/grid-search-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, IgxCheckboxModule, GridSearchSampleComponent],
+                imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxIconModule,
+                    IgxInputGroupModule, IgxRippleModule, GridSearchSampleComponent],
                 ngDeclarations: [GridSearchSampleComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
-                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, IgxCheckboxModule, HttpClientModule],
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule,
+                    IgxRippleModule, HttpClientModule],
                 ngProviders: []
             })
         }));

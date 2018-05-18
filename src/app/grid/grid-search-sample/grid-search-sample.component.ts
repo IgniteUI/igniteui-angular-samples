@@ -12,8 +12,8 @@ export class GridSearchSampleComponent implements OnInit {
 
     @ViewChild("grid1") public grid: IgxGridComponent;
     public data: any[];
-    public caseSensitive: boolean = false;
     public searchText: string = "";
+    public caseSensitive: boolean = false;
 
     public ngOnInit(): void {
         this.data = MARKET_DATA;
