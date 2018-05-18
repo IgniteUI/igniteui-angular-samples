@@ -9,7 +9,7 @@
             (keydown)="searchKeyDown($event)" />
 
         <igx-suffix *ngIf="searchText.length > 0">
-            <div *ngIf="grid.lastSearchInfo">
+            <div class="resultsText" *ngIf="grid.lastSearchInfo">
                 <span *ngIf="grid.lastSearchInfo.matchInfoCache.length > 0">
                     {{ grid.lastSearchInfo.activeMatchIndex + 1 }} of {{ grid.lastSearchInfo.matchInfoCache.length }} results
                 </span>
@@ -20,7 +20,7 @@
             <div class="caseSensitiveButton">
                 <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="updateSearch()"
                         [igxButtonBackground]="caseSensitive? 'lightgrey' : 'transparent'">
-                    <igx-icon fontSet="material" name="text_fields"></igx-icon>
+                    <igx-icon class="caseSensitiveIcon" fontSet="material" name="text_fields"></igx-icon>
                 </button>
             </div>
             <div class="searchButtons">
