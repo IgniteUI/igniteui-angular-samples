@@ -12,7 +12,7 @@
         <igx-column [field]="'Sell'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency"></igx-column>
         <igx-column [field]="'Change'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [headerClasses]="'headerAlignSyle'">
             <ng-template igxHeader>
-                <span class="cellAlignSyle">Change</span>
+                <span>Change</span>
             </ng-template>
             <ng-template igxCell let-val>
                 <div class="currency-badge-container">
@@ -24,7 +24,7 @@
         </igx-column>
         <igx-column [field]="'Change(%)'" [width]="'150px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber">
             <ng-template igxHeader>
-                <span class="cellAlignSyle">Change(%)</span>
+                <span>Change(%)</span>
             </ng-template>
 
             <ng-template igxCell let-val>
