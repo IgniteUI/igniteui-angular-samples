@@ -85,6 +85,9 @@ export class GridCRMComponent implements OnInit {
     public hiddenColsLength: number;
     public pinnedColsLength: number;
 
+    public searchText: string = "";
+    public caseSensitive: boolean = false;
+
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
@@ -126,5 +129,25 @@ export class GridCRMComponent implements OnInit {
 
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat("en-US").format(val);
+    }
+
+    public searchKeyDown(ev) {
+        if (ev.key === "Enter" || ev.key === "ArrowDown" || ev.key === "ArrowRight") {
+            ev.preventDefault();
+            this.grid1.findNext(this.searchText, this.caseSensitive);
+        } else if (ev.key === "ArrowUp" || ev.key === "ArrowLeft") {
+            ev.preventDefault();
+            this.grid1.findPrev(this.searchText, this.caseSensitive);
+        }
+    }
+
+    public updateSearch() {
+        this.caseSensitive = !this.caseSensitive;
+        this.grid1.findNext(this.searchText, this.caseSensitive);
+    }
+
+    public clearSearch() {
+        this.searchText = "";
+        this.grid1.clearSearch();
     }
 }

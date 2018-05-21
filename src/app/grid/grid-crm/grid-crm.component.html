@@ -1,42 +1,78 @@
 <div class="grid__wrapper">
 
         <div class="sample__header">
-            <div class="crm-sample">
-                <span>Business propeller</span>
-
-                <div class="relative-container">
-                    <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefHiding"><igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}} hidden</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
-                    <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
-                        <div class="toggle-section">
-                            <h4 class="dd-title">Hidden columns:</h4>
-                            <ul class="dd-list">
-                                <li class="dd-list__item" *ngFor="let col of cols">
-                                    <igx-checkbox (change)="toggleVisibility(col)" [checked]="col.hidden">{{col.header}}</igx-checkbox>
-                                </li>
-                            </ul>
+            <div class="crm-sample">                
+                <div class="searchContainer">
+                    <igx-input-group type="search" class="searchInputGroup">
+                        <igx-prefix>
+                            <igx-icon *ngIf="searchText.length == 0">search</igx-icon>
+                            <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
+                        </igx-prefix>
+                                            
+                        <input #search1 id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)"
+                            (keydown)="searchKeyDown($event)" />
+                        
+                        <igx-suffix *ngIf="searchText.length > 0">
+                            <div class="resultsText" *ngIf="grid1.lastSearchInfo">
+                                <span *ngIf="grid1.lastSearchInfo.matchInfoCache.length > 0">
+                                    {{ grid1.lastSearchInfo.activeMatchIndex + 1 }} of {{ grid1.lastSearchInfo.matchInfoCache.length }} results
+                                </span>
+                                <span *ngIf="grid1.lastSearchInfo.matchInfoCache.length == 0">
+                                    No results
+                                </span>
+                            </div>
+                            <div class="caseSensitiveButton">
+                                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="updateSearch()"
+                                        [igxButtonBackground]="caseSensitive? 'lightgrey' : 'transparent'">
+                                    <igx-icon class="caseSensitiveIcon" fontSet="material" name="text_fields"></igx-icon>
+                                </button>
+                            </div>
+                            <div class="searchButtons">
+                                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="grid1.findPrev(searchText, caseSensitive)">
+                                    <igx-icon fontSet="material" name="navigate_before"></igx-icon>
+                                </button>
+                                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="grid1.findNext(searchText, caseSensitive)">
+                                    <igx-icon fontSet="material" name="navigate_next"></igx-icon>
+                                </button>
+                            </div>
+                        </igx-suffix>
+                    </igx-input-group>
+                </div>
+                <div class="operationsContainer">                    
+                    <div class="relative-container">
+                        <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefHiding"><igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}} hidden</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
+                        <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
+                            <div class="toggle-section">
+                                <h4 class="dd-title">Hidden columns:</h4>
+                                <ul class="dd-list">
+                                    <li class="dd-list__item" *ngFor="let col of cols">
+                                        <igx-checkbox (change)="toggleVisibility(col)" [checked]="col.hidden">{{col.header}}</igx-checkbox>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="relative-container">
-                    <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefPinning"><igx-icon class="pin-icon" fontSet="fas" iconName="fa-thumbtack"></igx-icon><span>{{pinnedColsLength}} pinned</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
-                    <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
-                        <div class="toggle-section">
-                            <h4 class="dd-title">Pinned columns:</h4>
-                            <ul class="dd-list">
-                                <li class="dd-list__item" *ngFor="let col of cols">
-                                    <igx-checkbox (change)="togglePin(col, $event)" [checked]="col.pinned">{{col.header}}</igx-checkbox>
-                                </li>
-                            </ul>
+                    <div class="relative-container">
+                        <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefPinning"><igx-icon class="pin-icon" fontSet="fas" iconName="fa-thumbtack"></igx-icon><span>{{pinnedColsLength}} pinned</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
+                        <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
+                            <div class="toggle-section">
+                                <h4 class="dd-title">Pinned columns:</h4>
+                                <ul class="dd-list">
+                                    <li class="dd-list__item" *ngFor="let col of cols">
+                                        <igx-checkbox (change)="togglePin(col, $event)" [checked]="col.pinned">{{col.header}}</igx-checkbox>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <button class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="exportData()"><igx-icon class="header-icon">file_download</igx-icon><span>to Excel</span></button>
+                    <button class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="exportData()"><igx-icon class="header-icon">file_download</igx-icon><span>to Excel</span></button>
+                </div>
             </div>
         </div>
 
-        <igx-grid #grid1 [data]="localData" height="650" [width]="'1172px'" rowSelectable="true">
+        <igx-grid #grid1 id="grid1" [data]="localData" height="650" [width]="'1172px'" rowSelectable="true">
             <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true">
             </igx-column>
 

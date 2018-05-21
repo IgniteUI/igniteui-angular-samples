@@ -109,7 +109,47 @@
         }
     }
 
-    // button styling
+    .searchContainer {
+        margin: auto auto auto 5px;
+        display: flex;
+    }
+
+    .operationsContainer {
+        margin: auto 5px auto auto;
+        display: flex;
+    }
+
+    .searchInputGroup {
+        width: 600px;
+        & div {
+            padding: 0 4px;
+        }
+    }
+
+    .searchInput {
+        padding: 0;
+    }
+
+    .resultsText {
+        font-size: 0.875rem;
+    }
+    
+    .caseSensitiveButton {
+        margin-left: 8px;
+    }
+    
+    .caseSensitiveIcon {
+        width: 1.25rem;
+        height: 1.25rem;
+        font-size: 1.25rem;
+        color: rgba(0, 0, 0, .54);
+    }
+    
+    .searchButtons {    
+        margin-left: 4px;
+    }
+
+        // button styling
     .toggle-button {
         margin-left: 8px;
         text-transform: capitalize;
