@@ -30,11 +30,9 @@ export class RemoteFilteringService {
             const totalCount = json.length;
             this.http.get(this.buildDataUrl("", filteringArgs)).subscribe((filteredData: any) => {
                 const filteredCount = filteredData.length;
-                console.log("filteredCount " + filteredCount);
                 this.http.get(this.buildDataUrl(virtualizationArgs, filteringArgs)).subscribe((data: any) => {
                     data.totalCount = totalCount;
                     data.count = filteredCount;
-                    console.log("data.totalCount " + data.totalCount + " data.count " + data.count);
                     this._remoteData.next(data);
                     if (cb) {
                         cb(data);
@@ -114,7 +112,6 @@ export class RemoteFilteringService {
 
         baseQueryString += query;
 
-        console.log("queryString " + baseQueryString);
         return baseQueryString;
     }
 
@@ -155,7 +152,6 @@ export class RemoteFilteringSampleComponent implements OnInit {
         const filteringExpr = this.grid.filteringExpressions[0];
 
         this.prevRequest = this.remoteService.getData(virtualizationState, filteringExpr, (data) => {
-            console.log("processData count " + data.count);
             this.grid.totalItemCount = data.count;
             this.cdr.detectChanges();
         });

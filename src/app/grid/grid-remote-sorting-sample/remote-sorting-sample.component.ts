@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { ChangeDetectorRef, Component, Injectable, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { IForOfState, SortingDirection } from "igniteui-angular/main";
-import { BehaviorSubject, Observable } from "rxjs/Rx";
+import { BehaviorSubject, Observable } from "rxjs";
 
 const EMPTY_STRING: string = "";
 export enum SortOrder {
