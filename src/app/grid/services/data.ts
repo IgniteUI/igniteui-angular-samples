@@ -2,7 +2,7 @@
 /* tslint:disable */
 export const athletesData = [{
   "Id": 84,
-  "Avatar": "https://randomuser.me/api/portraits/men/12.jpg",
+  "Avatar": "assets/images/men/12.jpg",
   "Position": "current",
   "Name": "Abel Brun",
   "AthleteNumber": 39315,
@@ -14,7 +14,7 @@ export const athletesData = [{
   "CountryName": "Afghanistan"
 }, {
   "Id": 65,
-  "Avatar": "https://randomuser.me/api/portraits/women/60.jpg",
+  "Avatar": "assets/images/women/60.jpg",
   "Position": "down",
   "Name": "Keira Walker",
   "AthleteNumber": 34116,
@@ -26,7 +26,7 @@ export const athletesData = [{
   "CountryName": "Albania"
 }, {
   "Id": 197,
-  "Avatar": "https://randomuser.me/api/portraits/men/93.jpg",
+  "Avatar": "assets/images/men/93.jpg",
   "Position": "current",
   "Name": "Brent Lord",
   "AthleteNumber": 20943,
@@ -38,7 +38,7 @@ export const athletesData = [{
   "CountryName": "Algeria"
 }, {
   "Id": 66,
-  "Avatar": "https://randomuser.me/api/portraits/men/70.jpg",
+  "Avatar": "assets/images/men/70.jpg",
   "Position": "down",
   "Name": "Moritz Braun",
   "AthleteNumber": 48081,
@@ -50,7 +50,7 @@ export const athletesData = [{
   "CountryName": "Andorra"
 }, {
   "Id": 58,
-  "Avatar": "https://randomuser.me/api/portraits/women/60.jpg",
+  "Avatar": "assets/images/women/60.jpg",
   "Position": "down",
   "Name": "Zaina Pomp",
   "AthleteNumber": 14109,
@@ -62,7 +62,7 @@ export const athletesData = [{
   "CountryName": "Angola"
 }, {
   "Id": 40,
-  "Avatar": "https://randomuser.me/api/portraits/men/33.jpg",
+  "Avatar": "assets/images/men/33.jpg",
   "Position": "down",
   "Name": "Alberto Clark",
   "AthleteNumber": 29912,
@@ -74,7 +74,7 @@ export const athletesData = [{
   "CountryName": "Antigua and Barbuda"
 }, {
   "Id": 138,
-  "Avatar": "https://randomuser.me/api/portraits/men/38.jpg",
+  "Avatar": "assets/images/men/38.jpg",
   "Position": "current",
   "Name": "Derrick Price",
   "AthleteNumber": 19792,
@@ -86,7 +86,7 @@ export const athletesData = [{
   "CountryName": "Argentina"
 }, {
   "Id": 6,
-  "Avatar": "https://randomuser.me/api/portraits/women/26.jpg",
+  "Avatar": "assets/images/women/26.jpg",
   "Position": "up",
   "Name": "Mira Campos",
   "AthleteNumber": 39222,
@@ -98,7 +98,7 @@ export const athletesData = [{
   "CountryName": "Armenia"
 }, {
   "Id": 190,
-  "Avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+  "Avatar": "assets/images/women/44.jpg",
   "Position": "current",
   "Name": "Kiara Dubois",
   "AthleteNumber": 49964,
@@ -110,7 +110,7 @@ export const athletesData = [{
   "CountryName": "Australia"
 }, {
   "Id": 168,
-  "Avatar": "https://randomuser.me/api/portraits/men/10.jpg",
+  "Avatar": "assets/images/men/10.jpg",
   "Position": "current",
   "Name": "Calvin Hunt",
   "AthleteNumber": 35535,
@@ -122,7 +122,7 @@ export const athletesData = [{
   "CountryName": "Austria"
 }, {
   "Id": 105,
-  "Avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+  "Avatar": "assets/images/men/5.jpg",
   "Position": "down",
   "Name": "Samu Hokkanen",
   "AthleteNumber": 22469,
@@ -134,7 +134,7 @@ export const athletesData = [{
   "CountryName": "Azerbaijan"
 }, {
   "Id": 33,
-  "Avatar": "https://randomuser.me/api/portraits/men/18.jpg",
+  "Avatar": "assets/images/men/18.jpg",
   "Position": "up",
   "Name": "Zackary Roy",
   "AthleteNumber": 45996,
@@ -146,7 +146,7 @@ export const athletesData = [{
   "CountryName": "Bahamas"
 }, {
   "Id": 83,
-  "Avatar": "https://randomuser.me/api/portraits/men/10.jpg",
+  "Avatar": "assets/images/men/10.jpg",
   "Position": "current",
   "Name": "سینا مرادی",
   "AthleteNumber": 10809,
@@ -158,7 +158,7 @@ export const athletesData = [{
   "CountryName": "Bahrain"
 }, {
   "Id": 121,
-  "Avatar": "https://randomuser.me/api/portraits/men/45.jpg",
+  "Avatar": "assets/images/men/45.jpg",
   "Position": "current",
   "Name": "Maurice Lambert",
   "AthleteNumber": 17443,
@@ -170,7 +170,7 @@ export const athletesData = [{
   "CountryName": "Bangladesh"
 }, {
   "Id": 111,
-  "Avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+  "Avatar": "assets/images/men/23.jpg",
   "Position": "up",
   "Name": "Connor Green",
   "AthleteNumber": 44716,
@@ -182,7 +182,7 @@ export const athletesData = [{
   "CountryName": "Barbados"
 }, {
   "Id": 75,
-  "Avatar": "https://randomuser.me/api/portraits/women/69.jpg",
+  "Avatar": "assets/images/women/69.jpg",
   "Position": "current",
   "Name": "Ellen Leppo",
   "AthleteNumber": 29286,
@@ -194,7 +194,7 @@ export const athletesData = [{
   "CountryName": "Belarus"
 }, {
   "Id": 68,
-  "Avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+  "Avatar": "assets/images/men/23.jpg",
   "Position": "up",
   "Name": "Sandro Carpentier",
   "AthleteNumber": 23503,
@@ -206,7 +206,7 @@ export const athletesData = [{
   "CountryName": "Belgium"
 }, {
   "Id": 150,
-  "Avatar": "https://randomuser.me/api/portraits/men/52.jpg",
+  "Avatar": "assets/images/men/52.jpg",
   "Position": "up",
   "Name": "Gustav Petersen",
   "AthleteNumber": 20984,
@@ -218,7 +218,7 @@ export const athletesData = [{
   "CountryName": "Belize"
 }, {
   "Id": 142,
-  "Avatar": "https://randomuser.me/api/portraits/women/63.jpg",
+  "Avatar": "assets/images/women/63.jpg",
   "Position": "current",
   "Name": "Nicoline Thomsen",
   "AthleteNumber": 36778,
@@ -230,7 +230,7 @@ export const athletesData = [{
   "CountryName": "Benin"
 }, {
   "Id": 19,
-  "Avatar": "https://randomuser.me/api/portraits/women/6.jpg",
+  "Avatar": "assets/images/women/6.jpg",
   "Position": "current",
   "Name": "Sedef Tunçeri",
   "AthleteNumber": 48164,
@@ -242,7 +242,7 @@ export const athletesData = [{
   "CountryName": "Bhutan"
 }, {
   "Id": 202,
-  "Avatar": "https://randomuser.me/api/portraits/women/92.jpg",
+  "Avatar": "assets/images/women/92.jpg",
   "Position": "down",
   "Name": "Ilona Salonen",
   "AthleteNumber": 27068,
@@ -254,7 +254,7 @@ export const athletesData = [{
   "CountryName": "Bolivia"
 }, {
   "Id": 191,
-  "Avatar": "https://randomuser.me/api/portraits/women/72.jpg",
+  "Avatar": "assets/images/women/72.jpg",
   "Position": "up",
   "Name": "Clarisse Rey",
   "AthleteNumber": 29795,
@@ -266,7 +266,7 @@ export const athletesData = [{
   "CountryName": "Bosnia and Herzegovina"
 }, {
   "Id": 71,
-  "Avatar": "https://randomuser.me/api/portraits/men/74.jpg",
+  "Avatar": "assets/images/men/74.jpg",
   "Position": "down",
   "Name": "Jimmie Mcguinness",
   "AthleteNumber": 20729,
@@ -278,7 +278,7 @@ export const athletesData = [{
   "CountryName": "Botswana"
 }, {
   "Id": 82,
-  "Avatar": "https://randomuser.me/api/portraits/men/55.jpg",
+  "Avatar": "assets/images/men/55.jpg",
   "Position": "current",
   "Name": "Johann Fischer",
   "AthleteNumber": 37212,
@@ -290,7 +290,7 @@ export const athletesData = [{
   "CountryName": "Brazil"
 }, {
   "Id": 121,
-  "Avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+  "Avatar": "assets/images/men/31.jpg",
   "Position": "down",
   "Name": "Ivan Ivanov",
   "AthleteNumber": 11054,
@@ -302,7 +302,7 @@ export const athletesData = [{
   "CountryName": "Bulgaria"
 }, {
   "Id": 144,
-  "Avatar": "https://randomuser.me/api/portraits/women/57.jpg",
+  "Avatar": "assets/images/women/57.jpg",
   "Position": "down",
   "Name": "Milja Leino",
   "AthleteNumber": 33563,
@@ -314,7 +314,7 @@ export const athletesData = [{
   "CountryName": "Burkina Faso"
 }, {
   "Id": 71,
-  "Avatar": "https://randomuser.me/api/portraits/men/81.jpg",
+  "Avatar": "assets/images/men/81.jpg",
   "Position": "down",
   "Name": "آراد جعفری",
   "AthleteNumber": 34962,
@@ -326,7 +326,7 @@ export const athletesData = [{
   "CountryName": "Burundi"
 }, {
   "Id": 163,
-  "Avatar": "https://randomuser.me/api/portraits/women/21.jpg",
+  "Avatar": "assets/images/women/21.jpg",
   "Position": "up",
   "Name": "Pippa Roberts",
   "AthleteNumber": 15588,
@@ -338,7 +338,7 @@ export const athletesData = [{
   "CountryName": "Cambodia"
 }, {
   "Id": 122,
-  "Avatar": "https://randomuser.me/api/portraits/men/57.jpg",
+  "Avatar": "assets/images/men/57.jpg",
   "Position": "down",
   "Name": "Jack Jean-baptiste",
   "AthleteNumber": 40427,
@@ -350,7 +350,7 @@ export const athletesData = [{
   "CountryName": "Cameroon"
 }, {
   "Id": 199,
-  "Avatar": "https://randomuser.me/api/portraits/women/68.jpg",
+  "Avatar": "assets/images/women/68.jpg",
   "Position": "up",
   "Name": "Lucie Dumont",
   "AthleteNumber": 12104,
@@ -362,7 +362,7 @@ export const athletesData = [{
   "CountryName": "Canada"
 }, {
   "Id": 136,
-  "Avatar": "https://randomuser.me/api/portraits/women/10.jpg",
+  "Avatar": "assets/images/women/10.jpg",
   "Position": "down",
   "Name": "Elaine Matthews",
   "AthleteNumber": 38574,
@@ -374,7 +374,7 @@ export const athletesData = [{
   "CountryName": "Cape Verde"
 }, {
   "Id": 70,
-  "Avatar": "https://randomuser.me/api/portraits/women/14.jpg",
+  "Avatar": "assets/images/women/14.jpg",
   "Position": "up",
   "Name": "Emily Olsen",
   "AthleteNumber": 13887,
@@ -386,7 +386,7 @@ export const athletesData = [{
   "CountryName": "Central African Republic"
 }, {
   "Id": 21,
-  "Avatar": "https://randomuser.me/api/portraits/men/73.jpg",
+  "Avatar": "assets/images/men/73.jpg",
   "Position": "down",
   "Name": "Kuzey Aclan",
   "AthleteNumber": 18583,
@@ -398,7 +398,7 @@ export const athletesData = [{
   "CountryName": "Chad"
 }, {
   "Id": 86,
-  "Avatar": "https://randomuser.me/api/portraits/women/82.jpg",
+  "Avatar": "assets/images/women/82.jpg",
   "Position": "current",
   "Name": "Eloida Novaes",
   "AthleteNumber": 30751,
@@ -410,7 +410,7 @@ export const athletesData = [{
   "CountryName": "Chile"
 }, {
   "Id": 130,
-  "Avatar": "https://randomuser.me/api/portraits/women/24.jpg",
+  "Avatar": "assets/images/women/24.jpg",
   "Position": "down",
   "Name": "آوا احمدی",
   "AthleteNumber": 44347,
@@ -422,7 +422,7 @@ export const athletesData = [{
   "CountryName": "China"
 }, {
   "Id": 127,
-  "Avatar": "https://randomuser.me/api/portraits/men/52.jpg",
+  "Avatar": "assets/images/men/52.jpg",
   "Position": "down",
   "Name": "Gerardo Soto",
   "AthleteNumber": 22958,
@@ -434,7 +434,7 @@ export const athletesData = [{
   "CountryName": "Colombia"
 }, {
   "Id": 125,
-  "Avatar": "https://randomuser.me/api/portraits/women/16.jpg",
+  "Avatar": "assets/images/women/16.jpg",
   "Position": "current",
   "Name": "Altiva Alves",
   "AthleteNumber": 31850,
@@ -446,7 +446,7 @@ export const athletesData = [{
   "CountryName": "Comoros"
 }, {
   "Id": 38,
-  "Avatar": "https://randomuser.me/api/portraits/women/17.jpg",
+  "Avatar": "assets/images/women/17.jpg",
   "Position": "current",
   "Name": "Charlotte Meyer",
   "AthleteNumber": 21442,
@@ -458,7 +458,7 @@ export const athletesData = [{
   "CountryName": "Cook Islands"
 }, {
   "Id": 186,
-  "Avatar": "https://randomuser.me/api/portraits/men/42.jpg",
+  "Avatar": "assets/images/men/42.jpg",
   "Position": "up",
   "Name": "Jimmy Bailey",
   "AthleteNumber": 38510,
@@ -470,7 +470,7 @@ export const athletesData = [{
   "CountryName": "Costa Rica"
 }, {
   "Id": 108,
-  "Avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+  "Avatar": "assets/images/men/31.jpg",
   "Position": "up",
   "Name": "Noah Bergeron",
   "AthleteNumber": 35139,
@@ -482,7 +482,7 @@ export const athletesData = [{
   "CountryName": "Cote DIvoire"
 }, {
   "Id": 176,
-  "Avatar": "https://randomuser.me/api/portraits/men/35.jpg",
+  "Avatar": "assets/images/men/35.jpg",
   "Position": "down",
   "Name": "Laudelino Castro",
   "AthleteNumber": 12711,
@@ -494,7 +494,7 @@ export const athletesData = [{
   "CountryName": "Croatia"
 }, {
   "Id": 138,
-  "Avatar": "https://randomuser.me/api/portraits/men/78.jpg",
+  "Avatar": "assets/images/men/78.jpg",
   "Position": "current",
   "Name": "Oscar Calvo",
   "AthleteNumber": 45078,
@@ -506,7 +506,7 @@ export const athletesData = [{
   "CountryName": "Cuba"
 }, {
   "Id": 137,
-  "Avatar": "https://randomuser.me/api/portraits/men/80.jpg",
+  "Avatar": "assets/images/men/80.jpg",
   "Position": "down",
   "Name": "Lance Dunn",
   "AthleteNumber": 10113,
@@ -518,7 +518,7 @@ export const athletesData = [{
   "CountryName": "Cyprus"
 }, {
   "Id": 173,
-  "Avatar": "https://randomuser.me/api/portraits/women/18.jpg",
+  "Avatar": "assets/images/women/18.jpg",
   "Position": "current",
   "Name": "Hassana Camp",
   "AthleteNumber": 14467,
@@ -530,7 +530,7 @@ export const athletesData = [{
   "CountryName": "Czech Republic"
 }, {
   "Id": 46,
-  "Avatar": "https://randomuser.me/api/portraits/women/55.jpg",
+  "Avatar": "assets/images/women/55.jpg",
   "Position": "current",
   "Name": "Ronja Kraft",
   "AthleteNumber": 21800,
@@ -542,7 +542,7 @@ export const athletesData = [{
   "CountryName": "Denmark"
 }, {
   "Id": 8,
-  "Avatar": "https://randomuser.me/api/portraits/men/14.jpg",
+  "Avatar": "assets/images/men/14.jpg",
   "Position": "up",
   "Name": "Hans Möller",
   "AthleteNumber": 34122,
@@ -554,7 +554,7 @@ export const athletesData = [{
   "CountryName": "Djibouti"
 }, {
   "Id": 188,
-  "Avatar": "https://randomuser.me/api/portraits/women/45.jpg",
+  "Avatar": "assets/images/women/45.jpg",
   "Position": "down",
   "Name": "Ceylan Duygulu",
   "AthleteNumber": 21527,
@@ -566,7 +566,7 @@ export const athletesData = [{
   "CountryName": "Dominica"
 }, {
   "Id": 134,
-  "Avatar": "https://randomuser.me/api/portraits/women/66.jpg",
+  "Avatar": "assets/images/women/66.jpg",
   "Position": "down",
   "Name": "Anni Waisanen",
   "AthleteNumber": 32133,
@@ -578,7 +578,7 @@ export const athletesData = [{
   "CountryName": "Dominican Republic"
 }, {
   "Id": 112,
-  "Avatar": "https://randomuser.me/api/portraits/women/53.jpg",
+  "Avatar": "assets/images/women/53.jpg",
   "Position": "down",
   "Name": "Karen Shaw",
   "AthleteNumber": 31048,
@@ -590,7 +590,7 @@ export const athletesData = [{
   "CountryName": "Ecuador"
 }, {
   "Id": 161,
-  "Avatar": "https://randomuser.me/api/portraits/men/38.jpg",
+  "Avatar": "assets/images/men/38.jpg",
   "Position": "current",
   "Name": "Alex Martin",
   "AthleteNumber": 27887,
@@ -602,7 +602,7 @@ export const athletesData = [{
   "CountryName": "Egypt"
 }, {
   "Id": 196,
-  "Avatar": "https://randomuser.me/api/portraits/women/30.jpg",
+  "Avatar": "assets/images/women/30.jpg",
   "Position": "up",
   "Name": "Begüm Erkekli",
   "AthleteNumber": 37888,
@@ -614,7 +614,7 @@ export const athletesData = [{
   "CountryName": "El Salvador"
 }, {
   "Id": 24,
-  "Avatar": "https://randomuser.me/api/portraits/men/0.jpg",
+  "Avatar": "assets/images/men/0.jpg",
   "Position": "down",
   "Name": "Joan Ortega",
   "AthleteNumber": 49478,
@@ -626,7 +626,7 @@ export const athletesData = [{
   "CountryName": "Equatorial Guinea"
 }, {
   "Id": 174,
-  "Avatar": "https://randomuser.me/api/portraits/women/29.jpg",
+  "Avatar": "assets/images/women/29.jpg",
   "Position": "current",
   "Name": "Beatriz Gallardo",
   "AthleteNumber": 38538,
@@ -638,7 +638,7 @@ export const athletesData = [{
   "CountryName": "Eritrea"
 }, {
   "Id": 193,
-  "Avatar": "https://randomuser.me/api/portraits/women/59.jpg",
+  "Avatar": "assets/images/women/59.jpg",
   "Position": "down",
   "Name": "Sophia Carlson",
   "AthleteNumber": 44183,
@@ -650,7 +650,7 @@ export const athletesData = [{
   "CountryName": "Estonia"
 }, {
   "Id": 85,
-  "Avatar": "https://randomuser.me/api/portraits/men/43.jpg",
+  "Avatar": "assets/images/men/43.jpg",
   "Position": "down",
   "Name": "Niilo Laurila",
   "AthleteNumber": 49215,
@@ -662,7 +662,7 @@ export const athletesData = [{
   "CountryName": "Ethiopia"
 }, {
   "Id": 201,
-  "Avatar": "https://randomuser.me/api/portraits/men/92.jpg",
+  "Avatar": "assets/images/men/92.jpg",
   "Position": "up",
   "Name": "Kaya Tekand",
   "AthleteNumber": 11028,
@@ -674,7 +674,7 @@ export const athletesData = [{
   "CountryName": "Fiji"
 }, {
   "Id": 123,
-  "Avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+  "Avatar": "assets/images/men/31.jpg",
   "Position": "current",
   "Name": "Eeli Makinen",
   "AthleteNumber": 45296,
@@ -686,7 +686,7 @@ export const athletesData = [{
   "CountryName": "Finland"
 }, {
   "Id": 16,
-  "Avatar": "https://randomuser.me/api/portraits/men/72.jpg",
+  "Avatar": "assets/images/men/72.jpg",
   "Position": "down",
   "Name": "Felix Olsen",
   "AthleteNumber": 43198,
@@ -698,7 +698,7 @@ export const athletesData = [{
   "CountryName": "France"
 }, {
   "Id": 62,
-  "Avatar": "https://randomuser.me/api/portraits/men/43.jpg",
+  "Avatar": "assets/images/men/43.jpg",
   "Position": "current",
   "Name": "Roman Smith",
   "AthleteNumber": 15531,
@@ -710,7 +710,7 @@ export const athletesData = [{
   "CountryName": "Gabon"
 }, {
   "Id": 69,
-  "Avatar": "https://randomuser.me/api/portraits/men/17.jpg",
+  "Avatar": "assets/images/men/17.jpg",
   "Position": "current",
   "Name": "Emil Meißner",
   "AthleteNumber": 37183,
@@ -722,7 +722,7 @@ export const athletesData = [{
   "CountryName": "Gambia"
 }, {
   "Id": 182,
-  "Avatar": "https://randomuser.me/api/portraits/men/94.jpg",
+  "Avatar": "assets/images/men/94.jpg",
   "Position": "current",
   "Name": "Gerald Schmidt",
   "AthleteNumber": 47410,
@@ -734,7 +734,7 @@ export const athletesData = [{
   "CountryName": "Georgia"
 }, {
   "Id": 190,
-  "Avatar": "https://randomuser.me/api/portraits/women/53.jpg",
+  "Avatar": "assets/images/women/53.jpg",
   "Position": "current",
   "Name": "Gladys Van Der Steeg",
   "AthleteNumber": 20216,
@@ -746,7 +746,7 @@ export const athletesData = [{
   "CountryName": "Germany"
 }, {
   "Id": 100,
-  "Avatar": "https://randomuser.me/api/portraits/women/20.jpg",
+  "Avatar": "assets/images/women/20.jpg",
   "Position": "current",
   "Name": "Alexis Walker",
   "AthleteNumber": 43183,
@@ -758,7 +758,7 @@ export const athletesData = [{
   "CountryName": "Ghana"
 }, {
   "Id": 85,
-  "Avatar": "https://randomuser.me/api/portraits/men/34.jpg",
+  "Avatar": "assets/images/men/34.jpg",
   "Position": "current",
   "Name": "Jeffrey Medina",
   "AthleteNumber": 42905,
@@ -770,7 +770,7 @@ export const athletesData = [{
   "CountryName": "Greece"
 }, {
   "Id": 169,
-  "Avatar": "https://randomuser.me/api/portraits/men/21.jpg",
+  "Avatar": "assets/images/men/21.jpg",
   "Position": "down",
   "Name": "Julian Barth",
   "AthleteNumber": 19011,
@@ -782,7 +782,7 @@ export const athletesData = [{
   "CountryName": "Grenada"
 }, {
   "Id": 116,
-  "Avatar": "https://randomuser.me/api/portraits/women/1.jpg",
+  "Avatar": "assets/images/women/1.jpg",
   "Position": "down",
   "Name": "Sevcan Kollen",
   "AthleteNumber": 13728,
@@ -794,7 +794,7 @@ export const athletesData = [{
   "CountryName": "Guatemala"
 }, {
   "Id": 75,
-  "Avatar": "https://randomuser.me/api/portraits/men/88.jpg",
+  "Avatar": "assets/images/men/88.jpg",
   "Position": "down",
   "Name": "Rafael Gutierrez",
   "AthleteNumber": 38804,
@@ -806,7 +806,7 @@ export const athletesData = [{
   "CountryName": "Guinea"
 }, {
   "Id": 121,
-  "Avatar": "https://randomuser.me/api/portraits/men/48.jpg",
+  "Avatar": "assets/images/men/48.jpg",
   "Position": "current",
   "Name": "Väinö Salmi",
   "AthleteNumber": 29839,
@@ -818,7 +818,7 @@ export const athletesData = [{
   "CountryName": "Guinea-Bissau"
 }, {
   "Id": 180,
-  "Avatar": "https://randomuser.me/api/portraits/women/90.jpg",
+  "Avatar": "assets/images/women/90.jpg",
   "Position": "up",
   "Name": "Lillian Bowman",
   "AthleteNumber": 35323,
@@ -830,7 +830,7 @@ export const athletesData = [{
   "CountryName": "Guyana"
 }, {
   "Id": 139,
-  "Avatar": "https://randomuser.me/api/portraits/women/28.jpg",
+  "Avatar": "assets/images/women/28.jpg",
   "Position": "current",
   "Name": "Annabell Barth",
   "AthleteNumber": 41130,
@@ -842,7 +842,7 @@ export const athletesData = [{
   "CountryName": "Haiti"
 }, {
   "Id": 4,
-  "Avatar": "https://randomuser.me/api/portraits/men/34.jpg",
+  "Avatar": "assets/images/men/34.jpg",
   "Position": "down",
   "Name": "Mathys Martin",
   "AthleteNumber": 32928,
@@ -854,7 +854,7 @@ export const athletesData = [{
   "CountryName": "Holy See (Vatican City State)"
 }, {
   "Id": 1,
-  "Avatar": "https://randomuser.me/api/portraits/men/65.jpg",
+  "Avatar": "assets/images/men/65.jpg",
   "Position": "down",
   "Name": "Louis Stewart",
   "AthleteNumber": 48131,
@@ -866,7 +866,7 @@ export const athletesData = [{
   "CountryName": "Honduras"
 }, {
   "Id": 190,
-  "Avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+  "Avatar": "assets/images/women/2.jpg",
   "Position": "current",
   "Name": "Venla Korpela",
   "AthleteNumber": 16454,
@@ -878,7 +878,7 @@ export const athletesData = [{
   "CountryName": "Hungary"
 }, {
   "Id": 167,
-  "Avatar": "https://randomuser.me/api/portraits/men/81.jpg",
+  "Avatar": "assets/images/men/81.jpg",
   "Position": "down",
   "Name": "Milo Charles",
   "AthleteNumber": 10661,
@@ -890,7 +890,7 @@ export const athletesData = [{
   "CountryName": "Iceland"
 }, {
   "Id": 62,
-  "Avatar": "https://randomuser.me/api/portraits/men/9.jpg",
+  "Avatar": "assets/images/men/9.jpg",
   "Position": "current",
   "Name": "Anthony Harcourt",
   "AthleteNumber": 33649,
@@ -902,7 +902,7 @@ export const athletesData = [{
   "CountryName": "India"
 }, {
   "Id": 72,
-  "Avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+  "Avatar": "assets/images/men/31.jpg",
   "Position": "up",
   "Name": "Aaron Robertson",
   "AthleteNumber": 30727,
@@ -914,7 +914,7 @@ export const athletesData = [{
   "CountryName": "Indonesia"
 }, {
   "Id": 2,
-  "Avatar": "https://randomuser.me/api/portraits/men/14.jpg",
+  "Avatar": "assets/images/men/14.jpg",
   "Position": "up",
   "Name": "Bill Fox",
   "AthleteNumber": 18511,
@@ -926,7 +926,7 @@ export const athletesData = [{
   "CountryName": "Iran, Islamic Republic Of"
 }, {
   "Id": 58,
-  "Avatar": "https://randomuser.me/api/portraits/women/30.jpg",
+  "Avatar": "assets/images/women/30.jpg",
   "Position": "up",
   "Name": "Veera Saari",
   "AthleteNumber": 40408,
@@ -938,7 +938,7 @@ export const athletesData = [{
   "CountryName": "Iraq"
 }, {
   "Id": 87,
-  "Avatar": "https://randomuser.me/api/portraits/men/35.jpg",
+  "Avatar": "assets/images/men/35.jpg",
   "Position": "current",
   "Name": "Loïc Gerard",
   "AthleteNumber": 31706,
@@ -950,7 +950,7 @@ export const athletesData = [{
   "CountryName": "Ireland"
 }, {
   "Id": 137,
-  "Avatar": "https://randomuser.me/api/portraits/women/75.jpg",
+  "Avatar": "assets/images/women/75.jpg",
   "Position": "up",
   "Name": "Gloria Caballero",
   "AthleteNumber": 43379,
@@ -962,7 +962,7 @@ export const athletesData = [{
   "CountryName": "Israel"
 }, {
   "Id": 5,
-  "Avatar": "https://randomuser.me/api/portraits/women/38.jpg",
+  "Avatar": "assets/images/women/38.jpg",
   "Position": "current",
   "Name": "Gianne Godijn",
   "AthleteNumber": 45945,
@@ -974,7 +974,7 @@ export const athletesData = [{
   "CountryName": "Italy"
 }, {
   "Id": 196,
-  "Avatar": "https://randomuser.me/api/portraits/women/17.jpg",
+  "Avatar": "assets/images/women/17.jpg",
   "Position": "current",
   "Name": "Parel Zuidhof",
   "AthleteNumber": 32718,
@@ -986,7 +986,7 @@ export const athletesData = [{
   "CountryName": "Jamaica"
 }, {
   "Id": 23,
-  "Avatar": "https://randomuser.me/api/portraits/men/72.jpg",
+  "Avatar": "assets/images/men/72.jpg",
   "Position": "down",
   "Name": "Gökhan Aşıkoğlu",
   "AthleteNumber": 13890,
@@ -998,7 +998,7 @@ export const athletesData = [{
   "CountryName": "Japan"
 }, {
   "Id": 74,
-  "Avatar": "https://randomuser.me/api/portraits/women/9.jpg",
+  "Avatar": "assets/images/women/9.jpg",
   "Position": "up",
   "Name": "Minea Rantanen",
   "AthleteNumber": 18835,
@@ -1010,7 +1010,7 @@ export const athletesData = [{
   "CountryName": "Jordan"
 }, {
   "Id": 92,
-  "Avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+  "Avatar": "assets/images/women/4.jpg",
   "Position": "down",
   "Name": "Asta Hansen",
   "AthleteNumber": 17222,
@@ -1022,7 +1022,7 @@ export const athletesData = [{
   "CountryName": "Kazakhstan"
 }, {
   "Id": 191,
-  "Avatar": "https://randomuser.me/api/portraits/women/13.jpg",
+  "Avatar": "assets/images/women/13.jpg",
   "Position": "up",
   "Name": "Sheryl Collins",
   "AthleteNumber": 36473,
@@ -1034,7 +1034,7 @@ export const athletesData = [{
   "CountryName": "Kenya"
 }, {
   "Id": 166,
-  "Avatar": "https://randomuser.me/api/portraits/women/74.jpg",
+  "Avatar": "assets/images/women/74.jpg",
   "Position": "current",
   "Name": "Maria Parra",
   "AthleteNumber": 39861,
@@ -1046,7 +1046,7 @@ export const athletesData = [{
   "CountryName": "Kiribati"
 }, {
   "Id": 73,
-  "Avatar": "https://randomuser.me/api/portraits/women/33.jpg",
+  "Avatar": "assets/images/women/33.jpg",
   "Position": "up",
   "Name": "Annabelle Besteman",
   "AthleteNumber": 30560,
@@ -1058,7 +1058,7 @@ export const athletesData = [{
   "CountryName": "Korea, Democratic PeopleS Republic of"
 }, {
   "Id": 182,
-  "Avatar": "https://randomuser.me/api/portraits/women/14.jpg",
+  "Avatar": "assets/images/women/14.jpg",
   "Position": "up",
   "Name": "Ariena Achterberg",
   "AthleteNumber": 41330,
@@ -1070,7 +1070,7 @@ export const athletesData = [{
   "CountryName": "Korea, Republic of"
 }, {
   "Id": 67,
-  "Avatar": "https://randomuser.me/api/portraits/men/50.jpg",
+  "Avatar": "assets/images/men/50.jpg",
   "Position": "current",
   "Name": "Villads Larsen",
   "AthleteNumber": 44677,
@@ -1082,7 +1082,7 @@ export const athletesData = [{
   "CountryName": "Kuwait"
 }, {
   "Id": 110,
-  "Avatar": "https://randomuser.me/api/portraits/women/26.jpg",
+  "Avatar": "assets/images/women/26.jpg",
   "Position": "down",
   "Name": "Emilie Morin",
   "AthleteNumber": 26164,
@@ -1094,7 +1094,7 @@ export const athletesData = [{
   "CountryName": "Kyrgyzstan"
 }, {
   "Id": 31,
-  "Avatar": "https://randomuser.me/api/portraits/men/56.jpg",
+  "Avatar": "assets/images/men/56.jpg",
   "Position": "up",
   "Name": "Judd Campbell",
   "AthleteNumber": 37365,
@@ -1106,7 +1106,7 @@ export const athletesData = [{
   "CountryName": "Lao PeopleS Democratic Republic"
 }, {
   "Id": 110,
-  "Avatar": "https://randomuser.me/api/portraits/women/13.jpg",
+  "Avatar": "assets/images/women/13.jpg",
   "Position": "current",
   "Name": "Özsu Keçeci",
   "AthleteNumber": 29403,
@@ -1118,7 +1118,7 @@ export const athletesData = [{
   "CountryName": "Latvia"
 }, {
   "Id": 123,
-  "Avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+  "Avatar": "assets/images/women/12.jpg",
   "Position": "up",
   "Name": "آنیتا كامياران",
   "AthleteNumber": 18980,
@@ -1130,7 +1130,7 @@ export const athletesData = [{
   "CountryName": "Lebanon"
 }, {
   "Id": 138,
-  "Avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+  "Avatar": "assets/images/men/31.jpg",
   "Position": "down",
   "Name": "Antoine Mackay",
   "AthleteNumber": 34547,
@@ -1142,7 +1142,7 @@ export const athletesData = [{
   "CountryName": "Lesotho"
 }, {
   "Id": 167,
-  "Avatar": "https://randomuser.me/api/portraits/men/19.jpg",
+  "Avatar": "assets/images/men/19.jpg",
   "Position": "down",
   "Name": "Louis Smith",
   "AthleteNumber": 31837,
@@ -1154,7 +1154,7 @@ export const athletesData = [{
   "CountryName": "Liberia"
 }, {
   "Id": 29,
-  "Avatar": "https://randomuser.me/api/portraits/men/29.jpg",
+  "Avatar": "assets/images/men/29.jpg",
   "Position": "current",
   "Name": "Selmo Caldeira",
   "AthleteNumber": 21837,
@@ -1166,7 +1166,7 @@ export const athletesData = [{
   "CountryName": "Libyan Arab Jamahiriya"
 }, {
   "Id": 35,
-  "Avatar": "https://randomuser.me/api/portraits/women/42.jpg",
+  "Avatar": "assets/images/women/42.jpg",
   "Position": "down",
   "Name": "Elaine Smith",
   "AthleteNumber": 38243,
@@ -1178,7 +1178,7 @@ export const athletesData = [{
   "CountryName": "Liechtenstein"
 }, {
   "Id": 75,
-  "Avatar": "https://randomuser.me/api/portraits/men/2.jpg",
+  "Avatar": "assets/images/men/2.jpg",
   "Position": "up",
   "Name": "Fritz Sommer",
   "AthleteNumber": 26210,
@@ -1190,7 +1190,7 @@ export const athletesData = [{
   "CountryName": "Lithuania"
 }, {
   "Id": 40,
-  "Avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+  "Avatar": "assets/images/men/5.jpg",
   "Position": "down",
   "Name": "Carter Evans",
   "AthleteNumber": 46961,
@@ -1202,7 +1202,7 @@ export const athletesData = [{
   "CountryName": "Luxembourg"
 }, {
   "Id": 183,
-  "Avatar": "https://randomuser.me/api/portraits/women/53.jpg",
+  "Avatar": "assets/images/women/53.jpg",
   "Position": "up",
   "Name": "رونیکا سلطانی نژاد",
   "AthleteNumber": 35233,
@@ -1214,7 +1214,7 @@ export const athletesData = [{
   "CountryName": "Macedonia, The Former Yugoslav Republic of"
 }, {
   "Id": 151,
-  "Avatar": "https://randomuser.me/api/portraits/women/88.jpg",
+  "Avatar": "assets/images/women/88.jpg",
   "Position": "current",
   "Name": "Charlotte Mills",
   "AthleteNumber": 49829,
@@ -1226,7 +1226,7 @@ export const athletesData = [{
   "CountryName": "Madagascar"
 }, {
   "Id": 107,
-  "Avatar": "https://randomuser.me/api/portraits/men/33.jpg",
+  "Avatar": "assets/images/men/33.jpg",
   "Position": "up",
   "Name": "Pedro Marquez",
   "AthleteNumber": 16169,
@@ -1238,7 +1238,7 @@ export const athletesData = [{
   "CountryName": "Malawi"
 }, {
   "Id": 65,
-  "Avatar": "https://randomuser.me/api/portraits/women/9.jpg",
+  "Avatar": "assets/images/women/9.jpg",
   "Position": "down",
   "Name": "Jenny Burke",
   "AthleteNumber": 15266,
@@ -1250,7 +1250,7 @@ export const athletesData = [{
   "CountryName": "Malaysia"
 }, {
   "Id": 155,
-  "Avatar": "https://randomuser.me/api/portraits/men/82.jpg",
+  "Avatar": "assets/images/men/82.jpg",
   "Position": "up",
   "Name": "Justin Philippe",
   "AthleteNumber": 12858,
@@ -1262,7 +1262,7 @@ export const athletesData = [{
   "CountryName": "Maldives"
 }, {
   "Id": 165,
-  "Avatar": "https://randomuser.me/api/portraits/men/79.jpg",
+  "Avatar": "assets/images/men/79.jpg",
   "Position": "down",
   "Name": "Mario Ellis",
   "AthleteNumber": 18026,
@@ -1274,7 +1274,7 @@ export const athletesData = [{
   "CountryName": "Mali"
 }, {
   "Id": 107,
-  "Avatar": "https://randomuser.me/api/portraits/women/92.jpg",
+  "Avatar": "assets/images/women/92.jpg",
   "Position": "down",
   "Name": "Megan Webb",
   "AthleteNumber": 30713,
@@ -1286,7 +1286,7 @@ export const athletesData = [{
   "CountryName": "Malta"
 }, {
   "Id": 52,
-  "Avatar": "https://randomuser.me/api/portraits/men/94.jpg",
+  "Avatar": "assets/images/men/94.jpg",
   "Position": "down",
   "Name": "Adérito Lopes",
   "AthleteNumber": 21320,
@@ -1298,7 +1298,7 @@ export const athletesData = [{
   "CountryName": "Marshall Islands"
 }, {
   "Id": 99,
-  "Avatar": "https://randomuser.me/api/portraits/men/89.jpg",
+  "Avatar": "assets/images/men/89.jpg",
   "Position": "down",
   "Name": "Victor Lévesque",
   "AthleteNumber": 48375,
@@ -1310,7 +1310,7 @@ export const athletesData = [{
   "CountryName": "Mauritania"
 }, {
   "Id": 188,
-  "Avatar": "https://randomuser.me/api/portraits/men/81.jpg",
+  "Avatar": "assets/images/men/81.jpg",
   "Position": "down",
   "Name": "آراد یاسمی",
   "AthleteNumber": 34370,
@@ -1322,7 +1322,7 @@ export const athletesData = [{
   "CountryName": "Mauritius"
 }, {
   "Id": 10,
-  "Avatar": "https://randomuser.me/api/portraits/women/13.jpg",
+  "Avatar": "assets/images/women/13.jpg",
   "Position": "down",
   "Name": "Maeva Bergeron",
   "AthleteNumber": 15655,
@@ -1334,7 +1334,7 @@ export const athletesData = [{
   "CountryName": "Mexico"
 }, {
   "Id": 41,
-  "Avatar": "https://randomuser.me/api/portraits/men/20.jpg",
+  "Avatar": "assets/images/men/20.jpg",
   "Position": "up",
   "Name": "Oskari Karjala",
   "AthleteNumber": 31498,
@@ -1346,7 +1346,7 @@ export const athletesData = [{
   "CountryName": "Micronesia, Federated States of"
 }, {
   "Id": 51,
-  "Avatar": "https://randomuser.me/api/portraits/men/74.jpg",
+  "Avatar": "assets/images/men/74.jpg",
   "Position": "up",
   "Name": "Alex Meyer",
   "AthleteNumber": 44390,
@@ -1358,7 +1358,7 @@ export const athletesData = [{
   "CountryName": "Moldova, Republic of"
 }, {
   "Id": 128,
-  "Avatar": "https://randomuser.me/api/portraits/women/52.jpg",
+  "Avatar": "assets/images/women/52.jpg",
   "Position": "up",
   "Name": "Sophie Lewis",
   "AthleteNumber": 46222,
@@ -1370,7 +1370,7 @@ export const athletesData = [{
   "CountryName": "Monaco"
 }, {
   "Id": 79,
-  "Avatar": "https://randomuser.me/api/portraits/women/39.jpg",
+  "Avatar": "assets/images/women/39.jpg",
   "Position": "current",
   "Name": "Ashley Romero",
   "AthleteNumber": 36611,
@@ -1382,7 +1382,7 @@ export const athletesData = [{
   "CountryName": "Mongolia"
 }, {
   "Id": 124,
-  "Avatar": "https://randomuser.me/api/portraits/women/19.jpg",
+  "Avatar": "assets/images/women/19.jpg",
   "Position": "current",
   "Name": "Marie Poulsen",
   "AthleteNumber": 44113,
@@ -1394,7 +1394,7 @@ export const athletesData = [{
   "CountryName": "Morocco"
 }, {
   "Id": 42,
-  "Avatar": "https://randomuser.me/api/portraits/women/83.jpg",
+  "Avatar": "assets/images/women/83.jpg",
   "Position": "down",
   "Name": "Caitlin Jackson",
   "AthleteNumber": 45472,
@@ -1406,7 +1406,7 @@ export const athletesData = [{
   "CountryName": "Mozambique"
 }, {
   "Id": 15,
-  "Avatar": "https://randomuser.me/api/portraits/women/79.jpg",
+  "Avatar": "assets/images/women/79.jpg",
   "Position": "down",
   "Name": "Marilou Hubert",
   "AthleteNumber": 43655,
@@ -1418,7 +1418,7 @@ export const athletesData = [{
   "CountryName": "Myanmar"
 }, {
   "Id": 63,
-  "Avatar": "https://randomuser.me/api/portraits/women/9.jpg",
+  "Avatar": "assets/images/women/9.jpg",
   "Position": "up",
   "Name": "Estelle Vincent",
   "AthleteNumber": 41700,
@@ -1430,7 +1430,7 @@ export const athletesData = [{
   "CountryName": "Namibia"
 }, {
   "Id": 154,
-  "Avatar": "https://randomuser.me/api/portraits/women/54.jpg",
+  "Avatar": "assets/images/women/54.jpg",
   "Position": "down",
   "Name": "Rhonda Simmmons",
   "AthleteNumber": 37139,
@@ -1442,7 +1442,7 @@ export const athletesData = [{
   "CountryName": "Nauru"
 }, {
   "Id": 191,
-  "Avatar": "https://randomuser.me/api/portraits/men/42.jpg",
+  "Avatar": "assets/images/men/42.jpg",
   "Position": "current",
   "Name": "آرش احمدی",
   "AthleteNumber": 36948,
@@ -1454,7 +1454,7 @@ export const athletesData = [{
   "CountryName": "Nepal"
 }, {
   "Id": 141,
-  "Avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+  "Avatar": "assets/images/men/15.jpg",
   "Position": "current",
   "Name": "Miro Korpela",
   "AthleteNumber": 40544,
@@ -1466,7 +1466,7 @@ export const athletesData = [{
   "CountryName": "Netherlands"
 }, {
   "Id": 73,
-  "Avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+  "Avatar": "assets/images/women/4.jpg",
   "Position": "up",
   "Name": "Afet Kumcuoğlu",
   "AthleteNumber": 33454,
@@ -1478,7 +1478,7 @@ export const athletesData = [{
   "CountryName": "New Zealand"
 }, {
   "Id": 163,
-  "Avatar": "https://randomuser.me/api/portraits/women/52.jpg",
+  "Avatar": "assets/images/women/52.jpg",
   "Position": "up",
   "Name": "Millie Cooper",
   "AthleteNumber": 14610,
@@ -1490,7 +1490,7 @@ export const athletesData = [{
   "CountryName": "Nicaragua"
 }, {
   "Id": 53,
-  "Avatar": "https://randomuser.me/api/portraits/women/51.jpg",
+  "Avatar": "assets/images/women/51.jpg",
   "Position": "current",
   "Name": "Kayla Patel",
   "AthleteNumber": 42780,
@@ -1502,7 +1502,7 @@ export const athletesData = [{
   "CountryName": "Niger"
 }, {
   "Id": 58,
-  "Avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+  "Avatar": "assets/images/men/31.jpg",
   "Position": "current",
   "Name": "Diego Gautier",
   "AthleteNumber": 26320,
@@ -1514,7 +1514,7 @@ export const athletesData = [{
   "CountryName": "Nigeria"
 }, {
   "Id": 186,
-  "Avatar": "https://randomuser.me/api/portraits/men/2.jpg",
+  "Avatar": "assets/images/men/2.jpg",
   "Position": "up",
   "Name": "کوروش کامروا",
   "AthleteNumber": 13506,
@@ -1526,7 +1526,7 @@ export const athletesData = [{
   "CountryName": "Niue"
 }, {
   "Id": 101,
-  "Avatar": "https://randomuser.me/api/portraits/women/71.jpg",
+  "Avatar": "assets/images/women/71.jpg",
   "Position": "down",
   "Name": "Lavínia Silva",
   "AthleteNumber": 33994,
@@ -1538,7 +1538,7 @@ export const athletesData = [{
   "CountryName": "Norway"
 }, {
   "Id": 194,
-  "Avatar": "https://randomuser.me/api/portraits/men/71.jpg",
+  "Avatar": "assets/images/men/71.jpg",
   "Position": "down",
   "Name": "Adrian Ibañez",
   "AthleteNumber": 21968,
@@ -1550,7 +1550,7 @@ export const athletesData = [{
   "CountryName": "Oman"
 }, {
   "Id": 143,
-  "Avatar": "https://randomuser.me/api/portraits/men/38.jpg",
+  "Avatar": "assets/images/men/38.jpg",
   "Position": "up",
   "Name": "رضا کوتی",
   "AthleteNumber": 13640,
@@ -1562,7 +1562,7 @@ export const athletesData = [{
   "CountryName": "Pakistan"
 }, {
   "Id": 37,
-  "Avatar": "https://randomuser.me/api/portraits/men/86.jpg",
+  "Avatar": "assets/images/men/86.jpg",
   "Position": "down",
   "Name": "Clyde Matthews",
   "AthleteNumber": 11955,
@@ -1574,7 +1574,7 @@ export const athletesData = [{
   "CountryName": "Palau"
 }, {
   "Id": 176,
-  "Avatar": "https://randomuser.me/api/portraits/men/26.jpg",
+  "Avatar": "assets/images/men/26.jpg",
   "Position": "current",
   "Name": "Tim Neal",
   "AthleteNumber": 45860,
@@ -1586,7 +1586,7 @@ export const athletesData = [{
   "CountryName": "Panama"
 }, {
   "Id": 110,
-  "Avatar": "https://randomuser.me/api/portraits/women/15.jpg",
+  "Avatar": "assets/images/women/15.jpg",
   "Position": "current",
   "Name": "Annabell Brand",
   "AthleteNumber": 39233,
@@ -1598,7 +1598,7 @@ export const athletesData = [{
   "CountryName": "Papua New Guinea"
 }, {
   "Id": 188,
-  "Avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+  "Avatar": "assets/images/men/3.jpg",
   "Position": "current",
   "Name": "Foppe Delfos",
   "AthleteNumber": 39679,
@@ -1610,7 +1610,7 @@ export const athletesData = [{
   "CountryName": "Paraguay"
 }, {
   "Id": 43,
-  "Avatar": "https://randomuser.me/api/portraits/men/42.jpg",
+  "Avatar": "assets/images/men/42.jpg",
   "Position": "up",
   "Name": "Kent Clark",
   "AthleteNumber": 32799,
@@ -1622,7 +1622,7 @@ export const athletesData = [{
   "CountryName": "Peru"
 }, {
   "Id": 167,
-  "Avatar": "https://randomuser.me/api/portraits/women/32.jpg",
+  "Avatar": "assets/images/women/32.jpg",
   "Position": "current",
   "Name": "Esma Adıvar",
   "AthleteNumber": 35565,
@@ -1634,7 +1634,7 @@ export const athletesData = [{
   "CountryName": "Philippines"
 }, {
   "Id": 123,
-  "Avatar": "https://randomuser.me/api/portraits/women/19.jpg",
+  "Avatar": "assets/images/women/19.jpg",
   "Position": "down",
   "Name": "Flora Perez",
   "AthleteNumber": 23907,
@@ -1646,7 +1646,7 @@ export const athletesData = [{
   "CountryName": "Poland"
 }, {
   "Id": 76,
-  "Avatar": "https://randomuser.me/api/portraits/men/65.jpg",
+  "Avatar": "assets/images/men/65.jpg",
   "Position": "current",
   "Name": "David Scott",
   "AthleteNumber": 46997,
@@ -1658,7 +1658,7 @@ export const athletesData = [{
   "CountryName": "Portugal"
 }, {
   "Id": 183,
-  "Avatar": "https://randomuser.me/api/portraits/men/74.jpg",
+  "Avatar": "assets/images/men/74.jpg",
   "Position": "down",
   "Name": "Yarno Kin",
   "AthleteNumber": 47324,
@@ -1670,7 +1670,7 @@ export const athletesData = [{
   "CountryName": "Romania"
 }, {
   "Id": 8,
-  "Avatar": "https://randomuser.me/api/portraits/women/15.jpg",
+  "Avatar": "assets/images/women/15.jpg",
   "Position": "down",
   "Name": "Esther Kühn",
   "AthleteNumber": 24868,
@@ -1682,7 +1682,7 @@ export const athletesData = [{
   "CountryName": "Russian Federation"
 }, {
   "Id": 80,
-  "Avatar": "https://randomuser.me/api/portraits/men/90.jpg",
+  "Avatar": "assets/images/men/90.jpg",
   "Position": "down",
   "Name": "Cecil Nichols",
   "AthleteNumber": 20656,
@@ -1694,7 +1694,7 @@ export const athletesData = [{
   "CountryName": "RWANDA"
 }, {
   "Id": 41,
-  "Avatar": "https://randomuser.me/api/portraits/women/65.jpg",
+  "Avatar": "assets/images/women/65.jpg",
   "Position": "down",
   "Name": "Lilly Keuter",
   "AthleteNumber": 49893,
@@ -1706,7 +1706,7 @@ export const athletesData = [{
   "CountryName": "Saint Kitts and Nevis"
 }, {
   "Id": 200,
-  "Avatar": "https://randomuser.me/api/portraits/women/73.jpg",
+  "Avatar": "assets/images/women/73.jpg",
   "Position": "current",
   "Name": "Alice Perry",
   "AthleteNumber": 23750,
@@ -1718,7 +1718,7 @@ export const athletesData = [{
   "CountryName": "Saint Lucia"
 }, {
   "Id": 51,
-  "Avatar": "https://randomuser.me/api/portraits/women/34.jpg",
+  "Avatar": "assets/images/women/34.jpg",
   "Position": "down",
   "Name": "Eléa Robin",
   "AthleteNumber": 26742,
@@ -1730,7 +1730,7 @@ export const athletesData = [{
   "CountryName": "Saint Vincent and the Grenadines"
 }, {
   "Id": 163,
-  "Avatar": "https://randomuser.me/api/portraits/men/70.jpg",
+  "Avatar": "assets/images/men/70.jpg",
   "Position": "down",
   "Name": "میلاد قاسمی",
   "AthleteNumber": 12788,
@@ -1742,7 +1742,7 @@ export const athletesData = [{
   "CountryName": "Samoa"
 }, {
   "Id": 72,
-  "Avatar": "https://randomuser.me/api/portraits/women/26.jpg",
+  "Avatar": "assets/images/women/26.jpg",
   "Position": "down",
   "Name": "Sélène Roussel",
   "AthleteNumber": 11261,
@@ -1754,7 +1754,7 @@ export const athletesData = [{
   "CountryName": "San Marino"
 }, {
   "Id": 159,
-  "Avatar": "https://randomuser.me/api/portraits/women/66.jpg",
+  "Avatar": "assets/images/women/66.jpg",
   "Position": "up",
   "Name": "Eva Dean",
   "AthleteNumber": 48874,
@@ -1766,7 +1766,7 @@ export const athletesData = [{
   "CountryName": "Sao Tome and Principe"
 }, {
   "Id": 12,
-  "Avatar": "https://randomuser.me/api/portraits/women/83.jpg",
+  "Avatar": "assets/images/women/83.jpg",
   "Position": "up",
   "Name": "Sara Larsen",
   "AthleteNumber": 37094,
@@ -1778,7 +1778,7 @@ export const athletesData = [{
   "CountryName": "Saudi Arabia"
 }, {
   "Id": 194,
-  "Avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+  "Avatar": "assets/images/men/11.jpg",
   "Position": "down",
   "Name": "Kaya Taşlı",
   "AthleteNumber": 42291,
@@ -1790,7 +1790,7 @@ export const athletesData = [{
   "CountryName": "Senegal"
 }, {
   "Id": 162,
-  "Avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+  "Avatar": "assets/images/men/5.jpg",
   "Position": "down",
   "Name": "Adam Bouchard",
   "AthleteNumber": 38672,
@@ -1802,7 +1802,7 @@ export const athletesData = [{
   "CountryName": "Seychelles"
 }, {
   "Id": 96,
-  "Avatar": "https://randomuser.me/api/portraits/women/37.jpg",
+  "Avatar": "assets/images/women/37.jpg",
   "Position": "up",
   "Name": "Thea Edwards",
   "AthleteNumber": 29141,
@@ -1814,7 +1814,7 @@ export const athletesData = [{
   "CountryName": "Sierra Leone"
 }, {
   "Id": 93,
-  "Avatar": "https://randomuser.me/api/portraits/women/90.jpg",
+  "Avatar": "assets/images/women/90.jpg",
   "Position": "current",
   "Name": "Ana Bourgeois",
   "AthleteNumber": 24612,
@@ -1826,7 +1826,7 @@ export const athletesData = [{
   "CountryName": "Singapore"
 }, {
   "Id": 27,
-  "Avatar": "https://randomuser.me/api/portraits/women/61.jpg",
+  "Avatar": "assets/images/women/61.jpg",
   "Position": "up",
   "Name": "Layla Douglas",
   "AthleteNumber": 21977,
@@ -1838,7 +1838,7 @@ export const athletesData = [{
   "CountryName": "Slovenia"
 }, {
   "Id": 178,
-  "Avatar": "https://randomuser.me/api/portraits/women/65.jpg",
+  "Avatar": "assets/images/women/65.jpg",
   "Position": "down",
   "Name": "Lillian Wade",
   "AthleteNumber": 10729,
@@ -1850,7 +1850,7 @@ export const athletesData = [{
   "CountryName": "Solomon Islands"
 }, {
   "Id": 192,
-  "Avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+  "Avatar": "assets/images/women/44.jpg",
   "Position": "down",
   "Name": "Viivi Kujala",
   "AthleteNumber": 29939,
@@ -1862,7 +1862,7 @@ export const athletesData = [{
   "CountryName": "Somalia"
 }, {
   "Id": 87,
-  "Avatar": "https://randomuser.me/api/portraits/women/72.jpg",
+  "Avatar": "assets/images/women/72.jpg",
   "Position": "up",
   "Name": "Charlotte Dean",
   "AthleteNumber": 45969,
@@ -1874,7 +1874,7 @@ export const athletesData = [{
   "CountryName": "South Africa"
 }, {
   "Id": 86,
-  "Avatar": "https://randomuser.me/api/portraits/women/45.jpg",
+  "Avatar": "assets/images/women/45.jpg",
   "Position": "down",
   "Name": "Marisvalda Martins",
   "AthleteNumber": 33879,
@@ -1886,7 +1886,7 @@ export const athletesData = [{
   "CountryName": "Spain"
 }, {
   "Id": 129,
-  "Avatar": "https://randomuser.me/api/portraits/women/34.jpg",
+  "Avatar": "assets/images/women/34.jpg",
   "Position": "up",
   "Name": "Ella Hansen",
   "AthleteNumber": 27075,
@@ -1898,7 +1898,7 @@ export const athletesData = [{
   "CountryName": "Sri Lanka"
 }, {
   "Id": 27,
-  "Avatar": "https://randomuser.me/api/portraits/men/9.jpg",
+  "Avatar": "assets/images/men/9.jpg",
   "Position": "current",
   "Name": "Johann Hinz",
   "AthleteNumber": 48244,
@@ -1910,7 +1910,7 @@ export const athletesData = [{
   "CountryName": "Sudan"
 }, {
   "Id": 113,
-  "Avatar": "https://randomuser.me/api/portraits/men/37.jpg",
+  "Avatar": "assets/images/men/37.jpg",
   "Position": "current",
   "Name": "Nick Naumann",
   "AthleteNumber": 25566,
@@ -1922,7 +1922,7 @@ export const athletesData = [{
   "CountryName": "Swaziland"
 }, {
   "Id": 194,
-  "Avatar": "https://randomuser.me/api/portraits/women/62.jpg",
+  "Avatar": "assets/images/women/62.jpg",
   "Position": "up",
   "Name": "آوا سلطانی نژاد",
   "AthleteNumber": 45635,
@@ -1934,7 +1934,7 @@ export const athletesData = [{
   "CountryName": "Sweden"
 }, {
   "Id": 65,
-  "Avatar": "https://randomuser.me/api/portraits/women/47.jpg",
+  "Avatar": "assets/images/women/47.jpg",
   "Position": "current",
   "Name": "Ilke Kisters",
   "AthleteNumber": 23817,
@@ -1946,7 +1946,7 @@ export const athletesData = [{
   "CountryName": "Switzerland"
 }, {
   "Id": 162,
-  "Avatar": "https://randomuser.me/api/portraits/women/0.jpg",
+  "Avatar": "assets/images/women/0.jpg",
   "Position": "current",
   "Name": "Alex Craig",
   "AthleteNumber": 21868,
@@ -1958,7 +1958,7 @@ export const athletesData = [{
   "CountryName": "Syrian Arab Republic"
 }, {
   "Id": 161,
-  "Avatar": "https://randomuser.me/api/portraits/men/89.jpg",
+  "Avatar": "assets/images/men/89.jpg",
   "Position": "up",
   "Name": "Franklin Byrd",
   "AthleteNumber": 49498,
@@ -1970,7 +1970,7 @@ export const athletesData = [{
   "CountryName": "Taiwan, Province of China"
 }, {
   "Id": 167,
-  "Avatar": "https://randomuser.me/api/portraits/women/62.jpg",
+  "Avatar": "assets/images/women/62.jpg",
   "Position": "current",
   "Name": "Pippa Morris",
   "AthleteNumber": 44421,
@@ -1982,7 +1982,7 @@ export const athletesData = [{
   "CountryName": "Tajikistan"
 }, {
   "Id": 43,
-  "Avatar": "https://randomuser.me/api/portraits/women/94.jpg",
+  "Avatar": "assets/images/women/94.jpg",
   "Position": "up",
   "Name": "Emma Turner",
   "AthleteNumber": 39487,
@@ -1994,7 +1994,7 @@ export const athletesData = [{
   "CountryName": "Tanzania, United Republic of"
 }, {
   "Id": 76,
-  "Avatar": "https://randomuser.me/api/portraits/women/1.jpg",
+  "Avatar": "assets/images/women/1.jpg",
   "Position": "current",
   "Name": "Encarnacion Martin",
   "AthleteNumber": 40912,
@@ -2006,7 +2006,7 @@ export const athletesData = [{
   "CountryName": "Thailand"
 }, {
   "Id": 93,
-  "Avatar": "https://randomuser.me/api/portraits/women/21.jpg",
+  "Avatar": "assets/images/women/21.jpg",
   "Position": "up",
   "Name": "Sara Hannula",
   "AthleteNumber": 22025,
@@ -2018,7 +2018,7 @@ export const athletesData = [{
   "CountryName": "Timor-Leste"
 }, {
   "Id": 147,
-  "Avatar": "https://randomuser.me/api/portraits/men/8.jpg",
+  "Avatar": "assets/images/men/8.jpg",
   "Position": "down",
   "Name": "میلاد یاسمی",
   "AthleteNumber": 44023,
@@ -2030,7 +2030,7 @@ export const athletesData = [{
   "CountryName": "Togo"
 }, {
   "Id": 131,
-  "Avatar": "https://randomuser.me/api/portraits/women/61.jpg",
+  "Avatar": "assets/images/women/61.jpg",
   "Position": "down",
   "Name": "Veronika Huber",
   "AthleteNumber": 18146,
@@ -2042,7 +2042,7 @@ export const athletesData = [{
   "CountryName": "Tonga"
 }, {
   "Id": 122,
-  "Avatar": "https://randomuser.me/api/portraits/women/71.jpg",
+  "Avatar": "assets/images/women/71.jpg",
   "Position": "down",
   "Name": "Natalie Conrad",
   "AthleteNumber": 42602,
@@ -2054,7 +2054,7 @@ export const athletesData = [{
   "CountryName": "Trinidad and Tobago"
 }, {
   "Id": 113,
-  "Avatar": "https://randomuser.me/api/portraits/women/36.jpg",
+  "Avatar": "assets/images/women/36.jpg",
   "Position": "current",
   "Name": "Marialba Nascimento",
   "AthleteNumber": 47061,
@@ -2066,7 +2066,7 @@ export const athletesData = [{
   "CountryName": "Tunisia"
 }, {
   "Id": 135,
-  "Avatar": "https://randomuser.me/api/portraits/men/84.jpg",
+  "Avatar": "assets/images/men/84.jpg",
   "Position": "down",
   "Name": "Darryl Douglas",
   "AthleteNumber": 35826,
@@ -2078,7 +2078,7 @@ export const athletesData = [{
   "CountryName": "Turkey"
 }, {
   "Id": 130,
-  "Avatar": "https://randomuser.me/api/portraits/men/94.jpg",
+  "Avatar": "assets/images/men/94.jpg",
   "Position": "up",
   "Name": "Adem Özdoğan",
   "AthleteNumber": 45143,
@@ -2090,7 +2090,7 @@ export const athletesData = [{
   "CountryName": "Turkmenistan"
 }, {
   "Id": 14,
-  "Avatar": "https://randomuser.me/api/portraits/women/84.jpg",
+  "Avatar": "assets/images/women/84.jpg",
   "Position": "up",
   "Name": "Ömür Denkel",
   "AthleteNumber": 31061,
@@ -2102,7 +2102,7 @@ export const athletesData = [{
   "CountryName": "Tuvalu"
 }, {
   "Id": 43,
-  "Avatar": "https://randomuser.me/api/portraits/women/77.jpg",
+  "Avatar": "assets/images/women/77.jpg",
   "Position": "down",
   "Name": "Cathalijne Van Der Ree",
   "AthleteNumber": 45160,
@@ -2114,7 +2114,7 @@ export const athletesData = [{
   "CountryName": "Uganda"
 }, {
   "Id": 164,
-  "Avatar": "https://randomuser.me/api/portraits/women/51.jpg",
+  "Avatar": "assets/images/women/51.jpg",
   "Position": "current",
   "Name": "Ethel Stephens",
   "AthleteNumber": 18692,
@@ -2126,7 +2126,7 @@ export const athletesData = [{
   "CountryName": "Ukraine"
 }, {
   "Id": 167,
-  "Avatar": "https://randomuser.me/api/portraits/men/67.jpg",
+  "Avatar": "assets/images/men/67.jpg",
   "Position": "down",
   "Name": "Aatu Ranta",
   "AthleteNumber": 38049,
@@ -2138,7 +2138,7 @@ export const athletesData = [{
   "CountryName": "United Arab Emirates"
 }, {
   "Id": 169,
-  "Avatar": "https://randomuser.me/api/portraits/men/44.jpg",
+  "Avatar": "assets/images/men/44.jpg",
   "Position": "up",
   "Name": "Aziz Santos",
   "AthleteNumber": 38947,
@@ -2150,7 +2150,7 @@ export const athletesData = [{
   "CountryName": "United Kingdom"
 }, {
   "Id": 170,
-  "Avatar": "https://randomuser.me/api/portraits/men/60.jpg",
+  "Avatar": "assets/images/men/60.jpg",
   "Position": "up",
   "Name": "Fernando Gimenez",
   "AthleteNumber": 31290,
@@ -2162,7 +2162,7 @@ export const athletesData = [{
   "CountryName": "Uruguay"
 }, {
   "Id": 124,
-  "Avatar": "https://randomuser.me/api/portraits/men/98.jpg",
+  "Avatar": "assets/images/men/98.jpg",
   "Position": "down",
   "Name": "Mathieu Mathieu",
   "AthleteNumber": 10555,
@@ -2174,7 +2174,7 @@ export const athletesData = [{
   "CountryName": "Uzbekistan"
 }, {
   "Id": 193,
-  "Avatar": "https://randomuser.me/api/portraits/women/9.jpg",
+  "Avatar": "assets/images/women/9.jpg",
   "Position": "down",
   "Name": "Juanita Franklin",
   "AthleteNumber": 13907,
@@ -2186,7 +2186,7 @@ export const athletesData = [{
   "CountryName": "Vanuatu"
 }, {
   "Id": 25,
-  "Avatar": "https://randomuser.me/api/portraits/men/42.jpg",
+  "Avatar": "assets/images/men/42.jpg",
   "Position": "up",
   "Name": "Stanley Hart",
   "AthleteNumber": 14150,
@@ -2198,7 +2198,7 @@ export const athletesData = [{
   "CountryName": "Venezuela"
 }, {
   "Id": 131,
-  "Avatar": "https://randomuser.me/api/portraits/women/61.jpg",
+  "Avatar": "assets/images/women/61.jpg",
   "Position": "current",
   "Name": "Eliza Bishop",
   "AthleteNumber": 31774,
@@ -2210,7 +2210,7 @@ export const athletesData = [{
   "CountryName": "Western Sahara"
 }, {
   "Id": 34,
-  "Avatar": "https://randomuser.me/api/portraits/women/19.jpg",
+  "Avatar": "assets/images/women/19.jpg",
   "Position": "down",
   "Name": "Linda Schäfer",
   "AthleteNumber": 43074,
