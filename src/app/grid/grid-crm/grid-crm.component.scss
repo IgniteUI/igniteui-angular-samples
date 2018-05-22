@@ -37,6 +37,15 @@
 
     @include igx-grid-summary($summary-theme);
 
+    $search-theme: igx-input-group-theme(
+        $search-background: $primary-400,
+        $idle-text-color: $primary-100,
+        $filled-text-color: igx-color($crm-grid-palette, "grays", 600),
+        $focused-text-color: igx-color($crm-grid-palette, "grays", 600)
+    );
+
+    @include igx-input-group($search-theme);
+
     $filtering-theme: igx-grid-filtering-theme(
         $palette: $crm-grid-palette,
         $toggle-active-background: igx-color($crm-grid-palette, "secondary", 500)
@@ -63,11 +72,20 @@
         $flat-hover-background: $primary-300,
         $flat-hover-text-color: $primary-100,
         $flat-focus-background: $primary-200,
-        $flat-focus-text-color: $primary-100
+        $flat-focus-text-color: $primary-100,
+
+        $icon-background: $primary-400,
+        $icon-color: $primary-100,
+        $icon-hover-background: $primary-300,
+        $icon-hover-color: $primary-100,
+        $icon-focus-background: $primary-200,
+        $icon-focus-color: $primary-100
     );
 
     // Pass the theme to the igx-button component mixin
-    @include igx-button($crm-button-theme);
+    .operationsContainer {
+        @include igx-button($crm-button-theme);
+    }
 
     // linear bar theme
     $crm-linear-bar-theme: igx-progress-linear-theme(
@@ -92,7 +110,7 @@
     }
 
     // grid caption styling
-    .crm-sample {
+    .crm-sample-toolbar {
         background: $primary-500;
         width: 1172px;
         height: 56px;
@@ -101,42 +119,87 @@
         color: white;
         font-weight: 600;
         font-size: 1.25rem;
-        padding: 0 24px;
+        padding: rem(8px) rem(24px);
         box-shadow: 0 1px 5px 0 rgba(0,0,0,.26), 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.08);
         border-radius: 2px;
         & span {
             margin-right: auto;
         }
-    }
-
-    .searchContainer {
-        margin: auto auto auto 5px;
-        display: flex;
-    }
-
-    .operationsContainer {
-        margin: auto 5px auto auto;
-        display: flex;
-    }
-
-    .prefixIcon {
-        margin-left: 10px;
-    }
-
-    .searchInputGroup {
-        width: 600px;
-        & div {
-            padding: 0 4px;
+        
+        .igx-button--flat {
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+    
+        .igx-button--icon {
+            border-radius: 0;
         }
     }
-
-    .searchInput {
-        margin-top: 4px;
-        padding: 0px;
+    
+   
+    .sample-flex-container {
+        display: flex;
+        align-self: center;
+        flex: 1 1 auto;
+        justify-content: flex-end;
     }
+    
+    .crm-sample-toolbar__title {
+        margin-right: rem(16px);
+        display: flex;
+        align-items: center;
+        justify-self: flex-start;
+    }
+    
+    .crm-sample-toolbar__ellipsis {
+        @include ellipsis();
+    }
+ 
+    .igx-input-group--search .igx-input-group__bundle {
+        box-shadow: none;
+        height: rem(36px);
+        overflow: hidden;
+    }
+    
+    .igx-input-group,
+    .igx-input-group--focused {
+        max-width: 100%;
+        transition: width 1s ease-in-out;
+        font-size: 13px;
+        overflow: hidden;
+        flex: 1 1 auto;
+        
+        igx-icon {
+            font-size: 1rem;
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    
+    .igx-input-group__input{
+        &::placeholder {
+            color: $primary-100;
+            opacity: 1;
+        }
+    }
+    
+    .igx-input-group--focused {
+        .igx-input-group__bundle {
+            background: #fff;
+            color: igx-color($crm-grid-palette, 'grays', 600);
+        }
+    
+        .igx-input-group__input {
+            &::placeholder {
+                color: igx-color($crm-grid-palette, 'grays', 600);
+                opacity: 1;
+            }
+        }
+    }
+ 
 
-    .resultsText {
-        font-size: 0.875rem;
+    .operationsContainer {
+        display: flex;
     }
     
     .caseSensitiveButton {
@@ -150,7 +213,7 @@
         color: rgba(0, 0, 0, .54);
     }
     
-    .searchButtons {    
+    .searchButtons {
         margin-left: 4px;
     }
 
@@ -226,4 +289,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 1rem;
+    height: 1rem;
 }
