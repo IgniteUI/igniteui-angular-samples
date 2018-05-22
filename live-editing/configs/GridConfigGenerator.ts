@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
-import { InMemoryWebApiModule } from "angular-in-memory-web-api";
+import { HttpModule } from "@angular/http";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -23,6 +23,8 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
+import { RemoteSortingSampleComponent } from "../../src/app/grid/grid-remote-sorting-sample/remote-sorting-sample.component";
+import { RemoteFilteringSampleComponent } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
@@ -32,10 +34,12 @@ import {
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { DataService } from "../../src/app/grid/services/data.service";
-import { MockDataService } from "../../src/app/grid/services/mock-data.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { RemoteSortingService } from "../../src/app/grid/grid-remote-sorting-sample/remote-sorting-sample.component";
+import { RemoteFilteringService } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
+import { RemoteService } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -45,13 +49,13 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                imports: [HttpClientModule, HttpModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, GridComponent, DataService],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
-                    IgxSwitchModule, HttpClientModule],
+                    IgxSwitchModule, HttpClientModule, HttpModule],
                 ngProviders: [DataService]
             })
         }));
@@ -78,7 +82,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
                 ngDeclarations: [GridSample3Component],
-                ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
             })
         }));
@@ -87,7 +91,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: FilteringSampleComponent,
             additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
+                imports: [IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
                 ngDeclarations: [FilteringSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxInputGroupModule],
                 ngProviders: []
@@ -98,7 +102,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: PagingSampleComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, PagingSampleComponent, DataService],
                 ngDeclarations: [PagingSampleComponent],
@@ -168,12 +172,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: SortingSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sorting-sample/nwindData.ts",
-                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
-                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
-                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss"
-                            ],
+                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
+                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
+                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss"
+            ],
             appModuleConfig: new AppModuleConfig({
-                imports: [ IgxGridModule, IgxIconModule, IgxRippleModule,
+                imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
                     SortingSampleComponent, IgxInputGroupModule, GridContextmenuComponent],
                 ngDeclarations: [SortingSampleComponent, GridContextmenuComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxIconModule, IgxInputGroupModule],
@@ -183,23 +187,40 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridRemoteVirtualizationSampleComponent,
-            additionalFiles: ["/src/app/grid/services/mock-data.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
-                     IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
+                imports: [GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
+                    IgxBadgeModule, HttpClientModule, RemoteService],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule,
-                     InMemoryWebApiModule.forRoot(MockDataService)],
-                ngProviders: []
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule],
+                ngProviders: [RemoteService]
             }),
-            additionalDependencies: ["angular-in-memory-web-api"]
+        }));
+
+        configs.push(new Config({
+            component: RemoteSortingSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemoteSortingSampleComponent, IgxGridModule, IgxBadgeModule, HttpClientModule, RemoteSortingService],
+                ngDeclarations: [RemoteSortingSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule],
+                ngProviders: [RemoteSortingService]
+            }),
+        }));
+
+        configs.push(new Config({
+            component: RemoteFilteringSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemoteFilteringSampleComponent, IgxGridModule, IgxBadgeModule, HttpClientModule, RemoteFilteringService],
+                ngDeclarations: [RemoteFilteringSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule],
+                ngProviders: [RemoteFilteringService]
+            }),
         }));
 
         configs.push(new Config({
             component: PinningSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ PinningSampleComponent, IgxGridModule, IgxIconModule],
+                imports: [PinningSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxIconModule],
                 ngProviders: []

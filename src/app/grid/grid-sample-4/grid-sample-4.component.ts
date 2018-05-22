@@ -12,7 +12,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 @Injectable()
 export class RemoteService {
     public remoteData: Observable<any[]>;
-    private url: string = "/api/financial";
+    private _url: string = "https://www.igniteui.com/api/products";
     private _remoteData: BehaviorSubject<any[]>;
 
     constructor(private http: HttpClient) {
@@ -20,16 +20,17 @@ export class RemoteService {
         this.remoteData = this._remoteData.asObservable();
     }
 
-    public getData(data?: IForOfState, cb?: (any) => void): any {
-        const dataState = data;
-        return this.http
-            .get(this.buildUrl(dataState))
-            .subscribe((d: any) => {
-                this._remoteData.next(d.value);
+    public getData(virtualizationArgs?: IForOfState, cb?: (any) => void): any {
+        return this.http.get(this._url).subscribe((json: any) => {
+            json.totalCount = json.length;
+            this.http.get(this.buildUrl(virtualizationArgs)).subscribe((data: any) => {
+                data.totalCount = json.totalCount;
+                this._remoteData.next(data);
                 if (cb) {
-                    cb(d);
+                    cb(data);
                 }
             });
+        });
     }
 
     private buildUrl(dataState: any): string {
@@ -44,7 +45,7 @@ export class RemoteService {
             const top = requiredChunkSize;
             qS += `$skip=${skip}&$top=${top}&$count=true`;
         }
-        return `${this.url}${qS}`;
+        return `${this._url}${qS}`;
     }
 }
 
@@ -59,7 +60,7 @@ export class GridRemoteVirtualizationSampleComponent {
     public remoteData: any;
     public prevRequest: any;
 
-    @ViewChild("grid1") public grid: IgxGridComponent;
+    @ViewChild("grid") public grid: IgxGridComponent;
     @ViewChild("toast") public toast: IgxToastComponent;
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
     public ngOnInit(): void {
@@ -68,7 +69,7 @@ export class GridRemoteVirtualizationSampleComponent {
 
     public ngAfterViewInit() {
         this.remoteService.getData(this.grid.virtualizationState, (data) => {
-            this.grid.totalItemCount = data.count;
+            this.grid.totalItemCount = data.totalCount;
         });
     }
 
@@ -89,6 +90,7 @@ export class GridRemoteVirtualizationSampleComponent {
     public formatNumber(value: number) {
         return value.toFixed(2);
     }
+
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
     }
