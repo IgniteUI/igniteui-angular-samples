@@ -119,6 +119,10 @@
         display: flex;
     }
 
+    .prefixIcon {
+        margin-left: 10px;
+    }
+
     .searchInputGroup {
         width: 600px;
         & div {
@@ -127,7 +131,8 @@
     }
 
     .searchInput {
-        padding: 0;
+        margin-top: 4px;
+        padding: 0px;
     }
 
     .resultsText {

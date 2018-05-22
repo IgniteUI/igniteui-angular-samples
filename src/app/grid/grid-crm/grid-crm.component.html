@@ -5,8 +5,8 @@
                 <div class="searchContainer">
                     <igx-input-group type="search" class="searchInputGroup">
                         <igx-prefix>
-                            <igx-icon *ngIf="searchText.length == 0">search</igx-icon>
-                            <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
+                            <igx-icon class="prefixIcon" *ngIf="searchText.length == 0">search</igx-icon>
+                            <igx-icon class="prefixIcon" *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
                         </igx-prefix>
                                             
                         <input #search1 id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)"
