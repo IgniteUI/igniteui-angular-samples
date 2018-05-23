@@ -125,94 +125,126 @@
         & span {
             margin-right: auto;
         }
-        
+
         .igx-button--flat {
             flex-wrap: nowrap;
             white-space: nowrap;
         }
-    
+
         .igx-button--icon {
             border-radius: 0;
         }
     }
-    
-   
+
+
     .sample-flex-container {
         display: flex;
         align-self: center;
         flex: 1 1 auto;
         justify-content: flex-end;
     }
-    
+
     .crm-sample-toolbar__title {
         margin-right: rem(16px);
         display: flex;
         align-items: center;
         justify-self: flex-start;
     }
-    
+
     .crm-sample-toolbar__ellipsis {
         @include ellipsis();
     }
- 
+
     .igx-input-group--search .igx-input-group__bundle {
-        box-shadow: none;
         height: rem(36px);
         overflow: hidden;
     }
-    
+    .igx-input-group--search .igx-input-group__bundle,
+    .igx-input-group--search .igx-input-group__bundle:hover {
+        box-shadow: none;
+    }
+
     .igx-input-group,
     .igx-input-group--focused {
-        max-width: 100%;
-        transition: width 1s ease-in-out;
+        .igx-input-group__bundle {
+            transition: background 500ms ease-in-out;
+        }
+
+        max-width: 50%;
+        min-width: 50%;
         font-size: 13px;
         overflow: hidden;
         flex: 1 1 auto;
-        
+
         igx-icon {
             font-size: 1rem;
             width: 1rem;
             height: 1rem;
         }
     }
-    
+
+    .igx-input-group__textarea,
+    .igx-input-group__input {
+        color: $primary-100;
+    }
+
     .igx-input-group__input{
         &::placeholder {
             color: $primary-100;
             opacity: 1;
         }
     }
-    
+
     .igx-input-group--focused {
         .igx-input-group__bundle {
             background: #fff;
             color: igx-color($crm-grid-palette, 'grays', 600);
         }
-    
+
         .igx-input-group__input {
             &::placeholder {
                 color: igx-color($crm-grid-palette, 'grays', 600);
                 opacity: 1;
             }
         }
+
+        .igx-input-group__textarea,
+        .igx-input-group__input {
+            color: igx-color($crm-grid-palette, 'grays', 600);
+        }
+
+        .igx-button--icon {
+            &:focus,
+            &:active {
+                color: igx-color($crm-grid-palette, 'grays', 600);
+            }
+        }
     }
- 
+
+
+    .igx-button--icon {
+        &:focus,
+        &:active {
+            color: $primary-100;
+            background: transparent;
+        }
+    }
+
 
     .operationsContainer {
         display: flex;
     }
-    
+
     .caseSensitiveButton {
         margin-left: 8px;
     }
-    
+
     .caseSensitiveIcon {
         width: 1.25rem;
         height: 1.25rem;
         font-size: 1.25rem;
-        color: rgba(0, 0, 0, .54);
     }
-    
+
     .searchButtons {
         margin-left: 4px;
     }
