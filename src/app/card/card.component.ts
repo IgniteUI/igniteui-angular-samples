@@ -74,7 +74,7 @@ export class CardComponent implements OnInit {
                 avatarUrl: "assets/images/card/avatars/alicia_keys.jpg",
                 buttons: ["share", "play album"],
                 imageUrl: "assets/images/card/media/here_media.jpg",
-                subtitle: "by Alicia Keys",
+                subtitle: "by Melow D",
                 title: "HERE"
             }),
             new Card({
@@ -88,7 +88,7 @@ export class CardComponent implements OnInit {
                 icons: ["add", "star"],
                 imageUrl: "assets/images/card/media/audi.jpg",
                 subtitle: "January 30, 2017",
-                title: "Rupert Stadler"
+                title: "Brad Stanley"
             }),
             new Card({})
         ];
