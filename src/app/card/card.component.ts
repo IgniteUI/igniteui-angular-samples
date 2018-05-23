@@ -86,7 +86,7 @@ export class CardComponent implements OnInit {
                 avatarUrl: "assets/images/card/avatars/rupert_stadler.jpg",
                 buttons: ["message", "follow"],
                 icons: ["add", "star"],
-                imageUrl: "assets/images/card/media/audi_tt.jpg",
+                imageUrl: "assets/images/card/media/audi.jpg",
                 subtitle: "January 30, 2017",
                 title: "Rupert Stadler"
             }),
