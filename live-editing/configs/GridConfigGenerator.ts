@@ -25,6 +25,7 @@ import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-samp
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
+import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
 import {
     GridContextmenuComponent
 } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
@@ -119,6 +120,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridSearchSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-search-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxIconModule,
+                    IgxInputGroupModule, IgxRippleModule, GridSearchSampleComponent],
+                ngDeclarations: [GridSearchSampleComponent],
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxInputGroupModule,
+                    IgxRippleModule, HttpClientModule],
                 ngProviders: []
             })
         }));
