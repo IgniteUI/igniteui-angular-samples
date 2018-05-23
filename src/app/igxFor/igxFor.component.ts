@@ -30,7 +30,7 @@ export class IgxForComponent implements OnInit {
         item.key = index;
         const gender = index % 2 === 0 ? "M" : "F";
         item.name = this.generateName(gender);
-        item.avatar = "https://randomuser.me/api/portraits/" +
+        item.avatar = "assets/images/" +
             (gender === "M" ? "men" : "women") +
             "/" + Math.floor((Math.random() * 100)) + ".jpg";
         item.favorite = Math.floor((Math.random() * 3)) % 3 === 0;
