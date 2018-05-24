@@ -1,9 +1,10 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import { athletesData } from "../services/data";
 import { DataService } from "../services/data.service";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "grid-sample",
     styleUrls: ["./grid-paging-sample.component.scss"],
     templateUrl: "grid-paging-sample.component.html"

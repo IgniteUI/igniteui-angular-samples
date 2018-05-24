@@ -116,4 +116,6 @@ $progressBar-sample-theme: igx-progress-linear-theme(
 
 .igx-paginator>* {
     margin: 0 .3125rem;
+    display: flex;
+    align-items: center;
 }
