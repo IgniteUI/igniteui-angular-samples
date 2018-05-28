@@ -181,7 +181,6 @@ import { CategoryChartPerformanceSamplesModule } from "./category-chart/category
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
-import { RemoteSortingSampleComponent } from "./grid/grid-remote-sorting-sample/remote-sorting-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 
 @NgModule({
@@ -318,7 +317,6 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
-        RemoteSortingSampleComponent,
         RemoteFilteringSampleComponent
     ],
     imports: [

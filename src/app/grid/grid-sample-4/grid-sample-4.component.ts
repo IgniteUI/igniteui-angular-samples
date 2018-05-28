@@ -5,10 +5,17 @@ import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import {
     DataContainer,
     IForOfState,
-    IgxToastComponent
+    IgxToastComponent,
+    SortingDirection
 } from "igniteui-angular/main";
 import { BehaviorSubject, Observable } from "rxjs";
 
+const EMPTY_STRING: string = "";
+export enum SortOrder {
+    ASC = "asc",
+    DESC = "desc",
+    NONE = ""
+}
 @Injectable()
 export class RemoteService {
     public remoteData: Observable<any[]>;
@@ -20,32 +27,50 @@ export class RemoteService {
         this.remoteData = this._remoteData.asObservable();
     }
 
-    public getData(virtualizationArgs?: IForOfState, cb?: (any) => void): any {
-        return this.http.get(this._url).subscribe((json: any) => {
-            json.totalCount = json.length;
-            this.http.get(this.buildUrl(virtualizationArgs)).subscribe((data: any) => {
-                data.totalCount = json.totalCount;
-                this._remoteData.next(data);
-                if (cb) {
-                    cb(data);
-                }
-            });
+    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, cb?: (any) => void): any {
+        return this.http.get(this.buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
+            this._remoteData.next(data.Results);
+            if (cb) {
+                cb(data);
+            }
         });
     }
 
-    private buildUrl(dataState: any): string {
-        let qS: string = "?";
-        let requiredChunkSize: number;
-        if (dataState) {
-            const skip = dataState.startIndex;
+    private buildDataUrl(virtualizationArgs: any, sortingArgs: any): string {
+        let baseQueryString = `${this._url}?$inlinecount=allpages`;
+        let scrollingQuery = EMPTY_STRING;
+        let orderQuery = EMPTY_STRING;
+        let query = EMPTY_STRING;
 
-            requiredChunkSize = dataState.chunkSize === 0 ?
-                // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
-                10 : dataState.chunkSize;
-            const top = requiredChunkSize;
-            qS += `$skip=${skip}&$top=${top}&$count=true`;
+        if (sortingArgs) {
+            let sortingDirection: string;
+            switch (sortingArgs.dir) {
+                case SortingDirection.Asc:
+                    sortingDirection = SortOrder.ASC;
+                    break;
+                case SortingDirection.Desc:
+                    sortingDirection = SortOrder.DESC;
+                    break;
+                default:
+                    sortingDirection = SortOrder.NONE;
+            }
+
+            orderQuery = `$orderby=${sortingArgs.fieldName} ${sortingDirection}`;
         }
-        return `${this._url}${qS}`;
+
+        if (virtualizationArgs) {
+            const skip = virtualizationArgs.startIndex;
+            // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
+            const top = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
+            scrollingQuery = `$skip=${skip}&$top=${top}`;
+        }
+
+        query += (orderQuery !== EMPTY_STRING) ? `&${orderQuery}` : EMPTY_STRING;
+        query += (scrollingQuery !== EMPTY_STRING) ? `&${scrollingQuery}` : EMPTY_STRING;
+
+        baseQueryString += query;
+
+        return baseQueryString;
     }
 }
 
@@ -68,23 +93,34 @@ export class GridRemoteVirtualizationSampleComponent {
     }
 
     public ngAfterViewInit() {
-        this.remoteService.getData(this.grid.virtualizationState, (data) => {
-            this.grid.totalItemCount = data.totalCount;
+        this.remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], (data) => {
+            this.grid.totalItemCount = data.Count;
         });
     }
 
-    public dataLoading(evt) {
+    public processData() {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
+
         this.toast.message = "Loading Remote Data...";
         this.toast.position = 1;
         this.toast.show();
         this.cdr.detectChanges();
-        this.prevRequest = this.remoteService.getData(evt, () => {
+
+        const virtualizationState = this.grid.virtualizationState;
+        const sortingExpr = this.grid.sortingExpressions[0];
+
+        this.prevRequest = this.remoteService.getData(virtualizationState, sortingExpr, () => {
             this.toast.hide();
             this.cdr.detectChanges();
         });
+    }
+
+    public ngOnDestroy() {
+        if (this.prevRequest) {
+            this.prevRequest.unsubscribe();
+        }
     }
 
     public formatNumber(value: number) {

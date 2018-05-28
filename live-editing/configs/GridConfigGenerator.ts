@@ -23,7 +23,6 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
-import { RemoteSortingSampleComponent } from "../../src/app/grid/grid-remote-sorting-sample/remote-sorting-sample.component";
 import { RemoteFilteringSampleComponent } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -37,7 +36,6 @@ import { DataService } from "../../src/app/grid/services/data.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { RemoteSortingService } from "../../src/app/grid/grid-remote-sorting-sample/remote-sorting-sample.component";
 import { RemoteFilteringService } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemoteService } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 
@@ -193,16 +191,6 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule],
                 ngProviders: [RemoteService]
-            }),
-        }));
-
-        configs.push(new Config({
-            component: RemoteSortingSampleComponent,
-            appModuleConfig: new AppModuleConfig({
-                imports: [RemoteSortingSampleComponent, IgxGridModule, IgxBadgeModule, HttpClientModule, RemoteSortingService],
-                ngDeclarations: [RemoteSortingSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule],
-                ngProviders: [RemoteSortingService]
             }),
         }));
 

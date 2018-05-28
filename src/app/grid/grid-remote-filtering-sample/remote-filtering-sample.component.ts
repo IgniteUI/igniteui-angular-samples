@@ -26,24 +26,20 @@ export class RemoteFilteringService {
     }
 
     public getData(virtualizationArgs?: IForOfState, filteringArgs?: any, cb?: (any) => void): any {
-        return this.http.get(this._url).subscribe((json: any) => {
-            const totalCount = json.length;
-            this.http.get(this.buildDataUrl("", filteringArgs)).subscribe((filteredData: any) => {
-                const filteredCount = filteredData.length;
-                this.http.get(this.buildDataUrl(virtualizationArgs, filteringArgs)).subscribe((data: any) => {
-                    data.totalCount = totalCount;
-                    data.count = filteredCount;
-                    this._remoteData.next(data);
-                    if (cb) {
-                        cb(data);
-                    }
-                });
+        return this.http.get(this.buildDataUrl("", filteringArgs)).subscribe((filteredData: any) => {
+            const filteredCount = filteredData.Results.length;
+            this.http.get(this.buildDataUrl(virtualizationArgs, filteringArgs)).subscribe((data: any) => {
+                data.filteredCount = filteredCount;
+                this._remoteData.next(data.Results);
+                if (cb) {
+                    cb(data);
+                }
             });
         });
     }
 
     private buildDataUrl(virtualizationArgs: any, filteringArgs: any): string {
-        let baseQueryString = `${this._url}`;
+        let baseQueryString = `${this._url}?$inlinecount=allpages`;
         let scrollingQuery = EMPTY_STRING;
         let filterQuery = EMPTY_STRING;
         let query = EMPTY_STRING;
@@ -97,26 +93,17 @@ export class RemoteFilteringService {
             const skip = virtualizationArgs.startIndex;
             requiredChunkSize = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
             const top = requiredChunkSize;
-            scrollingQuery = `$skip=${skip}&$top=${top}&$count=true`;
+            scrollingQuery = `$skip=${skip}&$top=${top}`;
         }
 
-        if (filterQuery !== "") {
-            query += this.hasNextQuery(query);
-            query += `${filterQuery}`;
-        }
-
-        if (scrollingQuery !== "") {
-            query += this.hasNextQuery(query);
-            query += `${scrollingQuery}`;
-        }
+        query += (filterQuery !== EMPTY_STRING) ? `&${filterQuery}` : EMPTY_STRING;
+        query += (scrollingQuery !== EMPTY_STRING) ? `&${scrollingQuery}` : EMPTY_STRING;
 
         baseQueryString += query;
 
-        return baseQueryString;
-    }
+        console.log("baseQueryString " + baseQueryString);
 
-    private hasNextQuery(first) {
-        return (first === "") ? "?" : "&";
+        return baseQueryString;
     }
 }
 
@@ -139,7 +126,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
 
     public ngAfterViewInit() {
         this.remoteService.getData(this.grid.virtualizationState, this.grid.filteringExpressions[0], (data) => {
-            this.grid.totalItemCount = data.totalCount;
+            this.grid.totalItemCount = data.Count;
         });
     }
 
@@ -152,7 +139,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
         const filteringExpr = this.grid.filteringExpressions[0];
 
         this.prevRequest = this.remoteService.getData(virtualizationState, filteringExpr, (data) => {
-            this.grid.totalItemCount = data.count;
+            this.grid.totalItemCount = data.filteredCount;
             this.cdr.detectChanges();
         });
     }
