@@ -101,8 +101,6 @@ export class RemoteFilteringService {
 
         baseQueryString += query;
 
-        console.log("baseQueryString " + baseQueryString);
-
         return baseQueryString;
     }
 }
