@@ -71,10 +71,10 @@ export class CardComponent implements OnInit {
                 title: "Nico Rosberg"
             }),
             new Card({
-                avatarUrl: "assets/images/card/avatars/alicia_keys.jpg",
+                avatarUrl: "assets/images/card/avatars/mellow_d.jpg",
                 buttons: ["share", "play album"],
                 imageUrl: "assets/images/card/media/here_media.jpg",
-                subtitle: "by Alicia Keys",
+                subtitle: "by Melow D",
                 title: "HERE"
             }),
             new Card({
@@ -83,12 +83,12 @@ export class CardComponent implements OnInit {
                 imageUrl: "assets/images/card/media/monuments.jpg"
             }),
             new Card({
-                avatarUrl: "assets/images/card/avatars/rupert_stadler.jpg",
+                avatarUrl: "assets/images/card/avatars/brad_stanley.jpg",
                 buttons: ["message", "follow"],
                 icons: ["add", "star"],
                 imageUrl: "assets/images/card/media/audi.jpg",
                 subtitle: "January 30, 2017",
-                title: "Rupert Stadler"
+                title: "Brad Stanley"
             }),
             new Card({})
         ];
