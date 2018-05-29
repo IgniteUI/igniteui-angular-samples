@@ -1,11 +1,10 @@
 import { HttpClient } from "@angular/common/http";
-import { ChangeDetectorRef, Component, Injectable, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, Injectable, ViewChild, TemplateRef } from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import {
     DataContainer,
-    IForOfState,
-    IgxToastComponent
+    IForOfState
 } from "igniteui-angular/main";
 import { BehaviorSubject, Observable } from "rxjs";
 
@@ -60,10 +59,15 @@ export class GridRemoteVirtualizationSampleComponent {
     public prevRequest: any;
 
     @ViewChild("grid1") public grid: IgxGridComponent;
-    @ViewChild("toast") public toast: IgxToastComponent;
+    @ViewChild("remoteDataLoading", { read: TemplateRef }) protected remoteDataLoadingTemplate: TemplateRef<any>;
+
+    private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
+    private _isColumnCellTemplateReset: boolean = false;
+
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
     public ngOnInit(): void {
         this.remoteData = this.remoteService.remoteData;
+        this._columnCellCustomTemplates = new Map<IgxColumnComponent, TemplateRef<any>>();
     }
 
     public ngAfterViewInit() {
@@ -76,13 +80,26 @@ export class GridRemoteVirtualizationSampleComponent {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-        this.toast.message = "Loading Remote Data...";
-        this.toast.position = 1;
-        this.toast.show();
-        this.cdr.detectChanges();
+
+        if (this.grid.columns.length > 0 && !this._isColumnCellTemplateReset) {
+            this.grid.columns.forEach((column: IgxColumnComponent) => {
+                if (column.bodyTemplate) {
+                    this._columnCellCustomTemplates.set(column, column.bodyTemplate);
+                }
+                column.bodyTemplate = this.remoteDataLoadingTemplate;
+            });
+            this._isColumnCellTemplateReset = true;
+        }
+
         this.prevRequest = this.remoteService.getData(evt, () => {
-            this.toast.hide();
-            this.cdr.detectChanges();
+            if (this._isColumnCellTemplateReset) {
+                this.grid.columns.forEach((column: IgxColumnComponent) => {
+                    let oldTemplate = this._columnCellCustomTemplates.get(column);
+                    column.bodyTemplate = oldTemplate;
+                });
+                this._columnCellCustomTemplates.clear();
+                this._isColumnCellTemplateReset = false;
+            }
         });
     }
 

@@ -1,4 +1,7 @@
 <div class="sample-wrapper dark-grid">
+    <ng-template #remoteDataLoading>
+        <div class="remote-data-loading-template"></div>
+    </ng-template>
     <igx-grid #grid1 [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="dataLoading($event)">
         <igx-column [field]="'Category'" [width]="'120px'" ></igx-column>
         <igx-column [field]="'Type'" [width]="'150px'"></igx-column>        
