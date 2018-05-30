@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { ChangeDetectorRef, Component, Injectable, ViewChild, TemplateRef } from "@angular/core";
+import { ChangeDetectorRef, Component, Injectable, TemplateRef, ViewChild } from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
 import {
@@ -59,7 +59,12 @@ export class GridRemoteVirtualizationSampleComponent {
     public prevRequest: any;
 
     @ViewChild("grid1") public grid: IgxGridComponent;
-    @ViewChild("remoteDataLoading", { read: TemplateRef }) protected remoteDataLoadingTemplate: TemplateRef<any>;
+    @ViewChild("remoteDataLoadingLarge", { read: TemplateRef })
+    protected remoteDataLoadingLargeTemplate: TemplateRef<any>;
+    @ViewChild("remoteDataLoadingMedium", { read: TemplateRef })
+    protected remoteDataLoadingMediumTemplate: TemplateRef<any>;
+    @ViewChild("remoteDataLoadingSmall", { read: TemplateRef })
+    protected remoteDataLoadingSmallTemplate: TemplateRef<any>;
 
     private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
     private _isColumnCellTemplateReset: boolean = false;
@@ -81,20 +86,23 @@ export class GridRemoteVirtualizationSampleComponent {
             this.prevRequest.unsubscribe();
         }
 
-        if (this.grid.columns.length > 0 && !this._isColumnCellTemplateReset) {
+        if (this.grid.columns.length > 0) {
             this.grid.columns.forEach((column: IgxColumnComponent) => {
-                if (column.bodyTemplate) {
+                if (column.bodyTemplate && !this._isColumnCellTemplateReset) {
                     this._columnCellCustomTemplates.set(column, column.bodyTemplate);
                 }
-                column.bodyTemplate = this.remoteDataLoadingTemplate;
+
+                column.bodyTemplate = this.getDataLoadingTemplate();
             });
+
             this._isColumnCellTemplateReset = true;
         }
 
         this.prevRequest = this.remoteService.getData(evt, () => {
             if (this._isColumnCellTemplateReset) {
+                let oldTemplate;
                 this.grid.columns.forEach((column: IgxColumnComponent) => {
-                    let oldTemplate = this._columnCellCustomTemplates.get(column);
+                    oldTemplate = this._columnCellCustomTemplates.get(column);
                     column.bodyTemplate = oldTemplate;
                 });
                 this._columnCellCustomTemplates.clear();
@@ -108,5 +116,15 @@ export class GridRemoteVirtualizationSampleComponent {
     }
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
+    }
+
+    private getDataLoadingTemplate(): TemplateRef<any> {
+        const val = Math.floor(Math.random() * 3) + 1;
+
+        switch (val) {
+            case 1: return this.remoteDataLoadingLargeTemplate;
+            case 2: return this.remoteDataLoadingMediumTemplate;
+            case 3: return this.remoteDataLoadingSmallTemplate;
+        }
     }
 }
