@@ -139,7 +139,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
         rec.TrackProgress += val;
     });
-    const unsortedData = [].slice.call(this.localData.slice(0));
+    const unsortedData = this.localData.slice(0);
 
     this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
     this.localData = this.localData.slice(0);
