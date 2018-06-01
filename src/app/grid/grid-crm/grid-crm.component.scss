@@ -196,32 +196,35 @@
             }
         }
 
-        .igx-input-group--focused {
-            .igx-input-group__bundle {
-                background: #fff;
-                color: igx-color($crm-grid-palette, 'grays', 600);
-            }
-
-            .igx-input-group__input {
-                &::placeholder {
+        .igx-input-group {
+            &:hover,
+            &:focus,
+            &.igx-input-group--focused {
+                .igx-input-group__bundle {
+                    background: #fff;
                     color: igx-color($crm-grid-palette, 'grays', 600);
-                    opacity: 1;
                 }
-            }
 
-            .igx-input-group__textarea,
-            .igx-input-group__input {
-                color: igx-color($crm-grid-palette, 'grays', 600);
-            }
+                .igx-input-group__input {
+                    &::placeholder {
+                        color: igx-color($crm-grid-palette, 'grays', 600);
+                        opacity: 1;
+                    }
+                }
 
-            .igx-button--icon {
-                &:focus,
-                &:active {
+                .igx-input-group__textarea,
+                .igx-input-group__input {
                     color: igx-color($crm-grid-palette, 'grays', 600);
+                }
+
+                .igx-button--icon {
+                    &:focus,
+                    &:active {
+                        color: igx-color($crm-grid-palette, 'grays', 600);
+                    }
                 }
             }
         }
-
 
         .igx-button--icon {
             &:focus,
