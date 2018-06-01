@@ -38,6 +38,8 @@ import {
     IgxToggleModule
 } from "igniteui-angular/main";
 
+import { IgxColumnHidingModule } from "igniteui-angular/igniteui-angular";
+
 import {
     IgxCsvExporterService,
     IgxExcelExporterService
@@ -181,6 +183,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 
 @NgModule({
@@ -316,7 +319,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CsvExportSample1Component,
         SortingSampleComponent,
         GridContextmenuComponent,
-        GridSearchSampleComponent
+        GridSearchSampleComponent,
+        GridColumnHidingSampleComponent
     ],
     imports: [
         AppRoutingModule,
@@ -359,7 +363,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
-        InMemoryWebApiModule.forRoot(MockDataService)
+        InMemoryWebApiModule.forRoot(MockDataService),
+        IgxColumnHidingModule
     ],
     providers: [
         DataService,

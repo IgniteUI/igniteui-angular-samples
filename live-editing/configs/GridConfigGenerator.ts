@@ -13,8 +13,10 @@ import {
     IgxRippleModule,
     IgxSwitchModule,
     IgxToastModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxRadioModule
 } from "igniteui-angular/main";
+import { IgxColumnHidingModule } from "igniteui-angular/igniteui-angular";
 import { IgxExcelExporterService } from "igniteui-angular/services";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
@@ -26,6 +28,7 @@ import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
+import { GridColumnHidingSampleComponent } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridContextmenuComponent
 } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
@@ -134,6 +137,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule,
                     IgxRippleModule, HttpClientModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnHidingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-column-hiding-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxGridModule, IgxRadioModule, IgxColumnHidingModule, GridColumnHidingSampleComponent],
+                ngDeclarations: [GridColumnHidingSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxRadioModule, IgxColumnHidingModule, HttpClientModule],
                 ngProviders: []
             })
         }));
