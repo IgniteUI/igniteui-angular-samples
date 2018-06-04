@@ -15,7 +15,6 @@ const COMMON_PACKAGE_DEPENDENCIES = [
     "@angular/platform-browser",
     "@angular/platform-browser-dynamic",
     "rxjs",
-    "rxjs-compat",
     "zone.js",
 
     "igniteui-angular", // needed for all samples because of styles.scss
