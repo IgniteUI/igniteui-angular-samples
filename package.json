@@ -33,7 +33,7 @@
     "@angular/router": "6.0.2",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@types/hammerjs": "^2.0.35",
-    "angular-in-memory-web-api": "0.5.4",
+    "angular-in-memory-web-api": "0.6.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.4.1",
     "gulp": "^3.9.1",
