@@ -144,10 +144,12 @@ export class GridComponent implements OnInit, OnDestroy {
     this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
     this.localData = this.localData.slice(0);
 
-    unsortedData.forEach((element, index) => {
+    // tslint:disable-next-line:prefer-for-of
+    // Browser compatibility: for-of, No support for IE
+    for (let i = 0; i < unsortedData.length; i++) {
         this.localData.some((elem, ind) => {
-            if (element.Id === elem.Id) {
-                const position = index - ind;
+            if (unsortedData[i].Id === elem.Id) {
+                const position = i - ind;
 
                 if (position < 0) {
                     elem.Position = "down";
@@ -160,7 +162,7 @@ export class GridComponent implements OnInit, OnDestroy {
                 return true;
             }
         });
-    });
+    }
 
     if (this.localData[0].TrackProgress >= 100) {
       this.live = false;

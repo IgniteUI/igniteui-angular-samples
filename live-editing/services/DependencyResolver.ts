@@ -34,7 +34,6 @@ const DEFAULT_DEPENDENCIES = [
     "@angular/http",
     "@angular/router",
     "classlist.js",
-    "igniteui-angular",
     "hammerjs",
     "web-animations-js",
     "jszip",
