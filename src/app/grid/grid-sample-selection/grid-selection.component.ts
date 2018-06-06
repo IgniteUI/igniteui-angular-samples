@@ -1,5 +1,4 @@
 import { Component, Injectable, ViewChild } from "@angular/core";
-import { Http } from "@angular/http";
 
 import { IgxGridCellComponent } from "igniteui-angular/grid/cell.component";
 import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
@@ -53,7 +52,7 @@ export class LocalService {
         const changeAmount = oldPrice * (changePercent / 100);
         newPrice = oldPrice + changeAmount;
 
-        const result = {Price: 0, ChangePercent: 0};
+        const result = { Price: 0, ChangePercent: 0 };
         result.Price = parseFloat(newPrice.toFixed(2));
         result.ChangePercent = parseFloat(changePercent.toFixed(2));
 

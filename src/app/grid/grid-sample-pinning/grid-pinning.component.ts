@@ -1,5 +1,4 @@
 import { Component, Injectable, ViewChild, ViewEncapsulation } from "@angular/core";
-import { Http } from "@angular/http";
 import { DataType } from "igniteui-angular/data-operations/data-util";
 import { IgxButtonDirective } from "igniteui-angular/directives/button/button.directive";
 import { IgxColumnComponent } from "igniteui-angular/grid/column.component";

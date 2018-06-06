@@ -1,6 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
-import { HttpModule } from "@angular/http";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -38,6 +37,8 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { RemoteFilteringService } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemoteService } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
+import { CachingService } from "../../src/app/grid/services/cachingService";
+import { CachingInterceptor } from "../../src/app/grid/services/cachingInterceptor";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -47,13 +48,13 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, HttpModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, GridComponent, DataService],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
-                    IgxSwitchModule, HttpClientModule, HttpModule],
+                    IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
             })
         }));
@@ -185,6 +186,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridRemoteVirtualizationSampleComponent,
+            additionalFiles: ["/src/app/grid/services/cachingInterceptor.ts", "/src/app/grid/services/cachingService.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
                     IgxBadgeModule, HttpClientModule, RemoteService],
@@ -196,6 +198,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: RemoteFilteringSampleComponent,
+            additionalFiles: ["/src/app/grid/services/cachingInterceptor.ts", "/src/app/grid/services/cachingService.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [RemoteFilteringSampleComponent, IgxGridModule, IgxBadgeModule, HttpClientModule, RemoteFilteringService],
                 ngDeclarations: [RemoteFilteringSampleComponent],
