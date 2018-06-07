@@ -13,6 +13,7 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxCheckboxModule,
+    IgxColumnHidingModule,
     IgxDatePickerModule,
     IgxDialogModule,
     IgxFilterModule,
@@ -37,8 +38,6 @@ import {
     IgxToastModule,
     IgxToggleModule
 } from "igniteui-angular/main";
-
-import { IgxColumnHidingModule } from "igniteui-angular/igniteui-angular";
 
 import {
     IgxCsvExporterService,

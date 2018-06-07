@@ -6,6 +6,7 @@ import {
     IgxBadgeModule,
     IgxButtonModule,
     IgxCheckboxModule,
+    IgxColumnHidingModule,
     IgxGridModule,
     IgxIconModule,
     IgxInputGroupModule,
@@ -16,7 +17,6 @@ import {
     IgxToggleModule,
     IgxRadioModule
 } from "igniteui-angular/main";
-import { IgxColumnHidingModule } from "igniteui-angular/igniteui-angular";
 import { IgxExcelExporterService } from "igniteui-angular/services";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
