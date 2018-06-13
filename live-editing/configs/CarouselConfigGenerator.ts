@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { Direction, IgxCarouselComponent, IgxCarouselModule,
-    IgxLinearProgressBarComponent, IgxProgressBarModule, IgxSliderModule } from "igniteui-angular/main";
+    IgxLinearProgressBarComponent, IgxProgressBarModule, IgxSliderModule } from "igniteui-angular";
 import { CarouselSample1Component } from "../../src/app/carousel/carousel-sample-1/carousel-sample-1.component";
 import { CarouselSample2Component } from "../../src/app/carousel/carousel-sample-2/carousel-sample-2.component";
 import { CarouselSample3Component } from "../../src/app/carousel/carousel-sample-3/carousel-sample-3.component";
@@ -66,7 +66,7 @@ export class CarouselConfigGenerator implements IConfigGenerator {
 //        imports: [
 //          { import: "Direction, IgxButtonModule, IgxCarouselComponent, IgxCarouselModule,
 //              IgxLinearProgressBarComponent, IgxProgressBarModule,
-//              IgxRippleModule, IgxSliderModule", from: "igniteui-angular/main" },
+//              IgxRippleModule, IgxSliderModule", from: "igniteui-angular" },
 //          { import: "CarouselDetailsViewComponent", from: "./carousel/carousel-details/carousel-details.component"},
 //          { import: "Routes, Router, RouterModule", from: "@angular/router"},
 //          { import: "CarouselSample4Component", from: "./carousel/carousel-sample-4/carousel-sample-4.component" }],

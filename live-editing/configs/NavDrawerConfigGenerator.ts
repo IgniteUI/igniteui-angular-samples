@@ -2,7 +2,7 @@
 import {
     IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule,
     IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule
-} from "igniteui-angular/main";
+} from "igniteui-angular";
 import { NavDrawerMiniComponent } from "../../src/app/navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "../../src/app/navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "../../src/app/navdrawer/nav-drawer-simple/nav-drawer-simple.component";

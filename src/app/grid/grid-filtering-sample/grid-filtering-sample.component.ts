@@ -1,7 +1,7 @@
 import { CurrencyPipe } from "@angular/common";
 import { AfterViewInit, Component, OnInit, ViewChild, ViewChildren } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { STRING_FILTERS } from "igniteui-angular/main";
+import { IgxGridComponent } from "igniteui-angular";
+import { STRING_FILTERS } from "igniteui-angular/esm5/lib/data-operations/filtering-condition";
 import { DATA } from "./nwindData";
 
 @Component({
@@ -23,7 +23,8 @@ export class FilteringSampleComponent implements OnInit {
     }
 
     public filter(term) {
-       this.grid1.filter("ProductName", term, STRING_FILTERS.contains);
+        //this.grid1.filter("ProductName", term, IgxStringFilteringOperand.instance().condition("contains"));
+        this.grid1.filter("ProductName", term, STRING_FILTERS.contains);
     }
 
     public formatDate(val: Date) {

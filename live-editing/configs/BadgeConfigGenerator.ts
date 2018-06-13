@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxBadgeModule, IgxListModule } from "igniteui-angular/main";
+import { IgxAvatarModule, IgxBadgeModule, IgxListModule } from "igniteui-angular";
 import { BadgeSample1Component } from "../../src/app/badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "../../src/app/badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "../../src/app/badge/badge-sample-3/badge-sample-3.component";

@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule } from "igniteui-angular/main";
+import { IgxButtonModule, IgxIconModule, IgxProgressBarModule, IgxRippleModule } from "igniteui-angular";
 import {
     LinearProgressbarSample1Component
 } from "../../src/app/linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";

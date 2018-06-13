@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular/main";
+import { IgxAvatarModule, IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular";
 import { RippleSample1Component } from "../../src/app/ripple/ripple-sample-1/ripple-sample-1.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

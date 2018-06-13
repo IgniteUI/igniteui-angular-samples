@@ -3,7 +3,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
-import { IgxButtonModule, IgxSliderModule } from "igniteui-angular/main";
+import { IgxButtonModule, IgxSliderModule } from "igniteui-angular";
 import { CategoryChartHighFrequencyComponent } from "./high-frequency/category-chart-high-frequency-sample.component";
 import { CategoryChartHighVolumeComponent } from "./high-volume/category-chart-high-volume-sample.component";
 

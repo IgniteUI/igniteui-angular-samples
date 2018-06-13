@@ -1,11 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { ChangeDetectorRef, Component, Injectable, TemplateRef, ViewChild } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import {
-    DataContainer,
-    IForOfState
-} from "igniteui-angular/main";
+import { IgxColumnComponent } from "igniteui-angular";
+import { IgxGridComponent } from "igniteui-angular";
+import { DataContainer, IForOfState } from "igniteui-angular/esm5/lib/directives/for-of/IForOfState";
 import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()
@@ -19,7 +16,7 @@ export class RemoteService {
         this.remoteData = this._remoteData.asObservable();
     }
 
-    public getData(data?: IForOfState, cb?: (any) => void): any {
+    public getData(data?: any, cb?: (any) => void): any {
         const dataState = data;
         return this.http
             .get(this.buildUrl(dataState))

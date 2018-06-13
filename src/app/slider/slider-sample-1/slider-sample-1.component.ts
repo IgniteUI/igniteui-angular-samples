@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SliderType } from "igniteui-angular/main";
+import { SliderType } from "igniteui-angular";
 
 @Component({
   selector: "app-slider-sample-1",

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxInputDirective } from "igniteui-angular/directives/input/input.directive";
+import { IgxInputDirective } from "igniteui-angular/esm5/lib/directives/input/input.directive";
 
 @Component({
     selector: "app-input-group-sample-5",

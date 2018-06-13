@@ -1,5 +1,5 @@
 import { Component, OnInit, QueryList, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxCircularProgressBarComponent, IgxLinearProgressBarComponent } from "igniteui-angular/main";
+import { IgxCircularProgressBarComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
   encapsulation: ViewEncapsulation.None,

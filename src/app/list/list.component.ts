@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IgxFilterOptions } from "igniteui-angular/main";
+import { IgxFilterOptions } from "igniteui-angular";
 
 @Component({
     selector: "app-list",

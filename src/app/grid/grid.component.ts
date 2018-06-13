@@ -8,9 +8,9 @@ import {
   ViewChild,
   ViewEncapsulation
 } from "@angular/core";
-import { IgxNumberSummaryOperand, IgxSummaryResult} from "igniteui-angular/grid/grid-summary";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { STRING_FILTERS } from "igniteui-angular/main";
+import { IgxNumberSummaryOperand, IgxSummaryResult} from "igniteui-angular";
+import { IgxGridComponent } from "igniteui-angular";
+import { STRING_FILTERS } from "igniteui-angular/esm5/lib/data-operations/filtering-condition";
 import { athletesData } from "./services/data";
 import { DataService } from "./services/data.service";
 
@@ -108,6 +108,7 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 
   public filter(term) {
+    //this.grid1.filter("CountryName", term, IgxStringFilteringOperand.instance().condition("contains"));
     this.grid1.filter("CountryName", term, STRING_FILTERS.contains);
   }
 
@@ -186,7 +187,7 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
         result.push({
             key: "average",
             label: "average",
-            summaryResult: this.average(data).toFixed(2)
+            summaryResult: IgxNumberSummaryOperand.average(data).toFixed(2)
         });
 
         return result;
@@ -209,15 +210,15 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
             {
                 key: "min",
                 label: "min",
-                summaryResult: this.min(data)
+                summaryResult: IgxNumberSummaryOperand.min(data)
             }, {
                 key: "max",
                 label: "max",
-                summaryResult: this.max(data)
+                summaryResult: IgxNumberSummaryOperand.max(data)
             }, {
                 key: "average",
                 label: "average",
-                summaryResult: this.average(data).toFixed(2)
+                summaryResult: IgxNumberSummaryOperand.average(data).toFixed(2)
             });
 
         return result;

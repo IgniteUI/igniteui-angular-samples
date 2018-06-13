@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
-import { IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular/grid/grid-summary";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
+import { IgxColumnComponent } from "igniteui-angular";
+import { IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular";
+import { IgxGridComponent } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 
 class MySummary extends IgxNumberSummaryOperand {

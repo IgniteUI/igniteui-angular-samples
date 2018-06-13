@@ -1,5 +1,5 @@
 import { Component, Input, OnInit} from "@angular/core";
-import { IgxIconModule, SortingDirection } from "igniteui-angular/main";
+import { IgxIconModule, SortingDirection } from "igniteui-angular";
 
 @Component({
   selector: "grid-contextmenu",
