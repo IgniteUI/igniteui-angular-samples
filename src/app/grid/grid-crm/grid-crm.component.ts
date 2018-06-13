@@ -4,12 +4,15 @@ import {
     QueryList,
     ViewChild
 } from "@angular/core";
-
-import { IgxColumnComponent } from "igniteui-angular";
-import { IgxDateSummaryOperand, IgxNumberSummaryOperand, IgxSummaryResult } from "igniteui-angular";
-import { IgxGridComponent } from "igniteui-angular";
-import { IgxToggleDirective } from "igniteui-angular";
-import { IgxExcelExporterOptions, IgxExcelExporterService } from "igniteui-angular";
+import {
+    IgxColumnComponent,
+    IgxDateSummaryOperand,
+    IgxExcelExporterOptions,
+    IgxExcelExporterService,
+    IgxGridComponent,
+    IgxNumberSummaryOperand,
+    IgxSummaryResult,
+    IgxToggleDirective } from "igniteui-angular";
 import { data } from "./data";
 
 class DealsSummary extends IgxNumberSummaryOperand {

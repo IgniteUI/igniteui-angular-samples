@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { SortingDirection } from "igniteui-angular";
+import { IgxGridComponent, SortingDirection } from "igniteui-angular";
 import { GridContextmenuComponent } from "./grid-contextmenu/grid-contextmenu.component";
 import { DATA } from "./nwindData";
 

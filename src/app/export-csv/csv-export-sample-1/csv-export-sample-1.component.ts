@@ -5,9 +5,8 @@ import { CsvFileTypes,
          ICsvExportEndedEventArgs,
          IgxCsvExporterOptions,
          IgxCsvExporterService,
+         IgxGridComponent,
          IRowExportingEventArgs } from "igniteui-angular";
-
-import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-csv-export-sample-1",

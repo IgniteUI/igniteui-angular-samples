@@ -23,7 +23,7 @@ export class FilteringSampleComponent implements OnInit {
     }
 
     public filter(term) {
-        //this.grid1.filter("ProductName", term, IgxStringFilteringOperand.instance().condition("contains"));
+        // this.grid1.filter("ProductName", term, IgxStringFilteringOperand.instance().condition("contains"));
         this.grid1.filter("ProductName", term, STRING_FILTERS.contains);
     }
 
