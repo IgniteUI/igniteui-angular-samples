@@ -1,10 +1,10 @@
 <div class="sample-wrapper dark-grid">
-    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData($event)"
-        (onFilteringDone)="processData($event)">
-        <igx-column [field]="'ID'"></igx-column>
-        <igx-column [field]="'ProductName'" [filterable]="true"></igx-column>
-        <igx-column [field]="'CategoryName'" [filterable]="true"></igx-column>
-        <igx-column [field]="'Rating'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [filterable]="true">
+    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData()"
+        (onSortingDone)="processData()" (onFilteringDone)="processData()">
+        <igx-column [field]="'ID'" [sortable]="true"></igx-column>
+        <igx-column [field]="'ProductName'" [sortable]="true" [filterable]="true"></igx-column>
+        <igx-column [field]="'CategoryName'" [sortable]="true" [filterable]="true"></igx-column>
+        <igx-column [field]="'Rating'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" [filterable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">Rating</span>
             </ng-template>
@@ -16,8 +16,8 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [filterable]="true"></igx-column>
-        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [filterable]="true">
+        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true" [filterable]="true"></igx-column>
+        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" [filterable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
@@ -29,6 +29,6 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'SupplierName'" [filterable]="true"></igx-column>
+        <igx-column [field]="'SupplierName'" [sortable]="true" [filterable]="true"></igx-column>
     </igx-grid>
 </div>

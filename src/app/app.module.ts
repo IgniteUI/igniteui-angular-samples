@@ -42,7 +42,7 @@ import {
     IgxExcelExporterService
 } from "igniteui-angular/services/index";
 
-import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
@@ -181,8 +181,6 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
-import { CachingInterceptor } from "./grid/services/cachingInterceptor";
-import { CachingService } from "./grid/services/cachingService";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -365,13 +363,7 @@ import { CachingService } from "./grid/services/cachingService";
     providers: [
         DataService,
         IgxCsvExporterService,
-        IgxExcelExporterService,
-        CachingService,
-        {
-            multi: true,
-            provide: HTTP_INTERCEPTORS,
-            useClass: CachingInterceptor
-        }
+        IgxExcelExporterService
     ]
 })
 export class AppModule { }
