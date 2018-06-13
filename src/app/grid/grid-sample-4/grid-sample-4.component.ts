@@ -16,7 +16,7 @@ export class RemoteService {
         this.remoteData = this._remoteData.asObservable();
     }
 
-    public getData(data?: any, cb?: (any) => void): any {
+    public getData(data?: IForOfState, cb?: (any) => void): any {
         const dataState = data;
         return this.http
             .get(this.buildUrl(dataState))
