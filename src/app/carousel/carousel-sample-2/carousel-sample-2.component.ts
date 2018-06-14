@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { Direction, IgxCarouselComponent } from "igniteui-angular/main";
+import { Direction, IgxCarouselComponent } from "igniteui-angular";
 
 @Component({
   encapsulation: ViewEncapsulation.None,

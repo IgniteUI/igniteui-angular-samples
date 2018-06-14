@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxDatePickerModule, IgxIconModule,
-    IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule } from "igniteui-angular/main";
+    IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule } from "igniteui-angular";
 import {
     InputGroupSample2Component
 } from "../../src/app/input-group/input-group-sample-2/input-group-sample-2.component";

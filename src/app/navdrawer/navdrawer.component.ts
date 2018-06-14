@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxNavigationDrawerComponent } from "igniteui-angular/main";
+import { IgxNavigationDrawerComponent } from "igniteui-angular";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
