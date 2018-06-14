@@ -122,6 +122,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -773,6 +774,10 @@ export const appRoutes: Routes = [
     {
         component: GridToolbarSample2Component,
         path: "grid-toolbar-sample-2"
+    },
+    {
+        component: GridToolbarSample3Component,
+        path: "grid-toolbar-sample-3"
     }
 ];
 

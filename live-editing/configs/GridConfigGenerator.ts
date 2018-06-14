@@ -15,7 +15,7 @@ import {
     IgxToastModule,
     IgxToggleModule
 } from "igniteui-angular";
-import { IgxExcelExporterService } from "igniteui-angular";
+import { IgxCsvExporterService, IgxExcelExporterService } from "igniteui-angular";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -30,6 +30,9 @@ import {
     GridContextmenuComponent
 } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
+import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { MockDataService } from "../../src/app/grid/services/mock-data.service";
@@ -203,6 +206,39 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [PinningSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxIconModule],
                 ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridToolbarSample1Component,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridToolbarSample1Component, IgxGridModule],
+                ngDeclarations: [GridToolbarSample1Component],
+                ngImports: [IgxGridModule.forRoot()],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridToolbarSample2Component,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridToolbarSample2Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
+                ngDeclarations: [GridToolbarSample2Component],
+                ngImports: [IgxGridModule.forRoot()],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridToolbarSample3Component,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridToolbarSample3Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
+                ngDeclarations: [GridToolbarSample3Component],
+                ngImports: [IgxGridModule.forRoot()],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             })
         }));
 
