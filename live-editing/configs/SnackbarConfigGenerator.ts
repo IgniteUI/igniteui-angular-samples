@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxIconModule, IgxListModule,
-    IgxRippleModule, IgxSnackbarModule } from "igniteui-angular/main";
+    IgxRippleModule, IgxSnackbarModule } from "igniteui-angular";
 import { SnackbarSample4Component } from "../../src/app/snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

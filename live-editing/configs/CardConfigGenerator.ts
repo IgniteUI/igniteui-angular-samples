@@ -2,7 +2,7 @@
 import {
     IgxAvatarModule, IgxButtonModule, IgxCardModule,
     IgxIconModule, IgxRippleModule
-} from "igniteui-angular/main";
+} from "igniteui-angular";
 import { CardSample1Component } from "../../src/app/card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "../../src/app/card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "../../src/app/card/card-sample-3/card-sample-3.component";

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
-import { IgxToastPosition } from "igniteui-angular/main";
+import { IgxToastPosition } from "igniteui-angular";
 
 @Component({
     selector: "app-toast-sample-1",

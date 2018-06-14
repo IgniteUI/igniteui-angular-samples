@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxTimePickerComponent } from "igniteui-angular/main";
+import { IgxTimePickerComponent } from "igniteui-angular";
 
 @Component({
     selector: "app-timepicker",

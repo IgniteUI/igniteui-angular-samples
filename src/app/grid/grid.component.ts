@@ -8,9 +8,8 @@ import {
   ViewChild,
   ViewEncapsulation
 } from "@angular/core";
-import { IgxNumberSummaryOperand, IgxSummaryResult} from "igniteui-angular/grid/grid-summary";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { STRING_FILTERS } from "igniteui-angular/main";
+import { IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult} from "igniteui-angular";
+import { STRING_FILTERS } from "igniteui-angular/esm5/lib/data-operations/filtering-condition";
 import { athletesData } from "./services/data";
 import { DataService } from "./services/data.service";
 
@@ -108,6 +107,7 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 
   public filter(term) {
+    // this.grid1.filter("CountryName", term, IgxStringFilteringOperand.instance().condition("contains"));
     this.grid1.filter("CountryName", term, STRING_FILTERS.contains);
   }
 
@@ -144,10 +144,12 @@ export class GridComponent implements OnInit, OnDestroy {
     this.localData.sort((a, b) => b.TrackProgress - a.TrackProgress).map((rec, idx) => rec.Id = idx + 1);
     this.localData = this.localData.slice(0);
 
-    unsortedData.forEach((element, index) => {
+    // tslint:disable-next-line:prefer-for-of
+    // Browser compatibility: for-of, No support for IE
+    for (let i = 0; i < unsortedData.length; i++) {
         this.localData.some((elem, ind) => {
-            if (element.Id === elem.Id) {
-                const position = index - ind;
+            if (unsortedData[i].Id === elem.Id) {
+                const position = i - ind;
 
                 if (position < 0) {
                     elem.Position = "down";
@@ -160,7 +162,7 @@ export class GridComponent implements OnInit, OnDestroy {
                 return true;
             }
         });
-    });
+    }
 
     if (this.localData[0].TrackProgress >= 100) {
       this.live = false;
@@ -184,7 +186,7 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
         result.push({
             key: "average",
             label: "average",
-            summaryResult: this.average(data).toFixed(2)
+            summaryResult: IgxNumberSummaryOperand.average(data).toFixed(2)
         });
 
         return result;
@@ -207,15 +209,15 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
             {
                 key: "min",
                 label: "min",
-                summaryResult: this.min(data)
+                summaryResult: IgxNumberSummaryOperand.min(data)
             }, {
                 key: "max",
                 label: "max",
-                summaryResult: this.max(data)
+                summaryResult: IgxNumberSummaryOperand.max(data)
             }, {
                 key: "average",
                 label: "average",
-                summaryResult: this.average(data).toFixed(2)
+                summaryResult: IgxNumberSummaryOperand.average(data).toFixed(2)
             });
 
         return result;

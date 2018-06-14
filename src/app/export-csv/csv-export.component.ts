@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from "igniteui-angular/services/index";
+import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from "igniteui-angular";
 
 @Component({
   selector: "app-csv-export",

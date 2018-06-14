@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxSwitchModule } from "igniteui-angular/main";
+import { IgxSwitchModule } from "igniteui-angular";
 import { SwitchSample2Component } from "../../src/app/form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

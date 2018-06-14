@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxIconModule,
-    IgxNavbarModule, IgxRippleModule, IgxTabsModule } from "igniteui-angular/main";
+    IgxNavbarModule, IgxRippleModule, IgxTabsModule } from "igniteui-angular";
 import { TabsSample1Component } from "../../src/app/tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "../../src/app/tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "../../src/app/tabs/tabs-sample-3/tabs-sample-3.component";
