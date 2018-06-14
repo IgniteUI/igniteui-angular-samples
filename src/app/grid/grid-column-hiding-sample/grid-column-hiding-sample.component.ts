@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { ColumnDisplayOrder, IgxColumnHidingComponent } from "igniteui-angular/grid/column-hiding.component";
-import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
+import { ColumnDisplayOrder, IgxColumnHidingComponent } from "igniteui-angular";
+import { IgxColumnComponent } from "igniteui-angular";
 import { DATA } from "./data";
 
 @Component({
@@ -16,7 +16,7 @@ export class GridColumnHidingSampleComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        this.data = DATA;
+        this.data = DATA;        
     }
 
     public initColumns(column: IgxColumnComponent) {

@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule } from "igniteui-angular/main";
+import { IgxAvatarModule } from "igniteui-angular";
 import { AvatarSample3Component } from "../../src/app/avatar/avatar-sample-3/avatar-sample-3.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

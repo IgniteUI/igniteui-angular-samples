@@ -14,8 +14,10 @@ import {
     IgxCarouselModule,
     IgxCheckboxModule,
     IgxColumnHidingModule,
+    IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxExcelExporterService,
     IgxFilterModule,
     IgxForOfModule,
     IgxGridModule,
@@ -37,12 +39,7 @@ import {
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
-} from "igniteui-angular/main";
-
-import {
-    IgxCsvExporterService,
-    IgxExcelExporterService
-} from "igniteui-angular/services/index";
+} from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";

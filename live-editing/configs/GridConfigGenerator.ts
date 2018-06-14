@@ -16,8 +16,8 @@ import {
     IgxToastModule,
     IgxToggleModule,
     IgxRadioModule
-} from "igniteui-angular/main";
-import { IgxExcelExporterService } from "igniteui-angular/services";
+} from "igniteui-angular";
+import { IgxExcelExporterService } from "igniteui-angular";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";

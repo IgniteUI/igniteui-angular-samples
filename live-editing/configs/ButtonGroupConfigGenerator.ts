@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonGroupModule } from "igniteui-angular/main";
+import { IgxButtonGroupModule } from "igniteui-angular";
 import {
     ButtonGroupSample1Component
  } from "../../src/app/buttonGroup/button-group-sample-1/button-group-sample-1.component";

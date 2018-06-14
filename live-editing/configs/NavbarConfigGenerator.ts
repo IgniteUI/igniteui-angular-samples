@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxIconModule, IgxNavbarModule } from "igniteui-angular/main";
+import { IgxIconModule, IgxNavbarModule } from "igniteui-angular";
 import { NavbarSample1Component } from "../../src/app/navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "../../src/app/navbar/navbar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";

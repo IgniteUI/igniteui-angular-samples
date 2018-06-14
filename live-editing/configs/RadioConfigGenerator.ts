@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxRadioModule } from "igniteui-angular/main";
+import { IgxRadioModule } from "igniteui-angular";
 import { RadioSample2Component } from "../../src/app/form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

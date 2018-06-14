@@ -1,11 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { ChangeDetectorRef, Component, Injectable, TemplateRef, ViewChild } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import {
-    DataContainer,
-    IForOfState
-} from "igniteui-angular/main";
+import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { DataContainer, IForOfState } from "igniteui-angular/esm5/lib/directives/for-of/IForOfState";
 import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()

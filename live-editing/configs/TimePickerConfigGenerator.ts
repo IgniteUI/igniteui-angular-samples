@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxTimePickerModule, IgxToastModule } from "igniteui-angular/main";
+import { IgxTimePickerModule, IgxToastModule } from "igniteui-angular";
 import { TimePickerSample1Component } from "../../src/app/timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "../../src/app/timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "../../src/app/timepicker/timepicker-sample-3/timepicker-sample-3.component";

@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxDatePickerModule } from "igniteui-angular/main";
+import { IgxDatePickerModule } from "igniteui-angular";
 import { DatepickerSample1Component } from "../../src/app/datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "../../src/app/datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "../../src/app/datepicker/datepicker-sample-3/datepicker-sample-3.component";
