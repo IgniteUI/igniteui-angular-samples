@@ -182,6 +182,8 @@ import { CategoryChartPerformanceSamplesModule } from "./category-chart/category
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
+import { GridToolbarSample1Component } from './grid/grid-toolbar-sample/grid-toolbar-sample-1.component';
+import { GridToolbarSample2Component } from './grid/grid-toolbar-sample/grid-toolbar-sample-2.component';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -316,7 +318,9 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CsvExportSample1Component,
         SortingSampleComponent,
         GridContextmenuComponent,
-        GridSearchSampleComponent
+        GridSearchSampleComponent,
+        GridToolbarSample1Component,
+        GridToolbarSample2Component
     ],
     imports: [
         AppRoutingModule,
