@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxExcelExporterService, IgxCsvExporterService } from "igniteui-angular";
+import { IgxCsvExporterService, IgxExcelExporterService, IgxGridComponent } from "igniteui-angular";
 import { athletesData } from "../services/data";
 
 @Component({
@@ -11,8 +11,8 @@ export class GridToolbarSample3Component implements OnInit {
 
     @ViewChild("grid1") public grid: IgxGridComponent;
     public data: any[];
-  
-    ngOnInit() {
+
+    public ngOnInit() {
         this.data = athletesData;
     }
 
@@ -21,7 +21,7 @@ export class GridToolbarSample3Component implements OnInit {
         let exporter;
         switch (args.type) {
             case "excel" :
-                exporter = args.exporter as IgxExcelExporterService
+                exporter = args.exporter as IgxExcelExporterService;
                 // configure and perform excel export operation here
                 break;
             case "csv" :

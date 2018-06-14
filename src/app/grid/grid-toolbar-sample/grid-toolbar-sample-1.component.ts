@@ -12,8 +12,7 @@ export class GridToolbarSample1Component implements OnInit {
     @ViewChild("grid1") public grid: IgxGridComponent;
     public data: any[];
 
-    ngOnInit() {
+    public ngOnInit() {
         this.data = athletesData;
     }
-
 }
