@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxToggleActionDirective, IgxToggleDirective } from "igniteui-angular/main";
+import { IgxToggleActionDirective, IgxToggleDirective } from "igniteui-angular";
 
 @Component({
   selector: "app-toggle-sample-2",

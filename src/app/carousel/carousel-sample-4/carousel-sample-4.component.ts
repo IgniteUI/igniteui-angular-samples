@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation } from "@angular/core";
 import { Router } from "@angular/router";
-import { Direction, IgxButtonModule, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular/main";
+import { Direction, IgxButtonModule, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
   encapsulation: ViewEncapsulation.None,

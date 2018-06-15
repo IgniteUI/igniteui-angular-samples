@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxFilterModule, IgxForOfModule,
-    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxRippleModule } from "igniteui-angular/main";
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxRippleModule } from "igniteui-angular";
 import { IgxForComponent } from "../../src/app/igxFor/igxFor.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

@@ -1,5 +1,6 @@
 // tslint:disable:prefer-const
 // tslint:disable:prefer-for-of
+// tslint:disable:no-implicit-dependencies
 import * as fs from "fs";
 import * as path from "path";
 import * as Collections from "typescript-collections";
@@ -24,6 +25,7 @@ const COMMON_PACKAGE_DEPENDENCIES = [
     "classlist.js",
     "core-js",
     "hammerjs",
+    "@types/hammerjs",
     "intl",
     "web-animations-js"
 ];
@@ -37,6 +39,9 @@ const DEFAULT_DEPENDENCIES = [
     "hammerjs",
     "web-animations-js",
     "jszip",
+    // importing this temporarily until we resolve the issue
+    // https://github.com/IgniteUI/igniteui-angular-samples/issues/234
+    "immediate",
     "intl",
     "tslib"
 ];

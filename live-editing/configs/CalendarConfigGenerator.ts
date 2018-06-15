@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxCalendarModule, IgxCardModule, IgxDialogModule } from "igniteui-angular/main";
+import { IgxCalendarModule, IgxCardModule, IgxDialogModule } from "igniteui-angular";
 import { CalendarSample1Component } from "../../src/app/calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "../../src/app/calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "../../src/app/calendar/calendar-sample-3/calendar-sample-3.component";

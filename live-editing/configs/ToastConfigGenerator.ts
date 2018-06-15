@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxRippleModule, IgxToastModule } from "igniteui-angular/main";
+import { IgxButtonModule, IgxRippleModule, IgxToastModule } from "igniteui-angular";
 import { ToastSample1Component } from "../../src/app/toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample5Component } from "../../src/app/toast/toast-sample-5/toast-sample-5.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";

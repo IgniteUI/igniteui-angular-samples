@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxIconModule } from "igniteui-angular/main";
+import { IgxIconModule } from "igniteui-angular";
 import { IconSample1Component } from "../../src/app/icon/icon-sample-1/icon-sample-1.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

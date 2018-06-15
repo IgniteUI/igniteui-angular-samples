@@ -22,7 +22,7 @@ import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IgxSliderModule } from "igniteui-angular/main";
+import { IgxSliderModule } from "igniteui-angular";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {

@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
     IgxButtonModule, IgxDialogModule, IgxIconModule, IgxInputGroupModule, IgxRippleModule
- } from "igniteui-angular/main";
+ } from "igniteui-angular";
 import { DialogSample1Component } from "../../src/app/dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "../../src/app/dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "../../src/app/dialog/dialog-sample-3/dialog-sample-3.component";

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
+import { IgxGridComponent } from "igniteui-angular";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
 @Component({

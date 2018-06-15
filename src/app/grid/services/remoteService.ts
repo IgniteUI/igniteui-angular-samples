@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { IForOfState } from "igniteui-angular/main";
+import { IForOfState } from "igniteui-angular/lib/directives/for-of/IForOfState";
 import { BehaviorSubject, Observable } from "rxjs";
 
 const DATA_URL: string = "https://www.igniteui.com/api/products";

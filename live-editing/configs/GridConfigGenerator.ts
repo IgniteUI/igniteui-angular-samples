@@ -5,6 +5,7 @@ import {
     IgxBadgeModule,
     IgxButtonModule,
     IgxCheckboxModule,
+    IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
     IgxInputGroupModule,
@@ -13,16 +14,17 @@ import {
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule
-} from "igniteui-angular/main";
-import { IgxExcelExporterService } from "igniteui-angular/services";
+} from "igniteui-angular";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
+import {
+    RemoteFilteringSampleComponent
+} from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
-import { RemoteFilteringSampleComponent } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
@@ -32,10 +34,11 @@ import {
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { DataService } from "../../src/app/grid/services/data.service";
+import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
+
 import { RemoteService } from "../../src/app/grid/services/remoteService";
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -191,18 +194,19 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule],
                 ngProviders: [RemoteService]
-            }),
+            })
         }));
 
         configs.push(new Config({
             component: RemoteFilteringSampleComponent,
             additionalFiles: ["/src/app/grid/services/remoteFilteringService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [RemoteFilteringSampleComponent, IgxGridModule, IgxBadgeModule, HttpClientModule, RemoteFilteringService],
+                imports: [RemoteFilteringSampleComponent, IgxGridModule,
+                    IgxBadgeModule, HttpClientModule, RemoteFilteringService],
                 ngDeclarations: [RemoteFilteringSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule],
                 ngProviders: [RemoteFilteringService]
-            }),
+            })
         }));
 
         configs.push(new Config({
