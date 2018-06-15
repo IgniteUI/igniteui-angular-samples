@@ -97,6 +97,7 @@ import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/s
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
@@ -313,7 +314,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CsvExportSample1Component,
         SortingSampleComponent,
         GridContextmenuComponent,
-        GridSearchSampleComponent
+        GridSearchSampleComponent,
+        GridMovingSampleComponent
     ],
     imports: [
         AppRoutingModule,

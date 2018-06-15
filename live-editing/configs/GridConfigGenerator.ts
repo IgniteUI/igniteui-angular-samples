@@ -18,6 +18,7 @@ import {
 import { IgxExcelExporterService } from "igniteui-angular";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
@@ -78,7 +79,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
                 ngDeclarations: [GridSample3Component],
-                ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
             })
         }));
@@ -87,7 +88,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: FilteringSampleComponent,
             additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
+                imports: [IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
                 ngDeclarations: [FilteringSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxInputGroupModule],
                 ngProviders: []
@@ -98,7 +99,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: PagingSampleComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, PagingSampleComponent, DataService],
                 ngDeclarations: [PagingSampleComponent],
@@ -168,12 +169,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: SortingSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sorting-sample/nwindData.ts",
-                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
-                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
-                              "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss"
-                            ],
+                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
+                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
+                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss"
+            ],
             appModuleConfig: new AppModuleConfig({
-                imports: [ IgxGridModule, IgxIconModule, IgxRippleModule,
+                imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
                     SortingSampleComponent, IgxInputGroupModule, GridContextmenuComponent],
                 ngDeclarations: [SortingSampleComponent, GridContextmenuComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxIconModule, IgxInputGroupModule],
@@ -185,11 +186,11 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridRemoteVirtualizationSampleComponent,
             additionalFiles: ["/src/app/grid/services/mock-data.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
-                     IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
+                imports: [GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
+                    IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule,
-                     InMemoryWebApiModule.forRoot(MockDataService)],
+                InMemoryWebApiModule.forRoot(MockDataService)],
                 ngProviders: []
             }),
             additionalDependencies: ["angular-in-memory-web-api"]
@@ -199,9 +200,21 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: PinningSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ PinningSampleComponent, IgxGridModule, IgxIconModule],
+                imports: [PinningSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        // column-moving sample
+        configs.push(new Config({
+            component: GridMovingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngDeclarations: [GridMovingSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule],
                 ngProviders: []
             })
         }));
