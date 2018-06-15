@@ -22,6 +22,7 @@ import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/gri
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
+import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -78,6 +79,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
                 ngDeclarations: [GridSample3Component],
+                ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupBySampleComponent,
+            additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
+                    IgxRippleModule, IgxSwitchModule, GridGroupBySampleComponent, LocalService, IgxIconModule],
+                ngDeclarations: [GridGroupBySampleComponent],
                 ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
             })
