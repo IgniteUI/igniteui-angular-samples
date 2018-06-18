@@ -202,9 +202,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid/services/remoteFilteringService.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [RemoteFilteringSampleComponent, IgxGridModule,
-                    IgxBadgeModule, HttpClientModule, RemoteFilteringService],
+                    IgxBadgeModule, HttpClientModule, RemoteFilteringService, IgxToastModule],
                 ngDeclarations: [RemoteFilteringSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule, IgxToastModule],
                 ngProviders: [RemoteFilteringService]
             })
         }));

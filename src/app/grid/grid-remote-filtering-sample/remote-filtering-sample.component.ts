@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { IgxGridComponent, IgxToastComponent } from "igniteui-angular";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
 @Component({
@@ -10,8 +10,8 @@ import { RemoteFilteringService } from "../services/remoteFilteringService";
 })
 export class RemoteFilteringSampleComponent implements OnInit {
     public remoteData: any;
-    @ViewChild("grid")
-    public grid: IgxGridComponent;
+    @ViewChild("grid") public grid: IgxGridComponent;
+    @ViewChild("toast") public toast: IgxToastComponent;
     private _prevRequest: any;
 
     constructor(private _remoteService: RemoteFilteringService, public cdr: ChangeDetectorRef) { }
@@ -34,12 +34,19 @@ export class RemoteFilteringSampleComponent implements OnInit {
             this._prevRequest.unsubscribe();
         }
 
+        this.toast.message = "Loading Remote Data...";
+        this.toast.position = 1;
+        this.toast.displayTime = 1000;
+        this.toast.show();
+        this.cdr.detectChanges();
+
         const virtualizationState = this.grid.virtualizationState;
         const filteringExpr = this.grid.filteringExpressions[0];
         const sortingExpr = this.grid.sortingExpressions[0];
 
         this._prevRequest = this._remoteService.getData(virtualizationState, filteringExpr, sortingExpr, (data) => {
             this.grid.totalItemCount = data.filteredCount;
+            this.toast.hide();
             this.cdr.detectChanges();
         });
     }
