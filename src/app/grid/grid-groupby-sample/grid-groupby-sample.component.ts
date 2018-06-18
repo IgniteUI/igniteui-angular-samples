@@ -8,6 +8,7 @@ import {
     SortingDirection
 } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
+
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: "app-grid-groupby-sample",
@@ -43,15 +44,9 @@ export class GridGroupBySampleComponent implements OnInit {
             return false;
         }
     }
-    public func(values: any[]) {
-        let count = 0;
+    public calc2017(values: any[]) {
         const startDate = new Date("1/1/2017");
         const endDate = new Date("12/31/2017");
-        values.forEach((val) => {
-            if (val.OrderDate >= startDate && val.OrderDate <= endDate) {
-                count++;
-            }
-        });
-        return count;
+        return values.filter(x => x.OrderDate >= startDate && x.OrderDate <= endDate).length;
     }
 }
