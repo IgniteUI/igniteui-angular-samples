@@ -6,6 +6,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 
 const DATA_URL: string = "https://www.igniteui.com/api/products";
 const EMPTY_STRING: string = "";
+const NULL_VALUE = null;
 export enum FILTER_OPERATION {
     CONTAINS = "substringof",
     STARTS_WITH = "startswith",
@@ -68,43 +69,46 @@ export class RemoteFilteringService {
         }
 
         if (filteringArgs) {
+            const value = filteringArgs.searchVal;
+            const isNumberValue = (typeof (value) === "number") ? true : false;
+            const filterValue = (isNumberValue) ? value : `'${value}'`;
             switch (filteringArgs.condition.name) {
                 case "contains": {
                     condition = FILTER_OPERATION.CONTAINS;
-                    filterQuery = `$filter=${condition}('${filteringArgs.searchVal}',${filteringArgs.fieldName})`;
+                    filterQuery = `$filter=${condition}(${filterValue},${filteringArgs.fieldName})`;
                     break;
                 }
                 case "startsWith": {
                     condition = FILTER_OPERATION.STARTS_WITH;
-                    filterQuery = `$filter=${condition}(${filteringArgs.fieldName},'${filteringArgs.searchVal}')`;
+                    filterQuery = `$filter=${condition}(${filteringArgs.fieldName}, ${filterValue})`;
                     break;
                 }
                 case "endsWith": {
                     condition = FILTER_OPERATION.ENDS_WITH;
-                    filterQuery = `$filter=${condition}(${filteringArgs.fieldName},'${filteringArgs.searchVal}')`;
+                    filterQuery = `$filter=${condition}(${filteringArgs.fieldName}, ${filterValue})`;
                     break;
                 }
                 case "equals": {
                     condition = FILTER_OPERATION.EQUALS;
-                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} '${filteringArgs.searchVal}'`;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
                     break;
                 }
                 case "doesNotEqual": {
                     condition = FILTER_OPERATION.DOES_NOT_EQUAL;
-                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} '${filteringArgs.searchVal}'`;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
                     break;
                 }
                 case "doesNotContain": {
                     condition = FILTER_OPERATION.DOES_NOT_CONTAIN;
-                    filterQuery = `$filter=${condition}('${filteringArgs.searchVal}',${filteringArgs.fieldName})`;
+                    filterQuery = `$filter=${condition}(${filterValue}, ${filteringArgs.fieldName})`;
                     break;
                 }
                 case "empty": {
-                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.EQUALS} ''`;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.EQUALS} ${NULL_VALUE}`;
                     break;
                 }
                 case "notEmpty": {
-                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ''`;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${NULL_VALUE}`;
                     break;
                 }
             }
