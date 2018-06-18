@@ -29,6 +29,7 @@ import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/g
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
 import { GridColumnHidingSampleComponent } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import { GridColumnHidingToolbarSampleComponent } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import {
     GridContextmenuComponent
 } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
@@ -148,6 +149,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxGridModule, IgxRadioModule, IgxColumnHidingModule, GridColumnHidingSampleComponent],
                 ngDeclarations: [GridColumnHidingSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxRadioModule, IgxColumnHidingModule, HttpClientModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnHidingToolbarSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarSampleComponent],
+                ngDeclarations: [GridColumnHidingToolbarSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), HttpClientModule],
                 ngProviders: []
             })
         }));

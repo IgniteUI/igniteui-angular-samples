@@ -110,6 +110,9 @@ import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radi
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
@@ -636,6 +639,10 @@ export const appRoutes: Routes = [
     {
         component: GridColumnHidingSampleComponent,
         path: "grid-column-hiding-sample"
+    },
+    {
+        component: GridColumnHidingToolbarSampleComponent,
+        path: "grid-column-hiding-toolbar-sample"
     },
     {
         component: NavbarSample1Component,

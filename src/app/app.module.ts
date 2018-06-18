@@ -180,6 +180,9 @@ import { CategoryChartPerformanceSamplesModule } from "./category-chart/category
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 
 @NgModule({
@@ -316,7 +319,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
-        GridColumnHidingSampleComponent
+        GridColumnHidingSampleComponent,
+        GridColumnHidingToolbarSampleComponent
     ],
     imports: [
         AppRoutingModule,
