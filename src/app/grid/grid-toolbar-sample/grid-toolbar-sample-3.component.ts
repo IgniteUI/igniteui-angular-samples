@@ -1,5 +1,13 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxCsvExporterService, IgxExcelExporterService, IgxGridComponent } from "igniteui-angular";
+import {
+    CsvFileTypes,
+    IColumnExportingEventArgs,
+    IGridToolbarExportEventArgs,
+    IgxCsvExporterOptions,
+    IgxExcelExporterOptions,
+    IgxExporterOptionsBase,
+    IgxGridComponent
+} from "igniteui-angular";
 import { athletesData } from "../services/data";
 
 @Component({
@@ -16,18 +24,24 @@ export class GridToolbarSample3Component implements OnInit {
         this.data = athletesData;
     }
 
-    public toolbarExportingHandler(args) {
-        args.cancel = true; // cancel default exporting process
-        let exporter;
-        switch (args.type) {
-            case "excel" :
-                exporter = args.exporter as IgxExcelExporterService;
-                // configure and perform excel export operation here
-                break;
-            case "csv" :
-                exporter = args.exporter as IgxCsvExporterService;
-                // configure and perform csv export operation here
-                break;
+    public toolbarExportingHandler(args: IGridToolbarExportEventArgs) {
+        // You can customize the exporting from this event
+        const options: IgxExporterOptionsBase = args.options ;
+        options.fileName = "Custom Title";
+
+        if (options instanceof IgxExcelExporterOptions) {
+            const excelOptions = options as IgxExcelExporterOptions;
+            excelOptions.columnWidth = 10;
+        } else {
+            const csvOptions = options as IgxCsvExporterOptions;
+            csvOptions.fileType = CsvFileTypes.TSV;
+            csvOptions.valueDelimiter = "\t";
         }
+
+        args.exporter.onColumnExport.subscribe((columnArgs: IColumnExportingEventArgs) => {
+            // Don't export image fields
+            columnArgs.cancel = columnArgs.header === "Avatar" ||
+                                columnArgs.header === "CountryFlag";
+        });
     }
 }
