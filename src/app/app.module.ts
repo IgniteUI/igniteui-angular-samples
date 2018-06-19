@@ -36,12 +36,12 @@ import {
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
-} from "igniteui-angular/main";
+} from "igniteui-angular";
 
 import {
     IgxCsvExporterService,
     IgxExcelExporterService
-} from "igniteui-angular/services/index";
+} from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";

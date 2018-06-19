@@ -4,9 +4,9 @@ import { IColumnExportingEventArgs,
          IExcelExportEndedEventArgs,
          IgxExcelExporterOptions,
          IgxExcelExporterService,
-         IRowExportingEventArgs } from "igniteui-angular/services/index";
+         IRowExportingEventArgs } from "igniteui-angular";
 
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
+import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-excel-export-sample-1",

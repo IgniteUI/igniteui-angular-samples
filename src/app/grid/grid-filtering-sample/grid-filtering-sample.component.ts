@@ -1,7 +1,7 @@
 import { CurrencyPipe } from "@angular/common";
 import { AfterViewInit, Component, OnInit, ViewChild, ViewChildren } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
-import { STRING_FILTERS } from "igniteui-angular/main";
+import { IgxGridComponent } from "igniteui-angular";
+import { STRING_FILTERS } from "igniteui-angular";
 import { DATA } from "./nwindData";
 
 @Component({

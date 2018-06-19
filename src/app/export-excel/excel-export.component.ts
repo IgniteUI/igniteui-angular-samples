@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { IgxExcelExporterOptions, IgxExcelExporterService } from "igniteui-angular/services/index";
+import { IgxExcelExporterOptions, IgxExcelExporterService } from "igniteui-angular";
 
 @Component({
   selector: "app-excel-export",
