@@ -13,7 +13,11 @@ export enum FILTER_OPERATION {
     ENDS_WITH = "endswith",
     EQUALS = "eq",
     DOES_NOT_EQUAL = "ne",
-    DOES_NOT_CONTAIN = "not substringof"
+    DOES_NOT_CONTAIN = "not substringof",
+    GREATER_THAN = "gt",
+    LESS_THAN = "lt",
+    LESS_THAN_EQUAL = "le",
+    GREATER_THAN_EQUAL = "ge"
 }
 export enum SortOrder {
     ASC = "asc",
@@ -103,11 +107,39 @@ export class RemoteFilteringService {
                     filterQuery = `$filter=${condition}(${filterValue}, ${filteringArgs.fieldName})`;
                     break;
                 }
+                case "greaterThan": {
+                    condition = FILTER_OPERATION.GREATER_THAN;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "greaterThanOrEqualTo": {
+                    condition = FILTER_OPERATION.GREATER_THAN_EQUAL;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "lessThan": {
+                    condition = FILTER_OPERATION.LESS_THAN;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "lessThanOrEqualTo": {
+                    condition = FILTER_OPERATION.LESS_THAN_EQUAL;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
                 case "empty": {
-                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.EQUALS} ${NULL_VALUE}`;
+                    filterQuery = `$filter=length(${filteringArgs.fieldName}) ${FILTER_OPERATION.EQUALS} 0`;
                     break;
                 }
                 case "notEmpty": {
+                    filterQuery = `$filter=length(${filteringArgs.fieldName}) ${FILTER_OPERATION.GREATER_THAN} 0`;
+                    break;
+                }
+                case "null": {
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.EQUALS} ${NULL_VALUE}`;
+                    break;
+                }
+                case "notNull": {
                     filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${NULL_VALUE}`;
                     break;
                 }
