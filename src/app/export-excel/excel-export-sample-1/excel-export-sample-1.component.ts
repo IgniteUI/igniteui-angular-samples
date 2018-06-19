@@ -1,12 +1,8 @@
 import { Component, ViewChild } from "@angular/core";
 
-import { IColumnExportingEventArgs,
-         IExcelExportEndedEventArgs,
-         IgxExcelExporterOptions,
+import { IgxExcelExporterOptions,
          IgxExcelExporterService,
-         IRowExportingEventArgs } from "igniteui-angular";
-
-import { IgxGridComponent } from "igniteui-angular";
+         IgxGridComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-excel-export-sample-1",

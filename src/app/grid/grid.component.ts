@@ -8,9 +8,8 @@ import {
   ViewChild,
   ViewEncapsulation
 } from "@angular/core";
-import { IgxNumberSummaryOperand, IgxSummaryResult} from "igniteui-angular";
-import { IgxGridComponent } from "igniteui-angular";
-import { STRING_FILTERS } from "igniteui-angular";
+import { IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult} from "igniteui-angular";
+import { STRING_FILTERS } from "igniteui-angular/esm5/lib/data-operations/filtering-condition";
 import { athletesData } from "./services/data";
 import { DataService } from "./services/data.service";
 
@@ -108,6 +107,7 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 
   public filter(term) {
+    // this.grid1.filter("CountryName", term, IgxStringFilteringOperand.instance().condition("contains"));
     this.grid1.filter("CountryName", term, STRING_FILTERS.contains);
   }
 
