@@ -1,6 +1,6 @@
 import { Component, Injectable, ViewChild } from "@angular/core";
 
-import { IgxGridCellComponent, IgxGridComponent } from "igniteui-angular";
+import { IgxGridComponent } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 import { DATA } from "./financialData";
 

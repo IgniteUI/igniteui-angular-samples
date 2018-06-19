@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxInputDirective } from "igniteui-angular/esm5/lib/directives/input/input.directive";
+import { Component, ViewChild } from "@angular/core";
 
 @Component({
     selector: "app-input-group-sample-5",
@@ -7,9 +6,9 @@ import { IgxInputDirective } from "igniteui-angular/esm5/lib/directives/input/in
     templateUrl: "./input-group-sample-5.component.html"
 })
 export class InputGroupSample5Component {
-    @ViewChild("input1") public searchInput: IgxInputDirective;
+    @ViewChild("input1") public searchInput: HTMLInputElement;
 
     public clearSearchInput() {
-        this.searchInput.nativeElement.value = "";
+        this.searchInput.value = "";
     }
 }
