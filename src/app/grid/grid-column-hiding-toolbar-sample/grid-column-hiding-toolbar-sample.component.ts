@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular";
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
 import { DATA } from "./data";
 
 @Component({
@@ -7,14 +7,19 @@ import { DATA } from "./data";
     styleUrls: ["./grid-column-hiding-toolbar-sample.component.scss"],
     templateUrl: "./grid-column-hiding-toolbar-sample.component.html"
 })
-export class GridColumnHidingToolbarSampleComponent implements OnInit {
+export class GridColumnHidingToolbarSampleComponent implements OnInit, AfterViewInit {
 
+    @ViewChild("grid", { read: IgxGridComponent }) public grid: IgxGridComponent;
     public data: any[];
 
     constructor() { }
 
     public ngOnInit() {
         this.data = DATA;
+    }
+
+    public ngAfterViewInit() {
+        this.grid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
     }
 
     public initColumns(column: IgxColumnComponent) {
