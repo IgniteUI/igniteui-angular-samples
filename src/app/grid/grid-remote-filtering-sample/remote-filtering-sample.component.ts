@@ -13,6 +13,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
     @ViewChild("grid") public grid: IgxGridComponent;
     @ViewChild("toast") public toast: IgxToastComponent;
     private _prevRequest: any;
+    private _chunkSize: number;
 
     constructor(private _remoteService: RemoteFilteringService, public cdr: ChangeDetectorRef) { }
 
@@ -23,8 +24,9 @@ export class RemoteFilteringSampleComponent implements OnInit {
     public ngAfterViewInit() {
         const filteringExpr = this.grid.filteringExpressions[0];
         const sortingExpr = this.grid.sortingExpressions[0];
-
-        this._remoteService.getData(this.grid.virtualizationState, filteringExpr, sortingExpr, (data) => {
+        this._chunkSize = parseInt(this.grid.height, 10) / this.grid.rowHeight;
+        this._remoteService.getData({chunkSize: this._chunkSize, startIndex: this.grid.virtualizationState.startIndex},
+            filteringExpr, sortingExpr, (data) => {
             this.grid.totalItemCount = data.Count;
         });
     }
@@ -44,7 +46,9 @@ export class RemoteFilteringSampleComponent implements OnInit {
         const filteringExpr = this.grid.filteringExpressions[0];
         const sortingExpr = this.grid.sortingExpressions[0];
 
-        this._prevRequest = this._remoteService.getData(virtualizationState, filteringExpr, sortingExpr, (data) => {
+        this._prevRequest = this._remoteService.getData(
+            {chunkSize: this._chunkSize, startIndex: virtualizationState.startIndex},
+            filteringExpr, sortingExpr, (data) => {
             this.grid.totalItemCount = data.filteredCount;
             this.toast.hide();
             this.cdr.detectChanges();
