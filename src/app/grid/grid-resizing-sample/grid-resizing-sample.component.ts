@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { IgxColumnComponent } from "igniteui-angular";
 import { DATA } from "./data";
 
 @Component({
