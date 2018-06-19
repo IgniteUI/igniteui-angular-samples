@@ -9,11 +9,12 @@
         <div class="remote-data-loading-template-small"></div>
     </ng-template>
 
-    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData()">
-        <igx-column [field]="'ID'"></igx-column>
-        <igx-column [field]="'ProductName'"></igx-column>
-        <igx-column [field]="'CategoryName'"></igx-column>
-        <igx-column [field]="'Rating'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'">
+    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData(false)"
+        (onSortingDone)="processData(true)">
+        <igx-column [field]="'ID'" [sortable]="true"></igx-column>
+        <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
+        <igx-column [field]="'CategoryName'" [sortable]="true"></igx-column>
+        <igx-column [field]="'Rating'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">Rating</span>
             </ng-template>
@@ -25,8 +26,8 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency"></igx-column>
-        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'">
+        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
@@ -38,6 +39,6 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'SupplierName'"></igx-column>
+        <igx-column [field]="'SupplierName'" [sortable]="true"></igx-column>
     </igx-grid>
 </div>

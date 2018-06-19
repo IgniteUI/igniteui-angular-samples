@@ -1,9 +1,16 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { SortingDirection } from "igniteui-angular";
 import { IForOfState } from "igniteui-angular/lib/directives/for-of/IForOfState";
 import { BehaviorSubject, Observable } from "rxjs";
 
 const DATA_URL: string = "https://www.igniteui.com/api/products";
+const EMPTY_STRING: string = "";
+export enum SortOrder {
+    ASC = "asc",
+    DESC = "desc",
+    NONE = ""
+}
 
 @Injectable()
 export class RemoteService {
@@ -16,13 +23,13 @@ export class RemoteService {
         this.data = this._data.asObservable();
     }
 
-    public getData(virtualizationArgs?: IForOfState, cb?: (any) => void): any {
+    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean, cb?: (any) => void): any {
         const startIndex = virtualizationArgs.startIndex;
         const endIndex = virtualizationArgs.chunkSize + startIndex;
         let areAllItemsInCache = true;
 
-        if (!this._cachedData) {
-            this._http.get(this._buildDataUrl(virtualizationArgs)).subscribe((data: any) => {
+        if (resetData) {
+            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
                 this._cachedData = new Array<any>(data.Count).fill(null);
                 this._updateData(data, startIndex);
                 if (cb) {
@@ -41,7 +48,7 @@ export class RemoteService {
         }
 
         if (!areAllItemsInCache) {
-            this._http.get(this._buildDataUrl(virtualizationArgs)).subscribe((data: any) => {
+            this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
                 this._updateData(data, startIndex);
                 if (cb) {
                     cb(data);
@@ -63,14 +70,40 @@ export class RemoteService {
         }
     }
 
-    private _buildDataUrl(virtualizationArgs: any): string {
+    private _buildDataUrl(virtualizationArgs: any, sortingArgs: any): string {
         let baseQueryString = `${DATA_URL}?$inlinecount=allpages`;
+        let scrollingQuery = EMPTY_STRING;
+        let orderQuery = EMPTY_STRING;
+        let query = EMPTY_STRING;
 
-        // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
-        const top = virtualizationArgs.chunkSize === 0 ? 10 : virtualizationArgs.chunkSize;
-        const skip = virtualizationArgs.startIndex;
+        if (sortingArgs) {
+            let sortingDirection: string;
+            switch (sortingArgs.dir) {
+                case SortingDirection.Asc:
+                    sortingDirection = SortOrder.ASC;
+                    break;
+                case SortingDirection.Desc:
+                    sortingDirection = SortOrder.DESC;
+                    break;
+                default:
+                    sortingDirection = SortOrder.NONE;
+            }
 
-        baseQueryString += `&$skip=${skip}&$top=${top}`;
+            orderQuery = `$orderby=${sortingArgs.fieldName} ${sortingDirection}`;
+        }
+
+        if (virtualizationArgs) {
+            let requiredChunkSize: number;
+            const skip = virtualizationArgs.startIndex;
+            requiredChunkSize = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
+            const top = requiredChunkSize;
+            scrollingQuery = `$skip=${skip}&$top=${top}`;
+        }
+
+        query += (orderQuery !== EMPTY_STRING) ? `&${orderQuery}` : EMPTY_STRING;
+        query += (scrollingQuery !== EMPTY_STRING) ? `&${scrollingQuery}` : EMPTY_STRING;
+
+        baseQueryString += query;
 
         return baseQueryString;
     }

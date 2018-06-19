@@ -32,12 +32,12 @@ export class GridRemoteVirtualizationSampleComponent {
     }
 
     public ngAfterViewInit() {
-        this._remoteService.getData(this.grid.virtualizationState, (data) => {
+        this._remoteService.getData(this.grid.virtualizationState, this.grid.sortingExpressions[0], true, (data) => {
             this.grid.totalItemCount = data.Count;
         });
     }
 
-    public processData() {
+    public processData(reset) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
@@ -54,19 +54,20 @@ export class GridRemoteVirtualizationSampleComponent {
             this._isColumnCellTemplateReset = true;
         }
 
-        this._prevRequest = this._remoteService.getData(this.grid.virtualizationState, () => {
-            if (this._isColumnCellTemplateReset) {
-                let oldTemplate;
-                this.grid.columns.forEach((column: IgxColumnComponent) => {
-                    oldTemplate = this._columnCellCustomTemplates.get(column);
-                    column.bodyTemplate = oldTemplate;
-                });
-                this._columnCellCustomTemplates.clear();
-                this._isColumnCellTemplateReset = false;
-            }
+        this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
+            this.grid.sortingExpressions[0], reset, () => {
+                if (this._isColumnCellTemplateReset) {
+                    let oldTemplate;
+                    this.grid.columns.forEach((column: IgxColumnComponent) => {
+                        oldTemplate = this._columnCellCustomTemplates.get(column);
+                        column.bodyTemplate = oldTemplate;
+                    });
+                    this._columnCellCustomTemplates.clear();
+                    this._isColumnCellTemplateReset = false;
+                }
 
-            this.cdr.detectChanges();
-        });
+                this.cdr.detectChanges();
+            });
     }
 
     public formatNumber(value: number) {
