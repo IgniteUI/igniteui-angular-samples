@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
 import {
-    IgxColumnComponent,
     IgxGridComponent,
     IgxNumberSummaryOperand,
-    IgxSummaryOperand,
     IgxSummaryResult } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 

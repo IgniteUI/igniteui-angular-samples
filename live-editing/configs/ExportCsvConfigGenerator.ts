@@ -1,6 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxGridModule } from "igniteui-angular";
-import { IgxCsvExporterService } from "igniteui-angular";
+import { IgxCsvExporterService, IgxGridModule } from "igniteui-angular";
 import { CsvExportSample1Component } from "../../src/app/export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "../../src/app/export-csv/csv-export.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
