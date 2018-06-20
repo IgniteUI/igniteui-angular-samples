@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxInputGroupModule, IgxSliderModule } from "igniteui-angular/main";
+import { IgxInputGroupModule, IgxSliderModule } from "igniteui-angular";
 import { SliderSample1Component } from "../../src/app/slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "../../src/app/slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "../../src/app/slider/slider-sample-3/slider-sample-3.component";

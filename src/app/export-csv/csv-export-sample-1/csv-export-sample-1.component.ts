@@ -1,13 +1,9 @@
 import { Component, ViewChild } from "@angular/core";
 
 import { CsvFileTypes,
-         IColumnExportingEventArgs,
-         ICsvExportEndedEventArgs,
          IgxCsvExporterOptions,
          IgxCsvExporterService,
-         IRowExportingEventArgs } from "igniteui-angular/services/index";
-
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
+         IgxGridComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-csv-export-sample-1",

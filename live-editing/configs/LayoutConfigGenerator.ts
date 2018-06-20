@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxLayoutModule } from "igniteui-angular/main";
+import { IgxLayoutModule } from "igniteui-angular";
 import { LayoutComponent } from "../../src/app/layout/layout.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";

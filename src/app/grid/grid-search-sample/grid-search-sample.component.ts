@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular/grid/column.component";
-import { IgxGridComponent } from "igniteui-angular/grid/grid.component";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxGridComponent} from "igniteui-angular";
 import { MARKET_DATA } from "./data";
 
 @Component({

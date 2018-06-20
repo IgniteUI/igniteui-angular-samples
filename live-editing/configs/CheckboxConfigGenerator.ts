@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxCheckboxModule } from "igniteui-angular/checkbox/checkbox.component";
+import { IgxCheckboxModule } from "igniteui-angular";
 import {
     CheckboxSample2Component
 } from "../../src/app/form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";

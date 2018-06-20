@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { IgxButtonModule, IgxSlideComponent } from "igniteui-angular/main";
+import { IgxButtonModule, IgxSlideComponent } from "igniteui-angular";
 import { slides } from "../mock-slides";
 
 @Component({

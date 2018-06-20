@@ -1,6 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxGridModule } from "igniteui-angular/main";
-import { IgxExcelExporterService } from "igniteui-angular/services/index";
+import { IgxExcelExporterService, IgxGridModule } from "igniteui-angular";
 import {
     ExcelExportSample1Component
 } from "../../src/app/export-excel/excel-export-sample-1/excel-export-sample-1.component";
