@@ -1,7 +1,6 @@
 import { CurrencyPipe } from "@angular/common";
-import { AfterViewInit, Component, OnInit, ViewChild, ViewChildren } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { STRING_FILTERS } from "igniteui-angular/esm5/lib/data-operations/filtering-condition";
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { IgxGridComponent, STRING_FILTERS } from "igniteui-angular";
 import { DATA } from "./nwindData";
 
 @Component({
