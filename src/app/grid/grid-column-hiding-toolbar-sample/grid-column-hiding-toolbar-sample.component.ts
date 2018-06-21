@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "./data";
 
 @Component({
@@ -20,10 +20,5 @@ export class GridColumnHidingToolbarSampleComponent implements OnInit, AfterView
 
     public ngAfterViewInit() {
         this.grid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
-    }
-
-    public initColumns(column: IgxColumnComponent) {
-        column.filterable = true;
-        column.sortable = true;
     }
 }

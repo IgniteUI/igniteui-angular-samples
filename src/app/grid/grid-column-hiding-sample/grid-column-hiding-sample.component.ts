@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { ColumnDisplayOrder, IgxColumnComponent } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
+import { ColumnDisplayOrder } from "igniteui-angular";
 import { DATA } from "./data";
 
 @Component({
@@ -16,10 +16,5 @@ export class GridColumnHidingSampleComponent implements OnInit {
 
     public ngOnInit() {
         this.data = DATA;
-    }
-
-    public initColumns(column: IgxColumnComponent) {
-        column.filterable = true;
-        column.sortable = true;
     }
 }
