@@ -362,7 +362,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot(),        
+        FinancialChartSamplesModule.forRoot(),
         IgxColumnHidingModule
     ],
     providers: [
