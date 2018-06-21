@@ -1,12 +1,8 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import {
-    IgxColumnComponent,
     IgxGridComponent,
-    IgxNumberSummaryOperand,
-    IgxSummaryOperand,
-    IgxSummaryResult,
-    SortingDirection,
-    ISortingExpression
+    ISortingExpression,
+    SortingDirection
 } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 
@@ -24,7 +20,10 @@ export class GridGroupBySampleComponent {
 
     constructor() {
         this.data = LOCAL_DATA;
-        this.expr = [{fieldName:"ShipCountry", dir: SortingDirection.Asc, ignoreCase: false},{fieldName: "ShipCity", dir: SortingDirection.Asc, ignoreCase: false}];
+        this.expr = [
+            {fieldName: "ShipCountry", dir: SortingDirection.Asc, ignoreCase: false},
+            {fieldName: "ShipCity", dir: SortingDirection.Asc, ignoreCase: false}
+        ];
     }
     public formatDate(val: Date) {
         return new Intl.DateTimeFormat("en-US").format(val);
@@ -42,6 +41,6 @@ export class GridGroupBySampleComponent {
     public calc2017(values: any[]) {
         const startDate = new Date("1/1/2017");
         const endDate = new Date("12/31/2017");
-        return values.filter(x => x.OrderDate >= startDate && x.OrderDate <= endDate).length;
+        return values.filter((x) => x.OrderDate >= startDate && x.OrderDate <= endDate).length;
     }
 }
