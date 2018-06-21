@@ -112,6 +112,7 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
@@ -626,6 +627,10 @@ export const appRoutes: Routes = [
     {
         component: GridRemoteVirtualizationSampleComponent,
         path: "grid-sample-4"
+    },
+    {
+        component: RemoteFilteringSampleComponent,
+        path: "grid-remote-filtering"
     },
     {
         component: GridSelectionSampleComponent,
