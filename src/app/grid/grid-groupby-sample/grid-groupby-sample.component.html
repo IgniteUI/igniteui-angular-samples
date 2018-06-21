@@ -1,22 +1,22 @@
 <div class="grid__wrapper">
-        <igx-grid #grid1 [data]="data" [width]="'100%'" [height]="'600px'" [rowSelectable]='true'  [primaryKey]="'ID'">
-                <igx-column #col field="OrderID" header="Order ID" width="0%" hidden=true [headerClasses]="'prodId'">
+        <igx-grid #grid1 [data]="data" [width]="'1000px'" [height]="'600px'" [rowSelectable]='true'  [primaryKey]="'ID'" [groupingExpressions]='expr'>
+                <igx-column field="OrderID" header="Order ID" hidden=true >
                 </igx-column>
-                <igx-column #col field="ShipCountry" header="Ship Country" width="15%" [headerClasses]="'prodId'" [groupable]="true">
+                <igx-column field="ShipCountry" header="Ship Country" width="200px" [groupable]="true">
                 </igx-column>
-                <igx-column #col field="OrderDate" header="Order Date" width="18%" [headerClasses]="'prodId'" [formatter]="formatDate">
+                <igx-column field="OrderDate" header="Order Date" width="200px" [formatter]="formatDate" [groupable]="true">
                 </igx-column>
-                <igx-column #col field="ShipName" header="Ship Name" width="20%" [headerClasses]="'prodId'">
-                </igx-column>
-                <igx-column #col field="ShipCity" header="Ship City" width="13%" [headerClasses]="'prodId'" [groupable]="true">
-                </igx-column>
-                <igx-column #col field="UnitPrice" header="Unit Price" width="13%" [headerClasses]="'prodId'" [formatter]="formatCurrency" [dataType]="'number'">
-                </igx-column>
-                <igx-column #col field="Discontinued" header="Discontinued" width="10%" [headerClasses]="'prodId'">
+                <igx-column field="Discontinued" header="Discontinued" width="200px" [groupable]="true">
                     <ng-template igxCell let-cell="cell" let-val>
                             <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
                             <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
                     </ng-template>
+                </igx-column>
+                <igx-column field="ShipName" header="Ship Name" width="250px" [groupable]="true">
+                </igx-column>
+                <igx-column field="ShipCity" header="Ship City" width="200px" [groupable]="true">
+                </igx-column>
+                <igx-column field="UnitPrice" header="Unit Price" width="150px" [formatter]="formatCurrency" [dataType]="'number'" [groupable]="true">
                 </igx-column>
                 <ng-template igxGroupByRow let-groupRow>
                         <div class="igx-group-label">
