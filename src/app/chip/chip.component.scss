@@ -1,0 +1,80 @@
+.sample-holder {
+    padding: 30px;
+    border: 1px dotted #ddd;
+    margin: 0 auto;
+    width: 700px;
+    display: block;
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.chiparea{
+    margin-top: 1.5em;
+    overflow: scroll;
+    overflow-y: hidden;
+}
+
+// .igx-drop-down__item-template {
+//     -webkit-user-select: none;  /* Chrome all / Safari all */
+//     -moz-user-select: none;     /* Firefox all */
+//     -ms-user-select: none;      /* IE 10+ */
+//     user-select: none;          /* Likely future */
+    
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     width: 100%
+// }
+
+// .samples {
+//     padding: 24px;
+//     /* background: #202020; */
+// }
+
+// .sample-title {
+//     margin-bottom: 24px;
+//     font-size: 24px;
+// }
+
+// .igx-input-group+.igx-input-group,
+// .form+.form {
+//     margin-top: 24px;
+// }
+
+// igx-input-group{
+//     margin-bottom: 1.5em !important;
+// }
+
+.chips{
+    z-index: 1;
+}
+
+:host ::ng-deep .igx-drop-down {
+    z-index: 2;
+}
+
+.igx-drop-down__item {
+    margin: 0.75em 0em;
+}
+
+.igx-drop-down__item ::ng-deep .igx-avatar__image {
+    padding: 0.75em;
+}

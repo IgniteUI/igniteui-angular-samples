@@ -1,0 +1,31 @@
+<div class="sample-wrapper" (click)="clickedOutside($event)">
+    <section class="sample-content">
+        <div class="sample-holder">
+            <div class="inputs">
+                <igx-input-group>
+                    <igx-prefix>To:</igx-prefix>
+                    <label igxLabel>Email address</label>
+                    <input igxInput #inputForm (keyup.enter)="addEmail($event)" (keyup)="toggleDropDown($event)"
+                        type="email" required />
+                </igx-input-group>
+                <igx-drop-down #dropdown (onSelection)="itemSelection($event)">
+                    <igx-drop-down-item *ngFor="let item of dropDownList | filter:inputForm.value">
+                        <div class="igx-drop-down__item-template">
+                            <igx-avatar igxPrefix fontSet="material" [src]="item.photo" roundShape="true"></igx-avatar>
+                            <span igxSufix>{{item.name}}</span>
+                        </div>
+                    </igx-drop-down-item>
+                </igx-drop-down>
+            </div>
+            <div class="chips">
+                <igx-chips-area #chipsArea class="chiparea" (onMoveStart)="clickedOutside($event)" (onReorder)="chipsOrderChanged($event)"
+                    (onMoveEnd)="chipMovingEnded()" (onSelection)="onChipsSelected($event)">
+                    <igx-chip *ngFor="let chip of chipList" [id]="chip.id" [draggable]="true" [removable]="true" [selectable]="true" (onRemove)="chipRemoved($event)">
+                        <igx-avatar igxPrefix fontSet="material" [src]="chip.photo" roundShape="true"></igx-avatar>
+                        <span #label [class]="'igx-chip__text'">{{chip.name}}</span>
+                    </igx-chip>
+                </igx-chips-area>
+            </div>
+        </div>
+    </section>
+</div>

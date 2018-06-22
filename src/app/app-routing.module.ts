@@ -186,6 +186,7 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { ChipSampleComponent } from "./chip/chip.component";
 
 export const appRoutes: Routes = [
     {
@@ -763,6 +764,10 @@ export const appRoutes: Routes = [
     {
         component: SortingSampleComponent,
         path: "grid-sorting-sample"
+    },
+    {
+        component: ChipSampleComponent,
+        path: "chip-sample"
     }
 ];
 

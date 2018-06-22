@@ -37,7 +37,9 @@ import {
     IgxTabsModule,
     IgxTimePickerModule,
     IgxToastModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxChipsModule,
+    IgxDropDownModule,
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -179,10 +181,13 @@ import { CategoryChartPerformanceSamplesModule } from "./category-chart/category
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
+import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
+import { IgxInputDirective } from "igniteui-angular/lib/directives/input/input.directive";
 
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
+        EmailFilterPipe,
         AppComponent,
         BadgeSample1Component,
         BadgeSample2Component,
@@ -313,9 +318,13 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CsvExportSample1Component,
         SortingSampleComponent,
         GridContextmenuComponent,
-        GridSearchSampleComponent
+        GridSearchSampleComponent,
+        ChipSampleComponent
     ],
     imports: [
+        IgxDropDownModule,
+        IgxInputGroupModule,
+        IgxChipsModule,
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
