@@ -1,6 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
-import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -20,6 +19,9 @@ import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
+import {
+    RemoteFilteringSampleComponent
+} from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
@@ -33,10 +35,12 @@ import {
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { DataService } from "../../src/app/grid/services/data.service";
-import { MockDataService } from "../../src/app/grid/services/mock-data.service";
+import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+
+import { RemoteService } from "../../src/app/grid/services/remoteService";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -184,16 +188,26 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridRemoteVirtualizationSampleComponent,
-            additionalFiles: ["/src/app/grid/services/mock-data.service.ts", "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/grid/services/remoteService.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
-                    IgxBadgeModule, MockDataService, HttpClientModule, InMemoryWebApiModule],
+                    IgxBadgeModule, HttpClientModule, RemoteService],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule,
-                InMemoryWebApiModule.forRoot(MockDataService)],
-                ngProviders: []
-            }),
-            additionalDependencies: ["angular-in-memory-web-api"]
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule],
+                ngProviders: [RemoteService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: RemoteFilteringSampleComponent,
+            additionalFiles: ["/src/app/grid/services/remoteFilteringService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemoteFilteringSampleComponent, IgxGridModule,
+                    IgxBadgeModule, HttpClientModule, RemoteFilteringService, IgxToastModule],
+                ngDeclarations: [RemoteFilteringSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule, IgxToastModule],
+                ngProviders: [RemoteFilteringService]
+            })
         }));
 
         configs.push(new Config({

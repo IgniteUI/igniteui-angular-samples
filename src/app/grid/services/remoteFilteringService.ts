@@ -1,0 +1,164 @@
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { IForOfState, SortingDirection } from "igniteui-angular";
+import { BehaviorSubject, Observable } from "rxjs";
+
+const DATA_URL: string = "https://www.igniteui.com/api/products";
+const EMPTY_STRING: string = "";
+const NULL_VALUE = null;
+export enum FILTER_OPERATION {
+    CONTAINS = "substringof",
+    STARTS_WITH = "startswith",
+    ENDS_WITH = "endswith",
+    EQUALS = "eq",
+    DOES_NOT_EQUAL = "ne",
+    DOES_NOT_CONTAIN = "not substringof",
+    GREATER_THAN = "gt",
+    LESS_THAN = "lt",
+    LESS_THAN_EQUAL = "le",
+    GREATER_THAN_EQUAL = "ge"
+}
+export enum SortOrder {
+    ASC = "asc",
+    DESC = "desc",
+    NONE = ""
+}
+
+@Injectable()
+export class RemoteFilteringService {
+    public remoteData: Observable<any[]>;
+    private _remoteData: BehaviorSubject<any[]>;
+
+    constructor(private _http: HttpClient) {
+        this._remoteData = new BehaviorSubject([]);
+        this.remoteData = this._remoteData.asObservable();
+    }
+
+    public getData(virtualizationArgs?: IForOfState, filteringArgs?: any, sortingArgs?: any, cb?: (any) => void): any {
+        return this._http.get(this.buildDataUrl("", filteringArgs, sortingArgs)).subscribe((filteredData: any) => {
+            const filteredCount = filteredData.Results.length;
+            this._http.get(this.buildDataUrl(virtualizationArgs, filteringArgs, sortingArgs)).subscribe((data: any) => {
+                data.filteredCount = filteredCount;
+                this._remoteData.next(data.Results);
+                if (cb) {
+                    cb(data);
+                }
+            });
+        });
+    }
+
+    private buildDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
+        let baseQueryString = `${DATA_URL}?$inlinecount=allpages`;
+        let scrollingQuery = EMPTY_STRING;
+        let orderQuery = EMPTY_STRING;
+        let filterQuery = EMPTY_STRING;
+        let query = EMPTY_STRING;
+        let condition;
+
+        if (sortingArgs) {
+            let sortingDirection: string;
+            switch (sortingArgs.dir) {
+                case SortingDirection.Asc:
+                    sortingDirection = SortOrder.ASC;
+                    break;
+                case SortingDirection.Desc:
+                    sortingDirection = SortOrder.DESC;
+                    break;
+                default:
+                    sortingDirection = SortOrder.NONE;
+            }
+
+            orderQuery = `$orderby=${sortingArgs.fieldName} ${sortingDirection}`;
+        }
+
+        if (filteringArgs) {
+            const value = filteringArgs.searchVal;
+            const isNumberValue = (typeof (value) === "number") ? true : false;
+            const filterValue = (isNumberValue) ? value : `'${value}'`;
+            switch (filteringArgs.condition.name) {
+                case "contains": {
+                    condition = FILTER_OPERATION.CONTAINS;
+                    filterQuery = `$filter=${condition}(${filterValue},${filteringArgs.fieldName})`;
+                    break;
+                }
+                case "startsWith": {
+                    condition = FILTER_OPERATION.STARTS_WITH;
+                    filterQuery = `$filter=${condition}(${filteringArgs.fieldName}, ${filterValue})`;
+                    break;
+                }
+                case "endsWith": {
+                    condition = FILTER_OPERATION.ENDS_WITH;
+                    filterQuery = `$filter=${condition}(${filteringArgs.fieldName}, ${filterValue})`;
+                    break;
+                }
+                case "equals": {
+                    condition = FILTER_OPERATION.EQUALS;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "doesNotEqual": {
+                    condition = FILTER_OPERATION.DOES_NOT_EQUAL;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "doesNotContain": {
+                    condition = FILTER_OPERATION.DOES_NOT_CONTAIN;
+                    filterQuery = `$filter=${condition}(${filterValue}, ${filteringArgs.fieldName})`;
+                    break;
+                }
+                case "greaterThan": {
+                    condition = FILTER_OPERATION.GREATER_THAN;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "greaterThanOrEqualTo": {
+                    condition = FILTER_OPERATION.GREATER_THAN_EQUAL;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "lessThan": {
+                    condition = FILTER_OPERATION.LESS_THAN;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "lessThanOrEqualTo": {
+                    condition = FILTER_OPERATION.LESS_THAN_EQUAL;
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${condition} ${filterValue}`;
+                    break;
+                }
+                case "empty": {
+                    filterQuery = `$filter=length(${filteringArgs.fieldName}) ${FILTER_OPERATION.EQUALS} 0`;
+                    break;
+                }
+                case "notEmpty": {
+                    filterQuery = `$filter=length(${filteringArgs.fieldName}) ${FILTER_OPERATION.GREATER_THAN} 0`;
+                    break;
+                }
+                case "null": {
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.EQUALS} ${NULL_VALUE}`;
+                    break;
+                }
+                case "notNull": {
+                    filterQuery = `$filter=${filteringArgs.fieldName} ${FILTER_OPERATION.DOES_NOT_EQUAL} ${NULL_VALUE}`;
+                    break;
+                }
+            }
+        }
+
+        if (virtualizationArgs) {
+            let requiredChunkSize: number;
+            const skip = virtualizationArgs.startIndex;
+            requiredChunkSize = virtualizationArgs.chunkSize === 0 ? 11 : virtualizationArgs.chunkSize;
+            const top = requiredChunkSize;
+            scrollingQuery = `$skip=${skip}&$top=${top}`;
+        }
+
+        query += (orderQuery !== EMPTY_STRING) ? `&${orderQuery}` : EMPTY_STRING;
+        query += (filterQuery !== EMPTY_STRING) ? `&${filterQuery}` : EMPTY_STRING;
+        query += (scrollingQuery !== EMPTY_STRING) ? `&${scrollingQuery}` : EMPTY_STRING;
+
+        baseQueryString += query;
+
+        return baseQueryString;
+    }
+}
