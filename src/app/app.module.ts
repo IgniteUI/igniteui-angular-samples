@@ -12,9 +12,11 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxCheckboxModule,
+    IgxChipsModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDropDownModule,
     IgxExcelExporterService,
     IgxFilterModule,
     IgxForOfModule,
@@ -36,9 +38,7 @@ import {
     IgxTabsModule,
     IgxTimePickerModule,
     IgxToastModule,
-    IgxToggleModule,
-    IgxChipsModule,
-    IgxDropDownModule,
+    IgxToggleModule
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -76,6 +76,7 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -180,8 +181,6 @@ import { CategoryChartSamplesModule } from "./category-chart/category-chart-samp
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
-import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
-import { IgxInputDirective } from "igniteui-angular/lib/directives/input/input.directive";
 
 @NgModule({
     bootstrap: [AppComponent],

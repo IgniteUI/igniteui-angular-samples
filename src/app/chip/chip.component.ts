@@ -1,18 +1,14 @@
 import {
     Component,
-    OnInit,
-    ViewChild,
-    Input,
     Pipe,
-    PipeTransform
+    PipeTransform,
+    ViewChild
 } from "@angular/core";
 import {
     IgxChipsAreaComponent,
     IgxDropDownComponent,
-    IgxInputDirective,
-    IgxInputGroupModule
+    IgxInputDirective
 } from "igniteui-angular";
-import { pipe } from "@angular/core/src/render3/pipe";
 
 @Component({
     selector: "app-chip",
@@ -20,99 +16,100 @@ import { pipe } from "@angular/core/src/render3/pipe";
     templateUrl: "./chip.component.html"
 })
 export class ChipSampleComponent {
+    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
     public dropDownList = [
         {
-            name: "Lisa Landers",
+            email: "lisalanders@gmail.com",
             id: "901-747-3428",
-            photo: "assets/images/women/3.jpg",
-            email: "lisalanders@gmail.com"
+            name: "Lisa Landers",
+            photo: "assets/images/women/3.jpg"
         },
         {
-            name: "Lisa Spencer",
+            email: "lisaspencer@gmail.com",
             id: "901-747-5555",
-            photo: "assets/images/women/66.jpg",
-            email: "lisaspencer@gmail.com"
+            name: "Lisa Spencer",
+            photo: "assets/images/women/66.jpg"
         },
         {
-            name: "Dorothy H. Spencer",
+            email: "dorothyspancer@gmail.com",
             id: "573-394-9254",
-            photo: "assets/images/women/67.jpg",
-            email: "dorothyspancer@gmail.com"
+            name: "Dorothy H. Spencer",
+            photo: "assets/images/women/67.jpg"
         },
         {
-            name: "Dorothy H. May",
+            email: "dorotmay@gmail.com",
             id: "573-394-3245",
-            photo: "assets/images/women/68.jpg",
-            email: "dorotmay@gmail.com"
+            name: "Dorothy H. May",
+            photo: "assets/images/women/68.jpg"
         },
         {
-            name: "Dorothy Taylor",
+            email: "dorotaylor@gmail.com",
             id: "573-394-33334",
-            photo: "assets/images/women/69.jpg",
-            email: "dorotaylor@gmail.com"
+            name: "Dorothy Taylor",
+            photo: "assets/images/women/69.jpg"
         },
         {
-            name: "Stephanie May",
+            email: "stephaniemay@gmail.com",
             id: "323-668-1482",
-            photo: "assets/images/avatar/13.jpg",
-            email: "stephaniemay@gmail.com"
+            name: "Stephanie May",
+            photo: "assets/images/avatar/13.jpg"
         },
         {
-            photo: "assets/images/avatar/14.jpg",
-            name: "Marianne Taylor",
+            email: "mariannetaylor@gmail.com",
             id: "401-661-3742",
-            email: "mariannetaylor@gmail.com"
+            name: "Marianne Taylor",
+            photo: "assets/images/avatar/14.jpg"
         },
         {
-            photo: "assets/images/avatar/15.jpg",
-            name: "Tammie Alvarez",
+            email: "tammiealvarez@gmail.com",
             id: "662-374-2920",
-            email: "tammiealvarez@gmail.com"
+            name: "Tammie Alvarez",
+            photo: "assets/images/avatar/15.jpg"
         },
         {
-            photo: "assets/images/avatar/10.jpg",
-            name: "Tammie Flores",
+            email: "tammyflores@gmail.com",
             id: "662-374-3333",
-            email: "tammyflores@gmail.com"
+            name: "Tammie Flores",
+            photo: "assets/images/avatar/10.jpg"
         },
         {
-            photo: "assets/images/avatar/16.jpg",
-            name: "Charlotte Flores",
+            email: "charlotteflores@gmail.com",
             id: "240-455-2267",
-            email: "charlotteflores@gmail.com"
+            name: "Charlotte Flores",
+            photo: "assets/images/avatar/16.jpg"
         },
         {
-            photo: "assets/images/avatar/17.jpg",
-            name: "Ward Riley",
+            email: "wardriley@gmail.com",
             id: "724-742-0979",
-            email: "wardriley@gmail.com"
+            name: "Ward Riley",
+            photo: "assets/images/avatar/17.jpg"
         },
         {
-            photo: "assets/images/avatar/34.jpg",
-            name: "Ward Alvarez",
+            email: "alvarezward@gmail.com",
             id: "724-742-1323",
-            email: "alvarezward@gmail.com"
+            name: "Ward Alvarez",
+            photo: "assets/images/avatar/34.jpg"
         }
     ];
 
     public chipList = [
         {
-            name: "Terrance Orta",
+            email: "terranceorta@gmail.com",
             id: "770-504-2217",
-            photo: "assets/images/men/27.jpg",
-            email: "terranceorta@gmail.com"
+            name: "Terrance Orta",
+            photo: "assets/images/men/27.jpg"
         },
         {
-            name: "Richard Mahoney",
+            email: "richard@gmail.com",
             id: "423-676-2869",
-            photo: "assets/images/men/13.jpg",
-            email: "richard@gmail.com"
+            name: "Richard Mahoney",
+            photo: "assets/images/men/13.jpg"
         },
         {
-            name: "Donna Price",
+            email: "donnaprice@gmail.com",
             id: "859-496-2817",
-            photo: "assets/images/women/50.jpg",
-            email: "donnaprice@gmail.com"
+            name: "Donna Price",
+            photo: "assets/images/women/50.jpg"
         }
     ];
 
@@ -122,11 +119,11 @@ export class ChipSampleComponent {
     @ViewChild("inputForm", { read: IgxInputDirective })
     public inputBox: IgxInputDirective;
 
-    chipsOrderChanged(event) {
+    public chipsOrderChanged(event) {
         const newChipList = [];
-        for (let i = 0; i < event.chipsArray.length; i++) {
-            const chipItem = this.chipList.filter(item => {
-                return item.id === event.chipsArray[i].id;
+        for (const chip of this.chipList) {
+            const chipItem = this.chipList.filter((item) => {
+                return item.id === chip.id;
             })[0];
             newChipList.push(chipItem);
         }
@@ -134,36 +131,35 @@ export class ChipSampleComponent {
         event.isValid = true;
     }
 
-    chipRemoved(event) {
-        this.chipList = this.chipList.filter(item => {
+    public chipRemoved(event) {
+        this.chipList = this.chipList.filter((item) => {
             return item.id !== event.owner.id;
         });
         this.chipsArea.cdr.detectChanges();
     }
 
-    selectChip(chipId) {
-        const chipToSelect = this.chipsArea.chipsList.toArray().find(chip => {
+    public selectChip(chipId) {
+        const chipToSelect = this.chipsArea.chipsList.toArray().find((chip) => {
             return chip.id === chipId;
         });
         chipToSelect.selected = true;
         this.igxDropDown.close();
     }
 
-    onChipsSelected(event) {
+    public onChipsSelected(event) {
         console.log(event.newSelection);
     }
 
-    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
-
     public toggleDropDown(ev) {
-        if (this.inputBox.value != null) {
+        if (this.inputBox.value !== null) {
             this.igxDropDown.open();
             this.igxDropDown.allowItemsFocus = false;
-            this.inputBox.focus;
+            this.inputBox.focus();
         }
-        if (ev.keyCode == "40") {
-            if(this.igxDropDown.collapsed){}
-            else{
+        if (ev.keyCode === "40") {
+            if (this.igxDropDown.collapsed) {
+                return;
+            } else {
             this.igxDropDown.allowItemsFocus = true;
             this.igxDropDown.element.firstElementChild
                 .querySelectorAll("igx-drop-down-item")[0]
@@ -172,12 +168,12 @@ export class ChipSampleComponent {
         }
     }
 
-    clickedOutside(e) {
+    public clickedOutside(e) {
         this.igxDropDown.close();
     }
 
-    addEmail() {
-        if (this.inputBox.valid == 1) {
+    public addEmail() {
+        if (this.inputBox.valid === 1) {
             let i;
             let exists = 0;
 
@@ -186,26 +182,26 @@ export class ChipSampleComponent {
             }
             for (i = 0; i < this.dropDownList.length; i++) {
                 if (
-                    this.inputBox.value.toLowerCase() ==
+                    this.inputBox.value.toLowerCase() ===
                     this.dropDownList[i].email
                 ) {
                     this.chipList.push({
-                        name: this.dropDownList[i].name,
+                        email: this.dropDownList[i].email,
                         id: this.dropDownList[i].id,
-                        photo: this.dropDownList[i].photo,
-                        email: this.dropDownList[i].email
+                        name: this.dropDownList[i].name,
+                        photo: this.dropDownList[i].photo
                     });
                     exists = 1;
                     this.igxDropDown.close();
                     this.inputBox.value = "";
                 }
             }
-            if (exists == 0) {
+            if (exists === 0) {
                 this.chipList.push({
-                    name: this.inputBox.value,
+                    email: this.inputBox.value,
                     id: this.inputBox.value,
-                    photo: "assets/images/list/empty.png",
-                    email: this.inputBox.value
+                    name: this.inputBox.value,
+                    photo: "assets/images/list/empty.png"
                 });
             }
             this.igxDropDown.close();
@@ -214,23 +210,23 @@ export class ChipSampleComponent {
         }
     }
 
-    chipMovingEnded() {}
+    public chipMovingEnded() {}
 
-    itemSelection(ev) {
+    public itemSelection(ev) {
         if (this.chipList.find((val) => val.email === this.inputBox.value.toLowerCase()) !== undefined) {
             return;
         }
         let i;
         for (i = 0; i < this.dropDownList.length; i++) {
             if (
-                ev.newSelection.elementRef.nativeElement.textContent ==
+                ev.newSelection.elementRef.nativeElement.textContent ===
                 this.dropDownList[i].name
             ) {
                 this.chipList.push({
-                    name: this.dropDownList[i].name,
+                    email: this.dropDownList[i].email,
                     id: this.dropDownList[i].id,
-                    photo: this.dropDownList[i].photo,
-                    email: this.dropDownList[i].email
+                    name: this.dropDownList[i].name,
+                    photo: this.dropDownList[i].photo
                 });
                 this.igxDropDown.close();
                 this.inputBox.value = "";
@@ -241,7 +237,7 @@ export class ChipSampleComponent {
 
 @Pipe({ name: "filter" })
 export class EmailFilterPipe implements PipeTransform {
-    transform(item: any, inputVal) {
-        return item.filter(e => e.email.startsWith(inputVal.toLowerCase()));
+    public transform(item: any, inputVal) {
+        return item.filter((e) => e.email.startsWith(inputVal.toLowerCase()));
     }
 }

@@ -50,6 +50,7 @@ import {
 import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
+import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -187,7 +188,6 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-import { ChipSampleComponent } from "./chip/chip.component";
 
 export const appRoutes: Routes = [
     {
