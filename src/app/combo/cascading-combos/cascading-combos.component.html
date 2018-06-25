@@ -1,0 +1,45 @@
+<div class="grid__wrapper">
+    <div class="sample__header">
+        <div class="crm-sample-toolbar">
+
+            <div class="crm-sample-toolbar__title">
+                <span class="crm-sample-toolbar__ellipsis">Cascading Combos</span>
+            </div>
+
+            <div class="sample-flex-container">
+                <div class="wrapper">
+                        <h3></h3>
+                        <div class="combo-container">
+                        <igx-combo #combo1 width="300px"
+                            [data]="countryData"
+                            placeholder="Country" searchPlaceholder="Search..."
+                            [allowCustomValues]="false" (onSelectionChange)="selectCountry($event)">
+                        </igx-combo>
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <h3></h3>
+                    <div class="combo-container">
+                        <igx-combo #combo2 width="300px"
+                            [data]="provinceData" [disabled]="true"
+                            placeholder="Province" searchPlaceholder="Search..."
+                            [allowCustomValues]="false" (onSelectionChange)="selectProvince($event)">
+                        </igx-combo>
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <h3></h3>
+                    <div class="combo-container">
+                        <igx-combo #combo3 width="300px"
+                            [data]="townData" [disabled]="true"
+                            placeholder="Town" searchPlaceholder="Search..."
+                            [allowCustomValues]="false" (onSelectionChange)="selectTown($event)">
+                        </igx-combo>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
