@@ -1,0 +1,23 @@
+<igx-grid #grid1 [data]="data" [autoGenerate]="false" displayDensity="cosy" width="1100px" height="630px" [paging]="true">
+    <igx-column field="ProductName" header="Product Name" width="200px" [dataType]="'string'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true" [resizable]="true">
+    </igx-column>
+    <igx-column field="UnitsInStock" header="Units In Stock" width="200px" [dataType]="'number'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true" [resizable]="true">
+        <ng-template igxCell let-cell="cell" let-val let-row>
+        {{val}} {{row.gridID}}
+        </ng-template>
+    </igx-column>
+    <igx-column field="OrderDate" header="Order Date" width="200px" [dataType]="'date'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true" [resizable]="true">
+    </igx-column>
+    <igx-column field="Discontinued" header="Discontinued" width="200px" [dataType]="'boolean'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true" [resizable]="true">
+    </igx-column>
+    <igx-column field="ReorderLevel" header="Reorder Level" width="200px" [sortable]="true" [hasSummary]="true" >
+        <ng-template igxCell let-cell="cell" let-val>
+                {{val}}
+        </ng-template>
+    </igx-column>
+    <igx-column width="100px">
+        <ng-template igxCell let-cell="cell" let-val>
+           <button (click)="removeRow(cell.cellID.rowIndex)">Remove</button>
+        </ng-template>
+    </igx-column>
+</igx-grid>
