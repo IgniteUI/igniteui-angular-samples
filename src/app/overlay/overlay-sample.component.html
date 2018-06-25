@@ -1,0 +1,30 @@
+<div class='container'>
+    <div class='row'>
+        <div class='position-element' #directionDemo>
+            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Center, VerticalAlignment.Top)">Up_Center</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Right, VerticalAlignment.Top)">Up_Right</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Middle)">Middle_Left</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Center, VerticalAlignment.Middle)">Middle_Center</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Right, VerticalAlignment.Middle)">Middle_Right</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Bottom)">Bottom_Left</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Center, VerticalAlignment.Bottom)">Bottom_Center</span>
+            <span (click)="onClickPosition(HorizontalAlignment.Right, VerticalAlignment.Bottom)">Bottom_Right</span>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='position-element' #positionDemo>
+            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='position-element' #scrollDemo>
+            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='position-element' #modalDemo>
+            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
@@ -27,6 +28,7 @@ import {
     IgxNavbarModule,
     IgxNavigationDrawerModule,
     IgxNavigationModule,
+    IgxOverlayService,
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
@@ -138,6 +140,7 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { OverlaySampleComponent } from "./overlay/overlay-sample.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -255,6 +258,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         RadioSample2Component,
         IconSample1Component,
         ToggleComponent,
+        OverlaySampleComponent,
         ToggleSample1Component,
         ToggleSample2Component,
         ToggleSample3Component,
@@ -349,6 +353,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
+        HttpModule,
         IgxForOfModule,
         IgxMaskModule,
         IgxTimePickerModule,
@@ -360,7 +365,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
     providers: [
         DataService,
         IgxCsvExporterService,
-        IgxExcelExporterService
+        IgxExcelExporterService,
+        IgxOverlayService
     ]
 })
 export class AppModule { }

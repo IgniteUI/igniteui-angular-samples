@@ -153,6 +153,7 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { OverlaySampleComponent } from "./overlay/overlay-sample.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -556,6 +557,10 @@ export const appRoutes: Routes = [
     {
         component: ButtonsSample7Component,
         path: "buttons-sample-7"
+    },
+    {
+        component: OverlaySampleComponent,
+        path: "overlay-sample"
     },
     {
         component: ToggleComponent,
