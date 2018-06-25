@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
@@ -12,6 +12,7 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxCheckboxModule,
+    IgxComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
@@ -115,6 +116,7 @@ import { InputGroupSample3Component } from "./input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
+import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
 import {
     LinearProgressbarSample1Component
@@ -313,13 +315,15 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
-        RemoteFilteringSampleComponent
+        RemoteFilteringSampleComponent,
+        ReactiveFormsSampleComponent
     ],
     imports: [
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
+        ReactiveFormsModule,
         IgxGridModule.forRoot(),
         IgxCarouselModule,
         IgxLayoutModule,
@@ -355,7 +359,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot()
+        FinancialChartSamplesModule.forRoot(),
+        IgxComboModule
     ],
     providers: [
         DataService,
