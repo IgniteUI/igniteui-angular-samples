@@ -13,7 +13,7 @@
                 <!-- <igx-input-group> -->
                     <igx-combo #combo1 name="gender" class="input-container" width="100%"
                             [data]="['Male', 'Female']" [(ngModel)]="user.gender"
-                            placeholder="Gender" searchPlaceholder="Search..." required
+                            placeholder="Gender" searchPlaceholder="Search..." required [type]="line"
                             (onSelectionChange)="selectGender('$event')">
                     </igx-combo>
                     <!-- <label igxLabel for="gender">Gender</label>
