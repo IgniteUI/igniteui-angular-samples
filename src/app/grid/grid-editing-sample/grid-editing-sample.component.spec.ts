@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { GridEditingSampleComponent } from './grid-editing-sample.component';
+import { GridEditingSampleComponent } from "./grid-editing-sample.component";
 
-describe('GridEditingSampleComponent', () => {
+describe("GridEditingSampleComponent", () => {
   let component: GridEditingSampleComponent;
   let fixture: ComponentFixture<GridEditingSampleComponent>;
 
@@ -19,7 +19,7 @@ describe('GridEditingSampleComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
