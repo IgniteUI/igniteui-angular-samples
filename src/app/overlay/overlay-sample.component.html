@@ -86,19 +86,19 @@
             </div>
             <div class='section__row--wide'>
                 <div class='section__container--wide' #scrollDemo>
-                    <span (click)="onClickScrollStrategy('absolute')">
+                    <span (click)="onClickScrollStrategy($event, 'absolute')">
                         <igx-icon name='notifications'></igx-icon>
                         <p>Absolute</p>
                     </span>
-                    <span (click)="onClickScrollStrategy('block')">
+                    <span (click)="onClickScrollStrategy($event, 'block')">
                         <igx-icon name='notifications'></igx-icon>
                         <p>Block</p>
                     </span>
-                    <span (click)="onClickScrollStrategy('close')">
+                    <span (click)="onClickScrollStrategy($event, 'close')">
                         <igx-icon name='notifications'></igx-icon>
                         <p>Close</p>
                     </span>
-                    <span (click)="onClickScrollStrategy('')">
+                    <span (click)="onClickScrollStrategy($event, '')">
                         <igx-icon name='notifications'></igx-icon>
                         <p>None</p>
                     </span>

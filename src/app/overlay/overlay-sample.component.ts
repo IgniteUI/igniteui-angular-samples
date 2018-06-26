@@ -3,7 +3,7 @@ import {
     AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
     CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
     HorizontalAlignment, IgxIconModule, IgxOverlayService, IgxSwitchModule,
-    NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment, IScrollStrategy
+    IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -76,7 +76,8 @@ export class OverlaySampleComponent {
         this.overlay.show(this.overlayDemo, showSettings);
     }
 
-    public onClickScrollStrategy(strat: string) {
+    public onClickScrollStrategy(event: Event, strat: string) {
+        event.stopPropagation();
         let scrollStrategy;
         switch (strat) {
             case ("absolute"):
