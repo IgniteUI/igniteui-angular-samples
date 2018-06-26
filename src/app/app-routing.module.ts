@@ -105,6 +105,7 @@ import {
 } from "./financial-chart/volume-type/financial-chart-volume-type.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
@@ -428,6 +429,10 @@ export const appRoutes: Routes = [
     {
         component: RadioSample2Component,
         path: "radio-sample-2"
+    },
+    {
+        component: RadioGroupSampleComponent,
+        path: "radio-group-sample"
     },
     {
         component: ToastSample1Component,

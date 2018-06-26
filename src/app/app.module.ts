@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
@@ -90,6 +90,7 @@ import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
@@ -313,12 +314,14 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
-        RemoteFilteringSampleComponent
+        RemoteFilteringSampleComponent,
+        RadioGroupSampleComponent
     ],
     imports: [
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         FormsModule,
         IgxGridModule.forRoot(),
         IgxCarouselModule,
