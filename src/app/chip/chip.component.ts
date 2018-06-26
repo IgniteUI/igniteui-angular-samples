@@ -1,13 +1,10 @@
+import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import {
-    Component,
-    Pipe,
-    PipeTransform,
-    ViewChild
-} from "@angular/core";
-import {
+    ConnectedPositioningStrategy,
     IgxChipsAreaComponent,
     IgxDropDownComponent,
-    IgxInputDirective
+    IgxInputDirective,
+    IgxInputGroupComponent
 } from "igniteui-angular";
 
 @Component({
@@ -15,6 +12,7 @@ import {
     styleUrls: ["./chip.component.scss"],
     templateUrl: "./chip.component.html"
 })
+
 export class ChipSampleComponent {
     @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
     public dropDownList = [
@@ -88,7 +86,7 @@ export class ChipSampleComponent {
             email: "alvarezward@gmail.com",
             id: "724-742-1323",
             name: "Ward Alvarez",
-            photo: "assets/images/avatar/34.jpg"
+            photo: "assets/images/avatar/22.jpg"
         }
     ];
 
@@ -119,9 +117,12 @@ export class ChipSampleComponent {
     @ViewChild("inputForm", { read: IgxInputDirective })
     public inputBox: IgxInputDirective;
 
+    @ViewChild("inputGroup", {read: IgxInputGroupComponent})
+    public inputGroup: IgxInputGroupComponent;
+
     public chipsOrderChanged(event) {
         const newChipList = [];
-        for (const chip of this.chipList) {
+        for (const chip of event.chipsArray) {
             const chipItem = this.chipList.filter((item) => {
                 return item.id === chip.id;
             })[0];
@@ -152,19 +153,14 @@ export class ChipSampleComponent {
 
     public toggleDropDown(ev) {
         if (this.inputBox.value !== null) {
-            this.igxDropDown.open();
+            this.igxDropDown.open({
+                modal: false,
+                positionStrategy: new ConnectedPositioningStrategy({
+                    target: this.inputBox.nativeElement
+                })
+            });
             this.igxDropDown.allowItemsFocus = false;
             this.inputBox.focus();
-        }
-        if (ev.keyCode === "40") {
-            if (this.igxDropDown.collapsed) {
-                return;
-            } else {
-            this.igxDropDown.allowItemsFocus = true;
-            this.igxDropDown.element.firstElementChild
-                .querySelectorAll("igx-drop-down-item")[0]
-                .focus();
-            }
         }
     }
 
@@ -177,7 +173,11 @@ export class ChipSampleComponent {
             let i;
             let exists = 0;
 
-            if (this.chipList.find((val) => val.email === this.inputBox.value.toLowerCase()) !== undefined) {
+            if (
+                this.chipList.find(
+                    (val) => val.email === this.inputBox.value.toLowerCase()
+                ) !== undefined
+            ) {
                 return;
             }
             for (i = 0; i < this.dropDownList.length; i++) {
@@ -212,8 +212,21 @@ export class ChipSampleComponent {
 
     public chipMovingEnded() {}
 
+    public openDropDown() {
+        this.igxDropDown.open({
+            modal: false,
+            positionStrategy: new ConnectedPositioningStrategy({
+                target: this.inputGroup.element.nativeElement
+            })
+        });
+    }
+
     public itemSelection(ev) {
-        if (this.chipList.find((val) => val.email === this.inputBox.value.toLowerCase()) !== undefined) {
+        if (
+            this.chipList.find(
+                (val) => val.name === ev.newSelection.elementRef.nativeElement.textContent
+            ) !== undefined
+        ) {
             return;
         }
         let i;
@@ -234,7 +247,6 @@ export class ChipSampleComponent {
         }
     }
 }
-
 @Pipe({ name: "filter" })
 export class EmailFilterPipe implements PipeTransform {
     public transform(item: any, inputVal) {
