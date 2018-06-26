@@ -21,7 +21,7 @@
                     {{val}}
                 </ng-template>
             </igx-column>
-            <igx-column width="100px" [cellClasses]="'removeColumn'">
+            <igx-column width="100px">
                 <ng-template igxCell let-cell="cell" let-val>
                 <button igxButton="raised" class="buttonRemove" (click)="removeRow(cell.cellID.rowIndex)">
                     Delete
