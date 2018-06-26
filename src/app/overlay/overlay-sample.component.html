@@ -1,8 +1,8 @@
 <div class='overlay-sample'>
-    <div class='container--main'>
+    <div class='container'>
         <div class='container__row'>
             <div class="section__header">
-                Adjusting the direction of property of the overlay settings will determine where the element will try to position itself
+                Adjusting the direction of the positioning settings in the overlay will determine where the element try to position itself, relative to it's parent
             </div>
             <div class='section__position-element' #directionDemo>
                 <div class='section__row'>
@@ -42,7 +42,7 @@
         </div>
         <div class='container__row'>
             <div class="section__header">
-                Adjusting the position of property of the overlay settings will determine where the element will try to position itself
+                Adjusting the start point properties on the positioning settings in the overlay will determine where the element will start from, relative to it's parent
             </div>
             <div class='section__position-element' #positionDemo>
                 <div class='section__row'>
@@ -82,10 +82,10 @@
         </div>
         <div class='container__row'>
             <div class="section__header">
-                Adjusting the scrollStrategy of property of the overlay settings will determine how the overlay window will handle scrolling
+                Adjusting the scrollStrategy property of the position settings in the overlay will determine how the window will handle scrolling
             </div>
-            <div class='section__row--wide' #scrollDemo>
-                <div class='section__container--wide'>
+            <div class='section__row--wide'>
+                <div class='section__container--wide' #scrollDemo>
                     <span (click)="onClickScrollStrategy('absolute')">
                         <igx-icon name='notifications'></igx-icon>
                         <p>Absolute</p>
@@ -107,7 +107,7 @@
         </div>
         <div class="container__row">
             <div class="section__header">
-                Adjusting the modal of property of the overlay settings will determine whether the overlay element will be shown as a modal
+                Adjusting the modal property of the overlay settings will determine whether the overlay element will be shown as a modal
                 (with a background overlay element) or without
             </div>
             <div style='width: 100%;'>
@@ -115,8 +115,8 @@
                     Modal
                 </igx-switch>
             </div>
-            <div class='section__row--wide' #modalDemo>
-                <div class="section__container--wide">
+            <div class='section__row--wide'>
+                <div class="section__container--wide" #modalDemo>
                     <span (click)="onClickModal('auto')">
                         <igx-icon name='notifications'></igx-icon>
                         <p>Auto</p>
@@ -134,9 +134,11 @@
         </div>
         <div class='buffer'></div>
     </div>
-    <div class='container--side'>
+    <div class='container'>
         <div class="overlay__element" #overlayDemo>
-            This is the overlay
+            <div class="overlay__element__content">
+                This is the overlay
+            </div>
         </div>
     </div>
 </div>
