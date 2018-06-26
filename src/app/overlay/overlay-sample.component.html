@@ -1,30 +1,142 @@
-<div class='container'>
-    <div class='row'>
-        <div class='position-element' #directionDemo>
-            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Center, VerticalAlignment.Top)">Up_Center</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Right, VerticalAlignment.Top)">Up_Right</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Middle)">Middle_Left</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Center, VerticalAlignment.Middle)">Middle_Center</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Right, VerticalAlignment.Middle)">Middle_Right</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Bottom)">Bottom_Left</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Center, VerticalAlignment.Bottom)">Bottom_Center</span>
-            <span (click)="onClickPosition(HorizontalAlignment.Right, VerticalAlignment.Bottom)">Bottom_Right</span>
+<div class='overlay-sample'>
+    <div class='container--main'>
+        <div class='container__row'>
+            <div class="section__header">
+                Adjusting the direction of property of the overlay settings will determine where the element will try to position itself
+            </div>
+            <div class='section__position-element' #directionDemo>
+                <div class='section__row'>
+                    <span (click)="onClickDirection(-1, -1)">
+                        <img src='assets\images\overlay\up_left.png'>
+                    </span>
+                    <span (click)="onClickDirection(-0.5, -1)">
+                        <img src='assets\images\overlay\up.png'>
+                    </span>
+                    <span (click)="onClickDirection(0, -1)">
+                        <img src='assets\images\overlay\up_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirection(-1, -0.5)">
+                        <img src='assets\images\overlay\left.png'>
+                    </span>
+                    <span (click)="onClickDirection(-0.5, -0.5)">
+                        <img src='assets\images\overlay\all_directions.png'>
+                    </span>
+                    <span (click)="onClickDirection(0, -0.5)">
+                        <img src='assets\images\overlay\right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirection(-1, 0)">
+                        <img src='assets\images\overlay\down_left.png'>
+                    </span>
+                    <span (click)="onClickDirection(-0.5, 0)">
+                        <img src='assets\images\overlay\down.png'>
+                    </span>
+                    <span (click)="onClickDirection(0, 0)">
+                        <img src='assets\images\overlay\down_right.png'>
+                    </span>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class='row'>
-        <div class='position-element' #positionDemo>
-            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
+        <div class='container__row'>
+            <div class="section__header">
+                Adjusting the position of property of the overlay settings will determine where the element will try to position itself
+            </div>
+            <div class='section__position-element' #positionDemo>
+                <div class='section__row'>
+                    <span (click)="onClickPosition(-1, -1)">
+                        <img src='assets\images\overlay\top_left.png'>
+                    </span>
+                    <span (click)="onClickPosition(-0.5, -1)">
+                        <img src='assets\images\overlay\top_center.png'>
+                    </span>
+                    <span (click)="onClickPosition(0, -1)">
+                        <img src='assets\images\overlay\top_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickPosition(-1, -0.5)">
+                        <img src='assets\images\overlay\center_left.png'>
+                    </span>
+                    <span (click)="onClickPosition(-0.5, -0.5)">
+                        <img src='assets\images\overlay\center.png'>
+                    </span>
+                    <span (click)="onClickPosition(0, -0.5)">
+                        <img src='assets\images\overlay\center_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickPosition(-1, 0)">
+                        <img src='assets\images\overlay\bottom_left.png'>
+                    </span>
+                    <span (click)="onClickPosition(-0.5, 0)">
+                        <img src='assets\images\overlay\bottom_center.png'>
+                    </span>
+                    <span (click)="onClickPosition(0, 0)">
+                        <img src='assets\images\overlay\bottom_right.png'>
+                    </span>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class='row'>
-        <div class='position-element' #scrollDemo>
-            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
+        <div class='container__row'>
+            <div class="section__header">
+                Adjusting the scrollStrategy of property of the overlay settings will determine how the overlay window will handle scrolling
+            </div>
+            <div class='section__row--wide' #scrollDemo>
+                <div class='section__container--wide'>
+                    <span (click)="onClickScrollStrategy('absolute')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Absolute</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy('block')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Block</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy('close')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Close</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy('')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>None (Default)</p>
+                    </span>
+                </div>
+            </div>
         </div>
+        <div class="container__row">
+            <div class="section__header">
+                Adjusting the modal of property of the overlay settings will determine whether the overlay element will be shown as a modal
+                (with a background overlay element) or without
+            </div>
+            <div style='width: 100%;'>
+                <igx-switch [(ngModel)]='modalValue'>
+                    Modal
+                </igx-switch>
+            </div>
+            <div class='section__row--wide' #modalDemo>
+                <div class="section__container--wide">
+                    <span (click)="onClickModal('auto')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Auto</p>
+                    </span>
+                    <span (click)="onClickModal('connected')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Connect</p>
+                    </span>
+                    <span (click)="onClickModal('global')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Global</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='buffer'></div>
     </div>
-    <div class='row'>
-        <div class='position-element' #modalDemo>
-            <span (click)="onClickPosition(HorizontalAlignment.Left, VerticalAlignment.Top)">Up_Left</span>
+    <div class='container--side'>
+        <div class="overlay__element" #overlayDemo>
+            This is the overlay
         </div>
     </div>
 </div>
