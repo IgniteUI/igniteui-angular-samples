@@ -100,7 +100,7 @@
                     </span>
                     <span (click)="onClickScrollStrategy('')">
                         <igx-icon name='notifications'></igx-icon>
-                        <p>None (Default)</p>
+                        <p>None</p>
                     </span>
                 </div>
             </div>
@@ -110,10 +110,12 @@
                 Adjusting the modal property of the overlay settings will determine whether the overlay element will be shown as a modal
                 (with a background overlay element) or without
             </div>
-            <div style='width: 100%;'>
-                <igx-switch [(ngModel)]='modalValue'>
-                    Modal
-                </igx-switch>
+            <div style='width: 20%;'>
+                <span>
+                    <igx-switch [(ngModel)]='modalValue'>
+                        Modal
+                    </igx-switch>
+                </span>
             </div>
             <div class='section__row--wide'>
                 <div class="section__container--wide" #modalDemo>

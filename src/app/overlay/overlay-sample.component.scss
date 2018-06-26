@@ -64,8 +64,8 @@
 }
 
 .overlay__element {
-    width: 160px;
-    height: 160px;
+    width: 144px;
+    height: 144px;
     display: flex;
     background-color: white;
     border: 2px dashed #a3a3a3;
@@ -98,4 +98,7 @@
     text-align: center;
     margin-top: 16px;
     margin-bottom: 16px;
+}
+.section__position-element, .section__row--wide {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
