@@ -11,7 +11,7 @@
             </igx-radio>
         </igx-radio-group>
         <button igxButton="raised" igxRipple type="submit">Submit</button>
-        <button igxButton="raised" igxRipple (click)="onReset()">Reset</button>
+        <button igxButton="raised" igxRipple type="button" (click)="onReset()">Reset</button>
     </form>
-    <label igxLabel *ngIf="data">{{data.fullName}} favourite fruit is {{data.favFruit}}.</label>
+    <label igxLabel *ngIf="newModel">{{newModel.fullName}} favourite fruit is {{newModel.favFruit}}.</label>
 </div>

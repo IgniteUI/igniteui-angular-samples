@@ -9,35 +9,35 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class RadioGroupSampleComponent {
     public fruitsForm: FormGroup;
     public fruits = ["Apple", "Mango", "Banana", "Orange"];
-    public data: FruitData;
-    public prevData: FruitData;
+    public newModel: FruitData;
+    public model: FruitData;
 
     constructor(private _formBuilder: FormBuilder) {
         // Simulate getting data from external service
-        this.prevData = {
+        this.model = {
             favFruit: this.fruits[0],
             fullName: "John Doe"
         };
 
         this.createForm();
-        this.setFormValues();
     }
 
     public onSubmit() {
         if (this.fruitsForm.valid) {
-            this.data = {
+            // simulate new model creation and send the new data to external service
+            this.newModel = {
                 favFruit: this.fruitsForm.value.favoriteFruit,
                 fullName: this.fruitsForm.value.fullName
             };
         } else {
-            this.data = null;
+            this.newModel = null;
         }
     }
 
     public onReset() {
         this.fruitsForm.patchValue({
-            favoriteFruit: this.prevData.favFruit,
-            fullName: this.prevData.fullName
+            favoriteFruit: this.model.favFruit,
+            fullName: this.model.fullName
         });
     }
 
@@ -46,12 +46,10 @@ export class RadioGroupSampleComponent {
             favoriteFruit: ["", Validators.required],
             fullName: ""
         });
-    }
 
-    private setFormValues() {
         this.fruitsForm.setValue({
-            favoriteFruit: this.prevData.favFruit,
-            fullName: this.prevData.fullName
+            favoriteFruit: this.model.favFruit,
+            fullName: this.model.fullName
         });
     }
 }
