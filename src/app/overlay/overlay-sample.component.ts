@@ -3,7 +3,7 @@ import {
     AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
     CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
     HorizontalAlignment, IgxIconModule, IgxOverlayService, IgxSwitchModule,
-    NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment
+    NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment, IScrollStrategy
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -30,7 +30,7 @@ export class OverlaySampleComponent {
 
     @ViewChild("overlayDemo")
     public overlayDemo: ElementRef;
-    // tslint:disable:object-literal-sort-keys
+
     private _defaultPositionSettings: PositionSettings = {
         target: null,
         horizontalDirection: HorizontalAlignment.Center,
@@ -41,7 +41,7 @@ export class OverlaySampleComponent {
 
     private _overlaySettings: OverlaySettings = {
         positionStrategy: new GlobalPositionStrategy(),
-        scrollStrategy: new NoOpScrollStrategy(),
+        scrollStrategy: new AbsoluteScrollStrategy(),
         modal: true,
         closeOnOutsideClick: true
     };
@@ -49,7 +49,7 @@ export class OverlaySampleComponent {
         @Inject(IgxOverlayService) public overlay: IgxOverlayService
     ) { }
 
-    public onClickDirection(horAlign, vertAlign) {
+    public onClickDirection(horAlign: HorizontalAlignment, vertAlign: VerticalAlignment) {
         const positionSettings =
             Object.assign(Object.assign({}, this._defaultPositionSettings), {
                 target: this.directionDemo.nativeElement,
@@ -98,7 +98,8 @@ export class OverlaySampleComponent {
         this.overlay.show(this.overlayDemo, showSettings);
     }
 
-    public onClickModal(strat) {
+    public onClickModal(event: Event, strat: string) {
+        event.stopPropagation();
         const positionSettings = Object.assign(Object.assign({}, this._defaultPositionSettings), {
             target: this.modalDemo.nativeElement,
             horizontalDirection: HorizontalAlignment.Right,
