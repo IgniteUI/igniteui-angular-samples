@@ -1,5 +1,12 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxComboComponent } from "igniteui-angular";
+import { AfterViewInit, Component, ElementRef, ViewChild, ViewChildren } from "@angular/core";
+import {
+    ConnectedPositioningStrategy,
+    IgxComboComponent,
+    IgxDropDownComponent,
+    IgxInputGroupComponent,
+    NoOpScrollStrategy,
+    OverlaySettings
+} from "igniteui-angular";
 import { data } from "./local-data";
 
 @Component({
@@ -9,12 +16,16 @@ import { data } from "./local-data";
 })
 export class CascadingCombos {
 
-    @ViewChild("combo1", { read: IgxComboComponent })
-    private combo1: IgxComboComponent;
-    @ViewChild("combo2", { read: IgxComboComponent })
-    private combo2: IgxComboComponent;
-    @ViewChild("combo3", { read: IgxComboComponent })
-    private combo3: IgxComboComponent;
+    @ViewChild("inputGroupCountry", { read: IgxInputGroupComponent}) public inputGroupCountry: IgxInputGroupComponent;
+    @ViewChild("inputGroupProvince", { read: IgxInputGroupComponent}) public inputGroupProvince: IgxInputGroupComponent;
+    @ViewChild("inputCountry") public inputCountry: HTMLInputElement;
+    @ViewChild("inputProvince") public inputProvince: HTMLInputElement;
+    @ViewChild("dropdownCountry", { read: IgxDropDownComponent}) public dropdownCountry: IgxDropDownComponent;
+    @ViewChild("dropdownProvince", { read: IgxDropDownComponent}) public dropdownProvince: IgxDropDownComponent;
+    @ViewChild("comboTown", { read: IgxComboComponent }) public comboTown: IgxComboComponent;
+    public arrowCountry = "arrow_drop_down";
+    public arrowProvince = "arrow_drop_down";
+    public disabledProvince = true;
 
     private countryData: any[] = [];
     private provinceData: any[] = [];
@@ -22,40 +33,50 @@ export class CascadingCombos {
     private country: string;
     private province: string;
     private town: string;
-    private VALUE_KEY = "field";
-    private GROUP_KEY = "region";
+    private _overlaySettings: OverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: false,
+        positionStrategy: new ConnectedPositioningStrategy(),
+        scrollStrategy: new NoOpScrollStrategy()
+    };
 
     constructor() {
         this.countryData = Object.keys(data);
     }
 
+    public toggleDDCountry() {
+        this._overlaySettings.positionStrategy.settings.target = this.inputGroupCountry.element.nativeElement;
+        this.dropdownCountry.toggle(this._overlaySettings);
+        this.arrowCountry = "arrow_drop_up";
+    }
+
+    public toggleDDProvince() {
+        this._overlaySettings.positionStrategy.settings.target = this.inputGroupProvince.element.nativeElement;
+        this.dropdownProvince.toggle(this._overlaySettings);
+        this.arrowProvince = "arrow_drop_up";
+    }
+
     public selectCountry(args) {
-        this.combo1.close();
-        if (args.newSelection.length === 0) {
-            this.combo2.deselectAllItems();
-            this.combo2.disabled = true;
-            this.combo3.deselectAllItems();
-            this.combo3.disabled = true;
-        } else {
-            this.combo2.disabled = false;
-            this.country = args.newSelection[args.newSelection.length - 1];
-            this.provinceData = Object.keys(data[this.country]);
-        }
+        this.disabledProvince = false;
+        this.country = Object.keys(data)[args.newSelection.index];
+        this.provinceData = Object.keys(data[this.country]);
+        this.province = "";
+        this.comboTown.deselectAllItems();
     }
 
     public selectProvince(args) {
-        this.combo2.close();
-        if (args.newSelection.length === 0) {
-            this.combo3.deselectAllItems();
-            this.combo3.disabled = true;
-        } else {
-            this.combo3.disabled = false;
-            this.province = args.newSelection[args.newSelection.length - 1];
-            this.townData = data[this.country][this.province];
-        }
+        this.arrowProvince = "arrow_drop_down";
+        this.comboTown.disabled = false;
+        this.province = this.provinceData[args.newSelection.index];
+        this.townData = data[this.country][this.province];
+        this.comboTown.deselectAllItems();
     }
 
-    public selectTown(args) {
-        this.combo3.close();
+    public onCountryClosed() {
+        this.arrowCountry = "arrow_drop_down";
+    }
+
+    public onProvinceClosed() {
+        this.arrowProvince = "arrow_drop_down";
     }
 }

@@ -3,39 +3,49 @@
         <div class="crm-sample-toolbar">
 
             <div class="crm-sample-toolbar__title">
-                <span class="crm-sample-toolbar__ellipsis">Cascading Combos</span>
+                <span class="crm-sample-toolbar__ellipsis">Cascading Scenario</span>
             </div>
 
             <div class="sample-flex-container">
                 <div class="wrapper">
-                        <h3></h3>
-                        <div class="combo-container">
-                        <igx-combo #combo1 width="300px"
-                            [data]="countryData"
-                            placeholder="Country" searchPlaceholder="Search..."
-                            [allowCustomValues]="false" (onSelectionChange)="selectCountry($event)">
-                        </igx-combo>
+                    <h3></h3>
+                    <div class="combo-container">
+                        <igx-input-group type="box" #inputGroupCountry style="width: 300px;" (click)="toggleDDCountry()">
+                            <input igxInput #inputCountry name="inputCountry" type="text" [(ngModel)]="country" readonly placeholder="Choose Country..."/>
+                            <igx-suffix><igx-icon [name]="arrowCountry"></igx-icon></igx-suffix>
+                        </igx-input-group>
+                        <igx-drop-down #dropdownCountry igxDropDownItemNavigation [width]="'300px'"
+                            (onSelection)="selectCountry($event)" (onClosed)="onCountryClosed()">
+                            <igx-drop-down-item *ngFor="let c of countryData">
+                                {{ c }}
+                            </igx-drop-down-item>
+                        </igx-drop-down>
                     </div>
                 </div>
 
                 <div class="wrapper">
                     <h3></h3>
                     <div class="combo-container">
-                        <igx-combo #combo2 width="300px"
-                            [data]="provinceData" [disabled]="true"
-                            placeholder="Province" searchPlaceholder="Search..."
-                            [allowCustomValues]="false" (onSelectionChange)="selectProvince($event)">
-                        </igx-combo>
+                        <igx-input-group type="box" #inputGroupProvince style="width: 300px;" (click)="toggleDDProvince()" [disabled]="disabledProvince">
+                            <input igxInput #inputProvince name="inputProvince" type="text" [(ngModel)]="province" readonly placeholder="Choose Province..."/>
+                            <igx-suffix><igx-icon [name]="arrowProvince"></igx-icon></igx-suffix>
+                        </igx-input-group>
+                        <igx-drop-down #dropdownProvince igxDropDownItemNavigation [width]="'300px'"
+                            (onSelection)="selectProvince($event)" (onClosed)="onProvinceClosed()">
+                            <igx-drop-down-item *ngFor="let p of provinceData">
+                                {{ p }}
+                            </igx-drop-down-item>
+                        </igx-drop-down>
                     </div>
                 </div>
 
                 <div class="wrapper">
                     <h3></h3>
                     <div class="combo-container">
-                        <igx-combo #combo3 width="300px"
+                        <igx-combo #comboTown width="300px"
                             [data]="townData" [disabled]="true"
-                            placeholder="Town" searchPlaceholder="Search..."
-                            [allowCustomValues]="false" (onSelectionChange)="selectTown($event)">
+                            placeholder="Choose Town..." searchPlaceholder="Search..."
+                            [allowCustomValues]="false">
                         </igx-combo>
                     </div>
                 </div>

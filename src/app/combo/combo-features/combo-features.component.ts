@@ -37,7 +37,7 @@ export class ComboFeatures {
 
     public ngAfterViewInit() {
         this.remoteService.getData(this.combo2.virtualizationState, (data) => {
-            this.combo2.totalItemCount = data.count;
+            this.combo2.totalItemCount = data.Count;
         });
     }
 

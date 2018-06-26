@@ -10,17 +10,6 @@
                         <igx-icon name="person"></igx-icon>
                     </igx-suffix>
                 </igx-input-group>
-                <!-- <igx-input-group> -->
-                    <igx-combo #combo1 name="gender" class="input-container" width="100%"
-                            [data]="['Male', 'Female']" [(ngModel)]="user.gender"
-                            placeholder="Gender" searchPlaceholder="Search..." required [type]="line"
-                            (onSelectionChange)="selectGender('$event')">
-                    </igx-combo>
-                    <!-- <label igxLabel for="gender">Gender</label>
-                    <igx-suffix>
-                        <igx-icon name="person"></igx-icon>
-                    </igx-suffix> -->
-                <!-- </igx-input-group> -->
                 <igx-input-group>
                     <igx-prefix>+359</igx-prefix>
                     <label igxLabel for="phone">Phone</label>
@@ -42,6 +31,12 @@
                 </div>
                 <div class="igx-time-picker">
                     <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" ></igx-time-picker>
+                </div>
+                <div class="igx-combo">
+                    <igx-combo #combo1 name="genres" class="input-container" width="100%"
+                        [data]="genres" [(ngModel)]="user.genres"
+                        placeholder="Select your favorite genres" searchPlaceholder="Search..." required [type]="line">
+                    </igx-combo>
                 </div>
                 <div class="button-wrapper">
                     <button igxButton="raised" igxRipple>Book</button>

@@ -11,9 +11,13 @@ export class InputGroupSample6Component {
         dateTime: new Date(),
         email: "",
         fullName: "",
-        gender: "",
+        genres: "",
         phone: ""
     };
+
+    public genres = ["Action", "Adventure", "Comedy", "Crime",
+        "Drama", "Historical", "Horror", "Mistery",
+        "Musical", "Romance", "Sci-Fi", "Thriller", "Western"];
 
     @ViewChild("combo1", { read: IgxComboComponent })
     private combo1: IgxComboComponent;
@@ -24,10 +28,5 @@ export class InputGroupSample6Component {
 
     public onTimeSelection(event) {
         this.user.dateTime.setTime((event.newValue as Date).getTime());
-    }
-
-    public selectGender(args) {
-        this.combo1.deselectAllItems(); // Problem
-        this.user.gender = args.newSelection[args.newSelection.length - 1];
     }
 }

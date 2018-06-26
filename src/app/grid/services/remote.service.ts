@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 @Injectable()
 export class RemoteService {
     public remoteData: Observable<any[]>;
-    private url: string = "/api/financial";
+    private url: string = "https://www.igniteui.com/api/products";
     private _remoteData: BehaviorSubject<any[]>;
 
     constructor(private http: HttpClient) {
@@ -19,7 +19,7 @@ export class RemoteService {
         return this.http
             .get(this.buildUrl(dataState))
             .subscribe((d: any) => {
-                this._remoteData.next(d.value);
+                this._remoteData.next(d.Results);
                 if (cb) {
                     cb(d);
                 }
@@ -36,7 +36,7 @@ export class RemoteService {
                 // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
                 10 : dataState.chunkSize;
             const top = requiredChunkSize;
-            qS += `$skip=${skip}&$top=${top}&$count=true`;
+            qS += `$skip=${skip}&$top=${top}&$count=true&$inlinecount=allpages`;
         }
         return `${this.url}${qS}`;
     }
