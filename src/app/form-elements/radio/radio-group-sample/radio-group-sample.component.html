@@ -3,7 +3,6 @@
     <form [formGroup]="fruitsForm" (ngSubmit)="onSubmit()">
         <igx-input-group>
             <input igxInput name="fullName" type="text" formControlName="fullName" required />
-            <label igxLabel for="fullName">Full Name</label>
         </igx-input-group>
 
         <igx-radio-group name="fruitsRadioGroup" formControlName="favoriteFruit">
@@ -12,6 +11,7 @@
             </igx-radio>
         </igx-radio-group>
         <button igxButton="raised" igxRipple type="submit">Submit</button>
+        <button igxButton="raised" igxRipple (click)="onReset()">Reset</button>
     </form>
     <label igxLabel *ngIf="data">{{data.fullName}} favourite fruit is {{data.favFruit}}.</label>
 </div>

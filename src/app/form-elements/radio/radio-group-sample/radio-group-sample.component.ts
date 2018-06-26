@@ -10,9 +10,17 @@ export class RadioGroupSampleComponent {
     public fruitsForm: FormGroup;
     public fruits = ["Apple", "Mango", "Banana", "Orange"];
     public data: FruitData;
+    public prevData: FruitData;
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(private _formBuilder: FormBuilder) {
+        // Simulate getting data from external service
+        this.prevData = {
+            favFruit: this.fruits[0],
+            fullName: "John Doe"
+        };
+
         this.createForm();
+        this.setFormValues();
     }
 
     public onSubmit() {
@@ -21,13 +29,29 @@ export class RadioGroupSampleComponent {
                 favFruit: this.fruitsForm.value.favoriteFruit,
                 fullName: this.fruitsForm.value.fullName
             };
+        } else {
+            this.data = null;
         }
     }
 
+    public onReset() {
+        this.fruitsForm.patchValue({
+            favoriteFruit: this.prevData.favFruit,
+            fullName: this.prevData.fullName
+        });
+    }
+
     private createForm() {
-        this.fruitsForm = this.formBuilder.group({
-            favoriteFruit: this.fruits[0],
-            fullName: ["John Doe", Validators.required]
+        this.fruitsForm = this._formBuilder.group({
+            favoriteFruit: ["", Validators.required],
+            fullName: ""
+        });
+    }
+
+    private setFormValues() {
+        this.fruitsForm.setValue({
+            favoriteFruit: this.prevData.favFruit,
+            fullName: this.prevData.fullName
         });
     }
 }
