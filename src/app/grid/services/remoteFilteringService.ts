@@ -3,8 +3,8 @@ import { Injectable } from "@angular/core";
 import { FilteringLogic, IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 
-const DATA_URL: string = "https://www.igniteui.com/api/products";
-const EMPTY_STRING: string = "";
+const DATA_URL = "https://www.igniteui.com/api/products";
+const EMPTY_STRING = "";
 const NULL_VALUE = null;
 export enum FILTER_OPERATION {
     CONTAINS = "substringof",
@@ -80,8 +80,6 @@ export class RemoteFilteringService {
         query += (scrollingQuery !== EMPTY_STRING) ? `&${scrollingQuery}` : EMPTY_STRING;
 
         baseQueryString += query;
-
-        console.log("baseQueryString " + baseQueryString);
 
         return baseQueryString;
     }
@@ -169,6 +167,7 @@ export class RemoteFilteringService {
         switch (sortingArgs.dir) {
             case SortingDirection.None: {
                 sortingDirection = EMPTY_STRING;
+                break;
             }
             default: {
                 sortingDirection = SortingDirection[sortingArgs.dir].toLowerCase();
