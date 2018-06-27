@@ -272,7 +272,7 @@ export class ChipSampleComponent {
      * Tags sample
      */
 
-    public chipsOrderChanged2(event) {
+    public chipsOrderChangedCc(event) {
         const newTagList = [];
         for (const chip of event.chipsArray) {
             const chipItem = this.tagList.filter((item) => {
@@ -284,7 +284,7 @@ export class ChipSampleComponent {
         event.isValid = true;
     }
 
-    public selectChip2(chipId) {
+    public selectChipCc(chipId) {
         const chipToSelect = this.chipsArea2.chipsList.toArray().find((chip) => {
             return chip.id === chipId;
         });
@@ -297,7 +297,7 @@ export class ChipSampleComponent {
         }
     }
 
-    public chipRemoved2(event) {
+    public chipRemovedCc(event) {
         this.tagList = this.tagList.filter((item) => {
             return item.id !== event.owner.id;
         });
@@ -308,6 +308,10 @@ export class ChipSampleComponent {
         this.ccGroup.value = "";
         this.textArea.nativeElement.value = "";
         this.chipList = [];
+
+        this.chipsArea2.chipsList.forEach((chip) => {
+            chip.selected = false;
+        });
 
     }
 

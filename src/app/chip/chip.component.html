@@ -31,9 +31,9 @@
                 </igx-drop-down>
             </div>
             <div class="chips">
-                <igx-chips-area #chipsArea2 (onReorder)="chipsOrderChanged2($event)" (onMoveEnd)="chipMovingEnded()">
-                    <igx-chip *ngFor="let chip of tagList" [id]="chip.id" [draggable]="true" [selectable]="true" (onRemove)="chipRemoved2($event)"
-                        (click)="selectChip2(chip.id)">
+                <igx-chips-area #chipsArea2 (onReorder)="chipsOrderChangedCc($event)" (onMoveEnd)="chipMovingEnded()">
+                    <igx-chip *ngFor="let chip of tagList" [id]="chip.id" [draggable]="true" [selectable]="true" (onRemove)="chipRemovedCc($event)"
+                        (click)="selectChipCc(chip.id)">
                         <span #label [class]="'igx-chip__text'">{{chip.text}}</span>
                     </igx-chip>
                 </igx-chips-area>
