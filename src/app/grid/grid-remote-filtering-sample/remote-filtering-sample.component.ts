@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxToastComponent } from "igniteui-angular";
+import { IFilteringExpression, IgxGridComponent, IgxToastComponent } from "igniteui-angular";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
 @Component({
@@ -22,7 +22,8 @@ export class RemoteFilteringSampleComponent implements OnInit {
     }
 
     public ngAfterViewInit() {
-        const filteringExpr = this.grid.filteringExpressions[0];
+        // const filteringExpr = this.grid.filteringExpressions[0]; OLD
+        const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands[0] as IFilteringExpression;
         const sortingExpr = this.grid.sortingExpressions[0];
         this._chunkSize = parseInt(this.grid.height, 10) / this.grid.rowHeight;
         this._remoteService.getData({chunkSize: this._chunkSize, startIndex: this.grid.virtualizationState.startIndex},
@@ -43,7 +44,8 @@ export class RemoteFilteringSampleComponent implements OnInit {
         this.cdr.detectChanges();
 
         const virtualizationState = this.grid.virtualizationState;
-        const filteringExpr = this.grid.filteringExpressions[0];
+        // const filteringExpr = this.grid.filteringExpressions[0]; OLD
+        const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands[0] as IFilteringExpression;
         const sortingExpr = this.grid.sortingExpressions[0];
 
         this._prevRequest = this._remoteService.getData(
