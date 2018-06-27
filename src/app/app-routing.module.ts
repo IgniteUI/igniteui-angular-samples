@@ -51,6 +51,8 @@ import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
+import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -282,6 +284,14 @@ export const appRoutes: Routes = [
     {
         component: CircularProgressbarComponent,
         path: "circular-progressbar"
+    },
+    {
+        component: ComboFeatures,
+        path: "combo-features"
+    },
+    {
+        component: CascadingCombos,
+        path: "cascading-combos"
     },
     {
         component: CsvExportComponent,
