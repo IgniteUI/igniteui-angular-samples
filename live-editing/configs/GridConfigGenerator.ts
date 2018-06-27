@@ -6,6 +6,8 @@ import {
     IgxButtonModule,
     IgxCheckboxModule,
     IgxCsvExporterService,
+    IgxDatePickerModule,
+    IgxDialogModule,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
@@ -17,6 +19,7 @@ import {
     IgxToggleModule
 } from "igniteui-angular";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
+import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
@@ -254,6 +257,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridToolbarSample3Component],
                 ngImports: [IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridEditingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-editing-sample/data.ts",
+            "/src/app/grid/grid-editing-sample/product.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
+                    IgxGridModule, IgxInputGroupModule, IgxIconModule,
+                    IgxRippleModule, GridEditingSampleComponent],
+                ngDeclarations: [GridEditingSampleComponent],
+                ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
+                    IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule]
             })
         }));
 
