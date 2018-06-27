@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ColumnDisplayOrder } from "igniteui-angular";
 import { DATA } from "./data";
 
 @Component({
@@ -10,7 +9,6 @@ import { DATA } from "./data";
 export class GridColumnHidingSampleComponent implements OnInit {
 
     public data: any[];
-    public columnsOrder = ColumnDisplayOrder;
 
     constructor() { }
 

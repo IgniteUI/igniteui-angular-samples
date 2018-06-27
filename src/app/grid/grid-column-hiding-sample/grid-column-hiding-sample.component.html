@@ -1,19 +1,19 @@
 <div class="grid__wrapper">
     <div class="columnHidingContainer">
-        <igx-column-hiding #columnHidingUI id="columnHidingUI" [columns]="grid.columns" title="Column Hiding"
+        <igx-column-hiding #columnHidingUI [columns]="grid.columns" title="Column Hiding"
             filterColumnsPrompt="Type here to search">
         </igx-column-hiding>
         <div class="columnsOrderOptionsContainer">
-            <igx-radio [checked]="columnHidingUI.columnDisplayOrder === columnsOrder.Alphabetical" (click)="columnHidingUI.columnDisplayOrder = columnsOrder.Alphabetical">
+            <igx-radio [checked]="columnHidingUI.columnDisplayOrder === 'Alphabetical'" (click)="columnHidingUI.columnDisplayOrder = 'Alphabetical'">
                 Alphabetical order
             </igx-radio>
-            <igx-radio [checked]="columnHidingUI.columnDisplayOrder === columnsOrder.DisplayOrder" (click)="columnHidingUI.columnDisplayOrder = columnsOrder.DisplayOrder">
+            <igx-radio [checked]="columnHidingUI.columnDisplayOrder === 'DisplayOrder'" (click)="columnHidingUI.columnDisplayOrder = 'DisplayOrder'">
                 Display order
             </igx-radio>
         </div>
     </div>
     <div class="gridContainer">
-        <igx-grid #grid id="grid" [data]="data" [autoGenerate]="false" width="100%" height="560px" columnWidth="200px">
+        <igx-grid #grid [data]="data" [autoGenerate]="false" width="100%" height="560px" columnWidth="200px">
             <igx-column [field]="'ID'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
             <igx-column [field]="'ContactName'" dataType="string" [filterable]="true" [sortable]="true" [disableHiding]="true"></igx-column>
             <igx-column [field]="'ContactTitle'" dataType="string" [filterable]="true" [sortable]="true" [disableHiding]="true"></igx-column>

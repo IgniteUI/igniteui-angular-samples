@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid id="grid" [data]="data" [autoGenerate]="false" width="100%" height="560px" columnWidth="200px"
+    <igx-grid #grid [data]="data" [autoGenerate]="false" width="100%" height="560px" columnWidth="200px"
               [showToolbar]="true" [columnHiding]="true" toolbarTitle="Employees" columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden">
         <igx-column [field]="'ID'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'ContactName'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
