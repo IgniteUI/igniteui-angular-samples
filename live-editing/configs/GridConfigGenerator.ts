@@ -5,6 +5,8 @@ import {
     IgxBadgeModule,
     IgxButtonModule,
     IgxCheckboxModule,
+    IgxDatePickerModule,
+    IgxDialogModule,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
@@ -16,7 +18,9 @@ import {
     IgxToggleModule
 } from "igniteui-angular";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
+import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -24,6 +28,7 @@ import {
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
+import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -33,6 +38,7 @@ import {
 } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -83,6 +89,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
                 ngDeclarations: [GridSample3Component],
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupBySampleComponent,
+            additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
+                    IgxRippleModule, IgxSwitchModule, GridGroupBySampleComponent, LocalService, IgxIconModule],
+                ngDeclarations: [GridGroupBySampleComponent],
+                ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
             })
         }));
@@ -217,6 +235,42 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [PinningSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxIconModule],
                 ngProviders: []
+            })
+        }));
+
+        // column-moving sample
+        configs.push(new Config({
+            component: GridMovingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngDeclarations: [GridMovingSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridEditingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-editing-sample/data.ts",
+            "/src/app/grid/grid-editing-sample/product.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
+                    IgxGridModule, IgxInputGroupModule, IgxIconModule,
+                    IgxRippleModule, GridEditingSampleComponent],
+                ngDeclarations: [GridEditingSampleComponent],
+                ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
+                    IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiColumnHeadersComponent,
+            additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridMultiColumnHeadersComponent, IgxGridModule ],
+                ngDeclarations: [GridMultiColumnHeadersComponent],
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 

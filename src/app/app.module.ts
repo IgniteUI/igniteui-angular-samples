@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
@@ -27,6 +28,7 @@ import {
     IgxNavbarModule,
     IgxNavigationDrawerModule,
     IgxNavigationModule,
+    IgxOverlayService,
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
@@ -97,6 +99,7 @@ import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/s
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
@@ -107,6 +110,7 @@ import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-
 import { GridContextmenuComponent } from "./grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -139,6 +143,7 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { OverlaySampleComponent } from "./overlay/overlay-sample.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -177,6 +182,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
+import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 
@@ -256,6 +263,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         RadioSample2Component,
         IconSample1Component,
         ToggleComponent,
+        OverlaySampleComponent,
         ToggleSample1Component,
         ToggleSample2Component,
         ToggleSample3Component,
@@ -307,6 +315,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         InputGroupSample5Component,
         InputGroupSample6Component,
         GridSample3Component,
+        GridGroupBySampleComponent,
         ExcelExportComponent,
         ExcelExportSample1Component,
         CsvExportComponent,
@@ -315,7 +324,11 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         GridContextmenuComponent,
         GridSearchSampleComponent,
         RemoteFilteringSampleComponent,
-        RadioGroupSampleComponent
+        RadioGroupSampleComponent,
+        GridMovingSampleComponent,
+        GridMultiColumnHeadersComponent,
+        RemoteFilteringSampleComponent,
+        GridEditingSampleComponent
     ],
     imports: [
         AppRoutingModule,
@@ -352,6 +365,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
+        HttpModule,
         IgxForOfModule,
         IgxMaskModule,
         IgxTimePickerModule,
@@ -363,7 +377,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
     providers: [
         DataService,
         IgxCsvExporterService,
-        IgxExcelExporterService
+        IgxExcelExporterService,
+        IgxOverlayService
     ]
 })
 export class AppModule { }
