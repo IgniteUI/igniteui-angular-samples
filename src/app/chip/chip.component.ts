@@ -120,8 +120,8 @@ export class ChipSampleComponent {
 
     public toastPosition: IgxToastPosition = IgxToastPosition.Middle;
 
-    @ViewChild("chipsArea2", { read: IgxChipsAreaComponent })
-    public chipsArea2: IgxChipsAreaComponent;
+    @ViewChild("chipsAreaCc", { read: IgxChipsAreaComponent })
+    public chipsAreaCc: IgxChipsAreaComponent;
 
     @ViewChild("ccGroup", { read: IgxInputDirective })
     public ccGroup: IgxInputDirective;
@@ -279,7 +279,7 @@ export class ChipSampleComponent {
     }
 
     public selectChipCc(chipId) {
-        const chipToSelect = this.chipsArea2.chipsList.toArray().find((chip) => {
+        const chipToSelect = this.chipsAreaCc.chipsList.toArray().find((chip) => {
             return chip.id === chipId;
         });
         if (chipToSelect.selected === true) {
@@ -295,7 +295,7 @@ export class ChipSampleComponent {
         this.tagList = this.tagList.filter((item) => {
             return item.id !== event.owner.id;
         });
-        this.chipsArea2.cdr.detectChanges();
+        this.chipsAreaCc.cdr.detectChanges();
     }
 
     public clear() {
@@ -303,7 +303,7 @@ export class ChipSampleComponent {
         this.textArea.nativeElement.value = "";
         this.chipList = [];
 
-        this.chipsArea2.chipsList.forEach((chip) => {
+        this.chipsAreaCc.chipsList.forEach((chip) => {
             chip.selected = false;
         });
 

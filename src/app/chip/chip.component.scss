@@ -6,34 +6,10 @@
     display: block;
 }
 .chiparea{
-    height: 45px;
-}
-/* width */
-::-webkit-scrollbar {
-    height: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-}
-
-.chiparea{
+    width: 640px;
     margin-top: 1.5em;
-    overflow: scroll;
-    overflow-y: hidden;
+    flex-flow: wrap;
 }
-
 .chips{
     z-index: 1;
 }
