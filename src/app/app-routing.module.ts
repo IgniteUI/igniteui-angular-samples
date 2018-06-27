@@ -130,6 +130,9 @@ import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
+import { GridToolbarSample1Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -815,6 +818,18 @@ export const appRoutes: Routes = [
     {
         component: SortingSampleComponent,
         path: "grid-sorting-sample"
+    },
+    {
+        component: GridToolbarSample1Component,
+        path: "grid-toolbar-sample-1"
+    },
+    {
+        component: GridToolbarSample2Component,
+        path: "grid-toolbar-sample-2"
+    },
+    {
+        component: GridToolbarSample3Component,
+        path: "grid-toolbar-sample-3"
     },
     {
         component: GridMovingSampleComponent,

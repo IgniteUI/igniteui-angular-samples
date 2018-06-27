@@ -194,6 +194,9 @@ import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-edit
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
+import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -336,6 +339,9 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
+        GridToolbarSample1Component,
+        GridToolbarSample2Component,
+        GridToolbarSample3Component,
         RemoteFilteringSampleComponent,
         RadioGroupSampleComponent,
         GridMovingSampleComponent,
