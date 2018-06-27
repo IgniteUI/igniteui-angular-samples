@@ -1,3 +1,4 @@
+<div class="grid__wrapper">
 <igx-grid [rowSelectable]="false" #grid height="500px" [data]="data" displayDensity="compact">
     <igx-column [movable]="true" [resizable]="true" field="ID"></igx-column>
     <igx-column-group [movable]="true" [pinned]="false" header="General Information">
@@ -44,3 +45,4 @@
     <span igxButton (click)="pinGroup()">Pin first group</span>
     <span igxButton (click)="hideGroup()">Hide first group</span>
 </section>
+</div>

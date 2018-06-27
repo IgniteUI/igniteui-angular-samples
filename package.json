@@ -41,7 +41,7 @@
     "immediate": "^3.2.3",
     "intl": "^1.2.5",
     "jszip": "^3.1.5",
-    "rxjs": "^6.2.1",
+    "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
     "tslib": "^1.7.1",
     "web-animations-js": "^2.3.1",
