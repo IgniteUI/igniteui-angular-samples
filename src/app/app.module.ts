@@ -111,6 +111,7 @@ import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-
 import { GridContextmenuComponent } from "./grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
@@ -321,6 +322,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
+        GridMultiColumnHeadersComponent,
         RemoteFilteringSampleComponent,
         GridEditingSampleComponent
     ],
