@@ -5,6 +5,7 @@ import {
     IgxBadgeModule,
     IgxButtonModule,
     IgxCheckboxModule,
+    IgxColumnHidingModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
@@ -13,14 +14,22 @@ import {
     IgxIconModule,
     IgxInputGroupModule,
     IgxProgressBarModule,
+    IgxRadioModule,
     IgxRippleModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule
 } from "igniteui-angular";
+import {
+    GridColumnHidingSampleComponent
+} from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
@@ -29,7 +38,6 @@ import {
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
-import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -160,6 +168,29 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule,
                     IgxRippleModule, HttpClientModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnHidingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-column-hiding-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxGridModule, IgxRadioModule,
+                    IgxColumnHidingModule, GridColumnHidingSampleComponent],
+                ngDeclarations: [GridColumnHidingSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxRadioModule, IgxColumnHidingModule, HttpClientModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnHidingToolbarSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarSampleComponent],
+                ngDeclarations: [GridColumnHidingToolbarSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), HttpClientModule],
                 ngProviders: []
             })
         }));

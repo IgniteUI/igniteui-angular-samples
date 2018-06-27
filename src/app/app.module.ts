@@ -14,6 +14,7 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxCheckboxModule,
+    IgxColumnHidingModule,
     IgxComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
@@ -190,6 +191,10 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -339,6 +344,8 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
+        GridColumnHidingSampleComponent,
+        GridColumnHidingToolbarSampleComponent,
         GridToolbarSample1Component,
         GridToolbarSample2Component,
         GridToolbarSample3Component,
@@ -347,7 +354,6 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
         RemoteFilteringSampleComponent,
-        RadioGroupSampleComponent,
         GridEditingSampleComponent
     ],
     imports: [
@@ -395,7 +401,8 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot()
+        FinancialChartSamplesModule.forRoot(),
+        IgxColumnHidingModule
     ],
     providers: [
         DataService,
