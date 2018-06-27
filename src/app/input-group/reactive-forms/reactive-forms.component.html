@@ -32,11 +32,12 @@
                 <div class="igx-time-picker">
                     <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" formControlName="dateTime"></igx-time-picker>
                 </div>
-                <igx-combo #combo1 name="combo" class="input-container" width="100%" formControlName="combo"
-                    [data]="['Male', 'Female']"
-                    placeholder="Gender" searchPlaceholder="Search..." [type]="line"
-                    (onSelectionChange)="selectGender('$event')">
-                </igx-combo>
+                <div class="igx-combo">
+                    <igx-combo #combo1 class="input-container" width="100%"
+                        [data]="genres" [type]="line"
+                        placeholder="Select your favorite genres" searchPlaceholder="Search...">
+                    </igx-combo>
+                </div>
                 <div class="button-wrapper">
                     <button igxButton="raised" igxRipple type="submit" [disabled]="!reactiveForm.valid">Book</button>
                 </div>

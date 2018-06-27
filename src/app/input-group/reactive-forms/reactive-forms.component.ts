@@ -8,17 +8,23 @@ import { IgxComboComponent } from "igniteui-angular";
     templateUrl: "./reactive-forms.component.html"
 })
 export class ReactiveFormsSampleComponent {
-    @ViewChild("combo", { read: IgxComboComponent }) public comboTemplate: IgxComboComponent;
+    public genres = ["Action", "Adventure", "Comedy", "Crime",
+        "Drama", "Historical", "Horror", "Mistery",
+        "Musical", "Romance", "Sci-Fi", "Thriller", "Western"];
+
     public reactiveForm: FormGroup;
+
+    @ViewChild("combo1", { read: IgxComboComponent })
+    private combo1: IgxComboComponent;
 
     constructor(fb: FormBuilder) {
 
         this.reactiveForm = fb.group({
-            combo: [/*{ value: ["Male"], disabled: true }*/"", Validators.required],
             date: [""],
             dateTime: [""],
             email: ["", Validators.required],
             fullName: new FormControl("", Validators.required),
+            genres: ["", Validators.required],
             phone: [""]
         });
 
