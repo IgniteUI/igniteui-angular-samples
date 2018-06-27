@@ -20,6 +20,7 @@ import {
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -233,6 +234,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [PinningSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        // column-moving sample
+        configs.push(new Config({
+            component: GridMovingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngDeclarations: [GridMovingSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule],
                 ngProviders: []
             })
         }));
