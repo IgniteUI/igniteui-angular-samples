@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+}
+
+igx-radio-group {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+igx-radio {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

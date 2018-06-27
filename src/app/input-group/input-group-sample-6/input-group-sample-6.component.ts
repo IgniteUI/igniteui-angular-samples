@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
+import { IgxComboComponent } from "igniteui-angular"; //// CHECK THIS REF!!!! BEFORE COMMIT
 
 @Component({
     selector: "app-input-group-sample-6",
@@ -10,8 +11,16 @@ export class InputGroupSample6Component {
         dateTime: new Date(),
         email: "",
         fullName: "",
+        genres: "",
         phone: ""
     };
+
+    public genres = ["Action", "Adventure", "Comedy", "Crime",
+        "Drama", "Historical", "Horror", "Mistery",
+        "Musical", "Romance", "Sci-Fi", "Thriller", "Western"];
+
+    @ViewChild("combo1", { read: IgxComboComponent })
+    private combo1: IgxComboComponent;
 
     public onDateSelection(value) {
         this.user.dateTime.setDate((value as Date).getDate());
