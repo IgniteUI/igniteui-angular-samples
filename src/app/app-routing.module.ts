@@ -51,6 +51,8 @@ import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
+import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -115,6 +117,8 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
@@ -158,6 +162,7 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { OverlaySampleComponent } from "./overlay/overlay-sample.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -281,6 +286,14 @@ export const appRoutes: Routes = [
     {
         component: CircularProgressbarComponent,
         path: "circular-progressbar"
+    },
+    {
+        component: ComboFeatures,
+        path: "combo-features"
+    },
+    {
+        component: CascadingCombos,
+        path: "cascading-combos"
     },
     {
         component: CsvExportComponent,
@@ -413,6 +426,10 @@ export const appRoutes: Routes = [
     {
         component: GridSample3Component,
         path: "grid-summary"
+    },
+    {
+        component: GridGroupBySampleComponent,
+        path: "grid-groupby"
     },
     {
         component: GridEditingSampleComponent,
@@ -577,6 +594,10 @@ export const appRoutes: Routes = [
     {
         component: ButtonsSample7Component,
         path: "buttons-sample-7"
+    },
+    {
+        component: OverlaySampleComponent,
+        path: "overlay-sample"
     },
     {
         component: ToggleComponent,
@@ -789,6 +810,10 @@ export const appRoutes: Routes = [
     {
         component: SortingSampleComponent,
         path: "grid-sorting-sample"
+    },
+    {
+        component: GridMovingSampleComponent,
+        path: "grid-moving-sample"
     },
     {
         component: GridMultiColumnHeadersComponent,
