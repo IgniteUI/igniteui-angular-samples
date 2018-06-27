@@ -2,8 +2,22 @@
     <div class='container'>
         <div class='container__row'>
             <div class="section__header">
-                Adjusting the direction of the positioning settings in the overlay will determine where the element try to position itself, relative to it's parent
+                Adjusting the direction of the positioning settings in the overlay will determine where the element try to position itself,
+                relative to it's parent
+                <br/> Use the Connected Positioning sample to check the relative positioning
+                <br/> Use the Global Positioning sample to check the positioning relative to the window
             </div>
+        </div>
+        <div class='container__row'>
+            <div class='section__position-header'>
+                Connected
+            </div>
+            <div class='section__separator'></div>
+            <div class='section__position-header'>
+                Global
+            </div>
+        </div>
+        <div class='container__row'>
             <div class='section__position-element' #directionDemo>
                 <div class='section__row'>
                     <span (click)="onClickDirection(-1, -1)">
@@ -39,11 +53,52 @@
                     </span>
                 </div>
             </div>
+            <div class='section__separator'>
+
+            </div>
+            <div class='section__position-element' #directionDemoGlobal>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionGlobal(-1, -1)">
+                        <img src='assets\images\overlay\up_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(-0.5, -1)">
+                        <img src='assets\images\overlay\up.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(0, -1)">
+                        <img src='assets\images\overlay\up_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionGlobal(-1, -0.5)">
+                        <img src='assets\images\overlay\left.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(-0.5, -0.5)">
+                        <img src='assets\images\overlay\all_directions.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(0, -0.5)">
+                        <img src='assets\images\overlay\right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionGlobal(-1, 0)">
+                        <img src='assets\images\overlay\down_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(-0.5, 0)">
+                        <img src='assets\images\overlay\down.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(0, 0)">
+                        <img src='assets\images\overlay\down_right.png'>
+                    </span>
+                </div>
+            </div>
         </div>
         <div class='container__row'>
             <div class="section__header">
-                Adjusting the start point properties on the positioning settings in the overlay will determine where the element will start from, relative to it's parent
+                Adjusting the start point properties on the positioning settings in the overlay will determine where the element will start
+                from, relative to it's parent
             </div>
+        </div>
+        <div class='container__row'>
             <div class='section__position-element' #positionDemo>
                 <div class='section__row'>
                     <span (click)="onClickPosition(-1, -1)">
@@ -84,6 +139,8 @@
             <div class="section__header">
                 Adjusting the scrollStrategy property of the position settings in the overlay will determine how the window will handle scrolling
             </div>
+        </div>
+        <div class='container__row'>
             <div class='section__row--wide'>
                 <div class='section__container--wide' #scrollDemo>
                     <span (click)="onClickScrollStrategy($event, 'absolute')">
@@ -110,7 +167,9 @@
                 Adjusting the modal property of the overlay settings will determine whether the overlay element will be shown as a modal
                 (with a background overlay element) or without
             </div>
-            <div style='width: 20%;'>
+        </div>
+        <div class="container__row">
+            <div style='width: 100%; padding-left: 16px;'>
                 <span>
                     <igx-switch [(ngModel)]='modalValue'>
                         Modal

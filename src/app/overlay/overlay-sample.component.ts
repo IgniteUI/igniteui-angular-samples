@@ -62,6 +62,19 @@ export class OverlaySampleComponent {
         this.overlay.show(this.overlayDemo, showSettings);
     }
 
+    public onClickDirectionGlobal(horAlign: HorizontalAlignment, vertAlign: VerticalAlignment) {
+        const positionSettings =
+            Object.assign(Object.assign({}, this._defaultPositionSettings), {
+                target: this.directionDemo.nativeElement,
+                horizontalDirection: horAlign, verticalDirection: vertAlign
+            });
+        const showSettings =
+            Object.assign(Object.assign({}, this._overlaySettings), {
+                positionStrategy: new GlobalPositionStrategy(positionSettings)
+            });
+        this.overlay.show(this.overlayDemo, showSettings);
+    }
+
     public onClickPosition(horAlign, vertAlign) {
         const positionSettings =
             Object.assign(Object.assign({}, this._defaultPositionSettings), {
