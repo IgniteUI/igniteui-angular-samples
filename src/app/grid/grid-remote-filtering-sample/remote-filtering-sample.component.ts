@@ -22,13 +22,19 @@ export class RemoteFilteringSampleComponent implements OnInit {
     }
 
     public ngAfterViewInit() {
-        const filteringExpr = this.grid.filteringExpressions[0];
+        const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
         const sortingExpr = this.grid.sortingExpressions[0];
         this._chunkSize = parseInt(this.grid.height, 10) / this.grid.rowHeight;
-        this._remoteService.getData({chunkSize: this._chunkSize, startIndex: this.grid.virtualizationState.startIndex},
-            filteringExpr, sortingExpr, (data) => {
-            this.grid.totalItemCount = data.Count;
-        });
+        this._remoteService.getData(
+            {
+                chunkSize: this._chunkSize,
+                startIndex: this.grid.virtualizationState.startIndex
+            },
+            filteringExpr,
+            sortingExpr,
+            (data) => {
+                this.grid.totalItemCount = data.Count;
+            });
     }
 
     public processData() {
@@ -43,16 +49,21 @@ export class RemoteFilteringSampleComponent implements OnInit {
         this.cdr.detectChanges();
 
         const virtualizationState = this.grid.virtualizationState;
-        const filteringExpr = this.grid.filteringExpressions[0];
+        const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
         const sortingExpr = this.grid.sortingExpressions[0];
 
         this._prevRequest = this._remoteService.getData(
-            {chunkSize: this._chunkSize, startIndex: virtualizationState.startIndex},
-            filteringExpr, sortingExpr, (data) => {
-            this.grid.totalItemCount = data.filteredCount;
-            this.toast.hide();
-            this.cdr.detectChanges();
-        });
+            {
+                chunkSize: this._chunkSize,
+                startIndex: virtualizationState.startIndex
+            },
+            filteringExpr,
+            sortingExpr,
+            (data) => {
+                this.grid.totalItemCount = data.filteredCount;
+                this.toast.hide();
+                this.cdr.detectChanges();
+            });
     }
 
     public formatNumber(value: number) {
