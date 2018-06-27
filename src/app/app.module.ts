@@ -1,3 +1,4 @@
+
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
@@ -13,9 +14,11 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxCheckboxModule,
+    IgxComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDropDownModule,
     IgxExcelExporterService,
     IgxFilterModule,
     IgxForOfModule,
@@ -77,6 +80,8 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
+import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -221,6 +226,8 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CalendarSample4Component,
         CalendarSample5Component,
         CalendarComponent,
+        CascadingCombos,
+        ComboFeatures,
         DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
@@ -334,6 +341,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         FormsModule,
         IgxGridModule.forRoot(),
         IgxCarouselModule,
+        IgxComboModule,
         IgxLayoutModule,
         IgxRadioModule,
         IgxSwitchModule,
@@ -349,6 +357,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxIconModule,
         IgxDialogModule,
         IgxDatePickerModule,
+        IgxDropDownModule,
         IgxCalendarModule,
         IgxSnackbarModule,
         IgxCardModule,
