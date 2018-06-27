@@ -176,6 +176,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 
@@ -355,12 +356,12 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot()
+        FinancialChartSamplesModule.forRoot(),
+        GaugeSamplesModule.forRoot()
     ],
     providers: [
         DataService,
         IgxCsvExporterService,
-        IgxExcelExporterService
-    ]
+        IgxExcelExporterService ]
 })
 export class AppModule { }
