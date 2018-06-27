@@ -328,6 +328,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
         RemoteFilteringSampleComponent,
+        RadioGroupSampleComponent,
         GridEditingSampleComponent
     ],
     imports: [
