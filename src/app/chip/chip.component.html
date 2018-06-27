@@ -2,8 +2,7 @@
     <section class="sample-content">
         <div class="sample-holder">
             <div class="chips">
-                <igx-chips-area #chipsArea class="chiparea" (onMoveStart)="clickedOutside($event)" (onReorder)="chipsOrderChanged($event)"
-                    (onMoveEnd)="chipMovingEnded()" (onSelection)="onChipsSelected($event)">
+                <igx-chips-area #chipsArea class="chiparea" (onMoveStart)="clickedOutside($event)" (onReorder)="chipsOrderChanged($event)">
                     <igx-chip *ngFor="let chip of chipList" [id]="chip.id" [draggable]="true" [removable]="true" [selectable]="true" (onRemove)="chipRemoved($event)">
                         <igx-avatar igxPrefix fontSet="material" [src]="chip.photo" roundShape="true"></igx-avatar>
                         <span #label [class]="'igx-chip__text'">{{chip.name}}</span>
@@ -31,7 +30,7 @@
                 </igx-drop-down>
             </div>
             <div class="chips">
-                <igx-chips-area #chipsArea2 (onReorder)="chipsOrderChangedCc($event)" (onMoveEnd)="chipMovingEnded()">
+                <igx-chips-area #chipsArea2 (onReorder)="chipsOrderChangedCc($event)">
                     <igx-chip *ngFor="let chip of tagList" [id]="chip.id" [draggable]="true" [selectable]="true" (onRemove)="chipRemovedCc($event)"
                         (click)="selectChipCc(chip.id)">
                         <span #label [class]="'igx-chip__text'">{{chip.text}}</span>

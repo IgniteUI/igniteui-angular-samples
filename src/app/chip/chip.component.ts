@@ -168,10 +168,6 @@ export class ChipSampleComponent {
         this.igxDropDown.close();
     }
 
-    public onChipsSelected(event) {
-        console.log(event.newSelection);
-    }
-
     public toggleDropDown(ev) {
         if (this.inputBox.value !== null) {
             this.igxDropDown.open({
@@ -230,8 +226,6 @@ export class ChipSampleComponent {
             this.inputBox.value = "";
         }
     }
-
-    public chipMovingEnded() {}
 
     public openDropDown() {
         this.igxDropDown.open({
