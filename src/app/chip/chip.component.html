@@ -13,7 +13,7 @@
                 <igx-input-group #inputGroup>
                     <igx-prefix>To:</igx-prefix>
                     <label igxLabel>Email address</label>
-                    <input igxInput #inputForm (keyup.enter)="addEmail($event)" (keydown)="toggleDropDown($event)" (keydown.ArrowDown)="openDropDown()"
+                    <input igxInput #inputForm (keyup.enter)="addEmail()" (keydown)="toggleDropDown($event)" (keydown.ArrowDown)="openDropDown()"
                         type="email" [igxDropDownItemNavigation]="dropdown" required />
                 </igx-input-group>
                 <igx-input-group>
