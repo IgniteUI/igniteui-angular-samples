@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { IForOfState } from "igniteui-angular/lib/directives/for-of/IForOfState";
+import { IForOfState } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()
