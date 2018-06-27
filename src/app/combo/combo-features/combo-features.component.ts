@@ -14,16 +14,16 @@ export class ComboFeatures {
     public prevRequest: any;
 
     @ViewChild("combo1", { read: IgxComboComponent })
+    public lData: any[];
+    public rData: any;
+
+    public VALUE_KEY = "field";
+    public GROUP_KEY = "region";
+
+    public filterable = true;
+    public customValues = true;
+    public disabled = false;
     private combo1: IgxComboComponent;
-    private lData: any[];
-    private rData: any;
-
-    private VALUE_KEY = "field";
-    private GROUP_KEY = "region";
-
-    private filterable = true;
-    private customValues = true;
-    private disabled = false;
 
     @ViewChild("combo2", { read: IgxComboComponent })
     private combo2: IgxComboComponent;

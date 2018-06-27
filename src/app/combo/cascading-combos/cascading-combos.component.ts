@@ -27,12 +27,12 @@ export class CascadingCombos {
     public arrowProvince = "arrow_drop_down";
     public disabledProvince = true;
 
-    private countryData: any[] = [];
-    private provinceData: any[] = [];
-    private townData: any[] = [];
-    private country: string;
-    private province: string;
-    private town: string;
+    public countryData: any[] = [];
+    public provinceData: any[] = [];
+    public townData: any[] = [];
+    public country: string;
+    public province: string;
+    public town: string;
     private _overlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
