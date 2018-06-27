@@ -19,10 +19,10 @@
                 </ng-template>
             </igx-column>
             <igx-column width="9%">
-                <ng-template igxCell let-cell="cell" let-val>
-                <button igxButton="raised" class="buttonRemove" (click)="removeRow(cell.cellID.rowIndex)">
-                    Delete
-                </button>
+                <ng-template igxCell let-cell="cell">
+                    <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
+                        <igx-icon>delete</igx-icon>
+                    </button>
                 </ng-template>
             </igx-column>
         </igx-grid>
