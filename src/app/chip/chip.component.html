@@ -17,6 +17,10 @@
                     <input igxInput #inputForm (keyup.enter)="addEmail($event)" (keydown)="toggleDropDown($event)" (keydown.ArrowDown)="openDropDown()"
                         type="email" [igxDropDownItemNavigation]="dropdown" required />
                 </igx-input-group>
+                <igx-input-group>
+                    <igx-prefix>Cc:</igx-prefix>
+                    <input #ccGroup igxInput [disabled]="'true'" />
+                </igx-input-group>
                 <igx-drop-down #dropdown (onSelection)="itemSelection($event)">
                     <igx-drop-down-item *ngFor="let item of dropDownList | filter:inputForm.value">
                         <div class="igx-drop-down__item-template">
@@ -26,6 +30,17 @@
                     </igx-drop-down-item>
                 </igx-drop-down>
             </div>
+            <div class="chips">
+                <igx-chips-area #chipsArea2 (onReorder)="chipsOrderChanged2($event)" (onMoveEnd)="chipMovingEnded()">
+                    <igx-chip *ngFor="let chip of tagList" [id]="chip.id" [draggable]="true" [selectable]="true" (onRemove)="chipRemoved2($event)"
+                        (click)="selectChip2(chip.id)">
+                        <span #label [class]="'igx-chip__text'">{{chip.text}}</span>
+                    </igx-chip>
+                </igx-chips-area>
+                <textarea #textArea class="emailText"></textarea>
+            </div>
+            <button class="toggle-button" igxButton="raised" igxRipple="white" (click)="clear()" (click)="showToast(toast, 'middle')" [disabled]="toast.isVisible">Send</button>
+            <igx-toast #toast message="Your email has been sent!" [position]="toastPosition"></igx-toast>
         </div>
     </section>
 </div>

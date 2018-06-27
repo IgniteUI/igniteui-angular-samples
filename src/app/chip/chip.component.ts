@@ -1,10 +1,11 @@
-import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
+import { Component, ElementRef, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import {
     ConnectedPositioningStrategy,
     IgxChipsAreaComponent,
     IgxDropDownComponent,
     IgxInputDirective,
-    IgxInputGroupComponent
+    IgxInputGroupComponent,
+    IgxToastPosition
 } from "igniteui-angular";
 
 @Component({
@@ -14,7 +15,6 @@ import {
 })
 
 export class ChipSampleComponent {
-    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
     public dropDownList = [
         {
             email: "lisalanders@gmail.com",
@@ -111,11 +111,32 @@ export class ChipSampleComponent {
         }
     ];
 
+    public tagList = [
+        { id: "Engineering Services", text: "Engineering Services" },
+        { id: "All Users", text: "All Users" },
+        { id: "My Team", text: "My Team" },
+        { id: "USA Team", text: "USA Team" }
+    ];
+
+    public toastPosition: IgxToastPosition = IgxToastPosition.Middle;
+
+    @ViewChild("chipsArea2", { read: IgxChipsAreaComponent })
+    public chipsArea2: IgxChipsAreaComponent;
+
+    @ViewChild("ccGroup", { read: IgxInputDirective })
+    public ccGroup: IgxInputDirective;
+
+    @ViewChild("textArea", { read: ElementRef})
+    public textArea: ElementRef;
+
     @ViewChild("chipsArea", { read: IgxChipsAreaComponent })
     public chipsArea: IgxChipsAreaComponent;
 
     @ViewChild("inputForm", { read: IgxInputDirective })
     public inputBox: IgxInputDirective;
+
+    @ViewChild(IgxDropDownComponent)
+    public igxDropDown: IgxDropDownComponent;
 
     @ViewChild("inputGroup", {read: IgxInputGroupComponent})
     public inputGroup: IgxInputGroupComponent;
@@ -245,6 +266,64 @@ export class ChipSampleComponent {
                 this.inputBox.value = "";
             }
         }
+    }
+
+    /**
+     * Tags sample
+     */
+
+    public chipsOrderChanged2(event) {
+        const newTagList = [];
+        for (const chip of event.chipsArray) {
+            const chipItem = this.tagList.filter((item) => {
+                return item.id === chip.id;
+            })[0];
+            newTagList.push(chipItem);
+        }
+        this.tagList = newTagList;
+        event.isValid = true;
+    }
+
+    public selectChip2(chipId) {
+        const chipToSelect = this.chipsArea2.chipsList.toArray().find((chip) => {
+            return chip.id === chipId;
+        });
+        if (chipToSelect.selected === true) {
+            chipToSelect.selected = false;
+            this.ccGroup.value = this.ccGroup.value.replace(chipToSelect.id + ", ", "");
+        } else {
+            chipToSelect.selected = true;
+            this.ccGroup.value += chipToSelect.id + ", ";
+        }
+    }
+
+    public chipRemoved2(event) {
+        this.tagList = this.tagList.filter((item) => {
+            return item.id !== event.owner.id;
+        });
+        this.chipsArea2.cdr.detectChanges();
+    }
+
+    public clear() {
+        this.ccGroup.value = "";
+        this.textArea.nativeElement.value = "";
+        this.chipList = [];
+
+    }
+
+    public showToast(toast, position) {
+        switch (position) {
+            case "middle":
+                this.toastPosition = IgxToastPosition.Middle;
+                break;
+            case "top":
+                this.toastPosition = IgxToastPosition.Top;
+                break;
+            default:
+                this.toastPosition = IgxToastPosition.Bottom;
+        }
+
+        toast.show();
     }
 }
 @Pipe({ name: "filter" })
