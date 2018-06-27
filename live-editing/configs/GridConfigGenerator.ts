@@ -37,6 +37,7 @@ import {
 } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -247,6 +248,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
                     IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiColumnHeadersComponent,
+            additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridMultiColumnHeadersComponent, IgxGridModule ],
+                ngDeclarations: [GridMultiColumnHeadersComponent],
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 
