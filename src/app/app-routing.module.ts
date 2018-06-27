@@ -110,6 +110,7 @@ import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radi
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
@@ -401,6 +402,10 @@ export const appRoutes: Routes = [
     {
         component: GridGroupBySampleComponent,
         path: "grid-groupby"
+    },
+    {
+        component: GridEditingSampleComponent,
+        path: "grid-editing"
     },
     {
         component: SnackbarSample1Component,
