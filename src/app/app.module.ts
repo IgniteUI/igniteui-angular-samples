@@ -91,6 +91,9 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
+import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
+import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -233,6 +236,9 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
+        DropDownSample1Component,
+        DropDownSample2Component,
+        DropDownSample3Component,
         LayoutComponent,
         NavdrawerComponent,
         NavDrawerMiniComponent,
@@ -361,6 +367,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxRippleModule,
         IgxIconModule,
         IgxDialogModule,
+        IgxDropDownModule,
         IgxDatePickerModule,
         IgxDropDownModule,
         IgxCalendarModule,
