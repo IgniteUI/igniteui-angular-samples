@@ -126,6 +126,7 @@ import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "./grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
@@ -788,6 +789,10 @@ export const appRoutes: Routes = [
     {
         component: SortingSampleComponent,
         path: "grid-sorting-sample"
+    },
+    {
+        component: GridMultiColumnHeadersComponent,
+        path: "multi-column-headers"
     }
 ];
 
