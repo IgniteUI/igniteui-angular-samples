@@ -126,6 +126,7 @@ import { GridToolbarSample1Component} from "./grid/grid-toolbar-sample/grid-tool
 import { GridToolbarSample2Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
@@ -788,6 +789,10 @@ export const appRoutes: Routes = [
     {
         component: GridToolbarSample3Component,
         path: "grid-toolbar-sample-3"
+    },
+    {
+        component: GridMultiColumnHeadersComponent,
+        path: "multi-column-headers"
     }
 ];
 

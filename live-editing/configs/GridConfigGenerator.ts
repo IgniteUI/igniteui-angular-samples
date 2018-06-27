@@ -40,6 +40,7 @@ import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sam
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -271,6 +272,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
                     IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiColumnHeadersComponent,
+            additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridMultiColumnHeadersComponent, IgxGridModule ],
+                ngDeclarations: [GridMultiColumnHeadersComponent],
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 
