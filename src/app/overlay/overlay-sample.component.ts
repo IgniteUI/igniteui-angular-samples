@@ -31,6 +31,9 @@ export class OverlaySampleComponent {
     @ViewChild("overlayDemo")
     public overlayDemo: ElementRef;
 
+    @ViewChild("mainContainer")
+    public mainContainer: ElementRef;
+
     private _defaultPositionSettings: PositionSettings = {
         target: null,
         horizontalDirection: HorizontalAlignment.Center,
@@ -100,7 +103,7 @@ export class OverlaySampleComponent {
                 scrollStrategy = new BlockScrollStrategy();
                 break;
             case ("close"):
-                scrollStrategy = new CloseScrollStrategy();
+                scrollStrategy = new CloseScrollStrategy(this.mainContainer.nativeElement);
                 break;
             default:
                 scrollStrategy = new NoOpScrollStrategy();
