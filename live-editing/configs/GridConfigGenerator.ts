@@ -27,6 +27,7 @@ import {
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
+import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -36,6 +37,7 @@ import {
 } from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
+import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -86,6 +88,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
                 ngDeclarations: [GridSample3Component],
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
+                    IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupBySampleComponent,
+            additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
+                    IgxRippleModule, IgxSwitchModule, GridGroupBySampleComponent, LocalService, IgxIconModule],
+                ngDeclarations: [GridGroupBySampleComponent],
+                ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
             })
         }));
@@ -234,6 +248,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
                     IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiColumnHeadersComponent,
+            additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ GridMultiColumnHeadersComponent, IgxGridModule ],
+                ngDeclarations: [GridMultiColumnHeadersComponent],
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 
