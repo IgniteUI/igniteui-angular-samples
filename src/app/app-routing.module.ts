@@ -112,6 +112,8 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
@@ -401,6 +403,10 @@ export const appRoutes: Routes = [
     {
         component: GridSample3Component,
         path: "grid-summary"
+    },
+    {
+        component: GridGroupBySampleComponent,
+        path: "grid-groupby"
     },
     {
         component: GridEditingSampleComponent,
@@ -789,6 +795,10 @@ export const appRoutes: Routes = [
     {
         component: GridToolbarSample3Component,
         path: "grid-toolbar-sample-3"
+    },
+    {
+        component: GridMovingSampleComponent,
+        path: "grid-moving-sample"
     },
     {
         component: GridMultiColumnHeadersComponent,

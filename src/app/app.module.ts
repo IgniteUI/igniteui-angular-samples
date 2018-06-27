@@ -96,6 +96,7 @@ import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/s
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
@@ -178,6 +179,7 @@ import { CategoryChartPerformanceSamplesModule } from "./category-chart/category
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
+import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
@@ -311,6 +313,7 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         InputGroupSample5Component,
         InputGroupSample6Component,
         GridSample3Component,
+        GridGroupBySampleComponent,
         ExcelExportComponent,
         ExcelExportSample1Component,
         CsvExportComponent,
@@ -321,6 +324,7 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         GridToolbarSample1Component,
         GridToolbarSample2Component,
         GridToolbarSample3Component,
+        GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
         RemoteFilteringSampleComponent,
         GridEditingSampleComponent
