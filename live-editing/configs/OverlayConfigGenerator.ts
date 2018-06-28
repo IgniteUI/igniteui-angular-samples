@@ -15,11 +15,11 @@ export class OverlayConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: OverlaySampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule],
+                imports: [IgxIconModule, IgxOverlayService, OverlaySampleComponent, IgxSwitchModule],
+                ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlaySampleComponent],
-                ngImports: [IgxIconModule, IgxOverlayService, IgxSwitchModule]
-            }),
-            shortenComponentPathBy: "/overlay/"
+                ngImports: [IgxIconModule, IgxSwitchModule]
+            })
         }));
 
         return configs;
