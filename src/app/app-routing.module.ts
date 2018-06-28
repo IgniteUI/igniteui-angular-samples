@@ -115,6 +115,10 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
@@ -130,6 +134,9 @@ import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
+import { GridToolbarSample1Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -686,6 +693,14 @@ export const appRoutes: Routes = [
         path: "grid-search-sample"
     },
     {
+        component: GridColumnHidingSampleComponent,
+        path: "grid-column-hiding-sample"
+    },
+    {
+        component: GridColumnHidingToolbarSampleComponent,
+        path: "grid-column-hiding-toolbar-sample"
+    },
+    {
         component: NavbarSample1Component,
         path: "navbar-sample-1"
     },
@@ -820,6 +835,18 @@ export const appRoutes: Routes = [
     {
         component: SortingSampleComponent,
         path: "grid-sorting-sample"
+    },
+    {
+        component: GridToolbarSample1Component,
+        path: "grid-toolbar-sample-1"
+    },
+    {
+        component: GridToolbarSample2Component,
+        path: "grid-toolbar-sample-2"
+    },
+    {
+        component: GridToolbarSample3Component,
+        path: "grid-toolbar-sample-3"
     },
     {
         component: GridMovingSampleComponent,

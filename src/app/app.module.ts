@@ -14,6 +14,7 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxCheckboxModule,
+    IgxColumnHidingModule,
     IgxComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
@@ -191,10 +192,17 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
+import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -337,6 +345,11 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
+        GridColumnHidingSampleComponent,
+        GridColumnHidingToolbarSampleComponent,
+        GridToolbarSample1Component,
+        GridToolbarSample2Component,
+        GridToolbarSample3Component,
         RemoteFilteringSampleComponent,
         RadioGroupSampleComponent,
         GridMovingSampleComponent,
@@ -393,7 +406,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
-        IgxComboModule
+        IgxColumnHidingModule
     ],
     providers: [
         DataService,
