@@ -1,5 +1,7 @@
+
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
@@ -13,6 +15,8 @@ import {
     IgxCarouselModule,
     IgxCheckboxModule,
     IgxChipsModule,
+    IgxColumnHidingModule,
+    IgxComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
@@ -29,6 +33,7 @@ import {
     IgxNavbarModule,
     IgxNavigationDrawerModule,
     IgxNavigationModule,
+    IgxOverlayService,
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
@@ -78,6 +83,8 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
+import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -87,18 +94,23 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
+import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
+import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
@@ -142,6 +154,7 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { OverlaySampleComponent } from "./overlay/overlay-sample.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -180,10 +193,17 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
+import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -221,10 +241,15 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         CalendarSample4Component,
         CalendarSample5Component,
         CalendarComponent,
+        CascadingCombos,
+        ComboFeatures,
         DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
+        DropDownSample1Component,
+        DropDownSample2Component,
+        DropDownSample3Component,
         LayoutComponent,
         NavdrawerComponent,
         NavDrawerMiniComponent,
@@ -262,6 +287,7 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         RadioSample2Component,
         IconSample1Component,
         ToggleComponent,
+        OverlaySampleComponent,
         ToggleSample1Component,
         ToggleSample2Component,
         ToggleSample3Component,
@@ -322,6 +348,14 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         GridContextmenuComponent,
         GridSearchSampleComponent,
         ChipSampleComponent,
+        GridColumnHidingSampleComponent,
+        GridColumnHidingToolbarSampleComponent,
+        GridToolbarSample1Component,
+        GridToolbarSample2Component,
+        GridToolbarSample3Component,
+        RemoteFilteringSampleComponent,
+        RadioGroupSampleComponent,
+        GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
         RemoteFilteringSampleComponent,
         GridEditingSampleComponent
@@ -333,9 +367,11 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         FormsModule,
         IgxGridModule.forRoot(),
         IgxCarouselModule,
+        IgxComboModule,
         IgxLayoutModule,
         IgxRadioModule,
         IgxSwitchModule,
@@ -350,7 +386,9 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxRippleModule,
         IgxIconModule,
         IgxDialogModule,
+        IgxDropDownModule,
         IgxDatePickerModule,
+        IgxDropDownModule,
         IgxCalendarModule,
         IgxSnackbarModule,
         IgxCardModule,
@@ -363,18 +401,21 @@ import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search
         IgxNavbarModule,
         IgxToggleModule,
         HttpClientModule,
+        HttpModule,
         IgxForOfModule,
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot()
+        FinancialChartSamplesModule.forRoot(),
+        IgxColumnHidingModule
     ],
     providers: [
         DataService,
         IgxCsvExporterService,
-        IgxExcelExporterService
+        IgxExcelExporterService,
+        IgxOverlayService
     ]
 })
 export class AppModule { }
