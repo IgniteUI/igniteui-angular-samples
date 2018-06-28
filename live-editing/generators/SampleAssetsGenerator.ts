@@ -25,6 +25,7 @@ import { ListConfigGenerator } from "./../configs/ListConfigGenerator";
 import { MaskConfigGenerator } from "./../configs/MaskConfigGenerator";
 import { NavbarConfigGenerator } from "./../configs/NavbarConfigGenerator";
 import { NavdrawerConfigGenerator } from "./../configs/NavDrawerConfigGenerator";
+import { OverlayConfigGenerator } from "./../configs/OverlayConfigGenerator";
 import { RadioConfigGenerator } from "./../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "./../configs/RippleConfigGenerator";
 import { SliderConfigGenerator } from "./../configs/SliderConfigGenerator";
@@ -67,7 +68,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator,
     DatePickerConfigGenerator, DialogConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
