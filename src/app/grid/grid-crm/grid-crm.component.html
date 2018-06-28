@@ -78,11 +78,11 @@
         </div>
     </div>
 
-    <igx-grid #grid1 id="grid1" [data]="localData" [height]="'645px'" [width]="'1172px'" rowSelectable="true">
+    <igx-grid #grid1 id="grid1" [data]="localData" [height]="'665px'" [width]="'1172px'" rowSelectable="true">
         <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true">
         </igx-column>
 
-        <igx-column field="avatar" header="Photo" width="88" pinned="true" resizable="true">
+        <igx-column field="avatar" header="Photo" width="88" pinned="true" resizable="true" [searchable]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner avatar-cell">
                     <igx-avatar [src]="cell.row.rowData.avatar" roundShape="true" size="small"></igx-avatar>

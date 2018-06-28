@@ -50,7 +50,10 @@ import {
 import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
+import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
+import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -60,6 +63,9 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
+import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
+import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -105,13 +111,20 @@ import {
 } from "./financial-chart/volume-type/financial-chart-volume-type.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
+import {
+    GridColumnHidingToolbarSampleComponent
+} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
@@ -122,6 +135,9 @@ import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
+import { GridToolbarSample1Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -156,6 +172,7 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { OverlaySampleComponent } from "./overlay/overlay-sample.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -281,6 +298,14 @@ export const appRoutes: Routes = [
         path: "circular-progressbar"
     },
     {
+        component: ComboFeatures,
+        path: "combo-features"
+    },
+    {
+        component: CascadingCombos,
+        path: "cascading-combos"
+    },
+    {
         component: CsvExportComponent,
         path: "export-csv"
     },
@@ -311,6 +336,18 @@ export const appRoutes: Routes = [
     {
         component: DialogComponent,
         path: "dialog"
+    },
+    {
+        component: DropDownSample1Component,
+        path: "dropdown-sample-1"
+    },
+    {
+        component: DropDownSample2Component,
+        path: "dropdown-sample-2"
+    },
+    {
+        component: DropDownSample3Component,
+        path: "dropdown-sample-3"
     },
     {
         component: DialogSample1Component,
@@ -401,6 +438,10 @@ export const appRoutes: Routes = [
         path: "grid-summary"
     },
     {
+        component: GridGroupBySampleComponent,
+        path: "grid-groupby"
+    },
+    {
         component: GridEditingSampleComponent,
         path: "grid-editing"
     },
@@ -435,6 +476,10 @@ export const appRoutes: Routes = [
     {
         component: RadioSample2Component,
         path: "radio-sample-2"
+    },
+    {
+        component: RadioGroupSampleComponent,
+        path: "radio-group-sample"
     },
     {
         component: ToastSample1Component,
@@ -565,6 +610,10 @@ export const appRoutes: Routes = [
         path: "buttons-sample-7"
     },
     {
+        component: OverlaySampleComponent,
+        path: "overlay-sample"
+    },
+    {
         component: ToggleComponent,
         path: "toggle"
     },
@@ -643,6 +692,14 @@ export const appRoutes: Routes = [
     {
         component: GridSearchSampleComponent,
         path: "grid-search-sample"
+    },
+    {
+        component: GridColumnHidingSampleComponent,
+        path: "grid-column-hiding-sample"
+    },
+    {
+        component: GridColumnHidingToolbarSampleComponent,
+        path: "grid-column-hiding-toolbar-sample"
     },
     {
         component: NavbarSample1Component,
@@ -779,6 +836,26 @@ export const appRoutes: Routes = [
     {
         component: SortingSampleComponent,
         path: "grid-sorting-sample"
+    },
+    {
+        component: ChipSampleComponent,
+        path: "chip-sample"
+    },
+    {
+        component: GridToolbarSample1Component,
+        path: "grid-toolbar-sample-1"
+    },
+    {
+        component: GridToolbarSample2Component,
+        path: "grid-toolbar-sample-2"
+    },
+    {
+        component: GridToolbarSample3Component,
+        path: "grid-toolbar-sample-3"
+    },
+    {
+        component: GridMovingSampleComponent,
+        path: "grid-moving-sample"
     },
     {
         component: GridMultiColumnHeadersComponent,
