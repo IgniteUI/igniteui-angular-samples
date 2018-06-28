@@ -12,6 +12,7 @@ import { CheckboxConfigGenerator } from "./../configs/CheckboxConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./../configs/CircularProgressbarConfigGenerator";
 import { DatePickerConfigGenerator } from "./../configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
+import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
 import { ExportCsvConfigGenerator } from "./../configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "./../configs/ExportExcelConfigGenerator";
 import { FinancialChartConfigGenerator } from "./../configs/FinancialChartConfigGenerator";
@@ -67,7 +68,8 @@ const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator,
-    DatePickerConfigGenerator, DialogConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
+    DatePickerConfigGenerator, DialogConfigGenerator, DropDownConfigGenerator,
+    ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
@@ -262,7 +264,7 @@ export class SampleAssetsGenerator extends Generator {
                         config.appModuleConfig.ngImports[i] as ModuleWithProviders,
                         useClass = "", forRoot = ".forRoot()";
                     if (appModuleNgImportWithProviders.providers.length > 0
-                        && appModuleNgImportWithProviders.providers[0].useClass 
+                        && appModuleNgImportWithProviders.providers[0].useClass
                         && appModuleNgImportWithProviders.providers[0].useClass.name) {
                         useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
                         forRoot = `.forRoot(${useClass})`;
