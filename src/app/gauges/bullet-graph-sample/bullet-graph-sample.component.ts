@@ -62,7 +62,7 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
         range2.endValue = 80;
         const range3 = new IgxLinearGraphRangeComponent();
         range3.startValue = 80;
-        range3.endValue = 110;
+        range3.endValue = 120;
 
         this.bulletGraph.rangeBrushes  = [ "#fffb2d", "#f4c51e", "#f44c1e"];
         this.bulletGraph.rangeOutlines = [ "gray", "gray", "gray"];
@@ -88,7 +88,7 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
         this.bulletGraph.scaleEndExtent = 0.95;
 
         // setting appearance of backing fill and outline
-        this.bulletGraph.backingBrush = "#e5e5e5";
+        this.bulletGraph.backingBrush = "#f7f7f7";
         this.bulletGraph.backingOutline = "#d1d1d1";
         this.bulletGraph.backingStrokeThickness = 10;
 

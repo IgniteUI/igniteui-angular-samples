@@ -68,7 +68,7 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         range2.endValue = 80;
         const range3 = new IgxLinearGraphRangeComponent();
         range3.startValue = 80;
-        range3.endValue = 110;
+        range3.endValue = 120;
 
         this.linearGauge.rangeBrushes  = [ "#fffb2d", "#f4c51e", "#f44c1e"];
         this.linearGauge.rangeOutlines = [ "gray", "gray", "gray"];
@@ -96,7 +96,7 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         this.linearGauge.scaleEndExtent = 0.95;
 
         // setting appearance of backing fill and outline
-        this.linearGauge.backingBrush = "#e5e5e5";
+        this.linearGauge.backingBrush = "#f7f7f7";
         this.linearGauge.backingOutline = "#d1d1d1";
         this.linearGauge.backingStrokeThickness = 10;
 
