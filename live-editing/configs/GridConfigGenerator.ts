@@ -278,10 +278,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridMovingSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridMovingSampleComponent, IgxGridModule,
-                    IgxBadgeModule, IgxIconModule, IgxButtonModule, IgxRippleModule],
+                imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
                 ngDeclarations: [GridMovingSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule, IgxButtonModule, IgxRippleModule],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule],
                 ngProviders: []
             })
         }));
