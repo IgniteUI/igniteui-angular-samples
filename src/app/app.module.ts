@@ -14,6 +14,7 @@ import {
     IgxCardModule,
     IgxCarouselModule,
     IgxCheckboxModule,
+    IgxChipsModule,
     IgxColumnHidingModule,
     IgxComboModule,
     IgxCsvExporterService,
@@ -80,6 +81,7 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
@@ -207,6 +209,7 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
+        EmailFilterPipe,
         AppComponent,
         BadgeSample1Component,
         BadgeSample2Component,
@@ -345,6 +348,7 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
+        ChipSampleComponent,
         GridColumnHidingSampleComponent,
         GridColumnHidingToolbarSampleComponent,
         GridToolbarSample1Component,
@@ -360,6 +364,9 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         GridEditingSampleComponent
     ],
     imports: [
+        IgxDropDownModule,
+        IgxInputGroupModule,
+        IgxChipsModule,
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
