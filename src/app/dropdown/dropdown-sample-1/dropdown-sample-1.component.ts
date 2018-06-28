@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
-    CloseScrollStrategy ,
+    CloseScrollStrategy,
     ConnectedPositioningStrategy,
     HorizontalAlignment,
     IgxDropDownComponent,
-    IgxToggleDirective,
     VerticalAlignment
 } from "igniteui-angular";
 @Component({
