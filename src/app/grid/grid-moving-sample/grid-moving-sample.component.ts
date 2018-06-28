@@ -16,7 +16,14 @@ export class GridMovingSampleComponent {
     public formatNumber(value: number) {
         return value.toFixed(2);
     }
+
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
+    }
+
+    public pin(column) {
+        if (!column.pinned) {
+            column.pin();
+        }
     }
 }

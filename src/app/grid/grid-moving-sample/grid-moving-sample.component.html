@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-grid #dataGrid [data]="data" [autoGenerate]="false" height="620px" width="100%" paging="true" [perPage]="10">
-        <igx-column [field]="'Category'" [width]="'200px'" [movable]="true" [pinned]="true"></igx-column>
+        <igx-column [field]="'Category'" [width]="'200px'" [movable]="true" [pinned]="true" #category></igx-column>
         <igx-column [field]="'Type'" [width]="'150px'" [movable]="true" [pinned]="true"></igx-column>
         <igx-column [field]="'Price'" [width]="'150px'" [dataType]="'number'" [movable]="true" [formatter]="formatCurrency"></igx-column>
         <igx-column [field]="'Buy'" [width]="'150px'" [dataType]="'number'" [movable]="true" [formatter]="formatCurrency"></igx-column>
@@ -36,4 +36,6 @@
             </ng-template>
         </igx-column>
     </igx-grid>
+
+    <button igxButton="raised" igxRipple (click)="pin(category)">Pin Category Column</button>
 </div>

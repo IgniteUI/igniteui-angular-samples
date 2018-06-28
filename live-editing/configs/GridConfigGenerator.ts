@@ -112,7 +112,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridGroupBySampleComponent, LocalService, IgxIconModule],
                 ngDeclarations: [GridGroupBySampleComponent],
-                ngImports: [ IgxButtonModule, IgxGridModule.forRoot(),
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
             })
         }));
@@ -278,9 +278,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridMovingSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
+                imports: [GridMovingSampleComponent, IgxGridModule,
+                    IgxBadgeModule, IgxIconModule, IgxButtonModule, IgxRippleModule],
                 ngDeclarations: [GridMovingSampleComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule, IgxButtonModule, IgxRippleModule],
                 ngProviders: []
             })
         }));
@@ -289,7 +290,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridToolbarSample1Component,
             additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridToolbarSample1Component, IgxGridModule],
+                imports: [GridToolbarSample1Component, IgxGridModule],
                 ngDeclarations: [GridToolbarSample1Component],
                 ngImports: [IgxGridModule.forRoot()],
                 ngProviders: []
@@ -300,7 +301,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridToolbarSample2Component,
             additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridToolbarSample2Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
+                imports: [GridToolbarSample2Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [GridToolbarSample2Component],
                 ngImports: [IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
@@ -311,7 +312,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridToolbarSample3Component,
             additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridToolbarSample3Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
+                imports: [GridToolbarSample3Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [GridToolbarSample3Component],
                 ngImports: [IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
@@ -321,9 +322,9 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridEditingSampleComponent,
             additionalFiles: ["/src/app/grid/grid-editing-sample/data.ts",
-            "/src/app/grid/grid-editing-sample/product.ts"],
+                "/src/app/grid/grid-editing-sample/product.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
+                imports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
                     IgxGridModule, IgxInputGroupModule, IgxIconModule,
                     IgxRippleModule, GridEditingSampleComponent],
                 ngDeclarations: [GridEditingSampleComponent],
@@ -336,7 +337,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridMultiColumnHeadersComponent,
             additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridMultiColumnHeadersComponent, IgxGridModule ],
+                imports: [GridMultiColumnHeadersComponent, IgxGridModule],
                 ngDeclarations: [GridMultiColumnHeadersComponent],
                 ngImports: [IgxGridModule.forRoot()]
             })
