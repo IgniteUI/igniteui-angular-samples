@@ -3,6 +3,7 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: row;
+    min-height: 1200px;
 }
 
 .container__row > div, .section__container--wide > span, .section__position-element > div {
