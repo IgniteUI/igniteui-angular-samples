@@ -8,10 +8,6 @@ import { IgxComboComponent } from "igniteui-angular";
     templateUrl: "./reactive-forms.component.html"
 })
 export class ReactiveFormsSampleComponent {
-    public genres = ["Action", "Adventure", "Comedy", "Crime",
-        "Drama", "Historical", "Horror", "Mistery",
-        "Musical", "Romance", "Sci-Fi", "Thriller", "Western"];
-
     public reactiveForm: FormGroup;
 
     @ViewChild("combo1", { read: IgxComboComponent })
@@ -24,7 +20,6 @@ export class ReactiveFormsSampleComponent {
             dateTime: [""],
             email: ["", Validators.required],
             fullName: new FormControl("", Validators.required),
-            genres: ["", Validators.required],
             phone: [""]
         });
 
