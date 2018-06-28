@@ -2,7 +2,7 @@
 import {
     IgxIconModule, IgxOverlayService, IgxSwitchModule
 } from "igniteui-angular";
-import { OverlaySampleComponent } from "../../src/app/overlay/overlay-sample.component";
+import { OverlaySampleComponent } from "../../src/app/overlay/overlay-main/overlay-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";

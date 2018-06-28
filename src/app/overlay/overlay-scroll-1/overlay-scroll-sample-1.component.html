@@ -1,0 +1,34 @@
+<div class='overlay-sample' #mainContainer>
+    <div class='container'>
+        <div class="container__row">
+            <div style='width: 100%; padding-left: 16px;'>
+                <igx-switch [(ngModel)]='modalValue'>
+                    Modal
+                </igx-switch>
+            </div>
+            <div class='section__row--wide'>
+                <div class="section__container--wide" #modalDemo>
+                    <span (click)="onClickModal($event, 'auto')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Auto</p>
+                    </span>
+                    <span (click)="onClickModal($event, 'connected')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Connect</p>
+                    </span>
+                    <span (click)="onClickModal($event, 'global')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Global</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container'>
+        <div class="overlay__element" #overlayDemo>
+            <div class="overlay__element__content">
+                Overlay Conent
+            </div>
+        </div>
+    </div>
+</div>

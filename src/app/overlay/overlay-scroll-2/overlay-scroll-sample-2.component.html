@@ -1,0 +1,33 @@
+<div class='overlay-sample' #mainContainer>
+    <div class='container'>
+        <div class='container__row'>
+            <div class='section__row--wide'>
+                <div class='section__container--wide' #scrollDemo>
+                    <span (click)="onClickScrollStrategy($event, 'absolute')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Absolute</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy($event, 'block')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Block</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy($event, 'close')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Close</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy($event, '')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>None</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container'>
+        <div class="overlay__element" #overlayDemo>
+            <div class="overlay__element__content">
+                Overlay Conent
+            </div>
+        </div>
+    </div>
+</div>
