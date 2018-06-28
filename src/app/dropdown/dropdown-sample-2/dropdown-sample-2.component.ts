@@ -4,7 +4,6 @@ import {
     ConnectedPositioningStrategy,
     HorizontalAlignment,
     IgxDropDownComponent,
-    IgxToggleDirective,
     VerticalAlignment
 } from "igniteui-angular";
 @Component({
