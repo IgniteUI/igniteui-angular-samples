@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxDatePickerModule, IgxIconModule,
-    IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule } from "igniteui-angular";
+    IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule, IgxComboModule } from "igniteui-angular";
 import {
     InputGroupSample2Component
 } from "../../src/app/input-group/input-group-sample-2/input-group-sample-2.component";
@@ -45,10 +45,11 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             component: InputGroupSample6Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
-                     IgxRippleModule, InputGroupSample6Component, IgxDatePickerModule, IgxTimePickerModule],
+                     IgxRippleModule, InputGroupSample6Component, IgxDatePickerModule, IgxTimePickerModule,
+                     IgxComboModule],
                 ngDeclarations: [InputGroupSample6Component],
                 ngImports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
-                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule]
+                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule]
             }),
             shortenComponentPathBy: "/input-group/"
         }));
