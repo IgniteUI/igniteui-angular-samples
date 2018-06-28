@@ -1,7 +1,7 @@
 <div class="sample-wrapper">
     <section class="sample-content">
         <article class="sample-column">
-            <form class="input-group-form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+            <form class="input-group-form" [formGroup]="user" (ngSubmit)="onSubmit()">
                 <h4 class="sample-title">Book your movie ticket</h4>
                 <igx-input-group>
                     <input igxInput name="fullName" type="text" formControlName="fullName"/>
@@ -27,15 +27,21 @@
                     </igx-suffix>
                 </igx-input-group>
                 <div class="igx-datePicker">
-                    <igx-datePicker name="date" (onSelection)="onDateSelection($event)" formControlName="date"></igx-datePicker>
+                    <igx-datePicker name="date" formControlName="date"></igx-datePicker>
                 </div>
                 <div class="igx-time-picker">
-                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" formControlName="dateTime"></igx-time-picker>
+                    <igx-time-picker name="dateTime" formControlName="dateTime"></igx-time-picker>
+                </div>
+                <div class="igx-combo">
+                    <igx-combo #combo1 class="input-container" width="100%"
+                        [data]="dsGenres" type="line" formControlName="genres"
+                        placeholder="Select your favorite genres" searchPlaceholder="Search...">
+                    </igx-combo>
                 </div>
                 <div class="button-wrapper">
-                    <button igxButton="raised" igxRipple type="submit" [disabled]="!reactiveForm.valid">Book</button>
+                    <button igxButton="raised" igxRipple type="submit" [disabled]="!user.valid">Book</button>
                 </div>
             </form>
         </article>
     </section>
-</div>
+</div> 
