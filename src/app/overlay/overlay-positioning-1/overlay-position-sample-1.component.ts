@@ -1,8 +1,8 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxIconModule, IgxOverlayService, IgxSwitchModule,
-    OverlaySettings, PositionSettings, VerticalAlignment
+    HorizontalAlignment, IgxCardModule, IgxIconModule, IgxOverlayService,
+    IgxSwitchModule, OverlaySettings, PositionSettings, VerticalAlignment
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -12,8 +12,6 @@ import {
     providers: [IgxOverlayService]
 })
 export class OverlayPositionSample1Component {
-
-    public modalValue = true;
 
     @ViewChild("directionDemo")
     public directionDemo: ElementRef;

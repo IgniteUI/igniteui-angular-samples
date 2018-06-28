@@ -2,15 +2,17 @@ import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
     CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxIconModule, IgxOverlayService, IgxSwitchModule,
-    IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment
+    HorizontalAlignment, IgxButtonDirective, IgxIconModule, IgxOverlayService,
+    IgxSwitchModule, IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings,
+    VerticalAlignment
 } from "igniteui-angular";
-import { DetachedComponent } from "./detached-component/detached-component.component";
+import { CardSample1Component } from "../../card/card-sample-1/card-sample-1.component";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
-    template: `<div>
-        <button (click)='showOverlay($event)'>
+    template: `<div style="width: 100%;">
+        <button igxButton (click)='showOverlay($event)'>
+            Show Card
         </button>
     </div>`
 })
@@ -32,10 +34,11 @@ export class OverlaySampleMain1Component {
     };
 
     constructor(
-        @Inject(IgxOverlayService) private overlayService
+        @Inject(IgxOverlayService) private overlayService: IgxOverlayService
     ) {
     }
 
     public showOverlay(event) {
+        this.overlayService.show(CardSample1Component, this._overlaySettings);
     }
 }

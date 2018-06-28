@@ -1,21 +1,20 @@
 
 .overlay-sample {
-    padding: 32px;
+    padding: 32px 0px 32px 32px;
     overflow-y: scroll;
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-.container__row > div, .section__row > span, .section__container--wide > span, .section__position-element > div {
+
+.container__row > div, .section__container--wide > span, .section__position-element > div {
     display: inline-block;
 }
-.section__row, .section__row--wide, .container__row, .section__header {
+.section__row--wide, .container__row, .section__header {
     width: 100%;
 }
 
-.section__row, .section__row > span {
+.section__row > span {
     height: 48px;
 }
 .section__row--wide, .section__container--wide > span {
@@ -24,9 +23,9 @@
 }
 
 span:hover {
+    border: 1px solid #e41c77;
     box-sizing: border-box;
     cursor: pointer;
-    border: 1px solid #E417C3
 }
 
 .section__container--wide {
@@ -34,29 +33,16 @@ span:hover {
     display: flex;;
 }
 
-.section__row > span, .section__container--wide > span {
+.section__container--wide > span {
     text-align: center;
     vertical-align: middle;
     line-height: 12px;
     font-weight: 500;
 }
-.section__row > span {
-    width: 48px;
-    box-sizing: border-box;
-    padding-top: 12px;
-}
 
 .section__container--wide > span {
     width: 80px;
     padding-top: 16px;
-}
-
-.section__row > span > img {
-    align-self: center;
-    width: 24px;
-    height: 24px;
-    max-width: 100%;
-    max-height: 100%;
 }
 
 .section__position-element, .section__position-header {
@@ -77,11 +63,6 @@ span:hover {
 .overlay__element {
     width: 144px;
     height: 144px;
-    display: flex;
-    background-color: white;
-    border: 2px dashed #a3a3a3;
-    box-sizing: border-box;
-    text-align: center;
 }
 .overlay__element > .overlay__element__content {
     margin-left: 10%;

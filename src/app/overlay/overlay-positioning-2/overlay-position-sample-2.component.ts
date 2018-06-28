@@ -1,17 +1,17 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxIconModule, IgxOverlayService, IgxSwitchModule,
-    OverlaySettings, PositionSettings, VerticalAlignment
+    HorizontalAlignment, IgxCardModule, IgxIconModule, IgxOverlayService,
+    IgxSwitchModule, OverlaySettings, PositionSettings, VerticalAlignment
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
-    styleUrls: ["./overlay-sample.component.scss"],
-    templateUrl: "./overlay-sample.component.html",
+    styleUrls: ["./overlay-position-sample-2.component.scss"],
+    templateUrl: "./overlay-position-sample-2.component.html",
     providers: [IgxOverlayService]
 })
-export class OverlaySampleComponent {
+export class OverlayPositionSample2Component {
 
     public modalValue = true;
 
