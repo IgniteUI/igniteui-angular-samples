@@ -131,6 +131,7 @@ import { InputGroupSample3Component } from "./input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
+import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
 import {
     LinearProgressbarSample1Component
@@ -358,6 +359,8 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
         RemoteFilteringSampleComponent,
+        ReactiveFormsSampleComponent,
+        RadioGroupSampleComponent,
         GridEditingSampleComponent
     ],
     imports: [
@@ -369,6 +372,7 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         BrowserAnimationsModule,
         ReactiveFormsModule,
         FormsModule,
+        ReactiveFormsModule,
         IgxGridModule.forRoot(),
         IgxCarouselModule,
         IgxComboModule,
