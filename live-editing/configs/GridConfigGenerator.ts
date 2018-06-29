@@ -109,12 +109,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridGroupBySampleComponent,
             additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
-                    IgxRippleModule, IgxSwitchModule, GridGroupBySampleComponent,
-                    LocalService, IgxIconModule, IgxBadgeModule],
+                imports: [IgxButtonModule, IgxGridModule,
+                    IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
                 ngDeclarations: [GridGroupBySampleComponent],
-                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
-                    IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule, IgxBadgeModule]
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(), IgxIconModule, IgxBadgeModule]
             })
         }));
 
