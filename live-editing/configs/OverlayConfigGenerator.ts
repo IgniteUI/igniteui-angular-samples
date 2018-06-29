@@ -29,8 +29,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxCardModule, CardSample1Component,
                     OverlaySampleMain1Component, IgxButtonDirective],
+                ngEntryComponents: [CardSample1Component],
                 ngProviders: [IgxOverlayService],
-                ngDeclarations: [OverlaySampleMain1Component],
+                ngDeclarations: [OverlaySampleMain1Component, CardSample1Component],
                 ngImports: [IgxIconModule, IgxCardModule]
             })
         }));
@@ -44,8 +45,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
                 imports: [IgxIconModule, IgxOverlayService, OverlaySampleMain2Component,
                     CardSample1Component, IgxSwitchModule, IgxCardModule,
                     IgxButtonDirective],
+                ngEntryComponents: [CardSample1Component],
                 ngProviders: [IgxOverlayService],
-                ngDeclarations: [OverlaySampleMain2Component],
+                ngDeclarations: [OverlaySampleMain2Component, CardSample1Component],
                 ngImports: [IgxIconModule, IgxCardModule]
             })
         }));
