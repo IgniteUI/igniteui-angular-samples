@@ -194,6 +194,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
@@ -413,7 +414,8 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
-        IgxColumnHidingModule
+        IgxColumnHidingModule,
+        GaugeSamplesModule.forRoot()
     ],
     providers: [
         DataService,
