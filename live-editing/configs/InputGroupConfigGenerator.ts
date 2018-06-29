@@ -1,4 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IgxButtonModule, IgxComboModule, IgxDatePickerModule, IgxIconModule,
     IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule } from "igniteui-angular";
 import {
@@ -59,11 +60,12 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             component: ReactiveFormsSampleComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
-                     IgxRippleModule, InputGroupSample6Component, IgxDatePickerModule, IgxTimePickerModule,
-                     IgxComboModule],
+                     IgxRippleModule, ReactiveFormsSampleComponent, IgxDatePickerModule, IgxTimePickerModule,
+                     IgxComboModule, FormsModule, ReactiveFormsModule],
                 ngDeclarations: [ReactiveFormsSampleComponent],
                 ngImports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
-                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule]
+                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule,
+                     FormsModule, ReactiveFormsModule]
             }),
             shortenComponentPathBy: "/input-group/"
         }));
