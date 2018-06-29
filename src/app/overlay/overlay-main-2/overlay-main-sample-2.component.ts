@@ -1,21 +1,25 @@
-import { CommonModule } from "@angular/common";
+
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
-    AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
-    CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxButtonDirective, IgxIconModule, IgxOverlayService,
-    IgxSwitchModule, IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings,
-    VerticalAlignment
-} from "igniteui-angular";
+    ConnectedPositioningStrategy, IgxButtonDirective, IgxIconModule, IgxOverlayService } from "igniteui-angular";
 import { CardSample1Component } from "../../card/card-sample-1/card-sample-1.component";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
-    template: `<div style="width: 100%;">
-        <button #buttonElement igxButton (click)='showOverlay($event)'>
-            Show Card
+    template: `<div class="content">
+        <button class="igx-button--raised" #buttonElement igxButton (click)='toggleOverlay()'>
+            Toggle Card
         </button>
-    </div>`
+    </div>`,
+    styles: [`
+        .content {
+            width: 100%;
+            height: 100%;
+        } button {
+            margin-top: 10%;
+            margin-left: 45%;
+            width: 10%;
+        }`    ]
 })
 export class OverlaySampleMain2Component {
 
@@ -24,33 +28,20 @@ export class OverlaySampleMain2Component {
     @ViewChild("buttonElement")
     private buttonElement: ElementRef;
 
-    private _defaultPositionSettings: PositionSettings = {
-        target: this.buttonElement ? this.buttonElement.nativeElement : null,
-        horizontalDirection: HorizontalAlignment.Right,
-        horizontalStartPoint: HorizontalAlignment.Left,
-        verticalDirection: VerticalAlignment.Bottom,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
-
-    private _overlaySettings: OverlaySettings = {
-        positionStrategy: new ConnectedPositioningStrategy(this._defaultPositionSettings),
-        scrollStrategy: new AbsoluteScrollStrategy(),
-        modal: false,
-        closeOnOutsideClick: false
-    };
-
     constructor(
         @Inject(IgxOverlayService) private overlayService: IgxOverlayService
     ) {
     }
 
-    public showOverlay(event) {
+    public toggleOverlay() {
         if (this._cardHidden) {
             const positionStrategy = new ConnectedPositioningStrategy({
                 target: this.buttonElement.nativeElement
             });
-            const overlaySettings = Object.assign(this._overlaySettings, { positionStrategy });
-            this._componentString = this.overlayService.show(CardSample1Component, overlaySettings);
+            this._componentString = this.overlayService.show(CardSample1Component, {
+                positionStrategy,
+                modal: false,
+                closeOnOutsideClick: false });
         } else {
             this.overlayService.hide(this._componentString);
         }

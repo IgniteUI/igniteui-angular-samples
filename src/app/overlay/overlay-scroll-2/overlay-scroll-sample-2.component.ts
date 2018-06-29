@@ -1,9 +1,7 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
-    AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
-    CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxCardModule, IgxIconModule, IgxOverlayService,
-    IgxSwitchModule, IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment
+    AbsoluteScrollStrategy, BlockScrollStrategy, CloseScrollStrategy, IgxCardModule,
+    IgxIconModule, IgxOverlayService, IgxSwitchModule, NoOpScrollStrategy
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -23,12 +21,6 @@ export class OverlayScrollSample2Component {
     @ViewChild("mainContainer")
     public mainContainer: ElementRef;
 
-    private _overlaySettings: OverlaySettings = {
-        positionStrategy: new GlobalPositionStrategy(),
-        scrollStrategy: new AbsoluteScrollStrategy(),
-        modal: true,
-        closeOnOutsideClick: true
-    };
     constructor(
         @Inject(IgxOverlayService) public overlay: IgxOverlayService
     ) { }
@@ -49,10 +41,9 @@ export class OverlayScrollSample2Component {
             default:
                 scrollStrategy = new NoOpScrollStrategy();
         }
-        const showSettings = Object.assign(Object.assign({}, this._overlaySettings), {
+        this.overlay.show(this.overlayDemo, {
             scrollStrategy,
             modal: false
         });
-        this.overlay.show(this.overlayDemo, showSettings);
     }
 }

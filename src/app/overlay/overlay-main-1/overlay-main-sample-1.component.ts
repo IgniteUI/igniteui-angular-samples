@@ -1,44 +1,33 @@
-import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import {
-    AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
-    CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxButtonDirective, IgxIconModule, IgxOverlayService,
-    IgxSwitchModule, IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings,
-    VerticalAlignment
-} from "igniteui-angular";
+    IgxButtonDirective,
+    IgxIconModule, IgxOverlayService, OverlaySettings } from "igniteui-angular";
 import { CardSample1Component } from "../../card/card-sample-1/card-sample-1.component";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
-    template: `<div style="width: 100%;">
-        <button igxButton (click)='showOverlay($event)'>
+    template: `<div class="content">
+        <button igxButton class="igx-button--raised" (click)='showOverlay()'>
             Show Card
         </button>
-    </div>`
+    </div>`,
+    styles: [`.content {
+        width: 100%;
+        height: 100%;
+    } button {
+        margin-top: 10%;
+        margin-left: 45%;
+        width: 10%;
+    }`]
 })
 export class OverlaySampleMain1Component {
-
-    private _defaultPositionSettings: PositionSettings = {
-        target: null,
-        horizontalDirection: HorizontalAlignment.Center,
-        horizontalStartPoint: HorizontalAlignment.Center,
-        verticalDirection: VerticalAlignment.Middle,
-        verticalStartPoint: VerticalAlignment.Middle
-    };
-
-    private _overlaySettings: OverlaySettings = {
-        positionStrategy: new GlobalPositionStrategy(),
-        scrollStrategy: new AbsoluteScrollStrategy(),
-        modal: true,
-        closeOnOutsideClick: true
-    };
 
     constructor(
         @Inject(IgxOverlayService) private overlayService: IgxOverlayService
     ) {
     }
 
-    public showOverlay(event) {
-        this.overlayService.show(CardSample1Component, this._overlaySettings);
+    public showOverlay() {
+        this.overlayService.show(CardSample1Component);
     }
 }
