@@ -1,6 +1,6 @@
 <div class="sample-wrapper drop-down-wrapper">
     <button igxButton="raised" (click)="toggleDropDown($event)">Options</button>
-    <igx-drop-down>
+    <igx-drop-down igxDropDownItemNavigation>
         <igx-drop-down-item *ngFor="let item of items">
             {{ item.field }}
         </igx-drop-down-item>
