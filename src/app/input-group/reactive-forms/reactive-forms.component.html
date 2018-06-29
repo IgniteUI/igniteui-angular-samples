@@ -1,10 +1,10 @@
 <div class="sample-wrapper">
     <section class="sample-content">
         <article class="sample-column">
-            <form class="input-group-form">
+            <form class="input-group-form" [formGroup]="user" (ngSubmit)="onSubmit()">
                 <h4 class="sample-title">Book your movie ticket</h4>
                 <igx-input-group>
-                    <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName" required="required" />
+                    <input igxInput name="fullName" type="text" formControlName="fullName"/>
                     <label igxLabel for="fullName">Full Name</label>
                     <igx-suffix>
                         <igx-icon name="person"></igx-icon>
@@ -13,7 +13,7 @@
                 <igx-input-group>
                     <igx-prefix>+359</igx-prefix>
                     <label igxLabel for="phone">Phone</label>
-                    <input igxInput name="phone" type="text" [(ngModel)]="user.phone" />
+                    <input igxInput name="phone" type="text" formControlName="phone"/>
                     <igx-suffix>
                         <igx-icon name="phone"></igx-icon>
                     </igx-suffix>
@@ -21,27 +21,27 @@
                 </igx-input-group>
                 <igx-input-group>
                     <label igxLabel for="email">Email address</label>
-                    <input igxInput name="email" type="email" [(ngModel)]="user.email" required />
+                    <input igxInput name="email" type="email" formControlName="email"/>
                     <igx-suffix>
                         <igx-icon name="email"></igx-icon>
                     </igx-suffix>
                 </igx-input-group>
                 <div class="igx-combo">
-                    <igx-combo #combo1 name="genres" class="input-container" width="100%" [itemsMaxHeight]="130"
-                        [data]="genres" [(ngModel)]="user.genres"
-                        placeholder="Select your favorite genres" searchPlaceholder="Search..." required [type]='"line"'>
+                    <igx-combo #combo1 class="input-container" width="100%" [itemsMaxHeight]="130"
+                        [data]="dsGenres" type="line" formControlName="genres"
+                        placeholder="Select your favorite genres" searchPlaceholder="Search...">
                     </igx-combo>
                 </div>
                 <div class="igx-datePicker">
-                    <igx-datePicker name="date" (onSelection)="onDateSelection($event)" ></igx-datePicker>
+                    <igx-datePicker name="date" formControlName="date"></igx-datePicker>
                 </div>
                 <div class="igx-time-picker">
-                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" ></igx-time-picker>
+                    <igx-time-picker name="dateTime" formControlName="dateTime"></igx-time-picker>
                 </div>
                 <div class="button-wrapper">
-                    <button igxButton="raised" igxRipple>Book</button>
+                    <button igxButton="raised" igxRipple type="submit" [disabled]="!user.valid">Book</button>
                 </div>
             </form>
         </article>
     </section>
-</div>
+</div> 
