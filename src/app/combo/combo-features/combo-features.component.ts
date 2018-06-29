@@ -13,7 +13,7 @@ export class ComboFeatures {
 
     public prevRequest: any;
 
-    @ViewChild("combo1", { read: IgxComboComponent })
+    @ViewChild("combo1", { read: IgxComboComponent }) public combo1: IgxComboComponent;
     public lData: any[];
     public rData: any;
 
@@ -23,10 +23,8 @@ export class ComboFeatures {
     public filterable = true;
     public customValues = true;
     public disabled = false;
-    private combo1: IgxComboComponent;
 
-    @ViewChild("combo2", { read: IgxComboComponent })
-    private combo2: IgxComboComponent;
+    @ViewChild("combo2", { read: IgxComboComponent }) public combo2: IgxComboComponent;
 
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) {}
 

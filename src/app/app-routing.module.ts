@@ -148,6 +148,7 @@ import { InputGroupSample3Component } from "./input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
+import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
 import {
     LinearProgressbarSample1Component
@@ -786,6 +787,10 @@ export const appRoutes: Routes = [
     {
         component: InputGroupSample6Component,
         path: "input-group-sample-6"
+    },
+    {
+        component: ReactiveFormsSampleComponent,
+        path: "reactive-forms"
     },
     {
         component: CategoryChartOverviewComponent,
