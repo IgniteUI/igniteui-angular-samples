@@ -214,8 +214,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
 
 @NgModule({
     bootstrap: [AppComponent],
-    entryComponents: [MyDynamicCardComponent],
-    // tslint:disable-next-line:object-literal-sort-keys
     declarations: [
         EmailFilterPipe,
         AppComponent,

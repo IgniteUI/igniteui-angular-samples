@@ -27,9 +27,8 @@ export class OverlayConfigGenerator implements IConfigGenerator {
                 "/src/app/card/card-sample-1/card-sample-1.component.scss",
                 "/src/app/card/card-sample-1/card-sample-1.component.html"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlaySampleMain1Component,
-                    CardSample1Component, IgxSwitchModule, IgxCardModule,
-                    IgxButtonDirective],
+                imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxCardModule, CardSample1Component,
+                    OverlaySampleMain1Component, IgxButtonDirective],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlaySampleMain1Component],
                 ngImports: [IgxIconModule, IgxCardModule]
