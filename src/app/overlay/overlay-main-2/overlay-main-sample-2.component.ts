@@ -6,20 +6,8 @@ import { CardSample1Component } from "../../card/card-sample-1/card-sample-1.com
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
-    template: `<div class="content">
-        <button class="igx-button--raised" #buttonElement igxButton (click)='toggleOverlay()'>
-            Toggle Card
-        </button>
-    </div>`,
-    styles: [`
-        .content {
-            width: 100%;
-            height: 100%;
-        } button {
-            margin-top: 10%;
-            margin-left: 45%;
-            width: 10%;
-        }`    ]
+    templateUrl: `./overlay-main-sample-2.component.html`,
+    styleUrls: [`./overlay-main-sample-2.component.scss`]
 })
 export class OverlaySampleMain2Component {
 

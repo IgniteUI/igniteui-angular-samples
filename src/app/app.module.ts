@@ -168,10 +168,10 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
+import { MyDynamicCardComponent } from "./overlay/overlay-dynamic-card/overlay-dynamic-card.component";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
 import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
-import { OverlaySampleComponent } from "./overlay/overlay-main/overlay-sample.component";
 import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1/overlay-position-sample-1.component";
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
@@ -213,6 +213,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
 
 @NgModule({
     bootstrap: [AppComponent],
+    entryComponents: [MyDynamicCardComponent],
+    // tslint:disable-next-line:object-literal-sort-keys
     declarations: [
         EmailFilterPipe,
         AppComponent,
@@ -293,7 +295,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioSample2Component,
         IconSample1Component,
         ToggleComponent,
-        OverlaySampleComponent,
+        MyDynamicCardComponent,
         OverlaySampleMain1Component,
         OverlaySampleMain2Component,
         OverlaySampleMain3Component,

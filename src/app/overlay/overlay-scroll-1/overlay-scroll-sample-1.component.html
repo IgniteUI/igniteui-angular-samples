@@ -1,11 +1,9 @@
 <div class='overlay-sample' #mainContainer>
     <div class='container'>
         <div class="container__row">
-            <div style='width: 100%; padding-left: 16px;'>
-                <igx-switch [(ngModel)]='modalValue'>
-                    Modal
-                </igx-switch>
-            </div>
+            <igx-switch [(ngModel)]='modalValue'>
+                Modal
+            </igx-switch>
             <div class='section__row--wide'>
                 <div class="section__container--wide" #modalDemo>
                     <span (click)="onClickModal($event, 'auto')">

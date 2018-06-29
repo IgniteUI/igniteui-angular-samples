@@ -174,7 +174,6 @@ import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
 import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
-import { OverlaySampleComponent } from "./overlay/overlay-main/overlay-sample.component";
 import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1/overlay-position-sample-1.component";
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
@@ -614,10 +613,6 @@ export const appRoutes: Routes = [
     {
         component: ButtonsSample7Component,
         path: "buttons-sample-7"
-    },
-    {
-        component: OverlaySampleComponent,
-        path: "overlay-sample"
     },
     {
         component: OverlaySampleMain1Component,

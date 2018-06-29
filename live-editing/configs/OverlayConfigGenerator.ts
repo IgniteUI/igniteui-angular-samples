@@ -1,11 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxIconModule, IgxOverlayService, IgxSwitchModule
+    IgxButtonDirective, IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule
 } from "igniteui-angular";
+import { CardSample1Component } from "../../src/app/card/card-sample-1/card-sample-1.component";
 import { OverlaySampleMain1Component } from "../../src/app/overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "../../src/app/overlay/overlay-main-2/overlay-main-sample-2.component";
-import { OverlaySampleMain3Component } from "../../src/app/overlay/overlay-main-3/overlay-main-sample-3.component";
-import { OverlaySampleComponent } from "../../src/app/overlay/overlay-main/overlay-sample.component";
 import { OverlayPositionSample1Component
 } from "../../src/app/overlay/overlay-positioning-1/overlay-position-sample-1.component";
 import { OverlayPositionSample2Component
@@ -22,64 +21,75 @@ export class OverlayConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // overlay sample 1
         configs.push(new Config({
-            component: OverlaySampleComponent,
+            component: OverlaySampleMain1Component,
+            additionalFiles: ["/src/app/card/card-sample-1/card-sample-1.component.ts",
+                "/src/app/card/card-sample-1/card-sample-1.component.scss",
+                "/src/app/card/card-sample-1/card-sample-1.component.html"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlaySampleComponent, IgxSwitchModule],
+                imports: [IgxIconModule, IgxOverlayService, OverlaySampleMain1Component,
+                    CardSample1Component, IgxSwitchModule, IgxCardModule,
+                    IgxButtonDirective],
                 ngProviders: [IgxOverlayService],
-                ngDeclarations: [OverlaySampleComponent],
-                ngImports: [IgxIconModule, IgxSwitchModule]
+                ngDeclarations: [OverlaySampleMain1Component],
+                ngImports: [IgxIconModule, IgxCardModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: OverlaySampleMain2Component,
+            additionalFiles: ["/src/app/card/card-sample-1/card-sample-1.component.ts",
+            "/src/app/card/card-sample-1/card-sample-1.component.scss",
+            "/src/app/card/card-sample-1/card-sample-1.component.html"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxOverlayService, OverlaySampleMain2Component,
+                    CardSample1Component, IgxSwitchModule, IgxCardModule,
+                    IgxButtonDirective],
+                ngProviders: [IgxOverlayService],
+                ngDeclarations: [OverlaySampleMain2Component],
+                ngImports: [IgxIconModule, IgxCardModule]
             })
         }));
 
         configs.push(new Config({
             component: OverlayPositionSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlaySampleComponent, IgxSwitchModule],
+                imports: [IgxIconModule, IgxOverlayService, OverlayPositionSample1Component, IgxCardModule],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlayPositionSample1Component],
-                ngImports: [IgxIconModule, IgxSwitchModule]
+                ngImports: [IgxIconModule, IgxCardModule]
             })
         }));
 
         configs.push(new Config({
             component: OverlayPositionSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlaySampleComponent, IgxSwitchModule],
+                imports: [IgxIconModule, IgxOverlayService, OverlayPositionSample2Component, IgxCardModule],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlayPositionSample2Component],
-                ngImports: [IgxIconModule, IgxSwitchModule]
+                ngImports: [IgxIconModule, IgxCardModule]
             })
         }));
 
         configs.push(new Config({
             component: OverlayScrollSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlaySampleComponent, IgxSwitchModule],
+                imports: [IgxIconModule, IgxOverlayService, OverlayScrollSample2Component,
+                     IgxSwitchModule, IgxCardModule],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlayScrollSample2Component],
-                ngImports: [IgxIconModule, IgxSwitchModule]
+                ngImports: [IgxIconModule, IgxSwitchModule, IgxCardModule]
             })
         }));
 
         configs.push(new Config({
             component: OverlayScrollSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlaySampleComponent, IgxSwitchModule],
+                imports: [IgxIconModule, IgxOverlayService, OverlayScrollSample1Component,
+                     IgxSwitchModule, IgxCardModule],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlayScrollSample1Component],
-                ngImports: [IgxIconModule, IgxSwitchModule]
-            })
-        }));
-
-        configs.push(new Config({
-            component: OverlayScrollSample1Component,
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlaySampleComponent, IgxSwitchModule],
-                ngProviders: [IgxOverlayService],
-                ngDeclarations: [OverlayScrollSample1Component],
-                ngImports: [IgxIconModule, IgxSwitchModule]
+                ngImports: [IgxIconModule, IgxSwitchModule, IgxCardModule]
             })
         }));
         return configs;
