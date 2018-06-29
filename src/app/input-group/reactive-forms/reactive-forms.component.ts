@@ -1,6 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule , Validators } from "@angular/forms";
-import { IgxComboComponent } from "igniteui-angular";
+import { Component } from "@angular/core";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
     selector: "app-combo",
