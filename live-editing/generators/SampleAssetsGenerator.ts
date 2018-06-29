@@ -9,7 +9,9 @@ import { CardConfigGenerator } from "./../configs/CardConfigGenerator";
 import { CarouselConfigGenerator } from "./../configs/CarouselConfigGenerator";
 import { CategoryChartConfigGenerator } from "./../configs/CategoryChartConfigGenerator";
 import { CheckboxConfigGenerator } from "./../configs/CheckboxConfigGenerator";
+import { ChipConfigGenerator } from "./../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./../configs/CircularProgressbarConfigGenerator";
+import { ComboConfigGenerator } from "./../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "./../configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
 import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
@@ -67,8 +69,8 @@ const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
-    CategoryChartConfigGenerator, CheckboxConfigGenerator, CircularProgressbarConfigGenerator,
-    DatePickerConfigGenerator, DialogConfigGenerator, DropDownConfigGenerator,
+    CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
+    ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator, DropDownConfigGenerator,
     ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
