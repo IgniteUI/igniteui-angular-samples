@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxListComponent } from 'igniteui-angular';
+import { IgxListComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-list-sample-6",
@@ -9,16 +9,16 @@ import { IgxListComponent } from 'igniteui-angular';
 export class ListSample6Component {
 
     @ViewChild('fruitList')
-    fruitList: IgxListComponent;
+    public fruitList: IgxListComponent;
 
-    fruitsData: string[] = [];
+    public fruitsData: string[] = [];
 
     constructor() { }
 
-    loadFruits() {
+    public loadFruits() {
         this.fruitList.isLoading = true;
         setTimeout(() => {
-            let availableFruits: string[] = ['banana', 'orange', 'apple', 'strawberry', 'pear'];
+            const availableFruits: string[] = ["banana", "orange", "apple", "strawberry", "pear"];
             availableFruits.forEach((fruit) => { this.fruitsData.push(fruit); });
             this.fruitList.isLoading = false;
         }, 1000);
