@@ -3,11 +3,9 @@
         {{ fruit }}
     </igx-list-item>
     <ng-template igxEmptyList>
-        <p class="empty">
-            <button type="button" igxButton="raised" (click)="loadFruits()">Load data</button>
-        </p>
+        <div class="center"><button type="button" igxButton="raised" (click)="loadFruits()">Load data</button></div>
     </ng-template>
     <ng-template igxDataLoading>
-        <p class="loading">Patience, we are currently loading your data...</p>
+        <div class="center"><span>Patience, we are currently loading your data...</span></div>
     </ng-template>
 </igx-list>
