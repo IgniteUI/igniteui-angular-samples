@@ -243,11 +243,19 @@ export class SampleAssetsGenerator extends Generator {
             ngProviders = this._formatAppModuleTypes(appModuleNgProviders, false, 2, "\r\n\t");
         }
 
+        let ngEntryComponents = "";
+        if (config.appModuleConfig.ngEntryComponents !== undefined &&
+            config.appModuleConfig.ngEntryComponents.length > 0) {
+            let appModuleNgEntryComponents: string[] = config.appModuleConfig.ngEntryComponents.map((d) => d.name);
+            ngEntryComponents = this._formatAppModuleTypes(appModuleNgEntryComponents, false, 2, "\r\n\t");
+        }
+
         appModuleTemplate = appModuleTemplate
             .replace("{imports}", imports)
             .replace("{ngDeclarations}", ngDeclarations)
             .replace("{ngImports}", ngImports)
-            .replace("{ngProviders}", ngProviders);
+            .replace("{ngProviders}", ngProviders)
+            .replace("{ngEntryComponents}", ngEntryComponents);
 
         return appModuleTemplate;
     }
@@ -335,7 +343,7 @@ export class SampleAssetsGenerator extends Generator {
             }
         }
 
-        if (suffixIfMultiple) {
+        if (types.length > 1 && suffixIfMultiple) {
             formattedTypes = formattedTypes + suffixIfMultiple;
         }
 
