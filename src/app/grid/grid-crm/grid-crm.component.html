@@ -44,7 +44,7 @@
 
                 <div class="operationsContainer">
                     <div class="relative-container">
-                        <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefHiding"><igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}}</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
+                        <button #hidingButton class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="toggleHiding()"><igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}}</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
                         <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
                             <div class="toggle-section">
                                 <h4 class="dd-title">Hidden columns:</h4>
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="relative-container">
-                        <button class="toggle-button" igxButton="flat" igxRipple="#09f" [igxToggleAction]="toggleRefPinning"><igx-icon class="pin-icon" fontSet="fas" iconName="fa-thumbtack"></igx-icon><span>{{pinnedColsLength}}</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
+                        <button #pinningButton class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="togglePinning()"><igx-icon class="pin-icon" fontSet="fas" iconName="fa-thumbtack"></igx-icon><span>{{pinnedColsLength}}</span><igx-icon class="header-icon">arrow_drop_down</igx-icon></button>
                         <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
                             <div class="toggle-section">
                                 <h4 class="dd-title">Pinned columns:</h4>
