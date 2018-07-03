@@ -34,7 +34,7 @@ export class ComboFeatures {
     }
 
     public ngAfterViewInit() {
-        this.remoteService.getData(this.combo2.virtualizationState, (data) => {
+        this.remoteService.getData(this.combo2.virtualizationState, null, (data) => {
             this.combo2.totalItemCount = data.Count;
         });
     }
@@ -50,9 +50,15 @@ export class ComboFeatures {
             this.prevRequest.unsubscribe();
         }
 
-        this.prevRequest = this.remoteService.getData(this.combo2.virtualizationState, () => {
+        this.prevRequest = this.remoteService.getData(this.combo2.virtualizationState, null, () => {
             this.cdr.detectChanges();
             this.combo2.triggerCheck();
+        });
+    }
+
+    public searchInput(searchText) {
+        this.remoteService.getData(this.combo2.virtualizationState, searchText,  (data) => {
+            this.combo2.totalItemCount = searchText ? data.Results.length : data.Count;
         });
     }
 }
