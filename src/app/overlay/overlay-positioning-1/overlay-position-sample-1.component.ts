@@ -1,7 +1,7 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
-    ConnectedPositioningStrategy, GlobalPositionStrategy, HorizontalAlignment,
-    IgxCardModule, IgxIconModule, IgxOverlayService, VerticalAlignment, AutoPositionStrategy } from "igniteui-angular";
+    AutoPositionStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
+    HorizontalAlignment, IgxCardModule, IgxIconModule, IgxOverlayService, VerticalAlignment } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
