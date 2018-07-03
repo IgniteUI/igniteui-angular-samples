@@ -1,0 +1,67 @@
+
+<div class="sample-flex-container">
+    <div class="wrapper">
+        <h3>Toggle Features</h3>
+        <div class="combo-container">
+            <igx-combo #combo1 class="input-container" width="270px"
+                [data]="lData" [displayKey]="'field'" [valueKey]="'field'"
+                placeholder="Location(s)" searchPlaceholder="Search..."
+                [allowCustomValues]="customValues" (onAddition)="handleAddition($event)"
+                [filterable]="filterable"
+                [itemsMaxHeight]="250"
+                [disabled]="disabled">
+            </igx-combo>
+        </div>
+        <div class="switch-container">
+            <igx-switch [(ngModel)]="filterable">Enable Filtering</igx-switch><br />
+            <igx-switch [(ngModel)]="customValues">Allow Custom Values</igx-switch><br />
+            <igx-switch (change)="enableGroups($event)">Enable Grouping</igx-switch><br />
+            <igx-switch [(ngModel)]="disabled">Disabled</igx-switch>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h3>Templating</h3>
+        <div class="combo-container">
+            <igx-combo #combo3 class="input-container" width="300px"
+                [data]="lData" [valueKey]="'field'"
+                placeholder="Location(s)"
+                [itemsMaxHeight]="250"
+                searchPlaceholder="Search...">
+
+                <ng-template #itemTemplate let-display let-key="valueKey">
+                    <div class="item">
+                        <span class="state">{{ display[key] }} - </span>
+                        <span class="region">{{ display.region }}</span>
+                    </div>
+                </ng-template>
+
+                <ng-template #headerTemplate>
+                    <div class="header-class">State - Region</div>
+                </ng-template>
+
+                <ng-template #footerTemplate>
+                    <div class="footer-class">Infragsitics 2018</div>
+                </ng-template>
+
+                <igx-combo>
+                    <ng-template #emptyTemplate>
+                        <span class="empty-class">No available states</span>
+                    </ng-template>
+                </igx-combo>
+            </igx-combo>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h3>Remote Binding</h3>
+        <div class="combo-container">
+            <igx-combo #combo2 class="input-container" width="300px" [itemsMaxHeight]="250"
+                [data]="rData | async" [valueKey]="'ID'" [displayKey]="'ProductName'"
+                (onDataPreLoad)="dataLoading($event)" (onSearchInput)="searchInput($event)"
+                placeholder="Location(s)" searchPlaceholder="Search..." [filterable]="false">
+            </igx-combo>
+        </div>
+    </div>
+
+</div>

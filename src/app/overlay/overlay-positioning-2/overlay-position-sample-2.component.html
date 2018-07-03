@@ -1,0 +1,53 @@
+<div class='overlay-sample' #mainContainer>
+    <div class='container'>
+        <div class='container__row'>
+            <div class='section__position-element' #positionDemo>
+                <div class='section__row'>
+                    <span (click)="onClickPosition(-1, -1)">
+                        <img src='assets/images/overlay/top_left.png'>
+                    </span>
+                    <span (click)="onClickPosition(-0.5, -1)">
+                        <img src='assets/images/overlay/top_center.png'>
+                    </span>
+                    <span (click)="onClickPosition(0, -1)">
+                        <img src='assets/images/overlay/top_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickPosition(-1, -0.5)">
+                        <img src='assets/images/overlay/center_left.png'>
+                    </span>
+                    <span (click)="onClickPosition(-0.5, -0.5)">
+                        <img src='assets/images/overlay/center.png'>
+                    </span>
+                    <span (click)="onClickPosition(0, -0.5)">
+                        <img src='assets/images/overlay/center_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickPosition(-1, 0)">
+                        <img src='assets/images/overlay/bottom_left.png'>
+                    </span>
+                    <span (click)="onClickPosition(-0.5, 0)">
+                        <img src='assets/images/overlay/bottom_center.png'>
+                    </span>
+                    <span (click)="onClickPosition(0, 0)">
+                        <img src='assets/images/overlay/bottom_right.png'>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container'>
+        <div class="overlay__element" #overlayDemo>
+            <igx-card>
+                <igx-card-header>
+                    <h3 class="igx-card-header__title">Overlay</h3>
+                </igx-card-header>
+                <igx-card-content>
+                    <p class="igx-card-content__text">Click on the positioning settings to dynamically re-attach this element.</p>
+                </igx-card-content>
+            </igx-card>
+        </div>
+    </div>
+</div>

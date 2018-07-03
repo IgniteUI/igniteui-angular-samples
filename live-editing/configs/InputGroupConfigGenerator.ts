@@ -1,5 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxDatePickerModule, IgxIconModule,
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { IgxButtonModule, IgxComboModule, IgxDatePickerModule, IgxIconModule,
     IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule } from "igniteui-angular";
 import {
     InputGroupSample2Component
@@ -10,6 +11,7 @@ import {
 import {
     InputGroupSample6Component
 } from "../../src/app/input-group/input-group-sample-6/input-group-sample-6.component";
+import { ReactiveFormsSampleComponent } from "../../src/app/input-group/reactive-forms/reactive-forms.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -45,10 +47,25 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
             component: InputGroupSample6Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
-                     IgxRippleModule, InputGroupSample6Component, IgxDatePickerModule, IgxTimePickerModule],
+                     IgxRippleModule, InputGroupSample6Component, IgxDatePickerModule, IgxTimePickerModule,
+                     IgxComboModule],
                 ngDeclarations: [InputGroupSample6Component],
                 ngImports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
-                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule]
+                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule]
+            }),
+            shortenComponentPathBy: "/input-group/"
+        }));
+
+        configs.push(new Config({
+            component: ReactiveFormsSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
+                     IgxRippleModule, ReactiveFormsSampleComponent, IgxDatePickerModule, IgxTimePickerModule,
+                     IgxComboModule, FormsModule, ReactiveFormsModule],
+                ngDeclarations: [ReactiveFormsSampleComponent],
+                ngImports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
+                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule,
+                     FormsModule, ReactiveFormsModule]
             }),
             shortenComponentPathBy: "/input-group/"
         }));

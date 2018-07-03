@@ -1,0 +1,17 @@
+<div>
+    <label>Choose a fruit and submit your choice:</label>
+    <form [formGroup]="fruitsForm" (ngSubmit)="onSubmit()">
+        <igx-input-group>
+            <input igxInput name="fullName" type="text" formControlName="fullName" required />
+        </igx-input-group>
+
+        <igx-radio-group name="fruitsRadioGroup" formControlName="favoriteFruit">
+            <igx-radio class="radio-sample" *ngFor="let fruit of fruits" value="{{fruit}}">
+                {{fruit}}
+            </igx-radio>
+        </igx-radio-group>
+        <button igxButton="raised" igxRipple type="submit">Submit</button>
+        <button igxButton="raised" igxRipple type="button" (click)="onReset()">Reset</button>
+    </form>
+    <label igxLabel *ngIf="newModel">{{newModel.fullName}} favourite fruit is {{newModel.favFruit}}.</label>
+</div>

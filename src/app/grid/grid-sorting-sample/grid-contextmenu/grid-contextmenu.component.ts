@@ -20,7 +20,7 @@ export class GridContextmenuComponent implements OnInit {
     constructor() { }
 
     public Sort(eventArgs) {
-        this.cell.grid.sort(this.cell.column.field, SortingDirection.Asc, true);
+        this.cell.grid.sort({fieldName: this.cell.column.field, dir: SortingDirection.Asc, ignoreCase: true});
     }
 
     public ClearSort(eventArgs) {

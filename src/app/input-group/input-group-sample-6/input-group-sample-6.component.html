@@ -26,6 +26,12 @@
                         <igx-icon name="email"></igx-icon>
                     </igx-suffix>
                 </igx-input-group>
+                <div class="igx-combo">
+                    <igx-combo #combo1 name="genres" class="input-container" width="100%" [itemsMaxHeight]="130"
+                        [data]="genres" [(ngModel)]="user.genres"
+                        placeholder="Select your favorite genres" searchPlaceholder="Search..." required [type]='"line"'>
+                    </igx-combo>
+                </div>
                 <div class="igx-datePicker">
                     <igx-datePicker name="date" (onSelection)="onDateSelection($event)" ></igx-datePicker>
                 </div>

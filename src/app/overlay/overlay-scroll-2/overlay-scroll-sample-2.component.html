@@ -1,0 +1,38 @@
+<div class='overlay-sample' #mainContainer>
+    <div class='container'>
+        <div class='container__row'>
+            <div class='section__row--wide'>
+                <div class='section__container--wide' #scrollDemo>
+                    <span (click)="onClickScrollStrategy($event, 'absolute')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Absolute</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy($event, 'block')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Block</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy($event, 'close')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>Close</p>
+                    </span>
+                    <span (click)="onClickScrollStrategy($event, '')">
+                        <igx-icon name='notifications'></igx-icon>
+                        <p>None</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container'>
+        <div class="overlay__element" #overlayDemo>
+            <igx-card>
+                <igx-card-header>
+                    <h3 class="igx-card-header__title">Overlay</h3>
+                </igx-card-header>
+                <igx-card-content>
+                    <p class="igx-card-content__text">Click on the positioning settings to dynamically re-attach this element.</p>
+                </igx-card-content>
+            </igx-card>
+        </div>
+    </div>
+</div>
