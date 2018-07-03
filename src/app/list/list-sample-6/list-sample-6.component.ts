@@ -8,7 +8,7 @@ import { IgxListComponent } from "igniteui-angular";
 })
 export class ListSample6Component {
 
-    @ViewChild('fruitList')
+    @ViewChild("fruitList")
     public fruitList: IgxListComponent;
 
     public fruitsData: string[] = [];
