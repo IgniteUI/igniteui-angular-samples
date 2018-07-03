@@ -3,7 +3,7 @@
         <div class="sample-holder">
             <div class="chips">
                 <igx-chips-area #chipsArea class="chiparea" (onMoveStart)="clickedOutside($event)" (onReorder)="chipsOrderChanged($event)">
-                    <igx-chip *ngFor="let chip of chipList" [id]="chip.id" [draggable]="true" [removable]="true" [selectable]="true" (onRemove)="chipRemoved($event)">
+                    <igx-chip *ngFor="let chip of chipList" [id]="chip.id" [draggable]="true" [removable]="true" (onRemove)="chipRemoved($event)">
                         <igx-avatar igxPrefix fontSet="material" [src]="chip.photo" roundShape="true"></igx-avatar>
                         <span #label [class]="'igx-chip__text'">{{chip.name}}</span>
                     </igx-chip>
@@ -31,14 +31,14 @@
             </div>
             <div class="chips">
                 <igx-chips-area #chipsAreaCc (onReorder)="chipsOrderChangedCc($event)">
-                    <igx-chip *ngFor="let chip of tagList" [id]="chip.id" [draggable]="true" [selectable]="true" (onRemove)="chipRemovedCc($event)"
-                        (click)="selectChipCc(chip.id)">
+                    <igx-chip *ngFor="let chip of tagList" [id]="chip.id" [selectable]="true" (onRemove)="chipRemovedCc($event)" (onSelection)="selectChipCc(chip.id)">
                         <span #label [class]="'igx-chip__text'">{{chip.text}}</span>
                     </igx-chip>
                 </igx-chips-area>
                 <textarea #textArea class="emailText"></textarea>
             </div>
-            <button class="toggle-button" igxButton="raised" igxRipple="white" (click)="clear()" (click)="showToast(toast, 'middle')" [disabled]="toast.isVisible">Send</button>
+            <button class="toggle-button" igxButton="raised" igxRipple="white" (click)="clear()" (click)="showToast(toast, 'middle')"
+                [disabled]="toast.isVisible">Send</button>
             <igx-toast #toast message="Your email has been sent!" [position]="toastPosition"></igx-toast>
         </div>
     </section>
