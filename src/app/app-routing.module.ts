@@ -173,7 +173,13 @@ import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-m
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
 import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
-import { OverlaySampleComponent } from "./overlay/overlay-sample.component";
+import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
+import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
+import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
+import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1/overlay-position-sample-1.component";
+import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
+import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
+import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -615,8 +621,32 @@ export const appRoutes: Routes = [
         path: "buttons-sample-7"
     },
     {
-        component: OverlaySampleComponent,
-        path: "overlay-sample"
+        component: OverlaySampleMain1Component,
+        path: "overlay-sample-main-1"
+    },
+    {
+        component: OverlaySampleMain2Component,
+        path: "overlay-sample-main-2"
+    },
+    {
+        component: OverlaySampleMain3Component,
+        path: "overlay-sample-main-3"
+    },
+    {
+        component: OverlayPositionSample1Component,
+        path: "overlay-position-sample-1"
+    },
+    {
+        component: OverlayPositionSample2Component,
+        path: "overlay-position-sample-2"
+    },
+    {
+        component: OverlayScrollSample1Component,
+        path: "overlay-scroll-sample-1"
+    },
+    {
+        component: OverlayScrollSample2Component,
+        path: "overlay-scroll-sample-2"
     },
     {
         component: ToggleComponent,
