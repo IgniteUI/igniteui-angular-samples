@@ -1,26 +1,26 @@
 
 .overlay-sample {
-    padding: 32px;
+    padding: 32px 0px 32px 32px;
     overflow-y: scroll;
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-.container__row > div, .section__row > span, .section__container--wide > span, .section__position-element > div {
+.container__row > div, .section__row > span, .section__position-element > div {
     display: inline-block;
 }
-.section__row, .section__row--wide, .container__row, .section__header {
+.section__row, .container__row, .section__header {
     width: 100%;
 }
 
 .section__row, .section__row > span {
     height: 48px;
 }
-.section__row--wide, .section__container--wide > span {
-    height: 80px;
-    max-width: 320px;
+
+span:hover {
+    border: 1px solid #e41c77;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .section__container--wide {
@@ -28,7 +28,7 @@
     display: flex;;
 }
 
-.section__row > span, .section__container--wide > span {
+.section__row > span {
     text-align: center;
     vertical-align: middle;
     line-height: 12px;
@@ -38,11 +38,6 @@
     width: 48px;
     box-sizing: border-box;
     padding-top: 12px;
-}
-
-.section__container--wide > span {
-    width: 80px;
-    padding-top: 16px;
 }
 
 .section__row > span > img {
@@ -62,21 +57,18 @@
     width: 32px;
 }
 .container {
-    width: 50%;
+    width: 25%;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .overlay__element {
-    width: 144px;
+    width: 288px;
     height: 144px;
-    display: flex;
-    background-color: white;
-    border: 2px dashed #a3a3a3;
-    box-sizing: border-box;
-    text-align: center;
 }
+
 .overlay__element > .overlay__element__content {
     margin-left: 10%;
     margin-top: 20%;
@@ -101,6 +93,6 @@
     text-align: left;
     margin-top: 16px;
 }
-.section__position-element, .section__row--wide {
+.section__position-element {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
