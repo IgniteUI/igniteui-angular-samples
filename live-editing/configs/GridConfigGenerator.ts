@@ -225,9 +225,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridMultiColumnHeadersComponent,
             additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridMultiColumnHeadersComponent, IgxGridModule ],
+                imports: [ GridMultiColumnHeadersComponent, IgxGridModule, IgxButtonModule ],
                 ngDeclarations: [GridMultiColumnHeadersComponent],
-                ngImports: [IgxGridModule.forRoot()]
+                ngImports: [IgxGridModule.forRoot(), IgxButtonModule ]
             })
         }));
 
