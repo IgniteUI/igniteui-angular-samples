@@ -65,6 +65,7 @@ $summary-theme: igx-grid-summary-theme(
         $header-text-color: $primary-600,
         $cell-selected-background: $primary-100,
         $row-selected-background: $primary-200,
+        $row-selected-text-color: #000,
         $row-hover-background: lighten($primary-100, 10)
     );
 
