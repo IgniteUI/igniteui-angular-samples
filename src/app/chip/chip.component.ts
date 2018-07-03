@@ -283,10 +283,8 @@ export class ChipSampleComponent {
             return chip.id === chipId;
         });
         if (chipToSelect.selected === true) {
-            chipToSelect.selected = false;
             this.ccGroup.value = this.ccGroup.value.replace(chipToSelect.id + ", ", "");
         } else {
-            chipToSelect.selected = true;
             this.ccGroup.value += chipToSelect.id + ", ";
         }
     }
