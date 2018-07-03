@@ -1,9 +1,15 @@
 
+body {
+    overflow-y: scroll !important;
+}
+
 .overlay-sample {
     padding: 32px 0px 32px 32px;
     overflow-y: scroll;
     display: flex;
     flex-direction: row;
+    height: 200px;
+    overflow-y: scroll;
 }
 
 
@@ -55,6 +61,7 @@ span:hover {
 }
 .container {
     width: 50%;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;

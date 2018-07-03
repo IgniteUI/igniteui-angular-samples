@@ -3,7 +3,8 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: row;
-    min-height: 1200px;
+    height: 1600px;
+    margin-bottom: 500px;
 }
 
 .container__row > div, .section__container--wide > span, .section__position-element > div {
@@ -90,4 +91,8 @@ span:hover {
 }
 .section__position-element, .section__row--wide {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.igx-switch {
+    padding: 16px;
 }
