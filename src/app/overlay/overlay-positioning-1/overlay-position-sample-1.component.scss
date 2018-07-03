@@ -56,12 +56,18 @@ span:hover {
 .section__separator {
     width: 32px;
 }
-.container {
+.container, .container--small {
     width: 25%;
-    min-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container {
+    min-width: 512px;
+}
+.container--small {
+    min-width: 288px;
 }
 
 .overlay__element {
