@@ -3,7 +3,8 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: row;
-    min-height: 1200px;
+    height: 1600px;
+    margin-bottom: 500px;
 }
 
 .container__row > div, .section__container--wide > span, .section__position-element > div {

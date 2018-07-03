@@ -1,7 +1,7 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
     ConnectedPositioningStrategy, GlobalPositionStrategy, HorizontalAlignment,
-    IgxCardModule, IgxIconModule, IgxOverlayService, VerticalAlignment } from "igniteui-angular";
+    IgxCardModule, IgxIconModule, IgxOverlayService, VerticalAlignment, AutoPositionStrategy } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
@@ -13,6 +13,9 @@ export class OverlayPositionSample1Component {
 
     @ViewChild("directionDemo")
     public directionDemo: ElementRef;
+
+    @ViewChild("autoDemo")
+    public autoDemo: ElementRef;
 
     @ViewChild("overlayDemo")
     public overlayDemo: ElementRef;
@@ -37,6 +40,15 @@ export class OverlayPositionSample1Component {
         this.overlay.show(this.overlayDemo, {
             positionStrategy: new GlobalPositionStrategy({
                 target: this.directionDemo.nativeElement,
+                horizontalDirection, verticalDirection
+            })
+        });
+    }
+
+    public onClickDirectionAuto(horizontalDirection: HorizontalAlignment, verticalDirection: VerticalAlignment) {
+        this.overlay.show(this.overlayDemo, {
+            positionStrategy: new AutoPositionStrategy({
+                target: this.autoDemo.nativeElement,
                 horizontalDirection, verticalDirection
             })
         });
