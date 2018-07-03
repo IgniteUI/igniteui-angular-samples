@@ -16,9 +16,9 @@ export class ToggleSample1Component implements OnInit {
 
   public toggleContent() {
     if (this.toggle.collapsed) {
-      this.toggle.open(true);
+      this.toggle.open();
     } else {
-      this.toggle.close(true);
+      this.toggle.close();
     }
   }
 }
