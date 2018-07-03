@@ -6345,7 +6345,12 @@ export class FinancialDataService {
     { time: new Date(2018, 0, 30), open: 345.14, high: 348.27, low: 342.17, close: 345.82, volume: 4717700 },
     { time: new Date(2018, 0, 31), open: 347.51, high: 356.19, low: 345.19, close: 354.31, volume: 6214069 }
             ];
-        result.title = "TSLA";
+        result.title = "TESLA";
+        // setting data intent for Series Title
+        result.__dataIntents = {
+            open: ["SeriesTitle/TESLA"]
+        };
+
         return result;
     }
 }
