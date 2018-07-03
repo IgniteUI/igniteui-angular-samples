@@ -122,12 +122,12 @@ export class GridCRMComponent implements OnInit {
 
     public toggleHiding() {
         this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
-        this.toggleRefHiding.toggle(true, this._overlaySettings);
+        this.toggleRefHiding.toggle(this._overlaySettings);
     }
 
     public togglePinning() {
         this._overlaySettings.positionStrategy.settings.target = this.pinningButton.nativeElement;
-        this.toggleRefPinning.toggle(true, this._overlaySettings);
+        this.toggleRefPinning.toggle(this._overlaySettings);
     }
 
     public ngAfterViewInit() {
