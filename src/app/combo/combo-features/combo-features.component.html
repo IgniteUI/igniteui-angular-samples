@@ -41,7 +41,7 @@
                 </ng-template>
 
                 <ng-template #footerTemplate>
-                    <div class="footer-class">Infragsitics 2018</div>
+                    <div class="footer-class">Infragistics 2018</div>
                 </ng-template>
 
                 <igx-combo>
@@ -57,8 +57,9 @@
         <h3>Remote Binding</h3>
         <div class="combo-container">
             <igx-combo #combo2 class="input-container" width="300px" [itemsMaxHeight]="250"
-                [data]="rData | async" [valueKey]="'ID'" [displayKey]="'ProductName'" (onDataPreLoad)="dataLoading($event)"
-                placeholder="Location(s)" searchPlaceholder="Search...">
+                [data]="rData | async" [valueKey]="'ID'" [displayKey]="'ProductName'"
+                (onDataPreLoad)="dataLoading($event)" (onSearchInput)="searchInput($event)"
+                placeholder="Location(s)" searchPlaceholder="Search..." [filterable]="false">
             </igx-combo>
         </div>
     </div>

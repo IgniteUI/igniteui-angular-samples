@@ -14,10 +14,10 @@ export class RemoteService {
         this.remoteData = this._remoteData.asObservable();
     }
 
-    public getData(data?: IForOfState, cb?: (any) => void): any {
+    public getData(data?: IForOfState, searchText?: string, cb?: (any) => void): any {
         const dataState = data;
         return this.http
-            .get(this.buildUrl(dataState))
+            .get(this.buildUrl(dataState, searchText))
             .subscribe((d: any) => {
                 this._remoteData.next(d.Results);
                 if (cb) {
@@ -26,7 +26,7 @@ export class RemoteService {
             });
     }
 
-    private buildUrl(dataState: any): string {
+    private buildUrl(dataState: any, searchText?: string): string {
         let qS: string = "?";
         let requiredChunkSize: number;
         if (dataState) {
@@ -36,8 +36,21 @@ export class RemoteService {
                 // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
                 10 : dataState.chunkSize;
             const top = requiredChunkSize;
-            qS += `$skip=${skip}&$top=${top}&$count=true&$inlinecount=allpages`;
+            qS += `$skip=${skip}&$top=10&$count=true&$inlinecount=allpages`;
+
+            if (searchText) {
+                qS += `&$filter=substringof('` + searchText + `',ProductName)` +
+                    `&$filter=substringof('` + searchText.toLowerCase() + `',ProductName)` +
+                    `&$filter=substringof('` + searchText.toUpperCase() + `',ProductName)` +
+                    `&$filter=substringof('` + this.toTitleCase(searchText) + `',ProductName)`;
+            }
         }
         return `${this.url}${qS}`;
+    }
+
+    private toTitleCase(str) {
+        return str.replace(/\w\S*/g, (txt) => {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
     }
 }

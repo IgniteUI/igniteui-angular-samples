@@ -1,10 +1,14 @@
 import {
     Component,
+    ElementRef,
     OnInit,
     QueryList,
     ViewChild
 } from "@angular/core";
 import {
+    CloseScrollStrategy,
+    ConnectedPositioningStrategy,
+    HorizontalAlignment,
     IgxColumnComponent,
     IgxDateSummaryOperand,
     IgxExcelExporterOptions,
@@ -12,7 +16,10 @@ import {
     IgxGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryResult,
-    IgxToggleDirective } from "igniteui-angular";
+    IgxToggleDirective,
+    OverlaySettings,
+    PositionSettings,
+    VerticalAlignment } from "igniteui-angular";
 import { data } from "./data";
 
 class DealsSummary extends IgxNumberSummaryOperand {
@@ -76,8 +83,11 @@ export class GridCRMComponent implements OnInit {
     @ViewChild("grid1", { read: IgxGridComponent })
     public grid1: IgxGridComponent;
 
-    @ViewChild("toggleRefHiding") public toggleHiding: IgxToggleDirective;
-    @ViewChild("toggleRefPinning") public togglePinning: IgxToggleDirective;
+    @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
+    @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
+
+    @ViewChild("hidingButton") public hidingButton: ElementRef;
+    @ViewChild("pinningButton") public pinningButton: ElementRef;
 
     public localData: any[];
     public dealsSummary = DealsSummary;
@@ -91,10 +101,33 @@ export class GridCRMComponent implements OnInit {
     public searchText: string = "";
     public caseSensitive: boolean = false;
 
+    public _positionSettings: PositionSettings = {
+        horizontalDirection: HorizontalAlignment.Left,
+        horizontalStartPoint: HorizontalAlignment.Right,
+        verticalStartPoint: VerticalAlignment.Bottom
+    };
+
+    public _overlaySettings: OverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: false,
+        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
+        scrollStrategy: new CloseScrollStrategy()
+    };
+
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
         this.localData = data;
+    }
+
+    public toggleHiding() {
+        this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
+        this.toggleRefHiding.toggle(this._overlaySettings);
+    }
+
+    public togglePinning() {
+        this._overlaySettings.positionStrategy.settings.target = this.pinningButton.nativeElement;
+        this.toggleRefPinning.toggle(this._overlaySettings);
     }
 
     public ngAfterViewInit() {
