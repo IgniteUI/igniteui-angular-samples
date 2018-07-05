@@ -288,9 +288,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridToolbarSample1Component,
             additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridToolbarSample1Component, IgxGridModule],
+                imports: [GridToolbarSample1Component, IgxAvatarModule, IgxGridModule],
                 ngDeclarations: [GridToolbarSample1Component],
-                ngImports: [IgxGridModule.forRoot()],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: []
             })
         }));
@@ -299,9 +299,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridToolbarSample2Component,
             additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridToolbarSample2Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
+                imports: [GridToolbarSample2Component, IgxAvatarModule, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [GridToolbarSample2Component],
-                ngImports: [IgxGridModule.forRoot()],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             })
         }));
@@ -310,9 +310,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridToolbarSample3Component,
             additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridToolbarSample3Component, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
+                imports: [GridToolbarSample3Component, IgxAvatarModule, IgxGridModule, IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [GridToolbarSample3Component],
-                ngImports: [IgxGridModule.forRoot()],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             })
         }));
