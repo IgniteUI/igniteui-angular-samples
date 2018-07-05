@@ -25,8 +25,8 @@ export class GridEditingSampleComponent implements OnInit {
     }
 
     public removeRow(rowIndex) {
-        this.grid1.deleteRow(rowIndex);
-
+       const row = this.grid1.getRowByIndex(rowIndex);
+       row.delete();
     }
 
     public addRow() {
