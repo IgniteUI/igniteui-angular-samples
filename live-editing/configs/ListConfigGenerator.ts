@@ -6,6 +6,7 @@ import { ListSample2Component } from "../../src/app/list/list-sample-2/list-samp
 import { ListSample3Component } from "../../src/app/list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "../../src/app/list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "../../src/app/list/list-sample-5/list-sample-5.component";
+import { ListSample6Component } from "../../src/app/list/list-sample-6/list-sample-6.component";
 import { ListComponent } from "../../src/app/list/list.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -78,6 +79,17 @@ export class ListConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxListModule, ListSample5Component],
                 ngDeclarations: [ListSample5Component],
+                ngImports: [IgxListModule]
+            }),
+            shortenComponentPathBy: "/list/"
+        }));
+
+        // list sample 6
+        configs.push(new Config({
+            component: ListSample6Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxListModule, ListSample6Component],
+                ngDeclarations: [ListSample6Component],
                 ngImports: [IgxListModule]
             }),
             shortenComponentPathBy: "/list/"

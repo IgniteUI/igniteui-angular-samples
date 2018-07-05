@@ -58,7 +58,7 @@
         <div class="combo-container">
             <igx-combo #combo2 class="input-container" width="300px" [itemsMaxHeight]="250"
                 [data]="rData | async" [valueKey]="'ID'" [displayKey]="'ProductName'"
-                (onDataPreLoad)="dataLoading($event)" (onSearchInput)="searchInput($event)"
+                (onDataPreLoad)="dataLoading($event)" (onSearchInput)="searchInput($event)" (onOpening)="searchInput('')"
                 placeholder="Location(s)" searchPlaceholder="Search..." [filterable]="false">
             </igx-combo>
         </div>
