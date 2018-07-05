@@ -32,10 +32,6 @@ export class PinningSampleComponent {
         this.data = DATA;
     }
 
-    public ngAfterViewInit(): void {
-        this.grid1.reflow();
-    }
-
     public toggleColumn(col: IgxColumnComponent) {
         col.pinned ? col.unpin() : col.pin();
     }
