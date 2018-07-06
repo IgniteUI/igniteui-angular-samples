@@ -3,6 +3,7 @@ import {
     IgxButtonDirective, IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule
 } from "igniteui-angular";
 import { CardSample1Component } from "../../src/app/card/card-sample-1/card-sample-1.component";
+import { MyDynamicCardComponent } from "../../src/app/overlay/overlay-dynamic-card/overlay-dynamic-card.component";
 import { OverlaySampleMain1Component } from "../../src/app/overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "../../src/app/overlay/overlay-main-2/overlay-main-sample-2.component";
 import { OverlayPositionSample1Component
@@ -74,11 +75,15 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlayScrollSample2Component,
+            additionalFiles: ["/src/app/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxOverlayService, OverlayScrollSample2Component,
+                imports: [IgxIconModule, IgxOverlayService, OverlayScrollSample2Component, MyDynamicCardComponent,
                      IgxSwitchModule, IgxCardModule],
+                ngEntryComponents: [MyDynamicCardComponent],
                 ngProviders: [IgxOverlayService],
-                ngDeclarations: [OverlayScrollSample2Component],
+                ngDeclarations: [OverlayScrollSample2Component, MyDynamicCardComponent],
                 ngImports: [IgxIconModule, IgxSwitchModule, IgxCardModule]
             })
         }));
