@@ -378,6 +378,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioGroupSampleComponent,
         GridEditingSampleComponent
     ],
+    entryComponents: [MyDynamicCardComponent],
     imports: [
         IgxDropDownModule,
         IgxInputGroupModule,
