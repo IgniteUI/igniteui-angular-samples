@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef } from "@angular/core";
 import { IgxCardModule } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -7,5 +7,5 @@ import { IgxCardModule } from "igniteui-angular";
     styleUrls: [`overlay-dynamic-card.component.scss`]
 })
 export class MyDynamicCardComponent {
-    constructor() {}
+    constructor(public elementRef: ElementRef) {}
 }
