@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { CategoryChartAxisOptionsComponent } from "./axis-options/category-chart-axis-options-sample.component";
 import { CategoryChartConfigOptionsComponent } from "./config-options/category-chart-config-options-sample.component";
