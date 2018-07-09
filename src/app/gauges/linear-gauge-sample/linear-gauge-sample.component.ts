@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 
-import { IgxLinearGraphRangeComponent } from "igniteui-angular-gauges/ES5/igx-linear-graph-range-component";
 import { IgxLinearGaugeComponent } from "igniteui-angular-gauges/ES5/igx-linear-gauge-component";
+import { IgxLinearGraphRangeComponent } from "igniteui-angular-gauges/ES5/igx-linear-graph-range-component";
 import { LinearGraphNeedleShape } from "igniteui-angular-gauges/ES5/LinearGraphNeedleShape";
 
 @Component({
