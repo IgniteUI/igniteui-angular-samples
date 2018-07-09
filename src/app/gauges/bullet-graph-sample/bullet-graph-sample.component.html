@@ -1,0 +1,52 @@
+<div>
+    <input type="button" value="Animate Gauge"
+    (click)="onClick($event)">
+
+    <div class="sample-container"  >
+
+        <igx-bullet-graph
+            #bulletGraph
+            height="100px"
+            width="400px"
+            minimumValue = 0
+            maximumValue = 120
+            valueBrush = "#4286f4"
+            value = 70
+            targetValueBrush = "#4286f4"
+            targetValue = 90
+            targetValueBreadth = 10
+            interval = 10
+            labelInterval = 10
+            labelExtent = 0.02
+            rangeBrushes="#fffb2d, #f4c51e, #f44c1e"
+            rangeOutlines="gray, gray, gray"
+            scaleBackgroundThickness = 0.5
+            scaleBackgroundBrush = "#dbdbdb"
+            scaleBackgroundOutline = "gray">
+
+            <igx-linear-graph-range
+                startValue=20 endValue=50
+                innerStartExtent = 0.2
+                innerEndExtent = 0.2
+                outerStartExtent = 0.85
+                outerEndExtent = 0.85>
+            </igx-linear-graph-range>
+            <igx-linear-graph-range
+                startValue=50 endValue=80
+                innerStartExtent = 0.2
+                innerEndExtent = 0.2
+                outerStartExtent = 0.85
+                outerEndExtent = 0.85>
+            </igx-linear-graph-range>
+            <igx-linear-graph-range
+                startValue=80 endValue=120
+                innerStartExtent = 0.2
+                innerEndExtent = 0.2
+                outerStartExtent = 0.85
+                outerEndExtent = 0.85>
+            </igx-linear-graph-range>
+        </igx-bullet-graph>
+
+    </div>
+
+</div>
