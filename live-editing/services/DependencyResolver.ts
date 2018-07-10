@@ -48,6 +48,7 @@ const DEFAULT_DEPENDENCIES = [
 
 const CHARTS_DEPENDENCIES = [
     "@angular/animations",
+    "igniteui-angular-core",
     "igniteui-angular-charts",
     "tslib"
 ];
