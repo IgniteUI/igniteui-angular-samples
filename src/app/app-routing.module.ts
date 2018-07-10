@@ -121,6 +121,8 @@ import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridDisplayDensitySampleComponent
+} from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
@@ -214,7 +216,6 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-
 export const appRoutes: Routes = [
     {
         component: AvatarSample1Component,
@@ -455,6 +456,10 @@ export const appRoutes: Routes = [
     {
         component: GridEditingSampleComponent,
         path: "grid-editing"
+    },
+    {
+        component: GridDisplayDensitySampleComponent,
+        path: "grid-displayDensity"
     },
     {
         component: SnackbarSample1Component,
