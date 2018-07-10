@@ -117,6 +117,8 @@ import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridDisplayDensitySampleComponent
+} from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
@@ -377,7 +379,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RemoteFilteringSampleComponent,
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
-        GridEditingSampleComponent
+        GridEditingSampleComponent,
+        GridDisplayDensitySampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
