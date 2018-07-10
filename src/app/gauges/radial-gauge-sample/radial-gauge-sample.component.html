@@ -1,0 +1,63 @@
+<div >
+    <!-- <input type="button" value="Animate Gauge"
+        (click)="onClick($event)"> -->
+
+    <div >
+    <!-- style="display: block; margin: 0 auto;" -->
+        <igx-radial-gauge class="sample-control"
+            #radialGauge
+            height="400px"
+            width="400px"
+            value=25
+            interval=5
+            minimumValue=0
+            maximumValue=50
+            labelInterval=5
+            labelExtent=0.725
+
+            minorTickCount=5
+            minorTickEndExtent=.625
+            minorTickStartExtent=.675
+            minorTickStrokeThickness=1
+            tickStartExtent=.6
+            tickEndExtent=.675
+            tickStrokeThickness=1.5
+
+            needleShape="TrapezoidWithBulb"
+            needleEndWidthRatio=0.03
+            needleStartWidthRatio=0.05
+            needlePivotShape="CircleOverlay"
+            needlePivotWidthRatio=0.1
+            needleBaseFeatureWidthRatio=0.15
+            needleBrush="#4286f4"
+            needleOutline="#4286f4"
+            needlePivotBrush="#b7b7b7"
+            needlePivotOutline="#b7b7b7"
+            isNeedleDraggingEnabled=true
+
+            backingBrush="#f4f4f4"
+            backingOutline="#d6d6d6"
+            backingStrokeThickness=10
+
+            scaleStartAngle=120
+            scaleEndAngle=60
+            scaleBrush="#d6d6d6"
+
+            rangeBrushes="#fffb2d, #f4c51e, #f44c1e"
+            rangeOutlines="gray, gray, gray"
+            >
+
+            <igx-radial-gauge-range
+                startValue=5  endValue=15 >
+            </igx-radial-gauge-range>
+            <igx-radial-gauge-range
+                startValue=15  endValue=35 >
+            </igx-radial-gauge-range>
+            <igx-radial-gauge-range
+                startValue=35  endValue=45 >
+            </igx-radial-gauge-range>
+
+
+        </igx-radial-gauge>
+    </div>
+</div>
