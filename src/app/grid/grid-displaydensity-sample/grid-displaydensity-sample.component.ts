@@ -39,7 +39,6 @@ export class GridDisplayDensitySampleComponent implements OnInit {
     }
 
     public selectDensity(event) {
-        console.log(this.displayDensities[event.index].label);
         this.density = this.displayDensities[event.index].label;
         this.grid.displayDensity = this.displayDensities[event.index].label;
         this.grid.reflow();
