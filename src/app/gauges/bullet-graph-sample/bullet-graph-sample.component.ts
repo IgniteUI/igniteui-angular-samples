@@ -21,24 +21,24 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
 
     public ngAfterViewInit(): void {
 
-        // note this type script code is for demonstration purpose and
-        // it is setting the same properties as in html
-
-        // setting target values
-        this.bulletGraph.targetValueBrush = "#000000";
-        this.bulletGraph.targetValueBreadth = 10;
-        this.bulletGraph.targetValue = 90;
-
-        // setting performance values
+        // bullet graph requires settings for these properties:
+        this.bulletGraph.minimumValue = 0;
+        this.bulletGraph.maximumValue = 120;
         this.bulletGraph.value = 70;
+        this.bulletGraph.interval = 10;
+
+        // the following properties are optional and
+        // they are listed here for demonstration purpose
+
+        // setting custom appearance of performance bar
         this.bulletGraph.valueInnerExtent = 0.5;
         this.bulletGraph.valueOuterExtent = 0.7;
         this.bulletGraph.valueBrush = "#000000";
 
-        // setting scale values
-        this.bulletGraph.minimumValue = 0;
-        this.bulletGraph.maximumValue = 120;
-        this.bulletGraph.interval = 10;
+        // setting custom appearance of target bar
+        this.bulletGraph.targetValueBrush = "#000000";
+        this.bulletGraph.targetValueBreadth = 10;
+        this.bulletGraph.targetValue = 90;
 
         // setting appearance of labels
         this.bulletGraph.labelInterval = 10;
@@ -52,7 +52,7 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
         this.bulletGraph.tickEndExtent = 0.05;
         this.bulletGraph.tickStrokeThickness = 2;
 
-        // setting start/end of gauge ranges
+        // setting custom gauge ranges
         const range1 = new IgxLinearGraphRangeComponent();
         range1.startValue = 0;
         range1.endValue = 40;

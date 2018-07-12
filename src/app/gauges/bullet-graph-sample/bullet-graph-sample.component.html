@@ -1,49 +1,53 @@
-<div>
+<div >
     <!-- <input type="button" value="Animate Gauge"
     (click)="onClick($event)"> -->
 
-    <div class="sample-container"  >
+    <div class="sample-container"   >
 
-        <igx-bullet-graph
+        <!-- Note the bullet graph requires settings only for
+        minimumValue, maximumValue, and value, targetValue properties.
+        All other properties are optional and listed here
+        for demonstration purpose only -->
+        <igx-bullet-graph class="sample-control"
             #bulletGraph
             height="80px"
             width="400px"
-            minimumValue = 0
-            maximumValue = 120
-            valueBrush = "#4286f4"
-            value = 70
-            targetValueBrush = "#4286f4"
-            targetValue = 90
-            targetValueBreadth = 10
-            interval = 10
-            labelInterval = 10
-            labelExtent = 0.02
+            minimumValue=0
+            maximumValue=120
+            valueBrush="#4286f4"
+            value=70
+            targetValueBrush="#4286f4"
+            targetValue=90
+            targetValueBreadth=10
+            interval=10
+            labelInterval=10
+            labelExtent=0.02
             rangeBrushes ="#FF9800, #F96232, #C62828"
             rangeOutlines="#FF9800, #F96232, #C62828"
-            scaleBackgroundThickness = 0
-            scaleBackgroundBrush = "#dbdbdb"
-            scaleBackgroundOutline = "gray">
+            scaleBackgroundThickness=0
+            scaleBackgroundBrush="#dbdbdb"
+            scaleBackgroundOutline="gray">
 
             <igx-linear-graph-range
-                startValue=20 endValue=40
-                innerStartExtent = 0.2
-                innerEndExtent = 0.2
-                outerStartExtent = 0.95
-                outerEndExtent = 0.95>
+                startValue=0 endValue=40
+                innerStartExtent=0.2
+                innerEndExtent=0.2
+                outerStartExtent=0.95
+                outerEndExtent=0.95>
             </igx-linear-graph-range>
             <igx-linear-graph-range
                 startValue=40 endValue=80
-                innerStartExtent = 0.2
-                innerEndExtent = 0.2
-                outerStartExtent = 0.95
-                outerEndExtent = 0.95>
+                innerStartExtent=0.2
+                innerEndExtent=0.2
+                outerStartExtent=0.95
+                outerEndExtent=0.95>
             </igx-linear-graph-range>
             <igx-linear-graph-range
                 startValue=80 endValue=120
-                innerStartExtent = 0.2
-                innerEndExtent = 0.2
-                outerStartExtent = 0.95
-                outerEndExtent = 0.95>
+                innerStartExtent=0.2
+                innerEndExtent=0.2
+                outerStartExtent=0.95
+                outerEndExtent=0.95>
             </igx-linear-graph-range>
         </igx-bullet-graph>
 

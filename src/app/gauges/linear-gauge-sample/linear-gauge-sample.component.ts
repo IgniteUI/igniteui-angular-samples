@@ -22,20 +22,20 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
 
     public ngAfterViewInit(): void {
 
-        // note this type script code is for demonstration purpose and
-        // it is setting the same properties as in html
-
-        // setting values of gauge
+        // linear gauge requires settings for these properties:
         this.linearGauge.minimumValue = 0;
         this.linearGauge.maximumValue = 100;
         this.linearGauge.value = 50;
         this.linearGauge.interval = 10;
 
-        // setting appearance of labels
+        // the following properties are optional and
+        // they are listed here for demonstration purpose
+
+        // setting custom appearance of labels
         this.linearGauge.labelInterval = 10;
         this.linearGauge.labelExtent = 0.05;
 
-        // setting appearance of needle
+        // setting custom appearance of needle
         this.linearGauge.isNeedleDraggingEnabled = true;
         this.linearGauge.needleShape = LinearGraphNeedleShape.Needle;
         this.linearGauge.needleBrush = "#79797a";
@@ -44,7 +44,7 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         this.linearGauge.needleOuterExtent = 0.9;
         this.linearGauge.needleInnerExtent = 0.3;
 
-        // setting appearance of major/minor ticks
+        // setting custom appearance of major/minor ticks
         this.linearGauge.minorTickCount = 5;
         this.linearGauge.minorTickEndExtent = 0.10;
         this.linearGauge.minorTickStartExtent = 0.20;
@@ -52,7 +52,7 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         this.linearGauge.tickEndExtent = 0.05;
         this.linearGauge.tickStrokeThickness = 2;
 
-        // setting start/end of gauge ranges
+        // setting custom gauge ranges
         const range1 = new IgxLinearGraphRangeComponent();
         range1.startValue = 0;
         range1.endValue = 30;
@@ -86,7 +86,7 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         this.linearGauge.scaleInnerExtent = 0.075;
         this.linearGauge.scaleOuterExtent = 0.85;
         this.linearGauge.scaleStartExtent = 0.05;
-        this.linearGauge.scaleEndExtent = 0.65;
+        this.linearGauge.scaleEndExtent = 0.95;
 
         // setting appearance of backing fill and outline
         this.linearGauge.backingBrush = "#ffffff";

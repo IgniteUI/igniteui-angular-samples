@@ -24,20 +24,20 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
 
     public ngAfterViewInit(): void {
 
-        // note this type script code is for demonstration purpose and
-        // it is setting the same properties as in html
-
-        // setting values of gauge
+        // radial gauge requires settings for these properties:
         this.radialGauge.minimumValue = 0;
         this.radialGauge.maximumValue = 50;
         this.radialGauge.value = 25;
         this.radialGauge.interval = 5;
 
+        // the following properties are optional and
+        // they are listed here for demonstration purpose
+
         // setting appearance of labels
         this.radialGauge.labelInterval = 5;
         this.radialGauge.labelExtent = 0.71;
 
-        // setting appearance of needle
+        // setting custom needle
         this.radialGauge.isNeedleDraggingEnabled = true;
         this.radialGauge.needleShape = RadialGaugeNeedleShape.Triangle;
         this.radialGauge.needleEndWidthRatio = 0.03;
@@ -51,14 +51,17 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
         this.radialGauge.needlePivotOutline = "#79797a";
 
         // setting appearance of major/minor ticks
-        this.radialGauge.minorTickCount = 5;
-        this.radialGauge.minorTickStartExtent = 0.65;
+        this.radialGauge.minorTickCount = 4;
+        this.radialGauge.minorTickEndExtent = 0.625;
+        this.radialGauge.minorTickStartExtent = 0.6;
         this.radialGauge.minorTickStrokeThickness = 1;
+        this.radialGauge.minorTickBrush = "#79797a";
         this.radialGauge.tickStartExtent = 0.6;
         this.radialGauge.tickEndExtent = 0.65;
-        this.radialGauge.tickStrokeThickness = 1.75;
+        this.radialGauge.tickStrokeThickness = 2;
+        this.radialGauge.tickBrush = "#79797a";
 
-        // setting start/end of gauge ranges
+        // setting custom gauge ranges
         const range1 = new IgxRadialGaugeRangeComponent();
         range1.startValue = 5;
         range1.endValue = 15;
