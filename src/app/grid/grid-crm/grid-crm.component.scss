@@ -156,6 +156,11 @@ $summary-theme: igx-grid-summary-theme(
         display: flex;
         align-items: center;
         justify-self: flex-start;
+
+        .logo-propeller {
+            margin-right: 8px; 
+            margin-top: 2px;
+        }
     }
 
     .crm-sample-toolbar__ellipsis {
