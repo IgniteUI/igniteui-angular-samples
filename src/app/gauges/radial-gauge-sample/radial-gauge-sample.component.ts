@@ -35,29 +35,28 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
 
         // setting appearance of labels
         this.radialGauge.labelInterval = 5;
-        this.radialGauge.labelExtent = 0.725;
+        this.radialGauge.labelExtent = 0.71;
 
         // setting appearance of needle
         this.radialGauge.isNeedleDraggingEnabled = true;
-        this.radialGauge.needleShape = RadialGaugeNeedleShape.TrapezoidWithBulb;
+        this.radialGauge.needleShape = RadialGaugeNeedleShape.Triangle;
         this.radialGauge.needleEndWidthRatio = 0.03;
         this.radialGauge.needleStartWidthRatio = 0.05;
         this.radialGauge.needlePivotShape = RadialGaugePivotShape.CircleOverlay;
-        this.radialGauge.needlePivotWidthRatio = 0.1;
+        this.radialGauge.needlePivotWidthRatio = 0.15;
         this.radialGauge.needleBaseFeatureWidthRatio = 0.15;
-        this.radialGauge.needleBrush = "#4286f4";
-        this.radialGauge.needleOutline = "#4286f4";
-        this.radialGauge.needlePivotBrush = "#b7b7b7";
-        this.radialGauge.needlePivotOutline = "#b7b7b7";
+        this.radialGauge.needleBrush = "#79797a";
+        this.radialGauge.needleOutline = "#79797a";
+        this.radialGauge.needlePivotBrush = "#79797a";
+        this.radialGauge.needlePivotOutline = "#79797a";
 
         // setting appearance of major/minor ticks
         this.radialGauge.minorTickCount = 5;
-        this.radialGauge.minorTickEndExtent = 0.625;
-        this.radialGauge.minorTickStartExtent = 0.675;
+        this.radialGauge.minorTickStartExtent = 0.65;
         this.radialGauge.minorTickStrokeThickness = 1;
         this.radialGauge.tickStartExtent = 0.6;
-        this.radialGauge.tickEndExtent = 0.675;
-        this.radialGauge.tickStrokeThickness = 1.5;
+        this.radialGauge.tickEndExtent = 0.65;
+        this.radialGauge.tickStrokeThickness = 1.75;
 
         // setting start/end of gauge ranges
         const range1 = new IgxRadialGaugeRangeComponent();
@@ -70,8 +69,8 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
         range3.startValue = 35;
         range3.endValue = 45;
 
-        this.radialGauge.rangeBrushes  = [ "#fffb2d", "#f4c51e", "#f44c1e"];
-        this.radialGauge.rangeOutlines = [ "gray", "gray", "gray"];
+        this.radialGauge.rangeBrushes  = [ "#F86232", "#DC3F76", "#7446B9"];
+        this.radialGauge.rangeOutlines = [ "#F86232", "#DC3F76", "#7446B9"];
         this.radialGauge.ranges.clear();
         this.radialGauge.ranges.add(range1);
         this.radialGauge.ranges.add(range2);
@@ -94,9 +93,9 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
         this.radialGauge.scaleSweepDirection = SweepDirection.Clockwise;
 
         // setting appearance of backing dial
-        this.radialGauge.backingBrush = "#f4f4f4";
+        this.radialGauge.backingBrush = "#fcfcfc";
         this.radialGauge.backingOutline = "#d6d6d6";
-        this.radialGauge.backingStrokeThickness = 10;
+        this.radialGauge.backingStrokeThickness = 5;
 
         // enabling animation duration (in milliseconds) of the gauge
         this.radialGauge.transitionDuration = 500;

@@ -25,7 +25,7 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
         // it is setting the same properties as in html
 
         // setting target values
-        this.bulletGraph.targetValueBrush = "#4286f4";
+        this.bulletGraph.targetValueBrush = "#000000";
         this.bulletGraph.targetValueBreadth = 10;
         this.bulletGraph.targetValue = 90;
 
@@ -33,7 +33,7 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
         this.bulletGraph.value = 70;
         this.bulletGraph.valueInnerExtent = 0.5;
         this.bulletGraph.valueOuterExtent = 0.7;
-        this.bulletGraph.valueBrush = "#4286f4";
+        this.bulletGraph.valueBrush = "#000000";
 
         // setting scale values
         this.bulletGraph.minimumValue = 0;
@@ -46,26 +46,25 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
 
         // setting appearance of major/minor ticks
         this.bulletGraph.minorTickCount = 5;
-        this.bulletGraph.minorTickEndExtent = 0.1;
-        this.bulletGraph.minorTickStartExtent = 0.2;
-        this.bulletGraph.minorTickStrokeThickness = 1;
-        this.bulletGraph.tickStartExtent = 0.4;
-        this.bulletGraph.tickEndExtent = 0.1;
-        this.bulletGraph.tickStrokeThickness = 1.5;
+        this.bulletGraph.minorTickEndExtent = 0.10;
+        this.bulletGraph.minorTickStartExtent = 0.20;
+        this.bulletGraph.tickStartExtent = 0.20;
+        this.bulletGraph.tickEndExtent = 0.05;
+        this.bulletGraph.tickStrokeThickness = 2;
 
         // setting start/end of gauge ranges
         const range1 = new IgxLinearGraphRangeComponent();
-        range1.startValue = 20;
-        range1.endValue = 50;
+        range1.startValue = 0;
+        range1.endValue = 40;
         const range2 = new IgxLinearGraphRangeComponent();
-        range2.startValue = 50;
+        range2.startValue = 40;
         range2.endValue = 80;
         const range3 = new IgxLinearGraphRangeComponent();
         range3.startValue = 80;
         range3.endValue = 120;
 
-        this.bulletGraph.rangeBrushes  = [ "#fffb2d", "#f4c51e", "#f44c1e"];
-        this.bulletGraph.rangeOutlines = [ "gray", "gray", "gray"];
+        this.bulletGraph.rangeBrushes  = [ "#FF9800", "#F96232", "#C62828"];
+        this.bulletGraph.rangeOutlines = [ "#FF9800", "#F96232", "#C62828"];
         this.bulletGraph.ranges.clear();
         this.bulletGraph.ranges.add(range1);
         this.bulletGraph.ranges.add(range2);
@@ -86,11 +85,12 @@ export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
         this.bulletGraph.scaleBackgroundOutline = "gray";
         this.bulletGraph.scaleStartExtent = 0.05;
         this.bulletGraph.scaleEndExtent = 0.95;
+        this.bulletGraph.scaleBackgroundThickness = 0;
 
         // setting appearance of backing fill and outline
         this.bulletGraph.backingBrush = "#f7f7f7";
         this.bulletGraph.backingOutline = "#d1d1d1";
-        this.bulletGraph.backingStrokeThickness = 10;
+        this.bulletGraph.backingStrokeThickness = 0;
 
         // enabling animation of the gauge
         this.bulletGraph.transitionDuration = 500;
