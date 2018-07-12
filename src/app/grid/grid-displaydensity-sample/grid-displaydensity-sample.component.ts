@@ -1,8 +1,28 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { CloseScrollStrategy, ConnectedPositioningStrategy,
-    HorizontalAlignment, IgxButtonGroupComponent, IgxGridComponent, VerticalAlignment } from "igniteui-angular";
+import { IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand,
+    IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular";
 import { DATA } from "./data";
 
+class CustomNumberSummary extends IgxSummaryOperand {
+
+    constructor() {
+      super();
+    }
+    public operate(data?: any[]): IgxSummaryResult[] {
+      const result = super.operate(data);
+      result.push({
+        key: "Min",
+        label: "Min",
+        summaryResult: IgxNumberSummaryOperand.min(data)
+      });
+      result.push({
+        key: "max",
+        label: "Max",
+        summaryResult: IgxNumberSummaryOperand.max(data)
+      });
+      return result;
+    }
+  }
 @Component({
   selector: "app-grid-displaydensity-sample",
   styleUrls: ["./grid-displaydensity-sample.component.scss"],
@@ -14,8 +34,9 @@ export class GridDisplayDensitySampleComponent implements OnInit {
     public grid: IgxGridComponent;
     @ViewChild(IgxButtonGroupComponent) public buttonGroup: IgxButtonGroupComponent;
     public data;
-    public density = "comfortable";
+    public density = "compact";
     public displayDensities;
+    public numberSummaries = CustomNumberSummary;
 
     public ngOnInit() {
         this.data = DATA;
