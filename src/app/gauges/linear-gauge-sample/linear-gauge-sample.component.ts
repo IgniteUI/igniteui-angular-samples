@@ -25,17 +25,17 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         // note this type script code is for demonstration purpose and
         // it is setting the same properties as in html
 
-        // // setting values of gauge
+        // setting values of gauge
         this.linearGauge.minimumValue = 0;
         this.linearGauge.maximumValue = 100;
         this.linearGauge.value = 50;
         this.linearGauge.interval = 10;
 
-        // // setting appearance of labels
+        // setting appearance of labels
         this.linearGauge.labelInterval = 10;
         this.linearGauge.labelExtent = 0.05;
 
-        // // setting appearance of needle
+        // setting appearance of needle
         this.linearGauge.isNeedleDraggingEnabled = true;
         this.linearGauge.needleShape = LinearGraphNeedleShape.Needle;
         this.linearGauge.needleBrush = "#79797a";
@@ -44,7 +44,7 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         this.linearGauge.needleOuterExtent = 0.9;
         this.linearGauge.needleInnerExtent = 0.3;
 
-        // // setting appearance of major/minor ticks
+        // setting appearance of major/minor ticks
         this.linearGauge.minorTickCount = 5;
         this.linearGauge.minorTickEndExtent = 0.10;
         this.linearGauge.minorTickStartExtent = 0.20;
@@ -79,7 +79,7 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
             range.outerEndExtent = 0.65;
         }
 
-        // // setting extent of gauge scale
+        // setting extent of gauge scale
         this.linearGauge.scaleStrokeThickness = 0;
         this.linearGauge.scaleBrush = "#ffffff";
         this.linearGauge.scaleOutline = "#dbdbdb";
@@ -93,11 +93,11 @@ export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
         this.linearGauge.backingOutline = "#d1d1d1";
         this.linearGauge.backingStrokeThickness = 0;
 
-        // // enabling animation of the gauge
+        // enabling animation of the gauge
         this.linearGauge.transitionDuration = 500;
     }
-    public onClick(ev: Event): void {
 
+    public onClick(ev: Event): void {
         if (this.wasAnimated) {
             this.wasAnimated = false;
             this.linearGauge.transitionDuration = 0;

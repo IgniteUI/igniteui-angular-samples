@@ -27,17 +27,17 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
         // note this type script code is for demonstration purpose and
         // it is setting the same properties as in html
 
-        // // setting values of gauge
+        // setting values of gauge
         this.radialGauge.minimumValue = 0;
         this.radialGauge.maximumValue = 50;
         this.radialGauge.value = 25;
         this.radialGauge.interval = 5;
 
-        // // setting appearance of labels
+        // setting appearance of labels
         this.radialGauge.labelInterval = 5;
         this.radialGauge.labelExtent = 0.71;
 
-        // // setting appearance of needle
+        // setting appearance of needle
         this.radialGauge.isNeedleDraggingEnabled = true;
         this.radialGauge.needleShape = RadialGaugeNeedleShape.Triangle;
         this.radialGauge.needleEndWidthRatio = 0.03;
@@ -50,16 +50,15 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
         this.radialGauge.needlePivotBrush = "#79797a";
         this.radialGauge.needlePivotOutline = "#79797a";
 
-        // // setting appearance of major/minor ticks
+        // setting appearance of major/minor ticks
         this.radialGauge.minorTickCount = 5;
-        // this.radialGauge.minorTickEndExtent = 0.65;
         this.radialGauge.minorTickStartExtent = 0.65;
         this.radialGauge.minorTickStrokeThickness = 1;
         this.radialGauge.tickStartExtent = 0.6;
         this.radialGauge.tickEndExtent = 0.65;
         this.radialGauge.tickStrokeThickness = 1.75;
 
-        // // setting start/end of gauge ranges
+        // setting start/end of gauge ranges
         const range1 = new IgxRadialGaugeRangeComponent();
         range1.startValue = 5;
         range1.endValue = 15;
@@ -70,10 +69,8 @@ export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
         range3.startValue = 35;
         range3.endValue = 45;
 
-        console.log(this.radialGauge.rangeBrushes);
         this.radialGauge.rangeBrushes  = [ "#F86232", "#DC3F76", "#7446B9"];
         this.radialGauge.rangeOutlines = [ "#F86232", "#DC3F76", "#7446B9"];
-        //this.radialGauge.rangeOutlines = [ "gray", "gray", "gray"];
         this.radialGauge.ranges.clear();
         this.radialGauge.ranges.add(range1);
         this.radialGauge.ranges.add(range2);
