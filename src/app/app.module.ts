@@ -111,11 +111,14 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridDisplayDensitySampleComponent
+} from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
@@ -161,6 +164,7 @@ import { ListSample2Component } from "./list/list-sample-2/list-sample-2.compone
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
+import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListComponent } from "./list/list.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
@@ -236,6 +240,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         ListSample3Component,
         ListSample4Component,
         ListSample5Component,
+        ListSample6Component,
         GridCRMComponent,
         GridComponent,
         CarouselComponent,
@@ -378,8 +383,10 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RemoteFilteringSampleComponent,
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
-        GridEditingSampleComponent
+        GridEditingSampleComponent,
+        GridDisplayDensitySampleComponent
     ],
+    entryComponents: [MyDynamicCardComponent],
     imports: [
         IgxDropDownModule,
         IgxInputGroupModule,
@@ -430,6 +437,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
+        GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule
     ],
     providers: [

@@ -1,0 +1,62 @@
+<div >
+    <!-- <input type="button" value="Animate Gauge"
+        (click)="onClick($event)">  -->
+
+    <div class="sample-container"  >
+
+        <igx-linear-gauge
+            #linearGauge
+            height="80px"
+            width="400px"
+            minimumValue = 0
+            maximumValue = 100
+            value = 50
+            interval = 10
+            labelInterval = 10
+            labelExtent = 0.02
+            rangeBrushes ="#9FB328, #438C47, #3F51B5"
+            rangeOutlines="#9FB328, #438C47, #3F51B5"
+
+            minorTickEndExtent = 0.10,
+            minorTickStartExtent = 0.20,
+            tickStartExtent = 0.25,
+            tickEndExtent = 0.05,
+            tickStrokeThickness = 2,
+
+            needleShape = "Needle"
+            needleBrush = "#79797a"
+            needleOutline = "#79797a"
+            scaleStrokeThickness = 0
+            scaleBrush = "#ffffff"
+            scaleOutline = "#d3d3d3"
+            backingBrush = "#ffffff"
+            backingOutline = "#d1d1d1"
+            backingStrokeThickness = 0>
+
+            <igx-linear-graph-range
+                startValue=0 endValue=30
+                innerStartExtent = 0.05
+                innerEndExtent = 0.05
+                outerStartExtent = 0.65
+                outerEndExtent = 0.65>
+            </igx-linear-graph-range>
+            <igx-linear-graph-range
+                startValue=30 endValue=70
+                innerStartExtent = 0.05
+                innerEndExtent = 0.05
+                outerStartExtent = 0.65
+                outerEndExtent = 0.65>
+            </igx-linear-graph-range>
+            <igx-linear-graph-range
+                startValue=70 endValue=100
+                innerStartExtent = 0.05
+                innerEndExtent = 0.05
+                outerStartExtent = 0.65
+                outerEndExtent = 0.65>
+            </igx-linear-graph-range>
+
+        </igx-linear-gauge>
+
+    </div>
+
+</div>
