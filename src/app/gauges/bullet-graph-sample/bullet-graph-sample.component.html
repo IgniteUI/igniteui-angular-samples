@@ -1,0 +1,36 @@
+<div >
+        <input type="button" value="Gauge Animation #1" (click)="AnimateToGauge1()">
+        <input type="button" value="Gauge Animation #2" (click)="AnimateToGauge2()">
+        <input type="button" value="Gauge Animation #3" (click)="AnimateToGauge3()">
+
+    <div class="sample-container"   >
+
+        <!-- Note the bullet graph requires settings only for
+        minimumValue, maximumValue, and value, targetValue properties.
+        All other properties are optional and listed here
+        for demonstration purpose only -->
+        <igx-bullet-graph
+            #bulletGraph
+            height="80px"
+            width="400px"
+            minimumValue=0
+            maximumValue=120
+            valueBrush="#4286f4"
+            value=70
+            targetValueBrush="#4286f4"
+            targetValue=90
+            targetValueBreadth=10
+            interval=10
+            labelInterval=10
+            labelExtent=0.02
+            rangeBrushes ="#FF9800, #F96232, #C62828"
+            rangeOutlines="#FF9800, #F96232, #C62828"
+            scaleBackgroundThickness=0
+            scaleBackgroundBrush="#dbdbdb"
+            scaleBackgroundOutline="gray">
+
+        </igx-bullet-graph>
+
+    </div>
+
+</div>
