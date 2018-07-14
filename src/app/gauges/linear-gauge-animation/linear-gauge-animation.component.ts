@@ -1,23 +1,19 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
 
 import { IgxLinearGaugeComponent } from "igniteui-angular-gauges/ES5/igx-linear-gauge-component";
 import { IgxLinearGraphRangeComponent } from "igniteui-angular-gauges/ES5/igx-linear-graph-range-component";
 import { LinearGraphNeedleShape } from "igniteui-angular-gauges/ES5/LinearGraphNeedleShape";
 
 @Component({
-  selector: "app-linear-gauge-sample",
-  styleUrls: ["./linear-gauge-sample.component.scss"],
-  templateUrl: "./linear-gauge-sample.component.html"
+  selector: "app-linear-gauge-animation",
+  styleUrls: [ "./linear-gauge-animation.component.scss"],
+  templateUrl: "./linear-gauge-animation.component.html"
 })
 
-export class LinearGaugeSampleComponent implements AfterViewInit, OnInit {
+export class LinearGaugeAnimationComponent implements AfterViewInit {
 
     @ViewChild("linearGauge")
     public linearGauge: IgxLinearGaugeComponent;
-
-    constructor() { }
-
-    public ngOnInit(): void { }
 
     public ngAfterViewInit(): void {
 

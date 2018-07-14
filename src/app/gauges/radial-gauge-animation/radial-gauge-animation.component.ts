@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
 // radial gauge imports
 import { SweepDirection } from "igniteui-angular-core/ES5/SweepDirection";
 import { IgxRadialGaugeComponent } from "igniteui-angular-gauges/ES5/igx-radial-gauge-component";
@@ -9,18 +9,14 @@ import { RadialGaugePivotShape } from "igniteui-angular-gauges/ES5/RadialGaugePi
 import { RadialGaugeScaleOversweepShape } from "igniteui-angular-gauges/ES5/RadialGaugeScaleOversweepShape";
 
 @Component({
-  selector: "app-radial-gauge-sample",
-  styleUrls: ["./radial-gauge-sample.component.scss"],
-  templateUrl: "./radial-gauge-sample.component.html"
+  selector: "app-radial-gauge-animation",
+  styleUrls: [ "./radial-gauge-animation.component.scss"],
+  templateUrl: "./radial-gauge-animation.component.html"
 })
-export class RadialGaugeSampleComponent implements AfterViewInit, OnInit {
+export class RadialGaugeAnimationComponent implements AfterViewInit {
 
     @ViewChild("radialGauge")
     public radialGauge: IgxRadialGaugeComponent;
-
-    constructor() { }
-
-    public ngOnInit(): void { }
 
     public ngAfterViewInit(): void {
 
