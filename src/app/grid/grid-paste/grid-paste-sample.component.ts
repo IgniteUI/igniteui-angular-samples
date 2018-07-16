@@ -12,6 +12,8 @@ import { PasteHandler} from "./paste-handler.directive";
 
 import { LOCAL_DATA } from "./data";
 
+import { take } from "rxjs/operators";
+
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: "app-grid-paste-sample",
@@ -42,6 +44,14 @@ export class GridPasteSampleComponent {
         this.data = LOCAL_DATA;
     }
 
+    public ngOnInit() {
+        this.grid1.verticalScrollContainer.onChunkLoad.pipe().subscribe(() => {
+            if (this.grid1.rowList) {
+                this.clearStyles();
+            }
+        });
+    }
+
     public toggleDropDown(eventArgs) {
         this._overlaySettings.positionStrategy.settings.target = eventArgs.target;
         this.igxDropDown.toggle(this._overlaySettings);
@@ -62,6 +72,7 @@ export class GridPasteSampleComponent {
     public addRecords(processedData: any[]) {
         const columns = this.grid1.visibleColumns;
         const pk = this.grid1.primaryKey;
+        const addedData = [];
         for (const curentDataRow of processedData) {
             const rowData = {};
             for (const col of columns) {
@@ -70,7 +81,20 @@ export class GridPasteSampleComponent {
             // generate PK
             rowData[pk] = this.grid1.data.length + 1;
             this.grid1.addRow(rowData);
+            addedData.push(rowData);
+            this.grid1.cdr.detectChanges();
         }
+        // scroll to last added row
+        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length);
+
+        this.grid1.verticalScrollContainer.onChunkLoad.pipe(take(1)).subscribe(() => {
+            this.clearStyles();
+            for (const data of addedData) {
+                const rowElem = this.grid1.getRowByKey(data[pk]).nativeElement;
+                rowElem.style["font-style"] = "italic";
+                rowElem.style.color = "gray";
+            }
+        });
     }
     public updateRecords(processedData: any[]) {
         const cell = this.grid1.selectedCells[0];
@@ -81,6 +105,7 @@ export class GridPasteSampleComponent {
         const cellIndex = cell.column.visibleIndex;
         const columns = this.grid1.visibleColumns;
         let index = 0;
+        const updatedRecsPK = [];
         for (const curentDataRow of processedData) {
             const rowData = {};
             const dataRec = this.grid1.data[rowIndex + index];
@@ -98,7 +123,23 @@ export class GridPasteSampleComponent {
                 continue;
             }
             this.grid1.updateRow(rowData, rowPkValue);
+            this.grid1.cdr.detectChanges();
+            updatedRecsPK.push(rowPkValue);
             index++;
+        }
+
+        this.clearStyles();
+        for (const pkVal of updatedRecsPK) {
+            const rowElem = this.grid1.getRowByKey(pkVal).nativeElement;
+            rowElem.style["font-style"] = "italic";
+            rowElem.style.color = "gray";
+        }
+    }
+
+    protected clearStyles() {
+        for (const row of this.grid1.rowList.toArray()) {
+            row.nativeElement.style["font-style"] = "";
+            row.nativeElement.style.color = "";
         }
     }
 }
