@@ -1,4 +1,4 @@
-import { OnInit, Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 // radial gauge imports
 import { IgxRadialGaugeComponent } from "igniteui-angular-gauges/ES5/igx-radial-gauge-component";
 
@@ -18,3 +18,4 @@ export class RadialGaugeRangesComponent implements OnInit {
         this.radialGauge.scaleBrush = "#e8e8e8";
     }
 }
+
