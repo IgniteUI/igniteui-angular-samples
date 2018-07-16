@@ -1,0 +1,40 @@
+<div  >
+    <input type="button" value="Gauge Animation #1" (click)="AnimateToGauge1()">
+    <input type="button" value="Gauge Animation #2" (click)="AnimateToGauge2()">
+    <input type="button" value="Gauge Animation #3" (click)="AnimateToGauge3()">
+
+    <div class="sample-container" >
+
+        <!-- Note the linear gauge requires settings only for
+        minimumValue, maximumValue, and value properties.
+        All other properties are optional and listed here
+        for demonstration purpose only -->
+        <igx-linear-gauge
+            #linearGauge
+            height="80px"
+            width="400px"
+            minimumValue=0
+            maximumValue=100
+            value=50
+            interval=10
+            labelInterval=10
+            labelExtent=0.02
+
+            minorTickEndExtent=0.10,
+            minorTickStartExtent=0.20,
+            tickStartExtent=0.25,
+            tickEndExtent=0.05,
+            tickStrokeThickness=2,
+
+            needleShape="Needle"
+            needleBrush="#79797a"
+            needleOutline="#79797a"
+            scaleStrokeThickness=0
+            scaleBrush="#ffffff"
+            scaleOutline="#d3d3d3"
+            backingBrush="#ffffff"
+            backingOutline="#d1d1d1"
+            backingStrokeThickness=0>
+        </igx-linear-gauge>
+    </div>
+</div>

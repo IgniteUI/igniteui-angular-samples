@@ -1,10 +1,15 @@
 import {
+    AfterViewInit,
     Component,
+    ElementRef,
     OnInit,
     QueryList,
     ViewChild
 } from "@angular/core";
 import {
+    CloseScrollStrategy,
+    ConnectedPositioningStrategy,
+    HorizontalAlignment,
     IgxColumnComponent,
     IgxDateSummaryOperand,
     IgxExcelExporterOptions,
@@ -12,8 +17,15 @@ import {
     IgxGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryResult,
-    IgxToggleDirective } from "igniteui-angular";
+    IgxToggleDirective,
+    OverlaySettings,
+    PositionSettings,
+    VerticalAlignment} from "igniteui-angular";
 import { data } from "./data";
+
+function formatDate(val: Date) {
+    return new Intl.DateTimeFormat("en-US").format(val);
+}
 
 class DealsSummary extends IgxNumberSummaryOperand {
     constructor() {
@@ -25,8 +37,8 @@ class DealsSummary extends IgxNumberSummaryOperand {
             if (obj.key === "average" || obj.key === "sum") {
                 const summaryResult = obj.summaryResult;
                 // apply formatting to float numbers
-                if (Number(summaryResult) === summaryResult && summaryResult % 1 !== 0) {
-                    obj.summaryResult = summaryResult.toFixed(2);
+                if (Number(summaryResult) === summaryResult) {
+                    obj.summaryResult = summaryResult.toLocaleString("en-us", {maximumFractionDigits: 2});
                 }
                 return obj;
             }
@@ -43,6 +55,7 @@ class EarliestSummary extends IgxDateSummaryOperand {
     public operate(summaries?: any[]): IgxSummaryResult[] {
         const result = super.operate(summaries).filter((obj) => {
             if (obj.key === "earliest") {
+                obj.summaryResult = formatDate(obj.summaryResult);
                 return obj;
             }
         });
@@ -59,6 +72,7 @@ class SoonSummary extends IgxDateSummaryOperand {
         const result = super.operate(summaries).filter((obj) => {
             if (obj.key === "latest") {
                 obj.label = "Soon";
+                obj.summaryResult = formatDate(obj.summaryResult);
                 return obj;
             }
         });
@@ -71,13 +85,16 @@ class SoonSummary extends IgxDateSummaryOperand {
     styleUrls: ["./grid-crm.component.scss"],
     templateUrl: "./grid-crm.component.html"
 })
-export class GridCRMComponent implements OnInit {
+export class GridCRMComponent implements OnInit, AfterViewInit {
 
     @ViewChild("grid1", { read: IgxGridComponent })
     public grid1: IgxGridComponent;
 
-    @ViewChild("toggleRefHiding") public toggleHiding: IgxToggleDirective;
-    @ViewChild("toggleRefPinning") public togglePinning: IgxToggleDirective;
+    @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
+    @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
+
+    @ViewChild("hidingButton") public hidingButton: ElementRef;
+    @ViewChild("pinningButton") public pinningButton: ElementRef;
 
     public localData: any[];
     public dealsSummary = DealsSummary;
@@ -91,13 +108,38 @@ export class GridCRMComponent implements OnInit {
     public searchText: string = "";
     public caseSensitive: boolean = false;
 
+    public _positionSettings: PositionSettings = {
+        horizontalDirection: HorizontalAlignment.Left,
+        horizontalStartPoint: HorizontalAlignment.Right,
+        verticalStartPoint: VerticalAlignment.Bottom
+    };
+
+    public _overlaySettings: OverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: false,
+        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
+        scrollStrategy: new CloseScrollStrategy()
+    };
+
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
         this.localData = data;
     }
 
+    public toggleHiding() {
+        this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
+        this.toggleRefHiding.toggle(this._overlaySettings);
+    }
+
+    public togglePinning() {
+        this._overlaySettings.positionStrategy.settings.target = this.pinningButton.nativeElement;
+        this.toggleRefPinning.toggle(this._overlaySettings);
+    }
+
     public ngAfterViewInit() {
+        this.grid1.summariesHeight = 60;
+        this.grid1.reflow();
         this.cols = this.grid1.columnList;
         this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
         this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
@@ -152,5 +194,9 @@ export class GridCRMComponent implements OnInit {
     public clearSearch() {
         this.searchText = "";
         this.grid1.clearSearch();
+    }
+
+    public formatValue(val: any): string {
+        return val.toLocaleString("en-us", { maximumFractionDigits: 2 });
     }
 }
