@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { OnInit, Component, ViewChild } from "@angular/core";
 // radial gauge imports
 import { IgxRadialGaugeComponent } from "igniteui-angular-gauges/ES5/igx-radial-gauge-component";
 
@@ -7,17 +7,14 @@ import { IgxRadialGaugeComponent } from "igniteui-angular-gauges/ES5/igx-radial-
   styleUrls: [ "./radial-gauge-ranges.component.scss"],
   templateUrl: "./radial-gauge-ranges.component.html"
 })
-export class RadialGaugeRangesComponent implements AfterViewInit {
+export class RadialGaugeRangesComponent implements OnInit {
 
     @ViewChild("radialGauge")
     public radialGauge: IgxRadialGaugeComponent;
 
-    public ngAfterViewInit(): void {
+    public ngOnInit(): void {
 
+        // changing defaults to highlight current feature
         this.radialGauge.scaleBrush = "#e8e8e8";
-        this.radialGauge.scaleStartExtent = 0.45;
-        this.radialGauge.scaleEndExtent = 0.575;
-        this.radialGauge.tickStrokeThickness = 1.5;
     }
-
 }

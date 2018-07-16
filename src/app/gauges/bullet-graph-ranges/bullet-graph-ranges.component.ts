@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 
 import { IgxBulletGraphComponent } from "igniteui-angular-gauges/ES5/igx-bullet-graph-component";
 
@@ -8,18 +8,8 @@ import { IgxBulletGraphComponent } from "igniteui-angular-gauges/ES5/igx-bullet-
   templateUrl: "./bullet-graph-ranges.component.html"
 })
 
-export class BulletGraphRangesComponent implements AfterViewInit {
+export class BulletGraphRangesComponent {
 
     @ViewChild("bulletGraph")
     public bulletGraph: IgxBulletGraphComponent;
-
-    public ngAfterViewInit(): void {
-
-        this.bulletGraph.scaleBackgroundBrush = "#e5e5e5";
-        this.bulletGraph.scaleBackgroundOutline = "#e5e5e5";
-        this.bulletGraph.backingBrush = "#f7f7f7";
-        this.bulletGraph.backingOutline = "#bfbfbf";
-        this.bulletGraph.tickStrokeThickness = 1.5;
-        this.bulletGraph.labelExtent = 0.025;
-    }
 }

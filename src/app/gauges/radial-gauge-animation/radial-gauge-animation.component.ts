@@ -27,7 +27,7 @@ export class RadialGaugeAnimationComponent implements AfterViewInit {
 
     public AnimateToGauge4(): void {
 
-        this.radialGauge.height = "400px";
+        this.radialGauge.height = "330px";
         this.radialGauge.width = "100%";
         this.radialGauge.minimumValue = 0;
         this.radialGauge.maximumValue = 80;
@@ -82,7 +82,7 @@ export class RadialGaugeAnimationComponent implements AfterViewInit {
 
     public AnimateToGauge3(): void {
 
-        this.radialGauge.height = "400px";
+        this.radialGauge.height = "330px";
         this.radialGauge.width = "100%";
 
         this.radialGauge.minimumValue = 0;
@@ -163,7 +163,7 @@ export class RadialGaugeAnimationComponent implements AfterViewInit {
 
     public AnimateToGauge2(): void {
 
-        this.radialGauge.height = "400px";
+        this.radialGauge.height = "330px";
         this.radialGauge.width = "100%";
 
         this.radialGauge.minimumValue = 100;
@@ -223,7 +223,7 @@ export class RadialGaugeAnimationComponent implements AfterViewInit {
 
     public AnimateToGauge1(): void {
 
-        this.radialGauge.height = "400px";
+        this.radialGauge.height = "330px";
         this.radialGauge.width = "100%";
 
         this.radialGauge.minimumValue = 0;
