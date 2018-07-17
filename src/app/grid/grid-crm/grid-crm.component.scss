@@ -3,10 +3,11 @@
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
 
 @import '~igniteui-angular/lib/core/styles/themes/index';
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
 
 $crm-grid-palette: igx-palette(
     $primary: #09f,
-    $secondary: #ffc800
+    $secondary: #ffc800,
 );
 
 $primary-100: igx-color($crm-grid-palette, "primary", 100);
@@ -28,7 +29,7 @@ $secondary-700: igx-color($crm-grid-palette, "secondary", 700);
 $checkbox-theme: igx-checkbox-theme(
     $palette: $crm-grid-palette,
     $fill-color: igx-color($crm-grid-palette, "secondary", 500),
-    $tick-color: black
+    $tick-color: black,
 );
 
 $summary-theme: igx-grid-summary-theme(
@@ -73,16 +74,16 @@ $summary-theme: igx-grid-summary-theme(
 
     // button theme
     $crm-button-theme: igx-button-theme(
-        $flat-background: $primary-400,
-        $flat-text-color: $primary-100,
-        $flat-hover-background: $primary-300,
+        $flat-background: $primary-700,
+        $flat-text-color: white,
+        $flat-hover-background: $primary-200,
         $flat-hover-text-color: $primary-100,
         $flat-focus-background: $primary-200,
         $flat-focus-text-color: $primary-100,
 
-        $icon-background: $primary-400,
-        $icon-color: $primary-100,
-        $icon-hover-background: $primary-300,
+        $icon-background: $primary-700,
+        $icon-color: white,
+        $icon-hover-background: $primary-200,
         $icon-hover-color: $primary-100,
         $icon-focus-background: $primary-200,
         $icon-focus-color: $primary-100
@@ -155,15 +156,23 @@ $summary-theme: igx-grid-summary-theme(
         display: flex;
         align-items: center;
         justify-self: flex-start;
+
+        .logo-propeller {
+            margin-right: 8px; 
+            margin-top: 2px;
+        }
     }
 
     .crm-sample-toolbar__ellipsis {
         @include ellipsis();
-    }
+        opacity: 0;
+        animation: slide-fade 1.25s .25s ease-out forwards;
+    } 
 
     .igx-input-group--search .igx-input-group__bundle {
         height: rem(36px);
         overflow: hidden;
+        background-color: $primary-700;
     }
     .igx-input-group--search .igx-input-group__bundle,
     .igx-input-group--search .igx-input-group__bundle:hover {
@@ -187,6 +196,13 @@ $summary-theme: igx-grid-summary-theme(
                 font-size: 1rem;
                 width: 1rem;
                 height: 1rem;
+                color: $primary-200;
+            }
+        }
+
+        .igx-input-group {
+            igx-icon {
+                color: white;
             }
         }
 
@@ -197,7 +213,7 @@ $summary-theme: igx-grid-summary-theme(
 
         .igx-input-group__input{
             &::placeholder {
-                color: $primary-100;
+                color: white;
                 opacity: 1;
             }
         }
@@ -206,6 +222,9 @@ $summary-theme: igx-grid-summary-theme(
             &:hover,
             &:focus,
             &.igx-input-group--focused {
+                igx-icon {
+                    color: igx-color($crm-grid-palette, 'grays', 600);
+                }
                 .igx-input-group__bundle {
                     background: #fff;
                     color: igx-color($crm-grid-palette, 'grays', 600);
@@ -239,6 +258,10 @@ $summary-theme: igx-grid-summary-theme(
                 background: transparent;
             }
         }
+    }
+
+    .igx-grid-summary__item {
+        font-size: 0.8rem;
     }
 
     .operationsContainer {
@@ -340,3 +363,31 @@ $summary-theme: igx-grid-summary-theme(
     height: 1rem;
 }
 
+.animated-fan {
+    width: 28px;
+    height: 28px;
+    animation: spin-fade 1.5s cubic-bezier(0.21, 1.07, 0.99, 1) forwards;
+}
+
+@keyframes spin-fade {
+    0% {
+        opacity: 0;
+        tranform: rotate(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes slide-fade {
+    0% {
+        transform: translateX(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
