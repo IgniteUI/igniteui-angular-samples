@@ -18,4 +18,3 @@ export class RadialGaugeLabelsComponent implements OnInit {
         this.radialGauge.scaleBrush = "#e8e8e8";
     }
 }
-
