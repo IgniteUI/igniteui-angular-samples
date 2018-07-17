@@ -1,22 +1,18 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
 
 import { IgxBulletGraphComponent } from "igniteui-angular-gauges/ES5/igx-bullet-graph-component";
 import { IgxLinearGraphRangeComponent } from "igniteui-angular-gauges/ES5/igx-linear-graph-range-component";
 
 @Component({
-  selector: "app-bullet-graph-sample",
-  styleUrls: ["./bullet-graph-sample.component.scss"],
-  templateUrl: "./bullet-graph-sample.component.html"
+  selector: "app-bullet-graph-animation",
+  styleUrls: ["./bullet-graph-animation.component.scss"],
+  templateUrl: "./bullet-graph-animation.component.html"
 })
 
-export class BulletGraphSampleComponent implements AfterViewInit, OnInit {
+export class BulletGraphAnimationComponent implements AfterViewInit {
 
     @ViewChild("bulletGraph")
     public bulletGraph: IgxBulletGraphComponent;
-
-    constructor() { }
-
-    public ngOnInit(): void {  }
 
     public ngAfterViewInit(): void {
 
