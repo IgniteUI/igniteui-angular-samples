@@ -41,7 +41,7 @@ export class PasteHandler {
         window.event.returnValue = false;
         data = window[clData].getData("text");
     } else {
-        data = event[clData].getData("text/plain");
+        data = eventArgs[clData].getData("text/plain");
     }
 
     // process the clipboard data
