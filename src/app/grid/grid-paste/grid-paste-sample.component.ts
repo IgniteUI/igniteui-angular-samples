@@ -111,10 +111,13 @@ export class GridPasteSampleComponent {
             const dataRec = this.grid1.data[rowIndex + index];
             const rowPkValue = dataRec ? dataRec[pk] : this.grid1.data.length + 1;
             rowData[pk] = rowPkValue;
-            for (let j = 0; j < columns.length - cellIndex; j++) {
-                const currentCell = curentDataRow[j];
-                const colKey = columns[j + cellIndex].field;
-                rowData[columns[j + cellIndex].field] = currentCell;
+            for (let j = 0; j < columns.length; j++) {
+                let currentCell;
+                if (j >= cellIndex) {
+                    currentCell = curentDataRow.shift();
+                }
+                const colKey = columns[j].field;
+                rowData[colKey] = currentCell || dataRec[colKey];
             }
             if (!dataRec) {
                 // no rec to update, add instead
