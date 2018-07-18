@@ -87,8 +87,6 @@ class SoonSummary extends IgxDateSummaryOperand {
 })
 export class GridCRMComponent implements OnInit, AfterViewInit {
 
-    private frmt: Intl.DateTimeFormat;
-
     @ViewChild("grid1", { read: IgxGridComponent })
     public grid1: IgxGridComponent;
 
@@ -122,6 +120,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
         scrollStrategy: new CloseScrollStrategy()
     };
+
+    private frmt: Intl.DateTimeFormat;
 
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
