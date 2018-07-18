@@ -90,9 +90,11 @@ export class GridPasteSampleComponent {
         this.grid1.verticalScrollContainer.onChunkLoad.pipe(take(1)).subscribe(() => {
             this.clearStyles();
             for (const data of addedData) {
-                const rowElem = this.grid1.getRowByKey(data[pk]).nativeElement;
-                rowElem.style["font-style"] = "italic";
-                rowElem.style.color = "gray";
+                const row = this.grid1.getRowByKey(data[pk]);
+                if (row) {
+                    row.nativeElement.style["font-style"] = "italic";
+                    row.nativeElement.style.color = "gray";
+                }
             }
         });
     }
@@ -117,7 +119,7 @@ export class GridPasteSampleComponent {
                     currentCell = curentDataRow.shift();
                 }
                 const colKey = columns[j].field;
-                rowData[colKey] = currentCell || dataRec[colKey];
+                rowData[colKey] = currentCell || (!!dataRec ? dataRec[colKey] : null);
             }
             if (!dataRec) {
                 // no rec to update, add instead
@@ -133,9 +135,11 @@ export class GridPasteSampleComponent {
 
         this.clearStyles();
         for (const pkVal of updatedRecsPK) {
-            const rowElem = this.grid1.getRowByKey(pkVal).nativeElement;
-            rowElem.style["font-style"] = "italic";
-            rowElem.style.color = "gray";
+            const row = this.grid1.getRowByKey(pkVal);
+            if (row) {
+            row.nativeElement.style["font-style"] = "italic";
+            row.nativeElement.style.color = "gray";
+            }
         }
     }
 
