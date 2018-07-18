@@ -53,6 +53,13 @@ const CHARTS_DEPENDENCIES = [
     "tslib"
 ];
 
+const GAUGES_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-core",
+    "igniteui-angular-gauges",
+    "tslib"
+];
+
 export class DependencyResolver {
     public static resolveSampleDependencies(type: DependenciesType = DependenciesType.Default,
                                             additionalDependencies?: string[]) {
@@ -79,6 +86,12 @@ export class DependencyResolver {
                 }
 
                 break;
+            case DependenciesType.Gauges:
+                    for (let i = 0; i < CHARTS_DEPENDENCIES.length; i++) {
+                        dependenciesNeeded.add(GAUGES_DEPENDENCIES[i]);
+                    }
+
+                    break;
             default:
                 throw new Error("Unrecognized dependency type.");
         }
