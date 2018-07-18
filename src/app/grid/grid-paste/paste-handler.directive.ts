@@ -27,9 +27,13 @@ export class PasteHandler {
     public focusIn(eventArgs) {
     }
 
-    @HostListener("keydown.control.v", ["$event"])
+    @HostListener("keydown", ["$event"])
     public ControlV(eventArgs) {
-        this.textArea.focus();
+        const ctrl = eventArgs.ctrlKey;
+        const key = eventArgs.keyCode;
+        if (ctrl && key === 86 || eventArgs.shiftKey && key === 45) { // Ctrl-V || Shift-Ins
+            this.textArea.focus();
+        }
     }
 
     public onPaste(eventArgs) {
