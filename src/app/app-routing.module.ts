@@ -116,9 +116,27 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
-import { BulletGraphSampleComponent } from "./gauges/bullet-graph-sample/bullet-graph-sample.component";
-import { LinearGaugeSampleComponent } from "./gauges/linear-gauge-sample/linear-gauge-sample.component";
-import { RadialGaugeSampleComponent } from "./gauges/radial-gauge-sample/radial-gauge-sample.component";
+import { BulletGraphAnimationComponent } from "./gauges/bullet-graph-animation/bullet-graph-animation.component";
+import { BulletGraphBackgroundComponent } from "./gauges/bullet-graph-background/bullet-graph-background.component";
+import { BulletGraphLabelsComponent } from "./gauges/bullet-graph-labels/bullet-graph-labels.component";
+import { BulletGraphMeasuresComponent } from "./gauges/bullet-graph-measures/bullet-graph-measures.component";
+import { BulletGraphRangesComponent } from "./gauges/bullet-graph-ranges/bullet-graph-ranges.component";
+import { BulletGraphScaleComponent } from "./gauges/bullet-graph-scale/bullet-graph-scale.component";
+import { BulletGraphTickmarksComponent } from "./gauges/bullet-graph-tickmarks/bullet-graph-tickmarks.component";
+import { LinearGaugeAnimationComponent } from "./gauges/linear-gauge-animation/linear-gauge-animation.component";
+import { LinearGaugeBackingComponent } from "./gauges/linear-gauge-backing/linear-gauge-backing.component";
+import { LinearGaugeLabelsComponent } from "./gauges/linear-gauge-labels/linear-gauge-labels.component";
+import { LinearGaugeNeedleComponent } from "./gauges/linear-gauge-needle/linear-gauge-needle.component";
+import { LinearGaugeRangesComponent } from "./gauges/linear-gauge-ranges/linear-gauge-ranges.component";
+import { LinearGaugeScaleComponent } from "./gauges/linear-gauge-scale/linear-gauge-scale.component";
+import { LinearGaugeTickmarksComponent } from "./gauges/linear-gauge-tickmarks/linear-gauge-tickmarks.component";
+import { RadialGaugeAnimationComponent } from "./gauges/radial-gauge-animation/radial-gauge-animation.component";
+import { RadialGaugeBackingComponent } from "./gauges/radial-gauge-backing/radial-gauge-backing.component";
+import { RadialGaugeLabelsComponent } from "./gauges/radial-gauge-labels/radial-gauge-labels.component";
+import { RadialGaugeNeedleComponent } from "./gauges/radial-gauge-needle/radial-gauge-needle.component";
+import { RadialGaugeRangesComponent } from "./gauges/radial-gauge-ranges/radial-gauge-ranges.component";
+import { RadialGaugeScaleComponent } from "./gauges/radial-gauge-scale/radial-gauge-scale.component";
+import { RadialGaugeTickmarksComponent } from "./gauges/radial-gauge-tickmarks/radial-gauge-tickmarks.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
@@ -581,16 +599,88 @@ export const appRoutes: Routes = [
         path: "timepicker-sample-4"
     },
     {
-        component: BulletGraphSampleComponent,
-        path: "bullet-graph-sample"
+        component: BulletGraphAnimationComponent,
+        path: "bullet-graph-animation"
     },
     {
-        component: RadialGaugeSampleComponent,
-        path: "radial-gauge-sample"
+        component: BulletGraphLabelsComponent,
+        path: "bullet-graph-labels"
     },
     {
-        component: LinearGaugeSampleComponent,
-        path: "linear-gauge-sample"
+        component: BulletGraphBackgroundComponent,
+        path: "bullet-graph-background"
+    },
+    {
+        component: BulletGraphRangesComponent,
+        path: "bullet-graph-ranges"
+    },
+    {
+        component: BulletGraphScaleComponent,
+        path: "bullet-graph-scale"
+    },
+    {
+        component: BulletGraphTickmarksComponent,
+        path: "bullet-graph-tickmarks"
+    },
+    {
+        component: BulletGraphMeasuresComponent,
+        path: "bullet-graph-measures"
+    },
+    {
+        component: RadialGaugeAnimationComponent,
+        path: "radial-gauge-animation"
+    },
+    {
+        component: RadialGaugeLabelsComponent,
+        path: "radial-gauge-labels"
+    },
+    {
+        component: RadialGaugeNeedleComponent,
+        path: "radial-gauge-needle"
+    },
+    {
+        component: RadialGaugeScaleComponent,
+        path: "radial-gauge-scale"
+    },
+    {
+        component: RadialGaugeTickmarksComponent,
+        path: "radial-gauge-tickmarks"
+    },
+    {
+        component: RadialGaugeRangesComponent,
+        path: "radial-gauge-ranges"
+    },
+    {
+        component: RadialGaugeBackingComponent,
+        path: "radial-gauge-backing"
+    },
+    {
+        component: LinearGaugeAnimationComponent,
+        path: "linear-gauge-animation"
+    },
+    {
+        component: LinearGaugeNeedleComponent,
+        path: "linear-gauge-needle"
+    },
+    {
+        component: LinearGaugeBackingComponent,
+        path: "linear-gauge-backing"
+    },
+    {
+        component: LinearGaugeLabelsComponent,
+        path: "linear-gauge-labels"
+    },
+    {
+        component: LinearGaugeScaleComponent,
+        path: "linear-gauge-scale"
+    },
+    {
+        component: LinearGaugeTickmarksComponent,
+        path: "linear-gauge-tickmarks"
+    },
+    {
+        component: LinearGaugeRangesComponent,
+        path: "linear-gauge-ranges"
     },
     {
         component: NavbarComponent,
