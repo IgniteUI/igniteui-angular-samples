@@ -87,6 +87,8 @@ class SoonSummary extends IgxDateSummaryOperand {
 })
 export class GridCRMComponent implements OnInit, AfterViewInit {
 
+    private frmt: Intl.DateTimeFormat;
+
     @ViewChild("grid1", { read: IgxGridComponent })
     public grid1: IgxGridComponent;
 
@@ -173,7 +175,10 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public formatDate(val: Date) {
-        return new Intl.DateTimeFormat("en-US").format(val);
+        if (!this.frmt) {
+            this.frmt = new Intl.DateTimeFormat("en-US");
+        }
+        return this.frmt.format(val);
     }
 
     public searchKeyDown(ev) {
