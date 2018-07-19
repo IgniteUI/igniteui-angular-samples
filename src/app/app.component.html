@@ -13,7 +13,7 @@
                 </span>
 
                 <span *ngFor="let navItem of navItems" [isHeader]="true" igxDrawerItem>
-                    <button igxButton="icon" (click)="toggleParent('header' + navItem.name)" style="vertical-align: middle">
+                    <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="toggleParent('header' + navItem.name)" style="vertical-align: middle">
                         <igx-icon fontSet="material" [name]="convertNodeStateToIcon('header' + navItem.name)"></igx-icon>
                     </button>
                     <span style="vertical-align: middle">{{navItem.name}}</span>

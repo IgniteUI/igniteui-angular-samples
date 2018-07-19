@@ -92,13 +92,13 @@ export class AppComponent implements OnInit {
         if (theSpan != null) {
             var theSpanDisplay = theSpan.style.display;
             if (theSpanDisplay === "inline") {
-                return "expand_more";
+                return "remove";
             }
             else if (theSpanDisplay === "none") {
-                return "keyboard_arrow_right";
+                return "add";
             }
         }
-        return "keyboard_arrow_right";
+        return "add";
     }
 }
 
