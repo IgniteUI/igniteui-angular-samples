@@ -163,6 +163,7 @@ import { GridToolbarSample2Component} from "./grid/grid-toolbar-sample/grid-tool
 import { GridToolbarSample3Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
+import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
@@ -239,15 +240,28 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 export const appRoutes: Routes = [
     {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "/home"
+    },
+    {
+        component: HomeComponent,
+        data: { displayName: "Home" },
+        path: "home"
+    },
+    {
         component: AvatarSample1Component,
+        data: { displayName: "Avatar Sample 1", parentName: "Avatar" },
         path: "avatar-sample-1"
     },
     {
         component: AvatarSample2Component,
+        data: { displayName: "Avatar Sample 2", parentName: "Avatar" },
         path: "avatar-sample-2"
     },
     {
         component: AvatarSample3Component,
+        data: { displayName: "Avatar Sample 3", parentName: "Avatar" },
         path: "avatar-sample-3"
     },
     {

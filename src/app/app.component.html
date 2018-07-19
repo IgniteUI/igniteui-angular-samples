@@ -1,2 +1,32 @@
-<router-outlet></router-outlet>
+<div igxLayout>
+    <igx-nav-drawer #navdrawer [enableGestures]="drawerState.enableGestures" [isOpen]="drawerState.open" [(pin)]="drawerState.pin"
+        [position]="drawerState.position">
+        <ng-template igxDrawer>
+            <nav>
+                <div class="nav-header">
+                    <img class="logo" src="assets/images/rsrcs/igniteui-angular_logo.svg" alt="Ignite UI for Angular Logo">
+                </div>
 
+                <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}"
+                      routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=homeRouteItem.displayName">
+                    {{homeRouteItem.displayName}}
+                </span>
+
+                <span *ngFor="let navItem of navItems" [isHeader]="true" igxDrawerItem>
+                    {{navItem.name}}
+                    <span class="innerItem" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple routerLink="{{routeItem.path}}"
+                        routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=routeItem.displayName">
+                        {{routeItem.displayName}}
+                    </span>
+                </span>
+            </nav>
+        </ng-template>
+    </igx-nav-drawer>
+
+    <div igxFlex class="main">
+        <igx-navbar [title]="selectedDisplayName" actionButtonIcon="menu" (onAction)="navdrawer.toggle()"></igx-navbar>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
