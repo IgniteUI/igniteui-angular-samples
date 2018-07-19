@@ -5,7 +5,7 @@
   "author": "Infragistics",
   "scripts": {
     "ng": "ng",
-    "serve": "ng serve",
+    "serve": "ng serve -o",
     "start": "npm-run-all -p serve generate-live-editing",
     "start:styles": "npm-run-all -p serve \"generate-live-editing -- --styles {1}\" --",
     "start:watch-live-editing": "npm-run-all -p serve watch-live-editing",
