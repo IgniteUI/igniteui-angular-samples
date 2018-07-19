@@ -149,6 +149,7 @@ import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filt
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
@@ -1010,6 +1011,10 @@ export const appRoutes: Routes = [
     {
         component: GridMultiColumnHeadersComponent,
         path: "multi-column-headers"
+    },
+    {
+        component: GridPasteSampleComponent,
+        path: "grid-paste"
     }
 ];
 
