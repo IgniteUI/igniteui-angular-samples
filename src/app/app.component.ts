@@ -75,12 +75,11 @@ export class AppComponent implements OnInit {
 
     // toggle a header element from the navigation
     public toggleParent(nodeId) {
-        var theSpan = document.getElementById(nodeId);
+        const theSpan = document.getElementById(nodeId);
         if (theSpan != null) {
             if (theSpan.style.display === "inline") {
                 theSpan.style.display = "none";
-            }
-            else if (theSpan.style.display === "none") {
+            } else if (theSpan.style.display === "none") {
                 theSpan.style.display = "inline";
             }
         }
@@ -88,13 +87,12 @@ export class AppComponent implements OnInit {
 
     // convert a header element's visibility to a material icon name
     public convertNodeStateToIcon(nodeId) {
-        var theSpan = document.getElementById(nodeId);
+        const theSpan = document.getElementById(nodeId);
         if (theSpan != null) {
-            var theSpanDisplay = theSpan.style.display;
+            const theSpanDisplay = theSpan.style.display;
             if (theSpanDisplay === "inline") {
                 return "remove";
-            }
-            else if (theSpanDisplay === "none") {
+            } else if (theSpanDisplay === "none") {
                 return "add";
             }
         }
