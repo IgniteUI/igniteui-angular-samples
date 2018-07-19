@@ -1,4 +1,4 @@
-<div class="sample-wrapper dark-grid">
+<div class="grid__wrapper">
     <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData()"
         (onSortingDone)="processData()" (onFilteringDone)="processData()">
         <igx-column [field]="'ID'" [sortable]="true"></igx-column>
