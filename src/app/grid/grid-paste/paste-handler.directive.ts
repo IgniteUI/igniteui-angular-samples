@@ -31,7 +31,8 @@ export class PasteHandler {
     public ControlV(eventArgs) {
         const ctrl = eventArgs.ctrlKey;
         const key = eventArgs.keyCode;
-        if (ctrl && key === 86 || eventArgs.shiftKey && key === 45) { // Ctrl-V || Shift-Ins
+        // Ctrl-V || Shift-Ins || Cmd-V
+        if ((ctrl || eventArgs.metaKey) && key === 86 || eventArgs.shiftKey && key === 45) {
             this.textArea.focus();
         }
     }
