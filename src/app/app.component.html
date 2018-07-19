@@ -7,8 +7,10 @@
                     <img class="logo" src="assets/images/rsrcs/igniteui-angular_logo.svg" alt="Ignite UI for Angular Logo">
                 </div>
 
-                <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}"
-                      routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=homeRouteItem.displayName">
+                <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=homeRouteItem.displayName">
+                    <button igxButton="icon" igxRipple igxRippleCentered="true">
+                        <igx-icon fontSet="material">home</igx-icon>
+                    </button>
                     {{homeRouteItem.displayName}}
                 </span>
 

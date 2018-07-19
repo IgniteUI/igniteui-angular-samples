@@ -287,32 +287,31 @@ export const appRoutes: Routes = [
     },
     {
         component: CalendarSample1Component,
-        data: { displayName: "Calender Sample 1", parentName: "Calender" },
+        data: { displayName: "Calendar Sample 1", parentName: "Calendar" },
         path: "calendar-sample-1"
     },
     {
         component: CalendarSample2Component,
-        data: { displayName: "Calender Sample 2", parentName: "Calender" },
+        data: { displayName: "Calendar Sample 2", parentName: "Calendar" },
         path: "calendar-sample-2"
     },
     {
         component: CalendarSample3Component,
-        data: { displayName: "Calender Sample 3", parentName: "Calender" },
+        data: { displayName: "Calendar Sample 3", parentName: "Calendar" },
         path: "calendar-sample-3"
     },
     {
         component: CalendarSample4Component,
-        data: { displayName: "Calender Sample 4", parentName: "Calender" },
+        data: { displayName: "Calendar Sample 4", parentName: "Calendar" },
         path: "calendar-sample-4"
     },
     {
         component: CalendarSample5Component,
-        data: { displayName: "Calender Sample 5", parentName: "Calender" },
+        data: { displayName: "Calendar Sample 5", parentName: "Calendar" },
         path: "calendar-sample-5"
     },
     {
-        component: CalendarComponent,
-        data: { displayName: "Calender Sample 6", parentName: "Calender" },
+        component: CalendarComponent,        
         path: "calendar"
     },
     {
@@ -504,23 +503,19 @@ export const appRoutes: Routes = [
         path: "list-sample-6"
     },
     {
-        component: NavdrawerComponent,
-        data: { displayName: "Navdrawer Sample", parentName: "Navdrawer" },
+        component: NavdrawerComponent,        
         path: "navigation-drawer"
     },
     {
-        component: NavDrawerSimpleComponent,
-        data: { displayName: "Navdrawer Basic Features", parentName: "Navdrawer" },
+        component: NavDrawerSimpleComponent,        
         path: "navigation-drawer-simple"
     },
     {
-        component: NavDrawerPinComponent,
-        data: { displayName: "Navdrawer Pinning Feature", parentName: "Navdrawer" },
+        component: NavDrawerPinComponent,        
         path: "navigation-drawer-pin"
     },
     {
-        component: NavDrawerMiniComponent,
-        data: { displayName: "Navdrawer Mini Layout", parentName: "Navdrawer" },
+        component: NavDrawerMiniComponent,        
         path: "navigation-drawer-mini"
     },
     {
