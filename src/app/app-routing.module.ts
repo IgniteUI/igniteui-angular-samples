@@ -241,9 +241,9 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 export const appRoutes: Routes = [
     {
+        component: HomeComponent,
         path: "",
-        pathMatch: "full",
-        redirectTo: "/home"
+        pathMatch: "full"
     },
     {
         component: HomeComponent,
