@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { Direction, IgxButtonModule, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
   selector: "app-carousel",
   styleUrls: ["./carousel-sample-4.component.scss"],
   templateUrl: "./carousel-sample-4.component.html"

@@ -332,17 +332,15 @@ export const appRoutes: Routes = [
     },
     {
         component: CarouselSample4Component,
-        data: { displayName: "Carousel Sample 4", parentName: "Carousel" },
         path: "carousel-sample-4"
     },
     {
         component: CarouselComponent,
-        data: { displayName: "Carousel Sample 5", parentName: "Carousel" },
+        data: { displayName: "Carousel Sample 4", parentName: "Carousel" },
         path: "carousel"
     },
     {
-        component: CarouselDetailsViewComponent,
-        data: { displayName: "Carousel Sample 6", parentName: "Carousel" },
+        component: CarouselDetailsViewComponent,        
         path: "details/:index"
     },
     {
