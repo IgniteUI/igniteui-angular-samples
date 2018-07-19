@@ -311,7 +311,7 @@ export const appRoutes: Routes = [
         path: "calendar-sample-5"
     },
     {
-        component: CalendarComponent,        
+        component: CalendarComponent,
         path: "calendar"
     },
     {
@@ -339,7 +339,7 @@ export const appRoutes: Routes = [
         path: "carousel"
     },
     {
-        component: CarouselDetailsViewComponent,        
+        component: CarouselDetailsViewComponent,
         path: "details/:index"
     },
     {
@@ -503,19 +503,19 @@ export const appRoutes: Routes = [
         path: "list-sample-6"
     },
     {
-        component: NavdrawerComponent,        
+        component: NavdrawerComponent,
         path: "navigation-drawer"
     },
     {
-        component: NavDrawerSimpleComponent,        
+        component: NavDrawerSimpleComponent,
         path: "navigation-drawer-simple"
     },
     {
-        component: NavDrawerPinComponent,        
+        component: NavDrawerPinComponent,
         path: "navigation-drawer-pin"
     },
     {
-        component: NavDrawerMiniComponent,        
+        component: NavDrawerMiniComponent,
         path: "navigation-drawer-mini"
     },
     {

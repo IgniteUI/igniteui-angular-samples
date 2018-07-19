@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
                 const navItem = this.navItems.filter((item) => item.name === controlName)[0];
                 navItem.children.push({ path: "/" + appRoute.path, displayName: appRoute.data.displayName });
             }
-        }        
+        }
     }
 
     // toggle a header element from the navigation
