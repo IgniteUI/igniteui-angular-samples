@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
+import { IgxButtonModule } from "igniteui-angular";
 import { IgxBulletGraphModule } from "igniteui-angular-gauges/ES5/igx-bullet-graph-module";
 import { IgxLinearGaugeModule } from "igniteui-angular-gauges/ES5/igx-linear-gauge-module";
 import { IgxRadialGaugeModule } from "igniteui-angular-gauges/ES5/igx-radial-gauge-module";
@@ -57,7 +58,8 @@ import { RadialGaugeTickmarksComponent } from "./radial-gauge-tickmarks/radial-g
         FormsModule,
         IgxBulletGraphModule,
         IgxLinearGaugeModule,
-        IgxRadialGaugeModule
+        IgxRadialGaugeModule,
+        IgxButtonModule
      ]
 })
 export class GaugeSamplesModule {
