@@ -63,6 +63,11 @@ export class AppComponent implements OnInit {
             }
         }
 
+        // Sort navItems
+        this.navItems = this.navItems.sort((current, next) => {
+            return current.name.toLowerCase().localeCompare(next.name.toLowerCase());
+        });
+
         // Create children route items for each navigation item
         for (const appRoute of appRoutes) {
             if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
@@ -70,7 +75,7 @@ export class AppComponent implements OnInit {
                 const navItem = this.navItems.filter((item) => item.name === controlName)[0];
                 navItem.children.push({ path: "/" + appRoute.path, displayName: appRoute.data.displayName });
             }
-        }
+        }        
     }
 
     // toggle a header element from the navigation
