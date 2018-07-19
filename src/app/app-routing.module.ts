@@ -282,7 +282,7 @@ export const appRoutes: Routes = [
     },
     {
         component: CardComponent,
-        data: { displayName: "Card Sample 1", parentName: "Card" },
+        data: { displayName: "Card Overview", parentName: "Card" },
         path: "card"
     },
     {
@@ -357,7 +357,7 @@ export const appRoutes: Routes = [
     },
     {
         component: CircularProgressbarComponent,
-        data: { displayName: "Circular Progressbar Sample 2", parentName: "Circular Progressbar" },
+        data: { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
         path: "circular-progressbar"
     },
     {
