@@ -63,6 +63,11 @@ export class AppComponent implements OnInit {
             }
         }
 
+        // Sort navItems
+        this.navItems = this.navItems.sort((current, next) => {
+            return current.name.toLowerCase().localeCompare(next.name.toLowerCase());
+        });
+
         // Create children route items for each navigation item
         for (const appRoute of appRoutes) {
             if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
