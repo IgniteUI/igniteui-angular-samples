@@ -165,6 +165,7 @@ import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
+import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
@@ -281,7 +282,7 @@ export const appRoutes: Routes = [
     },
     {
         component: CardComponent,
-        data: { displayName: "Card Sample 1", parentName: "Card" },
+        data: { displayName: "Card Overview", parentName: "Card" },
         path: "card"
     },
     {
@@ -356,7 +357,7 @@ export const appRoutes: Routes = [
     },
     {
         component: CircularProgressbarComponent,
-        data: { displayName: "Circular Progressbar Sample 2", parentName: "Circular Progressbar" },
+        data: { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
         path: "circular-progressbar"
     },
     {
@@ -833,6 +834,10 @@ export const appRoutes: Routes = [
         component: IconSample1Component,
         data: { displayName: "Icon Sample 1", parentName: "Icon" },
         path: "icon-sample-1"
+    },
+    {
+        component: IconSample2Component,
+        path: "icon-sample2"
     },
     {
         component: ButtonsSample1Component,
