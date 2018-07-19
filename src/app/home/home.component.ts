@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
-    public title = "Welcome to IgniteUI for Angular Samples!";
+    public title = "Kickstart your own project with Ignite UI for Angular";
 
     constructor() { }
 
