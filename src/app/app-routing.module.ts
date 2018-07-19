@@ -165,6 +165,7 @@ import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
+import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
@@ -715,6 +716,10 @@ export const appRoutes: Routes = [
     {
         component: IconSample1Component,
         path: "icon-sample-1"
+    },
+    {
+        component: IconSample2Component,
+        path: "icon-sample2"
     },
     {
         component: ButtonsSample1Component,
