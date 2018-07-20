@@ -16,9 +16,11 @@ export class AppComponent implements OnInit {
 
     public homeRouteItem: IRouteItem;
 
-    public navItems: INavigationItem[] = [];
+    public currentNavItems: INavigationItem[] = [];
 
     public selectedDisplayName: string = "Home";
+
+    public searchValue: string = "";
 
     public drawerState = {
         enableGestures: true,
@@ -29,6 +31,8 @@ export class AppComponent implements OnInit {
         position: "left",
         width: "300px"
     };
+
+    private allNavItems: INavigationItem[] = [];
 
     constructor(private router: Router) {
     }
@@ -49,33 +53,16 @@ export class AppComponent implements OnInit {
                 }
             });
 
-        // Create home route item
-        this.homeRouteItem = { path: "/home", displayName: "Home" };
+        this.createAllNavItems();
+    }
 
-        // Create navigation items (headers)
-        for (const appRoute of appRoutes) {
-            if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
-                const controlName = appRoute.data.parentName;
+    public searchValueChanged() {
+        this.currentNavItems = this.filter(this.allNavItems);
+    }
 
-                if (this.navItems.filter((item) => item.name === controlName).length <= 0) {
-                    this.navItems.push({ name: controlName, children: [] });
-                }
-            }
-        }
-
-        // Sort navItems
-        this.navItems = this.navItems.sort((current, next) => {
-            return current.name.toLowerCase().localeCompare(next.name.toLowerCase());
-        });
-
-        // Create children route items for each navigation item
-        for (const appRoute of appRoutes) {
-            if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
-                const controlName = appRoute.data.parentName;
-                const navItem = this.navItems.filter((item) => item.name === controlName)[0];
-                navItem.children.push({ path: "/" + appRoute.path, displayName: appRoute.data.displayName });
-            }
-        }
+    public clearSearchValue() {
+        this.searchValue = "";
+        this.searchValueChanged();
     }
 
     // toggle a header element from the navigation
@@ -102,6 +89,60 @@ export class AppComponent implements OnInit {
             }
         }
         return "add";
+    }
+
+    private createAllNavItems() {
+        // Create home route item
+        this.homeRouteItem = { path: "/home", displayName: "Home" };
+
+        // Create all navigation items (headers)
+        for (const appRoute of appRoutes) {
+            if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
+                const controlName = appRoute.data.parentName;
+
+                if (this.allNavItems.filter((item) => item.name === controlName).length <= 0) {
+                    this.allNavItems.push({ name: controlName, children: [] });
+                }
+            }
+        }
+
+        // Sort navItems
+        this.allNavItems = this.sort(this.allNavItems);
+
+        // Create children route items for each navigation item
+        for (const appRoute of appRoutes) {
+            if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
+                const controlName = appRoute.data.parentName;
+                const navItem = this.allNavItems.filter((item) => item.name === controlName)[0];
+                navItem.children.push({ path: "/" + appRoute.path, displayName: appRoute.data.displayName });
+            }
+        }
+
+        this.currentNavItems = this.allNavItems;
+    }
+
+    private sort(navItems: INavigationItem[]) {
+        return navItems.sort((current, next) => {
+            return current.name.toLowerCase().localeCompare(next.name.toLowerCase());
+        });
+    }
+
+    private filter(navItems: INavigationItem[]) {
+        const filteredNavItems: INavigationItem[] = [];
+
+        for (const navItem of navItems) {
+            const filteredChildren: IRouteItem[] = [];
+            for (const routeItem of navItem.children) {
+                if (routeItem.displayName.toLowerCase().indexOf(this.searchValue) !== -1) {
+                    filteredChildren.push(routeItem);
+                }
+            }
+            if (filteredChildren.length > 0) {
+                filteredNavItems.push({ name: navItem.name, children: filteredChildren });
+            }
+        }
+
+        return filteredNavItems;
     }
 }
 

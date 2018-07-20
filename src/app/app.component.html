@@ -15,7 +15,18 @@
                     {{homeRouteItem.displayName}}
                 </span>
 
-                <span *ngFor="let navItem of navItems">
+                <!-- Search -->
+                <igx-input-group type="search" class="searchGroup">
+                    <igx-prefix>
+                        <igx-icon>search</igx-icon>
+                    </igx-prefix>
+                    <input #search igxInput placeholder="Search samples" [(ngModel)]="searchValue" (ngModelChange)="searchValueChanged()">
+                    <igx-suffix *ngIf="search.value.length > 0" (click)="clearSearchValue()">
+                        <igx-icon>clear</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+
+                <span *ngFor="let navItem of currentNavItems">
                     <!-- Header -->
                     <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active" (click)="toggleParent('header' + navItem.name)">
                         <button igxButton="icon" igxRipple igxRippleCentered="true" style="vertical-align: middle">
