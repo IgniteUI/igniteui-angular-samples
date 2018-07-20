@@ -240,30 +240,35 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { IndexComponent } from "./index/index.component";
 export const appRoutes: Routes = [
     {
-        component: HomeComponent,
-        path: "",
-        pathMatch: "full"
+        component: IndexComponent,
+        path: "index"
     },
+    // {
+    //     component: HomeComponent,
+    //     path: "",
+    //     pathMatch: "full"
+    // },
     {
         component: HomeComponent,
-        data: { displayName: "Home" },
+        data: { displayName: "Home", standalonePath: "index/home" },
         path: "home"
     },
     {
         component: AvatarSample1Component,
-        data: { displayName: "Avatar Sample 1", parentName: "Avatar" },
+        data: { displayName: "Avatar Sample 1", parentName: "Avatar", standalonePath: "index/avatar-sample-1" },
         path: "avatar-sample-1"
     },
     {
         component: AvatarSample2Component,
-        data: { displayName: "Avatar Sample 2", parentName: "Avatar" },
+        data: { displayName: "Avatar Sample 2", parentName: "Avatar", standalonePath: "index/avatar-sample-2" },
         path: "avatar-sample-2"
     },
     {
         component: AvatarSample3Component,
-        data: { displayName: "Avatar Sample 3", parentName: "Avatar" },
+        data: { displayName: "Avatar Sample 3", parentName: "Avatar", standalonePath: "index/avatar-sample-3" },
         path: "avatar-sample-3"
     },
     {

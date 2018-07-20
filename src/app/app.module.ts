@@ -219,6 +219,7 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -388,7 +389,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioGroupSampleComponent,
         GridEditingSampleComponent,
         GridDisplayDensitySampleComponent,
-        HomeComponent
+        HomeComponent,
+        IndexComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
