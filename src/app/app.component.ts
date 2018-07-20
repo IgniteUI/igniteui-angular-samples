@@ -133,7 +133,7 @@ export class AppComponent implements OnInit {
         for (const navItem of navItems) {
             const filteredChildren: IRouteItem[] = [];
             for (const routeItem of navItem.children) {
-                if (routeItem.displayName.toLowerCase().indexOf(this.searchValue) !== -1) {
+                if (routeItem.displayName.toLowerCase().indexOf(this.searchValue.toLowerCase()) !== -1) {
                     filteredChildren.push(routeItem);
                 }
             }
