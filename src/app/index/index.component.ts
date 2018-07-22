@@ -5,9 +5,9 @@ import { filter } from "rxjs/operators";
 import { appRoutes } from "../app-routing.module";
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss']
+  selector: "app-index",
+  styleUrls: ["./index.component.scss"],
+  templateUrl: "./index.component.html"
 })
 export class IndexComponent implements OnInit {
 
@@ -94,10 +94,10 @@ export class IndexComponent implements OnInit {
     private createAllNavItems() {
         // Create home route item
         // this.homeRouteItem = { path: "/home", displayName: "Home" };
-        this.homeRouteItem = { path: "/index/home", displayName: "Home" };
+        this.homeRouteItem = { path: "/samples/home", displayName: "Home" };
 
         // Create all navigation items (headers)
-        for (const appRoute of appRoutes) {
+        for (const appRoute of appRoutes[2].children) {
             if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
                 const controlName = appRoute.data.parentName;
 
@@ -111,11 +111,11 @@ export class IndexComponent implements OnInit {
         this.allNavItems = this.sort(this.allNavItems);
 
         // Create children route items for each navigation item
-        for (const appRoute of appRoutes) {
+        for (const appRoute of appRoutes[2].children) {
             if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
                 const controlName = appRoute.data.parentName;
                 const navItem = this.allNavItems.filter((item) => item.name === controlName)[0];
-                navItem.children.push({ path: "/" + appRoute.path, displayName: appRoute.data.displayName });
+                navItem.children.push({ path: "/samples/" + appRoute.path, displayName: appRoute.data.displayName });
             }
         }
 

@@ -6,15 +6,15 @@
                     <div class="nav-header">
                         <img class="logo" src="assets/images/rsrcs/igniteui-angular_logo.svg" alt="Ignite UI for Angular Logo">
                     </div>
-    
+
                     <!-- Home -->
-                    <span igxDrawerItem igxRipple routerLink="index/{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=homeRouteItem.displayName">
+                    <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=homeRouteItem.displayName">
                         <button igxButton="icon" igxRipple igxRippleCentered="true">
                             <igx-icon fontSet="material">home</igx-icon>
                         </button>
                         {{homeRouteItem.displayName}}
                     </span>
-    
+
                     <!-- Search -->
                     <igx-input-group type="search" class="searchGroup">
                         <igx-prefix>
@@ -25,7 +25,7 @@
                             <igx-icon>clear</igx-icon>
                         </igx-suffix>
                     </igx-input-group>
-    
+
                     <span *ngFor="let navItem of currentNavItems">
                         <!-- Header -->
                         <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active" (click)="toggleParent('header' + navItem.name)">
@@ -36,7 +36,7 @@
                         </span>
                         <!-- Children -->
                         <span [id]="'header' + navItem.name" style="display:none">
-                            <span class="innerItem" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple routerLink="index/{{routeItem.path}}"
+                            <span class="innerItem" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple routerLink="{{routeItem.path}}"
                                 routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=routeItem.displayName">
                                 {{routeItem.displayName}}
                             </span>
@@ -45,7 +45,7 @@
                 </nav>
             </ng-template>
         </igx-nav-drawer>
-    
+
         <div igxFlex class="main">
             <igx-navbar [title]="selectedDisplayName" actionButtonIcon="menu" (onAction)="navdrawer.toggle()"></igx-navbar>
             <div class="content">
