@@ -146,6 +146,8 @@ import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import { DocsLayoutComponent } from "./index/docs-layout.component";
+import { IndexComponent } from "./index/index.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -219,7 +221,6 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-import { IndexComponent } from './index/index.component';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -390,6 +391,7 @@ import { IndexComponent } from './index/index.component';
         GridEditingSampleComponent,
         GridDisplayDensitySampleComponent,
         HomeComponent,
+        DocsLayoutComponent,
         IndexComponent
     ],
     entryComponents: [MyDynamicCardComponent],
