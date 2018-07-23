@@ -5,9 +5,9 @@ import { filter } from "rxjs/operators";
 import { appRoutes } from "../app-routing.module";
 
 @Component({
-  selector: "app-index",
-  styleUrls: ["./index.component.scss"],
-  templateUrl: "./index.component.html"
+    selector: "app-index",
+    styleUrls: ["./index.component.scss"],
+    templateUrl: "./index.component.html"
 })
 export class IndexComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class IndexComponent implements OnInit {
 
     public currentNavItems: INavigationItem[] = [];
 
-    public selectedDisplayName: string = "Home";
+    public selectedDisplayName: string;
 
     public searchValue: string = "";
 
@@ -37,21 +37,26 @@ export class IndexComponent implements OnInit {
     constructor(private router: Router) {
     }
 
-    public ngOnInit() {
+    public ngOnInit() {        
+        const loadedRouteItem = appRoutes[2].children.filter((route) => "/samples/" + route.path === this.router.url)[0];
+        if (loadedRouteItem && loadedRouteItem.data && loadedRouteItem.data.displayName) {
+            this.selectedDisplayName = loadedRouteItem.data.displayName;
+        }
+
         this.router.events.pipe(
             filter((x) => x instanceof NavigationStart)
-        )
-            .subscribe((event: NavigationStart) => {
-                const routeItem = appRoutes.filter((route) => "/" + route.path === event.url)[0];
-                if (routeItem.data && routeItem.data.displayName) {
-                    this.selectedDisplayName = routeItem.data.displayName;
-                }
+        ).subscribe((event: NavigationStart) => {
+            const routeItem = appRoutes[2].children.filter((route) => "/samples/" + route.path === event.url)[0];
 
-                if (event.url !== "/" && !this.navdrawer.pin) {
-                    // Close drawer when selecting a view on mobile (unpinned)
-                    this.navdrawer.close();
-                }
-            });
+            if (routeItem.data && routeItem.data.displayName) {
+                this.selectedDisplayName = routeItem.data.displayName;
+            }
+
+            if (event.url !== "/" && !this.navdrawer.pin) {
+                // Close drawer when selecting a view on mobile (unpinned)
+                this.navdrawer.close();
+            }
+        });
 
         this.createAllNavItems();
     }
@@ -92,8 +97,7 @@ export class IndexComponent implements OnInit {
     }
 
     private createAllNavItems() {
-        // Create home route item
-        // this.homeRouteItem = { path: "/home", displayName: "Home" };
+        // Create home route item        
         this.homeRouteItem = { path: "/samples/home", displayName: "Home" };
 
         // Create all navigation items (headers)

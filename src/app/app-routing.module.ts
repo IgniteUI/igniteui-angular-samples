@@ -245,11 +245,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
 export const samplesRoutes: Routes = [
     {
         component: HomeComponent,
-        path: "",
-        pathMatch: "full"
-    },
-    {
-        component: HomeComponent,
         data: { displayName: "Home" },
         path: "home"
     },
@@ -260,12 +255,12 @@ export const samplesRoutes: Routes = [
     },
     {
         component: AvatarSample2Component,
-        data: { displayName: "Avatar Sample 2", parentName: "Avatar", standalonePath: "index/avatar-sample-2" },
+        data: { displayName: "Avatar Sample 2", parentName: "Avatar" },
         path: "avatar-sample-2"
     },
     {
         component: AvatarSample3Component,
-        data: { displayName: "Avatar Sample 3", parentName: "Avatar", standalonePath: "index/avatar-sample-3" },
+        data: { displayName: "Avatar Sample 3", parentName: "Avatar" },
         path: "avatar-sample-3"
     },
     {
@@ -334,15 +329,16 @@ export const samplesRoutes: Routes = [
     },
     {
         component: CarouselSample4Component,
+        data: { displayName: "Carousel Sample 4", parentName: "Carousel" },
         path: "carousel-sample-4"
     },
     {
         component: CarouselComponent,
-        data: { displayName: "Carousel Sample 4", parentName: "Carousel" },
+        data: { displayName: "Carousel Sample 5", parentName: "Carousel" },
         path: "carousel"
     },
     {
-        component: CarouselDetailsViewComponent,
+        component: CarouselDetailsViewComponent,        
         path: "details/:index"
     },
     {
@@ -1217,7 +1213,7 @@ export const samplesRoutes: Routes = [
 ];
 export const appRoutes: Routes = [
     {
-        path: "", pathMatch: "full", redirectTo: "/samples"
+        path: "", pathMatch: "full", redirectTo: "/samples/home"
     },
     {
         children: samplesRoutes,
@@ -1229,7 +1225,6 @@ export const appRoutes: Routes = [
         component: IndexComponent,
         path: "samples"
     }
-
 ];
 @NgModule({
     exports: [RouterModule],

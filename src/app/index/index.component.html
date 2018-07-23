@@ -8,7 +8,7 @@
                     </div>
 
                     <!-- Home -->
-                    <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=homeRouteItem.displayName">
+                    <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active">
                         <button igxButton="icon" igxRipple igxRippleCentered="true">
                             <igx-icon fontSet="material">home</igx-icon>
                         </button>
@@ -37,7 +37,7 @@
                         <!-- Children -->
                         <span [id]="'header' + navItem.name" style="display:none">
                             <span class="innerItem" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple routerLink="{{routeItem.path}}"
-                                routerLinkActive="igx-nav-drawer__item--active" (click)="selectedDisplayName=routeItem.displayName">
+                                routerLinkActive="igx-nav-drawer__item--active">
                                 {{routeItem.displayName}}
                             </span>
                         </span>
