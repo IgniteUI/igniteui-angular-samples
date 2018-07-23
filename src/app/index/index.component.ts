@@ -37,8 +37,9 @@ export class IndexComponent implements OnInit {
     constructor(private router: Router) {
     }
 
-    public ngOnInit() {        
-        const loadedRouteItem = appRoutes[2].children.filter((route) => "/samples/" + route.path === this.router.url)[0];
+    public ngOnInit() {
+        const loadedRouteItem = appRoutes[2].children.filter(
+            (route) => "/samples/" + route.path === this.router.url)[0];
         if (loadedRouteItem && loadedRouteItem.data && loadedRouteItem.data.displayName) {
             this.selectedDisplayName = loadedRouteItem.data.displayName;
         }
@@ -97,7 +98,7 @@ export class IndexComponent implements OnInit {
     }
 
     private createAllNavItems() {
-        // Create home route item        
+        // Create home route item
         this.homeRouteItem = { path: "/samples/home", displayName: "Home" };
 
         // Create all navigation items (headers)

@@ -338,7 +338,7 @@ export const samplesRoutes: Routes = [
         path: "carousel"
     },
     {
-        component: CarouselDetailsViewComponent,        
+        component: CarouselDetailsViewComponent,
         path: "details/:index"
     },
     {
