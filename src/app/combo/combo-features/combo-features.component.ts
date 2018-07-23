@@ -24,13 +24,41 @@ export class ComboFeatures {
     public customValues = true;
     public disabled = false;
 
+    @ViewChild("combo2", { read: IgxComboComponent }) public combo2: IgxComboComponent;
+
+    constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) {}
+
     public ngOnInit() {
         this.lData = localData;
+        this.rData = this.remoteService.remoteData;
+    }
+
+    public ngAfterViewInit() {
+        this.remoteService.getData(this.combo2.virtualizationState, null, (data) => {
+            this.combo2.totalItemCount = data.Count;
+        });
     }
 
     public handleAddition(event) { }
 
     public enableGroups(event) {
         this.combo1.groupKey = event.checked ? this.GROUP_KEY : "";
+    }
+
+    public dataLoading(evt) {
+        if (this.prevRequest) {
+            this.prevRequest.unsubscribe();
+        }
+
+        this.prevRequest = this.remoteService.getData(this.combo2.virtualizationState, null, () => {
+            this.cdr.detectChanges();
+            this.combo2.triggerCheck();
+        });
+    }
+
+    public searchInput(searchText) {
+        this.remoteService.getData(this.combo2.virtualizationState, searchText,  (data) => {
+            this.combo2.totalItemCount = searchText ? data.Results.length : data.Count;
+        });
     }
 }
