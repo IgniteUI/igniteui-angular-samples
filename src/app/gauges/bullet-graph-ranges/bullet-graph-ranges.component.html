@@ -1,0 +1,33 @@
+<div >
+    <div class="sample-container"   >
+
+        <igx-bullet-graph
+            #bulletGraph
+            height="80px" width="400px"
+            minimumValue=0 value=80 interval=10
+            maximumValue=100 targetValue=90
+
+            rangeBrushes ="#C62828, #F96232, #FF9800"
+            rangeOutlines="#C62828, #F96232, #FF9800"  >
+
+            <igx-linear-graph-range
+                startValue=0 endValue=40
+                innerStartExtent=0.075 innerEndExtent=0.075
+                outerStartExtent=0.95 outerEndExtent=0.95>
+            </igx-linear-graph-range>
+            <igx-linear-graph-range
+                startValue=40 endValue=70
+                innerStartExtent=0.075 innerEndExtent=0.075
+                outerStartExtent=0.95 outerEndExtent=0.95>
+            </igx-linear-graph-range>
+            <igx-linear-graph-range
+                startValue=70 endValue=100
+                innerStartExtent=0.075 innerEndExtent=0.075
+                outerStartExtent=0.95 outerEndExtent=0.95>
+            </igx-linear-graph-range>
+
+        </igx-bullet-graph>
+
+    </div>
+
+</div>
