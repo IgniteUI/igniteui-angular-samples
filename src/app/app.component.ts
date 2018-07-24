@@ -1,8 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { NavigationStart, Router } from "@angular/router";
-import { IgxNavigationDrawerComponent } from "igniteui-angular";
-import { filter } from "rxjs/operators";
-import { appRoutes } from "./app-routing.module";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "app-root",
@@ -10,8 +6,5 @@ import { appRoutes } from "./app-routing.module";
     templateUrl: "./app.component.html"
 })
 export class AppComponent {
-
-    constructor() {
-
-    }
+    public title = "Samples";
 }
