@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { NavigationStart, Router } from "@angular/router";
+import { NavigationStart, Router, Routes } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
-import { appRoutes } from "../app-routing.module";
 
 @Component({
     selector: "app-index",
@@ -32,13 +31,16 @@ export class IndexComponent implements OnInit {
         width: "300px"
     };
 
+    private appRoutes: Routes;
+
     private allNavItems: INavigationItem[] = [];
 
     constructor(private router: Router) {
+        this.appRoutes = router.config;
     }
 
     public ngOnInit() {
-        const loadedRouteItem = appRoutes[2].children.filter(
+        const loadedRouteItem = this.appRoutes[2].children.filter(
             (route) => "/samples/" + route.path === this.router.url)[0];
         if (loadedRouteItem && loadedRouteItem.data && loadedRouteItem.data.displayName) {
             this.selectedDisplayName = loadedRouteItem.data.displayName;
@@ -47,7 +49,7 @@ export class IndexComponent implements OnInit {
         this.router.events.pipe(
             filter((x) => x instanceof NavigationStart)
         ).subscribe((event: NavigationStart) => {
-            const routeItem = appRoutes[2].children.filter((route) => "/samples/" + route.path === event.url)[0];
+            const routeItem = this.appRoutes[2].children.filter((route) => "/samples/" + route.path === event.url)[0];
 
             if (routeItem.data && routeItem.data.displayName) {
                 this.selectedDisplayName = routeItem.data.displayName;
@@ -102,7 +104,7 @@ export class IndexComponent implements OnInit {
         this.homeRouteItem = { path: "/samples/home", displayName: "Home" };
 
         // Create all navigation items (headers)
-        for (const appRoute of appRoutes[2].children) {
+        for (const appRoute of this.appRoutes[2].children) {
             if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
                 const controlName = appRoute.data.parentName;
 
@@ -116,7 +118,7 @@ export class IndexComponent implements OnInit {
         this.allNavItems = this.sort(this.allNavItems);
 
         // Create children route items for each navigation item
-        for (const appRoute of appRoutes[2].children) {
+        for (const appRoute of this.appRoutes[2].children) {
             if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
                 const controlName = appRoute.data.parentName;
                 const navItem = this.allNavItems.filter((item) => item.name === controlName)[0];
