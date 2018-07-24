@@ -1,0 +1,47 @@
+.main {
+    width: 100%;
+}
+
+.content {    
+    width: 90%;
+    height: 90%;
+    max-width: 1200px;
+    max-height: 1000px;
+    min-width: 300px;
+    min-height: 300px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
+    overflow: auto;
+    margin: 20px;
+}
+
+.innerItem {
+    margin-left: 10px;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    padding: 24px 16px;
+    background: #eee;
+    height: 142px;
+}
+
+.logo {
+    width: 172px;
+    height: 56.666px;
+}
+
+.searchGroup {
+    margin: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .content {
+      padding: 0 15px;
+      justify-content: flex-start;
+    }
+  }
