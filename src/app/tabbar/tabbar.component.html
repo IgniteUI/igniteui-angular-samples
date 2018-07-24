@@ -1,6 +1,6 @@
 <igx-bottom-nav>
     <igx-tab-panel icon="phone">
-        <igx-list [allowRightPanning]="true" [allowLeftPanning]="true">
+        <igx-list class="tab-content" [allowRightPanning]="true" [allowLeftPanning]="true">
             <igx-list-item [isHeader]="true">History</igx-list-item>
             <igx-list-item igxRipple="pink" igxRippleTarget=".igx-list__item" *ngFor="let contact of contactsList">
                 <div class="item">
