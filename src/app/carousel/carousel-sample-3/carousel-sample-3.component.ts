@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation } from "@
 import { Direction, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
-  encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.None,
   selector: "app-carousel",
   styleUrls: ["./carousel-sample-3.component.scss"],
   templateUrl: "./carousel-sample-3.component.html"
