@@ -124,6 +124,8 @@ import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filt
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
+import { PasteHandler } from "./grid/grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
@@ -140,8 +142,12 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
+import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
+import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import { DocsLayoutComponent } from "./index/docs-layout.component";
+import { IndexComponent } from "./index/index.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -298,6 +304,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioSample1Component,
         RadioSample2Component,
         IconSample1Component,
+        IconSample2Component,
         ToggleComponent,
         MyDynamicCardComponent,
         OverlaySampleMain1Component,
@@ -376,11 +383,16 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioGroupSampleComponent,
         GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
+        GridPasteSampleComponent,
+        PasteHandler,
         RemoteFilteringSampleComponent,
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
         GridEditingSampleComponent,
-        GridDisplayDensitySampleComponent
+        GridDisplayDensitySampleComponent,
+        HomeComponent,
+        DocsLayoutComponent,
+        IndexComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

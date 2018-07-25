@@ -92,9 +92,9 @@ export class SampleAssetsGenerator extends Generator {
         this._sassCompiler = new SassCompiler();
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
-        for (let i = 0; i < Routing.appRoutes.length; i++) {
-            this._componentRoutes.setValue(Routing.appRoutes[i].component.name,
-                Routing.appRoutes[i].path);
+        for (let i = 0; i < Routing.samplesRoutes.length; i++) {
+            this._componentRoutes.setValue(Routing.samplesRoutes[i].component.name,
+                Routing.samplesRoutes[i].path);
         }
     }
 
