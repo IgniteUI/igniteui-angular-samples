@@ -39,10 +39,10 @@ export class RemoteService {
             qS += `$skip=${skip}&$top=10&$count=true&$inlinecount=allpages`;
 
             if (searchText) {
-                qS += `&$filter=substringof('` + searchText + `',ProductName)` +
-                    `&$filter=substringof('` + searchText.toLowerCase() + `',ProductName)` +
-                    `&$filter=substringof('` + searchText.toUpperCase() + `',ProductName)` +
-                    `&$filter=substringof('` + this.toTitleCase(searchText) + `',ProductName)`;
+                qS += `&$filter=substringof('` + searchText + `',ProductName)` + ` or ` +
+                    `substringof('` + searchText.toLowerCase() + `',ProductName)` + ` or ` +
+                    `substringof('` + searchText.toUpperCase() + `',ProductName)` + ` or ` +
+                    `substringof('` + this.toTitleCase(searchText) + `',ProductName)`;
             }
         }
         return `${this.url}${qS}`;
