@@ -50,7 +50,7 @@ export class ComboFeatures {
             this.prevRequest.unsubscribe();
         }
 
-        this.prevRequest = this.remoteService.getData(this.combo2.virtualizationState, null, () => {
+        this.prevRequest = this.remoteService.getData(this.combo2.virtualizationState, this.combo2.searchValue, () => {
             this.cdr.detectChanges();
             this.combo2.triggerCheck();
         });
