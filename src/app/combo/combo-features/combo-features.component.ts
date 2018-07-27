@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ViewChild } from "@angular/core";
-import { IgxComboComponent } from "igniteui-angular";
+import { IgxComboComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
 import { RemoteService } from "../../grid/services/remote.service";
 import { localData } from "./local-data";
 
@@ -12,7 +12,7 @@ import { localData } from "./local-data";
 export class ComboFeatures {
 
     public prevRequest: any;
-
+    @ViewChild("loadingToast", { read: IgxToastComponent }) public loadingToast: IgxToastComponent;
     @ViewChild("combo1", { read: IgxComboComponent }) public combo1: IgxComboComponent;
     public lData: any[];
     public rData: any;
@@ -49,10 +49,15 @@ export class ComboFeatures {
         if (this.prevRequest) {
             this.prevRequest.unsubscribe();
         }
-
+        this.loadingToast.message = "Loading Remote Data...";
+        this.loadingToast.position = IgxToastPosition.Middle;
+        this.loadingToast.autoHide = false;
+        this.loadingToast.show();
+        this.cdr.detectChanges();
         this.prevRequest = this.remoteService.getData(this.combo2.virtualizationState, this.combo2.searchValue, () => {
-            this.cdr.detectChanges();
             this.combo2.triggerCheck();
+            this.loadingToast.hide();
+            this.cdr.detectChanges();
         });
     }
 
