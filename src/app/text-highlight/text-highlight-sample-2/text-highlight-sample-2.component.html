@@ -1,0 +1,66 @@
+<div class="search-container">
+        <h5 class="description">
+            On top of the functionality from the previous sample, this sample demosntrates how to implement the text highlight directive
+             with several different containers. In this case, we have two paragraphs, each containing some text. You can see that
+             they share the same active (orange) highlight and the returned match count includes both containers. The find method in this
+             sample can be reused regardless of the number of containers you have in your application.
+        </h5>
+        <igx-input-group type="search" class="input-group">
+
+            <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
+                    (keydown)="searchKeyDown($event)" />
+            <igx-suffix>
+                <div class="caseSensitiveButton">
+                    <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="updateSearch()"
+                            [igxButtonBackground]="caseSensitive? 'rgb(73, 180, 254)' : 'transparent'">
+                        <igx-icon class="caseSensitiveIcon" fontSet="material" name="text_fields"></igx-icon>
+                    </button>
+                </div>
+            </igx-suffix>
+
+            <igx-suffix *ngIf="searchText.length > 0">
+                <div>
+
+                    <span *ngIf="matchCount > 0">
+                        {{ index + 1 }} of {{ matchCount }} results
+                    </span>
+                    <span *ngIf="matchCount == 0">
+                        No results
+                    </span>
+                </div>
+                <div class="searchButtons">
+                    <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="findPrev()" [disabled]="!canMoveHighlight">
+                        <igx-icon fontSet="material" name="navigate_before"></igx-icon>
+                    </button>
+                    <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="findNext()" [disabled]="!canMoveHighlight">
+                        <igx-icon fontSet="material" name="navigate_next"></igx-icon>
+                    </button>
+                </div>
+            </igx-suffix>
+        </igx-input-group>
+    </div>
+    <hr>
+    <div>
+        <p igxTextHighlight
+            [groupName]="'group1'"
+            [column]="0"
+            [row]="0"
+            [page]="0"
+            [containerClass]="'search-text'"
+            [value]="firstParagraph"
+            class="search-text">
+            {{firstParagraph}}
+        </p>
+    </div>
+    <div>
+        <p igxTextHighlight
+            [groupName]="'group1'"
+            [column]="0"
+            [row]="1"
+            [page]="0"
+            [containerClass]="'search-text'"
+            [value]="secondParagraph"
+            class="search-text">
+            {{secondParagraph}}
+        </p>
+    </div>
