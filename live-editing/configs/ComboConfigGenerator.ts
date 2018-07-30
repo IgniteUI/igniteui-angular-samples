@@ -1,6 +1,6 @@
 import { HttpClientModule } from "@angular/common/http";
 import { IgxComboModule, IgxDropDownModule, IgxIconModule,
-    IgxInputGroupModule, IgxSwitchModule } from "igniteui-angular";
+    IgxInputGroupModule, IgxSwitchModule, IgxToastModule } from "igniteui-angular";
 import { ComboFeatures } from "../../src/app/combo/combo-features/combo-features.component";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { CascadingCombos } from "./../../src/app/combo/cascading-combos/cascading-combos.component";
@@ -16,10 +16,10 @@ export class ComboConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/combo/combo-features/local-data.ts",
                 "/src/app/grid/services/remote.service.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxSwitchModule, ComboFeatures,
+                imports: [IgxComboModule, IgxSwitchModule, IgxToastModule, ComboFeatures,
                     HttpClientModule, RemoteService],
                 ngDeclarations: [ComboFeatures],
-                ngImports: [IgxComboModule, IgxSwitchModule, HttpClientModule],
+                ngImports: [IgxComboModule, IgxSwitchModule, IgxToastModule, HttpClientModule],
                 ngProviders: [RemoteService]
             }),
             component: ComboFeatures
