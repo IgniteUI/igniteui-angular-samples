@@ -140,8 +140,6 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        this.grid1.summariesHeight = 60;
-        this.grid1.reflow();
         this.cols = this.grid1.columnList;
         this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
         this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
