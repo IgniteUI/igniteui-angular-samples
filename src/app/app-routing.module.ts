@@ -54,6 +54,9 @@ import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
+import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
+import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
+import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -365,6 +368,20 @@ export const samplesRoutes: Routes = [
         component: CascadingCombos,
         data: { displayName: "Cascading Combos", parentName: "Combo" },
         path: "cascading-combos"
+    },
+    {
+        component: ComboMainComponent,
+        path: "features-combo"
+    },
+    {
+        component: ComboRemoteComponent,
+        data: { displayName: "Remote Combo", parentName: "Combo" },
+        path: "remote-combo"
+    },
+    {
+        component: ComboTemplateComponent,
+        data: { displayName: "Templating Combo", parentName: "Combo" },
+        path: "template-combo"
     },
     {
         component: CsvExportComponent,
