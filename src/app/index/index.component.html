@@ -1,55 +1,55 @@
-<div igxLayout>
-        <igx-nav-drawer #navdrawer [enableGestures]="drawerState.enableGestures" [isOpen]="drawerState.open" [(pin)]="drawerState.pin"
-            [position]="drawerState.position">
-            <ng-template igxDrawer>
-                <nav>
-                    <div class="nav-header">
-                        <img class="logo" src="assets/images/rsrcs/igniteui-angular_logo.svg" alt="Ignite UI for Angular Logo">
-                    </div>
+<div class="wrapper" igxLayout>
+    <igx-nav-drawer #navdrawer [enableGestures]="drawerState.enableGestures" [isOpen]="drawerState.open" [(pin)]="drawerState.pin"
+        [position]="drawerState.position">
+        <ng-template igxDrawer>
+            <nav>
+                <div class="nav-header">
+                    <img class="logo" src="assets/images/rsrcs/igniteui-angular_logo.svg" alt="Ignite UI for Angular Logo">
+                </div>
 
-                    <!-- Home -->
-                    <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active">
-                        <button igxButton="icon" igxRipple igxRippleCentered="true">
-                            <igx-icon fontSet="material">home</igx-icon>
+                <!-- Home -->
+                <span igxDrawerItem igxRipple routerLink="{{homeRouteItem.path}}" routerLinkActive="igx-nav-drawer__item--active">
+                    <button igxButton="icon" igxRipple igxRippleCentered="true">
+                        <igx-icon fontSet="material">home</igx-icon>
+                    </button>
+                    {{homeRouteItem.displayName}}
+                </span>
+
+                <!-- Search -->
+                <igx-input-group type="search" class="searchGroup">
+                    <igx-prefix>
+                        <igx-icon>search</igx-icon>
+                    </igx-prefix>
+                    <input #search igxInput placeholder="Search samples" [(ngModel)]="searchValue" (ngModelChange)="searchValueChanged()">
+                    <igx-suffix *ngIf="search.value.length > 0" (click)="clearSearchValue()">
+                        <igx-icon>clear</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+
+                <span *ngFor="let navItem of currentNavItems">
+                    <!-- Header -->
+                    <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active" (click)="toggleParent('header' + navItem.name)">
+                        <button igxButton="icon" igxRipple igxRippleCentered="true" style="vertical-align: middle">
+                            <igx-icon fontSet="material" [name]="convertNodeStateToIcon('header' + navItem.name)"></igx-icon>
                         </button>
-                        {{homeRouteItem.displayName}}
+                        <span style="vertical-align: middle">{{navItem.name}}</span>
                     </span>
-
-                    <!-- Search -->
-                    <igx-input-group type="search" class="searchGroup">
-                        <igx-prefix>
-                            <igx-icon>search</igx-icon>
-                        </igx-prefix>
-                        <input #search igxInput placeholder="Search samples" [(ngModel)]="searchValue" (ngModelChange)="searchValueChanged()">
-                        <igx-suffix *ngIf="search.value.length > 0" (click)="clearSearchValue()">
-                            <igx-icon>clear</igx-icon>
-                        </igx-suffix>
-                    </igx-input-group>
-
-                    <span *ngFor="let navItem of currentNavItems">
-                        <!-- Header -->
-                        <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active" (click)="toggleParent('header' + navItem.name)">
-                            <button igxButton="icon" igxRipple igxRippleCentered="true" style="vertical-align: middle">
-                                <igx-icon fontSet="material" [name]="convertNodeStateToIcon('header' + navItem.name)"></igx-icon>
-                            </button>
-                            <span style="vertical-align: middle">{{navItem.name}}</span>
-                        </span>
-                        <!-- Children -->
-                        <span [id]="'header' + navItem.name" style="display:none">
-                            <span class="innerItem" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple routerLink="{{routeItem.path}}"
-                                routerLinkActive="igx-nav-drawer__item--active">
-                                {{routeItem.displayName}}
-                            </span>
+                    <!-- Children -->
+                    <span [id]="'header' + navItem.name" style="display:none">
+                        <span class="innerItem" *ngFor="let routeItem of navItem.children" igxDrawerItem igxRipple routerLink="{{routeItem.path}}"
+                            routerLinkActive="igx-nav-drawer__item--active">
+                            {{routeItem.displayName}}
                         </span>
                     </span>
-                </nav>
-            </ng-template>
-        </igx-nav-drawer>
+                </span>
+            </nav>
+        </ng-template>
+    </igx-nav-drawer>
 
-        <div igxFlex class="main">
-            <igx-navbar [title]="selectedDisplayName" actionButtonIcon="menu" (onAction)="navdrawer.toggle()"></igx-navbar>
-            <div class="content">
-                <router-outlet></router-outlet>
-            </div>
+    <div igxFlex class="main">
+        <igx-navbar [title]="selectedDisplayName" actionButtonIcon="menu" (onAction)="navdrawer.toggle()"></igx-navbar>
+        <div class="content">
+            <router-outlet></router-outlet>
         </div>
     </div>
+</div>
