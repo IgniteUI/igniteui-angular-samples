@@ -10,7 +10,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    overflow: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     height: 650px;
 }
