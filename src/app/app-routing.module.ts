@@ -230,6 +230,12 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
+import {
+    TextHighlightSample1Component
+} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
+import {
+    TextHighlightSample2Component
+} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -1214,6 +1220,16 @@ export const samplesRoutes: Routes = [
     {
         component: GridPasteSampleComponent,
         path: "grid-paste"
+    },
+    {
+        component: TextHighlightSample1Component,
+        data: { displayName: "Search within a single container", parentName: "Text Highlight" },
+        path: "text-highlight-1"
+    },
+    {
+        component: TextHighlightSample2Component,
+        data: { displayName: "Search within multiple containers", parentName: "Text Highlight" },
+        path: "text-highlight-2"
     }
 ];
 export const appRoutes: Routes = [
