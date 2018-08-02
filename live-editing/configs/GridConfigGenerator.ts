@@ -35,6 +35,7 @@ import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/gri
 import {
     RemoteFilteringSampleComponent
 } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
+import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
@@ -57,7 +58,8 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 
-import { RemoteService } from "../../src/app/grid/services/remoteService";
+import { RemoteService } from "../../src/app/grid/services/remote.service";
+import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -242,10 +244,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid/services/remoteService.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
-                    IgxBadgeModule, HttpClientModule, RemoteService],
+                    IgxBadgeModule, HttpClientModule, RemoteServiceVirt],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule],
-                ngProviders: [RemoteService]
+                ngProviders: [RemoteServiceVirt]
             })
         }));
 
@@ -338,6 +340,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [ GridMultiColumnHeadersComponent, IgxGridModule, IgxButtonModule ],
                 ngDeclarations: [GridMultiColumnHeadersComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxButtonModule ]
+            })
+        }));
+
+        configs.push(new Config({
+            component: RemotePagingGridSample,
+            additionalFiles: ["/src/app/grid/services/remote.service.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [RemotePagingGridSample, IgxGridModule, HttpClientModule, RemoteService],
+                ngDeclarations: [ RemotePagingGridSample ],
+                ngImports: [IgxGridModule.forRoot()],
+                ngProviders: [RemoteService]
             })
         }));
 
