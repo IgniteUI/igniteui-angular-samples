@@ -12,7 +12,7 @@ import {
 
 import { PasteHandler} from "./paste-handler.directive";
 
-import { LOCAL_DATA, EXCEL_DATA } from "./data";
+import { EXCEL_DATA, LOCAL_DATA } from "./data";
 
 import { take } from "rxjs/operators";
 
