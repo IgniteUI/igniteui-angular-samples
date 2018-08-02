@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #09f;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #09f;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.code-snippet {
+  font-family: ‘Courier New’, monospace;
+  background: rgba(94, 110, 122, 0.12);
+  padding: 4px;
+}
+
+a {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 600ms ease-in-out;
+}
+a:hover {
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.button {
+  background: #09f;
+  padding: 10px 16px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: auto;
+}
+.button:hover {
+  background: #3af;
+}
+
+section {
+  padding: 48px;
+  min-height: 400px;
+}
+
+article {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.head {
+  background: url("assets/background.png") #09f fixed no-repeat;
+  background-size: contain;
+  min-height: 360px;
+  color: white;
+}
+
+.head p {
+  font-weight: 400;
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+  max-width: 680px;
+  margin-top: 24px;
+}
+
+.callouts {
+  display: flex;
+}
+
+.callout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.callout p {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.illustration {
+  width: 292px;
+  height: 143px;
+}
+
+.one {
+  background: url("assets/components-icon.svg") no-repeat;
+}
+
+.two {
+  background: url("assets/responsive-icon.svg") no-repeat bottom;
+}
+
+.prereq {
+  width: 192px;
+  height: 132px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.node {
+  background: url("assets/nodeJS-logo.png") no-repeat;
+}
+
+.vscode {
+  background: url("assets/vscode.png") no-repeat;
+}
+
+.instructions {
+  background: #dcf1ff;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video img {
+  width: 72px;
+  height: 72px;
+  opacity: 1;
+  transition: width 400ms ease-out, height 400ms ease-out, opacity 600ms ease-out;
+}
+.video:hover img {
+  opacity: 0.5;
+  width: 96px;
+  height: 96px;
+}
+
+.lg {
+  width: 600px;
+  height: 300px;
+  background: url("assets/background.png") no-repeat;
+  background-size: cover;
+  margin: 24px 0;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+.video-header {
+  background: url("assets/window-bar.svg");
+  width: 386px;
+  height: 18px;
+  margin-top: 32px;
+}
+
+.sm {
+  width: 386px;
+  height: 212px;
+}
+
+.v2 {
+  background: url("assets/usage-CLI.gif");
+}
+
+.v1 {
+  background: url("assets/installing-CLI.gif");
+}
+
+p + .code-snippet {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.banner > article {
+  background: #014CB1;
+  display: flex;
+  align-items: flex-end;
+  height: 320px;
+}
+
+.angular-image {
+  background: url("assets/angular-image.png") no-repeat left bottom;
+  background-size: contain;
+  width: 545px;
+  height: 258px;
+}
+
+.banner-content {
+  color: white;
+  max-width: 260px;
+  margin-bottom: 24px;
+}
+.banner-content > p {
+  margin-bottom: 24px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  background: black;
+}

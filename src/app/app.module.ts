@@ -111,16 +111,21 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridDisplayDensitySampleComponent
+} from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
+import { PasteHandler } from "./grid/grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
@@ -138,8 +143,12 @@ import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-too
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
+import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
+import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
+import { DocsLayoutComponent } from "./index/docs-layout.component";
+import { IndexComponent } from "./index/index.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -296,6 +305,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioSample1Component,
         RadioSample2Component,
         IconSample1Component,
+        IconSample2Component,
         ToggleComponent,
         MyDynamicCardComponent,
         OverlaySampleMain1Component,
@@ -374,11 +384,17 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioGroupSampleComponent,
         GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
+        GridPasteSampleComponent,
+        PasteHandler,
         RemoteFilteringSampleComponent,
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
         GridEditingSampleComponent,
-        RemotePagingGridSample
+        RemotePagingGridSample,
+        GridDisplayDensitySampleComponent,
+        HomeComponent,
+        DocsLayoutComponent,
+        IndexComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -431,6 +447,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
+        GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule
     ],
     providers: [
