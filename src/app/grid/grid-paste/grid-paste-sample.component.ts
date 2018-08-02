@@ -4,15 +4,15 @@ import {
     ConnectedPositioningStrategy,
     HorizontalAlignment,
     IgxDropDownComponent,
-    IgxGridComponent,
-    VerticalAlignment,
+    IgxExcelExporterOptions,
     IgxExcelExporterService,
-    IgxExcelExporterOptions
+    IgxGridComponent,
+    VerticalAlignment
 } from "igniteui-angular";
 
 import { PasteHandler} from "./paste-handler.directive";
 
-import { LOCAL_DATA } from "./data";
+import { LOCAL_DATA, EXCEL_DATA } from "./data";
 
 import { take } from "rxjs/operators";
 
@@ -145,14 +145,14 @@ export class GridPasteSampleComponent {
         }
     }
 
+    public downloadExcel(eventArgs) {
+        this.excelExportService.exportData(EXCEL_DATA, new IgxExcelExporterOptions("sample-data"));
+    }
+
     protected clearStyles() {
         for (const row of this.grid1.rowList.toArray()) {
             row.nativeElement.style["font-style"] = "";
             row.nativeElement.style.color = "";
         }
-    }
-
-    public downloadExcel(eventArgs) {
-        this.excelExportService.export(this.grid1, new IgxExcelExporterOptions("ExportFileFromGrid"));
     }
 }

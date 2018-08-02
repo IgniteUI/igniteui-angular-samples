@@ -62,3 +62,65 @@ export const LOCAL_DATA = [{
     Title: "Sales Representative"
 }
 ];
+
+export const EXCEL_DATA = [{
+    Name: "Aaron Cruz",
+    Title: "VP Product Management",
+    Phone: "1-(402)296-1230",
+    Country: "US"
+},
+{
+    Name: "Benjamin Ortiz",
+    Title: "Sales Associate",
+    Phone: "1-(480)865-3285",
+    Country: "US"
+},
+{
+    Name: "Harry Hughes",
+    Title: "Accounting Assistant II",
+    Phone: "1-(405)281-1072",
+    Country: "US"
+},
+{
+    Name: "Evelyn Long",
+    Title: "Sales Manager",
+    Phone: "1-(757)668-2944",
+    Country: "US"
+},
+{
+    Name: "Craig Hawkins",
+    Title: "Budget/Accounting Analyst IV",
+    Phone: "44-(399)821-6896",
+    Country: "UK"
+},
+{
+    Name: "Teresa Arnold",
+    Title: "Research Assistant II",
+    Phone: "1-(605)205-6259",
+    Country: "US"
+},
+{
+    Name: "Sharon Boyd",
+    Title: "Sales Representative",
+    Phone: "1-(405)121-5974",
+    Country: "US"
+},
+{
+    Name: "Sandra Tucker",
+    Title: "Payment Adjustment Coordinator",
+    Phone: "1-(305)979-6420",
+    Country: "US"
+},
+{
+    Name: "Sean Cunningham",
+    Title: "Administrative Officer",
+    Phone: "1-(757)961-8538",
+    Country: "US"
+},
+{
+    Name: "Jennifer Grant",
+    Title: "Cost Accountant",
+    Phone: "1-(202)499-5735",
+    Country: "US"
+}
+];
