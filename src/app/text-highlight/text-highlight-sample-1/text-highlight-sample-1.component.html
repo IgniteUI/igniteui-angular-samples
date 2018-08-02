@@ -6,6 +6,10 @@
         You can move the orange highlight by either pressing the buttons on the searchbox or by using the Enter or the arrow keys on your keyboard.
     </h5>
     <igx-input-group type="search" class="input-group">
+        <igx-prefix>
+            <igx-icon *ngIf="searchText.length == 0">search</igx-icon>
+            <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
+        </igx-prefix>
 
         <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
                 (keydown)="searchKeyDown($event)" />
@@ -20,7 +24,6 @@
 
         <igx-suffix *ngIf="searchText.length > 0">
             <div>
-
                 <span *ngIf="matchCount > 0">
                     {{ index + 1 }} of {{ matchCount }} results
                 </span>

@@ -7,6 +7,11 @@
         </h5>
         <igx-input-group type="search" class="input-group">
 
+            <igx-prefix>
+                <igx-icon *ngIf="searchText.length == 0">search</igx-icon>
+                <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
+            </igx-prefix>
+
             <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
                     (keydown)="searchKeyDown($event)" />
             <igx-suffix>

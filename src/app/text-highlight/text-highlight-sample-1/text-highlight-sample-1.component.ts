@@ -51,6 +51,11 @@ Sed eget consectetur orci, et aliquet sapien. Fusce finibus sed augue at digniss
         this.find(0);
     }
 
+    public clearSearch() {
+        this.searchText = "";
+        this.find(0);
+    }
+
     public get canMoveHighlight() {
         return this.matchCount > 1;
     }
