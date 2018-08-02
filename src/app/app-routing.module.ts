@@ -151,6 +151,7 @@ import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
+import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
@@ -1210,6 +1211,11 @@ export const samplesRoutes: Routes = [
         component: GridMultiColumnHeadersComponent,
         data: { displayName: "Grid Multi Column Headers", parentName: "Grid" },
         path: "multi-column-headers"
+    },
+    {
+        component: RemotePagingGridSample,
+        data: { displayName: "Grid Remote Paging", parentName: "Grid" },
+        path: "grid-remote-paging"
     },
     {
         component: GridPasteSampleComponent,

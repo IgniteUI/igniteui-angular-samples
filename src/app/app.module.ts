@@ -128,6 +128,7 @@ import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sam
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "./grid/grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
+import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
@@ -396,6 +397,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
         GridEditingSampleComponent,
+        RemotePagingGridSample,
         GridDisplayDensitySampleComponent,
         HomeComponent,
         DocsLayoutComponent,
