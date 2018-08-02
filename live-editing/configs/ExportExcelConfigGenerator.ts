@@ -1,10 +1,11 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxExcelExporterService, IgxGridModule, IgxDropDownModule, IgxDropDownComponent } from "igniteui-angular";
+import { IgxExcelExporterService, IgxGridModule, IgxDropDownModule, IgxDropDownComponent, IgxButtonModule } from "igniteui-angular";
 import {
     ExcelExportSample1Component
 } from "../../src/app/export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "../../src/app/export-excel/excel-export.component";
 import { GridPasteSampleComponent } from "../../src/app/grid/grid-paste/grid-paste-sample.component";
+import { PasteHandler } from "../../src/app/grid/grid-paste/paste-handler.directive";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -38,11 +39,11 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridPasteSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-paste/data.ts"],
+            additionalFiles: ["/src/app/grid/grid-paste/data.ts", "/src/app/grid/grid-paste/paste-handler.directive.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxExcelExporterService, GridPasteSampleComponent, IgxDropDownComponent, IgxDropDownModule],
-                ngDeclarations: [GridPasteSampleComponent],
-                ngImports: [IgxGridModule, IgxDropDownModule],
+                imports: [IgxGridModule, IgxExcelExporterService, GridPasteSampleComponent, IgxDropDownComponent, IgxDropDownModule, IgxButtonModule, PasteHandler],
+                ngDeclarations: [GridPasteSampleComponent, PasteHandler],
+                ngImports: [IgxGridModule, IgxDropDownModule, IgxButtonModule],
                 ngProviders: [IgxExcelExporterService]
             }),
             shortenComponentPathBy: "/grid-paste/",
