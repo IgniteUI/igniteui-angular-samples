@@ -1207,6 +1207,7 @@ export const samplesRoutes: Routes = [
     },
     {
         component: GridPasteSampleComponent,
+        data: { displayName: "Grid Paste From Excel", parentName: "Grid" },
         path: "grid-paste"
     }
 ];

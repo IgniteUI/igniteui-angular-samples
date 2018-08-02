@@ -1,12 +1,14 @@
 <div class="grid__wrapper">
-    <button igxButton="raised" (click)="toggleDropDown($event)">Paste Options</button>
-    <igx-drop-down (onSelection)="selectionChange($event)">
-        <igx-drop-down-item *ngFor="let item of comboData">
-            {{ item }}
-        </igx-drop-down-item>
-    </igx-drop-down>
+    <div class="grid__menu">
+        <button igxButton="raised" (click)="toggleDropDown($event)">Paste Options</button>
+        <igx-drop-down (onSelection)="selectionChange($event)">
+            <igx-drop-down-item *ngFor="let item of comboData">
+                {{ item }}
+            </igx-drop-down-item>
+        </igx-drop-down>
+        <button id="download_excel" igxButton="raised" (click)="downloadExcel($event)">Download Sample Excel File</button>
+    </div>
     <igx-grid #grid1 [data]="data" [width]="'100%'" [height]="'505px'" [autoGenerate]="false" paste-handler (onDataProcessed)="dataPasted($event)" [primaryKey]="'ID'">
-        <igx-column [field]="'ID'" [hidden]="true"></igx-column>
         <igx-column [field]="'Name'"></igx-column>
         <igx-column [field]="'Title'"></igx-column>
         <igx-column [field]="'Phone'"></igx-column>
