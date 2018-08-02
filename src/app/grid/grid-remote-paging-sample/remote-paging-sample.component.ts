@@ -6,8 +6,8 @@ import { RemoteService } from "../services/remote.service";
 @Component({
     providers: [RemoteService],
     selector: "remote-paging-grid-sample",
-    styles: ["./remote-paging-sample.component.scss"],
-    templateUrl: "./remote-paging-sample.component.html"
+    styleUrls: ["./remote-paging-sample.component.scss"],
+    templateUrl: "remote-paging-sample.component.html"
 })
 export class RemotePagingGridSample implements OnInit, AfterViewInit {
     public data: Observable<any[]>;
