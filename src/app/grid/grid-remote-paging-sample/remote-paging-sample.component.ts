@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
-import { Subject, Subscriber } from "rxjs";
+import { Observable, Subject, Subscriber } from "rxjs";
 import { RemoteService } from "../services/remote.service";
 
 @Component({
@@ -10,9 +10,7 @@ import { RemoteService } from "../services/remote.service";
     templateUrl: "./remote-paging-sample.component.html"
 })
 export class RemotePagingGridSample implements OnInit, AfterViewInit {
-    public data: Subject<any[]>;
-
-    @ViewChild(IgxGridComponent) private grid: IgxGridComponent;
+    public data: Observable<any[]>;
 
     constructor(private remoteService: RemoteService) {}
 
