@@ -20,5 +20,4 @@ export class ComboFeatures {
     }
 
     public handleAddition(event) { }
-
 }
