@@ -15,6 +15,8 @@ export class PasteHandler {
         this.textArea = document.createElement("textarea");
         const style = this.textArea.style;
         style.opacity = "0";
+        style.height = "0px";
+        style.width = "0px";
         style.overflow = "hidden";
         div.appendChild(this.textArea);
 
