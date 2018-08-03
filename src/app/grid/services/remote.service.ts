@@ -5,13 +5,11 @@ import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()
 export class RemoteService {
-    public remoteData: Observable<any[]>;
-    private url: string = "https://www.igniteui.com/api/products";
-    private _remoteData: BehaviorSubject<any[]>;
+    public remoteData: BehaviorSubject<any[]>;
+    private url: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 
     constructor(private http: HttpClient) {
-        this._remoteData = new BehaviorSubject([]);
-        this.remoteData = this._remoteData.asObservable();
+        this.remoteData = new BehaviorSubject([]);
     }
 
     public getData(data?: IForOfState, searchText?: string, cb?: (any) => void): any {
@@ -19,7 +17,7 @@ export class RemoteService {
         return this.http
             .get(this.buildUrl(dataState, searchText))
             .subscribe((d: any) => {
-                this._remoteData.next(d.Results);
+                this.remoteData.next(d.value);
                 if (cb) {
                     cb(d);
                 }
@@ -36,13 +34,10 @@ export class RemoteService {
                 // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
                 10 : dataState.chunkSize;
             const top = requiredChunkSize;
-            qS += `$skip=${skip}&$top=10&$count=true&$inlinecount=allpages`;
+            qS += `$skip=${skip}&$top=10&$count=true`;
 
             if (searchText) {
-                qS += `&$filter=substringof('` + searchText + `',ProductName)` + ` or ` +
-                    `substringof('` + searchText.toLowerCase() + `',ProductName)` + ` or ` +
-                    `substringof('` + searchText.toUpperCase() + `',ProductName)` + ` or ` +
-                    `substringof('` + this.toTitleCase(searchText) + `',ProductName)`;
+                qS += `&$filter=contains(ProductName, '` + searchText + `')`;
             }
         }
         return `${this.url}${qS}`;
