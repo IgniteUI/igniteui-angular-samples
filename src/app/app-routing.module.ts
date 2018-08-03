@@ -154,6 +154,7 @@ import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
+import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
@@ -232,6 +233,12 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
+import {
+    TextHighlightSample1Component
+} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
+import {
+    TextHighlightSample2Component
+} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -1223,8 +1230,24 @@ export const samplesRoutes: Routes = [
         path: "multi-column-headers"
     },
     {
+        component: RemotePagingGridSample,
+        data: { displayName: "Grid Remote Paging", parentName: "Grid" },
+        path: "grid-remote-paging"
+    },
+    {
         component: GridPasteSampleComponent,
+        data: { displayName: "Grid Paste From Excel", parentName: "Grid" },
         path: "grid-paste"
+    },
+    {
+        component: TextHighlightSample1Component,
+        data: { displayName: "Search within a single container", parentName: "Text Highlight" },
+        path: "text-highlight-1"
+    },
+    {
+        component: TextHighlightSample2Component,
+        data: { displayName: "Search within multiple containers", parentName: "Text Highlight" },
+        path: "text-highlight-2"
     }
 ];
 export const appRoutes: Routes = [

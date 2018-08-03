@@ -1,9 +1,9 @@
 import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from "@angular/core";
 import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
-import { RemoteService } from "../services/remoteService";
+import { RemoteServiceVirt } from "../services/remoteService";
 
 @Component({
-    providers: [RemoteService],
+    providers: [RemoteServiceVirt],
     selector: "grid-remote-virtualization-sample",
     styleUrls: ["grid-sample-4.component.scss"],
     templateUrl: "grid-sample-4.component.html"
@@ -24,7 +24,7 @@ export class GridRemoteVirtualizationSampleComponent {
     private _isColumnCellTemplateReset: boolean = false;
     private _prevRequest: any;
 
-    constructor(private _remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
+    constructor(private _remoteService: RemoteServiceVirt, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.remoteData = this._remoteService.data;
