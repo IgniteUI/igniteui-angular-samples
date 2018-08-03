@@ -1,4 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
+import { IgxComboComponent } from "igniteui-angular";
 import { localData } from "./local-data";
 
 @Component({
@@ -7,7 +8,10 @@ import { localData } from "./local-data";
     templateUrl: "./combo-features.component.html"
 })
 export class ComboFeatures {
+
+    public GROUP_KEY = "region";
     public lData: any[];
+    @ViewChild("combo", { read: IgxComboComponent }) public combo: IgxComboComponent;
 
     public filterable = true;
     public customValues = true;
@@ -18,4 +22,8 @@ export class ComboFeatures {
     }
 
     public handleAddition(event) { }
+
+    public enableGroups(event) {
+        this.combo.groupKey = event.checked ? this.GROUP_KEY : "";
+    }
 }
