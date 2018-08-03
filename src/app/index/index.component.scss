@@ -2,7 +2,7 @@
     max-height: 100%;
 }
 .main {
-    width: 100%;
+    width: calc(100% - 300px);
 }
 
 .content {    
@@ -11,15 +11,13 @@
     max-height: 1000px;
     min-width: 300px;
     min-height: 300px;
-    display: flex;
-    flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
     overflow: auto;    
 }
 
 .innerItem {
-    margin-left: 10px;
+    margin-left: 36px;
 }
 
 .nav-header {
