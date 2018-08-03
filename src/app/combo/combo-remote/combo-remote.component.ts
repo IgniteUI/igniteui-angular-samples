@@ -11,8 +11,8 @@ import { RemoteService } from "../../grid/services/remote.service";
 export class ComboRemoteComponent implements OnInit {
 
     public prevRequest: any;
-    @ViewChild("loadingToast", { read: IgxToastComponent }) public loadingToast: IgxToastComponent;
     public rData: any;
+    @ViewChild("loadingToast", { read: IgxToastComponent }) public loadingToast: IgxToastComponent;
     @ViewChild("remoteCombo", { read: IgxComboComponent }) public remoteCombo: IgxComboComponent;
 
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
@@ -23,7 +23,7 @@ export class ComboRemoteComponent implements OnInit {
 
     public ngAfterViewInit() {
         this.remoteService.getData(this.remoteCombo.virtualizationState, null, (data) => {
-            this.remoteCombo.totalItemCount = data.Count;
+            this.remoteCombo.totalItemCount = data["@odata.count"];
         });
     }
 
@@ -36,17 +36,19 @@ export class ComboRemoteComponent implements OnInit {
         this.loadingToast.autoHide = false;
         this.loadingToast.show();
         this.cdr.detectChanges();
-        this.prevRequest = this.remoteService.getData(this.remoteCombo.virtualizationState,
-            this.remoteCombo.searchValue, () => {
-                this.remoteCombo.triggerCheck();
-                this.loadingToast.hide();
-                this.cdr.detectChanges();
-            });
+        this.prevRequest = this.remoteService.getData(
+            this.remoteCombo.virtualizationState,
+            null,
+            (data) => {
+              this.remoteCombo.totalItemCount = data["@odata.count"];
+              this.loadingToast.hide();
+              this.cdr.detectChanges();
+        });
     }
 
     public searchInput(searchText) {
         this.remoteService.getData(this.remoteCombo.virtualizationState, searchText, (data) => {
-            this.remoteCombo.totalItemCount = searchText ? data.Results.length : data.Count;
+            this.remoteCombo.totalItemCount = data["@odata.count"];
         });
     }
 }

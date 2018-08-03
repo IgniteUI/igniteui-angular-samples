@@ -1,5 +1,4 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxComboComponent } from "igniteui-angular";
 import { localData } from "./local-data";
 
 @Component({
@@ -8,7 +7,6 @@ import { localData } from "./local-data";
     templateUrl: "./combo-features.component.html"
 })
 export class ComboFeatures {
-    @ViewChild("combo", { read: IgxComboComponent }) public combo1: IgxComboComponent;
     public lData: any[];
 
     public filterable = true;
