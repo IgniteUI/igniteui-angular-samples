@@ -5,13 +5,11 @@ import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()
 export class RemoteService {
-    public remoteData: Observable<any[]>;
+    public remoteData: BehaviorSubject<any[]>;
     private url: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
-    private _remoteData: BehaviorSubject<any[]>;
 
     constructor(private http: HttpClient) {
-        this._remoteData = new BehaviorSubject([]);
-        this.remoteData = this._remoteData.asObservable();
+        this.remoteData = new BehaviorSubject([]);
     }
 
     public getData(data?: IForOfState, searchText?: string, cb?: (any) => void): any {
@@ -19,7 +17,7 @@ export class RemoteService {
         return this.http
             .get(this.buildUrl(dataState, searchText))
             .subscribe((d: any) => {
-                this._remoteData.next(d.value);
+                this.remoteData.next(d.value);
                 if (cb) {
                     cb(d);
                 }
