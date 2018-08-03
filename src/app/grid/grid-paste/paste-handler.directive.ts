@@ -11,8 +11,6 @@ export class PasteHandler {
         const div = document.createElement("div");
         const divStyle = div.style;
         divStyle.position = "fixed";
-        divStyle.top = "-10000px";
-        divStyle.left = "-10000px";
         document.body.appendChild(div);
         this.textArea = document.createElement("textarea");
         const style = this.textArea.style;
