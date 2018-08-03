@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 @Injectable()
 export class RemoteService {
     public remoteData: BehaviorSubject<any[]>;
-    private url: string = "https://www.igniteui.com/api/products";
+    private url: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 
     constructor(private http: HttpClient) {
         this.remoteData = new BehaviorSubject([]);
@@ -17,7 +17,7 @@ export class RemoteService {
         return this.http
             .get(this.buildUrl(dataState, searchText))
             .subscribe((d: any) => {
-                this.remoteData.next(d.Results ? d.Results : d);
+                this.remoteData.next(d.value);
                 if (cb) {
                     cb(d);
                 }
@@ -34,13 +34,10 @@ export class RemoteService {
                 // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
                 10 : dataState.chunkSize;
             const top = requiredChunkSize;
-            qS += `$skip=${skip}&$top=10&$count=true&$inlinecount=allpages`;
+            qS += `$skip=${skip}&$top=10&$count=true`;
 
             if (searchText) {
-                qS += `&$filter=substringof('` + searchText + `',ProductName)` + ` or ` +
-                    `substringof('` + searchText.toLowerCase() + `',ProductName)` + ` or ` +
-                    `substringof('` + searchText.toUpperCase() + `',ProductName)` + ` or ` +
-                    `substringof('` + this.toTitleCase(searchText) + `',ProductName)`;
+                qS += `&$filter=contains(ProductName, '` + searchText + `')`;
             }
         }
         return `${this.url}${qS}`;
