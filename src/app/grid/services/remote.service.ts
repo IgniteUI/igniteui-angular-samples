@@ -17,7 +17,7 @@ export class RemoteService {
         return this.http
             .get(this.buildUrl(dataState, searchText))
             .subscribe((d: any) => {
-                this._remoteData.next(d.value);
+                this.remoteData.next(d.value);
                 if (cb) {
                     cb(d);
                 }
