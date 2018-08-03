@@ -309,12 +309,13 @@ export const appRoutes: Routes = [
         component: CircularProgressbarComponent,
         path: "circular-progressbar"
     },
-    {
+        {
         component: ComboMainComponent,
         path: "combo"
     },
     {
         component: ComboFeatures,
+        data: { displayName: "Combos Features", parentName: "Combo" },
         path: "combo-features"
     },
     {
@@ -329,6 +330,7 @@ export const appRoutes: Routes = [
     },
     {
         component: CascadingCombos,
+        data: { displayName: "Cascading Combos", parentName: "Combo" },
         path: "cascading-combos"
     },
     {
