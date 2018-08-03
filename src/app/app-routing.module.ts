@@ -310,26 +310,26 @@ export const appRoutes: Routes = [
         path: "circular-progressbar"
     },
     {
+        component: ComboMainComponent,
+        path: "combo"
+    },
+    {
         component: ComboFeatures,
         path: "combo-features"
     },
     {
-        component: CascadingCombos,
-        path: "cascading-combos"
-    },
-    {
-        component: ComboMainComponent,
-        path: "features-combo"
-    },
-    {
         component: ComboRemoteComponent,
         data: { displayName: "Remote Combo", parentName: "Combo" },
-        path: "remote-combo"
+        path: "combo-remote"
     },
     {
         component: ComboTemplateComponent,
         data: { displayName: "Templating Combo", parentName: "Combo" },
-        path: "template-combo"
+        path: "combo-template"
+    },
+    {
+        component: CascadingCombos,
+        path: "cascading-combos"
     },
     {
         component: CsvExportComponent,
