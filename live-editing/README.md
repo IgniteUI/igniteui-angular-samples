@@ -53,6 +53,7 @@ API description of the `DependenciesType` enum, used in the `Config` class.
 | --- | --- |
 | Default | Loads `igniteui-angular` package and its dependencies. |
 | Charts | Loads `igniteui-angular-charts` package and its dependencies. |
+| Gauges | Loads `igniteui-angular-gauges` package and its dependencies. |
 
 
 ### Configuration Generator
@@ -64,7 +65,7 @@ Each Ignite UI for Angular component has a separate configurations generator. If
 ### Shared File
 
 The engine creates a `shared.json` file which holds all of the common files path and content, used in every sample application. These files are:
-* index.html 
+* index.html
 * polyfills.ts
 * styles.scss
 * .angular-cli.json
@@ -86,7 +87,7 @@ new Config({
 });
 ```
 
-The engine will create a `grid.json` file describing the path and content of the following files: 
+The engine will create a `grid.json` file describing the path and content of the following files:
 * app/grid/grid.component.ts
 * app/grid/grid.component.html
 * app/grid/grid.component.scss

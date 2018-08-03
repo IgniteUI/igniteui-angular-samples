@@ -5,13 +5,11 @@ import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()
 export class RemoteService {
-    public remoteData: Observable<any[]>;
+    public remoteData: BehaviorSubject<any[]>;
     private url: string = "https://www.igniteui.com/api/products";
-    private _remoteData: BehaviorSubject<any[]>;
 
     constructor(private http: HttpClient) {
-        this._remoteData = new BehaviorSubject([]);
-        this.remoteData = this._remoteData.asObservable();
+        this.remoteData = new BehaviorSubject([]);
     }
 
     public getData(data?: IForOfState, searchText?: string, cb?: (any) => void): any {
@@ -19,7 +17,7 @@ export class RemoteService {
         return this.http
             .get(this.buildUrl(dataState, searchText))
             .subscribe((d: any) => {
-                this._remoteData.next(d.Results);
+                this.remoteData.next(d.Results ? d.Results : d);
                 if (cb) {
                     cb(d);
                 }
@@ -39,10 +37,10 @@ export class RemoteService {
             qS += `$skip=${skip}&$top=10&$count=true&$inlinecount=allpages`;
 
             if (searchText) {
-                qS += `&$filter=substringof('` + searchText + `',ProductName)` +
-                    `&$filter=substringof('` + searchText.toLowerCase() + `',ProductName)` +
-                    `&$filter=substringof('` + searchText.toUpperCase() + `',ProductName)` +
-                    `&$filter=substringof('` + this.toTitleCase(searchText) + `',ProductName)`;
+                qS += `&$filter=substringof('` + searchText + `',ProductName)` + ` or ` +
+                    `substringof('` + searchText.toLowerCase() + `',ProductName)` + ` or ` +
+                    `substringof('` + searchText.toUpperCase() + `',ProductName)` + ` or ` +
+                    `substringof('` + this.toTitleCase(searchText) + `',ProductName)`;
             }
         }
         return `${this.url}${qS}`;

@@ -1,0 +1,57 @@
+<div class="search-container">
+    <h5 class="description">
+        Use the search box to search for a certain string in the paragraph below.
+        All the results will be highlighted in yellow, while the first occurrence of the string will be in orange.
+        You can use the button in the searchbox to specify if the search will be case sensitive.
+        You can move the orange highlight by either pressing the buttons on the searchbox or by using the Enter or the arrow keys on your keyboard.
+    </h5>
+    <igx-input-group type="search" class="input-group">
+        <igx-prefix>
+            <igx-icon *ngIf="searchText.length == 0">search</igx-icon>
+            <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
+        </igx-prefix>
+
+        <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
+                (keydown)="searchKeyDown($event)" />
+        <igx-suffix>
+            <div class="caseSensitiveButton">
+                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="updateSearch()"
+                        [igxButtonBackground]="caseSensitive? 'rgb(73, 180, 254)' : 'transparent'">
+                    <igx-icon class="caseSensitiveIcon" fontSet="material" name="text_fields"></igx-icon>
+                </button>
+            </div>
+        </igx-suffix>
+
+        <igx-suffix *ngIf="searchText.length > 0">
+            <div>
+                <span *ngIf="matchCount > 0">
+                    {{ index + 1 }} of {{ matchCount }} results
+                </span>
+                <span *ngIf="matchCount == 0">
+                    No results
+                </span>
+            </div>
+            <div class="searchButtons">
+                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="findPrev()" [disabled]="!canMoveHighlight">
+                    <igx-icon fontSet="material" name="navigate_before"></igx-icon>
+                </button>
+                <button igxButton="icon" igxRipple igxRippleCentered="true" (click)="findNext()" [disabled]="!canMoveHighlight">
+                    <igx-icon fontSet="material" name="navigate_next"></igx-icon>
+                </button>
+            </div>
+        </igx-suffix>
+    </igx-input-group>
+</div>
+<hr>
+<div>
+    <p igxTextHighlight
+        [value]="html"
+        [groupName]="'group1'"
+        [column]="0"
+        [row]="0"
+        [page]="0"
+        [containerClass]="'search-text'"
+        class="search-text">
+        {{html}}
+    </p>
+</div>

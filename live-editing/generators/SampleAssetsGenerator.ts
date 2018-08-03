@@ -19,6 +19,7 @@ import { ExportCsvConfigGenerator } from "./../configs/ExportCsvConfigGenerator"
 import { ExportExcelConfigGenerator } from "./../configs/ExportExcelConfigGenerator";
 import { FinancialChartConfigGenerator } from "./../configs/FinancialChartConfigGenerator";
 import { ForConfigGenerator } from "./../configs/ForConfigGenerator";
+import { GaugesConfigGenerator } from "./../configs/GagugesConfigGenerator";
 import { GridConfigGenerator } from "./../configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./../configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "./../configs/InputGroupConfigGenerator";
@@ -73,6 +74,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator, DropDownConfigGenerator,
     ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
+    GaugesConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
@@ -90,9 +92,9 @@ export class SampleAssetsGenerator extends Generator {
         this._sassCompiler = new SassCompiler();
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
-        for (let i = 0; i < Routing.appRoutes.length; i++) {
-            this._componentRoutes.setValue(Routing.appRoutes[i].component.name,
-                Routing.appRoutes[i].path);
+        for (let i = 0; i < Routing.samplesRoutes.length; i++) {
+            this._componentRoutes.setValue(Routing.samplesRoutes[i].component.name,
+                Routing.samplesRoutes[i].path);
         }
     }
 

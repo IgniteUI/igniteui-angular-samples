@@ -3,7 +3,10 @@
         <div class="crm-sample-toolbar">
 
             <div class="crm-sample-toolbar__title">
-                <span class="crm-sample-toolbar__ellipsis">Business propeller</span>
+                <span class="logo-propeller">
+                    <img src="assets/images/grid/propeller-logo.svg" class="animated-fan"/>
+                </span>
+                <span class="crm-sample-toolbar__ellipsis">Business Propeller</span>
             </div>
 
             <div class="sample-flex-container">
@@ -78,7 +81,7 @@
         </div>
     </div>
 
-    <igx-grid #grid1 id="grid1" [data]="localData" [height]="'665px'" [width]="'1172px'" rowSelectable="true">
+    <igx-grid #grid1 id="grid1" [data]="localData" [height]="'430px'" [width]="'1180px'" rowSelectable="true" displayDensity="cosy" rowHeight="50">
         <igx-column field="id" header="Customer Number" filterable="true" width="172" pinned="true" hasSummary="true" resizable="true" hidden="true"
             movable="true">
         </igx-column>
@@ -138,33 +141,35 @@
         <igx-column field="referred_by" header="Referred By" filterable="true" width="160" resizable="true" movable="true">
         </igx-column>
 
-        <igx-column field="birthday" header="Birthday" width="140" dataType="date" [formatter]="formatDate" hasSummary="true" [summaries]="soonSummary"
+        <igx-column field="birthday" header="Birthday" width="160" dataType="date" [formatter]="formatDate" hasSummary="true" [summaries]="soonSummary"
             resizable="true" movable="true">
         </igx-column>
 
-        <igx-column field="last_activity" header="Last Activity" width="140" dataType="date" [formatter]="formatDate" hasSummary="true"
+        <igx-column field="last_activity" header="Last Activity" width="160" dataType="date" [formatter]="formatDate" hasSummary="true"
             [summaries]="earliestSummary" resizable="true" movable="true">
         </igx-column>
 
-        <igx-column field="next_activity" header="Next Activity" width="140" dataType="date" [formatter]="formatDate" hasSummary="true"
+        <igx-column field="next_activity" header="Next Activity" width="160" dataType="date" [formatter]="formatDate" hasSummary="true"
             [summaries]="earliestSummary" resizable="true" movable="true">
         </igx-column>
 
-        <igx-column field="deals_total" header="Total Deals" sortable="true" width="110" dataType="number" hasSummary="true"
+        <igx-column field="deals_total" header="Total Deals" sortable="true" width="130" dataType="number" hasSummary="true"
             [summaries]="dealsSummary" resizable="true" movable="true">
         </igx-column>
 
-        <igx-column field="deals_won" header="Won Deals" sortable="true" width="110" dataType="number" hasSummary="true"
+        <igx-column field="deals_won" header="Won Deals" sortable="true" width="130" dataType="number" hasSummary="true"
             [summaries]="dealsSummary" resizable="true" movable="true">
         </igx-column>
 
         <igx-column field="ratio" header="Ratio" width="150" resizable="true" movable="true">
             <ng-template igxCell let-val>
-                <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val" [animate]="false"></igx-linear-bar>
+                <div style="width: 100%">
+                    <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val" [animate]="false"></igx-linear-bar>
+                </div>
             </ng-template>
         </igx-column>
 
-        <igx-column field="deals_lost" header="Lost Deals" sortable="true" width="110" dataType="number" hasSummary="true"
+        <igx-column field="deals_lost" header="Lost Deals" sortable="true" width="130" dataType="number" hasSummary="true"
             [summaries]="dealsSummary" resizable="true" movable="true">
         </igx-column>
 
@@ -174,11 +179,16 @@
 
         <igx-column field="estimated_sales" header="Possible Sales ($)" sortable="true" width="150" dataType="number" hasSummary="true"
             [summaries]="dealsSummary" resizable="true" movable="true">
+            <ng-template igxCell let-cell="call" let-val>
+                {{ formatValue(val) }}
+            </ng-template>
         </igx-column>
 
         <igx-column field="actual_sales" header="Actual Sales ($)" sortable="true" width="150" dataType="number" hasSummary="true"
             [summaries]="dealsSummary" resizable="true" movable="true">
+            <ng-template igxCell let-val>
+                {{ formatValue(val) }}
+            </ng-template>
         </igx-column>
     </igx-grid>
-
 </div>
