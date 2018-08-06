@@ -87,6 +87,9 @@ import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
+import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
+import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
+import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -256,6 +259,9 @@ import { ToggleComponent } from "./toggle/toggle.component";
         CalendarComponent,
         CascadingCombos,
         ComboFeatures,
+        ComboMainComponent,
+        ComboRemoteComponent,
+        ComboTemplateComponent,
         DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
