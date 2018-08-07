@@ -35,7 +35,7 @@
                         <span #label [class]="'igx-chip__text'">{{chip.text}}</span>
                     </igx-chip>
                 </igx-chips-area>
-                <textarea #textArea class="emailText"></textarea>
+                <textarea #textArea placeholder="Hey,&#10;&#10;Check out IgniteUI for Angular!" class="emailText"></textarea>
             </div>
             <button class="toggle-button" igxButton="raised" igxRipple="white" (click)="clear()" (click)="showToast(toast, 'middle')"
                 [disabled]="toast.isVisible">Send</button>

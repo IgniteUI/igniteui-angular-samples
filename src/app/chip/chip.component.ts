@@ -35,12 +35,6 @@ export class ChipSampleComponent {
             photo: "assets/images/women/67.jpg"
         },
         {
-            email: "dorotmay@gmail.com",
-            id: "573-394-3245",
-            name: "Dorothy H. May",
-            photo: "assets/images/women/68.jpg"
-        },
-        {
             email: "dorotaylor@gmail.com",
             id: "573-394-33334",
             name: "Dorothy Taylor",
@@ -81,12 +75,6 @@ export class ChipSampleComponent {
             id: "724-742-0979",
             name: "Ward Riley",
             photo: "assets/images/avatar/17.jpg"
-        },
-        {
-            email: "alvarezward@gmail.com",
-            id: "724-742-1323",
-            name: "Ward Alvarez",
-            photo: "assets/images/avatar/22.jpg"
         }
     ];
 
@@ -112,10 +100,10 @@ export class ChipSampleComponent {
     ];
 
     public tagList = [
-        { id: "Engineering Services", text: "Engineering Services" },
         { id: "All Users", text: "All Users" },
         { id: "My Team", text: "My Team" },
-        { id: "USA Team", text: "USA Team" }
+        { id: "USA Team", text: "USA Team" },
+        { id: "Engineering Services", text: "Engineering Services" }
     ];
 
     public toastPosition: IgxToastPosition = IgxToastPosition.Middle;
