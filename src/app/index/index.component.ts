@@ -99,6 +99,10 @@ export class IndexComponent implements OnInit {
         return "add";
     }
 
+    public refresh() {
+        window.dispatchEvent(new Event("resize"));
+    }
+
     private createAllNavItems() {
         // Create home route item
         this.homeRouteItem = { path: "/samples/home", displayName: "Home" };

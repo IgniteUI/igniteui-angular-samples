@@ -11,7 +11,18 @@
 }
 
 .grid__wrapper {
-    margin: 0 16px;
+    width: 800px;
+    margin: 0 auto;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.grid__menu {
+    padding-bottom: 20px;
+}
+
+#download_excel {
+    float: right;
 }
 
 .header-icon {

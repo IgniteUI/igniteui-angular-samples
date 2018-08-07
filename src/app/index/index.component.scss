@@ -1,25 +1,23 @@
+.wrapper {
+    max-height: 100%;
+}
 .main {
-    width: 100%;
+    width: calc(100% - 300px);
 }
 
 .content {    
-    width: 90%;
-    height: 90%;
-    max-width: 1200px;
+    width: 100%;    
+    height: calc(100% - 56px);    
     max-height: 1000px;
     min-width: 300px;
     min-height: 300px;
-    display: flex;
-    flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
-    padding: 20px;
-    overflow: auto;
-    margin: 20px;
+    overflow: auto;    
 }
 
 .innerItem {
-    margin-left: 10px;
+    margin-left: 36px;
 }
 
 .nav-header {

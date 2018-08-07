@@ -41,6 +41,7 @@ import {
     IgxSnackbarModule,
     IgxSwitchModule,
     IgxTabsModule,
+    IgxTextHighlightModule,
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule
@@ -87,6 +88,9 @@ import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
+import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
+import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
+import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -127,6 +131,7 @@ import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sam
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "./grid/grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
+import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
@@ -208,6 +213,12 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
+import {
+    TextHighlightSample1Component
+} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
+import {
+    TextHighlightSample2Component
+} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -261,6 +272,9 @@ import { ToggleComponent } from "./toggle/toggle.component";
         CalendarComponent,
         CascadingCombos,
         ComboFeatures,
+        ComboMainComponent,
+        ComboRemoteComponent,
+        ComboTemplateComponent,
         DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
@@ -389,10 +403,13 @@ import { ToggleComponent } from "./toggle/toggle.component";
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
         GridEditingSampleComponent,
+        RemotePagingGridSample,
         GridDisplayDensitySampleComponent,
         HomeComponent,
         DocsLayoutComponent,
-        IndexComponent
+        IndexComponent,
+        TextHighlightSample1Component,
+        TextHighlightSample2Component
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -446,7 +463,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
         GaugeSamplesModule.forRoot(),
-        IgxColumnHidingModule
+        IgxColumnHidingModule,
+        IgxTextHighlightModule
     ],
     providers: [
         DataService,

@@ -12,7 +12,7 @@ export enum SortOrder {
 }
 
 @Injectable()
-export class RemoteService {
+export class RemoteServiceVirt {
     public data: Observable<any[]>;
     private _data: BehaviorSubject<any[]>;
     private _cachedData: any[];
