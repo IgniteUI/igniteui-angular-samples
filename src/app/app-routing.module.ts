@@ -54,6 +54,9 @@ import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
+import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
+import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
+import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -128,6 +131,7 @@ import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filt
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
+import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
@@ -305,12 +309,28 @@ export const appRoutes: Routes = [
         component: CircularProgressbarComponent,
         path: "circular-progressbar"
     },
+        {
+        component: ComboMainComponent,
+        path: "combo"
+    },
     {
         component: ComboFeatures,
+        data: { displayName: "Combos Features", parentName: "Combo" },
         path: "combo-features"
     },
     {
+        component: ComboRemoteComponent,
+        data: { displayName: "Remote Combo", parentName: "Combo" },
+        path: "combo-remote"
+    },
+    {
+        component: ComboTemplateComponent,
+        data: { displayName: "Templating Combo", parentName: "Combo" },
+        path: "combo-template"
+    },
+    {
         component: CascadingCombos,
+        data: { displayName: "Cascading Combos", parentName: "Combo" },
         path: "cascading-combos"
     },
     {
@@ -900,6 +920,10 @@ export const appRoutes: Routes = [
     {
         component: GridMultiColumnHeadersComponent,
         path: "multi-column-headers"
+    },
+    {
+        component: GridPasteSampleComponent,
+        path: "grid-paste"
     }
 ];
 

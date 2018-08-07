@@ -1,0 +1,13 @@
+.switch-container {
+    margin: 20px;
+}
+
+.combo-container {
+    margin: 10px;
+}
+
+:host {
+    display: block;
+    overflow: auto;
+    height: 100%; 
+}
