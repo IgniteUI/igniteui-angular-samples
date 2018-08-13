@@ -18,7 +18,7 @@ export class DropDownSample3Component {
     public items: any[] = [
         { field: "EU", header: true },
         { field: "Germany" },
-        { field: "Bulgaria" },
+        { field: "Bulgaria", selected: true },
         { field: "UK", disabled: true },
         { field: "NA", header: true },
         { field: "Canada" },

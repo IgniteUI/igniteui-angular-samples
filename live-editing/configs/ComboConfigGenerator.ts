@@ -16,14 +16,11 @@ export class ComboConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/combo/combo-features/local-data.ts",
-                "/src/app/grid/services/remote.service.ts"],
+            additionalFiles: ["/src/app/combo/combo-features/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxSwitchModule, IgxToastModule, ComboFeatures,
-                    HttpClientModule, RemoteService],
+                imports: [IgxComboModule, IgxSwitchModule, ComboFeatures],
                 ngDeclarations: [ComboFeatures],
-                ngImports: [IgxComboModule, IgxSwitchModule, IgxToastModule, HttpClientModule],
-                ngProviders: [RemoteService]
+                ngImports: [IgxComboModule, IgxSwitchModule]
             }),
             component: ComboFeatures
         }));
@@ -41,9 +38,9 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/combo/combo-main/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxSwitchModule, ComboMainComponent],
+                imports: [IgxComboModule, ComboMainComponent],
                 ngDeclarations: [ComboMainComponent],
-                ngImports: [IgxComboModule, IgxSwitchModule]
+                ngImports: [IgxComboModule]
             }),
             component: ComboMainComponent
         }));
