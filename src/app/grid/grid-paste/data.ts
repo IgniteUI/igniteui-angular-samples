@@ -117,11 +117,5 @@ export const EXCEL_DATA = [{
     Title: "Administrative Officer",
     Phone: "1-(757)961-8538",
     Country: "US"
-},
-{
-    Name: "Jennifer Grant",
-    Title: "Cost Accountant",
-    Phone: "1-(202)499-5735",
-    Country: "US"
 }
 ];
