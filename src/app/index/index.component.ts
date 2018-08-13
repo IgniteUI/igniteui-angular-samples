@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Router, Routes } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
@@ -8,7 +8,7 @@ import { filter } from "rxjs/operators";
     styleUrls: ["./index.component.scss"],
     templateUrl: "./index.component.html"
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit, AfterViewInit {
 
     @ViewChild("navdrawer", { read: IgxNavigationDrawerComponent })
     public navdrawer: IgxNavigationDrawerComponent;
@@ -64,6 +64,23 @@ export class IndexComponent implements OnInit {
         this.createAllNavItems();
     }
 
+    public ngAfterViewInit() {
+        const loadedRouteItem = this.appRoutes[2].children.filter(
+            (route) => "/samples/" + route.path === this.router.url)[0];
+
+        if (loadedRouteItem && loadedRouteItem.data && loadedRouteItem.data.parentName) {
+            // Get parent (INavItem)
+            const loadedParentItem = this.currentNavItems.filter(
+                (navItem) => navItem.name === loadedRouteItem.data.parentName)[0];
+            // Get loaded child (IRouteItem)
+            const loadedChildItem = loadedParentItem.children.filter(
+                (routeItem) => routeItem.displayName === loadedRouteItem.data.displayName)[0];
+
+            this.toggleParent("header" + loadedParentItem.name);
+            document.getElementById("child" + loadedChildItem.displayName).scrollIntoView();
+        }
+    }
+
     public searchValueChanged() {
         this.currentNavItems = this.filter(this.allNavItems);
     }
@@ -97,6 +114,10 @@ export class IndexComponent implements OnInit {
             }
         }
         return "add";
+    }
+
+    public refresh() {
+        window.dispatchEvent(new Event("resize"));
     }
 
     private createAllNavItems() {

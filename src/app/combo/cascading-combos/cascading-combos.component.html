@@ -9,7 +9,7 @@
                             <input igxInput #inputCountry name="inputCountry" type="text" [(ngModel)]="country" readonly placeholder="Choose Country..."/>
                             <igx-suffix><igx-icon [name]="arrowCountry"></igx-icon></igx-suffix>
                         </igx-input-group>
-                        <igx-drop-down #dropdownCountry igxDropDownItemNavigation [width]="'300px'"
+                        <igx-drop-down #dropdownCountry igxDropDownItemNavigation width="300px"
                             (onSelection)="selectCountry($event)" (onClosed)="onCountryClosed()">
                             <igx-drop-down-item *ngFor="let c of countryData">
                                 {{ c }}
@@ -25,7 +25,7 @@
                             <input igxInput #inputProvince name="inputProvince" type="text" [(ngModel)]="province" readonly placeholder="Choose Province..."/>
                             <igx-suffix><igx-icon [name]="arrowProvince"></igx-icon></igx-suffix>
                         </igx-input-group>
-                        <igx-drop-down #dropdownProvince igxDropDownItemNavigation [width]="'300px'"
+                        <igx-drop-down #dropdownProvince igxDropDownItemNavigation width="300px"
                             (onSelection)="selectProvince($event)" (onClosed)="onProvinceClosed()">
                             <igx-drop-down-item *ngFor="let p of provinceData">
                                 {{ p }}
@@ -37,7 +37,7 @@
                 <div class="wrapper">
                     <h3></h3>
                     <div class="combo-container">
-                        <igx-combo #comboTown width="300px"
+                        <igx-combo #comboTown width="300px" [itemsMaxHeight]="225"
                             [data]="townData" [disabled]="true"
                             placeholder="Choose Town..." searchPlaceholder="Search..."
                             [allowCustomValues]="false">

@@ -10,6 +10,9 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 650px;
 }
 .chiparea{
     width: 640px;
@@ -47,6 +50,10 @@
     color: rgba(0, 0, 0, 0.87);
     outline-style: none;
     box-shadow: none;
+}
+
+.emailText{
+    height: 270px;
 }
 
 .emailText:focus{
