@@ -1,9 +1,23 @@
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 
 @Component({
     selector: "app-docs-layout",
+    styleUrls: ["./docs-layout.component.scss"],
     template: `
-        <router-outlet></router-outlet>
+        <div [class]="theme"><router-outlet></router-outlet></div>
     `
 })
-export class DocsLayoutComponent {}
+export class DocsLayoutComponent {
+    public theme = "default-theme";
+
+    @HostListener("window:message", ["$event"])
+    private onMessage(e: MessageEvent) {
+        if (e.origin === e.data.origin) {
+            this.theme = e.data.theme;
+        }
+    }
+
+    get window(): any {
+        return window;
+    }
+}

@@ -1,0 +1,16 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+@include igx-core();
+
+:host ::ng-deep {
+
+  .light-theme {
+  }
+
+  .dark-theme {
+  }
+
+  .default-theme {
+    @include igx-theme($default-palette);
+  }
+}
