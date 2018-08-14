@@ -16,8 +16,4 @@ export class DocsLayoutComponent {
             this.theme = e.data.theme;
         }
     }
-
-    get window(): any {
-        return window;
-    }
 }
