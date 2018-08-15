@@ -242,6 +242,12 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
+import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
+import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
+import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
+import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
+
 export const samplesRoutes: Routes = [
     {
         component: HomeComponent,
@@ -1208,7 +1214,34 @@ export const samplesRoutes: Routes = [
     {
         component: GridPasteSampleComponent,
         path: "grid-paste"
-    }
+    },
+    {
+        component: PieChartDataSampleComponent,
+        data: { displayName: "Pie Chart Data Sample", parentName: "Pie Chart"},
+        path: "pie-chart-data-sample"
+    },
+    {
+        component: PieChartExplosionComponent,
+        data: { displayName: "Pie Chart Explosion", parentName: "Pie Chart"},
+        path: "pie-chart-explosion"
+    },
+    {
+        component: PieChartLegendComponent,
+        data: { displayName: "Pie Chart Legend", parentName: "Pie Chart"},
+        path: "pie-chart-legend"
+    },
+    {
+        component: PieChartOthersComponent,
+        data: { displayName: "Pie Chart Others Slice", parentName: "Pie Chart"},
+        path: "pie-chart-others"
+    },
+    {
+        component: PieChartSelectionComponent,
+        data: { displayName: "Pie Chart Selection", parentName: "Pie Chart"},
+        path: "pie-chart-selection"
+    },
+    
+
 ];
 export const appRoutes: Routes = [
     {
