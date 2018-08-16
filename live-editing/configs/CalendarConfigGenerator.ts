@@ -1,10 +1,13 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxCalendarModule, IgxCardModule, IgxDialogModule } from "igniteui-angular";
+import { DateRangeDescriptor, DateRangeType,
+    IgxCalendarModule, IgxCardModule, IgxDialogModule, IgxSnackbarComponent } from "igniteui-angular";
 import { CalendarSample1Component } from "../../src/app/calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "../../src/app/calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "../../src/app/calendar/calendar-sample-3/calendar-sample-3.component";
 import { CalendarSample4Component } from "../../src/app/calendar/calendar-sample-4/calendar-sample-4.component";
 import { CalendarSample5Component } from "../../src/app/calendar/calendar-sample-5/calendar-sample-5.component";
+import { CalendarSample6Component } from "../../src/app/calendar/calendar-sample-6/calendar-sample-6.component";
+import { CalendarSample7Component } from "../../src/app/calendar/calendar-sample-7/calendar-sample-7.component";
 import { CalendarComponent } from "../../src/app/calendar/calendar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -69,6 +72,27 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 imports: [IgxCalendarModule, IgxDialogModule, CalendarSample5Component],
                 ngDeclarations: [CalendarSample5Component],
                 ngImports: [IgxCalendarModule, IgxDialogModule]
+            }),
+            shortenComponentPathBy: "/calendar/"
+        }));
+
+        configs.push(new Config({
+            component: CalendarSample6Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType, CalendarSample6Component],
+                ngDeclarations: [CalendarSample6Component],
+                ngImports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType]
+            }),
+            shortenComponentPathBy: "/calendar/"
+        }));
+
+        configs.push(new Config({
+            component: CalendarSample7Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType,
+                    IgxSnackbarComponent, CalendarSample7Component],
+                ngDeclarations: [CalendarSample6Component],
+                ngImports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType, IgxSnackbarComponent]
             }),
             shortenComponentPathBy: "/calendar/"
         }));
