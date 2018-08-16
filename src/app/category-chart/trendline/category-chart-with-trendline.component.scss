@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
+}
+
+.chart {
+    flex: 1;
+}
+
+.tooltipTitle{
+    display: flex;
+    flex-flow: row;
+}
+
+.gold {
+    height: 12px;
+    width: 12px;
+    background-color: yellow;
+    border-radius: 50%;    
+    border: 1px solid black;
+    display: inline-block;
+  }
+
+  .silver {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(198, 204, 200);
+    border-radius: 50%;
+    border: 1px solid black;
+    display: inline-block;
+  }
+
+  .bronze {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(201, 147, 30);
+    border-radius: 50%;
+    border: 1px solid black;
+    display: inline-block;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+  }
+
+  .badgecolumn{
+      width: 10%;
+      float: left;      
+  }
+
+.column{
+    float: left;
+    width: 45%;    
+    padding-left: 10px;
+}
+  
+.row:after{
+      content: "";
+      display: table;
+      clear: both;
+  }
