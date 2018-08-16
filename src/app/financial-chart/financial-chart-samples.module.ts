@@ -19,10 +19,10 @@ import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.comp
 import { FinancialChartPerformanceComponent } from "./performance/financial-chart-performance.component";
 import { FinancialDataService } from "./services/financial-data.service";
 import { StockDataService } from "./services/stock-data.service";
+import { FinancialChartTimeBasedDataComponent } from "./time-based-data/financial-chart-time-based-data.component";
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
 import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
-import { TimeBasedDataComponent } from "./time-based-data/time-based-data.component";
 
 @NgModule({
     declarations: [
@@ -39,7 +39,7 @@ import { TimeBasedDataComponent } from "./time-based-data/time-based-data.compon
         FinancialChartHighFrequencyComponent,
         FinancialChartAxisTypesComponent,
         FinancialChartTrendlinesComponent,
-        TimeBasedDataComponent,
+        FinancialChartTimeBasedDataComponent
     ],
     exports: [
     ],
