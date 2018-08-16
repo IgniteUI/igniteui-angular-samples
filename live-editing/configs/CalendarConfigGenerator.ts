@@ -90,7 +90,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
             component: CalendarSample7Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxCalendarModule, IgxSnackbarModule, CalendarSample7Component],
-                ngDeclarations: [CalendarSample6Component],
+                ngDeclarations: [CalendarSample7Component],
                 ngImports: [IgxCalendarModule, IgxSnackbarModule]
             }),
             shortenComponentPathBy: "/calendar/"
