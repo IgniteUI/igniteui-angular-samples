@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { DateRangeDescriptor, DateRangeType,
-    IgxCalendarModule, IgxCardModule, IgxDialogModule, IgxSnackbarComponent } from "igniteui-angular";
+    IgxCalendarModule, IgxCardModule, IgxDialogModule, IgxSnackbarComponent, IgxSnackbarModule } from "igniteui-angular";
 import { CalendarSample1Component } from "../../src/app/calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "../../src/app/calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "../../src/app/calendar/calendar-sample-3/calendar-sample-3.component";
@@ -79,9 +79,9 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CalendarSample6Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType, CalendarSample6Component],
+                imports: [IgxCalendarModule, CalendarSample6Component],
                 ngDeclarations: [CalendarSample6Component],
-                ngImports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType]
+                ngImports: [IgxCalendarModule]
             }),
             shortenComponentPathBy: "/calendar/"
         }));
@@ -89,10 +89,9 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CalendarSample7Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType,
-                    IgxSnackbarComponent, CalendarSample7Component],
+                imports: [IgxCalendarModule, IgxSnackbarModule, CalendarSample7Component],
                 ngDeclarations: [CalendarSample6Component],
-                ngImports: [IgxCalendarModule, DateRangeDescriptor, DateRangeType, IgxSnackbarComponent]
+                ngImports: [IgxCalendarModule, IgxSnackbarModule]
             }),
             shortenComponentPathBy: "/calendar/"
         }));
