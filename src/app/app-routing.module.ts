@@ -105,6 +105,8 @@ import {
 import {
     FinancialChartPerformanceComponent
 } from "./financial-chart/performance/financial-chart-performance.component";
+import { FinancialChartTimeBasedDataComponent
+} from "./financial-chart/time-based-data/financial-chart-time-based-data.component";
 import {
     FinancialChartTitlesComponent
 } from "./financial-chart/titles/financial-chart-titles.component";
@@ -1195,6 +1197,11 @@ export const samplesRoutes: Routes = [
         component: FinancialChartAxisTypesComponent,
         data: { displayName: "Financial Chart Axis Types", parentName: "Financial Chart" },
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTimeBasedDataComponent,
+        data: { displayName: "Financial Chart Time Based Data", parentName: "Financial Chart"},
+        path: "financial-chart-time-based-data"
     },
     {
         component: FinancialChartTrendlinesComponent,
