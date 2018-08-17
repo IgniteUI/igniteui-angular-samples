@@ -52,14 +52,24 @@
       float: left;      
   }
 
-.column{
+.medalcolumn{
     float: left;
     width: 45%;    
     padding-left: 10px;
 }
-  
+
+.countcolumn{
+    float: right;
+    width: 45%;    
+    padding-left: 10px;    
+}
+
 .row:after{
       content: "";
       display: table;
       clear: both;
+  }
+
+  .tooltipGrid{
+      width: 150px;
   }
