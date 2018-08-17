@@ -50,6 +50,8 @@ import {
 import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
+import { CategoryChartWithTrendlineComponent
+} from "./category-chart/trendline/category-chart-with-trendline.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
@@ -1133,6 +1135,11 @@ export const samplesRoutes: Routes = [
         component: CategoryChartConfigOptionsComponent,
         data: { displayName: "Category Chart Configuring Options", parentName: "Category Chart" },
         path: "category-chart-config-options-sample"
+    },
+    {
+        component: CategoryChartWithTrendlineComponent,
+        data: { displayName: "Category Chart With Trendline", parentName: "Category Chart"},
+        path: "category-chart-with-trendline"
     },
     {
         component: FinancialChartPerformanceComponent,
