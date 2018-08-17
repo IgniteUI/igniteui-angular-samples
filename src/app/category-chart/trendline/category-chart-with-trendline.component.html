@@ -1,0 +1,119 @@
+<div class="sample-wrapper container">
+    <div class="chart">
+        <igx-category-chart height="100%" width="100%" #chart [dataSource]="data" chartTitle="Olympic Medals By Country" chartType="column"
+            trendLineType="linearFit" [tooltipTemplate]="valueTooltip" (seriesAdded)="seriesAddedEvent($event)">
+        </igx-category-chart>
+    </div>
+
+    <ng-template let-series="series" let-item="item" #valueTooltip>
+        <div class="tooltipTitle">
+            <div *ngIf="series.name == 'USA'">
+                <img src="assets/images/grid/flags/us.png" style="width:40px;height:30px;border:1px solid black;">
+            </div>
+            <div *ngIf="series.name == 'China'">
+                <img src="assets/images/grid/flags/cn.png" style="width:40px;height:30px;border:1px solid black;">
+            </div>
+            <div *ngIf="series.name == 'Russia'">
+                <img src="assets/images/grid/flags/ru.png" style="width:40px;height:30px;border:1px solid black;">
+            </div>
+            <label [style.color]="series.actualBrush" [textContent]="series.name"></label>
+            <span>: {{item.Year}}</span>
+        </div>
+        <div class="tooltipGrid" *ngIf="series.name == 'USA'">
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="dot"></span>
+                </div>
+                <div class="medalcolumn">Total</div>
+                <div class="countcolumn">{{item.USAMedals | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="gold"></span>
+                </div>
+                <div class="medalcolumn">Gold</div>
+                <div class="countcolumn">{{item.USAGold | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="silver"></span>
+                </div>
+                <div class="medalcolumn">Silver</div>
+                <div class="countcolumn">{{item.USASilver | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="bronze"></span>
+                </div>
+                <div class="medalcolumn">Bronze</div>
+                <div class="countcolumn">{{item.USABronze | number}}</div>
+            </div>
+        </div>
+        <div class="tooltipGrid" *ngIf="series.name == 'China'">
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="dot"></span>
+                </div>
+                <div class="medalcolumn">Total</div>
+                <div class="countcolumn">{{item.ChinaMedals | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="gold"></span>
+                </div>
+                <div class="medalcolumn">Gold</div>
+                <div class="countcolumn">{{item.ChinaGold | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="silver"></span>
+                </div>
+                <div class="medalcolumn">Silver</div>
+                <div class="countcolumn">{{item.ChinaSilver | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="bronze"></span>
+                </div>
+                <div class="medalcolumn">Bronze</div>
+                <div class="countcolumn">{{item.ChinaBronze | number}}</div>
+            </div>
+        </div>
+        <div class="tooltipGrid" *ngIf="series.name == 'Russia'">
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="dot"></span>
+                </div>
+                <div class="medalcolumn">Total</div>
+                <div class="countcolumn">{{item.RussiaMedals | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="gold"></span>
+                </div>
+                <div class="medalcolumn">Gold</div>
+                <div class="countcolumn">{{item.RussiaGold | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="silver"></span>
+                </div>
+                <div class="medalcolumn">Silver</div>
+                <div class="countcolumn">{{item.RussiaSilver | number}}</div>
+            </div>
+            <div class="row">
+                <div class="badgecolumn">
+                    <span class="bronze"></span>
+                </div>
+                <div class="medalcolumn">Bronze</div>
+                <div class="countcolumn">{{item.RussiaBronze | number}}</div>
+            </div>
+        </div>
+    </ng-template>
+
+
+
+
+
+
+</div>
