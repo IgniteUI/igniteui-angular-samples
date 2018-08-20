@@ -8,13 +8,15 @@ import {
     CategoryChartCustomTooltipsComponent
 } from "./custom-tooltips/category-chart-custom-tooltips-sample.component";
 import { CategoryChartOverviewComponent } from "./overview/category-chart-overview-sample.component";
+import { CategoryChartWithTrendlineComponent } from "./trendline/category-chart-with-trendline.component";
 
 @NgModule({
     declarations: [
         CategoryChartOverviewComponent,
         CategoryChartAxisOptionsComponent,
         CategoryChartConfigOptionsComponent,
-        CategoryChartCustomTooltipsComponent
+        CategoryChartCustomTooltipsComponent,
+        CategoryChartWithTrendlineComponent
     ],
     imports: [
         CommonModule,
