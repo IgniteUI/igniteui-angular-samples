@@ -50,6 +50,8 @@ import {
 import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
+import { CategoryChartWithTrendlineComponent
+} from "./category-chart/trendline/category-chart-with-trendline.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
@@ -103,6 +105,8 @@ import {
 import {
     FinancialChartPerformanceComponent
 } from "./financial-chart/performance/financial-chart-performance.component";
+import { FinancialChartTimeBasedDataComponent
+} from "./financial-chart/time-based-data/financial-chart-time-based-data.component";
 import {
     FinancialChartTitlesComponent
 } from "./financial-chart/titles/financial-chart-titles.component";
@@ -1141,6 +1145,11 @@ export const samplesRoutes: Routes = [
         path: "category-chart-config-options-sample"
     },
     {
+        component: CategoryChartWithTrendlineComponent,
+        data: { displayName: "Category Chart With Trendline", parentName: "Category Chart"},
+        path: "category-chart-with-trendline"
+    },
+    {
         component: FinancialChartPerformanceComponent,
         data: { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
         path: "financial-chart-performance"
@@ -1194,6 +1203,11 @@ export const samplesRoutes: Routes = [
         component: FinancialChartAxisTypesComponent,
         data: { displayName: "Financial Chart Axis Types", parentName: "Financial Chart" },
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTimeBasedDataComponent,
+        data: { displayName: "Financial Chart Time Based Data", parentName: "Financial Chart"},
+        path: "financial-chart-time-based-data"
     },
     {
         component: FinancialChartTrendlinesComponent,
