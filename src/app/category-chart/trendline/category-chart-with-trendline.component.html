@@ -1,11 +1,30 @@
 <div class="sample-wrapper container">
+    <div class="chartToolbar">
+        <span class="chartTitle">OLYMPIC MEDALS BY COUNTRY</span>
+        <igx-legend class="chartLegend" #legend
+            height="20px" width="350px"
+            orientation="horizontal" >
+        </igx-legend>
+    </div>
     <div class="chart">
-        <igx-category-chart height="100%" width="100%" #chart [dataSource]="data" chartTitle="Olympic Medals By Country" chartType="column"
-            trendLineType="linearFit" [tooltipTemplate]="valueTooltip" (seriesAdded)="seriesAddedEvent($event)">
+        <igx-category-chart
+            height="100%" width="100%"
+            #chart
+            [dataSource]="data"
+            [tooltipTemplate]="seriesTooltip"
+            [legend]="legend"
+            chartType="column"
+            trendLineType="linearFit"
+            trendLineThickness="4"
+            trendLineBrushes="#5d3796, #77871d, #ce5129"
+            outlines="black"
+            thickness="0.5"
+            (seriesAdded)="seriesAddedEvent($event)">
         </igx-category-chart>
     </div>
 
-    <ng-template let-series="series" let-item="item" #valueTooltip>
+    <!-- custom tooltip with conditional visuals -->
+    <ng-template let-series="series" let-item="item" #seriesTooltip>
         <div class="tooltipTitle">
             <div *ngIf="series.name == 'USA'">
                 <img src="assets/images/grid/flags/us.png" style="width:40px;height:30px;border:1px solid black;">
@@ -16,104 +35,79 @@
             <div *ngIf="series.name == 'Russia'">
                 <img src="assets/images/grid/flags/ru.png" style="width:40px;height:30px;border:1px solid black;">
             </div>
-            <label [style.color]="series.actualBrush" [textContent]="series.name"></label>
-            <span>: {{item.Year}}</span>
+            <div class="tooltipCountry">
+                <span [style.color]="series.actualBrush">{{series.title}}</span>
+                <span>: {{item.Year}}</span>
+            </div>
         </div>
         <div class="tooltipGrid" *ngIf="series.name == 'USA'">
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="dot"></span>
-                </div>
-                <div class="medalcolumn">Total</div>
-                <div class="countcolumn">{{item.USAMedals | number}}</div>
+                <div class="medalTotal" [style.background-color]="series.actualBrush"></div>
+                <div class="tooltipProp">Medals</div>
+                <div class="tooltipValue">{{item.UsaMedals}}</div>
+            </div>
+            <div class="rowSeparator"></div>
+            <div class="row">
+                <div class="medalGold"></div>
+                <div class="tooltipProp">Gold</div>
+                <div class="tooltipValue">{{item.UsaGold}}</div>
             </div>
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="gold"></span>
-                </div>
-                <div class="medalcolumn">Gold</div>
-                <div class="countcolumn">{{item.USAGold | number}}</div>
+                <div class="medalSilver"></div>
+                <div class="tooltipProp">Silver</div>
+                <div class="tooltipValue">{{item.UsaSilver}}</div>
             </div>
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="silver"></span>
-                </div>
-                <div class="medalcolumn">Silver</div>
-                <div class="countcolumn">{{item.USASilver | number}}</div>
-            </div>
-            <div class="row">
-                <div class="badgecolumn">
-                    <span class="bronze"></span>
-                </div>
-                <div class="medalcolumn">Bronze</div>
-                <div class="countcolumn">{{item.USABronze | number}}</div>
+                <div class="medalBronze"></div>
+                <div class="tooltipProp">Bronze</div>
+                <div class="tooltipValue">{{item.UsaBronze}}</div>
             </div>
         </div>
         <div class="tooltipGrid" *ngIf="series.name == 'China'">
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="dot"></span>
-                </div>
-                <div class="medalcolumn">Total</div>
-                <div class="countcolumn">{{item.ChinaMedals | number}}</div>
+                <div class="medalTotal" [style.background-color]="series.actualBrush"></div>
+                <div class="tooltipProp">Medals</div>
+                <div class="tooltipValue">{{item.ChinaMedals}}</div>
+            </div>
+            <div class="rowSeparator"></div>
+            <div class="row">
+                <div class="medalGold"></div>
+                <div class="tooltipProp">Gold</div>
+                <div class="tooltipValue">{{item.ChinaGold}}</div>
             </div>
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="gold"></span>
-                </div>
-                <div class="medalcolumn">Gold</div>
-                <div class="countcolumn">{{item.ChinaGold | number}}</div>
+                <div class="medalSilver"></div>
+                <div class="tooltipProp">Silver</div>
+                <div class="tooltipValue">{{item.ChinaSilver}}</div>
             </div>
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="silver"></span>
-                </div>
-                <div class="medalcolumn">Silver</div>
-                <div class="countcolumn">{{item.ChinaSilver | number}}</div>
-            </div>
-            <div class="row">
-                <div class="badgecolumn">
-                    <span class="bronze"></span>
-                </div>
-                <div class="medalcolumn">Bronze</div>
-                <div class="countcolumn">{{item.ChinaBronze | number}}</div>
+                <div class="medalBronze"></div>
+                <div class="tooltipProp">Bronze</div>
+                <div class="tooltipValue">{{item.ChinaBronze}}</div>
             </div>
         </div>
         <div class="tooltipGrid" *ngIf="series.name == 'Russia'">
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="dot"></span>
-                </div>
-                <div class="medalcolumn">Total</div>
-                <div class="countcolumn">{{item.RussiaMedals | number}}</div>
+                <div class="medalTotal" [style.background-color]="series.actualBrush"></div>
+                <div class="tooltipProp">Medals</div>
+                <div class="tooltipValue">{{item.RussiaMedals}}</div>
+            </div>
+            <div class="rowSeparator"></div>
+            <div class="row">
+                <div class="medalGold"></div>
+                <div class="tooltipProp">Gold</div>
+                <div class="tooltipValue">{{item.RussiaGold}}</div>
             </div>
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="gold"></span>
-                </div>
-                <div class="medalcolumn">Gold</div>
-                <div class="countcolumn">{{item.RussiaGold | number}}</div>
+                <div class="medalSilver"></div>
+                <div class="tooltipProp">Silver</div>
+                <div class="tooltipValue">{{item.RussiaSilver}}</div>
             </div>
             <div class="row">
-                <div class="badgecolumn">
-                    <span class="silver"></span>
-                </div>
-                <div class="medalcolumn">Silver</div>
-                <div class="countcolumn">{{item.RussiaSilver | number}}</div>
-            </div>
-            <div class="row">
-                <div class="badgecolumn">
-                    <span class="bronze"></span>
-                </div>
-                <div class="medalcolumn">Bronze</div>
-                <div class="countcolumn">{{item.RussiaBronze | number}}</div>
+                <div class="medalBronze"></div>
+                <div class="tooltipProp">Bronze</div>
+                <div class="tooltipValue">{{item.RussiaBronze}}</div>
             </div>
         </div>
     </ng-template>
-
-
-
-
-
-
 </div>
