@@ -48,6 +48,9 @@ import {
     CategoryChartHighVolumeComponent
 } from "./category-chart/high-volume/category-chart-high-volume-sample.component";
 import {
+    CategoryChartOverlapColumnsComponent
+} from "./category-chart/overlap-columns/category-chart-overlap-columns.component";
+import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
 import { CategoryChartWithTrendlineComponent
@@ -1113,6 +1116,11 @@ export const samplesRoutes: Routes = [
         component: CategoryChartOverviewComponent,
         data: { displayName: "Category Chart Overview", parentName: "Category Chart" },
         path: "category-chart-overview-sample"
+    },
+    {
+        component: CategoryChartOverlapColumnsComponent,
+        data: { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
+        path: "category-chart-overlap-columns"
     },
     {
         component: CategoryChartCustomTooltipsComponent,
