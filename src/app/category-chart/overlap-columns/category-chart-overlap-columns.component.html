@@ -17,6 +17,8 @@
             chartType="column"
             chartTitleTextColor="gray"
             chartTitleTextStyle="9pt Verdana"
+            brushes="#7446B9 #9FB328 #F96232 #DC3F76 #2E9CA6"
+            outlines="#7446B9 #9FB328 #F96232 #DC3F76 #2E9CA6"
 
             xAxisLabelTextStyle="9pt Verdana"
             xAxisLabelTopMargin="5"
@@ -53,25 +55,33 @@
 
     <ng-template let-series="series" let-item="item" #stackedTooltip>
         <div class="tooltipGrid">
-            <span class="tooltipCountry" >{{item.Country}}</span>
-            <div class="row">
-                    <div class="tooltipTitle" style="color: #7446B9;">Blogging</div>
-                    <div class="tooltipValue">{{item.Blogging}}h</div>
+            <div class="tooltipRow">
+                <div ></div>
+                <div class="tooltipCountry" >{{item.Country}}</div>
             </div>
-            <div class="row">
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/Blogging.png">
+                <div class="tooltipTitle" style="color: #7446B9;">Blogging</div>
+                <div class="tooltipValue">{{item.Blogging}}h</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/SocialNetwork.png">
                 <div class="tooltipTitle" style="color: #9FB328;">Social Net.</div>
                 <div class="tooltipValue">{{item.Social}}h</div>
             </div>
-            <div class="row">
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/OnlinePress.png">
                 <div class="tooltipTitle" style="color: #F96232;">Online Press</div>
                 <div class="tooltipValue">{{item.Press}}h</div>
             </div>
-            <div class="row">
-                <div class="tooltipTitle" style="color: #2E9CA6;">Online TV</div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/OnlineTV.png">
+                <div class="tooltipTitle" style="color: #DC3F76;">Online TV</div>
                 <div class="tooltipValue">{{item.TV}}h</div>
             </div>
-            <div class="row">
-                <div class="tooltipTitle" style="color: #DC3F76;">Online Radio</div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/OnlineRadio.png">
+                <div class="tooltipTitle" style="color: #2E9CA6;">Online Radio</div>
                 <div class="tooltipValue">{{item.Radio}}h</div>
             </div>
         </div>
