@@ -37,7 +37,7 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
     private feedUpdating: boolean = true;
 
     constructor(private _zone: NgZone) {
-        let startYear = new Date().getFullYear() - 4;
+        const startYear = new Date().getFullYear() - 4;
         this.startDate = new Date(startYear, 1, 1, 16, 30, 0);
         this.dataFeeds = [
             this.GenerateData(this.startDate, 150, "Mircosoft (MSFT)"),
@@ -52,8 +52,8 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         return new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
     }
 
-    private GenerateItem(date: Date, price: number): any {
-        let t = date;
+    public GenerateItem(date: Date, price: number): any {
+        const t = date;
         let o = price;
         let h = o + (Math.random() * 5);
         let l = o - (Math.random() * 5);
@@ -70,31 +70,30 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         return { date: t, open: o, high: h, low: l, close: c, volume: v};
     }
 
-    private GenerateData(startDate: Date, startPrice: number, stockName: string): any[] {
-        const stock: any[] = [];
-        let stockDate = this.AddDays(startDate, 0);
+    public GenerateData(startDate: Date, startPrice: number, stockName: string): any[] {
+        const stockData: any[] = [];
+        let stockTime = this.AddDays(startDate, 0);
         let stockPrice: number = startPrice;
 
         for (this.currIndex = 0; this.currIndex < this.maxPoints; this.currIndex++) {
 
-            let item = this.GenerateItem(stockDate, stockPrice);
-            stockDate = this.AddDays(stockDate, 1);
+            const item = this.GenerateItem(stockTime, stockPrice);
+            stockTime = this.AddDays(stockTime, 1);
             stockPrice += Math.random() * 4.1 - 2.0;
-
-            stock.push(item);
+            stockData.push(item);
         }
         // setting data intent for Series Title
-        (stock as any).__dataIntents = {
+        (stockData as any).__dataIntents = {
             close: ["SeriesTitle/" + stockName]
         };
-        return stock;
+        return stockData;
     }
 
-    private AppendDataItemTo(data: any[]): void {
-        let lastItem = data[data.length - 1]
-        let stockPrice = lastItem.close + Math.random() * 4.1 - 2.0;
-        let stockDate = this.AddDays(lastItem.date, 1);
-        let newItem = this.GenerateItem(stockDate, stockPrice);
+    public AppendDataItemTo(data: any[]): void {
+        const lastItem = data[data.length - 1];
+        const stockPrice = lastItem.close + Math.random() * 4.1 - 2.0;
+        const stockDate = this.AddDays(lastItem.date, 1);
+        const newItem = this.GenerateItem(stockDate, stockPrice);
         const oldVal = data[0];
 
         data.push(newItem);
@@ -103,12 +102,14 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         this.chart.notifyRemoveItem(data, 0, oldVal);
     }
 
-    private OnDataFeedTick(): void {
-        if (!this.feedUpdating) return;
+    public OnDataFeedTick(): void {
+        if (!this.feedUpdating) {
+            return;
+        }
 
-        // appending new data items to each data item
-        for (let i = 0; i < this.dataFeeds.length; i++) {
-            this.AppendDataItemTo(this.dataFeeds[i]);
+        // appending new data items to each data feed
+        for (const data of this.dataFeeds) {
+            this.AppendDataItemTo(data);
         }
 
         // this.frameCounter++;
@@ -122,7 +123,7 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         // }
     }
 
-    private StopDataFeed(): void{
+    public StopDataFeed(): void {
         if (this.feedInterval >= 0) {
             this._zone.runOutsideAngular(() => {
                 window.clearInterval(this.feedInterval);
@@ -131,18 +132,19 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         }
     }
 
-    private StartDataFeed(): void{
+    public StartDataFeed(): void {
         this._zone.runOutsideAngular(() => {
             this.feedInterval = window.setInterval(() => this.OnDataFeedTick(),
             this.refreshInterval);
         });
     }
 
-    public onDataFeedToggleClicked() {
-        if (this.feedUpdating)
+    public onDataFeedToggleClicked(): void {
+        if (this.feedUpdating) {
             this.StopDataFeed();
-        else
+        } else {
             this.StartDataFeed();
+        }
 
         this.feedUpdating = !this.feedUpdating;
     }
@@ -156,7 +158,7 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         this.StopDataFeed();
     }
 
-    private setupInterval(): void {
+    public setupInterval(): void {
         this.StopDataFeed();
         this.StartDataFeed();
     }
