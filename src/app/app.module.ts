@@ -174,6 +174,7 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
+import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
@@ -257,6 +258,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         ListSample4Component,
         ListSample5Component,
         ListSample6Component,
+        ListSample7Component,
         GridCRMComponent,
         GridComponent,
         CarouselComponent,

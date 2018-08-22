@@ -7,22 +7,24 @@
 
 .chart {
     flex: 1;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-bottom: 0px;
 }
 
 .chartToolbar {
-    display: table;
     clear: both;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 130px;
+    margin-right: 130px;
     margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 .chartLegend {
     margin-left: 0px;
     margin-bottom: 0px;
-    margin-right: 45px;
+    margin-right: 5px;
     margin-top: 5px;
     font-size: 14px;
     float: right;
@@ -45,94 +47,90 @@
     padding-bottom: 0px;
  }
 
-.tooltipTitle {
-    width: 170px;
-    display: flex;
-    flex-flow: row;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 0px;
-    padding-right: 10px;
-}
-
- .tooltipCountry {
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    margin-right: 10px;
-    padding-left: 10px;
- }
-
- .tooltipGrid {
-    width: 170px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
- }
-
-.tooltipMedal {
-    width: 10%;
+.chartNote {
+    width: 100%;
+    margin-left: 130px;
+    margin-bottom: 60px;
+    color: rgb(129, 129, 129);
+    font-size: 10px;
     float: left;
 }
 
-.tooltipProp {
-    width: 45%;
+.tooltipTable {
+    display: table;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 130px;
+}
+
+.tooltipRow { display: table-row; }
+
+.tooltipOlympics {
+    display: table-cell;
     padding-left: 10px;
-    display: inline-block;
+    padding-right: 0px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tooltipFlag {
+    display: table-cell;
+    border: 0.5px solid black;
+    width: 18px;
+    height: 15px;
+}
+
+.tooltipCountry {
+    display: table-cell;
+    padding-left: 5px;
+}
+
+.tooltipMedal {
+    display: table-cell;
+    padding-left: 5px;
+    font-weight: 600;
+    width: 60px;
+}
+
+.tooltipProp {
+    display: table-cell;
+    padding-left: 5px;
+    font-weight: 500;
+    width: 80px;
 }
 
 .tooltipValue {
-    width: 45%;
-    padding-left: 0px;
-    display: inline-block;
+    display: table-cell;
+    width: 25px;
+    color: rgb(121, 121, 121);
+}
+
+.tooltipNote {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: table-cell;
 }
 
 .medalGold {
-    height: 12px;
-    width: 12px;
-    background-color: yellow;
-    border-radius: 50%;
-    border: 1px solid black;
-    display: inline-block;
+    height: 14px;
+    width: 14px;
+    display: table-cell;
+    margin-left: 3px;
+    margin-right: 3px;
   }
 
  .medalSilver {
-   height: 12px;
-   width: 12px;
-   background-color: rgb(198, 204, 200);
-   border-radius: 50%;
-   border: 1px solid black;
-   display: inline-block;
+    height: 14px;
+    width: 14px;
+    display: table-cell;
+    margin-left: 3px;
+    margin-right: 3px;
  }
 
  .medalBronze {
-   height: 12px;
-   width: 12px;
-   background-color: rgb(201, 147, 30);
-   border-radius: 50%;
-   border: 1px solid black;
-   display: inline-block;
+    height: 14px;
+    width: 14px;
+    display: table-cell;
+    margin-left: 3px;
+    margin-right: 3px;
  }
-
- .medalTotal {
-   height: 12px;
-   width: 12px;
-   border: 1px solid black;
-   display: inline-block;
- }
-
-.rowSeparator {
-   height: 0.5px;
-   width: 100%;
-   background-color: black;
-   display: inline-block;
-   margin-top: 2px;
-   margin-bottom: 2px;
-}
-
-.row:after {
-      content: "";
-      display: table;
-      clear: both;
-}
