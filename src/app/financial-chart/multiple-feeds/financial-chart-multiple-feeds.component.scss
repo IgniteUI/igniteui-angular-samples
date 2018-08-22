@@ -1,0 +1,49 @@
+.max-points-slider, .frequency-slider {
+    width: 195px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 12px;
+  }
+
+.optimizeCheckbox{
+    width: 130px;
+    vertical-align: top;
+    display:inline-block;
+    margin-right: 12px;
+}
+
+.sample-container {
+    width: 100%;
+    height: 550px;
+}
+.sample-controls {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 50px;
+    font: "16px 'Titillium Web', sans-serif"
+}
+igx-financial-chart {
+    max-width: 900px;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.label {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.checkbox{
+    width: 100%;
+    display: inline-block;
+    margin: 25 auto;
+}
+
+.fpslabel {
+    display: inline-block;
+    width: 65px;
+}

@@ -1,0 +1,24 @@
+<div class="sample-container">
+        <igx-financial-chart height="100%" width="100%"
+            #chart
+            [dataSource]="data"
+            yAxisLabelExtent="40">
+        </igx-financial-chart>
+
+        <!-- [pixelScalingRatio]="scalingRatio"
+            yAxisLabelExtent="40"
+            [dataSource]="data"-->
+
+        <div class="sample-controls">
+            <button
+            igxButton="raised"
+            igxRipple="white"
+            (click)="onDataFeedToggleClicked()"
+            >Toggle Data Feed</button>
+            <span #fpsSpan class="fpslabel">FPS:</span>
+            <!-- <div class="max-points-slider">
+            <span class="label">Data amount: {{ maxPointsText }}</span>
+            <br/> -->
+        </div>
+
+</div>
