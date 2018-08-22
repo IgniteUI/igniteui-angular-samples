@@ -1,12 +1,13 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxFilterModule, IgxFilterOptions,
-    IgxIconModule, IgxInputGroupModule, IgxListModule } from "igniteui-angular";
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxToastModule } from "igniteui-angular";
 import { ListSample1Component } from "../../src/app/list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "../../src/app/list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "../../src/app/list/list-sample-3/list-sample-3.component";
 import { ListSample4Component } from "../../src/app/list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "../../src/app/list/list-sample-5/list-sample-5.component";
 import { ListSample6Component } from "../../src/app/list/list-sample-6/list-sample-6.component";
+import { ListSample7Component } from "../../src/app/list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "../../src/app/list/list.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -91,6 +92,17 @@ export class ListConfigGenerator implements IConfigGenerator {
                 imports: [IgxListModule, ListSample6Component],
                 ngDeclarations: [ListSample6Component],
                 ngImports: [IgxListModule]
+            }),
+            shortenComponentPathBy: "/list/"
+        }));
+
+        // list sample 7
+        configs.push(new Config({
+            component: ListSample7Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxAvatarModule, IgxIconModule, IgxListModule, ListSample7Component, IgxToastModule],
+                ngDeclarations: [ListSample7Component],
+                ngImports: [IgxAvatarModule, IgxIconModule, IgxListModule, IgxToastModule]
             }),
             shortenComponentPathBy: "/list/"
         }));
