@@ -12,12 +12,11 @@
             #chart
             [dataSource]="data"
             [tooltipTemplate]="seriesTooltip"
-            [legend]="legend"
             chartType="column"
             trendLineType="linearFit"
             trendLineThickness="4"
-            trendLineBrushes="#7e7d7d, #29294d, #9d1e2e"
-            brushes="#9d9d9d, #3b3b6d, #b32134"
+            trendLineBrushes="#7e7d7d, #9d1e2e, #29294d"
+            brushes="#9d9d9d, #b32134, #3b3b6d"
             outlines="black"
             thickness="0.5"
             xAxisInterval="1"
@@ -38,7 +37,7 @@
         <div class="tooltipTable" *ngIf="series.name == 'USA' && item.USAMedals != 0">
             <div class="tooltipRow">
                 <div>
-                    <img class="tooltipFlag" src="assets/images/grid/flags/us.png">
+                    <img class="tooltipFlag" src="assets/images/flags/usa.png">
                 </div>
                 <div class="tooltipCountry">{{series.title}}</div>
                 <div class="tooltipValue">{{item.USAMedals}}</div>
@@ -66,7 +65,7 @@
         <div class="tooltipTable" *ngIf="series.name == 'Russia' && item.RussiaMedals != 0">
             <div class="tooltipRow">
                 <div>
-                    <img class="tooltipFlag" src="assets/images/grid/flags/ru.png">
+                    <img class="tooltipFlag" src="assets/images/flags/russia.png">
                 </div>
                 <div class="tooltipCountry">{{series.title}}</div>
                 <div class="tooltipValue">{{item.RussiaMedals}}</div>
@@ -94,7 +93,7 @@
         <div class="tooltipTable" *ngIf="series.name == 'UK' && item.UKMedals != 0">
             <div class="tooltipRow">
                 <div>
-                    <img class="tooltipFlag" src="assets/images/grid/flags/gb.png">
+                    <img class="tooltipFlag" src="assets/images/flags/uk.png">
                 </div>
                 <div class="tooltipCountry">{{series.title}}</div>
                 <div class="tooltipValue">{{item.UKMedals}}</div>
