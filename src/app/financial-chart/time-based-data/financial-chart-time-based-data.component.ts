@@ -8,8 +8,8 @@ import { FinancialDataService } from "../services/financial-data.service";
 })
 export class FinancialChartTimeBasedDataComponent {
 
-    public SelectedXAxisMode: string = "Time";
-    public SelectedYAxisMode: string = "Numeric";
+    public selectedXAxisMode: string = "Time";
+    public selectedYAxisMode: string = "Numeric";
 
     public data: any;
 

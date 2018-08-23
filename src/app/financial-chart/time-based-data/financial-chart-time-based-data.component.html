@@ -2,20 +2,20 @@
     <igx-financial-chart
         class="chart"
         [dataSource]="data"
-        [xAxisMode]="SelectedXAxisMode"
-        [yAxisMode]="SelectedYAxisMode"
+        [xAxisMode]="selectedXAxisMode"
+        [yAxisMode]="selectedYAxisMode"
         chartType="candle"
         isToolbarVisible="false">
     </igx-financial-chart>
 
     <div class="options">
         <span class="optionsLabel">X-Axis Mode:</span>
-        <select [(ngModel)]="SelectedXAxisMode">
+        <select [(ngModel)]="selectedXAxisMode">
             <option>Time</option>
             <option>Ordinal</option>
         </select>
         <span class="optionsLabel">Y-Axis Mode:</span>
-        <select [(ngModel)]="SelectedYAxisMode">
+        <select [(ngModel)]="selectedYAxisMode">
             <option>PercentChange</option>
             <option>Numeric</option>
         </select>
