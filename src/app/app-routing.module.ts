@@ -205,6 +205,7 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
+import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
@@ -533,6 +534,11 @@ export const samplesRoutes: Routes = [
         component: ListSample6Component,
         data: { displayName: "List Loading", parentName: "List" },
         path: "list-sample-6"
+    },
+    {
+        component: ListSample7Component,
+        data: { displayName: "List Item Panning", parentName: "List" },
+        path: "list-sample-7"
     },
     {
         component: NavdrawerComponent,
