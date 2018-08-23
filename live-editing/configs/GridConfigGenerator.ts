@@ -67,7 +67,8 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
-import { ThemeChooserSampleComponent } from "../../src/app/theme-chooser/theme-chooser-sample.component";
+import { DefaultThemeSampleComponent } from "../../src/app/theming/default-theme-sample/default-theme-sample.component";
+import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser/theme-chooser-sample.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -377,14 +378,33 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: ThemeChooserSampleComponent,
-            additionalFiles: ["/src/app/theme-chooser/data.ts", "/src/app/theme-chooser/record.ts",
-            "/src/app/theme-chooser/themes.scss"],
+            additionalFiles: ["/src/app/theming/data/data.ts",
+             "/src/app/theming/data/record.ts",
+            "/src/app/theming/theme-chooser/styles/themes.scss",
+             "/src/app/theming/theme-chooser/styles/theme-classes.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule,
                     IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, ThemeChooserSampleComponent,
                      IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
                       IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
                 ngDeclarations: [ThemeChooserSampleComponent],
+                ngImports: [IgxDropDownModule,
+                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
+                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule,
+                    IgxGridModule.forRoot(), IgxLayoutModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: DefaultThemeSampleComponent,
+            additionalFiles: ["/src/app/theming/data/data.ts", "/src/app/theming/data/record.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDropDownModule,
+                    IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, DefaultThemeSampleComponent,
+                     IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
+                ngDeclarations: [DefaultThemeSampleComponent],
                 ngImports: [IgxDropDownModule,
                      IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
                      IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
