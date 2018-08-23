@@ -100,6 +100,9 @@ import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import {
+    FinancialChartMultipleFeedsComponent
+} from "./financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
+import {
     FinancialChartOverviewComponent
 } from "./financial-chart/overview/financial-chart-overview-sample.component";
 import {
@@ -1174,8 +1177,13 @@ export const samplesRoutes: Routes = [
     },
     {
         component: FinancialChartMultipleDataComponent,
-        data: { displayName: "Financial Chart Multiple Data", parentName: "Financial Chart" },
+        data: { displayName: "Financial Chart Multiple Sources", parentName: "Financial Chart" },
         path: "financial-chart-multiple-data"
+    },
+    {
+        component: FinancialChartMultipleFeedsComponent,
+        data: { displayName: "Financial Chart Multiple Feeds", parentName: "Financial Chart" },
+        path: "financial-chart-multiple-feeds"
     },
     {
         component: FinancialChartCustomTooltipsComponent,
