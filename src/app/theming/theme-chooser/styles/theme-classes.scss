@@ -1,0 +1,55 @@
+
+@import 'themes';
+
+:host {
+    display: block;
+    margin: 16px;
+    box-shadow: igx-elevation($elevations, 12);
+   
+  
+  //Set the light themes for the components. 
+    .light-theme {
+      background: $light-color;
+      ::ng-deep {   
+        @include igx-grid($light-grid);
+        @include igx-snackbar($light-snackbar); 
+        @include igx-input-group($light-input-group);
+        @include igx-grid-paginator($light-grid-paginator);
+        @include igx-button($light-button);
+        @include igx-dialog($light-dialog);
+        @include igx-grid-filtering($light-grid-filtering);
+        @include igx-button-group($light-button-group);     
+      }
+    }
+  
+    //Set the dark themes for the components.
+    .dark-theme {
+      background: $dark-color;
+      ::ng-deep {   
+        @include igx-grid($dark-grid);
+        @include igx-snackbar($dark-snackbar);
+        @include igx-input-group($dark-input-group);
+        @include igx-grid-paginator($dark-grid-paginator);
+        @include igx-button($dark-button);
+        @include igx-dialog($dark-dialog);
+        @include igx-grid-filtering($dark-grid-filtering);
+        @include igx-button-group($dark-button-group); 
+      }
+    }
+  
+     //Set the black themes for the components.
+    .black-theme {
+      background: $black-color;
+      ::ng-deep {    
+        @include igx-grid($black-grid);
+        @include igx-snackbar($black-snackbar);
+        @include igx-input-group($black-input-group);
+        @include igx-grid-paginator($black-grid-paginator);
+        @include igx-button($black-button);
+        @include igx-dialog($black-dialog);
+        @include igx-grid-filtering($black-grid-filtering);
+        @include igx-button-group($black-button-group); 
+      }
+    }
+  }
+  

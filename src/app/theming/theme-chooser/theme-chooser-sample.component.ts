@@ -10,8 +10,8 @@ import {
     IgxSnackbarComponent,
     VerticalAlignment
 } from "igniteui-angular";
-import { DATA } from "./data";
-import { Record } from "./record";
+import { DATA } from ".././data/data";
+import { Record } from ".././data/record";
 
 export enum THEME {
     LIGHT = "light-theme",
