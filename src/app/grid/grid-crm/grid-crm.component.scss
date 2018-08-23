@@ -7,7 +7,7 @@
 
 $crm-grid-palette: igx-palette(
     $primary: #09f,
-    $secondary: #ffc800
+    $secondary: #ffc800,
 );
 
 $primary-100: igx-color($crm-grid-palette, "primary", 100);
@@ -29,7 +29,7 @@ $secondary-700: igx-color($crm-grid-palette, "secondary", 700);
 $checkbox-theme: igx-checkbox-theme(
     $palette: $crm-grid-palette,
     $fill-color: igx-color($crm-grid-palette, "secondary", 500),
-    $tick-color: black
+    $tick-color: black,
 );
 
 $summary-theme: igx-grid-summary-theme(

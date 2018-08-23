@@ -5,22 +5,18 @@ import {
     IgxBadgeModule,
     IgxButtonGroupModule,
     IgxButtonModule,
-    IgxCalendarModule,
     IgxCheckboxModule,
     IgxColumnHidingModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
-    IgxDropDownModule,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
     IgxInputGroupModule,
-    IgxLayoutModule,
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
-    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule
@@ -67,7 +63,6 @@ import { IConfigGenerator } from "./core/IConfigGenerator";
 
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
-import { ThemeChooserSampleComponent } from "../../src/app/theme-chooser/theme-chooser-sample.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -372,24 +367,6 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridDisplayDensitySampleComponent],
                 ngImports: [IgxButtonModule, IgxButtonGroupModule,
                     IgxGridModule.forRoot()]
-            })
-        }));
-
-        configs.push(new Config({
-            component: ThemeChooserSampleComponent,
-            additionalFiles: ["/src/app/theme-chooser/data.ts", "/src/app/theme-chooser/record.ts",
-            "/src/app/theme-chooser/themes.scss"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxDropDownModule,
-                    IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, ThemeChooserSampleComponent,
-                     IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
-                ngDeclarations: [ThemeChooserSampleComponent],
-                ngImports: [IgxDropDownModule,
-                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
-                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule,
-                    IgxGridModule.forRoot(), IgxLayoutModule]
             })
         }));
 
