@@ -1,0 +1,20 @@
+<div class="sample-container">
+        <igx-financial-chart height="100%" width="100%"
+            #chart
+            [dataSource]="dataFeeds"
+            chartType="line"
+            thickness="2"
+            yAxisLabelExtent="40"
+            isToolbarVisible="false">
+        </igx-financial-chart>
+
+        <div class="sample-controls">
+            <button
+            igxButton="raised"
+            igxRipple="white"
+            (click)="onDataFeedToggleClicked()"
+            >Toggle Data Feeds</button>
+            <span #fpsSpan class="fpsLabel"></span>
+        </div>
+
+</div>
