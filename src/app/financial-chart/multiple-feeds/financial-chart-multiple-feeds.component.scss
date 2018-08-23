@@ -1,0 +1,33 @@
+igx-financial-chart {
+    max-width: 1200px;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sample-container {
+    width: 100%;
+    height: 550px;
+}
+
+.sample-controls {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 50px;
+    font: "16px 'Titillium Web', sans-serif"
+}
+
+.label {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.fpsLabel {
+    display: inline-block;
+    width: 65px;
+    margin-left: 10px;
+}
