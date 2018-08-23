@@ -8,8 +8,15 @@ import { FinancialDataService } from "../services/financial-data.service";
 })
 export class FinancialChartTimeBasedDataComponent {
 
+    public SelectedXAxisMode: string = "Time";
+    public SelectedYAxisMode: string = "Numeric";
+
     public data: any;
+
     constructor(private dataService: FinancialDataService) {
-        this.data = [ this.dataService.getAmzn()];
+        this.data = [
+            this.dataService.getAmzn(),
+            this.dataService.getGoog()
+        ];
     }
 }
