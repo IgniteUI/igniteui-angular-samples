@@ -220,6 +220,7 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
@@ -415,7 +416,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         TextHighlightSample1Component,
         TextHighlightSample2Component,
         ThemeChooserSampleComponent,
-        DefaultThemeSampleComponent
+        DefaultThemeSampleComponent,
+        DarkThemeSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

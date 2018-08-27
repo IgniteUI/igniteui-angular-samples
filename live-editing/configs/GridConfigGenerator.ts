@@ -60,15 +60,15 @@ import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sam
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
+import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
+import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
+import { DarkThemeSampleComponent } from "../../src/app/theming/dark-theme-sample/dark-theme-sample.component";
+import { DefaultThemeSampleComponent } from "../../src/app/theming/default-theme-sample/default-theme-sample.component";
+import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser/theme-chooser-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-
-import { RemoteService } from "../../src/app/grid/services/remote.service";
-import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
-import { DefaultThemeSampleComponent } from "../../src/app/theming/default-theme-sample/default-theme-sample.component";
-import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser/theme-chooser-sample.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -380,8 +380,8 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: ThemeChooserSampleComponent,
             additionalFiles: ["/src/app/theming/data/data.ts",
              "/src/app/theming/data/record.ts",
-            "/src/app/theming/theme-chooser/styles/themes.scss",
-             "/src/app/theming/theme-chooser/styles/theme-classes.scss"],
+            "/src/app/theming/styles/themes.scss",
+             "/src/app/theming/styles/theme-classes.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule,
                     IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, ThemeChooserSampleComponent,
@@ -405,6 +405,25 @@ export class GridConfigGenerator implements IConfigGenerator {
                      IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
                       IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
                 ngDeclarations: [DefaultThemeSampleComponent],
+                ngImports: [IgxDropDownModule,
+                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
+                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule,
+                    IgxGridModule.forRoot(), IgxLayoutModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: DarkThemeSampleComponent,
+            additionalFiles: ["/src/app/theming/data/data.ts", "/src/app/theming/data/record.ts",
+            "/src/app/theming/styles/dark-theme.scss",
+            "/src/app/theming/styles/dark-theme-class.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDropDownModule,
+                    IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, DarkThemeSampleComponent,
+                     IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
+                ngDeclarations: [DarkThemeSampleComponent],
                 ngImports: [IgxDropDownModule,
                      IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
                      IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,

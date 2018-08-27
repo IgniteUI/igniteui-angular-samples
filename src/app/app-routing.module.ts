@@ -250,6 +250,7 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
@@ -1297,6 +1298,11 @@ export const samplesRoutes: Routes = [
         component: DefaultThemeSampleComponent,
         data: { displayName: "Default theme sample", parentName: "Themes" },
         path: "default-theme-sample"
+    },
+    {
+        component: DarkThemeSampleComponent,
+        data: { displayName: "Dark theme sample", parentName: "Themes" },
+        path: "dark-theme-sample"
     }
 ];
 export const appRoutes: Routes = [

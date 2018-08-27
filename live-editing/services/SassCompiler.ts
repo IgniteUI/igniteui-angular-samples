@@ -7,7 +7,7 @@ const IGNITE_IMPORTS_REG_EXP = new RegExp(/(@import\s+['"])(~)(igniteui-angular)
 const IGNITE_IMPORT_REG_EXP = new RegExp(/(~)(igniteui-angular)/g);
 const NODE_SASS_PATHS = [
     // required because of themes.scss file
-    "src/app/theming/theme-chooser/", "src/app/theming/theme-chooser/styles" ];
+    "src/app/theming/theme-chooser/", "src/app/theming/styles" ];
 
 export class SassCompiler {
     public compile(sass: string): string {

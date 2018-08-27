@@ -45,12 +45,12 @@ $black-color: #000000;
 // Define the secondary colors
 $royalblue-color: #4169E1;
 $orange-color: #FFA500;
-$yellow-color: #00BFFF;
+$aqua-color: #00BFFF;
 
 // Define the palettes:
 $light-theme-palette: igx-palette($primary: $light-color, $secondary: $royalblue-color);
 $dark-theme-palette: igx-palette($primary: $dark-color, $secondary: $orange-color);
-$black-theme-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+$black-theme-palette: igx-palette($primary: $black-color, $secondary: $aqua-color);
 
 
 // Define light theme for the snackbar
