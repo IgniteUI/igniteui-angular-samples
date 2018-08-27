@@ -1,0 +1,17 @@
+<!-- router-outlet outside the tabs items content -->
+<div class="_wrapper_tabs">
+    <p>This is a sample with routing and tabs.</p>
+    <igx-tabs #tabs1>
+        <igx-tabs-group *ngFor="let routerLink of routerLinks">
+            <ng-template igxTab>
+                <a routerLink="{{routerLink.link}}">
+                    {{routerLink.label}}
+                </a>
+            </ng-template>
+        </igx-tabs-group>
+    </igx-tabs>
+
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
