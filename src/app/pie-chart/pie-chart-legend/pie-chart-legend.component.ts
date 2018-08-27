@@ -1,9 +1,9 @@
-import { Component, AfterViewInit, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 @Component({
-    selector: 'app-pie-chart-legend',
-    templateUrl: './pie-chart-legend.component.html',
-    styleUrls: ['./pie-chart-legend.component.scss']
+    selector: "app-pie-chart-legend",
+    styleUrls: ["./pie-chart-legend.component.scss"],
+    templateUrl: "./pie-chart-legend.component.html"
 })
 export class PieChartLegendComponent {
 
@@ -20,7 +20,6 @@ export class PieChartLegendComponent {
         ];
     }
 
-    pieSliceClickEvent(e: any): void {
-        //debugger;
+    public pieSliceClickEvent(e: any): void {
     }
 }

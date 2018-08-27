@@ -208,6 +208,11 @@ import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
+import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
+import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
+import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
+import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -242,11 +247,6 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
-import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
-import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
-import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
-import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
-import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -1239,9 +1239,7 @@ export const samplesRoutes: Routes = [
         component: PieChartSelectionComponent,
         data: { displayName: "Pie Chart Selection", parentName: "Pie Chart"},
         path: "pie-chart-selection"
-    },
-    
-
+    }
 ];
 export const appRoutes: Routes = [
     {
