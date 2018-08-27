@@ -78,6 +78,7 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component"; 
 import {
     FinancialChartAxisTypesComponent
 } from "./financial-chart/axis-types/financial-chart-axis-types.component";
@@ -480,6 +481,11 @@ export const samplesRoutes: Routes = [
         component: ExcelExportSample1Component,
         data: { displayName: "Excel Export Grid", parentName: "Excel Export" },
         path: "export-excel-sample-1"
+    },
+    {
+        component: ExpansionPanelSample1Component,
+        data: { displayName: "Expansion Panel" },
+        path: "expansion-sample-1"
     },
     {
         component: LayoutComponent,
