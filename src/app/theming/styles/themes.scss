@@ -54,7 +54,7 @@ $black-theme-palette: igx-palette($primary: $black-color, $secondary: $aqua-colo
 
 
 // Define light theme for the snackbar
-$light-snackbar: igx-snackbar-theme(
+$light-snackbar-theme: igx-snackbar-theme(
   $palette: $light-theme-palette,
   $background: igx-color($light-theme-palette, "secondary", 500),
   $text-color: igx-color($light-theme-palette, "primary", 500),
@@ -62,21 +62,21 @@ $light-snackbar: igx-snackbar-theme(
 );
 
 // Define dark theme for the snackbar
-$dark-snackbar: igx-snackbar-theme(
+$dark-snackbar-theme: igx-snackbar-theme(
   $palette: $dark-theme-palette,
   $background: igx-color($dark-theme-palette, "primary", 100),
   $text-color: igx-color($dark-theme-palette, "secondary", 500)
 );
 
 // Define black theme for the snackbar
-$black-snackbar: igx-snackbar-theme(
+$black-snackbar-theme: igx-snackbar-theme(
   $palette: $black-theme-palette,
   $background: igx-color($black-theme-palette, "primary", 100),
   $text-color: igx-color($black-theme-palette, "secondary", 500)
 );
 
 // Define light theme for the dialog
-$light-dialog: igx-dialog-theme(
+$light-dialog-theme: igx-dialog-theme(
   $palette: $light-theme-palette,
   $background: igx-color($light-theme-palette, "primary", 100),
   $title-color: igx-color($light-theme-palette, "secondary", 500),
@@ -84,7 +84,7 @@ $light-dialog: igx-dialog-theme(
 );
 
 // Define dark theme for the dialog
-$dark-dialog: igx-dialog-theme(
+$dark-dialog-theme: igx-dialog-theme(
   $palette: $dark-theme-palette,
   $background: igx-color($dark-theme-palette, "primary", 100),
   $title-color: igx-color($dark-theme-palette, "secondary", 500),
@@ -92,7 +92,7 @@ $dark-dialog: igx-dialog-theme(
 );
 
 // Define black theme for the dialog
-$black-dialog: igx-dialog-theme(
+$black-dialog-theme: igx-dialog-theme(
   $palette: $black-theme-palette,
   $background: igx-color($black-theme-palette, "primary", 100),
   $title-color: igx-color($black-theme-palette, "secondary", 500),
@@ -100,7 +100,7 @@ $black-dialog: igx-dialog-theme(
 );
 
 // Define light theme for the input-group
-$light-input-group: igx-input-group-theme(
+$light-input-group-theme: igx-input-group-theme(
   $palette: $light-theme-palette,
   $disabled-border-color: igx-color($light-theme-palette, "primary", 500),
   $box-disabled-background: igx-color($light-theme-palette, "secondary", 100),
@@ -111,7 +111,7 @@ $light-input-group: igx-input-group-theme(
 );
 
 // Define dark theme for the input-group
-$dark-input-group: igx-input-group-theme(
+$dark-input-group-theme: igx-input-group-theme(
   $palette: $dark-theme-palette,
   $box-background:  igx-color($dark-theme-palette, "primary", 100),
   $disabled-border-color: igx-color($dark-theme-palette, "primary", 500),
@@ -123,7 +123,7 @@ $dark-input-group: igx-input-group-theme(
 );
 
 // Define black theme for the input-group
-$black-input-group: igx-input-group-theme(
+$black-input-group-theme: igx-input-group-theme(
   $palette: $black-theme-palette,
   $box-background:  igx-color($black-theme-palette, "primary", 100),
   $disabled-border-color: igx-color($black-theme-palette, "secondary", 500),
@@ -135,9 +135,9 @@ $black-input-group: igx-input-group-theme(
 );
 
 // Define light theme for the button
-$light-button: igx-button-theme(
+$light-button-theme: igx-button-theme(
   $palette: $light-theme-palette,
-  $icon-color: igx-color($light-theme-palette, "secondary", 500),
+  $icon-color: igx-color($light-theme-palette, "secondary", 700),
   $icon-hover-color: igx-color($light-theme-palette, "primary", 500),
   $icon-hover-background: igx-color($light-theme-palette, "secondary", 500),
   $icon-focus-color: igx-color($light-theme-palette, "primary", 500),
@@ -148,31 +148,31 @@ $light-button: igx-button-theme(
 );
 
 // Define dark theme for the button
-$dark-button: igx-button-theme(
+$dark-button-theme: igx-button-theme(
   $palette: $dark-theme-palette,
   $icon-color: igx-color($dark-theme-palette, "secondary", 700),
   $icon-hover-color: igx-color($dark-theme-palette, "primary", 500),
   $icon-hover-background: igx-color($dark-theme-palette, "secondary", 500),
   $icon-focus-color: igx-color($dark-theme-palette, "primary", 500),
   $icon-focus-background: igx-color($dark-theme-palette, "secondary", 500),
-  $flat-hover-background: igx-color($dark-theme-palette, "primary", 500),
-  $flat-text-color: igx-color($dark-theme-palette, "secondary", 700)
+  $disabled-background: igx-color($dark-theme-palette, "primary", 400),
+  $disabled-color: igx-color($black-theme-palette, "primary", 700)
 );
 
 // Define black theme for the button
-$black-button: igx-button-theme(
+$black-button-theme: igx-button-theme(
   $palette: $black-theme-palette,
   $icon-color: igx-color($black-theme-palette, "secondary", 700),
   $icon-hover-color: igx-color($black-theme-palette, "primary", 500),
   $icon-hover-background: igx-color($black-theme-palette, "secondary", 500),
   $icon-focus-color:  igx-color($black-theme-palette, "primary", 500),
   $icon-focus-background: igx-color($black-theme-palette, "secondary", 500),
-  $flat-hover-background: igx-color($black-theme-palette, "primary", 500),
-  $flat-text-color: igx-color($black-theme-palette, "secondary", 700)
+  $disabled-background: igx-color($black-theme-palette, "primary", 300),
+  $disabled-color: igx-color($black-theme-palette, "primary", 500)
 );
 
 // Define light theme for the button-group
-$light-button-group: igx-button-group-theme(
+$light-button-group-theme: igx-button-group-theme(
   $palette: $light-theme-palette,
   $item-text-color: igx-color($light-theme-palette, "primary", 500),
   $item-background: igx-color($light-theme-palette, "secondary", 500),
@@ -181,7 +181,7 @@ $light-button-group: igx-button-group-theme(
 );
 
 // Define dark theme for the button-group
-$dark-button-group: igx-button-group-theme(
+$dark-button-group-theme: igx-button-group-theme(
   $palette: $dark-theme-palette,
   $item-text-color: igx-color($dark-theme-palette, "primary", 500),
   $item-background: igx-color($dark-theme-palette, "secondary", 500),
@@ -190,7 +190,7 @@ $dark-button-group: igx-button-group-theme(
 );
 
 // Define black theme for the button-group
-$black-button-group: igx-button-group-theme(
+$black-button-group-theme: igx-button-group-theme(
   $palette: $black-theme-palette,
   $item-text-color: igx-color($black-theme-palette, "primary", 500),
   $item-background: igx-color($black-theme-palette, "secondary", 500),
@@ -199,46 +199,48 @@ $black-button-group: igx-button-group-theme(
 );
 
 // Define light theme for the grid
-$light-grid: igx-grid-theme(
+$light-grid-theme: igx-grid-theme(
   $palette: $light-theme-palette,
   $header-background: igx-color($light-theme-palette, "secondary", 700),
   $header-text-color:igx-color($light-theme-palette, "primary", 600),
-  $cell-selected-background: igx-color($light-theme-palette, "secondary", 600),
+  $cell-selected-background: igx-color($light-theme-palette, "secondary", 200),
+  $cell-selected-text-color: igx-color($light-theme-palette, "primary", 500),
   $row-hover-background: igx-color($light-theme-palette, "secondary", 100),
   $header-border-color: igx-color($light-theme-palette, "primary", 600)
-);
+  );
 
 // Define dark theme for the grid
-$dark-grid: igx-grid-theme(
+$dark-grid-theme: igx-grid-theme(
   $palette: $dark-theme-palette,
   $content-background: igx-color($dark-theme-palette, "secondary", 100),
   $header-background: igx-color($dark-theme-palette, "primary", 500),
   $header-text-color: igx-color($dark-theme-palette, "secondary", 600),
-  $cell-selected-background: igx-color($dark-theme-palette, "secondary", 600),
-  $cell-selected-text-color: igx-color($dark-theme-palette, "primary", 600),
+  $cell-selected-background: igx-color($dark-theme-palette, "primary", 500),
+  $cell-selected-text-color: igx-color($dark-theme-palette, "secondary", 500),
   $row-hover-background: igx-color($dark-theme-palette, "primary", 100),
   $header-border-color: igx-color($dark-theme-palette, "primary", 600)
 );
 
 // Define black theme for the grid
-$black-grid: igx-grid-theme(
+$black-grid-theme: igx-grid-theme(
   $palette: $black-theme-palette,
   $content-background:  igx-color($black-theme-palette, "primary", 100),
   $header-background: igx-color($black-theme-palette, "secondary", 700),
-  $cell-selected-background: igx-color($black-theme-palette, "secondary", 600),
+  $cell-selected-background: igx-color($black-theme-palette, "primary", 500),
+  $cell-selected-text-color: igx-color($black-theme-palette, "secondary", 500),
   $row-hover-background: igx-color($black-theme-palette, "secondary", 100),
   $header-border-color: igx-color($black-theme-palette, "primary", 600)
 );
 
 // Define light theme for the grid-paginator
-$light-grid-paginator: igx-grid-paginator-theme(
+$light-grid-paginator-theme: igx-grid-paginator-theme(
   $palette: $light-theme-palette,
   $background-color:igx-color($light-theme-palette, "primary", 100),
   $border-color: igx-color($light-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the grid-paginator
-$dark-grid-paginator: igx-grid-paginator-theme(
+$dark-grid-paginator-theme: igx-grid-paginator-theme(
   $palette: $dark-theme-palette,
   $text-color: igx-color($dark-theme-palette, "secondary", 700),
   $background-color:igx-color($dark-theme-palette, "primary", 500),
@@ -246,15 +248,15 @@ $dark-grid-paginator: igx-grid-paginator-theme(
 );
 
 // Define black theme for the grid-paginator
-$black-grid-paginator: igx-grid-paginator-theme(
+$black-grid-paginator-theme: igx-grid-paginator-theme(
   $palette: $black-theme-palette,
   $text-color: igx-color($black-theme-palette, "secondary", 700),
-  $background-color:igx-color($black-theme-palette, "primary", 500),
+  $background-color: igx-color($black-theme-palette, "primary", 700),
   $border-color: igx-color($black-theme-palette, "secondary", 500)
 );
 
 // Define light theme for the grid-filtering
-$light-grid-filtering: igx-grid-filtering-theme(
+$light-grid-filtering-theme: igx-grid-filtering-theme(
   $palette: $light-theme-palette,
   $toggle-icon-color: igx-color($light-theme-palette, "primary", 500),
   $toggle-active-background:  igx-color($light-theme-palette, "primary", 100),
@@ -266,7 +268,7 @@ $light-grid-filtering: igx-grid-filtering-theme(
 );
 
 // Define dark theme for the grid-filtering
-$dark-grid-filtering: igx-grid-filtering-theme(
+$dark-grid-filtering-theme: igx-grid-filtering-theme(
   $palette: $dark-theme-palette,
   $menu-background: igx-color($dark-theme-palette, "primary", 100),
   $toggle-hover-background: igx-color($dark-theme-palette, "primary", 100),
@@ -276,9 +278,12 @@ $dark-grid-filtering: igx-grid-filtering-theme(
   );
 
 // Define black theme for the grid-filtering
-$black-grid-filtering: igx-grid-filtering-theme(
+$black-grid-filtering-theme: igx-grid-filtering-theme(
   $palette: $black-theme-palette,
-  $toggle-background: igx-color($black-theme-palette, "primary", 100),
+  $toggle-icon-color: igx-color($black-theme-palette, "primary", 500),
+  $toggle-hover-background:  igx-color($black-theme-palette, "primary", 100),
+  $toggle-active-background:  igx-color($black-theme-palette, "primary", 100),
+  $toggle-icon-active-color: igx-color($black-theme-palette, "secondary", 500),
   $menu-background: igx-color($black-theme-palette, "primary", 100),
   $menu-text-color: igx-color($black-theme-palette, "secondary", 500),
   $menu-button-text-color: igx-color($black-theme-palette, "secondary", 500),
