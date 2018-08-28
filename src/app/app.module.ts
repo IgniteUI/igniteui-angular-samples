@@ -121,7 +121,8 @@ import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
-import { GridDisplayDensitySampleComponent
+import {
+    GridDisplayDensitySampleComponent
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
@@ -214,6 +215,8 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
+import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
+import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
 import {
     TextHighlightSample1Component
 } from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
@@ -298,6 +301,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         TabsSample1Component,
         TabsSample2Component,
         TabsSample3Component,
+        TabsSample4Component,
+        TabsSample5Component,
         NavbarComponent,
         NavbarSample1Component,
         SliderSample1Component,
