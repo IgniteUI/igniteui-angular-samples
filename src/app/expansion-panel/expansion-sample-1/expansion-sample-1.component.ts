@@ -11,5 +11,5 @@ import {
 export class ExpansionPanelSample1Component {
     @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent })
     public panel: IgxExpansionPanelComponent;
-
+    public readMore = "https://en.wikipedia.org/wiki/Hummingbird";
 }
