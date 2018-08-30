@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { IgxTabsComponent, IgxTabsGroupComponent } from "igniteui-angular";
 import { Subscription } from "rxjs";
@@ -9,7 +9,7 @@ import { filter } from "rxjs/operators";
     styleUrls: ["./tabs-sample-4.component.scss"],
     templateUrl: "./tabs-sample-4.component.html"
 })
-export class TabsSample4Component implements OnInit {
+export class TabsSample4Component implements OnInit, OnDestroy {
     @ViewChild("tabs1")
     public tabs: IgxTabsComponent;
     public routerLinks: any[];
