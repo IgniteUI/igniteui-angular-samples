@@ -22,7 +22,7 @@ export class CalendarSample7Component {
 
     public submitPTOdays(eventArgs) {
         this.calendar.specialDates =
-            [new DateRangeDescriptor(DateRangeType.Specific, this.range)];
+            [{ type: DateRangeType.Specific, dateRange: this.range }];
 
         this.range.forEach((item) => {
             this.calendar.selectDate(item);

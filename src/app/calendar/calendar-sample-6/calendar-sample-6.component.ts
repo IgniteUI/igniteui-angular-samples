@@ -17,6 +17,6 @@ export class CalendarSample6Component {
     constructor() { }
 
     public ngOnInit() {
-        this.calendar.disabledDates = [new DateRangeDescriptor(DateRangeType.Between, this.range)];
+        this.calendar.disabledDates = [{ type: DateRangeType.Between, dateRange: this.range }];
     }
 }
