@@ -1,3 +1,19 @@
 .igx-expansion-panel {
     font-family: Verdana;
 }
+
+.example-icon {
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: 1px #000;
+}
+
+igx-expansion-panel-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+igx-expansion-panel-description {
+    font-weight: 400;
+    font-size: 16px;
+}

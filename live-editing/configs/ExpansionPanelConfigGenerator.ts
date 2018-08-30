@@ -1,6 +1,7 @@
 
 /* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxExpansionPanelModule, IgxGridModule, IgxIconModule } from "igniteui-angular";
+// tslint:disable-next-line:max-line-length
+import { IgxAvatarModule, IgxExpansionPanelModule, IgxGridModule, IgxIconModule, IgxToastModule } from "igniteui-angular";
 // tslint:disable-next-line:max-line-length
 import { ExpansionPanelSample1Component} from "../../src/app/expansion-panel/expansion-sample-1/expansion-sample-1.component";
 // tslint:disable-next-line:max-line-length
@@ -31,9 +32,9 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ExpansionPanelSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, ExpansionPanelSample2Component],
+                imports: [IgxIconModule, IgxExpansionPanelModule, IgxToastModule, ExpansionPanelSample2Component],
                 ngDeclarations: [ExpansionPanelSample2Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule]
+                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxToastModule]
             }),
             shortenComponentPathBy: "/expansion-panel/"
         }));
@@ -41,9 +42,10 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ExpansionPanelSample3Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxAvatarModule, IgxExpansionPanelModule, ExpansionPanelSample3Component],
+                imports: [IgxIconModule, IgxAvatarModule, IgxToastModule,
+                    IgxExpansionPanelModule, ExpansionPanelSample3Component],
                 ngDeclarations: [ExpansionPanelSample3Component],
-                ngImports: [IgxIconModule, IgxAvatarModule, IgxExpansionPanelModule]
+                ngImports: [IgxIconModule, IgxAvatarModule, IgxToastModule, IgxExpansionPanelModule]
             }),
             shortenComponentPathBy: "/expansion-panel/"
         }));
