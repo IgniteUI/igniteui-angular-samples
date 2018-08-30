@@ -77,6 +77,7 @@ import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
+import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -498,6 +499,11 @@ export const samplesRoutes: Routes = [
         component: ExpansionPanelSample3Component,
         data: { displayName: "Expansion Panel 3", parentName: "Expansion Panel" },
         path: "expansion-sample-3"
+    },
+    {
+        component: ExpansionPanelSample4Component,
+        data: { displayName: "Expansion Panel 4", parentName: "Expansion Panel" },
+        path: "expansion-sample-4"
     },
     {
         component: LayoutComponent,
