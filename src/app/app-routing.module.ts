@@ -50,8 +50,14 @@ import {
     CategoryChartHighVolumeComponent
 } from "./category-chart/high-volume/category-chart-high-volume-sample.component";
 import {
+    CategoryChartOverlapColumnsComponent
+} from "./category-chart/overlap-columns/category-chart-overlap-columns.component";
+import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
+import {
+    CategoryChartWithTrendlineComponent
+} from "./category-chart/trendline/category-chart-with-trendline.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
@@ -97,6 +103,9 @@ import {
     FinancialChartMultipleDataComponent
 } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import {
+    FinancialChartMultipleFeedsComponent
+} from "./financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
+import {
     FinancialChartOverviewComponent
 } from "./financial-chart/overview/financial-chart-overview-sample.component";
 import {
@@ -105,6 +114,9 @@ import {
 import {
     FinancialChartPerformanceComponent
 } from "./financial-chart/performance/financial-chart-performance.component";
+import {
+    FinancialChartTimeBasedDataComponent
+} from "./financial-chart/time-based-data/financial-chart-time-based-data.component";
 import {
     FinancialChartTitlesComponent
 } from "./financial-chart/titles/financial-chart-titles.component";
@@ -147,7 +159,8 @@ import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
-import { GridDisplayDensitySampleComponent
+import {
+    GridDisplayDensitySampleComponent
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
@@ -165,9 +178,9 @@ import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.
 import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
 import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
-import { GridToolbarSample1Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
-import { GridToolbarSample2Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
-import { GridToolbarSample3Component} from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
+import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
+import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -197,6 +210,7 @@ import { ListSample3Component } from "./list/list-sample-3/list-sample-3.compone
 import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
+import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
@@ -235,6 +249,8 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
+import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
+import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
 import {
     TextHighlightSample1Component
 } from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
@@ -254,6 +270,7 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+
 export const samplesRoutes: Routes = [
     {
         component: HomeComponent,
@@ -537,6 +554,11 @@ export const samplesRoutes: Routes = [
         path: "list-sample-6"
     },
     {
+        component: ListSample7Component,
+        data: { displayName: "List Item Panning", parentName: "List" },
+        path: "list-sample-7"
+    },
+    {
         component: NavdrawerComponent,
         path: "navigation-drawer"
     },
@@ -706,6 +728,16 @@ export const samplesRoutes: Routes = [
         component: TabsSample3Component,
         data: { displayName: "Tabs Customizing", parentName: "Tabs" },
         path: "tabs-sample-3"
+    },
+    {
+        component: TabsSample4Component,
+        data: { displayName: "TabsRouting1", parentName: "Tabs" },
+        path: "tabs-sample-4"
+    },
+    {
+        component: TabsSample5Component,
+        data: { displayName: "TabsRouting2", parentName: "Tabs" },
+        path: "tabs-sample-5"
     },
     {
         component: TimePickerSample1Component,
@@ -1117,6 +1149,11 @@ export const samplesRoutes: Routes = [
         path: "category-chart-overview-sample"
     },
     {
+        component: CategoryChartOverlapColumnsComponent,
+        data: { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
+        path: "category-chart-overlap-columns"
+    },
+    {
         component: CategoryChartCustomTooltipsComponent,
         data: { displayName: "Category Chart Custom Tooltips", parentName: "Category Chart" },
         path: "category-chart-custom-tooltips-sample"
@@ -1147,6 +1184,11 @@ export const samplesRoutes: Routes = [
         path: "category-chart-config-options-sample"
     },
     {
+        component: CategoryChartWithTrendlineComponent,
+        data: { displayName: "Category Chart With Trendline", parentName: "Category Chart" },
+        path: "category-chart-with-trendline"
+    },
+    {
         component: FinancialChartPerformanceComponent,
         data: { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
         path: "financial-chart-performance"
@@ -1163,8 +1205,13 @@ export const samplesRoutes: Routes = [
     },
     {
         component: FinancialChartMultipleDataComponent,
-        data: { displayName: "Financial Chart Multiple Data", parentName: "Financial Chart" },
+        data: { displayName: "Financial Chart Multiple Sources", parentName: "Financial Chart" },
         path: "financial-chart-multiple-data"
+    },
+    {
+        component: FinancialChartMultipleFeedsComponent,
+        data: { displayName: "Financial Chart Multiple Feeds", parentName: "Financial Chart" },
+        path: "financial-chart-multiple-feeds"
     },
     {
         component: FinancialChartCustomTooltipsComponent,
@@ -1200,6 +1247,11 @@ export const samplesRoutes: Routes = [
         component: FinancialChartAxisTypesComponent,
         data: { displayName: "Financial Chart Axis Types", parentName: "Financial Chart" },
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTimeBasedDataComponent,
+        data: { displayName: "Financial Chart Time Based Data", parentName: "Financial Chart" },
+        path: "financial-chart-time-based-data"
     },
     {
         component: FinancialChartTrendlinesComponent,

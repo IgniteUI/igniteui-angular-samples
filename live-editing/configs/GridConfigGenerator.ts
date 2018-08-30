@@ -6,6 +6,7 @@ import {
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCheckboxModule,
+    IgxChipsModule,
     IgxColumnHidingModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
@@ -167,11 +168,11 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid/grid-search-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxIconModule,
-                    IgxInputGroupModule, IgxRippleModule, GridSearchSampleComponent],
+                    IgxInputGroupModule, IgxRippleModule, IgxChipsModule, GridSearchSampleComponent],
                 ngDeclarations: [GridSearchSampleComponent],
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule,
-                    IgxRippleModule, HttpClientModule],
+                    IgxRippleModule, IgxChipsModule, HttpClientModule],
                 ngProviders: []
             })
         }));
