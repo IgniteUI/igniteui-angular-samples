@@ -11,11 +11,6 @@ export class CalendarSample7Component {
     @ViewChild(IgxSnackbarComponent) public snackbar: IgxSnackbarComponent;
     public range = [];
 
-    constructor() { }
-
-    public ngOnInit() {
-    }
-
     public selectPTOdays(dates: Date[]) {
         this.range = dates;
     }
