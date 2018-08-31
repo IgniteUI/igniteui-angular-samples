@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from "@angular/core";
+import { Component, HostBinding, Input, OnInit, ViewChild } from "@angular/core";
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -21,6 +21,9 @@ export class DarkThemeSampleComponent implements OnInit {
 
   public data: any[] = DATA;
   public record;
+
+  @HostBinding("class")
+  public themesClass = "dark-theme";
 
   @ViewChild("dialog1", { read: IgxDialogComponent })
   public dialog: IgxDialogComponent;

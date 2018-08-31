@@ -30,7 +30,7 @@ export class ThemeChooserSampleComponent implements OnInit {
     public record;
 
     @HostBinding("class")
-    public themeClass: THEME = THEME.LIGHT;
+    public themesClass: THEME = THEME.LIGHT;
 
     @ViewChild("dialog1", { read: IgxDialogComponent })
     public dialog: IgxDialogComponent;
@@ -69,7 +69,7 @@ export class ThemeChooserSampleComponent implements OnInit {
     constructor() { }
 
     public selectTheme(value: THEME) {
-        this.themeClass = value;
+        this.themesClass = value;
     }
 
     public toggleDropDown(eventArgs, selectedDropDown: IgxDropDownComponent) {

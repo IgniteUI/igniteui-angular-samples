@@ -4,7 +4,7 @@
     margin: 16px;
     box-shadow: igx-elevation($elevations, 12);
     //Set the dark themes for the components.
-    .dark-theme {
+    &.dark-theme {
         background: $dark-color;
         ::ng-deep {   
           @include igx-grid($dark-grid-theme);
