@@ -1,0 +1,12 @@
+<!-- router-outlet inside the tabs items content -->
+<igx-tabs #tabs1 (onTabItemSelected)="navigate($event)">
+    <igx-tabs-group label="Product1" name="product1">
+        <router-outlet name="product1"></router-outlet>
+    </igx-tabs-group>
+    <igx-tabs-group label="Product2" name="product2">
+        <router-outlet name="product2"></router-outlet>
+    </igx-tabs-group>
+    <igx-tabs-group label="Product3" name="product3">
+        <router-outlet name="product3"></router-outlet>
+    </igx-tabs-group>
+</igx-tabs>
