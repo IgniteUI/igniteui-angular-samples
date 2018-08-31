@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from "@angular/core";
+import { Component, HostBinding, Input, OnInit, ViewChild } from "@angular/core";
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
@@ -28,7 +28,9 @@ export class ThemeChooserSampleComponent implements OnInit {
     public THEME: typeof THEME = THEME;
     public data: any[] = DATA;
     public record;
-    public wrapper = THEME.LIGHT;
+
+    @HostBinding("class")
+    public themeClass: THEME = THEME.LIGHT;
 
     @ViewChild("dialog1", { read: IgxDialogComponent })
     public dialog: IgxDialogComponent;
@@ -67,7 +69,7 @@ export class ThemeChooserSampleComponent implements OnInit {
     constructor() { }
 
     public selectTheme(value: THEME) {
-        this.wrapper = value;
+        this.themeClass = value;
     }
 
     public toggleDropDown(eventArgs, selectedDropDown: IgxDropDownComponent) {

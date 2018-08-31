@@ -8,7 +8,7 @@
    
   
   //Set the light themes for the components. 
-    .light-theme {
+    &.light-theme {
       background: $light-color;
       ::ng-deep {   
         @include igx-grid($light-grid-theme);
@@ -23,7 +23,7 @@
     }
   
     //Set the dark themes for the components.
-    .dark-theme {
+    &.dark-theme {
       background: $dark-color;
       ::ng-deep {   
         @include igx-grid($dark-grid-theme);
@@ -38,7 +38,7 @@
     }
   
      //Set the black themes for the components.
-    .black-theme {
+    &.black-theme {
       background: $black-color;
       ::ng-deep {    
         @include igx-grid($black-grid-theme);
