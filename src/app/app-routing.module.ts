@@ -257,6 +257,10 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
+import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
+
+import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -1312,6 +1316,21 @@ export const samplesRoutes: Routes = [
         component: TextHighlightSample2Component,
         data: { displayName: "Search within multiple containers", parentName: "Text Highlight" },
         path: "text-highlight-2"
+    },
+    {
+        component: ThemeChooserSampleComponent,
+        data: { displayName: "Style components with custom themes", parentName: "Themes" },
+        path: "theme-chooser"
+    },
+    {
+        component: DefaultThemeSampleComponent,
+        data: { displayName: "Default theme sample", parentName: "Themes" },
+        path: "default-theme-sample"
+    },
+    {
+        component: DarkThemeSampleComponent,
+        data: { displayName: "Dark theme sample", parentName: "Themes" },
+        path: "dark-theme-sample"
     }
 ];
 export const appRoutes: Routes = [
