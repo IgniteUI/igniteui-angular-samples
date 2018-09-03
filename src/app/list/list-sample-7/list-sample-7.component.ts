@@ -45,6 +45,9 @@ export class ListSample7Component implements OnInit {
   @ViewChild("toast")
   public toast: IgxToastComponent;
 
+  @ViewChild('switchKeepItem')
+  public switchKeepItem: any;
+
   constructor() { }
 
   public ngOnInit() { }
@@ -54,13 +57,13 @@ export class ListSample7Component implements OnInit {
   }
 
   public leftPanPerformed(args) {
-      args.cancel = true;
-      this.toast.message = "Composing text message for "  + this.contacts[args.item.index - 1].name;
-      this.toast.show();
+    args.keepItem = this.switchKeepItem.checked;
+    this.toast.message = "Composing message for "  + this.contacts[args.item.index - 1].name;
+    this.toast.show();
   }
 
   public rightPanPerformed(args) {
-    args.cancel = true;
+    args.keepItem = this.switchKeepItem.checked;
     this.toast.message = "Calling " + this.contacts[args.item.index - 1].name;
     this.toast.show();
   }
