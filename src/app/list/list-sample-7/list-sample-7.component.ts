@@ -45,7 +45,7 @@ export class ListSample7Component implements OnInit {
   @ViewChild("toast")
   public toast: IgxToastComponent;
 
-  @ViewChild('switchKeepItem')
+  @ViewChild("switchKeepItem")
   public switchKeepItem: any;
 
   constructor() { }
