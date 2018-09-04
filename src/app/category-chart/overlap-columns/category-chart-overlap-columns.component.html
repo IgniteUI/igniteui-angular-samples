@@ -1,0 +1,88 @@
+<div class="sample-wrapper container">
+    <div class="chartToolbar">
+        <span class="chartTitle">TIME SPENT ONLINE, BY ACTIVITY</span>
+        <igx-legend class="chartLegend" #legend
+            height="20px" width="350px"
+            orientation="horizontal" >
+        </igx-legend>
+    </div>
+    <div class="chart">
+        <igx-category-chart
+            #chart
+            [dataSource]="data"
+            [tooltipTemplate]="stackedTooltip"
+            (seriesAdded)="onSeriesAdded($event)"
+            height="100%" width="100%"
+            chartType="column"
+            chartTitleTextColor="gray"
+            chartTitleTextStyle="9pt Verdana"
+            brushes="#7446B9 #9FB328 #F96232 #DC3F76 #2E9CA6"
+            outlines="#7446B9 #9FB328 #F96232 #DC3F76 #2E9CA6"
+
+            xAxisLabelTextStyle="9pt Verdana"
+            xAxisLabelTopMargin="5"
+            xAxisLabelTextColor="gray"
+            xAxisLabelAngle="45"
+            yAxisLabelTextStyle="9pt Verdana"
+            yAxisLabelRightMargin="5"
+            yAxisLabelTextColor="gray"
+            yAxisLabelAngle="0"
+
+            xAxisTickLength="0"
+            xAxisTickStrokeThickness=".5"
+            xAxisTickStroke="gray"
+            yAxisTickLength="0"
+
+            yAxisMinimumValue="0"
+            yAxisMaximumValue="10"
+
+            xAxisInterval="1"
+            xAxisStroke="gray"
+            xAxisStrokeThickness="2"
+
+            yAxisInterval="1"
+            yAxisMajorStroke="gray"
+            yAxisMajorStrokeThickness=".5"
+            yAxisMinorInterval="0.5"
+            yAxisMinorStroke="gray"
+            yAxisMinorStrokeThickness="0"
+
+            xAxisGap="0.45"
+            xAxisOverlap="1">
+        </igx-category-chart>
+    </div>
+
+    <ng-template let-series="series" let-item="item" #stackedTooltip>
+        <div class="tooltipGrid">
+            <div class="tooltipRow">
+                <div ></div>
+                <div class="tooltipCountry" >{{item.Country}}</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/Blogging.png">
+                <div class="tooltipTitle" style="color: #7446B9;">Blogging</div>
+                <div class="tooltipValue">{{item.Blogging}}h</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/SocialNetwork.png">
+                <div class="tooltipTitle" style="color: #9FB328;">Social Net.</div>
+                <div class="tooltipValue">{{item.Social}}h</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/OnlinePress.png">
+                <div class="tooltipTitle" style="color: #F96232;">Online Press</div>
+                <div class="tooltipValue">{{item.Press}}h</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/OnlineTV.png">
+                <div class="tooltipTitle" style="color: #DC3F76;">Online TV</div>
+                <div class="tooltipValue">{{item.TV}}h</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="tooltipBadge" src="assets/images/activities/OnlineRadio.png">
+                <div class="tooltipTitle" style="color: #2E9CA6;">Online Radio</div>
+                <div class="tooltipValue">{{item.Radio}}h</div>
+            </div>
+        </div>
+    </ng-template>
+</div>

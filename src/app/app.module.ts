@@ -71,6 +71,8 @@ import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-
 import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
 import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
 import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
+import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
+import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -121,7 +123,8 @@ import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
-import { GridDisplayDensitySampleComponent
+import {
+    GridDisplayDensitySampleComponent
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
@@ -214,12 +217,17 @@ import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
+import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
+import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
 import {
     TextHighlightSample1Component
 } from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
+import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
+import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -271,6 +279,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         CalendarSample3Component,
         CalendarSample4Component,
         CalendarSample5Component,
+        CalendarSample6Component,
+        CalendarSample7Component,
         CalendarComponent,
         CascadingCombos,
         ComboFeatures,
@@ -295,6 +305,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         TabsSample1Component,
         TabsSample2Component,
         TabsSample3Component,
+        TabsSample4Component,
+        TabsSample5Component,
         NavbarComponent,
         NavbarSample1Component,
         SliderSample1Component,
@@ -411,7 +423,10 @@ import { ToggleComponent } from "./toggle/toggle.component";
         DocsLayoutComponent,
         IndexComponent,
         TextHighlightSample1Component,
-        TextHighlightSample2Component
+        TextHighlightSample2Component,
+        ThemeChooserSampleComponent,
+        DefaultThemeSampleComponent,
+        DarkThemeSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
