@@ -232,6 +232,7 @@ import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/tim
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
+import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -386,6 +387,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         TimePickerSample2Component,
         TimePickerSample3Component,
         TimePickerSample4Component,
+        TimePickerSample5Component,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,

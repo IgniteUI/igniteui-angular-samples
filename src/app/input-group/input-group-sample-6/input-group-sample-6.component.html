@@ -36,7 +36,17 @@
                     <igx-datePicker name="date" (onSelection)="onDateSelection($event)" ></igx-datePicker>
                 </div>
                 <div class="igx-time-picker">
-                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" ></igx-time-picker>
+                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" >
+                        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
+                            <igx-input-group (click)="openDialog()">                                
+                                <label igxLabel>Time </label>
+                                <input igxInput [value]="displayTime" />
+                                <igx-suffix>
+                                    <igx-icon>access_time</igx-icon>
+                                </igx-suffix>
+                            </igx-input-group>
+                        </ng-template>
+                    </igx-time-picker>
                 </div>
                 <div class="button-wrapper">
                     <button igxButton="raised" igxRipple>Book</button>
