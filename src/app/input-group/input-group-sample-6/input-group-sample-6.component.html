@@ -33,7 +33,17 @@
                     </igx-combo>
                 </div>
                 <div class="igx-datePicker">
-                    <igx-datePicker name="date" (onSelection)="onDateSelection($event)" ></igx-datePicker>
+                    <igx-datePicker name="date" (onSelection)="onDateSelection($event)" >
+                        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
+                            <igx-input-group (click)="openDialog()">
+                                <label igxLabel>Date </label>
+                                <input igxInput [value]="displayData" />
+                                <igx-suffix>
+                                    <igx-icon>today</igx-icon>
+                                </igx-suffix>
+                            </igx-input-group>
+                        </ng-template>
+                    </igx-datePicker>
                 </div>
                 <div class="igx-time-picker">
                     <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" >

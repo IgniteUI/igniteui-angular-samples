@@ -98,6 +98,7 @@ import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/dat
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
 import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
@@ -368,6 +369,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         DatepickerSample3Component,
         DatepickerSample4Component,
         DatepickerSample5Component,
+        DatepickerSample6Component,
         SnackbarSample1Component,
         SnackbarSample2Component,
         SnackbarSample3Component,
