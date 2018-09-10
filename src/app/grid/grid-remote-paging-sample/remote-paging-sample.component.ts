@@ -3,7 +3,8 @@ import { IgxGridComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { UserService } from "./data-service/data-service";
 @Component({
-    selector: "app-gridpaging",
+    providers: [UserService],
+    selector: "remote-paging-grid-sample",
     styleUrls: ["./remote-paging-sample.component.scss"],
     templateUrl: "./remote-paging-sample.component.html"
 })
@@ -41,22 +42,55 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, AfterViewC
         this.grid1.paginationTemplate = this.remotePager;
         this.grid1.pagingState.metadata.countRecords = this.total;
         this.grid1.pagingState.recordsPerPage = this.grid1.perPage;
-        if (this.total / this.grid1.pagingState.recordsPerPage < 1 && this.total !== 0) {
-            this.totalPages = 1;
-            this.grid1.cdr.detectChanges();
-            this.lastPage = true;
-            this.firstPage = true;
-            return;
+        if (this.total === 0) {
+          return;
+        }
+        if (this.total !== 0) {
+        if (this.total / this.grid1.pagingState.recordsPerPage < 1) {
+          this.updateGrid(true, true, 1, 1);
         } else if (this.total / this.grid1.pagingState.recordsPerPage >
-            Math.round(this.total / this.grid1.pagingState.recordsPerPage)
-            && this.total !== 0) {
-            this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage) + 1;
-            this.totalPages = this.grid1.pagingState.countPages;
-            this.grid1.cdr.detectChanges();
-        } else {
-            this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage);
-            this.totalPages = this.grid1.pagingState.countPages;
-            this.grid1.cdr.detectChanges();
+            Math.round(this.total / this.grid1.pagingState.recordsPerPage)) {
+          this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage) + 1;
+          this.totalPages = this.grid1.pagingState.countPages;
+          this.updateGrid(true, false, this.totalPages, this.index);
+        } else  if (this.index + 1 > 1) {
+          this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage);
+          this.totalPages = this.grid1.pagingState.countPages;
+          if (this.totalPages < this.index + 1) {
+            this.index = this.totalPages - 1;
+            this.lastPage = true;
+            this.firstPage = false;
+          } else if (this.totalPages > this.index  + 1) {
+            this.lastPage = false;
+            this.firstPage = false;
+          }
+          this.grid1.cdr.detectChanges();
+         } else {
+          this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage);
+          this.totalPages = this.grid1.pagingState.countPages;
+          this.lastPage = false;
+          this.firstPage = true;
+          this.grid1.cdr.detectChanges();
+         }
+        }
+      }
+
+    public updateGrid(lastPage: boolean, firstPage: boolean, totalPages?: number, index?: number) {
+        if (index && totalPages && index === totalPages) {
+          this.index = totalPages - 1;
+          this.totalPages = totalPages;
+          this.lastPage = lastPage;
+          this.firstPage = firstPage;
+          this.remoteService.getData(this.total, 0);
+          this.grid1.cdr.detectChanges();
+        } else if (index && totalPages && index > totalPages) {
+          this.index = totalPages - 1 ;
+          const skip = this.index * this.grid1.pagingState.recordsPerPage;
+          const top = this.grid1.pagingState.recordsPerPage;
+          this.lastPage = lastPage;
+          this.firstPage = firstPage;
+          this.remoteService.getData(skip, top);
+          this.grid1.cdr.detectChanges();
         }
     }
 
