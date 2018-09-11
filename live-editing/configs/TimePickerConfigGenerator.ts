@@ -1,9 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxTimePickerModule, IgxToastModule } from "igniteui-angular";
+import { IgxTimePickerModule, IgxToastModule, IgxIconModule, IgxInputGroupModule } from "igniteui-angular";
 import { TimePickerSample1Component } from "../../src/app/timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "../../src/app/timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "../../src/app/timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "../../src/app/timepicker/timepicker-sample-4/timepicker-sample-4.component";
+import { TimePickerSample5Component } from "../../src/app/timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -52,6 +53,17 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
                 imports: [IgxTimePickerModule, IgxToastModule, TimePickerSample4Component],
                 ngDeclarations: [TimePickerSample4Component],
                 ngImports: [IgxTimePickerModule, IgxToastModule]
+            }),
+            shortenComponentPathBy: "/timepicker/"
+        }));
+
+        // time picker sample 5
+        configs.push(new Config({
+            component: TimePickerSample5Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimePickerSample5Component],
+                ngDeclarations: [TimePickerSample5Component],
+                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule,]
             }),
             shortenComponentPathBy: "/timepicker/"
         }));
