@@ -5,8 +5,10 @@ import {
     growVerIn,
     growVerOut,
     IgxExpansionPanelComponent,
+    slideInLeft,
+    slideOutRight,
     swingInLeftFwd,
-    swingOutRightBck
+    swingOutRightBck,
 } from "igniteui-angular";
 // import { EaseOut } from "igniteui-angular/lib/animations/easings";
 
@@ -17,18 +19,16 @@ import {
     templateUrl: "./expansion-sample-5.component.html"
 })
 export class ExpansionPanelSample5Component implements OnInit {
-
-    public igxExpansionPanel: IgxExpansionPanelComponent;
+    // @ViewChild(IgxExpansionPanelComponent)
+    // public igxExpansionPanel: IgxExpansionPanelComponent;
 
     @ViewChildren(forwardRef(() => IgxExpansionPanelComponent), { read: IgxExpansionPanelComponent })
     public expansionPanels: QueryList<IgxExpansionPanelComponent>;
 
     public animationSettingsOverride = {
         closeAnimation: useAnimation(growVerOut, {
-                params:
-                    {
-                    delay: "30ms",
-                    duration: "500ms",
+                params: {
+                    duration: "300ms",
                     // endHeight: "*",
                     endOpacity: 0.9,
                     // startHeight: "0px",
@@ -37,7 +37,7 @@ export class ExpansionPanelSample5Component implements OnInit {
             }),
         openAnimation: useAnimation(growVerIn, {
                 params: {
-                    delay: "30ms",
+                    // delay: "30ms",
                     // easing: EaseOut.quad,
                     duration: "500ms",
                     // endHeight: "0px",
@@ -49,32 +49,35 @@ export class ExpansionPanelSample5Component implements OnInit {
     };
 
     public animationSettingsCustom = {
-        closeAnimation: useAnimation(swingInLeftFwd
-            , {
-                    // params:
-                    //     {
-                    //     // easing: EaseOut.quad,
-                    //     endHeight: "*",
-                    //     endOpacity: 1,
-                    //     startHeight: "0px",
-                    //     startOpacity: 0
-                    // }
-                }
-                ),
-        openAnimation: useAnimation(swingOutRightBck
-            , {
+        closeAnimation: useAnimation(slideOutRight, {
                 params: {
+                    delay: "30ms",
+                    duration: "100ms",
+                    fromPosition: "translateX(100px)"
+                //     // easing: EaseOut.quad,
+                //     endHeight: "*",
+                //     endOpacity: 1,
+                //     startHeight: "0px",
+                //     startOpacity: 0
+                }
+            }),
+        openAnimation: useAnimation(slideInLeft, {
+                params: {
+                    delay: "30ms",
+                    duration: "500ms",
+                    fromPosition: "translateX(-300px)"
                     // easing: EaseOut.quad,
                     // endHeight: "0px",
                     // endOpacity: 0,
                     // startHeight: "*",
                     // startOpacity: 1
                 }
-            }
-            )
+            })
     };
 
-    public person = "Pe6o";
+    // public person = "Pe6o";
+
+    public expandedItem = null;
 
     public user = {
         email: "",
@@ -102,9 +105,15 @@ export class ExpansionPanelSample5Component implements OnInit {
     public ngOnInit() {
     }
 
-    public collapsed() {
-        // return this.igxExpansionPanel && this.igxExpansionPanel.collapsed;
-    }
+     public collapsed(index: number) {
+    //      //return this.igxExpansionPanel && this.igxExpansionPanel.collapsed;
+    //      // TODO
+    //      if (!this.expansionPanels) {
+    //         return true;
+    //      }
+    //      return this.expansionPanels[index] && this.expansionPanels[index].collapsed;
+        return true;
+     }
 
     public handleCollapsed(event) {
         console.log(`I'm collapsing!`, event);
@@ -114,7 +123,8 @@ export class ExpansionPanelSample5Component implements OnInit {
     }
     public onInteraction(event) {
         console.log(`Header's touched!`, event);
-
+        // TODO get reference to the active component
+       // this.expandedItem = ;
         const expandedPanels = this.expansionPanels.filter((panel) => !panel.collapsed);
         expandedPanels.forEach((expandedPanel) => {
             if (expandedPanel.elementRef !==  event.event.currentTarget) {

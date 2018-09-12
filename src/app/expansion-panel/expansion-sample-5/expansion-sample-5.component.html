@@ -6,7 +6,7 @@
             <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
                 <igx-expansion-panel-title class="sample-title">Personal Information</igx-expansion-panel-title>
                 <igx-expansion-panel-icon>
-                    <igx-icon fontSet="material" [name]="collapsed() ? 'arrow_drop_down':'arrow_drop_up'"></igx-icon>
+                    <igx-icon fontSet="material" [name]="collapsed(0) ? 'expand_more':'expand_less'"></igx-icon>
                 </igx-expansion-panel-icon>
             </igx-expansion-panel-header>
             <igx-expansion-panel-body class="body">
@@ -42,10 +42,8 @@
         (onExpanded)="handleExpanded($event)" #collapsibleComponent>
             <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
                 <igx-expansion-panel-title class="sample-title">Billing Address</igx-expansion-panel-title>
-                <!-- <igx-expansion-panel-description>Fill in details for {{ person }}</igx-expansion-panel-description> -->
-                <!-- <button igxButton class='igx-button--flat' (click)="resetScore($event)">Reset score</button> -->
                 <igx-expansion-panel-icon>
-                    <igx-icon fontSet="material" [name]="collapsed() ? 'arrow_drop_down':'arrow_drop_up'"></igx-icon>
+                    <igx-icon fontSet="material" [name]="collapsed(1) ? 'expand_more':'expand_less'"></igx-icon>
                 </igx-expansion-panel-icon>
             </igx-expansion-panel-header>
             <igx-expansion-panel-body>
@@ -67,7 +65,6 @@
                     <label igxLabel for="state">State:</label>
                     <input igxInput name="email" type="text" [(ngModel)]="shippingAddress.city" required />
                     <igx-suffix>
-                        <!-- <igx-icon name="edit_location"></igx-icon> -->
                         <igx-icon name="terrain"></igx-icon>
                     </igx-suffix>
                 </igx-input-group>
@@ -87,10 +84,8 @@
         (onExpanded)="handleExpanded($event)" #collapsibleComponent>
             <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
                 <igx-expansion-panel-title class="sample-title">Shipping Address</igx-expansion-panel-title>
-                <!-- <igx-expansion-panel-description>Fill in details for {{ person }}</igx-expansion-panel-description> -->
-                <!-- <button igxButton class='igx-button--flat' (click)="resetScore($event)">Reset score</button> -->
                 <igx-expansion-panel-icon>
-                    <igx-icon fontSet="material" [name]="collapsed() ? 'arrow_drop_down':'arrow_drop_up'"></igx-icon>
+                    <igx-icon fontSet="material" [name]="collapsed(2) ? 'expand_more':'expand_less'"></igx-icon>
                 </igx-expansion-panel-icon>
             </igx-expansion-panel-header>
             <igx-expansion-panel-body>
@@ -112,7 +107,6 @@
                     <label igxLabel for="state">State:</label>
                     <input igxInput name="email" type="text" [(ngModel)]="billingAddress.city" required />
                     <igx-suffix>
-                        <!-- <igx-icon name="edit_location"></igx-icon> -->
                         <igx-icon name="terrain"></igx-icon>
                     </igx-suffix>
                 </igx-input-group>
