@@ -1,0 +1,129 @@
+<div class="sample-wrapper">
+    <div class="content">
+        <igx-expansion-panel class="content__collapsible"
+        (onCollapsed)="handleCollapsed($event)"
+        (onExpanded)="handleExpanded($event)" #collapsibleComponent>
+            <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
+                <igx-expansion-panel-title class="sample-title">Personal Information</igx-expansion-panel-title>
+                <igx-expansion-panel-icon>
+                    <igx-icon fontSet="material" [name]="collapsed() ? 'arrow_drop_down':'arrow_drop_up'"></igx-icon>
+                </igx-expansion-panel-icon>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body class="body">
+                <igx-input-group>
+                    <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName" required="required" />
+                    <label igxLabel for="fullName">Full Name</label>
+                    <igx-suffix>
+                        <igx-icon name="person"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <igx-prefix>+359</igx-prefix>
+                    <label igxLabel for="phone">Phone</label>
+                    <input igxInput name="phone" type="text" [(ngModel)]="user.phone" />
+                    <igx-suffix>
+                        <igx-icon name="phone"></igx-icon>
+                    </igx-suffix>
+                    <igx-hint position="start">Ex.: +359 555 123 456</igx-hint>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="email">Email address</label>
+                    <input igxInput name="email" type="email" [(ngModel)]="user.email" required />
+                    <igx-suffix>
+                        <igx-icon name="email"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
+
+        <igx-expansion-panel class="content__collapsible"
+        [animationSettings] = "animationSettingsOverride"
+        (onCollapsed)="handleCollapsed($event)"
+        (onExpanded)="handleExpanded($event)" #collapsibleComponent>
+            <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
+                <igx-expansion-panel-title class="sample-title">Billing Address</igx-expansion-panel-title>
+                <!-- <igx-expansion-panel-description>Fill in details for {{ person }}</igx-expansion-panel-description> -->
+                <!-- <button igxButton class='igx-button--flat' (click)="resetScore($event)">Reset score</button> -->
+                <igx-expansion-panel-icon>
+                    <igx-icon fontSet="material" [name]="collapsed() ? 'arrow_drop_down':'arrow_drop_up'"></igx-icon>
+                </igx-expansion-panel-icon>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
+                <igx-input-group>
+                    <input igxInput name="address" type="text" [(ngModel)]="shippingAddress.address" required="required" />
+                    <label igxLabel for="address">Billing Address:</label>
+                    <igx-suffix>
+                        <igx-icon name="add_location"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="city">City:</label>
+                    <input igxInput name="city" type="text" [(ngModel)]="shippingAddress.city" required/>
+                    <igx-suffix>
+                        <igx-icon name="location_city"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="state">State:</label>
+                    <input igxInput name="email" type="text" [(ngModel)]="shippingAddress.city" required />
+                    <igx-suffix>
+                        <!-- <igx-icon name="edit_location"></igx-icon> -->
+                        <igx-icon name="terrain"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="zipCode">Zip Code:</label>
+                    <input igxInput name="zipCode" type="text" [(ngModel)]="shippingAddress.zipCode" required>
+                    <igx-suffix>
+                        <igx-icon name="mail_outline"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
+
+        <igx-expansion-panel class="content__collapsible"
+        [animationSettings] = "animationSettingsCustom"
+        (onCollapsed)="handleCollapsed($event)"
+        (onExpanded)="handleExpanded($event)" #collapsibleComponent>
+            <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
+                <igx-expansion-panel-title class="sample-title">Shipping Address</igx-expansion-panel-title>
+                <!-- <igx-expansion-panel-description>Fill in details for {{ person }}</igx-expansion-panel-description> -->
+                <!-- <button igxButton class='igx-button--flat' (click)="resetScore($event)">Reset score</button> -->
+                <igx-expansion-panel-icon>
+                    <igx-icon fontSet="material" [name]="collapsed() ? 'arrow_drop_down':'arrow_drop_up'"></igx-icon>
+                </igx-expansion-panel-icon>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
+                <igx-input-group>
+                    <input igxInput name="address" type="text" [(ngModel)]="billingAddress.address" required="required" />
+                    <label igxLabel for="address">Shipping Address:</label>
+                    <igx-suffix>
+                        <igx-icon name="add_location"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="city">City:</label>
+                    <input igxInput name="city" type="text" [(ngModel)]="billingAddress.city" required/>
+                    <igx-suffix>
+                        <igx-icon name="location_city"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="state">State:</label>
+                    <input igxInput name="email" type="text" [(ngModel)]="billingAddress.city" required />
+                    <igx-suffix>
+                        <!-- <igx-icon name="edit_location"></igx-icon> -->
+                        <igx-icon name="terrain"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="zipCode">Zip Code:</label>
+                    <input igxInput name="zipCode" type="text" [(ngModel)]="billingAddress.zipCode" required>
+                    <igx-suffix>
+                        <igx-icon name="mail_outline"></igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
+    </div>
+</div>

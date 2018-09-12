@@ -108,6 +108,7 @@ import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
+import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -293,6 +294,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         ExpansionPanelSample2Component,
         ExpansionPanelSample3Component,
         ExpansionPanelSample4Component,
+        ExpansionPanelSample5Component,
         LayoutComponent,
         NavdrawerComponent,
         NavDrawerMiniComponent,

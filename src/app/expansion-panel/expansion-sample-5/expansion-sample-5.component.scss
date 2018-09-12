@@ -1,0 +1,31 @@
+.sample-wrapper {
+    width: 420px;
+}
+
+.content {
+    width: 100%;
+}
+
+.content__collapsible {
+    width: 100%;
+}
+
+.body {
+    padding: 0em 1em;
+}
+
+igx-expansion-panel-body.body > div {
+    padding: 0em 1em;
+}
+
+igx-expansion-panel-body.body div {
+    padding: 0em 1em;
+}
+
+ng-trigger ng-trigger-enterAnimation ng-tns-c3-3 ng-star-inserted {
+    padding: 0em 1em;
+}
+
+.sample-title {
+    font-weight: 900;
+}
