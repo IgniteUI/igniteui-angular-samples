@@ -88,7 +88,7 @@ export class ExpansionPanelSample4Component implements OnInit {
     public handleExpanded(event) {
         console.log(`I'm expanding!`, event);
     }
-    public onInterraction(event) {
+    public onInteraction(event) {
         console.log(`Header's touched!`, event);
     }
 
