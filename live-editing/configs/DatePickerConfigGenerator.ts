@@ -1,10 +1,11 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxDatePickerModule } from "igniteui-angular";
+import { IgxDatePickerModule, IgxIconModule, IgxInputGroupModule } from "igniteui-angular";
 import { DatepickerSample1Component } from "../../src/app/datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "../../src/app/datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "../../src/app/datepicker/datepicker-sample-3/datepicker-sample-3.component";
 import { DatepickerSample4Component } from "../../src/app/datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "../../src/app/datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { DatepickerSample6Component } from "../../src/app/datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -65,6 +66,16 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
                 imports: [IgxDatePickerModule, DatepickerSample5Component],
                 ngDeclarations: [DatepickerSample5Component],
                 ngImports: [IgxDatePickerModule]
+            })
+        }));
+
+        // date picker sample 6
+        configs.push(new Config({
+            component: DatepickerSample6Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDatePickerModule, DatepickerSample6Component, IgxIconModule, IgxInputGroupModule],
+                ngDeclarations: [DatepickerSample6Component],
+                ngImports: [IgxDatePickerModule, IgxIconModule, IgxInputGroupModule]
             })
         }));
 

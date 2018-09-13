@@ -5,7 +5,7 @@ igx-financial-chart {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 50px;
 }
 
 .sample-container {
@@ -17,7 +17,7 @@ igx-financial-chart {
     margin-top: 10px;
     margin-left: 20px;
     height: 50px;
-    font: "16px 'Titillium Web', sans-serif"
+    font: "12pt 'Titillium Web', sans-serif"
 }
 
 .label {
@@ -30,4 +30,61 @@ igx-financial-chart {
     display: inline-block;
     width: 65px;
     margin-left: 10px;
+}
+
+.legend {
+    margin-right: 0px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 15px;
+    width: 100%;
+    color: rgb(116, 114, 114);
+}
+
+.feedStatusLabel {
+    display: inline-block;
+    width: 145px;
+    margin-left: 10px;
+}
+
+
+.tooltipGrid {
+    display: table;
+    width: 140px;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    z-index: 1000;
+}
+
+.tooltipRow {
+    display: table-row;
+ }
+
+.tooltipProps {
+    display: table-cell;
+    padding: 0px;
+    width: 35px;
+    font-size: 11pt;
+}
+
+.tooltipValue {
+    display: table-cell;
+    padding-left: 10px;
+    color: rgb(116, 114, 114);
+    font-size: 11pt;
+    font-weight: 600;
+}
+
+.tooltipTitle {
+    margin-left: 15px;
+    font-size: 11pt;
+    font-weight: 600;
+    text-align: "center";
 }
