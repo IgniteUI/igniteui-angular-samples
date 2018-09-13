@@ -1,10 +1,5 @@
-import { useAnimation } from "@angular/animations";
 import { Component, QueryList, ViewChildren } from "@angular/core";
-
-import {
-    IgxExpansionPanelComponent
-} from "igniteui-angular";
-
+import { IgxExpansionPanelComponent } from "igniteui-angular";
 @Component({
     // tslint:disable-next-line:component-selector
     selector: "app-expansion-sample-5",
@@ -14,7 +9,7 @@ import {
 export class ExpansionPanelSample5Component {
 
     @ViewChildren(IgxExpansionPanelComponent)
-    public expansionPanels: QueryList<IgxExpansionPanelComponent>;
+    public accordion: QueryList<IgxExpansionPanelComponent>;
 
     public user = {
         email: "",
@@ -37,14 +32,14 @@ export class ExpansionPanelSample5Component {
     };
 
     public collapsed(index: number) {
-         if (!this.expansionPanels) {
+         if (!this.accordion) {
             return true;
          }
-         return this.expansionPanels.toArray()[index] && this.expansionPanels.toArray()[index].collapsed;
+         return this.accordion.toArray()[index] && this.accordion.toArray()[index].collapsed;
      }
 
     public onInteraction(event) {
-        const expandedPanels = this.expansionPanels.filter((panel) => !panel.collapsed);
+        const expandedPanels = this.accordion.filter((panel) => !panel.collapsed);
         expandedPanels.forEach((expandedPanel) => {
             if (expandedPanel.elementRef !==  event.event.currentTarget) {
                 expandedPanel.collapse();
