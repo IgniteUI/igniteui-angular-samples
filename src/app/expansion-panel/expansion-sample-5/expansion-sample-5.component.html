@@ -1,8 +1,6 @@
 <div class="sample-wrapper">
     <div class="content">
-        <igx-expansion-panel class="content__collapsible"
-        (onCollapsed)="handleCollapsed($event)"
-        (onExpanded)="handleExpanded($event)" #collapsibleComponent>
+        <igx-expansion-panel class="content__collapsible">
             <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
                 <igx-expansion-panel-title class="sample-title">Personal Information</igx-expansion-panel-title>
                 <igx-expansion-panel-icon>
@@ -36,17 +34,14 @@
             </igx-expansion-panel-body>
         </igx-expansion-panel>
 
-        <igx-expansion-panel class="content__collapsible"
-        [animationSettings] = "animationSettingsOverride"
-        (onCollapsed)="handleCollapsed($event)"
-        (onExpanded)="handleExpanded($event)" #collapsibleComponent>
+        <igx-expansion-panel class="content__collapsible">
             <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
                 <igx-expansion-panel-title class="sample-title">Billing Address</igx-expansion-panel-title>
                 <igx-expansion-panel-icon>
                     <igx-icon fontSet="material" [name]="collapsed(1) ? 'expand_more':'expand_less'"></igx-icon>
                 </igx-expansion-panel-icon>
             </igx-expansion-panel-header>
-            <igx-expansion-panel-body>
+            <igx-expansion-panel-body class="body">
                 <igx-input-group>
                     <input igxInput name="address" type="text" [(ngModel)]="shippingAddress.address" required="required" />
                     <label igxLabel for="address">Billing Address:</label>
@@ -78,17 +73,14 @@
             </igx-expansion-panel-body>
         </igx-expansion-panel>
 
-        <igx-expansion-panel class="content__collapsible"
-        [animationSettings] = "animationSettingsCustom"
-        (onCollapsed)="handleCollapsed($event)"
-        (onExpanded)="handleExpanded($event)" #collapsibleComponent>
+        <igx-expansion-panel class="content__collapsible">
             <igx-expansion-panel-header (onInteraction)="onInteraction($event)" [disabled]="false">
                 <igx-expansion-panel-title class="sample-title">Shipping Address</igx-expansion-panel-title>
                 <igx-expansion-panel-icon>
                     <igx-icon fontSet="material" [name]="collapsed(2) ? 'expand_more':'expand_less'"></igx-icon>
                 </igx-expansion-panel-icon>
             </igx-expansion-panel-header>
-            <igx-expansion-panel-body>
+            <igx-expansion-panel-body class="body">
                 <igx-input-group>
                     <input igxInput name="address" type="text" [(ngModel)]="billingAddress.address" required="required" />
                     <label igxLabel for="address">Shipping Address:</label>

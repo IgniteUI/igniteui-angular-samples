@@ -12,6 +12,8 @@ import { ExpansionPanelSample3Component} from "../../src/app/expansion-panel/exp
 import { ExpansionPanelSample4Component} from "../../src/app/expansion-panel/expansion-sample-4/expansion-sample-4.component";
 // tslint:disable-next-line:max-line-length
 import { ExpansionPanelSample5Component} from "../../src/app/expansion-panel/expansion-sample-5/expansion-sample-5.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample6Component} from "../../src/app/expansion-panel/expansion-sample-6/expansion-sample-6.component";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -66,10 +68,21 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ExpansionPanelSample5Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxAvatarModule, IgxExpansionPanelModule,
-                    ExpansionPanelSample5Component, IgxGridModule],
+                imports: [IgxIconModule, IgxExpansionPanelModule,
+                    ExpansionPanelSample5Component],
                 ngDeclarations: [ExpansionPanelSample5Component],
-                ngImports: [IgxIconModule, IgxAvatarModule, IgxExpansionPanelModule, IgxGridModule]
+                ngImports: [IgxIconModule, IgxExpansionPanelModule]
+            }),
+            shortenComponentPathBy: "/expansion-panel/"
+        }));
+
+        configs.push(new Config({
+            component: ExpansionPanelSample6Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxExpansionPanelModule,
+                    ExpansionPanelSample6Component],
+                ngDeclarations: [ExpansionPanelSample6Component],
+                ngImports: [IgxIconModule, IgxExpansionPanelModule]
             }),
             shortenComponentPathBy: "/expansion-panel/"
         }));

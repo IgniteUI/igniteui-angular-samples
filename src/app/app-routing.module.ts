@@ -79,6 +79,7 @@ import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
+import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -510,6 +511,11 @@ export const samplesRoutes: Routes = [
         component: ExpansionPanelSample5Component,
         data: { displayName: "Expansion Panel 5", parentName: "Expansion Panel" },
         path: "expansion-sample-5"
+    },
+    {
+        component: ExpansionPanelSample6Component,
+        data: { displayName: "Expansion Panel 6", parentName: "Expansion Panel" },
+        path: "expansion-sample-6"
     },
     {
         component: LayoutComponent,
