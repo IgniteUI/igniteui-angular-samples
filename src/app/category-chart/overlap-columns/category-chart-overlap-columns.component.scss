@@ -7,78 +7,68 @@
 
 .chart {
     flex: 1;
-    margin-left: 130px;
-    margin-right: 130px;
-    margin-bottom: 20px;
-}
-
-.chartToolbar {
-    clear: both;
-    margin-left: 130px;
-    margin-right: 130px;
     margin-top: 5px;
-}
-
-.chartLegend {
-    margin-left: 0px;
+    margin-left: 120px;
+    margin-right: 150px;
     margin-bottom: 0px;
-    margin-right: 5px;
-    margin-top: 5px;
-    font-size: 14px;
-    float: right;
-    padding-left: 50px;
 }
 
-.chartTitle {
+.legend {
+    flex: 2;
+    margin-left: 210px;
+    margin-right: 180px;
     margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 10px;
-    background: rgb(223, 223, 223);
-    color: rgb(129, 129, 129);
-    font-size: 14px;
-    font-weight: 600;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
-    padding-bottom: 0px;
- }
+    margin-bottom: 20px;
+    font-size: 19px;
+    height: 20px;
+    width: 100%;
+    color: rgb(116, 114, 114);
+}
 
 .tooltipGrid {
     display: table;
-    width: 170px;
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-bottom: 5px;
-    padding-right: 5px;
+    width: 150px;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1000;
 }
 
-.tooltipRow { display: table-row; }
+.tooltipRow {
+    display: table-row;
+ }
 
 .tooltipCountry {
     display: table-cell;
     text-align: left;
     color: rgb(116, 114, 114);
     font-weight: 600;
+    font-size: 13px;
 }
 
 .tooltipTitle {
     display: table-cell;
-    padding-left: 5px;
-    width: 120px;
+    padding-left: 2px;
+    padding: 0px;
+    font-size: 13px;
 }
 
 .tooltipValue {
     display: table-cell;
-    padding-left: 0px;
+    padding-left: 4px;
     font-weight: 600;
     color: rgb(116, 114, 114);
+    padding: 0px;
+    font-size: 13px;
 }
 
 .tooltipBadge {
     display: table-cell;
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     margin-left: 3px;
     margin-right: 3px;
+    vertical-align: middle;
   }
