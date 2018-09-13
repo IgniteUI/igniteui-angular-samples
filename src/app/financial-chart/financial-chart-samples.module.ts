@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule  } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
+import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import {
     IgxPercentChangeYAxisDynamicModule
 } from "igniteui-angular-charts/ES5/igx-percent-change-y-axis-dynamic-module";
@@ -47,7 +48,8 @@ import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart
     ],
     imports: [ CommonModule, FormsModule,
         IgxFinancialChartModule,
-        IgxPercentChangeYAxisDynamicModule
+        IgxPercentChangeYAxisDynamicModule,
+        IgxLegendModule
     ]
 })
 export class FinancialChartSamplesModule {
