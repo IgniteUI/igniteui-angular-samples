@@ -1,6 +1,7 @@
-import { AfterViewChecked, AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
+import { map, takeUntil } from "rxjs/operators";
 import { UserService } from "./data-service/data-service";
 @Component({
     providers: [UserService],
@@ -8,13 +9,13 @@ import { UserService } from "./data-service/data-service";
     styleUrls: ["./remote-paging-sample.component.scss"],
     templateUrl: "./remote-paging-sample.component.html"
 })
-export class RemotePagingGridSample implements OnInit, AfterViewInit, AfterViewChecked {
+export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
 
-    public index = PageCounter.pageIndex;
+    public page = 0;
     public lastPage = false;
     public firstPage = true;
-    public totalPages;
-    public total;
+    public totalPages: number = 1;
+    public totalCount = 0;
     @ViewChild("customPager", { read: TemplateRef })
     public remotePager: TemplateRef<any>;
 
@@ -22,120 +23,91 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, AfterViewC
     public grid1: IgxGridComponent;
     public title = "gridPaging";
     public data: Observable<any[]>;
-    public allData: Observable<number>;
-    public totalRecords: number;
+
+    public get perPage(): number {
+        return this._perPage;
+    }
+
+    public set perPage(val: number) {
+        this._perPage = val;
+        this.paginate(0, true);
+    }
+
+    private _perPage = 10;
+    private _dataLengthSubscriber;
+    private _dataSubscriber;
+
     constructor(
         private remoteService: UserService) {
     }
 
     public ngOnInit() {
-        this.allData = this.remoteService.allRemoteData;
-        this.data = this.remoteService.remoteData;
+        this.data = this.remoteService.remoteData.asObservable();
+        this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
+            this.totalCount = data;
+            this.totalPages = Math.ceil(data / this.perPage);
+            this.buttonDeselection(this.page, this.totalPages);
+        });
     }
+
+    public ngOnDestroy() {
+        if (this._dataLengthSubscriber) {
+            this._dataLengthSubscriber.unsubscribe();
+        }
+    }
+
     public ngAfterViewInit() {
-        this.remoteService.getData(this.grid1.perPage, 0);
-        this.remoteService.getAllData();
-    }
-
-    public ngAfterViewChecked() {
-        this.allData.subscribe((val) => this.total = val);
+        this.remoteService.getData(0, this.perPage);
         this.grid1.paginationTemplate = this.remotePager;
-        this.grid1.pagingState.metadata.countRecords = this.total;
-        this.grid1.pagingState.recordsPerPage = this.grid1.perPage;
-        if (this.total === 0) {
-          return;
-        }
-        if (this.total !== 0) {
-        if (this.total / this.grid1.pagingState.recordsPerPage < 1) {
-          this.updateGrid(true, true, 1, 1);
-        } else if (this.total / this.grid1.pagingState.recordsPerPage >
-            Math.round(this.total / this.grid1.pagingState.recordsPerPage)) {
-          this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage) + 1;
-          this.totalPages = this.grid1.pagingState.countPages;
-          this.updateGrid(true, false, this.totalPages, this.index);
-        } else  if (this.index + 1 > 1) {
-          this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage);
-          this.totalPages = this.grid1.pagingState.countPages;
-          if (this.totalPages < this.index + 1) {
-            this.index = this.totalPages - 1;
-            this.lastPage = true;
-            this.firstPage = false;
-          } else if (this.totalPages > this.index  + 1) {
-            this.lastPage = false;
-            this.firstPage = false;
-          }
-          this.grid1.cdr.detectChanges();
-         } else {
-          this.grid1.pagingState.countPages = Math.round(this.total / this.grid1.pagingState.recordsPerPage);
-          this.totalPages = this.grid1.pagingState.countPages;
-          this.lastPage = false;
-          this.firstPage = true;
-          this.grid1.cdr.detectChanges();
-         }
-        }
-      }
-
-    public updateGrid(lastPage: boolean, firstPage: boolean, totalPages?: number, index?: number) {
-        if (index && totalPages && index === totalPages) {
-          this.index = totalPages - 1;
-          this.totalPages = totalPages;
-          this.lastPage = lastPage;
-          this.firstPage = firstPage;
-          this.remoteService.getData(this.total, 0);
-          this.grid1.cdr.detectChanges();
-        } else if (index && totalPages && index > totalPages) {
-          this.index = totalPages - 1 ;
-          const skip = this.index * this.grid1.pagingState.recordsPerPage;
-          const top = this.grid1.pagingState.recordsPerPage;
-          this.lastPage = lastPage;
-          this.firstPage = firstPage;
-          this.remoteService.getData(skip, top);
-          this.grid1.cdr.detectChanges();
-        }
     }
 
     public nextPage() {
         this.firstPage = false;
-        this.index++;
-        const skip = this.index * this.grid1.pagingState.recordsPerPage;
-        const top = this.grid1.pagingState.recordsPerPage;
-        this.remoteService.getData(top, skip);
-        if (this.index + 1 >= this.totalPages) {
+        this.page++;
+        const skip = this.page * this.perPage;
+        const top = this.perPage;
+        this.remoteService.getData(skip, top);
+        if (this.page + 1 >= this.totalPages) {
             this.lastPage = true;
         }
     }
 
     public previousPage() {
         this.lastPage = false;
-        this.index--;
-        const skip = this.index * this.grid1.pagingState.recordsPerPage;
-        const top = this.grid1.pagingState.recordsPerPage;
-        this.remoteService.getData(top, skip);
-        if (this.index <= 0) {
+        this.page--;
+        const skip = this.page * this.perPage;
+        const top = this.perPage;
+        this.remoteService.getData(skip, top);
+        if (this.page <= 0) {
             this.firstPage = true;
-            return;
         }
     }
 
-    public paginate(index: number) {
-        this.index = index;
-        const skip = this.index * this.grid1.pagingState.recordsPerPage;
-        const top = this.grid1.pagingState.recordsPerPage;
-        this.remoteService.getData(top, skip);
-        this.buttonDeselection(index);
+    public paginate(page: number, recalc: true) {
+        this.page = page;
+        const skip = this.page * this.perPage;
+        const top = this.perPage;
+        if (recalc) {
+            this.totalPages = Math.ceil(this.totalCount / this.perPage);
+        }
+        this.remoteService.getData(skip, top);
+        this.buttonDeselection(this.page, this.totalPages);
     }
 
-    public buttonDeselection(index: number) {
-        if (index + 1 >= this.totalPages) {
+    public buttonDeselection(page: number, totalPages: number) {
+        if (totalPages === 1) {
+            this.lastPage = true;
+            this.firstPage = true;
+        } else if (page + 1 >= totalPages) {
             this.lastPage = true;
             this.firstPage = false;
-            return;
+        } else {
+            this.lastPage = false;
+            this.firstPage = true;
         }
-        this.lastPage = false;
-        this.firstPage = true;
     }
-}
 
-class PageCounter {
-    public static pageIndex = 0;
+    public parseToInt(val) {
+        return parseInt(val, 10);
+    }
 }
