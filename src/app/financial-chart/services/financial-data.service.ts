@@ -1286,7 +1286,7 @@ export class FinancialDataService {
     { time: new Date(2018, 0, 30), open: 1403.17, high: 1439.25, low: 1392.00, close: 1437.82, volume: 5871942 },
     { time: new Date(2018, 0, 31), open: 1451.30, high: 1472.58, low: 1450.04, close: 1450.89, volume: 6424693 }
         ];
-        result.title = "AMZN";
+        result.title = "Amazon (AMZN)";
         return result;
     }
     public getGoog(): any {
@@ -1584,7 +1584,7 @@ export class FinancialDataService {
     { time: new Date(2014, 2, 28), open: 558.94, high: 566.03, low: 558.33, close: 559.51, volume: 2258918 },
     { time: new Date(2014, 2, 31), open: 564.63, high: 566.93, low: 555.87, close: 556.70, volume: 1942277 },
     { time: new Date(2014, 3, 1), open: 559.57, high: 568.18, low: 558.44, close: 566.88, volume: 2182626 },
-    { time: new Date(2014, 3, 2), open: 282.43, high: 571.83, low: 561.44, close: 566.98, volume: 2088804 },
+    { time: new Date(2014, 3, 2), open: 562.43, high: 571.83, low: 561.44, close: 566.98, volume: 2088804 },
     { time: new Date(2014, 3, 3), open: 569.85, high: 587.28, low: 564.13, close: 569.74, volume: 5087530 },
     { time: new Date(2014, 3, 4), open: 574.65, high: 577.77, low: 543.00, close: 543.14, volume: 6377658 },
     { time: new Date(2014, 3, 7), open: 540.74, high: 548.48, low: 527.15, close: 538.15, volume: 4389569 },
@@ -2551,7 +2551,7 @@ export class FinancialDataService {
     { time: new Date(2018, 0, 30), open: 1167.83, high: 1176.52, low: 1163.52, close: 1163.69, volume: 1556346 },
     { time: new Date(2018, 0, 31), open: 1170.57, high: 1173.00, low: 1159.13, close: 1169.94, volume: 1538688 }
         ];
-        result.title = "GOOG";
+        result.title = "Google (GOOG)";
         return result;
     }
     public getMsft(): any {
@@ -3816,7 +3816,7 @@ export class FinancialDataService {
     { time: new Date(2018, 0, 30), open: 93.30, high: 93.66, low: 92.10, close: 92.74, volume: 38635053 },
     { time: new Date(2018, 0, 31), open: 93.75, high: 95.40, low: 93.51, close: 95.01, volume: 48756338 }
         ];
-        result.title = "MSFT";
+        result.title = "Mircosoft (MSFT)";
         return result;
     }
     public getTgt(): any {

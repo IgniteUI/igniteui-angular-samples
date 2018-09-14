@@ -1,0 +1,17 @@
+<h4 class="sample-title">Date Picker with retemplated Input Group</h4>
+
+<igx-date-picker [value]="date">
+    <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
+        <igx-input-group (click)="openDialog()">
+            <igx-prefix>
+                <igx-icon>favorite</igx-icon>
+            </igx-prefix>
+            <label igxLabel>My Custom Date</label>
+            <input igxInput [value]="displayData" />
+            <igx-suffix>
+                <igx-icon>today</igx-icon>
+            </igx-suffix>
+        </igx-input-group>
+        <label>{{value}}</label>
+    </ng-template>
+</igx-date-picker>
