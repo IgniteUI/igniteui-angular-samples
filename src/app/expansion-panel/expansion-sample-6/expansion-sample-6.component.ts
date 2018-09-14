@@ -22,15 +22,14 @@ export class ExpansionPanelSample6Component {
         closeAnimation: useAnimation(slideOutRight, {
                 params: {
                     duration: "100ms",
-                    toPosition: "translateX(100px)"
+                    toPosition: "translateX(25px)"
             }
         }),
         openAnimation: useAnimation(slideInLeft, {
                 params: {
                     duration: "500ms",
-                    endOpacity: 1,
-                    fromPosition: "translateX(-50px)",
-                    startOpacity: 0.2
+                    fromPosition: "translateX(-15px)",
+                    startOpacity: 0.1
                 }
             })
     };
