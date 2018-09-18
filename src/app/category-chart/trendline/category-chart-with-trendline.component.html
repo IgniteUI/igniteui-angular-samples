@@ -1,0 +1,122 @@
+<div class="sample-wrapper container">
+    <div class="chartToolbar">
+        <span class="chartTitle">OLYMPIC MEDALS BY COUNTRY</span>
+        <igx-legend class="chartLegend" #legend
+            height="20px" width="350px"
+            orientation="horizontal" >
+        </igx-legend>
+    </div>
+    <div class="chart">
+        <igx-category-chart
+            height="100%" width="100%"
+            #chart
+            [dataSource]="data"
+            [tooltipTemplate]="seriesTooltip"
+            chartType="column"
+            trendLineType="linearFit"
+            trendLineThickness="4"
+            trendLineBrushes="#7e7d7d, #9d1e2e, #29294d"
+            brushes="#9d9d9d, #b32134, #3b3b6d"
+            outlines="black"
+            thickness="0.5"
+            xAxisInterval="1"
+            (seriesAdded)="seriesAddedEvent($event)">
+        </igx-category-chart>
+    </div>
+    <div class="chartNote">Note USA did not participate in 1980 Olympics nor did Russia in 1984 Olympics.</div>
+
+    <!-- custom tooltip with conditional visuals -->
+    <ng-template let-series="series" let-item="item" #seriesTooltip>
+
+        <div class="tooltipTable">
+            <div class="tooltipRow">
+                <div class="tooltipOlympics">{{item.Year}} Olympics</div>
+            </div>
+        </div>
+
+        <div class="tooltipTable" *ngIf="series.name == 'USA' && item.USAMedals != 0">
+            <div class="tooltipRow">
+                <div>
+                    <img class="tooltipFlag" src="assets/images/flags/usa.png">
+                </div>
+                <div class="tooltipCountry">{{series.title}}</div>
+                <div class="tooltipValue">{{item.USAMedals}}</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="medalGold" src="assets/images/medals/gold.png">
+                <div class="tooltipProp">Gold:</div>
+                <div class="tooltipValue">{{item.USAGold}}</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="medalSilver" src="assets/images/medals/silver.png">
+                <div class="tooltipProp">Silver:</div>
+                <div class="tooltipValue">{{item.USASilver}}</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="medalBronze" src="assets/images/medals/bronze.png">
+                <div class="tooltipProp">Bronze:</div>
+                <div class="tooltipValue">{{item.USABronze}}</div>
+            </div>
+        </div>
+        <div class="tooltipTable" *ngIf="series.name == 'USA' && item.USAMedals == 0">
+            <div class="tooltipNote">USA did not participate.</div>
+        </div>
+
+        <div class="tooltipTable" *ngIf="series.name == 'Russia' && item.RussiaMedals != 0">
+            <div class="tooltipRow">
+                <div>
+                    <img class="tooltipFlag" src="assets/images/flags/russia.png">
+                </div>
+                <div class="tooltipCountry">{{series.title}}</div>
+                <div class="tooltipValue">{{item.RussiaMedals}}</div>
+            </div>
+            <div class="tooltipRow">
+                <img class="medalGold" src="assets/images/medals/gold.png">
+                <div class="tooltipProp">Gold:</div>
+                <div class="tooltipValue">{{item.RussiaGold}}</div>
+             </div>
+             <div class="tooltipRow">
+                <img class="medalSilver" src="assets/images/medals/silver.png">
+                <div class="tooltipProp">Silver:</div>
+                <div class="tooltipValue">{{item.RussiaSilver}}</div>
+             </div>
+             <div class="tooltipRow">
+                <img class="medalBronze" src="assets/images/medals/bronze.png">
+                <div class="tooltipProp">Bronze:</div>
+                <div class="tooltipValue">{{item.RussiaBronze}}</div>
+            </div>
+        </div>
+        <div *ngIf="series.name == 'Russia' && item.RussiaMedals == 0">
+                <div class="tooltipNote">Russia did not participate.</div>
+        </div>
+
+        <div class="tooltipTable" *ngIf="series.name == 'UK' && item.UKMedals != 0">
+            <div class="tooltipRow">
+                <div>
+                    <img class="tooltipFlag" src="assets/images/flags/uk.png">
+                </div>
+                <div class="tooltipCountry">{{series.title}}</div>
+                <div class="tooltipValue">{{item.UKMedals}}</div>
+            </div>
+            <div class="tooltipRow">
+                    <img class="medalGold" src="assets/images/medals/gold.png">
+                <div class="tooltipProp">Gold:</div>
+                <div class="tooltipValue">{{item.UKGold}}</div>
+             </div>
+             <div class="tooltipRow">
+                <img class="medalSilver" src="assets/images/medals/silver.png">
+                <div class="tooltipProp">Silver:</div>
+                <div class="tooltipValue">{{item.UKSilver}}</div>
+             </div>
+             <div class="tooltipRow">
+                <img class="medalBronze" src="assets/images/medals/bronze.png">
+                <div class="tooltipProp">Bronze:</div>
+                <div class="tooltipValue">{{item.UKBronze}}</div>
+            </div>
+        </div>
+        <div *ngIf="series.name == 'UK' && item.UKMedals == 0">
+            <div class="tooltipNote">UK did not participate.</div>
+        </div>
+
+    </ng-template>
+</div>

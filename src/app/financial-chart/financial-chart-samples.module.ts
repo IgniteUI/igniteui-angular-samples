@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule  } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
+import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import {
     IgxPercentChangeYAxisDynamicModule
 } from "igniteui-angular-charts/ES5/igx-percent-change-y-axis-dynamic-module";
@@ -14,11 +15,13 @@ import { FinancialChartHighFrequencyComponent } from "./high-frequency/financial
 import { FinancialChartHighVolumeComponent } from "./high-volume/financial-chart-high-volume.component";
 import { FinancialChartIndicatorTypesComponent } from "./indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartMultipleDataComponent } from "./multiple-data/financial-chart-multiple-data.component";
+import { FinancialChartMultipleFeedsComponent } from "./multiple-feeds/financial-chart-multiple-feeds.component";
 import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
 import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
 import { FinancialChartPerformanceComponent } from "./performance/financial-chart-performance.component";
 import { FinancialDataService } from "./services/financial-data.service";
 import { StockDataService } from "./services/stock-data.service";
+import { FinancialChartTimeBasedDataComponent } from "./time-based-data/financial-chart-time-based-data.component";
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
 import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
@@ -27,6 +30,7 @@ import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart
     declarations: [
         FinancialChartOverviewComponent,
         FinancialChartMultipleDataComponent,
+        FinancialChartMultipleFeedsComponent,
         FinancialChartCustomTooltipsComponent,
         FinancialChartPerformanceComponent,
         FinancialChartTitlesComponent,
@@ -37,13 +41,15 @@ import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart
         FinancialChartHighVolumeComponent,
         FinancialChartHighFrequencyComponent,
         FinancialChartAxisTypesComponent,
-        FinancialChartTrendlinesComponent
+        FinancialChartTrendlinesComponent,
+        FinancialChartTimeBasedDataComponent
     ],
     exports: [
     ],
     imports: [ CommonModule, FormsModule,
         IgxFinancialChartModule,
-        IgxPercentChangeYAxisDynamicModule
+        IgxPercentChangeYAxisDynamicModule,
+        IgxLegendModule
     ]
 })
 export class FinancialChartSamplesModule {

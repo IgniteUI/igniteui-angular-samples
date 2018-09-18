@@ -1,0 +1,87 @@
+<div class="sample-wrapper container">
+    <div class="chart">
+        <igx-category-chart
+            #chart
+            [dataSource]="data"
+            [tooltipTemplate]="stackedTooltip"
+            (seriesAdded)="onSeriesAdded($event)"
+            height="100%" width="100%"
+            chartType="column"
+            chartTitle="TIME SPENT ONLINE BY ACTIVITY"
+            chartTitleTextColor="black"
+            chartTitleTextStyle="13pt Verdana"
+             brushes="#7446B9 #9FB328 #F96232 #2E9CA6 #DC3F76"
+            outlines="#7446B9 #9FB328 #F96232 #2E9CA6 #DC3F76"
+
+            xAxisLabelTextStyle="9pt Verdana"
+            xAxisLabelTopMargin="5"
+            xAxisLabelTextColor="gray"
+            xAxisLabelAngle="45"
+            yAxisLabelTextStyle="9pt Verdana"
+            yAxisLabelRightMargin="5"
+            yAxisLabelTextColor="gray"
+            yAxisLabelAngle="0"
+
+            xAxisTickLength="0"
+            xAxisTickStrokeThickness=".5"
+            xAxisTickStroke="gray"
+            yAxisTickLength="0"
+
+            yAxisMinimumValue="0"
+            yAxisMaximumValue="10"
+
+            xAxisInterval="1"
+            xAxisStroke="gray"
+            xAxisStrokeThickness="2"
+
+            yAxisInterval="1"
+            yAxisMajorStroke="gray"
+            yAxisMajorStrokeThickness=".5"
+            yAxisMinorInterval="0.5"
+            yAxisMinorStroke="gray"
+            yAxisMinorStrokeThickness="0"
+
+            xAxisGap="0.45"
+            xAxisOverlap="1">
+        </igx-category-chart>
+    </div>
+    <div  >
+        <igx-legend #legend
+            class="legend"
+            orientation="horizontal" >
+        </igx-legend>
+    </div>
+    <ng-template let-series="series" let-item="item" #stackedTooltip>
+        <div class="tooltipGrid">
+            <div class="tooltipRow">
+                <div ></div>
+                <div class="tooltipCountry" >{{item.Country}}</div>
+            </div>
+            <div class="tooltipRow" *ngIf="series.title == 'Blogging'">
+                <img class="tooltipBadge" src="assets/images/activities/Blogging.png">
+                <div class="tooltipTitle" style="color: #7446B9;">{{series.title}}</div>
+                <div class="tooltipValue">{{item.Blogging}}h</div>
+            </div>
+            <div class="tooltipRow" *ngIf="series.title == 'Social Networking'" >
+                <img class="tooltipBadge" src="assets/images/activities/SocialNetwork.png">
+                <div class="tooltipTitle" style="color: #9FB328;">Social Net.</div>
+                <div class="tooltipValue">{{item.Social}}h</div>
+            </div>
+            <div class="tooltipRow" *ngIf="series.title == 'Reading News'">
+                <img class="tooltipBadge" src="assets/images/activities/OnlinePress.png">
+                <div class="tooltipTitle" style="color: #F96232;">{{series.title}}</div>
+                <div class="tooltipValue">{{item.News}}h</div>
+            </div>
+            <div class="tooltipRow" *ngIf="series.title == 'Watching TV'" >
+                <img class="tooltipBadge" src="assets/images/activities/OnlineTV.png">
+                <div class="tooltipTitle" style="color: #DC3F76;">{{series.title}}</div>
+                <div class="tooltipValue">{{item.TV}}h</div>
+            </div>
+            <div class="tooltipRow" *ngIf="series.title == 'Listing Music'">
+                <img class="tooltipBadge" src="assets/images/activities/OnlineRadio.png">
+                <div class="tooltipTitle" style="color: #2E9CA6;">{{series.title}}</div>
+                <div class="tooltipValue">{{item.Music}}h</div>
+            </div>
+        </div>
+    </ng-template>
+</div>
