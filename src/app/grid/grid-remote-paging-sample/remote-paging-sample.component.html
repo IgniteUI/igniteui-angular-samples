@@ -1,7 +1,11 @@
 
 <igx-grid #grid1 [data]="data | async" width="960px" height="550px" [paging]="true" [perPage]="perPage">
+    <igx-column field="ID"></igx-column>
     <igx-column field="ProductName"></igx-column>
-    <igx-column field="ProductID"></igx-column>
+    <igx-column field="QuantityPerUnit"></igx-column>
+    <igx-column field="SupplierName"></igx-column>
+    <igx-column field="UnitsInStock"></igx-column>
+    <igx-column field="Rating"></igx-column>
 </igx-grid>
 <ng-template #customPager let-api>
     <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple igxRippleCentered="true">

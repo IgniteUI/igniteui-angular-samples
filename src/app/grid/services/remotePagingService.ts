@@ -4,10 +4,10 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { map, takeUntil } from "rxjs/operators";
 
 @Injectable()
-export class UserService {
+export class RemotePagingService {
     public remoteData: BehaviorSubject<any[]>;
     public dataLenght: BehaviorSubject<number> = new BehaviorSubject(0);
-    public url = "https://services.odata.org/V4/Northwind/Northwind.svc/Current_Product_Lists";
+    public url = "https://www.igniteui.com/api/products";
 
     constructor(private http: HttpClient) {
         this.remoteData = new BehaviorSubject([]);
@@ -23,7 +23,7 @@ export class UserService {
         this.http
             .get(`${this.url + qS}`).pipe(
                 map((data: any) => {
-                    return data.value;
+                    return data;
                 })
             ).subscribe((data) => this.remoteData.next(data));
     }
@@ -31,7 +31,7 @@ export class UserService {
     public getDataLength(): any {
         return this.http.get(this.url).pipe(
             map((data: any) => {
-                return data.value.length;
+                return data.length;
             })
         );
     }

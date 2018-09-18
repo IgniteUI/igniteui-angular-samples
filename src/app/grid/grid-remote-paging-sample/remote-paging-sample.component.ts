@@ -1,10 +1,9 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
-import { BehaviorSubject, Observable } from "rxjs";
-import { map, takeUntil } from "rxjs/operators";
-import { UserService } from "./data-service/data-service";
+import { Observable } from "rxjs";
+import { RemotePagingService } from "../services/remotePagingService";
 @Component({
-    providers: [UserService],
+    providers: [RemotePagingService],
     selector: "remote-paging-grid-sample",
     styleUrls: ["./remote-paging-sample.component.scss"],
     templateUrl: "./remote-paging-sample.component.html"
@@ -35,10 +34,9 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
 
     private _perPage = 10;
     private _dataLengthSubscriber;
-    private _dataSubscriber;
 
     constructor(
-        private remoteService: UserService) {
+        private remoteService: RemotePagingService) {
     }
 
     public ngOnInit() {
