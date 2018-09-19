@@ -27,7 +27,14 @@ fieldset > legend
 	padding: 0 5px;
 }
 
+$button-height: 35px;
+
+.options-button
+{
+    max-height: $button-height;
+}
+
 .chart
 {
-    height: 100%;
+    height: calc(100% - #{$button-height});
 }
