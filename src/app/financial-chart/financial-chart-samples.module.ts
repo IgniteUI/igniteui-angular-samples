@@ -25,8 +25,9 @@ import { FinancialChartTimeBasedDataComponent } from "./time-based-data/financia
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
 import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
-import { FinancialChartAnnotationsOverlaysComponent, KeysPipe } from './annotations-overlays/financial-chart-annotations-overlays.component';
+import { FinancialChartAnnotationsOverlaysComponent } from './annotations-overlays/financial-chart-annotations-overlays.component';
 import { IgxDialogModule, IgxButtonModule, IgxRippleModule } from "igniteui-angular";
+import { SamplesUtilitiesModule } from "../sample-utilities/sample-utilities.module";
 
 @NgModule({
     declarations: [
@@ -45,8 +46,7 @@ import { IgxDialogModule, IgxButtonModule, IgxRippleModule } from "igniteui-angu
         FinancialChartAxisTypesComponent,
         FinancialChartTrendlinesComponent,
         FinancialChartTimeBasedDataComponent,
-        FinancialChartAnnotationsOverlaysComponent,
-        KeysPipe
+        FinancialChartAnnotationsOverlaysComponent
     ],
     exports: [
     ],
@@ -54,6 +54,7 @@ import { IgxDialogModule, IgxButtonModule, IgxRippleModule } from "igniteui-angu
         IgxFinancialChartModule,
         IgxPercentChangeYAxisDynamicModule,
         IgxLegendModule,
+        SamplesUtilitiesModule,
         IgxButtonModule,
 		IgxDialogModule,
 		IgxRippleModule

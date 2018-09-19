@@ -13,8 +13,9 @@ import { CategoryChartOverviewComponent } from "./overview/category-chart-overvi
 import {
     CategoryChartWithTrendlineComponent
 } from "./trendline/category-chart-with-trendline.component";
-import { CategoryChartAnnotationsOverlaysComponent, KeysPipe } from './annotations-overlays/category-chart-annotations-overlays.component';
+import { CategoryChartAnnotationsOverlaysComponent } from './annotations-overlays/category-chart-annotations-overlays.component';
 import { IgxDialogModule, IgxButtonModule, IgxRippleModule } from "igniteui-angular";
+import { SamplesUtilitiesModule } from "../sample-utilities/sample-utilities.module";
 
 @NgModule({
     declarations: [
@@ -24,14 +25,14 @@ import { IgxDialogModule, IgxButtonModule, IgxRippleModule } from "igniteui-angu
         CategoryChartConfigOptionsComponent,
         CategoryChartCustomTooltipsComponent,
         CategoryChartWithTrendlineComponent,
-        CategoryChartAnnotationsOverlaysComponent,
-        KeysPipe
+        CategoryChartAnnotationsOverlaysComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         IgxCategoryChartModule,
         IgxLegendModule,
+        SamplesUtilitiesModule,
         IgxButtonModule,
 		IgxDialogModule,
         IgxRippleModule

@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component } from '@angular/core';
 import { CrosshairsVisibility } from "igniteui-angular-charts/ES5/CrosshairsVisibility";
 import { TooltipType } from "igniteui-angular-charts/ES5/TooltipType";
 
@@ -57,19 +57,4 @@ class SampleOptions {
     public finalValueAnnotations: boolean = false;
   
     public eventAnnotations: boolean = false;
-}
-
-//  https://stackoverflow.com/a/35750252/3516721
-@Pipe({name: 'keys'})
-export class KeysPipe implements PipeTransform {
-    transform(value, args:string[]) : any {
-        let keys = [];
-        for (var enumMember in value) {
-            let enumKey = parseInt(enumMember, 10);
-            if (!isNaN(enumKey)) {
-                keys.push({key: enumKey, value: value[enumMember]});
-            } 
-        }
-        return keys;
-    }
 }
