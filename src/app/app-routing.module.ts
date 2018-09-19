@@ -1312,7 +1312,7 @@ export const samplesRoutes: Routes = [
     {
         component: RemotePagingGridSample,
         data: { displayName: "Grid Remote Paging", parentName: "Grid" },
-        path: "grid-remote-paging"
+        path: "grid-remote-paging-sample"
     },
     {
         component: GridPasteSampleComponent,

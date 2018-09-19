@@ -37,6 +37,10 @@
 @import '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-component';
 @import '~igniteui-angular/lib/core/styles//components/drop-down/drop-down-theme';
 
+// Import calendar component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
+@import '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
+
 // Define the primary colors
 $light-color: #F8F8F8;
 $dark-color: #282828;
@@ -80,7 +84,7 @@ $light-dialog-theme: igx-dialog-theme(
   $palette: $light-theme-palette,
   $background: igx-color($light-theme-palette, "primary", 100),
   $title-color: igx-color($light-theme-palette, "secondary", 500),
-  $message-color: igx-color($light-theme-palette, "secondary", 600) 
+  $message-color: igx-color($light-theme-palette, "secondary", 600)
 );
 
 // Define dark theme for the dialog
@@ -264,7 +268,7 @@ $light-grid-filtering-theme: igx-grid-filtering-theme(
   $menu-background: igx-color($light-theme-palette, "primary", 100),
   $menu-text-color: igx-color($light-theme-palette, "secondary", 500),
   $menu-button-text-color: igx-color($light-theme-palette, "secondary", 500),
-  $menu-button-disabled-text-color: igx-color($light-theme-palette, "secondary", 500)	
+  $menu-button-disabled-text-color: igx-color($light-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the grid-filtering
@@ -288,4 +292,16 @@ $black-grid-filtering-theme: igx-grid-filtering-theme(
   $menu-text-color: igx-color($black-theme-palette, "secondary", 500),
   $menu-button-text-color: igx-color($black-theme-palette, "secondary", 500),
   $menu-button-disabled-text-color: igx-color($black-theme-palette, "secondary", 700)
-  );
+);
+
+$light-calendar-theme: igx-calendar-theme(
+    $palette: $light-theme-palette
+);
+
+$dark-calendar-theme: igx-calendar-theme(
+    $palette: $dark-theme-palette
+);
+
+$black-calendar-theme: igx-calendar-theme(
+    $palette: $black-theme-palette
+);
