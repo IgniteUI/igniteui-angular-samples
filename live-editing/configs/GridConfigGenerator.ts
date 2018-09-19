@@ -63,6 +63,7 @@ import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
+import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { DarkThemeSampleComponent } from "../../src/app/theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "../../src/app/theming/default-theme-sample/default-theme-sample.component";
@@ -357,14 +358,16 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: RemotePagingGridSample,
-            additionalFiles: ["/src/app/grid/services/remote.service.ts"],
+            additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [RemotePagingGridSample, IgxGridModule, HttpClientModule, RemoteService],
+                imports: [RemotePagingGridSample, IgxGridModule, HttpClientModule, RemotePagingService,
+                    IgxIconModule, IgxRippleModule, IgxButtonModule],
                 ngDeclarations: [ RemotePagingGridSample ],
-                ngImports: [IgxGridModule.forRoot(), HttpClientModule],
-                ngProviders: [RemoteService]
+                ngImports: [IgxGridModule.forRoot(), HttpClientModule, IgxIconModule, IgxButtonModule, IgxRippleModule],
+                ngProviders: [RemotePagingService]
             })
         }));
+
         configs.push(new Config({
             component: GridDisplayDensitySampleComponent,
             additionalFiles: ["/src/app/grid/grid-displaydensity-sample/data.ts"],
