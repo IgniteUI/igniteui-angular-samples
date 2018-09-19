@@ -167,7 +167,6 @@ export class ChipSampleComponent {
                     target: this.inputBox.nativeElement
                 })
             });
-            this.igxDropDown.allowItemsFocus = false;
             this.inputBox.focus();
         }
     }
