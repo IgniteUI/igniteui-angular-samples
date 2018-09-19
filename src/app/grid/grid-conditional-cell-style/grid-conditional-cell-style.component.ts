@@ -9,41 +9,45 @@ import { athletesData } from "../services/data";
 export class GridConditionalCellStyleComponent implements OnInit {
     public data: any[];
 
-    public upFontCondition = (rowData: any, columnKey: any): boolean => {
-        return rowData[columnKey] > 95;
-    }
-
-    public downFontCondition = (rowData: any, columnKey: any): boolean => {
-        return rowData[columnKey] <= 95;
-    }
-
-    public top100Condition = (rowData: any, columnKey: any): boolean => {
-        return rowData[columnKey] <= 100;
-    }
-
-    public belowTop100Condition = (rowData: any, columnKey: any): boolean => {
-        return rowData[columnKey] > 100;
-    }
-
-    public speedCondition = (rowData: any, columnKey: any): boolean => {
-        return rowData[columnKey] < 5;
-    }
-
-    public beatsPerMinuteClasses = {
-        "upFont": this.upFontCondition,
-        "downFont": this.downFontCondition
-    };
-
-    public rankClasses = {
-        "top100": this.top100Condition,
-        "belowTop100": this.belowTop100Condition
-    };
-
-    public speedClasses = {
-        "topSpeed topSpeedFont": this.speedCondition
-    }
-
     public ngOnInit() {
         this.data = athletesData;
     }
+
+    private upFontCondition = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] > 95;
+    }
+
+    private downFontCondition = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] <= 95;
+    }
+
+    private top100Condition = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] <= 100;
+    }
+
+    private belowTop100Condition = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] > 100;
+    }
+
+    private speedCondition = (rowData: any, columnKey: any): boolean => {
+        return rowData[columnKey] < 5;
+    }
+
+    // tslint:disable-next-line:member-ordering
+    public beatsPerMinuteClasses = {
+        downFont: this.downFontCondition,
+        upFont: this.upFontCondition
+
+    };
+
+    // tslint:disable-next-line:member-ordering
+    public rankClasses = {
+        belowTop100: this.belowTop100Condition,
+        top100: this.top100Condition
+    };
+
+    // tslint:disable-next-line:member-ordering
+    public speedClasses = {
+        "topSpeed topSpeedFont": this.speedCondition
+    };
 }
