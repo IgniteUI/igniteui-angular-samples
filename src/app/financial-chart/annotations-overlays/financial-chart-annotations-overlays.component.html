@@ -1,0 +1,78 @@
+<div class="sample-wrapper container">
+    <igx-dialog #options
+        title="Options"
+        leftButtonLabel="OK"
+        (onLeftButtonSelect)="options.close()">
+
+        <div class="sample-options">
+
+            <fieldset>
+                <legend>Tooltips Layer</legend>
+                <div>
+                    <label>tooltipType: </label>
+                    <select [(ngModel)]="sampleOptions.tooltipType">
+                        <option *ngFor="let item of TooltipType | keys" [value]="item.value">{{item.value}}</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Crosshairs Layer</legend>
+                <div>
+                    <label>displayCrosshairs: </label>
+                    <select [(ngModel)]="sampleOptions.crosshairs">
+                        <option *ngFor="let item of CrosshairsVisibility | keys" [value]="item.value">{{item.value}}</option>
+                    </select>
+                </div>
+                <div>
+                    <label>snapCrosshairsToData: </label>
+                    <input [(ngModel)]="sampleOptions.snapCrosshairs" type="checkbox" />
+                </div>
+                <div>
+                    <label>displayCrosshairAxisAnnotations: </label>
+                    <input [(ngModel)]="sampleOptions.crosshairAnnotations" type="checkbox" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Final Value Layer</legend>
+                <div>
+                    <label>displayFinalValueAnnotation: </label>
+                    <input [(ngModel)]="sampleOptions.finalValueAnnotations" type="checkbox" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Callout Layer</legend>
+                <div>
+                    <label>displayEventAnnotations: </label>
+                    <input [(ngModel)]="sampleOptions.eventAnnotations" type="checkbox" />
+                </div>
+            </fieldset>
+
+        </div>
+
+    </igx-dialog>
+
+    <button igxButton="raised" igxRipple="white" (click)="options.open()">Show Options</button>
+
+    <div class="chart">
+        <igx-financial-chart height="100%" width="100%"
+            [dataSource]="financialData"
+            chartType="Candle"
+            yAxisTitle="Stock Prices ($)"
+            
+            
+            [tooltipType]="sampleOptions.tooltipType"
+
+            [displayCrosshairs]="sampleOptions.crosshairs"
+            [snapCrosshairsToData]="sampleOptions.snapCrosshairs"
+            [displayCrosshairAxisAnnotations]="sampleOptions.crosshairAnnotations"
+
+            [displayFinalValueAnnotation]="sampleOptions.finalValueAnnotations"
+
+            [displayEventAnnotations]="sampleOptions.eventAnnotations">
+        </igx-financial-chart>
+
+    </div>
+</div>

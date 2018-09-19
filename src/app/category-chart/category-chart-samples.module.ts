@@ -13,6 +13,8 @@ import { CategoryChartOverviewComponent } from "./overview/category-chart-overvi
 import {
     CategoryChartWithTrendlineComponent
 } from "./trendline/category-chart-with-trendline.component";
+import { CategoryChartAnnotationsOverlaysComponent, KeysPipe } from './annotations-overlays/category-chart-annotations-overlays.component';
+import { IgxDialogModule, IgxButtonModule, IgxRippleModule } from "igniteui-angular";
 
 @NgModule({
     declarations: [
@@ -21,13 +23,19 @@ import {
         CategoryChartAxisOptionsComponent,
         CategoryChartConfigOptionsComponent,
         CategoryChartCustomTooltipsComponent,
-        CategoryChartWithTrendlineComponent
+        CategoryChartWithTrendlineComponent,
+        CategoryChartAnnotationsOverlaysComponent,
+        KeysPipe
     ],
     imports: [
         CommonModule,
         FormsModule,
         IgxCategoryChartModule,
-        IgxLegendModule ]
+        IgxLegendModule,
+        IgxButtonModule,
+		IgxDialogModule,
+        IgxRippleModule
+    ]
 })
 export class CategoryChartSamplesModule {
     public static forRoot(): ModuleWithProviders {
