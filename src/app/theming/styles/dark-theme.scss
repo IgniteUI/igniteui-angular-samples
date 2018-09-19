@@ -33,6 +33,10 @@
 @import '~igniteui-angular/lib/core/styles//components/button-group/button-group-component';
 @import '~igniteui-angular/lib/core/styles//components/button-group/button-group-theme';
 
+// Import calendar component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
+@import '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
+
 // Define the primary colors
 $dark-color: #282828;
 
@@ -117,4 +121,9 @@ $icon-focus-color: igx-color($dark-theme-palette, "primary", 500),
 $icon-focus-background: igx-color($dark-theme-palette, "secondary", 500),
 $disabled-background: igx-color($dark-theme-palette, "primary", 400),
 $disabled-color: igx-color($dark-theme-palette, "primary", 700)
+);
+
+// Define dark theme for the calendar
+$dark-calendar-theme: igx-calendar-theme(
+    $palette: $dark-theme-palette
 );
