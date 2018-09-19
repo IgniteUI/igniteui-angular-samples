@@ -65,7 +65,7 @@ export class ListSample7Component implements OnInit {
   public leftPanPerformed(args) {
     args.keepItem = false;
     setTimeout((idx = args.item.index - 1) => {
-        this.toast.message = "Contact \'" + this.contacts[idx].name + "\' removed.";
+        this.toast.message = "Contact " + this.contacts[idx].name + " removed.";
         this.toast.show();
         this.contacts.splice(idx, 1);
     }, 500);
