@@ -70,6 +70,7 @@ import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/dat
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
 import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
@@ -265,6 +266,7 @@ import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/tim
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
+import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -457,6 +459,11 @@ export const samplesRoutes: Routes = [
         component: DatepickerSample5Component,
         data: { displayName: "Datepicker Locales", parentName: "Datepicker" },
         path: "datepicker-sample-5"
+    },
+    {
+        component: DatepickerSample6Component,
+        data: { displayName: "Datepicker Input Group Template", parentName: "Datepicker" },
+        path: "datepicker-sample-6"
     },
     {
         component: DialogSample1Component,
@@ -762,6 +769,11 @@ export const samplesRoutes: Routes = [
         component: TimePickerSample4Component,
         data: { displayName: "Timepicker Validation", parentName: "Timepicker" },
         path: "timepicker-sample-4"
+    },
+    {
+        component: TimePickerSample5Component,
+        data: { displayName: "Timepicker Input Group Template", parentName: "Timepicker" },
+        path: "timepicker-sample-5"
     },
     {
         component: BulletGraphAnimationComponent,
@@ -1300,7 +1312,7 @@ export const samplesRoutes: Routes = [
     {
         component: RemotePagingGridSample,
         data: { displayName: "Grid Remote Paging", parentName: "Grid" },
-        path: "grid-remote-paging"
+        path: "grid-remote-paging-sample"
     },
     {
         component: GridPasteSampleComponent,
