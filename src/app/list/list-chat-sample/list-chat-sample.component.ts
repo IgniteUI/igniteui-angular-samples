@@ -9,11 +9,11 @@ import { IMessage, MessagesService } from "./services/messages.service";
     templateUrl: "./list-chat-sample.component.html"
 })
 export class ListChatSampleComponent {
-
     public message: string;
-
-    @ViewChild("myMessage") public myMessageTemplate: TemplateRef<any>;
-    @ViewChild("othersMessage") public othersMessageTemplate: TemplateRef<any>;
+    @ViewChild("myMessage")
+    public myMessageTemplate: TemplateRef<any>;
+    @ViewChild("othersMessage")
+    public othersMessageTemplate: TemplateRef<any>;
 
     private _myId: number = 4;
 

@@ -4,22 +4,24 @@ igx-icon {
   }
   
   .igx-list {
-      border: 2px solid black;
+      border: 1px solid black;
       border-radius: 5px;
       width: 400px;
+      height: 400px;
+      overflow-y: auto;
   }
   
   .igx-list__item:active,
   .igx-list__item {
       padding: 0;
-      min-height: auto;
+      height: 20px;
       user-select: auto!important;
   }
   
   .others-message,
   .my-message {
       font-weight: 600;
-      min-height: 0em;
+      height: 20px;
       border-radius: 5px;
       margin: 0 0 4px 15px;
       span {
