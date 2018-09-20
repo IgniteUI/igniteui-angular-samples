@@ -4,7 +4,12 @@
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "es2015",
-    "types": []
+    "types": [],
+    "paths": {
+        "igniteui-angular-core/*": ["../node_modules/@infragistics/igniteui-angular-core/*"],
+        "igniteui-angular-charts/*": ["../node_modules/@infragistics/igniteui-angular-charts/*"],
+        "igniteui-angular-gauges/*": ["../node_modules/@infragistics/igniteui-angular-gauges/*"]
+      }
   },
   "exclude": [
     "test.ts",
