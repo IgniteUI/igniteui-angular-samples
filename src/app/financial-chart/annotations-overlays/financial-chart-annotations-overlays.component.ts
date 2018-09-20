@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { FinancialDataService } from "../services/financial-data.service";
+import { Component } from "@angular/core";
 import { CrosshairsVisibility } from "igniteui-angular-charts/ES5/CrosshairsVisibility";
 import { TooltipType } from "igniteui-angular-charts/ES5/TooltipType";
+import { FinancialDataService } from "../services/financial-data.service";
 
 @Component({
-    selector: 'app-financial-chart-annotations-overlays',
     providers: [ FinancialDataService ],
-    templateUrl: './financial-chart-annotations-overlays.component.html',
-    styleUrls: ['./financial-chart-annotations-overlays.component.scss']
+    selector: "app-financial-chart-annotations-overlays",
+    styleUrls: ["./financial-chart-annotations-overlays.component.scss"],
+    templateUrl: "./financial-chart-annotations-overlays.component.html"
 })
 export class FinancialChartAnnotationsOverlaysComponent {
 
@@ -33,31 +33,31 @@ class CalloutFinancialData extends Array {
         this.parseForCalloutData(financialData);
     }
 
-    parseForCalloutData = function(financialData: any[]) {
-        for (let stock of financialData) {
+    public parseForCalloutData = function(financialData: any[]) {
+        for (const stock of financialData) {
             let idx: number = 0;
-            for (let item of stock) {
-                let diff = item.high - item.close;
+            for (const item of stock) {
+                const diff = item.high - item.close;
                 if (diff < 0.01) {
                     this.push({
-                        yValue: item.high,
+                        content: stock.title + " closed high on " + item.time.toLocaleDateString(),
                         index: idx,
-                        content: stock.title + " closed high on " + item.time.toLocaleDateString() });
+                        yValue: item.high });
                 }
                 idx++;
             }
         }
-    }
+    };
 }
 
 class SampleOptions {
     public tooltipType: string = "Default";
-  
+
     public crosshairs: string = "Horizontal";
     public snapCrosshairs: boolean = true;
     public crosshairAnnotations: boolean = true;
-  
+
     public finalValueAnnotations: boolean = false;
-  
+
     public eventAnnotations: boolean = false;
 }

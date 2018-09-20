@@ -1,11 +1,16 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule  } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { IgxButtonModule, IgxDialogModule, IgxRippleModule } from "igniteui-angular";
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import {
     IgxPercentChangeYAxisDynamicModule
 } from "igniteui-angular-charts/ES5/igx-percent-change-y-axis-dynamic-module";
+import { SamplesUtilitiesModule } from "../sample-utilities/sample-utilities.module";
+import {
+    FinancialChartAnnotationsOverlaysComponent
+} from "./annotations-overlays/financial-chart-annotations-overlays.component";
 import { FinancialChartAxisTypesComponent } from "./axis-types/financial-chart-axis-types.component";
 import {
     FinancialChartCustomIndicatorsComponent
@@ -25,9 +30,6 @@ import { FinancialChartTimeBasedDataComponent } from "./time-based-data/financia
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
 import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
-import { FinancialChartAnnotationsOverlaysComponent } from './annotations-overlays/financial-chart-annotations-overlays.component';
-import { IgxDialogModule, IgxButtonModule, IgxRippleModule } from "igniteui-angular";
-import { SamplesUtilitiesModule } from "../sample-utilities/sample-utilities.module";
 
 @NgModule({
     declarations: [
@@ -56,8 +58,8 @@ import { SamplesUtilitiesModule } from "../sample-utilities/sample-utilities.mod
         IgxLegendModule,
         SamplesUtilitiesModule,
         IgxButtonModule,
-		IgxDialogModule,
-		IgxRippleModule
+        IgxDialogModule,
+        IgxRippleModule
     ]
 })
 export class FinancialChartSamplesModule {

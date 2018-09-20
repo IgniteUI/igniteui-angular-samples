@@ -35,11 +35,11 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import {
-    CategoryChartAxisOptionsComponent
-} from "./category-chart/axis-options/category-chart-axis-options-sample.component";
-import {
     CategoryChartAnnotationsOverlaysComponent
 } from "./category-chart/annotations-overlays/category-chart-annotations-overlays.component";
+import {
+    CategoryChartAxisOptionsComponent
+} from "./category-chart/axis-options/category-chart-axis-options-sample.component";
 import {
     CategoryChartConfigOptionsComponent
 } from "./category-chart/config-options/category-chart-config-options-sample.component";
