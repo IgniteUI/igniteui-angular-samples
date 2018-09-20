@@ -30,13 +30,14 @@ export class FinancialChartTimeBasedDataComponent {
         const seriesTitle: string = e.args.series.title.toString();
 
         if (seriesName.endsWith("FinancialPrice")) {
-            e.args.series.title = seriesTitle + " Price";
+            //e.args.series.title = seriesTitle + " Price";
             e.args.series.type = "price";
         }
 
         if (seriesName.startsWith("volumeSeries")) {
             e.args.series.title = seriesTitle.replace("Price Volume", "Volume");
             e.args.series.type = "volume";
+            e.args.series.legendItemVisibility = 1;
         }
 
         // hide legend item for series in the zoom slider
