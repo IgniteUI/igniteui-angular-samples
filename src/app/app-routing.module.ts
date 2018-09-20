@@ -261,6 +261,7 @@ import {
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 
+import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
@@ -568,6 +569,11 @@ export const samplesRoutes: Routes = [
         component: ListSample7Component,
         data: { displayName: "List Item Panning", parentName: "List" },
         path: "list-sample-7"
+    },
+    {
+        component: ListChatSampleComponent,
+        data: { displayName: "Chat Component", parentName: "List" },
+        path: "list-chat-sample"
     },
     {
         component: NavdrawerComponent,

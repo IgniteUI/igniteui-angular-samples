@@ -172,6 +172,7 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
+import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
@@ -430,7 +431,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         TextHighlightSample2Component,
         ThemeChooserSampleComponent,
         DefaultThemeSampleComponent,
-        DarkThemeSampleComponent
+        DarkThemeSampleComponent,
+        ListChatSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
