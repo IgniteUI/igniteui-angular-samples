@@ -17,8 +17,36 @@ export class FinancialChartAnnotationsOverlaysComponent {
     public financialData: any;
     public sampleOptions: SampleOptions = new SampleOptions();
 
+    public calloutData: CalloutFinancialData;
+
     constructor(private dataService: FinancialDataService) {
         this.financialData = [ this.dataService.getAmzn(), this.dataService.getGoog() ];
+        this.calloutData = new CalloutFinancialData(this.financialData);
+    }
+}
+
+class CalloutFinancialData extends Array {
+
+    constructor(financialData: any[]) {
+        super();
+
+        this.parseForCalloutData(financialData);
+    }
+
+    parseForCalloutData = function(financialData: any[]) {
+        for (let stock of financialData) {
+            let idx: number = 0;
+            for (let item of stock) {
+                let diff = item.high - item.close;
+                if (diff < 0.01) {
+                    this.push({
+                        yValue: item.high,
+                        index: idx,
+                        content: stock.title + " closed high on " + item.time.toLocaleDateString() });
+                }
+                idx++;
+            }
+        }
     }
 }
 

@@ -9,20 +9,20 @@
             <fieldset>
                 <legend>Highlight Layer</legend>
                 <div>
-                    <label>highlightCategoryUnderCursor: </label>
-                    <input [(ngModel)]="sampleOptions.highlightCategory" type="checkbox" />
+                    <label for="chk_highlightCategoryUnderCursor">highlightCategoryUnderCursor: </label>
+                    <input id="chk_highlightCategoryUnderCursor" [(ngModel)]="sampleOptions.highlightCategory" type="checkbox" />
                 </div>
                 <div>
-                    <label>highlightItemUnderCursor: </label>
-                    <input [(ngModel)]="sampleOptions.highlightItem" type="checkbox" />
+                    <label for="chk_highlightItemUnderCursor">highlightItemUnderCursor: </label>
+                    <input id="chk_highlightItemUnderCursor" [(ngModel)]="sampleOptions.highlightItem" type="checkbox" />
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend>Tooltips Layer</legend>
                 <div>
-                    <label>tooltipType: </label>
-                    <select [(ngModel)]="sampleOptions.tooltipType">
+                    <label for="sel_tooltipType">tooltipType: </label>
+                    <select id="sel_tooltipType" [(ngModel)]="sampleOptions.tooltipType">
                         <option *ngFor="let item of TooltipType | keys" [value]="item.value">{{item.value}}</option>
                     </select>
                 </div>
@@ -31,34 +31,34 @@
             <fieldset>
                 <legend>Crosshairs Layer</legend>
                 <div>
-                    <label>displayCrosshairs: </label>
-                    <select [(ngModel)]="sampleOptions.crosshairs">
+                    <label for="sel_displayCrosshairs">displayCrosshairs: </label>
+                    <select id="sel_displayCrosshairs" [(ngModel)]="sampleOptions.crosshairs">
                         <option *ngFor="let item of CrosshairsVisibility | keys" [value]="item.value">{{item.value}}</option>
                     </select>
                 </div>
                 <div>
-                    <label>snapCrosshairsToData: </label>
-                    <input [(ngModel)]="sampleOptions.snapCrosshairs" type="checkbox" />
+                    <label for="chk_snapCrosshairsToData">snapCrosshairsToData: </label>
+                    <input id="chk_snapCrosshairsToData" [(ngModel)]="sampleOptions.snapCrosshairs" type="checkbox" />
                 </div>
                 <div>
-                    <label>displayCrosshairAxisAnnotations: </label>
-                    <input [(ngModel)]="sampleOptions.crosshairAnnotations" type="checkbox" />
+                    <label for="chk_displayCrosshairAxisAnnotations">displayCrosshairAxisAnnotations: </label>
+                    <input id="chk_displayCrosshairAxisAnnotations" [(ngModel)]="sampleOptions.crosshairAnnotations" type="checkbox" />
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend>Final Value Layer</legend>
                 <div>
-                    <label>displayFinalValueAnnotation: </label>
-                    <input [(ngModel)]="sampleOptions.finalValueAnnotations" type="checkbox" />
+                    <label for="chk_displayFinalValueAnnotation">displayFinalValueAnnotation: </label>
+                    <input id="chk_displayFinalValueAnnotation" [(ngModel)]="sampleOptions.finalValueAnnotations" type="checkbox" />
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend>Callout Layer</legend>
                 <div>
-                    <label>displayEventAnnotations: </label>
-                    <input [(ngModel)]="sampleOptions.eventAnnotations" type="checkbox" />
+                    <label for="chk_displayEventAnnotations">displayEventAnnotations: </label>
+                    <input id="chk_displayEventAnnotations" [(ngModel)]="sampleOptions.eventAnnotations" type="checkbox" />
                 </div>
             </fieldset>
 
@@ -71,9 +71,10 @@
     <div class="chart">
         <igx-category-chart height="100%" width="100%"
             [dataSource]="categoryData"
-            chartType="Auto"
-            chartTitle="Olympic Medals By Country"
-            yAxisTitle="Total Medals"
+            chartType="Line"
+            chartTitle="Weather Data"
+            subtitle="(High, Average, Low)"
+            [xAxisFormatLabel]="formatDateLabel"
 
 
             [highlightCategoryUnderCursor]="sampleOptions.highlightCategory"
@@ -87,7 +88,12 @@
 
             [displayFinalValueAnnotation]="sampleOptions.finalValueAnnotations"
 
-            [displayEventAnnotations]="sampleOptions.eventAnnotations">
+            [displayEventAnnotations]="sampleOptions.eventAnnotations"
+            [eventsDataSource]="calloutData"
+            eventsXMemberPath="index"
+            eventsYMemberPath="yValue"
+            eventsTitleMemberPath="content"
+            eventsContentMemberPath="yValue">
         </igx-category-chart>
 
     </div>

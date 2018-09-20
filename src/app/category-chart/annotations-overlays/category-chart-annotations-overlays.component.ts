@@ -13,35 +13,53 @@ export class CategoryChartAnnotationsOverlaysComponent {
 
     public categoryData: any;
     public sampleOptions: SampleOptions = new SampleOptions();
+    public calloutData: CalloutCategoryData;
 
     constructor() {
-        const usaMedals: any = [
-            { Year: "1996", UnitedStates: 148 },
-            { Year: "2000", UnitedStates: 142 },
-            { Year: "2004", UnitedStates: 134 },
-            { Year: "2008", UnitedStates: 131 },
-            { Year: "2012", UnitedStates: 135 },
-            { Year: "2016", UnitedStates: 146 }
+        this.categoryData = [
+            { label: "Thursday", date: new Date("1/4/2018"), temperatureHigh: 59, temperatureLow: 46, averageTemperature: 52.5 },
+            { label: "Friday", date: new Date("1/5/2018"), temperatureHigh: 74, temperatureLow: 43, averageTemperature: 52.5 },
+            { label: "Saturday", date: new Date("1/6/2018"), temperatureHigh: 68, temperatureLow: 46, averageTemperature: 57 },
+            { label: "Sunday", date: new Date("1/7/2018"), temperatureHigh: 78, temperatureLow: 57, averageTemperature: 67.5 },
+            { label: "Monday", date: new Date("1/8/2018"), temperatureHigh: 83, temperatureLow: 64, averageTemperature: 73.5 },
+            { label: "Tuesday", date: new Date("1/9/2018"), temperatureHigh: 87, temperatureLow: 67, averageTemperature: 77 },
+            { label: "Wednesday", date: new Date("1/10/2018"), temperatureHigh: 86, temperatureLow: 66, averageTemperature: 76 },
+            { label: "Thursday", date: new Date("1/11/2018"), temperatureHigh: 87, temperatureLow: 65, averageTemperature: 76 },
+            { label: "Friday", date: new Date("1/12/2018"), temperatureHigh: 85, temperatureLow: 59, averageTemperature: 72 },
+            { label: "Saturday", date: new Date("1/13/2018"), temperatureHigh: 76, temperatureLow: 54, averageTemperature: 65 },
+            { label: "Sunday", date: new Date("1/14/2018"), temperatureHigh: 75, temperatureLow: 63, averageTemperature: 69 },
+            { label: "Monday", date: new Date("1/15/2018"), temperatureHigh: 83, temperatureLow: 63, averageTemperature: 78 },
+            { label: "Tuesday", date: new Date("1/16/2018"), temperatureHigh: 79, temperatureLow: 54, averageTemperature: 66.5 },
+            { label: "Wednesday", date: new Date("1/17/2018"), temperatureHigh: 82, temperatureLow: 66, averageTemperature: 74 },
         ];
-        const chinaMedals: any = [
-            { Year: "1996", China: 110 },
-            { Year: "2000", China: 115 },
-            { Year: "2004", China: 121 },
-            { Year: "2008", China: 129 },
-            { Year: "2012", China: 115 },
-            { Year: "2016", China: 112 }
-        ];
-        const russiaMedals: any = [
-            { Year: "1996", Russia: 95 },
-            { Year: "2000", Russia: 91 },
-            { Year: "2004", Russia: 86 },
-            { Year: "2008", Russia: 65 },
-            { Year: "2012", Russia: 77 },
-            { Year: "2016", Russia: 88 }
-        ];
-        this.categoryData = [ usaMedals, chinaMedals, russiaMedals ];
+        this.calloutData = new CalloutCategoryData(this.categoryData);
     }
 
+    formatDateLabel(item: any) : string {
+        return item.date.toLocaleDateString();
+    }
+}
+
+class CalloutCategoryData extends Array {
+
+    constructor(categoryData: any[]) {
+        super();
+
+        this.parseForCalloutData(categoryData);
+    }
+
+    parseForCalloutData = function(categoryData: any[]) {
+        let idx: number = 0;
+        for (let item of categoryData) {
+            if (item.temperatureHigh - item.averageTemperature > 10) {
+                this.push({
+                    yValue: item.temperatureHigh,
+                    index: idx,
+                    content: "Very high over average for " + item.date.toLocaleDateString() });
+            }
+            idx++;
+        }
+    }
 }
 
 class SampleOptions {
