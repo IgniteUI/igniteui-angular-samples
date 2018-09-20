@@ -13,15 +13,21 @@
     margin-bottom: 0px;
 }
 
-.legend {
-    flex: 2;
-    margin-left: 210px;
-    margin-right: 180px;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    font-size: 19px;
-    height: 20px;
+.legendContainer {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
     width: 100%;
+    display: flex; justify-content: center;
+}
+
+.legend {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 11pt;
     color: rgb(116, 114, 114);
 }
 
