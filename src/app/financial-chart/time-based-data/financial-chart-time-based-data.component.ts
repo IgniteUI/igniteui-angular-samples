@@ -30,7 +30,7 @@ export class FinancialChartTimeBasedDataComponent {
         const seriesTitle: string = e.args.series.title.toString();
 
         if (seriesName.endsWith("FinancialPrice")) {
-            //e.args.series.title = seriesTitle + " Price";
+            // e.args.series.title = seriesTitle + " Price";
             e.args.series.type = "price";
         }
 
