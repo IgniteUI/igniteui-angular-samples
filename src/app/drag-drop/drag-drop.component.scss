@@ -1,0 +1,31 @@
+.initialArea {
+    display: flex;
+    flex-flow: row;
+    height: 100px;
+    border: 1px black dotted;
+}
+
+.puzzle_part_container {
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+.puzzle_part {
+    width: 100px;
+    height: 100px;
+}
+
+.outside_container {
+    display: flex;
+    flex-flow: row;
+    height: 100px;
+    width: 300px;
+}
+
+.inside_container {
+    width: 100px;
+    height: 100px;
+    background-color: #a7ffff;
+    border: 1px black solid;
+}

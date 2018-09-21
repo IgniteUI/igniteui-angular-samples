@@ -75,6 +75,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
@@ -1343,6 +1344,11 @@ export const samplesRoutes: Routes = [
         component: DarkThemeSampleComponent,
         data: { displayName: "Dark theme sample", parentName: "Themes" },
         path: "dark-theme-sample"
+    },
+    {
+        component: DragAndDropSampleComponent,
+        data: {  displayName: "Drag and drop sample", parentName: "Themes" },
+        path: "drag-drop-sample"
     }
 ];
 export const appRoutes: Routes = [

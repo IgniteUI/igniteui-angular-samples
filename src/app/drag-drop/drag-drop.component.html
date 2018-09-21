@@ -1,0 +1,9 @@
+<div igxDrop class="initialArea">
+    <div igxDrag *ngFor="let url of getAllUrlsArray()" class="puzzle_part_container" [hideBaseOnDrag]="true" [animateOnRelease]="true" (dragStart)="onDragStart()" (dragEnd)="onDragEnd()">
+        <img class="puzzle_part" width="100px" height="100px" [src]="url" draggable="false" style="-moz-user-select: none;"/>
+    </div>
+</div>
+
+<div class="outside_container" *ngFor="let row of urls">
+    <div igxDrop class="inside_container" *ngFor="let colUrl of row"></div>
+</div>
