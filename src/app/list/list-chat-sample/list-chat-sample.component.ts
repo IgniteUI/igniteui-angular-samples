@@ -1,4 +1,5 @@
 import { Component, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
+import { IgxListComponent, IgxListItemComponent } from "igniteui-angular";
 import { ContactsService } from "./services/contacts.service";
 import { IMessage, MessagesService } from "./services/messages.service";
 
@@ -14,6 +15,8 @@ export class ListChatSampleComponent {
     public myMessageTemplate: TemplateRef<any>;
     @ViewChild("othersMessage")
     public othersMessageTemplate: TemplateRef<any>;
+    @ViewChild("list")
+    public listComponent: IgxListComponent;
 
     private _myId: number = 4;
 
@@ -47,6 +50,12 @@ export class ListChatSampleComponent {
         if (event.key === "Enter") {
             this._addMessage(this.message);
             this.message = null;
+
+            setTimeout(() => {
+                if (this.listComponent.children && this.listComponent.children.last) {
+                    (this.listComponent.children.last as IgxListItemComponent).element.scrollIntoView(false);
+                }
+            }, 0);
         }
     }
 

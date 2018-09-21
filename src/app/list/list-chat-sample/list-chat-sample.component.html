@@ -1,5 +1,5 @@
 <form>
-    <igx-list>
+    <igx-list #list>
         <ng-template #othersMessage let-message="message" let-contact="contact" let-messageIndex="index">
             <igx-list-item class="contact" *ngIf="isFirstMessage(messageIndex)">
                 <div class="contact__panel">

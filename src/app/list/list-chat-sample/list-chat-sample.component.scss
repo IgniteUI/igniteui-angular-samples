@@ -1,73 +1,73 @@
 igx-icon {
     cursor: pointer;
     user-select: none;
-  }
+}
   
-  .igx-list {
-      border: 1px solid black;
-      border-radius: 5px;
-      width: 400px;
-      height: 400px;
-      overflow-y: auto;
-  }
+.igx-list {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
+    overflow-y: auto;
+}
   
-  .igx-list__item:active,
-  .igx-list__item {
-      padding: 0;
-      height: 20px;
-      user-select: auto!important;
-  }
+.igx-list__item:active,
+.igx-list__item {
+    padding: 0;
+    height: 20px;
+    user-select: auto!important;
+}
   
-  .others-message,
-  .my-message {
-      font-weight: 600;
-      height: 20px;
-      border-radius: 5px;
-      margin: 0 0 4px 15px;
-      span {
-          padding: 4px 10px;
-      }
-  }
+.others-message, 
+.my-message {
+    font-weight: 600;
+    height: 20px;
+    border-radius: 5px;
+    margin: 0 0 4px 15px;
+    span {
+        padding: 4px 10px;
+    }
+}
   
-  .others-message:active,
-  .others-message {
-      align-self: flex-start;
-      background-color: rgb(122, 155, 247);
-      color: white;
-  }
+.others-message:active,
+.others-message {
+    align-self: flex-start;
+    background-color: rgb(122, 155, 247);
+    color: white;
+}
   
-  .my-message:active,
-  .my-message {
-      align-self: flex-end;
-      background-color: rgb(240, 240, 240);
-  }
+.my-message:active,
+.my-message {
+    align-self: flex-end;
+    background-color: rgb(240, 240, 240);
+}
   
-  .my-message {
-      margin-right: 5px;
-  }
+.my-message {
+    margin-right: 5px;
+}
   
-  .message__info {
-      margin-left: 10px;
-      font-weight: 400;
-  }
+.message__info {
+    margin-left: 10px;
+    font-weight: 400;
+}
   
-  .my-message__info {
-      margin-top: 20px;
-      font-weight: 400;
-      text-align: right;
-  }
+.my-message__info {
+    margin-top: 20px;
+    font-weight: 400;
+    text-align: right;
+}
   
-  .contact:active {
-      background: transparent;
-  } 
+.contact:active {
+    background: transparent;
+} 
   
-  .contact {
-      margin: 20px 5px 5px 5px;
-  }
+.contact {
+    margin: 20px 5px 5px 5px;
+}
   
-  .contact__panel {
+.contact__panel {
     display: flex;
     align-items: center;
     padding: 0;
-  }
+}
   
