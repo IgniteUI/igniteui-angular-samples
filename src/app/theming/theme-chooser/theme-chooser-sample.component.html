@@ -28,17 +28,17 @@
     <div igxOverlayOutlet #outlet>
         <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
             <button igxButton="raised" class="addProdBtn" (click)="openDialog()">Add New Product</button>
-            <button class="drop-down-button" igxButton="raised" (click)="toggleDropDown($event, dropdown)">Themes</button>
+            <button class="drop-down-button" igxButton="raised" (click)="toggleDropDown($event, dropdown)" [igxDropDownItemNavigation]="dropdown" >Themes</button>
             <igx-drop-down #dropdown class="theme-chooser">
-                <igx-drop-down-item class="light-theme-option" [igxDropDownItemNavigation]="dropdown" (click)="selectTheme(THEME.LIGHT)">
+                <igx-drop-down-item class="light-theme-option" (click)="selectTheme(THEME.LIGHT)">
                 </igx-drop-down-item>
-                <igx-drop-down-item class="dark-theme-option" [igxDropDownItemNavigation]="dropdown" (click)="selectTheme(THEME.DARK)">
+                <igx-drop-down-item class="dark-theme-option" (click)="selectTheme(THEME.DARK)">
                 </igx-drop-down-item>
-                <igx-drop-down-item class="black-theme-option" [igxDropDownItemNavigation]="dropdown" (click)="selectTheme(THEME.BLACK)">
+                <igx-drop-down-item class="black-theme-option" (click)="selectTheme(THEME.BLACK)">
                 </igx-drop-down-item>
             </igx-drop-down>
         </div>
-        <igx-grid [data]="data" [autoGenerate]="false" height="500px" width="100%" [paging]="true" [perPage]="10" displayDensity="comfortable"
+        <igx-grid [data]="data" [autoGenerate]="false" height="550px" width="100%" [paging]="true" [perPage]="10" displayDensity="comfortable"
             #grid1>
             <igx-column [field]="'IndustrySector'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
             <igx-column [field]="'IndustryGroup'" dataType="string" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>

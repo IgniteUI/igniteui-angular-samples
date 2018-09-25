@@ -33,7 +33,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             filteringExpr,
             sortingExpr,
             (data) => {
-                this.grid.totalItemCount = data.Count;
+                this.grid.totalItemCount = data["@odata.count"];
             });
     }
 
@@ -60,7 +60,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             filteringExpr,
             sortingExpr,
             (data) => {
-                this.grid.totalItemCount = data.filteredCount;
+                this.grid.totalItemCount = data["@odata.count"];
                 this.toast.hide();
                 this.cdr.detectChanges();
             });

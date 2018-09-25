@@ -50,7 +50,7 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         const startYear = new Date().getFullYear() - 4;
         this.startDate = new Date(startYear, 1, 1, 16, 30, 0);
         this.dataFeeds = [
-            this.GenerateData(this.startDate, 150, "Mircosoft (MSFT)"),
+            this.GenerateData(this.startDate, 150, "Microsoft (MSFT)"),
             this.GenerateData(this.startDate, 200, "Facebook (FB)"),
             this.GenerateData(this.startDate, 400, "Tesla (TSLA)"),
             this.GenerateData(this.startDate, 350, "Netflix (NFLX)"),
