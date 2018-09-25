@@ -1,38 +1,104 @@
+.chat-sample-wrapper {
+    margin: 0 auto;
+    height: 100vh;
+    padding-bottom: 65px;
+}
+
+.chat-sample__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 igx-icon {
     cursor: pointer;
     user-select: none;
 }
+
+.igx-input-group--border .igx-input-group__bundle,
+.igx-input-group--border .igx-input-group__bundle:hover,
+.igx-input-group--border .igx-input-group__bundle:focus,
+.igx-input-group--focused.igx-input-group--border .igx-input-group__bundle,
+.igx-input-group--focused,
+.igx-input-group__bundle:focus,
+.igx-input-group__bundle,
+.igx-input-group:focus
+{
+    box-shadow: none;
+    outline: none;
+}
+
+.igx-input-group--border .igx-input-group__bundle {
+    padding: 0;
+}
   
 .igx-list {
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 400px;
-    height: 450px;
-    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #fff;
+    height: 100%;
+    overflow: auto;
+    z-index: 0;
+    flex: 1 0 0%;
+}
+
+.chat-massage-field {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 8px;
+    height: 50px;
+    margin: 0 auto;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.chat-input-group {
+    flex: 1 0 0%;
+}
+
+.send-message-button {
+    margin-left: 8px;
 }
   
 .igx-list__item:active,
 .igx-list__item {
     padding: 0;
-    height: 20px;
+    height: 16px;
     user-select: auto!important;
 }
   
 .others-message, 
 .my-message {
     font-weight: 600;
-    height: 20px;
-    border-radius: 5px;
-    margin: 0 0 4px 15px;
+    height: 16px;
+    border-radius: 4px;
+    margin: 0 0 4px 16px;
+
     span {
-        padding: 4px 10px;
+        padding: 0 8px;
     }
+}
+
+.others-message--firs {
+    border-top-left-radius: 0;
+}
+
+.my-message--first {
+    border-top-right-radius: 0;
 }
   
 .others-message:active,
 .others-message {
     align-self: flex-start;
-    background-color: rgb(122, 155, 247);
+    background-color: #09f;
     color: white;
 }
   
@@ -43,7 +109,7 @@ igx-icon {
 }
   
 .my-message {
-    margin-right: 5px;
+    margin-right: 16px;
 }
   
 .message__info {
@@ -62,7 +128,7 @@ igx-icon {
 } 
   
 .contact {
-    margin: 20px 5px 5px 5px;
+    margin: 20px 16px 5px 16px;
 }
   
 .contact__panel {
@@ -70,4 +136,19 @@ igx-icon {
     align-items: center;
     padding: 0;
 }
-  
+
+@media only screen and (min-width: 960px) {
+    .chat-sample-wrapper {
+        max-width: 400px;
+        max-height: 600px;
+        margin: 20px auto;
+        padding: 0;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px #999;
+    }
+    .chat-massage-field {
+        max-width: 400px;
+        position: static;
+        padding-bottom: 0;
+    }
+}
