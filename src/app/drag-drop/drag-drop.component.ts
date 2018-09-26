@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from "@angular/core";
+import { Component, ChangeDetectorRef, OnInit } from "@angular/core";
 
 @Component({
     selector: "drag-drop-sample",
@@ -6,7 +6,7 @@ import { Component, ChangeDetectorRef } from "@angular/core";
     templateUrl: "./drag-drop.component.html"
 })
 
-export class DragAndDropSampleComponent {
+export class DragAndDropSampleComponent implements OnInit {
     public urls = [
         [
             '../../assets/images/drag-drop/infragistics-logo00.jpeg',
@@ -25,18 +25,27 @@ export class DragAndDropSampleComponent {
         ],
     ];
 
-    constructor(private cdr: ChangeDetectorRef) {
+    public puzzleBoard;
+    private drop_id: number;
+
+    constructor() {
+    }
+
+    ngOnInit() {
+        this.drop_id = 0;
+        this.puzzleBoard = [ [false, false, false], [false, false, false], [false, false, false] ];
+    }
+
+    public getId() {
+        return "drop_" + this.drop_id++;
     }
 
     public getAllUrlsArray() {
         return [].concat(...this.urls);
     }
+    
 
-    public onDragStart() {
-        this.cdr.detectChanges();
-    }
-
-    public onDragEnd() {
-        this.cdr.detectChanges();
+    public onDragBoardEnter(ev) {
+        console.log(ev);
     }
 }
