@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
-import { DATA } from "./data";
+import { DATA, LOCATIONS } from "./data";
 import { Product } from "./product";
 
 @Component({
@@ -16,12 +16,19 @@ export class GridEditingSampleComponent implements OnInit {
     @ViewChild("dialogAdd", { read: IgxDialogComponent })
     public dialog: IgxDialogComponent;
     public data;
+    public locations;
     public product;
     constructor() { }
 
     public ngOnInit() {
-        this.data = DATA;
+        this.data = DATA.map((e) => {
+            const index = Math.floor(Math.random() * LOCATIONS.length);
+            const count = Math.floor(Math.random() * (LOCATIONS.length - index)) + 1;
+            e.Locations = [...LOCATIONS].splice(index, count);
+            return e;
+        });
         this.product = new Product();
+        this.locations = LOCATIONS;
     }
 
     public removeRow(rowIndex) {
@@ -32,10 +39,14 @@ export class GridEditingSampleComponent implements OnInit {
     public addRow() {
         this.grid1.addRow(this.product);
         this.cancel();
-
     }
+
     public cancel() {
         this.dialog.close();
         this.product = new Product();
+    }
+
+    public parseArray(arr: Array<{ shop: string, lastInventory: string}>): string[] {
+        return  (arr || []).map((e) => e.shop);
     }
 }
