@@ -8,7 +8,7 @@ export const DATA: any[] = [{
     ReorderLevel: 10,
     Discontinued: false,
     OrderDate: new Date("2012-02-12")
-  }, {
+}, {
     ProductID: 2,
     ProductName: "Chang",
     QuantityPerUnit: "24 - 12 oz bottles",
@@ -17,7 +17,7 @@ export const DATA: any[] = [{
     ReorderLevel: 25,
     Discontinued: false,
     OrderDate: new Date("2003-03-17")
-  }, {
+}, {
     ProductID: 3,
     ProductName: "Aniseed Syrup",
     QuantityPerUnit: "12 - 550 ml bottles",
@@ -26,7 +26,7 @@ export const DATA: any[] = [{
     ReorderLevel: 25,
     Discontinued: false,
     OrderDate: new Date("2006-03-17")
-  }, {
+}, {
     ProductID: 4,
     ProductName: "Chef Antons Cajun Seasoning",
     QuantityPerUnit: "48 - 6 oz jars",
@@ -35,7 +35,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: false,
     OrderDate: new Date("2016-03-17")
-  }, {
+}, {
     ProductID: 5,
     ProductName: "Chef Antons Gumbo Mix",
     QuantityPerUnit: "36 boxes",
@@ -44,7 +44,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: true,
     OrderDate: new Date("2011-11-11")
-  }, {
+}, {
     ProductID: 6,
     ProductName: "Grandmas Boysenberry Spread",
     QuantityPerUnit: "12 - 8 oz jars",
@@ -53,7 +53,7 @@ export const DATA: any[] = [{
     ReorderLevel: 25,
     Discontinued: false,
     OrderDate: new Date("2017-12-17")
-  }, {
+}, {
     ProductID: 7,
     ProductName: "Uncle Bobs Organic Dried Pears",
     QuantityPerUnit: "12 - 1 lb pkgs.",
@@ -62,7 +62,7 @@ export const DATA: any[] = [{
     ReorderLevel: 10,
     Discontinued: false,
     OrderDate: new Date("2016-07-17")
-  }, {
+}, {
     ProductID: 8,
     ProductName: "Northwoods Cranberry Sauce",
     QuantityPerUnit: "12 - 12 oz jars",
@@ -71,7 +71,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: false,
     OrderDate: new Date("2018-01-17")
-  }, {
+}, {
     ProductID: 9,
     ProductName: "Mishi Kobe Niku",
     QuantityPerUnit: "18 - 500 g pkgs.",
@@ -80,7 +80,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: true,
     OrderDate: new Date("2010-02-17")
-  }, {
+}, {
     ProductID: 10,
     ProductName: "Ikura",
     QuantityPerUnit: "12 - 200 ml jars",
@@ -89,7 +89,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: false,
     OrderDate: new Date("2008-05-17")
-  }, {
+}, {
     ProductID: 11,
     ProductName: "Queso Cabrales",
     QuantityPerUnit: "1 kg pkg.",
@@ -98,7 +98,7 @@ export const DATA: any[] = [{
     ReorderLevel: 30,
     Discontinued: false,
     OrderDate: new Date("2009-01-17")
-  }, {
+}, {
     ProductID: 12,
     ProductName: "Queso Manchego La Pastora",
     QuantityPerUnit: "10 - 500 g pkgs.",
@@ -107,7 +107,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: false,
     OrderDate: new Date("2015-11-17")
-  }, {
+}, {
     ProductID: 13,
     ProductName: "Konbu",
     QuantityPerUnit: "2 kg box",
@@ -116,7 +116,7 @@ export const DATA: any[] = [{
     ReorderLevel: 5,
     Discontinued: false,
     OrderDate: new Date("2015-03-17")
-  }, {
+}, {
     ProductID: 14,
     ProductName: "Tofu",
     QuantityPerUnit: "40 - 100 g pkgs.",
@@ -125,7 +125,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: false,
     OrderDate: new Date("2017-06-17")
-  }, {
+}, {
     ProductID: 15,
     ProductName: "Genen Shouyu",
     QuantityPerUnit: "24 - 250 ml bottles",
@@ -134,7 +134,7 @@ export const DATA: any[] = [{
     ReorderLevel: 5,
     Discontinued: false,
     OrderDate: new Date("2014-03-17")
-  }, {
+}, {
     ProductID: 16,
     ProductName: "Pavlova",
     QuantityPerUnit: "32 - 500 g boxes",
@@ -143,7 +143,7 @@ export const DATA: any[] = [{
     ReorderLevel: 10,
     Discontinued: false,
     OrderDate: new Date("2018-03-28")
-  }, {
+}, {
     ProductID: 17,
     ProductName: "Alice Mutton",
     QuantityPerUnit: "20 - 1 kg tins",
@@ -152,7 +152,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: true,
     OrderDate: new Date("2015-08-17")
-  }, {
+}, {
     ProductID: 18,
     ProductName: "Carnarvon Tigers",
     QuantityPerUnit: "16 kg pkg.",
@@ -161,7 +161,7 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: false,
     OrderDate: new Date("2005-09-27")
-  }, {
+}, {
     ProductID: 19,
     ProductName: "Teatime Chocolate Biscuits",
     QuantityPerUnit: "",
@@ -170,7 +170,7 @@ export const DATA: any[] = [{
     ReorderLevel: 5,
     Discontinued: false,
     OrderDate: new Date("2001-03-17")
-  }, {
+}, {
     ProductID: 20,
     ProductName: "Sir Rodneys Marmalade",
     QuantityPerUnit: undefined,
@@ -179,6 +179,43 @@ export const DATA: any[] = [{
     ReorderLevel: 0,
     Discontinued: false,
     OrderDate: new Date("2005-03-17")
-  }
-  ];
-  /* tslint:enable */
+}
+];
+export const LOCATIONS = [
+    {
+        shop: "My Cool Market",
+        lastInventory: "21/09/2018"
+    },
+    {
+        shop: "MarMaMarket",
+        lastInventory: "21/09/2018"
+    },
+    {
+        shop: "Marketplace from Outerspace",
+        lastInventory: "21/09/2018"
+    },
+    {
+        shop: "Markt Mart",
+        lastInventory: "21/09/2018"
+    },
+    {
+        shop: "Ceilmart",
+        lastInventory: "21/09/2018"
+    },
+    {
+        shop: "14/22",
+        lastInventory: "21/09/2018"
+    },
+    {
+        shop: "Sbubby",
+        lastInventory: "21/09/2018"
+    }
+    // Using data of type { key: value } because of a bug in combo binding to simple data
+    // "MarMaMarket",
+    // "Marketplace from Outerspace",
+    // "Markt Mart",
+    // "Ceilmart",
+    // "14/22",
+    // "Sbubby"
+];
+/* tslint:enable */
