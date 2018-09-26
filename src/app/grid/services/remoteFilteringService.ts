@@ -3,16 +3,16 @@ import { Injectable } from "@angular/core";
 import { FilteringLogic, IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 
-const DATA_URL = "https://www.igniteui.com/api/products";
+const DATA_URL = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 const EMPTY_STRING = "";
 const NULL_VALUE = null;
 export enum FILTER_OPERATION {
-    CONTAINS = "substringof",
+    CONTAINS = "contains",
     STARTS_WITH = "startswith",
     ENDS_WITH = "endswith",
     EQUALS = "eq",
     DOES_NOT_EQUAL = "ne",
-    DOES_NOT_CONTAIN = "not substringof",
+    DOES_NOT_CONTAIN = "not contains",
     GREATER_THAN = "gt",
     LESS_THAN = "lt",
     LESS_THAN_EQUAL = "le",
@@ -33,20 +33,17 @@ export class RemoteFilteringService {
         virtualizationArgs?: IForOfState,
         filteringArgs?: any,
         sortingArgs?: any, cb?: (any) => void): any {
-        return this._http.get(this.buildDataUrl("", filteringArgs, sortingArgs)).subscribe((filteredData: any) => {
-            const filteredCount = filteredData.Results.length;
-            this._http.get(this.buildDataUrl(virtualizationArgs, filteringArgs, sortingArgs)).subscribe((data: any) => {
-                data.filteredCount = filteredCount;
-                this._remoteData.next(data.Results);
+        return this._http.get(this.buildDataUrl(
+            virtualizationArgs, filteringArgs, sortingArgs)).subscribe((data: any) => {
+                this._remoteData.next(data.value);
                 if (cb) {
                     cb(data);
                 }
             });
-        });
     }
 
     private buildDataUrl(virtualizationArgs: any, filteringArgs: any, sortingArgs: any): string {
-        let baseQueryString = `${DATA_URL}?$inlinecount=allpages`;
+        let baseQueryString = `${DATA_URL}?$count=true`;
         let scrollingQuery = EMPTY_STRING;
         let orderQuery = EMPTY_STRING;
         let filterQuery = EMPTY_STRING;
@@ -99,7 +96,7 @@ export class RemoteFilteringService {
 
             switch (operand.condition.name) {
                 case "contains": {
-                    filterString = `${FILTER_OPERATION.CONTAINS}(${filterValue},${fieldName})`;
+                    filterString = `${FILTER_OPERATION.CONTAINS}(${fieldName}, ${filterValue})`;
                     break;
                 }
                 case "startsWith": {
@@ -119,7 +116,7 @@ export class RemoteFilteringService {
                     break;
                 }
                 case "doesNotContain": {
-                    filterString = `${FILTER_OPERATION.DOES_NOT_CONTAIN}(${filterValue}, ${fieldName})`;
+                    filterString = `${FILTER_OPERATION.DOES_NOT_CONTAIN}(${fieldName},${filterValue})`;
                     break;
                 }
                 case "greaterThan": {

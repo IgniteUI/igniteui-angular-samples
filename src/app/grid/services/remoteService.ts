@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { IForOfState, SortingDirection } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 
-const DATA_URL: string = "https://www.igniteui.com/api/products";
+const DATA_URL: string = "https://services.odata.org/V4/Northwind/Northwind.svc/Products";
 const EMPTY_STRING: string = "";
 export enum SortOrder {
     ASC = "asc",
@@ -29,7 +29,7 @@ export class RemoteServiceVirt {
 
         if (resetData) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
-                this._cachedData = new Array<any>(data.Count).fill(null);
+                this._cachedData = new Array<any>(data["@odata.count"]).fill(null);
                 this._updateData(data, startIndex);
                 if (cb) {
                     cb(data);
@@ -63,14 +63,14 @@ export class RemoteServiceVirt {
     }
 
     private _updateData(data: any, startIndex: number) {
-        this._data.next(data.Results);
-        for (let i = 0; i < data.Results.length; i++) {
-            this._cachedData[i + startIndex] = data.Results[i];
+        this._data.next(data.value);
+        for (let i = 0; i < data.value.length; i++) {
+            this._cachedData[i + startIndex] = data.value[i];
         }
     }
 
     private _buildDataUrl(virtualizationArgs: any, sortingArgs: any): string {
-        let baseQueryString = `${DATA_URL}?$inlinecount=allpages`;
+        let baseQueryString = `${DATA_URL}?$count=true`;
         let scrollingQuery = EMPTY_STRING;
         let orderQuery = EMPTY_STRING;
         let query = EMPTY_STRING;
