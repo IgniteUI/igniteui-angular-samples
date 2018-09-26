@@ -41,6 +41,7 @@ import { TextHighlightConfigGenerator } from "./../configs/TextHighlightConfigGe
 import { TimePickerConfigGenerator } from "./../configs/TimePickerConfigGenerator";
 import { ToastConfigGenerator } from "./../configs/ToastConfigGenerator";
 import { ToggleConfigGenerator } from "./../configs/ToggleConfigGenerator";
+import { TooltipConfigGenerator } from "./../configs/TooltipConfigGenerator";
 
 import * as fs from "fs";
 import * as path from "path";
@@ -80,7 +81,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
     TabBarConfigGenerator, TabsConfigGenerator, TextHighlightConfigGenerator, ToastConfigGenerator,
-    ToggleConfigGenerator, TimePickerConfigGenerator];
+    ToggleConfigGenerator, TooltipConfigGenerator, TimePickerConfigGenerator];
 
 export class SampleAssetsGenerator extends Generator {
     private _tsImportsService: TsImportsService;

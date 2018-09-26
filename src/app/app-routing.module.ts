@@ -276,6 +276,8 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
+import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -1003,6 +1005,16 @@ export const samplesRoutes: Routes = [
         component: ToggleSample3Component,
         data: { displayName: "Toggle Service Provider", parentName: "Toggle" },
         path: "toggle-sample-3"
+    },
+    {
+        component: TooltipSimpleComponent,
+        data: { displayName: "Simple Tooltip", parentName: "Tooltip" },
+        path: "tooltip-simple"
+    },
+    {
+        component: TooltipRichComponent,
+        data: { displayName: "Rich Tooltip", parentName: "Tooltip" },
+        path: "tooltip-rich"
     },
     {
         component: FilteringSampleComponent,

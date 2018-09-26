@@ -44,7 +44,8 @@ import {
     IgxTextHighlightModule,
     IgxTimePickerModule,
     IgxToastModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxTooltipModule
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -243,6 +244,8 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
+import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -430,7 +433,9 @@ import { ToggleComponent } from "./toggle/toggle.component";
         TextHighlightSample2Component,
         ThemeChooserSampleComponent,
         DefaultThemeSampleComponent,
-        DarkThemeSampleComponent
+        DarkThemeSampleComponent,
+        TooltipSimpleComponent,
+        TooltipRichComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -485,7 +490,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         FinancialChartSamplesModule.forRoot(),
         GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
-        IgxTextHighlightModule
+        IgxTextHighlightModule,
+        IgxTooltipModule
     ],
     providers: [
         DataService,
