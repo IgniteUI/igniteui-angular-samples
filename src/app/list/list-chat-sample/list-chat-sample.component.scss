@@ -1,7 +1,7 @@
 .chat-sample-wrapper {
     margin: 0 auto;
-    height: 100vh;
-    padding-bottom: 65px;
+    height: 100%;
+    padding-bottom: 50px;
 }
 
 .chat-sample__form {
@@ -31,7 +31,7 @@ igx-icon {
 }
 
 .igx-input-group--border .igx-input-group__bundle {
-    padding: 0;
+    padding: 4px 0;
 }
   
 .igx-list {
@@ -43,6 +43,7 @@ igx-icon {
     overflow: auto;
     z-index: 0;
     flex: 1 0 0%;
+    padding-bottom: 10px;
 }
 
 .chat-massage-field {
@@ -60,9 +61,33 @@ igx-icon {
     background: #fff;
 }
 
-.chat-input-group {
-    flex: 1 0 0%;
+.chat-sample-wrapper {
+    .input-round-box {
+        transform: translateY(0);
+        font-size: 14px;
+    }
+
+    .igx-input-group__bundle-main {
+        padding: 0;
+    }
+
+    .chat-input-group {
+        flex: 1 0 0%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .igx-input-group__wrapper {
+        flex: 1;
+    }
+
+    .igx-input-group--box .igx-input-group__bundle {
+        padding: 0 8px;
+    }
 }
+
+
 
 .send-message-button {
     margin-left: 8px;

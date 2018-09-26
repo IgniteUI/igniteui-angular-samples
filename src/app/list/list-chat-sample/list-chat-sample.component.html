@@ -36,11 +36,8 @@
         </igx-list>
 
         <div class="chat-massage-field">
-            <igx-input-group tabindex="1" class="chat-input-group" type="border">
-                <igx-prefix>
-                    <igx-icon fontSet="material" name="chat"></igx-icon>
-                </igx-prefix>
-                <input placeholder="Send message" autocomplete="off" igxInput #newMessage name="newMessage" [(ngModel)]="message" (keypress)="onMessageKeypress($event)" />
+            <igx-input-group class="chat-input-group" type="box">
+                <input class="input-round-box" placeholder="Send message" autocomplete="off" igxInput #newMessage name="newMessage" [(ngModel)]="message" (keypress)="onMessageKeypress($event)" />
             </igx-input-group>
             <button class="send-message-button" igxButton="icon" igxButtonColor="#09f" igxButtonBackground="#fff" igxRipple="#09f" igxRipple igxRippleCentered="true">
                 <igx-icon fontSet="material" name="send"></igx-icon>
