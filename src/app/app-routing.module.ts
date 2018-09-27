@@ -267,6 +267,9 @@ import {
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 
+import {
+    GridConditionalCellStyleComponent
+} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
@@ -650,6 +653,11 @@ export const samplesRoutes: Routes = [
         component: GridDisplayDensitySampleComponent,
         data: { displayName: "Grid Display Density", parentName: "Grid" },
         path: "grid-displayDensity"
+    },
+    {
+        component: GridConditionalCellStyleComponent,
+        data: { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
+        path: "grid-cell-styling"
     },
     {
         component: SnackbarSample1Component,
