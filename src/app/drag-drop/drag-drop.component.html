@@ -1,12 +1,12 @@
-<div igxDrop class="initialArea">
+<div igxDrop (onDrop)="onPieceDropped($event)" [id]="'drop_' + 9" class="initialArea">
     <div igxDrag *ngFor="let piece of getAllPiecesArray()" id="drag_{{piece.id}}" class="puzzle_part_container"
-    [hideBaseOnDrag]="true" [animateOnRelease]="true">
+    [hideBaseOnDrag]="true" [animateOnRelease]="true" (returnMoveEnd)="checkIfPuzzleCompleted()">
         <img class="puzzle_part" width="100px" height="100px" [src]="piece.url" draggable="false" style="-moz-user-select: none;"/>
     </div>
 </div>
 
 <div class="puzzle_board_wrapper">
     <div class="outside_container" *ngFor="let row of pieces; let i = index">
-        <div [id]="(i * 3) + j" igxDrop (onDrop)="onPieceDropped($event)" class="inside_container" *ngFor="let piece of row; let j = index"></div>
+        <div [id]="'drop_' + ((i * 3) + j)" igxDrop (onDrop)="onPieceDropped($event)" class="inside_container" *ngFor="let piece of row; let j = index"></div>
     </div>
 </div>

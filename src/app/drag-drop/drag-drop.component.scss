@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: row;
     height: 100px;
-    border: 1px black dotted;
+    border: 1px #333333 dotted;
 }
 
 .puzzle_part_container {
@@ -14,6 +14,7 @@
 .puzzle_part {
     width: 100px;
     height: 100px;
+    border: 1px solid #333333;
 }
 
 .puzzle_board_wrapper {
@@ -30,5 +31,5 @@
     width: 100px;
     height: 100px;
     background-color: #a7ffff;
-    border: 1px black solid;
+    border: 1px #333333 solid;
 }

@@ -40,17 +40,25 @@ export class DragAndDropSampleComponent implements OnInit {
     ];
 
     public puzzleBoard;
+    private completed: boolean;
 
     constructor() {
     }
 
     ngOnInit() {
         this.shuffleArray();
-        this.puzzleBoard = [ [false, false, false], [false, false, false], [false, false, false] ];
+        this.puzzleBoard = [ [-1, -1, -1], [-1, -1, -1], [-1, -1, -1] ];
+        this.completed = false;
     }
 
     public getAllPiecesArray() {
         return [].concat(...this.pieces);
+    }
+
+    public checkIfPuzzleCompleted() {
+        if(this.completed) {
+            alert('Completed');
+        }
     }
 
     public onPieceDropped(ev) {
@@ -61,28 +69,43 @@ export class DragAndDropSampleComponent implements OnInit {
 
         let coll = dropId % 3
         let row = Math.floor(dropId / 3);
-        console.log(coll);
-        console.log(row);
-        if(dragId === dropId) {
-            this.puzzleBoard[row][coll] = true;
+        if(dropId === 9) {
+            this.removePart(dragId);
+            return;
+        }
+
+        if(this.puzzleBoard[row][coll] === -1) {
+            this.removePart(dragId);
+            this.puzzleBoard[row][coll] = dragId;
             if(this.checkForCompletedPuzzle()) {
-                alert('Completed');
+                this.completed = true;
             }
         } else {
-            this.puzzleBoard[row][coll] = false;
+            ev.cancel = true;
+            ev.drag.dropFinished();
         }
     }
 
     private checkForCompletedPuzzle(): boolean  {
         for(let i = 0; i < 3; i++) {
             for(let j = 0; j < 3; j++) {
-                if(!this.puzzleBoard[i][j]) {
+                if(this.puzzleBoard[i][j] !== (i * 3 + j)) {
                     return false;
                 }
             }
         }
 
         return true;
+    }
+
+    private removePart(id) {
+        for(let i = 0; i < 3; i++) {
+            for(let j = 0; j < 3; j++) {
+                if(this.puzzleBoard[i][j] === id) {
+                    this.puzzleBoard[i][j] = -1;
+                }
+            }
+        }
     }
 
     private shuffleArray(): void {
