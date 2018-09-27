@@ -16,11 +16,14 @@
     height: 100px;
 }
 
+.puzzle_board_wrapper {
+    margin: 20px;
+}
+
 .outside_container {
     display: flex;
     flex-flow: row;
     height: 100px;
-    width: 300px;
 }
 
 .inside_container {
