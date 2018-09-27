@@ -7,40 +7,36 @@ import { Component, ChangeDetectorRef, OnInit } from "@angular/core";
 })
 
 export class DragAndDropSampleComponent implements OnInit {
-    public urls = [
-        [
-            {
-                id: 0, url: '../../assets/images/drag-drop/infragistics-logo00.jpeg'
-            },
-            {
-                id: 1, url: '../../assets/images/drag-drop/infragistics-logo01.jpeg'
-            },
-            {
-                id: 2, url: '../../assets/images/drag-drop/infragistics-logo02.jpeg'
-            },
-        ],
-        [
-            {
-                id: 3, url: '../../assets/images/drag-drop/infragistics-logo10.jpeg'
-            },
-            {
-                id: 4, url: '../../assets/images/drag-drop/infragistics-logo11.jpeg'
-            },
-            {
-                id: 5, url: '../../assets/images/drag-drop/infragistics-logo12.jpeg'
-            },
-        ],
-        [
-            {
-                id: 6, url: '../../assets/images/drag-drop/infragistics-logo20.jpeg'
-            },
-            {
-                id: 7, url: '../../assets/images/drag-drop/infragistics-logo21.jpeg'
-            },
-            {
-                id: 8, url: '../../assets/images/drag-drop/infragistics-logo22.jpeg'
-            },
-        ],
+    public pieces = [];
+
+    private piecesArr = [
+        {
+            id: 0, url: '../../assets/images/drag-drop/infragistics-logo00.jpeg'
+        },
+        {
+            id: 1, url: '../../assets/images/drag-drop/infragistics-logo01.jpeg'
+        },
+        {
+            id: 2, url: '../../assets/images/drag-drop/infragistics-logo02.jpeg'
+        },
+        {
+            id: 3, url: '../../assets/images/drag-drop/infragistics-logo10.jpeg'
+        },
+        {
+            id: 4, url: '../../assets/images/drag-drop/infragistics-logo11.jpeg'
+        },
+        {
+            id: 5, url: '../../assets/images/drag-drop/infragistics-logo12.jpeg'
+        },
+        {
+            id: 6, url: '../../assets/images/drag-drop/infragistics-logo20.jpeg'
+        },
+        {
+            id: 7, url: '../../assets/images/drag-drop/infragistics-logo21.jpeg'
+        },
+        {
+            id: 8, url: '../../assets/images/drag-drop/infragistics-logo22.jpeg'
+        },
     ];
 
     public puzzleBoard;
@@ -49,15 +45,15 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.shuffleArray();
         this.puzzleBoard = [ [false, false, false], [false, false, false], [false, false, false] ];
     }
 
-    public getAllUrlsArray() {
-        return [].concat(...this.urls);
+    public getAllPiecesArray() {
+        return [].concat(...this.pieces);
     }
-    
 
-    public onDragBoardEnter(ev) {
+    public onPieceDropped(ev) {
         let dropIdString = ev.owner.element.nativeElement.id;
         let dragIdString = ev.drag.element.nativeElement.id;
         let dropId = dropIdString.match(/\d+/g).map(Number)[0];
@@ -81,13 +77,27 @@ export class DragAndDropSampleComponent implements OnInit {
         for(let i = 0; i < 3; i++) {
             for(let j = 0; j < 3; j++) {
                 if(!this.puzzleBoard[i][j]) {
-                    console.log('No');
                     return false;
                 }
             }
         }
 
-        console.log('Si');
         return true;
+    }
+
+    private shuffleArray(): void {
+        for (var i = this.piecesArr.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = this.piecesArr[i];
+            this.piecesArr[i] = this.piecesArr[j];
+            this.piecesArr[j] = temp;
+        }
+
+        for(let i = 0; i < 3; i++) {
+            this.pieces.push([]);
+            for(let j = 0; j < 3; j++) {
+                this.pieces[i].push(this.piecesArr[i * 3 + j]);
+            }
+        }
     }
 }
