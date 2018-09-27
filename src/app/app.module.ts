@@ -124,6 +124,9 @@ import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sampl
 import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {
+    GridConditionalCellStyleComponent
+} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import {
     GridDisplayDensitySampleComponent
@@ -435,7 +438,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         DefaultThemeSampleComponent,
         DarkThemeSampleComponent,
         TooltipSimpleComponent,
-        TooltipRichComponent
+        TooltipRichComponent,
+        GridConditionalCellStyleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
