@@ -18,12 +18,12 @@ export class ListChatSampleComponent {
     @ViewChild("list")
     public listComponent: IgxListComponent;
 
-    private _myId: number = 4;
+    private myId: number = 4;
 
     constructor(public messagesService: MessagesService, public contactsService: ContactsService) { }
 
     public getMessageTemplate(message: IMessage): TemplateRef<any> {
-        if (message.authorId === this._myId) {
+        if (message.authorId === this.myId) {
             return this.myMessageTemplate;
         }
 
@@ -48,21 +48,29 @@ export class ListChatSampleComponent {
 
     public onMessageKeypress(event) {
         if (event.key === "Enter") {
-            this._addMessage(this.message);
-            this.message = null;
-
-            setTimeout(() => {
-                if (this.listComponent.children && this.listComponent.children.last) {
-                    (this.listComponent.children.last as IgxListItemComponent).element.scrollIntoView(false);
-                }
-            }, 0);
+            this.sendMessage();
         }
     }
 
-    private _addMessage(message: string) {
+    public onSendButtonClick() {
+        this.sendMessage();
+    }
+
+    private sendMessage() {
+        this.addMessage(this.message);
+        this.message = null;
+
+        setTimeout(() => {
+            if (this.listComponent.children && this.listComponent.children.last) {
+                (this.listComponent.children.last as IgxListItemComponent).element.scrollIntoView();
+            }
+        }, 0);
+    }
+
+    private addMessage(message: string) {
         if (message) {
             const messageInstance: IMessage = {
-                authorId: this._myId,
+                authorId: this.myId,
                 message,
                 timestamp: new Date(Date.now())
             };

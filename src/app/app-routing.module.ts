@@ -159,6 +159,9 @@ import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sampl
 import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {
+    GridConditionalCellStyleComponent
+} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import {
     GridDisplayDensitySampleComponent
@@ -205,6 +208,7 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
+import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
@@ -260,10 +264,6 @@ import {
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
-import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
-import {
-    GridConditionalCellStyleComponent
-} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";

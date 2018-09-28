@@ -1,18 +1,15 @@
 import { Injectable } from "@angular/core";
-
 export interface IMessage {
     authorId: number;
     timestamp: Date;
     message: string;
 }
-
 @Injectable({
     providedIn: "root"
 })
 
 export class MessagesService {
-
-    private _mockMessages: IMessage[] = [
+    private mockMessages: IMessage[] = [
         {
             authorId: 1,
             message: "Hi guys",
@@ -67,12 +64,12 @@ export class MessagesService {
     ];
 
     public getMessages(): IMessage[] {
-        return this._mockMessages;
+        return this.mockMessages;
     }
 
     public addMessage(message: IMessage) {
         if (message) {
-            this._mockMessages.push(message);
+            this.mockMessages.push(message);
         }
     }
 }

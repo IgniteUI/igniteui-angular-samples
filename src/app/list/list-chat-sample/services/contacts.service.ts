@@ -1,18 +1,15 @@
 import { Injectable } from "@angular/core";
-
 export interface IContact {
     id: number;
     name: string;
     phone: string;
     photo: string;
 }
-
 @Injectable({
     providedIn: "root"
 })
 
 export class ContactsService {
-
     private _contacts: IContact[] = [
         {
             id: 1,
