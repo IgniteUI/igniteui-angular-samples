@@ -3816,7 +3816,7 @@ export class FinancialDataService {
     { time: new Date(2018, 0, 30), open: 93.30, high: 93.66, low: 92.10, close: 92.74, volume: 38635053 },
     { time: new Date(2018, 0, 31), open: 93.75, high: 95.40, low: 93.51, close: 95.01, volume: 48756338 }
         ];
-        result.title = "Mircosoft (MSFT)";
+        result.title = "Microsoft (MSFT)";
         return result;
     }
     public getTgt(): any {
