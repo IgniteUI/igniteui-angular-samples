@@ -22,6 +22,7 @@ import {
     IgxDialogModule,
     IgxDropDownModule,
     IgxExcelExporterService,
+    IgxExpansionPanelModule,
     IgxFilterModule,
     IgxForOfModule,
     IgxGridModule,
@@ -106,6 +107,12 @@ import { DialogComponent } from "./dialog/dialog.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
+import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
+import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
+import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
+import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
+import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -300,6 +307,12 @@ import { ToggleComponent } from "./toggle/toggle.component";
         DropDownSample1Component,
         DropDownSample2Component,
         DropDownSample3Component,
+        ExpansionPanelSample1Component,
+        ExpansionPanelSample2Component,
+        ExpansionPanelSample3Component,
+        ExpansionPanelSample4Component,
+        ExpansionPanelSample5Component,
+        ExpansionPanelSample6Component,
         LayoutComponent,
         NavdrawerComponent,
         NavDrawerMiniComponent,
@@ -466,9 +479,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         IgxRippleModule,
         IgxIconModule,
         IgxDialogModule,
-        IgxDropDownModule,
         IgxDatePickerModule,
-        IgxDropDownModule,
+        IgxExpansionPanelModule,
         IgxCalendarModule,
         IgxSnackbarModule,
         IgxCardModule,
