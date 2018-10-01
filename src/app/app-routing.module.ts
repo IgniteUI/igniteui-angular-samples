@@ -1347,7 +1347,7 @@ export const samplesRoutes: Routes = [
     },
     {
         component: DragAndDropSampleComponent,
-        data: {  displayName: "Drag and drop sample", parentName: "Themes" },
+        data: {  displayName: "Drag and drop sample", parentName: "Drag and Drop" },
         path: "drag-drop-sample"
     }
 ];
