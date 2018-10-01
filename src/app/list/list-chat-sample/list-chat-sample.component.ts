@@ -1,7 +1,8 @@
-import { Component, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxListComponent, IgxListItemComponent } from "igniteui-angular";
+import { Component, TemplateRef, ViewChild, ViewEncapsulation, Inject } from "@angular/core";
+//import { IgxListComponent } from "igniteui-angular";
 import { ContactsService } from "./services/contacts.service";
 import { IMessage, MessagesService } from "./services/messages.service";
+import { DOCUMENT } from "@angular/common";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -15,12 +16,13 @@ export class ListChatSampleComponent {
     public myMessageTemplate: TemplateRef<any>;
     @ViewChild("othersMessage")
     public othersMessageTemplate: TemplateRef<any>;
-    @ViewChild("list")
-    public listComponent: IgxListComponent;
+    // @ViewChild("list")
+    // public listComponent: IgxListComponent;
 
     private myId: number = 4;
 
-    constructor(public messagesService: MessagesService, public contactsService: ContactsService) { }
+    constructor(public messagesService: MessagesService, public contactsService: ContactsService,
+        @Inject(DOCUMENT) private document: any) { }
 
     public getMessageTemplate(message: IMessage): TemplateRef<any> {
         if (message.authorId === this.myId) {
@@ -60,9 +62,7 @@ export class ListChatSampleComponent {
         this.addMessage(this.message);
         this.message = null;
 
-        if (this.listComponent.children && this.listComponent.children.last) {
-            (this.listComponent.children.last as IgxListItemComponent).element.scrollIntoView();
-        }
+        this.scrollToBottom();
     }
 
     private addMessage(message: string) {
@@ -74,5 +74,16 @@ export class ListChatSampleComponent {
             };
             this.messagesService.addMessage(messageInstance);
         }
+    }
+
+    private scrollToBottom(): void {
+        try {
+            var listElement = this.document.querySelector('igx-list');
+            if (listElement) {
+                listElement.scrollTop = listElement.scrollHeight;
+            }
+
+            //this.listComponent.element.nativeElement.scrollTop = this.listComponent.element.nativeElement.scrollHeight;
+        } catch(err) { }
     }
 }
