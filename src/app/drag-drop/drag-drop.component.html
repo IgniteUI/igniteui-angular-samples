@@ -1,7 +1,7 @@
 <div igxDrop (onDrop)="onPieceDropped($event)" [id]="'drop_' + 9" class="initialArea">
     <div igxDrag *ngFor="let piece of getAllPiecesArray()" id="drag_{{piece.id}}" class="puzzle_part_container"
     [hideBaseOnDrag]="true" [animateOnRelease]="true" (returnMoveEnd)="checkIfPuzzleCompleted()">
-        <img class="puzzle_part" width="100px" height="100px" [src]="piece.url" draggable="false" style="-moz-user-select: none;"/>
+        <img class="puzzle_part" width="100px" height="100px" [src]="piece.url" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()"/>
     </div>
 </div>
 

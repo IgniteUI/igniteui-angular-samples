@@ -57,7 +57,7 @@ export class DragAndDropSampleComponent implements OnInit {
 
     public checkIfPuzzleCompleted() {
         if(this.completed) {
-            alert('Completed');
+            alert('Congratulations!\nYou have successfully solved the puzzle.');
         }
     }
 

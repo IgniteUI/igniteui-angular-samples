@@ -12,6 +12,7 @@
 }
 
 .puzzle_part {
+    -moz-user-select: none;
     width: 100px;
     height: 100px;
     border: 1px solid #333333;
