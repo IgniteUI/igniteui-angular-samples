@@ -1,0 +1,29 @@
+.sample-wrapper {
+    width: 420px;
+}
+
+.game-board {
+    width: 100%;
+}
+
+.game-board__collapsible {
+    width: 100%;
+}
+
+.game-board__grid {
+    height: 100%;
+    width: 100%;
+}
+
+.game-board__grid__match {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.update-button {
+    flex-grow: 1;
+}
+
+.buttons-panel {
+    display: flex;
+}
