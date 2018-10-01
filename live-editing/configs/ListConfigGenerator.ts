@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
     IgxAvatarModule, IgxFilterModule, IgxFilterOptions,
-    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxToastModule
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxSliderModule, IgxToastModule
 } from "igniteui-angular";
 import { ListChatSampleComponent } from "../../src/app/list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "../../src/app/list/list-sample-1/list-sample-1.component";
@@ -103,9 +103,11 @@ export class ListConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ListSample7Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAvatarModule, IgxIconModule, IgxListModule, ListSample7Component, IgxToastModule],
+                imports: [IgxAvatarModule, IgxIconModule, IgxListModule,
+                    ListSample7Component, IgxSliderModule, IgxToastModule],
                 ngDeclarations: [ListSample7Component],
-                ngImports: [IgxAvatarModule, IgxIconModule, IgxListModule, IgxToastModule]
+                ngImports: [IgxAvatarModule, IgxIconModule, IgxListModule,
+                    IgxSliderModule, IgxToastModule]
             }),
             shortenComponentPathBy: "/list/"
         }));
