@@ -15,6 +15,7 @@ import { ComboConfigGenerator } from "./../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "./../configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
 import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
+import { ExpansionPanelConfigGenerator } from "./../configs/ExpansionPanelConfigGenerator";
 import { ExportCsvConfigGenerator } from "./../configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "./../configs/ExportExcelConfigGenerator";
 import { FinancialChartConfigGenerator } from "./../configs/FinancialChartConfigGenerator";
@@ -74,7 +75,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
     ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator, DropDownConfigGenerator,
-    ExportCsvConfigGenerator, ExportExcelConfigGenerator,
+    ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
     GaugesConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
