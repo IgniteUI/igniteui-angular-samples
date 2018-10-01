@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "drag-drop-sample",
@@ -8,44 +8,44 @@ import { Component, ChangeDetectorRef, OnInit } from "@angular/core";
 
 export class DragAndDropSampleComponent implements OnInit {
     public pieces = [];
+    public puzzleBoard;
 
     private piecesArr = [
         {
-            id: 0, url: '../../assets/images/drag-drop/infragistics-logo00.jpeg'
+            id: 0, url: "../../assets/images/drag-drop/infragistics-logo00.jpeg"
         },
         {
-            id: 1, url: '../../assets/images/drag-drop/infragistics-logo01.jpeg'
+            id: 1, url: "../../assets/images/drag-drop/infragistics-logo01.jpeg"
         },
         {
-            id: 2, url: '../../assets/images/drag-drop/infragistics-logo02.jpeg'
+            id: 2, url: "../../assets/images/drag-drop/infragistics-logo02.jpeg"
         },
         {
-            id: 3, url: '../../assets/images/drag-drop/infragistics-logo10.jpeg'
+            id: 3, url: "../../assets/images/drag-drop/infragistics-logo10.jpeg"
         },
         {
-            id: 4, url: '../../assets/images/drag-drop/infragistics-logo11.jpeg'
+            id: 4, url: "../../assets/images/drag-drop/infragistics-logo11.jpeg"
         },
         {
-            id: 5, url: '../../assets/images/drag-drop/infragistics-logo12.jpeg'
+            id: 5, url: "../../assets/images/drag-drop/infragistics-logo12.jpeg"
         },
         {
-            id: 6, url: '../../assets/images/drag-drop/infragistics-logo20.jpeg'
+            id: 6, url: "../../assets/images/drag-drop/infragistics-logo20.jpeg"
         },
         {
-            id: 7, url: '../../assets/images/drag-drop/infragistics-logo21.jpeg'
+            id: 7, url: "../../assets/images/drag-drop/infragistics-logo21.jpeg"
         },
         {
-            id: 8, url: '../../assets/images/drag-drop/infragistics-logo22.jpeg'
-        },
+            id: 8, url: "../../assets/images/drag-drop/infragistics-logo22.jpeg"
+        }
     ];
 
-    public puzzleBoard;
     private completed: boolean;
 
     constructor() {
     }
 
-    ngOnInit() {
+    public ngOnInit() {
         this.shuffleArray();
         this.puzzleBoard = [ [-1, -1, -1], [-1, -1, -1], [-1, -1, -1] ];
         this.completed = false;
@@ -56,28 +56,28 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     public checkIfPuzzleCompleted() {
-        if(this.completed) {
-            alert('Congratulations!\nYou have successfully solved the puzzle.');
+        if (this.completed) {
+            alert("Congratulations!\nYou have successfully solved the puzzle.");
         }
     }
 
     public onPieceDropped(ev) {
-        let dropIdString = ev.owner.element.nativeElement.id;
-        let dragIdString = ev.drag.element.nativeElement.id;
-        let dropId = dropIdString.match(/\d+/g).map(Number)[0];
-        let dragId = dragIdString.match(/\d+/g).map(Number)[0];
+        const dropIdString = ev.owner.element.nativeElement.id;
+        const dragIdString = ev.drag.element.nativeElement.id;
+        const dropId = dropIdString.match(/\d+/g).map(Number)[0];
+        const dragId = dragIdString.match(/\d+/g).map(Number)[0];
 
-        let coll = dropId % 3
-        let row = Math.floor(dropId / 3);
-        if(dropId === 9) {
+        const coll = dropId % 3;
+        const row = Math.floor(dropId / 3);
+        if (dropId === 9) {
             this.removePart(dragId);
             return;
         }
 
-        if(this.puzzleBoard[row][coll] === -1) {
+        if (this.puzzleBoard[row][coll] === -1) {
             this.removePart(dragId);
             this.puzzleBoard[row][coll] = dragId;
-            if(this.checkForCompletedPuzzle()) {
+            if (this.checkForCompletedPuzzle()) {
                 this.completed = true;
             }
         } else {
@@ -87,9 +87,9 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     private checkForCompletedPuzzle(): boolean  {
-        for(let i = 0; i < 3; i++) {
-            for(let j = 0; j < 3; j++) {
-                if(this.puzzleBoard[i][j] !== (i * 3 + j)) {
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (this.puzzleBoard[i][j] !== (i * 3 + j)) {
                     return false;
                 }
             }
@@ -99,9 +99,9 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     private removePart(id) {
-        for(let i = 0; i < 3; i++) {
-            for(let j = 0; j < 3; j++) {
-                if(this.puzzleBoard[i][j] === id) {
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (this.puzzleBoard[i][j] === id) {
                     this.puzzleBoard[i][j] = -1;
                 }
             }
@@ -109,16 +109,16 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     private shuffleArray(): void {
-        for (var i = this.piecesArr.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = this.piecesArr[i];
+        for (let i = this.piecesArr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = this.piecesArr[i];
             this.piecesArr[i] = this.piecesArr[j];
             this.piecesArr[j] = temp;
         }
 
-        for(let i = 0; i < 3; i++) {
+        for (let i = 0; i < 3; i++) {
             this.pieces.push([]);
-            for(let j = 0; j < 3; j++) {
+            for (let j = 0; j < 3; j++) {
                 this.pieces[i].push(this.piecesArr[i * 3 + j]);
             }
         }
