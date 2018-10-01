@@ -93,48 +93,66 @@ igx-icon {
     margin-left: 8px;
 }
   
-.igx-list__item:active,
-.igx-list__item {
+.igx-list__item-base:active,
+.igx-list__item-base {
     padding: 0;
-    height: 16px;
+    min-height: 36px;
     user-select: auto!important;
 }
   
-.others-message, 
+.others-message,
 .my-message {
-    font-weight: 600;
-    height: 16px;
-    border-radius: 4px;
-    margin: 0 0 4px 16px;
-
-    span {
-        padding: 0 8px;
+    .igx-list__item-content {
+        font-weight: 600;
+        min-height: 16px;
+        border-radius: 4px;
+        margin: 0 0 4px 16px;
+        padding: 4px 8px;
+        font-size: 12px;
+        font-weight: 300;
     }
 }
 
+
+
+.igx-list__item-content {
+    padding: .5rem 0;
+}
+
+
 .others-message--first {
-    border-top-left-radius: 0;
+    .igx-list__item-content {
+        border-top-left-radius: 0;
+    }   
 }
 
 .my-message--first {
-    border-top-right-radius: 0;
+    .igx-list__item-content {
+        border-top-right-radius: 0;
+    }
 }
   
 .others-message:active,
 .others-message {
-    align-self: flex-start;
-    background-color: #09f;
-    color: white;
+    .igx-list__item-content {
+        align-self: flex-start;
+        background-color: #09f;
+        color: white;
+    }
 }
   
 .my-message:active,
 .my-message {
-    align-self: flex-end;
-    background-color: rgb(240, 240, 240);
+    .igx-list__item-content {
+        align-self: flex-end;
+        background-color: rgb(240, 240, 240);
+    }
 }
   
 .my-message {
-    margin-right: 16px;
+    .igx-list__item-content {
+        margin-right: 16px;
+    }
 }
   
 .message__info {

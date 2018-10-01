@@ -60,11 +60,9 @@ export class ListChatSampleComponent {
         this.addMessage(this.message);
         this.message = null;
 
-        setTimeout(() => {
-            if (this.listComponent.children && this.listComponent.children.last) {
-                (this.listComponent.children.last as IgxListItemComponent).element.scrollIntoView();
-            }
-        }, 0);
+        if (this.listComponent.children && this.listComponent.children.last) {
+            (this.listComponent.children.last as IgxListItemComponent).element.scrollIntoView();
+        }
     }
 
     private addMessage(message: string) {
