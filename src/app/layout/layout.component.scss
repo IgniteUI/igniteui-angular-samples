@@ -28,3 +28,7 @@
 .wrap-column {
     height: calc(50% - 16px);
 }
+
+html, body {
+    overflow-y: auto;
+}  
