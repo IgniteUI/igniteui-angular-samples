@@ -1,8 +1,8 @@
-import { Component, TemplateRef, ViewChild, ViewEncapsulation, Inject } from "@angular/core";
-//import { IgxListComponent } from "igniteui-angular";
+import { DOCUMENT } from "@angular/common";
+import { Component, Inject, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
+// import { IgxListComponent } from "igniteui-angular";
 import { ContactsService } from "./services/contacts.service";
 import { IMessage, MessagesService } from "./services/messages.service";
-import { DOCUMENT } from "@angular/common";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -22,7 +22,7 @@ export class ListChatSampleComponent {
     private myId: number = 4;
 
     constructor(public messagesService: MessagesService, public contactsService: ContactsService,
-        @Inject(DOCUMENT) private document: any) { }
+                @Inject(DOCUMENT) private document: any) { }
 
     public getMessageTemplate(message: IMessage): TemplateRef<any> {
         if (message.authorId === this.myId) {
@@ -78,12 +78,13 @@ export class ListChatSampleComponent {
 
     private scrollToBottom(): void {
         try {
-            var listElement = this.document.querySelector('igx-list');
+            const listElement = this.document.querySelector("igx-list");
             if (listElement) {
                 listElement.scrollTop = listElement.scrollHeight;
             }
 
-            //this.listComponent.element.nativeElement.scrollTop = this.listComponent.element.nativeElement.scrollHeight;
-        } catch(err) { }
+            // this.listComponent.element.nativeElement.scrollTop =
+            // this.listComponent.element.nativeElement.scrollHeight;
+        } catch (err) { }
     }
 }
