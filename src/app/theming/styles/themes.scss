@@ -295,13 +295,38 @@ $black-grid-filtering-theme: igx-grid-filtering-theme(
 );
 
 $light-calendar-theme: igx-calendar-theme(
-    $palette: $light-theme-palette
+    $palette: $light-theme-palette,
+    $content-background: igx-color($light-theme-palette, "primary", 500),
+    $content-text-color: igx-color($light-theme-palette, "secondary", 600),
+    $header-background: igx-color($light-theme-palette, "secondary", 500),
+    $header-text-color: igx-color($light-theme-palette, "primary", 500),
+    $picker-arrow-hover-color: igx-color($light-theme-palette, "secondary", 100),
+    $inactive-text-color: igx-color($light-theme-palette, "secondary", 200),
+    $picker-text-hover-color: igx-color($light-theme-palette, "secondary", 100),
+    $year-current-text-color: igx-color($light-theme-palette, "secondary", 500),
+    $weekend-text-color: igx-color($light-theme-palette, "secondary", 500)
+
 );
 
 $dark-calendar-theme: igx-calendar-theme(
-    $palette: $dark-theme-palette
+    $palette: $dark-theme-palette,
+    $content-background: igx-color($dark-theme-palette, "primary", 100),
+    $content-text-color: igx-color($dark-theme-palette, "secondary", 500),
+    $inactive-text-color: igx-color($dark-theme-palette, "primary", 700),
+    $picker-arrow-color: igx-color($dark-theme-palette, "primary", 700),
+    $picker-arrow-hover-color: igx-color($dark-theme-palette, "secondary", 500),
+    $picker-text-color: igx-color($dark-theme-palette, "primary", 700),
+    $picker-text-hover-color:igx-color($dark-theme-palette, "secondary", 500)
+
 );
 
 $black-calendar-theme: igx-calendar-theme(
-    $palette: $black-theme-palette
+    $palette: $black-theme-palette,
+    $content-background: igx-color($black-theme-palette, "primary", 100),
+    $content-text-color: igx-color($black-theme-palette, "secondary", 500),
+    $picker-text-hover-color: igx-color($black-theme-palette, "secondary", 500),
+    $picker-text-color: igx-color($black-theme-palette, "primary", 700),
+    $picker-arrow-color: igx-color($black-theme-palette, "primary", 700),
+    $picker-arrow-hover-color: igx-color($black-theme-palette, "secondary", 500),
+    $inactive-text-color: igx-color($black-theme-palette, "primary", 700)
 );
