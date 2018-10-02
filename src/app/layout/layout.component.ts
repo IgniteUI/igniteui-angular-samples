@@ -1,15 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: "app-layout",
   styleUrls: ["./layout.component.scss"],
   templateUrl: "./layout.component.html"
 })
-export class LayoutComponent implements OnInit {
-
+export class LayoutComponent {
   constructor() { }
-
-  public ngOnInit() {
-  }
-
 }
