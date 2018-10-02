@@ -22,14 +22,7 @@
                 <label igxLabel for="marketNotion">Market Notion</label>
                 <input igxInput id="marketNotion" type="number" [(ngModel)]="record.MarketNotion" />
             </igx-input-group>
-            <igx-datePicker #datePicker name="date"  [(ngModel)]="record.Date">
-                <ng-template igxDatePickerTemplate let-value = "value" let-displayData="displayData">
-                    <igx-input-group (click)="toggleDatePicker()">
-                        <label igxLabel>Date </label>
-                        <input igxInput [value]="displayData" />
-                    </igx-input-group>
-                </ng-template>
-            </igx-datePicker>
+            <igx-datePicker #datePicker name="date"  [(ngModel)]="record.Date">      </igx-datePicker>
         </div>
     </igx-dialog>
     <div igxOverlayOutlet #outlet>

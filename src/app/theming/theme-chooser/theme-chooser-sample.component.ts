@@ -72,12 +72,6 @@ export class ThemeChooserSampleComponent implements OnInit {
 
     constructor() { }
 
-    public toggleDatePicker() {
-        this.datePicker.outlet = this.outlet;
-        this.datePicker.alert.isModal = true;
-        this.datePicker.openDialog();
-    }
-
     public selectTheme(value: THEME) {
         this.themesClass = value;
     }
@@ -117,6 +111,8 @@ export class ThemeChooserSampleComponent implements OnInit {
     }
 
     public ngOnInit() {
+        this.datePicker.alert.isModal = true;
+        this.datePicker.outlet = this.outlet;
         this.grid1.outletDirective = this.outlet;
         this.data = DATA;
         this.record = new Record();
