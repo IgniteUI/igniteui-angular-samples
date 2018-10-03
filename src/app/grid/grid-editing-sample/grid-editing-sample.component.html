@@ -25,7 +25,7 @@
             <igx-column field="ReorderLevel" header="Reorder Level" [dataType]="'number'" width="13%" [sortable]="true"
                 [hasSummary]="true" [editable]="true">
                 <ng-template igxCellEditor let-cell="cell">
-                    <input type="number" [(ngModel)]="cell.value" style="color: black"/>
+                    <input type="number" [(ngModel)]="cell.gridAPI.get_cell_inEditMode(cell.gridID).cell.editValue" style="color: black"/>
                 </ng-template>
             </igx-column>
             <igx-column width="12%">
