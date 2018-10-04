@@ -7,4 +7,9 @@
             </div>
         </div>
     </div>
+    <igx-dialog #alert title="Congratulations!"
+        message="{{successfullMessage}}"
+        leftButtonLabel="OK"
+        (onLeftButtonSelect)="alert.close()">
+    </igx-dialog>
 </div>

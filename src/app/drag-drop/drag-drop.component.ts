@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxDialogComponent } from "igniteui-angular";
 
 @Component({
     selector: "drag-drop-sample",
@@ -9,7 +10,11 @@ import { Component, OnInit } from "@angular/core";
 export class DragAndDropSampleComponent implements OnInit {
     public tiles = [];
     public puzzleBoard;
-    public boardEdgeLength;
+    public boardEdgeLength: number;
+    public successfullMessage: string;
+
+    @ViewChild("alert")
+    public dialog: IgxDialogComponent;
 
     private tilesArr = [
         {
@@ -46,6 +51,7 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     public ngOnInit() {
+        this.successfullMessage = "You have successfully solved the puzzle.";
         this.puzzleBoard = [];
         this.shuffleArray();
     }
@@ -65,12 +71,12 @@ export class DragAndDropSampleComponent implements OnInit {
         ev.cancel = true;
         ev.drag.dropFinished();
         if (this.checkForCompletedPuzzle()) {
-            setTimeout(this.showMessage, 100);
+            setTimeout(this.showMessage(this.dialog), 100);
         }
     }
 
-    private showMessage() {
-        alert("Congratulations!\nYou have successfully solved the puzzle.");
+    private showMessage(dialog) {
+        dialog.open();
     }
 
     private swapTiles(firstPartRow, firstPartColl, secondPartRow, secondPartColl) {
