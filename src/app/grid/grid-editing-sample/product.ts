@@ -48,6 +48,12 @@ export class Product {
     set UnitsInStock(val) {
         this.unitsInStock = val;
     }
+    get Locations(): any[] {
+        return this.locations;
+    }
+    set Locations(val: any[]) {
+        this.locations = val;
+    }
     private discontinued: boolean;
     private orderDate: Date;
     private productID: number;
@@ -56,6 +62,7 @@ export class Product {
     private reorderLevel: number;
     private unitPrice: number;
     private unitsInStock: number;
+    private locations: any[];
 
     constructor() {
         this.discontinued = false;
@@ -66,5 +73,6 @@ export class Product {
         this.reorderLevel = 0;
         this.unitPrice = 0;
         this.unitsInStock = 0;
+        this.locations = [];
     }
 }
