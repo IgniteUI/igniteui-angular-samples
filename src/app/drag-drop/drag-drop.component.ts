@@ -7,10 +7,11 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class DragAndDropSampleComponent implements OnInit {
-    public pieces = [];
+    public tiles = [];
     public puzzleBoard;
+    public boardEdgeLength;
 
-    private piecesArr = [
+    private tilesArr = [
         {
             id: 0, url: "../../assets/images/drag-drop/infragistics-logo00.jpeg"
         },
@@ -41,15 +42,12 @@ export class DragAndDropSampleComponent implements OnInit {
     ];
 
     constructor() {
+        this.boardEdgeLength = 3;
     }
 
     public ngOnInit() {
         this.puzzleBoard = [];
         this.shuffleArray();
-    }
-
-    public getAllPiecesArray() {
-        return [].concat(...this.pieces);
     }
 
     public onPieceDropped(ev) {
@@ -61,9 +59,9 @@ export class DragAndDropSampleComponent implements OnInit {
         const foundIndex = this.findIndexOfDrag(dragId);
         const firstPartRow = foundIndex.row;
         const firstPartColl = foundIndex.coll;
-        const secondPartRow = Math.floor(dropId / 3);
-        const secondPartColl = dropId % 3;
-        this.swapPieces(firstPartRow, firstPartColl, secondPartRow, secondPartColl);
+        const secondPartRow = Math.floor(dropId / this.boardEdgeLength);
+        const secondPartColl = dropId % this.boardEdgeLength;
+        this.swapTiles(firstPartRow, firstPartColl, secondPartRow, secondPartColl);
         ev.cancel = true;
         ev.drag.dropFinished();
         if (this.checkForCompletedPuzzle()) {
@@ -75,19 +73,19 @@ export class DragAndDropSampleComponent implements OnInit {
         alert("Congratulations!\nYou have successfully solved the puzzle.");
     }
 
-    private swapPieces(firstPartRow, firstPartColl, secondPartRow, secondPartColl) {
+    private swapTiles(firstPartRow, firstPartColl, secondPartRow, secondPartColl) {
         const temp = this.puzzleBoard[firstPartRow][firstPartColl];
         this.puzzleBoard[firstPartRow][firstPartColl] = this.puzzleBoard[secondPartRow][secondPartColl];
         this.puzzleBoard[secondPartRow][secondPartColl] = temp;
 
-        const temp2 = this.pieces[firstPartRow][firstPartColl];
-        this.pieces[firstPartRow][firstPartColl] = this.pieces[secondPartRow][secondPartColl];
-        this.pieces[secondPartRow][secondPartColl] = temp2;
+        const temp2 = this.tiles[firstPartRow][firstPartColl];
+        this.tiles[firstPartRow][firstPartColl] = this.tiles[secondPartRow][secondPartColl];
+        this.tiles[secondPartRow][secondPartColl] = temp2;
     }
 
     private findIndexOfDrag(dragId) {
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
+        for (let i = 0; i < this.boardEdgeLength; i++) {
+            for (let j = 0; j < this.boardEdgeLength; j++) {
                 if (this.puzzleBoard[i][j] === dragId) {
                     return { row: i, coll: j };
                 }
@@ -96,9 +94,9 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     private checkForCompletedPuzzle(): boolean  {
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                if (this.puzzleBoard[i][j] !== (i * 3 + j)) {
+        for (let i = 0; i < this.boardEdgeLength; i++) {
+            for (let j = 0; j < this.boardEdgeLength; j++) {
+                if (this.puzzleBoard[i][j] !== (i * this.boardEdgeLength + j)) {
                     return false;
                 }
             }
@@ -108,19 +106,19 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     private shuffleArray(): void {
-        for (let i = this.piecesArr.length - 1; i > 0; i--) {
+        for (let i = this.tilesArr.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            const temp = this.piecesArr[i];
-            this.piecesArr[i] = this.piecesArr[j];
-            this.piecesArr[j] = temp;
+            const temp = this.tilesArr[i];
+            this.tilesArr[i] = this.tilesArr[j];
+            this.tilesArr[j] = temp;
         }
 
-        for (let i = 0; i < 3; i++) {
-            this.pieces.push([]);
+        for (let i = 0; i < this.boardEdgeLength; i++) {
+            this.tiles.push([]);
             this.puzzleBoard.push([]);
-            for (let j = 0; j < 3; j++) {
-                this.pieces[i].push(this.piecesArr[i * 3 + j]);
-                this.puzzleBoard[i].push(this.piecesArr[i * 3 + j].id);
+            for (let j = 0; j < this.boardEdgeLength; j++) {
+                this.tiles[i].push(this.tilesArr[i * this.boardEdgeLength + j]);
+                this.puzzleBoard[i].push(this.tilesArr[i * this.boardEdgeLength + j].id);
             }
         }
     }
