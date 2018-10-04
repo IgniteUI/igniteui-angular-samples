@@ -30,7 +30,7 @@
                     <!-- Header -->
                     <span igxDrawerItem igxRipple routerLinkActive="igx-nav-drawer__item--active" (click)="toggleParent('header' + navItem.name)">
                         <button igxButton="icon" igxRipple igxRippleCentered="true" style="vertical-align: middle">
-                            <igx-icon fontSet="material" [name]="convertNodeStateToIcon('header' + navItem.name)"></igx-icon>
+                            <igx-icon fontSet="material">{{convertNodeStateToIcon('header' + navItem.name)}}</igx-icon>
                         </button>
                         <span style="vertical-align: middle">{{navItem.name}}</span>
                     </span>
