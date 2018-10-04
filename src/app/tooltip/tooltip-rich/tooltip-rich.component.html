@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <article class="card-wrapper">
+        <igx-card>
+            <igx-card-content style="padding: 0px;">
+                <div class="location">
+                    <igx-icon class="cursorHover" color="blue" fontSet="material" name="location_on" [igxTooltipTarget]="locationTooltip"></igx-icon>
+
+                    <div class="locationTooltip" #locationTooltip="tooltip" igxTooltip>
+                        <div class="locationTooltipContent">
+                            <igx-avatar class="locationIcon" src="../../../assets/images/card/avatars/igLogo.png" size="medium"
+                                [roundShape]="false"></igx-avatar>
+                            <div>
+                                <div>Infragistics Inc. HQ</div>
+                                <div>2 Commerce Dr, Cranbury, NJ 08512, USA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </igx-card-content>
+            <igx-card-actions>
+                <div class="igx-card-actions__igroup--start">
+                    <span igxButton="icon">
+                        <igx-icon fontSet="material" name="favorite"></igx-icon>
+                    </span>
+                    <span igxButton="icon">
+                        <igx-icon fontSet="material" name="share"></igx-icon>
+                    </span>
+                </div>
+            </igx-card-actions>
+        </igx-card>
+    </article>
+</div>
