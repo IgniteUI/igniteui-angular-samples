@@ -79,6 +79,12 @@ import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
+import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
+import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
+import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
+import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
+import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -262,6 +268,9 @@ import {
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 
+import {
+    GridConditionalCellStyleComponent
+} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
@@ -512,6 +521,36 @@ export const samplesRoutes: Routes = [
         path: "export-excel-sample-1"
     },
     {
+        component: ExpansionPanelSample1Component,
+        data: { displayName: "Expansion Panel 1", parentName: "Expansion Panel" },
+        path: "expansion-sample-1"
+    },
+    {
+        component: ExpansionPanelSample2Component,
+        data: { displayName: "Expansion Panel 2", parentName: "Expansion Panel" },
+        path: "expansion-sample-2"
+    },
+    {
+        component: ExpansionPanelSample3Component,
+        data: { displayName: "Expansion Panel 3", parentName: "Expansion Panel" },
+        path: "expansion-sample-3"
+    },
+    {
+        component: ExpansionPanelSample4Component,
+        data: { displayName: "Expansion Panel 4", parentName: "Expansion Panel" },
+        path: "expansion-sample-4"
+    },
+    {
+        component: ExpansionPanelSample5Component,
+        data: { displayName: "Expansion Panel 5", parentName: "Expansion Panel" },
+        path: "expansion-sample-5"
+    },
+    {
+        component: ExpansionPanelSample6Component,
+        data: { displayName: "Expansion Panel 6", parentName: "Expansion Panel" },
+        path: "expansion-sample-6"
+    },
+    {
         component: LayoutComponent,
         data: { displayName: "Layout Overview", parentName: "Layout" },
         path: "layout"
@@ -615,6 +654,11 @@ export const samplesRoutes: Routes = [
         component: GridDisplayDensitySampleComponent,
         data: { displayName: "Grid Display Density", parentName: "Grid" },
         path: "grid-displayDensity"
+    },
+    {
+        component: GridConditionalCellStyleComponent,
+        data: { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
+        path: "grid-cell-styling"
     },
     {
         component: SnackbarSample1Component,

@@ -1,8 +1,13 @@
+<div style="width:300px; margin-bottom:20px">
+    <igx-slider id="slider" [minValue]="0.1" [maxValue]="0.9" [step]="0.1" [isContinuous]="true" [(ngModel)]="mainIgxList.panEndTriggeringThreshold" ></igx-slider>
+    <label>Threshold: {{panThreshold}}</label>
+</div>
+
 <div class="list-sample">
-    <igx-list [allowLeftPanning]="true" [allowRightPanning]="true"
+    <igx-list [allowLeftPanning]="true" [allowRightPanning]="true" #mainIgxList
         (onLeftPan)="leftPanPerformed($event)" (onRightPan)="rightPanPerformed($event)">
         <ng-template igxListItemLeftPanning>
-            <div class="listItemLeftPanningStyle"><igx-icon name="sms" [color]="white" style="margin-left:10px"></igx-icon>Message</div>
+            <div class="listItemLeftPanningStyle"><igx-icon name="delete" [color]="white" style="margin-left:10px"></igx-icon>Delete</div>
         </ng-template>
         <ng-template igxListItemRightPanning>
             <div class="listItemRightPanningStyle"><igx-icon name="call" [color]="white" style="margin-right:10px"></igx-icon>Dial</div>
@@ -23,3 +28,5 @@
     </igx-list>
     <igx-toast #toast></igx-toast>
 </div>
+
+<button (click)="repopulateHandler()" style="margin-top:20px">Repopulate IgxList</button>
