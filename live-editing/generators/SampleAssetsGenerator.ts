@@ -10,6 +10,7 @@ import { CarouselConfigGenerator } from "./../configs/CarouselConfigGenerator";
 import { CategoryChartConfigGenerator } from "./../configs/CategoryChartConfigGenerator";
 import { CheckboxConfigGenerator } from "./../configs/CheckboxConfigGenerator";
 import { ChipConfigGenerator } from "./../configs/ChipConfigGenerator";
+import { DragAndDropConfigGenerator} from "./../configs/DragAndDropConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "./../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "./../configs/DatePickerConfigGenerator";
@@ -77,7 +78,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator, DropDownConfigGenerator,
     ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
-    GaugesConfigGenerator,
+    GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
