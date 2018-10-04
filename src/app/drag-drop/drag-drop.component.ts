@@ -10,8 +10,8 @@ import { IgxDialogComponent } from "igniteui-angular";
 export class DragAndDropSampleComponent implements OnInit {
     public tiles = [];
     public puzzleBoard;
-    public boardEdgeLength: number;
-    public successfullMessage: string;
+    public readonly boardEdgeLength: number = 3;
+    public readonly successfullMessage: string = "You have successfully solved the puzzle.";
 
     @ViewChild("alert")
     public dialog: IgxDialogComponent;
@@ -47,11 +47,9 @@ export class DragAndDropSampleComponent implements OnInit {
     ];
 
     constructor() {
-        this.boardEdgeLength = 3;
     }
 
     public ngOnInit() {
-        this.successfullMessage = "You have successfully solved the puzzle.";
         this.puzzleBoard = [];
         this.shuffleArray();
     }
