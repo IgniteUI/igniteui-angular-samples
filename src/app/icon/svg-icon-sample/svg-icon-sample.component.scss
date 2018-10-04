@@ -1,0 +1,11 @@
+.icons-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+.icon-sample {
+    display: flex;
+    flex: 1 0 10%;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+}
