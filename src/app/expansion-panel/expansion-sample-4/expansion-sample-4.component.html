@@ -8,7 +8,7 @@
                 <igx-expansion-panel-description>{{ getWinningPlayer }}</igx-expansion-panel-description>
                 <button igxButton class='igx-button--flat' (click)="resetScore($event)">Reset score</button>
                 <igx-expansion-panel-icon *ngIf="templatedIcon">
-                    <!-- <igx-icon fontSet="material" [name]="collapsed() ? 'arrow_drop_down':'arrow_drop_up'"></igx-icon> -->
+                    <!-- <igx-icon fontSet="material">{{collapsed() ? 'arrow_drop_down':'arrow_drop_up'}}</igx-icon> -->
                     {{collapsed() ? 'Expand':'Collapse'}}
                 </igx-expansion-panel-icon>
             </igx-expansion-panel-header>
