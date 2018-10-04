@@ -5,9 +5,15 @@
 }
 
 .puzzle_part {
+    border: 1px #616161 solid;
+}
+
+.outside_container .puzzle_part {
     -moz-user-select: none;
     width: 100px;
     height: 100px;
+    border-top: none;
+    border-left: none;
     border-right: 1px solid #616161;
     border-bottom: 1px solid #616161;
 }
@@ -25,6 +31,6 @@
 .inside_container {
     width: 100px;
     height: 100px;
-    background-color: #F22F6F;
+    background-color: white;
     border: 1px #616161 solid;
 }
