@@ -54,7 +54,7 @@ export class DragAndDropSampleComponent implements OnInit {
         this.shuffleArray();
     }
 
-    public onPieceDropped(ev) {
+    public onTileDropped(ev) {
         const dropIdString = ev.owner.element.nativeElement.id;
         const dragIdString = ev.drag.element.nativeElement.id;
         const dropId = dropIdString.match(/\d+/g).map(Number)[0];
@@ -125,5 +125,18 @@ export class DragAndDropSampleComponent implements OnInit {
                 this.puzzleBoard[i].push(this.tilesArr[i * this.boardEdgeLength + j].id);
             }
         }
+    }
+
+    private getBorderClasses(row, coll) {
+        let classes = "";
+        if (+row === 0 || +row === this.boardEdgeLength - 1) {
+            classes += "top_bottom_edge ";
+        }
+
+        if (+coll === 0 || +coll === this.boardEdgeLength - 1) {
+            classes += "left_right_edge";
+        }
+
+        return classes;
     }
 }

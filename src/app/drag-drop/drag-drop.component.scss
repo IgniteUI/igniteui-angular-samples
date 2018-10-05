@@ -4,18 +4,15 @@
     height: 100px;
 }
 
-.puzzle_part {
+.drag_ghost_class {
     border: 1px #616161 solid;
 }
 
-.outside_container .puzzle_part {
+.puzzle_part {
     -moz-user-select: none;
-    width: 100px;
-    height: 100px;
-    border-top: none;
-    border-left: none;
-    border-right: 1px solid #616161;
-    border-bottom: 1px solid #616161;
+    width: 99px;
+    height: 99px;
+    padding: 1px;
 }
 
 .puzzle_board_wrapper {
@@ -31,6 +28,14 @@
 .inside_container {
     width: 100px;
     height: 100px;
-    background-color: white;
-    border: 1px #616161 solid;
+}
+
+.left_right_edge {
+    border-left: 1px #616161 solid;
+    border-right: 1px #616161 solid;
+}
+
+.top_bottom_edge {
+    border-top: 1px #616161 solid;
+    border-bottom: 1px #616161 solid;
 }

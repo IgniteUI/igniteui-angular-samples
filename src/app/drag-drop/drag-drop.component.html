@@ -1,15 +1,11 @@
 <div class="puzzle_board_wrapper">
     <div class="outside_container" *ngFor="let row of tiles; let i = index">
-        <div [id]="'drop_' + ((i * boardEdgeLength) + j)" igxDrop (onDrop)="onPieceDropped($event)" class="inside_container" *ngFor="let piece of row; let j = index">
-            <div igxDrag id="drag_{{piece.id}}" class="puzzle_part_container"
-                [hideBaseOnDrag]="true">
-                <img class="puzzle_part" width="100px" height="100px" [src]="piece.url" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()"/>
+        <div [id]="'drop_' + ((i * boardEdgeLength) + j)" igxDrop (onDrop)="onTileDropped($event)" class="inside_container {{getBorderClasses(i, j)}}" *ngFor="let piece of row; let j = index">
+            <div igxDrag id="drag_{{piece.id}}" class="puzzle_part_container" [hideBaseOnDrag]="true" [ghostImageClass]="'drag_ghost_class'">
+                <img class="puzzle_part" width="100px" height="100px" [src]="piece.url" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()" />
             </div>
         </div>
     </div>
-    <igx-dialog #alert title="Congratulations!"
-        message="{{successfullMessage}}"
-        leftButtonLabel="OK"
-        (onLeftButtonSelect)="alert.close()">
+    <igx-dialog #alert title="Congratulations!" message="{{successfullMessage}}" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
     </igx-dialog>
 </div>
