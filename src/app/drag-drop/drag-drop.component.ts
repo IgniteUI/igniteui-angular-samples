@@ -129,11 +129,11 @@ export class DragAndDropSampleComponent implements OnInit {
 
     private getBorderClasses(row, coll) {
         let classes = "";
-        if (+row === 0 || +row === this.boardEdgeLength - 1) {
+        if (row === 0 || row === this.boardEdgeLength - 1) {
             classes += "top_bottom_edge ";
         }
 
-        if (+coll === 0 || +coll === this.boardEdgeLength - 1) {
+        if (coll === 0 || coll === this.boardEdgeLength - 1) {
             classes += "left_right_edge";
         }
 
