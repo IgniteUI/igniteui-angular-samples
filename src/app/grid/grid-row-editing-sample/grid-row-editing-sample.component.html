@@ -1,0 +1,39 @@
+<div class="sample-wrapper">
+    <h4>Grid with row-editing and transactions</h4>
+    <app-grid-with-transactions>
+        <igx-grid #gridRowEditTransaction [data]="data" [primaryKey]="'ProductID'" width="100%" height="500px"
+            [rowEditable]="true">
+            <igx-column>
+                <ng-template igxCell let-cell="cell" let-val>
+                    <button igxButton (click)="deleteRow($event, 'gridRowEditTransaction', cell.cellID.rowID)">Delete</button>
+                </ng-template>
+            </igx-column>
+            <igx-column field="ProductID" header="Product ID"></igx-column>
+            <igx-column field="ReorderLevel" header="ReorderLever" [dataType]="'number'" editable="true"></igx-column>
+            <igx-column field="ProductName" header="ProductName" [dataType]="'string'" editable="true"></igx-column>
+            <igx-column field="UnitsInStock" header="UnitsInStock" [dataType]="'number'">
+                <ng-template igxCellEditor let-cell="cell">
+                    <input name="units" [(ngModel)]="cell.value" style="color: black" />
+                </ng-template>
+            </igx-column>
+            <igx-column field="OrderDate" [dataType]="'date'"></igx-column>
+            <igx-column field="Discontinued2" header="Discontinued2" [dataType]="'boolean'"></igx-column>
+            <igx-column field="ReorderLevel2" header="ReorderLever2" [dataType]="'number'" editable=" true"></igx-column>
+            <igx-column field="UnitPrice" header="UnitPrice" [dataType]="'number'" editable="true"></igx-column>
+            <igx-column field="UnitPrice2" header="UnitPrice2" [dataType]="'number'" editable=" true"></igx-column>
+            <igx-column field="UnitsInStock2" header="UnitsInStock2" [dataType]="'number'" editable="true">
+                <ng-template igxCellEditor let-cell="cell">
+                    <input name="units" [(ngModel)]="cell.value" style="color: black" />
+                </ng-template>
+            </igx-column>
+            <igx-column field="OrderDate2" [dataType]="'date'" editable="true"></igx-column>
+            <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" editable="true"></igx-column>
+        </igx-grid>
+    </app-grid-with-transactions>
+    <div class="button-wrapper">
+        <button igxButton (click)="addRow('gridRowEditTransaction')">Add Row</button>
+        <button igxButton (click)="undo('gridRowEditTransaction')">Undo</button>
+        <button igxButton (click)="redo('gridRowEditTransaction')">Redo</button>
+        <button igxButton (click)="openCommitDialog('gridRowEditTransaction')">Commit</button>
+    </div>
+</div>

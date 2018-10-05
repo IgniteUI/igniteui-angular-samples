@@ -181,6 +181,7 @@ import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.co
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
+import { GridRowEditSampleComponent } from "./grid/grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
@@ -655,6 +656,11 @@ export const samplesRoutes: Routes = [
         component: GridEditingSampleComponent,
         data: { displayName: "Grid Editing", parentName: "Grid" },
         path: "grid-editing"
+    },
+    {
+        component: GridRowEditSampleComponent,
+        data: { displayName: "Grid Row Editing", parentName: "Grid" },
+        path: "grid-row-editing"
     },
     {
         component: GridDisplayDensitySampleComponent,

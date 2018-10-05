@@ -148,6 +148,8 @@ import { PasteHandler } from "./grid/grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
+import { GridRowEditSampleComponent } from "./grid/grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridWithTransactionsComponent } from "./grid/grid-row-editing-sample/grid-with-transactions.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
@@ -454,7 +456,9 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         TooltipSimpleComponent,
         TooltipRichComponent,
         ListChatSampleComponent,
-        GridConditionalCellStyleComponent
+        GridConditionalCellStyleComponent,
+        GridWithTransactionsComponent,
+        GridRowEditSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
