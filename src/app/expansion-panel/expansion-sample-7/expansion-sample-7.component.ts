@@ -1,7 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxExpansionPanelComponent } from "igniteui-angular";
 import { data as weatherData } from "./weather-data";
-debugger;
 @Component({
     // tslint:disable-next-line:component-selector
     selector: "app-expansion-sample-7",
