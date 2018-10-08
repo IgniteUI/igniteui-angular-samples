@@ -52,6 +52,12 @@ export class FinJSDemoComponent implements OnInit {
     public controls = [
         new Button({
             disabled: false,
+            icon: "update",
+            label: "LIVE PRICES",
+            selected: false
+        }),
+        new Button({
+            disabled: false,
             icon: "play_arrow",
             label: "LIVE ALL DATA",
             selected: false
@@ -60,12 +66,6 @@ export class FinJSDemoComponent implements OnInit {
             disabled: false,
             icon: "update",
             label: "LIVE ALL PRICES",
-            selected: false
-        }),
-        new Button({
-            disabled: false,
-            icon: "update",
-            label: "LIVE PRICES",
             selected: false
         }),
         new Button({
@@ -103,7 +103,7 @@ export class FinJSDemoComponent implements OnInit {
             case 0:
                 {
                     this.disableOtherButtons(event.index, true);
-                    this.subscription = this.localService.allDataFeed(this.volume);
+                    this._timer = setInterval(() => this.updateRandomData(), 10);
                     break;
                 }
             case 1:
@@ -116,7 +116,7 @@ export class FinJSDemoComponent implements OnInit {
             case 2:
                 {
                     this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.updateRandomData(), 10);
+                    this.subscription = this.localService.allDataFeed(this.volume);
                     break;
                 }
                 case 3:
