@@ -197,6 +197,7 @@ import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/mul
 import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
@@ -965,6 +966,11 @@ export const samplesRoutes: Routes = [
     {
         component: IconSample2Component,
         path: "icon-sample2"
+    },
+    {
+        component: SvgIconSampleComponent,
+        data: { displayName: "SVG Icons", parentName: "Icon" },
+        path: "svg-icon-sample"
     },
     {
         component: ButtonsSample1Component,
