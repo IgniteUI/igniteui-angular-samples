@@ -1,0 +1,98 @@
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fontawesome.css");
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
+@import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
+
+:host::ng-deep {
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding-bottom: 10px;
+    }
+    
+    $primary-color-green: green;
+    $primary-color-red: red;
+    $margin-right-images: 25px;
+    $images-font-size: 2.5em;
+    $images-font-weight: bold;
+
+    @keyframes fadeInOut {
+        0% { opacity: 0 }
+        50% { opacity: 1 }
+        100% { opacity: 0}
+    }
+
+    .grid__wrapper {
+        margin: 0 16px;
+    }
+    
+    .finjs {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .finjs igx-icon {
+        font-size: 16px;
+        height: 16px;
+    }
+
+    .grid__wrapper {
+      padding: 5px 1px;
+    }
+
+    .container {
+        width: 100%;
+    }
+    
+    .pin-icon {
+        margin-left: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        align-items: center;
+        color: #999;
+    
+        &:hover {
+            color: #444
+        }
+    }
+    
+    .igx-grid__th--pinned  {
+        .pin-icon {
+            color: #444;
+    
+            &:hover {
+                color: #999
+            }
+        }
+    }
+    
+    .positive{
+        color: $primary-color-green;
+    }
+    
+    .negative {
+        color: $primary-color-red;
+    }
+
+    .changePos{
+        background-color: rgb(216, 255, 216);
+        color: black;
+    }
+    
+    .changeNeg {
+        background-color: rgb(255, 226, 226);
+        color:black;
+    }
+
+    .strongPositive {
+        background-color: rgb(144, 255, 144);
+        color: black;
+    }
+
+    .strongNegative {
+        background-color: rgb(255, 182, 182);
+        color: black;
+    }
+}
