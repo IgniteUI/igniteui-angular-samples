@@ -165,6 +165,7 @@ import { DataService } from "./grid/services/data.service";
 import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
@@ -355,6 +356,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         RadioSample2Component,
         IconSample1Component,
         IconSample2Component,
+        SvgIconSampleComponent,
         ToggleComponent,
         MyDynamicCardComponent,
         OverlaySampleMain1Component,
@@ -454,7 +456,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         TooltipSimpleComponent,
         TooltipRichComponent,
         ListChatSampleComponent,
-        GridConditionalCellStyleComponent
+        GridConditionalCellStyleComponent,
+        SvgIconSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
