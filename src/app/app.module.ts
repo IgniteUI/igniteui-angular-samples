@@ -45,7 +45,8 @@ import {
     IgxTextHighlightModule,
     IgxTimePickerModule,
     IgxToastModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxTooltipModule
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -165,6 +166,7 @@ import { DataService } from "./grid/services/data.service";
 import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
@@ -183,6 +185,7 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
+import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
@@ -254,6 +257,8 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
+import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -353,6 +358,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioSample2Component,
         IconSample1Component,
         IconSample2Component,
+        SvgIconSampleComponent,
         ToggleComponent,
         MyDynamicCardComponent,
         OverlaySampleMain1Component,
@@ -449,7 +455,11 @@ import { ToggleComponent } from "./toggle/toggle.component";
         ThemeChooserSampleComponent,
         DefaultThemeSampleComponent,
         DarkThemeSampleComponent,
-        GridConditionalCellStyleComponent
+        TooltipSimpleComponent,
+        TooltipRichComponent,
+        ListChatSampleComponent,
+        GridConditionalCellStyleComponent,
+        SvgIconSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -503,7 +513,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         FinancialChartSamplesModule.forRoot(),
         GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
-        IgxTextHighlightModule
+        IgxTextHighlightModule,
+        IgxTooltipModule
     ],
     providers: [
         DataService,
