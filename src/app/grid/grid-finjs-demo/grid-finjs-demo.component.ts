@@ -162,7 +162,7 @@ export class FinJSDemoComponent implements OnInit {
     }
 
     public percentage(value: number) {
-        return value.toFixed(2) + '%';
+        return value.toFixed(2) + "%";
     }
 
     public formatCurrency(value: number) {
@@ -213,7 +213,7 @@ export class FinJSDemoComponent implements OnInit {
     // tslint:disable-next-line:member-ordering
     public trends = {
         negative: this.negative,
-        positive: this.positive,
+        positive: this.positive
     };
     // tslint:disable-next-line:member-ordering
     public trendsChange = {
