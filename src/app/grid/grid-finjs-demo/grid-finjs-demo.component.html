@@ -14,8 +14,8 @@
     <igx-buttongroup #buttonGroup1 [multiSelection]="false" [values]="controls" (onSelect)="onButtonAction($event)">
     </igx-buttongroup>
 
-    <igx-grid #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false' displayDensity='compact' [showToolbar]="true" [columnHiding]="true" [columnPinning]="true"
-        toolbarTitle="Employees" columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" 
+    <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="100%" [autoGenerate]='false' displayDensity='compact' [showToolbar]="true" [columnHiding]="true" [columnPinning]="true"
+        toolbarTitle="Tokyo Commodity Exchange" columnHidingTitle="Indicators" hiddenColumnsText="Hidden" 
         primaryKey='ID' (onGroupingDone)="groupingDone($event)" [rowSelectable]="selection">
     <igx-column [field]="'ID'" [hidden]='true'></igx-column>
     <igx-column [field]="'Category'" [width]="'140px'" [filterable]='true' [groupable]='true'></igx-column>
