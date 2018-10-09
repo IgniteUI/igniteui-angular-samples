@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit, ViewChild } from "@angular/core";
 import { IgxButtonGroupComponent, IgxColumnComponent, IgxGridComponent,
     IgxSliderComponent, SortingDirection } from "igniteui-angular";
 import { Observable } from "rxjs";
-import { LocalService } from "../services/localData.service";
+import { LocalDataService } from "../services/localData.service";
 
 interface IButton {
     ripple ?: string;
@@ -34,7 +34,7 @@ class Button {
 }
 
 @Component({
-    providers: [LocalService],
+    providers: [LocalDataService],
     selector: "app-grid-component",
     styleUrls: ["./grid-finjs-demo.component.scss"],
     templateUrl: "./grid-finjs-demo.component.html"
@@ -81,7 +81,7 @@ export class FinJSDemoComponent implements OnInit {
     private selectedButton;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: LocalService) {
+    constructor(private zone: NgZone, private localService: LocalDataService) {
         this.localService.getData(this.volume);
         this.data = this.localService.records;
     }

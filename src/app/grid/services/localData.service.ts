@@ -7,7 +7,7 @@ interface IServiceResponse {
 }
 
 @Injectable()
-export class LocalService {
+export class LocalDataService {
     public records: Observable<any[]>;
     public _records: BehaviorSubject<any[]>;
     public updatedRecordsLastSecond: Observable<number[]>;
