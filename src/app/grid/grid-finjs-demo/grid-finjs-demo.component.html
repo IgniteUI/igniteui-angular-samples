@@ -2,12 +2,15 @@
     <div class="container">
         <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="20000" [(ngModel)]="volume" [step]="step" (onValueChange)="onVolumeChanged($event)"
         thumbLabelVisibilityDuration="250" [isContinuous]="false"></igx-slider>
+        <igx-slider #slider2 id="slider" [minValue]="10" [maxValue]="1000" [step]="10" [(ngModel)]="frequency" (onValueChange)="onFrequencyChanged($event)"
+        thumbLabelVisibilityDuration="250" [isContinuous]="false"></igx-slider>
     </div>
     <div class="wrapper">
         <label for="slider">Records: {{volume}}</label>
-        <span *ngIf="buttonSelected === 2">Feeding {{volume}} new records, ({{volume}} rows and {{this.grid1.columnList.length}} columns) every 100 milliseconds.</span>
-        <span *ngIf="buttonSelected === 1">Feeding {{volume}} updated records ({{volume}} rows and 3 columns) every 100 milliseconds.</span>
-        <span *ngIf="buttonSelected === 0">Feeding {{recordsUpdatedLastSecond}} updated records every 10 milliseconds.</span>
+        <label for="slider">Frequency: {{frequency}} ms</label>
+        <span *ngIf="buttonSelected === 2">Feeding {{volume}} new records, ({{volume}} rows and {{this.grid1.columnList.length}} columns) every {{frequency / 1000}} sec.</span>
+        <span *ngIf="buttonSelected === 1">Feeding {{volume}} updated records ({{volume}} rows and 3 columns) every {{frequency / 1000}} sec.</span>
+        <span *ngIf="buttonSelected === 0">Feeding {{recordsUpdatedLastSecond}} updated records every {{frequency / 1000}} sec.</span>
         <igx-switch [checked]="grouped" (change)="onChange($event)">Grouped</igx-switch>
     </div>
 

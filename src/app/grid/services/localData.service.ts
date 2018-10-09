@@ -25,16 +25,16 @@ export class LocalDataService {
         this._records.next(financialData.generateData(count));
     }
 
-    public allDataFeed(count: number = 10) {
+    public allDataFeed(count: number = 10, frequency: number) {
         const financialData: FinancialData = new FinancialData();
-        return interval(100).subscribe(() => {
+        return interval(frequency).subscribe(() => {
             return this._records.next(financialData.generateData(count));
         });
     }
 
-    public allPrices(data: any[]) {
+    public allPrices(data: any[], frequency: number) {
         const financialData: FinancialData = new FinancialData();
-        return interval(100).subscribe(() => {
+        return interval(frequency).subscribe(() => {
             return this._records.next(financialData.updateAllPrices(data));
         });
     }
