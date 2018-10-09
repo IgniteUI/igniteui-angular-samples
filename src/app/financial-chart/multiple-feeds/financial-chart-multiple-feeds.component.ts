@@ -8,6 +8,7 @@ import {
     ViewChild
 } from "@angular/core";
 import { IgxFinancialChartComponent } from "igniteui-angular-charts/ES5/igx-financial-chart-component";
+import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,13 +16,22 @@ import { IgxFinancialChartComponent } from "igniteui-angular-charts/ES5/igx-fina
     styleUrls: ["./financial-chart-multiple-feeds.component.scss"],
     templateUrl: "./financial-chart-multiple-feeds.component.html"
 })
+
 export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDestroy {
 
     @ViewChild("chart")
     public chart: IgxFinancialChartComponent;
+    @ViewChild("legend")
+    public legend: IgxLegendComponent;
+    @ViewChild("legend")
+    public feedToggleButton: IgxLegendComponent;
 
     @ViewChild("fpsSpan")
     public fpsSpan: ElementRef;
+    @ViewChild("feedStatus")
+    public feedStatus: ElementRef;
+    @ViewChild("legendBadgeTemplate")
+    public legendBadgeTemplate: ElementRef;
 
     public dataFeeds: any[];
     private currIndex: number = 0;
@@ -40,8 +50,8 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         const startYear = new Date().getFullYear() - 4;
         this.startDate = new Date(startYear, 1, 1, 16, 30, 0);
         this.dataFeeds = [
-            this.GenerateData(this.startDate, 150, "Mircosoft (MSFT)"),
-            this.GenerateData(this.startDate, 200, "Apple (AAPL)"),
+            this.GenerateData(this.startDate, 150, "Microsoft (MSFT)"),
+            this.GenerateData(this.startDate, 200, "Facebook (FB)"),
             this.GenerateData(this.startDate, 400, "Tesla (TSLA)"),
             this.GenerateData(this.startDate, 350, "Netflix (NFLX)"),
             this.GenerateData(this.startDate, 250, "Nvidia (NVDA)")
@@ -54,20 +64,12 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
 
     public GenerateItem(date: Date, price: number): any {
         const t = date;
-        let o = price;
-        let h = o + (Math.random() * 5);
-        let l = o - (Math.random() * 5);
-        let c = l + (Math.random() * (h - l));
-        let v = price + (Math.random() * 10000);
+        const o = price;
+        const h = o + (Math.random() * 5);
+        const l = o - (Math.random() * 5);
+        const c = l + (Math.random() * (h - l));
 
-        // round up all OHLC values to 1 decimal point
-        o = Math.round(o * 10) / 10;
-        h = Math.round(h * 10) / 10;
-        l = Math.round(l * 10) / 10;
-        c = Math.round(c * 10) / 10;
-        c = Math.round(c * 10) / 10;
-        v = Math.round(v);
-        return { date: t, open: o, high: h, low: l, close: c, volume: v};
+        return { date: t, open: o, high: h, low: l, close: c};
     }
 
     public GenerateData(startDate: Date, startPrice: number, stockName: string): any[] {
@@ -106,7 +108,6 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
         if (!this.feedUpdating) {
             return;
         }
-
         // appending new data items to each data feed
         for (const data of this.dataFeeds) {
             this.AppendDataItemTo(data);
@@ -129,17 +130,19 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
                 window.clearInterval(this.feedInterval);
             });
             this.feedInterval = -1;
+            this.feedStatus.nativeElement.textContent = "Turn On Live Data";
         }
     }
 
     public StartDataFeed(): void {
         this._zone.runOutsideAngular(() => {
+            this.feedStatus.nativeElement.textContent = "Turn Off Live Data";
             this.feedInterval = window.setInterval(() => this.OnDataFeedTick(),
             this.refreshInterval);
         });
     }
 
-    public onDataFeedToggleClicked(): void {
+    public onFeedToggleClicked(): void {
         if (this.feedUpdating) {
             this.StopDataFeed();
         } else {
@@ -161,5 +164,18 @@ export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDe
     public setupInterval(): void {
         this.StopDataFeed();
         this.StartDataFeed();
+    }
+
+    public onSeriesAdded(e: any): void {
+        const seriesName: string = e.args.series.name.toString();
+
+        // hide legend item for series in the zoom slider
+        if (seriesName.startsWith("zoomSliderSeries")) {
+            e.args.series.title = "";
+            e.args.series.legendItemVisibility = 1;
+            e.args.series.legendItemBadgeTemplate = null;
+            e.args.series.legendItemTemplate = null;
+            e.args.series.legend = null;
+        }
     }
 }

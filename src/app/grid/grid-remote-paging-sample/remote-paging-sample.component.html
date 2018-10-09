@@ -1,6 +1,5 @@
-<div class="grid__wrapper">
-    
-    <igx-grid [data]="data | async" width="95%" height="500px" [paging]="true">
+<p class="grid__wrapper">
+    <igx-grid #grid1 [data]="data | async" width="960px" height="550px" [paging]="true" [perPage]="perPage">
         <igx-column field="ID"></igx-column>
         <igx-column field="ProductName"></igx-column>
         <igx-column field="QuantityPerUnit"></igx-column>
@@ -8,5 +7,24 @@
         <igx-column field="UnitsInStock"></igx-column>
         <igx-column field="Rating"></igx-column>
     </igx-grid>
-
-</div>
+    <ng-template #customPager let-api>
+        <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple igxRippleCentered="true">
+            <igx-icon fontSet="material">first_page</igx-icon>
+        </button>
+        <button [disabled]="firstPage" (click)="previousPage()" igxButton="icon" igxRipple igxRippleCentered="true">
+            <igx-icon fontSet="material">chevron_left</igx-icon>
+        </button>
+        <span>{{ page + 1 }} of {{totalPages}}</span>
+        <button [disabled]="lastPage" (click)="nextPage()" igxRipple igxRippleCentered="true" igxButton="icon">
+            <igx-icon fontSet="material">chevron_right</igx-icon>
+        </button>
+        <button [disabled]="lastPage" (click)="paginate(totalPages - 1, false)" igxButton="icon" igxRipple
+            igxRippleCentered="true">
+            <igx-icon fontSet="material">last_page</igx-icon>
+        </button>
+        <select style="margin-left: 1rem;" (change)="perPage = parseToInt($event.target.value);">
+            <option [value]="val" [selected]="perPage == val" *ngFor="let val of [5, 10, 15, 25, 50, 100, 500]">{{ val
+                }}</option>
+        </select>
+    </ng-template>
+</p>

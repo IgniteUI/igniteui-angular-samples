@@ -1,4 +1,3 @@
-
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
@@ -20,8 +19,10 @@ import {
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
     IgxDropDownModule,
     IgxExcelExporterService,
+    IgxExpansionPanelModule,
     IgxFilterModule,
     IgxForOfModule,
     IgxGridModule,
@@ -44,7 +45,8 @@ import {
     IgxTextHighlightModule,
     IgxTimePickerModule,
     IgxToastModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxTooltipModule
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -71,6 +73,8 @@ import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-
 import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
 import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
 import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
+import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
+import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
@@ -96,13 +100,21 @@ import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/dat
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
 import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
+import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
+import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
+import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
+import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
+import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
+import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -120,6 +132,9 @@ import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sampl
 import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {
+    GridConditionalCellStyleComponent
+} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import {
     GridDisplayDensitySampleComponent
@@ -151,6 +166,7 @@ import { DataService } from "./grid/services/data.service";
 import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
@@ -169,6 +185,7 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
+import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
@@ -223,10 +240,14 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
+import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
+import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
+import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -236,6 +257,8 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
+import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -274,6 +297,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         CalendarSample3Component,
         CalendarSample4Component,
         CalendarSample5Component,
+        CalendarSample6Component,
+        CalendarSample7Component,
         CalendarComponent,
         CascadingCombos,
         ComboFeatures,
@@ -287,6 +312,12 @@ import { ToggleComponent } from "./toggle/toggle.component";
         DropDownSample1Component,
         DropDownSample2Component,
         DropDownSample3Component,
+        ExpansionPanelSample1Component,
+        ExpansionPanelSample2Component,
+        ExpansionPanelSample3Component,
+        ExpansionPanelSample4Component,
+        ExpansionPanelSample5Component,
+        ExpansionPanelSample6Component,
         LayoutComponent,
         NavdrawerComponent,
         NavDrawerMiniComponent,
@@ -326,6 +357,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         RadioSample2Component,
         IconSample1Component,
         IconSample2Component,
+        SvgIconSampleComponent,
         ToggleComponent,
         MyDynamicCardComponent,
         OverlaySampleMain1Component,
@@ -360,6 +392,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         DatepickerSample3Component,
         DatepickerSample4Component,
         DatepickerSample5Component,
+        DatepickerSample6Component,
         SnackbarSample1Component,
         SnackbarSample2Component,
         SnackbarSample3Component,
@@ -379,6 +412,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
         TimePickerSample2Component,
         TimePickerSample3Component,
         TimePickerSample4Component,
+        TimePickerSample5Component,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,
@@ -416,7 +450,16 @@ import { ToggleComponent } from "./toggle/toggle.component";
         DocsLayoutComponent,
         IndexComponent,
         TextHighlightSample1Component,
-        TextHighlightSample2Component
+        TextHighlightSample2Component,
+        ThemeChooserSampleComponent,
+        DefaultThemeSampleComponent,
+        DarkThemeSampleComponent,
+        DragAndDropSampleComponent,
+        TooltipSimpleComponent,
+        TooltipRichComponent,
+        ListChatSampleComponent,
+        GridConditionalCellStyleComponent,
+        SvgIconSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -446,9 +489,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
         IgxRippleModule,
         IgxIconModule,
         IgxDialogModule,
-        IgxDropDownModule,
         IgxDatePickerModule,
-        IgxDropDownModule,
+        IgxExpansionPanelModule,
         IgxCalendarModule,
         IgxSnackbarModule,
         IgxCardModule,
@@ -471,7 +513,9 @@ import { ToggleComponent } from "./toggle/toggle.component";
         FinancialChartSamplesModule.forRoot(),
         GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
-        IgxTextHighlightModule
+        IgxTextHighlightModule,
+        IgxDragDropModule,
+        IgxTooltipModule
     ],
     providers: [
         DataService,

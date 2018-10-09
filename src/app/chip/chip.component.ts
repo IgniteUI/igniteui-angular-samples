@@ -1,4 +1,4 @@
-import { Component, ElementRef, Pipe, PipeTransform, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import {
     ConnectedPositioningStrategy,
     IgxChipsAreaComponent,
@@ -129,6 +129,8 @@ export class ChipSampleComponent {
     @ViewChild("inputGroup", {read: IgxInputGroupComponent})
     public inputGroup: IgxInputGroupComponent;
 
+    constructor(public cdr: ChangeDetectorRef) { }
+
     public chipsOrderChanged(event) {
         const newChipList = [];
         for (const chip of event.chipsArray) {
@@ -139,6 +141,7 @@ export class ChipSampleComponent {
         }
         this.chipList = newChipList;
         event.isValid = true;
+        this.cdr.detectChanges();
     }
 
     public chipRemoved(event) {
@@ -164,7 +167,6 @@ export class ChipSampleComponent {
                     target: this.inputBox.nativeElement
                 })
             });
-            this.igxDropDown.allowItemsFocus = false;
             this.inputBox.focus();
         }
     }
@@ -264,6 +266,7 @@ export class ChipSampleComponent {
         }
         this.tagList = newTagList;
         event.isValid = true;
+        this.cdr.detectChanges();
     }
 
     public selectChipCc(chipId) {

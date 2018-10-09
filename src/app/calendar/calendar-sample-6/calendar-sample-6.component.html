@@ -1,0 +1,13 @@
+<div class="sample-wrapper">
+    <div class="sample-content">
+        <!-- Disabled dates -->
+        <article class="sample-column calendar-wrapper">
+            <span>Disabled dates range from <b>{{ range[0] | date }}</b> to <b>{{ range[1] | date }}</b>
+            </span>
+            <igx-calendar #calendar
+                weekstart="1"
+                [selection]="'multi'">
+            </igx-calendar>
+        </article>
+    </div>
+</div>
