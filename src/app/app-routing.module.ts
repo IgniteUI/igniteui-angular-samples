@@ -801,12 +801,10 @@ export const samplesRoutes: Routes = [
     },
     {
         component: TabsSample4Component,
-        data: { displayName: "TabsRouting1", parentName: "Tabs" },
         path: "tabs-sample-4"
     },
     {
         component: TabsSample5Component,
-        data: { displayName: "TabsRouting2", parentName: "Tabs" },
         path: "tabs-sample-5"
     },
     {
