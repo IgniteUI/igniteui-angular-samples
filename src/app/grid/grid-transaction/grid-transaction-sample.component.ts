@@ -60,6 +60,7 @@ export class GridTransactionSampleComponent {
     }
     public commit() {
         this.gridRowEditTransaction.transactions.commit(this.data);
+        this.refresh();
         this.toggle.close();
     }
 
@@ -73,7 +74,11 @@ export class GridTransactionSampleComponent {
         (grid as any).cdr.markForCheck();
     }
 
-    public stateFormatter(value) {
+    public stateFormatter(value: string) {
         return JSON.stringify(value);
+    }
+
+    public typeFormatter(value: string) {
+        return value.toUpperCase();
     }
 }
