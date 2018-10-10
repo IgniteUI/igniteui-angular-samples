@@ -39,7 +39,7 @@ $palette : $finjs-palette;
         $row-selected-text-color: igx-color($palette, 'grays', 900),
         $row-hover-background: rgb(33, 71, 33), /////////
         $row-hover-text-color: #fff, /////////
-        $row-border-color: $white-40,
+        $row-border-color: #333,
         $row-content-focus-background: rgba(106, 227, 104, .20),
 
         $cell-selected-background: igx-color($palette, 'primary', 500),
@@ -59,8 +59,7 @@ $palette : $finjs-palette;
         $drop-area-background: #333,
         $drop-area-on-drop-background: #ddd,
 
-        $pinned-border-color: red,
-        $ghost-header-background: rgba(0,0,0, .5),
+        $ghost-header-background: $white-60,
         $ghost-header-icon-color: red
     );
 
@@ -74,13 +73,13 @@ $palette : $finjs-palette;
         $chip-hover-background: #444,
         $dir-icon-color: $white-60,
         $order-icon-color:$white-60,
-        $selected-chip-background:#222,
-        $chip-focus-border-color: red,
-        $selected-chip-focus-border-color: red,
-        $selected-chip-hover-border-color: red,
-        $remove-icon-hover-color: $white-40,
-        $order-icon-hover-color: $white-60,
-        $remove-icon-color: rgba(255,255,255, .3)
+        $selected-chip-background:#000,
+        $chip-focus-border-color: igx-color($palette, 'secondary', 500),
+        $selected-chip-focus-border-color: igx-color($palette, 'secondary', 500),
+        $selected-chip-hover-border-color: $white-40,
+        $remove-icon-hover-color: igx-color($palette, 'secondary', 500),
+        $order-icon-hover-color: igx-color($palette, 'secondary', 500),
+        $remove-icon-color: $white-50
     );
 
     @include igx-chip($finjs-chip-theme);
@@ -162,9 +161,14 @@ $palette : $finjs-palette;
     .finjs-slider {
         flex: 1 0 0%;
         color: #fff;
-        margin: 0 20px;
-        span {
-            margin-left:16px;
+        padding: 0 20px;
+
+        &:first-of-type {
+            padding-left: 0;
+        }
+
+        &:first-of-type {
+            padding-right: 0;
         }
     }
 
