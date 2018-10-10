@@ -1,92 +1,67 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
 
-$finjs-palette: igx-palette(#09f, #6ae368);
+$finjs-palette: igx-palette(#09f, #72da67);
 $palette : $finjs-palette;
 @include igx-core();
 
-$exclude: (
-    // igx-avatar,
-    // igx-badge,
-     igx-button,
-     igx-button-group,
-    // igx-calendar,
-    // igx-card,
-    // igx-carousel,
-     igx-checkbox,
-    // igx-date-picker,
-    // igx-dialog,
-    // igx-grid,
-     igx-filtering,
-    // igx-icon,
-    // igx-form-group,
-     igx-input-group,
-    // igx-list,
-    // igx-navbar,
-    // igx-overlay,
-    // igx-nav-drawer,
-    // igx-paginator,
-    // progress-linear,
-    // progress-circular,
-    // igx-radio,
-    // igx-ripple,
-    // igx-slider,
-    // igx-snackbar,
-    // igx-switch,
-    // igx-bottom-nav,
-    // igx-toast
-     igx-drop-down
-);
-
 :host::ng-deep {
-    @include igx-theme($finjs-palette, $exclude);
+    @include igx-theme($finjs-palette);
 
     // VAR COLORS
 
-    $accent: #6ae368;
-    $dark-text: #444;
-    $light-text: #fff;
-    $item-border-color:#666;
-    $border-color:#444;
-    $header-border-color:#555;
+    $dark-text: #000;
+    $light-text: #000;
+    $disabled-text: rgba(255,255,255, .38);
 
-    $icons-color: #555;
-    $icons-accent-color: $accent;
-    $icons-hover: $accent;
-
-    $pinned-border-color: $accent;
-
-    $checkbox-empty-border-color: #666;
-    $checkbox-fill-color: $accent;
+     $white-10:rgba(255, 255, 255, .04);
+     $white-20:rgba(255, 255, 255, .08);
+     $white-30:rgba(255, 255, 255, .12);
+     $white-40:rgba(255, 255, 255, .26);
+     $white-50:rgba(255, 255, 255, .38);
+     $white-60:rgba(255, 255, 255, .54);
+     $white-70:rgba(255, 255, 255, .62);
+     $white-80:rgba(255, 255, 255, .74);
+     $white-90:rgba(255, 255, 255, .87);
 
 
     // GRID DARK THEME
 
     $finjs-grid-theme: igx-grid-theme(
-        $content-background : #333,
-        $header-background: #222,
-        $row-selected-background: rgba(106, 227, 104, .10),
-        $row-selected-text-color: #fff,
-        $row-hover-background: rgb(33, 71, 33),
-        $row-hover-text-color: #fff,
-        $row-border-color: #222,
-        $header-border-color: #333,
-        $cell-selected-background: rgba(106, 227, 104, .15),
+        $content-background: #000,
+        $content-text-color: #fff,
+
+        $header-background: igx-color($palette, 'grays', 800),
+        $header-text-color: $white-70,
+        $header-border-color: $white-40,
+        $row-indentation-background: #000,
+
+        $row-selected-background: $white-90,
+        $row-selected-text-color: igx-color($palette, 'grays', 900),
+        $row-hover-background: rgb(33, 71, 33), /////////
+        $row-hover-text-color: #fff, /////////
+        $row-border-color: $white-40,
         $row-content-focus-background: rgba(106, 227, 104, .20),
-        $cell-selected-text-color: #fff,
+
+        $cell-selected-background: igx-color($palette, 'primary', 500),
+        $cell-selected-text-color: igx-color($palette, 'grays', 900),
+
         $group-count-background: #333,
-        $expand-icon-color: $icons-color,
-        $expand-icon-hover-color: $icons-hover,
-        $expand-all-icon-color: $icons-color,
-        $expand-all-icon-hover-color: $icons-hover,
+        $group-label-icon: igx-color($palette, 'secondary', 500),
+        $group-label-column-name-text: igx-color($palette, 'secondary', 500),
+
+        $expand-icon-color: $white-60,
+        $expand-icon-hover-color: igx-color($palette, 'secondary', 500),
+        $expand-all-icon-color: $white-60,
+        $expand-all-icon-hover-color: igx-color($palette, 'secondary', 500),
+
         $drop-area-text-color: #fff,
         $drop-area-icon-color: #b4b4b4,
         $drop-area-background: #333,
         $drop-area-on-drop-background: #ddd,
-        $group-label-icon: igx-color($palette, 'secondary', 500),
-        $group-label-column-name-text: igx-color($palette, 'secondary', 500),
-        $pinned-border-color: $pinned-border-color,
+
+        $pinned-border-color: red,
         $ghost-header-background: rgba(0,0,0, .5),
-        $ghost-header-icon-color: $icons-color
+        $ghost-header-icon-color: red
     );
 
     @include igx-grid($finjs-grid-theme);
@@ -97,14 +72,14 @@ $exclude: (
     $finjs-chip-theme: igx-chip-theme(
         $chip-background: #333,
         $chip-hover-background: #444,
-        $dir-icon-color: $icons-color,
-        $order-icon-color:$icons-color,
+        $dir-icon-color: $white-60,
+        $order-icon-color:$white-60,
         $selected-chip-background:#222,
-        $chip-focus-border-color: $item-border-color,
-        $selected-chip-focus-border-color: $item-border-color,
-        $selected-chip-hover-border-color: $item-border-color,
-        $remove-icon-hover-color: $icons-hover,
-        $order-icon-hover-color: $icons-hover,
+        $chip-focus-border-color: red,
+        $selected-chip-focus-border-color: red,
+        $selected-chip-hover-border-color: red,
+        $remove-icon-hover-color: $white-40,
+        $order-icon-hover-color: $white-60,
         $remove-icon-color: rgba(255,255,255, .3)
     );
 
@@ -113,7 +88,7 @@ $exclude: (
 
     // CHECKBOX
     $finjs-checkbox-theme: igx-checkbox-theme(
-        $empty-color: $checkbox-empty-border-color,
+        $empty-color: $white-70,
         $tick-color: $dark-text
     );
 
@@ -150,13 +125,14 @@ $exclude: (
         $disabled-color: rgba(255,255,255, .38)
     );
 
-    @include igx-button($finjs-button-theme);
-
+    .finjs-flex-row {
+        @include igx-button($finjs-button-theme);
+    }
 
     // GRID FILTER
     $finjs-filtering-theme: igx-grid-filtering-theme(
-        $toggle-icon-color: $icons-color,
-        $menu-background: #222,
+        $toggle-icon-color: igx-color($palette, 'secondary', 500),
+        $menu-background: igx-color($palette, 'grays', 900),
         $menu-button-text-color: igx-color($palette, 'secondary', 500)
     );
 
@@ -192,6 +168,12 @@ $exclude: (
         }
     }
 
+    .igx-filtering__expression select {
+        background: #333;
+        color: $light-text;
+        border-color: #444;
+    }
+
     .finjssample-btn-group {
         margin: 15px 15px 15px 0;
         width: 610px;
@@ -216,6 +198,13 @@ $exclude: (
         display: flex;
         align-items: center;
         color: #fff;
+        flex: 1 0 0%;
+        justify-content: flex-end;
+        margin-left: 20px;
+        span {
+            flex: 1 0 0%;
+            align-self: flex-start;
+        }
     }
 
     .grid__wrapper {
@@ -253,28 +242,33 @@ $exclude: (
     }
     
     .positive{
-        color: #6ae368;
+        color: igx-color($palette, 'success', 500);
     }
     
     .negative {
-        color: #ff6c4e;
+        color: igx-color($palette, 'error', 500);
+    }
+
+    .changePos,
+    .changeNeg,
+    .strongPositive,
+    .strongNegative{
+        color: igx-color($palette, 'grays', 900);
     }
 
     .changePos{
-        background-color: rgba(106, 227, 104, 0.30)!important;
+        background-color: lighten(igx-color($palette, 'success', 500), 10%);
     }
     
     .changeNeg {
-        background-color: rgba(255, 108, 78, 0.30)!important;
+        background-color: lighten(igx-color($palette, 'error', 500), 10%);
     }
 
     .strongPositive {
-        background-color: #6ae368!important;
-        color: black!important;
+        background-color: igx-color($palette, 'success', 500);
     }
 
     .strongNegative {
-        background-color: #ff6c4e!important;
-        color: #fff!important;
+        background-color: igx-color($palette, 'error', 500);
     }
 }
