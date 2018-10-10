@@ -115,6 +115,7 @@ import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
+import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -318,6 +319,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         ExpansionPanelSample4Component,
         ExpansionPanelSample5Component,
         ExpansionPanelSample6Component,
+        ExpansionPanelSample7Component,
         LayoutComponent,
         NavdrawerComponent,
         NavDrawerMiniComponent,
