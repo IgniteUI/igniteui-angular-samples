@@ -34,6 +34,7 @@ $exclude: (
     // igx-switch,
     // igx-bottom-nav,
     // igx-toast
+     igx-drop-down
 );
 
 :host::ng-deep {
@@ -83,7 +84,9 @@ $exclude: (
         $drop-area-on-drop-background: #ddd,
         $group-label-icon: igx-color($palette, 'secondary', 500),
         $group-label-column-name-text: igx-color($palette, 'secondary', 500),
-        $pinned-border-color: $pinned-border-color
+        $pinned-border-color: $pinned-border-color,
+        $ghost-header-background: rgba(0,0,0, .5),
+        $ghost-header-icon-color: $icons-color
     );
 
     @include igx-grid($finjs-grid-theme);
@@ -160,24 +163,59 @@ $exclude: (
     @include igx-grid-filtering($finjs-filtering-theme);
 
 
+    // SLIDER
+    $finjs-slider-theme: igx-slider-theme(
+        $variant: 'light'
+    );
 
+    @include igx-slider($finjs-slider-theme);
+
+    // SWITCH
+    $finjs-switch-theme: igx-switch-theme(
+        $variant: 'light'
+    );
+
+    @include igx-switch($finjs-switch-theme);
+
+
+    .sliders-holder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .finjs-slider {
+        flex: 1 0 0%;
+        color: #fff;
+        margin: 0 20px;
+        span {
+            margin-left:16px;
+        }
+    }
 
     .finjssample-btn-group {
-        margin: 15px 0;
-        display: block;
+        margin: 15px 15px 15px 0;
+        width: 610px;
+        .igx-button-group {
+            display: block;
+        }
+    }
+
+    .finjs-flex-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .slider-wrapper {
         display: flex;
         align-items: center;
+        flex: 1 0 0%;
+    }
 
-        .slider-wrapper___slider {
-            flex: 1 0 0%;
-        }
-        .slider-wrapper___switch {
-            display: flex;
-            align-items: center;
-        }
+    .finjs-sample-switch {
+        display: flex;
+        align-items: center;
+        color: #fff;
     }
 
     .grid__wrapper {

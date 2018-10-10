@@ -822,6 +822,7 @@ export class FinancialData {
         for (let i = 0; i < count; i++) {
             const rand = Math.floor(Math.random() * Math.floor(DATA.length));
             const dataObj = Object.assign({}, DATA[rand]);
+            dataObj.ID = i;
             this.randomizeObjectData(dataObj);
             currData.push(dataObj);
         }

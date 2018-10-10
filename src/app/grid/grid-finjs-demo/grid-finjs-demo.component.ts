@@ -47,6 +47,7 @@ export class FinJSDemoComponent implements OnInit {
     public selection = true;
     public volume = 5000;
     public step = 100;
+    public frequency = 1000;
     public data: Observable < any[] > ;
     public recordsUpdatedLastSecond: number[] ;
     public controls = [
@@ -103,20 +104,20 @@ export class FinJSDemoComponent implements OnInit {
             case 0:
                 {
                     this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.updateRandomData(), 10);
+                    this._timer = setInterval(() => this.updateRandomData(), this.frequency);
                     break;
                 }
             case 1:
                 {
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
-                    this.subscription = this.localService.allPrices(currData);
+                    this.subscription = this.localService.allPrices(currData, this.frequency);
                     break;
                 }
             case 2:
                 {
                     this.disableOtherButtons(event.index, true);
-                    this.subscription = this.localService.allDataFeed(this.volume);
+                    this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
                     break;
                 }
                 case 3:
@@ -179,6 +180,37 @@ export class FinJSDemoComponent implements OnInit {
         this.localService.getData(this.volume);
     }
 
+    public onFrequencyChanged(event: any) {
+        switch (this.selectedButton) {
+            case 0:
+                {
+                    if (this._timer) {
+                        clearInterval(this._timer);
+                    }
+                    this._timer = setInterval(() => this.updateRandomData(), this.frequency);
+                    break;
+                }
+            case 1:
+                {
+                    this.subscription.unsubscribe();
+                    const currData = this.grid1.data;
+                    this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
+                    break;
+                }
+            case 2:
+                {
+                    this.subscription.unsubscribe();
+                    const currData = this.grid1.data;
+                    this.subscription = this.localService.allPrices(currData, this.frequency);
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+    }
+
     public toggleColumn(col: IgxColumnComponent) {
         col.pinned ? col.unpin() : col.pin();
     }
@@ -232,8 +264,8 @@ export class FinJSDemoComponent implements OnInit {
         this.slider1.disabled = disableButtons;
     }
 
-    private updateRandomData() {
-        const currData = this.grid1.data;
+    private updateRandomData(data?: any[]) {
+        const currData = data ? data : this.grid1.data;
         this.subscription = this.localService.updateRandomData(currData);
         this.localService.updatedRecordsLastSecond.subscribe((val) => { this.recordsUpdatedLastSecond = val; });
     }
