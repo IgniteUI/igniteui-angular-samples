@@ -93,10 +93,74 @@ html, body {
     text-align: right !important;
 }
 
-.finjs-dark-theme { 
+.finjs-dark-theme {
+    $finjs-palette: igx-palette(#09f, #72da67);
+
+    $dark-text: #000;
+    $light-text: #fff;
+    $disabled-text: rgba(255,255,255, .38);
+
+    $white-10:rgba(255, 255, 255, .04);
+    $white-20:rgba(255, 255, 255, .08);
+    $white-30:rgba(255, 255, 255, .12);
+    $white-40:rgba(255, 255, 255, .26);
+    $white-50:rgba(255, 255, 255, .38);
+    $white-60:rgba(255, 255, 255, .54);
+    $white-70:rgba(255, 255, 255, .62);
+    $white-80:rgba(255, 255, 255, .74);
+    $white-90:rgba(255, 255, 255, .87);
+
     $finjs-dropdown-theme: igx-drop-down-theme(
         $background-color: #000
     );
 
     @include igx-drop-down($finjs-dropdown-theme);
+
+    // CHECKBOX
+    $finjs-checkbox-theme: igx-checkbox-theme(
+        $palette: $finjs-palette,
+        $label-color: $white-70,
+        $empty-color: $white-70,
+        $tick-color: $dark-text
+    );
+
+    @include igx-checkbox($finjs-checkbox-theme);
+
+    // BUTTON
+    $finjs-button-theme: igx-button-theme(
+        $palette: $finjs-palette,
+        $disabled-color: $white-50
+    );
+
+    @include igx-button($finjs-button-theme);
+
+
+    // INPUT GROUP
+    $finjs-input-group-theme: igx-input-group-theme(
+        $palette: $finjs-palette,
+        $idle-text-color: $light-text,
+        $filled-text-color: $light-text,
+        $focused-text-color: $light-text,
+        $disabled-text-color: $disabled-text,
+        $variant: 'light'
+    );
+
+    @include igx-input-group($finjs-input-group-theme);
+
+    // CHIPS THEME
+    $finjs-chip-theme: igx-chip-theme(
+        $chip-background: #333,
+        $chip-hover-background: #444,
+        $dir-icon-color: $white-60,
+        $order-icon-color:$white-60,
+        $selected-chip-background:#000,
+        $chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
+        $selected-chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
+        $selected-chip-hover-border-color: $white-40,
+        $remove-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
+        $order-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
+        $remove-icon-color: $white-50
+    );
+
+    @include igx-chip($finjs-chip-theme);
 }

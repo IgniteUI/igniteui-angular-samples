@@ -41,10 +41,10 @@
 
         <igx-column [field]="'Price'" [width]="'140px'" [dataType]="'number'" [filterable]='true' [cellClasses]="trends" [movable]="true" [sortable]="true">
             <ng-template igxCell let-cell="cell">
-                <div class="finjs">
+                <div class="finjs-icons">
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" iconName="trending_up">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" iconName="trending_down">trending_down</igx-icon>
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" name="trending_up">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" name="trending_down"></igx-icon>
                 </div>
             </ng-template>
         </igx-column>

@@ -1,8 +1,11 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
 
-$finjs-palette: igx-palette(#09f, #72da67);
-$palette : $finjs-palette;
+$finjs-palette: igx-palette(#09f, #72da67, #1377d5, #4eb862, #fbb13c, #ff134a);
 @include igx-core();
+
+$exclude: (
+    igx-grid
+);
 
 :host::ng-deep {
     $dark-text: #000;
@@ -11,12 +14,23 @@ $palette : $finjs-palette;
 
     
     .finjs-dark-theme {
-        @include igx-theme($finjs-palette);
+        .finjs-icons {
+            display: flex;
+            align-items: center;
+            igx-icon {
+                font-size: 16px;
+                width: 16px;
+                height: 16px;
+                margin-right: 4px;
+            }
+        }
+
+        @include igx-theme($finjs-palette ,$exclude);
 
         // VAR COLORS
     
         $dark-text: #000;
-        $light-text: #000;
+        $light-text: #fff;
         $disabled-text: rgba(255,255,255, .38);
     
          $white-10:rgba(255, 255, 255, .04);
@@ -30,114 +44,57 @@ $palette : $finjs-palette;
          $white-90:rgba(255, 255, 255, .87);
     
         // GRID DARK THEME
-    
         $finjs-grid-theme: igx-grid-theme(
             $content-background: #000,
             $content-text-color: #fff,
-    
-            $header-background: igx-color($palette, 'grays', 800),
+
+            $header-background: igx-color($finjs-palette, 'grays', 800),
             $header-text-color: $white-70,
             $header-border-color: $white-40,
             $row-indentation-background: #000,
-    
-            $row-selected-background: $white-90,
-            $row-selected-text-color: igx-color($palette, 'grays', 900),
-            $row-hover-background: rgb(33, 71, 33), /////////
+
+            $row-selected-background: #fff,
+            $row-selected-text-color: igx-color($finjs-palette, 'grays', 900),
+            $row-hover-background: #4b4b4b,
             $row-hover-text-color: #fff, /////////
             $row-border-color: #333,
             $row-content-focus-background: rgba(106, 227, 104, .20),
-    
-            $cell-selected-background: igx-color($palette, 'primary', 500),
-            $cell-selected-text-color: igx-color($palette, 'grays', 900),
-    
+
+            $cell-selected-background: igx-color($finjs-palette, 'primary'),
+            $cell-selected-text-color: igx-color($finjs-palette, 'grays', 900),
+
             $group-count-background: #333,
-            $group-label-icon: igx-color($palette, 'secondary', 500),
-            $group-label-column-name-text: igx-color($palette, 'secondary', 500),
-    
+            $group-label-icon: igx-color($finjs-palette, 'secondary', 500),
+            $group-label-column-name-text: igx-color($finjs-palette, 'secondary', 500),
+
             $expand-icon-color: $white-60,
-            $expand-icon-hover-color: igx-color($palette, 'secondary', 500),
+            $expand-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
             $expand-all-icon-color: $white-60,
-            $expand-all-icon-hover-color: igx-color($palette, 'secondary', 500),
-    
+            $expand-all-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
+
             $drop-area-text-color: #fff,
             $drop-area-icon-color: #b4b4b4,
             $drop-area-background: #333,
             $drop-area-on-drop-background: #ddd,
-    
+
             $ghost-header-background: $white-60,
             $ghost-header-icon-color: red
         );
-    
+
         @include igx-grid($finjs-grid-theme);
-    
-        // CHIPS THEME
-        $finjs-chip-theme: igx-chip-theme(
-            $chip-background: #333,
-            $chip-hover-background: #444,
-            $dir-icon-color: $white-60,
-            $order-icon-color:$white-60,
-            $selected-chip-background:#000,
-            $chip-focus-border-color: igx-color($palette, 'secondary', 500),
-            $selected-chip-focus-border-color: igx-color($palette, 'secondary', 500),
-            $selected-chip-hover-border-color: $white-40,
-            $remove-icon-hover-color: igx-color($palette, 'secondary', 500),
-            $order-icon-hover-color: igx-color($palette, 'secondary', 500),
-            $remove-icon-color: $white-50
+
+
+        // INPUT GROUP
+        $finjs-input-group-theme: igx-input-group-theme(
+            $palette: $finjs-palette,
+            $idle-text-color: $light-text,
+            $filled-text-color: $light-text,
+            $focused-text-color: $light-text,
+            $disabled-text-color: $disabled-text,
+            $variant: 'light'
         );
-    
-        @include igx-chip($finjs-chip-theme);
-    
-    
-        // CHECKBOX
-        $finjs-checkbox-theme: igx-checkbox-theme(
-            $empty-color: $white-70,
-            $tick-color: $dark-text
-        );
-    
-        @include igx-checkbox($finjs-checkbox-theme);
-        // GRID DARK THEME
-    
-        $finjs-grid-theme: igx-grid-theme(
-            $content-background: #000,
-            $content-text-color: #fff,
-    
-            $header-background: igx-color($palette, 'grays', 800),
-            $header-text-color: $white-70,
-            $header-border-color: $white-40,
-            $row-indentation-background: #000,
-    
-            $row-selected-background: $white-90,
-            $row-selected-text-color: igx-color($palette, 'grays', 900),
-            $row-hover-background: rgb(33, 71, 33), /////////
-            $row-hover-text-color: #fff, /////////
-            $row-border-color: $white-40,
-            $row-content-focus-background: rgba(106, 227, 104, .20),
-    
-            $cell-selected-background: igx-color($palette, 'primary', 500),
-            $cell-selected-text-color: igx-color($palette, 'grays', 900),
-    
-            $group-count-background: #333,
-            $group-label-icon: igx-color($palette, 'secondary', 500),
-            $group-label-column-name-text: igx-color($palette, 'secondary', 500),
-    
-            $expand-icon-color: $white-60,
-            $expand-icon-hover-color: igx-color($palette, 'secondary', 500),
-            $expand-all-icon-color: $white-60,
-            $expand-all-icon-hover-color: igx-color($palette, 'secondary', 500),
-    
-            $drop-area-text-color: #fff,
-            $drop-area-icon-color: #b4b4b4,
-            $drop-area-background: #333,
-            $drop-area-on-drop-background: #ddd,
-    
-            $pinned-border-color: red,
-            $ghost-header-background: rgba(0,0,0, .5),
-            $ghost-header-icon-color: red
-        );
-    
-        @include igx-grid($finjs-grid-theme);
-    
-    
+
+        @include igx-input-group($finjs-input-group-theme);
     
         // CHIPS THEME
         $finjs-chip-theme: igx-chip-theme(
@@ -146,12 +103,12 @@ $palette : $finjs-palette;
             $dir-icon-color: $white-60,
             $order-icon-color:$white-60,
             $selected-chip-background:#222,
-            $chip-focus-border-color: red,
-            $selected-chip-focus-border-color: red,
-            $selected-chip-hover-border-color: red,
-            $remove-icon-hover-color: $white-40,
-            $order-icon-hover-color: $white-60,
-            $remove-icon-color: rgba(255,255,255, .3)
+            $chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
+            $selected-chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
+            $selected-chip-hover-border-color: igx-color($finjs-palette, 'secondary', 500),
+            $remove-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
+            $order-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
+            $remove-icon-color: $white-50
         );
     
         @include igx-chip($finjs-chip-theme);
@@ -178,33 +135,15 @@ $palette : $finjs-palette;
         $finjs-btn-group-theme: igx-button-group-theme(
             $item-background: #222
         );
-    
+
         @include igx-button-group($finjs-btn-group-theme);
-    
-    
-        // INPUT GROUP
-        $finjs-input-group-theme: igx-input-group-theme(
-            $variant: 'light'
-        );
-    
-        @include igx-input-group($finjs-input-group-theme);
-    
-    
-        // BUTTON GROUP
-        $finjs-button-theme: igx-button-theme(
-            $flat-text-color: igx-color($palette, 'secondary', 500),
-            $disabled-color: rgba(255,255,255, .38)
-        );
-    
-        .finjs-flex-row {
-            @include igx-button($finjs-button-theme);
-        }
+
     
         // GRID FILTER
         $finjs-filtering-theme: igx-grid-filtering-theme(
-            $toggle-icon-color: igx-color($palette, 'secondary', 500),
-            $menu-background: igx-color($palette, 'grays', 900),
-            $menu-button-text-color: igx-color($palette, 'secondary', 500)
+            $toggle-icon-color: igx-color($finjs-palette, 'secondary', 500),
+            $menu-background: igx-color($finjs-palette, 'grays', 900),
+            $menu-button-text-color: igx-color($finjs-palette, 'secondary', 500)
         );
     
         @include igx-grid-filtering($finjs-filtering-theme);
@@ -237,10 +176,20 @@ $palette : $finjs-palette;
         .finjs-sample-switch {
             color: #fff;
         }
-        background: #111;
 
         .igx-drop-down__item {
             background: #000;
+        }
+
+        &:after {
+            content: '';
+            background: #111;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
         }
     }
 
@@ -333,35 +282,86 @@ $palette : $finjs-palette;
         50% { opacity: 1 }
         100% { opacity: 0}
     }
-    
+
     .positive{
-        color: igx-color($palette, 'success', 500);
+        color: igx-color($finjs-palette, 'success', 500) !important;
     }
-    
+
     .negative {
-        color: igx-color($palette, 'error', 500);
+        color: igx-color($finjs-palette, 'error', 500) !important;
     }
 
     .changePos,
     .changeNeg,
     .strongPositive,
     .strongNegative{
-        color: igx-color($palette, 'grays', 900);
+        color: igx-color($finjs-palette, 'grays', 900);
     }
 
     .changePos{
-        background-color: lighten(igx-color($palette, 'success', 500), 10%);
+        background-color: rgba(78,184,98, .4);
     }
-    
+
     .changeNeg {
-        background-color: lighten(igx-color($palette, 'error', 500), 10%);
+        background-color: rgba(255,19,74, .4);
     }
 
     .strongPositive {
-        background-color: igx-color($palette, 'success', 500);
+        background-color: rgba(78,184,98, .2);
     }
 
     .strongNegative {
-        background-color: igx-color($palette, 'error', 500);
+        background-color: rgba(255,19,74, .2);
     }
+
+    .igx-grid__td--selected.positive {
+        background-color: rgba(78,184,98, .5)!important;
+        .finjs-icons {
+            color: #FFF;
+        }
+    }
+
+    .igx-grid__td--selected.negative {
+        background-color: rgba(255,19,74, .5)!important;
+        .finjs-icons {
+            color: #FFF;
+        }
+    }
+
+    .igx-grid__tr--selected {
+        .igx-grid__td--selected.positive {
+            background-color: rgba(78,184,98, .8)!important;
+            .finjs-icons {
+                color: #000;
+            }
+        }
+
+        .igx-grid__td--selected.negative {
+            background-color: rgba(255,19,74, .8)!important;
+            .finjs-icons {
+                color: #000;
+            }
+        }
+
+        .changePos{
+            background-color: rgba(78,184,98, .9);
+        }
+
+        .changeNeg {
+            background-color: rgba(255,19,74, .9);
+        }
+
+        .strongPositive {
+            background-color: rgba(78,184,98, .6);
+        }
+
+        .strongNegative {
+            background-color: rgba(255,19,74, .6);
+        }
+
+        .positive{
+            color: darken(igx-color($finjs-palette, 'success', 500), 10%) !important;
+        }
+    }
+
 }
