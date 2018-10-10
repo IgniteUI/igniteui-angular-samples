@@ -1,0 +1,44 @@
+<div class="sample-wrapper">
+    <app-grid-with-transactions>
+        <igx-grid #gridRowEditTransaction [data]="data" [primaryKey]="'ProductID'" width="100%" height="500px"
+            [rowEditable]="true">
+            <igx-column>
+                <ng-template igxCell let-cell="cell" let-val>
+                    <button igxButton (click)="deleteRow($event, 'gridRowEditTransaction', cell.cellID.rowID)">Delete</button>
+                </ng-template>
+            </igx-column>
+            <igx-column field="ProductID" header="Product ID"></igx-column>
+            <igx-column field="ReorderLevel" header="ReorderLever" [dataType]="'number'" editable="true"></igx-column>
+            <igx-column field="ProductName" header="ProductName" [dataType]="'string'" editable="true"></igx-column>
+            <igx-column field="UnitsInStock" header="UnitsInStock" [dataType]="'number'">
+                <ng-template igxCellEditor let-cell="cell">
+                    <input name="units" [(ngModel)]="cell.value" style="color: black" />
+                </ng-template>
+            </igx-column>
+            <igx-column field="OrderDate" [dataType]="'date'"></igx-column>
+            <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" editable="true"></igx-column>
+        </igx-grid>
+    </app-grid-with-transactions>
+    <div class="buttons-wrapper">
+        <button igxButton (click)="addRow('gridRowEditTransaction')">Add Row</button>
+        <div class="transaction-buttons-wrapper">
+            <button igxButton (click)="undo('gridRowEditTransaction')">Undo</button>
+            <button igxButton (click)="redo('gridRowEditTransaction')">Redo</button>
+            <button igxButton (click)="openCommitDialog('gridRowEditTransaction')">Commit</button>
+        </div>
+    </div>
+    <div igxToggle class="dialog__container">
+        <div class="dialog__header">Submit the following transactions?</div>
+        <div class="dialog__body">
+            <igx-grid [data]="gridRowEditTransaction.transactions.aggregatedState()" [primaryKey]="'id'" width="600px" height="300px">
+                <igx-column field="id" header="ID" [dataType]="'string'"></igx-column>
+                <igx-column field="type" header="Type" [dataType]="'string'"></igx-column>
+                <igx-column field="newValue" header="Type" [formatter]="stateFormatter"></igx-column>
+            </igx-grid>
+        </div>
+        <div class="dialog__buttons">
+            <button igxButton (click)="commit()">Commit</button>
+            <button igxButton (click)="toggle.close()">Cancel</button>
+        </div>
+    </div>
+</div>

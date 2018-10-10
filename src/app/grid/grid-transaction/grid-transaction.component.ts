@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { IgxGridTransaction, IgxTransactionBaseService } from "igniteui-angular";
+import { IgxGridTransaction, IgxTransactionService } from "igniteui-angular";
 
 @Component({
-    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionBaseService }],
+    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }],
     selector: "app-grid-with-transactions",
     template: "<ng-content></ng-content>"
 })

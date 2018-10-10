@@ -289,6 +289,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -662,6 +663,11 @@ export const samplesRoutes: Routes = [
         component: GridRowEditSampleComponent,
         data: { displayName: "Grid Row Editing", parentName: "Grid" },
         path: "grid-row-editing"
+    },
+    {
+        component: GridTransactionSampleComponent,
+        data: { displayName: "Grid Transaction", parentName: "Grid" },
+        path: "grid-transaction"
     },
     {
         component: GridDisplayDensitySampleComponent,

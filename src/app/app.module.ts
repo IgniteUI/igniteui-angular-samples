@@ -149,7 +149,6 @@ import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sam
 import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
 import { GridRowEditSampleComponent } from "./grid/grid-row-editing-sample/grid-row-editing-sample.component";
-import { GridWithTransactionsComponent } from "./grid/grid-row-editing-sample/grid-with-transactions.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
@@ -260,6 +259,8 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
+import { GridWithTransactionsComponent } from "./grid/grid-transaction/grid-transaction.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -460,6 +461,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         ListChatSampleComponent,
         GridConditionalCellStyleComponent,
         GridWithTransactionsComponent,
+        GridTransactionSampleComponent,
         GridRowEditSampleComponent,
         SvgIconSampleComponent
     ],
