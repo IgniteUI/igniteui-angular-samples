@@ -1,4 +1,5 @@
-<div class="grid__wrapper">
+<div class="grid__wrapper" [class.finjs-dark-theme]="theme">
+    <igx-switch [checked]="true" [(ngModel)]="theme">Dark Theme</igx-switch>
     <div class="sliders-holder">
         <div class="slider-wrapper">
             <div class="finjs-slider">
@@ -15,15 +16,15 @@
                 <igx-buttongroup  class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls" (onSelect)="onButtonAction($event)"></igx-buttongroup>
             </div>
             <div class="finjs-sample-switch">
-                <span *ngIf="buttonSelected === 2">Feeding {{volume}} new records, ({{volume}} rows and {{this.grid1.columnList.length}} columns) every {{frequency / 1000}} sec.</span>
-                <span *ngIf="buttonSelected === 1">Feeding {{volume}} updated records ({{volume}} rows and 3 columns) every {{frequency / 1000}} sec.</span>
-                <span *ngIf="buttonSelected === 0">Feeding {{recordsUpdatedLastSecond}} updated records every {{frequency / 1000}} sec.</span>
+                <span *ngIf="buttonSelected === 2">Feeding {{volume}} new records every {{frequency / 1000}} sec.</span>
+                <span *ngIf="buttonSelected === 1">Feeding {{volume}} updated records every {{frequency / 1000}} sec.</span>
+                <span *ngIf="buttonSelected === 0">Feeding {{recordsUpdatedLastSecond}} random updated records every {{frequency / 1000}} sec.</span>
                 <igx-switch [checked]="grouped" (change)="onChange($event)">Grouped</igx-switch>
             </div>
         </div>
     </div>
 
-    <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="100%" [autoGenerate]='false' displayDensity='compact' [showToolbar]="false" [columnHiding]="true" [columnPinning]="true"
+    <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="100%" [autoGenerate]='false' displayDensity='compact' [showToolbar]="true" [columnHiding]="true" [columnPinning]="true"
               toolbarTitle="Tokyo Commodity Exchange" columnHidingTitle="Indicators" hiddenColumnsText="Hidden"
               primaryKey='ID' (onGroupingDone)="groupingDone($event)" [rowSelectable]="true">
         <igx-column [field]="'ID'" [hidden]='true'></igx-column>

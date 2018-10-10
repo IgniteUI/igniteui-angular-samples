@@ -92,3 +92,11 @@ html, body {
 .headerAlignSyle {
     text-align: right !important;
 }
+
+.finjs-dark-theme { 
+    $finjs-dropdown-theme: igx-drop-down-theme(
+        $background-color: #000
+    );
+
+    @include igx-drop-down($finjs-dropdown-theme);
+}

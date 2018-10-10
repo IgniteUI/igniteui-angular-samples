@@ -43,6 +43,7 @@ export class FinJSDemoComponent implements OnInit {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
+    public theme = true;
     public volume = 5000;
     public frequency = 1000;
     public data: Observable < any[] > ;
@@ -85,6 +86,7 @@ export class FinJSDemoComponent implements OnInit {
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
+        document.body.className += " finjs-dark-theme";
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: "Category"
