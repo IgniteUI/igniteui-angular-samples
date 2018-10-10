@@ -1,4 +1,3 @@
-
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
@@ -20,6 +19,7 @@ import {
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
     IgxDropDownModule,
     IgxExcelExporterService,
     IgxExpansionPanelModule,
@@ -105,6 +105,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
@@ -455,6 +456,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         ThemeChooserSampleComponent,
         DefaultThemeSampleComponent,
         DarkThemeSampleComponent,
+        DragAndDropSampleComponent,
         TooltipSimpleComponent,
         TooltipRichComponent,
         ListChatSampleComponent,
@@ -514,6 +516,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
+        IgxDragDropModule,
         IgxTooltipModule
     ],
     providers: [
