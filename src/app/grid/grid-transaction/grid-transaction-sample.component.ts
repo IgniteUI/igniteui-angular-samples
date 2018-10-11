@@ -5,7 +5,7 @@ import { IgxGridComponent, IgxToggleDirective, Transaction } from "igniteui-angu
 
 @Component({
     selector: "app-grid-row-edit",
-    styleUrls: [`grid-transaction-sample.component.css`],
+    styleUrls: [`grid-transaction-sample.component.scss`],
     templateUrl: "grid-transaction-sample.component.html"
 })
 export class GridTransactionSampleComponent {
@@ -64,6 +64,14 @@ export class GridTransactionSampleComponent {
         this.toggle.close();
     }
 
+    public stateFormatter(value: string) {
+        return JSON.stringify(value);
+    }
+
+    public typeFormatter(value: string) {
+        return value.toUpperCase();
+    }
+
     private getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -72,13 +80,5 @@ export class GridTransactionSampleComponent {
         const grid = this.gridRowEditTransaction;
         (grid as any)._pipeTrigger++;
         (grid as any).cdr.markForCheck();
-    }
-
-    public stateFormatter(value: string) {
-        return JSON.stringify(value);
-    }
-
-    public typeFormatter(value: string) {
-        return value.toUpperCase();
     }
 }

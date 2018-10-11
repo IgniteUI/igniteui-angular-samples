@@ -5,7 +5,7 @@ import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
     selector: "app-grid-row-edit",
-    styleUrls: [`grid-row-editing-sample.component.css`],
+    styleUrls: [`grid-row-editing-sample.component.scss`],
     templateUrl: "grid-row-editing-sample.component.html"
 })
 export class GridRowEditSampleComponent {
