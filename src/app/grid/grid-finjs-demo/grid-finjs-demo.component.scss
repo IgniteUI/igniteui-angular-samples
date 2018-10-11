@@ -75,10 +75,7 @@ $exclude: (
             $drop-area-text-color: #fff,
             $drop-area-icon-color: #b4b4b4,
             $drop-area-background: #333,
-            $drop-area-on-drop-background: #ddd,
-
-            $ghost-header-background: $white-60,
-            $ghost-header-icon-color: red
+            $drop-area-on-drop-background: #ddd
         );
 
         @include igx-grid($finjs-grid-theme);
@@ -165,11 +162,15 @@ $exclude: (
 
 
         // BUTTON
-        $finjs-button-theme: igx-button-theme(
-            $disabled-color: $white-50
-        );
+        .igx-button-group,
+        .igx-column-hiding__buttons,
+        .igx-filtering__options {
+            $finjs-button-theme: igx-button-theme(
+                $disabled-color: $white-50
+            );
 
-        @include igx-button($finjs-button-theme);
+            @include igx-button($finjs-button-theme);
+        }
 
         .finjs-slider {
             color: #fff;
