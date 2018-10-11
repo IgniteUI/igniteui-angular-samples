@@ -1,6 +1,5 @@
-import { Component, NgZone, OnInit, ViewChild } from "@angular/core";
-import { IgxButtonGroupComponent, IgxColumnComponent, IgxGridComponent,
-    IgxSliderComponent, SortingDirection } from "igniteui-angular";
+import { AfterViewInit, Component, NgZone, OnInit, ViewChild } from "@angular/core";
+import { IgxButtonGroupComponent, IgxGridComponent, SortingDirection } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -39,7 +38,7 @@ class Button {
     styleUrls: ["./grid-finjs-demo.component.scss"],
     templateUrl: "./grid-finjs-demo.component.html"
 })
-export class FinJSDemoComponent implements OnInit {
+export class FinJSDemoComponent implements OnInit, AfterViewInit {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
@@ -86,7 +85,9 @@ export class FinJSDemoComponent implements OnInit {
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
-        document.body.className += " finjs-dark-theme";
+        if (this.theme) {
+            document.body.classList.add("finjs-dark-theme");
+        }
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: "Category"
@@ -96,6 +97,10 @@ export class FinJSDemoComponent implements OnInit {
                 fieldName: "Type"
             }
         ];
+    }
+
+    public ngAfterViewInit() {
+        this.grid1.reflow();
     }
 
     public onButtonAction(event: any) {
@@ -145,6 +150,14 @@ export class FinJSDemoComponent implements OnInit {
                     fieldName: "Type"
                 }
             ];
+        }
+    }
+
+    public changeTheme(event: any) {
+        if (event.checked) {
+            document.body.classList.add("finjs-dark-theme");
+        } else {
+            document.body.classList.remove("finjs-dark-theme");
         }
     }
 
@@ -281,9 +294,10 @@ export class FinJSDemoComponent implements OnInit {
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
-            if (ind !== index) { button.disabled = disableButtons; }
+            if (index === 3) { button.disabled = !disableButtons; } else {
+                button.disabled = disableButtons;
+            }
         });
-        this.buttonGroup1.buttons[3].disabled = !disableButtons;
     }
 
     private updateRandomData(data?: any[]) {

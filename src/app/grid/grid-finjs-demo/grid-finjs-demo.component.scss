@@ -21,7 +21,7 @@ $exclude: (
                 font-size: 16px;
                 width: 16px;
                 height: 16px;
-                margin-right: 4px;
+                margin-left: 4px;
             }
         }
 
@@ -274,17 +274,17 @@ $exclude: (
         }
     }
     
-    .finjs {
-        display: inline-flex;
-        justify-content: space-between;
+    .finjs-icons {
+        display: flex;
         align-items: center;
-        overflow: hidden;
+        igx-icon {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            margin-left: 4px;
+        }
     }
-    
-    .finjs igx-icon {
-        font-size: 16px;
-        height: 16px;
-    }
+
     @keyframes fadeInOut {
         0% { opacity: 0 }
         50% { opacity: 1 }
