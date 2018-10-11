@@ -49,6 +49,9 @@ import {
 } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
+import {
+    GridRowEditSampleComponent
+} from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
@@ -62,6 +65,7 @@ import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/g
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridTransactionSampleComponent } from "../../src/app/grid/grid-transaction/grid-transaction-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
@@ -445,6 +449,28 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyleComponent],
                 ngDeclarations: [GridConditionalCellStyleComponent],
+                ngImports: [IgxGridModule.forRoot()]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridTransactionSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-transaction/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridTransactionSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxToggleModule],
+                ngDeclarations: [GridTransactionSampleComponent],
+                ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxToggleModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowEditSampleComponent,
+            additionalFiles: ["src/app/grid/grid-row-editing-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowEditSampleComponent, IgxGridModule],
+                ngDeclarations: [GridRowEditSampleComponent],
                 ngImports: [IgxGridModule.forRoot()]
             })
         }));
