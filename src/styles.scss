@@ -163,4 +163,12 @@ html, body {
     );
 
     @include igx-chip($finjs-chip-theme);
+
+    // GRID DARK THEME
+    $finjs-grid-theme: igx-grid-theme(
+        $ghost-header-background: #333,
+        $ghost-header-icon-color: $white-70
+    );
+
+    @include igx-grid($finjs-grid-theme);
 }

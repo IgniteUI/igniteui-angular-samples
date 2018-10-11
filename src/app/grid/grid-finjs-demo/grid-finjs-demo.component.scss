@@ -163,6 +163,14 @@ $exclude: (
     
         @include igx-switch($finjs-switch-theme);
 
+
+        // BUTTON
+        $finjs-button-theme: igx-button-theme(
+            $disabled-color: $white-50
+        );
+
+        @include igx-button($finjs-button-theme);
+
         .finjs-slider {
             color: #fff;
         }
@@ -220,9 +228,9 @@ $exclude: (
 
     .finjssample-btn-group {
         margin: 15px 15px 15px 0;
-        width: 610px;
+        width: 720px;
         .igx-button-group {
-            display: block;
+            min-width: 720px;
         }
     }
 
