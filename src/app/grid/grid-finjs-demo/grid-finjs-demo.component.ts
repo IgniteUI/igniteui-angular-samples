@@ -47,11 +47,9 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
     @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
-    @ViewChild("toggleRefExporting") public toggleRefExporting: IgxToggleDirective;
 
     @ViewChild("hidingButton") public hidingButton: ElementRef;
     @ViewChild("pinningButton") public pinningButton: ElementRef;
-    @ViewChild("еxportingButton") public еxportingButton: ElementRef;
 
     @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
 
@@ -341,11 +339,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public toggleHiding() {
         this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
-        this.toggleRefHiding.toggle(this._overlaySettings);
-    }
-
-    public toggleExporting() {
-        this._overlaySettings.positionStrategy.settings.target = this.exportingButton.nativeElement;
         this.toggleRefHiding.toggle(this._overlaySettings);
     }
 
