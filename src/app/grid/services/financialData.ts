@@ -1,4 +1,47 @@
 /* tslint:disable */
+const REGIONS: any[] = [
+    {
+        "Region": "North America",
+        "Countries": [ "Canada", "United States", "Mexico" ]
+    },
+    {
+        "Region": "Middle East",
+        "Countries": [ "Turkey", "Iraq", "Saudi Arabia", "Syria", "UAE", "Israel", "Jordan", "Lebanon", "Oman", "Kuwait", "Qatar", "Bahrain", "Iran" ]
+    },
+    {
+        "Region": "Europe",
+        "Countries": [ "Russia", "Germany", "France", "United Kingdom", "Italy", "Spain", "Poland", "Romania", "Netherlands", "Belgium", "Greece",
+            "Portugal", "Czech Republic", "Hungary", "Sweden", "Austria", "Switzerland", "Bulgaria", "Denmark", "Finland", "Slovakia", "Norway",
+            "Ireland", "Croatia", "Slovenia", "Estonia", "Iceland",]
+    },
+    {
+        "Region": "Africa",
+        "Countries": [ "Nigeria", "Ethiopia", "Egypt", "South Africa", "Algeria", "Morocco", "Cameroon", "Niger", "Senegal", "Tunisia", "Libya"]
+    },
+    {
+        "Region": "Asia Pacific",
+        "Countries": [ "Afghanistan", "Australia", "Azerbaijan", "China", "Hong Kong", "India", "Indonesia",
+            "Japan", "Malaysia", "New Zealand", "Pakistan", "Philippines", "Korea", "Singapore", "Taiwan", "Thailand"]
+    },
+    {
+        "Region": "South America",
+        "Countries": [ "Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Guyana", "Paraguay", "Peru", "Suriname", "Uruguay", "Venezuela" ]
+    },
+
+]
+
+const DealType: any[] = [
+    "Buy", "Sell"
+]
+
+const Contract: any[] = [
+    "Forwards", "Futures", "Options", "Swap", "CFD"
+]
+
+const Settlement: any[] = [
+    "Deliverable", "Cash"
+]
+
 const DATA: any[] = [
  {
    "Category": "Metal",
@@ -822,6 +865,13 @@ export class FinancialData {
         for (let i = 0; i < count; i++) {
             const rand = Math.floor(Math.random() * Math.floor(DATA.length));
             const dataObj = Object.assign({}, DATA[rand]);
+
+            dataObj.Settlement = Settlement[this.generateRandomNumber(0, 1)];
+            dataObj.Contract = Contract[this.generateRandomNumber(0, 4)];
+            const region = REGIONS[this.generateRandomNumber(0, 5)];
+            dataObj.Region = region.Region;
+            dataObj.Country = this.randomizeCountry(region);
+
             dataObj.ID = i;
             this.randomizeObjectData(dataObj);
             currData.push(dataObj);
@@ -839,6 +889,17 @@ export class FinancialData {
       }
 
     public updateRandomPrices(data: any[]): IResponse {
+        const currData = data.slice(0, data.length + 1);
+        let y = 0;
+        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
+          const dataObj = Object.assign({}, data[i]);
+          this.randomizeObjectData(dataObj);
+          currData[i] = dataObj;
+          y++;
+        }
+        return {data: currData, recordsUpdated: y };
+      }
+    public updateRandomPrices2(data: any[]): IResponse {
         const currData = data.slice(0, data.length + 1);
         let y = 0;
         for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
@@ -874,5 +935,38 @@ export class FinancialData {
         result.ChangePercent = parseFloat(changePercent.toFixed(2));
 
         return result;
+    }
+    private generateRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    private randomizeCountry(region: any) {
+        let country;
+        switch (region.Region) {
+            case "North America": {
+               country = region.Countries[this.generateRandomNumber(0, 2)];
+               break;
+            }
+            case "South America": {
+                country = region.Countries[this.generateRandomNumber(0, 11)];
+                break;
+            }
+            case "Europe": {
+                country = region.Countries[this.generateRandomNumber(0, 26)];
+                break;
+            }
+            case "Asia Pacific": {
+                country = region.Countries[this.generateRandomNumber(0, 15)];
+                break;
+            }
+            case "Africa": {
+                country = region.Countries[this.generateRandomNumber(0, 11)];
+                break;
+            }
+            case "Middle East": {
+                country = region.Countries[this.generateRandomNumber(0, 12)];
+                break;
+            }
+         }
+        return country;
     }
 }

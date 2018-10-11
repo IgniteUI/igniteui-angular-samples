@@ -1,5 +1,8 @@
-import { AfterViewInit, Component, NgZone, OnInit, ViewChild } from "@angular/core";
-import { IgxButtonGroupComponent, IgxGridComponent, SortingDirection } from "igniteui-angular";
+import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
+import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
+    IgxColumnComponent, IgxExcelExporterOptions, IgxExcelExporterService, IgxGridComponent, IgxToggleDirective,
+    OverlaySettings,
+    PositionSettings, SortingDirection, VerticalAlignment, IgxDropDownComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -42,6 +45,20 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
+    @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
+    @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
+    @ViewChild("toggleRefExporting") public toggleRefExporting: IgxToggleDirective;
+
+    @ViewChild("hidingButton") public hidingButton: ElementRef;
+    @ViewChild("pinningButton") public pinningButton: ElementRef;
+    @ViewChild("еxportingButton") public еxportingButton: ElementRef;
+
+    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
+
+    public cols: QueryList<IgxColumnComponent>;
+    public hiddenColsLength: number;
+    public pinnedColsLength: number;
+
     public theme = true;
     public volume = 5000;
     public frequency = 1000;
@@ -74,12 +91,28 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         })
     ];
 
+    public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
+
+    public _positionSettings: PositionSettings = {
+        horizontalDirection: HorizontalAlignment.Left,
+        horizontalStartPoint: HorizontalAlignment.Right,
+        verticalStartPoint: VerticalAlignment.Bottom
+    };
+
+    public _overlaySettings: OverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: false,
+        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
+        scrollStrategy: new CloseScrollStrategy()
+    };
+
     private subscription;
     private _timer;
     private selectedButton;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: LocalDataService) {
+    constructor(private zone: NgZone, private localService: LocalDataService,
+                private excelExporterService: IgxExcelExporterService) {
         this.localService.getData(this.volume);
         this.data = this.localService.records;
     }
@@ -100,10 +133,57 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit() {
+        this.cols = this.grid1.columnList;
+        this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
+        this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
         this.grid1.reflow();
     }
 
+    public toggleDropDown(eventArgs) {
+        this._overlaySettings.positionStrategy.settings.target = eventArgs.target;
+        this.igxDropDown.toggle(this._overlaySettings);
+    }
+
+    public toggleVisibility(col: IgxColumnComponent) {
+        if (col.hidden) {
+            this.hiddenColsLength--;
+        } else {
+            this.hiddenColsLength++;
+        }
+        col.hidden = !col.hidden;
+    }
+
+    public togglePin(col: IgxColumnComponent, evt) {
+        if (col.pinned) {
+            this.grid1.unpinColumn(col.field);
+            this.pinnedColsLength--;
+        } else {
+            if (this.grid1.pinColumn(col.field)) {
+                this.pinnedColsLength++;
+            } else {
+                // if pinning fails uncheck the checkbox
+                evt.checkbox.checked = false;
+            }
+        }
+    }
+
+    public handleExporting(event: any) {
+        if (event.newSelection.index === 0) {
+            this.exportData();
+        } else {
+            // TODO
+            // BRIAN CAN PUT HIS CODE HERE
+        }
+    }
+
+    public exportData() {
+        this.excelExporterService.exportData(this.grid1.data, new IgxExcelExporterOptions("Report"));
+    }
+
     public onButtonAction(event: any) {
+        if (this.buttonSelected !== event.index) {
+
+        }
         switch (event.index) {
             case 0:
                 {
@@ -257,6 +337,21 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
                     break;
                 }
         }
+    }
+
+    public toggleHiding() {
+        this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
+        this.toggleRefHiding.toggle(this._overlaySettings);
+    }
+
+    public toggleExporting() {
+        this._overlaySettings.positionStrategy.settings.target = this.exportingButton.nativeElement;
+        this.toggleRefHiding.toggle(this._overlaySettings);
+    }
+
+    public togglePinning() {
+        this._overlaySettings.positionStrategy.settings.target = this.pinningButton.nativeElement;
+        this.toggleRefPinning.toggle(this._overlaySettings);
     }
 
     private negative = (rowData: any): boolean => {

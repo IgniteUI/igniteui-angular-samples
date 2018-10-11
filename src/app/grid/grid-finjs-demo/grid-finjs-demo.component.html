@@ -24,14 +24,76 @@
         </div>
     </div>
 
-    <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="100%" [autoGenerate]='false' displayDensity='compact' [showToolbar]="true" [columnHiding]="true" [columnPinning]="true"
-              toolbarTitle="Tokyo Commodity Exchange" columnHidingTitle="Indicators" hiddenColumnsText="Hidden"
+    <div class="crm-sample-toolbar">
+        <div class="crm-sample-toolbar__title">
+            <span class="crm-sample-toolbar__ellipsis">Torkyo Commodity Exchange</span>
+        </div>
+
+        <div class="sample-flex-container">
+            <div class="operationsContainer">
+                <div class="relative-container">
+                    <button #hidingButton class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="toggleHiding()">
+                        <igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}}</span>
+                        <igx-icon class="header-icon">arrow_drop_down</igx-icon>
+                    </button>
+                    <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
+                        <div class="toggle-section">
+                            <h4 class="dd-title">Hidden columns:</h4>
+                            <ul class="dd-list">
+                                <li class="dd-list__item" *ngFor="let col of cols">
+                                    <igx-checkbox (change)="toggleVisibility(col)" [checked]="col.hidden">{{col.field}}</igx-checkbox>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative-container">
+                    <button #pinningButton class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="togglePinning()">
+                        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack"></igx-icon><span>{{pinnedColsLength}}</span>
+                        <igx-icon class="header-icon">arrow_drop_down</igx-icon>
+                    </button>
+                    <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
+                        <div class="toggle-section">
+                            <h4 class="dd-title">Pinned columns:</h4>
+                            <ul class="dd-list">
+                                <li class="dd-list__item" *ngFor="let col of cols">
+                                    <igx-checkbox (change)="togglePin(col, $event)" [checked]="col.pinned">{{col.field}}</igx-checkbox>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative-container">
+                        <button igxButton="flat" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]="dropdown2">Export</button>
+                        <igx-drop-down #dropdown2 (onSelection)="handleExporting($event)">
+                            <igx-drop-down-item *ngFor="let item of items">
+                                {{ item.field }}
+                            </igx-drop-down-item>
+                        </igx-drop-down>
+                </div>
+
+                <!-- <button class="toggle-button" igxButton="icon" igxRipple="#09f" (click)="toggleExporting()">
+                    <igx-icon class="header-icon">file_download</igx-icon>
+                </button> -->
+            </div>
+        </div>
+    </div>
+
+    <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="100%" [autoGenerate]='false' displayDensity='compact'
+        [showToolbar]="false" [columnHiding]="true" [columnPinning]="true"
+              toolbarTitle="Torkyo Commodity Exchange" columnHidingTitle="Indicators" hiddenColumnsText="Hidden"
               primaryKey='ID' (onGroupingDone)="groupingDone($event)" [rowSelectable]="true">
         <igx-column [field]="'ID'" [hidden]='true'></igx-column>
-        <igx-column [field]="'Category'" [width]="'140px'" [filterable]='true' [groupable]='true'></igx-column>
-        <igx-column [field]="'Type'" [width]="'120px'" [groupable]='true'></igx-column>
-        <igx-column [field]="'Open Price'" [width]="'180px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Category'" [width]="'140px'" [filterable]='true' [groupable]='true' [sortable]='true'></igx-column>
+        <igx-column [field]="'Type'" [width]="'120px'" [groupable]='true' [sortable]='true'></igx-column>
+        <igx-column [field]="'Contract'" [width]="'140px'" [filterable]='true' [groupable]='true' [sortable]='true'></igx-column>
+        <igx-column [field]="'Settlement'" [width]="'120px'" [groupable]='true' [sortable]='true'></igx-column>
+        <igx-column [field]="'Region'" [width]="'140px'" [filterable]='true' [groupable]='true' [sortable]='true'></igx-column>
+        <igx-column [field]="'Country'" [width]="'120px'" [groupable]='true' [sortable]='true'></igx-column>
 
+        <igx-column [field]="'Open Price'" [width]="'140px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Price'" [width]="'140px'" [dataType]="'number'" [filterable]='true' [cellClasses]="trends" [movable]="true" [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
