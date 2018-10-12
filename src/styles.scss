@@ -187,25 +187,31 @@ html, body {
         }
     }
 
-    .toggle-content {
-        background-color: #111;
-        box-shadow: igx-elevation($elevations, 4);
-    }
+    div.igx-overlay{
+        .toggle-content {
+            background-color: #222;
+        }
 
-    .dd-title {
-        color: white;
-    }
+        .toggle-content {
+            background-color: #111;
+            box-shadow: igx-elevation($elevations, 4);
+        }
 
-    .dd-list__item {
-        &:hover {
-            background: #4b4b4b;
+        .dd-title {
+            color: white;
+        }
+
+        .dd-list__item {
+            &:hover {
+                background: #4b4b4b;
+            }
         }
     }
 }
 
 // grid caption styling
 .crm-sample-toolbar {
-    background: #f4f4f4;
+    background: #ddd;
     width: 100%;
     height: 56px;
     display: flex;
@@ -306,12 +312,12 @@ html, body {
 
 div.igx-overlay{
     .toggle-content {
+        background: #fff;
         display: flex;
         width: 240px;
         height: 300px;
         position: absolute;
         z-index: 3;
-        background-color: #222;
         overflow: auto;
         box-shadow: igx-elevation($elevations, 4);
     }
@@ -325,9 +331,9 @@ div.igx-overlay{
     }
 
     .dd-title {
-        color: white;
+        color: #666;
         margin:0;
-        padding: 16px;
+        padding: 8px 8px 0 8px;
         font-size: 14px;
     }
 
@@ -338,10 +344,10 @@ div.igx-overlay{
     .dd-list__item {
         display: flex;
         align-items: center;
-        padding: 16px;
+        padding: 8px;
 
         &:hover {
-            background: #4b4b4b;
+            background: #f9f9f9;
         }
     }
 
