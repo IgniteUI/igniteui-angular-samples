@@ -291,7 +291,7 @@ $exclude: (
         50% { opacity: 1 }
         100% { opacity: 0}
     }
-
+    
     .positive{
         color: igx-color($finjs-palette, 'success', 500) !important;
     }
@@ -334,15 +334,29 @@ $exclude: (
         }
     }
 
-    .igx-grid__td--selected.positive {
+    .igx-grid__td--selected.changePos {
         background-color: rgba(78,184,98, .4)!important;
         .finjs-icons {
             color: #FFF;
         }
     }
 
-    .igx-grid__td--selected.negative {
+    .igx-grid__td--selected.changeNeg {
         background-color: rgba(255,19,74, .4)!important;
+        .finjs-icons {
+            color: #FFF;
+        }
+    }
+
+    .igx-grid__td--selected.strongPositive {
+        background-color: rgba(78,184,98, .8)!important;
+        .finjs-icons {
+            color: #FFF;
+        }
+    }
+
+    .igx-grid__td--selected.strongNegative {
+        background-color: rgba(255,19,74, .8)!important;
         .finjs-icons {
             color: #FFF;
         }

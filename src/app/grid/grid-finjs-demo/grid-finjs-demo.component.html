@@ -92,22 +92,6 @@
         <igx-column [field]="'Settlement'" [width]="'120px'" [groupable]='true' [sortable]='true' [filterable]='true'></igx-column>
         <igx-column [field]="'Region'" [width]="'140px'" [filterable]='true' [groupable]='true' [sortable]='true'></igx-column>
         <igx-column [field]="'Country'" [width]="'120px'" [groupable]='true' [sortable]='true' [filterable]='true'></igx-column>
-
-        <igx-column [field]="'Chart'" [width]="'120px'" [hidden]="false">
-            <ng-template igxCell let-cell="cell">
-                <div class="chart-icons">
-                    <igx-icon (click)="chartClick(cell)" iconName="insert_chart_outlined">insert_chart_outlined</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'Grid'" [width]="'120px'" [hidden]="false">
-            <ng-template igxCell let-cell="cell">
-                <div class="chart-icons">
-                    <igx-icon (click)="chartClick(cell)" iconName="table_chart">table_chart</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-
         <igx-column [field]="'Open Price'" [width]="'140px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Price'" [width]="'140px'" [dataType]="'number'" [filterable]='true' [cellClasses]="trends" [movable]="true" [sortable]="true">
             <ng-template igxCell let-cell="cell">
@@ -127,6 +111,10 @@
                     [cellClasses]="trendsChange">
         </igx-column>
 
+        <igx-column [field]="'Change(%)'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="percentage" [movable]="true" [sortable]="true"
+            [cellClasses]="trendsChange">
+        </igx-column>
+
         <igx-column [field]="'Buy'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Sell'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Spread'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="formatNumber" [movable]="true"></igx-column>
@@ -136,5 +124,19 @@
         <igx-column [field]="'High(Y)'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Low(Y)'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Start(Y)'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Chart'" [width]="'120px'" [hidden]="false">
+            <ng-template igxCell let-cell="cell">
+                <div class="chart-icons">
+                    <igx-icon (click)="chartClick(cell)" iconName="insert_chart_outlined">insert_chart_outlined</igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column [field]="'Grid'" [width]="'120px'" [hidden]="false">
+            <ng-template igxCell let-cell="cell">
+                <div class="chart-icons">
+                    <igx-icon (click)="chartClick(cell)" iconName="table_chart">table_chart</igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
     </igx-grid>
 </div>

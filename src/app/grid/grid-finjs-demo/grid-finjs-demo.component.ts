@@ -367,14 +367,18 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     private strongPositive = (rowData: any): boolean => {
         return rowData["Change(%)"] >= 1;
     }
-    private strongNegative = (rowData: any): boolean => {
+    private strongNegative = (rowData: any, key: string): boolean => {
         return rowData["Change(%)"] <= -1;
     }
 
     // tslint:disable-next-line:member-ordering
     public trends = {
         negative: this.negative,
-        positive: this.positive
+        positive: this.positive,
+        changeNeg: this.changeNegative,
+        changePos: this.changePositive,
+        strongNegative: this.strongNegative,
+        strongPositive: this.strongPositive
     };
     // tslint:disable-next-line:member-ordering
     public trendsChange = {
