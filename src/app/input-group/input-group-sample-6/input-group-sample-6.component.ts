@@ -9,10 +9,10 @@ import { IgxComboComponent } from "igniteui-angular"; //// CHECK THIS REF!!!! BE
 export class InputGroupSample6Component {
     public user = {
         dateTime: new Date(),
-        email: "",
-        fullName: "",
-        genres: "",
-        phone: ""
+        email: undefined,
+        fullName: undefined,
+        genres: undefined,
+        phone: undefined
     };
 
     public genres = ["Action", "Adventure", "Comedy", "Crime",
