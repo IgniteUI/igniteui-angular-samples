@@ -171,4 +171,164 @@ html, body {
     );
 
     @include igx-grid($finjs-grid-theme);
+
+
+    // grid caption styling
+    .crm-sample-toolbar {
+        background: #222;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 600;
+        font-size: 1.25rem;
+        padding: rem(8px) rem(24px);
+        box-shadow: 0 1px 5px 0 rgba(0,0,0,.26), 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.08);
+        border-radius: 2px;
+        & span {
+            margin-right: auto;
+        }
+
+        .igx-button--flat {
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+
+        .igx-button--icon {
+            border-radius: 0;
+        }
+    }
+
+    .sample-flex-container {
+        display: flex;
+        align-self: center;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .crm-sample-toolbar__title {
+        margin-right: rem(16px);
+        display: flex;
+        align-items: center;
+        justify-self: flex-start;
+
+        .logo-propeller {
+            margin-right: 8px;
+            margin-top: 2px;
+        }
+    }
+
+    .crm-sample-toolbar__ellipsis {
+        @include ellipsis();
+        opacity: 0;
+        animation: slide-fade 1.25s .25s ease-out forwards;
+    }
+
+    .operationsContainer {
+        display: flex;
+
+        .igx-button--flat {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 5.5rem;
+            height: 2.25rem;
+            padding: 0 1rem;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: 0;
+            -webkit-tap-highlight-color: transparent;
+            overflow: hidden;
+            transition: all .15s ease-out;
+        }
+    }
+
+    .toggle-button igx-icon.header-icon {
+        font-size: 1rem;
+        width: 1rem;
+        height: 1rem;
+        margin-right: rem(4);
+    }
+
+    .toggle-button igx-icon.pin-icon {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        height: 1rem;
+        margin-right: rem(4);
+    }
+
+    .relative-container {
+        position: relative;
+    }
+
+    .toggle-content {
+        display: flex;
+        width: 240px;
+        height: 300px;
+        position: absolute;
+        z-index: 3;
+        background-color: #222;
+        overflow: auto;
+        box-shadow: igx-elevation($elevations, 4);
+    }
+
+    .toggle-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        font-size: 0.8em;
+    }
+
+    .dd-title {
+        color: white;
+        margin:0;
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .dd-list {
+        list-style-type: none;
+    }
+
+    .dd-list__item {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+
+        &:hover {
+            background: #4b4b4b;
+        }
+    }
+
+    .pin-icon {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .animated-fan {
+        width: 28px;
+        height: 28px;
+        animation: spin-fade 1.5s cubic-bezier(0.21, 1.07, 0.99, 1) forwards;
+    }
+
+    .crm-sample-toolbar .igx-button--flat {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
 }
