@@ -61,10 +61,10 @@ $primary-100: igx-color($crm-grid-palette, "primary", 100);
             $header-border-color: $white-40,
             $row-indentation-background: #000,
 
-            $row-selected-background: #fff,
-            $row-selected-text-color: igx-color($finjs-palette, 'grays', 900),
-            $row-hover-background: #4b4b4b,
-            $row-hover-text-color: #fff, /////////
+            $row-selected-background: #333,
+            $row-selected-text-color: text-contrast(#333),
+            $row-hover-background: #222,
+            $row-hover-text-color: text-contrast(#222),
             $row-border-color: #333,
             $row-content-focus-background: rgba(106, 227, 104, .20),
 
@@ -149,7 +149,7 @@ $primary-100: igx-color($crm-grid-palette, "primary", 100);
         // GRID FILTER
         $finjs-filtering-theme: igx-grid-filtering-theme(
             $toggle-icon-color: igx-color($finjs-palette, 'secondary', 500),
-            $menu-background: igx-color($finjs-palette, 'grays', 900),
+            $menu-background: #111,
             $menu-button-text-color: igx-color($finjs-palette, 'secondary', 500)
         );
     
@@ -315,71 +315,46 @@ $primary-100: igx-color($crm-grid-palette, "primary", 100);
     .strongPositive,
     .strongNegative{
         color: igx-color($finjs-palette, 'grays', 900);
+        .igx-grid__td-text {
+            padding: 2px 5px;
+        }
     }
 
     .changePos{
-        background-color: rgba(78,184,98, .4);
+        .igx-grid__td-text {
+            background: rgba(78,184,98, .4);
+        }
     }
 
     .changeNeg {
-        background-color: rgba(255,19,74, .4);
+        .igx-grid__td-text{
+            background:  rgba(255,19,74, .4);
+        }
     }
 
     .strongPositive {
-        background-color: rgba(78,184,98, .2);
+        .igx-grid__td-text{
+            background:  rgba(78,184,98, .8);
+        }
     }
 
     .strongNegative {
-        background-color: rgba(255,19,74, .2);
+        .igx-grid__td-text{
+            background: rgba(255,19,74, .8);
+        }
     }
 
     .igx-grid__td--selected.positive {
-        background-color: rgba(78,184,98, .5)!important;
+        background-color: rgba(78,184,98, .4)!important;
         .finjs-icons {
             color: #FFF;
         }
     }
 
     .igx-grid__td--selected.negative {
-        background-color: rgba(255,19,74, .5)!important;
+        background-color: rgba(255,19,74, .4)!important;
         .finjs-icons {
             color: #FFF;
-        }
-    }
-
-    .igx-grid__tr--selected {
-        .igx-grid__td--selected.positive {
-            background-color: rgba(78,184,98, .8)!important;
-            .finjs-icons {
-                color: #000;
-            }
-        }
-
-        .igx-grid__td--selected.negative {
-            background-color: rgba(255,19,74, .8)!important;
-            .finjs-icons {
-                color: #000;
-            }
-        }
-
-        .changePos{
-            background-color: rgba(78,184,98, .9);
-        }
-
-        .changeNeg {
-            background-color: rgba(255,19,74, .9);
-        }
-
-        .strongPositive {
-            background-color: rgba(78,184,98, .6);
-        }
-
-        .strongNegative {
-            background-color: rgba(255,19,74, .6);
-        }
-
-        .positive{
-            color: darken(igx-color($finjs-palette, 'success', 500), 10%) !important;
         }
     }
 }
