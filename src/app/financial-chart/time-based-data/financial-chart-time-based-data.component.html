@@ -9,7 +9,7 @@
         (seriesAdded)="onSeriesAdded($event)"
         chartType="candle"
         volumeType="area"
-        isToolbarVisible="true"
+        isToolbarVisible="false"
         isWindowSyncedToVisibleRange="true"
         subtitle="BETWEEN 2013-2018"
         chartTitle="STOCK PRICES: GOOGLE vs AMAZON"
@@ -18,7 +18,7 @@
         chartTitleTopMargin="10px">
     </igx-financial-chart>
 
-    <div class="options">
+    <div class="legendContainer">
         <igx-legend #legend
             class="legend"
             orientation="horizontal" >

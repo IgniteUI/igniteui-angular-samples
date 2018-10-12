@@ -81,6 +81,12 @@ import { DialogComponent } from "./dialog/dialog.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
+import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
+import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
+import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
+import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
+import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -165,6 +171,9 @@ import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sampl
 import {
     GridColumnHidingToolbarSampleComponent
 } from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {
+    GridConditionalCellStyleComponent
+} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
 import {
     GridDisplayDensitySampleComponent
@@ -211,6 +220,7 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
+import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
 import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
 import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
@@ -266,7 +276,6 @@ import {
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
-
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
@@ -282,6 +291,8 @@ import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
+import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -517,6 +528,36 @@ export const samplesRoutes: Routes = [
         path: "export-excel-sample-1"
     },
     {
+        component: ExpansionPanelSample1Component,
+        data: { displayName: "Expansion Panel 1", parentName: "Expansion Panel" },
+        path: "expansion-sample-1"
+    },
+    {
+        component: ExpansionPanelSample2Component,
+        data: { displayName: "Expansion Panel 2", parentName: "Expansion Panel" },
+        path: "expansion-sample-2"
+    },
+    {
+        component: ExpansionPanelSample3Component,
+        data: { displayName: "Expansion Panel 3", parentName: "Expansion Panel" },
+        path: "expansion-sample-3"
+    },
+    {
+        component: ExpansionPanelSample4Component,
+        data: { displayName: "Expansion Panel 4", parentName: "Expansion Panel" },
+        path: "expansion-sample-4"
+    },
+    {
+        component: ExpansionPanelSample5Component,
+        data: { displayName: "Expansion Panel 5", parentName: "Expansion Panel" },
+        path: "expansion-sample-5"
+    },
+    {
+        component: ExpansionPanelSample6Component,
+        data: { displayName: "Expansion Panel 6", parentName: "Expansion Panel" },
+        path: "expansion-sample-6"
+    },
+    {
         component: LayoutComponent,
         data: { displayName: "Layout Overview", parentName: "Layout" },
         path: "layout"
@@ -576,6 +617,11 @@ export const samplesRoutes: Routes = [
         path: "list-sample-7"
     },
     {
+        component: ListChatSampleComponent,
+        data: { displayName: "Chat Component", parentName: "List" },
+        path: "list-chat-sample"
+    },
+    {
         component: NavdrawerComponent,
         path: "navigation-drawer"
     },
@@ -620,6 +666,11 @@ export const samplesRoutes: Routes = [
         component: GridDisplayDensitySampleComponent,
         data: { displayName: "Grid Display Density", parentName: "Grid" },
         path: "grid-displayDensity"
+    },
+    {
+        component: GridConditionalCellStyleComponent,
+        data: { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
+        path: "grid-cell-styling"
     },
     {
         component: SnackbarSample1Component,
@@ -1009,6 +1060,16 @@ export const samplesRoutes: Routes = [
         component: ToggleSample3Component,
         data: { displayName: "Toggle Service Provider", parentName: "Toggle" },
         path: "toggle-sample-3"
+    },
+    {
+        component: TooltipSimpleComponent,
+        data: { displayName: "Simple Tooltip", parentName: "Tooltip" },
+        path: "tooltip-simple"
+    },
+    {
+        component: TooltipRichComponent,
+        data: { displayName: "Rich Tooltip", parentName: "Tooltip" },
+        path: "tooltip-rich"
     },
     {
         component: FilteringSampleComponent,

@@ -32,8 +32,12 @@ import {
 import {
     GridColumnHidingToolbarSampleComponent
 } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {
+    GridConditionalCellStyleComponent
+} from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
-import { GridDisplayDensitySampleComponent
+import {
+    GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
@@ -63,6 +67,7 @@ import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
+import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { DarkThemeSampleComponent } from "../../src/app/theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "../../src/app/theming/default-theme-sample/default-theme-sample.component";
@@ -349,22 +354,23 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridMultiColumnHeadersComponent,
             additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ GridMultiColumnHeadersComponent, IgxGridModule, IgxButtonModule ],
+                imports: [GridMultiColumnHeadersComponent, IgxGridModule, IgxButtonModule],
                 ngDeclarations: [GridMultiColumnHeadersComponent],
-                ngImports: [IgxGridModule.forRoot(), IgxButtonModule ]
+                ngImports: [IgxGridModule.forRoot(), IgxButtonModule]
             })
         }));
 
         configs.push(new Config({
             component: RemotePagingGridSample,
-            additionalFiles: ["/src/app/grid/services/remote.service.ts"],
+            additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [RemotePagingGridSample, IgxGridModule, HttpClientModule, RemoteService],
-                ngDeclarations: [ RemotePagingGridSample ],
+                ngDeclarations: [RemotePagingGridSample],
                 ngImports: [IgxGridModule.forRoot(), HttpClientModule],
                 ngProviders: [RemoteService]
             })
         }));
+
         configs.push(new Config({
             component: GridDisplayDensitySampleComponent,
             additionalFiles: ["/src/app/grid/grid-displaydensity-sample/data.ts"],
@@ -380,19 +386,19 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ThemeChooserSampleComponent,
             additionalFiles: ["/src/app/theming/data/data.ts",
-             "/src/app/theming/data/record.ts",
-            "/src/app/theming/styles/themes.scss",
-             "/src/app/theming/styles/theme-classes.scss"],
+                "/src/app/theming/data/record.ts",
+                "/src/app/theming/styles/themes.scss",
+                "/src/app/theming/styles/theme-classes.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule,
                     IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, ThemeChooserSampleComponent,
-                     IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
+                    IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                    IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule],
                 ngDeclarations: [ThemeChooserSampleComponent],
                 ngImports: [IgxDropDownModule,
-                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
-                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule,
+                    IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
+                    IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                    IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule,
                     IgxGridModule.forRoot(), IgxLayoutModule]
             })
         }));
@@ -403,13 +409,13 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule,
                     IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, DefaultThemeSampleComponent,
-                     IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
+                    IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                    IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule],
                 ngDeclarations: [DefaultThemeSampleComponent],
                 ngImports: [IgxDropDownModule,
-                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
-                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule,
+                    IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
+                    IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                    IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule,
                     IgxGridModule.forRoot(), IgxLayoutModule]
             })
         }));
@@ -417,19 +423,29 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DarkThemeSampleComponent,
             additionalFiles: ["/src/app/theming/data/data.ts", "/src/app/theming/data/record.ts",
-            "/src/app/theming/styles/dark-theme.scss",
-            "/src/app/theming/styles/dark-theme-class.scss"],
+                "/src/app/theming/styles/dark-theme.scss",
+                "/src/app/theming/styles/dark-theme-class.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule,
                     IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, DarkThemeSampleComponent,
-                     IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule],
+                    IgxCalendarModule, IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                    IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule],
                 ngDeclarations: [DarkThemeSampleComponent],
                 ngImports: [IgxDropDownModule,
-                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
-                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
-                      IgxCalendarModule,  IgxInputGroupModule, IgxDatePickerModule,
+                    IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, IgxCalendarModule,
+                    IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
+                    IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule,
                     IgxGridModule.forRoot(), IgxLayoutModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridConditionalCellStyleComponent,
+            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridConditionalCellStyleComponent],
+                ngDeclarations: [GridConditionalCellStyleComponent],
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 
