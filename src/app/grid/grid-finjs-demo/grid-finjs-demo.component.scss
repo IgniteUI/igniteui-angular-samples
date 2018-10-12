@@ -13,11 +13,11 @@ $exclude: (
     $disabled-text: rgba(255,255,255, .38);
 
     $crm-grid-palette: igx-palette(
-    $primary: #09f,
-    $secondary: #ffc800
-);
+        $primary: #09f,
+        $secondary: #ffc800
+    );
 
-$primary-100: igx-color($crm-grid-palette, "primary", 100);
+    $primary-100: igx-color($crm-grid-palette, "primary", 100);
 
     .finjs-dark-theme {
         .finjs-icons {
@@ -30,8 +30,6 @@ $primary-100: igx-color($crm-grid-palette, "primary", 100);
                 margin-left: 4px;
             }
         }
-
-
 
         @include igx-theme($finjs-palette ,$exclude);
 
@@ -211,7 +209,6 @@ $primary-100: igx-color($crm-grid-palette, "primary", 100);
             z-index: 0;
         }
     }
-
 
     .sliders-holder {
         display: flex;
