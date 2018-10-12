@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { CrosshairsVisibility } from "igniteui-angular-charts/ES5/CrosshairsVisibility";
-import { TooltipType } from "igniteui-angular-charts/ES5/TooltipType";
+import { CrosshairsDisplayMode } from "igniteui-angular-charts/ES5/CrosshairsDisplayMode";
+import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 
 @Component({
     selector: "app-category-chart-annotations-overlays",
@@ -8,8 +8,8 @@ import { TooltipType } from "igniteui-angular-charts/ES5/TooltipType";
     templateUrl: "./category-chart-annotations-overlays.component.html"
 })
 export class CategoryChartAnnotationsOverlaysComponent {
-    public CrosshairsVisibility = CrosshairsVisibility;
-    public TooltipType = TooltipType;
+    public CrosshairsDisplayMode = CrosshairsDisplayMode;
+    public ToolTipType = ToolTipType;
 
     public categoryData: any;
     public sampleOptions: SampleOptions = new SampleOptions();
@@ -74,5 +74,5 @@ class SampleOptions {
 
     public finalValueAnnotations: boolean = false;
 
-    public eventAnnotations: boolean = false;
+    public calloutsVisible: boolean = false;
 }

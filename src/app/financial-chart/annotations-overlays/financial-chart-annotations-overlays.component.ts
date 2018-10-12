@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { CrosshairsVisibility } from "igniteui-angular-charts/ES5/CrosshairsVisibility";
-import { TooltipType } from "igniteui-angular-charts/ES5/TooltipType";
+import { CrosshairsDisplayMode } from "igniteui-angular-charts/ES5/CrosshairsDisplayMode";
+import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 import { FinancialDataService } from "../services/financial-data.service";
 
 @Component({
@@ -11,8 +11,8 @@ import { FinancialDataService } from "../services/financial-data.service";
 })
 export class FinancialChartAnnotationsOverlaysComponent {
 
-    public CrosshairsVisibility = CrosshairsVisibility;
-    public TooltipType = TooltipType;
+    public CrosshairsDisplayMode = CrosshairsDisplayMode;
+    public ToolTipType = ToolTipType;
 
     public financialData: any;
     public sampleOptions: SampleOptions = new SampleOptions();
@@ -59,5 +59,5 @@ class SampleOptions {
 
     public finalValueAnnotations: boolean = false;
 
-    public eventAnnotations: boolean = false;
+    public calloutsVisible: boolean = false;
 }
