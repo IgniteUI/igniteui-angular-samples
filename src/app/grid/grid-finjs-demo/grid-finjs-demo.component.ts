@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
-import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
-    IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService, IgxGridComponent,
-    IgxToggleDirective,
-    OverlaySettings, PositionSettings, SortingDirection, VerticalAlignment } from "igniteui-angular";
+import { AbsoluteScrollStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
+    IgxButtonGroupComponent, IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
+    IgxGridComponent, IgxToggleDirective, OverlaySettings, PositionSettings, SortingDirection,
+    VerticalAlignment } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -101,7 +101,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         closeOnOutsideClick: true,
         modal: false,
         positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
-        scrollStrategy: new CloseScrollStrategy()
+        scrollStrategy: new AbsoluteScrollStrategy()
     };
 
     private subscription;
@@ -176,6 +176,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public exportData() {
         this.excelExporterService.exportData(this.grid1.data, new IgxExcelExporterOptions("Report"));
+    }
+
+    public chartClick(cell: IgxColumnComponent) {
+        // TODO
+        // cell.column.field returns the column
     }
 
     public onButtonAction(event: any) {
