@@ -23,8 +23,7 @@ export class GridTransactionSampleComponent {
     }
 
     public addRow(gridID) {
-        const currentGrid: IgxGridComponent = this.gridRowEditTransaction;
-        currentGrid.addRow({
+        this.gridRowEditTransaction.addRow({
             CategoryID: this.getRandomInt(1, 10),
             Discontinued: this.getRandomInt(1, 10) % 2 === 0,
             OrderDate: new Date(this.getRandomInt(2000, 2050), this.getRandomInt(0, 11), this.getRandomInt(1, 25))
@@ -38,7 +37,6 @@ export class GridTransactionSampleComponent {
             UnitsInStock: this.getRandomInt(1, 100),
             UnitsOnOrder: this.getRandomInt(1, 20)
         });
-        this.refresh();
     }
 
     public deleteRow(event, gridID, rowID) {
@@ -60,8 +58,13 @@ export class GridTransactionSampleComponent {
     }
     public commit() {
         this.gridRowEditTransaction.transactions.commit(this.data);
-        this.refresh();
         this.toggle.close();
+        this.refresh();
+    }
+    public cancel() {
+        this.gridRowEditTransaction.transactions.clear();
+        this.toggle.close();
+        this.refresh();
     }
 
     public stateFormatter(value: string) {
