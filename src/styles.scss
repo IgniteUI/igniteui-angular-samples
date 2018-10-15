@@ -93,8 +93,10 @@ html, body {
     text-align: right !important;
 }
 
+$finjs-palette: igx-palette(#09f, #72da67);
+
 .finjs-dark-theme {
-    $finjs-palette: igx-palette(#09f, #72da67);
+
 
     $dark-text: #000;
     $light-text: #fff;
@@ -372,4 +374,3 @@ div.igx-overlay{
         white-space: nowrap;
     }
 }
-

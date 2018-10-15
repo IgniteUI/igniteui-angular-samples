@@ -323,7 +323,17 @@ $exclude: (
         50% { opacity: 1 }
         100% { opacity: 0}
     }
-    
+
+    .changePos,
+    .changeNeg,
+    .strongPositive,
+    .strongNegative{
+        color: #fff!important;
+        .igx-grid__td-text {
+            padding: 2px 5px;
+        }
+    }
+
     .positive{
         color: igx-color($finjs-palette, 'success', 500) !important;
     }
@@ -345,17 +355,6 @@ $exclude: (
     }
 
 
-    .changePos,
-    .changeNeg,
-    .strongPositive,
-    .strongNegative{
-        color: igx-color($finjs-palette, 'grays', 900);
-        .igx-grid__td-text {
-            padding: 2px 5px;
-        }
-    }
-
-
     // NORMAL
 
     // positive
@@ -367,6 +366,7 @@ $exclude: (
 
     .changePos1{
         background: #335E3B;
+        color: #fff;
     }
 
     .changePos2{
@@ -384,6 +384,7 @@ $exclude: (
     }
 
     .changeNeg1 {
+        color: #fff;
         background: #7A1C32;
     }
 
@@ -427,6 +428,8 @@ $exclude: (
 
     .strongPositive1 {
         background: #459A55;
+        color: #fff;
+
     }
 
 
@@ -441,11 +444,13 @@ $exclude: (
     .strongNegative {
         .igx-grid__td-text{
             background: #D31642;
+            color: #fff;
         }
     }
 
     .strongNegative1 {
         background: #D31642;
+        color: #fff;
     }
 
     .strongNegative2 {
@@ -495,3 +500,5 @@ $exclude: (
         margin-right: rem(4);
     }
 }
+
+
