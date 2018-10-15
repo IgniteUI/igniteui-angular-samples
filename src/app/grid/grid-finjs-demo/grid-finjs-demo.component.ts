@@ -387,6 +387,13 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         strongNegative: this.strongNegative,
         strongPositive: this.strongPositive
     };
+    // tslint:disable-next-line:member-ordering
+    public trendsChange2 = {
+        changeNeg2: this.changeNegative,
+        changePos2: this.changePositive,
+        strongNegative2: this.strongNegative,
+        strongPositive2: this.strongPositive
+    };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         this.selectedButton = ind;
