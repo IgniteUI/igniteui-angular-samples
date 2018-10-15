@@ -58,8 +58,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     public pinnedColsLength: number;
 
     public theme = true;
-    public volume = 5000;
-    public frequency = 1000;
+    public volume = 1000;
+    public frequency = 200;
     public data: Observable < any[] > ;
     public recordsUpdatedLastSecond: number[] ;
     public controls = [
@@ -69,12 +69,12 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             label: "LIVE PRICES",
             selected: false
         }),
-        new Button({
-            disabled: false,
-            icon: "play_arrow",
-            label: "LIVE ALL DATA",
-            selected: false
-        }),
+        // new Button({
+        //     disabled: false,
+        //     icon: "play_arrow",
+        //     label: "LIVE ALL DATA",
+        //     selected: false
+        // }),
         new Button({
             disabled: false,
             icon: "update",
@@ -126,6 +126,14 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             {
                 dir: SortingDirection.Desc,
                 fieldName: "Type"
+            },
+            {
+                dir: SortingDirection.Desc,
+                fieldName: "Contract"
+            },
+            {
+                dir: SortingDirection.Desc,
+                fieldName: "Settlement"
             }
         ];
     }
@@ -194,20 +202,20 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
                     this._timer = setInterval(() => this.updateRandomData(), this.frequency);
                     break;
                 }
+            // case 1:
+            //     {
+            //         this.disableOtherButtons(event.index, true);
+            //         this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
+            //         break;
+            //     }
             case 1:
-                {
-                    this.disableOtherButtons(event.index, true);
-                    this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
-                    break;
-                }
-            case 2:
                 {
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
                     this.subscription = this.localService.allPrices(currData, this.frequency);
                     break;
                 }
-                case 3:
+                case 2:
                 {
                     this.disableOtherButtons(event.index, false);
                     this.stopFeed();
@@ -225,14 +233,22 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             this.grid1.groupingExpressions = [];
         } else {
             this.grid1.groupingExpressions = [{
-                    dir: SortingDirection.Desc,
-                    fieldName: "Category"
-                },
-                {
-                    dir: SortingDirection.Desc,
-                    fieldName: "Type"
-                }
-            ];
+                dir: SortingDirection.Desc,
+                fieldName: "Category"
+            },
+            {
+                dir: SortingDirection.Desc,
+                fieldName: "Type"
+            },
+            {
+                dir: SortingDirection.Desc,
+                fieldName: "Contract"
+            },
+            {
+                dir: SortingDirection.Desc,
+                fieldName: "Settlement"
+            }
+        ];
         }
     }
 
@@ -286,13 +302,13 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
                     this._timer = setInterval(() => this.updateRandomData(newData), this.frequency);
                     break;
                 }
+            // case 1:
+            //     {
+            //         this.subscription.unsubscribe();
+            //         this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
+            //         break;
+            //     }
             case 1:
-                {
-                    this.subscription.unsubscribe();
-                    this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
-                    break;
-                }
-            case 2:
                 {
                     this.subscription.unsubscribe();
                     this.localService.getData(this.volume);
@@ -321,14 +337,14 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
                     this._timer = setInterval(() => this.updateRandomData(), this.frequency);
                     break;
                 }
+            // case 1:
+            //     {
+            //         this.subscription.unsubscribe();
+            //         const currData = this.grid1.data;
+            //         this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
+            //         break;
+            //     }
             case 1:
-                {
-                    this.subscription.unsubscribe();
-                    const currData = this.grid1.data;
-                    this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
-                    break;
-                }
-            case 2:
                 {
                     this.subscription.unsubscribe();
                     const currData = this.grid1.data;
@@ -401,11 +417,15 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
+    // tslint:disable-next-line:member-ordering
+    public buttonCols = {
+        buttonCols: true
+    };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
-            if (index === 3) { button.disabled = !disableButtons; } else {
+            if (index === 2) { button.disabled = !disableButtons; } else {
                 button.disabled = disableButtons;
             }
         });
