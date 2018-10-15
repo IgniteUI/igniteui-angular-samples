@@ -139,7 +139,8 @@ $exclude: (
     
         // GRID FILTER
         $finjs-filtering-theme: igx-grid-filtering-theme(
-            $toggle-icon-color: igx-color($finjs-palette, 'secondary', 500),
+            $toggle-icon-color: $white-70,
+            $toggle-icon-filtered-color: igx-color($finjs-palette, 'secondary', 500),
             $menu-background: #111,
             $menu-button-text-color: igx-color($finjs-palette, 'secondary', 500)
         );
