@@ -13,6 +13,15 @@ $exclude: (
     $disabled-text: rgba(255,255,255, .38);
 
     .finjs-dark-theme {
+        .igx-input-group__input::placeholder,
+        .igx-input-group__textarea::placeholder {
+            color: #999!important;
+        }
+
+        ::-moz-placeholder {
+            opacity: 1;
+        }
+
         .finjs-icons {
             display: flex;
             align-items: center;
@@ -31,6 +40,7 @@ $exclude: (
         $dark-text: #000;
         $light-text: #fff;
         $disabled-text: rgba(255,255,255, .38);
+        $content-background: #000;
     
          $white-10:rgba(255, 255, 255, .04);
          $white-20:rgba(255, 255, 255, .08);
@@ -44,8 +54,8 @@ $exclude: (
     
         // GRID DARK THEME
         $finjs-grid-theme: igx-grid-theme(
-            $content-background: #000,
-            $content-text-color: #fff,
+            $content-background: $content-background,
+            $content-text-color: $light-text,
 
             $header-background: igx-color($finjs-palette, 'grays', 800),
             $header-text-color: $white-70,
@@ -172,6 +182,27 @@ $exclude: (
             );
 
             @include igx-button($finjs-button-theme);
+
+        }
+
+        .igx-grid__td {
+            $finjs-button-theme: igx-button-theme(
+                $palette: $finjs-palette,
+                $icon-color: $light-text,
+                $icon-background: transparent,
+                $icon-hover-background: transparent,
+                $icon-hover-color: igx-color($finjs-palette, 'secondary'),
+                $icon-focus-background: transparent,
+                $icon-focus-color: igx-color($finjs-palette, 'secondary')
+            );
+
+            @include igx-button($finjs-button-theme);
+
+            igx-icon {
+                font-size: 18px;
+                width:18px;
+                height:18px;
+            }
         }
 
         .finjs-slider {
@@ -327,19 +358,45 @@ $exclude: (
 
     // NORMAL
 
+    // positive
     .changePos{
         .igx-grid__td-text {
             background: #335E3B;
         }
     }
 
-    .changeNeg {
-        .igx-grid__td-text{
-            background:  #7A1C32;
+    .changePos1{
+        background: #335E3B;
+    }
+
+    .changePos2{
+        .igx-grid__td-text {
+            border-right:4px solid #335E3B;
+            padding-right: 4px;
         }
     }
 
+    // negative
+    .changeNeg {
+        .igx-grid__td-text{
+            background: #7A1C32;
+        }
+    }
 
+    .changeNeg1 {
+        background: #7A1C32;
+    }
+
+    .changeNeg2 {
+        .igx-grid__td-text{
+            border-right:4px solid #7A1C32;
+            padding-right: 4px;
+        }
+    }
+
+    // selected
+    .igx-grid__td--selected.changePos1,
+    .igx-grid__td--selected.changePos2,
     .igx-grid__td--selected.changePos {
         background-color: #335E3B!important;
         .finjs-icons,
@@ -348,6 +405,8 @@ $exclude: (
         }
     }
 
+    .igx-grid__td--selected.changeNeg1,
+    .igx-grid__td--selected.changeNeg2,
     .igx-grid__td--selected.changeNeg {
         background-color: #7A1C32!important;
         .finjs-icons,
@@ -359,84 +418,63 @@ $exclude: (
 
     // STRONG
 
-    .changePos1{
-        .igx-grid__td-text {
-            background: rgba(78,184,98, .4);
-        }
-    }
-
-    .changeNeg1 {
-        .igx-grid__td-text{
-            background:  rgba(255,19,74, .4);
-        }
-    }
-
-    .changePos2{
-        .igx-grid__td-text {
-            background: rgba(78,184,98, .4);
-        }
-    }
-
-    .changeNeg2 {
-        .igx-grid__td-text{
-            background:  rgba(255,19,74, .4);
-        }
-    }
-
+    // positive
     .strongPositive {
         .igx-grid__td-text{
-            background:  rgba(78,184,98, .8);
-        }
-    }
-
-    .strongNegative {
-        .igx-grid__td-text{
-            background: rgba(255,19,74, .8);
+            background: #459A55;
         }
     }
 
     .strongPositive1 {
+        background: #459A55;
+    }
+
+
+    .strongPositive2 {
         .igx-grid__td-text{
-            background:  rgba(78,184,98, .8);
+            border-right:4px solid #459A55;
+            padding-right: 4px;
+        }
+    }
+
+    // negative
+    .strongNegative {
+        .igx-grid__td-text{
+            background: #D31642;
         }
     }
 
     .strongNegative1 {
-        .igx-grid__td-text{
-            background: rgba(255,19,74, .8);
-        }
-    }
-
-    .strongPositive2 {
-        .igx-grid__td-text{
-            background:  rgba(78,184,98, .8);
-        }
+        background: #D31642;
     }
 
     .strongNegative2 {
         .igx-grid__td-text{
-            background: rgba(255,19,74, .8);
+            border-right:4px solid #D31642;
+            padding-right: 4px;
         }
     }
 
-
+    // selected
+    .igx-grid__td--selected.strongPositive1,
+    .igx-grid__td--selected.strongPositive2,
     .igx-grid__td--selected.strongPositive {
-        background-color: rgba(78,184,98, 1)!important;
+        background-color: #459A55!important;
         .finjs-icons,
         .igx-grid__td-text{
             color: #FFF;
         }
     }
 
+    .igx-grid__td--selected.strongNegative1,
+    .igx-grid__td--selected.strongNegative2,
     .igx-grid__td--selected.strongNegative {
-        background-color: rgba(255,19,74, 1)!important;
+        background-color: #D31642!important;
         .finjs-icons,
         .igx-grid__td-text{
             color: #FFF;
         }
     }
-
-
 
 
 

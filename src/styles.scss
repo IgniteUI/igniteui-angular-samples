@@ -129,7 +129,8 @@ html, body {
     // BUTTON
     $finjs-button-theme: igx-button-theme(
         $palette: $finjs-palette,
-        $disabled-color: $white-50
+        $disabled-color: $white-50,
+        $icon-color: igx-color($finjs-palette, 'secondary', 500)
     );
 
     @include igx-button($finjs-button-theme);
