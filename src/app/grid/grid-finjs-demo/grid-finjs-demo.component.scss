@@ -322,6 +322,30 @@ $exclude: (
         }
     }
 
+    .changePos1{
+        .igx-grid__td-text {
+            background: rgba(78,184,98, .4);
+        }
+    }
+
+    .changeNeg1 {
+        .igx-grid__td-text{
+            background:  rgba(255,19,74, .4);
+        }
+    }
+
+    .changePos2{
+        .igx-grid__td-text {
+            background: rgba(78,184,98, .4);
+        }
+    }
+
+    .changeNeg2 {
+        .igx-grid__td-text{
+            background:  rgba(255,19,74, .4);
+        }
+    }
+
     .strongPositive {
         .igx-grid__td-text{
             background:  rgba(78,184,98, .8);
@@ -329,6 +353,30 @@ $exclude: (
     }
 
     .strongNegative {
+        .igx-grid__td-text{
+            background: rgba(255,19,74, .8);
+        }
+    }
+
+    .strongPositive1 {
+        .igx-grid__td-text{
+            background:  rgba(78,184,98, .8);
+        }
+    }
+
+    .strongNegative1 {
+        .igx-grid__td-text{
+            background: rgba(255,19,74, .8);
+        }
+    }
+
+    .strongPositive2 {
+        .igx-grid__td-text{
+            background:  rgba(78,184,98, .8);
+        }
+    }
+
+    .strongNegative2 {
         .igx-grid__td-text{
             background: rgba(255,19,74, .8);
         }
