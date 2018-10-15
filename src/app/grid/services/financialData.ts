@@ -904,7 +904,7 @@ export class FinancialData {
     public updateRandomPrices(data: any[]): IResponse {
         const currData = data.slice(0, data.length + 1);
         let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
+        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10) / 2) {
           const dataObj = Object.assign({}, data[i]);
           this.randomizeObjectData(dataObj);
           currData[i] = dataObj;

@@ -59,7 +59,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public theme = true;
     public volume = 1000;
-    public frequency = 200;
+    public frequency = 100;
+    public newFrequency = 300;
     public data: Observable < any[] > ;
     public recordsUpdatedLastSecond: number[] ;
     public controls = [
@@ -106,6 +107,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     private subscription;
     private _timer;
+    private _newTimer;
     private selectedButton;
 
     // tslint:disable-next-line:member-ordering
@@ -200,6 +202,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
                 {
                     this.disableOtherButtons(event.index, true);
                     this._timer = setInterval(() => this.updateRandomData(), this.frequency);
+                    this._newTimer = setInterval(() => this.newUpdateRandomData(), this.newFrequency);
                     break;
                 }
             // case 1:
@@ -263,6 +266,9 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     public stopFeed() {
         if (this._timer) {
             clearInterval(this._timer);
+        }
+        if (this._newTimer) {
+            clearInterval(this._newTimer);
         }
         if (this.subscription) {
             this.subscription.unsubscribe();
@@ -328,6 +334,12 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     }
 
     public onFrequencyChanged(event: any) {
+        if (this.frequency <= 400) {
+            this.newFrequency = this.frequency * 2;
+        } else {
+            this.newFrequency = this.frequency / 3;
+        }
+
         switch (this.selectedButton) {
             case 0:
                 {
@@ -389,10 +401,10 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     // tslint:disable-next-line:member-ordering
     public trends = {
-        negative: this.negative,
-        positive: this.positive,
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
+        negative: this.negative,
+        positive: this.positive,
         strongNegative: this.strongNegative,
         strongPositive: this.strongPositive
     };
@@ -401,7 +413,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
         strongNegative: this.strongNegative,
-        strongPositive: this.strongPositive,
+        strongPositive: this.strongPositive
     };
     // tslint:disable-next-line:member-ordering
     public trendsChange1 = {
@@ -435,6 +447,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         const currData = data ? data : this.grid1.data;
         this.subscription = this.localService.updateRandomData(currData);
         this.localService.updatedRecordsLastSecond.subscribe((val) => { this.recordsUpdatedLastSecond = val; });
+    }
+
+    private newUpdateRandomData(data?: any[]) {
+        const currData = data ? data : this.grid1.data;
+        this.subscription = this.localService.newUpdateRandomData(currData);
     }
 
     get grouped(): boolean {

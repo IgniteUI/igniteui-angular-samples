@@ -45,4 +45,10 @@ export class LocalDataService {
         this._records.next(response.data);
         this._updatedRecordsLastSecond.next([response.recordsUpdated]);
     }
+
+    public newUpdateRandomData(data: any[]) {
+        const financialData: FinancialData = new FinancialData();
+        const response = financialData.updateRandomPrices(data);
+        this._records.next(response.data);
+    }
 }
