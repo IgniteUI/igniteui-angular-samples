@@ -297,9 +297,22 @@ $exclude: (
         color: igx-color($finjs-palette, 'success', 500) !important;
     }
 
+    .positive.strongPositive{
+        .igx-grid__td-text {
+            color: rgba(78,184,98, .8)!important;
+        }
+    }
+
     .negative {
         color: igx-color($finjs-palette, 'error', 500) !important;
     }
+
+    .negative.strongNegative {
+        .igx-grid__td-text{
+            color:  rgba(255,19,74, .8)!important;
+        }
+    }
+
 
     .changePos,
     .changeNeg,
@@ -311,17 +324,40 @@ $exclude: (
         }
     }
 
+
+    // NORMAL
+
     .changePos{
         .igx-grid__td-text {
-            background: rgba(78,184,98, .4);
+            background: #335E3B;
         }
     }
 
     .changeNeg {
         .igx-grid__td-text{
-            background:  rgba(255,19,74, .4);
+            background:  #7A1C32;
         }
     }
+
+
+    .igx-grid__td--selected.changePos {
+        background-color: #335E3B!important;
+        .finjs-icons,
+        .igx-grid__td-text{
+            color: #FFF;
+        }
+    }
+
+    .igx-grid__td--selected.changeNeg {
+        background-color: #7A1C32!important;
+        .finjs-icons,
+        .igx-grid__td-text{
+            color: #FFF;
+        }
+    }
+
+
+    // STRONG
 
     .strongPositive {
         .igx-grid__td-text{
@@ -335,33 +371,26 @@ $exclude: (
         }
     }
 
-    .igx-grid__td--selected.changePos {
-        background-color: rgba(78,184,98, .4)!important;
-        .finjs-icons {
-            color: #FFF;
-        }
-    }
-
-    .igx-grid__td--selected.changeNeg {
-        background-color: rgba(255,19,74, .4)!important;
-        .finjs-icons {
-            color: #FFF;
-        }
-    }
 
     .igx-grid__td--selected.strongPositive {
-        background-color: rgba(78,184,98, .8)!important;
-        .finjs-icons {
+        background-color: rgba(78,184,98, 1)!important;
+        .finjs-icons,
+        .igx-grid__td-text{
             color: #FFF;
         }
     }
 
     .igx-grid__td--selected.strongNegative {
-        background-color: rgba(255,19,74, .8)!important;
-        .finjs-icons {
+        background-color: rgba(255,19,74, 1)!important;
+        .finjs-icons,
+        .igx-grid__td-text{
             color: #FFF;
         }
     }
+
+
+
+
 
     .toggle-button igx-icon.header-icon {
         font-size: 1rem;
