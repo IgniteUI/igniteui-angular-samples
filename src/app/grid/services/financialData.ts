@@ -1,5 +1,3 @@
-import { MOCKFINANCEDATA } from "./mockupData";
-
 /* tslint:disable */
 const REGIONS: any[] = [
     {
@@ -43,6 +41,35 @@ const Contract: any[] = [
 const Settlement: any[] = [
     "Deliverable", "Cash"
 ]
+
+const MOCKFINANCEDATA: any[] = [
+{
+    "IndGrou": "Airlines",
+    "IndSect": "Consumer, Cyclical",
+    "IndSubg": "Airlines",
+    "SecType": "PUBLIC",
+    // tslint:disable-next-line:object-literal-sort-keys
+    "CpnTyp": "FIXED",
+    "IssuerN": "AMERICAN AIRLINES GROUP",
+    "Moodys": "WR",
+    "Fitch": "N.A.",
+    "DBRS": "N.A.",
+    "CollatT": "NEW MONEY",
+    "Curncy": "USD",
+    "Security": "001765866 Pfd",
+    "sector": "Pfd",
+    "CUSIP": "1765866",
+    "Ticker": "AAL",
+    "Cpn": "7.875",
+    "Maturity": "7/13/1939",
+    "KRD_3YR": 0.00006,
+    "RISK_COUNTRY": "",
+    "MUNI_SECTOR": "",
+    "ZV_SPREAD": 28.302,
+    "KRD_5YR": 0,
+    "KRD_1YR": -0.00187,
+    "PD_WALA": null
+}];
 
 const DATA: any[] = [
  {
@@ -904,7 +931,7 @@ export class FinancialData {
     public updateRandomPrices(data: any[]): IResponse {
         const currData = data.slice(0, data.length + 1);
         let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10) / 2) {
+        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
           const dataObj = Object.assign({}, data[i]);
           this.randomizeObjectData(dataObj);
           currData[i] = dataObj;
