@@ -108,7 +108,7 @@
         </igx-column>
 
         <igx-column [field]="'Change(%)'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="percentage" [movable]="true" [sortable]="true"
-                    [cellClasses]="trendsChange">
+                    [cellClasses]="trendsChange1">
         </igx-column>
 
         <igx-column [field]="'Change(%)'" [width]="'130px'" [dataType]="'number'" [filterable]='true' [formatter]="percentage" [movable]="true" [sortable]="true"
@@ -127,15 +127,17 @@
         <igx-column [field]="'Chart'" [width]="'120px'" [hidden]="false">
             <ng-template igxCell let-cell="cell">
                 <div class="chart-icons">
-                    <igx-icon (click)="chartClick(cell)" iconName="insert_chart_outlined">insert_chart_outlined</igx-icon>
+                    <button class="button-icon" igxButton="icon" igxRipple igxButtonColor="#E41C77" igxRippleCentered="true">
+                        <igx-icon (click)="chartClick(cell)" fontSet="material">insert_chart_outlined</igx-icon>
+                    </button>
                 </div>
             </ng-template>
         </igx-column>
         <igx-column [field]="'Grid'" [width]="'120px'" [hidden]="false">
             <ng-template igxCell let-cell="cell">
-                <div class="chart-icons">
-                    <igx-icon (click)="chartClick(cell)" iconName="table_chart">table_chart</igx-icon>
-                </div>
+                <button class="button-icon" igxButton="icon" igxRipple igxButtonColor="#E41C77" igxRippleCentered="true">
+                    <igx-icon (click)="chartClick(cell)" iconName="table_chart" fontSet="material">table_chart</igx-icon>
+                </button>
             </ng-template>
         </igx-column>
     </igx-grid>
