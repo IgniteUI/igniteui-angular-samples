@@ -1,3 +1,5 @@
+import { MOCKFINANCEDATA } from "./mockupData";
+
 /* tslint:disable */
 const REGIONS: any[] = [
     {
@@ -871,6 +873,17 @@ export class FinancialData {
             const region = REGIONS[this.generateRandomNumber(0, 5)];
             dataObj.Region = region.Region;
             dataObj.Country = this.randomizeCountry(region);
+            // for (let y = 0; y < 80; y++) {
+            //     dataObj["Text" + y] = "Text";
+            // }
+
+            for (const mockData of MOCKFINANCEDATA) {
+                for (const prop in mockData) {
+                    if (mockData.hasOwnProperty(prop)) {
+                        dataObj[prop] = mockData[prop];
+                    }
+                }
+            }
 
             dataObj.ID = i;
             this.randomizeObjectData(dataObj);
