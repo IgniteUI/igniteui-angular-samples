@@ -9,6 +9,7 @@ import {
     IgxCheckboxModule,
     IgxChipsModule,
     IgxColumnHidingModule,
+    IgxComboModule,
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
@@ -342,11 +343,11 @@ export class GridConfigGenerator implements IConfigGenerator {
                 "/src/app/grid/grid-editing-sample/product.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
-                    IgxGridModule, IgxInputGroupModule, IgxIconModule,
+                    IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxComboModule,
                     IgxRippleModule, GridEditingSampleComponent],
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
-                    IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule]
+                    IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxComboModule]
             })
         }));
 
