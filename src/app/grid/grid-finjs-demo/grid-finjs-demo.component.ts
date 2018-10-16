@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
     IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
-    IgxGridComponent, IgxSlideComponent, IgxToggleDirective, OverlaySettings, PositionSettings,
-    SortingDirection, VerticalAlignment} from "igniteui-angular";
+    IgxGridComponent, IgxSlideComponent, IgxSliderComponent, IgxToggleDirective, OverlaySettings,
+    PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -45,8 +45,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
-    @ViewChild("slider1") public volumeSlider: IgxSlideComponent;
-    @ViewChild("slider2") public intervalSlider: IgxSlideComponent;
+    @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
+    @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
 
     @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
     @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
