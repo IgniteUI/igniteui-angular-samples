@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
     IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
-    IgxGridComponent, IgxToggleDirective, OverlaySettings, PositionSettings, SortingDirection,
-    VerticalAlignment } from "igniteui-angular";
+    IgxGridComponent, IgxSlideComponent, IgxToggleDirective, OverlaySettings, PositionSettings,
+    SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -45,6 +45,9 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
+    @ViewChild("slider1") public volumeSlider: IgxSlideComponent;
+    @ViewChild("slider2") public intervalSlider: IgxSlideComponent;
+
     @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
     @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
 
@@ -59,8 +62,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public theme = true;
     public volume = 1000;
-    public frequency = 100;
-    public newFrequency = 300;
+    public frequency = 500;
     public data: Observable < any[] > ;
     public recordsUpdatedLastSecond: number[] ;
     public controls = [
@@ -132,10 +134,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             {
                 dir: SortingDirection.Desc,
                 fieldName: "Contract"
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Settlement"
             }
         ];
     }
@@ -194,15 +192,16 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     }
 
     public onButtonAction(event: any) {
-        if (this.buttonSelected !== event.index) {
-
-        }
+        // this.volumeSlider.disabled = true;
         switch (event.index) {
             case 0:
                 {
+                    this.volumeSlider.disabled = true;
+                    this.intervalSlider.disabled = true;
                     this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.updateRandomData(), this.frequency);
-                    this._newTimer = setInterval(() => this.newUpdateRandomData(), this.newFrequency);
+                    this.zone.runOutsideAngular(() => {
+                        this._timer = setInterval(() => this.updateRandomData(), this.frequency);
+                    });
                     break;
                 }
             // case 1:
@@ -213,6 +212,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             //     }
             case 1:
                 {
+                    this.volumeSlider.disabled = true;
+                    this.intervalSlider.disabled = true;
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
                     this.subscription = this.localService.allPrices(currData, this.frequency);
@@ -220,6 +221,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
                 }
                 case 2:
                 {
+                    this.volumeSlider.disabled = false;
+                    this.intervalSlider.disabled = false;
                     this.disableOtherButtons(event.index, false);
                     this.stopFeed();
                     break;
@@ -246,10 +249,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             {
                 dir: SortingDirection.Desc,
                 fieldName: "Contract"
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Settlement"
             }
         ];
         }
@@ -265,10 +264,9 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public stopFeed() {
         if (this._timer) {
-            clearInterval(this._timer);
-        }
-        if (this._newTimer) {
-            clearInterval(this._newTimer);
+            this.zone.runOutsideAngular(() => {
+                clearInterval(this._timer);
+            });
         }
         if (this.subscription) {
             this.subscription.unsubscribe();
@@ -294,80 +292,10 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     }
 
     public onVolumeChanged(event: any) {
-        switch (this.selectedButton) {
-            case 0:
-                {
-                    if (this._timer) {
-                        clearInterval(this._timer);
-                    }
-                    this.localService.getData(this.volume);
-                    let newData = [];
-                    this.localService.records.subscribe((data) => {
-                        newData = data;
-                    });
-                    this._timer = setInterval(() => this.updateRandomData(newData), this.frequency);
-                    break;
-                }
-            // case 1:
-            //     {
-            //         this.subscription.unsubscribe();
-            //         this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
-            //         break;
-            //     }
-            case 1:
-                {
-                    this.subscription.unsubscribe();
-                    this.localService.getData(this.volume);
-                    let newData = [];
-                    this.localService.records.subscribe((data) => {
-                        newData = data;
-                    });
-                    this.subscription = this.localService.allPrices(newData, this.frequency);
-                    break;
-                }
-            default:
-                {
-                    this.localService.getData(this.volume);
-                    break;
-                }
-        }
+        this.localService.getData(this.volume);
     }
 
     public onFrequencyChanged(event: any) {
-        if (this.frequency <= 400) {
-            this.newFrequency = this.frequency * 2;
-        } else {
-            this.newFrequency = this.frequency / 3;
-        }
-
-        switch (this.selectedButton) {
-            case 0:
-                {
-                    if (this._timer) {
-                        clearInterval(this._timer);
-                    }
-                    this._timer = setInterval(() => this.updateRandomData(), this.frequency);
-                    break;
-                }
-            // case 1:
-            //     {
-            //         this.subscription.unsubscribe();
-            //         const currData = this.grid1.data;
-            //         this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
-            //         break;
-            //     }
-            case 1:
-                {
-                    this.subscription.unsubscribe();
-                    const currData = this.grid1.data;
-                    this.subscription = this.localService.allPrices(currData, this.frequency);
-                    break;
-                }
-            default:
-                {
-                    break;
-                }
-        }
     }
 
     public toggleHiding() {
@@ -432,12 +360,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     private updateRandomData(data?: any[]) {
         const currData = data ? data : this.grid1.data;
         this.subscription = this.localService.updateRandomData(currData);
-        this.localService.updatedRecordsLastSecond.subscribe((val) => { this.recordsUpdatedLastSecond = val; });
-    }
-
-    private newUpdateRandomData(data?: any[]) {
-        const currData = data ? data : this.grid1.data;
-        this.subscription = this.localService.newUpdateRandomData(currData);
+        this.zone.run(() => {});
     }
 
     get grouped(): boolean {
