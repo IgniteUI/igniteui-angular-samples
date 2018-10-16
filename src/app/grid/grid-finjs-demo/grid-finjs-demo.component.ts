@@ -410,20 +410,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     };
     // tslint:disable-next-line:member-ordering
     public trendsChange = {
-        changeNeg: this.changeNegative,
-        changePos: this.changePositive,
-        strongNegative: this.strongNegative,
-        strongPositive: this.strongPositive
-    };
-    // tslint:disable-next-line:member-ordering
-    public trendsChange1 = {
-        changeNeg1: this.changeNegative,
-        changePos1: this.changePositive,
-        strongNegative1: this.strongNegative,
-        strongPositive1: this.strongPositive
-    };
-    // tslint:disable-next-line:member-ordering
-    public trendsChange2 = {
         changeNeg2: this.changeNegative,
         changePos2: this.changePositive,
         strongNegative2: this.strongNegative,
