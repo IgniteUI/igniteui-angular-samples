@@ -938,7 +938,7 @@ export class FinancialData {
           y++;
         }
        // return {data: currData, recordsUpdated: y };
-       return currData;
+        return currData;
       }
     public updateRandomPrices2(data: any[]): IResponse {
         const currData = data.slice(0, data.length + 1);
