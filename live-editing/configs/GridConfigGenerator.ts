@@ -21,6 +21,7 @@ import {
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSliderModule,
     IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
@@ -41,6 +42,7 @@ import {
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
+import { FinJSDemoComponent } from "../../src/app/grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -65,6 +67,7 @@ import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sam
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
+import { LocalDataService } from "../../src/app/grid/services/localData.service";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
@@ -446,6 +449,21 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxGridModule, GridConditionalCellStyleComponent],
                 ngDeclarations: [GridConditionalCellStyleComponent],
                 ngImports: [IgxGridModule.forRoot()]
+            })
+        }));
+
+        // FinJS demo component sample
+        configs.push(new Config({
+            component: FinJSDemoComponent,
+            additionalFiles: ["/src/app/grid/services/localData.service.ts", "/src/app/grid/services/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                    IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, FinJSDemoComponent,
+                    LocalDataService],
+                ngDeclarations: [FinJSDemoComponent],
+                ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
+                ngProviders: [LocalDataService, IgxExcelExporterService]
             })
         }));
 
