@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
     IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
-    IgxGridComponent, IgxSlideComponent, IgxSliderComponent, IgxToggleDirective, OverlaySettings,
+    IgxGridComponent, IgxSliderComponent, IgxToggleDirective, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
