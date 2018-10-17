@@ -12,6 +12,8 @@ export class LocalDataService {
     public _records: BehaviorSubject<any[]>;
     public updatedRecordsLastSecond: Observable<number[]>;
     public _updatedRecordsLastSecond: BehaviorSubject<number[]>;
+    private _timer;
+    private subscription;
 
     constructor() {
         this._records = new BehaviorSubject([]);
@@ -25,30 +27,29 @@ export class LocalDataService {
         this._records.next(financialData.generateData(count));
     }
 
-    public allDataFeed(count: number = 10, frequency: number) {
-        const financialData: FinancialData = new FinancialData();
-        return interval(frequency).subscribe(() => {
-            return this._records.next(financialData.generateData(count));
-        });
-    }
-
     public allPrices(data: any[], frequency: number) {
         const financialData: FinancialData = new FinancialData();
-        return interval(frequency).subscribe(() => {
+        this.subscription = interval(frequency).subscribe(() => {
             return this._records.next(financialData.updateAllPrices(data));
         });
     }
 
-    public updateRandomData(data: any[]) {
+    public updateRandomData(data: any[], frequency) {
         const financialData: FinancialData = new FinancialData();
-        const response = financialData.updateRandomPrices(data);
-        this._records.next(response.data);
-        this._updatedRecordsLastSecond.next([response.recordsUpdated]);
+        this.subscription =  interval(frequency).subscribe(() => {
+            return this._records.next(financialData.updateRandomPrices(data));
+        });
     }
 
     public newUpdateRandomData(data: any[]) {
         const financialData: FinancialData = new FinancialData();
         const response = financialData.updateRandomPrices(data);
         this._records.next(response.data);
+    }
+
+    public clearMem() {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
     }
 }

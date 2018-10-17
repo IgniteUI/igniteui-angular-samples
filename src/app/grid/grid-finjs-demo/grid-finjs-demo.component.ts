@@ -108,14 +108,12 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     };
 
     private subscription;
-    private _timer;
-    private _newTimer;
     private selectedButton;
 
     // tslint:disable-next-line:member-ordering
     constructor(private zone: NgZone, private localService: LocalDataService,
                 private excelExporterService: IgxExcelExporterService) {
-        this.localService.getData(this.volume);
+        this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
     }
     // tslint:disable-next-line:member-ordering
@@ -186,43 +184,29 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         this.excelExporterService.exportData(this.grid1.data, new IgxExcelExporterOptions("Report"));
     }
 
-    public chartClick(cell: IgxColumnComponent) {
+    public chartClick(cell: IgxGridCellComponent) {
         // TODO
         // cell.column.field returns the column
     }
 
     public onButtonAction(event: any) {
-        // this.volumeSlider.disabled = true;
         switch (event.index) {
             case 0:
                 {
-                    this.volumeSlider.disabled = true;
-                    this.intervalSlider.disabled = true;
-                    this.disableOtherButtons(event.index, true);
-                    this.zone.runOutsideAngular(() => {
-                        this._timer = setInterval(() => this.updateRandomData(), this.frequency);
-                    });
-                    break;
-                }
-            // case 1:
-            //     {
-            //         this.disableOtherButtons(event.index, true);
-            //         this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
-            //         break;
-            //     }
-            case 1:
-                {
-                    this.volumeSlider.disabled = true;
-                    this.intervalSlider.disabled = true;
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
-                    this.subscription = this.localService.allPrices(currData, this.frequency);
+                    this.localService.updateRandomData(currData, this.frequency);
+                    break;
+                }
+            case 1:
+                {
+                    this.disableOtherButtons(event.index, true);
+                    const currData = this.grid1.data;
+                    this.localService.allPrices(currData, this.frequency);
                     break;
                 }
                 case 2:
                 {
-                    this.volumeSlider.disabled = false;
-                    this.intervalSlider.disabled = false;
                     this.disableOtherButtons(event.index, false);
                     this.stopFeed();
                     break;
@@ -263,14 +247,15 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     }
 
     public stopFeed() {
-        if (this._timer) {
-            this.zone.runOutsideAngular(() => {
-                clearInterval(this._timer);
-            });
-        }
+        // if (this._timer) {
+        //     this.zone.runOutsideAngular(() => {
+        //         clearInterval(this._timer);
+        //     });
+        // }
         if (this.subscription) {
             this.subscription.unsubscribe();
         }
+        this.localService.clearMem();
     }
 
     public formatNumber(value: number) {
@@ -349,6 +334,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
+        this.volumeSlider.disabled = disableButtons;
+        this.intervalSlider.disabled = disableButtons;
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
             if (index === 2) { button.disabled = !disableButtons; } else {
@@ -357,11 +347,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         });
     }
 
-    private updateRandomData(data?: any[]) {
-        const currData = data ? data : this.grid1.data;
-        this.subscription = this.localService.updateRandomData(currData);
-        this.zone.run(() => {});
-    }
+    // private updateRandomData(data?: any[]) {
+    //     const currData = data ? data : this.grid1.data;
+    //     this.subscription = this.localService.updateRandomData(currData);
+    //     this.zone.run(() => {});
+    // }
 
     get grouped(): boolean {
         return this.grid1.groupingExpressions.length > 0;
