@@ -4,7 +4,7 @@
             <div class="chips">
                 <igx-chips-area #chipsArea class="chiparea" (onMoveStart)="clickedOutside($event)" (onReorder)="chipsOrderChanged($event)">
                     <igx-chip *ngFor="let chip of chipList" [id]="chip.id" [draggable]="true" [removable]="true" (onRemove)="chipRemoved($event)">
-                        <igx-avatar igxPrefix fontSet="material" [src]="chip.photo" roundShape="true"></igx-avatar>
+                        <igx-avatar class="chip-avatar-resized" igxPrefix fontSet="material" [src]="chip.photo" roundShape="true"></igx-avatar>
                         <span #label [class]="'igx-chip__text'">{{chip.name}}</span>
                     </igx-chip>
                 </igx-chips-area>
