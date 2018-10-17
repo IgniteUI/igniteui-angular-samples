@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
     IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
-    IgxGridComponent, IgxSliderComponent, IgxToggleDirective, OverlaySettings,
-    PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+    IgxGridCellComponent, IgxGridComponent, IgxSliderComponent, IgxToggleDirective,
+    OverlaySettings, PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -108,14 +108,13 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     };
 
     private subscription;
-    private _timer;
-    private _newTimer;
     private selectedButton;
+    private _timer;
 
     // tslint:disable-next-line:member-ordering
     constructor(private zone: NgZone, private localService: LocalDataService,
                 private excelExporterService: IgxExcelExporterService) {
-        this.localService.getData(this.volume);
+        this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
     }
     // tslint:disable-next-line:member-ordering
@@ -186,43 +185,29 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         this.excelExporterService.exportData(this.grid1.data, new IgxExcelExporterOptions("Report"));
     }
 
-    public chartClick(cell: IgxColumnComponent) {
+    public chartClick(cell: IgxGridCellComponent) {
         // TODO
         // cell.column.field returns the column
     }
 
     public onButtonAction(event: any) {
-        // this.volumeSlider.disabled = true;
         switch (event.index) {
             case 0:
                 {
-                    this.volumeSlider.disabled = true;
-                    this.intervalSlider.disabled = true;
-                    this.disableOtherButtons(event.index, true);
-                    this.zone.runOutsideAngular(() => {
-                        this._timer = setInterval(() => this.updateRandomData(), this.frequency);
-                    });
-                    break;
-                }
-            // case 1:
-            //     {
-            //         this.disableOtherButtons(event.index, true);
-            //         this.subscription = this.localService.allDataFeed(this.volume, this.frequency);
-            //         break;
-            //     }
-            case 1:
-                {
-                    this.volumeSlider.disabled = true;
-                    this.intervalSlider.disabled = true;
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
-                    this.subscription = this.localService.allPrices(currData, this.frequency);
+                    this._timer = setInterval(() => this.ticker(currData), this.frequency);
+                    break;
+                }
+            case 1:
+                {
+                    this.disableOtherButtons(event.index, true);
+                    const currData = this.grid1.data;
+                    this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
                     break;
                 }
                 case 2:
                 {
-                    this.volumeSlider.disabled = false;
-                    this.intervalSlider.disabled = false;
                     this.disableOtherButtons(event.index, false);
                     this.stopFeed();
                     break;
@@ -264,9 +249,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public stopFeed() {
         if (this._timer) {
-            this.zone.runOutsideAngular(() => {
-                clearInterval(this._timer);
-            });
+            clearInterval(this._timer);
         }
         if (this.subscription) {
             this.subscription.unsubscribe();
@@ -349,6 +332,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
+        this.volumeSlider.disabled = disableButtons;
+        this.intervalSlider.disabled = disableButtons;
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
             if (index === 2) { button.disabled = !disableButtons; } else {
@@ -357,11 +345,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         });
     }
 
-    private updateRandomData(data?: any[]) {
-        const currData = data ? data : this.grid1.data;
-        this.subscription = this.localService.updateRandomData(currData);
-        this.zone.run(() => {});
-    }
+    // private updateRandomData(data?: any[]) {
+    //     const currData = data ? data : this.grid1.data;
+    //     this.subscription = this.localService.updateRandomData(currData);
+    //     this.zone.run(() => {});
+    // }
 
     get grouped(): boolean {
         return this.grid1.groupingExpressions.length > 0;
@@ -369,5 +357,73 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     get buttonSelected(): number {
       return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
+    }
+
+    // tslint:disable-next-line:member-ordering
+    public ticker(data: any) {
+        this.zone.runOutsideAngular(() => {
+            this.grid1.data = this.updateRandomPrices(data);
+            this.zone.run(() => this.grid1.markForCheck());
+        });
+    }
+
+    // tslint:disable-next-line:member-ordering
+    public tickerAllPrices(data: any) {
+        this.zone.runOutsideAngular(() => {
+            this.grid1.data = this.updateAllPrices(data);
+            this.zone.run(() => this.grid1.markForCheck());
+        });
+    }
+
+    // tslint:disable-next-line:member-ordering
+    public updateAllPrices(data: any[]): any {
+        const currData = [];
+        for (const dataRow of data) {
+          const dataObj = Object.assign({}, dataRow);
+          this.randomizeObjectData(dataObj);
+          currData.push(dataObj);
+        }
+        return currData;
+      }
+
+    // tslint:disable-next-line:member-ordering
+    public updateRandomPrices(data: any[]): any {
+        const currData = data.slice(0, data.length + 1);
+        let y = 0;
+        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
+          const dataObj = Object.assign({}, data[i]);
+          this.randomizeObjectData(dataObj);
+          currData[i] = dataObj;
+          y++;
+        }
+       // return {data: currData, recordsUpdated: y };
+        return currData;
+      }
+
+    private randomizeObjectData(dataObj) {
+        const changeP = "Change(%)";
+        const res = this.generateNewPrice(dataObj.Price);
+        dataObj.Change = res.Price - dataObj.Price;
+        dataObj.Price = res.Price;
+        dataObj[changeP] = res.ChangePercent;
+    }
+    private generateNewPrice(oldPrice): any {
+        const rnd = parseFloat(Math.random().toFixed(2));
+        const volatility = 2;
+        let newPrice = 0;
+
+        let changePercent = 2 * volatility * rnd;
+        if (changePercent > volatility) {
+            changePercent -= (2 * volatility);
+        }
+
+        const changeAmount = oldPrice * (changePercent / 100);
+        newPrice = oldPrice + changeAmount;
+
+        const result = {Price: 0, ChangePercent: 0};
+        result.Price = parseFloat(newPrice.toFixed(2));
+        result.ChangePercent = parseFloat(changePercent.toFixed(2));
+
+        return result;
     }
 }
