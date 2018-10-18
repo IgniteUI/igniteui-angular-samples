@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
+import "rxjs/add/operator/filter";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
@@ -176,6 +177,7 @@ import {
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
@@ -1392,6 +1394,11 @@ export const samplesRoutes: Routes = [
         path: "grid-paste"
     },
     {
+        component: FinJSDemoComponent,
+        data: { displayName: "Grid Finance demo sample", parentName: "Grid" },
+        path: "finjs-sample"
+    },
+    {
         component: TextHighlightSample1Component,
         data: { displayName: "Search within a single container", parentName: "Text Highlight" },
         path: "text-highlight-1"
@@ -1441,4 +1448,21 @@ export const appRoutes: Routes = [
     exports: [RouterModule],
     imports: [RouterModule.forRoot(appRoutes)]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+    constructor(private router: Router) {
+        router.events
+        .filter((event) => event instanceof NavigationStart)
+        .subscribe((event: NavigationStart) => {
+          this.setOverflow(event.url);
+        });
+    }
+
+    public setOverflow(url: string) {
+       if (url.endsWith("finjs-sample")) {
+            document.body.style.overflow = "auto";
+       } else {
+            document.body.style.overflow = "hidden";
+       }
+    }
+}
