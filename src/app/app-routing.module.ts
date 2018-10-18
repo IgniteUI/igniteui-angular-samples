@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
+import "rxjs/add/operator/filter";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
@@ -75,6 +76,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
@@ -84,6 +86,7 @@ import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
+import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -174,6 +177,7 @@ import {
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
@@ -555,6 +559,11 @@ export const samplesRoutes: Routes = [
         path: "expansion-sample-6"
     },
     {
+        component: ExpansionPanelSample7Component,
+        data: { displayName: "Expansion Panel 7", parentName: "Expansion Panel" },
+        path: "expansion-sample-7"
+    },
+    {
         component: LayoutComponent,
         data: { displayName: "Layout Overview", parentName: "Layout" },
         path: "layout"
@@ -806,12 +815,10 @@ export const samplesRoutes: Routes = [
     },
     {
         component: TabsSample4Component,
-        data: { displayName: "TabsRouting1", parentName: "Tabs" },
         path: "tabs-sample-4"
     },
     {
         component: TabsSample5Component,
-        data: { displayName: "TabsRouting2", parentName: "Tabs" },
         path: "tabs-sample-5"
     },
     {
@@ -1399,6 +1406,11 @@ export const samplesRoutes: Routes = [
         path: "grid-paste"
     },
     {
+        component: FinJSDemoComponent,
+        data: { displayName: "Grid Finance demo sample", parentName: "Grid" },
+        path: "finjs-sample"
+    },
+    {
         component: TextHighlightSample1Component,
         data: { displayName: "Search within a single container", parentName: "Text Highlight" },
         path: "text-highlight-1"
@@ -1422,6 +1434,11 @@ export const samplesRoutes: Routes = [
         component: DarkThemeSampleComponent,
         data: { displayName: "Dark theme sample", parentName: "Themes" },
         path: "dark-theme-sample"
+    },
+    {
+        component: DragAndDropSampleComponent,
+        data: {  displayName: "Drag and drop sample", parentName: "Drag and Drop" },
+        path: "drag-drop-sample"
     }
 ];
 export const appRoutes: Routes = [
@@ -1443,4 +1460,21 @@ export const appRoutes: Routes = [
     exports: [RouterModule],
     imports: [RouterModule.forRoot(appRoutes)]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+    constructor(private router: Router) {
+        router.events
+        .filter((event) => event instanceof NavigationStart)
+        .subscribe((event: NavigationStart) => {
+          this.setOverflow(event.url);
+        });
+    }
+
+    public setOverflow(url: string) {
+       if (url.endsWith("finjs-sample")) {
+            document.body.style.overflow = "auto";
+       } else {
+            document.body.style.overflow = "hidden";
+       }
+    }
+}
