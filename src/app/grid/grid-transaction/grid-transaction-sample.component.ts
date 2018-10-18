@@ -45,12 +45,10 @@ export class GridTransactionSampleComponent {
 
     public undo(gridID) {
         this.gridRowEditTransaction.transactions.undo();
-        this.refresh();
     }
 
     public redo(gridID) {
         this.gridRowEditTransaction.transactions.redo();
-        this.refresh();
     }
 
     public openCommitDialog(gridID) {
@@ -59,12 +57,10 @@ export class GridTransactionSampleComponent {
     public commit() {
         this.gridRowEditTransaction.transactions.commit(this.data);
         this.toggle.close();
-        this.refresh();
     }
     public cancel() {
         this.gridRowEditTransaction.transactions.clear();
         this.toggle.close();
-        this.refresh();
     }
 
     public stateFormatter(value: string) {
@@ -77,11 +73,5 @@ export class GridTransactionSampleComponent {
 
     private getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    private refresh(): void {
-        const grid = this.gridRowEditTransaction;
-        (grid as any)._pipeTrigger++;
-        (grid as any).cdr.markForCheck();
     }
 }
