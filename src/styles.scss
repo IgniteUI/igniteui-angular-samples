@@ -150,23 +150,6 @@ $finjs-palette: igx-palette(#09f, #72da67);
 
     @include igx-input-group($finjs-input-group-theme);
 
-    // CHIPS THEME
-    $finjs-chip-theme: igx-chip-theme(
-        $chip-background: #333,
-        $chip-hover-background: #444,
-        $dir-icon-color: $white-60,
-        $order-icon-color:$white-60,
-        $selected-chip-background:#000,
-        $chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
-        $selected-chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
-        $selected-chip-hover-border-color: $white-40,
-        $remove-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
-        $order-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
-        $remove-icon-color: $white-50
-    );
-
-    @include igx-chip($finjs-chip-theme);
-
     // GRID DARK THEME
     $finjs-grid-theme: igx-grid-theme(
         $ghost-header-background: #333,
