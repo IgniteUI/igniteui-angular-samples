@@ -33,7 +33,7 @@ $exclude: (
             }
         }
 
-        @include igx-theme($finjs-palette ,$exclude);
+        @include igx-theme($finjs-palette ,$exclude:$exclude);
 
         // VAR COLORS
     
@@ -106,17 +106,10 @@ $exclude: (
     
         // CHIPS THEME
         $finjs-chip-theme: igx-chip-theme(
-            $chip-background: #333,
-            $chip-hover-background: #444,
-            $dir-icon-color: $white-60,
-            $order-icon-color:$white-60,
-            $selected-chip-background:#222,
-            $chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
-            $selected-chip-focus-border-color: igx-color($finjs-palette, 'secondary', 500),
-            $selected-chip-hover-border-color: igx-color($finjs-palette, 'secondary', 500),
-            $remove-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
-            $order-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
-            $remove-icon-color: $white-50
+            $palette: $finjs-palette,
+            $background: #333,
+            $hover-background: #444,
+            $focus-background:#222
         );
     
         @include igx-chip($finjs-chip-theme);
