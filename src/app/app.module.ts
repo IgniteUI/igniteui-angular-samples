@@ -106,6 +106,7 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
+import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
@@ -466,10 +467,11 @@ import { GridWithTransactionsComponent } from "./grid/grid-transaction/grid-tran
         ListChatSampleComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
+        SvgIconSampleComponent,
+        DropdownMenuComponent,
         GridWithTransactionsComponent,
         GridTransactionSampleComponent,
-        GridRowEditSampleComponent,
-        SvgIconSampleComponent
+        GridRowEditSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
