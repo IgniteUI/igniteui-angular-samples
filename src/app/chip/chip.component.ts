@@ -129,6 +129,8 @@ export class ChipSampleComponent {
     @ViewChild("inputGroup", {read: IgxInputGroupComponent})
     public inputGroup: IgxInputGroupComponent;
 
+    private dropDownOpened = false;
+
     constructor(public cdr: ChangeDetectorRef) { }
 
     public chipsOrderChanged(event) {
@@ -160,7 +162,7 @@ export class ChipSampleComponent {
     }
 
     public toggleDropDown(ev) {
-        if (this.inputBox.value !== null) {
+        if (!this.dropDownOpened && this.inputBox.value !== null && ev.key.length === 1) {
             this.igxDropDown.open({
                 modal: false,
                 positionStrategy: new ConnectedPositioningStrategy({
@@ -218,12 +220,24 @@ export class ChipSampleComponent {
     }
 
     public openDropDown() {
+        if (this.dropDownOpened) {
+            return;
+        }
+
         this.igxDropDown.open({
             modal: false,
             positionStrategy: new ConnectedPositioningStrategy({
                 target: this.inputGroup.element.nativeElement
             })
         });
+    }
+
+    public onDropDownOpen() {
+        this.dropDownOpened = true;
+    }
+
+    public onDropDownClose() {
+        this.dropDownOpened = false;
     }
 
     public itemSelection(ev) {
