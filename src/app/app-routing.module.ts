@@ -252,6 +252,8 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
+import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
+import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -1445,6 +1447,16 @@ export const samplesRoutes: Routes = [
         component: DragAndDropSampleComponent,
         data: { displayName: "Drag and drop sample", parentName: "Drag and Drop" },
         path: "drag-drop-sample"
+    },
+    {
+        component: ShadowsSampleComponent,
+        data: {  displayName: "Shadows sample", parentName: "Shadows" },
+        path: "shadows-sample"
+    },
+    {
+        component: ShadowsSample2Component,
+        data: {  displayName: "Shadows sample 2", parentName: "Shadows" },
+        path: "shadows-sample-2"
     }
 ];
 export const appRoutes: Routes = [
