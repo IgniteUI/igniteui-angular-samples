@@ -468,7 +468,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         FinJSDemoComponent,
         SvgIconSampleComponent,
         ShadowsSampleComponent,
-        ShadowsSample2Component
+        ShadowsSample2Component,
         DropdownMenuComponent
     ],
     entryComponents: [MyDynamicCardComponent],
