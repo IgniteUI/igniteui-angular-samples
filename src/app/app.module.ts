@@ -106,6 +106,7 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
+import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
@@ -219,6 +220,8 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
+import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
+import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -463,7 +466,10 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         ListChatSampleComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
-        SvgIconSampleComponent
+        SvgIconSampleComponent,
+        ShadowsSampleComponent,
+        ShadowsSample2Component,
+        DropdownMenuComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

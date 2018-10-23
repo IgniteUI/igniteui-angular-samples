@@ -77,6 +77,7 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
+import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
@@ -250,6 +251,8 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
+import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
+import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -500,6 +503,11 @@ export const samplesRoutes: Routes = [
         component: DialogComponent,
         data: { displayName: "Various Dialogs", parentName: "Dialog" },
         path: "dialog"
+    },
+    {
+        component: DropdownMenuComponent,
+        data: { displayName: "Dropdown as Menu", parentName: "Dropdown" },
+        path: "dropdown-menu"
     },
     {
         component: DropDownSample1Component,
@@ -1425,8 +1433,18 @@ export const samplesRoutes: Routes = [
     },
     {
         component: DragAndDropSampleComponent,
-        data: {  displayName: "Drag and drop sample", parentName: "Drag and Drop" },
+        data: { displayName: "Drag and drop sample", parentName: "Drag and Drop" },
         path: "drag-drop-sample"
+    },
+    {
+        component: ShadowsSampleComponent,
+        data: {  displayName: "Shadows sample", parentName: "Shadows" },
+        path: "shadows-sample"
+    },
+    {
+        component: ShadowsSample2Component,
+        data: {  displayName: "Shadows sample 2", parentName: "Shadows" },
+        path: "shadows-sample-2"
     }
 ];
 export const appRoutes: Routes = [
@@ -1452,17 +1470,17 @@ export class AppRoutingModule {
 
     constructor(private router: Router) {
         router.events
-        .filter((event) => event instanceof NavigationStart)
-        .subscribe((event: NavigationStart) => {
-          this.setOverflow(event.url);
-        });
+            .filter((event) => event instanceof NavigationStart)
+            .subscribe((event: NavigationStart) => {
+                this.setOverflow(event.url);
+            });
     }
 
     public setOverflow(url: string) {
-       if (url.endsWith("finjs-sample")) {
+        if (url.endsWith("finjs-sample")) {
             document.body.style.overflow = "auto";
-       } else {
+        } else {
             document.body.style.overflow = "hidden";
-       }
+        }
     }
 }
