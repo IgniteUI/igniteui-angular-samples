@@ -22,6 +22,7 @@
             <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'"></igx-column>
             <igx-column field="ReorderLevel" header="Reorder Level" [dataType]="'number'"></igx-column>
             <igx-column field="SupplierID" header="Supplier ID" [dataType]="'number'" [editable]="false"></igx-column>
+            <igx-column field="CategoryID" header="Category ID" [dataType]="'number'"></igx-column>
             <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [pinned]="true"></igx-column>
         </igx-grid>
     </app-grid-with-transactions>
@@ -36,7 +37,7 @@
     <div igxToggle class="dialog__container">
         <div class="dialog__header">Submit the following transactions?</div>
         <div class="dialog__body">
-            <igx-grid #dialogGrid [data]="gridRowEditTransaction.transactions.aggregatedState(true)" [primaryKey]="'id'"
+            <igx-grid #dialogGrid [data]="gridRowEditTransaction.transactions.aggregatedState(true)" [rowHeight]="64" [primaryKey]="'id'"
                 width="600px" height="300px" [emptyGridMessage]="'No available transactions'">
                 <igx-column field="id" header="ID" [dataType]="'string'" width="100px"></igx-column>
                 <igx-column field="type" header="Type" width="150px" [sortable]="true">
@@ -44,7 +45,10 @@
                         <span [class]="classFromType(val)">{{ typeFormatter(val) }}</span>
                     </ng-template>
                 </igx-column>
-                <igx-column field="newValue" header="Value" width="1000px" [formatter]="stateFormatter">
+                <igx-column field="newValue" header="Value" width="900px">
+                        <ng-template igxCell let-cell="cell" let-val>
+                                <span class="transaction-log">{{ stateFormatter(val) }}</span>
+                            </ng-template>
                 </igx-column>
             </igx-grid>
         </div>
