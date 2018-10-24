@@ -197,6 +197,7 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -296,7 +297,6 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
-import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
 
 export const samplesRoutes: Routes = [
     {

@@ -11,6 +11,7 @@ import { IgxGridComponent, IgxToggleDirective, Transaction } from "igniteui-angu
 export class GridTransactionSampleComponent {
     @ViewChild("gridRowEditTransaction", { read: IgxGridComponent }) public gridRowEditTransaction: IgxGridComponent;
     @ViewChild(IgxToggleDirective) public toggle: IgxToggleDirective;
+    @ViewChild("dialogGrid", { read: IgxGridComponent }) public dialogGrid: IgxGridComponent;
 
     public currentActiveGrid: { id: string, transactions: any[] } = { id: "", transactions: [] };
 
@@ -53,14 +54,20 @@ export class GridTransactionSampleComponent {
 
     public openCommitDialog(gridID) {
         this.toggle.open();
+        this.dialogGrid.reflow();
     }
+
     public commit() {
         this.gridRowEditTransaction.transactions.commit(this.data);
         this.toggle.close();
     }
+
     public cancel() {
-        this.gridRowEditTransaction.transactions.clear();
         this.toggle.close();
+    }
+
+    public discard() {
+        this.gridRowEditTransaction.transactions.clear();
     }
 
     public stateFormatter(value: string) {
@@ -73,5 +80,21 @@ export class GridTransactionSampleComponent {
 
     private getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    private classFromType(type: string): string {
+        return `transaction--${type.toLowerCase()}`;
+    }
+
+    public get undoEnabled(): boolean {
+        return ((this.gridRowEditTransaction.transactions as any)._undoStack || []).length > 0;
+    }
+
+    public get redoEnabled(): boolean {
+        return ((this.gridRowEditTransaction.transactions as any)._redoStack || []).length > 0;
+    }
+
+    public get hasTransactions(): boolean {
+        return (this.gridRowEditTransaction.transactions.aggregatedState(false) || []).length > 0;
     }
 }
