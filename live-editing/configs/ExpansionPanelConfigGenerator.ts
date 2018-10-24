@@ -1,7 +1,7 @@
 
 /* tslint:disable:object-literal-sort-keys */
 // tslint:disable-next-line:max-line-length
-import { IgxAvatarModule, IgxExpansionPanelModule, IgxGridModule, IgxIconModule, IgxToastModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxCardModule, IgxExpansionPanelModule, IgxGridModule, IgxIconModule, IgxToastModule } from "igniteui-angular";
 // tslint:disable-next-line:max-line-length
 import { ExpansionPanelSample1Component} from "../../src/app/expansion-panel/expansion-sample-1/expansion-sample-1.component";
 // tslint:disable-next-line:max-line-length
@@ -14,6 +14,8 @@ import { ExpansionPanelSample4Component} from "../../src/app/expansion-panel/exp
 import { ExpansionPanelSample5Component} from "../../src/app/expansion-panel/expansion-sample-5/expansion-sample-5.component";
 // tslint:disable-next-line:max-line-length
 import { ExpansionPanelSample6Component} from "../../src/app/expansion-panel/expansion-sample-6/expansion-sample-6.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample7Component} from "../../src/app/expansion-panel/expansion-sample-7/expansion-sample-7.component";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -82,6 +84,17 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
                 imports: [IgxIconModule, IgxExpansionPanelModule,
                     ExpansionPanelSample6Component],
                 ngDeclarations: [ExpansionPanelSample6Component],
+                ngImports: [IgxIconModule, IgxExpansionPanelModule]
+            }),
+            shortenComponentPathBy: "/expansion-panel/"
+        }));
+
+        configs.push(new Config({
+            component: ExpansionPanelSample7Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxCardModule, IgxExpansionPanelModule,
+                    ExpansionPanelSample7Component],
+                ngDeclarations: [ExpansionPanelSample7Component],
                 ngImports: [IgxIconModule, IgxExpansionPanelModule]
             }),
             shortenComponentPathBy: "/expansion-panel/"

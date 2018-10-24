@@ -1,0 +1,35 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+
+
+$color-1: #99BFAA;
+$color-2: #5C868D;
+$color-3: #5C3D46;
+
+$shadow-elevations: igx-elevations($color-1, $color-2, $color-3);
+
+.wrapper {
+    width: 400px; margin:0 auto;
+}
+
+.elevation-sample {
+    margin-top: 48px;
+    padding: 16px;
+    height: 250px;
+}
+
+.elevation-sample p.variable {
+    font-weight: 600;
+}
+
+.elevation-sample pre.formatter {
+    white-space: pre-line;
+}
+
+.elevation-sample code.css {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.elevation-sample {
+    box-shadow: igx-elevation($shadow-elevations, 24);
+}

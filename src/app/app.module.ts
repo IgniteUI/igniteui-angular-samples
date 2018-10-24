@@ -106,6 +106,7 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
+import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
@@ -115,6 +116,7 @@ import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
+import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
@@ -141,6 +143,7 @@ import {
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
+import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
@@ -217,6 +220,8 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
+import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
+import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -318,6 +323,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         ExpansionPanelSample4Component,
         ExpansionPanelSample5Component,
         ExpansionPanelSample6Component,
+        ExpansionPanelSample7Component,
         LayoutComponent,
         NavdrawerComponent,
         NavDrawerMiniComponent,
@@ -459,7 +465,11 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         TooltipRichComponent,
         ListChatSampleComponent,
         GridConditionalCellStyleComponent,
-        SvgIconSampleComponent
+        FinJSDemoComponent,
+        SvgIconSampleComponent,
+        ShadowsSampleComponent,
+        ShadowsSample2Component,
+        DropdownMenuComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
