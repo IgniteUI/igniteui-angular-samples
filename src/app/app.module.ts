@@ -119,9 +119,11 @@ import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
+import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
+import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
@@ -469,7 +471,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         SvgIconSampleComponent,
         ShadowsSampleComponent,
         ShadowsSample2Component,
-        DropdownMenuComponent
+        DropdownMenuComponent    
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -521,6 +523,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
+        PieChartSamplesModule.forRoot(),
+        DoughnutChartSamplesModule.forRoot(),
         GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
