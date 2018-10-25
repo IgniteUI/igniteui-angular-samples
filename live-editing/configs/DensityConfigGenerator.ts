@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonGroupModule, IgxInputGroupModule } from "igniteui-angular";
+import { IgxButtonGroupModule, IgxInputGroupModule, IgxIconModule } from "igniteui-angular";
 import { DisplayDensityComponent } from "../../src/app/display-density/display-density.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -12,9 +12,9 @@ export class DensityConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DisplayDensityComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [DisplayDensityComponent, IgxInputGroupModule, IgxButtonGroupModule],
+                imports: [DisplayDensityComponent, IgxInputGroupModule, IgxButtonGroupModule, IgxIconModule],
                 ngDeclarations: [DisplayDensityComponent],
-                ngImports: [IgxInputGroupModule, IgxButtonGroupModule]
+                ngImports: [IgxInputGroupModule, IgxButtonGroupModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/density/"
         }));

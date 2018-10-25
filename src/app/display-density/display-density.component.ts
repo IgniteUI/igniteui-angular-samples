@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { DisplayDensity, DisplayDensityToken, IDisplayDensity } from "igniteui-angular";
 
 @Component({
-    providers: [{ provide: DisplayDensityToken, useValue: { displayDensity: DisplayDensity.compact } }],
+    providers: [{ provide: DisplayDensityToken, useValue: { displayDensity: "comfortable" } }],
     selector: "app-display-density",
     styleUrls: ["./display-density.component.scss"],
     templateUrl: "./display-density.component.html"
