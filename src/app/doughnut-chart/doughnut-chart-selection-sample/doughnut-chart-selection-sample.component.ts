@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-doughnut-chart-selection-sample',
-  templateUrl: './doughnut-chart-selection-sample.component.html',
-  styleUrls: ['./doughnut-chart-selection-sample.component.scss']
+    selector: "app-doughnut-chart-selection-sample",
+    styleUrls: ["./doughnut-chart-selection-sample.component.scss"],
+    templateUrl: "./doughnut-chart-selection-sample.component.html"
 })
-export class DoughnutChartSelectionSampleComponent implements OnInit {
+export class DoughnutChartSelectionSampleComponent {
 
     public selectionType: string;
     public data: any;
@@ -21,9 +21,5 @@ export class DoughnutChartSelectionSampleComponent implements OnInit {
         ];
 
         this.selectionType = "Single";
-      }
-
-  ngOnInit() {
-  }
-
+    }
 }

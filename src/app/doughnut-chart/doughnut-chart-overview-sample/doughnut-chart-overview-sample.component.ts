@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-doughnut-chart-overview-sample',
-  templateUrl: './doughnut-chart-overview-sample.component.html',
-  styleUrls: ['./doughnut-chart-overview-sample.component.scss']
+    selector: "app-doughnut-chart-overview-sample",
+    styleUrls: ["./doughnut-chart-overview-sample.component.scss"],
+    templateUrl: "./doughnut-chart-overview-sample.component.html"
 })
-export class DoughnutChartOverviewSampleComponent implements OnInit {
+export class DoughnutChartOverviewSampleComponent {
 
     public data: any;
-    
 
     constructor() {
         this.data = [
@@ -19,8 +18,5 @@ export class DoughnutChartOverviewSampleComponent implements OnInit {
             { Label: "Development", Value: 4 },
             { Label: "Customer Support", Value: 6 }
         ];
-      }
-
-  ngOnInit() {
-  }
+    }
 }

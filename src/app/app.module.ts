@@ -117,13 +117,13 @@ import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
+
+import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
-import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
-import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
@@ -131,6 +131,8 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
+
 import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
@@ -471,7 +473,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         SvgIconSampleComponent,
         ShadowsSampleComponent,
         ShadowsSample2Component,
-        DropdownMenuComponent    
+        DropdownMenuComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

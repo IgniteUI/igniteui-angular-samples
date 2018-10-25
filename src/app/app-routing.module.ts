@@ -76,15 +76,20 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
-import { DoughnutChartExplosionSampleComponent } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
-import { DoughnutChartOverviewSampleComponent } from "./doughnut-chart/doughnut-chart-overview-sample/doughnut-chart-overview-sample.component";
-import { DoughnutChartSelectionSampleComponent } from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
+import {
+    DoughnutChartExplosionSampleComponent
+} from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
+import {
+    DoughnutChartOverviewSampleComponent
+} from "./doughnut-chart/doughnut-chart-overview-sample/doughnut-chart-overview-sample.component";
+import {
+    DoughnutChartSelectionSampleComponent
+} from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
-
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -1104,7 +1109,7 @@ export const samplesRoutes: Routes = [
         component: PieChartSelectionComponent,
         data: { displayName: "Pie Chart Selection", parentName: "Pie Chart" },
         path: "pie-chart-selection"
-    },    
+    },
     {
         component: ToggleComponent,
         data: { displayName: "Toggle Overview", parentName: "Toggle" },

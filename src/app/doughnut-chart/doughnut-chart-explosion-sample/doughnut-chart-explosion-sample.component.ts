@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-doughnut-chart-explosion-sample',
-  templateUrl: './doughnut-chart-explosion-sample.component.html',
-  styleUrls: ['./doughnut-chart-explosion-sample.component.scss']
+    selector: "app-doughnut-chart-explosion-sample",
+    styleUrls: ["./doughnut-chart-explosion-sample.component.scss"],
+    templateUrl: "./doughnut-chart-explosion-sample.component.html"
 })
-export class DoughnutChartExplosionSampleComponent implements OnInit {
+export class DoughnutChartExplosionSampleComponent {
 
     public data: any;
 
@@ -18,12 +18,9 @@ export class DoughnutChartExplosionSampleComponent implements OnInit {
             { Label: "Development", Value: 4 },
             { Label: "Customer Support", Value: 6 }
         ];
-      }
-
-      public pieSliceClickEvent(e: any): void {
-        e.args.isExploded = !e.args.isExploded;
     }
 
-  ngOnInit() {
-  }  
+    public pieSliceClickEvent(e: any): void {
+        e.args.isExploded = !e.args.isExploded;
+    }
 }
