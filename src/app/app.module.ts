@@ -105,6 +105,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DisplayDensityComponent } from "./display-density/display-density.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
@@ -469,7 +470,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         SvgIconSampleComponent,
         ShadowsSampleComponent,
         ShadowsSample2Component,
-        DropdownMenuComponent
+        DropdownMenuComponent,
+        DisplayDensityComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
