@@ -1,0 +1,83 @@
+<div class="sample-wrapper container">
+    <igx-dialog #options
+        title="Options"
+        leftButtonLabel="OK"
+        (onLeftButtonSelect)="options.close()">
+
+        <div class="sample-options">
+
+            <fieldset>
+                <legend>Tooltips Layer</legend>
+                <div>
+                    <label for="sel_tooltipType">toolTipType: </label>
+                    <select id="sel_tooltipType" [(ngModel)]="sampleOptions.tooltipType">
+                        <option *ngFor="let item of ToolTipType | keys" [value]="item.value">{{item.value}}</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Crosshairs Layer</legend>
+                <div>
+                    <label for="sel_displayCrosshairs">crosshairsDisplayMode: </label>
+                    <select id="sel_displayCrosshairs" [(ngModel)]="sampleOptions.crosshairs">
+                        <option *ngFor="let item of CrosshairsDisplayMode | keys" [value]="item.value">{{item.value}}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="chk_snapCrosshairsToData">crosshairsSnapToData: </label>
+                    <input id="chk_snapCrosshairsToData" [(ngModel)]="sampleOptions.snapCrosshairs" type="checkbox" />
+                </div>
+                <div>
+                    <label for="chk_displayCrosshairAxisAnnotations">crosshairsAnnotationEnabled: </label>
+                    <input id="chk_displayCrosshairAxisAnnotations" [(ngModel)]="sampleOptions.crosshairAnnotations" type="checkbox" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Final Value Layer</legend>
+                <div>
+                    <label for="chk_displayFinalValueAnnotation">finalValueAnnotationsVisible: </label>
+                    <input id="chk_displayFinalValueAnnotation" [(ngModel)]="sampleOptions.finalValueAnnotations" type="checkbox" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Callout Layer</legend>
+                <div>
+                    <label for="chk_calloutsVisible">calloutsVisible: </label>
+                    <input id="chk_calloutsVisible" [(ngModel)]="sampleOptions.calloutsVisible" type="checkbox" />
+                </div>
+            </fieldset>
+
+        </div>
+
+    </igx-dialog>
+
+    <button class="options-button" igxButton="raised" igxRipple="white" (click)="options.open()">Demo Options</button>
+
+    <div class="chart">
+        <igx-financial-chart height="100%" width="100%"
+            [dataSource]="financialData"
+            chartType="Candle"
+            yAxisTitle="Stock Prices ($)"
+            
+            
+            [toolTipType]="sampleOptions.tooltipType"
+
+            [crosshairsDisplayMode]="sampleOptions.crosshairs"
+            [crosshairsSnapToData]="sampleOptions.snapCrosshairs"
+            [crosshairsAnnotationEnabled]="sampleOptions.crosshairAnnotations"
+
+            [finalValueAnnotationsVisible]="sampleOptions.finalValueAnnotations"
+
+            [calloutsVisible]="sampleOptions.calloutsVisible"
+            [calloutsDataSource]="calloutData"
+            calloutsXMemberPath="index"
+            calloutsYMemberPath="yValue"
+            calloutsLabelMemberPath="content"
+            calloutsContentMemberPath="yValue">
+        </igx-financial-chart>
+
+    </div>
+</div>

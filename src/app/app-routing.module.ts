@@ -36,6 +36,9 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import {
+    CategoryChartAnnotationsOverlaysComponent
+} from "./category-chart/annotations-overlays/category-chart-annotations-overlays.component";
+import {
     CategoryChartAxisOptionsComponent
 } from "./category-chart/axis-options/category-chart-axis-options-sample.component";
 import {
@@ -92,6 +95,9 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import {
+    FinancialChartAnnotationsOverlaysComponent
+} from "./financial-chart/annotations-overlays/financial-chart-annotations-overlays.component";
 import {
     FinancialChartAxisTypesComponent
 } from "./financial-chart/axis-types/financial-chart-axis-types.component";
@@ -1247,6 +1253,11 @@ export const samplesRoutes: Routes = [
         path: "category-chart-overview-sample"
     },
     {
+        component: CategoryChartAnnotationsOverlaysComponent,
+        data: { displayName: "Category Chart Annotations and Overlays", parentName: "Category Chart" },
+        path: "category-chart-annotations-and-overlays"
+    },
+    {
         component: CategoryChartOverlapColumnsComponent,
         data: { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
         path: "category-chart-overlap-columns"
@@ -1290,6 +1301,11 @@ export const samplesRoutes: Routes = [
         component: FinancialChartPerformanceComponent,
         data: { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
         path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartAnnotationsOverlaysComponent,
+        data: { displayName: "Financial Chart Annotations and Overlays", parentName: "Financial Chart" },
+        path: "financial-chart-annotations-and-overlays"
     },
     {
         component: FinancialChartTitlesComponent,
