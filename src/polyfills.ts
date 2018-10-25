@@ -58,6 +58,13 @@ import "hammerjs/hammer";
 import "zone.js/dist/zone";  // Included with Angular CLI.
 
 /***************************************************************************************************
+ * @angular/animations polyfill
+ */
+if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector;
+}
+
+/***************************************************************************************************
  * APPLICATION IMPORTS
  */
 
