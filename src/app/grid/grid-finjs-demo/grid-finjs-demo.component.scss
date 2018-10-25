@@ -60,14 +60,14 @@ $exclude: (
             $header-background: igx-color($finjs-palette, 'grays', 800),
             $header-text-color: $white-70,
             $header-border-color: $white-40,
-            $row-indentation-background: #000,
+            // $row-indentation-background: #000,
 
             $row-selected-background: #333,
             $row-selected-text-color: text-contrast(#333),
             $row-hover-background: #222,
             $row-hover-text-color: text-contrast(#222),
             $row-border-color: #333,
-            $row-content-focus-background: rgba(106, 227, 104, .20),
+            // $row-content-focus-background: rgba(106, 227, 104, .20),
 
             $cell-selected-background: igx-color($finjs-palette, 'primary'),
             $cell-selected-text-color: igx-color($finjs-palette, 'grays', 900),
