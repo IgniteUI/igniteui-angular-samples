@@ -14,8 +14,8 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-excel-workbook-saving.component",
-    styleUrls: ["./excel-workbook-saving.component.component.scss"],
-    templateUrl: "./excel-workbook-saving.component.component.html"
+    styleUrls: ["./excel-workbook-saving.component.scss"],
+    templateUrl: "./excel-workbook-saving.component.html"
 })
 export class ExcelLibraryWorkbookSavingComponent implements OnInit {
 

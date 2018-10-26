@@ -14,8 +14,8 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-excel-workbook-editing.component",
-    styleUrls: ["./excel-workbook-editing.component.component.scss"],
-    templateUrl: "./excel-workbook-editing.component.component.html"
+    styleUrls: ["./excel-workbook-editing.component.scss"],
+    templateUrl: "./excel-workbook-editing.component.html"
 })
 export class ExcelLibraryWorkbookEditingComponent implements OnInit {
 
