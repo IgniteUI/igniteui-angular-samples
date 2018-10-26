@@ -20,17 +20,17 @@ export class DisplayDensityComponent implements OnInit {
         this.displayDensities = [
             {
                 label: "compact",
-                selected: initialDensity == "compact",
+                selected: initialDensity === "compact",
                 togglable: true
             },
             {
                 label: "cosy",
-                selected: initialDensity == "cosy",
+                selected: initialDensity === "cosy",
                 togglable: true
             },
             {
                 label: "comfortable",
-                selected: initialDensity == "comfortable",
+                selected: initialDensity === "comfortable",
                 togglable: true
             }
         ];
