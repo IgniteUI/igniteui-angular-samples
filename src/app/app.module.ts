@@ -46,7 +46,8 @@ import {
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule,
-    IgxTooltipModule
+    IgxTooltipModule,
+    IgxTreeGridModule
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -535,7 +536,8 @@ import { TreeGridPrimaryforeignkeySampleComponent } from './tree-grid/tree-grid-
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxTreeGridModule
     ],
     providers: [
         DataService,

@@ -1,3 +1,9 @@
-<p>
-  tree-grid-childdatakey-sample works!
-</p>
+<div class="grid__wrapper">
+    <igx-tree-grid #treeGrid [data]="data" childDataKey="Employees" width="100%" height="500px" [rowSelectable]="true"
+                   (onColumnInit)="initColumn($event)">
+        <igx-column field="ID" dataType="number"></igx-column>
+        <igx-column field="Name" dataType="string"></igx-column>
+        <igx-column field="HireDate" dataType="date"></igx-column>
+        <igx-column field="Age" dataType="number"></igx-column>
+    </igx-tree-grid>
+</div>
