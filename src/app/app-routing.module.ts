@@ -45,14 +45,14 @@ import {
     CategoryChartConfigOptionsComponent
 } from "./category-chart/config-options/category-chart-config-options-sample.component";
 import {
-    CategoryChartCustomTooltipsComponent
-} from "./category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
-import {
     CategoryChartHighFrequencyComponent
 } from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
     CategoryChartHighVolumeComponent
 } from "./category-chart/high-volume/category-chart-high-volume-sample.component";
+import {
+    CategoryChartHighlightingComponent
+} from "./category-chart/highlighting/category-chart-highlighting.component";
 import {
     CategoryChartOverlapColumnsComponent
 } from "./category-chart/overlap-columns/category-chart-overlap-columns.component";
@@ -60,8 +60,14 @@ import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
 import {
-    CategoryChartWithTrendlineComponent
-} from "./category-chart/trendline/category-chart-with-trendline.component";
+    CategoryChartTooltipTemplateComponent
+} from "./category-chart/tooltip-template/category-chart-tooltip-template.component";
+import {
+    CategoryChartTooltipTypesComponent
+} from "./category-chart/tooltip-types/category-chart-tooltip-types.component";
+import {
+    CategoryChartTrendlinesComponent
+} from "./category-chart/trendline/category-chart-trendlines.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
@@ -1317,9 +1323,9 @@ export const samplesRoutes: Routes = [
         path: "category-chart-overlap-columns"
     },
     {
-        component: CategoryChartCustomTooltipsComponent,
-        data: { displayName: "Category Chart Custom Tooltips", parentName: "Category Chart" },
-        path: "category-chart-custom-tooltips-sample"
+        component: CategoryChartHighlightingComponent,
+        data: { displayName: "Category Chart Highlighting", parentName: "Category Chart" },
+        path: "category-chart-highlighting-sample"
     },
     {
         component: CategoryChartHighVolumeComponent,
@@ -1347,9 +1353,19 @@ export const samplesRoutes: Routes = [
         path: "category-chart-config-options-sample"
     },
     {
-        component: CategoryChartWithTrendlineComponent,
-        data: { displayName: "Category Chart With Trendline", parentName: "Category Chart" },
-        path: "category-chart-with-trendline"
+        component: CategoryChartTooltipTemplateComponent,
+        data: { displayName: "Category Chart Tooltips Template", parentName: "Category Chart" },
+        path: "category-chart-tooltip-template"
+    },
+    {
+        component: CategoryChartTooltipTypesComponent,
+        data: { displayName: "Category Chart Tooltip Types", parentName: "Category Chart" },
+        path: "category-chart-tooltip-types"
+    },
+    {
+        component: CategoryChartTrendlinesComponent,
+        data: { displayName: "Category Chart Trendline", parentName: "Category Chart" },
+        path: "category-chart-trendline"
     },
     {
         component: FinancialChartPerformanceComponent,

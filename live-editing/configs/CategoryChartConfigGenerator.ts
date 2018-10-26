@@ -7,8 +7,8 @@ import {
     CategoryChartConfigOptionsComponent
 } from "../../src/app/category-chart/config-options/category-chart-config-options-sample.component";
 import {
-     CategoryChartCustomTooltipsComponent
-} from "../../src/app/category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
+     CategoryChartTooltipTemplateComponent
+} from "../../src/app/category-chart/tooltip-template/category-chart-tooltip-template.component";
 import {
     CategoryChartHighFrequencyComponent
 } from "../../src/app/category-chart/high-frequency/category-chart-high-frequency-sample.component";
@@ -61,10 +61,10 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: CategoryChartCustomTooltipsComponent,
+            component: CategoryChartTooltipTemplateComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCategoryChartModule, CategoryChartCustomTooltipsComponent],
-                ngDeclarations: [CategoryChartCustomTooltipsComponent],
+                imports: [IgxCategoryChartModule, CategoryChartTooltipTemplateComponent],
+                ngDeclarations: [CategoryChartTooltipTemplateComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts
