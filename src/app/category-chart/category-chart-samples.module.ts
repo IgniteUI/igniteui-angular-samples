@@ -34,6 +34,10 @@ import {
         FormsModule,
         SamplesUtilitiesModule,
         IgxCategoryChartModule,
+        IgxButtonModule,
+        IgxDialogModule,
+        IgxRippleModule,
+        IgxLegendModule
     ]
 })
 export class CategoryChartSamplesModule {
