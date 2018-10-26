@@ -99,6 +99,36 @@ import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.co
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import {
+    ExcelLibraryWorkbookEditingComponent
+} from "./excel-library/workbook-editing/excel-workbook-editing.component";
+import {
+    ExcelLibraryWorkbookLoadingComponent
+} from "./excel-library/workbook-loading/excel-workbook-loading.component";
+import {
+    ExcelLibraryWorkbookSavingComponent
+} from "./excel-library/workbook-saving/excel-workbook-saving.component";
+import {
+    ExcelLibraryWorkingWithCategoryChartComponent
+} from "./excel-library/working-with-categorychart/excel-working-with-categorychart.component";
+import {
+    ExcelLibraryWorkingWithCellsComponent
+} from "./excel-library/working-with-cells/excel-working-with-cells.component";
+import {
+    ExcelLibraryWorkingWithDataChartComponent
+} from "./excel-library/working-with-datachart/excel-working-with-datachart.component";
+import {
+    ExcelLibraryWorkingWithGridComponent
+} from "./excel-library/working-with-grid/excel-working-with-grid.component";
+import {
+    ExcelLibraryWorkingWithSparklineComponent
+} from "./excel-library/working-with-sparkline/excel-working-with-sparkline.component";
+import {
+    ExcelLibraryWorkingWithTablesComponent
+} from "./excel-library/working-with-tables/excel-working-with-tables.component";
+import {
+    ExcelLibraryWorksheetOperationsComponent
+} from "./excel-library/worksheet-operations/excel-worksheet-operations.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -575,6 +605,58 @@ export const samplesRoutes: Routes = [
         data: { displayName: "Excel Export Grid", parentName: "Excel Export" },
         path: "export-excel-sample-1"
     },
+    // excel library samples ... start
+    {
+        component: ExcelLibraryWorkbookEditingComponent,
+        data: { displayName: "Workbook Editing", parentName: "Excel Library" },
+        path: "excel-workbook-editing"
+    },
+    {
+        component: ExcelLibraryWorkbookLoadingComponent,
+        data: { displayName: "Workbook Loading", parentName: "Excel Library" },
+        path: "excel-workbook-loading"
+    },
+    {
+        component: ExcelLibraryWorkbookSavingComponent,
+        data: { displayName: "Workbook Saving", parentName: "Excel Library" },
+        path: "excel-workbook-saving"
+    },
+    {
+        component: ExcelLibraryWorkingWithCellsComponent,
+        data: { displayName: "Working with Cells", parentName: "Excel Library" },
+        path: "excel-working-with-cells"
+    },
+    {
+        component: ExcelLibraryWorkingWithCategoryChartComponent,
+        data: { displayName: "Working with Category Chart", parentName: "Excel Library" },
+        path: "excel-working-with-categorychart"
+    },
+    {
+        component: ExcelLibraryWorkingWithDataChartComponent,
+        data: { displayName: "Working with Data Chart", parentName: "Excel Library" },
+        path: "excel-working-with-datachart"
+    },
+    {
+        component: ExcelLibraryWorkingWithGridComponent,
+        data: { displayName: "Working with Grid", parentName: "Excel Library" },
+        path: "excel-working-with-grid"
+    },
+    {
+        component: ExcelLibraryWorkingWithSparklineComponent,
+        data: { displayName: "Working with Sparkline", parentName: "Excel Library" },
+        path: "excel-working-with-sparkline"
+    },
+    {
+        component: ExcelLibraryWorkingWithTablesComponent,
+        data: { displayName: "Working with Tables", parentName: "Excel Library" },
+        path: "excel-working-with-tables"
+    },
+    {
+        component: ExcelLibraryWorksheetOperationsComponent,
+        data: { displayName: "Worksheet Operations", parentName: "Excel Library" },
+        path: "excel-worksheet-operations"
+    },
+    // excel library samples ... end
     {
         component: ExpansionPanelSample1Component,
         data: { displayName: "Expansion Panel 1", parentName: "Expansion Panel" },

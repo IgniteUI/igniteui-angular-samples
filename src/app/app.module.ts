@@ -119,10 +119,12 @@ import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 
 import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
+import { ExcelLibrarySamplesModule } from "./excel-library/excel-library-samples.module";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
@@ -524,6 +526,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         IgxInputGroupModule,
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
+        ExcelLibrarySamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
         PieChartSamplesModule.forRoot(),
         DoughnutChartSamplesModule.forRoot(),
