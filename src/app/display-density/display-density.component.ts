@@ -10,26 +10,27 @@ import { DisplayDensity, DisplayDensityToken, IDisplayDensity } from "igniteui-a
 
 export class DisplayDensityComponent implements OnInit {
     public displayDensities;
-    public density: string = DisplayDensity.comfortable;
+    public density: any;
     public user;
 
     constructor(@Inject(DisplayDensityToken) public displayDensityOptions: IDisplayDensity) { }
 
     public ngOnInit() {
+        const initialDensity = this.displayDensityOptions.displayDensity;
         this.displayDensities = [
             {
                 label: "compact",
-                selected: this.density === DisplayDensity.compact,
+                selected: initialDensity == "compact",
                 togglable: true
             },
             {
                 label: "cosy",
-                selected: this.density === DisplayDensity.cosy,
+                selected: initialDensity == "cosy",
                 togglable: true
             },
             {
                 label: "comfortable",
-                selected: this.density === DisplayDensity.comfortable,
+                selected: initialDensity == "comfortable",
                 togglable: true
             }
         ];
@@ -43,20 +44,6 @@ export class DisplayDensityComponent implements OnInit {
 
     public changeDensity(eventArgs) {
         this.density = this.displayDensities[eventArgs.index].label;
-
-        switch (this.density) {
-            case DisplayDensity.comfortable: {
-                this.displayDensityOptions.displayDensity = DisplayDensity.comfortable;
-                break;
-            }
-            case DisplayDensity.compact: {
-                this.displayDensityOptions.displayDensity = DisplayDensity.compact;
-                break;
-            }
-            case DisplayDensity.cosy: {
-                this.displayDensityOptions.displayDensity = DisplayDensity.cosy;
-                break;
-            }
-        }
+        this.displayDensityOptions.displayDensity = this.density;
     }
 }
