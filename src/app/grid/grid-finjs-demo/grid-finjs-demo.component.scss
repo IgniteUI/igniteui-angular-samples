@@ -36,12 +36,12 @@ $exclude: (
         @include igx-theme($finjs-palette ,$exclude:$exclude);
 
         // VAR COLORS
-    
+
         $dark-text: #000;
         $light-text: #fff;
         $disabled-text: rgba(255,255,255, .38);
         $content-background: #000;
-    
+
          $white-10:rgba(255, 255, 255, .04);
          $white-20:rgba(255, 255, 255, .08);
          $white-30:rgba(255, 255, 255, .12);
@@ -51,7 +51,7 @@ $exclude: (
          $white-70:rgba(255, 255, 255, .62);
          $white-80:rgba(255, 255, 255, .74);
          $white-90:rgba(255, 255, 255, .87);
-    
+
         // GRID DARK THEME
         $finjs-grid-theme: igx-grid-theme(
             $content-background: $content-background,
@@ -60,14 +60,12 @@ $exclude: (
             $header-background: igx-color($finjs-palette, 'grays', 800),
             $header-text-color: $white-70,
             $header-border-color: $white-40,
-            $row-indentation-background: #000,
 
             $row-selected-background: #333,
             $row-selected-text-color: text-contrast(#333),
             $row-hover-background: #222,
             $row-hover-text-color: text-contrast(#222),
             $row-border-color: #333,
-            $row-content-focus-background: rgba(106, 227, 104, .20),
 
             $cell-selected-background: igx-color($finjs-palette, 'primary'),
             $cell-selected-text-color: igx-color($finjs-palette, 'grays', 900),
@@ -103,7 +101,7 @@ $exclude: (
         );
 
         @include igx-input-group($finjs-input-group-theme);
-    
+
         // CHIPS THEME
         $finjs-chip-theme: igx-chip-theme(
             $palette: $finjs-palette,
@@ -111,27 +109,27 @@ $exclude: (
             $hover-background: #444,
             $focus-background:#222
         );
-    
+
         @include igx-chip($finjs-chip-theme);
-    
-    
+
+
         // CHECKBOX
         $finjs-checkbox-theme: igx-checkbox-theme(
             $empty-color: $white-70,
             $tick-color: $dark-text
         );
-    
+
         @include igx-checkbox($finjs-checkbox-theme);
-    
-    
+
+
         // TOOLBAR
         $finjs-toolbar-theme: igx-grid-toolbar-theme(
             $background-color: #222,
             $dropdown-background: #222
         );
-    
+
         @include igx-grid-toolbar($finjs-toolbar-theme);
-    
+
         // BUTTON GROUP
         $finjs-btn-group-theme: igx-button-group-theme(
             $item-background: #222
@@ -139,7 +137,7 @@ $exclude: (
 
         @include igx-button-group($finjs-btn-group-theme);
 
-    
+
         // GRID FILTER
         $finjs-filtering-theme: igx-grid-filtering-theme(
             $toggle-icon-color: $white-70,
@@ -147,22 +145,22 @@ $exclude: (
             $menu-background: #111,
             $menu-button-text-color: igx-color($finjs-palette, 'secondary', 500)
         );
-    
+
         @include igx-grid-filtering($finjs-filtering-theme);
-    
-    
+
+
         // SLIDER
         $finjs-slider-theme: igx-slider-theme(
             $variant: 'light'
         );
-    
+
         @include igx-slider($finjs-slider-theme);
-    
+
         // SWITCH
         $finjs-switch-theme: igx-switch-theme(
             $variant: 'light'
         );
-    
+
         @include igx-switch($finjs-switch-theme);
 
 
@@ -299,7 +297,7 @@ $exclude: (
             left: 0;
         }
     }
-    
+
     .finjs-icons {
         display: flex;
         align-items: center;
