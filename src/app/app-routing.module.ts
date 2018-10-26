@@ -36,6 +36,9 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import {
+    CategoryChartAnnotationsComponent
+} from "./category-chart/annotations/category-chart-annotations.component";
+import {
     CategoryChartAxisOptionsComponent
 } from "./category-chart/axis-options/category-chart-axis-options-sample.component";
 import {
@@ -1302,6 +1305,11 @@ export const samplesRoutes: Routes = [
         component: CategoryChartOverviewComponent,
         data: { displayName: "Category Chart Overview", parentName: "Category Chart" },
         path: "category-chart-overview-sample"
+    },
+    {
+        component: CategoryChartAnnotationsComponent,
+        data: { displayName: "Category Chart Annotations", parentName: "Category Chart" },
+        path: "category-chart-annotations"
     },
     {
         component: CategoryChartOverlapColumnsComponent,
