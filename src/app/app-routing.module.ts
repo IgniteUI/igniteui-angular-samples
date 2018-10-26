@@ -102,6 +102,9 @@ import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import {
+    FinancialChartAnnotationsComponent
+} from "./financial-chart/annotations/financial-chart-annotations.component";
+import {
     FinancialChartAxisTypesComponent
 } from "./financial-chart/axis-types/financial-chart-axis-types.component";
 import {
@@ -1344,6 +1347,11 @@ export const samplesRoutes: Routes = [
         component: FinancialChartPerformanceComponent,
         data: { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
         path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartAnnotationsComponent,
+        data: { displayName: "Financial Chart Annotations", parentName: "Financial Chart" },
+        path: "financial-chart-annotations"
     },
     {
         component: FinancialChartTitlesComponent,
