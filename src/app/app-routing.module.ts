@@ -76,6 +76,15 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import {
+    DoughnutChartExplosionSampleComponent
+} from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
+import {
+    DoughnutChartOverviewSampleComponent
+} from "./doughnut-chart/doughnut-chart-overview-sample/doughnut-chart-overview-sample.component";
+import {
+    DoughnutChartSelectionSampleComponent
+} from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
@@ -245,6 +254,11 @@ import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
+import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
+import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
+import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
+import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -503,6 +517,21 @@ export const samplesRoutes: Routes = [
         component: DialogComponent,
         data: { displayName: "Various Dialogs", parentName: "Dialog" },
         path: "dialog"
+    },
+    {
+        component: DoughnutChartExplosionSampleComponent,
+        data: { displayName: "Doughnut Chart Explosion", parentName: "Doughnut Chart" },
+        path: "doughnut-chart-explosion"
+    },
+    {
+        component: DoughnutChartOverviewSampleComponent,
+        data: { displayName: "Doughnut Chart Overview", parentName: "Doughnut Chart" },
+        path: "doughnut-chart-overview"
+    },
+    {
+        component: DoughnutChartSelectionSampleComponent,
+        data: { displayName: "Doughnut Chart Selection", parentName: "Doughnut Chart" },
+        path: "doughnut-chart-selection"
     },
     {
         component: DropdownMenuComponent,
@@ -1055,6 +1084,31 @@ export const samplesRoutes: Routes = [
         component: OverlayScrollSample2Component,
         data: { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
         path: "overlay-scroll-sample-2"
+    },
+    {
+        component: PieChartDataSampleComponent,
+        data: { displayName: "Pie Chart Data Sample", parentName: "Pie Chart" },
+        path: "pie-chart-data-sample"
+    },
+    {
+        component: PieChartExplosionComponent,
+        data: { displayName: "Pie Chart Explosion", parentName: "Pie Chart" },
+        path: "pie-chart-explosion"
+    },
+    {
+        component: PieChartLegendComponent,
+        data: { displayName: "Pie Chart Legend", parentName: "Pie Chart" },
+        path: "pie-chart-legend"
+    },
+    {
+        component: PieChartOthersComponent,
+        data: { displayName: "Pie Chart Others Slice", parentName: "Pie Chart" },
+        path: "pie-chart-others"
+    },
+    {
+        component: PieChartSelectionComponent,
+        data: { displayName: "Pie Chart Selection", parentName: "Pie Chart" },
+        path: "pie-chart-selection"
     },
     {
         component: ToggleComponent,
