@@ -1,3 +1,11 @@
-<p>
-  tree-grid-primaryforeignkey-sample works!
-</p>
+<div class="grid__wrapper">
+    <igx-tree-grid #treeGrid [data]="data"
+        primaryKey="ID" foreignKey="ParentID" width="100%" height="310px"
+        [rowSelectable]="true" expandedLevels="2" (onColumnInit)="initColumns($event)">
+        <igx-column field="ID" dataType="number"></igx-column>
+        <igx-column field="ParentID" dataType="number"></igx-column>
+        <igx-column field="Name" dataType="string"></igx-column>
+        <igx-column field="JobTitle" dataType="string"></igx-column>
+        <igx-column field="Age" dataType="number"></igx-column>
+    </igx-tree-grid>
+</div>

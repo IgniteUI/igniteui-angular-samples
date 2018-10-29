@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { EMPLOYEE_DATA } from './data';
-import { IgxColumnComponent } from 'igniteui-angular';
+import { Component, OnInit } from "@angular/core";
+import { IgxColumnComponent } from "igniteui-angular";
+import { EMPLOYEE_DATA } from "./data";
 
 @Component({
     selector: "app-tree-grid-childdatakey-sample",
