@@ -11,23 +11,23 @@ import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 
 // TODO add samples based on WPF docs https://staging.infragistics.local/help/wpf/excelengine
 
-// workbooks samples:
+// Excel samples:
 import {
-    ExcelLibraryWorkbookEditingComponent
-} from "./workbook-editing/excel-workbook-editing.component";
+    ExcelLibraryUsingCellsComponent
+} from "./using-cells/excel-using-cells.component";
 import {
-    ExcelLibraryWorkbookLoadingComponent
-} from "./workbook-loading/excel-workbook-loading.component";
+    ExcelLibraryUsingTablesComponent
+} from "./using-tables/excel-using-tables.component";
 import {
-    ExcelLibraryWorkbookSavingComponent
-} from "./workbook-saving/excel-workbook-saving.component";
-// working-with samples:
+    ExcelLibraryUsingWorkbooksComponent
+} from "./using-workbooks/excel-using-workbooks.component";
+import {
+    ExcelLibraryUsingWorksheetsComponent
+} from "./using-worksheets/excel-using-worksheets.component";
+// Integration samples:
 import {
     ExcelLibraryWorkingWithCategoryChartComponent
 } from "./working-with-categorychart/excel-working-with-categorychart.component";
-import {
-    ExcelLibraryWorkingWithCellsComponent
-} from "./working-with-cells/excel-working-with-cells.component";
 import {
     ExcelLibraryWorkingWithDataChartComponent
 } from "./working-with-datachart/excel-working-with-datachart.component";
@@ -37,25 +37,17 @@ import {
 import {
     ExcelLibraryWorkingWithSparklineComponent
 } from "./working-with-sparkline/excel-working-with-sparkline.component";
-import {
-    ExcelLibraryWorkingWithTablesComponent
-} from "./working-with-tables/excel-working-with-tables.component";
-// worksheet samples:
-import {
-    ExcelLibraryWorksheetOperationsComponent
-} from "./worksheet-operations/excel-worksheet-operations.component";
 
 @NgModule({
     declarations: [
-        ExcelLibraryWorkbookEditingComponent,
-        ExcelLibraryWorkbookLoadingComponent,
-        ExcelLibraryWorkbookSavingComponent,
+        ExcelLibraryUsingWorkbooksComponent,
         ExcelLibraryWorkingWithCategoryChartComponent,
         ExcelLibraryWorkingWithGridComponent,
         ExcelLibraryWorkingWithDataChartComponent,
         ExcelLibraryWorkingWithSparklineComponent,
-        ExcelLibraryWorkingWithTablesComponent,
-        ExcelLibraryWorksheetOperationsComponent
+        ExcelLibraryUsingTablesComponent,
+        ExcelLibraryUsingCellsComponent,
+        ExcelLibraryUsingWorksheetsComponent
     ],
     imports: [
         CommonModule,

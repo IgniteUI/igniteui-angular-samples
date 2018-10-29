@@ -13,12 +13,12 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "app-excel-worksheet-operations.component",
-    styleUrls: ["./excel-worksheet-operations.component.scss"],
-    templateUrl: "./excel-worksheet-operations.component.html"
+    selector:  "app-excel-using-cells.component",
+    styleUrls:  ["./excel-using-cells.component.scss"],
+    templateUrl: "./excel-using-cells.component.html"
 })
 
-export class ExcelLibraryWorksheetOperationsComponent implements OnInit {
+export class ExcelLibraryUsingCellsComponent implements OnInit {
 
     public data: any;
 
