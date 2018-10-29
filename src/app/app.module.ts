@@ -269,8 +269,12 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
-import { TreeGridChilddatakeySampleComponent } from './tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component';
-import { TreeGridPrimaryforeignkeySampleComponent } from './tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component';
+import {
+    TreeGridChilddatakeySampleComponent
+} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridPrimaryforeignkeySampleComponent
+} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
 @NgModule({
     bootstrap: [AppComponent],
