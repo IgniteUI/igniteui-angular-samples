@@ -8,7 +8,7 @@
 
 
   //Set the light themes for the components.
-    &.light-theme {
+    &.default-theme {
       background: $light-color;
       ::ng-deep {
         @include igx-grid($light-grid-theme);

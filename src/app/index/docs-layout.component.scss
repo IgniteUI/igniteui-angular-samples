@@ -1,16 +1,23 @@
 @import "~igniteui-angular/lib/core/styles/themes/index";
+@import '~igniteui-angular/lib/core/styles/themes/presets/dark-green/index';
 
 @include igx-core();
 
 :host ::ng-deep {
 
-  .light-theme {
-  }
+    $app-palette: igx-palette(#09f, #f66604);
+    $app-dark-green-palette: igx-palette(#222, #72da67);
+    $default-palette: $app-palette;
 
-  .dark-theme {
-  }
+    .dark-theme {
+        $igx-background-color: #484848;
+        $igx-foreground-color: text-contrast($igx-background-color);
+        background: $igx-background-color;
+        color: $igx-foreground-color;
 
-  .default-theme {
-    @include igx-theme($default-palette);
-  }
+        @include igx-theme(
+            $default-palette,
+            $preset: $dark-green-theme
+        );
+    }
 }
