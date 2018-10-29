@@ -79,6 +79,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DisplayDensityComponent } from "./display-density/display-density.component";
 import {
     DoughnutChartExplosionSampleComponent
 } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
@@ -1508,13 +1509,18 @@ export const samplesRoutes: Routes = [
     },
     {
         component: ShadowsSampleComponent,
-        data: {  displayName: "Shadows sample", parentName: "Shadows" },
+        data: { displayName: "Shadows sample", parentName: "Shadows" },
         path: "shadows-sample"
     },
     {
         component: ShadowsSample2Component,
-        data: {  displayName: "Shadows sample 2", parentName: "Shadows" },
+        data: { displayName: "Shadows sample 2", parentName: "Shadows" },
         path: "shadows-sample-2"
+    },
+    {
+        component: DisplayDensityComponent,
+        data: { displayName: "Display density sample", parentName: "Themes" },
+        path: "density"
     }
 ];
 export const appRoutes: Routes = [
