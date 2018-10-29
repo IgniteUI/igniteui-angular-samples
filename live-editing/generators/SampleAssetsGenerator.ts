@@ -13,8 +13,9 @@ import { ChipConfigGenerator } from "./../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "./../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "./../configs/DatePickerConfigGenerator";
+import { DensityConfigGenerator } from "./../configs/DensityConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
-import { DragAndDropConfigGenerator} from "./../configs/DragAndDropConfigGenerator";
+import { DragAndDropConfigGenerator } from "./../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
 import { ExpansionPanelConfigGenerator } from "./../configs/ExpansionPanelConfigGenerator";
 import { ExportCsvConfigGenerator } from "./../configs/ExportCsvConfigGenerator";
@@ -76,8 +77,8 @@ const SAMPLE_ASSETS_BASE_DIR: string = "app/";
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
-    ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator, DropDownConfigGenerator,
-    ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
+    ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
+    DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
     GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
@@ -149,7 +150,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _getComponentFiles(config: Config,
-                               configImports: Collections.Dictionary<string, string>): LiveEditingFile[] {
+        configImports: Collections.Dictionary<string, string>): LiveEditingFile[] {
         let componentFiles = new Array<LiveEditingFile>();
         let componentModuleSpecifier = configImports.getValue(config.component.name);
         let componentPath = componentModuleSpecifier.replace(GO_DIR_BACK_REG_EX, "");
@@ -333,7 +334,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _formatAppModuleTypes(types: string[], multiline: boolean, tabsCount: number,
-                                  suffixIfMultiple: string = null): string {
+        suffixIfMultiple: string = null): string {
         if (types.length === 1 && !multiline) {
             return types.join("");
         }
