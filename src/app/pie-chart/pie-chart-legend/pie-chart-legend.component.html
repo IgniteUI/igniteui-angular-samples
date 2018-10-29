@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="legend">
+        <igx-item-legend #legend123 height="100px" width="100px">
+        </igx-item-legend>
+    </div>
+    <div class="chart">
+        <igx-pie-chart #piechart height="100%" width="80%" [dataSource]="data" valueMemberPath="Value" labelMemberPath="Label" legendLabelMemberPath="Label"
+            (sliceClick)="pieSliceClickEvent($event)" [legend]="legend123">
+        </igx-pie-chart>
+    </div>
+</div>

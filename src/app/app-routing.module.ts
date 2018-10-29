@@ -36,6 +36,9 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import {
+    CategoryChartAnnotationsComponent
+} from "./category-chart/annotations/category-chart-annotations.component";
+import {
     CategoryChartAxisOptionsComponent
 } from "./category-chart/axis-options/category-chart-axis-options-sample.component";
 import {
@@ -76,6 +79,16 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DisplayDensityComponent } from "./display-density/display-density.component";
+import {
+    DoughnutChartExplosionSampleComponent
+} from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
+import {
+    DoughnutChartOverviewSampleComponent
+} from "./doughnut-chart/doughnut-chart-overview-sample/doughnut-chart-overview-sample.component";
+import {
+    DoughnutChartSelectionSampleComponent
+} from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
@@ -92,6 +105,9 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import {
+    FinancialChartAnnotationsComponent
+} from "./financial-chart/annotations/financial-chart-annotations.component";
 import {
     FinancialChartAxisTypesComponent
 } from "./financial-chart/axis-types/financial-chart-axis-types.component";
@@ -247,6 +263,11 @@ import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
+import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
+import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
+import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
+import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -505,6 +526,21 @@ export const samplesRoutes: Routes = [
         component: DialogComponent,
         data: { displayName: "Various Dialogs", parentName: "Dialog" },
         path: "dialog"
+    },
+    {
+        component: DoughnutChartExplosionSampleComponent,
+        data: { displayName: "Doughnut Chart Explosion", parentName: "Doughnut Chart" },
+        path: "doughnut-chart-explosion"
+    },
+    {
+        component: DoughnutChartOverviewSampleComponent,
+        data: { displayName: "Doughnut Chart Overview", parentName: "Doughnut Chart" },
+        path: "doughnut-chart-overview"
+    },
+    {
+        component: DoughnutChartSelectionSampleComponent,
+        data: { displayName: "Doughnut Chart Selection", parentName: "Doughnut Chart" },
+        path: "doughnut-chart-selection"
     },
     {
         component: DropdownMenuComponent,
@@ -1069,6 +1105,31 @@ export const samplesRoutes: Routes = [
         path: "overlay-scroll-sample-2"
     },
     {
+        component: PieChartDataSampleComponent,
+        data: { displayName: "Pie Chart Data Sample", parentName: "Pie Chart" },
+        path: "pie-chart-data-sample"
+    },
+    {
+        component: PieChartExplosionComponent,
+        data: { displayName: "Pie Chart Explosion", parentName: "Pie Chart" },
+        path: "pie-chart-explosion"
+    },
+    {
+        component: PieChartLegendComponent,
+        data: { displayName: "Pie Chart Legend", parentName: "Pie Chart" },
+        path: "pie-chart-legend"
+    },
+    {
+        component: PieChartOthersComponent,
+        data: { displayName: "Pie Chart Others Slice", parentName: "Pie Chart" },
+        path: "pie-chart-others"
+    },
+    {
+        component: PieChartSelectionComponent,
+        data: { displayName: "Pie Chart Selection", parentName: "Pie Chart" },
+        path: "pie-chart-selection"
+    },
+    {
         component: ToggleComponent,
         data: { displayName: "Toggle Overview", parentName: "Toggle" },
         path: "toggle"
@@ -1259,6 +1320,11 @@ export const samplesRoutes: Routes = [
         path: "category-chart-overview-sample"
     },
     {
+        component: CategoryChartAnnotationsComponent,
+        data: { displayName: "Category Chart Annotations", parentName: "Category Chart" },
+        path: "category-chart-annotations"
+    },
+    {
         component: CategoryChartOverlapColumnsComponent,
         data: { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
         path: "category-chart-overlap-columns"
@@ -1302,6 +1368,11 @@ export const samplesRoutes: Routes = [
         component: FinancialChartPerformanceComponent,
         data: { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
         path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartAnnotationsComponent,
+        data: { displayName: "Financial Chart Annotations", parentName: "Financial Chart" },
+        path: "financial-chart-annotations"
     },
     {
         component: FinancialChartTitlesComponent,
@@ -1450,13 +1521,18 @@ export const samplesRoutes: Routes = [
     },
     {
         component: ShadowsSampleComponent,
-        data: {  displayName: "Shadows sample", parentName: "Shadows" },
+        data: { displayName: "Shadows sample", parentName: "Shadows" },
         path: "shadows-sample"
     },
     {
         component: ShadowsSample2Component,
-        data: {  displayName: "Shadows sample 2", parentName: "Shadows" },
+        data: { displayName: "Shadows sample 2", parentName: "Shadows" },
         path: "shadows-sample-2"
+    },
+    {
+        component: DisplayDensityComponent,
+        data: { displayName: "Display density sample", parentName: "Themes" },
+        path: "density"
     }
 ];
 export const appRoutes: Routes = [
