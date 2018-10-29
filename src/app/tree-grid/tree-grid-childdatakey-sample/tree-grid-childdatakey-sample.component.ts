@@ -8,12 +8,12 @@ import { EMPLOYEE_DATA } from "./data";
     templateUrl: "./tree-grid-childdatakey-sample.component.html"
 })
 export class TreeGridChilddatakeySampleComponent implements OnInit {
-    public data: any[];
+    public localData: any[];
 
     constructor() { }
 
     public ngOnInit() {
-        this.data = EMPLOYEE_DATA;
+        this.localData = EMPLOYEE_DATA;
     }
 
     public initColumn(column: IgxColumnComponent) {
