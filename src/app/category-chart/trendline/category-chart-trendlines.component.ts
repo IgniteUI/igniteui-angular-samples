@@ -2,11 +2,11 @@ import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 
 @Component({
-    selector: "app-category-chart-with-trendline",
-    styleUrls: ["./category-chart-with-trendline.component.scss"],
-    templateUrl: "./category-chart-with-trendline.component.html"
+    selector: "app-category-chart-trendlines",
+    styleUrls: ["./category-chart-trendlines.component.scss"],
+    templateUrl: "./category-chart-trendlines.component.html"
 })
-export class CategoryChartWithTrendlineComponent implements AfterViewInit {
+export class CategoryChartTrendlinesComponent implements AfterViewInit {
 
     public data: any;
     public includedProperties: any;
