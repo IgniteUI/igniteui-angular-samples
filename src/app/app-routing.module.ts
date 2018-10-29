@@ -36,6 +36,9 @@ import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import {
+    CategoryChartAnnotationsComponent
+} from "./category-chart/annotations/category-chart-annotations.component";
+import {
     CategoryChartAxisOptionsComponent
 } from "./category-chart/axis-options/category-chart-axis-options-sample.component";
 import {
@@ -76,6 +79,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DisplayDensityComponent } from "./display-density/display-density.component";
 import {
     DoughnutChartExplosionSampleComponent
 } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
@@ -101,6 +105,9 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
+import {
+    FinancialChartAnnotationsComponent
+} from "./financial-chart/annotations/financial-chart-annotations.component";
 import {
     FinancialChartAxisTypesComponent
 } from "./financial-chart/axis-types/financial-chart-axis-types.component";
@@ -1301,6 +1308,11 @@ export const samplesRoutes: Routes = [
         path: "category-chart-overview-sample"
     },
     {
+        component: CategoryChartAnnotationsComponent,
+        data: { displayName: "Category Chart Annotations", parentName: "Category Chart" },
+        path: "category-chart-annotations"
+    },
+    {
         component: CategoryChartOverlapColumnsComponent,
         data: { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
         path: "category-chart-overlap-columns"
@@ -1344,6 +1356,11 @@ export const samplesRoutes: Routes = [
         component: FinancialChartPerformanceComponent,
         data: { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
         path: "financial-chart-performance"
+    },
+    {
+        component: FinancialChartAnnotationsComponent,
+        data: { displayName: "Financial Chart Annotations", parentName: "Financial Chart" },
+        path: "financial-chart-annotations"
     },
     {
         component: FinancialChartTitlesComponent,
@@ -1492,13 +1509,18 @@ export const samplesRoutes: Routes = [
     },
     {
         component: ShadowsSampleComponent,
-        data: {  displayName: "Shadows sample", parentName: "Shadows" },
+        data: { displayName: "Shadows sample", parentName: "Shadows" },
         path: "shadows-sample"
     },
     {
         component: ShadowsSample2Component,
-        data: {  displayName: "Shadows sample 2", parentName: "Shadows" },
+        data: { displayName: "Shadows sample 2", parentName: "Shadows" },
         path: "shadows-sample-2"
+    },
+    {
+        component: DisplayDensityComponent,
+        data: { displayName: "Display density sample", parentName: "Themes" },
+        path: "density"
     }
 ];
 export const appRoutes: Routes = [
