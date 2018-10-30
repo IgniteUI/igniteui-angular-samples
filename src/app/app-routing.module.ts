@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { NgModule } from "@angular/core";
 import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
 import "rxjs/add/operator/filter";
@@ -324,12 +325,14 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-edit/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -1560,6 +1563,16 @@ export const samplesRoutes: Routes = [
         component: TreeGridPrimaryforeignkeySampleComponent,
         data: { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
         path: "treegrid-primaryforeignkey"
+    },
+    {
+        component: TreeGridRowEditSampleComponent,
+        data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
+        path: "treegrid-row-edit"
+    },
+    {
+        component: TreeGridBatchEditingSampleComponent,
+        data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
+        path: "treegrid-batch-edit"
     },
     {
         component: DisplayDensityComponent,

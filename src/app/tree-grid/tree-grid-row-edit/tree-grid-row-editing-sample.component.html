@@ -1,0 +1,25 @@
+<div class="grid__wrapper">
+    <igx-tree-grid #grid1 [data]="data" primaryKey="EmployeID" foreignKey="PID"
+        width ="100%"
+        height ="500px"
+        rowEditable = true
+        rowSelectable = true
+        columnHiding = true
+        (onRowEditDone)="rowEditDone($event)"
+        (onRowEditCancel)="rowEditCancel($event)"
+        >
+        <igx-column *ngFor="let c of columns"
+            [editable] ="c.editable"
+            [field]="c.field"
+            [dataType]="c.dataType"
+            [header]="c.label"
+            [movable]="c.movable"
+            [resizable]="c.resizable"
+            [sortable]="c.sortable"
+            [filterable]="c.filterable"
+            >
+        </igx-column>
+    </igx-tree-grid>
+</div>
+
+
