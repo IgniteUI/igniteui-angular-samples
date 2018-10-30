@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { IgxColumnComponent } from "igniteui-angular";
 import { EMPLOYEE_DATA } from "./data";
 
 @Component({
@@ -14,13 +13,5 @@ export class TreeGridChilddatakeySampleComponent implements OnInit {
 
     public ngOnInit() {
         this.localData = EMPLOYEE_DATA;
-    }
-
-    public initColumn(column: IgxColumnComponent) {
-        column.filterable = true;
-        column.sortable = true;
-        column.editable = true;
-        column.movable = true;
-        column.resizable = true;
     }
 }
