@@ -23,6 +23,11 @@ gulp.task("watch-live-editing", ["generate-live-editing"], () => {
     });
 });
 
+gulp.task("sass-js-compile-check", async() => {
+    var checker = requireFile("./live-editing/services/SassJsCompileChecker.ts");
+    await checker.sassJsCompileChecker.run();
+});
+
 function requireFile(path) {
     delete require.cache[require.resolve(path)];
     return require(path);
