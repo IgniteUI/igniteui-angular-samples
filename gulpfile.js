@@ -7,6 +7,11 @@ const tsNode = require('ts-node').register({
     }
 });
 
+function requireFile(path) {
+    delete require.cache[require.resolve(path)];
+    return require(path);
+}
+
 gulp.task("generate-live-editing", () => {
     requireFile("./live-editing/LiveEditingManager.ts");
 });
@@ -27,8 +32,3 @@ gulp.task("sass-js-compile-check", async() => {
     var checker = requireFile("./live-editing/services/SassJsCompileChecker.ts");
     await checker.sassJsCompileChecker.run();
 });
-
-function requireFile(path) {
-    delete require.cache[require.resolve(path)];
-    return require(path);
-}
