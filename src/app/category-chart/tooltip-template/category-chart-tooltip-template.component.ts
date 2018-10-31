@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component, ViewChild } from "@angular/core";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "app-category-chart-custom-tooltips-sample",
-    styleUrls: ["./category-chart-custom-tooltips-sample.component.scss"],
-    templateUrl: "./category-chart-custom-tooltips-sample.component.html"
+    selector: "app-category-chart-tooltip-template",
+    styleUrls: ["./category-chart-tooltip-template.component.scss"],
+    templateUrl: "./category-chart-tooltip-template.component.html"
 })
-export class CategoryChartCustomTooltipsComponent {
+export class CategoryChartTooltipTemplateComponent {
 
     public chartType: string = "Auto";
     public data: any;
