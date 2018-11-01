@@ -3,33 +3,30 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
-// TODO import either CategoryChart, DataChart, or Grid module:
-// import { IgxButtonModule, IgxGridModule } from "igniteui-angular";
+// TODO import either CategoryChart or DataChart module:
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 // import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
 // import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 
 // importing IG sample:
-import { ExcelLibWorkingWithGridsComponent } from "./working-with-grids.component";
+import { ExcelLibraryWorkingWithChartsComponent } from "./charts.component";
 
 const routes: Routes = [
-    { path: "", component: ExcelLibWorkingWithGridsComponent }
+    { path: "", component: ExcelLibraryWorkingWithChartsComponent }
 ];
 const routing: ModuleWithProviders = RouterModule.forChild(routes);
 
 @NgModule({
-    declarations: [ ExcelLibWorkingWithGridsComponent ],
+    declarations: [ ExcelLibraryWorkingWithChartsComponent ],
     imports: [
         routing,
         CommonModule,
         FormsModule,
-        // IgxButtonModule,
         IgxCategoryChartModule
         // IgxDataChartCoreModule,
         // IgxDataChartCategoryModule,
         // IgxExcelModule,
-        // IgxGridModule,
     ]
 })
 
-export class ExcelLibWorkingWithGridsModule { }
+export class ExcelLibraryWorkingWithChartsModule { }

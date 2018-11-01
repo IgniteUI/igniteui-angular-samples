@@ -2,8 +2,7 @@ import {
     AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef
 } from "@angular/core";
 
-// TODO import Grid component:
-// import { IgxGridComponent } from "igniteui-angular";
+import { IgxGridComponent } from "igniteui-angular";
 
 // TODO import Excel components that the sample will be showcasing:
 import { TextFormatMode } from "igniteui-angular-excel/ES5/TextFormatMode";
@@ -14,11 +13,11 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "app-working-with-grids",
-    styleUrls: ["./working-with-grids.component.scss"],
-    templateUrl: "./working-with-grids.component.html"
+    selector: "app-grids",
+    styleUrls: ["./grids.component.scss"],
+    templateUrl: "./grids.component.html"
 })
-export class ExcelLibWorkingWithGridsComponent implements AfterViewInit {
+export class ExcelLibraryWorkingWithGridsComponent implements AfterViewInit {
 
     // TODO uncomment and add a grid in html file
     // @ViewChild("grid")

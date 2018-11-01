@@ -2,11 +2,6 @@ import {
     AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef
 } from "@angular/core";
 
-// TODO if needed, import either CategoryChart, DataChart, or Grid component:
-// import { IgxGridComponent } from "igniteui-angular";
-import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
-// import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
-
 // TODO import Excel components that the sample will be showcasing:
 import { TextFormatMode } from "igniteui-angular-excel/ES5/TextFormatMode";
 import { Workbook } from "igniteui-angular-excel/ES5/Workbook";
@@ -16,19 +11,11 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "app-using-tables",
-    styleUrls: ["./using-tables.component.scss"],
-    templateUrl: "./using-tables.component.html"
+    selector: "app-cells",
+    styleUrls: ["./cells.component.scss"],
+    templateUrl: "./cells.component.html"
 })
-export class ExcelLibUsingTablesComponent implements AfterViewInit {
-
-    // TODO if needed, uncomment to get access to IG control
-    // @ViewChild("chart")
-    // public chart: IgxCategoryChartComponent;
-    // @ViewChild("chart")
-    // public chart: IgxDataChartComponent;
-    // @ViewChild("grid")
-    // public chart: IgxGridComponent;
+export class ExcelLibraryWorkingWithCellsComponent implements AfterViewInit {
 
     public data: any;
 
@@ -66,8 +53,6 @@ export class ExcelLibUsingTablesComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        // TODO bind excel data to the chart
-        // this.chart.dataSource = this.data;
     }
 
 }

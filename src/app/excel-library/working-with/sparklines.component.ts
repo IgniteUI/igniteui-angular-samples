@@ -2,8 +2,7 @@ import {
     AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef
 } from "@angular/core";
 
-// NOTE if needed, import either CategoryChart, DataChart, or Grid component:
-// import { IgxGridComponent } from "igniteui-angular";
+// TODO import either CategoryChart or DataChart component:
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 // import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 
@@ -16,19 +15,17 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "app-using-cells",
-    styleUrls: ["./using-cells.component.scss"],
-    templateUrl: "./using-cells.component.html"
+    selector: "app-sparklines",
+    styleUrls: ["./sparklines.component.scss"],
+    templateUrl: "./sparklines.component.html"
 })
-export class ExcelLibUsingCellsComponent implements AfterViewInit {
+export class ExcelLibraryWorkingWithSparklinesComponent implements AfterViewInit {
 
-    // TODO if needed, uncomment to get access to IG control
+    // TODO if needed, uncomment to get access to chart control
     // @ViewChild("chart")
     // public chart: IgxCategoryChartComponent;
     // @ViewChild("chart")
     // public chart: IgxDataChartComponent;
-    // @ViewChild("grid")
-    // public chart: IgxGridComponent;
 
     public data: any;
 

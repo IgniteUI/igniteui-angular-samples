@@ -2,7 +2,8 @@ import {
     AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef
 } from "@angular/core";
 
-// TODO import either CategoryChart or DataChart component:
+// NOTE if needed, import either CategoryChart, DataChart, or Grid component:
+// import { IgxGridComponent } from "igniteui-angular";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 // import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 
@@ -15,17 +16,19 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "app-working-with-charts",
-    styleUrls: ["./working-with-charts.component.scss"],
-    templateUrl: "./working-with-charts.component.html"
+    selector: "app-worksheets",
+    styleUrls: ["./worksheets.component.scss"],
+    templateUrl: "./worksheets.component.html"
 })
-export class ExcelLibWorkingWithChartsComponent implements AfterViewInit {
+export class ExcelLibraryOperationsOnWorksheetsComponent implements AfterViewInit {
 
-    // TODO if needed, uncomment to get access to chart control
+    // TODO if needed, uncomment to get access to IG control
     // @ViewChild("chart")
     // public chart: IgxCategoryChartComponent;
     // @ViewChild("chart")
     // public chart: IgxDataChartComponent;
+    // @ViewChild("grid")
+    // public chart: IgxGridComponent;
 
     public data: any;
 

@@ -16,11 +16,11 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector: "app-using-workbooks",
-    styleUrls: ["./using-workbooks.component.scss"],
-    templateUrl: "./using-workbooks.component.html"
+    selector: "app-workbooks",
+    styleUrls: ["./workbooks.component.scss"],
+    templateUrl: "./workbooks.component.html"
 })
-export class ExcelLibUsingWorkbooksComponent implements AfterViewInit {
+export class ExcelLibraryOperationsOnWorkbooksComponent implements AfterViewInit {
 
     // TODO if needed, uncomment to get access to IG control
     // @ViewChild("chart")

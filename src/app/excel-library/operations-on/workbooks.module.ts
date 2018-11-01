@@ -10,15 +10,15 @@ import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category
 // import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 
 // importing IG sample:
-import { ExcelLibUsingWorkbooksComponent } from "./using-workbooks.component";
+import { ExcelLibraryOperationsOnWorkbooksComponent } from "./workbooks.component";
 
 const routes: Routes = [
-    { path: "", component: ExcelLibUsingWorkbooksComponent }
+    { path: "", component: ExcelLibraryOperationsOnWorkbooksComponent }
 ];
 const routing: ModuleWithProviders = RouterModule.forChild(routes);
 
 @NgModule({
-    declarations: [ ExcelLibUsingWorkbooksComponent ],
+    declarations: [ ExcelLibraryOperationsOnWorkbooksComponent ],
     imports: [
         routing,
         CommonModule,
@@ -32,4 +32,4 @@ const routing: ModuleWithProviders = RouterModule.forChild(routes);
     ]
 })
 
-export class ExcelLibUsingWorkbooksModule { }
+export class ExcelLibraryOperationsOnWorkbooksModule { }
