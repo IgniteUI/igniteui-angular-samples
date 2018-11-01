@@ -23,7 +23,7 @@ import { ExportCsvConfigGenerator } from "./../configs/ExportCsvConfigGenerator"
 import { ExportExcelConfigGenerator } from "./../configs/ExportExcelConfigGenerator";
 import { FinancialChartConfigGenerator } from "./../configs/FinancialChartConfigGenerator";
 import { ForConfigGenerator } from "./../configs/ForConfigGenerator";
-import { GaugesConfigGenerator } from "./../configs/GagugesConfigGenerator";
+import { GaugesConfigGenerator } from "./../configs/GaugesConfigGenerator";
 import { GridConfigGenerator } from "./../configs/GridConfigGenerator";
 import { IconConfigGenerator } from "./../configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "./../configs/InputGroupConfigGenerator";
@@ -237,9 +237,9 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _getAppComponentHtml(componentTsContent) {
-        let componentSelectorRegex = /selector:[\s]*["']([a-zA-Z0-9-]+)["']/g;
-        let componentSeletcor = componentSelectorRegex.exec(componentTsContent)[1];
-        let appComponentHtml = "<" + componentSeletcor + "></" + componentSeletcor + ">";
+        let selectorRegex = /selector:[\s]*["']([a-zA-Z0-9-]+)["']/g;
+        let selectorComponent = selectorRegex.exec(componentTsContent)[1];
+        let appComponentHtml = "<" + selectorComponent + "></" + selectorComponent + ">";
         return appComponentHtml;
     }
 
