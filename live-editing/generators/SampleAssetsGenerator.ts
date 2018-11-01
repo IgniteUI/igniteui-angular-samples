@@ -17,6 +17,7 @@ import { DensityConfigGenerator } from "./../configs/DensityConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
 import { DragAndDropConfigGenerator } from "./../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
+import { ExcelLibraryConfigGenerator } from "./../configs/ExcelLibraryConfigGenerator";
 import { ExpansionPanelConfigGenerator } from "./../configs/ExpansionPanelConfigGenerator";
 import { ExportCsvConfigGenerator } from "./../configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "./../configs/ExportExcelConfigGenerator";
@@ -79,6 +80,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
     ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
+    ExcelLibraryConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
     GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,

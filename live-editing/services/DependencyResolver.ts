@@ -60,6 +60,13 @@ const GAUGES_DEPENDENCIES = [
     "tslib"
 ];
 
+const EXCEL_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-core",
+    "igniteui-angular-excel",
+    "tslib"
+];
+
 export class DependencyResolver {
     public static resolveSampleDependencies(type: DependenciesType = DependenciesType.Default,
                                             additionalDependencies?: string[]) {
@@ -87,8 +94,14 @@ export class DependencyResolver {
 
                 break;
             case DependenciesType.Gauges:
-                    for (let i = 0; i < CHARTS_DEPENDENCIES.length; i++) {
+                    for (let i = 0; i < GAUGES_DEPENDENCIES.length; i++) {
                         dependenciesNeeded.add(GAUGES_DEPENDENCIES[i]);
+                    }
+
+                    break;
+            case DependenciesType.Excel:
+                    for (let i = 0; i < EXCEL_DEPENDENCIES.length; i++) {
+                        dependenciesNeeded.add(EXCEL_DEPENDENCIES[i]);
                     }
 
                     break;
