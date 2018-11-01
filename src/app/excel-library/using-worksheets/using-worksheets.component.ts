@@ -16,8 +16,8 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector:  "app-using-worksheets.component",
-    styleUrls:  ["./using-worksheets.component.scss"],
+    selector: "app-using-worksheets",
+    styleUrls: ["./using-worksheets.component.scss"],
     templateUrl: "./using-worksheets.component.html"
 })
 export class ExcelLibUsingWorksheetsComponent implements AfterViewInit {

@@ -14,8 +14,8 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
-    selector:  "app-working-with-grids.component",
-    styleUrls:  ["./working-with-grids.component.scss"],
+    selector: "app-working-with-grids",
+    styleUrls: ["./working-with-grids.component.scss"],
     templateUrl: "./working-with-grids.component.html"
 })
 export class ExcelLibWorkingWithGridsComponent implements AfterViewInit {

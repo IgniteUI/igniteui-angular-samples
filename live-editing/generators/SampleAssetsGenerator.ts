@@ -102,8 +102,17 @@ export class SampleAssetsGenerator extends Generator {
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
         for (let i = 0; i < Routing.samplesRoutes.length; i++) {
-            this._componentRoutes.setValue(Routing.samplesRoutes[i].component.name,
-                Routing.samplesRoutes[i].path);
+            var sample = Routing.samplesRoutes[i];
+            if (sample.component !== undefined) {
+                this._componentRoutes.setValue(sample.component.name, sample.path);
+            }
+            else { // sample with lazy loading, e.g.
+                // "app/excel-library/using-cells/using-cells#ExcelLibUsingCellsModule"
+                var child = sample.loadChildren.toString();
+                var moduleName = child.split("#")[1];
+                var componentName = moduleName.replace("Module", "Component");
+                this._componentRoutes.setValue(componentName, sample.path);
+            }
         }
     }
 
