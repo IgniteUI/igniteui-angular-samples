@@ -8,14 +8,14 @@ import {
     ExcelLibUsingCellsComponent
 } from "../../src/app/excel-library/using-cells/using-cells.component";
 import {
+    ExcelLibUsingTablesComponent
+} from "../../src/app/excel-library/using-tables/using-tables.component";
+import {
     ExcelLibUsingWorkbooksComponent
 } from "../../src/app/excel-library/using-workbooks/using-workbooks.component";
 import {
     ExcelLibUsingWorksheetsComponent
 } from "../../src/app/excel-library/using-worksheets/using-worksheets.component";
-import {
-    ExcelLibUsingTablesComponent
-} from "../../src/app/excel-library/using-tables/using-tables.component";
 import {
     ExcelLibWorkingWithChartsComponent
 } from "../../src/app/excel-library/working-with-charts/working-with-charts.component";

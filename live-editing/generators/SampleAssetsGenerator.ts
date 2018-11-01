@@ -106,11 +106,12 @@ export class SampleAssetsGenerator extends Generator {
             if (sample.component !== undefined) {
                 this._componentRoutes.setValue(sample.component.name, sample.path);
             }
-            else { // sample with lazy loading, e.g.
+            else {
+                // sample with lazy loading, e.g.
                 // "app/excel-library/using-cells/using-cells#ExcelLibUsingCellsModule"
-                var child = sample.loadChildren.toString();
-                var moduleName = child.split("#")[1];
-                var componentName = moduleName.replace("Module", "Component");
+                let child = sample.loadChildren.toString();
+                let moduleName = child.split("#")[1];
+                let componentName = moduleName.replace("Module", "Component");
                 this._componentRoutes.setValue(componentName, sample.path);
             }
         }
