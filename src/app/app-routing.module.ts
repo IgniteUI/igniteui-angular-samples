@@ -331,6 +331,37 @@ export const samplesRoutes: Routes = [
         data: { displayName: "Home" },
         path: "home"
     },
+    // excel library samples with lazy loading:
+    {
+        data: { displayName: "Using Cells",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/using-cells/using-cells#ExcelLibUsingCellsModule",
+        path: "excel-library-using-cells"
+    },
+    {
+        data: { displayName: "Using Workbooks",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/using-workbooks/using-workbooks#ExcelLibUsingWorkbooksModule",
+        path: "excel-library-using-workbooks"
+    },
+    {
+        data: { displayName: "Using Worksheets",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/using-worksheets/using-worksheets#ExcelLibUsingWorksheetsModule",
+        path: "excel-library-using-worksheets"
+    },
+    {
+        data: { displayName: "Using Tables",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/using-tables/using-tables#ExcelLibUsingTablesModule",
+        path: "excel-library-using-tables"
+    },
+    {
+        data: { displayName: "Working With Charts",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with-charts/working-with-charts#ExcelLibWorkingWithChartsModule",
+        path: "excel-library-working-with-charts"
+    },
+    {
+        data: { displayName: "Working With Grids",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with-grids/working-with-grids#ExcelLibWorkingWithGridsModule",
+        path: "excel-library-working-with-grids"
+    },
     {
         component: AvatarSample1Component,
         data: { displayName: "Avatar with Initials", parentName: "Avatar" },
