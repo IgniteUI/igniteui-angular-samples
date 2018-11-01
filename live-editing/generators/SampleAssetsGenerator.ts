@@ -102,11 +102,10 @@ export class SampleAssetsGenerator extends Generator {
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
         for (let i = 0; i < Routing.samplesRoutes.length; i++) {
-            var sample = Routing.samplesRoutes[i];
+            let sample = Routing.samplesRoutes[i];
             if (sample.component !== undefined) {
                 this._componentRoutes.setValue(sample.component.name, sample.path);
-            }
-            else {
+            } else {
                 // sample with lazy loading, e.g.
                 // "app/excel-library/using-cells/using-cells#ExcelLibUsingCellsModule"
                 let child = sample.loadChildren.toString();
