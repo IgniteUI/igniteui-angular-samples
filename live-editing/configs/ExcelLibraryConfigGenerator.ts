@@ -44,8 +44,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryWorkingWithCellsComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         configs.push(new Config({
@@ -55,8 +54,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryOperationsOnWorkbooksComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         configs.push(new Config({
@@ -66,8 +64,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryOperationsOnWorksheetsComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         configs.push(new Config({
@@ -77,8 +74,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryWorkingWithTablesComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         configs.push(new Config({
@@ -88,8 +84,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryWorkingWithChartsComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         configs.push(new Config({
@@ -99,8 +94,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryWorkingWithGridsComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         configs.push(new Config({
@@ -110,8 +104,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryWorkingWithObjectsComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         configs.push(new Config({
@@ -121,8 +114,7 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelLibraryWorkingWithSparklinesComponent],
                 ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
-            dependenciesType: DependenciesType.Excel,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Excel
         }));
 
         return configs;

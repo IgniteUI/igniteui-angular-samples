@@ -21,8 +21,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ExcelExportComponent],
                 ngImports: [],
                 ngProviders: [IgxExcelExporterService]
-            }),
-            additionalDependencies: ["immediate"]
+            })
         }));
 
         configs.push(new Config({
@@ -33,8 +32,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule],
                 ngProviders: [IgxExcelExporterService]
             }),
-            shortenComponentPathBy: "/export-excel/",
-            additionalDependencies: ["immediate"]
+            shortenComponentPathBy: "/export-excel/"
         }));
 
         configs.push(new Config({
@@ -46,8 +44,7 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDropDownModule, IgxButtonModule],
                 ngProviders: [IgxExcelExporterService]
             }),
-            shortenComponentPathBy: "/grid-paste/",
-            additionalDependencies: ["immediate"]
+            shortenComponentPathBy: "/grid-paste/"
         }));
 
         return configs;
