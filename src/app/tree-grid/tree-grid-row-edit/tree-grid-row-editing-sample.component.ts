@@ -13,7 +13,7 @@ export class TreeGridRowEditSampleComponent implements OnInit {
     public data: any[];
     public columns: any[];
 
-    @ViewChild("grid1") public grid1: IgxTreeGridComponent;
+    @ViewChild("treeGrid1") public treeGrid1: IgxTreeGridComponent;
     public ngOnInit(): void {
         this.data = FLAT_DATA;
 
@@ -24,7 +24,6 @@ export class TreeGridRowEditSampleComponent implements OnInit {
             { field: "LastName", label: "Last Name", resizable: false, movable: false, sortable: false, filterable: false, editable: true, dataType: "string" },
             { field: "Title", label: "Title", resizable: true, movable: true, sortable: true, filterable: true, editable: true, dataType: "string" }
         ];
-
     }
 
     public rowEditDone(evt) {
