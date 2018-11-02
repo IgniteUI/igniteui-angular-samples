@@ -17,6 +17,7 @@ import { DensityConfigGenerator } from "./../configs/DensityConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
 import { DragAndDropConfigGenerator } from "./../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
+import { ExcelLibraryConfigGenerator } from "./../configs/ExcelLibraryConfigGenerator";
 import { ExpansionPanelConfigGenerator } from "./../configs/ExpansionPanelConfigGenerator";
 import { ExportCsvConfigGenerator } from "./../configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "./../configs/ExportExcelConfigGenerator";
@@ -79,6 +80,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
     ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
+    ExcelLibraryConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
     GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
@@ -100,8 +102,17 @@ export class SampleAssetsGenerator extends Generator {
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
         for (let i = 0; i < Routing.samplesRoutes.length; i++) {
-            this._componentRoutes.setValue(Routing.samplesRoutes[i].component.name,
-                Routing.samplesRoutes[i].path);
+            let sample = Routing.samplesRoutes[i];
+            if (sample.component !== undefined) {
+                this._componentRoutes.setValue(sample.component.name, sample.path);
+            } else {
+                // sample with lazy loading, e.g.
+                // "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule"
+                let child = sample.loadChildren.toString();
+                let moduleName = child.split("#")[1];
+                let componentName = moduleName.replace("Module", "Component");
+                this._componentRoutes.setValue(componentName, sample.path);
+            }
         }
     }
 
