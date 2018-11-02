@@ -58,17 +58,26 @@ const GAUGES_DEPENDENCIES = [
     "tslib"
 ];
 
+const EXCEL_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-core",
+    "igniteui-angular-excel",
+    "tslib"
+];
+
 const EXACT_VERSION_PACKAGES = [
     "igniteui-angular",
     "igniteui-angular-core",
     "igniteui-angular-charts",
-    "igniteui-angular-gauges"
+    "igniteui-angular-gauges",
+    "igniteui-angular-excel"
 ];
 
 export class DependencyResolver {
     private _defaultDependencies: Collections.Set<string>;
     private _chartsDependencies: Collections.Set<string>;
     private _gaugesDependencies: Collections.Set<string>;
+    private _excelDependencies: Collections.Set<string>;
     private _packageFileDependencies;
     private _specificVersionPackages: Collections.Set<string>;
 
@@ -84,6 +93,10 @@ export class DependencyResolver {
         this._gaugesDependencies = new Collections.Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
         GAUGES_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
+
+        this._excelDependencies = new Collections.Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
+        EXCEL_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
 
         let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
         this._packageFileDependencies = packageFile.dependencies;
@@ -107,6 +120,8 @@ export class DependencyResolver {
             case DependenciesType.Gauges:
                 dependencies.union(this._gaugesDependencies);
                 break;
+            case DependenciesType.Excel:
+                dependencies.union(this._excelDependencies);
             default:
                 throw new Error("Unrecognized dependency type.");
         }
