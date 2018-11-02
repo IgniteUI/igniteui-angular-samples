@@ -28,9 +28,9 @@ import { FinancialDataService } from "./services/financial-data.service";
 import { StockDataService } from "./services/stock-data.service";
 import { FinancialChartTimeBasedDataComponent } from "./time-based-data/financial-chart-time-based-data.component";
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
+import { FinancialChartTooltipTypesComponent } from "./tooltip-types/financial-chart-tooltip-types.component";
 import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
-import { FinancialChartTooltipTypesComponent } from './tooltip-types/financial-chart-tooltip-types.component';
 
 @NgModule({
     declarations: [
