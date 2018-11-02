@@ -30,6 +30,7 @@ import { FinancialChartTimeBasedDataComponent } from "./time-based-data/financia
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
 import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
+import { FinancialChartTooltipTypesComponent } from './tooltip-types/financial-chart-tooltip-types.component';
 
 @NgModule({
     declarations: [
@@ -48,7 +49,8 @@ import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart
         FinancialChartHighFrequencyComponent,
         FinancialChartAxisTypesComponent,
         FinancialChartTrendlinesComponent,
-        FinancialChartTimeBasedDataComponent
+        FinancialChartTimeBasedDataComponent,
+        FinancialChartTooltipTypesComponent
     ],
     exports: [
     ],
