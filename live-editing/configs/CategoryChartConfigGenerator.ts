@@ -60,8 +60,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartHighVolumeComponent],
                 ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
-            dependenciesType: DependenciesType.Charts,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Charts
         }));
 
         configs.push(new Config({
@@ -71,8 +70,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartHighFrequencyComponent],
                 ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
-            dependenciesType: DependenciesType.Charts,
-            additionalDependencies: ["igniteui-angular"]
+            dependenciesType: DependenciesType.Charts
         }));
 
         configs.push(new Config({

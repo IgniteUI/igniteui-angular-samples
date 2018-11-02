@@ -17,8 +17,7 @@ export class ExportCsvConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CsvExportComponent],
                 ngImports: [],
                 ngProviders: [IgxCsvExporterService]
-            }),
-            additionalDependencies: ["immediate"]
+            })
         }));
 
         configs.push(new Config({
@@ -29,8 +28,7 @@ export class ExportCsvConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule],
                 ngProviders: [IgxCsvExporterService]
             }),
-            shortenComponentPathBy: "/export-csv/",
-            additionalDependencies: ["immediate"]
+            shortenComponentPathBy: "/export-csv/"
         }));
 
         return configs;

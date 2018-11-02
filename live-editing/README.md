@@ -54,6 +54,7 @@ API description of the `DependenciesType` enum, used in the `Config` class.
 | Default | Loads `igniteui-angular` package and its dependencies. |
 | Charts | Loads `igniteui-angular-charts` package and its dependencies. |
 | Gauges | Loads `igniteui-angular-gauges` package and its dependencies. |
+| Excel | Loads `igniteui-angular-excel` package and its dependencies. |
 
 
 ### Configuration Generator
