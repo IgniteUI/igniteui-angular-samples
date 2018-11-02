@@ -61,14 +61,12 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "vendorSourceMap": false,
             "browserTarget": "my-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "vendorSourceMap": false,
             "main": "src/test.ts",
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
@@ -86,7 +84,6 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "vendorSourceMap": false,
             "tsConfig": [
               "src/tsconfig.app.json",
               "src/tsconfig.spec.json"
