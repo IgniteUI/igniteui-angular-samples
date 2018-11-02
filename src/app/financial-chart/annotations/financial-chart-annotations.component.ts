@@ -11,9 +11,6 @@ import { FinancialDataService } from "../services/financial-data.service";
 })
 export class FinancialChartAnnotationsComponent {
 
-    public CrosshairsDisplayMode = CrosshairsDisplayMode;
-    public ToolTipType = ToolTipType;
-
     public financialData: any;
     public sampleOptions: SampleOptions = new SampleOptions();
 
@@ -51,9 +48,9 @@ class CalloutFinancialData extends Array {
 }
 
 class SampleOptions {
-    public tooltipType: string = "Default";
+    public chartType: string = "Candle";
 
-    public crosshairs: string = "Horizontal";
+    public crosshairsDisplay: string = "Horizontal";
     public snapCrosshairs: boolean = true;
     public crosshairAnnotations: boolean = true;
 

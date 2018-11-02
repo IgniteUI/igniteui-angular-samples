@@ -4,11 +4,11 @@ import { FinancialDataService } from "../services/financial-data.service";
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ FinancialDataService ],
-    selector: "app-financial-chart-custom-tooltips",
-    styleUrls: ["./financial-chart-custom-tooltips.component.scss"],
-    templateUrl: "./financial-chart-custom-tooltips.component.html"
+    selector: "app-financial-chart-tooltip-template",
+    styleUrls: ["./financial-chart-tooltip-template.component.scss"],
+    templateUrl: "./financial-chart-tooltip-template.component.html"
 })
-export class FinancialChartCustomTooltipsComponent {
+export class FinancialChartTooltipTemplateComponent {
     public data: any;
     constructor(private dataService: FinancialDataService) {
         this.data = this.dataService.getTsla();
