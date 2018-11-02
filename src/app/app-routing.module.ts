@@ -121,9 +121,6 @@ import {
     FinancialChartCustomIndicatorsComponent
 } from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
 import {
-    FinancialChartTooltipTemplateComponent
-} from "./financial-chart/tooltip-template/financial-chart-tooltip-template.component";
-import {
     FinancialChartHighFrequencyComponent
 } from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
 import {
@@ -153,6 +150,9 @@ import {
 import {
     FinancialChartTitlesComponent
 } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTooltipTemplateComponent
+} from "./financial-chart/tooltip-template/financial-chart-tooltip-template.component";
 import {
     FinancialChartTooltipTypesComponent
 } from "./financial-chart/tooltip-types/financial-chart-tooltip-types.component";
