@@ -1,4 +1,4 @@
-import { SaveAs } from "file-saver";
+import { saveAs } from "file-saver";
 import { Workbook } from "igniteui-angular-excel/ES5/Workbook";
 import { WorkbookFormat } from "igniteui-angular-excel/ES5/WorkbookFormat";
 import { WorkbookSaveOptions } from "igniteui-angular-excel/ES5/WorkbookSaveOptions";
@@ -44,7 +44,7 @@ export class ExcelUtility {
             workbook.save(opt, (d) => {
                 const fileExt = ExcelUtility.getExtension(workbook.currentFormat);
                 const fileName = fileNameWithoutExtension + fileExt;
-                SaveAs(d as Blob, fileName);
+                saveAs(d as Blob, fileName);
                 resolve(fileName);
             }, (e) => {
                 reject(e);
