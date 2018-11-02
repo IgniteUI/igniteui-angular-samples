@@ -284,10 +284,6 @@ import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
-import {
-    TreeGridBatchEditingSampleComponent
-} from "./tree-grid/tree-grid-batch-edit/tree-grid-batch-editing-sample.component";
-
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -499,8 +495,7 @@ import {
         GridWithTransactionsComponent,
         GridTransactionSampleComponent,
         GridRowEditSampleComponent,
-        TreeGridRowEditSampleComponent,
-        TreeGridBatchEditingSampleComponent
+        TreeGridRowEditSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

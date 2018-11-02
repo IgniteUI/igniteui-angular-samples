@@ -1,6 +1,5 @@
 // tslint:disable:max-line-length
 import { IgxButtonModule, IgxDialogModule, IgxGridModule, IgxToggleModule, IgxTransactionService, IgxTreeGridModule } from "igniteui-angular";
-import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-edit/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
@@ -44,17 +43,6 @@ export class TooltipConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridRowEditSampleComponent,
-            shortenComponentPathBy: "/tree-grid/"
-        }));
-
-        // TreeGrid Batch Edit Sample
-        configs.push(new Config({
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule, IgxToggleModule, IgxTransactionService],
-                ngDeclarations: [TreeGridBatchEditingSampleComponent],
-                ngImports: [IgxTreeGridModule, IgxGridModule, IgxDialogModule, IgxButtonModule, IgxToggleModule, IgxTransactionService]
-            }),
-            component: TreeGridBatchEditingSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
