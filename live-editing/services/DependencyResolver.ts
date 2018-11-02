@@ -122,6 +122,7 @@ export class DependencyResolver {
                 break;
             case DependenciesType.Excel:
                 dependencies.union(this._excelDependencies);
+                break;
             default:
                 throw new Error("Unrecognized dependency type.");
         }
