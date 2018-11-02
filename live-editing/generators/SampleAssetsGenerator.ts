@@ -88,6 +88,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ToggleConfigGenerator, TooltipConfigGenerator, TimePickerConfigGenerator, ShadowsConfigGenerator];
 
 export class SampleAssetsGenerator extends Generator {
+    private _dependencyResolver: DependencyResolver;
     private _tsImportsService: TsImportsService;
     private _sassCompiler: SassCompiler;
     private _componentRoutes: Collections.Dictionary<string, string>;
@@ -95,6 +96,7 @@ export class SampleAssetsGenerator extends Generator {
     constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass) {
         super(styleSyntax);
 
+        this._dependencyResolver = new DependencyResolver();
         this._tsImportsService = new TsImportsService();
         this._sassCompiler = new SassCompiler();
 
@@ -142,7 +144,7 @@ export class SampleAssetsGenerator extends Generator {
         sampleFiles.push(new LiveEditingFile(
             SAMPLE_ASSETS_BASE_DIR + "app.component.html", this._getAppComponentHtml(componentTsContent)));
 
-        let dependencies = DependencyResolver.resolveSampleDependencies(
+        let dependencies = this._dependencyResolver.resolveSampleDependencies(
             config.dependenciesType, config.additionalDependencies);
         let sampleDef = new SampleDefinitionFile(sampleFiles, dependencies);
         fs.writeFileSync(this.getAssetsSamplesDir() + this._componentRoutes.getValue(config.component.name) + ".json",
