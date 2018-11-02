@@ -121,8 +121,8 @@ import {
     FinancialChartCustomIndicatorsComponent
 } from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
 import {
-    FinancialChartCustomTooltipsComponent
-} from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
+    FinancialChartTooltipTemplateComponent
+} from "./financial-chart/tooltip-template/financial-chart-tooltip-template.component";
 import {
     FinancialChartHighFrequencyComponent
 } from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
@@ -153,6 +153,9 @@ import {
 import {
     FinancialChartTitlesComponent
 } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTooltipTypesComponent
+} from "./financial-chart/tooltip-types/financial-chart-tooltip-types.component";
 import {
     FinancialChartTrendlinesComponent
 } from "./financial-chart/trendlines/financial-chart-trendlines.component";
@@ -1411,11 +1414,6 @@ export const samplesRoutes: Routes = [
         path: "financial-chart-multiple-feeds"
     },
     {
-        component: FinancialChartCustomTooltipsComponent,
-        data: { displayName: "Financial Chart Custom Tooltips", parentName: "Financial Chart" },
-        path: "financial-chart-custom-tooltips"
-    },
-    {
         component: FinancialChartIndicatorTypesComponent,
         data: { displayName: "Financial Chart Indicator Types", parentName: "Financial Chart" },
         path: "financial-chart-indicator-types"
@@ -1444,6 +1442,16 @@ export const samplesRoutes: Routes = [
         component: FinancialChartAxisTypesComponent,
         data: { displayName: "Financial Chart Axis Types", parentName: "Financial Chart" },
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTooltipTemplateComponent,
+        data: { displayName: "Financial Chart Tooltips Template", parentName: "Financial Chart" },
+        path: "financial-chart-tooltip-template"
+    },
+    {
+        component: FinancialChartTooltipTypesComponent,
+        data: { displayName: "Financial Chart Tooltip Types", parentName: "Financial Chart" },
+        path: "financial-chart-tooltip-types"
     },
     {
         component: FinancialChartTimeBasedDataComponent,

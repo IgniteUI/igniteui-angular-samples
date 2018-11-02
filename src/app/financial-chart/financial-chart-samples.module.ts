@@ -15,7 +15,6 @@ import { FinancialChartAxisTypesComponent } from "./axis-types/financial-chart-a
 import {
     FinancialChartCustomIndicatorsComponent
 } from "./custom-indicators/financial-chart-custom-indicators.component";
-import { FinancialChartCustomTooltipsComponent } from "./custom-tooltips/financial-chart-custom-tooltips.component";
 import { FinancialChartHighFrequencyComponent } from "./high-frequency/financial-chart-high-frequency.component";
 import { FinancialChartHighVolumeComponent } from "./high-volume/financial-chart-high-volume.component";
 import { FinancialChartIndicatorTypesComponent } from "./indicator-types/financial-chart-indicator-types.component";
@@ -28,6 +27,9 @@ import { FinancialDataService } from "./services/financial-data.service";
 import { StockDataService } from "./services/stock-data.service";
 import { FinancialChartTimeBasedDataComponent } from "./time-based-data/financial-chart-time-based-data.component";
 import { FinancialChartTitlesComponent } from "./titles/financial-chart-titles.component";
+import {
+    FinancialChartTooltipTemplateComponent
+} from "./tooltip-template/financial-chart-tooltip-template.component";
 import { FinancialChartTooltipTypesComponent } from "./tooltip-types/financial-chart-tooltip-types.component";
 import { FinancialChartTrendlinesComponent } from "./trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart-volume-type.component";
@@ -38,7 +40,7 @@ import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart
         FinancialChartOverviewComponent,
         FinancialChartMultipleDataComponent,
         FinancialChartMultipleFeedsComponent,
-        FinancialChartCustomTooltipsComponent,
+        FinancialChartTooltipTemplateComponent,
         FinancialChartPerformanceComponent,
         FinancialChartTitlesComponent,
         FinancialChartPanesComponent,
