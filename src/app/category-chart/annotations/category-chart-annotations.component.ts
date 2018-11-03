@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-import { CrosshairsDisplayMode } from "igniteui-angular-charts/ES5/CrosshairsDisplayMode";
-import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 
 @Component({
     selector: "app-category-chart-annotations",
@@ -9,12 +7,9 @@ import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 })
 export class CategoryChartAnnotationsComponent {
 
-    public CrosshairsDisplayMode = CrosshairsDisplayMode;
-    public ToolTipType = ToolTipType;
-
     public categoryData: any;
-    public sampleOptions: SampleOptions = new SampleOptions();
     public calloutData: CalloutCategoryData;
+    public sampleOptions: SampleOptions = new SampleOptions();
 
     constructor() {
         this.categoryData = [
@@ -64,12 +59,9 @@ class CalloutCategoryData extends Array {
 }
 
 class SampleOptions {
-    public highlightCategory: boolean = false;
-    public highlightItem: boolean = false;
 
-    public tooltipType: string = "Default";
-
-    public crosshairs: string = "Horizontal";
+    public chartType: string = "Column";
+    public crosshairsDisplay: string = "Horizontal";
     public snapCrosshairs: boolean = true;
     public crosshairAnnotations: boolean = true;
 
