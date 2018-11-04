@@ -28,7 +28,7 @@ const routing: ModuleWithProviders = RouterModule.forChild(routes);
         IgxCategoryChartModule
         // IgxDataChartCoreModule,
         // IgxDataChartCategoryModule,
-        //IgxExcelModule
+        // IgxExcelModule
         // IgxGridModule,
     ]
 })
