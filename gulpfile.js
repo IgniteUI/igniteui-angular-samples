@@ -6,6 +6,16 @@ const tsNode = require('ts-node').register({
         allowJs: true
     }
 });
+var Promise = require('bluebird');
+var requirejs = require('requirejs');
+
+function requirejsOptimize(config) {
+    console.log("GULP requirejsOptimize");
+    config.logLevel = 1;
+    return new Promise(function(resolve, reject) {
+        requirejs.optimize(config, resolve, reject);
+    });
+}
 
 function requireFile(path) {
     delete require.cache[require.resolve(path)];
@@ -13,6 +23,7 @@ function requireFile(path) {
 }
 
 gulp.task("generate-live-editing", () => {
+    console.log("GULP task generate-live-editing");
     requireFile("./live-editing/LiveEditingManager.ts");
 });
 
