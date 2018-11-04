@@ -12,7 +12,7 @@
     "start:styles:watch-live-editing": "npm-run-all -p serve \"watch-live-editing -- --styles {1}\" --",
     "generate-live-editing": "gulp generate-live-editing",
     "watch-live-editing": "gulp watch-live-editing",
-    "build": "gulp generate-live-editing && node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --prod=true --aot=true --vendorSourceMap=false --sourceMap=true --progress=true",
+    "build": "gulp generate-live-editing && node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --prod=true --aot=true --vendorSourceMap=false --sourceMap=true --progress=true --verbose=true",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
