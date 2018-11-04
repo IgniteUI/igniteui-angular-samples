@@ -48,7 +48,6 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "vendorSourceMap": false,
             "browserTarget": "my-app:build"
           },
           "configurations": {
