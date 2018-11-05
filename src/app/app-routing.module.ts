@@ -326,6 +326,12 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import {
+    TreeGridChilddatakeySampleComponent
+} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridPrimaryforeignkeySampleComponent
+} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 
 export const samplesRoutes: Routes = [
@@ -1593,6 +1599,16 @@ export const samplesRoutes: Routes = [
         component: ShadowsSample2Component,
         data: { displayName: "Shadows sample 2", parentName: "Shadows" },
         path: "shadows-sample-2"
+    },
+    {
+        component: TreeGridChilddatakeySampleComponent,
+        data: { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
+        path: "treegrid-childdatakey"
+    },
+    {
+        component: TreeGridPrimaryforeignkeySampleComponent,
+        data: { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
+        path: "treegrid-primaryforeignkey"
     },
     {
         component: DisplayDensityComponent,
