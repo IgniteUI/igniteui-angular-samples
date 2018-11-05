@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { NgModule } from "@angular/core";
 import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
 import "rxjs/add/operator/filter";
@@ -333,6 +334,7 @@ import {
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -1609,6 +1611,11 @@ export const samplesRoutes: Routes = [
         component: TreeGridPrimaryforeignkeySampleComponent,
         data: { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
         path: "treegrid-primaryforeignkey"
+    },
+    {
+        component: TreeGridRowEditSampleComponent,
+        data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
+        path: "treegrid-row-edit"
     },
     {
         component: DisplayDensityComponent,

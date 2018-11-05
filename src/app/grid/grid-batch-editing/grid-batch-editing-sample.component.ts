@@ -1,21 +1,22 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { data } from "./data";
 
-import { IgxGridComponent, IgxToggleDirective, Transaction } from "igniteui-angular";
+import { IgxDialogComponent, IgxGridComponent, Transaction } from "igniteui-angular";
 
 @Component({
     selector: "app-grid-row-edit",
     styleUrls: [`grid-batch-editing-sample.component.scss`],
     templateUrl: "grid-batch-editing-sample.component.html"
 })
-export class GridBatchEditingSampleComponent {
-    @ViewChild("gridRowEditTransaction", { read: IgxGridComponent }) public gridRowEditTransaction: IgxGridComponent;
-    @ViewChild(IgxToggleDirective) public toggle: IgxToggleDirective;
+export class GridBatchEditingSampleComponent implements OnInit {
+    @ViewChild("gridRowEditTransaction", { read: IgxGridComponent }) public grid: IgxGridComponent;
+    @ViewChild(IgxDialogComponent) public dialog: IgxDialogComponent;
     @ViewChild("dialogGrid", { read: IgxGridComponent }) public dialogGrid: IgxGridComponent;
 
     public currentActiveGrid: { id: string, transactions: any[] } = { id: "", transactions: [] };
 
     public data: any[];
+    public transactionsData: Transaction[] = [];
     private addProductId: number;
 
     constructor() {
@@ -23,8 +24,15 @@ export class GridBatchEditingSampleComponent {
         this.addProductId = this.data.length + 1;
     }
 
+    public ngOnInit(): void {
+        this.transactionsData = this.grid.transactions.aggregatedState(true);
+        this.grid.transactions.onStateUpdate.subscribe(() => {
+            this.transactionsData = this.grid.transactions.aggregatedState(true);
+        });
+    }
+
     public addRow(gridID) {
-        this.gridRowEditTransaction.addRow({
+        this.grid.addRow({
             CategoryID: this.getRandomInt(1, 10),
             Discontinued: this.getRandomInt(1, 10) % 2 === 0,
             OrderDate: new Date(this.getRandomInt(2000, 2050), this.getRandomInt(0, 11), this.getRandomInt(1, 25))
@@ -41,33 +49,34 @@ export class GridBatchEditingSampleComponent {
     }
 
     public deleteRow(rowID) {
-        this.gridRowEditTransaction.deleteRow(rowID);
+        this.grid.deleteRow(rowID);
     }
 
     public undo() {
-        this.gridRowEditTransaction.transactions.undo();
+        this.grid.transactions.undo();
     }
 
     public redo() {
-        this.gridRowEditTransaction.transactions.redo();
+        this.grid.transactions.redo();
     }
 
     public openCommitDialog() {
-        this.toggle.open();
+        this.dialog.open();
         this.dialogGrid.reflow();
     }
 
     public commit() {
-        this.gridRowEditTransaction.transactions.commit(this.data);
-        this.toggle.close();
+        this.grid.transactions.commit(this.data);
+        this.dialog.close();
     }
 
     public cancel() {
-        this.toggle.close();
+        this.dialog.close();
     }
 
     public discard() {
-        this.gridRowEditTransaction.transactions.clear();
+        this.grid.transactions.clear();
+        this.dialog.close();
     }
 
     public stateFormatter(value: string) {
@@ -87,14 +96,14 @@ export class GridBatchEditingSampleComponent {
     }
 
     public get undoEnabled(): boolean {
-        return this.gridRowEditTransaction.transactions.canUndo;
+        return this.grid.transactions.canUndo;
     }
 
     public get redoEnabled(): boolean {
-        return this.gridRowEditTransaction.transactions.canRedo;
+        return this.grid.transactions.canRedo;
     }
 
     public get hasTransactions(): boolean {
-        return (this.gridRowEditTransaction.transactions.aggregatedState(false) || []).length > 0;
+        return this.grid.transactions.aggregatedState(false).length > 0;
     }
 }
