@@ -95,6 +95,6 @@ export class GridBatchEditingSampleComponent {
     }
 
     public get hasTransactions(): boolean {
-        return (this.gridRowEditTransaction.transactions.getAggregatedChanges(false) || []).length > 0;
+        return (this.gridRowEditTransaction.transactions.aggregatedState(false) || []).length > 0;
     }
 }

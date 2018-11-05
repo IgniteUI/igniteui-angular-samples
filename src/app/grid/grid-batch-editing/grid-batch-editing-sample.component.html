@@ -36,7 +36,7 @@
     <div igxToggle class="dialog__container">
         <div class="dialog__header">Submit the following transactions?</div>
         <div class="dialog__body">
-            <igx-grid #dialogGrid [data]="gridRowEditTransaction.transactions.getAggregatedChanges(true)" [rowHeight]="64"
+            <igx-grid #dialogGrid [data]="gridRowEditTransaction.transactions.aggregatedState(true)" [rowHeight]="64"
                 [primaryKey]="'id'" width="600px" height="300px" [emptyGridMessage]="'No available transactions'">
                 <igx-column field="id" header="ID" [dataType]="'string'" width="100px"></igx-column>
                 <igx-column field="type" header="Type" width="150px" [sortable]="true">
