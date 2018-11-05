@@ -280,6 +280,10 @@ import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
+import {
+    TreeGridRowEditSampleComponent
+} from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -490,7 +494,8 @@ import {
         DisplayDensityComponent,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
-        GridRowEditSampleComponent
+        GridRowEditSampleComponent,
+        TreeGridRowEditSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
