@@ -1,34 +1,40 @@
 <div class="grid__wrapper">
     <div class="sample__header">
-        <button igxButton="raised"(click)="dialogAdd.open()" class="addProdBtn">Add New Product</button>
-        <igx-grid #grid1 [data]="data" [autoGenerate]="false" displayDensity="comfortable" width="100%" height="600px" [paging]="true" [perPage]="10">
-            <igx-column field="ProductName" header="Product Name" width="15%" [dataType]="'string'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true" [resizable]="true">
+        <button igxButton="raised" (click)="dialogAdd.open()" class="addProdBtn">Add New Product</button>
+        <igx-grid #grid1 [data]="data" [autoGenerate]="false" displayDensity="comfortable" width="100%" height="600px"
+            [paging]="true" [perPage]="10" [allowFiltering]="true">
+            <igx-column field="ProductName" header="Product Name" width="15%" [dataType]="'string'" [sortable]="true"
+                [hasSummary]="true" [editable]="true" [resizable]="true">
             </igx-column>
-            <igx-column field="UnitsInStock" header="Units In Stock" width="13%" [dataType]="'number'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true" [resizable]="true">
+            <igx-column field="UnitsInStock" header="Units In Stock" width="13%" [dataType]="'number'" [sortable]="true"
+                [hasSummary]="true" [editable]="true" [resizable]="true">
             </igx-column>
-            <igx-column field="OrderDate" header="Order Date" width="15%" [dataType]="'date'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true" [resizable]="true">
+            <igx-column field="OrderDate" header="Order Date" width="15%" [dataType]="'date'" [sortable]="true"
+                [hasSummary]="true" [editable]="true" [resizable]="true">
                 <ng-template igxCell let-cell="cell" let-val>
                     {{val | date:'dd/MM/yyyy'}}
                 </ng-template>
             </igx-column>
-            <igx-column field="Discontinued" header="Discontinued" width="13%" [dataType]="'boolean'" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true">
+            <igx-column field="Discontinued" header="Discontinued" width="13%" [dataType]="'boolean'" [sortable]="true"
+                [hasSummary]="true" [editable]="true">
             </igx-column>
-            <igx-column field="Locations" header="Available At" width="19%" [editable]="true">
+            <igx-column field="Locations" header="Available At" width="19%" [editable]="true" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
-                    {{ parseArray(cell.value) }}  
+                    {{ parseArray(cell.value) }}
                 </ng-template>
                 <ng-template igxCellEditor let-cell="cell" let-value>
                     <igx-combo [type]="'border'" [(ngModel)]="cell.gridAPI.get_cell_inEditMode(cell.gridID).cell.editValue"
-                    [valueKey]="'shop'" [data]="locations"></igx-combo>
+                        [valueKey]="'shop'" [data]="locations"></igx-combo>
                 </ng-template>
             </igx-column>
             <igx-column field="ReorderLevel" header="Reorder Level" [dataType]="'number'" width="13%" [sortable]="true"
-                [hasSummary]="true" [editable]="true">
+                [hasSummary]="true" [editable]="true" [filterable]="false">
                 <ng-template igxCellEditor let-cell="cell">
-                    <input type="number" [(ngModel)]="cell.gridAPI.get_cell_inEditMode(cell.gridID).cell.editValue" class="reorderLevelInput" />
+                    <input type="number" [(ngModel)]="cell.gridAPI.get_cell_inEditMode(cell.gridID).cell.editValue"
+                        class="reorderLevelInput" />
                 </ng-template>
             </igx-column>
-            <igx-column width="12%">
+            <igx-column width="12%" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
                     <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
                         <igx-icon>delete</igx-icon>
@@ -36,7 +42,8 @@
                 </ng-template>
             </igx-column>
         </igx-grid>
-        <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"  (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
+        <igx-dialog #dialogAdd title="New Product" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
+            (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
             <div class="dialogNewRecord">
                 <igx-input-group>
                     <label igxLabel for="productName">Product Name</label>
@@ -48,10 +55,11 @@
                 </igx-input-group>
                 <igx-datePicker id="orderDate" label="Order Date" [(ngModel)]="product.OrderDate"></igx-datePicker>
                 <igx-checkbox id="discontinued" [(ngModel)]="product.Discontinued">Discontinued</igx-checkbox>
-                <igx-combo id="availableAt" [valueKey]="'shop'" [placeholder]="'Available @'" [data]="locations" [(ngModel)]="product.Locations"></igx-combo>
+                <igx-combo id="availableAt" [valueKey]="'shop'" [placeholder]="'Available @'" [data]="locations"
+                    [(ngModel)]="product.Locations"></igx-combo>
                 <igx-input-group>
                     <label igxLabel for="reorderLevel">Reorder Level</label>
-                    <input igxInput id="reorderLevel" [(ngModel)]="product.ReorderLevel"/>
+                    <input igxInput id="reorderLevel" [(ngModel)]="product.ReorderLevel" />
                 </igx-input-group>
             </div>
         </igx-dialog>

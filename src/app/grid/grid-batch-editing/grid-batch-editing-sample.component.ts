@@ -1,21 +1,22 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { data } from "./data";
 
-import { IgxGridComponent, IgxToggleDirective, Transaction } from "igniteui-angular";
+import { IgxDialogComponent, IgxGridComponent, Transaction } from "igniteui-angular";
 
 @Component({
     selector: "app-grid-row-edit",
-    styleUrls: [`grid-transaction-sample.component.scss`],
-    templateUrl: "grid-transaction-sample.component.html"
+    styleUrls: [`grid-batch-editing-sample.component.scss`],
+    templateUrl: "grid-batch-editing-sample.component.html"
 })
-export class GridTransactionSampleComponent {
-    @ViewChild("gridRowEditTransaction", { read: IgxGridComponent }) public gridRowEditTransaction: IgxGridComponent;
-    @ViewChild(IgxToggleDirective) public toggle: IgxToggleDirective;
+export class GridBatchEditingSampleComponent implements OnInit {
+    @ViewChild("gridRowEditTransaction", { read: IgxGridComponent }) public grid: IgxGridComponent;
+    @ViewChild(IgxDialogComponent) public dialog: IgxDialogComponent;
     @ViewChild("dialogGrid", { read: IgxGridComponent }) public dialogGrid: IgxGridComponent;
 
     public currentActiveGrid: { id: string, transactions: any[] } = { id: "", transactions: [] };
 
     public data: any[];
+    public transactionsData: Transaction[] = [];
     private addProductId: number;
 
     constructor() {
@@ -23,8 +24,15 @@ export class GridTransactionSampleComponent {
         this.addProductId = this.data.length + 1;
     }
 
+    public ngOnInit(): void {
+        this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
+        this.grid.transactions.onStateUpdate.subscribe(() => {
+            this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
+        });
+    }
+
     public addRow(gridID) {
-        this.gridRowEditTransaction.addRow({
+        this.grid.addRow({
             CategoryID: this.getRandomInt(1, 10),
             Discontinued: this.getRandomInt(1, 10) % 2 === 0,
             OrderDate: new Date(this.getRandomInt(2000, 2050), this.getRandomInt(0, 11), this.getRandomInt(1, 25))
@@ -40,34 +48,35 @@ export class GridTransactionSampleComponent {
         });
     }
 
-    public deleteRow(event, gridID, rowID) {
-        this.gridRowEditTransaction.deleteRow(rowID);
+    public deleteRow(rowID) {
+        this.grid.deleteRow(rowID);
     }
 
-    public undo(gridID) {
-        this.gridRowEditTransaction.transactions.undo();
+    public undo() {
+        this.grid.transactions.undo();
     }
 
-    public redo(gridID) {
-        this.gridRowEditTransaction.transactions.redo();
+    public redo() {
+        this.grid.transactions.redo();
     }
 
-    public openCommitDialog(gridID) {
-        this.toggle.open();
+    public openCommitDialog() {
+        this.dialog.open();
         this.dialogGrid.reflow();
     }
 
     public commit() {
-        this.gridRowEditTransaction.transactions.commit(this.data);
-        this.toggle.close();
+        this.grid.transactions.commit(this.data);
+        this.dialog.close();
     }
 
     public cancel() {
-        this.toggle.close();
+        this.dialog.close();
     }
 
     public discard() {
-        this.gridRowEditTransaction.transactions.clear();
+        this.grid.transactions.clear();
+        this.dialog.close();
     }
 
     public stateFormatter(value: string) {
@@ -87,14 +96,14 @@ export class GridTransactionSampleComponent {
     }
 
     public get undoEnabled(): boolean {
-        return ((this.gridRowEditTransaction.transactions as any)._undoStack || []).length > 0;
+        return this.grid.transactions.canUndo;
     }
 
     public get redoEnabled(): boolean {
-        return ((this.gridRowEditTransaction.transactions as any)._redoStack || []).length > 0;
+        return this.grid.transactions.canRedo;
     }
 
     public get hasTransactions(): boolean {
-        return (this.gridRowEditTransaction.transactions.aggregatedState(false) || []).length > 0;
+        return this.grid.transactions.getAggregatedChanges(false).length > 0;
     }
 }

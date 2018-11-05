@@ -46,7 +46,8 @@ import {
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule,
-    IgxTooltipModule
+    IgxTooltipModule,
+    IgxTreeGridModule
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -135,6 +136,8 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 
 import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
+import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
+import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
@@ -169,8 +172,6 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
-import { GridWithTransactionsComponent } from "./grid/grid-transaction/grid-transaction.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
@@ -272,6 +273,12 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import {
+    TreeGridChilddatakeySampleComponent
+} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridPrimaryforeignkeySampleComponent
+} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -478,9 +485,11 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         ShadowsSampleComponent,
         ShadowsSample2Component,
         DropdownMenuComponent,
+        TreeGridChilddatakeySampleComponent,
+        TreeGridPrimaryforeignkeySampleComponent,
         DisplayDensityComponent,
         GridWithTransactionsComponent,
-        GridTransactionSampleComponent,
+        GridBatchEditingSampleComponent,
         GridRowEditSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
@@ -539,7 +548,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxTreeGridModule
     ],
     providers: [
         DataService,
