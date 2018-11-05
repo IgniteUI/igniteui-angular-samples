@@ -25,9 +25,9 @@ export class GridBatchEditingSampleComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.transactionsData = this.grid.transactions.aggregatedState(true);
+        this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
         this.grid.transactions.onStateUpdate.subscribe(() => {
-            this.transactionsData = this.grid.transactions.aggregatedState(true);
+            this.transactionsData = this.grid.transactions.getAggregatedChanges(true);
         });
     }
 
@@ -104,6 +104,6 @@ export class GridBatchEditingSampleComponent implements OnInit {
     }
 
     public get hasTransactions(): boolean {
-        return this.grid.transactions.aggregatedState(false).length > 0;
+        return this.grid.transactions.getAggregatedChanges(false).length > 0;
     }
 }
