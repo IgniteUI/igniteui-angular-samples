@@ -29,6 +29,9 @@ import {
     IgxToggleModule
 } from "igniteui-angular";
 import {
+    GridBatchEditingSampleComponent } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
+import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
+import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
@@ -68,7 +71,6 @@ import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/g
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridTransactionSampleComponent } from "../../src/app/grid/grid-transaction/grid-transaction-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
@@ -83,7 +85,6 @@ import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridWithTransactionsComponent } from "../../src/app/grid/grid-transaction/grid-transaction.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -474,14 +475,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: GridTransactionSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-transaction/data.ts",
-            "/src/app/grid/grid-transaction/grid-transaction.component.ts"],
+            component: GridBatchEditingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridTransactionSampleComponent, GridWithTransactionsComponent,
-                    IgxGridModule, IgxDialogModule, IgxButtonModule,
+                imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxToggleModule],
-                ngDeclarations: [GridTransactionSampleComponent, GridWithTransactionsComponent],
+                ngDeclarations: [GridBatchEditingSampleComponent, GridWithTransactionsComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxToggleModule]
             })

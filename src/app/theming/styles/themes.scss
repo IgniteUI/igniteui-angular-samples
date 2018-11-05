@@ -21,10 +21,6 @@
 @import '~igniteui-angular/lib/core/styles//components/grid-paginator/grid-paginator-component';
 @import '~igniteui-angular/lib/core/styles//components/grid-paginator/grid-paginator-theme';
 
-// Import grid-filtering component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/grid-filtering/grid-filtering-component';
-@import '~igniteui-angular/lib/core/styles//components/grid-filtering/grid-filtering-theme';
-
 // Import button component and theme styles
 @import '~igniteui-angular/lib/core/styles//components/button/button-component';
 @import '~igniteui-angular/lib/core/styles//components/button/button-theme';
@@ -40,6 +36,23 @@
 // Import calendar component and theme styles
 @import '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
 @import '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
+
+// Import chip component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/chip/chip-component';
+@import '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
+
+// Import icon component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/icon/icon-component';
+@import '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
+
+// Import drop-down component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
+@import '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
+
+// Import badge component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/badge/badge-component';
+@import '~igniteui-angular/lib/core/styles/components/badge/badge-theme';
+
 
 // Define the primary colors
 $light-color: #F8F8F8;
@@ -233,7 +246,7 @@ $black-grid-theme: igx-grid-theme(
   $cell-selected-background: igx-color($black-theme-palette, "primary", 500),
   $cell-selected-text-color: igx-color($black-theme-palette, "secondary", 500),
   $row-hover-background: igx-color($black-theme-palette, "secondary", 100),
-  $header-border-color: igx-color($black-theme-palette, "primary", 600)
+  $header-border-color: igx-color($black-theme-palette, "primary", 600),
 );
 
 // Define light theme for the grid-paginator
@@ -257,41 +270,6 @@ $black-grid-paginator-theme: igx-grid-paginator-theme(
   $text-color: igx-color($black-theme-palette, "secondary", 700),
   $background-color: igx-color($black-theme-palette, "primary", 700),
   $border-color: igx-color($black-theme-palette, "secondary", 500)
-);
-
-// Define light theme for the grid-filtering
-$light-grid-filtering-theme: igx-grid-filtering-theme(
-  $palette: $light-theme-palette,
-  $toggle-icon-color: igx-color($light-theme-palette, "primary", 500),
-  $toggle-active-background:  igx-color($light-theme-palette, "primary", 100),
-  $toggle-hover-background:  igx-color($light-theme-palette, "secondary", 500),
-  $menu-background: igx-color($light-theme-palette, "primary", 100),
-  $menu-text-color: igx-color($light-theme-palette, "secondary", 500),
-  $menu-button-text-color: igx-color($light-theme-palette, "secondary", 500),
-  $menu-button-disabled-text-color: igx-color($light-theme-palette, "secondary", 500)
-);
-
-// Define dark theme for the grid-filtering
-$dark-grid-filtering-theme: igx-grid-filtering-theme(
-  $palette: $dark-theme-palette,
-  $menu-background: igx-color($dark-theme-palette, "primary", 100),
-  $toggle-hover-background: igx-color($dark-theme-palette, "primary", 100),
-  $menu-text-color: igx-color($dark-theme-palette, "secondary", 500),
-  $menu-button-text-color: igx-color($dark-theme-palette, "secondary", 500),
-  $menu-button-disabled-text-color: igx-color($dark-theme-palette, "secondary", 500)
-  );
-
-// Define black theme for the grid-filtering
-$black-grid-filtering-theme: igx-grid-filtering-theme(
-  $palette: $black-theme-palette,
-  $toggle-icon-color: igx-color($black-theme-palette, "primary", 500),
-  $toggle-hover-background:  igx-color($black-theme-palette, "primary", 100),
-  $toggle-active-background:  igx-color($black-theme-palette, "primary", 100),
-  $toggle-icon-active-color: igx-color($black-theme-palette, "secondary", 500),
-  $menu-background: igx-color($black-theme-palette, "primary", 100),
-  $menu-text-color: igx-color($black-theme-palette, "secondary", 500),
-  $menu-button-text-color: igx-color($black-theme-palette, "secondary", 500),
-  $menu-button-disabled-text-color: igx-color($black-theme-palette, "secondary", 700)
 );
 
 $light-calendar-theme: igx-calendar-theme(
@@ -329,4 +307,57 @@ $black-calendar-theme: igx-calendar-theme(
     $picker-arrow-color: igx-color($black-theme-palette, "primary", 700),
     $picker-arrow-hover-color: igx-color($black-theme-palette, "secondary", 500),
     $inactive-text-color: igx-color($black-theme-palette, "primary", 700)
+);
+
+$light-icon-theme: igx-icon-theme(
+    $palette: $light-theme-palette
+);
+
+$dark-icon-theme: igx-icon-theme(
+    $palette: $dark-theme-palette
+);
+
+$black-icon-theme: igx-icon-theme(
+    $palette: $black-theme-palette
+);
+
+$light-chip-theme: igx-chip-theme(
+    $palette: $light-theme-palette,
+);
+
+$dark-chip-theme: igx-chip-theme(
+    $palette: $dark-theme-palette,
+    $text-color: igx-color($dark-theme-palette, "primary", 500),
+    $background: igx-color($dark-theme-palette, "secondary", 500),
+);
+
+$black-chip-theme: igx-chip-theme(
+    $palette: $black-theme-palette
+);
+
+$light-drop-down-theme: igx-drop-down-theme(
+    $palette: $light-theme-palette
+);
+
+$dark-drop-down-theme: igx-drop-down-theme(
+    $palette: $dark-theme-palette
+);
+
+$black-drop-down-theme: igx-drop-down-theme(
+    $palette: $black-theme-palette
+);
+
+$light-badge-theme: igx-badge-theme(
+    $palette: $light-theme-palette,
+    $background-color: igx-color($light-theme-palette, "secondary", 700),
+);
+
+$dark-badge-theme: igx-badge-theme(
+    $palette: $dark-theme-palette,
+    $background-color: igx-color($dark-theme-palette, "secondary", 500)
+);
+
+$black-badge-theme: igx-badge-theme(
+    $palette: $black-theme-palette,
+    $background-color: igx-color($black-theme-palette, "primary", 200)
 );

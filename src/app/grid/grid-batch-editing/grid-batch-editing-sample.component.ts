@@ -5,10 +5,10 @@ import { IgxGridComponent, IgxToggleDirective, Transaction } from "igniteui-angu
 
 @Component({
     selector: "app-grid-row-edit",
-    styleUrls: [`grid-transaction-sample.component.scss`],
-    templateUrl: "grid-transaction-sample.component.html"
+    styleUrls: [`grid-batch-editing-sample.component.scss`],
+    templateUrl: "grid-batch-editing-sample.component.html"
 })
-export class GridTransactionSampleComponent {
+export class GridBatchEditingSampleComponent {
     @ViewChild("gridRowEditTransaction", { read: IgxGridComponent }) public gridRowEditTransaction: IgxGridComponent;
     @ViewChild(IgxToggleDirective) public toggle: IgxToggleDirective;
     @ViewChild("dialogGrid", { read: IgxGridComponent }) public dialogGrid: IgxGridComponent;
@@ -40,19 +40,19 @@ export class GridTransactionSampleComponent {
         });
     }
 
-    public deleteRow(event, gridID, rowID) {
+    public deleteRow(rowID) {
         this.gridRowEditTransaction.deleteRow(rowID);
     }
 
-    public undo(gridID) {
+    public undo() {
         this.gridRowEditTransaction.transactions.undo();
     }
 
-    public redo(gridID) {
+    public redo() {
         this.gridRowEditTransaction.transactions.redo();
     }
 
-    public openCommitDialog(gridID) {
+    public openCommitDialog() {
         this.toggle.open();
         this.dialogGrid.reflow();
     }
@@ -87,14 +87,14 @@ export class GridTransactionSampleComponent {
     }
 
     public get undoEnabled(): boolean {
-        return ((this.gridRowEditTransaction.transactions as any)._undoStack || []).length > 0;
+        return this.gridRowEditTransaction.transactions.canUndo;
     }
 
     public get redoEnabled(): boolean {
-        return ((this.gridRowEditTransaction.transactions as any)._redoStack || []).length > 0;
+        return this.gridRowEditTransaction.transactions.canRedo;
     }
 
     public get hasTransactions(): boolean {
-        return (this.gridRowEditTransaction.transactions.aggregatedState(false) || []).length > 0;
+        return (this.gridRowEditTransaction.transactions.getAggregatedChanges(false) || []).length > 0;
     }
 }
