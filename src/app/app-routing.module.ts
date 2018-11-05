@@ -190,6 +190,7 @@ import { RadialGaugeNeedleComponent } from "./gauges/radial-gauge-needle/radial-
 import { RadialGaugeRangesComponent } from "./gauges/radial-gauge-ranges/radial-gauge-ranges.component";
 import { RadialGaugeScaleComponent } from "./gauges/radial-gauge-scale/radial-gauge-scale.component";
 import { RadialGaugeTickmarksComponent } from "./gauges/radial-gauge-tickmarks/radial-gauge-tickmarks.component";
+import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
@@ -222,7 +223,6 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -774,9 +774,9 @@ export const samplesRoutes: Routes = [
         path: "grid-row-editing"
     },
     {
-        component: GridTransactionSampleComponent,
-        data: { displayName: "Grid Transaction", parentName: "Grid" },
-        path: "grid-transaction"
+        component: GridBatchEditingSampleComponent,
+        data: { displayName: "Grid Batch Editing", parentName: "Grid" },
+        path: "grid-batch-editing"
     },
     {
         component: GridDisplayDensitySampleComponent,

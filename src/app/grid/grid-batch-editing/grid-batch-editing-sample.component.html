@@ -4,7 +4,7 @@
             [rowEditable]="true" [allowFiltering]="true">
             <igx-column [pinned]="true" [filterable]="false">
                 <ng-template igxCell let-cell="cell" let-val>
-                    <button igxButton (click)="deleteRow($event, 'gridRowEditTransaction', cell.cellID.rowID)">Delete</button>
+                    <button igxButton (click)="deleteRow(cell.cellID.rowID)">Delete</button>
                 </ng-template>
             </igx-column>
             <igx-column field="ProductID" header="Product ID" [pinned]="true" [filterable]="false"></igx-column>
@@ -28,9 +28,9 @@
     <div class="buttons-wrapper">
         <button igxButton (click)="addRow('gridRowEditTransaction')">Add Row</button>
         <div class="transaction-buttons-wrapper">
-            <button igxButton [disabled]="!undoEnabled" (click)="undo('gridRowEditTransaction')">Undo</button>
-            <button igxButton [disabled]="!redoEnabled" (click)="redo('gridRowEditTransaction')">Redo</button>
-            <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog('gridRowEditTransaction')">Commit</button>
+            <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>
+            <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>
+            <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog()">Commit</button>
         </div>
     </div>
     <div igxToggle class="dialog__container">
