@@ -4,7 +4,7 @@ import { FLAT_DATA } from "./data";
 
 @Component({
     providers: [],
-    selector: "app-tree-grid-row-editing-sample.component",
+    selector: "app-tree-grid-row-editing-sample",
     styleUrls: ["tree-grid-row-editing-sample.component.scss"],
     templateUrl: "tree-grid-row-editing-sample.component.html"
 })
