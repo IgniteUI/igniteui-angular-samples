@@ -136,6 +136,8 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 
 import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
+import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
+import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
@@ -170,8 +172,6 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
-import { GridWithTransactionsComponent } from "./grid/grid-transaction/grid-transaction.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
@@ -493,7 +493,7 @@ import {
         TreeGridPrimaryforeignkeySampleComponent,
         DisplayDensityComponent,
         GridWithTransactionsComponent,
-        GridTransactionSampleComponent,
+        GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         TreeGridRowEditSampleComponent
     ],

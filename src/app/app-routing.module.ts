@@ -122,9 +122,6 @@ import {
     FinancialChartCustomIndicatorsComponent
 } from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
 import {
-    FinancialChartCustomTooltipsComponent
-} from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
-import {
     FinancialChartHighFrequencyComponent
 } from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
 import {
@@ -154,6 +151,12 @@ import {
 import {
     FinancialChartTitlesComponent
 } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTooltipTemplateComponent
+} from "./financial-chart/tooltip-template/financial-chart-tooltip-template.component";
+import {
+    FinancialChartTooltipTypesComponent
+} from "./financial-chart/tooltip-types/financial-chart-tooltip-types.component";
 import {
     FinancialChartTrendlinesComponent
 } from "./financial-chart/trendlines/financial-chart-trendlines.component";
@@ -188,6 +191,7 @@ import { RadialGaugeNeedleComponent } from "./gauges/radial-gauge-needle/radial-
 import { RadialGaugeRangesComponent } from "./gauges/radial-gauge-ranges/radial-gauge-ranges.component";
 import { RadialGaugeScaleComponent } from "./gauges/radial-gauge-scale/radial-gauge-scale.component";
 import { RadialGaugeTickmarksComponent } from "./gauges/radial-gauge-tickmarks/radial-gauge-tickmarks.component";
+import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
@@ -220,7 +224,6 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridTransactionSampleComponent } from "./grid/grid-transaction/grid-transaction-sample.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -338,6 +341,47 @@ export const samplesRoutes: Routes = [
         component: HomeComponent,
         data: { displayName: "Home" },
         path: "home"
+    },
+    // excel library samples with lazy loading:
+    {
+        data: { displayName: "Workbooks Operations",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
+        path: "excel-library-operations-on-workbooks"
+    },
+    {
+        data: { displayName: "Worksheets Operations",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/operations-on/worksheets.module#ExcelLibraryOperationsOnWorksheetsModule",
+        path: "excel-library-operations-on-worksheets"
+    },
+    {
+        data: { displayName: "Working With Cells",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule",
+        path: "excel-library-working-with-cells"
+    },
+    {
+        data: { displayName: "Working With Charts",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/charts.module#ExcelLibraryWorkingWithChartsModule",
+        path: "excel-library-working-with-charts"
+    },
+    {
+        data: { displayName: "Working With Grids",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/grids.module#ExcelLibraryWorkingWithGridsModule",
+        path: "excel-library-working-with-grids"
+    },
+    {
+        data: { displayName: "Working With Objects",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/objects.module#ExcelLibraryWorkingWithObjectsModule",
+        path: "excel-library-working-with-objects"
+    },
+    {
+        data: { displayName: "Working With Sparklines",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/sparklines.module#ExcelLibraryWorkingWithSparklinesModule",
+        path: "excel-library-working-with-sparklines"
+    },
+    {
+        data: { displayName: "Working With Tables",  parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/tables.module#ExcelLibraryWorkingWithTablesModule",
+        path: "excel-library-working-with-tables"
     },
     {
         component: AvatarSample1Component,
@@ -732,9 +776,9 @@ export const samplesRoutes: Routes = [
         path: "grid-row-editing"
     },
     {
-        component: GridTransactionSampleComponent,
-        data: { displayName: "Grid Transaction", parentName: "Grid" },
-        path: "grid-transaction"
+        component: GridBatchEditingSampleComponent,
+        data: { displayName: "Grid Batch Editing", parentName: "Grid" },
+        path: "grid-batch-editing"
     },
     {
         component: GridDisplayDensitySampleComponent,
@@ -1419,11 +1463,6 @@ export const samplesRoutes: Routes = [
         path: "financial-chart-multiple-feeds"
     },
     {
-        component: FinancialChartCustomTooltipsComponent,
-        data: { displayName: "Financial Chart Custom Tooltips", parentName: "Financial Chart" },
-        path: "financial-chart-custom-tooltips"
-    },
-    {
         component: FinancialChartIndicatorTypesComponent,
         data: { displayName: "Financial Chart Indicator Types", parentName: "Financial Chart" },
         path: "financial-chart-indicator-types"
@@ -1452,6 +1491,16 @@ export const samplesRoutes: Routes = [
         component: FinancialChartAxisTypesComponent,
         data: { displayName: "Financial Chart Axis Types", parentName: "Financial Chart" },
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTooltipTemplateComponent,
+        data: { displayName: "Financial Chart Tooltips Template", parentName: "Financial Chart" },
+        path: "financial-chart-tooltip-template"
+    },
+    {
+        component: FinancialChartTooltipTypesComponent,
+        data: { displayName: "Financial Chart Tooltip Types", parentName: "Financial Chart" },
+        path: "financial-chart-tooltip-types"
     },
     {
         component: FinancialChartTimeBasedDataComponent,
