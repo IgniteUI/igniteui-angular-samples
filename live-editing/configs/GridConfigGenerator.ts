@@ -15,6 +15,7 @@ import {
     IgxDialogModule,
     IgxDropDownModule,
     IgxExcelExporterService,
+    IgxFocusModule,
     IgxGridModule,
     IgxIconModule,
     IgxInputGroupModule,
@@ -28,6 +29,8 @@ import {
     IgxToastModule,
     IgxToggleModule
 } from "igniteui-angular";
+import {
+    GridBatchEditingSampleComponent } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -68,7 +71,6 @@ import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/g
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridTransactionSampleComponent } from "../../src/app/grid/grid-transaction/grid-transaction-sample.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
@@ -473,14 +475,14 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: GridTransactionSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-transaction/data.ts"],
+            component: GridBatchEditingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridTransactionSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
-                    IgxToggleModule],
-                ngDeclarations: [GridTransactionSampleComponent],
+                imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule],
+                ngDeclarations: [GridBatchEditingSampleComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
-                    IgxToggleModule]
+                    IgxFocusModule]
             })
         }));
 
@@ -488,9 +490,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridRowEditSampleComponent,
             additionalFiles: ["src/app/grid/grid-row-editing-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridRowEditSampleComponent, IgxGridModule],
+                imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
                 ngDeclarations: [GridRowEditSampleComponent],
-                ngImports: [IgxGridModule.forRoot()]
+                ngImports: [IgxGridModule.forRoot(), IgxFocusModule]
             })
         }));
 

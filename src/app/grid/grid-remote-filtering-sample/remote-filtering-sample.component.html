@@ -1,10 +1,11 @@
 <div class="grid__wrapper">
-    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData()"
-        (onSortingDone)="processData()" (onFilteringDone)="processData()">
-        <igx-column [field]="'ProductID'" [sortable]="true"></igx-column>
-        <igx-column [field]="'ProductName'" [sortable]="true" [filterable]="true"></igx-column>
-        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true" [filterable]="true"></igx-column>
-        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" [filterable]="true">
+    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false'
+        (onDataPreLoad)="processData()" (onSortingDone)="processData()" (onFilteringDone)="processData()"
+        [allowFiltering]="true">
+        <igx-column [field]="'ProductID'" [sortable]="true" [filterable]="false"></igx-column>
+        <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
@@ -16,8 +17,8 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'QuantityPerUnit'" [sortable]="true" [filterable]="true"></igx-column>
-        <igx-column [field]="'ReorderLevel'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" [filterable]="true">
+        <igx-column [field]="'QuantityPerUnit'" [sortable]="true"></igx-column>
+        <igx-column [field]="'ReorderLevel'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">ReorderLevel</span>
             </ng-template>

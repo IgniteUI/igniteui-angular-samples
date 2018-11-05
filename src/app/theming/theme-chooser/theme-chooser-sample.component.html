@@ -1,6 +1,6 @@
 <div>
-    <igx-dialog #dialog1 title="New Record" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'" (onLeftButtonSelect)="cancel()"
-        (onRightButtonSelect)="addRow()">
+    <igx-dialog #dialog1 title="New Record" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
+        (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
         <div class="dialogNewRecord">
             <igx-input-group>
                 <label igxLabel for="industrySector">Industry Sector</label>
@@ -22,13 +22,14 @@
                 <label igxLabel for="marketNotion">Market Notion</label>
                 <input igxInput id="marketNotion" type="number" [(ngModel)]="record.MarketNotion" />
             </igx-input-group>
-            <igx-datePicker #datePicker name="date"  [(ngModel)]="record.Date">      </igx-datePicker>
+            <igx-datePicker #datePicker name="date" [(ngModel)]="record.Date"> </igx-datePicker>
         </div>
     </igx-dialog>
     <div igxOverlayOutlet #outlet>
         <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
             <button igxButton="raised" class="addProdBtn" (click)="openDialog()">Add New Product</button>
-            <button class="drop-down-button" igxButton="raised" (click)="toggleDropDown($event, dropdown)" [igxDropDownItemNavigation]="dropdown" >Themes</button>
+            <button class="drop-down-button" igxButton="raised" (click)="toggleDropDown($event, dropdown)"
+                [igxDropDownItemNavigation]="dropdown">Themes</button>
             <igx-drop-down #dropdown class="theme-chooser">
                 <igx-drop-down-item class="light-theme-option" (click)="selectTheme(THEME.LIGHT)">
                 </igx-drop-down-item>
@@ -38,19 +39,19 @@
                 </igx-drop-down-item>
             </igx-drop-down>
         </div>
-        <igx-grid [data]="data" [autoGenerate]="false" height="550px" width="100%" [paging]="true" [perPage]="10" displayDensity="comfortable"
-            #grid1>
-            <igx-column [field]="'IndustrySector'" dataType="string" [filterable]="true" [sortable]="true"></igx-column>
-            <igx-column [field]="'IndustryGroup'" dataType="string" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>
-            <igx-column [field]="'SectorType'" dataType="string" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>
-            <igx-column [field]="'KRD'" dataType="number" [filterable]="true" [sortable]="true"></igx-column>
-            <igx-column [field]="'MarketNotion'" dataType="number" [filterable]="true" [sortable]="true" [editable]="true"></igx-column>
-            <igx-column [field]="'Date'" dataType="date" [filterable]="true" [sortable]="true" [editable]="true">
+        <igx-grid [data]="data" [autoGenerate]="false" height="550px" width="100%" [paging]="true" [perPage]="10"
+            displayDensity="comfortable" #grid1 [allowFiltering]="true">
+            <igx-column [field]="'IndustrySector'" dataType="string" [sortable]="true"></igx-column>
+            <igx-column [field]="'IndustryGroup'" dataType="string" [sortable]="true" [editable]="true"></igx-column>
+            <igx-column [field]="'SectorType'" dataType="string" [sortable]="true" [editable]="true"></igx-column>
+            <igx-column [field]="'KRD'" dataType="number" [sortable]="true"></igx-column>
+            <igx-column [field]="'MarketNotion'" dataType="number" [sortable]="true" [editable]="true"></igx-column>
+            <igx-column [field]="'Date'" dataType="date" [sortable]="true" [editable]="true">
                 <ng-template igxCell let-cell="cell" let-val>
                     {{val | date:'dd/MM/yyyy'}}
                 </ng-template>
             </igx-column>
-            <igx-column width="120%" [field]="'Delete Row'">
+            <igx-column width="120%" [field]="'Delete Row'" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
                     <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
                         <igx-icon>delete</igx-icon>
