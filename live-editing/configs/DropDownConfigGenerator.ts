@@ -1,14 +1,14 @@
 /* tslint:disable:object-literal-sort-keys */
 
-import { IgxButtonModule, IgxDropDownModule, IgxIconModule } from "igniteui-angular";
+import { IgxButtonModule, IgxDropDownModule, IgxIconModule, IgxNavbarModule, IgxToggleModule } from "igniteui-angular";
 import { DropDownSample1Component } from "../../src/app/dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "../../src/app/dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "../../src/app/dropdown/dropdown-sample-3/dropdown-sample-3.component";
 
+import { DropdownMenuComponent } from "../../src/app/dropdown/dropdown-menu/dropdown-menu.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { DropdownMenuComponent } from "../../src/app/dropdown/dropdown-menu/dropdown-menu.component";
 
 export class DropDownConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -47,9 +47,9 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DropdownMenuComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDropDownModule, DropdownMenuComponent, IgxIconModule],
+                imports: [IgxDropDownModule, DropdownMenuComponent, IgxIconModule, IgxNavbarModule, IgxToggleModule],
                 ngDeclarations: [DropdownMenuComponent],
-                ngImports: [IgxDropDownModule, IgxIconModule]
+                ngImports: [IgxDropDownModule, IgxIconModule, IgxNavbarModule, IgxToggleModule]
             }),
             shortenComponentPathBy: "/dropdown/"
         }));
