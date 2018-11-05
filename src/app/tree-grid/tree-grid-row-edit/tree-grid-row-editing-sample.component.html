@@ -5,8 +5,6 @@
         rowEditable = true
         rowSelectable = true
         columnHiding = true
-        (onRowEditDone)="rowEditDone($event)"
-        (onRowEditCancel)="rowEditCancel($event)"
         >
         <igx-column *ngFor="let c of columns"
             [editable] ="c.editable"
