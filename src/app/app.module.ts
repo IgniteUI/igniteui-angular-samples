@@ -46,7 +46,8 @@ import {
     IgxTimePickerModule,
     IgxToastModule,
     IgxToggleModule,
-    IgxTooltipModule
+    IgxTooltipModule,
+    IgxTreeGridModule
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
@@ -272,6 +273,12 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import {
+    TreeGridChilddatakeySampleComponent
+} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridPrimaryforeignkeySampleComponent
+} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -478,6 +485,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         ShadowsSampleComponent,
         ShadowsSample2Component,
         DropdownMenuComponent,
+        TreeGridChilddatakeySampleComponent,
+        TreeGridPrimaryforeignkeySampleComponent,
         DisplayDensityComponent,
         GridWithTransactionsComponent,
         GridTransactionSampleComponent,
@@ -539,7 +548,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxTreeGridModule
     ],
     providers: [
         DataService,
