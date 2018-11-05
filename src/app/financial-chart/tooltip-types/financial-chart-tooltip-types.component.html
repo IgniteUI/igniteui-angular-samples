@@ -1,8 +1,7 @@
 <div class="sample-wrapper container">
     <div class="options">
         <span>Tooltips Type:</span>
-        <select [(ngModel)]="sampleOptions.tooltipType">
-            <option>Item</option>
+        <select class="optionItem" [(ngModel)]="sampleOptions.tooltipType">            
             <option>Category</option>
             <option>Default</option>
         </select>
@@ -13,7 +12,6 @@
             [dataSource]="financialData"
             chartType="Candle"
             yAxisTitle="Stock Prices ($)"
-
             [toolTipType]="sampleOptions.tooltipType">
         </igx-financial-chart>
 

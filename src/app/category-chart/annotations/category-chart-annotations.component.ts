@@ -49,7 +49,7 @@ class CalloutCategoryData extends Array {
         for (const item of categoryData) {
             if (item.temperatureHigh - item.averageTemperature > 10) {
                 this.push({
-                    content: "Very high over average for " + item.date.toLocaleDateString(),
+                    content: "High average",
                     index: idx,
                     yValue: item.temperatureHigh });
             }

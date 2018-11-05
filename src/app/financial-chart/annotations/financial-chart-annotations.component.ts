@@ -37,7 +37,7 @@ class CalloutFinancialData extends Array {
                 const diff = item.high - item.close;
                 if (diff < 0.01) {
                     this.push({
-                        content: stock.title + " closed high on " + item.time.toLocaleDateString(),
+                        content: stock.title + " High",
                         index: idx,
                         yValue: item.high });
                 }
