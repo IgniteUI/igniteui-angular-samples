@@ -83,6 +83,7 @@ import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridWithTransactionsComponent } from "../../src/app/grid/grid-transaction/grid-transaction.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -474,11 +475,13 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridTransactionSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-transaction/data.ts"],
+            additionalFiles: ["/src/app/grid/grid-transaction/data.ts",
+            "/src/app/grid/grid-transaction/grid-transaction.component.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridTransactionSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                imports: [GridTransactionSampleComponent, GridWithTransactionsComponent,
+                    IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxToggleModule],
-                ngDeclarations: [GridTransactionSampleComponent],
+                ngDeclarations: [GridTransactionSampleComponent, GridWithTransactionsComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxToggleModule]
             })
