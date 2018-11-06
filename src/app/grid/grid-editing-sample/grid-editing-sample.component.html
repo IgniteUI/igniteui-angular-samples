@@ -56,7 +56,7 @@
                 <igx-datePicker id="orderDate" label="Order Date" [(ngModel)]="product.OrderDate"></igx-datePicker>
                 <igx-checkbox id="discontinued" [(ngModel)]="product.Discontinued">Discontinued</igx-checkbox>
                 <igx-combo id="availableAt" [valueKey]="'shop'" [placeholder]="'Available @'" [data]="locations"
-                    [(ngModel)]="product.Locations"></igx-combo>
+                    [(ngModel)]="product.Locations" [itemsMaxHeight]="200"></igx-combo>
                 <igx-input-group>
                     <label igxLabel for="reorderLevel">Reorder Level</label>
                     <input igxInput id="reorderLevel" [(ngModel)]="product.ReorderLevel" />
