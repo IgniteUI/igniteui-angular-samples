@@ -30,7 +30,8 @@ import {
     IgxToggleModule
 } from "igniteui-angular";
 import {
-    GridBatchEditingSampleComponent } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
+    GridBatchEditingSampleComponent
+} from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -85,6 +86,7 @@ import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -464,7 +466,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: FinJSDemoComponent,
             additionalFiles: ["/src/app/grid/services/localData.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, FinJSDemoComponent,
                     LocalDataService],
                 ngDeclarations: [FinJSDemoComponent],
@@ -493,6 +495,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
                 ngDeclarations: [GridRowEditSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), IgxFocusModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCustomFilteringComponent,
+            additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCustomFilteringComponent, IgxGridModule],
+                ngDeclarations: [GridCustomFilteringComponent],
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 
