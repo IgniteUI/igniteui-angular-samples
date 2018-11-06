@@ -37,6 +37,7 @@ export class TooltipConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Row Edit Sample
         configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/tree-grid-row-edit/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridRowEditSampleComponent],
                 ngDeclarations: [TreeGridRowEditSampleComponent],
