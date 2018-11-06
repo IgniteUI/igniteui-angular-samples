@@ -15,6 +15,7 @@ import {
     IgxDialogModule,
     IgxDropDownModule,
     IgxExcelExporterService,
+    IgxFocusModule,
     IgxGridModule,
     IgxIconModule,
     IgxInputGroupModule,
@@ -478,10 +479,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
-                    IgxToggleModule],
+                    IgxFocusModule],
                 ngDeclarations: [GridBatchEditingSampleComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
-                    IgxToggleModule]
+                    IgxFocusModule]
             })
         }));
 
@@ -489,9 +490,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridRowEditSampleComponent,
             additionalFiles: ["src/app/grid/grid-row-editing-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridRowEditSampleComponent, IgxGridModule],
+                imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
                 ngDeclarations: [GridRowEditSampleComponent],
-                ngImports: [IgxGridModule.forRoot()]
+                ngImports: [IgxGridModule.forRoot(), IgxFocusModule]
             })
         }));
 
