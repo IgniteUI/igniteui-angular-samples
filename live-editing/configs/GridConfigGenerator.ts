@@ -31,6 +31,7 @@ import {
 } from "igniteui-angular";
 import {
     GridBatchEditingSampleComponent } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
+import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
 import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -476,11 +477,12 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridBatchEditingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts"],
+            additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts",
+                "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
-                    IgxFocusModule],
-                ngDeclarations: [GridBatchEditingSampleComponent],
+                    IgxFocusModule, GridWithTransactionsComponent],
+                ngDeclarations: [GridBatchEditingSampleComponent, GridWithTransactionsComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxFocusModule]
             })
