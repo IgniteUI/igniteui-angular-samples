@@ -1,6 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
 import {
+    FinancialChartAnnotationsComponent
+} from "../../src/app/financial-chart/annotations/financial-chart-annotations.component";
+import {
     FinancialChartAxisTypesComponent
 } from "../../src/app/financial-chart/axis-types/financial-chart-axis-types.component";
 import {
@@ -68,6 +71,17 @@ export class FinancialChartConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxFinancialChartModule, FinancialChartTooltipTypesComponent, FinancialDataService],
                 ngDeclarations: [FinancialChartTooltipTypesComponent],
+                ngImports: [IgxFinancialChartModule]
+            }),
+            dependenciesType: DependenciesType.Charts
+        }));
+
+        configs.push(new Config({
+            component: FinancialChartAnnotationsComponent,
+            additionalFiles: ["/src/app/financial-chart/services/financial-data.service.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxFinancialChartModule, FinancialChartAnnotationsComponent, FinancialDataService],
+                ngDeclarations: [FinancialChartAnnotationsComponent],
                 ngImports: [IgxFinancialChartModule]
             }),
             dependenciesType: DependenciesType.Charts
