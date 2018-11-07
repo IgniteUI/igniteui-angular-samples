@@ -336,6 +336,8 @@ import {
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
+import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
+
 export const samplesRoutes: Routes = [
     {
         component: HomeComponent,
@@ -344,42 +346,42 @@ export const samplesRoutes: Routes = [
     },
     // excel library samples with lazy loading:
     {
-        data: { displayName: "Workbooks Operations",  parentName: "Excel Library" },
+        data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
         loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
         path: "excel-library-operations-on-workbooks"
     },
     {
-        data: { displayName: "Worksheets Operations",  parentName: "Excel Library" },
+        data: { displayName: "Worksheets Operations", parentName: "Excel Library" },
         loadChildren: "app/excel-library/operations-on/worksheets.module#ExcelLibraryOperationsOnWorksheetsModule",
         path: "excel-library-operations-on-worksheets"
     },
     {
-        data: { displayName: "Working With Cells",  parentName: "Excel Library" },
+        data: { displayName: "Working With Cells", parentName: "Excel Library" },
         loadChildren: "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule",
         path: "excel-library-working-with-cells"
     },
     {
-        data: { displayName: "Working With Charts",  parentName: "Excel Library" },
+        data: { displayName: "Working With Charts", parentName: "Excel Library" },
         loadChildren: "app/excel-library/working-with/charts.module#ExcelLibraryWorkingWithChartsModule",
         path: "excel-library-working-with-charts"
     },
     {
-        data: { displayName: "Working With Grids",  parentName: "Excel Library" },
+        data: { displayName: "Working With Grids", parentName: "Excel Library" },
         loadChildren: "app/excel-library/working-with/grids.module#ExcelLibraryWorkingWithGridsModule",
         path: "excel-library-working-with-grids"
     },
     {
-        data: { displayName: "Working With Objects",  parentName: "Excel Library" },
+        data: { displayName: "Working With Objects", parentName: "Excel Library" },
         loadChildren: "app/excel-library/working-with/objects.module#ExcelLibraryWorkingWithObjectsModule",
         path: "excel-library-working-with-objects"
     },
     {
-        data: { displayName: "Working With Sparklines",  parentName: "Excel Library" },
+        data: { displayName: "Working With Sparklines", parentName: "Excel Library" },
         loadChildren: "app/excel-library/working-with/sparklines.module#ExcelLibraryWorkingWithSparklinesModule",
         path: "excel-library-working-with-sparklines"
     },
     {
-        data: { displayName: "Working With Tables",  parentName: "Excel Library" },
+        data: { displayName: "Working With Tables", parentName: "Excel Library" },
         loadChildren: "app/excel-library/working-with/tables.module#ExcelLibraryWorkingWithTablesModule",
         path: "excel-library-working-with-tables"
     },
@@ -1221,6 +1223,11 @@ export const samplesRoutes: Routes = [
         component: FilteringSampleComponent,
         data: { displayName: "Grid Filtering", parentName: "Grid" },
         path: "grid-filtering-sample"
+    },
+    {
+        component: GridCustomFilteringComponent,
+        data: { displayName: "Custom Filtering Conditions", parentName: "Grid" },
+        path: "grid-filter-conditions"
     },
     {
         component: PagingSampleComponent,
