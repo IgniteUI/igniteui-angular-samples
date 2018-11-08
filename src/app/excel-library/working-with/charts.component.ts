@@ -1,70 +1,112 @@
-import {
-    AfterViewInit, ChangeDetectionStrategy, Component, ViewChild, ViewContainerRef
-} from "@angular/core";
-
-// TODO import either CategoryChart or DataChart component:
-import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
-// import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
-
-// TODO import Excel components that the sample will be showcasing:
-import { TextFormatMode } from "igniteui-angular-excel/ES5/TextFormatMode";
+import { AfterViewInit, Component} from "@angular/core";
+import { ChartType } from "igniteui-angular-excel/ES5/ChartType";
 import { Workbook } from "igniteui-angular-excel/ES5/Workbook";
 import { WorkbookFormat } from "igniteui-angular-excel/ES5/WorkbookFormat";
-import { Worksheet } from "igniteui-angular-excel/ES5/Worksheet";
-import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
+import { WorksheetRegion } from "igniteui-angular-excel/ES5/WorksheetRegion";
+import { ExcelUtility } from "../../utilities/excel-utility";
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-charts",
     styleUrls: ["./charts.component.scss"],
     templateUrl: "./charts.component.html"
 })
 export class ExcelLibraryWorkingWithChartsComponent implements AfterViewInit {
 
-    // TODO if needed, uncomment to get access to chart control
-    // @ViewChild("chart")
-    // public chart: IgxCategoryChartComponent;
-    // @ViewChild("chart")
-    // public chart: IgxDataChartComponent;
-
-    public data: any;
+    public excelData: any[];
+    public chartData: any[];
 
     constructor() {
+        this.initializeData();
+    }
 
-        // TODO generate excel data or load data from .xls file
-        const usaMedals: any = [
-            { Year: "1996", UnitedStates: 148 },
-            { Year: "2000", UnitedStates: 142 },
-            { Year: "2004", UnitedStates: 134 },
-            { Year: "2008", UnitedStates: 131 },
-            { Year: "2012", UnitedStates: 135 },
-            { Year: "2016", UnitedStates: 146 }
-        ];
-        const chinaMedals: any = [
-            { Year: "1996", China: 110 },
-            { Year: "2000", China: 115 },
-            { Year: "2004", China: 121 },
-            { Year: "2008", China: 129 },
-            { Year: "2012", China: 115 },
-            { Year: "2016", China: 112 }
-        ];
-        const russiaMedals: any = [
-            { Year: "1996", Russia: 95 },
-            { Year: "2000", Russia: 91 },
-            { Year: "2004", Russia: 86 },
-            { Year: "2008", Russia: 65 },
-            { Year: "2012", Russia: 77 },
-            { Year: "2016", Russia: 88 }
-        ];
-        this.data = [ usaMedals, chinaMedals, russiaMedals ];
+    public initializeData() {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        const groups = ["Heating", "Electricity"];
+        const expanseKey = "Expense";
+        const monthKey = "Month";
+        const data = new Array<any>();
+        for (const group of groups) {
+            const r = {};
+            r[expanseKey] = group;
+            let index = 0;
+            for (const month of months) {
+                const x = index * 15 * Math.PI / 180;
+                const rand = this.getRandom(100, 150);
+                const heat = Math.abs(Math.cos(x)) * 300 + rand;
+                const elec = Math.abs(Math.sin(x)) * 500 + rand;
+                if (group === "Heating") {
+                    r[month] = Math.round(heat);
+                } else if (group === "Electricity") {
+                    r[month] = Math.round(elec);
+                }
+                index = index + 1;
+            }
+            data.push(r);
+        }
+        this.excelData = data;
+        // since we will export the data transposed (plotByRows will be true) if
+        // we want to show the data that way in the ui then we need a transposed
+        // version of the data for the category chart to bind to
+        const chartData = new Array<any>();
+        for (const month of months) {
+            const r = {};
+            r[monthKey] = month;
+            for (const item of data) {
+                r[item[expanseKey]] = item[month];
+            }
+            chartData.push(r);
+        }
+        this.chartData = chartData;
+    }
+
+    public getRandom(min: number, max: number): number {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    public exportData() {
+        const headers = Object.keys(this.excelData[0]);
+        const wb = new Workbook(WorkbookFormat.Excel2007);
+        const ws = wb.worksheets().add("Sheet1");
+        ws.defaultColumnWidth = 200 * 20;
+
+        // reserving the [0] row where we will place the chart shape
+        // the [1] will be the headers. so data will start on [2]
+        const firstDataRow = 2;
+
+        const headerRow = ws.rows(firstDataRow - 1);
+        for (let c = 0; c < headers.length; c++) {
+            headerRow.setCellValue(c, headers[c]);
+        }
+
+        for (let r = 0; r < this.excelData.length; r++) {
+            const xlRow = ws.rows(r + firstDataRow);
+            const dataRow = this.excelData[r];
+            for (let c = 0; c < headers.length; c++) {
+                xlRow.setCellValue(c, dataRow[headers[c]]);
+            }
+        }
+        const indexRow = firstDataRow - 1;
+        const indexData = firstDataRow + this.excelData.length - 1;
+        const indexHeader = headers.length - 1;
+
+        const tableRegion = new WorksheetRegion(ws, indexRow, 0, indexData, indexHeader);
+        const table = ws.tables().add(tableRegion.toString(), true);
+
+        // set some extra height for the row where the chart will be
+        ws.rows(0).height = 5000;
+
+        const chart = ws.shapes().addChart(ChartType.ColumnClustered,
+          ws.rows(0).cells(0), { x: 0, y: 0 },
+          ws.rows(0).cells(headers.length - 1), { x: 100, y: 100 });
+        chart.setSourceData(table.wholeTableRegion.toString(), true);
+
+        ExcelUtility.save(wb, "chartSample");
     }
 
     public ngOnInit() {
     }
 
     public ngAfterViewInit(): void {
-        // TODO bind excel data to the chart
-        // this.chart.dataSource = this.data;
     }
 
 }

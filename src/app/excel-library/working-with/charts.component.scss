@@ -5,9 +5,7 @@
     min-width: 300px;
 }
 
-.options {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 10px;
-    margin-left: 10px;
+.chart {
+    flex: 1;
+    overflow: hidden;
 }
