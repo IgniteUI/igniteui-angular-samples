@@ -33,8 +33,9 @@
             [dataSource]="categoryData"
             [chartType]="sampleOptions.chartType"
             chartTitle="Weather Data"
-            subtitle="(High, Average, Low)"
+            subtitle="(High, Low)"
             [xAxisFormatLabel]="formatDateLabel"
+            [includedProperties]="include"
 
 
             [crosshairsDisplayMode]="sampleOptions.crosshairsDisplay"
@@ -44,11 +45,10 @@
             [finalValueAnnotationsVisible]="sampleOptions.finalValueAnnotations"
 
             [calloutsVisible]="sampleOptions.calloutsVisible"
-            [calloutsDataSource]="calloutData"
+            [calloutsDataSource]="categoryData"
             calloutsXMemberPath="index"
-            calloutsYMemberPath="yValue"
-            calloutsLabelMemberPath="content"
-            calloutsContentMemberPath="yValue">
+            calloutsYMemberPath="value"
+            calloutsLabelMemberPath="content">
         </igx-category-chart>
 
     </div>
