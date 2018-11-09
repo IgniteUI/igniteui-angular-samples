@@ -7,6 +7,9 @@ const tsNode = require('ts-node').register({
     }
 });
 
+//  Workaround for exception with Excel samples running product code during generate-live-editing task.
+navigator = { language: "en-US" };
+
 function requireFile(path) {
     delete require.cache[require.resolve(path)];
     return require(path);
