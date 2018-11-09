@@ -1,12 +1,18 @@
-<div class="sample-wrapper container">
+<div class="container">
     <div class="options">
-        <span>TODO: show usage of Excel with charts </span>
-        <igx-category-chart
-            height="300px" width="400px"
-            #chart
-            [dataSource]="data">
-        </igx-category-chart>
-
+        <button (click)="exportData()">Export To Excel File</button>
     </div>
-
+    <div class="chart">
+        <igx-category-chart #chart
+            height="98%" width="100%"
+            yAxisMinimumValue=0
+            xAxisInterval=1
+            chartType="column"
+            thickness=0
+            subtitle="Electricity vs Heating Expanses"
+            subtitleTextStyle="11pt Verdana"
+            subtitleTextColor="gray"
+            [dataSource]="chartData">
+        </igx-category-chart>
+    </div>
 </div>
