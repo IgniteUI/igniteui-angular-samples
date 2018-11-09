@@ -21,7 +21,8 @@ export class ExcelLibraryWorkingWithChartsComponent implements AfterViewInit {
 
     public initializeData() {
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-        const groups = ["Heating", "Electricity"];
+        const groups = ["Heating", "Electricity", "Water", "Taxes"];
+
         const expanseKey = "Expense";
         const monthKey = "Month";
         const data = new Array<any>();
@@ -39,6 +40,10 @@ export class ExcelLibraryWorkingWithChartsComponent implements AfterViewInit {
                     r[month] = Math.round(heat);
                 } else if (group === "Electricity") {
                     r[month] = Math.round(ac);
+                } else if (group === "Water") {
+                    r[month] = this.getRandom(100, 150);
+                } else if (group === "Taxes") {
+                    r[month] = this.getRandom(700, 800);
                 }
                 index = index + 1;
             }

@@ -3,6 +3,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
+import { IgxGridModule } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 import { ExcelLibraryWorkingWithChartsComponent } from "./charts.component";
@@ -18,6 +19,7 @@ const routing: ModuleWithProviders = RouterModule.forChild(routes);
         routing,
         CommonModule,
         FormsModule,
+        IgxGridModule,
         IgxExcelModule,
         IgxCategoryChartModule
     ]
