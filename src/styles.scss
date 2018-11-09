@@ -154,6 +154,7 @@ $finjs-palette: igx-palette(#09f, #72da67);
     // GRID DARK THEME
     $finjs-grid-theme: igx-grid-theme(
         $ghost-header-background: #333,
+        $group-row-selected-background: #102910,
         $ghost-header-icon-color: $white-70
     );
 
