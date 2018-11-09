@@ -14,8 +14,9 @@
     margin-bottom: 5px;
     margin-right: 10px;
     margin-left: 10px;
-    width:100%;
-    font-size: 12px;
+    width:100%;    
+    font-size: 1rem;
+    font-family: sans-serif;
 }
 
 .optionLabel {
@@ -27,6 +28,8 @@
     margin-left: 10px;
     display: inline-block;
     vertical-align: center;
+    font-size: 1rem;
+    font-family: sans-serif;
 }
 
 input {
