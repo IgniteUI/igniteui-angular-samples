@@ -4,6 +4,10 @@ import {
     IgxGridModule
 } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
+import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
+import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
+import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
+import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 import {
     ExcelLibraryOperationsOnWorkbooksComponent
 } from "../../src/app/excel-library/operations-on/workbooks.component";
@@ -33,7 +37,6 @@ import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 
 export class ExcelLibraryConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -128,9 +131,11 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                    IgxDataChartCategoryModule, IgxDataChartCoreModule, IgxDataChartInteractivityModule,
                     ExcelUtility, ExcelLibraryWorkingWithSparklinesComponent],
                 ngDeclarations: [ExcelLibraryWorkingWithSparklinesComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule]
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                    IgxDataChartCategoryModule, IgxDataChartCoreModule, IgxDataChartInteractivityModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
