@@ -5,6 +5,9 @@ import { RouterModule, Routes } from "@angular/router";
 
 // TODO import either CategoryChart or DataChart module:
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
+import { IgxGridModule } from "igniteui-angular";
+import { IgxExcelXlsxModule} from "igniteui-angular-excel/ES5/igx-excel-xlsx-module";
+
 // import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
 // import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 
@@ -22,7 +25,9 @@ const routing: ModuleWithProviders = RouterModule.forChild(routes);
         routing,
         CommonModule,
         FormsModule,
-        IgxCategoryChartModule
+        IgxCategoryChartModule,
+        IgxGridModule,
+        IgxExcelXlsxModule
         // IgxDataChartCoreModule,
         // IgxDataChartCategoryModule,
         // IgxExcelModule,
