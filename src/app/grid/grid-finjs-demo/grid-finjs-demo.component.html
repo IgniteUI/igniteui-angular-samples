@@ -19,11 +19,6 @@
                     (onSelect)="onButtonAction($event)"></igx-buttongroup>
             </div>
             <div class="finjs-sample-switch">
-                <span *ngIf="buttonSelected === 1">Feeding {{volume}} records every {{frequency / 1000}} sec.
-                    {{volume}} records updated. </span>
-                <!-- <span *ngIf="buttonSelected === 1">Feeding {{volume}} updated records every {{frequency / 1000}} sec.</span> -->
-                <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
-                    ~{{volume/5}} records updated.</span>
                 <igx-switch [checked]="grouped" (change)="onChange($event)">Grouped</igx-switch>
             </div>
         </div>
@@ -31,6 +26,13 @@
 
     <div class="crm-sample-toolbar">
         <div class="crm-sample-toolbar__title">
+            <div>
+                <span *ngIf="buttonSelected === 1">Feeding {{volume}} records every {{frequency / 1000}} sec.
+                    {{volume}} records updated. </span>
+                <!-- <span *ngIf="buttonSelected === 1">Feeding {{volume}} updated records every {{frequency / 1000}} sec.</span> -->
+                <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
+                    ~{{volume/5}} records updated.</span>
+            </div>
             <span class="crm-sample-toolbar__ellipsis">Torkyo Commodity Exchange</span>
         </div>
 

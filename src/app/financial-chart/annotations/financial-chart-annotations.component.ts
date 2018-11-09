@@ -17,8 +17,18 @@ export class FinancialChartAnnotationsComponent {
     public calloutData: CalloutFinancialData;
 
     constructor(private dataService: FinancialDataService) {
-        this.financialData = [ this.dataService.getAmzn(), this.dataService.getGoog() ];
+        this.financialData = [ this.dataService.getTsla(), this.dataService.getTgt() ];
         this.calloutData = new CalloutFinancialData(this.financialData);
+    }
+}
+
+class CalloutData {
+    public content: string;
+    public index: number;
+    public value: number;
+
+    public constructor(init?: Partial<CalloutData>) {
+        Object.assign(this, init);
     }
 }
 
@@ -32,17 +42,41 @@ class CalloutFinancialData extends Array {
 
     public parseForCalloutData = function(financialData: any[]) {
         for (const stock of financialData) {
+            const intervalSplit = Math.floor(Math.random() * (300 - 280)) + 280;
+            const intervalDiv = Math.floor(Math.random() * (400 - 360)) + 360;
+            const priceLowest: CalloutData = new CalloutData({value: Number.MAX_VALUE, content: "MIN PRICE"});
+            const priceHighest: CalloutData = new CalloutData({value: Number.MIN_VALUE, content: "MAX PRICE"});
             let idx: number = 0;
+
             for (const item of stock) {
-                const diff = item.high - item.close;
-                if (diff < 0.01) {
-                    this.push({
-                        content: stock.title + " closed high on " + item.time.toLocaleDateString(),
-                        index: idx,
-                        yValue: item.high });
+                const callout = new CalloutData({index: idx });
+
+                if (priceLowest.value > item.close) {
+                    priceLowest.value = item.close;
+                    priceLowest.index = idx;
                 }
+                // finding item with highest price
+                if (priceHighest.value < item.close) {
+                    priceHighest.value = item.close;
+                    priceHighest.index = idx;
+                }
+
+                // creating SPLIT/DIVIDENT events at specific intervals
+                if (idx % intervalSplit === 5) {
+                    callout.value = item.close;
+                    callout.content = "SPLIT";
+                    this.push(callout);
+                } else if (idx % intervalDiv === 5) {
+                    callout.value = item.close;
+                    callout.content = "DIV";
+                    this.push(callout);
+                }
+
                 idx++;
             }
+
+            this.push(priceLowest);
+            this.push(priceHighest);
         }
     };
 }

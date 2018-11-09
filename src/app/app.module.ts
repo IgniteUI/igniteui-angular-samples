@@ -146,6 +146,7 @@ import {
     GridConditionalCellStyleComponent
 } from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 import {
     GridDisplayDensitySampleComponent
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -309,6 +310,7 @@ import {
         ListSample6Component,
         ListSample7Component,
         GridCRMComponent,
+        GridCustomFilteringComponent,
         GridComponent,
         CarouselComponent,
         CarouselDetailsViewComponent,
@@ -495,7 +497,9 @@ import {
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
-        TreeGridRowEditSampleComponent
+        TreeGridRowEditSampleComponent,
+        GridRowEditSampleComponent,
+        GridCustomFilteringComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

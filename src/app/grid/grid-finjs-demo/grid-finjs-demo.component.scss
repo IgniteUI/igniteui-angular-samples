@@ -52,10 +52,24 @@ $exclude: (
          $white-80:rgba(255, 255, 255, .74);
          $white-90:rgba(255, 255, 255, .87);
 
+
+        $finjs-dropdown-theme: igx-drop-down-theme(
+            $background-color:#222,
+            $focused-item-background: igx-color($finjs-palette, 'secondary'),
+            $selected-item-background: igx-color($finjs-palette, 'secondary'),
+            $selected-hover-item-background: igx-color($finjs-palette, 'secondary', 400),
+            $selected-focus-item-background: igx-color($finjs-palette, 'secondary', 400),
+            $selected-focus-item-text-color: #000,
+            $selected-hover-item-text-color: #000
+        );
+
+        @include igx-drop-down($finjs-dropdown-theme);
+
         // GRID DARK THEME
         $finjs-grid-theme: igx-grid-theme(
             $content-background: $content-background,
             $content-text-color: $light-text,
+            $filtering-row-background:#2F2F2F,
 
             $header-background: igx-color($finjs-palette, 'grays', 800),
             $header-text-color: $white-70,
@@ -89,6 +103,38 @@ $exclude: (
 
         @include igx-grid($finjs-grid-theme);
 
+        .igx-grid__group-row--active {
+            background: #102910!important;
+        }
+
+        .igx-grid__filtering-row-scroll-end {
+            &::before {
+                background: linear-gradient(to right, #2f2f2f, transparent);
+            }
+        }
+
+        .igx-grid__filtering-row-scroll-start{
+            &::after {
+                background: linear-gradient(to left, #2f2f2f, transparent);
+            }
+        }
+
+        .igx-grid__filtering-row-scroll-start,
+        .igx-grid__filtering-row-scroll-end {
+            igx-icon {
+                color: #fff;
+            }
+        }
+
+        .crm-sample-toolbar__title {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 12px;
+            padding-left: 16px;
+            color: #999;
+        }
 
         // INPUT GROUP
         $finjs-input-group-theme: igx-input-group-theme(
@@ -142,6 +188,8 @@ $exclude: (
         $finjs-filtering-theme: igx-grid-filtering-theme(
             $toggle-icon-color: $white-70,
             $toggle-icon-filtered-color: igx-color($finjs-palette, 'secondary', 500),
+            $toggle-icon-active-color: igx-color($finjs-palette, 'secondary', 500),
+            $toggle-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
             $menu-background: #111,
             $menu-button-text-color: igx-color($finjs-palette, 'secondary', 500)
         );
@@ -208,10 +256,6 @@ $exclude: (
 
         .finjs-sample-switch {
             color: #fff;
-        }
-
-        .igx-drop-down__item {
-            background: #000;
         }
 
         &:after {
