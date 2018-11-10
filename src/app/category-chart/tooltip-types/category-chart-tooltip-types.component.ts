@@ -11,7 +11,7 @@ export class CategoryChartTooltipTypesComponent implements AfterViewInit {
 
     @ViewChild("chart")
     public chart: IgxCategoryChartComponent;
-    public toolTipType: string = "Item";
+    public toolTipType: string = "Category";
     public olympicData: any;
 
     constructor() {
