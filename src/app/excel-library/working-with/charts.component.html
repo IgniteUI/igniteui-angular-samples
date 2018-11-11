@@ -1,12 +1,31 @@
-<div class="sample-wrapper container">
+<div class="container">
     <div class="options">
-        <span>TODO: show usage of Excel with charts </span>
-        <igx-category-chart
-            height="300px" width="400px"
-            #chart
-            [dataSource]="data">
+        <button (click)="exportData()">Export To Excel File</button>
+    </div>
+    <div class="chart">
+        <igx-category-chart #chart
+            height="60%" width="100%"
+            yAxisMinimumValue=0
+            xAxisInterval=1
+            chartType="column"
+            thickness=0
+            [dataSource]="chartData">
         </igx-category-chart>
 
+        <igx-grid [data]="excelData" height="40%" width="100%" [autoGenerate]="false">
+            <igx-column [field]="'Expense'" [resizable]="true" width="10%"></igx-column>
+            <igx-column [field]="'Jan'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Feb'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Mar'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Apr'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'May'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Jun'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Jul'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Aug'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Sep'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Oct'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Nov'" [resizable]="true" width="7.5%"></igx-column>
+            <igx-column [field]="'Dec'" [resizable]="true" width="7.5%"></igx-column>
+        </igx-grid>
     </div>
-
 </div>
