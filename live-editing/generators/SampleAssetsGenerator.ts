@@ -126,6 +126,7 @@ export class SampleAssetsGenerator extends Generator {
                 currentFileImports.getValue(CONFIG_GENERATORS[i].name) + ".ts");
             let configGeneratorImports = this._tsImportsService.getFileImports(configGeneratorFilePath);
             let configs = (new CONFIG_GENERATORS[i]()).generateConfigs();
+            console.log("generating samples from " + configGeneratorFilePath);
             for (let j = 0; j < configs.length; j++) {
                 this._generateSampleAssets(configs[j], configGeneratorImports);
             }
