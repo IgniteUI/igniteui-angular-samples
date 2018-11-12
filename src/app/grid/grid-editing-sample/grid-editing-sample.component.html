@@ -9,15 +9,6 @@
             <igx-column field="UnitsInStock" header="Units In Stock" width="13%" [dataType]="'number'" [sortable]="true"
                 [hasSummary]="true" [editable]="true" [resizable]="true">
             </igx-column>
-            <igx-column field="OrderDate" header="Order Date" width="15%" [dataType]="'date'" [sortable]="true"
-                [hasSummary]="true" [editable]="true" [resizable]="true">
-                <ng-template igxCell let-cell="cell" let-val>
-                    {{val | date:'dd/MM/yyyy'}}
-                </ng-template>
-            </igx-column>
-            <igx-column field="Discontinued" header="Discontinued" width="13%" [dataType]="'boolean'" [sortable]="true"
-                [hasSummary]="true" [editable]="true">
-            </igx-column>
             <igx-column field="Locations" header="Available At" width="19%" [editable]="true" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
                     {{ parseArray(cell.value) }}
@@ -26,6 +17,15 @@
                     <igx-combo [type]="'border'" [(ngModel)]="cell.gridAPI.get_cell_inEditMode(cell.gridID).cell.editValue"
                         [valueKey]="'shop'" [data]="locations"></igx-combo>
                 </ng-template>
+            </igx-column>
+            <igx-column field="OrderDate" header="Order Date" width="15%" [dataType]="'date'" [sortable]="true"
+                [hasSummary]="true" [editable]="true" [resizable]="true">
+                <ng-template igxCell let-cell="cell" let-val>
+                    {{val | date:'dd/MM/yyyy'}}
+                </ng-template>
+            </igx-column>
+            <igx-column field="Discontinued" header="Discontinued" width="13%" [dataType]="'boolean'" [sortable]="true"
+                [hasSummary]="true" [editable]="true">
             </igx-column>
             <igx-column field="ReorderLevel" header="Reorder Level" [dataType]="'number'" width="13%" [sortable]="true"
                 [hasSummary]="true" [editable]="true" [filterable]="false">
@@ -53,10 +53,10 @@
                     <label igxLabel for="unitsInStock">Units In Stock</label>
                     <input igxInput id="unitsInStock" type="number" [(ngModel)]="product.UnitsInStock" />
                 </igx-input-group>
-                <igx-datePicker id="orderDate" label="Order Date" [(ngModel)]="product.OrderDate"></igx-datePicker>
-                <igx-checkbox id="discontinued" [(ngModel)]="product.Discontinued">Discontinued</igx-checkbox>
                 <igx-combo id="availableAt" [valueKey]="'shop'" [placeholder]="'Available @'" [data]="locations"
                     [(ngModel)]="product.Locations" [itemsMaxHeight]="200"></igx-combo>
+                <igx-datePicker id="orderDate" label="Order Date" [(ngModel)]="product.OrderDate"></igx-datePicker>
+                <igx-checkbox id="discontinued" [(ngModel)]="product.Discontinued">Discontinued</igx-checkbox>
                 <igx-input-group>
                     <label igxLabel for="reorderLevel">Reorder Level</label>
                     <input igxInput id="reorderLevel" [(ngModel)]="product.ReorderLevel" />
