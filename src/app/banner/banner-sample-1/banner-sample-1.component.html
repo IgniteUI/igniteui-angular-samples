@@ -1,0 +1,21 @@
+<igx-banner message="It looks like you're enjoying our app. Would you like to rate it?" icon="star_rate"
+    [confirmButtonText]="'Rate App'" [dismissButtonText]="'Maybe Later'" (onOpen)="onOpen($event)" (onClose)="onClose($event)"
+    (onButtonClick)="onButtonClick($event)">
+</igx-banner>
+<div class="sample-content">
+    <igx-card [style.width]="'400px'">
+        <igx-card-header>
+            <strong>What this man saw <u>WILL</u> shock you!</strong>
+        </igx-card-header>
+        <igx-card-content>
+            A young J.D. was on a hike through Yellowstone park. They seemend normal, like any other - birds chirping,
+            soft wind blowing, beavers being beavers.
+            But just as he was about to cross the bridge over a nearby brook, he saw something that changed his life
+            forever!
+        </igx-card-content>
+        <igx-card-actions>
+            <button igxButton="flat">Continue Reading</button>
+        </igx-card-actions>
+    </igx-card>
+    <button igxButton="flat" igxRipple (click)="toggle()">Toggle</button>
+</div>

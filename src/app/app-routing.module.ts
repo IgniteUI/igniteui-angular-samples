@@ -8,6 +8,7 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -414,6 +415,11 @@ export const samplesRoutes: Routes = [
         component: BadgeSample3Component,
         data: { displayName: "Badge for List Items", parentName: "Badge" },
         path: "badge-sample-3"
+    },
+    {
+        component: BannerSample1Component,
+        data: { displayName: "Basic Banner", parentName: "Banner" },
+        path: "banner-sample-1"
     },
     {
         component: CardComponent,
