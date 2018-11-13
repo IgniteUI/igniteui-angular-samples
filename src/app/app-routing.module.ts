@@ -336,6 +336,7 @@ import {
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
+import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
@@ -1628,6 +1629,11 @@ export const samplesRoutes: Routes = [
         component: DisplayDensityComponent,
         data: { displayName: "Display density sample", parentName: "Themes" },
         path: "density"
+    },
+    {
+        component: TreeGridFinJSComponent,
+        data: { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
+        path: "treegrid-finjs-sample"
     }
 ];
 export const appRoutes: Routes = [
