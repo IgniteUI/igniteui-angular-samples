@@ -1,9 +1,9 @@
-<igx-banner message="It looks like you're enjoying our app. Would you like to rate it?" icon="star_rate"
+<igx-banner #rateBanner message="It looks like you're enjoying our app. Would you like to rate it?" icon="star_rate"
     [confirmButtonText]="'Rate App'" [dismissButtonText]="'Maybe Later'" (onOpen)="onOpen($event)" (onClose)="onClose($event)"
     (onButtonClick)="onButtonClick($event)">
 </igx-banner>
 <div class="sample-content">
-    <igx-card [style.width]="'400px'">
+    <igx-card [style.width]="contentWidth">
         <igx-card-header>
             <strong>What this man saw <u>WILL</u> shock you!</strong>
         </igx-card-header>
@@ -17,5 +17,6 @@
             <button igxButton="flat">Continue Reading</button>
         </igx-card-actions>
     </igx-card>
-    <button igxButton="flat" igxRipple (click)="toggle()">Toggle</button>
+    <hr/>
+    <button igxButton="flat" [style.width]="contentWidth" igxRipple (click)="rateBanner.toggle()">Toggle Banner</button>
 </div>
