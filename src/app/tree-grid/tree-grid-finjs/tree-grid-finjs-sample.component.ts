@@ -380,6 +380,3 @@ export class TreeGridFinJSComponent implements OnInit, AfterViewInit {
         return result;
     }
 }
-
-
-
