@@ -192,6 +192,7 @@ import { InputGroupSample5Component } from "./input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { TreeLocalDataService} from "./tree-grid/tree-grid-finjs/treeLocalData.service";
 
 import {
     LinearProgressbarSample1Component

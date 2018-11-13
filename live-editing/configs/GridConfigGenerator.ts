@@ -85,8 +85,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { DarkThemeSampleComponent } from "../../src/app/theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "../../src/app/theming/default-theme-sample/default-theme-sample.component";
 import { ThemeChooserSampleComponent } from "../../src/app/theming/theme-chooser/theme-chooser-sample.component";
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
-import { TreeLocalDataService } from "../../src/app/tree-grid/tree-localData.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -509,22 +507,6 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridCustomFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridCustomFilteringComponent],
                 ngImports: [IgxGridModule.forRoot()]
-            })
-        }));
-
-        // TreeGrid FInJS demo component sample
-        configs.push(new Config({
-            component: TreeGridFinJSComponent,
-            additionalFiles: ["/src/app/tree-grid/tree-grid-finjs/tree-localData.service.ts",
-                "/src/app/tree-grid/tree-grid-finjs/treeFinancialData.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, TreeGridFinJSComponent,
-                    TreeLocalDataService],
-                ngDeclarations: [TreeGridFinJSComponent],
-                ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
-                ngProviders: [TreeLocalDataService, IgxExcelExporterService]
             })
         }));
 

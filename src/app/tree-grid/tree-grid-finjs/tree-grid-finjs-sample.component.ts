@@ -5,7 +5,7 @@ import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignme
     IgxGridCellComponent, IgxSliderComponent, IgxToggleDirective, IgxTreeGridComponent,
     OverlaySettings, PositionSettings, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
-import { TreeLocalDataService } from "./tree-localData.service";
+import { TreeLocalDataService } from "./treeLocalData.service";
 
 interface IButton {
     ripple ?: string;
