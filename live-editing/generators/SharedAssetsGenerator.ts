@@ -2,12 +2,11 @@
 import * as fs from "fs";
 import * as path from "path";
 import { SassCompiler } from "../services/SassCompiler";
-import { DependencyResolver } from "./../services/DependencyResolver";
 import { Generator } from "./Generator";
-import { LiveEditingFile } from "./LiveEditingFile";
-import { SharedAssetsFile } from "./SharedAssetsFile";
-import { SharedAssetsGeneratorArgs } from "./SharedAssetsGeneratorArgs";
-import { StyleSyntax } from "./StyleSyntax";
+import { LiveEditingFile } from "./misc/LiveEditingFile";
+import { SharedAssetsFile } from "./misc/SharedAssetsFile";
+import { SharedAssetsGeneratorArgs } from "./misc/SharedAssetsGeneratorArgs";
+import { StyleSyntax } from "./misc/StyleSyntax";
 
 const INDEX_FILE_PATH = path.join(__dirname, "../../src/index.html");
 const POLYPFILLS_FILE_PATH = path.join(__dirname, "../../src/polyfills.ts");
