@@ -7,12 +7,12 @@
             </button>           
         </div>       
         <div class="cellFeatures">
-            <label class="label">Add a Comment cell A1: </label> 
-            <input type="checkbox" id="addComment" (change)='onCommentChanged($event.target)' [(ngModel)]="addComment"> <br/>
+            <label class="label">Add a Comment to cell A1: </label> 
+            <input type="checkbox" id="addComment" (change)='onCommentChanged($event.target)'> <br/>
             <label class="label">Add a Formula for cells F1 to F20: </label> 
-            <input type="checkbox" id="addFormula" (change)='onFormulaChanged($event.target)' [(ngModel)]="addFormula">  <br/>
+            <input type="checkbox" id="addFormula" (change)='onFormulaChanged($event.target)'>  <br/>
             <label class="label">Merge Cells: </label>
-            <input type="checkbox" id="mergeCells" (change)='onMergeChanged($event.target)' [(ngModel)]="mergeCells"> 
+            <input type="checkbox" id="mergeCells" (change)='onMergeChanged($event.target)'> 
         </div>
     </div>
 
