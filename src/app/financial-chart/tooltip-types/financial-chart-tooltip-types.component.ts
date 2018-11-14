@@ -18,5 +18,5 @@ export class FinancialChartTooltipTypesComponent {
 }
 
 class SampleOptions {
-    public tooltipType: string = "Default";
+    public tooltipType: string = "Category";
 }
