@@ -1,19 +1,34 @@
-<div class="sample-wrapper container">
-    <div class="options">
-        <button (click)="exportGrid()">Export to Excel</button>
+<div >
+    <div class="workbookOptions">
+
+        <div class="workbookOperations">
+            <button class="workbookButton" (click)="workbookCreate()">
+                <label>Create Workbook</label>
+            </button>
+            <button class="workbookButton" (click)="workbookSave()" [disabled]="!canSave">
+                <label>Save Workbook</label>
+            </button>
+            <div class="workbookSelector">
+                <button class="workbookButton">
+                    <label for="workbookSelector">Load Workbook</label>
+                </button>
+                <input class="workbookButton" id="workbookSelector" type="file" style="visibility:hidden;"
+                    accept=".xls, .xlt, .xlsx, .xlsm, .xltm, .xltx"
+                    (change)='workbookLoad($event.target)' >
+            </div>
+        </div>
+        <div class="workbookDetails">
+            <label class="label">Select Table:</label>
+            <select size="3" [(ngModel)]="selectedTable" (ngModelChange)="onTableChange($event)">
+                <option *ngFor="let tblName of worksheetTables">
+                    {{tblName}}
+                </option>
+            </select>
+        </div>
     </div>
-    <igx-grid #grid [data]="data" [autoGenerate]="false" height="500px" width="100%">
-        <igx-column width="15%" sortable="true" field="CompanyName" header="Company"></igx-column>
-        <igx-column width="15%" sortable="true" field="ContactName" header="Name"></igx-column>
-        <igx-column width="15%" sortable="true" field="ContactTitle" header="Title"></igx-column>
-        <igx-column width="15%" sortable="true" field="Country" header="Country"></igx-column>
-        <igx-column width="10%" sortable="true" field="Euro" header="Euro" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val"  title="Euro" alt="Euro"   src="https://www.infragistics.com/angular-demos/assets/images/grid/active.png"  />
-                <img *ngIf="!val" title="Other" alt="Other" src="https://www.infragistics.com/angular-demos/assets/images/grid/expired.png"/>
-            </ng-template>
-        </igx-column>
-        <igx-column width="15%" sortable="true" field="Salary" header="Salary"></igx-column>
-        <igx-column width="10%" sortable="true" field="Age" header="Age"></igx-column>
-    </igx-grid>
+
+    <div class="workbookPreview">
+        <label class="label"> Data Preview: </label>
+        <template #gridContainer></template>
+    </div>
 </div>
