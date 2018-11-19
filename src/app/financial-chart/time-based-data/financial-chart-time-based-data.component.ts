@@ -1,11 +1,12 @@
-import { Component, ViewChild } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ViewChild } from "@angular/core";
 import { IgxFinancialChartComponent } from "igniteui-angular-charts/ES5/igx-financial-chart-component";
 import { FinancialDataService } from "../services/financial-data.service";
 
 @Component({
-  selector: "app-financial-chart-time-based-data",
-  styleUrls: ["./financial-chart-time-based-data.component.scss"],
-  templateUrl: "./financial-chart-time-based-data.component.html"
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: "app-financial-chart-time-based-data",
+    styleUrls: ["./financial-chart-time-based-data.component.scss"],
+    templateUrl: "./financial-chart-time-based-data.component.html"
 })
 
 export class FinancialChartTimeBasedDataComponent {
