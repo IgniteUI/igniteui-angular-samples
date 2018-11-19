@@ -54,22 +54,20 @@ import * as path from "path";
 import * as Collections from "typescript-collections";
 import { SassCompiler } from "../services/SassCompiler";
 import { Config } from "./../configs/core/Config";
-import { IConfigGenerator } from "./../configs/core/IConfigGenerator";
 import { DependencyResolver } from "./../services/DependencyResolver";
 import { TsImportsService } from "./../services/TsImportsService";
 import { Generator } from "./Generator";
-import { LiveEditingFile } from "./LiveEditingFile";
-import { SampleDefinitionFile } from "./SampleDefinitionFile";
-import { StyleSyntax } from "./StyleSyntax";
+import { StyleSyntax } from "./misc/StyleSyntax";
 
 import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
+import { LiveEditingFile } from "./misc/LiveEditingFile";
+import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
 
 const BASE_PATH = path.join(__dirname, "../../");
 const APP_MODULE_TEMPLATE_PATH = path.join(__dirname, "../templates/app.module.ts.template");
-const APP_MODULE_PATH = path.join(__dirname, "../../src/app/app.module.ts");
 
 const COMPONENT_STYLE_FILE_EXTENSION = "scss";
 const COMPONENT_FILE_EXTENSIONS = ["ts", "html", COMPONENT_STYLE_FILE_EXTENSION];
@@ -88,7 +86,8 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonCo
     ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
     RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
     TabBarConfigGenerator, TabsConfigGenerator, TextHighlightConfigGenerator, ToastConfigGenerator,
-    ToggleConfigGenerator, TooltipConfigGenerator, TimePickerConfigGenerator, ShadowsConfigGenerator, TreeGridConfigGenerator];
+    ToggleConfigGenerator, TreeGridConfigGenerator, TooltipConfigGenerator, TimePickerConfigGenerator,
+    ShadowsConfigGenerator];
 
 export class SampleAssetsGenerator extends Generator {
     private _dependencyResolver: DependencyResolver;
@@ -165,7 +164,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _getComponentFiles(config: Config,
-        configImports: Collections.Dictionary<string, string>): LiveEditingFile[] {
+                               configImports: Collections.Dictionary<string, string>): LiveEditingFile[] {
         let componentFiles = new Array<LiveEditingFile>();
         let componentModuleSpecifier = configImports.getValue(config.component.name);
         let componentPath = componentModuleSpecifier.replace(GO_DIR_BACK_REG_EX, "");
@@ -295,8 +294,9 @@ export class SampleAssetsGenerator extends Generator {
                     appModuleNgImports.push(appModuleNgImport.name);
                 } else {
                     let appModuleNgImportWithProviders: ModuleWithProviders =
-                        config.appModuleConfig.ngImports[i] as ModuleWithProviders,
-                        useClass = "", forRoot = ".forRoot()";
+                        config.appModuleConfig.ngImports[i] as ModuleWithProviders;
+                    let useClass = "";
+                    let forRoot = ".forRoot()";
                     if (appModuleNgImportWithProviders.providers
                         && appModuleNgImportWithProviders.providers.length > 0
                         && appModuleNgImportWithProviders.providers[0].useClass
@@ -304,6 +304,7 @@ export class SampleAssetsGenerator extends Generator {
                         useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
                         forRoot = `.forRoot(${useClass})`;
                     }
+
                     appModuleNgImports.push(appModuleNgImportWithProviders.ngModule.name + forRoot);
                 }
             }
@@ -350,7 +351,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _formatAppModuleTypes(types: string[], multiline: boolean, tabsCount: number,
-        suffixIfMultiple: string = null): string {
+                                  suffixIfMultiple: string = null): string {
         if (types.length === 1 && !multiline) {
             return types.join("");
         }
