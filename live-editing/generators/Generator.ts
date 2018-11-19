@@ -1,4 +1,4 @@
-import { StyleSyntax } from "./StyleSyntax";
+import { StyleSyntax } from "./misc/StyleSyntax";
 
 import * as fs from "fs";
 import * as path from "path";
