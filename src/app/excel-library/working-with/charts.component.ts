@@ -1,4 +1,4 @@
-import { AfterViewInit, Component} from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component} from "@angular/core";
 import { ChartType } from "igniteui-angular-excel/ES5/ChartType";
 import { Workbook } from "igniteui-angular-excel/ES5/Workbook";
 import { WorkbookFormat } from "igniteui-angular-excel/ES5/WorkbookFormat";
@@ -6,6 +6,7 @@ import { WorksheetRegion } from "igniteui-angular-excel/ES5/WorksheetRegion";
 import { ExcelUtility } from "../../utilities/excel-utility";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-charts",
     styleUrls: ["./charts.component.scss"],
     templateUrl: "./charts.component.html"

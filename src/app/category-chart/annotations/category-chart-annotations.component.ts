@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-category-chart-annotations",
     styleUrls: ["./category-chart-annotations.component.scss"],
     templateUrl: "./category-chart-annotations.component.html"
@@ -137,10 +138,10 @@ class SampleOptions {
 
     public chartType: string = "Column";
     public crosshairsDisplay: string = "Horizontal";
-    public snapCrosshairs: boolean = true;
+    public snapCrosshairs: boolean = false;
     public crosshairAnnotations: boolean = true;
 
-    public finalValueAnnotations: boolean = false;
+    public finalValuesVisible: boolean = false;
 
     public calloutsVisible: boolean = false;
 }

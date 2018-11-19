@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/core";
 // importing IG components:
 import { IgxGridComponent } from "igniteui-angular";
 import { SparklineType } from "igniteui-angular-excel/ES5/SparklineType";
@@ -14,6 +14,7 @@ import {
 import { ExcelUtility } from "../../utilities/excel-utility";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ WorkbookExportService ],
     selector: "app-sparklines",
     styleUrls: ["./sparklines.component.scss"],
