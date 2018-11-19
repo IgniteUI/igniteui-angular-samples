@@ -1,5 +1,5 @@
 <div class="sample-wrapper">
-    <button class="button" igxButton="raised" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]="dropdown3" style="width:100px;">Countries</button>
+    <button class="button" igxButton="raised" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]="dropdown3">Countries</button>
     <igx-drop-down #dropdown3 [width]="'100px'">
         <igx-drop-down-item *ngFor="let item of items" [disabled]="item.disabled" [isHeader]="item.header"
             [isSelected]="item.selected">
