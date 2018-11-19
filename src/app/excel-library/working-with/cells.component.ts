@@ -17,7 +17,7 @@ import { ExcelUtility } from "../../utilities/excel-utility";
 
 @Component({
     providers: [ WorkbookExportService ],
-    selector: "app-workbooks",
+    selector: "app-cells",
     styleUrls: ["./cells.component.scss"],
     templateUrl: "./cells.component.html"
 })
@@ -25,7 +25,6 @@ export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
 
     @ViewChild("gridContainer", {read: ViewContainerRef})
     public gridContainerRef: ViewContainerRef;
-    // openPlaceholder = "Choose Excel File:";
     public canSave = false;
     public wb: Workbook;
     public ws: Worksheet;
@@ -39,23 +38,8 @@ export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
     public ngOnInit() {
         this.workbookCreate();
     }
-
     public workbookSave(): void {
         if (this.canSave) {
-            // setting document properties to organize Excel files
-            this.wb.documentProperties.author = "My Name";
-            this.wb.documentProperties.company = "My Company";
-            this.wb.documentProperties.title = "Employees and income";
-            this.wb.documentProperties.status = "Completed";
-            this.wb.documentProperties.category = "Financial";
-            this.wb.documentProperties.keywords = "Financial;Company;Employees;income";
-
-            // setting protection on workbook of Excel file
-            this.wb.protection.allowEditStructure = true;
-            this.wb.protection.allowEditWindows = true;
-
-            this.wb.windowOptions.tabBarVisible = true;
-
             ExcelUtility.save(this.wb, "ExcelWorkbook").then((f) => {
                 console.log("Saved:" + f);
             }, (e) => {
@@ -63,18 +47,6 @@ export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
             });
         }
     }
-
-    public workbookLoad(input: HTMLInputElement): void {
-        if (input.files == null || input.files.length === 0) {
-            return;
-        }
-        console.log("Loaded:" + input.files[0].name);
-        ExcelUtility.load(input.files[0]).then((w) => { this.workbookParse(w); },
-            (e) => {
-            console.error("ExcelUtility.Load Error:" + e);
-        });
-    }
-
     public workbookParse(wb: Workbook): void {
         if (wb === undefined) {
             this.worksheetRegion = null;
@@ -92,7 +64,6 @@ export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
         this.wb = wb;
         this.canSave = wb != null;
     }
-
     public workbookCreate(): void {
         const wb = new Workbook(WorkbookFormat.Excel2007);
         const employeeSheet = wb.worksheets().add("Employees");
@@ -209,7 +180,7 @@ export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
     public onMergeChanged(input: HTMLInputElement): void {
         let mergedRegion: WorksheetMergedCellsRegion;
         if (input.checked === true) {
-             // ng lintMerge Cells
+            // Using merge cells
              this.wb.worksheets(0).rows(2).cells(2).value = "Engineer";
              this.wb.worksheets(0).rows(3).cells(2).value = "Engineer";
              this.wb.worksheets(0).rows(4).cells(2).value = "Engineer";
@@ -230,7 +201,6 @@ export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
     public getRandom(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
-
     public getItem(array: string[]): string {
         const i = this.getRandom(0, array.length - 1);
         return array[i];
@@ -238,7 +208,6 @@ export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
     public getAmount(min: number, max: number) {
         const n = this.getRandom(min, max);
         const s = n.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-        // return "$" + s.replace(".00", "");
         return s;
     }
 }
