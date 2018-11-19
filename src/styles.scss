@@ -199,7 +199,7 @@ $finjs-palette: igx-palette(#09f, #72da67);
 
 // grid caption styling
 .crm-sample-toolbar {
-    background: #ddd;
+    background: #f4f4f4;
     width: 100%;
     height: 56px;
     display: flex;
@@ -222,17 +222,24 @@ $finjs-palette: igx-palette(#09f, #72da67);
     .igx-button--icon {
         border-radius: 0;
     }
-}
 
-.crm-sample-toolbar__title {
-    margin-right: rem(16px);
-    display: flex;
-    align-items: center;
-    justify-self: flex-start;
-
-    .logo-propeller {
-        margin-right: 8px;
-        margin-top: 2px;
+    .crm-sample-toolbar__title {
+        margin-right: rem(16px);
+        display: flex;
+        justify-self: flex-start;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 12px;
+        padding-left: 16px;
+        opacity: 0.6;
+        color: black;
+    
+        .logo-propeller {
+            margin-right: 8px;
+            margin-top: 2px;
+        }
     }
 }
 
