@@ -135,6 +135,7 @@ import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/s
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 
+import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
@@ -191,6 +192,8 @@ import { InputGroupSample5Component } from "./input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { TreeLocalDataService} from "./tree-grid/tree-grid-finjs/treeLocalData.service";
+
 import {
     LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
@@ -499,7 +502,8 @@ import {
         GridRowEditSampleComponent,
         TreeGridRowEditSampleComponent,
         GridRowEditSampleComponent,
-        GridCustomFilteringComponent
+        GridCustomFilteringComponent,
+        TreeGridFinJSComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

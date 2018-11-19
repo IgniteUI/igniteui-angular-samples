@@ -1,5 +1,5 @@
 /* tslint:disable */
-const REGIONS: any[] = [
+export const REGIONS: any[] = [
     {
         "Region": "North America",
         "Countries": [ "Canada", "United States", "Mexico" ]
@@ -30,19 +30,19 @@ const REGIONS: any[] = [
 
 ]
 
-const DealType: any[] = [
+export const DealType: any[] = [
     "Buy", "Sell"
 ]
 
-const Contract: any[] = [
+export const Contract: any[] = [
     "Forwards", "Futures", "Options", "Swap", "CFD"
 ]
 
-const Settlement: any[] = [
+export const Settlement: any[] = [
     "Deliverable", "Cash"
 ]
 
-const MOCKFINANCEDATA: any[] = [
+export const MOCKFINANCEDATA: any[] = [
 {
     "IndGrou": "Airlines",
     "IndSect": "Consumer, Cyclical",
@@ -71,7 +71,7 @@ const MOCKFINANCEDATA: any[] = [
     "PD_WALA": null
 }];
 
-const DATA: any[] = [
+export const DATA: any[] = [
  {
    "Category": "Metal",
    "Type": "Gold",

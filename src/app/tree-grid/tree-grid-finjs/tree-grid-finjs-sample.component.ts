@@ -1,10 +1,11 @@
+
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
     IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
-    IgxGridCellComponent, IgxGridComponent, IgxSliderComponent, IgxToggleDirective,
-    OverlaySettings, PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+    IgxGridCellComponent, IgxSliderComponent, IgxToggleDirective, IgxTreeGridComponent,
+    OverlaySettings, PositionSettings, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
-import { LocalDataService } from "../services/localData.service";
+import { TreeLocalDataService } from "./treeLocalData.service";
 
 interface IButton {
     ripple ?: string;
@@ -16,7 +17,7 @@ interface IButton {
     icon ?: string;
 }
 
-class Button {
+export class Button {
     private ripple: string;
     private label: string;
     private disabled: boolean;
@@ -36,13 +37,14 @@ class Button {
 }
 
 @Component({
-    providers: [LocalDataService],
-    selector: "app-grid-component",
-    styleUrls: ["./grid-finjs-demo.component.scss"],
-    templateUrl: "./grid-finjs-demo.component.html"
+    providers: [TreeLocalDataService],
+    selector: "app-tree-grid-finjs-sample",
+    styleUrls: ["./tree-grid-finjs-sample.component.scss"],
+    templateUrl: "./tree-grid-finjs-sample.component.html"
 })
-export class FinJSDemoComponent implements OnInit, AfterViewInit {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+
+export class TreeGridFinJSComponent implements OnInit, AfterViewInit {
+    @ViewChild("grid1") public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
     @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
@@ -106,7 +108,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: LocalDataService,
+    constructor(private zone: NgZone, private localService: TreeLocalDataService,
                 private excelExporterService: IgxExcelExporterService) {
         this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
@@ -116,19 +118,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         if (this.theme) {
             document.body.classList.add("finjs-dark-theme");
         }
-        this.grid1.groupingExpressions = [{
-                dir: SortingDirection.Desc,
-                fieldName: "Category"
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Type"
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Contract"
-            }
-        ];
     }
 
     public ngAfterViewInit() {
@@ -213,26 +202,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public onChange(event: any) {
-        if (this.grid1.groupingExpressions.length > 0) {
-            this.grid1.groupingExpressions = [];
-        } else {
-            this.grid1.groupingExpressions = [{
-                dir: SortingDirection.Desc,
-                fieldName: "Category"
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Type"
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Contract"
-            }
-        ];
-        }
-    }
-
     public changeTheme(event: any) {
         if (event.checked) {
             document.body.classList.add("finjs-dark-theme");
@@ -260,12 +229,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public formatCurrency(value: number) {
         return "$" + value.toFixed(3);
-    }
-
-    public groupingDone(event: any) {
-        // event.forEach(expr => {
-        //     this.grid1.columnList.filter(c => c.field === expr.fieldName)[0].hidden = true;
-        // });
     }
 
     public onVolumeChanged(event: any) {
@@ -339,16 +302,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         });
     }
 
-    // private updateRandomData(data?: any[]) {
-    //     const currData = data ? data : this.grid1.data;
-    //     this.subscription = this.localService.updateRandomData(currData);
-    //     this.zone.run(() => {});
-    // }
-
-    get grouped(): boolean {
-        return this.grid1.groupingExpressions.length > 0;
-    }
-
     get buttonSelected(): number {
       return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
     }
@@ -371,30 +324,41 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     // tslint:disable-next-line:member-ordering
     public updateAllPrices(data: any[]): any {
-        const currData = [];
         for (const dataRow of data) {
-          this.randomizeObjectData(dataRow);
+          this.randomizeObjectData(dataRow, true);
         }
         return data;
       }
 
     // tslint:disable-next-line:member-ordering
     public updateRandomPrices(data: any[]): any {
-        let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
-          this.randomizeObjectData(data[i]);
-          y++;
+        for (const dataRow of data) {
+            this.randomizeObjectData(dataRow, false);
+            this.randomizeChildObjData(dataRow);
         }
-       // return {data: currData, recordsUpdated: y };
         return data;
       }
 
-    private randomizeObjectData(dataObj) {
+    private randomizeObjectData(dataObj, random: boolean) {
         const changeP = "Change(%)";
         const res = this.generateNewPrice(dataObj.Price);
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
+
+        if (random && dataObj.Categories) {
+            // tslint:disable-next-line:prefer-for-of
+            for (let y = 0; y < dataObj.Categories.length; y++) {
+                this.randomizeObjectData(dataObj.Categories[y], false);
+            }
+        }
+    }
+
+    private randomizeChildObjData(dataObj) {
+        for (let i = Math.round(Math.random() * 10); i < dataObj.Categories.length;
+            i += Math.round(Math.random() * 10)) {
+            this.randomizeObjectData(dataObj.Categories[i], false);
+        }
     }
     private generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));
