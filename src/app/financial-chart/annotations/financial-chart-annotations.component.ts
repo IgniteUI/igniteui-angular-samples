@@ -1,9 +1,10 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { CrosshairsDisplayMode } from "igniteui-angular-charts/ES5/CrosshairsDisplayMode";
 import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 import { FinancialDataService } from "../services/financial-data.service";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ FinancialDataService ],
     selector: "app-financial-chart-annotations",
     styleUrls: ["./financial-chart-annotations.component.scss"],

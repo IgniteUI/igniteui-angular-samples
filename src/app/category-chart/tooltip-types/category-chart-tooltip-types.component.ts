@@ -1,8 +1,14 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import {
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    ViewChild
+} from "@angular/core";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-category-chart-tooltip-types",
     styleUrls: ["./category-chart-tooltip-types.component.scss"],
     templateUrl: "./category-chart-tooltip-types.component.html"
