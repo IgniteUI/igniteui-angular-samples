@@ -15,18 +15,28 @@
     margin-right: 10px;
     margin-left: 10px;
     width:100%;
-    font-size: 12px;
+    font-size: 1rem;
+    font-family: sans-serif;
 }
 
 .optionLabel {
     margin-left: 15px;
     margin-right: 5px;
+    font-size: 1rem;
+    font-family: sans-serif;
 }
 
 .optionItem {
     margin-left: 10px;
     display: inline-block;
     vertical-align: center;
+}
+
+.optionSelector {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: center;
+    width: 120px;
 }
 
 input {

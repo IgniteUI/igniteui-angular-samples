@@ -1,8 +1,14 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import {
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    ViewChild
+} from "@angular/core";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-category-chart-overlap-columns",
     styleUrls: ["./category-chart-overlap-columns.component.scss"],
     templateUrl: "./category-chart-overlap-columns.component.html"
@@ -18,7 +24,7 @@ export class CategoryChartOverlapColumnsComponent implements AfterViewInit {
     public includedProperties: any;
 
     constructor() {
-        this.data = [
+        const stats: any = [
             { Music: 0.1, News: 0.2, TV: 1.1, Social: 0.9, Blogging: 0.3, Country: "Japan" },
             { Music: 0.2, News: 0.2, TV: 1.3, Social: 1.2, Blogging: 0.5, Country: "Germany" },
             { Music: 0.2, News: 0.2, TV: 1.5, Social: 1.1, Blogging: 0.4, Country: "France" },
@@ -46,7 +52,7 @@ export class CategoryChartOverlapColumnsComponent implements AfterViewInit {
 
         // category chart does not have stacked series yet but you can render the stacked chart
         // using multiple columns that are overlapping with each other and showing stacked values
-        for (const item of this.data) {
+        for (const item of stats) {
             // stacking up values of data items
             item.StackBlogging = item.TV + item.Music + item.News + item.Social + item.Blogging;
             item.StackSocial = item.TV + item.Music + item.News + item.Social;
@@ -60,6 +66,7 @@ export class CategoryChartOverlapColumnsComponent implements AfterViewInit {
             item.StackTV = Math.round(item.StackTV * 10) / 10;
             item.StackMusic = Math.round(item.StackMusic * 10) / 10;
         }
+        this.data = stats;
     }
 
     public ngAfterViewInit(): void {

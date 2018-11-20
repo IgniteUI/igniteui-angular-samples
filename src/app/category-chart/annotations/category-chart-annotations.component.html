@@ -1,8 +1,8 @@
 <div class="sample-wrapper container">
     <div class="options">
         <div>
-            <label class="optionLabel">Chart Type: </label>
-            <select [(ngModel)]="sampleOptions.chartType">
+            <label width="130px" class="optionLabel" >Chart Type: </label>
+            <select class="optionSelector" [(ngModel)]="sampleOptions.chartType">
                 <option>Column</option>
                 <option>Area</option>
                 <option>Line</option>
@@ -14,11 +14,11 @@
             </select>
 
             <label class="optionItem"><input [(ngModel)]="sampleOptions.calloutsVisible" type="checkbox" />Enable Callouts</label>
-            <label class="optionItem"><input [(ngModel)]="sampleOptions.finalValueAnnotations" type="checkbox" />Enable Final Value Annotations</label>
+            <label class="optionItem"><input [(ngModel)]="sampleOptions.finalValuesVisible" type="checkbox" />Enable Final Value Annotations</label>
         </div>
         <div>
-            <label class="optionLabel">Crosshairs Mode:</label>
-            <select [(ngModel)]="sampleOptions.crosshairsDisplay">
+            <label width="130px" class="optionLabel">Crosshairs: </label>
+            <select class="optionSelector" [(ngModel)]="sampleOptions.crosshairsDisplay">
                 <option>Default</option>
                 <option>None</option>
                 <option>Horizontal</option>
@@ -37,15 +37,17 @@
             [chartType]="sampleOptions.chartType"
             chartTitle="Weather Data"
             subtitle="(High, Low)"
+            xAxisInterval="1"
+            yAxisMinimumValue="60"
+            yAxisMaximumValue="110"
             [xAxisFormatLabel]="formatDateLabel"
             [includedProperties]="include"
-
 
             [crosshairsDisplayMode]="sampleOptions.crosshairsDisplay"
             [crosshairsSnapToData]="sampleOptions.snapCrosshairs"
             [crosshairsAnnotationEnabled]="sampleOptions.crosshairAnnotations"
 
-            [finalValueAnnotationsVisible]="sampleOptions.finalValueAnnotations"
+            [finalValueAnnotationsVisible]="sampleOptions.finalValuesVisible"
 
             [calloutsVisible]="sampleOptions.calloutsVisible"
             [calloutsDataSource]="categoryData"

@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { FinancialDataService } from "../services/financial-data.service";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ FinancialDataService ],
     selector: "app-financial-chart-tooltip-types",
     styleUrls: ["./financial-chart-tooltip-types.component.scss"],
@@ -18,5 +19,5 @@ export class FinancialChartTooltipTypesComponent {
 }
 
 class SampleOptions {
-    public tooltipType: string = "Default";
+    public tooltipType: string = "Category";
 }

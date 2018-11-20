@@ -1,7 +1,8 @@
 import { argv } from "yargs";
+import { MetaDataGenerator } from "./generators/MetaDataGenerator";
+import { StyleSyntax } from "./generators/misc/StyleSyntax";
 import { SampleAssetsGenerator } from "./generators/SampleAssetsGenerator";
 import { SharedAssetsGenerator } from "./generators/SharedAssetsGenerator";
-import { StyleSyntax } from "./generators/StyleSyntax";
 
 class LiveEditingManager {
     public run() {
@@ -21,6 +22,7 @@ class LiveEditingManager {
     public _run(styleSyntax: StyleSyntax) {
         new SharedAssetsGenerator(styleSyntax).generateSharedAssets();
         new SampleAssetsGenerator(styleSyntax).generateSamplesAssets();
+        new MetaDataGenerator(styleSyntax).Generate();
     }
 }
 

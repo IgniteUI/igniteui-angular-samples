@@ -1,8 +1,9 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { FinancialDataService } from "../services/financial-data.service";
 import { GenerateOhlcPricesService } from "../services/generate-ohlc-prices.service";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ GenerateOhlcPricesService ],
     selector: "app-financial-chart-overview-sample",
     styleUrls: ["./financial-chart-overview-sample.component.scss"],
