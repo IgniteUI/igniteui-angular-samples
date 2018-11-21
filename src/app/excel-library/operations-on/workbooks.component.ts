@@ -95,13 +95,6 @@ export class ExcelLibraryOperationsOnWorkbooksComponent implements OnInit {
         const wb = new Workbook(WorkbookFormat.Excel2007);
         const employeeSheet = wb.worksheets().add("Employees");
         const employeeHeader = employeeSheet.rows(0);
-        // employeeHeader.setCellValue(0, "Name");
-        // employeeHeader.setCellValue(1, "Company");
-        // employeeHeader.setCellValue(2, "Title");
-        // employeeHeader.setCellValue(3, "Country");
-        // employeeHeader.setCellValue(4, "Age");
-        // employeeHeader.setCellValue(5, "Salary");
-
         const companies = ["Amazon", "Ford", "Jaguar", "Tesla", "IBM", "Microsoft" ];
         const firstNames = ["Andrew", "Mike", "Martin", "Ann", "Victoria", "John", "Brian", "Jason", "David" ];
         const lastNames = ["Smith", "Jordan", "Johnson", "Anderson", "Louis", "Phillips", "Williams" ];
@@ -130,15 +123,15 @@ export class ExcelLibraryOperationsOnWorkbooksComponent implements OnInit {
         }
         employeeSheet.tables().add("A1:F20", true);
 
-        const expanseSheet = wb.worksheets().add("Expanses");
-        const expanseHeader = expanseSheet.rows(0);
+        const expenseSheet = wb.worksheets().add("Expenses");
+        const expanseHeader = expenseSheet.rows(0);
         const expanseNames = ["Year", "Computers", "Research", "Travel", "Salary", "Software" ];
         let expanseCol = 0;
         for (const key of expanseNames) {
-            expanseSheet.columns(expanseCol).width = 5000;
+            expenseSheet.columns(expanseCol).width = 5000;
             expanseHeader.setCellValue(expanseCol, key);
             for (let i = 1; i < 20; i++) {
-                const wr = expanseSheet.rows(i);
+                const wr = expenseSheet.rows(i);
                 if (key === "Year") {
                     wr.setCellValue(expanseCol, 2010 + i);
                 } else if (key === "Computers") {
@@ -155,7 +148,7 @@ export class ExcelLibraryOperationsOnWorkbooksComponent implements OnInit {
             }
             expanseCol++;
         }
-        expanseSheet.tables().add("A1:F20", true);
+        expenseSheet.tables().add("A1:F20", true);
 
         const incomeSheet = wb.worksheets().add("Income");
         const incomeHeader = incomeSheet.rows(0);
