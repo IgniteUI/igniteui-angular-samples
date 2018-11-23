@@ -1,7 +1,13 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import {
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    ViewChild
+} from "@angular/core";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-category-chart-highlighting",
     styleUrls: ["./category-chart-highlighting.component.scss"],
     templateUrl: "./category-chart-highlighting.component.html"

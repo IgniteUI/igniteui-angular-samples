@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/core";
 // importing IG components:
 import { IgxGridComponent } from "igniteui-angular";
 import { SparklineType } from "igniteui-angular-excel/ES5/SparklineType";
@@ -14,6 +14,7 @@ import {
 import { ExcelUtility } from "../../utilities/excel-utility";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ WorkbookExportService ],
     selector: "app-sparklines",
     styleUrls: ["./sparklines.component.scss"],
@@ -88,8 +89,8 @@ export class ExcelLibraryWorkingWithSparklinesComponent implements OnInit {
 
     public ngOnInit(): void {
         const companies = ["Amazon", "Ford", "Jaguar", "Tesla", "IBM", "Microsoft" ];
-        const firstNames = ["Andrew", "Mike", "Martin", "Ann", "Victoria", "John" ];
-        const lastNames = ["Smith", "Jordan", "Johnson", "Johnson", "Louis", "Phillips" ];
+        const firstNames = ["Andrew", "Mike", "Martin", "Ann", "Victoria", "John", "Brian", "Jason", "David" ];
+        const lastNames = ["Smith", "Jordan", "Johnson", "Anderson", "Louis", "Phillips", "Williams", "Novak" ];
         const cities = ["London", "Paris", "Boston", "Berlin" ];
         const countries = ["UK", "France", "USA", "Germany" ];
         const titles = ["Sales Rep.", "Owner", "Administrator", "Manager" ];
@@ -113,7 +114,7 @@ export class ExcelLibraryWorkingWithSparklinesComponent implements OnInit {
             const fax = this.getRandom(500, 900) + "-" + this.getRandom(200, 900) + "-" + this.getRandom(2000, 9000);
 
             const companyOrders = new Array<any>();
-            for (let o = 0; o < 20; o++) {
+            for (let o = 0; o < 6; o++) {
                 const reqDate = "2020-06-" + this.getRandom(1, 25) + "T" + this.getRandom(10, 12) + ":00:00";
                 const shipDate = "2020-06-" + this.getRandom(1, 25) + "T" + this.getRandom(10, 12) + ":00:00";
                 const orderDate = "2020-05-" + this.getRandom(1, 25) + "T" + this.getRandom(10, 12) + ":00:00";
