@@ -1,7 +1,23 @@
-.sample-wrapper {
-    margin-left: 10px;
-}
 
 .button {
     width:100px;
+    margin-top:10px;
+}
+
+.input {
+    padding-left: 0.2rem;
+}
+
+.input-group {
+    width: 160px;
+}
+
+.input-sample-wrapper {
+    margin-left: 10px;
+}
+
+.sample-wrapper {
+    padding-left: 10px;
+    padding-top: 10px;
+    display: flex;
 }
