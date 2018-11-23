@@ -4,6 +4,7 @@ import { IgxButtonModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
 import { DropDownSample1Component } from "../../src/app/dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "../../src/app/dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "../../src/app/dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { DropDownSample4Component } from "../../src/app/dropdown/dropdown-sample-4/dropdown-sample-4.component";
 
 import { DropdownMenuComponent } from "../../src/app/dropdown/dropdown-menu/dropdown-menu.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -27,10 +28,9 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DropDownSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDropDownModule, DropDownSample2Component, IgxButtonModule, IgxInputGroupModule,
-                    IgxRippleModule, IgxIconModule],
+                imports: [IgxDropDownModule, DropDownSample2Component, IgxButtonModule],
                 ngDeclarations: [DropDownSample2Component],
-                ngImports: [IgxDropDownModule, IgxButtonModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
+                ngImports: [IgxDropDownModule, IgxButtonModule]
             }),
             shortenComponentPathBy: "/dropdown/"
         }));
@@ -41,6 +41,17 @@ export class DropDownConfigGenerator implements IConfigGenerator {
                 imports: [IgxDropDownModule, DropDownSample3Component, IgxButtonModule],
                 ngDeclarations: [DropDownSample3Component],
                 ngImports: [IgxDropDownModule, IgxButtonModule]
+            }),
+            shortenComponentPathBy: "/dropdown/"
+        }));
+
+        configs.push(new Config({
+            component: DropDownSample4Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDropDownModule, DropDownSample4Component, IgxInputGroupModule,
+                    IgxRippleModule, IgxIconModule],
+                ngDeclarations: [DropDownSample4Component],
+                ngImports: [IgxDropDownModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/dropdown/"
         }));

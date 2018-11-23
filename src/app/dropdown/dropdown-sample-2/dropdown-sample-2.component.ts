@@ -4,8 +4,6 @@ import {
     ConnectedPositioningStrategy,
     HorizontalAlignment,
     IgxDropDownComponent,
-    IgxInputDirective,
-    IgxInputGroupComponent,
     VerticalAlignment
 } from "igniteui-angular";
 @Component({
@@ -15,14 +13,9 @@ import {
     templateUrl: "./dropdown-sample-2.component.html"
 })
 export class DropDownSample2Component implements OnInit {
-    @ViewChild("dropdown1", {read: IgxDropDownComponent}) public igxDropDown: IgxDropDownComponent;
-    @ViewChild("dropdown2", {read: IgxDropDownComponent}) public igxInputDropDown: IgxDropDownComponent;
-    @ViewChild("inputGroup", { read: IgxInputGroupComponent}) public inputGroup: IgxInputGroupComponent;
-    @ViewChild("input", { read: IgxInputDirective })
-    public input: IgxInputDirective;
+    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
 
     public items: any[] = [];
-    public inputValue: string;
 
     private _positionSettings = {
         horizontalStartPoint: HorizontalAlignment.Left,
@@ -47,22 +40,7 @@ export class DropDownSample2Component implements OnInit {
         this.igxDropDown.toggle(this._overlaySettings);
     }
 
-    public onOpening() {
+    public onOpening(ev) {
         this.igxDropDown.setSelectedItem(0);
-    }
-
-    public onInputDropDownSelection(eventArgs) {
-        this.inputValue = eventArgs.newSelection.element.nativeElement.textContent;
-    }
-
-    public openInputDropDown() {
-        if (this.igxInputDropDown.collapsed) {
-            this.igxInputDropDown.open({
-                modal: false,
-                positionStrategy: new ConnectedPositioningStrategy({
-                    target: this.inputGroup.element.nativeElement
-                })
-            });
-        }
     }
 }

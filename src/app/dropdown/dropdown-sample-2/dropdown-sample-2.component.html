@@ -1,33 +1,8 @@
 <div class="sample-wrapper">
-    <div>
-        <button class="button" igxButton="raised" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]  ="igxDropDown">Options</button>
-        <igx-drop-down #dropdown1 (onOpening)="onOpening()" [width]="'100px'">
+        <button class="button" igxButton="raised" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]="dropdown2">Options</button>
+        <igx-drop-down #dropdown2 (onOpening)="onOpening($event)" [width]="'100px'">
             <igx-drop-down-item *ngFor="let item of items">
                 {{ item.field }}
             </igx-drop-down-item>
         </igx-drop-down>
     </div>
-    <div class="input-sample-wrapper">
-        <igx-input-group #inputGroup class="input-group" [igxToggleAction]="igxInputDropDown">
-            <input #input class="input" type="text" igxInput [igxDropDownItemNavigation]="igxInputDropDown"
-                readonly= "true"
-                placeholder="choose an option"
-                [(ngModel)]="this.inputValue"
-                (keydown.ArrowDown)="openInputDropDown()"/>
-
-            <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple>
-                <igx-icon *ngIf="igxInputDropDown.collapsed; else toggleUp" fontSet="material">arrow_drop_down</igx-icon>
-                <ng-template #toggleUp>
-                    <igx-icon fontSet="material">arrow_drop_up</igx-icon>
-                </ng-template>
-            </igx-suffix>
-        </igx-input-group>
-
-        <igx-drop-down #dropdown2 [width]="'160px'" (onSelection)="onInputDropDownSelection($event)">
-            <igx-drop-down-item *ngFor="let item of items">
-                {{ item.field }}
-            </igx-drop-down-item>
-        </igx-drop-down>
-    </div>
-</div>
-
