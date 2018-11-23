@@ -10,25 +10,6 @@ import { IgxBannerComponent } from "igniteui-angular";
 export class BannerSample1Component implements OnInit {
     @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
     public contentWidth = "384px";
-    public toggle() {
-        if (this.banner.collapsed) {
-            this.banner.open();
-        } else {
-            this.banner.close();
-        }
-    }
-    public onOpen(ev) {
-        console.log("Open", ev);
-    }
-
-    public onClose(ev) {
-        console.log("Close", ev);
-    }
-
-    public onButtonClick(ev) {
-        console.log("Button click", ev);
-    }
-
     public ngOnInit() {
         this.banner.open();
     }

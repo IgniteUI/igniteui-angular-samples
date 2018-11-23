@@ -1,5 +1,10 @@
-<igx-banner #connectionBanner>
-    You have lost connection to the internet.
+<igx-banner #rateBanner>
+    <igx-icon>star_rate</igx-icon>
+    Looks like you are enjoing our app! Would you like to rate it?
+    <igx-banner-actions>
+        <button igxButton="raised" (click)="rateApp()">Yah!</button>
+        <button igxButton="raised" (click)="rateBanner.close()">Nah.</button>
+    </igx-banner-actions>
 </igx-banner>
 <div class="sample-content">
     <igx-card [style.width]="contentWidth">
@@ -16,6 +21,6 @@
             <button igxButton="flat">Continue Reading</button>
         </igx-card-actions>
     </igx-card>
-    <hr/>
-    <button igxButton="flat" [style.width]="contentWidth" igxRipple (click)="connectionBanner.toggle()">Toggle Banner</button>
+    <hr />
+    <button igxButton="flat" [style.width]="contentWidth" igxRipple (click)="rateBanner.toggle()">Toggle Banner</button>
 </div>
