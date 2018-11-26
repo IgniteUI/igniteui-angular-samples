@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     ConnectedPositioningStrategy,
     IgxDropDownComponent,
@@ -28,7 +28,7 @@ export class DropDownSample4Component implements OnInit {
     }
 
     public onSelection(eventArgs) {
-        this.value = eventArgs.newSelection.element.nativeElement.textContent;
+        this.value = eventArgs.newSelection.value;
     }
 
     public openDropDown() {
