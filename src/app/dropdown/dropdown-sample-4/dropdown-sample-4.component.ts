@@ -3,7 +3,8 @@ import {
     ConnectedPositioningStrategy,
     IgxDropDownComponent,
     IgxInputDirective,
-    IgxInputGroupComponent
+    IgxInputGroupComponent,
+    ISelectionEventArgs
 } from "igniteui-angular";
 @Component({
     // tslint:disable-next-line:component-selector
@@ -27,7 +28,7 @@ export class DropDownSample4Component implements OnInit {
         }
     }
 
-    public onSelection(eventArgs) {
+    public onSelection(eventArgs: ISelectionEventArgs) {
         this.value = eventArgs.newSelection.value;
     }
 
