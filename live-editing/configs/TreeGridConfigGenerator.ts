@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
-import { IgxButtonGroupModule, IgxButtonModule, IgxButtonModule, IgxDialogModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxRippleModule,
-    IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxToggleModule, IgxTransactionService, IgxTreeGridModule } from "igniteui-angular";
+import { IgxButtonGroupModule, IgxButtonModule, IgxDialogModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxRippleModule,
+    IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTransactionService, IgxTreeGridModule } from "igniteui-angular";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { TreeLocalDataService } from "../../src/app/tree-grid/tree-grid-finjs/treeLocalData.service";
