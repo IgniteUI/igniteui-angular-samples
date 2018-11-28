@@ -18,8 +18,8 @@ export class CascadingCombos {
 
     @ViewChild("inputGroupCountry", { read: IgxInputGroupComponent}) public inputGroupCountry: IgxInputGroupComponent;
     @ViewChild("inputGroupProvince", { read: IgxInputGroupComponent}) public inputGroupProvince: IgxInputGroupComponent;
-    @ViewChild("inputCountry") public inputCountry: HTMLInputElement;
-    @ViewChild("inputProvince") public inputProvince: HTMLInputElement;
+    // @ViewChild("inputCountry") public inputCountry: HTMLInputElement;
+    // @ViewChild("inputProvince") public inputProvince: HTMLInputElement;
     @ViewChild("dropdownCountry", { read: IgxDropDownComponent}) public dropdownCountry: IgxDropDownComponent;
     @ViewChild("dropdownProvince", { read: IgxDropDownComponent}) public dropdownProvince: IgxDropDownComponent;
     @ViewChild("comboTown", { read: IgxComboComponent }) public comboTown: IgxComboComponent;

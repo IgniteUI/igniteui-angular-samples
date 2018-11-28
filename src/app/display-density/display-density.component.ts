@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { DisplayDensity, DisplayDensityToken, IDisplayDensity } from "igniteui-angular";
+import { DisplayDensity, DisplayDensityToken, IDisplayDensityOptions } from "igniteui-angular";
 
 @Component({
     providers: [{ provide: DisplayDensityToken, useValue: { displayDensity: "comfortable" } }],
@@ -13,7 +13,7 @@ export class DisplayDensityComponent implements OnInit {
     public density: any;
     public user;
 
-    constructor(@Inject(DisplayDensityToken) public displayDensityOptions: IDisplayDensity) { }
+    constructor(@Inject(DisplayDensityToken) public displayDensityOptions: IDisplayDensityOptions) { }
 
     public ngOnInit() {
         const initialDensity = this.displayDensityOptions.displayDensity;

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewCh
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
     IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
     IgxGridCellComponent, IgxGridComponent, IgxSliderComponent, IgxToggleDirective,
-    OverlaySettings, PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+    OverlaySettings, PositionSettings, SortingDirection, VerticalAlignment, DefaultSortingStrategy} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -118,15 +118,18 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         }
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: "Category"
+                fieldName: "Category", ignoreCase: true,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Type"
+                fieldName: "Type", ignoreCase: true,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Contract"
+                fieldName: "Contract", ignoreCase: true,
+                strategy: DefaultSortingStrategy.instance()
             }
         ];
     }
@@ -219,15 +222,21 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         } else {
             this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: "Category"
+                fieldName: "Category",
+                ignoreCase: true,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Type"
+                fieldName: "Type",
+                ignoreCase: true,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Contract"
+                fieldName: "Contract",
+                ignoreCase: true,
+                strategy: DefaultSortingStrategy.instance()
             }
         ];
         }

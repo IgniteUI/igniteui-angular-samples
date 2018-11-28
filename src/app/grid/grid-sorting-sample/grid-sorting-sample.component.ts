@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, SortingDirection } from "igniteui-angular";
+import { IgxGridComponent, SortingDirection, DefaultSortingStrategy } from "igniteui-angular";
 import { DATA } from "./nwindData";
 
 @Component({
@@ -23,7 +23,8 @@ export class SortingSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.data = DATA;
         this.grid1.sortingExpressions = [
-            { fieldName: "ProductName", dir: SortingDirection.Asc, ignoreCase: true }
+            { dir: SortingDirection.Asc, fieldName: "ProductName",
+              ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
         ];
     }
 

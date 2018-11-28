@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import {
     IgxGridComponent,
     ISortingExpression,
-    SortingDirection
+    SortingDirection,
+    DefaultSortingStrategy
 } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 
@@ -21,8 +22,10 @@ export class GridGroupBySampleComponent {
     constructor() {
         this.data = LOCAL_DATA;
         this.expr = [
-            {fieldName: "ShipCountry", dir: SortingDirection.Asc, ignoreCase: false},
-            {fieldName: "ShipCity", dir: SortingDirection.Asc, ignoreCase: false}
+            { dir: SortingDirection.Asc, fieldName: "ShipCountry",
+              ignoreCase: false, strategy: DefaultSortingStrategy.instance() },
+            { dir: SortingDirection.Asc, fieldName: "ShipCity",
+              ignoreCase: false, strategy: DefaultSortingStrategy.instance()}
         ];
     }
     public formatDate(val: Date) {
