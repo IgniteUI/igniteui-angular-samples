@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 // importing IG components:
-import { IgxGridComponent, SortingDirection, DefaultSortingStrategy } from "igniteui-angular";
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from "igniteui-angular";
 import { FormatConditionIconSet } from "igniteui-angular-excel/ES5/FormatConditionIconSet";
 // importing IG utilities:
 import {

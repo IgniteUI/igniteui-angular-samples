@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import {
+    DefaultSortingStrategy,
     IgxGridComponent,
     ISortingExpression,
-    SortingDirection,
-    DefaultSortingStrategy
+    SortingDirection
 } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 
