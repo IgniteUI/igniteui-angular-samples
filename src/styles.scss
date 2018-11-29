@@ -97,103 +97,7 @@ html, body {
 $finjs-palette: igx-palette(#09f, #72da67);
 
 .finjs-dark-theme {
-
-
-    $dark-text: #000;
-    $light-text: #fff;
-    $disabled-text: rgba(255,255,255, .38);
-
-    $white-10:rgba(255, 255, 255, .04);
-    $white-20:rgba(255, 255, 255, .08);
-    $white-30:rgba(255, 255, 255, .12);
-    $white-40:rgba(255, 255, 255, .26);
-    $white-50:rgba(255, 255, 255, .38);
-    $white-60:rgba(255, 255, 255, .54);
-    $white-70:rgba(255, 255, 255, .62);
-    $white-80:rgba(255, 255, 255, .74);
-    $white-90:rgba(255, 255, 255, .87);
-
-    $finjs-dropdown-theme: igx-drop-down-theme(
-        $background-color: #000
-    );
-
-    @include igx-drop-down($finjs-dropdown-theme);
-
-    // CHECKBOX
-    $finjs-checkbox-theme: igx-checkbox-theme(
-        $palette: $finjs-palette,
-        $label-color: $white-70,
-        $empty-color: $white-70,
-        $tick-color: $dark-text
-    );
-
-    @include igx-checkbox($finjs-checkbox-theme);
-
-    // BUTTON
-    $finjs-button-theme: igx-button-theme(
-        $palette: $finjs-palette,
-        $disabled-color: $white-50,
-        $icon-color: igx-color($finjs-palette, 'secondary', 500)
-    );
-
-    @include igx-button($finjs-button-theme);
-
-
-    // INPUT GROUP
-    $finjs-input-group-theme: igx-input-group-theme(
-        $palette: $finjs-palette,
-        $idle-text-color: $light-text,
-        $filled-text-color: $light-text,
-        $focused-text-color: $light-text,
-        $disabled-text-color: $disabled-text
-    );
-
-    @include igx-input-group($finjs-input-group-theme);
-
-    // GRID DARK THEME
-    $finjs-grid-theme: igx-grid-theme(
-        $ghost-header-background: #333,
-        $group-row-selected-background: #102910,
-        $ghost-header-icon-color: $white-70
-    );
-
-    @include igx-grid($finjs-grid-theme);
-
-    // grid caption styling
-    .crm-sample-toolbar {
-        background: #111;
-        color: white;
-        box-shadow: 0 1px 5px 0 rgba(0,0,0,.26), 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.08);
-    }
-
-    .operationsContainer {
-        display: flex;
-
-        .igx-button--flat {
-            -webkit-tap-highlight-color: transparent;
-        }
-    }
-
-    div.igx-overlay{
-        .toggle-content {
-            background-color: #222;
-        }
-
-        .toggle-content {
-            background-color: #111;
-            box-shadow: igx-elevation($elevations, 4);
-        }
-
-        .dd-title {
-            color: white;
-        }
-
-        .dd-list__item {
-            &:hover {
-                background: #4b4b4b;
-            }
-        }
-    }
+    @include igx-dark-theme($green-palette);
 }
 
 // grid caption styling
@@ -234,7 +138,7 @@ $finjs-palette: igx-palette(#09f, #72da67);
         padding-left: 16px;
         opacity: 0.6;
         color: black;
-    
+
         .logo-propeller {
             margin-right: 8px;
             margin-top: 2px;

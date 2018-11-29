@@ -43,7 +43,7 @@ export class Button {
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements OnInit, AfterViewInit {
+export class TreeGridFinJSComponent implements AfterViewInit {
     @ViewChild("grid1") public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
@@ -112,12 +112,6 @@ export class TreeGridFinJSComponent implements OnInit, AfterViewInit {
                 private excelExporterService: IgxExcelExporterService) {
         this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
-    }
-    // tslint:disable-next-line:member-ordering
-    public ngOnInit() {
-        if (this.theme) {
-            document.body.classList.add("finjs-dark-theme");
-        }
     }
 
     public ngAfterViewInit() {
@@ -202,13 +196,13 @@ export class TreeGridFinJSComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public changeTheme(event: any) {
-        if (event.checked) {
-            document.body.classList.add("finjs-dark-theme");
-        } else {
-            document.body.classList.remove("finjs-dark-theme");
-        }
-    }
+    // public changeTheme(event: any) {
+    //     if (event.checked) {
+    //         document.body.classList.add("finjs-dark-theme");
+    //     } else {
+    //         document.body.classList.remove("finjs-dark-theme");
+    //     }
+    // }
 
     public stopFeed() {
         if (this._timer) {
