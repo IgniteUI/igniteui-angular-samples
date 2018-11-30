@@ -1,4 +1,4 @@
-import { IgxDialogComponent, IgxDragDirective, IgxDropDirective, IgxDragDropModule } from "igniteui-angular";
+import { IgxDialogModule, IgxDragDirective, IgxDropDirective, IgxDragDropModule } from "igniteui-angular";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -12,9 +12,9 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
             component: DragAndDropSampleComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDragDirective, IgxDropDirective, IgxDragDropModule, 
-                    DragAndDropSampleComponent, IgxDialogComponent],
+                    DragAndDropSampleComponent, IgxDialogModule],
                 ngDeclarations: [DragAndDropSampleComponent],
-                ngImports: [IgxDragDropModule]
+                ngImports: [IgxDragDropModule, IgxDialogModule]
             })
         }));
 
