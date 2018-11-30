@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 // importing IG components:
-import { IgxGridComponent, SortingDirection } from "igniteui-angular";
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from "igniteui-angular";
 import { FormatConditionIconSet } from "igniteui-angular-excel/ES5/FormatConditionIconSet";
 // importing IG utilities:
 import {
@@ -51,8 +51,10 @@ export class ExcelLibraryWorkingWithGridsComponent implements OnInit {
 
     public ngOnInit() {
         this.grid.sortingExpressions = [
-            { fieldName: "ContactTitle", dir: SortingDirection.Asc, ignoreCase: true },
-            { fieldName: "Country", dir: SortingDirection.Desc, ignoreCase: true }
+            { dir: SortingDirection.Asc, fieldName: "ContactTitle", ignoreCase: true,
+              strategy: DefaultSortingStrategy.instance() },
+            { dir: SortingDirection.Desc, fieldName: "Country", ignoreCase: true,
+              strategy: DefaultSortingStrategy.instance() }
         ];
     }
 
