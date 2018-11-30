@@ -22,10 +22,10 @@ export class GridGroupBySampleComponent {
     constructor() {
         this.data = LOCAL_DATA;
         this.expr = [
-            { dir: SortingDirection.Asc, fieldName: "ShipCountry",
-              ignoreCase: false, strategy: DefaultSortingStrategy.instance() },
-            { dir: SortingDirection.Asc, fieldName: "ShipCity",
-              ignoreCase: false, strategy: DefaultSortingStrategy.instance()}
+            { dir: SortingDirection.Asc, fieldName: "ShipCountry", ignoreCase: false,
+              strategy: DefaultSortingStrategy.instance() },
+            { dir: SortingDirection.Asc, fieldName: "ShipCity", ignoreCase: false,
+              strategy: DefaultSortingStrategy.instance() }
         ];
     }
     public formatDate(val: Date) {

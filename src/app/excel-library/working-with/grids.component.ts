@@ -51,11 +51,9 @@ export class ExcelLibraryWorkingWithGridsComponent implements OnInit {
 
     public ngOnInit() {
         this.grid.sortingExpressions = [
-            // tslint:disable-next-line:object-literal-sort-keys
-            { fieldName: "ContactTitle", dir: SortingDirection.Asc, ignoreCase: true,
+            { dir: SortingDirection.Asc, fieldName: "ContactTitle", ignoreCase: true,
               strategy: DefaultSortingStrategy.instance() },
-            // tslint:disable-next-line:object-literal-sort-keys
-            { fieldName: "Country", dir: SortingDirection.Desc, ignoreCase: true,
+            { dir: SortingDirection.Desc, fieldName: "Country", ignoreCase: true,
               strategy: DefaultSortingStrategy.instance() }
         ];
     }

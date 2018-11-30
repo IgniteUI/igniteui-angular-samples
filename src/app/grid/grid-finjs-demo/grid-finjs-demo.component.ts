@@ -119,17 +119,20 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         }
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: "Category", ignoreCase: true,
+                fieldName: "Category",
+                ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Type", ignoreCase: true,
+                fieldName: "Type",
+                ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Contract", ignoreCase: true,
+                fieldName: "Contract",
+                ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
         ];
@@ -224,19 +227,19 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: "Category",
-                ignoreCase: true,
+                ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
                 fieldName: "Type",
-                ignoreCase: true,
+                ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
                 fieldName: "Contract",
-                ignoreCase: true,
+                ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
         ];
