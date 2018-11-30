@@ -5,4 +5,4 @@ node_js:
 - '10.14.1'
 script:
 - npm run lint
-- travis_wait 45 npm run build
+- travis_wait 30 npm run build
