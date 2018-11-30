@@ -7,7 +7,7 @@ import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category
 import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
-import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
+// import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 import {
     ExcelLibraryOperationsOnWorkbooksComponent
 } from "../../src/app/excel-library/operations-on/workbooks.component";
@@ -46,10 +46,10 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: ExcelLibraryWorkingWithCellsComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     ExcelUtility, ExcelLibraryWorkingWithCellsComponent],
                 ngDeclarations: [ExcelLibraryWorkingWithCellsComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule]
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -58,10 +58,10 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: ExcelLibraryOperationsOnWorkbooksComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     ExcelUtility, ExcelLibraryOperationsOnWorkbooksComponent],
                 ngDeclarations: [ExcelLibraryOperationsOnWorkbooksComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule]
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -70,10 +70,10 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: ExcelLibraryOperationsOnWorksheetsComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     ExcelUtility, ExcelLibraryOperationsOnWorksheetsComponent],
                 ngDeclarations: [ExcelLibraryOperationsOnWorksheetsComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule]
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -82,10 +82,10 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: ExcelLibraryWorkingWithTablesComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     ExcelUtility, ExcelLibraryWorkingWithTablesComponent],
                 ngDeclarations: [ExcelLibraryWorkingWithTablesComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule]
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -106,10 +106,10 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: ExcelLibraryWorkingWithGridsComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     ExcelUtility, ExcelLibraryWorkingWithGridsComponent],
                 ngDeclarations: [ExcelLibraryWorkingWithGridsComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule]
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -118,10 +118,10 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: ExcelLibraryWorkingWithObjectsComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     ExcelUtility, ExcelLibraryWorkingWithObjectsComponent],
                 ngDeclarations: [ExcelLibraryWorkingWithObjectsComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule]
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -130,11 +130,11 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: ExcelLibraryWorkingWithSparklinesComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     IgxDataChartCategoryModule, IgxDataChartCoreModule, IgxDataChartInteractivityModule,
                     ExcelUtility, ExcelLibraryWorkingWithSparklinesComponent],
                 ngDeclarations: [ExcelLibraryWorkingWithSparklinesComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
+                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule,
                     IgxDataChartCategoryModule, IgxDataChartCoreModule, IgxDataChartInteractivityModule]
             }),
             dependenciesType: DependenciesType.Excel
