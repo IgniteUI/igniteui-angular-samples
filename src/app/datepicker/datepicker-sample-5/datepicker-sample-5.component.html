@@ -2,7 +2,7 @@
   <h4 class="sample-title">Date Picker with a Japanese locale</h4>
   <p class="sample-description">Date Picker supports locales.</p>
   <div>
-<igx-datePicker id="date-picker" locale="ja-JP" [value]="date" #component>
+<igx-date-picker id="date-picker" locale="ja-JP" [value]="date" #component>
   <ng-container *ngIf="formatParts; else parseTemplate">
       <ng-template igxCalendarHeader let-format>
           {{ format.month.combined | titlecase }} {{ format.day.combined }} {{ format.weekday.combined }}
@@ -20,10 +20,10 @@
       </ng-template>
       <ng-template igxCalendarSubheader let-format>
           <span class="date__el" (click)="format.yearView()">{{ parser.getDatePart(format, component, 'year') }}</span>
-          <span class="date__el" (click)="format.monthView()">{{ parser.getDatePart(format, component, 'month') }}</span> 
+          <span class="date__el" (click)="format.monthView()">{{ parser.getDatePart(format, component, 'month') }}</span>
         </ng-template>
   </ng-template>
 
-</igx-datePicker>
+</igx-date-picker>
   </div>
 </div>
