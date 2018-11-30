@@ -145,8 +145,7 @@ $finjs-palette: igx-palette(#09f, #72da67);
         $idle-text-color: $light-text,
         $filled-text-color: $light-text,
         $focused-text-color: $light-text,
-        $disabled-text-color: $disabled-text,
-        $variant: 'light'
+        $disabled-text-color: $disabled-text
     );
 
     @include igx-input-group($finjs-input-group-theme);
@@ -235,7 +234,7 @@ $finjs-palette: igx-palette(#09f, #72da67);
         padding-left: 16px;
         opacity: 0.6;
         color: black;
-    
+
         .logo-propeller {
             margin-right: 8px;
             margin-top: 2px;
