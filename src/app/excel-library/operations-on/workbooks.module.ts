@@ -4,7 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 // importing IG modules:
 import { IgxGridComponent, IgxGridModule } from "igniteui-angular";
-import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
+// import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 // importing IG sample:
 import { ExcelLibraryOperationsOnWorkbooksComponent } from "./workbooks.component";
 
@@ -22,8 +22,8 @@ const routing: ModuleWithProviders = RouterModule.forChild(routes);
         routing,
         CommonModule,
         FormsModule,
-        IgxGridModule,
-        IgxExcelModule
+        IgxGridModule
+        // IgxExcelModule
     ]
 })
 

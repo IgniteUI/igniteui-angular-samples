@@ -7,7 +7,7 @@ import { IgxGridModule } from "igniteui-angular";
 import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
-import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
+// import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 // importing IG sample:
 import { ExcelLibraryWorkingWithSparklinesComponent } from "./sparklines.component";
 
@@ -22,7 +22,7 @@ const routing: ModuleWithProviders = RouterModule.forChild(routes);
         routing,
         CommonModule,
         FormsModule,
-        IgxExcelModule,
+        // IgxExcelModule,
         IgxDataChartCoreModule,
         IgxDataChartCategoryModule,
         IgxDataChartInteractivityModule,

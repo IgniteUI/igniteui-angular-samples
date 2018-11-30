@@ -5,7 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 // importing IG modules:
 import { IgxGridModule } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
-import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
+// import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 // importing IG sample:
 import { ExcelLibraryWorkingWithChartsComponent } from "./charts.component";
 
@@ -21,7 +21,7 @@ const routing: ModuleWithProviders = RouterModule.forChild(routes);
         CommonModule,
         FormsModule,
         IgxGridModule,
-        IgxExcelModule,
+        // IgxExcelModule,
         IgxCategoryChartModule
     ]
 })
