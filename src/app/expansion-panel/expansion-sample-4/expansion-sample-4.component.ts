@@ -61,7 +61,8 @@ export class ExpansionPanelSample4Component implements OnInit {
     }
 
     public get getWinningScore(): number {
-        return Math.max(...Object.values(this.currentScore));
+        const values = Object.keys(this.currentScore).map((e) => this.currentScore[e]);
+        return Math.max(...values);
     }
     public get getWinningPlayer(): string {
         const currentScore = this.currentScore;
