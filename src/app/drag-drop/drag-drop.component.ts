@@ -69,7 +69,9 @@ export class DragAndDropSampleComponent implements OnInit {
         ev.cancel = true;
         ev.drag.dropFinished();
         if (this.checkForCompletedPuzzle()) {
-            setTimeout(this.showMessage(this.dialog), 100);
+            setTimeout(function() {
+                this.showMessage(this.dialog);
+            }, 100);
         }
     }
 
