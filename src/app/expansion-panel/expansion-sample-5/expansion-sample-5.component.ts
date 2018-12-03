@@ -41,9 +41,9 @@ export class ExpansionPanelSample5Component {
     public onInteraction(event) {
         const expandedPanels = this.accordion.filter((panel) => !panel.collapsed);
         expandedPanels.forEach((expandedPanel) => {
-            if (expandedPanel.elementRef !==  event.event.currentTarget) {
-                expandedPanel.collapse();
-            }
+            // if (expandedPanel.elementRef !==  event.event.currentTarget) {
+            //     expandedPanel.collapse();
+            // }
         });
     }
 }

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { DisplayDensity, DisplayDensityToken, IDisplayDensityOptions } from "igniteui-angular";
+import { DisplayDensityToken, IDisplayDensityOptions } from "igniteui-angular";
 
 @Component({
     providers: [{ provide: DisplayDensityToken, useValue: { displayDensity: "comfortable" } }],
