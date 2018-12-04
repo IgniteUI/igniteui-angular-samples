@@ -1,0 +1,43 @@
+.banner-border {
+    border-bottom: 1px solid white;
+}
+
+.mailbox {
+    width: 100%;
+    box-sizing: border-box;
+    .mailbox__header {
+        border: 1px solid gray;
+        height: 40px;
+    }
+
+    .mailbox__body {
+        border: 1px solid blue;
+        display: flex;
+    }
+    .mailbox__list {
+        width: 40%;
+    }
+    .mailbox__panel {
+        width: 60%;
+    }
+}
+
+
+.mailbox-item {
+    width: 100%;
+    .mailbox__header {
+        border: 1px solid #8ba3ff;
+    }
+
+    .mailbox__title {
+        padding: 4px;
+    }
+
+    .mailbox__importance {
+        font-weight: 600;
+    } 
+
+    .mailbox__subtitle {
+        font-weight: 400;
+    }
+}

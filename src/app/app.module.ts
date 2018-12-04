@@ -63,6 +63,7 @@ import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.com
 import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
 import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
+import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -303,6 +304,7 @@ import {
         BannerSample1Component,
         BannerSample2Component,
         BannerSample3Component,
+        BannerSample4Component,
         CardComponent,
         CardSample1Component,
         CardSample2Component,

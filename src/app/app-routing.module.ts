@@ -340,6 +340,7 @@ import {
 import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
+import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
@@ -433,6 +434,11 @@ export const samplesRoutes: Routes = [
         component: BannerSample3Component,
         data: { displayName: "Animations Banner", parentName: "Banner" },
         path: "banner-sample-3"
+    },
+    {
+        component: BannerSample4Component,
+        data: { displayName: "Custom Banner", parentName: "Banner" },
+        path: "banner-sample-4"
     },
     {
         component: CardComponent,
