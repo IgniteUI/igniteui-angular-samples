@@ -1,24 +1,25 @@
 <div class="sample-wrapper">
     <div class="sample-content">
-        <!-- Single selection mode -->
-        <article class="sample-column calendar-wrapper">
-            <span>Single selection</span>
-            <igx-calendar></igx-calendar>
-        </article>
-        <!-- Multi selection mode -->
-        <article class="sample-column calendar-wrapper">
-            <span>Multi selection</span>
-            <igx-calendar selection="multi"></igx-calendar>
-        </article>
-        <!-- Range selection mode -->
-        <article class="sample-column calendar-wrapper">
-            <span>Range selection - select a range of up to 5 days !</span>
-            <igx-calendar #calendar
-                selection="range"
-                (onSelection)="verifyRange($event)">
-            </igx-calendar>
-            <igx-dialog #alert title="Notification" message="Please select a range of max to 5 days!" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
-            </igx-dialog>
-        </article>
+        <div class="calendar-row">
+            <!-- Single selection mode -->
+            <article class="sample-column calendar-wrapper">
+                <span>Single selection</span>
+                <igx-calendar></igx-calendar>
+            </article>
+            <!-- Multi selection mode -->
+            <article class="sample-column calendar-wrapper">
+                <span>Multi selection</span>
+                <igx-calendar selection="multi"></igx-calendar>
+            </article>
+            <!-- Range selection mode -->
+            <article class="sample-column calendar-wrapper">
+                <span>Range selection - select a range of up to 5 days !</span>
+                <igx-calendar #calendar selection="range" (onSelection)="verifyRange($event)">
+                </igx-calendar>
+                <igx-dialog #alert title="Notification" message="Please select a range of max to 5 days!"
+                    leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
+                </igx-dialog>
+            </article>
+        </div>
     </div>
 </div>

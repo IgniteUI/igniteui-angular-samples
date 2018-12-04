@@ -3,3 +3,17 @@
     min-width: 200px;
     border: 1px solid #e41c77;
 }
+
+.calendar-row{
+    flex-wrap: wrap;
+    position: relative;
+    margin: auto;
+}
+
+@media screen and (max-width: 380px){
+    .calendar-wrapper {
+        max-width: 240px;
+        min-width: 200px;
+        border: 1px solid #e41c77;
+    }
+}
