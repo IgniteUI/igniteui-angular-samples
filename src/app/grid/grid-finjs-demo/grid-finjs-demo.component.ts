@@ -246,7 +246,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         }
     }
 
-
     public stopFeed() {
         if (this._timer) {
             clearInterval(this._timer);
