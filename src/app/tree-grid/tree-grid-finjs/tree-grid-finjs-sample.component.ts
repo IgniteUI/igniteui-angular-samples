@@ -1,8 +1,8 @@
 
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
-    IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
-    IgxGridCellComponent, IgxSliderComponent, IgxToggleDirective, IgxTreeGridComponent,
+    IgxColumnComponent, IgxDropDownComponent,
+    IgxGridCellComponent, IgxSliderComponent, IgxTreeGridComponent,
     OverlaySettings, PositionSettings, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { TreeLocalDataService } from "./treeLocalData.service";
@@ -50,17 +50,12 @@ export class TreeGridFinJSComponent implements AfterViewInit {
     @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
 
-    @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
-    @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
-
     @ViewChild("hidingButton") public hidingButton: ElementRef;
     @ViewChild("pinningButton") public pinningButton: ElementRef;
 
     @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
 
     public cols: QueryList<IgxColumnComponent>;
-    public hiddenColsLength: number;
-    public pinnedColsLength: number;
 
     public theme = false;
     public volume = 1000;
@@ -108,64 +103,20 @@ export class TreeGridFinJSComponent implements AfterViewInit {
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: TreeLocalDataService,
-                private excelExporterService: IgxExcelExporterService) {
+    constructor(private zone: NgZone, private localService: TreeLocalDataService) {
         this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
         if (this.theme) {
-            document.body.classList.add("finjs-dark-theme");
+            document.body.classList.add("dark-theme");
         }
     }
 
     public ngAfterViewInit() {
         this.cols = this.grid1.columnList;
-        this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
-        this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
         this.grid1.reflow();
-    }
-
-    public toggleDropDown(eventArgs) {
-        this._overlaySettings.positionStrategy.settings.target = eventArgs.target;
-        this.igxDropDown.toggle(this._overlaySettings);
-    }
-
-    public toggleVisibility(col: IgxColumnComponent) {
-        if (col.hidden) {
-            this.hiddenColsLength--;
-        } else {
-            this.hiddenColsLength++;
-        }
-        col.hidden = !col.hidden;
-    }
-
-    public togglePin(col: IgxColumnComponent, evt) {
-        if (col.pinned) {
-            this.grid1.unpinColumn(col.field);
-            this.pinnedColsLength--;
-        } else {
-            if (this.grid1.pinColumn(col.field)) {
-                this.pinnedColsLength++;
-            } else {
-                // if pinning fails uncheck the checkbox
-                evt.checkbox.checked = false;
-            }
-        }
-    }
-
-    public handleExporting(event: any) {
-        if (event.newSelection.index === 0) {
-            this.exportData();
-        } else {
-            // TODO
-            // BRIAN CAN PUT HIS CODE HERE
-        }
-    }
-
-    public exportData() {
-        this.excelExporterService.exportData(this.grid1.data, new IgxExcelExporterOptions("Report"));
     }
 
     public chartClick(cell: IgxGridCellComponent) {
@@ -228,16 +179,6 @@ export class TreeGridFinJSComponent implements AfterViewInit {
     }
 
     public onFrequencyChanged(event: any) {
-    }
-
-    public toggleHiding() {
-        this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
-        this.toggleRefHiding.toggle(this._overlaySettings);
-    }
-
-    public togglePinning() {
-        this._overlaySettings.positionStrategy.settings.target = this.pinningButton.nativeElement;
-        this.toggleRefPinning.toggle(this._overlaySettings);
     }
 
     private negative = (rowData: any): boolean => {
