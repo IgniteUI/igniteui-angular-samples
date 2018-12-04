@@ -43,7 +43,7 @@ export class Button {
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements OnInit, AfterViewInit {
+export class TreeGridFinJSComponent implements AfterViewInit {
     @ViewChild("grid1") public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
@@ -199,14 +199,6 @@ export class TreeGridFinJSComponent implements OnInit, AfterViewInit {
                 {
                     break;
                 }
-        }
-    }
-
-    public changeTheme(event: any) {
-        if (event.checked) {
-            document.body.classList.add("finjs-dark-theme");
-        } else {
-            document.body.classList.remove("finjs-dark-theme");
         }
     }
 

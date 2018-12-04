@@ -115,7 +115,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
         if (this.theme) {
-            document.body.classList.add("finjs-dark-theme");
+            document.body.classList.add("dark-theme");
         }
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
@@ -246,13 +246,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public changeTheme(event: any) {
-        if (event.checked) {
-            document.body.classList.add("finjs-dark-theme");
-        } else {
-            document.body.classList.remove("finjs-dark-theme");
-        }
-    }
 
     public stopFeed() {
         if (this._timer) {
