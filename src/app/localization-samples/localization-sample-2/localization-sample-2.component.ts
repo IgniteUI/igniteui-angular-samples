@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { getCurrentResourceStrings, changei18n } from "igniteui-angular";
+import { changei18n, getCurrentResourceStrings } from "igniteui-angular";
 import { DATA } from "./nwindData";
 
 @Component({
@@ -20,8 +20,8 @@ export class LocalizationSample2Component implements OnInit {
         const currentRS = getCurrentResourceStrings();
 
         for (const key of Object.keys(currentRS)) {
-            if (currentRS[key].indexOf('[Localizable]') === -1) {
-                currentRS[key] = '[Localizable]'+ currentRS[key];
+            if (currentRS[key].indexOf("[Localizable]") === -1) {
+                currentRS[key] = "[Localizable]" + currentRS[key];
             }
         }
 

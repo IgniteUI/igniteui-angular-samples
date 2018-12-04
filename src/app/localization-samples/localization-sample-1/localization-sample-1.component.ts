@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, getCurrentResourceStrings } from "igniteui-angular";
+import { getCurrentResourceStrings, IgxGridComponent } from "igniteui-angular";
 import { DATA } from "./nwindData";
 
 @Component({
@@ -21,13 +21,13 @@ export class LocalizationSample1Component implements OnInit {
 
         const currentRS = getCurrentResourceStrings();
 
-    for (const key of Object.keys(currentRS)) {
-        if (currentRS[key].indexOf('[Localizable]') === -1) {
-            currentRS[key] = '[Localizable]'+ currentRS[key];
+        for (const key of Object.keys(currentRS)) {
+            if (currentRS[key].indexOf("[Localizable]") === -1) {
+                currentRS[key] = "[Localizable]" + currentRS[key];
+            }
         }
-    }
 
-    this.grid.resourceStrings = currentRS;
+        this.grid.resourceStrings = currentRS;
     }
 
     public formatDate(val: Date) {

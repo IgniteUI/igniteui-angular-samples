@@ -20,8 +20,8 @@ export class LocalizationSample3Component implements OnInit {
         this.data = DATA;
 
         const currentRS = this.grid.resourceStrings;
-        currentRS.igx_grid_filter = '[Localizable]Filter';
-        currentRS.igx_grid_filter_row_close = '[Localizable]Close';
+        currentRS.igx_grid_filter = "[Localizable]Filter";
+        currentRS.igx_grid_filter_row_close = "[Localizable]Close";
     }
 
     public formatDate(val: Date) {
