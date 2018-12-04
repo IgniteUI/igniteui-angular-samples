@@ -211,6 +211,9 @@ import { ListSample5Component } from "./list/list-sample-5/list-sample-5.compone
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
+import { LocalizationSample1Component } from './localization-samples/localization-sample-1/localization-sample-1.component';
+import { LocalizationSample2Component } from './localization-samples/localization-sample-2/localization-sample-2.component';
+import { LocalizationSample3Component } from './localization-samples/localization-sample-3/localization-sample-3.component';
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
@@ -505,7 +508,10 @@ import {
         TreeGridRowEditSampleComponent,
         GridRowEditSampleComponent,
         GridCustomFilteringComponent,
-        TreeGridFinJSComponent
+        TreeGridFinJSComponent,
+        LocalizationSample1Component,
+        LocalizationSample2Component,
+        LocalizationSample3Component
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
