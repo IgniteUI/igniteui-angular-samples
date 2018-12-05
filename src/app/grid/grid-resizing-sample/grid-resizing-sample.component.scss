@@ -1,16 +1,3 @@
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
-$grid-sample-theme: igx-grid-theme(
-  $row-selected-background: #333,
-  $row-selected-text-color: #ddd,
-  $row-hover-background: #f8f8f8,
-  $row-border-color: #f8f8f8,
-
-  $cell-selected-background: rgba(255,255,255, .1),
-  $cell-selected-text-color: #fff
-);
-
 .grid__wrapper {
-    @include igx-grid($grid-sample-theme);
     margin: 0 16px;
 }
