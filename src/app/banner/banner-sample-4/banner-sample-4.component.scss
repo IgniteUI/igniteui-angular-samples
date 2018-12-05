@@ -7,7 +7,7 @@
     box-sizing: border-box;
     .mailbox__header {
         border: 1px solid gray;
-        height: 40px;
+        min-height: 40px;
     }
 
     .mailbox__body {
@@ -19,25 +19,73 @@
     }
     .mailbox__panel {
         width: 60%;
+        padding: 8px;
+        border: 4px solid #d3d3d3;
     }
 }
 
 
 .mailbox-item {
     width: 100%;
-    .mailbox__header {
-        border: 1px solid #8ba3ff;
+    border-bottom: 1px solid #d3d3d3;
+	padding-left: 4px;
+    padding-right: 4px;
+    height: 56px;
+    .mailbox-item__header {
     }
 
-    .mailbox__title {
-        padding: 4px;
+    .mailbox-item__title {
+        font-weight: 500;
+        font-size: 16px;
     }
 
-    .mailbox__importance {
-        font-weight: 600;
+    .mailbox-item__importance {
+        
     } 
 
-    .mailbox__subtitle {
+    .mailbox-item__subtitle {
         font-weight: 400;
+        font-size: 12px;
     }
+}
+
+.mailbox-active {
+    height: 100%;
+    .mailbox-active__header {
+        height: 30%;
+        .mailbox-active__title {
+            height: 35%;
+            font-weight: 700;
+        }
+
+        .mailbox-active__details {
+            height: 65%;
+            font-size: 12px;
+            font-weight: 400;
+            text-align: right;
+            
+            span {
+                padding: 0px 8px 0px 8px;
+            }
+        }
+    }
+    .mailbox-active__body {
+        width: 100%;
+        height: 70%;
+        border: 1px solid rgba(213,213,213,0.5);
+        padding: 4px;
+    }
+}
+.mailbox-item--active {
+    border-bottom: 2px solid #535383;
+    
+    .mailbox-item__header {
+        .mailbox-item__title {
+
+        }
+    }
+}
+
+.mailbox__banner {
+    border: 1px solid #131313;
 }

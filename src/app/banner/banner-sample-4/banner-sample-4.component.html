@@ -1,49 +1,46 @@
-<div>
-    <igx-banner #connectionBanner>
-        You are currently sending automatic replies.
-    </igx-banner>
-    <div class='mailbox'>
-        <div class='mailbox__header'>
-
-        </div>
-        <div class='mailbox__body'>
-            <div class='mailbox__list'>
-                <igx-list (onItemClicked)="setActiveItem($event)">
-                    <igx-list-item *ngFor='let item of items'>
-                        <div class='mailbox-item'>
-                            <div class='mailbox-item__header'>
-                                <span class='mailbox-item__title'>{{ item.title }}</span>
-                                <span class='mailbox-item__importance'>{{ item.importance }}</span>
-                            </div>
-                            <div class='mailbox-item__subtitle'>
-                                {{ item.subtitle }}
-                            </div>
+<div class='mailbox'>
+    <div class='mailbox__header' [style.display]="bannerDisplay">
+        <igx-switch [(ngModel)]="automaticReplies" (ngModelChange)="toggleBanner($event)">Automatic Replies</igx-switch>
+        <igx-banner class="mailbox__banner" #connectionBanner>
+            You are currently sending automatic replies.
+            <igx-banner-actions>
+                <button igxButton (click)="automaticRepliesSwitch(false)">Turn Off</button>
+                <button igxButton (click)="connectionBanner.close()">DISMISS</button>
+            </igx-banner-actions>
+        </igx-banner>
+    </div>
+    <div class='mailbox__body'>
+        <div class='mailbox__list'>
+            <igx-list (onItemClicked)="setActiveItem($event)">
+                <igx-list-item *ngFor='let item of items'>
+                    <div [class]="itemClass(item)">
+                        <div class='mailbox-item__header'>
+                            <span class='mailbox-item__title'>{{ item.title }}</span>
                         </div>
-                    </igx-list-item>
-                </igx-list>
-            </div>
-            <div class='mailbox__panel'>
-                <div class="mailbox-active">
-                    <div class="mailbox-active__header">
-                        <div class="mailbox-active__title">
-                            {{ activeItem.title }}
-                        </div>
-                        <div class='mailbox-active__details'>
-                            <div class="mailbox-active__from">
-                                {{ activeItem.from }}
-                            </div>
-                            <div class="mailbox-active__to">
-                                {{ activeItem.to }}
-                            </div>
-                            <div class="mailbox-active__received">
-                                {{ activeItem.received }}
-                            </div>
+                        <div class='mailbox-item__subtitle'>
+                            {{ item.subtitle }}
                         </div>
                     </div>
-                    <div class="mailbox-active__body">
-                            {{ activeItem.content }}
+                </igx-list-item>
+            </igx-list>
+        </div>
+        <div class='mailbox__panel'>
+            <div class="mailbox-active">
+                <div class="mailbox-active__header">
+                    <div class="mailbox-active__title">
+                        {{ activeItem.title }}
+                    </div>
+                    <div class='mailbox-active__details'>
+                        <span class="mailbox-active__from"><b>From:</b> {{ activeItem.from }}</span>
+                        <span class="mailbox-active__to"><b>To:</b> {{ activeItem.to }}</span>
+                        <div class="mailbox-active__received">
+                            <b>Received:</b> {{ activeItem.received }}
+                        </div>
                     </div>
                 </div>
+                <textarea readonly class="mailbox-active__body">
+                            {{ activeItem.content }}
+                    </textarea>
             </div>
         </div>
     </div>

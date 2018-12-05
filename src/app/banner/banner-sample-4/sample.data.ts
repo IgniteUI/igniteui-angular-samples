@@ -22,11 +22,11 @@ export const emails = [
         importance: IMPORTANCE.HIGH,
         from: `Mark Patterson`,
         to: `OpsTeam`,
-        received: new Date(`12/05/2018 11:54`)
+        received: new Date(`12/05/2018 11:54`).toLocaleString()
     },
     {
         title: "An item on your tasks list requires attention - #1411",
-        subtitle: "",
+        subtitle: "An item on your tasks list requires attention",
         content: `
             An item on your tasks list requires attention:
             ID: 1441
@@ -38,7 +38,7 @@ export const emails = [
         importance: IMPORTANCE.NORMAL,
         from: `BusinessCorpAutomated`,
         to: `Testy Testington`,
-        received: new Date(`12/05/2018 11:43`)
+        received: new Date(`12/05/2018 11:43`).toLocaleString()
     },
     {
         title: "Holiday Schedule",
@@ -52,11 +52,11 @@ export const emails = [
         importance: IMPORTANCE.NORMAL,
         from: `Jennie Makliewzki`,
         to: `OpsTeam`,
-        received: new Date(`12/05/2018 11:31`)
+        received: new Date(`12/05/2018 11:31`).toLocaleString()
     },
     {
         title: "An item on your tasks list requires attention - #1402",
-        subtitle: "",
+        subtitle: "An item on your tasks list requires attention",
         content: `
             An item on your tasks list requires attention:
             ID: 1402
@@ -68,11 +68,11 @@ export const emails = [
         importance: IMPORTANCE.NORMAL,
         from: `BusinessCorpAutomated`,
         to: `Testy Testington`,
-        received: new Date(`12/05/2018 11:12`)
+        received: new Date(`12/05/2018 11:12`).toLocaleString()
     },
     {
         title: "An item on your tasks list requires attention - #1389",
-        subtitle: "",
+        subtitle: "An item on your tasks list requires attention",
         content: `
             An item on your tasks list requires attention:
             ID: 1389
@@ -84,7 +84,7 @@ export const emails = [
         importance: IMPORTANCE.NORMAL,
         from: `BusinessCorpAutomated`,
         to: `Testy Testington`,
-        received: new Date(`12/05/2018 10:47`)
+        received: new Date(`12/05/2018 10:47`).toLocaleString()
     },
     {
         title: "Christmas Cookies!",
@@ -101,6 +101,6 @@ export const emails = [
         importance: IMPORTANCE.LOW,
         from: `Santia Nickolas`,
         to: `Everyone`,
-        received: new Date(`12/05/2018 10:27`)
+        received: new Date(`12/05/2018 10:27`).toLocaleString()
     }
 ];

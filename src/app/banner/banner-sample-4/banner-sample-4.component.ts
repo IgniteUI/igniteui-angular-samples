@@ -7,7 +7,7 @@ interface IEmail {
     subtitle: string;
     content: string;
     importance: IMPORTANCE;
-    received: Date;
+    received: string;
     from: string;
     to: string;
 }
@@ -19,7 +19,13 @@ interface IEmail {
 })
 export class BannerSample4Component {
     public activeItem: IEmail = null;
+    public automaticReplies = true;
     public items: IEmail[] =  [];
+    public priorityMap = {
+        "-1": "priority_low",
+        "0": "",
+        "1": "priority_high"
+    };
     @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
     public contentWidth = "384px";
     public ngOnInit() {
@@ -30,5 +36,26 @@ export class BannerSample4Component {
 
     public setActiveItem(event: IListItemClickEventArgs) {
         this.activeItem = this.items[event.item.index];
+    }
+
+    public itemClass(item) {
+        return `mailbox-item${item === this.activeItem ? " mailbox-item--active" : ""}`;
+    }
+
+    public toggleBanner(event) {
+        if (!event) {
+            this.banner.close();
+        } else {
+            this.banner.open();
+        }
+    }
+
+    public automaticRepliesSwitch(state: boolean) {
+        this.automaticReplies = state;
+        this.banner.close();
+    }
+
+    public get bannerDisplay() {
+        return this.banner.collapsed ? "" : "block";
     }
 }
