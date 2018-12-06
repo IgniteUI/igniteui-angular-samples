@@ -4,6 +4,7 @@ import {
     HorizontalAlignment,
     IgxDropDownComponent,
     IgxOverlayOutletDirective,
+    ISelectionEventArgs,
     NoOpScrollStrategy,
     OverlaySettings,
     VerticalAlignment
@@ -32,8 +33,8 @@ export class DropdownMenuComponent implements OnInit {
         this.items = [{ text: "Add New Contact" }, { text: "Edit Contact" }, { text: "Refresh" }, { text: "Help" }];
     }
 
-    public onSelection(eventArgs) {
-        this.text = eventArgs.newSelection.element.nativeElement.textContent;
+    public onSelection(eventArgs: ISelectionEventArgs) {
+        this.text = eventArgs.newSelection.value;
         eventArgs.cancel = true;
     }
 
