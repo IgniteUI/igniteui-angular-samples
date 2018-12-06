@@ -101,6 +101,7 @@ import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.co
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -622,6 +623,11 @@ export const samplesRoutes: Routes = [
         component: DropDownSample3Component,
         data: { displayName: "Dropdown Headers", parentName: "Dropdown" },
         path: "dropdown-sample-3"
+    },
+    {
+        component: DropDownSample4Component,
+        data: { displayName: "Input Dropdown Selection", parentName: "Dropdown" },
+        path: "dropdown-sample-4"
     },
     {
         component: ExcelExportComponent,
