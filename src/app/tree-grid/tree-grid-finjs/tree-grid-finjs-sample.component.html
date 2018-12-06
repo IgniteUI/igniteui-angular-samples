@@ -1,5 +1,5 @@
-<div class="grid__wrapper" [class.finjs-dark-theme]="theme">
-    <igx-switch [checked]="true" [(ngModel)]="theme" (change)="changeTheme($event)">Dark Theme</igx-switch>
+<div class="grid__wrapper" [class.dark-theme]="theme">
+    <igx-switch [checked]="true" [(ngModel)]="theme">Dark Theme</igx-switch>
     <div class="sliders-holder">
         <div class="slider-wrapper">
             <div class="finjs-slider">
@@ -20,71 +20,17 @@
             </div>
         </div>
     </div>
-  
-    <div class="crm-sample-toolbar">
-        <div class="crm-sample-toolbar__title">
-            <div>
-                <span *ngIf="buttonSelected === 1">Feeding {{volume}} records every {{frequency / 1000}} sec.
-                    {{volume}} records updated. </span>
-                <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
-                    ~{{volume/5}} records updated.</span>
-            </div>
-            <span class="crm-sample-toolbar__ellipsis">Torkyo Commodity Exchange</span>
-        </div>
-  
-        <div class="sample-flex-container">
-          <div class="operationsContainer">
-              <div class="relative-container">
-                  <button #hidingButton class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="toggleHiding()">
-                      <igx-icon class="header-icon">visibility_off</igx-icon><span>{{hiddenColsLength}}</span>
-                      <igx-icon class="header-icon">arrow_drop_down</igx-icon>
-                  </button>
-                  <div class="toggle-content" igxToggle #toggleRefHiding="toggle">
-                      <div class="toggle-section">
-                          <h4 class="dd-title">Hidden columns:</h4>
-                          <ul class="dd-list">
-                              <li class="dd-list__item" *ngFor="let col of cols">
-                                  <igx-checkbox (change)="toggleVisibility(col)" [checked]="col.hidden">{{col.field}}</igx-checkbox>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-      
-              <div class="relative-container">
-                  <button #pinningButton class="toggle-button" igxButton="flat" igxRipple="#09f" (click)="togglePinning()">
-                      <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack"></igx-icon><span>{{pinnedColsLength}}</span>
-                      <igx-icon class="header-icon">arrow_drop_down</igx-icon>
-                  </button>
-                  <div class="toggle-content" igxToggle #toggleRefPinning="toggle">
-                      <div class="toggle-section">
-                          <h4 class="dd-title">Pinned columns:</h4>
-                          <ul class="dd-list">
-                              <li class="dd-list__item" *ngFor="let col of cols">
-                                  <igx-checkbox (change)="togglePin(col, $event)" [checked]="col.pinned">{{col.field}}</igx-checkbox>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-      
-              <div class="relative-container">
-                  <button igxButton="flat" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]="dropdown2">Export</button>
-                  <igx-drop-down #dropdown2 (onSelection)="handleExporting($event)">
-                      <igx-drop-down-item *ngFor="let item of items">
-                          {{ item.field }}
-                      </igx-drop-down-item>
-                  </igx-drop-down>
-              </div>
-          </div>
-      </div>
+    <div class="sample-toolbar">
+        <span *ngIf="buttonSelected === 1">Feeding {{volume}} records every {{frequency / 1000}} sec.
+            {{volume}} records updated. </span>
+        <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
+            ~{{volume/5}} records updated.</span>
     </div>
-  
     <igx-tree-grid #grid1 [data]="data | async" [height]="'600px'" width="100%" [autoGenerate]='false'
         displayDensity='compact' childDataKey="Categories"
-        [showToolbar]="false" [columnHiding]="true" [columnPinning]="true" toolbarTitle="Torkyo Commodity Exchange"
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID'
-        [rowSelectable]="true" [allowFiltering]="true">
+        [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
+        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
         <igx-column [field]="'ID'" [hidden]='true'></igx-column>
         <igx-column [field]="'Category'" [width]="'180px'" [groupable]='true' [sortable]='true' [resizable]='true'></igx-column>
         <igx-column [field]="'Type'" [width]="'140px'" [groupable]='true' [sortable]='true' [filterable]='true' [resizable]='true'></igx-column>
@@ -217,4 +163,3 @@
         <igx-column [field]="'Cpn'" [width]="'80px'" [filterable]='false'></igx-column>
     </igx-tree-grid>
   </div>
-  
