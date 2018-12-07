@@ -215,6 +215,7 @@ import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.compone
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
+import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -365,6 +366,7 @@ import {
         TabsSample5Component,
         NavbarComponent,
         NavbarSample1Component,
+        NavbarSample2Component,
         SliderSample1Component,
         SliderSample2Component,
         SliderSample3Component,
@@ -419,6 +421,7 @@ import {
         RippleSample5Component,
         RippleSample6Component,
         NavbarSample1Component,
+        NavbarSample2Component,
         DatepickerSample1Component,
         DatepickerSample2Component,
         DatepickerSample3Component,
