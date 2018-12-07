@@ -1,5 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxIconModule, IgxNavbarModule } from "igniteui-angular";
+import { NavbarSample2Component } from "../../src/app/navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarSample1Component } from "../../src/app/navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarComponent } from "../../src/app/navbar/navbar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -24,6 +25,16 @@ export class NavbarConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxNavbarModule, NavbarSample1Component],
                 ngDeclarations: [NavbarSample1Component],
+                ngImports: [IgxNavbarModule]
+            }),
+            shortenComponentPathBy: "/navbar/"
+        }));
+
+        configs.push(new Config({
+            component: NavbarSample2Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxNavbarModule, NavbarSample2Component],
+                ngDeclarations: [NavbarSample2Component],
                 ngImports: [IgxNavbarModule]
             }),
             shortenComponentPathBy: "/navbar/"
