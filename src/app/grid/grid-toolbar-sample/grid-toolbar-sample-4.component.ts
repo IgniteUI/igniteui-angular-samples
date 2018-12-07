@@ -1,4 +1,4 @@
-/*import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent} from "igniteui-angular";
 import { athletesData } from "../services/data";
 
@@ -17,4 +17,3 @@ export class GridToolbarSample4Component implements OnInit {
     }
 
 }
-*/
