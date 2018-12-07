@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
 import {
     IgxGridComponent,
     IgxNumberSummaryOperand,
-    IgxSummaryResult } from "igniteui-angular";
+    IgxSummaryResult,
+    IgxColumnComponent } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 
 class MySummary extends IgxNumberSummaryOperand {
@@ -43,12 +44,7 @@ export class GridSample3Component implements OnInit {
 
   public ngOnInit() {
   }
-  public toggleSummary(name, id) {
-      if (this.grid1.getColumnByName(name).hasSummary) {
-        this.grid1.disableSummaries(name);
-      } else {
-        this.grid1.enableSummaries(name, this.mySummary);
-      }
-
+  public toggleSummary(column: IgxColumnComponent) {
+    column.hasSummary = !column.hasSummary;
   }
 }
