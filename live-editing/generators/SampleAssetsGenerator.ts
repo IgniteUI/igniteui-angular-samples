@@ -56,7 +56,7 @@ import { SassCompiler } from "../services/SassCompiler";
 import { Config } from "./../configs/core/Config";
 import { DependencyResolver } from "./../services/DependencyResolver";
 import { TsImportsService } from "./../services/TsImportsService";
-import { Generator, SAMPLE_APP_FOLDER } from "./Generator";
+import { Generator, SAMPLE_APP_FOLDER, SAMPLE_SRC_FOLDER } from "./Generator";
 import { StyleSyntax } from "./misc/StyleSyntax";
 
 import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
@@ -201,6 +201,8 @@ export class SampleAssetsGenerator extends Generator {
         let additionalFiles = new Array<LiveEditingFile>();
         for (let i = 0; i < config.additionalFiles.length; i++) {
             let fileContent = fs.readFileSync(path.join(BASE_PATH, config.additionalFiles[i]), "utf8");
+            config.additionalFiles[i] = config.additionalFiles[i].substring(
+                config.additionalFiles[i].indexOf(SAMPLE_SRC_FOLDER));
             let file = new LiveEditingFile(config.additionalFiles[i], fileContent);
             this._shortenComponentPath(config, file);
             additionalFiles.push(file);
