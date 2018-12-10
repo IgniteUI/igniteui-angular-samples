@@ -101,6 +101,7 @@ import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.co
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -261,6 +262,7 @@ import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.compone
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
+import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -622,6 +624,11 @@ export const samplesRoutes: Routes = [
         component: DropDownSample3Component,
         data: { displayName: "Dropdown Headers", parentName: "Dropdown" },
         path: "dropdown-sample-3"
+    },
+    {
+        component: DropDownSample4Component,
+        data: { displayName: "Input Dropdown Selection", parentName: "Dropdown" },
+        path: "dropdown-sample-4"
     },
     {
         component: ExcelExportComponent,
@@ -1065,6 +1072,11 @@ export const samplesRoutes: Routes = [
         component: NavbarSample1Component,
         data: { displayName: "Navbar Action Button Icon", parentName: "Navbar" },
         path: "navbar-sample-1"
+    },
+    {
+        component: NavbarSample2Component,
+        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
+        path: "navbar-sample-2"
     },
     {
         component: CardSample1Component,
