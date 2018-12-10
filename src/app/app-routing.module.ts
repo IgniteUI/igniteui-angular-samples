@@ -439,7 +439,7 @@ export const samplesRoutes: Routes = [
     },
     {
         component: BannerSample4Component,
-        data: { displayName: "Custom Banner", parentName: "Banner" },
+        data: { displayName: "Settings Banner", parentName: "Banner" },
         path: "banner-sample-4"
     },
     {

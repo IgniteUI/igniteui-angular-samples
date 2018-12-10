@@ -1,26 +1,26 @@
-<igx-banner #rateBanner>
-    <igx-icon>star_rate</igx-icon>
-    Looks like you are enjoing our app! Would you like to rate it?
-    <igx-banner-actions>
-        <button igxButton="raised" (click)="rateApp()">Yah!</button>
-        <button igxButton="raised" (click)="rateBanner.close()">Nah.</button>
-    </igx-banner-actions>
-</igx-banner>
-<div class="sample-content">
-    <igx-card [style.width]="contentWidth">
-        <igx-card-header>
-            <strong>What this man saw <u>WILL</u> shock you!</strong>
-        </igx-card-header>
-        <igx-card-content>
-            A young J.D. was on a hike through Yellowstone park. They seemend normal, like any other - birds chirping,
-            soft wind blowing, beavers being beavers.
-            But just as he was about to cross the bridge over a nearby brook, he saw something that changed his life
-            forever!
-        </igx-card-content>
-        <igx-card-actions>
-            <button igxButton="flat">Continue Reading</button>
-        </igx-card-actions>
-    </igx-card>
-    <hr />
-    <button igxButton="flat" [style.width]="contentWidth" igxRipple (click)="rateBanner.toggle()">Toggle Banner</button>
+<div class="gallery__wrapper">
+    <igx-navbar title="Gallery">
+        <igx-icon>{{ wifiState ? 'signal_wifi_4_bar' : 'signal_wifi_off'}}</igx-icon>
+        <igx-icon (click)="refreshBanner()">refresh</igx-icon>
+    </igx-navbar>
+    <div class="gallery__content">
+        <igx-banner #rateBanner>
+            <igx-icon>signal_wifi_off</igx-icon>
+            You have lost connection to the internet. This app is offline.
+            <igx-banner-actions>
+                <button igxButton (click)="wifi(true)">Turn On Wifi</button>
+            </igx-banner-actions>
+        </igx-banner>
+        <igx-card class="gallery__item">
+            <div>
+                <img width="100%" height="100%" [src]="imageUrls[0]">
+            </div>
+        </igx-card>
+        <igx-card class="gallery__item">
+            <div>
+                <img width="100%" height="100%" [src]="imageUrls[1]">
+            </div>
+        </igx-card>
+    </div>
+    <igx-toast #eventToast></igx-toast>
 </div>

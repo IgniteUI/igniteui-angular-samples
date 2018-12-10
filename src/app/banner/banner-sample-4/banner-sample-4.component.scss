@@ -1,91 +1,50 @@
+.sample-wrapper {
+    max-width: 560px;
+    margin-top: 24px;
+    height: 360px;
+    border: 1px solid #d3d3d3;
+    box-shadow: 1px 1px 0px 0px #a3a3a3;
+}
 .banner-border {
     border-bottom: 1px solid white;
 }
 
-.mailbox {
+.settings__banner { 
     width: 100%;
     box-sizing: border-box;
-    .mailbox__header {
-        border: 1px solid gray;
-        min-height: 40px;
-    }
-
-    .mailbox__body {
-        border: 1px solid blue;
-        display: flex;
-    }
-    .mailbox__list {
-        width: 40%;
-    }
-    .mailbox__panel {
-        width: 60%;
-        padding: 8px;
-        border: 4px solid #d3d3d3;
-    }
+    border-bottom: 1px solid #90f;
 }
 
-
-.mailbox-item {
-    width: 100%;
-    border-bottom: 1px solid #d3d3d3;
-	padding-left: 4px;
-    padding-right: 4px;
-    height: 56px;
-    .mailbox-item__header {
-    }
-
-    .mailbox-item__title {
-        font-weight: 500;
-        font-size: 16px;
-    }
-
-    .mailbox-item__importance {
-        
-    } 
-
-    .mailbox-item__subtitle {
-        font-weight: 400;
-        font-size: 12px;
-    }
+.settings__header {
+    border: 1px solid gray;
+    min-height: 40px;
 }
 
-.mailbox-active {
-    height: 100%;
-    .mailbox-active__header {
-        height: 30%;
-        .mailbox-active__title {
-            height: 35%;
-            font-weight: 700;
-        }
-
-        .mailbox-active__details {
-            height: 65%;
-            font-size: 12px;
-            font-weight: 400;
-            text-align: right;
-            
-            span {
-                padding: 0px 8px 0px 8px;
-            }
-        }
-    }
-    .mailbox-active__body {
-        width: 100%;
-        height: 70%;
-        border: 1px solid rgba(213,213,213,0.5);
-        padding: 4px;
-    }
+.settings__body {
+    display: flex;
+    height: 160px;
+    max-height: 80%;
 }
-.mailbox-item--active {
-    border-bottom: 2px solid #535383;
+
+.settings__body > * {
+    padding-top: 8px;
+    text-align: center;
+}
+.settings__list {
+    width: 40%;
+    box-sizing: border-box;
+    padding-left: 16px;
+}
+.settings__panel {
+    width: 60%;
     
-    .mailbox-item__header {
-        .mailbox-item__title {
-
-        }
-    }
 }
 
-.mailbox__banner {
-    border: 1px solid #131313;
+.settings__banner {
+    border-bottom: 2px solid #5c5cf1;
+}
+
+textarea {
+    height: 90%;
+    width: 90%;
 }
