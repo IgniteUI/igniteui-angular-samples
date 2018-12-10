@@ -10,8 +10,8 @@ import { IgxBannerComponent } from "igniteui-angular";
 export class BannerSample1Component implements OnInit {
     @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
     public contentWidth = "384px";
-    public imageUrls = ["https://www.infragistics.com/angular-demos/assets/images/card/media/the_red_ice_forest.jpg",
-"https://www.infragistics.com/angular-demos/assets/images/card/media/yosemite.jpg"];
+    public imageUrls = ["assets/images/card/media/the_red_ice_forest.jpg",
+        "assets/images/card/media/yosemite.jpg"];
     public ngOnInit() {
         this.banner.open();
     }
