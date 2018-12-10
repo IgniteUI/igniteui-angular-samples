@@ -2,6 +2,7 @@
 // tslint:disable:prefer-const
 import { AvatarConfigGenerator } from "./../configs/AvatarConfigGenerator";
 import { BadgeConfigGenerator } from "./../configs/BadgeConfigGenerator";
+import { BannerConfigGenerator } from "./../configs/BannerConfigGenerator";
 import { ButtonConfigGenerator } from "./../configs/ButtonConfigGenerator";
 import { ButtonGroupConfigGenerator } from "./../configs/ButtonGroupConfigGenerator";
 import { CalendarConfigGenerator } from "./../configs/CalendarConfigGenerator";
@@ -74,7 +75,7 @@ const COMPONENT_FILE_EXTENSIONS = ["ts", "html", COMPONENT_STYLE_FILE_EXTENSION]
 const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 
 const SAMPLE_ASSETS_BASE_DIR: string = "app/";
-const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, ButtonConfigGenerator,
+const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
     ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
