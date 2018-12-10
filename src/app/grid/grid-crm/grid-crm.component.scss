@@ -265,6 +265,9 @@ $summary-theme: igx-grid-summary-theme(
 
     .operationsContainer {
         display: flex;
+        .igx-button--flat {
+            -webkit-tap-highlight-color: transparent;
+        }
     }
 
     .caseSensitiveButton {
