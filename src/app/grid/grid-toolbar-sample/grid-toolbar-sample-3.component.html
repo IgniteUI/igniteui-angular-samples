@@ -11,7 +11,7 @@
 
         (onToolbarExporting)="toolbarExportingHandler($event)">
         
-        <igx-column field="Name" header="Athlete" width="200">
+        <igx-column field="Name" header="Athlete" width="28%">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
                     <igx-avatar [src]="cell.row.rowData.Avatar" roundShape="true" size="small"></igx-avatar>
@@ -20,7 +20,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="CountryName" header="Country" width="200">
+        <igx-column field="CountryName" header="Country" width="28%">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner">
                     <igx-avatar [src]="cell.row.rowData.CountryFlag" roundShape="true" size="small"></igx-avatar>
@@ -29,26 +29,26 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="BeatsPerMinute" header="Beats Per Minute">
+        <igx-column field="BeatsPerMinute" header="Beats Per Minute" width="10%">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>
         </igx-column>
 
-        <igx-column field="TopSpeed" header="Top Speed">
+        <igx-column field="TopSpeed" header="Top Speed" width="10%">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>
 
         </igx-column>
 
-        <igx-column field="AthleteNumber" header="ID">
+        <igx-column field="AthleteNumber" header="ID" width="10%">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>
         </igx-column>
 
-        <igx-column field="TrackProgress" header="Progress">
+        <igx-column field="TrackProgress" header="Progress" width="10%">
             <ng-template igxCell let-val>
                 <div class="cell__inner">{{ val }}</div>
             </ng-template>

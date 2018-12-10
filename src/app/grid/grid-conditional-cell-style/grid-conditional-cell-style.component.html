@@ -1,18 +1,18 @@
 <div class="grid__wrapper">
     <igx-grid #grid1 [data]="data" height="500px" width="100%" [autoGenerate]="false">
-        <igx-column header="Rank" field="Id" sortable="true" [editable]="true" [sortable]="true" [cellClasses]="rankClasses"></igx-column>
-        <igx-column field="Name" header="Athlete" [sortable]="true"></igx-column>
+        <igx-column header="Rank" field="Id" sortable="true" [editable]="true" [sortable]="true" [cellClasses]="rankClasses" width="16%"></igx-column>
+        <igx-column field="Name" header="Athlete" [sortable]="true" width="18%"></igx-column>
         <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number" [editable]="true" [sortable]="true"
-            [cellClasses]="beatsPerMinuteClasses"></igx-column>
+            [cellClasses]="beatsPerMinuteClasses" width="16%"></igx-column>
         <igx-column field="TopSpeed" header="Top Speed" dataType="number" [editable]="true" [sortable]="true"
-            [cellClasses]="speedClasses">
+            [cellClasses]="speedClasses" width="16%">
             <ng-template igxCell let-val>
                 <div class="cell__inner">
                     {{ val | number: '1.1-5' }}
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="TrackProgress" header="Track Progress" [editable]="true" [sortable]="true">
+        <igx-column field="TrackProgress" header="Track Progress" [editable]="true" [sortable]="true" width="18%">
             <ng-template igxCell let-val>
                 <div class="cellContainer">
                     <span class="cellAlignSyle">
@@ -21,7 +21,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="CountryFlag" header="Country">
+        <igx-column field="CountryFlag" header="Country" width="16%">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
                     <span>
