@@ -1,32 +1,28 @@
-<div class="sample-wrapper">
-    <igx-navbar title="Settings"><igx-icon>settings</igx-icon></igx-navbar>
-    <igx-banner class="settings__banner" #connectionBanner>
-        <igx-icon>notification_important</igx-icon>
-        You are currently sending automatic replies.
-        <igx-banner-actions>
-            <button igxButton (click)="automaticRepliesSwitch(false)">Turn Off</button>
-            <button igxButton (click)="connectionBanner.close()">DISMISS</button>
-        </igx-banner-actions>
-    </igx-banner>
-    <div class="settings__body">
-        <div class="settings__list">
-            <span class="settings__avatar">
-                <igx-avatar initials="IG" [roundShape]="true" size="medium">
-                </igx-avatar>
-            </span>
-
-        </div>
-        <div class="settings__panel">
-            <igx-switch [(ngModel)]="automaticReplies" (ngModelChange)="toggleBanner($event)">Automatic Replies</igx-switch>
-            <textarea [readonly]="automaticReplies">Dear Sender,
-I am currently OOO with limited access to e-mails.
-
-I will respond to your as soon as I can.
-For urgent matters, please contact ttestington@example.com;
-
-Regards,
-Qually T
-            </textarea>
+<div class="settings__wrapper">
+    <igx-navbar title="Settings">
+        <igx-icon>settings</igx-icon>
+    </igx-navbar>
+    <div class="settings__content">
+        <igx-banner class="settings__banner" #connectionBanner>
+            <igx-icon>notification_important</igx-icon>
+            You are currently sending automatic replies.
+            <igx-banner-actions>
+                <button igxButton igxRipple (click)="automaticRepliesSwitch(false)">Turn Off</button>
+                <button igxButton igxRipple (click)="connectionBanner.close()">DISMISS</button>
+            </igx-banner-actions>
+        </igx-banner>
+        <div class="settings__body">
+            <div class="settings__list">
+                <span class="settings__avatar">
+                    <igx-avatar initials="IG" [roundShape]="true" size="medium">
+                    </igx-avatar>
+                </span>
+            </div>
+            <div class="settings__panel">
+                <igx-switch [(ngModel)]="automaticReplies" (ngModelChange)="toggleBanner($event)">Automatic Replies</igx-switch>
+                <textarea [readonly]="automaticReplies">{{ automaticReplyText }}
+                </textarea>
+            </div>
         </div>
     </div>
 </div>

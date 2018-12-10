@@ -8,11 +8,14 @@ import { IgxBannerComponent } from "igniteui-angular";
 })
 export class BannerSample4Component implements OnInit {
   public automaticReplies = true;
-  public priorityMap = {
-    "-1": "priority_low",
-    "0": "",
-    "1": "priority_high"
-  };
+  public automaticReplyText = `Dear Sender,
+  I am currently OOO with limited access to e-mails.
+
+  I will respond to your as soon as I can.
+  For urgent matters, please contact ttestington@example.com;
+
+  Regards,
+  Qually T`;
 
   @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
   public contentWidth = "384px";
@@ -33,9 +36,5 @@ export class BannerSample4Component implements OnInit {
   public automaticRepliesSwitch(state: boolean) {
     this.automaticReplies = state;
     this.banner.close();
-  }
-
-  public get bannerDisplay() {
-    return this.banner.collapsed ? "" : "block";
   }
 }
