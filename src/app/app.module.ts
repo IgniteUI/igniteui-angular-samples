@@ -198,7 +198,7 @@ import { InputGroupSample5Component } from "./input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { TreeLocalDataService} from "./tree-grid/tree-grid-finjs/treeLocalData.service";
+import { TreeLocalDataService } from "./tree-grid/tree-grid-finjs/treeLocalData.service";
 
 import {
     LinearProgressbarSample1Component
@@ -292,9 +292,11 @@ import {
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
 import {
+    TreeGridBatchEditingSampleComponent
+} from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
-
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -515,6 +517,7 @@ import {
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         TreeGridRowEditSampleComponent,
+        TreeGridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         GridCustomFilteringComponent,
         TreeGridFinJSComponent

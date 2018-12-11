@@ -333,6 +333,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -1645,6 +1646,11 @@ export const samplesRoutes: Routes = [
         component: ShadowsSample2Component,
         data: { displayName: "Shadows sample 2", parentName: "Shadows" },
         path: "shadows-sample-2"
+    },
+    {
+        component: TreeGridBatchEditingSampleComponent,
+        data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
+        path: "treegrid-batchediting"
     },
     {
         component: TreeGridChilddatakeySampleComponent,
