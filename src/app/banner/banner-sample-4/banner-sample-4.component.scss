@@ -11,41 +11,69 @@
     box-sizing: border-box;
     border-bottom: 1px solid #d3d3d3;
 }
+.settings__content, .settings__list, .settings__panel {
+    display: flex;
+    flex-flow: column;
+}
+
+.settings__body, .settings__list {
+    align-items: center;
+    justify-content: center;
+}
+
+.settings__list, .settings__panel {
+    height: 100%;
+}
+
 .settings__content {
     height: 302px;
-    display: flex;
-    flex-flow: column; 
 }
 
 .settings__body {
+    background: #f3f3f3;
     display: flex;
     flex-flow: row;
-    justify-items: center;
-    align-items: center;
     height: 302px;
 }
 
 .settings__list {
     width: 30%;
-    height: 100%;
-    display: flex;
     box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-}
-.settings__panel {
-    width: 70%;
-    height: 80%;
-    display: flex;
-    flex-flow: column;
+    
 }
 
+.settings__list h5 {
+    padding: 8px;
+}
+
+.settings__panel {
+    width: 70%;
+}
+
+
 textarea {
-    padding: 5%;
-    height: 90%;
-    width: 90%;
+    min-height: 176px;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,.12);
+    background-color: #fff;
 }
 
 .igx-switch {
-    padding: 8px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    min-height: 36px;
+}
+
+igx-input-group {
+    width: 90%;
+    max-height: 264px;
+    height: 80%;
+}
+
+igx-input-group > * {
+    height: 100%;
+}
+
+igx-input-group > * > * {
+    padding-top: 0;
 }

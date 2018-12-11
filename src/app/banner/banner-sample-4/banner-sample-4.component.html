@@ -13,15 +13,18 @@
         </igx-banner>
         <div class="settings__body">
             <div class="settings__list">
-                <span class="settings__avatar">
-                    <igx-avatar initials="IG" [roundShape]="true" size="medium">
-                    </igx-avatar>
-                </span>
+                <igx-avatar initials="QT" [roundShape]="true" size="medium">
+                </igx-avatar>
+                <h5>
+                    Qually T
+                </h5>
             </div>
             <div class="settings__panel">
                 <igx-switch [(ngModel)]="automaticReplies" (ngModelChange)="toggleBanner($event)">Automatic Replies</igx-switch>
-                <textarea [readonly]="automaticReplies">{{ automaticReplyText }}
-                </textarea>
+                <igx-input-group type='border'>
+                    <textarea igxInput [readonly]="automaticReplies">{{ automaticReplyText }}
+                    </textarea>
+                </igx-input-group>
             </div>
         </div>
     </div>
