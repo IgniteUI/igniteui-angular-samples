@@ -1,13 +1,13 @@
 <div class="grid__wrapper">
 
   <igx-grid #grid1 [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px" width="100%" displayDensity="cosy">
-      <igx-column header="Rank" headerClasses="myClass" field="Id" sortable="true">
+      <igx-column header="Rank" headerClasses="myClass" field="Id" sortable="true" width = "16%">
       </igx-column>
 
-    <igx-column field="Name" header="Athlete">
+    <igx-column field="Name" header="Athlete" width = "16%">
     </igx-column>
 
-    <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number">
+    <igx-column field="BeatsPerMinute" header="Beats per minute" dataType="number" width = "16%">
             <ng-template igxCell let-val>
                 <div class="cell__inner">
                     {{ val }}
@@ -15,7 +15,7 @@
             </ng-template>
         </igx-column>
 
-      <igx-column field="TopSpeed" header="Top Speed" dataType="number">
+      <igx-column field="TopSpeed" header="Top Speed" dataType="number" width = "16%">
           <ng-template igxCell let-val>
               <div class="cell__inner">
                   {{ val | number: '1.1-5' }}
@@ -23,7 +23,7 @@
           </ng-template>
       </igx-column>
 
-      <igx-column field="TrackProgress" header="Track Progress">
+      <igx-column field="TrackProgress" header="Track Progress" width = "18%">
           <ng-template igxCell let-val>
               <div class="linear-bar-container">
                   <igx-linear-bar [textVisibility]="false" class="cell__inner_2" [value]="val"></igx-linear-bar>
@@ -31,7 +31,7 @@
           </ng-template>
       </igx-column>
 
-      <igx-column field="CountryFlag" header="Country">
+      <igx-column field="CountryFlag" header="Country" width = "18%">
           <ng-template igxCell let-cell="cell">
               <div class="cell__inner_2">
                   <span>

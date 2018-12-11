@@ -8,6 +8,9 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
+import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
+import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -265,6 +268,7 @@ import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.compone
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
+import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -341,6 +345,7 @@ import {
 import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
+import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
@@ -419,6 +424,26 @@ export const samplesRoutes: Routes = [
         component: BadgeSample3Component,
         data: { displayName: "Badge for List Items", parentName: "Badge" },
         path: "badge-sample-3"
+    },
+    {
+        component: BannerSample1Component,
+        data: { displayName: "Basic Banner", parentName: "Banner" },
+        path: "banner-sample-1"
+    },
+    {
+        component: BannerSample2Component,
+        data: { displayName: "Custom Actions Banner", parentName: "Banner" },
+        path: "banner-sample-2"
+    },
+    {
+        component: BannerSample3Component,
+        data: { displayName: "Animations Banner", parentName: "Banner" },
+        path: "banner-sample-3"
+    },
+    {
+        component: BannerSample4Component,
+        data: { displayName: "Settings Banner", parentName: "Banner" },
+        path: "banner-sample-4"
     },
     {
         component: CardComponent,
@@ -1089,6 +1114,11 @@ export const samplesRoutes: Routes = [
         component: NavbarSample1Component,
         data: { displayName: "Navbar Action Button Icon", parentName: "Navbar" },
         path: "navbar-sample-1"
+    },
+    {
+        component: NavbarSample2Component,
+        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
+        path: "navbar-sample-2"
     },
     {
         component: CardSample1Component,
