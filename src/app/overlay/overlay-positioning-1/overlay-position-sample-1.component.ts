@@ -1,7 +1,7 @@
-import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
-    AutoPositionStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxCardModule, IgxIconModule, IgxOverlayService, VerticalAlignment } from "igniteui-angular";
+    AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy, GlobalPositionStrategy,
+    HorizontalAlignment, IgxOverlayService, OverlayEventArgs, VerticalAlignment } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
@@ -9,13 +9,16 @@ import {
     templateUrl: "./overlay-position-sample-1.component.html",
     providers: [IgxOverlayService]
 })
-export class OverlayPositionSample1Component {
+export class OverlayPositionSample1Component implements OnInit, OnDestroy {
 
     @ViewChild("directionDemo")
     public directionDemo: ElementRef;
 
     @ViewChild("autoDemo")
     public autoDemo: ElementRef;
+
+    @ViewChild("elasticDemo")
+    public elasticDemo: ElementRef;
 
     @ViewChild("overlayDemo")
     public overlayDemo: ElementRef;
@@ -52,5 +55,29 @@ export class OverlayPositionSample1Component {
                 horizontalDirection, verticalDirection
             })
         });
+    }
+
+    public onClickDirectionElastic(horizontalDirection: HorizontalAlignment, verticalDirection: VerticalAlignment) {
+        this.overlay.show(this.overlayDemo, {
+            positionStrategy: new ElasticPositionStrategy({
+                target: this.elasticDemo.nativeElement,
+                horizontalDirection, verticalDirection,
+                minSize: { width: 80, height: 20 }
+            })
+        });
+    }
+
+    public ngOnInit() {
+        this.overlay.onOpened.subscribe((e: OverlayEventArgs) => {
+            this.overlayDemo.nativeElement.style.overflow = "auto";
+        });
+        this.overlay.onClosed.subscribe((e: OverlayEventArgs) => {
+            this.overlayDemo.nativeElement.style.overflow = "none";
+        });
+    }
+
+    public ngOnDestroy() {
+        this.overlay.onOpened.unsubscribe();
+        this.overlay.onClosed.unsubscribe();
     }
 }
