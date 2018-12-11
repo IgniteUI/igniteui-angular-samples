@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import {
     DefaultSortingStrategy,
+    GridSummaryCalculationMode,
+    GridSummaryPosition,
     IgxGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryOperand,
     IgxSummaryResult,
     ISortingExpression,
-    SortingDirection,
-    GridSummaryPosition,
-    GridSummaryCalculationMode
+    SortingDirection
 } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 
@@ -86,19 +86,22 @@ export class GridGroupBySummarySampleComponent {
 
         this.summaryCalcModes = [
             {
-                label: GridSummaryCalculationMode.rootLevelOnly,
+                label: "Root Level Only",
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.rootLevelOnly,
-                togglable: true
+                togglable: true,
+                value: GridSummaryCalculationMode.rootLevelOnly
             },
             {
-                label: GridSummaryCalculationMode.childLevelsOnly,
+                label: "Child Levels Only",
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.childLevelsOnly,
-                togglable: true
+                togglable: true,
+                value: GridSummaryCalculationMode.childLevelsOnly
             },
             {
-                label: GridSummaryCalculationMode.rootAndChildLevels,
+                label: "Root And Child Levels",
                 selected: this.summaryCalculationMode === GridSummaryCalculationMode.rootAndChildLevels,
-                togglable: true
+                togglable: true,
+                value: GridSummaryCalculationMode.rootAndChildLevels
             }
         ];
     }
@@ -109,7 +112,7 @@ export class GridGroupBySummarySampleComponent {
     }
 
     public selectSummaryCalcMode(event) {
-        this.summaryCalculationMode = this.summaryCalcModes[event.index].label;
+        this.summaryCalculationMode = this.summaryCalcModes[event.index].value;
         this.grid1.summaryCalculationMode = this.summaryCalculationMode;
     }
 
