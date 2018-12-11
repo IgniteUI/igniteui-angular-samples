@@ -75,6 +75,7 @@ import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/g
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
@@ -359,6 +360,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridToolbarSample3Component],
                 ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridToolbarSample4Component,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridToolbarSample4Component, IgxAvatarModule, IgxGridModule],
+                ngDeclarations: [GridToolbarSample4Component],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
+                ngProviders: []
             })
         }));
 
