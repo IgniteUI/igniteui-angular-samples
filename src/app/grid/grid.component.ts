@@ -181,15 +181,11 @@ class CustomTopSpeedSummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
-        if (data && !data.length) {
-            return;
-        }
-
         const result = [];
         result.push({
             key: "average",
             label: "average",
-            summaryResult: IgxNumberSummaryOperand.average(data).toFixed(2)
+            summaryResult: data.length ? IgxNumberSummaryOperand.average(data).toFixed(2) : null
         });
 
         return result;
@@ -203,10 +199,6 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
-        if (data && !data.length) {
-            return;
-        }
-
         const result = [];
         result.push(
             {
@@ -220,7 +212,7 @@ export class CustomBPMSummary extends IgxNumberSummaryOperand {
             }, {
                 key: "average",
                 label: "average",
-                summaryResult: IgxNumberSummaryOperand.average(data).toFixed(2)
+                summaryResult: data.length ? IgxNumberSummaryOperand.average(data).toFixed(2) : null
             });
 
         return result;
