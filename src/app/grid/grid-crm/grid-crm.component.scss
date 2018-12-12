@@ -297,6 +297,12 @@ $summary-theme: igx-grid-summary-theme(
         }
     }
 
+    .igx-grid-toolbar__actions {
+        .igx-button--flat {
+            background: rgba(0,0,0,.2);
+        }
+    }
+
     .caseSensitiveButton {
         margin-left: 8px;
     }
