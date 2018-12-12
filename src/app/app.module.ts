@@ -180,6 +180,7 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
@@ -478,6 +479,7 @@ import {
         GridToolbarSample1Component,
         GridToolbarSample2Component,
         GridToolbarSample3Component,
+        GridToolbarSample4Component,
         RemoteFilteringSampleComponent,
         RadioGroupSampleComponent,
         GridMovingSampleComponent,
