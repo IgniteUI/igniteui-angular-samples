@@ -12,10 +12,10 @@ export class BannerSample4Component implements OnInit {
   I am currently OOO with limited access to e-mails.
 
   I will respond to your as soon as I can.
-  For urgent matters, please contact ttestington@example.com;
+  For urgent matters, please contact qually-t@example.com;
 
   Regards,
-  Qually T`;
+  James Gort`;
 
   @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
   public contentWidth = "384px";
