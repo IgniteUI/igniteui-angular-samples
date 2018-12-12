@@ -145,7 +145,7 @@ $summary-theme: igx-grid-summary-theme(
     .crm-sample-toolbar2 {
         justify-content: space-between;
         background: $primary-500;
-        width: 867px;
+        width: 847px;
         height: 56px;
         display: flex;
         align-items: center;
@@ -298,6 +298,7 @@ $summary-theme: igx-grid-summary-theme(
     }
 
     .igx-grid-toolbar__actions {
+        padding-right: 20px;
         .igx-button--flat {
             background: rgba(0,0,0,.2);
         }
