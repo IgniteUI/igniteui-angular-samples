@@ -8,6 +8,9 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
+import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
+import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -225,6 +228,7 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -339,6 +343,7 @@ import {
 import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
+import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
@@ -417,6 +422,26 @@ export const samplesRoutes: Routes = [
         component: BadgeSample3Component,
         data: { displayName: "Badge for List Items", parentName: "Badge" },
         path: "badge-sample-3"
+    },
+    {
+        component: BannerSample1Component,
+        data: { displayName: "Basic Banner", parentName: "Banner" },
+        path: "banner-sample-1"
+    },
+    {
+        component: BannerSample2Component,
+        data: { displayName: "Custom Actions Banner", parentName: "Banner" },
+        path: "banner-sample-2"
+    },
+    {
+        component: BannerSample3Component,
+        data: { displayName: "Animations Banner", parentName: "Banner" },
+        path: "banner-sample-3"
+    },
+    {
+        component: BannerSample4Component,
+        data: { displayName: "Settings Banner", parentName: "Banner" },
+        path: "banner-sample-4"
     },
     {
         component: CardComponent,
@@ -1556,6 +1581,11 @@ export const samplesRoutes: Routes = [
         component: GridToolbarSample3Component,
         data: { displayName: "Grid Toolbar Export", parentName: "Grid" },
         path: "grid-toolbar-sample-3"
+    },
+    {
+        component: GridToolbarSample4Component,
+        data: { displayName: "Grid Toolbar Custom Content", parentName: "Grid" },
+        path: "grid-toolbar-sample-4"
     },
     {
         component: GridMovingSampleComponent,
