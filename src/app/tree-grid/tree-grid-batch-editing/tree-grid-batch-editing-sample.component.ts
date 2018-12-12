@@ -131,14 +131,14 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
     }
 
     public stateFormatter(value: string) {
-        return JSON.stringify(value);
+        return value ? JSON.stringify(value) : "";
     }
 
     public typeFormatter(value: string) {
-        return value.toUpperCase();
+        return value ? value.toUpperCase() : "";
     }
 
     private classFromType(type: string): string {
-        return `transaction--${type.toLowerCase()}`;
+        return type ? `transaction--${type.toLowerCase()}` : "";
     }
 }
