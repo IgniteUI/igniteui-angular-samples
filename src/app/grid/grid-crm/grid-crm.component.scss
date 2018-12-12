@@ -143,6 +143,7 @@ $summary-theme: igx-grid-summary-theme(
     }
 
     .crm-sample-toolbar2 {
+        justify-content: space-between;
         background: $primary-500;
         width: 867px;
         height: 56px;
@@ -174,8 +175,8 @@ $summary-theme: igx-grid-summary-theme(
     .sample-flex-container {
         display: flex;
         align-self: center;
-        flex: 1 1 auto;
         justify-content: flex-end;
+        width: 500px;
     }
 
     .crm-sample-toolbar__title {
@@ -198,6 +199,7 @@ $summary-theme: igx-grid-summary-theme(
 
     .igx-input-group--search .igx-input-group__bundle {
         height: rem(36px);
+        width: 500px;
         overflow: hidden;
         background-color: $primary-700;
     }
@@ -213,11 +215,8 @@ $summary-theme: igx-grid-summary-theme(
                 transition: background 500ms ease-in-out;
             }
 
-            max-width: 50%;
-            min-width: 50%;
             font-size: 13px;
             overflow: hidden;
-            flex: 1 1 auto;
 
             igx-icon {
                 font-size: 1rem;
