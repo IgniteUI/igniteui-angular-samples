@@ -269,6 +269,9 @@ import {
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
+import {
+    TimepickerDropdownSampleComponent
+} from "./timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -295,7 +298,6 @@ import {
 import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
-import { TimepickerDropdownSampleComponent } from './timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component';
 
 @NgModule({
     bootstrap: [AppComponent],
