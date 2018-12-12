@@ -1,9 +1,11 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+
 .settings__wrapper {
-    max-width: 560px;
+    max-width: 400px;
     margin: 24px auto auto auto;
     height: 360px;
     overflow: hidden;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    box-shadow: igx-elevation($elevations, 2)
 }
 
 .settings__banner { 
@@ -11,69 +13,44 @@
     box-sizing: border-box;
     border-bottom: 1px solid #d3d3d3;
 }
-.settings__content, .settings__list, .settings__panel {
-    display: flex;
-    flex-flow: column;
-}
-
-.settings__body, .settings__list {
-    align-items: center;
-    justify-content: center;
-}
-
-.settings__list, .settings__panel {
-    height: 100%;
-}
-
 .settings__content {
     height: 302px;
-}
-
-.settings__body {
-    background: #f3f3f3;
     display: flex;
-    flex-flow: row;
-    height: 302px;
+    flex-flow: column;
+    background: igx-color($default-palette, 'grays', 50);
 }
 
 .settings__list {
-    width: 30%;
-    box-sizing: border-box;
-    
-}
+    display: flex;
+    align-items: center;
+    padding: 16px 16px 8px;
 
-.settings__list h5 {
-    padding: 8px;
+    .name {
+      margin-left: 16px;
+    }
 }
 
 .settings__panel {
-    width: 70%;
-}
-
-
-textarea {
-    min-height: 176px;
-    height: 100%;
-    border: 1px solid rgba(0,0,0,.12);
-    background-color: #fff;
-}
-
-.igx-switch {
-    padding-top: 10px;
-    margin-bottom: 10px;
-    min-height: 36px;
+    flex-flow: column;
+    align-items: stretch;
+    padding: 0 16px;
 }
 
 igx-input-group {
-    width: 90%;
-    max-height: 264px;
-    height: 80%;
+  background-color: #fff;
 }
 
-igx-input-group > * {
-    height: 100%;
+textarea {
+  resize: none;
+  height: 14rem;
 }
 
-igx-input-group > * > * {
-    padding-top: 0;
+.igx-switch {
+    padding: 8px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.settings__pannel-switch {
+  padding: 8px 0;
 }
