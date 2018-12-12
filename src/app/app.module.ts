@@ -295,6 +295,7 @@ import {
 import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TimepickerDropdownSampleComponent } from './timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -458,6 +459,7 @@ import {
         TimePickerSample3Component,
         TimePickerSample4Component,
         TimePickerSample5Component,
+        TimepickerDropdownSampleComponent,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,

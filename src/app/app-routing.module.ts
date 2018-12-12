@@ -323,6 +323,7 @@ import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/tim
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
+import { TimepickerDropdownSampleComponent } from "./timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -982,6 +983,11 @@ export const samplesRoutes: Routes = [
         component: TimePickerSample5Component,
         data: { displayName: "Timepicker Input Group Template", parentName: "Timepicker" },
         path: "timepicker-sample-5"
+    },
+    {
+        component: TimepickerDropdownSampleComponent,
+        data: { displayName: "Timepicker DropDown", parentName: "Timepicker" },
+        path: "timepicker-dropdown-sample"
     },
     {
         component: BulletGraphAnimationComponent,
