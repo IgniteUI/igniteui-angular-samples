@@ -202,7 +202,7 @@ import { InputGroupSample5Component } from "./input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { TreeLocalDataService} from "./tree-grid/tree-grid-finjs/treeLocalData.service";
+import { TreeLocalDataService } from "./tree-grid/tree-grid-finjs/treeLocalData.service";
 
 import {
     LinearProgressbarSample1Component
@@ -232,7 +232,7 @@ import {
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
-import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
@@ -314,6 +314,8 @@ import {
     bootstrap: [AppComponent],
     declarations: [
         EmailFilterPipe,
+        DisplayFormatPipe,
+        InputFormatPipe,
         AppComponent,
         BadgeSample1Component,
         BadgeSample2Component,
