@@ -161,6 +161,9 @@ import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-edit
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import {
+    GridGroupBySummarySampleComponent
+} from "./grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
@@ -466,6 +469,7 @@ import {
         InputGroupSample6Component,
         GridSample3Component,
         GridGroupBySampleComponent,
+        GridGroupBySummarySampleComponent,
         ExcelExportComponent,
         ExcelExportSample1Component,
         CsvExportComponent,
