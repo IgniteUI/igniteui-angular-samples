@@ -31,7 +31,7 @@
     }
   
     .negative {
-      color: #4eb862 !important;
+      color: #d31642 !important;
     }
   
     .negative.strongNegative {
@@ -79,68 +79,68 @@
         padding-right: 4px;
       }
     }
-  
-    // selected
-    .igx-grid__td--selected.changePos1,
-    .igx-grid__td--selected.changePos2,
-    .igx-grid__td--selected.changePos {
-      background-color: #335e3b !important;
-      .finjs-icons,
-      .igx-grid__td-text {
-        color: #fff;
-      }
-    }
-  
-    .igx-grid__td--selected.changeNeg1,
-    .igx-grid__td--selected.changeNeg2,
-    .igx-grid__td--selected.changeNeg {
-      background-color: #7a1c32 !important;
-      .finjs-icons,
-      .igx-grid__td-text {
-        color: #fff;
-      }
-    }
-  
-    // STRONG
-  
-    // positive
-    .strongPositive {
-      .igx-grid__td-text {
-        background: #459a55;
-      }
-    }
-  
-    .strongPositive1 {
-      background: #459a55;
-      color: #fff;
-    }
-  
-    .strongPositive2 {
-      .igx-grid__td-text {
-        border-right: 4px solid #459a55;
-        padding-right: 4px;
-      }
-    }
-  
-    // negative
-    .strongNegative {
-      .igx-grid__td-text {
-        background: #d31642;
-        color: #fff;
-      }
-    }
-  
-    .strongNegative1 {
-      background: #d31642;
-      color: #fff;
-    }
-  
-    .strongNegative2 {
-      .igx-grid__td-text {
-        border-right: 4px solid #d31642;
-        padding-right: 4px;
-      }
-    }
+
+        // selected
+        .igx-grid__td--selected.changePos1,
+        .igx-grid__td--selected.changePos2,
+        .igx-grid__td--selected.changePos {
+          background-color: #335e3b !important;
+          .finjs-icons,
+          .igx-grid__td-text {
+            color: #fff;
+          }
+        }
+      
+        .igx-grid__td--selected.changeNeg1,
+        .igx-grid__td--selected.changeNeg2,
+        .igx-grid__td--selected.changeNeg {
+          background-color: #7a1c32 !important;
+          .finjs-icons,
+          .igx-grid__td-text {
+            color: #fff;
+          }
+        }
+      
+        // STRONG
+      
+        // positive
+        .strongPositive {
+          .igx-grid__td-text {
+            background: #459a55;
+          }
+        }
+      
+        .strongPositive1 {
+          background: #459a55;
+          color: #fff;
+        }
+      
+        .strongPositive2 {
+          .igx-grid__td-text {
+            border-right: 4px solid #459a55;
+            padding-right: 4px;
+          }
+        }
+      
+        // negative
+        .strongNegative {
+          .igx-grid__td-text {
+            background: #d31642;
+            color: #fff;
+          }
+        }
+      
+        .strongNegative1 {
+          background: #d31642;
+          color: #fff;
+        }
+      
+        .strongNegative2 {
+          .igx-grid__td-text {
+            border-right: 4px solid #d31642;
+            padding-right: 4px;
+          }
+        }
   
     // selected
     .igx-grid__td--selected.strongPositive1,
