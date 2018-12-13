@@ -31,6 +31,7 @@ import { InputGroupConfigGenerator } from "./../configs/InputGroupConfigGenerato
 import { LayoutConfigGenerator } from "./../configs/LayoutConfigGenerator";
 import { LinearProgressbarConfigGenerator } from "./../configs/LinearProgressbarConfigGenerator";
 import { ListConfigGenerator } from "./../configs/ListConfigGenerator";
+import { LocalizationConfigGenerator } from "./../configs/LocalizationConfigGenerator";
 import { MaskConfigGenerator } from "./../configs/MaskConfigGenerator";
 import { NavbarConfigGenerator } from "./../configs/NavbarConfigGenerator";
 import { NavdrawerConfigGenerator } from "./../configs/NavDrawerConfigGenerator";
@@ -80,14 +81,14 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerCo
     ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ExcelLibraryConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
-    GaugesConfigGenerator, DragAndDropConfigGenerator,
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, 
+    OverlayConfigGenerator, GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
-    ListConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
-    RippleConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator, SwitchConfigGenerator,
-    TabBarConfigGenerator, TabsConfigGenerator, TextHighlightConfigGenerator, ToastConfigGenerator,
-    ToggleConfigGenerator, TreeGridConfigGenerator, TooltipConfigGenerator, TimePickerConfigGenerator,
-    ShadowsConfigGenerator];
+    ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
+    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator, 
+    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator, 
+    TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator, 
+    TooltipConfigGenerator, TimePickerConfigGenerator, ShadowsConfigGenerator];
 
 export class SampleAssetsGenerator extends Generator {
     private _dependencyResolver: DependencyResolver;
