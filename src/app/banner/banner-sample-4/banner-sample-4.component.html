@@ -1,28 +1,44 @@
-<div class="settings__wrapper">
+<article class="settings">
     <igx-navbar title="Settings">
         <igx-icon>settings</igx-icon>
     </igx-navbar>
-    <div class="settings__content">
-        <igx-banner class="settings__banner" #connectionBanner>
-            <igx-icon>notification_important</igx-icon>
-            You are currently sending automatic replies.
-            <igx-banner-actions>
-                <button igxButton igxRipple (click)="automaticRepliesSwitch(false)">Turn Off</button>
-                <button igxButton igxRipple (click)="connectionBanner.close()">DISMISS</button>
-            </igx-banner-actions>
-        </igx-banner>
-        <div class="settings__body">
-            <div class="settings__list">
-                <span class="settings__avatar">
-                    <igx-avatar initials="IG" [roundShape]="true" size="medium">
-                    </igx-avatar>
-                </span>
-            </div>
-            <div class="settings__panel">
-                <igx-switch [(ngModel)]="automaticReplies" (ngModelChange)="toggleBanner($event)">Automatic Replies</igx-switch>
-                <textarea [readonly]="automaticReplies">{{ automaticReplyText }}
-                </textarea>
-            </div>
+      
+    <igx-banner #connectionBanner>
+        <igx-icon>notification_important</igx-icon>
+        <span>You are currently sending automatic replies.</span>
+        <igx-banner-actions>
+            <button igxButton igxRipple (click)="automaticRepliesSwitch(false)">Turn Off</button>
+            <button igxButton igxRipple (click)="connectionBanner.close()">Dismiss</button>
+        </igx-banner-actions>
+    </igx-banner>
+
+    <section class="profile">
+        <igx-avatar 
+            class="profile__avatar" 
+            src="assets/images/men/15.jpg" 
+            [roundShape]="true" 
+            size="small">
+        </igx-avatar>
+        <div class="profile__detail">
+          <h4 class="igx-typography__subtitle-2">James Gort</h4>
+          <h6 class="igx-typography__caption">jgort@example.com</h6>
         </div>
-    </div>
-</div>
+    </section>
+
+    <section class="reply">
+        <igx-switch 
+            class="reply__switch"
+            labelPosition="before"
+            [(ngModel)]="automaticReplies"
+            (ngModelChange)="toggleBanner($event)">
+            Automatic Replies
+        </igx-switch>
+
+        <igx-input-group type="border" [disabled]="true">
+           <textarea 
+               class="reply__message" 
+               igxInput>{{ automaticReplyText }}
+           </textarea>
+        </igx-input-group>
+    </section>
+</article>

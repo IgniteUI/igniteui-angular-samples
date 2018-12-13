@@ -211,6 +211,7 @@ import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-edit
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupBySummarySampleComponent } from "./grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
@@ -228,6 +229,7 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -816,6 +818,11 @@ export const samplesRoutes: Routes = [
         component: GridGroupBySampleComponent,
         data: { displayName: "Grid GroupBy", parentName: "Grid" },
         path: "grid-groupby"
+    },
+    {
+        component: GridGroupBySummarySampleComponent,
+        data: { displayName: "Grid GroupBy Summary", parentName: "Grid" },
+        path: "grid-groupby-summary"
     },
     {
         component: GridEditingSampleComponent,
@@ -1598,6 +1605,11 @@ export const samplesRoutes: Routes = [
         component: GridToolbarSample3Component,
         data: { displayName: "Grid Toolbar Export", parentName: "Grid" },
         path: "grid-toolbar-sample-3"
+    },
+    {
+        component: GridToolbarSample4Component,
+        data: { displayName: "Grid Toolbar Custom Content", parentName: "Grid" },
+        path: "grid-toolbar-sample-4"
     },
     {
         component: GridMovingSampleComponent,

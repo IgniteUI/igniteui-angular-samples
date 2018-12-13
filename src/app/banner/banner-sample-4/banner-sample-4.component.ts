@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxBannerComponent } from "igniteui-angular";
-  // tslint:disable:object-literal-sort-keys
+// tslint:disable:object-literal-sort-keys
 @Component({
   selector: "banner-sample-4",
   templateUrl: "./banner-sample-4.component.html",
@@ -9,13 +9,14 @@ import { IgxBannerComponent } from "igniteui-angular";
 export class BannerSample4Component implements OnInit {
   public automaticReplies = true;
   public automaticReplyText = `Dear Sender,
-  I am currently OOO with limited access to e-mails.
 
-  I will respond to your as soon as I can.
-  For urgent matters, please contact ttestington@example.com;
+I am currently OOO with limited access to e-mails.
 
-  Regards,
-  Qually T`;
+I will respond to your as soon as I can.
+For urgent matters, please contact qually-t@example.com;
+
+Regards,
+Gort`;
 
   @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
   public contentWidth = "384px";
