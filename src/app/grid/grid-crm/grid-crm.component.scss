@@ -18,9 +18,8 @@
     );
 
     $summary-theme: igx-grid-summary-theme(
-        $background-color: #a7d9fa,
-        $result-color:igx-color($crm-grid-palette, "primary", 500),
-        $border-color: #7aa0b8
+        $background-color: #f0f8fe,
+        $result-color: igx-color($crm-grid-palette, "primary", 500)
     );
 
     $search-theme: igx-input-group-theme(
@@ -31,8 +30,8 @@
     );
 
     $crm-grid-theme: igx-grid-theme(
-        $header-background: #a7d9fa,
-        $header-border-color: #95c4e1
+        $header-background: #f0f8fe,
+        $header-border-color: #dde5eb
     );
 
     $crm-grid-toolbar: igx-grid-toolbar-theme(
@@ -66,7 +65,7 @@
     }
 
     .igx-grid__summaries-patch {
-        background: #a7d9fa;
+        background: #f0f8fe;
     }
 
     .grid__wrapper {
