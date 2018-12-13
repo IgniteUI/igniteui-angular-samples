@@ -163,6 +163,14 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
         this.localService.getData(this.volume);
     }
 
+    public onThemeChanged(event: any) {
+        if (event.checked) {
+            document.body.querySelector("div.main").classList.add("dark-theme");
+        } else {
+            document.body.querySelector("div.main").classList.remove("dark-theme");
+        }
+    }
+
     private negative = (rowData: any): boolean => {
         return rowData["Change(%)"] < 0;
     }
