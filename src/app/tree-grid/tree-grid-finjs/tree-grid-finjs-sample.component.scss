@@ -1,536 +1,176 @@
-@import "~igniteui-angular/lib/core/styles/themes/index";
-
-$finjs-palette: igx-palette(#09f, #72da67, #1377d5, #4eb862, #fbb13c, #ff134a);
-@include igx-core();
-
-$exclude: (
-    igx-grid
-);
-
-:host::ng-deep {
-    $dark-text: #000;
-    $light-text: #000;
-    $disabled-text: rgba(255,255,255, .38);
-
-    .finjs-dark-theme {
-        .igx-input-group__input::placeholder,
-        .igx-input-group__textarea::placeholder {
-            color: #999!important;
-        }
-
-        ::-moz-placeholder {
-            opacity: 1;
-        }
-
-        .finjs-icons {
-            display: flex;
-            align-items: center;
-            igx-icon {
-                font-size: 16px;
-                width: 16px;
-                height: 16px;
-                margin-left: 4px;
-            }
-        }
-
-        @include igx-theme($finjs-palette ,$exclude:$exclude);
-
-        // VAR COLORS
-
-        $dark-text: #000;
-        $light-text: #fff;
-        $disabled-text: rgba(255,255,255, .38);
-        $content-background: #000;
-
-         $white-10:rgba(255, 255, 255, .04);
-         $white-20:rgba(255, 255, 255, .08);
-         $white-30:rgba(255, 255, 255, .12);
-         $white-40:rgba(255, 255, 255, .26);
-         $white-50:rgba(255, 255, 255, .38);
-         $white-60:rgba(255, 255, 255, .54);
-         $white-70:rgba(255, 255, 255, .62);
-         $white-80:rgba(255, 255, 255, .74);
-         $white-90:rgba(255, 255, 255, .87);
-
-
-        $finjs-dropdown-theme: igx-drop-down-theme(
-            $background-color:#222,
-            $focused-item-background: igx-color($finjs-palette, 'secondary'),
-            $selected-item-background: igx-color($finjs-palette, 'secondary'),
-            $selected-hover-item-background: igx-color($finjs-palette, 'secondary', 400),
-            $selected-focus-item-background: igx-color($finjs-palette, 'secondary', 400),
-            $selected-focus-item-text-color: #000,
-            $selected-hover-item-text-color: #000
-        );
-
-        @include igx-drop-down($finjs-dropdown-theme);
-
-        // GRID DARK THEME
-        $finjs-grid-theme: igx-grid-theme(
-            $content-background: $content-background,
-            $content-text-color: $light-text,
-            $filtering-row-background:#2F2F2F,
-
-            $header-background: igx-color($finjs-palette, 'grays', 800),
-            $header-text-color: $white-70,
-            $header-border-color: $white-40,
-
-            $row-selected-background: #333,
-            $row-selected-text-color: text-contrast(#333),
-            $row-hover-background: #222,
-            $row-hover-text-color: text-contrast(#222),
-            $row-border-color: #333,
-
-            $cell-selected-background: igx-color($finjs-palette, 'primary'),
-            $cell-selected-text-color: igx-color($finjs-palette, 'grays', 900),
-
-            $group-count-background: #333,
-            $group-label-icon: igx-color($finjs-palette, 'secondary', 500),
-            $group-label-column-name-text: igx-color($finjs-palette, 'secondary', 500),
-
-            $expand-icon-color: $white-60,
-            $expand-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
-            $expand-all-icon-color: $white-60,
-            $expand-all-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
-
-            $drop-area-text-color: #fff,
-            $drop-area-icon-color: #b4b4b4,
-            $drop-area-background: #333,
-            $drop-area-on-drop-background: #ddd,
-
-            $pinned-border-color: igx-color($finjs-palette, 'secondary', 300)
-        );
-
-        @include igx-grid($finjs-grid-theme);
-
-        .igx-grid__group-row--active {
-            background: #102910!important;
-        }
-
-        .igx-grid__filtering-row-scroll-end {
-            &::before {
-                background: linear-gradient(to right, #2f2f2f, transparent);
-            }
-        }
-
-        .igx-grid__filtering-row-scroll-start{
-            &::after {
-                background: linear-gradient(to left, #2f2f2f, transparent);
-            }
-        }
-
-        .igx-grid__filtering-row-scroll-start,
-        .igx-grid__filtering-row-scroll-end {
-            igx-icon {
-                color: #fff;
-            }
-        }
-
-        .crm-sample-toolbar__title {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            font-size: 12px;
-            padding-left: 16px;
-            color: #999;
-        }
-
-        // INPUT GROUP
-        $finjs-input-group-theme: igx-input-group-theme(
-            $palette: $finjs-palette,
-            $idle-text-color: $light-text,
-            $filled-text-color: $light-text,
-            $focused-text-color: $light-text,
-            $disabled-text-color: $disabled-text
-        );
-
-        @include igx-input-group($finjs-input-group-theme);
-
-        // CHIPS THEME
-        $finjs-chip-theme: igx-chip-theme(
-            $palette: $finjs-palette,
-            $background: #333,
-            $hover-background: #444,
-            $focus-background:#222
-        );
-
-        @include igx-chip($finjs-chip-theme);
-
-
-        // CHECKBOX
-        $finjs-checkbox-theme: igx-checkbox-theme(
-            $empty-color: $white-70,
-            $tick-color: $dark-text
-        );
-
-        @include igx-checkbox($finjs-checkbox-theme);
-
-
-        // TOOLBAR
-        $finjs-toolbar-theme: igx-grid-toolbar-theme(
-            $background-color: #222,
-            $dropdown-background: #222
-        );
-
-        @include igx-grid-toolbar($finjs-toolbar-theme);
-
-        // BUTTON GROUP
-        $finjs-btn-group-theme: igx-button-group-theme(
-            $item-background: #222
-        );
-
-        @include igx-button-group($finjs-btn-group-theme);
-
-
-        // GRID FILTER
-        $finjs-filtering-theme: igx-grid-filtering-theme(
-            $toggle-icon-color: $white-70,
-            $toggle-icon-filtered-color: igx-color($finjs-palette, 'secondary', 500),
-            $toggle-icon-active-color: igx-color($finjs-palette, 'secondary', 500),
-            $toggle-icon-hover-color: igx-color($finjs-palette, 'secondary', 500),
-            $menu-background: #111,
-            $menu-button-text-color: igx-color($finjs-palette, 'secondary', 500)
-        );
-
-        @include igx-grid-filtering($finjs-filtering-theme);
-
-
-        // SLIDER
-        $finjs-slider-theme: igx-slider-theme(
-        );
-
-        @include igx-slider($finjs-slider-theme);
-
-        // SWITCH
-        $finjs-switch-theme: igx-switch-theme(
-        );
-
-        @include igx-switch($finjs-switch-theme);
-
-
-        // BUTTON
-        .igx-button-group,
-        .igx-column-hiding__buttons,
-        .igx-filtering__options {
-            $finjs-button-theme: igx-button-theme(
-                $disabled-color: $white-50
-            );
-
-            @include igx-button($finjs-button-theme);
-
-        }
-
-        .igx-grid__td {
-            $finjs-button-theme: igx-button-theme(
-                $palette: $finjs-palette,
-                $icon-color: $light-text,
-                $icon-background: transparent,
-                $icon-hover-background: transparent,
-                $icon-hover-color: igx-color($finjs-palette, 'secondary'),
-                $icon-focus-background: transparent,
-                $icon-focus-color: igx-color($finjs-palette, 'secondary')
-            );
-
-            @include igx-button($finjs-button-theme);
-
-            igx-icon {
-                font-size: 18px;
-                width:18px;
-                height:18px;
-            }
-        }
-
-        .finjs-slider {
-            color: #fff;
-        }
-
-        .igx-filtering__expression select {
-            background: #333;
-            color: $light-text;
-            border-color: #444;
-        }
-
-        .finjs-sample-switch {
-            color: #fff;
-        }
-
-        &:after {
-            content: '';
-            background: #111;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-        }
-    }
-
-    .sliders-holder {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .finjs-slider {
-        flex: 1 0 0%;
-        padding: 0 20px;
-
-        &:first-of-type {
-            padding-left: 0;
-        }
-
-        &:first-of-type {
-            padding-right: 0;
-        }
-    }
-
-    .igx-filtering__expression select {
-        background: #333;
-        color: $light-text;
-        border-color: #444;
-    }
-
-    .finjssample-btn-group {
-        margin: 15px 15px 15px 0;
-        width: 720px;
-        .igx-button-group {
-            min-width: 720px;
-        }
-    }
-
-    .finjs-flex-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .slider-wrapper {
-        display: flex;
-        align-items: center;
-        flex: 1 0 0%;
-    }
-
-    .finjs-sample-switch {
-        display: flex;
-        align-items: center;
-        flex: 1 0 0%;
-        justify-content: flex-end;
-        margin-left: 20px;
-        span {
-            flex: 1 0 0%;
-            align-self: flex-start;
-        }
-    }
-
-    .grid__wrapper {
-        padding: 30px 15px;
-
-        // fake black background behind the grid
-        &:after {
-            content: '';
-            position: fixed;
-            display: flex;
-            z-index: -1;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-        }
-    }
-
+:host ::ng-deep {
     .finjs-icons {
-        display: flex;
-        align-items: center;
-        igx-icon {
-            font-size: 16px;
-            width: 16px;
-            height: 16px;
-            margin-left: 4px;
-        }
+      display: flex;
+      align-items: center;
+      igx-icon {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        margin-left: 4px;
+      }
     }
-
-    @keyframes fadeInOut {
-        0% { opacity: 0 }
-        50% { opacity: 1 }
-        100% { opacity: 0}
-    }
-
+  
     .changePos,
     .changeNeg,
     .strongPositive,
-    .strongNegative{
-        color: #fff!important;
-        .igx-grid__td-text {
-            padding: 2px 5px;
-        }
+    .strongNegative {
+      color: #fff !important;
+      .igx-grid__td-text {
+        padding: 2px 5px;
+      }
     }
-
-    .positive{
-        color: igx-color($finjs-palette, 'success', 500) !important;
+  
+    .positive {
+      color: #4eb862 !important;
     }
-
-    .positive.strongPositive{
-        .igx-grid__td-text {
-            color: rgba(78,184,98, .8)!important;
-        }
+  
+    .positive.strongPositive {
+      .igx-grid__td-text {
+        color: rgba(78, 184, 98, 0.8) !important;
+      }
     }
-
+  
     .negative {
-        color: igx-color($finjs-palette, 'error', 500) !important;
+      color: #4eb862 !important;
     }
-
+  
     .negative.strongNegative {
-        .igx-grid__td-text{
-            color:  rgba(255,19,74, .8)!important;
-        }
+      .igx-grid__td-text {
+        color: rgba(255, 19, 74, 0.8) !important;
+      }
     }
-
-
+  
     // NORMAL
-
+  
     // positive
-    .changePos{
-        .igx-grid__td-text {
-            background: #335E3B;
-        }
+    .changePos {
+      .igx-grid__td-text {
+        background: #335e3b;
+      }
     }
-
-    .changePos1{
-        background: #335E3B;
-        color: #fff;
+  
+    .changePos1 {
+      background: #335e3b;
+      color: #fff;
     }
-
-    .changePos2{
-        .igx-grid__td-text {
-            border-right:4px solid #335E3B;
-            padding-right: 4px;
-        }
+  
+    .changePos2 {
+      .igx-grid__td-text {
+        border-right: 4px solid #335e3b;
+        padding-right: 4px;
+      }
     }
-
+  
     // negative
     .changeNeg {
-        .igx-grid__td-text{
-            background: #7A1C32;
-        }
+      .igx-grid__td-text {
+        background: #7a1c32;
+      }
     }
-
+  
     .changeNeg1 {
-        color: #fff;
-        background: #7A1C32;
+      color: #fff;
+      background: #7a1c32;
     }
-
+  
     .changeNeg2 {
-        .igx-grid__td-text{
-            border-right:4px solid #7A1C32;
-            padding-right: 4px;
-        }
+      .igx-grid__td-text {
+        border-right: 4px solid #7a1c32;
+        padding-right: 4px;
+      }
     }
-
+  
     // selected
     .igx-grid__td--selected.changePos1,
     .igx-grid__td--selected.changePos2,
     .igx-grid__td--selected.changePos {
-        background-color: #335E3B!important;
-        .finjs-icons,
-        .igx-grid__td-text{
-            color: #FFF;
-        }
+      background-color: #335e3b !important;
+      .finjs-icons,
+      .igx-grid__td-text {
+        color: #fff;
+      }
     }
-
+  
     .igx-grid__td--selected.changeNeg1,
     .igx-grid__td--selected.changeNeg2,
     .igx-grid__td--selected.changeNeg {
-        background-color: #7A1C32!important;
-        .finjs-icons,
-        .igx-grid__td-text{
-            color: #FFF;
-        }
+      background-color: #7a1c32 !important;
+      .finjs-icons,
+      .igx-grid__td-text {
+        color: #fff;
+      }
     }
-
-
+  
     // STRONG
-
+  
     // positive
     .strongPositive {
-        .igx-grid__td-text{
-            background: #459A55;
-        }
+      .igx-grid__td-text {
+        background: #459a55;
+      }
     }
-
+  
     .strongPositive1 {
-        background: #459A55;
-        color: #fff;
-
+      background: #459a55;
+      color: #fff;
     }
-
-
+  
     .strongPositive2 {
-        .igx-grid__td-text{
-            border-right:4px solid #459A55;
-            padding-right: 4px;
-        }
+      .igx-grid__td-text {
+        border-right: 4px solid #459a55;
+        padding-right: 4px;
+      }
     }
-
+  
     // negative
     .strongNegative {
-        .igx-grid__td-text{
-            background: #D31642;
-            color: #fff;
-        }
-    }
-
-    .strongNegative1 {
-        background: #D31642;
+      .igx-grid__td-text {
+        background: #d31642;
         color: #fff;
+      }
     }
-
+  
+    .strongNegative1 {
+      background: #d31642;
+      color: #fff;
+    }
+  
     .strongNegative2 {
-        .igx-grid__td-text{
-            border-right:4px solid #D31642;
-            padding-right: 4px;
-        }
+      .igx-grid__td-text {
+        border-right: 4px solid #d31642;
+        padding-right: 4px;
+      }
     }
-
+  
     // selected
     .igx-grid__td--selected.strongPositive1,
     .igx-grid__td--selected.strongPositive2,
     .igx-grid__td--selected.strongPositive {
-        background-color: #459A55!important;
-        .finjs-icons,
-        .igx-grid__td-text{
-            color: #FFF;
-        }
+      background-color: #459a55 !important;
+      .finjs-icons,
+      .igx-grid__td-text {
+        color: #fff;
+      }
     }
-
+  
     .igx-grid__td--selected.strongNegative1,
     .igx-grid__td--selected.strongNegative2,
     .igx-grid__td--selected.strongNegative {
-        background-color: #D31642!important;
-        .finjs-icons,
-        .igx-grid__td-text{
-            color: #FFF;
+      background-color: #d31642 !important;
+      .finjs-icons,
+      .igx-grid__td-text {
+        color: #fff;
+      }
+    }
+  
+    .dark-theme { 
+      .finjs-slider {
+          color: #fff;
+        }
+      
+        .finjs-sample-switch {
+          color: #fff;
         }
     }
-
-
-
-    .toggle-button igx-icon.header-icon {
-        font-size: 1rem;
-        width: 1rem;
-        height: 1rem;
-        margin-right: rem(4);
-    }
-
-    .toggle-button igx-icon.pin-icon {
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 1rem;
-        height: 1rem;
-        margin-right: rem(4);
-    }
-}
-
-
+  }
+  
