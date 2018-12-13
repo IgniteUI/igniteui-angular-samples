@@ -24,7 +24,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
     public ngAfterViewInit() {
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
         const sortingExpr = this.grid.sortingExpressions[0];
-        this._chunkSize = parseInt(this.grid.height, 10) / this.grid.rowHeight;
+        this._chunkSize = Math.ceil(parseInt(this.grid.height, 10) / this.grid.rowHeight);
         this._remoteService.getData(
             {
                 chunkSize: this._chunkSize,
