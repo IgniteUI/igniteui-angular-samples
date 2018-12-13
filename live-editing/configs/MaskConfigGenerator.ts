@@ -46,6 +46,28 @@ export class MaskConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/mask/"
         }));
 
+        // mask sample 4
+        configs.push(new Config({
+            component: MaskSample4Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxMaskModule, IgxInputGroupModule, MaskSample4Component, IgxIconModule],
+                ngDeclarations: [MaskSample4Component],
+                ngImports: [IgxMaskModule, IgxInputGroupModule, IgxIconModule]
+            }),
+            shortenComponentPathBy: "/mask/"
+        }));
+
+        // mask sample 5
+        configs.push(new Config({
+            component: MaskSample5Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxMaskModule, IgxInputGroupModule, MaskSample5Component, IgxIconModule],
+                ngDeclarations: [MaskSample5Component],
+                ngImports: [IgxMaskModule, IgxInputGroupModule, IgxIconModule]
+            }),
+            shortenComponentPathBy: "/mask/"
+        }));
+
         return configs;
     }
 }

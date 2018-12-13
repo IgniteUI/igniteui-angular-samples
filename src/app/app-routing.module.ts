@@ -265,6 +265,8 @@ import { ListComponent } from "./list/list.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
@@ -1381,6 +1383,16 @@ export const samplesRoutes: Routes = [
         component: MaskSample3Component,
         data: { displayName: "Mask binding to Formatted/Raw Value", parentName: "Mask" },
         path: "mask-sample-3"
+    },
+    {
+        component: MaskSample4Component,
+        data: { displayName: "Additional custom formatting", parentName: "Mask" },
+        path: "mask-sample-4"
+    },
+    {
+        component: MaskSample5Component,
+        data: { displayName: "Placeholder", parentName: "Mask" },
+        path: "mask-sample-5"
     },
     {
         component: InputGroupSample1Component,

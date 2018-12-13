@@ -220,6 +220,8 @@ import { ListComponent } from "./list/list.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
@@ -453,6 +455,8 @@ import {
         MaskSample1Component,
         MaskSample2Component,
         MaskSample3Component,
+        MaskSample4Component,
+        MaskSample5Component,
         TimePickerSample1Component,
         TimePickerSample2Component,
         TimePickerSample3Component,
