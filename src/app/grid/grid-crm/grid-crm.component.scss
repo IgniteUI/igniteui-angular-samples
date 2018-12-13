@@ -18,7 +18,7 @@
     );
 
     $summary-theme: igx-grid-summary-theme(
-
+        $background-color: #a7d9fa,
         $result-color:igx-color($crm-grid-palette, "primary", 500),
         $border-color: #7aa0b8
     );
