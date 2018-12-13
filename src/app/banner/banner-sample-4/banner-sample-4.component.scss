@@ -1,56 +1,63 @@
 @import '~igniteui-angular/lib/core/styles/themes/utilities';
 
-.settings__wrapper {
-    max-width: 400px;
-    margin: 24px auto auto auto;
+.settings {
+    width: 400px;
     height: 360px;
+    margin: 24px auto;
     overflow: hidden;
-    box-shadow: igx-elevation($elevations, 2)
+    box-shadow: igx-elevation($elevations, 2);
+    background: #fff;
+    border-radius: 2px;
 }
 
-.settings__banner { 
-    width: 100%;
-    box-sizing: border-box;
-    border-bottom: 1px solid #d3d3d3;
-}
-.settings__content {
-    height: 302px;
-    display: flex;
-    flex-flow: column;
-    background: igx-color($default-palette, 'grays', 50);
+igx-banner { 
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
 }
 
-.settings__list {
+.profile {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 16px 16px 8px;
+    padding: 24px 16px;
+    background-image: url('assets/images/banner/cort.jpg');
 
-    .name {
-      margin-left: 16px;
+    &__avatar {
+        box-sizing: content-box;
+        border: 2px solid rgba(0, 0, 0, .24);
+        z-index: 2;
+    }
+
+    &__detail {
+        color: #000000;
+        margin-left: 16px;
+        z-index: 2;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #f3f3f3;
+        opacity: .64;
+        z-index: 1;
     }
 }
 
-.settings__panel {
+.reply {
     flex-flow: column;
-    align-items: stretch;
     padding: 0 16px;
-}
 
-igx-input-group {
-  background-color: #fff;
-}
+    &__switch {
+        width: 100%;
+        padding: 16px 0;
+        justify-content: space-between;
+    }
 
-textarea {
-  resize: none;
-  height: 14rem;
-}
-
-.igx-switch {
-    padding: 8px;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.settings__pannel-switch {
-  padding: 8px 0;
+    &__message {
+        resize: none;
+        height: 14rem;
+    }
 }
