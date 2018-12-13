@@ -163,9 +163,6 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
         this.localService.getData(this.volume);
     }
 
-    public onFrequencyChanged(event: any) {
-    }
-
     private negative = (rowData: any): boolean => {
         return rowData["Change(%)"] < 0;
     }
