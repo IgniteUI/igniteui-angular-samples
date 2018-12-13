@@ -163,6 +163,13 @@
     }
   }
 
+  .controls-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
   .switches {
     display: flex;
     justify-content: space-between;
