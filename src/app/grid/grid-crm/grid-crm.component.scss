@@ -1,7 +1,6 @@
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fontawesome.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
-
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 :host ::ng-deep {
@@ -35,14 +34,13 @@
     );
 
     $crm-grid-toolbar: igx-grid-toolbar-theme(
-        $background-color:igx-color($crm-grid-palette, "primary", 500)
+        $background-color: igx-color($crm-grid-palette, "primary", 500)
     );
 
     $crm-grid-toolbar-button: igx-button-theme(
         $flat-background: igx-color($crm-grid-palette, "primary", 800),
         $flat-focus-background: igx-color($crm-grid-palette, "primary", 800),
         $flat-hover-background: igx-color($crm-grid-palette, "primary", 900)
-
     );
 
     $crm-grid-search-button: igx-button-theme(
@@ -92,6 +90,7 @@
         align-items: center;
         padding-right: rem(24px);
         border-radius: 2px;
+
         & span {
             margin-right: auto;
         }
@@ -151,6 +150,7 @@
         width: 500px;
         overflow: hidden;
         background-color: igx-color($crm-grid-palette, "primary", 800);
+
         .igx-input-group__bundle-main {
             padding-top: 0.6rem;
             height: 36px;
@@ -193,7 +193,7 @@
             color: igx-color($crm-grid-palette, "primary", 100);
         }
 
-        .igx-input-group__input{
+        .igx-input-group__input {
             &::placeholder {
                 color: white;
                 opacity: 1;
@@ -207,6 +207,7 @@
                 igx-icon {
                     color: igx-color($crm-grid-palette, 'grays', 600);
                 }
+
                 .igx-input-group__bundle {
                     background: #fff;
                     color: igx-color($crm-grid-palette, 'grays', 600);
@@ -248,6 +249,7 @@
 
     .operationsContainer {
         display: flex;
+
         .igx-button--flat {
             -webkit-tap-highlight-color: transparent;
         }
@@ -300,7 +302,7 @@
 
     .dd-title {
         color: igx-color($crm-grid-palette, "primary", 600);
-        margin:0;
+        margin: 0;
         padding: 16px;
         font-size: 14px;
     }
@@ -332,7 +334,6 @@
         height: 1rem;
     }
 }
-
 
 
 .animated-fan {
