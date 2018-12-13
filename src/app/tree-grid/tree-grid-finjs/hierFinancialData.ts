@@ -10,8 +10,8 @@ export class FinancialData {
     public generateData(count: number): any[] {
         const currData = [];
         for (let i = 0; i < DATA.length; i++) {
-          DATA[i].ID = 10 + i;
-        }
+            DATA[i].ID = 10 + i;
+          }
 
         for (let i = 0; i < Contract.length; i++) {
           let rand = Math.floor(Math.random() * Math.floor(DATA.length));
@@ -66,28 +66,6 @@ export class FinancialData {
     private generateRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    private addMockData(dataObj) {
-      for (const mockData of MOCKFINANCEDATA) {
-        for (const prop in mockData) {
-            if (mockData.hasOwnProperty(prop)) {
-                dataObj[prop] = mockData[prop];
-            }
-        }
-      }
-    }
-    private addHierarchicalData(count: number, i: number, parentRowId: number, toAdd?: number): any {
-      const childData = [];
-      const numberToAdd = toAdd ? toAdd : Math.round(count / Contract.length);
-      for (let y = 0; y < numberToAdd; y++) {
-        const rand = Math.floor(Math.random() * Math.floor(DATA.length));
-        const childDataObj = Object.assign({}, DATA[rand]);
-        childDataObj.ID = parentRowId * 10  + y + 1;
-        this.randomizeObjectData(childDataObj);
-        this.addMockData(childDataObj)
-        childData.push(childDataObj);
-      }
-      return childData;
-    }
 
     public updateAllPrices(data: any[]): any[] {
       const currData = [];
@@ -99,7 +77,7 @@ export class FinancialData {
       return currData;
     }
 
-    public updateRandomPrices(data: any[]): any {
+  public updateRandomPrices(data: any[]): any {
       const currData = data.slice(0, data.length + 1);
       let y = 0;
       for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
@@ -111,5 +89,27 @@ export class FinancialData {
      // return {data: currData, recordsUpdated: y };
       return currData;
     }
+    private addMockData(dataObj) {
+        for (const mockData of MOCKFINANCEDATA) {
+          for (const prop in mockData) {
+              if (mockData.hasOwnProperty(prop)) {
+                  dataObj[prop] = mockData[prop];
+              }
+          }
+        }
+      }
+      private addHierarchicalData(count: number, i: number, parentRowId: number, toAdd?: number): any {
+        const childData = [];
+        const numberToAdd = toAdd ? toAdd : Math.round(count / Contract.length);
+        for (let y = 0; y < numberToAdd; y++) {
+          const rand = Math.floor(Math.random() * Math.floor(DATA.length));
+          const childDataObj = Object.assign({}, DATA[rand]);
+          childDataObj.ID = parentRowId * 10  + y + 1;
+          this.randomizeObjectData(childDataObj);
+          this.addMockData(childDataObj)
+          childData.push(childDataObj);
+        }
+        return childData;
+      }
   }
   

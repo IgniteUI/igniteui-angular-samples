@@ -264,7 +264,7 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
         if (random && dataObj.Categories) {
             // tslint:disable-next-line:prefer-for-of
             for (let y = 0; y < dataObj.Categories.length; y++) {
-                this.randomizeObjectData(dataObj.Categories[y], false);
+                this.randomizeObjectData(dataObj.Categories[y], true);
             }
         }
     }
@@ -272,7 +272,7 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
     private randomizeChildObjData(dataObj) {
         for (let i = Math.round(Math.random() * 10); i < dataObj.Categories.length;
             i += Math.round(Math.random() * 10)) {
-            this.randomizeObjectData(dataObj.Categories[i], false);
+            this.randomizeObjectData(dataObj.Categories[i], true);
         }
     }
     private generateNewPrice(oldPrice): any {
