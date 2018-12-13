@@ -1,8 +1,14 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxIconModule, IgxInputGroupModule, IgxTimePickerModule, IgxGridModule} from "igniteui-angular";
-import { LocalizationSample1Component } from "../../src/app/localization-samples/localization-sample-1/localization-sample-1.component";
-import { LocalizationSample2Component } from "../../src/app/localization-samples/localization-sample-2/localization-sample-2.component";
-import { LocalizationSample3Component } from "../../src/app/localization-samples/localization-sample-3/localization-sample-3.component";
+import { IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxTimePickerModule } from "igniteui-angular";
+import { 
+    LocalizationSample1Component 
+} from "../../src/app/localization-samples/localization-sample-1/localization-sample-1.component";
+import { 
+    LocalizationSample2Component 
+} from "../../src/app/localization-samples/localization-sample-2/localization-sample-2.component";
+import { 
+    LocalizationSample3Component 
+} from "../../src/app/localization-samples/localization-sample-3/localization-sample-3.component";
 import { DATA } from "../../src/app/localization-samples/localization-sample-3/nwindData";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -29,7 +35,9 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: LocalizationSample2Component,
             additionalFiles: ["src/app/localization-samples/localization-sample-2/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxInputGroupModule, LocalizationSample2Component, IgxIconModule, IgxTimePickerModule, IgxGridModule, DATA],
+                imports: [IgxInputGroupModule, LocalizationSample2Component, IgxIconModule,
+                          IgxTimePickerModule, IgxGridModule, DATA
+                ],
                 ngDeclarations: [LocalizationSample2Component],
                 ngImports: [IgxInputGroupModule, IgxIconModule, IgxTimePickerModule, IgxGridModule.forRoot()]
             }),
