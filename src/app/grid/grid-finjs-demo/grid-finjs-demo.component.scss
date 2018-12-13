@@ -163,29 +163,44 @@
     }
   }
 
-  .grid__wrapper {
-    padding: 30px 15px;
+  .switches {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0%;
+    min-width: 500px;
+    padding-right: 20px;
+    font-size: 0.9rem;
+}
 
-    // fake black background behind the grid
-    &:after {
-        content: '';
-        position: fixed;
-        display: flex;
-        z-index: -1;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
+  .control-item {
+    padding-right: 20px;
+    &:last-of-type {
+       padding-right: 0;
     }
   }
 
-  .dark-theme { 
-    .finjs-slider {
-        color: #fff;
-      }
-    
-      .finjs-sample-switch {
-        color: #fff;
-      }
+  .igx-slider, .igx-slider--disabled {
+    height: 24px;
   }
+
+  .finjs-slider {
+      width: 40%;
+  }
+
+  .finjs-play-controls {
+      width: 45%;
+      min-width: 500px;
+  }
+
+  .sample-toolbar {
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+    .dark-theme { 
+        .finjs-slider, .sample-toolbar {
+            color: rgba(255, 255, 255, 0.87);
+        }   
+    }
 }
