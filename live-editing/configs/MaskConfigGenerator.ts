@@ -5,6 +5,8 @@ import {
 import { MaskSample1Component } from "../../src/app/mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "../../src/app/mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "../../src/app/mask/mask-sample-3/mask-sample-3.component";
+import { MaskSample4Component, DisplayFormatPipe, InputFormatPipe } from "../../src/app/mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "../../src/app/mask/mask-sample-5/mask-sample-5.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -42,6 +44,28 @@ export class MaskConfigGenerator implements IConfigGenerator {
                 imports: [IgxSwitchModule, IgxMaskModule, IgxInputGroupModule, MaskSample3Component],
                 ngDeclarations: [MaskSample3Component],
                 ngImports: [IgxSwitchModule, IgxMaskModule, IgxInputGroupModule]
+            }),
+            shortenComponentPathBy: "/mask/"
+        }));
+
+        // mask sample 4
+        configs.push(new Config({
+            component: MaskSample4Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxMaskModule, IgxInputGroupModule, MaskSample4Component, IgxIconModule],
+                ngDeclarations: [MaskSample4Component, DisplayFormatPipe, InputFormatPipe],
+                ngImports: [IgxMaskModule, IgxInputGroupModule, IgxIconModule]
+            }),
+            shortenComponentPathBy: "/mask/"
+        }));
+
+        // mask sample 5
+        configs.push(new Config({
+            component: MaskSample5Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxMaskModule, IgxInputGroupModule, MaskSample5Component, IgxIconModule],
+                ngDeclarations: [MaskSample5Component],
+                ngImports: [IgxMaskModule, IgxInputGroupModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/mask/"
         }));
