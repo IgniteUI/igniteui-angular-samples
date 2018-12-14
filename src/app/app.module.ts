@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
+    IgxBannerModule,
     IgxBottomNavModule,
     IgxButtonGroupModule,
     IgxButtonModule,
@@ -59,6 +60,10 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
+import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
+import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
+import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -156,6 +161,9 @@ import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-edit
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import {
+    GridGroupBySummarySampleComponent
+} from "./grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
@@ -175,6 +183,7 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
@@ -193,7 +202,7 @@ import { InputGroupSample5Component } from "./input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { TreeLocalDataService} from "./tree-grid/tree-grid-finjs/treeLocalData.service";
+import { TreeLocalDataService } from "./tree-grid/tree-grid-finjs/treeLocalData.service";
 
 import {
     LinearProgressbarSample1Component
@@ -211,10 +220,22 @@ import { ListSample5Component } from "./list/list-sample-5/list-sample-5.compone
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
+import {
+    LocalizationSample1Component
+} from "./localization-samples/localization-sample-1/localization-sample-1.component";
+import {
+    LocalizationSample2Component
+} from "./localization-samples/localization-sample-2/localization-sample-2.component";
+import {
+    LocalizationSample3Component
+} from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
+import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -293,10 +314,16 @@ import {
     bootstrap: [AppComponent],
     declarations: [
         EmailFilterPipe,
+        DisplayFormatPipe,
+        InputFormatPipe,
         AppComponent,
         BadgeSample1Component,
         BadgeSample2Component,
         BadgeSample3Component,
+        BannerSample1Component,
+        BannerSample2Component,
+        BannerSample3Component,
+        BannerSample4Component,
         CardComponent,
         CardSample1Component,
         CardSample2Component,
@@ -365,6 +392,7 @@ import {
         TabsSample5Component,
         NavbarComponent,
         NavbarSample1Component,
+        NavbarSample2Component,
         SliderSample1Component,
         SliderSample2Component,
         SliderSample3Component,
@@ -419,6 +447,7 @@ import {
         RippleSample5Component,
         RippleSample6Component,
         NavbarSample1Component,
+        NavbarSample2Component,
         DatepickerSample1Component,
         DatepickerSample2Component,
         DatepickerSample3Component,
@@ -440,6 +469,8 @@ import {
         MaskSample1Component,
         MaskSample2Component,
         MaskSample3Component,
+        MaskSample4Component,
+        MaskSample5Component,
         TimePickerSample1Component,
         TimePickerSample2Component,
         TimePickerSample3Component,
@@ -453,6 +484,7 @@ import {
         InputGroupSample6Component,
         GridSample3Component,
         GridGroupBySampleComponent,
+        GridGroupBySummarySampleComponent,
         ExcelExportComponent,
         ExcelExportSample1Component,
         CsvExportComponent,
@@ -466,6 +498,7 @@ import {
         GridToolbarSample1Component,
         GridToolbarSample2Component,
         GridToolbarSample3Component,
+        GridToolbarSample4Component,
         RemoteFilteringSampleComponent,
         RadioGroupSampleComponent,
         GridMovingSampleComponent,
@@ -505,7 +538,10 @@ import {
         TreeGridRowEditSampleComponent,
         GridRowEditSampleComponent,
         GridCustomFilteringComponent,
-        TreeGridFinJSComponent
+        TreeGridFinJSComponent,
+        LocalizationSample1Component,
+        LocalizationSample2Component,
+        LocalizationSample3Component
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -530,6 +566,7 @@ import {
         IgxAvatarModule,
         IgxFilterModule,
         IgxBadgeModule,
+        IgxBannerModule,
         IgxButtonModule,
         IgxButtonGroupModule,
         IgxRippleModule,

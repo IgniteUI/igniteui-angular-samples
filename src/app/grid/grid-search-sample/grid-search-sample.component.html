@@ -39,12 +39,12 @@
         </igx-suffix>
     </igx-input-group>
 
-    <igx-grid #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="500px" width="100%" [allowFiltering]="true">
-        <igx-column [field]="'IndustrySector'" dataType="string" [sortable]="true"></igx-column>
-        <igx-column [field]="'IndustryGroup'" dataType="string" [sortable]="true"></igx-column>
-        <igx-column [field]="'SectorType'" dataType="string" [sortable]="true"></igx-column>
-        <igx-column [field]="'KRD'" dataType="number" [sortable]="true"></igx-column>
-        <igx-column [field]="'MarketNotion'" dataType="number" [sortable]="true"></igx-column>
-        <igx-column [field]="'Date'" dataType="date" [sortable]="true"></igx-column>
+    <igx-grid #grid1 id="grid1" [data]="data" [autoGenerate]="false" height="480px" width="100%" [allowFiltering]="true">
+        <igx-column [field]="'IndustrySector'" dataType="string" [sortable]="true" width="18%"></igx-column>
+        <igx-column [field]="'IndustryGroup'" dataType="string" [sortable]="true" width="18%"></igx-column>
+        <igx-column [field]="'SectorType'" dataType="string" [sortable]="true" width="16%"></igx-column>
+        <igx-column [field]="'KRD'" dataType="number" [sortable]="true" width="16%"></igx-column>
+        <igx-column [field]="'MarketNotion'" dataType="number" [sortable]="true" width="16%"></igx-column>
+        <igx-column [field]="'Date'" dataType="date" [sortable]="true" width="16%"></igx-column>
     </igx-grid>
 </div>

@@ -9,8 +9,8 @@ import { DATA } from "../grid-filtering-sample/nwindData";
 })
 export class GridCustomFilteringComponent implements OnInit {
     public data: any[];
-    public caseSensitiveFilteringOperand = CaseSensitiveFilteringOperand;
-    public booleanFilteringOperand = BooleanFilteringOperand;
+    public caseSensitiveFilteringOperand = CaseSensitiveFilteringOperand.instance();
+    public booleanFilteringOperand = BooleanFilteringOperand.instance();
 
     public ngOnInit() {
         this.data = DATA;

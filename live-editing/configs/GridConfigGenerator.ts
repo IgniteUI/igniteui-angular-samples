@@ -51,6 +51,7 @@ import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-samp
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "../../src/app/grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupBySummarySampleComponent } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
@@ -74,6 +75,7 @@ import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/g
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
@@ -143,6 +145,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
                 ngDeclarations: [GridGroupBySampleComponent],
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(), IgxIconModule, IgxBadgeModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupBySummarySampleComponent,
+            additionalFiles: ["/src/app/grid/grid-groupby-summary-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
+                    IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
+                ngDeclarations: [GridGroupBySummarySampleComponent],
+                ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxBadgeModule]
             })
         }));
 
@@ -346,6 +360,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridToolbarSample3Component],
                 ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridToolbarSample4Component,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridToolbarSample4Component, IgxAvatarModule, IgxGridModule],
+                ngDeclarations: [GridToolbarSample4Component],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
+                ngProviders: []
             })
         }));
 

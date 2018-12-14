@@ -8,6 +8,9 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
+import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
+import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -208,6 +211,7 @@ import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-edit
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupBySummarySampleComponent } from "./grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
@@ -225,6 +229,7 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -258,10 +263,16 @@ import { ListSample5Component } from "./list/list-sample-5/list-sample-5.compone
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
+import { LocalizationSample1Component } from "./localization-samples/localization-sample-1/localization-sample-1.component";
+import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
+import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
+import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -338,6 +349,7 @@ import {
 import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
+import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
@@ -416,6 +428,26 @@ export const samplesRoutes: Routes = [
         component: BadgeSample3Component,
         data: { displayName: "Badge for List Items", parentName: "Badge" },
         path: "badge-sample-3"
+    },
+    {
+        component: BannerSample1Component,
+        data: { displayName: "Basic Banner", parentName: "Banner" },
+        path: "banner-sample-1"
+    },
+    {
+        component: BannerSample2Component,
+        data: { displayName: "Custom Actions Banner", parentName: "Banner" },
+        path: "banner-sample-2"
+    },
+    {
+        component: BannerSample3Component,
+        data: { displayName: "Animations Banner", parentName: "Banner" },
+        path: "banner-sample-3"
+    },
+    {
+        component: BannerSample4Component,
+        data: { displayName: "Settings Banner", parentName: "Banner" },
+        path: "banner-sample-4"
     },
     {
         component: CardComponent,
@@ -739,6 +771,21 @@ export const samplesRoutes: Routes = [
         path: "list-chat-sample"
     },
     {
+        component: LocalizationSample1Component,
+        data: { displayName: "Localize one component", parentName: "Localization" },
+        path: "localization-sample-1"
+    },
+    {
+        component: LocalizationSample2Component,
+        data: { displayName: "Localize All", parentName: "Localization" },
+        path: "localization-sample-2"
+    },
+    {
+        component: LocalizationSample3Component,
+        data: { displayName: "Localize partially", parentName: "Localization" },
+        path: "localization-sample-3"
+    },
+    {
         component: NavdrawerComponent,
         path: "navigation-drawer"
     },
@@ -773,6 +820,11 @@ export const samplesRoutes: Routes = [
         component: GridGroupBySampleComponent,
         data: { displayName: "Grid GroupBy", parentName: "Grid" },
         path: "grid-groupby"
+    },
+    {
+        component: GridGroupBySummarySampleComponent,
+        data: { displayName: "Grid GroupBy Summary", parentName: "Grid" },
+        path: "grid-groupby-summary"
     },
     {
         component: GridEditingSampleComponent,
@@ -1073,6 +1125,11 @@ export const samplesRoutes: Routes = [
         path: "navbar-sample-1"
     },
     {
+        component: NavbarSample2Component,
+        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
+        path: "navbar-sample-2"
+    },
+    {
         component: CardSample1Component,
         data: { displayName: "Card with Header and Content", parentName: "Card" },
         path: "card-sample-1"
@@ -1352,6 +1409,16 @@ export const samplesRoutes: Routes = [
         path: "mask-sample-3"
     },
     {
+        component: MaskSample4Component,
+        data: { displayName: "Additional custom formatting", parentName: "Mask" },
+        path: "mask-sample-4"
+    },
+    {
+        component: MaskSample5Component,
+        data: { displayName: "Placeholder", parentName: "Mask" },
+        path: "mask-sample-5"
+    },
+    {
         component: InputGroupSample1Component,
         data: { displayName: "Simple Input Group", parentName: "Input Group" },
         path: "input-group-sample-1"
@@ -1550,6 +1617,11 @@ export const samplesRoutes: Routes = [
         component: GridToolbarSample3Component,
         data: { displayName: "Grid Toolbar Export", parentName: "Grid" },
         path: "grid-toolbar-sample-3"
+    },
+    {
+        component: GridToolbarSample4Component,
+        data: { displayName: "Grid Toolbar Custom Content", parentName: "Grid" },
+        path: "grid-toolbar-sample-4"
     },
     {
         component: GridMovingSampleComponent,
