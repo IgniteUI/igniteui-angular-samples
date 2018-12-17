@@ -1,26 +1,26 @@
 <div class="grid__wrapper" [class.dark-theme]="theme">
-    <igx-switch [checked]="true" [(ngModel)]="theme">Dark Theme</igx-switch>
-    <div class="sliders-holder">
-        <div class="slider-wrapper">
-            <div class="finjs-slider">
+    <div class="controls-holder">
+        <div class="switches">
+            <div class="control-item">
+                <igx-switch [checked]="true" [(ngModel)]="theme" (change)="onThemeChanged($event)">Dark</igx-switch>
+            </div>
+            <div class="control-item">
+                <igx-switch [checked]="grouped" (change)="onChange($event)" color="blue" cssClass="finjs-sample-switch">Grouped</igx-switch>
+            </div>
+            <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
                 <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
                     (onValueChange)="onVolumeChanged($event)" thumbLabelVisibilityDuration="250"></igx-slider>
             </div>
-            <div class="finjs-slider">
+            <div class="finjs-slider control-item">
                 <label for="slider">Frequency: {{frequency}} ms</label>
                 <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                    (onValueChange)="onFrequencyChanged($event)" thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
+                    thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
             </div>
         </div>
-        <div class="finjs-flex-row">
-            <div>
-                <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls"
-                    (onSelect)="onButtonAction($event)"></igx-buttongroup>
-            </div>
-            <div class="finjs-sample-switch">
-                <igx-switch [checked]="grouped" (change)="onChange($event)">Grouped</igx-switch>
-            </div>
+        <div class="control-item finjs-play-controls">
+            <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls"
+                (onSelect)="onButtonAction($event)"></igx-buttongroup>
         </div>
     </div>
     <div class="sample-toolbar">
@@ -29,7 +29,8 @@
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
-    <igx-grid #grid1 [data]="data | async" [height]="'600px'" width="100%" [autoGenerate]='false' displayDensity='compact'
+
+    <igx-grid #grid1 [data]="data | async" [height]="'800px'" width="100%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' (onGroupingDone)="groupingDone($event)"
         [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
         [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">

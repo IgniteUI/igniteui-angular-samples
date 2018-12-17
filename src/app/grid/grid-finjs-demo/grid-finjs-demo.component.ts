@@ -106,9 +106,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
-        if (this.theme) {
-            document.body.classList.add("dark-theme");
-        }
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: "Category",
@@ -226,7 +223,12 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         this.localService.getData(this.volume);
     }
 
-    public onFrequencyChanged(event: any) {
+    public onThemeChanged(event: any) {
+        if (event.checked) {
+            document.body.querySelector("div.main").classList.add("dark-theme");
+        } else {
+            document.body.querySelector("div.main").classList.remove("dark-theme");
+        }
     }
 
     private negative = (rowData: any): boolean => {
