@@ -1,14 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
 
 @Component({
-  selector: "app-pie-chart-selection",
-  styleUrls: ["./pie-chart-selection.component.scss"],
-  templateUrl: "./pie-chart-selection.component.html"
+    selector: "app-pie-chart-selection",
+    styleUrls: ["./pie-chart-selection.component.scss"],
+    templateUrl: "./pie-chart-selection.component.html"
 })
-export class PieChartSelectionComponent {
+export class PieChartSelectionComponent implements AfterViewInit {
 
     public selectionType: string;
     public data: any;
+
+    @ViewChild("chart")
+    public chart: IgxPieChartComponent;
 
     constructor() {
         this.data = [
@@ -21,6 +25,9 @@ export class PieChartSelectionComponent {
         ];
 
         this.selectionType = "Single";
-      }
+    }
 
+    public ngAfterViewInit(): void {
+        this.chart.selectedItem = this.data[3];
+    }
 }

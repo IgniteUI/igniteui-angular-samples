@@ -1,14 +1,19 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
+import { IgxRingSeriesComponent } from "igniteui-angular-charts/ES5/igx-ring-series-component";
 
 @Component({
     selector: "app-doughnut-chart-selection-sample",
     styleUrls: ["./doughnut-chart-selection-sample.component.scss"],
     templateUrl: "./doughnut-chart-selection-sample.component.html"
 })
-export class DoughnutChartSelectionSampleComponent {
+export class DoughnutChartSelectionSampleComponent implements AfterViewInit {
 
     public selectionType: string;
     public data: any;
+
+    @ViewChild("chart")
+    public chart: IgxDoughnutChartComponent;
 
     constructor() {
         this.data = [
@@ -21,5 +26,11 @@ export class DoughnutChartSelectionSampleComponent {
         ];
 
         this.selectionType = "Single";
+    }
+
+    public ngAfterViewInit(): void {
+        let series: IgxRingSeriesComponent;
+        series = this.chart.actualSeries[0] as IgxRingSeriesComponent;
+        series.selectedSlices.add(3);
     }
 }
