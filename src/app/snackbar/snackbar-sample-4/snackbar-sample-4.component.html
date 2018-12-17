@@ -2,7 +2,7 @@
     <igx-list>
         <igx-list-item [isHeader]="true">Contacts</igx-list-item>
 
-        <igx-list-item igxRipple="pink" igxRippleTarget=".igx-list__item" *ngFor="let item of navItems">
+        <igx-list-item igxRipple="pink" igxRippleTarget=".igx-list__item-content" *ngFor="let item of navItems">
             <div class="item-container">
                 <div class="contact">
                     <igx-avatar [src]="item.avatar" roundShape="true"></igx-avatar>
