@@ -1,13 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
 
 @Component({
   selector: "app-pie-chart-explosion",
   styleUrls: ["./pie-chart-explosion.component.scss"],
   templateUrl: "./pie-chart-explosion.component.html"
 })
-export class PieChartExplosionComponent {
+export class PieChartExplosionComponent implements AfterViewInit {
 
     public data: any;
+
+    @ViewChild("chart")
+    public chart: IgxPieChartComponent;
 
     constructor() {
         this.data = [
@@ -22,5 +26,9 @@ export class PieChartExplosionComponent {
 
     public pieSliceClickEvent(e: any): void {
         e.args.isExploded = !e.args.isExploded;
+    }
+
+    public ngAfterViewInit(): void {
+        this.chart.explodedSlices.add(3);
     }
 }
