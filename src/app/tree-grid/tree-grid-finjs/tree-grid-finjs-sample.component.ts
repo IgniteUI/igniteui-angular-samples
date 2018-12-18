@@ -250,40 +250,28 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
     // tslint:disable-next-line:member-ordering
     public updateAllPrices(data: any[]): any {
         for (const dataRow of data) {
-          this.randomizeObjectData(dataRow, true);
+          this.randomizeObjectData(dataRow);
         }
         return data;
       }
 
     // tslint:disable-next-line:member-ordering
     public updateRandomPrices(data: any[]): any {
-        for (const dataRow of data) {
-            this.randomizeObjectData(dataRow, false);
-            this.randomizeChildObjData(dataRow);
+        let y = 0;
+        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
+          this.randomizeObjectData(data[i]);
+          y++;
         }
+       // return {data: currData, recordsUpdated: y };
         return data;
       }
 
-    private randomizeObjectData(dataObj, random: boolean) {
+    private randomizeObjectData(dataObj) {
         const changeP = "Change(%)";
         const res = this.generateNewPrice(dataObj.Price);
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
-
-        if (random && dataObj.Categories) {
-            // tslint:disable-next-line:prefer-for-of
-            for (let y = 0; y < dataObj.Categories.length; y++) {
-                this.randomizeObjectData(dataObj.Categories[y], true);
-            }
-        }
-    }
-
-    private randomizeChildObjData(dataObj) {
-        for (let i = Math.round(Math.random() * 10); i < dataObj.Categories.length;
-            i += Math.round(Math.random() * 10)) {
-            this.randomizeObjectData(dataObj.Categories[i], true);
-        }
     }
     private generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));
