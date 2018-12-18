@@ -7,6 +7,9 @@
             <div class="control-item">
                 <igx-switch [checked]="grouped" (change)="onChange($event)" color="blue" cssClass="finjs-sample-switch">Grouped</igx-switch>
             </div>
+            <div class="control-item">
+                <igx-switch [checked]="grid1.showToolbar" (change)="toggleToolbar($event)" color="blue" cssClass="finjs-sample-switch">Toolbar</igx-switch>
+            </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
                 <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
@@ -30,7 +33,7 @@
             ~{{volume/5}} records updated.</span>
     </div>
 
-    <igx-grid #grid1 [data]="data | async" [height]="'800px'" width="100%" [autoGenerate]='false' displayDensity='compact'
+    <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' (onGroupingDone)="groupingDone($event)"
         [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
         [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
@@ -79,14 +82,14 @@
             [sortable]="true"></igx-column>
         <igx-column [field]="'Start(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [cellClasses]="buttonCols" [filterable]='false'>
+        <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
                     <igx-icon (click)="chartClick(cell)" fontSet="material">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [cellClasses]="buttonCols" [filterable]='false'>
+        <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
                     <igx-icon (click)="chartClick(cell)" iconName="table_chart" fontSet="material">table_chart</igx-icon>
