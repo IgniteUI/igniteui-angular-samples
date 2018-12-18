@@ -82,19 +82,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         })
     ];
 
-    public _positionSettings: PositionSettings = {
-        horizontalDirection: HorizontalAlignment.Left,
-        horizontalStartPoint: HorizontalAlignment.Right,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
-
-    public _overlaySettings: OverlaySettings = {
-        closeOnOutsideClick: true,
-        modal: false,
-        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
-        scrollStrategy: new AbsoluteScrollStrategy()
-    };
-
     private subscription;
     private selectedButton;
     private _timer;
@@ -231,6 +218,10 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         }
     }
 
+    public toggleToolbar(event: any) {
+        this.grid1.showToolbar = !this.grid1.showToolbar;
+    }
+
     private negative = (rowData: any): boolean => {
         return rowData["Change(%)"] < 0;
     }
@@ -265,10 +256,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         changePos2: this.changePositive,
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
-    };
-    // tslint:disable-next-line:member-ordering
-    public buttonCols = {
-        buttonCols: true
     };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
