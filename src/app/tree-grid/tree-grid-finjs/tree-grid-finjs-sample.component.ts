@@ -1,10 +1,10 @@
 
 import { AfterViewInit, Component, NgZone, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
-    IgxSliderComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings,
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DataUtil, HorizontalAlignment,
+    IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
+    PositionSettings,
     VerticalAlignment} from "igniteui-angular";
-import { Observable } from "rxjs";
-import { TreeLocalDataService } from "./treeLocalData.service";
+import { LocalDataService } from "../../grid/services/localData.service";
 
 interface IButton {
     ripple ?: string;
@@ -36,7 +36,7 @@ export class Button {
 }
 
 @Component({
-    providers: [TreeLocalDataService],
+    providers: [LocalDataService],
     selector: "app-tree-grid-finjs-sample",
     styleUrls: ["./tree-grid-finjs-sample.component.scss"],
     templateUrl: "./tree-grid-finjs-sample.component.html"
@@ -52,7 +52,7 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
     public theme = false;
     public volume = 1000;
     public frequency = 500;
-    public data: Observable < any[] > ;
+    public data: any[] = [];
     public recordsUpdatedLastSecond: number[] ;
     public controls = [
         new Button({
@@ -95,9 +95,9 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: TreeLocalDataService) {
+    constructor(private zone: NgZone, private localService: LocalDataService) {
         this.subscription = this.localService.getData(this.volume);
-        this.data = this.localService.records;
+        this.localService.records.subscribe((d) => this.data = d);
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
@@ -114,15 +114,13 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
             case 0:
                 {
                     this.disableOtherButtons(event.index, true);
-                    const currData = this.grid1.data;
-                    this._timer = setInterval(() => this.ticker(currData), this.frequency);
+                    this._timer = setInterval(() => this.ticker(this.data), this.frequency);
                     break;
                 }
             case 1:
                 {
                     this.disableOtherButtons(event.index, true);
-                    const currData = this.grid1.data;
-                    this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
+                    this._timer = setInterval(() => this.tickerAllPrices(this.data), this.frequency);
                     break;
                 }
                 case 2:
@@ -148,15 +146,15 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
     }
 
     public formatNumber(value: number) {
-        return value.toFixed(2);
+        return value ? value.toFixed(2) : "";
     }
 
     public percentage(value: number) {
-        return value.toFixed(2) + "%";
+        return value ? value.toFixed(2) + "%" : "";
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(3);
+        return value ? "$" + value.toFixed(3) : "";
     }
 
     public onVolumeChanged(event: any) {
@@ -232,16 +230,16 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
     // tslint:disable-next-line:member-ordering
     public ticker(data: any) {
         this.zone.runOutsideAngular(() => {
-            this.grid1.data = this.updateRandomPrices(data);
-            this.zone.run(() => this.grid1.markForCheck());
+            this.data = this.updateRandomPrices(data.splice(0));
+            // this.zone.run(() => this.grid1.markForCheck());
         });
     }
 
     // tslint:disable-next-line:member-ordering
     public tickerAllPrices(data: any) {
         this.zone.runOutsideAngular(() => {
-            this.grid1.data = this.updateAllPrices(data);
-            this.zone.run(() => this.grid1.markForCheck());
+            this.data = this.updateAllPrices(data.splice(0));
+            // this.zone.run(() => this.grid1.markForCheck());
         });
     }
 

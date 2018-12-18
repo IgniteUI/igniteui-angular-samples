@@ -306,6 +306,7 @@ import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
+import { TreeGridGroupingPipe } from "./tree-grid/tree-grid-finjs/tree-grid-grouping.pipe";
 import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
@@ -316,6 +317,7 @@ import {
         EmailFilterPipe,
         DisplayFormatPipe,
         InputFormatPipe,
+        TreeGridGroupingPipe,
         AppComponent,
         BadgeSample1Component,
         BadgeSample2Component,
