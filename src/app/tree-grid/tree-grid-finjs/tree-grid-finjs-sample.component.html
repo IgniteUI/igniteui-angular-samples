@@ -75,14 +75,14 @@
             [sortable]="true"></igx-column>
         <igx-column [field]="'Start(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [cellClasses]="buttonCols" [filterable]='false'>
+        <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
                     <igx-icon (click)="chartClick(cell)" fontSet="material">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [cellClasses]="buttonCols" [filterable]='false'>
+        <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
                     <igx-icon (click)="chartClick(cell)" iconName="table_chart" fontSet="material">table_chart</igx-icon>
