@@ -169,6 +169,10 @@ export class TreeGridFinJSComponent implements AfterViewInit  {
         }
     }
 
+    public toggleToolbar(event: any) {
+        this.grid1.showToolbar = !this.grid1.showToolbar;
+    }
+
     private negative = (rowData: any): boolean => {
         return rowData["Change(%)"] < 0;
     }
