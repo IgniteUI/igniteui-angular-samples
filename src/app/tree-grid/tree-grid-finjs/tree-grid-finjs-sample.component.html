@@ -29,7 +29,7 @@
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
-    <igx-tree-grid #grid1 [data]="data | async" height="'calc(100% - 71px)'" width="100%" [autoGenerate]='false'
+    <igx-tree-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false'
         displayDensity='compact' childDataKey="Categories"
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID'
         [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
