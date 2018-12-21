@@ -10,6 +10,11 @@
     }
   }
 
+    .igx-grid__grouparea {
+        max-height: 100%;
+        height: auto;
+    }
+
   .changePos,
   .changeNeg,
   .strongPositive,
@@ -202,10 +207,10 @@
     font-size: 0.8rem;
   }
 
-    .dark-theme { 
+    .dark-theme {
         .finjs-slider, .sample-toolbar {
             color: rgba(255, 255, 255, 0.87);
-        }   
+        }
     }
 }
 
