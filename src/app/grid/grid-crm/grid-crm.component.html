@@ -18,10 +18,10 @@
                             <igx-icon class="prefixIcon" *ngIf="searchText.length == 0">search</igx-icon>
                             <igx-icon class="prefixIcon" *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
                         </igx-prefix>
-    
+
                         <input #search1 id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText"
                             (ngModelChange)="grid1.findNext(searchText, caseSensitive)" (keydown)="searchKeyDown($event)" />
-    
+
                         <igx-suffix *ngIf="searchText.length > 0">
                             <div class="resultsText" *ngIf="grid1.lastSearchInfo">
                                 <span *ngIf="grid1.lastSearchInfo.matchInfoCache.length > 0">
@@ -52,7 +52,7 @@
             </div>
         </ng-template>
 
-        <igx-column field="id" header="Customer Number" width="172" [pinned]="true" [hasSummary]="true" [resizable]="true"
+        <igx-column field="id" header="Customer Number" width="172" [pinned]="true" [hasSummary]="false" [resizable]="true"
             [hidden]="true" [movable]="true">
         </igx-column>
 
@@ -66,13 +66,13 @@
         </igx-column>
 
         <igx-column field="name" header="Name" [sortable]="true" width="149" [pinned]="true" [resizable]="true"
-            [hasSummary]="true" [movable]="true">
+            [hasSummary]="false" [movable]="true">
         </igx-column>
 
         <igx-column field="position" header="Position" width="200" [resizable]="true" [movable]="true">
         </igx-column>
 
-        <igx-column field="company" header="Company" [sortable]="true" width="130" [hasSummary]="true" [resizable]="true"
+        <igx-column field="company" header="Company" [sortable]="true" width="130" [hasSummary]="false" [resizable]="true"
             [movable]="true">
         </igx-column>
 
@@ -113,23 +113,23 @@
         <igx-column field="referred_by" header="Referred By" width="160" [resizable]="true" [movable]="true">
         </igx-column>
 
-        <igx-column field="birthday" header="Birthday" width="160" dataType="date" [formatter]="formatDate" [hasSummary]="true"
+        <igx-column field="birthday" header="Birthday" width="160" dataType="date" [formatter]="formatDate" [hasSummary]="false"
             [summaries]="soonSummary" [resizable]="true" [movable]="true" [filterable]="false">
         </igx-column>
 
         <igx-column field="last_activity" header="Last Activity" width="160" dataType="date" [formatter]="formatDate"
-            [hasSummary]="true" [summaries]="earliestSummary" [resizable]="true" [movable]="true" [filterable]="false">
+            [hasSummary]="false" [summaries]="earliestSummary" [resizable]="true" [movable]="true" [filterable]="false">
         </igx-column>
 
         <igx-column field="next_activity" header="Next Activity" width="160" dataType="date" [formatter]="formatDate"
-            [hasSummary]="true" [summaries]="earliestSummary" [resizable]="true" [movable]="true" [filterable]="false">
+            [hasSummary]="false" [summaries]="earliestSummary" [resizable]="true" [movable]="true" [filterable]="false">
         </igx-column>
 
-        <igx-column field="deals_total" header="Total Deals" [sortable]="true" width="130" dataType="number" [hasSummary]="true"
+        <igx-column field="deals_total" header="Total Deals" [sortable]="true" width="130" dataType="number" [hasSummary]="false"
             [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
         </igx-column>
 
-        <igx-column field="deals_won" header="Won Deals" [sortable]="true" width="130" dataType="number" [hasSummary]="true"
+        <igx-column field="deals_won" header="Won Deals" [sortable]="true" width="130" dataType="number" [hasSummary]="false"
             [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
         </igx-column>
 
@@ -141,23 +141,23 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field="deals_lost" header="Lost Deals" [sortable]="true" width="130" dataType="number" [hasSummary]="true"
+        <igx-column field="deals_lost" header="Lost Deals" [sortable]="true" width="130" dataType="number" [hasSummary]="false"
             [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
         </igx-column>
 
         <igx-column field="deals_pending" header="Pending Deals" [sortable]="true" width="130" dataType="number"
-            [hasSummary]="true" [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
+            [hasSummary]="false" [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
         </igx-column>
 
         <igx-column field="estimated_sales" header="Possible Sales ($)" [sortable]="true" width="150" dataType="number"
-            [hasSummary]="true" [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
+            [hasSummary]="false" [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
             <ng-template igxCell let-cell="call" let-val>
                 {{ formatValue(val) }}
             </ng-template>
         </igx-column>
 
         <igx-column field="actual_sales" header="Actual Sales ($)" [sortable]="true" width="150" dataType="number"
-            [hasSummary]="true" [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
+            [hasSummary]="false" [summaries]="dealsSummary" [resizable]="true" [movable]="true" [filterable]="false">
             <ng-template igxCell let-val>
                 {{ formatValue(val) }}
             </ng-template>
