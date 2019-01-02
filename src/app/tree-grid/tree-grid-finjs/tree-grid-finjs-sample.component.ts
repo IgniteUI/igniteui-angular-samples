@@ -1,9 +1,8 @@
 
-import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, NgZone, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
-    IgxColumnComponent, IgxDropDownComponent,
-    IgxGridCellComponent, IgxSliderComponent, IgxTreeGridComponent,
-    OverlaySettings, PositionSettings, VerticalAlignment} from "igniteui-angular";
+    IgxSliderComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings,
+    VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { TreeLocalDataService } from "./treeLocalData.service";
 
@@ -43,19 +42,12 @@ export class Button {
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit {
+export class TreeGridFinJSComponent implements AfterViewInit  {
     @ViewChild("grid1") public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
     @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
-
-    @ViewChild("hidingButton") public hidingButton: ElementRef;
-    @ViewChild("pinningButton") public pinningButton: ElementRef;
-
-    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
-
-    public cols: QueryList<IgxColumnComponent>;
 
     public theme = false;
     public volume = 1000;
@@ -115,15 +107,8 @@ export class TreeGridFinJSComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        this.cols = this.grid1.columnList;
         this.grid1.reflow();
     }
-
-    public chartClick(cell: IgxGridCellComponent) {
-        // TODO
-        // cell.column.field returns the column
-    }
-
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0:
@@ -178,7 +163,16 @@ export class TreeGridFinJSComponent implements AfterViewInit {
         this.localService.getData(this.volume);
     }
 
-    public onFrequencyChanged(event: any) {
+    public onThemeChanged(event: any) {
+        if (event.checked) {
+            document.body.querySelector("div.main").classList.add("dark-theme");
+        } else {
+            document.body.querySelector("div.main").classList.remove("dark-theme");
+        }
+    }
+
+    public toggleToolbar(event: any) {
+        this.grid1.showToolbar = !this.grid1.showToolbar;
     }
 
     private negative = (rowData: any): boolean => {
@@ -282,7 +276,7 @@ export class TreeGridFinJSComponent implements AfterViewInit {
         if (random && dataObj.Categories) {
             // tslint:disable-next-line:prefer-for-of
             for (let y = 0; y < dataObj.Categories.length; y++) {
-                this.randomizeObjectData(dataObj.Categories[y], false);
+                this.randomizeObjectData(dataObj.Categories[y], true);
             }
         }
     }
@@ -290,7 +284,7 @@ export class TreeGridFinJSComponent implements AfterViewInit {
     private randomizeChildObjData(dataObj) {
         for (let i = Math.round(Math.random() * 10); i < dataObj.Categories.length;
             i += Math.round(Math.random() * 10)) {
-            this.randomizeObjectData(dataObj.Categories[i], false);
+            this.randomizeObjectData(dataObj.Categories[i], true);
         }
     }
     private generateNewPrice(oldPrice): any {

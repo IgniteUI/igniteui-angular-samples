@@ -211,6 +211,7 @@ import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-edit
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupBySummarySampleComponent } from "./grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
@@ -262,9 +263,14 @@ import { ListSample5Component } from "./list/list-sample-5/list-sample-5.compone
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
+import { LocalizationSample1Component } from "./localization-samples/localization-sample-1/localization-sample-1.component";
+import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
+import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
@@ -334,6 +340,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -765,6 +772,21 @@ export const samplesRoutes: Routes = [
         path: "list-chat-sample"
     },
     {
+        component: LocalizationSample1Component,
+        data: { displayName: "Localize one component", parentName: "Localization" },
+        path: "localization-sample-1"
+    },
+    {
+        component: LocalizationSample2Component,
+        data: { displayName: "Localize All", parentName: "Localization" },
+        path: "localization-sample-2"
+    },
+    {
+        component: LocalizationSample3Component,
+        data: { displayName: "Localize partially", parentName: "Localization" },
+        path: "localization-sample-3"
+    },
+    {
         component: NavdrawerComponent,
         path: "navigation-drawer"
     },
@@ -799,6 +821,11 @@ export const samplesRoutes: Routes = [
         component: GridGroupBySampleComponent,
         data: { displayName: "Grid GroupBy", parentName: "Grid" },
         path: "grid-groupby"
+    },
+    {
+        component: GridGroupBySummarySampleComponent,
+        data: { displayName: "Grid GroupBy Summary", parentName: "Grid" },
+        path: "grid-groupby-summary"
     },
     {
         component: GridEditingSampleComponent,
@@ -1383,6 +1410,16 @@ export const samplesRoutes: Routes = [
         path: "mask-sample-3"
     },
     {
+        component: MaskSample4Component,
+        data: { displayName: "Additional custom formatting", parentName: "Mask" },
+        path: "mask-sample-4"
+    },
+    {
+        component: MaskSample5Component,
+        data: { displayName: "Placeholder", parentName: "Mask" },
+        path: "mask-sample-5"
+    },
+    {
         component: InputGroupSample1Component,
         data: { displayName: "Simple Input Group", parentName: "Input Group" },
         path: "input-group-sample-1"
@@ -1651,6 +1688,11 @@ export const samplesRoutes: Routes = [
         component: ShadowsSample2Component,
         data: { displayName: "Shadows sample 2", parentName: "Shadows" },
         path: "shadows-sample-2"
+    },
+    {
+        component: TreeGridBatchEditingSampleComponent,
+        data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
+        path: "treegrid-batchediting"
     },
     {
         component: TreeGridChilddatakeySampleComponent,

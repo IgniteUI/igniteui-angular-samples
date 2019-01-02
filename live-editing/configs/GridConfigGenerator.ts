@@ -51,6 +51,7 @@ import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-samp
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "../../src/app/grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupBySummarySampleComponent } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
@@ -144,6 +145,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
                 ngDeclarations: [GridGroupBySampleComponent],
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(), IgxIconModule, IgxBadgeModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupBySummarySampleComponent,
+            additionalFiles: ["/src/app/grid/grid-groupby-summary-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
+                    IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
+                ngDeclarations: [GridGroupBySummarySampleComponent],
+                ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxBadgeModule]
             })
         }));
 

@@ -91,22 +91,6 @@ body {
     text-align: right !important;
 }
 
-.grid__wrapper {
-    padding: 30px 15px;
-
-    // fake black background behind the grid
-    &:after {
-        content: '';
-        position: fixed;
-        display: flex;
-        z-index: -1;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-    }
-}
-
 .dark-theme {
     @include igx-dark-theme($green-palette); // grid caption styling
     background-color: #111;
