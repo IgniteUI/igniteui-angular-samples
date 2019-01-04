@@ -307,9 +307,11 @@ import {
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
 import {
+    TreeGridBatchEditingSampleComponent
+} from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
-
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -536,6 +538,7 @@ import {
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         TreeGridRowEditSampleComponent,
+        TreeGridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         GridCustomFilteringComponent,
         TreeGridFinJSComponent,

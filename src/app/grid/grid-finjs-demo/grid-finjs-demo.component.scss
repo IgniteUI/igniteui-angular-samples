@@ -10,6 +10,11 @@
     }
   }
 
+    .igx-grid__grouparea {
+        max-height: 100%;
+        height: auto;
+    }
+
   .changePos,
   .changeNeg,
   .strongPositive,
@@ -182,9 +187,6 @@
 
   .control-item {
     padding-right: 20px;
-    &:last-of-type {
-       padding-right: 0;
-    }
   }
 
   .igx-slider, .igx-slider--disabled {
@@ -201,13 +203,18 @@
   }
 
   .sample-toolbar {
-    height: 30px;
-    font-size: 0.9rem;
+    height: 20px;
+    font-size: 0.8rem;
   }
 
-    .dark-theme { 
+    .dark-theme {
         .finjs-slider, .sample-toolbar {
             color: rgba(255, 255, 255, 0.87);
-        }   
+        }
     }
+}
+
+.grid__wrapper {
+    padding: 5px 15px;
+    height: 100%;
 }
