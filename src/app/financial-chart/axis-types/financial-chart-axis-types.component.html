@@ -5,12 +5,17 @@
             <option>Numeric</option>
             <option>PercentChange</option>
         </select>
+        <span>  xAxis Mode: </span>
+        <select [(ngModel)]="xAxisMode">
+            <option>Ordinal</option>
+            <option>Time</option>
+        </select>
     </div>
     <div class="chart">
         <igx-financial-chart height="100%" width="100%"
             [dataSource]="data"
             [yAxisMode]="yAxisMode"
-
+            [xAxisMode]="xAxisMode"
             yAxisInterval="200"
             yAxisMinorInterval="50"
             yAxisMajorStroke="Black"

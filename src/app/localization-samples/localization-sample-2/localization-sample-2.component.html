@@ -1,17 +1,17 @@
 <div class="grid__wrapper">
         <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="520px" width="100%" [allowFiltering]="true">
-            <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [groupable]="true">
+            <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [groupable]="true" width="20%">
             </igx-column>
-            <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'" [groupable]="true">
+            <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'" [groupable]="true" width="20%">
             </igx-column>
-            <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'" [groupable]="true">
+            <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'" [groupable]="true" width="20%">
                 <ng-template igxCell let-cell="cell" let-val let-row>
                     {{+val | currency}}
                 </ng-template>
             </igx-column>
-            <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate" [groupable]="true">
+            <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate" [groupable]="true" width="20%">
             </igx-column>
-            <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [groupable]="true">
+            <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [groupable]="true" width="20%">
             </igx-column>
         </igx-grid>
         <br/>

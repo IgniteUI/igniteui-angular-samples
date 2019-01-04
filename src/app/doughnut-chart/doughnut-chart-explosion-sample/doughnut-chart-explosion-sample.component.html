@@ -1,5 +1,5 @@
 <div class="chart">
-    <igx-doughnut-chart height="100%" width="100%" (sliceClick)="pieSliceClickEvent($event)">
+    <igx-doughnut-chart #chart height="100%" width="100%" (sliceClick)="pieSliceClickEvent($event)">
         <igx-ring-series [dataSource] = "data" valueMemberPath="Value" labelMemberPath="Label">            
         </igx-ring-series>      
     </igx-doughnut-chart>

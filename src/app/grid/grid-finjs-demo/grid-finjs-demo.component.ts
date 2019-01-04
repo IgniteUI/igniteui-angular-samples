@@ -82,19 +82,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         })
     ];
 
-    public _positionSettings: PositionSettings = {
-        horizontalDirection: HorizontalAlignment.Left,
-        horizontalStartPoint: HorizontalAlignment.Right,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
-
-    public _overlaySettings: OverlaySettings = {
-        closeOnOutsideClick: true,
-        modal: false,
-        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
-        scrollStrategy: new AbsoluteScrollStrategy()
-    };
-
     private subscription;
     private selectedButton;
     private _timer;
@@ -106,9 +93,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
-        if (this.theme) {
-            document.body.classList.add("dark-theme");
-        }
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: "Category",
@@ -226,7 +210,16 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         this.localService.getData(this.volume);
     }
 
-    public onFrequencyChanged(event: any) {
+    public onThemeChanged(event: any) {
+        if (event.checked) {
+            document.body.querySelector("div.main").classList.add("dark-theme");
+        } else {
+            document.body.querySelector("div.main").classList.remove("dark-theme");
+        }
+    }
+
+    public toggleToolbar(event: any) {
+        this.grid1.showToolbar = !this.grid1.showToolbar;
     }
 
     private negative = (rowData: any): boolean => {
@@ -263,10 +256,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         changePos2: this.changePositive,
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
-    };
-    // tslint:disable-next-line:member-ordering
-    public buttonCols = {
-        buttonCols: true
     };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
