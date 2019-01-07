@@ -1,0 +1,20 @@
+<div class="sample-wrapper container">
+    <div class="cellOptions">
+
+        <div class="workbookOperations">         
+            <button class="workbookButton" (click)="workbookSave()" [disabled]="!canSave">
+                <label>Save Workbook</label>
+            </button>           
+        </div>       
+        <div class="cellFeatures">
+            <label class="label">Add a Comment to cell A1: </label> 
+            <input type="checkbox" id="addComment" (change)='onCommentChanged($event.target)'> <br/>
+            <label class="label">Add a Formula for cells F2 to F20: </label> 
+            <input type="checkbox" id="addFormula" (change)='onFormulaChanged($event.target)'>  <br/>
+            <label class="label">Merge Cells: </label>
+            <input type="checkbox" id="mergeCells" (change)='onMergeChanged($event.target)'> 
+        </div>
+    </div>
+
+
+</div>

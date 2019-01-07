@@ -1,14 +1,20 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
 import {
+    FinancialChartAnnotationsComponent
+} from "../../src/app/financial-chart/annotations/financial-chart-annotations.component";
+import {
     FinancialChartAxisTypesComponent
 } from "../../src/app/financial-chart/axis-types/financial-chart-axis-types.component";
 import {
     FinancialChartCustomIndicatorsComponent
 } from "../../src/app/financial-chart/custom-indicators/financial-chart-custom-indicators.component";
 import {
-    FinancialChartCustomTooltipsComponent
-} from "../../src/app/financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
+    FinancialChartTooltipTemplateComponent
+} from "../../src/app/financial-chart/tooltip-template/financial-chart-tooltip-template.component";
+import {
+    FinancialChartTooltipTypesComponent
+} from "../../src/app/financial-chart/tooltip-types/financial-chart-tooltip-types.component";
 import {
     FinancialChartHighFrequencyComponent
 } from "../../src/app/financial-chart/high-frequency/financial-chart-high-frequency.component";
@@ -49,11 +55,33 @@ export class FinancialChartConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: FinancialChartCustomTooltipsComponent,
+            component: FinancialChartTooltipTemplateComponent,
             additionalFiles: ["/src/app/financial-chart/services/financial-data.service.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartCustomTooltipsComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartCustomTooltipsComponent],
+                imports: [IgxFinancialChartModule, FinancialChartTooltipTemplateComponent, FinancialDataService],
+                ngDeclarations: [FinancialChartTooltipTemplateComponent],
+                ngImports: [IgxFinancialChartModule]
+            }),
+            dependenciesType: DependenciesType.Charts
+        }));
+
+        configs.push(new Config({
+            component: FinancialChartTooltipTypesComponent,
+            additionalFiles: ["/src/app/financial-chart/services/financial-data.service.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxFinancialChartModule, FinancialChartTooltipTypesComponent, FinancialDataService],
+                ngDeclarations: [FinancialChartTooltipTypesComponent],
+                ngImports: [IgxFinancialChartModule]
+            }),
+            dependenciesType: DependenciesType.Charts
+        }));
+
+        configs.push(new Config({
+            component: FinancialChartAnnotationsComponent,
+            additionalFiles: ["/src/app/financial-chart/services/financial-data.service.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxFinancialChartModule, FinancialChartAnnotationsComponent, FinancialDataService],
+                ngDeclarations: [FinancialChartAnnotationsComponent],
                 ngImports: [IgxFinancialChartModule]
             }),
             dependenciesType: DependenciesType.Charts

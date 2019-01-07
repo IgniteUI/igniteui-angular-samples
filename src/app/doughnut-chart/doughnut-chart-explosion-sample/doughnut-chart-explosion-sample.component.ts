@@ -1,13 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
+import { IgxRingSeriesComponent } from "igniteui-angular-charts/ES5/igx-ring-series-component";
 
 @Component({
     selector: "app-doughnut-chart-explosion-sample",
     styleUrls: ["./doughnut-chart-explosion-sample.component.scss"],
     templateUrl: "./doughnut-chart-explosion-sample.component.html"
 })
-export class DoughnutChartExplosionSampleComponent {
+export class DoughnutChartExplosionSampleComponent implements AfterViewInit {
 
     public data: any;
+
+    @ViewChild("chart")
+    public chart: IgxDoughnutChartComponent;
 
     constructor() {
         this.data = [
@@ -22,5 +27,11 @@ export class DoughnutChartExplosionSampleComponent {
 
     public pieSliceClickEvent(e: any): void {
         e.args.isExploded = !e.args.isExploded;
+    }
+
+    public ngAfterViewInit(): void {
+        let series: IgxRingSeriesComponent;
+        series = this.chart.actualSeries[0] as IgxRingSeriesComponent;
+        series.explodedSlices.add(3);
     }
 }

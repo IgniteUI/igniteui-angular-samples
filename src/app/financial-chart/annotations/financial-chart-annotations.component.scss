@@ -1,40 +1,41 @@
-::ng-deep .igx-overlay__content--modal
-{
-	width: 100%;
-	margin: 0 50px;
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
 }
 
-select
-{
-	max-width: 200px;
+.chart {
+    flex: 1;
+    overflow: hidden;
+}
+.options {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width:100%;    
+    font-size: 1rem;
+    font-family: sans-serif;
 }
 
-.sample-options
-{
-	width: 100%;
-	height: 100%;
-	padding: 0 5px;
+.optionLabel {
+    margin-left: 15px;
+    margin-right: 5px;
 }
 
-.sample-options > fieldset
-{
-	border: solid 1px black;
-	padding: 0 7px;
+.optionItem {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: center;
+    font-size: 1rem;
+    font-family: sans-serif;
 }
 
-fieldset > legend
-{
-	padding: 0 5px;
-}
-
-$button-height: 35px;
-
-.options-button
-{
-    max-height: $button-height;
-}
-
-.chart
-{
-    height: calc(100% - #{$button-height});
+input {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 6px;
+    margin-left: 4px;
+    vertical-align: bottom;
 }

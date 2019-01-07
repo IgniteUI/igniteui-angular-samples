@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
-    IgxColumnComponent, IgxDropDownComponent, IgxExcelExporterOptions, IgxExcelExporterService,
-    IgxGridCellComponent, IgxGridComponent, IgxSliderComponent, IgxToggleDirective,
-    OverlaySettings, PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
+    IgxButtonGroupComponent, IgxColumnComponent, IgxDropDownComponent,
+    IgxGridCellComponent, IgxGridComponent, IgxSliderComponent,
+    OverlaySettings, PositionSettings,
+    SortingDirection, VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
 import { LocalDataService } from "../services/localData.service";
 
@@ -48,19 +49,14 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
 
-    @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
-    @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
-
     @ViewChild("hidingButton") public hidingButton: ElementRef;
     @ViewChild("pinningButton") public pinningButton: ElementRef;
 
     @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
 
     public cols: QueryList<IgxColumnComponent>;
-    public hiddenColsLength: number;
-    public pinnedColsLength: number;
 
-    public theme = true;
+    public theme = false;
     public volume = 1000;
     public frequency = 500;
     public data: Observable < any[] > ;
@@ -72,12 +68,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
             label: "LIVE PRICES",
             selected: false
         }),
-        // new Button({
-        //     disabled: false,
-        //     icon: "play_arrow",
-        //     label: "LIVE ALL DATA",
-        //     selected: false
-        // }),
         new Button({
             disabled: false,
             icon: "update",
@@ -92,97 +82,41 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         })
     ];
 
-    public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
-
-    public _positionSettings: PositionSettings = {
-        horizontalDirection: HorizontalAlignment.Left,
-        horizontalStartPoint: HorizontalAlignment.Right,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
-
-    public _overlaySettings: OverlaySettings = {
-        closeOnOutsideClick: true,
-        modal: false,
-        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
-        scrollStrategy: new AbsoluteScrollStrategy()
-    };
-
     private subscription;
     private selectedButton;
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: LocalDataService,
-                private excelExporterService: IgxExcelExporterService) {
+    constructor(private zone: NgZone, private localService: LocalDataService) {
         this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
-        if (this.theme) {
-            document.body.classList.add("finjs-dark-theme");
-        }
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: "Category"
+                fieldName: "Category",
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Type"
+                fieldName: "Type",
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Contract"
+                fieldName: "Contract",
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
             }
         ];
     }
 
     public ngAfterViewInit() {
         this.cols = this.grid1.columnList;
-        this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
-        this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
         this.grid1.reflow();
-    }
-
-    public toggleDropDown(eventArgs) {
-        this._overlaySettings.positionStrategy.settings.target = eventArgs.target;
-        this.igxDropDown.toggle(this._overlaySettings);
-    }
-
-    public toggleVisibility(col: IgxColumnComponent) {
-        if (col.hidden) {
-            this.hiddenColsLength--;
-        } else {
-            this.hiddenColsLength++;
-        }
-        col.hidden = !col.hidden;
-    }
-
-    public togglePin(col: IgxColumnComponent, evt) {
-        if (col.pinned) {
-            this.grid1.unpinColumn(col.field);
-            this.pinnedColsLength--;
-        } else {
-            if (this.grid1.pinColumn(col.field)) {
-                this.pinnedColsLength++;
-            } else {
-                // if pinning fails uncheck the checkbox
-                evt.checkbox.checked = false;
-            }
-        }
-    }
-
-    public handleExporting(event: any) {
-        if (event.newSelection.index === 0) {
-            this.exportData();
-        } else {
-            // TODO
-            // BRIAN CAN PUT HIS CODE HERE
-        }
-    }
-
-    public exportData() {
-        this.excelExporterService.exportData(this.grid1.data, new IgxExcelExporterOptions("Report"));
     }
 
     public chartClick(cell: IgxGridCellComponent) {
@@ -225,25 +159,23 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         } else {
             this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
-                fieldName: "Category"
+                fieldName: "Category",
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Type"
+                fieldName: "Type",
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
             },
             {
                 dir: SortingDirection.Desc,
-                fieldName: "Contract"
+                fieldName: "Contract",
+                ignoreCase: false,
+                strategy: DefaultSortingStrategy.instance()
             }
         ];
-        }
-    }
-
-    public changeTheme(event: any) {
-        if (event.checked) {
-            document.body.classList.add("finjs-dark-theme");
-        } else {
-            document.body.classList.remove("finjs-dark-theme");
         }
     }
 
@@ -278,17 +210,16 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         this.localService.getData(this.volume);
     }
 
-    public onFrequencyChanged(event: any) {
+    public onThemeChanged(event: any) {
+        if (event.checked) {
+            document.body.querySelector("div.main").classList.add("dark-theme");
+        } else {
+            document.body.querySelector("div.main").classList.remove("dark-theme");
+        }
     }
 
-    public toggleHiding() {
-        this._overlaySettings.positionStrategy.settings.target = this.hidingButton.nativeElement;
-        this.toggleRefHiding.toggle(this._overlaySettings);
-    }
-
-    public togglePinning() {
-        this._overlaySettings.positionStrategy.settings.target = this.pinningButton.nativeElement;
-        this.toggleRefPinning.toggle(this._overlaySettings);
+    public toggleToolbar(event: any) {
+        this.grid1.showToolbar = !this.grid1.showToolbar;
     }
 
     private negative = (rowData: any): boolean => {
@@ -325,10 +256,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         changePos2: this.changePositive,
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
-    };
-    // tslint:disable-next-line:member-ordering
-    public buttonCols = {
-        buttonCols: true
     };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {

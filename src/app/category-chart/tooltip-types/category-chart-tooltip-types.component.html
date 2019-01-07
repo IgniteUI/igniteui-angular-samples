@@ -1,0 +1,27 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <span>Tooltips Type:</span>
+        <select [(ngModel)]="toolTipType">            
+            <option>Category</option>
+            <option>Default</option>
+        </select>
+    </div>
+
+    <div class="chart">
+        <igx-category-chart
+            #chart
+            height="98%" width="100%"
+            [dataSource]="olympicData"
+            [toolTipType]="toolTipType"
+            chartType="Column"
+
+            chartTitle="Olympic Medals By Country"
+            yAxisTitle="Total Medals"
+            yAxisTitleTextStyle="12pt Verdana"
+            yAxisTitleTextColor="gray"
+            yAxisTitleAngle="90"
+            yAxisTitleLeftMargin="5">
+        </igx-category-chart>
+
+    </div>
+</div>

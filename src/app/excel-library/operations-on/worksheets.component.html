@@ -1,0 +1,11 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <button class="optionItem" (click)="exportData()">Export Excel File with Settings</button>
+        <label class="optionItem"><input [(ngModel)]="isSorted" type="checkbox" />Apply Sort</label>
+        <label class="optionItem"><input [(ngModel)]="isFiltered" type="checkbox" />Apply Filter</label>
+        <label class="optionItem"><input [(ngModel)]="isProtected" type="checkbox" />Protect Worksheet</label>
+        <label class="optionItem"><input [(ngModel)]="showGridlines" type="checkbox" />Show Gridlines</label>
+        <label class="optionItem"><input [(ngModel)]="showHeaders" type="checkbox" />Show Row and Column Headers</label>
+        <label class="optionItem"><input [(ngModel)]="applyConditionalFormatting" type="checkbox" />Apply Conditional Formatting</label>
+    </div>
+</div>

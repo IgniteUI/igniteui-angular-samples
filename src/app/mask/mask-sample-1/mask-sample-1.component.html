@@ -1,5 +1,5 @@
 <form class="mask-sample" action="/" method="POST">
-    <h4 class="form-title">Personal Data</h4>
+    <h5 class="form-title">Personal Data</h5>
 
     <igx-input-group>
         <label igxLabel for="name">Name</label>
@@ -8,12 +8,14 @@
 
     <igx-input-group>
         <label igxLabel for="email">Birthday</label>
-        <input igxInput #dateInput name="birthday" type="text" [igxMask]="'00/00/0000'" [(ngModel)]="person.birthday" (blur)="validateDate(dateInput, snackbar)" />
+        <input igxInput #dateInput name="birthday" type="text" [igxMask]="'00/00/0000'" [(ngModel)]="person.birthday"
+            (blur)="validateDate(dateInput, snackbar)" />
     </igx-input-group>
 
     <igx-input-group>
         <label igxLabel for="socialSecurityNumber">Social Security Number</label>
-        <input igxInput #ssn name="socialSecurityNumber" type="text" [igxMask]="'###-##-####'" [(ngModel)]="person.socialSecurityNumber" (blur)="validateSSN(ssn, snackbar)" />
+        <input igxInput #ssn name="socialSecurityNumber" type="text" [igxMask]="'###-##-####'" [(ngModel)]="person.socialSecurityNumber"
+            (blur)="validateSSN(ssn, snackbar)" />
     </igx-input-group>
 
     <igx-snackbar #snackbar></igx-snackbar>

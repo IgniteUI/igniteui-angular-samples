@@ -1,0 +1,34 @@
+<div >
+    <div class="workbookOptions">
+
+        <div class="workbookOperations">
+            <button class="workbookButton" (click)="workbookCreate()">
+                <label>Create Workbook</label>
+            </button>
+            <button class="workbookButton" (click)="workbookSave()" [disabled]="!canSave">
+                <label>Save Workbook</label>
+            </button>
+            <div class="workbookSelector">
+                <button class="workbookButton">
+                    <label for="workbookSelector">Load Workbook</label>
+                </button>
+                <input class="workbookButton" id="workbookSelector" type="file" style="visibility:hidden;"
+                    accept=".xls, .xlt, .xlsx, .xlsm, .xltm, .xltx"
+                    (change)='workbookLoad($event.target)' >
+            </div>
+        </div>
+        <div class="workbookDetails">
+            <label class="label">Select Table:</label>
+            <select size="3" [(ngModel)]="selectedTable" (ngModelChange)="onTableChange($event)">
+                <option *ngFor="let tblName of worksheetTables">
+                    {{tblName}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="workbookPreview">
+        <label class="label"> Data Preview: </label>
+        <template #gridContainer></template>
+    </div>
+</div>

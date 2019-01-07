@@ -1,5 +1,5 @@
 import { Component, QueryList, ViewChildren } from "@angular/core";
-import { IgxExpansionPanelComponent } from "igniteui-angular";
+import { IExpansionPanelEventArgs, IgxExpansionPanelComponent } from "igniteui-angular";
 @Component({
     // tslint:disable-next-line:component-selector
     selector: "app-expansion-sample-5",
@@ -38,10 +38,10 @@ export class ExpansionPanelSample5Component {
          return this.accordion.toArray()[index] && this.accordion.toArray()[index].collapsed;
      }
 
-    public onInteraction(event) {
+    public onInteraction(event: IExpansionPanelEventArgs) {
         const expandedPanels = this.accordion.filter((panel) => !panel.collapsed);
         expandedPanels.forEach((expandedPanel) => {
-            if (expandedPanel.elementRef !==  event.event.currentTarget) {
+            if (expandedPanel.id !==  event.panel.id) {
                 expandedPanel.collapse();
             }
         });

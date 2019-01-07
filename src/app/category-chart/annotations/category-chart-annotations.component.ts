@@ -1,79 +1,147 @@
-import { Component } from "@angular/core";
-import { CrosshairsDisplayMode } from "igniteui-angular-charts/ES5/CrosshairsDisplayMode";
-import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "app-category-chart-annotations",
     styleUrls: ["./category-chart-annotations.component.scss"],
     templateUrl: "./category-chart-annotations.component.html"
 })
 export class CategoryChartAnnotationsComponent {
 
-    public CrosshairsDisplayMode = CrosshairsDisplayMode;
-    public ToolTipType = ToolTipType;
-
-    public categoryData: any;
+    public categoryData: WeatherMeasure[];
     public sampleOptions: SampleOptions = new SampleOptions();
-    public calloutData: CalloutCategoryData;
+    public include: string[];
 
     constructor() {
+        const year: number = new Date().getFullYear();
         this.categoryData = [
-            { date: new Date("1/4/2018"), temperatureHigh: 59, temperatureLow: 46, averageTemperature: 52.5 },
-            { date: new Date("1/5/2018"), temperatureHigh: 74, temperatureLow: 43, averageTemperature: 52.5 },
-            { date: new Date("1/6/2018"), temperatureHigh: 68, temperatureLow: 46, averageTemperature: 57 },
-            { date: new Date("1/7/2018"), temperatureHigh: 78, temperatureLow: 57, averageTemperature: 67.5 },
-            { date: new Date("1/8/2018"), temperatureHigh: 83, temperatureLow: 64, averageTemperature: 73.5 },
-            { date: new Date("1/9/2018"), temperatureHigh: 87, temperatureLow: 67, averageTemperature: 77 },
-            { date: new Date("1/10/2018"), temperatureHigh: 86, temperatureLow: 66, averageTemperature: 76 },
-            { date: new Date("1/11/2018"), temperatureHigh: 87, temperatureLow: 65, averageTemperature: 76 },
-            { date: new Date("1/12/2018"), temperatureHigh: 85, temperatureLow: 59, averageTemperature: 72 },
-            { date: new Date("1/13/2018"), temperatureHigh: 76, temperatureLow: 54, averageTemperature: 65 },
-            { date: new Date("1/14/2018"), temperatureHigh: 75, temperatureLow: 63, averageTemperature: 69 },
-            { date: new Date("1/15/2018"), temperatureHigh: 83, temperatureLow: 63, averageTemperature: 78 },
-            { date: new Date("1/16/2018"), temperatureHigh: 79, temperatureLow: 54, averageTemperature: 66.5 },
-            { date: new Date("1/17/2018"), temperatureHigh: 82, temperatureLow: 66, averageTemperature: 74 }
+            new WeatherMeasure({ high: 74, low: 65, date: new Date(year, 0, 1) }),
+            new WeatherMeasure({ high: 74, low: 71, date: new Date(year, 1, 1) }),
+            new WeatherMeasure({ high: 76, low: 73, date: new Date(year, 2, 1) }),
+            new WeatherMeasure({ high: 78, low: 74, date: new Date(year, 3, 1) }),
+            new WeatherMeasure({ high: 83, low: 76, date: new Date(year, 4, 1) }),
+            new WeatherMeasure({ high: 87, low: 82, date: new Date(year, 5, 1) }),
+            new WeatherMeasure({ high: 94, low: 87, date: new Date(year, 6, 1) }),
+            new WeatherMeasure({ high: 97, low: 92, date: new Date(year, 7, 1) }),
+            new WeatherMeasure({ high: 93, low: 88, date: new Date(year, 8, 1) }),
+            new WeatherMeasure({ high: 86, low: 83, date: new Date(year, 9, 1) }),
+            new WeatherMeasure({ high: 81, low: 78, date: new Date(year, 10, 1) }),
+            new WeatherMeasure({ high: 79, low: 71, date: new Date(year, 11, 1) })
         ];
-        this.calloutData = new CalloutCategoryData(this.categoryData);
+
+        this.include = ["date", "high", "low"];
+
+        const calloutParser: CalloutCategoryDataParser = new CalloutCategoryDataParser(this.categoryData);
+        calloutParser.parseForCalloutData();
     }
 
     public formatDateLabel(item: any): string {
-        return item.date.toLocaleDateString();
+        return item.date.toLocaleDateString(undefined, {month: "long"});
     }
 }
 
-class CalloutCategoryData extends Array {
+class WeatherMeasure {
+    public date: Date;
+    public high: number;
+    public low: number;
 
-    constructor(categoryData: any[]) {
+    //  Callout Properties
+    public index: number;
+    public value: number;
+    public content: string;
+
+    public constructor(init?: Partial<WeatherMeasure>) {
+        Object.assign(this, init);
+    }
+}
+
+class CalloutCategoryDataParser extends Array {
+
+    private categoryData: WeatherMeasure[];
+
+    constructor(categoryData: WeatherMeasure[]) {
         super();
 
-        this.parseForCalloutData(categoryData);
+        this.categoryData = categoryData;
     }
 
-    public parseForCalloutData = function(categoryData: any[]) {
+    public parseForCalloutData = function() {
+        let minItem: WeatherMeasure = null;
+        let maxItem: WeatherMeasure = null;
+        let minVal: number = Number.MAX_VALUE;
+        let maxVal: number = Number.MIN_VALUE;
         let idx: number = 0;
-        for (const item of categoryData) {
-            if (item.temperatureHigh - item.averageTemperature > 10) {
-                this.push({
-                    content: "Very high over average for " + item.date.toLocaleDateString(),
-                    index: idx,
-                    yValue: item.temperatureHigh });
+
+        for (const item of this.categoryData) {
+            item.index = idx;
+
+            if (minVal > item.low) {
+                minVal = item.low;
+                minItem = item;
+                minItem.index = idx + 0.5;
             }
+            if (maxVal < item.high) {
+                maxVal = item.high;
+                maxItem = item;
+            }
+
+            item.value = item.high;
+
+            switch (item.date.getMonth()) {
+                case 11:
+                case 0:
+                case 1:
+                    {
+                        item.content = "WINTER";
+                    }
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    {
+                        item.content = "SPRING";
+                    }
+                    break;
+                case 5:
+                case 6:
+                case 7:
+                    {
+                        item.content = "SUMMER";
+                    }
+                    break;
+                case 8:
+                case 9:
+                case 10:
+                    {
+                        item.content = "FALL";
+                    }
+                    break;
+            }
+
+            // if (item.temperatureHigh - item.averageTemperature > 10) {
+            //     this.push({
+            //         content: "Very high over average for " + item.date.toLocaleDateString(),
+            //         index: idx,
+            //         yValue: item.temperatureHigh });
+            // }
             idx++;
         }
+
+        minItem.content = "MIN";
+        minItem.value = minItem.low;
+        maxItem.content = "MAX";
+        maxItem.value = maxItem.high;
     };
 }
 
 class SampleOptions {
-    public highlightCategory: boolean = false;
-    public highlightItem: boolean = false;
 
-    public tooltipType: string = "Default";
-
-    public crosshairs: string = "Horizontal";
-    public snapCrosshairs: boolean = true;
+    public chartType: string = "Column";
+    public crosshairsDisplay: string = "Horizontal";
+    public snapCrosshairs: boolean = false;
     public crosshairAnnotations: boolean = true;
 
-    public finalValueAnnotations: boolean = false;
+    public finalValuesVisible: boolean = false;
 
     public calloutsVisible: boolean = false;
 }

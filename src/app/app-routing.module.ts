@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { NgModule } from "@angular/core";
 import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
 import "rxjs/add/operator/filter";
@@ -7,6 +8,9 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
+import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
+import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -45,14 +49,14 @@ import {
     CategoryChartConfigOptionsComponent
 } from "./category-chart/config-options/category-chart-config-options-sample.component";
 import {
-    CategoryChartCustomTooltipsComponent
-} from "./category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
-import {
     CategoryChartHighFrequencyComponent
 } from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
     CategoryChartHighVolumeComponent
 } from "./category-chart/high-volume/category-chart-high-volume-sample.component";
+import {
+    CategoryChartHighlightingComponent
+} from "./category-chart/highlighting/category-chart-highlighting.component";
 import {
     CategoryChartOverlapColumnsComponent
 } from "./category-chart/overlap-columns/category-chart-overlap-columns.component";
@@ -60,8 +64,14 @@ import {
     CategoryChartOverviewComponent
 } from "./category-chart/overview/category-chart-overview-sample.component";
 import {
-    CategoryChartWithTrendlineComponent
-} from "./category-chart/trendline/category-chart-with-trendline.component";
+    CategoryChartTooltipTemplateComponent
+} from "./category-chart/tooltip-template/category-chart-tooltip-template.component";
+import {
+    CategoryChartTooltipTypesComponent
+} from "./category-chart/tooltip-types/category-chart-tooltip-types.component";
+import {
+    CategoryChartTrendlinesComponent
+} from "./category-chart/trendline/category-chart-trendlines.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
@@ -94,6 +104,7 @@ import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.co
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
+import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -114,9 +125,6 @@ import {
 import {
     FinancialChartCustomIndicatorsComponent
 } from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
-import {
-    FinancialChartCustomTooltipsComponent
-} from "./financial-chart/custom-tooltips/financial-chart-custom-tooltips.component";
 import {
     FinancialChartHighFrequencyComponent
 } from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
@@ -147,6 +155,12 @@ import {
 import {
     FinancialChartTitlesComponent
 } from "./financial-chart/titles/financial-chart-titles.component";
+import {
+    FinancialChartTooltipTemplateComponent
+} from "./financial-chart/tooltip-template/financial-chart-tooltip-template.component";
+import {
+    FinancialChartTooltipTypesComponent
+} from "./financial-chart/tooltip-types/financial-chart-tooltip-types.component";
 import {
     FinancialChartTrendlinesComponent
 } from "./financial-chart/trendlines/financial-chart-trendlines.component";
@@ -181,6 +195,7 @@ import { RadialGaugeNeedleComponent } from "./gauges/radial-gauge-needle/radial-
 import { RadialGaugeRangesComponent } from "./gauges/radial-gauge-ranges/radial-gauge-ranges.component";
 import { RadialGaugeScaleComponent } from "./gauges/radial-gauge-scale/radial-gauge-scale.component";
 import { RadialGaugeTickmarksComponent } from "./gauges/radial-gauge-tickmarks/radial-gauge-tickmarks.component";
+import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
     GridColumnHidingToolbarSampleComponent
@@ -196,12 +211,14 @@ import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-edit
 import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupBySummarySampleComponent } from "./grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
+import { GridRowEditSampleComponent } from "./grid/grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
@@ -212,6 +229,7 @@ import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-
 import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { HomeComponent } from "./home/home.component";
@@ -245,10 +263,16 @@ import { ListSample5Component } from "./list/list-sample-5/list-sample-5.compone
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
+import { LocalizationSample1Component } from "./localization-samples/localization-sample-1/localization-sample-1.component";
+import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
+import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
+import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -316,12 +340,65 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import {
+    TreeGridChilddatakeySampleComponent
+} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridPrimaryforeignkeySampleComponent
+} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+
+import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
+import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
+import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
     {
         component: HomeComponent,
         data: { displayName: "Home" },
         path: "home"
+    },
+    // excel library samples with lazy loading:
+    {
+        data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
+        path: "excel-library-operations-on-workbooks"
+    },
+    {
+        data: { displayName: "Worksheets Operations", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/operations-on/worksheets.module#ExcelLibraryOperationsOnWorksheetsModule",
+        path: "excel-library-operations-on-worksheets"
+    },
+    {
+        data: { displayName: "Working With Cells", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule",
+        path: "excel-library-working-with-cells"
+    },
+    {
+        data: { displayName: "Working With Charts", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/charts.module#ExcelLibraryWorkingWithChartsModule",
+        path: "excel-library-working-with-charts"
+    },
+    {
+        data: { displayName: "Working With Grids", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/grids.module#ExcelLibraryWorkingWithGridsModule",
+        path: "excel-library-working-with-grids"
+    },
+    {
+        data: { displayName: "Working With Objects", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/objects.module#ExcelLibraryWorkingWithObjectsModule",
+        path: "excel-library-working-with-objects"
+    },
+    {
+        data: { displayName: "Working With Sparklines", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/sparklines.module#ExcelLibraryWorkingWithSparklinesModule",
+        path: "excel-library-working-with-sparklines"
+    },
+    {
+        data: { displayName: "Working With Tables", parentName: "Excel Library" },
+        loadChildren: "app/excel-library/working-with/tables.module#ExcelLibraryWorkingWithTablesModule",
+        path: "excel-library-working-with-tables"
     },
     {
         component: AvatarSample1Component,
@@ -352,6 +429,26 @@ export const samplesRoutes: Routes = [
         component: BadgeSample3Component,
         data: { displayName: "Badge for List Items", parentName: "Badge" },
         path: "badge-sample-3"
+    },
+    {
+        component: BannerSample1Component,
+        data: { displayName: "Basic Banner", parentName: "Banner" },
+        path: "banner-sample-1"
+    },
+    {
+        component: BannerSample2Component,
+        data: { displayName: "Custom Actions Banner", parentName: "Banner" },
+        path: "banner-sample-2"
+    },
+    {
+        component: BannerSample3Component,
+        data: { displayName: "Animations Banner", parentName: "Banner" },
+        path: "banner-sample-3"
+    },
+    {
+        component: BannerSample4Component,
+        data: { displayName: "Settings Banner", parentName: "Banner" },
+        path: "banner-sample-4"
     },
     {
         component: CardComponent,
@@ -561,6 +658,11 @@ export const samplesRoutes: Routes = [
         path: "dropdown-sample-3"
     },
     {
+        component: DropDownSample4Component,
+        data: { displayName: "Input Dropdown Selection", parentName: "Dropdown" },
+        path: "dropdown-sample-4"
+    },
+    {
         component: ExcelExportComponent,
         data: { displayName: "Excel Export Raw Data", parentName: "Excel Export" },
         path: "export-excel"
@@ -670,6 +772,21 @@ export const samplesRoutes: Routes = [
         path: "list-chat-sample"
     },
     {
+        component: LocalizationSample1Component,
+        data: { displayName: "Localize one component", parentName: "Localization" },
+        path: "localization-sample-1"
+    },
+    {
+        component: LocalizationSample2Component,
+        data: { displayName: "Localize All", parentName: "Localization" },
+        path: "localization-sample-2"
+    },
+    {
+        component: LocalizationSample3Component,
+        data: { displayName: "Localize partially", parentName: "Localization" },
+        path: "localization-sample-3"
+    },
+    {
         component: NavdrawerComponent,
         path: "navigation-drawer"
     },
@@ -706,9 +823,24 @@ export const samplesRoutes: Routes = [
         path: "grid-groupby"
     },
     {
+        component: GridGroupBySummarySampleComponent,
+        data: { displayName: "Grid GroupBy Summary", parentName: "Grid" },
+        path: "grid-groupby-summary"
+    },
+    {
         component: GridEditingSampleComponent,
         data: { displayName: "Grid Editing", parentName: "Grid" },
         path: "grid-editing"
+    },
+    {
+        component: GridRowEditSampleComponent,
+        data: { displayName: "Grid Row Editing", parentName: "Grid" },
+        path: "grid-row-editing"
+    },
+    {
+        component: GridBatchEditingSampleComponent,
+        data: { displayName: "Grid Batch Editing", parentName: "Grid" },
+        path: "grid-batch-editing"
     },
     {
         component: GridDisplayDensitySampleComponent,
@@ -994,6 +1126,11 @@ export const samplesRoutes: Routes = [
         path: "navbar-sample-1"
     },
     {
+        component: NavbarSample2Component,
+        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
+        path: "navbar-sample-2"
+    },
+    {
         component: CardSample1Component,
         data: { displayName: "Card with Header and Content", parentName: "Card" },
         path: "card-sample-1"
@@ -1153,6 +1290,11 @@ export const samplesRoutes: Routes = [
         path: "grid-filtering-sample"
     },
     {
+        component: GridCustomFilteringComponent,
+        data: { displayName: "Custom Filtering Conditions", parentName: "Grid" },
+        path: "grid-filter-conditions"
+    },
+    {
         component: PagingSampleComponent,
         data: { displayName: "Grid Paging", parentName: "Grid" },
         path: "grid-paging-sample"
@@ -1268,6 +1410,16 @@ export const samplesRoutes: Routes = [
         path: "mask-sample-3"
     },
     {
+        component: MaskSample4Component,
+        data: { displayName: "Additional custom formatting", parentName: "Mask" },
+        path: "mask-sample-4"
+    },
+    {
+        component: MaskSample5Component,
+        data: { displayName: "Placeholder", parentName: "Mask" },
+        path: "mask-sample-5"
+    },
+    {
         component: InputGroupSample1Component,
         data: { displayName: "Simple Input Group", parentName: "Input Group" },
         path: "input-group-sample-1"
@@ -1318,9 +1470,9 @@ export const samplesRoutes: Routes = [
         path: "category-chart-overlap-columns"
     },
     {
-        component: CategoryChartCustomTooltipsComponent,
-        data: { displayName: "Category Chart Custom Tooltips", parentName: "Category Chart" },
-        path: "category-chart-custom-tooltips-sample"
+        component: CategoryChartHighlightingComponent,
+        data: { displayName: "Category Chart Highlighting", parentName: "Category Chart" },
+        path: "category-chart-highlighting-sample"
     },
     {
         component: CategoryChartHighVolumeComponent,
@@ -1348,9 +1500,19 @@ export const samplesRoutes: Routes = [
         path: "category-chart-config-options-sample"
     },
     {
-        component: CategoryChartWithTrendlineComponent,
-        data: { displayName: "Category Chart With Trendline", parentName: "Category Chart" },
-        path: "category-chart-with-trendline"
+        component: CategoryChartTooltipTemplateComponent,
+        data: { displayName: "Category Chart Tooltips Template", parentName: "Category Chart" },
+        path: "category-chart-tooltip-template"
+    },
+    {
+        component: CategoryChartTooltipTypesComponent,
+        data: { displayName: "Category Chart Tooltip Types", parentName: "Category Chart" },
+        path: "category-chart-tooltip-types"
+    },
+    {
+        component: CategoryChartTrendlinesComponent,
+        data: { displayName: "Category Chart Trendline", parentName: "Category Chart" },
+        path: "category-chart-trendline"
     },
     {
         component: FinancialChartPerformanceComponent,
@@ -1383,11 +1545,6 @@ export const samplesRoutes: Routes = [
         path: "financial-chart-multiple-feeds"
     },
     {
-        component: FinancialChartCustomTooltipsComponent,
-        data: { displayName: "Financial Chart Custom Tooltips", parentName: "Financial Chart" },
-        path: "financial-chart-custom-tooltips"
-    },
-    {
         component: FinancialChartIndicatorTypesComponent,
         data: { displayName: "Financial Chart Indicator Types", parentName: "Financial Chart" },
         path: "financial-chart-indicator-types"
@@ -1416,6 +1573,16 @@ export const samplesRoutes: Routes = [
         component: FinancialChartAxisTypesComponent,
         data: { displayName: "Financial Chart Axis Types", parentName: "Financial Chart" },
         path: "financial-chart-axis-types"
+    },
+    {
+        component: FinancialChartTooltipTemplateComponent,
+        data: { displayName: "Financial Chart Tooltips Template", parentName: "Financial Chart" },
+        path: "financial-chart-tooltip-template"
+    },
+    {
+        component: FinancialChartTooltipTypesComponent,
+        data: { displayName: "Financial Chart Tooltip Types", parentName: "Financial Chart" },
+        path: "financial-chart-tooltip-types"
     },
     {
         component: FinancialChartTimeBasedDataComponent,
@@ -1451,6 +1618,11 @@ export const samplesRoutes: Routes = [
         component: GridToolbarSample3Component,
         data: { displayName: "Grid Toolbar Export", parentName: "Grid" },
         path: "grid-toolbar-sample-3"
+    },
+    {
+        component: GridToolbarSample4Component,
+        data: { displayName: "Grid Toolbar Custom Content", parentName: "Grid" },
+        path: "grid-toolbar-sample-4"
     },
     {
         component: GridMovingSampleComponent,
@@ -1518,9 +1690,34 @@ export const samplesRoutes: Routes = [
         path: "shadows-sample-2"
     },
     {
+        component: TreeGridBatchEditingSampleComponent,
+        data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
+        path: "treegrid-batchediting"
+    },
+    {
+        component: TreeGridChilddatakeySampleComponent,
+        data: { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
+        path: "treegrid-childdatakey"
+    },
+    {
+        component: TreeGridPrimaryforeignkeySampleComponent,
+        data: { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
+        path: "treegrid-primaryforeignkey"
+    },
+    {
+        component: TreeGridRowEditSampleComponent,
+        data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
+        path: "treegrid-row-edit"
+    },
+    {
         component: DisplayDensityComponent,
         data: { displayName: "Display density sample", parentName: "Themes" },
         path: "density"
+    },
+    {
+        component: TreeGridFinJSComponent,
+        data: { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
+        path: "treegrid-finjs-sample"
     }
 ];
 export const appRoutes: Routes = [

@@ -3,39 +3,51 @@
 
 // Import grid component and theme styles
 @import '~igniteui-angular/lib/core/styles/components/grid/grid-component';
-@import '~igniteui-angular/lib/core/styles//components/grid/grid-theme';
+@import '~igniteui-angular/lib/core/styles/components/grid/grid-theme';
 
 // Import grid-paginator component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/grid-paginator/grid-paginator-component';
-@import '~igniteui-angular/lib/core/styles//components/grid-paginator/grid-paginator-theme';
-
-// Import grid-filtering component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/grid-filtering/grid-filtering-component';
-@import '~igniteui-angular/lib/core/styles//components/grid-filtering/grid-filtering-theme';
+@import '~igniteui-angular/lib/core/styles/components/grid-paginator/grid-paginator-component';
+@import '~igniteui-angular/lib/core/styles/components/grid-paginator/grid-paginator-theme';
 
 // Import dialog-group component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/dialog/dialog-component';
-@import '~igniteui-angular/lib/core/styles//components/dialog/dialog-theme';
+@import '~igniteui-angular/lib/core/styles/components/dialog/dialog-component';
+@import '~igniteui-angular/lib/core/styles/components/dialog/dialog-theme';
 
 // Import input-group component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/input/input-group-component';
-@import '~igniteui-angular/lib/core/styles//components/input/input-group-theme';
+@import '~igniteui-angular/lib/core/styles/components/input/input-group-component';
+@import '~igniteui-angular/lib/core/styles/components/input/input-group-theme';
 
 // Import grid snackbar and theme styles
-@import '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-component';
-@import '~igniteui-angular/lib/core/styles//components/snackbar/snackbar-theme';
+@import '~igniteui-angular/lib/core/styles/components/snackbar/snackbar-component';
+@import '~igniteui-angular/lib/core/styles/components/snackbar/snackbar-theme';
 
 // Import button component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/button/button-component';
-@import '~igniteui-angular/lib/core/styles//components/button/button-theme';
+@import '~igniteui-angular/lib/core/styles/components/button/button-component';
+@import '~igniteui-angular/lib/core/styles/components/button/button-theme';
 
 // Import button-group component and theme styles
-@import '~igniteui-angular/lib/core/styles//components/button-group/button-group-component';
-@import '~igniteui-angular/lib/core/styles//components/button-group/button-group-theme';
+@import '~igniteui-angular/lib/core/styles/components/button-group/button-group-component';
+@import '~igniteui-angular/lib/core/styles/components/button-group/button-group-theme';
 
 // Import calendar component and theme styles
 @import '~igniteui-angular/lib/core/styles/components/calendar/calendar-component';
 @import '~igniteui-angular/lib/core/styles/components/calendar/calendar-theme';
+
+// Import chip component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/chip/chip-component';
+@import '~igniteui-angular/lib/core/styles/components/chip/chip-theme';
+
+// Import icon component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/icon/icon-component';
+@import '~igniteui-angular/lib/core/styles/components/icon/icon-theme';
+
+// Import drop-down component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-component';
+@import '~igniteui-angular/lib/core/styles/components/drop-down/drop-down-theme';
+
+// Import badge component and theme styles
+@import '~igniteui-angular/lib/core/styles/components/badge/badge-component';
+@import '~igniteui-angular/lib/core/styles/components/badge/badge-theme';
 
 // Define the primary colors
 $dark-color: #282828;
@@ -64,16 +76,6 @@ $dark-grid-paginator-theme: igx-grid-paginator-theme(
   $background-color:igx-color($dark-theme-palette, "primary", 500),
   $border-color: igx-color($dark-theme-palette, "secondary", 500)
 );
-
-// Define dark theme for the grid-filtering
-$dark-grid-filtering-theme: igx-grid-filtering-theme(
-  $palette: $dark-theme-palette,
-  $menu-background: igx-color($dark-theme-palette, "primary", 100),
-  $toggle-hover-background: igx-color($dark-theme-palette, "primary", 100),
-  $menu-text-color: igx-color($dark-theme-palette, "secondary", 500),
-  $menu-button-text-color: igx-color($dark-theme-palette, "secondary", 500),
-  $menu-button-disabled-text-color: igx-color($dark-theme-palette, "secondary", 500)
-  );
 
 // Define dark theme for the dialog
 $dark-dialog-theme: igx-dialog-theme(
@@ -126,4 +128,27 @@ $disabled-color: igx-color($dark-theme-palette, "primary", 700)
 // Define dark theme for the calendar
 $dark-calendar-theme: igx-calendar-theme(
     $palette: $dark-theme-palette
+);
+
+// Define dark theme for the icon
+$dark-icon-theme: igx-icon-theme(
+    $palette: $dark-theme-palette
+);
+
+// Define dark theme for the chip
+$dark-chip-theme: igx-chip-theme(
+    $palette: $dark-theme-palette,
+    $text-color: igx-color($dark-theme-palette, "primary", 500),
+    $background: igx-color($dark-theme-palette, "secondary", 500),
+);
+
+// Define dark theme for the drop-down
+$dark-drop-down-theme: igx-drop-down-theme(
+    $palette: $dark-theme-palette
+);
+
+// Define dark theme for the badge
+$dark-badge-theme: igx-badge-theme(
+    $palette: $dark-theme-palette,
+    $background-color: igx-color($dark-theme-palette, "secondary", 500)
 );

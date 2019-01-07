@@ -1,9 +1,8 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
-
 @include igx-core();
 @include igx-theme($default-palette);
-
-html, body {
+html,
+body {
     height: 100%;
     overflow: hidden;
 }
@@ -38,7 +37,8 @@ html, body {
 
 .sample-title {
     color: #0375be;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 .sample-title .light {
@@ -86,274 +86,16 @@ html, body {
         opacity: 1;
     }
 }
-.error > div > div {
-    background-color: red !important;
-}
+
 .headerAlignSyle {
     text-align: right !important;
 }
 
-$finjs-palette: igx-palette(#09f, #72da67);
+.dark-theme {
+    @include igx-dark-theme($green-palette); // grid caption styling
+    background-color: #111;
 
-.finjs-dark-theme {
-
-
-    $dark-text: #000;
-    $light-text: #fff;
-    $disabled-text: rgba(255,255,255, .38);
-
-    $white-10:rgba(255, 255, 255, .04);
-    $white-20:rgba(255, 255, 255, .08);
-    $white-30:rgba(255, 255, 255, .12);
-    $white-40:rgba(255, 255, 255, .26);
-    $white-50:rgba(255, 255, 255, .38);
-    $white-60:rgba(255, 255, 255, .54);
-    $white-70:rgba(255, 255, 255, .62);
-    $white-80:rgba(255, 255, 255, .74);
-    $white-90:rgba(255, 255, 255, .87);
-
-    $finjs-dropdown-theme: igx-drop-down-theme(
-        $background-color: #000
-    );
-
-    @include igx-drop-down($finjs-dropdown-theme);
-
-    // CHECKBOX
-    $finjs-checkbox-theme: igx-checkbox-theme(
-        $palette: $finjs-palette,
-        $label-color: $white-70,
-        $empty-color: $white-70,
-        $tick-color: $dark-text
-    );
-
-    @include igx-checkbox($finjs-checkbox-theme);
-
-    // BUTTON
-    $finjs-button-theme: igx-button-theme(
-        $palette: $finjs-palette,
-        $disabled-color: $white-50,
-        $icon-color: igx-color($finjs-palette, 'secondary', 500)
-    );
-
-    @include igx-button($finjs-button-theme);
-
-
-    // INPUT GROUP
-    $finjs-input-group-theme: igx-input-group-theme(
-        $palette: $finjs-palette,
-        $idle-text-color: $light-text,
-        $filled-text-color: $light-text,
-        $focused-text-color: $light-text,
-        $disabled-text-color: $disabled-text,
-        $variant: 'light'
-    );
-
-    @include igx-input-group($finjs-input-group-theme);
-
-    // GRID DARK THEME
-    $finjs-grid-theme: igx-grid-theme(
-        $ghost-header-background: #333,
-        $ghost-header-icon-color: $white-70
-    );
-
-    @include igx-grid($finjs-grid-theme);
-
-    // grid caption styling
-    .crm-sample-toolbar {
-        background: #111;
-        color: white;
-        box-shadow: 0 1px 5px 0 rgba(0,0,0,.26), 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.08);
-    }
-
-    .operationsContainer {
-        display: flex;
-
-        .igx-button--flat {
-            -webkit-tap-highlight-color: transparent;
-        }
-    }
-
-    div.igx-overlay{
-        .toggle-content {
-            background-color: #222;
-        }
-
-        .toggle-content {
-            background-color: #111;
-            box-shadow: igx-elevation($elevations, 4);
-        }
-
-        .dd-title {
-            color: white;
-        }
-
-        .dd-list__item {
-            &:hover {
-                background: #4b4b4b;
-            }
-        }
-    }
-}
-
-// grid caption styling
-.crm-sample-toolbar {
-    background: #ddd;
-    width: 100%;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    color: white;
-    font-weight: 600;
-    font-size: 1.25rem;
-    padding: rem(8px) rem(24px);
-    box-shadow: 0 1px 5px 0 rgba(0,0,0,.26), 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.08);
-    border-radius: 2px;
-    & span {
-        margin-right: auto;
-    }
-
-    .igx-button--flat {
-        flex-wrap: nowrap;
-        white-space: nowrap;
-    }
-
-    .igx-button--icon {
-        border-radius: 0;
-    }
-}
-
-.crm-sample-toolbar__title {
-    margin-right: rem(16px);
-    display: flex;
-    align-items: center;
-    justify-self: flex-start;
-
-    .logo-propeller {
-        margin-right: 8px;
-        margin-top: 2px;
-    }
-}
-
-.crm-sample-toolbar__ellipsis {
-    @include ellipsis();
-    opacity: 0;
-    animation: slide-fade 1.25s .25s ease-out forwards;
-}
-
-.sample-flex-container {
-    display: flex;
-    align-self: center;
-    flex: 1 1 auto;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-
-
-.operationsContainer {
-    display: flex;
-
-    .igx-button--flat {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 5.5rem;
-        height: 2.25rem;
-        padding: 0 1rem;
-        border: none;
-        border-radius: 2px;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        outline: 0;
-        -webkit-tap-highlight-color: transparent;
-        overflow: hidden;
-        transition: all .15s ease-out;
-    }
-}
-
-.toggle-button igx-icon.header-icon {
-    font-size: 1rem;
-    width: 1rem;
-    height: 1rem;
-    margin-right: rem(4);
-}
-
-.toggle-button igx-icon.pin-icon {
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1rem;
-    height: 1rem;
-    margin-right: rem(4);
-}
-
-.relative-container {
-    position: relative;
-}
-
-div.igx-overlay{
-    .toggle-content {
-        background: #fff;
-        display: flex;
-        width: 240px;
-        height: 300px;
-        position: absolute;
-        z-index: 3;
-        overflow: auto;
-        box-shadow: igx-elevation($elevations, 4);
-    }
-
-    .toggle-section {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        font-size: 0.8em;
-    }
-
-    .dd-title {
-        color: #666;
-        margin:0;
-        padding: 8px 8px 0 8px;
-        font-size: 14px;
-    }
-
-    .dd-list {
-        list-style-type: none;
-    }
-
-    .dd-list__item {
-        display: flex;
-        align-items: center;
-        padding: 16px;
-
-        &:hover {
-            background: #f9f9f9;
-        }
-    }
-
-    .pin-icon {
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 1rem;
-        height: 1rem;
-    }
-
-    .animated-fan {
-        width: 28px;
-        height: 28px;
-        animation: spin-fade 1.5s cubic-bezier(0.21, 1.07, 0.99, 1) forwards;
-    }
-
-    .crm-sample-toolbar .igx-button--flat {
-        flex-wrap: nowrap;
-        white-space: nowrap;
+    ::-moz-placeholder {
+        opacity: 1;
     }
 }

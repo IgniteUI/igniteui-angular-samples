@@ -15,6 +15,7 @@ import {
     IgxDialogModule,
     IgxDropDownModule,
     IgxExcelExporterService,
+    IgxFocusModule,
     IgxGridModule,
     IgxIconModule,
     IgxInputGroupModule,
@@ -29,6 +30,10 @@ import {
     IgxToggleModule
 } from "igniteui-angular";
 import {
+    GridBatchEditingSampleComponent
+} from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
+import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
+import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
@@ -38,6 +43,7 @@ import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
+import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -45,6 +51,7 @@ import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-samp
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { FinJSDemoComponent } from "../../src/app/grid/grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupBySummarySampleComponent } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
@@ -52,6 +59,9 @@ import {
 } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
+import {
+    GridRowEditSampleComponent
+} from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
@@ -65,6 +75,7 @@ import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/g
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
+import { GridToolbarSample4Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
@@ -134,6 +145,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
                 ngDeclarations: [GridGroupBySampleComponent],
                 ngImports: [IgxButtonModule, IgxGridModule.forRoot(), IgxIconModule, IgxBadgeModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupBySummarySampleComponent,
+            additionalFiles: ["/src/app/grid/grid-groupby-summary-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
+                    IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
+                ngDeclarations: [GridGroupBySummarySampleComponent],
+                ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule.forRoot(),
+                    IgxIconModule, IgxBadgeModule]
             })
         }));
 
@@ -341,6 +364,17 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridToolbarSample4Component,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridToolbarSample4Component, IgxAvatarModule, IgxGridModule],
+                ngDeclarations: [GridToolbarSample4Component],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
             component: GridEditingSampleComponent,
             additionalFiles: ["/src/app/grid/grid-editing-sample/data.ts",
                 "/src/app/grid/grid-editing-sample/product.ts"],
@@ -458,13 +492,46 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: FinJSDemoComponent,
             additionalFiles: ["/src/app/grid/services/localData.service.ts", "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, FinJSDemoComponent,
                     LocalDataService],
                 ngDeclarations: [FinJSDemoComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
                 ngProviders: [LocalDataService, IgxExcelExporterService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridBatchEditingSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts",
+                "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule, GridWithTransactionsComponent],
+                ngDeclarations: [GridBatchEditingSampleComponent, GridWithTransactionsComponent],
+                ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
+                    IgxFocusModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowEditSampleComponent,
+            additionalFiles: ["src/app/grid/grid-row-editing-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
+                ngDeclarations: [GridRowEditSampleComponent],
+                ngImports: [IgxGridModule.forRoot(), IgxFocusModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCustomFilteringComponent,
+            additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCustomFilteringComponent, IgxGridModule],
+                ngDeclarations: [GridCustomFilteringComponent],
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 
