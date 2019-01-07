@@ -1,7 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxRippleModule, IgxToastModule } from "igniteui-angular";
-import { ToastSample1Component } from "../../src/app/toast/toast-sample-1/toast-sample-1.component";
-import { ToastSample5Component } from "../../src/app/toast/toast-sample-5/toast-sample-5.component";
+import { ToastSample1Component
+} from "../../src/app/notifications/toast/toast-sample-1/toast-sample-1.component";
+import { ToastSample5Component
+} from "../../src/app/notifications/toast/toast-sample-5/toast-sample-5.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -19,7 +21,7 @@ export class ToastConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ToastSample1Component],
                 ngImports: [IgxButtonModule, IgxRippleModule, IgxToastModule]
             }),
-            shortenComponentPathBy: "/toast/"
+            shortenComponentPathBy: "/notifications/toast/"
         }));
 
         // toast sample 5
@@ -32,7 +34,7 @@ export class ToastConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxRippleModule,
                     IgxToastModule]
             }),
-            shortenComponentPathBy: "/toast/"
+            shortenComponentPathBy: "/notifications/toast/"
         }));
 
         return configs;

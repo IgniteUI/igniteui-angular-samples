@@ -1,7 +1,8 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxIconModule, IgxListModule,
     IgxRippleModule, IgxSnackbarModule } from "igniteui-angular";
-import { SnackbarSample4Component } from "../../src/app/snackbar/snackbar-sample-4/snackbar-sample-4.component";
+import { SnackbarSample4Component
+} from "../../src/app/notifications/snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -19,7 +20,7 @@ export class SnackbarConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxAvatarModule, IgxIconModule, IgxListModule,
                     IgxRippleModule, IgxSnackbarModule]
             }),
-            shortenComponentPathBy: "/snackbar/"
+            shortenComponentPathBy: "/notifications/snackbar/"
         }));
 
         return configs;
