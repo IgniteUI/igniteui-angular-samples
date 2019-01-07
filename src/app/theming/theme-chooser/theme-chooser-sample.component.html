@@ -1,4 +1,4 @@
-<div>
+<div #element>
     <igx-dialog #dialog1 title="New Record" [rightButtonLabel]="'Add'" [leftButtonLabel]="'Cancel'"
         (onLeftButtonSelect)="cancel()" (onRightButtonSelect)="addRow()">
         <div class="dialogNewRecord">
@@ -25,7 +25,7 @@
             <igx-datePicker #datePicker name="date" [(ngModel)]="record.Date"> </igx-datePicker>
         </div>
     </igx-dialog>
-    <div igxOverlayOutlet #outlet>
+    <div igxOverlayOutlet>
         <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
             <button igxButton="raised" class="addProdBtn" (click)="openDialog()">Add New Product</button>
             <button class="drop-down-button" igxButton="raised" (click)="toggleDropDown($event, dropdown)"
@@ -49,6 +49,9 @@
             <igx-column [field]="'Date'" dataType="date" [sortable]="true" [editable]="true">
                 <ng-template igxCell let-cell="cell" let-val>
                     {{val | date:'dd/MM/yyyy'}}
+                </ng-template>
+                <ng-template igxCellEditor let-cell="cell" >
+                    <igx-date-picker [value] = "cell.value" (onSelection)="value = $event" [labelVisibility]="false" [outlet]="outlet"></igx-date-picker>
                 </ng-template>
             </igx-column>
             <igx-column width="120%" [field]="'Delete Row'" [filterable]="false">

@@ -36,8 +36,7 @@ export class ThemeChooserSampleComponent implements OnInit {
     @ViewChild("dialog1", { read: IgxDialogComponent })
     public dialog: IgxDialogComponent;
 
-    @Input()
-    @ViewChild("outlet", { read: IgxOverlayOutletDirective })
+    @ViewChild(IgxOverlayOutletDirective)
     public outlet: IgxOverlayOutletDirective;
 
     @ViewChild("grid1", { read: IgxGridComponent })
