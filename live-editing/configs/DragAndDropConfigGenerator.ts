@@ -1,9 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxDragDirective, IgxDropDirective, IgxDragDropModule } from "igniteui-angular";
+import { IgxDragDirective, IgxDragDropModule, IgxDropDirective } from "igniteui-angular";
+import { DragAndDropSampleComponent } from "../../src/app/interactions/drag-drop/drag-drop.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { DragAndDropSampleComponent } from "../../src/app/drag-drop/drag-drop.component";
 
 export class DragAndDropConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -15,7 +15,8 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
                 imports: [IgxDragDirective, IgxDropDirective, IgxDragDropModule, DragAndDropSampleComponent],
                 ngDeclarations: [DragAndDropSampleComponent],
                 ngImports: [IgxDragDropModule]
-            })
+            }),
+            shortenComponentPathBy: "/interactions/"
         }));
 
         return configs;
