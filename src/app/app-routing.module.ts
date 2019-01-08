@@ -8,9 +8,6 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
-import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
-import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
-import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -280,10 +277,6 @@ import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-
 import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
 import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
 import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
-import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
-import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
-import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
-import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -306,11 +299,6 @@ import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/tim
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
-import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
-import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
-import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
-import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
-import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
@@ -321,7 +309,6 @@ import {
 import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
-import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
@@ -329,6 +316,10 @@ export const samplesRoutes: Routes = [
         component: HomeComponent,
         data: { displayName: "Home" },
         path: "home"
+    },
+    {
+        loadChildren: "app/notifications/notifications.module#NotificationsModule",
+        path: "notifications"
     },
     // excel library samples with lazy loading:
     {
@@ -400,26 +391,6 @@ export const samplesRoutes: Routes = [
         component: BadgeSample3Component,
         data: { displayName: "Badge for List Items", parentName: "Badge" },
         path: "badge-sample-3"
-    },
-    {
-        component: BannerSample1Component,
-        data: { displayName: "Basic Banner", parentName: "Banner" },
-        path: "banner-sample-1"
-    },
-    {
-        component: BannerSample2Component,
-        data: { displayName: "Custom Actions Banner", parentName: "Banner" },
-        path: "banner-sample-2"
-    },
-    {
-        component: BannerSample3Component,
-        data: { displayName: "Animations Banner", parentName: "Banner" },
-        path: "banner-sample-3"
-    },
-    {
-        component: BannerSample4Component,
-        data: { displayName: "Settings Banner", parentName: "Banner" },
-        path: "banner-sample-4"
     },
     {
         component: CardComponent,
@@ -804,26 +775,6 @@ export const samplesRoutes: Routes = [
         path: "grid-cell-styling"
     },
     {
-        component: SnackbarSample1Component,
-        data: { displayName: "Show Snackbar", parentName: "Snackbar" },
-        path: "snackbar-sample-1"
-    },
-    {
-        component: SnackbarSample2Component,
-        data: { displayName: "Hide/Auto Hide Snackbar", parentName: "Snackbar" },
-        path: "snackbar-sample-2"
-    },
-    {
-        component: SnackbarSample3Component,
-        data: { displayName: "Snackbar Display Time", parentName: "Snackbar" },
-        path: "snackbar-sample-3"
-    },
-    {
-        component: SnackbarSample4Component,
-        data: { displayName: "Snackbar in List", parentName: "Snackbar" },
-        path: "snackbar-sample-4"
-    },
-    {
         component: SwitchSample1Component,
         data: { displayName: "Switch Overview", parentName: "Switch" },
         path: "switch-sample-1"
@@ -847,31 +798,6 @@ export const samplesRoutes: Routes = [
         component: RadioGroupSampleComponent,
         data: { displayName: "Radio Group", parentName: "Radio" },
         path: "radio-group-sample"
-    },
-    {
-        component: ToastSample1Component,
-        data: { displayName: "Toast Overview", parentName: "Toast" },
-        path: "toast-sample-1"
-    },
-    {
-        component: ToastSample2Component,
-        data: { displayName: "Show Toast", parentName: "Toast" },
-        path: "toast-sample-2"
-    },
-    {
-        component: ToastSample3Component,
-        data: { displayName: "Hide/Auto Hide Toast", parentName: "Toast" },
-        path: "toast-sample-3"
-    },
-    {
-        component: ToastSample4Component,
-        data: { displayName: "Toast Display Time", parentName: "Toast" },
-        path: "toast-sample-4"
-    },
-    {
-        component: ToastSample5Component,
-        data: { displayName: "Toast Positioning", parentName: "Toast" },
-        path: "toast-sample-5"
     },
     {
         component: TabbarComponent,

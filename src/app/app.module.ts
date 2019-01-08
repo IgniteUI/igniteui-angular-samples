@@ -60,10 +60,6 @@ import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
-import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1.component";
-import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
-import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
-import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -197,8 +193,6 @@ import { InputGroupSample5Component } from "./input-group/input-group-sample-5/i
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { TreeLocalDataService } from "./tree-grid/tree-grid-finjs/treeLocalData.service";
-
 import {
     LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
@@ -238,10 +232,6 @@ import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-draw
 import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
 import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
-import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
-import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
-import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
-import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -264,11 +254,6 @@ import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/tim
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
-import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
-import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
-import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
-import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
-import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -292,10 +277,6 @@ import {
         BadgeSample1Component,
         BadgeSample2Component,
         BadgeSample3Component,
-        BannerSample1Component,
-        BannerSample2Component,
-        BannerSample3Component,
-        BannerSample4Component,
         CardComponent,
         CardSample1Component,
         CardSample2Component,
@@ -399,15 +380,6 @@ import {
         DatepickerSample4Component,
         DatepickerSample5Component,
         DatepickerSample6Component,
-        SnackbarSample1Component,
-        SnackbarSample2Component,
-        SnackbarSample3Component,
-        SnackbarSample4Component,
-        ToastSample1Component,
-        ToastSample2Component,
-        ToastSample3Component,
-        ToastSample4Component,
-        ToastSample5Component,
         ButtonGroupSample1Component,
         ButtonGroupSample2Component,
         ButtonGroupSample3Component,
