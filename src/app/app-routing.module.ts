@@ -318,6 +318,10 @@ export const samplesRoutes: Routes = [
         path: "home"
     },
     {
+        loadChildren: "app/interactions/interactions.module#InteractionsModule",
+        path: "interactions"
+    },
+    {
         loadChildren: "app/notifications/notifications.module#NotificationsModule",
         path: "notifications"
     },

@@ -3,8 +3,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxButtonModule,
     IgxCardModule, IgxDialogModule, IgxDragDropModule, IgxIconModule, IgxInputGroupModule,
-    IgxOverlayService, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToggleModule } from "igniteui-angular";
-import { CardSample1Component } from "../card/card-sample-1/card-sample-1.component";
+    IgxOverlayService, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToggleModule,
+    IgxTooltipModule } from "igniteui-angular";
+import { CardSampleModule } from "../card/card-sample-1/card-sample-1.module";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
@@ -68,7 +69,6 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         OverlayScrollSample1Component,
         OverlayScrollSample2Component,
         MyDynamicCardComponent,
-        CardSample1Component,
         DragAndDropSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
@@ -86,7 +86,9 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         IgxRippleModule,
         IgxSliderModule,
         IgxSwitchModule,
-        IgxToggleModule
+        IgxTooltipModule,
+        IgxToggleModule,
+        CardSampleModule
     ],
     providers: [IgxOverlayService]
 })

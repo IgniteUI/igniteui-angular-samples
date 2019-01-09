@@ -78,7 +78,6 @@ import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
-import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardComponent } from "./card/card.component";
@@ -261,6 +260,7 @@ import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
+import { CardSampleModule } from "./card/card-sample-1/card-sample-1.module";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -278,7 +278,6 @@ import {
         BadgeSample2Component,
         BadgeSample3Component,
         CardComponent,
-        CardSample1Component,
         CardSample2Component,
         CardSample3Component,
         CheckboxSample1Component,
@@ -342,7 +341,6 @@ import {
         NavbarComponent,
         NavbarSample1Component,
         NavbarSample2Component,
-        CardSample1Component,
         CardSample2Component,
         CardSample3Component,
         ButtonsSample1Component,
@@ -515,7 +513,8 @@ import {
         IgxTextHighlightModule,
         IgxDragDropModule,
         IgxTooltipModule,
-        IgxTreeGridModule
+        IgxTreeGridModule,
+        CardSampleModule
     ],
     providers: [
         DataService,
