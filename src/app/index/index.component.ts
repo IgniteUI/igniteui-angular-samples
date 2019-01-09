@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
+import { gaugesRoutes } from "../gauges/gauges-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 
 @Component({
@@ -35,6 +36,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
     private appRoutes: any[];
 
     private modulesRoutes = [
+        {
+            path: "gauges",
+            routes: gaugesRoutes
+        },
         {
             path: "notifications",
             routes: notificationsRoutes
