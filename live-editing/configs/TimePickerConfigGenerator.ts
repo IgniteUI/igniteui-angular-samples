@@ -63,7 +63,7 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimePickerSample5Component],
                 ngDeclarations: [TimePickerSample5Component],
-                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule,]
+                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/timepicker/"
         }));

@@ -107,7 +107,6 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
-import { DisplayDensityComponent } from "./display-density/display-density.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
@@ -249,8 +248,6 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
-import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
-import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -270,9 +267,6 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
-import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
-import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -490,9 +484,6 @@ import {
         IndexComponent,
         TextHighlightSample1Component,
         TextHighlightSample2Component,
-        ThemeChooserSampleComponent,
-        DefaultThemeSampleComponent,
-        DarkThemeSampleComponent,
         DragAndDropSampleComponent,
         TooltipSimpleComponent,
         TooltipRichComponent,
@@ -500,12 +491,9 @@ import {
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
         SvgIconSampleComponent,
-        ShadowsSampleComponent,
-        ShadowsSample2Component,
         DropdownMenuComponent,
         TreeGridChilddatakeySampleComponent,
         TreeGridPrimaryforeignkeySampleComponent,
-        DisplayDensityComponent,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,

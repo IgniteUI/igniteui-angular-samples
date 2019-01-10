@@ -14,7 +14,6 @@ import { ChipConfigGenerator } from "./../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "./../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "./../configs/DatePickerConfigGenerator";
-import { DensityConfigGenerator } from "./../configs/DensityConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
 import { DragAndDropConfigGenerator } from "./../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
@@ -38,13 +37,13 @@ import { NavdrawerConfigGenerator } from "./../configs/NavDrawerConfigGenerator"
 import { OverlayConfigGenerator } from "./../configs/OverlayConfigGenerator";
 import { RadioConfigGenerator } from "./../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "./../configs/RippleConfigGenerator";
-import { ShadowsConfigGenerator } from "./../configs/ShadowsConfigGenerator";
 import { SliderConfigGenerator } from "./../configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "./../configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "./../configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "./../configs/TabBarConfigGenerator";
 import { TabsConfigGenerator } from "./../configs/TabsConfigGenerator";
 import { TextHighlightConfigGenerator } from "./../configs/TextHighlightConfigGenerator";
+import { ThemingConfigGenerator } from "./../configs/ThemingConfigGenerator";
 import { TimePickerConfigGenerator } from "./../configs/TimePickerConfigGenerator";
 import { ToastConfigGenerator } from "./../configs/ToastConfigGenerator";
 import { ToggleConfigGenerator } from "./../configs/ToggleConfigGenerator";
@@ -66,6 +65,7 @@ import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
+import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
 
@@ -79,17 +79,17 @@ const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
-    ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
+    ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ExcelLibraryConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, 
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
     OverlayConfigGenerator, GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
-    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator, 
-    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator, 
-    TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator, 
-    TooltipConfigGenerator, TimePickerConfigGenerator, ShadowsConfigGenerator];
+    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
+    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
+    TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator,
+    TooltipConfigGenerator, TimePickerConfigGenerator, ThemingConfigGenerator];
 
 export class SampleAssetsGenerator extends Generator {
     private _dependencyResolver: DependencyResolver;
@@ -106,7 +106,8 @@ export class SampleAssetsGenerator extends Generator {
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
 
-        let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes);
+        let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
+            .concat(ThemingRouting.themingRoutes);
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];
             if (sample.component !== undefined) {

@@ -86,7 +86,6 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
-import { DisplayDensityComponent } from "./display-density/display-density.component";
 import {
     DoughnutChartExplosionSampleComponent
 } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
@@ -293,8 +292,6 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
-import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
-import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -314,9 +311,6 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
-import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
-import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -349,6 +343,10 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/notifications/notifications.module#NotificationsModule",
         path: "notifications"
+    },
+    {
+        loadChildren: "app/theming/theming.module#ThemingModule",
+        path: "theming"
     },
     // excel library samples with lazy loading:
     {
@@ -1586,34 +1584,9 @@ export const samplesRoutes: Routes = [
         path: "text-highlight-2"
     },
     {
-        component: ThemeChooserSampleComponent,
-        data: { displayName: "Style components with custom themes", parentName: "Themes" },
-        path: "theme-chooser"
-    },
-    {
-        component: DefaultThemeSampleComponent,
-        data: { displayName: "Default theme sample", parentName: "Themes" },
-        path: "default-theme-sample"
-    },
-    {
-        component: DarkThemeSampleComponent,
-        data: { displayName: "Dark theme sample", parentName: "Themes" },
-        path: "dark-theme-sample"
-    },
-    {
         component: DragAndDropSampleComponent,
         data: { displayName: "Drag and drop sample", parentName: "Drag and Drop" },
         path: "drag-drop-sample"
-    },
-    {
-        component: ShadowsSampleComponent,
-        data: { displayName: "Shadows sample", parentName: "Shadows" },
-        path: "shadows-sample"
-    },
-    {
-        component: ShadowsSample2Component,
-        data: { displayName: "Shadows sample 2", parentName: "Shadows" },
-        path: "shadows-sample-2"
     },
     {
         component: TreeGridBatchEditingSampleComponent,
@@ -1634,11 +1607,6 @@ export const samplesRoutes: Routes = [
         component: TreeGridRowEditSampleComponent,
         data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
         path: "treegrid-row-edit"
-    },
-    {
-        component: DisplayDensityComponent,
-        data: { displayName: "Display density sample", parentName: "Themes" },
-        path: "density"
     },
     {
         component: TreeGridFinJSComponent,
