@@ -65,6 +65,7 @@ import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
+import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
@@ -83,13 +84,13 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerCo
     ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ExcelLibraryConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, 
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
     OverlayConfigGenerator, GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
-    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator, 
-    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator, 
-    TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator, 
+    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
+    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
+    TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator,
     TooltipConfigGenerator, TimePickerConfigGenerator, ShadowsConfigGenerator];
 
 export class SampleAssetsGenerator extends Generator {
@@ -108,7 +109,9 @@ export class SampleAssetsGenerator extends Generator {
         this._componentRoutes = new Collections.Dictionary<string, string>();
 
         let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
+            .concat(InteractionsRouting.interactionsRoutes)
             .concat(SchedulingRouting.schedulingRoutes);
+
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];
             if (sample.component !== undefined) {
