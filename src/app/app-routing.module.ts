@@ -268,13 +268,6 @@ import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.compone
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
-import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
-import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
-import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
-import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
 import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
@@ -349,6 +342,10 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/notifications/notifications.module#NotificationsModule",
         path: "notifications"
+    },
+    {
+        loadChildren: "app/menus/menus.module#MenusModule",
+        path: "menus"
     },
     // excel library samples with lazy loading:
     {
@@ -756,23 +753,7 @@ export const samplesRoutes: Routes = [
         component: LocalizationSample3Component,
         data: { displayName: "Localize partially", parentName: "Localization" },
         path: "localization-sample-3"
-    },
-    {
-        component: NavdrawerComponent,
-        path: "navigation-drawer"
-    },
-    {
-        component: NavDrawerSimpleComponent,
-        path: "navigation-drawer-simple"
-    },
-    {
-        component: NavDrawerPinComponent,
-        path: "navigation-drawer-pin"
-    },
-    {
-        component: NavDrawerMiniComponent,
-        path: "navigation-drawer-mini"
-    },
+    },   
     {
         component: GridComponent,
         data: { displayName: "Grid Basic Features", parentName: "Grid" },
@@ -1040,21 +1021,6 @@ export const samplesRoutes: Routes = [
         component: LinearGaugeRangesComponent,
         data: { displayName: "Linear Gauge Ranges", parentName: "Linear Gauge" },
         path: "linear-gauge-ranges"
-    },
-    {
-        component: NavbarComponent,
-        data: { displayName: "Navbar Overview", parentName: "Navbar" },
-        path: "navbar"
-    },
-    {
-        component: NavbarSample1Component,
-        data: { displayName: "Navbar Action Button Icon", parentName: "Navbar" },
-        path: "navbar-sample-1"
-    },
-    {
-        component: NavbarSample2Component,
-        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
-        path: "navbar-sample-2"
     },
     {
         component: CardSample1Component,
