@@ -8,6 +8,7 @@ import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
+import { SnackbarSample5Component } from "./snackbar/snackbar-sample-5/snackbar-sample-5.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
@@ -54,6 +55,11 @@ export const notificationsRoutes: Routes = [
         component: SnackbarSample4Component,
         data: { displayName: "Snackbar in List", parentName: "Snackbar" },
         path: "snackbar-sample-4"
+    },
+    {
+        component: SnackbarSample5Component,
+        data: { displayName: "Display custom content", parentName: "Snackbar" },
+        path: "snackbar-sample-5"
     },
     {
         component: ToastSample1Component,
