@@ -12,8 +12,8 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DragAndDropSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDragDirective, IgxDropDirective, IgxDragDropModule,
-                    IgxDialogModule, DragAndDropSampleComponent],
+                imports: [IgxDragDirective, IgxDropDirective,
+                    IgxDragDropModule, IgxDialogModule, DragAndDropSampleComponent],
                 ngDeclarations: [DragAndDropSampleComponent],
                 ngImports: [IgxDragDropModule, IgxDialogModule]
             }),
