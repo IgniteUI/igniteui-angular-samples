@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { ModuleWithProviders, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { IgxButtonModule } from "igniteui-angular";
@@ -14,6 +14,7 @@ import { BulletGraphMeasuresComponent } from "./bullet-graph-measures/bullet-gra
 import { BulletGraphRangesComponent } from "./bullet-graph-ranges/bullet-graph-ranges.component";
 import { BulletGraphScaleComponent } from "./bullet-graph-scale/bullet-graph-scale.component";
 import { BulletGraphTickmarksComponent } from "./bullet-graph-tickmarks/bullet-graph-tickmarks.component";
+import { GaugesRoutingModule } from "./gauges-routing.module";
 import { LinearGaugeAnimationComponent } from "./linear-gauge-animation/linear-gauge-animation.component";
 import { LinearGaugeBackingComponent } from "./linear-gauge-backing/linear-gauge-backing.component";
 import { LinearGaugeLabelsComponent } from "./linear-gauge-labels/linear-gauge-labels.component";
@@ -56,16 +57,11 @@ import { RadialGaugeTickmarksComponent } from "./radial-gauge-tickmarks/radial-g
     imports: [
         CommonModule,
         FormsModule,
+        GaugesRoutingModule,
         IgxBulletGraphModule,
         IgxLinearGaugeModule,
         IgxRadialGaugeModule,
         IgxButtonModule
      ]
 })
-export class GaugeSamplesModule {
-    public static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: GaugeSamplesModule
-        };
-    }
-}
+export class GaugesModule {}

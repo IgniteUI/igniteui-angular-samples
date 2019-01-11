@@ -63,11 +63,6 @@ import {
 } from "./category-chart/trendline/category-chart-trendlines.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
-import { ComboFeatures } from "./combo/combo-features/combo-features.component";
-import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
-import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
-import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import {
     DoughnutChartExplosionSampleComponent
 } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
@@ -151,27 +146,6 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
-import { BulletGraphAnimationComponent } from "./gauges/bullet-graph-animation/bullet-graph-animation.component";
-import { BulletGraphBackgroundComponent } from "./gauges/bullet-graph-background/bullet-graph-background.component";
-import { BulletGraphLabelsComponent } from "./gauges/bullet-graph-labels/bullet-graph-labels.component";
-import { BulletGraphMeasuresComponent } from "./gauges/bullet-graph-measures/bullet-graph-measures.component";
-import { BulletGraphRangesComponent } from "./gauges/bullet-graph-ranges/bullet-graph-ranges.component";
-import { BulletGraphScaleComponent } from "./gauges/bullet-graph-scale/bullet-graph-scale.component";
-import { BulletGraphTickmarksComponent } from "./gauges/bullet-graph-tickmarks/bullet-graph-tickmarks.component";
-import { LinearGaugeAnimationComponent } from "./gauges/linear-gauge-animation/linear-gauge-animation.component";
-import { LinearGaugeBackingComponent } from "./gauges/linear-gauge-backing/linear-gauge-backing.component";
-import { LinearGaugeLabelsComponent } from "./gauges/linear-gauge-labels/linear-gauge-labels.component";
-import { LinearGaugeNeedleComponent } from "./gauges/linear-gauge-needle/linear-gauge-needle.component";
-import { LinearGaugeRangesComponent } from "./gauges/linear-gauge-ranges/linear-gauge-ranges.component";
-import { LinearGaugeScaleComponent } from "./gauges/linear-gauge-scale/linear-gauge-scale.component";
-import { LinearGaugeTickmarksComponent } from "./gauges/linear-gauge-tickmarks/linear-gauge-tickmarks.component";
-import { RadialGaugeAnimationComponent } from "./gauges/radial-gauge-animation/radial-gauge-animation.component";
-import { RadialGaugeBackingComponent } from "./gauges/radial-gauge-backing/radial-gauge-backing.component";
-import { RadialGaugeLabelsComponent } from "./gauges/radial-gauge-labels/radial-gauge-labels.component";
-import { RadialGaugeNeedleComponent } from "./gauges/radial-gauge-needle/radial-gauge-needle.component";
-import { RadialGaugeRangesComponent } from "./gauges/radial-gauge-ranges/radial-gauge-ranges.component";
-import { RadialGaugeScaleComponent } from "./gauges/radial-gauge-scale/radial-gauge-scale.component";
-import { RadialGaugeTickmarksComponent } from "./gauges/radial-gauge-tickmarks/radial-gauge-tickmarks.component";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
 import {
@@ -231,15 +205,6 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
-import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
-import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
-import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
-import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
-import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
-import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
-import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
-import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
-import { ListComponent } from "./list/list.component";
 import { LocalizationSample1Component } from "./localization-samples/localization-sample-1/localization-sample-1.component";
 import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
 import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
@@ -315,39 +280,28 @@ export const samplesRoutes: Routes = [
         path: "excel-library-operations-on-workbooks"
     },
     {
-        data: { displayName: "Worksheets Operations", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/operations-on/worksheets.module#ExcelLibraryOperationsOnWorksheetsModule",
-        path: "excel-library-operations-on-worksheets"
+        loadChildren: "app/excel-library/excel-library.module#ExcelLibraryModule",
+        path: "excel-library"
     },
     {
-        data: { displayName: "Working With Cells", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule",
-        path: "excel-library-working-with-cells"
+        loadChildren: "app/gauges/gauges.module#GaugesModule",
+        path: "gauges"
     },
     {
-        data: { displayName: "Working With Charts", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/charts.module#ExcelLibraryWorkingWithChartsModule",
-        path: "excel-library-working-with-charts"
+        loadChildren: "app/interactions/interactions.module#InteractionsModule",
+        path: "interactions"
     },
     {
-        data: { displayName: "Working With Grids", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/grids.module#ExcelLibraryWorkingWithGridsModule",
-        path: "excel-library-working-with-grids"
+        loadChildren: "app/notifications/notifications.module#NotificationsModule",
+        path: "notifications"
     },
     {
-        data: { displayName: "Working With Objects", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/objects.module#ExcelLibraryWorkingWithObjectsModule",
-        path: "excel-library-working-with-objects"
+        loadChildren: "app/lists/lists.module#ListsModule",
+        path: "lists"
     },
     {
-        data: { displayName: "Working With Sparklines", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/sparklines.module#ExcelLibraryWorkingWithSparklinesModule",
-        path: "excel-library-working-with-sparklines"
-    },
-    {
-        data: { displayName: "Working With Tables", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/tables.module#ExcelLibraryWorkingWithTablesModule",
-        path: "excel-library-working-with-tables"
+        loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
+        path: "scheduling"
     },
     {
         component: AvatarSample1Component,
@@ -427,30 +381,6 @@ export const samplesRoutes: Routes = [
         component: CircularProgressbarComponent,
         data: { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
         path: "circular-progressbar"
-    },
-    {
-        component: ComboMainComponent,
-        path: "combo"
-    },
-    {
-        component: ComboFeatures,
-        data: { displayName: "Combos Features", parentName: "Combo" },
-        path: "combo-features"
-    },
-    {
-        component: ComboRemoteComponent,
-        data: { displayName: "Remote Combo", parentName: "Combo" },
-        path: "combo-remote"
-    },
-    {
-        component: ComboTemplateComponent,
-        data: { displayName: "Templating Combo", parentName: "Combo" },
-        path: "combo-template"
-    },
-    {
-        component: CascadingCombos,
-        data: { displayName: "Cascading Combos", parentName: "Combo" },
-        path: "cascading-combos"
     },
     {
         component: CsvExportComponent,
@@ -566,50 +496,6 @@ export const samplesRoutes: Routes = [
         component: LinearProgressbarSample2Component,
         data: { displayName: "Linear Progressbar Styling", parentName: "Linear Progressbar" },
         path: "linear-progressbar-sample-2"
-    },
-    {
-        component: ListComponent,
-        data: { displayName: "List Overview", parentName: "List" },
-        path: "list"
-    },
-    {
-        component: ListSample1Component,
-        path: "list-sample-1"
-    },
-    {
-        component: ListSample2Component,
-        data: { displayName: "List Item Header", parentName: "List" },
-        path: "list-sample-2"
-    },
-    {
-        component: ListSample3Component,
-        data: { displayName: "List Item Template", parentName: "List" },
-        path: "list-sample-3"
-    },
-    {
-        component: ListSample4Component,
-        data: { displayName: "List Search", parentName: "List" },
-        path: "list-sample-4"
-    },
-    {
-        component: ListSample5Component,
-        data: { displayName: "Empty List Template", parentName: "List" },
-        path: "list-sample-5"
-    },
-    {
-        component: ListSample6Component,
-        data: { displayName: "List Loading", parentName: "List" },
-        path: "list-sample-6"
-    },
-    {
-        component: ListSample7Component,
-        data: { displayName: "List Item Panning", parentName: "List" },
-        path: "list-sample-7"
-    },
-    {
-        component: ListChatSampleComponent,
-        data: { displayName: "Chat Component", parentName: "List" },
-        path: "list-chat-sample"
     },
     {
         component: LocalizationSample1Component,
@@ -754,111 +640,6 @@ export const samplesRoutes: Routes = [
     {
         component: TabsSample5Component,
         path: "tabs-sample-5"
-    },
-    {
-        component: BulletGraphAnimationComponent,
-        data: { displayName: "Bullet Graph Animation", parentName: "Bullet Graph" },
-        path: "bullet-graph-animation"
-    },
-    {
-        component: BulletGraphLabelsComponent,
-        data: { displayName: "Bullet Graph Labels", parentName: "Bullet Graph" },
-        path: "bullet-graph-labels"
-    },
-    {
-        component: BulletGraphBackgroundComponent,
-        data: { displayName: "Bullet Graph Background", parentName: "Bullet Graph" },
-        path: "bullet-graph-background"
-    },
-    {
-        component: BulletGraphRangesComponent,
-        data: { displayName: "Bullet Graph Ranges", parentName: "Bullet Graph" },
-        path: "bullet-graph-ranges"
-    },
-    {
-        component: BulletGraphScaleComponent,
-        data: { displayName: "Bullet Graph Scale", parentName: "Bullet Graph" },
-        path: "bullet-graph-scale"
-    },
-    {
-        component: BulletGraphTickmarksComponent,
-        data: { displayName: "Bullet Graph Tickmarks", parentName: "Bullet Graph" },
-        path: "bullet-graph-tickmarks"
-    },
-    {
-        component: BulletGraphMeasuresComponent,
-        data: { displayName: "Bullet Graph Measures", parentName: "Bullet Graph" },
-        path: "bullet-graph-measures"
-    },
-    {
-        component: RadialGaugeAnimationComponent,
-        data: { displayName: "Radial Gauge Animation", parentName: "Radial Gauge" },
-        path: "radial-gauge-animation"
-    },
-    {
-        component: RadialGaugeLabelsComponent,
-        data: { displayName: "Radial Gauge Labels", parentName: "Radial Gauge" },
-        path: "radial-gauge-labels"
-    },
-    {
-        component: RadialGaugeNeedleComponent,
-        data: { displayName: "Radial Gauge Needle", parentName: "Radial Gauge" },
-        path: "radial-gauge-needle"
-    },
-    {
-        component: RadialGaugeScaleComponent,
-        data: { displayName: "Radial Gauge Scale", parentName: "Radial Gauge" },
-        path: "radial-gauge-scale"
-    },
-    {
-        component: RadialGaugeTickmarksComponent,
-        data: { displayName: "Radial Gauge Tickmarks", parentName: "Radial Gauge" },
-        path: "radial-gauge-tickmarks"
-    },
-    {
-        component: RadialGaugeRangesComponent,
-        data: { displayName: "Radial Gauge Ranges", parentName: "Radial Gauge" },
-        path: "radial-gauge-ranges"
-    },
-    {
-        component: RadialGaugeBackingComponent,
-        data: { displayName: "Radial Gauge Backing", parentName: "Radial Gauge" },
-        path: "radial-gauge-backing"
-    },
-    {
-        component: LinearGaugeAnimationComponent,
-        data: { displayName: "Linear Gauge Animation", parentName: "Linear Gauge" },
-        path: "linear-gauge-animation"
-    },
-    {
-        component: LinearGaugeNeedleComponent,
-        data: { displayName: "Linear Gauge Needle", parentName: "Linear Gauge" },
-        path: "linear-gauge-needle"
-    },
-    {
-        component: LinearGaugeBackingComponent,
-        data: { displayName: "Linear Gauge Backing", parentName: "Linear Gauge" },
-        path: "linear-gauge-backing"
-    },
-    {
-        component: LinearGaugeLabelsComponent,
-        data: { displayName: "Linear Gauge Labels", parentName: "Linear Gauge" },
-        path: "linear-gauge-labels"
-    },
-    {
-        component: LinearGaugeScaleComponent,
-        data: { displayName: "Linear Gauge Scale", parentName: "Linear Gauge" },
-        path: "linear-gauge-scale"
-    },
-    {
-        component: LinearGaugeTickmarksComponent,
-        data: { displayName: "Linear Gauge Tickmarks", parentName: "Linear Gauge" },
-        path: "linear-gauge-tickmarks"
-    },
-    {
-        component: LinearGaugeRangesComponent,
-        data: { displayName: "Linear Gauge Ranges", parentName: "Linear Gauge" },
-        path: "linear-gauge-ranges"
     },
     {
         component: NavbarComponent,
