@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { IgxComboComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
-import { RemoteService } from "../../grid/services/remote.service";
+import { RemoteService } from "../../../grid/services/remote.service";
 
 @Component({
     providers: [RemoteService],
