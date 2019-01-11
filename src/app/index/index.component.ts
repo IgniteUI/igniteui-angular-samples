@@ -5,6 +5,7 @@ import { filter } from "rxjs/operators";
 import { chartsRoutes } from "../charts/charts-routing.module";
 import { gaugesRoutes } from "../gauges/gauges-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
+import { listsRoutes } from "../lists/lists-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
 
@@ -50,6 +51,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "charts",
             routes: chartsRoutes
+        },
+        {
+            path: "lists",
+            routes: listsRoutes
         },
         {
             path: "interactions",
