@@ -116,7 +116,6 @@ export class SampleAssetsGenerator extends Generator {
             .concat(SchedulingRouting.schedulingRoutes)
             .concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
-            .concat(NotificationsRouting.notificationsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(ExcelLibraryRouting.excelLibraryRoutes);
 
