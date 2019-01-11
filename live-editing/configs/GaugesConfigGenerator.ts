@@ -10,8 +10,8 @@ import {
     BulletGraphBackgroundComponent
 } from "../../src/app/gauges/bullet-graph-background/bullet-graph-background.component";
 import {
-    BulletGraphLabelsComponent }
-from "../../src/app/gauges/bullet-graph-labels/bullet-graph-labels.component";
+    BulletGraphLabelsComponent
+} from "../../src/app/gauges/bullet-graph-labels/bullet-graph-labels.component";
 import {
     BulletGraphMeasuresComponent
 } from "../../src/app/gauges/bullet-graph-measures/bullet-graph-measures.component";
@@ -67,6 +67,7 @@ import {
     RadialGaugeTickmarksComponent
 } from "../../src/app/gauges/radial-gauge-tickmarks/radial-gauge-tickmarks.component";
 
+import { IgxButtonModule } from "igniteui-angular";
 import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -79,12 +80,14 @@ export class GaugesConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: BulletGraphAnimationComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxBulletGraphModule, BulletGraphAnimationComponent],
-                ngImports: [IgxBulletGraphModule],
+                imports: [IgxBulletGraphModule, BulletGraphAnimationComponent, IgxButtonModule],
+                ngImports: [IgxBulletGraphModule, IgxButtonModule],
                 ngDeclarations: [BulletGraphAnimationComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: BulletGraphBackgroundComponent,
             appModuleConfig: new AppModuleConfig({
@@ -92,8 +95,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxBulletGraphModule],
                 ngDeclarations: [BulletGraphBackgroundComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: BulletGraphLabelsComponent,
             appModuleConfig: new AppModuleConfig({
@@ -101,8 +106,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxBulletGraphModule],
                 ngDeclarations: [BulletGraphLabelsComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: BulletGraphMeasuresComponent,
             appModuleConfig: new AppModuleConfig({
@@ -110,8 +117,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxBulletGraphModule],
                 ngDeclarations: [BulletGraphMeasuresComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: BulletGraphRangesComponent,
             appModuleConfig: new AppModuleConfig({
@@ -119,8 +128,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxBulletGraphModule],
                 ngDeclarations: [BulletGraphRangesComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: BulletGraphScaleComponent,
             appModuleConfig: new AppModuleConfig({
@@ -128,8 +139,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxBulletGraphModule],
                 ngDeclarations: [BulletGraphScaleComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: BulletGraphTickmarksComponent,
             appModuleConfig: new AppModuleConfig({
@@ -137,18 +150,21 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxBulletGraphModule],
                 ngDeclarations: [BulletGraphTickmarksComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
 
         configs.push(new Config({
             component: LinearGaugeAnimationComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxLinearGaugeModule, LinearGaugeAnimationComponent],
-                ngImports: [IgxLinearGaugeModule],
+                imports: [IgxLinearGaugeModule, LinearGaugeAnimationComponent, IgxButtonModule],
+                ngImports: [IgxLinearGaugeModule, IgxButtonModule],
                 ngDeclarations: [LinearGaugeAnimationComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: LinearGaugeBackingComponent,
             appModuleConfig: new AppModuleConfig({
@@ -156,8 +172,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxLinearGaugeModule],
                 ngDeclarations: [LinearGaugeBackingComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: LinearGaugeLabelsComponent,
             appModuleConfig: new AppModuleConfig({
@@ -165,8 +183,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxLinearGaugeModule],
                 ngDeclarations: [LinearGaugeLabelsComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: LinearGaugeNeedleComponent,
             appModuleConfig: new AppModuleConfig({
@@ -174,8 +194,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxLinearGaugeModule],
                 ngDeclarations: [LinearGaugeNeedleComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: LinearGaugeRangesComponent,
             appModuleConfig: new AppModuleConfig({
@@ -183,8 +205,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxLinearGaugeModule],
                 ngDeclarations: [LinearGaugeRangesComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: LinearGaugeScaleComponent,
             appModuleConfig: new AppModuleConfig({
@@ -192,8 +216,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxLinearGaugeModule],
                 ngDeclarations: [LinearGaugeScaleComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: LinearGaugeTickmarksComponent,
             appModuleConfig: new AppModuleConfig({
@@ -201,18 +227,21 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxLinearGaugeModule],
                 ngDeclarations: [LinearGaugeTickmarksComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
 
         configs.push(new Config({
             component: RadialGaugeAnimationComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxRadialGaugeModule, RadialGaugeAnimationComponent],
-                ngImports: [IgxRadialGaugeModule],
+                imports: [IgxRadialGaugeModule, RadialGaugeAnimationComponent, IgxButtonModule],
+                ngImports: [IgxRadialGaugeModule, IgxButtonModule],
                 ngDeclarations: [RadialGaugeAnimationComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: RadialGaugeBackingComponent,
             appModuleConfig: new AppModuleConfig({
@@ -220,8 +249,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxRadialGaugeModule],
                 ngDeclarations: [RadialGaugeBackingComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: RadialGaugeLabelsComponent,
             appModuleConfig: new AppModuleConfig({
@@ -229,8 +260,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxRadialGaugeModule],
                 ngDeclarations: [RadialGaugeLabelsComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: RadialGaugeNeedleComponent,
             appModuleConfig: new AppModuleConfig({
@@ -238,8 +271,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxRadialGaugeModule],
                 ngDeclarations: [RadialGaugeNeedleComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: RadialGaugeRangesComponent,
             appModuleConfig: new AppModuleConfig({
@@ -247,8 +282,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxRadialGaugeModule],
                 ngDeclarations: [RadialGaugeRangesComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: RadialGaugeScaleComponent,
             appModuleConfig: new AppModuleConfig({
@@ -256,8 +293,10 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxRadialGaugeModule],
                 ngDeclarations: [RadialGaugeScaleComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
+
         configs.push(new Config({
             component: RadialGaugeTickmarksComponent,
             appModuleConfig: new AppModuleConfig({
@@ -265,6 +304,7 @@ export class GaugesConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxRadialGaugeModule],
                 ngDeclarations: [RadialGaugeTickmarksComponent]
             }),
+            shortenComponentPathBy: "/gauges/",
             dependenciesType: DependenciesType.Gauges
         }));
 
