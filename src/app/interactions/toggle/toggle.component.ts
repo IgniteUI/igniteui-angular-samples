@@ -1,10 +1,9 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 
 import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
     HorizontalAlignment,
-    IgxButtonDirective,
     IgxToggleDirective,
     VerticalAlignment
 } from "igniteui-angular";
