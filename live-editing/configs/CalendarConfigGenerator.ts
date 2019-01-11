@@ -1,17 +1,18 @@
 /* tslint:disable:object-literal-sort-keys */
-import { DateRangeDescriptor, DateRangeType,
-    IgxCalendarModule, IgxCardModule, IgxDialogModule, IgxSnackbarComponent, IgxSnackbarModule } from "igniteui-angular";
-import { CalendarSample1Component } from "../../src/app/calendar/calendar-sample-1/calendar-sample-1.component";
-import { CalendarSample2Component } from "../../src/app/calendar/calendar-sample-2/calendar-sample-2.component";
-import { CalendarSample3Component } from "../../src/app/calendar/calendar-sample-3/calendar-sample-3.component";
-import { CalendarSample4Component } from "../../src/app/calendar/calendar-sample-4/calendar-sample-4.component";
-import { CalendarSample5Component } from "../../src/app/calendar/calendar-sample-5/calendar-sample-5.component";
-import { CalendarSample6Component } from "../../src/app/calendar/calendar-sample-6/calendar-sample-6.component";
-import { CalendarSample7Component } from "../../src/app/calendar/calendar-sample-7/calendar-sample-7.component";
-import { CalendarComponent } from "../../src/app/calendar/calendar.component";
+// tslint:disable:max-line-length
+import { IgxCalendarModule, IgxCardModule, IgxDialogModule, IgxSnackbarModule } from "igniteui-angular";
+import { CalendarSample1Component } from "../../src/app/scheduling/calendar/calendar-sample-1/calendar-sample-1.component";
+import { CalendarSample2Component } from "../../src/app/scheduling/calendar/calendar-sample-2/calendar-sample-2.component";
+import { CalendarSample3Component } from "../../src/app/scheduling/calendar/calendar-sample-3/calendar-sample-3.component";
+import { CalendarSample4Component } from "../../src/app/scheduling/calendar/calendar-sample-4/calendar-sample-4.component";
+import { CalendarSample5Component } from "../../src/app/scheduling/calendar/calendar-sample-5/calendar-sample-5.component";
+import { CalendarSample6Component } from "../../src/app/scheduling/calendar/calendar-sample-6/calendar-sample-6.component";
+import { CalendarSample7Component } from "../../src/app/scheduling/calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarComponent } from "../../src/app/scheduling/calendar/calendar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+// tslint:enable:max-line-length
 
 export class CalendarConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -33,7 +34,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CalendarSample1Component],
                 ngImports: [IgxCalendarModule]
             }),
-            shortenComponentPathBy: "/calendar/"
+            shortenComponentPathBy: "/scheduling/calendar/"
         }));
 
         configs.push(new Config({
@@ -43,7 +44,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CalendarSample2Component],
                 ngImports: [IgxCalendarModule]
             }),
-            shortenComponentPathBy: "/calendar/"
+            shortenComponentPathBy: "/scheduling/calendar/"
         }));
 
         configs.push(new Config({
@@ -53,7 +54,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CalendarSample3Component],
                 ngImports: [IgxCalendarModule, IgxDialogModule]
             }),
-            shortenComponentPathBy: "/calendar/"
+            shortenComponentPathBy: "/scheduling/calendar/"
         }));
 
         configs.push(new Config({
@@ -73,7 +74,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CalendarSample5Component],
                 ngImports: [IgxCalendarModule, IgxDialogModule]
             }),
-            shortenComponentPathBy: "/calendar/"
+            shortenComponentPathBy: "/scheduling/calendar/"
         }));
 
         configs.push(new Config({
@@ -83,7 +84,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CalendarSample6Component],
                 ngImports: [IgxCalendarModule]
             }),
-            shortenComponentPathBy: "/calendar/"
+            shortenComponentPathBy: "/scheduling/calendar/"
         }));
 
         configs.push(new Config({
@@ -93,7 +94,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CalendarSample7Component],
                 ngImports: [IgxCalendarModule, IgxSnackbarModule]
             }),
-            shortenComponentPathBy: "/calendar/"
+            shortenComponentPathBy: "/scheduling/calendar/"
         }));
 
         return configs;

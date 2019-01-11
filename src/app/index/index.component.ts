@@ -3,7 +3,9 @@ import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
 import { listsRoutes } from "../lists/lists-routing.module";
+import { interactionsRoutes } from "../interactions/interactions-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
+import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
 
 @Component({
     selector: "app-index",
@@ -43,6 +45,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "lists",
             routes: listsRoutes
+        },
+        {
+            path: "interactions",
+            routes: interactionsRoutes
+        },
+        {
+            path: "scheduling",
+            routes: schedulingRoutes
         }
     ];
 
