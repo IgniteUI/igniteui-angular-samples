@@ -273,12 +273,6 @@ export const samplesRoutes: Routes = [
         loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
         path: "scheduling"
     },
-    // excel library samples with lazy loading:
-    {
-        data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
-        path: "excel-library-operations-on-workbooks"
-    },
     {
         loadChildren: "app/excel-library/excel-library.module#ExcelLibraryModule",
         path: "excel-library"
