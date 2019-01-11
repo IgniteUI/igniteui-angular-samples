@@ -109,7 +109,7 @@ export class SampleAssetsGenerator extends Generator {
         this._componentRoutes = new Collections.Dictionary<string, string>();
 
         let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
-            .concat(ThemingRouting.themingRoutes);
+            .concat(ThemingRouting.themingRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(SchedulingRouting.schedulingRoutes);
 
