@@ -44,7 +44,7 @@ import {
 import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import {
     DoughnutChartSelectionSampleComponent
-} from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component"
+} from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
 import {
     FinancialChartAnnotationsComponent
 } from "./financial-chart/annotations/financial-chart-annotations.component";
