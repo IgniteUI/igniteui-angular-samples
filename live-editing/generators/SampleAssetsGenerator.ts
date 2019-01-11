@@ -113,7 +113,7 @@ export class SampleAssetsGenerator extends Generator {
             .concat(MenusRouting.menusRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(SchedulingRouting.schedulingRoutes);
-
+            
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];
             if (sample.component !== undefined) {
