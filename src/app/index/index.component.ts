@@ -3,6 +3,7 @@ import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
 import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
+import { interactionsRoutes } from "../interactions/interactions-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
 
@@ -44,6 +45,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "notifications",
             routes: notificationsRoutes
+        },
+        {
+            path: "interactions",
+            routes: interactionsRoutes
         },
         {
             path: "scheduling",
