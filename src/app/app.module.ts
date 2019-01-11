@@ -173,7 +173,6 @@ import { InputGroupSample4Component } from "./input-group/input-group-sample-4/i
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
-import { MyDynamicCardComponent } from "./interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component";
 import { LayoutComponent } from "./layout/layout.component";
 import {
     LinearProgressbarSample1Component
@@ -393,7 +392,6 @@ import {
         LocalizationSample2Component,
         LocalizationSample3Component
     ],
-    entryComponents: [MyDynamicCardComponent],
     imports: [
         IgxDropDownModule,
         IgxInputGroupModule,
