@@ -66,6 +66,7 @@ import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
 import * as ChartsRouting from "../../src/app/charts/charts-routing.module";
+import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
@@ -111,6 +112,8 @@ export class SampleAssetsGenerator extends Generator {
 
         let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
             .concat(ChartsRouting.chartsRoutes)
+            .concat(GaugesRouting.gaugesRoutes)
+            .concat(NotificationsRouting.notificationsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(SchedulingRouting.schedulingRoutes);
 

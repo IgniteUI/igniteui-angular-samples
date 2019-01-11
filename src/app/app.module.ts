@@ -111,7 +111,7 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
-import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
+import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -458,7 +458,6 @@ import {
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
-        GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,
