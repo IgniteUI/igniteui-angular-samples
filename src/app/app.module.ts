@@ -70,15 +70,6 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
-import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
-import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
-import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
-import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
-import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
-import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
-import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
-import { CalendarComponent } from "./calendar/calendar.component";
-import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardComponent } from "./card/card.component";
@@ -97,18 +88,7 @@ import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
 import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
 import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
-import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
-import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
-import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
-import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
-import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
-import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
-import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
-import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
-import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
-import { DialogComponent } from "./dialog/dialog.component";
 import { DisplayDensityComponent } from "./display-density/display-density.component";
-import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -244,11 +224,6 @@ import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
 import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
 import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
-import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
-import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
-import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
-import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
-import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -266,17 +241,6 @@ import {
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
-import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
-import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
-import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
-import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
-import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
-import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
-import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
-import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
-import { ToggleComponent } from "./toggle/toggle.component";
-import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
-import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -284,6 +248,7 @@ import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 
+import { CardSampleModule } from "./card/card-sample-1/card-sample-1.module";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -301,7 +266,6 @@ import {
         BadgeSample2Component,
         BadgeSample3Component,
         CardComponent,
-        CardSample1Component,
         CardSample2Component,
         CardSample3Component,
         CheckboxSample1Component,
@@ -325,23 +289,11 @@ import {
         CarouselSample2Component,
         CarouselSample3Component,
         CarouselSample4Component,
-        CalendarSample1Component,
-        CalendarSample2Component,
-        CalendarSample3Component,
-        CalendarSample4Component,
-        CalendarSample5Component,
-        CalendarSample6Component,
-        CalendarSample7Component,
-        CalendarComponent,
         CascadingCombos,
         ComboFeatures,
         ComboMainComponent,
         ComboRemoteComponent,
         ComboTemplateComponent,
-        DialogComponent,
-        DialogSample1Component,
-        DialogSample2Component,
-        DialogSample3Component,
         DropDownSample1Component,
         DropDownSample2Component,
         DropDownSample3Component,
@@ -387,18 +339,6 @@ import {
         IconSample1Component,
         IconSample2Component,
         SvgIconSampleComponent,
-        ToggleComponent,
-        MyDynamicCardComponent,
-        OverlaySampleMain1Component,
-        OverlaySampleMain2Component,
-        OverlaySampleMain3Component,
-        OverlayScrollSample1Component,
-        OverlayScrollSample2Component,
-        OverlayPositionSample1Component,
-        OverlayPositionSample2Component,
-        ToggleSample1Component,
-        ToggleSample2Component,
-        ToggleSample3Component,
         AvatarSample1Component,
         AvatarSample2Component,
         AvatarSample3Component,
@@ -429,11 +369,6 @@ import {
         MaskSample3Component,
         MaskSample4Component,
         MaskSample5Component,
-        TimePickerSample1Component,
-        TimePickerSample2Component,
-        TimePickerSample3Component,
-        TimePickerSample4Component,
-        TimePickerSample5Component,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,
@@ -477,9 +412,6 @@ import {
         ThemeChooserSampleComponent,
         DefaultThemeSampleComponent,
         DarkThemeSampleComponent,
-        DragAndDropSampleComponent,
-        TooltipSimpleComponent,
-        TooltipRichComponent,
         ListChatSampleComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
@@ -502,7 +434,6 @@ import {
         LocalizationSample2Component,
         LocalizationSample3Component
     ],
-    entryComponents: [MyDynamicCardComponent],
     imports: [
         IgxDropDownModule,
         IgxInputGroupModule,
@@ -560,7 +491,8 @@ import {
         IgxTextHighlightModule,
         IgxDragDropModule,
         IgxTooltipModule,
-        IgxTreeGridModule
+        IgxTreeGridModule,
+        CardSampleModule
     ],
     providers: [
         DataService,

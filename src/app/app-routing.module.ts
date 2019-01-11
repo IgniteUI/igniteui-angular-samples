@@ -18,14 +18,6 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
-import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
-import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
-import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
-import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-sample-4.component";
-import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
-import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
-import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
-import { CalendarComponent } from "./calendar/calendar.component";
 import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
@@ -76,16 +68,6 @@ import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
 import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
 import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
-import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
-import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
-import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
-import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
-import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
-import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
-import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
-import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
-import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
-import { DialogComponent } from "./dialog/dialog.component";
 import { DisplayDensityComponent } from "./display-density/display-density.component";
 import {
     DoughnutChartExplosionSampleComponent
@@ -96,7 +78,6 @@ import {
 import {
     DoughnutChartSelectionSampleComponent
 } from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
-import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -280,19 +261,8 @@ import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-
 import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
 import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
 import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
-import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
-import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
-import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
-import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
-import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
-import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
 import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
 import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
-import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
-import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
-import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
-import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
-import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -310,17 +280,6 @@ import {
 import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
 import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
 import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
-import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
-import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
-import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
-import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
-import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
-import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
-import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
-import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
-import { ToggleComponent } from "./toggle/toggle.component";
-import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
-import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
@@ -340,12 +299,20 @@ export const samplesRoutes: Routes = [
         path: "home"
     },
     {
+        loadChildren: "app/interactions/interactions.module#InteractionsModule",
+        path: "interactions"
+    },
+    {
         loadChildren: "app/notifications/notifications.module#NotificationsModule",
         path: "notifications"
     },
     {
         loadChildren: "app/menus/menus.module#MenusModule",
         path: "menus"
+    },
+    {
+        loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
+        path: "scheduling"
     },
     // excel library samples with lazy loading:
     {
@@ -424,45 +391,6 @@ export const samplesRoutes: Routes = [
         path: "card"
     },
     {
-        component: CalendarSample1Component,
-        data: { displayName: "Calendar Overview", parentName: "Calendar" },
-        path: "calendar-sample-1"
-    },
-    {
-        component: CalendarSample2Component,
-        data: { displayName: "Customized Dates Display", parentName: "Calendar" },
-        path: "calendar-sample-2"
-    },
-    {
-        component: CalendarSample3Component,
-        data: { displayName: "Calendar with Date Range", parentName: "Calendar" },
-        path: "calendar-sample-3"
-    },
-    {
-        component: CalendarSample4Component,
-        data: { displayName: "Conditional Templating and Date Parsing ", parentName: "Calendar" },
-        path: "calendar-sample-4"
-    },
-    {
-        component: CalendarSample5Component,
-        data: { displayName: "Calendar Selection", parentName: "Calendar" },
-        path: "calendar-sample-5"
-    },
-    {
-        component: CalendarSample6Component,
-        data: { displayName: "Calendar disabled dates", parentName: "Calendar" },
-        path: "calendar-sample-6"
-    },
-    {
-        component: CalendarSample7Component,
-        data: { displayName: "Calendar special dates", parentName: "Calendar" },
-        path: "calendar-sample-7"
-    },
-    {
-        component: CalendarComponent,
-        path: "calendar"
-    },
-    {
         component: CarouselSample1Component,
         data: { displayName: "Carousel items with text", parentName: "Carousel" },
         path: "carousel-sample-1"
@@ -539,56 +467,6 @@ export const samplesRoutes: Routes = [
         component: CsvExportSample1Component,
         data: { displayName: "CSV Export Grid", parentName: "CSV Export" },
         path: "export-csv-sample-1"
-    },
-    {
-        component: DatepickerSample1Component,
-        data: { displayName: "Simple Datepicker", parentName: "Datepicker" },
-        path: "datepicker-sample-1"
-    },
-    {
-        component: DatepickerSample2Component,
-        data: { displayName: "One-way data bound Datepicker", parentName: "Datepicker" },
-        path: "datepicker-sample-2"
-    },
-    {
-        component: DatepickerSample3Component,
-        data: { displayName: "Datepicker Buttons", parentName: "Datepicker" },
-        path: "datepicker-sample-3"
-    },
-    {
-        component: DatepickerSample4Component,
-        data: { displayName: "Datepicker Formatter", parentName: "Datepicker" },
-        path: "datepicker-sample-4"
-    },
-    {
-        component: DatepickerSample5Component,
-        data: { displayName: "Datepicker Locales", parentName: "Datepicker" },
-        path: "datepicker-sample-5"
-    },
-    {
-        component: DatepickerSample6Component,
-        data: { displayName: "Datepicker Input Group Template", parentName: "Datepicker" },
-        path: "datepicker-sample-6"
-    },
-    {
-        component: DialogSample1Component,
-        data: { displayName: "Completed Action Dialog", parentName: "Dialog" },
-        path: "dialog-sample-1"
-    },
-    {
-        component: DialogSample2Component,
-        data: { displayName: "Confirmation Dialog", parentName: "Dialog" },
-        path: "dialog-sample-2"
-    },
-    {
-        component: DialogSample3Component,
-        data: { displayName: "Sign-in form Dialog", parentName: "Dialog" },
-        path: "dialog-sample-3"
-    },
-    {
-        component: DialogComponent,
-        data: { displayName: "Various Dialogs", parentName: "Dialog" },
-        path: "dialog"
     },
     {
         component: DoughnutChartExplosionSampleComponent,
@@ -830,31 +708,6 @@ export const samplesRoutes: Routes = [
         path: "radio-group-sample"
     },
     {
-        component: SliderSample1Component,
-        data: { displayName: "Slider Lower and Upper range values", parentName: "Slider" },
-        path: "slider-sample-1"
-    },
-    {
-        component: SliderSample2Component,
-        data: { displayName: "Continuous Slider", parentName: "Slider" },
-        path: "slider-sample-2"
-    },
-    {
-        component: SliderSample3Component,
-        data: { displayName: "Discrete Slider", parentName: "Slider" },
-        path: "slider-sample-3"
-    },
-    {
-        component: SliderSample4Component,
-        data: { displayName: "Range Slider", parentName: "Slider" },
-        path: "slider-sample-4"
-    },
-    {
-        component: SliderSample5Component,
-        data: { displayName: "Slider Lower and Upper bounds", parentName: "Slider" },
-        path: "slider-sample-5"
-    },
-    {
         component: TabbarComponent,
         data: { displayName: "Bottom Navigation Overview", parentName: "Bottom Navigation" },
         path: "tabbar"
@@ -891,31 +744,6 @@ export const samplesRoutes: Routes = [
     {
         component: TabsSample5Component,
         path: "tabs-sample-5"
-    },
-    {
-        component: TimePickerSample1Component,
-        data: { displayName: "Timepicker Overview", parentName: "Timepicker" },
-        path: "timepicker-sample-1"
-    },
-    {
-        component: TimePickerSample2Component,
-        data: { displayName: "One-way data bound Timepicker", parentName: "Timepicker" },
-        path: "timepicker-sample-2"
-    },
-    {
-        component: TimePickerSample3Component,
-        data: { displayName: "Timepicker Delta and Spin Mode", parentName: "Timepicker" },
-        path: "timepicker-sample-3"
-    },
-    {
-        component: TimePickerSample4Component,
-        data: { displayName: "Timepicker Validation", parentName: "Timepicker" },
-        path: "timepicker-sample-4"
-    },
-    {
-        component: TimePickerSample5Component,
-        data: { displayName: "Timepicker Input Group Template", parentName: "Timepicker" },
-        path: "timepicker-sample-5"
     },
     {
         component: BulletGraphAnimationComponent,
@@ -1087,41 +915,6 @@ export const samplesRoutes: Routes = [
         path: "buttons-sample-7"
     },
     {
-        component: OverlaySampleMain1Component,
-        data: { displayName: "Overlay Main Sample 1", parentName: "Overlay" },
-        path: "overlay-sample-main-1"
-    },
-    {
-        component: OverlaySampleMain2Component,
-        data: { displayName: "Overlay Main Sample 2", parentName: "Overlay" },
-        path: "overlay-sample-main-2"
-    },
-    {
-        component: OverlaySampleMain3Component,
-        data: { displayName: "Overlay Main Sample 3", parentName: "Overlay" },
-        path: "overlay-sample-main-3"
-    },
-    {
-        component: OverlayPositionSample1Component,
-        data: { displayName: "Overlay Position Sample 1", parentName: "Overlay" },
-        path: "overlay-position-sample-1"
-    },
-    {
-        component: OverlayPositionSample2Component,
-        data: { displayName: "Overlay Position Sample 2", parentName: "Overlay" },
-        path: "overlay-position-sample-2"
-    },
-    {
-        component: OverlayScrollSample1Component,
-        data: { displayName: "Overlay Scroll Sample 1", parentName: "Overlay" },
-        path: "overlay-scroll-sample-1"
-    },
-    {
-        component: OverlayScrollSample2Component,
-        data: { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
-        path: "overlay-scroll-sample-2"
-    },
-    {
         component: PieChartDataSampleComponent,
         data: { displayName: "Pie Chart Data Sample", parentName: "Pie Chart" },
         path: "pie-chart-data-sample"
@@ -1147,36 +940,6 @@ export const samplesRoutes: Routes = [
         path: "pie-chart-selection"
     },
     {
-        component: ToggleComponent,
-        data: { displayName: "Toggle Overview", parentName: "Toggle" },
-        path: "toggle"
-    },
-    {
-        component: ToggleSample1Component,
-        data: { displayName: "Toggle Content", parentName: "Toggle" },
-        path: "toggle-sample-1"
-    },
-    {
-        component: ToggleSample2Component,
-        data: { displayName: "Automatic Toggle Actions", parentName: "Toggle" },
-        path: "toggle-sample-2"
-    },
-    {
-        component: ToggleSample3Component,
-        data: { displayName: "Toggle Service Provider", parentName: "Toggle" },
-        path: "toggle-sample-3"
-    },
-    {
-        component: TooltipSimpleComponent,
-        data: { displayName: "Simple Tooltip", parentName: "Tooltip" },
-        path: "tooltip-simple"
-    },
-    {
-        component: TooltipRichComponent,
-        data: { displayName: "Rich Tooltip", parentName: "Tooltip" },
-        path: "tooltip-rich"
-    },
-    {
         component: FilteringSampleComponent,
         data: { displayName: "Grid Filtering", parentName: "Grid" },
         path: "grid-filtering-sample"
@@ -1195,36 +958,6 @@ export const samplesRoutes: Routes = [
         component: ResizingSampleComponent,
         data: { displayName: "Grid Resizing", parentName: "Grid" },
         path: "grid-resizing-sample"
-    },
-    {
-        component: RippleSample1Component,
-        data: { displayName: "Ripple Overview", parentName: "Ripple" },
-        path: "ripple-sample-1"
-    },
-    {
-        component: RippleSample2Component,
-        data: { displayName: "Ripple Target", parentName: "Ripple" },
-        path: "ripple-sample-2"
-    },
-    {
-        component: RippleSample3Component,
-        data: { displayName: "Ripple Centered Effect", parentName: "Ripple" },
-        path: "ripple-sample-3"
-    },
-    {
-        component: RippleSample4Component,
-        data: { displayName: "Ripple Duration", parentName: "Ripple" },
-        path: "ripple-sample-4"
-    },
-    {
-        component: RippleSample5Component,
-        data: { displayName: "Ripple Effect", parentName: "Ripple" },
-        path: "ripple-sample-5"
-    },
-    {
-        component: RippleSample6Component,
-        data: { displayName: "Ripple Color", parentName: "Ripple" },
-        path: "ripple-sample-6"
     },
     {
         component: IgxForComponent,
@@ -1565,11 +1298,6 @@ export const samplesRoutes: Routes = [
         component: DarkThemeSampleComponent,
         data: { displayName: "Dark theme sample", parentName: "Themes" },
         path: "dark-theme-sample"
-    },
-    {
-        component: DragAndDropSampleComponent,
-        data: { displayName: "Drag and drop sample", parentName: "Drag and Drop" },
-        path: "drag-drop-sample"
     },
     {
         component: ShadowsSampleComponent,
