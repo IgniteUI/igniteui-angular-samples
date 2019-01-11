@@ -118,7 +118,6 @@ import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/s
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
-import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -470,7 +469,6 @@ import {
         FinancialChartSamplesModule.forRoot(),
         PieChartSamplesModule.forRoot(),
         DoughnutChartSamplesModule.forRoot(),
-        GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,
