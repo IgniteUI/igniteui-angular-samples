@@ -83,8 +83,6 @@ import { CategoryChartPerformanceSamplesModule } from "./category-chart/category
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-
-import { DisplayDensityComponent } from "./display-density/display-density.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -194,8 +192,6 @@ import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.compone
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
-import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -210,9 +206,6 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
-import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
-import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -351,18 +344,12 @@ import {
         IndexComponent,
         TextHighlightSample1Component,
         TextHighlightSample2Component,
-        ThemeChooserSampleComponent,
-        DefaultThemeSampleComponent,
-        DarkThemeSampleComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
         SvgIconSampleComponent,
-        ShadowsSampleComponent,
-        ShadowsSample2Component,
         DropdownMenuComponent,
         TreeGridChilddatakeySampleComponent,
         TreeGridPrimaryforeignkeySampleComponent,
-        DisplayDensityComponent,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,

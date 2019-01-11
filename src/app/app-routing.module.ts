@@ -63,7 +63,6 @@ import {
 } from "./category-chart/trendline/category-chart-trendlines.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { DisplayDensityComponent } from "./display-density/display-density.component";
 import {
     DoughnutChartExplosionSampleComponent
 } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
@@ -219,8 +218,6 @@ import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-
 import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
 import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
 import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
-import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
-import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -235,9 +232,6 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
-import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
-import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
@@ -255,6 +249,22 @@ export const samplesRoutes: Routes = [
         component: HomeComponent,
         data: { displayName: "Home" },
         path: "home"
+    },
+    {
+        loadChildren: "app/interactions/interactions.module#InteractionsModule",
+        path: "interactions"
+    },
+    {
+        loadChildren: "app/notifications/notifications.module#NotificationsModule",
+        path: "notifications"
+    },
+    {
+        loadChildren: "app/theming/theming.module#ThemingModule",
+        path: "theming"
+    },
+    {
+        loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
+        path: "scheduling"
     },
     {
         loadChildren: "app/excel-library/excel-library.module#ExcelLibraryModule",
@@ -1041,31 +1051,6 @@ export const samplesRoutes: Routes = [
         path: "text-highlight-2"
     },
     {
-        component: ThemeChooserSampleComponent,
-        data: { displayName: "Style components with custom themes", parentName: "Themes" },
-        path: "theme-chooser"
-    },
-    {
-        component: DefaultThemeSampleComponent,
-        data: { displayName: "Default theme sample", parentName: "Themes" },
-        path: "default-theme-sample"
-    },
-    {
-        component: DarkThemeSampleComponent,
-        data: { displayName: "Dark theme sample", parentName: "Themes" },
-        path: "dark-theme-sample"
-    },
-    {
-        component: ShadowsSampleComponent,
-        data: { displayName: "Shadows sample", parentName: "Shadows" },
-        path: "shadows-sample"
-    },
-    {
-        component: ShadowsSample2Component,
-        data: { displayName: "Shadows sample 2", parentName: "Shadows" },
-        path: "shadows-sample-2"
-    },
-    {
         component: TreeGridBatchEditingSampleComponent,
         data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
         path: "treegrid-batchediting"
@@ -1084,11 +1069,6 @@ export const samplesRoutes: Routes = [
         component: TreeGridRowEditSampleComponent,
         data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
         path: "treegrid-row-edit"
-    },
-    {
-        component: DisplayDensityComponent,
-        data: { displayName: "Display density sample", parentName: "Themes" },
-        path: "density"
     },
     {
         component: TreeGridFinJSComponent,
