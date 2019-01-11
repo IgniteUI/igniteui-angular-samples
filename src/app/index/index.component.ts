@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
+import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
 
@@ -36,6 +37,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
     private appRoutes: any[];
 
     private modulesRoutes = [
+        {
+            path: "excel-library",
+            routes: excelLibraryRoutes
+        },
         {
             path: "notifications",
             routes: notificationsRoutes
