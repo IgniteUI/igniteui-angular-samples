@@ -7,7 +7,7 @@ import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import {
     IgxPercentChangeYAxisDynamicModule
 } from "igniteui-angular-charts/ES5/igx-percent-change-y-axis-dynamic-module";
-import { SamplesUtilitiesModule } from "../utilities/utilities.module";
+import { SamplesUtilitiesModule } from "../../utilities/utilities.module";
 import {
     FinancialChartAnnotationsComponent
 } from "./annotations/financial-chart-annotations.component";

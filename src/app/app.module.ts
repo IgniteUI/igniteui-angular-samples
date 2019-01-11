@@ -52,6 +52,7 @@ import {
 } from "igniteui-angular";
 
 import { HttpClientModule } from "@angular/common/http";
+import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
@@ -88,8 +89,6 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
-import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
-import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
@@ -121,13 +120,10 @@ import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
-
-import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
-import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
@@ -135,9 +131,6 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
-import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
-
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
@@ -566,11 +559,6 @@ import {
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
-        CategoryChartSamplesModule.forRoot(),
-        CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot(),
-        PieChartSamplesModule.forRoot(),
-        DoughnutChartSamplesModule.forRoot(),
         GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
