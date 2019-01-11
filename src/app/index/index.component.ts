@@ -5,8 +5,8 @@ import { filter } from "rxjs/operators";
 import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
 import { gaugesRoutes } from "../gauges/gauges-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
-import { menusRoutes } from "../menus/menus-routing.module";
 import { listsRoutes } from "../lists/lists-routing.module";
+import { menusRoutes } from "../menus/menus-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
 
