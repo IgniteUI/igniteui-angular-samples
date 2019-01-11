@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { DateParser} from "../../date-parser";
+import { DateParser } from "../../../date-parser";
+
 @Component({
   providers: [DateParser],
   selector: "app-datepicker-sample-5",
