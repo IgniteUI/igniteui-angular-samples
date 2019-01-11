@@ -208,20 +208,6 @@ import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.compone
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import { MyDynamicCardComponent } from "./overlay/overlay-dynamic-card/overlay-dynamic-card.component";
-import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
-import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
-import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
-import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1/overlay-position-sample-1.component";
-import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
-import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
-import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
-import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
-import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
-import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
-import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
-import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
-import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
 import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
 import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
@@ -314,12 +300,6 @@ import {
         TabsSample3Component,
         TabsSample4Component,
         TabsSample5Component,
-        SliderSample1Component,
-        SliderSample2Component,
-        SliderSample3Component,
-        SliderSample4Component,
-        SliderSample5Component,
-        CardSample1Component,
         CardSample2Component,
         CardSample3Component,
         ButtonsSample1Component,
@@ -349,18 +329,6 @@ import {
         GridSelectionSampleComponent,
         LinearProgressbarSample1Component,
         LinearProgressbarSample2Component,
-        RippleSample1Component,
-        RippleSample2Component,
-        RippleSample3Component,
-        RippleSample4Component,
-        RippleSample5Component,
-        RippleSample6Component,
-        DatepickerSample1Component,
-        DatepickerSample2Component,
-        DatepickerSample3Component,
-        DatepickerSample4Component,
-        DatepickerSample5Component,
-        DatepickerSample6Component,
         ButtonGroupSample1Component,
         ButtonGroupSample2Component,
         ButtonGroupSample3Component,

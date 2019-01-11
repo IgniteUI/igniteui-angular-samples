@@ -66,8 +66,8 @@ import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
-import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as MenusRouting from "../../src/app/menus/menus-routing.module";
+import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
@@ -113,6 +113,7 @@ export class SampleAssetsGenerator extends Generator {
             .concat(MenusRouting.menusRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(SchedulingRouting.schedulingRoutes);
+            
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];
             if (sample.component !== undefined) {
