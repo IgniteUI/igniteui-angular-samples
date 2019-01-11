@@ -1,6 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxCalendarComponent } from "igniteui-angular";
-import { DateParser} from "../../date-parser";
+import { Component } from "@angular/core";
+import { DateParser } from "../../../date-parser";
 
 @Component({
   providers: [DateParser],
