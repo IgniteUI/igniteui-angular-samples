@@ -65,6 +65,7 @@ import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
+import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as ListsRouting from "../../src/app/lists/lists-routing.module";
@@ -109,8 +110,9 @@ export class SampleAssetsGenerator extends Generator {
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
 
-        let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
+        let routes = Routing.samplesRoutes.concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
+            .concat(NotificationsRouting.notificationsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(SchedulingRouting.schedulingRoutes);
 
