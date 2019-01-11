@@ -105,10 +105,10 @@ export class ListConfigGenerator implements IConfigGenerator {
             component: ListSample7Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAvatarModule, IgxIconModule, IgxListModule,
-                    ListSample7Component, IgxSliderModule, IgxToastModule],
+                    ListSample7Component, IgxSliderModule, IgxToastModule, IgxButtonModule],
                 ngDeclarations: [ListSample7Component],
                 ngImports: [IgxAvatarModule, IgxIconModule, IgxListModule,
-                    IgxSliderModule, IgxToastModule]
+                    IgxSliderModule, IgxToastModule, IgxButtonModule]
             }),
             shortenComponentPathBy: "/lists/list/"
         }));
