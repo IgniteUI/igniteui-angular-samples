@@ -214,13 +214,6 @@ import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.compone
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
-import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
-import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
-import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
-import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
 import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
 import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
 import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
@@ -278,6 +271,10 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/notifications/notifications.module#NotificationsModule",
         path: "notifications"
+    },
+    {
+        loadChildren: "app/menus/menus.module#MenusModule",
+        path: "menus"
     },
     {
         loadChildren: "app/lists/lists.module#ListsModule",
@@ -497,22 +494,6 @@ export const samplesRoutes: Routes = [
         path: "localization-sample-3"
     },
     {
-        component: NavdrawerComponent,
-        path: "navigation-drawer"
-    },
-    {
-        component: NavDrawerSimpleComponent,
-        path: "navigation-drawer-simple"
-    },
-    {
-        component: NavDrawerPinComponent,
-        path: "navigation-drawer-pin"
-    },
-    {
-        component: NavDrawerMiniComponent,
-        path: "navigation-drawer-mini"
-    },
-    {
         component: GridComponent,
         data: { displayName: "Grid Basic Features", parentName: "Grid" },
         path: "grid"
@@ -624,21 +605,6 @@ export const samplesRoutes: Routes = [
     {
         component: TabsSample5Component,
         path: "tabs-sample-5"
-    },
-    {
-        component: NavbarComponent,
-        data: { displayName: "Navbar Overview", parentName: "Navbar" },
-        path: "navbar"
-    },
-    {
-        component: NavbarSample1Component,
-        data: { displayName: "Navbar Action Button Icon", parentName: "Navbar" },
-        path: "navbar-sample-1"
-    },
-    {
-        component: NavbarSample2Component,
-        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
-        path: "navbar-sample-2"
     },
     {
         component: CardSample1Component,
