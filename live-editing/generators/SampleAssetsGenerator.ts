@@ -65,6 +65,7 @@ import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
+import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
 import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
 import * as MenusRouting from "../../src/app/menus/menus-routing.module";
@@ -113,11 +114,13 @@ export class SampleAssetsGenerator extends Generator {
 
         let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
             .concat(MenusRouting.menusRoutes)
+            .concat(SchedulingRouting.schedulingRoutes)
             .concat(GaugesRouting.gaugesRoutes)
-            .concat(GaugesRouting.gaugesRoutes)
+            .concat(ListsRouting.listsRoutes)
             .concat(NotificationsRouting.notificationsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
-            .concat(SchedulingRouting.schedulingRoutes);
+            .concat(ExcelLibraryRouting.excelLibraryRoutes);
+
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];
             if (sample.component !== undefined) {
