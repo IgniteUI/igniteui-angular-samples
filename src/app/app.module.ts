@@ -82,11 +82,6 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
-import { ComboFeatures } from "./combo/combo-features/combo-features.component";
-import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
-import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
-import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { DisplayDensityComponent } from "./display-density/display-density.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
@@ -111,7 +106,6 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
-import { GaugeSamplesModule } from "./gauges/gauge-samples.module";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -178,15 +172,6 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
-import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
-import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
-import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
-import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
-import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
-import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
-import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
-import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
-import { ListComponent } from "./list/list.component";
 import {
     LocalizationSample1Component
 } from "./localization-samples/localization-sample-1/localization-sample-1.component";
@@ -241,6 +226,7 @@ import {
 import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -258,14 +244,6 @@ import {
         CheckboxSample2Component,
         CircularProgressbarComponent,
         LinearProgressbarComponent,
-        ListComponent,
-        ListSample1Component,
-        ListSample2Component,
-        ListSample3Component,
-        ListSample4Component,
-        ListSample5Component,
-        ListSample6Component,
-        ListSample7Component,
         GridCRMComponent,
         GridCustomFilteringComponent,
         GridComponent,
@@ -275,11 +253,6 @@ import {
         CarouselSample2Component,
         CarouselSample3Component,
         CarouselSample4Component,
-        CascadingCombos,
-        ComboFeatures,
-        ComboMainComponent,
-        ComboRemoteComponent,
-        ComboTemplateComponent,
         DropDownSample1Component,
         DropDownSample2Component,
         DropDownSample3Component,
@@ -389,7 +362,6 @@ import {
         ThemeChooserSampleComponent,
         DefaultThemeSampleComponent,
         DarkThemeSampleComponent,
-        ListChatSampleComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
         SvgIconSampleComponent,
@@ -458,7 +430,6 @@ import {
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
-        GaugeSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,
