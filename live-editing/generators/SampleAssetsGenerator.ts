@@ -114,7 +114,6 @@ export class SampleAssetsGenerator extends Generator {
         let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
             .concat(SchedulingRouting.schedulingRoutes)
             .concat(GaugesRouting.gaugesRoutes)
-            .concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
             .concat(NotificationsRouting.notificationsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
