@@ -1310,8 +1310,6 @@ export const samplesRoutes: Routes = [
         path: "text-highlight-2"
     },
     {
-    },
-    {
         component: TreeGridBatchEditingSampleComponent,
         data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
         path: "treegrid-batchediting"
