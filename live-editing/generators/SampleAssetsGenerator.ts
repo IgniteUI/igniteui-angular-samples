@@ -315,9 +315,9 @@ export class SampleAssetsGenerator extends Generator {
                     let forRoot = ".forRoot()";
                     if (appModuleNgImportWithProviders.providers
                         && appModuleNgImportWithProviders.providers.length > 0
-                        && appModuleNgImportWithProviders.providers[0].useClass
-                        && appModuleNgImportWithProviders.providers[0].useClass.name) {
-                        useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
+                        && appModuleNgImportWithProviders.providers[0]["useClass"]
+                        && appModuleNgImportWithProviders.providers[0]["useClass"]["name"]) {
+                        useClass = appModuleNgImportWithProviders.providers[0]["useClass"].name;
                         forRoot = `.forRoot(${useClass})`;
                     }
 

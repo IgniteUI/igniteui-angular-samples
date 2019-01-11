@@ -19,7 +19,7 @@ gulp.task("generate-live-editing", () => {
     requireFile("./live-editing/LiveEditingManager.ts");
 });
 
-gulp.task("watch-live-editing", ["generate-live-editing"], () => {
+gulp.task("watch-live-editing", gulp.series("generate-live-editing"), () => {
     gulp.watch(["./src/**/*.*", "!./src/assets/**", "./live-editing/**/*.*", "package.json"], function () {
         Object.keys(require.cache).forEach(function (key) {
             if (key.indexOf("node_modules") === -1) {
