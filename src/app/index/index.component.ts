@@ -2,8 +2,8 @@ import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
-import { listsRoutes } from "../lists/lists-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
+import { listsRoutes } from "../lists/lists-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
 
