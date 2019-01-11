@@ -92,11 +92,6 @@ import { CategoryChartPerformanceSamplesModule } from "./category-chart/category
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
-import { ComboFeatures } from "./combo/combo-features/combo-features.component";
-import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
-import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
-import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -205,15 +200,6 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
-import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
-import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
-import { ListSample2Component } from "./list/list-sample-2/list-sample-2.component";
-import { ListSample3Component } from "./list/list-sample-3/list-sample-3.component";
-import { ListSample4Component } from "./list/list-sample-4/list-sample-4.component";
-import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
-import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
-import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
-import { ListComponent } from "./list/list.component";
 import {
     LocalizationSample1Component
 } from "./localization-samples/localization-sample-1/localization-sample-1.component";
@@ -315,14 +301,6 @@ import {
         CheckboxSample2Component,
         CircularProgressbarComponent,
         LinearProgressbarComponent,
-        ListComponent,
-        ListSample1Component,
-        ListSample2Component,
-        ListSample3Component,
-        ListSample4Component,
-        ListSample5Component,
-        ListSample6Component,
-        ListSample7Component,
         GridCRMComponent,
         GridCustomFilteringComponent,
         GridComponent,
@@ -340,11 +318,6 @@ import {
         CalendarSample6Component,
         CalendarSample7Component,
         CalendarComponent,
-        CascadingCombos,
-        ComboFeatures,
-        ComboMainComponent,
-        ComboRemoteComponent,
-        ComboTemplateComponent,
         DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
@@ -496,7 +469,6 @@ import {
         DragAndDropSampleComponent,
         TooltipSimpleComponent,
         TooltipRichComponent,
-        ListChatSampleComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
         SvgIconSampleComponent,
