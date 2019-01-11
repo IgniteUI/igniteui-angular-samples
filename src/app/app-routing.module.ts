@@ -249,13 +249,6 @@ import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.compone
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
-import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
-import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
-import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1/overlay-position-sample-1.component";
-import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
-import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
-import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
 import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
 import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
 import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
@@ -631,7 +624,7 @@ export const samplesRoutes: Routes = [
         component: LocalizationSample3Component,
         data: { displayName: "Localize partially", parentName: "Localization" },
         path: "localization-sample-3"
-    },   
+    },
     {
         component: GridComponent,
         data: { displayName: "Grid Basic Features", parentName: "Grid" },
