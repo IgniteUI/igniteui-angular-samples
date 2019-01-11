@@ -116,6 +116,7 @@ export class SampleAssetsGenerator extends Generator {
             .concat(ChartsRouting.chartsRoutes)
             .concat(SchedulingRouting.schedulingRoutes)
             .concat(GaugesRouting.gaugesRoutes)
+            .concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
             .concat(NotificationsRouting.notificationsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)

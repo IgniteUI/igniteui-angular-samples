@@ -53,6 +53,7 @@ import {
 
 import { HttpClientModule } from "@angular/common/http";
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
+import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";

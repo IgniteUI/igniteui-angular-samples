@@ -178,6 +178,10 @@ export const samplesRoutes: Routes = [
         path: "charts"
     },
     {
+        loadChildren: "app/lists/lists.module#ListsModule",
+        path: "lists"
+    },
+    {
         loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
         path: "scheduling"
     },

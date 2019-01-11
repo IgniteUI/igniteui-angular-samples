@@ -11,7 +11,7 @@ import { FinancialChartMultipleDataComponent} from "../../src/app/charts/financi
 import { FinancialChartOverviewComponent} from "../../src/app/charts/financial-chart/overview/financial-chart-overview-sample.component";
 import { FinancialChartPanesComponent } from "../../src/app/charts/financial-chart/panes/financial-chart-panes.component";
 import { FinancialChartPerformanceComponent } from "../../src/app/charts/financial-chart/performance/financial-chart-performance.component";
-import { FinancialDataService } from '../../src/app/charts/financial-chart/services/financial-data.service';
+import { FinancialDataService } from "../../src/app/charts/financial-chart/services/financial-data.service";
 import { GenerateHourlyPricesService } from "../../src/app/charts/financial-chart/services/generate-hourly-prices.service";
 import { GenerateOhlcPricesService } from "../../src/app/charts/financial-chart/services/generate-ohlc-prices.service";
 import { StockDataService } from "../../src/app/charts/financial-chart/services/stock-data.service";
