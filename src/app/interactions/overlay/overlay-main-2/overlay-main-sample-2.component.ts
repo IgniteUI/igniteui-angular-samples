@@ -2,7 +2,7 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
     ConnectedPositioningStrategy, IgxButtonDirective, IgxIconModule, IgxOverlayService } from "igniteui-angular";
-import { CardSample1Component } from "../../card/card-sample-1/card-sample-1.component";
+import { CardSample1Component } from "../../../card/card-sample-1/card-sample-1.component";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",

@@ -1,9 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxToggleModule } from "igniteui-angular";
-import { ToggleSample1Component } from "../../src/app/toggle/toggle-sample-1/toggle-sample-1.component";
-import { ToggleSample2Component } from "../../src/app/toggle/toggle-sample-2/toggle-sample-2.component";
-import { ToggleSample3Component } from "../../src/app/toggle/toggle-sample-3/toggle-sample-3.component";
-import { ToggleComponent } from "../../src/app/toggle/toggle.component";
+import { ToggleSample1Component } from "../../src/app/interactions/toggle/toggle-sample-1/toggle-sample-1.component";
+import { ToggleSample2Component } from "../../src/app/interactions/toggle/toggle-sample-2/toggle-sample-2.component";
+import { ToggleSample3Component } from "../../src/app/interactions/toggle/toggle-sample-3/toggle-sample-3.component";
+import { ToggleComponent } from "../../src/app/interactions/toggle/toggle.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -19,7 +19,8 @@ export class ToggleConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxToggleModule, ToggleComponent],
                 ngDeclarations: [ToggleComponent],
                 ngImports: [IgxButtonModule, IgxToggleModule]
-            })
+            }),
+            shortenComponentPathBy: "/interactions/"
         }));
 
         // toggle sample 1
@@ -30,7 +31,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ToggleSample1Component],
                 ngImports: [IgxButtonModule, IgxToggleModule]
             }),
-            shortenComponentPathBy: "/toggle/"
+            shortenComponentPathBy: "/interactions/toggle/"
         }));
 
         // toggle sample 2
@@ -40,7 +41,8 @@ export class ToggleConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxToggleModule, ToggleSample2Component],
                 ngDeclarations: [ToggleSample2Component],
                 ngImports: [IgxButtonModule, IgxToggleModule]
-            })
+            }),
+            shortenComponentPathBy: "/interactions/toggle/"
         }));
 
         // toggle sample 3
@@ -51,7 +53,7 @@ export class ToggleConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ToggleSample3Component],
                 ngImports: [IgxButtonModule, IgxToggleModule]
             }),
-            shortenComponentPathBy: "/toggle/"
+            shortenComponentPathBy: "/interactions/toggle/"
         }));
 
         return configs;
