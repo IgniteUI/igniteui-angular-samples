@@ -264,6 +264,10 @@ export const samplesRoutes: Routes = [
         path: "home"
     },
     {
+        loadChildren: "app/excel-library/excel-library.module#ExcelLibraryModule",
+        path: "excel-library"
+    },
+    {
         loadChildren: "app/gauges/gauges.module#GaugesModule",
         path: "gauges"
     },
@@ -282,47 +286,6 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
         path: "scheduling"
-    },
-    // excel library samples with lazy loading:
-    {
-        data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
-        path: "excel-library-operations-on-workbooks"
-    },
-    {
-        data: { displayName: "Worksheets Operations", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/operations-on/worksheets.module#ExcelLibraryOperationsOnWorksheetsModule",
-        path: "excel-library-operations-on-worksheets"
-    },
-    {
-        data: { displayName: "Working With Cells", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule",
-        path: "excel-library-working-with-cells"
-    },
-    {
-        data: { displayName: "Working With Charts", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/charts.module#ExcelLibraryWorkingWithChartsModule",
-        path: "excel-library-working-with-charts"
-    },
-    {
-        data: { displayName: "Working With Grids", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/grids.module#ExcelLibraryWorkingWithGridsModule",
-        path: "excel-library-working-with-grids"
-    },
-    {
-        data: { displayName: "Working With Objects", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/objects.module#ExcelLibraryWorkingWithObjectsModule",
-        path: "excel-library-working-with-objects"
-    },
-    {
-        data: { displayName: "Working With Sparklines", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/sparklines.module#ExcelLibraryWorkingWithSparklinesModule",
-        path: "excel-library-working-with-sparklines"
-    },
-    {
-        data: { displayName: "Working With Tables", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/working-with/tables.module#ExcelLibraryWorkingWithTablesModule",
-        path: "excel-library-working-with-tables"
     },
     {
         component: AvatarSample1Component,
