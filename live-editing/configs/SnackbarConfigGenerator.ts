@@ -3,6 +3,8 @@ import { IgxAvatarModule, IgxIconModule, IgxListModule,
     IgxRippleModule, IgxSnackbarModule } from "igniteui-angular";
 import { SnackbarSample4Component
 } from "../../src/app/notifications/snackbar/snackbar-sample-4/snackbar-sample-4.component";
+import { SnackbarSample5Component
+} from "../../src/app/notifications/snackbar/snackbar-sample-5/snackbar-sample-5.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -19,6 +21,16 @@ export class SnackbarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [SnackbarSample4Component],
                 ngImports: [IgxAvatarModule, IgxIconModule, IgxListModule,
                     IgxRippleModule, IgxSnackbarModule]
+            }),
+            shortenComponentPathBy: "/notifications/snackbar/"
+        }));
+
+        configs.push(new Config({
+            component: SnackbarSample5Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSnackbarModule, SnackbarSample5Component],
+                ngDeclarations: [SnackbarSample5Component],
+                ngImports: [IgxSnackbarModule]
             }),
             shortenComponentPathBy: "/notifications/snackbar/"
         }));
