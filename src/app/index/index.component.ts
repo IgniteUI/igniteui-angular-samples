@@ -7,8 +7,10 @@ import { excelLibraryRoutes } from "../excel-library/excel-library-routing.modul
 import { gaugesRoutes } from "../gauges/gauges-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
 import { listsRoutes } from "../lists/lists-routing.module";
+import { menusRoutes } from "../menus/menus-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
+import { themingRoutes } from "../theming/theming-routing.module";
 
 @Component({
     selector: "app-index",
@@ -56,6 +58,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "charts",
             routes: chartsRoutes
+        },
+        {
+            path: "theming",
+            routes: themingRoutes
+        },
+        {
+            path: "menus",
+            routes: menusRoutes
         },
         {
             path: "lists",

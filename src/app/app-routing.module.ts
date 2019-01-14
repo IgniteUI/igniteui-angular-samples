@@ -30,7 +30,6 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { DisplayDensityComponent } from "./display-density/display-density.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -121,15 +120,6 @@ import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.compone
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
-import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
-import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
-import { NavDrawerSimpleComponent } from "./navdrawer/nav-drawer-simple/nav-drawer-simple.component";
-import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
-import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
-import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -144,9 +134,6 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import { DarkThemeSampleComponent } from "./theming/dark-theme-sample/dark-theme-sample.component";
-import { DefaultThemeSampleComponent } from "./theming/default-theme-sample/default-theme-sample.component";
-import { ThemeChooserSampleComponent } from "./theming/theme-chooser/theme-chooser-sample.component";
 import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
@@ -180,17 +167,20 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/lists/lists.module#ListsModule",
         path: "lists"
+    },{
+        loadChildren: "app/theming/theming.module#ThemingModule",
+        path: "theming"
     },
     {
         loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
         path: "scheduling"
     },
     // excel library samples with lazy loading:
-    {
-        data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
-        loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
-        path: "excel-library-operations-on-workbooks"
-    },
+    // {
+    //     data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
+    //     loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
+    //     path: "excel-library-operations-on-workbooks"
+    // },
     {
         loadChildren: "app/excel-library/excel-library.module#ExcelLibraryModule",
         path: "excel-library"
@@ -206,6 +196,10 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/notifications/notifications.module#NotificationsModule",
         path: "notifications"
+    },
+    {
+        loadChildren: "app/menus/menus.module#MenusModule",
+        path: "menus"
     },
     {
         loadChildren: "app/lists/lists.module#ListsModule",
@@ -410,22 +404,6 @@ export const samplesRoutes: Routes = [
         path: "localization-sample-3"
     },
     {
-        component: NavdrawerComponent,
-        path: "navigation-drawer"
-    },
-    {
-        component: NavDrawerSimpleComponent,
-        path: "navigation-drawer-simple"
-    },
-    {
-        component: NavDrawerPinComponent,
-        path: "navigation-drawer-pin"
-    },
-    {
-        component: NavDrawerMiniComponent,
-        path: "navigation-drawer-mini"
-    },
-    {
         component: GridComponent,
         data: { displayName: "Grid Basic Features", parentName: "Grid" },
         path: "grid"
@@ -537,21 +515,6 @@ export const samplesRoutes: Routes = [
     {
         component: TabsSample5Component,
         path: "tabs-sample-5"
-    },
-    {
-        component: NavbarComponent,
-        data: { displayName: "Navbar Overview", parentName: "Navbar" },
-        path: "navbar"
-    },
-    {
-        component: NavbarSample1Component,
-        data: { displayName: "Navbar Action Button Icon", parentName: "Navbar" },
-        path: "navbar-sample-1"
-    },
-    {
-        component: NavbarSample2Component,
-        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
-        path: "navbar-sample-2"
     },
     {
         component: CardSample1Component,
@@ -823,31 +786,6 @@ export const samplesRoutes: Routes = [
         path: "text-highlight-2"
     },
     {
-        component: ThemeChooserSampleComponent,
-        data: { displayName: "Style components with custom themes", parentName: "Themes" },
-        path: "theme-chooser"
-    },
-    {
-        component: DefaultThemeSampleComponent,
-        data: { displayName: "Default theme sample", parentName: "Themes" },
-        path: "default-theme-sample"
-    },
-    {
-        component: DarkThemeSampleComponent,
-        data: { displayName: "Dark theme sample", parentName: "Themes" },
-        path: "dark-theme-sample"
-    },
-    {
-        component: ShadowsSampleComponent,
-        data: { displayName: "Shadows sample", parentName: "Shadows" },
-        path: "shadows-sample"
-    },
-    {
-        component: ShadowsSample2Component,
-        data: { displayName: "Shadows sample 2", parentName: "Shadows" },
-        path: "shadows-sample-2"
-    },
-    {
         component: TreeGridBatchEditingSampleComponent,
         data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
         path: "treegrid-batchediting"
@@ -866,11 +804,6 @@ export const samplesRoutes: Routes = [
         component: TreeGridRowEditSampleComponent,
         data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
         path: "treegrid-row-edit"
-    },
-    {
-        component: DisplayDensityComponent,
-        data: { displayName: "Display density sample", parentName: "Themes" },
-        path: "density"
     },
     {
         component: TreeGridFinJSComponent,
