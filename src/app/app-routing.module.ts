@@ -167,7 +167,7 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/lists/lists.module#ListsModule",
         path: "lists"
-    },{
+    }, {
         loadChildren: "app/theming/theming.module#ThemingModule",
         path: "theming"
     },
