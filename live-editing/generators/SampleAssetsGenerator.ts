@@ -70,6 +70,7 @@ import * as InteractionsRouting from "../../src/app/interactions/interactions-ro
 import * as MenusRouting from "../../src/app/menus/menus-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
+import * as LayoutsRouting from "../../src/app/layouts/layouts-routing.module";
 import * as ListsRouting from "../../src/app/lists/lists-routing.module";
 import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
@@ -119,7 +120,8 @@ export class SampleAssetsGenerator extends Generator {
             .concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
-            .concat(ExcelLibraryRouting.excelLibraryRoutes);
+            .concat(ExcelLibraryRouting.excelLibraryRoutes)
+            .concat(LayoutsRouting.layoutsRoutes);
 
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];

@@ -5,6 +5,7 @@ import { filter } from "rxjs/operators";
 import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
 import { gaugesRoutes } from "../gauges/gauges-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
+import { layoutsRoutes } from "../layouts/layouts-routing.module";
 import { listsRoutes } from "../lists/lists-routing.module";
 import { menusRoutes } from "../menus/menus-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
@@ -73,6 +74,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "scheduling",
             routes: schedulingRoutes
+        },
+        {
+            path: "layouts",
+            routes: layoutsRoutes
         }
     ];
 
