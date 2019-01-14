@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 // tslint:disable:max-line-length
-import { IgxItemLegendModule } from 'igniteui-angular-charts/ES5/igx-item-legend-module';
+import { IgxItemLegendModule } from "igniteui-angular-charts/ES5/igx-item-legend-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
 import { IgxPieChartModule } from "igniteui-angular-charts/ES5/igx-pie-chart-module";
