@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxLayoutModule } from "igniteui-angular";
-import { LayoutComponent } from "../../src/app/layout/layout.component";
+import { LayoutComponent } from "../../src/app/layouts/layout/layout.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -15,7 +15,8 @@ export class LayoutConfigGenerator implements IConfigGenerator {
                 imports: [IgxLayoutModule, LayoutComponent],
                 ngDeclarations: [LayoutComponent],
                 ngImports: [IgxLayoutModule]
-            })
+            }),
+            shortenComponentPathBy: "/layouts/"
         }));
 
         return configs;

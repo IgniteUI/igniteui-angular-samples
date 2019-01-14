@@ -68,6 +68,7 @@ import * as ChartsRouting from "../../src/app/charts/charts-routing.module";
 import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
 import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
+import * as LayoutsRouting from "../../src/app/layouts/layouts-routing.module";
 import * as ListsRouting from "../../src/app/lists/lists-routing.module";
 import * as MenusRouting from "../../src/app/menus/menus-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
@@ -124,7 +125,8 @@ export class SampleAssetsGenerator extends Generator {
             .concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
-            .concat(ExcelLibraryRouting.excelLibraryRoutes);
+            .concat(ExcelLibraryRouting.excelLibraryRoutes)
+            .concat(LayoutsRouting.layoutsRoutes);
 
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];

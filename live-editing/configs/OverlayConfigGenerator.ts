@@ -2,7 +2,7 @@
 import {
     IgxButtonDirective, IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule
 } from "igniteui-angular";
-import { CardSample1Component } from "../../src/app/card/card-sample-1/card-sample-1.component";
+import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/card-sample-1.component";
 
 import { MyDynamicCardComponent
 } from "../../src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component";
@@ -28,9 +28,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlaySampleMain1Component,
-            additionalFiles: ["/src/app/card/card-sample-1/card-sample-1.component.ts",
-                "/src/app/card/card-sample-1/card-sample-1.component.scss",
-                "/src/app/card/card-sample-1/card-sample-1.component.html"],
+            additionalFiles: ["/src/app/layouts/card/card-sample-1/card-sample-1.component.ts",
+                "/src/app/layouts/card/card-sample-1/card-sample-1.component.scss",
+                "/src/app/layouts/card/card-sample-1/card-sample-1.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxCardModule, CardSample1Component,
                     OverlaySampleMain1Component, IgxButtonDirective],
@@ -43,9 +43,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlaySampleMain2Component,
-            additionalFiles: ["/src/app/card/card-sample-1/card-sample-1.component.ts",
-            "/src/app/card/card-sample-1/card-sample-1.component.scss",
-            "/src/app/card/card-sample-1/card-sample-1.component.html"],
+            additionalFiles: ["/src/app/layouts/card/card-sample-1/card-sample-1.component.ts",
+            "/src/app/layouts/card/card-sample-1/card-sample-1.component.scss",
+            "/src/app/layouts/card/card-sample-1/card-sample-1.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, OverlaySampleMain2Component,
                     CardSample1Component, IgxSwitchModule, IgxCardModule,
