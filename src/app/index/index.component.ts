@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
+import { chartsRoutes } from "../charts/charts-routing.module";
 import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
 import { gaugesRoutes } from "../gauges/gauges-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
@@ -54,6 +55,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "notifications",
             routes: notificationsRoutes
+        },
+        {
+            path: "charts",
+            routes: chartsRoutes
         },
         {
             path: "theming",

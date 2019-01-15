@@ -1,3 +1,4 @@
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
@@ -50,8 +51,6 @@ import {
     IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
-
-import { HttpClientModule } from "@angular/common/http";
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -68,11 +67,8 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
-import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
-import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
 import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -82,7 +78,6 @@ import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-
 import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
-import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
@@ -170,7 +165,6 @@ import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.compone
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
 import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
 import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 import {
     TextHighlightSample1Component
 } from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
@@ -348,11 +342,6 @@ import {
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
-        CategoryChartSamplesModule.forRoot(),
-        CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot(),
-        PieChartSamplesModule.forRoot(),
-        DoughnutChartSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,
