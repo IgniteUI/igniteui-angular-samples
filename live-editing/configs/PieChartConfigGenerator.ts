@@ -27,7 +27,7 @@ export class PieChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPieChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/pie-chart/"
         }));
 
         configs.push(new Config({
@@ -38,7 +38,7 @@ export class PieChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPieChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/pie-chart/"
         }));
 
         configs.push(new Config({
@@ -49,7 +49,7 @@ export class PieChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPieChartModule, IgxLegendModule, IgxItemLegendModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/pie-chart/"
         }));
 
         configs.push(new Config({
@@ -60,7 +60,7 @@ export class PieChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPieChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/pie-chart/"
         }));
 
         configs.push(new Config({
@@ -71,7 +71,7 @@ export class PieChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxPieChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/pie-chart/"
         }));
 
         return configs;

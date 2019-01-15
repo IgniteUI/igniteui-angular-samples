@@ -26,7 +26,7 @@ export class DoughnutChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/doughnut-chart/"
         }));
 
         configs.push(new Config({
@@ -37,7 +37,7 @@ export class DoughnutChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/doughnut-chart/"
         }));
 
         configs.push(new Config({
@@ -49,7 +49,7 @@ export class DoughnutChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/doughnut-chart/"
         }));
 
         return configs;
