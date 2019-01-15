@@ -103,7 +103,6 @@ import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
 import { CardSampleModule } from "./layouts/card/card-sample-1/card-sample-1.module";
 import {
-import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {

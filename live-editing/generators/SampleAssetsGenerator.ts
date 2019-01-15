@@ -64,13 +64,12 @@ import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
-import * as DataDisplayRouting from "../../src/app/data-display/data-display-routing.module";
 import * as ChartsRouting from "../../src/app/charts/charts-routing.module";
+import * as DataDisplayRouting from "../../src/app/data-display/data-display-routing.module";
 import * as DataEntriesRouting from "../../src/app/data-entries/data-entries-routing.module";
 import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
 import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
-import * as ListsRouting from "../../src/app/lists/lists-routing.module";
 import * as LayoutsRouting from "../../src/app/layouts/layouts-routing.module";
 import * as ListsRouting from "../../src/app/lists/lists-routing.module";
 import * as MenusRouting from "../../src/app/menus/menus-routing.module";

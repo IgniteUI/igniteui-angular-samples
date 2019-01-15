@@ -84,7 +84,8 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/lists/lists.module#ListsModule",
         path: "lists"
-    }, {
+    },
+    {
         loadChildren: "app/theming/theming.module#ThemingModule",
         path: "theming"
     },
@@ -236,8 +237,6 @@ export const samplesRoutes: Routes = [
         component: GridColumnHidingToolbarSampleComponent,
         data: { displayName: "Grid Column Hiding with Toolbar", parentName: "Grid" },
         path: "grid-column-hiding-toolbar-sample"
-    },
-    {
     },
     {
         component: SortingSampleComponent,
