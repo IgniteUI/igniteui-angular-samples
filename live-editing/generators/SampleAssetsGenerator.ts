@@ -76,6 +76,7 @@ import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.
 import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
 import * as TreeGridRouting from "../../src/app/tree-grid/tree-grid-routing.module";
 import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
+import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
 import { PieChartConfigGenerator } from "./../configs/PieChartConfigGenerator";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
@@ -93,7 +94,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerCo
     ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, GridCRMConfigGenerator, IconConfigGenerator,
     OverlayConfigGenerator, GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,

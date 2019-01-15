@@ -80,50 +80,6 @@ import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radi
 import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
 import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
-import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
-import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
-import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
-import {
-    GridColumnHidingToolbarSampleComponent
-} from "./grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
-import {
-    GridConditionalCellStyleComponent
-} from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
-import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
-import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
-import {
-    GridDisplayDensitySampleComponent
-} from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
-import { GridEditingSampleComponent } from "./grid/grid-editing-sample/grid-editing-sample.component";
-import { FilteringSampleComponent } from "./grid/grid-filtering-sample/grid-filtering-sample.component";
-import { FinJSDemoComponent } from "./grid/grid-finjs-demo/grid-finjs-demo.component";
-import { GridGroupBySampleComponent } from "./grid/grid-groupby-sample/grid-groupby-sample.component";
-import {
-    GridGroupBySummarySampleComponent
-} from "./grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
-import { GridMovingSampleComponent } from "./grid/grid-moving-sample/grid-moving-sample.component";
-import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
-import { GridPasteSampleComponent } from "./grid/grid-paste/grid-paste-sample.component";
-import { PasteHandler } from "./grid/grid-paste/paste-handler.directive";
-import { RemoteFilteringSampleComponent } from "./grid/grid-remote-filtering-sample/remote-filtering-sample.component";
-import { RemotePagingGridSample } from "./grid/grid-remote-paging-sample/remote-paging-sample.component";
-import { ResizingSampleComponent } from "./grid/grid-resizing-sample/grid-resizing-sample.component";
-import { GridRowEditSampleComponent } from "./grid/grid-row-editing-sample/grid-row-editing-sample.component";
-import { FinancialSampleComponent } from "./grid/grid-sample-2/grid-sample-2.component";
-import { GridSample3Component } from "./grid/grid-sample-3/grid-sample-3.component";
-import { GridRemoteVirtualizationSampleComponent } from "./grid/grid-sample-4/grid-sample-4.component";
-import { PinningSampleComponent } from "./grid/grid-sample-pinning/grid-pinning.component";
-import { GridSelectionSampleComponent } from "./grid/grid-sample-selection/grid-selection.component";
-import { GridSearchSampleComponent } from "./grid/grid-search-sample/grid-search-sample.component";
-import { GridContextmenuComponent } from "./grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
-import { SortingSampleComponent } from "./grid/grid-sorting-sample/grid-sorting-sample.component";
-import { GridToolbarSample1Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
-import { GridToolbarSample2Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
-import { GridToolbarSample3Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
-import { GridToolbarSample4Component } from "./grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
-import { GridComponent } from "./grid/grid.component";
-import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
-import { DataService } from "./grid/services/data.service";
 import { HomeComponent } from "./home/home.component";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
@@ -172,9 +128,6 @@ import {
         CheckboxSample2Component,
         CircularProgressbarComponent,
         LinearProgressbarComponent,
-        GridCRMComponent,
-        GridCustomFilteringComponent,
-        GridComponent,
         DropDownSample1Component,
         DropDownSample2Component,
         DropDownSample3Component,
@@ -186,9 +139,6 @@ import {
         ButtonsSample5Component,
         ButtonsSample6Component,
         ButtonsSample7Component,
-        FilteringSampleComponent,
-        PagingSampleComponent,
-        ResizingSampleComponent,
         SwitchSample1Component,
         SwitchSample2Component,
         RadioSample1Component,
@@ -197,10 +147,6 @@ import {
         IconSample2Component,
         SvgIconSampleComponent,
         IgxForComponent,
-        FinancialSampleComponent,
-        PinningSampleComponent,
-        GridRemoteVirtualizationSampleComponent,
-        GridSelectionSampleComponent,
         LinearProgressbarSample1Component,
         LinearProgressbarSample2Component,
         ButtonGroupSample1Component,
@@ -217,45 +163,17 @@ import {
         InputGroupSample4Component,
         InputGroupSample5Component,
         InputGroupSample6Component,
-        GridSample3Component,
-        GridGroupBySampleComponent,
-        GridGroupBySummarySampleComponent,
-        SortingSampleComponent,
-        GridContextmenuComponent,
-        GridSearchSampleComponent,
         ChipSampleComponent,
-        GridColumnHidingSampleComponent,
-        GridColumnHidingToolbarSampleComponent,
-        GridToolbarSample1Component,
-        GridToolbarSample2Component,
-        GridToolbarSample3Component,
-        GridToolbarSample4Component,
-        RemoteFilteringSampleComponent,
         RadioGroupSampleComponent,
-        GridMovingSampleComponent,
-        GridMultiColumnHeadersComponent,
-        GridPasteSampleComponent,
-        PasteHandler,
-        RemoteFilteringSampleComponent,
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
-        GridEditingSampleComponent,
-        RemotePagingGridSample,
-        GridDisplayDensitySampleComponent,
         HomeComponent,
         DocsLayoutComponent,
         IndexComponent,
         TextHighlightSample1Component,
         TextHighlightSample2Component,
-        GridConditionalCellStyleComponent,
-        FinJSDemoComponent,
         SvgIconSampleComponent,
-        DropdownMenuComponent,
-        GridWithTransactionsComponent,
-        GridBatchEditingSampleComponent,
-        GridRowEditSampleComponent,
-        GridRowEditSampleComponent,
-        GridCustomFilteringComponent
+        DropdownMenuComponent
     ],
     imports: [
         IgxDropDownModule,
@@ -312,7 +230,6 @@ import {
         CardSampleModule
     ],
     providers: [
-        DataService,
         IgxCsvExporterService,
         IgxExcelExporterService,
         IgxOverlayService

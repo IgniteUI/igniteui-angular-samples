@@ -29,6 +29,7 @@ import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
+import { GridComponent } from "../../src/app/grid/grid-boston-marathon/grid.component";
 import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -38,7 +39,6 @@ import {
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
-import { GridCRMComponent } from "../../src/app/grid/grid-crm/grid-crm.component";
 import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
 import {
     GridDisplayDensitySampleComponent
@@ -73,7 +73,6 @@ import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sam
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
-import { GridComponent } from "../../src/app/grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { LocalDataService } from "../../src/app/grid/services/localData.service";
@@ -100,7 +99,8 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
                     IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
-            })
+            }),
+            shortenComponentPathBy: "/grid/"
         }));
 
         configs.push(new Config({
@@ -228,22 +228,6 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridColumnHidingToolbarSampleComponent],
                 ngImports: [IgxGridModule.forRoot(), HttpClientModule],
                 ngProviders: []
-            })
-        }));
-
-        configs.push(new Config({
-            component: GridCRMComponent,
-            additionalFiles: ["/src/app/grid/grid-crm/data.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule,
-                    IgxExcelExporterService, GridCRMComponent],
-                ngDeclarations: [GridCRMComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
-                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, HttpClientModule],
-                ngProviders: [IgxExcelExporterService]
             })
         }));
 
