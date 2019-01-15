@@ -3,14 +3,17 @@ import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
 import { dataDisplayRoutes } from "../data-display/data-display-routing.module";
+import { chartsRoutes } from "../charts/charts-routing.module";
 import { dataEntriesRoutes } from "../data-entries/data-entries-routing.module";
 import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
 import { gaugesRoutes } from "../gauges/gauges-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
+import { layoutsRoutes } from "../layouts/layouts-routing.module";
 import { listsRoutes } from "../lists/lists-routing.module";
 import { menusRoutes } from "../menus/menus-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
+import { servicesRoutes } from "../services/services-routing.module";
 import { themingRoutes } from "../theming/theming-routing.module";
 
 @Component({
@@ -65,6 +68,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
             routes: notificationsRoutes
         },
         {
+            path: "charts",
+            routes: chartsRoutes
+        },
+        {
             path: "theming",
             routes: themingRoutes
         },
@@ -83,6 +90,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "scheduling",
             routes: schedulingRoutes
+        },
+        {
+            path: "layouts",
+            routes: layoutsRoutes
+        },
+        {
+            path: "services",
+            routes: servicesRoutes
         }
     ];
 

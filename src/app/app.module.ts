@@ -1,3 +1,4 @@
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
@@ -50,41 +51,9 @@ import {
     IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
-
-import { HttpClientModule } from "@angular/common/http";
+import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
-import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
-import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
-import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
-import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
-import { CardComponent } from "./card/card.component";
-import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
-import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
-import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-sample-2.component";
-import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
-import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
-import { CarouselComponent } from "./carousel/carousel.component";
-import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
-import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
-import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
-import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
-import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
-import { ExpansionPanelSample4Component } from "./expansion-panel/expansion-sample-4/expansion-sample-4.component";
-import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-sample-5/expansion-sample-5.component";
-import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
-import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
-
-import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
-import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
-import { CsvExportComponent } from "./export-csv/csv-export.component";
-import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
-import { ExcelExportComponent } from "./export-excel/excel-export.component";
-import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
-import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
-
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid/grid-batch-editing/grid-transaction.component";
 import { GridColumnHidingSampleComponent } from "./grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -132,35 +101,17 @@ import { DataService } from "./grid/services/data.service";
 import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
-import { LayoutComponent } from "./layout/layout.component";
+import { CardSampleModule } from "./layouts/card/card-sample-1/card-sample-1.module";
 import {
-    LocalizationSample1Component
-} from "./localization-samples/localization-sample-1/localization-sample-1.component";
 import {
-    LocalizationSample2Component
-} from "./localization-samples/localization-sample-2/localization-sample-2.component";
-import {
-    LocalizationSample3Component
-} from "./localization-samples/localization-sample-3/localization-sample-3.component";
-import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
-import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
-import { TabbarComponent } from "./tabbar/tabbar.component";
-import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
-import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
-import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
-import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
-import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
+    TreeGridBatchEditingSampleComponent
+} from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
-
-import { CardSampleModule } from "./card/card-sample-1/card-sample-1.module";
-import {
-    TreeGridBatchEditingSampleComponent
-} from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridRowEditSampleComponent
 } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
@@ -169,42 +120,12 @@ import {
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        CardComponent,
-        CardSample2Component,
-        CardSample3Component,
         GridCRMComponent,
         GridCustomFilteringComponent,
         GridComponent,
-        CarouselComponent,
-        CarouselDetailsViewComponent,
-        CarouselSample1Component,
-        CarouselSample2Component,
-        CarouselSample3Component,
-        CarouselSample4Component,
-        ExpansionPanelSample1Component,
-        ExpansionPanelSample2Component,
-        ExpansionPanelSample3Component,
-        ExpansionPanelSample4Component,
-        ExpansionPanelSample5Component,
-        ExpansionPanelSample6Component,
-        ExpansionPanelSample7Component,
-        LayoutComponent,
-        TabbarComponent,
-        TabbarSample1Component,
-        TabbarSample2Component,
-        TabsSample1Component,
-        TabsSample2Component,
-        TabsSample3Component,
-        TabsSample4Component,
-        TabsSample5Component,
-        CardSample2Component,
-        CardSample3Component,
         FilteringSampleComponent,
         PagingSampleComponent,
         ResizingSampleComponent,
-        AvatarSample1Component,
-        AvatarSample2Component,
-        AvatarSample3Component,
         FinancialSampleComponent,
         PinningSampleComponent,
         GridRemoteVirtualizationSampleComponent,
@@ -212,10 +133,6 @@ import {
         GridSample3Component,
         GridGroupBySampleComponent,
         GridGroupBySummarySampleComponent,
-        ExcelExportComponent,
-        ExcelExportSample1Component,
-        CsvExportComponent,
-        CsvExportSample1Component,
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
@@ -248,10 +165,7 @@ import {
         TreeGridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         GridCustomFilteringComponent,
-        TreeGridFinJSComponent,
-        LocalizationSample1Component,
-        LocalizationSample2Component,
-        LocalizationSample3Component
+        TreeGridFinJSComponent
     ],
     imports: [
         IgxDropDownModule,
@@ -300,11 +214,6 @@ import {
         IgxMaskModule,
         IgxTimePickerModule,
         IgxInputGroupModule,
-        CategoryChartSamplesModule.forRoot(),
-        CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot(),
-        PieChartSamplesModule.forRoot(),
-        DoughnutChartSamplesModule.forRoot(),
         IgxColumnHidingModule,
         IgxTextHighlightModule,
         IgxDragDropModule,

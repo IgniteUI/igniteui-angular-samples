@@ -340,8 +340,7 @@ class WorkbookExportHelper extends ExportHelper {
                     } else {
                         switch (exp1.condition.name) {
                             case "on":
-                            case "notOn":
-                            {
+                            case "notOn": {
                                 const isOn = exp1.condition.name === "on";
                                 // const date = <Date>exp1.searchVal;
                                 const date = exp1.searchVal as Date;
