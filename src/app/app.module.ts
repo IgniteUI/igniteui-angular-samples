@@ -74,10 +74,6 @@ import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
-import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
-import { CsvExportComponent } from "./export-csv/csv-export.component";
-import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
-import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
@@ -151,15 +147,6 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
-import {
-    LocalizationSample1Component
-} from "./localization-samples/localization-sample-1/localization-sample-1.component";
-import {
-    LocalizationSample2Component
-} from "./localization-samples/localization-sample-2/localization-sample-2.component";
-import {
-    LocalizationSample3Component
-} from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
@@ -246,10 +233,6 @@ import {
         GridSample3Component,
         GridGroupBySampleComponent,
         GridGroupBySummarySampleComponent,
-        ExcelExportComponent,
-        ExcelExportSample1Component,
-        CsvExportComponent,
-        CsvExportSample1Component,
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
@@ -290,10 +273,7 @@ import {
         TreeGridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         GridCustomFilteringComponent,
-        TreeGridFinJSComponent,
-        LocalizationSample1Component,
-        LocalizationSample2Component,
-        LocalizationSample3Component
+        TreeGridFinJSComponent
     ],
     imports: [
         IgxDropDownModule,
