@@ -11,6 +11,7 @@ import { listsRoutes } from "../lists/lists-routing.module";
 import { menusRoutes } from "../menus/menus-routing.module";
 import { notificationsRoutes } from "../notifications/notifications-routing.module";
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
+import { servicesRoutes } from "../services/services-routing.module";
 import { themingRoutes } from "../theming/theming-routing.module";
 
 @Component({
@@ -83,6 +84,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "layouts",
             routes: layoutsRoutes
+        },
+        {
+            path: "services",
+            routes: servicesRoutes
         }
     ];
 
