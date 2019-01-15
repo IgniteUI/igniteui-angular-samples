@@ -51,7 +51,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -62,7 +62,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -73,7 +73,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -84,7 +84,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -95,7 +95,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -106,7 +106,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -117,7 +117,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -128,7 +128,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -139,7 +139,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -150,7 +150,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
         return configs;
     }
