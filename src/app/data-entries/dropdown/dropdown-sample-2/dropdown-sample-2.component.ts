@@ -6,6 +6,7 @@ import {
     IgxDropDownComponent,
     VerticalAlignment
 } from "igniteui-angular";
+
 @Component({
     // tslint:disable-next-line:component-selector
     selector: "app-dropdown-sample-2",

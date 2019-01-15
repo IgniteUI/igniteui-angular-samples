@@ -64,14 +64,16 @@ import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
+import * as DataDisplayRouting from "../../src/app/data-display/data-display-routing.module";
+import * as DataEntriesRouting from "../../src/app/data-entries/data-entries-routing.module";
 import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
 import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
+import * as ListsRouting from "../../src/app/lists/lists-routing.module";
 import * as MenusRouting from "../../src/app/menus/menus-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
-import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
-import * as ListsRouting from "../../src/app/lists/lists-routing.module";
 import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
+import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
 
@@ -113,6 +115,8 @@ export class SampleAssetsGenerator extends Generator {
         this._componentRoutes = new Collections.Dictionary<string, string>();
 
         let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
+            .concat(DataDisplayRouting.dataDisplayRoutes)
+            .concat(DataEntriesRouting.dataEntriesRoutes)
             .concat(ThemingRouting.themingRoutes)
             .concat(MenusRouting.menusRoutes)
             .concat(SchedulingRouting.schedulingRoutes)

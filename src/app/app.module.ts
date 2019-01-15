@@ -57,19 +57,6 @@ import { AppComponent } from "./app.component";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
-import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
-import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
-import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
-import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
-import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
-import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
-import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
-import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
-import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
-import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-sample-4.component";
-import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
-import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
-import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardComponent } from "./card/card.component";
@@ -81,13 +68,6 @@ import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-
 import { CarouselComponent } from "./carousel/carousel.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
-import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
-import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
-import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
-import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
-import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
-import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
-import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -102,13 +82,6 @@ import { CsvExportComponent } from "./export-csv/csv-export.component";
 import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
 import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
-import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
-import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
-import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
-import { RadioSample1Component } from "./form-elements/radio/radio-sample-1/radio-sample-1.component";
-import { RadioSample2Component } from "./form-elements/radio/radio-sample-2/radio-sample-2.component";
-import { SwitchSample1Component } from "./form-elements/switch/switch-sample-1/switch-sample-1.component";
-import { SwitchSample2Component } from "./form-elements/switch/switch-sample-2/switch-sample-2.component";
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 
 import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
@@ -157,27 +130,9 @@ import { GridComponent } from "./grid/grid.component";
 import { GridMultiColumnHeadersComponent } from "./grid/multi-column-headers/multi-column-headers";
 import { DataService } from "./grid/services/data.service";
 import { HomeComponent } from "./home/home.component";
-import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
-import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
-import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
-import { IgxForComponent } from "./igxFor/igxFor.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
-import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
-import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
-import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
-import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
-import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
-import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
-import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { LayoutComponent } from "./layout/layout.component";
-import {
-    LinearProgressbarSample1Component
-} from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
-import {
-    LinearProgressbarSample2Component
-} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
-import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import {
     LocalizationSample1Component
 } from "./localization-samples/localization-sample-1/localization-sample-1.component";
@@ -187,11 +142,6 @@ import {
 import {
     LocalizationSample3Component
 } from "./localization-samples/localization-sample-3/localization-sample-3.component";
-import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
-import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
-import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
-import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
-import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -200,12 +150,6 @@ import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.compone
 import { TabsSample3Component } from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import { TabsSample4Component } from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
 import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
-import {
-    TextHighlightSample1Component
-} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
-import {
-    TextHighlightSample2Component
-} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -224,20 +168,10 @@ import {
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
-        EmailFilterPipe,
-        DisplayFormatPipe,
-        InputFormatPipe,
         AppComponent,
-        BadgeSample1Component,
-        BadgeSample2Component,
-        BadgeSample3Component,
         CardComponent,
         CardSample2Component,
         CardSample3Component,
-        CheckboxSample1Component,
-        CheckboxSample2Component,
-        CircularProgressbarComponent,
-        LinearProgressbarComponent,
         GridCRMComponent,
         GridCustomFilteringComponent,
         GridComponent,
@@ -247,10 +181,6 @@ import {
         CarouselSample2Component,
         CarouselSample3Component,
         CarouselSample4Component,
-        DropDownSample1Component,
-        DropDownSample2Component,
-        DropDownSample3Component,
-        DropDownSample4Component,
         ExpansionPanelSample1Component,
         ExpansionPanelSample2Component,
         ExpansionPanelSample3Component,
@@ -269,47 +199,16 @@ import {
         TabsSample5Component,
         CardSample2Component,
         CardSample3Component,
-        ButtonsSample1Component,
-        ButtonsSample2Component,
-        ButtonsSample3Component,
-        ButtonsSample4Component,
-        ButtonsSample5Component,
-        ButtonsSample6Component,
-        ButtonsSample7Component,
         FilteringSampleComponent,
         PagingSampleComponent,
         ResizingSampleComponent,
-        SwitchSample1Component,
-        SwitchSample2Component,
-        RadioSample1Component,
-        RadioSample2Component,
-        IconSample1Component,
-        IconSample2Component,
-        SvgIconSampleComponent,
         AvatarSample1Component,
         AvatarSample2Component,
         AvatarSample3Component,
-        IgxForComponent,
         FinancialSampleComponent,
         PinningSampleComponent,
         GridRemoteVirtualizationSampleComponent,
         GridSelectionSampleComponent,
-        LinearProgressbarSample1Component,
-        LinearProgressbarSample2Component,
-        ButtonGroupSample1Component,
-        ButtonGroupSample2Component,
-        ButtonGroupSample3Component,
-        MaskSample1Component,
-        MaskSample2Component,
-        MaskSample3Component,
-        MaskSample4Component,
-        MaskSample5Component,
-        InputGroupSample1Component,
-        InputGroupSample2Component,
-        InputGroupSample3Component,
-        InputGroupSample4Component,
-        InputGroupSample5Component,
-        InputGroupSample6Component,
         GridSample3Component,
         GridGroupBySampleComponent,
         GridGroupBySummarySampleComponent,
@@ -320,7 +219,6 @@ import {
         SortingSampleComponent,
         GridContextmenuComponent,
         GridSearchSampleComponent,
-        ChipSampleComponent,
         GridColumnHidingSampleComponent,
         GridColumnHidingToolbarSampleComponent,
         GridToolbarSample1Component,
@@ -328,26 +226,19 @@ import {
         GridToolbarSample3Component,
         GridToolbarSample4Component,
         RemoteFilteringSampleComponent,
-        RadioGroupSampleComponent,
         GridMovingSampleComponent,
         GridMultiColumnHeadersComponent,
         GridPasteSampleComponent,
         PasteHandler,
         RemoteFilteringSampleComponent,
-        ReactiveFormsSampleComponent,
-        RadioGroupSampleComponent,
         GridEditingSampleComponent,
         RemotePagingGridSample,
         GridDisplayDensitySampleComponent,
         HomeComponent,
         DocsLayoutComponent,
         IndexComponent,
-        TextHighlightSample1Component,
-        TextHighlightSample2Component,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
-        SvgIconSampleComponent,
-        DropdownMenuComponent,
         TreeGridChilddatakeySampleComponent,
         TreeGridPrimaryforeignkeySampleComponent,
         GridWithTransactionsComponent,
