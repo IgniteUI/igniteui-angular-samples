@@ -22,10 +22,6 @@ import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
-import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
-import { CsvExportComponent } from "./export-csv/csv-export.component";
-import { ExcelExportSample1Component } from "./export-excel/excel-export-sample-1/excel-export-sample-1.component";
-import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { CheckboxSample1Component } from "./form-elements/checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./form-elements/checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { RadioGroupSampleComponent } from "./form-elements/radio/radio-group-sample/radio-group-sample.component";
@@ -92,9 +88,6 @@ import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
-import { LocalizationSample1Component } from "./localization-samples/localization-sample-1/localization-sample-1.component";
-import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
-import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
 import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
@@ -147,12 +140,6 @@ export const samplesRoutes: Routes = [
         loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
         path: "scheduling"
     },
-    // excel library samples with lazy loading:
-    // {
-    //     data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
-    //     loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
-    //     path: "excel-library-operations-on-workbooks"
-    // },
     {
         loadChildren: "app/excel-library/excel-library.module#ExcelLibraryModule",
         path: "excel-library"
@@ -166,25 +153,23 @@ export const samplesRoutes: Routes = [
         path: "interactions"
     },
     {
-        loadChildren: "app/notifications/notifications.module#NotificationsModule",
-        path: "notifications"
-    },
-    {
         loadChildren: "app/menus/menus.module#MenusModule",
         path: "menus"
-    },
-    {
-        loadChildren: "app/lists/lists.module#ListsModule",
-        path: "lists"
-    },
-    {
-        loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
-        path: "scheduling"
     },
     {
         loadChildren: "app/layouts/layouts.module#LayoutsModule",
         path: "layouts"
     },
+    {
+        loadChildren: "app/services/services.module#ServicesModule",
+        path: "services"
+    },
+        // excel library samples with lazy loading:
+    // {
+    //     data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
+    //     loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
+    //     path: "excel-library-operations-on-workbooks"
+    // },
     {
         component: BadgeSample1Component,
         data: { displayName: "Badge for List", parentName: "Badge" },
@@ -216,16 +201,6 @@ export const samplesRoutes: Routes = [
         path: "circular-progressbar"
     },
     {
-        component: CsvExportComponent,
-        data: { displayName: "CSV Export Raw Data", parentName: "CSV Export" },
-        path: "export-csv"
-    },
-    {
-        component: CsvExportSample1Component,
-        data: { displayName: "CSV Export Grid", parentName: "CSV Export" },
-        path: "export-csv-sample-1"
-    },
-    {
         component: DropdownMenuComponent,
         data: { displayName: "Dropdown as Menu", parentName: "Dropdown" },
         path: "dropdown-menu"
@@ -251,16 +226,6 @@ export const samplesRoutes: Routes = [
         path: "dropdown-sample-4"
     },
     {
-        component: ExcelExportComponent,
-        data: { displayName: "Excel Export Raw Data", parentName: "Excel Export" },
-        path: "export-excel"
-    },
-    {
-        component: ExcelExportSample1Component,
-        data: { displayName: "Excel Export Grid", parentName: "Excel Export" },
-        path: "export-excel-sample-1"
-    },
-    {
         component: LinearProgressbarComponent,
         data: { displayName: "Simple Linear Progressbar", parentName: "Linear Progressbar" },
         path: "linear-progressbar"
@@ -274,21 +239,6 @@ export const samplesRoutes: Routes = [
         component: LinearProgressbarSample2Component,
         data: { displayName: "Linear Progressbar Styling", parentName: "Linear Progressbar" },
         path: "linear-progressbar-sample-2"
-    },
-    {
-        component: LocalizationSample1Component,
-        data: { displayName: "Localize one component", parentName: "Localization" },
-        path: "localization-sample-1"
-    },
-    {
-        component: LocalizationSample2Component,
-        data: { displayName: "Localize All", parentName: "Localization" },
-        path: "localization-sample-2"
-    },
-    {
-        component: LocalizationSample3Component,
-        data: { displayName: "Localize partially", parentName: "Localization" },
-        path: "localization-sample-3"
     },
     {
         component: GridComponent,
