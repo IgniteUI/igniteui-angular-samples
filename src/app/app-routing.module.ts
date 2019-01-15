@@ -42,6 +42,7 @@ import {
     GridConditionalCellStyleComponent
 } from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 import {
     GridDisplayDensitySampleComponent
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -106,17 +107,6 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
-import {
-    TreeGridChilddatakeySampleComponent
-} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
-import {
-    TreeGridPrimaryforeignkeySampleComponent
-} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
-import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
-
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
-import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -184,6 +174,10 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/layouts/layouts.module#LayoutsModule",
         path: "layouts"
+    },
+    {
+        loadChildren: "app/tree-grid/tree-grid.module#TreeGridModule",
+        path: "tree-grid"
     },
     {
         component: BadgeSample1Component,
@@ -623,31 +617,6 @@ export const samplesRoutes: Routes = [
         component: TextHighlightSample2Component,
         data: { displayName: "Search within multiple containers", parentName: "Text Highlight" },
         path: "text-highlight-2"
-    },
-    {
-        component: TreeGridBatchEditingSampleComponent,
-        data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
-        path: "treegrid-batchediting"
-    },
-    {
-        component: TreeGridChilddatakeySampleComponent,
-        data: { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
-        path: "treegrid-childdatakey"
-    },
-    {
-        component: TreeGridPrimaryforeignkeySampleComponent,
-        data: { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
-        path: "treegrid-primaryforeignkey"
-    },
-    {
-        component: TreeGridRowEditSampleComponent,
-        data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
-        path: "treegrid-row-edit"
-    },
-    {
-        component: TreeGridFinJSComponent,
-        data: { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
-        path: "treegrid-finjs-sample"
     }
 ];
 export const appRoutes: Routes = [

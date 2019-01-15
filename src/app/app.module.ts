@@ -51,7 +51,6 @@ import {
     IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
@@ -171,18 +170,6 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-import {
-    TreeGridBatchEditingSampleComponent
-} from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
-import {
-    TreeGridChilddatakeySampleComponent
-} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
-import {
-    TreeGridPrimaryforeignkeySampleComponent
-} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
-import {
-    TreeGridRowEditSampleComponent
-} from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -281,16 +268,11 @@ import {
         FinJSDemoComponent,
         SvgIconSampleComponent,
         DropdownMenuComponent,
-        TreeGridChilddatakeySampleComponent,
-        TreeGridPrimaryforeignkeySampleComponent,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
-        TreeGridRowEditSampleComponent,
-        TreeGridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
         GridCustomFilteringComponent,
-        TreeGridFinJSComponent,
         LocalizationSample1Component,
         LocalizationSample2Component,
         LocalizationSample3Component
