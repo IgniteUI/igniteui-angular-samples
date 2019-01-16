@@ -67,6 +67,8 @@ import * as Routing from "../../src/app/app-routing.module";
 import * as ChartsRouting from "../../src/app/charts/charts-routing.module";
 import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
 import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
+import * as GridCRMRouting from "../../src/app/grid-crm/grid-crm-routing.module";
+import * as GridRouting from "../../src/app/grid/grids-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
 import * as LayoutsRouting from "../../src/app/layouts/layouts-routing.module";
 import * as ListsRouting from "../../src/app/lists/lists-routing.module";
@@ -124,12 +126,13 @@ export class SampleAssetsGenerator extends Generator {
             .concat(MenusRouting.menusRoutes)
             .concat(SchedulingRouting.schedulingRoutes)
             .concat(GaugesRouting.gaugesRoutes)
-            .concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(ExcelLibraryRouting.excelLibraryRoutes)
             .concat(LayoutsRouting.layoutsRoutes)
-            .concat(TreeGridRouting.treeGridRoutes);
+            .concat(TreeGridRouting.treeGridRoutes)
+            .concat(GridRouting.gridsRoutes)
+            .concat(GridCRMRouting.gridcrmRoutes);
 
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];

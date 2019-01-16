@@ -36,7 +36,8 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, HttpClientModule],
                 ngProviders: [IgxExcelExporterService]
-            })
+            }),
+            shortenComponentPathBy: "/grid-crm/"
         }));
 
         return configs;
