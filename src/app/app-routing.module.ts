@@ -44,24 +44,6 @@ import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
 import { CardSample1Component } from "./layouts/card/card-sample-1/card-sample-1.component";
-import {
-    LinearProgressbarSample1Component
-} from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
-import {
-    LinearProgressbarSample2Component
-} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
-import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
-import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
-import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
-import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
-import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
-import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import {
-    TextHighlightSample1Component
-} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
-import {
-    TextHighlightSample2Component
-} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -299,16 +281,6 @@ export const samplesRoutes: Routes = [
         component: FinJSDemoComponent,
         data: { displayName: "Grid Finance demo sample", parentName: "Grid" },
         path: "finjs-sample"
-    },
-    {
-        component: TextHighlightSample1Component,
-        data: { displayName: "Search within a single container", parentName: "Text Highlight" },
-        path: "text-highlight-1"
-    },
-    {
-        component: TextHighlightSample2Component,
-        data: { displayName: "Search within multiple containers", parentName: "Text Highlight" },
-        path: "text-highlight-2"
     }
 ];
 export const appRoutes: Routes = [

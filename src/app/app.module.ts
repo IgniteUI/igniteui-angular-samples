@@ -101,24 +101,6 @@ import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
 import { CardSampleModule } from "./layouts/card/card-sample-1/card-sample-1.module";
-import {
-    LinearProgressbarSample1Component
-} from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
-import {
-    LinearProgressbarSample2Component
-} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
-import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
-import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
-import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
-import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
-import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
-import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
-import {
-    TextHighlightSample1Component
-} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
-import {
-    TextHighlightSample2Component
-} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -160,8 +142,6 @@ import {
         IndexComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
-        SvgIconSampleComponent,
-        DropdownMenuComponent,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
