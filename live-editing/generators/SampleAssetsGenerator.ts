@@ -76,6 +76,7 @@ import * as MenusRouting from "../../src/app/menus/menus-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
 import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
+import * as TreeGridRouting from "../../src/app/tree-grid/tree-grid-routing.module";
 import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
 import { PieChartConfigGenerator } from "./../configs/PieChartConfigGenerator";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
@@ -130,7 +131,8 @@ export class SampleAssetsGenerator extends Generator {
             .concat(ListsRouting.listsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(ExcelLibraryRouting.excelLibraryRoutes)
-            .concat(LayoutsRouting.layoutsRoutes);
+            .concat(LayoutsRouting.layoutsRoutes)
+            .concat(TreeGridRouting.treeGridRoutes);
 
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];

@@ -11,6 +11,7 @@ import {
     GridConditionalCellStyleComponent
 } from "./grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCRMComponent } from "./grid/grid-crm/grid-crm.component";
+import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
 import {
     GridDisplayDensitySampleComponent
 } from "./grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -43,17 +44,24 @@ import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
 import { CardSample1Component } from "./layouts/card/card-sample-1/card-sample-1.component";
-import { TreeGridBatchEditingSampleComponent } from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
-    TreeGridChilddatakeySampleComponent
-} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+    LinearProgressbarSample1Component
+} from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import {
-    TreeGridPrimaryforeignkeySampleComponent
-} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
-import { TreeGridRowEditSampleComponent } from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
-
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
-import { GridCustomFilteringComponent } from "./grid/grid-custom-filtering/grid-custom-filtering.component";
+    LinearProgressbarSample2Component
+} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
+import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
+import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
+import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
+import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
+import {
+    TextHighlightSample1Component
+} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
+import {
+    TextHighlightSample2Component
+} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -116,6 +124,10 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "app/services/services.module#ServicesModule",
         path: "services"
+    },
+    {
+        loadChildren: "app/tree-grid/tree-grid.module#TreeGridModule",
+        path: "tree-grid"
     },
         // excel library samples with lazy loading:
     // {
@@ -289,29 +301,14 @@ export const samplesRoutes: Routes = [
         path: "finjs-sample"
     },
     {
-        component: TreeGridBatchEditingSampleComponent,
-        data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
-        path: "treegrid-batchediting"
+        component: TextHighlightSample1Component,
+        data: { displayName: "Search within a single container", parentName: "Text Highlight" },
+        path: "text-highlight-1"
     },
     {
-        component: TreeGridChilddatakeySampleComponent,
-        data: { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
-        path: "treegrid-childdatakey"
-    },
-    {
-        component: TreeGridPrimaryforeignkeySampleComponent,
-        data: { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
-        path: "treegrid-primaryforeignkey"
-    },
-    {
-        component: TreeGridRowEditSampleComponent,
-        data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
-        path: "treegrid-row-edit"
-    },
-    {
-        component: TreeGridFinJSComponent,
-        data: { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
-        path: "treegrid-finjs-sample"
+        component: TextHighlightSample2Component,
+        data: { displayName: "Search within multiple containers", parentName: "Text Highlight" },
+        path: "text-highlight-2"
     }
 ];
 export const appRoutes: Routes = [

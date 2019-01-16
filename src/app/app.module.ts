@@ -51,7 +51,6 @@ import {
     IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { GridBatchEditingSampleComponent } from "./grid/grid-batch-editing/grid-batch-editing-sample.component";
@@ -103,17 +102,23 @@ import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
 import { CardSampleModule } from "./layouts/card/card-sample-1/card-sample-1.module";
 import {
-    TreeGridBatchEditingSampleComponent
-} from "./tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+    LinearProgressbarSample1Component
+} from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import {
-    TreeGridChilddatakeySampleComponent
-} from "./tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+    LinearProgressbarSample2Component
+} from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
+import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
+import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
+import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
+import { MaskSample3Component } from "./mask/mask-sample-3/mask-sample-3.component";
+import { DisplayFormatPipe, InputFormatPipe, MaskSample4Component } from "./mask/mask-sample-4/mask-sample-4.component";
+import { MaskSample5Component } from "./mask/mask-sample-5/mask-sample-5.component";
 import {
-    TreeGridPrimaryforeignkeySampleComponent
-} from "./tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+    TextHighlightSample1Component
+} from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
 import {
-    TreeGridRowEditSampleComponent
-} from "./tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+    TextHighlightSample2Component
+} from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -155,16 +160,13 @@ import {
         IndexComponent,
         GridConditionalCellStyleComponent,
         FinJSDemoComponent,
-        TreeGridChilddatakeySampleComponent,
-        TreeGridPrimaryforeignkeySampleComponent,
+        SvgIconSampleComponent,
+        DropdownMenuComponent,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
-        TreeGridRowEditSampleComponent,
-        TreeGridBatchEditingSampleComponent,
         GridRowEditSampleComponent,
-        GridCustomFilteringComponent,
-        TreeGridFinJSComponent
+        GridCustomFilteringComponent
     ],
     imports: [
         IgxDropDownModule,

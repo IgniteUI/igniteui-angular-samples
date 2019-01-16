@@ -15,6 +15,7 @@ import { notificationsRoutes } from "../notifications/notifications-routing.modu
 import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
 import { servicesRoutes } from "../services/services-routing.module";
 import { themingRoutes } from "../theming/theming-routing.module";
+import { treeGridRoutes } from "../tree-grid/tree-grid-routing.module";
 
 @Component({
     selector: "app-index",
@@ -98,6 +99,11 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "services",
             routes: servicesRoutes
+        }
+        ,
+        {
+            path: "tree-grid",
+            routes: treeGridRoutes
         }
     ];
 
