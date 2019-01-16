@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import { NgModule } from "@angular/core";
 import { NavigationStart, Router, RouterModule, Routes } from "@angular/router";
+import "rxjs/add/operator/filter";
 import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
