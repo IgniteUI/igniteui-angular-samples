@@ -15,11 +15,12 @@ function requireFile(path) {
     return require(path);
 }
 
-gulp.task("generate-live-editing", () => {
+gulp.task("generate-live-editing", (done) => {
     requireFile("./live-editing/LiveEditingManager.ts");
+    done();
 });
 
-gulp.task("watch-live-editing", ["generate-live-editing"], () => {
+gulp.task("watch-live-editing", gulp.series("generate-live-editing", () => {
     gulp.watch(["./src/**/*.*", "!./src/assets/**", "./live-editing/**/*.*", "package.json"], function () {
         Object.keys(require.cache).forEach(function (key) {
             if (key.indexOf("node_modules") === -1) {
@@ -29,7 +30,7 @@ gulp.task("watch-live-editing", ["generate-live-editing"], () => {
 
         gulp.start("generate-live-editing");
     });
-});
+}));
 
 gulp.task("sass-js-compile-check", async() => {
     var checker = requireFile("./live-editing/services/SassJsCompileChecker.ts");
