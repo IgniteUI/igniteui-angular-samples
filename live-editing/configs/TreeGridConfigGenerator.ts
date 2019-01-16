@@ -60,7 +60,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                     TreeLocalDataService],
                 ngDeclarations: [TreeGridFinJSComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
+                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule],
                 ngProviders: [TreeLocalDataService, IgxExcelExporterService]
             }),
             component: TreeGridFinJSComponent

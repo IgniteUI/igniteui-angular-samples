@@ -315,23 +315,7 @@ export class SampleAssetsGenerator extends Generator {
                 appModuleNgImports.push(config.appModuleConfig.ngImports[i]);
             } else {
                 let appModuleNgImport: Type<any> = config.appModuleConfig.ngImports[i] as Type<any>;
-                if (appModuleNgImport.name !== undefined) {
-                    appModuleNgImports.push(appModuleNgImport.name);
-                } else {
-                    let appModuleNgImportWithProviders: ModuleWithProviders =
-                        config.appModuleConfig.ngImports[i] as ModuleWithProviders;
-                    let useClass = "";
-                    let forRoot = ".forRoot()";
-                    if (appModuleNgImportWithProviders.providers
-                        && appModuleNgImportWithProviders.providers.length > 0
-                        && appModuleNgImportWithProviders.providers[0].useClass
-                        && appModuleNgImportWithProviders.providers[0].useClass.name) {
-                        useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
-                        forRoot = `.forRoot(${useClass})`;
-                    }
-
-                    appModuleNgImports.push(appModuleNgImportWithProviders.ngModule.name + forRoot);
-                }
+                appModuleNgImports.push(appModuleNgImport.name);
             }
         }
 

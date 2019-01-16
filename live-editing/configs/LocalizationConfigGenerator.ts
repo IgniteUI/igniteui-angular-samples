@@ -3,10 +3,10 @@ import { IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxTimePickerModule 
 import {
     LocalizationSample1Component
 } from "../../src/app/services/localization-samples/localization-sample-1/localization-sample-1.component";
-import { 
+import {
     LocalizationSample2Component
 } from "../../src/app/services/localization-samples/localization-sample-2/localization-sample-2.component";
-import { 
+import {
     LocalizationSample3Component
 } from "../../src/app/services/localization-samples/localization-sample-3/localization-sample-3.component";
 import { DATA } from "../../src/app/services/localization-samples/localization-sample-3/nwindData";
@@ -25,7 +25,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, LocalizationSample1Component, IgxGridModule, IgxIconModule, DATA],
                 ngDeclarations: [LocalizationSample1Component],
-                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule.forRoot()]
+                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -39,7 +39,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
                           IgxTimePickerModule, IgxGridModule, DATA
                 ],
                 ngDeclarations: [LocalizationSample2Component],
-                ngImports: [IgxInputGroupModule, IgxIconModule, IgxTimePickerModule, IgxGridModule.forRoot()]
+                ngImports: [IgxInputGroupModule, IgxIconModule, IgxTimePickerModule, IgxGridModule]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -51,7 +51,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, LocalizationSample3Component, IgxGridModule, IgxIconModule, DATA],
                 ngDeclarations: [LocalizationSample3Component],
-                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule.forRoot()]
+                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));

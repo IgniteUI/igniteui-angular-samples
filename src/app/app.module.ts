@@ -267,7 +267,7 @@ import {
         ReactiveFormsModule,
         FormsModule,
         ReactiveFormsModule,
-        IgxGridModule.forRoot(),
+        IgxGridModule,
         IgxCarouselModule,
         IgxComboModule,
         IgxLayoutModule,

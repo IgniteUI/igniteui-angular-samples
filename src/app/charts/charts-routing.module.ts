@@ -292,11 +292,11 @@ export const chartsRoutes: Routes = [
         RouterModule
     ],
     imports: [
-        CategoryChartSamplesModule.forRoot(),
-        CategoryChartPerformanceSamplesModule.forRoot(),
-        FinancialChartSamplesModule.forRoot(),
-        PieChartSamplesModule.forRoot(),
-        DoughnutChartSamplesModule.forRoot(),
+        CategoryChartSamplesModule,
+        CategoryChartPerformanceSamplesModule,
+        FinancialChartSamplesModule,
+        PieChartSamplesModule,
+        DoughnutChartSamplesModule,
         RouterModule.forChild(chartsRoutes)
     ]
 })
