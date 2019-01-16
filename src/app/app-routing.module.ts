@@ -90,8 +90,7 @@ export const samplesRoutes: Routes = [
         component: CardSample1Component,
         data: { displayName: "Card with Header and Content", parentName: "Card" },
         path: "card-sample-1"
-    },
-    {
+    }
 ];
 export const appRoutes: Routes = [
     {
