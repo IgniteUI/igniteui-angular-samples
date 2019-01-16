@@ -1,10 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 import { ReactiveFormsModule } from "@angular/forms";
 import { IgxInputGroupModule, IgxRadioModule } from "igniteui-angular";
-import {
-    RadioGroupSampleComponent
-} from "../../src/app/form-elements/radio/radio-group-sample/radio-group-sample.component";
-import { RadioSample2Component } from "../../src/app/form-elements/radio/radio-sample-2/radio-sample-2.component";
+import { RadioGroupSampleComponent
+} from "../../src/app/data-entries/radio/radio-group-sample/radio-group-sample.component";
+import { RadioSample2Component } from "../../src/app/data-entries/radio/radio-sample-2/radio-sample-2.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -21,7 +20,7 @@ export class RadioConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [RadioSample2Component],
                 ngImports: [IgxRadioModule]
             }),
-            shortenComponentPathBy: "/form-elements/radio/"
+            shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         // radio-group sample
@@ -32,7 +31,7 @@ export class RadioConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [RadioGroupSampleComponent],
                 ngImports: [IgxRadioModule, IgxInputGroupModule, ReactiveFormsModule]
             }),
-            shortenComponentPathBy: "/form-elements/radio/"
+            shortenComponentPathBy: "/data-entries/radio/"
         }));
 
         return configs;
