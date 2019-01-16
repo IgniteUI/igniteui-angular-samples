@@ -69,6 +69,8 @@ import * as DataDisplayRouting from "../../src/app/data-display/data-display-rou
 import * as DataEntriesRouting from "../../src/app/data-entries/data-entries-routing.module";
 import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
 import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
+import * as GridCRMRouting from "../../src/app/grid-crm/grid-crm-routing.module";
+import * as GridRouting from "../../src/app/grid/grids-routing.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
 import * as LayoutsRouting from "../../src/app/layouts/layouts-routing.module";
 import * as ListsRouting from "../../src/app/lists/lists-routing.module";
@@ -78,6 +80,7 @@ import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.
 import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
 import * as TreeGridRouting from "../../src/app/tree-grid/tree-grid-routing.module";
 import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
+import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
 import { PieChartConfigGenerator } from "./../configs/PieChartConfigGenerator";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
@@ -95,7 +98,7 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerCo
     ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator,
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, GridCRMConfigGenerator, IconConfigGenerator,
     OverlayConfigGenerator, GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
@@ -127,12 +130,13 @@ export class SampleAssetsGenerator extends Generator {
             .concat(MenusRouting.menusRoutes)
             .concat(SchedulingRouting.schedulingRoutes)
             .concat(GaugesRouting.gaugesRoutes)
-            .concat(GaugesRouting.gaugesRoutes)
             .concat(ListsRouting.listsRoutes)
             .concat(InteractionsRouting.interactionsRoutes)
             .concat(ExcelLibraryRouting.excelLibraryRoutes)
             .concat(LayoutsRouting.layoutsRoutes)
-            .concat(TreeGridRouting.treeGridRoutes);
+            .concat(TreeGridRouting.treeGridRoutes)
+            .concat(GridRouting.gridsRoutes)
+            .concat(GridCRMRouting.gridcrmRoutes);
 
         for (let i = 0; i < routes.length; i++) {
             let sample = routes[i];
