@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
+import { CardSampleModule } from "./layouts/card/card-sample-1/card-sample-1.module";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -29,6 +30,7 @@ import { IndexComponent } from "./index/index.component";
         BrowserModule,
         BrowserAnimationsModule,
         IgxButtonModule,
+        CardSampleModule,
         FormsModule
     ]
 })
