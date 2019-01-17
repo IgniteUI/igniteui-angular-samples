@@ -1,6 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxSwitchModule } from "igniteui-angular";
-import { SwitchSample2Component } from "../../src/app/form-elements/switch/switch-sample-2/switch-sample-2.component";
+import { SwitchSample2Component
+} from "../../src/app/data-entries/switch/switch-sample-2/switch-sample-2.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -17,7 +18,7 @@ export class SwitchConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [SwitchSample2Component],
                 ngImports: [IgxSwitchModule]
             }),
-            shortenComponentPathBy: "/form-elements/switch/"
+            shortenComponentPathBy: "/data-entries/switch/"
         }));
 
         return configs;

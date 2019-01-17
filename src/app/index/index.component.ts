@@ -3,8 +3,12 @@ import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
 import { chartsRoutes } from "../charts/charts-routing.module";
+import { dataDisplayRoutes } from "../data-display/data-display-routing.module";
+import { dataEntriesRoutes } from "../data-entries/data-entries-routing.module";
 import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
 import { gaugesRoutes } from "../gauges/gauges-routing.module";
+import { gridcrmRoutes } from "../grid-crm/grid-crm-routing.module";
+import { gridsRoutes } from "../grid/grids-routing.module";
 import { interactionsRoutes } from "../interactions/interactions-routing.module";
 import { layoutsRoutes } from "../layouts/layouts-routing.module";
 import { listsRoutes } from "../lists/lists-routing.module";
@@ -46,6 +50,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
     private appRoutes: any[];
 
     private modulesRoutes = [
+        {
+            path: "data-display",
+            routes: dataDisplayRoutes
+        },
+        {
+            path: "data-entries",
+            routes: dataEntriesRoutes
+        },
         {
             path: "excel-library",
             routes: excelLibraryRoutes
@@ -89,6 +101,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "services",
             routes: servicesRoutes
+        },
+        {
+            path: "grid",
+            routes: gridsRoutes
+        },
+        {
+            path: "grid-crm",
+            routes: gridcrmRoutes
         }
         ,
         {
