@@ -6,7 +6,7 @@ export const gridcrmRoutes: Routes = [
     {
         component: GridCRMComponent,
         data: { displayName: "Grid CRM", parentName: "Grid" },
-        path: "grid-crm"
+        path: ""
     }
 ];
 
