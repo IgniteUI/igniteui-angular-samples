@@ -13,8 +13,8 @@ import {
     IgxStringFilteringOperand,
     IgxSummaryResult
 } from "igniteui-angular";
-import { athletesData } from "./services/data";
-import { DataService } from "./services/data.service";
+import { athletesData } from "./../services/data";
+import { DataService } from "./../services/data.service";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
