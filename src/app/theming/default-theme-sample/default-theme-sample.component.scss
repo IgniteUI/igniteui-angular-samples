@@ -1,6 +1,11 @@
-.addProdBtn {
+.addProdBtn.igx-button--raised{
     margin-bottom: 5px;
-  }
+    background-color: lightgrey;
+    color: black;
+    &:hover {
+        background-color:  rgba(0, 0, 0, 0.26)
+    }
+}
   
   .dialogNewRecord {
     margin: 10px;

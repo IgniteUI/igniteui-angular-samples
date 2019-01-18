@@ -126,22 +126,19 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public onButtonAction(event: any) {
         switch (event.index) {
-            case 0:
-                {
+            case 0: {
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
                     this._timer = setInterval(() => this.ticker(currData), this.frequency);
                     break;
                 }
-            case 1:
-                {
+            case 1: {
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
                     this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
                     break;
                 }
-                case 2:
-                {
+                case 2: {
                     this.disableOtherButtons(event.index, false);
                     this.stopFeed();
                     break;

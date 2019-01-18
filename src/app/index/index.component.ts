@@ -1,7 +1,23 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { NavigationStart, Router, Routes } from "@angular/router";
+import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
+import { chartsRoutes } from "../charts/charts-routing.module";
+import { dataDisplayRoutes } from "../data-display/data-display-routing.module";
+import { dataEntriesRoutes } from "../data-entries/data-entries-routing.module";
+import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
+import { gaugesRoutes } from "../gauges/gauges-routing.module";
+import { gridcrmRoutes } from "../grid-crm/grid-crm-routing.module";
+import { gridsRoutes } from "../grid/grids-routing.module";
+import { interactionsRoutes } from "../interactions/interactions-routing.module";
+import { layoutsRoutes } from "../layouts/layouts-routing.module";
+import { listsRoutes } from "../lists/lists-routing.module";
+import { menusRoutes } from "../menus/menus-routing.module";
+import { notificationsRoutes } from "../notifications/notifications-routing.module";
+import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
+import { servicesRoutes } from "../services/services-routing.module";
+import { themingRoutes } from "../theming/theming-routing.module";
+import { treeGridRoutes } from "../tree-grid/tree-grid-routing.module";
 
 @Component({
     selector: "app-index",
@@ -31,28 +47,97 @@ export class IndexComponent implements OnInit, AfterViewInit {
         width: "300px"
     };
 
-    private appRoutes: Routes;
+    private appRoutes: any[];
+
+    private modulesRoutes = [
+        {
+            path: "data-display",
+            routes: dataDisplayRoutes
+        },
+        {
+            path: "data-entries",
+            routes: dataEntriesRoutes
+        },
+        {
+            path: "excel-library",
+            routes: excelLibraryRoutes
+        },
+        {
+            path: "gauges",
+            routes: gaugesRoutes
+        },
+        {
+            path: "notifications",
+            routes: notificationsRoutes
+        },
+        {
+            path: "charts",
+            routes: chartsRoutes
+        },
+        {
+            path: "theming",
+            routes: themingRoutes
+        },
+        {
+            path: "menus",
+            routes: menusRoutes
+        },
+        {
+            path: "lists",
+            routes: listsRoutes
+        },
+        {
+            path: "interactions",
+            routes: interactionsRoutes
+        },
+        {
+            path: "scheduling",
+            routes: schedulingRoutes
+        },
+        {
+            path: "layouts",
+            routes: layoutsRoutes
+        },
+        {
+            path: "services",
+            routes: servicesRoutes
+        },
+        {
+            path: "grid",
+            routes: gridsRoutes
+        },
+        {
+            path: "grid-crm",
+            routes: gridcrmRoutes
+        }
+        ,
+        {
+            path: "tree-grid",
+            routes: treeGridRoutes
+        }
+    ];
 
     private allNavItems: INavigationItem[] = [];
 
     constructor(private router: Router) {
-        this.appRoutes = router.config;
+        this.appRoutes = this.getAllSampleRoutes("/samples",
+            router.config.filter((c) => c.path === "samples")[0].children, this.modulesRoutes);
     }
 
     public ngOnInit() {
-        const loadedRouteItem = this.appRoutes[2].children.filter(
-            (route) => "/samples/" + route.path === this.router.url)[0];
-        if (loadedRouteItem && loadedRouteItem.data && loadedRouteItem.data.displayName) {
-            this.selectedDisplayName = loadedRouteItem.data.displayName;
+        const loadedRouteItem = this.appRoutes.filter(
+            (route: any) => route.path === this.router.url)[0];
+        if (loadedRouteItem) {
+            this.selectedDisplayName = loadedRouteItem.displayName;
         }
 
         this.router.events.pipe(
             filter((x) => x instanceof NavigationStart)
         ).subscribe((event: NavigationStart) => {
-            const routeItem = this.appRoutes[2].children.filter((route) => "/samples/" + route.path === event.url)[0];
-
-            if (routeItem.data && routeItem.data.displayName) {
-                this.selectedDisplayName = routeItem.data.displayName;
+            const routeItem = this.appRoutes.filter(
+                (route: any) => route.path === event.url)[0];
+            if (routeItem) {
+                this.selectedDisplayName = routeItem.displayName;
             }
 
             if (event.url !== "/" && !this.navdrawer.pin) {
@@ -65,16 +150,16 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        const loadedRouteItem = this.appRoutes[2].children.filter(
-            (route) => "/samples/" + route.path === this.router.url)[0];
+        const loadedRouteItem = this.appRoutes.filter(
+            (route: any) => route.path === this.router.url)[0];
 
-        if (loadedRouteItem && loadedRouteItem.data && loadedRouteItem.data.parentName) {
+        if (loadedRouteItem) {
             // Get parent (INavItem)
             const loadedParentItem = this.currentNavItems.filter(
-                (navItem) => navItem.name === loadedRouteItem.data.parentName)[0];
+                (navItem) => navItem.name === loadedRouteItem.parentName)[0];
             // Get loaded child (IRouteItem)
             const loadedChildItem = loadedParentItem.children.filter(
-                (routeItem) => routeItem.displayName === loadedRouteItem.data.displayName)[0];
+                (routeItem) => routeItem.displayName === loadedRouteItem.displayName)[0];
 
             this.toggleParent("header" + loadedParentItem.name);
             document.getElementById("child" + loadedChildItem.displayName).scrollIntoView();
@@ -120,18 +205,41 @@ export class IndexComponent implements OnInit, AfterViewInit {
         window.dispatchEvent(new Event("resize"));
     }
 
+    private getAllSampleRoutes(basePath: string, appModuleRoutes: Route[], modulesRoutes: any[]): any[] {
+        const routes = [];
+        const pushRoute = (route: Route, baseRoutePath: string) => {
+            if (route.data && route.data.displayName && route.data.parentName) {
+                routes.push({
+                    displayName: route.data.displayName,
+                    parentName: route.data.parentName,
+                    path: baseRoutePath + "/" + route.path
+                });
+            }
+        };
+
+        appModuleRoutes.forEach((route: Route) => {
+            pushRoute(route, basePath);
+        });
+
+        modulesRoutes.forEach((moduleRoutes: any) => {
+            moduleRoutes.routes.forEach((route: Route) => {
+                pushRoute(route, basePath + "/" + moduleRoutes.path);
+            });
+        });
+
+        return routes;
+    }
+
     private createAllNavItems() {
         // Create home route item
         this.homeRouteItem = { path: "/samples/home", displayName: "Home" };
 
         // Create all navigation items (headers)
-        for (const appRoute of this.appRoutes[2].children) {
-            if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
-                const controlName = appRoute.data.parentName;
+        for (const appRoute of this.appRoutes) {
+            const controlName = appRoute.parentName;
 
-                if (this.allNavItems.filter((item) => item.name === controlName).length <= 0) {
-                    this.allNavItems.push({ name: controlName, children: [] });
-                }
+            if (this.allNavItems.filter((item) => item.name === controlName).length <= 0) {
+                this.allNavItems.push({ name: controlName, children: [] });
             }
         }
 
@@ -139,12 +247,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         this.allNavItems = this.sort(this.allNavItems);
 
         // Create children route items for each navigation item
-        for (const appRoute of this.appRoutes[2].children) {
-            if (appRoute.data && appRoute.data.displayName && appRoute.data.parentName) {
-                const controlName = appRoute.data.parentName;
-                const navItem = this.allNavItems.filter((item) => item.name === controlName)[0];
-                navItem.children.push({ path: "/samples/" + appRoute.path, displayName: appRoute.data.displayName });
-            }
+        for (const appRoute of this.appRoutes) {
+            const controlName = appRoute.parentName;
+            const navItem = this.allNavItems.filter((item) => item.name === controlName)[0];
+            navItem.children.push({ path: appRoute.path, displayName: appRoute.displayName });
         }
 
         this.currentNavItems = this.allNavItems;
