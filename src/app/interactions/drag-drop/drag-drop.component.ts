@@ -55,11 +55,8 @@ export class DragAndDropSampleComponent implements OnInit {
     }
 
     public onTileDropped(ev) {
-        const dropIdString = ev.owner.element.nativeElement.id;
-        const dragIdString = ev.drag.element.nativeElement.id;
-        const dropId = dropIdString.match(/\d+/g).map(Number)[0];
-        const dragId = dragIdString.match(/\d+/g).map(Number)[0];
-
+        const dropId = parseInt((ev.owner.element.nativeElement.id).slice(-1), 10);
+        const dragId = parseInt((ev.drag.element.nativeElement.id).slice(-1), 10);
         const foundIndex = this.findIndexOfDrag(dragId);
         const firstPartRow = foundIndex.row;
         const firstPartColl = foundIndex.coll;
@@ -69,27 +66,25 @@ export class DragAndDropSampleComponent implements OnInit {
         ev.cancel = true;
         ev.drag.dropFinished();
         if (this.checkForCompletedPuzzle()) {
-            setTimeout(function() {
-                this.showMessage(this.dialog);
+            setTimeout(() => {
+                this.showMessage();
             }, 100);
         }
     }
 
-    private showMessage(dialog) {
-        dialog.open();
+    private showMessage() {
+        this.dialog.open();
     }
 
-    private swapTiles(firstPartRow, firstPartColl, secondPartRow, secondPartColl) {
-        const temp = this.puzzleBoard[firstPartRow][firstPartColl];
-        this.puzzleBoard[firstPartRow][firstPartColl] = this.puzzleBoard[secondPartRow][secondPartColl];
-        this.puzzleBoard[secondPartRow][secondPartColl] = temp;
+    private swapTiles(firstPartRow: number, firstPartColl: number, secondPartRow: number, secondPartColl: number) {
+        [this.puzzleBoard[firstPartRow][firstPartColl], this.puzzleBoard[secondPartRow][secondPartColl]] =
+        [this.puzzleBoard[secondPartRow][secondPartColl], this.puzzleBoard[firstPartRow][firstPartColl]];
 
-        const temp2 = this.tiles[firstPartRow][firstPartColl];
-        this.tiles[firstPartRow][firstPartColl] = this.tiles[secondPartRow][secondPartColl];
-        this.tiles[secondPartRow][secondPartColl] = temp2;
+        [this.tiles[firstPartRow][firstPartColl], this.tiles[secondPartRow][secondPartColl]] =
+        [this.tiles[secondPartRow][secondPartColl], this.tiles[firstPartRow][firstPartColl]];
     }
 
-    private findIndexOfDrag(dragId) {
+    private findIndexOfDrag(dragId: number) {
         for (let i = 0; i < this.boardEdgeLength; i++) {
             for (let j = 0; j < this.boardEdgeLength; j++) {
                 if (this.puzzleBoard[i][j] === dragId) {
@@ -114,9 +109,7 @@ export class DragAndDropSampleComponent implements OnInit {
     private shuffleArray(): void {
         for (let i = this.tilesArr.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            const temp = this.tilesArr[i];
-            this.tilesArr[i] = this.tilesArr[j];
-            this.tilesArr[j] = temp;
+            [this.tilesArr[i], this.tilesArr[j]] = [this.tilesArr[j], this.tilesArr[i]];
         }
 
         for (let i = 0; i < this.boardEdgeLength; i++) {
