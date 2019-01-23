@@ -45,10 +45,10 @@
                         </ng-template>
                     </igx-datePicker>
                 </div>
-                <div class="igx-time-picker">
+                <div class="igx-timePicker">
                     <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" >
                         <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
-                            <igx-input-group (click)="openDialog()">                                
+                            <igx-input-group (click)="openDialog()">
                                 <label igxLabel>Time </label>
                                 <input igxInput [value]="displayTime" />
                                 <igx-suffix>
