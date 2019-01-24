@@ -141,8 +141,17 @@ export class SampleAssetsGenerator extends Generator {
             .concat(ServicesRouting.servicesRoutes);
 
         for (let i = 0; i < routes.length; i++) {
-            this._componentRoutes.setValue(routes[i].component.name,
-                routes[i].path);
+            let sample = routes[i];
+            if (sample.component !== undefined) {
+                this._componentRoutes.setValue(sample.component.name, sample.path);
+            } else {
+                // sample with lazy loading, e.g.
+                // "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule"
+                let child = sample.loadChildren.toString();
+                let moduleName = child.split("#")[1];
+                let componentName = moduleName.replace("Module", "Component");
+                this._componentRoutes.setValue(componentName, sample.path);
+            }
         }
     }
 
