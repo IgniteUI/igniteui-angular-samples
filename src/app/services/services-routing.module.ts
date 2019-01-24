@@ -8,42 +8,43 @@ import { ExcelExportComponent } from "./export-excel/excel-export.component";
 import { LocalizationSample1Component } from "./localization-samples/localization-sample-1/localization-sample-1.component";
 import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
 import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
+import { servicesRoutesData } from "./services-routes-data";
 // tslint:enable:max-line-length
 
 export const servicesRoutes: Routes = [
     {
         component: CsvExportComponent,
-        data: { displayName: "CSV Export Raw Data", parentName: "CSV Export" },
+        data: servicesRoutesData["export-csv"],
         path: "export-csv"
     },
     {
         component: CsvExportSample1Component,
-        data: { displayName: "CSV Export Grid", parentName: "CSV Export" },
+        data: servicesRoutesData["export-csv-sample-1"],
         path: "export-csv-sample-1"
     },
     {
         component: ExcelExportComponent,
-        data: { displayName: "Excel Export Raw Data", parentName: "Excel Export" },
+        data: servicesRoutesData["export-excel"],
         path: "export-excel"
     },
     {
         component: ExcelExportSample1Component,
-        data: { displayName: "Excel Export Grid", parentName: "Excel Export" },
+        data: servicesRoutesData["export-excel-sample-1"],
         path: "export-excel-sample-1"
     },
     {
         component: LocalizationSample1Component,
-        data: { displayName: "Localize one component", parentName: "Localization" },
+        data: servicesRoutesData["localization-sample-1"],
         path: "localization-sample-1"
     },
     {
         component: LocalizationSample2Component,
-        data: { displayName: "Localize All", parentName: "Localization" },
+        data: servicesRoutesData["localization-sample-2"],
         path: "localization-sample-2"
     },
     {
         component: LocalizationSample3Component,
-        data: { displayName: "Localize partially", parentName: "Localization" },
+        data: servicesRoutesData["localization-sample-3"],
         path: "localization-sample-3"
     }
 ];

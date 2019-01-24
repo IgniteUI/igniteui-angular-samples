@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { excelLibraryRoutesData } from "./excel-library-routes-data";
 import { ExcelLibraryOperationsOnWorkbooksComponent } from "./operations-on/workbooks.component";
 import { ExcelLibraryOperationsOnWorksheetsComponent } from "./operations-on/worksheets.component";
 import { ExcelLibraryWorkingWithCellsComponent } from "./working-with/cells.component";
@@ -12,42 +13,42 @@ import { ExcelLibraryWorkingWithTablesComponent } from "./working-with/tables.co
 export const excelLibraryRoutes: Routes = [
     {
         component: ExcelLibraryOperationsOnWorkbooksComponent,
-        data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["operations-on-workbooks"],
         path: "operations-on-workbooks"
     },
     {
         component: ExcelLibraryOperationsOnWorksheetsComponent,
-        data: { displayName: "Worksheets Operations", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["operations-on-worksheets"],
         path: "operations-on-worksheets"
     },
     {
         component: ExcelLibraryWorkingWithCellsComponent,
-        data: { displayName: "Working With Cells", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["working-with-cells"],
         path: "working-with-cells"
     },
     {
         component: ExcelLibraryWorkingWithChartsComponent,
-        data: { displayName: "Working With Charts", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["working-with-charts"],
         path: "working-with-charts"
     },
     {
         component: ExcelLibraryWorkingWithGridsComponent,
-        data: { displayName: "Working With Grids", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["working-with-grids"],
         path: "working-with-grids"
     },
     {
         component: ExcelLibraryWorkingWithObjectsComponent,
-        data: { displayName: "Working With Objects", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["working-with-objects"],
         path: "working-with-objects"
     },
     {
         component: ExcelLibraryWorkingWithSparklinesComponent,
-        data: { displayName: "Working With Sparklines", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["working-with-sparklines"],
         path: "working-with-sparklines"
     },
     {
         component: ExcelLibraryWorkingWithTablesComponent,
-        data: { displayName: "Working With Tables", parentName: "Excel Library" },
+        data: excelLibraryRoutesData["excel-library-working-with-tables"],
         path: "excel-library-working-with-tables"
     }
 ];

@@ -14,6 +14,7 @@ import { ListSample5Component } from "./list/list-sample-5/list-sample-5.compone
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
 import { ListComponent } from "./list/list.component";
+import { listsRoutesData } from "./lists-routes-data";
 
 export const listsRoutes: Routes = [
     {
@@ -22,27 +23,28 @@ export const listsRoutes: Routes = [
     },
     {
         component: ComboFeatures,
-        data: { displayName: "Combos Features", parentName: "Combo" },
+        data: listsRoutesData["combo-features"],
         path: "combo-features"
     },
     {
         component: ComboRemoteComponent,
-        data: { displayName: "Remote Combo", parentName: "Combo" },
+        data: listsRoutesData["combo-remote"],
         path: "combo-remote"
     },
     {
         component: ComboTemplateComponent,
-        data: { displayName: "Templating Combo", parentName: "Combo" },
+        data: listsRoutesData["combo-template"],
         path: "combo-template"
     },
     {
         component: CascadingCombos,
-        data: { displayName: "Cascading Combos", parentName: "Combo" },
+        data: listsRoutesData["cascading-combos"],
         path: "cascading-combos"
     },
     {
         component: ListComponent,
-        data: { displayName: "List Overview", parentName: "List" },
+        // tslint:disable-next-line:no-string-literal
+        data: listsRoutesData["list"],
         path: "list"
     },
     {
@@ -51,37 +53,37 @@ export const listsRoutes: Routes = [
     },
     {
         component: ListSample2Component,
-        data: { displayName: "List Item Header", parentName: "List" },
+        data: listsRoutesData["list-sample-2"],
         path: "list-sample-2"
     },
     {
         component: ListSample3Component,
-        data: { displayName: "List Item Template", parentName: "List" },
+        data: listsRoutesData["list-sample-3"],
         path: "list-sample-3"
     },
     {
         component: ListSample4Component,
-        data: { displayName: "List Search", parentName: "List" },
+        data: listsRoutesData["list-sample-4"],
         path: "list-sample-4"
     },
     {
         component: ListSample5Component,
-        data: { displayName: "Empty List Template", parentName: "List" },
+        data: listsRoutesData["list-sample-5"],
         path: "list-sample-5"
     },
     {
         component: ListSample6Component,
-        data: { displayName: "List Loading", parentName: "List" },
+        data: listsRoutesData["list-sample-6"],
         path: "list-sample-6"
     },
     {
         component: ListSample7Component,
-        data: { displayName: "List Item Panning", parentName: "List" },
+        data: listsRoutesData["list-sample-7"],
         path: "list-sample-7"
     },
     {
         component: ListChatSampleComponent,
-        data: { displayName: "Chat Component", parentName: "List" },
+        data: listsRoutesData["list-chat-sample"],
         path: "list-chat-sample"
     }
 ];
