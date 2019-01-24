@@ -77,6 +77,7 @@ import * as ListsRouting from "../../src/app/lists/lists-routing.module";
 import * as MenusRouting from "../../src/app/menus/menus-routing.module";
 import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
 import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
+import * as ServicesRouting from "../../src/app/services/services-routing.module";
 import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
 import * as TreeGridRouting from "../../src/app/tree-grid/tree-grid-routing.module";
 import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
@@ -136,7 +137,8 @@ export class SampleAssetsGenerator extends Generator {
             .concat(LayoutsRouting.layoutsRoutes)
             .concat(TreeGridRouting.treeGridRoutes)
             .concat(GridRouting.gridsRoutes)
-            .concat(GridCRMRouting.gridcrmRoutes);
+            .concat(GridCRMRouting.gridcrmRoutes)
+            .concat(ServicesRouting.servicesRoutes);
 
         for (let i = 0; i < routes.length; i++) {
             this._componentRoutes.setValue(routes[i].component.name,
