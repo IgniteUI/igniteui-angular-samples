@@ -17,6 +17,7 @@ import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
+import { DropDownSample5Component } from "./dropdown/dropdown-sample-5/dropdown-sample-5.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -110,6 +111,11 @@ export const dataEntriesRoutes: Routes = [
         component: DropDownSample3Component,
         data: { displayName: "Dropdown Headers", parentName: "Dropdown" },
         path: "dropdown-sample-3"
+    },
+    {
+        component: DropDownSample5Component,
+        data: { displayName: "Dropdown Groups", parentName: "Dropdown" },
+        path: "dropdown-sample-5"
     },
     {
         component: DropDownSample4Component,
