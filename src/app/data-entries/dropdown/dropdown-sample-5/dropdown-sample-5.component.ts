@@ -15,6 +15,8 @@ import {
 export class DropDownSample5Component {
     @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
 
+    public disableMeats = false;
+
     // tslint:disable:object-literal-sort-keys
     public foods: Array<{
         name: string,
