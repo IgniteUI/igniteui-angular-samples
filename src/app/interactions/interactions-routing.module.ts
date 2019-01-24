@@ -1,3 +1,4 @@
+// tslint:disable:no-string-literal
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
@@ -5,6 +6,7 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
+import { interactionsRoutesData } from "./interactions-routes-data";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
 import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
@@ -33,147 +35,147 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
 export const interactionsRoutes: Routes = [
     {
         component: DialogComponent,
-        data: { displayName: "Various Dialogs", parentName: "Dialog" },
+        data: interactionsRoutesData["dialog"],
         path: "dialog"
     },
     {
         component: DialogSample1Component,
-        data: { displayName: "Completed Action Dialog", parentName: "Dialog" },
+        data: interactionsRoutesData["dialog-sample-1"],
         path: "dialog-sample-1"
     },
     {
         component: DialogSample2Component,
-        data: { displayName: "Confirmation Dialog", parentName: "Dialog" },
+        data: interactionsRoutesData["dialog-sample-2"],
         path: "dialog-sample-2"
     },
     {
         component: DialogSample3Component,
-        data: { displayName: "Sign-in form Dialog", parentName: "Dialog" },
+        data: interactionsRoutesData["dialog-sample-3"],
         path: "dialog-sample-3"
     },
     {
         component: SliderSample1Component,
-        data: { displayName: "Slider Lower and Upper range values", parentName: "Slider" },
+        data: interactionsRoutesData["slider-sample-1"],
         path: "slider-sample-1"
     },
     {
         component: SliderSample2Component,
-        data: { displayName: "Continuous Slider", parentName: "Slider" },
+        data: interactionsRoutesData["slider-sample-2"],
         path: "slider-sample-2"
     },
     {
         component: SliderSample3Component,
-        data: { displayName: "Discrete Slider", parentName: "Slider" },
+        data: interactionsRoutesData["slider-sample-3"],
         path: "slider-sample-3"
     },
     {
         component: SliderSample4Component,
-        data: { displayName: "Range Slider", parentName: "Slider" },
+        data: interactionsRoutesData["slider-sample-4"],
         path: "slider-sample-4"
     },
     {
         component: SliderSample5Component,
-        data: { displayName: "Slider Lower and Upper bounds", parentName: "Slider" },
+        data: interactionsRoutesData["slider-sample-5"],
         path: "slider-sample-5"
     },
     {
         component: RippleSample1Component,
-        data: { displayName: "Ripple Overview", parentName: "Ripple" },
+        data: interactionsRoutesData["ripple-sample-1"],
         path: "ripple-sample-1"
     },
     {
         component: RippleSample2Component,
-        data: { displayName: "Ripple Target", parentName: "Ripple" },
+        data: interactionsRoutesData["ripple-sample-2"],
         path: "ripple-sample-2"
     },
     {
         component: RippleSample3Component,
-        data: { displayName: "Ripple Centered Effect", parentName: "Ripple" },
+        data: interactionsRoutesData["ripple-sample-3"],
         path: "ripple-sample-3"
     },
     {
         component: RippleSample4Component,
-        data: { displayName: "Ripple Duration", parentName: "Ripple" },
+        data: interactionsRoutesData["ripple-sample-4"],
         path: "ripple-sample-4"
     },
     {
         component: RippleSample5Component,
-        data: { displayName: "Ripple Effect", parentName: "Ripple" },
+        data: interactionsRoutesData["ripple-sample-5"],
         path: "ripple-sample-5"
     },
     {
         component: RippleSample6Component,
-        data: { displayName: "Ripple Color", parentName: "Ripple" },
+        data: interactionsRoutesData["ripple-sample-6"],
         path: "ripple-sample-6"
     },
     {
         component: ToggleComponent,
-        data: { displayName: "Toggle Overview", parentName: "Toggle" },
+        data: interactionsRoutesData["toggle"],
         path: "toggle"
     },
     {
         component: ToggleSample1Component,
-        data: { displayName: "Toggle Content", parentName: "Toggle" },
+        data: interactionsRoutesData["toggle-sample-1"],
         path: "toggle-sample-1"
     },
     {
         component: ToggleSample2Component,
-        data: { displayName: "Automatic Toggle Actions", parentName: "Toggle" },
+        data: interactionsRoutesData["toggle-sample-2"],
         path: "toggle-sample-2"
     },
     {
         component: ToggleSample3Component,
-        data: { displayName: "Toggle Service Provider", parentName: "Toggle" },
+        data: interactionsRoutesData["toggle-sample-3"],
         path: "toggle-sample-3"
     },
     {
         component: TooltipSimpleComponent,
-        data: { displayName: "Simple Tooltip", parentName: "Tooltip" },
+        data: interactionsRoutesData["tooltip-simple"],
         path: "tooltip-simple"
     },
     {
         component: TooltipRichComponent,
-        data: { displayName: "Rich Tooltip", parentName: "Tooltip" },
+        data: interactionsRoutesData["tooltip-rich"],
         path: "tooltip-rich"
     },
     {
         component: OverlaySampleMain1Component,
-        data: { displayName: "Overlay Main Sample 1", parentName: "Overlay" },
+        data: interactionsRoutesData["overlay-sample-main-1"],
         path: "overlay-sample-main-1"
     },
     {
         component: OverlaySampleMain2Component,
-        data: { displayName: "Overlay Main Sample 2", parentName: "Overlay" },
+        data: interactionsRoutesData["overlay-sample-main-2"],
         path: "overlay-sample-main-2"
     },
     {
         component: OverlaySampleMain3Component,
-        data: { displayName: "Overlay Main Sample 3", parentName: "Overlay" },
+        data: interactionsRoutesData["overlay-sample-main-3"],
         path: "overlay-sample-main-3"
     },
     {
         component: OverlayPositionSample1Component,
-        data: { displayName: "Overlay Position Sample 1", parentName: "Overlay" },
+        data: interactionsRoutesData["overlay-position-sample-1"],
         path: "overlay-position-sample-1"
     },
     {
         component: OverlayPositionSample2Component,
-        data: { displayName: "Overlay Position Sample 2", parentName: "Overlay" },
+        data: interactionsRoutesData["overlay-position-sample-2"],
         path: "overlay-position-sample-2"
     },
     {
         component: OverlayScrollSample1Component,
-        data: { displayName: "Overlay Scroll Sample 1", parentName: "Overlay" },
+        data: interactionsRoutesData["overlay-scroll-sample-1"],
         path: "overlay-scroll-sample-1"
     },
     {
         component: OverlayScrollSample2Component,
-        data: { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
+        data: interactionsRoutesData["overlay-scroll-sample-2"],
         path: "overlay-scroll-sample-2"
     },
     {
         component: DragAndDropSampleComponent,
-        data: { displayName: "Drag and drop sample", parentName: "Drag and Drop" },
+        data: interactionsRoutesData["drag-drop-sample"],
         path: "drag-drop-sample"
     }
 ];
