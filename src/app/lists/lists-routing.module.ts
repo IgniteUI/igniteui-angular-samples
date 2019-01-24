@@ -43,6 +43,7 @@ export const listsRoutes: Routes = [
     },
     {
         component: ListComponent,
+        // tslint:disable-next-line:no-string-literal
         data: listsRoutesData["list"],
         path: "list"
     },
