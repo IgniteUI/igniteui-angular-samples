@@ -139,17 +139,8 @@ export class SampleAssetsGenerator extends Generator {
             .concat(GridCRMRouting.gridcrmRoutes);
 
         for (let i = 0; i < routes.length; i++) {
-            let sample = routes[i];
-            if (sample.component !== undefined) {
-                this._componentRoutes.setValue(sample.component.name, sample.path);
-            } else {
-                // sample with lazy loading, e.g.
-                // "app/excel-library/working-with/cells.module#ExcelLibraryWorkingWithCellsModule"
-                let child = sample.loadChildren.toString();
-                let moduleName = child.split("#")[1];
-                let componentName = moduleName.replace("Module", "Component");
-                this._componentRoutes.setValue(componentName, sample.path);
-            }
+            this._componentRoutes.setValue(routes[i].component.name,
+                routes[i].path);
         }
     }
 
