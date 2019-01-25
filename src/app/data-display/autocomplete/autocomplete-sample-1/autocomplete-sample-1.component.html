@@ -1,0 +1,14 @@
+<igx-input-group>
+    <input igxInput #inputField name="items" type="text" required [igxAutocomplete]='itemsPanel' [(ngModel)]="selectedItem"
+        (ngModelChange)="onChange($event)" />
+    <label igxLabel for="items">Products</label>
+</igx-input-group>
+<div></div>
+<igx-drop-down #itemsPanel>
+    <igx-drop-down-item *ngFor="let item of data | async" [value]="item.ProductName">
+        {{item.ProductName}}
+    </igx-drop-down-item>
+    <div class='progress-container' *ngIf="!data">
+        <igx-circular-bar #progressBar class="circular-progress" [indeterminate]="true"></igx-circular-bar>
+    </div>
+</igx-drop-down>
