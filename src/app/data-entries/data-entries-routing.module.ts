@@ -115,7 +115,7 @@ export const dataEntriesRoutes: Routes = [
     },
     {
         component: DropDownSample5Component,
-        data: { displayName: "Dropdown Groups", parentName: "Dropdown" },
+        data: dataEntriesRoutesData["dropdown-sample-5"],
         path: "dropdown-sample-5"
     },
     {

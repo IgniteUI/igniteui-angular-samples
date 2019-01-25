@@ -16,3 +16,8 @@
 igx-switch {
     padding-left: 24px;
 }
+
+.drop-down__scroll-container {
+    max-height: 240px;
+    overflow-y: auto;
+}
