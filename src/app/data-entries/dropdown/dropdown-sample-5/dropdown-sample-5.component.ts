@@ -29,9 +29,6 @@ export class DropDownSample5Component {
         }, {
             name: "Lettuce",
             refNo: `00001`
-        }, {
-            name: "Cabbage",
-            refNo: "00002"
         }]
     }, {
         name: "Fruits",
@@ -41,9 +38,6 @@ export class DropDownSample5Component {
         }, {
             name: "Tomato",
             refNo: `10001`
-        }, {
-            name: "Kiwi",
-            refNo: `10001`
         }]
     }, {
         name: "Meats",
@@ -52,9 +46,6 @@ export class DropDownSample5Component {
             refNo: `20000`
         }, {
             name: "Beef",
-            refNo: `20001`
-        }, {
-            name: "Veal",
             refNo: `20001`
         }]
     }];
