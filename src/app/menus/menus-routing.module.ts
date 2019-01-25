@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { menusRoutesData } from "./menus-routes-data";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
 import { NavbarComponent } from "./navbar/navbar.component";
@@ -27,17 +28,18 @@ export const menusRoutes: Routes = [
     },
     {
         component: NavbarComponent,
-        data: { displayName: "Navbar Overview", parentName: "Navbar" },
+        // tslint:disable-next-line:no-string-literal
+        data: menusRoutesData["navbar"],
         path: "navbar"
     },
     {
         component: NavbarSample1Component,
-        data: { displayName: "Navbar Action Button Icon", parentName: "Navbar" },
+        data: menusRoutesData["navbar-sample-1"],
         path: "navbar-sample-1"
     },
     {
         component: NavbarSample2Component,
-        data: { displayName: "Navbar Custom Action Icon", parentName: "Navbar" },
+        data: menusRoutesData["navbar-sample-2"],
         path: "navbar-sample-2"
     }
 ];
