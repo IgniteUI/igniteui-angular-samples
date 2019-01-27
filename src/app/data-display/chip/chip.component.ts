@@ -5,6 +5,7 @@ import {
     IgxDropDownComponent,
     IgxInputDirective,
     IgxInputGroupComponent,
+    IgxInputState,
     IgxToastPosition
 } from "igniteui-angular";
 
@@ -150,6 +151,7 @@ export class ChipSampleComponent {
         this.chipList = this.chipList.filter((item) => {
             return item.id !== event.owner.id;
         });
+        this.inputBox.valid = IgxInputState.INITIAL;
         this.chipsArea.cdr.detectChanges();
     }
 
@@ -169,12 +171,16 @@ export class ChipSampleComponent {
                     target: this.inputBox.nativeElement
                 })
             });
+            this.dropDownOpened = true;
             this.inputBox.focus();
         }
     }
 
-    public clickedOutside(e) {
-        this.igxDropDown.close();
+    public clickedOutside() {
+        if (this.dropDownOpened) {
+            this.igxDropDown.close();
+            this.dropDownOpened = false;
+        }
     }
 
     public addEmail() {
@@ -201,8 +207,6 @@ export class ChipSampleComponent {
                         photo: this.dropDownList[i].photo
                     });
                     exists = 1;
-                    this.igxDropDown.close();
-                    this.inputBox.value = "";
                 }
             }
             if (exists === 0) {
@@ -213,10 +217,15 @@ export class ChipSampleComponent {
                     photo: "assets/images/list/empty.png"
                 });
             }
-            this.igxDropDown.close();
-            this.inputBox.focus();
-            this.inputBox.value = "";
         }
+        this.inputBox.focus();
+        this.inputBox.valid = IgxInputState.INITIAL;
+        this.inputBox.value = "";
+        if (this.dropDownOpened) {
+            this.igxDropDown.close();
+            this.dropDownOpened = false;
+        }
+        this.cdr.detectChanges();
     }
 
     public openDropDown() {
@@ -261,7 +270,9 @@ export class ChipSampleComponent {
                     photo: this.dropDownList[i].photo
                 });
                 this.igxDropDown.close();
+                this.dropDownOpened = false;
                 this.inputBox.value = "";
+                this.inputBox.valid = IgxInputState.INITIAL;
             }
         }
     }
