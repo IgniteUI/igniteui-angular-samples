@@ -184,9 +184,9 @@ export class ChipSampleComponent {
     }
 
     public addEmail() {
-        if (this.inputBox.valid === 1) {
+        if (this.inputBox.valid === IgxInputState.VALID) {
             let i;
-            let exists = 0;
+            let exists = false;
 
             if (
                 this.chipList.find(
@@ -206,10 +206,10 @@ export class ChipSampleComponent {
                         name: this.dropDownList[i].name,
                         photo: this.dropDownList[i].photo
                     });
-                    exists = 1;
+                    exists = true;
                 }
             }
-            if (exists === 0) {
+            if (!exists) {
                 this.chipList.push({
                     email: this.inputBox.value,
                     id: this.inputBox.value,
