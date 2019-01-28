@@ -6,36 +6,38 @@ import { DisplayDensityComponent } from "./display-density/display-density.compo
 import { ShadowsSampleComponent } from "./shadows/shadows-sample-1/shadows-sample.component";
 import { ShadowsSample2Component } from "./shadows/shadows-sample-2/shadows-sample-2.component";
 import { ThemeChooserSampleComponent } from "./theme-chooser/theme-chooser-sample.component";
+import { themingRoutesData } from "./theming-routes-data";
 
 export const themingRoutes: Routes = [
     {
         component: ThemeChooserSampleComponent,
-        data: { displayName: "Style components with custom themes", parentName: "Themes" },
+        data: themingRoutesData["theme-chooser"],
         path: "theme-chooser"
     },
     {
         component: DefaultThemeSampleComponent,
-        data: { displayName: "Default theme sample", parentName: "Themes" },
+        data: themingRoutesData["default-theme-sample"],
         path: "default-theme-sample"
     },
     {
         component: DarkThemeSampleComponent,
-        data: { displayName: "Dark theme sample", parentName: "Themes" },
+        data: themingRoutesData["dark-theme-sample"],
         path: "dark-theme-sample"
     },
     {
         component: ShadowsSampleComponent,
-        data: { displayName: "Shadows sample", parentName: "Shadows" },
+        data: themingRoutesData["shadows-sample"],
         path: "shadows-sample"
     },
     {
         component: ShadowsSample2Component,
-        data: { displayName: "Shadows sample 2", parentName: "Shadows" },
+        data: themingRoutesData["shadows-sample-2"],
         path: "shadows-sample-2"
     },
     {
         component: DisplayDensityComponent,
-        data: { displayName: "Display density sample", parentName: "Themes" },
+        // tslint:disable-next-line:no-string-literal
+        data: themingRoutesData["density"],
         path: "density"
     }
 ];

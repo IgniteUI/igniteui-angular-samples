@@ -1,3 +1,4 @@
+// tslint:disable:no-string-literal
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
@@ -20,6 +21,7 @@ import { ExpansionPanelSample5Component } from "./expansion-panel/expansion-samp
 import { ExpansionPanelSample6Component } from "./expansion-panel/expansion-sample-6/expansion-sample-6.component";
 import { ExpansionPanelSample7Component } from "./expansion-panel/expansion-sample-7/expansion-sample-7.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { layoutsRoutesData } from "./layouts-routes-data";
 import { TabbarSample1Component } from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
@@ -32,47 +34,47 @@ import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sampl
 export const layoutsRoutes: Routes = [
     {
         component: AvatarSample1Component,
-        data: { displayName: "Avatar with Initials", parentName: "Avatar" },
+        data: layoutsRoutesData["avatar-sample-1"],
         path: "avatar-sample-1"
     },
     {
         component: AvatarSample2Component,
-        data: { displayName: "Avatar with Image", parentName: "Avatar" },
+        data: layoutsRoutesData["avatar-sample-2"],
         path: "avatar-sample-2"
     },
     {
         component: AvatarSample3Component,
-        data: { displayName: "Multiple avatars", parentName: "Avatar" },
+        data: layoutsRoutesData["avatar-sample-3"],
         path: "avatar-sample-3"
     },
     {
         component: CardComponent,
-        data: { displayName: "Card Overview", parentName: "Card" },
+        data: layoutsRoutesData["card"],
         path: "card"
     },
     {
         component: CarouselSample1Component,
-        data: { displayName: "Carousel items with text", parentName: "Carousel" },
+        data: layoutsRoutesData["carousel-sample-1"],
         path: "carousel-sample-1"
     },
     {
         component: CarouselSample2Component,
-        data: { displayName: "Slides with ngFor directive", parentName: "Carousel" },
+        data: layoutsRoutesData["carousel-sample-2"],
         path: "carousel-sample-2"
     },
     {
         component: CarouselSample3Component,
-        data: { displayName: "Carousel Navigation", parentName: "Carousel" },
+        data: layoutsRoutesData["carousel-sample-3"],
         path: "carousel-sample-3"
     },
     {
         component: CarouselSample4Component,
-        data: { displayName: "Carousel Router Navigation", parentName: "Carousel" },
+        data: layoutsRoutesData["carousel-sample-4"],
         path: "carousel-sample-4"
     },
     {
         component: CarouselComponent,
-        data: { displayName: "Carousel Image Viewer", parentName: "Carousel" },
+        data: layoutsRoutesData["carousel"],
         path: "carousel"
     },
     {
@@ -81,72 +83,72 @@ export const layoutsRoutes: Routes = [
     },
     {
         component: ExpansionPanelSample1Component,
-        data: { displayName: "Expansion Panel 1", parentName: "Expansion Panel" },
+        data: layoutsRoutesData["expansion-sample-1"],
         path: "expansion-sample-1"
     },
     {
         component: ExpansionPanelSample2Component,
-        data: { displayName: "Expansion Panel 2", parentName: "Expansion Panel" },
+        data: layoutsRoutesData["expansion-sample-2"],
         path: "expansion-sample-2"
     },
     {
         component: ExpansionPanelSample3Component,
-        data: { displayName: "Expansion Panel 3", parentName: "Expansion Panel" },
+        data: layoutsRoutesData["expansion-sample-3"],
         path: "expansion-sample-3"
     },
     {
         component: ExpansionPanelSample4Component,
-        data: { displayName: "Expansion Panel 4", parentName: "Expansion Panel" },
+        data: layoutsRoutesData["expansion-sample-4"],
         path: "expansion-sample-4"
     },
     {
         component: ExpansionPanelSample5Component,
-        data: { displayName: "Expansion Panel 5", parentName: "Expansion Panel" },
+        data: layoutsRoutesData["expansion-sample-5"],
         path: "expansion-sample-5"
     },
     {
         component: ExpansionPanelSample6Component,
-        data: { displayName: "Expansion Panel 6", parentName: "Expansion Panel" },
+        data: layoutsRoutesData["expansion-sample-6"],
         path: "expansion-sample-6"
     },
     {
         component: ExpansionPanelSample7Component,
-        data: { displayName: "Expansion Panel 7", parentName: "Expansion Panel" },
+        data: layoutsRoutesData["expansion-sample-7"],
         path: "expansion-sample-7"
     },
     {
         component: LayoutComponent,
-        data: { displayName: "Layout Overview", parentName: "Layout" },
+        data: layoutsRoutesData["layout"],
         path: "layout"
     },
     {
         component: TabbarComponent,
-        data: { displayName: "Bottom Navigation Overview", parentName: "Bottom Navigation" },
+        data: layoutsRoutesData["tabbar"],
         path: "tabbar"
     },
     {
         component: TabbarSample1Component,
-        data: { displayName: "Bottom Navigation Simple Panels", parentName: "Bottom Navigation" },
+        data: layoutsRoutesData["tabbar-sample-1"],
         path: "tabbar-sample-1"
     },
     {
         component: TabbarSample2Component,
-        data: { displayName: "Bottom Navigation Customizing Panels", parentName: "Bottom Navigation" },
+        data: layoutsRoutesData["tabbar-sample-2"],
         path: "tabbar-sample-2"
     },
     {
         component: TabsSample1Component,
-        data: { displayName: "Tabs Overview", parentName: "Tabs" },
+        data: layoutsRoutesData["tabs-sample-1"],
         path: "tabs-sample-1"
     },
     {
         component: TabsSample2Component,
-        data: { displayName: "Tabs Types", parentName: "Tabs" },
+        data: layoutsRoutesData["tabs-sample-2"],
         path: "tabs-sample-2"
     },
     {
         component: TabsSample3Component,
-        data: { displayName: "Tabs Customizing", parentName: "Tabs" },
+        data: layoutsRoutesData["tabs-sample-3"],
         path: "tabs-sample-3"
     },
     {
@@ -159,12 +161,12 @@ export const layoutsRoutes: Routes = [
     },
     {
         component: CardSample2Component,
-        data: { displayName: "Card with Avatar and Image", parentName: "Card" },
+        data: layoutsRoutesData["card-sample-2"],
         path: "card-sample-2"
     },
     {
         component: CardSample3Component,
-        data: { displayName: "Card Actions", parentName: "Card" },
+        data: layoutsRoutesData["card-sample-3"],
         path: "card-sample-3"
     }
 ];

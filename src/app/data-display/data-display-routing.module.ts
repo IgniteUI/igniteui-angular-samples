@@ -5,6 +5,7 @@ import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.com
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import { dataDisplayRoutesData } from "./data-display-routes-data";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
@@ -27,32 +28,32 @@ import { TextHighlightSample2Component
 export const dataDisplayRoutes: Routes = [
     {
         component: BadgeSample1Component,
-        data: { displayName: "Badge for List", parentName: "Badge" },
+        data: dataDisplayRoutesData["badge-sample-1"],
         path: "badge-sample-1"
     },
     {
         component: BadgeSample2Component,
-        data: { displayName: "Badge for List with Avatars", parentName: "Badge" },
+        data: dataDisplayRoutesData["badge-sample-2"],
         path: "badge-sample-2"
     },
     {
         component: BadgeSample3Component,
-        data: { displayName: "Badge for List Items", parentName: "Badge" },
+        data: dataDisplayRoutesData["badge-sample-3"],
         path: "badge-sample-3"
     },
     {
         component: ChipSampleComponent,
-        data: { displayName: "Chip Overview", parentName: "Chip" },
+        data: dataDisplayRoutesData["chip-sample"],
         path: "chip-sample"
     },
     {
         component: CircularProgressbarComponent,
-        data: { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
+        data: dataDisplayRoutesData["circular-progressbar"],
         path: "circular-progressbar"
     },
     {
         component: IconSample1Component,
-        data: { displayName: "Simple Icons", parentName: "Icon" },
+        data: dataDisplayRoutesData["icon-sample-1"],
         path: "icon-sample-1"
     },
     {
@@ -61,62 +62,62 @@ export const dataDisplayRoutes: Routes = [
     },
     {
         component: SvgIconSampleComponent,
-        data: { displayName: "SVG Icons", parentName: "Icon" },
+        data: dataDisplayRoutesData["svg-icon-sample"],
         path: "svg-icon-sample"
     },
     {
         component: IgxForComponent,
-        data: { displayName: "List with igxFor directive", parentName: "For" },
+        data: dataDisplayRoutesData["igx-for-sample-1"],
         path: "igx-for-sample-1"
     },
     {
         component: LinearProgressbarComponent,
-        data: { displayName: "Simple Linear Progressbar", parentName: "Linear Progressbar" },
+        data: dataDisplayRoutesData["linear-progressbar"],
         path: "linear-progressbar"
     },
     {
         component: LinearProgressbarSample1Component,
-        data: { displayName: "Linear Progressbar Types", parentName: "Linear Progressbar" },
+        data: dataDisplayRoutesData["linear-progressbar-sample-1"],
         path: "linear-progressbar-sample-1"
     },
     {
         component: LinearProgressbarSample2Component,
-        data: { displayName: "Linear Progressbar Styling", parentName: "Linear Progressbar" },
+        data: dataDisplayRoutesData["linear-progressbar-sample-2"],
         path: "linear-progressbar-sample-2"
     },
     {
         component: MaskSample1Component,
-        data: { displayName: "Mask Overview", parentName: "Mask" },
+        data: dataDisplayRoutesData["mask-sample-1"],
         path: "mask-sample-1"
     },
     {
         component: MaskSample2Component,
-        data: { displayName: "Mask on Input", parentName: "Mask" },
+        data: dataDisplayRoutesData["mask-sample-2"],
         path: "mask-sample-2"
     },
     {
         component: MaskSample3Component,
-        data: { displayName: "Mask binding to Formatted/Raw Value", parentName: "Mask" },
+        data: dataDisplayRoutesData["mask-sample-3"],
         path: "mask-sample-3"
     },
     {
         component: MaskSample4Component,
-        data: { displayName: "Additional custom formatting", parentName: "Mask" },
+        data: dataDisplayRoutesData["mask-sample-4"],
         path: "mask-sample-4"
     },
     {
         component: MaskSample5Component,
-        data: { displayName: "Placeholder", parentName: "Mask" },
+        data: dataDisplayRoutesData["mask-sample-5"],
         path: "mask-sample-5"
     },
     {
         component: TextHighlightSample1Component,
-        data: { displayName: "Search within a single container", parentName: "Text Highlight" },
+        data: dataDisplayRoutesData["text-highlight-1"],
         path: "text-highlight-1"
     },
     {
         component: TextHighlightSample2Component,
-        data: { displayName: "Search within multiple containers", parentName: "Text Highlight" },
+        data: dataDisplayRoutesData["text-highlight-2"],
         path: "text-highlight-2"
     }
 ];

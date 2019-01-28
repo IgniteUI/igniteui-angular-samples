@@ -10,32 +10,33 @@ import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import { treeGridRoutesData } from "./tree-grid-routes-data";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 
 export const treeGridRoutes: Routes = [
     {
         component: TreeGridChilddatakeySampleComponent,
-        data: { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
+        data: treeGridRoutesData["treegrid-childdatakey"],
         path: "treegrid-childdatakey"
     },
     {
         component: TreeGridPrimaryforeignkeySampleComponent,
-        data: { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
+        data: treeGridRoutesData["treegrid-primaryforeignkey"],
         path: "treegrid-primaryforeignkey"
     },
     {
         component: TreeGridRowEditSampleComponent,
-        data: { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
+        data: treeGridRoutesData["treegrid-row-edit"],
         path: "treegrid-row-edit"
     },
     {
         component: TreeGridFinJSComponent,
-        data: { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
+        data: treeGridRoutesData["treegrid-finjs-sample"],
         path: "treegrid-finjs-sample"
     },
     {
         component: TreeGridBatchEditingSampleComponent,
-        data: { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
+        data: treeGridRoutesData["treegrid-batchediting"],
         path: "treegrid-batchediting"
     }
 ];
