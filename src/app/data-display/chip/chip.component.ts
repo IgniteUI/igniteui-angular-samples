@@ -219,13 +219,12 @@ export class ChipSampleComponent {
             }
         }
         this.inputBox.focus();
-        this.inputBox.valid = IgxInputState.INITIAL;
         this.inputBox.value = "";
         if (this.dropDownOpened) {
             this.igxDropDown.close();
             this.dropDownOpened = false;
         }
-        this.cdr.detectChanges();
+        this.inputBox.valid = IgxInputState.INITIAL;
     }
 
     public openDropDown() {
@@ -336,6 +335,12 @@ export class ChipSampleComponent {
         }
 
         toast.show();
+    }
+
+    public blurHandler() {
+        if (this.inputBox.value === "" || this.inputBox.value === null) {
+            this.inputBox.valid = IgxInputState.INITIAL;
+        }
     }
 }
 @Pipe({ name: "filter" })

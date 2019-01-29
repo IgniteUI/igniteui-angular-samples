@@ -14,7 +14,7 @@
                     <igx-prefix>To:</igx-prefix>
                     <label igxLabel>Email address</label>
                     <input igxInput #inputForm (keyup.enter)="addEmail()" (keydown)="toggleDropDown($event)" (keydown.ArrowDown)="openDropDown()"
-                        type="email" [igxDropDownItemNavigation]="dropdown" required />
+                        type="email" [igxDropDownItemNavigation]="dropdown" (blur)="blurHandler()" required />
                 </igx-input-group>
                 <igx-input-group>
                     <igx-prefix>Cc:</igx-prefix>
