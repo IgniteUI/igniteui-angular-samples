@@ -13,6 +13,7 @@ import {
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 
 export const treeGridRoutes: Routes = [
     {
@@ -44,6 +45,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridEmployeesSampleComponent,
         data: treeGridRoutesData["treegrid-employees"],
         path: "treegrid-employees"
+    },
+    {
+        component: TreeGridSearchSampleComponent,
+        data: treeGridRoutesData["treegrid-search"],
+        path: "treegrid-search"
     }
 ];
 

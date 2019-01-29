@@ -6,5 +6,6 @@ export const treeGridRoutesData = {
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
     "treegrid-finjs-sample": { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
-    "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" }
+    "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
+    "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" }
 };
