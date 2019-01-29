@@ -1,0 +1,67 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="sample-column">
+            <form class="input-group-form">
+                <h4 class="sample-title">Book your movie ticket</h4>
+                <igx-input-group>
+                    <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName" required="required" />
+                    <label igxLabel for="fullName">Full Name</label>
+                    <igx-suffix>
+                        <igx-icon>person</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group>
+                    <igx-prefix>+359</igx-prefix>
+                    <label igxLabel for="phone">Phone</label>
+                    <input igxInput name="phone" type="text" [(ngModel)]="user.phone" />
+                    <igx-suffix>
+                        <igx-icon>phone</igx-icon>
+                    </igx-suffix>
+                    <igx-hint position="start">Ex.: +359 888 123 456</igx-hint>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="email">Email address</label>
+                    <input igxInput name="email" type="email" [(ngModel)]="user.email" required />
+                    <igx-suffix>
+                        <igx-icon>email</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <div class="igx-combo">
+                    <igx-combo #combo1 name="genres" class="input-container" width="100%" [itemsMaxHeight]="130"
+                        [data]="genres" [(ngModel)]="user.genres"
+                        placeholder="Select your favorite genres" searchPlaceholder="Search..." required [type]='"line"'>
+                    </igx-combo>
+                </div>
+                <div class="igx-datePicker">
+                    <igx-datePicker name="date" (onSelection)="onDateSelection($event)" >
+                        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
+                            <igx-input-group (click)="openDialog()">
+                                <label igxLabel>Date </label>
+                                <input igxInput [value]="displayData" />
+                                <igx-suffix>
+                                    <igx-icon>today</igx-icon>
+                                </igx-suffix>
+                            </igx-input-group>
+                        </ng-template>
+                    </igx-datePicker>
+                </div>
+                <div class="igx-timePicker">
+                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" >
+                        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
+                            <igx-input-group (click)="openDialog()">
+                                <label igxLabel>Time </label>
+                                <input igxInput [value]="displayTime" />
+                                <igx-suffix>
+                                    <igx-icon>access_time</igx-icon>
+                                </igx-suffix>
+                            </igx-input-group>
+                        </ng-template>
+                    </igx-time-picker>
+                </div>
+                <div class="button-wrapper">
+                    <button igxButton="raised" igxRipple>Book</button>
+                </div>
+            </form>
+        </article>
+    </section>
+</div>

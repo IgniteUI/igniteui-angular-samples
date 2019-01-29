@@ -14,7 +14,6 @@ import { ChipConfigGenerator } from "./../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "./../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "./../configs/ComboConfigGenerator";
 import { DatePickerConfigGenerator } from "./../configs/DatePickerConfigGenerator";
-import { DensityConfigGenerator } from "./../configs/DensityConfigGenerator";
 import { DialogConfigGenerator } from "./../configs/DialogConfigGenerator";
 import { DragAndDropConfigGenerator } from "./../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "./../configs/DropDownConfigGenerator";
@@ -38,13 +37,13 @@ import { NavdrawerConfigGenerator } from "./../configs/NavDrawerConfigGenerator"
 import { OverlayConfigGenerator } from "./../configs/OverlayConfigGenerator";
 import { RadioConfigGenerator } from "./../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "./../configs/RippleConfigGenerator";
-import { ShadowsConfigGenerator } from "./../configs/ShadowsConfigGenerator";
 import { SliderConfigGenerator } from "./../configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "./../configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "./../configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "./../configs/TabBarConfigGenerator";
 import { TabsConfigGenerator } from "./../configs/TabsConfigGenerator";
 import { TextHighlightConfigGenerator } from "./../configs/TextHighlightConfigGenerator";
+import { ThemingConfigGenerator } from "./../configs/ThemingConfigGenerator";
 import { TimePickerConfigGenerator } from "./../configs/TimePickerConfigGenerator";
 import { ToastConfigGenerator } from "./../configs/ToastConfigGenerator";
 import { ToggleConfigGenerator } from "./../configs/ToggleConfigGenerator";
@@ -65,6 +64,25 @@ import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Type } from "@angular/core/src/type";
 
 import * as Routing from "../../src/app/app-routing.module";
+import * as ChartsRouting from "../../src/app/charts/charts-routing.module";
+import * as DataDisplayRouting from "../../src/app/data-display/data-display-routing.module";
+import * as DataEntriesRouting from "../../src/app/data-entries/data-entries-routing.module";
+import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
+import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
+import * as GridCRMRouting from "../../src/app/grid-crm/grid-crm-routing.module";
+import * as GridRouting from "../../src/app/grid/grids-routing.module";
+import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
+import * as LayoutsRouting from "../../src/app/layouts/layouts-routing.module";
+import * as ListsRouting from "../../src/app/lists/lists-routing.module";
+import * as MenusRouting from "../../src/app/menus/menus-routing.module";
+import * as NotificationsRouting from "../../src/app/notifications/notifications-routing.module";
+import * as SchedulingRouting from "../../src/app/scheduling/scheduling-routing.module";
+import * as ServicesRouting from "../../src/app/services/services-routing.module";
+import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
+import * as TreeGridRouting from "../../src/app/tree-grid/tree-grid-routing.module";
+import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
+import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
+import { PieChartConfigGenerator } from "./../configs/PieChartConfigGenerator";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
 
@@ -78,17 +96,17 @@ const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
-    ComboConfigGenerator, DatePickerConfigGenerator, DensityConfigGenerator, DialogConfigGenerator,
+    ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
-    ExcelLibraryConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, IconConfigGenerator, 
+    ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator,
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, GridCRMConfigGenerator, IconConfigGenerator,
     OverlayConfigGenerator, GaugesConfigGenerator, DragAndDropConfigGenerator,
     InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
-    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator, 
-    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator, 
-    TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator, 
-    TooltipConfigGenerator, TimePickerConfigGenerator, ShadowsConfigGenerator];
+    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
+    SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
+    TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator,
+    TooltipConfigGenerator, TimePickerConfigGenerator, ThemingConfigGenerator];
 
 export class SampleAssetsGenerator extends Generator {
     private _dependencyResolver: DependencyResolver;
@@ -104,8 +122,26 @@ export class SampleAssetsGenerator extends Generator {
         this._sassCompiler = new SassCompiler();
 
         this._componentRoutes = new Collections.Dictionary<string, string>();
-        for (let i = 0; i < Routing.samplesRoutes.length; i++) {
-            let sample = Routing.samplesRoutes[i];
+
+        let routes = Routing.samplesRoutes.concat(NotificationsRouting.notificationsRoutes)
+            .concat(DataDisplayRouting.dataDisplayRoutes)
+            .concat(ChartsRouting.chartsRoutes)
+            .concat(DataEntriesRouting.dataEntriesRoutes)
+            .concat(ThemingRouting.themingRoutes)
+            .concat(MenusRouting.menusRoutes)
+            .concat(SchedulingRouting.schedulingRoutes)
+            .concat(GaugesRouting.gaugesRoutes)
+            .concat(ListsRouting.listsRoutes)
+            .concat(InteractionsRouting.interactionsRoutes)
+            .concat(ExcelLibraryRouting.excelLibraryRoutes)
+            .concat(LayoutsRouting.layoutsRoutes)
+            .concat(TreeGridRouting.treeGridRoutes)
+            .concat(GridRouting.gridsRoutes)
+            .concat(GridCRMRouting.gridcrmRoutes)
+            .concat(ServicesRouting.servicesRoutes);
+
+        for (let i = 0; i < routes.length; i++) {
+            let sample = routes[i];
             if (sample.component !== undefined) {
                 this._componentRoutes.setValue(sample.component.name, sample.path);
             } else {
@@ -164,7 +200,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _getComponentFiles(config: Config,
-                               configImports: Collections.Dictionary<string, string>): LiveEditingFile[] {
+        configImports: Collections.Dictionary<string, string>): LiveEditingFile[] {
         let componentFiles = new Array<LiveEditingFile>();
         let componentModuleSpecifier = configImports.getValue(config.component.name);
         let componentPath = componentModuleSpecifier.replace(GO_DIR_BACK_REG_EX, "");
@@ -350,7 +386,7 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _formatAppModuleTypes(types: string[], multiline: boolean, tabsCount: number,
-                                  suffixIfMultiple: string = null): string {
+        suffixIfMultiple: string = null): string {
         if (types.length === 1 && !multiline) {
             return types.join("");
         }

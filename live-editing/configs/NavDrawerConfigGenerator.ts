@@ -3,10 +3,10 @@ import {
     IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule,
     IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule
 } from "igniteui-angular";
-import { NavDrawerMiniComponent } from "../../src/app/navdrawer/nav-drawer-mini/nav-drawer-mini.component";
-import { NavDrawerPinComponent } from "../../src/app/navdrawer/nav-drawer-pin/nav-drawer-pin.component";
-import { NavDrawerSimpleComponent } from "../../src/app/navdrawer/nav-drawer-simple/nav-drawer-simple.component";
-import { NavdrawerComponent } from "../../src/app/navdrawer/navdrawer.component";
+import { NavDrawerMiniComponent } from "../../src/app/menus/navdrawer/nav-drawer-mini/nav-drawer-mini.component";
+import { NavDrawerPinComponent } from "../../src/app/menus/navdrawer/nav-drawer-pin/nav-drawer-pin.component";
+import { NavDrawerSimpleComponent } from "../../src/app/menus/navdrawer/nav-drawer-simple/nav-drawer-simple.component";
+import { NavdrawerComponent } from "../../src/app/menus/navdrawer/navdrawer.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -24,7 +24,8 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [NavdrawerComponent],
                 ngImports: [IgxButtonModule, IgxIconModule, IgxLayoutModule, IgxNavigationDrawerModule,
                     IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule]
-            })
+            }),
+            shortenComponentPathBy: "/menus/"
         }));
 
         configs.push(new Config({
@@ -36,7 +37,7 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxIconModule, IgxNavigationDrawerModule,
                     IgxRippleModule, IgxToggleModule]
             }),
-            shortenComponentPathBy: "/navdrawer/"
+            shortenComponentPathBy: "/menus/navdrawer/"
         }));
 
         configs.push(new Config({
@@ -48,7 +49,7 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxIconModule, IgxLayoutModule,
                     IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule]
             }),
-            shortenComponentPathBy: "/navdrawer/"
+            shortenComponentPathBy: "/menus/navdrawer/"
         }));
 
         configs.push(new Config({
@@ -61,7 +62,7 @@ export class NavdrawerConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxIconModule, IgxLayoutModule,
                     IgxNavigationDrawerModule, IgxRippleModule, IgxToggleModule]
             }),
-            shortenComponentPathBy: "/navdrawer/"
+            shortenComponentPathBy: "/menus/navdrawer/"
         }));
 
         return configs;

@@ -87,7 +87,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: LocalDataService) {
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
     }
@@ -126,22 +126,19 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     public onButtonAction(event: any) {
         switch (event.index) {
-            case 0:
-                {
+            case 0: {
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
                     this._timer = setInterval(() => this.ticker(currData), this.frequency);
                     break;
                 }
-            case 1:
-                {
+            case 1: {
                     this.disableOtherButtons(event.index, true);
                     const currData = this.grid1.data;
                     this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
                     break;
                 }
-                case 2:
-                {
+                case 2: {
                     this.disableOtherButtons(event.index, false);
                     this.stopFeed();
                     break;
@@ -210,12 +207,21 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         this.localService.getData(this.volume);
     }
 
+    // the below code is needed when accessing the sample through the navigation
+    // it will style all the space below the sample component element, but not the navigation menu
     public onThemeChanged(event: any) {
-        if (event.checked) {
-            document.body.querySelector("div.main").classList.add("dark-theme");
+        const parentEl = this.parentComponentEl();
+        if (event.checked && parentEl.classList.contains("main")) {
+            parentEl.classList.add("dark-theme");
         } else {
-            document.body.querySelector("div.main").classList.remove("dark-theme");
+            parentEl.classList.remove("dark-theme");
         }
+    }
+
+    public parentComponentEl() {
+        // returns the main div container of the Index Component,
+        // if path is /samples/sample-url, or the appRoot, if path is /sample-url
+        return this.elRef.nativeElement.parentElement.parentElement;
     }
 
     public toggleToolbar(event: any) {
