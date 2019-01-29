@@ -6,6 +6,7 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
@@ -38,6 +39,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridBatchEditingSampleComponent,
         data: treeGridRoutesData["treegrid-batchediting"],
         path: "treegrid-batchediting"
+    },
+    {
+        component: TreeGridEmployeesSampleComponent,
+        data: treeGridRoutesData["treegrid-employees"],
+        path: "treegrid-employees"
     }
 ];
 
