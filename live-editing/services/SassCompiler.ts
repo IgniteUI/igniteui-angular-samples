@@ -3,6 +3,8 @@
 // tslint:disable:only-arrow-functions
 // tslint:disable:member-ordering
 import * as fs from "fs";
+import * as autoprefixer from "autoprefixer";
+import * as postcss  from "postcss";
 import * as nodeSass from "node-sass";
 import * as path from "path";
 import * as sassJs from "sass.js";
@@ -27,7 +29,8 @@ export class SassCompiler {
             includePaths: NODE_SASS_PATHS
         });
 
-        return renderedSassResult.css.toString();
+        return postcss([autoprefixer({browsers: ['last 5 versions', '> 3%'], grid: true})]).
+        process(renderedSassResult.css).css;
     }
 
     public compileWithSassJs(sass: string, shouldLogStatus: boolean = false): Promise<string> {
