@@ -32,6 +32,9 @@ import {
 import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
+import {
+    TreeGridColumnResizingSampleComponent
+} from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
@@ -64,6 +67,7 @@ import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-so
         TreeGridContextmenuComponent,
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnPinningSampleComponent,
+        TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent
     ],
     imports: [
