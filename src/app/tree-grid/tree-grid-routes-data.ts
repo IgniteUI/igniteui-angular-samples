@@ -7,5 +7,7 @@ export const treeGridRoutesData = {
     "treegrid-finjs-sample": { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
     "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
-    "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" }
+    "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" },
+    "treegrid-column-hiding": { displayName: "TreeGrid Column Hiding", parentName: "TreeGrid" },
+    "treegrid-column-hiding-toolbar": { displayName: "TreeGrid Column Hiding Toolbar", parentName: "TreeGrid" }
 };

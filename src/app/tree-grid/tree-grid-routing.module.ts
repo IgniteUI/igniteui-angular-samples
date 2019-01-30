@@ -6,6 +6,12 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridColumnHidingSampleComponent
+} from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
+import {
+    TreeGridColumnHidingToolbarSampleComponent
+} from "./tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
@@ -50,6 +56,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSearchSampleComponent,
         data: treeGridRoutesData["treegrid-search"],
         path: "treegrid-search"
+    },
+    {
+        component: TreeGridColumnHidingSampleComponent,
+        data: treeGridRoutesData["treegrid-column-hiding"],
+        path: "treegrid-column-hiding"
+    },
+    {
+        component: TreeGridColumnHidingToolbarSampleComponent,
+        data: treeGridRoutesData["treegrid-column-hiding-toolbar"],
+        path: "treegrid-column-hiding-toolbar"
     }
 ];
 

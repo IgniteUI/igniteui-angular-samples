@@ -7,6 +7,7 @@ import {
     IgxDialogModule,
     IgxGridModule,
     IgxIconModule,
+    IgxRadioModule,
     IgxRippleModule,
     IgxSliderModule,
     IgxSwitchModule,
@@ -19,6 +20,12 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridColumnHidingSampleComponent
+} from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
+import {
+    TreeGridColumnHidingToolbarSampleComponent
+} from "./tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
@@ -36,7 +43,9 @@ import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-gr
         TreeGridBatchEditingSampleComponent,
         TreeGridFinJSComponent,
         TreeGridEmployeesSampleComponent,
-        TreeGridSearchSampleComponent
+        TreeGridSearchSampleComponent,
+        TreeGridColumnHidingSampleComponent,
+        TreeGridColumnHidingToolbarSampleComponent
     ],
     imports: [
         CommonModule,
@@ -51,7 +60,8 @@ import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-gr
         IgxButtonModule,
         IgxSwitchModule,
         IgxRippleModule,
-        IgxDialogModule
+        IgxDialogModule,
+        IgxRadioModule
     ]
 })
 export class TreeGridModule { }

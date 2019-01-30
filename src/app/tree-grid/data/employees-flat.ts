@@ -97,7 +97,6 @@ export const EMPLOYEE_FLAT_DATA = [
     },
     {
         Age: 44,
-        Employees: [],
         HireDate: new Date(2014, 4, 4),
         ID: 17,
         Name: "Antonio Moreno",
@@ -120,10 +119,8 @@ export const EMPLOYEE_FLAT_DATA = [
         ParentID: 10,
         Title: "Senior Localization"
     },
-    //
     {
         Age: 25,
-        Employees: [],
         HireDate: new Date(2017, 11, 9),
         ID: 15,
         Name: "Patricia Simpson",
