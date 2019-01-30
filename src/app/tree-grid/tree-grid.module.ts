@@ -29,6 +29,9 @@ import {
 import {
     TreeGridColumnMovingSampleComponent
 } from "./tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
+import {
+    TreeGridColumnPinningSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
@@ -58,7 +61,8 @@ import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-so
         TreeGridEmployeesSampleComponent,
         TreeGridSortingSampleComponent,
         TreeGridContextmenuComponent,
-        TreeGridColumnMovingSampleComponent
+        TreeGridColumnMovingSampleComponent,
+        TreeGridColumnPinningSampleComponent
     ],
     imports: [
         CommonModule,

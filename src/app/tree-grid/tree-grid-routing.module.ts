@@ -15,6 +15,9 @@ import {
 import {
     TreeGridColumnMovingSampleComponent
 } from "./tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
+import {
+    TreeGridColumnPinningSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
@@ -86,6 +89,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnMovingSampleComponent,
         data: treeGridRoutesData["treegrid-column-moving"],
         path: "treegrid-column-moving"
+    },
+    {
+        component: TreeGridColumnPinningSampleComponent,
+        data: treeGridRoutesData["treegrid-column-pinning"],
+        path: "treegrid-column-pinning"
     }
 ];
 
