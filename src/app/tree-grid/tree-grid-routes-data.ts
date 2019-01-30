@@ -9,5 +9,6 @@ export const treeGridRoutesData = {
     "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
     "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" },
     "treegrid-column-hiding": { displayName: "TreeGrid Column Hiding", parentName: "TreeGrid" },
-    "treegrid-column-hiding-toolbar": { displayName: "TreeGrid Column Hiding Toolbar", parentName: "TreeGrid" }
+    "treegrid-column-hiding-toolbar": { displayName: "TreeGrid Column Hiding Toolbar", parentName: "TreeGrid" },
+    "treegrid-selection": { displayName: "TreeGrid Selection", parentName: "TreeGrid" }
 };

@@ -34,6 +34,7 @@ import {
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
+import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 
 @NgModule({
     declarations: [
@@ -45,7 +46,8 @@ import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-gr
         TreeGridEmployeesSampleComponent,
         TreeGridSearchSampleComponent,
         TreeGridColumnHidingSampleComponent,
-        TreeGridColumnHidingToolbarSampleComponent
+        TreeGridColumnHidingToolbarSampleComponent,
+        TreeGridSelectionSampleComponent
     ],
     imports: [
         CommonModule,
