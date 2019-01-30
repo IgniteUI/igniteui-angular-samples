@@ -6,6 +6,12 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import {
+    TreeGridColumnHidingSampleComponent
+} from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
+import {
+    TreeGridColumnHidingToolbarSampleComponent
+} from "./tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
@@ -13,6 +19,8 @@ import {
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
+import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
 
 export const treeGridRoutes: Routes = [
@@ -45,6 +53,26 @@ export const treeGridRoutes: Routes = [
         component: TreeGridEmployeesSampleComponent,
         data: treeGridRoutesData["treegrid-employees"],
         path: "treegrid-employees"
+    },
+    {
+        component: TreeGridSearchSampleComponent,
+        data: treeGridRoutesData["treegrid-search"],
+        path: "treegrid-search"
+    },
+    {
+        component: TreeGridColumnHidingSampleComponent,
+        data: treeGridRoutesData["treegrid-column-hiding"],
+        path: "treegrid-column-hiding"
+    },
+    {
+        component: TreeGridColumnHidingToolbarSampleComponent,
+        data: treeGridRoutesData["treegrid-column-hiding-toolbar"],
+        path: "treegrid-column-hiding-toolbar"
+    },
+    {
+        component: TreeGridSelectionSampleComponent,
+        data: treeGridRoutesData["treegrid-selection"],
+        path: "treegrid-selection"
     },
     {
         component: TreeGridSortingSampleComponent,

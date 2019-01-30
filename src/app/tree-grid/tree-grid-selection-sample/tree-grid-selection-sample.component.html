@@ -1,0 +1,14 @@
+<div class="grid-controls">
+    <p>Toggle Multiple Selection</p>
+    <igx-switch [(ngModel)]="selection"></igx-switch>
+</div>
+<div class="grid__wrapper">
+    <igx-tree-grid #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [height]="'530px'" width="100%" [autoGenerate]="false" [rowSelectable]="selection"
+        [allowFiltering]="true" (onSelection)="handleRowSelection($event)">
+        <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" [sortable]="true"></igx-column>
+        <igx-column [field]="'ID'" dataType="number" [sortable]="true" width="15%"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [sortable]="true" width="15%"></igx-column>
+    </igx-tree-grid>
+</div>
