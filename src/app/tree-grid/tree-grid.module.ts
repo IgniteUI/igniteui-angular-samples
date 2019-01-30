@@ -26,6 +26,10 @@ import {
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import {
+    TreeGridContextmenuComponent
+} from "./tree-grid-sorting/tree-grid-contextmenu/tree-grid-contextmenu.component";
+import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
 
 @NgModule({
     declarations: [
@@ -34,7 +38,9 @@ import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-r
         TreeGridRowEditSampleComponent,
         TreeGridBatchEditingSampleComponent,
         TreeGridFinJSComponent,
-        TreeGridEmployeesSampleComponent
+        TreeGridEmployeesSampleComponent,
+        TreeGridSortingSampleComponent,
+        TreeGridContextmenuComponent
     ],
     imports: [
         CommonModule,
