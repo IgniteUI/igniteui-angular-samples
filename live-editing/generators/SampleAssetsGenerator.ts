@@ -82,6 +82,8 @@ import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
 import * as TreeGridRouting from "../../src/app/tree-grid/tree-grid-routing.module";
 import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
 import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
+import { GridFinjsConfigGenerator } from "../configs/GridFinjsConfigGenerator";
+import { TreeGridFinjsConfigGenerator } from "../configs/TreeGridFinjsConfigGenerator";
 import { PieChartConfigGenerator } from "./../configs/PieChartConfigGenerator";
 import { LiveEditingFile } from "./misc/LiveEditingFile";
 import { SampleDefinitionFile } from "./misc/SampleDefinitionFile";
@@ -98,10 +100,10 @@ const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerCo
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
     ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
-    ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator,
-    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, GridCRMConfigGenerator, IconConfigGenerator,
-    OverlayConfigGenerator, GaugesConfigGenerator, DragAndDropConfigGenerator,
-    InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
+    ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator, TreeGridFinjsConfigGenerator,
+    ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, GridCRMConfigGenerator,
+    GridFinjsConfigGenerator, IconConfigGenerator, OverlayConfigGenerator, GaugesConfigGenerator,
+    DragAndDropConfigGenerator, InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
     NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
     SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
