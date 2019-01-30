@@ -12,6 +12,12 @@ import {
 import {
     TreeGridColumnHidingToolbarSampleComponent
 } from "./tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
+import {
+    TreeGridColumnMovingSampleComponent
+} from "./tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
+import {
+    TreeGridColumnPinningSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
@@ -79,6 +85,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSortingSampleComponent,
         data: treeGridRoutesData["treegrid-sorting"],
         path: "treegrid-sorting"
+    },
+    {
+        component: TreeGridColumnMovingSampleComponent,
+        data: treeGridRoutesData["treegrid-column-moving"],
+        path: "treegrid-column-moving"
+    },
+    {
+        component: TreeGridColumnPinningSampleComponent,
+        data: treeGridRoutesData["treegrid-column-pinning"],
+        path: "treegrid-column-pinning"
     },
     {
         component: TreeGridFilteringSampleComponent,
