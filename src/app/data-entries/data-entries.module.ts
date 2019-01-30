@@ -8,6 +8,7 @@ import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModul
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
+import { ButtonsRoundnessComponent} from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -48,6 +49,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample5Component,
         ButtonsSample6Component,
         ButtonsSample7Component,
+        ButtonsRoundnessComponent,
         CheckboxSample1Component,
         CheckboxSample2Component,
         DropdownMenuComponent,
