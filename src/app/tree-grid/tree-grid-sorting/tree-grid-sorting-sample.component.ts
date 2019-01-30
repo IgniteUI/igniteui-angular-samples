@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { DefaultSortingStrategy, IgxGridComponent, IgxTreeGridComponent, SortingDirection } from "igniteui-angular";
+import { DefaultSortingStrategy, IgxTreeGridComponent, SortingDirection } from "igniteui-angular";
 import { FOODS_DATA } from "../data/foods";
 
 @Component({
@@ -23,7 +23,7 @@ export class TreeGridSortingSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.data = FOODS_DATA;
         this.treegrid1.sortingExpressions = [
-            { dir: SortingDirection.Asc, fieldName: "ProductName",
+            { dir: SortingDirection.Asc, fieldName: "UnitPrice",
               ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
         ];
     }

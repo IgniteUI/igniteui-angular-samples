@@ -13,6 +13,7 @@ import {
     TreeGridColumnHidingToolbarSampleComponent
 } from "./tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
+import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
@@ -78,6 +79,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSortingSampleComponent,
         data: treeGridRoutesData["treegrid-sorting"],
         path: "treegrid-sorting"
+    },
+    {
+        component: TreeGridFilteringSampleComponent,
+        data: treeGridRoutesData["treegrid-filtering"],
+        path: "treegrid-filtering"
     }
 ];
 

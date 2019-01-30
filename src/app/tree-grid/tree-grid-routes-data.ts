@@ -11,5 +11,6 @@ export const treeGridRoutesData = {
     "treegrid-column-hiding": { displayName: "TreeGrid Column Hiding", parentName: "TreeGrid" },
     "treegrid-column-hiding-toolbar": { displayName: "TreeGrid Column Hiding Toolbar", parentName: "TreeGrid" },
     "treegrid-selection": { displayName: "TreeGrid Selection", parentName: "TreeGrid" },
-    "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" }
+    "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" },
+    "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" }
 };
