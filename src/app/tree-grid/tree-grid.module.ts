@@ -38,6 +38,9 @@ import {
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
+    TreeGridMultiColumnHeadersSampleComponent
+} from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
+import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
@@ -66,7 +69,8 @@ import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-so
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnPinningSampleComponent,
         TreeGridColumnResizingSampleComponent,
-        TreeGridFilteringSampleComponent
+        TreeGridFilteringSampleComponent,
+        TreeGridMultiColumnHeadersSampleComponent
     ],
     imports: [
         CommonModule,
