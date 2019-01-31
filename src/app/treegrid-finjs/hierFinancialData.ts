@@ -1,5 +1,5 @@
 /* tslint:disable */
-import { MOCKFINANCEDATA, DATA } from "../../grid/services/financialData";
+import { MOCKFINANCEDATA, DATA } from "../grid/services/financialData";
 
 
 const Contract: any[] = [

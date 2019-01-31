@@ -89,6 +89,14 @@ export const samplesRoutes: Routes = [
         component: CardSample1Component,
         data: { displayName: "Card with Header and Content", parentName: "Card" },
         path: "card-sample-1"
+    },
+    {
+        loadChildren: "./grid-finjs/grid-finjs.module#GridFinjsModule",
+        path: "finjs-sample"
+    },
+    {
+        loadChildren: "./treegrid-finjs/treegrid-finjs.module#TreeGridFinjsModule",
+        path: "treegrid-finjs-sample"
     }
 ];
 export const appRoutes: Routes = [

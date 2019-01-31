@@ -1,11 +1,9 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
-    IgxButtonGroupComponent, IgxColumnComponent, IgxDropDownComponent,
+import { DefaultSortingStrategy, IgxButtonGroupComponent, IgxColumnComponent,
     IgxGridCellComponent, IgxGridComponent, IgxSliderComponent,
-    OverlaySettings, PositionSettings,
-    SortingDirection, VerticalAlignment} from "igniteui-angular";
+    SortingDirection} from "igniteui-angular";
 import { Observable } from "rxjs";
-import { LocalDataService } from "../services/localData.service";
+import { LocalDataService } from "./localData.service";
 
 interface IButton {
     ripple ?: string;
@@ -45,14 +43,8 @@ class Button {
 export class FinJSDemoComponent implements OnInit, AfterViewInit {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
-
     @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
-
-    @ViewChild("hidingButton") public hidingButton: ElementRef;
-    @ViewChild("pinningButton") public pinningButton: ElementRef;
-
-    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
 
     public cols: QueryList<IgxColumnComponent>;
 
