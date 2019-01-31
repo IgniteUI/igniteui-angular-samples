@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, interval, Observable} from "rxjs";
+import { BehaviorSubject, Observable} from "rxjs";
 import { FinancialData } from "./hierFinancialData";
 
 @Injectable()

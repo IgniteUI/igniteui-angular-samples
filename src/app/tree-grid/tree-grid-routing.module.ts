@@ -50,11 +50,6 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-row-edit"
     },
     {
-        component: TreeGridFinJSComponent,
-        data: treeGridRoutesData["treegrid-finjs-sample"],
-        path: "treegrid-finjs-sample"
-    },
-    {
         component: TreeGridBatchEditingSampleComponent,
         data: treeGridRoutesData["treegrid-batchediting"],
         path: "treegrid-batchediting"
