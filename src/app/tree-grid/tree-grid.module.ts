@@ -37,7 +37,6 @@ import {
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
-import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -56,7 +55,6 @@ import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-so
         TreeGridPrimaryforeignkeySampleComponent,
         TreeGridRowEditSampleComponent,
         TreeGridBatchEditingSampleComponent,
-        TreeGridFinJSComponent,
         TreeGridEmployeesSampleComponent,
         TreeGridSearchSampleComponent,
         TreeGridColumnHidingSampleComponent,
