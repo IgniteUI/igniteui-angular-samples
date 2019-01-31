@@ -35,6 +35,9 @@ import {
 import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
+import {
+    TreeGridDisplaydensitySampleComponent
+} from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
@@ -74,7 +77,8 @@ import {
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
-        TreeGridVirtualizationSampleComponent
+        TreeGridVirtualizationSampleComponent,
+        TreeGridDisplaydensitySampleComponent
     ],
     imports: [
         CommonModule,

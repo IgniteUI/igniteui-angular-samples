@@ -21,6 +21,9 @@ import {
 import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
+import {
+    TreeGridDisplaydensitySampleComponent
+} from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
@@ -118,6 +121,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridVirtualizationSampleComponent,
         data: treeGridRoutesData["tree-grid-virtualization-sample"],
         path: "tree-grid-virtualization-sample"
+    },
+    {
+        component: TreeGridDisplaydensitySampleComponent,
+        data: treeGridRoutesData["treegrid-display-density"],
+        path: "treegrid-display-density"
     }
 ];
 
