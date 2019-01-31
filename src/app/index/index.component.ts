@@ -8,6 +8,7 @@ import { dataEntriesRoutesData } from "../data-entries/data-entries-routes-data"
 import { excelLibraryRoutesData } from "../excel-library/excel-library-routes-data";
 import { gaugesRoutesData } from "../gauges/gauges-routes-data";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
+import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
 import { interactionsRoutesData } from "../interactions/interactions-routes-data";
 import { layoutsRoutesData } from "../layouts/layouts-routes-data";
@@ -18,6 +19,7 @@ import { schedulingRoutesData } from "../scheduling/scheduling-routes-data";
 import { servicesRoutesData } from "../services/services-routes-data";
 import { themingRoutesData } from "../theming/theming-routes-data";
 import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
+import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
 
 @Component({
     selector: "app-index",
@@ -113,6 +115,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "tree-grid",
             routesData: treeGridRoutesData
+        },
+        {
+            path: "finjs-sample",
+            routesData: gridfinjsRoutesData
+        },
+        {
+            path: "treegrid-finjs-sample",
+            routesData: treegridfinjsRoutesData
         }
     ];
 
