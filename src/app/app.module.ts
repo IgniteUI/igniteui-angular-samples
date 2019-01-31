@@ -17,7 +17,8 @@ import { CardSampleModule } from "./layouts/card/card-sample-1/card-sample-1.mod
         AppComponent,
         HomeComponent,
         DocsLayoutComponent,
-        IndexComponent
+        IndexComponent,
+        AppComponent
     ],
     imports: [
         AppRoutingModule,
