@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, interval, Observable} from "rxjs";
-import { FinancialData } from "./financialData";
+import { BehaviorSubject, Observable} from "rxjs";
+import { FinancialData } from "../grid/services/financialData";
 
 @Injectable()
 export class LocalDataService {

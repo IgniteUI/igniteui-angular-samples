@@ -19,7 +19,6 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
-import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -31,8 +30,7 @@ import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-r
         TreeGridChilddatakeySampleComponent,
         TreeGridPrimaryforeignkeySampleComponent,
         TreeGridRowEditSampleComponent,
-        TreeGridBatchEditingSampleComponent,
-        TreeGridFinJSComponent
+        TreeGridBatchEditingSampleComponent
     ],
     imports: [
         CommonModule,
