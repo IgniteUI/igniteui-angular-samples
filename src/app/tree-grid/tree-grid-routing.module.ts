@@ -34,6 +34,9 @@ import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-r
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
+import {
+    TreeGridVirtualizationSampleComponent
+} from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
 export const treeGridRoutes: Routes = [
     {
@@ -110,6 +113,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridMultiColumnHeadersSampleComponent,
         data: treeGridRoutesData["treegrid-multi-column-headers"],
         path: "treegrid-multi-column-headers"
+    },
+    {
+        component: TreeGridVirtualizationSampleComponent,
+        data: treeGridRoutesData["tree-grid-virtualization-sample"],
+        path: "tree-grid-virtualization-sample"
     }
 ];
 

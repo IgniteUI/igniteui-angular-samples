@@ -15,5 +15,6 @@ export const treeGridRoutesData = {
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
-    "treegrid-multi-column-headers": { displayName: "TreeGrid Multi Column Headers", parentName: "TreeGrid" }
+    "treegrid-multi-column-headers": { displayName: "TreeGrid Multi Column Headers", parentName: "TreeGrid" },
+    "tree-grid-virtualization-sample": { displayName: "TreeGrid Virtualization", parentName: "TreeGrid"}
 };
