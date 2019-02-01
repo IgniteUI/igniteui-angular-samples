@@ -1,7 +1,7 @@
 /* tslint:disable */
 export const FOODS_DATA = [
 
-    { ID: 1, ParentID: -1, Name: "Foods", UnitPrice: 0, AddedDate: new Date("2009-6-19"), Discontinued: false },
+    { ID: 1, ParentID: -1, Name: "Foods", UnitPrice: 0, AddedDate: new Date("2009-06-19"), Discontinued: false },
     { ID: 101, ParentID: 1, Name: "Chef Antons Gumbo Mix", UnitPrice: 21.35, AddedDate: new Date("2011-11-11"), Discontinued: true },
     { ID: 102, ParentID: 1, Name: "Grandmas Boysenberry Spread", UnitPrice: 25, AddedDate: new Date("2017-12-17"), Discontinued: false },
     { ID: 103, ParentID: 1, Name: "Uncle Bobs Organic Dried Pears", UnitPrice: 30, AddedDate: new Date("2016-07-17"), Discontinued: false },
@@ -16,11 +16,11 @@ export const FOODS_DATA = [
     { ID: 112, ParentID: 1, Name: "Carnarvon Tigers", UnitPrice: 62.5, AddedDate: new Date("2015-09-27"), Discontinued: false },
     { ID: 113, ParentID: 1, Name: "Teatime Chocolate Biscuits", UnitPrice: 9.2, AddedDate: new Date("2011-03-17"), Discontinued: false },
 
-    { ID: 2, ParentID: -1, Name: "Beverages", UnitPrice: 0, AddedDate: new Date("2009-6-19"), Discontinued: false },
+    { ID: 2, ParentID: -1, Name: "Beverages", UnitPrice: 0, AddedDate: new Date("2009-06-19"), Discontinued: false },
     { ID: 201, ParentID: 2, Name: "Chai", UnitPrice: 18, AddedDate: new Date("2012-02-12"), Discontinued: false },
     { ID: 202, ParentID: 2, Name: "Chang", UnitPrice: 19, AddedDate: new Date("2013-03-17"), Discontinued: false },
 
-    { ID: 3, ParentID: -1, Name: "Sauces", UnitPrice: 0, AddedDate: new Date("2009-6-19"), Discontinued: false },
+    { ID: 3, ParentID: -1, Name: "Sauces", UnitPrice: 0, AddedDate: new Date("2009-06-19"), Discontinued: false },
     { ID: 301, ParentID: 3, Name: "Aniseed Syrup", UnitPrice: 10, AddedDate: new Date("2016-03-17"), Discontinued: false },
     { ID: 302, ParentID: 3, Name: "Chef Antons Cajun Seasoning", UnitPrice: 22, AddedDate: new Date("2012-03-17"), Discontinued: true },
     { ID: 303, ParentID: 3, Name: "Northwoods Cranberry Sauce", UnitPrice: 40, AddedDate: new Date("2012-01-17"), Discontinued: false },
