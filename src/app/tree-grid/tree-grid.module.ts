@@ -49,6 +49,7 @@ import {
     TreeGridContextmenuComponent
 } from "./tree-grid-sorting/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
+import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-summary-sample.component";
 
 @NgModule({
     declarations: [
@@ -68,7 +69,8 @@ import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-so
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnPinningSampleComponent,
         TreeGridColumnResizingSampleComponent,
-        TreeGridFilteringSampleComponent
+        TreeGridFilteringSampleComponent,
+        TreeGridSummarySampleComponent
     ],
     imports: [
         CommonModule,

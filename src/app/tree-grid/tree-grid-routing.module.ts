@@ -32,6 +32,7 @@ import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-r
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
+import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-summary-sample.component";
 
 export const treeGridRoutes: Routes = [
     {
@@ -108,6 +109,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridFilteringSampleComponent,
         data: treeGridRoutesData["treegrid-filtering"],
         path: "treegrid-filtering"
+    },
+    {
+        component: TreeGridSummarySampleComponent,
+        data: treeGridRoutesData["treegrid-summary"],
+        path: "treegrid-summary"
     }
 ];
 
