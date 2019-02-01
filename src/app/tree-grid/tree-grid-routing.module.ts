@@ -22,6 +22,9 @@ import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
+    TreeGridConditionalCellStyleComponent
+} from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
+import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
@@ -44,6 +47,9 @@ import {
 import {
     TreeGridToolbarSample2Component
 } from "./tree-grid-toolbar-sample-2/tree-grid-toolbar-sample-2.component";
+import {
+    TreeGridToolbarSample3Component
+} from "./tree-grid-toolbar-sample-3/tree-grid-toolbar-sample-3.component";
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
@@ -145,9 +151,19 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-toolbar-2"
     },
     {
+        component: TreeGridToolbarSample3Component,
+        data: treeGridRoutesData["treegrid-toolbar-3"],
+        path: "treegrid-toolbar-3"
+    },
+    {
         component: TreeGridSummarySampleComponent,
         data: treeGridRoutesData["treegrid-summary"],
         path: "treegrid-summary"
+    },
+    {
+        component: TreeGridConditionalCellStyleComponent,
+        data: treeGridRoutesData["tree-grid-conditional-cell-style-sample"],
+        path: "tree-grid-conditional-cell-style-sample"
     }
 ];
 
