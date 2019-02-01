@@ -20,6 +20,7 @@ export const treeGridRoutesData = {
     "treegrid-display-density": { displayName: "TreeGrid Display Density", parentName: "TreeGrid" },
     "treegrid-toolbar-1": { displayName: "TreeGrid Toolbar 1", parentName: "TreeGrid" },
     "treegrid-toolbar-2": { displayName: "TreeGrid Toolbar 2", parentName: "TreeGrid" },
+    "treegrid-toolbar-3": { displayName: "TreeGrid Toolbar 3", parentName: "TreeGrid" },
     "treegrid-summary": { displayName: "TreeGrid Summary", parentName: "TreeGrid" },
     "tree-grid-conditional-cell-style-sample": {
         displayName: "TreeGrid Condition Cell Styling", parentName: "TreeGrid"

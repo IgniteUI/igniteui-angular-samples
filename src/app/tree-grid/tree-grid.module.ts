@@ -68,6 +68,9 @@ import {
     TreeGridToolbarSample2Component
 } from "./tree-grid-toolbar-sample-2/tree-grid-toolbar-sample-2.component";
 import {
+    TreeGridToolbarSample3Component
+} from "./tree-grid-toolbar-sample-3/tree-grid-toolbar-sample-3.component";
+import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
@@ -94,6 +97,7 @@ import {
         TreeGridDisplaydensitySampleComponent,
         TreeGridToolbarSample1Component,
         TreeGridToolbarSample2Component,
+        TreeGridToolbarSample3Component,
         TreeGridFilteringSampleComponent,
         TreeGridSummarySampleComponent,
         TreeGridConditionalCellStyleComponent
