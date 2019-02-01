@@ -4,6 +4,7 @@ import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tre
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
+import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -57,6 +58,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridVirtualizationSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Conditional Cell Style sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/food.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridConditionalCellStyleComponent],
+                ngDeclarations: [TreeGridConditionalCellStyleComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridConditionalCellStyleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
