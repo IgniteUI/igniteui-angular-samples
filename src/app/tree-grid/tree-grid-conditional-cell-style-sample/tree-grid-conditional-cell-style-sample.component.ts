@@ -15,6 +15,10 @@ export class TreeGridConditionalCellStyleComponent implements OnInit {
         this.data = FOODS_DATA;
     }
 
+    public formatDate(val: Date) {
+        return new Intl.DateTimeFormat("en-US").format(val);
+    }
+
     private upPriceCondition = (rowData: any, columnKey: any): boolean => {
         return rowData[columnKey] > 25;
     }
@@ -24,17 +28,18 @@ export class TreeGridConditionalCellStyleComponent implements OnInit {
     }
 
     private allergenCondition = (rowData: any, columnKey: any): boolean => {
-        return this.allergenItems.includes(rowData[columnKey]);
+        return this.allergenItems.indexOf(rowData[columnKey]) >= 0;
     }
 
     // tslint:disable-next-line:member-ordering
-    private priceClasses = {
+    public priceClasses = {
         downPrice: this.downPriceCondition,
         upPrice: this.upPriceCondition
+
     };
 
     // tslint:disable-next-line:member-ordering
-    private allergenClasses = {
+    public allergenClasses = {
         "allergens allergensFont": this.allergenCondition
     };
 }
