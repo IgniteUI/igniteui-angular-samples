@@ -1,11 +1,9 @@
 // tslint:disable:max-line-length
-import { IgxButtonGroupModule,  IgxButtonModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxRippleModule,
-    IgxSliderModule, IgxSwitchModule,  IgxToggleModule, IgxTreeGridModule } from "igniteui-angular";
+import { IgxTreeGridModule } from "igniteui-angular";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
-import { TreeGridFinJSComponent } from "../../src/app/tree-grid/tree-grid-finjs/tree-grid-finjs-sample.component";
-import { TreeLocalDataService } from "../../src/app/tree-grid/tree-grid-finjs/treeLocalData.service";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -50,20 +48,16 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/tree-grid/"
         }));
 
-        // TreeGrid FInJS demo component sample
+        // TreeGrid Virtualization sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-finjs/treeLocalData.service.ts",
-                "/src/app/tree-grid/tree-grid-finjs/hierFinancialData.ts"],
+            additionalFiles: ["/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, TreeGridFinJSComponent,
-                    TreeLocalDataService],
-                ngDeclarations: [TreeGridFinJSComponent],
-                ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
-                ngProviders: [TreeLocalDataService, IgxExcelExporterService]
+                imports: [IgxTreeGridModule, TreeGridVirtualizationSampleComponent],
+                ngDeclarations: [TreeGridVirtualizationSampleComponent],
+                ngImports: [IgxTreeGridModule]
             }),
-            component: TreeGridFinJSComponent
+            component: TreeGridVirtualizationSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
         }));
 
         return configs;

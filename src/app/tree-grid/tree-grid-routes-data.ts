@@ -4,7 +4,6 @@ export const treeGridRoutesData = {
     "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
     "treegrid-primaryforeignkey": { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
-    "treegrid-finjs-sample": { displayName: "TreeGrid Finance demo sample", parentName: "TreeGrid" },
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
     "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
     "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" },
@@ -16,5 +15,10 @@ export const treeGridRoutesData = {
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
+    "treegrid-multi-column-headers": { displayName: "TreeGrid Multi Column Headers", parentName: "TreeGrid" },
+    "tree-grid-virtualization-sample": { displayName: "TreeGrid Virtualization", parentName: "TreeGrid"},
+    "treegrid-display-density": { displayName: "TreeGrid Display Density", parentName: "TreeGrid" },
+    "treegrid-toolbar-1": { displayName: "TreeGrid Toolbar 1", parentName: "TreeGrid" },
+    "treegrid-toolbar-2": { displayName: "TreeGrid Toolbar 2", parentName: "TreeGrid" },
     "treegrid-summary": { displayName: "TreeGrid Summary", parentName: "TreeGrid" }
 };

@@ -21,9 +21,14 @@ import {
 import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
+import {
+    TreeGridDisplaydensitySampleComponent
+} from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
-import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
+import {
+    TreeGridMultiColumnHeadersSampleComponent
+} from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -33,6 +38,15 @@ import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-gr
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-summary-sample.component";
+import {
+    TreeGridToolbarSample1Component
+} from "./tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
+import {
+    TreeGridToolbarSample2Component
+} from "./tree-grid-toolbar-sample-2/tree-grid-toolbar-sample-2.component";
+import {
+    TreeGridVirtualizationSampleComponent
+} from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
 export const treeGridRoutes: Routes = [
     {
@@ -49,11 +63,6 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRowEditSampleComponent,
         data: treeGridRoutesData["treegrid-row-edit"],
         path: "treegrid-row-edit"
-    },
-    {
-        component: TreeGridFinJSComponent,
-        data: treeGridRoutesData["treegrid-finjs-sample"],
-        path: "treegrid-finjs-sample"
     },
     {
         component: TreeGridBatchEditingSampleComponent,
@@ -109,6 +118,31 @@ export const treeGridRoutes: Routes = [
         component: TreeGridFilteringSampleComponent,
         data: treeGridRoutesData["treegrid-filtering"],
         path: "treegrid-filtering"
+    },
+    {
+        component: TreeGridMultiColumnHeadersSampleComponent,
+        data: treeGridRoutesData["treegrid-multi-column-headers"],
+        path: "treegrid-multi-column-headers"
+    },
+    {
+        component: TreeGridVirtualizationSampleComponent,
+        data: treeGridRoutesData["tree-grid-virtualization-sample"],
+        path: "tree-grid-virtualization-sample"
+    },
+    {
+        component: TreeGridDisplaydensitySampleComponent,
+        data: treeGridRoutesData["treegrid-display-density"],
+        path: "treegrid-display-density"
+    },
+    {
+        component: TreeGridToolbarSample1Component,
+        data: treeGridRoutesData["treegrid-toolbar-1"],
+        path: "treegrid-toolbar-1"
+    },
+    {
+        component: TreeGridToolbarSample2Component,
+        data: treeGridRoutesData["treegrid-toolbar-2"],
+        path: "treegrid-toolbar-2"
     },
     {
         component: TreeGridSummarySampleComponent,

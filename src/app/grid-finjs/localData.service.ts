@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, interval, Observable} from "rxjs";
-import { FinancialData } from "./hierFinancialData";
+import { BehaviorSubject, Observable} from "rxjs";
+import { FinancialData } from "../grid/services/financialData";
 
 @Injectable()
-export class TreeLocalDataService {
+export class LocalDataService {
     public records: Observable<any[]>;
     public _records: BehaviorSubject<any[]>;
 

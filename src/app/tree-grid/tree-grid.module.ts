@@ -2,9 +2,12 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
+    IgxAvatarModule,
     IgxButtonGroupModule,
     IgxButtonModule,
+    IgxCsvExporterService,
     IgxDialogModule,
+    IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
     IgxRadioModule,
@@ -35,9 +38,14 @@ import {
 import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
+import {
+    TreeGridDisplaydensitySampleComponent
+} from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
-import { TreeGridFinJSComponent } from "./tree-grid-finjs/tree-grid-finjs-sample.component";
+import {
+    TreeGridMultiColumnHeadersSampleComponent
+} from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -50,6 +58,15 @@ import {
 } from "./tree-grid-sorting/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-summary-sample.component";
+import {
+    TreeGridToolbarSample1Component
+} from "./tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
+import {
+    TreeGridToolbarSample2Component
+} from "./tree-grid-toolbar-sample-2/tree-grid-toolbar-sample-2.component";
+import {
+    TreeGridVirtualizationSampleComponent
+} from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
 @NgModule({
     declarations: [
@@ -57,7 +74,6 @@ import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-su
         TreeGridPrimaryforeignkeySampleComponent,
         TreeGridRowEditSampleComponent,
         TreeGridBatchEditingSampleComponent,
-        TreeGridFinJSComponent,
         TreeGridEmployeesSampleComponent,
         TreeGridSearchSampleComponent,
         TreeGridColumnHidingSampleComponent,
@@ -69,6 +85,12 @@ import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-su
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnPinningSampleComponent,
         TreeGridColumnResizingSampleComponent,
+        TreeGridFilteringSampleComponent,
+        TreeGridMultiColumnHeadersSampleComponent,
+        TreeGridVirtualizationSampleComponent,
+        TreeGridDisplaydensitySampleComponent,
+        TreeGridToolbarSample1Component,
+        TreeGridToolbarSample2Component,
         TreeGridFilteringSampleComponent,
         TreeGridSummarySampleComponent
     ],
@@ -86,7 +108,9 @@ import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-su
         IgxSwitchModule,
         IgxRippleModule,
         IgxDialogModule,
-        IgxRadioModule
-    ]
+        IgxRadioModule,
+        IgxAvatarModule
+    ],
+    providers: [IgxExcelExporterService, IgxCsvExporterService]
 })
 export class TreeGridModule { }

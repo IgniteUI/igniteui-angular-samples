@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, interval, Observable} from "rxjs";
-import { FinancialData } from "./financialData";
+import { BehaviorSubject, Observable} from "rxjs";
+import { FinancialData } from "../data/hierFinancialData";
 
 @Injectable()
-export class LocalDataService {
+export class HierFinancialDataService {
     public records: Observable<any[]>;
     public _records: BehaviorSubject<any[]>;
 
