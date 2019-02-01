@@ -122,7 +122,7 @@ export const dataDisplayRoutes: Routes = [
     },
     {
         component: AutocompleteSample1Component,
-        data: { displayName: "Sample1", parentName: "Autocomplete" },
+        data: { displayName: "Remote Data", parentName: "Autocomplete" },
         path: "autocomplete-1"
     }
 ];

@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxCircularProgressBarComponent, IgxDropDownComponent } from 'igniteui-angular';
+import { Component } from "@angular/core";
+import { Subscription, timer } from "rxjs";
 import { RemoteService } from "../../../grid/services/remote.service";
 
 @Component({
@@ -8,25 +8,42 @@ import { RemoteService } from "../../../grid/services/remote.service";
     styleUrls: ["./autocomplete-sample-1.component.scss"],
     templateUrl: "./autocomplete-sample-1.component.html"
 })
-export class AutocompleteSample1Component implements OnInit {
+export class AutocompleteSample1Component {
     public data: any;
     public selectedItem: any;
-
-    @ViewChild("progressBar", { read: IgxCircularProgressBarComponent })
-    public progressBar: IgxCircularProgressBarComponent;
-
-    @ViewChild("itemsPanel", { read: IgxDropDownComponent })
-    public dropdownMenu: IgxDropDownComponent;
+    public itemFound: boolean;
+    private cancelSub: Subscription;
 
     constructor(public remoteService: RemoteService) { }
 
-    public ngOnInit(): void {
+    public onChange(): void {
+        if (this.cancelSub) {
+            this.cancelSub.unsubscribe();
+        }
+        this.cancelSub = timer(500).subscribe(() => {
+            this.fetchData(this.selectedItem);
+        });
     }
 
-    public onChange(value: any): void {
-        setTimeout(() => {
-            this.data = this.remoteService.remoteData;
-            this.remoteService.getData({ startIndex: 0, chunkSize: 5 }, value);
-        }, 2000);
+    private matchFound(term: string): boolean {
+        if (!this.data) {
+            return false;
+        }
+        if (term === "") {
+            return true;
+        }
+
+        return this.data.value.filter((p) => {
+            return p.ProductName.toLowerCase().includes(term.toLowerCase());
+        }).length > 0;
+    }
+
+    private fetchData(input: string): void {
+        // comment out the ' character because it causes errors if there are words that use it
+        const inputTerm = input.includes("'") ? input.replace(/\'/g, "''") : input;
+        this.data = this.remoteService.remoteData;
+        this.remoteService.getData({ startIndex: 0, chunkSize: 5 }, inputTerm, () => {
+            this.itemFound = this.matchFound(input);
+        });
     }
 }
