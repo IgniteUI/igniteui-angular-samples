@@ -61,6 +61,9 @@ import {
     TreeGridToolbarSample1Component
 } from "./tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
 import {
+    TreeGridToolbarSample2Component
+} from "./tree-grid-toolbar-sample-2/tree-grid-toolbar-sample-2.component";
+import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
@@ -85,7 +88,8 @@ import {
         TreeGridMultiColumnHeadersSampleComponent,
         TreeGridVirtualizationSampleComponent,
         TreeGridDisplaydensitySampleComponent,
-        TreeGridToolbarSample1Component
+        TreeGridToolbarSample1Component,
+        TreeGridToolbarSample2Component
     ],
     imports: [
         CommonModule,
