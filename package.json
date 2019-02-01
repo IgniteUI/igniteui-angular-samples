@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "serve": "ng serve -o",
-    "start": "npm-run-all -p serve generate-live-editing",
+    "start": "gulp generate-live-editing && node node_modules/@angular/cli/bin/ng serve --progress=true",
     "start:styles": "npm-run-all -p serve \"generate-live-editing -- --styles {1}\" --",
     "start:watch-live-editing": "npm-run-all -p serve watch-live-editing",
     "start:styles:watch-live-editing": "npm-run-all -p serve \"watch-live-editing -- --styles {1}\" --",
@@ -72,7 +72,6 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "node-sass": "^4.9.3",
-    "npm-run-all": "^4.1.2",
     "protractor": "^5.4.0",
     "sass.js": "0.10.13",
     "ts-node": "~4.1.0",
