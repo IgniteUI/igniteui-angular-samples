@@ -63,7 +63,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Conditional Cell Style sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/data/food.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridConditionalCellStyleComponent],
                 ngDeclarations: [TreeGridConditionalCellStyleComponent],
