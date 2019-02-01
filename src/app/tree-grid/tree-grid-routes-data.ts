@@ -17,5 +17,6 @@ export const treeGridRoutesData = {
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-headers": { displayName: "TreeGrid Multi Column Headers", parentName: "TreeGrid" },
     "tree-grid-virtualization-sample": { displayName: "TreeGrid Virtualization", parentName: "TreeGrid"},
-    "treegrid-display-density": { displayName: "TreeGrid Display Density", parentName: "TreeGrid" }
+    "treegrid-display-density": { displayName: "TreeGrid Display Density", parentName: "TreeGrid" },
+    "treegrid-toolbar-1": { displayName: "TreeGrid Toolbar 1", parentName: "TreeGrid" }
 };

@@ -2,9 +2,12 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
+    IgxAvatarModule,
     IgxButtonGroupModule,
     IgxButtonModule,
+    IgxCsvExporterService,
     IgxDialogModule,
+    IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
     IgxRadioModule,
@@ -55,6 +58,9 @@ import {
 } from "./tree-grid-sorting/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
 import {
+    TreeGridToolbarSample1Component
+} from "./tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
+import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
@@ -78,7 +84,8 @@ import {
         TreeGridFilteringSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
         TreeGridVirtualizationSampleComponent,
-        TreeGridDisplaydensitySampleComponent
+        TreeGridDisplaydensitySampleComponent,
+        TreeGridToolbarSample1Component
     ],
     imports: [
         CommonModule,
@@ -94,7 +101,9 @@ import {
         IgxSwitchModule,
         IgxRippleModule,
         IgxDialogModule,
-        IgxRadioModule
-    ]
+        IgxRadioModule,
+        IgxAvatarModule
+    ],
+    providers: [IgxExcelExporterService, IgxCsvExporterService]
 })
 export class TreeGridModule { }

@@ -38,6 +38,9 @@ import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-gr
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
 import {
+    TreeGridToolbarSample1Component
+} from "./tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
+import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
@@ -126,6 +129,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridDisplaydensitySampleComponent,
         data: treeGridRoutesData["treegrid-display-density"],
         path: "treegrid-display-density"
+    },
+    {
+        component: TreeGridToolbarSample1Component,
+        data: treeGridRoutesData["treegrid-toolbar-1"],
+        path: "treegrid-toolbar-1"
     }
 ];
 
