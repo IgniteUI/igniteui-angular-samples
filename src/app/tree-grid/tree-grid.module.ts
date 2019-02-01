@@ -44,11 +44,12 @@ import {
 import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
-import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees/tree-grid-employees-sample.component";
+import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
+import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -58,9 +59,9 @@ import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-gr
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import {
     TreeGridContextmenuComponent
-} from "./tree-grid-sorting/tree-grid-contextmenu/tree-grid-contextmenu.component";
-import { TreeGridSortingSampleComponent } from "./tree-grid-sorting/tree-grid-sorting-sample.component";
-import { TreeGridSummarySampleComponent } from "./tree-grid-summary/tree-grid-summary-sample.component";
+} from "./tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
+import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
+import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
 import {
     TreeGridToolbarSample1Component
 } from "./tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
@@ -100,7 +101,8 @@ import {
         TreeGridToolbarSample3Component,
         TreeGridFilteringSampleComponent,
         TreeGridSummarySampleComponent,
-        TreeGridConditionalCellStyleComponent
+        TreeGridConditionalCellStyleComponent,
+        TreeGridPagingSampleComponent
     ],
     imports: [
         CommonModule,

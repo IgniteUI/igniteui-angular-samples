@@ -1,0 +1,43 @@
+<div class="grid__wrapper">
+
+  <igx-tree-grid #treegrid1 [data]="data" [paging]="true" [perPage]="10" [paginationTemplate]="pager" height="500px" width="100%" displayDensity="cosy"
+    primaryKey="ID" foreignKey="ParentID">
+    <igx-column field="ID" header="Product ID" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="Name" header="Product Name" [dataType]="'string'">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'">
+        <ng-template igxCell let-cell="cell" let-val>
+            <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
+            <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
+        </ng-template>
+    </igx-column>
+    <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [formatter]="formatDate">
+    </igx-column>
+    <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+        <ng-template igxCell let-cell="cell" let-val>
+            <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
+            <img *ngIf="cell.row.rowData.UnitPrice != 0 && val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+            <img *ngIf="cell.row.rowData.UnitPrice != 0 && !val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+        </ng-template>
+    </igx-column>
+  </igx-tree-grid>
+
+  <ng-template #pager let-grid>
+      <div *ngIf="grid.paging && grid.totalPages > 0" class="igx-paginator">
+          <button [disabled]="grid.isFirstPage" (click)="grid.paginate(0)" igxButton="icon" igxRipple igxRippleCentered="true">
+              <igx-icon>first_page</igx-icon>
+          </button>
+          <button [disabled]="grid.isFirstPage" (click)="grid.previousPage()" igxButton="icon" igxRipple igxRippleCentered="true">
+              <igx-icon>chevron_left</igx-icon>
+          </button>
+          <span>{{ grid.page + 1 }} of {{ grid.totalPages }}</span>
+          <button [disabled]="grid.isLastPage" (click)="grid.nextPage()" igxRipple igxRippleCentered="true" igxButton="icon">
+              <igx-icon>chevron_right</igx-icon>
+          </button>
+          <button [disabled]="grid.isLastPage" (click)="grid.paginate(grid.totalPages - 1)" igxButton="icon" igxRipple igxRippleCentered="true">
+              <igx-icon>last_page</igx-icon>
+          </button>
+      </div>
+  </ng-template>
+</div>

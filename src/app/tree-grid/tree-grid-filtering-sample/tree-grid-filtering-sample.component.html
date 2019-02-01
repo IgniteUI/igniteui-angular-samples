@@ -6,11 +6,11 @@
     </div>
     <igx-tree-grid #treegrid1 [data]="data" [autoGenerate]="false" height="480px" width="100%" [allowFiltering]="true"
         primaryKey="ID" foreignKey="ParentID">
-        <igx-column field="ID" header="Product ID" [dataType]="'string'" >
+        <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
-        <igx-column field="Name" header="Product Name" [dataType]="'string'" >
+        <igx-column field="Name" header="Product Name" [dataType]="'string'">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'" >
+        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
                 <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
