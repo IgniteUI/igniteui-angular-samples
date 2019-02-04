@@ -1,0 +1,18 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="sample-column">
+            <h5>Indeterminate</h5>
+            <div class="circular-container">
+                <igx-circular-bar [animate]="false" [indeterminate]="isDeterminated" [textVisibility]="false"></igx-circular-bar>
+            </div>
+        </article>
+    </section>
+    <section class="sample-content">
+        <div class="button-container">
+            <p>Press the button to<span *ngIf="isRunning"> stop</span><span *ngIf="!isRunning"> start</span></p>
+            <button igxButton="fab" igxButtonBackground="#333" igxRipple="white" (click)="toggle()">
+                <igx-icon fontSet="material">{{changeIcon()}}</igx-icon>
+            </button>
+        </div>
+    </section>
+</div>

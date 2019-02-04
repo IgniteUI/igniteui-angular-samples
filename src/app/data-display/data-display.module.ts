@@ -14,6 +14,8 @@ import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.com
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
 import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
+// tslint:disable-next-line:max-line-length
+import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DataDisplayRoutingModule } from "./data-display-routing.module";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
@@ -63,6 +65,7 @@ import {
         MaskSample5Component,
         TextHighlightSample1Component,
         TextHighlightSample2Component,
+        CircularIndeterminateProgressbarComponent,
         AutocompleteSample1Component
     ],
     imports: [

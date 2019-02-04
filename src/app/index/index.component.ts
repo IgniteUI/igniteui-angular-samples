@@ -2,22 +2,24 @@ import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
-import { chartsRoutes } from "../charts/charts-routing.module";
-import { dataDisplayRoutes } from "../data-display/data-display-routing.module";
-import { dataEntriesRoutes } from "../data-entries/data-entries-routing.module";
-import { excelLibraryRoutes } from "../excel-library/excel-library-routing.module";
-import { gaugesRoutes } from "../gauges/gauges-routing.module";
-import { gridcrmRoutes } from "../grid-crm/grid-crm-routing.module";
-import { gridsRoutes } from "../grid/grids-routing.module";
-import { interactionsRoutes } from "../interactions/interactions-routing.module";
-import { layoutsRoutes } from "../layouts/layouts-routing.module";
-import { listsRoutes } from "../lists/lists-routing.module";
-import { menusRoutes } from "../menus/menus-routing.module";
-import { notificationsRoutes } from "../notifications/notifications-routing.module";
-import { schedulingRoutes } from "../scheduling/scheduling-routing.module";
-import { servicesRoutes } from "../services/services-routing.module";
-import { themingRoutes } from "../theming/theming-routing.module";
-import { treeGridRoutes } from "../tree-grid/tree-grid-routing.module";
+import { chartsRoutesData } from "../charts/charts-routes-data";
+import { dataDisplayRoutesData } from "../data-display/data-display-routes-data";
+import { dataEntriesRoutesData } from "../data-entries/data-entries-routes-data";
+import { excelLibraryRoutesData } from "../excel-library/excel-library-routes-data";
+import { gaugesRoutesData } from "../gauges/gauges-routes-data";
+import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
+import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
+import { gridsRoutesData } from "../grid/grid-routes-data";
+import { interactionsRoutesData } from "../interactions/interactions-routes-data";
+import { layoutsRoutesData } from "../layouts/layouts-routes-data";
+import { listsRoutesData } from "../lists/lists-routes-data";
+import { menusRoutesData } from "../menus/menus-routes-data";
+import { notificationsRoutesData } from "../notifications/notifications-routes-data";
+import { schedulingRoutesData } from "../scheduling/scheduling-routes-data";
+import { servicesRoutesData } from "../services/services-routes-data";
+import { themingRoutesData } from "../theming/theming-routes-data";
+import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
+import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
 
 @Component({
     selector: "app-index",
@@ -52,68 +54,75 @@ export class IndexComponent implements OnInit, AfterViewInit {
     private modulesRoutes = [
         {
             path: "data-display",
-            routes: dataDisplayRoutes
+            routesData: dataDisplayRoutesData
         },
         {
             path: "data-entries",
-            routes: dataEntriesRoutes
+            routesData: dataEntriesRoutesData
         },
         {
             path: "excel-library",
-            routes: excelLibraryRoutes
+            routesData: excelLibraryRoutesData
         },
         {
             path: "gauges",
-            routes: gaugesRoutes
+            routesData: gaugesRoutesData
         },
         {
             path: "notifications",
-            routes: notificationsRoutes
+            routesData: notificationsRoutesData
         },
         {
             path: "charts",
-            routes: chartsRoutes
+            routesData: chartsRoutesData
         },
         {
             path: "theming",
-            routes: themingRoutes
+            routesData: themingRoutesData
         },
         {
             path: "menus",
-            routes: menusRoutes
+            routesData: menusRoutesData
         },
         {
             path: "lists",
-            routes: listsRoutes
+            routesData: listsRoutesData
         },
         {
             path: "interactions",
-            routes: interactionsRoutes
+            routesData: interactionsRoutesData
         },
         {
             path: "scheduling",
-            routes: schedulingRoutes
+            routesData: schedulingRoutesData
         },
         {
             path: "layouts",
-            routes: layoutsRoutes
+            routesData: layoutsRoutesData
         },
         {
             path: "services",
-            routes: servicesRoutes
+            routesData: servicesRoutesData
         },
         {
             path: "grid",
-            routes: gridsRoutes
+            routesData: gridsRoutesData
         },
         {
             path: "grid-crm",
-            routes: gridcrmRoutes
-        }
-        ,
+            routesData: gridcrmRoutesData
+        },
         {
             path: "tree-grid",
-            routes: treeGridRoutes
+            routesData: treeGridRoutesData
+        },
+        {
+            path: "finjs-sample",
+            routesData: gridfinjsRoutesData
+        },
+        {
+            path: "treegrid-finjs-sample",
+            routesData: treegridfinjsRoutesData
         }
     ];
 
@@ -222,9 +231,15 @@ export class IndexComponent implements OnInit, AfterViewInit {
         });
 
         modulesRoutes.forEach((moduleRoutes: any) => {
-            moduleRoutes.routes.forEach((route: Route) => {
+            // tslint:disable-next-line:forin
+            for (const key in moduleRoutes.routesData) {
+                const route: Route = {
+                    data: moduleRoutes.routesData[key],
+                    path: key === "empty-path" ? "" : key
+                };
+
                 pushRoute(route, basePath + "/" + moduleRoutes.path);
-            });
+            }
         });
 
         return routes;
