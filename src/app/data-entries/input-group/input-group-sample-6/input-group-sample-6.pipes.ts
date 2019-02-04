@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({ name: "movieContains" })
-export class IgxAutocompletePipeContains implements PipeTransform {
+export class AutocompletePipeContains implements PipeTransform {
 
     public transform = (movies: string[], term = "") => this.filterMovies(movies, term);
 
@@ -11,7 +11,7 @@ export class IgxAutocompletePipeContains implements PipeTransform {
 }
 
 @Pipe({ name: "genreContains" })
-export class IgxAutocompleteGenrePipeContains extends IgxAutocompletePipeContains {
+export class AutocompleteGenrePipeContains extends AutocompletePipeContains {
 
     public transform = (genres: any[], term = "") => this.filterGenres(genres, term);
 

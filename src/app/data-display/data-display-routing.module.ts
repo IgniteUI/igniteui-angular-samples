@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AutocompleteSample1Component } from "./autocomplete/autocomplete-sample-1/autocomplete-sample-1.component";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
@@ -127,11 +126,6 @@ export const dataDisplayRoutes: Routes = [
         component: TextHighlightSample2Component,
         data: dataDisplayRoutesData["text-highlight-2"],
         path: "text-highlight-2"
-    },
-    {
-        component: AutocompleteSample1Component,
-        data: { displayName: "Remote Data", parentName: "Autocomplete" },
-        path: "autocomplete-1"
     }
 ];
 

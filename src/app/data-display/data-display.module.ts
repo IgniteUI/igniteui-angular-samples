@@ -2,14 +2,11 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAutocompleteModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxChipsModule,
+    IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxChipsModule,
     IgxDropDownModule, IgxFilterModule, IgxForOfModule, IgxIconModule, IgxInputGroupModule,
     IgxListModule, IgxMaskModule, IgxProgressBarModule, IgxRippleModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTextHighlightModule, IgxToastModule
 } from "igniteui-angular";
-import {
-    AutocompleteSample1Component
-} from "./autocomplete/autocomplete-sample-1/autocomplete-sample-1.component";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
@@ -65,14 +62,12 @@ import {
         MaskSample5Component,
         TextHighlightSample1Component,
         TextHighlightSample2Component,
-        CircularIndeterminateProgressbarComponent,
-        AutocompleteSample1Component
+        CircularIndeterminateProgressbarComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         DataDisplayRoutingModule,
-        IgxAutocompleteModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxListModule,

@@ -4,11 +4,11 @@ import { RemoteService } from "../../../grid/services/remote.service";
 
 @Component({
     providers: [RemoteService],
-    selector: "autocomplete-1",
-    styleUrls: ["./autocomplete-sample-1.component.scss"],
-    templateUrl: "./autocomplete-sample-1.component.html"
+    selector: "autocomplete-remote",
+    styleUrls: ["./autocomplete-remote.component.scss"],
+    templateUrl: "./autocomplete-remote.component.html"
 })
-export class AutocompleteSample1Component {
+export class AutocompleteRemote {
     public data: any;
     public selectedItem: any;
     public itemFound: boolean;

@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component } from "@angular/core";
-import { IgxAutocompleteGenrePipeContains } from "./input-group-sample-6.pipes";
+import { AutocompleteGenrePipeContains } from "./input-group-sample-6.pipes";
 @Component({
-    providers: [IgxAutocompleteGenrePipeContains],
+    providers: [AutocompleteGenrePipeContains],
     selector: "app-input-group-sample-6",
     styleUrls: ["./input-group-sample-6.component.scss"],
     templateUrl: "./input-group-sample-6.component.html"
@@ -33,7 +33,7 @@ export class InputGroupSample6Component {
         { type: "Thriller" , movies: ["The Usual Suspects"]},
         { type: "Western" , movies: ["Django Unchained"]}];
 
-    constructor(private pipe: IgxAutocompleteGenrePipeContains, private cdr: ChangeDetectorRef) { }
+    constructor(private pipe: AutocompleteGenrePipeContains, private cdr: ChangeDetectorRef) { }
     public onDateSelection(value) {
         this.user.dateTime.setDate((value as Date).getDate());
     }

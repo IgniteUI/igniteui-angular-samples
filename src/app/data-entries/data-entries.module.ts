@@ -3,8 +3,10 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
     IgxDatePickerModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
-    IgxNavbarModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule,
+    IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule,
     IgxTimePickerModule, IgxToggleModule} from "igniteui-angular";
+import { CircularProgressbarComponent } from "../data-display/circular-progressbar/circular-progressbar.component";
+import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -29,7 +31,7 @@ import { InputGroupSample3Component } from "./input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
-import { IgxAutocompleteGenrePipeContains, IgxAutocompletePipeContains
+import { AutocompleteGenrePipeContains, AutocompletePipeContains
     } from "./input-group/input-group-sample-6/input-group-sample-6.pipes";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
@@ -40,6 +42,9 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
 
 @NgModule({
     declarations: [
+        AutocompleteRemote,
+        AutocompletePipeContains,
+        AutocompleteGenrePipeContains,
         ButtonGroupSample1Component,
         ButtonGroupSample2Component,
         ButtonGroupSample3Component,
@@ -52,6 +57,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample7Component,
         CheckboxSample1Component,
         CheckboxSample2Component,
+        CircularProgressbarComponent,
         DropdownMenuComponent,
         DropDownSample1Component,
         DropDownSample2Component,
@@ -68,9 +74,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         RadioSample1Component,
         RadioSample2Component,
         SwitchSample1Component,
-        SwitchSample2Component,
-        IgxAutocompletePipeContains,
-        IgxAutocompleteGenrePipeContains
+        SwitchSample2Component
     ],
     imports: [
         CommonModule,
@@ -91,7 +95,8 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         IgxDatePickerModule,
         IgxTimePickerModule,
         IgxRadioModule,
-        IgxSwitchModule
+        IgxSwitchModule,
+        IgxProgressBarModule
     ]
 })
 export class DataEntriesModule { }
