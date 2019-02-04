@@ -1,8 +1,22 @@
 <div class="sample-wrapper">
     <section class="sample-content">
         <article class="sample-column">
-            <form class="input-group-form">
+            <form class="input-group-form" (submit)="onSubmit()">
                 <h4 class="sample-title">Book your movie ticket</h4>
+                <igx-input-group>
+                    <igx-suffix igxRipple><igx-icon fontSet="material">local_movies</igx-icon> </igx-suffix>
+                    <input igxInput name="movies" type="text" [(ngModel)]="user.movie" (ngModelChange)="onMovieInputChange($event)" required
+                        [igxAutocomplete]='moviesPanel'/>
+                    <label igxLabel for="towns">Movie</label>
+                </igx-input-group>
+                <igx-drop-down #moviesPanel maxHeight="500px">
+                    <igx-drop-down-item-group *ngFor="let genre of genres | genreContains:user.movie" [label]="genre.type">
+                        <igx-drop-down-item *ngFor="let movie of genre.movies | movieContains:user.movie" [value]="movie">
+                            {{movie}}
+                        </igx-drop-down-item>
+                    </igx-drop-down-item-group>
+                    <div *ngIf="noMovie" class="igx-drop-down__item" >No movies that match search criteria</div>
+                </igx-drop-down>
                 <igx-input-group>
                     <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName" required="required" />
                     <label igxLabel for="fullName">Full Name</label>
@@ -27,15 +41,14 @@
                     </igx-suffix>
                 </igx-input-group>
                 <div class="igx-combo">
-                    <igx-combo #combo1 name="genres" class="input-container" width="100%" [itemsMaxHeight]="130" [data]="genres"
-                        [(ngModel)]="user.genres" placeholder="Select your favorite genres" searchPlaceholder="Search..."
-                        required [type]='"line"'>
+                    <igx-combo name="genres" class="input-container" width="100%" [itemsMaxHeight]="130"
+                        [data]="genres" [valueKey]="'type'" [displayKey]="'type'" [(ngModel)]="user.genres" 
+                        placeholder="Select your favorite genres" searchPlaceholder="Search..." required [type]='"line"'>
                     </igx-combo>
                 </div>
-                <div class="igx-datePicker">
-                    <igx-date-picker name="date" (onSelection)="onDateSelection($event)">
-                        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value"
-                            let-displayData="displayData">
+                <div class="igx-date-picker">
+                    <igx-date-picker name="date" (onSelection)="onDateSelection($event)" >
+                        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
                             <igx-input-group (click)="openDialog()">
                                 <label igxLabel>Date </label>
                                 <input igxInput [value]="displayData" />
@@ -47,9 +60,8 @@
                     </igx-date-picker>
                 </div>
                 <div class="igx-timePicker">
-                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)">
-                        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value"
-                            let-displayTime="displayTime">
+                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" >
+                        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
                             <igx-input-group (click)="openDialog()">
                                 <label igxLabel>Time </label>
                                 <input igxInput [value]="displayTime" />

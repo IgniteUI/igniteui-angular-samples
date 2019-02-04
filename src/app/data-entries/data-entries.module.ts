@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
+import { IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
     IgxDatePickerModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
     IgxNavbarModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule,
     IgxTimePickerModule, IgxToggleModule} from "igniteui-angular";
@@ -29,6 +29,8 @@ import { InputGroupSample3Component } from "./input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
+import { IgxAutocompleteGenrePipeContains, IgxAutocompletePipeContains
+    } from "./input-group/input-group-sample-6/input-group-sample-6.pipes";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
@@ -66,13 +68,16 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         RadioSample1Component,
         RadioSample2Component,
         SwitchSample1Component,
-        SwitchSample2Component
+        SwitchSample2Component,
+        IgxAutocompletePipeContains,
+        IgxAutocompleteGenrePipeContains
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
         DataEntriesRoutingModule,
+        IgxAutocompleteModule,
         IgxButtonGroupModule,
         IgxButtonModule,
         IgxIconModule,
