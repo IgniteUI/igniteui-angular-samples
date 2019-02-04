@@ -7,6 +7,7 @@ import { IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckb
     IgxTimePickerModule, IgxToggleModule} from "igniteui-angular";
 import { CircularProgressbarComponent } from "../data-display/circular-progressbar/circular-progressbar.component";
 import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
+import { AutocompleteBasic } from "./autocomplete/autocomplete/autocomplete.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -31,9 +32,8 @@ import { InputGroupSample3Component } from "./input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
-import { AutocompleteGenrePipeContains, AutocompletePipeContains
-    } from "./input-group/input-group-sample-6/input-group-sample-6.pipes";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
+import { AutocompleteGenrePipeContains, AutocompletePipeContains, AutocompletePipeStartsWith } from "./pipes/pipes";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
@@ -42,8 +42,10 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
 
 @NgModule({
     declarations: [
+        AutocompleteBasic,
         AutocompleteRemote,
         AutocompletePipeContains,
+        AutocompletePipeStartsWith,
         AutocompleteGenrePipeContains,
         ButtonGroupSample1Component,
         ButtonGroupSample2Component,

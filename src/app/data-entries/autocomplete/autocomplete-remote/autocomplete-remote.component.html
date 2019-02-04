@@ -1,16 +1,25 @@
-<igx-input-group>
-    <input igxInput #inputField name="items" type="text" required [igxAutocomplete]='itemsPanel' [(ngModel)]="selectedItem"
-        (ngModelChange)="onChange()" />
-    <label igxLabel for="items">Products</label>
-</igx-input-group>
-<igx-drop-down #itemsPanel>
-    <igx-drop-down-item *ngFor="let item of data | async" [value]="item.ProductName">
-        {{item.ProductName}}
-    </igx-drop-down-item>
-    <div class='progress-container' *ngIf="!data">
-        <igx-circular-bar class="circular-progress" [indeterminate]="true"></igx-circular-bar>
-    </div>
-    <igx-drop-down-item *ngIf="data && !itemFound">
-        <span>No items found</span>
-    </igx-drop-down-item>
-</igx-drop-down>
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="sample-column">
+            <form class="input-group-form">
+                <igx-input-group>
+                    <input igxInput #inputField name="items" type="text" [igxAutocomplete]='itemsPanel' [(ngModel)]="selectedItem"
+                        (ngModelChange)="onChange()" />
+                    <label igxLabel for="items">Products</label>
+                    <igx-suffix igxRipple><igx-icon fontSet="material" (click)="selectedItem = ''">clear</igx-icon></igx-suffix>
+                </igx-input-group>
+                <igx-drop-down #itemsPanel>
+                    <igx-drop-down-item *ngFor="let item of data | async" [value]="item.ProductName">
+                        {{item.ProductName}}
+                    </igx-drop-down-item>
+                    <div class='progress-container' *ngIf="!data">
+                        <igx-circular-bar class="circular-progress" [indeterminate]="true"></igx-circular-bar>
+                    </div>
+                    <igx-drop-down-item *ngIf="data && !itemFound">
+                        <span>No items found</span>
+                    </igx-drop-down-item>
+                </igx-drop-down>
+            </form>
+        </article>
+    </section>
+</div>

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component } from "@angular/core";
-import { AutocompleteGenrePipeContains } from "./input-group-sample-6.pipes";
+import { AutocompleteGenrePipeContains } from "../../pipes/pipes";
 @Component({
     providers: [AutocompleteGenrePipeContains],
     selector: "app-input-group-sample-6",
