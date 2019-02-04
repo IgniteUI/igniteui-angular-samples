@@ -49,7 +49,7 @@ export class TreeGridEditingSampleComponent implements OnInit {
     }
 
     public openDialog(parentID) {
-        this.employee.ParentID = parentID ? parentID : -1;
+        this.employee.ParentID = parentID;
         this.dialog.open();
     }
 
