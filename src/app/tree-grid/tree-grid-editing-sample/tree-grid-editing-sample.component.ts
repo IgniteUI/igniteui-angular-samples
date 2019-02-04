@@ -38,7 +38,7 @@ export class TreeGridEditingSampleComponent implements OnInit {
     @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
     @ViewChild("dialogAdd", { read: IgxDialogComponent }) public dialog: IgxDialogComponent;
     public employee: Employee;
-    private nextRow = 1;
+    private nextRow: number;
 
     constructor() {
     }
@@ -46,6 +46,7 @@ export class TreeGridEditingSampleComponent implements OnInit {
     public ngOnInit(): void {
         this.data = EMPLOYEE_FLAT_DATA();
         this.employee = new Employee();
+        this.nextRow = this.data.length + 1;
     }
 
     public openDialog(parentID) {
@@ -54,7 +55,7 @@ export class TreeGridEditingSampleComponent implements OnInit {
     }
 
     public addRow() {
-        this.employee.ID = this.data.length + this.nextRow++;
+        this.employee.ID = this.nextRow++;
 
         if (this.employee.ParentID === -1) {
             this.treeGrid.addRow(this.employee);
