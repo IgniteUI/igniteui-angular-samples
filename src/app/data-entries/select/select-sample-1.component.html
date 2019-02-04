@@ -1,0 +1,7 @@
+<igx-select #sekect [width]="'260px'" [placeholder]="'Pick One'">
+    <label igxLabel>Simple Select</label>
+    <igx-select-item>None</igx-select-item>
+    <igx-select-item *ngFor="let item of items" [value]="item.field">
+        {{item.field}}
+    </igx-select-item>
+</igx-select>

@@ -28,6 +28,7 @@ import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/react
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
+import { SelectSample1Component } from "./select/select-sample-1.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
 
@@ -176,6 +177,11 @@ export const dataEntriesRoutes: Routes = [
         component: SwitchSample2Component,
         data: dataEntriesRoutesData["switch-sample-2"],
         path: "switch-sample-2"
+    },
+    {
+        component: SelectSample1Component,
+        data: dataEntriesRoutesData["select-sample-1"],
+        path: "select-sample-1"
     }
 ];
 
