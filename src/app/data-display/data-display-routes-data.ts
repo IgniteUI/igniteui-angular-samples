@@ -6,6 +6,8 @@ export const dataDisplayRoutesData = {
     "badge-sample-3": { displayName: "Badge for List Items", parentName: "Badge" },
     "chip-sample": { displayName: "Chip Overview", parentName: "Chip" },
     "circular-progressbar": { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
+    // tslint:disable-next-line:max-line-length
+    "circular-indeterminate-progressbar": { displayName: "Circular Indeterminate Progressbar", parentName: "Circular Progressbar" },
     "icon-sample-1": { displayName: "Simple Icons", parentName: "Icon" },
     "svg-icon-sample": { displayName: "SVG Icons", parentName: "Icon" },
     "igx-for-sample-1": { displayName: "List with igxFor directive", parentName: "For" },
