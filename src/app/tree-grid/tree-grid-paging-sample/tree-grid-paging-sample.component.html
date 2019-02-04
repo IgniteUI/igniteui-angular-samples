@@ -12,7 +12,7 @@
             <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
         </ng-template>
     </igx-column>
-    <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [formatter]="formatDate">
+    <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
     </igx-column>
     <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
         <ng-template igxCell let-cell="cell" let-val>
