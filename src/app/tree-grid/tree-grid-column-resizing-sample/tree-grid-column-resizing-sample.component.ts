@@ -15,7 +15,7 @@ export class TreeGridColumnResizingSampleComponent {
     public nWidth: string;
 
     constructor() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED;
+        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
     }
 
     public onResize(event) {

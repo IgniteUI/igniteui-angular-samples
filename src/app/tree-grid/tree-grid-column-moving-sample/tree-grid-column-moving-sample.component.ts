@@ -13,7 +13,7 @@ export class TreeGridColumnMovingSampleComponent {
     @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
 
     constructor() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED;
+        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
     }
 
     public toggleColumnPinning(column: IgxColumnComponent) {

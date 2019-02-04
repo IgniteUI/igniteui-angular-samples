@@ -41,7 +41,7 @@ export class TreeGridDisplaydensitySampleComponent implements OnInit {
     public numberSummaries = CustomNumberSummary;
 
     public ngOnInit() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED;
+        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
         this.displayDensities = [
             {
                 label: "compact",

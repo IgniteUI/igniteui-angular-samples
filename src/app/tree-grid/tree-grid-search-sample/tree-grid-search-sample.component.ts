@@ -16,7 +16,7 @@ export class TreeGridSearchSampleComponent implements OnInit {
     public exactMatch: boolean = false;
 
     public ngOnInit(): void {
-        this.data = EMPLOYEE_FLAT_DATA;
+        this.data = EMPLOYEE_FLAT_DATA();
     }
 
     public clearSearch() {

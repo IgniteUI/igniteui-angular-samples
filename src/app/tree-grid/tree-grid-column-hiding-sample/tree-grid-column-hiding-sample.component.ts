@@ -13,6 +13,6 @@ export class TreeGridColumnHidingSampleComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED;
+        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
     }
 }

@@ -19,7 +19,7 @@ export class TreeGridToolbarSample2Component implements OnInit {
     public data: any[];
 
     public ngOnInit() {
-        this.data = EMPLOYEE_FLAT_AVATARS_DATA;
+        this.data = EMPLOYEE_FLAT_AVATARS_DATA();
     }
 
     public toolbarExportingHandler(args: IGridToolbarExportEventArgs) {

@@ -11,7 +11,7 @@ export class TreeGridMultiColumnHeadersSampleComponent {
 
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent })
     public treeGrid: IgxTreeGridComponent;
-    public data = EMPLOYEE_FLAT_DATA_DETAILED;
+    public data = EMPLOYEE_FLAT_DATA_DETAILED();
 
     public pinUnpinGroup() {
         const firstColumnGroup = this.treeGrid.columnList.filter((c) => c.header === "General Information")[0];

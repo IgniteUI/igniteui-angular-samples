@@ -1,4 +1,4 @@
-export const EMPLOYEE_FLAT_DATA_DETAILED = [
+export const EMPLOYEE_FLAT_DATA_DETAILED = () => ([
     {
         Address: "Obere Str. 57",
         Age: 55,
@@ -251,4 +251,4 @@ export const EMPLOYEE_FLAT_DATA_DETAILED = [
         PostalCode: "WX3 6FW",
         Title: "Localization Intern"
     }
-];
+]);
