@@ -16,7 +16,7 @@ export class TreeGridSelectionSampleComponent implements OnInit {
     constructor() { }
 
     public ngOnInit(): void {
-        this.data = EMPLOYEE_FLAT_DATA;
+        this.data = EMPLOYEE_FLAT_DATA();
     }
 
     public handleRowSelection(event) {

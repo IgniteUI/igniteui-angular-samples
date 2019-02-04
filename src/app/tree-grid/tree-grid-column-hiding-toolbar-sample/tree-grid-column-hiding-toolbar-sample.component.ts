@@ -15,7 +15,7 @@ export class TreeGridColumnHidingToolbarSampleComponent implements OnInit, After
     constructor() { }
 
     public ngOnInit() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED;
+        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
     }
 
     public ngAfterViewInit() {

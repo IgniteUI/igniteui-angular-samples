@@ -1,4 +1,4 @@
-export const EMPLOYEE_FLAT_DATA = [
+export const EMPLOYEE_FLAT_DATA = () => ([
     {
         Age: 55,
         HireDate: new Date(2008, 3, 20),
@@ -143,4 +143,4 @@ export const EMPLOYEE_FLAT_DATA = [
         ParentID: 7,
         Title: "Localization Intern"
     }
-];
+]);

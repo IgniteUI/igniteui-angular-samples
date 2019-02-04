@@ -1,4 +1,4 @@
-export const EMPLOYEE_FLAT_AVATARS_DATA = [
+export const EMPLOYEE_FLAT_AVATARS_DATA = () => ([
     {
         Age: 55,
         Avatar: "assets/images/men/5.jpg",
@@ -161,4 +161,4 @@ export const EMPLOYEE_FLAT_AVATARS_DATA = [
         ParentID: 7,
         Title: "Localization Intern"
     }
-];
+]);
