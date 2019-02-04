@@ -4,6 +4,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2008, 3, 20),
         ID: 1,
         Name: "Johnathan Winchester",
+        OnPTO: false,
         ParentID: -1,
         Title: "Development Manager"
     },
@@ -12,6 +13,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2014, 1, 22),
         ID: 4,
         Name: "Ana Sanders",
+        OnPTO: true,
         ParentID: -1,
         Title: "CEO"
     },
@@ -20,6 +22,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2014, 1, 22),
         ID: 18,
         Name: "Victoria Lincoln",
+        OnPTO: true,
         ParentID: -1,
         Title: "Accounting Manager"
     },
@@ -28,6 +31,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2010, 1, 1),
         ID: 10,
         Name: "Yang Wang",
+        OnPTO: false,
         ParentID: -1,
         Title: "Localization Manager"
     },
@@ -36,6 +40,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2011, 6, 3),
         ID: 3,
         Name: "Michael Burke",
+        OnPTO: true,
         ParentID: 1,
         Title: "Senior Software Developer"
     },
@@ -44,6 +49,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2009, 6, 19),
         ID: 2,
         Name: "Thomas Anderson",
+        OnPTO: false,
         ParentID: 1,
         Title: "Senior Software Developer"
     },
@@ -52,6 +58,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2014, 8, 18),
         ID: 11,
         Name: "Monica Reyes",
+        OnPTO: false,
         ParentID: 1,
         Title: "Software Development Team Lead"
     },
@@ -60,6 +67,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2015, 9, 17),
         ID: 6,
         Name: "Roland Mendel",
+        OnPTO: false,
         ParentID: 11,
         Title: "Senior Software Developer"
     },
@@ -68,6 +76,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2009, 10, 11),
         ID: 12,
         Name: "Sven Cooper",
+        OnPTO: true,
         ParentID: 11,
         Title: "Senior Software Developer"
     },
@@ -76,6 +85,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2014, 4, 4),
         ID: 14,
         Name: "Laurence Johnson",
+        OnPTO: false,
         ParentID: 4,
         Title: "Director"
     },
@@ -84,6 +94,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2017, 11, 9),
         ID: 5,
         Name: "Elizabeth Richards",
+        OnPTO: true,
         ParentID: 4,
         Title: "Vice President"
     },
@@ -92,6 +103,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2010, 3, 22),
         ID: 13,
         Name: "Trevor Ashworth",
+        OnPTO: true,
         ParentID: 5,
         Title: "Director"
     },
@@ -100,6 +112,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2014, 4, 4),
         ID: 17,
         Name: "Antonio Moreno",
+        OnPTO: false,
         ParentID: 18,
         Title: "Senior Accountant"
     },
@@ -108,6 +121,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2007, 11, 18),
         ID: 7,
         Name: "Pedro Rodriguez",
+        OnPTO: false,
         ParentID: 10,
         Title: "Senior Localization Developer"
     },
@@ -116,6 +130,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2016, 2, 19),
         ID: 8,
         Name: "Casey Harper",
+        OnPTO: true,
         ParentID: 10,
         Title: "Senior Localization"
     },
@@ -124,6 +139,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2017, 11, 9),
         ID: 15,
         Name: "Patricia Simpson",
+        OnPTO: false,
         ParentID: 7,
         Title: "Localization Intern"
     },
@@ -132,6 +148,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2010, 3, 22),
         ID: 9,
         Name: "Francisco Chang",
+        OnPTO: false,
         ParentID: 7,
         Title: "Localization Intern"
     },
@@ -140,6 +157,7 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         HireDate: new Date(2018, 3, 18),
         ID: 16,
         Name: "Peter Lewis",
+        OnPTO: true,
         ParentID: 7,
         Title: "Localization Intern"
     }
