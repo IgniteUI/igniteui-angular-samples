@@ -3,7 +3,6 @@
 // tslint:disable:no-implicit-dependencies
 import * as fs from "fs";
 import * as path from "path";
-import * as Collections from "typescript-collections";
 import { DependenciesType } from "./DependenciesType";
 
 const PACKAGES_CONFIG_PATH = path.join(__dirname, "../../package.json");
@@ -74,54 +73,54 @@ const EXACT_VERSION_PACKAGES = [
 ];
 
 export class DependencyResolver {
-    private _defaultDependencies: Collections.Set<string>;
-    private _chartsDependencies: Collections.Set<string>;
-    private _gaugesDependencies: Collections.Set<string>;
-    private _excelDependencies: Collections.Set<string>;
+    private _defaultDependencies: Set<string>;
+    private _chartsDependencies: Set<string>;
+    private _gaugesDependencies: Set<string>;
+    private _excelDependencies: Set<string>;
     private _packageFileDependencies;
-    private _specificVersionPackages: Collections.Set<string>;
+    private _specificVersionPackages: Set<string>;
 
     constructor() {
-        this._defaultDependencies = new Collections.Set<string>();
+        this._defaultDependencies = new Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._defaultDependencies.add(d));
         DEFAULT_DEPENDENCIES.forEach((d) => this._defaultDependencies.add(d));
 
-        this._chartsDependencies = new Collections.Set<string>();
+        this._chartsDependencies = new Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
         CHARTS_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
 
-        this._gaugesDependencies = new Collections.Set<string>();
+        this._gaugesDependencies = new Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
         GAUGES_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
 
-        this._excelDependencies = new Collections.Set<string>();
+        this._excelDependencies = new Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
         EXCEL_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
 
         let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
         this._packageFileDependencies = packageFile.dependencies;
 
-        this._specificVersionPackages = new Collections.Set<string>();
+        this._specificVersionPackages = new Set<string>();
         EXACT_VERSION_PACKAGES.forEach((d) => this._specificVersionPackages.add(d));
     }
 
     public resolveSampleDependencies(type: DependenciesType = DependenciesType.Default,
                                      additionalDependencies?: string[]) {
         let packageFileDependencies = JSON.parse(JSON.stringify(this._packageFileDependencies));
-        let dependencies = new Collections.Set<string>();
+        let dependencies: Set<string>;
 
         switch (type) {
             case DependenciesType.Default:
-                dependencies.union(this._defaultDependencies);
+                dependencies = new Set<string>(this._defaultDependencies);
                 break;
             case DependenciesType.Charts:
-                dependencies.union(this._chartsDependencies);
+                dependencies = new Set<string>(this._chartsDependencies);
                 break;
             case DependenciesType.Gauges:
-                dependencies.union(this._gaugesDependencies);
+                dependencies = new Set<string>(this._gaugesDependencies);
                 break;
             case DependenciesType.Excel:
-                dependencies.union(this._excelDependencies);
+                dependencies = new Set<string>(this._excelDependencies);
                 break;
             default:
                 throw new Error("Unrecognized dependency type.");
@@ -132,8 +131,8 @@ export class DependencyResolver {
         }
 
         for (let key in packageFileDependencies) {
-            if (dependencies.contains(key)) {
-                if (this._specificVersionPackages.contains(key)) {
+            if (dependencies.has(key)) {
+                if (this._specificVersionPackages.has(key)) {
                     let version = packageFileDependencies[key];
                     packageFileDependencies[key] = version.replace("~", "").replace("^", "");
                 }
