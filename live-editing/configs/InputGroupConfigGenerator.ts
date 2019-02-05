@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { IgxButtonModule, IgxComboModule, IgxDatePickerModule, IgxIconModule,
-    IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule } from "igniteui-angular";
+import { IgxAutocompleteModule, IgxButtonModule, IgxComboModule, IgxDatePickerModule, IgxDropDownModule,
+    IgxIconModule, IgxInputGroupModule, IgxRippleModule, IgxTimePickerModule } from "igniteui-angular";
 import { InputGroupSample2Component
 } from "../../src/app/data-entries/input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample5Component
@@ -10,6 +10,7 @@ import { InputGroupSample6Component
 } from "../../src/app/data-entries/input-group/input-group-sample-6/input-group-sample-6.component";
 import { ReactiveFormsSampleComponent
 } from "../../src/app/data-entries/input-group/reactive-forms/reactive-forms.component";
+import { AutocompleteGenrePipeContains, AutocompletePipeStartsWith } from "../../src/app/data-entries/pipes/pipes";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -42,31 +43,37 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
 
         // input group sample 6
         configs.push(new Config({
+            additionalFiles: ["/src/app/data-entries/pipes/pipes.ts"],
             component: InputGroupSample6Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
                      IgxRippleModule, InputGroupSample6Component, IgxDatePickerModule, IgxTimePickerModule,
-                     IgxComboModule],
-                ngDeclarations: [InputGroupSample6Component],
+                     IgxComboModule, IgxDropDownModule, IgxAutocompleteModule,
+                     AutocompleteGenrePipeContains, AutocompletePipeStartsWith],
+                ngDeclarations: [InputGroupSample6Component, AutocompleteGenrePipeContains, AutocompletePipeStartsWith],
                 ngImports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
-                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule]
-            }),
-            shortenComponentPathBy: "/data-entries/input-group/"
+                     IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule,
+                     IgxDropDownModule, IgxAutocompleteModule],
+                ngProviders: [AutocompleteGenrePipeContains]
+            })
         }));
 
         // reactive forms
         configs.push(new Config({
+            additionalFiles: ["/src/app/data-entries/pipes/pipes.ts"],
             component: ReactiveFormsSampleComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
                      IgxRippleModule, ReactiveFormsSampleComponent, IgxDatePickerModule, IgxTimePickerModule,
-                     IgxComboModule, FormsModule, ReactiveFormsModule],
-                ngDeclarations: [ReactiveFormsSampleComponent],
+                     IgxComboModule, FormsModule, ReactiveFormsModule, IgxDropDownModule, IgxAutocompleteModule,
+                     AutocompleteGenrePipeContains, AutocompletePipeStartsWith],
+                ngDeclarations: [ReactiveFormsSampleComponent,
+                        AutocompleteGenrePipeContains, AutocompletePipeStartsWith],
                 ngImports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
                      IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule,
-                     FormsModule, ReactiveFormsModule]
-            }),
-            shortenComponentPathBy: "/data-entries/input-group/"
+                     FormsModule, ReactiveFormsModule, IgxDropDownModule, IgxAutocompleteModule],
+                ngProviders: [AutocompleteGenrePipeContains]
+            })
         }));
 
         return configs;

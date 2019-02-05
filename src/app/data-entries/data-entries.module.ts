@@ -5,7 +5,6 @@ import { IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckb
     IgxDatePickerModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
     IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule,
     IgxTimePickerModule, IgxToggleModule} from "igniteui-angular";
-import { CircularProgressbarComponent } from "../data-display/circular-progressbar/circular-progressbar.component";
 import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
 import { AutocompleteBasic } from "./autocomplete/autocomplete/autocomplete.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
@@ -59,7 +58,6 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample7Component,
         CheckboxSample1Component,
         CheckboxSample2Component,
-        CircularProgressbarComponent,
         DropdownMenuComponent,
         DropDownSample1Component,
         DropDownSample2Component,

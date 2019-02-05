@@ -6,7 +6,7 @@
                     <label igxLabel for="town">Town</label>
                     <input igxInput name="town" type="text" [igxAutocomplete]="townsPanel" [(ngModel)]="townSelected"/>
                 </igx-input-group>
-                <igx-drop-down #townsPanel maxHeight="500px">
+                <igx-drop-down #townsPanel maxHeight="300px">
                     <igx-drop-down-item *ngFor="let town of towns | startsWith:townSelected" [value]="town">
                         {{town}}
                     </igx-drop-down-item>

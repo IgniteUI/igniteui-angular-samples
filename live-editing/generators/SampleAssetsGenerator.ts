@@ -1,5 +1,6 @@
 // tslint:disable:prefer-for-of
 // tslint:disable:prefer-const
+import { AutocompleteConfigGenerator } from "../configs/AutocompleteConfigGenerator";
 import { AvatarConfigGenerator } from "./../configs/AvatarConfigGenerator";
 import { BadgeConfigGenerator } from "./../configs/BadgeConfigGenerator";
 import { BannerConfigGenerator } from "./../configs/BannerConfigGenerator";
@@ -95,7 +96,8 @@ const COMPONENT_STYLE_FILE_EXTENSION = "scss";
 const COMPONENT_FILE_EXTENSIONS = ["ts", "html", COMPONENT_STYLE_FILE_EXTENSION];
 const GO_DIR_BACK_REG_EX = new RegExp(/\.\.\//g);
 
-const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator, ButtonConfigGenerator,
+const CONFIG_GENERATORS = [AutocompleteConfigGenerator, AvatarConfigGenerator, BadgeConfigGenerator,
+    BannerConfigGenerator, ButtonConfigGenerator,
     ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator, CarouselConfigGenerator,
     CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator, CircularProgressbarConfigGenerator,
     ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator,
