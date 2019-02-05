@@ -25,5 +25,6 @@ export const treeGridRoutesData = {
     "tree-grid-conditional-cell-style-sample": {
         displayName: "TreeGrid Condition Cell Styling", parentName: "TreeGrid"
     },
-    "treegrid-paging": { displayName: "TreeGrid Paging", parentName: "TreeGrid" }
+    "treegrid-paging": { displayName: "TreeGrid Paging", parentName: "TreeGrid" },
+    "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" }
 };

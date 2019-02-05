@@ -27,6 +27,7 @@ import {
 import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
+import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
@@ -170,6 +171,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridPagingSampleComponent,
         data: treeGridRoutesData["treegrid-paging"],
         path: "treegrid-paging"
+    },
+    {
+        component: TreeGridEditingSampleComponent,
+        data: treeGridRoutesData["treegrid-editing"],
+        path: "treegrid-editing"
     }
 ];
 
