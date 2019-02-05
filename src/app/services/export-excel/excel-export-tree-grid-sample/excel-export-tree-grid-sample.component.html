@@ -1,5 +1,5 @@
 <p class="grid__wrapper">
-    <igx-tree-grid #igxTreeGrid1 [data]="data" [autoGenerate]="false" height="220px" width="100%"
+    <igx-tree-grid #igxTreeGrid1 [data]="data" [autoGenerate]="false" height="300px" width="100%"
         primaryKey="ID" foreignKey="ParentID">
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
@@ -21,6 +21,6 @@
             </ng-template>
         </igx-column>
     </igx-tree-grid>
-    <button (click)="exportButtonHandler()" class="exportButton">Export Grid to Excel</button>
+    <button (click)="exportButtonHandler()" class="exportButton">Export TreeGrid to Excel</button>
 </p>
   
