@@ -20,7 +20,7 @@ export class TreeGridPagingSampleComponent {
     }
 
     public ngOnInit(): void {
-        this.data = FOODS_DATA;
+        this.data = FOODS_DATA();
     }
 
     public cellSelection(evt) {

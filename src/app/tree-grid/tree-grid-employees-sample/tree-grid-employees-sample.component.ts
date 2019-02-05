@@ -12,6 +12,6 @@ export class TreeGridEmployeesSampleComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        this.localData = FULL_EMPLOYEE_DATA;
+        this.localData = FULL_EMPLOYEE_DATA();
     }
 }

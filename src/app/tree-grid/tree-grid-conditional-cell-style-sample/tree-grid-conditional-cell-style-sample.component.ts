@@ -12,7 +12,7 @@ export class TreeGridConditionalCellStyleComponent implements OnInit {
     public allergenItems = ["Grandmas Boysenberry Spread", "Mishi Kobe Niku", "Carnarvon Tigers", "Ikura"];
 
     public ngOnInit() {
-        this.data = FOODS_DATA;
+        this.data = FOODS_DATA();
     }
 
     public formatDate(val: Date) {

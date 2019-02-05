@@ -1,5 +1,5 @@
 /* tslint:disable */
-export const FOODS_DATA = [
+export const FOODS_DATA = () => ([
 
     { ID: 1, ParentID: -1, Name: "Foods", UnitPrice: 0, AddedDate: new Date("2009-06-19"), Discontinued: false },
     { ID: 101, ParentID: 1, Name: "Chef Antons Gumbo Mix", UnitPrice: 21.35, AddedDate: new Date("2011-11-11"), Discontinued: true },
@@ -27,4 +27,4 @@ export const FOODS_DATA = [
     { ID: 304, ParentID: 3, Name: "Genen Shouyu", UnitPrice: 15.5, AddedDate: new Date("2010-03-17"), Discontinued: false },
     { ID: 305, ParentID: 3, Name: "Sir Rodneys Marmalade", UnitPrice: 18, AddedDate: new Date("2015-03-17"), Discontinued: false },
 
-];
+]);

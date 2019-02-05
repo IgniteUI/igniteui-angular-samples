@@ -1,4 +1,4 @@
-export const FULL_EMPLOYEE_DATA = [
+export const FULL_EMPLOYEE_DATA = () => ([
     {
         Age: 55,
         Employees: [
@@ -139,4 +139,4 @@ export const FULL_EMPLOYEE_DATA = [
         Name: "Yang Wang",
         Title: "Localization Manager"
     }
-];
+]);

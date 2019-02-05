@@ -23,7 +23,7 @@ export class TreeGridCsvExportSample1Component implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.data = FOODS_DATA;
+    this.data = FOODS_DATA();
   }
 
   public exportButtonHandler() {

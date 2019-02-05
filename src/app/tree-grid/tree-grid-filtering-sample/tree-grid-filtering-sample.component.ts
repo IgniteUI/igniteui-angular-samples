@@ -17,7 +17,7 @@ export class TreeGridFilteringSampleComponent implements OnInit {
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = FOODS_DATA;
+        this.data = FOODS_DATA();
     }
 
     public filter(term) {

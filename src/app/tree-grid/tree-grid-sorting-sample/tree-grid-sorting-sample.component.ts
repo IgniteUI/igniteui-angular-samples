@@ -21,7 +21,7 @@ export class TreeGridSortingSampleComponent implements OnInit {
     constructor() {
     }
     public ngOnInit(): void {
-        this.data = FOODS_DATA;
+        this.data = FOODS_DATA();
         this.treegrid1.sortingExpressions = [
             { dir: SortingDirection.Asc, fieldName: "UnitPrice",
               ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
