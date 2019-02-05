@@ -87,7 +87,6 @@ import {
         TreeGridColumnHidingSampleComponent,
         TreeGridColumnHidingToolbarSampleComponent,
         TreeGridSelectionSampleComponent,
-        TreeGridEmployeesSampleComponent,
         TreeGridSortingSampleComponent,
         TreeGridContextmenuComponent,
         TreeGridColumnMovingSampleComponent,
