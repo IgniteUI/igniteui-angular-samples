@@ -55,7 +55,8 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
                      IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule,
                      IgxDropDownModule, IgxAutocompleteModule],
                 ngProviders: [AutocompleteGenrePipeContains]
-            })
+            }),
+            shortenComponentPathBy: "/data-entries/"
         }));
 
         // reactive forms
@@ -73,7 +74,8 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
                      IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule,
                      FormsModule, ReactiveFormsModule, IgxDropDownModule, IgxAutocompleteModule],
                 ngProviders: [AutocompleteGenrePipeContains]
-            })
+            }),
+            shortenComponentPathBy: "/data-entries/"
         }));
 
         return configs;

@@ -4,15 +4,11 @@ import { AutocompleteGenrePipeContains } from "../../pipes/pipes";
 
 @Component({
     providers: [AutocompleteGenrePipeContains],
-    selector: "app-combo",
+    selector: "app-reactive-form",
     styleUrls: ["./reactive-forms.component.scss"],
     templateUrl: "./reactive-forms.component.html"
 })
 export class ReactiveFormsSampleComponent {
-    public dsGenres = ["Action", "Adventure", "Comedy", "Crime",
-        "Drama", "Historical", "Horror", "Mistery",
-        "Musical", "Romance", "Sci-Fi", "Thriller", "Western"];
-
     public genres = [];
     public user: FormGroup;
     public noMovie: boolean;

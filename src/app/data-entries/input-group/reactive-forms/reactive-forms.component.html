@@ -41,7 +41,8 @@
                     </igx-suffix>
                 </igx-input-group>
                 <div class="igx-combo">
-                    <igx-combo #combo1 class="input-container" width="100%" [itemsMaxHeight]="130" [data]="dsGenres"
+                    <igx-combo #combo1 class="input-container" width="100%" [itemsMaxHeight]="130"
+                        [data]="genres" [valueKey]="'type'" [displayKey]="'type'"
                         type="line" formControlName="genres" placeholder="Select your favorite genres"
                         searchPlaceholder="Search...">
                     </igx-combo>
