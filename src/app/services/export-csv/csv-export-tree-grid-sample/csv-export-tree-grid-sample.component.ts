@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 import { CsvFileTypes,
          IgxCsvExporterOptions,
@@ -12,7 +12,7 @@ import { FOODS_DATA } from "../../../tree-grid/data/foods";
   styleUrls: ["./csv-export-tree-grid-sample.component.scss"],
   templateUrl: "./csv-export-tree-grid-sample.component.html"
 })
-export class TreeGridCsvExportSample1Component {
+export class TreeGridCsvExportSample1Component implements OnInit {
 
   @ViewChild("igxTreeGrid1")
   public igxTreeGrid1: IgxTreeGridComponent;
@@ -20,6 +20,9 @@ export class TreeGridCsvExportSample1Component {
   public data: any[];
 
   constructor(private csvExportService: IgxCsvExporterService) {
+  }
+
+  public ngOnInit(): void {
     this.data = FOODS_DATA;
   }
 
