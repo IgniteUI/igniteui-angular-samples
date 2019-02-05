@@ -99,7 +99,6 @@ import {
         TreeGridToolbarSample1Component,
         TreeGridToolbarSample2Component,
         TreeGridToolbarSample3Component,
-        TreeGridFilteringSampleComponent,
         TreeGridSummarySampleComponent,
         TreeGridConditionalCellStyleComponent,
         TreeGridPagingSampleComponent,
