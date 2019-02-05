@@ -5,7 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
     IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-    IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule } from "igniteui-angular";
+    IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
@@ -31,6 +31,9 @@ import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
+import { AboutComponent } from "./grid-save-state/about.component";
+import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
+import { IgxGridStateDirective } from "./grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { GridContextmenuComponent } from "./grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
@@ -77,7 +80,10 @@ import { DataService } from "./services/data.service";
         GridMultiColumnHeadersComponent,
         GridComponent,
         GridContextmenuComponent,
-        PasteHandler
+        PasteHandler,
+        GridSaveStateComponent,
+        AboutComponent,
+        IgxGridStateDirective
     ],
     imports: [
         CommonModule,
@@ -103,7 +109,8 @@ import { DataService } from "./services/data.service";
         IgxSliderModule,
         IgxSwitchModule,
         IgxToastModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxTooltipModule
     ],
     providers: [
         DataService,

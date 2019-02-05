@@ -1,0 +1,59 @@
+<div class="grid__wrapper">
+    <div class="controls-holder">
+        <div class="control-item">
+            <ul>
+                <li>Navigate away to visit the <a [routerLink]="['../grid-about']"><strong>ABOUT</strong></a> page and the igxGrid will lose its current state.</li>
+                <li>Use the switch buttons to clear currently stored state and stop saving state for the corresponding feature.</li>
+                <li>Use the <strong>delete</strong> and <strong>reload</strong> buttons to clear the localStorage content and reload the page with clear state.</li>
+            </ul>
+        </div>
+        <div class="switches">
+            <div class="control-item">
+                <igx-switch [(ngModel)]="state.selection" (change)="onChange($event, 'selection')">Selection</igx-switch>
+            </div>
+            <div class="control-item">
+                <igx-switch [(ngModel)]="state.filtering" (change)="onChange($event, 'filtering')">Filtering</igx-switch>
+            </div>
+            <div class="control-item">
+                <igx-switch [(ngModel)]="state.paging" (change)="onChange($event, 'paging')">Paging</igx-switch>
+            </div>
+            <div class="control-item">
+                <igx-switch [(ngModel)]="state.sorting" (change)="onChange($event, 'sorting')">Sorting</igx-switch>
+            </div>
+            <div class="control-item">
+                <span class="clear-button" (click)="clearStorage(toast)" #target="tooltipTarget" [igxTooltipTarget]="clear"><igx-icon>delete</igx-icon></span>
+            </div>
+            <div class="control-item">
+                <span class="clear-button" (click)="reloadPage()" #target="tooltipTarget" [igxTooltipTarget]="reload"><igx-icon>refresh</igx-icon></span>
+            </div>
+        </div>
+    </div>
+
+    <igx-grid #grid1 igxState [data]="localData" [primaryKey]="'EmployeeID'" width="950px" height="550px"
+        [rowEditable]="true" [allowFiltering]="true" [rowSelectable]="true"
+        [paging]="true" [columnPinning]="true" >
+        <igx-column #grid1 field="FirstName" header="First Name"  width="150px" [sortable]="true" [filterable]="true" [pinned]="true" [movable]="true">
+        </igx-column>
+        <igx-column field="LastName" header="Last Name" width="150px" [sortable]="true" [filterable]="true" [pinned]="true" [movable]="true">
+        </igx-column>
+        <igx-column field="Country" width="140px" [sortable]="true" [filterable]="true" [movable]="true">
+        </igx-column>
+        <igx-column field="Age" width="110px" dataType="number" [sortable]="true" [filterable]="true" [movable]="true">
+        </igx-column>
+        <igx-column field="RegistererDate" header="Registerer Date" width="180px" dataType="date" [sortable]="true" [filterable]="true" [movable]="true">
+            <ng-template igxCell let-value>
+                {{ value | date }}
+            </ng-template>
+        </igx-column>
+            <igx-column field="IsActive" header="Is Active" width="140px" dataType="boolean" [sortable]="true" [filterable]="true" [movable]="true">
+            <ng-template igxCell let-cell="cell">
+            <igx-checkbox [checked]="cell.value" [disabled]="true"></igx-checkbox>
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+
+    <div #clear="tooltip" igxTooltip>Clear the state from localStorage.</div>
+    <div #reload="tooltip" igxTooltip>Reload the page.</div>
+
+    <igx-toast #toast message="Grid state data has been cleared from localStorage."></igx-toast>
+</div>
