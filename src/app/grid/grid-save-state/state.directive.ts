@@ -1,7 +1,7 @@
-import { AfterViewInit, Directive, Host, HostListener, OnDestroy, Optional, Self } from "@angular/core";
+import { AfterViewInit, Directive, Host, OnDestroy, Optional, Self } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
 import { DefaultSortingStrategy, FilteringExpressionsTree,
-    IFilteringExpression, IgxColumnComponent, IgxGridComponent, ISortingExpression } from "igniteui-angular";
+    IFilteringExpression, IgxGridComponent, ISortingExpression } from "igniteui-angular";
 import { take } from "rxjs/operators";
 
 interface IGridState {
@@ -24,7 +24,6 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
     public shouldSaveState = true;
 
     public initialState: IGridState = {
-        columns: [],
         filtering: new FilteringExpressionsTree(0),
         paging: {index: 0, recordsPerPage: this.perPage},
         selection: [],
