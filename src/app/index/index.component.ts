@@ -20,6 +20,7 @@ import { servicesRoutesData } from "../services/services-routes-data";
 import { themingRoutesData } from "../theming/theming-routes-data";
 import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
 import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
+import { hierarchicalGridRoutesData } from '../hierarchical-grid/hgrid-routes-data';
 
 @Component({
     selector: "app-index",
@@ -111,6 +112,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "grid-crm",
             routesData: gridcrmRoutesData
+        },
+        {
+            path: "hierarchical-grid",
+            routesData: hierarchicalGridRoutesData
         },
         {
             path: "tree-grid",
