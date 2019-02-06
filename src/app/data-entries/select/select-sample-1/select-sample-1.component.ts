@@ -2,9 +2,8 @@ import { Component, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy,
     IgxSelectComponent,
-    OverlaySettings
-    // SelectPositioningStrategy
-// tslint:disable-next-line:no-implicit-dependencies
+    OverlaySettings,
+    SelectPositioningStrategy
 } from "igniteui-angular";
 
 @Component({
@@ -15,20 +14,14 @@ import {
 export class SelectSample1Component {
     @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
-    public items: any[] = [];
+    public items: any[] = ["Orange", "Apple", "Banana", "Mango", "Pineapple", "Tomato"];
 
     public customOverlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,
         modal: false,
-        // positionStrategy: new SelectPositioningStrategy(
-        //     this.igxSelect
-        // ),
+        positionStrategy: new SelectPositioningStrategy(
+            this.igxSelect
+        ),
         scrollStrategy: new AbsoluteScrollStrategy()
     };
-    public ngOnInit() {
-        for (let i = 1; i < 10; i++) {
-            const item = { field: "opt" + i };
-            this.items.push(item);
-        }
-    }
 }

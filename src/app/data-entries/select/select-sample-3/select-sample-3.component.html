@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="select-wrapper">
+        <igx-select  [(ngModel)]="selected" [ngModelOptions]="{standalone: true}">
+            <igx-prefix>Fruit</igx-prefix>
+            <igx-select-item>None</igx-select-item>
+            <igx-select-item value="Orange">Orange</igx-select-item>
+            <igx-select-item value="Apple">Apple</igx-select-item>
+            <igx-select-item value="Banana">Banana</igx-select-item>
+            <igx-select-item value="Mango">Mango</igx-select-item>
+            <igx-select-item value="Pineapple">Pineapple</igx-select-item>
+            <igx-select-item value="Tomato">Tomato</igx-select-item>
+        </igx-select>
+    </div>
+    <div class="actions">
+        <p>You selected: {{selected}}</p>
+        <div class="submit-button">
+            <button igxButton type="button" (click)="onSubmit()">Submit</button>
+        </div>
+    </div>
+</form>
