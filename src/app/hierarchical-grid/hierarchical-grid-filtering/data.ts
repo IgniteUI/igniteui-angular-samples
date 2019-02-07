@@ -4,7 +4,7 @@ export const LOCAL_DATA = [{
     Debut: 2011,
     GrammyNominations: 6,
     GrammyAwards: "-",
-    childData: [{
+    tours: [{
         Tour:"Believe Tour",
         Date: "Sept 2012",
         Location: "WorldWide",
@@ -13,7 +13,7 @@ export const LOCAL_DATA = [{
         LaunchDate: new Date("9/3/2013"),
         BillboardReview: 86,
         USBillboard200: 1
-    },
+    },    
     {
         Tour:"The Listening Sessions",
         Date: "Aug 2013",
@@ -23,7 +23,7 @@ export const LOCAL_DATA = [{
         LaunchDate: new Date("8/25/2014"),
         BillboardReview: 81,
         USBillboard200: 1,
-        childData2: [{
+        songs: [{
             No: 1,
             Title: "Intro",
             Released: "-",
@@ -150,7 +150,7 @@ export const LOCAL_DATA = [{
         Location: "WorldWide",
         Headliner: "YES"
     }],
-    childData1:[{
+    albums:[{
         Albums:"Yours Truly",
         LaunchDate: new Date("9/3/2013"),
         BillboardReview: 86,
@@ -162,7 +162,7 @@ export const LOCAL_DATA = [{
         BillboardReview: 81,
         USBillboard200: 1
     }],
-    childData2: [{
+    songs: [{
         No: 1,
         Title: "Intro",
         Released: "-",
