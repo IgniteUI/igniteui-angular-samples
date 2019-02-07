@@ -134,8 +134,8 @@ export const treeGridRoutes: Routes = [
     },
     {
         component: TreeGridVirtualizationSampleComponent,
-        data: treeGridRoutesData["tree-grid-virtualization-sample"],
-        path: "tree-grid-virtualization-sample"
+        data: treeGridRoutesData["treegrid-virtualization"],
+        path: "treegrid-virtualization"
     },
     {
         component: TreeGridDisplaydensitySampleComponent,
@@ -164,8 +164,8 @@ export const treeGridRoutes: Routes = [
     },
     {
         component: TreeGridConditionalCellStyleComponent,
-        data: treeGridRoutesData["tree-grid-conditional-cell-style-sample"],
-        path: "tree-grid-conditional-cell-style-sample"
+        data: treeGridRoutesData["treegrid-conditional-cell-style"],
+        path: "treegrid-conditional-cell-style"
     },
     {
         component: TreeGridPagingSampleComponent,
