@@ -2,10 +2,10 @@
     <igx-grid #grid [data]="remoteData | async" [height]="'440px'" [width]="'100%'" [autoGenerate]='false'
         (onDataPreLoad)="processData()" (onSortingDone)="processData()" (onFilteringDone)="processData()"
         [allowFiltering]="true">
-        <igx-column [field]="'ProductID'" [sortable]="true" [filterable]="false" width="18%"></igx-column>
-        <igx-column [field]="'ProductName'" [sortable]="true" width="16%"></igx-column>
-        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true" width="16%"></igx-column>
-        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" width="16%">
+        <igx-column [field]="'ProductID'" [sortable]="true" [filterable]="false"></igx-column>
+        <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
@@ -17,8 +17,8 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'QuantityPerUnit'" [sortable]="true" width="18%"></igx-column >
-        <igx-column [field]="'ReorderLevel'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" width="16%">
+        <igx-column [field]="'QuantityPerUnit'" [sortable]="true"></igx-column >
+        <igx-column [field]="'ReorderLevel'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">ReorderLevel</span>
             </ng-template>
