@@ -1,29 +1,29 @@
 <div class="hgrid-sample">
-    <igx-hierarchical-grid class="hgrid" #grid1 [data]="localData" [displayDensity]="comfortable" [autoGenerate]="false" [allowFiltering]='true'
+    <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true'
         [height]="'600px'" [width]="'800px'" #hGrid>
         <igx-column field="Artists" [filterable]='true'></igx-column>
         <igx-column field="Photo" [filterable]='true'></igx-column>
         <igx-column field="Debut" [filterable]='true'></igx-column>
-        <igx-column field="Grammy Nominations" [filterable]='true'></igx-column>
-        <igx-column field="Grammy Awards" [filterable]='true'></igx-column>
+        <igx-column field="GrammyNominations" [filterable]='true'></igx-column>
+        <igx-column field="GrammyAwards" [filterable]='true'></igx-column>
 
-        <igx-row-island [key]="'childData2'" [autoGenerate]="false">
+        <igx-row-island [key]="'childData'" [autoGenerate]="false">
             <igx-column field="Tour"></igx-column>
             <igx-column field="Date"></igx-column>
             <igx-column field="Location"></igx-column>
             <igx-column field="Headliner"></igx-column>
         </igx-row-island>
 
-        <igx-row-island [key]="'childData'" [autoGenerate]="false" #layout1 >
+        <igx-row-island [key]="'childData1'" [autoGenerate]="false" #layout1 >
                 <igx-column field="Albums"></igx-column>
-                <igx-column field="Launch Date"></igx-column>
-                <igx-column field="Billboard Review"></igx-column>
-                <igx-column field="US Billboard 200"></igx-column>
-            <igx-row-island [key]="'childData'" [autoGenerate]="false" >
-                    <igx-column field="No." [hasSummary]='true'></igx-column>
-                    <igx-column field="Title" [hasSummary]='true'></igx-column>
-                    <igx-column field="Released" [hasSummary]='true'></igx-column>
-                    <igx-column field="Genre" [hasSummary]='true'></igx-column>
+                <igx-column field="LaunchDate"></igx-column>
+                <igx-column field="BillboardReview"></igx-column>
+                <igx-column field="USBillboard200"></igx-column>
+            <igx-row-island [key]="'childData2'" [autoGenerate]="false" >
+                    <igx-column field="No"></igx-column>
+                    <igx-column field="Title"></igx-column>
+                    <igx-column field="Released"></igx-column>
+                    <igx-column field="Genre"></igx-column>
             </igx-row-island>
         </igx-row-island>
     </igx-hierarchical-grid>
