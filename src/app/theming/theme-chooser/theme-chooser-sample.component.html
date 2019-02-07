@@ -51,7 +51,7 @@
                     {{val | date:'dd/MM/yyyy'}}
                 </ng-template>
             </igx-column>
-            <igx-column width="120%" [field]="'Delete Row'" [filterable]="false">
+            <igx-column [field]="'Delete Row'" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
                     <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
                         <igx-icon>delete</igx-icon>

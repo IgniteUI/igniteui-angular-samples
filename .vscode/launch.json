@@ -7,10 +7,10 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Gulp watch-live-editing",
+            "name": "Gulp generate-live-editing",
             "program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js",
             "args": [
-                "watch-live-editing"
+                "generate-live-editing"
             ]
         }
     ]
