@@ -1,7 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxButtonModule, IgxGridModule, IgxSliderModule, IgxSwitchModule } from "igniteui-angular";
+import { IgxButtonModule, IgxCsvExporterService, IgxExcelExporterService, IgxGridModule,
+    IgxSliderModule, IgxSwitchModule } from "igniteui-angular";
 import { FinJSDemoComponent } from "./grid-finjs-demo.component";
 import { GridFinjsRoutingModule } from "./grid-finjs-routing.module";
 import { LocalDataService } from "./localData.service";
@@ -19,6 +20,6 @@ import { LocalDataService } from "./localData.service";
         GridFinjsRoutingModule,
         IgxGridModule
     ],
-    providers: [LocalDataService]
+    providers: [LocalDataService, IgxExcelExporterService, IgxCsvExporterService]
 })
 export class GridFinjsModule {}
