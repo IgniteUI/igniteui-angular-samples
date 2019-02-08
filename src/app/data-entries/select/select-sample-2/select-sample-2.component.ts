@@ -19,10 +19,10 @@ export class SelectSample2Component {
         { field: "Fruits", header: true },
         { field: "Apple" },
         { field: "Orange" },
-        { field: "Banana" },
+        { field: "Banana", selected: true },
         { field: "Vegetables", header: true },
         { field: "Cucumber" },
-        { field: "Potato" },
+        { field: "Potato", disabled: true },
         { field: "Pepper" }
     ];
 

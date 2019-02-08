@@ -14,7 +14,7 @@ import {
 export class SelectSample1Component {
     @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
-    public items: any[] = ["Orange", "Apple", "Banana", "Mango", "Pineapple", "Tomato"];
+    public items: string[] = ["Orange", "Apple", "Banana", "Mango"];
 
     public customOverlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,

@@ -1,7 +1,8 @@
 <igx-select #select>
     <label igxLabel>Select With Groups</label>
     <igx-select-item></igx-select-item>
-    <igx-select-item *ngFor="let item of items" [value]="item.field">
+    <igx-select-item *ngFor="let item of items" [value]="item.field" [isHeader]="item.header" [disabled]="item.disabled"
+        [isSelected]="item.selected">
         {{item.field}}
     </igx-select-item>
 </igx-select>

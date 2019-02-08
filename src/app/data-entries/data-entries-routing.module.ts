@@ -31,6 +31,7 @@ import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.com
 import { SelectSample1Component } from "./select/select-sample-1/select-sample-1.component";
 import { SelectSample2Component } from "./select/select-sample-2/select-sample-2.component";
 import { SelectSample3Component } from "./select/select-sample-3/select-sample-3.comppnent";
+import { SelectSample4Component } from "./select/select-sample-4/select-sample-4.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
 
@@ -194,6 +195,11 @@ export const dataEntriesRoutes: Routes = [
         component: SelectSample3Component,
         data: dataEntriesRoutesData["select-sample-3"],
         path: "select-sample-3"
+    },
+    {
+        component: SelectSample4Component,
+        data: dataEntriesRoutesData["select-sample-4"],
+        path: "select-sample-4"
     }
 ];
 

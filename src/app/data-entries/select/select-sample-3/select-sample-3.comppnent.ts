@@ -12,7 +12,8 @@ import {
 export class SelectSample3Component {
     @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
-    public selected: any = "Apple";
+    public items: string[] = ["Orange", "Apple", "Banana", "Mango", "Tomato"];
+    public selected: string = "Apple";
 
     public customOverlaySettings: OverlaySettings = {
         closeOnOutsideClick: true,
@@ -22,9 +23,4 @@ export class SelectSample3Component {
         ),
         scrollStrategy: new AbsoluteScrollStrategy()
     };
-
-    public onSubmit(): void {
-        console.log("submit");
-        console.log(this.igxSelect.value);
-    }
 }
