@@ -43,7 +43,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     public get shouldShowFirstPage() {
         return this.pages[0] !== 0;
     }
-    private visibleElements = 3;
+    private visibleElements = 5;
     private _perPage = 10;
     private _dataLengthSubscriber;
 
@@ -142,7 +142,11 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
             return;
         }
         if (this.pages.length === 0) {
-            for (let item = currentPage; item < currentPage + this.visibleElements ; item++) {
+            const lastPage = (currentPage + this.visibleElements) <= totalPages ?
+                currentPage + this.visibleElements : totalPages;
+            const firstPage = currentPage < totalPages - this.visibleElements ?
+                currentPage : totalPages - this.visibleElements;
+            for (let item = firstPage; item < lastPage ; item++) {
                 this.pages.push(item);
             }
             return;

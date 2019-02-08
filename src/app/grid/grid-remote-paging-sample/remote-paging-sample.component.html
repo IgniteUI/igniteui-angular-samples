@@ -1,6 +1,6 @@
 <p class="grid__wrapper">
     <span class="customPager">
-        <igx-grid #grid1 [data]="data | async" width="960px" height="550px" [paging]="true" [perPage]="perPage">
+        <igx-grid #grid1 [data]="data | async" width="960px" height="540px" [paging]="true" [perPage]="perPage">
             <igx-column field="ID"></igx-column>
             <igx-column field="ProductName"></igx-column>
             <igx-column field="QuantityPerUnit"></igx-column>
@@ -39,6 +39,6 @@
                 NEXT
             </button>
         </ng-template>
-        <button (click)="changeTemplate()" igxButton="flat" igxButtonColor="#09f" igxButtonBackground="#dadada"> Change Paging Template</button>
+        <button (click)="changeTemplate()" class='changeBtn' igxButton="flat" igxButtonColor="#09f" igxButtonBackground="#dadada"> Change Paging Template</button>
     </span>
 </p>
