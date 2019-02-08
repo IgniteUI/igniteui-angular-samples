@@ -27,17 +27,6 @@ To start the dev server run:
 npm run start
 ```
 
-To start the dev server with specific [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples style syntax run:
-- for Sass
-```
-npm run start:styles sass
-```
-
-- for CSS
-```
-npm run start:styles css
-```
-
 ## Live Editing Watcher
 Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made:
 
@@ -45,32 +34,10 @@ Use this command to start the server with capability to regenerate [live editing
 npm run start:watch-live-editing
 ```
 
-If you want to have a specific [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples style syntax use:
-- for Sass
-```
-npm run start:styles:watch-live-editing sass
-```
-
-- for CSS
-```
-npm run start:styles:watch-live-editing css
-```
-
 ## Generate Live Editing JSON files
 To generate only the [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) run:
 ```
 npm run generate-live-editing
-```
-
-For specifix [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) style syntax run:
-- for Sass
-```
-npm run generate-live-editing -- --styles sass
-```
-
-- for CSS
-```
-npm run generate-live-editing -- --styles css
 ```
 
 ## Running with the DocFX project
