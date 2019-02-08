@@ -2,6 +2,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
+import { HGridSummarySampleComponent } from './hierarchical-grid-summary/hierarchical-grid-summary.component';
 import { hierarchicalGridRoutesData } from "./hgrid-routes-data";
 
 // tslint:enable:max-line-length
@@ -12,6 +13,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-filtering"],
         path: "hierarchical-grid-filtering"
+    },
+    {
+        component: HGridSummarySampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-summary"],
+        path: "hierarchical-grid-summary"
     }
 ];
 
