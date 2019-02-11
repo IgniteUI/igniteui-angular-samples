@@ -22,7 +22,7 @@ export const samplesRoutes: Routes = [
         path: "data-entries"
     },
     {
-        loadChildren: "app/interactions/interactions.module#InteractionsModule",
+        loadChildren: "./interactions/interactions.module#InteractionsModule",
         path: "interactions"
     },
     {
