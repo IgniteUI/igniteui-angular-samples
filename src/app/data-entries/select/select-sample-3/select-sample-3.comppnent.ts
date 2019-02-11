@@ -1,8 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import {
-    AbsoluteScrollStrategy, IgxSelectComponent,
-    OverlaySettings, SelectPositioningStrategy
-} from 'igniteui-angular';
+import { IgxSelectComponent } from 'igniteui-angular';
 
 @Component({
     selector: "select-sample-3",
@@ -12,15 +9,15 @@ import {
 export class SelectSample3Component {
     @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
-    public items: string[] = ["Orange", "Apple", "Banana", "Mango", "Tomato"];
+
+    public items: string[] = ["Orange", "Apple", "Banana", "Mango"];
     public selected: string = "Apple";
 
-    public customOverlaySettings: OverlaySettings = {
-        closeOnOutsideClick: true,
-        modal: false,
-        positionStrategy: new SelectPositioningStrategy(
-            this.igxSelect
-        ),
-        scrollStrategy: new AbsoluteScrollStrategy()
-    };
+    public selectBanana() {
+        this.igxSelect.selectItem(this.igxSelect.items[2]);
+    }
+
+    public selectNull() {
+        this.igxSelect.selectItem(null);
+    }
 }

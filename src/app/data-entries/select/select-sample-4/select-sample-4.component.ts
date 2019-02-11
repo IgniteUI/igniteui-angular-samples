@@ -1,11 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy,
-    fadeIn, fadeOut,
-    HorizontalAlignment, IgxSelectComponent, IPositionStrategy, OverlaySettings,
-    ScrollStrategy, slideInLeft, slideOutRight, VerticalAlignment, PositionSettings
+    HorizontalAlignment, IgxSelectComponent, OverlaySettings,
+    PositionSettings, slideInLeft, slideOutRight, VerticalAlignment
 } from 'igniteui-angular';
-import { AnimationSettings } from "igniteui-angular/lib/expansion-panel/expansion-panel.component";
 
 @Component({
     selector: "select-sample-4",
@@ -15,7 +13,7 @@ import { AnimationSettings } from "igniteui-angular/lib/expansion-panel/expansio
 export class SelectSample4Component implements OnInit {
     @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
-    public items: string[] = ["Orange", "Apple", "Banana", "Mango", "Tomato"];
+    public items: string[] = ["Orange", "Apple", "Banana"];
     public customOverlaySettings: OverlaySettings;
 
     public ngOnInit(): void {

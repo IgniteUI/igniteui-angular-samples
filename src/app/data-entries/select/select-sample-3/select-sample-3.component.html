@@ -2,11 +2,12 @@
     <div class="select-wrapper">
         <igx-select [(ngModel)]="selected" [ngModelOptions]="{standalone: true}">
             <igx-prefix>Fruit</igx-prefix>
-            <igx-select-item></igx-select-item>
             <igx-select-item *ngFor="let item of items" [value]="item">
                 {{item}}
             </igx-select-item>
         </igx-select>
+        <div class="output">You selected: {{selected}}</div>
     </div>
-    <span>You selected: {{selected}}</span>
+    <button igxButton (click)="selectBanana()">Select Banana</button>
+    <button igxButton (click)="selectNull()">Select Null</button>
 </form>
