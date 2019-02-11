@@ -4,7 +4,9 @@ import { FormsModule } from "@angular/forms";
 import {
     IgxButtonGroupModule,
     IgxButtonModule,
+    IgxCsvExporterService,
     IgxDialogModule,
+    IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
     IgxRippleModule,
@@ -46,6 +48,7 @@ import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-r
         IgxSwitchModule,
         IgxRippleModule,
         IgxDialogModule
-    ]
+    ],
+    providers: [IgxExcelExporterService, IgxCsvExporterService]
 })
 export class TreeGridModule { }
