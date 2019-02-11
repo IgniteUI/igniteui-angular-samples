@@ -1,0 +1,39 @@
+<div class="hgrid-sample">
+    <igx-hierarchical-grid #grid1 class="hgrid" [data]="localdata" [autoGenerate]="false"
+        [height]="'600px'" [width]="'900px'" #hGrid>
+        <igx-column field="Artist" [resizable]="true"></igx-column>
+        <igx-column field="Photo" [resizable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <span>
+                        <img [src]="cell.value" class="photo" />
+                    </span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut" [resizable]="true"></igx-column>
+        <igx-column field="Grammy Nominations" [resizable]="true"></igx-column>
+        <igx-column field="Grammy Awards" [resizable]="true"></igx-column>
+
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false" #layout1 >
+            <igx-column field="Album" [resizable]="true"></igx-column>
+            <igx-column field="Launch Date" [resizable]="true"></igx-column>
+            <igx-column field="Billboard Review" [resizable]="true"></igx-column>
+            <igx-column field="US Billboard 200" [resizable]="true"></igx-column>
+        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+                <igx-column field="No."></igx-column>
+                <igx-column field="Title"></igx-column>
+                <igx-column field="Released"></igx-column>
+                <igx-column field="Genre"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+
+    <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+        <igx-column field="Tour"></igx-column>
+        <igx-column field="Started on"></igx-column>
+        <igx-column field="Location"></igx-column>
+        <igx-column field="Headliner"></igx-column>
+    </igx-row-island>
+
+    </igx-hierarchical-grid>
+</div>

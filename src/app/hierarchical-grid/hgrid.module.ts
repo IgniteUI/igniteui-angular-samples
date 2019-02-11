@@ -8,8 +8,9 @@ import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule,
     IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxHierarchicalGridModule } from "igniteui-angular";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HGridSummarySampleComponent } from './hierarchical-grid-summary/hierarchical-grid-summary.component';
-import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-paging.component'
-import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component'
+import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-paging.component';
+import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component';
+import { HGridColumnResizingSampleComponent } from './hierarchical-grid-column-resizing/hierarchical-grid-resizing.component';
 import { HgridRoutingModule } from './hgrid-routing.module';
 // tslint:enable:max-line-length
 
@@ -18,7 +19,8 @@ import { HgridRoutingModule } from './hgrid-routing.module';
         HGridFilteringSampleComponent,
         HGridSummarySampleComponent,
         HGridPagingSampleComponent,
-        HGridPinningSampleComponent
+        HGridPinningSampleComponent,
+        HGridColumnResizingSampleComponent
     ],
     imports: [
         CommonModule,
