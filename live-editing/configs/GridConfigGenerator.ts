@@ -377,7 +377,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [RemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule, RemotePagingService],
                 ngDeclarations: [RemotePagingGridSample],
-                ngImports: [RouterModule.forRoot([]), IgxGridModule.forRoot(), HttpClientModule],
+                ngImports: ["RouterModule.forRoot([])", IgxGridModule.forRoot(), HttpClientModule],
                 ngProviders: [RemotePagingService]
             })
         }));
