@@ -3,13 +3,12 @@
 import * as fs from "fs";
 // tslint:disable-next-line:no-implicit-dependencies
 import * as ts from "typescript";
-import * as Collections from "typescript-collections";
 
 export class TsImportsService {
-    public getFileImports(filePath: string): Collections.Dictionary<string, string> {
+    public getFileImports(filePath: string): Map<string, string> {
         let sourceFile = ts.createSourceFile(
             filePath, fs.readFileSync(filePath).toString(), ts.ScriptTarget.ES2015, true);
-        let imports = new Collections.Dictionary<string, string>();
+        let imports = new Map<string, string>();
         let children = sourceFile.getChildren()[0].getChildren();
         for (let i = 0; i < children.length; i++) {
             this.getImports(children[i], imports);
@@ -18,7 +17,7 @@ export class TsImportsService {
         return imports;
     }
 
-    private getImports(node: ts.Node, imports: Collections.Dictionary<string, string>) {
+    private getImports(node: ts.Node, imports: Map<string, string>) {
         if (node.kind === ts.SyntaxKind.ImportDeclaration) {
             let importDeclaration = (node as ts.ImportDeclaration);
             let moduleSpecifier = importDeclaration.moduleSpecifier.getText();
@@ -30,7 +29,7 @@ export class TsImportsService {
             }
 
             for (let i = 0; i < importSpecifiers.length; i++) {
-                imports.setValue(importSpecifiers[i], moduleSpecifier);
+                imports.set(importSpecifiers[i], moduleSpecifier);
             }
         }
     }
