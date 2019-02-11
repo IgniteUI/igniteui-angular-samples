@@ -22,14 +22,6 @@ export const samplesRoutes: Routes = [
         path: "data-entries"
     },
     {
-        loadChildren: "./interactions/interactions.module#InteractionsModule",
-        path: "data-display"
-    },
-    {
-        loadChildren: "app/data-entries/data-entries.module#DataEntriesModule",
-        path: "data-entries"
-    },
-    {
         loadChildren: "app/interactions/interactions.module#InteractionsModule",
         path: "interactions"
     },

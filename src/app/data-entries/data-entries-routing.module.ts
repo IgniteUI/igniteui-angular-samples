@@ -58,7 +58,7 @@ export const dataEntriesRoutes: Routes = [
         path: "buttons-sample-2"
     },
     {
-        component: ButtonGroupSample3Component,
+        component: ButtonsSample3Component,
         data: dataEntriesRoutesData["buttons-sample-3"],
         path: "buttons-sample-3"
     },
