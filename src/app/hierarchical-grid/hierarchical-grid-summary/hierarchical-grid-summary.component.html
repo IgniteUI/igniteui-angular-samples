@@ -1,19 +1,27 @@
 <div class="hgrid-sample">
     <igx-hierarchical-grid #grid1 class="hgrid" [data]="localdata" [autoGenerate]="false"
-        [height]="'600px'" [width]="'800px'" #hGrid>
+        [height]="'600px'" [width]="'100%'" #hGrid>
         <igx-column field="Artist" [hasSummary]='true'></igx-column>
-        <igx-column field="Photo"></igx-column>
+        <igx-column field="Photo">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <span>
+                        <img [src]="cell.value" class="photo" />
+                    </span>
+                </div>
+            </ng-template>
+        </igx-column>
         <igx-column field="Debut" [hasSummary]='true'></igx-column>
-        <igx-column field="Grammy Nominations" [hasSummary]='true'></igx-column>
-        <igx-column field="Grammy Awards" [hasSummary]='true'></igx-column>
+        <igx-column field="Grammy Nominations" [hasSummary]='true' [dataType]="'number'"></igx-column>
+        <igx-column field="Grammy Awards" [hasSummary]='true' [dataType]="'number'"></igx-column>
 
         
 
         <igx-row-island [key]="'Albums'" [autoGenerate]="false" #layout1 >
                 <igx-column field="Album"></igx-column>
                 <igx-column field="Launch Date"></igx-column>
-                <igx-column field="Billboard Review"></igx-column>
-                <igx-column field="US Billboard 200"></igx-column>
+                <igx-column field="Billboard Review" [hasSummary]='true' [dataType]="'number'"></igx-column>
+                <igx-column field="US Billboard 200" [hasSummary]='true' [dataType]="'number'"></igx-column>
             <igx-row-island [key]="'Songs'" [autoGenerate]="false" >
                     <igx-column field="No."></igx-column>
                     <igx-column field="Title"></igx-column>

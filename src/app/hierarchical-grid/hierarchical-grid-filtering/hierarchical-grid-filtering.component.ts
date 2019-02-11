@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxRowIslandComponent, IgxHierarchicalGridComponent } from "igniteui-angular";
-import { LOCAL_DATA } from './data';
+import { SINGERS } from '../data';
 
 @Component({
     selector: "hierarchical-grid-filtering",
@@ -18,7 +18,7 @@ export class HGridFilteringSampleComponent implements OnInit {
     hGrid: IgxHierarchicalGridComponent;
 
     constructor() {
-        this.localdata = LOCAL_DATA;
+        this.localdata = SINGERS;
     }
     public ngOnInit(): void {
 

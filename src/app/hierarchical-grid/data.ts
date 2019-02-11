@@ -201,7 +201,7 @@ export const LOCAL_DATA = [{
 export const SINGERS = [
         {
             "Artist": "Naomí Yepes",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/naomi.png",
             "Debut": "2011",
             "Grammy Nominations": "6",
             "Grammy Awards": "0",
@@ -469,7 +469,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Babila Ebwélé",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/babila.png",
             "Debut": "2009",
             "Grammy Nominations": "0",
             "Grammy Awards": "11",
@@ -672,7 +672,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Ahmad Nazeri",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/ahmad.png",
             "Debut": "2004",
             "Grammy Nominations": "3",
             "Grammy Awards": "1",
@@ -694,7 +694,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Kimmy McIlmorie",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/kimmy.png",
             "Debut": "2007",
             "Grammy Nominations": "21",
             "Grammy Awards": "3",
@@ -708,14 +708,14 @@ export const SINGERS = [
         },
         {
             "Artist": "Mar Rueda",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/mar.png",
             "Debut": "1996",
             "Grammy Nominations": "14",
             "Grammy Awards": "2"
         },
         {
             "Artist": "Izabella Tabakova",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/izabella.png",
             "Debut": "2017",
             "Grammy Nominations": "7",
             "Grammy Awards": "11",
@@ -911,7 +911,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Nguyễn Diệp Chi",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/nguyen.png",
             "Debut": "1992",
             "Grammy Nominations": "4",
             "Grammy Awards": "2",
@@ -925,7 +925,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Eva Lee",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/eva.png",
             "Debut": "2008",
             "Grammy Nominations": "2",
             "Grammy Awards": "0",
@@ -939,7 +939,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Siri Jakobsson",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/siri.png",
             "Debut": "1990",
             "Grammy Nominations": "2",
             "Grammy Awards": "8",
@@ -1086,7 +1086,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Pablo Cambeiro",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/pablo.png",
             "Debut": "2011",
             "Grammy Nominations": "5",
             "Grammy Awards": "0",
@@ -1219,7 +1219,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Athar Malakooti",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/athar.png",
             "Debut": "2017",
             "Grammy Nominations": "0",
             "Grammy Awards": "0",
@@ -1233,7 +1233,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Marti Valencia",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/marti.png",
             "Debut": "2004",
             "Grammy Nominations": "1",
             "Grammy Awards": "1",
@@ -1359,7 +1359,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Alicia Stanger",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/alicia.png",
             "Debut": "2010",
             "Grammy Nominations": "1",
             "Grammy Awards": "0",
@@ -1373,7 +1373,7 @@ export const SINGERS = [
         },
         {
             "Artist": "Peter Taylor",
-            "Photo":"",
+            "Photo":"assets/images/hgrid/peter.png",
             "Debut": "2005",
             "Grammy Nominations": "0",
             "Grammy Awards": "2",
