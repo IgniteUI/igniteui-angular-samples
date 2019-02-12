@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const tsNode = require('ts-node').register({
-    fast: true,
+    transpileOnly: true,
     ignore: [/\/node_modules\/(?!igniteui-angular)/],
     compilerOptions: {
         allowJs: true
