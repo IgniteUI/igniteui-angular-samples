@@ -14,83 +14,81 @@ export const samplesRoutes: Routes = [
         path: "home"
     },
     {
-        loadChildren: "app/data-display/data-display.module#DataDisplayModule",
+        loadChildren: "./data-display/data-display.module#DataDisplayModule",
         path: "data-display"
     },
     {
-        loadChildren: "app/data-entries/data-entries.module#DataEntriesModule",
+        loadChildren: "./data-entries/data-entries.module#DataEntriesModule",
         path: "data-entries"
     },
     {
-        loadChildren: "app/interactions/interactions.module#InteractionsModule",
+        loadChildren: "./interactions/interactions.module#InteractionsModule",
         path: "interactions"
     },
     {
-        loadChildren: "app/notifications/notifications.module#NotificationsModule",
+        loadChildren: "./notifications/notifications.module#NotificationsModule",
         path: "notifications"
     },
     {
-        loadChildren: "app/charts/charts.module#ChartsModule",
+        loadChildren: "./charts/charts.module#ChartsModule",
         path: "charts"
     },
     {
-        loadChildren: "app/lists/lists.module#ListsModule",
+        loadChildren: "./lists/lists.module#ListsModule",
         path: "lists"
     },
     {
-        loadChildren: "app/theming/theming.module#ThemingModule",
+        loadChildren: "./theming/theming.module#ThemingModule",
         path: "theming"
     },
     {
-        loadChildren: "app/scheduling/scheduling.module#SchedulingModule",
+        loadChildren: "./scheduling/scheduling.module#SchedulingModule",
         path: "scheduling"
     },
     {
-        loadChildren: "app/excel-library/excel-library.module#ExcelLibraryModule",
+        loadChildren: "./excel-library/excel-library.module#ExcelLibraryModule",
         path: "excel-library"
     },
     {
-        loadChildren: "app/gauges/gauges.module#GaugesModule",
+        loadChildren: "./gauges/gauges.module#GaugesModule",
         path: "gauges"
     },
     {
-        loadChildren: "app/interactions/interactions.module#InteractionsModule",
-        path: "interactions"
-    },
-    {
-        loadChildren: "app/menus/menus.module#MenusModule",
+        loadChildren: "./menus/menus.module#MenusModule",
         path: "menus"
     },
     {
-        loadChildren: "app/layouts/layouts.module#LayoutsModule",
+        loadChildren: "./layouts/layouts.module#LayoutsModule",
         path: "layouts"
     },
     {
-        loadChildren: "app/services/services.module#ServicesModule",
+        loadChildren: "./services/services.module#ServicesModule",
         path: "services"
     },
     {
-        loadChildren: "app/tree-grid/tree-grid.module#TreeGridModule",
+        loadChildren: "./tree-grid/tree-grid.module#TreeGridModule",
         path: "tree-grid"
     },
     {
-        loadChildren: "app/grid/grids.module#GridsModule",
+        loadChildren: "./grid/grids.module#GridsModule",
         path: "grid"
     },
     {
-        loadChildren: "app/grid-crm/grid-crm.module#GridCRMModule",
+        loadChildren: "./grid-crm/grid-crm.module#GridCRMModule",
         path: "grid-crm"
     },
-        // excel library samples with lazy loading:
-    // {
-    //     data: { displayName: "Workbooks Operations", parentName: "Excel Library" },
-    //     loadChildren: "app/excel-library/operations-on/workbooks.module#ExcelLibraryOperationsOnWorkbooksModule",
-    //     path: "excel-library-operations-on-workbooks"
-    // },
     {
         component: CardSample1Component,
         data: { displayName: "Card with Header and Content", parentName: "Card" },
         path: "card-sample-1"
+    },
+    {
+        loadChildren: "./grid-finjs/grid-finjs.module#GridFinjsModule",
+        path: "finjs-sample"
+    },
+    {
+        loadChildren: "./treegrid-finjs/treegrid-finjs.module#TreeGridFinjsModule",
+        path: "treegrid-finjs-sample"
     }
 ];
 export const appRoutes: Routes = [

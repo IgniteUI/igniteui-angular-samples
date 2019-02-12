@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
-    IgxButtonGroupComponent, IgxColumnComponent, IgxDropDownComponent,
-    IgxGridCellComponent, IgxGridComponent, IgxSliderComponent,
-    OverlaySettings, PositionSettings,
-    SortingDirection, VerticalAlignment} from "igniteui-angular";
+
+import { AfterViewInit, Component, ElementRef, NgZone, ViewChild } from "@angular/core";
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
+    IgxSliderComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings,
+    VerticalAlignment} from "igniteui-angular";
 import { Observable } from "rxjs";
-import { LocalDataService } from "../services/localData.service";
+import { TreeLocalDataService } from "./treeLocalData.service";
 
 interface IButton {
     ripple ?: string;
@@ -17,7 +16,7 @@ interface IButton {
     icon ?: string;
 }
 
-class Button {
+export class Button {
     private ripple: string;
     private label: string;
     private disabled: boolean;
@@ -37,24 +36,18 @@ class Button {
 }
 
 @Component({
-    providers: [LocalDataService],
-    selector: "app-grid-component",
-    styleUrls: ["./grid-finjs-demo.component.scss"],
-    templateUrl: "./grid-finjs-demo.component.html"
+    providers: [TreeLocalDataService],
+    selector: "app-tree-grid-finjs-sample",
+    styleUrls: ["./tree-grid-finjs-sample.component.scss"],
+    templateUrl: "./tree-grid-finjs-sample.component.html"
 })
-export class FinJSDemoComponent implements OnInit, AfterViewInit {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+
+export class TreeGridFinJSComponent implements AfterViewInit  {
+    @ViewChild("grid1") public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
     @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
-
-    @ViewChild("hidingButton") public hidingButton: ElementRef;
-    @ViewChild("pinningButton") public pinningButton: ElementRef;
-
-    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
-
-    public cols: QueryList<IgxColumnComponent>;
 
     public theme = false;
     public volume = 1000;
@@ -82,48 +75,40 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         })
     ];
 
+    public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
+
+    public _positionSettings: PositionSettings = {
+        horizontalDirection: HorizontalAlignment.Left,
+        horizontalStartPoint: HorizontalAlignment.Right,
+        verticalStartPoint: VerticalAlignment.Bottom
+    };
+
+    public _overlaySettings: OverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: false,
+        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
+        scrollStrategy: new AbsoluteScrollStrategy()
+    };
+
     private subscription;
     private selectedButton;
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: LocalDataService) {
+    constructor(private zone: NgZone, private localService: TreeLocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
         this.data = this.localService.records;
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
-        this.grid1.groupingExpressions = [{
-                dir: SortingDirection.Desc,
-                fieldName: "Category",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Type",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Contract",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            }
-        ];
+        if (this.theme) {
+            document.body.classList.add("dark-theme");
+        }
     }
 
     public ngAfterViewInit() {
-        this.cols = this.grid1.columnList;
         this.grid1.reflow();
     }
-
-    public chartClick(cell: IgxGridCellComponent) {
-        // TODO
-        // cell.column.field returns the column
-    }
-
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
@@ -150,32 +135,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public onChange(event: any) {
-        if (this.grid1.groupingExpressions.length > 0) {
-            this.grid1.groupingExpressions = [];
-        } else {
-            this.grid1.groupingExpressions = [{
-                dir: SortingDirection.Desc,
-                fieldName: "Category",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Type",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Contract",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            }
-        ];
-        }
-    }
-
     public stopFeed() {
         if (this._timer) {
             clearInterval(this._timer);
@@ -197,22 +156,25 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         return "$" + value.toFixed(3);
     }
 
-    public groupingDone(event: any) {
-        // event.forEach(expr => {
-        //     this.grid1.columnList.filter(c => c.field === expr.fieldName)[0].hidden = true;
-        // });
-    }
-
     public onVolumeChanged(event: any) {
         this.localService.getData(this.volume);
     }
 
+    // the below code is needed when accessing the sample through the navigation
+    // it will style all the space below the sample component element, but not the navigation menu
     public onThemeChanged(event: any) {
-        if (event.checked) {
-            document.body.querySelector("div.main").classList.add("dark-theme");
+        const parentEl = this.parentComponentEl();
+        if (event.checked && parentEl.classList.contains("main")) {
+            parentEl.classList.add("dark-theme");
         } else {
-            document.body.querySelector("div.main").classList.remove("dark-theme");
+            parentEl.classList.remove("dark-theme");
         }
+    }
+
+    public parentComponentEl() {
+        // returns the main div container of the Index Component,
+        // if path is /samples/sample-url, or the appRoot, if path is /sample-url
+        return this.elRef.nativeElement.parentElement.parentElement;
     }
 
     public toggleToolbar(event: any) {
@@ -254,6 +216,10 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
+    // tslint:disable-next-line:member-ordering
+    public buttonCols = {
+        buttonCols: true
+    };
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         if (this.subscription) {
@@ -267,16 +233,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
                 button.disabled = disableButtons;
             }
         });
-    }
-
-    // private updateRandomData(data?: any[]) {
-    //     const currData = data ? data : this.grid1.data;
-    //     this.subscription = this.localService.updateRandomData(currData);
-    //     this.zone.run(() => {});
-    // }
-
-    get grouped(): boolean {
-        return this.grid1.groupingExpressions.length > 0;
     }
 
     get buttonSelected(): number {
@@ -301,30 +257,41 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
 
     // tslint:disable-next-line:member-ordering
     public updateAllPrices(data: any[]): any {
-        const currData = [];
         for (const dataRow of data) {
-          this.randomizeObjectData(dataRow);
+          this.randomizeObjectData(dataRow, true);
         }
         return data;
       }
 
     // tslint:disable-next-line:member-ordering
     public updateRandomPrices(data: any[]): any {
-        let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
-          this.randomizeObjectData(data[i]);
-          y++;
+        for (const dataRow of data) {
+            this.randomizeObjectData(dataRow, false);
+            this.randomizeChildObjData(dataRow);
         }
-       // return {data: currData, recordsUpdated: y };
         return data;
       }
 
-    private randomizeObjectData(dataObj) {
+    private randomizeObjectData(dataObj, random: boolean) {
         const changeP = "Change(%)";
         const res = this.generateNewPrice(dataObj.Price);
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
+
+        if (random && dataObj.Categories) {
+            // tslint:disable-next-line:prefer-for-of
+            for (let y = 0; y < dataObj.Categories.length; y++) {
+                this.randomizeObjectData(dataObj.Categories[y], true);
+            }
+        }
+    }
+
+    private randomizeChildObjData(dataObj) {
+        for (let i = Math.round(Math.random() * 10); i < dataObj.Categories.length;
+            i += Math.round(Math.random() * 10)) {
+            this.randomizeObjectData(dataObj.Categories[i], true);
+        }
     }
     private generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));

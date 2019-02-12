@@ -21,7 +21,7 @@
             <label igxLabel for="marketNotion">Market Notion</label>
             <input igxInput id="marketNotion" type="number" [(ngModel)]="record.MarketNotion" />
         </igx-input-group>
-        <igx-datePicker id="date" label="Date" [(ngModel)]="record.Date"></igx-datePicker>
+        <igx-date-picker id="date" label="Date" [(ngModel)]="record.Date"></igx-date-picker>
     </div>
 </igx-dialog>
 <div igxOverlayOutlet #outlet>
@@ -40,7 +40,7 @@
                 {{val | date:'dd/MM/yyyy'}}
             </ng-template>
         </igx-column>
-        <igx-column width="120%" [field]="'Delete Row'" [filterable]="false">
+        <igx-column [field]="'Delete Row'" [filterable]="false">
             <ng-template igxCell let-cell="cell">
                 <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
                     <igx-icon>delete</igx-icon>

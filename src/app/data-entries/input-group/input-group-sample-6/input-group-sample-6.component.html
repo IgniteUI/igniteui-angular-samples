@@ -27,14 +27,15 @@
                     </igx-suffix>
                 </igx-input-group>
                 <div class="igx-combo">
-                    <igx-combo #combo1 name="genres" class="input-container" width="100%" [itemsMaxHeight]="130"
-                        [data]="genres" [(ngModel)]="user.genres"
-                        placeholder="Select your favorite genres" searchPlaceholder="Search..." required [type]='"line"'>
+                    <igx-combo #combo1 name="genres" class="input-container" width="100%" [itemsMaxHeight]="130" [data]="genres"
+                        [(ngModel)]="user.genres" placeholder="Select your favorite genres" searchPlaceholder="Search..."
+                        required [type]='"line"'>
                     </igx-combo>
                 </div>
                 <div class="igx-datePicker">
-                    <igx-datePicker name="date" (onSelection)="onDateSelection($event)" >
-                        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
+                    <igx-date-picker name="date" (onSelection)="onDateSelection($event)">
+                        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value"
+                            let-displayData="displayData">
                             <igx-input-group (click)="openDialog()">
                                 <label igxLabel>Date </label>
                                 <input igxInput [value]="displayData" />
@@ -43,12 +44,13 @@
                                 </igx-suffix>
                             </igx-input-group>
                         </ng-template>
-                    </igx-datePicker>
+                    </igx-date-picker>
                 </div>
-                <div class="igx-time-picker">
-                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" >
-                        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
-                            <igx-input-group (click)="openDialog()">                                
+                <div class="igx-timePicker">
+                    <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)">
+                        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value"
+                            let-displayTime="displayTime">
+                            <igx-input-group (click)="openDialog()">
                                 <label igxLabel>Time </label>
                                 <input igxInput [value]="displayTime" />
                                 <igx-suffix>
