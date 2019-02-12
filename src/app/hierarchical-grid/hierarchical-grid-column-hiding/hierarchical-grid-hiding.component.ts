@@ -3,12 +3,12 @@ import { IgxRowIslandComponent, IgxHierarchicalGridComponent } from "igniteui-an
 import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-summary",
-    styleUrls: ["./hierarchical-grid-summary.component.scss"],
-    templateUrl: "hierarchical-grid-summary.component.html"
+    selector: "hierarchical-grid-hiding",
+    styleUrls: ["./hierarchical-grid-hiding.component.scss"],
+    templateUrl: "hierarchical-grid-hiding.component.html"
 })
 
-export class HGridSummarySampleComponent implements OnInit {
+export class HGridColumnHidingSampleComponent implements OnInit {
     public localdata;
 
     @ViewChild('layout1')

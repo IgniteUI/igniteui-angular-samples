@@ -11,6 +11,7 @@ import { HGridSummarySampleComponent } from './hierarchical-grid-summary/hierarc
 import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-paging.component';
 import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component';
 import { HGridColumnResizingSampleComponent } from './hierarchical-grid-column-resizing/hierarchical-grid-resizing.component';
+import { HGridColumnHidingSampleComponent } from './hierarchical-grid-column-hiding/hierarchical-grid-hiding.component';
 import { HgridRoutingModule } from './hgrid-routing.module';
 // tslint:enable:max-line-length
 
@@ -20,7 +21,8 @@ import { HgridRoutingModule } from './hgrid-routing.module';
         HGridSummarySampleComponent,
         HGridPagingSampleComponent,
         HGridPinningSampleComponent,
-        HGridColumnResizingSampleComponent
+        HGridColumnResizingSampleComponent,
+        HGridColumnHidingSampleComponent
     ],
     imports: [
         CommonModule,

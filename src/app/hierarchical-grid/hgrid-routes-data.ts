@@ -5,5 +5,6 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-summary": { displayName: "Hierarchical Grid Summary", parentName: "Hierarchical Grid" },
     "hierarchical-grid-paging": { displayName: "Hierarchical Grid Paging", parentName: "Hierarchical Grid" },
     "hierarchical-grid-pinning": { displayName: "Hierarchical Grid Column Pinning", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-resizing": { displayName: "Hierarchical Grid Column Resizing", parentName: "Hierarchical Grid" }
+    "hierarchical-grid-resizing": { displayName: "Hierarchical Grid Column Resizing", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-hiding": { displayName: "Hierarchical Grid Column Hiding", parentName: "Hierarchical Grid" }
 };
