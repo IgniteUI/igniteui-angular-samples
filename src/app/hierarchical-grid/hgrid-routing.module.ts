@@ -7,6 +7,7 @@ import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchi
 import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component';
 import { HGridColumnResizingSampleComponent } from './hierarchical-grid-column-resizing/hierarchical-grid-resizing.component';
 import { HGridColumnHidingSampleComponent } from './hierarchical-grid-column-hiding/hierarchical-grid-hiding.component';
+import { HGridDisplayDensitySampleComponent } from './hierarchical-grid-display-density/hierarchical-grid-density.component';
 import { hierarchicalGridRoutesData } from "./hgrid-routes-data";
 
 // tslint:enable:max-line-length
@@ -47,6 +48,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-hiding"],
         path: "hierarchical-grid-hiding"
+    },
+    {
+        component: HGridDisplayDensitySampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-density"],
+        path: "hierarchical-grid-density"
     }
 ];
 
