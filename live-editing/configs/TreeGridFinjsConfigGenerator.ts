@@ -26,8 +26,8 @@ export class TreeGridFinjsConfigGenerator implements IConfigGenerator {
                 "/src/app/treegrid-finjs/hierFinancialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, TreeGridFinJSComponent,
-                    TreeLocalDataService],
+                    IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
+                    IgxRippleModule, TreeGridFinJSComponent, TreeLocalDataService],
                 ngDeclarations: [TreeGridFinJSComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],

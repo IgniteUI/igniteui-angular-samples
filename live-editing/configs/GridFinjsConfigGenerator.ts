@@ -27,7 +27,8 @@ export class GridFinjsConfigGenerator implements IConfigGenerator {
                 "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, FinJSDemoComponent,
+                    IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
+                    IgxRippleModule, FinJSDemoComponent,
                     LocalDataService],
                 ngDeclarations: [FinJSDemoComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
