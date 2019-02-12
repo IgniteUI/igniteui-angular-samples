@@ -267,7 +267,7 @@ export class SampleAssetsGenerator extends Generator {
 
         return appModuleNgImports;
     }
-    
+
     private _getAppModuleImports(config: Config, configImports: Map<string, string>): string {
         let sampleImports = new Map<string, string[]>();
 
