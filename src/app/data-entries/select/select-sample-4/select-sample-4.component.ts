@@ -3,7 +3,7 @@ import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy,
     HorizontalAlignment, IgxSelectComponent, OverlaySettings,
     PositionSettings, slideInLeft, slideOutRight, VerticalAlignment
-} from 'igniteui-angular';
+} from "igniteui-angular";
 
 @Component({
     selector: "select-sample-4",
