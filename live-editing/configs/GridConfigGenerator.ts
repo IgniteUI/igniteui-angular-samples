@@ -133,7 +133,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
                 ngDeclarations: [GridGroupBySampleComponent],
                 ngImports: [IgxButtonModule, IgxGridModule, IgxIconModule, IgxBadgeModule]
-            }),
+            })
         }));
 
         configs.push(new Config({
@@ -145,7 +145,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridGroupBySummarySampleComponent],
                 ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxIconModule, IgxBadgeModule]
-            }),
+            })
         }));
 
         configs.push(new Config({
@@ -156,7 +156,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [FilteringSampleComponent],
                 ngImports: [IgxGridModule, IgxRippleModule, IgxInputGroupModule],
                 ngProviders: []
-            }),
+            })
         }));
 
         configs.push(new Config({
