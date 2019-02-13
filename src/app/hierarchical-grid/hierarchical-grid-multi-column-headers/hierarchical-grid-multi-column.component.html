@@ -1,0 +1,57 @@
+<igx-hierarchical-grid #hGrid [data]="localdata" [height]="'600px'" [width]="'100%'" displayDensity="compact" [allowFiltering]="true">
+    <igx-column field="CustomerID"></igx-column>
+    <igx-column-group [movable]="true" [pinned]="false" header="General Information">
+        <igx-column field="CompanyName" [movable]="true"></igx-column>
+        <igx-column-group [movable]="true" header="Person Details">
+            <igx-column field="ContactName" [movable]="true"></igx-column>
+            <igx-column field="ContactTitle" [movable]="true"></igx-column>
+        </igx-column-group>
+    </igx-column-group>
+    <igx-column-group header="Address Information">
+        <igx-column-group header="Location">
+            <igx-column field="Address"></igx-column>
+            <igx-column field="City"></igx-column>
+            <igx-column field="PostalCode"></igx-column>
+            <igx-column field="Country"></igx-column>
+        </igx-column-group>
+        <igx-column-group header="Contact Information">
+            <igx-column field="Phone"></igx-column>
+            <igx-column field="Fax"></igx-column>
+        </igx-column-group>
+    </igx-column-group>
+
+    <igx-row-island [key]="'Orders'" [autoGenerate]="false" #layout1 >
+        <igx-column-group header="Order Information">
+            <igx-column-group header="Order Details">
+                <igx-column field="OrderID"></igx-column>
+                <igx-column field="EmployeeID"></igx-column>
+                <igx-column field="OrderDate"></igx-column>
+                <igx-column field="RequiredDate"></igx-column>
+            </igx-column-group>
+            <igx-column-group header="General Shipping Information">
+                <igx-column field="ShippedDate"></igx-column>
+                <igx-column field="ShipVia"></igx-column>
+                <igx-column field="Freight"></igx-column>
+                <igx-column field="ShipName"></igx-column>
+            </igx-column-group>
+            <igx-column-group header="Shipping Location">
+                <igx-column field="ShipAddress"></igx-column>
+                <igx-column field="ShipCity"></igx-column>
+                <igx-column field="ShipPostalCode"></igx-column>
+                <igx-column field="ShipCountry"></igx-column>
+            </igx-column-group>
+        </igx-column-group>
+        <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false">
+                <igx-column field="ProductID"></igx-column>
+                <igx-column field="UnitPrice"></igx-column>
+                <igx-column field="Quantity"></igx-column>
+                <igx-column field="Discount"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+
+</igx-hierarchical-grid>
+
+<section class="button-section">
+    <button igxButton="raised" (click)="pinGroup()">Pin first group</button>
+    <button igxButton="raised" (click)="hideGroup()">Hide first group</button>
+</section>
