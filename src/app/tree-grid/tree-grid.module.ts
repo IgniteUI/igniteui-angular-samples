@@ -63,6 +63,7 @@ import {
 } from "./tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
+import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
 import {
     TreeGridToolbarSample1Component
 } from "./tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
@@ -100,6 +101,7 @@ import {
         TreeGridToolbarSample2Component,
         TreeGridToolbarSample3Component,
         TreeGridSummarySampleComponent,
+        TreeGridSummary2SampleComponent,
         TreeGridConditionalCellStyleComponent,
         TreeGridPagingSampleComponent,
         TreeGridEditingSampleComponent
