@@ -10,6 +10,9 @@ import { HGridColumnHidingSampleComponent } from './hierarchical-grid-column-hid
 import { HGridDisplayDensitySampleComponent } from './hierarchical-grid-display-density/hierarchical-grid-density.component';
 import { HGridColumnMovingSampleComponent } from './hierarchical-grid-column-moving/hierarchical-grid-moving.component';
 import { HGridMultiHeadersSampleComponent } from './hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component';
+import { HGridToolbarTitleSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component';
+import { HGridToolbarOptionsSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component';
+import { HGridToolbarCustomSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component';
 import { hierarchicalGridRoutesData } from "./hgrid-routes-data";
 
 // tslint:enable:max-line-length
@@ -68,6 +71,24 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-multi-column"],
         path: "hierarchical-grid-multi-column"
+    },
+    {
+        component: HGridToolbarTitleSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-toolbar-title"],
+        path: "hierarchical-grid-toolbar-title"
+    },
+    {
+        component: HGridToolbarOptionsSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-toolbar-options"],
+        path: "hierarchical-grid-toolbar-options"
+    },
+    {
+        component: HGridToolbarCustomSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-toolbar-custom"],
+        path: "hierarchical-grid-toolbar-custom"
     }
 ];
 

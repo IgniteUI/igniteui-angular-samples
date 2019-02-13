@@ -15,6 +15,9 @@ import { HGridColumnHidingSampleComponent } from './hierarchical-grid-column-hid
 import { HGridDisplayDensitySampleComponent } from './hierarchical-grid-display-density/hierarchical-grid-density.component';
 import { HGridColumnMovingSampleComponent } from './hierarchical-grid-column-moving/hierarchical-grid-moving.component';
 import { HGridMultiHeadersSampleComponent } from './hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component';
+import { HGridToolbarTitleSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component';
+import { HGridToolbarOptionsSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component';
+import { HGridToolbarCustomSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component';
 import { HgridRoutingModule } from './hgrid-routing.module';
 // tslint:enable:max-line-length
 
@@ -28,7 +31,10 @@ import { HgridRoutingModule } from './hgrid-routing.module';
         HGridColumnHidingSampleComponent,
         HGridDisplayDensitySampleComponent,
         HGridColumnMovingSampleComponent,
-        HGridMultiHeadersSampleComponent
+        HGridMultiHeadersSampleComponent,
+        HGridToolbarTitleSampleComponent,
+        HGridToolbarOptionsSampleComponent,
+        HGridToolbarCustomSampleComponent
     ],
     imports: [
         CommonModule,
