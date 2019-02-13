@@ -17,7 +17,8 @@ export class SelectSample3Component {
         this.igxSelect.selectItem(this.igxSelect.items[2]);
     }
 
-    public selectNull() {
-        this.igxSelect.selectItem(null);
+    public setToNull() {
+        this.igxSelect.value = null;
+        this.selected = null;
     }
 }
