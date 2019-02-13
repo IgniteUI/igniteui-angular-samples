@@ -36,7 +36,7 @@
     <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' (onGroupingDone)="groupingDone($event)"
         [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel" [exportCsv]="true" exportCsvText="Export to CSV">
+        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
         <igx-column [field]="'ID'" [hidden]='true'></igx-column>
         <igx-column [field]="'Category'" [width]="'120px'" [groupable]='true' [sortable]='true'></igx-column>
         <igx-column [field]="'Type'" [width]="'100px'" [groupable]='true' [sortable]='true' [filterable]='false'></igx-column>
