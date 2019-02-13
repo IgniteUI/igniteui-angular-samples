@@ -29,8 +29,8 @@ export class SassCompiler {
             includePaths: NODE_SASS_PATHS
         });
 
-        return postcss([autoprefixer({browsers: ["last 5 versions", "> 3%"], grid: true})]).
-        process(renderedSassResult.css).css;
+        return postcss([autoprefixer({browsers: ["last 5 versions", "> 3%"], grid: true})])
+              .process(renderedSassResult.css).css;
     }
 
     public compileWithSassJs(sass: string, shouldLogStatus: boolean = false): Promise<string> {
