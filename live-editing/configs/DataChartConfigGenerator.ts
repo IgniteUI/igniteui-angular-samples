@@ -1,13 +1,27 @@
-import { DataChartAxisLocationsComponent } from "../../src/app/charts/data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
-import { DataChartAxisSettingsComponent } from "../../src/app/charts/data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
-import { DataChartAxisSharingComponent } from "../../src/app/charts/data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
-import { DataChartAxisTypesComponent } from "../../src/app/charts/data-chart/data-chart-axis-types/data-chart-axis-types.component";
-import { DataChartLegendsComponent } from "../../src/app/charts/data-chart/data-chart-legends/data-chart-legends.component";
-import { DataChartNavigationComponent } from "../../src/app/charts/data-chart/data-chart-navigation/data-chart-navigation.component";
+import {
+    DataChartAxisLocationsComponent
+} from "../../src/app/charts/data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
+import {
+    DataChartAxisSettingsComponent
+} from "../../src/app/charts/data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
+import {
+    DataChartAxisSharingComponent
+} from "../../src/app/charts/data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
+import {
+    DataChartAxisTypesComponent
+} from "../../src/app/charts/data-chart/data-chart-axis-types/data-chart-axis-types.component";
+import {
+    DataChartLegendsComponent
+} from "../../src/app/charts/data-chart/data-chart-legends/data-chart-legends.component";
+import {
+    DataChartNavigationComponent
+} from "../../src/app/charts/data-chart/data-chart-navigation/data-chart-navigation.component";
 import {
     DataChartOverviewComponent
 } from "../../src/app/charts/data-chart/data-chart-overview/data-chart-overview.component";
-import { DataChartPerformanceComponent } from "../../src/app/charts/data-chart/data-chart-performance/data-chart-performance.component";
+import {
+    DataChartPerformanceComponent
+} from "../../src/app/charts/data-chart/data-chart-performance/data-chart-performance.component";
 import {
     DataChartSeriesAnimationsComponent
 } from "../../src/app/charts/data-chart/data-chart-series-animations/data-chart-series-animations.component";
@@ -17,12 +31,21 @@ import {
 import {
     DataChartSeriesHighlightingComponent
 } from "../../src/app/charts/data-chart/data-chart-series-highlighting/data-chart-series-highlighting.component";
-import { DataChartSeriesMarkersComponent } from "../../src/app/charts/data-chart/data-chart-series-markers/data-chart-series-markers.component";
-import { DataChartSeriesTooltipsComponent } from "../../src/app/charts/data-chart/data-chart-series-tooltips/data-chart-series-tooltips.component";
-import { DataChartSeriesTrendlinesComponent
+import {
+    DataChartSeriesMarkersComponent
+} from "../../src/app/charts/data-chart/data-chart-series-markers/data-chart-series-markers.component";
+import {
+    DataChartSeriesTooltipsComponent
+} from "../../src/app/charts/data-chart/data-chart-series-tooltips/data-chart-series-tooltips.component";
+import {
+    DataChartSeriesTrendlinesComponent
 } from "../../src/app/charts/data-chart/data-chart-series-trendlines/data-chart-series-trendlines.component";
-import { DataChartSynchronizationComponent } from "../../src/app/charts/data-chart/data-chart-synchronization/data-chart-synchronization.component";
-import { DataChartTitlesComponent } from "../../src/app/charts/data-chart/data-chart-titles/data-chart-titles.component";
+import {
+    DataChartSynchronizationComponent
+} from "../../src/app/charts/data-chart/data-chart-synchronization/data-chart-synchronization.component";
+import {
+    DataChartTitlesComponent
+} from "../../src/app/charts/data-chart/data-chart-titles/data-chart-titles.component";
 import {
     DataChartTypeCategorySeriesComponent
 } from "../../src/app/charts/data-chart/data-chart-type-category-series/data-chart-type-category-series.component";
@@ -60,11 +83,11 @@ import {
     DataChartTypeValueOverlayComponent
 } from "../../src/app/charts/data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
-import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
+import { DependenciesType } from "../services/DependenciesType";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IgxDataChartCoreModule } from 'igniteui-angular-charts/ES5/igx-data-chart-core-module';
+import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 
 export class DataChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -266,7 +289,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
             dependenciesType: DependenciesType.Charts,
             shortenComponentPathBy: "/charts/data-chart/"
         }));
-        
+
         configs.push(new Config({
             component: DataChartTypePolarSeriesComponent,
             appModuleConfig: new AppModuleConfig({
@@ -376,7 +399,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
             dependenciesType: DependenciesType.Charts,
             shortenComponentPathBy: "/charts/data-chart/"
         }));
-     
+
         return configs;
     }
 }
