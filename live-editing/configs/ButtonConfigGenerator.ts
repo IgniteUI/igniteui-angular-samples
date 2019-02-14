@@ -1,6 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular";
-import { ButtonsSample1Component } from "../../src/app/buttons/buttons-sample-1/buttons-sample-1.component";
+import { ButtonsSample1Component
+} from "../../src/app/data-entries/buttons/buttons-sample-1/buttons-sample-1.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -17,7 +18,7 @@ export class ButtonConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ButtonsSample1Component],
                 ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule]
             }),
-            shortenComponentPathBy: "/buttons/"
+            shortenComponentPathBy: "/data-entries/buttons/"
         }));
 
         return configs;

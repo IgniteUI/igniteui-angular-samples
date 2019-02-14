@@ -1,10 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
 import { Direction, IgxCarouselComponent, IgxCarouselModule,
     IgxLinearProgressBarComponent, IgxProgressBarModule, IgxSliderModule } from "igniteui-angular";
-import { CarouselSample1Component } from "../../src/app/carousel/carousel-sample-1/carousel-sample-1.component";
-import { CarouselSample2Component } from "../../src/app/carousel/carousel-sample-2/carousel-sample-2.component";
-import { CarouselSample3Component } from "../../src/app/carousel/carousel-sample-3/carousel-sample-3.component";
-import { CarouselComponent } from "../../src/app/carousel/carousel.component";
+import { CarouselSample1Component } from "../../src/app/layouts/carousel/carousel-sample-1/carousel-sample-1.component";
+import { CarouselSample2Component } from "../../src/app/layouts/carousel/carousel-sample-2/carousel-sample-2.component";
+import { CarouselSample3Component } from "../../src/app/layouts/carousel/carousel-sample-3/carousel-sample-3.component";
+import { CarouselComponent } from "../../src/app/layouts/carousel/carousel.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -19,7 +19,8 @@ export class CarouselConfigGenerator implements IConfigGenerator {
                 imports: [IgxCarouselModule, IgxSliderModule, CarouselComponent],
                 ngDeclarations: [CarouselComponent],
                 ngImports: [IgxCarouselModule, IgxSliderModule]
-            })
+            }),
+            shortenComponentPathBy: "/layouts/"
         }));
 
         configs.push(new Config({
@@ -29,7 +30,7 @@ export class CarouselConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CarouselSample1Component],
                 ngImports: [IgxCarouselModule, IgxSliderModule]
             }),
-            shortenComponentPathBy: "/carousel/"
+            shortenComponentPathBy: "/layouts/carousel/"
         }));
 
         configs.push(new Config({
@@ -39,7 +40,8 @@ export class CarouselConfigGenerator implements IConfigGenerator {
                     IgxSliderModule, CarouselSample2Component],
                 ngDeclarations: [CarouselSample2Component],
                 ngImports: [IgxCarouselModule, IgxSliderModule]
-            })
+            }),
+            shortenComponentPathBy: "/layouts/carousel/"
         }));
 
         configs.push(new Config({
@@ -50,7 +52,8 @@ export class CarouselConfigGenerator implements IConfigGenerator {
                     IgxSliderModule, CarouselSample3Component],
                 ngDeclarations: [CarouselSample3Component],
                 ngImports: [IgxCarouselModule, IgxProgressBarModule, IgxSliderModule]
-            })
+            }),
+            shortenComponentPathBy: "/layouts/carousel/"
         }));
 
         return configs;
