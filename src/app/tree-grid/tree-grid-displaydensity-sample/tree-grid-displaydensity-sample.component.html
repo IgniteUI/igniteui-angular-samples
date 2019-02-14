@@ -5,40 +5,40 @@
     height="550px" [allowFiltering]="true">
     <igx-column field="Name" dataType="string" [sortable]="true" [hasSummary]="true" width="200px"></igx-column>
     <igx-column-group [pinned]="false" header="General Information">
-        <igx-column field="HireDate" dataType="date" [sortable]="true" [hasSummary]="true" width="136px">
+        <igx-column field="HireDate" dataType="date" [sortable]="true" [hasSummary]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 {{val | date:'dd/MM/yyyy'}}
             </ng-template>
         </igx-column>
         <igx-column-group header="Person Details">
-            <igx-column field="ID" dataType="number" [filterable]="false" width="136px"></igx-column>
-            <igx-column field="Title" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
+            <igx-column field="ID" dataType="number" [filterable]="false"></igx-column>
+            <igx-column field="Title" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
             <igx-column field="Age" dataType="number" [sortable]="true" [hasSummary]="true"
-                [summaries]="numberSummaries" [filterable]="false" width="136px"></igx-column>
+                [summaries]="numberSummaries" [filterable]="false"></igx-column>
         </igx-column-group>
     </igx-column-group>
     <igx-column-group header="Address Information">
         <igx-column-group header="Location">
-            <igx-column field="Country" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
-            <igx-column field="City" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
-            <igx-column field="Address" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
+            <igx-column field="Country" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
+            <igx-column field="City" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
+            <igx-column field="Address" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
         </igx-column-group>
         <igx-column-group header="Contact Information">
-            <igx-column field="Phone" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
-            <igx-column field="Fax" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
-            <igx-column field="PostalCode" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
+            <igx-column field="Phone" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
+            <igx-column field="Fax" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
+            <igx-column field="PostalCode" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
         </igx-column-group>
     </igx-column-group>
     <igx-column-group header="Address Information">
         <igx-column-group header="Location">
-            <igx-column field="Country" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
-            <igx-column field="City" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
-            <igx-column field="Address" dataType="string" [sortable]="true" [hasSummary]="true" width="136px"></igx-column>
+            <igx-column field="Country" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
+            <igx-column field="City" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
+            <igx-column field="Address" dataType="string" [sortable]="true" [hasSummary]="true"></igx-column>
         </igx-column-group>
         <igx-column-group header="Contact Information">
-            <igx-column field="Phone" dataType="string" [sortable]="true" [resizable]="true" width="136px"></igx-column>
-            <igx-column field="Fax" dataType="string" [sortable]="true" [resizable]="true" width="136px"></igx-column>
-            <igx-column field="PostalCode" dataType="string" [sortable]="true" [resizable]="true" width="136px"></igx-column>
+            <igx-column field="Phone" dataType="string" [sortable]="true" [resizable]="true"></igx-column>
+            <igx-column field="Fax" dataType="string" [sortable]="true" [resizable]="true"></igx-column>
+            <igx-column field="PostalCode" dataType="string" [sortable]="true" [resizable]="true"></igx-column>
         </igx-column-group>
     </igx-column-group>
 </igx-tree-grid>
