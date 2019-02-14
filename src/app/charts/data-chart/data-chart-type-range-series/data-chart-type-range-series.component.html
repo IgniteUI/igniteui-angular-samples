@@ -1,3 +1,17 @@
-<p>
-  data-chart-type-range-series works!
-</p>
+<div class="sample-wrapper container">
+        <div class="options">
+            <div>
+                <label width="130px" class="optionLabel" >Type of Range Series:</label>
+                <select class="optionSelector" [(ngModel)]="seriesType" (change)="onSeriesTypeChanged($event.target)">
+                    <option>Column</option>
+                    <option>Area</option>                
+                </select>
+            </div>
+        </div>
+       
+        <igx-data-chart #chart [dataSource]="data" height="100%" width="100%">
+                <igx-category-x-axis #xAxis label="Year" name="xAxis"></igx-category-x-axis>
+                <igx-numeric-y-axis #yAxis name="yAxis"></igx-numeric-y-axis>            
+        </igx-data-chart> 
+        </div>
+    
