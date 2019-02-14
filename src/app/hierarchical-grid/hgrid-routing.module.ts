@@ -13,6 +13,7 @@ import { HGridMultiHeadersSampleComponent } from './hierarchical-grid-multi-colu
 import { HGridToolbarTitleSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component';
 import { HGridToolbarOptionsSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component';
 import { HGridToolbarCustomSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component';
+import { HGridRowEditingSampleComponent } from './hierarchical-grid-row-editing/hierarchical-grid-row-editing.component';
 import { hierarchicalGridRoutesData } from "./hgrid-routes-data";
 
 // tslint:enable:max-line-length
@@ -89,6 +90,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-toolbar-custom"],
         path: "hierarchical-grid-toolbar-custom"
+    },
+    {
+        component: HGridRowEditingSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-row-editing"],
+        path: "hierarchical-grid-row-editing"
     }
 ];
 

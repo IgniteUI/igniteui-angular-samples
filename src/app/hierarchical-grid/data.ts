@@ -3,8 +3,8 @@ export const SINGERS = [
             "Artist": "Naomí Yepes",
             "Photo":"assets/images/hgrid/naomi.png",
             "Debut": "2011",
-            "Grammy Nominations": "6",
-            "Grammy Awards": "0",
+            "Grammy Nominations": 6,
+            "Grammy Awards": 0,
             "Tours": [
                 {
                     "Tour": "Faithful Tour",
@@ -72,14 +72,14 @@ export const SINGERS = [
             ],
             "Albums": [{
                 "Album": "Initiation",
-                "Launch Date": "September 3, 2013",
+                "Launch Date": new Date("September 3, 2013"),
                 "Billboard Review": "86",
                 "US Billboard 200": "1",
                 "Artist": "Naomí Yepes"
             },
             {
                 "Album": "Dream Driven",
-                "Launch Date": "August 25, 2014",
+                "Launch Date": new Date("August 25, 2014"),
                 "Billboard Review": "81",
                 "US Billboard 200": "1",
                 "Artist": "Naomí Yepes",
@@ -170,14 +170,14 @@ export const SINGERS = [
             },
             {
                 "Album": "The dragon journey",
-                "Launch Date": "May 20, 2016",
+                "Launch Date": new Date("May 20, 2016"),
                 "Billboard Review": "60",
                 "US Billboard 200": "2",
                 "Artist": "Naomí Yepes"
             },
             {
                 "Album": "Organic me",
-                "Launch Date": "August 17, 2018",
+                "Launch Date": new Date("August 17, 2018"),
                 "Billboard Review": "82",
                 "US Billboard 200": "1",
                 "Artist": "Naomí Yepes",
@@ -261,7 +261,7 @@ export const SINGERS = [
             },
             {
                 "Album": "Curiosity",
-                "Launch Date": "December 7, 2019",
+                "Launch Date": new Date("December 7, 2019"),
                 "Billboard Review": "75",
                 "US Billboard 200": "12",
                 "Artist": "Naomí Yepes"
@@ -271,8 +271,8 @@ export const SINGERS = [
             "Artist": "Babila Ebwélé",
             "Photo":"assets/images/hgrid/babila.png",
             "Debut": "2009",
-            "Grammy Nominations": "0",
-            "Grammy Awards": "11",
+            "Grammy Nominations": 0,
+            "Grammy Awards": 11,
             "Tours":[{
                 "Tour": "The last straw",
                 "Started on": "May-09",
@@ -310,7 +310,7 @@ export const SINGERS = [
             }],
             "Albums":[{
                 "Album": "Pushing up daisies",
-                "Launch Date": "May 31, 2000",
+                "Launch Date": new Date("May 31, 2000"),
                 "Billboard Review": "86",
                 "US Billboard 200": "42",
                 "Artist": "Babila Ebwélé",
@@ -387,7 +387,7 @@ export const SINGERS = [
             },
             {
                 "Album": "Death's dead",
-                "Launch Date": "June 8, 2016",
+                "Launch Date": new Date("June 8, 2016"),
                 "Billboard Review": "85",
                 "US Billboard 200": "95",
                 "Artist": "Babila Ebwélé",
@@ -474,19 +474,19 @@ export const SINGERS = [
             "Artist": "Ahmad Nazeri",
             "Photo":"assets/images/hgrid/ahmad.png",
             "Debut": "2004",
-            "Grammy Nominations": "3",
-            "Grammy Awards": "1",
+            "Grammy Nominations": 3,
+            "Grammy Awards": 1,
             "Tours":[],
             "Albums":[{
                 "Album": "Emergency",
-                "Launch Date": "March 6, 2004",
+                "Launch Date": new Date("March 6, 2004"),
                 "Billboard Review": "98",
                 "US Billboard 200": "69",
                 "Artist": "Ahmad Nazeri"
             },
             {
                 "Album": "Bursting bubbles",
-                "Launch Date": "April 17, 2006",
+                "Launch Date": new Date("April 17, 2006"),
                 "Billboard Review": "69",
                 "US Billboard 200": "39",
                 "Artist": "Ahmad Nazeri"
@@ -496,11 +496,11 @@ export const SINGERS = [
             "Artist": "Kimmy McIlmorie",
             "Photo":"assets/images/hgrid/kimmy.png",
             "Debut": "2007",
-            "Grammy Nominations": "21",
-            "Grammy Awards": "3",
+            "Grammy Nominations": 21,
+            "Grammy Awards": 3,
             "Albums":[{
                 "Album": "Here we go again",
-                "Launch Date": "November 18, 2017",
+                "Launch Date": new Date("November 18, 2017"),
                 "Billboard Review": "68",
                 "US Billboard 200": "1",
                 "Artist": "Kimmy McIlmorie"
@@ -510,15 +510,15 @@ export const SINGERS = [
             "Artist": "Mar Rueda",
             "Photo":"assets/images/hgrid/mar.png",
             "Debut": "1996",
-            "Grammy Nominations": "14",
-            "Grammy Awards": "2"
+            "Grammy Nominations": 14,
+            "Grammy Awards": 2
         },
         {
             "Artist": "Izabella Tabakova",
             "Photo":"assets/images/hgrid/izabella.png",
             "Debut": "2017",
-            "Grammy Nominations": "7",
-            "Grammy Awards": "11",
+            "Grammy Nominations": 7,
+            "Grammy Awards": 11,
             "Tours":[{
                 "Tour": "Final breath",
                 "Started on": "Jun-13",
@@ -549,7 +549,7 @@ export const SINGERS = [
             }],
             "Albums":[{
                 "Album": "Once bitten",
-                "Launch Date": "July 16, 2007",
+                "Launch Date": new Date("July 16, 2007"),
                 "Billboard Review": "79",
                 "US Billboard 200": "53",
                 "Artist": "Izabella Tabakova",
@@ -626,7 +626,7 @@ export const SINGERS = [
             },
             {
                 "Album": "Your graciousness",
-                "Launch Date": "November 17, 2004",
+                "Launch Date": new Date("November 17, 2004"),
                 "Billboard Review": "69",
                 "US Billboard 200": "30",
                 "Artist": "Izabella Tabakova",
@@ -703,7 +703,7 @@ export const SINGERS = [
             },
             {
                 "Album": "Dark matters",
-                "Launch Date": "November 3, 2002",
+                "Launch Date": new Date("November 3, 2002"),
                 "Billboard Review": "79",
                 "US Billboard 200": "85",
                 "Artist": "Izabella Tabakova"
@@ -713,11 +713,11 @@ export const SINGERS = [
             "Artist": "Nguyễn Diệp Chi",
             "Photo":"assets/images/hgrid/nguyen.png",
             "Debut": "1992",
-            "Grammy Nominations": "4",
-            "Grammy Awards": "2",
+            "Grammy Nominations": 4,
+            "Grammy Awards": 2,
             "Albums":[{
                 "Album": "Library of liberty",
-                "Launch Date": "December 22, 2003",
+                "Launch Date": new Date("December 22, 2003"),
                 "Billboard Review": "93",
                 "US Billboard 200": "5",
                 "Artist": "Nguyễn Diệp Chi"
@@ -727,11 +727,11 @@ export const SINGERS = [
             "Artist": "Eva Lee",
             "Photo":"assets/images/hgrid/eva.png",
             "Debut": "2008",
-            "Grammy Nominations": "2",
-            "Grammy Awards": "0",
+            "Grammy Nominations": 2,
+            "Grammy Awards": 0,
             "Albums":[{
                 "Album": "Just a tease",
-                "Launch Date": "May 3, 2001",
+                "Launch Date": new Date("May 3, 2001"),
                 "Billboard Review": "91",
                 "US Billboard 200": "29",
                 "Artist": "Eva Lee"
@@ -741,8 +741,8 @@ export const SINGERS = [
             "Artist": "Siri Jakobsson",
             "Photo":"assets/images/hgrid/siri.png",
             "Debut": "1990",
-            "Grammy Nominations": "2",
-            "Grammy Awards": "8",
+            "Grammy Nominations": 2,
+            "Grammy Awards": 8,
             "Tours":[{
                 "Tour": "Basket case",
                 "Started on": "Jan-07",
@@ -780,7 +780,7 @@ export const SINGERS = [
             }],
             "Albums":[{
                 "Album": "Under the bus",
-                "Launch Date": "May 14, 2000",
+                "Launch Date": new Date("May 14, 2000"),
                 "Billboard Review": "67",
                 "US Billboard 200": "67",
                 "Artist": "Siri Jakobsson",
@@ -888,8 +888,8 @@ export const SINGERS = [
             "Artist": "Pablo Cambeiro",
             "Photo":"assets/images/hgrid/pablo.png",
             "Debut": "2011",
-            "Grammy Nominations": "5",
-            "Grammy Awards": "0",
+            "Grammy Nominations": 5,
+            "Grammy Awards": 0,
             "Tours":[{
                 "Tour": "Beads",
                 "Started on": "May-11",
@@ -941,14 +941,14 @@ export const SINGERS = [
             }],
             "Albums":[{
                 "Album": "Fluke",
-                "Launch Date": "August 4, 2017",
+                "Launch Date": new Date("August 4, 2017"),
                 "Billboard Review": "93",
                 "US Billboard 200": "98",
                 "Artist": "Pablo Cambeiro"
             },
             {
                 "Album": "Crowd control",
-                "Launch Date": "August 26, 2003",
+                "Launch Date": new Date("August 26, 2003"),
                 "Billboard Review": "68",
                 "US Billboard 200": "84",
                 "Artist": "Pablo Cambeiro",
@@ -1021,11 +1021,11 @@ export const SINGERS = [
             "Artist": "Athar Malakooti",
             "Photo":"assets/images/hgrid/athar.png",
             "Debut": "2017",
-            "Grammy Nominations": "0",
-            "Grammy Awards": "0",
+            "Grammy Nominations": 0,
+            "Grammy Awards": 0,
             "Albums":[{
                 "Album": "Pushing up daisies",
-                "Launch Date": "February 24, 2016",
+                "Launch Date": new Date("February 24, 2016"),
                 "Billboard Review": "74",
                 "US Billboard 200": "77",
                 "Artist": "Athar Malakooti"
@@ -1035,8 +1035,8 @@ export const SINGERS = [
             "Artist": "Marti Valencia",
             "Photo":"assets/images/hgrid/marti.png",
             "Debut": "2004",
-            "Grammy Nominations": "1",
-            "Grammy Awards": "1",
+            "Grammy Nominations": 1,
+            "Grammy Awards": 1,
             "Tours":[{
                 "Tour": "Cat eat cat world",
                 "Started on": "Sep-00",
@@ -1053,14 +1053,14 @@ export const SINGERS = [
             }],
             "Albums":[{
                 "Album": "Nemesis",
-                "Launch Date": "June 30, 2004",
+                "Launch Date": new Date("June 30, 2004"),
                 "Billboard Review": "94",
                 "US Billboard 200": "9",
                 "Artist": "Marti Valencia"
             },
             {
                 "Album": "First chance",
-                "Launch Date": "January 7, 2019",
+                "Launch Date": new Date("January 7, 2019"),
                 "Billboard Review": "96",
                 "US Billboard 200": "19",
                 "Artist": "Marti Valencia",
@@ -1151,7 +1151,7 @@ export const SINGERS = [
             },
             {
                 "Album": "God's advocate",
-                "Launch Date": "April 29, 2007",
+                "Launch Date": new Date("April 29, 2007"),
                 "Billboard Review": "66",
                 "US Billboard 200": "37",
                 "Artist": "Marti Valencia"
@@ -1161,11 +1161,11 @@ export const SINGERS = [
             "Artist": "Alicia Stanger",
             "Photo":"assets/images/hgrid/alicia.png",
             "Debut": "2010",
-            "Grammy Nominations": "1",
-            "Grammy Awards": "0",
+            "Grammy Nominations": 1,
+            "Grammy Awards": 0,
             "Albums":[{
                 "Album": "Forever alone",
-                "Launch Date": "November 3, 2005",
+                "Launch Date": new Date("November 3, 2005"),
                 "Billboard Review": "82",
                 "US Billboard 200": "7",
                 "Artist": "Alicia Stanger"
@@ -1175,8 +1175,8 @@ export const SINGERS = [
             "Artist": "Peter Taylor",
             "Photo":"assets/images/hgrid/peter.png",
             "Debut": "2005",
-            "Grammy Nominations": "0",
-            "Grammy Awards": "2",
+            "Grammy Nominations": 0,
+            "Grammy Awards": 2,
             "Tours":[{
                 "Tour": "Love",
                 "Started on": "Jun-04",
@@ -1221,14 +1221,14 @@ export const SINGERS = [
             }],
             "Albums":[{
                 "Album": "Decisions decisions",
-                "Launch Date": "April 10, 2008",
+                "Launch Date": new Date("April 10, 2008"),
                 "Billboard Review": "85",
                 "US Billboard 200": "35",
                 "Artist": "Peter Taylor"
             },
             {
                 "Album": "Climate changed",
-                "Launch Date": "June 20, 2015",
+                "Launch Date": new Date("June 20, 2015"),
                 "Billboard Review": "66",
                 "US Billboard 200": "89",
                 "Artist": "Peter Taylor"

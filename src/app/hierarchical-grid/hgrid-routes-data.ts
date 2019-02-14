@@ -1,6 +1,7 @@
 // tslint:disable:object-literal-sort-keys
 
 export const hierarchicalGridRoutesData = {
+    "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering": { displayName: "Hierarchical Grid Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-summary": { displayName: "Hierarchical Grid Summary", parentName: "Hierarchical Grid" },
     "hierarchical-grid-paging": { displayName: "Hierarchical Grid Paging", parentName: "Hierarchical Grid" },
@@ -13,4 +14,5 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-toolbar-title": { displayName: "Hierarchical Grid Toolbar Title", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-options": { displayName: "Hierarchical Grid Toolbar Options", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-custom": { displayName: "Hierarchical Grid Toolbar Custom Content", parentName: "Hierarchical Grid" }
+   
 };
