@@ -1,3 +1,29 @@
-<p>
-  data-chart-series-tooltips works!
-</p>
+<div>
+    <div>
+        <span className="optionLabel">Tooltip Type: </span>
+        <select (input)="onTooltipTypeChanged($event)">
+            <option>Default</option>
+            <option>Item</option>
+            <option>Category</option>
+        </select>
+    </div>
+  
+    <div>
+      <igx-data-chart #chart height="600px" width="100%" [dataSource]="data">
+  
+        <igx-category-x-axis #xAxis name="xAxis" label="Country"></igx-category-x-axis>
+        <igx-numeric-y-axis #yAxis name="yAxis" minimumValue=0></igx-numeric-y-axis>
+  
+        <igx-column-series name="series1" title="Coal" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Coal"
+          showDefaultTooltip=true></igx-column-series>
+        <igx-column-series name="series2" title="Hydro" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Hydro"
+          showDefaultTooltip=true></igx-column-series>
+        <igx-column-series name="series3" title="Nuclear" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Nuclear"
+          showDefaultTooltip=true></igx-column-series>
+        <igx-column-series name="series4" title="Gas" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Gas"
+          showDefaultTooltip=true></igx-column-series>
+        <igx-column-series name="series5" title="Oil" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Oil"
+          showDefaultTooltip=true></igx-column-series>
+      </igx-data-chart>
+    </div>
+  </div>
