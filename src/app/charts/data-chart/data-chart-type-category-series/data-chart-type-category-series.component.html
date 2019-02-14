@@ -1,3 +1,29 @@
 <p>
-  data-chart-type-category-series works!
+  Category Series:
 </p>
+<igx-data-chart 
+  chartTitle="Column and Line Chart"
+  width="500px"
+  height="500px"
+  [dataSource]="data" >
+  <igx-numeric-y-axis 
+    #yAxis>
+
+  </igx-numeric-y-axis>
+  <igx-category-x-axis 
+    label="label"
+    #xAxis>
+  </igx-category-x-axis>
+
+  <igx-column-series
+    valueMemberPath="value1"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis">
+  </igx-column-series>
+
+   <igx-line-series
+    valueMemberPath="value2"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis">
+  </igx-line-series>
+</igx-data-chart>
