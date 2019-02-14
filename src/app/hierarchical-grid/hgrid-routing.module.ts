@@ -2,6 +2,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
+import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
 import { HGridSummarySampleComponent } from './hierarchical-grid-summary/hierarchical-grid-summary.component';
 import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-paging.component';
 import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component';
@@ -24,6 +25,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-filtering"],
         path: "hierarchical-grid-filtering"
+    },
+    {
+        component: HGridSortingSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-sorting"],
+        path: "hierarchical-grid-sorting"
     },
     {
         component: HGridSummarySampleComponent,

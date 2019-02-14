@@ -7,6 +7,7 @@ import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule,
     IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
     IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxHierarchicalGridModule } from "igniteui-angular";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
+import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
 import { HGridSummarySampleComponent } from './hierarchical-grid-summary/hierarchical-grid-summary.component';
 import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-paging.component';
 import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component';
@@ -25,6 +26,7 @@ import { HgridRoutingModule } from './hgrid-routing.module';
 @NgModule({
     declarations: [
         HGridFilteringSampleComponent,
+        HGridSortingSampleComponent,
         HGridSummarySampleComponent,
         HGridPagingSampleComponent,
         HGridPinningSampleComponent,
