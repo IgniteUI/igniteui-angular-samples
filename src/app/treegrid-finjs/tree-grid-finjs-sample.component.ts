@@ -1,10 +1,11 @@
 
-import { AfterViewInit, Component, NgZone, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DataUtil, HorizontalAlignment,
     IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings,
     VerticalAlignment} from "igniteui-angular";
-import { LocalDataService } from "../../grid/services/localData.service";
+import { LocalDataService } from "../grid-finjs/localData.service";
+import { ITreeGridAggregation } from './tree-grid-grouping.pipe';
 
 interface IButton {
     ripple ?: string;
@@ -74,6 +75,28 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
             selected: false
         })
     ];
+    public groupColumns = ["Category", "Type", "Contract"];
+    public aggregations: ITreeGridAggregation[] = [
+        {
+            aggregate: (parent: any, data: any[]) => {
+                return data.map((r) => r.Change).reduce((ty, u) => ty + u, 0);
+            },
+            field: "Change"
+        },
+        {
+            aggregate: (parent: any, data: any[]) => {
+                return data.map((r) => r.Price).reduce((ty, u) => ty + u, 0);
+            },
+            field: "Price"
+        },
+        {
+            aggregate: (parent: any, data: any[]) => {
+                return parent.Change / (parent. Price - parent.Change) * 100;
+            },
+            field: "Change(%)"
+        }
+    ];
+    // public groupColumnName = "Categories";
 
     public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
 
@@ -95,7 +118,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: LocalDataService) {
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
         this.localService.records.subscribe((d) => this.data = d);
     }

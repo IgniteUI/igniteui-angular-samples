@@ -6,42 +6,58 @@ class GroupByRecord {
     public records: any[];
 }
 
+export class ITreeGridAggregation {
+    public field: string;
+    public aggregate: (parent: any, data: any[]) => any;
+}
+
 @Pipe({
     name: "treeGridGrouping",
     pure: true
 })
 export class TreeGridGroupingPipe implements PipeTransform {
 
-    public transform(collection: any[], groupColumns: string[], groupColumnName: string): any[] {
+    public transform(collection: any[],
+                     groupColumns: string[],
+                     aggregations: ITreeGridAggregation[],
+                     groupKey: string,
+                     primaryKey: string,
+                     childDataKey: string): any[] {
         const result = [];
-        groupColumns = ["Category", "Type", "Contract"];
-        groupColumnName = "Categories";
 
         const groupedRecords = this.groupByMultiple(collection, groupColumns);
-        this.flattenGrouping(groupedRecords, groupColumnName, "", result);
+        this.flattenGrouping(groupedRecords, groupKey, primaryKey,
+            childDataKey, aggregations, "", result);
 
         return result;
     }
 
-    private flattenGrouping(groupRecords: GroupByRecord[], groupColumnName: string, parentID: any, data: any[]) {
+    private flattenGrouping(groupRecords: GroupByRecord[],
+                            groupKey: string,
+                            primaryKey: string,
+                            childDataKey: string,
+                            aggregations: ITreeGridAggregation[],
+                            parentID: any,
+                            data: any[]) {
         for (const groupRecord of groupRecords) {
-            const change = groupRecord.records.map((r) => r.Change).reduce((ty, u) => ty + u, 0);
-            const price = groupRecord.records.map((r) => r.Price).reduce((ty, u) => ty + u, 0);
+            const parent = {};
+            const children = groupRecord.records;
 
-            const parent = {
-                "Change": change,
-                "Change(%)": change / (price - change) * 100,
-                "Children": [],
-                "ID": parentID + groupRecord.key,
-                "Price": price
-            };
-            parent[groupColumnName] = groupRecord.key;
+            parent[primaryKey] = parentID + groupRecord.key;
+            parent[childDataKey] = [];
+
+            for (const aggregation of aggregations) {
+                parent[aggregation.field] = aggregation.aggregate(parent, children);
+            }
+
+            parent[groupKey] = groupRecord.key;
             data.push(parent);
 
             if (groupRecord.groups) {
-                this.flattenGrouping(groupRecord.groups, groupColumnName, parent.ID, parent.Children);
+                this.flattenGrouping(groupRecord.groups, groupKey, primaryKey, childDataKey,
+                    aggregations, parent[primaryKey], parent[childDataKey]);
             } else {
-                parent.Children = groupRecord.records;
+                parent[childDataKey] = children;
             }
         }
     }

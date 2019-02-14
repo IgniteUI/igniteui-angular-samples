@@ -29,18 +29,19 @@
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
-    <igx-tree-grid #grid1 [data]="data | treeGridGrouping" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false'
+    <igx-tree-grid #grid1 [data]="data | treeGridGrouping:groupColumns:aggregations:'Categories':'ID':'Children'"
+                   [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false'
         displayDensity='compact' primaryKey="ID" childDataKey="Children"
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" 
         [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
         [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
-        <igx-column [field]="'ID'" [hidden]='true'></igx-column>
-        <igx-column [field]="'Categories'" [width]="'180px'" [sortable]='true' [resizable]='true'></igx-column>
-        <!-- <igx-column [field]="'Category'" [width]="'180px'" [groupable]='true' [sortable]='true' [resizable]='true'></igx-column>
-        <igx-column [field]="'Type'" [width]="'140px'" [groupable]='true' [sortable]='true' [filterable]='true' [resizable]='true'></igx-column> -->
+        <igx-column [field]="'Categories'" [width]="'180px'" [sortable]='true' [resizable]='true' [disableHiding]="true"></igx-column>
+        <igx-column [field]="'Settlement'" [width]="'100px'" [sortable]='true'></igx-column>
+        <igx-column [field]="'Region'" [width]="'110px'" [sortable]='true'></igx-column>
+        <igx-column [field]="'Country'" [width]="'100px'" [sortable]='true'></igx-column>
         <igx-column [field]="'Open Price'" [width]="'120px'" [dataType]="'number'" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'Price'" [width]="'110px'" [dataType]="'number'" [cellClasses]="trends" [movable]="true"
+        <igx-column [field]="'Price'" [width]="'130px'" [dataType]="'number'" [cellClasses]="trends" [movable]="true"
             [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
