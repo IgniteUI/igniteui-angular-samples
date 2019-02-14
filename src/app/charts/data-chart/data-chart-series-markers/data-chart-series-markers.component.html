@@ -1,10 +1,10 @@
 <div class="sample">
     <div class="options">
         <span class="optionLabel"> Marker Type: </span>
-        <select value={this.markersType}
+        <select value={{markersType}}
             (change)="this.onMarkerTypeChanged($event)">
-            <option>Circle</option>
             <option>Automatic</option>
+            <option>Circle</option>
             <option>Triangle</option>
             <option>Pyramid</option>
             <option>Square</option>
