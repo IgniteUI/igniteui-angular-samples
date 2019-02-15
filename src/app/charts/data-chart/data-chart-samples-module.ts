@@ -10,8 +10,10 @@ import { IgxDataChartScatterCoreModule } from "igniteui-angular-charts/ES5/igx-d
 import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-module";
 
 // Axes
+import { IgxCategoryAngleAxisModule } from "igniteui-angular-charts/ES5/igx-category-angle-axis-module";
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
 import { IgxCategoryYAxisModule } from "igniteui-angular-charts/ES5/igx-category-y-axis-module";
+import { IgxNumericRadiusAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-radius-axis-module";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
 import { IgxTimeXAxisModule } from "igniteui-angular-charts/ES5/igx-time-x-axis-module";
@@ -22,6 +24,10 @@ import { IgxBubbleSeriesModule } from "igniteui-angular-charts/ES5/igx-bubble-se
 import { IgxColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-column-series-module";
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxRadialAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-area-series-module";
+import { IgxRadialColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-column-series-module";
+import { IgxRadialLineSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-line-series-module";
+import { IgxRadialPieSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-pie-series-module";
 import { IgxScatterAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-area-series-module";
 import { IgxScatterContourSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-contour-series-module";
 import { IgxScatterLineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-line-series-module";
@@ -32,6 +38,8 @@ import { IgxScatterSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-sc
 
 import {IgxLinearContourValueResolverModule
 } from "igniteui-angular-charts/ES5/igx-linear-contour-value-resolver-module";
+import { IgxSizeScaleModule } from "igniteui-angular-charts/ES5/igx-size-scale-module";
+import { IgxValueBrushScaleModule } from "igniteui-angular-charts/ES5/igx-value-brush-scale-module";
 
 // Highlight and Annotation Layers
 import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
@@ -159,7 +167,9 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartCoreModule,
         IgxDataChartCategoryModule,
         IgxDataChartCategoryCoreModule,
+        IgxCategoryAngleAxisModule,
         IgxCategoryXAxisModule,
+        IgxNumericRadiusAxisModule,
         IgxNumericYAxisModule,
         IgxColumnSeriesModule,
         IgxDataChartInteractivityModule,
@@ -171,6 +181,10 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartCategoryTrendLineModule,
         IgxDataChartScatterCoreModule,
         IgxDataChartScatterModule,
+        IgxRadialAreaSeriesModule,
+        IgxRadialColumnSeriesModule,
+        IgxRadialLineSeriesModule,
+        IgxRadialPieSeriesModule,
         IgxScatterAreaSeriesModule,
         IgxScatterSeriesModule,
         IgxScatterLineSeriesModule,
@@ -191,7 +205,9 @@ import { FormsModule } from "@angular/forms";
         IgxCategoryYAxisModule,
         IgxTimeXAxisModule,
         IgxScatterContourSeriesModule,
-        IgxLinearContourValueResolverModule
+        IgxLinearContourValueResolverModule,
+        IgxSizeScaleModule,
+        IgxValueBrushScaleModule
     ]
 })
 export class DataChartSamplesModule {
