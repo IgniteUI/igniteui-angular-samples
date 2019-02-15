@@ -111,6 +111,7 @@ import {
 // Indicators and Overlays
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
 import { IgxMedianPriceIndicatorModule } from "igniteui-angular-charts/ES5/igx-median-price-indicator-module";
+import { IgxMoneyFlowIndexIndicatorModule } from "igniteui-angular-charts/ES5/igx-money-flow-index-indicator-module";
 
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
@@ -180,7 +181,8 @@ import { FormsModule } from "@angular/forms";
         IgxCrosshairLayerModule,
         IgxLegendModule,
         IgxBollingerBandsOverlayModule,
-        IgxMedianPriceIndicatorModule
+        IgxMedianPriceIndicatorModule,
+        IgxMoneyFlowIndexIndicatorModule
     ]
 })
 export class DataChartSamplesModule {

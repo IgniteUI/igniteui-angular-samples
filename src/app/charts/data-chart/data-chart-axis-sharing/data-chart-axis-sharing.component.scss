@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
+}
+
+.chart {
+    flex: 1;
+}
+
+.sample {
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: calc(100% - 25px);
+}
+
+.chart {
+    height: calc(100% - 45px);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+}
