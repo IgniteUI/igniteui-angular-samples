@@ -1,8 +1,8 @@
-<div class="sample-wrapper container">
-<div>
-        <span>Type of Category Series:</span>
+<div class="container">
+<div class="options">
+        <span class="optionLabel">Type of Category Series:</span>
         <select 
-        (ngModelChange)=onSeriesTypeChanged($event)>
+        (change)=onSeriesTypeChanged($event)>
                 <option>Column</option>
                 <option>Area</option>                
                 <option>Point</option>
@@ -13,27 +13,32 @@
                 <option>StepLine</option>
                 <option>Waterfall</option>
         </select>
+        <span class="legendTitle">Legend: </span>
+        <div class="legendInline" >
+            <igx-legend #legend orientation="Horizontal"></igx-legend>
+        </div>
 </div>
-<!-- <span className="legendTitle">Legend: </span>
-                    <div className="legendInline">
-                        <igx-legend orientation="Horizontal" />
-                    </div> -->
+
 <div class="chart">
-        <igx-data-chart [(ngModel)]="datachart"
-        
-        width="1000px"
-        height="500px"
+        <igx-data-chart #chart
+        isHorizontalZoomEnabled="true"
+        isVerticalZoomEnabled="true"
+        width="100%"
+        height="100%"
         [dataSource]="data" >
-        <igx-numeric-y-axis 
+        <igx-numeric-y-axis title="Total Olympic Medals"
           #yAxis>
       
         </igx-numeric-y-axis>
         <igx-category-x-axis 
-          label="Year"
+          label="Year" title="Olympic Years"
           #xAxis>
         </igx-category-x-axis>
       
-        <igx-column-series
+         <!-- series are created in the setSeries function
+                        alternatively, you can create series using this code: -->
+                    
+        <!-- <igx-column-series
          
           valueMemberPath="USA"
           [xAxis]="xAxis"
@@ -44,7 +49,7 @@
           valueMemberPath="RUS"
           [xAxis]="xAxis"
           [yAxis]="yAxis">
-        </igx-column-series>
+        </igx-column-series> -->
       </igx-data-chart>
 </div>
 </div>

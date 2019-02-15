@@ -1,4 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+// types of axis:
+import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
+import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
 import { IgxLegendComponent } from 'igniteui-angular-charts/ES5/igx-legend-component';
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import { IgxColumnComponent } from 'igniteui-angular';
@@ -23,17 +26,26 @@ import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data
   styleUrls: ["./data-chart-type-category-series.component.scss"],
   templateUrl: "./data-chart-type-category-series.component.html"
 })
-export class chartTypeCategorySeriesComponent implements OnInit {
+export class DataChartTypeCategorySeriesComponent implements OnInit {
   
-  public seriesType: string;
-  public legend: IgxLegendComponent;
-  public datachart: IgxDataChartComponent;
-  constructor() {  
+    @ViewChild("chart")
+    public chart: IgxDataChartComponent;
+    @ViewChild("xAxis")
+    public xAxis: IgxCategoryXAxisComponent;
+    @ViewChild("yAxis")
+    public yAxis: IgxNumericYAxisComponent;
+    @ViewChild("legend")
+    public legend: IgxLegendComponent;
+  
+    constructor() {  
         
    }
   
   public ngOnInit() {
-    
+    if (this.legend) {
+        this.chart.legend = this.legend;
+        this.setSeries("Column");
+    }
   }
   public data = [
     {"Year": "1996", "USA": 148, "CHN": 110, "RUS": 95},
@@ -47,30 +59,32 @@ export class chartTypeCategorySeriesComponent implements OnInit {
   public onSeriesTypeChanged(e: any) {
     const selectedSeries = e.target.value.toString();
     seriesType: selectedSeries;
+    this.chart.series.clear();
     this.setSeries(selectedSeries);
 }
 
 public setSeries(seriesType: string)
 {
+    
     if (seriesType === "Column") {
 
         const series1 = new IgxColumnSeriesComponent();
         series1.name = "series1";
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
 
         const series2 = new IgxColumnSeriesComponent();
         series2.name = "series2";
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } else if (seriesType === "Line") {
 
@@ -79,8 +93,8 @@ public setSeries(seriesType: string)
         series1.markerType = MarkerType.Circle;
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
         const series2 = new IgxLineSeriesComponent();
@@ -88,13 +102,13 @@ public setSeries(seriesType: string)
         series2.markerType = MarkerType.Circle;
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
         series2.thickness = 2;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } 
     else if (seriesType === "Point") {
@@ -104,8 +118,8 @@ public setSeries(seriesType: string)
         series1.markerType = MarkerType.Circle;
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
         const series2 = new IgxPointSeriesComponent();
@@ -113,13 +127,13 @@ public setSeries(seriesType: string)
         series2.markerType = MarkerType.Circle;
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
         series2.thickness = 2;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } else if (seriesType === "Area") {
 
@@ -128,8 +142,8 @@ public setSeries(seriesType: string)
         series1.markerType = MarkerType.Circle;
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
 
@@ -138,13 +152,13 @@ public setSeries(seriesType: string)
         series2.markerType = MarkerType.Circle;
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
         series2.thickness = 2;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } else if (seriesType === "Spline") {
 
@@ -153,8 +167,8 @@ public setSeries(seriesType: string)
         series1.markerType = MarkerType.Circle;
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
 
@@ -163,12 +177,12 @@ public setSeries(seriesType: string)
         series2.markerType = MarkerType.Circle;
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } else if (seriesType === "SplineArea") {
 
@@ -176,8 +190,8 @@ public setSeries(seriesType: string)
         series1.name = "series1";
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
         const series2 = new IgxSplineAreaSeriesComponent();
@@ -187,9 +201,9 @@ public setSeries(seriesType: string)
         series2.xAxis.name = "xAxis";
         series2.yAxis.name = "yAxis";
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } else if (seriesType === "StepArea") {
 
@@ -197,8 +211,8 @@ public setSeries(seriesType: string)
         series1.name = "series1";
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
 
@@ -206,12 +220,12 @@ public setSeries(seriesType: string)
         series2.name = "series2"
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } else if (seriesType === "StepLine") {
 
@@ -219,8 +233,8 @@ public setSeries(seriesType: string)
         series1.name = "series1";
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
 
@@ -228,12 +242,12 @@ public setSeries(seriesType: string)
         series2.name = "series2"
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
     } else if (seriesType === "Waterfall") {
 
@@ -241,8 +255,8 @@ public setSeries(seriesType: string)
         series1.name = "series1";
         series1.valueMemberPath = "USA";
         series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
+        series1.xAxis = this.xAxis;
+        series1.yAxis = this.yAxis;
         series1.thickness = 2;
 
 
@@ -250,36 +264,14 @@ public setSeries(seriesType: string)
         series2.name = "series2"
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
 
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
+        this.chart.series.clear();
+        this.chart.series.add(series1);
+        this.chart.series.add(series2);
 
-    } else if (seriesType === "Bar") {
-
-        const series1 = new IgxBarSeriesComponent();
-        series1.name = "series1";
-        series1.valueMemberPath = "USA";
-        series1.title = "USA";
-        series1.xAxis.name = "xAxis";
-        series1.yAxis.name = "yAxis";
-        series1.thickness = 2;
-
-
-        const series2 = new IgxBarSeriesComponent();
-        series2.name = "series2"
-        series2.valueMemberPath = "RUS";
-        series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
-
-        this.datachart.series.clear();
-        this.datachart.series.add(series1);
-        this.datachart.series.add(series2);
-
-    }
+    } 
 }
 
 }
