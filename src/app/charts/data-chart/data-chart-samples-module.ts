@@ -23,6 +23,9 @@ import { IgxScatterLineSeriesModule } from "igniteui-angular-charts/ES5/igx-scat
 import { IgxScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-series-module";
 import { IgxScatterSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-spline-series-module";
 
+import { IgxSizeScaleModule } from "igniteui-angular-charts/ES5/igx-size-scale-module";
+import { IgxValueBrushScaleModule } from "igniteui-angular-charts/ES5/igx-value-brush-scale-module";
+
 // Highlight and Annotation Layers
 import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
 import { IgxCategoryHighlightLayerModule } from "igniteui-angular-charts/ES5/igx-category-highlight-layer-module";
@@ -62,7 +65,8 @@ import {
 } from "./data-chart-series-highlighting/data-chart-series-highlighting.component";
 import { DataChartSeriesMarkersComponent } from "./data-chart-series-markers/data-chart-series-markers.component";
 import { DataChartSeriesTooltipsComponent } from "./data-chart-series-tooltips/data-chart-series-tooltips.component";
-import { DataChartSeriesTrendlinesComponent
+import {
+    DataChartSeriesTrendlinesComponent
 } from "./data-chart-series-trendlines/data-chart-series-trendlines.component";
 import { DataChartSynchronizationComponent } from "./data-chart-synchronization/data-chart-synchronization.component";
 import { DataChartTitlesComponent } from "./data-chart-titles/data-chart-titles.component";
@@ -170,7 +174,9 @@ import { FormsModule } from "@angular/forms";
         IgxCrosshairLayerModule,
         IgxLegendModule,
         IgxBollingerBandsOverlayModule,
-        IgxMedianPriceIndicatorModule
+        IgxMedianPriceIndicatorModule,
+        IgxSizeScaleModule,
+        IgxValueBrushScaleModule
     ]
 })
 export class DataChartSamplesModule {
