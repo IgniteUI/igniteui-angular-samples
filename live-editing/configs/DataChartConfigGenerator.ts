@@ -140,7 +140,11 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartAxisTypesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartAxisTypesComponent, SampleFinancialData, SampleCategoryData, SampleScatterData],
+                imports: [IgxDataChartCoreModule,
+                    DataChartAxisTypesComponent,
+                    SampleFinancialData,
+                    SampleCategoryData,
+                    SampleScatterData],
                 ngDeclarations: [DataChartAxisTypesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
