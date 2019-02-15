@@ -27,6 +27,8 @@ export class DataChartAxisTypesComponent implements OnInit {
     public financialData: any[];
     public scatterData: any[];
 
+    public chartType: string = "Column (CategoryXAxis)";
+
     @ViewChild("chart")
     public chart: IgxDataChartComponent;
 
@@ -58,6 +60,11 @@ export class DataChartAxisTypesComponent implements OnInit {
     }
 
     public ngOnInit() {
+        this.chart.axes.add(this.categoryXAxis);
+        this.chart.axes.add(this.numericYAxis);
+
+        this.chart.series.add(this.columnSeries1);
+        this.chart.series.add(this.columnSeries2);
     }
 
     public initCategorySeries() {
@@ -145,6 +152,37 @@ export class DataChartAxisTypesComponent implements OnInit {
     }
 
     public onAxisTypeChange = (e: any) => {
+        this.chart.axes.clear();
+        this.chart.series.clear();
 
+        const value: string = e.target.value;
+
+        if(value.includes("Column")){
+            this.chart.axes.add(this.categoryXAxis);
+            this.chart.axes.add(this.numericYAxis);
+
+            this.chart.series.add(this.columnSeries1);
+            this.chart.series.add(this.columnSeries2);
+        }
+        else if(value.includes("Bar")){
+            this.chart.axes.add(this.categoryYAxis);
+            this.chart.axes.add(this.numericXAxis);
+
+            this.chart.series.add(this.barSeries1);
+            this.chart.series.add(this.barSeries2);
+        }
+        else if(value.includes("Scatter")){
+            this.chart.axes.add(this.numericXAxis);
+            this.chart.axes.add(this.numericYAxis);
+
+            this.chart.series.add(this.scatterSeries1);
+            this.chart.series.add(this.scatterSeries2);
+        }
+        else{
+            this.chart.axes.add(this.timeXAxis);
+            this.chart.axes.add(this.numericYAxis);
+
+            this.chart.series.add(this.financialSeries);
+        }
     }
 }

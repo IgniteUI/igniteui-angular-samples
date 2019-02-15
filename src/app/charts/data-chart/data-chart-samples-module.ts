@@ -182,10 +182,10 @@ import { FormsModule } from "@angular/forms";
         IgxLegendModule,
         IgxBollingerBandsOverlayModule,
         IgxMedianPriceIndicatorModule,
-        IgxMoneyFlowIndexIndicatorModule        
+        IgxMoneyFlowIndexIndicatorModule,       
         IgxBarSeriesModule,
         IgxCategoryYAxisModule,
-        IgxTimeXAxisModule            
+        IgxTimeXAxisModule
     ]
 })
 export class DataChartSamplesModule {

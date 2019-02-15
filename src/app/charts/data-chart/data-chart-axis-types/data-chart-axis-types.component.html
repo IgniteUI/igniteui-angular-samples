@@ -2,7 +2,7 @@
     <div className="chart">
         <div className="options">
             <span className="optionItem">Series Type:</span>
-            <select (onChange)="onAxisTypeChange($event)">
+            <select [(ngModel)]="chartType" (change)="onAxisTypeChange($event)">
                 <option>Column (CategoryXAxis)</option>
                 <option>Bar (CategoryYAxis)</option>
                 <option>Scatter (NumericXAxis)</option>
