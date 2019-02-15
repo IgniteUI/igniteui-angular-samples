@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxRowIslandComponent, IgxHierarchicalGridComponent } from "igniteui-angular";
-import { SINGERS } from '../data';
+import { SINGERS } from './data';
 
 @Component({
     selector: "hierarchical-grid-row-editing",

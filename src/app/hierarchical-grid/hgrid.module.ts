@@ -21,6 +21,7 @@ import { HGridToolbarTitleSampleComponent } from './hierarchical-grid-toolbar/hi
 import { HGridToolbarOptionsSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component';
 import { HGridToolbarCustomSampleComponent } from './hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component';
 import { HGridRowEditingSampleComponent } from './hierarchical-grid-row-editing/hierarchical-grid-row-editing.component';
+import { HGridEditingSampleComponent } from './hierarchical-grid-editing/hierarchical-grid-editing.component';
 import { HgridRoutingModule } from './hgrid-routing.module';
 // tslint:enable:max-line-length
 
@@ -40,7 +41,8 @@ import { HgridRoutingModule } from './hgrid-routing.module';
         HGridToolbarTitleSampleComponent,
         HGridToolbarOptionsSampleComponent,
         HGridToolbarCustomSampleComponent,
-        HGridRowEditingSampleComponent
+        HGridRowEditingSampleComponent,
+        HGridEditingSampleComponent
     ],
     imports: [
         CommonModule,
