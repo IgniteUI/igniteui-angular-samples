@@ -1,0 +1,49 @@
+<div class="sample">
+    <div class="options">
+        <span class="optionLabel"> Marker Type: </span>
+        <select value={{markersType}}
+            (change)="this.onMarkerTypeChanged($event)">
+            <option>Automatic</option>
+            <option>Circle</option>
+            <option>Triangle</option>
+            <option>Pyramid</option>
+            <option>Square</option>
+            <option>Diamond</option>
+            <option>Pentagon</option>
+            <option>Hexagon</option>
+            <option>Tetragram</option>
+            <option>Pentagram</option>
+            <option>Hexagram</option>
+            <option>None</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-data-chart
+            width="100%"
+            height="100%"
+            [dataSource]="data">
+            <igx-category-x-axis #xAxis name="xAxis" label="Year">
+            </igx-category-x-axis>
+            <igx-numeric-y-axis #yAxis name="yAxis" minimumValue="0">
+            </igx-numeric-y-axis > 
+            <igx-line-series name="series1" title="USA"
+                valueMemberPath="USA"
+                [xAxis]=xAxis
+                [yAxis]=yAxis
+                [markerType]="markersType">
+            </igx-line-series>
+            <igx-line-series name="series2" title="China"
+                valueMemberPath="China"
+                [xAxis]=xAxis
+                [yAxis]=yAxis
+                [markerType]="markersType">
+            </igx-line-series>
+            <igx-line-series name="series3" title="Russia"
+                valueMemberPath="Russia"
+                [xAxis]=xAxis
+                [yAxis]=yAxis
+                [markerType]="markersType">
+            </igx-line-series>
+        </igx-data-chart>
+    </div>
+</div>
