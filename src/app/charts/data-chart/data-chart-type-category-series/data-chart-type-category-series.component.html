@@ -1,29 +1,50 @@
-<p>
-  Category Series:
-</p>
-<igx-data-chart 
-  chartTitle="Column and Line Chart"
-  width="500px"
-  height="500px"
-  [dataSource]="data" >
-  <igx-numeric-y-axis 
-    #yAxis>
-
-  </igx-numeric-y-axis>
-  <igx-category-x-axis 
-    label="label"
-    #xAxis>
-  </igx-category-x-axis>
-
-  <igx-column-series
-    valueMemberPath="value1"
-    [xAxis]="xAxis"
-    [yAxis]="yAxis">
-  </igx-column-series>
-
-   <igx-line-series
-    valueMemberPath="value2"
-    [xAxis]="xAxis"
-    [yAxis]="yAxis">
-  </igx-line-series>
-</igx-data-chart>
+<div class="sample-wrapper container">
+<div>
+        <span>Type of Category Series:</span>
+        <select 
+        (ngModelChange)=onSeriesTypeChanged($event)>
+                <option>Column</option>
+                <option>Area</option>                
+                <option>Point</option>
+                <option>Line</option>
+                <option>Spline</option>
+                <option>SplineArea</option>
+                <option>StepArea</option>
+                <option>StepLine</option>
+                <option>Waterfall</option>
+        </select>
+</div>
+<!-- <span className="legendTitle">Legend: </span>
+                    <div className="legendInline">
+                        <igx-legend orientation="Horizontal" />
+                    </div> -->
+<div class="chart">
+        <igx-data-chart [(ngModel)]="datachart"
+        
+        width="1000px"
+        height="500px"
+        [dataSource]="data" >
+        <igx-numeric-y-axis 
+          #yAxis>
+      
+        </igx-numeric-y-axis>
+        <igx-category-x-axis 
+          label="Year"
+          #xAxis>
+        </igx-category-x-axis>
+      
+        <igx-column-series
+         
+          valueMemberPath="USA"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis">
+        </igx-column-series>
+      
+         <igx-column-series
+          valueMemberPath="RUS"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis">
+        </igx-column-series>
+      </igx-data-chart>
+</div>
+</div>
