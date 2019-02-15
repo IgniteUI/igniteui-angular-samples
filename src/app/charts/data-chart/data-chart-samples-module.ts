@@ -20,6 +20,7 @@ import { IgxColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-column-se
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import { IgxScatterLineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-line-series-module";
+import { IgxScatterPolygonSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polygon-series-module";
 import { IgxScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-series-module";
 import { IgxScatterSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-spline-series-module";
 
@@ -161,6 +162,7 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartScatterModule,
         IgxScatterSeriesModule,
         IgxScatterLineSeriesModule,
+        IgxScatterPolygonSeriesModule,
         IgxScatterSplineSeriesModule,
         IgxBubbleSeriesModule,
         IgxNumericXAxisModule,
