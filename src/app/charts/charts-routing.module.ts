@@ -217,8 +217,8 @@ export const chartsRoutes: Routes = [
     },
     {
         component: CategoryChartOverviewComponent,
-        data: chartsRoutesData["category-chart-overview-sample"],
-        path: "category-chart-overview-sample"
+        data: chartsRoutesData["category-chart-overview"],
+        path: "category-chart-overview"
     },
     {
         component: CategoryChartAnnotationsComponent,

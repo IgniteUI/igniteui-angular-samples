@@ -10,7 +10,7 @@ export const chartsRoutesData = {
     "pie-chart-legend": { displayName: "Pie Chart Legend", parentName: "Pie Chart" },
     "pie-chart-others": { displayName: "Pie Chart Others Slice", parentName: "Pie Chart" },
     "pie-chart-selection": { displayName: "Pie Chart Selection", parentName: "Pie Chart" },
-    "category-chart-overview-sample": { displayName: "Category Chart Overview", parentName: "Category Chart" },
+    "category-chart-overview": { displayName: "Category Chart Overview", parentName: "Category Chart" },
     "category-chart-annotations": { displayName: "Category Chart Annotations", parentName: "Category Chart" },
     "category-chart-overlap-columns": { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
     "category-chart-highlighting-sample": { displayName: "Category Chart Highlighting", parentName: "Category Chart" },
