@@ -1,3 +1,36 @@
-<p>
-  data-chart-type-scatter-shape-series works!
-</p>
+<!-- class="sample-wrapper container" -->
+
+<div class="sample">
+
+    <div class="options">
+        <span class="optionLabel">Shape Series: </span>
+        <select (change)="onSeriesTypeChanged($event)">
+            <option>Polygon</option>
+            <option>Polyline</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-data-chart #chart
+            isHorizontalZoomEnabled="true"
+            isVerticalZoomEnabled="true"
+            width="100%"
+            height="100%"
+            [dataSource]="data">
+
+            <igx-numeric-x-axis #xAxis name="xAxis"></igx-numeric-x-axis>
+            <igx-numeric-y-axis #yAxis name="yAxis"></igx-numeric-y-axis>
+
+            <!-- series are created in the setSeries function
+            alternatively, you can create these elements using this code: -->
+            <!--
+            <igx-scatter-polygon-series
+                name="series1"
+                xAxisName="xAxis"
+                yAxisName="yAxis"
+                shapeMemberPath="Points"
+                title="House Floor Plan"
+                brush="Gray"
+                outline="Black"></igx-scatter-polygon-series> -->
+        </igx-data-chart>
+    </div>
+</div>
