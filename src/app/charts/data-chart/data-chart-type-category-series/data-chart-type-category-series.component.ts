@@ -198,8 +198,8 @@ public setSeries(seriesType: string)
         series2.name = "series2"
         series2.valueMemberPath = "RUS";
         series2.title = "Russia";
-        series2.xAxis.name = "xAxis";
-        series2.yAxis.name = "yAxis";
+        series2.xAxis = this.xAxis;
+        series2.yAxis = this.yAxis;
 
         this.chart.series.clear();
         this.chart.series.add(series1);
