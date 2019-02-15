@@ -47,8 +47,7 @@ export class DataChartTypeRadialSeriesComponent implements OnInit {
         this.setSeries(selectedSeries);
     }
 
-    public setSeries(seriesType: string)
-    {
+    public setSeries(seriesType: string) {
          if (seriesType === "Area") {
             // creating a series with mapping to data columns of financial data
             const series1 = new IgxRadialAreaSeriesComponent();
