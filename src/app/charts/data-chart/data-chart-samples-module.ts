@@ -21,6 +21,11 @@ import { IgxBubbleSeriesModule } from "igniteui-angular-charts/ES5/igx-bubble-se
 import { IgxColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-column-series-module";
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxPolarAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-area-series-module";
+import { IgxPolarLineSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-line-series-module";
+import { IgxPolarScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-scatter-series-module";
+import { IgxPolarSplineAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-spline-area-series-module";
+import { IgxPolarSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-spline-series-module";
 import { IgxScatterAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-area-series-module";
 import { IgxScatterLineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-line-series-module";
 import { IgxScatterPolygonSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polygon-series-module";
@@ -167,6 +172,11 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartCategoryTrendLineModule,
         IgxDataChartScatterCoreModule,
         IgxDataChartScatterModule,
+        IgxPolarAreaSeriesModule,
+        IgxPolarLineSeriesModule,
+        IgxPolarScatterSeriesModule,
+        IgxPolarSplineAreaSeriesModule,
+        IgxPolarSplineSeriesModule,
         IgxScatterAreaSeriesModule,
         IgxScatterSeriesModule,
         IgxScatterLineSeriesModule,
