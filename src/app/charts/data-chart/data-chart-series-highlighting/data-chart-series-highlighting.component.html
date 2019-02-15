@@ -2,8 +2,8 @@
     <div>
       <label>Enable Highlighting: </label>
       <label>Series<input [(ngModel)]="enableSeriesHighlight" type="checkbox" /></label>
-      <label>Item<input type="checkbox" [checked]="enableItemHighlight" (input)="enableItemHighlightChanged($event)"/></label>
-      <label>Category<input type="checkbox" [checked]="enableCategoryHighlight" (input)="enableCategoryHighlightChanged($event)"/></label>
+      <label>Item<input type="checkbox" [(ngModel)]="enableItemHighlight" (change)="enableItemHighlightChanged($event)"/></label>
+      <label>Category<input type="checkbox" [(ngModel)]="enableCategoryHighlight" (change)="enableCategoryHighlightChanged($event)"/></label>
     </div>
   
     <div>
