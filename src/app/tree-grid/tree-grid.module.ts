@@ -46,6 +46,9 @@ import {
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
+import {
+    TreeGridFilteringCustomSampleComponent
+} from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
     TreeGridMultiColumnHeadersSampleComponent
@@ -94,6 +97,7 @@ import {
         TreeGridColumnPinningSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
+        TreeGridFilteringCustomSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
         TreeGridVirtualizationSampleComponent,
         TreeGridDisplaydensitySampleComponent,
