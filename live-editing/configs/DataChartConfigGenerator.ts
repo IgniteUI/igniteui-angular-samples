@@ -89,6 +89,17 @@ import { DependenciesType } from "../services/DependenciesType";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 
+import { SampleCategoryData } from "../../src/app/charts/data-chart/SampleCategoryData";
+import { SampleDensityData } from "../../src/app/charts/data-chart/SampleDensityData";
+import { SampleFinancialData } from "../../src/app/charts/data-chart/SampleFinancialData";
+import { SamplePolarData } from "../../src/app/charts/data-chart/SamplePolarData";
+import { SampleRadialData } from "../../src/app/charts/data-chart/SampleRadialData";
+import { SampleRangeData } from "../../src/app/charts/data-chart/SampleRangeData";
+import { SampleScatterData } from "../../src/app/charts/data-chart/SampleScatterData";
+import { SampleScatterStats } from "../../src/app/charts/data-chart/SampleScatterStats";
+import { SampleShapeData } from "../../src/app/charts/data-chart/SampleShapeData";
+import { SharedData } from "../../src/app/charts/data-chart/SharedData";
+
 export class DataChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -107,7 +118,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartAxisSettingsComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartAxisSettingsComponent],
+                imports: [IgxDataChartCoreModule, DataChartAxisSettingsComponent, SharedData],
                 ngDeclarations: [DataChartAxisSettingsComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -118,7 +129,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartAxisSharingComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartAxisSharingComponent],
+                imports: [IgxDataChartCoreModule, DataChartAxisSharingComponent, SampleFinancialData],
                 ngDeclarations: [DataChartAxisSharingComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -129,7 +140,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartAxisTypesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartAxisTypesComponent],
+                imports: [IgxDataChartCoreModule, DataChartAxisTypesComponent, SampleFinancialData, SampleCategoryData, SampleScatterData],
                 ngDeclarations: [DataChartAxisTypesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -140,7 +151,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartLegendsComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartLegendsComponent],
+                imports: [IgxDataChartCoreModule, DataChartLegendsComponent, SharedData],
                 ngDeclarations: [DataChartLegendsComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -151,7 +162,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartNavigationComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartNavigationComponent],
+                imports: [IgxDataChartCoreModule, DataChartNavigationComponent, SampleScatterStats],
                 ngDeclarations: [DataChartNavigationComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -162,7 +173,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartOverviewComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartOverviewComponent],
+                imports: [IgxDataChartCoreModule, DataChartOverviewComponent, SampleScatterStats],
                 ngDeclarations: [DataChartOverviewComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -239,7 +250,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartSeriesTrendlinesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartSeriesTrendlinesComponent],
+                imports: [IgxDataChartCoreModule, DataChartSeriesTrendlinesComponent, SampleFinancialData],
                 ngDeclarations: [DataChartSeriesTrendlinesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -260,7 +271,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTitlesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTitlesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTitlesComponent, SharedData],
                 ngDeclarations: [DataChartTitlesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -282,7 +293,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeFinancialSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeFinancialSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeFinancialSeriesComponent, SampleFinancialData],
                 ngDeclarations: [DataChartTypeFinancialSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -293,7 +304,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypePolarSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypePolarSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypePolarSeriesComponent, SamplePolarData],
                 ngDeclarations: [DataChartTypePolarSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -304,7 +315,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeRadialSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeRadialSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeRadialSeriesComponent, SampleRadialData],
                 ngDeclarations: [DataChartTypeRadialSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -315,7 +326,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeRangeSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeRangeSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeRangeSeriesComponent, SampleRangeData],
                 ngDeclarations: [DataChartTypeRangeSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -326,7 +337,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeScatterAreaSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeScatterAreaSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeScatterAreaSeriesComponent, SampleScatterData],
                 ngDeclarations: [DataChartTypeScatterAreaSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -337,7 +348,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeScatterContourSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeScatterContourSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeScatterContourSeriesComponent, SampleScatterData],
                 ngDeclarations: [DataChartTypeScatterContourSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -348,7 +359,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeScatterDensitySeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeScatterDensitySeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeScatterDensitySeriesComponent, SampleDensityData],
                 ngDeclarations: [DataChartTypeScatterDensitySeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -359,7 +370,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeScatterSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeScatterSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeScatterSeriesComponent, SampleScatterStats],
                 ngDeclarations: [DataChartTypeScatterSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
@@ -370,7 +381,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: DataChartTypeScatterShapeSeriesComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxDataChartCoreModule, DataChartTypeScatterShapeSeriesComponent],
+                imports: [IgxDataChartCoreModule, DataChartTypeScatterShapeSeriesComponent, SampleShapeData],
                 ngDeclarations: [DataChartTypeScatterShapeSeriesComponent],
                 ngImports: [IgxDataChartCoreModule]
             }),
