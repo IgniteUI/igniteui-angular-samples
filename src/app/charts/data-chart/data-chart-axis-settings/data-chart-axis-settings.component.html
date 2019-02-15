@@ -1,21 +1,40 @@
-<div>
-    <igx-data-chart chartTitle="Energy Use Per Country" subtitle="Results over a two year period" height="600px" width="100%"
-      [dataSource]="data" >
-  
-      <igx-category-x-axis #xAxis name="xAxis" label="Country" labelTextStyle="9pt Verdana" labelTopMargin=5
-        labelTextColor="gray" title="Country" titleTextColor="gray" titleTextStyle="12pt Verdana" titleAngle=0 tickLength=10
-        tickStrokeThickness=0.5 tickStroke="black" interval=1 majorStroke="gray" majorStrokeThickness=0.5 gap=0.125
-        overlap=0></igx-category-x-axis>
-      <igx-numeric-y-axis #yAxis name="yAxis" labelLocation="OutsideRight" labelTextStyle="9pt Verdana" labelRightMargin=0
-        labelTextColor="gray" title="Total Energy Used" titleTextStyle="10pt Verdana" titleTextColor="gray" titleAngle=90
-        titleLeftMargin=5 tickLength=10 tickStrokeThickness=0.5 tickStroke="black" minimumValue=0 maximumValue=1000
-        interval=100 majorStroke="black" majorStrokeThickness=1 minorInterval=25 minorStroke="gray" minorStrokeThickness=0.5></igx-numeric-y-axis>
-  
-      <igx-column-series name="series1" title="Coal" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Coal"></igx-column-series>
-      <igx-column-series name="series2" title="Hydro" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Hydro"></igx-column-series>
-      <igx-column-series name="series3" title="Nuclear" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Nuclear"></igx-column-series>
-      <igx-column-series name="series4" title="Gas" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Gas"></igx-column-series>
-      <igx-column-series name="series5" title="Oil" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Oil"></igx-column-series>
-    </igx-data-chart>
-  </div>
-  
+<div class="sample">
+    <div class="options">
+        <span class="legendTitle">Energy Source: </span>
+        <div class="legendInline">
+            <igx-legend #legend orientation="horizontal"></igx-legend>
+        </div>
+    </div>
+    <div class="chart">
+        <igx-data-chart height="500px" width="100%" [dataSource]="data" [legend]="legend">
+
+            <igx-category-x-axis #xAxis name="xAxis" label="Country" labelTextStyle="9pt Verdana" labelTopMargin=5
+                labelTextColor="gray" title="Countries" titleTextColor="gray" titleTextStyle="12pt Verdana" titleAngle=0
+                tickLength=10 tickStrokeThickness=0.5 tickStroke="black" interval=1 majorStroke="gray"
+                majorStrokeThickness=0.5 gap=0.125 overlap=0>
+            </igx-category-x-axis>
+            <igx-numeric-y-axis #yAxis name="yAxis" labelLocation="OutsideRight" labelTextStyle="9pt Verdana"
+                labelRightMargin=0 labelTextColor="gray" title="Energy Production (Wh)" titleTextStyle="10pt Verdana"
+                titleTextColor="gray" titleAngle=90 titleLeftMargin=5 tickLength=10 tickStrokeThickness=0.5 tickStroke="black"
+                minimumValue=0 maximumValue=1000000000 interval=100000000 majorStroke="black" majorStrokeThickness=1
+                minorInterval=25000000 minorStroke="gray" minorStrokeThickness=0.5 abbreviateLargeNumbers=true>
+            </igx-numeric-y-axis>
+
+            <igx-column-series name="series1" title="Coal" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Coal"
+                isTransitionInEnabled=true>
+            </igx-column-series>
+            <igx-column-series name="series2" title="Hydro" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Hydro"
+                isTransitionInEnabled=true>
+            </igx-column-series>
+            <igx-column-series name="series3" title="Nuclear" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Nuclear"
+                isTransitionInEnabled=true>
+            </igx-column-series>
+            <igx-column-series name="series4" title="Gas" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Gas"
+                isTransitionInEnabled=true>
+            </igx-column-series>
+            <igx-column-series name="series5" title="Oil" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Oil"
+                isTransitionInEnabled=true>
+            </igx-column-series>
+        </igx-data-chart>
+    </div>
+</div>
