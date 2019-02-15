@@ -10,7 +10,7 @@
       <igx-data-chart #chart height="600px" width="100%" [dataSource]="data">
   
         <igx-category-x-axis #xAxis name="xAxis" label="Country"></igx-category-x-axis>
-        <igx-numeric-y-axis #yAxis name="yAxis" minimumValue=0></igx-numeric-y-axis>
+        <igx-numeric-y-axis #yAxis name="yAxis" minValue=0></igx-numeric-y-axis>
   
         <igx-column-series name="series1" title="Coal" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Coal"
           [isHighlightingEnabled]="enableSeriesHighlight"></igx-column-series>
