@@ -11,6 +11,8 @@ import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-
 
 // Axes
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
+import { IgxNumericAngleAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-angle-axis-module";
+import { IgxNumericRadiusAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-radius-axis-module";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
 
@@ -149,6 +151,8 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartCategoryModule,
         IgxDataChartCategoryCoreModule,
         IgxCategoryXAxisModule,
+        IgxNumericAngleAxisModule,
+        IgxNumericRadiusAxisModule,
         IgxNumericYAxisModule,
         IgxColumnSeriesModule,
         IgxDataChartInteractivityModule,
