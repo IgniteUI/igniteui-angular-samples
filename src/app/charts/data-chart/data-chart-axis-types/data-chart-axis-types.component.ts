@@ -1,16 +1,16 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxDataChartComponent } from 'igniteui-angular-charts/ES5/igx-data-chart-component';
+import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 
-import { IgxCategoryXAxisComponent } from 'igniteui-angular-charts/ES5/igx-category-x-axis-component';
-import { IgxCategoryYAxisComponent } from 'igniteui-angular-charts/ES5/igx-category-y-axis-component';
-import { IgxNumericXAxisComponent } from 'igniteui-angular-charts/ES5/igx-numeric-x-axis-component';
-import { IgxNumericYAxisComponent } from 'igniteui-angular-charts/ES5/igx-numeric-y-axis-component';
-import { IgxTimeXAxisComponent } from 'igniteui-angular-charts/ES5/igx-time-x-axis-component';
+import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
+import { IgxCategoryYAxisComponent } from "igniteui-angular-charts/ES5/igx-category-y-axis-component";
+import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
+import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
+import { IgxTimeXAxisComponent } from "igniteui-angular-charts/ES5/igx-time-x-axis-component";
 
-import { IgxBarSeriesComponent } from 'igniteui-angular-charts/ES5/igx-bar-series-component';
-import { IgxColumnSeriesComponent } from 'igniteui-angular-charts/ES5/igx-column-series-component';
-import { IgxFinancialPriceSeriesComponent } from 'igniteui-angular-charts/ES5/igx-financial-price-series-component';
-import { IgxScatterSeriesComponent } from 'igniteui-angular-charts/ES5/igx-scatter-series-component';
+import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-series-component";
+import { IgxColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-column-series-component";
+import { IgxFinancialPriceSeriesComponent } from "igniteui-angular-charts/ES5/igx-financial-price-series-component";
+import { IgxScatterSeriesComponent } from "igniteui-angular-charts/ES5/igx-scatter-series-component";
 
 import { SampleCategoryData } from "../SampleCategoryData";
 import { SampleFinancialData } from "../SampleFinancialData";
@@ -122,11 +122,11 @@ export class DataChartAxisTypesComponent implements OnInit {
         this.financialSeries.dataSource = this.financialData;
         this.financialSeries.xAxis = this.timeXAxis;
         this.financialSeries.yAxis = this.numericYAxis;
-        this.financialSeries.highMemberPath = "High"
-        this.financialSeries.lowMemberPath = "Low"
-        this.financialSeries.closeMemberPath = "Close"
-        this.financialSeries.openMemberPath = "Open"
-        this.financialSeries.volumeMemberPath = "Volume"
+        this.financialSeries.highMemberPath = "High";
+        this.financialSeries.lowMemberPath = "Low";
+        this.financialSeries.closeMemberPath = "Close";
+        this.financialSeries.openMemberPath = "Open";
+        this.financialSeries.volumeMemberPath = "Volume";
     }
 
     public initScatterSeries() {
@@ -157,28 +157,25 @@ export class DataChartAxisTypesComponent implements OnInit {
 
         const value: string = e.target.value;
 
-        if(value.includes("Column")){
+        if (value.includes("Column")) {
             this.chart.axes.add(this.categoryXAxis);
             this.chart.axes.add(this.numericYAxis);
 
             this.chart.series.add(this.columnSeries1);
             this.chart.series.add(this.columnSeries2);
-        }
-        else if(value.includes("Bar")){
+        } else if (value.includes("Bar")) {
             this.chart.axes.add(this.categoryYAxis);
             this.chart.axes.add(this.numericXAxis);
 
             this.chart.series.add(this.barSeries1);
             this.chart.series.add(this.barSeries2);
-        }
-        else if(value.includes("Scatter")){
+        } else if (value.includes("Scatter")) {
             this.chart.axes.add(this.numericXAxis);
             this.chart.axes.add(this.numericYAxis);
 
             this.chart.series.add(this.scatterSeries1);
             this.chart.series.add(this.scatterSeries2);
-        }
-        else{
+        } else {
             this.chart.axes.add(this.timeXAxis);
             this.chart.axes.add(this.numericYAxis);
 
