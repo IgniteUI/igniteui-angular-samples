@@ -1,0 +1,119 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
+}
+
+.chart {
+    flex: 1;
+}
+
+.sample {
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: calc(100% - 25px);
+}
+
+.chart {
+    height: calc(100% - 50px);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+}
+
+.options {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.optionItem {
+    margin-left: 10px;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    display: inline-block;
+    vertical-align: center;
+}
+
+.optionLabel {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 11pt;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    vertical-align: center;
+    padding: 0px;
+    display: inline-block;
+}
+
+.optionValue {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 11pt;
+    display: inline-block;
+    width: 40px;
+    padding: 0px;
+}
+
+select {
+    font-size: 11pt;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    vertical-align: center;
+    padding: 4px;
+    display: inline-block;
+}
+
+.legend {
+    width: 100%;
+    font-size: 11pt;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.legendInline {
+    width: auto;
+    font-size: 11pt;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.legendTitle {
+    margin-top: 13px;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding: 0px;
+    font-size: 11pt;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    vertical-align: center;
+    display: inline-block;
+}
