@@ -1,0 +1,30 @@
+<div>
+    <span className="optionItem">Trendline Type:</span>
+    <select [(ngModel)]="trendlineType">
+      <option>None</option>
+      <option>CubicFit</option>
+      <option>CumulativeAverage</option>
+      <option>ExponentialAverage</option>
+      <option>ExponentialFit</option>
+      <option>LinearFit</option>
+      <option>LogarithmicFit</option>
+      <option>ModifiedAverage</option>
+      <option>PowerLawFit</option>
+      <option>QuadraticFit</option>
+      <option>QuarticFit</option>
+      <option>QuinticFit</option>
+      <option>SimpleAverage</option>
+      <option>WeightedAverage</option>
+    </select>
+  </div>
+  <div>
+    <igx-data-chart height="600px" width="100%" [dataSource]="data">
+  
+      <igx-category-x-axis #xAxis name="xAxis" label="Date"></igx-category-x-axis>
+      <igx-numeric-y-axis #yAxis name="yAxis" minimumValue=0></igx-numeric-y-axis>
+  
+      <igx-financial-price-series [xAxis]="xAxis" [yAxis]="yAxis" highMemberPath="High" lowMemberPath="Low"
+        closeMemberPath="Close" openMemberPath="Open" volumeMemberPath="Volume" [trendLineType]="trendlineType"></igx-financial-price-series>
+  
+    </igx-data-chart>
+  </div>
