@@ -11,10 +11,13 @@ import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-
 
 // Axes
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
+import { IgxCategoryYAxisModule } from "igniteui-angular-charts/ES5/igx-category-y-axis-module";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
+import { IgxTimeXAxisModule } from "igniteui-angular-charts/ES5/igx-time-x-axis-module";
 
 // Series
+import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBubbleSeriesModule } from "igniteui-angular-charts/ES5/igx-bubble-series-module";
 import { IgxColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-column-series-module";
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
@@ -65,7 +68,8 @@ import {
 } from "./data-chart-series-highlighting/data-chart-series-highlighting.component";
 import { DataChartSeriesMarkersComponent } from "./data-chart-series-markers/data-chart-series-markers.component";
 import { DataChartSeriesTooltipsComponent } from "./data-chart-series-tooltips/data-chart-series-tooltips.component";
-import { DataChartSeriesTrendlinesComponent
+import {
+    DataChartSeriesTrendlinesComponent
 } from "./data-chart-series-trendlines/data-chart-series-trendlines.component";
 import { DataChartSynchronizationComponent } from "./data-chart-synchronization/data-chart-synchronization.component";
 import { DataChartTitlesComponent } from "./data-chart-titles/data-chart-titles.component";
@@ -176,7 +180,10 @@ import { FormsModule } from "@angular/forms";
         IgxCrosshairLayerModule,
         IgxLegendModule,
         IgxBollingerBandsOverlayModule,
-        IgxMedianPriceIndicatorModule
+        IgxMedianPriceIndicatorModule,
+        IgxBarSeriesModule,
+        IgxCategoryYAxisModule,
+        IgxTimeXAxisModule
     ]
 })
 export class DataChartSamplesModule {
