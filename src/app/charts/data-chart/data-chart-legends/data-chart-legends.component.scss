@@ -1,0 +1,66 @@
+.sample {    
+    height: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: calc(100% - 25px);
+}
+
+.chart {    
+    height: calc(100% - 10px);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.options {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.legendInline {
+    width: auto;
+    font-size: 11pt;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: top;   
+}
+
+.legendTitle {
+    margin-top: 13px;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding: 0px;
+    font-size: 11pt;
+    font-family: Arial, Verdana, Helvetica, "Times New Roman", Times, serif;
+    /* vertical-align: top; */
+    vertical-align: center;
+    display: inline-block;
+    /* background: orange; */
+}

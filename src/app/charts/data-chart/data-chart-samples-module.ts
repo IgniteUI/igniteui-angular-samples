@@ -10,6 +10,7 @@ import { IgxDataChartScatterCoreModule } from "igniteui-angular-charts/ES5/igx-d
 import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-module";
 
 // Axes
+import { IgxCategoryAngleAxisModule } from "igniteui-angular-charts/ES5/igx-category-angle-axis-module";
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
 import { IgxNumericAngleAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-angle-axis-module";
 import { IgxNumericRadiusAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-radius-axis-module";
@@ -26,12 +27,19 @@ import { IgxPolarLineSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-
 import { IgxPolarScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-scatter-series-module";
 import { IgxPolarSplineAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-spline-area-series-module";
 import { IgxPolarSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-spline-series-module";
+import { IgxRadialAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-area-series-module";
+import { IgxRadialColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-column-series-module";
+import { IgxRadialLineSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-line-series-module";
+import { IgxRadialPieSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-pie-series-module";
 import { IgxScatterAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-area-series-module";
 import { IgxScatterLineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-line-series-module";
 import { IgxScatterPolygonSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polygon-series-module";
 import { IgxScatterPolylineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polyline-series-module";
 import { IgxScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-series-module";
 import { IgxScatterSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-spline-series-module";
+
+import { IgxSizeScaleModule } from "igniteui-angular-charts/ES5/igx-size-scale-module";
+import { IgxValueBrushScaleModule } from "igniteui-angular-charts/ES5/igx-value-brush-scale-module";
 
 // Highlight and Annotation Layers
 import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
@@ -72,7 +80,8 @@ import {
 } from "./data-chart-series-highlighting/data-chart-series-highlighting.component";
 import { DataChartSeriesMarkersComponent } from "./data-chart-series-markers/data-chart-series-markers.component";
 import { DataChartSeriesTooltipsComponent } from "./data-chart-series-tooltips/data-chart-series-tooltips.component";
-import { DataChartSeriesTrendlinesComponent
+import {
+    DataChartSeriesTrendlinesComponent
 } from "./data-chart-series-trendlines/data-chart-series-trendlines.component";
 import { DataChartSynchronizationComponent } from "./data-chart-synchronization/data-chart-synchronization.component";
 import { DataChartTitlesComponent } from "./data-chart-titles/data-chart-titles.component";
@@ -158,6 +167,7 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartCoreModule,
         IgxDataChartCategoryModule,
         IgxDataChartCategoryCoreModule,
+        IgxCategoryAngleAxisModule,
         IgxCategoryXAxisModule,
         IgxNumericAngleAxisModule,
         IgxNumericRadiusAxisModule,
@@ -177,6 +187,10 @@ import { FormsModule } from "@angular/forms";
         IgxPolarScatterSeriesModule,
         IgxPolarSplineAreaSeriesModule,
         IgxPolarSplineSeriesModule,
+        IgxRadialAreaSeriesModule,
+        IgxRadialColumnSeriesModule,
+        IgxRadialLineSeriesModule,
+        IgxRadialPieSeriesModule,
         IgxScatterAreaSeriesModule,
         IgxScatterSeriesModule,
         IgxScatterLineSeriesModule,
@@ -192,6 +206,8 @@ import { FormsModule } from "@angular/forms";
         IgxLegendModule,
         IgxBollingerBandsOverlayModule,
         IgxMedianPriceIndicatorModule,
+        IgxSizeScaleModule,
+        IgxValueBrushScaleModule,
         IgxMoneyFlowIndexIndicatorModule
     ]
 })
