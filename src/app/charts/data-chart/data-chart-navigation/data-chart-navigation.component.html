@@ -25,7 +25,7 @@
             <option>None</option>
         </select>
     </div>
-    <div class="options">        
+    <div class="options">
         <label class="optionItem"><input type="checkbox" [(ngModel)]="isZoomEnabled" /> Enable Zooming</label>
         <button class="optionItem" (click)="onPanUpClick()">Pan Up</button>
         <button class="optionItem" (click)="onPanDownClick()">Pan Down</button>
@@ -34,9 +34,9 @@
     </div>
 
     <div class="chart">
-        <igx-data-chart #chart [dataSource]="data"            
+        <igx-data-chart #chart [dataSource]="data"
             width="100%"
-            height="400px"
+            height="calc(100% - 85px)"
             [defaultInteraction]="defaultInteraction"
             [dragModifier]="zoomModifier"
             [panModifier]="panModifier"
