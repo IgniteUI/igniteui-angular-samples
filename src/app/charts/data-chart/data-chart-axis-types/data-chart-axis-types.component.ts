@@ -11,6 +11,7 @@ import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-serie
 import { IgxColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-column-series-component";
 import { IgxFinancialPriceSeriesComponent } from "igniteui-angular-charts/ES5/igx-financial-price-series-component";
 import { IgxScatterSeriesComponent } from "igniteui-angular-charts/ES5/igx-scatter-series-component";
+import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 
 import { SampleCategoryData } from "../SampleCategoryData";
 import { SampleFinancialData } from "../SampleFinancialData";
@@ -136,6 +137,7 @@ export class DataChartAxisTypesComponent implements OnInit {
         this.scatterSeries1.yAxis = this.numericYAxis;
         this.scatterSeries1.xMemberPath = "Index";
         this.scatterSeries1.yMemberPath = "SinValue";
+        this.scatterSeries1.markerType = MarkerType.Circle;
 
         this.scatterSeries2 = new IgxScatterSeriesComponent();
         this.scatterSeries2.dataSource = this.scatterData;
@@ -143,6 +145,7 @@ export class DataChartAxisTypesComponent implements OnInit {
         this.scatterSeries2.yAxis = this.numericYAxis;
         this.scatterSeries2.xMemberPath = "Index";
         this.scatterSeries2.yMemberPath = "CosValue";
+        this.scatterSeries2.markerType = MarkerType.Circle;
     }
 
     public initData() {
