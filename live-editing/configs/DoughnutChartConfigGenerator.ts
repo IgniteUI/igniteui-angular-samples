@@ -11,47 +11,86 @@ import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { Type } from "@angular/core/src/type";
 // tslint:enable:max-line-length
 
 export class DoughnutChartConfigGenerator implements IConfigGenerator {
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        configs.push(new Config({
-            component: DoughnutChartExplosionSampleComponent,
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxDoughnutChartModule, IgxDoughnutChartComponent, IgxRingSeriesModule,
-                    IgxRingSeriesComponent, DoughnutChartExplosionSampleComponent],
-                ngDeclarations: [ DoughnutChartExplosionSampleComponent ],
-                ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/doughnut-chart/"
-        }));
+        // using simpler config instead of default/complex config
+        configs.push(this.getConfig(
+            DoughnutChartExplosionSampleComponent,
+            [IgxDoughnutChartModule, IgxRingSeriesModule] ));
+        // configs.push(new Config({
+        //     component: DoughnutChartExplosionSampleComponent,
+        //     appModuleConfig: new AppModuleConfig({
+        //         imports: [IgxDoughnutChartModule, IgxDoughnutChartComponent, IgxRingSeriesModule,
+        //             IgxRingSeriesComponent, DoughnutChartExplosionSampleComponent],
+        //         ngDeclarations: [ DoughnutChartExplosionSampleComponent ],
+        //         ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
+        //     }),
+        //     dependenciesType: DependenciesType.Charts,
+        //     shortenComponentPathBy: "/charts/doughnut-chart/"
+        // }));
 
-        configs.push(new Config({
-            component: DoughnutChartOverviewSampleComponent,
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxDoughnutChartModule, DoughnutChartOverviewSampleComponent, IgxRingSeriesModule],
-                ngDeclarations: [DoughnutChartOverviewSampleComponent],
-                ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/doughnut-chart/"
-        }));
+        configs.push(this.getConfig(
+            DoughnutChartOverviewSampleComponent,
+            [IgxDoughnutChartModule, IgxRingSeriesModule] ));
+        // configs.push(new Config({
+        //     component: DoughnutChartOverviewSampleComponent,
+        //     appModuleConfig: new AppModuleConfig({
+        //         imports: [IgxDoughnutChartModule, DoughnutChartOverviewSampleComponent, IgxRingSeriesModule],
+        //         ngDeclarations: [DoughnutChartOverviewSampleComponent],
+        //         ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
+        //     }),
+        //     dependenciesType: DependenciesType.Charts,
+        //     shortenComponentPathBy: "/charts/doughnut-chart/"
+        // }));
 
-        configs.push(new Config({
-            component: DoughnutChartSelectionSampleComponent,
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxDoughnutChartModule, IgxDoughnutChartComponent, IgxRingSeriesModule,
-                    IgxRingSeriesComponent, DoughnutChartSelectionSampleComponent],
-                ngDeclarations: [DoughnutChartSelectionSampleComponent],
-                ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/doughnut-chart/"
-        }));
+        configs.push(this.getConfig(
+            DoughnutChartSelectionSampleComponent,
+            [IgxDoughnutChartModule, IgxRingSeriesModule] ));
+        // configs.push(new Config({
+        //     component: DoughnutChartSelectionSampleComponent,
+        //     appModuleConfig: new AppModuleConfig({
+        //         imports: [IgxDoughnutChartModule, IgxDoughnutChartComponent, IgxRingSeriesModule,
+        //             IgxRingSeriesComponent, DoughnutChartSelectionSampleComponent],
+        //         ngDeclarations: [DoughnutChartSelectionSampleComponent],
+        //         ngImports: [IgxDoughnutChartModule, IgxRingSeriesModule]
+        //     }),
+        //     dependenciesType: DependenciesType.Charts,
+        //     shortenComponentPathBy: "/charts/doughnut-chart/"
+        // }));
 
         return configs;
+    }
+
+    // TODO copy this function to other *ChartConfigGenerator classes
+    public getConfig(component: Type<any>, modules: any[], dataSources?: any[], dataPaths?: string[]) {
+        let imports: any[] = [ ];
+        imports.push(component);  // add sample component for importing
+        for (const m of modules) {
+            imports.push(m); // add modules for importing
+        }
+        // add optional data sources
+        if (dataSources !== undefined && dataSources.length > 0) {
+            for (const ds of dataSources) {
+                imports.push(ds);
+            }
+        }
+        const fields = {
+            additionalFiles: dataPaths,
+            component: component,
+            appModuleConfig: new AppModuleConfig({
+                imports: imports,
+                ngDeclarations: [component],
+                ngImports: modules
+            }),
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/doughnut-chart/"
+        };
+        return new Config(fields);
     }
 }
