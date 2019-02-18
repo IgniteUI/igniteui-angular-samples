@@ -9,6 +9,7 @@ import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule,
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
+import { HGridContextmenuComponent } from './hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component';
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSummarySampleComponent } from './hierarchical-grid-summary/hierarchical-grid-summary.component';
 import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchical-grid-paging.component';
@@ -31,6 +32,7 @@ import { HgridRoutingModule } from './hgrid-routing.module';
         HGridFilteringSampleComponent,
         HGridCustomFilteringSampleComponent,
         HGridSortingSampleComponent,
+        HGridContextmenuComponent,
         HGridSelectionSampleComponent,
         HGridSummarySampleComponent,
         HGridPagingSampleComponent,

@@ -1,5 +1,5 @@
 <div class="hgrid-sample">
-    <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false"
+    <igx-hierarchical-grid class="hgrid" [data]="localdata" (onColumnResized)="onResize($event)" [autoGenerate]="false"
         [height]="'600px'" [width]="'900px'" #hGrid>
         <igx-column field="Artist" [resizable]="true"></igx-column>
         <igx-column field="Photo" [resizable]="true">
@@ -9,7 +9,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Debut" [resizable]="true"></igx-column>
+        <igx-column field="Debut" [resizable]="true" [minWidth]="'88px'" [maxWidth]="'230px'"></igx-column>
         <igx-column field="Grammy Nominations" [resizable]="true"></igx-column>
         <igx-column field="Grammy Awards" [resizable]="true"></igx-column>
 
