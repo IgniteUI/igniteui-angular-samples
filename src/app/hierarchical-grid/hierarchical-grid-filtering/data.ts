@@ -1,8 +1,9 @@
+/* tslint:disable */
 export const SINGERS = [
         {
-            Artist: "Naomí Yepes",
-            HasGrammyAward: false,
-            Debut: "2011",
+            "Artist": "Naomí Yepes",
+            "HasGrammyAward": false,
+            "Debut": "2011",
             "GrammyNominations": 6,
             "GrammyAwards": 0,
             "Albums": [{
@@ -18,7 +19,7 @@ export const SINGERS = [
                 "Billboard Review": "81",
                 "US Billboard 200": "1",
                 "Artist": "Naomí Yepes",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "Intro",
                     "Released": "*",
@@ -116,7 +117,7 @@ export const SINGERS = [
                 "Billboard Review": "82",
                 "US Billboard 200": "1",
                 "Artist": "Naomí Yepes",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "I Love",
                     "Released": "11-May-2019",
@@ -204,17 +205,17 @@ export const SINGERS = [
         },
         {
             "Artist": "Babila Ebwélé",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "2009",
             "GrammyNominations": 0,
             "GrammyAwards": 11,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Pushing up daisies",
                 "Launch Date": new Date("May 31, 2000"),
                 "Billboard Review": "86",
                 "US Billboard 200": "42",
                 "Artist": "Babila Ebwélé",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "Wood Shavings Forever",
                     "Released": "9-Jun-2019",
@@ -291,7 +292,7 @@ export const SINGERS = [
                 "Billboard Review": "85",
                 "US Billboard 200": "95",
                 "Artist": "Babila Ebwélé",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "Men Sound Better With You",
                     "Released": "20-Oct-2019",
@@ -372,11 +373,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Ahmad Nazeri",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "2004",
             "GrammyNominations": 3,
             "GrammyAwards": 1,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Emergency",
                 "Launch Date": new Date("March 6, 2004"),
                 "Billboard Review": "98",
@@ -393,11 +394,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Kimmy McIlmorie",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "2007",
             "GrammyNominations": 21,
             "GrammyAwards": 3,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Here we go again",
                 "Launch Date": new Date("November 18, 2017"),
                 "Billboard Review": "68",
@@ -407,24 +408,24 @@ export const SINGERS = [
         },
         {
             "Artist": "Mar Rueda",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "1996",
             "GrammyNominations": 14,
             "GrammyAwards": 2
         },
         {
             "Artist": "Izabella Tabakova",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "2017",
             "GrammyNominations": 7,
             "GrammyAwards": 11,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Once bitten",
                 "Launch Date": new Date("July 16, 2007"),
                 "Billboard Review": "79",
                 "US Billboard 200": "53",
                 "Artist": "Izabella Tabakova",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "Whole Lotta Super Cats",
                     "Released": "21-May-2019",
@@ -501,7 +502,7 @@ export const SINGERS = [
                 "Billboard Review": "69",
                 "US Billboard 200": "30",
                 "Artist": "Izabella Tabakova",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "We Shall Tickle",
                     "Released": "31-Aug-2019",
@@ -582,11 +583,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Nguyễn Diệp Chi",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "1992",
             "GrammyNominations": 4,
             "GrammyAwards": 2,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Library of liberty",
                 "Launch Date": new Date("December 22, 2003"),
                 "Billboard Review": "93",
@@ -596,11 +597,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Eva Lee",
-            HasGrammyAward: false,
+            "HasGrammyAward": false,
             "Debut": "2008",
             "GrammyNominations": 2,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Just a tease",
                 "Launch Date": new Date("May 3, 2001"),
                 "Billboard Review": "91",
@@ -610,17 +611,17 @@ export const SINGERS = [
         },
         {
             "Artist": "Siri Jakobsson",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "1990",
             "GrammyNominations": 2,
             "GrammyAwards": 8,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Under the bus",
                 "Launch Date": new Date("May 14, 2000"),
                 "Billboard Review": "67",
                 "US Billboard 200": "67",
                 "Artist": "Siri Jakobsson",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "Jack Broke My Heart At Tesco's",
                     "Released": "19-Jan-2020",
@@ -722,11 +723,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Pablo Cambeiro",
-            HasGrammyAward: false,
+            "HasGrammyAward": false,
             "Debut": "2011",
             "GrammyNominations": 5,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Fluke",
                 "Launch Date": new Date("August 4, 2017"),
                 "Billboard Review": "93",
@@ -739,7 +740,7 @@ export const SINGERS = [
                 "Billboard Review": "68",
                 "US Billboard 200": "84",
                 "Artist": "Pablo Cambeiro",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "My Bed on My Mind",
                     "Released": "25-Mar-2019",
@@ -806,11 +807,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Athar Malakooti",
-            HasGrammyAward: false,
+            "HasGrammyAward": false,
             "Debut": "2017",
             "GrammyNominations": 0,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Pushing up daisies",
                 "Launch Date": new Date("February 24, 2016"),
                 "Billboard Review": "74",
@@ -820,11 +821,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Marti Valencia",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "2004",
             "GrammyNominations": 1,
             "GrammyAwards": 1,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Nemesis",
                 "Launch Date": new Date("June 30, 2004"),
                 "Billboard Review": "94",
@@ -837,7 +838,7 @@ export const SINGERS = [
                 "Billboard Review": "96",
                 "US Billboard 200": "19",
                 "Artist": "Marti Valencia",
-                "Songs":[{
+                "Songs": [{
                     "No.": "1",
                     "Title": "My Name is Jason",
                     "Released": "12-Jul-2019",
@@ -932,11 +933,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Alicia Stanger",
-            HasGrammyAward: false,
+            "HasGrammyAward": false,
             "Debut": "2010",
             "GrammyNominations": 1,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Forever alone",
                 "Launch Date": new Date("November 3, 2005"),
                 "Billboard Review": "82",
@@ -946,11 +947,11 @@ export const SINGERS = [
         },
         {
             "Artist": "Peter Taylor",
-            HasGrammyAward: true,
+            "HasGrammyAward": true,
             "Debut": "2005",
             "GrammyNominations": 0,
             "GrammyAwards": 2,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Decisions decisions",
                 "Launch Date": new Date("April 10, 2008"),
                 "Billboard Review": "85",

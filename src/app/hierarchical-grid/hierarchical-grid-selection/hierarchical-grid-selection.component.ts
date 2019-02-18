@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
-import { IgxRowIslandComponent, IgxHierarchicalGridComponent } from "igniteui-angular";
-import { SINGERS } from '../data';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { SINGERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-selection",
@@ -11,12 +11,12 @@ import { SINGERS } from '../data';
 export class HGridSelectionSampleComponent implements OnInit {
     public localdata;
     public selection = true;
-    
-    @ViewChild('layout1')
-    layout1: IgxRowIslandComponent;
 
-    @ViewChild('hGrid')
-    hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("layout1")
+    private layout1: IgxRowIslandComponent;
+
+    @ViewChild("hGrid")
+    private hGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;

@@ -1,89 +1,88 @@
-export const SINGERS = [
+/* tslint:disable:object-literal-sort-keys */
+export const SINGERS = [{
+    "Artist": "Naomí Yepes",
+    "Photo": "assets/images/hgrid/naomi.png",
+    "Debut": "2011",
+    "Grammy Nominations": 6,
+    "Grammy Awards": 0,
+    "Tours": [{
+            "Tour": "Faithful Tour",
+            "Started on": "Sep-12",
+            "Location": "Worldwide",
+            "Headliner": "NO",
+            "Toured by": "Naomí Yepes"
+        },
         {
+            "Tour": "City Jam Sessions",
+            "Started on": "Aug-13",
+            "Location": "North America",
+            "Headliner": "YES",
+            "Toured by": "Naomí Yepes"
+        },
+        {
+            "Tour": "Christmas NYC 2013",
+            "Started on": "Dec-13",
+            "Location": "United States",
+            "Headliner": "NO",
+            "Toured by": "Naomí Yepes"
+        },
+        {
+            "Tour": "Christmas NYC 2014",
+            "Started on": "Dec-14",
+            "Location": "North America",
+            "Headliner": "NO",
+            "Toured by": "Naomí Yepes"
+        },
+        {
+            "Tour": "Watermelon Tour",
+            "Started on": "Feb-15",
+            "Location": "Worldwide",
+            "Headliner": "YES",
+            "Toured by": "Naomí Yepes"
+        },
+        {
+            "Tour": "Christmas NYC 2016",
+            "Started on": "Dec-16",
+            "Location": "United States",
+            "Headliner": "NO",
+            "Toured by": "Naomí Yepes"
+        },
+        {
+            "Tour": "The Dragon Tour",
+            "Started on": "Feb-17",
+            "Location": "Worldwide",
+            "Headliner": "NO",
+            "Toured by": "Naomí Yepes"
+        },
+        {
+            "Tour": "Organic Sessions",
+            "Started on": "Aug-18",
+            "Location": "United States, England",
+            "Headliner": "YES",
+            "Toured by": "Naomí Yepes"
+        },
+        {
+            "Tour": "Hope World Tour",
+            "Started on": "Mar-19",
+            "Location": "Worldwide",
+            "Headliner": "NO",
+            "Toured by": "Naomí Yepes"
+        }
+    ],
+    "Albums": [{
+            "Album": "Initiation",
+            "Launch Date": new Date("September 3, 2013"),
+            "Billboard Review": "86",
+            "US Billboard 200": "1",
+            "Artist": "Naomí Yepes"
+        },
+        {
+            "Album": "Dream Driven",
+            "Launch Date": new Date("August 25, 2014"),
+            "Billboard Review": "81",
+            "US Billboard 200": "1",
             "Artist": "Naomí Yepes",
-            "Photo":"assets/images/hgrid/naomi.png",
-            "Debut": "2011",
-            "Grammy Nominations": 6,
-            "Grammy Awards": 0,
-            "Tours": [
-                {
-                    "Tour": "Faithful Tour",
-                    "Started on": "Sep-12",
-                    "Location": "Worldwide",
-                    "Headliner": "NO",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "City Jam Sessions",
-                    "Started on": "Aug-13",
-                    "Location": "North America",
-                    "Headliner": "YES",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "Christmas NYC 2013",
-                    "Started on": "Dec-13",
-                    "Location": "United States",
-                    "Headliner": "NO",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "Christmas NYC 2014",
-                    "Started on": "Dec-14",
-                    "Location": "North America",
-                    "Headliner": "NO",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "Watermelon Tour",
-                    "Started on": "Feb-15",
-                    "Location": "Worldwide",
-                    "Headliner": "YES",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "Christmas NYC 2016",
-                    "Started on": "Dec-16",
-                    "Location": "United States",
-                    "Headliner": "NO",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "The Dragon Tour",
-                    "Started on": "Feb-17",
-                    "Location": "Worldwide",
-                    "Headliner": "NO",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "Organic Sessions",
-                    "Started on": "Aug-18",
-                    "Location": "United States, England",
-                    "Headliner": "YES",
-                    "Toured by": "Naomí Yepes"
-                },
-                {
-                    "Tour": "Hope World Tour",
-                    "Started on": "Mar-19",
-                    "Location": "Worldwide",
-                    "Headliner": "NO",
-                    "Toured by": "Naomí Yepes"
-                }
-            ],
-            "Albums": [{
-                "Album": "Initiation",
-                "Launch Date": new Date("September 3, 2013"),
-                "Billboard Review": "86",
-                "US Billboard 200": "1",
-                "Artist": "Naomí Yepes"
-            },
-            {
-                "Album": "Dream Driven",
-                "Launch Date": new Date("August 25, 2014"),
-                "Billboard Review": "81",
-                "US Billboard 200": "1",
-                "Artist": "Naomí Yepes",
-                "Songs":[{
+            "Songs": [{
                     "No.": "1",
                     "Title": "Intro",
                     "Released": "*",
@@ -166,22 +165,23 @@ export const SINGERS = [
                     "Released": "*",
                     "Genre": "*",
                     "Album": "Dream Driven"
-                }]
-            },
-            {
-                "Album": "The dragon journey",
-                "Launch Date": new Date("May 20, 2016"),
-                "Billboard Review": "60",
-                "US Billboard 200": "2",
-                "Artist": "Naomí Yepes"
-            },
-            {
-                "Album": "Organic me",
-                "Launch Date": new Date("August 17, 2018"),
-                "Billboard Review": "82",
-                "US Billboard 200": "1",
-                "Artist": "Naomí Yepes",
-                "Songs":[{
+                }
+            ]
+        },
+        {
+            "Album": "The dragon journey",
+            "Launch Date": new Date("May 20, 2016"),
+            "Billboard Review": "60",
+            "US Billboard 200": "2",
+            "Artist": "Naomí Yepes"
+        },
+        {
+            "Album": "Organic me",
+            "Launch Date": new Date("August 17, 2018"),
+            "Billboard Review": "82",
+            "US Billboard 200": "1",
+            "Artist": "Naomí Yepes",
+            "Songs": [{
                     "No.": "1",
                     "Title": "I Love",
                     "Released": "11-May-2019",
@@ -257,64 +257,67 @@ export const SINGERS = [
                     "Released": "22-Nov-2019",
                     "Genre": "Crunk reggaeton",
                     "Album": "Organic me"
-                }]
-            },
-            {
-                "Album": "Curiosity",
-                "Launch Date": new Date("December 7, 2019"),
-                "Billboard Review": "75",
-                "US Billboard 200": "12",
-                "Artist": "Naomí Yepes"
-            }]
+                }
+            ]
         },
         {
+            "Album": "Curiosity",
+            "Launch Date": new Date("December 7, 2019"),
+            "Billboard Review": "75",
+            "US Billboard 200": "12",
+            "Artist": "Naomí Yepes"
+        }
+    ]
+},
+{
+    "Artist": "Babila Ebwélé",
+    "Photo": "assets/images/hgrid/babila.png",
+    "Debut": "2009",
+    "Grammy Nominations": 0,
+    "Grammy Awards": 11,
+    "Tours": [{
+            "Tour": "The last straw",
+            "Started on": "May-09",
+            "Location": "Europe, Asia",
+            "Headliner": "NO",
+            "Toured by": "Babila Ebwélé"
+        },
+        {
+            "Tour": "No foundations",
+            "Started on": "Jun-04",
+            "Location": "United States, Europe",
+            "Headliner": "YES",
+            "Toured by": "Babila Ebwélé"
+        },
+        {
+            "Tour": "Crazy eyes",
+            "Started on": "Jun-08",
+            "Location": "North America",
+            "Headliner": "NO",
+            "Toured by": "Babila Ebwélé"
+        },
+        {
+            "Tour": "Zero gravity",
+            "Started on": "Apr-19",
+            "Location": "United States",
+            "Headliner": "NO",
+            "Toured by": "Babila Ebwélé"
+        },
+        {
+            "Tour": "Battle with myself",
+            "Started on": "Mar-08",
+            "Location": "North America",
+            "Headliner": "YES",
+            "Toured by": "Babila Ebwélé"
+        }
+    ],
+    "Albums": [{
+            "Album": "Pushing up daisies",
+            "Launch Date": new Date("May 31, 2000"),
+            "Billboard Review": "86",
+            "US Billboard 200": "42",
             "Artist": "Babila Ebwélé",
-            "Photo":"assets/images/hgrid/babila.png",
-            "Debut": "2009",
-            "Grammy Nominations": 0,
-            "Grammy Awards": 11,
-            "Tours":[{
-                "Tour": "The last straw",
-                "Started on": "May-09",
-                "Location": "Europe, Asia",
-                "Headliner": "NO",
-                "Toured by": "Babila Ebwélé"
-            },
-            {
-                "Tour": "No foundations",
-                "Started on": "Jun-04",
-                "Location": "United States, Europe",
-                "Headliner": "YES",
-                "Toured by": "Babila Ebwélé"
-            },
-            {
-                "Tour": "Crazy eyes",
-                "Started on": "Jun-08",
-                "Location": "North America",
-                "Headliner": "NO",
-                "Toured by": "Babila Ebwélé"
-            },
-            {
-                "Tour": "Zero gravity",
-                "Started on": "Apr-19",
-                "Location": "United States",
-                "Headliner": "NO",
-                "Toured by": "Babila Ebwélé"
-            },
-            {
-                "Tour": "Battle with myself",
-                "Started on": "Mar-08",
-                "Location": "North America",
-                "Headliner": "YES",
-                "Toured by": "Babila Ebwélé"
-            }],
-            "Albums":[{
-                "Album": "Pushing up daisies",
-                "Launch Date": new Date("May 31, 2000"),
-                "Billboard Review": "86",
-                "US Billboard 200": "42",
-                "Artist": "Babila Ebwélé",
-                "Songs":[{
+            "Songs": [{
                     "No.": "1",
                     "Title": "Wood Shavings Forever",
                     "Released": "9-Jun-2019",
@@ -383,15 +386,16 @@ export const SINGERS = [
                     "Released": "19-Mar-2019",
                     "Genre": "*",
                     "Album": "Pushing up daisies"
-                }]
-            },
-            {
-                "Album": "Death's dead",
-                "Launch Date": new Date("June 8, 2016"),
-                "Billboard Review": "85",
-                "US Billboard 200": "95",
-                "Artist": "Babila Ebwélé",
-                "Songs":[{
+                }
+            ]
+        },
+        {
+            "Album": "Death's dead",
+            "Launch Date": new Date("June 8, 2016"),
+            "Billboard Review": "85",
+            "US Billboard 200": "95",
+            "Artist": "Babila Ebwélé",
+            "Songs": [{
                     "No.": "1",
                     "Title": "Men Sound Better With You",
                     "Released": "20-Oct-2019",
@@ -467,93 +471,97 @@ export const SINGERS = [
                     "Released": "30-Dec-2019",
                     "Genre": "guilty pleasure ebm",
                     "Album": "Death's dead"
-                }]
-            }]
+                }
+            ]
+        }
+    ]
+},
+{
+    "Artist": "Ahmad Nazeri",
+    "Photo": "assets/images/hgrid/ahmad.png",
+    "Debut": "2004",
+    "Grammy Nominations": 3,
+    "Grammy Awards": 1,
+    "Tours": [],
+    "Albums": [{
+            "Album": "Emergency",
+            "Launch Date": new Date("March 6, 2004"),
+            "Billboard Review": "98",
+            "US Billboard 200": "69",
+            "Artist": "Ahmad Nazeri"
         },
         {
-            "Artist": "Ahmad Nazeri",
-            "Photo":"assets/images/hgrid/ahmad.png",
-            "Debut": "2004",
-            "Grammy Nominations": 3,
-            "Grammy Awards": 1,
-            "Tours":[],
-            "Albums":[{
-                "Album": "Emergency",
-                "Launch Date": new Date("March 6, 2004"),
-                "Billboard Review": "98",
-                "US Billboard 200": "69",
-                "Artist": "Ahmad Nazeri"
-            },
-            {
-                "Album": "Bursting bubbles",
-                "Launch Date": new Date("April 17, 2006"),
-                "Billboard Review": "69",
-                "US Billboard 200": "39",
-                "Artist": "Ahmad Nazeri"
-            }]
+            "Album": "Bursting bubbles",
+            "Launch Date": new Date("April 17, 2006"),
+            "Billboard Review": "69",
+            "US Billboard 200": "39",
+            "Artist": "Ahmad Nazeri"
+        }
+    ]
+},
+{
+    "Artist": "Kimmy McIlmorie",
+    "Photo": "assets/images/hgrid/kimmy.png",
+    "Debut": "2007",
+    "Grammy Nominations": 21,
+    "Grammy Awards": 3,
+    "Albums": [{
+        "Album": "Here we go again",
+        "Launch Date": new Date("November 18, 2017"),
+        "Billboard Review": "68",
+        "US Billboard 200": "1",
+        "Artist": "Kimmy McIlmorie"
+    }]
+},
+{
+    "Artist": "Mar Rueda",
+    "Photo": "assets/images/hgrid/mar.png",
+    "Debut": "1996",
+    "Grammy Nominations": 14,
+    "Grammy Awards": 2
+},
+{
+    "Artist": "Izabella Tabakova",
+    "Photo": "assets/images/hgrid/izabella.png",
+    "Debut": "2017",
+    "Grammy Nominations": 7,
+    "Grammy Awards": 11,
+    "Tours": [{
+            "Tour": "Final breath",
+            "Started on": "Jun-13",
+            "Location": "Europe",
+            "Headliner": "YES",
+            "Toured by": "Izabella Tabakova"
         },
         {
-            "Artist": "Kimmy McIlmorie",
-            "Photo":"assets/images/hgrid/kimmy.png",
-            "Debut": "2007",
-            "Grammy Nominations": 21,
-            "Grammy Awards": 3,
-            "Albums":[{
-                "Album": "Here we go again",
-                "Launch Date": new Date("November 18, 2017"),
-                "Billboard Review": "68",
-                "US Billboard 200": "1",
-                "Artist": "Kimmy McIlmorie"
-            }]
+            "Tour": "Once bitten",
+            "Started on": "Dec-18",
+            "Location": "Australia, United States",
+            "Headliner": "NO",
+            "Toured by": "Izabella Tabakova"
         },
         {
-            "Artist": "Mar Rueda",
-            "Photo":"assets/images/hgrid/mar.png",
-            "Debut": "1996",
-            "Grammy Nominations": 14,
-            "Grammy Awards": 2
+            "Tour": "Code word",
+            "Started on": "Sep-19",
+            "Location": "United States, Europe",
+            "Headliner": "NO",
+            "Toured by": "Izabella Tabakova"
         },
         {
+            "Tour": "Final draft",
+            "Started on": "Sep-17",
+            "Location": "United States, Europe",
+            "Headliner": "YES",
+            "Toured by": "Izabella Tabakova"
+        }
+    ],
+    "Albums": [{
+            "Album": "Once bitten",
+            "Launch Date": new Date("July 16, 2007"),
+            "Billboard Review": "79",
+            "US Billboard 200": "53",
             "Artist": "Izabella Tabakova",
-            "Photo":"assets/images/hgrid/izabella.png",
-            "Debut": "2017",
-            "Grammy Nominations": 7,
-            "Grammy Awards": 11,
-            "Tours":[{
-                "Tour": "Final breath",
-                "Started on": "Jun-13",
-                "Location": "Europe",
-                "Headliner": "YES",
-                "Toured by": "Izabella Tabakova"
-            },
-            {
-                "Tour": "Once bitten",
-                "Started on": "Dec-18",
-                "Location": "Australia, United States",
-                "Headliner": "NO",
-                "Toured by": "Izabella Tabakova"
-            },
-            {
-                "Tour": "Code word",
-                "Started on": "Sep-19",
-                "Location": "United States, Europe",
-                "Headliner": "NO",
-                "Toured by": "Izabella Tabakova"
-            },
-            {
-                "Tour": "Final draft",
-                "Started on": "Sep-17",
-                "Location": "United States, Europe",
-                "Headliner": "YES",
-                "Toured by": "Izabella Tabakova"
-            }],
-            "Albums":[{
-                "Album": "Once bitten",
-                "Launch Date": new Date("July 16, 2007"),
-                "Billboard Review": "79",
-                "US Billboard 200": "53",
-                "Artist": "Izabella Tabakova",
-                "Songs":[{
+            "Songs": [{
                     "No.": "1",
                     "Title": "Whole Lotta Super Cats",
                     "Released": "21-May-2019",
@@ -622,15 +630,16 @@ export const SINGERS = [
                     "Released": "12-Sep-2019",
                     "Genre": "ethno-tunes",
                     "Album": "Once bitten"
-                }]
-            },
-            {
-                "Album": "Your graciousness",
-                "Launch Date": new Date("November 17, 2004"),
-                "Billboard Review": "69",
-                "US Billboard 200": "30",
-                "Artist": "Izabella Tabakova",
-                "Songs":[{
+                }
+            ]
+        },
+        {
+            "Album": "Your graciousness",
+            "Launch Date": new Date("November 17, 2004"),
+            "Billboard Review": "69",
+            "US Billboard 200": "30",
+            "Artist": "Izabella Tabakova",
+            "Songs": [{
                     "No.": "1",
                     "Title": "We Shall Tickle",
                     "Released": "31-Aug-2019",
@@ -699,260 +708,265 @@ export const SINGERS = [
                     "Released": "25-Jul-2019",
                     "Genre": "*",
                     "Album": "Your graciousness"
-                }]
-            },
-            {
-                "Album": "Dark matters",
-                "Launch Date": new Date("November 3, 2002"),
-                "Billboard Review": "79",
-                "US Billboard 200": "85",
-                "Artist": "Izabella Tabakova"
-            }]
+                }
+            ]
         },
         {
-            "Artist": "Nguyễn Diệp Chi",
-            "Photo":"assets/images/hgrid/nguyen.png",
-            "Debut": "1992",
-            "Grammy Nominations": 4,
-            "Grammy Awards": 2,
-            "Albums":[{
-                "Album": "Library of liberty",
-                "Launch Date": new Date("December 22, 2003"),
-                "Billboard Review": "93",
-                "US Billboard 200": "5",
-                "Artist": "Nguyễn Diệp Chi"
-            }]
+            "Album": "Dark matters",
+            "Launch Date": new Date("November 3, 2002"),
+            "Billboard Review": "79",
+            "US Billboard 200": "85",
+            "Artist": "Izabella Tabakova"
+        }
+    ]
+},
+{
+    "Artist": "Nguyễn Diệp Chi",
+    "Photo": "assets/images/hgrid/nguyen.png",
+    "Debut": "1992",
+    "Grammy Nominations": 4,
+    "Grammy Awards": 2,
+    "Albums": [{
+        "Album": "Library of liberty",
+        "Launch Date": new Date("December 22, 2003"),
+        "Billboard Review": "93",
+        "US Billboard 200": "5",
+        "Artist": "Nguyễn Diệp Chi"
+    }]
+},
+{
+    "Artist": "Eva Lee",
+    "Photo": "assets/images/hgrid/eva.png",
+    "Debut": "2008",
+    "Grammy Nominations": 2,
+    "Grammy Awards": 0,
+    "Albums": [{
+        "Album": "Just a tease",
+        "Launch Date": new Date("May 3, 2001"),
+        "Billboard Review": "91",
+        "US Billboard 200": "29",
+        "Artist": "Eva Lee"
+    }]
+},
+{
+    "Artist": "Siri Jakobsson",
+    "Photo": "assets/images/hgrid/siri.png",
+    "Debut": "1990",
+    "Grammy Nominations": 2,
+    "Grammy Awards": 8,
+    "Tours": [{
+            "Tour": "Basket case",
+            "Started on": "Jan-07",
+            "Location": "Europe, Asia",
+            "Headliner": "NO",
+            "Toured by": "Siri Jakobsson"
         },
         {
-            "Artist": "Eva Lee",
-            "Photo":"assets/images/hgrid/eva.png",
-            "Debut": "2008",
-            "Grammy Nominations": 2,
-            "Grammy Awards": 0,
-            "Albums":[{
-                "Album": "Just a tease",
-                "Launch Date": new Date("May 3, 2001"),
-                "Billboard Review": "91",
-                "US Billboard 200": "29",
-                "Artist": "Eva Lee"
-            }]
+            "Tour": "The bigger fish",
+            "Started on": "Dec-07",
+            "Location": "United States, Europe",
+            "Headliner": "YES",
+            "Toured by": "Siri Jakobsson"
         },
         {
-            "Artist": "Siri Jakobsson",
-            "Photo":"assets/images/hgrid/siri.png",
-            "Debut": "1990",
-            "Grammy Nominations": 2,
-            "Grammy Awards": 8,
-            "Tours":[{
-                "Tour": "Basket case",
-                "Started on": "Jan-07",
-                "Location": "Europe, Asia",
-                "Headliner": "NO",
-                "Toured by": "Siri Jakobsson"
-            },
-            {
-                "Tour": "The bigger fish",
-                "Started on": "Dec-07",
-                "Location": "United States, Europe",
-                "Headliner": "YES",
-                "Toured by": "Siri Jakobsson"
-            },
-            {
-                "Tour": "Missed the boat",
-                "Started on": "Jun-09",
-                "Location": "Europe, Asia",
-                "Headliner": "NO",
-                "Toured by": "Siri Jakobsson"
-            },
-            {
-                "Tour": "Equivalent exchange",
-                "Started on": "Feb-06",
-                "Location": "United States, Europe",
-                "Headliner": "YES",
-                "Toured by": "Siri Jakobsson"
-            },
-            {
-                "Tour": "Damage control",
-                "Started on": "Oct-11",
-                "Location": "Australia, United States",
-                "Headliner": "NO",
-                "Toured by": "Siri Jakobsson"
-            }],
-            "Albums":[{
-                "Album": "Under the bus",
-                "Launch Date": new Date("May 14, 2000"),
-                "Billboard Review": "67",
-                "US Billboard 200": "67",
-                "Artist": "Siri Jakobsson",
-                "Songs":[{
-                    "No.": "1",
-                    "Title": "Jack Broke My Heart At Tesco's",
-                    "Released": "19-Jan-2020",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "2",
-                    "Title": "Cat Deep, Hats High",
-                    "Released": "5-Dec-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "3",
-                    "Title": "In Snail We Trust",
-                    "Released": "31-May-2019",
-                    "Genre": "hardcore opera",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "4",
-                    "Title": "Liz's Waiting",
-                    "Released": "22-Jul-2019",
-                    "Genre": "emotional C-jam ",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "5",
-                    "Title": "Lifeless Blues",
-                    "Released": "14-Jun-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "6",
-                    "Title": "I Spin",
-                    "Released": "26-Mar-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "7",
-                    "Title": "Ring of Rock",
-                    "Released": "12-Dec-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "8",
-                    "Title": "Livin' on a Rock",
-                    "Released": "17-Apr-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "9",
-                    "Title": "Your Lifeless Heart",
-                    "Released": "15-Sep-2019",
-                    "Genre": "adult calypso-industrial",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "10",
-                    "Title": "The High Street on My Mind",
-                    "Released": "11-Nov-2019",
-                    "Genre": "calypso and mariachi",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "11",
-                    "Title": "Behind Ugly Curtains",
-                    "Released": "8-May-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "12",
-                    "Title": "Where Have All the Curtains Gone?",
-                    "Released": "28-Jun-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "13",
-                    "Title": "Ghost in My Apple",
-                    "Released": "14-Dec-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                },
-                {
-                    "No.": "14",
-                    "Title": "I Chatter",
-                    "Released": "30-Nov-2019",
-                    "Genre": "*",
-                    "Album": "Under the bus"
-                }]
-            }]
+            "Tour": "Missed the boat",
+            "Started on": "Jun-09",
+            "Location": "Europe, Asia",
+            "Headliner": "NO",
+            "Toured by": "Siri Jakobsson"
         },
         {
+            "Tour": "Equivalent exchange",
+            "Started on": "Feb-06",
+            "Location": "United States, Europe",
+            "Headliner": "YES",
+            "Toured by": "Siri Jakobsson"
+        },
+        {
+            "Tour": "Damage control",
+            "Started on": "Oct-11",
+            "Location": "Australia, United States",
+            "Headliner": "NO",
+            "Toured by": "Siri Jakobsson"
+        }
+    ],
+    "Albums": [{
+        "Album": "Under the bus",
+        "Launch Date": new Date("May 14, 2000"),
+        "Billboard Review": "67",
+        "US Billboard 200": "67",
+        "Artist": "Siri Jakobsson",
+        "Songs": [{
+                "No.": "1",
+                "Title": "Jack Broke My Heart At Tesco's",
+                "Released": "19-Jan-2020",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "2",
+                "Title": "Cat Deep, Hats High",
+                "Released": "5-Dec-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "3",
+                "Title": "In Snail We Trust",
+                "Released": "31-May-2019",
+                "Genre": "hardcore opera",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "4",
+                "Title": "Liz's Waiting",
+                "Released": "22-Jul-2019",
+                "Genre": "emotional C-jam ",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "5",
+                "Title": "Lifeless Blues",
+                "Released": "14-Jun-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "6",
+                "Title": "I Spin",
+                "Released": "26-Mar-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "7",
+                "Title": "Ring of Rock",
+                "Released": "12-Dec-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "8",
+                "Title": "Livin' on a Rock",
+                "Released": "17-Apr-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "9",
+                "Title": "Your Lifeless Heart",
+                "Released": "15-Sep-2019",
+                "Genre": "adult calypso-industrial",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "10",
+                "Title": "The High Street on My Mind",
+                "Released": "11-Nov-2019",
+                "Genre": "calypso and mariachi",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "11",
+                "Title": "Behind Ugly Curtains",
+                "Released": "8-May-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "12",
+                "Title": "Where Have All the Curtains Gone?",
+                "Released": "28-Jun-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "13",
+                "Title": "Ghost in My Apple",
+                "Released": "14-Dec-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            },
+            {
+                "No.": "14",
+                "Title": "I Chatter",
+                "Released": "30-Nov-2019",
+                "Genre": "*",
+                "Album": "Under the bus"
+            }
+        ]
+    }]
+},
+{
+    "Artist": "Pablo Cambeiro",
+    "Photo": "assets/images/hgrid/pablo.png",
+    "Debut": "2011",
+    "Grammy Nominations": 5,
+    "Grammy Awards": 0,
+    "Tours": [{
+            "Tour": "Beads",
+            "Started on": "May-11",
+            "Location": "Worldwide",
+            "Headliner": "NO",
+            "Toured by": "Pablo Cambeiro"
+        },
+        {
+            "Tour": "Concept art",
+            "Started on": "Dec-18",
+            "Location": "United States",
+            "Headliner": "YES",
+            "Toured by": "Pablo Cambeiro"
+        },
+        {
+            "Tour": "Glass shoe",
+            "Started on": "Jan-20",
+            "Location": "Worldwide",
+            "Headliner": "YES",
+            "Toured by": "Pablo Cambeiro"
+        },
+        {
+            "Tour": "Pushing buttons",
+            "Started on": "Feb-15",
+            "Location": "Europe, Asia",
+            "Headliner": "NO",
+            "Toured by": "Pablo Cambeiro"
+        },
+        {
+            "Tour": "Dark matters",
+            "Started on": "Jan-04",
+            "Location": "Australia, United States",
+            "Headliner": "YES",
+            "Toured by": "Pablo Cambeiro"
+        },
+        {
+            "Tour": "Greener grass",
+            "Started on": "Sep-09",
+            "Location": "United States, Europe",
+            "Headliner": "NO",
+            "Toured by": "Pablo Cambeiro"
+        },
+        {
+            "Tour": "Apparatus",
+            "Started on": "Nov-16",
+            "Location": "Europe",
+            "Headliner": "NO",
+            "Toured by": "Pablo Cambeiro"
+        }
+    ],
+    "Albums": [{
+            "Album": "Fluke",
+            "Launch Date": new Date("August 4, 2017"),
+            "Billboard Review": "93",
+            "US Billboard 200": "98",
+            "Artist": "Pablo Cambeiro"
+        },
+        {
+            "Album": "Crowd control",
+            "Launch Date": new Date("August 26, 2003"),
+            "Billboard Review": "68",
+            "US Billboard 200": "84",
             "Artist": "Pablo Cambeiro",
-            "Photo":"assets/images/hgrid/pablo.png",
-            "Debut": "2011",
-            "Grammy Nominations": 5,
-            "Grammy Awards": 0,
-            "Tours":[{
-                "Tour": "Beads",
-                "Started on": "May-11",
-                "Location": "Worldwide",
-                "Headliner": "NO",
-                "Toured by": "Pablo Cambeiro"
-            },
-            {
-                "Tour": "Concept art",
-                "Started on": "Dec-18",
-                "Location": "United States",
-                "Headliner": "YES",
-                "Toured by": "Pablo Cambeiro"
-            },
-            {
-                "Tour": "Glass shoe",
-                "Started on": "Jan-20",
-                "Location": "Worldwide",
-                "Headliner": "YES",
-                "Toured by": "Pablo Cambeiro"
-            },
-            {
-                "Tour": "Pushing buttons",
-                "Started on": "Feb-15",
-                "Location": "Europe, Asia",
-                "Headliner": "NO",
-                "Toured by": "Pablo Cambeiro"
-            },
-            {
-                "Tour": "Dark matters",
-                "Started on": "Jan-04",
-                "Location": "Australia, United States",
-                "Headliner": "YES",
-                "Toured by": "Pablo Cambeiro"
-            },
-            {
-                "Tour": "Greener grass",
-                "Started on": "Sep-09",
-                "Location": "United States, Europe",
-                "Headliner": "NO",
-                "Toured by": "Pablo Cambeiro"
-            },
-            {
-                "Tour": "Apparatus",
-                "Started on": "Nov-16",
-                "Location": "Europe",
-                "Headliner": "NO",
-                "Toured by": "Pablo Cambeiro"
-            }],
-            "Albums":[{
-                "Album": "Fluke",
-                "Launch Date": new Date("August 4, 2017"),
-                "Billboard Review": "93",
-                "US Billboard 200": "98",
-                "Artist": "Pablo Cambeiro"
-            },
-            {
-                "Album": "Crowd control",
-                "Launch Date": new Date("August 26, 2003"),
-                "Billboard Review": "68",
-                "US Billboard 200": "84",
-                "Artist": "Pablo Cambeiro",
-                "Songs":[{
+            "Songs": [{
                     "No.": "1",
                     "Title": "My Bed on My Mind",
                     "Released": "25-Mar-2019",
@@ -1014,57 +1028,60 @@ export const SINGERS = [
                     "Released": "30-Nov-2019",
                     "Genre": "*",
                     "Album": "Crowd control"
-                }]
-            }]
+                }
+            ]
+        }
+    ]
+},
+{
+    "Artist": "Athar Malakooti",
+    "Photo": "assets/images/hgrid/athar.png",
+    "Debut": "2017",
+    "Grammy Nominations": 0,
+    "Grammy Awards": 0,
+    "Albums": [{
+        "Album": "Pushing up daisies",
+        "Launch Date": new Date("February 24, 2016"),
+        "Billboard Review": "74",
+        "US Billboard 200": "77",
+        "Artist": "Athar Malakooti"
+    }]
+},
+{
+    "Artist": "Marti Valencia",
+    "Photo": "assets/images/hgrid/marti.png",
+    "Debut": "2004",
+    "Grammy Nominations": 1,
+    "Grammy Awards": 1,
+    "Tours": [{
+            "Tour": "Cat eat cat world",
+            "Started on": "Sep-00",
+            "Location": "Worldwide",
+            "Headliner": "YES",
+            "Toured by": "Marti Valencia"
         },
         {
-            "Artist": "Athar Malakooti",
-            "Photo":"assets/images/hgrid/athar.png",
-            "Debut": "2017",
-            "Grammy Nominations": 0,
-            "Grammy Awards": 0,
-            "Albums":[{
-                "Album": "Pushing up daisies",
-                "Launch Date": new Date("February 24, 2016"),
-                "Billboard Review": "74",
-                "US Billboard 200": "77",
-                "Artist": "Athar Malakooti"
-            }]
+            "Tour": "Final straw",
+            "Started on": "Sep-06",
+            "Location": "United States, Europe",
+            "Headliner": "NO",
+            "Toured by": "Marti Valencia"
+        }
+    ],
+    "Albums": [{
+            "Album": "Nemesis",
+            "Launch Date": new Date("June 30, 2004"),
+            "Billboard Review": "94",
+            "US Billboard 200": "9",
+            "Artist": "Marti Valencia"
         },
         {
+            "Album": "First chance",
+            "Launch Date": new Date("January 7, 2019"),
+            "Billboard Review": "96",
+            "US Billboard 200": "19",
             "Artist": "Marti Valencia",
-            "Photo":"assets/images/hgrid/marti.png",
-            "Debut": "2004",
-            "Grammy Nominations": 1,
-            "Grammy Awards": 1,
-            "Tours":[{
-                "Tour": "Cat eat cat world",
-                "Started on": "Sep-00",
-                "Location": "Worldwide",
-                "Headliner": "YES",
-                "Toured by": "Marti Valencia"
-            },
-            {
-                "Tour": "Final straw",
-                "Started on": "Sep-06",
-                "Location": "United States, Europe",
-                "Headliner": "NO",
-                "Toured by": "Marti Valencia"
-            }],
-            "Albums":[{
-                "Album": "Nemesis",
-                "Launch Date": new Date("June 30, 2004"),
-                "Billboard Review": "94",
-                "US Billboard 200": "9",
-                "Artist": "Marti Valencia"
-            },
-            {
-                "Album": "First chance",
-                "Launch Date": new Date("January 7, 2019"),
-                "Billboard Review": "96",
-                "US Billboard 200": "19",
-                "Artist": "Marti Valencia",
-                "Songs":[{
+            "Songs": [{
                     "No.": "1",
                     "Title": "My Name is Jason",
                     "Released": "12-Jul-2019",
@@ -1147,91 +1164,95 @@ export const SINGERS = [
                     "Released": "30-Apr-2019",
                     "Genre": "Synth-pop R&B",
                     "Album": "First chance"
-                }]
-            },
-            {
-                "Album": "God's advocate",
-                "Launch Date": new Date("April 29, 2007"),
-                "Billboard Review": "66",
-                "US Billboard 200": "37",
-                "Artist": "Marti Valencia"
-            }]
+                }
+            ]
         },
         {
-            "Artist": "Alicia Stanger",
-            "Photo":"assets/images/hgrid/alicia.png",
-            "Debut": "2010",
-            "Grammy Nominations": 1,
-            "Grammy Awards": 0,
-            "Albums":[{
-                "Album": "Forever alone",
-                "Launch Date": new Date("November 3, 2005"),
-                "Billboard Review": "82",
-                "US Billboard 200": "7",
-                "Artist": "Alicia Stanger"
-            }]
-        },
-        {
-            "Artist": "Peter Taylor",
-            "Photo":"assets/images/hgrid/peter.png",
-            "Debut": "2005",
-            "Grammy Nominations": 0,
-            "Grammy Awards": 2,
-            "Tours":[{
-                "Tour": "Love",
-                "Started on": "Jun-04",
-                "Location": "Europe, Asia",
-                "Headliner": "YES",
-                "Toured by": "Peter Taylor"
-            },
-            {
-                "Tour": "Fault of treasures",
-                "Started on": "Oct-13",
-                "Location": "North America",
-                "Headliner": "NO",
-                "Toured by": "Peter Taylor"
-            },
-            {
-                "Tour": "For eternity",
-                "Started on": "Mar-05",
-                "Location": "United States",
-                "Headliner": "YES",
-                "Toured by": "Peter Taylor"
-            },
-            {
-                "Tour": "Time flies",
-                "Started on": "Jun-03",
-                "Location": "North America",
-                "Headliner": "NO",
-                "Toured by": "Peter Taylor"
-            },
-            {
-                "Tour": "Highest difficulty",
-                "Started on": "Nov-01",
-                "Location": "Worldwide",
-                "Headliner": "YES",
-                "Toured by": "Peter Taylor"
-            },
-            {
-                "Tour": "Sleeping dogs",
-                "Started on": "May-04",
-                "Location": "United States, Europe",
-                "Headliner": "NO",
-                "Toured by": "Peter Taylor"
-            }],
-            "Albums":[{
-                "Album": "Decisions decisions",
-                "Launch Date": new Date("April 10, 2008"),
-                "Billboard Review": "85",
-                "US Billboard 200": "35",
-                "Artist": "Peter Taylor"
-            },
-            {
-                "Album": "Climate changed",
-                "Launch Date": new Date("June 20, 2015"),
-                "Billboard Review": "66",
-                "US Billboard 200": "89",
-                "Artist": "Peter Taylor"
-            }]
+            "Album": "God's advocate",
+            "Launch Date": new Date("April 29, 2007"),
+            "Billboard Review": "66",
+            "US Billboard 200": "37",
+            "Artist": "Marti Valencia"
         }
-    ];
+    ]
+},
+{
+    "Artist": "Alicia Stanger",
+    "Photo": "assets/images/hgrid/alicia.png",
+    "Debut": "2010",
+    "Grammy Nominations": 1,
+    "Grammy Awards": 0,
+    "Albums": [{
+        "Album": "Forever alone",
+        "Launch Date": new Date("November 3, 2005"),
+        "Billboard Review": "82",
+        "US Billboard 200": "7",
+        "Artist": "Alicia Stanger"
+    }]
+},
+{
+    "Artist": "Peter Taylor",
+    "Photo": "assets/images/hgrid/peter.png",
+    "Debut": "2005",
+    "Grammy Nominations": 0,
+    "Grammy Awards": 2,
+    "Tours": [{
+            "Tour": "Love",
+            "Started on": "Jun-04",
+            "Location": "Europe, Asia",
+            "Headliner": "YES",
+            "Toured by": "Peter Taylor"
+        },
+        {
+            "Tour": "Fault of treasures",
+            "Started on": "Oct-13",
+            "Location": "North America",
+            "Headliner": "NO",
+            "Toured by": "Peter Taylor"
+        },
+        {
+            "Tour": "For eternity",
+            "Started on": "Mar-05",
+            "Location": "United States",
+            "Headliner": "YES",
+            "Toured by": "Peter Taylor"
+        },
+        {
+            "Tour": "Time flies",
+            "Started on": "Jun-03",
+            "Location": "North America",
+            "Headliner": "NO",
+            "Toured by": "Peter Taylor"
+        },
+        {
+            "Tour": "Highest difficulty",
+            "Started on": "Nov-01",
+            "Location": "Worldwide",
+            "Headliner": "YES",
+            "Toured by": "Peter Taylor"
+        },
+        {
+            "Tour": "Sleeping dogs",
+            "Started on": "May-04",
+            "Location": "United States, Europe",
+            "Headliner": "NO",
+            "Toured by": "Peter Taylor"
+        }
+    ],
+    "Albums": [{
+            "Album": "Decisions decisions",
+            "Launch Date": new Date("April 10, 2008"),
+            "Billboard Review": "85",
+            "US Billboard 200": "35",
+            "Artist": "Peter Taylor"
+        },
+        {
+            "Album": "Climate changed",
+            "Launch Date": new Date("June 20, 2015"),
+            "Billboard Review": "66",
+            "US Billboard 200": "89",
+            "Artist": "Peter Taylor"
+        }
+    ]
+}
+];

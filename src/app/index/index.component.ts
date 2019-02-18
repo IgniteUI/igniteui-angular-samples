@@ -10,6 +10,7 @@ import { gaugesRoutesData } from "../gauges/gauges-routes-data";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
 import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
+import { hierarchicalGridRoutesData } from "../hierarchical-grid/hgrid-routes-data";
 import { interactionsRoutesData } from "../interactions/interactions-routes-data";
 import { layoutsRoutesData } from "../layouts/layouts-routes-data";
 import { listsRoutesData } from "../lists/lists-routes-data";
@@ -20,7 +21,6 @@ import { servicesRoutesData } from "../services/services-routes-data";
 import { themingRoutesData } from "../theming/theming-routes-data";
 import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
 import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
-import { hierarchicalGridRoutesData } from '../hierarchical-grid/hgrid-routes-data';
 
 @Component({
     selector: "app-index",

@@ -30,7 +30,7 @@ export class Singer {
     set GrammyAwards(val) {
         this.grammyAwards = val;
     }
-   
+
     private artist: string;
     private hasGrammyAward: boolean;
     private debut: number;

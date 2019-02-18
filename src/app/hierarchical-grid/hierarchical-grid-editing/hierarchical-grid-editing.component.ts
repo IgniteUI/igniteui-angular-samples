@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxRowIslandComponent, IgxHierarchicalGridComponent, IgxDialogComponent } from "igniteui-angular";
-import { SINGERS } from './data';
-import { Singer } from './singer';
+import { IgxDialogComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { SINGERS } from "./data";
+import { Singer } from "./singer";
 
 @Component({
     selector: "hierarchical-grid-editing",
@@ -11,16 +11,16 @@ import { Singer } from './singer';
 
 export class HGridEditingSampleComponent implements OnInit {
     public localdata;
+    public singer;
 
-    @ViewChild('layout1')
-    layout1: IgxRowIslandComponent;
+    @ViewChild("layout1")
+    private layout1: IgxRowIslandComponent;
 
-    @ViewChild('hGrid')
-    hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hGrid")
+    private hGrid: IgxHierarchicalGridComponent;
 
     @ViewChild("dialogAdd", { read: IgxDialogComponent })
-    public dialog: IgxDialogComponent;
-    public singer;
+    private dialog: IgxDialogComponent;
 
     constructor() {}
 

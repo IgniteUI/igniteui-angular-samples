@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxRowIslandComponent, IgxHierarchicalGridComponent } from "igniteui-angular";
-import { SINGERS } from '../data';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { SINGERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-custom-hiding",
@@ -11,14 +11,14 @@ import { SINGERS } from '../data';
 export class HGridCostumHidingSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild('layout1')
-    layout1: IgxRowIslandComponent;
+    @ViewChild("layout1")
+    private layout1: IgxRowIslandComponent;
 
-    @ViewChild('hGrid')
-    hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hGrid")
+    private hGrid: IgxHierarchicalGridComponent;
 
     constructor() {}
-    
+
     public ngOnInit(): void {
         this.localdata = SINGERS;
     }

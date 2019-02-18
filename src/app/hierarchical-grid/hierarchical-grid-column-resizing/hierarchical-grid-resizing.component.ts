@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxRowIslandComponent, IgxHierarchicalGridComponent, IgxColumnComponent } from "igniteui-angular";
-import { SINGERS } from '../data';
+import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { SINGERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-resizing",
@@ -14,16 +14,16 @@ export class HGridColumnResizingSampleComponent implements OnInit {
     public pWidth: string;
     public nWidth: string;
 
-    @ViewChild('layout1')
-    layout1: IgxRowIslandComponent;
+    @ViewChild("layout1")
+    private layout1: IgxRowIslandComponent;
 
-    @ViewChild('hGrid')
-    hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hGrid")
+    private hGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;
     }
-    
+
     public ngOnInit(): void {
 
     }

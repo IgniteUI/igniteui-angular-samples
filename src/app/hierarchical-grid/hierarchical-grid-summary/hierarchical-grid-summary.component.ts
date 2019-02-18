@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxRowIslandComponent, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult } from "igniteui-angular";
-import { SINGERS } from '../data';
+import { IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
+    IgxRowIslandComponent, IgxSummaryResult } from "igniteui-angular";
+import { SINGERS } from "../data";
 
 class MySummary extends IgxNumberSummaryOperand {
 
     constructor() {
       super();
     }
-  
+
     public operate(data?: any[]): IgxSummaryResult[] {
       const result = super.operate(data);
       result.push({
@@ -15,7 +16,7 @@ class MySummary extends IgxNumberSummaryOperand {
         label: "More than 5",
         summaryResult: data.filter((rec) => rec > 5).length
       });
-  
+
       return result;
     }
   }
@@ -30,11 +31,11 @@ export class HGridSummarySampleComponent implements OnInit {
     public localdata;
     public mySummary = MySummary;
 
-    @ViewChild('layout1')
-    layout1: IgxRowIslandComponent;
+    @ViewChild("layout1")
+    private layout1: IgxRowIslandComponent;
 
-    @ViewChild('hGrid')
-    hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hGrid")
+    private hGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;

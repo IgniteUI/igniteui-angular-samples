@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxRowIslandComponent, IgxHierarchicalGridComponent, IgxColumnComponent } from "igniteui-angular";
-import { CUSTOMERS } from '../data';
+import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { CUSTOMERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-moving",
@@ -11,11 +11,11 @@ import { CUSTOMERS } from '../data';
 export class HGridColumnMovingSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild('layout1')
-    layout1: IgxRowIslandComponent;
+    @ViewChild("layout1")
+    private layout1: IgxRowIslandComponent;
 
-    @ViewChild('hGrid')
-    hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hGrid")
+    private hGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = CUSTOMERS;

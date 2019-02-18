@@ -1,3 +1,4 @@
+/* tslint:disable */
 export const SINGERS = [
         {
             Artist: "Naomí Yepes",
@@ -208,7 +209,7 @@ export const SINGERS = [
             "Debut": "2009",
             "GrammyNominations": 0,
             "GrammyAwards": 11,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Pushing up daisies",
                 "Launch Date": new Date("May 31, 2000"),
                 "Billboard Review": "86",
@@ -376,7 +377,7 @@ export const SINGERS = [
             "Debut": "2004",
             "GrammyNominations": 3,
             "GrammyAwards": 1,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Emergency",
                 "Launch Date": new Date("March 6, 2004"),
                 "Billboard Review": "98",
@@ -397,7 +398,7 @@ export const SINGERS = [
             "Debut": "2007",
             "GrammyNominations": 21,
             "GrammyAwards": 3,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Here we go again",
                 "Launch Date": new Date("November 18, 2017"),
                 "Billboard Review": "68",
@@ -418,7 +419,7 @@ export const SINGERS = [
             "Debut": "2017",
             "GrammyNominations": 7,
             "GrammyAwards": 11,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Once bitten",
                 "Launch Date": new Date("July 16, 2007"),
                 "Billboard Review": "79",
@@ -586,7 +587,7 @@ export const SINGERS = [
             "Debut": "1992",
             "GrammyNominations": 4,
             "GrammyAwards": 2,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Library of liberty",
                 "Launch Date": new Date("December 22, 2003"),
                 "Billboard Review": "93",
@@ -600,7 +601,7 @@ export const SINGERS = [
             "Debut": "2008",
             "GrammyNominations": 2,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Just a tease",
                 "Launch Date": new Date("May 3, 2001"),
                 "Billboard Review": "91",
@@ -614,7 +615,7 @@ export const SINGERS = [
             "Debut": "1990",
             "GrammyNominations": 2,
             "GrammyAwards": 8,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Under the bus",
                 "Launch Date": new Date("May 14, 2000"),
                 "Billboard Review": "67",
@@ -726,7 +727,7 @@ export const SINGERS = [
             "Debut": "2011",
             "GrammyNominations": 5,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Fluke",
                 "Launch Date": new Date("August 4, 2017"),
                 "Billboard Review": "93",
@@ -810,7 +811,7 @@ export const SINGERS = [
             "Debut": "2017",
             "GrammyNominations": 0,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Pushing up daisies",
                 "Launch Date": new Date("February 24, 2016"),
                 "Billboard Review": "74",
@@ -824,7 +825,7 @@ export const SINGERS = [
             "Debut": "2004",
             "GrammyNominations": 1,
             "GrammyAwards": 1,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Nemesis",
                 "Launch Date": new Date("June 30, 2004"),
                 "Billboard Review": "94",
@@ -936,7 +937,7 @@ export const SINGERS = [
             "Debut": "2010",
             "GrammyNominations": 1,
             "GrammyAwards": 0,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Forever alone",
                 "Launch Date": new Date("November 3, 2005"),
                 "Billboard Review": "82",
@@ -950,7 +951,7 @@ export const SINGERS = [
             "Debut": "2005",
             "GrammyNominations": 0,
             "GrammyAwards": 2,
-            "Albums":[{
+            "Albums": [{
                 "Album": "Decisions decisions",
                 "Launch Date": new Date("April 10, 2008"),
                 "Billboard Review": "85",

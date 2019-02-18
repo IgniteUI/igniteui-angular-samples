@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
-import { IgxRowIslandComponent, IgxHierarchicalGridComponent, SortingDirection, DefaultSortingStrategy } from "igniteui-angular";
-import { SINGERS } from '../data';
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { DefaultSortingStrategy, IgxHierarchicalGridComponent,
+    IgxRowIslandComponent, SortingDirection } from "igniteui-angular";
+import { SINGERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-sorting",
@@ -16,11 +17,11 @@ export class HGridSortingSampleComponent implements OnInit, AfterViewInit {
     public contextmenuY = 0;
     public clickedCell = null;
 
-    @ViewChild('layout1')
-    layout1: IgxRowIslandComponent;
+    @ViewChild("layout1")
+    private layout1: IgxRowIslandComponent;
 
-    @ViewChild('hGrid')
-    hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hGrid")
+    private hGrid: IgxHierarchicalGridComponent;
 
     constructor() {}
 
@@ -32,7 +33,7 @@ export class HGridSortingSampleComponent implements OnInit, AfterViewInit {
         ];
     }
     public ngAfterViewInit(): void {
-        this.hGrid.cdr.detectChanges()
+        this.hGrid.cdr.detectChanges();
     }
 
     public rightClick(eventArgs) {
@@ -43,9 +44,9 @@ export class HGridSortingSampleComponent implements OnInit, AfterViewInit {
         this.contextmenu = true;
         this.clickedCell = eventArgs.cell;
       }
-  
-      public disableContextMenu() {
+
+    public disableContextMenu() {
         this.contextmenu = false;
-     }
+    }
 
 }
