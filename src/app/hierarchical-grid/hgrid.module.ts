@@ -16,6 +16,7 @@ import { HGridPagingSampleComponent } from './hierarchical-grid-paging/hierarchi
 import { HGridPinningSampleComponent } from './hierarchical-grid-column-pinning/hierarchical-grid-pinning.component';
 import { HGridColumnResizingSampleComponent } from './hierarchical-grid-column-resizing/hierarchical-grid-resizing.component';
 import { HGridColumnHidingSampleComponent } from './hierarchical-grid-column-hiding/hierarchical-grid-hiding.component';
+import { HGridCostumHidingSampleComponent } from './hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component';
 import { HGridDisplayDensitySampleComponent } from './hierarchical-grid-display-density/hierarchical-grid-density.component';
 import { HGridColumnMovingSampleComponent } from './hierarchical-grid-column-moving/hierarchical-grid-moving.component';
 import { HGridMultiHeadersSampleComponent } from './hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component';
@@ -39,6 +40,7 @@ import { HgridRoutingModule } from './hgrid-routing.module';
         HGridPinningSampleComponent,
         HGridColumnResizingSampleComponent,
         HGridColumnHidingSampleComponent,
+        HGridCostumHidingSampleComponent,
         HGridDisplayDensitySampleComponent,
         HGridColumnMovingSampleComponent,
         HGridMultiHeadersSampleComponent,

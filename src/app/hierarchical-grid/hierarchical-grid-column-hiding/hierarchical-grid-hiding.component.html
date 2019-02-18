@@ -1,7 +1,7 @@
 <div class="hgrid-sample">
     <igx-hierarchical-grid class="hgrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true" toolbarTitle="Singers" 
-    columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'600px'" [width]="'1000px'" #hGrid>
-        <igx-column field="Artist"></igx-column>
+    columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'600px'" [width]="'1000px'" [allowFiltering]="true" #hGrid>
+        <igx-column field="Artist" [sortable]="true"></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">
                 <div class="cell__inner_2">
@@ -9,15 +9,15 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Debut"></igx-column>
-        <igx-column field="Grammy Nominations"></igx-column>
-        <igx-column field="Grammy Awards"></igx-column>
+        <igx-column field="Debut" [sortable]="true"></igx-column>
+        <igx-column field="Grammy Nominations" [sortable]="true"></igx-column>
+        <igx-column field="Grammy Awards" [sortable]="true"></igx-column>
 
         <igx-row-island [key]="'Albums'" [autoGenerate]="false" #layout1 >
-            <igx-column field="Album"></igx-column>
-            <igx-column field="Launch Date"></igx-column>
-            <igx-column field="Billboard Review"></igx-column>
-            <igx-column field="US Billboard 200"></igx-column>
+            <igx-column field="Album" [sortable]="true"></igx-column>
+            <igx-column field="Launch Date" [sortable]="true"></igx-column>
+            <igx-column field="Billboard Review" [sortable]="true"></igx-column>
+            <igx-column field="US Billboard 200" [sortable]="true"></igx-column>
         <igx-row-island [key]="'Songs'" [autoGenerate]="false">
                 <igx-column field="No."></igx-column>
                 <igx-column field="Title"></igx-column>

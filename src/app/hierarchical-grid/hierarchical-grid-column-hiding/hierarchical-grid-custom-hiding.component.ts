@@ -3,12 +3,12 @@ import { IgxRowIslandComponent, IgxHierarchicalGridComponent } from "igniteui-an
 import { SINGERS } from '../data';
 
 @Component({
-    selector: "hierarchical-grid-hiding",
-    styleUrls: ["./hierarchical-grid-hiding.component.scss"],
-    templateUrl: "hierarchical-grid-hiding.component.html"
+    selector: "hierarchical-grid-custom-hiding",
+    styleUrls: ["./hierarchical-grid-custom-hiding.component.scss"],
+    templateUrl: "hierarchical-grid-custom-hiding.component.html"
 })
 
-export class HGridColumnHidingSampleComponent implements OnInit {
+export class HGridCostumHidingSampleComponent implements OnInit {
     public localdata;
 
     @ViewChild('layout1')
@@ -21,10 +21,6 @@ export class HGridColumnHidingSampleComponent implements OnInit {
     
     public ngOnInit(): void {
         this.localdata = SINGERS;
-    }
-
-    public ngAfterViewInit() {
-        this.hGrid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
     }
 
 }
