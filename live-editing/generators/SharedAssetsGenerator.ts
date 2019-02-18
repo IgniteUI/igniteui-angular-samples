@@ -19,8 +19,12 @@ const APP_COMPONENT_SCSS_PATH = path.join(__dirname, "../../src/app/app.componen
 const APP_COMPONENT_TS_PATH = path.join(__dirname, "../../src/app/app.component.ts");
 
 export class SharedAssetsGenerator extends Generator {
-    constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass) {
+    private _showLogs: boolean;
+
+    constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass, showLogs?: boolean) {
         super(styleSyntax);
+        this._showLogs = showLogs;
+        console.log("Live-Editing - SharedAssetsGenerator... ");
     }
 
     public generateSharedAssets() {
