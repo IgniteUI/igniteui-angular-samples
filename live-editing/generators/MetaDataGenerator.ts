@@ -8,6 +8,7 @@ import { StyleSyntax } from "./misc/StyleSyntax";
 export class MetaDataGenerator extends Generator {
     constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass) {
         super(styleSyntax);
+        console.log("Live-Editing - MetaDataGenerator... ");
     }
 
     public Generate() {
