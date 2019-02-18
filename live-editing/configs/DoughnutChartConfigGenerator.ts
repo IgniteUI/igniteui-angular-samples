@@ -1,5 +1,8 @@
 /* tslint:disable:object-literal-sort-keys */
+// tslint:disable:object-literal-shorthand
 // tslint:disable:max-line-length
+// tslint:disable:member-ordering
+// tslint:disable:prefer-const
 import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
 import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
 import { IgxRingSeriesComponent } from "igniteui-angular-charts/ES5/igx-ring-series-component";
@@ -12,7 +15,6 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { Type } from "@angular/core/src/type";
-// tslint:enable:max-line-length
 
 export class DoughnutChartConfigGenerator implements IConfigGenerator {
 
@@ -22,7 +24,7 @@ export class DoughnutChartConfigGenerator implements IConfigGenerator {
         // using simpler config instead of default/complex config
         configs.push(this.getConfig(
             DoughnutChartExplosionSampleComponent,
-            [IgxDoughnutChartModule, IgxRingSeriesModule] ));
+            [IgxDoughnutChartModule, IgxRingSeriesModule]));
         // configs.push(new Config({
         //     component: DoughnutChartExplosionSampleComponent,
         //     appModuleConfig: new AppModuleConfig({
@@ -37,7 +39,7 @@ export class DoughnutChartConfigGenerator implements IConfigGenerator {
 
         configs.push(this.getConfig(
             DoughnutChartOverviewSampleComponent,
-            [IgxDoughnutChartModule, IgxRingSeriesModule] ));
+            [IgxDoughnutChartModule, IgxRingSeriesModule]));
         // configs.push(new Config({
         //     component: DoughnutChartOverviewSampleComponent,
         //     appModuleConfig: new AppModuleConfig({
@@ -51,7 +53,7 @@ export class DoughnutChartConfigGenerator implements IConfigGenerator {
 
         configs.push(this.getConfig(
             DoughnutChartSelectionSampleComponent,
-            [IgxDoughnutChartModule, IgxRingSeriesModule] ));
+            [IgxDoughnutChartModule, IgxRingSeriesModule]));
         // configs.push(new Config({
         //     component: DoughnutChartSelectionSampleComponent,
         //     appModuleConfig: new AppModuleConfig({
@@ -69,7 +71,7 @@ export class DoughnutChartConfigGenerator implements IConfigGenerator {
 
     // TODO copy this function to other *ChartConfigGenerator classes
     public getConfig(component: Type<any>, modules: any[], dataSources?: any[], dataPaths?: string[]) {
-        let imports: any[] = [ ];
+        const imports: any[] = [];
         imports.push(component);  // add sample component for importing
         for (const m of modules) {
             imports.push(m); // add modules for importing
