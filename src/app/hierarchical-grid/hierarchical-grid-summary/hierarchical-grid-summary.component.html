@@ -10,7 +10,7 @@
             </ng-template>
         </igx-column>
         <igx-column field="Debut" [hasSummary]='true'></igx-column>
-        <igx-column field="Grammy Nominations" [hasSummary]='true' [dataType]="'number'"></igx-column>
+        <igx-column field="Grammy Nominations" [hasSummary]='true' [dataType]="'number'" [summaries]="mySummary"></igx-column>
         <igx-column field="Grammy Awards" [hasSummary]='true' [dataType]="'number'"></igx-column>
 
         <igx-row-island [key]="'Albums'" [autoGenerate]="false" #layout1 >
