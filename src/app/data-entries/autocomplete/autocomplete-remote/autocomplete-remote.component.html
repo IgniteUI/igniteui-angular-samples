@@ -2,22 +2,24 @@
     <section class="sample-content">
         <article class="sample-column">
             <form class="input-group-form">
-                <igx-input-group>
+                <igx-input-group class="autocomplete">
                     <input igxInput #inputField name="items" type="text" [igxAutocomplete]='itemsPanel' [(ngModel)]="selectedItem"
                         (ngModelChange)="onChange()" />
                     <label igxLabel for="items">Products</label>
-                    <igx-suffix igxRipple><igx-icon fontSet="material" (click)="selectedItem = ''">clear</igx-icon></igx-suffix>
+                    <igx-suffix igxRipple><igx-icon fontSet="material" (click)="selectedItem = ''; onChange()">clear</igx-icon></igx-suffix>
                 </igx-input-group>
                 <igx-drop-down #itemsPanel maxHeight="300px">
-                    <igx-drop-down-item *ngFor="let item of data | async" [value]="item.ProductName">
-                        {{item.ProductName}}
-                    </igx-drop-down-item>
-                    <div class='progress-container' *ngIf="!data">
+                    <div class='progress-container' *ngIf="loading">
                         <igx-circular-bar class="circular-progress" [indeterminate]="true"></igx-circular-bar>
                     </div>
-                    <igx-drop-down-item *ngIf="data && !itemFound">
-                        <span>No items found</span>
-                    </igx-drop-down-item>
+                    <div *ngIf="!loading">
+                        <div *ngIf="noItems" class="igx-drop-down__item">
+                            <span>No items found</span>
+                        </div>
+                        <igx-drop-down-item *ngFor="let item of data | async" [value]="item.ProductName">
+                            {{ item.ProductName }}
+                        </igx-drop-down-item>
+                    </div>
                 </igx-drop-down>
             </form>
         </article>

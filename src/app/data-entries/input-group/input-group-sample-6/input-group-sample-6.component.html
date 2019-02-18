@@ -3,20 +3,17 @@
         <article class="sample-column">
             <form class="input-group-form" (submit)="onSubmit()">
                 <h4 class="sample-title">Book your movie ticket</h4>
-                <igx-input-group>
-                    <igx-suffix igxRipple><igx-icon fontSet="material">local_movies</igx-icon> </igx-suffix>
-                    <input igxInput name="movies" type="text" [(ngModel)]="user.movie" (ngModelChange)="onMovieInputChange()" required
-                        [igxAutocomplete]='moviesPanel'/>
-                    <label igxLabel for="towns">Movie</label>
-                </igx-input-group>
-                <igx-drop-down #moviesPanel maxHeight="350px">
-                    <igx-drop-down-item-group *ngFor="let genre of genres | genreContains:user.movie" [label]="genre.type">
-                        <igx-drop-down-item *ngFor="let movie of genre.movies | movieContains:user.movie" [value]="movie">
-                            {{movie}}
-                        </igx-drop-down-item>
-                    </igx-drop-down-item-group>
-                    <div *ngIf="noMovie" class="igx-drop-down__item" >No movies that match search criteria</div>
-                </igx-drop-down>
+                <div class="igx-combo">
+                    <igx-select #select name="movies" [(ngModel)]="user.movie" (onSelection)="movieSelected($event)">
+                        <igx-select-item-group *ngFor="let genre of genres" [label]="genre.type">
+                            <igx-select-item *ngFor="let movie of genre.movies" [value]="movie">
+                                {{ movie }}
+                            </igx-select-item>
+                        </igx-select-item-group>
+                        <label igxLabel for="movies">Movie</label>
+                        <ng-template igxSelectToggleIcon><igx-icon fontSet="material">local_movies</igx-icon></ng-template>
+                    </igx-select>
+                </div>
                 <igx-input-group>
                     <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName" required="required" />
                     <label igxLabel for="fullName">Full Name</label>

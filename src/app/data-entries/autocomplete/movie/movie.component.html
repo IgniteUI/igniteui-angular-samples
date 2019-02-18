@@ -1,0 +1,61 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="sample-column">
+            <form class="input-group-form" [formGroup]="user">
+                <h4 class="sample-title">Check movie availability</h4>
+                <igx-input-group>
+                    <input igxInput #cinema name="cinema" formControlName="cinema" [igxAutocomplete]='cinemaPanel'/>
+                    <label igxLabel for="cinema">City & Cinema</label>
+                    <igx-suffix igxRipple><igx-icon fontSet="material">place</igx-icon> </igx-suffix>
+                </igx-input-group>
+                <igx-drop-down #cinemaPanel maxHeight="350px">
+                    <igx-drop-down-item-group *ngFor="let town of towns" [label]="town.name">
+                        <igx-drop-down-item *ngFor="let cinema of town.cinemas" [value]="cinema">
+                            {{cinema}}
+                        </igx-drop-down-item>
+                    </igx-drop-down-item-group>
+                </igx-drop-down>
+                <div class="igx-select">
+                    <igx-select #movie name="movie" formControlName="movie" [disabled]="!cinema.value">
+                        <igx-select-item-group *ngFor="let genre of genres" [label]="genre.type">
+                            <igx-select-item *ngFor="let movie of genre.movies" [value]="movie">
+                                {{ movie }}
+                            </igx-select-item>
+                        </igx-select-item-group>
+                        <label igxLabel for="movies">Movie</label>
+                        <ng-template igxSelectToggleIcon><igx-icon fontSet="material">local_movies</igx-icon></ng-template>
+                    </igx-select>
+                </div>
+                <div class="igx-date-time">
+                    <igx-date-picker #date name="date" formControlName="date" [disabled]="!movie.value">
+                        <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
+                            <igx-input-group (click)="openDialog()">
+                                <label igxLabel>Date</label>
+                                <input igxInput [value]="displayData" />
+                                <igx-suffix>
+                                    <igx-icon>today</igx-icon>
+                                </igx-suffix>
+                            </igx-input-group>
+                        </ng-template>
+                    </igx-date-picker>
+                    <igx-time-picker name="time" formControlName="time" [disabled]="!date.value"
+                        format="HH:mm" [itemsDelta]="{ hours: 1, minutes: 5 }" minValue="17:00" maxValue="23:00" (onValueChanged)="onTimeSelection($event)">
+                        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
+                            <igx-input-group (click)="openDialog()">
+                                <label igxLabel>Time</label>
+                                <input igxInput [value]="displayTime" />
+                                <igx-suffix>
+                                    <igx-icon>access_time</igx-icon>
+                                </igx-suffix>
+                            </igx-input-group>
+                        </ng-template>
+                    </igx-time-picker>
+                </div>
+                <igx-dialog #alert title="Available tickets" [message]="message" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()"></igx-dialog>
+                <div class="button-wrapper">
+                    <button igxButton="raised" igxRipple (click)="alert.open()" [disabled]="!user.valid">Check</button>
+                </div>
+            </form>
+        </article>
+    </section>
+</div>

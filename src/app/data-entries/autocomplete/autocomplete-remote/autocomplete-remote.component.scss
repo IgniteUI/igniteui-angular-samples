@@ -1,6 +1,11 @@
+.autocomplete {
+    width: 50%;
+}
+
 .progress-container {
     display: flex;
     margin: 16px;
+    overflow: hidden;
 }
 
 .circular-progress {

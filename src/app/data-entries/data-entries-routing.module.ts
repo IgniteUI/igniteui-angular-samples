@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
 import { AutocompleteBasic } from "./autocomplete/autocomplete/autocomplete.component";
+import { MovieComponent } from "./autocomplete/movie/movie.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -43,6 +44,11 @@ export const dataEntriesRoutes: Routes = [
         component: AutocompleteRemote,
         data: dataEntriesRoutesData["autocomplete-remote"],
         path: "autocomplete-remote"
+    },
+    {
+        component: MovieComponent,
+        data: dataEntriesRoutesData.movie,
+        path: "movie"
     },
     {
         component: ButtonGroupSample1Component,

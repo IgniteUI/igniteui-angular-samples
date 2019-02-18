@@ -3,6 +3,7 @@
 export const dataEntriesRoutesData = {
     "autocomplete": { displayName: "Autocomplete", parentName: "Autocomplete" },
     "autocomplete-remote": { displayName: "Remote Autocomplete", parentName: "Autocomplete" },
+    "movie": { displayName: "Movie Availability", parentName: "Autocomplete" },
     "button-group-sample-1": { displayName: "Button Group Overview", parentName: "Button Group" },
     "button-group-sample-2": { displayName: "Vertical Button Group", parentName: "Button Group" },
     "button-group-sample-3": { displayName: "Horizontal Button Group", parentName: "Button Group" },

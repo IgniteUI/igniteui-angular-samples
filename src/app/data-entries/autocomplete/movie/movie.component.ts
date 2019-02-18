@@ -1,18 +1,19 @@
-import { Component, QueryList, ViewChildren } from "@angular/core";
+import { Component } from "@angular/core";
+import { FormBuilder, FormControl, Validators } from "@angular/forms";
 @Component({
-    selector: "app-input-group-sample-6",
-    styleUrls: ["./input-group-sample-6.component.scss"],
-    templateUrl: "./input-group-sample-6.component.html"
+    selector: "movie-availability",
+    styleUrls: ["./movie.component.scss"],
+    templateUrl: "./movie.component.html"
 })
-export class InputGroupSample6Component {
-    public user = {
-        dateTime: new Date(),
-        email: undefined,
-        fullName: undefined,
-        genres: undefined,
-        movie: undefined,
-        phone: undefined
-    };
+export class MovieComponent {
+    public user;
+    public message = ["Yes", "No"][Math.round(Math.random())];
+
+    public towns = [
+        { name: "Sofia", cinemas: ["Lumiere Arena", "Grande Odeon", "Euro Cinema City", "Vlaikova 4DMax" ]},
+        { name: "Plovdiv", cinemas: ["Open Air Cinema Orpheus", "Lucky Cinema", "Cosmos Arena"]},
+        { name: "Jambol", cinemas: ["Elite Grand Cinema", "Vaptsarov Cinema", "Lucky Cinema", "Open Air Cinema Luskov"]}
+    ];
 
     public genres = [
         { type: "Action" , movies: ["The Matrix", "Kill Bill: Vol.1", "The Dark Knight Rises"]},
@@ -30,15 +31,19 @@ export class InputGroupSample6Component {
         { type: "Thriller" , movies: ["The Usual Suspects"]},
         { type: "Western" , movies: ["Django Unchained"]}];
 
-    public onDateSelection(value) {
-        this.user.dateTime.setDate((value as Date).getDate());
+    constructor(fb: FormBuilder) {
+        this.user = fb.group({
+            cinema: ["", Validators.required],
+            date: new FormControl("", Validators.required),
+            movie: ["", Validators.required],
+            time: new FormControl("", Validators.required)
+        });
     }
 
     public onTimeSelection(event) {
-        this.user.dateTime.setTime((event.newValue as Date).getTime());
-    }
-
-    public onSubmit() {
-        console.log("submit");
+        const date = this.user.value.date;
+        if (date) {
+            date.setTime((event.newValue as Date).getTime());
+        }
     }
 }
