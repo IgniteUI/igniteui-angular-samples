@@ -228,7 +228,7 @@ export class ChipSampleComponent {
     }
 
     public openDropDown() {
-        if (this.dropDownOpened) {
+        if (this.dropDownOpened || !this.igxDropDown.collapsed) {
             return;
         }
 
