@@ -65,8 +65,7 @@ import { IgxFinalValueLayerModule } from "igniteui-angular-charts/ES5/igx-final-
 import { IgxCategoryToolTipLayerModule } from "igniteui-angular-charts/ES5/igx-category-tool-tip-layer-module";
 import { IgxItemToolTipLayerModule } from "igniteui-angular-charts/ES5/igx-item-tool-tip-layer-module";
 
-// TODO uncomment when implemented
-// import { DataChartAxisLocationsComponent } from "./data-chart-axis-locations/data-chart-axis-locations.component";
+import { DataChartAxisLocationsComponent } from "./data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisSettingsComponent } from "./data-chart-axis-settings/data-chart-axis-settings.component";
 import { DataChartAxisSharingComponent } from "./data-chart-axis-sharing/data-chart-axis-sharing.component";
 import { DataChartAxisTypesComponent } from "./data-chart-axis-types/data-chart-axis-types.component";
@@ -75,11 +74,10 @@ import { DataChartNavigationComponent } from "./data-chart-navigation/data-chart
 import {
     DataChartOverviewComponent
 } from "./data-chart-overview/data-chart-overview.component";
-// TODO uncomment when implemented
-// import { DataChartPerformanceComponent } from "./data-chart-performance/data-chart-performance.component";
-// import {
-//     DataChartSeriesAnimationsComponent
-// } from "./data-chart-series-animations/data-chart-series-animations.component";
+import { DataChartPerformanceComponent } from "./data-chart-performance/data-chart-performance.component";
+import {
+    DataChartSeriesAnimationsComponent
+} from "./data-chart-series-animations/data-chart-series-animations.component";
 import {
     DataChartSeriesAnnotationsComponent
 } from "./data-chart-series-annotations/data-chart-series-annotations.component";
@@ -91,8 +89,7 @@ import { DataChartSeriesTooltipsComponent } from "./data-chart-series-tooltips/d
 import {
     DataChartSeriesTrendlinesComponent
 } from "./data-chart-series-trendlines/data-chart-series-trendlines.component";
-// TODO uncomment when implemented
-// import { DataChartSynchronizationComponent } from "./data-chart-synchronization/data-chart-synchronization.component";
+import { DataChartSynchronizationComponent } from "./data-chart-synchronization/data-chart-synchronization.component";
 import { DataChartTitlesComponent } from "./data-chart-titles/data-chart-titles.component";
 import {
     DataChartTypeCategorySeriesComponent
@@ -115,23 +112,21 @@ import {
 import {
     DataChartTypeScatterContourSeriesComponent
 } from "./data-chart-type-scatter-contour-series/data-chart-type-scatter-contour-series.component";
-// TODO uncomment when implemented
-// import {
-//     DataChartTypeScatterDensitySeriesComponent
-// } from "./data-chart-type-scatter-density-series/data-chart-type-scatter-density-series.component";
+import {
+    DataChartTypeScatterDensitySeriesComponent
+} from "./data-chart-type-scatter-density-series/data-chart-type-scatter-density-series.component";
 import {
     DataChartTypeScatterSeriesComponent
 } from "./data-chart-type-scatter-series/data-chart-type-scatter-series.component";
 import {
     DataChartTypeScatterShapeSeriesComponent
 } from "./data-chart-type-scatter-shape-series/data-chart-type-scatter-shape-series.component";
-// TODO uncomment when implemented
-// import {
-//     DataChartTypeStackedSeriesComponent
-// } from "./data-chart-type-stacked-series/data-chart-type-stacked-series.component";
-// import {
-//     DataChartTypeValueOverlayComponent
-// } from "./data-chart-type-value-overlay/data-chart-type-value-overlay.component";
+import {
+    DataChartTypeStackedSeriesComponent
+} from "./data-chart-type-stacked-series/data-chart-type-stacked-series.component";
+import {
+    DataChartTypeValueOverlayComponent
+} from "./data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
 import { SampleCategoryData } from "./SampleCategoryData";
 import { SampleDensityData } from "./SampleDensityData";
@@ -154,21 +149,21 @@ import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
-        // DataChartAxisLocationsComponent,
+        DataChartAxisLocationsComponent,
         DataChartAxisSettingsComponent,
         DataChartAxisSharingComponent,
         DataChartAxisTypesComponent,
         DataChartLegendsComponent,
         DataChartNavigationComponent,
         DataChartOverviewComponent,
-        // DataChartPerformanceComponent,
-        // DataChartSeriesAnimationsComponent,
+        DataChartPerformanceComponent,
+        DataChartSeriesAnimationsComponent,
         DataChartSeriesAnnotationsComponent,
         DataChartSeriesHighlightingComponent,
         DataChartSeriesMarkersComponent,
         DataChartSeriesTooltipsComponent,
         DataChartSeriesTrendlinesComponent,
-        // DataChartSynchronizationComponent,
+        DataChartSynchronizationComponent,
         DataChartTitlesComponent,
         DataChartTypeCategorySeriesComponent,
         DataChartTypeFinancialSeriesComponent,
@@ -177,11 +172,11 @@ import { FormsModule } from "@angular/forms";
         DataChartTypeRangeSeriesComponent,
         DataChartTypeScatterAreaSeriesComponent,
         DataChartTypeScatterContourSeriesComponent,
-        // DataChartTypeScatterDensitySeriesComponent,
+        DataChartTypeScatterDensitySeriesComponent,
         DataChartTypeScatterSeriesComponent,
         DataChartTypeScatterShapeSeriesComponent,
-        // DataChartTypeStackedSeriesComponent,
-        // DataChartTypeValueOverlayComponent
+        DataChartTypeStackedSeriesComponent,
+        DataChartTypeValueOverlayComponent
     ],
     imports: [
         FormsModule,
