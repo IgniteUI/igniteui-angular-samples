@@ -16,9 +16,9 @@ class LiveEditingManager {
         fs.mkdirSync(ASSETS_SAMPLES_DIR);
         fs.mkdirSync(ASSETS_SAMPLES_CSS_SUPPORT_DIR);
 
-        console.log("Live-Editing... CSS");
+        console.log("Live-Editing... CSS with logs:");
         this._run(StyleSyntax.CSS, true);
-        console.log("Live-Editing... SASS");
+        console.log("Live-Editing... SASS without logs:");
         this._run(StyleSyntax.Sass, false);
     }
 
