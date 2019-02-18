@@ -5,7 +5,7 @@ import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DataUtil, Horizon
     PositionSettings,
     VerticalAlignment} from "igniteui-angular";
 import { LocalDataService } from "../grid-finjs/localData.service";
-import { ITreeGridAggregation } from './tree-grid-grouping.pipe';
+import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
 
 interface IButton {
     ripple ?: string;
