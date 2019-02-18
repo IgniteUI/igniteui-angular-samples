@@ -45,7 +45,6 @@
 
     $crm-grid-search-button: igx-button-theme(
         $flat-background: transparent,
-        $button-roundness: 0,
         $flat-focus-background: igx-color($crm-grid-palette, "grays", 200),
         $flat-hover-background: igx-color($crm-grid-palette, "grays", 200)
     );

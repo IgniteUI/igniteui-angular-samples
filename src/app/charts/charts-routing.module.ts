@@ -217,8 +217,8 @@ export const chartsRoutes: Routes = [
     },
     {
         component: CategoryChartOverviewComponent,
-        data: chartsRoutesData["category-chart-overview-sample"],
-        path: "category-chart-overview-sample"
+        data: chartsRoutesData["category-chart-overview"],
+        path: "category-chart-overview"
     },
     {
         component: CategoryChartAnnotationsComponent,
@@ -382,13 +382,13 @@ export const chartsRoutes: Routes = [
     },
     {
         component: DataChartTypeScatterAreaSeriesComponent,
-        data: chartsRoutesData["data-chart-type-scatter-area-series"],
-        path: "data-chart-type-scatter-area-series"
+        data: chartsRoutesData["data-chart-type-area-series"],
+        path: "data-chart-type-area-series"
     },
     {
         component: DataChartTypeScatterContourSeriesComponent,
-        data: chartsRoutesData["data-chart-type-scatter-contour-series"],
-        path: "data-chart-type-scatter-contour-series"
+        data: chartsRoutesData["data-chart-type-contour-series"],
+        path: "data-chart-type-contour-series"
     },
     {
         component: DataChartTypeScatterDensitySeriesComponent,
@@ -402,8 +402,8 @@ export const chartsRoutes: Routes = [
     },
     {
         component: DataChartTypeScatterShapeSeriesComponent,
-        data: chartsRoutesData["data-chart-type-scatter-shape-series"],
-        path: "data-chart-type-scatter-shape-series"
+        data: chartsRoutesData["data-chart-type-shape-series"],
+        path: "data-chart-type-shape-series"
     },
     {
         component: DataChartTypeStackedSeriesComponent,
