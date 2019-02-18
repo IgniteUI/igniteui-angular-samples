@@ -38,15 +38,17 @@ export const chartsRoutesData = {
     "financial-chart-tooltip-types": { displayName: "Financial Chart Tooltip Types", parentName: "Financial Chart" },
     "financial-chart-time-based-data": { displayName: "Financial Chart Time Based Data", parentName: "Financial Chart" },
     "financial-chart-trendlines": { displayName: "Financial Chart Trendlines", parentName: "Financial Chart" },
-    "data-chart-axis-locations": { displayName: "Data Chart Axis Locations", parentName: "Data Chart" },
+    // TODO uncomment when implemented
+    // "data-chart-axis-locations": { displayName: "Data Chart Axis Locations", parentName: "Data Chart" },
     "data-chart-axis-settings": { displayName: "Data Chart Axis Settings", parentName: "Data Chart" },
     "data-chart-axis-sharing": { displayName: "Data Chart Axis Sharing", parentName: "Data Chart" },
     "data-chart-axis-types": { displayName: "Data Chart Axis Types", parentName: "Data Chart" },
     "data-chart-legends": { displayName: "Data Chart Legends", parentName: "Data Chart" },
     "data-chart-navigation": { displayName: "Data Chart Navigation", parentName: "Data Chart" },
     "data-chart-overview": { displayName: "Data Chart Overview", parentName: "Data Chart" },
-    "data-chart-performance": { displayName: "Data Chart Performance", parentName: "Data Chart" },
-    "data-chart-series-animations": { displayName: "Data Chart Series Animations", parentName: "Data Chart" },
+    // TODO uncomment when implemented
+    // "data-chart-performance": { displayName: "Data Chart Performance", parentName: "Data Chart" },
+    // "data-chart-series-animations": { displayName: "Data Chart Series Animations", parentName: "Data Chart" },
     "data-chart-series-annotations": { displayName: "Data Chart Series Annotations", parentName: "Data Chart" },
     "data-chart-series-highlighting": { displayName: "Data Chart Series Highlighting", parentName: "Data Chart" },
     "data-chart-series-markers": { displayName: "Data Chart Series Markers", parentName: "Data Chart" },
@@ -62,8 +64,8 @@ export const chartsRoutesData = {
     "data-chart-type-scatter-density-series": { displayName: "Data Chart Scatter Density Series", parentName: "Data Chart" },
     "data-chart-type-scatter-series": { displayName: "Data Chart Scatter Series", parentName: "Data Chart" },
     "data-chart-type-shape-series": { displayName: "Data Chart Scatter Shape Series", parentName: "Data Chart" },
-    "data-chart-type-stacked-series": { displayName: "Data Chart Stacked Series", parentName: "Data Chart" },
-    "data-chart-synchronization": { displayName: "Data Chart Synchronization", parentName: "Data Chart" },
+    // "data-chart-type-stacked-series": { displayName: "Data Chart Stacked Series", parentName: "Data Chart" },
+    // "data-chart-synchronization": { displayName: "Data Chart Synchronization", parentName: "Data Chart" },
     "data-chart-titles": { displayName: "Data Chart Titles", parentName: "Data Chart" },
-    "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" }
+    // "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" }
 };
