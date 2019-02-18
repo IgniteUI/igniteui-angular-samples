@@ -1,5 +1,8 @@
 /* tslint:disable:object-literal-sort-keys */
+// tslint:disable:object-literal-shorthand
 // tslint:disable:max-line-length
+// tslint:disable:member-ordering
+// tslint:disable:prefer-const
 import { DataChartAxisLocationsComponent } from "../../src/app/charts/data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisSettingsComponent } from "../../src/app/charts/data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
 import { DataChartAxisSharingComponent } from "../../src/app/charts/data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
@@ -33,28 +36,29 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { DependenciesType } from "../services/DependenciesType";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { Type } from "@angular/core/src/type";
 
-import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
+import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
+// import { IgxCategoryToolTipLayer } from "igniteui-angular-charts/ES5/igx-category-tool-tip-layer";
+import { IgxCrosshairLayerModule } from "igniteui-angular-charts/ES5/igx-crosshair-layer-module";
+import { IgxDataChartAnnotationModule } from "igniteui-angular-charts/ES5/igx-data-chart-annotation-module";
 import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
 import { IgxDataChartCategoryTrendLineModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-trendline-module";
+import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
+import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
 import { IgxDataChartPolarCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-polar-core-module";
 import { IgxDataChartPolarModule } from "igniteui-angular-charts/ES5/igx-data-chart-polar-module";
 import { IgxDataChartRadialCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-radial-core-module";
 import { IgxDataChartRadialModule } from "igniteui-angular-charts/ES5/igx-data-chart-radial-module";
-import { IgxDataChartShapeCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-shape-core-module";
-import { IgxDataChartShapeModule } from "igniteui-angular-charts/ES5/igx-data-chart-shape-module";
-import { IgxNumberAbbreviatorModule } from "igniteui-angular-charts/ES5/igx-number-abbreviator-module";
 import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-module";
 import { IgxDataChartScatterCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-core-module";
-import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
-import { IgxDataChartAnnotationModule } from "igniteui-angular-charts/ES5/igx-data-chart-annotation-module";
-import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
-import { IgxCrosshairLayerModule } from "igniteui-angular-charts/ES5/igx-crosshair-layer-module";
-// import { IgxCategoryToolTipLayer } from "igniteui-angular-charts/ES5/igx-category-tool-tip-layer";
-// import { IgxItemToolTipLayer } from "igniteui-angular-charts/ES5/igx-item-tool-tip-layer";
+import { IgxDataChartShapeCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-shape-core-module";
+import { IgxDataChartShapeModule } from "igniteui-angular-charts/ES5/igx-data-chart-shape-module";
 import { IgxFinalValueLayerModule } from "igniteui-angular-charts/ES5/igx-final-value-layer-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxNumberAbbreviatorModule } from "igniteui-angular-charts/ES5/igx-number-abbreviator-module";
 import { IgxTimeXAxisModule } from "igniteui-angular-charts/ES5/igx-time-x-axis-module";
+// import { IgxItemToolTipLayer } from "igniteui-angular-charts/ES5/igx-item-tool-tip-layer";
 
 import { SampleCategoryData } from "../../src/app/charts/data-chart/SampleCategoryData";
 import { SampleDensityData } from "../../src/app/charts/data-chart/SampleDensityData";
@@ -66,7 +70,6 @@ import { SampleScatterData } from "../../src/app/charts/data-chart/SampleScatter
 import { SampleScatterStats } from "../../src/app/charts/data-chart/SampleScatterStats";
 import { SampleShapeData } from "../../src/app/charts/data-chart/SampleShapeData";
 import { SharedData } from "../../src/app/charts/data-chart/SharedData";
-import { Type } from "@angular/core/src/type";
 
 export class DataChartConfigGenerator implements IConfigGenerator {
 
@@ -76,7 +79,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         // using simpler config instead of default/complex config
         configs.push(this.getConfig(
             DataChartAxisLocationsComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule] ));
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule]));
         // configs.push(new Config({
         //     component: DataChartAxisLocationsComponent,
         //     appModuleConfig: new AppModuleConfig({
@@ -529,7 +532,7 @@ export class DataChartConfigGenerator implements IConfigGenerator {
 
     // TODO copy this function to other *ChartConfigGenerator classes
     public getConfig(component: Type<any>, modules: any[], dataSources?: any[], dataPaths?: string[]) {
-        let imports: any[] = [ ];
+        const imports: any[] = [];
         imports.push(component);  // add sample component for importing
         for (const m of modules) {
             imports.push(m); // add modules for importing
