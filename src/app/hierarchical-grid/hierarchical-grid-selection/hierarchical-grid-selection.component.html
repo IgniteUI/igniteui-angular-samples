@@ -1,6 +1,11 @@
 <div class="hgrid-sample">
+    <div class="grid-controls">
+        <p>Toggle Multiple Selection</p>
+        <igx-switch [(ngModel)]="selection"></igx-switch>
+    </div>
     <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false"
-        [height]="'600px'" [width]="'1000px'" [rowSelectable]="true" #hGrid>
+        [height]="'600px'" [width]="'1000px'" [rowSelectable]="selection"
+        (onSelection)="handleRowSelection($event)" #hGrid>
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">

@@ -10,7 +10,8 @@ import { SINGERS } from '../data';
 
 export class HGridSelectionSampleComponent implements OnInit {
     public localdata;
-
+    public selection = true;
+    
     @ViewChild('layout1')
     layout1: IgxRowIslandComponent;
 
@@ -22,6 +23,14 @@ export class HGridSelectionSampleComponent implements OnInit {
     }
     public ngOnInit(): void {
 
+    }
+
+    public handleRowSelection(event) {
+        const targetCell = event.cell;
+        if (!this.selection) {
+            this.hGrid.deselectAllRows();
+            this.hGrid.selectRows([targetCell.row.rowID]);
+        }
     }
 
 }
