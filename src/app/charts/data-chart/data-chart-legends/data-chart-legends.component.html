@@ -1,3 +1,22 @@
-<p>
-  data-chart-legends works!
-</p>
+<div class="sample">
+    <div class="options">
+        <span class="legendTitle">Energy Source: </span>
+        <div class="legendInline">
+            <igx-legend #legend orientation="horizontal"></igx-legend>
+        </div>
+    </div>
+
+    <div class="chart">
+        <igx-data-chart height="100%" width="100%" [dataSource]="data" [legend]="legend">
+
+            <igx-category-x-axis #xAxis name="xAxis" label="Country"></igx-category-x-axis>
+            <igx-numeric-y-axis #yAxis name="yAxis" minValue=0 abbreviateLargeNumbers=true></igx-numeric-y-axis>
+
+            <igx-column-series name="series1" title=" Coal" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Coal"></igx-column-series>
+            <igx-column-series name="series2" title=" Hydro" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Hydro"></igx-column-series>
+            <igx-column-series name="series3" title=" Nuclear" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Nuclear"></igx-column-series>
+            <igx-column-series name="series4" title=" Gas" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Gas"></igx-column-series>
+            <igx-column-series name="series5" title=" Oil" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Oil"></igx-column-series>
+        </igx-data-chart>
+    </div>
+</div>
