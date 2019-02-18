@@ -1,12 +1,12 @@
-<div className="sample">
-    <div className="options">
-        <span className="optionItem">Default Drag Option:</span>
+<div class="sample">
+    <div class="options">
+        <span class="optionItem">Default Drag Option:</span>
         <select [(ngModel)]="defaultInteraction">
             <option>DragZoom</option>
             <option>DragPan</option>
             <option>None</option>
         </select>
-        <span className="optionItem">Pan Modifier:</span>
+        <span class="optionItem">Pan Modifier:</span>
         <select [(ngModel)]="panModifier">
             <option>Alt</option>
             <option>Control</option>
@@ -15,7 +15,7 @@
             <option>Apple</option>
             <option>None</option>
         </select>
-        <span className="optionItem">Zoom Modifier:</span>
+        <span class="optionItem">Zoom Modifier:</span>
         <select [(ngModel)]="zoomModifier">
             <option>Alt</option>
             <option>Control</option>
@@ -25,38 +25,34 @@
             <option>None</option>
         </select>
     </div>
-    <div className="options">
-        <label className="optionItem"><input type="checkbox" [(ngModel)]="isHorizontalZoomEnabled" /> Enable Horizontal Zoom</label>
-        <label className="optionItem"><input type="checkbox" [(ngModel)]="isVerticalZoomEnabled" /> Enable Vertical Zoom</label>
-        <button className="optionItem" (click)="onPanUpClick()">Pan Up</button>
-        <button className="optionItem" (click)="onPanDownClick()">Pan Down</button>
-        <button className="optionItem" (click)="onPanLeftClick()">Pan Left</button>
-        <button className="optionItem" (click)="onPanRightClick()">Pan Right</button>
+    <div class="options">
+        <label class="optionItem"><input type="checkbox" [(ngModel)]="isZoomEnabled" /> Enable Zooming</label>
+        <button class="optionItem" (click)="onPanUpClick()">Pan Up</button>
+        <button class="optionItem" (click)="onPanDownClick()">Pan Down</button>
+        <button class="optionItem" (click)="onPanLeftClick()">Pan Left</button>
+        <button class="optionItem" (click)="onPanRightClick()">Pan Right</button>
     </div>
 
-    <div className="chart">
-        <igx-data-chart #chart [dataSource]="data"            
+    <div class="chart">
+        <igx-data-chart #chart [dataSource]="data"
             width="100%"
-            height="400px"
+            height="calc(100% - 85px)"
             [defaultInteraction]="defaultInteraction"
             [dragModifier]="zoomModifier"
             [panModifier]="panModifier"
-            [isHorizontalZoomEnabled]="isHorizontalZoomEnabled"
-            [isVerticalZoomEnabled]="isVerticalZoomEnabled">
+            [isHorizontalZoomEnabled]="isZoomEnabled"
+            [isVerticalZoomEnabled]="isZoomEnabled">
 
-            <igx-category-x-axis #xAxis label="Country"></igx-category-x-axis>
-            <igx-numeric-y-axis #yAxis minimumValue=0 ></igx-numeric-y-axis>
-
-            <igx-column-series name="series1" title="Coal" [xAxis]="xAxis"
-                [yAxis]="yAxis" valueMemberPath="Coal"></igx-column-series>
-            <igx-column-series name="series2" title="Hydro" [xAxis]="xAxis"
-                [yAxis]="yAxis" valueMemberPath="Hydro"></igx-column-series>
-            <igx-column-series name="series3" title="Nuclear" [xAxis]="xAxis"
-                [yAxis]="yAxis" valueMemberPath="Nuclear"></igx-column-series>
-            <igx-column-series name="series4" title="Gas" [xAxis]="xAxis"
-                [yAxis]="yAxis" valueMemberPath="Gas"></igx-column-series>
-            <igx-column-series name="series5" title="Oil" [xAxis]="xAxis"
-                [yAxis]="yAxis" valueMemberPath="Oil"></igx-column-series>
+            <igx-numeric-x-axis #xAxis
+                isLogarithmic=true
+                abbreviateLargeNumbers=true
+                title="Population">
+            </igx-numeric-x-axis>
+            <igx-numeric-y-axis #yAxis
+                isLogarithmic=true
+                abbreviateLargeNumbers=true
+                title="Total GDP ($)">
+            </igx-numeric-y-axis>
         </igx-data-chart>
     </div>
 </div>

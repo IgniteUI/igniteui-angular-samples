@@ -10,7 +10,7 @@ export const chartsRoutesData = {
     "pie-chart-legend": { displayName: "Pie Chart Legend", parentName: "Pie Chart" },
     "pie-chart-others": { displayName: "Pie Chart Others Slice", parentName: "Pie Chart" },
     "pie-chart-selection": { displayName: "Pie Chart Selection", parentName: "Pie Chart" },
-    "category-chart-overview-sample": { displayName: "Category Chart Overview", parentName: "Category Chart" },
+    "category-chart-overview": { displayName: "Category Chart Overview", parentName: "Category Chart" },
     "category-chart-annotations": { displayName: "Category Chart Annotations", parentName: "Category Chart" },
     "category-chart-overlap-columns": { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
     "category-chart-highlighting-sample": { displayName: "Category Chart Highlighting", parentName: "Category Chart" },
@@ -57,13 +57,13 @@ export const chartsRoutesData = {
     "data-chart-type-polar-series": { displayName: "Data Chart Polar Series", parentName: "Data Chart" },
     "data-chart-type-radial-series": { displayName: "Data Chart Radial Series", parentName: "Data Chart" },
     "data-chart-type-range-series": { displayName: "Data Chart Range Series", parentName: "Data Chart" },
-    "data-chart-type-scatter-area-series": { displayName: "Data Chart Scatter Area Series", parentName: "Data Chart" },
-    "data-chart-type-scatter-contour-series": { displayName: "Data Chart Scatter Contour Series", parentName: "Data Chart" },
+    "data-chart-type-area-series": { displayName: "Data Chart Scatter Area Series", parentName: "Data Chart" },
+    "data-chart-type-contour-series": { displayName: "Data Chart Scatter Contour Series", parentName: "Data Chart" },
     "data-chart-type-scatter-density-series": { displayName: "Data Chart Scatter Density Series", parentName: "Data Chart" },
     "data-chart-type-scatter-series": { displayName: "Data Chart Scatter Series", parentName: "Data Chart" },
-    "data-chart-type-scatter-shape-series": { displayName: "Data Chart Scatter Shape Series", parentName: "Data Chart" },
+    "data-chart-type-shape-series": { displayName: "Data Chart Scatter Shape Series", parentName: "Data Chart" },
     "data-chart-type-stacked-series": { displayName: "Data Chart Stacked Series", parentName: "Data Chart" },
-    "data-chart-synchronization": { displayName: "", parentName: "Data Chart Synchronization" },
-    "data-chart-titles": { displayName: "", parentName: "Data Chart Titles" },
-    "data-chart-value-overlay": { displayName: "", parentName: "Data Chart Value Overlay" }
+    "data-chart-synchronization": { displayName: "Data Chart Synchronization", parentName: "Data Chart" },
+    "data-chart-titles": { displayName: "Data Chart Titles", parentName: "Data Chart" },
+    "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" }
 };

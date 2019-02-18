@@ -1,26 +1,30 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
+import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
 import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
 
+import { IgxBubbleSeriesComponent } from "igniteui-angular-charts/ES5/igx-bubble-series-component";
+import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
+
+import { SampleScatterStats } from "../SampleScatterStats";
+
 @Component({
-  selector: "app-data-chart-navigation",
-  styleUrls: ["./data-chart-navigation.component.scss"],
-  templateUrl: "./data-chart-navigation.component.html"
+    selector: "app-data-chart-navigation",
+    styleUrls: ["./data-chart-navigation.component.scss"],
+    templateUrl: "./data-chart-navigation.component.html"
 })
-export class DataChartNavigationComponent {
+export class DataChartNavigationComponent implements OnInit {
 
     public data: any[];
 
-    public isHorizontalZoomEnabled: boolean = false;
-    public isVerticalZoomEnabled: boolean = false;
+    public isZoomEnabled: boolean = true;
 
-    public defaultInteraction: string = "None";
+    public defaultInteraction: string = "DragZoom";
     public panModifier: string = "None";
     public zoomModifier: string = "None";
 
     @ViewChild("xAxis")
-    public xAxis: IgxCategoryXAxisComponent;
+    public xAxis: IgxNumericXAxisComponent;
 
     @ViewChild("yAxis")
     public yAxis: IgxNumericYAxisComponent;
@@ -29,33 +33,50 @@ export class DataChartNavigationComponent {
     public chart: IgxDataChartComponent;
 
     constructor() {
-      this.initData();
+        this.data = SampleScatterStats.getCountriesWithHighIncome();
     }
 
-    public initData() {
-      this.data = [
-        { Country: "Canada", Coal: 400, Oil: 100, Gas: 175, Nuclear: 225, Hydro: 350 },
-        { Country: "China", Coal: 925, Oil: 200, Gas: 350, Nuclear: 400, Hydro: 625 },
-        { Country: "Russia", Coal: 550, Oil: 200, Gas: 250, Nuclear: 475, Hydro: 425 },
-        { Country: "Australia", Coal: 450, Oil: 100, Gas: 150, Nuclear: 175, Hydro: 350 },
-        { Country: "United States", Coal: 800, Oil: 250, Gas: 475, Nuclear: 575, Hydro: 750 },
-        { Country: "France", Coal: 375, Oil: 150, Gas: 350, Nuclear: 275, Hydro: 325 }
-      ];
+    public ngOnInit() {
+        this.createSeries();
+        this.chart.actualWindowScaleHorizontal = 0.6;
+        this.chart.actualWindowScaleVertical = 0.6;
+        this.chart.actualWindowPositionVertical = 0.2;
+        this.chart.actualWindowPositionHorizontal = 0.2;
     }
 
     public onPanUpClick() {
-      this.chart.actualWindowPositionVertical -= 0.05;
+        this.chart.actualWindowPositionVertical -= 0.05;
     }
 
     public onPanDownClick() {
-      this.chart.actualWindowPositionVertical += 0.05;
+        this.chart.actualWindowPositionVertical += 0.05;
     }
 
     public onPanRightClick() {
-      this.chart.actualWindowPositionHorizontal += 0.05;
+        this.chart.actualWindowPositionHorizontal += 0.05;
     }
 
     public onPanLeftClick() {
-      this.chart.actualWindowPositionHorizontal -= 0.05;
+        this.chart.actualWindowPositionHorizontal -= 0.05;
+    }
+
+    public createSeries() {
+        const sizeScale = new IgxSizeScaleComponent();
+        sizeScale.minimumValue = 10;
+        sizeScale.maximumValue = 60;
+
+        const series = new IgxBubbleSeriesComponent();
+        series.title = "Countries";
+        series.dataSource = SampleScatterStats.getCountries();
+        series.showDefaultTooltip = true;
+        series.xMemberPath = "population";
+        series.yMemberPath = "gdpTotal";
+        series.radiusMemberPath = "gdpPerCapita";
+        series.radiusScale = sizeScale;
+        series.xAxis = this.xAxis;
+        series.yAxis = this.yAxis;
+
+        this.chart.series.clear();
+        this.chart.series.add(series);
     }
 }
