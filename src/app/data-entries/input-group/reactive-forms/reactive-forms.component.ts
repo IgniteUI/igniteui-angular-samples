@@ -1,9 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { AutocompleteGenrePipeContains } from "../../pipes/pipes";
 
 @Component({
-    providers: [AutocompleteGenrePipeContains],
     selector: "app-reactive-form",
     styleUrls: ["./reactive-forms.component.scss"],
     templateUrl: "./reactive-forms.component.html"
@@ -11,8 +9,8 @@ import { AutocompleteGenrePipeContains } from "../../pipes/pipes";
 export class ReactiveFormsSampleComponent {
     public genres = [];
     public user: FormGroup;
-    public noMovie: boolean;
-    constructor(fb: FormBuilder, private pipe: AutocompleteGenrePipeContains) {
+
+    constructor(fb: FormBuilder) {
         this.user = fb.group({
             date: [""],
             dateTime: [""],
@@ -39,10 +37,6 @@ export class ReactiveFormsSampleComponent {
             { type: "Thriller" , movies: ["The Usual Suspects"]},
             { type: "Western" , movies: ["Django Unchained"]}];
 
-    }
-
-    public onMovieInputChange() {
-        this.noMovie = this.pipe.transform(this.genres, this.user.value.movie).length === 0;
     }
 
     public onSubmit() {

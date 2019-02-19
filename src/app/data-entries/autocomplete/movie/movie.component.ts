@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Pipe, PipeTransform } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 @Component({
     selector: "movie-availability",
@@ -7,7 +7,12 @@ import { FormBuilder, FormControl, Validators } from "@angular/forms";
 })
 export class MovieComponent {
     public user;
-    public message = ["Yes", "No"][Math.round(Math.random())];
+    public get message() {
+        return "There " + ["are", "aren't"][Math.round(Math.random())] +
+            " available tickets for '" + this.user.value.movie + "'" +
+            " in '" + this.user.value.cinema + "'" +
+            " on '" + this.user.value.date + "'";
+    }
 
     public towns = [
         { name: "Sofia", cinemas: ["Lumiere Arena", "Grande Odeon", "Euro Cinema City", "Vlaikova 4DMax" ]},
@@ -46,4 +51,23 @@ export class MovieComponent {
             date.setTime((event.newValue as Date).getTime());
         }
     }
+}
+
+@Pipe({ name: "contains" })
+export class AutocompletePipeContains implements PipeTransform {
+
+    public transform = (movies: string[], term = "") => this.filterMovies(movies, term);
+
+    protected filterMovies = (movies: string[], term: string) =>
+        movies.filter((movie: string) =>
+            movie.toString().toLowerCase().indexOf(term.toString().toLowerCase()) > -1)
+}
+
+@Pipe({ name: "groupContains" })
+export class AutocompleteGroupPipeContains extends AutocompletePipeContains {
+
+    public transform = (towns: any[], term = "") => this.filterTowns(towns, term);
+
+    private filterTowns = (towns: any[], term = "") =>
+        towns.filter((town) => this.filterMovies(town.cinemas, term).length > 0)
 }
