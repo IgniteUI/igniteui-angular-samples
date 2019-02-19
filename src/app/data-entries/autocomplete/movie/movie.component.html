@@ -27,7 +27,7 @@
                     </igx-select>
                 </div>
                 <div class="igx-date-time">
-                    <igx-date-picker #date name="date" formControlName="date" [disabled]="!user.value.movie"></igx-date-picker>
+                    <igx-date-picker #date name="date" formControlName="date" [disabled]="!user.value.movie" [disabledDates]="disabledDates"></igx-date-picker>
                     <igx-time-picker name="time" formControlName="time" [disabled]="!user.value.date"
                         [minValue]="'16:00'" [maxValue]="'23:00'" (onValueChanged)="onTimeSelection($event)"></igx-time-picker>
                 </div>

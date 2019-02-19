@@ -1,5 +1,6 @@
 import { Component, Pipe, PipeTransform } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
+import { DateRangeType } from 'igniteui-angular';
 @Component({
     selector: "movie-availability",
     styleUrls: ["./movie.component.scss"],
@@ -35,6 +36,14 @@ export class MovieComponent {
         { type: "Sci-Fi" , movies: ["The Fifth Element"]},
         { type: "Thriller" , movies: ["The Usual Suspects"]},
         { type: "Western" , movies: ["Django Unchained"]}];
+
+    public disabledDates = [{
+        dateRange: [ new Date() ],
+        type: DateRangeType.Before
+    }, {
+        dateRange: [ new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000) ],
+        type: DateRangeType.After
+    }];
 
     constructor(fb: FormBuilder) {
         this.user = fb.group({
