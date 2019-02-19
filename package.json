@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "serve": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng -o",
-    "start": "gulp generate-live-editing && node node_modules/@angular/cli/bin/ng serve --progress=true",
-    "start:watch-live-editing": "gulp watch-live-editing && node node_modules/@angular/cli/bin/ng serve --progress=true",
+    "start": "gulp generate-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve --progress=true",
+    "start:watch-live-editing": "gulp watch-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve --progress=true",
     "generate-live-editing": "gulp generate-live-editing",
     "watch-live-editing": "gulp watch-live-editing",
     "sass-js-compile-check": "gulp sass-js-compile-check",
