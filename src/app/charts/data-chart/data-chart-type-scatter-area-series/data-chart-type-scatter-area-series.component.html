@@ -1,0 +1,63 @@
+<div class="sample">
+    <div class="options">
+        <span class="optionLabel">Scale Mode: </span>
+        <select value={{seriesScaleMode}}
+            (change)="this.seriesScaleModeChanged($event)">
+            <option>Select</option>
+            <option>InterpolateRGB</option>
+            <option>InterpolateHSV</option>
+        </select>
+        <label class="optionLabel">Minimum: </label>
+        <label class="optionValue" >
+            {{seriesScaleMin}}
+        </label>
+        <input class="slider" type="range" min="-5" max="0" step="1"
+            value={{seriesScaleMin}}
+            (change)="this.seriesScaleMinChanged($event)"/>
+
+        <label class="optionLabel">Maximum: </label>
+        <label class="optionValue" >
+            {{seriesScaleMax}}
+        </label>
+        <input class="slider" type="range" min="0" max="5" step="1"
+            value={{seriesScaleMax}}
+            (change)="this.seriesScaleMaxChanged($event)"/>
+
+    </div>
+    <div class="chart">
+        <igx-data-chart #chart
+            isHorizontalZoomEnabled="true"
+            isVerticalZoomEnabled="true"
+            width="100%"
+            height="100%"
+            chartTitle="MAGNETIC FIELD DISTRIBUTION"
+            gridMode="BeforeSeries"
+            [dataSource]="data">
+            <igx-numeric-x-axis #xAxis1
+                name="xAxis1" labelLocation="OutsideLeft"
+                minimumValue="-180" maximumValue="180" title="Longitude">
+            </igx-numeric-x-axis>
+            <igx-numeric-y-axis #yAxis1
+                name="yAxis1" labelLocation="OutsideBottom"
+                minimumValue="-90" maximumValue="90" title="Latitude">
+            </igx-numeric-y-axis>
+            <igx-numeric-x-axis #xAxis2
+                name="xAxis2" labelLocation="OutsideTop"
+                minimumValue="-180" maximumValue="180">
+            </igx-numeric-x-axis>
+            <igx-numeric-y-axis #yAxis2
+                name="yAxis2" labelLocation="OutsideRight"
+                minimumValue="-90" maximumValue="90" title="Latitude">
+            </igx-numeric-y-axis>
+
+            <igx-scatter-area-series #series
+                name="series"
+                [xAxis]=xAxis1
+                [yAxis]=yAxis1
+                xMemberPath="X"
+                yMemberPath="Y"
+                colorMemberPath="Z">
+            </igx-scatter-area-series>
+       </igx-data-chart>
+    </div>
+</div>
