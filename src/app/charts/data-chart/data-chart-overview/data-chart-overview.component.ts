@@ -9,9 +9,10 @@ import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 import { SampleScatterStats } from "../SampleScatterStats";
 
 @Component({
-  selector: "app-data-chart-overview",
-  styleUrls: ["./data-chart-overview.component.scss"],
-  templateUrl: "./data-chart-overview.component.html"
+    providers: [ SampleScatterStats ],
+    selector: "app-data-chart-overview",
+    styleUrls: ["./data-chart-overview.component.scss"],
+    templateUrl: "./data-chart-overview.component.html"
 })
 export class DataChartOverviewComponent implements OnInit {
 
@@ -24,15 +25,18 @@ export class DataChartOverviewComponent implements OnInit {
     @ViewChild("yAxis")
     public yAxis: IgxNumericYAxisComponent;
 
-    constructor() { }
+    public data1: any;
+    public data2: any;
+
+    constructor(private dataService: SampleScatterStats) {
+        this.data1 = SampleScatterStats.getCountriesWithLargePop();
+        this.data1 = SampleScatterStats.getCountriesWithSmallPop();
+    }
 
     public ngOnInit() {
-        const data1 = SampleScatterStats.getCountriesWithLargePop();
-        const data2 = SampleScatterStats.getCountriesWithSmallPop();
-
         this.chart.series.clear();
-        this.createSeries(data1, "Large Countries");
-        this.createSeries(data2, "Small Countries");
+        this.createSeries(this.data1, "Large Countries");
+        this.createSeries(this.data2, "Small Countries");
     }
 
     public createSeries(data: any, title: string) {
