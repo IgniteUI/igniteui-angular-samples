@@ -43,7 +43,7 @@ export class AutocompleteConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule,
+                imports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule, IgxDialogModule,
                         MovieComponent, AutocompletePipeContains, AutocompleteGroupPipeContains],
                 ngDeclarations: [MovieComponent],
                 ngImports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule, IgxDialogModule]
