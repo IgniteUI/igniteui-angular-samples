@@ -21,8 +21,8 @@ export class TreeGridFinjsConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/treegrid-finjs/treeLocalData.service.ts",
-                "/src/app/treegrid-finjs/hierFinancialData.ts"],
+            additionalFiles: ["/src/app/grid-finjs/localData.service.ts",
+                "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, TreeGridFinJSComponent,
