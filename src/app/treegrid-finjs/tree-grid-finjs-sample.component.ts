@@ -96,7 +96,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
             field: "Change(%)"
         }
     ];
-    // public groupColumnName = "Categories";
+    public primaryKey = "ID";
+    public childDataKey = "Children";
+    public groupColumnKey = "Categories";
 
     public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
 
@@ -267,17 +269,32 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     // tslint:disable-next-line:member-ordering
     public ticker(data: any) {
         this.zone.runOutsideAngular(() => {
-            this.data = this.updateRandomPrices(data.splice(0));
-            // this.zone.run(() => this.grid1.markForCheck());
+            this.updateRandomPrices(data);
+            this.recalculateAggregations(this.grid1.data);
+            this.zone.run(() => this.grid1.markForCheck());
         });
     }
 
     // tslint:disable-next-line:member-ordering
     public tickerAllPrices(data: any) {
         this.zone.runOutsideAngular(() => {
-            this.data = this.updateAllPrices(data.splice(0));
-            // this.zone.run(() => this.grid1.markForCheck());
+            this.updateAllPrices(data);
+            this.recalculateAggregations(this.grid1.data);
+            this.zone.run(() => this.grid1.markForCheck());
         });
+    }
+
+    private recalculateAggregations(data: any[]) {
+        for (const parent of data) {
+            const children = parent[this.childDataKey];
+
+            if (children && children.length) {
+                for (const aggregation of this.aggregations) {
+                    parent[aggregation.field] = aggregation.aggregate(parent, children);
+                }
+                this.recalculateAggregations(children);
+            }
+        }
     }
 
     // tslint:disable-next-line:member-ordering

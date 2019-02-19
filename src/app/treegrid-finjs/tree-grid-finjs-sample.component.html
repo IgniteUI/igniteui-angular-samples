@@ -29,13 +29,13 @@
         <span *ngIf="buttonSelected === 0">Feeding {{volume}} records every {{frequency / 1000}} sec.
             ~{{volume/5}} records updated.</span>
     </div>
-    <igx-tree-grid #grid1 [data]="data | treeGridGrouping:groupColumns:aggregations:'Categories':'ID':'Children'"
-                   [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false'
-        displayDensity='compact' primaryKey="ID" childDataKey="Children"
-        columnHidingTitle="Indicators" hiddenColumnsText="Hidden" 
-        [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
-        <igx-column [field]="'Categories'" [width]="'180px'" [sortable]='true' [resizable]='true' [disableHiding]="true"></igx-column>
+    <igx-tree-grid #grid1 [data]="data | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey"
+                   [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
+                   [primaryKey]="primaryKey" [childDataKey]="childDataKey"
+                   columnHidingTitle="Indicators" hiddenColumnsText="Hidden" 
+                   [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
+                   [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+        <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true' [disableHiding]="true"></igx-column>
         <igx-column [field]="'Settlement'" [width]="'100px'" [sortable]='true'></igx-column>
         <igx-column [field]="'Region'" [width]="'110px'" [sortable]='true'></igx-column>
         <igx-column [field]="'Country'" [width]="'100px'" [sortable]='true'></igx-column>
@@ -46,8 +46,8 @@
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" name="trending_up">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" name="trending_down">trending_down</igx-icon>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
                 </div>
             </ng-template>
         </igx-column>
