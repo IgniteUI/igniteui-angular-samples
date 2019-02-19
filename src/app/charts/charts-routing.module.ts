@@ -36,6 +36,75 @@ import {
     CategoryChartTrendlinesComponent
 } from "./category-chart/trendline/category-chart-trendlines.component";
 import { chartsRoutesData } from "./charts-routes-data";
+import { DataChartSamplesModule } from "./data-chart/data-chart-samples-module";
+
+import { DataChartAxisLocationsComponent
+} from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
+import { DataChartAxisSettingsComponent
+} from "./data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
+import { DataChartAxisSharingComponent } from "./data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
+import { DataChartAxisTypesComponent } from "./data-chart/data-chart-axis-types/data-chart-axis-types.component";
+import { DataChartLegendsComponent } from "./data-chart/data-chart-legends/data-chart-legends.component";
+import { DataChartNavigationComponent } from "./data-chart/data-chart-navigation/data-chart-navigation.component";
+import {
+    DataChartOverviewComponent
+} from "./data-chart/data-chart-overview/data-chart-overview.component";
+import { DataChartPerformanceComponent } from "./data-chart/data-chart-performance/data-chart-performance.component";
+import {
+    DataChartSeriesAnimationsComponent
+} from "./data-chart/data-chart-series-animations/data-chart-series-animations.component";
+import {
+    DataChartSeriesAnnotationsComponent
+} from "./data-chart/data-chart-series-annotations/data-chart-series-annotations.component";
+import {
+    DataChartSeriesHighlightingComponent
+} from "./data-chart/data-chart-series-highlighting/data-chart-series-highlighting.component";
+import { DataChartSeriesMarkersComponent
+} from "./data-chart/data-chart-series-markers/data-chart-series-markers.component";
+import { DataChartSeriesTooltipsComponent
+} from "./data-chart/data-chart-series-tooltips/data-chart-series-tooltips.component";
+import { DataChartSeriesTrendlinesComponent
+} from "./data-chart/data-chart-series-trendlines/data-chart-series-trendlines.component";
+import { DataChartSynchronizationComponent
+} from "./data-chart/data-chart-synchronization/data-chart-synchronization.component";
+import { DataChartTitlesComponent } from "./data-chart/data-chart-titles/data-chart-titles.component";
+import {
+    DataChartTypeCategorySeriesComponent
+} from "./data-chart/data-chart-type-category-series/data-chart-type-category-series.component";
+import {
+    DataChartTypeFinancialSeriesComponent
+} from "./data-chart/data-chart-type-financial-series/data-chart-type-financial-series.component";
+import {
+    DataChartTypePolarSeriesComponent
+} from "./data-chart/data-chart-type-polar-series/data-chart-type-polar-series.component";
+import {
+    DataChartTypeRadialSeriesComponent
+} from "./data-chart/data-chart-type-radial-series/data-chart-type-radial-series.component";
+import {
+    DataChartTypeRangeSeriesComponent
+} from "./data-chart/data-chart-type-range-series/data-chart-type-range-series.component";
+import {
+    DataChartTypeScatterAreaSeriesComponent
+} from "./data-chart/data-chart-type-scatter-area-series/data-chart-type-scatter-area-series.component";
+import {
+    DataChartTypeScatterContourSeriesComponent
+} from "./data-chart/data-chart-type-scatter-contour-series/data-chart-type-scatter-contour-series.component";
+import {
+    DataChartTypeScatterDensitySeriesComponent
+} from "./data-chart/data-chart-type-scatter-density-series/data-chart-type-scatter-density-series.component";
+import {
+    DataChartTypeScatterSeriesComponent
+} from "./data-chart/data-chart-type-scatter-series/data-chart-type-scatter-series.component";
+import {
+    DataChartTypeScatterShapeSeriesComponent
+} from "./data-chart/data-chart-type-scatter-shape-series/data-chart-type-scatter-shape-series.component";
+import {
+    DataChartTypeStackedSeriesComponent
+} from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
+import {
+    DataChartTypeValueOverlayComponent
+} from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
+
 import {
     DoughnutChartExplosionSampleComponent
 } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
@@ -148,8 +217,8 @@ export const chartsRoutes: Routes = [
     },
     {
         component: CategoryChartOverviewComponent,
-        data: chartsRoutesData["category-chart-overview-sample"],
-        path: "category-chart-overview-sample"
+        data: chartsRoutesData["category-chart-overview"],
+        path: "category-chart-overview"
     },
     {
         component: CategoryChartAnnotationsComponent,
@@ -205,6 +274,146 @@ export const chartsRoutes: Routes = [
         component: CategoryChartTrendlinesComponent,
         data: chartsRoutesData["category-chart-trendline"],
         path: "category-chart-trendline"
+    },
+    {
+        component: DataChartAxisLocationsComponent,
+        data: chartsRoutesData["data-chart-axis-locations"],
+        path: "data-chart-axis-locations"
+    },
+    {
+        component: DataChartAxisSettingsComponent,
+        data: chartsRoutesData["data-chart-axis-settings"],
+        path: "data-chart-axis-settings"
+    },
+    {
+        component: DataChartAxisSharingComponent,
+        data: chartsRoutesData["data-chart-axis-sharing"],
+        path: "data-chart-axis-sharing"
+    },
+    {
+        component: DataChartAxisTypesComponent,
+        data: chartsRoutesData["data-chart-axis-types"],
+        path: "data-chart-axis-types"
+    },
+    {
+        component: DataChartLegendsComponent,
+        data: chartsRoutesData["data-chart-legends"],
+        path: "data-chart-legends"
+    },
+    {
+        component: DataChartNavigationComponent,
+        data: chartsRoutesData["data-chart-navigation"],
+        path: "data-chart-navigation"
+    },
+    {
+        component: DataChartOverviewComponent,
+        data: chartsRoutesData["data-chart-overview"],
+        path: "data-chart-overview"
+    },
+    {
+        component: DataChartPerformanceComponent,
+        data: chartsRoutesData["data-chart-performance"],
+        path: "data-chart-performance"
+    },
+    {
+        component: DataChartSeriesAnimationsComponent,
+        data: chartsRoutesData["data-chart-series-animations"],
+        path: "data-chart-series-animations"
+    },
+    {
+        component: DataChartSeriesAnnotationsComponent,
+        data: chartsRoutesData["data-chart-series-annotations"],
+        path: "data-chart-series-annotations"
+    },
+    {
+        component: DataChartSeriesHighlightingComponent,
+        data: chartsRoutesData["data-chart-series-highlighting"],
+        path: "data-chart-series-highlighting"
+    },
+    {
+        component: DataChartSeriesMarkersComponent,
+        data: chartsRoutesData["data-chart-series-markers"],
+        path: "data-chart-series-markers"
+    },
+    {
+        component: DataChartSeriesTooltipsComponent,
+        data: chartsRoutesData["data-chart-series-tooltips"],
+        path: "data-chart-series-tooltips"
+    },
+    {
+        component: DataChartSeriesTrendlinesComponent,
+        data: chartsRoutesData["data-chart-series-trendlines"],
+        path: "data-chart-series-trendlines"
+    },
+    {
+        component: DataChartSynchronizationComponent,
+        data: chartsRoutesData["data-chart-synchronization"],
+        path: "data-chart-synchronization"
+    },
+    {
+        component: DataChartTitlesComponent,
+        data: chartsRoutesData["data-chart-titles"],
+        path: "data-chart-titles"
+    },
+    {
+        component: DataChartTypeCategorySeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-series"],
+        path: "data-chart-type-category-series"
+    },
+    {
+        component: DataChartTypeFinancialSeriesComponent,
+        data: chartsRoutesData["data-chart-type-financial-series"],
+        path: "data-chart-type-financial-series"
+    },
+    {
+        component: DataChartTypePolarSeriesComponent,
+        data: chartsRoutesData["data-chart-type-polar-series"],
+        path: "data-chart-type-polar-series"
+    },
+    {
+        component: DataChartTypeRadialSeriesComponent,
+        data: chartsRoutesData["data-chart-type-radial-series"],
+        path: "data-chart-type-radial-series"
+    },
+    {
+        component: DataChartTypeRangeSeriesComponent,
+        data: chartsRoutesData["data-chart-type-range-series"],
+        path: "data-chart-type-range-series"
+    },
+    {
+        component: DataChartTypeScatterAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-area-series"],
+        path: "data-chart-type-area-series"
+    },
+    {
+        component: DataChartTypeScatterContourSeriesComponent,
+        data: chartsRoutesData["data-chart-type-contour-series"],
+        path: "data-chart-type-contour-series"
+    },
+    {
+        component: DataChartTypeScatterDensitySeriesComponent,
+        data: chartsRoutesData["data-chart-type-scatter-density-series"],
+        path: "data-chart-type-scatter-density-series"
+    },
+    {
+        component: DataChartTypeScatterSeriesComponent,
+        data: chartsRoutesData["data-chart-type-scatter-series"],
+        path: "data-chart-type-scatter-series"
+    },
+    {
+        component: DataChartTypeScatterShapeSeriesComponent,
+        data: chartsRoutesData["data-chart-type-shape-series"],
+        path: "data-chart-type-shape-series"
+    },
+    {
+        component: DataChartTypeStackedSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-series"],
+        path: "data-chart-type-stacked-series"
+    },
+    {
+        component: DataChartTypeValueOverlayComponent,
+        data: chartsRoutesData["data-chart-value-overlay"],
+        path: "data-chart-value-overlay"
     },
     {
         component: FinancialChartPerformanceComponent,
@@ -295,6 +504,7 @@ export const chartsRoutes: Routes = [
     imports: [
         CategoryChartSamplesModule.forRoot(),
         CategoryChartPerformanceSamplesModule.forRoot(),
+        DataChartSamplesModule.forRoot(),
         FinancialChartSamplesModule.forRoot(),
         PieChartSamplesModule.forRoot(),
         DoughnutChartSamplesModule.forRoot(),
