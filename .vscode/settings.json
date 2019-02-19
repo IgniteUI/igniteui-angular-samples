@@ -2,10 +2,5 @@
 	"editor.tabSize": 4,
 	"editor.insertSpaces": true,
     "editor.detectIndentation": false,
-    "jscs.enable": false,
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#202862",
-        "titleBar.activeBackground": "#2D3889",
-        "titleBar.activeForeground": "#FAFAFD"
-    }
+    "jscs.enable": false
 }
