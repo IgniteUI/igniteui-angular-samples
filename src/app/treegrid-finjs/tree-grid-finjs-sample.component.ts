@@ -91,7 +91,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         },
         {
             aggregate: (parent: any, data: any[]) => {
-                return parent.Change / (parent. Price - parent.Change) * 100;
+                return parent.Change / (parent.Price - parent.Change) * 100;
             },
             field: "Change(%)"
         }
