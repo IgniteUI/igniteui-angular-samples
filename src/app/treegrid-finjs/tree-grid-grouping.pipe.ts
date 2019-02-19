@@ -8,7 +8,7 @@ class GroupByRecord {
 
 export class ITreeGridAggregation {
     public field: string;
-    public aggregate: (parent: any, data: any[]) => any;
+    public aggregate: (parent: any, children: any[]) => any;
 }
 
 @Pipe({
