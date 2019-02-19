@@ -10,7 +10,7 @@ import {
     IgxSwitchModule,
     IgxToggleModule
 } from "igniteui-angular";
-import { LocalDataService } from "../../src/app/grid-finjs/LocalData.service";
+import { LocalDataService } from "../../src/app/grid-finjs/localData.service";
 import { TreeGridFinJSComponent } from "../../src/app/treegrid-finjs/tree-grid-finjs-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
