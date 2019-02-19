@@ -2,7 +2,6 @@
 import {
     IgxButtonGroupModule,
     IgxButtonModule,
-    IgxCsvExporterService,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
@@ -30,8 +29,8 @@ export class TreeGridFinjsConfigGenerator implements IConfigGenerator {
                     IgxRippleModule, TreeGridFinJSComponent, TreeLocalDataService],
                 ngDeclarations: [TreeGridFinJSComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
-                ngProviders: [TreeLocalDataService, IgxExcelExporterService, IgxCsvExporterService]
+                    IgxButtonModule, IgxSwitchModule, IgxRippleModule],
+                ngProviders: [TreeLocalDataService, IgxExcelExporterService]
             }),
             component: TreeGridFinJSComponent
         }));

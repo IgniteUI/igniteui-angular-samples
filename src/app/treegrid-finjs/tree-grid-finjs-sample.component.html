@@ -33,7 +33,7 @@
         displayDensity='compact' childDataKey="Categories"
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID'
         [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" [exportExcel]="true" exportExcelText="Export to Excel" [exportCsv]="true" exportCsvText="Export to CSV">
+        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
         <igx-column [field]="'ID'" [hidden]='true'></igx-column>
         <igx-column [field]="'Category'" [width]="'180px'" [groupable]='true' [sortable]='true' [resizable]='true'></igx-column>
         <igx-column [field]="'Type'" [width]="'140px'" [groupable]='true' [sortable]='true' [filterable]='true' [resizable]='true'></igx-column>
@@ -44,8 +44,8 @@
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" iconName="trending_up">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" iconName="trending_down">trending_down</igx-icon>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" name="trending_up">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" name="trending_down">trending_down</igx-icon>
                 </div>
             </ng-template>
         </igx-column>
@@ -85,7 +85,7 @@
         <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
-                    <igx-icon (click)="chartClick(cell)" iconName="table_chart" fontSet="material">table_chart</igx-icon>
+                    <igx-icon (click)="chartClick(cell)" name="table_chart" fontSet="material">table_chart</igx-icon>
                 </button>
             </ng-template>
         </igx-column>

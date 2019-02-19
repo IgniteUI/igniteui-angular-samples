@@ -2,7 +2,6 @@
 import {
     IgxButtonGroupModule,
     IgxButtonModule,
-    IgxCsvExporterService,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
@@ -32,8 +31,8 @@ export class GridFinjsConfigGenerator implements IConfigGenerator {
                     LocalDataService],
                 ngDeclarations: [FinJSDemoComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
-                ngProviders: [LocalDataService, IgxExcelExporterService, IgxCsvExporterService]
+                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule],
+                ngProviders: [LocalDataService, IgxExcelExporterService]
             })
         }));
 
