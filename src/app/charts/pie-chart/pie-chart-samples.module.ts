@@ -30,10 +30,4 @@ import { PieChartSelectionComponent } from "./pie-chart-selection/pie-chart-sele
         IgxLegendModule
      ]
 })
-export class PieChartSamplesModule {
-    public static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: PieChartSamplesModule
-        };
-    }
-}
+export class PieChartSamplesModule {}
