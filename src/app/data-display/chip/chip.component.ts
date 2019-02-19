@@ -176,7 +176,7 @@ export class ChipSampleComponent {
         }
     }
 
-    public clickedOutside() {
+    public chipMoveStarted() {
         if (this.dropDownOpened) {
             this.igxDropDown.close();
             this.dropDownOpened = false;
