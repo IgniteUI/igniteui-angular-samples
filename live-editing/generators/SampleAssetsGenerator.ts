@@ -33,10 +33,13 @@ export class SampleAssetsGenerator extends Generator {
     private _tsImportsService: TsImportsService;
     private _sassCompiler: SassCompiler;
     private _componentRoutes: Map<string, string>;
+    private _showLogs: boolean;
 
-    constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass) {
+    constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass, showLogs?: boolean) {
         super(styleSyntax);
 
+        this._showLogs = showLogs;
+        console.log("Live-Editing - SampleAssetsGenerator... ");
         this._dependencyResolver = new DependencyResolver();
         this._tsImportsService = new TsImportsService();
         this._sassCompiler = new SassCompiler();
@@ -48,13 +51,20 @@ export class SampleAssetsGenerator extends Generator {
     public generateSamplesAssets() {
         let configGeneratorsFilePath = path.join(__dirname, CONFIG_GENERATORS_FILE_NAME);
         let currentFileImports = this._tsImportsService.getFileImports(configGeneratorsFilePath);
+
         for (let i = 0; i < CONFIG_GENERATORS.length; i++) {
-            let configGeneratorFilePath = path.join(__dirname,
-                currentFileImports.get(CONFIG_GENERATORS[i].name) + ".ts");
-            let configGeneratorImports = this._tsImportsService.getFileImports(configGeneratorFilePath);
-            let configs = (new CONFIG_GENERATORS[i]()).generateConfigs();
-            for (let j = 0; j < configs.length; j++) {
-                this._generateSampleAssets(configs[j], configGeneratorImports);
+            let generator = CONFIG_GENERATORS[i];
+            let generatorName = generator.name;
+            let generatorPath = path.join(__dirname,
+                currentFileImports.get(generatorName) + ".ts");
+            let generatorImports = this._tsImportsService.getFileImports(generatorPath);
+            let generatorConfigs = (new CONFIG_GENERATORS[i]()).generateConfigs();
+
+            // if (generatorName !== "DataChartConfigGenerator") {
+            //     continue;
+            // }
+            for (let j = 0; j < generatorConfigs.length; j++) {
+                this._generateSampleAssets(generatorConfigs[j], generatorImports);
             }
         }
     }
@@ -75,6 +85,10 @@ export class SampleAssetsGenerator extends Generator {
         for (let i = 0; i < MODULE_ROUTES.length; i++) {
             let moduleName = MODULE_ROUTES[i].module.name;
             let modulePath = modulePaths.get(moduleName);
+            if (this._showLogs) {
+                let stats =  MODULE_ROUTES[i].routes.length + " routes";
+                console.log("Live-Editing - generated " + stats + " for " + moduleName);
+            }
             for (let j = 0; j < MODULE_ROUTES[i].routes.length; j++) {
                 let route: Route = MODULE_ROUTES[i].routes[j];
                 let routePath = modulePath;
@@ -89,17 +103,21 @@ export class SampleAssetsGenerator extends Generator {
 
     private _generateSampleAssets(config: Config, configImports: Map<string, string>) {
         let sampleFiles = this._getComponentFiles(config, configImports);
+        let sampleFilesCount =  sampleFiles.length;
         this._processComponentFilesStyles(sampleFiles);
         let componentTsContent;
+        let componentTsName;
         for (let i = 0; i < sampleFiles.length; i++) {
             if (sampleFiles[i].path.indexOf(".ts") !== -1) {
                 componentTsContent = sampleFiles[i].content;
+                componentTsName = this._getFileName(sampleFiles[i].path).replace(".component", "");
+                componentTsName = componentTsName.replace(".ts", "");
                 break;
             }
         }
-
+        let additionalFiles: LiveEditingFile[] = [];
         if (config.additionalFiles !== undefined && config.additionalFiles.length > 0) {
-            let additionalFiles = this._getAdditionalFiles(config);
+            additionalFiles = this._getAdditionalFiles(config);
             this._processAdditionalFilesStyles(additionalFiles);
             sampleFiles = sampleFiles.concat(additionalFiles);
         }
@@ -110,6 +128,11 @@ export class SampleAssetsGenerator extends Generator {
         sampleFiles.push(appModuleFile);
         sampleFiles.push(new LiveEditingFile(
             SAMPLE_APP_FOLDER + "app.component.html", this._getAppComponentHtml(componentTsContent)));
+
+        if (this._showLogs) {
+            let stats = sampleFilesCount + " + " +  additionalFiles.length + " files";
+            console.log("Live-Editing - generated " + stats + " for " + componentTsName);
+        }
 
         let dependencies = this._dependencyResolver.resolveSampleDependencies(
             config.dependenciesType, config.additionalDependencies);
@@ -254,9 +277,9 @@ export class SampleAssetsGenerator extends Generator {
                     let forRoot = ".forRoot()";
                     if (appModuleNgImportWithProviders.providers
                         && appModuleNgImportWithProviders.providers.length > 0
-                        && appModuleNgImportWithProviders.providers[0].useClass
-                        && appModuleNgImportWithProviders.providers[0].useClass.name) {
-                        useClass = appModuleNgImportWithProviders.providers[0].useClass.name;
+                        && appModuleNgImportWithProviders.providers[0][useClass]
+                        && appModuleNgImportWithProviders.providers[0][useClass].name) {
+                        useClass = appModuleNgImportWithProviders.providers[0][useClass].name;
                         forRoot = `.forRoot(${useClass})`;
                     }
 
