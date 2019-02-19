@@ -86,8 +86,8 @@ export class SampleAssetsGenerator extends Generator {
             let moduleName = MODULE_ROUTES[i].module.name;
             let modulePath = modulePaths.get(moduleName);
             if (this._showLogs) {
-                let stats =  MODULE_ROUTES[i].routes.length + " routes"
-                console.log("Live-Editing - generated " + stats + " for " + moduleName );
+                let stats =  MODULE_ROUTES[i].routes.length + " routes";
+                console.log("Live-Editing - generated " + stats + " for " + moduleName);
             }
             for (let j = 0; j < MODULE_ROUTES[i].routes.length; j++) {
                 let route: Route = MODULE_ROUTES[i].routes[j];
