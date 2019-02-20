@@ -1,6 +1,6 @@
 import { Component, Pipe, PipeTransform } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
-import { DateRangeType } from 'igniteui-angular';
+import { DateRangeType } from "igniteui-angular";
 @Component({
     selector: "movie-availability",
     styleUrls: ["./movie.component.scss"],
