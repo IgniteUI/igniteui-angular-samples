@@ -128,6 +128,17 @@ import {
     DataChartTypeValueOverlayComponent
 } from "./data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
+import { SampleCategoryData } from "./SampleCategoryData";
+import { SampleDensityData } from "./SampleDensityData";
+import { SampleFinancialData } from "./SampleFinancialData";
+import { SamplePolarData } from "./SamplePolarData";
+import { SampleRadialData } from "./SampleRadialData";
+import { SampleRangeData } from "./SampleRangeData";
+import { SampleScatterData } from "./SampleScatterData";
+import { SampleScatterStats } from "./SampleScatterStats";
+import { SampleShapeData } from "./SampleShapeData";
+import { SharedData } from "./SharedData";
+
 // Indicators and Overlays
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
 import { IgxMedianPriceIndicatorModule } from "igniteui-angular-charts/ES5/igx-median-price-indicator-module";
@@ -225,7 +236,17 @@ import { FormsModule } from "@angular/forms";
 export class DataChartSamplesModule {
     public static forRoot(): ModuleWithProviders {
         return {
-            ngModule: DataChartSamplesModule
+            ngModule: DataChartSamplesModule,
+            providers: [ SampleCategoryData,
+                SampleDensityData,
+                SampleFinancialData,
+                SamplePolarData,
+                SampleRadialData,
+                SampleRangeData,
+                SampleScatterData,
+                SampleScatterStats,
+                SampleShapeData,
+                SharedData]
         };
     }
 }

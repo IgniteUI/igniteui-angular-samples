@@ -1,3 +1,6 @@
+import { Injectable } from "@angular/core";
+
+@Injectable()
 export class SampleFinancialData {
 
     public static create(): any[] {
