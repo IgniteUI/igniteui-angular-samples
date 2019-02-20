@@ -10,6 +10,7 @@ import { gaugesRoutesData } from "../gauges/gauges-routes-data";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
 import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
+import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-grid-routes-data";
 import { interactionsRoutesData } from "../interactions/interactions-routes-data";
 import { layoutsRoutesData } from "../layouts/layouts-routes-data";
 import { listsRoutesData } from "../lists/lists-routes-data";
@@ -123,6 +124,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "treegrid-finjs-sample",
             routesData: treegridfinjsRoutesData
+        },
+        {
+            path: "hierarchical-grid",
+            routesData: hierarchicalGridRoutesData
         }
     ];
 

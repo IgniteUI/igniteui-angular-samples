@@ -89,6 +89,10 @@ export const samplesRoutes: Routes = [
     {
         loadChildren: "./treegrid-finjs/treegrid-finjs.module#TreeGridFinjsModule",
         path: "treegrid-finjs-sample"
+    },
+    {
+        loadChildren: "./hierarchical-grid/hierarchical-grid.module#HierarchicalGridModule",
+        path: "hierarchical-grid"
     }
 ];
 export const appRoutes: Routes = [
