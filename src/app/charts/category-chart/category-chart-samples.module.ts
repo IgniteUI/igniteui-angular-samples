@@ -50,10 +50,4 @@ import {
         IgxLegendModule
     ]
 })
-export class CategoryChartSamplesModule {
-    public static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: CategoryChartSamplesModule
-        };
-    }
-}
+export class CategoryChartSamplesModule {}
