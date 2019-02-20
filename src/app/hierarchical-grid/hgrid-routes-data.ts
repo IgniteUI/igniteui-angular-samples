@@ -3,6 +3,7 @@
 export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing": { displayName: "Hierarchical Grid Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-batch-editing": { displayName: "Hierarchical Grid Batch Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering": { displayName: "Hierarchical Grid Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-filtering": { displayName: "Hierarchical Grid Custom Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },

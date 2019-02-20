@@ -7,6 +7,8 @@ import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule,
     IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
     IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule } from "igniteui-angular";
 import { HgridRoutingModule } from "./hgrid-routing.module";
+import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
+import { HierarchicalGridWithTransactionsComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
 import { HGridCostumHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
 import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-moving/hierarchical-grid-moving.component";
@@ -48,7 +50,9 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridToolbarOptionsSampleComponent,
         HGridToolbarCustomSampleComponent,
         HGridRowEditingSampleComponent,
-        HGridEditingSampleComponent
+        HGridEditingSampleComponent,
+        HGridBatchEditingSampleComponent,
+        HierarchicalGridWithTransactionsComponent
     ],
     imports: [
         CommonModule,
