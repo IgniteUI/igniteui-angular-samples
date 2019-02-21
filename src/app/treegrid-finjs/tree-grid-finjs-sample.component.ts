@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } fr
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DataUtil, HorizontalAlignment,
     IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings,
+    SortingDirection,
     VerticalAlignment} from "igniteui-angular";
 import { LocalDataService } from "../grid-finjs/localData.service";
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
@@ -129,6 +130,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         if (this.theme) {
             document.body.classList.add("dark-theme");
         }
+        this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
     }
 
     public ngAfterViewInit() {
