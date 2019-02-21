@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <button igxButton="raised" (click)="dialogAdd.open()" class="addSingerBtn">Add New Singer</button>
     <igx-hierarchical-grid #hGrid class="hgrid" [data]="localdata" [autoGenerate]="false"
-        [height]="'600px'" [width]="'1000px'">
+        [height]="'600px'" [width]="'100%'">
         <igx-column field="Artist" [editable]="true" [dataType]="'string'"></igx-column>
         <igx-column field="HasGrammyAward" [editable]="true" [dataType]="'boolean'">
         </igx-column>
