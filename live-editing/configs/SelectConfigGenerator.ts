@@ -13,9 +13,9 @@ export class SelectConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample1Component, IgxInputGroupModule, IgxDropDownModule],
+                imports: [IgxSelectModule, SelectSample1Component, IgxInputGroupModule],
                 ngDeclarations: [SelectSample1Component],
-                ngImports: [IgxSelectModule, IgxInputGroupModule, IgxDropDownModule]
+                ngImports: [IgxSelectModule, IgxInputGroupModule]
             }),
             component: SelectSample1Component,
             shortenComponentPathBy: "/data-entries/select/"
@@ -33,9 +33,9 @@ export class SelectConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample3Component, IgxButtonModule, IgxDropDownModule],
+                imports: [IgxSelectModule, SelectSample3Component, IgxButtonModule, IgxInputGroupModule],
                 ngDeclarations: [SelectSample3Component],
-                ngImports: [IgxSelectModule, IgxButtonModule, IgxDropDownModule]
+                ngImports: [IgxSelectModule, IgxButtonModule, IgxInputGroupModule]
             }),
             component: SelectSample3Component,
             shortenComponentPathBy: "/data-entries/select/"
@@ -43,9 +43,9 @@ export class SelectConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample4Component, IgxInputGroupModule, IgxDropDownModule],
+                imports: [IgxSelectModule, SelectSample4Component, IgxInputGroupModule],
                 ngDeclarations: [SelectSample4Component],
-                ngImports: [IgxSelectModule, IgxInputGroupModule, IgxDropDownModule]
+                ngImports: [IgxSelectModule, IgxInputGroupModule]
             }),
             component: SelectSample4Component,
             shortenComponentPathBy: "/data-entries/select/"
