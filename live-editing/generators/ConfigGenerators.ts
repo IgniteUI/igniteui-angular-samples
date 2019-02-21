@@ -11,6 +11,7 @@ import { CheckboxConfigGenerator } from "../configs/CheckboxConfigGenerator";
 import { ChipConfigGenerator } from "../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "../configs/ComboConfigGenerator";
+import { DataChartConfigGenerator } from "../configs/DataChartConfigGenerator";
 import { DatePickerConfigGenerator } from "../configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "../configs/DialogConfigGenerator";
 import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
@@ -39,6 +40,7 @@ import { OverlayConfigGenerator } from "../configs/OverlayConfigGenerator";
 import { PieChartConfigGenerator } from "../configs/PieChartConfigGenerator";
 import { RadioConfigGenerator } from "../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "../configs/RippleConfigGenerator";
+import { SelectConfigGenerator } from "../configs/SelectConfigGenerator";
 import { SliderConfigGenerator } from "../configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "../configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "../configs/SwitchConfigGenerator";
@@ -56,14 +58,15 @@ import { TreeGridFinjsConfigGenerator } from "../configs/TreeGridFinjsConfigGene
 export const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator,
     ButtonConfigGenerator, ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator,
     CarouselConfigGenerator, CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator,
-    CircularProgressbarConfigGenerator, ComboConfigGenerator, DatePickerConfigGenerator, DialogConfigGenerator,
+    CircularProgressbarConfigGenerator, ComboConfigGenerator, DataChartConfigGenerator,
+    DatePickerConfigGenerator, DialogConfigGenerator,
     DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
     ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator, TreeGridFinjsConfigGenerator,
     ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator, GridCRMConfigGenerator,
     GridFinjsConfigGenerator, IconConfigGenerator, OverlayConfigGenerator, GaugesConfigGenerator,
     DragAndDropConfigGenerator, InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
-    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
+    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SelectConfigGenerator, SliderConfigGenerator,
     SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
     TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator,
     TooltipConfigGenerator, TimePickerConfigGenerator, ThemingConfigGenerator];
