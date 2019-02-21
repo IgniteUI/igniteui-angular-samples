@@ -1,0 +1,58 @@
+<div class="sample">
+    <div class="options">
+        <span class="optionItem">Default Drag Option:</span>
+        <select [(ngModel)]="defaultInteraction">
+            <option>DragZoom</option>
+            <option>DragPan</option>
+            <option>None</option>
+        </select>
+        <span class="optionItem">Pan Modifier:</span>
+        <select [(ngModel)]="panModifier">
+            <option>Alt</option>
+            <option>Control</option>
+            <option>Shift</option>
+            <option>Windows</option>
+            <option>Apple</option>
+            <option>None</option>
+        </select>
+        <span class="optionItem">Zoom Modifier:</span>
+        <select [(ngModel)]="zoomModifier">
+            <option>Alt</option>
+            <option>Control</option>
+            <option>Shift</option>
+            <option>Windows</option>
+            <option>Apple</option>
+            <option>None</option>
+        </select>
+    </div>
+    <div class="options">
+        <label class="optionItem"><input type="checkbox" [(ngModel)]="isZoomEnabled" /> Enable Zooming</label>
+        <button class="optionItem" (click)="onPanUpClick()">Pan Up</button>
+        <button class="optionItem" (click)="onPanDownClick()">Pan Down</button>
+        <button class="optionItem" (click)="onPanLeftClick()">Pan Left</button>
+        <button class="optionItem" (click)="onPanRightClick()">Pan Right</button>
+    </div>
+
+    <div class="chart">
+        <igx-data-chart #chart [dataSource]="data"
+            width="100%"
+            height="calc(100% - 85px)"
+            [defaultInteraction]="defaultInteraction"
+            [dragModifier]="zoomModifier"
+            [panModifier]="panModifier"
+            [isHorizontalZoomEnabled]="isZoomEnabled"
+            [isVerticalZoomEnabled]="isZoomEnabled">
+
+            <igx-numeric-x-axis #xAxis
+                isLogarithmic=true
+                abbreviateLargeNumbers=true
+                title="Population">
+            </igx-numeric-x-axis>
+            <igx-numeric-y-axis #yAxis
+                isLogarithmic=true
+                abbreviateLargeNumbers=true
+                title="Total GDP ($)">
+            </igx-numeric-y-axis>
+        </igx-data-chart>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, NgZone, OnInit, QueryList, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, OnInit, QueryList, ViewChild } from "@angular/core";
 import { DefaultSortingStrategy, IgxButtonGroupComponent, IgxColumnComponent,
     IgxGridCellComponent, IgxGridComponent, IgxSliderComponent,
     SortingDirection} from "igniteui-angular";
@@ -40,7 +40,7 @@ class Button {
     styleUrls: ["./grid-finjs-demo.component.scss"],
     templateUrl: "./grid-finjs-demo.component.html"
 })
-export class FinJSDemoComponent implements OnInit, AfterViewInit {
+export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild("grid1") public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
     @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
@@ -214,6 +214,10 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit {
         // returns the main div container of the Index Component,
         // if path is /samples/sample-url, or the appRoot, if path is /sample-url
         return this.elRef.nativeElement.parentElement.parentElement;
+    }
+
+    public ngOnDestroy() {
+        this.stopFeed();
     }
 
     public toggleToolbar(event: any) {
