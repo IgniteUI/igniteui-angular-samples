@@ -12,7 +12,8 @@ export class MovieComponent {
         return "There " + ["are", "aren't"][Math.round(Math.random())] +
             " available tickets for '" + this.user.value.movie + "'" +
             " in '" + this.user.value.cinema + "'" +
-            " on '" + this.user.value.date + "'";
+            " on " + this.user.value.date.toLocaleDateString() +
+            " at " + this.user.value.date.getHours() + ":00";
     }
 
     public towns = [
@@ -46,11 +47,12 @@ export class MovieComponent {
     }];
 
     constructor(fb: FormBuilder) {
+        const today = new Date(new Date(new Date().setHours(20)).setMinutes(0));
         this.user = fb.group({
             cinema: ["", Validators.required],
-            date: new FormControl("", Validators.required),
+            date: new FormControl(today, Validators.required),
             movie: ["", Validators.required],
-            time: new FormControl("", Validators.required)
+            time: new FormControl(today, Validators.required)
         });
     }
 

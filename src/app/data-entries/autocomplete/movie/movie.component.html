@@ -28,8 +28,8 @@
                 </div>
                 <div class="igx-date-time">
                     <igx-date-picker #date name="date" formControlName="date" [disabled]="!user.value.movie" [disabledDates]="disabledDates"></igx-date-picker>
-                    <igx-time-picker name="time" formControlName="time" [disabled]="!user.value.date"
-                        [minValue]="'16:00'" [maxValue]="'23:00'" (onValueChanged)="onTimeSelection($event)"></igx-time-picker>
+                    <igx-time-picker name="time" formControlName="time" [disabled]="!user.value.movie" (onValueChanged)="onTimeSelection($event)"
+                        [itemsDelta]="{ hours: 1, minutes: 60 }" minValue="16:00" maxValue="23:00"></igx-time-picker>
                 </div>
                 <igx-dialog #alert title="Available tickets" [message]="message" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()"></igx-dialog>
                 <div class="button-wrapper">
