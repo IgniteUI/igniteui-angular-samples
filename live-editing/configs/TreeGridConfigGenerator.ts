@@ -1,5 +1,6 @@
 // tslint:disable:max-line-length
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxDatePickerModule, IgxDialogModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxTreeGridModule } from "igniteui-angular";
+import { IgxCsvExporterService, IgxExcelExporterService } from "igniteui-angular";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridColumnHidingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -36,9 +37,10 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent],
+                imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent, IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [TreeGridChilddatakeySampleComponent],
-                ngImports: [IgxTreeGridModule]
+                ngImports: [IgxTreeGridModule],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             }),
             component: TreeGridChilddatakeySampleComponent,
             shortenComponentPathBy: "/tree-grid/"
