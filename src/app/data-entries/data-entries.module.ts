@@ -40,6 +40,10 @@ import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/react
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
+import { SelectSample1Component } from "./select/select-sample-1/select-sample-1.component";
+import { SelectSample2Component } from "./select/select-sample-2/select-sample-2.component";
+import { SelectSample3Component } from "./select/select-sample-3/select-sample-3.component";
+import { SelectSample4Component } from "./select/select-sample-4/select-sample-4.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
 
@@ -79,7 +83,11 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         RadioSample1Component,
         RadioSample2Component,
         SwitchSample1Component,
-        SwitchSample2Component
+        SwitchSample2Component,
+        SelectSample1Component,
+        SelectSample2Component,
+        SelectSample3Component,
+        SelectSample4Component
     ],
     imports: [
         CommonModule,
