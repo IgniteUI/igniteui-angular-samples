@@ -34,7 +34,7 @@
                    [primaryKey]="primaryKey" [childDataKey]="childDataKey"
                    columnHidingTitle="Indicators" hiddenColumnsText="Hidden" 
                    [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
-                   [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+                   [exportExcel]="true" exportExcelText="Export to Excel">
         <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true' [disableHiding]="true"></igx-column>
         <igx-column [field]="'Settlement'" [width]="'100px'" [sortable]='true'></igx-column>
         <igx-column [field]="'Region'" [width]="'110px'" [sortable]='true'></igx-column>
@@ -42,7 +42,7 @@
         <igx-column [field]="'Open Price'" [width]="'120px'" [dataType]="'number'" [formatter]="formatCurrency"
             [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Price'" [width]="'130px'" [dataType]="'number'" [cellClasses]="trends" [movable]="true"
-            [sortable]="true">
+            [sortable]="true" [disableHiding]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
@@ -77,94 +77,5 @@
             [sortable]="true"></igx-column>
         <igx-column [field]="'Start(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true"></igx-column>
-        <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
-            <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxButton="icon" igxRippleCentered="true">
-                    <igx-icon (click)="chartClick(cell)" fontSet="material">insert_chart_outlined</igx-icon>
-                </button>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'Grid'" [width]="'80px'" [hidden]="false" [filterable]='false'>
-            <ng-template igxCell let-cell="cell" class="center-text">
-                <button class="button-icon" igxButton="icon" igxRippleCentered="true">
-                    <igx-icon (click)="chartClick(cell)" name="table_chart" fontSet="material">table_chart</igx-icon>
-                </button>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'IndGrou'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndSect'" [width]="'120px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'IndSubg'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'SecType'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IssuerN'" [width]="'170px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'Moodys'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Fitch'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'DBRS'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CollatT'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Curncy'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Security'" [width]="'120px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'sector'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CUSIP'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Ticker'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Cpn'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Maturity'" [width]="'120px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_3YR'" [width]="'110px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'ZV_SPREAD'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_5YR'" [width]="'50px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_1YR'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndGrou'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndSect'" [width]="'100px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'IndSubg'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'SecType'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IssuerN'" [width]="'170px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'Moodys'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Fitch'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'DBRS'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CollatT'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Curncy'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Security'" [width]="'120px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'sector'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CUSIP'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Ticker'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Cpn'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Maturity'" [width]="'120px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_3YR'" [width]="'110px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'ZV_SPREAD'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_5YR'" [width]="'50px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_1YR'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndGrou'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndSect'" [width]="'100px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'IndSubg'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'SecType'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IssuerN'" [width]="'170px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'Moodys'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Fitch'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'DBRS'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CollatT'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Curncy'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Security'" [width]="'120px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'sector'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CUSIP'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Ticker'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Cpn'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Maturity'" [width]="'120px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_3YR'" [width]="'110px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'ZV_SPREAD'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_5YR'" [width]="'50px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'KRD_1YR'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndGrou'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndSect'" [width]="'100px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'IndSubg'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'SecType'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IssuerN'" [width]="'170px'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'Moodys'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Fitch'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'DBRS'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CollatT'" [width]="'90px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Curncy'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Security'" [width]="'120px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'sector'" [width]="'80px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'CUSIP'" [width]="'100px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Ticker'" [width]="'60px'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Cpn'" [width]="'80px'" [filterable]='false'></igx-column>
     </igx-tree-grid>
   </div>
