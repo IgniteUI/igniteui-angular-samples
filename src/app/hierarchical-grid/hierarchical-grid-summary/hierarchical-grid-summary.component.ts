@@ -31,9 +31,6 @@ export class HGridSummarySampleComponent implements OnInit {
     public localdata;
     public mySummary = MySummary;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 

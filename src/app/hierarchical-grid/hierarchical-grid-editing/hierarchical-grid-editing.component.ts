@@ -13,11 +13,8 @@ export class HGridEditingSampleComponent implements OnInit {
     public localdata;
     public singer;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     @ViewChild("dialogAdd", { read: IgxDialogComponent })
     private dialog: IgxDialogComponent;
@@ -30,7 +27,7 @@ export class HGridEditingSampleComponent implements OnInit {
     }
 
     public addRow() {
-        this.hGrid.addRow(this.singer);
+        this.hierarchicalGrid.addRow(this.singer);
         this.cancel();
     }
 
@@ -40,7 +37,7 @@ export class HGridEditingSampleComponent implements OnInit {
     }
 
     public removeRow(rowIndex) {
-        const row = this.hGrid.getRowByIndex(rowIndex);
+        const row = this.hierarchicalGrid.getRowByIndex(rowIndex);
         row.delete();
      }
 

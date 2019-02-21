@@ -1,6 +1,6 @@
 <div class="hgrid-sample">
     <igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
-        [height]="'600px'" [width]="'800px'" #hGrid>
+        [height]="'500px'" [width]="'100%'" #hierarchicalGrid>
         <igx-column #artist field="Artist" [width]="'180px'">
             <ng-template igxHeader>
                 <div class="title-inner">
@@ -47,7 +47,7 @@
             </ng-template>
         </igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" #layout1 >
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false">
             <igx-column field="Album"></igx-column>
             <igx-column field="Launch Date"></igx-column>
             <igx-column field="Billboard Review"></igx-column>

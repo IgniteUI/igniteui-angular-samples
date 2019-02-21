@@ -14,9 +14,6 @@ export class HGridColumnResizingSampleComponent implements OnInit {
     public pWidth: string;
     public nWidth: string;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 

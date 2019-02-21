@@ -11,9 +11,6 @@ import { CUSTOMERS } from "../data";
 export class HGridMultiHeadersSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
