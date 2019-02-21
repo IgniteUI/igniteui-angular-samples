@@ -22,8 +22,8 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     @ViewChild("layout1")
     public layout1: IgxRowIslandComponent;
 
-    @ViewChild("hGrid")
-    public hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public get perPage(): number {
         return this._perPage;
@@ -55,13 +55,13 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     }
 
     public ngAfterViewInit() {
-        this.hGrid.isLoading = true;
+        this.hierarchicalGrid.isLoading = true;
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, 0, this.perPage).subscribe((data) => {
-            this.hGrid.isLoading = false;
-            this.hGrid.data = data;
-            this.hGrid.paginationTemplate = this.remotePager;
-            this.hGrid.cdr.detectChanges();
+            this.hierarchicalGrid.isLoading = false;
+            this.hierarchicalGrid.data = data;
+            this.hierarchicalGrid.paginationTemplate = this.remotePager;
+            this.hierarchicalGrid.cdr.detectChanges();
         });
     }
 
@@ -89,8 +89,8 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         const top = this.perPage;
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, skip, top).subscribe((data) => {
-            this.hGrid.data = data;
-            this.hGrid.cdr.detectChanges();
+            this.hierarchicalGrid.data = data;
+            this.hierarchicalGrid.cdr.detectChanges();
         });
         if (this.page + 1 >= this.totalPages) {
             this.lastPage = true;
@@ -104,8 +104,8 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         const top = this.perPage;
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, skip, top).subscribe((data) => {
-            this.hGrid.data = data;
-            this.hGrid.cdr.detectChanges();
+            this.hierarchicalGrid.data = data;
+            this.hierarchicalGrid.cdr.detectChanges();
         });
         if (this.page <= 0) {
             this.firstPage = true;
@@ -121,8 +121,8 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         }
         this.remoteService.getData(
             { parentID: null, rootLevel: true, key: "Customers" }, skip, top).subscribe((data) => {
-            this.hGrid.data = data;
-            this.hGrid.cdr.detectChanges();
+            this.hierarchicalGrid.data = data;
+            this.hierarchicalGrid.cdr.detectChanges();
         });
         this.buttonDeselection(this.page, this.totalPages);
     }
@@ -142,7 +142,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
 
     public parseToInt(val) {
         this.perPage = parseInt(val, 10);
-        this.hGrid.cdr.detectChanges();
+        this.hierarchicalGrid.cdr.detectChanges();
     }
 
 }

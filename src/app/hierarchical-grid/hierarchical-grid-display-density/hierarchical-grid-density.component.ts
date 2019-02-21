@@ -16,8 +16,8 @@ export class HGridDisplayDensitySampleComponent implements OnInit {
     @ViewChild("layout1")
     private layout1: IgxRowIslandComponent;
 
-    @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
 
@@ -45,8 +45,8 @@ export class HGridDisplayDensitySampleComponent implements OnInit {
 
     public selectDensity(event) {
         this.density = this.displayDensities[event.index].label;
-        this.hGrid.displayDensity = this.displayDensities[event.index].label;
-        this.hGrid.reflow();
+        this.hierarchicalGrid.displayDensity = this.displayDensities[event.index].label;
+        this.hierarchicalGrid.reflow();
     }
 
 }

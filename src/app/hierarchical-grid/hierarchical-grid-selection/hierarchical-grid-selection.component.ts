@@ -15,8 +15,8 @@ export class HGridSelectionSampleComponent implements OnInit {
     @ViewChild("layout1")
     private layout1: IgxRowIslandComponent;
 
-    @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;
@@ -28,8 +28,8 @@ export class HGridSelectionSampleComponent implements OnInit {
     public handleRowSelection(event) {
         const targetCell = event.cell;
         if (!this.selection) {
-            this.hGrid.deselectAllRows();
-            this.hGrid.selectRows([targetCell.row.rowID]);
+            this.hierarchicalGrid.deselectAllRows();
+            this.hierarchicalGrid.selectRows([targetCell.row.rowID]);
         }
     }
 

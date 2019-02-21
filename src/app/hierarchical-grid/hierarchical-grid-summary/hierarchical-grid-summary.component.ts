@@ -34,8 +34,8 @@ export class HGridSummarySampleComponent implements OnInit {
     @ViewChild("layout1")
     private layout1: IgxRowIslandComponent;
 
-    @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;

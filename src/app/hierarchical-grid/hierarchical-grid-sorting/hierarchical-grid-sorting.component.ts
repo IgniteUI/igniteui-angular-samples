@@ -20,20 +20,20 @@ export class HGridSortingSampleComponent implements OnInit, AfterViewInit {
     @ViewChild("layout1")
     private layout1: IgxRowIslandComponent;
 
-    @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {}
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
-        this.hGrid.sortingExpressions = [
+        this.hierarchicalGrid.sortingExpressions = [
             { dir: SortingDirection.Asc, fieldName: "Artist",
               ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
         ];
     }
     public ngAfterViewInit(): void {
-        this.hGrid.cdr.detectChanges();
+        this.hierarchicalGrid.cdr.detectChanges();
     }
 
     public rightClick(eventArgs) {

@@ -11,8 +11,8 @@ import { SINGERS } from "../data";
 export class HGridToolbarCustomSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;

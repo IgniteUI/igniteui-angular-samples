@@ -14,8 +14,8 @@ export class HGridColumnHidingSampleComponent implements OnInit {
     @ViewChild("layout1")
     private layout1: IgxRowIslandComponent;
 
-    @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {}
 
@@ -24,7 +24,7 @@ export class HGridColumnHidingSampleComponent implements OnInit {
     }
 
     public ngAfterViewInit() {
-        this.hGrid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
+        this.hierarchicalGrid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
     }
 
 }

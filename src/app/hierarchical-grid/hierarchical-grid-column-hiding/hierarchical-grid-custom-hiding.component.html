@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <div class="columnHidingContainer">
-        <igx-column-hiding #columnHidingUI [columns]="hGrid.columns" title="Column Hiding" filterColumnsPrompt="Type here to search">
+        <igx-column-hiding #columnHidingUI [columns]="hierarchicalGrid.columns" title="Column Hiding" filterColumnsPrompt="Type here to search">
         </igx-column-hiding>
         <div class="columnsOrderOptionsContainer">
             <igx-radio [checked]="columnHidingUI.columnDisplayOrder === 'Alphabetical'" (click)="columnHidingUI.columnDisplayOrder = 'Alphabetical'">
@@ -13,7 +13,7 @@
     </div>
     <div class="hgridContainer">
         <igx-hierarchical-grid class="hgrid" [data]="localdata"
-        [height]="'560px'" [width]="'100%'" columnWidth="200px" [allowFiltering]="true" #hGrid>
+        [height]="'560px'" [width]="'100%'" columnWidth="200px" [allowFiltering]="true" #hierarchicalGrid>
             <igx-column field="Artist" [sortable]="true" [disableHiding]="true"></igx-column>
             <igx-column field="Photo">
                 <ng-template igxCell let-cell="cell">

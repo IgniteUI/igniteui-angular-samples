@@ -1,7 +1,7 @@
 <div class="density-chooser">
     <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
 </div>
-<igx-hierarchical-grid #hGrid [data]="localdata" [displayDensity]="density" [height]="'600px'" [width]="'100%'" [allowFiltering]="true">
+<igx-hierarchical-grid #hierarchicalGrid [data]="localdata" [displayDensity]="density" [height]="'600px'" [width]="'100%'" [allowFiltering]="true">
     <igx-column field="CustomerID"></igx-column>
     <igx-column field="CompanyName"></igx-column>
     <igx-column field="ContactName"></igx-column>

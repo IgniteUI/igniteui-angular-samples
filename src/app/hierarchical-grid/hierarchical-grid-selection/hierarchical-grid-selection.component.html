@@ -5,7 +5,7 @@
     </div>
     <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false"
         [height]="'600px'" [width]="'1000px'" [rowSelectable]="selection"
-        (onSelection)="handleRowSelection($event)" #hGrid>
+        (onSelection)="handleRowSelection($event)" #hierarchicalGrid>
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">

@@ -14,8 +14,8 @@ export class HGridMultiHeadersSampleComponent implements OnInit {
     @ViewChild("layout1")
     private layout1: IgxRowIslandComponent;
 
-    @ViewChild("hGrid")
-    private hGrid: IgxHierarchicalGridComponent;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
 
@@ -25,12 +25,12 @@ export class HGridMultiHeadersSampleComponent implements OnInit {
     }
 
     public pinGroup() {
-        const firstColumnGroup = this.hGrid.columnList.filter((c) => c.header === "General Information")[0];
+        const firstColumnGroup = this.hierarchicalGrid.columnList.filter((c) => c.header === "General Information")[0];
         firstColumnGroup.pinned = !firstColumnGroup.pinned;
     }
 
     public hideGroup() {
-        const firstColumnGroup = this.hGrid.columnList.filter((c) => c.header === "General Information")[0];
+        const firstColumnGroup = this.hierarchicalGrid.columnList.filter((c) => c.header === "General Information")[0];
         firstColumnGroup.hidden = !firstColumnGroup.hidden;
     }
 
