@@ -33,7 +33,7 @@
             ~{{volume/5}} records updated.</span>
     </div>
 
-    <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
+    <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' (onGroupingDone)="groupingDone($event)"
         [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
         [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
@@ -51,8 +51,8 @@
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" name="trending_up">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" name="trending_down">trending_down</igx-icon>
                 </div>
             </ng-template>
         </igx-column>
