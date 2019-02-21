@@ -30,5 +30,9 @@ export const dataEntriesRoutesData = {
     "radio-sample-2": { displayName: "Radio Button Binding", parentName: "Radio" },
     "radio-group-sample": { displayName: "Radio Group", parentName: "Radio" },
     "switch-sample-1": { displayName: "Switch Overview", parentName: "Switch" },
-    "switch-sample-2": { displayName: "Multiple Switches", parentName: "Switch" }
+    "switch-sample-2": { displayName: "Multiple Switches", parentName: "Switch" },
+    "select-sample-1": { displayName: "Simple Select", parentName: "Select" },
+    "select-sample-2": { displayName: "Select With Groups", parentName: "Select" },
+    "select-sample-3": { displayName: "Select With Forms", parentName: "Select" },
+    "select-sample-4": { displayName: "Custom Overlay Settings", parentName: "Select" }
 };

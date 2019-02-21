@@ -33,7 +33,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule,
                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
                     IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule,
-                    IgxGridModule.forRoot(), IgxLayoutModule]
+                    IgxGridModule, IgxLayoutModule]
             }),
             shortenComponentPathBy: "/theming/"
         }));
@@ -51,7 +51,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule,
                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
                     IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule,
-                    IgxGridModule.forRoot(), IgxLayoutModule]
+                    IgxGridModule, IgxLayoutModule]
             }),
             shortenComponentPathBy: "/theming/"
         }));
@@ -71,7 +71,7 @@ export class ThemingConfigGenerator implements IConfigGenerator {
                     IgxDialogModule, IgxSnackbarModule, IgxLayoutModule,
                     IgxToggleModule, IgxIconModule, IgxRippleModule, IgxButtonModule,
                     IgxCalendarModule, IgxInputGroupModule, IgxDatePickerModule,
-                    IgxGridModule.forRoot(), IgxLayoutModule]
+                    IgxGridModule, IgxLayoutModule]
             }),
             shortenComponentPathBy: "/theming/"
         }));
