@@ -27,11 +27,11 @@ export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
         });
     }
 
-    public gridCreated(event: IGridCreatedEventArgs, _foreignKey: string) {
+    public gridCreated(event: IGridCreatedEventArgs, _parentKey: string) {
         const dataState = {
-            foreignKey: _foreignKey,
             key: event.owner.key,
             parentID: event.parentID,
+            parentKey: _parentKey,
             rootLevel: false
         };
         event.grid.isLoading = true;

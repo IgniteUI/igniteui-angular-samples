@@ -27,6 +27,7 @@ import { GaugesConfigGenerator } from "../configs/GaugesConfigGenerator";
 import { GridConfigGenerator } from "../configs/GridConfigGenerator";
 import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
 import { GridFinjsConfigGenerator } from "../configs/GridFinjsConfigGenerator";
+import { HierarchicalGridConfigGenerator } from "../configs/HierarchicalGridConfigGenerator";
 import { IconConfigGenerator } from "../configs/IconConfigGenerator";
 import { InputGroupConfigGenerator } from "../configs/InputGroupConfigGenerator";
 import { LayoutConfigGenerator } from "../configs/LayoutConfigGenerator";
@@ -68,4 +69,4 @@ export const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, B
     NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
     SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
     TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator,
-    TooltipConfigGenerator, TimePickerConfigGenerator, ThemingConfigGenerator];
+    TooltipConfigGenerator, TimePickerConfigGenerator, ThemingConfigGenerator, HierarchicalGridConfigGenerator];

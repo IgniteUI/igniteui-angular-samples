@@ -22,9 +22,9 @@ export class RemoteLoDService {
 
             if (!dataState.rootLevel) {
                 if (typeof dataState.parentID === "string") {
-                    qS += `$filter=${dataState.foreignKey} eq '${dataState.parentID}'`;
+                    qS += `$filter=${dataState.parentKey} eq '${dataState.parentID}'`;
                 } else {
-                    qS += `$filter=${dataState.foreignKey} eq ${dataState.parentID}`;
+                    qS += `$filter=${dataState.parentKey} eq ${dataState.parentID}`;
                 }
             }
         }
