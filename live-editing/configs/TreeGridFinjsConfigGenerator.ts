@@ -2,6 +2,7 @@
 import {
     IgxButtonGroupModule,
     IgxButtonModule,
+    IgxCsvExporterService,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
