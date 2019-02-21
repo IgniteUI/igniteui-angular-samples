@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule } from "igniteui-angular";
-import { AvatarSample3Component } from "../../src/app/avatar/avatar-sample-3/avatar-sample-3.component";
+import { AvatarSample3Component } from "../../src/app/layouts/avatar/avatar-sample-3/avatar-sample-3.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -16,7 +16,7 @@ export class AvatarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [AvatarSample3Component],
                 ngImports: [IgxAvatarModule]
             }),
-            shortenComponentPathBy: "/avatar/"
+            shortenComponentPathBy: "/layouts/avatar/"
         }));
 
         return configs;

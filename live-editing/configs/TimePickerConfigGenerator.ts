@@ -1,14 +1,16 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxTimePickerModule, IgxToastModule, IgxIconModule, IgxInputGroupModule } from "igniteui-angular";
-import { TimePickerSample1Component } from "../../src/app/timepicker/timepicker-sample-1/timepicker-sample-1.component";
-import { TimePickerSample2Component } from "../../src/app/timepicker/timepicker-sample-2/timepicker-sample-2.component";
-import { TimePickerSample3Component } from "../../src/app/timepicker/timepicker-sample-3/timepicker-sample-3.component";
-import { TimePickerSample4Component } from "../../src/app/timepicker/timepicker-sample-4/timepicker-sample-4.component";
-import { TimePickerSample5Component } from "../../src/app/timepicker/timepicker-sample-5/timepicker-sample-5.component";
-import { TimepickerDropdownSampleComponent } from "../../src/app/timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component";
+// tslint:disable:max-line-length
+import { IgxIconModule, IgxInputGroupModule, IgxTimePickerModule, IgxToastModule } from "igniteui-angular";
+import { TimePickerSample1Component } from "../../src/app/scheduling/timepicker/timepicker-sample-1/timepicker-sample-1.component";
+import { TimePickerSample2Component } from "../../src/app/scheduling/timepicker/timepicker-sample-2/timepicker-sample-2.component";
+import { TimePickerSample3Component } from "../../src/app/scheduling/timepicker/timepicker-sample-3/timepicker-sample-3.component";
+import { TimePickerSample4Component } from "../../src/app/scheduling/timepicker/timepicker-sample-4/timepicker-sample-4.component";
+import { TimePickerSample5Component } from "../../src/app/scheduling/timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { TimepickerDropdownSampleComponent } from '../../src/app/timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component';
+// tslint:enable:max-line-length
 
 export class TimePickerConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -22,7 +24,7 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TimePickerSample1Component],
                 ngImports: [IgxTimePickerModule]
             }),
-            shortenComponentPathBy: "/timepicker/"
+            shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker sample 2
@@ -33,7 +35,7 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TimePickerSample2Component],
                 ngImports: [IgxTimePickerModule]
             }),
-            shortenComponentPathBy: "/timepicker/"
+            shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker sample 3
@@ -44,7 +46,7 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TimePickerSample3Component],
                 ngImports: [IgxTimePickerModule]
             }),
-            shortenComponentPathBy: "/timepicker/"
+            shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker sample 4
@@ -55,7 +57,7 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TimePickerSample4Component],
                 ngImports: [IgxTimePickerModule, IgxToastModule]
             }),
-            shortenComponentPathBy: "/timepicker/"
+            shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker sample 5
@@ -64,9 +66,9 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimePickerSample5Component],
                 ngDeclarations: [TimePickerSample5Component],
-                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule,]
+                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
             }),
-            shortenComponentPathBy: "/timepicker/"
+            shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         // time picker dropdown sample

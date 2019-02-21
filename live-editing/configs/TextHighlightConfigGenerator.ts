@@ -6,17 +6,13 @@ import {
     IgxRippleModule,
     IgxTextHighlightModule
 } from "igniteui-angular";
+import { TextHighlightSample1Component
+} from "../../src/app/data-display/text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
+import { TextHighlightSample2Component
+} from "../../src/app/data-display/text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-
-import {
-    TextHighlightSample2Component
-} from "../../src/app/text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
-
-import {
-    TextHighlightSample1Component
-} from "../../src/app/text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
 
 export class TextHighlightConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -31,7 +27,7 @@ export class TextHighlightConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxIconModule,
                     IgxInputGroupModule, IgxRippleModule, IgxTextHighlightModule]
             }),
-            shortenComponentPathBy: "/text-highlight/"
+            shortenComponentPathBy: "/data-display/text-highlight/"
         }));
 
         configs.push(new Config({
@@ -43,7 +39,7 @@ export class TextHighlightConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxIconModule,
                     IgxInputGroupModule, IgxRippleModule, IgxTextHighlightModule]
             }),
-            shortenComponentPathBy: "/text-highlight/"
+            shortenComponentPathBy: "/data-display/text-highlight/"
         }));
 
         return configs;
