@@ -4,7 +4,7 @@ import {
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent
 } from "igniteui-angular";
-import { RemoteLoDService } from "../services/remote-lod.service";
+import { IDataState, RemoteLoDService } from "../services/remote-lod.service";
 
 @Component({
     providers: [RemoteLoDService],
@@ -19,8 +19,14 @@ export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
     constructor(private remoteService: RemoteLoDService) { }
 
     public ngAfterViewInit() {
+        const dataState: IDataState = {
+            key: "Customers",
+            parentID: "",
+            parentKey: "",
+            rootLevel: true
+        };
         this.hGrid.isLoading = true;
-        this.remoteService.getData({ parentID: null, rootLevel: true, key: "Customers" }).subscribe((data) => {
+        this.remoteService.getData(dataState).subscribe((data) => {
             this.hGrid.isLoading = false;
             this.hGrid.data = data;
             this.hGrid.cdr.detectChanges();
@@ -28,7 +34,7 @@ export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
     }
 
     public gridCreated(event: IGridCreatedEventArgs, _parentKey: string) {
-        const dataState = {
+        const dataState: IDataState = {
             key: event.owner.key,
             parentID: event.parentID,
             parentKey: _parentKey,

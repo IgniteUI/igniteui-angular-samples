@@ -5,7 +5,7 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 
 import { HierarchicalGridLoDSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-lod/hierarchical-grid-lod.component";
-import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remote-lod.service"
+import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remote-lod.service";
 
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
