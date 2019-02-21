@@ -92,7 +92,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, GridComponent, DataService],
                 ngDeclarations: [GridComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
                     IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
@@ -107,7 +107,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, FinancialSampleComponent, LocalService],
                 ngDeclarations: [FinancialSampleComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [LocalService]
@@ -121,7 +121,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
                 ngDeclarations: [GridSample3Component],
-                ngImports: [IgxButtonModule, IgxGridModule,
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxInputGroupModule, IgxRippleModule, HttpClientModule, IgxIconModule]
             })
         }));
@@ -133,8 +133,8 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
                 ngDeclarations: [GridGroupBySampleComponent],
-                ngImports: [IgxButtonModule, IgxGridModule, IgxIconModule, IgxBadgeModule]
-            })
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(), IgxIconModule, IgxBadgeModule]
+            }),
         }));
 
         configs.push(new Config({
@@ -144,9 +144,9 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
                 ngDeclarations: [GridGroupBySummarySampleComponent],
-                ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
+                ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxBadgeModule]
-            })
+            }),
         }));
 
         configs.push(new Config({
@@ -155,9 +155,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
                 ngDeclarations: [FilteringSampleComponent],
-                ngImports: [IgxGridModule, IgxRippleModule, IgxInputGroupModule],
+                ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxInputGroupModule],
                 ngProviders: []
-            })
+            }),
         }));
 
         configs.push(new Config({
@@ -168,7 +168,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, PagingSampleComponent, DataService],
                 ngDeclarations: [PagingSampleComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
@@ -183,7 +183,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, GridSelectionSampleComponent],
                 ngDeclarations: [GridSelectionSampleComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: []
@@ -197,7 +197,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxIconModule,
                     IgxInputGroupModule, IgxRippleModule, IgxChipsModule, GridSearchSampleComponent],
                 ngDeclarations: [GridSearchSampleComponent],
-                ngImports: [IgxButtonModule, IgxGridModule,
+                ngImports: [IgxButtonModule, IgxGridModule.forRoot(),
                     IgxIconModule, IgxInputGroupModule,
                     IgxRippleModule, IgxChipsModule, HttpClientModule],
                 ngProviders: []
@@ -211,7 +211,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [HttpClientModule, IgxGridModule, IgxRadioModule,
                     IgxColumnHidingModule, GridColumnHidingSampleComponent],
                 ngDeclarations: [GridColumnHidingSampleComponent],
-                ngImports: [IgxGridModule, IgxRadioModule, IgxColumnHidingModule, HttpClientModule],
+                ngImports: [IgxGridModule.forRoot(), IgxRadioModule, IgxColumnHidingModule, HttpClientModule],
                 ngProviders: []
             })
         }));
@@ -222,7 +222,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarSampleComponent],
                 ngDeclarations: [GridColumnHidingToolbarSampleComponent],
-                ngImports: [IgxGridModule, HttpClientModule],
+                ngImports: [IgxGridModule.forRoot(), HttpClientModule],
                 ngProviders: []
             })
         }));
@@ -233,7 +233,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, ResizingSampleComponent],
                 ngDeclarations: [ResizingSampleComponent],
-                ngImports: [IgxGridModule],
+                ngImports: [IgxGridModule.forRoot()],
                 ngProviders: []
             })
         }));
@@ -249,7 +249,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
                     SortingSampleComponent, IgxInputGroupModule, GridContextmenuComponent],
                 ngDeclarations: [SortingSampleComponent, GridContextmenuComponent],
-                ngImports: [IgxGridModule, IgxRippleModule, IgxIconModule, IgxInputGroupModule],
+                ngImports: [IgxGridModule.forRoot(), IgxRippleModule, IgxIconModule, IgxInputGroupModule],
                 ngProviders: []
             })
         }));
@@ -261,7 +261,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridRemoteVirtualizationSampleComponent, IgxGridModule, IgxToastModule,
                     IgxBadgeModule, HttpClientModule, RemoteServiceVirt],
                 ngDeclarations: [GridRemoteVirtualizationSampleComponent],
-                ngImports: [IgxGridModule, IgxToastModule, IgxBadgeModule, HttpClientModule],
+                ngImports: [IgxGridModule.forRoot(), IgxToastModule, IgxBadgeModule, HttpClientModule],
                 ngProviders: [RemoteServiceVirt]
             })
         }));
@@ -273,7 +273,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [RemoteFilteringSampleComponent, IgxGridModule,
                     IgxBadgeModule, HttpClientModule, RemoteFilteringService, IgxToastModule],
                 ngDeclarations: [RemoteFilteringSampleComponent],
-                ngImports: [IgxGridModule, IgxBadgeModule, HttpClientModule, IgxToastModule],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, HttpClientModule, IgxToastModule],
                 ngProviders: [RemoteFilteringService]
             })
         }));
@@ -284,7 +284,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [PinningSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningSampleComponent],
-                ngImports: [IgxGridModule, IgxIconModule],
+                ngImports: [IgxGridModule.forRoot(), IgxIconModule],
                 ngProviders: []
             })
         }));
@@ -296,7 +296,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
                 ngDeclarations: [GridMovingSampleComponent],
-                ngImports: [IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngImports: [IgxGridModule.forRoot(), IgxBadgeModule, IgxIconModule],
                 ngProviders: []
             })
         }));
@@ -307,7 +307,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridToolbarSample1Component, IgxAvatarModule, IgxGridModule],
                 ngDeclarations: [GridToolbarSample1Component],
-                ngImports: [IgxAvatarModule, IgxGridModule],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: []
             })
         }));
@@ -319,7 +319,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridToolbarSample2Component, IgxAvatarModule, IgxGridModule,
                     IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [GridToolbarSample2Component],
-                ngImports: [IgxAvatarModule, IgxGridModule],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             })
         }));
@@ -331,7 +331,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridToolbarSample3Component, IgxAvatarModule, IgxGridModule,
                     IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [GridToolbarSample3Component],
-                ngImports: [IgxAvatarModule, IgxGridModule],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             })
         }));
@@ -342,7 +342,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridToolbarSample4Component, IgxAvatarModule, IgxGridModule],
                 ngDeclarations: [GridToolbarSample4Component],
-                ngImports: [IgxAvatarModule, IgxGridModule],
+                ngImports: [IgxAvatarModule, IgxGridModule.forRoot()],
                 ngProviders: []
             })
         }));
@@ -357,7 +357,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxRippleModule, GridEditingSampleComponent],
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
-                    IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxComboModule]
+                    IgxGridModule.forRoot(), IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxComboModule]
             })
         }));
 
@@ -367,7 +367,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMultiColumnHeadersComponent, IgxGridModule, IgxButtonModule],
                 ngDeclarations: [GridMultiColumnHeadersComponent],
-                ngImports: [IgxGridModule, IgxButtonModule]
+                ngImports: [IgxGridModule.forRoot(), IgxButtonModule]
             })
         }));
 
@@ -390,7 +390,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxGridModule, GridDisplayDensitySampleComponent],
                 ngDeclarations: [GridDisplayDensitySampleComponent],
                 ngImports: [IgxButtonModule, IgxButtonGroupModule,
-                    IgxGridModule]
+                    IgxGridModule.forRoot()]
             })
         }));
 
@@ -400,7 +400,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyleComponent],
                 ngDeclarations: [GridConditionalCellStyleComponent],
-                ngImports: [IgxGridModule]
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 
@@ -423,7 +423,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
                 ngDeclarations: [GridRowEditSampleComponent],
-                ngImports: [IgxGridModule, IgxFocusModule]
+                ngImports: [IgxGridModule.forRoot(), IgxFocusModule]
             })
         }));
 
@@ -433,7 +433,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCustomFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridCustomFilteringComponent],
-                ngImports: [IgxGridModule]
+                ngImports: [IgxGridModule.forRoot()]
             })
         }));
 

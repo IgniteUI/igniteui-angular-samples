@@ -5,7 +5,6 @@ import {
     IgxDropDownComponent,
     IgxInputDirective,
     IgxInputGroupComponent,
-    IgxInputState,
     IgxToastPosition
 } from "igniteui-angular";
 
@@ -151,7 +150,6 @@ export class ChipSampleComponent {
         this.chipList = this.chipList.filter((item) => {
             return item.id !== event.owner.id;
         });
-        this.inputBox.valid = IgxInputState.INITIAL;
         this.chipsArea.cdr.detectChanges();
     }
 
@@ -171,22 +169,18 @@ export class ChipSampleComponent {
                     target: this.inputBox.nativeElement
                 })
             });
-            this.dropDownOpened = true;
             this.inputBox.focus();
         }
     }
 
-    public chipMoveStarted() {
-        if (this.dropDownOpened) {
-            this.igxDropDown.close();
-            this.dropDownOpened = false;
-        }
+    public clickedOutside(e) {
+        this.igxDropDown.close();
     }
 
     public addEmail() {
-        if (this.inputBox.valid === IgxInputState.VALID) {
+        if (this.inputBox.valid === 1) {
             let i;
-            let exists = false;
+            let exists = 0;
 
             if (
                 this.chipList.find(
@@ -206,10 +200,12 @@ export class ChipSampleComponent {
                         name: this.dropDownList[i].name,
                         photo: this.dropDownList[i].photo
                     });
-                    exists = true;
+                    exists = 1;
+                    this.igxDropDown.close();
+                    this.inputBox.value = "";
                 }
             }
-            if (!exists) {
+            if (exists === 0) {
                 this.chipList.push({
                     email: this.inputBox.value,
                     id: this.inputBox.value,
@@ -217,18 +213,14 @@ export class ChipSampleComponent {
                     photo: "assets/images/list/empty.png"
                 });
             }
-        }
-        this.inputBox.focus();
-        this.inputBox.value = "";
-        if (this.dropDownOpened) {
             this.igxDropDown.close();
-            this.dropDownOpened = false;
+            this.inputBox.focus();
+            this.inputBox.value = "";
         }
-        this.inputBox.valid = IgxInputState.INITIAL;
     }
 
     public openDropDown() {
-        if (this.dropDownOpened || !this.igxDropDown.collapsed) {
+        if (this.dropDownOpened) {
             return;
         }
 
@@ -269,9 +261,7 @@ export class ChipSampleComponent {
                     photo: this.dropDownList[i].photo
                 });
                 this.igxDropDown.close();
-                this.dropDownOpened = false;
                 this.inputBox.value = "";
-                this.inputBox.valid = IgxInputState.INITIAL;
             }
         }
     }
@@ -335,12 +325,6 @@ export class ChipSampleComponent {
         }
 
         toast.show();
-    }
-
-    public blurHandler() {
-        if (this.inputBox.value === "" || this.inputBox.value === null) {
-            this.inputBox.valid = IgxInputState.INITIAL;
-        }
     }
 }
 @Pipe({ name: "filter" })

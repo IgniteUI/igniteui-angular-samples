@@ -24,7 +24,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, LocalizationSample1Component, IgxGridModule, IgxIconModule],
                 ngDeclarations: [LocalizationSample1Component],
-                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule]
+                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule.forRoot()]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -37,7 +37,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
                 imports: [IgxInputGroupModule, LocalizationSample2Component, IgxIconModule,
                           IgxTimePickerModule, IgxGridModule],
                 ngDeclarations: [LocalizationSample2Component],
-                ngImports: [IgxInputGroupModule, IgxIconModule, IgxTimePickerModule, IgxGridModule]
+                ngImports: [IgxInputGroupModule, IgxIconModule, IgxTimePickerModule, IgxGridModule.forRoot()]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -49,7 +49,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, LocalizationSample3Component, IgxGridModule, IgxIconModule],
                 ngDeclarations: [LocalizationSample3Component],
-                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule]
+                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule.forRoot()]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));

@@ -28,4 +28,10 @@ import {
         IgxRingSeriesModule
      ]
 })
-export class DoughnutChartSamplesModule {}
+export class DoughnutChartSamplesModule {
+    public static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: DoughnutChartSamplesModule
+        };
+    }
+}

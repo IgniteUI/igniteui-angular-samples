@@ -2,7 +2,7 @@
     <section class="sample-content">
         <div class="sample-holder">
             <div class="chips">
-                <igx-chips-area #chipsArea class="chiparea" (onMoveStart)="chipMoveStarted()" (onReorder)="chipsOrderChanged($event)">
+                <igx-chips-area #chipsArea class="chiparea" (onMoveStart)="clickedOutside($event)" (onReorder)="chipsOrderChanged($event)">
                     <igx-chip class="chipStyle" *ngFor="let chip of chipList" [id]="chip.id" [draggable]="true" [removable]="true" (onRemove)="chipRemoved($event)">
                         <igx-avatar class="chip-avatar-resized" igxPrefix fontSet="material" [src]="chip.photo" roundShape="true"></igx-avatar>
                         <span #label [class]="'igx-chip__text'">{{chip.name}}</span>
@@ -14,7 +14,7 @@
                     <igx-prefix>To:</igx-prefix>
                     <label igxLabel>Email address</label>
                     <input igxInput #inputForm (keyup.enter)="addEmail()" (keydown)="toggleDropDown($event)" (keydown.ArrowDown)="openDropDown()"
-                        type="email" [igxDropDownItemNavigation]="dropdown" (blur)="blurHandler()" required />
+                        type="email" [igxDropDownItemNavigation]="dropdown" required />
                 </igx-input-group>
                 <igx-input-group>
                     <igx-prefix>Cc:</igx-prefix>

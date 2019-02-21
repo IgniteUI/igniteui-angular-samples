@@ -1,5 +1,5 @@
 
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, NgZone, ViewChild } from "@angular/core";
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
     IgxSliderComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings,
     VerticalAlignment} from "igniteui-angular";
@@ -42,7 +42,7 @@ export class Button {
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
+export class TreeGridFinJSComponent implements AfterViewInit  {
     @ViewChild("grid1") public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
 
@@ -175,10 +175,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         // returns the main div container of the Index Component,
         // if path is /samples/sample-url, or the appRoot, if path is /sample-url
         return this.elRef.nativeElement.parentElement.parentElement;
-    }
-
-    public ngOnDestroy() {
-        this.stopFeed();
     }
 
     public toggleToolbar(event: any) {

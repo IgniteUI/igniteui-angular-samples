@@ -6,7 +6,7 @@ import { Component, ViewChild } from "@angular/core";
     templateUrl: "./input-group-sample-5.component.html"
 })
 export class InputGroupSample5Component {
-    @ViewChild("input1") public searchInput;
+    @ViewChild("input1") public searchInput: HTMLInputElement;
 
     public clearSearchInput() {
         this.searchInput.value = "";

@@ -66,4 +66,11 @@ import { FinancialChartVolumeTypeComponent } from "./volume-type/financial-chart
         IgxLegendModule
     ]
 })
-export class FinancialChartSamplesModule {}
+export class FinancialChartSamplesModule {
+    public static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: FinancialChartSamplesModule,
+            providers: [ StockDataService, FinancialDataService ]
+        };
+    }
+}

@@ -19,4 +19,10 @@ import { CategoryChartHighVolumeComponent } from "./high-volume/category-chart-h
         IgxSliderModule
     ]
 })
-export class CategoryChartPerformanceSamplesModule {}
+export class CategoryChartPerformanceSamplesModule {
+    public static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: CategoryChartPerformanceSamplesModule
+        };
+    }
+}

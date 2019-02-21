@@ -2,7 +2,6 @@
 import {
     IgxButtonGroupModule,
     IgxButtonModule,
-    IgxCsvExporterService,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
@@ -27,13 +26,12 @@ export class GridFinjsConfigGenerator implements IConfigGenerator {
                 "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
-                    IgxRippleModule, FinJSDemoComponent,
+                    IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, FinJSDemoComponent,
                     LocalDataService],
                 ngDeclarations: [FinJSDemoComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule],
-                ngProviders: [LocalDataService, IgxExcelExporterService, IgxCsvExporterService]
+                    IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule.forRoot()],
+                ngProviders: [LocalDataService, IgxExcelExporterService]
             })
         }));
 

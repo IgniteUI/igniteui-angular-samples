@@ -14,7 +14,7 @@ new Config({
         imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxGridModule,
             GridComponent, DataService],
         ngDeclarations: [GridComponent],
-        ngImports: [IgxAvatarModule, IgxBadgeModule, IgxGridModule,
+        ngImports: [IgxAvatarModule, IgxBadgeModule, IgxGridModule.forRoot(),
             HttpClientModule],
         ngProviders: [DataService]
     }),
