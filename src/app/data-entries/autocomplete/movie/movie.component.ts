@@ -1,20 +1,15 @@
-import { Component, Pipe, PipeTransform } from "@angular/core";
+import { ChangeDetectorRef, Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
-import { DateRangeType } from "igniteui-angular";
+import { DateRangeType, IgxDialogComponent } from "igniteui-angular";
 @Component({
     selector: "movie-availability",
     styleUrls: ["./movie.component.scss"],
     templateUrl: "./movie.component.html"
 })
 export class MovieComponent {
+    @ViewChild("alert", { read: IgxDialogComponent }) public alert: IgxDialogComponent;
     public user;
-    public get message() {
-        return "There " + ["are", "aren't"][Math.round(Math.random())] +
-            " available tickets for '" + this.user.value.movie + "'" +
-            " in '" + this.user.value.cinema + "'" +
-            " on " + this.user.value.date.toLocaleDateString() +
-            " at " + this.user.value.date.getHours() + ":00";
-    }
+    public message = "";
 
     public towns = [
         { name: "Sofia", cinemas: ["Lumiere Arena", "Grande Odeon", "Euro Cinema City", "Vlaikova 4DMax" ]},
@@ -61,6 +56,15 @@ export class MovieComponent {
         if (date) {
             date.setTime((event.newValue as Date).getTime());
         }
+    }
+
+    public onCheck() {
+        this.alert.message = "There " + ["are", "aren't"][Math.round(Math.random())] +
+            " available tickets for '" + this.user.value.movie + "'" +
+            " in '" + this.user.value.cinema + "'" +
+            " on " + this.user.value.date.toLocaleDateString() +
+            " at " + this.user.value.date.getHours() + ":00";
+        this.alert.open();
     }
 }
 
