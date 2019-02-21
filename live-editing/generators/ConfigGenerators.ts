@@ -40,6 +40,7 @@ import { OverlayConfigGenerator } from "../configs/OverlayConfigGenerator";
 import { PieChartConfigGenerator } from "../configs/PieChartConfigGenerator";
 import { RadioConfigGenerator } from "../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "../configs/RippleConfigGenerator";
+import { SelectConfigGenerator } from "../configs/SelectConfigGenerator";
 import { SliderConfigGenerator } from "../configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "../configs/SnackbarConfigGenerator";
 import { SwitchConfigGenerator } from "../configs/SwitchConfigGenerator";
@@ -65,7 +66,7 @@ export const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, B
     GridFinjsConfigGenerator, IconConfigGenerator, OverlayConfigGenerator, GaugesConfigGenerator,
     DragAndDropConfigGenerator, InputGroupConfigGenerator, LayoutConfigGenerator, LinearProgressbarConfigGenerator,
     ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator, NavbarConfigGenerator,
-    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
+    NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SelectConfigGenerator, SliderConfigGenerator,
     SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
     TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator,
     TooltipConfigGenerator, TimePickerConfigGenerator, ThemingConfigGenerator];
