@@ -13,7 +13,7 @@ export class HGridEditingSampleComponent implements OnInit {
     public localdata;
     public singer;
 
-    @ViewChild("hGrid")
+    @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     @ViewChild("dialogAdd", { read: IgxDialogComponent })
