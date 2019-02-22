@@ -16,5 +16,6 @@ export const schedulingRoutesData = {
     "timepicker-sample-2": { displayName: "One-way data bound Timepicker", parentName: "Timepicker" },
     "timepicker-sample-3": { displayName: "Timepicker Delta and Spin Mode", parentName: "Timepicker" },
     "timepicker-sample-4": { displayName: "Timepicker Validation", parentName: "Timepicker" },
-    "timepicker-sample-5": { displayName: "Timepicker Input Group Template", parentName: "Timepicker" }
+    "timepicker-sample-5": { displayName: "Timepicker Input Group Template", parentName: "Timepicker" },
+    "timepicker-dropdown-sample": { displayName: "Timepicker DropDown", parentName: "Timepicker" },
 };

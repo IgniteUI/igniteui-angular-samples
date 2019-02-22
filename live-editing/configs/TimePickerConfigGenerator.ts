@@ -9,7 +9,8 @@ import { TimePickerSample5Component } from "../../src/app/scheduling/timepicker/
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { TimepickerDropdownSampleComponent } from '../../src/app/timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component';
+import { TimepickerDropdownSampleComponent } from '../../src/app/scheduling/timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component';
+
 // tslint:enable:max-line-length
 
 export class TimePickerConfigGenerator implements IConfigGenerator {
