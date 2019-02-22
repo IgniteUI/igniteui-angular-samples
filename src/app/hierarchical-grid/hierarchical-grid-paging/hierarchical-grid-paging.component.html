@@ -1,6 +1,6 @@
 <div class="hgrid-sample">
     <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false" [paging]="true" [perPage]="5"
-        [height]="'450px'" [width]="'1000px'" #hierarchicalGrid>
+        [height]="'450px'" [width]="'100%'" #hierarchicalGrid>
         <igx-column field="Artist"></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">
@@ -13,7 +13,7 @@
         <igx-column field="Grammy Nominations"></igx-column>
         <igx-column field="Grammy Awards"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" #layout1 >
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false">
             <igx-column field="Album"></igx-column>
             <igx-column field="Launch Date"></igx-column>
             <igx-column field="Billboard Review"></igx-column>

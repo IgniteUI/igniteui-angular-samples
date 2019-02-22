@@ -11,12 +11,6 @@ import { SINGERS } from "../data";
 export class HGridCostumHidingSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
-    @ViewChild("hierarchicalGrid")
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
-
     constructor() {}
 
     public ngOnInit(): void {

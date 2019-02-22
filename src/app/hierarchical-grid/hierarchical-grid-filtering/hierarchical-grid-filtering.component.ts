@@ -11,9 +11,6 @@ import { SINGERS } from "../data";
 export class HGridFilteringSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 

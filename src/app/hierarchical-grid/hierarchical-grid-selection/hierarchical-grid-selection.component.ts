@@ -12,9 +12,6 @@ export class HGridSelectionSampleComponent implements OnInit {
     public localdata;
     public selection = true;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 

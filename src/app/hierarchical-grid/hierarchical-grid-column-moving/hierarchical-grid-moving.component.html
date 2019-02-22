@@ -1,4 +1,4 @@
-<igx-hierarchical-grid #hierarchicalGrid [data]="localdata" [height]="'600px'" [width]="'100%'" [paging]="true" [perPage]="15">
+<igx-hierarchical-grid #hierarchicalGrid [data]="localdata" [height]="'500px'" [width]="'100%'" [paging]="true" [perPage]="15">
     <igx-column #customerid field="CustomerID" [movable]="true">
         <ng-template igxHeader>
             <div class="title-inner">
@@ -80,7 +80,7 @@
         </ng-template>
     </igx-column>
 
-    <igx-row-island [key]="'Orders'" [autoGenerate]="false" #layout1 >
+    <igx-row-island [key]="'Orders'" [autoGenerate]="false">
             <igx-column field="OrderID" [movable]="true"></igx-column>
             <igx-column field="EmployeeID" [movable]="true"></igx-column>
             <igx-column field="OrderDate" [movable]="true"></igx-column>

@@ -1,0 +1,9 @@
+<div class="select-wrapper">
+    <igx-select [overlaySettings]="customOverlaySettings">
+        <label igxLabel>Select An Item</label>
+        <igx-select-item *ngFor="let item of items" [value]="item">
+            {{item}}
+        </igx-select-item>
+    </igx-select>
+</div>
+    

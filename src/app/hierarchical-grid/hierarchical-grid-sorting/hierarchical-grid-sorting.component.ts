@@ -17,9 +17,6 @@ export class HGridSortingSampleComponent implements OnInit, AfterViewInit {
     public contextmenuY = 0;
     public clickedCell = null;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 

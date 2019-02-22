@@ -13,9 +13,6 @@ export class HGridDisplayDensitySampleComponent implements OnInit {
     public density = "compact";
     public displayDensities;
 
-    @ViewChild("layout1")
-    private layout1: IgxRowIslandComponent;
-
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
