@@ -18,6 +18,7 @@ import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
+import { DropDownSample5Component } from "./dropdown/dropdown-sample-5/dropdown-sample-5.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -28,6 +29,10 @@ import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/react
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
+import { SelectSample1Component } from "./select/select-sample-1/select-sample-1.component";
+import { SelectSample2Component } from "./select/select-sample-2/select-sample-2.component";
+import { SelectSample3Component } from "./select/select-sample-3/select-sample-3.component";
+import { SelectSample4Component } from "./select/select-sample-4/select-sample-4.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
 
@@ -113,6 +118,11 @@ export const dataEntriesRoutes: Routes = [
         path: "dropdown-sample-3"
     },
     {
+        component: DropDownSample5Component,
+        data: dataEntriesRoutesData["dropdown-sample-5"],
+        path: "dropdown-sample-5"
+    },
+    {
         component: DropDownSample4Component,
         data: dataEntriesRoutesData["dropdown-sample-4"],
         path: "dropdown-sample-4"
@@ -176,6 +186,26 @@ export const dataEntriesRoutes: Routes = [
         component: SwitchSample2Component,
         data: dataEntriesRoutesData["switch-sample-2"],
         path: "switch-sample-2"
+    },
+    {
+        component: SelectSample1Component,
+        data: dataEntriesRoutesData["select-sample-1"],
+        path: "select-sample-1"
+    },
+    {
+        component: SelectSample2Component,
+        data: dataEntriesRoutesData["select-sample-2"],
+        path: "select-sample-2"
+    },
+    {
+        component: SelectSample3Component,
+        data: dataEntriesRoutesData["select-sample-3"],
+        path: "select-sample-3"
+    },
+    {
+        component: SelectSample4Component,
+        data: dataEntriesRoutesData["select-sample-4"],
+        path: "select-sample-4"
     }
 ];
 
