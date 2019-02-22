@@ -24,6 +24,7 @@ import { TreeGridSummarySampleComponent } from "../../src/app/tree-grid/tree-gri
 import { TreeGridToolbarSample1Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-1/tree-grid-toolbar-sample-1.component";
 import { TreeGridToolbarSample2Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-2/tree-grid-toolbar-sample-2.component";
 import { TreeGridToolbarSample3Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-3/tree-grid-toolbar-sample-3.component";
+import { TreeGridToolbarSample4Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -258,9 +259,11 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/employees-flat-avatars.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridToolbarSample1Component, IgxAvatarModule],
+                imports: [IgxTreeGridModule, TreeGridToolbarSample1Component, IgxAvatarModule,
+                    IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [TreeGridToolbarSample1Component],
-                ngImports: [IgxTreeGridModule, IgxAvatarModule]
+                ngImports: [IgxTreeGridModule, IgxAvatarModule],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             }),
             component: TreeGridToolbarSample1Component,
             shortenComponentPathBy: "/tree-grid/"
@@ -270,9 +273,11 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/employees-flat-avatars.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridToolbarSample2Component, IgxAvatarModule],
+                imports: [IgxTreeGridModule, TreeGridToolbarSample2Component, IgxAvatarModule,
+                    IgxExcelExporterService, IgxCsvExporterService],
                 ngDeclarations: [TreeGridToolbarSample2Component],
-                ngImports: [IgxTreeGridModule, IgxAvatarModule]
+                ngImports: [IgxTreeGridModule, IgxAvatarModule],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             }),
             component: TreeGridToolbarSample2Component,
             shortenComponentPathBy: "/tree-grid/"
@@ -284,9 +289,23 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridToolbarSample3Component, IgxAvatarModule, IgxButtonModule, IgxRippleModule, IgxIconModule],
                 ngDeclarations: [TreeGridToolbarSample3Component],
-                ngImports: [IgxTreeGridModule, IgxAvatarModule, IgxButtonModule, IgxRippleModule, IgxIconModule]
+                ngImports: [IgxTreeGridModule, IgxAvatarModule, IgxButtonModule, IgxRippleModule, IgxIconModule],
+                ngProviders: []
             }),
             component: TreeGridToolbarSample3Component,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Toolbar sample 4
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-avatars.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridToolbarSample4Component, IgxAvatarModule],
+                ngDeclarations: [TreeGridToolbarSample4Component],
+                ngImports: [IgxTreeGridModule, IgxAvatarModule],
+                ngProviders: []
+            }),
+            component: TreeGridToolbarSample4Component,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

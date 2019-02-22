@@ -1,5 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
+import { AutocompleteBasic } from "./autocomplete/autocomplete/autocomplete.component";
+import { MovieComponent } from "./autocomplete/movie/movie.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -18,6 +21,7 @@ import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
+import { DropDownSample5Component } from "./dropdown/dropdown-sample-5/dropdown-sample-5.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -36,6 +40,21 @@ import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
 
 export const dataEntriesRoutes: Routes = [
+    {
+        component: AutocompleteBasic,
+        data: dataEntriesRoutesData.autocomplete,
+        path: "autocomplete"
+    },
+    {
+        component: AutocompleteRemote,
+        data: dataEntriesRoutesData["autocomplete-remote"],
+        path: "autocomplete-remote"
+    },
+    {
+        component: MovieComponent,
+        data: dataEntriesRoutesData.movie,
+        path: "movie"
+    },
     {
         component: ButtonGroupSample1Component,
         data: dataEntriesRoutesData["button-group-sample-1"],
@@ -115,6 +134,11 @@ export const dataEntriesRoutes: Routes = [
         component: DropDownSample3Component,
         data: dataEntriesRoutesData["dropdown-sample-3"],
         path: "dropdown-sample-3"
+    },
+    {
+        component: DropDownSample5Component,
+        data: dataEntriesRoutesData["dropdown-sample-5"],
+        path: "dropdown-sample-5"
     },
     {
         component: DropDownSample4Component,

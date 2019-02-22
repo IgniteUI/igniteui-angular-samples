@@ -57,6 +57,9 @@ import {
     TreeGridToolbarSample3Component
 } from "./tree-grid-toolbar-sample-3/tree-grid-toolbar-sample-3.component";
 import {
+    TreeGridToolbarSample4Component
+} from "./tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
+import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
@@ -165,6 +168,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridToolbarSample3Component,
         data: treeGridRoutesData["treegrid-toolbar-3"],
         path: "treegrid-toolbar-3"
+    },
+    {
+        component: TreeGridToolbarSample4Component,
+        data: treeGridRoutesData["treegrid-toolbar-4"],
+        path: "treegrid-toolbar-4"
     },
     {
         component: TreeGridSummarySampleComponent,
