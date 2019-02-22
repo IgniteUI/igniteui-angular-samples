@@ -1,7 +1,7 @@
 /* tslint:disable:max-line-length */
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { hierarchicalGridRoutesData } from "./hgrid-routes-data";
+
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HGridCostumHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
@@ -12,9 +12,11 @@ import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
+import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
+import { hierarchicalGridRoutesData } from "./hierarchical-grid-routes-data";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
@@ -144,6 +146,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-batch-editing"],
         path: "hierarchical-grid-batch-editing"
+    },
+    {
+        component: HierarchicalGridLoDSampleComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-lod"],
+        path: "hierarchical-grid-lod"
     }
 ];
 
@@ -155,4 +162,4 @@ export const hierarchicalGridRoutes: Routes = [
         RouterModule.forChild(hierarchicalGridRoutes)
     ]
 })
-export class HgridRoutingModule { }
+export class HierarchicalGridRoutingModule { }

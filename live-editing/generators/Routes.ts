@@ -14,8 +14,8 @@ import * as GridFinjsRouting from "../../src/app/grid-finjs/grid-finjs-routing.m
 import { GridFinjsModule } from "../../src/app/grid-finjs/grid-finjs.module";
 import * as GridRouting from "../../src/app/grid/grids-routing.module";
 import { GridsModule } from "../../src/app/grid/grids.module";
-import * as HgridRouting from "../../src/app/hierarchical-grid/hgrid-routing.module";
-import { HGridModule } from "../../src/app/hierarchical-grid/hgrid.module";
+import * as HierarchicalGridRouting from "../../src/app/hierarchical-grid/hierarchical-grid-routing.module";
+import { HierarchicalGridModule } from "../../src/app/hierarchical-grid/hierarchical-grid.module";
 import * as InteractionsRouting from "../../src/app/interactions/interactions-routing.module";
 import { InteractionsModule } from "../../src/app/interactions/interactions.module";
 import * as LayoutsRouting from "../../src/app/layouts/layouts-routing.module";
@@ -95,12 +95,12 @@ export const MODULE_ROUTES = [
         routes: GridRouting.gridsRoutes
     },
     {
-        module: HGridModule,
-        routes: HgridRouting.hierarchicalGridRoutes
+        module: HierarchicalGridModule,
+        routes: HierarchicalGridRouting.hierarchicalGridRoutes
     },
     {
         module: GridCRMModule,
-        routes: GridCRMRouting.gridcrmRoutes,
+        routes: GridCRMRouting.gridcrmRoutes
     },
     {
         module: ServicesModule,

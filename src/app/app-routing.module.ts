@@ -74,7 +74,7 @@ export const samplesRoutes: Routes = [
         path: "grid"
     },
     {
-        loadChildren: "./hierarchical-grid/hgrid.module#HGridModule",
+        loadChildren: "./hierarchical-grid/hierarchical-grid.module#HierarchicalGridModule",
         path: "hierarchical-grid"
     },
     {
