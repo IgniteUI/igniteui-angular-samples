@@ -4,9 +4,7 @@
         <igx-time-picker id="time-picker" #datePicker [(ngModel)]="date" [mode]="mode" [format]="format">
         </igx-time-picker>
         <div>
-            <label>Mode: {{ datePicker.mode }}</label>
-            <label>Date: {{ date }}</label>
-            <label>Format: {{ datePicker.format }}</label>
+            <label igxLabel>Date: {{ date | date:'short' }}</label>
         </div>
     </div>
 </div>

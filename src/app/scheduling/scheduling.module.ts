@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDialogModule, IgxIconModule, IgxInputGroupModule,
-    IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule, IgxLabelDirective
+    IgxSnackbarModule, IgxSwitchModule, IgxTimePickerModule, IgxToastModule
 } from "igniteui-angular";
 import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
@@ -20,7 +20,7 @@ import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/dat
 import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
 import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { SchedulingRoutingModule } from "./scheduling-routing.module";
-import { TimepickerDropdownSampleComponent } from "./timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component";
+import { TimepickerDropdownComponent } from "./timepicker/timepicker-dropdown/timepicker-dropdown.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -48,7 +48,7 @@ import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/tim
         TimePickerSample3Component,
         TimePickerSample4Component,
         TimePickerSample5Component,
-        TimepickerDropdownSampleComponent
+        TimepickerDropdownComponent
     ],
     imports: [
         CommonModule,

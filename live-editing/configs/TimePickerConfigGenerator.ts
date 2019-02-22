@@ -1,6 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 // tslint:disable:max-line-length
 import { IgxIconModule, IgxInputGroupModule, IgxTimePickerModule, IgxToastModule } from "igniteui-angular";
+import { TimepickerDropdownComponent } from "../../src/app/scheduling/timepicker/timepicker-dropdown/timepicker-dropdown.component";
 import { TimePickerSample1Component } from "../../src/app/scheduling/timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "../../src/app/scheduling/timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "../../src/app/scheduling/timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -9,7 +10,6 @@ import { TimePickerSample5Component } from "../../src/app/scheduling/timepicker/
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { TimepickerDropdownSampleComponent } from '../../src/app/scheduling/timepicker/timepicker-dropdown-sample/timepicker-dropdown-sample.component';
 
 // tslint:enable:max-line-length
 
@@ -74,11 +74,11 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
 
         // time picker dropdown sample
         configs.push(new Config({
-            component: TimepickerDropdownSampleComponent,
+            component: TimepickerDropdownComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimepickerDropdownSampleComponent],
-                ngDeclarations: [TimepickerDropdownSampleComponent],
-                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule,]
+                imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimepickerDropdownComponent],
+                ngDeclarations: [TimepickerDropdownComponent],
+                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/timepicker/"
         }));
