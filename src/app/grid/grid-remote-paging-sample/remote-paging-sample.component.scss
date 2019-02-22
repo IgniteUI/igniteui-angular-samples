@@ -1,4 +1,40 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+@include igx-core();
+@include igx-theme($default-palette, $legacy-support: true);
+
+
+$custom-paginator-theme: igx-grid-paginator-theme(
+    $text-color: #09f
+);
+$custom-button-theme: igx-button-theme(
+    $icon-color: #09f,
+    $icon-hover-color: #dadada,
+    $icon-focus-color:rgb(0, 119, 255),
+    $icon-focus-background: #aeaeae
+);
+
+.customPager {
+    @include igx-grid-paginator($custom-paginator-theme);
+    @include igx-button($custom-button-theme);
+}
+
 .grid__wrapper {
     margin: 0 16px;
     padding-top: 10px;
+}
+.pageNavLinks {
+    text-decoration: none;
+    font-size: 10.5pt;
+    color: #09f;
+}
+.activePage {
+    font-size: 11.5pt;
+    font-weight: bold;
+}
+.igx-input-group__input {
+    display: inline;
+} 	
+.changeBtn {
+    margin-top: 10px;
 }

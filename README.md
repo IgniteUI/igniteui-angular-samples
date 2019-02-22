@@ -27,6 +27,12 @@ To start the dev server run:
 npm run start
 ```
 
+## Dev Server and Live Editing
+To generate the live editing applications along with the dev server run:
+```
+npm run start:live-editing
+```
+
 ## Live Editing Watcher
 Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made:
 

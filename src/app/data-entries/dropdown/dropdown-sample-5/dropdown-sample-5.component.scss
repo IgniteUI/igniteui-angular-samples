@@ -7,6 +7,16 @@
     width:100px;
 }
 
+.controls-wrapper {
+    display: flex;
+    flex-flow: row;
+    max-width: 450px;
+}
+
+igx-switch {
+    padding-left: 24px;
+}
+
 .drop-down__scroll-container {
     max-height: 240px;
     overflow-y: auto;
