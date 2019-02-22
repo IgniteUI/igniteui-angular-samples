@@ -68,6 +68,8 @@ export class TreeGridSummary2SampleComponent implements OnInit {
     public summaryCalcModes;
     public summaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
 
+    public priceSummary = CustomPriceSummary;
+
     constructor() {
         this.data = FOODS_DATA();
         this.expr = [
@@ -115,6 +117,10 @@ export class TreeGridSummary2SampleComponent implements OnInit {
     }
 
     public ngOnInit() {
+        this.grid1.sortingExpressions = [
+            { dir: SortingDirection.Desc, fieldName: "ID",
+              ignoreCase: true, strategy: DefaultSortingStrategy.instance() }
+        ];
     }
 
     public selectSummaryPosition(event) {
@@ -129,5 +135,24 @@ export class TreeGridSummary2SampleComponent implements OnInit {
 
     public toggleSummary(column: IgxColumnComponent) {
         column.hasSummary = !column.hasSummary;
+    }
+}
+
+export class CustomPriceSummary extends IgxNumberSummaryOperand {
+
+    constructor() {
+        super();
+    }
+
+    public operate(data?: any[]): IgxSummaryResult[] {
+        const result = [];
+        result.push(
+            {
+                key: "average",
+                label: "average",
+                summaryResult: data.length ? IgxNumberSummaryOperand.average(data).toFixed(2) : null
+            }
+        );
+        return result;
     }
 }
