@@ -53,6 +53,7 @@ import { ToggleConfigGenerator } from "../configs/ToggleConfigGenerator";
 import { TooltipConfigGenerator } from "../configs/TooltipConfigGenerator";
 import { TreeGridConfigGenerator } from "../configs/TreeGridConfigGenerator";
 import { TreeGridFinjsConfigGenerator } from "../configs/TreeGridFinjsConfigGenerator";
+import { HierarchicalGridConfigGenerator } from "../configs/HierarchicalGridConfigGenerator";
 
 export const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator,
     ButtonConfigGenerator, ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator,
@@ -68,4 +69,4 @@ export const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, B
     NavdrawerConfigGenerator, RadioConfigGenerator, RippleConfigGenerator, SliderConfigGenerator,
     SnackbarConfigGenerator, SwitchConfigGenerator, TabBarConfigGenerator, TabsConfigGenerator,
     TextHighlightConfigGenerator, ToastConfigGenerator, ToggleConfigGenerator, TreeGridConfigGenerator,
-    TooltipConfigGenerator, TimePickerConfigGenerator, ThemingConfigGenerator];
+    TooltipConfigGenerator, TimePickerConfigGenerator, HierarchicalGridConfigGenerator, ThemingConfigGenerator];

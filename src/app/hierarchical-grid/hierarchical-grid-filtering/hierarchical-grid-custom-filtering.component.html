@@ -4,8 +4,8 @@
         <igx-column field="Artist" [filterable]='true' [dataType]="'string'" [filters]="caseSensitiveFilteringOperand"></igx-column>
         <igx-column field="HasGrammyAward" [filterable]='true' [dataType]="'boolean'" [filters]="booleanFilteringOperand">
             <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="https://www.infragistics.com/angular-demos/assets/images/grid/active.png" title="True" alt="True" />
-                <img *ngIf="!val" src="https://www.infragistics.com/angular-demos/assets/images/grid/expired.png" title="False" alt="False" />
+                <img *ngIf="val" src="assets/images/grid/active.png" title="True" alt="True" />
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="False" alt="False" />
             </ng-template>
         </igx-column>
         <igx-column field="Debut" [filterable]='true'></igx-column>
