@@ -1,10 +1,17 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
-    IgxDatePickerModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
-    IgxNavbarModule, IgxRadioModule, IgxRippleModule,
-    IgxSelectModule, IgxSwitchModule, IgxTimePickerModule, IgxToggleModule} from "igniteui-angular";
+import { IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
+    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
+    IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule,
+    IgxSwitchModule, IgxTimePickerModule, IgxToggleModule} from "igniteui-angular";
+import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
+import { AutocompleteBasic, AutocompletePipeStartsWith } from "./autocomplete/autocomplete/autocomplete.component";
+import {
+    AutocompleteGroupPipeContains,
+    AutocompletePipeContains,
+    MovieComponent
+} from "./autocomplete/movie/movie.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
@@ -43,6 +50,11 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
 
 @NgModule({
     declarations: [
+        AutocompleteBasic,
+        AutocompleteRemote,
+        AutocompletePipeContains,
+        AutocompletePipeStartsWith,
+        AutocompleteGroupPipeContains,
         ButtonGroupSample1Component,
         ButtonGroupSample2Component,
         ButtonGroupSample3Component,
@@ -67,6 +79,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         InputGroupSample4Component,
         InputGroupSample5Component,
         InputGroupSample6Component,
+        MovieComponent,
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
         RadioSample1Component,
@@ -83,8 +96,10 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         FormsModule,
         ReactiveFormsModule,
         DataEntriesRoutingModule,
+        IgxAutocompleteModule,
         IgxButtonGroupModule,
         IgxButtonModule,
+        IgxDialogModule,
         IgxIconModule,
         IgxRippleModule,
         IgxCheckboxModule,
@@ -96,8 +111,9 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         IgxDatePickerModule,
         IgxTimePickerModule,
         IgxRadioModule,
+        IgxSelectModule,
         IgxSwitchModule,
-        IgxSelectModule
+        IgxProgressBarModule
     ]
 })
 export class DataEntriesModule { }
