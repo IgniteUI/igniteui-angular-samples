@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
+import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { DateRangeType, IgxDialogComponent } from "igniteui-angular";
 @Component({
