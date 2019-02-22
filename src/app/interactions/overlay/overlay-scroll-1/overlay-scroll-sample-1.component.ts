@@ -1,9 +1,7 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
-    AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
-    CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxCardModule, IgxIconModule, IgxOverlayService,
-    IgxSwitchModule, IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment
+    AbsoluteScrollStrategy, AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy,
+    GlobalPositionStrategy, HorizontalAlignment, IgxOverlayService, OverlaySettings, PositionSettings, VerticalAlignment
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -56,6 +54,9 @@ export class OverlayScrollSample1Component {
         switch (strat) {
             case ("auto"):
                 positionStrategy = new AutoPositionStrategy(positionSettings);
+                break;
+            case ("elastic"):
+                positionStrategy = new ElasticPositionStrategy(positionSettings);
                 break;
             case ("connected"):
                 positionStrategy = new ConnectedPositioningStrategy(positionSettings);
