@@ -1,5 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
+import { Router, RouterModule} from "@angular/router";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -374,9 +375,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: RemotePagingGridSample,
             additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [RemotePagingGridSample, IgxGridModule, HttpClientModule, RemotePagingService],
+                imports: [RemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule, RemotePagingService],
                 ngDeclarations: [RemotePagingGridSample],
-                ngImports: [IgxGridModule, HttpClientModule],
+                ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule],
                 ngProviders: [RemotePagingService]
             })
         }));
