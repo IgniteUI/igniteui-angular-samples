@@ -77,6 +77,9 @@ import {
     TreeGridToolbarSample3Component
 } from "./tree-grid-toolbar-sample-3/tree-grid-toolbar-sample-3.component";
 import {
+    TreeGridToolbarSample4Component
+} from "./tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
+import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 
@@ -104,6 +107,7 @@ import {
         TreeGridToolbarSample1Component,
         TreeGridToolbarSample2Component,
         TreeGridToolbarSample3Component,
+        TreeGridToolbarSample4Component,
         TreeGridSummarySampleComponent,
         TreeGridSummary2SampleComponent,
         TreeGridConditionalCellStyleComponent,
