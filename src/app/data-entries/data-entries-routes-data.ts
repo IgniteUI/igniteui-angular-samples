@@ -20,6 +20,7 @@ export const dataEntriesRoutesData = {
     "dropdown-sample-1": { displayName: "Simple Dropdown", parentName: "Dropdown" },
     "dropdown-sample-2": { displayName: "Dropdown Selection", parentName: "Dropdown" },
     "dropdown-sample-3": { displayName: "Dropdown Headers", parentName: "Dropdown" },
+    "dropdown-sample-5": { displayName: "Dropdown Groups", parentName: "Dropdown" },
     "dropdown-sample-4": { displayName: "Input Dropdown Selection", parentName: "Dropdown" },
     "input-group-sample-1": { displayName: "Simple Input Group", parentName: "Input Group" },
     "input-group-sample-2": { displayName: "Input Required", parentName: "Input Group" },

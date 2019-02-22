@@ -10,6 +10,10 @@
                         <igx-icon>notifications</igx-icon>
                         <p>Auto</p>
                     </span>
+                    <span (click)="onClickModal($event, 'elastic')">
+                        <igx-icon>notifications</igx-icon>
+                        <p>Elastic</p>
+                    </span>
                     <span (click)="onClickModal($event, 'connected')">
                         <igx-icon>notifications</igx-icon>
                         <p>Connect</p>
@@ -29,7 +33,8 @@
                     <h3 class="igx-card-header__title">Overlay</h3>
                 </igx-card-header>
                 <igx-card-content>
-                    <p class="igx-card-content__text">Click on the positioning settings to dynamically re-attach this element.</p>
+                    <p class="igx-card-content__text">Click on the positioning settings to dynamically re-attach this
+                        element.</p>
                 </igx-card-content>
             </igx-card>
         </div>
