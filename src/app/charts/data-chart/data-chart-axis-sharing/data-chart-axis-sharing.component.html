@@ -1,0 +1,41 @@
+<div class="sample">
+    <div class="chart">
+        <igx-data-chart
+            width="100%"
+            height="100%"
+            [dataSource]="data" >
+
+            <igx-category-x-axis #xAxisShared name="xAxisShared" label="Date"></igx-category-x-axis>
+            <igx-numeric-y-axis #yAxisRight name="yAxisRight" labelLocation="OutsideRight"
+                minimumValue="400" title="Stock Price ($)"
+                maximumValue="700"></igx-numeric-y-axis>
+            <igx-numeric-y-axis #yAxisLeft name="yAxisLeft" labelLocation="OutsideLeft"
+                minimumValue="0" title="Money Flow Index"
+                maximumValue="300"
+                majorStrokeThickness="0"></igx-numeric-y-axis>
+
+            <igx-money-flow-index-indicator
+                name="series2"
+                [xAxis]="xAxisShared"
+                [yAxis]="yAxisLeft"
+                displayType="Area"
+                highMemberPath="High"
+                lowMemberPath="Low"
+                closeMemberPath="Close"
+                openMemberPath="Open"
+                volumeMemberPath="Volume"></igx-money-flow-index-indicator>
+
+            <igx-financial-price-series
+                name="series1"
+                [xAxis]="xAxisShared"
+                [yAxis]="yAxisRight"
+                displayType="Candlestick"
+                highMemberPath="High"
+                lowMemberPath="Low"
+                closeMemberPath="Close"
+                openMemberPath="Open"
+                volumeMemberPath="Volume"></igx-financial-price-series>
+
+        </igx-data-chart>
+    </div>
+</div>
