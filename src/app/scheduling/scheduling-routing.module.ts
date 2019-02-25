@@ -20,6 +20,7 @@ import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/tim
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
+import { DatepickerDropdownComponent } from './datepicker/datepicker-dropdown/datepicker-dropdown.component';
 
 export const schedulingRoutes: Routes = [
     {
@@ -90,6 +91,11 @@ export const schedulingRoutes: Routes = [
         component: DatepickerSample6Component,
         data: schedulingRoutesData["datepicker-sample-6"],
         path: "datepicker-sample-6"
+    },
+    {
+        component: DatepickerDropdownComponent,
+        data: schedulingRoutesData["datepicker-dropdown"],
+        path: "datepicker-dropdown"
     },
     {
         component: TimePickerSample1Component,

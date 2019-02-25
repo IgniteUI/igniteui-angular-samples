@@ -1,8 +1,10 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDialogModule, IgxIconModule, IgxInputGroupModule,
-    IgxSnackbarModule, IgxTimePickerModule, IgxToastModule } from "igniteui-angular";
+import {
+    IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDialogModule, IgxIconModule, IgxInputGroupModule,
+    IgxSnackbarModule, IgxTimePickerModule, IgxToastModule
+} from "igniteui-angular";
 import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
 import { CalendarSample2Component } from "./calendar/calendar-sample-2/calendar-sample-2.component";
 import { CalendarSample3Component } from "./calendar/calendar-sample-3/calendar-sample-3.component";
@@ -11,6 +13,7 @@ import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
+import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -40,11 +43,13 @@ import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/tim
         DatepickerSample4Component,
         DatepickerSample5Component,
         DatepickerSample6Component,
+        DatepickerDropdownComponent,
         TimePickerSample1Component,
         TimePickerSample2Component,
         TimePickerSample3Component,
         TimePickerSample4Component,
-        TimePickerSample5Component
+        TimePickerSample5Component,
+        DatepickerDropdownComponent
     ],
     imports: [
         CommonModule,
@@ -61,4 +66,4 @@ import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/tim
         IgxToastModule
     ]
 })
-export class SchedulingModule {}
+export class SchedulingModule { }
