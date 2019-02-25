@@ -80,7 +80,7 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TimepickerDropdownComponent],
                 ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
             }),
-            shortenComponentPathBy: "/timepicker/"
+            shortenComponentPathBy: "/scheduling/timepicker/"
         }));
 
         return configs;
