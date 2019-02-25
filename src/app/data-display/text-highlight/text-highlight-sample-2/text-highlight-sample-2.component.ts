@@ -96,9 +96,7 @@ export class TextHighlightSample2Component {
                 const actualIndex = row === 0 ? this.index : this.index - matchesArray[row - 1];
 
                 IgxTextHighlightDirective.setActiveHighlight("group1", {
-                    columnIndex: 0,
                     index: actualIndex,
-                    page: 0,
                     rowIndex: row
                 });
             }
