@@ -1,29 +1,28 @@
-<div class="hgrid-sample">
-    <igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true" toolbarTitle="Singers" 
-    columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'500px'" [width]="'100%'" [allowFiltering]="true" #hierarchicalGrid >
-        <igx-column field="Artist" [sortable]="true"></igx-column>
-        <igx-column field="Photo">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner_2">
-                    <img [src]="cell.value" class="photo" />
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="Debut" [sortable]="true"></igx-column>
-        <igx-column field="Grammy Nominations" [sortable]="true"></igx-column>
-        <igx-column field="Grammy Awards" [sortable]="true"></igx-column>
+<igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true" toolbarTitle="Singers" 
+columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'560px'" [width]="'100%'" [allowFiltering]="true" #hierarchicalGrid >
+    <igx-column field="Artist" [sortable]="true"></igx-column>
+    <igx-column field="Photo">
+        <ng-template igxCell let-cell="cell">
+            <div class="cell__inner_2">
+                <img [src]="cell.value" class="photo" />
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column field="Debut" [sortable]="true"></igx-column>
+    <igx-column field="Grammy Nominations" [sortable]="true"></igx-column>
+    <igx-column field="Grammy Awards" [sortable]="true"></igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false" >
-            <igx-column field="Album" [sortable]="true"></igx-column>
-            <igx-column field="Launch Date" [sortable]="true"></igx-column>
-            <igx-column field="Billboard Review" [sortable]="true"></igx-column>
-            <igx-column field="US Billboard 200" [sortable]="true"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
-                <igx-column field="No."></igx-column>
-                <igx-column field="Title"></igx-column>
-                <igx-column field="Released"></igx-column>
-                <igx-column field="Genre"></igx-column>
-        </igx-row-island>
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false" >
+        <igx-column field="Album" [sortable]="true"></igx-column>
+        <igx-column field="Launch Date" [sortable]="true"></igx-column>
+        <igx-column field="Billboard Review" [sortable]="true"></igx-column>
+        <igx-column field="US Billboard 200" [sortable]="true"></igx-column>
+    <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-column field="No."></igx-column>
+            <igx-column field="Title"></igx-column>
+            <igx-column field="Released"></igx-column>
+            <igx-column field="Genre"></igx-column>
+    </igx-row-island>
     </igx-row-island>
 
     <igx-row-island [key]="'Tours'" [autoGenerate]="false">
@@ -32,6 +31,4 @@
         <igx-column field="Location"></igx-column>
         <igx-column field="Headliner"></igx-column>
     </igx-row-island>
-
-    </igx-hierarchical-grid>
-</div>
+</igx-hierarchical-grid>

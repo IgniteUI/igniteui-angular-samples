@@ -10,14 +10,24 @@ class MySummary extends IgxNumberSummaryOperand {
     }
 
     public operate(data?: any[]): IgxSummaryResult[] {
-      const result = super.operate(data);
-      result.push({
-        key: "test",
-        label: "More than 5",
-        summaryResult: data.filter((rec) => rec > 5).length
-      });
-
-      return result;
+        const result = [];
+        result.push(
+        {
+            key: "min",
+            label: "Min",
+            summaryResult: IgxNumberSummaryOperand.min(data)
+        },
+        {
+            key: "max",
+            label: "Max",
+            summaryResult: IgxNumberSummaryOperand.max(data)
+        },
+        {
+          key: "avg",
+          label: "Avg",
+          summaryResult: IgxNumberSummaryOperand.average(data)
+        });
+        return result;
     }
   }
 

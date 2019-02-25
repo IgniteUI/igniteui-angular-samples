@@ -1,46 +1,44 @@
-<div class="hgrid__wrapper">
-    <igx-hierarchical-grid [paging]="true" [perPage]="perPage"
-    [primaryKey]="'CustomerID'" [height]="'500px'" [width]="'100%'" #hierarchicalGrid>
-    <igx-column field="CustomerID"></igx-column>
-        <igx-column field="CompanyName"></igx-column>
-        <igx-column field="ContactName"></igx-column>
-        <igx-column field="ContactTitle"></igx-column>
-        <igx-column field="Country"></igx-column>
-        <igx-column field="Phone"></igx-column>
-        <igx-row-island [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false" (onGridCreated)="gridCreated($event, 'CustomerID')">
-            <igx-column field="OrderID"></igx-column>
-            <igx-column field="OrderDate"></igx-column>
-            <igx-column field="ShipCountry"></igx-column>
-            <igx-column field="ShipCity"></igx-column>
-            <igx-column field="ShipAddress"></igx-column>
-            <igx-row-island [key]="'Order_Details'" [primaryKey]="'ProductID'" [autoGenerate]="false" (onGridCreated)="gridCreated($event, 'OrderID')">
-                <igx-column field="ProductID"></igx-column>
-                <igx-column field="UnitPrice"></igx-column>
-                <igx-column field="Quantity"></igx-column>
-                <igx-column field="Discount"></igx-column>
-            </igx-row-island>
+<igx-hierarchical-grid [paging]="true" [perPage]="perPage"
+[primaryKey]="'CustomerID'" [height]="'550px'" [width]="'100%'" #hierarchicalGrid>
+<igx-column field="CustomerID"></igx-column>
+    <igx-column field="CompanyName"></igx-column>
+    <igx-column field="ContactName"></igx-column>
+    <igx-column field="ContactTitle"></igx-column>
+    <igx-column field="Country"></igx-column>
+    <igx-column field="Phone"></igx-column>
+    <igx-row-island [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false" (onGridCreated)="gridCreated($event, 'CustomerID')">
+        <igx-column field="OrderID"></igx-column>
+        <igx-column field="OrderDate"></igx-column>
+        <igx-column field="ShipCountry"></igx-column>
+        <igx-column field="ShipCity"></igx-column>
+        <igx-column field="ShipAddress"></igx-column>
+        <igx-row-island [key]="'Order_Details'" [primaryKey]="'ProductID'" [autoGenerate]="false" (onGridCreated)="gridCreated($event, 'OrderID')">
+            <igx-column field="ProductID"></igx-column>
+            <igx-column field="UnitPrice"></igx-column>
+            <igx-column field="Quantity"></igx-column>
+            <igx-column field="Discount"></igx-column>
         </igx-row-island>
+    </igx-row-island>
 
-    </igx-hierarchical-grid>
+</igx-hierarchical-grid>
 
-    <ng-template #customPager let-api>
-        <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple igxRippleCentered="true">
-            <igx-icon fontSet="material">first_page</igx-icon>
-        </button>
-        <button [disabled]="firstPage" (click)="previousPage()" igxButton="icon" igxRipple igxRippleCentered="true">
-            <igx-icon fontSet="material">chevron_left</igx-icon>
-        </button>
-        <span>{{ page + 1 }} of {{totalPages}}</span>
-        <button [disabled]="lastPage" (click)="nextPage()" igxRipple igxRippleCentered="true" igxButton="icon">
-            <igx-icon fontSet="material">chevron_right</igx-icon>
-        </button>
-        <button [disabled]="lastPage" (click)="paginate(totalPages - 1, false)" igxButton="icon" igxRipple
-            igxRippleCentered="true">
-            <igx-icon fontSet="material">last_page</igx-icon>
-        </button>
-        <select style="margin-left: 1rem;" (change)="parseToInt($event.target.value);">
-            <option [value]="val" [selected]="perPage == val" *ngFor="let val of [5, 10, 15, 20]">{{ val
-                }}</option>
-        </select>
-    </ng-template>
-</div>
+<ng-template #customPager let-api>
+    <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple igxRippleCentered="true">
+        <igx-icon fontSet="material">first_page</igx-icon>
+    </button>
+    <button [disabled]="firstPage" (click)="previousPage()" igxButton="icon" igxRipple igxRippleCentered="true">
+        <igx-icon fontSet="material">chevron_left</igx-icon>
+    </button>
+    <span>{{ page + 1 }} of {{totalPages}}</span>
+    <button [disabled]="lastPage" (click)="nextPage()" igxRipple igxRippleCentered="true" igxButton="icon">
+        <igx-icon fontSet="material">chevron_right</igx-icon>
+    </button>
+    <button [disabled]="lastPage" (click)="paginate(totalPages - 1, false)" igxButton="icon" igxRipple
+        igxRippleCentered="true">
+        <igx-icon fontSet="material">last_page</igx-icon>
+    </button>
+    <select style="margin-left: 1rem;" (change)="parseToInt($event.target.value);">
+        <option [value]="val" [selected]="perPage == val" *ngFor="let val of [5, 10, 15, 20]">{{ val
+            }}</option>
+    </select>
+</ng-template>

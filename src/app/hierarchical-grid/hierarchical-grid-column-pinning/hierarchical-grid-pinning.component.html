@@ -1,63 +1,62 @@
-<div class="hgrid-sample">
-    <igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
-        [height]="'500px'" [width]="'100%'" #hierarchicalGrid>
-        <igx-column #artist field="Artist" [width]="'180px'">
+<igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
+    [height]="'500px'" [width]="'100%'" #hierarchicalGrid>
+    <igx-column #artist field="Artist" [width]="'180px'">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Artist</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(artist)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #photo field="Photo">
             <ng-template igxHeader>
-                <div class="title-inner">
-                    <span style="float:left">Artist</span>
-                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(artist)"></igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column #photo field="Photo">
-                <ng-template igxHeader>
-                        <div class="title-inner">
-                            <span style="float:left">Photo</span>
-                            <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(photo)"></igx-icon>
-                        </div>
-                    </ng-template>
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner_2">
-                    <img [src]="cell.value" class="photo" />
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column #debut field="Debut">
-            <ng-template igxHeader>
-                <div class="title-inner">
-                    <span style="float:left">Debut</span>
-                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(debut)"></igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column #grammynominations field="Grammy Nominations" [width]="'200px'">
-            <ng-template igxHeader>
-                <div class="title-inner">
-                    <span style="float:left">Grammy Nominations</span>
-                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(grammynominations)"></igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column #grammyawards field="Grammy Awards" [width]="'180px'">
-            <ng-template igxHeader>
-                <div class="title-inner">
-                    <span style="float:left">Grammy Awards</span>
-                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(grammyawards)"></igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
+                    <div class="title-inner">
+                        <span style="float:left">Photo</span>
+                        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(photo)"></igx-icon>
+                    </div>
+                </ng-template>
+        <ng-template igxCell let-cell="cell">
+            <div class="cell__inner_2">
+                <img [src]="cell.value" class="photo" />
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #debut field="Debut">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Debut</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(debut)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #grammynominations field="Grammy Nominations" [width]="'200px'">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Grammy Nominations</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(grammynominations)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #grammyawards field="Grammy Awards" [width]="'180px'">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Grammy Awards</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(grammyawards)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
 
-        <igx-row-island [key]="'Albums'" [autoGenerate]="false">
-            <igx-column field="Album"></igx-column>
-            <igx-column field="Launch Date"></igx-column>
-            <igx-column field="Billboard Review"></igx-column>
-            <igx-column field="US Billboard 200"></igx-column>
-        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
-                <igx-column field="No."></igx-column>
-                <igx-column field="Title"></igx-column>
-                <igx-column field="Released"></igx-column>
-                <igx-column field="Genre"></igx-column>
-        </igx-row-island>
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+        <igx-column field="Album"></igx-column>
+        <igx-column field="Launch Date"></igx-column>
+        <igx-column field="Billboard Review"></igx-column>
+        <igx-column field="US Billboard 200"></igx-column>
+    <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-column field="No."></igx-column>
+            <igx-column field="Title"></igx-column>
+            <igx-column field="Released"></igx-column>
+            <igx-column field="Genre"></igx-column>
+    </igx-row-island>
     </igx-row-island>
 
     <igx-row-island [key]="'Tours'" [autoGenerate]="false">
@@ -66,6 +65,4 @@
         <igx-column field="Location"></igx-column>
         <igx-column field="Headliner"></igx-column>
     </igx-row-island>
-
-    </igx-hierarchical-grid>
-</div>
+</igx-hierarchical-grid>
