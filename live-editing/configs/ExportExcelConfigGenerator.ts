@@ -57,12 +57,11 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
             component: TreeGridExcelExportSample1Component,
             additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, IgxExcelExporterService, TreeGridExcelExportSample1Component],
+                imports: [IgxTreeGridModule, IgxExcelExporterService, TreeGridExcelExportSample1Component, IgxButtonModule],
                 ngDeclarations: [TreeGridExcelExportSample1Component],
-                ngImports: [IgxTreeGridModule],
+                ngImports: [IgxTreeGridModule, IgxButtonModule],
                 ngProviders: [IgxExcelExporterService]
-            }),
-            shortenComponentPathBy: "/export-excel/"
+            })
         }));
 
         return configs;
