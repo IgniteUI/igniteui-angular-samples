@@ -21,7 +21,7 @@ export class ToggleComponent {
         verticalStartPoint: VerticalAlignment.Bottom
     };
     public _overlaySettings = {
-        closeOnOutsideClick: true,
+        closeOnOutsideClick: false,
         modal: false,
         positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
         scrollStrategy: new CloseScrollStrategy()
