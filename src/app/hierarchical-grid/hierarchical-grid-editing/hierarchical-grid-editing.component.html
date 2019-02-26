@@ -5,8 +5,8 @@
     <igx-column field="HasGrammyAward" [editable]="true" [dataType]="'boolean'">
     </igx-column>
     <igx-column field="Debut" [editable]="true" [dataType]="'number'"></igx-column>
-    <igx-column field="GrammyNominations" [editable]="true" [dataType]="'number'" [hasSummary]="true"></igx-column>
-    <igx-column field="GrammyAwards" [editable]="true" [dataType]="'number'" [hasSummary]="true"></igx-column>
+    <igx-column field="GrammyNominations" [editable]="true" [dataType]="'number'" [hasSummary]="true" [summaries]="mySummary"></igx-column>
+    <igx-column field="GrammyAwards" [editable]="true" [dataType]="'number'" [hasSummary]="true" [summaries]="mySummary"></igx-column>
     <igx-column width="10%">
         <ng-template igxCell let-cell="cell">
             <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
