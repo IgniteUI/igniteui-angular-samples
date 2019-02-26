@@ -1,7 +1,11 @@
 import { Component, ElementRef, Inject, OnInit, ViewChild } from "@angular/core";
 import {
-    AbsoluteScrollStrategy, BlockScrollStrategy, CloseScrollStrategy, ConnectedPositioningStrategy,
-    IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule, NoOpScrollStrategy
+    AbsoluteScrollStrategy,
+    BlockScrollStrategy,
+    CloseScrollStrategy,
+    ConnectedPositioningStrategy,
+    IgxOverlayService,
+    NoOpScrollStrategy
 } from "igniteui-angular";
 import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-card.component";
 // tslint:disable:object-literal-sort-keys
@@ -42,7 +46,7 @@ export class OverlayScrollSample2Component implements OnInit {
         });
     }
 
-    public onClickScrollStrategy(event: Event, strategy: string) {
+    public onClickScrollStrategy(strategy: string) {
         let scrollStrategy;
         const positionStrategy = new ConnectedPositioningStrategy();
         switch (strategy) {

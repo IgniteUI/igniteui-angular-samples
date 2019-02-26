@@ -4,10 +4,7 @@ import {
     ConnectedPositioningStrategy,
     GlobalPositionStrategy,
     HorizontalAlignment,
-    IgxCardModule,
-    IgxIconModule,
     IgxOverlayService,
-    OverlayEventArgs,
     VerticalAlignment
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
@@ -37,7 +34,7 @@ export class OverlayPositionSample1Component {
     ) {
         //  overlay service deletes the id when onClosed is called. We should clear our id
         //  also in same event
-        this.overlay.onClosed.subscribe((e: OverlayEventArgs) => delete this._overlayId);
+        this.overlay.onClosed.subscribe(() => delete this._overlayId);
     }
 
     public onClickDirection(horizontalDirection: HorizontalAlignment, verticalDirection: VerticalAlignment) {

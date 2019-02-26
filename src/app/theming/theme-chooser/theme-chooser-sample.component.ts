@@ -111,7 +111,7 @@ export class ThemeChooserSampleComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.datePicker.alert.isModal = true;
+        // this.datePicker.alert.isModal = true;
         this.datePicker.outlet = this.outlet;
         this.grid1.outletDirective = this.outlet;
         this.data = DATA;
