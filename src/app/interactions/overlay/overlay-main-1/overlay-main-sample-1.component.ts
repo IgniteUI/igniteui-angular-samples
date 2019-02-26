@@ -10,13 +10,21 @@ import { CardSample1Component } from "../../../layouts/card/card-sample-1/card-s
     styleUrls: [`./overlay-main-sample-1.component.scss`]
 })
 export class OverlaySampleMain1Component {
+    private _overlayId: string;
 
     constructor(
-        @Inject(IgxOverlayService) private overlayService: IgxOverlayService
+        @Inject(IgxOverlayService) public overlay: IgxOverlayService
     ) {
+        //  overlay service deletes the id when onClosed is called. We should clear our id
+        //  also in same event
+        this.overlay.onClosed.subscribe((e: OverlayEventArgs) => delete this._overlayId);
     }
 
     public showOverlay() {
-        this.overlayService.show(CardSample1Component);
+        if (!this._overlayId) {
+            this._overlayId = this.overlayService.attach(CardSample1Component);
+        }
+
+        this.overlayService.show(this._overlayId);
     }
 }

@@ -1,9 +1,14 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
 import {
-    AbsoluteScrollStrategy, AutoPositionStrategy, BlockScrollStrategy,
-    CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy,
-    HorizontalAlignment, IgxCardModule, IgxIconModule, IgxOverlayService,
-    IgxSwitchModule, IScrollStrategy, NoOpScrollStrategy, OverlaySettings, PositionSettings, VerticalAlignment
+    AbsoluteScrollStrategy,
+    AutoPositionStrategy,
+    ConnectedPositioningStrategy,
+    GlobalPositionStrategy,
+    HorizontalAlignment,
+    IgxOverlayService,
+    OverlaySettings,
+    PositionSettings,
+    VerticalAlignment
 } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -39,11 +44,18 @@ export class OverlayScrollSample1Component {
         modal: true,
         closeOnOutsideClick: true
     };
+
+    private _overlayId: string;
+
     constructor(
         @Inject(IgxOverlayService) public overlay: IgxOverlayService
-    ) { }
+    ) {
+        //  overlay service deletes the id when onClosed is called. We should clear our id
+        //  also in same event
+        this.overlay.onClosed.subscribe(() => delete this._overlayId);
+    }
 
-    public onClickModal(event: Event, strat: string) {
+    public onClickModal(event: Event, strategy: string) {
         event.stopPropagation();
         const positionSettings = Object.assign(Object.assign({}, this._defaultPositionSettings), {
             target: this.modalDemo.nativeElement,
@@ -53,7 +65,7 @@ export class OverlayScrollSample1Component {
             verticalStartPoint: VerticalAlignment.Bottom
         });
         let positionStrategy;
-        switch (strat) {
+        switch (strategy) {
             case ("auto"):
                 positionStrategy = new AutoPositionStrategy(positionSettings);
                 break;
@@ -70,6 +82,13 @@ export class OverlayScrollSample1Component {
             modal: this.modalValue,
             positionStrategy
         });
-        this.overlay.show(this.overlayDemo, showSettings);
+        this.overlay.show(this.overlayId, showSettings);
+    }
+
+    private get overlayId(): string {
+        if (!this._overlayId) {
+            this._overlayId = this.overlay.attach(this.overlayDemo);
+        }
+        return this._overlayId;
     }
 }

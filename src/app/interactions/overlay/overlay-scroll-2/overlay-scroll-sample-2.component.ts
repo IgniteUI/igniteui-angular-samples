@@ -22,9 +22,15 @@ export class OverlayScrollSample2Component implements OnInit {
     @ViewChild("mainContainer")
     public mainContainer: ElementRef;
 
+    private _overlayId: string;
+
     constructor(
         @Inject(IgxOverlayService) public overlay: IgxOverlayService
-    ) { }
+    ) {
+        //  overlay service deletes the id when onClosed is called. We should clear our id
+        //  also in same event
+        this.overlay.onClosed.subscribe(() => delete this._overlayId);
+    }
 
     public ngOnInit(): void {
         (this.mainContainer.nativeElement as HTMLElement).style.height = "450px";
@@ -36,10 +42,10 @@ export class OverlayScrollSample2Component implements OnInit {
         });
     }
 
-    public onClickScrollStrategy(event: Event, strat: string) {
+    public onClickScrollStrategy(event: Event, strategy: string) {
         let scrollStrategy;
         const positionStrategy = new ConnectedPositioningStrategy();
-        switch (strat) {
+        switch (strategy) {
             case ("absolute"):
                 scrollStrategy = new AbsoluteScrollStrategy();
                 positionStrategy.settings.target = this.scrollDemo.nativeElement.children[0];
@@ -56,11 +62,18 @@ export class OverlayScrollSample2Component implements OnInit {
                 scrollStrategy = new NoOpScrollStrategy();
                 positionStrategy.settings.target = this.scrollDemo.nativeElement.children[3];
         }
-        this.overlay.show(MyDynamicCardComponent, {
+        this.overlay.show(this.overlayId, {
             positionStrategy,
             scrollStrategy,
             modal: false,
             closeOnOutsideClick: true
         });
+    }
+
+    private get overlayId(): string {
+        if (!this._overlayId) {
+            this._overlayId = this.overlay.attach(MyDynamicCardComponent);
+        }
+        return this._overlayId;
     }
 }
