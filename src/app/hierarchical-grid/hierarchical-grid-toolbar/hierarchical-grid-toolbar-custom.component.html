@@ -1,0 +1,44 @@
+<div class="hgrid-wrapper">
+    <igx-hierarchical-grid #hierarchicalGrid class="hgrid" [data]="localdata" [showToolbar]="true" toolbarTitle="Singers" 
+     [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'">
+        <igx-column field="Artist" width="150px" sortable="true"></igx-column>
+        <igx-column field="Photo">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut" sortable="true"></igx-column>
+        <igx-column field="Grammy Nominations" width="200px" sortable="true"></igx-column>
+        <igx-column field="Grammy Awards" width="200px" sortable="true"></igx-column>
+
+        <ng-template igxToolbarCustomContent let-igxHierarchicalGrid="grid">
+                <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="igxHierarchicalGrid.clearSort()">
+                    <igx-icon fontSet="material">clear</igx-icon>
+                    Clear Sort
+                </button>
+            </ng-template>
+
+        <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+            <igx-column field="Album"></igx-column>
+            <igx-column field="Launch Date" [dataType]="'date'"></igx-column>
+            <igx-column field="Billboard Review"></igx-column>
+            <igx-column field="US Billboard 200"></igx-column>
+        <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+                <igx-column field="No."></igx-column>
+                <igx-column field="Title"></igx-column>
+                <igx-column field="Released"></igx-column>
+                <igx-column field="Genre"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+
+    <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+        <igx-column field="Tour"></igx-column>
+        <igx-column field="Started on"></igx-column>
+        <igx-column field="Location"></igx-column>
+        <igx-column field="Headliner"></igx-column>
+    </igx-row-island>
+
+    </igx-hierarchical-grid>
+</div>
