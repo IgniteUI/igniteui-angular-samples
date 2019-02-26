@@ -1,3 +1,4 @@
+import { AutocompleteConfigGenerator } from "../configs/AutocompleteConfigGenerator";
 import { AvatarConfigGenerator } from "../configs/AvatarConfigGenerator";
 import { BadgeConfigGenerator } from "../configs/BadgeConfigGenerator";
 import { BannerConfigGenerator } from "../configs/BannerConfigGenerator";
@@ -56,7 +57,8 @@ import { TooltipConfigGenerator } from "../configs/TooltipConfigGenerator";
 import { TreeGridConfigGenerator } from "../configs/TreeGridConfigGenerator";
 import { TreeGridFinjsConfigGenerator } from "../configs/TreeGridFinjsConfigGenerator";
 
-export const CONFIG_GENERATORS = [AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator,
+export const CONFIG_GENERATORS =
+    [AutocompleteConfigGenerator, AvatarConfigGenerator, BadgeConfigGenerator, BannerConfigGenerator,
     ButtonConfigGenerator, ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator,
     CarouselConfigGenerator, CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator,
     CircularProgressbarConfigGenerator, ComboConfigGenerator, DataChartConfigGenerator,
