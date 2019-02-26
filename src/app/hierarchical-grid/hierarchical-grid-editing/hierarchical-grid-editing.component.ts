@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxDialogComponent, IgxHierarchicalGridComponent, IgxSummaryResult, IgxNumberSummaryOperand } from "igniteui-angular";
+import { IgxDialogComponent, IgxHierarchicalGridComponent,
+        IgxNumberSummaryOperand, IgxSummaryResult } from "igniteui-angular";
 import { SINGERS } from "./data";
 import { Singer } from "./singer";
 
