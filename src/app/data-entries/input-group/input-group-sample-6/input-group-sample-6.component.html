@@ -1,8 +1,19 @@
 <div class="sample-wrapper">
     <section class="sample-content">
         <article class="sample-column">
-            <form class="input-group-form">
+            <form class="input-group-form" (submit)="onSubmit()">
                 <h4 class="sample-title">Book your movie ticket</h4>
+                <div class="igx-combo">
+                    <igx-select #select name="movies" [(ngModel)]="user.movie">
+                        <igx-select-item-group *ngFor="let genre of genres" [label]="genre.type">
+                            <igx-select-item *ngFor="let movie of genre.movies" [value]="movie">
+                                {{ movie }}
+                            </igx-select-item>
+                        </igx-select-item-group>
+                        <label igxLabel for="movies">Movie</label>
+                        <ng-template igxSelectToggleIcon><igx-icon fontSet="material">local_movies</igx-icon></ng-template>
+                    </igx-select>
+                </div>
                 <igx-input-group>
                     <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName" required="required" />
                     <label igxLabel for="fullName">Full Name</label>
@@ -27,13 +38,13 @@
                     </igx-suffix>
                 </igx-input-group>
                 <div class="igx-combo">
-                    <igx-combo #combo1 name="genres" class="input-container" width="100%" [itemsMaxHeight]="130"
-                        [data]="genres" [(ngModel)]="user.genres"
+                    <igx-combo name="genres" class="input-container" width="100%" [itemsMaxHeight]="130"
+                        [data]="genres" [valueKey]="'type'" [displayKey]="'type'" [(ngModel)]="user.genres" 
                         placeholder="Select your favorite genres" searchPlaceholder="Search..." required [type]='"line"'>
                     </igx-combo>
                 </div>
-                <div class="igx-datePicker">
-                    <igx-datePicker name="date" (onSelection)="onDateSelection($event)" >
+                <div class="igx-date-picker">
+                    <igx-date-picker name="date" (onSelection)="onDateSelection($event)" >
                         <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-value="value" let-displayData="displayData">
                             <igx-input-group (click)="openDialog()">
                                 <label igxLabel>Date </label>
@@ -43,7 +54,7 @@
                                 </igx-suffix>
                             </igx-input-group>
                         </ng-template>
-                    </igx-datePicker>
+                    </igx-date-picker>
                 </div>
                 <div class="igx-timePicker">
                     <igx-time-picker name="dateTime" (onValueChanged)="onTimeSelection($event)" >

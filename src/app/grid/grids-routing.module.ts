@@ -10,7 +10,6 @@ import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custo
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
-import { FinJSDemoComponent } from "./grid-finjs-demo/grid-finjs-demo.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -186,11 +185,6 @@ export const gridsRoutes: Routes = [
         component: GridPasteSampleComponent,
         data: gridsRoutesData["grid-paste"],
         path: "grid-paste"
-    },
-    {
-        component: FinJSDemoComponent,
-        data: gridsRoutesData["finjs-sample"],
-        path: "finjs-sample"
     }
 ];
 
