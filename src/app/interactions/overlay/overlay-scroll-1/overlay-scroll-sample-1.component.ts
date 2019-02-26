@@ -3,6 +3,7 @@ import {
     AbsoluteScrollStrategy,
     AutoPositionStrategy,
     ConnectedPositioningStrategy,
+    ElasticPositionStrategy,
     GlobalPositionStrategy,
     HorizontalAlignment,
     IgxOverlayService,
@@ -68,6 +69,9 @@ export class OverlayScrollSample1Component {
         switch (strategy) {
             case ("auto"):
                 positionStrategy = new AutoPositionStrategy(positionSettings);
+                break;
+            case ("elastic"):
+                positionStrategy = new ElasticPositionStrategy(positionSettings);
                 break;
             case ("connected"):
                 positionStrategy = new ConnectedPositioningStrategy(positionSettings);

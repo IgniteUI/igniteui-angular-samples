@@ -127,7 +127,56 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class='container__row'>
+            <div class='section__position-header'>
+            </div>
+            <div class='section__separator'></div>
+            <div class='section__position-header'>
+                Elastic
+            </div>
+            <div class='section__separator'></div>
+            <div class='section__position-header'>
+            </div>
+        </div>
+        <div class="container__row">
+            <div class='section__position-element'></div>
+            <div class='section__separator'></div>
+            <div class='section__position-element' #elasticDemo>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionElastic(-1, -1)">
+                        <img src='assets/images/overlay/up_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(-0.5, -1)">
+                        <img src='assets/images/overlay/up.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(0, -1)">
+                        <img src='assets/images/overlay/up_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionElastic(-1, -0.5)">
+                        <img src='assets/images/overlay/left.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(-0.5, -0.5)">
+                        <img src='assets/images/overlay/all_directions.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(0, -0.5)">
+                        <img src='assets/images/overlay/right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionElastic(-1, 0)">
+                        <img src='assets/images/overlay/down_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(-0.5, 0)">
+                        <img src='assets/images/overlay/down.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(0, 0)">
+                        <img src='assets/images/overlay/down_right.png'>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
     <div class='container--small'>
