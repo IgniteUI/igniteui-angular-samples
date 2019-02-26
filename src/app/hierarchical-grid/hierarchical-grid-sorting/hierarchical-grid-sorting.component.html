@@ -1,6 +1,6 @@
 <div class="hgrid-sample" (window:click)="disableContextMenu()">
     <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false"
-        [height]="'500px'" [width]="'100%'" (onContextMenu)="rightClick($event)" #hierarchicalGrid>
+        [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'" (onContextMenu)="rightClick($event)" #hierarchicalGrid>
         <igx-column field="Artist" [sortable]='true'></igx-column>
         <igx-column field="Photo">
             <ng-template igxCell let-cell="cell">

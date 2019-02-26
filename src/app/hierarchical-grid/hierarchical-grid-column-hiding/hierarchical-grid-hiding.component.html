@@ -1,5 +1,5 @@
 <igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true" toolbarTitle="Singers" 
-columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'560px'" [width]="'100%'" [allowFiltering]="true" #hierarchicalGrid >
+columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'560px'" [width]="'100%'" [rowHeight]="'65px'" [allowFiltering]="true" #hierarchicalGrid >
     <igx-column field="Artist" [sortable]="true"></igx-column>
     <igx-column field="Photo">
         <ng-template igxCell let-cell="cell">

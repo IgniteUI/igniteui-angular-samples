@@ -1,5 +1,5 @@
 <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true'
-    [height]="'600px'" [width]="'100%'" #hierarchicalGrid>
+    [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
     <igx-column field="Artist" [filterable]='true'></igx-column>
     <igx-column field="Photo" [filterable]='false'>
         <ng-template igxCell let-cell="cell">
