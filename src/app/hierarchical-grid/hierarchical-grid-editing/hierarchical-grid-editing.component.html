@@ -23,10 +23,10 @@
         <igx-column field="Billboard Review" [editable]="true" [dataType]="'number'"></igx-column>
         <igx-column field="US Billboard 200" [editable]="true" [dataType]="'number'"></igx-column>
         <igx-row-island [key]="'Songs'" [autoGenerate]="false">
-                <igx-column field="No."></igx-column>
-                <igx-column field="Title"></igx-column>
-                <igx-column field="Released"></igx-column>
-                <igx-column field="Genre"></igx-column>
+                <igx-column field="No." [editable]="true" [dataType]="'number'"></igx-column>
+                <igx-column field="Title" [editable]="true" [dataType]="'string'"></igx-column>
+                <igx-column field="Released" [editable]="true" [dataType]="'date'"></igx-column>
+                <igx-column field="Genre" [editable]="true" [dataType]="'string'"></igx-column>
         </igx-row-island>
     </igx-row-island>
 </igx-hierarchical-grid>
