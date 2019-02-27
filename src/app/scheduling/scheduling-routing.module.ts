@@ -8,6 +8,7 @@ import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
 import { CalendarComponent } from "./calendar/calendar.component";
+import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
@@ -91,6 +92,11 @@ export const schedulingRoutes: Routes = [
         component: DatepickerSample6Component,
         data: schedulingRoutesData["datepicker-sample-6"],
         path: "datepicker-sample-6"
+    },
+    {
+        component: DatepickerDropdownComponent,
+        data: schedulingRoutesData["datepicker-dropdown"],
+        path: "datepicker-dropdown"
     },
     {
         component: TimePickerSample1Component,

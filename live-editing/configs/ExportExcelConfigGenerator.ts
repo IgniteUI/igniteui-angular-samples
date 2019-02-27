@@ -1,11 +1,14 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonModule, IgxDropDownComponent, IgxDropDownModule, IgxExcelExporterService,
-    IgxGridModule } from "igniteui-angular";
+    IgxGridModule, IgxTreeGridModule } from "igniteui-angular";
 import { GridPasteSampleComponent } from "../../src/app/grid/grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "../../src/app/grid/grid-paste/paste-handler.directive";
 import {
     ExcelExportSample1Component
 } from "../../src/app/services/export-excel/excel-export-sample-1/excel-export-sample-1.component";
+import {
+    TreeGridExcelExportSample1Component
+} from "../../src/app/services/export-excel/excel-export-tree-grid-sample/excel-export-tree-grid-sample.component";
 import { ExcelExportComponent } from "../../src/app/services/export-excel/excel-export.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -48,6 +51,18 @@ export class ExportExcelConfigGenerator implements IConfigGenerator {
                 ngProviders: [IgxExcelExporterService]
             }),
             shortenComponentPathBy: "/grid-paste/"
+        }));
+
+        configs.push(new Config({
+            component: TreeGridExcelExportSample1Component,
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, IgxExcelExporterService, TreeGridExcelExportSample1Component,
+                     IgxButtonModule],
+                ngDeclarations: [TreeGridExcelExportSample1Component],
+                ngImports: [IgxTreeGridModule, IgxButtonModule],
+                ngProviders: [IgxExcelExporterService]
+            })
         }));
 
         return configs;
