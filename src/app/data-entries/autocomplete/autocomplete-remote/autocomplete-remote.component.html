@@ -3,8 +3,8 @@
         <article class="sample-column">
             <form class="input-group-form">
                 <igx-input-group class="autocomplete">
-                    <input igxInput #inputField name="items" type="text" [igxAutocomplete]='itemsPanel' [(ngModel)]="selectedItem"
-                        (ngModelChange)="onChange()" />
+                    <input igxInput #inputField name="items" type="text" [igxAutocomplete]='itemsPanel'
+                        [ngModel]="selectedItem" (ngModelChange)="fakeModel.next($event)" />
                     <label igxLabel for="items">Products</label>
                     <igx-suffix igxRipple><igx-icon fontSet="material" (click)="selectedItem = ''; onChange()">clear</igx-icon></igx-suffix>
                 </igx-input-group>
