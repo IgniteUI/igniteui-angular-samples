@@ -13,6 +13,7 @@ export const schedulingRoutesData = {
     "datepicker-sample-4": { displayName: "Datepicker Formatter", parentName: "Datepicker" },
     "datepicker-sample-5": { displayName: "Datepicker Locales", parentName: "Datepicker" },
     "datepicker-sample-6": { displayName: "Datepicker Input Group Template", parentName: "Datepicker" },
+    "timepicker-dropdown": { displayName: "Timepicker DropDown", parentName: "Timepicker" },
     "timepicker-sample-1": { displayName: "Timepicker Overview", parentName: "Timepicker" },
     "timepicker-sample-2": { displayName: "One-way data bound Timepicker", parentName: "Timepicker" },
     "timepicker-sample-3": { displayName: "Timepicker Delta and Spin Mode", parentName: "Timepicker" },
