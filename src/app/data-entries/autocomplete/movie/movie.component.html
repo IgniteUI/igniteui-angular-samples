@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <igx-dialog #alert title="Available tickets" [message]="message" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()"></igx-dialog>
-                <div class="button-wrapper">
+                <div class="center-content">
                     <button igxButton="raised" igxRipple (click)="onCheck()" [disabled]="!user.valid">Check</button>
                 </div>
             </form>
