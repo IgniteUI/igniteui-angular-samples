@@ -2,13 +2,19 @@
     margin-top: 32px;
 }
 
-.igx-date-time {
+.hor-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.igx-date-time > * {
-    width: 40%;
+.vert-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+}
+
+.vert-container > * {
     margin-top: 32px;
 }
 
