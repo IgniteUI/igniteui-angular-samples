@@ -6,7 +6,7 @@
                     <input igxInput #inputField name="items" type="text" [igxAutocomplete]='itemsPanel'
                         [ngModel]="selectedItem" (ngModelChange)="fakeModel.next($event)" />
                     <label igxLabel for="items">Products</label>
-                    <igx-suffix igxRipple><igx-icon fontSet="material" (click)="selectedItem = ''; onChange()">clear</igx-icon></igx-suffix>
+                    <igx-suffix igxRipple><igx-icon fontSet="material" (click)="onClear()">clear</igx-icon></igx-suffix>
                 </igx-input-group>
                 <igx-drop-down #itemsPanel maxHeight="300px">
                     <div class='progress-container' *ngIf="loading">

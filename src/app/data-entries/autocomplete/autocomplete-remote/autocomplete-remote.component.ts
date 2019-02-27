@@ -29,6 +29,11 @@ export class AutocompleteRemote implements OnInit {
         setTimeout(() => this.fetchData(value), 1500);
     }
 
+    public onClear = () => {
+        this.selectedItem = "";
+        // this.onChange("");
+    }
+
     private fetchData = (input: string) => {
         // comment out the ' character because it causes errors if there are words that use it
         const inputTerm = input.includes("'") ? input.replace(/\'/g, "''") : input;
