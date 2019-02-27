@@ -12,9 +12,11 @@ export class MovieComponent {
     public message = "";
 
     public towns = [
-        { name: "Sofia", cinemas: ["Lumiere Arena", "Grande Odeon", "Euro Cinema City", "Vlaikova 4DMax" ]},
-        { name: "Plovdiv", cinemas: ["Open Air Cinema Orpheus", "Lucky Cinema", "Cosmos Arena"]},
-        { name: "Jambol", cinemas: ["Elite Grand Cinema", "Vaptsarov Cinema", "Lucky Cinema", "Open Air Cinema Luskov"]}
+        { name: "New York", cinemas: ["Regal Cinemas", "Village East Cinema", "Roxy Cinema", "The Paris Theatre" ]},
+        { name: "Los Angeles", cinemas: ["Arc Light", "Pacific Cinerama Dome",
+            "New Beverly Cinema", "Downtown Independent"]},
+        { name: "Seattle", cinemas: ["Central Cinema", "Grand Illusion Cinema",
+            "Ark Lodge Cinemas", "Skyway Outdoor Cinema"]}
     ];
 
     public genres = [
