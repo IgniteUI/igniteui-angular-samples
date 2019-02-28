@@ -2,13 +2,25 @@
     margin: 20px;
 }
 
-.addEmplBtn.igx-button--raised{
+.addRootBtn {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
-    background-color: lightgrey;
-    color: black;
-    &:hover {
-        background-color:  rgba(0, 0, 0, 0.26)
+    color: black;    
+    &:hover {        
+        background-color:  rgba(0, 0, 0, 0.1)
     }
+    igx-icon {
+        margin-right: 5px;
+    }
+}
+
+.buttonsArea {
+    margin: auto;
+}
+
+.emplBtn {
+    margin-right: 5px;
 }
 
 .dialogNewRecord {
