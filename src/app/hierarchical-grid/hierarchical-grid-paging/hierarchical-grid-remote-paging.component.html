@@ -9,7 +9,7 @@
     <igx-row-island [key]="'Orders'" [primaryKey]="'OrderID'" [autoGenerate]="false"
         (onGridCreated)="gridCreated($event, 'CustomerID')" [paging]="true" [perPage]="5">
         <igx-column field="OrderID"></igx-column>
-        <igx-column field="OrderDate"></igx-column>
+        <igx-column field="OrderDate" [formatter]="dateFormatter"></igx-column>
         <igx-column field="ShipCountry"></igx-column>
         <igx-column field="ShipCity"></igx-column>
         <igx-column field="ShipAddress"></igx-column>
