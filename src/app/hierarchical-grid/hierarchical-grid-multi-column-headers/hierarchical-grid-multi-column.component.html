@@ -25,11 +25,11 @@
             <igx-column-group header="Order Details">
                 <igx-column field="OrderID" [movable]="true" sortable="true" resizable="true"></igx-column>
                 <igx-column field="EmployeeID" [movable]="true" sortable="true" resizable="true"></igx-column>
-                <igx-column field="OrderDate" [movable]="true" sortable="true" resizable="true"></igx-column>
-                <igx-column field="RequiredDate" [movable]="true" sortable="true" resizable="true"></igx-column>
+                <igx-column field="OrderDate" [movable]="true" sortable="true" resizable="true" [dataType]="'date'"></igx-column>
+                <igx-column field="RequiredDate" [movable]="true" sortable="true" resizable="true" [dataType]="'date'"></igx-column>
             </igx-column-group>
             <igx-column-group header="General Shipping Information">
-                <igx-column field="ShippedDate" sortable="true" resizable="true"></igx-column>
+                <igx-column field="ShippedDate" sortable="true" resizable="true" [dataType]="'date'"></igx-column>
                 <igx-column field="ShipVia" sortable="true" resizable="true"></igx-column>
                 <igx-column field="Freight" sortable="true" resizable="true"></igx-column>
                 <igx-column field="ShipName" sortable="true" resizable="true"></igx-column>
