@@ -49,6 +49,13 @@
         $flat-hover-background: igx-color($crm-grid-palette, "grays", 200)
     );
 
+    $crm-input-drop-down: igx-input-group-theme(
+        $placeholder-color: igx-color($crm-grid-palette, "grays", 500),
+        $idle-text-color: igx-color($crm-grid-palette, "grays", 900)
+    );
+
+    @include igx-grid-toolbar($crm-grid-toolbar);
+
     @include igx-grid($crm-grid-theme);
 
     @include igx-grid-summary($summary-theme);
@@ -56,6 +63,10 @@
     @include igx-input-group($search-theme);
 
     @include igx-grid-toolbar($crm-grid-toolbar);
+
+    .igx-drop-down__list {
+        @include igx-input-group($crm-input-drop-down)
+    }
 
     .igx-grid__summaries-patch {
         background: #f0f8fe;
