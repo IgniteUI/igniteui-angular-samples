@@ -14,7 +14,7 @@ columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'560px'" 
 
     <igx-row-island [key]="'Albums'" [autoGenerate]="false" >
         <igx-column field="Album" [sortable]="true"></igx-column>
-        <igx-column field="Launch Date" [sortable]="true"></igx-column>
+        <igx-column field="Launch Date" [sortable]="true" [dataType]="'date'"></igx-column>
         <igx-column field="Billboard Review" [sortable]="true"></igx-column>
         <igx-column field="US Billboard 200" [sortable]="true"></igx-column>
     <igx-row-island [key]="'Songs'" [autoGenerate]="false">

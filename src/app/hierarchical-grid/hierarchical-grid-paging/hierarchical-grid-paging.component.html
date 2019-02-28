@@ -13,7 +13,7 @@
     <igx-column field="Grammy Awards"></igx-column>
     <igx-row-island [key]="'Albums'" [autoGenerate]="false" [paging]="true" [perPage]="4">
         <igx-column field="Album"></igx-column>
-        <igx-column field="Launch Date"></igx-column>
+        <igx-column field="Launch Date" [dataType]="'date'"></igx-column>
         <igx-column field="Billboard Review"></igx-column>
         <igx-column field="US Billboard 200"></igx-column>
     <igx-row-island [key]="'Songs'" [autoGenerate]="false" [paging]="true" [perPage]="4">
