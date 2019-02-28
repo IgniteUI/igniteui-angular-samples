@@ -1,22 +1,22 @@
 <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true'
     [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
-    <igx-column field="Artist" [filterable]='true'></igx-column>
-    <igx-column field="Photo" [filterable]='false'>
+    <igx-column field="Artist"></igx-column>
+    <igx-column field="Photo">
         <ng-template igxCell let-cell="cell">
             <div class="cell__inner_2">
                 <img [src]="cell.value" class="photo" />
             </div>
         </ng-template>
     </igx-column>
-    <igx-column field="Debut" [filterable]='true'></igx-column>
-    <igx-column field="Grammy Nominations" [filterable]='true' [dataType]="'number'"></igx-column>
-    <igx-column field="Grammy Awards" [filterable]='true' [dataType]="'number'"></igx-column>
+    <igx-column field="Debut"></igx-column>
+    <igx-column field="Grammy Nominations" [dataType]="'number'"></igx-column>
+    <igx-column field="Grammy Awards" [dataType]="'number'"></igx-column>
 
     <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true'>
-        <igx-column field="Album" [filterable]='true'></igx-column>
-        <igx-column field="Launch Date" [filterable]='true' [dataType]="'date'"></igx-column>
-        <igx-column field="Billboard Review" [filterable]='true' [dataType]="'number'"></igx-column>
-        <igx-column field="US Billboard 200" [filterable]='true' [dataType]="'number'"></igx-column>
+        <igx-column field="Album"></igx-column>
+        <igx-column field="Launch Date" [dataType]="'date'"></igx-column>
+        <igx-column field="Billboard Review" [dataType]="'number'"></igx-column>
+        <igx-column field="US Billboard 200" [dataType]="'number'"></igx-column>
     <igx-row-island [key]="'Songs'" [autoGenerate]="false" >
             <igx-column field="No."></igx-column>
             <igx-column field="Title"></igx-column>
@@ -25,7 +25,7 @@
     </igx-row-island>
     </igx-row-island>
 
-    <igx-row-island [key]="'Tours'" [autoGenerate]="false">
+    <igx-row-island [key]="'Tours'" [autoGenerate]="false" [allowFiltering]='true'>
         <igx-column field="Tour"></igx-column>
         <igx-column field="Started on"></igx-column>
         <igx-column field="Location"></igx-column>
