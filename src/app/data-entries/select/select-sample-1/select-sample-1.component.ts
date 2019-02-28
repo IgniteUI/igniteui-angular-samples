@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     templateUrl: "select-sample-1.component.html"
 })
 export class SelectSample1Component {
-    public items: string[] = ["Orange", "Apple", "Banana", "Mango", "Pineapple"];
+    public items: string[] = ["Orange", "Apple", "Banana", "Mango"];
 }

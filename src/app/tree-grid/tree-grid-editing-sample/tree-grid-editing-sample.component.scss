@@ -1,0 +1,31 @@
+.grid__wrapper {
+    margin: 20px;
+}
+
+.addEmplBtn.igx-button--raised{
+    margin-bottom: 10px;
+    background-color: lightgrey;
+    color: black;
+    &:hover {
+        background-color:  rgba(0, 0, 0, 0.26)
+    }
+}
+
+.dialogNewRecord {
+    margin: 10px;
+    padding: 10px;;
+}
+
+.igx-input-group {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.igx-checkbox {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.datePicker {
+    padding: 5px;
+    margin-bottom: 10px;
+}
