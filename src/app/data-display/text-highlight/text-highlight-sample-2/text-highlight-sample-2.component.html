@@ -6,7 +6,7 @@
                 <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>
             </igx-prefix>
 
-            <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
+            <input #search1 id="search1" igxInput placeholder="Search" autocomplete="off" [(ngModel)]="searchText" (ngModelChange)="onTextboxChange()"
                     (keydown)="searchKeyDown($event)" />
             <igx-suffix>
                 <div class="caseSensitiveButton">
@@ -40,22 +40,22 @@
     </div>
     <hr>
     <div>
-        <p igxTextHighlight
-            [groupName]="'group1'"
-            [row]="0"
-            [containerClass]="'search-text'"
-            [value]="firstParagraph"
-            class="search-text">
+        <div igxTextHighlight
+             [groupName]="'group1'"
+             [row]="0"
+             [containerClass]="'search-text'"
+             [value]="firstParagraph"
+             class="search-text">
             {{firstParagraph}}
-        </p>
+        </div>
     </div>
     <div>
-        <p igxTextHighlight
-            [groupName]="'group1'"
-            [row]="1"
-            [containerClass]="'search-text'"
-            [value]="secondParagraph"
-            class="search-text">
+        <div igxTextHighlight
+             [groupName]="'group1'"
+             [row]="1"
+             [containerClass]="'search-text'"
+             [value]="secondParagraph"
+             class="search-text">
             {{secondParagraph}}
-        </p>
+        </div>
     </div>
