@@ -29,7 +29,24 @@ class MySummary extends IgxNumberSummaryOperand {
         });
         return result;
     }
-  }
+}
+class MyChildSummary extends IgxNumberSummaryOperand {
+
+    constructor() {
+      super();
+    }
+
+    public operate(data?: any[]): IgxSummaryResult[] {
+        const result = [];
+        result.push(
+        {
+            key: "count",
+            label: "Count",
+            summaryResult: IgxNumberSummaryOperand.count(data)
+        });
+        return result;
+    }
+}
 
 @Component({
     selector: "hierarchical-grid-summary",
@@ -40,6 +57,7 @@ class MySummary extends IgxNumberSummaryOperand {
 export class HGridSummarySampleComponent implements OnInit {
     public localdata;
     public mySummary = MySummary;
+    public myChildSummary = MyChildSummary;
 
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;

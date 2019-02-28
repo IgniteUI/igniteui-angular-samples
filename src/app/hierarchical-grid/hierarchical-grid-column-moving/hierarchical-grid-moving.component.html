@@ -83,9 +83,9 @@
     <igx-row-island [key]="'Orders'" [autoGenerate]="false">
             <igx-column field="OrderID" [movable]="true"></igx-column>
             <igx-column field="EmployeeID" [movable]="true"></igx-column>
-            <igx-column field="OrderDate" [movable]="true"></igx-column>
-            <igx-column field="RequiredDate" [movable]="true"></igx-column>
-            <igx-column field="ShippedDate" [movable]="true"></igx-column>
+            <igx-column field="OrderDate" [movable]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="RequiredDate" [movable]="true" [dataType]="'date'"></igx-column>
+            <igx-column field="ShippedDate" [movable]="true" [dataType]="'date'"></igx-column>
             <igx-column field="ShipVia" [movable]="true"></igx-column>
             <igx-column field="Freight" [movable]="true"></igx-column>
             <igx-column field="ShipName" [movable]="true"></igx-column>

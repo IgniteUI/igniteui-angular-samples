@@ -1,7 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxAvatarModule, IgxExcelExporterService, IgxGridModule, IgxProgressBarModule } from "igniteui-angular";
+import {
+    IgxAvatarModule, IgxCsvExporterService, IgxExcelExporterService, IgxGridModule, IgxProgressBarModule
+} from "igniteui-angular";
 import { GridCRMRoutingModule } from "./grid-crm-routing.module";
 import { GridCRMComponent } from "./grid-crm/grid-crm.component";
 
@@ -17,6 +19,6 @@ import { GridCRMComponent } from "./grid-crm/grid-crm.component";
         IgxAvatarModule,
         IgxProgressBarModule
     ],
-    providers: [IgxExcelExporterService]
+    providers: [IgxCsvExporterService, IgxExcelExporterService]
 })
 export class GridCRMModule {}
