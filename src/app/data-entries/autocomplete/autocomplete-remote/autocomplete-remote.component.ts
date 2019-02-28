@@ -25,6 +25,7 @@ export class AutocompleteRemote implements OnInit {
     }
 
     public onChange = (value) => {
+        this.selectedItem = value;
         this.loading = true;
         // setTimeout used only to extend data loading time.
         setTimeout(() => this.fetchData(value), 1500);
