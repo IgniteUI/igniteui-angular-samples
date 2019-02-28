@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { SampleFinancialData } from "../SampleFinancialData";
 
 @Component({
   selector: "app-data-chart-axis-sharing",
@@ -7,9 +8,10 @@ import { Component, OnInit } from "@angular/core";
 })
 export class DataChartAxisSharingComponent implements OnInit {
 
-  constructor() { }
+    public data: any[] = SampleFinancialData.create();
+    constructor() { }
 
-  public ngOnInit() {
-  }
+    public ngOnInit() {
+    }
 
 }

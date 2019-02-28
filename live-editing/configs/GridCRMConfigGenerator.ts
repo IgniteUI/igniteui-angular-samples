@@ -32,7 +32,7 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                     IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule,
                     IgxExcelExporterService, GridCRMComponent],
                 ngDeclarations: [GridCRMComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule.forRoot(),
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, IgxToggleModule, IgxCheckboxModule, HttpClientModule],
                 ngProviders: [IgxExcelExporterService]
