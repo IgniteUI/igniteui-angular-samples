@@ -10,7 +10,6 @@ import { DatePickerInteractionMode, DateRangeType,
 export class MovieComponent {
     @ViewChild("alert", { read: IgxDialogComponent }) public alert: IgxDialogComponent;
     public user;
-    public message = "";
     public dateMode = DatePickerInteractionMode.EDITABLE;
     public timeMode = TimePickerInteractionMode.dropdown;
 
