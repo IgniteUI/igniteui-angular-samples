@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="vert-container">
-                        <igx-date-picker #date name="date" formControlName="date" [disabled]="'!user.value.movie'" [disabledDates]="disabledDates" [mode]="dateMode"></igx-date-picker>
+                        <igx-date-picker #date name="date" formControlName="date" [disabled]="!user.value.movie" [disabledDates]="disabledDates" [mode]="dateMode"></igx-date-picker>
                         <igx-time-picker name="time" formControlName="time" [disabled]="!user.value.movie" (onValueChanged)="onTimeSelection($event)"
                             [mode]="timeMode" [itemsDelta]="{ hours: 1, minutes: 60 }" minValue="16:00" maxValue="23:00"></igx-time-picker>
                     </div>
