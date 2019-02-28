@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxAutocompleteDirective } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { debounceTime, distinctUntilChanged } from "rxjs/operators";
 import { RemoteService } from "../../../grid/services/remote.service";
@@ -31,7 +32,7 @@ export class AutocompleteRemote implements OnInit {
 
     public onClear = () => {
         this.selectedItem = "";
-        // this.onChange("");
+        this.onChange("");
     }
 
     private fetchData = (input: string) => {
