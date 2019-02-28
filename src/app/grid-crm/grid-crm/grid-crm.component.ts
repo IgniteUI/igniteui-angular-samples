@@ -143,6 +143,7 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         this.cols = this.grid1.columnList;
         this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
         this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
+        this.grid1.toolbar.columnPinningDropdown.width = '200px';
     }
 
     public toggleVisibility(col: IgxColumnComponent) {
