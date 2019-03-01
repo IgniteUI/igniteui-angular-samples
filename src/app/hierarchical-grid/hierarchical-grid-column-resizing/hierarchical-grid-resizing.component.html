@@ -14,21 +14,21 @@
 
     <igx-row-island [key]="'Albums'" [autoGenerate]="false">
         <igx-column field="Album" [resizable]="true"></igx-column>
-        <igx-column field="Launch Date" [resizable]="true"></igx-column>
+        <igx-column field="Launch Date" [resizable]="true" [dataType]="'date'"></igx-column>
         <igx-column field="Billboard Review" [resizable]="true"></igx-column>
         <igx-column field="US Billboard 200" [resizable]="true"></igx-column>
     <igx-row-island [key]="'Songs'" [autoGenerate]="false">
-            <igx-column field="No."></igx-column>
-            <igx-column field="Title"></igx-column>
-            <igx-column field="Released"></igx-column>
-            <igx-column field="Genre"></igx-column>
+            <igx-column field="No." [resizable]="true"></igx-column>
+            <igx-column field="Title" [resizable]="true"></igx-column>
+            <igx-column field="Released" [resizable]="true"></igx-column>
+            <igx-column field="Genre" [resizable]="true"></igx-column>
     </igx-row-island>
     </igx-row-island>
 
     <igx-row-island [key]="'Tours'" [autoGenerate]="false">
-        <igx-column field="Tour"></igx-column>
-        <igx-column field="Started on"></igx-column>
-        <igx-column field="Location"></igx-column>
-        <igx-column field="Headliner"></igx-column>
+        <igx-column field="Tour" [resizable]="true"></igx-column>
+        <igx-column field="Started on" [resizable]="true"></igx-column>
+        <igx-column field="Location" [resizable]="true"></igx-column>
+        <igx-column field="Headliner" [resizable]="true"></igx-column>
     </igx-row-island>
 </igx-hierarchical-grid>
