@@ -65,6 +65,10 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         });
     }
 
+    public dateFormatter(val: string) {
+        return new Intl.DateTimeFormat("en-US").format(new Date(val));
+    }
+
     public gridCreated(event: IGridCreatedEventArgs, _foreignKey: string) {
         const dataState = {
             foreignKey: _foreignKey,
