@@ -23,6 +23,12 @@ import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hie
 import { HGridColumnResizingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridDisplayDensitySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing/hierarchical-grid-editing.component";
+import {
+    HGridExcelStyleFilteringSample1Component
+} from '../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component';
+import {
+    HGridExcelStyleFilteringSample2Component
+} from '../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component';
 import { HGridCustomFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-lod/hierarchical-grid-lod.component";
@@ -92,6 +98,26 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridFilteringSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringSample1Component],
+                ngDeclarations: [HGridExcelStyleFilteringSample1Component],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridExcelStyleFilteringSample1Component
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringSample2Component],
+                ngDeclarations: [HGridExcelStyleFilteringSample2Component],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridExcelStyleFilteringSample2Component
         }));
 
         configs.push(new Config({

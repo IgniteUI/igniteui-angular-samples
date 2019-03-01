@@ -10,6 +10,12 @@ import { TreeGridColumnResizingSampleComponent } from "../../src/app/tree-grid/t
 import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-editing-sample/tree-grid-editing-sample.component";
+import {
+    TreeGridExcelStyleFilteringSample1Component
+} from '../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component';
+import {
+    TreeGridExcelStyleFilteringSample2Component
+} from '../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-2/tree-grid-excel-style-filtering-sample-2.component';
 import { TreeGridFilteringCustomSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
@@ -217,6 +223,28 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxInputGroupModule]
             }),
             component: TreeGridFilteringSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringSample1Component, IgxInputGroupModule],
+                ngDeclarations: [TreeGridExcelStyleFilteringSample1Component],
+                ngImports: [IgxTreeGridModule, IgxInputGroupModule]
+            }),
+            component: TreeGridExcelStyleFilteringSample1Component,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringSample2Component, IgxInputGroupModule],
+                ngDeclarations: [TreeGridExcelStyleFilteringSample2Component],
+                ngImports: [IgxTreeGridModule, IgxInputGroupModule]
+            }),
+            component: TreeGridExcelStyleFilteringSample2Component,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
