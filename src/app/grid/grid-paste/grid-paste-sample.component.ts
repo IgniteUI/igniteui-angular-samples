@@ -87,7 +87,7 @@ export class GridPasteSampleComponent {
             this.grid1.cdr.detectChanges();
         }
         // scroll to last added row
-        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length);
+        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length - 1);
 
         this.grid1.verticalScrollContainer.onChunkLoad.pipe(take(1)).subscribe(() => {
             this.clearStyles();
