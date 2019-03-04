@@ -20,13 +20,15 @@ export class MovieComponent {
         { name: "New York", cinemas: ["Regal Cinemas", "Village East Cinema", "Roxy Cinema", "The Paris Theatre"] },
         // tslint:disable-next-line:object-literal-sort-keys
         {
-            name: "Los Angeles", cinemas: ["Arc Light", "Pacific Cinerama Dome",
-                "New Beverly Cinema", "Downtown Independent"]
+            cinemas: ["Arc Light", "Pacific Cinerama Dome",
+                "New Beverly Cinema", "Downtown Independent"],
+            name: "Los Angeles"
         },
         // tslint:disable-next-line:object-literal-sort-keys
         {
-            name: "Seattle", cinemas: ["Central Cinema", "Grand Illusion Cinema",
-                "Ark Lodge Cinemas", "Skyway Outdoor Cinema"]
+            cinemas: ["Central Cinema", "Grand Illusion Cinema",
+                "Ark Lodge Cinemas", "Skyway Outdoor Cinema"],
+            name: "Seattle"
         }
     ];
 
@@ -35,8 +37,9 @@ export class MovieComponent {
         { type: "Adventure", movies: ["Interstellar", "Inglourious Basterds", "Inception"] },
         // tslint:disable-next-line:object-literal-sort-keys
         {
-            type: "Comedy", movies: ["Wild Tales", "In Bruges", "Three Billboards Outside Ebbing, Missouri",
-                "Untouchable", "3 idiots"]
+            movies: ["Wild Tales", "In Bruges", "Three Billboards Outside Ebbing, Missouri",
+                "Untouchable", "3 idiots"],
+            type: "Comedy"
         },
         { type: "Crime", movies: ["Training Day", "Heat", "American Gangster"] },
         { type: "Drama", movies: ["Fight Club", "A Beautiful Mind", "Good Will Hunting", "City of God"] },
