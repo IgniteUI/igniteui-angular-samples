@@ -43,6 +43,12 @@ import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
+import {
+    ExcelStyleFilteringSample1Component
+} from "../../src/app/grid/grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
+import {
+    ExcelStyleFilteringSample2Component
+} from "../../src/app/grid/grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent
@@ -72,8 +78,6 @@ import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sam
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
-import {ExcelStyleFilteringSample1Component } from "../../src/app/grid/grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
-import {ExcelStyleFilteringSample2Component } from "../../src/app/grid/grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
