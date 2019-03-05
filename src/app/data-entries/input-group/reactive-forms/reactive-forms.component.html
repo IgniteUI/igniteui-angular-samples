@@ -4,7 +4,7 @@
             <form class="input-group-form" [formGroup]="user" (ngSubmit)="onSubmit()">
                 <h4 class="sample-title">Book your movie ticket</h4>
                 <div class="component-container">
-                    <igx-select #select name="movies" [(ngModel)]="user.value.movie">
+                    <igx-select #select name="movies" formControlName="movie">
                         <igx-select-item-group *ngFor="let genre of genres" [label]="genre.type">
                             <igx-select-item *ngFor="let movie of genre.movies" [value]="movie">
                                 {{ movie }}
