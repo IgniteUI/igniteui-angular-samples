@@ -89,7 +89,7 @@ export class GridPasteSampleComponent {
         // scroll to last added row
         this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length - 1);
 
-        this.grid1.verticalScrollContainer.onChunkLoad.pipe(take(1)).subscribe(() => {
+        this.grid1.verticalScrollContainer.onChunkLoad.pipe(take(2)).subscribe(() => {
             this.clearStyles();
             for (const data of addedData) {
                 const row = this.grid1.getRowByKey(data[pk]);
