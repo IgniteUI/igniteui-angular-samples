@@ -6,13 +6,18 @@
                 <div class="hor-container">
                     <div class="vert-container">
                         <igx-input-group>
-                            <input igxInput #cinema name="cinema" formControlName="cinema" [igxAutocomplete]='cinemaPanel'/>
+                            <input igxInput #cinema name="cinema" formControlName="cinema"
+                                [igxAutocomplete]='cinemaPanel' />
                             <label igxLabel for="cinema">Cinema</label>
-                            <igx-suffix igxRipple><igx-icon fontSet="material">place</igx-icon> </igx-suffix>
+                            <igx-suffix igxRipple>
+                                <igx-icon fontSet="material">place</igx-icon>
+                            </igx-suffix>
                         </igx-input-group>
                         <igx-drop-down #cinemaPanel maxHeight="350px">
-                            <igx-drop-down-item-group *ngFor="let town of towns | groupContains: cinema.value" [label]="town.name">
-                                <igx-drop-down-item *ngFor="let cinema of town.cinemas | contains: cinema.value" [value]="cinema">
+                            <igx-drop-down-item-group *ngFor="let town of towns | groupContains: cinema.value"
+                                [label]="town.name">
+                                <igx-drop-down-item *ngFor="let cinema of town.cinemas | contains: cinema.value"
+                                    [value]="cinema">
                                     {{cinema}}
                                 </igx-drop-down-item>
                             </igx-drop-down-item-group>
@@ -25,17 +30,23 @@
                                     </igx-select-item>
                                 </igx-select-item-group>
                                 <label igxLabel for="movies">Movie</label>
-                                <ng-template igxSelectToggleIcon><igx-icon fontSet="material">local_movies</igx-icon></ng-template>
+                                <ng-template igxSelectToggleIcon>
+                                    <igx-icon fontSet="material">local_movies</igx-icon>
+                                </ng-template>
                             </igx-select>
                         </div>
                     </div>
                     <div class="vert-container">
-                        <igx-date-picker #date name="date" formControlName="date" [disabled]="!user.value.movie" [disabledDates]="disabledDates" [mode]="dateMode"></igx-date-picker>
-                        <igx-time-picker name="time" formControlName="time" [disabled]="!user.value.movie" (onValueChanged)="onTimeSelection($event)"
-                            [mode]="timeMode" [itemsDelta]="{ hours: 1, minutes: 60 }" minValue="16:00" maxValue="23:00"></igx-time-picker>
+                        <igx-date-picker #date name="date" formControlName="date" [disabled]="!user.value.movie"
+                            [disabledDates]="disabledDates" [mode]="mode"></igx-date-picker>
+                        <igx-time-picker name="time" formControlName="time" [disabled]="!user.value.movie"
+                            (onValueChanged)="onTimeSelection($event)" [mode]="mode"
+                            [itemsDelta]="{ hours: 1, minutes: 60 }" minValue="16:00" maxValue="23:00">
+                        </igx-time-picker>
                     </div>
                 </div>
-                <igx-dialog #alert title="Available tickets" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()"></igx-dialog>
+                <igx-dialog #alert title="Available tickets" leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
+                </igx-dialog>
                 <div class="center-content">
                     <button igxButton="raised" igxRipple (click)="onCheck()" [disabled]="!user.valid">Check</button>
                 </div>
