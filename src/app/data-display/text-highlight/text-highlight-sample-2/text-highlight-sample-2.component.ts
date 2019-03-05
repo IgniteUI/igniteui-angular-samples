@@ -10,13 +10,13 @@ export class TextHighlightSample2Component {
     // tslint:disable max-line-length
     public firstParagraph = `
     Use the search box to search for a certain string in this text. All the results will be highlighted in yellow, while the first occurrence of the string will be in orange. You can use the button in the searchbox to specify if the search will be case sensitive. You can move the orange highlight by either pressing the buttons on the searchbox or by using the Enter or the arrow keys on your keyboard.
-`;
+    `;
 
     public secondParagraph = `
     On top of the functionality from the previous sample, this sample demonstrates how to implement the text highlight directive
-    with several different containers. In this case, we have two paragraphs, each containing some text. You can see that
-    they share the same active (orange) highlight and the returned match count includes both containers. The find method in this
-    sample can be reused regardless of the number of containers you have in your application.
+    with several different elements. In this case, we have two div elements, each containing some text. You can see that
+    they share the same active (orange) highlight and the returned match count includes both elements. The find method in this
+    sample can be reused regardless of the number of elements you have in your application.
     `;
     // tslint:enable max-line-length
 
@@ -96,9 +96,7 @@ export class TextHighlightSample2Component {
                 const actualIndex = row === 0 ? this.index : this.index - matchesArray[row - 1];
 
                 IgxTextHighlightDirective.setActiveHighlight("group1", {
-                    columnIndex: 0,
                     index: actualIndex,
-                    page: 0,
                     rowIndex: row
                 });
             }

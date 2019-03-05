@@ -33,8 +33,7 @@ export class RemoteService {
             requiredChunkSize = dataState.chunkSize === 0 ?
                 // Set initial chunk size, the best value is igxForContainerSize divided on igxForItemSize
                 10 : dataState.chunkSize;
-            const top = requiredChunkSize;
-            qS += `$skip=${skip}&$top=10&$count=true`;
+            qS += `$skip=${skip}&$top=${requiredChunkSize}&$count=true`;
 
             if (searchText) {
                 qS += `&$filter=contains(ProductName, '` + searchText + `')`;

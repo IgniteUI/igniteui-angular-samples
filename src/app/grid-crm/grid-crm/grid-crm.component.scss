@@ -34,20 +34,24 @@
     );
 
     $crm-grid-toolbar: igx-grid-toolbar-theme(
-        $background-color: igx-color($crm-grid-palette, "primary", 500)
-    );
-
-    $crm-grid-toolbar-button: igx-button-theme(
-        $flat-background: igx-color($crm-grid-palette, "primary", 800),
-        $flat-focus-background: igx-color($crm-grid-palette, "primary", 800),
-        $flat-hover-background: igx-color($crm-grid-palette, "primary", 900)
+        $background-color: igx-color($crm-grid-palette, "primary", 500),
+        $button-background: #0072be,
+        $button-text-color: #fff,
+        $button-hover-background: #0065a8,
+        $button-hover-text-color: #fff,
+        $button-focus-background: #0065a8,
+        $button-focus-text-color: #fff
     );
 
     $crm-grid-search-button: igx-button-theme(
         $flat-background: transparent,
-        $button-roundness: 0,
         $flat-focus-background: igx-color($crm-grid-palette, "grays", 200),
         $flat-hover-background: igx-color($crm-grid-palette, "grays", 200)
+    );
+
+    $crm-input-drop-down: igx-input-group-theme(
+        $placeholder-color: igx-color($crm-grid-palette, "grays", 500),
+        $idle-text-color: igx-color($crm-grid-palette, "grays", 900)
     );
 
     @include igx-grid-toolbar($crm-grid-toolbar);
@@ -58,8 +62,10 @@
 
     @include igx-input-group($search-theme);
 
-    .igx-grid-toolbar__actions {
-        @include igx-button($crm-grid-toolbar-button);
+    @include igx-grid-toolbar($crm-grid-toolbar);
+
+    .igx-drop-down__list {
+        @include igx-input-group($crm-input-drop-down)
     }
 
     .igx-grid__summaries-patch {
