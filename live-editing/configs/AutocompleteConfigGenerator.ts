@@ -1,6 +1,8 @@
 import { HttpClientModule } from "@angular/common/http";
-import { IgxAutocompleteModule, IgxDialogModule, IgxDropDownModule,
-        IgxInputGroupModule, IgxProgressBarModule } from "igniteui-angular";
+import { ReactiveFormsModule } from "@angular/forms";
+import { IgxAutocompleteModule, IgxButtonModule, IgxDatePickerModule, IgxDialogModule,
+    IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
+    IgxSelectModule, IgxTimePickerModule } from "igniteui-angular";
 import { AutocompleteRemote
     } from "../../src/app/data-entries/autocomplete/autocomplete-remote/autocomplete-remote.component";
 import { AutocompleteBasic, AutocompletePipeStartsWith
@@ -33,9 +35,10 @@ export class AutocompleteConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid/services/remote.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule, IgxProgressBarModule,
-                        AutocompleteRemote, HttpClientModule, RemoteService],
+                    IgxIconModule, AutocompleteRemote, HttpClientModule, RemoteService],
                 ngDeclarations: [AutocompleteRemote],
-                ngImports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule, IgxProgressBarModule],
+                ngImports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule,
+                    IgxProgressBarModule, IgxIconModule],
                 ngProviders: [RemoteService]
             }),
             component: AutocompleteRemote
@@ -43,10 +46,13 @@ export class AutocompleteConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule, IgxDialogModule,
-                        MovieComponent, AutocompletePipeContains, AutocompleteGroupPipeContains],
-                ngDeclarations: [MovieComponent],
-                ngImports: [IgxAutocompleteModule, IgxDropDownModule, IgxInputGroupModule, IgxDialogModule]
+                imports: [IgxAutocompleteModule, IgxButtonModule, IgxDropDownModule, IgxInputGroupModule,
+                    IgxDatePickerModule, IgxDialogModule, IgxIconModule, IgxSelectModule, IgxTimePickerModule,
+                    MovieComponent, AutocompletePipeContains, AutocompleteGroupPipeContains, ReactiveFormsModule],
+                ngDeclarations: [MovieComponent, AutocompletePipeContains, AutocompleteGroupPipeContains],
+                ngImports: [IgxAutocompleteModule, IgxButtonModule,
+                    IgxDatePickerModule, IgxDropDownModule, IgxInputGroupModule,
+                    IgxDialogModule, IgxIconModule, IgxSelectModule, IgxTimePickerModule, ReactiveFormsModule]
             }),
             component: MovieComponent
         }));
