@@ -66,9 +66,9 @@ export class DropDownConfigGenerator implements IConfigGenerator {
             component: DropDownSample4Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule, DropDownSample4Component, IgxInputGroupModule,
-                    IgxRippleModule, IgxIconModule],
+                    IgxRippleModule, IgxIconModule, IgxToggleModule],
                 ngDeclarations: [DropDownSample4Component],
-                ngImports: [IgxDropDownModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule]
+                ngImports: [IgxDropDownModule, IgxInputGroupModule, IgxRippleModule, IgxIconModule, IgxToggleModule]
             }),
             shortenComponentPathBy: "/data-entries/dropdown/"
         }));
