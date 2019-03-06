@@ -12,6 +12,7 @@ import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-
 import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
@@ -51,7 +52,8 @@ import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/tim
         TimePickerSample4Component,
         TimePickerSample5Component,
         DatepickerDropdownComponent,
-        TimepickerDropdownComponent
+        TimepickerDropdownComponent,
+        CalendarViewsComponent
     ],
     imports: [
         CommonModule,

@@ -12,6 +12,7 @@ import { CalendarComponent } from "../../src/app/scheduling/calendar/calendar.co
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { CalendarViewsComponent } from '../../src/app/scheduling/calendar/calendar-views/calendar-views.component';
 // tslint:enable:max-line-length
 
 export class CalendarConfigGenerator implements IConfigGenerator {
@@ -93,6 +94,16 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 imports: [IgxCalendarModule, IgxSnackbarModule, CalendarSample7Component],
                 ngDeclarations: [CalendarSample7Component],
                 ngImports: [IgxCalendarModule, IgxSnackbarModule]
+            }),
+            shortenComponentPathBy: "/scheduling/calendar/"
+        }));
+
+        configs.push(new Config({
+            component: CalendarViewsComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCalendarModule, CalendarViewsComponent, IgxCardModule],
+                ngDeclarations: [CalendarViewsComponent],
+                ngImports: [IgxCalendarModule, IgxCardModule]
             }),
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
