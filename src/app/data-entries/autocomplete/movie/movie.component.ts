@@ -1,7 +1,8 @@
 import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
-import { DatePickerInteractionMode, DateRangeType,
-        IgxDialogComponent, TimePickerInteractionMode } from "igniteui-angular";
+import { DateRangeType,
+    IgxDialogComponent,
+    InteractionMode} from "igniteui-angular";
 @Component({
     selector: "movie-availability",
     styleUrls: ["./movie.component.scss"],
@@ -10,8 +11,7 @@ import { DatePickerInteractionMode, DateRangeType,
 export class MovieComponent {
     @ViewChild("alert", { read: IgxDialogComponent }) public alert: IgxDialogComponent;
     public user;
-    public dateMode = DatePickerInteractionMode.EDITABLE;
-    public timeMode = TimePickerInteractionMode.dropdown;
+    public pickerMode = InteractionMode.DropDown;
 
     public towns = [
         { name: "New York", cinemas: ["Regal Cinemas", "Village East Cinema", "Roxy Cinema", "The Paris Theatre" ]},
