@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 // tslint:disable:max-line-length
-import { IgxButtonModule, IgxCalendarModule, IgxSelectModule } from "igniteui-angular";
+import { IgxButtonModule, IgxCalendarModule, IgxSelectModule, IgxCardModule, IgxInputGroupModule } from "igniteui-angular";
 
 import { MonthpickerSample1Component } from "../../src/app/scheduling/monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "../../src/app/scheduling/monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
@@ -18,9 +18,9 @@ export class MonthPickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: MonthpickerSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, MonthpickerSample1Component, IgxButtonModule],
+                imports: [IgxCalendarModule, MonthpickerSample1Component, IgxButtonModule, IgxCardModule],
                 ngDeclarations: [MonthpickerSample1Component],
-                ngImports: [IgxCalendarModule, IgxButtonModule]
+                ngImports: [IgxCalendarModule, IgxButtonModule, IgxCardModule]
             }),
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));
@@ -29,9 +29,9 @@ export class MonthPickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: MonthpickerSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, MonthpickerSample2Component],
+                imports: [IgxCalendarModule, MonthpickerSample2Component, IgxCardModule],
                 ngDeclarations: [MonthpickerSample2Component],
-                ngImports: [IgxCalendarModule]
+                ngImports: [IgxCalendarModule, IgxCardModule]
             }),
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));
@@ -40,9 +40,9 @@ export class MonthPickerConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: MonthpickerSample3Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, MonthpickerSample3Component, IgxSelectModule],
+                imports: [IgxCalendarModule, MonthpickerSample3Component, IgxSelectModule, IgxCardModule, IgxInputGroupModule],
                 ngDeclarations: [MonthpickerSample3Component],
-                ngImports: [IgxCalendarModule, IgxSelectModule]
+                ngImports: [IgxCalendarModule, IgxSelectModule, IgxCardModule, IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/scheduling/monthpicker/"
         }));

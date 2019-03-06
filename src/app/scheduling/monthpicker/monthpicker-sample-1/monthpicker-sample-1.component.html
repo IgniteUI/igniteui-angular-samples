@@ -1,14 +1,14 @@
-<div class="sample-wrapper">
-    <div class="sample-content">
-        <div class="text-content"><label>Date: {{ date | date:'longDate' }}
-            </label></div>
-        <div class="month-picker-wrapper">
+<div class="sample-column card-wrapper">
+    <igx-card>
+        <igx-card-header>
+            <h5 class="igx-card-header__title">Date: {{ date | date:'longDate' }}</h5>
+        </igx-card-header>
+        <igx-card-content>
             <igx-month-picker #monthPicker [(ngModel)]="date"></igx-month-picker>
-        </div>
-
-        <div>
+        </igx-card-content>
+        <igx-card-actions>
             <button igxButton="flat" (click)="today()">Select Today</button>
             <button igxButton="flat" (click)="deselect()">Deselect Date</button>
-        </div>
-    </div>
+        </igx-card-actions>
+    </igx-card>
 </div>

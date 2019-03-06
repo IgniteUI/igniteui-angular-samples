@@ -1,5 +1,4 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxMonthPickerComponent, IgxSelectComponent } from "igniteui-angular";
 
 @Component({
     selector: "app-monthpicker-sample-3",
@@ -7,11 +6,6 @@ import { IgxMonthPickerComponent, IgxSelectComponent } from "igniteui-angular";
     templateUrl: "./monthpicker-sample-3.component.html"
 })
 export class MonthpickerSample3Component {
-    @ViewChild(IgxMonthPickerComponent)
-    public monthPicker;
-    @ViewChild(IgxSelectComponent)
-    public select;
-
     public formatOptions = {
         month: "long",
         year: "numeric"
@@ -19,5 +13,5 @@ export class MonthpickerSample3Component {
 
     public date = new Date();
     public locales = ["en", "de", "fr", "ar", "zh"];
-    public locale: "en";
+    public locale = "en";
 }
