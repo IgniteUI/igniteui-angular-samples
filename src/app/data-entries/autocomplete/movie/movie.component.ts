@@ -1,6 +1,8 @@
 import { Component, Pipe, PipeTransform, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
-import { DateRangeType, IgxDialogComponent } from "igniteui-angular";
+import { DateRangeType,
+    IgxDialogComponent,
+    InteractionMode} from "igniteui-angular";
 @Component({
     selector: "movie-availability",
     styleUrls: ["./movie.component.scss"],
@@ -9,12 +11,16 @@ import { DateRangeType, IgxDialogComponent } from "igniteui-angular";
 export class MovieComponent {
     @ViewChild("alert", { read: IgxDialogComponent }) public alert: IgxDialogComponent;
     public user;
-    public message = "";
+    public pickerMode = InteractionMode.DropDown;
 
     public towns = [
-        { name: "Sofia", cinemas: ["Lumiere Arena", "Grande Odeon", "Euro Cinema City", "Vlaikova 4DMax" ]},
-        { name: "Plovdiv", cinemas: ["Open Air Cinema Orpheus", "Lucky Cinema", "Cosmos Arena"]},
-        { name: "Jambol", cinemas: ["Elite Grand Cinema", "Vaptsarov Cinema", "Lucky Cinema", "Open Air Cinema Luskov"]}
+        { name: "New York", cinemas: ["Regal Cinemas", "Village East Cinema", "Roxy Cinema", "The Paris Theatre" ]},
+        // tslint:disable-next-line:object-literal-sort-keys
+        { name: "Los Angeles", cinemas: ["Arc Light", "Pacific Cinerama Dome",
+            "New Beverly Cinema", "Downtown Independent"]},
+        // tslint:disable-next-line:object-literal-sort-keys
+        { name: "Seattle", cinemas: ["Central Cinema", "Grand Illusion Cinema",
+            "Ark Lodge Cinemas", "Skyway Outdoor Cinema"]}
     ];
 
     public genres = [
