@@ -1,10 +1,9 @@
 <div class="sample-wrapper">
-    <igx-input-group #inputGroup class="input-group">
-        <input #input class="input" type="text" igxInput [igxDropDownItemNavigation]="dropDown"
+    <igx-input-group #inputGroup [igxToggleAction]="dropDown" class="input-group">
+        <input #input class="input"  type="text" igxInput [igxDropDownItemNavigation]="dropDown"
             readonly= "true"
             placeholder="choose an option"
             [value]="dropDown.selectedItem?.value"
-            [igxToggleAction]="dropDown"
             (keydown.ArrowDown)="openDropDown()"/>
 
         <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple>
