@@ -38,11 +38,12 @@ span:hover {
     vertical-align: middle;
     line-height: 12px;
     font-weight: 500;
-}
-
-.section__container--wide > span {
     width: 80px;
     padding-top: 16px;
+
+    p {
+        margin-top: 0px;
+    }
 }
 
 .section__position-element, .section__position-header {
