@@ -9,6 +9,8 @@ import {
     IgxOverlayService,
     VerticalAlignment
 } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { filter, takeUntil } from "rxjs/operators";
 @Component({
     selector: "overlay-sample",
     styleUrls: ["./overlay-position-sample-1.component.scss"],
@@ -32,6 +34,7 @@ export class OverlayPositionSample1Component implements OnInit, OnDestroy {
     @ViewChild("mainContainer")
     public mainContainer: ElementRef;
 
+    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
     constructor(
@@ -75,7 +78,7 @@ export class OverlayPositionSample1Component implements OnInit, OnDestroy {
     }
 
     public onClickDirectionElastic(horizontalDirection: HorizontalAlignment, verticalDirection: VerticalAlignment) {
-        this.overlay.show(this.overlayDemo, {
+        this.overlay.show(this.overlayId, {
             positionStrategy: new ElasticPositionStrategy({
                 target: this.elasticDemo.nativeElement,
                 horizontalDirection,
@@ -87,15 +90,26 @@ export class OverlayPositionSample1Component implements OnInit, OnDestroy {
 
     public ngOnInit() {
         const applyStyle = (overflow) => { this.overlayDemo.nativeElement.style.overflow = overflow; };
-        this.overlay.onOpening.subscribe(() => { applyStyle("auto"); });
-        this.overlay.onClosed.subscribe(() => {
-            delete this._overlayId;
-            applyStyle("");
-        });
+        this.overlay
+            .onOpening
+            .pipe(
+                filter((x) => x.id === this._overlayId),
+                takeUntil(this.destroy$))
+            .subscribe(() => { applyStyle("auto"); });
+
+        this.overlay
+            .onClosed
+            .pipe(
+                filter((x) => x.id === this._overlayId),
+                takeUntil(this.destroy$))
+            .subscribe(() => {
+                delete this._overlayId;
+                applyStyle("");
+            });
     }
 
     public ngOnDestroy() {
-        this.overlay.onOpening.unsubscribe();
-        this.overlay.onClosed.unsubscribe();
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 }

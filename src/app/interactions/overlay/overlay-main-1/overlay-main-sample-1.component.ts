@@ -1,5 +1,7 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, OnDestroy } from "@angular/core";
 import { IgxOverlayService } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { filter, takeUntil } from "rxjs/operators";
 import { CardSample1Component } from "../../../layouts/card/card-sample-1/card-sample-1.component";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -7,7 +9,8 @@ import { CardSample1Component } from "../../../layouts/card/card-sample-1/card-s
     templateUrl: `./overlay-main-sample-1.component.html`,
     styleUrls: [`./overlay-main-sample-1.component.scss`]
 })
-export class OverlaySampleMain1Component {
+export class OverlaySampleMain1Component implements OnDestroy {
+    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
     constructor(
@@ -15,7 +18,12 @@ export class OverlaySampleMain1Component {
     ) {
         //  overlay service deletes the id when onClosed is called. We should clear our id
         //  also in same event
-        this.overlayService.onClosed.subscribe(() => delete this._overlayId);
+        this.overlayService
+            .onClosed
+            .pipe(
+                filter((x) => x.id === this._overlayId),
+                takeUntil(this.destroy$))
+            .subscribe(() => delete this._overlayId);
     }
 
     public showOverlay() {
@@ -24,5 +32,10 @@ export class OverlaySampleMain1Component {
         }
 
         this.overlayService.show(this._overlayId);
+    }
+
+    public ngOnDestroy() {
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 }

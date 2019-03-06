@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy,
     AutoPositionStrategy,
@@ -11,6 +11,8 @@ import {
     PositionSettings,
     VerticalAlignment
 } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { filter, takeUntil } from "rxjs/operators";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
@@ -18,7 +20,7 @@ import {
     templateUrl: "./overlay-scroll-sample-1.component.html",
     providers: [IgxOverlayService]
 })
-export class OverlayScrollSample1Component {
+export class OverlayScrollSample1Component implements OnDestroy {
 
     public modalValue = true;
 
@@ -46,6 +48,7 @@ export class OverlayScrollSample1Component {
         closeOnOutsideClick: true
     };
 
+    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
     constructor(
@@ -53,7 +56,12 @@ export class OverlayScrollSample1Component {
     ) {
         //  overlay service deletes the id when onClosed is called. We should clear our id
         //  also in same event
-        this.overlay.onClosed.subscribe(() => delete this._overlayId);
+        this.overlay
+            .onClosed
+            .pipe(
+                filter((x) => x.id === this._overlayId),
+                takeUntil(this.destroy$))
+            .subscribe(() => delete this._overlayId);
     }
 
     public onClickModal(event: Event, strategy: string) {
@@ -94,5 +102,10 @@ export class OverlayScrollSample1Component {
             this._overlayId = this.overlay.attach(this.overlayDemo);
         }
         return this._overlayId;
+    }
+
+    public ngOnDestroy() {
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnInit, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy,
     BlockScrollStrategy,
@@ -7,6 +7,8 @@ import {
     IgxOverlayService,
     NoOpScrollStrategy
 } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { filter, takeUntil } from "rxjs/operators";
 import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-card.component";
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -15,7 +17,8 @@ import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-
     templateUrl: "./overlay-scroll-sample-2.component.html",
     providers: [IgxOverlayService]
 })
-export class OverlayScrollSample2Component implements OnInit {
+export class OverlayScrollSample2Component implements OnInit, OnDestroy {
+
     public previewHidden = false;
     @ViewChild("scrollDemo")
     public scrollDemo: ElementRef;
@@ -26,6 +29,7 @@ export class OverlayScrollSample2Component implements OnInit {
     @ViewChild("mainContainer")
     public mainContainer: ElementRef;
 
+    private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
     constructor(
@@ -33,7 +37,12 @@ export class OverlayScrollSample2Component implements OnInit {
     ) {
         //  overlay service deletes the id when onClosed is called. We should clear our id
         //  also in same event
-        this.overlay.onClosed.subscribe(() => delete this._overlayId);
+        this.overlay
+            .onClosed
+            .pipe(
+                filter((x) => x.id === this._overlayId),
+                takeUntil(this.destroy$))
+            .subscribe(() => delete this._overlayId);
     }
 
     public ngOnInit(): void {
@@ -79,5 +88,10 @@ export class OverlayScrollSample2Component implements OnInit {
             this._overlayId = this.overlay.attach(MyDynamicCardComponent);
         }
         return this._overlayId;
+    }
+
+    public ngOnDestroy() {
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 }
