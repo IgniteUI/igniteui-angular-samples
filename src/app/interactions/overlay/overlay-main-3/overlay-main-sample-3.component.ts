@@ -1,6 +1,5 @@
 import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
-import {
-    ConnectedPositioningStrategy, IgxButtonDirective, IgxIconModule, IgxOverlayService } from "igniteui-angular";
+import { ConnectedPositioningStrategy, IgxOverlayService } from "igniteui-angular";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
@@ -20,10 +19,11 @@ export class OverlaySampleMain3Component {
     }
 
     public showOverlay() {
-        this.overlayService.show(this.cardSample, {
+        const overlayId = this.overlayService.attach(this.cardSample, {
             positionStrategy: new ConnectedPositioningStrategy({
                 target: this.buttonElement.nativeElement
             })
         });
+        this.overlayService.show(overlayId);
     }
 }

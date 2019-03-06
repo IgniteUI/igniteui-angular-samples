@@ -55,7 +55,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Launch Date">
+        <igx-column field="Launch Date" [dataType]="'date'">
             <ng-template igxHeader let-columnRef="column">
                 <div class="title-inner">
                     <span style="float:left"> {{columnRef.field}} </span>
