@@ -13,7 +13,7 @@ import {
 export class MovieComponent {
     @ViewChild("alert", { read: IgxDialogComponent }) public alert: IgxDialogComponent;
     public user;
-    public mode = InteractionMode.DropDown;
+    public pickerMode = InteractionMode.DropDown;
 
     public towns = [
         { name: "New York", cinemas: ["Regal Cinemas", "Village East Cinema", "Roxy Cinema", "The Paris Theatre"] },
