@@ -54,10 +54,12 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
 
     public ngOnInit() {
         this.data = this.remoteService.remoteData.asObservable();
+
         this._dataLengthSubscriber = this.remoteService.getDataLength().subscribe((data) => {
             this.totalCount = data;
             this.totalPages = Math.ceil(data / this.perPage);
             this.buttonDeselection(this.page, this.totalPages);
+            this.grid1.isLoading = false;
         });
     }
 
@@ -68,6 +70,8 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     }
 
     public ngAfterViewInit() {
+        this.grid1.isLoading = true;
+
         this.remoteService.getData(0, this.perPage);
         this.grid1.paginationTemplate = this.remotePager;
     }
