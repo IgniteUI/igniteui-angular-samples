@@ -1,8 +1,18 @@
-import { Component, ElementRef, Inject, ViewChild } from "@angular/core";
+import { Component, ElementRef, Inject, OnDestroy, ViewChild } from "@angular/core";
 import {
-    AbsoluteScrollStrategy, AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy,
-    GlobalPositionStrategy, HorizontalAlignment, IgxOverlayService, OverlaySettings, PositionSettings, VerticalAlignment
+    AbsoluteScrollStrategy,
+    AutoPositionStrategy,
+    ConnectedPositioningStrategy,
+    ElasticPositionStrategy,
+    GlobalPositionStrategy,
+    HorizontalAlignment,
+    IgxOverlayService,
+    OverlaySettings,
+    PositionSettings,
+    VerticalAlignment
 } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { filter, takeUntil } from "rxjs/operators";
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: "overlay-sample",
@@ -10,7 +20,7 @@ import {
     templateUrl: "./overlay-scroll-sample-1.component.html",
     providers: [IgxOverlayService]
 })
-export class OverlayScrollSample1Component {
+export class OverlayScrollSample1Component implements OnDestroy {
 
     public modalValue = true;
 
@@ -37,11 +47,24 @@ export class OverlayScrollSample1Component {
         modal: true,
         closeOnOutsideClick: true
     };
+
+    private destroy$ = new Subject<boolean>();
+    private _overlayId: string;
+
     constructor(
         @Inject(IgxOverlayService) public overlay: IgxOverlayService
-    ) { }
+    ) {
+        //  overlay service deletes the id when onClosed is called. We should clear our id
+        //  also in same event
+        this.overlay
+            .onClosed
+            .pipe(
+                filter((x) => x.id === this._overlayId),
+                takeUntil(this.destroy$))
+            .subscribe(() => delete this._overlayId);
+    }
 
-    public onClickModal(event: Event, strat: string) {
+    public onClickModal(event: Event, strategy: string) {
         event.stopPropagation();
         const positionSettings = Object.assign(Object.assign({}, this._defaultPositionSettings), {
             target: this.modalDemo.nativeElement,
@@ -51,7 +74,7 @@ export class OverlayScrollSample1Component {
             verticalStartPoint: VerticalAlignment.Bottom
         });
         let positionStrategy;
-        switch (strat) {
+        switch (strategy) {
             case ("auto"):
                 positionStrategy = new AutoPositionStrategy(positionSettings);
                 break;
@@ -71,6 +94,18 @@ export class OverlayScrollSample1Component {
             modal: this.modalValue,
             positionStrategy
         });
-        this.overlay.show(this.overlayDemo, showSettings);
+        this.overlay.show(this.overlayId, showSettings);
+    }
+
+    private get overlayId(): string {
+        if (!this._overlayId) {
+            this._overlayId = this.overlay.attach(this.overlayDemo);
+        }
+        return this._overlayId;
+    }
+
+    public ngOnDestroy() {
+        this.destroy$.next(true);
+        this.destroy$.complete();
     }
 }
