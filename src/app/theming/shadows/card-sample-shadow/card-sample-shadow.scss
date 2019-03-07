@@ -1,39 +1,40 @@
-@import '../../../../../node_modules/igniteui-angular/lib/core/styles/themes/index';
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+@import '~igniteui-angular/lib/core/styles/themes/index';
 
-// TODO uncoment
-//$myCard: igx-card-theme(
-//    $resting-shadow: igx-elevation($elevations, 10)
-//);
-//
-//@include igx-card($myCard);
-//
-//$color-1: rgb(153, 191, 170); // Umbra
-//$color-2: rgb(92, 134, 141); // Penumbra
-//$color-3: rgb(92, 61, 70); // Ambient
-//
-//// Use igx-elevations to generate sass maps for all three
-//// box-shadows with the costume colors
-//
-//$elevations-color: igx-elevations($color-1, $color-2, $color-3);
-//
-//// Use the igx-elevation to set the desired elevation level
-//$mySpecialCard: igx-card-theme(
-//    $resting-shadow: igx-elevation($elevations-color, 10)
-//);
-//
-//// If you want you can scope your custom elevation to a specifics selector
-//.special-card {
-//    @include igx-card($mySpecialCard);
-//}
-//
-//$myboringCard: igx-card-theme(
-//    $resting-shadow: 0 10px 10px 10px #666
-//);
-//
-//.boring-card{
-//    @include igx-card($myboringCard);
-//}
+:host ::ng-deep {
 
+    $myCard: igx-card-theme(
+        $resting-shadow: igx-elevation($elevations, 10)
+    );
+    @include igx-card($myCard);
+
+    // Creating colors for all 3 shadows
+    $color-1: rgb(153, 191, 170); // Umbra
+    $color-2: rgb(92, 134, 141); // Penumbra
+    $color-3: rgb(92, 61, 70); // Ambient
+
+    // Use igx-elevations to generate sass maps for all three
+    // box-shadows with the costume colors
+    $elevations-color: igx-elevations($color-1, $color-2, $color-3);
+
+    // Use the igx-elevation to set the desired elevation level
+    $mySpecialCard: igx-card-theme(
+        $resting-shadow: igx-elevation($elevations-color, 10)
+    );
+
+    // If you want you can scope your custom elevation to a specifics selector
+    .special-card {
+        @include igx-card($mySpecialCard);
+    }
+
+    $myboringCard: igx-card-theme(
+        $resting-shadow: 0 10px 10px 10px #666
+    );
+
+    .boring-card {
+        @include igx-card($myboringCard);
+    }
+}
 .sample-wrapper {
     flex-wrap: wrap;
     display: flex;
@@ -52,6 +53,5 @@
             margin-left: 0;
         }
     }
-
 }
 

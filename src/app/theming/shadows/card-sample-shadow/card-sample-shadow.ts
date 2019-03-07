@@ -12,5 +12,4 @@ export class CardSampleShadow implements OnInit {
 
     public ngOnInit() {
     }
-
 }

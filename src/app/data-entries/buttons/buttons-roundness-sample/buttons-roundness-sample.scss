@@ -7,10 +7,14 @@ $myButton: igx-button-theme(
 @include igx-button($myButton);
 
 $mySpecialButton: igx-button-theme(
-    $button-roundness: 40px
+    $flat-border-radius: 1,
+    $fab-border-radius: 0,
+    $icon-border-radius: 0,
+    $raised-border-radius: 1
 );
 
-.roundness-button {
+.no-roundness,
+.full-roundness {
     @include igx-button($mySpecialButton);
 }
 
