@@ -1,8 +1,26 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
-import { notificationsRoutes } from "../notifications/notifications-routing.module";
+import { chartsRoutesData } from "../charts/charts-routes-data";
+import { dataDisplayRoutesData } from "../data-display/data-display-routes-data";
+import { dataEntriesRoutesData } from "../data-entries/data-entries-routes-data";
+import { excelLibraryRoutesData } from "../excel-library/excel-library-routes-data";
+import { gaugesRoutesData } from "../gauges/gauges-routes-data";
+import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
+import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
+import { gridsRoutesData } from "../grid/grid-routes-data";
+import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-grid-routes-data";
+import { interactionsRoutesData } from "../interactions/interactions-routes-data";
+import { layoutsRoutesData } from "../layouts/layouts-routes-data";
+import { listsRoutesData } from "../lists/lists-routes-data";
+import { menusRoutesData } from "../menus/menus-routes-data";
+import { notificationsRoutesData } from "../notifications/notifications-routes-data";
+import { schedulingRoutesData } from "../scheduling/scheduling-routes-data";
+import { servicesRoutesData } from "../services/services-routes-data";
+import { themingRoutesData } from "../theming/theming-routes-data";
+import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
+import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
 
 @Component({
     selector: "app-index",
@@ -36,14 +54,86 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     private modulesRoutes = [
         {
+            path: "data-display",
+            routesData: dataDisplayRoutesData
+        },
+        {
+            path: "data-entries",
+            routesData: dataEntriesRoutesData
+        },
+        {
+            path: "excel-library",
+            routesData: excelLibraryRoutesData
+        },
+        {
+            path: "gauges",
+            routesData: gaugesRoutesData
+        },
+        {
             path: "notifications",
-            routes: notificationsRoutes
+            routesData: notificationsRoutesData
+        },
+        {
+            path: "charts",
+            routesData: chartsRoutesData
+        },
+        {
+            path: "theming",
+            routesData: themingRoutesData
+        },
+        {
+            path: "menus",
+            routesData: menusRoutesData
+        },
+        {
+            path: "lists",
+            routesData: listsRoutesData
+        },
+        {
+            path: "interactions",
+            routesData: interactionsRoutesData
+        },
+        {
+            path: "scheduling",
+            routesData: schedulingRoutesData
+        },
+        {
+            path: "layouts",
+            routesData: layoutsRoutesData
+        },
+        {
+            path: "services",
+            routesData: servicesRoutesData
+        },
+        {
+            path: "grid",
+            routesData: gridsRoutesData
+        },
+        {
+            path: "grid-crm",
+            routesData: gridcrmRoutesData
+        },
+        {
+            path: "hierarchical-grid",
+            routesData: hierarchicalGridRoutesData
+        },
+        {
+            path: "tree-grid",
+            routesData: treeGridRoutesData
+        },
+        {
+            path: "finjs-sample",
+            routesData: gridfinjsRoutesData
+        },
+        {
+            path: "treegrid-finjs-sample",
+            routesData: treegridfinjsRoutesData
         }
     ];
 
     private allNavItems: INavigationItem[] = [];
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private cdr: ChangeDetectorRef) {
         this.appRoutes = this.getAllSampleRoutes("/samples",
             router.config.filter((c) => c.path === "samples")[0].children, this.modulesRoutes);
     }
@@ -87,6 +177,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
             this.toggleParent("header" + loadedParentItem.name);
             document.getElementById("child" + loadedChildItem.displayName).scrollIntoView();
+            this.cdr.detectChanges();
         }
     }
 
@@ -146,9 +237,15 @@ export class IndexComponent implements OnInit, AfterViewInit {
         });
 
         modulesRoutes.forEach((moduleRoutes: any) => {
-            moduleRoutes.routes.forEach((route: Route) => {
+            // tslint:disable-next-line:forin
+            for (const key in moduleRoutes.routesData) {
+                const route: Route = {
+                    data: moduleRoutes.routesData[key],
+                    path: key === "empty-path" ? "" : key
+                };
+
                 pushRoute(route, basePath + "/" + moduleRoutes.path);
-            });
+            }
         });
 
         return routes;

@@ -1,14 +1,11 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxButtonGroupModule } from "igniteui-angular";
-import {
-    ButtonGroupSample1Component
- } from "../../src/app/buttonGroup/button-group-sample-1/button-group-sample-1.component";
-import {
-    ButtonGroupSample2Component
-} from "../../src/app/buttonGroup/button-group-sample-2/button-group-sample-2.component";
-import {
-    ButtonGroupSample3Component
-} from "../../src/app/buttonGroup/button-group-sample-3/button-group-sample-3.component";
+import { ButtonGroupSample1Component
+} from "../../src/app/data-entries/buttonGroup/button-group-sample-1/button-group-sample-1.component";
+import { ButtonGroupSample2Component
+} from "../../src/app/data-entries/buttonGroup/button-group-sample-2/button-group-sample-2.component";
+import { ButtonGroupSample3Component
+} from "../../src/app/data-entries/buttonGroup/button-group-sample-3/button-group-sample-3.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -25,7 +22,7 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ButtonGroupSample1Component],
                 ngImports: [IgxButtonGroupModule]
             }),
-            shortenComponentPathBy: "/buttonGroup/"
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         // button group 2
@@ -36,7 +33,7 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ButtonGroupSample2Component],
                 ngImports: [IgxButtonGroupModule]
             }),
-            shortenComponentPathBy: "/buttonGroup/"
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         // button group 3
@@ -47,7 +44,7 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ButtonGroupSample3Component],
                 ngImports: [IgxButtonGroupModule]
             }),
-            shortenComponentPathBy: "/buttonGroup/"
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         return configs;

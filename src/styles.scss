@@ -1,10 +1,13 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 @include igx-core();
 @include igx-theme($default-palette);
+
+/* autoprefixer grid: on */
 html,
 body {
     height: 100%;
     overflow: hidden;
+    margin: 0;
 }
 
 .sample-wrapper {
