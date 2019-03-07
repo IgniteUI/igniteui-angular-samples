@@ -1,6 +1,6 @@
 <div class="sample-wrapper">
     <div class='controls-wrapper'>
-        <button class="button" igxButton="raised" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]="dropDown">Foods</button>
+        <button class="button" igxButton="raised" [igxToggleAction]="dropDown" [igxDropDownItemNavigation]="dropDown">Foods</button>
         <igx-switch [(ngModel)]="disableMeats">
             Disable 'Meats'
         </igx-switch>
