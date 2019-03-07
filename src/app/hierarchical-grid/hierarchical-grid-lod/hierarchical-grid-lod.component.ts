@@ -26,11 +26,18 @@ export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
             rootLevel: true
         };
         this.hGrid.isLoading = true;
-        this.remoteService.getData(dataState).subscribe((data) => {
-            this.hGrid.isLoading = false;
-            this.hGrid.data = data;
-            this.hGrid.cdr.detectChanges();
-        });
+        this.remoteService.getData(dataState).subscribe(
+            (data) => {
+                this.hGrid.isLoading = false;
+                this.hGrid.data = data;
+                this.hGrid.cdr.detectChanges();
+            },
+            (error) => {
+                this.hGrid.emptyGridMessage = error.message;
+                this.hGrid.isLoading = false;
+                this.hGrid.cdr.detectChanges();
+            }
+        );
     }
 
     public dateFormatter(val: string) {
@@ -49,6 +56,11 @@ export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
             (data) => {
                 event.grid.isLoading = false;
                 event.grid.data = data;
+                event.grid.cdr.detectChanges();
+            },
+            (error) => {
+                event.grid.emptyGridMessage = error.message;
+                event.grid.isLoading = false;
                 event.grid.cdr.detectChanges();
             }
         );
