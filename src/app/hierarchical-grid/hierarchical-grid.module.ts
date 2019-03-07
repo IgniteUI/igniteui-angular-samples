@@ -15,6 +15,12 @@ import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
+import {
+    HGridExcelStyleFilteringSample1Component
+} from "./hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
+import {
+    HGridExcelStyleFilteringSample2Component
+} from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
@@ -56,7 +62,9 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridEditingSampleComponent,
         HGridBatchEditingSampleComponent,
         HierarchicalGridWithTransactionsComponent,
-        HierarchicalGridLoDSampleComponent
+        HierarchicalGridLoDSampleComponent,
+        HGridExcelStyleFilteringSample1Component,
+        HGridExcelStyleFilteringSample2Component
     ],
     imports: [
         CommonModule,
