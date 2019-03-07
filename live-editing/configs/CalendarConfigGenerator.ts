@@ -8,11 +8,11 @@ import { CalendarSample4Component } from "../../src/app/scheduling/calendar/cale
 import { CalendarSample5Component } from "../../src/app/scheduling/calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarSample6Component } from "../../src/app/scheduling/calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "../../src/app/scheduling/calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarViewsComponent } from "../../src/app/scheduling/calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "../../src/app/scheduling/calendar/calendar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { CalendarViewsComponent } from '../../src/app/scheduling/calendar/calendar-views/calendar-views.component';
 // tslint:enable:max-line-length
 
 export class CalendarConfigGenerator implements IConfigGenerator {
