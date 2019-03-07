@@ -14,4 +14,11 @@
         <igx-column [field]="'Phone'"></igx-column>
         <igx-column [field]="'Country'"></igx-column>
     </igx-grid>
+    <div class="buttons-row">
+        <div class="buttons-wrapper">
+            <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>
+            <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>
+            <button igxButton [disabled]="!hasTransactions" (click)="commit()">Commit</button>
+        </div>
+    </div>
 </div>
