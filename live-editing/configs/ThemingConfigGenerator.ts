@@ -22,7 +22,8 @@ export class ThemingConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/theming/data/data.ts",
                 "/src/app/theming/data/record.ts",
                 "/src/app/theming/styles/themes.scss",
-                "/src/app/theming/styles/theme-classes.scss"],
+                "/src/app/theming/styles/theme-classes.scss",
+                "src/app/theming/styles/schemas.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule,
                     IgxGridModule, IgxDialogModule, IgxSnackbarModule, IgxLayoutModule, ThemeChooserSampleComponent,
