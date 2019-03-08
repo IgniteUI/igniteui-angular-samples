@@ -110,9 +110,9 @@ export class ThemeChooserSampleComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.grid1.outletDirective = this.outlet;
+        this.datePicker.outlet = this.outlet;
+        // this.grid1.outletDirective = this.outlet;
         this.data = DATA;
         this.record = new Record();
     }
-
 }

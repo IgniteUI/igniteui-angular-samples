@@ -3,8 +3,8 @@
         <article class="sample-column">
             <form class="input-group-form" [formGroup]="user" (ngSubmit)="onSubmit()">
                 <h4 class="sample-title">Book your movie ticket</h4>
-                <div class="igx-combo">
-                    <igx-select #select name="movies" [(ngModel)]="user.value.movie">
+                <div class="component-container">
+                    <igx-select #select name="movies" formControlName="movie">
                         <igx-select-item-group *ngFor="let genre of genres" [label]="genre.type">
                             <igx-select-item *ngFor="let movie of genre.movies" [value]="movie">
                                 {{ movie }}
@@ -37,20 +37,20 @@
                         <igx-icon>email</igx-icon>
                     </igx-suffix>
                 </igx-input-group>
-                <div class="igx-combo">
+                <div class="component-container">
                     <igx-combo #combo1 class="input-container" width="100%" [itemsMaxHeight]="130"
                         [data]="genres" [valueKey]="'type'" [displayKey]="'type'"
                         type="line" formControlName="genres" placeholder="Select your favorite genres"
                         searchPlaceholder="Search...">
                     </igx-combo>
                 </div>
-                <div class="igx-datePicker">
+                <div class="component-container">
                     <igx-date-picker name="date" formControlName="date"></igx-date-picker>
                 </div>
-                <div class="igx-timePicker">
+                <div class="component-container">
                     <igx-time-picker name="dateTime" formControlName="dateTime"></igx-time-picker>
                 </div>
-                <div class="button-wrapper">
+                <div class="component-container">
                     <button igxButton="raised" igxRipple type="submit" [disabled]="!user.valid">Book</button>
                 </div>
             </form>
