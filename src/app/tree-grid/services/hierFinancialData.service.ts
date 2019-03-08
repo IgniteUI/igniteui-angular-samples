@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable} from "rxjs";
-import { FinancialData } from "./hierFinancialData";
+import { FinancialData } from "../data/hierFinancialData";
 
 @Injectable()
-export class TreeLocalDataService {
+export class HierFinancialDataService {
     public records: Observable<any[]>;
     public _records: BehaviorSubject<any[]>;
 

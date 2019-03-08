@@ -4,15 +4,16 @@ import {
     IgxButtonModule,
     IgxCsvExporterService,
     IgxExcelExporterService,
-    IgxGridModule,
     IgxIconModule,
     IgxRippleModule,
     IgxSliderModule,
     IgxSwitchModule,
-    IgxToggleModule
+    IgxToggleModule,
+    IgxTreeGridModule
 } from "igniteui-angular";
+import { LocalDataService } from "../../src/app/grid-finjs/localData.service";
 import { TreeGridFinJSComponent } from "../../src/app/treegrid-finjs/tree-grid-finjs-sample.component";
-import { TreeLocalDataService } from "../../src/app/treegrid-finjs/treeLocalData.service";
+import { TreeGridGroupingPipe } from "../../src/app/treegrid-finjs/tree-grid-grouping.pipe";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -22,16 +23,17 @@ export class TreeGridFinjsConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/treegrid-finjs/treeLocalData.service.ts",
-                "/src/app/treegrid-finjs/hierFinancialData.ts"],
+            additionalFiles: ["/src/app/grid-finjs/localData.service.ts",
+                "/src/app/grid/services/financialData.ts",
+                "/src/app/treegrid-finjs/tree-grid-grouping.pipe.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
-                    IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
-                    IgxRippleModule, TreeGridFinJSComponent, TreeLocalDataService],
-                ngDeclarations: [TreeGridFinJSComponent],
-                ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                imports: [IgxTreeGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                    IgxButtonModule, IgxExcelExporterService, IgxSwitchModule, IgxRippleModule, TreeGridFinJSComponent,
+                    LocalDataService, TreeGridGroupingPipe],
+                ngDeclarations: [TreeGridFinJSComponent, TreeGridGroupingPipe],
+                ngImports: [IgxTreeGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxSwitchModule, IgxRippleModule],
-                ngProviders: [TreeLocalDataService, IgxExcelExporterService, IgxCsvExporterService]
+                ngProviders: [LocalDataService, IgxExcelExporterService]
             }),
             component: TreeGridFinJSComponent
         }));

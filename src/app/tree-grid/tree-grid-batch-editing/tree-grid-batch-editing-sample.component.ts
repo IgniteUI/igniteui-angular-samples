@@ -11,7 +11,7 @@ import {
 @Component({
     providers: [{ provide: IgxGridTransaction, useClass: IgxHierarchicalTransactionService }],
     selector: "app-tree-grid-batch-editing-sample",
-    styleUrls: ["tree-grid-batch-editing-sample.component.css"],
+    styleUrls: ["tree-grid-batch-editing-sample.component.scss"],
     templateUrl: "tree-grid-batch-editing-sample.component.html"
 })
 export class TreeGridBatchEditingSampleComponent implements OnInit {
