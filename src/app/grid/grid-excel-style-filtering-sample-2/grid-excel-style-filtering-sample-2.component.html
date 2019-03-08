@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="650px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+    <igx-grid #grid1 [data]="data" [autoGenerate]="false" [showToolbar]="true" [columnHiding]="true" height="800px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-column field="ProductName" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="false" [disablePinning]="true" [disableHiding]="true" [movable]="false" [dataType]="'string'">

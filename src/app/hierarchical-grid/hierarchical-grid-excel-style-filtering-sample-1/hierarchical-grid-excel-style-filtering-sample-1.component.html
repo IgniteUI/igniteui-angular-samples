@@ -1,6 +1,6 @@
-<igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
-    [height]="'650px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
-    <igx-column field="Artist" [filterable]='true'></igx-column>
+<igx-hierarchical-grid class="hgrid" [data]="localdata" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter"
+height="800px" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+    <igx-column field="Artist" [sortable]="true" [movable]="true"></igx-column>
     <igx-column field="Photo" [filterable]='false'>
         <ng-template igxCell let-cell="cell">
             <div class="cell__inner_2">
@@ -8,15 +8,15 @@
             </div>
         </ng-template>
     </igx-column>
-    <igx-column field="Debut" [filterable]='true'></igx-column>
-    <igx-column field="Grammy Nominations" [filterable]='true' [dataType]="'number'"></igx-column>
-    <igx-column field="Grammy Awards" [filterable]='true' [dataType]="'number'"></igx-column>
+    <igx-column field="Debut" [sortable]="true" [movable]="true"></igx-column>
+    <igx-column field="Grammy Nominations" [dataType]="'number'" [sortable]="true" [movable]="true"></igx-column>
+    <igx-column field="Grammy Awards" [dataType]="'number'" [sortable]="true" [movable]="true"></igx-column>
 
     <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' filterMode="excelStyleFilter">
-        <igx-column field="Album" [filterable]='true'></igx-column>
-        <igx-column field="Launch Date" [filterable]='true' [dataType]="'date'"></igx-column>
-        <igx-column field="Billboard Review" [filterable]='true' [dataType]="'number'"></igx-column>
-        <igx-column field="US Billboard 200" [filterable]='true' [dataType]="'number'"></igx-column>
+        <igx-column field="Album" [sortable]="true" [movable]="true"></igx-column>
+        <igx-column field="Launch Date" [sortable]="true" [movable]="true" [dataType]="'date'"></igx-column>
+        <igx-column field="Billboard Review" [sortable]="true" [movable]="true" [dataType]="'number'"></igx-column>
+        <igx-column field="US Billboard 200" [sortable]="true" [movable]="true" [dataType]="'number'"></igx-column>
     <igx-row-island [key]="'Songs'" [autoGenerate]="false" >
             <igx-column field="No."></igx-column>
             <igx-column field="Title"></igx-column>
