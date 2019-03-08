@@ -1,10 +1,12 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
+import {
+    IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
     IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
     IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule,
-    IgxSwitchModule, IgxTimePickerModule, IgxToggleModule} from "igniteui-angular";
+    IgxSwitchModule, IgxTimePickerModule, IgxToggleModule
+} from "igniteui-angular";
 import { AutocompleteRemote } from "./autocomplete/autocomplete-remote/autocomplete-remote.component";
 import { AutocompleteBasic, AutocompletePipeStartsWith } from "./autocomplete/autocomplete/autocomplete.component";
 import {
@@ -22,6 +24,7 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
+import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-sample-8.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { DataEntriesRoutingModule } from "./data-entries-routing.module";
@@ -65,6 +68,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample5Component,
         ButtonsSample6Component,
         ButtonsSample7Component,
+        ButtonsSample8Component,
         CheckboxSample1Component,
         CheckboxSample2Component,
         DropdownMenuComponent,

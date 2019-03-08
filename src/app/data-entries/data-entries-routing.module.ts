@@ -13,6 +13,7 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
+import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-sample-8.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { dataEntriesRoutesData } from "./data-entries-routes-data";
@@ -104,6 +105,11 @@ export const dataEntriesRoutes: Routes = [
         component: ButtonsSample7Component,
         data: dataEntriesRoutesData["buttons-sample-7"],
         path: "buttons-sample-7"
+    },
+    {
+        component: ButtonsSample8Component,
+        data: dataEntriesRoutesData["buttons-sample-8"],
+        path: "buttons-sample-8"
     },
     {
         component: CheckboxSample1Component,
