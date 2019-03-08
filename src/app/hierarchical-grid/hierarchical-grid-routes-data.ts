@@ -5,6 +5,8 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-batch-editing": { displayName: "Hierarchical Grid Batch Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering": { displayName: "Hierarchical Grid Filtering", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-excel-style-filtering": { displayName: "Hierarchical Grid Excel Style Filtering", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-excel-style-filtering-templates": { displayName: "Hierarchical Grid Excel Style Filtering Templates", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-filtering": { displayName: "Hierarchical Grid Custom Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },
     "hierarchical-grid-selection": { displayName: "Hierarchical Grid Selection", parentName: "Hierarchical Grid" },

@@ -1,0 +1,22 @@
+<div class="sample-content">
+    <div class="sample-column card-wrapper">
+        <igx-card>
+            <igx-card-header>
+                <h5 class="igx-card-header__title">2-digit Month Format</h5>
+            </igx-card-header>
+            <igx-card-content>
+                <igx-month-picker [(ngModel)]="date" [formatOptions]="numericFormatOptions"></igx-month-picker>
+            </igx-card-content>
+        </igx-card>
+    </div>
+    <div class="sample-column card-wrapper">
+        <igx-card>
+            <igx-card-header>
+                <h5 class="igx-card-header__title">Long Month Format</h5>
+            </igx-card-header>
+            <igx-card-content>
+                <igx-month-picker [(ngModel)]="date" [formatOptions]="longFormatOptions"></igx-month-picker>
+            </igx-card-content>
+        </igx-card>
+    </div>
+</div>
