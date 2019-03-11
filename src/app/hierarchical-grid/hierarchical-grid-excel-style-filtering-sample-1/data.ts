@@ -29,14 +29,14 @@ export const SINGERS = [
             {
                 "No.": "2",
                 "Title": "Ferocious",
-                "Released": "28-Apr-2014",
+                "Released": "28 Apr 2014",
                 "Genre": "Dance-pop R&B",
                 "Album": "Dream Driven"
             },
             {
                 "No.": "3",
                 "Title": "Going crazy",
-                "Released": "10-Feb-2015",
+                "Released": "10 Feb 2015",
                 "Genre": "Dance-pop EDM",
                 "Album": "Dream Driven"
             },
@@ -50,14 +50,14 @@ export const SINGERS = [
             {
                 "No.": "5",
                 "Title": "Roaming like them",
-                "Released": "2-Jul-2014",
+                "Released": "2 Jul 2014",
                 "Genre": "Electro house Electropop",
                 "Album": "Dream Driven"
             },
             {
                 "No.": "6",
                 "Title": "Last Wishes",
-                "Released": "12-Aug-2014",
+                "Released": "12 Aug 2014",
                 "Genre": "R&B",
                 "Album": "Dream Driven"
             },
@@ -78,7 +78,7 @@ export const SINGERS = [
             {
                 "No.": "9",
                 "Title": "Tell me",
-                "Released": "30-Sep-2014",
+                "Released": "30 Sep 2014",
                 "Genre": "Synth-pop R&B",
                 "Album": "Dream Driven"
             },
@@ -120,77 +120,77 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "I Love",
-                "Released": "11-May-2019",
+                "Released": "11 May 2019",
                 "Genre": "Crunk reggaeton",
                 "Album": "Organic me"
             },
             {
                 "No.": "2",
                 "Title": "Early Morning Compass",
-                "Released": "15-Jan-2020",
+                "Released": "15 Jan 2020",
                 "Genre": "mystical parody-bap ",
                 "Album": "Organic me"
             },
             {
                 "No.": "3",
                 "Title": "Key Fields Forever",
-                "Released": "2-Jan-2020",
+                "Released": "2 Jan 2020",
                 "Genre": "Dance-pop EDM",
                 "Album": "Organic me"
             },
             {
                 "No.": "4",
                 "Title": "Stand by Your Goblins",
-                "Released": "20-Nov-2019",
+                "Released": "20 Nov 2019",
                 "Genre": "*",
                 "Album": "Organic me"
             },
             {
                 "No.": "5",
                 "Title": "Mad to Walk",
-                "Released": "12-May-2019",
+                "Released": "12 May 2019",
                 "Genre": "Electro house Electropop",
                 "Album": "Organic me"
             },
             {
                 "No.": "6",
                 "Title": "Alice's Waiting",
-                "Released": "28-Jan-2020",
+                "Released": "28 Jan 2020",
                 "Genre": "R&B",
                 "Album": "Organic me"
             },
             {
                 "No.": "7",
                 "Title": "We Shall Kiss",
-                "Released": "30-Oct-2019",
+                "Released": "30 Oct 2019",
                 "Genre": "*",
                 "Album": "Organic me"
             },
             {
                 "No.": "8",
                 "Title": "Behind Single Ants",
-                "Released": "2-Oct-2019",
+                "Released": "2 Oct 2019",
                 "Genre": "*",
                 "Album": "Organic me"
             },
             {
                 "No.": "9",
                 "Title": "Soap Autopsy",
-                "Released": "8-Aug-2019",
+                "Released": "8 Aug 2019",
                 "Genre": "Synth-pop R&B",
                 "Album": "Organic me"
             },
             {
                 "No.": "10",
                 "Title": "Have You Met Rich?",
-                "Released": "1-Jul-2019",
+                "Released": "1 Jul 2019",
                 "Genre": "ethno-tunes",
                 "Album": "Organic me"
             },
             {
                 "No.": "11",
                 "Title": "Livin' on a Banana",
-                "Released": "22-Nov-2019",
+                "Released": "22 Nov 2019",
                 "Genre": "Crunk reggaeton",
                 "Album": "Organic me"
             }]
@@ -218,70 +218,70 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "Wood Shavings Forever",
-                "Released": "9-Jun-2019",
+                "Released": "9 Jun 2019",
                 "Genre": "*",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "2",
                 "Title": "Early Morning Drive",
-                "Released": "20-May-2019",
+                "Released": "20 May 2019",
                 "Genre": "*",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "3",
                 "Title": "Don't Natter",
-                "Released": "10-Jun-2019",
+                "Released": "10 Jun 2019",
                 "Genre": "adult calypso-industrial",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "4",
                 "Title": "Stairway to Balloons",
-                "Released": "18-Jun-2019",
+                "Released": "18 Jun 2019",
                 "Genre": "calypso and mariachi",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "5",
                 "Title": "The Number of your Apple",
-                "Released": "29-Oct-2019",
+                "Released": "29 Oct 2019",
                 "Genre": "*",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "6",
                 "Title": "Your Delightful Heart",
-                "Released": "24-Feb-2019",
+                "Released": "24 Feb 2019",
                 "Genre": "*",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "7",
                 "Title": "Nice Weather For Balloons",
-                "Released": "1-Aug-2019",
+                "Released": "1 Aug 2019",
                 "Genre": "rap-hop",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "8",
                 "Title": "The Girl From Cornwall",
-                "Released": "4-May-2019",
+                "Released": "4 May 2019",
                 "Genre": "enigmatic rock-and-roll",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "9",
                 "Title": "Here Without Jack",
-                "Released": "24-Oct-2019",
+                "Released": "24 Oct 2019",
                 "Genre": "*",
                 "Album": "Pushing up daisies"
             },
             {
                 "No.": "10",
                 "Title": "Born Rancid",
-                "Released": "19-Mar-2019",
+                "Released": "19 Mar 2019",
                 "Genre": "*",
                 "Album": "Pushing up daisies"
             }]
@@ -295,77 +295,77 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "Men Sound Better With You",
-                "Released": "20-Oct-2019",
+                "Released": "20 Oct 2019",
                 "Genre": "rap-hop",
                 "Album": "Death's dead"
             },
             {
                 "No.": "2",
                 "Title": "Ghost in My Rod",
-                "Released": "5-Oct-2019",
+                "Released": "5 Oct 2019",
                 "Genre": "enigmatic rock-and-roll",
                 "Album": "Death's dead"
             },
             {
                 "No.": "3",
                 "Title": "Bed of Men",
-                "Released": "14-Nov-2019",
+                "Released": "14 Nov 2019",
                 "Genre": "whimsical comedy-grass ",
                 "Album": "Death's dead"
             },
             {
                 "No.": "4",
                 "Title": "Don't Push",
-                "Released": "2-Jan-2020",
+                "Released": "2 Jan 2020",
                 "Genre": "unblack electronic-trip-hop",
                 "Album": "Death's dead"
             },
             {
                 "No.": "5",
                 "Title": "Nice Weather For Men",
-                "Released": "18-Dec-2019",
+                "Released": "18 Dec 2019",
                 "Genre": "*",
                 "Album": "Death's dead"
             },
             {
                 "No.": "6",
                 "Title": "Rancid Rhapsody",
-                "Released": "10-Mar-2019",
+                "Released": "10 Mar 2019",
                 "Genre": "*",
                 "Album": "Death's dead"
             },
             {
                 "No.": "7",
                 "Title": "Push, Push, Push!",
-                "Released": "21-Feb-2019",
+                "Released": "21 Feb 2019",
                 "Genre": "*",
                 "Album": "Death's dead"
             },
             {
                 "No.": "8",
                 "Title": "My Name is Sarah",
-                "Released": "15-Nov-2019",
+                "Released": "15 Nov 2019",
                 "Genre": "*",
                 "Album": "Death's dead"
             },
             {
                 "No.": "9",
                 "Title": "The Girl From My Hotel",
-                "Released": "6-Nov-2019",
+                "Released": "6 Nov 2019",
                 "Genre": "*",
                 "Album": "Death's dead"
             },
             {
                 "No.": "10",
                 "Title": "Free Box",
-                "Released": "18-Apr-2019",
+                "Released": "18 Apr 2019",
                 "Genre": "splitter-funk",
                 "Album": "Death's dead"
             },
             {
                 "No.": "11",
                 "Title": "Hotel Cardiff",
-                "Released": "30-Dec-2019",
+                "Released": "30 Dec 2019",
                 "Genre": "guilty pleasure ebm",
                 "Album": "Death's dead"
             }]
@@ -428,70 +428,70 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "Whole Lotta Super Cats",
-                "Released": "21-May-2019",
+                "Released": "21 May 2019",
                 "Genre": "*",
                 "Album": "Once bitten"
             },
             {
                 "No.": "2",
                 "Title": "Enter Becky",
-                "Released": "16-Jan-2020",
+                "Released": "16 Jan 2020",
                 "Genre": "*",
                 "Album": "Once bitten"
             },
             {
                 "No.": "3",
                 "Title": "Your Cheatin' Flamingo",
-                "Released": "14-Jan-2020",
+                "Released": "14 Jan 2020",
                 "Genre": "*",
                 "Album": "Once bitten"
             },
             {
                 "No.": "4",
                 "Title": "Mad to Kiss",
-                "Released": "6-Nov-2019",
+                "Released": "6 Nov 2019",
                 "Genre": "Synth-pop R&B",
                 "Album": "Once bitten"
             },
             {
                 "No.": "5",
                 "Title": "Hotel Prague",
-                "Released": "20-Oct-2019",
+                "Released": "20 Oct 2019",
                 "Genre": "ethno-tunes",
                 "Album": "Once bitten"
             },
             {
                 "No.": "6",
                 "Title": "Jail on My Mind",
-                "Released": "31-May-2019",
+                "Released": "31 May 2019",
                 "Genre": "Crunk reggaeton",
                 "Album": "Once bitten"
             },
             {
                 "No.": "7",
                 "Title": "Amazing Blues",
-                "Released": "29-May-2019",
+                "Released": "29 May 2019",
                 "Genre": "mystical parody-bap ",
                 "Album": "Once bitten"
             },
             {
                 "No.": "8",
                 "Title": "Goody Two Iron Filings",
-                "Released": "4-Jul-2019",
+                "Released": "4 Jul 2019",
                 "Genre": "Electro house Electropop",
                 "Album": "Once bitten"
             },
             {
                 "No.": "9",
                 "Title": "I Love in Your Arms",
-                "Released": "7-Jun-2019",
+                "Released": "7 Jun 2019",
                 "Genre": "R&B",
                 "Album": "Once bitten"
             },
             {
                 "No.": "10",
                 "Title": "Truly Madly Amazing",
-                "Released": "12-Sep-2019",
+                "Released": "12 Sep 2019",
                 "Genre": "ethno-tunes",
                 "Album": "Once bitten"
             }]
@@ -505,70 +505,70 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "We Shall Tickle",
-                "Released": "31-Aug-2019",
+                "Released": "31 Aug 2019",
                 "Genre": "old emo-garage ",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "2",
                 "Title": "Snail Boogie",
-                "Released": "14-Jun-2019",
+                "Released": "14 Jun 2019",
                 "Genre": "*",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "3",
                 "Title": "Amazing Liz",
-                "Released": "15-Oct-2019",
+                "Released": "15 Oct 2019",
                 "Genre": "*",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "4",
                 "Title": "When Sexy Aardvarks Cry",
-                "Released": "1-Oct-2019",
+                "Released": "1 Oct 2019",
                 "Genre": "whimsical comedy-grass ",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "5",
                 "Title": "Stand By Dave",
-                "Released": "18-Aug-2019",
+                "Released": "18 Aug 2019",
                 "Genre": "unblack electronic-trip-hop",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "6",
                 "Title": "The Golf Course is Your Land",
-                "Released": "2-Apr-2019",
+                "Released": "2 Apr 2019",
                 "Genre": "*",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "7",
                 "Title": "Where Have All the Men Gone?",
-                "Released": "29-Apr-2019",
+                "Released": "29 Apr 2019",
                 "Genre": "*",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "8",
                 "Title": "Rhythm of the Leg",
-                "Released": "5-Aug-2019",
+                "Released": "5 Aug 2019",
                 "Genre": "ethno-tunes",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "9",
                 "Title": "Baby, I Need Your Hats",
-                "Released": "5-Dec-2019",
+                "Released": "5 Dec 2019",
                 "Genre": "neuro-tunes",
                 "Album": "Your graciousness"
             },
             {
                 "No.": "10",
                 "Title": "Stand by Your Cat",
-                "Released": "25-Jul-2019",
+                "Released": "25 Jul 2019",
                 "Genre": "*",
                 "Album": "Your graciousness"
             }]
@@ -624,98 +624,98 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "Jack Broke My Heart At Tesco's",
-                "Released": "19-Jan-2020",
+                "Released": "19 Jan 2020",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "2",
                 "Title": "Cat Deep, Hats High",
-                "Released": "5-Dec-2019",
+                "Released": "5 Dec 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "3",
                 "Title": "In Snail We Trust",
-                "Released": "31-May-2019",
+                "Released": "31 May 2019",
                 "Genre": "hardcore opera",
                 "Album": "Under the bus"
             },
             {
                 "No.": "4",
                 "Title": "Liz's Waiting",
-                "Released": "22-Jul-2019",
+                "Released": "22 Jul 2019",
                 "Genre": "emotional C-jam ",
                 "Album": "Under the bus"
             },
             {
                 "No.": "5",
                 "Title": "Lifeless Blues",
-                "Released": "14-Jun-2019",
+                "Released": "14 Jun 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "6",
                 "Title": "I Spin",
-                "Released": "26-Mar-2019",
+                "Released": "26 Mar 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "7",
                 "Title": "Ring of Rock",
-                "Released": "12-Dec-2019",
+                "Released": "12 Dec 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "8",
                 "Title": "Livin' on a Rock",
-                "Released": "17-Apr-2019",
+                "Released": "17 Apr 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "9",
                 "Title": "Your Lifeless Heart",
-                "Released": "15-Sep-2019",
+                "Released": "15 Sep 2019",
                 "Genre": "adult calypso-industrial",
                 "Album": "Under the bus"
             },
             {
                 "No.": "10",
                 "Title": "The High Street on My Mind",
-                "Released": "11-Nov-2019",
+                "Released": "11 Nov 2019",
                 "Genre": "calypso and mariachi",
                 "Album": "Under the bus"
             },
             {
                 "No.": "11",
                 "Title": "Behind Ugly Curtains",
-                "Released": "8-May-2019",
+                "Released": "8 May 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "12",
                 "Title": "Where Have All the Curtains Gone?",
-                "Released": "28-Jun-2019",
+                "Released": "28 Jun 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "13",
                 "Title": "Ghost in My Apple",
-                "Released": "14-Dec-2019",
+                "Released": "14 Dec 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             },
             {
                 "No.": "14",
                 "Title": "I Chatter",
-                "Released": "30-Nov-2019",
+                "Released": "30 Nov 2019",
                 "Genre": "*",
                 "Album": "Under the bus"
             }]
@@ -743,63 +743,63 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "My Bed on My Mind",
-                "Released": "25-Mar-2019",
+                "Released": "25 Mar 2019",
                 "Genre": "ethno-tunes",
                 "Album": "Crowd control"
             },
             {
                 "No.": "2",
                 "Title": "Bright Blues",
-                "Released": "28-Sep-2019",
+                "Released": "28 Sep 2019",
                 "Genre": "neuro-tunes",
                 "Album": "Crowd control"
             },
             {
                 "No.": "3",
                 "Title": "Sail, Sail, Sail!",
-                "Released": "5-Mar-2019",
+                "Released": "5 Mar 2019",
                 "Genre": "*",
                 "Album": "Crowd control"
             },
             {
                 "No.": "4",
                 "Title": "Hotel My Bed",
-                "Released": "22-Mar-2019",
+                "Released": "22 Mar 2019",
                 "Genre": "*",
                 "Album": "Crowd control"
             },
             {
                 "No.": "5",
                 "Title": "Gonna Make You Mash",
-                "Released": "18-May-2019",
+                "Released": "18 May 2019",
                 "Genre": "*",
                 "Album": "Crowd control"
             },
             {
                 "No.": "6",
                 "Title": "Straight Outta America",
-                "Released": "16-Jan-2020",
+                "Released": "16 Jan 2020",
                 "Genre": "hardcore opera",
                 "Album": "Crowd control"
             },
             {
                 "No.": "7",
                 "Title": "I Drive",
-                "Released": "23-Feb-2019",
+                "Released": "23 Feb 2019",
                 "Genre": "emotional C-jam ",
                 "Album": "Crowd control"
             },
             {
                 "No.": "8",
                 "Title": "Like a Teddy",
-                "Released": "31-Aug-2019",
+                "Released": "31 Aug 2019",
                 "Genre": "*",
                 "Album": "Crowd control"
             },
             {
                 "No.": "9",
                 "Title": "Teddy Boogie",
-                "Released": "30-Nov-2019",
+                "Released": "30 Nov 2019",
                 "Genre": "*",
                 "Album": "Crowd control"
             }]
@@ -841,84 +841,84 @@ export const SINGERS = [
             "Songs": [{
                 "No.": "1",
                 "Title": "My Name is Jason",
-                "Released": "12-Jul-2019",
+                "Released": "12 Jul 2019",
                 "Genre": "*",
                 "Album": "First chance"
             },
             {
                 "No.": "2",
                 "Title": "Amazing Andy",
-                "Released": "5-Mar-2019",
+                "Released": "5 Mar 2019",
                 "Genre": "*",
                 "Album": "First chance"
             },
             {
                 "No.": "3",
                 "Title": "The Number of your Knight",
-                "Released": "4-Dec-2019",
+                "Released": "4 Dec 2019",
                 "Genre": "*",
                 "Album": "First chance"
             },
             {
                 "No.": "4",
                 "Title": "I Sail",
-                "Released": "3-Mar-2019",
+                "Released": "3 Mar 2019",
                 "Genre": "*",
                 "Album": "First chance"
             },
             {
                 "No.": "5",
                 "Title": "Goody Two Hands",
-                "Released": "11-Oct-2019",
+                "Released": "11 Oct 2019",
                 "Genre": "Electro house Electropop",
                 "Album": "First chance"
             },
             {
                 "No.": "6",
                 "Title": "Careful With That Knife",
-                "Released": "18-Dec-2019",
+                "Released": "18 Dec 2019",
                 "Genre": "R&B",
                 "Album": "First chance"
             },
             {
                 "No.": "7",
                 "Title": "Four Single Ants",
-                "Released": "18-Jan-2020",
+                "Released": "18 Jan 2020",
                 "Genre": "*",
                 "Album": "First chance"
             },
             {
                 "No.": "8",
                 "Title": "Kiss Forever",
-                "Released": "10-Aug-2019",
+                "Released": "10 Aug 2019",
                 "Genre": "*",
                 "Album": "First chance"
             },
             {
                 "No.": "9",
                 "Title": "Rich's Waiting",
-                "Released": "15-Mar-2019",
+                "Released": "15 Mar 2019",
                 "Genre": "Synth-pop R&B",
                 "Album": "First chance"
             },
             {
                 "No.": "10",
                 "Title": "Japan is Your Land",
-                "Released": "7-Mar-2019",
+                "Released": "7 Mar 2019",
                 "Genre": "ethno-tunes",
                 "Album": "First chance"
             },
             {
                 "No.": "11",
                 "Title": "Pencils in My Banana",
-                "Released": "21-Jun-2019",
+                "Released": "21 Jun 2019",
                 "Genre": "Crunk reggaeton",
                 "Album": "First chance"
             },
             {
                 "No.": "12",
                 "Title": "I Sail in Your Arms",
-                "Released": "30-Apr-2019",
+                "Released": "30 Apr 2019",
                 "Genre": "Synth-pop R&B",
                 "Album": "First chance"
             }]
