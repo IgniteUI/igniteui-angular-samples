@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-tree-grid #treegrid1 [data]="data" [autoGenerate]="false" height="650px" width="100%" [allowFiltering]="true" 
+    <igx-tree-grid #treegrid1 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="800px" width="100%" [allowFiltering]="true" 
         primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter">
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>

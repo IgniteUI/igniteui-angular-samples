@@ -97,6 +97,9 @@ The engine will create a `grid.json` file describing the path and content of the
 * app/app.module.ts
 * app/app.component.html
 
+### Assets
+Assets like images are not part of the live editing applications and will be accessed directly from our servers. All of the assets URLs should be relative, for example - `assets/images/avatar/joe.jpg`. When parsed by the live editing engine, the links are replaced with absolute URLs, e.g. `https://www.infragistics.com/igniteui-angular-samples/assets/images/avatar/joe.jpg`.
+
 ### Consuming Live Editing JSON files
 
 For each sample you have to request two files - `shared.json` and `sample.json` files. Both of the files are located in `/assets/samples/` folder. The naming of the sample's JSON file is the same as in the routing engine when requesting the sample - for a sample accessed by `sample-website/grid`, the JSON file will be named `grid.json`. If you have a lazily loaded module, use its path as a prefix. For example with a module with path `grid-module`, your `grid` sample file will be named `grid-module-grid.json`. After having both of the files, combine them and you will have all of the files required for a stand-alone Angular application.
