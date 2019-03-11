@@ -22,10 +22,10 @@
                 <label igxLabel for="marketNotion">Market Notion</label>
                 <input igxInput id="marketNotion" type="number" [(ngModel)]="record.MarketNotion" />
             </igx-input-group>
-            <igx-date-picker #datePicker name="date" [(ngModel)]="record.Date"> </igx-date-picker>
+            <igx-date-picker #datePicker name="date" [(ngModel)]="record.Date" [outlet]="outlet"> </igx-date-picker>
         </div>
     </igx-dialog>
-    <div igxOverlayOutlet #outlet>
+    <div igxOverlayOutlet>
         <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
             <button igxButton="raised" class="addProdBtn" (click)="openDialog()">Add New Product</button>
             <button class="drop-down-button" igxButton="raised" (click)="toggleDropDown($event, dropdown)"
@@ -50,8 +50,11 @@
                 <ng-template igxCell let-cell="cell" let-val>
                     {{val | date:'dd/MM/yyyy'}}
                 </ng-template>
+                <ng-template igxCellEditor let-cell="cell" >
+                    <igx-date-picker [value] = "cell.value" (onSelection)="cell.value = $event" [labelVisibility]="false" [outlet]="outlet"></igx-date-picker>
+                </ng-template>
             </igx-column>
-            <igx-column width="120%" [field]="'Delete Row'" [filterable]="false">
+            <igx-column [field]="'Delete Row'" [filterable]="false">
                 <ng-template igxCell let-cell="cell">
                     <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
                         <igx-icon>delete</igx-icon>
