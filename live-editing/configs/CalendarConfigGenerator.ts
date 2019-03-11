@@ -8,6 +8,7 @@ import { CalendarSample4Component } from "../../src/app/scheduling/calendar/cale
 import { CalendarSample5Component } from "../../src/app/scheduling/calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarSample6Component } from "../../src/app/scheduling/calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "../../src/app/scheduling/calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarViewsComponent } from "../../src/app/scheduling/calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "../../src/app/scheduling/calendar/calendar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -93,6 +94,16 @@ export class CalendarConfigGenerator implements IConfigGenerator {
                 imports: [IgxCalendarModule, IgxSnackbarModule, CalendarSample7Component],
                 ngDeclarations: [CalendarSample7Component],
                 ngImports: [IgxCalendarModule, IgxSnackbarModule]
+            }),
+            shortenComponentPathBy: "/scheduling/calendar/"
+        }));
+
+        configs.push(new Config({
+            component: CalendarViewsComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCalendarModule, CalendarViewsComponent, IgxCardModule],
+                ngDeclarations: [CalendarViewsComponent],
+                ngImports: [IgxCalendarModule, IgxCardModule]
             }),
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
