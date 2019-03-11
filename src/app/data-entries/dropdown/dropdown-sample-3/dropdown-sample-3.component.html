@@ -1,9 +1,11 @@
 <div class="sample-wrapper">
-    <button class="button" igxButton="raised" (click)="toggleDropDown($event)" [igxDropDownItemNavigation]="dropdown3">Countries</button>
-    <igx-drop-down #dropdown3 [width]="'100px'">
-        <igx-drop-down-item *ngFor="let item of items" [disabled]="item.disabled" [isHeader]="item.header"
-            [isSelected]="item.selected">
-            {{ item.field }}
-        </igx-drop-down-item>
+    <button class="button" igxButton="raised" [igxToggleAction]="dropdown" [igxDropDownItemNavigation]="dropdown">Countries</button>
+    <igx-drop-down #dropdown [width]="'144px'">
+        <div class="drop-down__scroll-container">
+            <igx-drop-down-item *ngFor="let item of items" [disabled]="item.disabled" [isHeader]="item.header"
+                [selected]="item.selected">
+                {{ item.field }}
+            </igx-drop-down-item>
+        </div>
     </igx-drop-down>
 </div>

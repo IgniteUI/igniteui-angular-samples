@@ -1,5 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
+import { Router, RouterModule} from "@angular/router";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -42,6 +43,12 @@ import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
+import {
+    ExcelStyleFilteringSample1Component
+} from "../../src/app/grid/grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
+import {
+    ExcelStyleFilteringSample2Component
+} from "../../src/app/grid/grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent
@@ -374,9 +381,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: RemotePagingGridSample,
             additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [RemotePagingGridSample, IgxGridModule, HttpClientModule, RemotePagingService],
+                imports: [RemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule, RemotePagingService],
                 ngDeclarations: [RemotePagingGridSample],
-                ngImports: [IgxGridModule, HttpClientModule],
+                ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule],
                 ngProviders: [RemotePagingService]
             })
         }));
@@ -432,6 +439,26 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCustomFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridCustomFilteringComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: ExcelStyleFilteringSample1Component,
+            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-1/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ExcelStyleFilteringSample1Component, IgxGridModule],
+                ngDeclarations: [ExcelStyleFilteringSample1Component],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: ExcelStyleFilteringSample2Component,
+            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-2/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ExcelStyleFilteringSample2Component, IgxGridModule],
+                ngDeclarations: [ExcelStyleFilteringSample2Component],
                 ngImports: [IgxGridModule]
             })
         }));

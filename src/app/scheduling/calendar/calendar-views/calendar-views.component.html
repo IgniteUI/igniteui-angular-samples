@@ -1,0 +1,34 @@
+<div class="sample-content">
+    <div class="sample-column card-wrapper">
+        <igx-card>
+            <igx-card-header>
+                <h5 class="igx-card-header__title">Days View</h5>
+            </igx-card-header>
+            <igx-card-content>
+                <igx-days-view [(ngModel)]="date" [viewDate]="date" [selection]="'single'"></igx-days-view>
+            </igx-card-content>
+        </igx-card>
+    </div>
+
+    <div class="sample-column card-wrapper">
+        <igx-card>
+            <igx-card-header>
+                <h5 class="igx-card-header__title">Months View</h5>
+            </igx-card-header>
+            <igx-card-content>
+                <igx-months-view [(ngModel)]="date"></igx-months-view>
+            </igx-card-content>
+        </igx-card>
+    </div>
+
+    <div class="sample-column card-wrapper">
+        <igx-card>
+            <igx-card-header>
+                <h5 class="igx-card-header__title">Years View</h5>
+            </igx-card-header>
+            <igx-card-content>
+                <igx-years-view [(ngModel)]="date"></igx-years-view>
+            </igx-card-content>
+        </igx-card>
+    </div>
+</div>
