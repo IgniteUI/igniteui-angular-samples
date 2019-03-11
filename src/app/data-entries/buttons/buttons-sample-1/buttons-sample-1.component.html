@@ -1,7 +1,7 @@
 <div class="sample-wrapper">
     <section class="section">
         <article class="sample-column">
-            <h5 class="sample-title">Flat & Raised Buttons</h5>
+            <h5 class="sample-title">Flat, Raised, and Outlined</h5>
             <div class="buttons-sample">
                 <div class="button-sample-custom">
                     <button igxButton="flat" igxRipple>Flat</button>
@@ -10,31 +10,16 @@
                     <button igxButton="raised" igxRipple="white">Raised</button>
                 </div>
                 <div class="button-sample-custom">
-                    <input class="disabledFlatButton" igxButton="flat" igxRipple="#FBB13C" [disabled]="true" value="Disabled">
+                    <button igxButton="outlined">Outlined</button>
                 </div>
                 <div class="button-sample-custom">
-                    <button igxButton="flat" igxButtonColor="#FBB13C" igxButtonBackground="#340068" igxRipple="#FBB13C">Do
-                        1</button>
+                    <button igxButton="flat" [disabled]="'true'">Disabled</button>
                 </div>
                 <div class="button-sample-custom">
-                    <button igxButton="raised" igxButtonColor="yellow" igxButtonBackground="black" igxRipple="#FBB13C">Do
-                        2</button>
+                    <button igxButton="raised" [disabled]="'true'">Disabled</button>
                 </div>
                 <div class="button-sample-custom">
-                    <button igxButton="raised" igxButtonColor="yellow" igxButtonBackground="black" igxRipple="#FBB13C">Do
-                        3</button>
-                </div>
-                <div class="button-sample-custom">
-                    <button igxButton="flat" igxButtonColor="#FBB13C" igxButtonBackground="#340068" igxRipple="#FBB13C">Do
-                        4</button>
-                </div>
-                <div class="button-sample-custom">
-                    <button igxButton="flat" igxButtonColor="#FBB13C" igxButtonBackground="#340068" igxRipple="#FBB13C">Do
-                        5</button>
-                </div>
-                <div class="button-sample-custom">
-                    <button igxButton="raised" igxButtonColor="#FBB13C" igxButtonBackground="#340068" igxRipple="#FBB13C">Do
-                        6</button>
+                    <button igxButton="outlined" [disabled]="'true'">Disabled</button>
                 </div>
             </div>
         </article>
