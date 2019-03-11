@@ -11,6 +11,7 @@ import {
     IgxIconModule,
     IgxInputGroupModule,
     IgxListModule,
+    IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
     IgxToastModule
@@ -62,6 +63,7 @@ import { ListsRoutingModule } from "./lists-routing.module";
         IgxComboModule,
         IgxSwitchModule,
         IgxDropDownModule,
+        IgxSelectModule,
         IgxToastModule,
         HttpClientModule
     ]
