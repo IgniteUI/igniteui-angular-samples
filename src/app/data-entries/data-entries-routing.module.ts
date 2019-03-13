@@ -111,7 +111,6 @@ export const dataEntriesRoutes: Routes = [
         component: ButtonsSample8Component,
         data: dataEntriesRoutesData["buttons-sample-8"],
         path: "buttons-sample-8"
-
     },
     {
         component: ButtonsRoundnessComponent,
