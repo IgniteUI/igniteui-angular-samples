@@ -5,7 +5,7 @@ import {Component, OnInit} from "@angular/core";
     styleUrls: ["./card-sample-shadow.scss"],
     templateUrl: "./card-sample-shadow.html"
 })
-export class CardSampleShadow implements OnInit {
+export class CardSampleShadowComponent implements OnInit {
 
     constructor() {
     }
