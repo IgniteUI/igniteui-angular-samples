@@ -7,5 +7,5 @@ export const themingRoutesData = {
     "shadows-sample": { displayName: "Shadows sample", parentName: "Shadows" },
     "shadows-sample-2": { displayName: "Shadows sample 2", parentName: "Shadows" },
     "density": { displayName: "Display density sample", parentName: "Themes" },
-    "card-sample-shadow": { displayName: "Card elevations", parentName: "Shadows" }
+    "card-sample-shadow": { displayName: "card-sample-shadow", parentName: "Shadows" }
 };
