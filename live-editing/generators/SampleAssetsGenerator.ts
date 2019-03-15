@@ -140,7 +140,7 @@ export class SampleAssetsGenerator extends Generator {
 
         let sampleName = config.component.name;
         let sampleRoute = this._componentRoutes.get(sampleName);
-        if (sampleRoute === undefined){
+        if (sampleRoute === undefined) {
             console.log("Live-Editing detected missing route for " + sampleName);
         } else {
             sampleRoute = sampleRoute.replace("/", "-") + ".json";

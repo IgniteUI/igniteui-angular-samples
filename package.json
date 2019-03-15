@@ -5,8 +5,8 @@
   "author": "Infragistics",
   "scripts": {
     "ng": "ng",
-    "serve": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -o --progress=true",
-    "start": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -o --progress=true",
+    "serve": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve -o --progress=true",
+    "start": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve -o --progress=true",
     "start:live-editing": "gulp generate-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -o --progress=true",
     "start:watch-live-editing": "gulp watch-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -o --progress=true",
     "generate-live-editing": "gulp generate-live-editing",
