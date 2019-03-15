@@ -1,0 +1,15 @@
+<div class="grid__wrapper">
+    <igx-tree-grid #treeGrid [data]="remoteData | async" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" width="100%" height="800px"
+                   [autoGenerate]="false" (onSortingDone)="processData()" (onFilteringDone)="processData()"
+                   [allowFiltering]="true">
+        <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" [sortable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" [sortable]="true"></igx-column>
+        <igx-column [field]="'OnPTO'" dataType="boolean" [sortable]="true" width="130px">
+            <ng-template igxCell let-cell="cell" let-val>
+                <igx-icon [color]="cell.row.rowData.OnPTO? 'red': 'green'">account_circle</igx-icon>                
+            </ng-template>
+        </igx-column>
+    </igx-tree-grid>
+</div>

@@ -46,6 +46,9 @@ import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-gr
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import {
+    TreeGridRemoteFilteringSampleComponent
+} from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -214,6 +217,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridEditingSampleComponent,
         data: treeGridRoutesData["treegrid-editing"],
         path: "treegrid-editing"
+    },
+    {
+        component: TreeGridRemoteFilteringSampleComponent,
+        data: treeGridRoutesData["treegrid-remote-filtering"],
+        path: "treegrid-remote-filtering"
     }
 ];
 
