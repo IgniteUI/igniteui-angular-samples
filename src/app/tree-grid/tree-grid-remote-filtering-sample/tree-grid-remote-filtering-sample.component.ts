@@ -29,12 +29,7 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
         const filteringExpr = this.treeGrid.filteringExpressionsTree;
         const sortingExpr = this.treeGrid.sortingExpressions[0];
 
-        console.log(filteringExpr);
-        console.log(sortingExpr);
-
         this._remoteService.getData(filteringExpr, sortingExpr);
         this._cdr.detectChanges();
-        console.log("processData");
-        console.log(this.treeGrid.data.length);
     }
 }
