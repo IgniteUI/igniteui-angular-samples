@@ -1,38 +1,14 @@
-<div class="combo-container">
-    <igx-input-group type="box" #inputGroupCountry style="width: 300px;" (click)="toggleDDCountry()">
-        <input igxInput #inputCountry name="inputCountry" type="text" [(ngModel)]="country" readonly placeholder="Choose Country..."
-            [igxDropDownItemNavigation]="dropdownCountry" />
-        <igx-suffix>
-            <igx-icon>{{arrowCountry}}</igx-icon>
-        </igx-suffix>
-    </igx-input-group>
-    <igx-drop-down #dropdownCountry width="300px" (onSelection)="selectCountry($event)" (onClosed)="onCountryClosed()">
-        <igx-drop-down-item *ngFor="let c of countryData">
-            {{ c }}
-        </igx-drop-down-item>
-    </igx-drop-down>
-</div>
-
-
-
-<div class="combo-container">
-    <igx-input-group type="box" #inputGroupProvince style="width: 300px;" (click)="toggleDDProvince()" [disabled]="disabledProvince">
-        <input igxInput #inputProvince name="inputProvince" type="text" [(ngModel)]="province" readonly placeholder="Choose Province..."
-            [igxDropDownItemNavigation]="dropdownProvince" />
-        <igx-suffix>
-            <igx-icon>{{arrowProvince}}</igx-icon>
-        </igx-suffix>
-    </igx-input-group>
-    <igx-drop-down #dropdownProvince width="300px" (onSelection)="selectProvince($event)" (onClosed)="onProvinceClosed()">
-        <igx-drop-down-item *ngFor="let p of provinceData">
-            {{ p }}
-        </igx-drop-down-item>
-    </igx-drop-down>
-</div>
-
-
-<div class="combo-container">
-    <igx-combo #comboTown width="300px" [itemsMaxHeight]="225" [data]="townData" [disabled]="true" placeholder="Choose Town..."
-        searchPlaceholder="Search..." [allowCustomValues]="false">
+<div class="container">
+    <igx-select type="box" #cntr placeholder="Choose Country..."
+        (onSelection)="selectCountry($event)" [(ngModel)]="location.country">
+        <igx-select-item *ngFor="let c of countryData" [value]="c"> {{ c }} </igx-select-item>
+    </igx-select>
+    <igx-select type="box" #prvnc placeholder="Choose Province..." [disabled]="!cntr.value"
+        (onSelection)="selectProvince($event)" [(ngModel)]="location.province">
+        <igx-select-item *ngFor="let p of provinceData" [value]="p"> {{ p }} </igx-select-item>
+    </igx-select>
+    <igx-combo #twn [itemsMaxHeight]="225" [data]="townData" [disabled]="!prvnc.value"
+        placeholder="Choose Town..." searchPlaceholder="Search..." [allowCustomValues]="false"
+        [(ngModel)]="location.towns">
     </igx-combo>
 </div>
