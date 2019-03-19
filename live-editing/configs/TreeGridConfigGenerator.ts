@@ -1,5 +1,25 @@
 // tslint:disable:max-line-length
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxToastModule,IgxTreeGridModule } from "igniteui-angular";
+import {
+    IgxAvatarModule,
+    IgxBadgeModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCheckboxModule,
+    IgxChipsModule,
+    IgxColumnHidingModule,
+    IgxCsvExporterService,
+    IgxDatePickerModule,
+    IgxDialogModule,
+    IgxExcelExporterService,
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxRadioModule,
+    IgxRippleModule,
+    IgxSwitchModule,
+    IgxToastModule,
+    IgxTreeGridModule
+} from "igniteui-angular";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridColumnHidingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
