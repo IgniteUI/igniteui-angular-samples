@@ -36,6 +36,9 @@ import {
     TreeGridExcelStyleFilteringSample2Component
 } from "./tree-grid-excel-style-filtering-sample-2/tree-grid-excel-style-filtering-sample-2.component";
 import {
+    TreeGridExcelStyleFilteringSample3Component
+} from "./tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
+import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
@@ -142,13 +145,18 @@ export const treeGridRoutes: Routes = [
     },
     {
         component: TreeGridExcelStyleFilteringSample1Component,
-        data: treeGridRoutesData["treegrid-excel-style-filtering"],
-        path: "treegrid-excel-style-filtering"
+        data: treeGridRoutesData["treegrid-excel-style-filtering-sample-1"],
+        path: "treegrid-excel-style-filtering-sample-1"
     },
     {
         component: TreeGridExcelStyleFilteringSample2Component,
-        data: treeGridRoutesData["treegrid-excel-style-filtering-templates"],
-        path: "treegrid-excel-style-filtering-templates"
+        data: treeGridRoutesData["treegrid-excel-style-filtering-sample-2"],
+        path: "treegrid-excel-style-filtering-sample-2"
+    },
+    {
+        component: TreeGridExcelStyleFilteringSample3Component,
+        data: treeGridRoutesData["treegrid-excel-style-filtering-sample-3"],
+        path: "treegrid-excel-style-filtering-sample-3"
     },
     {
         component: TreeGridFilteringCustomSampleComponent,

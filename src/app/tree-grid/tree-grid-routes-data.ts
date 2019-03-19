@@ -15,8 +15,12 @@ export const treeGridRoutesData = {
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
-    "treegrid-excel-style-filtering": { displayName: "TreeGrid Excel Style Filtering", parentName: "TreeGrid" },
-    "treegrid-excel-style-filtering-templates": {
+    "treegrid-excel-style-filtering-sample-1": { displayName: "TreeGrid Excel Style Filtering", parentName: "TreeGrid" },
+    "treegrid-excel-style-filtering-sample-2": {
+        displayName: "TreeGrid Excel Style Filtering Operations",
+        parentName: "TreeGrid"
+    },
+    "treegrid-excel-style-filtering-sample-3": {
         displayName: "TreeGrid Excel Style Filtering Templates",
         parentName: "TreeGrid"
     },
