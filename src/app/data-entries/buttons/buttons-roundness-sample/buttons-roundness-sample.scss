@@ -1,23 +1,13 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-$myButton: igx-button-theme(
-    $icon-background: #333
-);
-
-@include igx-button($myButton);
-
 $mySpecialButton: igx-button-theme(
-    $flat-border-radius: 1,
-    $fab-border-radius: 0,
-    $icon-border-radius: 0,
-    $raised-border-radius: 1
+    $flat-border-radius: .5,
+    $raised-border-radius: 30px,
+    $fab-border-radius: 10%,
+    $icon-border-radius: .5 .2 .5 .2
 );
 
-.no-roundness,
-.full-roundness {
-    @include igx-button($mySpecialButton);
-}
-
+@include igx-button($mySpecialButton);
 
 .section,
 .sample-column {
@@ -33,6 +23,7 @@ $mySpecialButton: igx-button-theme(
 .buttons-sample {
     display: flex;
     max-width: 960px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -42,7 +33,7 @@ $mySpecialButton: igx-button-theme(
     align-items: center;
     justify-content: center;
     flex: 1;
-    margin: 0 30px;
+    margin: 30px 20px;
     >* {
         margin: 0 10px;
     }
