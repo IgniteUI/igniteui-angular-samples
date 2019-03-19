@@ -1,7 +1,6 @@
 <div class="grid__wrapper">
     <igx-tree-grid #treeGrid [data]="remoteData | async" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false" width="100%" height="450px"
-                   [autoGenerate]="false" (onSortingDone)="processData()" (onFilteringDone)="processData()"
-                   [allowFiltering]="true">
+                   [autoGenerate]="false" (onFilteringDone)="processData()" [allowFiltering]="true">
         <igx-column [field]="'Name'" dataType="string" [sortable]="true"></igx-column>
         <igx-column [field]="'Title'" dataType="string" [sortable]="true"></igx-column>
         <igx-column [field]="'Age'" dataType="number" [sortable]="true"></igx-column>
@@ -12,4 +11,6 @@
             </ng-template>
         </igx-column>
     </igx-tree-grid>
+
+    <igx-toast #toast message="Loading Remote Data..." [position]="1"></igx-toast>    
 </div>

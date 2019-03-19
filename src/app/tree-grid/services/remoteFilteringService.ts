@@ -17,20 +17,21 @@ export class RemoteFilteringService {
         this._employeeData = EMPLOYEE_FLAT_DATA();
     }
 
-    public getData(filteringArgs?: any, sortingArgs?: any) {
-        const processedEmployeeData = this.processData(this._employeeData, filteringArgs, sortingArgs);
-        this._remoteData.next(processedEmployeeData);
+    public getData(filteringArgs?: any, callback?: () => void) {
+        setTimeout(() => {
+            const processedEmployeeData = this.processData(this._employeeData, filteringArgs);
+            this._remoteData.next(processedEmployeeData);
+            if (callback) {
+                callback();
+            }
+        }, 500);
     }
 
-    private processData(data: any[], filteringArgs: IFilteringExpressionsTree, sortingArgs): any[] {
+    private processData(data: any[], filteringArgs: IFilteringExpressionsTree): any[] {
         let processedData = Object.assign([], data);
 
         if (filteringArgs && filteringArgs.filteringOperands.length > 0) {
             processedData = this.filterData(processedData, filteringArgs);
-        }
-
-        if (sortingArgs) {
-            processedData = this.sortData(processedData, sortingArgs);
         }
 
         return processedData;
@@ -57,10 +58,6 @@ export class RemoteFilteringService {
         return filteredData;
     }
 
-    private sortData(data: any[], sortingArgs): any[] {
-        return data;
-    }
-
     private getParents(record): any[] {
         const parents: any[] = [];
 
@@ -70,7 +67,7 @@ export class RemoteFilteringService {
 
         let currentRecord = record;
         while (currentRecord.ParentID !== -1) {
-            const parent = this._employeeData.filter((empl) => empl.ID  === currentRecord.ParentID)[0];
+            const parent = this._employeeData.filter((empl) => empl.ID === currentRecord.ParentID)[0];
             parents.push(parent);
 
             currentRecord = parent;

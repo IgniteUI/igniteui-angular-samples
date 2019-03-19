@@ -14,6 +14,7 @@ import {
     IgxRippleModule,
     IgxSliderModule,
     IgxSwitchModule,
+    IgxToastModule,
     IgxToggleModule,
     IgxTreeGridModule
 } from "igniteui-angular";
@@ -142,7 +143,8 @@ import {
         IgxRippleModule,
         IgxDialogModule,
         IgxRadioModule,
-        IgxAvatarModule
+        IgxAvatarModule,
+        IgxToastModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })

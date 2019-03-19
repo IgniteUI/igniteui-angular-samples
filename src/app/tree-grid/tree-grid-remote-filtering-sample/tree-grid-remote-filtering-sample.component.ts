@@ -1,5 +1,5 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild  } from "@angular/core";
-import { IgxTreeGridComponent } from "igniteui-angular";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
+import { IgxToastComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
@@ -13,6 +13,7 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
 
     public remoteData: Observable<any[]>;
     @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
+    @ViewChild("toast") public toast: IgxToastComponent;
 
     constructor(private _remoteService: RemoteFilteringService, private _cdr: ChangeDetectorRef) {
     }
@@ -26,10 +27,12 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
     }
 
     public processData() {
-        const filteringExpr = this.treeGrid.filteringExpressionsTree;
-        const sortingExpr = this.treeGrid.sortingExpressions[0];
+        this.toast.show();
 
-        this._remoteService.getData(filteringExpr, sortingExpr);
-        this._cdr.detectChanges();
+        const filteringExpr = this.treeGrid.filteringExpressionsTree;
+
+        this._remoteService.getData(filteringExpr, () => {
+            this.toast.hide();
+        });
     }
 }
