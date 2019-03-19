@@ -24,6 +24,7 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
 
     public ngAfterViewInit() {
         this.processData();
+        this._cdr.detectChanges();
     }
 
     public processData() {
