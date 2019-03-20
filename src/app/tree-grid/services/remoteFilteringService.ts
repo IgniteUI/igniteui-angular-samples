@@ -40,39 +40,28 @@ export class RemoteFilteringService {
     private filterData(data: any[], filteringArgs: IFilteringExpressionsTree): any[] {
         const filteredData: any[] = [];
 
-        data.forEach((record) => {
-            if (this._filteringStrategy.matchRecord(record, filteringArgs)) {
-                // If record matches the filtering condition, add it to the result array.
+        for (const record of data) {
+            if (this._filteringStrategy.matchRecord(record, filteringArgs) ||
+                this.hasMatchingChild(record, filteringArgs)) {
+                // If a record or any of its descendants matches the filtering condition,
+                // add the record to the result array.
                 filteredData.push(record);
-
-                // Add record's parents as well in order to keep them in the display hierarchy.
-                const parents = this.getParents(record);
-                parents.forEach((parent) => {
-                    if (filteredData.indexOf(parent) === -1) {
-                        filteredData.push(parent);
-                    }
-                });
             }
-        });
+        }
 
         return filteredData;
     }
 
-    private getParents(record): any[] {
-        const parents: any[] = [];
+    private hasMatchingChild(record, filteringArgs: IFilteringExpressionsTree): boolean {
+        const children = this._employeeData.filter((empl) => empl.ParentID === record.ID);
 
-        if (!record || record.ParentID === -1) {
-            return parents;
+        for (const child of children) {
+            if (this._filteringStrategy.matchRecord(child, filteringArgs) ||
+                this.hasMatchingChild(child, filteringArgs)) {
+                return true;
+            }
         }
 
-        let currentRecord = record;
-        while (currentRecord.ParentID !== -1) {
-            const parent = this._employeeData.filter((empl) => empl.ID === currentRecord.ParentID)[0];
-            parents.push(parent);
-
-            currentRecord = parent;
-        }
-
-        return parents;
+        return false;
     }
 }
