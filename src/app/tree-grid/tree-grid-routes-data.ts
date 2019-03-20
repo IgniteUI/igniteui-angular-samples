@@ -15,14 +15,21 @@ export const treeGridRoutesData = {
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
-    "treegrid-excel-style-filtering": { displayName: "TreeGrid Excel Style Filtering", parentName: "TreeGrid" },
-    "treegrid-excel-style-filtering-templates": {
+    "treegrid-excel-style-filtering-sample-1": {
+        displayName: "TreeGrid Excel Style Filtering",
+        parentName: "TreeGrid"
+    },
+    "treegrid-excel-style-filtering-sample-2": {
+        displayName: "TreeGrid Excel Style Filtering Operations",
+        parentName: "TreeGrid"
+    },
+    "treegrid-excel-style-filtering-sample-3": {
         displayName: "TreeGrid Excel Style Filtering Templates",
         parentName: "TreeGrid"
     },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-headers": { displayName: "TreeGrid Multi Column Headers", parentName: "TreeGrid" },
-    "treegrid-virtualization": { displayName: "TreeGrid Virtualization", parentName: "TreeGrid"},
+    "treegrid-virtualization": { displayName: "TreeGrid Virtualization", parentName: "TreeGrid" },
     "treegrid-display-density": { displayName: "TreeGrid Display Density", parentName: "TreeGrid" },
     "treegrid-toolbar-1": { displayName: "TreeGrid Toolbar 1", parentName: "TreeGrid" },
     "treegrid-toolbar-2": { displayName: "TreeGrid Toolbar 2", parentName: "TreeGrid" },

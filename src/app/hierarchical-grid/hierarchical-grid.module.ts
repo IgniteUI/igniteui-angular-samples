@@ -21,6 +21,9 @@ import {
 import {
     HGridExcelStyleFilteringSample2Component
 } from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
+import {
+    HGridExcelStyleFilteringSample3Component
+} from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
@@ -64,7 +67,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HierarchicalGridWithTransactionsComponent,
         HierarchicalGridLoDSampleComponent,
         HGridExcelStyleFilteringSample1Component,
-        HGridExcelStyleFilteringSample2Component
+        HGridExcelStyleFilteringSample2Component,
+        HGridExcelStyleFilteringSample3Component
     ],
     imports: [
         CommonModule,
