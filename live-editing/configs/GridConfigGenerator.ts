@@ -49,6 +49,9 @@ import {
 import {
     ExcelStyleFilteringSample2Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
+import {
+    ExcelStyleFilteringSample3Component
+} from "../../src/app/grid/grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent
@@ -459,6 +462,16 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [ExcelStyleFilteringSample2Component, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringSample2Component],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: ExcelStyleFilteringSample3Component,
+            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-3/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ExcelStyleFilteringSample3Component, IgxGridModule],
+                ngDeclarations: [ExcelStyleFilteringSample3Component],
                 ngImports: [IgxGridModule]
             })
         }));
