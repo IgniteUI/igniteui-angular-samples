@@ -1,5 +1,25 @@
 // tslint:disable:max-line-length
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRadioModule, IgxRippleModule, IgxSwitchModule, IgxTreeGridModule } from "igniteui-angular";
+import {
+    IgxAvatarModule,
+    IgxBadgeModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCheckboxModule,
+    IgxChipsModule,
+    IgxColumnHidingModule,
+    IgxCsvExporterService,
+    IgxDatePickerModule,
+    IgxDialogModule,
+    IgxExcelExporterService,
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxRadioModule,
+    IgxRippleModule,
+    IgxSwitchModule,
+    IgxToastModule,
+    IgxTreeGridModule
+} from "igniteui-angular";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridColumnHidingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -24,6 +44,7 @@ import { TreeGridFilteringSampleComponent } from "../../src/app/tree-grid/tree-g
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import { TreeGridRemoteFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "../../src/app/tree-grid/tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "../../src/app/tree-grid/tree-grid-selection-sample/tree-grid-selection-sample.component";
@@ -398,6 +419,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxButtonModule, IgxDialogModule, IgxInputGroupModule, IgxCheckboxModule, IgxDatePickerModule]
             }),
             component: TreeGridEditingSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Remote Filtering sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts", "/src/app/tree-grid/services/remoteFilteringService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridRemoteFilteringSampleComponent, IgxIconModule, IgxToastModule],
+                ngDeclarations: [TreeGridRemoteFilteringSampleComponent],
+                ngImports: [IgxTreeGridModule, IgxIconModule, IgxToastModule]
+            }),
+            component: TreeGridRemoteFilteringSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

@@ -14,9 +14,11 @@ import {
     IgxRippleModule,
     IgxSliderModule,
     IgxSwitchModule,
+    IgxToastModule,
     IgxToggleModule,
     IgxTreeGridModule
 } from "igniteui-angular";
+import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -66,6 +68,9 @@ import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-gr
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import {
+    TreeGridRemoteFilteringSampleComponent
+} from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -124,7 +129,8 @@ import {
         TreeGridEditingSampleComponent,
         TreeGridExcelStyleFilteringSample1Component,
         TreeGridExcelStyleFilteringSample2Component,
-        TreeGridExcelStyleFilteringSample3Component
+        TreeGridExcelStyleFilteringSample3Component,
+        TreeGridRemoteFilteringSampleComponent
     ],
     imports: [
         CommonModule,
@@ -141,8 +147,9 @@ import {
         IgxRippleModule,
         IgxDialogModule,
         IgxRadioModule,
-        IgxAvatarModule
+        IgxAvatarModule,
+        IgxToastModule
     ],
-    providers: [IgxExcelExporterService, IgxCsvExporterService]
+    providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
 export class TreeGridModule { }

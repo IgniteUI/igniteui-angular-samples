@@ -39,5 +39,6 @@ export const treeGridRoutesData = {
     "treegrid-summary2": { displayName: "TreeGrid Child Summary", parentName: "TreeGrid" },
     "treegrid-conditional-cell-style": { displayName: "TreeGrid Condition Cell Styling", parentName: "TreeGrid" },
     "treegrid-paging": { displayName: "TreeGrid Paging", parentName: "TreeGrid" },
-    "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" }
+    "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" },
+    "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" }
 };
