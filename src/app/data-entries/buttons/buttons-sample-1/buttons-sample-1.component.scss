@@ -1,0 +1,23 @@
+.section {
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-sample {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.button-sample {
+    display: flex;
+    flex: 1 0 30%;
+    margin-bottom: 36px;
+}
+
+.button-sample-custom {
+    display: flex;
+    flex: 1 0 30%;
+    margin-top: 14px;
+    margin-bottom: 48px;
+}

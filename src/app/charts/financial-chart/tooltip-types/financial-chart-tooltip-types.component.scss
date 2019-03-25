@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
+}
+
+.chart {
+    flex: 1;
+}
+.options {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width:100%;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.optionLabel {
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.optionItem {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: center;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+input {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 6px;
+    margin-left: 4px;
+    vertical-align: bottom;
+}

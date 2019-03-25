@@ -1,0 +1,53 @@
+<div class="sample-container">
+
+    <igx-financial-chart height="100%" width="100%"
+        #chart
+        [dataSource]="dataFeeds"
+        [tooltipTemplate]="stockTooltip"
+        [legend]="legend"
+        chartType="line"
+        thickness="2"
+        yAxisLabelExtent="40"
+        isToolbarVisible="false"
+        (seriesAdded)="onSeriesAdded($event)"
+        chartTitle="MULTIPLE DATA FEEDS OF POPULAR STOCKS ON NYSE"
+        chartTitleTextColor="black"
+        chartTitleTextStyle="13pt 'Titillium Web', sans-serif"
+        chartTitleTopMargin="10px">
+    </igx-financial-chart>
+
+    <div class="legendContainer">
+        <igx-legend #legend
+            class="legend"
+            orientation="horizontal" >
+        </igx-legend>
+    </div>
+
+    <div class="sample-controls">
+        <button
+        igxButton="raised"
+        igxRipple="white"
+        (click)="onFeedToggleClicked()"
+        ><span #feedStatus class="feedStatusLabel">Turn Off Live Data</span></button>
+        <span #fpsSpan class="fpsLabel"></span>
+    </div>
+
+    <ng-template let-series="series" let-item="item" #stockTooltip>
+        <div>
+            <div>
+                <div class="tooltipTitle" [style.color]="series.actualBrush">{{series.title}}</div>
+            </div>
+            <div class="tooltipGrid">
+                <div class="tooltipRow" >
+                    <div class="tooltipProps" style="color: rgb(92, 92, 92);">Date:</div>
+                    <div class="tooltipValue">{{item.date | date: "MMM dd, yyyy"}}</div>
+                </div>
+                <div class="tooltipRow" >
+                    <div class="tooltipProps" [style.color]="series.actualBrush">Value:</div>
+                    <div class="tooltipValue" [style.color]="series.actualBrush">{{item.close | number:0}}</div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+</div>

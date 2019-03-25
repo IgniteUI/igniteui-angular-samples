@@ -1,0 +1,67 @@
+<div class="main" igxLayout>
+  <igx-nav-drawer id="navigation" [isOpen]="drawerState.open" [(pin)]="drawerState.pin">
+    <ng-template igxDrawer>
+      <nav>
+        <span igxDrawerItem [isHeader]="true">Components</span>
+
+        <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
+          <igx-icon fontSet="material">{{ item.name }}</igx-icon>
+          <span>{{ item.text }}</span>
+        </span>
+    </nav>
+    </ng-template>
+
+    <ng-template igxDrawerMini *ngIf="drawerState.miniTemplate">
+        <nav>
+          <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
+            <igx-icon fontSet="material">{{ item.name }}</igx-icon>
+          </span>
+      </nav>
+      </ng-template>
+  </igx-nav-drawer>
+
+  <main igxFlex [class.mini-padding]="!drawerState.pin && drawerState.miniTemplate">
+    <span igxButton="icon" igxToggleAction="navigation" [closeOnOutsideClick]="false">
+      <igx-icon fontSet="material">menu</igx-icon>
+    </span>
+
+    <h2>
+      Selected: <span class="setting-title">{{ selected }}</span>
+    </h2>
+    <section>
+      <h5 class="setting-title">Mode</h5>
+      <div>
+          <igx-switch (ngModelChange)="drawer.toggle()"  [(ngModel)]="drawerState.pin">
+              Pin
+          </igx-switch>
+      </div>
+      <div>
+          <igx-switch (ngModelChange)="drawer.toggle()"  [(ngModel)]="drawerState.miniTemplate">
+              Mini variant
+          </igx-switch>
+      </div>
+    </section>
+    <section>
+      <h5 class="setting-title">Touch gestures</h5>
+      <div>
+          <igx-switch [(ngModel)]="drawer.enableGestures" [checked]="true" [disabled]="drawerState.pin">
+              Enable gestures
+          </igx-switch>
+          <p class="setting-note">
+            Swipe or drag from the edge area to open or to close.
+            Unpin and try it out on a mobile device.
+        </p>
+      </div>
+    </section>
+    <section>
+      <h5 class="setting-title">Position</h5>
+      <div class="setting-container radio">
+          <igx-radio *ngFor="let item of ['left', 'right']" value="{{item}}" name="group" [(ngModel)]="drawer.position"
+              [disabled]="drawerState.pin">{{item}}</igx-radio>
+          <p class="setting-note">
+              Unpin to try it out.
+          </p>
+      </div>
+    </section>
+  </main>
+</div>

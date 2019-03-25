@@ -1,0 +1,9 @@
+<div class="sample-wrapper time-picker-wrapper">
+    <h5 class="sample-title">Time Picker with range and validation</h5>
+    <p class="sample-description">A toast is added to show message when an invalid time is selected. Range is
+        (09:00~18:00)</p>
+    <div>
+        <igx-time-picker format="HH:mm" [vertical]="true" [minValue]="min" [maxValue]="max" (onValidationFailed)="onValidationFailed($event)"></igx-time-picker>
+        <igx-toast #toast message="Value must be between 09:00 and 18:00"></igx-toast>
+    </div>
+</div>

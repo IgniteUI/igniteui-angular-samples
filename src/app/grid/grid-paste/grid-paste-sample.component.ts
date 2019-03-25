@@ -7,6 +7,8 @@ import {
     IgxExcelExporterOptions,
     IgxExcelExporterService,
     IgxGridComponent,
+    IgxGridTransaction,
+    IgxTransactionService,
     VerticalAlignment
 } from "igniteui-angular";
 
@@ -18,6 +20,7 @@ import { take } from "rxjs/operators";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
+    providers: [{ provide: IgxGridTransaction, useClass: IgxTransactionService }],
     selector: "app-grid-paste-sample",
     styleUrls: ["./grid-paste-sample.component.scss"],
     templateUrl: "./grid-paste-sample.component.html"
@@ -47,11 +50,6 @@ export class GridPasteSampleComponent {
     }
 
     public ngOnInit() {
-        this.grid1.verticalScrollContainer.onChunkLoad.pipe().subscribe(() => {
-            if (this.grid1.rowList) {
-                this.clearStyles();
-            }
-        });
     }
 
     public toggleDropDown(eventArgs) {
@@ -81,25 +79,17 @@ export class GridPasteSampleComponent {
                 rowData[col.field] = curentDataRow[col.visibleIndex];
             }
             // generate PK
-            rowData[pk] = this.grid1.data.length + 1;
+            rowData[pk] = this.grid1.data.length + this.grid1.transactions.getAggregatedChanges(false).length + 1;
             this.grid1.addRow(rowData);
             addedData.push(rowData);
             this.grid1.cdr.detectChanges();
         }
         // scroll to last added row
-        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length);
+        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length +
+            this.grid1.transactions.getAggregatedChanges(false).length - 1);
 
-        this.grid1.verticalScrollContainer.onChunkLoad.pipe(take(1)).subscribe(() => {
-            this.clearStyles();
-            for (const data of addedData) {
-                const row = this.grid1.getRowByKey(data[pk]);
-                if (row) {
-                    row.nativeElement.style["font-style"] = "italic";
-                    row.nativeElement.style.color = "gray";
-                }
-            }
-        });
     }
+
     public updateRecords(processedData: any[]) {
         const cell = this.grid1.selectedCells[0];
         const pk = this.grid1.primaryKey;
@@ -135,7 +125,6 @@ export class GridPasteSampleComponent {
             index++;
         }
 
-        this.clearStyles();
         for (const pkVal of updatedRecsPK) {
             const row = this.grid1.getRowByKey(pkVal);
             if (row) {
@@ -149,10 +138,29 @@ export class GridPasteSampleComponent {
         this.excelExportService.exportData(EXCEL_DATA, new IgxExcelExporterOptions("sample-data"));
     }
 
-    protected clearStyles() {
-        for (const row of this.grid1.rowList.toArray()) {
-            row.nativeElement.style["font-style"] = "";
-            row.nativeElement.style.color = "";
-        }
+    public undo() {
+        this.grid1.transactions.undo();
     }
+
+    public redo() {
+        this.grid1.transactions.redo();
+        this.grid1.verticalScrollContainer.scrollTo(this.grid1.data.length +
+            this.grid1.transactions.getAggregatedChanges(false).length - 1);
+    }
+
+    public commit() {
+        this.grid1.transactions.commit(this.data);
+    }
+    public get undoEnabled(): boolean {
+        return this.grid1.transactions.canUndo;
+    }
+
+    public get redoEnabled(): boolean {
+        return this.grid1.transactions.canRedo;
+    }
+
+    public get hasTransactions(): boolean {
+        return this.grid1.transactions.getAggregatedChanges(false).length > 0;
+    }
+
 }

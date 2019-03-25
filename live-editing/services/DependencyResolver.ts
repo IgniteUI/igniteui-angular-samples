@@ -3,12 +3,11 @@
 // tslint:disable:no-implicit-dependencies
 import * as fs from "fs";
 import * as path from "path";
-import * as Collections from "typescript-collections";
 import { DependenciesType } from "./DependenciesType";
 
 const PACKAGES_CONFIG_PATH = path.join(__dirname, "../../package.json");
 
-const COMMON_PACKAGE_DEPENDENCIES = [
+const SHARED_DEPENDENCIES = [
     "@angular/common",
     "@angular/compiler",
     "@angular/core",
@@ -39,8 +38,6 @@ const DEFAULT_DEPENDENCIES = [
     "hammerjs",
     "web-animations-js",
     "jszip",
-    // importing this temporarily until we resolve the issue
-    // https://github.com/IgniteUI/igniteui-angular-samples/issues/234
     "immediate",
     "intl",
     "tslib"
@@ -60,55 +57,91 @@ const GAUGES_DEPENDENCIES = [
     "tslib"
 ];
 
+const EXCEL_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-core",
+    "igniteui-angular-excel",
+    "tslib"
+];
+
+const EXACT_VERSION_PACKAGES = [
+    "igniteui-angular",
+    "igniteui-angular-core",
+    "igniteui-angular-charts",
+    "igniteui-angular-gauges",
+    "igniteui-angular-excel"
+];
+
 export class DependencyResolver {
-    public static resolveSampleDependencies(type: DependenciesType = DependenciesType.Default,
-                                            additionalDependencies?: string[]) {
+    private _defaultDependencies: Set<string>;
+    private _chartsDependencies: Set<string>;
+    private _gaugesDependencies: Set<string>;
+    private _excelDependencies: Set<string>;
+    private _packageFileDependencies;
+    private _specificVersionPackages: Set<string>;
+
+    constructor() {
+        this._defaultDependencies = new Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._defaultDependencies.add(d));
+        DEFAULT_DEPENDENCIES.forEach((d) => this._defaultDependencies.add(d));
+
+        this._chartsDependencies = new Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
+        CHARTS_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
+
+        this._gaugesDependencies = new Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
+        GAUGES_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
+
+        this._excelDependencies = new Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
+        EXCEL_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
+
         let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
-        let packageFileDependencies = packageFile.dependencies;
-        let dependenciesNeeded = new Collections.Set<string>();
+        this._packageFileDependencies = packageFile.dependencies;
 
-        // Add shared dependencies.
-        for (let i = 0; i < COMMON_PACKAGE_DEPENDENCIES.length; i++) {
-            dependenciesNeeded.add(COMMON_PACKAGE_DEPENDENCIES[i]);
-        }
+        this._specificVersionPackages = new Set<string>();
+        EXACT_VERSION_PACKAGES.forEach((d) => this._specificVersionPackages.add(d));
+    }
 
-        // Add sample dependencies.
+    public resolveSampleDependencies(type: DependenciesType = DependenciesType.Default,
+                                     additionalDependencies?: string[]) {
+        let packageFileDependencies = JSON.parse(JSON.stringify(this._packageFileDependencies));
+        let dependencies: Set<string>;
+
         switch (type) {
             case DependenciesType.Default:
-                for (let i = 0; i < DEFAULT_DEPENDENCIES.length; i++) {
-                    dependenciesNeeded.add(DEFAULT_DEPENDENCIES[i]);
-                }
-
+                dependencies = new Set<string>(this._defaultDependencies);
                 break;
             case DependenciesType.Charts:
-                for (let i = 0; i < CHARTS_DEPENDENCIES.length; i++) {
-                    dependenciesNeeded.add(CHARTS_DEPENDENCIES[i]);
-                }
-
+                dependencies = new Set<string>(this._chartsDependencies);
                 break;
             case DependenciesType.Gauges:
-                    for (let i = 0; i < CHARTS_DEPENDENCIES.length; i++) {
-                        dependenciesNeeded.add(GAUGES_DEPENDENCIES[i]);
-                    }
-
-                    break;
+                dependencies = new Set<string>(this._gaugesDependencies);
+                break;
+            case DependenciesType.Excel:
+                dependencies = new Set<string>(this._excelDependencies);
+                break;
             default:
                 throw new Error("Unrecognized dependency type.");
         }
 
-        // Add extra dependencies
         if (additionalDependencies) {
-            for (let i = 0; i < additionalDependencies.length; i++) {
-                dependenciesNeeded.add(additionalDependencies[i]);
-            }
+            additionalDependencies.forEach((d) => dependencies.add(d));
         }
 
         for (let key in packageFileDependencies) {
-            if (!dependenciesNeeded.contains(key)) {
+            if (dependencies.has(key)) {
+                if (this._specificVersionPackages.has(key)) {
+                    let version = packageFileDependencies[key];
+                    packageFileDependencies[key] = version.replace("~", "").replace("^", "");
+                }
+            } else {
                 delete packageFileDependencies[key];
             }
         }
 
         return packageFileDependencies;
+
     }
 }

@@ -1,28 +1,43 @@
 /* tslint:disable:object-literal-sort-keys */
+import { IgxSliderModule } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import {
+    CategoryChartAnnotationsComponent
+} from "../../src/app/charts/category-chart/annotations/category-chart-annotations.component";
+import {
     CategoryChartAxisOptionsComponent
-} from "../../src/app/category-chart/axis-options/category-chart-axis-options-sample.component";
+} from "../../src/app/charts/category-chart/axis-options/category-chart-axis-options-sample.component";
 import {
     CategoryChartConfigOptionsComponent
-} from "../../src/app/category-chart/config-options/category-chart-config-options-sample.component";
-import {
-     CategoryChartCustomTooltipsComponent
-} from "../../src/app/category-chart/custom-tooltips/category-chart-custom-tooltips-sample.component";
+} from "../../src/app/charts/category-chart/config-options/category-chart-config-options-sample.component";
 import {
     CategoryChartHighFrequencyComponent
-} from "../../src/app/category-chart/high-frequency/category-chart-high-frequency-sample.component";
+} from "../../src/app/charts/category-chart/high-frequency/category-chart-high-frequency-sample.component";
 import {
     CategoryChartHighVolumeComponent
-} from "../../src/app/category-chart/high-volume/category-chart-high-volume-sample.component";
+} from "../../src/app/charts/category-chart/high-volume/category-chart-high-volume-sample.component";
+import {
+    CategoryChartHighlightingComponent
+} from "../../src/app/charts/category-chart/highlighting/category-chart-highlighting.component";
+import {
+    CategoryChartOverlapColumnsComponent
+} from "../../src/app/charts/category-chart/overlap-columns/category-chart-overlap-columns.component";
 import {
     CategoryChartOverviewComponent
-} from "../../src/app/category-chart/overview/category-chart-overview-sample.component";
+} from "../../src/app/charts/category-chart/overview/category-chart-overview-sample.component";
+import {
+    CategoryChartTooltipTemplateComponent
+} from "../../src/app/charts/category-chart/tooltip-template/category-chart-tooltip-template.component";
+import {
+    CategoryChartTooltipTypesComponent
+} from "../../src/app/charts/category-chart/tooltip-types/category-chart-tooltip-types.component";
+import {
+    CategoryChartTrendlinesComponent
+} from "../../src/app/charts/category-chart/trendline/category-chart-trendlines.component";
 import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { IgxSliderModule } from "igniteui-angular";
 
 export class CategoryChartConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -35,7 +50,8 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartOverviewComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            dependenciesType: DependenciesType.Charts
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -46,7 +62,7 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            additionalDependencies: ["igniteui-angular"]
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -57,17 +73,18 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCategoryChartModule, IgxSliderModule]
             }),
             dependenciesType: DependenciesType.Charts,
-            additionalDependencies: ["igniteui-angular"]
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
-            component: CategoryChartCustomTooltipsComponent,
+            component: CategoryChartTooltipTemplateComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCategoryChartModule, CategoryChartCustomTooltipsComponent],
-                ngDeclarations: [CategoryChartCustomTooltipsComponent],
+                imports: [IgxCategoryChartModule, CategoryChartTooltipTemplateComponent],
+                ngDeclarations: [CategoryChartTooltipTemplateComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            dependenciesType: DependenciesType.Charts
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -77,7 +94,8 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartConfigOptionsComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            dependenciesType: DependenciesType.Charts
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
         configs.push(new Config({
@@ -87,9 +105,53 @@ export class CategoryChartConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [CategoryChartAxisOptionsComponent],
                 ngImports: [IgxCategoryChartModule]
             }),
-            dependenciesType: DependenciesType.Charts
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
         }));
 
+        configs.push(new Config({
+            component: CategoryChartAnnotationsComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCategoryChartModule, CategoryChartAnnotationsComponent],
+                ngDeclarations: [CategoryChartAnnotationsComponent],
+                ngImports: [IgxCategoryChartModule]
+            }),
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
+        }));
+
+        configs.push(new Config({
+            component: CategoryChartHighlightingComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCategoryChartModule, CategoryChartHighlightingComponent],
+                ngDeclarations: [CategoryChartHighlightingComponent],
+                ngImports: [IgxCategoryChartModule]
+            }),
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
+        }));
+
+        configs.push(new Config({
+            component: CategoryChartTooltipTypesComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCategoryChartModule, CategoryChartTooltipTypesComponent],
+                ngDeclarations: [CategoryChartTooltipTypesComponent],
+                ngImports: [IgxCategoryChartModule]
+            }),
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
+        }));
+
+        configs.push(new Config({
+            component: CategoryChartOverlapColumnsComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCategoryChartModule, CategoryChartOverlapColumnsComponent],
+                ngDeclarations: [CategoryChartOverlapColumnsComponent],
+                ngImports: [IgxCategoryChartModule]
+            }),
+            dependenciesType: DependenciesType.Charts,
+            shortenComponentPathBy: "/charts/category-chart/"
+        }));
         return configs;
     }
 }

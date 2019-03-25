@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
+}
+
+.chart {
+    flex: 1;
+    overflow: hidden;
+}

@@ -1,0 +1,42 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <input type="checkbox" id="exportAsTable" [(ngModel)]="exportAsTable">
+        <label for="exportAsTable">Export As Table </label>
+        <button (click)="exportGrid()">Export to Excel</button>
+    </div>
+    <igx-grid #grid [data]="data" [autoGenerate]="false" height="500px" width="100%">
+        <igx-column field="Orders" header="Order History" resizable=true>
+            <ng-template igxCell let-cell="cell" let-val>
+                <igx-data-chart
+                  width="100%"
+                  height="100%"
+                  [dataSource]="val"
+                  isHorizontalZoomEnabled="false"
+                  isVerticalZoomEnabled="false">
+                  <igx-category-x-axis
+                    label="Label"
+                    labelVisibility="collapsed"
+                    #xAxis>
+                  </igx-category-x-axis>
+                  <igx-numeric-y-axis
+                    minimumValue="0"
+                    labelVisibility="collapsed"
+                    #yAxis
+                    majorStroke="transparent">
+                  </igx-numeric-y-axis>
+                  <igx-column-series
+                    [xAxis]="xAxis"
+                    [yAxis]="yAxis"
+                    outline="#376092"
+                    brush="#376092"
+                    valueMemberPath="Freight">
+                  </igx-column-series>
+              </igx-data-chart>
+            </ng-template>
+          </igx-column>
+        <igx-column field="CompanyName" header="Company Name"></igx-column>
+        <igx-column field="ContactName" header="Contact Name"></igx-column>
+        <igx-column field="ContactTitle" header="Contact Title"></igx-column>
+        <igx-column field="Country" header="Country"></igx-column>
+    </igx-grid>
+</div>

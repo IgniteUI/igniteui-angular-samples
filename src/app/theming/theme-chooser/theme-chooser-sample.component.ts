@@ -3,6 +3,7 @@ import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
     HorizontalAlignment,
+    IgxDatePickerComponent,
     IgxDialogComponent,
     IgxDropDownComponent,
     IgxGridComponent,
@@ -35,12 +36,14 @@ export class ThemeChooserSampleComponent implements OnInit {
     @ViewChild("dialog1", { read: IgxDialogComponent })
     public dialog: IgxDialogComponent;
 
-    @Input()
-    @ViewChild("outlet", { read: IgxOverlayOutletDirective })
+    @ViewChild(IgxOverlayOutletDirective)
     public outlet: IgxOverlayOutletDirective;
 
     @ViewChild("grid1", { read: IgxGridComponent })
     public grid1: IgxGridComponent;
+
+    @ViewChild("datePicker")
+    public datePicker: IgxDatePickerComponent;
 
     @ViewChild("snackbar")
     public snackbar: IgxSnackbarComponent;
@@ -107,8 +110,9 @@ export class ThemeChooserSampleComponent implements OnInit {
     }
 
     public ngOnInit() {
+        this.datePicker.outlet = this.outlet;
+        // this.grid1.outletDirective = this.outlet;
         this.data = DATA;
         this.record = new Record();
     }
-
 }

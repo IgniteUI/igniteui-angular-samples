@@ -1,0 +1,20 @@
+<div class="sample-column card-wrapper">
+    <igx-card>
+        <igx-card-header>
+            <h5 class="igx-card-header__title">Date: {{ monthPicker.value | date:'longDate' }}</h5>
+        </igx-card-header>
+        <igx-card-content>
+            <igx-month-picker #monthPicker [(ngModel)]="date" [locale]="locale" [formatOptions]="formatOptions">
+            </igx-month-picker>
+        </igx-card-content>
+    </igx-card>
+
+    <div>
+        <igx-select #select [(ngModel)]="locale">
+            <igx-prefix>Locales: </igx-prefix>
+            <igx-select-item *ngFor="let locale of locales" [value]="locale">
+                {{ locale }}
+            </igx-select-item>
+        </igx-select>
+    </div>
+</div>

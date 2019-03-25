@@ -1,0 +1,37 @@
+<div class="sample-wrapper">
+    <div class="content">
+        <igx-expansion-panel [animationSettings] = "animationSettingsCustom" class="content__collapsible">
+            <igx-expansion-panel-header [disabled]="false">
+                <igx-expansion-panel-title class="sample-title">Personal Information</igx-expansion-panel-title>
+                <igx-expansion-panel-icon>
+                    <igx-icon fontSet="material">{{collapsed() ? 'expand_more':'expand_less'}}</igx-icon>
+                </igx-expansion-panel-icon>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body class="body">
+                <igx-input-group class="group">
+                    <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName"/>
+                    <label igxLabel for="fullName">Full Name</label>
+                    <igx-suffix>
+                        <igx-icon>person</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group class="group">
+                    <igx-prefix>+359</igx-prefix>
+                    <label igxLabel for="phone">Phone</label>
+                    <input igxInput name="phone" type="text" [(ngModel)]="user.phone" />
+                    <igx-suffix>
+                        <igx-icon>phone</igx-icon>
+                    </igx-suffix>
+                    <igx-hint position="start">Ex.: +359 555 123 456</igx-hint>
+                </igx-input-group>
+                <igx-input-group class="group">
+                    <label igxLabel for="email">Email address</label>
+                    <input igxInput name="email" type="email" [(ngModel)]="user.email"/>
+                    <igx-suffix>
+                        <igx-icon>email</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
+    </div>
+</div>

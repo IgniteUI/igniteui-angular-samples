@@ -1,0 +1,52 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <div>
+            <label class="optionLabel">Chart Type: </label>
+            <select class="optionItem" [(ngModel)]="sampleOptions.chartType">
+                <option>Auto</option>
+                <option>Bar</option>
+                <option>Candle</option>
+                <option>Column</option>
+                <option>Line</option>
+            </select>
+
+            <label class="optionItem"><input [(ngModel)]="sampleOptions.calloutsVisible" type="checkbox" />Enable Callouts</label>
+            <label class="optionItem"><input [(ngModel)]="sampleOptions.finalValueAnnotations" type="checkbox" />Enable Final Value Annotations</label>
+        </div>
+        <div>
+            <label class="optionLabel">Crosshairs Mode:</label>
+            <select class="optionItem" [(ngModel)]="sampleOptions.crosshairsDisplay">
+                <option>Default</option>
+                <option>None</option>
+                <option>Horizontal</option>
+                <option>Vertical</option>
+                <option>Both</option>
+            </select>
+
+            <label class="optionItem"><input [(ngModel)]="sampleOptions.snapCrosshairs" type="checkbox" />Snap Crosshairs to Data</label>
+            <label class="optionItem"><input [(ngModel)]="sampleOptions.crosshairAnnotations" type="checkbox" />Enable Crosshairs Annotations</label>
+        </div>
+    </div>
+
+    <div class="chart">
+        <igx-financial-chart height="100%" width="100%"
+            [dataSource]="financialData"
+            [chartType]="sampleOptions.chartType"
+            yAxisTitle="Stock Prices ($)"
+
+
+            [crosshairsDisplayMode]="sampleOptions.crosshairsDisplay"
+            [crosshairsSnapToData]="sampleOptions.snapCrosshairs"
+            [crosshairsAnnotationEnabled]="sampleOptions.crosshairAnnotations"
+
+            [finalValueAnnotationsVisible]="sampleOptions.finalValueAnnotations"
+
+            [calloutsVisible]="sampleOptions.calloutsVisible"
+            [calloutsDataSource]="calloutData"
+            calloutsXMemberPath="index"
+            calloutsYMemberPath="value"
+            calloutsLabelMemberPath="content">
+        </igx-financial-chart>
+
+    </div>
+</div>

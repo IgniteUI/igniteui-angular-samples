@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
+}
+
+.chart {
+    flex: 1;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-bottom: 0px;
+}
+
+.legendContainer {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+    display: flex; justify-content: center;
+}
+
+.legend {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 11pt;
+    color: rgb(116, 114, 114);
+}
+
+.tooltipGrid {
+    display: table;
+    width: 150px;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+.tooltipRow {
+    display: table-row;
+ }
+
+.tooltipCountry {
+    display: table-cell;
+    text-align: left;
+    color: rgb(116, 114, 114);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.tooltipTitle {
+    display: table-cell;
+    padding-left: 2px;
+    padding: 0px;
+    font-size: 13px;
+}
+
+.tooltipValue {
+    display: table-cell;
+    padding-left: 4px;
+    font-weight: 600;
+    color: rgb(116, 114, 114);
+    padding: 0px;
+    font-size: 13px;
+}
+
+.tooltipBadge {
+    display: table-cell;
+    height: 14px;
+    width: 14px;
+    margin-left: 3px;
+    margin-right: 3px;
+    vertical-align: middle;
+  }

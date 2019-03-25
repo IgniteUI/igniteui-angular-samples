@@ -1,23 +1,11 @@
 <div class="grid__wrapper">
-    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData()"
-        (onSortingDone)="processData()" (onFilteringDone)="processData()">
-        <igx-column [field]="'ID'" [sortable]="true"></igx-column>
-        <igx-column [field]="'ProductName'" [sortable]="true" [filterable]="true"></igx-column>
-        <igx-column [field]="'CategoryName'" [sortable]="true" [filterable]="true"></igx-column>
-        <igx-column [field]="'Rating'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" [filterable]="true">
-            <ng-template igxHeader>
-                <span class="cellAlignSyle">Rating</span>
-            </ng-template>
-            <ng-template igxCell let-val>
-                <div class="currency-badge-container">
-                    <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
-                    <igx-badge *ngIf="val<=0" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
-                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<=0">{{ formatNumber(val) }}</span>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true" [filterable]="true"></igx-column>
-        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" [filterable]="true">
+    <igx-grid #grid [data]="remoteData | async" [height]="'440px'" [width]="'100%'" [autoGenerate]='false'
+        (onDataPreLoad)="processData()" (onSortingDone)="processData()" (onFilteringDone)="processData()"
+        [allowFiltering]="true">
+        <igx-column [field]="'ProductID'" [sortable]="true" [filterable]="false"></igx-column>
+        <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
@@ -29,9 +17,20 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column [field]="'SupplierName'" [sortable]="true" [filterable]="true"></igx-column>
+        <igx-column [field]="'QuantityPerUnit'" [sortable]="true"></igx-column >
+        <igx-column [field]="'ReorderLevel'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
+            <ng-template igxHeader>
+                <span class="cellAlignSyle">ReorderLevel</span>
+            </ng-template>
+            <ng-template igxCell let-val>
+                <div class="currency-badge-container">
+                    <igx-badge *ngIf="val>20" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
+                    <igx-badge *ngIf="val<=20" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
+                    <span class="cellAlignSyle" [class.up]="val>0" [class.down]="val<=0">{{ formatNumber(val) }}</span>
+                </div>
+            </ng-template>
+        </igx-column>
     </igx-grid>
-
 
     <igx-toast #toast></igx-toast>
 </div>

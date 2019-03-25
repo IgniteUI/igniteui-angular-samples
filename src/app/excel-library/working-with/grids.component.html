@@ -1,0 +1,19 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <button (click)="exportGrid()">Export to Excel</button>
+    </div>
+    <igx-grid #grid [data]="data" [autoGenerate]="false" height="500px" width="100%">
+        <igx-column width="15%" sortable="true" field="CompanyName" header="Company"></igx-column>
+        <igx-column width="15%" sortable="true" field="ContactName" header="Name"></igx-column>
+        <igx-column width="15%" sortable="true" field="ContactTitle" header="Title"></igx-column>
+        <igx-column width="15%" sortable="true" field="Country" header="Country"></igx-column>
+        <igx-column width="10%" sortable="true" field="Euro" header="Euro" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val"  title="Euro" alt="Euro"   src="https://www.infragistics.com/angular-demos/assets/images/grid/active.png"  />
+                <img *ngIf="!val" title="Other" alt="Other" src="https://www.infragistics.com/angular-demos/assets/images/grid/expired.png"/>
+            </ng-template>
+        </igx-column>
+        <igx-column width="15%" sortable="true" field="Salary" header="Salary"></igx-column>
+        <igx-column width="10%" sortable="true" field="Age" header="Age"></igx-column>
+    </igx-grid>
+</div>

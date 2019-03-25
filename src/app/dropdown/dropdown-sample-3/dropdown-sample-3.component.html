@@ -1,9 +1,0 @@
-<div class="sample-wrapper drop-down-wrapper">
-    <button igxButton="raised" (click)="toggleDropDown($event)">Countries</button>
-    <igx-drop-down #dropdown3>
-        <igx-drop-down-item [igxDropDownItemNavigation]="dropdown3" *ngFor="let item of items" [disabled]="item.disabled" [isHeader]="item.header"
-            [isSelected]="item.selected">
-            {{ item.field }}
-        </igx-drop-down-item>
-    </igx-drop-down>
-</div>

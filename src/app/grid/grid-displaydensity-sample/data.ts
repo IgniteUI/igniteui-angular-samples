@@ -22,6 +22,7 @@ export const DATA = [{
     Discontinued: false,
     ExtendedPrice: 878.0000
 }, {
+    ShipAddress: "Obere Str. 57",
     ShipName: "Alfred's Futterkiste",
     ShipCity: "Berlin",
     ShipPostalCode: "12209",

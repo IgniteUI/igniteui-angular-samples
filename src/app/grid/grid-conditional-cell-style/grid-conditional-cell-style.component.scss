@@ -1,0 +1,73 @@
+:host::ng-deep {
+    $primary-color-green: green;
+    $primary-color-red: red;
+    $primary-color-blue: royalblue;
+    $margin-right-images: 25px;
+    $images-font-size: 2.5em;
+    $images-font-weight: bold;
+
+    .grid__wrapper {
+        margin: 0 auto;
+        padding: 5px;
+    }
+
+    .cellContainer {
+        width: 100%; 
+        float: right;
+    }
+
+    .cellAlignSyle {
+        width: 100%; 
+        text-align: right;
+        float:right;
+    }
+
+    .upFont {
+        color: $primary-color-red;
+    }
+
+    .downFont {
+        color: $primary-color-green;
+    }
+
+    .topSpeedFont {
+        color: $primary-color-blue;
+    }
+
+    .contentStyle {
+        font-size: $images-font-size;
+        font-weight: $images-font-weight;
+        margin-right: $margin-right-images;
+    }
+
+    .arrow {
+        @extend .contentStyle;
+        content: "^";
+    }
+
+    .star {
+        @extend .contentStyle;
+        content: "*";
+    }
+
+    .top100:before {
+        @extend .arrow;
+        color: $primary-color-green;
+        margin-top: 10px;
+    }
+
+    .belowTop100:before {
+        @extend .arrow;
+        color: $primary-color-red;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        margin-top: -10px;
+    }
+
+    .topSpeed:before {
+        @extend .star;
+        font-weight: normal;
+        color: $primary-color-blue;
+        margin-top: 10px;
+    }
+}

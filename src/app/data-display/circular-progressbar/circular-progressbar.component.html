@@ -1,0 +1,25 @@
+<div class="sample-wrapper">
+    <h4 class="sample-title">Circular progress indicator</h4>
+  <section class="sample-content">
+    <article class="sample-column">
+      <h5>Text is hidden</h5>
+      <div class="circular-container">
+        <igx-circular-bar [value]="currentValue" [max]="100" [animate]="true" [textVisibility]="false" (onProgressChanged)="progresChanged($event)"></igx-circular-bar>
+      </div>
+    </article>
+    <article class="sample-column">
+      <h5>Text is displayed</h5>
+      <div class="circular-container">
+        <igx-circular-bar [value]="currentValue" [max]="100" [animate]="true" [textVisibility]="true" (onProgressChanged)="progresChanged($event)"></igx-circular-bar>
+      </div>
+     </article>
+  </section>
+  <section class="sample-content">
+    <div class="button-container">
+        <p>Press the button to start updating the bar</p>
+        <button igxButton="fab" igxButtonBackground="#333" igxRipple="white" (click)="tick()">
+          <igx-icon fontSet="material">{{changeIcon()}}</igx-icon>
+        </button>
+    </div>
+  </section>
+</div>

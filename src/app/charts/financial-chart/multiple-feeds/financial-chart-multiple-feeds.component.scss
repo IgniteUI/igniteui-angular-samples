@@ -1,0 +1,97 @@
+igx-financial-chart {
+    max-width: 1200px;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+.sample-container {
+    width: 100%;
+    height: 480px;
+}
+
+.sample-controls {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 50px;
+    font: "12pt 'Titillium Web', sans-serif"
+}
+
+.label {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.fpsLabel {
+    display: inline-block;
+    width: 65px;
+    margin-left: 10px;
+}
+
+.legendContainer {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+    display: flex; justify-content: center;
+    background: white;
+}
+
+.legend {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 11pt;
+    color: rgb(116, 114, 114);
+    background: white;
+}
+
+.feedStatusLabel {
+    display: inline-block;
+    width: 145px;
+    margin-left: 10px;
+}
+
+
+.tooltipGrid {
+    display: table;
+    width: 140px;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    z-index: 1000;
+}
+
+.tooltipRow {
+    display: table-row;
+ }
+
+.tooltipProps {
+    display: table-cell;
+    padding: 0px;
+    width: 35px;
+    font-size: 11pt;
+}
+
+.tooltipValue {
+    display: table-cell;
+    padding-left: 10px;
+    color: rgb(116, 114, 114);
+    font-size: 11pt;
+    font-weight: 600;
+}
+
+.tooltipTitle {
+    margin-left: 15px;
+    font-size: 11pt;
+    font-weight: 600;
+    text-align: "center";
+}

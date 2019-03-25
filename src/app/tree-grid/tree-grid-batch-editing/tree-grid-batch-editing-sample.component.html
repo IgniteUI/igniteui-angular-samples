@@ -1,0 +1,49 @@
+<div class="grid__wrapper">
+    <igx-tree-grid #treeGrid [data]="data" primaryKey="employeeID" foreignKey="PID" [paging]="false"
+        [width]="'100%'" [height]="'500px'">
+        <igx-column field="employeeID" header="ID" dataType="number" width="200"></igx-column>
+        <igx-column field="Salary" header="Salary" dataType="number" width="130"></igx-column>
+        <igx-column field="firstName" header="First Name" dataType="string" width="150"></igx-column>
+        <igx-column field="lastName" header="Last Name" dataType="string" width="150"></igx-column>
+        <igx-column field="Title" header="Title" dataType="string" width="180"></igx-column>
+        <igx-column filterable="false" width="150">
+            <ng-template igxCell let-cell="cell" let-val>
+                <button igxButton (click)="deleteRow(cell.cellID.rowID)" [disabled]="cell.row.deleted">Delete</button>
+            </ng-template>
+        </igx-column>
+        <igx-column filterable="false" width="180">
+            <ng-template igxCell let-cell="cell" let-val>
+                <button igxButton (click)="addChildRow(cell.cellID.rowID)">Add Child Row</button>
+            </ng-template>
+        </igx-column>
+    </igx-tree-grid>
+    <div class="buttons-row">
+        <button igxButton (click)="addRow()">Add Root Level Row</button>
+        <div class="buttons-wrapper">
+            <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>
+            <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>
+            <button igxButton [disabled]="!hasTransactions" (click)="openCommitDialog()">Commit</button>
+        </div>
+    </div>
+    <igx-dialog title="Submit the following transactions?">
+        <igx-grid #dialogGrid [data]="transactionsData" [rowHeight]="64"
+            [primaryKey]="'id'" width="600px" height="300px" [emptyGridMessage]="'No available transactions'">
+            <igx-column field="id" header="ID" [dataType]="'string'" width="100px"></igx-column>
+            <igx-column field="type" header="Type" width="150px" [sortable]="true">
+                <ng-template igxCell let-cell="cell" let-val>
+                    <span [class]="classFromType(val)">{{ typeFormatter(val) }}</span>
+                </ng-template>
+            </igx-column>
+            <igx-column field="newValue" header="Value" width="900px">
+                <ng-template igxCell let-cell="cell" let-val>
+                    <span class="transaction-log">{{ stateFormatter(val) }}</span>
+                </ng-template>
+            </igx-column>
+        </igx-grid>
+        <div class="buttons-wrapper">
+            <button igxButton (click)="commit()">Commit</button>
+            <button igxButton (click)="discard()">Discard</button>
+            <button igxButton (click)="cancel()">Cancel</button>
+        </div>
+    </igx-dialog>
+</div>

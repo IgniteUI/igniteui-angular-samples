@@ -1,0 +1,39 @@
+<div class="sample-wrapper container">
+    <div class="options">
+        <span>Chart Type: </span>
+        <select [(ngModel)]="chartType">
+            <option>Auto</option>
+            <option>Area</option>
+            <option>Line</option>
+            <option>Column</option>
+            <option>Point</option>
+            <option>Spline</option>
+            <option>SplineArea</option>
+            <option>StepArea</option>
+            <option>StepLine</option>
+            <option>Waterfall</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-category-chart height="98%" width="98%"
+            [dataSource]="data"
+            [chartType]="chartType"
+            chartTitle="Olympic Medals By Country"
+            yAxisMinimumValue="50"
+            yAxisMaximumValue="150"
+            xAxisOverlap="0"
+
+            negativeBrushes="Red"
+            negativeOutlines="Red"
+            brushes="#4286f4, #e8b220, #11c111"
+            outlines="#4286f4, #e8b220, #11c111"
+            markerOutlines="#4286f4, #e8b220, #11c111"
+            markerBrushes="White"
+            markerTypes="Circle"
+            thickness="2"
+            isTransitionInEnabled="true"
+            transitionInDuration="1500"
+            transitionInMode="AccordionFromBottom" >
+        </igx-category-chart>
+    </div>
+</div>

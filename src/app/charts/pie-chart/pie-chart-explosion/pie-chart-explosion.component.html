@@ -1,0 +1,5 @@
+<div class="chart">
+    <igx-pie-chart #chart height="100%" width="100%" [dataSource]="data" valueMemberPath="Value" labelMemberPath="Label"
+                (sliceClick)="pieSliceClickEvent($event)" labelsPosition="bestFit">
+    </igx-pie-chart>
+</div>

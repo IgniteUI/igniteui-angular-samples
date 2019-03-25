@@ -24,7 +24,9 @@ export class RemoteFilteringSampleComponent implements OnInit {
     public ngAfterViewInit() {
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
         const sortingExpr = this.grid.sortingExpressions[0];
-        this._chunkSize = parseInt(this.grid.height, 10) / this.grid.rowHeight;
+        this._chunkSize = Math.ceil(parseInt(this.grid.height, 10) / this.grid.rowHeight);
+        this.grid.isLoading = true;
+
         this._remoteService.getData(
             {
                 chunkSize: this._chunkSize,
@@ -33,7 +35,8 @@ export class RemoteFilteringSampleComponent implements OnInit {
             filteringExpr,
             sortingExpr,
             (data) => {
-                this.grid.totalItemCount = data.Count;
+                this.grid.totalItemCount = data["@odata.count"];
+                this.grid.isLoading = false;
             });
     }
 
@@ -60,7 +63,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             filteringExpr,
             sortingExpr,
             (data) => {
-                this.grid.totalItemCount = data.filteredCount;
+                this.grid.totalItemCount = data["@odata.count"];
                 this.toast.hide();
                 this.cdr.detectChanges();
             });

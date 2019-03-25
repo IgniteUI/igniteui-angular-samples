@@ -1,0 +1,25 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+      <article class="linear-samples sample-column">
+          <h4 class="sample-title">Linear progress bar</h4>
+          <div class="linear-container">
+              <h5>Max value: 200</h5>
+              <igx-linear-bar [striped]="false" [max]="200" [value]="0"></igx-linear-bar>
+          </div>
+          <div class="linear-container">
+              <h5>Max value: 100</h5>
+              <igx-linear-bar [striped]="false" [max]="100" [value]="0" type="danger" ></igx-linear-bar>
+          </div>
+      </article>
+    </section>
+    <section class="sample-content">
+        <article class="linear-samples sample-column">
+            <div class="button-container">
+                <p>Press the button to start updating the bars</p>
+                <button igxButton="fab" igxButtonBackground="#333" igxRipple="white" (click)="tick()">
+                    <igx-icon fontSet="material">{{changeIcon()}}</igx-icon>
+                </button>
+            </div>
+        </article>
+    </section>
+</div>

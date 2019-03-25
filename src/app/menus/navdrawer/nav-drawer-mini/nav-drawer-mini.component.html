@@ -1,0 +1,23 @@
+<div class="content-wrap" igxLayout>
+  <igx-nav-drawer id="navigation" [pin]="true" [pinThreshold]="0">
+    <ng-template igxDrawer>
+        <span igxDrawerItem [isHeader]="true"> Header </span>
+        <span igxDrawerItem igxRipple> 
+            <igx-icon fontSet="material">home</igx-icon>
+            <span>Home</span>
+        </span>
+    </ng-template>
+    <ng-template igxDrawerMini>
+        <span igxDrawerItem igxRipple> 
+            <igx-icon fontSet="material">home</igx-icon>
+        </span>
+    </ng-template>
+  </igx-nav-drawer>
+
+  <main igxFlex>
+    <!-- <button (click)="drawer.toggle()"> Menu </button> -->
+    <span igxButton="icon" igxToggleAction="navigation" [closeOnOutsideClick]="false">
+      <igx-icon fontSet="material">menu</igx-icon>
+    </span>
+  </main>
+</div>

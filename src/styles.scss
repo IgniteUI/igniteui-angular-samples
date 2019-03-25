@@ -1,11 +1,15 @@
+// CSS Reset, comment out if not required or using a different module
+// @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
-
 @include igx-core();
 @include igx-theme($default-palette);
 
-html, body {
+/* autoprefixer grid: on */
+html,
+body {
     height: 100%;
     overflow: hidden;
+    margin: 0;
 }
 
 .sample-wrapper {
@@ -38,7 +42,8 @@ html, body {
 
 .sample-title {
     color: #0375be;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 .sample-title .light {
@@ -86,10 +91,16 @@ html, body {
         opacity: 1;
     }
 }
-.error > div > div {
-    background-color: red !important;
-}
+
 .headerAlignSyle {
     text-align: right !important;
 }
 
+.dark-theme {
+    @include igx-dark-theme($green-palette); // grid caption styling
+    background-color: #111;
+
+    ::-moz-placeholder {
+        opacity: 1;
+    }
+}

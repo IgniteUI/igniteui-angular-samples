@@ -1,0 +1,22 @@
+<div class="content-wrap" igxLayout>
+  <igx-nav-drawer id="navigation" #drawer [isOpen]="true">
+    <ng-template igxDrawer>
+      <nav>
+        <span igxDrawerItem [isHeader]="true"> Email Account </span>
+        <span igxDrawerItem igxRipple> Inbox </span>
+        <span igxDrawerItem igxRipple [active]="true"> Drafts </span>
+        <span igxDrawerItem igxRipple> Sent </span>
+        <span igxDrawerItem [isHeader]="true"> Folders </span>
+        <span igxDrawerItem igxRipple> Deleted </span>
+        <span igxDrawerItem igxRipple> Archive </span>
+      </nav>
+    </ng-template>
+  </igx-nav-drawer>
+
+  <main igxFlex>
+    <!-- <button (click)="drawer.toggle()"> Menu </button> -->
+    <span igxButton="icon" igxToggleAction="navigation" [closeOnOutsideClick]="false">
+      <igx-icon fontSet="material">menu</igx-icon>
+    </span>
+  </main>
+</div>

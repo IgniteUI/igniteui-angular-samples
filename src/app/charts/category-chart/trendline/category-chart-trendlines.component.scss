@@ -1,0 +1,134 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-width: 300px;
+}
+
+.chart {
+    flex: 1;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.chartToolbar {
+    clear: both;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.chartLegend {
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    float: right;
+    padding-left: 50px;
+}
+
+.chartTitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 10px;
+    background: rgb(223, 223, 223);
+    color: rgb(129, 129, 129);
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+ }
+
+.chartNote {
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: rgb(129, 129, 129);
+    font-size: 10px;
+    float: left;
+}
+
+.tooltipTable {
+    display: table;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 130px;
+}
+
+.tooltipRow { display: table-row; }
+
+.tooltipOlympics {
+    display: table-cell;
+    padding-left: 10px;
+    padding-right: 0px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tooltipFlag {
+    display: table-cell;
+    width: 18px;
+    height: 15px;
+}
+
+.tooltipCountry {
+    display: table-cell;
+    padding-left: 5px;
+}
+
+.tooltipMedal {
+    display: table-cell;
+    padding-left: 5px;
+    font-weight: 600;
+    width: 60px;
+}
+
+.tooltipProp {
+    display: table-cell;
+    padding-left: 5px;
+    font-weight: 500;
+    width: 80px;
+}
+
+.tooltipValue {
+    display: table-cell;
+    width: 25px;
+    color: rgb(121, 121, 121);
+}
+
+.tooltipNote {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: table-cell;
+}
+
+.medalGold {
+    height: 14px;
+    width: 14px;
+    display: table-cell;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+ .medalSilver {
+    height: 14px;
+    width: 14px;
+    display: table-cell;
+    margin-left: 3px;
+    margin-right: 3px;
+ }
+
+ .medalBronze {
+    height: 14px;
+    width: 14px;
+    display: table-cell;
+    margin-left: 3px;
+    margin-right: 3px;
+ }

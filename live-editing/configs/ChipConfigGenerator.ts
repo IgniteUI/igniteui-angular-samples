@@ -1,10 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxChipsModule, IgxDropDownModule, IgxToastModule,
-        IgxInputGroupModule, IgxAvatarModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxChipsModule, IgxDropDownModule, IgxInputGroupModule, IgxToastModule, IgxButtonModule
+} from "igniteui-angular";
+import { ChipSampleComponent, EmailFilterPipe } from "../../src/app/data-display/chip/chip.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { ChipSampleComponent, EmailFilterPipe } from "../../src/app/chip/chip.component";
 
 export class ChipConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -13,12 +13,13 @@ export class ChipConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ChipSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxChipsModule, IgxDropDownModule, IgxInputGroupModule,
+                imports: [IgxChipsModule, IgxDropDownModule, IgxInputGroupModule, IgxButtonModule,
                     IgxToastModule, IgxAvatarModule, ChipSampleComponent, EmailFilterPipe],
                 ngDeclarations: [ChipSampleComponent, EmailFilterPipe],
-                ngImports: [IgxChipsModule, IgxDropDownModule,
+                ngImports: [IgxChipsModule, IgxDropDownModule, IgxButtonModule,
                     IgxInputGroupModule, IgxToastModule, IgxAvatarModule]
-            })
+            }),
+            shortenComponentPathBy: "/data-display/"
         }));
 
         return configs;
