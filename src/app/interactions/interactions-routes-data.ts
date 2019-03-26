@@ -1,6 +1,7 @@
 // tslint:disable:object-literal-sort-keys
 
 export const interactionsRoutesData = {
+    "custom-dialog-sample": { displayName: "Customized Dialog", parentName: "Dialog" },
     "dialog": { displayName: "Various Dialogs", parentName: "Dialog" },
     "dialog-sample-1": { displayName: "Completed Action Dialog", parentName: "Dialog" },
     "dialog-sample-2": { displayName: "Confirmation Dialog", parentName: "Dialog" },

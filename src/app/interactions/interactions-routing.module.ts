@@ -1,6 +1,7 @@
 // tslint:disable:no-string-literal
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
@@ -52,6 +53,11 @@ export const interactionsRoutes: Routes = [
         component: DialogSample3Component,
         data: interactionsRoutesData["dialog-sample-3"],
         path: "dialog-sample-3"
+    },
+    {
+        component: CustomDialogComponent,
+        data: interactionsRoutesData["custom-dialog-sample"],
+        path: "custom-dialog-sample"
     },
     {
         component: SliderSample1Component,
@@ -188,4 +194,4 @@ export const interactionsRoutes: Routes = [
         RouterModule.forChild(interactionsRoutes)
     ]
 })
-export class InteractionsRoutingModule {}
+export class InteractionsRoutingModule { }
