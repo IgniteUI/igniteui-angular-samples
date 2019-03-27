@@ -53,6 +53,9 @@ import {
     ExcelStyleFilteringSample3Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
+import {
+    FilteringTemplateSampleComponent
+} from "../../src/app/grid/grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
@@ -165,6 +168,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
                 ngDeclarations: [FilteringSampleComponent],
                 ngImports: [IgxGridModule, IgxRippleModule, IgxInputGroupModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: FilteringTemplateSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-filtering-template-sample/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxRippleModule, FilteringTemplateSampleComponent, IgxInputGroupModule, IgxDatePickerModule],
+                ngDeclarations: [FilteringTemplateSampleComponent],
+                ngImports: [IgxGridModule, IgxRippleModule, IgxInputGroupModule, IgxDatePickerModule],
                 ngProviders: []
             })
         }));
