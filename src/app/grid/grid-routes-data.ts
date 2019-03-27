@@ -11,6 +11,7 @@ export const gridsRoutesData = {
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
     "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
     "grid-filtering-sample": { displayName: "Grid Filtering", parentName: "Grid" },
+    "grid-filtering-template-sample": { displayName: "Grid Filtering Template", parentName: "Grid" },
     "grid-excel-style-filtering-sample-1": { displayName: "Grid Excel Style Filtering", parentName: "Grid" },
     "grid-excel-style-filtering-sample-2": { displayName: "Grid Excel Style Filtering Operations", parentName: "Grid" },
     "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
