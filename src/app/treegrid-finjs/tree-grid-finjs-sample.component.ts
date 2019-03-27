@@ -128,7 +128,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
         if (this.theme) {
-            document.body.classList.add("dark-theme");
+            document.body.classList.add("fin-dark-theme");
         }
         this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
     }
@@ -190,9 +190,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public onThemeChanged(event: any) {
         const parentEl = this.parentComponentEl();
         if (event.checked && parentEl.classList.contains("main")) {
-            parentEl.classList.add("dark-theme");
+            parentEl.classList.add("fin-dark-theme");
         } else {
-            parentEl.classList.remove("dark-theme");
+            parentEl.classList.remove("fin-dark-theme");
         }
     }
 

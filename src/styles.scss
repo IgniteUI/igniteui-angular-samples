@@ -96,7 +96,7 @@ body {
     text-align: right !important;
 }
 
-.dark-theme {
+.fin-dark-theme {
     @include igx-dark-theme($green-palette); // grid caption styling
     background-color: #111;
 
