@@ -1,0 +1,26 @@
+<div class="sample">
+    <div class="options">
+        <label class="optionLabel">Thickness: </label>
+        <label class="optionValue">{{seriesThickness}}</label>
+        <input class="slider" type="range" min="1" max="10" step="1" [(ngModel)]="seriesThickness" />
+
+        <label class="optionLabel">Contours: </label>
+        <label class="optionValue">{{seriesContours}}</label>
+        <input class="slider" type="range" min="1" max="15" step="1" [(ngModel)]="seriesContours"
+            (input)="onSeriesContoursChanged($event)"/>
+    </div>
+    <div class="chart">
+        <igx-data-chart #chart isHorizontalZoomEnabled=true isVerticalZoomEnabled=true
+        width="100%" height="100%" chartTitle="MAGNETIC FIELD LINES"
+            gridMode="BeforeSeries" [dataSource]="data">
+            <igx-numeric-x-axis #xAxis labelLocation="OutsideLeft" minimumValue=-180 maximumValue=180 title="Longitude"></igx-numeric-x-axis>
+            <igx-numeric-y-axis #yAxis labelLocation="OutsideBottom" minimumValue=-90 maximumValue=90 title="Latitude"></igx-numeric-y-axis>
+
+            <igx-numeric-x-axis name="xAxis2" labelLocation="OutsideTop" minimumValue=-180 maximumValue=180></igx-numeric-x-axis>
+            <igx-numeric-y-axis name="yAxis2" labelLocation="OutsideRight" minimumValue=-90 maximumValue=90 title="Latitude"></igx-numeric-y-axis>
+
+            <igx-scatter-contour-series name="series" [xAxis]="xAxis" [yAxis]="yAxis" xMemberPath="X" yMemberPath="Y"
+                valueMemberPath="Z" [thickness]="seriesThickness" [fillScale]="brushScale"></igx-scatter-contour-series>
+        </igx-data-chart>
+    </div>
+</div>

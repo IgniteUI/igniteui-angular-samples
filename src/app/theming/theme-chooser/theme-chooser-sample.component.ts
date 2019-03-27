@@ -36,8 +36,7 @@ export class ThemeChooserSampleComponent implements OnInit {
     @ViewChild("dialog1", { read: IgxDialogComponent })
     public dialog: IgxDialogComponent;
 
-    @Input()
-    @ViewChild("outlet", { read: IgxOverlayOutletDirective })
+    @ViewChild(IgxOverlayOutletDirective)
     public outlet: IgxOverlayOutletDirective;
 
     @ViewChild("grid1", { read: IgxGridComponent })
@@ -111,11 +110,9 @@ export class ThemeChooserSampleComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.datePicker.alert.isModal = true;
         this.datePicker.outlet = this.outlet;
-        this.grid1.outletDirective = this.outlet;
+        // this.grid1.outletDirective = this.outlet;
         this.data = DATA;
         this.record = new Record();
     }
-
 }

@@ -1,0 +1,194 @@
+<div class='overlay-sample' #mainContainer>
+    <div class='container'>
+        <div class='container__row'>
+            <div class='section__position-header'>
+                Global
+            </div>
+            <div class='section__separator'></div>
+            <div class='section__position-header'>
+                Auto
+            </div>
+            <div class='section__separator'></div>
+            <div class='section__position-header'>
+                Connected
+            </div>
+        </div>
+        <div class='container__row'>
+            <div class='section__position-element' #directionDemoGlobal>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionGlobal(-1, -1)">
+                        <img src='assets/images/overlay/up_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(-0.5, -1)">
+                        <img src='assets/images/overlay/up.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(0, -1)">
+                        <img src='assets/images/overlay/up_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionGlobal(-1, -0.5)">
+                        <img src='assets/images/overlay/left.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(-0.5, -0.5)">
+                        <img src='assets/images/overlay/all_directions.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(0, -0.5)">
+                        <img src='assets/images/overlay/right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionGlobal(-1, 0)">
+                        <img src='assets/images/overlay/down_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(-0.5, 0)">
+                        <img src='assets/images/overlay/down.png'>
+                    </span>
+                    <span (click)="onClickDirectionGlobal(0, 0)">
+                        <img src='assets/images/overlay/down_right.png'>
+                    </span>
+                </div>
+            </div>
+
+            <div class='section__separator'>
+
+            </div>
+            <div class='section__position-element' #autoDemo>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionAuto(-1, -1)">
+                        <img src='assets/images/overlay/up_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionAuto(-0.5, -1)">
+                        <img src='assets/images/overlay/up.png'>
+                    </span>
+                    <span (click)="onClickDirectionAuto(0, -1)">
+                        <img src='assets/images/overlay/up_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionAuto(-1, -0.5)">
+                        <img src='assets/images/overlay/left.png'>
+                    </span>
+                    <span (click)="onClickDirectionAuto(-0.5, -0.5)">
+                        <img src='assets/images/overlay/all_directions.png'>
+                    </span>
+                    <span (click)="onClickDirectionAuto(0, -0.5)">
+                        <img src='assets/images/overlay/right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionAuto(-1, 0)">
+                        <img src='assets/images/overlay/down_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionAuto(-0.5, 0)">
+                        <img src='assets/images/overlay/down.png'>
+                    </span>
+                    <span (click)="onClickDirectionAuto(0, 0)">
+                        <img src='assets/images/overlay/down_right.png'>
+                    </span>
+                </div>
+            </div>
+
+            <div class='section__separator'>
+
+            </div>
+            <div class='section__position-element' #directionDemo>
+                <div class='section__row'>
+                    <span (click)="onClickDirection(-1, -1)">
+                        <img src='assets/images/overlay/up_left.png'>
+                    </span>
+                    <span (click)="onClickDirection(-0.5, -1)">
+                        <img src='assets/images/overlay/up.png'>
+                    </span>
+                    <span (click)="onClickDirection(0, -1)">
+                        <img src='assets/images/overlay/up_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirection(-1, -0.5)">
+                        <img src='assets/images/overlay/left.png'>
+                    </span>
+                    <span (click)="onClickDirection(-0.5, -0.5)">
+                        <img src='assets/images/overlay/all_directions.png'>
+                    </span>
+                    <span (click)="onClickDirection(0, -0.5)">
+                        <img src='assets/images/overlay/right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirection(-1, 0)">
+                        <img src='assets/images/overlay/down_left.png'>
+                    </span>
+                    <span (click)="onClickDirection(-0.5, 0)">
+                        <img src='assets/images/overlay/down.png'>
+                    </span>
+                    <span (click)="onClickDirection(0, 0)">
+                        <img src='assets/images/overlay/down_right.png'>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='container__row'>
+            <div class='section__position-header'>
+            </div>
+            <div class='section__separator'></div>
+            <div class='section__position-header'>
+                Elastic
+            </div>
+            <div class='section__separator'></div>
+            <div class='section__position-header'>
+            </div>
+        </div>
+        <div class="container__row">
+            <div class='section__position-element'></div>
+            <div class='section__separator'></div>
+            <div class='section__position-element' #elasticDemo>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionElastic(-1, -1)">
+                        <img src='assets/images/overlay/up_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(-0.5, -1)">
+                        <img src='assets/images/overlay/up.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(0, -1)">
+                        <img src='assets/images/overlay/up_right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionElastic(-1, -0.5)">
+                        <img src='assets/images/overlay/left.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(-0.5, -0.5)">
+                        <img src='assets/images/overlay/all_directions.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(0, -0.5)">
+                        <img src='assets/images/overlay/right.png'>
+                    </span>
+                </div>
+                <div class='section__row'>
+                    <span (click)="onClickDirectionElastic(-1, 0)">
+                        <img src='assets/images/overlay/down_left.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(-0.5, 0)">
+                        <img src='assets/images/overlay/down.png'>
+                    </span>
+                    <span (click)="onClickDirectionElastic(0, 0)">
+                        <img src='assets/images/overlay/down_right.png'>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container--small'>
+        <div class="overlay__element" #overlayDemo>
+            <igx-card>
+                <igx-card-header>
+                    <h3 class="igx-card-header__title">Overlay</h3>
+                </igx-card-header>
+                <igx-card-content>
+                    <p class="igx-card-content__text">Click on the arrows to dynamically re-attach this element.</p>
+                </igx-card-content>
+            </igx-card>
+        </div>
+    </div>
+</div>

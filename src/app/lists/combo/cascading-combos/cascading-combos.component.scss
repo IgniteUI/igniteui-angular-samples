@@ -1,0 +1,9 @@
+.container {
+    margin: 10px;
+    width: 300px;
+}
+
+.container > * {
+    display: block;
+    margin-bottom: 20px;
+}

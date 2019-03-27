@@ -1,27 +1,30 @@
-import { argv } from "yargs";
+import * as fs from "fs";
+import * as fsExtra from "fs-extra";
+import * as path from "path";
+
 import { MetaDataGenerator } from "./generators/MetaDataGenerator";
 import { StyleSyntax } from "./generators/misc/StyleSyntax";
 import { SampleAssetsGenerator } from "./generators/SampleAssetsGenerator";
 import { SharedAssetsGenerator } from "./generators/SharedAssetsGenerator";
 
+export const ASSETS_SAMPLES_DIR = path.join(__dirname, "../src/assets/samples/");
+export const ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../src/assets/samples/css-support/");
+
 class LiveEditingManager {
     public run() {
-        if (argv.styles) {
-            const styles = argv.styles.trim().toLowerCase();
-            if (styles === "css") {
-                this._run(StyleSyntax.CSS);
-            } else if (styles === "sass") {
-                this._run(StyleSyntax.Sass);
-            }
-        } else {
-            this._run(StyleSyntax.CSS);
-            this._run(StyleSyntax.Sass);
-        }
+        fsExtra.removeSync(ASSETS_SAMPLES_DIR);
+        fs.mkdirSync(ASSETS_SAMPLES_DIR);
+        fs.mkdirSync(ASSETS_SAMPLES_CSS_SUPPORT_DIR);
+
+        console.log("Live-Editing... CSS with logs:");
+        this._run(StyleSyntax.CSS, false);
+        console.log("Live-Editing... SASS without logs:");
+        this._run(StyleSyntax.Sass, false);
     }
 
-    public _run(styleSyntax: StyleSyntax) {
-        new SharedAssetsGenerator(styleSyntax).generateSharedAssets();
-        new SampleAssetsGenerator(styleSyntax).generateSamplesAssets();
+    public _run(styleSyntax: StyleSyntax, showLogs?: boolean) {
+        new SharedAssetsGenerator(styleSyntax, showLogs).generateSharedAssets();
+        new SampleAssetsGenerator(styleSyntax, showLogs).generateSamplesAssets();
         new MetaDataGenerator(styleSyntax).Generate();
     }
 }
