@@ -1,0 +1,34 @@
+:host {
+    display: block;
+    padding: 0 16px;
+}
+
+$margin:  8px 8px 8px 0px;
+$padding: rem(24px) rem(24px) rem(12px) rem(24px);
+$actions-height: 52px;
+
+.dialog-container{
+    display: flex; flex-direction: row;
+    margin-left: 24px;
+}
+
+igx-icon {
+    margin: $margin;
+}
+
+.dialog-title{
+    padding: $padding;
+    margin: $margin; 
+}
+
+.dialog-actions {
+    justify-content: flex-end;
+    align-items: center;
+    height: $actions-height;
+
+    [igxButton] {
+        margin: $margin;
+    }
+}
+
+
