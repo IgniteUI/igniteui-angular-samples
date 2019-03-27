@@ -1,0 +1,16 @@
+<h4 class="sample-title">Custom Title and Actions</h4>
+<p class="sample-description">Dialog Title and Actions are re-templated.</p>
+
+<button igxButton="raised" igxRipple="white" (click)="dialog.open()">Show Dialog</button>
+<igx-dialog #dialog [closeOnOutsideSelect]="true" message="This will create a new social media account.">
+    <igx-dialog-title>
+        <div class="dialog-container">
+            <igx-icon>account_box</igx-icon>
+            <div class="dialog-title">Create a new account?</div>
+        </div>
+    </igx-dialog-title>
+    <div igxDialogActions class="dialog-container dialog-actions">
+        <button igxButton (click)="dialog.close()">CREATE</button>
+        <button igxButton (click)="dialog.close()">CANCEL</button>
+    </div>
+</igx-dialog>
