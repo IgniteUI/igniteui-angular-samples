@@ -6,6 +6,7 @@ import { MovieComponent } from "./autocomplete/movie/movie.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
+import { ButtonGroupSampleComponent } from "./buttonGroup/button-group-sample-4/button-group-sample.component";
 import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
@@ -71,6 +72,11 @@ export const dataEntriesRoutes: Routes = [
         component: ButtonGroupSample3Component,
         data: dataEntriesRoutesData["button-group-sample-3"],
         path: "button-group-sample-3"
+    },
+    {
+        component: ButtonGroupSampleComponent,
+        data: dataEntriesRoutesData["button-group-sample-4"],
+        path: "button-group-sample-4"
     },
     {
         component: ButtonsSample1Component,
