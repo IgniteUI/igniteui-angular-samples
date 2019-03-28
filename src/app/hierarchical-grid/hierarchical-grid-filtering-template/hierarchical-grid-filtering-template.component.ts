@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
-    IgxHierarchicalGridComponent,
-    IgxColumnComponent,
     DataType,
-    IgxStringFilteringOperand,
+    IgxColumnComponent,
+    IgxDateFilteringOperand,
+    IgxHierarchicalGridComponent,
     IgxNumberFilteringOperand,
-    IgxDateFilteringOperand
+    IgxStringFilteringOperand
 } from "igniteui-angular";
 import { SINGERS } from "../data";
 
@@ -32,9 +32,9 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
-                operand = IgxNumberFilteringOperand.instance().condition('equals');
+                operand = IgxNumberFilteringOperand.instance().condition("equals");
             default:
-                operand = IgxStringFilteringOperand.instance().condition('contains');
+                operand = IgxStringFilteringOperand.instance().condition("contains");
         }
         this.hierarchicalGrid.filter(column.field, input.value, operand, column.filteringIgnoreCase);
     }
@@ -45,10 +45,11 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     public onDateSelected(event, column: IgxColumnComponent) {
-        this.hierarchicalGrid.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'), column.filteringIgnoreCase);
+        this.hierarchicalGrid.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
+            column.filteringIgnoreCase);
     }
 
-    public openDatePicker(openDialog: Function) {
+    public openDatePicker(openDialog: () => void) {
         openDialog();
     }
 

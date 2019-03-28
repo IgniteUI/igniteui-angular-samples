@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
-    IgxStringFilteringOperand,
-    IgxTreeGridComponent,
-    IgxColumnComponent,
     DataType,
+    IgxColumnComponent,
+    IgxDateFilteringOperand,
     IgxNumberFilteringOperand,
-    IgxDateFilteringOperand
+    IgxStringFilteringOperand,
+    IgxTreeGridComponent
 } from "igniteui-angular";
 import { FOODS_DATA } from "../data/foods";
 
@@ -39,9 +39,9 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
-                operand = IgxNumberFilteringOperand.instance().condition('equals');
+                operand = IgxNumberFilteringOperand.instance().condition("equals");
             default:
-                operand = IgxStringFilteringOperand.instance().condition('contains');
+                operand = IgxStringFilteringOperand.instance().condition("contains");
         }
         this.treegrid1.filter(column.field, input.value, operand, column.filteringIgnoreCase);
     }
@@ -52,10 +52,11 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     public onDateSelected(event, column: IgxColumnComponent) {
-        this.treegrid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'), column.filteringIgnoreCase);
+        this.treegrid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
+            column.filteringIgnoreCase);
     }
 
-    public openDatePicker(openDialog: Function) {
+    public openDatePicker(openDialog: () => void) {
         openDialog();
     }
 }

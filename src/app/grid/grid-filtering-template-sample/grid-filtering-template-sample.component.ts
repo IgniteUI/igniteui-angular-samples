@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
-    IgxGridComponent,
-    IgxStringFilteringOperand,
-    IgxColumnComponent,
     DataType,
+    IgxColumnComponent,
+    IgxDateFilteringOperand,
+    IgxGridComponent,
     IgxNumberFilteringOperand,
-    IgxDateFilteringOperand
+    IgxStringFilteringOperand
 } from "igniteui-angular";
 import { DATA } from "./nwindData";
 
@@ -39,9 +39,9 @@ export class FilteringTemplateSampleComponent implements OnInit {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
-                operand = IgxNumberFilteringOperand.instance().condition('equals');
+                operand = IgxNumberFilteringOperand.instance().condition("equals");
             default:
-                operand = IgxStringFilteringOperand.instance().condition('contains');
+                operand = IgxStringFilteringOperand.instance().condition("contains");
         }
         this.grid1.filter(column.field, input.value, operand, column.filteringIgnoreCase);
     }
@@ -52,10 +52,11 @@ export class FilteringTemplateSampleComponent implements OnInit {
     }
 
     public onDateSelected(event, column: IgxColumnComponent) {
-        this.grid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition('equals'), column.filteringIgnoreCase);
+        this.grid1.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
+            column.filteringIgnoreCase);
     }
 
-    public openDatePicker(openDialog: Function) {
+    public openDatePicker(openDialog: () => void) {
         openDialog();
     }
 }
