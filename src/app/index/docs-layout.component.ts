@@ -1,18 +1,24 @@
-import { Component, HostListener } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
+import { Component, HostListener, Inject, OnInit } from "@angular/core";
 
 @Component({
     selector: "app-docs-layout",
     styleUrls: ["./docs-layout.component.scss"],
-    template: `
-        <div [class]="theme"><router-outlet></router-outlet></div>
-    `
+    template: `<router-outlet></router-outlet>`
 })
-export class DocsLayoutComponent {
-    public theme = "default-theme";
+
+export class DocsLayoutComponent implements OnInit {
+    private theme = "default-theme";
+    constructor(@Inject(DOCUMENT) private document: Document) {}
+
+    public ngOnInit() {
+        this.document.body.classList.add(this.theme);
+    }
 
     @HostListener("window:message", ["$event"])
     private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin) {
+            this.document.body.classList.replace(this.theme, e.data.theme);
             this.theme = e.data.theme;
         }
     }
