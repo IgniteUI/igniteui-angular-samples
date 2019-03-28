@@ -43,7 +43,7 @@ export class FilteringTemplateSampleComponent implements OnInit {
             default:
                 operand = IgxStringFilteringOperand.instance().condition("contains");
         }
-        this.grid1.filter(column.field, input.value, operand, column.filteringIgnoreCase);
+        this.grid1.filter(column.field, this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
     public clearInput(input: any, column: any) {
@@ -58,5 +58,13 @@ export class FilteringTemplateSampleComponent implements OnInit {
 
     public openDatePicker(openDialog: () => void) {
         openDialog();
+    }
+
+    private transformValue(value: any, column: IgxColumnComponent): any {
+        if (column.dataType === DataType.Number) {
+            value = parseFloat(value);
+        }
+
+        return value;
     }
 }

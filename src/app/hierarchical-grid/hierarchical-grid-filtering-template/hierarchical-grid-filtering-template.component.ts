@@ -36,7 +36,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             default:
                 operand = IgxStringFilteringOperand.instance().condition("contains");
         }
-        this.hierarchicalGrid.filter(column.field, input.value, operand, column.filteringIgnoreCase);
+        this.hierarchicalGrid.filter(column.field, this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
     public clearInput(input: any, column: any) {
@@ -51,6 +51,14 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     public openDatePicker(openDialog: () => void) {
         openDialog();
+    }
+
+    private transformValue(value: any, column: IgxColumnComponent): any {
+        if (column.dataType === DataType.Number) {
+            value = parseFloat(value);
+        }
+
+        return value;
     }
 
 }
