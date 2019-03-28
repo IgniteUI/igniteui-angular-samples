@@ -40,6 +40,7 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
         switch (column.dataType) {
             case DataType.Number:
                 operand = IgxNumberFilteringOperand.instance().condition("equals");
+                break;
             default:
                 operand = IgxStringFilteringOperand.instance().condition("contains");
         }
