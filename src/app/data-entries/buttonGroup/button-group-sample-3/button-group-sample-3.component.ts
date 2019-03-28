@@ -23,7 +23,7 @@ class ToggleButton {
         this.ripple = obj.ripple || "gray";
         this.label = obj.label;
         this.selected = obj.selected || false;
-        this.togglable = obj.togglable;
+        this.togglable = obj.togglable || true;
         this.disabled = obj.disabled || false;
         this.color = obj.color;
         this.icon = obj.icon;
@@ -36,10 +36,10 @@ class ToggleButton {
     templateUrl: "./button-group-sample-3.component.html"
 })
 export class ButtonGroupSample3Component implements OnInit {
-    public borders: ToggleButton[];
+    public bordersButtons: ToggleButton[];
 
     public ngOnInit() {
-        this.borders = [
+        this.bordersButtons = [
             new ToggleButton({
                 icon: "border_top",
                 selected: true

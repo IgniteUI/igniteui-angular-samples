@@ -20,7 +20,7 @@ class ToggleButton {
         this.ripple = obj.ripple || "gray";
         this.label = obj.label;
         this.selected = obj.selected || false;
-        this.togglable = obj.togglable;
+        this.togglable = obj.togglable || true;
         this.icon = obj.icon;
     }
 }
@@ -35,11 +35,11 @@ class ToggleButton {
 export class ButtonGroupSample1Component implements OnInit {
     public alignment = ButtonGroupAlignment.vertical;
     public rippleColor = "grey";
-    public borders: ToggleButton[];
-    public fontOptions: ToggleButton[];
+    public bordersButtons: ToggleButton[];
+    public fontOptionsButtons: ToggleButton[];
 
     public ngOnInit() {
-        this.borders = [
+        this.bordersButtons = [
             new ToggleButton({
                 icon: "border_top",
                 selected: true
@@ -58,7 +58,7 @@ export class ButtonGroupSample1Component implements OnInit {
             })
         ];
 
-        this.fontOptions = [
+        this.fontOptionsButtons = [
             new ToggleButton({
                 icon: "format_bold",
                 selected: false
