@@ -42,16 +42,16 @@ import { IgxScatterPolygonSeriesModule } from "igniteui-angular-charts/ES5/igx-s
 import { IgxScatterPolylineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polyline-series-module";
 import { IgxScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-series-module";
 import { IgxScatterSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-spline-series-module";
-import { IgxStackedAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-area-series-module";
-import { IgxStackedBarSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-module";
-import { IgxStackedColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-column-series-module";
-import { IgxStackedLineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-line-series-module";
-import { IgxStackedSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-spline-series-module";
 import { IgxStacked100AreaSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-area-series-module";
 import { IgxStacked100BarSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-module";
 import { IgxStacked100ColumnSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-column-series-module";
 import { IgxStacked100LineSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-line-series-module";
 import { IgxStacked100SplineSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-spline-series-module";
+import { IgxStackedAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-area-series-module";
+import { IgxStackedBarSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-module";
+import { IgxStackedColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-column-series-module";
+import { IgxStackedLineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-line-series-module";
+import { IgxStackedSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-spline-series-module";
 
 import {IgxLinearContourValueResolverModule
 } from "igniteui-angular-charts/ES5/igx-linear-contour-value-resolver-module";

@@ -1,21 +1,25 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
+import { IgxCategoryYAxisComponent } from "igniteui-angular-charts/ES5/igx-category-y-axis-component";
+import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
 import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
-import { IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-fragment-series-component";
-import { IgxCategoryYAxisComponent } from "igniteui-angular-charts/ES5/igx-category-y-axis-component";
 
-import { IgxStackedColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-column-series-component";
-import { IgxStacked100ColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-column-series-component";
-import { IgxStackedAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-area-series-component";
 import { IgxStacked100AreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-area-series-component";
-import { IgxStackedLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-line-series-component";
-import { IgxStacked100LineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-line-series-component";
-import { IgxStackedSplineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-spline-series-component";
-import { IgxStacked100SplineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-spline-series-component";
-import { IgxStackedBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
 import { IgxStacked100BarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-component";
+import {
+    IgxStacked100ColumnSeriesComponent
+} from "igniteui-angular-charts/ES5/igx-stacked-100-column-series-component";
+import { IgxStacked100LineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-100-line-series-component";
+import {
+    IgxStacked100SplineSeriesComponent
+} from "igniteui-angular-charts/ES5/igx-stacked-100-spline-series-component";
+import { IgxStackedAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-area-series-component";
+import { IgxStackedBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
+import { IgxStackedColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-column-series-component";
+import { IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-fragment-series-component";
+import { IgxStackedLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-line-series-component";
+import { IgxStackedSplineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-spline-series-component";
 
 @Component({
     selector: "app-data-chart-type-stacked-series",
@@ -57,23 +61,23 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
 
         fragments = [];
 
-        let fragment1 = new IgxStackedFragmentSeriesComponent();
+        const fragment1 = new IgxStackedFragmentSeriesComponent();
         fragment1.valueMemberPath = "Coal";
         fragment1.title = "Coal";
 
-        let fragment2 = new IgxStackedFragmentSeriesComponent();
+        const fragment2 = new IgxStackedFragmentSeriesComponent();
         fragment2.valueMemberPath = "Hydro";
         fragment2.title = "Hydro";
 
-        let fragment3 = new IgxStackedFragmentSeriesComponent();
+        const fragment3 = new IgxStackedFragmentSeriesComponent();
         fragment3.valueMemberPath = "Nuclear";
         fragment3.title = "Nuclear";
 
-        let fragment4 = new IgxStackedFragmentSeriesComponent();
+        const fragment4 = new IgxStackedFragmentSeriesComponent();
         fragment4.valueMemberPath = "Gas";
         fragment4.title = "Gas";
 
-        let fragment5 = new IgxStackedFragmentSeriesComponent();
+        const fragment5 = new IgxStackedFragmentSeriesComponent();
         fragment5.valueMemberPath = "Oil";
         fragment5.title = "Oil";
 
@@ -97,28 +101,10 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
         this.chart.axes.clear();
         this.chart.series.clear();
 
-        let fragments = this.getFragments();
+        const fragments = this.getFragments();
 
         if (seriesType === "Stacked Column Series") {
-
-            let stack = new IgxStackedColumnSeriesComponent();
-
-            stack.xAxis = this.catXAxis;
-            stack.yAxis = this.numYAxis;
-
-            this.chart.axes.add(this.catXAxis);
-            this.chart.axes.add(this.numYAxis);
-
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
-            }
-
-            this.chart.series.add(stack);
-
-        }
-        else if (seriesType === "Stacked 100 Column Series") {
-
-            let stack = new IgxStacked100ColumnSeriesComponent();
+            const stack = new IgxStackedColumnSeriesComponent();
 
             stack.xAxis = this.catXAxis;
             stack.yAxis = this.numYAxis;
@@ -126,15 +112,14 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.catXAxis);
             this.chart.axes.add(this.numYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
 
-        }
-        else if (seriesType === "Stacked Area Series") {
-            let stack = new IgxStackedAreaSeriesComponent();
+        } else if (seriesType === "Stacked 100 Column Series") {
+            const stack = new IgxStacked100ColumnSeriesComponent();
 
             stack.xAxis = this.catXAxis;
             stack.yAxis = this.numYAxis;
@@ -142,15 +127,14 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.catXAxis);
             this.chart.axes.add(this.numYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
 
-        }
-        else if (seriesType === "Stacked 100 Area Series") {
-            let stack = new IgxStacked100AreaSeriesComponent();
+        } else if (seriesType === "Stacked Area Series") {
+            const stack = new IgxStackedAreaSeriesComponent();
 
             stack.xAxis = this.catXAxis;
             stack.yAxis = this.numYAxis;
@@ -158,14 +142,14 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.catXAxis);
             this.chart.axes.add(this.numYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
-        }
-        else if (seriesType === "Stacked Line Series") {
-            let stack = new IgxStackedLineSeriesComponent();
+
+        } else if (seriesType === "Stacked 100 Area Series") {
+            const stack = new IgxStacked100AreaSeriesComponent();
 
             stack.xAxis = this.catXAxis;
             stack.yAxis = this.numYAxis;
@@ -173,14 +157,13 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.catXAxis);
             this.chart.axes.add(this.numYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
-        }
-        else if (seriesType === "Stacked 100 Line Series") {
-            let stack = new IgxStacked100LineSeriesComponent();
+        } else if (seriesType === "Stacked Line Series") {
+            const stack = new IgxStackedLineSeriesComponent();
 
             stack.xAxis = this.catXAxis;
             stack.yAxis = this.numYAxis;
@@ -188,14 +171,13 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.catXAxis);
             this.chart.axes.add(this.numYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
-        }
-        else if (seriesType === "Stacked Spline Series") {
-            let stack = new IgxStackedSplineSeriesComponent();
+        } else if (seriesType === "Stacked 100 Line Series") {
+            const stack = new IgxStacked100LineSeriesComponent();
 
             stack.xAxis = this.catXAxis;
             stack.yAxis = this.numYAxis;
@@ -203,14 +185,13 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.catXAxis);
             this.chart.axes.add(this.numYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
-        }
-        else if (seriesType === "Stacked 100 Spline Series") {
-            let stack = new IgxStacked100SplineSeriesComponent();
+        } else if (seriesType === "Stacked Spline Series") {
+            const stack = new IgxStackedSplineSeriesComponent();
 
             stack.xAxis = this.catXAxis;
             stack.yAxis = this.numYAxis;
@@ -218,14 +199,27 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.catXAxis);
             this.chart.axes.add(this.numYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
-        }
-        else if (seriesType === "Stacked Bar Series") {
-            let stack = new IgxStackedBarSeriesComponent();
+        } else if (seriesType === "Stacked 100 Spline Series") {
+            const stack = new IgxStacked100SplineSeriesComponent();
+
+            stack.xAxis = this.catXAxis;
+            stack.yAxis = this.numYAxis;
+
+            this.chart.axes.add(this.catXAxis);
+            this.chart.axes.add(this.numYAxis);
+
+            for (const frag of fragments) {
+                stack.series.add(frag);
+            }
+
+            this.chart.series.add(stack);
+        } else if (seriesType === "Stacked Bar Series") {
+            const stack = new IgxStackedBarSeriesComponent();
 
             stack.xAxis = this.numXAxis;
             stack.yAxis = this.catYAxis;
@@ -233,14 +227,13 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.numXAxis);
             this.chart.axes.add(this.catYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
-        }
-        else if (seriesType === "Stacked 100 Bar Series") {
-            let stack = new IgxStacked100BarSeriesComponent();
+        } else if (seriesType === "Stacked 100 Bar Series") {
+            const stack = new IgxStacked100BarSeriesComponent();
 
             stack.xAxis = this.numXAxis;
             stack.yAxis = this.catYAxis;
@@ -248,8 +241,8 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
             this.chart.axes.add(this.numXAxis);
             this.chart.axes.add(this.catYAxis);
 
-            for (let i = 0; i < fragments.length; i++) {
-                stack.series.add(fragments[i]);
+            for (const frag of fragments) {
+                stack.series.add(frag);
             }
 
             this.chart.series.add(stack);
