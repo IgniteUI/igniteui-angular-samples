@@ -22,7 +22,6 @@
     "url": "git://github.com/IgniteUI/igniteui-angular-samples/repository.git"
   },
   "dependencies": {
-    "minireset.css": "~0.0.4",
     "@angular/animations": "7.2.10",
     "@angular/common": "7.2.10",
     "@angular/compiler": "7.2.10",
@@ -32,6 +31,8 @@
     "@angular/platform-browser": "7.2.10",
     "@angular/platform-browser-dynamic": "7.2.10",
     "@angular/router": "7.2.10",
+    "@infragistics/igniteui-angular-charts": "^18.2.0-dev.1628",
+    "@infragistics/igniteui-angular-core": "^18.2.0-dev.1628",
     "@types/file-saver": "^1.3.1",
     "@types/hammerjs": "^2.0.35",
     "angular-in-memory-web-api": "0.8.0",
@@ -47,6 +48,7 @@
     "immediate": "^3.2.3",
     "intl": "^1.2.5",
     "jszip": "^3.1.5",
+    "minireset.css": "~0.0.4",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.1.0",
     "tslib": "^1.9.0",
