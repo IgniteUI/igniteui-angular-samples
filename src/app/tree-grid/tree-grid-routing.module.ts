@@ -43,6 +43,9 @@ import {
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
+    TreeGridFilteringTemplateSampleComponent
+} from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
@@ -145,6 +148,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridFilteringSampleComponent,
         data: treeGridRoutesData["treegrid-filtering"],
         path: "treegrid-filtering"
+    },
+    {
+        component: TreeGridFilteringTemplateSampleComponent,
+        data: treeGridRoutesData["treegrid-filtering-template"],
+        path: "treegrid-filtering-template"
     },
     {
         component: TreeGridExcelStyleFilteringSample1Component,
