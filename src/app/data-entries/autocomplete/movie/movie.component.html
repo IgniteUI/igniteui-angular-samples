@@ -22,19 +22,17 @@
                                 </igx-drop-down-item>
                             </igx-drop-down-item-group>
                         </igx-drop-down>
-                        <div class="igx-select">
-                            <igx-select #movie name="movie" formControlName="movie" [disabled]="!user.value.cinema">
-                                <igx-select-item-group *ngFor="let genre of genres" [label]="genre.type">
-                                    <igx-select-item *ngFor="let movie of genre.movies" [value]="movie">
-                                        {{ movie }}
-                                    </igx-select-item>
-                                </igx-select-item-group>
-                                <label igxLabel for="movies">Movie</label>
-                                <ng-template igxSelectToggleIcon>
-                                    <igx-icon fontSet="material">local_movies</igx-icon>
-                                </ng-template>
-                            </igx-select>
-                        </div>
+                        <igx-select class="select" #movie name="movie" formControlName="movie" [disabled]="!user.value.cinema">
+                            <igx-select-item-group *ngFor="let genre of genres" [label]="genre.type">
+                                <igx-select-item *ngFor="let movie of genre.movies" [value]="movie">
+                                    {{ movie }}
+                                </igx-select-item>
+                            </igx-select-item-group>
+                            <label igxLabel for="movies">Movie</label>
+                            <ng-template igxSelectToggleIcon>
+                                <igx-icon fontSet="material">local_movies</igx-icon>
+                            </ng-template>
+                        </igx-select>
                     </div>
                     <div class="vert-container">
                         <igx-date-picker #date name="date" formControlName="date" [disabled]="!user.value.movie"

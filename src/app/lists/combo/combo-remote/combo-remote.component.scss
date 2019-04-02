@@ -1,15 +1,4 @@
-.combo-container {
+.combo {
     margin: 10px;
-}
-
-.header-class, .footer-class, .empty-class {
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;
-}
-
-:host {
-    display: block;
-    overflow: auto;
-    height: 100%; 
+    width: 500px;
 }
