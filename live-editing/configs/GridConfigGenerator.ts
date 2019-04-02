@@ -176,7 +176,12 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: FilteringTemplateSampleComponent,
             additionalFiles: ["/src/app/grid/grid-filtering-template-sample/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxRippleModule, FilteringTemplateSampleComponent, IgxInputGroupModule, IgxDatePickerModule],
+                imports: [
+                    IgxGridModule,
+                    IgxRippleModule,
+                    FilteringTemplateSampleComponent,
+                    IgxInputGroupModule,
+                    IgxDatePickerModule],
                 ngDeclarations: [FilteringTemplateSampleComponent],
                 ngImports: [IgxGridModule, IgxRippleModule, IgxInputGroupModule, IgxDatePickerModule],
                 ngProviders: []

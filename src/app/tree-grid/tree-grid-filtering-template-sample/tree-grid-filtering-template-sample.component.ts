@@ -44,7 +44,8 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
             default:
                 operand = IgxStringFilteringOperand.instance().condition("contains");
         }
-        this.treegrid1.filter(column.field, this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
+        this.treegrid1.filter(column.field,
+            this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
     public clearInput(input: any, column: any) {
