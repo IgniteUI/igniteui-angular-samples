@@ -19,8 +19,6 @@ import { SpreadsheetOverviewComponent } from "./spreadsheet-overview/spreadsheet
 // import { SpreadsheetSortDialogComponent } from "./spreadsheet-sort-dialog/spreadsheet-sort-dialog.component";
 import { SpreadsheetWorksheetsComponent } from "./spreadsheet-worksheets/spreadsheet-worksheets.component";
 
-
-
 @NgModule({
     declarations: [
         SpreadsheetActivationComponent,

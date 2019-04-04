@@ -23,7 +23,6 @@ import { themingRoutesData } from "../theming/theming-routes-data";
 import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
 import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
 
-
 @Component({
     selector: "app-index",
     styleUrls: ["./index.component.scss"],

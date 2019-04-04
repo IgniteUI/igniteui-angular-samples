@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { ExcelFileUtilities } from "../ExcelFileUtilities";
+import { ExcelUtility } from "../../utilities/excel-utility";
 
 import { IgxSpreadsheetComponent } from "igniteui-angular-spreadsheet/ES5/igx-spreadsheet-component";
 
@@ -24,7 +24,7 @@ export class SpreadsheetOverviewComponent implements OnInit {
 
         console.log("Files:" + input.files[0].name);
 
-        ExcelFileUtilities.load(input.files[0]).then((w) => {
+        ExcelUtility.load(input.files[0]).then((w) => {
         this.ss.workbook = w;
         }, (e) => {
             console.error("Workbook Load Error:" + e);
