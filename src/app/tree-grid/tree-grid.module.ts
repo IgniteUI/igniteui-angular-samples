@@ -62,6 +62,9 @@ import {
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import {
+    TreeGridFilteringTemplateSampleComponent
+} from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
@@ -114,6 +117,7 @@ import {
         TreeGridColumnPinningSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
+        TreeGridFilteringTemplateSampleComponent,
         TreeGridFilteringCustomSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
         TreeGridVirtualizationSampleComponent,

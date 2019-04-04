@@ -9,8 +9,8 @@ columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden" [height]="'560px'" 
         </ng-template>
     </igx-column>
     <igx-column field="Debut" [sortable]="true"></igx-column>
-    <igx-column field="Grammy Nominations" [sortable]="true"></igx-column>
-    <igx-column field="Grammy Awards" [sortable]="true"></igx-column>
+    <igx-column field="Grammy Nominations" [sortable]="true" [dataType]="'number'"></igx-column>
+    <igx-column field="Grammy Awards" [sortable]="true" [dataType]="'number'"></igx-column>
 
     <igx-row-island [key]="'Albums'" [autoGenerate]="false" [showToolbar]="true" [columnHiding]="true" 
     toolbarTitle="Albums" columnHidingTitle="Column Hiding" hiddenColumnsText="Hidden">
