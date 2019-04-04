@@ -41,6 +41,7 @@ import {
 } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
 import { TreeGridFilteringCustomSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import { TreeGridFilteringTemplateSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -247,6 +248,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxInputGroupModule]
             }),
             component: TreeGridFilteringSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridFilteringTemplateSampleComponent, IgxInputGroupModule, IgxDatePickerModule],
+                ngDeclarations: [TreeGridFilteringTemplateSampleComponent],
+                ngImports: [IgxTreeGridModule, IgxInputGroupModule, IgxDatePickerModule]
+            }),
+            component: TreeGridFilteringTemplateSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

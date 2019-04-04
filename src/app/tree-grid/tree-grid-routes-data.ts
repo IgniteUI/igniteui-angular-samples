@@ -15,6 +15,7 @@ export const treeGridRoutesData = {
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
+    "treegrid-filtering-template": { displayName: "TreeGrid Filtering Template", parentName: "TreeGrid" },
     "treegrid-excel-style-filtering-sample-1": {
         displayName: "TreeGrid Excel Style Filtering",
         parentName: "TreeGrid"

@@ -13,6 +13,7 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
+import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -88,6 +89,11 @@ export const gridsRoutes: Routes = [
         component: FilteringSampleComponent,
         data: gridsRoutesData["grid-filtering-sample"],
         path: "grid-filtering-sample"
+    },
+    {
+        component: FilteringTemplateSampleComponent,
+        data: gridsRoutesData["grid-filtering-template-sample"],
+        path: "grid-filtering-template-sample"
     },
     {
         component: ExcelStyleFilteringSample1Component,
