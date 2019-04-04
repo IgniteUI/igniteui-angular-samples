@@ -18,9 +18,11 @@ import { menusRoutesData } from "../menus/menus-routes-data";
 import { notificationsRoutesData } from "../notifications/notifications-routes-data";
 import { schedulingRoutesData } from "../scheduling/scheduling-routes-data";
 import { servicesRoutesData } from "../services/services-routes-data";
+import { spreadsheetRoutesData } from "../spreadsheet/spreadsheet-routes-data";
 import { themingRoutesData } from "../theming/theming-routes-data";
 import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
 import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
+
 
 @Component({
     selector: "app-index",
@@ -128,6 +130,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "treegrid-finjs-sample",
             routesData: treegridfinjsRoutesData
+        },
+        {
+            path: "spreadsheet",
+            routesData: spreadsheetRoutesData
         }
     ];
 
