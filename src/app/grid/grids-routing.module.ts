@@ -17,6 +17,7 @@ import { FilteringTemplateSampleComponent } from "./grid-filtering-template-samp
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
+import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -209,6 +210,11 @@ export const gridsRoutes: Routes = [
         component: GridPasteSampleComponent,
         data: gridsRoutesData["grid-paste"],
         path: "grid-paste"
+    },
+    {
+        component: GridMultiCellSelectionComponent,
+        data: gridsRoutesData["grid-multi-cell-selection"],
+        path: "grid-multi-cell-selection"
     }
 ];
 
