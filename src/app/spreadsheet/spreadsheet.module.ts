@@ -12,11 +12,11 @@ import { SpreadsheetClipboardComponent } from "./spreadsheet-clipboard/spreadshe
 import { SpreadsheetCommandsComponent } from "./spreadsheet-commands/spreadsheet-commands.component";
 import { SpreadsheetCondFormatComponent } from "./spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
 import { SpreadsheetDataValidComponent } from "./spreadsheet-data-validation/spreadsheet-data-validation.component";
-// import { SpreadsheetFilterDialogComponent } from "./spreadsheet-filter-dialog/spreadsheet-filter-dialog.component";
-// import { SpreadsheetFormatDialogComponent } from "./spreadsheet-format-dialog/spreadsheet-format-dialog.component";
+import { SpreadsheetFilterDialogComponent } from "./spreadsheet-filter-dialog/spreadsheet-filter-dialog.component";
+import { SpreadsheetFormatDialogComponent } from "./spreadsheet-format-dialog/spreadsheet-format-dialog.component";
 import { SpreadsheetHyperlinksComponent } from "./spreadsheet-hyperlinks/spreadsheet-hyperlinks.component";
 import { SpreadsheetOverviewComponent } from "./spreadsheet-overview/spreadsheet-overview.component";
-// import { SpreadsheetSortDialogComponent } from "./spreadsheet-sort-dialog/spreadsheet-sort-dialog.component";
+import { SpreadsheetSortDialogComponent } from "./spreadsheet-sort-dialog/spreadsheet-sort-dialog.component";
 import { SpreadsheetWorksheetsComponent } from "./spreadsheet-worksheets/spreadsheet-worksheets.component";
 
 @NgModule({
@@ -26,11 +26,11 @@ import { SpreadsheetWorksheetsComponent } from "./spreadsheet-worksheets/spreads
         SpreadsheetCommandsComponent,
         SpreadsheetCondFormatComponent,
         SpreadsheetDataValidComponent,
-        // SpreadsheetFilterDialogComponent,
-        // SpreadsheetFormatDialogComponent,
+        SpreadsheetFilterDialogComponent ,
+        SpreadsheetFormatDialogComponent,
         SpreadsheetHyperlinksComponent,
         SpreadsheetOverviewComponent,
-        // SpreadsheetSortDialogComponent,
+        SpreadsheetSortDialogComponent,
         SpreadsheetWorksheetsComponent
     ],
     imports: [
