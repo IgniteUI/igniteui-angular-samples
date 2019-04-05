@@ -57,7 +57,7 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
     }
 
     public getFragments(): IgxStackedFragmentSeriesComponent[] {
-        let fragments: IgxStackedFragmentSeriesComponent[] = [];
+        const fragments: IgxStackedFragmentSeriesComponent[] = [];
 
         const fragment1 = new IgxStackedFragmentSeriesComponent();
         fragment1.valueMemberPath = "Coal";
