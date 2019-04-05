@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from "@angular/core";
 import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
-import { DATA } from "../../services/localization-samples/localization-sample-2/nwindData";
+import { DATA } from "../grid-excel-style-filtering-sample-3/nwindData";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
