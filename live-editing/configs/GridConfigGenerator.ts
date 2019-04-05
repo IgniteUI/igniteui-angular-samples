@@ -60,6 +60,8 @@ import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-samp
 import { GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
+// tslint:disable-next-line: max-line-length
+import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -492,6 +494,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [ExcelStyleFilteringSample3Component, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringSample3Component],
                 ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiCellSelectionComponent,
+            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-3/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiCellSelectionComponent, IgxGridModule, IgxToastModule],
+                ngDeclarations: [GridMultiCellSelectionComponent],
+                ngImports: [IgxGridModule, IgxToastModule]
             })
         }));
 
