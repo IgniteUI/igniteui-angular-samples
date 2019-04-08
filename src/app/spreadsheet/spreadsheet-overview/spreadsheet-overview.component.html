@@ -1,0 +1,7 @@
+<label for="openFile">Choose Excel File:</label>
+<input id="openFile" type="file" (change)="openFile($event.target)" accept=".xls, .xlt, .xlsx, .xlsm, .xltm, .xltx">
+<div>
+  <igx-spreadsheet #ss height="500px" width="100%">
+   
+  </igx-spreadsheet>
+</div>
