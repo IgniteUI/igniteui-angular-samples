@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <div>
+        <igx-tree-grid #source width="600px" [allowFiltering]="true" filterMode="excelStyleFilter"
+            (onRangeSelection)="transferData(source, target, notification)" (onColumnInit)="initColumn($event)"
+            (onSortingDone)="transferExpressions(source, target, 'sort')"
+            (onFilteringDone)="transferExpressions(source, target, 'filter')" [data]="sourceData" height="600px"
+            [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID">
+            <igx-column field="ID" header="Product ID" [dataType]="'string'"
+                [filterCellTemplate]="defaultFilterTemplate">
+            </igx-column>
+            <igx-column field="Name" header="Product Name" [dataType]="'string'"
+                [filterCellTemplate]="defaultFilterTemplate">
+            </igx-column>
+            <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'"
+                [filterCellTemplate]="defaultFilterTemplate">
+                <ng-template igxCell let-cell="cell" let-val let-row>
+                    {{+val | currency}}
+                </ng-template>
+            </igx-column>
+            <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [formatter]="formatDate"
+                [filterCellTemplate]="dateFilterTemplate">
+            </igx-column>
+        </igx-tree-grid>
+    </div>
+
+    <div>
+        <igx-grid #target width="600px" [data]="targetData" height="600px" autoGenerate="true"
+            (onColumnInit)="initColumn($event)">
+        </igx-grid>
+    </div>
+
+    <igx-toast #notification></igx-toast>
+</div>

@@ -64,6 +64,8 @@ import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/t
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+// tslint:disable-next-line: max-line-length
+import { TreeGridMultiCellSelectionComponent } from './tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component';
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
@@ -134,7 +136,8 @@ import {
         TreeGridExcelStyleFilteringSample1Component,
         TreeGridExcelStyleFilteringSample2Component,
         TreeGridExcelStyleFilteringSample3Component,
-        TreeGridRemoteFilteringSampleComponent
+        TreeGridRemoteFilteringSampleComponent,
+        TreeGridMultiCellSelectionComponent
     ],
     imports: [
         CommonModule,
