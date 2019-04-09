@@ -449,11 +449,11 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid multi cell selection
         configs.push(new Config({
-            additionalFiles: ["/src/app/data/nwindData.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [TreeGridMultiCellSelectionComponent, IgxTreeGridModule, IgxToastModule],
+                imports: [TreeGridMultiCellSelectionComponent, IgxGridModule, IgxTreeGridModule, IgxToastModule],
                 ngDeclarations: [TreeGridMultiCellSelectionComponent],
-                ngImports: [IgxTreeGridModule, IgxToastModule]
+                ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule]
             }),
             component: TreeGridMultiCellSelectionComponent,
             shortenComponentPathBy: "/tree-grid/"

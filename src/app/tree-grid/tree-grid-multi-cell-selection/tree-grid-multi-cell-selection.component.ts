@@ -29,10 +29,6 @@ export class TreeGridMultiCellSelectionComponent {
     }
 
     public transferExpressions(source: IgxTreeGridComponent, target: IgxTreeGridComponent, type: string) {
-        if (type === "filter") {
-            target.filteringExpressionsTree = source.filteringExpressionsTree;
-        } else {
-            target.sortingExpressions = source.sortingExpressions;
-        }
+        target.sortingExpressions = source.sortingExpressions;
     }
 }

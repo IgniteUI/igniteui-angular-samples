@@ -1,9 +1,8 @@
 <div class="wrapper">
     <div>
-        <igx-tree-grid #source width="600px" [allowFiltering]="true" filterMode="excelStyleFilter"
-            (onRangeSelection)="transferData(source, target, notification)" (onColumnInit)="initColumn($event)"
+        <igx-tree-grid #source width="600px" (onRangeSelection)="transferData(source, target, notification)" (onColumnInit)="initColumn($event)"
             (onSortingDone)="transferExpressions(source, target, 'sort')"
-            (onFilteringDone)="transferExpressions(source, target, 'filter')" [data]="sourceData" height="600px"
+            [data]="sourceData" height="600px"
             [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID">
             <igx-column field="ID" header="Product ID" [dataType]="'string'">
             </igx-column>
@@ -14,7 +13,7 @@
                     {{+val | currency}}
                 </ng-template>
             </igx-column>
-            <igx-column field="AddedDate" header="Added Date" [dataType]="'date'" [formatter]="formatDate">
+            <igx-column field="AddedDate" header="Added Date" [dataType]="'date'">
             </igx-column>
         </igx-tree-grid>
     </div>
