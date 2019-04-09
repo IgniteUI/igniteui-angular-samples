@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from "@angular/core";
 import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
-import { DATA } from "../grid-excel-style-filtering-sample-3/nwindData";
+import { DATA } from "../../data/nwindData";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: "app-grid-multi-cell-selection-sample",
+    styleUrls: ["./grid-multi-cell-selection.component.scss"],
     templateUrl: "./grid-multi-cell-selection.component.html"
 })
 export class GridMultiCellSelectionComponent {
