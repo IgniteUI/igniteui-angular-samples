@@ -66,6 +66,10 @@ export const samplesRoutes: Routes = [
         path: "services"
     },
     {
+        loadChildren: "./spreadsheet/spreadsheet.module#SpreadsheetModule",
+        path: "spreadsheet"
+    },
+    {
         loadChildren: "./tree-grid/tree-grid.module#TreeGridModule",
         path: "tree-grid"
     },
