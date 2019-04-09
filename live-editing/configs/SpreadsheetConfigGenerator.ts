@@ -155,11 +155,9 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: SpreadsheetHyperlinksComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    ExcelUtility, SpreadsheetHyperlinksComponent],
+                imports: [IgxExcelModule, ExcelUtility, SpreadsheetHyperlinksComponent],
                 ngDeclarations: [SpreadsheetHyperlinksComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    IgxSpreadsheetModule]
+                ngImports: [IgxExcelModule, IgxSpreadsheetModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
