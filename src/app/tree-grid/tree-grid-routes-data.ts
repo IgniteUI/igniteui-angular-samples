@@ -41,5 +41,6 @@ export const treeGridRoutesData = {
     "treegrid-conditional-cell-style": { displayName: "TreeGrid Condition Cell Styling", parentName: "TreeGrid" },
     "treegrid-paging": { displayName: "TreeGrid Paging", parentName: "TreeGrid" },
     "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" },
-    "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" }
+    "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" },
+    "tree-grid-multi-cell-selection": { displayName: "TreeGrid Multi cell selection", parentName: "TreeGrid" }
 };

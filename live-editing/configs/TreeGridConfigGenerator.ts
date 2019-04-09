@@ -42,6 +42,7 @@ import {
 import { TreeGridFilteringCustomSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridFilteringTemplateSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+import { TreeGridMultiCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -443,6 +444,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxIconModule, IgxToastModule]
             }),
             component: TreeGridRemoteFilteringSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid multi cell selection
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [TreeGridMultiCellSelectionComponent, IgxGridModule, IgxTreeGridModule, IgxToastModule],
+                ngDeclarations: [TreeGridMultiCellSelectionComponent],
+                ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule]
+            }),
+            component: TreeGridMultiCellSelectionComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
