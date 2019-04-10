@@ -165,7 +165,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: FilteringSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxRippleModule, FilteringSampleComponent, IgxInputGroupModule],
                 ngDeclarations: [FilteringSampleComponent],
@@ -176,7 +176,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: FilteringTemplateSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-filtering-template-sample/nwindData.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [
                     IgxGridModule,
@@ -270,7 +270,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: SortingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sorting-sample/nwindData.ts",
+            additionalFiles: ["/src/app/data/nwindData.ts",
                 "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
                 "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
                 "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss"
@@ -459,7 +459,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridCustomFilteringComponent,
-            additionalFiles: ["/src/app/grid/grid-filtering-sample/nwindData.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCustomFilteringComponent, IgxGridModule],
                 ngDeclarations: [GridCustomFilteringComponent],
@@ -469,7 +469,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: ExcelStyleFilteringSample1Component,
-            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-1/nwindData.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [ExcelStyleFilteringSample1Component, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringSample1Component],
@@ -479,7 +479,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: ExcelStyleFilteringSample2Component,
-            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-2/nwindData.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [ExcelStyleFilteringSample2Component, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringSample2Component],
@@ -489,7 +489,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: ExcelStyleFilteringSample3Component,
-            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-3/nwindData.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [ExcelStyleFilteringSample3Component, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringSample3Component],
@@ -499,7 +499,17 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridMultiCellSelectionComponent,
-            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-sample-3/nwindData.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiCellSelectionComponent, IgxGridModule, IgxToastModule],
+                ngDeclarations: [GridMultiCellSelectionComponent],
+                ngImports: [IgxGridModule, IgxToastModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiCellSelectionComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMultiCellSelectionComponent, IgxGridModule, IgxToastModule],
                 ngDeclarations: [GridMultiCellSelectionComponent],

@@ -24,6 +24,8 @@ import {
 import {
     TreeGridConditionalCellStyleComponent
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
+
+// tslint:disable-next-line: max-line-length
 import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
@@ -45,6 +47,8 @@ import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/t
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+// tslint:disable-next-line: max-line-length
+import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
@@ -238,6 +242,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRemoteFilteringSampleComponent,
         data: treeGridRoutesData["treegrid-remote-filtering"],
         path: "treegrid-remote-filtering"
+    },
+    {
+        component: TreeGridMultiCellSelectionComponent,
+        data: treeGridRoutesData["tree-grid-multi-cell-selection"],
+        path: "tree-grid-multi-cell-selection"
     }
 ];
 
