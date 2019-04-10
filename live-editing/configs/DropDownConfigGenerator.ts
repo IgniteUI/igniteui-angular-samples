@@ -1,7 +1,8 @@
 /* tslint:disable:object-literal-sort-keys */
-// tslint:disable-next-line:max-line-length
-import { IgxButtonModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule,
+import { IgxButtonModule, IgxDropDownModule,  IgxForOfModule, IgxIconModule, IgxInputGroupModule,
     IgxNavbarModule, IgxRippleModule, IgxSwitchModule, IgxToggleModule } from "igniteui-angular";
+// tslint:disable-next-line:max-line-length
+import { DropDownVirtualComponent } from "../../src/app/data-entries/dropdown/drop-down-virtual/drop-down-virtual.component";
 import { DropdownMenuComponent } from "../../src/app/data-entries/dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component
 } from "../../src/app/data-entries/dropdown/dropdown-sample-1/dropdown-sample-1.component";
@@ -80,6 +81,17 @@ export class DropDownConfigGenerator implements IConfigGenerator {
                     IgxButtonModule, IgxToggleModule],
                 ngDeclarations: [DropdownMenuComponent],
                 ngImports: [IgxDropDownModule, IgxIconModule, IgxNavbarModule, IgxButtonModule, IgxToggleModule]
+            }),
+            shortenComponentPathBy: "/data-entries/dropdown/"
+        }));
+
+        configs.push(new Config({
+            component: DropDownVirtualComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDropDownModule, DropDownVirtualComponent,
+                    IgxButtonModule, IgxToggleModule, IgxForOfModule],
+                ngDeclarations: [DropDownVirtualComponent],
+                ngImports: [IgxDropDownModule, IgxButtonModule, IgxToggleModule, IgxForOfModule]
             }),
             shortenComponentPathBy: "/data-entries/dropdown/"
         }));

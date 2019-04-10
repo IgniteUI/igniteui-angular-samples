@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
     IgxAutocompleteModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxComboModule,
-    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxIconModule,
+    IgxDatePickerModule, IgxDialogModule, IgxDropDownModule, IgxForOfModule, IgxIconModule,
     IgxInputGroupModule, IgxNavbarModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule,
     IgxSwitchModule, IgxTimePickerModule, IgxToggleModule
 } from "igniteui-angular";
@@ -30,6 +30,7 @@ import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-samp
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { DataEntriesRoutingModule } from "./data-entries-routing.module";
+import { DropDownVirtualComponent } from "./dropdown/drop-down-virtual/drop-down-virtual.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -74,6 +75,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample8Component,
         CheckboxSample1Component,
         CheckboxSample2Component,
+        DropDownVirtualComponent,
         DropdownMenuComponent,
         DropDownSample1Component,
         DropDownSample2Component,
@@ -121,7 +123,8 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         IgxRadioModule,
         IgxSelectModule,
         IgxSwitchModule,
-        IgxProgressBarModule
+        IgxProgressBarModule,
+        IgxForOfModule
     ]
 })
 export class DataEntriesModule { }
