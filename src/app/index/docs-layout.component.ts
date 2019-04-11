@@ -18,7 +18,8 @@ export class DocsLayoutComponent implements OnInit {
     @HostListener("window:message", ["$event"])
     private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin) {
-            this.document.body.classList.replace(this.theme, e.data.theme);
+            this.document.body.classList.remove(this.theme);
+            this.document.body.classList.add(e.data.theme);
             this.theme = e.data.theme;
         }
     }
