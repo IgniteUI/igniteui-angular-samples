@@ -7,7 +7,7 @@ import {
     IgxNumberFilteringOperand,
     IgxStringFilteringOperand
 } from "igniteui-angular";
-import { DATA } from "./nwindData";
+import { DATA } from "../../data/nwindData";
 
 @Component({
     selector: "grid-sample",
