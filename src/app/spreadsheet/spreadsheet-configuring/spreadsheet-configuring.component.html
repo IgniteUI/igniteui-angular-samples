@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="options">
+        <span class="optionItem">Selection Mode: </span>
+        <select [(ngModel)]="spreadsheetSelectionMode">
+            <option>AddToSelection</option>
+            <option>ExtendSelection</option>
+            <option>Normal</option>
+        </select>
+
+        <span class="optionItem">Enter Key Navigation Direction: </span>
+        <select [(ngModel)]="enterKeyNavDirection">
+            <option>Down</option>
+            <option>Left</option>
+            <option>Right</option>
+            <option>Up</option>
+        </select>
+
+        <input type="range" min=50 max=300 [(ngModel)]="spreadsheetZoomLevel" step=10>
+        <label class="optionItem">Zoom Level: {{spreadsheetZoomLevel}}%</label>        
+    </div>
+    <div class="options">
+        <label class="optionItem"><input type="checkbox" (change)="onProtectedChanged($event)" /> Is Protected</label>
+        <label class="optionItem"><input type="checkbox" [(ngModel)]="isFormulaBarVisible" /> Is Formula Bar
+            Visible</label>
+        <label class="optionItem"><input type="checkbox" [(ngModel)]="isEnterKeyNavEnabled" /> Enter Key Navigation
+            Enabled</label>
+    </div>
+    <div class="options">
+
+        <label class="optionItem"><input type="checkbox" checked=true
+                (change)="onTabBarAreaVisibilityChanged($event)" /> Is Tab Bar
+            Area Visible</label>
+        <label class="optionItem"><input type="checkbox" width="200px" [(ngModel)]="areGridlinesVisible" /> Are
+            Gridlines
+            Visible</label>
+        <label class="optionItem"><input type="checkbox" [(ngModel)]="areHeadersVisible" /> Are Headers Visible</label>
+    </div>
+
+    <igx-spreadsheet #spreadsheet height="100%" width="100%" [selectionMode]="spreadsheetSelectionMode"
+        [isFormulaBarVisible]="isFormulaBarVisible" [areGridlinesVisible]="areGridlinesVisible"
+        [areHeadersVisible]="areHeadersVisible" [isEnterKeyNavigationEnabled]="isEnterKeyNavEnabled"
+        [enterKeyNavigationDirection]="enterKeyNavDirection" [zoomLevel]="spreadsheetZoomLevel">
+    </igx-spreadsheet>
+
+</div>

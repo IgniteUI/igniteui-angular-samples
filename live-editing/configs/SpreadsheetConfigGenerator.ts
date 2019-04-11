@@ -9,28 +9,39 @@ import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-cha
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
 import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
 import { IgxSpreadsheetModule } from "igniteui-angular-spreadsheet/ES5/igx-spreadsheet-module";
-import { SpreadsheetActivationComponent
-    } from "../../src/app/spreadsheet/spreadsheet-activation/spreadsheet-activation.component";
-import { SpreadsheetClipboardComponent
-    } from "../../src/app/spreadsheet/spreadsheet-clipboard/spreadsheet-clipboard.component";
-import { SpreadsheetCommandsComponent
-    } from "../../src/app/spreadsheet/spreadsheet-commands/spreadsheet-commands.component";
-import { SpreadsheetCondFormatComponent
-    } from "../../src/app/spreadsheet/spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
-import { SpreadsheetDataValidComponent
-    } from "../../src/app/spreadsheet/spreadsheet-data-validation/spreadsheet-data-validation.component";
+import {
+    SpreadsheetActivationComponent
+} from "../../src/app/spreadsheet/spreadsheet-activation/spreadsheet-activation.component";
+import {
+    SpreadsheetClipboardComponent
+} from "../../src/app/spreadsheet/spreadsheet-clipboard/spreadsheet-clipboard.component";
+import {
+    SpreadsheetCommandsComponent
+} from "../../src/app/spreadsheet/spreadsheet-commands/spreadsheet-commands.component";
+import {
+    SpreadsheetCondFormatComponent
+} from "../../src/app/spreadsheet/spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
+import {
+    SpreadsheetConfiguringComponent
+} from "../../src/app/spreadsheet/spreadsheet-configuring/spreadsheet-configuring.component";
+import {
+    SpreadsheetDataValidComponent
+} from "../../src/app/spreadsheet/spreadsheet-data-validation/spreadsheet-data-validation.component";
 // import { SpreadsheetFilterDialogComponent
 //  } from "../../src/app/spreadsheet/spreadsheet-filter-dialog/spreadsheet-filter-dialog.component";
 // import { SpreadsheetFormatDialogComponent
 //  } from "../../src/app/spreadsheet/spreadsheet-format-dialog/spreadsheet-format-dialog.component";
-import { SpreadsheetHyperlinksComponent
-    } from "../../src/app/spreadsheet/spreadsheet-hyperlinks/spreadsheet-hyperlinks.component";
-import { SpreadsheetOverviewComponent
-    } from "../../src/app/spreadsheet/spreadsheet-overview/spreadsheet-overview.component";
+import {
+    SpreadsheetHyperlinksComponent
+} from "../../src/app/spreadsheet/spreadsheet-hyperlinks/spreadsheet-hyperlinks.component";
+import {
+    SpreadsheetOverviewComponent
+} from "../../src/app/spreadsheet/spreadsheet-overview/spreadsheet-overview.component";
 // import { SpreadsheetSortDialogComponent
 //  } from "../../src/app/spreadsheet/spreadsheet-sort-dialog/spreadsheet-sort-dialog.component";
-import { SpreadsheetWorksheetsComponent
-    } from "../../src/app/spreadsheet/spreadsheet-worksheets/spreadsheet-worksheets.component";
+import {
+    SpreadsheetWorksheetsComponent
+} from "../../src/app/spreadsheet/spreadsheet-worksheets/spreadsheet-worksheets.component";
 
 import { ExcelUtility } from "../../src/app/utilities/excel-utility";
 import { DependenciesType } from "../services/DependenciesType";
@@ -46,11 +57,9 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: SpreadsheetActivationComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    ExcelUtility, SpreadsheetActivationComponent],
+                imports: [IgxExcelModule, ExcelUtility, SpreadsheetActivationComponent],
                 ngDeclarations: [SpreadsheetActivationComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    IgxSpreadsheetModule]
+                ngImports: [IgxExcelModule, IgxSpreadsheetModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -85,11 +94,20 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             component: SpreadsheetCondFormatComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    ExcelUtility, SpreadsheetCondFormatComponent],
+                imports: [IgxExcelModule, ExcelUtility, SpreadsheetCondFormatComponent],
                 ngDeclarations: [SpreadsheetCondFormatComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    IgxSpreadsheetModule]
+                ngImports: [IgxExcelModule, IgxSpreadsheetModule]
+            }),
+            dependenciesType: DependenciesType.Excel
+        }));
+
+        configs.push(new Config({
+            component: SpreadsheetConfiguringComponent,
+            additionalFiles: ["/src/app/utilities/excel-utility.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxExcelModule, ExcelUtility, SpreadsheetConfiguringComponent],
+                ngDeclarations: [SpreadsheetConfiguringComponent],
+                ngImports: [IgxExcelModule, IgxSpreadsheetModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
@@ -134,14 +152,12 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
         }));*/
 
         configs.push(new Config({
-            component: SpreadsheetHyperlinksComponent ,
+            component: SpreadsheetHyperlinksComponent,
             additionalFiles: ["/src/app/utilities/excel-utility.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    ExcelUtility, SpreadsheetHyperlinksComponent ],
-                ngDeclarations: [SpreadsheetHyperlinksComponent ],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    IgxSpreadsheetModule]
+                imports: [IgxExcelModule, ExcelUtility, SpreadsheetHyperlinksComponent],
+                ngDeclarations: [SpreadsheetHyperlinksComponent],
+                ngImports: [IgxExcelModule, IgxSpreadsheetModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
