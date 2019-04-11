@@ -4,6 +4,7 @@ import { FinancialDataService } from "../services/financial-data.service";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [ FinancialDataService ],
     selector: "app-financial-chart-time-based-data",
     styleUrls: ["./financial-chart-time-based-data.component.scss"],
     templateUrl: "./financial-chart-time-based-data.component.html"
@@ -14,13 +15,13 @@ export class FinancialChartTimeBasedDataComponent {
     public selectedXAxisMode: string = "Ordinal";
     public selectedYAxisMode: string = "Numeric";
 
-    public data: any;
+    public financialStocks: any;
 
     @ViewChild("chart")
     public chart: IgxFinancialChartComponent;
 
     constructor(private dataService: FinancialDataService) {
-        this.data = [
+        this.financialStocks = [
             this.dataService.getAmzn(),
             this.dataService.getGoog()
         ];
@@ -35,11 +36,11 @@ export class FinancialChartTimeBasedDataComponent {
             e.args.series.type = "price";
         }
 
-        if (seriesName.startsWith("volumeSeries")) {
-            e.args.series.title = seriesTitle.replace("Price Volume", "Volume");
-            e.args.series.type = "volume";
-            e.args.series.legendItemVisibility = 1;
-        }
+        // if (seriesName.startsWith("volumeSeries")) {
+        //     e.args.series.title = seriesTitle.replace("Price Volume", "Volume");
+        //     e.args.series.type = "volume";
+        //     e.args.series.legendItemVisibility = 1;
+        // }
 
         // hide legend item for series in the zoom slider
         if (seriesName.startsWith("zoomSliderSeries")) {

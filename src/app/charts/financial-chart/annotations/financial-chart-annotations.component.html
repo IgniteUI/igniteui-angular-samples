@@ -2,7 +2,7 @@
     <div class="options">
         <div>
             <label class="optionLabel">Chart Type: </label>
-            <select class="optionItem" [(ngModel)]="sampleOptions.chartType">
+            <select class="select" [(ngModel)]="options.chartType">
                 <option>Auto</option>
                 <option>Bar</option>
                 <option>Candle</option>
@@ -10,12 +10,12 @@
                 <option>Line</option>
             </select>
 
-            <label class="optionItem"><input [(ngModel)]="sampleOptions.calloutsVisible" type="checkbox" />Enable Callouts</label>
-            <label class="optionItem"><input [(ngModel)]="sampleOptions.finalValueAnnotations" type="checkbox" />Enable Final Value Annotations</label>
+            <label class="optionItem"><input [(ngModel)]="options.calloutsVisible" type="checkbox" />Show Callouts</label>
+            <label class="optionItem"><input [(ngModel)]="options.finalValueAnnotations" type="checkbox" />Final Value Annotations</label>
         </div>
         <div>
-            <label class="optionLabel">Crosshairs Mode:</label>
-            <select class="optionItem" [(ngModel)]="sampleOptions.crosshairsDisplay">
+            <label class="optionLabel">Crosshairs: </label>
+            <select class="select" [(ngModel)]="options.crosshairDisplay">
                 <option>Default</option>
                 <option>None</option>
                 <option>Horizontal</option>
@@ -23,29 +23,36 @@
                 <option>Both</option>
             </select>
 
-            <label class="optionItem"><input [(ngModel)]="sampleOptions.snapCrosshairs" type="checkbox" />Snap Crosshairs to Data</label>
-            <label class="optionItem"><input [(ngModel)]="sampleOptions.crosshairAnnotations" type="checkbox" />Enable Crosshairs Annotations</label>
+            <label class="optionItem"><input [(ngModel)]="options.crosshairSnap" type="checkbox" />Snap to Data</label>
+            <label class="optionItem"><input [(ngModel)]="options.crosshairAnnotations" type="checkbox" />Crosshairs Annotations</label>
         </div>
     </div>
 
     <div class="chart">
         <igx-financial-chart height="100%" width="100%"
-            [dataSource]="financialData"
-            [chartType]="sampleOptions.chartType"
-            yAxisTitle="Stock Prices ($)"
+            [dataSource]="stocksData"
+            [chartType]="options.chartType"
+            zoomSliderType="none"
 
+            brushes="#8c42f4, #1aba2a, #6b6b6b"
+            outlines="#8c42f4, #1aba2a, #6b6b6b"
+            negativeBrushes="#e23a31"
+            negativeOutlines="#e23a31"
 
-            [crosshairsDisplayMode]="sampleOptions.crosshairsDisplay"
-            [crosshairsSnapToData]="sampleOptions.snapCrosshairs"
-            [crosshairsAnnotationEnabled]="sampleOptions.crosshairAnnotations"
+            [crosshairsDisplayMode]="options.crosshairDisplay"
+            [crosshairsSnapToData]="options.crosshairSnap"
+            [crosshairsAnnotationEnabled]="options.crosshairAnnotations"
 
-            [finalValueAnnotationsVisible]="sampleOptions.finalValueAnnotations"
+            [finalValueAnnotationsVisible]="options.finalValueAnnotations"
 
-            [calloutsVisible]="sampleOptions.calloutsVisible"
-            [calloutsDataSource]="calloutData"
+            [calloutsVisible]="options.calloutsVisible"
+            [calloutsDataSource]="calloutsData"
             calloutsXMemberPath="index"
             calloutsYMemberPath="value"
-            calloutsLabelMemberPath="content">
+            calloutsLabelMemberPath="label"
+            xAxisExtent="50"
+            thickness="1"
+            >
         </igx-financial-chart>
 
     </div>
