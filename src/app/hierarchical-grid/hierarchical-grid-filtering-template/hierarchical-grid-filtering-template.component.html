@@ -12,7 +12,7 @@
     <igx-column field="Grammy Nominations" [dataType]="'number'" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
     <igx-column field="Grammy Awards" [dataType]="'number'" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
 
-    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true'>
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' [rowEditable]="true" >
         <igx-column field="Album" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
         <igx-column field="Launch Date" [dataType]="'date'" [filterCellTemplate]="dateFilterTemplate"></igx-column>
         <igx-column field="Billboard Review" [dataType]="'number'" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
@@ -53,7 +53,7 @@
 </ng-template>
 <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
     <div class="filter-cell">
-        <igx-date-picker (onSelection)="onDateSelected($event, column)">
+        <igx-date-picker (onSelection)="onDateSelected($event, column)" [modalOverlaySettings]="overlaySettings">
             <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-displayData="displayData">
                 <igx-input-group type="box" [displayDensity]="'compact'">
                     <igx-prefix>

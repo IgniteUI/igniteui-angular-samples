@@ -5,7 +5,8 @@ import {
     IgxDateFilteringOperand,
     IgxHierarchicalGridComponent,
     IgxNumberFilteringOperand,
-    IgxStringFilteringOperand
+    IgxStringFilteringOperand,
+    OverlaySettings
 } from "igniteui-angular";
 import { SINGERS } from "../data";
 
@@ -20,6 +21,9 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     @ViewChild("hierarchicalGrid")
     private hierarchicalGrid: IgxHierarchicalGridComponent;
+    private overlaySettings: OverlaySettings = {
+        outlet: this.hierarchicalGrid
+    };
 
     constructor() {
         this.localdata = SINGERS;
