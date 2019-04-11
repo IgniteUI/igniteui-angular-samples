@@ -1,3 +1,10 @@
-<p>
-  spreadsheet-commands works!
-</p>
+<div class="sample">
+    <div class="options">
+        <input class="optionItem" id="zoomIn" value="Zoom In" type="button" (click)="zoomIn()">
+        <input class="optionItem" id="zoomOut" value="Zoom Out" type="button" (click)="zoomOut()">
+    </div>
+    <div class="spreadsheet">
+        <igx-spreadsheet #spreadsheet height="100%" width="100%">
+        </igx-spreadsheet>
+    </div>
+</div>
