@@ -36,6 +36,23 @@ export class ExcelUtility {
         });
     }
 
+    public static loadFromUrl(url: string): Promise<Workbook> {
+        return new Promise<Workbook>((resolve, reject) => {
+            const req = new XMLHttpRequest();
+            req.open("GET", url, true);
+            req.responseType = "arraybuffer";
+            req.onload = (d) => {
+                const data = new Uint8Array(req.response);
+                Workbook.load(data, null, (w) => {
+                    resolve(w);
+                }, (e) => {
+                    reject(e);
+                });
+            };
+            req.send();
+        });
+    }
+
     public static save(workbook: Workbook, fileNameWithoutExtension: string): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             const opt = new WorkbookSaveOptions();
