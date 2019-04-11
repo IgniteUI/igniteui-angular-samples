@@ -12,7 +12,6 @@ import { TwoConstraintDataValidationRule } from "igniteui-angular-excel/ES5/TwoC
 import { WorksheetColumnWidthUnit } from "igniteui-angular-excel/ES5/WorksheetColumnWidthUnit";
 import { IgxSpreadsheetComponent } from "igniteui-angular-spreadsheet/ES5/igx-spreadsheet-component";
 
-
 @Component({
   selector: "app-spreadsheet-data-validation",
   styleUrls: ["./spreadsheet-data-validation.component.scss"],
