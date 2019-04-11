@@ -137,9 +137,15 @@ export class SampleAssetsGenerator extends Generator {
         let dependencies = this._dependencyResolver.resolveSampleDependencies(
             config.dependenciesType, config.additionalDependencies);
         let sampleDef = new SampleDefinitionFile(sampleFiles, dependencies);
-        fs.writeFileSync(this.getAssetsSamplesDir() +
-            this._componentRoutes.get(config.component.name).replace("/", "-") + ".json",
-                JSON.stringify(sampleDef));
+
+        let sampleName = config.component.name;
+        let sampleRoute = this._componentRoutes.get(sampleName);
+        if (sampleRoute === undefined) {
+            console.log("Live-Editing detected missing route for " + sampleName);
+        } else {
+            sampleRoute = sampleRoute.replace("/", "-") + ".json";
+            fs.writeFileSync(this.getAssetsSamplesDir() + sampleRoute, JSON.stringify(sampleDef));
+        }
     }
 
     private _getComponentFiles(config: Config,

@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { CrosshairsDisplayMode } from "igniteui-angular-charts/ES5/CrosshairsDisplayMode";
-import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 import { FinancialDataService } from "../services/financial-data.service";
 
 @Component({
@@ -12,84 +10,79 @@ import { FinancialDataService } from "../services/financial-data.service";
 })
 export class FinancialChartAnnotationsComponent {
 
-    public financialData: any;
-    public sampleOptions: SampleOptions = new SampleOptions();
-
-    public calloutData: CalloutFinancialData;
+    public stocksData: any;
+    public calloutsData: any[];
+    public options: SampleOptions = new SampleOptions();
 
     constructor(private dataService: FinancialDataService) {
-        this.financialData = [ this.dataService.getTsla(), this.dataService.getTgt() ];
-        this.calloutData = new CalloutFinancialData(this.financialData);
-    }
-}
-
-class CalloutData {
-    public content: string;
-    public index: number;
-    public value: number;
-
-    public constructor(init?: Partial<CalloutData>) {
-        Object.assign(this, init);
-    }
-}
-
-class CalloutFinancialData extends Array {
-
-    constructor(financialData: any[]) {
-        super();
-
-        this.parseForCalloutData(financialData);
+        this.stocksData = [
+            this.dataService.getTsla(),
+            this.dataService.getGoog()
+        ];
+        this.calloutsData = this.getCallouts(this.stocksData);
     }
 
-    public parseForCalloutData = function(financialData: any[]) {
-        for (const stock of financialData) {
+    public getCallouts(stocks: any[]): any[] {
+        const callouts: any[] = [];
+        for (const stock of stocks) {
             const intervalSplit = Math.floor(Math.random() * (300 - 280)) + 280;
             const intervalDiv = Math.floor(Math.random() * (400 - 360)) + 360;
-            const priceLowest: CalloutData = new CalloutData({value: Number.MAX_VALUE, content: "MIN PRICE"});
-            const priceHighest: CalloutData = new CalloutData({value: Number.MIN_VALUE, content: "MAX PRICE"});
+            const calloutMin = new CalloutDataItem({label: "MIN"});
+            const calloutMax = new CalloutDataItem({label: "MAX"});
+            // initalizing values for min/max callouts
+            calloutMin.value = Number.MAX_VALUE;
+            calloutMax.value = Number.MIN_VALUE;
             let idx: number = 0;
 
             for (const item of stock) {
-                const callout = new CalloutData({index: idx });
-
-                if (priceLowest.value > item.close) {
-                    priceLowest.value = item.close;
-                    priceLowest.index = idx;
+                // finding item with min/max price
+                if (calloutMin.value > item.close) {
+                    calloutMin.value = item.close;
+                    calloutMin.index = idx;
                 }
-                // finding item with highest price
-                if (priceHighest.value < item.close) {
-                    priceHighest.value = item.close;
-                    priceHighest.index = idx;
+                if (calloutMax.value < item.close) {
+                    calloutMax.value = item.close;
+                    calloutMax.index = idx;
                 }
-
+                const offset = idx + 10;
+                const calloutEvent = new CalloutDataItem({index: idx });
                 // creating SPLIT/DIVIDENT events at specific intervals
-                if (idx % intervalSplit === 5) {
-                    callout.value = item.close;
-                    callout.content = "SPLIT";
-                    this.push(callout);
-                } else if (idx % intervalDiv === 5) {
-                    callout.value = item.close;
-                    callout.content = "DIV";
-                    this.push(callout);
+                if (offset % intervalSplit === 5) {
+                    calloutEvent.value = item.close;
+                    calloutEvent.label = "SPLIT";
+                    callouts.push(calloutEvent);
+                } else if (offset % intervalDiv === 5) {
+                    calloutEvent.value = item.close;
+                    calloutEvent.label = "DIV";
+                    callouts.push(calloutEvent);
                 }
-
                 idx++;
             }
-
-            this.push(priceLowest);
-            this.push(priceHighest);
+            callouts.push(calloutMin);
+            callouts.push(calloutMax);
         }
-    };
+        return callouts;
+    }
+}
+
+class CalloutDataItem {
+    public label: string;
+    public index: number;
+    public value: number;
+
+    public constructor(init?: Partial<CalloutDataItem>) {
+        Object.assign(this, init);
+    }
 }
 
 class SampleOptions {
     public chartType: string = "Candle";
 
-    public crosshairsDisplay: string = "Horizontal";
-    public snapCrosshairs: boolean = true;
+    public crosshairDisplay: string = "Both";
+    public crosshairSnap: boolean = true;
     public crosshairAnnotations: boolean = true;
 
     public finalValueAnnotations: boolean = false;
 
-    public calloutsVisible: boolean = false;
+    public calloutsVisible: boolean = true;
 }
