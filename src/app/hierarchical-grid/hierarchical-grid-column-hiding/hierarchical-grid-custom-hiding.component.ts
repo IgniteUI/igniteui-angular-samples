@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
 import { SINGERS } from "../data";
 
@@ -8,13 +8,18 @@ import { SINGERS } from "../data";
     templateUrl: "hierarchical-grid-custom-hiding.component.html"
 })
 
-export class HGridCostumHidingSampleComponent implements OnInit {
+export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {
     public localdata;
+    @ViewChild("hierarchicalGrid")
+    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {}
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
+    }
+    public ngAfterViewInit(): void {
+        this.hierarchicalGrid.columnList.forEach(col => col.width = "20%")
     }
 
 }
