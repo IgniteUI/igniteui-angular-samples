@@ -16,7 +16,7 @@ export class ReactiveFormsSampleComponent {
             dateTime: [""],
             email: ["", Validators.required],
             fullName: new FormControl("", Validators.required),
-            genres: ["", Validators.required],
+            genres: [""],
             movie: ["", Validators.required],
             phone: [""]
         });

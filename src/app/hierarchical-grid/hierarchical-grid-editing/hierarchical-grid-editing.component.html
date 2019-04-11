@@ -9,7 +9,7 @@
         [hasSummary]="true" [summaries]="mySummary"></igx-column>
     <igx-column field="GrammyAwards" [editable]="true" [dataType]="'number'" 
         [hasSummary]="true" [summaries]="mySummary"></igx-column>
-    <igx-column width="10%">
+    <igx-column [width]="'100px'">
         <ng-template igxCell let-cell="cell">
             <button igxButton="icon" (click)="removeRow(cell.cellID.rowIndex)">
                 <igx-icon>delete</igx-icon>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from "igniteui-angular";
-import { DATA } from "../grid-filtering-sample/nwindData";
+import { DATA } from "../../data/nwindData";
 
 @Component({
     selector: "app-grid-custom-filtering",

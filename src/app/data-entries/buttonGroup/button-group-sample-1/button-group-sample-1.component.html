@@ -1,21 +1,38 @@
 <div class="sample-wrapper">
-    <section style="flex-flow: row wrap; display: flex; justify-content: center;">
+    <section class="section-content">
         <article class="sample-column">
-            <h5 class="sample-title">Exclusive Selection <i class="light">Horizontal</i></h5>
-            <igx-buttongroup [multiSelection]="!multi" [values]="alignOptions">
+            <h5 class="sample-title">Exclusive Selection</h5>
+            <p class="sample-description">Horizontal Alignment</p>
+            <igx-buttongroup [multiSelection]="false">
+                <button igxButton [igxRipple]="rippleColor">
+                    <igx-icon>format_align_left</igx-icon>
+                </button>
+                <button igxButton [igxRipple]="rippleColor">
+                    <igx-icon>format_align_center</igx-icon>
+                </button>
+                <button igxButton [igxRipple]="rippleColor">
+                    <igx-icon>format_align_right</igx-icon>
+                </button>
+                <button igxButton [igxRipple]="rippleColor" [selected]="true">
+                    <igx-icon>format_align_justify</igx-icon>
+                </button>
             </igx-buttongroup>
 
-            <h5 class="sample-title">Exclusive Selection <i class="light">Vertical</i></h5>
-            <igx-buttongroup [multiSelection]="false" [values]="cities" [alignment]="alignment">
+            <p class="sample-description">Vertical Alignment</p>
+            <igx-buttongroup [multiSelection]="false" [alignment]="alignment">
+                <button igxButton [igxRipple]="rippleColor">Sofia</button>
+                <button igxButton [igxRipple]="rippleColor">London</button>
+                <button igxButton [igxRipple]="rippleColor">New York</button>
+                <button igxButton [igxRipple]="rippleColor" [disabled]="true">Tokyo</button>
             </igx-buttongroup>
         </article>
         <article class="sample-column">
-            <h5 class="sample-title">Multiple Selection <i class="light">Horizontal</i></h5>
-            <igx-buttongroup [multiSelection]="multi" [values]="fontOptions" [disabled]="false">
-            </igx-buttongroup>
+            <h5 class="sample-title">Multiple Selection</h5>
+            <p class="sample-description">Horizontal Alignment</p>
+            <igx-buttongroup [multiSelection]="true" [values]="fontOptionsButtons"></igx-buttongroup>
 
-            <h5 class="sample-title">Multiple Selection <i class="light">Vertical</i></h5>
-            <igx-buttongroup [multiSelection]="true" [values]="borders" [alignment]="alignment">
+            <p class="sample-description">Vertical Alignment</p>
+            <igx-buttongroup [multiSelection]="true" [alignment]="alignment" [values]="bordersButtons">
             </igx-buttongroup>
         </article>
     </section>

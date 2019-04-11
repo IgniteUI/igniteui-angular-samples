@@ -1,7 +1,7 @@
 <igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" (onColumnResized)="onResize($event)" [autoGenerate]="false"
     [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
     <igx-column field="Artist" [resizable]="true"></igx-column>
-    <igx-column field="Photo" [resizable]="true">
+    <igx-column field="Photo" [resizable]="true" [minWidth]="'115px'">
         <ng-template igxCell let-cell="cell">
             <div class="cell__inner_2">
                 <img [src]="cell.value" class="photo" />

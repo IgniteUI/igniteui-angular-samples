@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from "igniteui-angular";
-import { DATA } from "./nwindData";
+import { DATA } from "../../data/nwindData";
 
 @Component({
     selector: "grid-sample",

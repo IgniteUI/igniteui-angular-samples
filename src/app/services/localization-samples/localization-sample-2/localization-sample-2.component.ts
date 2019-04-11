@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { changei18n, getCurrentResourceStrings } from "igniteui-angular";
-import { DATA } from "./nwindData";
+import { DATA } from "../../data/nwindData";
 
 @Component({
     selector: "localization-sample-2",
