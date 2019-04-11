@@ -1,3 +1,26 @@
-<p>
-  data-chart-type-stacked-series works!
-</p>
+<div class="container">
+    <div class="options">
+        <span class="optionLabel">Type of Stacked Series:</span>
+        <select (change)=onSeriesTypeChanged($event)>
+            <option>Stacked Column Series</option>
+            <option>Stacked 100 Column Series</option>
+            <option>Stacked Area Series</option>
+            <option>Stacked 100 Area Series</option>
+            <option>Stacked Line Series</option>
+            <option>Stacked 100 Line Series</option>
+            <option>Stacked Spline Series</option>
+            <option>Stacked 100 Spline Series</option>
+            <option>Stacked Bar Series</option>
+            <option>Stacked 100 Bar Series</option>
+        </select>
+        <span class="legendTitle">Legend: </span>
+        <div class="legendInline">
+            <igx-legend #legend orientation="Horizontal"></igx-legend>
+        </div>
+    </div>
+
+    <div class="chart">
+        <igx-data-chart #chart width="100%" height="100%" [dataSource]="data" [legend]="legend">            
+        </igx-data-chart>
+    </div>
+</div>
