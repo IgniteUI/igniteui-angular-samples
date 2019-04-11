@@ -1,22 +1,25 @@
 <div class="sample-column card-wrapper">
-    <igx-card>
-        <igx-card-header class="compact">
-            <igx-avatar src="assets/images/card/avatars/brad_stanley.jpg" roundShape="true"></igx-avatar>
-            <div class="igx-card-header__tgroup">
-                <h3 class="igx-card-header__title--small">Brad Stanley</h3>
-                <h5 class="igx-card-header__subtitle">Audi AG</h5>
-            </div>
-        </igx-card-header>
-        <div style="overflow: hidden">
-            <img width="100%" height="100%" src="assets/images/card/media/audi.jpg">
+    <igx-card [horizontal]="horizontal">
+        <div igxLayout igxLayoutDir="column" igxFlex igxFlexGrow="1">
+            <igx-card-header>
+                <igx-avatar [src]="card.avatarUrl"></igx-avatar>
+                <h5 igxCardHeaderTitle>{{card.title}}</h5>
+                <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
+            </igx-card-header>
+
+            <igx-card-content>
+                <p>{{card.content}}</p>
+            </igx-card-content>
+
+            <igx-card-actions [vertical]="false">
+                <button *ngFor="let button of card.buttons;" igxButton="flat" igxRipple>
+                    {{button}}
+                </button>
+            </igx-card-actions>
         </div>
-        <igx-card-actions >
-            <div class="igx-card-actions__igroup--start">
-                <span igxButton="icon" igxRipple igxRippleCentered="true" *ngFor="let icon of icons">
-                    <igx-icon fontSet="material">{{icon}}</igx-icon>
-                </span>
-            </div>
-            <button igxButton igxRipple >Follow</button>
-        </igx-card-actions>
+
+        <igx-card-media width="96px">
+            <img [src]="card.imageUrl">
+        </igx-card-media>
     </igx-card>
 </div>

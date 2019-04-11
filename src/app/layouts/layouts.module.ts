@@ -7,6 +7,7 @@ import {
     IgxButtonModule,
     IgxCardModule,
     IgxCarouselModule,
+    IgxDividerModule,
     IgxExpansionPanelModule,
     IgxGridModule,
     IgxIconModule,
@@ -23,8 +24,10 @@ import {
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
+import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
+import { CardSample4Component } from "./card/card-sample-4/card-sample-4.component";
 import { CardComponent } from "./card/card.component";
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
@@ -55,8 +58,10 @@ import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sampl
         AvatarSample1Component,
         AvatarSample2Component,
         AvatarSample3Component,
+        CardSample1Component,
         CardSample2Component,
         CardSample3Component,
+        CardSample4Component,
         CardComponent,
         CarouselDetailsViewComponent,
         CarouselSample1Component,
@@ -81,6 +86,9 @@ import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sampl
         TabsSample4Component,
         TabsSample5Component
     ],
+    exports: [
+        CardSample1Component
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -90,6 +98,7 @@ import { TabsSample5Component } from "./tabs/tabs-sample-5/components/tabs-sampl
         IgxButtonModule,
         IgxCardModule,
         IgxCarouselModule,
+        IgxDividerModule,
         IgxExpansionPanelModule,
         IgxGridModule,
         IgxIconModule,

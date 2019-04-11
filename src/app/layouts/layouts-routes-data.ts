@@ -4,7 +4,6 @@ export const layoutsRoutesData = {
     "avatar-sample-1": { displayName: "Avatar with Initials", parentName: "Avatar" },
     "avatar-sample-2": { displayName: "Avatar with Image", parentName: "Avatar" },
     "avatar-sample-3": { displayName: "Multiple avatars", parentName: "Avatar" },
-    "card": { displayName: "Card Overview", parentName: "Card" },
     "carousel-sample-1": { displayName: "Carousel items with text", parentName: "Carousel" },
     "carousel-sample-2": { displayName: "Slides with ngFor directive", parentName: "Carousel" },
     "carousel-sample-3": { displayName: "Carousel Navigation", parentName: "Carousel" },
@@ -24,6 +23,9 @@ export const layoutsRoutesData = {
     "tabs-sample-1": { displayName: "Tabs Overview", parentName: "Tabs" },
     "tabs-sample-2": { displayName: "Tabs Types", parentName: "Tabs" },
     "tabs-sample-3": { displayName: "Tabs Customizing", parentName: "Tabs" },
-    "card-sample-2": { displayName: "Card with Avatar and Image", parentName: "Card" },
-    "card-sample-3": { displayName: "Card Actions", parentName: "Card" }
+    "card-sample-0": { displayName: "Elevated Card", parentName: "Card" },
+    "card-sample-1": { displayName: "Outlined Card", parentName: "Card" },
+    "card-sample-2": { displayName: "Horizontal Card", parentName: "Card" },
+    "card-sample-3": { displayName: "Horizontal Card Alt", parentName: "Card" },
+    "card-sample-4": { displayName: "Other Examples", parentName: "Card" }
 };
