@@ -12,7 +12,7 @@
     <igx-column field="Grammy Nominations" [dataType]="'number'" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
     <igx-column field="Grammy Awards" [dataType]="'number'" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
 
-    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true' [rowEditable]="true" >
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [allowFiltering]='true'>
         <igx-column field="Album" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
         <igx-column field="Launch Date" [dataType]="'date'" [filterCellTemplate]="dateFilterTemplate"></igx-column>
         <igx-column field="Billboard Review" [dataType]="'number'" [filterCellTemplate]="defaultFilterTemplate"></igx-column>
