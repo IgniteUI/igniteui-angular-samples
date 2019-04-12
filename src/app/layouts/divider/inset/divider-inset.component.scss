@@ -1,0 +1,32 @@
+.divider-sample {
+    display: flex;
+    padding-bottom: 30px;
+    > div {
+        background: rgba(47, 47, 47, 0.1);
+        padding: 20px;
+        margin-left: 20px;
+        &:first-of-type {
+            margin-left: 0;
+            margin-right: 20px;
+            text-align: center;
+        }
+    }
+    p {
+        margin-top: 0;
+    }
+    .mt {
+        margin-top: 20px;
+    }
+    .mb {
+        margin-bottom: 20px;
+    }
+}
+.inset-sample {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.divider-indent-text {
+    padding-left: 40px;
+}

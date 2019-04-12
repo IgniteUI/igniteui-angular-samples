@@ -1,0 +1,13 @@
+.divider-sample {
+    display: flex;
+    > div {
+        background: rgba(47, 47, 47, 0.1);
+        padding: 20px;
+    }
+    p {
+        margin-top: 0;
+    }
+    .mt {
+        margin-top: 20px;
+    }
+}

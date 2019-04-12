@@ -1,0 +1,21 @@
+.divider-sample {
+    display: flex;
+    padding-bottom: 30px;
+    > div {
+        background: rgba(47, 47, 47, 0.1);
+        padding: 20px;
+        margin-left: 20px;
+        text-align: left;
+        &:first-of-type {
+            text-align: right;
+            margin-left: 0;
+            margin-right: 20px;
+        }
+    }
+    p {
+        margin-top: 0;
+    }
+    .mt {
+        margin-top: 20px;
+    }
+}
