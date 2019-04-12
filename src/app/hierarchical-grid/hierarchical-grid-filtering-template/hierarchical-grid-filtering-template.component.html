@@ -53,7 +53,7 @@
 </ng-template>
 <ng-template #dateFilterTemplate igxFilterCellTemplate let-column="column">
     <div class="filter-cell">
-        <igx-date-picker (onSelection)="onDateSelected($event, column)">
+        <igx-date-picker (onSelection)="onDateSelected($event, column)" [modalOverlaySettings]="overlaySettings">
             <ng-template igxDatePickerTemplate let-openDialog="openDialog" let-displayData="displayData">
                 <igx-input-group type="box" [displayDensity]="'compact'">
                     <igx-prefix>
