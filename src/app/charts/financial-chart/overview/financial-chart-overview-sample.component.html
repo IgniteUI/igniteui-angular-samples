@@ -1,7 +1,20 @@
 <igx-financial-chart height="100%" width="100%"
-    [dataSource]="data"
+    [dataSource]="stocksData"
     chartType="line"
-    volumeType="line"
-    overlayTypes="BollingerBands"
-    isLegendVisible="true">
+    volumeType="none"
+    isLegendVisible="false"
+
+    brushes="#8c42f4, #1aba2a, #6b6b6b"
+    outlines="#8c42f4, #1aba2a, #6b6b6b"
+    negativeBrushes="#e23a31"
+    negativeOutlines="#e23a31"
+    finalValueAnnotationsVisible="true"
+
+    crosshairsDisplayMode="both"
+    crosshairsAnnotationEnabled="true"
+    [calloutsDataSource]="calloutsData"
+    calloutsVisible="true"
+    calloutsXMemberPath="index"
+    calloutsYMemberPath="value"
+    calloutsLabelMemberPath="label">
 </igx-financial-chart>
