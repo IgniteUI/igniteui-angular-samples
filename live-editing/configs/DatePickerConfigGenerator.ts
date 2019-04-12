@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 // tslint:disable:max-line-length
-import { IgxDatePickerModule, IgxIconModule, IgxInputGroupModule } from "igniteui-angular";
+import { IgxDatePickerModule, IgxIconModule, IgxInputGroupModule, IgxSnackbarModule } from "igniteui-angular";
 import { DatepickerDropdownComponent } from "../../src/app/scheduling/datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "../../src/app/scheduling/datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "../../src/app/scheduling/datepicker/datepicker-sample-2/datepicker-sample-2.component";
@@ -8,6 +8,7 @@ import { DatepickerSample3Component } from "../../src/app/scheduling/datepicker/
 import { DatepickerSample4Component } from "../../src/app/scheduling/datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "../../src/app/scheduling/datepicker/datepicker-sample-5/datepicker-sample-5.component";
 import { DatepickerSample6Component } from "../../src/app/scheduling/datepicker/datepicker-sample-6/datepicker-sample-6.component";
+import { DatepickerSample7Component } from "../../src/app/scheduling/datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -89,6 +90,16 @@ export class DatePickerConfigGenerator implements IConfigGenerator {
                 imports: [IgxDatePickerModule, DatepickerDropdownComponent, IgxIconModule, IgxInputGroupModule],
                 ngDeclarations: [DatepickerDropdownComponent],
                 ngImports: [IgxDatePickerModule, IgxIconModule, IgxInputGroupModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: DatepickerSample7Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDatePickerModule, DatepickerSample7Component, IgxIconModule,
+                    IgxInputGroupModule, IgxSnackbarModule],
+                ngDeclarations: [DatepickerSample7Component],
+                ngImports: [IgxDatePickerModule, IgxIconModule, IgxInputGroupModule, IgxSnackbarModule]
             })
         }));
 
