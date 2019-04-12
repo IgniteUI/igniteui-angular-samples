@@ -145,12 +145,14 @@ export class DataChartConfigGenerator implements IConfigGenerator {
 
         configs.push(this.getConfig(
             DataChartNavigationComponent,
-            [IgxDataChartCoreModule, IgxDataChartScatterCoreModule, IgxDataChartScatterModule, IgxNumberAbbreviatorModule],
+            [IgxDataChartCoreModule, IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
+             IgxNumberAbbreviatorModule, IgxDataChartInteractivityModule],
             [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
 
         configs.push(this.getConfig(
             DataChartOverviewComponent,
-            [IgxDataChartCoreModule, IgxDataChartScatterCoreModule, IgxDataChartScatterModule, IgxNumberAbbreviatorModule, IgxLegendModule ],
+            [IgxDataChartCoreModule, IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
+             IgxNumberAbbreviatorModule, IgxDataChartInteractivityModule, IgxLegendModule ],
             [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
         // configs.push(new Config({
         //     additionalFiles: ["/src/app/charts/data-chart/SampleScatterStats.ts"],
@@ -177,7 +179,8 @@ export class DataChartConfigGenerator implements IConfigGenerator {
         configs.push(this.getConfig(
             DataChartSeriesAnnotationsComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxDataChartAnnotationModule,
-             IgxCalloutLayerModule, IgxCrosshairLayerModule, IgxFinalValueLayerModule],
+             IgxCalloutLayerModule, IgxCrosshairLayerModule, IgxFinalValueLayerModule,
+             IgxDataChartInteractivityModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
@@ -187,23 +190,27 @@ export class DataChartConfigGenerator implements IConfigGenerator {
 
         configs.push(this.getConfig(
             DataChartSeriesMarkersComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule],
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+             IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
+             IgxNumberAbbreviatorModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
             DataChartSeriesTooltipsComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule],
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+             IgxDataChartInteractivityModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
             DataChartSeriesTrendlinesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
-             IgxDataChartCategoryTrendLineModule, IgxDataChartInteractivityModule],
+             IgxDataChartInteractivityModule, IgxDataChartCategoryTrendLineModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
             DataChartSynchronizationComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule, IgxDataChartInteractivityModule],
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+             IgxDataChartInteractivityModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
@@ -213,59 +220,69 @@ export class DataChartConfigGenerator implements IConfigGenerator {
 
         configs.push(this.getConfig(
             DataChartTypeCategorySeriesComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule],
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+             IgxDataChartInteractivityModule],
             [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeFinancialSeriesComponent,
-            [IgxDataChartCoreModule, IgxLegendModule, IgxIndicatorsModule, IgxFinancialPriceSeriesModule],
+            [IgxDataChartCoreModule, IgxLegendModule, IgxIndicatorsModule, IgxFinancialPriceSeriesModule,
+             IgxDataChartInteractivityModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypePolarSeriesComponent,
-            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule],
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule,
+             IgxDataChartInteractivityModule],
             [SamplePolarData], ["/src/app/charts/data-chart/SamplePolarData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeRadialSeriesComponent,
-            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartRadialModule, IgxDataChartRadialCoreModule],
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartRadialModule, IgxDataChartRadialCoreModule,
+             IgxDataChartInteractivityModule],
             [SampleRadialData], ["/src/app/charts/data-chart/SampleRadialData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeRangeSeriesComponent,
-            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartCategoryModule],
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartCategoryModule,
+             IgxDataChartInteractivityModule],
             [SampleRangeData], ["/src/app/charts/data-chart/SampleRangeData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterAreaSeriesComponent,
-            [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule],
+            [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
+             IgxDataChartInteractivityModule],
             [SampleScatterData], ["/src/app/charts/data-chart/SampleScatterData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterContourSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
-             IgxScatterContourSeriesModule, IgxScatterAreaSeriesModule],
+             IgxScatterContourSeriesModule, IgxScatterAreaSeriesModule,
+             IgxDataChartInteractivityModule],
             [SampleScatterData], ["/src/app/charts/data-chart/SampleScatterData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterDensitySeriesComponent,
-            [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule],
+            [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
+             IgxDataChartInteractivityModule],
             [SampleDensityData], ["/src/app/charts/data-chart/SampleDensityData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterSeriesComponent,
-            [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule],
+            [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
+             IgxDataChartInteractivityModule],
             [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterShapeSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartShapeModule, IgxDataChartShapeCoreModule,
-             IgxDataChartScatterModule],
+             IgxDataChartInteractivityModule, IgxDataChartScatterModule],
             [SampleShapeData], ["/src/app/charts/data-chart/SampleShapeData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeStackedSeriesComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule],
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+             IgxDataChartInteractivityModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
