@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
-import { DATA } from "./nwindData";
+import { DATA } from "../../data/nwindData";
 
 @Component({
     selector: "localization-sample-1",

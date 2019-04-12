@@ -1,4 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { ExcelUtility } from "../../utilities/excel-utility";
+
+import { IgxSpreadsheetComponent } from "igniteui-angular-spreadsheet/ES5/igx-spreadsheet-component";
+import { SpreadsheetAction } from "igniteui-angular-spreadsheet/ES5/SpreadsheetAction";
 
 @Component({
   selector: "app-spreadsheet-clipboard",
@@ -6,10 +10,28 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./spreadsheet-clipboard.component.html"
 })
 export class SpreadsheetClipboardComponent implements OnInit {
+    @ViewChild("spreadsheet", { read: IgxSpreadsheetComponent })
+    public spreadsheet: IgxSpreadsheetComponent;
 
-  constructor() { }
+    constructor() { }
 
-  public ngOnInit() {
-  }
+    public ngOnInit() {
+        const excelFile = "../../assets/Sample1.xlsx";
+        ExcelUtility.loadFromUrl(excelFile).then((w) => {
+            this.spreadsheet.workbook = w;
+        });
+    }
+
+    public cut(): void {
+        this.spreadsheet.executeCommand(SpreadsheetAction.Cut);
+    }
+
+    public copy(): void {
+        this.spreadsheet.executeCommand(SpreadsheetAction.Copy);
+    }
+
+    public paste(): void {
+        this.spreadsheet.executeCommand(SpreadsheetAction.Paste);
+    }
 
 }

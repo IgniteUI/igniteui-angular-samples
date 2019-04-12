@@ -1,21 +1,20 @@
 <div class="sample-wrapper container">
     <igx-financial-chart #chart
         class="chart"
-        [dataSource]="data"
+        [dataSource]="financialStocks"
         [xAxisMode]="selectedXAxisMode"
         [yAxisMode]="selectedYAxisMode"
         [tooltipTemplate]="stockTooltip"
         [legend]="legend"
         (seriesAdded)="onSeriesAdded($event)"
         chartType="candle"
-        volumeType="area"
         isToolbarVisible="false"
         isWindowSyncedToVisibleRange="true"
         subtitle="BETWEEN 2013-2018"
         chartTitle="STOCK PRICES: GOOGLE vs AMAZON"
-        chartTitleTextColor="black"
-        chartTitleTextStyle="13pt Verdana"
-        chartTitleTopMargin="10px">
+        titleTextColor="black"
+        titleTextStyle="11pt Verdana"
+        titleTopMargin="10">
     </igx-financial-chart>
 
     <div class="legendContainer">

@@ -80,9 +80,9 @@ export class FinancialChartConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: FinancialChartOverviewComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/generate-ohlc-prices.service.ts"],
+            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartOverviewComponent, GenerateOhlcPricesService],
+                imports: [IgxFinancialChartModule, FinancialChartOverviewComponent, FinancialDataService],
                 ngDeclarations: [FinancialChartOverviewComponent],
                 ngImports: [IgxFinancialChartModule]
             }),
