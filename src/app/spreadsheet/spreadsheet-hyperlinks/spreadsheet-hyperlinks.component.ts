@@ -16,7 +16,7 @@ export class SpreadsheetHyperlinksComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        const excelFile = "../../assets/HyperlinkWorkbook.xlsx";
+        const excelFile = "assets/HyperlinkWorkbook.xlsx";
 
         ExcelUtility.loadFromUrl(excelFile).then((w) => {
             this.spreadsheet.workbook = w;
