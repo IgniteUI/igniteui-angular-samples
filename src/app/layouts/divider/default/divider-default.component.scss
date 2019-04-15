@@ -1,9 +1,7 @@
 .divider-sample {
     display: flex;
-    > div {
-        background: rgba(47, 47, 47, 0.1);
-        padding: 20px;
-    }
+    padding: 20px;
+    border: 1px solid #ededed;
     p {
         margin-top: 0;
     }

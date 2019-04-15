@@ -1,14 +1,14 @@
 .divider-sample {
     display: flex;
-    padding-bottom: 30px;
-    > div {
-        background: rgba(47, 47, 47, 0.1);
-        padding: 20px;
-    }
+    padding: 20px;
+    border: 1px solid #ededed;
     p {
         margin-top: 0;
     }
     .mt {
-        margin-top: 20px;
+        margin-top: 16px;
+    }
+    .mb {
+        margin-bottom: 0;
     }
 }
