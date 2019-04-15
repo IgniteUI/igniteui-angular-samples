@@ -32,7 +32,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     }
 
-    public onInput(input: any, column: IgxColumnComponent) {
+    public onInput(input: any, column: IgxColumnComponent, grid:IgxHierarchicalGridComponent) {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
@@ -41,17 +41,17 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             default:
                 operand = IgxStringFilteringOperand.instance().condition("contains");
         }
-        this.hierarchicalGrid.filter(column.field,
+        grid.filter(column.field,
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
-    public clearInput(input: any, column: any) {
+    public clearInput(input: any, column: any, grid: IgxHierarchicalGridComponent) {
         input.value = null;
-        this.hierarchicalGrid.clearFilter(column.field);
+        grid.clearFilter(column.field);
     }
 
-    public onDateSelected(event, column: IgxColumnComponent) {
-        this.hierarchicalGrid.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
+    public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+        grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
             column.filteringIgnoreCase);
     }
 
