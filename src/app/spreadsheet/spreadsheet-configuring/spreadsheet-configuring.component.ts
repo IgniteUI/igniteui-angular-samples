@@ -34,12 +34,9 @@ export class SpreadsheetConfiguringComponent implements OnInit {
     }
 
     public onProtectedChanged(e: any) {
-        // ***DOES NOT CURRENTLY WORK WITH WORKBOOK.PROTECT***
         if (e.target.checked) {
-            // this.spreadsheet.workbook.protect();
             this.spreadsheet.activeWorksheet.protect();
         } else {
-            // this.spreadsheet.workbook.unprotect();
             this.spreadsheet.activeWorksheet.unprotect();
         }
     }
@@ -49,6 +46,48 @@ export class SpreadsheetConfiguringComponent implements OnInit {
             this.spreadsheet.workbook.windowOptions.tabBarVisible = true;
         } else {
             this.spreadsheet.workbook.windowOptions.tabBarVisible = false;
+        }
+    }
+
+    public spreadsheetSelectionChanged(args: any) {
+        const value = args.target.value;
+
+        switch (value) {
+            case "Normal": {
+                this.spreadsheet.selectionMode = 0;
+                break;
+            }
+            case "ExtendSelection": {
+                this.spreadsheet.selectionMode = 1;
+                break;
+            }
+            case "AddToSelection": {
+                this.spreadsheet.selectionMode = 2;
+                break;
+            }
+        }
+    }
+
+    public enterKeyNavDirectionChanged(args: any) {
+        const value = args.target.value;
+
+        switch (value) {
+            case "Down": {
+                this.spreadsheet.enterKeyNavigationDirection = 0;
+                break;
+            }
+            case "Up": {
+                this.spreadsheet.enterKeyNavigationDirection = 2;
+                break;
+            }
+            case "Left": {
+                this.spreadsheet.enterKeyNavigationDirection = 3;
+                break;
+            }
+            case "Right": {
+                this.spreadsheet.enterKeyNavigationDirection = 1;
+                break;
+            }
         }
     }
 
