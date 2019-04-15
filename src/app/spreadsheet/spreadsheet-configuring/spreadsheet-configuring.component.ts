@@ -53,7 +53,7 @@ export class SpreadsheetConfiguringComponent implements OnInit {
     }
 
     public ngOnInit() {
-        const excelFile = "../../assets/WeeklySalesReport.xlsx";
+        const excelFile = "assets/WeeklySalesReport.xlsx";
 
         ExcelUtility.loadFromUrl(excelFile).then((w) => {
             w.worksheets().removeAt(1);
