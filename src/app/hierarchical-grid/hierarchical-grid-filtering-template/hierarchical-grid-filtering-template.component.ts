@@ -32,7 +32,7 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     }
 
-    public onInput(input: any, column: IgxColumnComponent, grid:IgxHierarchicalGridComponent) {
+    public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
