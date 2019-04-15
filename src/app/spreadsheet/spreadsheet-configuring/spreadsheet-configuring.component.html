@@ -36,7 +36,7 @@
         <label class="optionItem"><input type="checkbox" [(ngModel)]="areHeadersVisible" /> Are Headers Visible</label>
     </div>
 
-    <igx-spreadsheet #spreadsheet height="100%" width="100%" [selectionMode]="spreadsheetSelectionMode"
+    <igx-spreadsheet #spreadsheet height="calc(100% - 100px)" width="100%" [selectionMode]="spreadsheetSelectionMode"
         [isFormulaBarVisible]="isFormulaBarVisible" [areGridlinesVisible]="areGridlinesVisible"
         [areHeadersVisible]="areHeadersVisible" [isEnterKeyNavigationEnabled]="isEnterKeyNavEnabled"
         [enterKeyNavigationDirection]="enterKeyNavDirection" [zoomLevel]="spreadsheetZoomLevel">
