@@ -7,7 +7,7 @@ import {
     IgxOverlayService, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToggleModule,
     IgxTooltipModule
 } from "igniteui-angular";
-import { CardSampleModule } from "../layouts/card/card-sample-1/card-sample-1.module";
+import { LayoutsModule } from "../layouts/layouts.module";
 import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
@@ -92,7 +92,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         IgxSwitchModule,
         IgxTooltipModule,
         IgxToggleModule,
-        CardSampleModule
+        LayoutsModule
     ],
     providers: [IgxOverlayService]
 })
