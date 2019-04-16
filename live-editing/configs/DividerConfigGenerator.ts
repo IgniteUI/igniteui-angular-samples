@@ -29,7 +29,7 @@ export class DividerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [DividerDashedComponent],
                 ngImports: [IgxDividerModule]
             }),
-            shortenComponentPathBy: "/layouts/divider/dashed"
+            shortenComponentPathBy: "/layouts/divider/"
         }));
 
         configs.push(new Config({
