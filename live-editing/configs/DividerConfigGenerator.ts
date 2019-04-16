@@ -49,7 +49,7 @@ export class DividerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [DividerInsetComponent],
                 ngImports: [IgxDividerModule]
             }),
-            shortenComponentPathBy: "/layouts/divider/inset"
+            shortenComponentPathBy: "/layouts/divider/"
         }));
 
         return configs;
