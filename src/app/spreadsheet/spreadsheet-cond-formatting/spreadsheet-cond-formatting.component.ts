@@ -15,7 +15,7 @@ export class SpreadsheetCondFormatComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        const excelFile = "../../assets/ConditionalFormatData.xlsx";
+        const excelFile = "assets/ConditionalFormatData.xlsx";
 
         ExcelUtility.loadFromUrl(excelFile).then((w) => {
             this.spreadsheet.workbook = w;
