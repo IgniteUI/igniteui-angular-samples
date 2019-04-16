@@ -16,6 +16,10 @@ import {
 import {
     HGridExcelStyleFilteringSample2Component
 } from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
+import {
+    HGridExcelStyleFilteringSample3Component
+} from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
@@ -40,16 +44,28 @@ export const hierarchicalGridRoutes: Routes = [
         path: "hierarchical-grid-filtering"
     },
     {
+        component: HGridFilteringTemplateSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-filtering-template"],
+        path: "hierarchical-grid-filtering-template"
+    },
+    {
         component: HGridExcelStyleFilteringSample1Component,
         // tslint:disable-next-line:no-string-literal
-        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering"],
-        path: "hierarchical-grid-excel-style-filtering"
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-sample-1"],
+        path: "hierarchical-grid-excel-style-filtering-sample-1"
     },
     {
         component: HGridExcelStyleFilteringSample2Component,
         // tslint:disable-next-line:no-string-literal
-        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-templates"],
-        path: "hierarchical-grid-excel-style-filtering-templates"
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-sample-2"],
+        path: "hierarchical-grid-excel-style-filtering-sample-2"
+    },
+    {
+        component: HGridExcelStyleFilteringSample3Component,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-sample-3"],
+        path: "hierarchical-grid-excel-style-filtering-sample-3"
     },
     {
         component: HGridCustomFilteringSampleComponent,

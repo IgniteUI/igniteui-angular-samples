@@ -14,9 +14,11 @@ import {
     IgxRippleModule,
     IgxSliderModule,
     IgxSwitchModule,
+    IgxToastModule,
     IgxToggleModule,
     IgxTreeGridModule
 } from "igniteui-angular";
+import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
@@ -53,9 +55,17 @@ import {
     TreeGridExcelStyleFilteringSample2Component
 } from "./tree-grid-excel-style-filtering-sample-2/tree-grid-excel-style-filtering-sample-2.component";
 import {
+    TreeGridExcelStyleFilteringSample3Component
+} from "./tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
+import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import {
+    TreeGridFilteringTemplateSampleComponent
+} from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+// tslint:disable-next-line: max-line-length
+import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
@@ -63,6 +73,9 @@ import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-gr
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import {
+    TreeGridRemoteFilteringSampleComponent
+} from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -106,6 +119,7 @@ import {
         TreeGridColumnPinningSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
+        TreeGridFilteringTemplateSampleComponent,
         TreeGridFilteringCustomSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
         TreeGridVirtualizationSampleComponent,
@@ -120,7 +134,10 @@ import {
         TreeGridPagingSampleComponent,
         TreeGridEditingSampleComponent,
         TreeGridExcelStyleFilteringSample1Component,
-        TreeGridExcelStyleFilteringSample2Component
+        TreeGridExcelStyleFilteringSample2Component,
+        TreeGridExcelStyleFilteringSample3Component,
+        TreeGridRemoteFilteringSampleComponent,
+        TreeGridMultiCellSelectionComponent
     ],
     imports: [
         CommonModule,
@@ -137,8 +154,9 @@ import {
         IgxRippleModule,
         IgxDialogModule,
         IgxRadioModule,
-        IgxAvatarModule
+        IgxAvatarModule,
+        IgxToastModule
     ],
-    providers: [IgxExcelExporterService, IgxCsvExporterService]
+    providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
 export class TreeGridModule { }

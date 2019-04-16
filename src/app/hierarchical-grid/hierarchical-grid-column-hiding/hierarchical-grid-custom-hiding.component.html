@@ -23,8 +23,8 @@
                 </ng-template>
             </igx-column>
             <igx-column field="Debut" [sortable]="true"></igx-column>
-            <igx-column field="Grammy Nominations" [sortable]="true"></igx-column>
-            <igx-column field="Grammy Awards" [sortable]="true"></igx-column>
+            <igx-column field="Grammy Nominations" [sortable]="true" [dataType]="'number'"></igx-column>
+            <igx-column field="Grammy Awards" [sortable]="true" [dataType]="'number'"></igx-column>
 
             <igx-row-island [key]="'Albums'" [autoGenerate]="false">
                 <igx-column field="Album" [sortable]="true"></igx-column>

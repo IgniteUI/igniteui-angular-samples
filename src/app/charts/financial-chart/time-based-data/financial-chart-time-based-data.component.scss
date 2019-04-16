@@ -3,21 +3,22 @@
     flex-flow: column;
     height: 100%;
     min-width: 300px;
-    margin-right: 120px;
-    margin-left: 120px;
+    // margin-right: 120px;
+    // margin-left: 120px;
 }
 
 .chart {
     flex: 1;
+    overflow: hidden;
     width: 100%;
-    height: calc(100% - 60px);
-    margin-top: 10px;
+    // height: calc(100% - 60px);
+    // margin-top: 10px;
     margin-bottom: 0px;
 }
 
 .legendContainer {
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-right: 0px;
     margin-left: 0px;
     display: flex; justify-content: center;

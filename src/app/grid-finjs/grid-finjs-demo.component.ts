@@ -204,9 +204,9 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     public onThemeChanged(event: any) {
         const parentEl = this.parentComponentEl();
         if (event.checked && parentEl.classList.contains("main")) {
-            parentEl.classList.add("dark-theme");
+            parentEl.classList.add("fin-dark-theme");
         } else {
-            parentEl.classList.remove("dark-theme");
+            parentEl.classList.remove("fin-dark-theme");
         }
     }
 
