@@ -23,12 +23,10 @@ export class SpreadsheetCommandsComponent implements OnInit {
     }
 
     public zoomIn(): void {
-        // Spreadsheet function changed from 'executeCommand' to 'executeAction'
         this.spreadsheet.executeAction(SpreadsheetAction.ZoomIn);
     }
 
     public zoomOut(): void {
-        // Spreadsheet function changed from 'executeCommand' to 'executeAction'
         this.spreadsheet.executeAction(SpreadsheetAction.ZoomOut);
     }
 }

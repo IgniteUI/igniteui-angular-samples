@@ -39,9 +39,6 @@ import {
 } from "../../src/app/spreadsheet/spreadsheet-overview/spreadsheet-overview.component";
 // import { SpreadsheetSortDialogComponent
 //  } from "../../src/app/spreadsheet/spreadsheet-sort-dialog/spreadsheet-sort-dialog.component";
-import {
-    SpreadsheetWorksheetsComponent
-} from "../../src/app/spreadsheet/spreadsheet-worksheets/spreadsheet-worksheets.component";
 
 import { ExcelUtility } from "../../src/app/utilities/excel-utility";
 import { DependenciesType } from "../services/DependenciesType";
@@ -187,19 +184,6 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
             }),
             dependenciesType: DependenciesType.Excel
         }));*/
-
-        configs.push(new Config({
-            component: SpreadsheetWorksheetsComponent,
-            additionalFiles: ["/src/app/utilities/excel-utility.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    ExcelUtility, SpreadsheetWorksheetsComponent],
-                ngDeclarations: [SpreadsheetWorksheetsComponent],
-                ngImports: [IgxButtonModule, IgxCategoryChartModule, IgxGridModule, IgxExcelModule,
-                    IgxSpreadsheetModule]
-            }),
-            dependenciesType: DependenciesType.Excel
-        }));
 
         return configs;
     }
