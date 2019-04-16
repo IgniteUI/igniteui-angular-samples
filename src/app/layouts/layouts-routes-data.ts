@@ -25,5 +25,9 @@ export const layoutsRoutesData = {
     "tabs-sample-2": { displayName: "Tabs Types", parentName: "Tabs" },
     "tabs-sample-3": { displayName: "Tabs Customizing", parentName: "Tabs" },
     "card-sample-2": { displayName: "Card with Avatar and Image", parentName: "Card" },
-    "card-sample-3": { displayName: "Card Actions", parentName: "Card" }
+    "card-sample-3": { displayName: "Card Actions", parentName: "Card" },
+    "divider-sample-1": { displayName: "Default Divider", parentName: "Divider" },
+    "divider-sample-2": { displayName: "Vertical Divider", parentName: "Divider" },
+    "divider-sample-3": { displayName: "Dashed Divider", parentName: "Divider" },
+    "divider-sample-4": { displayName: "Inset Divider", parentName: "Divider" }
 };
