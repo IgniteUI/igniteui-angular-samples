@@ -19,7 +19,7 @@ export class DividerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [DividerDefaultComponent],
                 ngImports: [IgxDividerModule]
             }),
-            shortenComponentPathBy: "/layouts/divider/default"
+            shortenComponentPathBy: "/layouts/divider/"
         }));
 
         configs.push(new Config({
