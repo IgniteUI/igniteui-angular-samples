@@ -18,7 +18,7 @@ export class SpreadsheetActivationComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        const excelFile = "../../assets/WeeklySalesReport.xlsx";
+        const excelFile = "assets/WeeklySalesReport.xlsx";
 
         ExcelUtility.loadFromUrl(excelFile).then((w) => {
             this.spreadsheet.workbook = w;
