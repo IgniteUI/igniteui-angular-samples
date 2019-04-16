@@ -23,9 +23,8 @@ export class DataChartSeriesTooltipsComponent {
     public itemTooltipLayer: IgxItemToolTipLayerComponent;
     public categoryTooltipLayer: IgxCategoryToolTipLayerComponent;
 
-    private _toolTipType: string = "Default";
     public set toolTipType(val: string) {
-        let oldValue = this._toolTipType;
+        const oldValue = this._toolTipType;
         this._toolTipType = val;
         if (oldValue !== val) {
             this.onTooltipTypeChanged();
@@ -43,6 +42,8 @@ export class DataChartSeriesTooltipsComponent {
 
     @ViewChild("yAxis")
     public yAxis: IgxNumericYAxisComponent;
+
+    private _toolTipType: string = "Default";
 
     constructor() {
         this.initData();
