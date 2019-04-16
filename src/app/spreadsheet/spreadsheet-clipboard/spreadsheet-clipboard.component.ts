@@ -23,17 +23,14 @@ export class SpreadsheetClipboardComponent implements OnInit {
     }
 
     public cut(): void {
-        // Spreadsheet function changed from 'executeCommand' to 'executeAction'
         this.spreadsheet.executeAction(SpreadsheetAction.Cut);
     }
 
     public copy(): void {
-        // Spreadsheet function changed from 'executeCommand' to 'executeAction'
         this.spreadsheet.executeAction(SpreadsheetAction.Copy);
     }
 
     public paste(): void {
-        // Spreadsheet function changed from 'executeCommand' to 'executeAction'
         this.spreadsheet.executeAction(SpreadsheetAction.Paste);
     }
 
