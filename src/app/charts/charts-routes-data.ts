@@ -64,7 +64,7 @@ export const chartsRoutesData = {
     "data-chart-type-scatter-density-series": { displayName: "Data Chart Scatter Density Series", parentName: "Data Chart" },
     "data-chart-type-scatter-series": { displayName: "Data Chart Scatter Series", parentName: "Data Chart" },
     "data-chart-type-shape-series": { displayName: "Data Chart Scatter Shape Series", parentName: "Data Chart" },
-    // "data-chart-type-stacked-series": { displayName: "Data Chart Stacked Series", parentName: "Data Chart" },
+    "data-chart-type-stacked-series": { displayName: "Data Chart Stacked Series", parentName: "Data Chart" },
     // "data-chart-synchronization": { displayName: "Data Chart Synchronization", parentName: "Data Chart" },
     "data-chart-titles": { displayName: "Data Chart Titles", parentName: "Data Chart" }
     // "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" }
