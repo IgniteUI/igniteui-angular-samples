@@ -39,7 +39,7 @@ export class DividerConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [DividerVerticalComponent],
                 ngImports: [IgxDividerModule]
             }),
-            shortenComponentPathBy: "/layouts/divider/vertical"
+            shortenComponentPathBy: "/layouts/divider/"
         }));
 
         configs.push(new Config({
