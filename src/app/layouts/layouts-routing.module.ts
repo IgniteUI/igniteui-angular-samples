@@ -15,6 +15,10 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
+import { DividerDefaultComponent } from "./divider/default/divider-default.component";
+import { DividerInsetComponent } from "./divider/inset/divider-inset.component";
+import { DividerVerticalComponent } from "./divider/vertical/divider-vertical.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -77,6 +81,26 @@ export const layoutsRoutes: Routes = [
     {
         component: CarouselDetailsViewComponent,
         path: "details/:index"
+    },
+    {
+        component: DividerDefaultComponent,
+        data: layoutsRoutesData["divider-sample-1"],
+        path: "divider-sample-1"
+    },
+    {
+        component: DividerVerticalComponent,
+        data: layoutsRoutesData["divider-sample-2"],
+        path: "divider-sample-2"
+    },
+    {
+        component: DividerDashedComponent,
+        data: layoutsRoutesData["divider-sample-3"],
+        path: "divider-sample-3"
+    },
+    {
+        component: DividerInsetComponent,
+        data: layoutsRoutesData["divider-sample-4"],
+        path: "divider-sample-4"
     },
     {
         component: ExpansionPanelSample1Component,
