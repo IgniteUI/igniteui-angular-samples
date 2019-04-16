@@ -17,9 +17,9 @@ interface DataItem {
 export class DropDownVirtualComponent implements OnInit {
   public items: DataItem[];
   public itemHeight = 48;
-  public itemsMaxHeight = 480;
+  public itemsMaxHeight = 240;
 
-  constructor(protected cdr: ChangeDetectorRef) {
+  constructor() {
     const itemsCollection: DataItem[] = [];
     for (let i = 0; i < 50; i++) {
         const series = (i * 10).toString();

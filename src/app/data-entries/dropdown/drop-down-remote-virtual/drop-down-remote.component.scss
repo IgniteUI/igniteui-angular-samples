@@ -1,7 +1,7 @@
 .drop-down-virtual-wrapper {
-    overflow: hidden;
-    max-height: 240px;
-    width: 160px;
+    overflow-y: hidden;
+    width: 320px;
+    height: 320px;
 }
 
 :host {
