@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy,
     HorizontalAlignment, IgxSelectComponent, OverlaySettings,
-    PositionSettings, slideInLeft, slideOutRight, VerticalAlignment
+    PositionSettings, scaleInTop, scaleOutBottom, VerticalAlignment
 } from "igniteui-angular";
 
 @Component({
@@ -18,17 +18,15 @@ export class SelectSample4Component implements OnInit {
 
     public ngOnInit(): void {
         const positionSettings: PositionSettings = {
-            closeAnimation: slideOutRight,
+            closeAnimation: scaleOutBottom,
             horizontalDirection: HorizontalAlignment.Right,
             horizontalStartPoint: HorizontalAlignment.Left,
-            openAnimation: slideInLeft,
+            openAnimation: scaleInTop,
             target: this.igxSelect.inputGroup.element.nativeElement,
             verticalDirection: VerticalAlignment.Bottom,
             verticalStartPoint: VerticalAlignment.Bottom
         };
         this.customOverlaySettings = {
-            closeOnOutsideClick: false,
-            modal: true,
             positionStrategy: new ConnectedPositioningStrategy(
                 positionSettings
             ),
