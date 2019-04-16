@@ -15,6 +15,7 @@ import { ComboConfigGenerator } from "../configs/ComboConfigGenerator";
 import { DataChartConfigGenerator } from "../configs/DataChartConfigGenerator";
 import { DatePickerConfigGenerator } from "../configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "../configs/DialogConfigGenerator";
+import { DividerConfigGenerator } from "../configs/DividerConfigGenerator";
 import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
 import { DragAndDropConfigGenerator } from "../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "../configs/DropDownConfigGenerator";
@@ -63,7 +64,7 @@ export const CONFIG_GENERATORS =
         ButtonConfigGenerator, ButtonGroupConfigGenerator, CalendarConfigGenerator, CardConfigGenerator,
         CarouselConfigGenerator, CategoryChartConfigGenerator, CheckboxConfigGenerator, ChipConfigGenerator,
         CircularProgressbarConfigGenerator, ComboConfigGenerator, DataChartConfigGenerator,
-        DatePickerConfigGenerator, DialogConfigGenerator,
+        DatePickerConfigGenerator, DividerConfigGenerator, DialogConfigGenerator,
         DropDownConfigGenerator, ExpansionPanelConfigGenerator, ExportCsvConfigGenerator, ExportExcelConfigGenerator,
         ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator,
         TreeGridFinjsConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator,
