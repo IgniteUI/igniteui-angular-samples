@@ -42,6 +42,7 @@ import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarc
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HGridDragSampleComponent } from './hierarchical-grid-row-drag/hierarchical-grid-row-drag.component';
 /* tslint:enable:max-line-length */
 
 @NgModule({
@@ -72,7 +73,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridExcelStyleFilteringSample1Component,
         HGridExcelStyleFilteringSample2Component,
         HGridExcelStyleFilteringSample3Component,
-        HGridFilteringTemplateSampleComponent
+        HGridFilteringTemplateSampleComponent,
+        HGridDragSampleComponent
     ],
     imports: [
         CommonModule,
