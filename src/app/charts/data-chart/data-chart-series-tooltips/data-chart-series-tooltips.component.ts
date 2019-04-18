@@ -23,6 +23,17 @@ export class DataChartSeriesTooltipsComponent {
     public itemTooltipLayer: IgxItemToolTipLayerComponent;
     public categoryTooltipLayer: IgxCategoryToolTipLayerComponent;
 
+    public set toolTipType(val: string) {
+        const oldValue = this._toolTipType;
+        this._toolTipType = val;
+        if (oldValue !== val) {
+            this.onTooltipTypeChanged();
+        }
+    }
+    public get toolTipType(): string {
+        return this._toolTipType;
+    }
+
     @ViewChild("chart")
     public chart: IgxDataChartComponent;
 
@@ -31,6 +42,8 @@ export class DataChartSeriesTooltipsComponent {
 
     @ViewChild("yAxis")
     public yAxis: IgxNumericYAxisComponent;
+
+    private _toolTipType: string = "Default";
 
     constructor() {
         this.initData();
@@ -50,8 +63,8 @@ export class DataChartSeriesTooltipsComponent {
         ];
     }
 
-    public onTooltipTypeChanged(e: any) {
-        switch (e.target.value) {
+    public onTooltipTypeChanged() {
+        switch (this.toolTipType) {
             case "Default": {
                 this.chart.series.remove(this.itemTooltipLayer);
                 this.chart.series.remove(this.categoryTooltipLayer);

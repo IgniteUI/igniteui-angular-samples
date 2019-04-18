@@ -98,9 +98,9 @@ import {
 import {
     DataChartTypeScatterShapeSeriesComponent
 } from "./data-chart/data-chart-type-scatter-shape-series/data-chart-type-scatter-shape-series.component";
-// import {
-//     DataChartTypeStackedSeriesComponent
-// } from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
+import {
+    DataChartTypeStackedSeriesComponent
+} from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
 // import {
 //     DataChartTypeValueOverlayComponent
 // } from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
@@ -405,11 +405,11 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-type-shape-series"],
         path: "data-chart-type-shape-series"
     },
-    // {
-    //     component: DataChartTypeStackedSeriesComponent,
-    //     data: chartsRoutesData["data-chart-type-stacked-series"],
-    //     path: "data-chart-type-stacked-series"
-    // },
+    {
+        component: DataChartTypeStackedSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-series"],
+        path: "data-chart-type-stacked-series"
+    },
     // {
     //     component: DataChartTypeValueOverlayComponent,
     //     data: chartsRoutesData["data-chart-value-overlay"],

@@ -1,7 +1,7 @@
 <div class="sample">
     <div class="options">
         <span class="optionLabel">Tooltip Type: </span>
-        <select (input)="onTooltipTypeChanged($event)">
+        <select [(ngModel)]="toolTipType">
             <option>Default</option>
             <option>Item</option>
             <option>Category</option>

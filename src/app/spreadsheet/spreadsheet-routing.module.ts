@@ -16,7 +16,6 @@ import { SpreadsheetDataValidComponent } from "./spreadsheet-data-validation/spr
 import { SpreadsheetHyperlinksComponent } from "./spreadsheet-hyperlinks/spreadsheet-hyperlinks.component";
 import { SpreadsheetOverviewComponent } from "./spreadsheet-overview/spreadsheet-overview.component";
 // import { SpreadsheetSortDialogComponent } from "./spreadsheet-sort-dialog/spreadsheet-sort-dialog.component";
-import { SpreadsheetWorksheetsComponent } from "./spreadsheet-worksheets/spreadsheet-worksheets.component";
 
 export const spreadsheetRoutes: Routes = [
     {
@@ -33,11 +32,6 @@ export const spreadsheetRoutes: Routes = [
         component: SpreadsheetDataValidComponent,
         data: spreadsheetRoutesData["spreadsheet-data-validation"],
         path: "spreadsheet-data-validation"
-    },
-    {
-        component: SpreadsheetWorksheetsComponent,
-        data: spreadsheetRoutesData["spreadsheet-worksheets"],
-        path: "spreadsheet-worksheets"
     },
     {
         component: SpreadsheetHyperlinksComponent,
