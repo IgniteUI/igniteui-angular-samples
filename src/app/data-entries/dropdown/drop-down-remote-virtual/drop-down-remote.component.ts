@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { IForOfState, IgxDropDownComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
+// tslint:disable-next-line:max-line-length
+import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
 import { Subject, Subscription } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { RemoteService } from "../../../grid/services/remote.service";
@@ -14,6 +15,8 @@ import { RemoteService } from "../../../grid/services/remote.service";
 export class DropDownRemoteComponent implements OnInit, OnDestroy {
     @ViewChild("loadingToast", { read: IgxToastComponent })
     public loadingToast: IgxToastComponent;
+    @ViewChild(IgxForOfDirective, { read: IgxForOfDirective })
+    public remoteForDir: IgxForOfDirective<any>;
     @ViewChild("remoteDropDown", { read: IgxDropDownComponent })
     public remoteDropDown: IgxDropDownComponent;
     public itemHeight = 48;
@@ -28,9 +31,9 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy {
             startIndex: 0, chunkSize: Math.floor(this.itemsMaxHeight / this.itemHeight) + 1
         };
         this.remoteService.getData(initialState, null, (data) => {
-            this.remoteDropDown.virtDir.totalItemCount = data["@odata.count"];
+            this.remoteForDir.totalItemCount = data["@odata.count"];
         });
-        this.remoteDropDown.virtDir.onChunkPreload.pipe(takeUntil(this.destroy$)).subscribe((data) => {
+        this.remoteForDir.onChunkPreload.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             this.dataLoading(data);
         });
     }
@@ -48,7 +51,7 @@ export class DropDownRemoteComponent implements OnInit, OnDestroy {
             evt,
             null,
             (data) => {
-                this.remoteDropDown.virtDir.totalItemCount = data["@odata.count"];
+                this.remoteForDir.totalItemCount = data["@odata.count"];
                 this.loadingToast.hide();
                 this.cdr.detectChanges();
             });
