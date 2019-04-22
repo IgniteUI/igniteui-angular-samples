@@ -47,6 +47,9 @@ import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/t
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+import { 
+    TreeGridLoadOnDemandSampleComponent
+} from "./tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
 // tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
@@ -247,7 +250,12 @@ export const treeGridRoutes: Routes = [
         component: TreeGridMultiCellSelectionComponent,
         data: treeGridRoutesData["tree-grid-multi-cell-selection"],
         path: "tree-grid-multi-cell-selection"
-    }
+    },
+    {
+        component: TreeGridLoadOnDemandSampleComponent,
+        data: treeGridRoutesData["treegrid-load-on-demand"],
+        path: "treegrid-load-on-demand"
+    },
 ];
 
 @NgModule({
