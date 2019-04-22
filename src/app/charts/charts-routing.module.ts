@@ -38,8 +38,8 @@ import {
 import { chartsRoutesData } from "./charts-routes-data";
 import { DataChartSamplesModule } from "./data-chart/data-chart-samples-module";
 
-import { DataChartAxisLocationsComponent
-} from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
+// import { DataChartAxisLocationsComponent
+// } from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisSettingsComponent
 } from "./data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
 import { DataChartAxisSharingComponent } from "./data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
@@ -49,10 +49,10 @@ import { DataChartNavigationComponent } from "./data-chart/data-chart-navigation
 import {
     DataChartOverviewComponent
 } from "./data-chart/data-chart-overview/data-chart-overview.component";
-import { DataChartPerformanceComponent } from "./data-chart/data-chart-performance/data-chart-performance.component";
-import {
-    DataChartSeriesAnimationsComponent
-} from "./data-chart/data-chart-series-animations/data-chart-series-animations.component";
+// import { DataChartPerformanceComponent } from "./data-chart/data-chart-performance/data-chart-performance.component";
+// import {
+//     DataChartSeriesAnimationsComponent
+// } from "./data-chart/data-chart-series-animations/data-chart-series-animations.component";
 import {
     DataChartSeriesAnnotationsComponent
 } from "./data-chart/data-chart-series-annotations/data-chart-series-annotations.component";
@@ -65,8 +65,8 @@ import { DataChartSeriesTooltipsComponent
 } from "./data-chart/data-chart-series-tooltips/data-chart-series-tooltips.component";
 import { DataChartSeriesTrendlinesComponent
 } from "./data-chart/data-chart-series-trendlines/data-chart-series-trendlines.component";
-import { DataChartSynchronizationComponent
-} from "./data-chart/data-chart-synchronization/data-chart-synchronization.component";
+// import { DataChartSynchronizationComponent
+// } from "./data-chart/data-chart-synchronization/data-chart-synchronization.component";
 import { DataChartTitlesComponent } from "./data-chart/data-chart-titles/data-chart-titles.component";
 import {
     DataChartTypeCategorySeriesComponent
@@ -89,9 +89,9 @@ import {
 import {
     DataChartTypeScatterContourSeriesComponent
 } from "./data-chart/data-chart-type-scatter-contour-series/data-chart-type-scatter-contour-series.component";
-import {
-    DataChartTypeScatterDensitySeriesComponent
-} from "./data-chart/data-chart-type-scatter-density-series/data-chart-type-scatter-density-series.component";
+// import {
+//     DataChartTypeScatterDensitySeriesComponent
+// } from "./data-chart/data-chart-type-scatter-density-series/data-chart-type-scatter-density-series.component";
 import {
     DataChartTypeScatterSeriesComponent
 } from "./data-chart/data-chart-type-scatter-series/data-chart-type-scatter-series.component";
@@ -101,9 +101,9 @@ import {
 import {
     DataChartTypeStackedSeriesComponent
 } from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
-import {
-    DataChartTypeValueOverlayComponent
-} from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
+// import {
+//     DataChartTypeValueOverlayComponent
+// } from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
 import {
     DoughnutChartExplosionSampleComponent
@@ -275,11 +275,11 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["category-chart-trendline"],
         path: "category-chart-trendline"
     },
-    {
-        component: DataChartAxisLocationsComponent,
-        data: chartsRoutesData["data-chart-axis-locations"],
-        path: "data-chart-axis-locations"
-    },
+    // {
+    //     component: DataChartAxisLocationsComponent,
+    //     data: chartsRoutesData["data-chart-axis-locations"],
+    //     path: "data-chart-axis-locations"
+    // },
     {
         component: DataChartAxisSettingsComponent,
         data: chartsRoutesData["data-chart-axis-settings"],
@@ -310,16 +310,16 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-overview"],
         path: "data-chart-overview"
     },
-    {
-        component: DataChartPerformanceComponent,
-        data: chartsRoutesData["data-chart-performance"],
-        path: "data-chart-performance"
-    },
-    {
-        component: DataChartSeriesAnimationsComponent,
-        data: chartsRoutesData["data-chart-series-animations"],
-        path: "data-chart-series-animations"
-    },
+    // {
+    //     component: DataChartPerformanceComponent,
+    //     data: chartsRoutesData["data-chart-performance"],
+    //     path: "data-chart-performance"
+    // },
+    // {
+    //     component: DataChartSeriesAnimationsComponent,
+    //     data: chartsRoutesData["data-chart-series-animations"],
+    //     path: "data-chart-series-animations"
+    // },
     {
         component: DataChartSeriesAnnotationsComponent,
         data: chartsRoutesData["data-chart-series-annotations"],
@@ -345,11 +345,11 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-series-trendlines"],
         path: "data-chart-series-trendlines"
     },
-    {
-        component: DataChartSynchronizationComponent,
-        data: chartsRoutesData["data-chart-synchronization"],
-        path: "data-chart-synchronization"
-    },
+    // {
+    //     component: DataChartSynchronizationComponent,
+    //     data: chartsRoutesData["data-chart-synchronization"],
+    //     path: "data-chart-synchronization"
+    // },
     {
         component: DataChartTitlesComponent,
         data: chartsRoutesData["data-chart-titles"],
@@ -390,11 +390,11 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-type-contour-series"],
         path: "data-chart-type-contour-series"
     },
-    {
-        component: DataChartTypeScatterDensitySeriesComponent,
-        data: chartsRoutesData["data-chart-type-scatter-density-series"],
-        path: "data-chart-type-scatter-density-series"
-    },
+    // {
+    //     component: DataChartTypeScatterDensitySeriesComponent,
+    //     data: chartsRoutesData["data-chart-type-scatter-density-series"],
+    //     path: "data-chart-type-scatter-density-series"
+    // },
     {
         component: DataChartTypeScatterSeriesComponent,
         data: chartsRoutesData["data-chart-type-scatter-series"],
@@ -410,11 +410,11 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-type-stacked-series"],
         path: "data-chart-type-stacked-series"
     },
-    {
-        component: DataChartTypeValueOverlayComponent,
-        data: chartsRoutesData["data-chart-value-overlay"],
-        path: "data-chart-value-overlay"
-    },
+    // {
+    //     component: DataChartTypeValueOverlayComponent,
+    //     data: chartsRoutesData["data-chart-value-overlay"],
+    //     path: "data-chart-value-overlay"
+    // },
     {
         component: FinancialChartPerformanceComponent,
         data: chartsRoutesData["financial-chart-performance"],

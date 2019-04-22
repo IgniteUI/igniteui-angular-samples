@@ -9,13 +9,13 @@ import { SpreadsheetActivationComponent } from "./spreadsheet-activation/spreads
 import { SpreadsheetClipboardComponent } from "./spreadsheet-clipboard/spreadsheet-clipboard.component";
 import { SpreadsheetCommandsComponent } from "./spreadsheet-commands/spreadsheet-commands.component";
 import { SpreadsheetCondFormatComponent } from "./spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
+import { SpreadsheetConfiguringComponent} from "./spreadsheet-configuring/spreadsheet-configuring.component";
 import { SpreadsheetDataValidComponent } from "./spreadsheet-data-validation/spreadsheet-data-validation.component";
 // import { SpreadsheetFilterDialogComponent } from "./spreadsheet-filter-dialog/spreadsheet-filter-dialog.component";
 // import { SpreadsheetFormatDialogComponent } from "./spreadsheet-format-dialog/spreadsheet-format-dialog.component";
 import { SpreadsheetHyperlinksComponent } from "./spreadsheet-hyperlinks/spreadsheet-hyperlinks.component";
 import { SpreadsheetOverviewComponent } from "./spreadsheet-overview/spreadsheet-overview.component";
 // import { SpreadsheetSortDialogComponent } from "./spreadsheet-sort-dialog/spreadsheet-sort-dialog.component";
-import { SpreadsheetWorksheetsComponent } from "./spreadsheet-worksheets/spreadsheet-worksheets.component";
 
 export const spreadsheetRoutes: Routes = [
     {
@@ -32,11 +32,6 @@ export const spreadsheetRoutes: Routes = [
         component: SpreadsheetDataValidComponent,
         data: spreadsheetRoutesData["spreadsheet-data-validation"],
         path: "spreadsheet-data-validation"
-    },
-    {
-        component: SpreadsheetWorksheetsComponent,
-        data: spreadsheetRoutesData["spreadsheet-worksheets"],
-        path: "spreadsheet-worksheets"
     },
     {
         component: SpreadsheetHyperlinksComponent,
@@ -57,6 +52,11 @@ export const spreadsheetRoutes: Routes = [
         component: SpreadsheetCondFormatComponent,
         data: spreadsheetRoutesData["spreadsheet-cond-formatting"],
         path: "spreadsheet-cond-formatting"
+    },
+    {
+        component: SpreadsheetConfiguringComponent,
+        data: spreadsheetRoutesData["spreadsheet-configuring"],
+        path: "spreadsheet-configuring"
     }/*,
     {
         component: SpreadsheetFormatDialogComponent,

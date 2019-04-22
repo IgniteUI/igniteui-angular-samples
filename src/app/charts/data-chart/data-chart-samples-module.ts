@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { ModuleWithProviders, NgModule } from "@angular/core";
 
 // Chart Modules
@@ -8,6 +9,7 @@ import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-cha
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
 import { IgxDataChartScatterCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-core-module";
 import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-module";
+import { IgxDataChartStackedModule } from "igniteui-angular-charts/ES5/igx-data-chart-stacked-module";
 
 // Axes
 import { IgxCategoryAngleAxisModule } from "igniteui-angular-charts/ES5/igx-category-angle-axis-module";
@@ -41,6 +43,16 @@ import { IgxScatterPolygonSeriesModule } from "igniteui-angular-charts/ES5/igx-s
 import { IgxScatterPolylineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polyline-series-module";
 import { IgxScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-series-module";
 import { IgxScatterSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-spline-series-module";
+import { IgxStacked100AreaSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-area-series-module";
+import { IgxStacked100BarSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-module";
+import { IgxStacked100ColumnSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-column-series-module";
+import { IgxStacked100LineSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-line-series-module";
+import { IgxStacked100SplineSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-spline-series-module";
+import { IgxStackedAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-area-series-module";
+import { IgxStackedBarSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-module";
+import { IgxStackedColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-column-series-module";
+import { IgxStackedLineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-line-series-module";
+import { IgxStackedSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-spline-series-module";
 
 import {IgxLinearContourValueResolverModule
 } from "igniteui-angular-charts/ES5/igx-linear-contour-value-resolver-module";
@@ -230,7 +242,20 @@ import { FormsModule } from "@angular/forms";
         IgxScatterContourSeriesModule,
         IgxLinearContourValueResolverModule,
         IgxSizeScaleModule,
-        IgxValueBrushScaleModule
+        IgxValueBrushScaleModule,
+        IgxDataChartScatterModule,
+        IgxScatterSeriesModule,
+        IgxDataChartStackedModule,
+        IgxStackedColumnSeriesModule,
+        IgxStacked100AreaSeriesModule,
+        IgxStacked100BarSeriesModule,
+        IgxStacked100ColumnSeriesModule,
+        IgxStacked100LineSeriesModule,
+        IgxStacked100SplineSeriesModule,
+        IgxStackedAreaSeriesModule,
+        IgxStackedLineSeriesModule,
+        IgxStackedSplineSeriesModule,
+        IgxStackedBarSeriesModule
     ]
 })
 export class DataChartSamplesModule {
