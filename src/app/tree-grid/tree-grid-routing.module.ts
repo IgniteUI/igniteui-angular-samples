@@ -47,7 +47,7 @@ import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/t
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
-import { 
+import {
     TreeGridLoadOnDemandSampleComponent
 } from "./tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
 // tslint:disable-next-line: max-line-length
@@ -255,7 +255,7 @@ export const treeGridRoutes: Routes = [
         component: TreeGridLoadOnDemandSampleComponent,
         data: treeGridRoutesData["treegrid-load-on-demand"],
         path: "treegrid-load-on-demand"
-    },
+    }
 ];
 
 @NgModule({
