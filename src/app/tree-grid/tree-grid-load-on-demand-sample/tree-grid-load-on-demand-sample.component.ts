@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxTreeGridComponent } from "igniteui-angular";
 import { TreeGridLoadOnDemandService } from "./remoteService";
 
 @Component({
@@ -8,13 +9,16 @@ import { TreeGridLoadOnDemandService } from "./remoteService";
 })
 export class TreeGridLoadOnDemandSampleComponent implements OnInit {
     public data = [];
+    @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
     private dataService = new TreeGridLoadOnDemandService();
 
     constructor() { }
 
     public ngOnInit() {
+        this.treeGrid.isLoading = true;
         this.dataService.getData(-1, (children) => {
             this.data = children;
+            this.treeGrid.isLoading = false;
         });
     }
 
