@@ -2,16 +2,12 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/
 // importing IG components:
 import { IgxGridComponent } from "igniteui-angular";
 import { SparklineType } from "igniteui-angular-excel/ES5/SparklineType";
-import { Worksheet } from "igniteui-angular-excel/ES5/Worksheet";
-import { WorksheetRegion } from "igniteui-angular-excel/ES5/WorksheetRegion";
 import {
-    IWorkbookExportEndedEventArgs,
-    IWorksheetCellExportingEventArgs,
-    IWorksheetRowExportedEventArgs,
-    WorkbookExportOptions,
     WorkbookExportService
 } from "../../utilities/excel-exporter";
 import { ExcelUtility } from "../../utilities/excel-utility";
+import { Workbook } from 'igniteui-angular-excel/ES5/Workbook';
+import { WorkbookFormat } from 'igniteui-angular-excel/ES5/excel.core';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,64 +23,50 @@ export class ExcelLibraryWorkingWithSparklinesComponent implements OnInit {
     public data: any[];
     public exportAsTable: boolean = true;
 
-    constructor(private exporter: WorkbookExportService) {
-        exporter.onWorksheetCellExporting.subscribe({ next: (e: IWorksheetCellExportingEventArgs) => {
-            if (e.dataColumnHeader === "Order History") {
-                let wsOrderDetails: Worksheet;
-                const details = e.cellValue as any[];
-                e.cellValue = null;
-                // the grid only contains flat data but we need the child data to provide
-                // the values for the sparkline. to do that we will store those rows manually
-                // on another worksheet
-                if (!e.row.workbook.worksheets().exists("OrderDetails")) {
-                    wsOrderDetails = e.row.workbook.worksheets().add("OrderDetails");
-                    const headerRow = wsOrderDetails.rows(0);
-                    headerRow.setCellValue(0, "Customer ID");
-                    headerRow.setCellValue(1, "Order ID");
-                    headerRow.setCellValue(2, "Freight");
-                } else {
-                    wsOrderDetails = e.row.workbook.worksheets("OrderDetails");
-                }
-
-                let rowIdx = wsOrderDetails.rows().count;
-                const startRowIdx = rowIdx;
-                for (const detail of details) {
-                    const detailRow = wsOrderDetails.rows(rowIdx);
-                    detailRow.setCellValue(0, detail.CustomerID);
-                    detailRow.setCellValue(1, detail.OrderID);
-                    detailRow.setCellValue(2, detail.Freight);
-                    rowIdx++;
-                }
-
-                const region = new WorksheetRegion(wsOrderDetails, startRowIdx, 2, rowIdx - 1, 2, false);
-                const dataRegion = region.toString(e.row.workbook.cellReferenceMode, true, true, true);
-
-                if (e.row.worksheet.sparklineGroups().count === 0) {
-                    const cells = e.row.cells(e.worksheetColumnIndex).toString();
-                    e.row.worksheet.sparklineGroups().add(SparklineType.Column, cells, dataRegion);
-                } else {
-                    e.row.worksheet.sparklineGroups(0).sparklines().add(e.row.index,
-                        e.worksheetColumnIndex, dataRegion);
-                }
-            }
-        }});
-
-        exporter.onWorksheetRowExported.subscribe({ next: (e: IWorksheetRowExportedEventArgs) => {
-            e.row.height = 1000;
-        }});
-
-        exporter.onWorkbookExportEnded.subscribe({ next: (e: IWorkbookExportEndedEventArgs) => {
-            for (let c = e.dataRegion.firstColumn; c <= e.dataRegion.lastColumn; c++) {
-                e.worksheet.columns(c).autoFitWidth();
-            }
-            ExcelUtility.save(e.workbook, e.fileName);
-        }});
+    constructor() {
     }
 
     public exportGrid() {
-        const opt = new WorkbookExportOptions("grid_sparklines");
-        opt.exportAsTable = this.exportAsTable;
-        this.exporter.export(this.grid, opt);
+        const headers = ["Orders", "Company Name", "Contact Name", "Contact Title", "Country"];
+        const keys = ["Orders", "CompanyName", "ContactName", "ContactTitle", "Country"];
+        const orderHeaders = ["Customer ID", "Order ID", "Freight"];
+
+        const wb = new Workbook(WorkbookFormat.Excel2007);
+        const exportSheet = wb.worksheets().add("Sheet1");
+        const ordersSheet = wb.worksheets().add("Orders");
+
+        exportSheet.defaultColumnWidth = 300 * 20;
+        exportSheet.defaultRowHeight = 50 * 20;
+
+        for(let i = 0; i < headers.length; i++) {
+            exportSheet.rows(0).cells(i).value = headers[i];
+        }
+
+        for(let i = 0; i < this.data.length; i++) {
+            const item = this.data[i];
+            const orders = item.Orders;
+
+            for(let j = 0; j < orders.length; j++){
+                ordersSheet.rows(i).cells(j).value = orders[j].Freight;
+            }
+        }
+
+        for(let i = 0; i < this.data.length; i++) {
+
+            const index = (i + 1).toString();
+            const dataItem = this.data[i];
+
+            for (let j = 0; j < headers.length; j++) {
+                if (j === 0) {
+                    exportSheet.sparklineGroups().add(SparklineType.Column,
+                         "A" + (i + 2).toString(), "Orders!A" + index + ":F" + index);
+                } else {
+                    exportSheet.rows(i + 1).cells(j).value = dataItem[keys[j]];
+                }
+            }
+        }
+
+        ExcelUtility.save(wb, "myWorksheet");
     }
 
     public ngOnInit(): void {
