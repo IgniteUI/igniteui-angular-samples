@@ -18,7 +18,8 @@ import {
     IgxRippleModule,
     IgxSwitchModule,
     IgxToastModule,
-    IgxTreeGridModule
+    IgxTreeGridModule,
+    IgxDragDropModule
 } from "igniteui-angular";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -62,6 +63,7 @@ import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/t
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { TreeGridRowDrag } from '../../src/app/tree-grid/tree-grid-row-drag/tree-grid-row-drag.component';
 
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -456,6 +458,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule]
             }),
             component: TreeGridMultiCellSelectionComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/tree-grid-editing-sample/employee.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridRowDrag, IgxButtonModule,
+                    IgxInputGroupModule, IgxIconModule, IgxDragDropModule],
+                ngDeclarations: [TreeGridRowDrag],
+                ngImports: [IgxTreeGridModule, IgxButtonModule, IgxInputGroupModule, IgxIconModule, IgxDragDropModule]
+            }),
+            component: TreeGridRowDrag,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
