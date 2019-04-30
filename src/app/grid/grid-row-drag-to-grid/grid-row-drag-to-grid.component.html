@@ -1,30 +1,27 @@
 <div class="grid-container">
-    <div class="drop-area" igxDrop (onEnter)="dragAreaEnter($event)" (onLeave)="dragAreaLeave($event)">
-        <igx-grid #grid1 [data]="data1" [autoGenerate]="false" [rowDraggable]="true" (onRowDragEnd)="rowDropped2($event)" [primaryKey]="'ID'">
-            <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
-            <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
-            <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
-            <igx-column [field]="'ContactTitle'" [header]="'Contact Title'" width="100px"></igx-column>
-            <igx-column [field]="'Address'" [header]="'Address'" width="100px"></igx-column>
-            <igx-column [field]="'City'" [header]="'City'" width="100px"></igx-column>
-            <igx-column [field]="'Region'" [header]="'Region'" width="100px"></igx-column>
-            <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
-            <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
-            <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
-        </igx-grid>
-    </div>
-    <div class="drop-area" igxDrop (onEnter)="dragAreaEnter($event)" (onLeave)="dragAreaLeave($event)">
-        <igx-grid #grid2 [data]="data2" [autoGenerate]="false" [rowDraggable]="true" (onRowDragEnd)="rowDropped1($event)" [primaryKey]="'ID'">
-            <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
-            <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
-            <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
-            <igx-column [field]="'ContactTitle'" [header]="'Contact Title'" width="100px"></igx-column>
-            <igx-column [field]="'Address'" [header]="'Address'" width="100px"></igx-column>
-            <igx-column [field]="'City'" [header]="'City'" width="100px"></igx-column>
-            <igx-column [field]="'Region'" [header]="'Region'" width="100px"></igx-column>
-            <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
-            <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
-            <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
-        </igx-grid>
-    </div>
+    <igx-grid #grid1 [data]="data1" [autoGenerate]="false" [rowDraggable]="true" (onRowDragStart)="handleRowDrag($event)" (onRowDragEnd)="handleRowDrop($event)" [primaryKey]="'ID'">
+        <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
+        <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
+        <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
+        <igx-column [field]="'ContactTitle'" [header]="'Contact Title'" width="100px"></igx-column>
+        <igx-column [field]="'Address'" [header]="'Address'" width="100px"></igx-column>
+        <igx-column [field]="'City'" [header]="'City'" width="100px"></igx-column>
+        <igx-column [field]="'Region'" [header]="'Region'" width="100px"></igx-column>
+        <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
+        <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
+        <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
+    </igx-grid>
+    <igx-grid #grid2 igxDrop [data]="data2" [autoGenerate]="false" [emptyGridTemplate]="dragHereTemplate"
+        (onEnter)="onEnterAllowed($event)" (onLeave)="onLeaveAllowed($event)" (onDrop)="onDropAllowed($event)" [primaryKey]="'ID'">
+        <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
+        <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
+        <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
+        <igx-column [field]="'ContactTitle'" [header]="'Contact Title'" width="100px"></igx-column>
+        <igx-column [field]="'Address'" [header]="'Address'" width="100px"></igx-column>
+        <igx-column [field]="'City'" [header]="'City'" width="100px"></igx-column>
+        <igx-column [field]="'Region'" [header]="'Region'" width="100px"></igx-column>
+        <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
+        <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
+        <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
+    </igx-grid>
 </div>

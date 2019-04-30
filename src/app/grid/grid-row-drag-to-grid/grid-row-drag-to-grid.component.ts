@@ -1,7 +1,11 @@
 import { Component, ViewChild } from "@angular/core";
-import { IGridDataBindable, IgxGridBaseComponent, IgxGridComponent,
-    IgxRowComponent, IRowDragEndEventArgs } from "igniteui-angular";
+import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "./data";
+
+enum DragIcon {
+    DEFAULT = "drag_indicator",
+    ALLOW = "add"
+}
 
 @Component({
     selector: "grid-row-drag-to-grid-sample",
@@ -20,29 +24,23 @@ export class GridDragToGridSampleComponent {
         this.data2 = [];
     }
 
-    public dragAreaEnter(args) {
-
+    public onDropAllowed(args) {
+        args.cancel = true;
+        this.grid2.addRow(args.dragData.rowData);
+        this.grid1.deleteRow(args.dragData.rowID);
     }
 
-    public dragAreaLeave(args) {
-
+    public onEnterAllowed(args) {
+        this.changeGhostIcon(args.drag.dragGhost, DragIcon.ALLOW);
     }
 
-    public rowDropped1(args: IRowDragEndEventArgs) {
-        this.addRow(this.grid1, args.source);
-        this.removeRow(this.grid2, args.source);
+    public onLeaveAllowed(args) {
+        this.changeGhostIcon(args.drag.dragGhost, DragIcon.DEFAULT);
     }
 
-    public rowDropped2(args: IRowDragEndEventArgs) {
-        this.addRow(this.grid2, args.source);
-        this.removeRow(this.grid1, args.source);
-    }
-
-    public addRow(grid: IgxGridComponent, row: IgxRowComponent<IgxGridBaseComponent & IGridDataBindable>) {
-        grid.addRow(row.rowData);
-    }
-
-    public removeRow(grid: IgxGridComponent, row: IgxRowComponent<IgxGridBaseComponent & IGridDataBindable>) {
-        grid.deleteRow(row.rowID);
+    private changeGhostIcon(ghost, icon: string) {
+        if (ghost) {
+            ghost.querySelector("igx-icon").innerHTML = icon;
+        }
     }
 }
