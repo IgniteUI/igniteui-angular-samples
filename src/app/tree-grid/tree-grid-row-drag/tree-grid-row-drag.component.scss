@@ -13,8 +13,8 @@
 
 :host {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-flow: column;
+    flex-flow: row;
     width: 100%;
 }

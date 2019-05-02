@@ -4,7 +4,7 @@
     <div>Drag a row here to delete it</div>
 </div>
 <igx-hierarchical-grid class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
-    [displayDensity]="density" [height]="'600px'" [width]="'800px'" #hGrid>
+    [displayDensity]="density" [height]="'540px'" [width]="'800px'" #hGrid>
     <igx-column field="name" header="Name"></igx-column>
     <igx-column field="system" header="Is System Drive"></igx-column>
     <igx-row-island [primaryKey]="'id'" igxDrop (onDrop)="rowDrop($event)" [key]="'folders'" #layout1>
