@@ -4,7 +4,6 @@ import { FULL_EMPLOYEE_DATA } from "../data/employees";
 
 enum DragIcon {
     DEFAULT = "drag_indicator",
-    BLOCK = "block",
     ALLOW = "remove"
 }
 

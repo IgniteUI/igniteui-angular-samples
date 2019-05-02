@@ -28,7 +28,6 @@ interface IFile {
 
 enum DragIcon {
     DEFAULT = "drag_indicator",
-    BLOCK = "block",
     ALLOW = "remove"
 }
 

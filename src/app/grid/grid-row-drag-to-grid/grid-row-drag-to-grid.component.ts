@@ -16,8 +16,8 @@ enum DragIcon {
 export class GridDragToGridSampleComponent {
     public data1: any[];
     public data2: any[];
-    @ViewChild("dragGrid", { read: IgxGridComponent }) public sourceGrid: IgxGridComponent;
-    @ViewChild("dropGrid", { read: IgxGridComponent }) public targetGrid: IgxGridComponent;
+    @ViewChild("sourceGrid", { read: IgxGridComponent }) public sourceGrid: IgxGridComponent;
+    @ViewChild("targetGrid", { read: IgxGridComponent }) public targetGrid: IgxGridComponent;
 
     constructor() {
         this.data1 = DATA;
