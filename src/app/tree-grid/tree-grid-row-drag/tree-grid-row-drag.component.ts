@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxTreeGridComponent } from "igniteui-angular";
+import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from "igniteui-angular";
 import { FULL_EMPLOYEE_DATA } from "../data/employees";
 
 enum DragIcon {
@@ -22,9 +22,10 @@ export class TreeGridRowDrag {
         this.localData = FULL_EMPLOYEE_DATA();
     }
 
-    public onDropAllowed(args) {
+    public onDropAllowed(args: IgxDropEventArgs) {
         args.cancel = true;
-        this.treeGrid.deleteRow(args.dragData.rowID);
+        const draggedRow: IgxTreeGridRowComponent = args.dragData;
+        draggedRow.delete();
     }
 
     public onEnterAllowed(args) {
