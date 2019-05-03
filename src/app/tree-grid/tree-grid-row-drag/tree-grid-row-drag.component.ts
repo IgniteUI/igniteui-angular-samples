@@ -3,7 +3,7 @@ import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from 
 import { FULL_EMPLOYEE_DATA } from "../data/employees";
 
 enum DragIcon {
-    DEFAULT = "drag_indicator",
+    DEFAULT = "drag_handle",
     ALLOW = "remove"
 }
 
@@ -17,6 +17,7 @@ export class TreeGridRowDrag {
     public treeGrid: IgxTreeGridComponent;
 
     public localData = [];
+    private _prevIcon;
     constructor() {
         this.localData = FULL_EMPLOYEE_DATA();
     }
@@ -37,7 +38,12 @@ export class TreeGridRowDrag {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            ghost.querySelector("igx-icon").innerHTML = icon;
+            const currentIcon = [...ghost.querySelectorAll("igx-icon")]
+            .find((e) => e.innerText === (this._prevIcon || DragIcon.DEFAULT));
+            if (currentIcon) {
+                currentIcon.innerText = icon;
+                this._prevIcon = icon;
+            }
         }
     }
 }

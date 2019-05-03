@@ -3,7 +3,7 @@ import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "./data";
 
 enum DragIcon {
-    DEFAULT = "drag_indicator",
+    DEFAULT = "drag_handle",
     ALLOW = "add"
 }
 
@@ -18,7 +18,7 @@ export class GridDragToGridSampleComponent {
     public data2: any[];
     @ViewChild("sourceGrid", { read: IgxGridComponent }) public sourceGrid: IgxGridComponent;
     @ViewChild("targetGrid", { read: IgxGridComponent }) public targetGrid: IgxGridComponent;
-
+    private _prevIcon;
     constructor() {
         this.data1 = DATA;
         this.data2 = [];
@@ -40,7 +40,12 @@ export class GridDragToGridSampleComponent {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            ghost.querySelector("igx-icon").innerHTML = icon;
+            const currentIcon = [...ghost.querySelectorAll("igx-icon")]
+            .find((e) => e.innerText === (this._prevIcon || DragIcon.DEFAULT));
+            if (currentIcon) {
+                currentIcon.innerText = icon;
+                this._prevIcon = icon;
+            }
         }
     }
 }

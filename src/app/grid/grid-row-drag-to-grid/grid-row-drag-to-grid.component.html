@@ -10,6 +10,9 @@
         <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
         <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
         <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
+        <ng-template igxDragIndicatorIcon>
+            <igx-icon>drag_handle</igx-icon>
+        </ng-template>
     </igx-grid>
     <igx-grid #targetGrid igxDrop [data]="data2" [height]="'480px'" [width]="'640px'" [autoGenerate]="false" [emptyGridTemplate]="dragHereTemplate"
         (onEnter)="onEnterAllowed($event)" (onLeave)="onLeaveAllowed($event)" (onDrop)="onDropAllowed($event)" [primaryKey]="'ID'">
