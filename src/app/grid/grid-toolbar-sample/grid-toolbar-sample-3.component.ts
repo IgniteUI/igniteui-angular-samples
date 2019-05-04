@@ -40,8 +40,8 @@ export class GridToolbarSample3Component implements OnInit {
 
         args.exporter.onColumnExport.subscribe((columnArgs: IColumnExportingEventArgs) => {
             // Don't export image fields
-            columnArgs.cancel = columnArgs.header === "Avatar" ||
-                                columnArgs.header === "CountryFlag";
+            columnArgs.cancel = columnArgs.header === "Athlete" ||
+                                columnArgs.header === "Country";
         });
     }
 }

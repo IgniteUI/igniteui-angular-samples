@@ -1,3 +1,5 @@
+// CSS Reset, comment out if not required or using a different module
+// @import '~minireset.css/minireset';
 @import '~igniteui-angular/lib/core/styles/themes/index';
 @include igx-core();
 @include igx-theme($default-palette);
@@ -7,6 +9,7 @@ html,
 body {
     height: 100%;
     overflow: hidden;
+    margin: 0;
 }
 
 .sample-wrapper {
@@ -93,11 +96,19 @@ body {
     text-align: right !important;
 }
 
-.dark-theme {
-    @include igx-dark-theme($green-palette); // grid caption styling
-    background-color: #111;
+$green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
 
-    ::-moz-placeholder {
-        opacity: 1;
-    }
+.fin-dark-theme {
+    @include igx-dark-theme($green-palette);
+     background: #333;
+
+     ::-moz-placeholder {
+         opacity: 1;
+     }
+ }
+
+.dark-theme {
+    background: #333;
+    color: #fff;
+    @include igx-dark-theme($green-palette);
 }

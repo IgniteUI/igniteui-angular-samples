@@ -14,7 +14,7 @@
     margin-bottom: 5px;
     margin-right: 10px;
     margin-left: 10px;
-    width:100%;    
+    width:100%;
     font-size: 1rem;
     font-family: sans-serif;
 }
@@ -38,4 +38,13 @@ input {
     margin-bottom: 6px;
     margin-left: 4px;
     vertical-align: bottom;
+}
+
+.select {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: center;
+    font-size: 1rem;
+    font-family: sans-serif;
+    width:110px;
 }

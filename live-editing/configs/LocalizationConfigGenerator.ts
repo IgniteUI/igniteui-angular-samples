@@ -20,11 +20,11 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
         // localization sample 1
         configs.push(new Config({
             component: LocalizationSample1Component,
-            additionalFiles: ["src/app/services/localization-samples/localization-sample-1/nwindData.ts"],
+            additionalFiles: ["src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, LocalizationSample1Component, IgxGridModule, IgxIconModule],
                 ngDeclarations: [LocalizationSample1Component],
-                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule.forRoot()]
+                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -32,12 +32,12 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
         // localization sample 2
         configs.push(new Config({
             component: LocalizationSample2Component,
-            additionalFiles: ["src/app/services/localization-samples/localization-sample-2/nwindData.ts"],
+            additionalFiles: ["src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, LocalizationSample2Component, IgxIconModule,
                           IgxTimePickerModule, IgxGridModule],
                 ngDeclarations: [LocalizationSample2Component],
-                ngImports: [IgxInputGroupModule, IgxIconModule, IgxTimePickerModule, IgxGridModule.forRoot()]
+                ngImports: [IgxInputGroupModule, IgxIconModule, IgxTimePickerModule, IgxGridModule]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));
@@ -45,11 +45,11 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
         // localization sample 3
         configs.push(new Config({
             component: LocalizationSample3Component,
-            additionalFiles: ["src/app/services/localization-samples/localization-sample-3/nwindData.ts"],
+            additionalFiles: ["src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxInputGroupModule, LocalizationSample3Component, IgxGridModule, IgxIconModule],
                 ngDeclarations: [LocalizationSample3Component],
-                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule.forRoot()]
+                ngImports: [IgxInputGroupModule, IgxGridModule, IgxGridModule]
             }),
             shortenComponentPathBy: "/localization-samples/"
         }));

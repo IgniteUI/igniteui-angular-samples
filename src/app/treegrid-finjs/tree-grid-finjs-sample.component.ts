@@ -1,10 +1,12 @@
 
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxButtonGroupComponent,
-    IgxSliderComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings,
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DataUtil, HorizontalAlignment,
+    IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
+    PositionSettings,
+    SortingDirection,
     VerticalAlignment} from "igniteui-angular";
-import { Observable } from "rxjs";
-import { TreeLocalDataService } from "./treeLocalData.service";
+import { LocalDataService } from "../grid-finjs/localData.service";
+import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
 
 interface IButton {
     ripple ?: string;
@@ -36,7 +38,7 @@ export class Button {
 }
 
 @Component({
-    providers: [TreeLocalDataService],
+    providers: [LocalDataService],
     selector: "app-tree-grid-finjs-sample",
     styleUrls: ["./tree-grid-finjs-sample.component.scss"],
     templateUrl: "./tree-grid-finjs-sample.component.html"
@@ -52,7 +54,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public theme = false;
     public volume = 1000;
     public frequency = 500;
-    public data: Observable < any[] > ;
+    public data: any[] = [];
     public recordsUpdatedLastSecond: number[] ;
     public controls = [
         new Button({
@@ -74,6 +76,30 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
             selected: false
         })
     ];
+    public groupColumns = ["Category", "Type", "Contract"];
+    public aggregations: ITreeGridAggregation[] = [
+        {
+            aggregate: (parent: any, data: any[]) => {
+                return data.map((r) => r.Change).reduce((ty, u) => ty + u, 0);
+            },
+            field: "Change"
+        },
+        {
+            aggregate: (parent: any, data: any[]) => {
+                return data.map((r) => r.Price).reduce((ty, u) => ty + u, 0);
+            },
+            field: "Price"
+        },
+        {
+            aggregate: (parent: any, data: any[]) => {
+                return parent.Change / (parent.Price - parent.Change) * 100;
+            },
+            field: "Change(%)"
+        }
+    ];
+    public primaryKey = "ID";
+    public childDataKey = "Children";
+    public groupColumnKey = "Categories";
 
     public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
 
@@ -95,15 +121,16 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private _timer;
 
     // tslint:disable-next-line:member-ordering
-    constructor(private zone: NgZone, private localService: TreeLocalDataService, private elRef: ElementRef) {
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
-        this.data = this.localService.records;
+        this.localService.records.subscribe((d) => this.data = d);
     }
     // tslint:disable-next-line:member-ordering
     public ngOnInit() {
         if (this.theme) {
-            document.body.classList.add("dark-theme");
+            document.body.classList.add("fin-dark-theme");
         }
+        this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
     }
 
     public ngAfterViewInit() {
@@ -113,14 +140,12 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         switch (event.index) {
             case 0: {
                     this.disableOtherButtons(event.index, true);
-                    const currData = this.grid1.data;
-                    this._timer = setInterval(() => this.ticker(currData), this.frequency);
+                    this._timer = setInterval(() => this.ticker(this.data), this.frequency);
                     break;
                 }
             case 1: {
                     this.disableOtherButtons(event.index, true);
-                    const currData = this.grid1.data;
-                    this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
+                    this._timer = setInterval(() => this.tickerAllPrices(this.data), this.frequency);
                     break;
                 }
                 case 2: {
@@ -145,15 +170,15 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     }
 
     public formatNumber(value: number) {
-        return value.toFixed(2);
+        return value ? value.toFixed(2) : "";
     }
 
     public percentage(value: number) {
-        return value.toFixed(2) + "%";
+        return value ? value.toFixed(2) + "%" : "";
     }
 
     public formatCurrency(value: number) {
-        return "$" + value.toFixed(3);
+        return value ? "$" + value.toFixed(3) : "";
     }
 
     public onVolumeChanged(event: any) {
@@ -165,9 +190,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public onThemeChanged(event: any) {
         const parentEl = this.parentComponentEl();
         if (event.checked && parentEl.classList.contains("main")) {
-            parentEl.classList.add("dark-theme");
+            parentEl.classList.add("fin-dark-theme");
         } else {
-            parentEl.classList.remove("dark-theme");
+            parentEl.classList.remove("fin-dark-theme");
         }
     }
 
@@ -246,7 +271,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     // tslint:disable-next-line:member-ordering
     public ticker(data: any) {
         this.zone.runOutsideAngular(() => {
-            this.grid1.data = this.updateRandomPrices(data);
+            this.updateRandomPrices(data);
+            this.recalculateAggregations(this.grid1.data);
             this.zone.run(() => this.grid1.markForCheck());
         });
     }
@@ -254,48 +280,50 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     // tslint:disable-next-line:member-ordering
     public tickerAllPrices(data: any) {
         this.zone.runOutsideAngular(() => {
-            this.grid1.data = this.updateAllPrices(data);
+            this.updateAllPrices(data);
+            this.recalculateAggregations(this.grid1.data);
             this.zone.run(() => this.grid1.markForCheck());
         });
+    }
+
+    private recalculateAggregations(data: any[]) {
+        for (const parent of data) {
+            const children = parent[this.childDataKey];
+
+            if (children && children.length) {
+                for (const aggregation of this.aggregations) {
+                    parent[aggregation.field] = aggregation.aggregate(parent, children);
+                }
+                this.recalculateAggregations(children);
+            }
+        }
     }
 
     // tslint:disable-next-line:member-ordering
     public updateAllPrices(data: any[]): any {
         for (const dataRow of data) {
-          this.randomizeObjectData(dataRow, true);
+          this.randomizeObjectData(dataRow);
         }
         return data;
       }
 
     // tslint:disable-next-line:member-ordering
     public updateRandomPrices(data: any[]): any {
-        for (const dataRow of data) {
-            this.randomizeObjectData(dataRow, false);
-            this.randomizeChildObjData(dataRow);
+        let y = 0;
+        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
+          this.randomizeObjectData(data[i]);
+          y++;
         }
+       // return {data: currData, recordsUpdated: y };
         return data;
       }
 
-    private randomizeObjectData(dataObj, random: boolean) {
+    private randomizeObjectData(dataObj) {
         const changeP = "Change(%)";
         const res = this.generateNewPrice(dataObj.Price);
         dataObj.Change = res.Price - dataObj.Price;
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
-
-        if (random && dataObj.Categories) {
-            // tslint:disable-next-line:prefer-for-of
-            for (let y = 0; y < dataObj.Categories.length; y++) {
-                this.randomizeObjectData(dataObj.Categories[y], true);
-            }
-        }
-    }
-
-    private randomizeChildObjData(dataObj) {
-        for (let i = Math.round(Math.random() * 10); i < dataObj.Categories.length;
-            i += Math.round(Math.random() * 10)) {
-            this.randomizeObjectData(dataObj.Categories[i], true);
-        }
     }
     private generateNewPrice(oldPrice): any {
         const rnd = parseFloat(Math.random().toFixed(2));

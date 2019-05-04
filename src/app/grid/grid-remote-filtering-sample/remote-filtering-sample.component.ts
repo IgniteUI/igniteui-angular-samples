@@ -25,6 +25,8 @@ export class RemoteFilteringSampleComponent implements OnInit {
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
         const sortingExpr = this.grid.sortingExpressions[0];
         this._chunkSize = Math.ceil(parseInt(this.grid.height, 10) / this.grid.rowHeight);
+        this.grid.isLoading = true;
+
         this._remoteService.getData(
             {
                 chunkSize: this._chunkSize,
@@ -34,6 +36,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             sortingExpr,
             (data) => {
                 this.grid.totalItemCount = data["@odata.count"];
+                this.grid.isLoading = false;
             });
     }
 

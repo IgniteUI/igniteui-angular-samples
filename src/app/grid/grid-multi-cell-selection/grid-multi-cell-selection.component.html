@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div>
+        <igx-grid #source
+            width="600px"
+            [allowFiltering]="true"
+            filterMode="excelStyleFilter"
+            (onRangeSelection)="transferData(source, target, notification)"
+            (onColumnInit)="initColumn($event)"
+            (onSortingDone)="transferExpressions(source, target, 'sort')"
+            (onFilteringDone)="transferExpressions(source, target, 'filter')"
+            [data]="sourceData" height="600px" autoGenerate="true">
+        </igx-grid>
+    </div>
+
+    <div>
+        <igx-grid #target width="600px"
+            [data]="targetData" height="600px" autoGenerate="true"
+            (onColumnInit)="initColumn($event)">
+        </igx-grid>
+    </div>
+
+    <igx-toast #notification></igx-toast>
+</div>

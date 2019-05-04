@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { ModuleWithProviders, NgModule } from "@angular/core";
 
 // Chart Modules
@@ -8,21 +9,55 @@ import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-cha
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
 import { IgxDataChartScatterCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-core-module";
 import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-module";
+import { IgxDataChartStackedModule } from "igniteui-angular-charts/ES5/igx-data-chart-stacked-module";
 
 // Axes
+import { IgxCategoryAngleAxisModule } from "igniteui-angular-charts/ES5/igx-category-angle-axis-module";
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
+import { IgxCategoryYAxisModule } from "igniteui-angular-charts/ES5/igx-category-y-axis-module";
+import { IgxNumericAngleAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-angle-axis-module";
+import { IgxNumericRadiusAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-radius-axis-module";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
+import { IgxTimeXAxisModule } from "igniteui-angular-charts/ES5/igx-time-x-axis-module";
 
 // Series
+import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBubbleSeriesModule } from "igniteui-angular-charts/ES5/igx-bubble-series-module";
 import { IgxColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-column-series-module";
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxPolarAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-area-series-module";
+import { IgxPolarLineSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-line-series-module";
+import { IgxPolarScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-scatter-series-module";
+import { IgxPolarSplineAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-spline-area-series-module";
+import { IgxPolarSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-polar-spline-series-module";
+import { IgxRadialAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-area-series-module";
+import { IgxRadialColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-column-series-module";
+import { IgxRadialLineSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-line-series-module";
+import { IgxRadialPieSeriesModule } from "igniteui-angular-charts/ES5/igx-radial-pie-series-module";
 import { IgxScatterAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-area-series-module";
+import { IgxScatterContourSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-contour-series-module";
 import { IgxScatterLineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-line-series-module";
+import { IgxScatterPolygonSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polygon-series-module";
+import { IgxScatterPolylineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-polyline-series-module";
 import { IgxScatterSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-series-module";
 import { IgxScatterSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-scatter-spline-series-module";
+import { IgxStacked100AreaSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-area-series-module";
+import { IgxStacked100BarSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-module";
+import { IgxStacked100ColumnSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-column-series-module";
+import { IgxStacked100LineSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-line-series-module";
+import { IgxStacked100SplineSeriesModule} from "igniteui-angular-charts/ES5/igx-stacked-100-spline-series-module";
+import { IgxStackedAreaSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-area-series-module";
+import { IgxStackedBarSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-module";
+import { IgxStackedColumnSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-column-series-module";
+import { IgxStackedLineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-line-series-module";
+import { IgxStackedSplineSeriesModule } from "igniteui-angular-charts/ES5/igx-stacked-spline-series-module";
+
+import {IgxLinearContourValueResolverModule
+} from "igniteui-angular-charts/ES5/igx-linear-contour-value-resolver-module";
+import { IgxSizeScaleModule } from "igniteui-angular-charts/ES5/igx-size-scale-module";
+import { IgxValueBrushScaleModule } from "igniteui-angular-charts/ES5/igx-value-brush-scale-module";
 
 // Highlight and Annotation Layers
 import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
@@ -63,7 +98,8 @@ import {
 } from "./data-chart-series-highlighting/data-chart-series-highlighting.component";
 import { DataChartSeriesMarkersComponent } from "./data-chart-series-markers/data-chart-series-markers.component";
 import { DataChartSeriesTooltipsComponent } from "./data-chart-series-tooltips/data-chart-series-tooltips.component";
-import { DataChartSeriesTrendlinesComponent
+import {
+    DataChartSeriesTrendlinesComponent
 } from "./data-chart-series-trendlines/data-chart-series-trendlines.component";
 import { DataChartSynchronizationComponent } from "./data-chart-synchronization/data-chart-synchronization.component";
 import { DataChartTitlesComponent } from "./data-chart-titles/data-chart-titles.component";
@@ -104,9 +140,21 @@ import {
     DataChartTypeValueOverlayComponent
 } from "./data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
+import { SampleCategoryData } from "./SampleCategoryData";
+import { SampleDensityData } from "./SampleDensityData";
+import { SampleFinancialData } from "./SampleFinancialData";
+import { SamplePolarData } from "./SamplePolarData";
+import { SampleRadialData } from "./SampleRadialData";
+import { SampleRangeData } from "./SampleRangeData";
+import { SampleScatterData } from "./SampleScatterData";
+import { SampleScatterStats } from "./SampleScatterStats";
+import { SampleShapeData } from "./SampleShapeData";
+import { SharedData } from "./SharedData";
+
 // Indicators and Overlays
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
 import { IgxMedianPriceIndicatorModule } from "igniteui-angular-charts/ES5/igx-median-price-indicator-module";
+import { IgxMoneyFlowIndexIndicatorModule } from "igniteui-angular-charts/ES5/igx-money-flow-index-indicator-module";
 
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
@@ -148,7 +196,10 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartCoreModule,
         IgxDataChartCategoryModule,
         IgxDataChartCategoryCoreModule,
+        IgxCategoryAngleAxisModule,
         IgxCategoryXAxisModule,
+        IgxNumericAngleAxisModule,
+        IgxNumericRadiusAxisModule,
         IgxNumericYAxisModule,
         IgxColumnSeriesModule,
         IgxDataChartInteractivityModule,
@@ -160,9 +211,20 @@ import { FormsModule } from "@angular/forms";
         IgxDataChartCategoryTrendLineModule,
         IgxDataChartScatterCoreModule,
         IgxDataChartScatterModule,
+        IgxPolarAreaSeriesModule,
+        IgxPolarLineSeriesModule,
+        IgxPolarScatterSeriesModule,
+        IgxPolarSplineAreaSeriesModule,
+        IgxPolarSplineSeriesModule,
+        IgxRadialAreaSeriesModule,
+        IgxRadialColumnSeriesModule,
+        IgxRadialLineSeriesModule,
+        IgxRadialPieSeriesModule,
         IgxScatterAreaSeriesModule,
         IgxScatterSeriesModule,
         IgxScatterLineSeriesModule,
+        IgxScatterPolygonSeriesModule,
+        IgxScatterPolylineSeriesModule,
         IgxScatterSplineSeriesModule,
         IgxBubbleSeriesModule,
         IgxNumericXAxisModule,
@@ -172,13 +234,44 @@ import { FormsModule } from "@angular/forms";
         IgxCrosshairLayerModule,
         IgxLegendModule,
         IgxBollingerBandsOverlayModule,
-        IgxMedianPriceIndicatorModule
+        IgxMedianPriceIndicatorModule,
+        IgxMoneyFlowIndexIndicatorModule,
+        IgxBarSeriesModule,
+        IgxCategoryYAxisModule,
+        IgxTimeXAxisModule,
+        IgxScatterContourSeriesModule,
+        IgxLinearContourValueResolverModule,
+        IgxSizeScaleModule,
+        IgxValueBrushScaleModule,
+        IgxDataChartScatterModule,
+        IgxScatterSeriesModule,
+        IgxDataChartStackedModule,
+        IgxStackedColumnSeriesModule,
+        IgxStacked100AreaSeriesModule,
+        IgxStacked100BarSeriesModule,
+        IgxStacked100ColumnSeriesModule,
+        IgxStacked100LineSeriesModule,
+        IgxStacked100SplineSeriesModule,
+        IgxStackedAreaSeriesModule,
+        IgxStackedLineSeriesModule,
+        IgxStackedSplineSeriesModule,
+        IgxStackedBarSeriesModule
     ]
 })
 export class DataChartSamplesModule {
     public static forRoot(): ModuleWithProviders {
         return {
-            ngModule: DataChartSamplesModule
+            ngModule: DataChartSamplesModule,
+            providers: [ SampleCategoryData,
+                SampleDensityData,
+                SampleFinancialData,
+                SamplePolarData,
+                SampleRadialData,
+                SampleRangeData,
+                SampleScatterData,
+                SampleScatterStats,
+                SampleShapeData,
+                SharedData]
         };
     }
 }

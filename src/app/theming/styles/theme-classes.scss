@@ -8,7 +8,7 @@
 
 
   //Set the light themes for the components.
-    &.light-theme {
+    &.default-theme {
       background: $light-color;
       ::ng-deep {
         @include igx-grid($light-grid-theme);
@@ -61,6 +61,11 @@
         @include igx-chip($black-chip-theme);
         @include igx-drop-down($black-drop-down-theme);
         @include igx-badge($black-badge-theme);
+
+        .igx-drop-down__list{
+            background: $black-color;
+          }
+
       }
     }
   }

@@ -9,10 +9,15 @@ import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
+import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
+import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
+import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
+import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
+import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -87,6 +92,26 @@ export const gridsRoutes: Routes = [
         component: FilteringSampleComponent,
         data: gridsRoutesData["grid-filtering-sample"],
         path: "grid-filtering-sample"
+    },
+    {
+        component: FilteringTemplateSampleComponent,
+        data: gridsRoutesData["grid-filtering-template-sample"],
+        path: "grid-filtering-template-sample"
+    },
+    {
+        component: ExcelStyleFilteringSample1Component,
+        data: gridsRoutesData["grid-excel-style-filtering-sample-1"],
+        path: "grid-excel-style-filtering-sample-1"
+    },
+    {
+        component: ExcelStyleFilteringSample2Component,
+        data: gridsRoutesData["grid-excel-style-filtering-sample-2"],
+        path: "grid-excel-style-filtering-sample-2"
+    },
+    {
+        component: ExcelStyleFilteringSample3Component,
+        data: gridsRoutesData["grid-excel-style-filtering-sample-3"],
+        path: "grid-excel-style-filtering-sample-3"
     },
     {
         component: GridCustomFilteringComponent,
@@ -197,6 +222,11 @@ export const gridsRoutes: Routes = [
         component: AboutComponent,
         data: gridsRoutesData["grid-about"],
         path: "grid-about"
+    },
+    {
+        component: GridMultiCellSelectionComponent,
+        data: gridsRoutesData["grid-multi-cell-selection"],
+        path: "grid-multi-cell-selection"
     }
 ];
 

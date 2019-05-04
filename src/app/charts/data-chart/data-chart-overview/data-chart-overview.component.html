@@ -6,8 +6,8 @@
             </igx-legend>
         </div>
     </div>
-    <div class="chart2">
-        <igx-data-chart #chart 
+    <div class="chart">
+        <igx-data-chart #chart
             [legend]=legend
             width="100%"
             height="100%"
@@ -16,12 +16,14 @@
             <igx-numeric-x-axis #xAxis name="xAxis"
                 isLogarithmic="true"
                 abbreviateLargeNumbers="true"
-                title="Population">
+                title="Population"
+                minimumValue=10000
+                maximumValue=1000000000 >
             </igx-numeric-x-axis>
             <igx-numeric-y-axis #yAxis name="yAxis"
                 isLogarithmic="true"
                 abbreviateLargeNumbers="true"
-                title="Total GDP ($)">
+                title="Total GDP ($)" >
             </igx-numeric-y-axis>
         </igx-data-chart>
     </div>

@@ -1,11 +1,10 @@
 import { HttpClientModule } from "@angular/common/http";
-import { IgxComboModule, IgxDropDownModule, IgxIconModule,
-    IgxInputGroupModule, IgxSwitchModule, IgxToastModule } from "igniteui-angular";
+import { IgxComboModule, IgxSelectModule, IgxSwitchModule, IgxToastModule } from "igniteui-angular";
+import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { ComboFeatures } from "../../src/app/lists/combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "../../src/app/lists/combo/combo-main/combo-main.component";
 import { ComboRemoteComponent } from "../../src/app/lists/combo/combo-remote/combo-remote.component";
 import { ComboTemplateComponent } from "../../src/app/lists/combo/combo-template/combo-template.component";
-import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { CascadingCombos } from "./../../src/app/lists/combo/cascading-combos/cascading-combos.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -29,9 +28,9 @@ export class ComboConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/lists/combo/cascading-combos/local-data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxComboModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule, CascadingCombos],
+                imports: [IgxComboModule, IgxSelectModule, CascadingCombos],
                 ngDeclarations: [CascadingCombos],
-                ngImports: [IgxComboModule, IgxDropDownModule, IgxIconModule, IgxInputGroupModule]
+                ngImports: [IgxComboModule, IgxSelectModule]
             }),
             component: CascadingCombos,
             shortenComponentPathBy: "/lists/combo/"

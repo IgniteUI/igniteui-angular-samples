@@ -73,10 +73,7 @@ export class TextHighlightSample1Component {
 
             if (this.matchCount) {
                 IgxTextHighlightDirective.setActiveHighlight("group1", {
-                    columnIndex: 0,
-                    index: this.index,
-                    page: 0,
-                    rowIndex: 0
+                    index: this.index
                 });
             }
         } else {

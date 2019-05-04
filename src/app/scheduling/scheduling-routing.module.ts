@@ -7,14 +7,21 @@ import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-
 import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "./calendar/calendar.component";
+import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
 import { DatepickerSample3Component } from "./datepicker/datepicker-sample-3/datepicker-sample-3.component";
 import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/datepicker-sample-4.component";
 import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
 import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
+import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
+import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
+import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
+import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
 import { schedulingRoutesData } from "./scheduling-routes-data";
+import { TimepickerDropdownComponent } from "./timepicker/timepicker-dropdown/timepicker-dropdown.component";
 import { TimePickerSample1Component } from "./timepicker/timepicker-sample-1/timepicker-sample-1.component";
 import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/timepicker-sample-2.component";
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
@@ -62,6 +69,11 @@ export const schedulingRoutes: Routes = [
         path: "calendar-sample-7"
     },
     {
+        component: CalendarViewsComponent,
+        data: schedulingRoutesData["calendar-views"],
+        path: "calendar-views"
+    },
+    {
         component: DatepickerSample1Component,
         data: schedulingRoutesData["datepicker-sample-1"],
         path: "datepicker-sample-1"
@@ -92,6 +104,16 @@ export const schedulingRoutes: Routes = [
         path: "datepicker-sample-6"
     },
     {
+        component: DatepickerSample7Component,
+        data: schedulingRoutesData["datepicker-sample-7"],
+        path: "datepicker-sample-7"
+    },
+    {
+        component: DatepickerDropdownComponent,
+        data: schedulingRoutesData["datepicker-dropdown"],
+        path: "datepicker-dropdown"
+    },
+    {
         component: TimePickerSample1Component,
         data: schedulingRoutesData["timepicker-sample-1"],
         path: "timepicker-sample-1"
@@ -115,6 +137,26 @@ export const schedulingRoutes: Routes = [
         component: TimePickerSample5Component,
         data: schedulingRoutesData["timepicker-sample-5"],
         path: "timepicker-sample-5"
+    },
+    {
+        component: TimepickerDropdownComponent,
+        data: schedulingRoutesData["timepicker-dropdown"],
+        path: "timepicker-dropdown"
+    },
+    {
+        component: MonthpickerSample1Component,
+        data: schedulingRoutesData["monthpicker-sample-1"],
+        path: "monthpicker-sample-1"
+    },
+    {
+        component: MonthpickerSample2Component,
+        data: schedulingRoutesData["monthpicker-sample-2"],
+        path: "monthpicker-sample-2"
+    },
+    {
+        component: MonthpickerSample3Component,
+        data: schedulingRoutesData["monthpicker-sample-3"],
+        path: "monthpicker-sample-3"
     }
 ];
 

@@ -14,7 +14,7 @@ new Config({
         imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxGridModule,
             GridComponent, DataService],
         ngDeclarations: [GridComponent],
-        ngImports: [IgxAvatarModule, IgxBadgeModule, IgxGridModule.forRoot(),
+        ngImports: [IgxAvatarModule, IgxBadgeModule, IgxGridModule,
             HttpClientModule],
         ngProviders: [DataService]
     }),
@@ -96,6 +96,9 @@ The engine will create a `grid.json` file describing the path and content of the
 * app/grid/services/data.ts
 * app/app.module.ts
 * app/app.component.html
+
+### Assets
+Assets like images are not part of the live editing applications and will be accessed directly from our servers. All of the assets URLs should be relative, for example - `assets/images/avatar/joe.jpg`. When parsed by the live editing engine, the links are replaced with absolute URLs, e.g. `https://www.infragistics.com/igniteui-angular-samples/assets/images/avatar/joe.jpg`.
 
 ### Consuming Live Editing JSON files
 

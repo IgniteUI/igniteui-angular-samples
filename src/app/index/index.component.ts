@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
@@ -10,6 +10,7 @@ import { gaugesRoutesData } from "../gauges/gauges-routes-data";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
 import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
+import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-grid-routes-data";
 import { interactionsRoutesData } from "../interactions/interactions-routes-data";
 import { layoutsRoutesData } from "../layouts/layouts-routes-data";
 import { listsRoutesData } from "../lists/lists-routes-data";
@@ -17,6 +18,7 @@ import { menusRoutesData } from "../menus/menus-routes-data";
 import { notificationsRoutesData } from "../notifications/notifications-routes-data";
 import { schedulingRoutesData } from "../scheduling/scheduling-routes-data";
 import { servicesRoutesData } from "../services/services-routes-data";
+import { spreadsheetRoutesData } from "../spreadsheet/spreadsheet-routes-data";
 import { themingRoutesData } from "../theming/theming-routes-data";
 import { treeGridRoutesData } from "../tree-grid/tree-grid-routes-data";
 import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes-data";
@@ -113,6 +115,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
             routesData: gridcrmRoutesData
         },
         {
+            path: "hierarchical-grid",
+            routesData: hierarchicalGridRoutesData
+        },
+        {
             path: "tree-grid",
             routesData: treeGridRoutesData
         },
@@ -123,12 +129,16 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "treegrid-finjs-sample",
             routesData: treegridfinjsRoutesData
+        },
+        {
+            path: "spreadsheet",
+            routesData: spreadsheetRoutesData
         }
     ];
 
     private allNavItems: INavigationItem[] = [];
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private cdr: ChangeDetectorRef) {
         this.appRoutes = this.getAllSampleRoutes("/samples",
             router.config.filter((c) => c.path === "samples")[0].children, this.modulesRoutes);
     }
@@ -172,6 +182,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
             this.toggleParent("header" + loadedParentItem.name);
             document.getElementById("child" + loadedChildItem.displayName).scrollIntoView();
+            this.cdr.detectChanges();
         }
     }
 

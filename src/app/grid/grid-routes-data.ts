@@ -11,6 +11,10 @@ export const gridsRoutesData = {
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
     "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
     "grid-filtering-sample": { displayName: "Grid Filtering", parentName: "Grid" },
+    "grid-filtering-template-sample": { displayName: "Grid Filtering Template", parentName: "Grid" },
+    "grid-excel-style-filtering-sample-1": { displayName: "Grid Excel Style Filtering", parentName: "Grid" },
+    "grid-excel-style-filtering-sample-2": { displayName: "Grid Excel Style Filtering Operations", parentName: "Grid" },
+    "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
@@ -32,5 +36,6 @@ export const gridsRoutesData = {
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
     "grid-state": { displayName: "Grid Save and Load State", parentName: "Grid" },
-    "grid-about": { displayName: "Grid About", parentName: "Grid" }
+    "grid-about": { displayName: "Grid About", parentName: "Grid" },
+    "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" }
 };

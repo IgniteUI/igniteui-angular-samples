@@ -5,7 +5,6 @@ import "rxjs/add/operator/filter";
 import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
-import { CardSample1Component } from "./layouts/card/card-sample-1/card-sample-1.component";
 
 export const samplesRoutes: Routes = [
     {
@@ -66,6 +65,10 @@ export const samplesRoutes: Routes = [
         path: "services"
     },
     {
+        loadChildren: "./spreadsheet/spreadsheet.module#SpreadsheetModule",
+        path: "spreadsheet"
+    },
+    {
         loadChildren: "./tree-grid/tree-grid.module#TreeGridModule",
         path: "tree-grid"
     },
@@ -74,13 +77,12 @@ export const samplesRoutes: Routes = [
         path: "grid"
     },
     {
-        loadChildren: "./grid-crm/grid-crm.module#GridCRMModule",
-        path: "grid-crm"
+        loadChildren: "./hierarchical-grid/hierarchical-grid.module#HierarchicalGridModule",
+        path: "hierarchical-grid"
     },
     {
-        component: CardSample1Component,
-        data: { displayName: "Card with Header and Content", parentName: "Card" },
-        path: "card-sample-1"
+        loadChildren: "./grid-crm/grid-crm.module#GridCRMModule",
+        path: "grid-crm"
     },
     {
         loadChildren: "./grid-finjs/grid-finjs.module#GridFinjsModule",
