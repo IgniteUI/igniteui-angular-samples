@@ -1,5 +1,8 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+    <div class="density-chooser">
+        <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
+    </div>
+    <igx-grid #grid1 [data]="data" [displayDensity]="density" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
         <igx-column field="ProductName" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [movable]="true" [dataType]="'string'">
