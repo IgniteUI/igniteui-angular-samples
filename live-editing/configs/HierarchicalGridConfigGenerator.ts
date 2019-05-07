@@ -117,9 +117,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringSample1Component],
+                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringSample1Component, IgxButtonGroupModule],
                 ngDeclarations: [HGridExcelStyleFilteringSample1Component],
-                ngImports: [IgxHierarchicalGridModule]
+                ngImports: [IgxHierarchicalGridModule, IgxButtonGroupModule]
             }),
             component: HGridExcelStyleFilteringSample1Component
         }));
