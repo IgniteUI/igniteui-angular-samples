@@ -93,6 +93,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridMultiRowLayoutComponent } from '../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -514,6 +515,15 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridMultiCellSelectionComponent, IgxGridModule, IgxToastModule],
                 ngDeclarations: [GridMultiCellSelectionComponent],
                 ngImports: [IgxGridModule, IgxToastModule]
+            })
+        }));
+        configs.push(new Config({
+            component: GridMultiRowLayoutComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiRowLayoutComponent, IgxGridModule],
+                ngDeclarations: [GridMultiRowLayoutComponent],
+                ngImports: [IgxGridModule]
             })
         }));
 

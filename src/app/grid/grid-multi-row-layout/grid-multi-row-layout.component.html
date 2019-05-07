@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <igx-grid #grid
+        [width]="'100%'"
+        [data]="sourceData" height="600px" [autoGenerate]="false" [groupingExpressions]='group'>
+        <igx-column-layout>
+            <igx-column [rowStart]="1" [rowEnd]="3" [colStart]="1" field="ID"></igx-column>
+        </igx-column-layout>
+        <igx-column-layout>
+            <igx-column [rowStart]="1" [colStart]="1" [colEnd]="3" field="CompanyName"></igx-column>
+            <igx-column [rowStart]="2" [colStart]="1" [colEnd]="1" field="ContactName" [groupable]="true"></igx-column>
+            <igx-column [rowStart]="2" [colStart]="2" [colEnd]="2" field="ContactTitle" [groupable]="true"></igx-column>
+        </igx-column-layout>
+        <igx-column-layout>
+            <igx-column [rowStart]="1" [colStart]="1" [colEnd]="1" field="Country" [groupable]="true"></igx-column>
+            <igx-column [rowStart]="1" [colStart]="2" [colEnd]="2" field="Region" [groupable]="true"></igx-column>
+            <igx-column [rowStart]="1" [colStart]="3" [colEnd]="3" field="PostalCode" [groupable]="true"></igx-column>
+            <igx-column [rowStart]="2" [colStart]="1" [colEnd]="1" field="City" [groupable]="true"></igx-column>
+            <igx-column [rowStart]="2" [colStart]="2" [colEnd]="4" field="Address"></igx-column>
+        </igx-column-layout>
+        <igx-column-layout>
+                <igx-column [rowStart]="1" [colStart]="1" [colEnd]="1" field="Phone"></igx-column>
+                <igx-column [rowStart]="2" [colStart]="1" [colEnd]="1" field="Fax"></igx-column>
+            </igx-column-layout>
+    </igx-grid>
+</div>
