@@ -475,9 +475,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: ExcelStyleFilteringSample1Component,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [ExcelStyleFilteringSample1Component, IgxGridModule],
+                imports: [ExcelStyleFilteringSample1Component, IgxGridModule, IgxButtonGroupModule],
                 ngDeclarations: [ExcelStyleFilteringSample1Component],
-                ngImports: [IgxGridModule]
+                ngImports: [IgxGridModule, IgxButtonGroupModule]
             })
         }));
 
