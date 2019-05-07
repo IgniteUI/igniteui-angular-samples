@@ -21,6 +21,9 @@
                 <igx-switch [(ngModel)]="state.sorting" (change)="onChange($event, 'sorting')">Sorting</igx-switch>
             </div>
             <div class="control-item">
+                <igx-switch [(ngModel)]="state.columns" (change)="onChange($event, 'columns')">Columns</igx-switch>
+            </div>
+            <div class="control-item">
                 <span class="clear-button" (click)="clearStorage(toast)" #target="tooltipTarget" [igxTooltipTarget]="clear"><igx-icon>delete</igx-icon></span>
             </div>
             <div class="control-item">
@@ -31,25 +34,9 @@
 
     <igx-grid #grid1 igxState [data]="localData" [primaryKey]="'EmployeeID'" width="950px" height="550px"
         [rowEditable]="true" [allowFiltering]="true" [rowSelectable]="true"
-        [paging]="true" [columnPinning]="true" >
-        <igx-column #grid1 field="FirstName" header="First Name"  width="150px" [sortable]="true" [filterable]="true" [pinned]="true" [movable]="true">
-        </igx-column>
-        <igx-column field="LastName" header="Last Name" width="150px" [sortable]="true" [filterable]="true" [pinned]="true" [movable]="true">
-        </igx-column>
-        <igx-column field="Country" width="140px" [sortable]="true" [filterable]="true" [movable]="true">
-        </igx-column>
-        <igx-column field="Age" width="110px" dataType="number" [sortable]="true" [filterable]="true" [movable]="true">
-        </igx-column>
-        <igx-column field="RegistererDate" header="Registerer Date" width="180px" dataType="date" [sortable]="true" [filterable]="true" [movable]="true">
-            <ng-template igxCell let-value>
-                {{ value | date }}
-            </ng-template>
-        </igx-column>
-            <igx-column field="IsActive" header="Is Active" width="140px" dataType="boolean" [sortable]="true" [filterable]="true" [movable]="true">
-            <ng-template igxCell let-cell="cell">
-            <igx-checkbox [checked]="cell.value" [disabled]="true"></igx-checkbox>
-            </ng-template>
-        </igx-column>
+        [paging]="true" [columnPinning]="true" (onColumnInit)="initColumns($event)">
+        <igx-column *ngFor="let c of columns" [sortable]="true" [movable]="true" [filterable]="true"
+            [field]="c.field" [header]="c.header" [dataType]="dataType" [pinned]="c.pinned" [hidden]="c.hidden"></igx-column>
     </igx-grid>
 
     <div #clear="tooltip" igxTooltip>Clear the state from localStorage.</div>

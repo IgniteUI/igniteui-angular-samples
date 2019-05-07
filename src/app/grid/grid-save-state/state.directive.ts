@@ -3,12 +3,13 @@ import { NavigationStart, Router } from "@angular/router";
 import { DefaultSortingStrategy, FilteringExpressionsTree,
     IFilteringExpression, IgxGridComponent, ISortingExpression } from "igniteui-angular";
 import { take } from "rxjs/operators";
-
+// tslint:disable:object-literal-sort-keys
 interface IGridState {
     paging: {index: number, recordsPerPage: number};
     selection: any[];
     filtering: FilteringExpressionsTree;
     sorting: ISortingExpression[];
+    columns: any[];
 }
 
 @Directive({
@@ -21,13 +22,15 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
     public filtering = true;
     public paging = true;
     public sorting = true;
+    public columns = true;
     public shouldSaveState = true;
 
     public initialState: IGridState = {
         filtering: new FilteringExpressionsTree(0),
         paging: {index: 0, recordsPerPage: this.perPage},
         selection: [],
-        sorting: []
+        sorting: [],
+        columns: []
     };
 
     public gridState: IGridState;
@@ -62,6 +65,9 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
 
         const selectionState = {selection: this.grid1.selectedRows()};
         this.storeState("selection", selectionState);
+
+        const columnsState = {columns: this.getColumns()};
+        this.storeState("columns", columnsState);
     }
 
     public loadGridState() {
@@ -187,5 +193,22 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
             columnFilteringExpressionsTree.filteringOperands.push(columnFiltOperand);
         }
         return columnFilteringExpressionsTree;
+    }
+
+    private getColumns() {
+        const gridColumns = this.grid1.columns.map((c) => {
+            return {
+                pinned: c.pinned,
+                sortable: c.sortable,
+                filterable: c.filterable,
+                movable: c.movable,
+                hidden: c.hidden,
+                dataType: c.dataType,
+                field: c.field,
+                width: c.width,
+                header: c.header
+            };
+        });
+        return gridColumns;
     }
 }
