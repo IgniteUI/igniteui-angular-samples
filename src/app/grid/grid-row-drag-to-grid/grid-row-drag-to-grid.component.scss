@@ -11,3 +11,11 @@
 igx-grid {
     margin: 20px;
 }
+
+.empty-grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
