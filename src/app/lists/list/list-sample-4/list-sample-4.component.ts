@@ -41,9 +41,22 @@ export class ListSample4Component implements OnInit {
     }
   ];
 
+  public density = "comfortable";
+  public displayDensities;
+
   constructor() { }
 
-  public ngOnInit() { }
+  public ngOnInit() {
+    this.displayDensities = [
+        { label: "comfortable", selected: this.density === "comfortable", togglable: true },
+        { label: "cosy", selected: this.density === "cosy", togglable: true },
+        { label: "compact", selected: this.density === "compact", togglable: true }
+    ];
+  }
+
+  public selectDensity(event) {
+    this.density = this.displayDensities[event.index].label;
+  }
 
   public toggleFavorite(contact: any) {
     contact.isFavorite = !contact.isFavorite;

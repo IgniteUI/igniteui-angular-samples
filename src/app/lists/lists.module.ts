@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
+    IgxButtonGroupModule,
     IgxButtonModule,
     IgxComboModule,
     IgxFilterModule,
@@ -63,6 +64,7 @@ import { ListsRoutingModule } from "./lists-routing.module";
         IgxSwitchModule,
         IgxSelectModule,
         IgxToastModule,
+        IgxButtonGroupModule,
         HttpClientModule
     ]
 })
