@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxAvatarModule, IgxButtonModule, IgxFilterModule, IgxFilterOptions,
-    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxSliderModule, IgxToastModule, IgxButtonGroupModule
+    IgxAvatarModule, IgxButtonModule, IgxButtonGroupModule, IgxFilterModule, IgxFilterOptions,
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxSliderModule, IgxToastModule, 
 } from "igniteui-angular";
 import { ListChatSampleComponent } from "../../src/app/lists/list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "../../src/app/lists/list/list-sample-1/list-sample-1.component";
