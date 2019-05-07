@@ -1,3 +1,7 @@
+<div class="density-chooser">
+    <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
+</div>
+
 <igx-input-group type="search" class="search">
     <igx-prefix>
         <igx-icon>search</igx-icon>
@@ -9,7 +13,7 @@
 </igx-input-group>
 
 <div class="list-sample">
-    <igx-list>
+    <igx-list [displayDensity]="density">
         <igx-list-item isHeader="true">Contacts</igx-list-item>
         <igx-list-item #item *ngFor="let contact of contacts | igxFilter: filterContacts;">
             <div class="item-container">

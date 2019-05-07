@@ -7,6 +7,7 @@ import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
 import { ButtonGroupSampleComponent } from "./buttonGroup/button-group-sample-4/button-group-sample.component";
+import { ButtonsDisplayDensityComponent } from "./buttons/buttons-display-density/buttons-display-density.component";
 import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
@@ -57,6 +58,11 @@ export const dataEntriesRoutes: Routes = [
         component: MovieComponent,
         data: dataEntriesRoutesData.movie,
         path: "movie"
+    },
+    {
+        component: ButtonsDisplayDensityComponent,
+        data: dataEntriesRoutesData["buttons-display-density"],
+        path: "buttons-display-density"
     },
     {
         component: ButtonGroupSample1Component,
