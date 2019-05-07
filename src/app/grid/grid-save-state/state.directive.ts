@@ -82,23 +82,27 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
 
             for (const f of this.gridState.filtering.filteringOperands) {
               const filtOperand = f as FilteringExpressionsTree;
-              const column = this.grid1.columns.filter((col) => col.field === filtOperand.fieldName)[0];
-              const columnFilteringExpressionsTree =
-                  new FilteringExpressionsTree(filtOperand.operator, filtOperand.fieldName);
+              let columnsFiltOperands: any;
 
-              let columnsFiltOperands = filtOperand.filteringOperands[0] as any;
-              if (Array.isArray(columnsFiltOperands.filteringOperands)) {
-                columnsFiltOperands = columnsFiltOperands.filteringOperands;
+              // We need to make sure that we have a IFilteringExpression[] to pass to the createExpressionsTree method
+              // Depending on filtering logic (AND or OR), filtOperand.filteringOperands returns different content,
+              // so we have three cases, where to build IFilteringExpression[], see #1, #2 and #3
+              if (filtOperand.filteringOperands.length > 1) {
+                // #1 filtOperand.filteringOperands is an array of IFilteringExpression objects
+                columnsFiltOperands = filtOperand.filteringOperands as IFilteringExpression[];
               } else {
-                columnsFiltOperands = [columnsFiltOperands];
+                columnsFiltOperands = filtOperand.filteringOperands[0] as IFilteringExpression;
+                if (Array.isArray(columnsFiltOperands.filteringOperands)) {
+                  // #2 filtOperand.filteringOperands is an array of just one IFilteringExpression\
+                  // containing filteringOperands property, which value is an array of IFilteringExpression objects
+                  columnsFiltOperands = columnsFiltOperands.filteringOperands;
+                } else {
+                  // #3 just an IFilteringExpression object, that we wrap in an array
+                  columnsFiltOperands = [columnsFiltOperands];
+                }
               }
-
-              for (const fo of columnsFiltOperands) {
-                const columnFiltOperand = fo as IFilteringExpression;
-                columnFiltOperand.condition = column.filters.condition(columnFiltOperand.condition.name);
-                columnFilteringExpressionsTree.filteringOperands.push(columnFiltOperand);
-              }
-
+              // we pass an array of IFilteringExpression to the createExpressionsTree
+              const columnFilteringExpressionsTree = this.createExpressionsTree(columnsFiltOperands, filtOperand);
               gridFilteringExpressionsTree.filteringOperands.push(columnFilteringExpressionsTree);
             }
 
@@ -163,5 +167,25 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
         this.grid1.onPagingDone.unsubscribe();
         this.grid1.onFilteringDone.unsubscribe();
         this.grid1.onSortingDone.unsubscribe();
+    }
+
+    /**
+     * this method takes every IFilteringExpresion from the columnsFiltOperands
+     * and adds it to a FilteringExpressionsTree
+     */
+    private createExpressionsTree(columnsFiltOperands: IFilteringExpression[],
+                                  filtOperand: FilteringExpressionsTree): FilteringExpressionsTree {
+        const columnFilteringExpressionsTree =
+            new FilteringExpressionsTree(filtOperand.operator, filtOperand.fieldName);
+        const column = this.grid1.columns.filter((col) => col.field === filtOperand.fieldName)[0];
+        for (const fo of columnsFiltOperands) {
+            const columnFiltOperand = fo as IFilteringExpression;
+            columnFiltOperand.condition = column.filters.condition(columnFiltOperand.condition.name);
+            if (column.dataType === "date") {
+                columnFiltOperand.searchVal = new Date(Date.parse(columnFiltOperand.searchVal));
+            }
+            columnFilteringExpressionsTree.filteringOperands.push(columnFiltOperand);
+        }
+        return columnFilteringExpressionsTree;
     }
 }
