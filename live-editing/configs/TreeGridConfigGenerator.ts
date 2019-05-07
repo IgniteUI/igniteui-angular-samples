@@ -10,6 +10,7 @@ import {
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
@@ -18,8 +19,7 @@ import {
     IgxRippleModule,
     IgxSwitchModule,
     IgxToastModule,
-    IgxTreeGridModule,
-    IgxDragDropModule
+    IgxTreeGridModule
 } from "igniteui-angular";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -48,6 +48,7 @@ import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-gr
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRemoteFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
+import { TreeGridRowDrag } from "../../src/app/tree-grid/tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "../../src/app/tree-grid/tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "../../src/app/tree-grid/tree-grid-selection-sample/tree-grid-selection-sample.component";
@@ -63,7 +64,6 @@ import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/t
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { TreeGridRowDrag } from '../../src/app/tree-grid/tree-grid-row-drag/tree-grid-row-drag.component';
 
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -462,7 +462,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-editing-sample/employee.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/employees.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridRowDrag, IgxButtonModule,
                     IgxInputGroupModule, IgxIconModule, IgxDragDropModule],
