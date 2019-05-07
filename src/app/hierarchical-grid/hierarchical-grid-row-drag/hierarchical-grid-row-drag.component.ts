@@ -43,7 +43,6 @@ export class HGridDragSampleComponent implements AfterViewInit {
     @ViewChild("customDragIcon", { read: TemplateRef })
     public dragTemplate: TemplateRef<any>;
     public localData: IDrive[] = [];
-    private _prevIcon;
     constructor() {
         this.localData = createData(3, 12, 8);
     }
@@ -68,11 +67,9 @@ export class HGridDragSampleComponent implements AfterViewInit {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            const currentIcon = [...ghost.querySelectorAll("igx-icon")]
-            .find((e) => e.innerText === (this._prevIcon || DragIcon.DEFAULT));
+            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
             if (currentIcon) {
                 currentIcon.innerText = icon;
-                this._prevIcon = icon;
             }
         }
     }

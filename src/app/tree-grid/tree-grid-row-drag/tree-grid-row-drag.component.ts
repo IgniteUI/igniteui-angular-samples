@@ -17,7 +17,6 @@ export class TreeGridRowDrag {
     public treeGrid: IgxTreeGridComponent;
 
     public localData = [];
-    private _prevIcon;
     constructor() {
         this.localData = FULL_EMPLOYEE_DATA();
     }
@@ -38,11 +37,9 @@ export class TreeGridRowDrag {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            const currentIcon = [...ghost.querySelectorAll("igx-icon")]
-            .find((e) => e.innerText === (this._prevIcon || DragIcon.DEFAULT));
+            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
             if (currentIcon) {
                 currentIcon.innerText = icon;
-                this._prevIcon = icon;
             }
         }
     }

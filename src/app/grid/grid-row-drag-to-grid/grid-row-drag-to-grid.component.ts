@@ -18,7 +18,6 @@ export class GridDragToGridSampleComponent {
     public data2: any[];
     @ViewChild("sourceGrid", { read: IgxGridComponent }) public sourceGrid: IgxGridComponent;
     @ViewChild("targetGrid", { read: IgxGridComponent }) public targetGrid: IgxGridComponent;
-    private _prevIcon;
     constructor() {
         this.data1 = DATA;
         this.data2 = [];
@@ -40,11 +39,9 @@ export class GridDragToGridSampleComponent {
 
     private changeGhostIcon(ghost, icon: string) {
         if (ghost) {
-            const currentIcon = [...ghost.querySelectorAll("igx-icon")]
-            .find((e) => e.innerText === (this._prevIcon || DragIcon.DEFAULT));
+            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
             if (currentIcon) {
                 currentIcon.innerText = icon;
-                this._prevIcon = icon;
             }
         }
     }
