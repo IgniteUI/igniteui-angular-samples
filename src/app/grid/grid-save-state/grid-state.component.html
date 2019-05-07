@@ -34,7 +34,7 @@
 
     <igx-grid #grid1 igxState [data]="localData" [primaryKey]="'EmployeeID'" width="950px" height="550px"
         [rowEditable]="true" [allowFiltering]="true" [rowSelectable]="true"
-        [paging]="true" [columnPinning]="true" (onColumnInit)="initColumns($event)">
+        [paging]="true" [columnPinning]="true">
         <igx-column *ngFor="let c of columns" [sortable]="true" [movable]="true" [filterable]="true"
             [field]="c.field" [header]="c.header" [dataType]="dataType" [pinned]="c.pinned" [hidden]="c.hidden"></igx-column>
     </igx-grid>
