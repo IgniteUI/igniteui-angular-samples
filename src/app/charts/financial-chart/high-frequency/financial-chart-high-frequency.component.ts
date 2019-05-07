@@ -17,10 +17,17 @@ import { IgxFinancialChartComponent } from "igniteui-angular-charts/ES5/igx-fina
     templateUrl: "./financial-chart-high-frequency.component.html"
 })
 export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDestroy {
+
+    @Input()
+    public scalingRatio: number = 1;
+
     public data: any[];
 
     @ViewChild("chart")
     public chart: IgxFinancialChartComponent;
+
+    @ViewChild("fpsSpan")
+    public fpsSpan: ElementRef;
 
     private currValue: number = 150;
     private currIndex: number = 0;
@@ -28,7 +35,7 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
 
     private _maxPoints: number = 250;
 
-    private _refreshMilliseconds: number = 100;
+    private _refreshInterval: number = 10;
     private _interval: number = -1;
     private _frames: number = 0;
     private _time: Date;
@@ -37,27 +44,70 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
         this.data = this.generateData();
     }
 
+    public onOptimizeScalingChanged(checked: boolean) {
+        if (checked) {
+            this.scalingRatio = 1.0;
+        } else {
+            this.scalingRatio = NaN;
+        }
+    }
+
+    public onChangeAmountClicked() {
+        this.data = this.generateData();
+    }
+
     public onRefreshFrequencyChanged(val: string) {
         let num: number = parseInt(val, 10);
         if (isNaN(num)) {
             num = 10;
         }
-        if (num <= 0) {
+        if (num < 10) {
             num = 10;
         }
-        if (num > 50000) {
-            num = 50000;
+        if (num > 500) {
+            num = 500;
         }
-        this._refreshMilliseconds = num;
+        this._refreshInterval = num;
         this.setupInterval();
+    }
+
+    public onMaxPointsChanged(val: string) {
+        let num: number = parseInt(val, 10);
+
+        if (isNaN(num)) {
+            num = 250;
+        }
+        if (num < 250) {
+            num = 250;
+        }
+        if (num > 100000) {
+            num = 100000;
+        }
+        this._maxPoints = num;
+    }
+
+    public get maxPointsText(): string {
+        return this.toShortString(this._maxPoints);
     }
 
     public get maxPoints(): number {
         return this._maxPoints;
     }
+    @Input()
+    public set maxPoints(v: number) {
+        this._maxPoints = v;
+    }
 
-    public get refreshMilliseconds(): number {
-        return this._refreshMilliseconds;
+    public get refreshInterval(): number {
+        return this._refreshInterval;
+    }
+    @Input()
+    public set refreshInterval(v: number) {
+        this._refreshInterval = v;
+        this.setupInterval();
+    }
+    public get refreshIntervalText(): string {
+        return (this._refreshInterval / 1000).toFixed(3) + "s";
     }
 
     public ngOnDestroy(): void {
@@ -84,7 +134,7 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
 
         this._zone.runOutsideAngular(() => {
             this._interval = window.setInterval(() => this.tick(),
-            this.refreshMilliseconds);
+            this.refreshInterval);
         });
     }
 
@@ -102,19 +152,19 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
     }
 
     private getValue(): any {
+        this.currValue = Math.abs(this.currValue);
+        this.currDate = this.addHours(this.currDate, 1);
         const o = this.currValue + ((Math.random() - 0.5) * 1);
         const h = this.currValue + (Math.random() * 2);
         const l = this.currValue - (Math.random() * 2);
         const c = this.currValue + ((Math.random() - 0.5) * 2);
-        const v = this.currValue * 10000 + ((Math.random() - 0.5) * 50000);
-        const newVal = { Date: this.currDate, Open: o, High: h, Low: l, Close: c, Volume: v };
+        const newVal = { Date: this.currDate, Open: o, High: h, Low: l, Close: c};
         return newVal;
     }
 
     private tick(): void {
         this.currValue += Math.random() * 4.0 - 2.0;
         this.currIndex++;
-        this.currDate = this.addHours(this.currDate, 1);
         const newVal = this.getValue();
         const oldVal = this.data[0];
 
@@ -130,6 +180,23 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
             const fps = this._frames / (elapsed / 1000.0);
             this._time = currTime;
             this._frames = 0;
+            this.fpsSpan.nativeElement.textContent = Math.round(fps).toString();
         }
+    }
+
+    private toShortString(largeValue: number): string {
+        let roundValue: string;
+
+        if (largeValue >= 1000000) {
+            roundValue = (largeValue / 1000000).toFixed(1);
+            return roundValue + "m";
+        }
+        if (largeValue >= 1000) {
+            roundValue = (largeValue / 1000).toFixed(0);
+            return roundValue + "k";
+        }
+
+        roundValue = largeValue.toFixed(0);
+        return roundValue + "";
     }
 }
