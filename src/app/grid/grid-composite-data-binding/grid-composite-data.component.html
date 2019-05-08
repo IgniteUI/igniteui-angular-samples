@@ -11,8 +11,6 @@
                         <br/>
                         <span><strong>City:</strong> {{cell.row.rowData.City}}</span>
                         <br/>
-                        <span><strong>City Area/Street:</strong> {{cell.row.rowData.Address}}</span>
-                        <br/>
                         <span><strong>Postal Code:</strong> {{cell.row.rowData.PostalCode}}</span>
                     </div>
                 </ng-template>
@@ -20,23 +18,18 @@
                         <div class="address-container">
                         <span>
                             <strong>Country:</strong> {{cell.row.rowData.Country}}
-                            <igx-input-group height="25%"width="100%">
+                            <igx-input-group width="100%">
                                     <input igxInput [(ngModel)]="cell.row.rowData.Country" />
                             </igx-input-group>
                         </span>
                             <br/>
                             <span><strong>City:</strong> {{cell.row.rowData.City}}</span>
-                            <igx-input-group height="25%" width="100%">
+                            <igx-input-group width="100%">
                                     <input igxInput [(ngModel)]="cell.row.rowData.City" />
                             </igx-input-group>
                             <br/>
-                            <span><strong>City Area/Street:</strong> {{cell.row.rowData.Address}}</span>
-                            <igx-input-group height="25%" width="100%">
-                                    <input igxInput [(ngModel)]="cell.row.rowData.Address" />
-                            </igx-input-group>
-                            <br/>
                             <span><strong>Postal Code:</strong> {{cell.row.rowData.PostalCode}}</span>
-                            <igx-input-group height="25%" width="100%">
+                            <igx-input-group width="100%">
                                     <input igxInput [(ngModel)]="cell.row.rowData.PostalCode" />
                             </igx-input-group>
                             <br/>
