@@ -13,6 +13,7 @@ import {
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
     IgxExcelExporterService,
     IgxFocusModule,
     IgxGridModule,
@@ -69,6 +70,8 @@ import {
 } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
+import {
+    GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
@@ -536,6 +539,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                     "RouterModule.forRoot([\{component: AboutComponent, path: 'grid-about'},\{component: GridSaveStateComponent, path: 'grid-state'}])",
                     IgxToastModule, IgxSwitchModule]
             })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/grid/grid-row-drag-to-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridDragToGridSampleComponent, IgxDragDropModule,
+                    IgxIconModule, IgxButtonModule],
+                ngDeclarations: [GridDragToGridSampleComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule, IgxIconModule, IgxButtonModule]
+            }),
+            component: GridDragToGridSampleComponent
         }));
 
         return configs;

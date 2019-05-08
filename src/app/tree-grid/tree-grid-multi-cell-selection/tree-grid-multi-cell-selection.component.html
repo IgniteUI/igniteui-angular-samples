@@ -1,6 +1,9 @@
+<div class="wrapper centered">
+    <h5>Perform range selection on the Tree Grid to transfer data to the Grid</h5>
+</div>
 <div class="wrapper">
-    <div>
-        <igx-tree-grid #source width="600px" (onRangeSelection)="transferData(source, target, notification)" (onColumnInit)="initColumn($event)"
+    <div class="left">
+        <igx-tree-grid #source width="100%" (onRangeSelection)="transferData(source, target, notification)" (onColumnInit)="initColumn($event)"
             (onSortingDone)="transferExpressions(source, target, 'sort')"
             [data]="sourceData" height="600px"
             [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID">
@@ -17,12 +20,10 @@
             </igx-column>
         </igx-tree-grid>
     </div>
-
-    <div>
-        <igx-grid #target width="600px" [data]="targetData" height="600px" autoGenerate="true"
+    <div class="right">
+        <igx-grid #target width="100%" [data]="targetData" height="600px" autoGenerate="true"
             (onColumnInit)="initColumn($event)">
         </igx-grid>
     </div>
-
-    <igx-toast #notification></igx-toast>
 </div>
+<igx-toast #notification></igx-toast>
