@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxButtonDirective, IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxDividerModule
+    IgxButtonDirective, IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxDividerModule, IgxButtonModule
 } from "igniteui-angular";
 import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/card-sample-1.component";
 
@@ -34,11 +34,11 @@ export class OverlayConfigGenerator implements IConfigGenerator {
                 "/src/app/layouts/card/card.blueprint.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxCardModule, CardSample1Component,
-                    OverlaySampleMain1Component, IgxButtonDirective, IgxDividerModule],
+                    OverlaySampleMain1Component, IgxButtonDirective, IgxDividerModule, IgxButtonModule],
                 ngEntryComponents: [CardSample1Component],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlaySampleMain1Component, CardSample1Component],
-                ngImports: [IgxIconModule, IgxCardModule, IgxDividerModule]
+                ngImports: [IgxIconModule, IgxCardModule, IgxDividerModule, IgxButtonModule]
             })
         }));
 
@@ -51,11 +51,11 @@ export class OverlayConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, OverlaySampleMain2Component,
                     CardSample1Component, IgxSwitchModule, IgxCardModule,
-                    IgxButtonDirective, IgxDividerModule],
+                    IgxButtonDirective, IgxDividerModule, IgxButtonModule],
                 ngEntryComponents: [CardSample1Component],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlaySampleMain2Component, CardSample1Component],
-                ngImports: [IgxIconModule, IgxCardModule, IgxDividerModule]
+                ngImports: [IgxIconModule, IgxCardModule, IgxDividerModule, IgxButtonModule]
             })
         }));
 
