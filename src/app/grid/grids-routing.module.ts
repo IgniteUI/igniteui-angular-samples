@@ -18,6 +18,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -227,6 +228,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiCellSelectionComponent,
         data: gridsRoutesData["grid-multi-cell-selection"],
         path: "grid-multi-cell-selection"
+    },
+    {
+        component: GridMultiRowLayoutComponent,
+        data: gridsRoutesData["grid-multi-row-layout"],
+        path: "grid-multi-row-layout"
     }
 ];
 

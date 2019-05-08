@@ -37,5 +37,6 @@ export const gridsRoutesData = {
     "multi-column-headers": { displayName: "Grid Multi Column Headers", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
-    "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" }
+    "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
+    "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" }
 };

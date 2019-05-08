@@ -24,6 +24,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "./grid-paste/paste-handler.directive";
@@ -90,6 +91,7 @@ import { DataService } from "./services/data.service";
         GridContextmenuComponent,
         PasteHandler,
         GridMultiCellSelectionComponent,
+        GridMultiRowLayoutComponent,
         GridDragSampleComponent,
         GridDragToGridSampleComponent
     ],
