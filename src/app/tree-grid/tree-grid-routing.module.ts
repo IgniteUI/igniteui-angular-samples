@@ -26,9 +26,7 @@ import {
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 
 // tslint:disable-next-line: max-line-length
-import {
-    TreeGridDisplaydensitySampleComponent
-} from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
+import { TreeGridDisplaydensitySampleComponent } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import {
@@ -63,6 +61,7 @@ import {
     TreeGridRemoteFilteringSampleComponent
 } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
+import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
@@ -125,6 +124,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnHidingToolbarSampleComponent,
         data: treeGridRoutesData["treegrid-column-hiding-toolbar"],
         path: "treegrid-column-hiding-toolbar"
+    },
+    {
+        component: TreeGridRowDrag,
+        data: treeGridRoutesData["tree-grid-row-drag"],
+        path: "tree-grid-row-drag"
     },
     {
         component: TreeGridSelectionSampleComponent,
