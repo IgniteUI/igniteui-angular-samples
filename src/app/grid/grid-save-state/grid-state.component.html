@@ -2,14 +2,14 @@
     <div class="controls-holder">
         <div class="control-item">
             <ul>
-                <li>Navigate away to visit the <a [routerLink]="['../grid-about']"><strong>ABOUT</strong></a> page and the igxGrid will lose its current state.</li>
+                <li>Navigate away to visit the <a [routerLink]="['../grid-about']"><strong>ABOUT</strong></a> page and then return to see the igxGrid restored its state.</li>
                 <li>Use the switch buttons to clear currently stored state and stop saving state for the corresponding feature.</li>
                 <li>Use the <strong>delete</strong> and <strong>reload</strong> buttons to clear the localStorage content and reload the page with clear state.</li>
             </ul>
         </div>
         <div class="switches">
             <div class="control-item">
-                <igx-switch [(ngModel)]="state.selection" (change)="onChange($event, 'selection')">Selection</igx-switch>
+                <igx-switch [(ngModel)]="state.selection" (change)="onChange($event, 'selection')">Row Selection</igx-switch>
             </div>
             <div class="control-item">
                 <igx-switch [(ngModel)]="state.filtering" (change)="onChange($event, 'filtering')">Filtering</igx-switch>
