@@ -31,6 +31,8 @@ import { PasteHandler } from "./grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sample.component";
+import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -89,7 +91,9 @@ import { DataService } from "./services/data.service";
         GridContextmenuComponent,
         PasteHandler,
         GridMultiCellSelectionComponent,
-        GridMultiRowLayoutComponent
+        GridMultiRowLayoutComponent,
+        GridDragSampleComponent,
+        GridDragToGridSampleComponent
     ],
     imports: [
         CommonModule,
