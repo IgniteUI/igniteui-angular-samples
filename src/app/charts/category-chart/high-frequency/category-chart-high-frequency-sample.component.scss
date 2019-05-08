@@ -13,8 +13,6 @@
 }
 
 .sample-container {
-    display: flex;
-    flex-flow: column;
     height: 100%;
     min-width: 300px;
     overflow: hidden;
@@ -26,7 +24,8 @@
 }
 
 .chart {
-    flex: 1;
+    width: 100%;
+    height: calc(100% - 70px);
 }
 
 .slider {
@@ -35,8 +34,9 @@
 }
 
 igx-category-chart {
+    min-width: 50px;
     width: 100%;
-    height: calc(100% - 15px);
+    height: 100%;
 }
 
 .checkbox {

@@ -64,8 +64,8 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
         if (num < 10) {
             num = 10;
         }
-        if (num > 500) {
-            num = 500;
+        if (num > 1000) {
+            num = 1000;
         }
         this._refreshInterval = num;
         this.setupInterval();
