@@ -22,7 +22,9 @@ export class ComboRemoteComponent implements OnInit {
     }
 
     public ngAfterViewInit() {
-        this.remoteService.getData(this.remoteCombo.virtualizationState, null, (data) => {
+        const initSize = { startIndex: 0, chunkSize: Math.ceil(250 / this.remoteCombo.itemHeight)};
+        this.remoteService.getData(initSize,
+            null, (data) => {
             this.remoteCombo.totalItemCount = data["@odata.count"];
         });
     }
