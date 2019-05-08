@@ -36,7 +36,7 @@
         [rowEditable]="true" [allowFiltering]="true" [rowSelectable]="true"
         [paging]="true" [columnPinning]="true">
         <igx-column *ngFor="let c of columns" [sortable]="true" [movable]="true" [filterable]="true"
-            [field]="c.field" [header]="c.header" [dataType]="dataType" [pinned]="c.pinned" [hidden]="c.hidden"></igx-column>
+            [field]="c.field" [header]="c.header" [dataType]="c.dataType" [pinned]="c.pinned" [hidden]="c.hidden"></igx-column>
     </igx-grid>
 
     <div #clear="tooltip" igxTooltip>Clear the state from localStorage.</div>
