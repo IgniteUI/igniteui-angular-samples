@@ -8,6 +8,7 @@ export const dataEntriesRoutesData = {
     "button-group-sample-2": { displayName: "Vertical Button Group", parentName: "Button Group" },
     "button-group-sample-3": { displayName: "Horizontal Button Group", parentName: "Button Group" },
     "button-group-sample-4": { displayName: "Multiple Selection", parentName: "Button Group" },
+    "buttons-display-density": { displayName: "Buttons Display Density", parentName: "Buttons" },
     "buttons-sample-1": { displayName: "Flat Buttons Overview", parentName: "Buttons" },
     "buttons-sample-2": { displayName: "Flat Button", parentName: "Buttons" },
     "buttons-sample-3": { displayName: "Flat Button Ripple Color", parentName: "Buttons" },

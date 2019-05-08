@@ -1,5 +1,5 @@
 .grid__wrapper {
-    margin: 0 16px;
+    margin: 16px;
 }
 
 .gridSample__filter {
@@ -16,4 +16,13 @@
 .cell__inner {
   position: relative;
   justify-content: space-between;
+}
+
+.density-chooser {
+    margin-bottom: 16px;
+}
+
+igx-buttongroup{
+    display: block;
+    width: 500px;
 }
