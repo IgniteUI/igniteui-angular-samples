@@ -21,8 +21,8 @@ export class GridMultiRowLayoutComponent {
     ];
     public sort = [
         {
-            fieldName: "CompanyName",
             dir: SortingDirection.Desc,
+            fieldName: "CompanyName",
             ignoreCase: true
         }
     ];
