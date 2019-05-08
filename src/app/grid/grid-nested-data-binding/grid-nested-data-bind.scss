@@ -1,14 +1,36 @@
 .employees-container {
-    div+div {
-        margin-top: 5px;
+    padding: 5px;
+    div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        float: left
+    }
+
+    div + div {
         border-top-style: ridge
     }
 
+    span{
+        margin: 5px;
+        max-width: 115px;
+        min-width: 115px;
+    }
+
     &--edit {
-        div+div {
-            padding-top: 3px;
-            border-top-style: dashed;
-            border-top-color: firebrick;
+        div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            span{
+                margin-right: 50px;
+            }
+        }
+
+        div + div{
+            border-top-style: solid;
+            border-color: firebrick;
         }
     }
 }
