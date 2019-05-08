@@ -93,6 +93,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridCompositeDataComponent } from '../../src/app/grid/grid-composite-data-binding/grid-composite-data.component';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -514,6 +515,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridMultiCellSelectionComponent, IgxGridModule, IgxToastModule],
                 ngDeclarations: [GridMultiCellSelectionComponent],
                 ngImports: [IgxGridModule, IgxToastModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCompositeDataComponent,
+            additionalFiles: ["/src/app/grid/grid-composite-data-binding/localData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCompositeDataComponent, IgxGridModule, IgxInputGroupModule],
+                ngDeclarations: [GridCompositeDataComponent],
+                ngImports: [IgxGridModule, IgxInputGroupModule]
             })
         }));
 
