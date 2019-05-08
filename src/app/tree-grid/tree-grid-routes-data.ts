@@ -1,6 +1,7 @@
 // tslint:disable:object-literal-sort-keys
 
 export const treeGridRoutesData = {
+    "tree-grid-row-drag": { displayName: "Row Drag - Tree Grid", parentName: "TreeGrid"},
     "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
     "treegrid-primaryforeignkey": { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
