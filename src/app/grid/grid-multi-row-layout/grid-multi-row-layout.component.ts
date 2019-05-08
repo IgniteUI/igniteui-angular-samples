@@ -12,7 +12,18 @@ export class GridMultiRowLayoutComponent {
 
     public sourceData = DATA;
     public group = [
-        { dir: SortingDirection.Asc, fieldName: "Country", ignoreCase: false,
-          strategy: DefaultSortingStrategy.instance() }
+        {
+            dir: SortingDirection.Desc,
+            fieldName: "Country",
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        }
+    ];
+    public sort = [
+        {
+            fieldName: "CompanyName",
+            dir: SortingDirection.Desc,
+            ignoreCase: true
+        }
     ];
 }

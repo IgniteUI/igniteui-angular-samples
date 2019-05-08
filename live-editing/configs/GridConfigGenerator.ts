@@ -62,6 +62,7 @@ import { GridGroupBySummarySampleComponent
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -93,7 +94,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridMultiRowLayoutComponent } from '../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
