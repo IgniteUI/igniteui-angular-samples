@@ -20,6 +20,8 @@ import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-samp
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { dataEntriesRoutesData } from "./data-entries-routes-data";
+import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
+import { DropDownVirtualComponent } from "./dropdown/drop-down-virtual/drop-down-virtual.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -168,6 +170,16 @@ export const dataEntriesRoutes: Routes = [
         component: DropDownSample4Component,
         data: dataEntriesRoutesData["dropdown-sample-4"],
         path: "dropdown-sample-4"
+    },
+    {
+        component: DropDownVirtualComponent,
+        data: dataEntriesRoutesData["dropdown-virtual"],
+        path: "dropdown-virtual"
+    },
+    {
+        component: DropDownRemoteComponent,
+        data: dataEntriesRoutesData["dropdown-remote"],
+        path: "dropdown-remote"
     },
     {
         component: InputGroupSample1Component,
