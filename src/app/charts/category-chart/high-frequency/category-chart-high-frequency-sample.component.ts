@@ -33,7 +33,7 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
     private currIndex: number = 0;
 
     private _maxPoints: number = 5000;
-;
+
     private _refreshInterval: number = 10;
     private _interval: number = -1;
     private _frames: number = 0;
