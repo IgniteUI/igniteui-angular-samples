@@ -1,0 +1,49 @@
+<div class="sample-wrapper">
+    <div class="grid__wrapper">
+        <igx-grid #grid1 height="450px" [data]="data">
+            <igx-column field="Name" header="Name"></igx-column>
+            <igx-column field="Title" header="Title"></igx-column>
+            <igx-column field="Employees" header="Employees" editable="true">
+                <ng-template #nestedDataTemp igxCell let-cell="cell">
+                    <div class="employees-container">
+                        <div *ngFor="let employee of cell.value" style="margin-bottom: 3px">
+                            <span><strong>Name:</strong> {{employee.Name}}</span>
+                            <br />
+                            <span><strong>Title:</strong> {{employee.Title}}</span>
+                            <br />
+                            <span><strong>Hire Date:</strong> {{employee.HireDate | date:'shortDate'}}</span>
+                            <br />
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template igxCellEditor let-cell="cell">
+                    <div class="employees-container--edit">
+                        <div *ngFor="let employee of cell.value" style="margin-bottom: 3px">
+                            <span>
+                                <strong>Name:</strong> {{employee.Name}}
+                                <igx-input-group>
+                                    <input igxInput [(ngModel)]="employee.Name" />
+                                </igx-input-group>
+                            </span>
+                            <br />
+                            <span><strong>Title:</strong> {{employee.Title}}</span>
+                            <igx-input-group>
+                                <input igxInput [(ngModel)]="employee.Title" />
+                            </igx-input-group>
+                            <br />
+                            <span><strong>Hire Date:</strong> {{employee.HireDate | date:'shortDate'}}</span>
+                            <igx-date-picker [(ngModel)]="employee.HireDate" [label]="''"></igx-date-picker>
+                            <br />
+                        </div>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="Age" header="Age"></igx-column>
+            <igx-column field="HireDate" header="Hire Date">
+                <ng-template igxCell let-cell="cell">
+                    {{cell.value | date: 'short'}}
+                </ng-template>
+            </igx-column>
+        </igx-grid>
+    </div>
+</div>

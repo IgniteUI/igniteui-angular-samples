@@ -1,0 +1,14 @@
+.employees-container {
+    div+div {
+        margin-top: 5px;
+        border-top-style: ridge
+    }
+
+    &--edit {
+        div+div {
+            padding-top: 3px;
+            border-top-style: dashed;
+            border-top-color: firebrick;
+        }
+    }
+}

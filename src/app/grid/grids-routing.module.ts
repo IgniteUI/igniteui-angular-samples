@@ -37,6 +37,7 @@ import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
+import { GridNestedDataBindComponent } from './grid-nested-data-binding/grid-nested-data-bind';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -215,6 +216,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiCellSelectionComponent,
         data: gridsRoutesData["grid-multi-cell-selection"],
         path: "grid-multi-cell-selection"
+    },
+    {
+        component: GridNestedDataBindComponent,
+        data: gridsRoutesData["grid-nested-data-binding"],
+        path: "grid-nested-data-binding"
     }
 ];
 

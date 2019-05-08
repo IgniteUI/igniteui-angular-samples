@@ -3,9 +3,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
-    IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
-    IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-    IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule } from "igniteui-angular";
+    IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule  } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
@@ -24,6 +23,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "./grid-paste/paste-handler.directive";
@@ -87,7 +87,8 @@ import { DataService } from "./services/data.service";
         GridComponent,
         GridContextmenuComponent,
         PasteHandler,
-        GridMultiCellSelectionComponent
+        GridMultiCellSelectionComponent,
+        GridNestedDataBindComponent
     ],
     imports: [
         CommonModule,
