@@ -25,6 +25,7 @@ interface IColumnState {
 export class GridSaveStateComponent implements OnInit {
   public localData: any[];
   public columns: IColumnState[];
+  public gridId = "grid1";
 
   @ViewChild(IgxGridStateDirective) public state;
 
@@ -42,7 +43,7 @@ export class GridSaveStateComponent implements OnInit {
 
   public ngOnInit() {
     this.localData = employeesData;
-    const columnsFromState =  this.state.getStoredState("columns");
+    const columnsFromState =  this.state.getColumnsForGrid(this.gridId);
     this.columns = this.state.columns && columnsFromState ?
         columnsFromState : this.initialColumns;
   }
@@ -52,7 +53,7 @@ export class GridSaveStateComponent implements OnInit {
   }
 
   public clearStorage(toast: IgxToastComponent) {
-    this.state.clearStorage();
+    this.state.clearStorageForGrid(this.gridId);
     toast.show();
   }
 

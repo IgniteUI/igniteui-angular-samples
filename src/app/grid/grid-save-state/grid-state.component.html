@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <igx-grid #grid1 igxState [data]="localData" [primaryKey]="'EmployeeID'" width="950px" height="550px"
+    <igx-grid [id]="gridId" #grid1 igxState [data]="localData" [primaryKey]="'EmployeeID'" width="950px" height="550px"
         [rowEditable]="true" [allowFiltering]="true" [rowSelectable]="true"
         [paging]="true" [columnPinning]="true">
         <igx-column *ngFor="let c of columns" [sortable]="true" [movable]="true" [filterable]="true"

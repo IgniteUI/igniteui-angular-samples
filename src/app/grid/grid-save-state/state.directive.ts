@@ -1,9 +1,10 @@
+// tslint:disable:object-literal-sort-keys
 import { AfterViewInit, Directive, Host, OnDestroy, Optional, Self } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
 import { DefaultSortingStrategy, FilteringExpressionsTree,
     IFilteringExpression, IgxGridComponent, ISortingExpression } from "igniteui-angular";
 import { take } from "rxjs/operators";
-// tslint:disable:object-literal-sort-keys
+
 interface IGridState {
     paging: {index: number, recordsPerPage: number};
     selection: any[];
@@ -15,7 +16,7 @@ interface IGridState {
 @Directive({
     selector: "[igxState]"
 })
-export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
+export class IgxGridStateDirective implements AfterViewInit {
 
     public perPage = 15;
     public selection = true;
@@ -35,7 +36,7 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
 
     public gridState: IGridState;
 
-    constructor(@Host() @Self() @Optional() public grid1: IgxGridComponent, private router: Router) {
+    constructor(@Host() @Self() @Optional() public grid: IgxGridComponent, private router: Router) {
     }
 
     public ngOnInit() {
@@ -50,20 +51,20 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
 
     public ngAfterViewInit() {
         this.restoreGridState();
-        this.grid1.cdr.detectChanges();
+        this.grid.cdr.detectChanges();
     }
 
     public saveGridState() {
-        const pagingState = { paging: this.grid1.pagingState};
+        const pagingState = { paging: this.grid.pagingState};
         this.storeState("paging", pagingState);
 
-        const sortingState = { sorting: this.grid1.sortingExpressions };
+        const sortingState = { sorting: this.grid.sortingExpressions };
         this.storeState("sorting", sortingState);
 
-        const filteringState = { filtering: this.grid1.filteringExpressionsTree};
+        const filteringState = { filtering: this.grid.filteringExpressionsTree};
         this.storeState("filtering", filteringState);
 
-        const selectionState = {selection: this.grid1.selectedRows()};
+        const selectionState = {selection: this.grid.selectedRows()};
         this.storeState("selection", selectionState);
 
         const columnsState = {columns: this.getColumns()};
@@ -112,17 +113,17 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
               gridFilteringExpressionsTree.filteringOperands.push(columnFilteringExpressionsTree);
             }
 
-            this.grid1.filteringExpressionsTree = gridFilteringExpressionsTree;
+            this.grid.filteringExpressionsTree = gridFilteringExpressionsTree;
           }
 
         // restore paging
         if (this.paging && this.gridState.paging) {
-          if (this.grid1.perPage !== this.gridState.paging.recordsPerPage) {
-            this.grid1.perPage = this.gridState.paging.recordsPerPage;
-            this.grid1.cdr.detectChanges();
+          if (this.grid.perPage !== this.gridState.paging.recordsPerPage) {
+            this.grid.perPage = this.gridState.paging.recordsPerPage;
+            this.grid.cdr.detectChanges();
           }
-          if (this.grid1.page !== this.gridState.paging.index) {
-            this.grid1.paginate(this.gridState.paging.index);
+          if (this.grid.page !== this.gridState.paging.index) {
+            this.grid.paginate(this.gridState.paging.index);
           }
         }
 
@@ -130,23 +131,26 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
         if (this.sorting && this.gridState.sorting) {
           const strategy = DefaultSortingStrategy.instance();
           this.gridState.sorting.forEach((expr) => expr.strategy = strategy);
-          this.grid1.sortingExpressions = this.gridState.sorting;
+          this.grid.sortingExpressions = this.gridState.sorting;
         }
 
         // restore selection
         if (this.selection && this.gridState.selection) {
-          this.grid1.selectRows(this.gridState.selection);
+          this.grid.selectRows(this.gridState.selection);
         }
     }
 
     public storeState(action: string, args: any) {
         if (this[action]) {
+            action += "-" + this.grid.id;
             window.localStorage.setItem(action, JSON.stringify(args));
         }
     }
 
-    public getStoredState(action: string): any {
-        const item = JSON.parse(window.localStorage.getItem(action));
+    public getStoredState(action: string, gridId?: string): any {
+        gridId = gridId ?  gridId : this.grid.id;
+        const actionKey = action + "-" + gridId;
+        const item = JSON.parse(window.localStorage.getItem(actionKey));
         return item ? item[action] : null;
     }
 
@@ -159,20 +163,20 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
         }
     }
 
-    public clearStorage() {
+    public clearStorageForGrid(gridId: string) {
         for (const propt in this.gridState) {
             if ((this.gridState as any).hasOwnProperty(propt)) {
-            window.localStorage.removeItem(propt);
+            const actionKey = propt + "-" + gridId;
+            window.localStorage.removeItem(actionKey);
             }
         }
 
     }
 
-    public ngOnDestroy() {
-        this.grid1.onRowSelectionChange.unsubscribe();
-        this.grid1.onPagingDone.unsubscribe();
-        this.grid1.onFilteringDone.unsubscribe();
-        this.grid1.onSortingDone.unsubscribe();
+    public getColumnsForGrid(gridId: string): any {
+        const action = "columns";
+        const columns = this.getStoredState(action, gridId);
+        return columns;
     }
 
     /**
@@ -183,7 +187,7 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
                                   filtOperand: FilteringExpressionsTree): FilteringExpressionsTree {
         const columnFilteringExpressionsTree =
             new FilteringExpressionsTree(filtOperand.operator, filtOperand.fieldName);
-        const column = this.grid1.columns.filter((col) => col.field === filtOperand.fieldName)[0];
+        const column = this.grid.columns.filter((col) => col.field === filtOperand.fieldName)[0];
         for (const fo of columnsFiltOperands) {
             const columnFiltOperand = fo as IFilteringExpression;
             columnFiltOperand.condition = column.filters.condition(columnFiltOperand.condition.name);
@@ -196,7 +200,7 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
     }
 
     private getColumns() {
-        const gridColumns = this.grid1.columns.map((c) => {
+        const gridColumns = this.grid.columns.map((c) => {
             return {
                 pinned: c.pinned,
                 sortable: c.sortable,
@@ -212,3 +216,4 @@ export class IgxGridStateDirective implements AfterViewInit, OnDestroy {
         return gridColumns;
     }
 }
+// tslint:enable:object-literal-sort-keys
