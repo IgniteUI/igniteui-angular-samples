@@ -1,40 +1,45 @@
 <div class="sample-container">
-        <igx-category-chart
-            [dataSource]="data"
-            [pixelScalingRatio]="scalingRatio"
-            yAxisLabelExtent="40"
-            #chart>
-        </igx-category-chart>
 
-        <div class="sample-controls">
-            <button igxButton="raised"
-            igxRipple="white"
-            (click)="onChangeAmountClicked()"
-            >Change Amount</button>
-            <span #fpsSpan class="fpslabel">FPS:</span>
-            <div class="max-points-slider">
-            <span class="label">Data amount: {{ maxPointsText }}</span>
-            <br/>
-            <igx-slider id="slider"
-            minValue="5000"
-            maxValue="2000000"
+    <div class="sample-controls">
+        <div class="sample-vertical-box">
+            <span class="label">Refresh Interval: {{ refreshIntervalText }} </span>
+            <igx-slider class="slider"
+            [minValue]="5"
+            [maxValue]="1000"
+            [value]="refreshInterval"
+            [isContinuous]=true
+            (onValueChange)="onRefreshFrequencyChanged($event.value)"></igx-slider>
+        </div>
+        <div class="sample-vertical-box">
+            <span class="label">Data Points: {{ maxPointsText }}</span>
+            <igx-slider class="slider"
+            [minValue]="1000"
+            [maxValue]="1000000"
             [value]="maxPoints"
             [isContinuous]=true
-            (onValueChange)="onMaxPointsChanged($event.value)"></igx-slider>            
+            (onValueChange)="onMaxPointsChanged($event.value)"></igx-slider>
         </div>
+        <button igxButton="raised"
+        igxRipple="white"
+        (click)="onChangeAmountClicked()"
+        >Assign Data</button>
 
-        <div class="frequency-slider">
-            <span class="label">Refresh frequency (ms): {{ refreshMilliseconds }} </span>
-            <igx-slider id="slider"
-            minValue="10"
-            maxValue="500"
-            [value]="refreshMilliseconds"
-            [isContinuous]=true
-            (onValueChange)="onRefreshFrequencyChanged($event.value)"></igx-slider>             
+        <div class="sample-vertical-box">
+            <span class="fpsLabel">FPS: </span>
+            <span #fpsSpan class="fpsLabel"> 60</span>
         </div>
         <div class="optimizeCheckbox">
             <span class="label">Optimize Scaling: </span>
             <input class="checkbox" type="checkbox" (change)="onOptimizeScalingChanged($event.target.checked)"/>
-        </div> 
+        </div>
+    </div>
+
+    <div class="chart">
+            <igx-category-chart
+                [dataSource]="data"
+                [pixelScalingRatio]="scalingRatio"
+                yAxisLabelExtent="40"
+                #chart>
+            </igx-category-chart>
     </div>
 </div>

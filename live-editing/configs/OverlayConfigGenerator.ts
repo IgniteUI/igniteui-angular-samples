@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxButtonDirective, IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule
+    IgxButtonDirective, IgxCardModule, IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxDividerModule, IgxButtonModule
 } from "igniteui-angular";
 import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/card-sample-1.component";
 
@@ -30,14 +30,15 @@ export class OverlayConfigGenerator implements IConfigGenerator {
             component: OverlaySampleMain1Component,
             additionalFiles: ["/src/app/layouts/card/card-sample-1/card-sample-1.component.ts",
                 "/src/app/layouts/card/card-sample-1/card-sample-1.component.scss",
-                "/src/app/layouts/card/card-sample-1/card-sample-1.component.html"],
+                "/src/app/layouts/card/card-sample-1/card-sample-1.component.html",
+                "/src/app/layouts/card/card.blueprint.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxCardModule, CardSample1Component,
-                    OverlaySampleMain1Component, IgxButtonDirective],
+                    OverlaySampleMain1Component, IgxButtonDirective, IgxDividerModule, IgxButtonModule],
                 ngEntryComponents: [CardSample1Component],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlaySampleMain1Component, CardSample1Component],
-                ngImports: [IgxIconModule, IgxCardModule]
+                ngImports: [IgxIconModule, IgxCardModule, IgxDividerModule, IgxButtonModule]
             })
         }));
 
@@ -45,15 +46,16 @@ export class OverlayConfigGenerator implements IConfigGenerator {
             component: OverlaySampleMain2Component,
             additionalFiles: ["/src/app/layouts/card/card-sample-1/card-sample-1.component.ts",
             "/src/app/layouts/card/card-sample-1/card-sample-1.component.scss",
-            "/src/app/layouts/card/card-sample-1/card-sample-1.component.html"],
+            "/src/app/layouts/card/card-sample-1/card-sample-1.component.html",
+            "/src/app/layouts/card/card.blueprint.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, OverlaySampleMain2Component,
                     CardSample1Component, IgxSwitchModule, IgxCardModule,
-                    IgxButtonDirective],
+                    IgxButtonDirective, IgxDividerModule, IgxButtonModule],
                 ngEntryComponents: [CardSample1Component],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlaySampleMain2Component, CardSample1Component],
-                ngImports: [IgxIconModule, IgxCardModule]
+                ngImports: [IgxIconModule, IgxCardModule, IgxDividerModule, IgxButtonModule]
             })
         }));
 
