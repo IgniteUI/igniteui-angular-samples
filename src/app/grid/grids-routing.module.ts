@@ -19,6 +19,7 @@ import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -33,6 +34,8 @@ import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
+import { AboutComponent } from "./grid-save-state/about.component";
+import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
@@ -40,7 +43,6 @@ import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
-import { GridNestedDataBindComponent } from './grid-nested-data-binding/grid-nested-data-bind';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -226,6 +228,16 @@ export const gridsRoutes: Routes = [
         path: "grid-paste"
     },
     {
+        component: GridSaveStateComponent,
+        data: gridsRoutesData["grid-state"],
+        path: "grid-state"
+    },
+    {
+        component: AboutComponent,
+        data: gridsRoutesData["grid-about"],
+        path: "grid-about"
+    },
+    {
         component: GridMultiCellSelectionComponent,
         data: gridsRoutesData["grid-multi-cell-selection"],
         path: "grid-multi-cell-selection"
@@ -233,7 +245,7 @@ export const gridsRoutes: Routes = [
     {
         component: GridNestedDataBindComponent,
         data: gridsRoutesData["grid-nested-data-binding"],
-        path: "grid-nested-data-binding",
+        path: "grid-nested-data-binding"
     },
     {
         component: GridMultiRowLayoutComponent,
