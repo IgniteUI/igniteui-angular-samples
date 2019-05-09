@@ -102,15 +102,15 @@ export class DropDownConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: DropDownRemoteComponent,
+            additionalFiles: ["/src/app/grid/services/remote.service.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule, DropDownRemoteComponent,
-                    IgxButtonModule, IgxToggleModule, IgxForOfModule, IgxToastModule, HttpClientModule],
+                    IgxButtonModule, IgxToggleModule, IgxForOfModule, IgxToastModule, HttpClientModule, RemoteService],
                 ngDeclarations: [DropDownRemoteComponent],
                 ngImports: [IgxDropDownModule, IgxButtonModule, IgxToastModule,
                     IgxToggleModule, IgxForOfModule, HttpClientModule],
                 ngProviders: [RemoteService]
-            }),
-            shortenComponentPathBy: "/data-entries/dropdown/"
+            })
         }));
 
         return configs;
