@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { HttpClientModule } from "@angular/common/http";
-import { Router, RouterModule} from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
@@ -23,7 +23,8 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSwitchModule,
-    IgxToastModule
+    IgxToastModule,
+    IgxTooltipModule
 } from "igniteui-angular";
 import {
     GridBatchEditingSampleComponent
@@ -80,6 +81,9 @@ import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-samp
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
+import { AboutComponent } from "../../src/app/grid/grid-save-state/about.component";
+import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
+import { IgxGridStateDirective } from "../../src/app/grid/grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
 import {
     GridContextmenuComponent
@@ -530,6 +534,27 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule]
             })
         }));
+
+        const gridSaveStateSampleConfig = new Config({
+            component: GridSaveStateComponent,
+            additionalFiles: [
+                "/src/app/grid/grid-save-state/localData.ts",
+                "/src/app/grid/grid-save-state/state.directive.ts",
+                "/src/app/grid/grid-save-state/about.component.ts",
+                "/src/app/grid/grid-save-state/about.component.html"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridSaveStateComponent, IgxGridModule, IgxTooltipModule,
+                    IgxToastModule, IgxSwitchModule, AboutComponent, Router, RouterModule, IgxGridStateDirective],
+                ngDeclarations: [GridSaveStateComponent, AboutComponent, IgxGridStateDirective],
+                ngImports: [IgxGridModule.forRoot(), IgxTooltipModule,
+                    // tslint:disable-next-line:max-line-length
+                    "RouterModule.forRoot([\{component: AboutComponent, path: 'grid-about'},\{component: GridSaveStateComponent, path: 'grid-state'},\{ path: '', redirectTo: '/grid-state', pathMatch: 'full' }])",
+                    IgxToastModule, IgxSwitchModule]
+            })
+        });
+        gridSaveStateSampleConfig.usesRouting = true;
+        configs.push(gridSaveStateSampleConfig);
 
         configs.push(new Config({
             additionalFiles: ["/src/app/grid/grid-row-drag-to-grid/data.ts"],

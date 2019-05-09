@@ -34,6 +34,8 @@ import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
+import { AboutComponent } from "./grid-save-state/about.component";
+import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
@@ -224,6 +226,16 @@ export const gridsRoutes: Routes = [
         component: GridPasteSampleComponent,
         data: gridsRoutesData["grid-paste"],
         path: "grid-paste"
+    },
+    {
+        component: GridSaveStateComponent,
+        data: gridsRoutesData["grid-state"],
+        path: "grid-state"
+    },
+    {
+        component: AboutComponent,
+        data: gridsRoutesData["grid-about"],
+        path: "grid-about"
     },
     {
         component: GridMultiCellSelectionComponent,
