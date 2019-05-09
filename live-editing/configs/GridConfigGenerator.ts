@@ -534,22 +534,26 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
-        configs.push(new Config({
+        const gridSaveStateSampleConfig = new Config({
             component: GridSaveStateComponent,
-            additionalFiles: ["/src/app/grid/grid-save-state/localData.ts",
-            "/src/app/grid/grid-save-state/state.directive.ts",
-            "/src/app/grid/grid-save-state/about.component.ts",
-            "/src/app/grid/grid-save-state/about.component.html"],
+            additionalFiles: [
+                "/src/app/grid/grid-save-state/localData.ts",
+                "/src/app/grid/grid-save-state/state.directive.ts",
+                "/src/app/grid/grid-save-state/about.component.ts",
+                "/src/app/grid/grid-save-state/about.component.html"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridSaveStateComponent, IgxGridModule, IgxTooltipModule,
                     IgxToastModule, IgxSwitchModule, AboutComponent, Router, RouterModule, IgxGridStateDirective],
                 ngDeclarations: [GridSaveStateComponent, AboutComponent, IgxGridStateDirective],
                 ngImports: [IgxGridModule.forRoot(), IgxTooltipModule,
                     // tslint:disable-next-line:max-line-length
-                    "RouterModule.forRoot([\{component: AboutComponent, path: 'grid-about'},\{component: GridSaveStateComponent, path: 'grid-state'}])",
+                    "RouterModule.forRoot([\{component: AboutComponent, path: 'grid-about'},\{component: GridSaveStateComponent, path: 'grid-state'},\{ path: '', redirectTo: '/grid-state', pathMatch: 'full' }])",
                     IgxToastModule, IgxSwitchModule]
             })
-        }));
+        });
+        gridSaveStateSampleConfig.usesRouting = true;
+        configs.push(gridSaveStateSampleConfig);
 
         configs.push(new Config({
             additionalFiles: ["/src/app/grid/grid-row-drag-to-grid/data.ts"],

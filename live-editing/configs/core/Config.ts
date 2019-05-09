@@ -4,6 +4,7 @@ import { AppModuleConfig } from "./AppModuleConfig";
 
 export class Config {
     public component: Type<any>;
+    public usesRouting: boolean;
     public additionalFiles: string[];
     public appModuleConfig: AppModuleConfig;
     public dependenciesType: DependenciesType;
