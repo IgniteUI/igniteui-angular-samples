@@ -7,6 +7,8 @@ export const gridsRoutesData = {
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
     "grid-editing": { displayName: "Grid Editing", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
+    "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
+    "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
     "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
@@ -36,5 +38,6 @@ export const gridsRoutesData = {
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
-    "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"}
+    "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"},
+    "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" }
 };

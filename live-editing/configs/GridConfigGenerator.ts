@@ -13,6 +13,7 @@ import {
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
     IgxExcelExporterService,
     IgxFocusModule,
     IgxGridModule,
@@ -62,12 +63,15 @@ import { GridGroupBySummarySampleComponent
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
 } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
+import {
+    GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
@@ -516,6 +520,26 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridMultiCellSelectionComponent],
                 ngImports: [IgxGridModule, IgxToastModule]
             })
+        }));
+        configs.push(new Config({
+            component: GridMultiRowLayoutComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiRowLayoutComponent, IgxGridModule],
+                ngDeclarations: [GridMultiRowLayoutComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/grid/grid-row-drag-to-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridDragToGridSampleComponent, IgxDragDropModule,
+                    IgxIconModule, IgxButtonModule],
+                ngDeclarations: [GridDragToGridSampleComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule, IgxIconModule, IgxButtonModule]
+            }),
+            component: GridDragToGridSampleComponent
         }));
 
         configs.push(new Config({

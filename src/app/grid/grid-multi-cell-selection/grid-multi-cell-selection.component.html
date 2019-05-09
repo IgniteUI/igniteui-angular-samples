@@ -1,7 +1,10 @@
+<div class="wrapper centered">
+    <h5>Perform range selection on the left Grid to transfer data to the right Grid</h5>
+</div>
 <div class="wrapper">
-    <div>
+    <div class="left">
         <igx-grid #source
-            width="600px"
+            width="100%"
             [allowFiltering]="true"
             filterMode="excelStyleFilter"
             (onRangeSelection)="transferData(source, target, notification)"
@@ -11,13 +14,11 @@
             [data]="sourceData" height="600px" autoGenerate="true">
         </igx-grid>
     </div>
-
-    <div>
-        <igx-grid #target width="600px"
+    <div class="right">
+        <igx-grid #target width="100%"
             [data]="targetData" height="600px" autoGenerate="true"
             (onColumnInit)="initColumn($event)">
         </igx-grid>
     </div>
-
-    <igx-toast #notification></igx-toast>
 </div>
+<igx-toast #notification></igx-toast>
