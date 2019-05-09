@@ -3,17 +3,17 @@
 .addProdBtn {
     margin-bottom: 5px;
   }
-  
+
   .dialogNewRecord {
     margin: 10px;
     padding: 10px;
   }
-  
+
   .igx-input-group {
     margin-bottom: 10px;
     padding: 5px;
   }
-  
+
   .grid-options {
     display: flex;
     justify-content: flex-end;
@@ -44,14 +44,14 @@
       overflow: hidden;
       cursor: pointer;
   }
-  
-  
+
+
   @mixin theme-chooser-item($primary, $secondary, $text) {
       position: relative;
       background-color: $primary;
       color: $secondary;
       padding-left: 22px;
-      
+
       &::before {
           position: relative;
           content: $text;
@@ -59,13 +59,13 @@
           top: 0;
           bottom: 0;
       }
-  
+
       &::before {
           right: 1em;
           background: $primary;
           color: $secondary;
       }
-  
+
       &::after {
           position: relative;
           content: '';
@@ -73,7 +73,7 @@
           top: 0;
           bottom: 0;
       }
-  
+
       &::after {
           left: 1em;
           background: $secondary;
@@ -83,17 +83,17 @@
           box-shadow: 3px 0 2px 3px $secondary;
       }
   }
-  
-  .light-theme-option {
+
+  .default-theme-option {
       width:92.6719px;
       @include theme-chooser-item(#f8f8f8, #4169E1,'LIGHT');
   }
-  
+
   .dark-theme-option {
       width:92.6719px;
       @include theme-chooser-item(#282828, #FFA500, 'DARK');
   }
-  
+
   .black-theme-option {
       width:92.6719px;
       @include theme-chooser-item(#000000, #00BFFF, 'BLACK');

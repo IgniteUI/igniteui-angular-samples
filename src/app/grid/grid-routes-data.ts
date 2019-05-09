@@ -7,10 +7,16 @@ export const gridsRoutesData = {
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
     "grid-editing": { displayName: "Grid Editing", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
+    "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
+    "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
     "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
     "grid-filtering-sample": { displayName: "Grid Filtering", parentName: "Grid" },
+    "grid-filtering-template-sample": { displayName: "Grid Filtering Template", parentName: "Grid" },
+    "grid-excel-style-filtering-sample-1": { displayName: "Grid Excel Style Filtering", parentName: "Grid" },
+    "grid-excel-style-filtering-sample-2": { displayName: "Grid Excel Style Filtering Operations", parentName: "Grid" },
+    "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
@@ -30,5 +36,7 @@ export const gridsRoutesData = {
     "grid-moving-sample": { displayName: "Grid Column Moving", parentName: "Grid" },
     "multi-column-headers": { displayName: "Grid Multi Column Headers", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
-    "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" }
+    "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
+    "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
+    "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" }
 };

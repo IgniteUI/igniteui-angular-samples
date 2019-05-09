@@ -4,13 +4,14 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
+    IgxButtonGroupModule,
     IgxButtonModule,
     IgxComboModule,
-    IgxDropDownModule,
     IgxFilterModule,
     IgxIconModule,
     IgxInputGroupModule,
     IgxListModule,
+    IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
     IgxToastModule
@@ -61,8 +62,9 @@ import { ListsRoutingModule } from "./lists-routing.module";
         IgxSliderModule,
         IgxComboModule,
         IgxSwitchModule,
-        IgxDropDownModule,
+        IgxSelectModule,
         IgxToastModule,
+        IgxButtonGroupModule,
         HttpClientModule
     ]
 })

@@ -1,0 +1,21 @@
+.drop-down-virtual-wrapper {
+    overflow-y: hidden;
+    width: 320px;
+    height: 320px;
+}
+
+:host {
+    display: flex;
+    flex-flow: row;
+    padding: 4px;
+}
+
+.selection__name {
+    font-weight: 800;
+}
+
+.selection {
+    line-height: 2.25rem;
+    font-size: 0.925rem;
+    padding: 0px 8px;
+}

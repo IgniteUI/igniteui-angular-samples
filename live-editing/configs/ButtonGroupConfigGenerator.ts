@@ -1,11 +1,17 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonGroupModule } from "igniteui-angular";
-import { ButtonGroupSample1Component
+import { IgxButtonGroupModule, IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular";
+import {
+    ButtonGroupSample1Component
 } from "../../src/app/data-entries/buttonGroup/button-group-sample-1/button-group-sample-1.component";
-import { ButtonGroupSample2Component
+import {
+    ButtonGroupSample2Component
 } from "../../src/app/data-entries/buttonGroup/button-group-sample-2/button-group-sample-2.component";
-import { ButtonGroupSample3Component
+import {
+    ButtonGroupSample3Component
 } from "../../src/app/data-entries/buttonGroup/button-group-sample-3/button-group-sample-3.component";
+import {
+    ButtonGroupSampleComponent
+} from "../../src/app/data-entries/buttonGroup/button-group-sample-4/button-group-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -18,9 +24,10 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ButtonGroupSample1Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonGroupModule, ButtonGroupSample1Component],
+                imports: [IgxButtonGroupModule, ButtonGroupSample1Component, IgxRippleModule,
+                    IgxIconModule, IgxButtonModule],
                 ngDeclarations: [ButtonGroupSample1Component],
-                ngImports: [IgxButtonGroupModule]
+                ngImports: [IgxButtonGroupModule, IgxRippleModule, IgxIconModule, IgxButtonModule]
             }),
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
@@ -29,9 +36,9 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: ButtonGroupSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxButtonGroupModule, ButtonGroupSample2Component],
+                imports: [IgxButtonGroupModule, ButtonGroupSample2Component, IgxButtonModule, IgxRippleModule],
                 ngDeclarations: [ButtonGroupSample2Component],
-                ngImports: [IgxButtonGroupModule]
+                ngImports: [IgxButtonGroupModule, IgxButtonModule, IgxRippleModule]
             }),
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
@@ -43,6 +50,18 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonGroupModule, ButtonGroupSample3Component],
                 ngDeclarations: [ButtonGroupSample3Component],
                 ngImports: [IgxButtonGroupModule]
+            }),
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group 4
+        configs.push(new Config({
+            component: ButtonGroupSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonGroupModule, ButtonGroupSampleComponent, IgxIconModule,
+                    IgxButtonModule, IgxRippleModule],
+                ngDeclarations: [ButtonGroupSampleComponent],
+                ngImports: [IgxButtonGroupModule, IgxIconModule, IgxButtonModule, IgxRippleModule]
             }),
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));

@@ -3,8 +3,13 @@
 export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing": { displayName: "Hierarchical Grid Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-row-drag": { displayName: "Hierarchical Grid Row Drag", parentName: "Hierarchical Grid" },
     "hierarchical-grid-batch-editing": { displayName: "Hierarchical Grid Batch Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering": { displayName: "Hierarchical Grid Filtering", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-filtering-template": { displayName: "Hierarchical Grid Filtering Template", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-excel-style-filtering-sample-1": { displayName: "Hierarchical Grid Excel Style Filtering", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-excel-style-filtering-sample-2": { displayName: "Hierarchical Grid Excel Style Filtering Operations", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-excel-style-filtering-sample-3": { displayName: "Hierarchical Grid Excel Style Filtering Templates", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-filtering": { displayName: "Hierarchical Grid Custom Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },
     "hierarchical-grid-selection": { displayName: "Hierarchical Grid Selection", parentName: "Hierarchical Grid" },

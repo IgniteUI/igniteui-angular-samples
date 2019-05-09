@@ -1,6 +1,13 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular";
-import { ButtonsSample1Component
+import { IgxButtonGroupModule, IgxButtonModule, IgxIconModule, IgxRippleModule } from "igniteui-angular";
+import {
+    ButtonsDisplayDensityComponent
+} from "../../src/app/data-entries/buttons/buttons-display-density/buttons-display-density.component";
+import {
+    ButtonsRoundnessComponent
+} from "../../src/app/data-entries/buttons/buttons-roundness-sample/buttons-roundness-sample";
+import {
+    ButtonsSample1Component
 } from "../../src/app/data-entries/buttons/buttons-sample-1/buttons-sample-1.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -17,6 +24,29 @@ export class ButtonConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, ButtonsSample1Component],
                 ngDeclarations: [ButtonsSample1Component],
                 ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule]
+            }),
+            shortenComponentPathBy: "/data-entries/buttons/"
+        }));
+
+        // buttons roundness
+        configs.push(new Config({
+            component: ButtonsRoundnessComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, ButtonsRoundnessComponent],
+                ngDeclarations: [ButtonsRoundnessComponent],
+                ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule]
+            }),
+            shortenComponentPathBy: "/data-entries/buttons/"
+        }));
+
+        // buttons display density
+        configs.push(new Config({
+            component: ButtonsDisplayDensityComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule,
+                    ButtonsDisplayDensityComponent],
+                ngDeclarations: [ButtonsDisplayDensityComponent],
+                ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule]
             }),
             shortenComponentPathBy: "/data-entries/buttons/"
         }));

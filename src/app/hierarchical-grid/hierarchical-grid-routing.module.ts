@@ -10,6 +10,16 @@ import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
+import {
+    HGridExcelStyleFilteringSample1Component
+} from "./hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
+import {
+    HGridExcelStyleFilteringSample2Component
+} from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
+import {
+    HGridExcelStyleFilteringSample3Component
+} from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
@@ -17,6 +27,7 @@ import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-colu
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
 import { hierarchicalGridRoutesData } from "./hierarchical-grid-routes-data";
+import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
@@ -32,6 +43,30 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-filtering"],
         path: "hierarchical-grid-filtering"
+    },
+    {
+        component: HGridFilteringTemplateSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-filtering-template"],
+        path: "hierarchical-grid-filtering-template"
+    },
+    {
+        component: HGridExcelStyleFilteringSample1Component,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-sample-1"],
+        path: "hierarchical-grid-excel-style-filtering-sample-1"
+    },
+    {
+        component: HGridExcelStyleFilteringSample2Component,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-sample-2"],
+        path: "hierarchical-grid-excel-style-filtering-sample-2"
+    },
+    {
+        component: HGridExcelStyleFilteringSample3Component,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-sample-3"],
+        path: "hierarchical-grid-excel-style-filtering-sample-3"
     },
     {
         component: HGridCustomFilteringSampleComponent,
@@ -134,6 +169,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-row-editing"],
         path: "hierarchical-grid-row-editing"
+    },
+    {
+        component: HGridDragSampleComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-row-drag"],
+        path: "hierarchical-grid-row-drag"
     },
     {
         component: HGridEditingSampleComponent,

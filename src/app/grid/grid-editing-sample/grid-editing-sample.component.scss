@@ -2,13 +2,18 @@
     padding: 3px 10px;
 }
 
-.addProdBtn.igx-button--raised{
-    margin-bottom: 10px;
-    background-color: lightgrey;
-    color: black;
-    &:hover {
-        background-color:  rgba(0, 0, 0, 0.26)
+.default-theme {
+    .addProdBtn.igx-button--raised{
+        background-color: lightgrey;
+        color: black;
+        &:hover {
+            background-color:  rgba(0, 0, 0, 0.26)
+        }
     }
+}
+
+.igx-grid {
+    margin-top: 10px;
 }
 
 .dialogNewRecord {

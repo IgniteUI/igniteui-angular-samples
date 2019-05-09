@@ -6,6 +6,9 @@ import { MovieComponent } from "./autocomplete/movie/movie.component";
 import { ButtonGroupSample1Component } from "./buttonGroup/button-group-sample-1/button-group-sample-1.component";
 import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2/button-group-sample-2.component";
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
+import { ButtonGroupSampleComponent } from "./buttonGroup/button-group-sample-4/button-group-sample.component";
+import { ButtonsDisplayDensityComponent } from "./buttons/buttons-display-density/buttons-display-density.component";
+import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -13,9 +16,12 @@ import { ButtonsSample4Component } from "./buttons/buttons-sample-4/buttons-samp
 import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-sample-5.component";
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
+import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-sample-8.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { dataEntriesRoutesData } from "./data-entries-routes-data";
+import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
+import { DropDownVirtualComponent } from "./dropdown/drop-down-virtual/drop-down-virtual.component";
 import { DropdownMenuComponent } from "./dropdown/dropdown-menu/dropdown-menu.component";
 import { DropDownSample1Component } from "./dropdown/dropdown-sample-1/dropdown-sample-1.component";
 import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-sample-2.component";
@@ -56,6 +62,11 @@ export const dataEntriesRoutes: Routes = [
         path: "movie"
     },
     {
+        component: ButtonsDisplayDensityComponent,
+        data: dataEntriesRoutesData["buttons-display-density"],
+        path: "buttons-display-density"
+    },
+    {
         component: ButtonGroupSample1Component,
         data: dataEntriesRoutesData["button-group-sample-1"],
         path: "button-group-sample-1"
@@ -69,6 +80,11 @@ export const dataEntriesRoutes: Routes = [
         component: ButtonGroupSample3Component,
         data: dataEntriesRoutesData["button-group-sample-3"],
         path: "button-group-sample-3"
+    },
+    {
+        component: ButtonGroupSampleComponent,
+        data: dataEntriesRoutesData["button-group-sample-4"],
+        path: "button-group-sample-4"
     },
     {
         component: ButtonsSample1Component,
@@ -104,6 +120,16 @@ export const dataEntriesRoutes: Routes = [
         component: ButtonsSample7Component,
         data: dataEntriesRoutesData["buttons-sample-7"],
         path: "buttons-sample-7"
+    },
+    {
+        component: ButtonsSample8Component,
+        data: dataEntriesRoutesData["buttons-sample-8"],
+        path: "buttons-sample-8"
+    },
+    {
+        component: ButtonsRoundnessComponent,
+        data: dataEntriesRoutesData["buttons-roundness-sample"],
+        path: "buttons-roundness-sample"
     },
     {
         component: CheckboxSample1Component,
@@ -144,6 +170,16 @@ export const dataEntriesRoutes: Routes = [
         component: DropDownSample4Component,
         data: dataEntriesRoutesData["dropdown-sample-4"],
         path: "dropdown-sample-4"
+    },
+    {
+        component: DropDownVirtualComponent,
+        data: dataEntriesRoutesData["dropdown-virtual"],
+        path: "dropdown-virtual"
+    },
+    {
+        component: DropDownRemoteComponent,
+        data: dataEntriesRoutesData["dropdown-remote"],
+        path: "dropdown-remote"
     },
     {
         component: InputGroupSample1Component,

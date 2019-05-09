@@ -4,8 +4,10 @@ import { RouterModule, Routes } from "@angular/router";
 import { AvatarSample1Component } from "./avatar/avatar-sample-1/avatar-sample-1.component";
 import { AvatarSample2Component } from "./avatar/avatar-sample-2/avatar-sample-2.component";
 import { AvatarSample3Component } from "./avatar/avatar-sample-3/avatar-sample-3.component";
+import { CardSample1Component } from "./card/card-sample-1/card-sample-1.component";
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
+import { CardSample4Component } from "./card/card-sample-4/card-sample-4.component";
 import { CardComponent } from "./card/card.component";
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
@@ -13,6 +15,10 @@ import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
+import { DividerDefaultComponent } from "./divider/default/divider-default.component";
+import { DividerInsetComponent } from "./divider/inset/divider-inset.component";
+import { DividerVerticalComponent } from "./divider/vertical/divider-vertical.component";
 import { ExpansionPanelSample1Component } from "./expansion-panel/expansion-sample-1/expansion-sample-1.component";
 import { ExpansionPanelSample2Component } from "./expansion-panel/expansion-sample-2/expansion-sample-2.component";
 import { ExpansionPanelSample3Component } from "./expansion-panel/expansion-sample-3/expansion-sample-3.component";
@@ -48,11 +54,6 @@ export const layoutsRoutes: Routes = [
         path: "avatar-sample-3"
     },
     {
-        component: CardComponent,
-        data: layoutsRoutesData["card"],
-        path: "card"
-    },
-    {
         component: CarouselSample1Component,
         data: layoutsRoutesData["carousel-sample-1"],
         path: "carousel-sample-1"
@@ -80,6 +81,26 @@ export const layoutsRoutes: Routes = [
     {
         component: CarouselDetailsViewComponent,
         path: "details/:index"
+    },
+    {
+        component: DividerDefaultComponent,
+        data: layoutsRoutesData["divider-sample-1"],
+        path: "divider-sample-1"
+    },
+    {
+        component: DividerVerticalComponent,
+        data: layoutsRoutesData["divider-sample-2"],
+        path: "divider-sample-2"
+    },
+    {
+        component: DividerDashedComponent,
+        data: layoutsRoutesData["divider-sample-3"],
+        path: "divider-sample-3"
+    },
+    {
+        component: DividerInsetComponent,
+        data: layoutsRoutesData["divider-sample-4"],
+        path: "divider-sample-4"
     },
     {
         component: ExpansionPanelSample1Component,
@@ -160,6 +181,16 @@ export const layoutsRoutes: Routes = [
         path: "tabs-sample-5"
     },
     {
+        component: CardComponent,
+        data: layoutsRoutesData["card-sample-0"],
+        path: "card-sample-0"
+    },
+    {
+        component: CardSample1Component,
+        data: layoutsRoutesData["card-sample-1"],
+        path: "card-sample-1"
+    },
+    {
         component: CardSample2Component,
         data: layoutsRoutesData["card-sample-2"],
         path: "card-sample-2"
@@ -168,6 +199,11 @@ export const layoutsRoutes: Routes = [
         component: CardSample3Component,
         data: layoutsRoutesData["card-sample-3"],
         path: "card-sample-3"
+    },
+    {
+        component: CardSample4Component,
+        data: layoutsRoutesData["card-sample-4"],
+        path: "card-sample-4"
     }
 ];
 

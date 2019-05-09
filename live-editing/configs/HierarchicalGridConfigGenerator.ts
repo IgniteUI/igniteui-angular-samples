@@ -1,13 +1,11 @@
 // tslint:disable:max-line-length
 import {
-    IgxAvatarModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCheckboxModule,
-    IgxColumnHidingModule,
-    IgxComboModule,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
     IgxGridModule,
     IgxHierarchicalGridModule,
     IgxIconModule,
@@ -23,12 +21,25 @@ import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hie
 import { HGridColumnResizingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridDisplayDensitySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing/hierarchical-grid-editing.component";
+import {
+    HGridExcelStyleFilteringSample1Component
+} from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
+import {
+    HGridExcelStyleFilteringSample2Component
+} from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
+import {
+    HGridExcelStyleFilteringSample3Component
+} from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import {
+    HGridFilteringTemplateSampleComponent
+} from "../../src/app/hierarchical-grid/hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiHeadersSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
+import { HGridDragSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridSelectionSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridContextmenuComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component";
@@ -92,6 +103,46 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridFilteringSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridFilteringTemplateSampleComponent, IgxInputGroupModule, IgxDatePickerModule],
+                ngDeclarations: [HGridFilteringTemplateSampleComponent],
+                ngImports: [IgxHierarchicalGridModule, IgxInputGroupModule, IgxDatePickerModule]
+            }),
+            component: HGridFilteringTemplateSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringSample1Component, IgxButtonGroupModule],
+                ngDeclarations: [HGridExcelStyleFilteringSample1Component],
+                ngImports: [IgxHierarchicalGridModule, IgxButtonGroupModule]
+            }),
+            component: HGridExcelStyleFilteringSample1Component
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringSample2Component],
+                ngDeclarations: [HGridExcelStyleFilteringSample2Component],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridExcelStyleFilteringSample2Component
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringSample3Component],
+                ngDeclarations: [HGridExcelStyleFilteringSample3Component],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridExcelStyleFilteringSample3Component
         }));
 
         configs.push(new Config({
@@ -267,6 +318,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngProviders: [RemoteLoDService]
             }),
             component: HierarchicalGridLoDSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-row-drag/files.data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridDragSampleComponent, IgxDragDropModule, IgxIconModule, IgxButtonModule],
+                ngDeclarations: [HGridDragSampleComponent],
+                ngImports: [IgxHierarchicalGridModule, IgxDragDropModule, IgxIconModule, IgxButtonModule]
+            }),
+            component: HGridDragSampleComponent
         }));
 
         return configs;

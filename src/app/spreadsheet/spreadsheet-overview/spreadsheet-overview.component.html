@@ -1,0 +1,10 @@
+<div class="sample">
+    <div class="options">
+        <label class="optionLabel" for="openFile">Choose Excel File:</label>
+        <input class="button" id="openFile" type="file" (change)="openFile($event.target)" accept=".xls, .xlt, .xlsx, .xlsm, .xltm, .xltx">
+    </div>
+    <div class="spreadsheet">
+        <igx-spreadsheet #spreadsheet height="100%" width="100%">
+        </igx-spreadsheet>
+    </div>
+</div>

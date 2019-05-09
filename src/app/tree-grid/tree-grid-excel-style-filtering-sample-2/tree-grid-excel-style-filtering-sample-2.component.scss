@@ -1,0 +1,19 @@
+.grid__wrapper {
+    margin: 16px;
+}
+
+.gridSample__filter {
+    width: rem(200px);
+}
+
+.cell__inner,
+.cell__inner_2 {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.cell__inner {
+  position: relative;
+  justify-content: space-between;
+}

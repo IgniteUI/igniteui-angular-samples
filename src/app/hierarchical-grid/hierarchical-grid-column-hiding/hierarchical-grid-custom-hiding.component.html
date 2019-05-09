@@ -13,18 +13,18 @@
     </div>
     <div class="hgridContainer">
         <igx-hierarchical-grid class="hgrid" [data]="localdata"
-        [height]="'500px'" [width]="'100%'" columnWidth="200px" [allowFiltering]="true" #hierarchicalGrid>
-            <igx-column field="Artist" [sortable]="true" [disableHiding]="true"></igx-column>
-            <igx-column field="Photo">
+        [height]="'500px'" [width]="'100%'" [allowFiltering]="true" #hierarchicalGrid>
+            <igx-column field="Artist" [sortable]="true" [disableHiding]="true" [width]="'200px'"></igx-column>
+            <igx-column field="Photo" [width]="'200px'">
                 <ng-template igxCell let-cell="cell">
                     <div class="cell__inner_2">
                         <img [src]="cell.value" class="photo" />
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field="Debut" [sortable]="true"></igx-column>
-            <igx-column field="Grammy Nominations" [sortable]="true"></igx-column>
-            <igx-column field="Grammy Awards" [sortable]="true"></igx-column>
+            <igx-column field="Debut" [sortable]="true" [width]="'200px'"></igx-column>
+            <igx-column field="Grammy Nominations" [sortable]="true" [dataType]="'number'" [width]="'200px'"></igx-column>
+            <igx-column field="Grammy Awards" [sortable]="true" [dataType]="'number'" [width]="'200px'"></igx-column>
 
             <igx-row-island [key]="'Albums'" [autoGenerate]="false">
                 <igx-column field="Album" [sortable]="true"></igx-column>
