@@ -142,8 +142,8 @@ export class IgxGridStateDirective implements AfterViewInit {
 
     public storeState(action: string, args: any) {
         if (this[action]) {
-            action += "-" + this.grid.id;
-            window.localStorage.setItem(action, JSON.stringify(args));
+            const actionKey = action + "-" + this.grid.id;
+            window.localStorage.setItem(actionKey, JSON.stringify(args));
         }
     }
 
