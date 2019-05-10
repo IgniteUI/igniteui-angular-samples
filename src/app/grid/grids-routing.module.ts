@@ -5,6 +5,7 @@ import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
@@ -19,18 +20,23 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sample.component";
 import { gridsRoutesData } from "./grid-routes-data";
+import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
+import { AboutComponent } from "./grid-save-state/about.component";
+import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
@@ -71,6 +77,16 @@ export const gridsRoutes: Routes = [
         component: GridRowEditSampleComponent,
         data: gridsRoutesData["grid-row-editing"],
         path: "grid-row-editing"
+    },
+    {
+        component: GridDragSampleComponent,
+        data: gridsRoutesData["grid-row-drag"],
+        path: "grid-row-drag"
+    },
+    {
+        component: GridDragToGridSampleComponent,
+        data: gridsRoutesData["grid-row-drag-to-grid"],
+        path: "grid-row-drag-to-grid"
     },
     {
         component: GridBatchEditingSampleComponent,
@@ -213,6 +229,16 @@ export const gridsRoutes: Routes = [
         path: "grid-paste"
     },
     {
+        component: GridSaveStateComponent,
+        data: gridsRoutesData["grid-state"],
+        path: "grid-state"
+    },
+    {
+        component: AboutComponent,
+        data: gridsRoutesData["grid-about"],
+        path: "grid-about"
+    },
+    {
         component: GridMultiCellSelectionComponent,
         data: gridsRoutesData["grid-multi-cell-selection"],
         path: "grid-multi-cell-selection"
@@ -221,6 +247,16 @@ export const gridsRoutes: Routes = [
         component: GridCustomKBNavigationComponent,
         data: gridsRoutesData["grid-custom-keyboard-navigation"],
         path: "grid-custom-keyboard-navigation"
+    },
+    {
+        component: GridCompositeDataComponent,
+        data: gridsRoutesData["grid-composite-data-binding"],
+        path: "grid-composite-data-binding"
+    },
+    {
+        component: GridMultiRowLayoutComponent,
+        data: gridsRoutesData["grid-multi-row-layout"],
+        path: "grid-multi-row-layout"
     }
 ];
 

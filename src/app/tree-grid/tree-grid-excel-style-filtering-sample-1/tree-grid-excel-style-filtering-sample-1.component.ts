@@ -14,10 +14,36 @@ export class TreeGridExcelStyleFilteringSample1Component implements OnInit {
 
     public data: any[];
 
+    public density = "comfortable";
+    public displayDensities;
+
     constructor() {
     }
     public ngOnInit(): void {
         this.data = FOODS_DATA();
+        this.displayDensities = [
+            {
+                label: "compact",
+                selected: this.density === "compact",
+                togglable: true
+            },
+            {
+                label: "cosy",
+                selected: this.density === "cosy",
+                togglable: true
+            },
+            {
+                label: "comfortable",
+                selected: this.density === "comfortable",
+                togglable: true
+            }
+        ];
+    }
+
+    public selectDensity(event) {
+        this.density = this.displayDensities[event.index].label;
+        this.treegrid1.displayDensity = this.displayDensities[event.index].label;
+        this.treegrid1.reflow();
     }
 
     public formatDate(val) {

@@ -10,6 +10,7 @@ import {
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDragDropModule,
     IgxExcelExporterService,
     IgxGridModule,
     IgxIconModule,
@@ -42,11 +43,13 @@ import {
 import { TreeGridFilteringCustomSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridFilteringTemplateSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+import { TreeGridLoadOnDemandSampleComponent } from "../../src/app/tree-grid/tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
 import { TreeGridMultiCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRemoteFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
+import { TreeGridRowDrag } from "../../src/app/tree-grid/tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "../../src/app/tree-grid/tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "../../src/app/tree-grid/tree-grid-selection-sample/tree-grid-selection-sample.component";
@@ -266,9 +269,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringSample1Component, IgxInputGroupModule],
+                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringSample1Component, IgxInputGroupModule, IgxButtonGroupModule],
                 ngDeclarations: [TreeGridExcelStyleFilteringSample1Component],
-                ngImports: [IgxTreeGridModule, IgxInputGroupModule]
+                ngImports: [IgxTreeGridModule, IgxInputGroupModule, IgxButtonGroupModule]
             }),
             component: TreeGridExcelStyleFilteringSample1Component,
             shortenComponentPathBy: "/tree-grid/"
@@ -456,6 +459,29 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule]
             }),
             component: TreeGridMultiCellSelectionComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Load On Demand Sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/tree-grid-load-on-demand-sample/remoteService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridLoadOnDemandSampleComponent],
+                ngDeclarations: [TreeGridLoadOnDemandSampleComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridLoadOnDemandSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridRowDrag, IgxButtonModule,
+                    IgxInputGroupModule, IgxIconModule, IgxDragDropModule],
+                ngDeclarations: [TreeGridRowDrag],
+                ngImports: [IgxTreeGridModule, IgxButtonModule, IgxInputGroupModule, IgxIconModule, IgxDragDropModule]
+            }),
+            component: TreeGridRowDrag,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

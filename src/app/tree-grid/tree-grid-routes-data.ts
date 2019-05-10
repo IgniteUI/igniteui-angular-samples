@@ -1,6 +1,7 @@
 // tslint:disable:object-literal-sort-keys
 
 export const treeGridRoutesData = {
+    "tree-grid-row-drag": { displayName: "Row Drag - Tree Grid", parentName: "TreeGrid"},
     "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
     "treegrid-primaryforeignkey": { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
@@ -42,5 +43,6 @@ export const treeGridRoutesData = {
     "treegrid-paging": { displayName: "TreeGrid Paging", parentName: "TreeGrid" },
     "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" },
     "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" },
-    "tree-grid-multi-cell-selection": { displayName: "TreeGrid Multi cell selection", parentName: "TreeGrid" }
+    "tree-grid-multi-cell-selection": { displayName: "TreeGrid Multi cell selection", parentName: "TreeGrid" },
+    "treegrid-load-on-demand": { displayName: "TreeGrid Load On Demand", parentName: "TreeGrid" }
 };
