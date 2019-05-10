@@ -1,18 +1,15 @@
 <div class="sample-wrapper">
     <div class="grid__wrapper">
-        <igx-grid #grid1 height="450px" [data]="data">
+        <igx-grid #grid1 height="400px" [data]="data">
             <igx-column field="Name" header="Name"></igx-column>
-            <igx-column field="Title" header="Title"></igx-column>
+            <igx-column field="Title" header="Title" width="20%"></igx-column>
             <igx-column field="Employees" header="Employees" width="40%" editable="true">
                 <ng-template #nestedDataTemp igxCell let-cell="cell">
                     <div class="employees-container">
                         <div *ngFor="let employee of cell.value">
                             <span><strong>Name:</strong> {{employee.Name}} </span>
-                            
                             <span><strong>Title:</strong> {{employee.Title}} </span>
-                            
-                            <span><strong>Hire Date:</strong> {{employee.HireDate | date:'shortDate'}} </span>
-                            
+                            <span><strong>Age:</strong> {{employee.Age}} </span>
                         </div>
                     </div>
                 </ng-template>
@@ -31,15 +28,17 @@
                                 <input igxInput [(ngModel)]="employee.Title" style="text-overflow:ellipsis" />
                             </igx-input-group>
                         </span>
-                            <span>
-                            <strong>Hire Date:</strong>
-                            <igx-date-picker [(ngModel)]="employee.HireDate" [label]="''"></igx-date-picker>
+                        <span style="width:10%">
+                            <strong>Age:</strong>
+                            <igx-input-group>
+                                    <input igxInput type="number" [(ngModel)]="employee.Age"/>
+                            </igx-input-group>
                         </span>
                         </div>
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field="Age" header="Age"></igx-column>
+            <igx-column field="Age" header="Age" width="10%"></igx-column>
             <igx-column field="HireDate" header="Hire Date">
                 <ng-template igxCell let-cell="cell">
                     {{cell.value | date: 'short'}}

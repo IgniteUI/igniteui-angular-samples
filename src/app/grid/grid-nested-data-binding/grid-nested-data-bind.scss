@@ -1,19 +1,18 @@
 .employees-container {
-    padding: 5px;
+    width: 100%;
+
     div {
         display: flex;
         justify-content: space-between;
-        flex-wrap: nowrap;
-        float: left
     }
 
-    div + div {
+    div+div {
         border-top-style: ridge
     }
 
-    span{
+    span {
         margin: 5px;
-        max-width: 115px;
+        max-width: 100px;
         min-width: 115px;
     }
 
@@ -23,14 +22,20 @@
             justify-content: space-between;
             margin-bottom: 10px;
 
-            span{
-                margin-right: 50px;
+            span {
+                margin-right: 20px;
             }
         }
 
-        div + div{
+        div+div {
             border-top-style: solid;
+            border-top-width: 5px;
             border-color: firebrick;
         }
     }
+}
+
+.grid__wrapper {
+    margin: 0 10px;
+    width: 950px;
 }
