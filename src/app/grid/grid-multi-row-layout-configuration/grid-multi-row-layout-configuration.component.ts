@@ -1,15 +1,15 @@
-import { Component, ViewEncapsulation, ViewChild, AfterViewInit, ElementRef, ChangeDetectorRef, ViewChildren, QueryList } from '@angular/core';
-import { IgxGridComponent, IgxDropEventArgs, IgxDialogComponent, IgxDropEnterEventArgs, IgxDropLeaveEventArgs } from 'igniteui-angular';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewEncapsulation } from "@angular/core";
+import { IgxDialogComponent, IgxDropEnterEventArgs, IgxDropEventArgs, IgxDropLeaveEventArgs, IgxGridComponent } from "igniteui-angular";
 
 class ColumnConfig {
-    key: string;
-    width: string;
-    colStart: number;
-    rowStart: number;
-    colSpan: number;
-    rowSpan: number;
-    selected: boolean;
-    hovered: boolean;
+    public key: string;
+    public width: string;
+    public colStart: number;
+    public rowStart: number;
+    public colSpan: number;
+    public rowSpan: number;
+    public selected: boolean;
+    public hovered: boolean;
 }
 
 @Component({
@@ -20,30 +20,98 @@ class ColumnConfig {
 })
 export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
 
-    @ViewChild('jsonDialog', { read: IgxDialogComponent })
+    public get layoutRowStyle() {
+        let style = "";
+        this.collection.forEach(() => {
+            if (this.rowsHeight.indexOf("px") !== -1 || this.rowsHeight.indexOf("%") !== -1 || isNaN(parseInt(this.rowsHeight, 10))) {
+                style += " " + this.rowsHeight;
+            } else {
+                style += " " + parseInt(this.rowsHeight, 10) + "px";
+            }
+        });
+        return style;
+    }
+
+    public get layoutColsStyle() {
+        let style = "";
+        this.collection[0].forEach((col) => {
+            for (let i = 0; i < col.colSpan; i++) {
+                if (this.colsWidth.indexOf("px") !== -1 || this.colsWidth.indexOf("%") !== -1 || isNaN(parseInt(this.colsWidth, 10))) {
+                    style += " " + this.colsWidth;
+                } else {
+                    style += " " + parseInt(this.colsWidth, 10) + "px";
+                }
+            }
+        });
+        return style;
+    }
+
+    @ViewChild("jsonDialog", { read: IgxDialogComponent })
     public jsonDialog: IgxDialogComponent;
 
-    @ViewChild('textArea', { read: ElementRef })
+    @ViewChild("textArea", { read: ElementRef })
     public textArea: ElementRef;
 
-    @ViewChild('grid', { read: IgxGridComponent })
+    @ViewChild("grid", { read: IgxGridComponent })
     public grid: IgxGridComponent;
 
-    @ViewChildren('gridCell', { read: ElementRef })
+    @ViewChildren("gridCell", { read: ElementRef })
     public gridCells: QueryList<ElementRef>;
 
-    @ViewChild('resizeIndicator', { read: ElementRef })
+    @ViewChild("resizeIndicator", { read: ElementRef })
     public resizeIndicator: ElementRef;
 
     public rowsCount = 3;
     public colsCount = 6;
-    public rowsHeight = '32px';
-    public colsWidth = '136px';
+    public rowsHeight = "32px";
+    public colsWidth = "136px";
     public collection: ColumnConfig[][] = [];
     public gridCollection = [];
     public renderGrid = false;
-    public jsonCollection = '';
+    public jsonCollection = "";
     public cellSelected;
+
+    public columnsList = [
+        { key: "ContactName", field: "Contact name"},
+        { key: "ContactTitle", field: "Contact title"},
+        { key: "CompanyName", field: "Company name"},
+        { key: "Country", field: "Country"},
+        { key: "Phone", field: "Phone"},
+        { key: "City", field: "City"},
+        { key: "Address", field: "Address"}
+    ];
+    public columnsConfiguration;
+
+    public data = [
+        // tslint:disable:max-line-length
+        { ID: "ALFKI", CompanyName: "Alfreds Futterkiste", ContactName: "Maria Anders", ContactTitle: "Sales Representative", Address: "Obere Str. 57", City: "Berlin", Region: null, PostalCode: "12209", Country: "Germany", Phone: "030-0074321", Fax: "030-0076545" },
+        { ID: "ANATR", CompanyName: "Ana Trujillo Emparedados y helados", ContactName: "Ana Trujillo", ContactTitle: "Owner", Address: "Avda. de la Constitución 2222", City: "México D.F.", Region: null, PostalCode: "05021", Country: "Mexico", Phone: "(5) 555-4729", Fax: "(5) 555-3745" },
+        { ID: "ANTON", CompanyName: "Antonio Moreno Taquería", ContactName: "Antonio Moreno", ContactTitle: "Owner", Address: "Mataderos 2312", City: "México D.F.", Region: null, PostalCode: "05023", Country: "Mexico", Phone: "(5) 555-3932", Fax: null },
+        { ID: "AROUT", CompanyName: "Around the Horn", ContactName: "Thomas Hardy", ContactTitle: "Sales Representative", Address: "120 Hanover Sq.", City: "London", Region: null, PostalCode: "WA1 1DP", Country: "UK", Phone: "(171) 555-7788", Fax: "(171) 555-6750" },
+        { ID: "BERGS", CompanyName: "Berglunds snabbköp", ContactName: "Christina Berglund", ContactTitle: "Order Administrator", Address: "Berguvsvägen 8", City: "Luleå", Region: null, PostalCode: "S-958 22", Country: "Sweden", Phone: "0921-12 34 65", Fax: "0921-12 34 67" },
+        { ID: "BLAUS", CompanyName: "Blauer See Delikatessen", ContactName: "Hanna Moos", ContactTitle: "Sales Representative", Address: "Forsterstr. 57", City: "Mannheim", Region: null, PostalCode: "68306", Country: "Germany", Phone: "0621-08460", Fax: "0621-08924" },
+        { ID: "BLONP", CompanyName: "Blondesddsl père et fils", ContactName: "Frédérique Citeaux", ContactTitle: "Marketing Manager", Address: "24, place Kléber", City: "Strasbourg", Region: null, PostalCode: "67000", Country: "France", Phone: "88.60.15.31", Fax: "88.60.15.32" },
+        { ID: "BOLID", CompanyName: "Bólido Comidas preparadas", ContactName: "Martín Sommer", ContactTitle: "Owner", Address: "C/ Araquil, 67", City: "Madrid", Region: null, PostalCode: "28023", Country: "Spain", Phone: "(91) 555 22 82", Fax: "(91) 555 91 99" },
+        { ID: "BONAP", CompanyName: "Bon app'", ContactName: "Laurence Lebihan", ContactTitle: "Owner", Address: "12, rue des Bouchers", City: "Marseille", Region: null, PostalCode: "13008", Country: "France", Phone: "91.24.45.40", Fax: "91.24.45.41" },
+        { ID: "BOTTM", CompanyName: "Bottom-Dollar Markets", ContactName: "Elizabeth Lincoln", ContactTitle: "Accounting Manager", Address: "23 Tsawassen Blvd.", City: "Tsawassen", Region: "BC", PostalCode: "T2F 8M4", Country: "Canada", Phone: "(604) 555-4729", Fax: "(604) 555-3745" },
+        { ID: "BSBEV", CompanyName: "B's Beverages", ContactName: "Victoria Ashworth", ContactTitle: "Sales Representative", Address: "Fauntleroy Circus", City: "London", Region: null, PostalCode: "EC2 5NT", Country: "UK", Phone: "(171) 555-1212", Fax: null },
+        { ID: "CACTU", CompanyName: "Cactus Comidas para llevar", ContactName: "Patricio Simpson", ContactTitle: "Sales Agent", Address: "Cerrito 333", City: "Buenos Aires", Region: null, PostalCode: "1010", Country: "Argentina", Phone: "(1) 135-5555", Fax: "(1) 135-4892" },
+        { ID: "CENTC", CompanyName: "Centro comercial Moctezuma", ContactName: "Francisco Chang", ContactTitle: "Marketing Manager", Address: "Sierras de Granada 9993", City: "México D.F.", Region: null, PostalCode: "05022", Country: "Mexico", Phone: "(5) 555-3392", Fax: "(5) 555-7293" },
+        { ID: "CHOPS", CompanyName: "Chop-suey Chinese", ContactName: "Yang Wang", ContactTitle: "Owner", Address: "Hauptstr. 29", City: "Bern", Region: null, PostalCode: "3012", Country: "Switzerland", Phone: "0452-076545", Fax: null },
+        { ID: "COMMI", CompanyName: "Comércio Mineiro", ContactName: "Pedro Afonso", ContactTitle: "Sales Associate", Address: "Av. dos Lusíadas, 23", City: "Sao Paulo", Region: "SP", PostalCode: "05432-043", Country: "Brazil", Phone: "(11) 555-7647", Fax: null },
+        { ID: "CONSH", CompanyName: "Consolidated Holdings", ContactName: "Elizabeth Brown", ContactTitle: "Sales Representative", Address: "Berkeley Gardens 12 Brewery", City: "London", Region: null, PostalCode: "WX1 6LT", Country: "UK", Phone: "(171) 555-2282", Fax: "(171) 555-9199" },
+        { ID: "DRACD", CompanyName: "Drachenblut Delikatessen", ContactName: "Sven Ottlieb", ContactTitle: "Order Administrator", Address: "Walserweg 21", City: "Aachen", Region: null, PostalCode: "52066", Country: "Germany", Phone: "0241-039123", Fax: "0241-059428" },
+        { ID: "DUMON", CompanyName: "Du monde entier", ContactName: "Janine Labrune", ContactTitle: "Owner", Address: "67, rue des Cinquante Otages", City: "Nantes", Region: null, PostalCode: "44000", Country: "France", Phone: "40.67.88.88", Fax: "40.67.89.89" },
+        { ID: "EASTC", CompanyName: "Eastern Connection", ContactName: "Ann Devon", ContactTitle: "Sales Agent", Address: "35 King George", City: "London", Region: null, PostalCode: "WX3 6FW", Country: "UK", Phone: "(171) 555-0297", Fax: "(171) 555-3373" },
+        { ID: "ERNSH", CompanyName: "Ernst Handel", ContactName: "Roland Mendel", ContactTitle: "Sales Manager", Address: "Kirchgasse 6", City: "Graz", Region: null, PostalCode: "8010", Country: "Austria", Phone: "7675-3425", Fax: "7675-3426" },
+        { ID: "FAMIA", CompanyName: "Familia Arquibaldo", ContactName: "Aria Cruz", ContactTitle: "Marketing Assistant", Address: "Rua Orós, 92", City: "Sao Paulo", Region: "SP", PostalCode: "05442-030", Country: "Brazil", Phone: "(11) 555-9857", Fax: null },
+        { ID: "FISSA", CompanyName: "FISSA Fabrica Inter. Salchichas S.A.", ContactName: "Diego Roel", ContactTitle: "Accounting Manager", Address: "C/ Moralzarzal, 86", City: "Madrid", Region: null, PostalCode: "28034", Country: "Spain", Phone: "(91) 555 94 44", Fax: "(91) 555 55 93" },
+        { ID: "FOLIG", CompanyName: "Folies gourmandes", ContactName: "Martine Rancé", ContactTitle: "Assistant Sales Agent", Address: "184, chaussée de Tournai", City: "Lille", Region: null, PostalCode: "59000", Country: "France", Phone: "20.16.10.16", Fax: "20.16.10.17" },
+        { ID: "FOLKO", CompanyName: "Folk och fä HB", ContactName: "Maria Larsson", ContactTitle: "Owner", Address: "Åkergatan 24", City: "Bräcke", Region: null, PostalCode: "S-844 67", Country: "Sweden", Phone: "0695-34 67 21", Fax: null },
+        { ID: "FRANK", CompanyName: "Frankenversand", ContactName: "Peter Franken", ContactTitle: "Marketing Manager", Address: "Berliner Platz 43", City: "München", Region: null, PostalCode: "80805", Country: "Germany", Phone: "089-0877310", Fax: "089-0877451" },
+        { ID: "FRANR", CompanyName: "France restauration", ContactName: "Carine Schmitt", ContactTitle: "Marketing Manager", Address: "54, rue Royale", City: "Nantes", Region: null, PostalCode: "44000", Country: "France", Phone: "40.32.21.21", Fax: "40.32.21.20" },
+        { ID: "FRANS", CompanyName: "Franchi S.p.A.", ContactName: "Paolo Accorti", ContactTitle: "Sales Representative", Address: "Via Monte Bianco 34", City: "Torino", Region: null, PostalCode: "10100", Country: "Italy", Phone: "011-4988260", Fax: "011-4988261" }
+    ];
 
     private dragStarted = false;
     private dragStartX;
@@ -59,48 +127,6 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
     private resizeInitialHeight = 0;
     private resizeWidth = 0;
     private resizeHeight = 0;
-
-    public columnsList = [
-        { key: 'ContactName', field: 'Contact name'},
-        { key: 'ContactTitle', field: 'Contact title'},
-        { key: 'CompanyName', field: 'Company name'},
-        { key: 'Country', field: 'Country'},
-        { key: 'Phone', field: 'Phone'},
-        { key: 'City', field: 'City'},
-        { key: 'Address', field: 'Address'}
-    ];
-    public columnsConfiguration;
-
-    public data = [
-        // tslint:disable:max-line-length
-        { 'ID': 'ALFKI', 'CompanyName': 'Alfreds Futterkiste', 'ContactName': 'Maria Anders', 'ContactTitle': 'Sales Representative', 'Address': 'Obere Str. 57', 'City': 'Berlin', 'Region': null, 'PostalCode': '12209', 'Country': 'Germany', 'Phone': '030-0074321', 'Fax': '030-0076545' },
-        { 'ID': 'ANATR', 'CompanyName': 'Ana Trujillo Emparedados y helados', 'ContactName': 'Ana Trujillo', 'ContactTitle': 'Owner', 'Address': 'Avda. de la Constitución 2222', 'City': 'México D.F.', 'Region': null, 'PostalCode': '05021', 'Country': 'Mexico', 'Phone': '(5) 555-4729', 'Fax': '(5) 555-3745' },
-        { 'ID': 'ANTON', 'CompanyName': 'Antonio Moreno Taquería', 'ContactName': 'Antonio Moreno', 'ContactTitle': 'Owner', 'Address': 'Mataderos 2312', 'City': 'México D.F.', 'Region': null, 'PostalCode': '05023', 'Country': 'Mexico', 'Phone': '(5) 555-3932', 'Fax': null },
-        { 'ID': 'AROUT', 'CompanyName': 'Around the Horn', 'ContactName': 'Thomas Hardy', 'ContactTitle': 'Sales Representative', 'Address': '120 Hanover Sq.', 'City': 'London', 'Region': null, 'PostalCode': 'WA1 1DP', 'Country': 'UK', 'Phone': '(171) 555-7788', 'Fax': '(171) 555-6750' },
-        { 'ID': 'BERGS', 'CompanyName': 'Berglunds snabbköp', 'ContactName': 'Christina Berglund', 'ContactTitle': 'Order Administrator', 'Address': 'Berguvsvägen 8', 'City': 'Luleå', 'Region': null, 'PostalCode': 'S-958 22', 'Country': 'Sweden', 'Phone': '0921-12 34 65', 'Fax': '0921-12 34 67' },
-        { 'ID': 'BLAUS', 'CompanyName': 'Blauer See Delikatessen', 'ContactName': 'Hanna Moos', 'ContactTitle': 'Sales Representative', 'Address': 'Forsterstr. 57', 'City': 'Mannheim', 'Region': null, 'PostalCode': '68306', 'Country': 'Germany', 'Phone': '0621-08460', 'Fax': '0621-08924' },
-        { 'ID': 'BLONP', 'CompanyName': 'Blondesddsl père et fils', 'ContactName': 'Frédérique Citeaux', 'ContactTitle': 'Marketing Manager', 'Address': '24, place Kléber', 'City': 'Strasbourg', 'Region': null, 'PostalCode': '67000', 'Country': 'France', 'Phone': '88.60.15.31', 'Fax': '88.60.15.32' },
-        { 'ID': 'BOLID', 'CompanyName': 'Bólido Comidas preparadas', 'ContactName': 'Martín Sommer', 'ContactTitle': 'Owner', 'Address': 'C/ Araquil, 67', 'City': 'Madrid', 'Region': null, 'PostalCode': '28023', 'Country': 'Spain', 'Phone': '(91) 555 22 82', 'Fax': '(91) 555 91 99' },
-        { 'ID': 'BONAP', 'CompanyName': 'Bon app\'', 'ContactName': 'Laurence Lebihan', 'ContactTitle': 'Owner', 'Address': '12, rue des Bouchers', 'City': 'Marseille', 'Region': null, 'PostalCode': '13008', 'Country': 'France', 'Phone': '91.24.45.40', 'Fax': '91.24.45.41' },
-        { 'ID': 'BOTTM', 'CompanyName': 'Bottom-Dollar Markets', 'ContactName': 'Elizabeth Lincoln', 'ContactTitle': 'Accounting Manager', 'Address': '23 Tsawassen Blvd.', 'City': 'Tsawassen', 'Region': 'BC', 'PostalCode': 'T2F 8M4', 'Country': 'Canada', 'Phone': '(604) 555-4729', 'Fax': '(604) 555-3745' },
-        { 'ID': 'BSBEV', 'CompanyName': 'B\'s Beverages', 'ContactName': 'Victoria Ashworth', 'ContactTitle': 'Sales Representative', 'Address': 'Fauntleroy Circus', 'City': 'London', 'Region': null, 'PostalCode': 'EC2 5NT', 'Country': 'UK', 'Phone': '(171) 555-1212', 'Fax': null },
-        { 'ID': 'CACTU', 'CompanyName': 'Cactus Comidas para llevar', 'ContactName': 'Patricio Simpson', 'ContactTitle': 'Sales Agent', 'Address': 'Cerrito 333', 'City': 'Buenos Aires', 'Region': null, 'PostalCode': '1010', 'Country': 'Argentina', 'Phone': '(1) 135-5555', 'Fax': '(1) 135-4892' },
-        { 'ID': 'CENTC', 'CompanyName': 'Centro comercial Moctezuma', 'ContactName': 'Francisco Chang', 'ContactTitle': 'Marketing Manager', 'Address': 'Sierras de Granada 9993', 'City': 'México D.F.', 'Region': null, 'PostalCode': '05022', 'Country': 'Mexico', 'Phone': '(5) 555-3392', 'Fax': '(5) 555-7293' },
-        { 'ID': 'CHOPS', 'CompanyName': 'Chop-suey Chinese', 'ContactName': 'Yang Wang', 'ContactTitle': 'Owner', 'Address': 'Hauptstr. 29', 'City': 'Bern', 'Region': null, 'PostalCode': '3012', 'Country': 'Switzerland', 'Phone': '0452-076545', 'Fax': null },
-        { 'ID': 'COMMI', 'CompanyName': 'Comércio Mineiro', 'ContactName': 'Pedro Afonso', 'ContactTitle': 'Sales Associate', 'Address': 'Av. dos Lusíadas, 23', 'City': 'Sao Paulo', 'Region': 'SP', 'PostalCode': '05432-043', 'Country': 'Brazil', 'Phone': '(11) 555-7647', 'Fax': null },
-        { 'ID': 'CONSH', 'CompanyName': 'Consolidated Holdings', 'ContactName': 'Elizabeth Brown', 'ContactTitle': 'Sales Representative', 'Address': 'Berkeley Gardens 12 Brewery', 'City': 'London', 'Region': null, 'PostalCode': 'WX1 6LT', 'Country': 'UK', 'Phone': '(171) 555-2282', 'Fax': '(171) 555-9199' },
-        { 'ID': 'DRACD', 'CompanyName': 'Drachenblut Delikatessen', 'ContactName': 'Sven Ottlieb', 'ContactTitle': 'Order Administrator', 'Address': 'Walserweg 21', 'City': 'Aachen', 'Region': null, 'PostalCode': '52066', 'Country': 'Germany', 'Phone': '0241-039123', 'Fax': '0241-059428' },
-        { 'ID': 'DUMON', 'CompanyName': 'Du monde entier', 'ContactName': 'Janine Labrune', 'ContactTitle': 'Owner', 'Address': '67, rue des Cinquante Otages', 'City': 'Nantes', 'Region': null, 'PostalCode': '44000', 'Country': 'France', 'Phone': '40.67.88.88', 'Fax': '40.67.89.89' },
-        { 'ID': 'EASTC', 'CompanyName': 'Eastern Connection', 'ContactName': 'Ann Devon', 'ContactTitle': 'Sales Agent', 'Address': '35 King George', 'City': 'London', 'Region': null, 'PostalCode': 'WX3 6FW', 'Country': 'UK', 'Phone': '(171) 555-0297', 'Fax': '(171) 555-3373' },
-        { 'ID': 'ERNSH', 'CompanyName': 'Ernst Handel', 'ContactName': 'Roland Mendel', 'ContactTitle': 'Sales Manager', 'Address': 'Kirchgasse 6', 'City': 'Graz', 'Region': null, 'PostalCode': '8010', 'Country': 'Austria', 'Phone': '7675-3425', 'Fax': '7675-3426' },
-        { 'ID': 'FAMIA', 'CompanyName': 'Familia Arquibaldo', 'ContactName': 'Aria Cruz', 'ContactTitle': 'Marketing Assistant', 'Address': 'Rua Orós, 92', 'City': 'Sao Paulo', 'Region': 'SP', 'PostalCode': '05442-030', 'Country': 'Brazil', 'Phone': '(11) 555-9857', 'Fax': null },
-        { 'ID': 'FISSA', 'CompanyName': 'FISSA Fabrica Inter. Salchichas S.A.', 'ContactName': 'Diego Roel', 'ContactTitle': 'Accounting Manager', 'Address': 'C/ Moralzarzal, 86', 'City': 'Madrid', 'Region': null, 'PostalCode': '28034', 'Country': 'Spain', 'Phone': '(91) 555 94 44', 'Fax': '(91) 555 55 93' },
-        { 'ID': 'FOLIG', 'CompanyName': 'Folies gourmandes', 'ContactName': 'Martine Rancé', 'ContactTitle': 'Assistant Sales Agent', 'Address': '184, chaussée de Tournai', 'City': 'Lille', 'Region': null, 'PostalCode': '59000', 'Country': 'France', 'Phone': '20.16.10.16', 'Fax': '20.16.10.17' },
-        { 'ID': 'FOLKO', 'CompanyName': 'Folk och fä HB', 'ContactName': 'Maria Larsson', 'ContactTitle': 'Owner', 'Address': 'Åkergatan 24', 'City': 'Bräcke', 'Region': null, 'PostalCode': 'S-844 67', 'Country': 'Sweden', 'Phone': '0695-34 67 21', 'Fax': null },
-        { 'ID': 'FRANK', 'CompanyName': 'Frankenversand', 'ContactName': 'Peter Franken', 'ContactTitle': 'Marketing Manager', 'Address': 'Berliner Platz 43', 'City': 'München', 'Region': null, 'PostalCode': '80805', 'Country': 'Germany', 'Phone': '089-0877310', 'Fax': '089-0877451' },
-        { 'ID': 'FRANR', 'CompanyName': 'France restauration', 'ContactName': 'Carine Schmitt', 'ContactTitle': 'Marketing Manager', 'Address': '54, rue Royale', 'City': 'Nantes', 'Region': null, 'PostalCode': '44000', 'Country': 'France', 'Phone': '40.32.21.21', 'Fax': '40.32.21.20' },
-        { 'ID': 'FRANS', 'CompanyName': 'Franchi S.p.A.', 'ContactName': 'Paolo Accorti', 'ContactTitle': 'Sales Representative', 'Address': 'Via Monte Bianco 34', 'City': 'Torino', 'Region': null, 'PostalCode': '10100', 'Country': 'Italy', 'Phone': '011-4988260', 'Fax': '011-4988261' }
-    ];
     // tslint:enable:max-line-length
 
     constructor(public cdr: ChangeDetectorRef) {
@@ -109,33 +135,6 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
 
     public ngAfterViewInit() {
         // this.grid.groupBy({ fieldName: 'Country', dir: 1, ignoreCase: false });
-    }
-
-
-    public get layoutRowStyle() {
-        let style = '';
-        this.collection.forEach(() => {
-            if (this.rowsHeight.indexOf('px') !== -1 || this.rowsHeight.indexOf('%') !== -1 || isNaN(parseInt(this.rowsHeight, 10))) {
-                style += ' ' + this.rowsHeight;
-            } else {
-                style += ' ' + parseInt(this.rowsHeight, 10) + 'px';
-            }
-        });
-        return style;
-    }
-
-    public get layoutColsStyle() {
-        let style = '';
-        this.collection[0].forEach((col) => {
-            for (let i = 0; i < col.colSpan; i++) {
-                if (this.colsWidth.indexOf('px') !== -1 || this.colsWidth.indexOf('%') !== -1 || isNaN(parseInt(this.colsWidth, 10))) {
-                    style += ' ' + this.colsWidth;
-                } else {
-                    style += ' ' + parseInt(this.colsWidth, 10) + 'px';
-                }
-            }
-        });
-        return style;
     }
 
     public updateCollectionSize() {
@@ -147,8 +146,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                     row.push(this.collection[rowIndex][colIndex]);
                 } else {
                     row.push({
-                        key: '',
-                        width: '',
+                        key: "",
+                        width: "",
                         rowStart: rowIndex + 1,
                         colStart: colIndex + 1,
                         colSpan: 1,
@@ -166,7 +165,7 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         for (let rowIndex = 0; rowIndex < this.collection.length; rowIndex++) {
             let column = this.collection[rowIndex][0];
             for (let colIndex = 1; colIndex < this.collection[rowIndex].length; colIndex++) {
-                if (this.collection[rowIndex][colIndex].key === column.key && this.collection[rowIndex][colIndex].key !== '') {
+                if (this.collection[rowIndex][colIndex].key === column.key && this.collection[rowIndex][colIndex].key !== "") {
                     column.colSpan += this.collection[rowIndex][colIndex].colSpan;
                     this.collection[rowIndex].splice(colIndex, 1);
                     colIndex--;
@@ -239,13 +238,22 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
 
     public renderJson() {
         const flatCollection = this.flattenCollection();
-        this.jsonCollection = JSON.stringify(flatCollection);
+        const mappedCollection = flatCollection.map((row) => {
+            return {
+                key: row.key,
+                rowStart: row.rowStart,
+                colStart: row.colStart,
+                rowEnd: row.rowStart + row.rowSpan,
+                colEnd: row.colStart + row.colSpan
+            };
+        });
+        this.jsonCollection = JSON.stringify(mappedCollection);
         this.jsonDialog.open();
     }
 
     public copyToClipboard() {
         this.textArea.nativeElement.select();
-        document.execCommand('copy');
+        document.execCommand("copy");
     }
 
     public clickCell(cellRef, rowIndex, colIndex) {
@@ -354,8 +362,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                 const secondHalf = this.collection[rowUpdateIndex].slice(firstHalf.length);
                 for (let i = 0; i < -1 * this.colSpanIncrease; i++) {
                     secondHalf.unshift({
-                        key: '',
-                        width: '',
+                        key: "",
+                        width: "",
                         rowStart: rowUpdateIndex + 1,
                         colStart: this.curResizedCell.colStart + this.curResizedCell.colSpan - i - 1,
                         colSpan: 1,
@@ -443,8 +451,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                 const secondHalf = this.collection[rowUpdateIndex].slice(firstHalf.length);
                 for (let i = 0; i < -1 * this.colSpanIncrease; i++) {
                     firstHalf.push({
-                        key: '',
-                        width: '',
+                        key: "",
+                        width: "",
                         rowStart: rowUpdateIndex + 1,
                         colStart: this.curResizedCell.colStart + i,
                         colSpan: 1,
@@ -499,8 +507,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                             curCell.colSpan--;
                             curCellEnd--;
                             this.collection[curRowIndex].splice(j + 1, 0, {
-                                key: '',
-                                width: '',
+                                key: "",
+                                width: "",
                                 rowStart: curRowIndex + 1,
                                 colStart: curCellEnd,
                                 colSpan: 1,
@@ -545,8 +553,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
 
                 for (let j = 0; j < this.curResizedCell.colSpan; j++) {
                     this.collection[i].splice(startCellIndex + 1 + j, 0, {
-                        key: '',
-                        width: '',
+                        key: "",
+                        width: "",
                         rowStart: i + 1,
                         colStart: this.curResizedCell.colStart + j,
                         colSpan: 1,
@@ -567,7 +575,7 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
     }
 
     public onCellKey(event, rowIndex, colIndex) {
-        if (event.key === 'Delete') {
+        if (event.key === "Delete") {
             for (let i = rowIndex; i < rowIndex + this.cellSelected.rowSpan; i++) {
                 const rowFirstHalf = [];
                 for (let m = 0; m < this.collection[i].length; m++) {
@@ -581,8 +589,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                 const rowSecondHalf = this.collection[i].slice(rowFirstHalf.length + (i === rowIndex ? 1 : 0));
                 for (let j = 0; j < this.cellSelected.colSpan; j++) {
                     rowFirstHalf.push({
-                        key: '',
-                        width: '',
+                        key: "",
+                        width: "",
                         rowStart: i + 1,
                         colStart: this.cellSelected.colStart + j,
                         colSpan: 1,
