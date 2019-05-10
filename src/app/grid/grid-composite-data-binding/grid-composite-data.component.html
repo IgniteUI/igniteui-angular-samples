@@ -1,5 +1,5 @@
-<div class="grid__wrapper">
-    <div class="sample__header">
+<div class="sample-wrapper">
+    <div class="grid__wrapper">
         <igx-grid #grid1 width="100%" height="500px" [data]="data">
             <igx-column field="ContactName" header="Contact" editable="true">
                 <ng-template #compositeTemp igxCell let-cell="cell">
@@ -36,7 +36,7 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field="Address" header="Address" width="50%" editable="true">
+            <igx-column field="Address" header="Address" editable="true">
                 <ng-template #compositeTemp igxCell let-cell="cell">
                     <div class="address-container">
                         <div class="country-city">
