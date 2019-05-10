@@ -21,6 +21,7 @@
     background-color: rgb(42, 42, 42);
     color: rgb(255,255,255);
     user-select: none;
+    cursor: pointer;
 }
 
 .columnOut:hover {
@@ -48,7 +49,7 @@
 }
 
 .textWrapper {
-    margin: 6px;
+    margin: auto;
     align-self: flex-end;
     color: rgb(255,255,255);
 }
@@ -85,4 +86,15 @@
 .rowLayoutView {
     display: grid;
     margin: auto;
+}
+
+.outer-wrapper {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.grid-wrapper {
+    margin: auto;
+    width: 800px;
 }

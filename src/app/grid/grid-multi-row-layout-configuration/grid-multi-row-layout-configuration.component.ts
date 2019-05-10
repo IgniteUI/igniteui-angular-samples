@@ -1,5 +1,19 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewEncapsulation } from "@angular/core";
-import { IgxDialogComponent, IgxDropEnterEventArgs, IgxDropEventArgs, IgxDropLeaveEventArgs, IgxGridComponent } from "igniteui-angular";
+import {
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    QueryList,
+    ViewChild,
+    ViewChildren,
+    ViewEncapsulation } from "@angular/core";
+import {
+    IgxDialogComponent,
+    IgxDropEnterEventArgs,
+    IgxDropEventArgs,
+    IgxDropLeaveEventArgs,
+    IgxGridComponent
+} from "igniteui-angular";
 
 class ColumnConfig {
     public key: string;
@@ -23,7 +37,9 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
     public get layoutRowStyle() {
         let style = "";
         this.collection.forEach(() => {
-            if (this.rowsHeight.indexOf("px") !== -1 || this.rowsHeight.indexOf("%") !== -1 || isNaN(parseInt(this.rowsHeight, 10))) {
+            if (this.rowsHeight.indexOf("px") !== -1 ||
+                this.rowsHeight.indexOf("%") !== -1 ||
+                isNaN(parseInt(this.rowsHeight, 10))) {
                 style += " " + this.rowsHeight;
             } else {
                 style += " " + parseInt(this.rowsHeight, 10) + "px";
@@ -36,7 +52,9 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         let style = "";
         this.collection[0].forEach((col) => {
             for (let i = 0; i < col.colSpan; i++) {
-                if (this.colsWidth.indexOf("px") !== -1 || this.colsWidth.indexOf("%") !== -1 || isNaN(parseInt(this.colsWidth, 10))) {
+                if (this.colsWidth.indexOf("px") !== -1 ||
+                    this.colsWidth.indexOf("%") !== -1 ||
+                    isNaN(parseInt(this.colsWidth, 10))) {
                     style += " " + this.colsWidth;
                 } else {
                     style += " " + parseInt(this.colsWidth, 10) + "px";
