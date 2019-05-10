@@ -37,6 +37,8 @@ import {
 import {
     GridColumnHidingToolbarSampleComponent
 } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+// tslint:disable-next-line:max-line-length
+import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
@@ -64,8 +66,8 @@ import { GridGroupBySummarySampleComponent
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
-import { GridNestedDataBindComponent } from '../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind';
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -574,6 +576,15 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridNestedDataBindComponent, IgxGridModule, IgxInputGroupModule, IgxDatePickerModule],
                 ngDeclarations: [GridNestedDataBindComponent],
                 ngImports: [IgxGridModule, IgxInputGroupModule, IgxDatePickerModule]
+            })
+        }));
+        configs.push(new Config({
+            component: GridCompositeDataComponent,
+            additionalFiles: ["/src/app/grid/grid-composite-data-binding/localData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCompositeDataComponent, IgxGridModule, IgxInputGroupModule],
+                ngDeclarations: [GridCompositeDataComponent],
+                ngImports: [IgxGridModule, IgxInputGroupModule]
             })
         }));
 
