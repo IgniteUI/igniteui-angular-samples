@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     flex-flow: row;
-    width: 50%;
+    width: fit-content; 
     height: 50px;
     margin: auto;
     border: 1px black dotted;
@@ -11,13 +11,15 @@
 .columnOut {
     display: flex;
     height: 32px;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
     margin-top: auto;
     margin-bottom: auto;
     font-family: 'Titillium Web', sans-serif;
     line-height: 1.25rem;
     font-weight: 600;
     background-color: rgb(42, 42, 42);
+    color: rgb(255,255,255);
     user-select: none;
 }
 
@@ -48,6 +50,7 @@
 .textWrapper {
     margin: 6px;
     align-self: flex-end;
+    color: rgb(255,255,255);
 }
 
 .resizerLeft {
