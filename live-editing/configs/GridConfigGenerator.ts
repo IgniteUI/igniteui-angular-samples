@@ -578,6 +578,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxInputGroupModule, IgxDatePickerModule]
             })
         }));
+
         configs.push(new Config({
             component: GridCompositeDataComponent,
             additionalFiles: ["/src/app/grid/grid-composite-data-binding/localData.ts"],
