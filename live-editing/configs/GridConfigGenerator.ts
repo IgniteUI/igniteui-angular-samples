@@ -64,6 +64,7 @@ import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridMultiRowLayoutConfigurationComponent } from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -520,12 +521,23 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxToastModule]
             })
         }));
+
         configs.push(new Config({
             component: GridMultiRowLayoutComponent,
             additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMultiRowLayoutComponent, IgxGridModule],
                 ngDeclarations: [GridMultiRowLayoutComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiRowLayoutConfigurationComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiRowLayoutConfigurationComponent, IgxGridModule],
+                ngDeclarations: [GridMultiRowLayoutConfigurationComponent],
                 ngImports: [IgxGridModule]
             })
         }));
