@@ -5,6 +5,7 @@ import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -240,6 +241,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiCellSelectionComponent,
         data: gridsRoutesData["grid-multi-cell-selection"],
         path: "grid-multi-cell-selection"
+    },
+    {
+        component: GridCompositeDataComponent,
+        data: gridsRoutesData["grid-composite-data-binding"],
+        path: "grid-composite-data-binding"
     },
     {
         component: GridMultiRowLayoutComponent,

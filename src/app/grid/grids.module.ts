@@ -11,6 +11,7 @@ import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transac
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {GridCompositeDataComponent} from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -97,6 +98,7 @@ import { DataService } from "./services/data.service";
         AboutComponent,
         IgxGridStateDirective,
         GridMultiCellSelectionComponent,
+        GridCompositeDataComponent,
         GridMultiRowLayoutComponent,
         GridDragSampleComponent,
         GridDragToGridSampleComponent
