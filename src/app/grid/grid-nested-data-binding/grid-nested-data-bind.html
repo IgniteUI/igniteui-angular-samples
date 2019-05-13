@@ -6,7 +6,7 @@
             <igx-column field="Employees" header="Employees" [cellClasses]="{ expand: true }" width="40%">
                 <ng-template #nestedDataTemp igxCell let-people let-cell="cell">
                     <div class="employees-container">
-                        <igx-expansion-panel *ngFor="let person of people" (onExpanded)="checkGrid($event, cell)">
+                        <igx-expansion-panel *ngFor="let person of people">
                             <igx-expansion-panel-header iconPosition="right">
                                 <igx-expansion-panel-description>
                                     {{ person.Name }}
