@@ -20,6 +20,7 @@ import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
@@ -241,6 +242,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiCellSelectionComponent,
         data: gridsRoutesData["grid-multi-cell-selection"],
         path: "grid-multi-cell-selection"
+    },
+    {
+        component: GridNestedDataBindComponent,
+        data: gridsRoutesData["grid-nested-data-binding"],
+        path: "grid-nested-data-binding"
     },
     {
         component: GridCompositeDataComponent,

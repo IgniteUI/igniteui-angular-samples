@@ -15,6 +15,7 @@ import {
     IgxDialogModule,
     IgxDragDropModule,
     IgxExcelExporterService,
+    IgxExpansionPanelModule,
     IgxFocusModule,
     IgxGridModule,
     IgxIconModule,
@@ -37,6 +38,8 @@ import {
 import {
     GridColumnHidingToolbarSampleComponent
 } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+// tslint:disable-next-line:max-line-length
+import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
@@ -65,6 +68,7 @@ import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -101,7 +105,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridCompositeDataComponent } from '../../src/app/grid/grid-composite-data-binding/grid-composite-data.component';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -565,6 +568,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule, IgxIconModule, IgxButtonModule]
             }),
             component: GridDragToGridSampleComponent
+        }));
+
+        configs.push(new Config({
+            component: GridNestedDataBindComponent,
+            additionalFiles: ["/src/app/grid/grid-nested-data-binding/nestedData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridNestedDataBindComponent, IgxGridModule, IgxInputGroupModule, IgxExpansionPanelModule],
+                ngDeclarations: [GridNestedDataBindComponent],
+                ngImports: [IgxGridModule, IgxInputGroupModule, IgxExpansionPanelModule]
+            })
         }));
 
         configs.push(new Config({
