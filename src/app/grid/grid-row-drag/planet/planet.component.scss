@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+}
+
+.planet-name {
+    width: 20%;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 0.8125rem;
+}
+
+.group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+}
+
+.planet {
+    border: 1px solid grey;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.moons {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.moon {
+    border: 1px solid grey;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+}
+
+.moon-selected {
+    background-color: grey;
+}
+
+.info {
+    width: 400px;
+    padding: 20px;
+}

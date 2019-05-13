@@ -1,15 +1,21 @@
-<div class="grid-container">
-    <igx-grid>
-    </igx-grid>
-</div>
-<div class="solar-system">
-    <div class="group">Uranus<div class="planet"></div></div>
-    <div class="group">Neptune<div class="planet"></div></div>
-    <div class="group">Saturn<div class="planet"></div></div>
-    <div class="group">Jupiter<div class="planet"></div></div>
-    <div class="group">Mars<div class="planet"></div></div>
-    <div class="group">Earth<div class="planet"></div></div>
-    <div class="group">Venus<div class="planet"></div></div>
-    <div class="group">Mercury<div class="planet"></div></div>
-    <div class="sun"></div>
+<div class="container">
+    <div class="moon-info">
+        <igx-grid [data]="moonData" [primaryKey]="'name'" [rowDraggable]="true" (onRowDragStart)="onRowDragStart($event)">
+            <igx-column [field]="'name'" [header]="'Moon'" width="120px" [pinned]="true" [sortable]="true"></igx-column>
+            <igx-column [field]="'planet'" [header]="'Planet'" width="150px" [sortable]="true"></igx-column>
+            <igx-column [field]="'mass'" [header]="'Mass'" width="200px" [sortable]="true"></igx-column>
+            <igx-column [field]="'diameter'" [header]="'Diameter'" width="200px" [sortable]="true"></igx-column>
+            <igx-column [field]="'orbitalPeriod'" [header]="'Orbital Period'" width="200px" [sortable]="true"></igx-column>
+            <igx-column [field]="'orbitalRadius'" [header]="'Orbital Radius'" width="200px" [sortable]="true"></igx-column>
+        </igx-grid>
+    </div>
+    <div class="solar-system">
+        <div class="planets">
+            <planet *ngFor="let data of planetData" [data]="data" 
+                igxDrop (onEnter)="onEnter($event)" (onLeave)="onLeave($event)" (onDrop)="onDrop($event)"></planet>
+        </div>
+        <div class="sun-wrapper">
+                <div class="sun">
+        </div>
+    </div>
 </div>
