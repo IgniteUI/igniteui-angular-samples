@@ -61,6 +61,7 @@ import {
     TreeGridRemoteFilteringSampleComponent
 } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
+import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -129,6 +130,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRowDrag,
         data: treeGridRoutesData["tree-grid-row-drag"],
         path: "tree-grid-row-drag"
+    },
+    {
+        component: TreeGridRowDragBase,
+        data: treeGridRoutesData["tree-grid-row-drag-base"],
+        path: "tree-grid-row-drag-base"
     },
     {
         component: TreeGridSelectionSampleComponent,

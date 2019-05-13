@@ -27,6 +27,7 @@ import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/r
 import { RemotePagingGridSample } from "./grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sample.component";
 import { gridsRoutesData } from "./grid-routes-data";
+import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-base.component";
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
@@ -87,6 +88,11 @@ export const gridsRoutes: Routes = [
         component: GridDragToGridSampleComponent,
         data: gridsRoutesData["grid-row-drag-to-grid"],
         path: "grid-row-drag-to-grid"
+    },
+    {
+        component: GridDragBaseSampleComponent,
+        data: gridsRoutesData["grid-row-drag-base"],
+        path: "grid-row-drag-base"
     },
     {
         component: GridBatchEditingSampleComponent,
