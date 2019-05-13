@@ -15,6 +15,7 @@ import {
     IgxDialogModule,
     IgxDragDropModule,
     IgxExcelExporterService,
+    IgxExpansionPanelModule,
     IgxFocusModule,
     IgxGridModule,
     IgxIconModule,
@@ -573,11 +574,12 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridNestedDataBindComponent,
             additionalFiles: ["/src/app/grid/grid-nested-data-binding/nestedData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridNestedDataBindComponent, IgxGridModule, IgxInputGroupModule, IgxDatePickerModule],
+                imports: [GridNestedDataBindComponent, IgxGridModule, IgxInputGroupModule, IgxExpansionPanelModule],
                 ngDeclarations: [GridNestedDataBindComponent],
-                ngImports: [IgxGridModule, IgxInputGroupModule, IgxDatePickerModule]
+                ngImports: [IgxGridModule, IgxInputGroupModule, IgxExpansionPanelModule]
             })
         }));
+
         configs.push(new Config({
             component: GridCompositeDataComponent,
             additionalFiles: ["/src/app/grid/grid-composite-data-binding/localData.ts"],

@@ -3,38 +3,28 @@
         <igx-grid #grid1 height="400px" [data]="data">
             <igx-column field="Name" header="Name"></igx-column>
             <igx-column field="Title" header="Title" width="20%"></igx-column>
-            <igx-column field="Employees" header="Employees" width="40%" editable="true">
-                <ng-template #nestedDataTemp igxCell let-cell="cell">
+            <igx-column field="Employees" header="Employees" [cellClasses]="{ expand: true }" width="40%">
+                <ng-template #nestedDataTemp igxCell let-people let-cell="cell">
                     <div class="employees-container">
-                        <div *ngFor="let employee of cell.value">
-                            <span><strong>Name:</strong> {{employee.Name}} </span>
-                            <span><strong>Title:</strong> {{employee.Title}} </span>
-                            <span><strong>Age:</strong> {{employee.Age}} </span>
-                        </div>
-                    </div>
-                </ng-template>
-                <ng-template igxCellEditor let-cell="cell">
-                    <div class="employees-container--edit">
-                        <div *ngFor="let employee of cell.value">
-                            <span>
-                                <strong>Name:</strong>
-                                <igx-input-group>
-                                    <input igxInput [(ngModel)]="employee.Name" />
-                                </igx-input-group>
-                            </span>
-                            <span>
-                            <strong>Title:</strong>
-                            <igx-input-group>
-                                <input igxInput [(ngModel)]="employee.Title" style="text-overflow:ellipsis" />
-                            </igx-input-group>
-                        </span>
-                        <span style="width:10%">
-                            <strong>Age:</strong>
-                            <igx-input-group>
-                                    <input igxInput type="number" [(ngModel)]="employee.Age"/>
-                            </igx-input-group>
-                        </span>
-                        </div>
+                        <igx-expansion-panel *ngFor="let person of people" (onExpanded)="checkGrid($event, cell)">
+                            <igx-expansion-panel-header iconPosition="right">
+                                <igx-expansion-panel-description>
+                                    {{ person.Name }}
+                                </igx-expansion-panel-description>
+                            </igx-expansion-panel-header>
+                            <igx-expansion-panel-body>
+                                <div class="description">
+                                    <igx-input-group (keydown)="stop($event)" displayDensity="compact">
+                                        <label igxLabel for="title">Title</label>
+                                        <input type="text" name="title" igxInput [(ngModel)]="person.Title" style="text-overflow: ellipsis;" />
+                                    </igx-input-group>
+                                    <igx-input-group (keydown)="stop($event)" displayDensity="compact" style="width: 15%;">
+                                        <label igxLabel for="age">Age</label>
+                                        <input type="number" name="age" igxInput [(ngModel)]="person.Age" />
+                                    </igx-input-group>
+                                </div>
+                            </igx-expansion-panel-body>
+                        </igx-expansion-panel>
                     </div>
                 </ng-template>
             </igx-column>

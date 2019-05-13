@@ -14,4 +14,8 @@ export class GridNestedDataBindComponent implements OnInit {
     public ngOnInit() {
         this.data = EMPLOYEE_DATA;
     }
+
+    public stop(args) {
+        args.stopPropagation();
+    }
 }
