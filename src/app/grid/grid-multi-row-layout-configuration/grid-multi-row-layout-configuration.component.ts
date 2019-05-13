@@ -29,8 +29,8 @@ class ColumnConfig {
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: "app-grid-multi-row-layout-configuration-sample",
-    templateUrl: "./grid-multi-row-layout-configuration.component.html",
-    styleUrls: ["./grid-multi-row-layout-configuration.component.scss"]
+    styleUrls: ["./grid-multi-row-layout-configuration.component.scss"],
+    templateUrl: "./grid-multi-row-layout-configuration.component.html"
 })
 export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
 
@@ -164,12 +164,12 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                     row.push(this.collection[rowIndex][colIndex]);
                 } else {
                     row.push({
-                        key: "",
-                        width: "",
-                        rowStart: rowIndex + 1,
-                        colStart: colIndex + 1,
                         colSpan: 1,
-                        rowSpan: 1
+                        colStart: colIndex + 1,
+                        key: "",
+                        rowSpan: 1,
+                        rowStart: rowIndex + 1,
+                        width: ""
                     });
                 }
             }
@@ -180,15 +180,16 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
     }
 
     public updateCollectionLayout() {
-        for (let rowIndex = 0; rowIndex < this.collection.length; rowIndex++) {
-            let column = this.collection[rowIndex][0];
-            for (let colIndex = 1; colIndex < this.collection[rowIndex].length; colIndex++) {
-                if (this.collection[rowIndex][colIndex].key === column.key && this.collection[rowIndex][colIndex].key !== "") {
-                    column.colSpan += this.collection[rowIndex][colIndex].colSpan;
-                    this.collection[rowIndex].splice(colIndex, 1);
+        for (const record of this.collection) {
+            let column = record[0];
+            for (let colIndex = 1; colIndex < record.length; colIndex++) {
+                if (record[colIndex].key === column.key &&
+                        record[colIndex].key !== "") {
+                    column.colSpan += record[colIndex].colSpan;
+                    record.splice(colIndex, 1);
                     colIndex--;
                 } else {
-                    column = this.collection[rowIndex][colIndex];
+                    column = record[colIndex];
                 }
             }
         }
@@ -258,11 +259,11 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         const flatCollection = this.flattenCollection();
         const mappedCollection = flatCollection.map((row) => {
             return {
-                key: row.key,
-                rowStart: row.rowStart,
+                colEnd: row.colStart + row.colSpan,
                 colStart: row.colStart,
+                key: row.key,
                 rowEnd: row.rowStart + row.rowSpan,
-                colEnd: row.colStart + row.colSpan
+                rowStart: row.rowStart
             };
         });
         this.jsonCollection = JSON.stringify(mappedCollection);
@@ -330,7 +331,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         if (this.colSpanIncrease > 0) {
             for (let i = 0; i < this.colSpanIncrease; i++) {
                 const nextCell = this.collection[rowIndex][colIndex + 1];
-                if (this.curResizedCell.colStart + this.curResizedCell.colSpan + i !== nextCell.colStart || nextCell.rowSpan > 1) {
+                if ((this.curResizedCell.colStart + this.curResizedCell.colSpan + i) !==
+                        (nextCell.colStart || nextCell.rowSpan > 1)) {
                     this.colSpanIncrease = i;
                     break;
                 }
@@ -343,12 +345,15 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
             }
 
             if (this.curResizedCell.rowSpan > 1) {
-                for (let row = this.curResizedCell.rowStart; row < this.curResizedCell.rowStart - 1 + this.curResizedCell.rowSpan; row++) {
+                for (let row = this.curResizedCell.rowStart;
+                        row < this.curResizedCell.rowStart - 1 + this.curResizedCell.rowSpan;
+                        row++) {
                     for (let spanIndex = 0; spanIndex < this.colSpanIncrease; spanIndex++) {
                         let borderCellIndex = 0;
                         const borderCell = this.collection[row].find((cell, index) => {
                             borderCellIndex = index;
-                            return cell.colStart === this.curResizedCell.colStart + this.curResizedCell.colSpan + spanIndex;
+                            return cell.colStart === this.curResizedCell.colStart +
+                                this.curResizedCell.colSpan + spanIndex;
                         });
                         if (borderCell) {
                             if (borderCell.colSpan > 1) {
@@ -369,9 +374,10 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
 
             for (let rowUpdateIndex = rowIndex; rowUpdateIndex < rowEndIndex; rowUpdateIndex++) {
                 const firstHalf = [];
-                for (let m = 0; m < this.collection[rowUpdateIndex].length; m++) {
-                    if (this.collection[rowUpdateIndex][m].colStart < this.curResizedCell.colStart + this.curResizedCell.colSpan) {
-                        firstHalf.push(this.collection[rowUpdateIndex][m]);
+                for (const record of this.collection[rowUpdateIndex]) {
+                    if (record.colStart <
+                            this.curResizedCell.colStart + this.curResizedCell.colSpan) {
+                        firstHalf.push(record);
                     } else {
                         break;
                     }
@@ -380,14 +386,14 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                 const secondHalf = this.collection[rowUpdateIndex].slice(firstHalf.length);
                 for (let i = 0; i < -1 * this.colSpanIncrease; i++) {
                     secondHalf.unshift({
-                        key: "",
-                        width: "",
-                        rowStart: rowUpdateIndex + 1,
-                        colStart: this.curResizedCell.colStart + this.curResizedCell.colSpan - i - 1,
                         colSpan: 1,
+                        colStart: this.curResizedCell.colStart + this.curResizedCell.colSpan - i - 1,
+                        hovered: false,
+                        key: "",
                         rowSpan: 1,
+                        rowStart: rowUpdateIndex + 1,
                         selected: false,
-                        hovered: false
+                        width: ""
                     });
                 }
 
@@ -413,7 +419,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
             for (let i = 0; i < this.colSpanIncrease; i++) {
                 const curIndexFromStart = this.collection[targetRowIndex].length - curIndexFromEnd - 1;
                 const prevCell = this.collection[targetRowIndex][curIndexFromStart - 1];
-                if (prevCell.colStart + prevCell.colSpan + i !== this.collection[targetRowIndex][curIndexFromStart].colStart ||
+                if (prevCell.colStart + prevCell.colSpan + i !==
+                    this.collection[targetRowIndex][curIndexFromStart].colStart ||
                     prevCell.rowSpan > 1) {
                     this.colSpanIncrease = i;
                     break;
@@ -433,7 +440,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                     let leftSibling;
                     let leftSiblingIndex = 0;
                     for (let m = 0; m < this.collection[rowIndex].length; m++) {
-                        if (this.collection[rowIndex][m].colStart >= this.curResizedCell.colStart + this.curResizedCell.colSpan) {
+                        if (this.collection[rowIndex][m].colStart >=
+                                this.curResizedCell.colStart + this.curResizedCell.colSpan) {
                             break;
                         }
                         leftSiblingIndex = m;
@@ -458,9 +466,9 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
             const rowEndIndex = this.curResizedCell.rowStart - 1 + this.curResizedCell.rowSpan;
             for (let rowUpdateIndex = targetRowIndex; rowUpdateIndex < rowEndIndex; rowUpdateIndex++) {
                 const firstHalf = [];
-                for (let m = 0; m < this.collection[rowUpdateIndex].length; m++) {
-                    if (this.collection[rowUpdateIndex][m].colStart < this.curResizedCell.colStart) {
-                        firstHalf.push(this.collection[rowUpdateIndex][m]);
+                for (const record of this.collection[rowUpdateIndex]) {
+                    if (record.colStart < this.curResizedCell.colStart) {
+                        firstHalf.push(record);
                     } else {
                         break;
                     }
@@ -469,13 +477,13 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                 const secondHalf = this.collection[rowUpdateIndex].slice(firstHalf.length);
                 for (let i = 0; i < -1 * this.colSpanIncrease; i++) {
                     firstHalf.push({
-                        key: "",
-                        width: "",
-                        rowStart: rowUpdateIndex + 1,
-                        colStart: this.curResizedCell.colStart + i,
                         colSpan: 1,
+                        colStart: this.curResizedCell.colStart + i,
+                        key: "",
                         rowSpan: 1,
-                        selected: false
+                        rowStart: rowUpdateIndex + 1,
+                        selected: false,
+                        width: ""
                     });
                 }
 
@@ -509,8 +517,9 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                 // Cycle how many rows should the size of the cell increase, and edit them accordingly.
                 const curRowIndex = rowIndex + (this.curResizedCell.rowSpan - 1) + increaseIndex;
 
-                for (let j = this.collection[curRowIndex].length - 1; j >= 0 ; j--) {
-                    // Cycle all cells backwards because when cell spans in the way it should be cut and cells on the right should be added.
+                for (let j = this.collection[curRowIndex].length - 1; j >= 0; j--) {
+                    // Cycle all cells backwards because when cell spans in
+                    // the way it should be cut and cells on the right should be added.
                     const curCell = this.collection[curRowIndex][j];
                     const curCellStart = curCell.colStart;
                     let curCellEnd = curCell.colStart + curCell.colSpan;
@@ -518,31 +527,35 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                     const resizedCellEnd = this.curResizedCell.colStart + this.curResizedCell.colSpan;
 
                     if (curCellStart < resizedCellEnd && curCellEnd > resizedCellEnd && curCell.rowSpan === 1) {
-                        // If current cell spans the way of the resized down cell and the end is spanning more to the right,
+                        // If current cell spans the way of the resized
+                        // down cell and the end is spanning more to the right,
                         // cut the current cell and add the needed cells after the resized cell ends.
                         const numNewCells = curCellEnd - resizedCellEnd;
                         for (let i = 0; i < numNewCells; i++) {
                             curCell.colSpan--;
                             curCellEnd--;
                             this.collection[curRowIndex].splice(j + 1, 0, {
-                                key: "",
-                                width: "",
-                                rowStart: curRowIndex + 1,
-                                colStart: curCellEnd,
                                 colSpan: 1,
+                                colStart: curCellEnd,
+                                hovered: false,
+                                key: "",
                                 rowSpan: 1,
+                                rowStart: curRowIndex + 1,
                                 selected: false,
-                                hovered: false
+                                width: ""
                             });
                         }
                     } else if (curCellStart < resizedCellEnd && curCellEnd > resizedCellEnd && curCell.rowSpan > 1) {
-                        // We only need to check the rowSpan because we start from top to bottom and top cells have the rowSpan
+                        // We only need to check the rowSpan because we start
+                        // from top to bottom and top cells have the rowSpan
                         this.curResizedCell.rowSpan += increaseIndex - 1;
                         this.rowSpanIncrease = 0;
                         return;
                     }
 
-                    if (curCellStart <= resizedCellEnd && curCellEnd >= resizedCellStart && curCellEnd <= resizedCellEnd) {
+                    if (curCellStart <= resizedCellEnd &&
+                            curCellEnd >= resizedCellStart &&
+                            curCellEnd <= resizedCellEnd) {
                         // If current cell is in the way of resized down cell decrease the size of the current cell.
                         curCell.colSpan -= (curCellEnd) - this.curResizedCell.colStart;
                     }
@@ -571,14 +584,14 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
 
                 for (let j = 0; j < this.curResizedCell.colSpan; j++) {
                     this.collection[i].splice(startCellIndex + 1 + j, 0, {
-                        key: "",
-                        width: "",
-                        rowStart: i + 1,
-                        colStart: this.curResizedCell.colStart + j,
                         colSpan: 1,
+                        colStart: this.curResizedCell.colStart + j,
+                        hovered: false,
+                        key: "",
                         rowSpan: 1,
+                        rowStart: i + 1,
                         selected: false,
-                        hovered: false
+                        width: ""
                     });
                 }
             }
@@ -596,9 +609,9 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         if (event.key === "Delete") {
             for (let i = rowIndex; i < rowIndex + this.cellSelected.rowSpan; i++) {
                 const rowFirstHalf = [];
-                for (let m = 0; m < this.collection[i].length; m++) {
-                    if (this.collection[i][m].colStart < this.cellSelected.colStart) {
-                        rowFirstHalf.push(this.collection[i][m]);
+                for (const record of this.collection[i]) {
+                    if (record.colStart < this.cellSelected.colStart) {
+                        rowFirstHalf.push(record);
                     } else {
                         break;
                     }
@@ -607,13 +620,13 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
                 const rowSecondHalf = this.collection[i].slice(rowFirstHalf.length + (i === rowIndex ? 1 : 0));
                 for (let j = 0; j < this.cellSelected.colSpan; j++) {
                     rowFirstHalf.push({
-                        key: "",
-                        width: "",
-                        rowStart: i + 1,
-                        colStart: this.cellSelected.colStart + j,
                         colSpan: 1,
+                        colStart: this.cellSelected.colStart + j,
+                        key: "",
                         rowSpan: 1,
-                        selected: false
+                        rowStart: i + 1,
+                        selected: false,
+                        width: ""
                     });
                 }
                 this.collection[i] = rowFirstHalf.concat(rowSecondHalf);
