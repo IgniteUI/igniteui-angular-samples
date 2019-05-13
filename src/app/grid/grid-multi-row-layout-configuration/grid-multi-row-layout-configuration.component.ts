@@ -88,6 +88,11 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
     public renderGrid = false;
     public jsonCollection = "";
     public cellSelected;
+    public resizeVisible = false;
+    public resizeTop;
+    public resizeLeft;
+    public resizeWidth = 0;
+    public resizeHeight = 0;
 
     public columnsList = [
         { key: "ContactName", field: "Contact name"},
@@ -138,13 +143,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
     private curResizedCell;
     private colSpanIncrease = 0;
     private rowSpanIncrease = 0;
-    private resizeVisible = false;
-    private resizeTop;
-    private resizeLeft;
     private resizeInitialWidth = 0;
     private resizeInitialHeight = 0;
-    private resizeWidth = 0;
-    private resizeHeight = 0;
     // tslint:enable:max-line-length
 
     constructor(public cdr: ChangeDetectorRef) {
