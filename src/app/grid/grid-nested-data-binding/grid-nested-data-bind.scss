@@ -44,6 +44,14 @@ igx-expansion-panel {
             }
         }
     }
+
+    .dark-theme  .igx-grid__tr {
+        &:hover {
+            .expand {
+                background: #333;
+            }
+        }
+    }
 }
 
 .employees-container {
