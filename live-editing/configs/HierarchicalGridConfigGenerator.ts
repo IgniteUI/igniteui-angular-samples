@@ -332,7 +332,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-row-drag/files.data.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-row-drag-base/files.data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridRowDragBaseComponent, IgxDragDropModule, IgxButtonModule],
                 ngDeclarations: [HGridRowDragBaseComponent],
