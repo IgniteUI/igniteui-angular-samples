@@ -127,7 +127,8 @@ export class SampleAssetsGenerator extends Generator {
         this._shortenComponentPath(config, appModuleFile);
         sampleFiles.push(appModuleFile);
         sampleFiles.push(new LiveEditingFile(
-            SAMPLE_APP_FOLDER + "app.component.html", this._getAppComponentHtml(componentTsContent)));
+            SAMPLE_APP_FOLDER + "app.component.html",
+            this._getAppComponentHtml(componentTsContent, config.usesRouting)));
 
         if (this._showLogs) {
             let stats = sampleFilesCount + " + " +  additionalFiles.length + " files";
@@ -223,10 +224,11 @@ export class SampleAssetsGenerator extends Generator {
         }
     }
 
-    private _getAppComponentHtml(componentTsContent) {
+    private _getAppComponentHtml(componentTsContent, usesRouting) {
         let selectorRegex = /selector:[\s]*["']([a-zA-Z0-9-]+)["']/g;
         let selectorComponent = selectorRegex.exec(componentTsContent)[1];
-        let appComponentHtml = "<" + selectorComponent + "></" + selectorComponent + ">";
+        let appComponentHtml = usesRouting ? "<router-outlet></router-outlet>" :
+            "<" + selectorComponent + "></" + selectorComponent + ">";
         return appComponentHtml;
     }
 
