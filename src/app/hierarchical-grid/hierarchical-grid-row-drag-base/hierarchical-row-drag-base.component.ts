@@ -1,30 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxDropEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from "igniteui-angular";
-import { createData } from "./files.data";
-
-interface IDrive {
-    directoryName: string;
-    size: number;
-    name: string;
-    system: boolean;
-    id: number;
-    folders: IFolder[];
-}
-
-interface IFolder {
-    name: string;
-    size: number;
-    id: number;
-    files: IFile[];
-}
-
-interface IFile {
-    name: string;
-    extension: string;
-    owner: string;
-    size: number;
-    createdBy: string;
-}
+import { createData, IDrive } from "../../data/files.data";
 
 enum DragIcon {
     DEFAULT = "drag_indicator",
