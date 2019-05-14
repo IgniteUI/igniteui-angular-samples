@@ -561,7 +561,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(gridSaveStateSampleConfig);
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/grid/grid-row-drag-to-grid/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridDragToGridSampleComponent, IgxDragDropModule,
                     IgxIconModule, IgxButtonModule],
@@ -592,7 +592,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/grid/grid-row-drag-base/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridDragBaseSampleComponent, IgxDragDropModule, IgxButtonModule],
                 ngDeclarations: [GridDragBaseSampleComponent],
