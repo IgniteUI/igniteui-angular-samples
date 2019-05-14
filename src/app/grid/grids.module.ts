@@ -4,8 +4,8 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
-    IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-    IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
+    IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
@@ -26,6 +26,7 @@ import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "./grid-paste/paste-handler.directive";
@@ -99,6 +100,7 @@ import { DataService } from "./services/data.service";
         AboutComponent,
         IgxGridStateDirective,
         GridMultiCellSelectionComponent,
+        GridNestedDataBindComponent,
         GridCompositeDataComponent,
         GridMultiRowLayoutComponent,
         GridDragSampleComponent,
@@ -130,7 +132,8 @@ import { DataService } from "./services/data.service";
         IgxSwitchModule,
         IgxToastModule,
         IgxToggleModule,
-        IgxTooltipModule
+        IgxTooltipModule,
+        IgxExpansionPanelModule
     ],
     providers: [
         DataService,
