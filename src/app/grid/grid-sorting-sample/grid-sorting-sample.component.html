@@ -8,22 +8,20 @@
                 </igx-select-item>
             </igx-select>
         </ng-template>
-        <igx-column field="ProductID" header="Product ID" [headerClasses]="'prodId'">
+        <igx-column field="OrderID" header="Order ID">
         </igx-column>
-        <igx-column field="ProductName" header="Product Name" [dataType]="'string'" sortable="true">
+        <igx-column field="CategoryName" header="Category Name" [dataType]="'string'" sortable="true">
         </igx-column>
-        <igx-column field="UnitsInStock" header="UnitsInStock" [dataType]="'number'" sortable="true">
+        <igx-column field="CompanyName" header="Company Name" [dataType]="'string'" sortable="true">
+        </igx-column>
+        <igx-column field="ShipCountry" header="Ship Country" [dataType]="'string'" sortable="true">
+        </igx-column>
+        <igx-column field="SaleAmount" header="Sale Amount" [dataType]="'number'" sortable="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
             ${{val}}
             </ng-template>
         </igx-column>
-        <igx-column field="OrderDate" [dataType]="'date'" [formatter]="formatDate" sortable="true">
-        </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
-            <ng-template igxCell let-cell="cell" let-val>
-                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-            </ng-template>
+        <igx-column field="ShippedDate" header="Shipped Date" [dataType]="'date'" [formatter]="formatDate" sortable="true">
         </igx-column>
     </igx-grid>
 </div>

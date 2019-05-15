@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDirection } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { DATA } from "./localData";
 
 enum TYPE {
     SINGLE = "single",
