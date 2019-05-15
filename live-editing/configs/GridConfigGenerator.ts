@@ -281,7 +281,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: SortingSampleComponent,
-            additionalFiles: ["/src/app/data/nwindData.ts"],
+            additionalFiles: ["/src/app/grid/grid-sorting-sample/localData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
                     SortingSampleComponent, IgxInputGroupModule, IgxSelectModule],

@@ -1,7 +1,8 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%" (onSortingDone)="removeSorting($event)" [showToolbar]="true">
+    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%"
+        (onSortingDone)="removeSorting($event)" [showToolbar]="true">
         <ng-template igxToolbarCustomContent let-grid="grid">
-            <igx-select [(ngModel)]="currentSortingType" (onSelection) = "sortTypeSelection($event)">
+            <igx-select [(ngModel)]="currentSortingType" (onSelection)="sortTypeSelection($event)">
                 <label igxLabel>Select Sorting Type</label>
                 <igx-select-item *ngFor="let type of sortingTypes" [value]="type.value">
                     {{type.name}}
@@ -18,10 +19,11 @@
         </igx-column>
         <igx-column field="SaleAmount" header="Sale Amount" [dataType]="'number'" sortable="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
-            ${{val}}
+                ${{val}}
             </ng-template>
         </igx-column>
-        <igx-column field="ShippedDate" header="Shipped Date" [dataType]="'date'" [formatter]="formatDate" sortable="true">
+        <igx-column field="ShippedDate" header="Shipped Date" [dataType]="'date'" [formatter]="formatDate"
+            sortable="true">
         </igx-column>
     </igx-grid>
 </div>
