@@ -43,5 +43,6 @@ export const gridsRoutesData = {
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
     "grid-nested-data-binding": {displayName: "Grid Nested Data Binding", parentName: "Grid"},
     "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"},
-    "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" }
+    "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
+    "grid-contextmenu-sample": {displayName: "Grid Context Menu", parentName: "Grid"}
 };

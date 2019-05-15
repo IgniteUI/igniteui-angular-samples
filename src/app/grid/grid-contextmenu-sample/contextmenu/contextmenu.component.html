@@ -1,0 +1,34 @@
+<div *ngIf="cell" class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
+    <span class=item (click)="copySelectedCellData($event)"> 
+            <igx-icon  class="icon" fontSet="material">content_copy </igx-icon>Copy     
+    </span>
+    <span *ngIf="isColumnSortable()" class=item (click)="sort($event)">
+        <igx-icon class="icon" fontSet="material">sort_by_alpha</igx-icon>Sort: {{sortDir === 1 ? 'Ascending':'Descending'}}  
+    </span>
+    <span  *ngIf="isColumnSortable()" class=item (mouseenter)="open(icon)" (mouseleave)="close($event)"> 
+        <igx-icon  class="icon" fontSet="material">swap_horiz</igx-icon>Sorting: {{sortingType}} 
+        <igx-icon #icon class="icon" style = "position:absolute; left: 85%" fontSet="material">chevron_right</igx-icon>     
+    </span>
+    <span *ngIf="hasSortedColumn()"class="item" (click)="clearSort($event)">
+        <igx-icon class="icon" fontSet="material">clear</igx-icon>Clear Sort: Column
+    </span>
+    <span *ngIf="sortingType === type.MULTI && hasMutliSortedColumns()"
+          [ngStyle]= "{disabled: sortingType == 'multiple'}" class=item (click)="clearAll($event)">
+        <igx-icon class="icon" fontSet="material">cancel</igx-icon>Clear Sort: All
+    </span>
+</div>  
+
+<div [ngStyle]="{'left.px': divX, 'top.px': divY}"  class="type-chooser" *ngIf="chooseType"
+     (mouseenter)="isDivFocused = true">
+    <ul compact>
+        <li class="list-item" (click)="setSortingType(type.SINGLE)">Single Sort</li>
+        <li class="list-item" (click)="setSortingType(type.MULTI)">Multiple Sort</li>
+    </ul>
+</div>
+
+<div *ngIf="multiCell" class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
+    <span class=item (click)="copySelectedCells($event)"> 
+            <igx-icon  class="icon" fontSet="material">content_copy </igx-icon>Copy Cells    
+    </span>
+</div>  
+
