@@ -1,23 +1,21 @@
-import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { IgxDropEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from "igniteui-angular";
 import { createData, IDrive } from "../../data/files.data";
 
 enum DragIcon {
-    DEFAULT = "drag_handle",
+    DEFAULT = "drag_indicator",
     ALLOW = "remove"
 }
 
 @Component({
-    selector: "hierarchical-grid-row-drag",
-    styleUrls: ["./hierarchical-grid-row-drag.component.scss"],
-    templateUrl: "hierarchical-grid-row-drag.component.html"
+    selector: "hierarchical-row-drag-base",
+    styleUrls: ["./hierarchical-row-drag-base.component.scss"],
+    templateUrl: "hierarchical-row-drag-base.component.html"
 })
 
-export class HGridDragSampleComponent implements AfterViewInit {
+export class HGridRowDragBaseComponent {
     @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent })
     public hGrid: IgxHierarchicalGridComponent;
-    @ViewChild("customDragIcon", { read: TemplateRef })
-    public dragTemplate: TemplateRef<any>;
     public localData: IDrive[] = [];
     constructor() {
         this.localData = createData(3, 12, 8);
@@ -35,10 +33,6 @@ export class HGridDragSampleComponent implements AfterViewInit {
 
     public onLeaveAllowed(args) {
         this.changeGhostIcon(args.drag.dragGhost, DragIcon.DEFAULT);
-    }
-
-    public ngAfterViewInit() {
-        this.hGrid.dragIndicatorIconTemplate = this.dragTemplate;
     }
 
     private changeGhostIcon(ghost, icon: string) {
