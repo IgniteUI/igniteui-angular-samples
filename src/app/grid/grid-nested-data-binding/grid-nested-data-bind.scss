@@ -1,0 +1,80 @@
+igx-expansion-panel {
+    display: flex;
+    font-size: .75rem;
+    min-width: 50%;
+    max-width: 50%;
+    padding: 0;
+    flex: 1 1 auto;
+
+    igx-expansion-panel-description, igx-expansion-panel-body {
+        font-size: .75rem;
+        padding: 0;
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+
+    .description {
+        display: flex;
+        width: 100%;
+        text-overflow: ellipsis;
+        padding: .5rem 1rem;
+        flex: 1 1 auto;
+        flex-direction: column; 
+    }
+}
+
+::ng-deep {
+    .expand {
+        padding: 2px;
+        background: transparent;
+        &:hover {
+            background: transparent;
+        }
+
+
+        .igx-expansion-panel__header-description {
+            font-weight: bold;
+        }
+    }
+    .igx-grid__tr {
+        &:hover {
+            .expand {
+                background: #fff;
+            }
+        }
+    }
+
+    .dark-theme {
+        &:hover {
+            .expand {
+                background: #333;
+            }
+        }
+    }
+}
+
+.employees-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+
+
+    &--edit {
+        display: flex;
+        flex-flow: row wrap;
+        flex-grow: 1;
+
+        > igx-expansion-panel {
+            display: flex;
+            min-width: 50%;
+            flex: 1 0 auto;
+        }
+    }
+}
+
+.grid__wrapper {
+    margin: 0 auto;
+    width: 950px;
+}

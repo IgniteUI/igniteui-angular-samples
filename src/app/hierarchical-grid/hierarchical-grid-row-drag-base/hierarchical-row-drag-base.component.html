@@ -1,0 +1,21 @@
+<div class="drop-area" igxDrop (onEnter)="onEnterAllowed($event)" (onLeave)="onLeaveAllowed($event)"
+    (onDrop)="onDropAllowed($event)">
+    <igx-icon>delete</igx-icon>
+    <div>Drag a row here to delete it</div>
+</div>
+<igx-hierarchical-grid class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
+    [height]="'540px'" [width]="'800px'" #hGrid>
+    <igx-column field="name" header="Name"></igx-column>
+    <igx-column field="system" header="Is System Drive"></igx-column>
+    <igx-row-island [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1>
+        <igx-column field="name" header="Name"></igx-column>
+        <igx-column field="createdOn" header="Created On"></igx-column>
+        <igx-column field="createdBy" header="Created By"></igx-column>
+        <igx-row-island [primaryKey]="'id'" igxDrop [key]="'files'">
+            <igx-column field="name" header="Name"></igx-column>
+            <igx-column field="extension" header="Extension"></igx-column>
+            <igx-column field="size" header="Size" dataType="number" hasSummary='true'></igx-column>
+            <igx-column field="createdBy" header="createdBy"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+</igx-hierarchical-grid>
