@@ -33,6 +33,7 @@ import { PasteHandler } from "./grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sample.component";
+import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-base.component";
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
@@ -105,6 +106,7 @@ import { DataService } from "./services/data.service";
         GridMultiRowLayoutComponent,
         GridDragSampleComponent,
         PlanetComponent,
+        GridDragBaseSampleComponent,
         GridDragToGridSampleComponent
     ],
     imports: [

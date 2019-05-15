@@ -3,17 +3,17 @@ import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "../../data/customers";
 
 enum DragIcon {
-    DEFAULT = "drag_handle",
+    DEFAULT = "drag_indicator",
     ALLOW = "add"
 }
 
 @Component({
-    selector: "grid-row-drag-to-grid-sample",
-    styleUrls: ["./grid-row-drag-to-grid.component.scss"],
-    templateUrl: "grid-row-drag-to-grid.component.html"
+    selector: "grid-row-drag-base-sample",
+    styleUrls: ["./grid-row-drag-base.component.scss"],
+    templateUrl: "grid-row-drag-base.component.html"
 })
 
-export class GridDragToGridSampleComponent {
+export class GridDragBaseSampleComponent {
     public data1: any[];
     public data2: any[];
     @ViewChild("sourceGrid", { read: IgxGridComponent }) public sourceGrid: IgxGridComponent;

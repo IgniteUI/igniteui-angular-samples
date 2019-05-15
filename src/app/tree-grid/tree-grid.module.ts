@@ -80,6 +80,7 @@ import {
     TreeGridRemoteFilteringSampleComponent
 } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
+import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -143,7 +144,8 @@ import {
         TreeGridRemoteFilteringSampleComponent,
         TreeGridMultiCellSelectionComponent,
         TreeGridLoadOnDemandSampleComponent,
-        TreeGridRowDrag
+        TreeGridRowDrag,
+        TreeGridRowDragBase
     ],
     imports: [
         CommonModule,
