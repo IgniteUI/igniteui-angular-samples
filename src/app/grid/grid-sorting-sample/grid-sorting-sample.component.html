@@ -1,5 +1,13 @@
-<div class="grid__wrapper" (window:click)="disableContextMenu()">
-    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%" (onContextMenu)="rightClick($event)">
+<div class="grid__wrapper">
+    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="500px" width="100%" (onSortingDone)="removeSorting($event)" [showToolbar]="true">
+        <ng-template igxToolbarCustomContent let-grid="grid">
+            <igx-select [(ngModel)]="currentSortingType" (onSelection) = "sortTypeSelection($event)">
+                <label igxLabel>Select Sorting Type</label>
+                <igx-select-item *ngFor="let type of sortingTypes" [value]="type.value">
+                    {{type.name}}
+                </igx-select-item>
+            </igx-select>
+        </ng-template>
         <igx-column field="ProductID" header="Product ID" [headerClasses]="'prodId'">
         </igx-column>
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'" sortable="true">
@@ -18,7 +26,4 @@
             </ng-template>
         </igx-column>
     </igx-grid>
-    <div *ngIf="contextmenu==true">
-        <grid-contextmenu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell"></grid-contextmenu>
-    </div>
 </div>
