@@ -82,4 +82,28 @@ const createData = (level1: number, level2: number, level3: number) => {
     return generatedData;
 };
 
-export { createData };
+interface IDrive {
+    directoryName: string;
+    size: number;
+    name: string;
+    system: boolean;
+    id: number;
+    folders: IFolder[];
+}
+
+interface IFolder {
+    name: string;
+    size: number;
+    id: number;
+    files: IFile[];
+}
+
+interface IFile {
+    name: string;
+    extension: string;
+    owner: string;
+    size: number;
+    createdBy: string;
+}
+
+export { createData, IDrive, IFolder, IFile };

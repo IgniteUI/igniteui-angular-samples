@@ -20,12 +20,14 @@ import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sample.component";
 import { gridsRoutesData } from "./grid-routes-data";
+import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-base.component";
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
@@ -86,6 +88,11 @@ export const gridsRoutes: Routes = [
         component: GridDragToGridSampleComponent,
         data: gridsRoutesData["grid-row-drag-to-grid"],
         path: "grid-row-drag-to-grid"
+    },
+    {
+        component: GridDragBaseSampleComponent,
+        data: gridsRoutesData["grid-row-drag-base"],
+        path: "grid-row-drag-base"
     },
     {
         component: GridBatchEditingSampleComponent,
@@ -241,6 +248,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiCellSelectionComponent,
         data: gridsRoutesData["grid-multi-cell-selection"],
         path: "grid-multi-cell-selection"
+    },
+    {
+        component: GridNestedDataBindComponent,
+        data: gridsRoutesData["grid-nested-data-binding"],
+        path: "grid-nested-data-binding"
     },
     {
         component: GridCompositeDataComponent,
