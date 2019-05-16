@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { IgxTimePickerComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-timepicker-sample-6",
@@ -9,11 +10,16 @@ export class TimePickerSample6Component {
 
     public today: Date = new Date(Date.now());
 
-    public onBlur(inputValue, timePickerValue) {
-        const parts = inputValue.split(":");
+    public onBlur(inputValue: string, value: Date, picker: IgxTimePickerComponent) {
+        const parts = inputValue.split(/[\s:]+/);
 
-        if (parts.length === 2) {
-            timePickerValue.setHours(parts[0], parts[1]);
+        const hour = parseInt(parts[0], 10);
+        const minutes = parseInt(parts[1], 10);
+
+        if (picker.validHourEntries.indexOf(hour) !== -1 && picker.validMinuteEntries.indexOf(minutes) !== -1) {
+            value.setHours(hour, minutes);
+        } else {
+            throw new Error("This is not a valid hour.");
         }
     }
 }
