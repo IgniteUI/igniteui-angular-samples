@@ -4,7 +4,6 @@ export const spreadsheetRoutesData = {
     "spreadsheet-overview": { displayName: "Spreadsheet Overview", parentName: "Spreadsheet" },
     "spreadsheet-clipboard": { displayName: "Spreadsheet Clipboard", parentName: "Spreadsheet" },
     "spreadsheet-data-validation": { displayName: "Spreadsheet Data Validation", parentName: "Spreadsheet" },
-    "spreadsheet-worksheets": { displayName: "Spreadsheet Worksheet Operations", parentName: "Spreadsheet" },
     "spreadsheet-hyperlinks": { displayName: "Spreadsheet Hyperlinks", parentName: "Spreadsheet" },
     "spreadsheet-commands": { displayName: "Spreadsheet Commands", parentName: "Spreadsheet" },
     "spreadsheet-activation": { displayName: "Spreadsheet Activation", parentName: "Spreadsheet" },

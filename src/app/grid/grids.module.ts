@@ -4,13 +4,14 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
-    IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-    IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule } from "igniteui-angular";
+    IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {GridCompositeDataComponent} from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -24,18 +25,26 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
 import { GridPasteSampleComponent } from "./grid-paste/grid-paste-sample.component";
 import { PasteHandler } from "./grid-paste/paste-handler.directive";
 import { RemoteFilteringSampleComponent } from "./grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "./grid-remote-paging-sample/remote-paging-sample.component";
 import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sample.component";
+import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-base.component";
+import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
+import { AboutComponent } from "./grid-save-state/about.component";
+import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
+import { IgxGridStateDirective } from "./grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { GridContextmenuComponent } from "./grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
@@ -87,7 +96,16 @@ import { DataService } from "./services/data.service";
         GridComponent,
         GridContextmenuComponent,
         PasteHandler,
-        GridMultiCellSelectionComponent
+        GridSaveStateComponent,
+        AboutComponent,
+        IgxGridStateDirective,
+        GridMultiCellSelectionComponent,
+        GridNestedDataBindComponent,
+        GridCompositeDataComponent,
+        GridMultiRowLayoutComponent,
+        GridDragSampleComponent,
+        GridDragBaseSampleComponent,
+        GridDragToGridSampleComponent
     ],
     imports: [
         CommonModule,
@@ -113,7 +131,9 @@ import { DataService } from "./services/data.service";
         IgxSliderModule,
         IgxSwitchModule,
         IgxToastModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxTooltipModule,
+        IgxExpansionPanelModule
     ],
     providers: [
         DataService,

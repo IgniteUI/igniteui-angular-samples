@@ -17,6 +17,7 @@ import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-categ
     templateUrl: "./category-chart-high-frequency-sample.component.html"
 })
 export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDestroy {
+
     @Input()
     public scalingRatio: number = 1;
 
@@ -33,7 +34,7 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
 
     private _maxPoints: number = 5000;
 
-    private _refreshMilliseconds: number = 10;
+    private _refreshInterval: number = 10;
     private _interval: number = -1;
     private _frames: number = 0;
     private _time: Date;
@@ -63,10 +64,10 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
         if (num < 10) {
             num = 10;
         }
-        if (num > 500) {
-            num = 500;
+        if (num > 1000) {
+            num = 1000;
         }
-        this._refreshMilliseconds = num;
+        this._refreshInterval = num;
         this.setupInterval();
     }
 
@@ -74,15 +75,15 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
         let num: number = parseInt(val, 10);
 
         if (isNaN(num)) {
-            num = 5000;
+            num = 1000;
         }
-        if (num < 5000) {
-            num = 5000;
+        if (num < 1000) {
+            num = 1000;
         }
-        if (num > 2000000) {
-            num = 2000000;
+        if (num > 1000000) {
+            num = 1000000;
         }
-        this.maxPoints = num;
+        this._maxPoints = num;
     }
 
     public get maxPointsText(): string {
@@ -97,22 +98,25 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
         this._maxPoints = v;
     }
 
-    public get refreshMilliseconds(): number {
-        return this._refreshMilliseconds;
+    public get refreshInterval(): number {
+        return this._refreshInterval;
     }
     @Input()
-    public set refreshMilliseconds(v: number) {
-        this._refreshMilliseconds = v;
+    public set refreshInterval(v: number) {
+        this._refreshInterval = v;
         this.setupInterval();
+    }
+    public get refreshIntervalText(): string {
+        return (this._refreshInterval / 1000).toFixed(3) + "s";
     }
 
     public ngOnDestroy(): void {
-    if (this._interval >= 0) {
-        this._zone.runOutsideAngular(() => {
-        window.clearInterval(this._interval);
-        });
-        this._interval = -1;
-    }
+        if (this._interval >= 0) {
+            this._zone.runOutsideAngular(() => {
+                window.clearInterval(this._interval);
+            });
+            this._interval = -1;
+        }
     }
 
     public ngAfterViewInit(): void {
@@ -130,7 +134,7 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
 
         this._zone.runOutsideAngular(() => {
             this._interval = window.setInterval(() => this.tick(),
-            this.refreshMilliseconds);
+            this.refreshInterval);
         });
     }
 
@@ -161,24 +165,23 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
             const fps = this._frames / (elapsed / 1000.0);
             this._time = currTime;
             this._frames = 0;
-
-            this.fpsSpan.nativeElement.textContent = "FPS: " + Math.round(fps).toString();
+            this.fpsSpan.nativeElement.textContent = Math.round(fps).toString();
         }
     }
 
     private toShortString(largeValue: number): string {
-        let roundValue: number;
+        let roundValue: string;
 
         if (largeValue >= 1000000) {
-            roundValue = Math.round(largeValue / 100000) / 10;
+            roundValue = (largeValue / 1000000).toFixed(1);
             return roundValue + "m";
         }
         if (largeValue >= 1000) {
-            roundValue = Math.round(largeValue / 100) / 10;
+            roundValue = (largeValue / 1000).toFixed(0);
             return roundValue + "k";
         }
 
-        roundValue = Math.round(largeValue);
+        roundValue = largeValue.toFixed(0);
         return roundValue + "";
     }
 }

@@ -16,22 +16,22 @@ export class SpreadsheetClipboardComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        const excelFile = "../../assets/Sample1.xlsx";
+        const excelFile = "assets/Sample1.xlsx";
         ExcelUtility.loadFromUrl(excelFile).then((w) => {
             this.spreadsheet.workbook = w;
         });
     }
 
     public cut(): void {
-        this.spreadsheet.executeCommand(SpreadsheetAction.Cut);
+        this.spreadsheet.executeAction(SpreadsheetAction.Cut);
     }
 
     public copy(): void {
-        this.spreadsheet.executeCommand(SpreadsheetAction.Copy);
+        this.spreadsheet.executeAction(SpreadsheetAction.Copy);
     }
 
     public paste(): void {
-        this.spreadsheet.executeCommand(SpreadsheetAction.Paste);
+        this.spreadsheet.executeAction(SpreadsheetAction.Paste);
     }
 
 }

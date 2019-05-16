@@ -34,6 +34,8 @@ import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-colu
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
 import { HierarchicalGridRoutingModule } from "./hierarchical-grid-routing.module";
+import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
+import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridContextmenuComponent } from "./hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component";
@@ -42,7 +44,6 @@ import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarc
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-/* tslint:enable:max-line-length */
 
 @NgModule({
     declarations: [
@@ -72,7 +73,9 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridExcelStyleFilteringSample1Component,
         HGridExcelStyleFilteringSample2Component,
         HGridExcelStyleFilteringSample3Component,
-        HGridFilteringTemplateSampleComponent
+        HGridFilteringTemplateSampleComponent,
+        HGridDragSampleComponent,
+        HGridRowDragBaseComponent
     ],
     imports: [
         CommonModule,

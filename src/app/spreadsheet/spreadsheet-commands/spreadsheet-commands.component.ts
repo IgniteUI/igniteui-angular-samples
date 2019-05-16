@@ -16,17 +16,17 @@ export class SpreadsheetCommandsComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        const excelFile = "../../assets/Sample1.xlsx";
+        const excelFile = "assets/Sample1.xlsx";
         ExcelUtility.loadFromUrl(excelFile).then((w) => {
             this.spreadsheet.workbook = w;
         });
     }
 
     public zoomIn(): void {
-        this.spreadsheet.executeCommand(SpreadsheetAction.ZoomIn);
+        this.spreadsheet.executeAction(SpreadsheetAction.ZoomIn);
     }
 
     public zoomOut(): void {
-        this.spreadsheet.executeCommand(SpreadsheetAction.ZoomOut);
+        this.spreadsheet.executeAction(SpreadsheetAction.ZoomOut);
     }
 }
