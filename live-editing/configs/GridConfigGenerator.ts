@@ -23,6 +23,7 @@ import {
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSelectModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule
@@ -90,9 +91,6 @@ import { AboutComponent } from "../../src/app/grid/grid-save-state/about.compone
 import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
 import { IgxGridStateDirective } from "../../src/app/grid/grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
-import {
-    GridContextmenuComponent
-} from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
@@ -283,16 +281,12 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: SortingSampleComponent,
-            additionalFiles: ["/src/app/data/nwindData.ts",
-                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
-                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
-                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss"
-            ],
+            additionalFiles: ["/src/app/grid/grid-sorting-sample/localData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
-                    SortingSampleComponent, IgxInputGroupModule, GridContextmenuComponent],
-                ngDeclarations: [SortingSampleComponent, GridContextmenuComponent],
-                ngImports: [IgxGridModule, IgxRippleModule, IgxIconModule, IgxInputGroupModule],
+                    SortingSampleComponent, IgxInputGroupModule, IgxSelectModule],
+                ngDeclarations: [SortingSampleComponent],
+                ngImports: [IgxGridModule, IgxRippleModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule],
                 ngProviders: []
             })
         }));

@@ -5,7 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
     IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
-    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
@@ -46,7 +46,6 @@ import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { IgxGridStateDirective } from "./grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
-import { GridContextmenuComponent } from "./grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
@@ -94,7 +93,6 @@ import { DataService } from "./services/data.service";
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
         GridComponent,
-        GridContextmenuComponent,
         PasteHandler,
         GridSaveStateComponent,
         AboutComponent,
@@ -133,7 +131,8 @@ import { DataService } from "./services/data.service";
         IgxToastModule,
         IgxToggleModule,
         IgxTooltipModule,
-        IgxExpansionPanelModule
+        IgxExpansionPanelModule,
+        IgxSelectModule
     ],
     providers: [
         DataService,
