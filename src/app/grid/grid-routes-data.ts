@@ -8,6 +8,7 @@ export const gridsRoutesData = {
     "grid-editing": { displayName: "Grid Editing", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
     "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
+    "grid-row-drag-base": { displayName: "Grid Row Drag - Base", parentName: "Grid" },
     "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
@@ -41,6 +42,7 @@ export const gridsRoutesData = {
     "grid-state": { displayName: "Grid Save and Load State", parentName: "Grid" },
     "grid-about": { displayName: "Grid About", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
+    "grid-nested-data-binding": {displayName: "Grid Nested Data Binding", parentName: "Grid"},
     "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"},
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" }
 };
