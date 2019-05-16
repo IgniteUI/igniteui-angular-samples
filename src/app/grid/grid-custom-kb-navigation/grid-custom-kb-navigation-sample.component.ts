@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { IGridKeydownEventArgs, IgxGridComponent, IgxGridCellComponent } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
 @Component({
@@ -20,11 +20,12 @@ export class GridCustomKBNavigationComponent implements OnInit {
         this.data = DATA;
     }
 
-    public customKeydown(args) {
-        const target = args.target;
+    public customKeydown(args: IGridKeydownEventArgs) {
+        const target: IgxGridCellComponent = args.target as IgxGridCellComponent;
+        const evt: KeyboardEvent = args.event as KeyboardEvent;
         const type = args.targetType;
 
-        if (type === "dataCell" && target.inEditMode && args.event.key.toLowerCase() === "tab") {
+        if (type === "dataCell" && target.inEditMode && evt.key.toLowerCase() === "tab") {
             // Value validation for number column.
             // The value should be bigger than 10 in order to continue with the kb navigation.
             // This covers both 'tab' and 'shift+tab' key interactions.
@@ -34,15 +35,16 @@ export class GridCustomKBNavigationComponent implements OnInit {
                 alert("The value should be bigger than 10");
                 return;
             }
-            const cell = args.event.shiftKey ?
+            const cell = evt.shiftKey ?
                 this.grid1.getPreviousCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable) :
                 this.grid1.getNextCell(target.rowIndex, target.visibleColumnIndex, (col) => col.editable);
 
             this.grid1.navigateTo(cell.rowIndex, cell.visibleColumnIndex,
                 (obj) => { obj.target.nativeElement.focus(); });
-        } else if (type === "dataCell" && args.event.key.toLowerCase() === "enter") {
+        } else if (type === "dataCell" && evt.key.toLowerCase() === "enter") {
             // Perform column based kb navigation with 'enter' key press
             args.cancel = true;
+            this.grid1.selectRange(null);
             this.grid1.navigateTo(target.rowIndex + 1, target.visibleColumnIndex,
                 (obj) => { obj.target.nativeElement.focus(); });
         }
