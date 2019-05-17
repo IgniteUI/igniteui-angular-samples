@@ -212,6 +212,13 @@
             color: rgba(255, 255, 255, 0.87);
         }
     }
+
+    .igx-grid__outlet span, 
+    .igx-excel-filter span,
+    .igx-excel-filter header,
+    .igx-excel-filter input {
+        font-size: 0.8125rem;
+    }
   }
 
   .grid__wrapper {
