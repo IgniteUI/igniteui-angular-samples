@@ -79,6 +79,8 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
 import {
     GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-row-drag.component";
+import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
@@ -593,6 +595,15 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule, IgxButtonModule]
             }),
             component: GridDragBaseSampleComponent
+        }));
+
+        configs.push(new Config({
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridDragSampleComponent, PlanetComponent, IgxDragDropModule, IgxDialogModule],
+                ngDeclarations: [GridDragSampleComponent, PlanetComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule, IgxDialogModule]
+            }),
+            component: GridDragSampleComponent
         }));
 
         return configs;

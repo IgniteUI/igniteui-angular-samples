@@ -16,9 +16,11 @@ export class PlanetComponent {
     @Input()
     public data: IPlanet;
 
+    @HostBinding("class")
+    public class: string = "planet-area";
+
     private _moonCount: number = 0;
 
-    @HostBinding("attr.data-name")
     public get name(): string {
         return this.data.name;
     }
@@ -50,7 +52,7 @@ export class PlanetComponent {
 
     public get description() {
         if (this.moonsCount < this.data.moons.length) {
-            return `Drag and drop here all of the ${this.name} moons, listed in the grid.`;
+            return `Drag and drop here all the ${this.name} moons, listed in the grid.`;
         } else {
             return this.data.description;
         }

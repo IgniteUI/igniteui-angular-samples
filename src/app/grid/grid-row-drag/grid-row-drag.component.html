@@ -6,16 +6,15 @@
             <igx-column [field]="'mass'" [header]="'Mass'" width="200px" [sortable]="true"></igx-column>
             <igx-column [field]="'diameter'" [header]="'Diameter'" width="200px" [sortable]="true"></igx-column>
             <igx-column [field]="'orbitalPeriod'" [header]="'Orbital Period'" width="200px" [sortable]="true"></igx-column>
-            <igx-column [field]="'orbitalRadius'" [header]="'Orbital Radius'" width="200px" [sortable]="true"></igx-column>
         </igx-grid>
     </div>
     <div class="solar-system">
         <div class="planets">
-            <planet *ngFor="let data of planetData" [data]="data" 
-                igxDrop (onEnter)="onEnter($event)" (onLeave)="onLeave($event)" (onDrop)="onDrop($event)"></planet>
+            <planet #planet *ngFor="let data of planetData" [data]="data"
+                igxDrop (onEnter)="onEnter($event, planet)" (onLeave)="onLeave($event)" (onDrop)="onDrop($event, planet)"></planet>
         </div>
         <div class="sun-wrapper">
-                <div class="sun">
+            <div class="sun">
         </div>
     </div>
 </div>
