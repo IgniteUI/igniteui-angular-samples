@@ -19,7 +19,7 @@ export class GridContextmenuSampleComponent implements OnInit {
     public contextmenuY = 0;
     public clickedCell = null;
     public copiedData;
-    public selectedCells = [];
+    public multiCellSelection;
     public multiCellContextmenu = false;
 
     constructor() {
@@ -40,7 +40,6 @@ export class GridContextmenuSampleComponent implements OnInit {
 
     public rightClick(eventArgs) {
         eventArgs.event.preventDefault();
-        this.copiedData = "";
         this.contextmenuX = eventArgs.event.clientX;
         this.contextmenuY = eventArgs.event.clientY;
         this.clickedCell = eventArgs.cell;
@@ -49,26 +48,32 @@ export class GridContextmenuSampleComponent implements OnInit {
 
     public disableContextMenu() {
         this.contextmenu = false;
-        // this.multiCellContextmenu = false;
     }
 
     public getCells(event) {
-        this.copiedData  = " ";
-        this.selectedCells = [];
-        for (let colI = event.columnStart; colI <= event.columnEnd; colI++) {
-            for (let rowI = event.rowStart; rowI <= event.rowEnd; rowI++) {
-                this.selectedCells.push(this.grid1.getCellByColumn(rowI, this.grid1.columns[colI].field));
-            }
-        }
-        this.contextmenuX = this.selectedCells[this.selectedCells.length - 1].nativeElement.getClientRects()[0].x;
-        this.contextmenuY = this.selectedCells[this.selectedCells.length - 1].nativeElement.getClientRects()[0].y;
+        this.multiCellSelection = {};
+        this.multiCellSelection = {
+            data: this.grid1.getSelectedData(),
+            rowEnd: event.rowEnd,
+            rowStart: event.rowStart,
+            selectionStart: this.clickedCell
+        };
         this.multiCellContextmenu = true;
-
     }
 
     public check(event) {
-        this.copiedData = event.data;
-        this.multiCellContextmenu = false;
+        this.copiedData = JSON.stringify(event.data, null, 2);
+        if (this.multiCellContextmenu) {
+            this.multiCellContextmenu = false;
+        }
+    }
 
+    public cellSelection(event) {
+        event.event.preventDefault();
+        this.multiCellContextmenu = false;
+        this.contextmenu = false;
+        this.contextmenuX = event.cell.nativeElement.getClientRects()[0].x;
+        this.contextmenuY = event.cell.nativeElement.getClientRects()[0].y;
+        this.clickedCell = event.cell;
     }
 }

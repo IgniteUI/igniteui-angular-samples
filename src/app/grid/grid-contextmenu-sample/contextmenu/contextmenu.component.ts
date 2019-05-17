@@ -1,11 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from "@angular/core";
 import { IgxIconModule, SortingDirection } from "igniteui-angular";
 
-enum SortingType {
-    SINGLE = "Single",
-    MULTI = "Multiple"
-}
-
 interface ICopyData {
     data: any;
 }
@@ -35,29 +30,13 @@ export class ContextmenuComponent implements OnInit {
     public sortDir: SortingDirection;
     public divY;
     public selectedData: ICopyData;
-    public type: typeof SortingType = SortingType;
-    public sortingType: SortingType = window.sessionStorage.sortType ?
-        window.sessionStorage.sortType : SortingType.SINGLE;
     public chooseType: boolean = false;
     public isDivFocused = false;
-
-    @ViewChild("multiCellTemplate", { read: TemplateRef })
-    protected initialsTemplate: TemplateRef<any>;
 
     constructor() { }
 
     public sort(eventArgs) {
-        if (this.sortingType === SortingType.MULTI) {
-            this.cell.grid.sort({ fieldName: this.cell.column.field, dir: this.sortDir, ignoreCase: true });
-        } else {
-            this.cell.grid.columns.forEach((col) => {
-                if (!(col.field === this.cell.column.fieldName)) {
-                    this.cell.grid.clearSort(col.field);
-                }
-            });
-            this.cell.grid.sort({ fieldName: this.cell.column.field, dir: this.sortDir, ignoreCase: true });
-        }
-
+        this.cell.grid.sort({ fieldName: this.cell.column.field, dir: this.sortDir, ignoreCase: true });
         this.sortDir = this.sortDir === 1 ? 2 : 1;
     }
 
@@ -74,7 +53,11 @@ export class ContextmenuComponent implements OnInit {
     }
 
     public hasSortedColumn() {
-        return this.isColumnSortable() ? this.cell.grid.sortingExpressions.length > 0 : false;
+        if (this.isColumnSortable() && this.cell.grid.sortingExpressions.length > 0 &&
+        this.cell.grid.sortingExpressions.find((expr) => expr.fieldName === this.cell.column.field)) {
+            return true;
+        }
+        return false;
     }
 
     public hasMutliSortedColumns() {
@@ -86,40 +69,31 @@ export class ContextmenuComponent implements OnInit {
         return false;
     }
 
-    public setSortingType(event: SortingType) {
-        if (!(event === this.sortingType)) {
-            window.sessionStorage.sortType = event;
-            this.sortingType = event;
-            this.cell.grid.clearSort();
-        }
-
-        this.chooseType = false;
-    }
-
-    public open(icon) {
-        this.chooseType = true;
-        this.divX = icon.el.nativeElement.getClientRects()[0].x + 20;
-        this.divY = icon.el.nativeElement.getClientRects()[0].y;
-    }
-
-    public close($event) {
-        setTimeout(() => {
-            if (this.isDivFocused === false) {
-                this.chooseType = false;
-            }
-        }, 100);
-    }
-
     public copySelectedCellData(event) {
-        this.onCellValueCopy.emit({data: {[this.cell.column.field]: this.cell.value}});
+        const selectedData = { [this.cell.column.field]: this.cell.value };
+        this.copyData(JSON.stringify({ [this.cell.column.field]: this.cell.value }));
+        this.onCellValueCopy.emit({ data: selectedData });
+    }
+
+    public copyRowData(event) {
+        const selectedData = this.cell.row.rowData ;
+        this.copyData(JSON.stringify(this.cell.row.rowData));
+        this.onCellValueCopy.emit({ data: selectedData });
     }
 
     public copySelectedCells(event) {
+        const selectedData = this.multiCell.data;
+        this.copyData(JSON.stringify(selectedData));
+        this.onCellValueCopy.emit({ data: selectedData });
+    }
+
+    public copySelectedRowsData(event) {
         const res = [];
-        this.multiCell.forEach((cell) => {
-            res.push({ [cell.column.field]: cell.value });
-        });
-        this.onCellValueCopy.emit({ data: res });
+        for (let i = this.multiCell.rowStart; i <= this.multiCell.rowEnd; i++) {
+            res.push(this.multiCell.selectionStart.grid.data[i]);
+        }
+        this.copyData(JSON.stringify(res));
+        this.onCellValueCopy.emit({ data: res});
     }
 
     public ngOnInit() {
@@ -131,5 +105,15 @@ export class ContextmenuComponent implements OnInit {
                 this.sortDir = 1;
             }
         }
+    }
+
+    private copyData(data) {
+        const tempElement = document.createElement("input");
+        document.body.appendChild(tempElement);
+        tempElement.setAttribute("id", "temp_id");
+        (document.getElementById("temp_id") as HTMLInputElement).value = data;
+        tempElement.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempElement);
     }
 }
