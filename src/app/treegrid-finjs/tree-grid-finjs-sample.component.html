@@ -33,8 +33,15 @@
                    [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
                    [primaryKey]="primaryKey" [childDataKey]="childDataKey"
                    columnHidingTitle="Indicators" hiddenColumnsText="Hidden" 
-                   [rowSelectable]="true" [allowFiltering]="true" [showToolbar]="true" [columnHiding]="true"
+                   [rowSelectable]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="true" [columnHiding]="true"
                    [exportExcel]="true" exportExcelText="Export to Excel">
+
+        <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
+        <!-- <ng-template igxExcelStyleSortingTemplate></ng-template>
+        <ng-template igxExcelStyleMovingTemplate></ng-template>
+        <ng-template igxExcelStyleHidingTemplate></ng-template>
+        <ng-template igxExcelStylePinningTemplate></ng-template> -->
+
         <igx-column [field]="groupColumnKey" [width]="'180px'" [sortable]='true' [resizable]='true' [disableHiding]="true"></igx-column>
         <igx-column [field]="'Settlement'" [width]="'100px'" [sortable]='true'></igx-column>
         <igx-column [field]="'Region'" [width]="'110px'" [sortable]='true'></igx-column>
