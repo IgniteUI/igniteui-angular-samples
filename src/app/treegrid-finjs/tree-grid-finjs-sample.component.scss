@@ -219,6 +219,11 @@
     .igx-excel-filter input {
         font-size: 0.8125rem;
     }
+
+    .igx-button-group > .igx-button--compact {
+        height: 1rem;
+        min-height: 1.5rem;
+    }
   }
 
   .grid__wrapper {
