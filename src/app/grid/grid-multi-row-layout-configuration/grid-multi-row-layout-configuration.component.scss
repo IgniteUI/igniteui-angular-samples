@@ -1,7 +1,16 @@
 .colsWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-flow: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content; 
     height: 50px;
     margin: auto;
@@ -9,6 +18,8 @@
 }
 
 .columnOut {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 32px;
     margin-left: 3px;
@@ -20,7 +31,10 @@
     font-weight: 600;
     background-color: rgb(42, 42, 42);
     color: rgb(255,255,255);
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     cursor: pointer;
 }
 
@@ -34,6 +48,8 @@
 
 
 .columnIn {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-family: 'Titillium Web', sans-serif;
     line-height: 1.25rem;
@@ -41,7 +57,10 @@
     background-color: rgb(42, 42, 42);
     border: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .columnInHovered {
@@ -50,7 +69,8 @@
 
 .textWrapper {
     margin: auto;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     color: rgb(255,255,255);
 }
 
@@ -84,6 +104,7 @@
 }
 
 .rowLayoutView {
+    display: -ms-grid;
     display: grid;
     margin: auto;
 }

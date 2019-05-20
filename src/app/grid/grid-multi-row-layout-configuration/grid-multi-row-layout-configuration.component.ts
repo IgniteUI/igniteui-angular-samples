@@ -244,15 +244,24 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         return result;
     }
 
-    public rerenderGrid() {
-        this.renderGrid = false;
+    public getColumnLayoutTemplate() {
+        const flatCollection = this.flattenCollection();
+        let columnLayout = "<igx-column-layout>";
+        flatCollection.map((row) => {
+            const column =
+                '\n    <igx-column [rowStart]="' + row.rowStart + '"' +
+                ' [rowEnd]="' + (row.rowStart + row.rowSpan) + '"' +
+                ' [colStart]="' + row.colStart + '"' +
+                ' [colEnd]="' + (row.colStart + row.colSpan) + '"' +
+                ' field="' + row.key + '">' +
+                "\n    </igx-column>";
+            columnLayout += column;
+        });
 
-        // Flatten the current collection for the grid.
-        this.gridCollection = this.flattenCollection();
+        columnLayout += "\n</igx-column-layout>";
 
-        setTimeout(() => {
-            this.renderGrid = true;
-        }, 200);
+        this.jsonCollection = columnLayout;
+        this.jsonDialog.open();
     }
 
     public renderJson() {
@@ -308,10 +317,10 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
             const curDistance = this.dragStartX - event.pageX;
             const minIncrease = -this.curResizedCell.colSpan;
             const maxIncrease = colIndex;
-            this.colSpanIncrease = Math.min(Math.round(curDistance / 136), maxIncrease);
+            this.colSpanIncrease = Math.min(Math.round(curDistance / parseInt(this.colsWidth, 10)), maxIncrease);
             this.colSpanIncrease = Math.max(this.colSpanIncrease, minIncrease);
-            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * 136;
-            this.resizeLeft = cellRef.offsetLeft - this.colSpanIncrease * 136;
+            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * parseInt(this.colsWidth, 10);
+            this.resizeLeft = cellRef.offsetLeft - this.colSpanIncrease * parseInt(this.colsWidth, 10);
         }
     }
 
@@ -319,8 +328,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         if (this.dragStarted) {
             const curDistance = event.pageX - this.dragStartX;
             const maxIncrease = this.colsCount - (colIndex + this.curResizedCell.colSpan);
-            this.colSpanIncrease = Math.min(Math.round(curDistance / 136), maxIncrease);
-            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * 136;
+            this.colSpanIncrease = Math.min(Math.round(curDistance / parseInt(this.colsWidth, 10)), maxIncrease);
+            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * parseInt(this.colsWidth, 10);
         }
     }
 
@@ -503,8 +512,8 @@ export class GridMultiRowLayoutConfigurationComponent implements AfterViewInit {
         if (this.dragStarted) {
             const curDistance = event.pageY - this.dragStartY;
             const maxIncrease = this.rowsCount - rowIndex - this.curResizedCell.rowSpan;
-            this.rowSpanIncrease = Math.min(Math.round(curDistance / 32), maxIncrease);
-            this.resizeHeight = this.resizeInitialHeight + this.rowSpanIncrease * 32;
+            this.rowSpanIncrease = Math.min(Math.round(curDistance / parseInt(this.rowsHeight, 10)), maxIncrease);
+            this.resizeHeight = this.resizeInitialHeight + this.rowSpanIncrease * parseInt(this.rowsHeight, 10);
         }
     }
 

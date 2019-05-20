@@ -65,22 +65,8 @@
             </div>
         </div>
         <div style="width: 100%; text-align: center; margin: 10px;">
-            <span igxButton="raised" (click)="rerenderGrid()">Render Grid.</span>
-            <span igxButton="raised" (click)="renderJson()">Get JSON!</span>
-        </div>
-
-        <div style="width: 100%; text-align: center; margin: 10px;">
-                <div>Sample:</div>
-        </div>
-        <div class="outer-wrapper">
-            <div class="grid-wrapper">
-                <igx-grid *ngIf="renderGrid" [rowSelectable]="false" #grid [data]="data" displayDensity="compact" [width]="'800px'" [height]="'400px'">
-                    <igx-column-layout [movable]="false" [pinned]="false">
-                        <igx-column *ngFor="let col of gridCollection" [field]="col.key" sortable="true" resizable="true"
-                            [rowStart]="col.rowStart" [rowEnd]="col.rowStart + col.rowSpan" [colStart]="col.colStart" [colEnd]="col.colStart + col.colSpan" ></igx-column>
-                    </igx-column-layout>
-                </igx-grid>
-            </div>
+            <span igxButton="raised" (click)="getColumnLayoutTemplate()">Get Column-Layout Template</span>
+            <span igxButton="raised" (click)="renderJson()">Get JSON</span>
         </div>
 
         <igx-dialog #jsonDialog title="Multi-row layout result:"
