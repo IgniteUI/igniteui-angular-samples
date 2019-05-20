@@ -8,6 +8,7 @@ import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hid
 import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
+import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
 import {
@@ -197,6 +198,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HierarchicalGridLoDSampleComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-lod"],
         path: "hierarchical-grid-lod"
+    },
+    {
+        component: HGridCustomKBNavigationComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-custom-kb-navigation"],
+        path: "hierarchical-grid-custom-kb-navigation"
     }
 ];
 

@@ -45,5 +45,6 @@ export const treeGridRoutesData = {
     "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" },
     "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" },
     "tree-grid-multi-cell-selection": { displayName: "TreeGrid Multi cell selection", parentName: "TreeGrid" },
-    "treegrid-load-on-demand": { displayName: "TreeGrid Load On Demand", parentName: "TreeGrid" }
+    "treegrid-load-on-demand": { displayName: "TreeGrid Load On Demand", parentName: "TreeGrid" },
+    "treegrid-keyboard-navigation": { displayName: "TreeGrid Keyboard Navigation", parentName: "TreeGrid" }
 };
