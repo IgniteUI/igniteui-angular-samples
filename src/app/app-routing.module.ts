@@ -53,6 +53,10 @@ export const samplesRoutes: Routes = [
         path: "gauges"
     },
     {
+        loadChildren: "./geo-map/geo-map.module#GeoMapModule",
+        path: "geo-map"
+    },
+    {
         loadChildren: "./menus/menus.module#MenusModule",
         path: "menus"
     },
