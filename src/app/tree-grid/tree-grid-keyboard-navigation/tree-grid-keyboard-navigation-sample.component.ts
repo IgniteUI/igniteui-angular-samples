@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IGridKeydownEventArgs, IgxTreeGridComponent, IgxGridCellComponent } from "igniteui-angular";
+import { IGridKeydownEventArgs, IgxGridCellComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { EMPLOYEE_DATA } from "../tree-grid-childdatakey-sample/data";
 
 @Component({

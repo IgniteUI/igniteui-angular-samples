@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IGridKeydownEventArgs, IgxGridCellComponent, IgxHierarchicalGridComponent, IGridCreatedEventArgs } from "igniteui-angular";
+import {
+    IGridCreatedEventArgs, IGridKeydownEventArgs,
+    IgxGridCellComponent, IgxHierarchicalGridComponent
+} from "igniteui-angular";
 import { SINGERS } from "../data";
 
 @Component({
