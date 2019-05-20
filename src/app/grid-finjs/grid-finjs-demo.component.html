@@ -35,8 +35,15 @@
 
     <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' (onGroupingDone)="groupingDone($event)"
-        [rowSelectable]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="true" [columnHiding]="true"
+        [rowSelectable]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
         [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+
+        <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
+        <!-- <ng-template igxExcelStyleSortingTemplate></ng-template>
+        <ng-template igxExcelStyleMovingTemplate></ng-template>
+        <ng-template igxExcelStyleHidingTemplate></ng-template>
+        <ng-template igxExcelStylePinningTemplate></ng-template> -->
+
         <igx-column [field]="'ID'" [hidden]='true'></igx-column>
         <igx-column [field]="'Category'" [width]="'120px'" [groupable]='true' [sortable]='true'></igx-column>
         <igx-column [field]="'Type'" [width]="'100px'" [groupable]='true' [sortable]='true' [filterable]='false'></igx-column>
