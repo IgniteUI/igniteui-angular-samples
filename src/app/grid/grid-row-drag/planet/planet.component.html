@@ -1,7 +1,7 @@
 <div class="container">
     <div class="planet-name">{{ data.name }}</div>
     <div class="planet" [style.width.px]="size" [style.height.px]="size"
-        [style.margin]="margin" [style.background]="data.color"></div>
+        [style.background]="data.color"></div>
     <div class="moons">
         <div *ngFor="let moon of data.moons; let i = index;" [class]="moonClasses(i)"></div>
     </div>

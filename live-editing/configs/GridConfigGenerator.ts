@@ -598,6 +598,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: [
+                "/src/app/grid/grid-row-drag/data.ts",
+                "/src/app/grid/grid-row-drag/planet/planet.component.html",
+                "/src/app/grid/grid-row-drag/planet/planet.component.scss",
+                "/src/app/grid/grid-row-drag/planet/planet.component.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridDragSampleComponent, PlanetComponent, IgxDragDropModule, IgxDialogModule],
                 ngDeclarations: [GridDragSampleComponent, PlanetComponent],

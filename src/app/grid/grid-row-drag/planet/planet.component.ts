@@ -42,10 +42,6 @@ export class PlanetComponent {
         return this.data.size * 10;
     }
 
-    public get margin(): string {
-        return `0px ${(70 - this.size) / 2}px`;
-    }
-
     public moonClasses(moonIndex) {
         return `moon ${((moonIndex < this.moonsCount) ? "moon-selected" : "")}`;
     }

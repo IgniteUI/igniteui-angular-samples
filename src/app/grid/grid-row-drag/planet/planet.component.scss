@@ -1,7 +1,3 @@
-@import './node_modules/igniteui-angular/lib/core/styles/themes/index';
-
-$border-color: igx-color($default-palette, grays, 400);
-
 .container {
     display: flex;
     margin: 10px 30px;
@@ -12,25 +8,24 @@ $border-color: igx-color($default-palette, grays, 400);
     display: flex;
     flex-flow: column;
     justify-content: center;
-    margin-right: 20px;
     font-size: 0.8125rem;
 }
 
 .planet {
-    border: 1px solid $border-color;
+    border: 1px solid #777;
     border-radius: 50%;
-    margin-right: 20px;
+    margin: 0 20px;
+    flex-shrink: 0;
 }
 
 .moons {
-    margin-left: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 .moon {
-    border: 1px solid $border-color;
+    border: 1px solid #777;
     border-radius: 50%;
     width: 10px;
     height: 10px;
@@ -38,11 +33,20 @@ $border-color: igx-color($default-palette, grays, 400);
 }
 
 .moon-selected {
-    background-color: $border-color;
+    background-color: #777;
     transition: all 600ms ease-in;
 }
 
 .info {
     width: 400px;
     padding: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .planet {
+    margin: 0 5px;
+  }
+  .moon {
+    margin: 1px;
+  }
 }
