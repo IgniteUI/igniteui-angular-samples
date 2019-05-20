@@ -81,6 +81,8 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
 import {
     GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-row-drag.component";
+import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
@@ -598,6 +600,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+
             component: GridCustomKBNavigationComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -605,6 +608,21 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridCustomKBNavigationComponent],
                 ngImports: [IgxGridModule]
             })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/grid/grid-row-drag/data.ts",
+                "/src/app/grid/grid-row-drag/planet/planet.component.html",
+                "/src/app/grid/grid-row-drag/planet/planet.component.scss",
+                "/src/app/grid/grid-row-drag/planet/planet.component.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridDragSampleComponent, PlanetComponent, IgxDragDropModule, IgxDialogModule],
+                ngDeclarations: [GridDragSampleComponent, PlanetComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule, IgxDialogModule]
+            }),
+            component: GridDragSampleComponent
         }));
 
         return configs;
