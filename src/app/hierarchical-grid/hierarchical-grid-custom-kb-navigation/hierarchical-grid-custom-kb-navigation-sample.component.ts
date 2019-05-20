@@ -34,7 +34,6 @@ export class HGridCustomKBNavigationComponent implements OnInit {
 
         if (type === "dataCell" && target.inEditMode && evt.key.toLowerCase() === "tab") {
             // Value validation for number column.
-            // The value should be bigger than 10 in order to continue with the kb navigation.
             // This covers both 'tab' and 'shift+tab' key interactions.
             args.event.preventDefault();
             args.cancel = true;

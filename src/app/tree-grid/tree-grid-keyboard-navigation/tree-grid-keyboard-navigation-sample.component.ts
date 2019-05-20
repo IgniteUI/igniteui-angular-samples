@@ -1,23 +1,21 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IGridKeydownEventArgs, IgxGridCellComponent, IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../../data/nwindData";
+import { IGridKeydownEventArgs, IgxTreeGridComponent, IgxGridCellComponent } from "igniteui-angular";
+import { EMPLOYEE_DATA } from "../tree-grid-childdatakey-sample/data";
 
 @Component({
-    selector: "grid-custom-kb-navigation-sample",
-    styleUrls: ["./grid-custom-kb-navigation-sample.component.scss"],
-    templateUrl: "grid-custom-kb-navigation-sample.component.html"
+    selector: "tree-grid-keyboard-navigation-sample",
+    styleUrls: ["./tree-grid-keyboard-navigation-sample.component.scss"],
+    templateUrl: "./tree-grid-keyboard-navigation-sample.component.html"
 })
+export class TreeGridKBNavigationComponent implements OnInit {
+    public localData: any[];
+    @ViewChild("grid1", { read: IgxTreeGridComponent })
+    public grid1: IgxTreeGridComponent;
 
-export class GridCustomKBNavigationComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent })
-    public grid1: IgxGridComponent;
+    constructor() { }
 
-    public data: any[];
-
-    constructor() {
-    }
-    public ngOnInit(): void {
-        this.data = DATA;
+    public ngOnInit() {
+        this.localData = EMPLOYEE_DATA;
     }
 
     public customKeydown(args: IGridKeydownEventArgs) {
@@ -30,8 +28,8 @@ export class GridCustomKBNavigationComponent implements OnInit {
             // This covers both 'tab' and 'shift+tab' key interactions.
             args.event.preventDefault();
             args.cancel = true;
-            if (target.column.dataType === "number" && target.editValue < 10) {
-                alert("The value should be bigger than 10");
+            if (target.column.dataType === "number" && target.editValue < 18) {
+                alert("The value should be bigger than 18");
                 return;
             }
             const cell = evt.shiftKey ?
