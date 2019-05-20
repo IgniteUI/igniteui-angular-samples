@@ -64,6 +64,8 @@ import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/t
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+// tslint:disable-next-line: max-line-length
+import { TreeGridKBNavigationComponent } from "./tree-grid-keyboard-navigation/tree-grid-keyboard-navigation-sample.component";
 import {
     TreeGridLoadOnDemandSampleComponent
 } from "./tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
@@ -145,7 +147,8 @@ import {
         TreeGridMultiCellSelectionComponent,
         TreeGridLoadOnDemandSampleComponent,
         TreeGridRowDrag,
-        TreeGridRowDragBase
+        TreeGridRowDragBase,
+        TreeGridKBNavigationComponent
     ],
     imports: [
         CommonModule,

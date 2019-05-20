@@ -45,6 +45,8 @@ import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
+// tslint:disable-next-line: max-line-length
+import { GridCustomKBNavigationComponent } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -595,6 +597,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule, IgxButtonModule]
             }),
             component: GridDragBaseSampleComponent
+        }));
+
+        configs.push(new Config({
+
+            component: GridCustomKBNavigationComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCustomKBNavigationComponent, IgxGridModule],
+                ngDeclarations: [GridCustomKBNavigationComponent],
+                ngImports: [IgxGridModule]
+            })
         }));
 
         configs.push(new Config({
