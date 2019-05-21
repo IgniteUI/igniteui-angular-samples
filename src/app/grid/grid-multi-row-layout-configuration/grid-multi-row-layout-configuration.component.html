@@ -21,11 +21,23 @@
             </div>
         </div>
         <div style="width: 100%; margin-bottom: 15px; text-align:center;">
-            <div class="colsWrapper">
+            <div>
+                <input [(ngModel)]="keyValue"
+                style="height: 30px; width: 150px;"
+                placeholder="Column key"/>
+            </div>
+
+            <div igxButton="raised"
+                class="addColumnButton"
+                style="height: 18px; width: 150px;"
+                (click)="addColumn()">Add column</div>
+        </div>
+        <div style="width: 100%; margin-bottom: 15px; text-align:center;">
+            <div *ngIf="columnsList.length" class="colsWrapper">
                 <div *ngFor="let col of columnsList" class="columnOut"
-                    [igxDrag]="{ key: col.key }" [hideBaseOnDrag]="true" >
+                    [igxDrag]="{ key: col.key }" [hideBaseOnDrag]="true">
                     <div style="margin: 6px;">
-                            {{col.key}}
+                        {{col.key}}
                     </div>
                 </div>
             </div>
