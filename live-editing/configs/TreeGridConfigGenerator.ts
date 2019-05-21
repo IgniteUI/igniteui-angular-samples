@@ -43,6 +43,7 @@ import {
 import { TreeGridFilteringCustomSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridFilteringTemplateSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
+import { TreeGridKBNavigationComponent } from "../../src/app/tree-grid/tree-grid-keyboard-navigation/tree-grid-keyboard-navigation-sample.component";
 import { TreeGridLoadOnDemandSampleComponent } from "../../src/app/tree-grid/tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
 import { TreeGridMultiCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
@@ -497,6 +498,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxButtonModule, IgxInputGroupModule, IgxDragDropModule]
             }),
             component: TreeGridRowDragBase,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // Tree Grid Keyboard Navigation Sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridKBNavigationComponent],
+                ngDeclarations: [TreeGridKBNavigationComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridKBNavigationComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
