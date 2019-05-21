@@ -4,6 +4,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing": { displayName: "Hierarchical Grid Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-drag": { displayName: "Hierarchical Grid Row Drag", parentName: "Hierarchical Grid" },
+    "hierarchical-row-drag-base": { displayName: "Hierarchical Grid Row Drag - Base", parentName: "Hierarchical Grid" },
     "hierarchical-grid-batch-editing": { displayName: "Hierarchical Grid Batch Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering": { displayName: "Hierarchical Grid Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering-template": { displayName: "Hierarchical Grid Filtering Template", parentName: "Hierarchical Grid" },
@@ -26,5 +27,6 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-toolbar-title": { displayName: "Hierarchical Grid Toolbar Title", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-options": { displayName: "Hierarchical Grid Toolbar Options", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-custom": { displayName: "Hierarchical Grid Toolbar Custom Content", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-lod": { displayName: "Hierarchical Grid Load on Demand", parentName: "Hierarchical Grid" }
+    "hierarchical-grid-lod": { displayName: "Hierarchical Grid Load on Demand", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-custom-kb-navigation": { displayName: "Hierarchical Grid Custom Keyboard Navigation", parentName: "Hierarchical Grid" }
 };
