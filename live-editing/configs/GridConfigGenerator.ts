@@ -45,6 +45,8 @@ import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
+// tslint:disable-next-line: max-line-length
+import { GridCustomKBNavigationComponent } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -79,6 +81,8 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
 import {
     GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-row-drag.component";
+import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
@@ -593,6 +597,32 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule, IgxButtonModule]
             }),
             component: GridDragBaseSampleComponent
+        }));
+
+        configs.push(new Config({
+
+            component: GridCustomKBNavigationComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCustomKBNavigationComponent, IgxGridModule],
+                ngDeclarations: [GridCustomKBNavigationComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/grid/grid-row-drag/data.ts",
+                "/src/app/grid/grid-row-drag/planet/planet.component.html",
+                "/src/app/grid/grid-row-drag/planet/planet.component.scss",
+                "/src/app/grid/grid-row-drag/planet/planet.component.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridDragSampleComponent, PlanetComponent, IgxDragDropModule, IgxDialogModule],
+                ngDeclarations: [GridDragSampleComponent, PlanetComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule, IgxDialogModule]
+            }),
+            component: GridDragSampleComponent
         }));
 
         return configs;

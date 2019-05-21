@@ -14,6 +14,7 @@ import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-too
 import {GridCompositeDataComponent} from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
+import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
@@ -36,6 +37,7 @@ import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sa
 import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-base.component";
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
+import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -94,6 +96,7 @@ import { DataService } from "./services/data.service";
         GridMultiColumnHeadersComponent,
         GridComponent,
         PasteHandler,
+        GridCustomKBNavigationComponent,
         GridSaveStateComponent,
         AboutComponent,
         IgxGridStateDirective,
@@ -102,6 +105,7 @@ import { DataService } from "./services/data.service";
         GridCompositeDataComponent,
         GridMultiRowLayoutComponent,
         GridDragSampleComponent,
+        PlanetComponent,
         GridDragBaseSampleComponent,
         GridDragToGridSampleComponent
     ],
