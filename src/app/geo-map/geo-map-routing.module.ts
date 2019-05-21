@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 import { geomaproutesdata } from "./geo-map-routes-data";
-import { MapTypeScatterSymbolSeriesComponent } from './map-type-scatter-symbol-series/map-type-scatter-symbol-series.component';
+import { MapTypeScatterSymbolSeriesComponent
+} from "./map-type-scatter-symbol-series/map-type-scatter-symbol-series.component";
 
 const routes: Routes = [
     {
