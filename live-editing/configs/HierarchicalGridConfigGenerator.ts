@@ -19,6 +19,7 @@ import { HGridColumnHidingSampleComponent } from "../../src/app/hierarchical-gri
 import { HGridColumnMovingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridColumnResizingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
+import { HGridCustomKBNavigationComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing/hierarchical-grid-editing.component";
 import {
@@ -339,6 +340,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule, IgxDragDropModule, IgxButtonModule]
             }),
             component: HGridRowDragBaseComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridCustomKBNavigationComponent],
+                ngDeclarations: [HGridCustomKBNavigationComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridCustomKBNavigationComponent
         }));
 
         return configs;
