@@ -29,8 +29,6 @@ export class MapTypeScatterSymbolSeriesComponent implements AfterViewInit {
         symbolSeries.longitudeMemberPath = "lon";
         symbolSeries.markerBrush  = "White";
         symbolSeries.markerOutline = brush;
-        // symbolSeries.tooltipTemplate = this.createTooltip;
-
         this.map.series.add(symbolSeries);
     }
 }

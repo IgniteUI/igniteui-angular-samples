@@ -26,6 +26,7 @@ import { ExportExcelConfigGenerator } from "../configs/ExportExcelConfigGenerato
 import { FinancialChartConfigGenerator } from "../configs/FinancialChartConfigGenerator";
 import { ForConfigGenerator } from "../configs/ForConfigGenerator";
 import { GaugesConfigGenerator } from "../configs/GaugesConfigGenerator";
+import { GeoMapConfigGenerator } from "../configs/GeoMapConfigGenerator";
 import { GridConfigGenerator } from "../configs/GridConfigGenerator";
 import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
 import { GridFinjsConfigGenerator } from "../configs/GridFinjsConfigGenerator";
@@ -69,7 +70,8 @@ export const CONFIG_GENERATORS =
         ExcelLibraryConfigGenerator, PieChartConfigGenerator, DoughnutChartConfigGenerator,
         TreeGridFinjsConfigGenerator, ForConfigGenerator, FinancialChartConfigGenerator, GridConfigGenerator,
         GridCRMConfigGenerator, GridFinjsConfigGenerator, IconConfigGenerator, OverlayConfigGenerator,
-        GaugesConfigGenerator, DragAndDropConfigGenerator, InputGroupConfigGenerator, LayoutConfigGenerator,
+        GaugesConfigGenerator, GeoMapConfigGenerator, DragAndDropConfigGenerator, InputGroupConfigGenerator,
+        LayoutConfigGenerator,
         LinearProgressbarConfigGenerator, ListConfigGenerator, LocalizationConfigGenerator, MaskConfigGenerator,
         MonthPickerConfigGenerator, NavbarConfigGenerator, NavdrawerConfigGenerator, RadioConfigGenerator,
         RippleConfigGenerator, SelectConfigGenerator, SliderConfigGenerator, SnackbarConfigGenerator,
