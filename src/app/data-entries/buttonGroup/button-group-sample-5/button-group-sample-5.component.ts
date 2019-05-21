@@ -9,7 +9,7 @@ export class ButtonGroupSample5Component implements OnInit {
 
     public rippleColor = "grey";
 
-    public displayDensity = "Comfrtable";
+    public displayDensity = "comfortable";
     public displayDensities;
 
     public ngOnInit() {
