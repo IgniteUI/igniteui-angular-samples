@@ -23,6 +23,7 @@ import {
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSelectModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule
@@ -44,6 +45,8 @@ import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
+// tslint:disable-next-line: max-line-length
+import { GridCustomKBNavigationComponent } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -79,6 +82,8 @@ import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample
 import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
 import {
     GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-row-drag.component";
+import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
@@ -91,9 +96,6 @@ import { AboutComponent } from "../../src/app/grid/grid-save-state/about.compone
 import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
 import { IgxGridStateDirective } from "../../src/app/grid/grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
-import {
-    GridContextmenuComponent
-} from "../../src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
@@ -284,16 +286,12 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: SortingSampleComponent,
-            additionalFiles: ["/src/app/data/nwindData.ts",
-                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.html",
-                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.ts",
-                "/src/app/grid/grid-sorting-sample/grid-contextmenu/grid-contextmenu.component.scss"
-            ],
+            additionalFiles: ["/src/app/grid/grid-sorting-sample/localData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
-                    SortingSampleComponent, IgxInputGroupModule, GridContextmenuComponent],
-                ngDeclarations: [SortingSampleComponent, GridContextmenuComponent],
-                ngImports: [IgxGridModule, IgxRippleModule, IgxIconModule, IgxInputGroupModule],
+                    SortingSampleComponent, IgxInputGroupModule, IgxSelectModule],
+                ngDeclarations: [SortingSampleComponent],
+                ngImports: [IgxGridModule, IgxRippleModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule],
                 ngProviders: []
             })
         }));
@@ -611,6 +609,32 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule, IgxButtonModule]
             }),
             component: GridDragBaseSampleComponent
+        }));
+
+        configs.push(new Config({
+
+            component: GridCustomKBNavigationComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCustomKBNavigationComponent, IgxGridModule],
+                ngDeclarations: [GridCustomKBNavigationComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/grid/grid-row-drag/data.ts",
+                "/src/app/grid/grid-row-drag/planet/planet.component.html",
+                "/src/app/grid/grid-row-drag/planet/planet.component.scss",
+                "/src/app/grid/grid-row-drag/planet/planet.component.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridDragSampleComponent, PlanetComponent, IgxDragDropModule, IgxDialogModule],
+                ngDeclarations: [GridDragSampleComponent, PlanetComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule, IgxDialogModule]
+            }),
+            component: GridDragSampleComponent
         }));
 
         return configs;
