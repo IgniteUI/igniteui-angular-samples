@@ -27,6 +27,7 @@ import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/tim
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
+import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
 
 export const schedulingRoutes: Routes = [
     {
@@ -137,6 +138,11 @@ export const schedulingRoutes: Routes = [
         component: TimePickerSample5Component,
         data: schedulingRoutesData["timepicker-sample-5"],
         path: "timepicker-sample-5"
+    },
+    {
+        component: TimePickerSample6Component,
+        data: schedulingRoutesData["timepicker-sample-6"],
+        path: "timepicker-sample-6"
     },
     {
         component: TimepickerDropdownComponent,
