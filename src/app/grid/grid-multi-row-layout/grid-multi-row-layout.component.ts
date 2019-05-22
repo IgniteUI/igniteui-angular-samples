@@ -13,7 +13,7 @@ export class GridMultiRowLayoutComponent {
     public sourceData = DATA;
     public group = [
         {
-            dir: SortingDirection.Desc,
+            dir: SortingDirection.Asc,
             fieldName: "Country",
             ignoreCase: false,
             strategy: DefaultSortingStrategy.instance()
