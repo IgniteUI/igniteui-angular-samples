@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
+import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 
 @Component({
-  selector: 'app-map-binding-multiple-sources',
-  templateUrl: './map-binding-multiple-sources.component.html',
-  styleUrls: ['./map-binding-multiple-sources.component.scss']
+  selector: "app-map-binding-multiple-sources",
+  templateUrl: "./map-binding-multiple-sources.component.html"
 })
-export class MapBindingMultipleSourcesComponent implements OnInit {
 
-  constructor() { }
+export class MapBindingMultipleSourcesComponent implements AfterViewInit {
 
-  ngOnInit() {
-  }
+    @ViewChild ("map")
+    public map: IgxGeographicMapComponent;
+    constructor() {
+    }
 
+    public ngAfterViewInit(): void {
+    }
+
+    public addSeriesWith(locations: any[], brush: string) {
+    }
 }
