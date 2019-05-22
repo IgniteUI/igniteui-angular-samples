@@ -11,7 +11,6 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { DocsLayoutComponent } from "./index/docs-layout.component";
 import { IndexComponent } from "./index/index.component";
-import { MapBindingDataComponent } from './map-binding-data/map-binding-data.component';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -19,8 +18,7 @@ import { MapBindingDataComponent } from './map-binding-data/map-binding-data.com
         AppComponent,
         HomeComponent,
         DocsLayoutComponent,
-        IndexComponent,
-        MapBindingDataComponent
+        IndexComponent
     ],
     imports: [
         AppRoutingModule,
