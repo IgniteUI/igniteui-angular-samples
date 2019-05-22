@@ -34,7 +34,7 @@
         </div>
         <div style="width: 100%; margin-bottom: 15px; text-align:center;">
             <div *ngIf="columnsList.length" class="colsWrapper">
-                <div *ngFor="let col of columnsList" class="columnOut"
+                <div *ngFor="let col of columnsList" class="columnOut" [style.width]="colsWidth" [style.height]="rowsHeight"
                     [igxDrag]="{ key: col.key }" [hideBaseOnDrag]="true">
                     <div style="margin: 6px;">
                         {{col.key}}
@@ -44,10 +44,12 @@
         </div>
         <div style="width: 100%; margin-bottom: 15px; text-align:center;">
             <div style="display: flex;">
-                <div class="rowLayoutView" [ngStyle]="{'grid-template-rows': layoutRowStyle, 'grid-template-columns': layoutColsStyle}">
+                <div class="rowLayoutView" [ngStyle]="{'grid-template-rows': layoutRowStyle, 'grid-template-columns': layoutColsStyle,
+                    '-ms-grid-rows': layoutRowStyle, '-ms-grid-columns': layoutColsStyle}">
                     <ng-container *ngFor="let row of collection; index as rowIndex">
                         <div #gridCell tabindex="0" *ngFor="let col of row; index as colIndex" class="columnIn" [class.columnInHovered]="col.hovered"
-                            [ngStyle]="{'grid-row-start': col.rowStart, 'grid-column-start': col.colStart, 'grid-column-end': col.colStart + col.colSpan, 'grid-row-end': col.rowStart + col.rowSpan}"
+                            [ngStyle]="{'grid-row-start': col.rowStart, 'grid-column-start': col.colStart, 'grid-column-end': col.colStart + col.colSpan, 'grid-row-end': col.rowStart + col.rowSpan,
+                            '-ms-grid-row': col.rowStart, '-ms-grid-column': col.colStart, '-ms-grid-column-span': col.colSpan, '-ms-grid-row-span': col.rowSpan}"
                             igxDrop (onDrop)="onColDropped($event, rowIndex, colIndex)" (onEnter)="onColEnter($event, rowIndex, colIndex)" (onLeave)="onColLeave($event, rowIndex, colIndex)"
                                 (click)="clickCell(gridCell, rowIndex, colIndex)" (blur)="onBlur($event, rowIndex, colIndex)" (keyup)="onCellKey($event, rowIndex, colIndex)">
                             <div class="textWrapper">{{col.key}}</div>
@@ -72,7 +74,7 @@
                     </ng-container>
                 </div>
             </div>
-            <div #resizeIndicator style="position: absolute; border: 1px dotted #2f79ef;"
+            <div #resizeIndicator style="position: absolute; border: 1px dotted black;"
                 [ngStyle]="{'top': resizeTop + 'px', 'left': resizeLeft  + 'px', 'width': resizeWidth + 'px', 'height': resizeHeight + 'px', 'display': resizeVisible ? 'block' : 'none'}">
             </div>
         </div>
