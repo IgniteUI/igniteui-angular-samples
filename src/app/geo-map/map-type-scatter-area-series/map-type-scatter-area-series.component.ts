@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicScatterAreaSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-scatter-area-series-component";
-import WorldLocations from "../../utilities/WorldLocations";
+import { WorldLocations } from "../../utilities/WorldLocations";
 
 @Component({
   selector: "app-map-type-scatter-area-series",
