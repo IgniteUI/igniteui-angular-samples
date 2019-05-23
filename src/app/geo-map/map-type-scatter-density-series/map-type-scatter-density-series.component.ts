@@ -3,7 +3,7 @@ import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 import { IgxGeographicHighDensityScatterSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-high-density-scatter-series-component";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import WorldLocations from "../../utilities/WorldLocations";
+import { WorldLocations } from "../../utilities/WorldLocations";
 
 @Component({
   selector: "app-map-type-scatter-density-series",
