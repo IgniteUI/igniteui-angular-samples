@@ -33,6 +33,7 @@ import { TimePickerSample2Component } from "./timepicker/timepicker-sample-2/tim
 import { TimePickerSample3Component } from "./timepicker/timepicker-sample-3/timepicker-sample-3.component";
 import { TimePickerSample4Component } from "./timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/timepicker-sample-5.component";
+import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/timepicker-sample-6.component";
 
 @NgModule({
     declarations: [
@@ -57,6 +58,7 @@ import { TimePickerSample5Component } from "./timepicker/timepicker-sample-5/tim
         TimePickerSample3Component,
         TimePickerSample4Component,
         TimePickerSample5Component,
+        TimePickerSample6Component,
         DatepickerDropdownComponent,
         TimepickerDropdownComponent,
         CalendarViewsComponent,
