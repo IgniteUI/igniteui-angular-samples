@@ -39,7 +39,7 @@ export class SampleAssetsGenerator extends Generator {
         super(styleSyntax);
 
         this._showLogs = showLogs;
-        console.log("Live-Editing - SampleAssetsGenerator... ");
+        console.log("Live-Editing created SampleAssetsGenerator...");
         this._dependencyResolver = new DependencyResolver();
         this._tsImportsService = new TsImportsService();
         this._sassCompiler = new SassCompiler();
@@ -70,6 +70,8 @@ export class SampleAssetsGenerator extends Generator {
     }
 
     private _generateRoutes() {
+
+        console.log("Live-Editing found sample routes " + Routing.samplesRoutes.length);
         let modulePaths = new Map<string, string>();
         for (let i = 0; i < Routing.samplesRoutes.length; i++) {
             let route: Route = Routing.samplesRoutes[i];
@@ -82,12 +84,13 @@ export class SampleAssetsGenerator extends Generator {
             }
         }
 
+        console.log("Live-Editing found module routes " + MODULE_ROUTES.length);
         for (let i = 0; i < MODULE_ROUTES.length; i++) {
             let moduleName = MODULE_ROUTES[i].module.name;
             let modulePath = modulePaths.get(moduleName);
             if (this._showLogs) {
                 let stats =  MODULE_ROUTES[i].routes.length + " routes";
-                console.log("Live-Editing - generated " + stats + " for " + moduleName);
+                console.log("Live-Editing generated " + stats + " for " + moduleName);
             }
             for (let j = 0; j < MODULE_ROUTES[i].routes.length; j++) {
                 let route: Route = MODULE_ROUTES[i].routes[j];
@@ -96,6 +99,7 @@ export class SampleAssetsGenerator extends Generator {
                     routePath += "/" + route.path;
                 }
 
+                // console.log("Live-Editing - set " + route.component.name + " " + routePath);
                 this._componentRoutes.set(route.component.name, routePath);
             }
         }
@@ -142,7 +146,7 @@ export class SampleAssetsGenerator extends Generator {
         let sampleName = config.component.name;
         let sampleRoute = this._componentRoutes.get(sampleName);
         if (sampleRoute === undefined) {
-            console.log("Live-Editing detected missing route for " + sampleName);
+            console.log("Live-Editing detected missing route for " + sampleName + " "  );
         } else {
             sampleRoute = sampleRoute.replace("/", "-") + ".json";
             fs.writeFileSync(this.getAssetsSamplesDir() + sampleRoute, JSON.stringify(sampleDef));

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { ModuleWithProviders, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { IgxButtonModule } from "igniteui-angular";

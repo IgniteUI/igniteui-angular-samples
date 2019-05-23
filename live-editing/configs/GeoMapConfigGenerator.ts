@@ -37,64 +37,54 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class GeoMapConfigGenerator implements IConfigGenerator {
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
         configs.push(this.getConfig(
             MapBindingDataCsvComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapBindingDataJsonPointsComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapBindingDataModelComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapBindingMultipleShapesComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapBindingMultipleSourcesComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapCustomTooltipsComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapOverviewComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapTypeScatterAreaSeriesComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapTypeScatterContourSeriesComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapTypeScatterDensitySeriesComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapTypeShapePolygonSeriesComponent,
-            [IgxGeographicMapModule
-            ]));
+            [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapTypeShapePolylineSeriesComponent,
-            [IgxGeographicMapModule, IgxScatterSeriesDynamicModule
-            ]));
+            [IgxGeographicMapModule, IgxScatterSeriesDynamicModule]));
         configs.push(this.getConfig(
             MapTypeScatterSymbolSeriesComponent,
-            [IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent, IgxScatterSeriesDynamicModule
-            ],
-            [WorldLocations], ["src/utilities/WorldLocations.ts"]));
+            [IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent,
+             IgxScatterSeriesDynamicModule],
+            [WorldLocations], ["/src/app/utilities/WorldLocations.ts"]));
         return configs;
     }
+
     public getConfig(component: Type<any>, modules: any[], dataSources?: any[], dataPaths?: string[]) {
         const imports: any[] = [];
         imports.push(component);  // add sample component for importing
