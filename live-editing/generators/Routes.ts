@@ -74,7 +74,7 @@ export const MODULE_ROUTES = [
     },
     {
         module: GeoMapModule,
-        routes: GeoMapRoutingModule.GeoMapRoutingModule
+        routes: GeoMapRoutingModule.routes
     },
     {
         module: ListsModule,

@@ -24,7 +24,7 @@ export class SharedAssetsGenerator extends Generator {
     constructor(styleSyntax: StyleSyntax = StyleSyntax.Sass, showLogs?: boolean) {
         super(styleSyntax);
         this._showLogs = showLogs;
-        console.log("Live-Editing - SharedAssetsGenerator... ");
+        console.log("Live-Editing created SharedAssetsGenerator... ");
     }
 
     public generateSharedAssets() {
