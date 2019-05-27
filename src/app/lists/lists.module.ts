@@ -11,6 +11,7 @@ import {
     IgxIconModule,
     IgxInputGroupModule,
     IgxListModule,
+    IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
@@ -65,7 +66,8 @@ import { ListsRoutingModule } from "./lists-routing.module";
         IgxSelectModule,
         IgxToastModule,
         IgxButtonGroupModule,
-        HttpClientModule
+        HttpClientModule,
+        IgxRippleModule
     ]
 })
 export class ListsModule { }

@@ -3,7 +3,7 @@
     Contacts
   </igx-list-item>
   <igx-list-item *ngFor="let contact of contacts">
-    <span class="contact-name">{{ contact.name }}</span>
-    <span class="contact-phone">{{contact.phone}}</span>
+    <span igxListLineTitle>{{ contact.name }}</span>
+    <span igxListLineSubTitle>{{contact.phone}}</span>
   </igx-list-item>
 </igx-list>
