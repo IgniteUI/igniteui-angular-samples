@@ -12,6 +12,9 @@ import {
 import {
     ButtonGroupSampleComponent
 } from "../../src/app/data-entries/buttonGroup/button-group-sample-4/button-group-sample.component";
+import {
+    ButtonGroupSample5Component
+} from "../../src/app/data-entries/buttonGroup/button-group-sample-5/button-group-sample-5.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -62,6 +65,17 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
                     IgxButtonModule, IgxRippleModule],
                 ngDeclarations: [ButtonGroupSampleComponent],
                 ngImports: [IgxButtonGroupModule, IgxIconModule, IgxButtonModule, IgxRippleModule]
+            }),
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group 5
+        configs.push(new Config({
+            component: ButtonGroupSample5Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonGroupModule, ButtonGroupSample5Component],
+                ngDeclarations: [ButtonGroupSample5Component],
+                ngImports: [IgxButtonGroupModule]
             }),
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));

@@ -1,0 +1,15 @@
+<h5 class="sample-title">Time Picker with retemplated Input Group - dropdown mode</h5>
+<div class="time-width">
+    <igx-time-picker #picker [value]="today" format="HH:mm" mode="dropdown">
+        <ng-template igxTimePickerTemplate let-openDialog="openDialog" let-value="value" let-displayTime="displayTime">
+            <igx-input-group>
+                <input #dropDownTarget igxInput [value]="displayTime"
+                    (blur)="onBlur(dropDownTarget.value, value, picker)" />
+                <igx-suffix>
+                    <igx-icon (click)="openDialog()">access_time</igx-icon>
+                </igx-suffix>
+            </igx-input-group>
+            <label>{{today}}</label>
+        </ng-template>
+    </igx-time-picker>
+</div>
