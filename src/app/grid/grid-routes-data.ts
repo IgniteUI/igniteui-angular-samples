@@ -10,6 +10,7 @@ export const gridsRoutesData = {
     "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
     "grid-row-drag-base": { displayName: "Grid Row Drag - Base", parentName: "Grid" },
     "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
+    "grid-row-reorder": { displayName: "Grid Row Reorder", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
     "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
