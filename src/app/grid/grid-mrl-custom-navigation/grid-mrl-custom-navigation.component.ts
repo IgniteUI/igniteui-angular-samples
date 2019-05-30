@@ -22,7 +22,11 @@ export class GridMRLCustomNavigationComponent {
             args.cancel = true;
             const rowIndex = target.rowIndex === undefined ? target.index : target.rowIndex;
             this.grid.navigateTo(args.event.shiftKey ? rowIndex - 1 : rowIndex + 1, target.visibleColumnIndex,
-                 (obj) => { obj.target.nativeElement.focus(); });
+                 (obj) => {
+                    this.grid.clearCellSelection();
+                    this.grid.selectionService.initKeyboardState();
+                    obj.target.nativeElement.focus();
+                });
         }
     }
 }
