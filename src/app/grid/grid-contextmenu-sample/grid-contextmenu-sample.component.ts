@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { DefaultSortingStrategy, IgxGridComponent, SortingDirection } from "igniteui-angular";
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from "@angular/core";
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection} from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
 @Component({
@@ -19,10 +19,10 @@ export class GridContextmenuSampleComponent implements OnInit {
     public contextmenuY = 0;
     public clickedCell = null;
     public copiedData;
-    public multiCellSelection;
-    public multiCellContextmenu = false;
+    public multiCellSelection: { data: any[], selectionRanges: any[] } = { data: [], selectionRanges: [] };
+    public multiCellArgs;
 
-    constructor() {
+    constructor(private cdr: ChangeDetectorRef) {
     }
     public ngOnInit(): void {
         this.data = DATA;
@@ -38,8 +38,25 @@ export class GridContextmenuSampleComponent implements OnInit {
         return new Intl.DateTimeFormat("en-US").format(val);
     }
 
-    public rightClick(eventArgs) {
+    public rightClick(eventArgs: any) {
         eventArgs.event.preventDefault();
+        this.multiCellArgs = {};
+        if (this.multiCellSelection) {
+            const node = eventArgs.cell.selectionNode;
+            const isCellWithinRange = this.multiCellSelection.selectionRanges.some(range => {
+                if (node.column >= range.columnStart &&
+                    node.column <= range.columnEnd &&
+                    node.row >= range.rowStart &&
+                    node.row <= range.rowEnd) {
+                    return true;
+                }
+                return false;
+            });
+            if (isCellWithinRange) {
+                this.multiCellArgs = { data: this.multiCellSelection.data };
+            }
+        }
+        console.log(this.multiCellArgs)
         this.contextmenuX = eventArgs.event.clientX;
         this.contextmenuY = eventArgs.event.clientY;
         this.clickedCell = eventArgs.cell;
@@ -47,33 +64,29 @@ export class GridContextmenuSampleComponent implements OnInit {
     }
 
     public disableContextMenu() {
-        this.contextmenu = false;
+        if (this.contextmenu){
+            this.multiCellSelection = undefined;
+            this.multiCellArgs = undefined;
+            this.contextmenu = false;
+        }
     }
 
     public getCells(event) {
-        this.multiCellSelection = {};
         this.multiCellSelection = {
             data: this.grid1.getSelectedData(),
-            rowEnd: event.rowEnd,
-            rowStart: event.rowStart,
-            selectionStart: this.clickedCell
+            selectionRanges: this.grid1.getSelectedRanges()
         };
-        this.multiCellContextmenu = true;
     }
 
-    public check(event) {
+    public copy(event) {
         this.copiedData = JSON.stringify(event.data, null, 2);
-        if (this.multiCellContextmenu) {
-            this.multiCellContextmenu = false;
+        if (this.multiCellSelection) {
+            this.multiCellSelection = undefined;
+            this.multiCellArgs = undefined;
         }
     }
 
     public cellSelection(event) {
-        event.event.preventDefault();
-        this.multiCellContextmenu = false;
         this.contextmenu = false;
-        this.contextmenuX = event.cell.nativeElement.getClientRects()[0].x;
-        this.contextmenuY = event.cell.nativeElement.getClientRects()[0].y;
-        this.clickedCell = event.cell;
     }
 }

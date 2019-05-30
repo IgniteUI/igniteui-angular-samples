@@ -5,24 +5,7 @@
     <span class=item (click)="copyRowData($event)">
         <igx-icon class="icon" fontSet="material">content_copy </igx-icon>Copy Row Data
     </span>
-    <span *ngIf="isColumnSortable()" class=item (click)="sort($event)">
-        <igx-icon class="icon" fontSet="material">sort_by_alpha</igx-icon>Sort:
-        {{sortDir === 1 ? 'Ascending':'Descending'}}
-    </span>
-    <span *ngIf="hasSortedColumn()" class="item" (click)="clearSort($event)">
-        <igx-icon class="icon" fontSet="material">clear</igx-icon>Clear Sort: Column
-    </span>
-    <span *ngIf="hasMutliSortedColumns()"
-        [ngStyle]="{disabled: sortingType == 'multiple'}" class=item (click)="clearAll($event)">
-        <igx-icon class="icon" fontSet="material">cancel</igx-icon>Clear Sort: All
-    </span>
-</div>
-
-<div *ngIf="multiCell" class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
-    <span class=item (click)="copySelectedCells($event)">
+    <span *ngIf="hasMultiCellSelection()" class=item (click)="copySelectedCells($event)">
         <igx-icon class="icon" fontSet="material">content_copy </igx-icon>Copy Cells Data
-    </span>
-    <span class=item (click)="copySelectedRowsData($event)">
-        <igx-icon class="icon" fontSet="material">content_copy </igx-icon>Copy Selected Rows Data
     </span>
 </div>
