@@ -1,5 +1,5 @@
 <div class="grid-container">
-    <igx-grid #sourceGrid [data]="data1" [height]="'480px'" [width]="'640px'" [autoGenerate]="false" [rowDraggable]="true" [primaryKey]="'ID'">
+    <igx-grid #sourceGrid [data]="data1" [height]="'480px'" [width]="'640px'" [autoGenerate]="false" [rowDraggable]="true" [primaryKey]="'ID'" (onRowDragEnd)="onRowDragEnd($event)">
         <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
         <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
         <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'" [maxWidth]="'230px'"></igx-column>
