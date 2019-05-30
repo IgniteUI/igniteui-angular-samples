@@ -15,17 +15,25 @@ import {
     IgxGridComponent
 } from "igniteui-angular";
 
-class ColumnConfig {
-    public key: string;
-    public width: string;
-    public colStart: number;
-    public rowStart: number;
-    public colSpan: number;
-    public rowSpan: number;
-    public selected: boolean;
-    public hovered: boolean;
+interface IColumnConfig {
+    key: string;
+    width: string;
+    colStart: number;
+    rowStart: number;
+    colSpan: number;
+    rowSpan: number;
+    selected: boolean;
+    hovered: boolean;
 }
 
+interface IBlockConfig {
+    key: string;
+    colsCount: number;
+    colsWidth: number;
+    collection: IColumnConfig[][];
+}
+
+// tslint:disable:object-literal-sort-keys
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: "app-grid-multi-row-layout-configuration-sample",
@@ -33,36 +41,6 @@ class ColumnConfig {
     templateUrl: "./grid-multi-row-layout-configuration.component.html"
 })
 export class GridMultiRowLayoutConfigurationComponent {
-
-    public get layoutRowStyle() {
-        let style = "";
-        this.collection.forEach(() => {
-            if (this.rowsHeight.indexOf("px") !== -1 ||
-                this.rowsHeight.indexOf("%") !== -1 ||
-                isNaN(parseInt(this.rowsHeight, 10))) {
-                style += " " + this.rowsHeight;
-            } else {
-                style += " " + parseInt(this.rowsHeight, 10) + "px";
-            }
-        });
-        return style;
-    }
-
-    public get layoutColsStyle() {
-        let style = "";
-        this.collection[0].forEach((col) => {
-            for (let i = 0; i < col.colSpan; i++) {
-                if (this.colsWidth.indexOf("px") !== -1 ||
-                    this.colsWidth.indexOf("%") !== -1 ||
-                    isNaN(parseInt(this.colsWidth, 10))) {
-                    style += " " + this.colsWidth;
-                } else {
-                    style += " " + parseInt(this.colsWidth, 10) + "px";
-                }
-            }
-        });
-        return style;
-    }
 
     @ViewChild("jsonDialog", { read: IgxDialogComponent })
     public jsonDialog: IgxDialogComponent;
@@ -79,12 +57,17 @@ export class GridMultiRowLayoutConfigurationComponent {
     @ViewChild("resizeIndicator", { read: ElementRef })
     public resizeIndicator: ElementRef;
 
-    public rowsCount = 3;
-    public colsCount = 6;
-    public rowsHeight = "32px";
-    public colsWidth = "136px";
-    public keyValue = "";
-    public collection: ColumnConfig[][] = [];
+    @ViewChild("layoutContainer", { read: ElementRef })
+    public layoutContainer: ElementRef;
+
+    public get layoutScrollLeft() {
+        if (this.layoutContainer) {
+            return this.layoutContainer.nativeElement.scrollLeft;
+        }
+        return 0;
+    }
+
+    public collection: IColumnConfig[][] = [];
     public gridCollection = [];
     public jsonCollection = "";
     public cellSelected;
@@ -94,7 +77,21 @@ export class GridMultiRowLayoutConfigurationComponent {
     public resizeWidth = 0;
     public resizeHeight = 0;
 
-    public columnsList = [];
+    public rowsCount = 2;
+    public rowsHeight = 40;
+    public selectedBlock;
+    public blocks: IBlockConfig[] = [];
+
+    public columnsList = [
+        { field: "Company Name", key: "CompanyName" },
+        { field: "Contact Name", key: "ContactName" },
+        { field: "Contact Title", key: "ContactTitle" },
+        { field: "City", key: "City" },
+        { field: "Country", key: "Country" },
+        { field: "Address", key: "Address" },
+        { field: "Region", key: "Region" },
+        { field: "Postal Code", key: "PostalCode" }
+    ];
     public columnsConfiguration;
 
     public data = [
@@ -109,20 +106,108 @@ export class GridMultiRowLayoutConfigurationComponent {
     private rowSpanIncrease = 0;
     private resizeInitialWidth = 0;
     private resizeInitialHeight = 0;
-    // tslint:enable:max-line-length
 
     constructor(public cdr: ChangeDetectorRef) {
-        this.updateCollectionSize();
+        const newCollection1 = [
+            [
+                { colSpan: 1, colStart: 1, hovered: false, key: "ID", rowSpan: 2, rowStart: 1, selected: false,
+                  width: "" }
+            ],
+            []
+        ];
+        this.blocks.push({
+            collection: newCollection1,
+            colsCount: 1,
+            colsWidth: 136,
+            key: "ID"
+        });
+
+        const newCollection2 = [
+            [
+                { colSpan: 2, colStart: 1, hovered: false, key: "CompanyName", rowSpan: 1, rowStart: 1, selected: false,
+                  width: "" }
+            ],
+            [
+                { colSpan: 1, colStart: 1, hovered: false, key: "ContactName", rowSpan: 1, rowStart: 2, selected: false,
+                  width: "" },
+                { colSpan: 1, colStart: 2, hovered: false, key: "ContactTitle", rowSpan: 1, rowStart: 2,
+                  selected: false, width: "" }
+            ]
+        ];
+        this.blocks.push({
+            collection: newCollection2,
+            colsCount: 2,
+            colsWidth: 136,
+            key: "Contact Details"
+        });
+
+        const newCollection3 = [
+            [
+                { colSpan: 2, colStart: 1, hovered: false, key: "Country", rowSpan: 1, rowStart: 1, selected: false,
+                  width: "" },
+                { colSpan: 2, colStart: 3, hovered: false, key: "Region", rowSpan: 1, rowStart: 1, selected: false,
+                  width: "" },
+                { colSpan: 2, colStart: 5, hovered: false, key: "PostalCode", rowSpan: 1, rowStart: 1, selected: false,
+                  width: "" }
+            ],
+            [
+                { colSpan: 3, colStart: 1, hovered: false, key: "City", rowSpan: 1, rowStart: 2, selected: false,
+                  width: "" },
+                { colSpan: 3, colStart: 4, hovered: false, key: "Address", rowSpan: 1, rowStart: 2, selected: false,
+                  width: "" }
+            ]
+        ];
+        this.blocks.push({
+            collection: newCollection3,
+            colsCount: 6,
+            colsWidth: 136,
+            key: "Address Details"
+        });
+
+        const newCollection4 = [
+            [
+                { colSpan: 1, colStart: 1, hovered: false, key: "Phone", rowSpan: 1, rowStart: 1, selected: false,
+                  width: "" }
+            ],
+            [
+                { colSpan: 1, colStart: 1, hovered: false, key: "Fax", rowSpan: 1, rowStart: 2, selected: false,
+                  width: "" }
+            ]
+        ];
+        this.blocks.push({
+            collection: newCollection4,
+            colsCount: 1,
+            colsWidth: 136,
+            key: "Phone Details"
+        });
+
+        this.selectedBlock = this.blocks[0];
     }
 
-    public updateCollectionSize() {
-        const newCollection = [];
-        for (let rowIndex = 0; rowIndex < this.rowsCount; rowIndex++) {
-            const row = [];
-            for (let colIndex = 0; colIndex < this.colsCount; colIndex++) {
-                if (this.collection[rowIndex] && this.collection[rowIndex][colIndex]) {
-                    row.push(this.collection[rowIndex][colIndex]);
-                } else {
+    public getLayoutRowStyle(blockIndex) {
+        let style = "";
+        this.blocks[blockIndex].collection.forEach(() => {
+                style += " " + this.rowsHeight + "px";
+        });
+        return style;
+    }
+
+    public getLayoutColsStyle(blockIndex) {
+        let style = "";
+        this.blocks[blockIndex].collection[0].forEach((col) => {
+            for (let i = 0; i < col.colSpan; i++) {
+                style += " " + this.blocks[blockIndex].colsWidth + "px";
+            }
+        });
+        return style;
+    }
+
+    public resetCollections() {
+        this.blocks.forEach((block) => {
+            const newCollection = [];
+            for (let rowIndex = 0; rowIndex < this.rowsCount; rowIndex++) {
+                const row = [];
+                for (let colIndex = 0; colIndex < block.colsCount; colIndex++) {
                     row.push({
                         colSpan: 1,
                         colStart: colIndex + 1,
@@ -132,15 +217,15 @@ export class GridMultiRowLayoutConfigurationComponent {
                         width: ""
                     });
                 }
-            }
 
-            newCollection.push(row);
-        }
-        this.collection = newCollection;
+                newCollection.push(row);
+            }
+            block.collection = newCollection;
+        });
     }
 
-    public updateCollectionLayout() {
-        for (const record of this.collection) {
+    public updateCollectionLayout(blockIndex = 0) {
+        for (const record of this.blocks[blockIndex].collection) {
             let column = record[0];
             for (let colIndex = 1; colIndex < record.length; colIndex++) {
                 if (record[colIndex].key === column.key &&
@@ -156,8 +241,51 @@ export class GridMultiRowLayoutConfigurationComponent {
     }
 
     public rowCountChanged(event) {
-        this.rowsCount = parseInt(event.target.value, 10);
-        this.updateCollectionSize();
+        const newRowsCount = parseInt(event.target.value, 10);
+        if (newRowsCount <= 0 || !newRowsCount) {
+            return;
+        }
+
+        if (newRowsCount > this.rowsCount) {
+            const rowStart = this.rowsCount + 1;
+            this.blocks.forEach((block) => {
+                for (let i = 0; i < newRowsCount - this.rowsCount; i++) {
+                    const row = [];
+
+                    for (let colIndex = 0; colIndex < block.colsCount; colIndex++) {
+                        row.push({
+                            colSpan: 1,
+                            colStart: colIndex + 1,
+                            key: "",
+                            rowSpan: 1,
+                            rowStart: rowStart + i,
+                            width: ""
+                        });
+                    }
+
+                    block.collection.push(row);
+                }
+            });
+        } else if (newRowsCount < this.rowsCount) {
+            this.blocks.forEach((block) => {
+                let rowsToRemove = this.rowsCount - newRowsCount;
+                for (let rowIndex = block.collection.length - 1; rowIndex >= 0; rowIndex--) {
+                    if (rowsToRemove > 0) {
+                        block.collection.pop();
+                        rowsToRemove--;
+                    } else {
+                        block.collection[rowIndex].forEach((col) => {
+                            col.rowSpan = Math.min(
+                                col.rowSpan,
+                                (block.collection.length + 1) - col.rowStart
+                            );
+                        });
+                    }
+                }
+            });
+        }
+
+        this.rowsCount = newRowsCount;
     }
 
     public rowHeightChanged(event) {
@@ -166,36 +294,71 @@ export class GridMultiRowLayoutConfigurationComponent {
     }
 
     public colCountChanged(event) {
-        this.colsCount = parseInt(event.target.value, 10);
-        this.updateCollectionSize();
+        const newColsCount = parseInt(event.target.value, 10);
+        if (newColsCount <= 0 || !newColsCount) {
+            return;
+        }
+
+        if (newColsCount > this.selectedBlock.colsCount) {
+            this.selectedBlock.collection.map((rowContainer, rowIndex) => {
+                const colStart = this.selectedBlock.colsCount + 1;
+                for (let i = 0; i < newColsCount - this.selectedBlock.colsCount; i++) {
+                    rowContainer.push({
+                        colSpan: 1,
+                        colStart: colStart + i,
+                        key: "",
+                        rowSpan: 1,
+                        rowStart: rowIndex + 1,
+                        width: "",
+                        selected: false,
+                        hovered: false
+                    });
+                }
+            });
+        } else if (newColsCount < this.selectedBlock.colsCount) {
+            this.selectedBlock.collection.map((rowContainer) => {
+                let colsToRemove = this.selectedBlock.colsCount - newColsCount;
+                while (colsToRemove > 0) {
+                    if (rowContainer[rowContainer.length - 1].colSpan <= colsToRemove) {
+                        colsToRemove -= rowContainer[rowContainer.length - 1].colSpan;
+                        rowContainer.pop();
+                    } else {
+                        rowContainer[rowContainer.length - 1].colSpan -= colsToRemove;
+                        colsToRemove = 0;
+                    }
+                }
+            });
+        }
+
+        this.selectedBlock.colsCount = newColsCount;
     }
 
     public colWidthChanged(event) {
-        this.colsWidth = event.target.value;
+        this.selectedBlock.colsWidth = event.target.value;
     }
 
-    public onColEnter(event: IgxDropEnterEventArgs, rowIndex, colIndex) {
-        this.collection[rowIndex][colIndex].hovered = true;
+    public onColEnter(event: IgxDropEnterEventArgs, blockIndex, rowIndex, colIndex) {
+        this.blocks[blockIndex].collection[rowIndex][colIndex].hovered = true;
     }
 
-    public onColLeave(event: IgxDropLeaveEventArgs, rowIndex, colIndex) {
-        this.collection[rowIndex][colIndex].hovered = false;
+    public onColLeave(event: IgxDropLeaveEventArgs, blockIndex, rowIndex, colIndex) {
+        this.blocks[blockIndex].collection[rowIndex][colIndex].hovered = false;
     }
 
-    public onColDropped(event: IgxDropEventArgs, rowIndex, colIndex) {
+    public onColDropped(event: IgxDropEventArgs, blockIndex, rowIndex, colIndex) {
         event.cancel = true;
-        this.collection[rowIndex][colIndex].key = event.drag.data.key;
-        this.updateCollectionLayout();
+        this.blocks[blockIndex].collection[rowIndex][colIndex].key = event.drag.data.chip.data.key;
+        this.updateCollectionLayout(blockIndex);
     }
 
-    public flattenCollection() {
+    public flattenCollection(block: IBlockConfig) {
         const result = [];
-        this.collection.forEach((row) => {
+        block.collection.forEach((row) => {
             row.forEach((col) => {
                 const newCol = { ...col };
-                delete newCol.width;
                 delete newCol.hovered;
                 delete newCol.selected;
+                newCol.width = block.colsWidth + "px";
 
                 result.push(newCol);
             });
@@ -205,51 +368,58 @@ export class GridMultiRowLayoutConfigurationComponent {
     }
 
     public getColumnLayoutTemplate() {
-        const flatCollection = this.flattenCollection();
-        let columnLayout = "<igx-column-layout>";
-        flatCollection.map((row) => {
-            const column =
-                '\n    <igx-column [rowStart]="' + row.rowStart + '"' +
-                ' [rowEnd]="' + (row.rowStart + row.rowSpan) + '"' +
-                ' [colStart]="' + row.colStart + '"' +
-                ' [colEnd]="' + (row.colStart + row.colSpan) + '"' +
-                ' field="' + row.key + '">' +
-                "\n    </igx-column>";
-            columnLayout += column;
-        });
+        let columnLayout = "";
+        this.blocks.forEach((block) => {
+            const flatCollection = this.flattenCollection(block);
+            columnLayout += `<igx-column-layout [header]="'${block.key}'">`;
+            flatCollection.map((row) => {
+                const column =
+                    '\n    <igx-column [rowStart]="' + row.rowStart + '"' +
+                    ' [rowEnd]="' + (row.rowStart + row.rowSpan) + '"' +
+                    ' [colStart]="' + row.colStart + '"' +
+                    ' [colEnd]="' + (row.colStart + row.colSpan) + '"' +
+                    ' [field]="\'' + row.key + '\'"' +
+                    ' [width]="\'' + row.width + '\'">' +
+                    "\n    </igx-column>";
+                columnLayout += column;
+            });
 
-        columnLayout += "\n</igx-column-layout>";
+            columnLayout += "\n</igx-column-layout>\n";
+        });
 
         this.jsonCollection = columnLayout;
         this.jsonDialog.open();
     }
 
     public renderJson() {
-        const flatCollection = this.flattenCollection();
-        const mappedCollection = flatCollection.map((row) => {
-            return {
-                colEnd: row.colStart + row.colSpan,
-                colStart: row.colStart,
-                key: row.key,
-                rowEnd: row.rowStart + row.rowSpan,
-                rowStart: row.rowStart
+        const fullCollection = [];
+        this.blocks.forEach((block) => {
+            const flatCollection = this.flattenCollection(block);
+            const mappedCollection = flatCollection.map((row) => {
+                return {
+                    key: row.key,
+                    rowStart: row.rowStart,
+                    rowEnd: row.rowStart + row.rowSpan,
+                    colStart: row.colStart,
+                    colEnd: row.colStart + row.colSpan
+                };
+            });
+
+            const fullBlock = {
+                layout: block.key,
+                columns: mappedCollection
             };
+            fullCollection.push(fullBlock);
         });
-        this.jsonCollection = JSON.stringify(mappedCollection);
+        this.jsonCollection = JSON.stringify(fullCollection)
+            .replace(new RegExp(`{`, "g"), `\n\t{`) // newline for beginning of each object
+            .replace(new RegExp(`":`, "g"), `": `) // interval after each :
+            .replace(new RegExp(`{"layout":`, "g"), `{\n\t\t"layout":`) // new line and indent for layout
+            .replace(new RegExp(`,"columns":`, "g"), `,\n\t\t"columns":`) // new line and indent for columns list
+            .replace(new RegExp(`]},`, "g"), `\n\t\t]\n\t},`) // new line and indent for end columns list
+            .replace(new RegExp(`{"key"`, "g"), `\t\t{"key"`) // indent for each column
+            .replace(new RegExp(`}]}]`, "g"), `}\n\t\t]\n\t}\n]`); // new lines and indents at the end
         this.jsonDialog.open();
-    }
-
-    public addColumn() {
-        if (this.keyValue === "") {
-            return;
-        }
-
-        this.columnsList.push({
-            field: this.keyValue,
-            key: this.keyValue
-        });
-
-        this.keyValue = "";
     }
 
     public copyToClipboard() {
@@ -257,8 +427,8 @@ export class GridMultiRowLayoutConfigurationComponent {
         document.execCommand("copy");
     }
 
-    public clickCell(cellRef, rowIndex, colIndex) {
-        this.cellSelected = this.collection[rowIndex][colIndex];
+    public clickCell(cellRef, blockIndex, rowIndex, colIndex) {
+        this.cellSelected = this.blocks[blockIndex].collection[rowIndex][colIndex];
         this.cellSelected.selected = true;
 
         this.resizeTop = cellRef.offsetTop;
@@ -270,59 +440,62 @@ export class GridMultiRowLayoutConfigurationComponent {
         this.resizeVisible = true;
     }
 
-    public onBlur(event, rowIndex, colIndex) {
+    public onBlur(event, blockIndex, rowIndex, colIndex) {
         this.cellSelected = null;
-        this.collection[rowIndex][colIndex].selected = false;
+        this.blocks[blockIndex].collection[rowIndex][colIndex].selected = false;
         this.resizeVisible = false;
     }
 
-    public pointerDownResize(event, rowIndex, colIndex) {
+    public pointerDownResize(event, blockIndex, rowIndex, colIndex) {
         this.dragStarted = true;
         this.dragStartX = event.pageX;
         this.dragStartY = event.pageY;
-        this.curResizedCell = this.collection[rowIndex][colIndex];
+        this.curResizedCell = this.blocks[blockIndex].collection[rowIndex][colIndex];
 
         event.target.setPointerCapture(event.pointerId);
     }
 
-    public pointerMoveResizeLeft(event, cellRef, rowIndex, colIndex) {
+    public pointerMoveResizeLeft(event, cellRef, blockIndex) {
         if (this.dragStarted) {
+            const curBlock = this.blocks[blockIndex];
             const curDistance = this.dragStartX - event.pageX;
             const minIncrease = -this.curResizedCell.colSpan;
-            const maxIncrease = colIndex;
-            this.colSpanIncrease = Math.min(Math.round(curDistance / parseInt(this.colsWidth, 10)), maxIncrease);
+            const maxIncrease = this.curResizedCell.colStart - 1;
+            this.colSpanIncrease = Math.min(Math.round(curDistance / curBlock.colsWidth), maxIncrease);
             this.colSpanIncrease = Math.max(this.colSpanIncrease, minIncrease);
-            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * parseInt(this.colsWidth, 10);
-            this.resizeLeft = cellRef.offsetLeft - this.colSpanIncrease * parseInt(this.colsWidth, 10);
+            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * curBlock.colsWidth;
+            this.resizeLeft = cellRef.offsetLeft - this.colSpanIncrease * curBlock.colsWidth;
         }
     }
 
-    public pointerMoveResizeRight(event, cellRef, rowIndex, colIndex) {
+    public pointerMoveResizeRight(event, cellRef, blockIndex) {
         if (this.dragStarted) {
+            const curBlock = this.blocks[blockIndex];
             const curDistance = event.pageX - this.dragStartX;
-            const maxIncrease = this.colsCount - (colIndex + this.curResizedCell.colSpan);
-            this.colSpanIncrease = Math.min(Math.round(curDistance / parseInt(this.colsWidth, 10)), maxIncrease);
-            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * parseInt(this.colsWidth, 10);
+            const maxIncrease = curBlock.colsCount - (this.curResizedCell.colStart + this.curResizedCell.colSpan - 1);
+            this.colSpanIncrease = Math.min(Math.round(curDistance / curBlock.colsWidth), maxIncrease);
+            this.resizeWidth = this.resizeInitialWidth + this.colSpanIncrease * curBlock.colsWidth;
         }
     }
 
-    public pointerUpResizeRight(event, cellRef, rowIndex, colIndex) {
+    public pointerUpResizeRight(event, cellRef, blockIndex, rowIndex, colIndex) {
         this.dragStarted = false;
         this.resizeVisible = false;
+        const curBlock = this.blocks[blockIndex];
 
         if (this.colSpanIncrease > 0) {
             for (let i = 0; i < this.colSpanIncrease; i++) {
-                const nextCell = this.collection[rowIndex][colIndex + 1];
+                const nextCell = curBlock.collection[rowIndex][colIndex + 1];
                 if ((this.curResizedCell.colStart + this.curResizedCell.colSpan + i) !==
                         (nextCell.colStart || nextCell.rowSpan > 1)) {
                     this.colSpanIncrease = i;
                     break;
                 }
-                if (this.collection[rowIndex][colIndex + 1].colSpan > 1) {
-                    this.collection[rowIndex][colIndex + 1].colStart++;
-                    this.collection[rowIndex][colIndex + 1].colSpan--;
+                if (curBlock.collection[rowIndex][colIndex + 1].colSpan > 1) {
+                    curBlock.collection[rowIndex][colIndex + 1].colStart++;
+                    curBlock.collection[rowIndex][colIndex + 1].colSpan--;
                 } else {
-                    this.collection[rowIndex].splice(colIndex + 1, 1);
+                    curBlock.collection[rowIndex].splice(colIndex + 1, 1);
                 }
             }
 
@@ -332,7 +505,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                         row++) {
                     for (let spanIndex = 0; spanIndex < this.colSpanIncrease; spanIndex++) {
                         let borderCellIndex = 0;
-                        const borderCell = this.collection[row].find((cell, index) => {
+                        const borderCell = curBlock.collection[row].find((cell, index) => {
                             borderCellIndex = index;
                             return cell.colStart === this.curResizedCell.colStart +
                                 this.curResizedCell.colSpan + spanIndex;
@@ -342,7 +515,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                                 borderCell.colStart++;
                                 borderCell.colSpan--;
                             } else {
-                                this.collection[row].splice(borderCellIndex, 1);
+                                curBlock.collection[row].splice(borderCellIndex, 1);
                             }
                         }
                     }
@@ -356,7 +529,7 @@ export class GridMultiRowLayoutConfigurationComponent {
 
             for (let rowUpdateIndex = rowIndex; rowUpdateIndex < rowEndIndex; rowUpdateIndex++) {
                 const firstHalf = [];
-                for (const record of this.collection[rowUpdateIndex]) {
+                for (const record of curBlock.collection[rowUpdateIndex]) {
                     if (record.colStart <
                             this.curResizedCell.colStart + this.curResizedCell.colSpan) {
                         firstHalf.push(record);
@@ -365,7 +538,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                     }
                 }
 
-                const secondHalf = this.collection[rowUpdateIndex].slice(firstHalf.length);
+                const secondHalf = curBlock.collection[rowUpdateIndex].slice(firstHalf.length);
                 for (let i = 0; i < -1 * this.colSpanIncrease; i++) {
                     secondHalf.unshift({
                         colSpan: 1,
@@ -379,30 +552,31 @@ export class GridMultiRowLayoutConfigurationComponent {
                     });
                 }
 
-                this.collection[rowUpdateIndex] = firstHalf.concat(secondHalf);
+                curBlock.collection[rowUpdateIndex] = firstHalf.concat(secondHalf);
 
             }
 
             this.curResizedCell.colSpan -= -1 * this.colSpanIncrease;
             if (this.curResizedCell.colSpan === 0) {
-                this.collection[rowIndex].splice(colIndex + this.curResizedCell.colSpan, 1);
+                curBlock.collection[rowIndex].splice(colIndex + this.curResizedCell.colSpan, 1);
             }
         }
         this.colSpanIncrease = 0;
     }
 
-    public pointerUpResizeLeft(event, cellRef, targetRowIndex, targetColIndex) {
+    public pointerUpResizeLeft(event, cellRef, blockIndex, targetRowIndex, targetColIndex) {
         this.dragStarted = false;
         this.resizeVisible = false;
+        const curBlock = this.blocks[blockIndex];
 
-        const curIndexFromEnd = this.collection[targetRowIndex].length - targetColIndex - 1;
+        const curIndexFromEnd = curBlock.collection[targetRowIndex].length - targetColIndex - 1;
         if (this.colSpanIncrease > 0) {
             // Handle first row
             for (let i = 0; i < this.colSpanIncrease; i++) {
-                const curIndexFromStart = this.collection[targetRowIndex].length - curIndexFromEnd - 1;
-                const prevCell = this.collection[targetRowIndex][curIndexFromStart - 1];
+                const curIndexFromStart = curBlock.collection[targetRowIndex].length - curIndexFromEnd - 1;
+                const prevCell = curBlock.collection[targetRowIndex][curIndexFromStart - 1];
                 if (prevCell.colStart + prevCell.colSpan + i !==
-                    this.collection[targetRowIndex][curIndexFromStart].colStart ||
+                    curBlock.collection[targetRowIndex][curIndexFromStart].colStart ||
                     prevCell.rowSpan > 1) {
                     this.colSpanIncrease = i;
                     break;
@@ -410,7 +584,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                 if (prevCell.colSpan > 1) {
                     prevCell.colSpan--;
                 } else {
-                    this.collection[targetRowIndex].splice(curIndexFromStart - 1, 1);
+                    curBlock.collection[targetRowIndex].splice(curIndexFromStart - 1, 1);
                 }
             }
 
@@ -421,22 +595,22 @@ export class GridMultiRowLayoutConfigurationComponent {
                         rowIndex++) {
                     let leftSibling;
                     let leftSiblingIndex = 0;
-                    for (let m = 0; m < this.collection[rowIndex].length; m++) {
-                        if (this.collection[rowIndex][m].colStart >=
-                                this.curResizedCell.colStart + this.curResizedCell.colSpan) {
+                    for (let m = 0; m < curBlock.collection[rowIndex].length; m++) {
+                        if (curBlock.collection[rowIndex][m].colStart >=
+                            this.curResizedCell.colStart + this.curResizedCell.colSpan) {
                             break;
                         }
                         leftSiblingIndex = m;
-                        leftSibling = this.collection[rowIndex][m];
+                        leftSibling = curBlock.collection[rowIndex][m];
                     }
 
                     for (let spanIndex = 0; spanIndex < this.colSpanIncrease; spanIndex++) {
                         if (leftSibling.colSpan > 1) {
                             leftSibling.colSpan--;
                         } else {
-                            this.collection[rowIndex].splice(leftSiblingIndex - spanIndex, 1);
+                            curBlock.collection[rowIndex].splice(leftSiblingIndex - spanIndex, 1);
                         }
-                        leftSibling = this.collection[rowIndex][leftSiblingIndex - spanIndex - 1];
+                        leftSibling = curBlock.collection[rowIndex][leftSiblingIndex - spanIndex - 1];
                     }
                 }
             }
@@ -448,7 +622,7 @@ export class GridMultiRowLayoutConfigurationComponent {
             const rowEndIndex = this.curResizedCell.rowStart - 1 + this.curResizedCell.rowSpan;
             for (let rowUpdateIndex = targetRowIndex; rowUpdateIndex < rowEndIndex; rowUpdateIndex++) {
                 const firstHalf = [];
-                for (const record of this.collection[rowUpdateIndex]) {
+                for (const record of curBlock.collection[rowUpdateIndex]) {
                     if (record.colStart < this.curResizedCell.colStart) {
                         firstHalf.push(record);
                     } else {
@@ -456,7 +630,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                     }
                 }
 
-                const secondHalf = this.collection[rowUpdateIndex].slice(firstHalf.length);
+                const secondHalf = curBlock.collection[rowUpdateIndex].slice(firstHalf.length);
                 for (let i = 0; i < -1 * this.colSpanIncrease; i++) {
                     firstHalf.push({
                         colSpan: 1,
@@ -472,7 +646,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                 if (rowUpdateIndex === targetRowIndex && this.curResizedCell.colSpan === 0) {
                     secondHalf.shift();
                 }
-                this.collection[rowUpdateIndex] = firstHalf.concat(secondHalf);
+                curBlock.collection[rowUpdateIndex] = firstHalf.concat(secondHalf);
             }
 
             this.curResizedCell.colSpan -= -1 * this.colSpanIncrease;
@@ -481,28 +655,29 @@ export class GridMultiRowLayoutConfigurationComponent {
         this.colSpanIncrease = 0;
     }
 
-    public pointerMoveResizeBottom(event, cellRef, rowIndex, colIndex) {
+    public pointerMoveResizeBottom(event, cellRef, blockIndex, rowIndex, colIndex) {
         if (this.dragStarted) {
             const curDistance = event.pageY - this.dragStartY;
             const maxIncrease = this.rowsCount - rowIndex - this.curResizedCell.rowSpan;
-            this.rowSpanIncrease = Math.min(Math.round(curDistance / parseInt(this.rowsHeight, 10)), maxIncrease);
-            this.resizeHeight = this.resizeInitialHeight + this.rowSpanIncrease * parseInt(this.rowsHeight, 10);
+            this.rowSpanIncrease = Math.min(Math.round(curDistance / this.rowsHeight), maxIncrease);
+            this.resizeHeight = this.resizeInitialHeight + this.rowSpanIncrease * this.rowsHeight;
         }
     }
 
-    public pointerUpResizeBottom(event, cellRef, rowIndex, colIndex) {
+    public pointerUpResizeBottom(event, cellRef, blockIndex, rowIndex, colIndex) {
         this.dragStarted = false;
         this.resizeVisible = false;
+        const curBlock = this.blocks[blockIndex];
 
         if (this.rowSpanIncrease > 0) {
             for (let increaseIndex = 1; increaseIndex <= this.rowSpanIncrease; increaseIndex++) {
                 // Cycle how many rows should the size of the cell increase, and edit them accordingly.
                 const curRowIndex = rowIndex + (this.curResizedCell.rowSpan - 1) + increaseIndex;
 
-                for (let j = this.collection[curRowIndex].length - 1; j >= 0; j--) {
+                for (let j = curBlock.collection[curRowIndex].length - 1; j >= 0; j--) {
                     // Cycle all cells backwards because when cell spans in
                     // the way it should be cut and cells on the right should be added.
-                    const curCell = this.collection[curRowIndex][j];
+                    const curCell = curBlock.collection[curRowIndex][j];
                     const curCellStart = curCell.colStart;
                     let curCellEnd = curCell.colStart + curCell.colSpan;
                     const resizedCellStart = this.curResizedCell.colStart;
@@ -516,7 +691,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                         for (let i = 0; i < numNewCells; i++) {
                             curCell.colSpan--;
                             curCellEnd--;
-                            this.collection[curRowIndex].splice(j + 1, 0, {
+                            curBlock.collection[curRowIndex].splice(j + 1, 0, {
                                 colSpan: 1,
                                 colStart: curCellEnd,
                                 hovered: false,
@@ -544,7 +719,7 @@ export class GridMultiRowLayoutConfigurationComponent {
 
                     if (curCell.colSpan <= 0) {
                         // If the current cell span is <= 0 it should be removed.
-                        this.collection[curRowIndex].splice(j, 1);
+                        curBlock.collection[curRowIndex].splice(j, 1);
                     }
                 }
             }
@@ -557,15 +732,15 @@ export class GridMultiRowLayoutConfigurationComponent {
                 let startCellIndex = 0;
 
                 // Get first cell after current resized multirow cell
-                for (let j = 0; j < this.collection[i].length; j++) {
-                    if (this.collection[i][j].colStart > this.curResizedCell.colStart) {
+                for (let j = 0; j < curBlock.collection[i].length; j++) {
+                    if (curBlock.collection[i][j].colStart > this.curResizedCell.colStart) {
                         startCellIndex = j - 1;
                         break;
                     }
                 }
 
                 for (let j = 0; j < this.curResizedCell.colSpan; j++) {
-                    this.collection[i].splice(startCellIndex + 1 + j, 0, {
+                    curBlock.collection[i].splice(startCellIndex + 1 + j, 0, {
                         colSpan: 1,
                         colStart: this.curResizedCell.colStart + j,
                         hovered: false,
@@ -580,18 +755,19 @@ export class GridMultiRowLayoutConfigurationComponent {
 
             this.curResizedCell.rowSpan += this.rowSpanIncrease;
             if (this.curResizedCell.rowSpan === 0) {
-                this.collection[rowIndex].splice(this.curResizedCell.colStart - 1 + this.curResizedCell.colSpan, 1);
+                curBlock.collection[rowIndex].splice(this.curResizedCell.colStart - 1 + this.curResizedCell.colSpan, 1);
             }
         }
 
         this.rowSpanIncrease = 0;
     }
 
-    public onCellKey(event, rowIndex, colIndex) {
+    public onCellKey(event, blockIndex, rowIndex, colIndex) {
+        const curBlock = this.blocks[blockIndex];
         if (event.key === "Delete") {
             for (let i = rowIndex; i < rowIndex + this.cellSelected.rowSpan; i++) {
                 const rowFirstHalf = [];
-                for (const record of this.collection[i]) {
+                for (const record of curBlock.collection[i]) {
                     if (record.colStart < this.cellSelected.colStart) {
                         rowFirstHalf.push(record);
                     } else {
@@ -599,7 +775,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                     }
                 }
 
-                const rowSecondHalf = this.collection[i].slice(rowFirstHalf.length + (i === rowIndex ? 1 : 0));
+                const rowSecondHalf = curBlock.collection[i].slice(rowFirstHalf.length + (i === rowIndex ? 1 : 0));
                 for (let j = 0; j < this.cellSelected.colSpan; j++) {
                     rowFirstHalf.push({
                         colSpan: 1,
@@ -611,11 +787,136 @@ export class GridMultiRowLayoutConfigurationComponent {
                         width: ""
                     });
                 }
-                this.collection[i] = rowFirstHalf.concat(rowSecondHalf);
+                curBlock.collection[i] = rowFirstHalf.concat(rowSecondHalf);
             }
 
             this.cellSelected = null;
             this.resizeVisible = false;
         }
+    }
+
+    public onChipMoved(event) {
+        event.owner.dragDir.dragGhost.children[2].remove();
+    }
+
+    public onRemovePointerDown(event) {
+        event.stopPropagation();
+    }
+
+    public onRemoveClickBlock(index) {
+        if (this.blocks.length === 1) {
+            return;
+        }
+
+        const removedBlock = this.blocks.splice(index, 1)[0];
+        if (removedBlock === this.selectedBlock) {
+            const newSelectIndex = index === 0 ? 0 : (index - 1);
+            this.selectedBlock = this.blocks[newSelectIndex];
+        }
+    }
+
+    public onRemoveClickColumn(index) {
+        this.columnsList.splice(index, 1);
+    }
+
+    public onPointerOver(chip) {
+        chip.data.hovered = true;
+    }
+
+    public onPointerLeave(chip) {
+        chip.data.hovered = false;
+    }
+
+    public onAddBlockClick(chip) {
+        chip.data.clicked = true;
+        requestAnimationFrame(() => {
+            const input = chip.elementRef.nativeElement.querySelector("input");
+            input.focus();
+        });
+    }
+
+    public onAddChipClick(chip) {
+        chip.data.clicked = true;
+        requestAnimationFrame(() => {
+            const input = chip.elementRef.nativeElement.querySelector("input");
+            input.focus();
+        });
+    }
+
+    public inputKeyDownBlock(event, chip) {
+        event.stopPropagation();
+
+        if (event.key === "Escape") {
+            chip.data.clicked = false;
+        } else if (event.key === "Enter") {
+            const newCollection = [];
+            for (let i = 0; i < this.rowsCount; i++) {
+                newCollection.push([{
+                    colSpan: 1,
+                    colStart: 1,
+                    key: "",
+                    rowSpan: 1,
+                    rowStart: i + 1,
+                    width: "",
+                    selected: false,
+                    hovered: false
+                }]);
+            }
+
+            const newBlock = {
+                collection: newCollection,
+                colsCount: 1,
+                colsWidth: 136,
+                key: event.target.value
+            };
+            this.blocks.push(newBlock);
+
+            chip.data.clicked = false;
+            this.selectedBlock = newBlock;
+
+            requestAnimationFrame(() => {
+                this.layoutContainer.nativeElement.scrollLeft = 9999999;
+            });
+        }
+    }
+
+    public inputKeyDown(event, chip) {
+        event.stopPropagation();
+
+        if (event.key === "Escape") {
+            chip.data.clicked = false;
+        } else if (event.key === "Enter") {
+            this.columnsList.push({
+                field: event.target.value,
+                key: event.target.value
+            });
+            chip.data.clicked = false;
+        }
+    }
+
+    public inputBlur(event, addChip) {
+        if (event.relatedTarget === addChip.elementRef.nativeElement ||
+            event.relatedTarget === addChip.elementRef.nativeElement.children[0]) {
+            // Clicked on the same chip, so we don't close it.
+            return;
+        }
+        addChip.data.clicked = false;
+    }
+
+    public onContainerScroll() {
+        this.resizeVisible = false;
+    }
+
+    public blocksOrderChanged(event) {
+        const newBlocksList = [];
+        event.chipsArray.forEach((chip) => {
+            const foundBlock = this.blocks.find((block) => {
+                return block.key === chip.id;
+            });
+            if (foundBlock) {
+                newBlocksList.push(foundBlock);
+            }
+        });
+        this.blocks = newBlocksList;
     }
 }

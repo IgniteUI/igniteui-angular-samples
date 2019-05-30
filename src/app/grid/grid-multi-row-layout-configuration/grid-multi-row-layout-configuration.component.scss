@@ -1,3 +1,20 @@
+.settingsTable {
+    margin: auto;
+}
+
+.settingsTable td {
+    border: 2px solid transparent;
+    vertical-align: bottom;
+}
+
+.settingsTable td:first-child {
+    text-align: left;
+}
+
+.settingsTable td {
+    text-align: right;
+}
+
 .colsWrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -14,6 +31,7 @@
     width: fit-content;
     margin: auto;
     border: 1px black dotted;
+    background-color: #fff;
 }
 
 .columnOut {
@@ -26,9 +44,7 @@
     margin-bottom: auto;
     font-family: 'Titillium Web', sans-serif;
     line-height: 1.25rem;
-    font-weight: 600;
-    background-color: rgb(42, 42, 42);
-    color: rgb(255,255,255);
+    color: black;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -37,11 +53,11 @@
 }
 
 .columnOut:hover {
-    background-color: rgb(60, 60, 60) !important;
+    background-color: rgba(0, 0, 0, 0.12) !important;
 }
 
 .columnOut:active {
-    background-color: rgb(70, 70, 70) !important;
+    background-color: rgba(0, 0, 0, 0.22) !important;
 }
 
 
@@ -51,9 +67,7 @@
     display: flex;
     font-family: 'Titillium Web', sans-serif;
     line-height: 1.25rem;
-    font-weight: 600;
-    background-color: rgb(42, 42, 42);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -62,21 +76,22 @@
 }
 
 .columnInHovered {
-    background-color: rgb(52, 52, 52) !important;
+    background-color: rgba(0, 0, 0, 0.22) !important;
 }
 
 .textWrapper {
     margin: auto;
+    margin-left: 5px;
     -ms-flex-item-align: end;
         align-self: flex-end;
-    color: rgb(255,255,255);
+    color: rgba(0, 0, 0, 0.74);
 }
 
 .resizerLeft {
     position: absolute;
-    width: 5px;
+    width: 6px;
     top: 0;
-    left: 1px;
+    left: -3px;
     height: 100%;
     z-index: 2;
     cursor: col-resize;
@@ -84,9 +99,9 @@
 
 .resizerRight {
     position: absolute;
-    width: 5px;
+    width: 6px;
     top: 0;
-    right: 1px;
+    right: -3px;
     height: 100%;
     z-index: 2;
     cursor: col-resize;
@@ -95,8 +110,8 @@
 .resizerBottom {
     position: absolute;
     width: 100%;
-    height: 5px;
-    bottom: 1px;
+    height: 6px;
+    bottom: -3px;
     z-index: 2;
     cursor: row-resize;
 }
@@ -105,6 +120,7 @@
     display: -ms-grid;
     display: grid;
     margin: auto;
+    background-color: #fff;
 }
 
 .outer-wrapper {
@@ -116,4 +132,13 @@
 .grid-wrapper {
     margin: auto;
     width: 800px;
+}
+
+.bottomButton { 
+    margin: 5px;
+}
+
+.igx-input-group__bundle {
+    padding-top: 0;
+    top: -2px;
 }

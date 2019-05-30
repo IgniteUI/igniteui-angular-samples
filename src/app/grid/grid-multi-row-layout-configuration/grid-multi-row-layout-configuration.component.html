@@ -1,93 +1,146 @@
 <div class="sample-wrapper">
-    <section style="height: 800px" class="sample-content">
-        <div style="width: 100%; margin-bottom: 15px; text-align:center;"><h4>Multi-row layout configurator:</h4></div>
-        <div style="width: 100%; margin-bottom: 15px; text-align:center; display: flex; justify-content: center;">
-            <div style="margin-right: 5px; text-align: start">
-                <br/>
-                <div>Count:</div>
-                <div>Default size:</div>
+    <section style="height: 800px;">
+        <div style="width: 100%; margin-bottom: 15px; text-align:center; min-height: 50px;">
+                <span>Select layout to configure or add/remove/reorder:</span>
+                <igx-chips-area style="margin: auto; justify-content: center;" (onReorder)="blocksOrderChanged($event)">
+                    <igx-chip #chip *ngFor="let block of blocks; let blockIndex = index" [style.margin]="'5px'"
+                            [id]="block.key" [data]="block" [selected]="block.key === selectedBlock.key" [draggable]="true"
+                            (onClick)="selectedBlock = block" (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
+                        {{block.key}}
+                        <div class="material-icons igx-icon"
+                            [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
+                            style="transition: opacity 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955); transition: width 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);"
+                            igxSuffix igxButton="icon" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickBlock(blockIndex)">
+                            <igx-icon  id="igx-icon-150" >cancel</igx-icon>
+                        </div>
+                    </igx-chip>
+                    <igx-chip #addBlock [style.margin]="'5px'" [data]="{ clicked: false }" (onClick)="onAddBlockClick(addBlock)">
+                        <igx-icon igxPrefix>add_circle_outline</igx-icon>
+                        <span *ngIf="!addBlock.data.clicked">{{"Add Layout"}}</span>
+                        <igx-input-group *ngIf="addBlock.data.clicked">
+                            <input style="width: 15ch; padding: unset; border: none; height: 25px;" igxInput type="text" placeholder="Layout Name" (keydown)="inputKeyDownBlock($event, addBlock)" (blur)="inputBlur($event, addBlock)"/>
+                        </igx-input-group>
+                    </igx-chip>
+                </igx-chips-area>
             </div>
-            <div style="margin-right: 5px;">
-                <div>Rows </div>
-                <input #rowsInput type="number" [value]="rowsCount" style="width: 100px;"  (input)="rowCountChanged($event)"/>
-                <br/>
-                <input #rowsInput type="string" [value]="rowsHeight" style="width: 100px;"  (input)="rowHeightChanged($event)"/>
-            </div>
-            <div style="margin-right: 5px;">
-                <div>Columns </div>
-                <input #colsInput type="number" [value]="colsCount" style="width: 100px;"  (input)="colCountChanged($event)"/>
-                <br/>
-                <input #colsInput type="string" [value]="colsWidth" style="width: 100px;"  (input)="colWidthChanged($event)"/>
-            </div>
-        </div>
         <div style="width: 100%; margin-bottom: 15px; text-align:center;">
-            <div>
-                <input [(ngModel)]="keyValue"
-                style="height: 30px; width: 150px;"
-                placeholder="Column key"/>
-            </div>
-
-            <div igxButton="raised"
-                class="addColumnButton"
-                style="height: 18px; width: 150px;"
-                (click)="addColumn()">Add column</div>
+            <table class="settingsTable">
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col style="width: 100px;">
+                    <col style="width: 100px;">
+                </colgroup>
+                <tbody>
+                    <tr> <td></td> <td>Count:</td> <td>Size:</td> </tr>
+                    <tr>
+                        <td>Rows:</td>
+                        <td>
+                            <igx-input-group>
+                                <input igxInput type="number" min="1" [value]="rowsCount" (input)="rowCountChanged($event)" style="width: 100px;text-align:right;"/>
+                            </igx-input-group>
+                        </td>
+                        <td>
+                            <igx-input-group>
+                                <input igxInput type="number" min="1" [value]="rowsHeight" (input)="rowHeightChanged($event)" style="width: 100px;text-align:right;"/>
+                                <igx-suffix>
+                                    {{"px"}}
+                                </igx-suffix>
+                            </igx-input-group>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Columns:</td>
+                        <td>
+                            <igx-input-group>
+                                <input igxInput type="number" min="1" [value]="selectedBlock.colsCount" (input)="colCountChanged($event)" style="width: 100px;text-align:right;"/>
+                            </igx-input-group>
+                        </td>
+                        <td>
+                            <igx-input-group>
+                                <input igxInput type="number" min="1" [value]="selectedBlock.colsWidth" (input)="colWidthChanged($event)" style="width: 100px;text-align:right;" />
+                                <igx-suffix>
+                                    {{"px"}}
+                                </igx-suffix>
+                            </igx-input-group>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div style="width: 100%; margin-bottom: 15px; text-align:center;">
-            <div *ngIf="columnsList.length" class="colsWrapper">
-                <div *ngFor="let col of columnsList" class="columnOut" [style.width]="colsWidth" [style.height]="rowsHeight"
-                    [igxDrag]="{ key: col.key }" [hideBaseOnDrag]="true">
-                    <div style="margin: 6px;">
-                        {{col.key}}
+        <div  style="width: 100%; margin-bottom: 15px; text-align:center; min-height: 50px;" >
+            <hr/>
+            <span>Drag a column into a layout cell to apply it:</span>
+            <igx-chips-area style="margin: auto; justify-content: center;">
+                <igx-chip #chip *ngFor="let col of columnsList; let colIndex = index" [style.margin]="'5px'" [data]="col" [draggable]="true"
+                      (dragGhostCreated)="onChipMoved($event)" (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
+                    {{col.key}}
+                    <div class="material-icons igx-icon"
+                        [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
+                        style="transition: opacity 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955); transition: width 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);"
+                        igxSuffix igxButton="icon" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickColumn(colIndex)">
+                        <igx-icon  id="igx-icon-150" >cancel</igx-icon>
+                    </div>
+                </igx-chip>
+                <igx-chip #addChip [style.margin]="'5px'" [data]="{ clicked: false }" (onClick)="onAddChipClick(addChip)">
+                    <igx-icon igxPrefix>add_circle_outline</igx-icon>
+                    <span *ngIf="!addChip.data.clicked">{{"Add Column"}}</span>
+                    <igx-input-group *ngIf="addChip.data.clicked">
+                        <input style="width: 10ch; padding: unset; border: none; height: 25px;" igxInput type="text" placeholder="Column Key" (keydown)="inputKeyDown($event, addChip)" (blur)="inputBlur($event, addChip)"/>
+                    </igx-input-group>
+                </igx-chip>
+            </igx-chips-area>
+        </div>
+        <div #layoutContainer style="width: 100%; margin-bottom: 15px; text-align:center; min-height: 50px; overflow-x: auto;" (scroll)="onContainerScroll()">
+            <div style="width: fit-content; height:200px; overflow-y: auto; overflow-x: hidden; text-align:center; margin-bottom: 15px; margin: auto;">
+                <div style="display: flex;">
+                    <div class="rowLayoutView" *ngFor="let block of blocks; index as blockIndex"
+                        [ngStyle]="{'grid-template-rows': getLayoutRowStyle(blockIndex), 'grid-template-columns': getLayoutColsStyle(blockIndex),
+                        '-ms-grid-rows': getLayoutRowStyle(blockIndex), '-ms-grid-columns': getLayoutColsStyle(blockIndex),
+                        'border': block.key === selectedBlock.key ? '1px solid green' : '1px solid transparent'}">
+                        <ng-container *ngFor="let row of block.collection; index as rowIndex">
+                            <div #gridCell tabindex="0" *ngFor="let col of row; index as colIndex" class="columnIn" [class.columnInHovered]="col.hovered"
+                                [ngStyle]="{'grid-row-start': col.rowStart, 'grid-column-start': col.colStart, 'grid-column-end': col.colStart + col.colSpan, 'grid-row-end': col.rowStart + col.rowSpan,
+                                '-ms-grid-row': col.rowStart, '-ms-grid-column': col.colStart, '-ms-grid-column-span': col.colSpan, '-ms-grid-row-span': col.rowSpan}"
+                                igxDrop (onDrop)="onColDropped($event, blockIndex, rowIndex, colIndex)" (onEnter)="onColEnter($event, blockIndex, rowIndex, colIndex)" (onLeave)="onColLeave($event, blockIndex, rowIndex, colIndex)"
+                                    (click)="clickCell(gridCell, blockIndex, rowIndex, colIndex)" (blur)="onBlur($event, blockIndex, rowIndex, colIndex)" (keyup)="onCellKey($event, blockIndex, rowIndex, colIndex)">
+                                <div class="textWrapper">{{col.key}}</div>
+                                <ng-container *ngIf="block.collection[rowIndex][colIndex].selected">
+                                    <span #resizeHandleRight class="resizerLeft" 
+                                        (pointerdown)="pointerDownResize($event, blockIndex, rowIndex, colIndex)"
+                                        (pointermove)="pointerMoveResizeLeft($event, gridCell, blockIndex)"
+                                        (pointerup)="pointerUpResizeLeft($event, gridCell, blockIndex, rowIndex, colIndex)">
+                                    </span>
+                                    <span #resizeHandleRight class="resizerRight" 
+                                        (pointerdown)="pointerDownResize($event, blockIndex, rowIndex, colIndex)"
+                                        (pointermove)="pointerMoveResizeRight($event, gridCell, blockIndex)"
+                                        (pointerup)="pointerUpResizeRight($event, gridCell, blockIndex, rowIndex, colIndex)">
+                                    </span>
+                                    <span #resizeHandleBottom class="resizerBottom" 
+                                        (pointerdown)="pointerDownResize($event, blockIndex, rowIndex, colIndex)"
+                                        (pointermove)="pointerMoveResizeBottom($event, gridCell, blockIndex, rowIndex, colIndex)"
+                                        (pointerup)="pointerUpResizeBottom($event, gridCell, blockIndex, rowIndex, colIndex)">
+                                    </span>
+                                </ng-container>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div style="width: 100%; margin-bottom: 15px; text-align:center;">
-            <div style="display: flex;">
-                <div class="rowLayoutView" [ngStyle]="{'grid-template-rows': layoutRowStyle, 'grid-template-columns': layoutColsStyle,
-                    '-ms-grid-rows': layoutRowStyle, '-ms-grid-columns': layoutColsStyle}">
-                    <ng-container *ngFor="let row of collection; index as rowIndex">
-                        <div #gridCell tabindex="0" *ngFor="let col of row; index as colIndex" class="columnIn" [class.columnInHovered]="col.hovered"
-                            [ngStyle]="{'grid-row-start': col.rowStart, 'grid-column-start': col.colStart, 'grid-column-end': col.colStart + col.colSpan, 'grid-row-end': col.rowStart + col.rowSpan,
-                            '-ms-grid-row': col.rowStart, '-ms-grid-column': col.colStart, '-ms-grid-column-span': col.colSpan, '-ms-grid-row-span': col.rowSpan}"
-                            igxDrop (onDrop)="onColDropped($event, rowIndex, colIndex)" (onEnter)="onColEnter($event, rowIndex, colIndex)" (onLeave)="onColLeave($event, rowIndex, colIndex)"
-                                (click)="clickCell(gridCell, rowIndex, colIndex)" (blur)="onBlur($event, rowIndex, colIndex)" (keyup)="onCellKey($event, rowIndex, colIndex)">
-                            <div class="textWrapper">{{col.key}}</div>
-                            <ng-container *ngIf="this.collection[rowIndex][colIndex].selected">
-                                <span #resizeHandleRight class="resizerLeft" 
-                                    (pointerdown)="pointerDownResize($event, rowIndex, colIndex)"
-                                    (pointermove)="pointerMoveResizeLeft($event, gridCell, rowIndex, colIndex)"
-                                    (pointerup)="pointerUpResizeLeft($event, gridCell, rowIndex, colIndex)">
-                                </span>
-                                <span #resizeHandleRight class="resizerRight" 
-                                    (pointerdown)="pointerDownResize($event, rowIndex, colIndex)"
-                                    (pointermove)="pointerMoveResizeRight($event, gridCell, rowIndex, colIndex)"
-                                    (pointerup)="pointerUpResizeRight($event, gridCell, rowIndex, colIndex)">
-                                </span>
-                                <span #resizeHandleBottom class="resizerBottom" 
-                                    (pointerdown)="pointerDownResize($event, rowIndex, colIndex)"
-                                    (pointermove)="pointerMoveResizeBottom($event, gridCell, rowIndex, colIndex)"
-                                    (pointerup)="pointerUpResizeBottom($event, gridCell, rowIndex, colIndex)">
-                                </span>
-                            </ng-container>
-                        </div>
-                    </ng-container>
+                <div #resizeIndicator style="position: absolute; border: 2px dotted #09f;"
+                    [ngStyle]="{'top': resizeTop + 'px', 'left': (resizeLeft - layoutScrollLeft)  + 'px', 'width': resizeWidth + 'px', 'height': resizeHeight + 'px', 'display': resizeVisible ? 'block' : 'none'}">
                 </div>
-            </div>
-            <div #resizeIndicator style="position: absolute; border: 1px dotted black;"
-                [ngStyle]="{'top': resizeTop + 'px', 'left': resizeLeft  + 'px', 'width': resizeWidth + 'px', 'height': resizeHeight + 'px', 'display': resizeVisible ? 'block' : 'none'}">
             </div>
         </div>
         <div style="width: 100%; text-align: center; margin: 10px;">
-            <span igxButton="raised" (click)="getColumnLayoutTemplate()">Get Column-Layout Template</span>
-            <span igxButton="raised" (click)="renderJson()">Get JSON</span>
+            <span igxButton="raised" class="bottomButton" (click)="getColumnLayoutTemplate()">Get Template</span>
+            <span igxButton="raised" class="bottomButton" (click)="renderJson()">Get JSON</span>
+            <span igxButton="raised" class="bottomButton" (click)="resetCollections()">Clear</span>
         </div>
 
         <igx-dialog #jsonDialog title="Multi-row layout result:"
             leftButtonLabel="Cancel" (onLeftButtonSelect)="jsonDialog.close()" rightButtonLabel="Copy" (onRightButtonSelect)="copyToClipboard()"
             backgroundClick="true" [closeOnOutsideSelect]="true">
             <div class="login-form">
-                <textarea #textArea rows="18" cols="101" readonly style="margin: 10px;">{{jsonCollection}}</textarea>
+                <textarea #textArea rows="20" cols="120" readonly style="margin: 10px;">{{jsonCollection}}</textarea>
             </div>
         </igx-dialog>
     </section>
