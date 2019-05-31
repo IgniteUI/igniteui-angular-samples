@@ -26,11 +26,7 @@ export class ContextmenuComponent {
     @Output()
     public onCellValueCopy = new EventEmitter<ICopyData>();
 
-    public divX;
-    public divY;
     public selectedData: ICopyData;
-    public chooseType: boolean = false;
-    public isDivFocused = false;
 
     constructor() { }
 

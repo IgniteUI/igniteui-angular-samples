@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, ViewChild} from "@angular/core";
 import { DefaultSortingStrategy, IgxGridComponent, SortingDirection} from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
@@ -22,7 +22,7 @@ export class GridContextmenuSampleComponent implements OnInit {
     public multiCellSelection: { data: any[], selectionRanges: any[] } = { data: [], selectionRanges: [] };
     public multiCellArgs;
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor() {
     }
     public ngOnInit(): void {
         this.data = DATA;
@@ -56,7 +56,6 @@ export class GridContextmenuSampleComponent implements OnInit {
                 this.multiCellArgs = { data: this.multiCellSelection.data };
             }
         }
-        console.log(this.multiCellArgs)
         this.contextmenuX = eventArgs.event.clientX;
         this.contextmenuY = eventArgs.event.clientY;
         this.clickedCell = eventArgs.cell;

@@ -43,6 +43,9 @@ import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-da
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
+import { ContextmenuComponent } from '../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component';
+// tslint:disable-next-line: max-line-length
+import { GridContextmenuSampleComponent } from "../../src/app/grid/grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
 import {
     GridDisplayDensitySampleComponent
@@ -599,6 +602,19 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule, IgxButtonModule]
             }),
             component: GridDragBaseSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/data/nwindData.ts",
+            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.ts",
+            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.html",
+            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridContextmenuSampleComponent, ContextmenuComponent],
+                ngDeclarations: [GridContextmenuSampleComponent, ContextmenuComponent],
+                ngImports: [IgxGridModule]
+            }),
+            component: GridContextmenuSampleComponent
         }));
 
         return configs;
