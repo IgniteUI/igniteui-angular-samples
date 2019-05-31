@@ -5,7 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
     IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
-    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
@@ -16,6 +16,7 @@ import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
+import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
@@ -38,6 +39,7 @@ import { ResizingSampleComponent } from "./grid-resizing-sample/grid-resizing-sa
 import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-base.component";
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
+import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -48,7 +50,6 @@ import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { IgxGridStateDirective } from "./grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
-import { GridContextmenuComponent } from "./grid-sorting-sample/grid-contextmenu/grid-contextmenu.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
@@ -96,8 +97,8 @@ import { DataService } from "./services/data.service";
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
         GridComponent,
-        GridContextmenuComponent,
         PasteHandler,
+        GridCustomKBNavigationComponent,
         GridSaveStateComponent,
         AboutComponent,
         IgxGridStateDirective,
@@ -106,6 +107,7 @@ import { DataService } from "./services/data.service";
         GridCompositeDataComponent,
         GridMultiRowLayoutComponent,
         GridDragSampleComponent,
+        PlanetComponent,
         GridDragBaseSampleComponent,
         GridDragToGridSampleComponent,
         GridContextmenuSampleComponent,
@@ -137,7 +139,8 @@ import { DataService } from "./services/data.service";
         IgxToastModule,
         IgxToggleModule,
         IgxTooltipModule,
-        IgxExpansionPanelModule
+        IgxExpansionPanelModule,
+        IgxSelectModule
     ],
     providers: [
         DataService,

@@ -326,21 +326,21 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         dataObj[changeP] = res.ChangePercent;
     }
     private generateNewPrice(oldPrice): any {
-        const rnd = parseFloat(Math.random().toFixed(2));
+        let rnd = Math.random();
+        rnd = Math.round(rnd * 100) / 100;
         const volatility = 2;
         let newPrice = 0;
-
         let changePercent = 2 * volatility * rnd;
         if (changePercent > volatility) {
             changePercent -= (2 * volatility);
         }
-
         const changeAmount = oldPrice * (changePercent / 100);
         newPrice = oldPrice + changeAmount;
-
+        newPrice = Math.round(newPrice * 100) / 100;
         const result = {Price: 0, ChangePercent: 0};
-        result.Price = parseFloat(newPrice.toFixed(2));
-        result.ChangePercent = parseFloat(changePercent.toFixed(2));
+        changePercent = Math.round(changePercent * 100) / 100;
+        result.Price = newPrice;
+        result.ChangePercent = changePercent;
 
         return result;
     }
