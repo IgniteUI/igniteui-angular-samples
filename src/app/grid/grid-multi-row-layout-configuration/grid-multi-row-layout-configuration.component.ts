@@ -428,6 +428,7 @@ export class GridMultiRowLayoutConfigurationComponent {
     }
 
     public clickCell(cellRef, blockIndex, rowIndex, colIndex) {
+        this.selectedBlock = this.blocks[blockIndex];
         this.cellSelected = this.blocks[blockIndex].collection[rowIndex][colIndex];
         this.cellSelected.selected = true;
 
@@ -643,14 +644,13 @@ export class GridMultiRowLayoutConfigurationComponent {
                     });
                 }
 
-                if (rowUpdateIndex === targetRowIndex && this.curResizedCell.colSpan === 0) {
-                    secondHalf.shift();
-                }
                 curBlock.collection[rowUpdateIndex] = firstHalf.concat(secondHalf);
             }
 
             this.curResizedCell.colSpan -= -1 * this.colSpanIncrease;
             this.curResizedCell.colStart += -1 * this.colSpanIncrease;
+            curBlock.collection[targetRowIndex] =
+                curBlock.collection[targetRowIndex].filter((cell) => cell.colSpan > 0);
         }
         this.colSpanIncrease = 0;
     }
@@ -728,14 +728,15 @@ export class GridMultiRowLayoutConfigurationComponent {
         } else if (this.rowSpanIncrease < 0) {
             this.rowSpanIncrease = -1 * Math.min(-1 * this.rowSpanIncrease, this.curResizedCell.rowSpan);
             const startIndex = this.curResizedCell.rowStart + this.curResizedCell.rowSpan - 2;
+            let startCellIndex = 0;
             for (let i = startIndex; i > startIndex + this.rowSpanIncrease; i--) {
-                let startCellIndex = 0;
 
                 // Get first cell after current resized multirow cell
                 for (let j = 0; j < curBlock.collection[i].length; j++) {
                     if (curBlock.collection[i][j].colStart > this.curResizedCell.colStart) {
-                        startCellIndex = j - 1;
                         break;
+                    } else {
+                        startCellIndex = j;
                     }
                 }
 
@@ -755,7 +756,9 @@ export class GridMultiRowLayoutConfigurationComponent {
 
             this.curResizedCell.rowSpan += this.rowSpanIncrease;
             if (this.curResizedCell.rowSpan === 0) {
-                curBlock.collection[rowIndex].splice(this.curResizedCell.colStart - 1 + this.curResizedCell.colSpan, 1);
+                // We use the last cell index since when rowSpan reaches 0 it will point to the column index of
+                // the top row of the cell. This is where the cell information is saved when it spans more rows.
+                curBlock.collection[rowIndex].splice(startCellIndex, 1);
             }
         }
 
