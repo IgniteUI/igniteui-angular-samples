@@ -37,6 +37,7 @@ import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarc
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HGridRowReorderComponent } from './hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component';
 /* tslint:enable:max-line-length */
 
 export const hierarchicalGridRoutes: Routes = [
@@ -181,6 +182,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridRowDragBaseComponent,
         data: hierarchicalGridRoutesData["hierarchical-row-drag-base"],
         path: "hierarchical-row-drag-base"
+    },
+    {
+        component: HGridRowReorderComponent,
+        data: hierarchicalGridRoutesData["hierarchical-row-reorder"],
+        path: "hierarchical-row-reorder"
     },
     {
         component: HGridEditingSampleComponent,
