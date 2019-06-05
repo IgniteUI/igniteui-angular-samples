@@ -1,5 +1,6 @@
 /* tslint:disable:max-line-length */
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
@@ -45,7 +46,6 @@ import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarc
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [

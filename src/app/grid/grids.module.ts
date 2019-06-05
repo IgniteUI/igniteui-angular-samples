@@ -1,5 +1,6 @@
 // tslint:disable:max-line-length
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
@@ -58,7 +59,6 @@ import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
-import { HttpClientModule } from '@angular/common/http';
 // tslint:enable:max-line-length
 
 @NgModule({
