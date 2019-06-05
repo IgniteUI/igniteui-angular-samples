@@ -1,12 +1,3 @@
-<ng-template let-series="series" let-item="item" #template>
-    <div>
-
-<label width="20px"
-height="20px">test2223</label>      
-     <!--  <span [style.color]="series.actualBrush">{{series.title}}</span>
-        <span> stock opened on {{item.time | date}} with a value of ${{item.open | number}}</span> -->
-    </div>
-</ng-template>
 <div className="sampleRoot" >
    
         <igx-geographic-map #map           
@@ -16,3 +7,24 @@ height="20px">test2223</label>
             >
         </igx-geographic-map>
 </div>
+<div class="my-legend">
+<div class="legend-title">Geographic Map: Polyline Series</div>
+<div class="legend-scale">
+  <ul class="legend-labels">
+    <li><span style="background:rgb(219, 84, 5)"></span>Canadian Roads</li>
+    <li><span style="background:rgb(32, 146, 252)"></span>American Roads</li>
+    <li><span style="background:rgb(14, 194, 14)"></span>Mexican Roads</li>
+  </ul>
+</div>
+</div>
+<ng-template let-series="series" let-item="item" #template>
+<div>
+    <span [style.color]="series.shapeStroke">
+    {{item.country}} {{item.type}}
+    </span>
+    <br />
+    <span>
+    Length: {{item.length}} miles 
+    </span>
+</div>
+</ng-template>

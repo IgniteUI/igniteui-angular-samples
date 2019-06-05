@@ -1,18 +1,23 @@
-import { AfterViewInit, Component, ViewChild } from "@angular/core";
-import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
+import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
+import { IgxGeographicSymbolSeriesComponent
+} from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
 import { WorldLocations } from "../../utilities/WorldLocations";
+import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 
 @Component({
   selector: "app-map-type-scatter-symbol-series",
-  templateUrl: "./map-type-scatter-symbol-series.component.html"
+  templateUrl: "./map-type-scatter-symbol-series.component.html",
+  styleUrls: ["./map-type-scatter-symbol-series.component.scss"]
 })
 
 export class MapTypeScatterSymbolSeriesComponent implements AfterViewInit {
 
     @ViewChild ("map")
     public map: IgxGeographicMapComponent;
+    @ViewChild("template")
+    public tooltip: TemplateRef<object>;
+
     constructor() {
     }
 
@@ -29,6 +34,7 @@ export class MapTypeScatterSymbolSeriesComponent implements AfterViewInit {
         symbolSeries.longitudeMemberPath = "lon";
         symbolSeries.markerBrush  = "White";
         symbolSeries.markerOutline = brush;
+        symbolSeries.tooltipTemplate = this.tooltip;
         this.map.series.add(symbolSeries);
     }
 }

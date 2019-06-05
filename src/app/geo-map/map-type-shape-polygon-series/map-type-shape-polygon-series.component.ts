@@ -1,10 +1,11 @@
 import { AfterViewInit, Component,TemplateRef, ViewChild } from "@angular/core";
-import { ShapeDataSource } from "@infragistics/igniteui-angular-core/ES5/igx-shape-data-source";
-import { IgxGeographicMapComponent } from "@infragistics/igniteui-angular-maps/ES5/igx-geographic-map-component";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
+import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicShapeSeriesComponent } from 'igniteui-angular-maps/ES5/igx-geographic-shape-series-component';
 
 @Component({
   selector: "app-map-type-shape-polygon-series",
+  styleUrls: ["./map-type-shape-polygon-series.component.scss"],
   templateUrl: "./map-type-shape-polygon-series.component.html"
 })
 export class MapTypeShapePolygonSeriesComponent implements AfterViewInit {
@@ -70,7 +71,7 @@ export class MapTypeShapePolygonSeriesComponent implements AfterViewInit {
         geoSeries.shapeMemberPath = "points";
         geoSeries.brush = shapeBrush;
         geoSeries.outline = "Black";
-        //geoSeries.tooltipTemplate = this.createTooltip;
+        geoSeries.tooltipTemplate = this.tooltip;
         geoSeries.thickness = 1;
         geoSeries.title = shapeTitle;
 

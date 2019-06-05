@@ -1,7 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { IgxDoughnutChartDefaultTooltipsComponent
+} from "igniteui-angular-charts/ES5/igx-doughnut-chart-default-tooltips-component";
 
+import { IgxDoughnutChartInteractivityModule
+} from "igniteui-angular-charts/ES5/igx-doughnut-chart-interactivity-module";
 import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
 import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
 
@@ -19,13 +23,15 @@ import {
     declarations: [
         DoughnutChartExplosionSampleComponent,
         DoughnutChartOverviewSampleComponent,
-        DoughnutChartSelectionSampleComponent
-    ],
+        DoughnutChartSelectionSampleComponent       
+        ],
     imports: [
         CommonModule,
         FormsModule,
-        IgxDoughnutChartModule,
+        IgxDoughnutChartInteractivityModule,
+        IgxDoughnutChartModule,        
         IgxRingSeriesModule
+        
      ]
 })
 export class DoughnutChartSamplesModule {}

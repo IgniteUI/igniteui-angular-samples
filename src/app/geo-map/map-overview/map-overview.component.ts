@@ -3,7 +3,8 @@ import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geograp
 
 @Component({
   selector: "app-map-overview",
-  templateUrl: "./map-overview.component.html"
+  templateUrl: "./map-overview.component.html",
+  styleUrls: ["./map-overview.component.scss"]
 })
 
 export class MapOverviewComponent implements AfterViewInit {
@@ -14,8 +15,6 @@ export class MapOverviewComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-    }
-
-    public addSeriesWith(locations: any[], brush: string) {
+        this.map.windowRect = { left: 0.2, top: 0.1, width: 0.7, height: 0.7 };
     }
 }

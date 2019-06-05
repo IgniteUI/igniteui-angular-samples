@@ -8,6 +8,9 @@ export const geoMapRoutesData = {
     "map-binding-data-model": { displayName: "Binding Data Model", parentName: "Geo Map" },
     "map-binding-multiple-shapes": { displayName: "Binding Multiple Shapes", parentName: "Geo Map" },
     "map-binding-multiple-sources": { displayName: "Binding Multiple Sources", parentName: "Geo Map" },
+    "map-binding-shapefile-polygons": { displayName: "Binding Shapefile Polygons", parentName: "Geo Map" },
+    "map-binding-shapefile-polylines": { displayName: "Binding Shapefile Polylines", parentName: "Geo Map" },
+    "map-binding-shapefile-points": { displayName: "Binding Shapefile Points", parentName: "Geo Map" },
     "map-custom-tooltip": { displayName: "Custom Tooltip", parentName: "Geo Map" },
 
     "map-type-scatter-area-series": { displayName: "Scatter Area Series", parentName: "Geo Map" },

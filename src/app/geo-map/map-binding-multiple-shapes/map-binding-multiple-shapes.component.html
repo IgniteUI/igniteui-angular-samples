@@ -1,3 +1,63 @@
-<p>
-  map-binding-multiple-shapes works!
-</p>
+<div className="sampleRoot">
+    <div className="map" >
+        <igx-geographic-map
+            #map
+            width="700px"
+            height="500px"
+            zoomable="true" >
+            <igx-geographic-shape-series #shapeSeries
+                name="polygonSeries"
+                
+               
+                shapeMemberPath="points"
+                shapeFill="rgb(150, 150, 150)"
+                shapeStroke="Black"
+                shapeStrokeThickness={1.0} >
+            </igx-geographic-shape-series>
+            <igx-geographic-polyline-series  #polylineSeries
+                  name="lineSeries"
+                
+                 
+                 shapeMemberPath="points"
+                 shapeStroke="rgba(147, 15, 180, 0.5)"
+                 thickness={3.0} >
+            </igx-geographic-polyline-series>
+            <igx-geographic-symbol-series  #symbolSeries
+                name="symbolSeries"
+                
+                
+                longitudeMemberPath="longitude"
+                latitudeMemberPath="latitude"
+                markerType="Circle"
+                markerOutline="rgb(2, 102, 196)"
+                markerBrush="White" >
+            </igx-geographic-symbol-series>
+        </igx-geographic-map>
+    </div>
+</div>
+<div class="my-legend">
+        <div class="legend-title">Geographic Map: Binding Multiple Shapes</div>
+       
+    </div>
+  
+<ng-template let-series="series" let-item="item" #template>
+        <div>
+            <div *ngIf="item.org;then hasOrg; else notOrg" ></div>
+            <span [style.color]="series.brush">
+                {{item.name}} 
+            </span>
+            <span>
+                {{item.pop}} M 
+            </span>
+        </div>
+        <ng-template #hasOrg>
+            <span>
+                {{item.org}}
+            </span>   
+            <br />
+        </ng-template>
+         <ng-template #notOrg>
+            <span>
+            </span>
+         </ng-template>
+    </ng-template>

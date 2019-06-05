@@ -1,13 +1,13 @@
-import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
-import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
+import { AfterViewInit, Component, EmbeddedViewRef, TemplateRef, ViewChild} from "@angular/core";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicPolylineSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 
 @Component({
   selector: "app-map-type-shape-polyline-series",
-  styleUrls: ["./map-type-shape-polyline-series.component.scss"],
-  templateUrl: "./map-type-shape-polyline-series.component.html"
+  templateUrl: "./map-type-shape-polyline-series.component.html",
+  styleUrls: ["./map-type-shape-polyline-series.component.scss"]
 })
 
 export class MapTypeShapePolylineSeriesComponent implements AfterViewInit {
@@ -18,14 +18,12 @@ export class MapTypeShapePolylineSeriesComponent implements AfterViewInit {
   @ViewChild("template")
   public tooltip: TemplateRef<object>;
 
-  public data: any;
   constructor() {
   }
 
   public ngAfterViewInit(): void {
     this.map.windowRect = { left: 0.195, top: 0.325, width: 0.2, height: 0.1 };
 
-    // const url = DataUtils.getPublicURL();
     const sds = new ShapeDataSource();
     sds.shapefileSource = "/assets/Shapes/AmericanRoads.shp";
     sds.databaseSource  = "/assets/Shapes/AmericanRoads.dbf";
@@ -70,14 +68,13 @@ export class MapTypeShapePolylineSeriesComponent implements AfterViewInit {
 }
 
   public addSeriesWith(shapeData: any[], shapeBrush: string) {
-    const lineSeries = new IgxGeographicPolylineSeriesComponent ();
-    lineSeries.dataSource = shapeData;
-    lineSeries.shapeMemberPath = "points";
-    lineSeries.shapeFilterResolution = 2.0;
-    lineSeries.shapeStrokeThickness = 2;
-    lineSeries.shapeStroke = shapeBrush;
-    lineSeries.tooltipTemplate = this.tooltip;
-
-    this.map.series.add(lineSeries);
-}
+        const lineSeries = new IgxGeographicPolylineSeriesComponent ();
+        lineSeries.dataSource = shapeData;
+        lineSeries.shapeMemberPath = "points";
+        lineSeries.shapeFilterResolution = 2.0;
+        lineSeries.shapeStrokeThickness = 2;
+        lineSeries.shapeStroke = shapeBrush;
+        lineSeries.tooltipTemplate = this.tooltip;
+        this.map.series.add(lineSeries);
+    }
 }
