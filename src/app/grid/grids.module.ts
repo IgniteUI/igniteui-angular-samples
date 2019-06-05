@@ -57,6 +57,8 @@ import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
+
+import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -109,7 +111,8 @@ import { DataService } from "./services/data.service";
         GridDragSampleComponent,
         PlanetComponent,
         GridDragBaseSampleComponent,
-        GridDragToGridSampleComponent
+        GridDragToGridSampleComponent,
+        GridMRLCustomNavigationComponent
     ],
     imports: [
         CommonModule,
