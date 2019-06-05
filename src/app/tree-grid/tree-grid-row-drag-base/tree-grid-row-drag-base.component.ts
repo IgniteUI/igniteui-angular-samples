@@ -13,7 +13,7 @@ enum DragIcon {
     templateUrl: "tree-grid-row-drag-base.component.html"
 })
 export class TreeGridRowDragBase {
-    @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent })
+    @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
 
     public localData = [];

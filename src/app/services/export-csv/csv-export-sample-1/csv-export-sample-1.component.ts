@@ -12,7 +12,7 @@ import { CsvFileTypes,
 })
 export class CsvExportSample1Component {
 
-  @ViewChild("igxGrid1") public igxGrid1: IgxGridComponent;
+  @ViewChild("igxGrid1", { static: true }) public igxGrid1: IgxGridComponent;
   public localData = [
     { Name: "Eric Ridley", Age: "26" },
     { Name: "Alanis Brook", Age: "22" },

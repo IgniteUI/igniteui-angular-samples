@@ -9,7 +9,7 @@ import { IgxRadialGaugeComponent } from "igniteui-angular-gauges/ES5/igx-radial-
 })
 export class RadialGaugeBackingComponent implements OnInit {
 
-    @ViewChild("radialGauge")
+    @ViewChild("radialGauge", { static: true })
     public radialGauge: IgxRadialGaugeComponent;
 
     public ngOnInit(): void {

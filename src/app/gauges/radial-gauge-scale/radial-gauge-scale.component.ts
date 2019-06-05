@@ -9,6 +9,6 @@ import { IgxRadialGaugeComponent } from "igniteui-angular-gauges/ES5/igx-radial-
 })
 export class RadialGaugeScaleComponent {
 
-    @ViewChild("radialGauge")
+    @ViewChild("radialGauge", { static: true })
     public radialGauge: IgxRadialGaugeComponent;
 }

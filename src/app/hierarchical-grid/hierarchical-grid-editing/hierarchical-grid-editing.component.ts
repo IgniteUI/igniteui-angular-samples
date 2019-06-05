@@ -42,10 +42,10 @@ export class HGridEditingSampleComponent implements OnInit {
     public singer;
     public mySummary = MySummary;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
-    @ViewChild("dialogAdd", { read: IgxDialogComponent })
+    @ViewChild("dialogAdd", { read: IgxDialogComponent, static: true })
     private dialog: IgxDialogComponent;
 
     constructor() {}

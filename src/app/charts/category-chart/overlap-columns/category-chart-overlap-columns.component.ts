@@ -16,9 +16,9 @@ import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-compo
 
 export class CategoryChartOverlapColumnsComponent implements AfterViewInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxCategoryChartComponent;
-    @ViewChild("legend")
+    @ViewChild("legend", { static: true })
     public legend: IgxLegendComponent;
     public data: any;
     public includedProperties: any;

@@ -10,7 +10,7 @@ import { filter } from "rxjs/operators";
     templateUrl: "./tabs-sample-5.component.html"
 })
 export class TabsSample5Component implements OnDestroy {
-    @ViewChild("tabs1")
+    @ViewChild("tabs1", { static: true })
     public tabs: IgxTabsComponent;
 
     private _navigationStartSubscription: Subscription;

@@ -31,7 +31,7 @@ export class NavdrawerComponent  {
   ];
   public selected = "Avatar";
 
-  @ViewChild(IgxNavigationDrawerComponent)
+  @ViewChild(IgxNavigationDrawerComponent, { static: true })
   public drawer: IgxNavigationDrawerComponent;
 
   public drawerState = {

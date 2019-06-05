@@ -19,7 +19,7 @@ export class CardSample4Component implements OnInit {
     public details: IWeatherDetails[];
     public days: IWeatherList[];
 
-    @ViewChild(IgxExpansionPanelComponent)
+    @ViewChild(IgxExpansionPanelComponent, { static: true })
     public panel: IgxExpansionPanelComponent;
 
     constructor(private iconService: IgxIconService) {

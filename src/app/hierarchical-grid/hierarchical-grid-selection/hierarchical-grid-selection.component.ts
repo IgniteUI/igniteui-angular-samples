@@ -12,7 +12,7 @@ export class HGridSelectionSampleComponent implements OnInit {
     public localdata;
     public selection = true;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {

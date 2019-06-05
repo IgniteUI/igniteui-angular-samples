@@ -8,7 +8,7 @@ import { IgxToggleDirective } from "igniteui-angular";
 })
 export class ToggleSample1Component implements OnInit {
 
-  @ViewChild(IgxToggleDirective) public toggle: IgxToggleDirective;
+  @ViewChild(IgxToggleDirective, { static: true }) public toggle: IgxToggleDirective;
   constructor() { }
 
   public ngOnInit() {}

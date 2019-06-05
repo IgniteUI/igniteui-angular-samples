@@ -19,19 +19,19 @@ import { filter, takeUntil } from "rxjs/operators";
 })
 export class OverlayPositionSample1Component implements OnInit, OnDestroy {
 
-    @ViewChild("directionDemo")
+    @ViewChild("directionDemo", { static: true })
     public directionDemo: ElementRef;
 
-    @ViewChild("autoDemo")
+    @ViewChild("autoDemo", { static: true })
     public autoDemo: ElementRef;
 
-    @ViewChild("elasticDemo")
+    @ViewChild("elasticDemo", { static: true })
     public elasticDemo: ElementRef;
 
-    @ViewChild("overlayDemo")
+    @ViewChild("overlayDemo", { static: true })
     public overlayDemo: ElementRef;
 
-    @ViewChild("mainContainer")
+    @ViewChild("mainContainer", { static: true })
     public mainContainer: ElementRef;
 
     private destroy$ = new Subject<boolean>();
