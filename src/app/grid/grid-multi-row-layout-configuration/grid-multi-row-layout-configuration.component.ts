@@ -629,7 +629,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                          prevCellRowIndex < prevCell.rowStart + prevCell.rowSpan - 1;
                          prevCellRowIndex++) {
 
-                            const prevCellEndIndex = this.findNextCellIndex(curBlock.collection[prevCellRowIndex],
+                            const prevCellEndIndex = this.getRightInsertIndex(curBlock.collection[prevCellRowIndex],
                                     prevCell.colStart, prevCell.colSpan);
                             curBlock.collection[prevCellRowIndex].splice(prevCellEndIndex, 0 , {
                                 colSpan: 1,
@@ -724,16 +724,28 @@ export class GridMultiRowLayoutConfigurationComponent {
         }
     }
 
-    public findNextCellIndex(rowCollection, cellColStart, cellColSpan) {
-        let nextCellIndex = 0;
+    public getRightInsertIndex(rowCollection, cellColStart, cellColSpan) {
+        let rightCellIndex = 0;
         for (let cellIndex = 0; cellIndex < rowCollection.length; cellIndex++) {
             if (rowCollection[cellIndex].colStart >= cellColStart + cellColSpan) {
                 break;
             } else {
-                nextCellIndex = cellIndex;
+                rightCellIndex = cellIndex;
             }
         }
-        return nextCellIndex;
+        return rightCellIndex;
+    }
+
+    public getLeftInsertIndex(rowCollection, cellColStart) {
+        let leftCellIndex = 0;
+        let index = 0;
+        for (index = 0; index < rowCollection.length; index++) {
+            leftCellIndex = index;
+            if (rowCollection[index].colStart >= cellColStart) {
+                break;
+            }
+        }
+        return index === rowCollection.length ? index : leftCellIndex;
     }
 
     public pointerUpResizeBottom(event, cellRef, blockIndex, rowIndex, colIndex) {
@@ -751,14 +763,32 @@ export class GridMultiRowLayoutConfigurationComponent {
                     // the way it should be cut and cells on the right should be added.
                     const curCell = curBlock.collection[curRowIndex][j];
                     let curCellStart = curCell.colStart;
-                    const curCellEnd = curCell.colStart + curCell.colSpan;
+                    let curCellEnd = curCell.colStart + curCell.colSpan;
                     const resizedCellStart = this.curResizedCell.colStart;
                     const resizedCellEnd = this.curResizedCell.colStart + this.curResizedCell.colSpan;
 
-                    if (curCellStart < resizedCellEnd && curCellEnd > resizedCellEnd && curCell.rowSpan === 1) {
+                    if (curCellStart < resizedCellEnd && curCellStart < resizedCellStart &&
+                         curCellEnd > resizedCellEnd && curCell.rowSpan === 1) {
                         // If current cell spans the way of the resized
                         // down cell and the end is spanning more to the right,
                         // cut the current cell and add the needed cells after the resized cell ends.
+                        const numNewCells = curCellEnd - resizedCellEnd;
+                        for (let i = 0; i < numNewCells; i++) {
+                            curCell.colSpan--;
+                            curCellEnd--;
+                            curBlock.collection[curRowIndex].splice(j + 1, 0, {
+                                colSpan: 1,
+                                colStart: curCellEnd,
+                                hovered: false,
+                                key: "",
+                                rowSpan: 1,
+                                rowStart: curRowIndex + 1,
+                                selected: false,
+                                width: ""
+                            });
+                        }
+                    } else if (resizedCellStart <= curCellStart && curCellStart < resizedCellEnd &&
+                            curCellEnd > resizedCellEnd && curCell.rowSpan === 1) {
                         const numNewCells = resizedCellEnd - curCellStart;
                         curCell.colSpan -= numNewCells;
                         curCell.colStart += numNewCells;
@@ -769,7 +799,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                                 curCellRowIndex < (curCell.rowStart + curCell.rowSpan - 1);
                                 curCellRowIndex++) {
 
-                            const prevCellIndex = this.findNextCellIndex(curBlock.collection[curCellRowIndex],
+                            const prevCellIndex = this.getRightInsertIndex(curBlock.collection[curCellRowIndex],
                                 curCell.colStart, curCell.colSpan) + 1;
                             for (let i = 0 ; i < numNewCells; i++) {
                                 // We add them anyway, even if they shouldn't be added to be sure.
@@ -788,9 +818,14 @@ export class GridMultiRowLayoutConfigurationComponent {
                         }
                         curCell.colSpan -= numNewCells;
                         curCell.colStart += numNewCells;
-                    }
-
-                    if (curCellStart <= resizedCellEnd &&
+                    } else if (resizedCellStart <= curCellStart && curCellStart < resizedCellEnd &&
+                            curCellEnd <= resizedCellEnd && curCell.rowSpan > 1) {
+                        const prevCellIndex = this.getLeftInsertIndex(curBlock.collection[curRowIndex], curCellStart);
+                        curCell.rowStart++;
+                        curCell.rowSpan--;
+                        curBlock.collection[curRowIndex + 1].splice(prevCellIndex, 0, curCell);
+                        curBlock.collection[curRowIndex].splice(prevCellIndex, 1);
+                    } else if (curCellStart <= resizedCellEnd &&
                             curCellEnd >= resizedCellStart && curCellEnd <= resizedCellEnd) {
                         // If current cell is in the way of resized down cell decrease the size of the current cell.
                         const cellsToFill = curCellEnd - resizedCellStart;
@@ -799,7 +834,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                                 curCellRowIndex < (curCell.rowStart + curCell.rowSpan - 1);
                                 curCellRowIndex++) {
 
-                            const nextCellIndex = this.findNextCellIndex(curBlock.collection[curCellRowIndex],
+                            const nextCellIndex = this.getRightInsertIndex(curBlock.collection[curCellRowIndex],
                                 curCell.colStart, curCell.colSpan);
                             for (let i = 0 ; i < cellsToFill; i++) {
                                 // We add them anyway, even if they shouldn't be added to be sure.
@@ -831,13 +866,7 @@ export class GridMultiRowLayoutConfigurationComponent {
             const startIndex = this.curResizedCell.rowStart + this.curResizedCell.rowSpan - 2;
             let startCellIndex = 0;
             for (let i = startIndex; i > startIndex + this.rowSpanIncrease; i--) {
-
-                for (let j = 0; j < curBlock.collection[i].length; j++) {
-                    if (curBlock.collection[i][j].colStart >= this.curResizedCell.colStart) {
-                        startCellIndex = j;
-                        break;
-                    }
-                }
+                startCellIndex = this.getLeftInsertIndex(curBlock.collection[i], this.curResizedCell.colStart);
                 for (let j = 0; j < this.curResizedCell.colSpan; j++) {
                     curBlock.collection[i].splice(startCellIndex + j, 0, {
                         colSpan: 1,
