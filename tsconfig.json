@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "importHelpers": true,
+    "module": "esnext",
     "outDir": "./dist/out-tsc",
     "sourceMap": false,
     "declaration": false,
@@ -9,7 +10,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "downlevelIteration": true, // required for excel library
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
