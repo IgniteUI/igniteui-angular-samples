@@ -791,8 +791,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                     }
 
                     if (curCellStart <= resizedCellEnd &&
-                            curCellEnd >= resizedCellStart &&
-                            curCellEnd <= resizedCellEnd) {
+                            curCellEnd >= resizedCellStart && curCellEnd <= resizedCellEnd) {
                         // If current cell is in the way of resized down cell decrease the size of the current cell.
                         const cellsToFill = curCellEnd - resizedCellStart;
                         curCell.colSpan -= cellsToFill;
@@ -833,17 +832,14 @@ export class GridMultiRowLayoutConfigurationComponent {
             let startCellIndex = 0;
             for (let i = startIndex; i > startIndex + this.rowSpanIncrease; i--) {
 
-                // Get first cell after current resized multirow cell
                 for (let j = 0; j < curBlock.collection[i].length; j++) {
-                    if (curBlock.collection[i][j].colStart > this.curResizedCell.colStart) {
-                        break;
-                    } else {
+                    if (curBlock.collection[i][j].colStart >= this.curResizedCell.colStart) {
                         startCellIndex = j;
+                        break;
                     }
                 }
-
                 for (let j = 0; j < this.curResizedCell.colSpan; j++) {
-                    curBlock.collection[i].splice(startCellIndex + 1 + j, 0, {
+                    curBlock.collection[i].splice(startCellIndex + j, 0, {
                         colSpan: 1,
                         colStart: this.curResizedCell.colStart + j,
                         hovered: false,
