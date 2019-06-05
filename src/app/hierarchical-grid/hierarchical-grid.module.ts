@@ -45,6 +45,7 @@ import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarc
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -82,6 +83,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         HierarchicalGridRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,

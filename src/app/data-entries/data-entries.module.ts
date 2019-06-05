@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
@@ -20,7 +21,7 @@ import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3
 import { ButtonGroupSampleComponent } from "./buttonGroup/button-group-sample-4/button-group-sample.component";
 import { ButtonGroupSample5Component } from "./buttonGroup/button-group-sample-5/button-group-sample-5.component";
 import { ButtonsDisplayDensityComponent } from "./buttons/buttons-display-density/buttons-display-density.component";
-import { ButtonsRoundnessComponent} from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
+import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
 import { ButtonsSample2Component } from "./buttons/buttons-sample-2/buttons-sample-2.component";
 import { ButtonsSample3Component } from "./buttons/buttons-sample-3/buttons-sample-3.component";
@@ -110,6 +111,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         ReactiveFormsModule,
         DataEntriesRoutingModule,
         IgxAutocompleteModule,

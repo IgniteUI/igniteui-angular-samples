@@ -2,16 +2,18 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
+import {
+    IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
     IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
-    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+} from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
-import {GridCompositeDataComponent} from "./grid-composite-data-binding/grid-composite-data.component";
+import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
@@ -56,6 +58,7 @@ import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
+import { HttpClientModule } from '@angular/common/http';
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -112,6 +115,7 @@ import { DataService } from "./services/data.service";
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         GridsRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
@@ -144,4 +148,4 @@ import { DataService } from "./services/data.service";
         IgxExcelExporterService
     ]
 })
-export class GridsModule {}
+export class GridsModule { }
