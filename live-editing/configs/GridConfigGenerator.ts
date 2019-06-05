@@ -70,8 +70,10 @@ import { GridGroupBySummarySampleComponent
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
+import {
+    GridMultiRowLayoutConfigurationComponent
+} from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
-import { GridMultiRowLayoutConfigurationComponent } from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
