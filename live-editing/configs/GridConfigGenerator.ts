@@ -68,8 +68,13 @@ import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-samp
 import { GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
+
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
+
+// tslint:disable-next-line: max-line-length
+import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -623,6 +628,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule, IgxDialogModule]
             }),
             component: GridDragSampleComponent
+        }));
+
+        configs.push(new Config({
+            component: GridMRLCustomNavigationComponent,
+            additionalFiles: ["/src/app/data/company-data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMRLCustomNavigationComponent, IgxGridModule],
+                ngDeclarations: [GridMRLCustomNavigationComponent],
+                ngImports: [IgxGridModule]
+            })
         }));
 
         return configs;
