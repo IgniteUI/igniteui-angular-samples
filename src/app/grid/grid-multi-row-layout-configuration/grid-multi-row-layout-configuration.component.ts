@@ -768,7 +768,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                     const resizedCellEnd = this.curResizedCell.colStart + this.curResizedCell.colSpan;
 
                     if (curCellStart < resizedCellEnd && curCellStart < resizedCellStart &&
-                         curCellEnd > resizedCellEnd && curCell.rowSpan === 1) {
+                         curCellEnd >= resizedCellEnd && curCell.rowSpan === 1) {
                         // If current cell spans the way of the resized
                         // down cell and the end is spanning more to the right,
                         // cut the current cell and add the needed cells after the resized cell ends.
@@ -787,20 +787,22 @@ export class GridMultiRowLayoutConfigurationComponent {
                                 width: ""
                             });
                         }
+                        curCell.colSpan -= this.curResizedCell.colSpan;
                     } else if (resizedCellStart <= curCellStart && curCellStart < resizedCellEnd &&
                             curCellEnd > resizedCellEnd && curCell.rowSpan === 1) {
                         const numNewCells = resizedCellEnd - curCellStart;
                         curCell.colSpan -= numNewCells;
                         curCell.colStart += numNewCells;
                         curCellStart += numNewCells;
-                    } else if (curCellStart < resizedCellEnd && curCellEnd > resizedCellEnd && curCell.rowSpan > 1) {
+                    } else if (resizedCellStart <= curCellStart && curCellStart < resizedCellEnd &&
+                            curCellEnd > resizedCellEnd && curCell.rowSpan > 1) {
                         const numNewCells = resizedCellEnd - curCellStart;
                         for (let curCellRowIndex = curCell.rowStart;
                                 curCellRowIndex < (curCell.rowStart + curCell.rowSpan - 1);
                                 curCellRowIndex++) {
 
                             const prevCellIndex = this.getRightInsertIndex(curBlock.collection[curCellRowIndex],
-                                curCell.colStart, curCell.colSpan) + 1;
+                                curCell.colStart, curCell.colSpan);
                             for (let i = 0 ; i < numNewCells; i++) {
                                 // We add them anyway, even if they shouldn't be added to be sure.
                                 // On the next pass in the loop they will be removed.
@@ -828,6 +830,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                     } else if (curCellStart <= resizedCellEnd &&
                             curCellEnd >= resizedCellStart && curCellEnd <= resizedCellEnd) {
                         // If current cell is in the way of resized down cell decrease the size of the current cell.
+                        // To do: this case probably can be combined with the first one.
                         const cellsToFill = curCellEnd - resizedCellStart;
                         curCell.colSpan -= cellsToFill;
                         for (let curCellRowIndex = curCell.rowStart;
@@ -851,11 +854,16 @@ export class GridMultiRowLayoutConfigurationComponent {
                                 });
                             }
                         }
+                    } else if (curCellStart < resizedCellStart && curCellStart < resizedCellEnd &&
+                            curCellEnd > resizedCellStart && resizedCellEnd < curCellEnd  && curCell.rowSpan > 1) {
+                        this.rowSpanIncrease = increaseIndex - 1;
+                        break;
                     }
 
                     if (curCell.colSpan <= 0) {
                         // If the current cell span is <= 0 it should be removed.
-                        curBlock.collection[curRowIndex].splice(j, 1);
+                        curBlock.collection[curRowIndex] =
+                            curBlock.collection[curRowIndex].filter((cell) => cell.colSpan > 0);
                     }
                 }
             }
@@ -885,7 +893,8 @@ export class GridMultiRowLayoutConfigurationComponent {
             if (this.curResizedCell.rowSpan === 0) {
                 // We use the last cell index since when rowSpan reaches 0 it will point to the column index of
                 // the top row of the cell. This is where the cell information is saved when it spans more rows.
-                curBlock.collection[rowIndex].splice(startCellIndex, 1);
+                curBlock.collection[this.curResizedCell.rowStart - 1] =
+                    curBlock.collection[this.curResizedCell.rowStart - 1].filter((cell) => cell.rowSpan > 0);
             }
         }
 
@@ -1000,8 +1009,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                 key: event.target.value
             };
             this.blocks.push(newBlock);
-
-            chip.data.clicked = false;
+            event.target.value = "";
             this.selectedBlock = newBlock;
 
             requestAnimationFrame(() => {
@@ -1020,7 +1028,7 @@ export class GridMultiRowLayoutConfigurationComponent {
                 field: event.target.value,
                 key: event.target.value
             });
-            chip.data.clicked = false;
+            event.target.value = "";
         }
     }
 
