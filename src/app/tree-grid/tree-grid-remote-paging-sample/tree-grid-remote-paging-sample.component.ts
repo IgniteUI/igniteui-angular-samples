@@ -20,8 +20,8 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
     public totalCount = 0;
     public maxPerPage = Number.MAX_SAFE_INTEGER;
 
-    @ViewChild("grid1")
-    public grid1: IgxTreeGridComponent;
+    @ViewChild("treeGrid")
+    public treeGrid: IgxTreeGridComponent;
     public data: Observable<any[]>;
 
     public get perPage(): number {
@@ -33,7 +33,7 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
         this.paginate(0, true);
     }
 
-    private _perPage = 12;
+    private _perPage = 10;
     private _dataLengthSubscriber;
 
     constructor(
@@ -47,7 +47,7 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
             this.totalCount = data;
             this.totalPages = Math.ceil(data / this.perPage);
             this.buttonDeselection(this.page, this.totalPages);
-            this.grid1.isLoading = false;
+            this.treeGrid.isLoading = false;
         });
     }
 
@@ -58,7 +58,7 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
     }
 
     public ngAfterViewInit() {
-        this.grid1.isLoading = true;
+        this.treeGrid.isLoading = true;
 
         this.remoteService.getData(0, this.perPage);
         this.remoteService.getDataLength();
