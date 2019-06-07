@@ -113,7 +113,7 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
         PlanetComponent,
         GridDragBaseSampleComponent,
         GridDragToGridSampleComponent,
-        GridMRLCustomNavigationComponent
+        GridMRLCustomNavigationComponent,
         GridDragToGridSampleComponent,
         GridRowReorderComponent
     ],
