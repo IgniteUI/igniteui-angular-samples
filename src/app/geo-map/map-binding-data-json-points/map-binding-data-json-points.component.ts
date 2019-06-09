@@ -59,44 +59,9 @@ export class MapBindingDataJsonPointsComponent implements AfterViewInit {
         geoSeries.longitudeMemberPath = "longitude";
         geoSeries.markerBrush = "LightGray";
         geoSeries.markerOutline = "Black";
-        //geoSeries.tooltipTemplate = this.createTooltip;
+        geoSeries.tooltipTemplate = this.tooltip;
 
         // adding symbol series to the geographic amp
         this.map.series.add(geoSeries);
-    }
-
-    public createTooltip(context: any) {
-        const dataContext = context.dataContext as DataContext;
-        if (!dataContext) return null;
-
-        const series = dataContext.series as any;
-        if (!series) return null;
-
-        const dataItem = dataContext.item as any;
-        if (!dataItem) return null;
-
-        const pop = dataItem.population.toFixed(1) + " M";
-        const lat = WorldUtils.toStringLat(dataItem.latitude);
-        const lon = WorldUtils.toStringLon(dataItem.longitude);
-
-        console.log("createTooltip ");
-        return ;
-        // <div>
-        //     <div className="tooltipTitle" >{dataItem.city}</div>
-        //     <div className="tooltipBox">
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Latitude:</div>
-        //             <div className="tooltipVal">{lat}</div>
-        //         </div>
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Longitude:</div>
-        //             <div className="tooltipVal">{lon}</div>
-        //         </div>
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Population</div>
-        //             <div className="tooltipVal">{pop}</div>
-        //         </div>
-        //     </div>
-        // </div>
     }
 }

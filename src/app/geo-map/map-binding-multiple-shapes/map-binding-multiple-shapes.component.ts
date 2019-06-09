@@ -18,45 +18,47 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
 
     @ViewChild ("map")
     public map: IgxGeographicMapComponent;
+
     @ViewChild ("shapeSeries")
     public shapeSeries: IgxGeographicShapeSeriesComponent;
-    @ViewChild ("shapeSeries")
+
+    @ViewChild ("polylineSeries")
     public polylineSeries: IgxGeographicPolylineSeriesComponent;
+
     @ViewChild ("symbolSeries")
     public symbolSeries: IgxGeographicSymbolSeriesComponent;
-    @ViewChild("template")
-    public tooltip: TemplateRef<object>;
-  
+
+    @ViewChild("polylineTooltipTemplate")
+    public polylineTooltipTemplate: TemplateRef<object>;
+
+    @ViewChild("shapeTooltipTemplate")
+    public shapeTooltipTemplate: TemplateRef<object>;
+
+    @ViewChild("pointTooltipTemplate")
+    public pointTooltipTemplate: TemplateRef<object>;
+
     constructor() {
     }
 
     public ngAfterViewInit(): void {
-       
-        //this.map.backgroundContent = {};
+
         this.map.windowRect = { left: 0.2, top: 0.1, width: 0.6, height: 0.6 };
 
-        console.log("series.count " + this.map.series.count);
-        console.log("actualSeries.length " + this.map.actualSeries.length);
-
-        // this.map.actualSeries[0].tooltipTemplate = this.getPolygonsTooltip;
-        // this.map.actualSeries[1].tooltipTemplate = this.getPolylinesTooltip;
-        // this.map.actualSeries[2].tooltipTemplate = this.getPointTooltip;
-        
-        const url = DataUtils.getPublicURL();
-        // loading a shapefile with geographic polygons
+        //loading a shapefile with geographic polygons
         const sdsPolygons = new ShapeDataSource();
         sdsPolygons.importCompleted.subscribe(() => this.onPolygonsLoaded(sdsPolygons, ""));
         sdsPolygons.shapefileSource = "assets/Shapes/WorldCountries.shp";
         sdsPolygons.databaseSource  = "assets/Shapes/WorldCountries.dbf";
         sdsPolygons.dataBind();
 
+        //loading a shapefile with geographic polylines at runtime.
         const sdsPolylines = new ShapeDataSource();
-        sdsPolylines.importCompleted.subscribe(() => this.onPolylinesLoaded(sdsPolylines, ""));
         sdsPolylines.shapefileSource = "assets/Shapes/WorldCableRoutes.shp";
         sdsPolylines.databaseSource  = "assets/Shapes/WorldCableRoutes.dbf";
         sdsPolylines.dataBind();
+        sdsPolylines.importCompleted.subscribe(() => this.onPolylinesLoaded(sdsPolylines, ""));
 
-        // loading a shapefile with geographic points
+        //loading a shapefile with geographic points
         const sdsPoints = new ShapeDataSource();
         sdsPoints.importCompleted.subscribe(() => this.onPointsLoaded(sdsPoints, ""));
         sdsPoints.shapefileSource = "assets/Shapes/WorldCities.shp";
@@ -82,8 +84,8 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
                 geoLocations.push(location);
             }
         }
-        this.shapeSeries.dataSource = geoLocations;
-        
+        this.symbolSeries.dataSource = geoLocations;
+        this.symbolSeries.tooltipTemplate = this.pointTooltipTemplate;
     }
 
     public onPolylinesLoaded(sds: ShapeDataSource, e: any) {
@@ -91,7 +93,7 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
 
         const geoPolylines: any[] = [];
         // parsing shapefile data and creating geo-polygons
-        sds.getPointData().forEach(record => {
+        for (const record of sds.getPointData()) {
             // using field/column names from .DBF file
             const route = {
                 points: record.points,
@@ -103,9 +105,13 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
                 service: record.fieldValues.InService
             };
             geoPolylines.push(route);
-        });
-        this.polylineSeries.dataSource = geoPolylines;
-        //this.setState({ polylines: geoPolylines });
+        };
+        this.polylineSeries.dataSource = geoPolylines;       
+        this.polylineSeries.shapeMemberPath = "points";
+        this.polylineSeries.shapeFilterResolution = 2.0;
+        this.polylineSeries.shapeStrokeThickness = 2;
+        this.polylineSeries.shapeStroke = "rgba(252, 32, 32, 0.9)";
+        this.polylineSeries.tooltipTemplate = this.polylineTooltipTemplate;
     }
 
     public onPolygonsLoaded(sds: ShapeDataSource, e: any) {
@@ -123,106 +129,8 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
             };
             geoPolygons.push(country);
         });
-        this.symbolSeries.dataSource = geoPolygons;
-        //this.setState({ polygons: geoPolygons });
-    }
+        this.shapeSeries.dataSource = geoPolygons;
+        this.shapeSeries.tooltipTemplate = this.shapeTooltipTemplate;
 
-    public getPolygonsTooltip(context: any) {
-        const dataContext = context.dataContext as DataContext;
-        if (!dataContext) return null;
-
-        const series = dataContext.series as any;
-        if (!series) return null;
-
-        const dataItem = dataContext.item as any;
-        if (!dataItem) return null;
-
-        const pop = WorldUtils.toStringAbbr(dataItem.population);
-        const gdp = WorldUtils.toStringAbbr(dataItem.gdp * 1000000 / dataItem.population);
-        const brush = series.shapeStroke;
-
-        return ;
-        // <div className="tooltipBox">
-        //     <div className="tooltipTitle" style={{ color: brush }}>{dataItem.name}</div>
-        //     <div className="tooltipTable">
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Population</div>
-        //             <div className="tooltipVal">{pop}</div>
-        //         </div>
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">GDP</div>
-        //             <div className="tooltipVal">{gdp}</div>
-        //         </div>
-        //     </div>
-        // </div>
-    }
-
-    public getPointTooltip(context: any) {
-        const dataContext = context.dataContext as DataContext;
-        if (!dataContext) return null;
-
-        const series = dataContext.series as any;
-        if (!series) return null;
-
-        const dataItem = dataContext.item as any;
-        if (!dataItem) return null;
-
-        const brush = series.markerOutline;
-        const pop = WorldUtils.toStringAbbr(dataItem.population);
-        const lat = WorldUtils.toStringLat(dataItem.latitude);
-        const lon = WorldUtils.toStringLon(dataItem.longitude);
-
-        return ;
-        // <div className="tooltipBox">
-        //     <div className="tooltipTitle" style={{ color: brush }}>{dataItem.city}</div>
-        //     <div className="tooltipTable">
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Latitude:</div>
-        //             <div className="tooltipVal">{lat}</div>
-        //         </div>
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Longitude:</div>
-        //             <div className="tooltipVal">{lon}</div>
-        //         </div>
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Population:</div>
-        //             <div className="tooltipVal">{pop}</div>
-        //         </div>
-        //     </div>
-        // </div>
-    }
-
-    public getPolylinesTooltip(context: any) {
-        const dataContext = context.dataContext as DataContext;
-        if (!dataContext) return null;
-
-        const series = dataContext.series as any;
-        if (!series) return null;
-
-        // console.log("getPolylinesTooltip.series " );
-        const dataItem = dataContext.item as any;
-        if (!dataItem) return null;
-
-        const capacity = dataItem.capacity + " GB/s";
-        const distance = dataItem.distance + " KM";
-
-        return ;
-        // <div className="tooltipBox">
-        //     <div className="tooltipTitle" style={{ color: "Purple" }}>{dataItem.name}</div>
-        //     <div className="tooltipTable">
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Distance</div>
-        //             <div className="tooltipVal">{distance}</div>
-        //         </div>
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Capacity</div>
-        //             <div className="tooltipVal">{capacity}</div>
-        //         </div>
-        //         <div className="tooltipRow">
-        //             <div className="tooltipLbl">Service</div>
-        //             <div className="tooltipVal">{dataItem.service}</div>
-        //         </div>
-        //     </div>
-        // </div>
     }
 }

@@ -15,7 +15,7 @@ export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
     public map: IgxGeographicMapComponent;
 
     @ViewChild("template")
-    public tooltip: TemplateRef<object>;
+    public tooltipTemplate: TemplateRef<object>;
 
     public data: any;
     constructor() {
@@ -51,7 +51,7 @@ export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
         geoSeries.shapeMemberPath = "points";
         geoSeries.brush = "rgba(146, 146, 146, 0.6)";
         geoSeries.outline = "Black";
-        //geoSeries.tooltipTemplate = this.createTooltip;
+        geoSeries.tooltipTemplate = this.tooltipTemplate;
         geoSeries.thickness = 1;
 
         this.map.series.add(geoSeries);

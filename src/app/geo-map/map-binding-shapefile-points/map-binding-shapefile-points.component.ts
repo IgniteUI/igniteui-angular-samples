@@ -1,33 +1,31 @@
 import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
+import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicSymbolSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
-import { WorldLocations } from "../../utilities/WorldLocations";
-import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
-import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
-import { WorldUtils } from "../../utilities/WorldUtils";
 
 @Component({
-  selector: 'app-map-binding-shapefile-points',
-  templateUrl: './map-binding-shapefile-points.component.html',
-  styleUrls: ['./map-binding-shapefile-points.component.scss']
+  selector: "app-map-binding-shapefile-points",
+  templateUrl: "./map-binding-shapefile-points.component.html",
+  styleUrls: ["./map-binding-shapefile-points.component.scss"]
 })
 export class MapBindingShapefilePointsComponent implements AfterViewInit {
     @ViewChild ("map")
     public map: IgxGeographicMapComponent;
-  
-    @ViewChild("template")
-    public tooltip: TemplateRef<object>;
-  constructor() { }
 
-  ngAfterViewInit() {
+    @ViewChild("template")
+    public tooltipTemplate: TemplateRef<object>;
+    constructor() { }
+
+    ngAfterViewInit() {
     const sds = new ShapeDataSource();
     sds.shapefileSource = "assets/Shapes/WorldCities.shp";
     sds.databaseSource  = "assets/Shapes/WorldCities.dbf";
     sds.dataBind();
     sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
   }
-  public onDataLoaded(sds: ShapeDataSource, e: any) {
+    public onDataLoaded(sds: ShapeDataSource, e: any) {
     const shapeRecords = sds.getPointData();
     console.log("loaded /Shapes/WorldCities.shp " + shapeRecords.length);
 
@@ -54,7 +52,7 @@ export class MapBindingShapefilePointsComponent implements AfterViewInit {
     geoSeries.longitudeMemberPath = "longitude";
     geoSeries.markerBrush = "LightGray";
     geoSeries.markerOutline = "Black";
-    //geoSeries.tooltipTemplate = this.createTooltip;
+    geoSeries.tooltipTemplate = this.tooltipTemplate;
 
     this.map.series.add(geoSeries);
 }

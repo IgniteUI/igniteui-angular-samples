@@ -15,6 +15,7 @@ export class MapTypeScatterContourSeriesComponent implements AfterViewInit {
 
     @ViewChild ("map")
     public map: IgxGeographicMapComponent;
+
     @ViewChild ("template")
     public tooltip: TemplateRef<object>;
     constructor() {

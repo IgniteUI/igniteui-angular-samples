@@ -4,30 +4,29 @@
         height="500px"
         zoomable="true" >
     </igx-geographic-map>
-  </div>
-  <div class="my-legend">
-        <div class="legend-title">Geographic Map: Data Model</div>
-       
-    </div>
+</div>
+
+<div class="my-legend">
+    <div class="legend-title">Geographic Map: Data Model</div>
+    
+</div>
   
-<ng-template let-series="series" let-item="item" #template>
+<ng-template let-series="series" let-item="item" #pointSeriestemplate>
         <div>
-            <div *ngIf="item.org;then hasOrg; else notOrg" ></div>
             <span [style.color]="series.brush">
-                {{item.name}} 
+                {{item.country}} 
             </span>
-            <span>
-                {{item.pop}} M 
-            </span>
-        </div>
-        <ng-template #hasOrg>
-            <span>
-                {{item.org}}
-            </span>   
-            <br />
-        </ng-template>
-         <ng-template #notOrg>
-            <span>
-            </span>
-         </ng-template>
-    </ng-template>
+        </div>      
+</ng-template>
+
+<ng-template let-series="series" let-item="item" #polylineSeriesTooltipTemplate>
+    <div>
+        <span [style.color]="series.brush">
+            Departure: {{item.origin.country}}
+        </span>
+        <br/>
+        <span [style.color]="series.brush">
+            Arrival: {{item.dest.country}}
+        </span>
+    </div>      
+</ng-template>

@@ -1,19 +1,18 @@
-import { AfterViewInit, Component, ViewChild, TemplateRef } from "@angular/core";
+import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
+import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
+import { IgxValueBrushScaleComponent } from "igniteui-angular-charts/ES5/igx-value-brush-scale-component";
+import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
+import { DataContext } from "igniteui-angular-core/ES5/igx-data-context";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
+import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicProportionalSymbolSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-proportional-symbol-series-component";
-import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
-import { IgxValueBrushScaleComponent } from 'igniteui-angular-charts/ES5/igx-value-brush-scale-component';
-import { DataContext } from 'igniteui-angular-core/ES5/igx-data-context';
-import { IgxSizeScaleComponent } from 'igniteui-angular-charts/ES5/igx-size-scale-component';
-import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 import { WorldLocations } from "../../utilities/WorldLocations";
 
-
 @Component({
-  selector: 'app-map-type-scatter-bubble-series',
-  templateUrl: './map-type-scatter-bubble-series.component.html',
-  styleUrls: ['./map-type-scatter-bubble-series.component.scss']
+  selector: "app-map-type-scatter-bubble-series",
+  templateUrl: "./map-type-scatter-bubble-series.component.html",
+  styleUrls: ["./map-type-scatter-bubble-series.component.scss"]
 })
 export class MapTypeScatterBubbleSeriesComponent implements AfterViewInit {
 
@@ -24,7 +23,7 @@ export class MapTypeScatterBubbleSeriesComponent implements AfterViewInit {
     constructor() {
     }
 
-  public ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
     const sds = new ShapeDataSource();
     sds.shapefileSource = "assets/Shapes/WorldTemperatures.shp";
     sds.databaseSource  = "assets/Shapes/WorldTemperatures.dbf";
@@ -32,7 +31,7 @@ export class MapTypeScatterBubbleSeriesComponent implements AfterViewInit {
     sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
 }
 
-public onDataLoaded(sds: ShapeDataSource, e: any) {
+    public onDataLoaded(sds: ShapeDataSource, e: any) {
     const shapeRecords = sds.getPointData();
     console.log("loaded contour shapes: " + shapeRecords.length + " from /Shapes/WorldTemperatures.shp");
 
@@ -57,7 +56,7 @@ public onDataLoaded(sds: ShapeDataSource, e: any) {
     this.addSeriesWith(WorldLocations.getAll());
 }
 
-public addSeriesWith(locations: any[])
+    public addSeriesWith(locations: any[])
     { 
         const sizeScale = new IgxSizeScaleComponent();
         sizeScale.minimumValue = 4;
@@ -84,22 +83,9 @@ public addSeriesWith(locations: any[])
         symbolSeries.latitudeMemberPath = "lat";
         symbolSeries.longitudeMemberPath = "lon";
         symbolSeries.markerOutline = "rgba(0,0,0,0.3)";
-        symbolSeries.tooltipTemplate = this.createContourTooltip(locations);
+        symbolSeries.tooltipTemplate = this.tooltipTemplate;
 
         this.map.series.add(symbolSeries);
     }
-
-    public createContourTooltip(context: any) {
-    const dataContext = context.dataContext as DataContext;
-    if (!dataContext) return null;
-
-    const dataItem = dataContext.item as any;
-    if (!dataItem) return null;
-
-    // dataContext.item is always a number for contour series
-    const tmp = dataItem.toFixed(1) + "°C";
-    this.tooltipTemplate.createEmbeddedView(() => tmp);
-    return this.tooltipTemplate;
-}
 
 }

@@ -1,15 +1,15 @@
-import { AfterViewInit, Component, ViewChild, TemplateRef } from "@angular/core";
-import { IgxGeographicScatterAreaSeriesComponent }
- from "igniteui-angular-maps/ES5/igx-geographic-scatter-area-series-component";
- import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
- import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
- import { IgxCustomPaletteColorScaleComponent } from 'igniteui-angular-charts/ES5/igx-custom-palette-color-scale-component';
- import { DataContext } from 'igniteui-angular-core/ES5/igx-data-context';
+import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
+import { IgxCustomPaletteColorScaleComponent
+} from "igniteui-angular-charts/ES5/igx-custom-palette-color-scale-component";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
+import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
+import { IgxGeographicScatterAreaSeriesComponent
+} from "igniteui-angular-maps/ES5/igx-geographic-scatter-area-series-component";
 
 @Component({
-  selector: 'app-map-type-scatter-area-series',
-  templateUrl: './map-type-scatter-area-series.component.html',
-  styleUrls: ['./map-type-scatter-area-series.component.scss']
+  selector: "app-map-type-scatter-area-series",
+  templateUrl: "./map-type-scatter-area-series.component.html",
+  styleUrls: ["./map-type-scatter-area-series.component.scss"]
 })
 export class MapTypeScatterAreaSeriesComponent implements AfterViewInit {
 
@@ -20,7 +20,7 @@ export class MapTypeScatterAreaSeriesComponent implements AfterViewInit {
     constructor() {
     }
 
-  public ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
     const sds = new ShapeDataSource();
     sds.shapefileSource = "assets/Shapes/WorldTemperatures.shp";
     sds.databaseSource  = "assets/Shapes/WorldTemperatures.dbf";
@@ -28,7 +28,7 @@ export class MapTypeScatterAreaSeriesComponent implements AfterViewInit {
     sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
 }
 
-public onDataLoaded(sds: ShapeDataSource, e: any) {
+    public onDataLoaded(sds: ShapeDataSource, e: any) {
     const shapeRecords = sds.getPointData();
     console.log("loaded contour shapes: " + shapeRecords.length + " from /Shapes/WorldTemperatures.shp");
 
@@ -38,13 +38,13 @@ public onDataLoaded(sds: ShapeDataSource, e: any) {
         // using only major contours (every 10th degrees Celsius)
         if (temp % 10 === 0 && temp >= 0) {
             for (const shapes of record.points) {
-                 for (let i = 0; i < shapes.length; i++) {
-                    if (i % 5 === 0) {
-                        const p = shapes[i];
-                        const item = { lon: p.x, lat: p.y, value: temp};
-                        contourPoints.push(item);
-                    }
-                 }
+                for (let i = 0; i < shapes.length; i++) {
+                if (i % 5 === 0) {
+                    const p = shapes[i];
+                    const item = { lon: p.x, lat: p.y, value: temp};
+                    contourPoints.push(item);
+                }
+                }
             }
         }
     }
@@ -53,8 +53,7 @@ public onDataLoaded(sds: ShapeDataSource, e: any) {
     this.createContourSeries(contourPoints);
 }
 
-public createContourSeries(data: any[])
-{
+    public createContourSeries(data: any[]) {
     const brushes = [
         "rgba(32, 146, 252, 0.5)", // semi-transparent blue
         "rgba(14, 194, 14, 0.5)",  // semi-transparent green
@@ -73,23 +72,9 @@ public createContourSeries(data: any[])
     areaSeries.latitudeMemberPath = "lat";
     areaSeries.colorMemberPath = "value";
     areaSeries.colorScale = colorScale;
-    areaSeries.tooltipTemplate = this.createContourTooltip(data);
+    areaSeries.tooltipTemplate = this.tooltipTemplate;
     areaSeries.thickness = 4;
 
     this.map.series.add(areaSeries);
 }
-
-public createContourTooltip(context: any) {
-    const dataContext = context.dataContext as DataContext;
-    if (!dataContext) return null;
-
-    const dataItem = dataContext.item as any;
-    if (!dataItem) return null;
-
-    // dataContext.item is always a number for contour series
-    const tmp = dataItem.toFixed(1) + "°C";
-    this.tooltipTemplate.createEmbeddedView(() => tmp);
-    return this.tooltipTemplate;
-}
-
 }

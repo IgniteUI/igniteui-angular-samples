@@ -15,17 +15,14 @@
                 shapeStrokeThickness={1.0} >
             </igx-geographic-shape-series>
             <igx-geographic-polyline-series  #polylineSeries
-                  name="lineSeries"
-                
-                 
+            [tooltipTemplate]="polylineTooltipTemplate"
+                  name="polylineSeries"
                  shapeMemberPath="points"
                  shapeStroke="rgba(147, 15, 180, 0.5)"
                  thickness={3.0} >
             </igx-geographic-polyline-series>
             <igx-geographic-symbol-series  #symbolSeries
                 name="symbolSeries"
-                
-                
                 longitudeMemberPath="longitude"
                 latitudeMemberPath="latitude"
                 markerType="Circle"
@@ -38,26 +35,40 @@
 <div class="my-legend">
         <div class="legend-title">Geographic Map: Binding Multiple Shapes</div>
        
-    </div>
+</div>
   
-<ng-template let-series="series" let-item="item" #template>
+    <ng-template let-series="series" let-item="item" #polylineTooltipTemplate>
         <div>
-            <div *ngIf="item.org;then hasOrg; else notOrg" ></div>
-            <span [style.color]="series.brush">
-                {{item.name}} 
-            </span>
             <span>
-                {{item.pop}} M 
+            {{item.capacity}}
+            </span>
+            <br />
+            <span>
+            Distance: {{item.distance}} 
             </span>
         </div>
-        <ng-template #hasOrg>
+    </ng-template>
+
+    <ng-template let-series="series" let-item="item" #shapeTooltipTemplate>
+        <div>
             <span>
-                {{item.org}}
-            </span>   
-            <br />
-        </ng-template>
-         <ng-template #notOrg>
-            <span>
+            {{item.name}}
             </span>
-         </ng-template>
+            <br />
+            <span>
+                Population: {{item.population}} 
+            </span>
+        </div>
+    </ng-template>
+
+    <ng-template let-series="series" let-item="item" #pointTooltipTemplate>
+        <div>
+            <span [style.color]="series.brush">
+                    Departure: {{item.origin.country}}
+                </span>
+                <br/>
+                <span [style.color]="series.brush">
+                    Arrival: {{item.dest.country}}
+            </span>
+        </div>
     </ng-template>

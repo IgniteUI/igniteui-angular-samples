@@ -14,7 +14,7 @@ export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
     public map: IgxGeographicMapComponent;
 
     @ViewChild("template")
-    public tooltip: TemplateRef<object>;
+    public tooltipTemplate: TemplateRef<object>;
     constructor() { }
 
     ngAfterViewInit() {
@@ -51,7 +51,7 @@ export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
         geoSeries.shapeFilterResolution = 0.0;
         geoSeries.shapeStrokeThickness = 3;
         geoSeries.shapeStroke = "rgb(82, 82, 82, 0.4)";
-        //geoSeries.tooltipTemplate = this.createTooltip;
+        geoSeries.tooltipTemplate = this.tooltipTemplate;
 
         this.map.series.add(geoSeries);
         }

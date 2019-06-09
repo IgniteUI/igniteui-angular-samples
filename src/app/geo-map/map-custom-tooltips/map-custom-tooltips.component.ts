@@ -38,6 +38,7 @@ export class MapCustomTooltipsComponent implements AfterViewInit {
         this.createSymbolSeries(AmericanCities, "Green");
         this.createSymbolSeries(AsianCities, "Red");
     }
+    
     public createSymbolSeries(geoLocations: any[], brush: string)
     {
         const symbolSeries = new IgxGeographicSymbolSeriesComponent ();
@@ -48,52 +49,7 @@ export class MapCustomTooltipsComponent implements AfterViewInit {
         symbolSeries.markerBrush  = "White";
         symbolSeries.markerOutline = brush;
         symbolSeries.thickness = 1;
-        symbolSeries.tooltipTemplate = this.createSymbolTooltip(this.tooltipTemplate);
-
+        symbolSeries.tooltipTemplate = this.tooltipTemplate;
         this.map.series.add(symbolSeries);
-    }
-
-    public createSymbolTooltip(context: any) {
-        const dataContext = context.dataContext as DataContext;
-        if (!dataContext) return null;
-
-        const dataItem = dataContext.item as any;
-        if (!dataItem) return null;
-
-        const iso = dataItem.isoCode.toUpperCase();
-        const lat = WorldUtils.toStringLat(dataItem.lat);
-        const lon = WorldUtils.toStringLon(dataItem.lon);
-        const scr = "assets/Data/images/svg/" + dataItem.isoCode.toLowerCase() + ".svg";
-
-        const seriesStyle = { color: dataContext.series.markerOutline };
-        const contentStyle = { display: "inline-block", marginLeft: 5 };
-
-        return this.tooltipTemplate;
-        // <div >
-        //     {/* style={imageStyle} style={borderStyle}*/}
-        //     <div className="tooltipFlagBoarder">
-        //         <img className="tooltipFlagImage" src={scr}   />
-        //     </div>
-        //     <div style={contentStyle}>
-        //         <div className="tooltipBox">
-        //             <div className="tooltipRow">
-        //                 <div className="tooltipLbl">City:</div>
-        //                 <div className="tooltipVal" style={seriesStyle}>{dataItem.name}</div>
-        //             </div>
-        //             <div className="tooltipRow">
-        //                 <div className="tooltipLbl">Latitude:</div>
-        //                 <div className="tooltipVal" style={seriesStyle}>{lat} </div>
-        //             </div>
-        //             <div className="tooltipRow">
-        //                 <div className="tooltipLbl">Longitude:</div>
-        //                 <div className="tooltipVal" style={seriesStyle}>{lon}</div>
-        //             </div>
-        //             <div className="tooltipRow">
-        //                 <div className="tooltipLbl">ISO Code:</div>
-        //                 <div className="tooltipVal" style={seriesStyle}>{iso}</div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
     }
 }

@@ -16,8 +16,10 @@ export class MapBindingDataModelComponent implements AfterViewInit {
 
     @ViewChild ("map")
     public map: IgxGeographicMapComponent;
-    @ViewChild("template")
-    public tooltip: TemplateRef<object>;
+    @ViewChild("pointSeriestemplate")
+    public pointSeriestemplate: TemplateRef<object>;
+    @ViewChild("polylineSeriesTooltipTemplate")
+    public polylineSeriesTooltipTemplate: TemplateRef<object>;
     public flights: any[];
     constructor() {
     }
@@ -66,7 +68,7 @@ export class MapBindingDataModelComponent implements AfterViewInit {
         symbolSeries.markerBrush  = "White";
         symbolSeries.markerOutline = flight.color;
         symbolSeries.thickness = 1;
-        symbolSeries.tooltipTemplate = this.tooltip;
+        symbolSeries.tooltipTemplate = this.pointSeriestemplate;
 
         this.map.series.add(symbolSeries);
     }
@@ -89,7 +91,7 @@ export class MapBindingDataModelComponent implements AfterViewInit {
         lineSeries.shapeStrokeThickness = 9;
         lineSeries.shapeOpacity = 0.5;
         lineSeries.shapeStroke = flight.color;
-        lineSeries.tooltipTemplate = this.tooltip;
+        lineSeries.tooltipTemplate = this.polylineSeriesTooltipTemplate;
         this.map.series.add(lineSeries);
     }
 }

@@ -23,28 +23,17 @@ export class MapTypeScatterDensitySeriesComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        const sds = new ShapeDataSource();
-        sds.shapefileSource = "assets/Shapes/WorldCountries.shp";
-        sds.databaseSource  = "assets/Shapes/WorldCountries.dbf";
-        sds.dataBind();
-        sds.importCompleted.subscribe(() => this.onDataLoaded(this.geoLocations));
+         // fetching geographic locations from public JSON folder
+         fetch("assets/Data/AusPlaces.json")
+         .then((response) => response.json())
+         .then(data => this.onDataLoaded(data, ""));
       }
 
-    public componentDidMount() {
-        // fetching geographic locations from public JSON folder
-        const url = DataUtils.getPublicURL();
-        fetch(url + "assets/Data/AusPlaces.json")
-            .then((response) => response.json())
-            .then(data => this.onDataLoaded(data));
-
-        // .then(data => this.setState({ locations: data, isLoading: false }));
-    }
-    public onDataLoaded(gl: any[]) {
-        console.log("loaded assets/Data/AusPlaces.json");
-        this.geoLocations = gl;
+    public onDataLoaded(sds: ShapeDataSource, e: any) {
+        this.geoLocations = sds;
         // creating HD series with loaded data
         const geoSeries = new IgxGeographicHighDensityScatterSeriesComponent();
-        geoSeries.dataSource = this.geoLocations;
+        geoSeries.dataSource = sds;
         geoSeries.longitudeMemberPath = "x";
         geoSeries.latitudeMemberPath = "y";
         geoSeries.heatMaximumColor = "Red";

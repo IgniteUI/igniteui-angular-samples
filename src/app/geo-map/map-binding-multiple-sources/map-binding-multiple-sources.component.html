@@ -10,24 +10,38 @@
        
     </div>
   
-<ng-template let-series="series" let-item="item" #template>
+<ng-template let-series="series" let-item="item" #polylineTooltipTemplate>
         <div>
-            <div *ngIf="item.org;then hasOrg; else notOrg" ></div>
-            <span [style.color]="series.brush">
-                {{item.name}} 
-            </span>
             <span>
-                {{item.pop}} M 
+                Arrival: {{item.origin.country}}
+            </span> 
+            <br/>
+            <span>
+                   Destination: {{item.dest.country}}
             </span>
+            <br/> 
+            <span>
+                    Distance: {{item.distance}} miles
+            </span> 
         </div>
-        <ng-template #hasOrg>
-            <span>
-                {{item.org}}
-            </span>   
-            <br />
-        </ng-template>
-         <ng-template #notOrg>
-            <span>
-            </span>
-         </ng-template>
     </ng-template>
+
+    <ng-template let-series="series" let-item="item" #pointTooltipTemplate>
+            <div>
+                <span>
+                {{item?.country}}
+                </span>
+                <br />
+                <span>
+                {{item?.name}}
+                </span>
+                <br />
+                <span>
+                Population: {{item.pop}} M
+                </span>
+                <br/> 
+                <span>
+                        Flights: {{item.flights}}
+                </span>
+            </div>
+        </ng-template>

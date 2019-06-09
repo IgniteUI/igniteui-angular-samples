@@ -18,8 +18,11 @@ export class MapBindingMultipleSourcesComponent implements AfterViewInit {
     @ViewChild ("map")
     public map: IgxGeographicMapComponent;
 
-    @ViewChild("template")
-    public tooltip: TemplateRef<object>;
+    @ViewChild("polylineTooltipTemplate")
+    public polylineTooltipTemplate: TemplateRef<object>;
+
+    @ViewChild("pointTooltipTemplate")
+    public pointTooltipTemplate: TemplateRef<object>;
 
     public data: any;
     constructor() {
@@ -29,38 +32,34 @@ export class MapBindingMultipleSourcesComponent implements AfterViewInit {
       this.map.windowRect = { left: 0.195, top: 0.1, width: 0.5, height: 0.5 };
 
       const worldFlights = WorldConnections.getFlights();
-        const worldAirports = WorldConnections.getAirports();
-        const worldGridlines = WorldConnections.getGridlines();
+      const worldAirports = WorldConnections.getAirports();
+      const worldGridlines = WorldConnections.getGridlines();
 
-        this.addPolylineSeriesWith(worldFlights);
-        this.addGridlineSeriesWith(worldGridlines);
-        this.addSymbolSeriesWith(worldAirports);
+      this.addPolylineSeriesWith(worldFlights);
+      this.addGridlineSeriesWith(worldGridlines);
+      this.addSymbolSeriesWith(worldAirports);
     }
 
-    public addGridlineSeriesWith(data : any[])
-    {
+    public addGridlineSeriesWith(data: any[]) {
         const gridSeries = new IgxGeographicPolylineSeriesComponent();
         gridSeries.dataSource = data;
         gridSeries.shapeMemberPath = "points";
         gridSeries.shapeStroke = "Gray";
         gridSeries.shapeStrokeThickness = 1;
-        gridSeries.tooltipTemplate = this.tooltip;
         this.map.series.add(gridSeries);
     }
 
-    public addPolylineSeriesWith(data : any[])
-    {
+    public addPolylineSeriesWith(data: any[]) {
         const lineSeries = new IgxGeographicPolylineSeriesComponent ();
         lineSeries.dataSource = data;
         lineSeries.shapeMemberPath = "points";
         lineSeries.shapeStroke = "rgba(196, 14, 14,0.05)";
         lineSeries.shapeStrokeThickness = 4;
-        lineSeries.tooltipTemplate = this.tooltip;
+        lineSeries.tooltipTemplate = this.polylineTooltipTemplate;
         this.map.series.add(lineSeries);
     }
 
-    public addSymbolSeriesWith(data : any[])
-    {
+    public addSymbolSeriesWith(data: any[]) {
         const symbolSeries = new IgxGeographicSymbolSeriesComponent ();
         symbolSeries.dataSource = data;
         symbolSeries.markerType = MarkerType.Circle;
@@ -69,7 +68,7 @@ export class MapBindingMultipleSourcesComponent implements AfterViewInit {
         symbolSeries.markerBrush = "#aad3df";
         symbolSeries.markerOutline = "rgb(73, 73, 73)";
         symbolSeries.thickness = 1;
-        symbolSeries.tooltipTemplate = this.tooltip;
+        symbolSeries.tooltipTemplate = this.pointTooltipTemplate;
         this.map.series.add(symbolSeries);
     }
 }
