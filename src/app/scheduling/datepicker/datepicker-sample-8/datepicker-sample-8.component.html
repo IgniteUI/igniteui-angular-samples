@@ -1,0 +1,8 @@
+<igx-date-picker mode="dropdown" #picker [(ngModel)]="date">
+    <ng-template igxDatePickerActions>
+        <div class="container action-buttons">
+            <button igxButton="flat" (click)="monthsView(picker)">months view</button>
+            <button igxButton="flat" (click)="yearsView(picker)">years view</button>
+        </div>
+    </ng-template>
+</igx-date-picker>

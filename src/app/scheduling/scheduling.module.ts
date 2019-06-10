@@ -23,6 +23,7 @@ import { DatepickerSample4Component } from "./datepicker/datepicker-sample-4/dat
 import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/datepicker-sample-5.component";
 import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
+import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -52,6 +53,7 @@ import { TimePickerSample6Component } from "./timepicker/timepicker-sample-6/tim
         DatepickerSample5Component,
         DatepickerSample6Component,
         DatepickerSample7Component,
+        DatepickerSample8Component,
         DatepickerDropdownComponent,
         TimePickerSample1Component,
         TimePickerSample2Component,
