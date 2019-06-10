@@ -1,11 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxDropEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from "igniteui-angular";
+import { IgxDropEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent, Point } from "igniteui-angular";
 import { createData, IDrive } from "../../data/files.data";
-
-interface ICursorPosition {
-    x: number;
-    y: number;
-}
 
 @Component({
     selector: "hierarchical-grid-row-reorder",
@@ -32,11 +27,11 @@ export class HGridRowReorderComponent {
         args.cancel = true;
         const targetRow = args.dragData;
         const event = args.originalEvent;
-        const cursorPosition: ICursorPosition = { x: event.pageX, y: event.pageY };
+        const cursorPosition: Point = { x: event.pageX, y: event.pageY };
         this.moveRow(targetRow, cursorPosition);
     }
 
-    private moveRow(draggedRow: IgxHierarchicalRowComponent, cursorPosition: ICursorPosition): void {
+    private moveRow(draggedRow: IgxHierarchicalRowComponent, cursorPosition: Point): void {
         const parent: IgxHierarchicalGridComponent = draggedRow.grid;
         const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
         // delete the dragged row and then insert it at its new position
@@ -49,13 +44,13 @@ export class HGridRowReorderComponent {
         }
     }
 
-    private getTargetRowIndex(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: ICursorPosition): number {
+    private getTargetRowIndex(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: Point): number {
         const targetElem: IgxHierarchicalRowComponent = this.catchCursorPosOnElem(rowListArr, cursorPosition);
         // get the index of the row that has the same ID as the dragged row
         return rowListArr.indexOf(rowListArr.find((r) => r.rowData.id === targetElem.rowData.id));
     }
 
-    private catchCursorPosOnElem(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: ICursorPosition)
+    private catchCursorPosOnElem(rowListArr: IgxHierarchicalRowComponent[], cursorPosition: Point)
         : IgxHierarchicalRowComponent {
         // get the row which the dragged row was dropped on
         for (const row of rowListArr) {
