@@ -1,5 +1,5 @@
 <igx-list #fruitList>
-    <igx-list-item *ngFor="let fruit of fruitsData">
+    <igx-list-item *ngFor="let fruit of fruitsData" igxRipple igxRippleTarget=".igx-list__item-content">
         {{ fruit }}
     </igx-list-item>
     <ng-template igxEmptyList>

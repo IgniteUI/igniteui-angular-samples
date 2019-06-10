@@ -21,6 +21,10 @@ export class HGridDragSampleComponent {
         this.localData = createData(3, 12, 8);
     }
 
+    public onRowDragEnd(args) {
+        args.animation = true;
+    }
+
     public onDropAllowed(args: IgxDropEventArgs) {
         args.cancel = true;
         const draggedRow: IgxHierarchicalRowComponent = args.dragData;
