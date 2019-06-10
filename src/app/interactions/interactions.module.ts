@@ -34,6 +34,7 @@ import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
+import { SliderSample6Component } from "./slider/slider-sample-6/slider-sample-6.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -52,6 +53,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         SliderSample3Component,
         SliderSample4Component,
         SliderSample5Component,
+        SliderSample6Component,
         RippleSample1Component,
         RippleSample2Component,
         RippleSample3Component,
