@@ -1,11 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from "igniteui-angular";
+import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
 import { FULL_EMPLOYEE_DATA } from "../data/employees";
-
-interface ICursorPosition {
-    x: number;
-    y: number;
-}
 
 @Component({
     selector: "tree-grid-row-reorder",
@@ -33,11 +28,11 @@ export class TreeGridRowReorderComponent {
         args.cancel = true;
         const draggedRow: IgxTreeGridRowComponent = args.dragData;
         const event = args.originalEvent;
-        const cursorPosition: ICursorPosition = { x: event.pageX, y: event.pageY };
+        const cursorPosition: Point = { x: event.pageX, y: event.pageY };
         this.moveRow(draggedRow, cursorPosition);
     }
 
-    private moveRow(draggedRow: IgxTreeGridRowComponent, cursorPosition: ICursorPosition): void {
+    private moveRow(draggedRow: IgxTreeGridRowComponent, cursorPosition: Point): void {
         const parent: IgxTreeGridComponent = draggedRow.grid;
         const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
         draggedRow.delete();
@@ -48,13 +43,13 @@ export class TreeGridRowReorderComponent {
         }
     }
 
-    private getTargetRowIndex(rowListArr: IgxTreeGridRowComponent[], cursorPosition: ICursorPosition): number {
+    private getTargetRowIndex(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point): number {
         const targetElem: IgxTreeGridRowComponent = this.catchCursorPosOnElem(rowListArr, cursorPosition);
         console.log(targetElem);
         return rowListArr.indexOf(rowListArr.find((r) => r.rowData.ID === targetElem.rowData.ID));
     }
 
-    private catchCursorPosOnElem(rowListArr: IgxTreeGridRowComponent[], cursorPosition: ICursorPosition)
+    private catchCursorPosOnElem(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point)
         : IgxTreeGridRowComponent {
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();
