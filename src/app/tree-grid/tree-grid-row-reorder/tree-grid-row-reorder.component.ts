@@ -2,11 +2,6 @@ import { Component, ViewChild } from "@angular/core";
 import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent } from "igniteui-angular";
 import { FULL_EMPLOYEE_DATA } from "../data/employees";
 
-enum DragIcon {
-    DEFAULT = "drag_handle",
-    ALLOW = "remove"
-}
-
 interface ICursorPosition {
     x: number;
     y: number;
@@ -42,20 +37,6 @@ export class TreeGridRowReorderComponent {
         this.moveRow(draggedRow, cursorPosition);
     }
 
-    public dropInArea(args: IgxDropEventArgs): void {
-        args.cancel = true;
-        const draggedRow: IgxTreeGridRowComponent = args.dragData;
-        draggedRow.delete();
-    }
-
-    public onEnterAllowed(args: any): void {
-        this.changeGhostIcon(args.drag.dragGhost, DragIcon.ALLOW);
-    }
-
-    public onLeaveAllowed(args: any): void {
-        this.changeGhostIcon(args.drag.dragGhost, DragIcon.DEFAULT);
-    }
-
     private moveRow(draggedRow: IgxTreeGridRowComponent, cursorPosition: ICursorPosition): void {
         const parent: IgxTreeGridComponent = draggedRow.grid;
         const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
@@ -80,15 +61,6 @@ export class TreeGridRowReorderComponent {
             if (cursorPosition.y > rowRect.top && cursorPosition.y < rowRect.bottom &&
                 cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
                 return row;
-            }
-        }
-    }
-
-    private changeGhostIcon(ghost, icon: string): void {
-        if (ghost) {
-            const currentIcon = ghost.querySelector(".igx-grid__drag-indicator > igx-icon");
-            if (currentIcon) {
-                currentIcon.innerText = icon;
             }
         }
     }
