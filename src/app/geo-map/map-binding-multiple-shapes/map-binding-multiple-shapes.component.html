@@ -64,11 +64,7 @@
     <ng-template let-series="series" let-item="item" #pointTooltipTemplate>
         <div>
             <span [style.color]="series.brush">
-                    Departure: {{item.origin.country}}
-                </span>
-                <br/>
-                <span [style.color]="series.brush">
-                    Arrival: {{item.dest.country}}
+                   City: {{item.city}}
             </span>
         </div>
     </ng-template>
