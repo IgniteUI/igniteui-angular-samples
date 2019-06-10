@@ -7,8 +7,8 @@ import { IgxGeographicSymbolSeriesComponent
 
 @Component({
   selector: "app-map-binding-shapefile-points",
-  templateUrl: "./map-binding-shapefile-points.component.html",
-  styleUrls: ["./map-binding-shapefile-points.component.scss"]
+  styleUrls: ["./map-binding-shapefile-points.component.scss"],
+  templateUrl: "./map-binding-shapefile-points.component.html"
 })
 export class MapBindingShapefilePointsComponent implements AfterViewInit {
     @ViewChild ("map")
@@ -18,7 +18,7 @@ export class MapBindingShapefilePointsComponent implements AfterViewInit {
     public tooltipTemplate: TemplateRef<object>;
     constructor() { }
 
-    ngAfterViewInit() {
+    public ngAfterViewInit() {
     const sds = new ShapeDataSource();
     sds.shapefileSource = "assets/Shapes/WorldCities.shp";
     sds.databaseSource  = "assets/Shapes/WorldCities.dbf";
@@ -36,9 +36,9 @@ export class MapBindingShapefilePointsComponent implements AfterViewInit {
         if (pop > 0) {
             // each shapefile record has just one point
             const location = {
+                city: record.fieldValues.NAME,
                 latitude: record.points[0][0].y,
                 longitude: record.points[0][0].x,
-                city: record.fieldValues.NAME,
                 population: pop
             };
             geoLocations.push(location);

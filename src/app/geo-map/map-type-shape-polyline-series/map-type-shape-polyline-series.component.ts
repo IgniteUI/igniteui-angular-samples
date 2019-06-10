@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, EmbeddedViewRef, TemplateRef, ViewChild} from "@angular/core";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicPolylineSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
-import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 
 @Component({
   selector: "app-map-type-shape-polyline-series",
-  templateUrl: "./map-type-shape-polyline-series.component.html",
-  styleUrls: ["./map-type-shape-polyline-series.component.scss"]
+  styleUrls: ["./map-type-shape-polyline-series.component.scss"],
+  templateUrl: "./map-type-shape-polyline-series.component.html"
 })
 
 export class MapTypeShapePolylineSeriesComponent implements AfterViewInit {

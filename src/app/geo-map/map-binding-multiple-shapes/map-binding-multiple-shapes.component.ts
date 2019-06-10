@@ -1,12 +1,10 @@
 import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
-import DataUtils from "../../utilities/DataUtils";
-import { WorldUtils } from "../../utilities/WorldUtils";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { IgxGeographicPolylineSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
+import { IgxGeographicPolylineSeriesComponent
+} from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
 import { IgxGeographicShapeSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-shape-series-component";
 import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
-import { DataContext } from 'igniteui-angular-core/ES5/igx-data-context';
-import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 
 @Component({
   selector: "app-map-binding-multiple-shapes",
@@ -44,21 +42,20 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
 
         this.map.windowRect = { left: 0.2, top: 0.1, width: 0.6, height: 0.6 };
 
-        //loading a shapefile with geographic polygons
+        // loading a shapefile with geographic polygons
         const sdsPolygons = new ShapeDataSource();
         sdsPolygons.importCompleted.subscribe(() => this.onPolygonsLoaded(sdsPolygons, ""));
         sdsPolygons.shapefileSource = "assets/Shapes/WorldCountries.shp";
         sdsPolygons.databaseSource  = "assets/Shapes/WorldCountries.dbf";
         sdsPolygons.dataBind();
-
-        //loading a shapefile with geographic polylines at runtime.
+        // loading a shapefile with geographic polylines at runtime.
         const sdsPolylines = new ShapeDataSource();
         sdsPolylines.shapefileSource = "assets/Shapes/WorldCableRoutes.shp";
         sdsPolylines.databaseSource  = "assets/Shapes/WorldCableRoutes.dbf";
         sdsPolylines.dataBind();
         sdsPolylines.importCompleted.subscribe(() => this.onPolylinesLoaded(sdsPolylines, ""));
 
-        //loading a shapefile with geographic points
+        // loading a shapefile with geographic points
         const sdsPoints = new ShapeDataSource();
         sdsPoints.importCompleted.subscribe(() => this.onPointsLoaded(sdsPoints, ""));
         sdsPoints.shapefileSource = "assets/Shapes/WorldCities.shp";
@@ -76,9 +73,9 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
             if (pop > 0) {
                 // each shapefile record has just one point
                 const location = {
+                    city: record.fieldValues.NAME,
                     latitude: record.points[0][0].y,
                     longitude: record.points[0][0].x,
-                    city: record.fieldValues.NAME,
                     population: pop
                 };
                 geoLocations.push(location);
@@ -96,17 +93,17 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
         for (const record of sds.getPointData()) {
             // using field/column names from .DBF file
             const route = {
-                points: record.points,
-                name: record.fieldValues.Name,
                 capacity: record.fieldValues.CapacityG,
                 distance: record.fieldValues.DistanceKM,
-                isOverLand: record.fieldValues.OverLand === 0,
                 isActive: record.fieldValues.NotLive !== 0,
+                isOverLand: record.fieldValues.OverLand === 0,
+                name: record.fieldValues.Name,
+                points: record.points,
                 service: record.fieldValues.InService
             };
             geoPolylines.push(route);
-        };
-        this.polylineSeries.dataSource = geoPolylines;       
+        }
+        this.polylineSeries.dataSource = geoPolylines;
         this.polylineSeries.shapeMemberPath = "points";
         this.polylineSeries.shapeFilterResolution = 2.0;
         this.polylineSeries.shapeStrokeThickness = 2;
@@ -119,18 +116,17 @@ export class MapBindingMultipleShapesComponent implements AfterViewInit {
 
         const geoPolygons: any[] = [];
         // parsing shapefile data and creating geo-polygons
-        sds.getPointData().forEach(record => {
+        sds.getPointData().forEach((record) => {
             // using field/column names from .DBF file
             const country = {
-                points: record.points,
-                name: record.fieldValues.NAME,
                 gdp: record.fieldValues.GDP,
+                name: record.fieldValues.NAME,
+                points: record.points,
                 population: record.fieldValues.POPULATION
             };
             geoPolygons.push(country);
         });
         this.shapeSeries.dataSource = geoPolygons;
         this.shapeSeries.tooltipTemplate = this.shapeTooltipTemplate;
-
     }
 }

@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, ViewChild, TemplateRef } from "@angular/core";
+import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
+import { IgxValueBrushScaleComponent } from "igniteui-angular-charts/ES5/igx-value-brush-scale-component";
+import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 import { IgxGeographicContourLineSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-contour-line-series-component";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
-import { IgxValueBrushScaleComponent } from 'igniteui-angular-charts/ES5/igx-value-brush-scale-component';
 
 @Component({
   selector: "app-map-type-scatter-contour-series",
@@ -54,13 +54,12 @@ export class MapTypeScatterContourSeriesComponent implements AfterViewInit {
         this.createContourSeries(contourPoints);
     }
 
-    public createContourSeries(data: any[])
-    {
+    public createContourSeries(data: any[]) {
         const brushes = [
             "rgba(32, 146, 252, 0.5)", // semi-transparent blue
             "rgba(14, 194, 14, 0.5)",  // semi-transparent green
             "rgba(252, 120, 32, 0.5)", // semi-transparent orange
-            "rgba(252, 32, 32, 0.5)",  // semi-transparent red
+            "rgba(252, 32, 32, 0.5)"  // semi-transparent red
         ];
 
         const brushScale = new IgxValueBrushScaleComponent();

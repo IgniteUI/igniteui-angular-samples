@@ -5,9 +5,9 @@ import { IgxGeographicShapeSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-shape-series-component";
 
 @Component({
-  selector: 'app-map-binding-shapefile-polygons',
-  templateUrl: './map-binding-shapefile-polygons.component.html',
-  styleUrls: ['./map-binding-shapefile-polygons.component.scss']
+  selector: "app-map-binding-shapefile-polygons",
+  styleUrls: ["./map-binding-shapefile-polygons.component.scss"],
+  templateUrl: "./map-binding-shapefile-polygons.component.html"
 })
 export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
 
@@ -38,9 +38,9 @@ export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
         for (const record of shapeRecords) {
             // using field/column names from .DBF file
             const country = {
-                points: record.points,
-                name: record.fieldValues.NAME,
                 gdp: record.fieldValues.GDP,
+                name: record.fieldValues.NAME,
+                points: record.points,
                 population: record.fieldValues.POPULATION
             };
             geoPolygons.push(country);
@@ -57,5 +57,4 @@ export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
         this.map.series.add(geoSeries);
   }
 
-  }
-
+}

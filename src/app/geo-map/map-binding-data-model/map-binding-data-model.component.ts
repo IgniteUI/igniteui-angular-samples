@@ -47,7 +47,7 @@ export class MapBindingDataModelComponent implements AfterViewInit {
             { origin: cityPAN, dest: cityROM, color: "Orange" },
             { origin: cityALT, dest: cityJOH, color: "Black" },
             { origin: cityNYC, dest: cityQTR, color: "Purple" },
-            { origin: cityLAX, dest: citySYD, color: "Gray" },
+            { origin: cityLAX, dest: citySYD, color: "Gray" }
         ];
 
         for (const flight of this.flights) {
@@ -56,10 +56,8 @@ export class MapBindingDataModelComponent implements AfterViewInit {
         }
     }
 
-    public createSymbolSeries(flight: any)
-    {
+    public createSymbolSeries(flight: any) {
         const geoLocations = [flight.origin, flight.dest ];
-
         const symbolSeries = new IgxGeographicSymbolSeriesComponent ();
         symbolSeries.dataSource = geoLocations;
         symbolSeries.markerType = MarkerType.Circle;
@@ -73,16 +71,16 @@ export class MapBindingDataModelComponent implements AfterViewInit {
         this.map.series.add(symbolSeries);
     }
 
-    public createPolylineSeries(flight: any)
-    {
+    public createPolylineSeries(flight: any) {
         const geoPath = WorldUtils.calcPaths(flight.origin, flight.dest);
         const geoDistance = WorldUtils.calcDistance(flight.origin, flight.dest);
         const geoRoutes = [
-            { points: geoPath ,
-              origin: flight.origin,
+            {
               dest: flight.dest,
               distance: geoDistance,
-              time: geoDistance / 850,
+              origin: flight.origin,
+              points: geoPath,
+              time: geoDistance / 850
         }];
 
         const lineSeries = new IgxGeographicPolylineSeriesComponent ();

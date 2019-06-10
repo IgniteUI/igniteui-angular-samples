@@ -8,8 +8,8 @@ import { IgxGeographicScatterAreaSeriesComponent
 
 @Component({
   selector: "app-map-type-scatter-area-series",
-  templateUrl: "./map-type-scatter-area-series.component.html",
-  styleUrls: ["./map-type-scatter-area-series.component.scss"]
+  styleUrls: ["./map-type-scatter-area-series.component.scss"],
+  templateUrl: "./map-type-scatter-area-series.component.html"
 })
 export class MapTypeScatterAreaSeriesComponent implements AfterViewInit {
 
@@ -58,7 +58,7 @@ export class MapTypeScatterAreaSeriesComponent implements AfterViewInit {
         "rgba(32, 146, 252, 0.5)", // semi-transparent blue
         "rgba(14, 194, 14, 0.5)",  // semi-transparent green
         "rgba(252, 120, 32, 0.5)", // semi-transparent orange
-        "rgba(252, 32, 32, 0.5)",  // semi-transparent red
+        "rgba(252, 32, 32, 0.5)"  // semi-transparent red
     ];
 
     const colorScale = new IgxCustomPaletteColorScaleComponent();

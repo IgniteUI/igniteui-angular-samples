@@ -3,8 +3,8 @@ import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geograp
 
 @Component({
   selector: "app-map-overview",
-  templateUrl: "./map-overview.component.html",
-  styleUrls: ["./map-overview.component.scss"]
+  styleUrls: ["./map-overview.component.scss"],
+  templateUrl: "./map-overview.component.html"
 })
 
 export class MapOverviewComponent implements AfterViewInit {

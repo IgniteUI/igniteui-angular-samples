@@ -1,11 +1,7 @@
-import { AfterViewInit, Component, ViewChild, TemplateRef } from "@angular/core";
-import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { IgxScatterSeriesDynamicModule} from "igniteui-angular-charts/ES5/igx-scatter-series-dynamic-module";
-import { DataContext } from 'igniteui-angular-core/ES5/igx-data-context';
-import { WorldUtils } from "../../utilities/WorldUtils";
+import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
 import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
-import { IgxGeographicSymbolSeriesComponent } from 'igniteui-angular-maps/ES5/igx-geographic-symbol-series-component';
-import { WorldLocations } from "../../utilities/WorldLocations";
+import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
+import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
 
 @Component({
   selector: "app-map-custom-tooltips",
@@ -32,15 +28,14 @@ export class MapCustomTooltipsComponent implements AfterViewInit {
         const cityMOS = { lat: 55.750, lon:  37.700,  isoCode: "rus", name: "Moscow" };
         const cityLAX = { lat: 34.000, lon: -118.25,  isoCode: "usa", name: "Los Angeles" };
 
-        const AmericanCities = [cityCHL, cityPAN, cityNYC, cityLAX, ];
-        const AsianCities = [ citySNG, cityMOS, cityJAP, cityQTR, ];
+        const americanCities = [cityCHL, cityPAN, cityNYC, cityLAX ];
+        const asianCities = [ citySNG, cityMOS, cityJAP, cityQTR ];
 
-        this.createSymbolSeries(AmericanCities, "Green");
-        this.createSymbolSeries(AsianCities, "Red");
+        this.createSymbolSeries(americanCities, "Green");
+        this.createSymbolSeries(asianCities, "Red");
     }
-    
-    public createSymbolSeries(geoLocations: any[], brush: string)
-    {
+
+    public createSymbolSeries(geoLocations: any[], brush: string) {
         const symbolSeries = new IgxGeographicSymbolSeriesComponent ();
         symbolSeries.dataSource = geoLocations;
         symbolSeries.markerType = MarkerType.Circle;

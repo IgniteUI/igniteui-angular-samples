@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
-import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { IgxGeographicHighDensityScatterSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-high-density-scatter-series-component";
-import DataUtils from "../../utilities/DataUtils";
 import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
+import { IgxGeographicHighDensityScatterSeriesComponent
+} from "igniteui-angular-maps/ES5/igx-geographic-high-density-scatter-series-component";
+import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { WorldUtils } from "../../utilities/WorldUtils";
 
 @Component({
@@ -26,7 +26,7 @@ export class MapTypeScatterDensitySeriesComponent implements AfterViewInit {
          // fetching geographic locations from public JSON folder
          fetch("assets/Data/AusPlaces.json")
          .then((response) => response.json())
-         .then(data => this.onDataLoaded(data, ""));
+         .then((data) => this.onDataLoaded(data, ""));
       }
 
     public onDataLoaded(sds: ShapeDataSource, e: any) {

@@ -1,10 +1,7 @@
 import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
 import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
-import { DataContext } from 'igniteui-angular-core/ES5/igx-data-context';
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
-import DataUtils from "../../utilities/DataUtils";
-import { WorldUtils } from "../../utilities/WorldUtils";
 
 @Component({
   selector: "app-map-binding-data-json-points",
@@ -27,10 +24,9 @@ export class MapBindingDataJsonPointsComponent implements AfterViewInit {
 
     public componentDidMount() {
         // fetching JSON data with geographic locations from public folder
-        const url = DataUtils.getPublicURL();
-        fetch(url + "assets/Data/WorldCities.json")
+        fetch("assets/Data/WorldCities.json")
             .then((response) => response.json())
-            .then(data => this.onDataLoaded(data));
+            .then((data) => this.onDataLoaded(data));
     }
 
     public onDataLoaded(jsonData: any[]) {
@@ -41,11 +37,11 @@ export class MapBindingDataJsonPointsComponent implements AfterViewInit {
         for (const jsonItem of jsonData) {
             if (jsonItem.cap) {
                 const location = {
+                    city: jsonItem.name,
+                    country: jsonItem.country,
                     latitude: jsonItem.lat,
                     longitude: jsonItem.lon,
-                    population: jsonItem.pop,
-                    city: jsonItem.name,
-                    country: jsonItem.country
+                    population: jsonItem.pop
                 };
                 geoLocations.push(location);
             }

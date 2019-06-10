@@ -1,7 +1,7 @@
-import { AfterViewInit, Component,TemplateRef, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
 import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { IgxGeographicShapeSeriesComponent } from 'igniteui-angular-maps/ES5/igx-geographic-shape-series-component';
+import { IgxGeographicShapeSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-shape-series-component";
 
 @Component({
   selector: "app-map-type-shape-polygon-series",
@@ -40,9 +40,9 @@ export class MapTypeShapePolygonSeriesComponent implements AfterViewInit {
         for (const record of shapeRecords) {
             // using field/column names from .DBF file
             const country = {
-                points: record.points,
                 name: record.fieldValues.NAME,
                 org: record.fieldValues.ALLIANCE,
+                points: record.points,
                 pop: record.fieldValues.POPULATION
             };
 

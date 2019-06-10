@@ -1,14 +1,14 @@
 import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
+import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
 import { IgxGeographicSymbolSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
 import { WorldLocations } from "../../utilities/WorldLocations";
-import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 
 @Component({
   selector: "app-map-type-scatter-symbol-series",
-  templateUrl: "./map-type-scatter-symbol-series.component.html",
-  styleUrls: ["./map-type-scatter-symbol-series.component.scss"]
+  styleUrls: ["./map-type-scatter-symbol-series.component.scss"],
+  templateUrl: "./map-type-scatter-symbol-series.component.html"
 })
 
 export class MapTypeScatterSymbolSeriesComponent implements AfterViewInit {

@@ -11,8 +11,8 @@ import { WorldLocations } from "../../utilities/WorldLocations";
 
 @Component({
   selector: "app-map-type-scatter-bubble-series",
-  templateUrl: "./map-type-scatter-bubble-series.component.html",
-  styleUrls: ["./map-type-scatter-bubble-series.component.scss"]
+  styleUrls: ["./map-type-scatter-bubble-series.component.scss"],
+  templateUrl: "./map-type-scatter-bubble-series.component.html"
 })
 export class MapTypeScatterBubbleSeriesComponent implements AfterViewInit {
 
@@ -56,8 +56,7 @@ export class MapTypeScatterBubbleSeriesComponent implements AfterViewInit {
     this.addSeriesWith(WorldLocations.getAll());
 }
 
-    public addSeriesWith(locations: any[])
-    { 
+    public addSeriesWith(locations: any[]) {
         const sizeScale = new IgxSizeScaleComponent();
         sizeScale.minimumValue = 4;
         sizeScale.maximumValue = 60;
@@ -65,7 +64,7 @@ export class MapTypeScatterBubbleSeriesComponent implements AfterViewInit {
         const brushes = [
             "rgba(14, 194, 14, 0.4)",  // semi-transparent green
             "rgba(252, 170, 32, 0.4)", // semi-transparent orange
-            "rgba(252, 32, 32, 0.4)",  // semi-transparent red
+            "rgba(252, 32, 32, 0.4)"  // semi-transparent red
         ];
 
         const brushScale = new IgxValueBrushScaleComponent();

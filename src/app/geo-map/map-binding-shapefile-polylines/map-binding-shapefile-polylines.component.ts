@@ -1,12 +1,13 @@
 import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core";
 import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { IgxGeographicPolylineSeriesComponent } from 'igniteui-angular-maps/ES5/igx-geographic-polyline-series-component';
+import { IgxGeographicPolylineSeriesComponent
+} from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
 
 @Component({
-  selector: 'app-map-binding-shapefile-polylines',
-  templateUrl: './map-binding-shapefile-polylines.component.html',
-  styleUrls: ['./map-binding-shapefile-polylines.component.scss']
+  selector: "app-map-binding-shapefile-polylines",
+  styleUrls: ["./map-binding-shapefile-polylines.component.scss"],
+  templateUrl: "./map-binding-shapefile-polylines.component.html"
 })
 export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
 
@@ -17,7 +18,7 @@ export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
     public tooltipTemplate: TemplateRef<object>;
     constructor() { }
 
-    ngAfterViewInit() {
+    public ngAfterViewInit() {
     // loading a shapefile with geographic polygons
     const sds = new ShapeDataSource();
     sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
@@ -34,12 +35,12 @@ export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
         for (const record of shapeRecords) {
             // using field/column names from .DBF file
             const route = {
-                points: record.points,
-                name: record.fieldValues.Name,
                 capacity: record.fieldValues.CapacityG,
                 distance: record.fieldValues.DistanceKM,
-                isOverLand: record.fieldValues.OverLand === 0,
                 isActive: record.fieldValues.NotLive !== 0,
+                isOverLand: record.fieldValues.OverLand === 0,
+                name: record.fieldValues.Name,
+                points: record.points,
                 service: record.fieldValues.InService
             };
             geoPolylines.push(route);

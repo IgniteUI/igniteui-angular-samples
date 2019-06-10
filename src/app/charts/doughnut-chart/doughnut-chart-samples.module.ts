@@ -23,15 +23,14 @@ import {
     declarations: [
         DoughnutChartExplosionSampleComponent,
         DoughnutChartOverviewSampleComponent,
-        DoughnutChartSelectionSampleComponent       
+        DoughnutChartSelectionSampleComponent
         ],
     imports: [
         CommonModule,
         FormsModule,
         IgxDoughnutChartInteractivityModule,
-        IgxDoughnutChartModule,        
+        IgxDoughnutChartModule,
         IgxRingSeriesModule
-        
      ]
 })
 export class DoughnutChartSamplesModule {}

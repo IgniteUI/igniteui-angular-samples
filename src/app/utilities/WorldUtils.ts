@@ -2,10 +2,10 @@ export class WorldUtils {
 
     // calculate geo-paths between two locations using great circle formula
     public static calcPaths(origin: any, dest: any): any[] {
-        let interval = 200;
-        let paths: any[] = [[]];
+        const interval = 200;
+        const paths: any[] = [[]];
         let pathID = 0;
-        let distance = this.calcDistance(origin, dest);
+        const distance = this.calcDistance(origin, dest);
         if (distance <= interval) {
             paths[pathID].push({ x: origin.lon, y: origin.lat });
             paths[pathID].push({ x: dest.lon, y: dest.lat });
@@ -13,24 +13,23 @@ export class WorldUtils {
             let current = origin;
             let previous = origin;
 
-            for (let dist = interval; dist <= distance; dist += interval)
-            {
-                previous = current
+            for (let dist = interval; dist <= distance; dist += interval) {
+                previous = current;
                 paths[pathID].push({ x: current.lon, y: current.lat });
 
-                let bearing = this.calcBearing(current, dest);
+                const bearing = this.calcBearing(current, dest);
                 current = this.calcDestination(current, bearing, interval);
                 // ensure geo-path wrap around the world through the new date-line
                 if (previous.lon > 150 && current.lon < -150) {
                     paths[pathID].push({ x: 180, y: current.lat });
                     paths.push([]);
-                    pathID++
-                    current = { lon: -180, lat: current.lat }
+                    pathID++;
+                    current = { lon: -180, lat: current.lat };
                 } else if (previous.lon < -150 && current.lon > 150) {
                     paths[pathID].push({ x: -180, y: current.lat });
                     paths.push([]);
-                    pathID++
-                    current = { lon: 180, lat: current.lat }
+                    pathID++;
+                    current = { lon: 180, lat: current.lat };
                 }
             }
             paths[pathID].push({ x: dest.lon, y: dest.lat });
@@ -39,29 +38,28 @@ export class WorldUtils {
     }
 
     // calculate bearing angle between two locations
-    public static calcBearing(origin: any, dest: any) : number
-    {
+    public static calcBearing(origin: any, dest: any): number {
         origin = this.toRadianLocation(origin);
         dest = this.toRadianLocation(dest);
-        let range = (dest.lon - origin.lon);
-        let y = Math.sin(range) * Math.cos(dest.lat);
-        let x = Math.cos(origin.lat) * Math.sin(dest.lat) -
+        const range = (dest.lon - origin.lon);
+        const y = Math.sin(range) * Math.cos(dest.lat);
+        const x = Math.cos(origin.lat) * Math.sin(dest.lat) -
                 Math.sin(origin.lat) * Math.cos(dest.lat) * Math.cos(range);
-        let angle = Math.atan2(y, x);
+        const angle = Math.atan2(y, x);
         return this.toDegreesNormalized(angle);
     }
 
     // calculate destination for origin location and travel distance
     public static calcDestination(origin: any, bearing: number, distance: number): any {
-        let radius = 6371.0;
+        const radius = 6371.0;
         origin = this.toRadianLocation(origin);
         bearing = this.toRadians(bearing);
         distance = distance / radius; // angular distance in radians
 
         let lat = Math.asin(Math.sin(origin.lat) * Math.cos(distance) +
                        Math.cos(origin.lat) * Math.sin(distance) * Math.cos(bearing));
-        let x = Math.sin(bearing) * Math.sin(distance) * Math.cos(origin.lat);
-        let y = Math.cos(distance) - Math.sin(origin.lat) * Math.sin(origin.lat);
+        const x = Math.sin(bearing) * Math.sin(distance) * Math.cos(origin.lat);
+        const y = Math.cos(distance) - Math.sin(origin.lat) * Math.sin(origin.lat);
         let lon = origin.lon + Math.atan2(x, y);
         // normalize lon to coordinate between -180º and +180º
         lon = (lon + 3 * Math.PI) % (2 * Math.PI) - Math.PI;
@@ -69,81 +67,79 @@ export class WorldUtils {
         lon = this.toDegrees(lon);
         lat = this.toDegrees(lat);
 
-        return { lon: lon, lat: lat };
+        return { lon, lat };
     }
 
     // calculate distance between two locations
-    public static calcDistance(origin: any, dest: any) : number {
+    public static calcDistance(origin: any, dest: any): number {
         origin = this.toRadianLocation(origin);
         dest = this.toRadianLocation(dest);
-        let sinProd = Math.sin(origin.lat) * Math.sin(dest.lat);
-        let cosProd = Math.cos(origin.lat) * Math.cos(dest.lat);
-        let lonDelta = (dest.lon - origin.lon);
+        const sinProd = Math.sin(origin.lat) * Math.sin(dest.lat);
+        const cosProd = Math.cos(origin.lat) * Math.cos(dest.lat);
+        const lonDelta = (dest.lon - origin.lon);
 
-        let angle = Math.acos(sinProd + cosProd * Math.cos(lonDelta));
-        let distance = angle * 6371.0;
+        const angle = Math.acos(sinProd + cosProd * Math.cos(lonDelta));
+        const distance = angle * 6371.0;
         return distance; // * 6371.0; // in km
     }
 
-    public static toRadianLocation(geoPoint: any) : any {
-        let x = this.toRadians(geoPoint.lon);
-        let y = this.toRadians(geoPoint.lat);
+    public static toRadianLocation(geoPoint: any): any {
+        const x = this.toRadians(geoPoint.lon);
+        const y = this.toRadians(geoPoint.lat);
         return { lon: x, lat: y };
     }
 
-    public static toRadians(degrees: number) : number
-    {
+    public static toRadians(degrees: number): number {
         return degrees * Math.PI / 180;
     }
 
-    public static toDegrees(radians: number) : number {
+    public static toDegrees(radians: number): number {
         return (radians * 180.0 / Math.PI);
     }
 
-    public static toDegreesNormalized(radians: number) : number
-    {
+    public static toDegreesNormalized(radians: number): number {
         let degrees = this.toDegrees(radians);
         degrees = (degrees + 360) % 360;
         return degrees;
     }
 
     // converts latitude coordinate to a string
-    public static toStringLat(latitude: number) : string {
-        let str = Math.abs(latitude).toFixed(1) + "°";
+    public static toStringLat(latitude: number): string {
+        const str = Math.abs(latitude).toFixed(1) + "°";
         return latitude > 0 ? str + "N" : str + "S";
     }
 
     // converts longitude coordinate to a string
-    public static toStringLon(coordinate: number) : string {
-        let val = Math.abs(coordinate);
-        let str = val < 100 ? val.toFixed(1) : val.toFixed(0);
+    public static toStringLon(coordinate: number): string {
+        const val = Math.abs(coordinate);
+        const str = val < 100 ? val.toFixed(1) : val.toFixed(0);
         return coordinate > 0 ? str + "°E" : str + "°W";
     }
 
-    public static toStringAbbr(value: number) : string {
+    public static toStringAbbr(value: number): string {
         if (value > 1000000000000) {
-            return (value / 1000000000000).toFixed(1) + " T"
+            return (value / 1000000000000).toFixed(1) + " T";
         } else if (value > 1000000000) {
-            return (value / 1000000000).toFixed(1) + " B"
+            return (value / 1000000000).toFixed(1) + " B";
         } else if (value > 1000000) {
-            return (value / 1000000).toFixed(1) + " M"
+            return (value / 1000000).toFixed(1) + " M";
         } else if (value > 1000) {
-            return (value / 1000).toFixed(1) + " K"
+            return (value / 1000).toFixed(1) + " K";
         }
         return value.toFixed(0);
     }
 
-    public static getLongitude(location: any) : number {
-        if (location.x) return location.x;
-        if (location.lon) return location.lon;
-        if (location.longitude) return location.longitude;
+    public static getLongitude(location: any): number {
+        if (location.x) { return location.x; }
+        if (location.lon) { return location.lon; }
+        if (location.longitude) { return location.longitude; }
         return Number.NaN;
     }
 
-    public static getLatitude(location: any) : number {
-        if (location.y) return location.y;
-        if (location.lat) return location.lat;
-        if (location.latitude) return location.latitude;
+    public static getLatitude(location: any): number {
+        if (location.y) { return location.y; }
+        if (location.lat) { return location.lat; }
+        if (location.latitude) { return location.latitude; }
         return Number.NaN;
     }
 
@@ -165,59 +161,32 @@ export class WorldUtils {
                 minLat = Math.min(minLat, crrLat);
                 maxLat = Math.max(maxLat, crrLat);
             }
-
-            // if (location.x) {
-            //     minLon = Math.min(minLon, location.x);
-            //     maxLon = Math.max(maxLon, location.x);
-            // } else if (location.lon) {
-            //     minLon = Math.min(minLon, location.lon);
-            //     maxLon = Math.max(maxLon, location.lon);
-            // } else if (location.longitude) {
-            //     minLon = Math.min(minLon, location.longitude);
-            //     maxLon = Math.max(maxLon, location.longitude);
-            // }
-            // if (location.y) {
-            //     minLat = Math.min(minLat, location.y);
-            //     maxLat = Math.max(maxLat, location.y);
-            // } else if (location.lat) {
-            //     minLat = Math.min(minLat, location.lat);
-            //     maxLat = Math.max(maxLat, location.lat);
-            // } else if (location.latitude) {
-            //     minLat = Math.min(minLat, location.latitude);
-            //     maxLat = Math.max(maxLat, location.latitude);
-            // }
         }
 
         const geoBounds = {
+            height: Math.abs(maxLat - minLat),
             left: minLon,
             top: minLat,
-            width: Math.abs(maxLon - minLon),
-            height: Math.abs(maxLat - minLat)
+            width: Math.abs(maxLon - minLon)
         };
         return geoBounds;
     }
 
     public static getNightShapes(): any[] {
-        let nightShape = [];
+        const nightShape = [];
 
-        let line: any[] = [];
+        const line: any[] = [];
 
         for (let lon = -180; lon <= 180; lon += 1) {
-
-            // let line: any[] = [{x: lon, y: -90}, {x: lon, y: 90}];
-            let x = lon;
-            let y = 75 * Math.cos(lon * Math.PI / 180);
-            line.push({x: x, y: y});
+            const x = lon;
+            const y = 75 * Math.cos(lon * Math.PI / 180);
+            line.push({x, y});
         }
-        // line.push({x: 180, y: 90});
-        // line.push({x: -180, y: 90});
-        // line.push({x: -180, y: -90});
 
-        let coordinateLine = {points: [line]};
+        const coordinateLine = {points: [line]};
 
         nightShape.push(coordinateLine);
 
         return nightShape;
     }
-
 }

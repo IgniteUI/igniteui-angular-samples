@@ -2,7 +2,6 @@ import { AfterViewInit, Component, TemplateRef, ViewChild } from "@angular/core"
 import { IgxGeographicHighDensityScatterSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-high-density-scatter-series-component";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import DataUtils from "../../utilities/DataUtils";
 
 @Component({
   selector: "app-map-binding-data-csv",
@@ -25,10 +24,9 @@ export class MapBindingDataCsvComponent implements AfterViewInit {
 
     public componentDidMount() {
         // fetching JSON data with geographic locations from public folder
-        const url = DataUtils.getPublicURL();
-        fetch(url + "assets/Data/UsaCities.csv")
+        fetch("assets/Data/UsaCities.csv")
             .then((response) => response.text())
-            .then(data => this.onDataLoaded(data));
+            .then((data) => this.onDataLoaded(data));
     }
 
     public onDataLoaded(csvData: string) {
@@ -43,11 +41,11 @@ export class MapBindingDataCsvComponent implements AfterViewInit {
                 code: columns[4],
                 county: columns[5],
                 density: Number(columns[6]),
-                name:  columns[0],
                 latitude:  Number(columns[1]),
                 longitude: Number(columns[2]),
-                state: columns[3],
-                population: Number(columns[7])
+                name:  columns[0],
+                population: Number(columns[7]),
+                state: columns[3]
             };
             geoLocations.push(location);
         }
@@ -71,10 +69,10 @@ export class MapBindingDataCsvComponent implements AfterViewInit {
 
         // zooming to bound of lower 48-states
         const geoBounds = {
+            height: Math.abs(50 - 15),
             left: -130,
             top: 15,
-            width: Math.abs(-130 + 65),
-            height: Math.abs(50 - 15)
+            width: Math.abs(-130 + 65)
         };
         this.map.zoomToGeographic(geoBounds);
     }
