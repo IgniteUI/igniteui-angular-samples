@@ -114,7 +114,6 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
         GridDragBaseSampleComponent,
         GridDragToGridSampleComponent,
         GridMRLCustomNavigationComponent,
-        GridDragToGridSampleComponent,
         GridRowReorderComponent
     ],
     imports: [
