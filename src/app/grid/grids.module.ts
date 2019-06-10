@@ -57,6 +57,7 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
 
+import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 // tslint:enable:max-line-length
 
@@ -110,7 +111,8 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
         PlanetComponent,
         GridDragBaseSampleComponent,
         GridDragToGridSampleComponent,
-        GridMRLCustomNavigationComponent
+        GridMRLCustomNavigationComponent,
+        CustomGridPagingStyleSample
     ],
     imports: [
         CommonModule,

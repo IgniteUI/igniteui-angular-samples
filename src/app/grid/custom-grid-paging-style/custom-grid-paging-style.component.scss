@@ -1,0 +1,29 @@
+
+
+.cell__inner,
+.cell__inner_2 {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.cell__inner {
+    position: relative;
+    justify-content: space-between;
+}
+
+.igx-paginator>* {
+    margin: 0 .3125rem;
+    display: flex;
+    align-items: center;
+}
+
+.linear-bar-container {
+    width: 100%;
+}
+
+.grid__wrapper {
+    width: 950px;
+    margin: 0 auto;
+}
+

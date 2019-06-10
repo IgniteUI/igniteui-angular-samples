@@ -75,6 +75,8 @@ import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-c
 // tslint:disable-next-line: max-line-length
 import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 
+// tslint:disable-next-line: max-line-length
+import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -636,6 +638,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMRLCustomNavigationComponent, IgxGridModule],
                 ngDeclarations: [GridMRLCustomNavigationComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: CustomGridPagingStyleSample,
+            additionalFiles: ["/src/app/grid/services/data.ts",
+            "src/app/grid/custom-grid-paging-style/grid-paging-themes.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [CustomGridPagingStyleSample, IgxGridModule],
+                ngDeclarations: [CustomGridPagingStyleSample],
                 ngImports: [IgxGridModule]
             })
         }));

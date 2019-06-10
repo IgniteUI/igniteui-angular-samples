@@ -1,0 +1,55 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
+
+@import '~igniteui-angular/lib/core/styles/components/grid-paginator/grid-paginator-component';
+@import '~igniteui-angular/lib/core/styles/components/grid-paginator/grid-paginator-theme';
+
+
+$yellow-color: #F9D342;
+$black-color: #292826;
+
+$paginator-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+$dark-grid-paginator: igx-grid-paginator-theme(
+    $palette: $paginator-palette,
+    $text-color: igx-color($paginator-palette, "secondary", 200),
+    $background-color: igx-color($paginator-palette, "primary", 500),
+    $border-color:  igx-color($paginator-palette, "secondary", 200)
+);
+
+$light-grid-paginator-schema: extend($_light-grid-pagination,
+        (
+            text-color:(
+                igx-color: ("primary", 700)
+            ),
+            background-color:(
+                igx-color: ("secondary", 700)
+            ),
+            border-color:(
+                igx-color:( "primary", 500)
+            )
+        )
+);
+
+$custom-light-schema: extend($light-schema,(
+    igx-grid-paginator: $light-grid-paginator-schema
+));
+
+$light-grid-paginator: igx-grid-paginator-theme(
+  $palette: $paginator-palette,
+  $schema: $custom-light-schema
+);
+
+
+:host {
+    &.dark-grid-paginator {
+        ::ng-deep {
+            @include igx-grid-paginator($dark-grid-paginator);
+        }
+    }
+
+    &.light-grid-paginator {
+        ::ng-deep {
+            @include igx-grid-paginator($light-grid-paginator);
+        }
+    }
+}

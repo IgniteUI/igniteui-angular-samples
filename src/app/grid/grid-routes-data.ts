@@ -46,5 +46,6 @@ export const gridsRoutesData = {
     "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"},
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-mrl-custom-navigation":
-     { displayName: "Grid Multi Row Layout Custom Keyboard Navigation", parentName: "Grid" }
+     { displayName: "Grid Multi Row Layout Custom Keyboard Navigation", parentName: "Grid" },
+    "custom-grid-paging-style": {displayName: "Custom Grid Paging Style", parentName: "Grid"}
 };
