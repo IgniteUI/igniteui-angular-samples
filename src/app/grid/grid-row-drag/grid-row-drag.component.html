@@ -1,6 +1,6 @@
 <div class="container">
     <div class="moon-info">
-        <igx-grid [data]="moonData" [primaryKey]="'name'" [rowDraggable]="true" (onRowDragStart)="onRowDragStart($event)">
+        <igx-grid [data]="moonData" [primaryKey]="'name'" [rowDraggable]="true" (onRowDragStart)="onRowDragStart($event)" (onRowDragEnd)="onRowDragEnd($event)">
             <igx-column [field]="'name'" [header]="'Moon'" width="120px" [pinned]="true" [sortable]="true"></igx-column>
             <igx-column [field]="'planet'" [header]="'Planet'" width="150px" [sortable]="true"></igx-column>
             <igx-column [field]="'mass'" [header]="'Mass'" width="200px" [sortable]="true"></igx-column>
