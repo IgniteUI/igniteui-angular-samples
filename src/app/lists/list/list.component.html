@@ -13,17 +13,11 @@
         <igx-list-item [isHeader]="true">Contacts</igx-list-item>
         <igx-list-item *ngFor="let contact of contacts | igxFilter: fo1"
             igxRipple="pink"
-            igxRippleTarget=".igx-list__item">
-            <div class="item">
-                <div class="item__detail">
-                    <igx-avatar [src]="contact.avatar" roundShape="true"></igx-avatar>
-                    <div class="item__detail-info">
-                        <span class="item__detail-name">{{contact.name}}</span>
-                        <span class="item__detail-phone">{{contact.phone}}</span>
-                    </div>
-                </div>
-                <igx-icon [class.favorite]="contact.favorite">start</igx-icon>
-            </div>
+            igxRippleTarget=".igx-list__item-content">
+            <igx-avatar igxListThumbnail [src]="contact.avatar" roundShape="true"></igx-avatar>
+            <span igxListLineTitle>{{contact.name}}</span>
+            <span igxListLineSubTitle>{{contact.phone}}</span>
+            <igx-icon igxListAction [class.favorite]="contact.favorite">start</igx-icon>
         </igx-list-item>
     </igx-list>
 </div>
