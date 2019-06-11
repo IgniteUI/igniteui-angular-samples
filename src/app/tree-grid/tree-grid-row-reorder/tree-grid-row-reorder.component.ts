@@ -45,7 +45,6 @@ export class TreeGridRowReorderComponent {
 
     private getTargetRowIndex(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point): number {
         const targetElem: IgxTreeGridRowComponent = this.catchCursorPosOnElem(rowListArr, cursorPosition);
-        console.log(targetElem);
         return rowListArr.indexOf(rowListArr.find((r) => r.rowData.ID === targetElem.rowData.ID));
     }
 
