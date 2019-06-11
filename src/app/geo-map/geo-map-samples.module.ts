@@ -49,7 +49,8 @@ import { MapTypeShapePolylineSeriesComponent } from "./map-type-shape-polyline-s
         MapTypeShapePolylineSeriesComponent,
         MapBindingShapefilePolygonsComponent,
         MapBindingShapefilePolylinesComponent,
-        MapBindingShapefilePointsComponent],
+        MapBindingShapefilePointsComponent
+        ],
     imports: [
         CommonModule,
         FormsModule,

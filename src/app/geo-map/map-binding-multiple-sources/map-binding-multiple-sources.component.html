@@ -4,12 +4,8 @@
         height="500px"
         zoomable="true" >
     </igx-geographic-map>
-  </div>
-  <div class="my-legend">
-        <div class="legend-title">Geographic Map: Binding Multiple Sources</div>
-       
-    </div>
-  
+</div>
+
 <ng-template let-series="series" let-item="item" #polylineTooltipTemplate>
         <div>
             <span>
@@ -26,22 +22,22 @@
         </div>
     </ng-template>
 
-    <ng-template let-series="series" let-item="item" #pointTooltipTemplate>
-            <div>
-                <span>
-                {{item?.country}}
-                </span>
-                <br />
-                <span>
-                {{item?.name}}
-                </span>
-                <br />
-                <span>
-                Population: {{item.pop}} M
-                </span>
-                <br/> 
-                <span>
-                        Flights: {{item.flights}}
-                </span>
-            </div>
-        </ng-template>
+<ng-template let-series="series" let-item="item" #pointTooltipTemplate>
+        <div>
+            <span>
+            {{item?.country}}
+            </span>
+            <br />
+            <span>
+            {{item?.name}}
+            </span>
+            <br />
+            <span>
+            Population: {{item.pop}} M
+            </span>
+            <br/> 
+            <span>
+                    Flights: {{item.flights}}
+            </span>
+        </div>
+    </ng-template>

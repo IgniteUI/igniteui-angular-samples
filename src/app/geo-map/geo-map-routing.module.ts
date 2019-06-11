@@ -4,11 +4,16 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { geoMapRoutesData } from "./geo-map-routes-data";
+import { GeoMapSamplesModule } from "./geo-map-samples.module";
 import { MapBindingDataCsvComponent } from "./map-binding-data-csv/map-binding-data-csv.component";
 import { MapBindingDataJsonPointsComponent } from "./map-binding-data-json-points/map-binding-data-json-points.component";
 import { MapBindingDataModelComponent } from "./map-binding-data-model/map-binding-data-model.component";
 import { MapBindingMultipleShapesComponent } from "./map-binding-multiple-shapes/map-binding-multiple-shapes.component";
 import { MapBindingMultipleSourcesComponent } from "./map-binding-multiple-sources/map-binding-multiple-sources.component";
+import { MapBindingShapefilePointsComponent } from "./map-binding-shapefile-points/map-binding-shapefile-points.component";
+import { MapBindingShapefilePolygonsComponent } from "./map-binding-shapefile-polygons/map-binding-shapefile-polygons.component";
+import { MapBindingShapefilePolylinesComponent } from "./map-binding-shapefile-polylines/map-binding-shapefile-polylines.component";
 import { MapCustomTooltipsComponent } from "./map-custom-tooltips/map-custom-tooltips.component";
 import { MapOverviewComponent } from "./map-overview/map-overview.component";
 import { MapTypeScatterAreaSeriesComponent } from "./map-type-scatter-area-series/map-type-scatter-area-series.component";
@@ -18,12 +23,6 @@ import { MapTypeScatterDensitySeriesComponent } from "./map-type-scatter-density
 import { MapTypeScatterSymbolSeriesComponent } from "./map-type-scatter-symbol-series/map-type-scatter-symbol-series.component";
 import { MapTypeShapePolygonSeriesComponent } from "./map-type-shape-polygon-series/map-type-shape-polygon-series.component";
 import { MapTypeShapePolylineSeriesComponent } from "./map-type-shape-polyline-series/map-type-shape-polyline-series.component";
-import { MapBindingShapefilePolygonsComponent } from "./map-binding-shapefile-polygons/map-binding-shapefile-polygons.component";
-import { MapBindingShapefilePolylinesComponent } from "./map-binding-shapefile-polylines/map-binding-shapefile-polylines.component";
-import { MapBindingShapefilePointsComponent } from "./map-binding-shapefile-points/map-binding-shapefile-points.component";
-
-import { geoMapRoutesData } from "./geo-map-routes-data";
-import { GeoMapSamplesModule } from "./geo-map-samples.module";
 
 export const routes: Routes = [
     {
