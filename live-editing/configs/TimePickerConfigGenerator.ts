@@ -8,6 +8,8 @@ import { TimePickerSample3Component } from "../../src/app/scheduling/timepicker/
 import { TimePickerSample4Component } from "../../src/app/scheduling/timepicker/timepicker-sample-4/timepicker-sample-4.component";
 import { TimePickerSample5Component } from "../../src/app/scheduling/timepicker/timepicker-sample-5/timepicker-sample-5.component";
 import { TimePickerSample6Component } from "../../src/app/scheduling/timepicker/timepicker-sample-6/timepicker-sample-6.component";
+import { TimePickerSample7Component } from "../../src/app/scheduling/timepicker/timepicker-sample-7/timepicker-sample-7.component";
+import { TimePickerSample8Component } from "../../src/app/scheduling/timepicker/timepicker-sample-8/timepicker-sample-8.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -90,6 +92,26 @@ export class TimePickerConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimepickerDropdownComponent],
                 ngDeclarations: [TimepickerDropdownComponent],
+                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
+            }),
+            shortenComponentPathBy: "/scheduling/timepicker/"
+        }));
+
+        configs.push(new Config({
+            component: TimePickerSample7Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimePickerSample7Component],
+                ngDeclarations: [TimePickerSample7Component],
+                ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
+            }),
+            shortenComponentPathBy: "/scheduling/timepicker/"
+        }));
+
+        configs.push(new Config({
+            component: TimePickerSample8Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule, TimePickerSample8Component],
+                ngDeclarations: [TimePickerSample8Component],
                 ngImports: [IgxTimePickerModule, IgxInputGroupModule, IgxIconModule]
             }),
             shortenComponentPathBy: "/scheduling/timepicker/"
