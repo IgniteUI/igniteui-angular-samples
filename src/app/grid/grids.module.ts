@@ -1,5 +1,6 @@
 // tslint:disable:max-line-length
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
@@ -119,6 +120,7 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         GridsRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
