@@ -65,7 +65,8 @@ import {
     FilteringTemplateSampleComponent
 } from "../../src/app/grid/grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
-import { GridGroupBySummarySampleComponent
+import {
+    GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 
@@ -88,12 +89,14 @@ import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sa
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
 import {
-    GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+    GridDragToGridSampleComponent
+} from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-row-drag.component";
 import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowReorderComponent } from "../../src/app/grid/grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
@@ -652,6 +655,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridMRLCustomNavigationComponent],
                 ngImports: [IgxGridModule]
             })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridRowReorderComponent, IgxDragDropModule],
+                ngDeclarations: [GridRowReorderComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule]
+            }),
+            component: GridRowReorderComponent
         }));
 
         return configs;

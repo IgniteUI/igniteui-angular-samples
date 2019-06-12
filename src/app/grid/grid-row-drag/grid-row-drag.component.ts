@@ -30,6 +30,10 @@ export class GridDragSampleComponent {
         }
     }
 
+    public onRowDragEnd(args) {
+        args.animation = true;
+    }
+
     public onEnter(args, planet: PlanetComponent) {
         args.drag.dragGhost.classList.add(
             this.isDropAllowed(args.dragData.rowData.name, planet.name) ? HoverClassList.ALLOW : HoverClassList.DENY);
