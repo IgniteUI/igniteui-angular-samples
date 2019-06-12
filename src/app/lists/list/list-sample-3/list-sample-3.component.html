@@ -2,8 +2,8 @@
   <igx-list-item isHeader="true">
     Contacts
   </igx-list-item>
-  <igx-list-item *ngFor="let contact of contacts">
-    <span class="contact-name">{{ contact.name }}</span>
-    <span class="contact-phone">{{contact.phone}}</span>
+  <igx-list-item *ngFor="let contact of contacts" igxRipple igxRippleTarget=".igx-list__item-content">
+    <span igxListLineTitle>{{ contact.name }}</span>
+    <span igxListLineSubTitle>{{contact.phone}}</span>
   </igx-list-item>
 </igx-list>

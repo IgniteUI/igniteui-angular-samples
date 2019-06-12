@@ -1,3 +1,5 @@
+
+
 :host {
     display: block;
     padding: 16px;
@@ -8,47 +10,14 @@
 }
 
 .list-sample {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 1px 3px 0 rgba(0, 0, 0, 0.2),
+        0 1px 1px 0 rgba(0, 0, 0, 0.14),
+        0 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &__detail {
-        display: flex;
-        align-items: center;
-    }
-
-    &__detail-info {
-        display: flex;
-        flex-flow: column nowrap;
-        flex: 1 0 auto;
-        padding: 0 16px;
-    }
-
-    &__detail-name {
-        font-size: 16px;
-        font-weight: 500;
-        color: rgba(0, 0, 0, .87);
-    }
-
-    &__detail-phone {
-        font-size: 12px;
-        line-height: 1;
-        color: rgba(0, 0, 0, .56);
-    }
-
-    igx-icon {
-        color: lightgray;
-
-        &.favorite {
-            color: orange;
-        }
-    }
+.favorite {
+    color: orange;
 }
 
 .item .delete-item:hover {
