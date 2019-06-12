@@ -81,6 +81,9 @@ import {
 import {
     TreeGridRemoteFilteringSampleComponent
 } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
+import {
+    TreeGridRemotePagingSampleComponent
+} from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
 import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
@@ -150,7 +153,8 @@ import {
         TreeGridRowDrag,
         TreeGridRowDragBase,
         TreeGridKBNavigationComponent,
-        TreeGridRowReorderComponent
+        TreeGridRowReorderComponent,
+        TreeGridRemotePagingSampleComponent
     ],
     imports: [
         CommonModule,

@@ -4,14 +4,14 @@
     <div>Drag a row here to delete it</div>
 </div>
 <igx-hierarchical-grid class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
-    [height]="'540px'" [width]="'800px'" #hGrid>
+    [height]="'540px'" [width]="'800px'" #hGrid (onRowDragEnd)="onRowDragEnd($event)">
     <igx-column field="name" header="Name"></igx-column>
     <igx-column field="system" header="Is System Drive"></igx-column>
-    <igx-row-island [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1>
+    <igx-row-island [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1 (onRowDragEnd)="onRowDragEnd($event)">
         <igx-column field="name" header="Name"></igx-column>
         <igx-column field="createdOn" header="Created On"></igx-column>
         <igx-column field="createdBy" header="Created By"></igx-column>
-        <igx-row-island [primaryKey]="'id'" igxDrop [key]="'files'">
+        <igx-row-island [primaryKey]="'id'" igxDrop [key]="'files'" (onRowDragEnd)="onRowDragEnd($event)">
             <igx-column field="name" header="Name"></igx-column>
             <igx-column field="extension" header="Extension"></igx-column>
             <igx-column field="size" header="Size" dataType="number" hasSummary='true'></igx-column>
