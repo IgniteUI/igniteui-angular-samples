@@ -11,10 +11,10 @@ import { IgxGeographicPolylineSeriesComponent
 })
 export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
 
-    @ViewChild("template")
+    @ViewChild("template", {static: true})
     public tooltipTemplate: TemplateRef<object>;
     constructor() { }
 

@@ -9,7 +9,7 @@ import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
 })
 export class TreeGridSearchSampleComponent implements OnInit {
 
-    @ViewChild("treeGrid1") public treeGrid: IgxTreeGridComponent;
+    @ViewChild("treeGrid1", {static: true}) public treeGrid: IgxTreeGridComponent;
     public data: any[];
     public searchText: string = "";
     public caseSensitive: boolean = false;

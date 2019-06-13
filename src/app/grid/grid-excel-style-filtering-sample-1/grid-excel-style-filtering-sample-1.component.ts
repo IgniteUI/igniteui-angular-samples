@@ -9,7 +9,7 @@ import { DATA } from "../../data/nwindData";
 })
 
 export class ExcelStyleFilteringSample1Component implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", {static: true})
     public grid1: IgxGridComponent;
 
     public data: any[];

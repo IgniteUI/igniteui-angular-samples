@@ -36,7 +36,7 @@ export class DataChartTypeStackedSeriesComponent implements OnInit {
     public catYAxis: IgxCategoryYAxisComponent;
     public numXAxis: IgxNumericXAxisComponent;
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxDataChartComponent;
 
     constructor() {

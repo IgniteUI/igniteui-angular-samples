@@ -26,8 +26,7 @@ export class GridSaveStateComponent implements OnInit {
   public localData: any[];
   public columns: IColumnState[];
   public gridId = "grid1";
-
-  @ViewChild(IgxGridStateDirective) public state;
+  public state;
 
   public initialColumns: IColumnState[] = [
     { field: "FirstName", header: "First Name", width: "150px", dataType: "string", pinned: true},

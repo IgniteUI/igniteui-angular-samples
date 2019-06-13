@@ -11,7 +11,8 @@ import { DataService } from "../services/data.service";
 })
 
 export class PagingSampleComponent {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+    @ViewChild("grid1", {static: true})
+    public grid1: IgxGridComponent;
     public data: any[];
     constructor() {
     }

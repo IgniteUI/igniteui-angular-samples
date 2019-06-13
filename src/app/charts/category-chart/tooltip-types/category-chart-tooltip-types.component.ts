@@ -15,7 +15,7 @@ import { ToolTipType } from "igniteui-angular-charts/ES5/ToolTipType";
 })
 export class CategoryChartTooltipTypesComponent implements AfterViewInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxCategoryChartComponent;
     public toolTipType: string = "Category";
     public olympicData: any;

@@ -56,7 +56,7 @@ class SumSummary extends IgxSummaryOperand {
 })
 export class TreeGridSummary2SampleComponent implements OnInit {
 
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent })
+    @ViewChild("treegrid1", {static: true})
     public grid1: IgxTreeGridComponent;
     public data;
 

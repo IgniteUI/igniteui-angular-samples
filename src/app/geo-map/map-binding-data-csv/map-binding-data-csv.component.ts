@@ -11,9 +11,9 @@ import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geograp
 
 export class MapBindingDataCsvComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
-    @ViewChild("template")
+    @ViewChild("template", {static: true})
     public tooltip: TemplateRef<object>;
     constructor() {
     }

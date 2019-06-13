@@ -11,7 +11,6 @@ import {
     templateUrl: "select-sample-4.component.html"
 })
 export class SelectSample4Component implements OnInit {
-    @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
     public items: string[] = ["Orange", "Apple", "Banana"];
     public customOverlaySettings: OverlaySettings;

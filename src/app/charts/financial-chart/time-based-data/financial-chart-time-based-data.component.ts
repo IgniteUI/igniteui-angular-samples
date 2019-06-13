@@ -17,7 +17,7 @@ export class FinancialChartTimeBasedDataComponent {
 
     public financialStocks: any;
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxFinancialChartComponent;
 
     constructor(private dataService: FinancialDataService) {

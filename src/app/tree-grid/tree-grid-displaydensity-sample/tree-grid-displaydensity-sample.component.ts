@@ -32,9 +32,9 @@ class CustomNumberSummary extends IgxSummaryOperand {
 })
 export class TreeGridDisplaydensitySampleComponent implements OnInit {
 
-    @ViewChild("treeGrid", { read: IgxTreeGridComponent })
+    @ViewChild("treeGrid", {static: true})
     public treeGrid: IgxTreeGridComponent;
-    @ViewChild(IgxButtonGroupComponent) public buttonGroup: IgxButtonGroupComponent;
+    public buttonGroup: IgxButtonGroupComponent;
     public data;
     public density = "compact";
     public displayDensities;

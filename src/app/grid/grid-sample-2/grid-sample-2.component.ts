@@ -28,18 +28,19 @@ export class LocalService {
 })
 
 export class FinancialSampleComponent {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+    @ViewChild("grid1", {static: true}) 
+    public grid1: IgxGridComponent;
     public data: Observable<any[]>;
     constructor(private localService: LocalService) {
         this.localService.getData(100000);
         this.data = this.localService.records;
-    }
+    };
     public ngOnInit(): void {
-    }
+    };
     public formatNumber(value: number) {
         return value.toFixed(2);
-    }
+    };
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
-    }
+    };
 }

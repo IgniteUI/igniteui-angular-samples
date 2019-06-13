@@ -14,11 +14,11 @@ import { WorldUtils } from "../../utilities/WorldUtils";
 
 export class MapBindingDataModelComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
-    @ViewChild("pointSeriestemplate")
+    @ViewChild("pointSeriestemplate", {static: true})
     public pointSeriestemplate: TemplateRef<object>;
-    @ViewChild("polylineSeriesTooltipTemplate")
+    @ViewChild("polylineSeriesTooltipTemplate", {static: true})
     public polylineSeriesTooltipTemplate: TemplateRef<object>;
     public flights: any[];
     constructor() {

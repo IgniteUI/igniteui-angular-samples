@@ -24,7 +24,7 @@ import { DataService } from "./../services/data.service";
 })
 export class GridComponent implements OnInit, OnDestroy {
 
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", {static: true})
     public grid1: IgxGridComponent;
 
     public topSpeedSummary = CustomTopSpeedSummary;

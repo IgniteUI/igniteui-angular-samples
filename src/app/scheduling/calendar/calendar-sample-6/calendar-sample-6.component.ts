@@ -7,7 +7,7 @@ import { DateRangeDescriptor, DateRangeType, IgxCalendarComponent } from "ignite
   templateUrl: "./calendar-sample-6.component.html"
 })
 export class CalendarSample6Component {
-    @ViewChild("calendar") public calendar: IgxCalendarComponent;
+    @ViewChild("calendar", {static: true}) public calendar: IgxCalendarComponent;
     public today = new Date(Date.now());
     public range = [
         new Date(this.today.getFullYear(), this.today.getMonth(), 3),

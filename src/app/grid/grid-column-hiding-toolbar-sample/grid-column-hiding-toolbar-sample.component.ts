@@ -9,7 +9,7 @@ import { DATA } from "./data";
 })
 export class GridColumnHidingToolbarSampleComponent implements OnInit, AfterViewInit {
 
-    @ViewChild("grid", { read: IgxGridComponent }) public grid: IgxGridComponent;
+    @ViewChild("grid", {static: true}) public grid: IgxGridComponent;
     public data: any[];
 
     constructor() { }

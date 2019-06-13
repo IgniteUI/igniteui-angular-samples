@@ -12,8 +12,8 @@ import { RemoteFilteringService } from "../services/remoteFilteringService";
 export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit {
 
     public remoteData: Observable<any[]>;
-    @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
-    @ViewChild("toast") public toast: IgxToastComponent;
+    @ViewChild("treeGrid", {static: true}) public treeGrid: IgxTreeGridComponent;
+    @ViewChild("toast", {static: true}) public toast: IgxToastComponent;
 
     constructor(private _remoteService: RemoteFilteringService, private _cdr: ChangeDetectorRef) {
     }

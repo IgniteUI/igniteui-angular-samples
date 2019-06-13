@@ -19,9 +19,11 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
     public data: any[];
     public transactionsData: Transaction[] = [];
 
-    @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
-    @ViewChild(IgxDialogComponent) public dialog: IgxDialogComponent;
-    @ViewChild("dialogGrid", { read: IgxGridComponent }) public dialogGrid: IgxGridComponent;
+    @ViewChild("treeGrid", {static: true}) 
+    public treeGrid: IgxTreeGridComponent;
+    public dialog: IgxDialogComponent;
+    @ViewChild("dialogGrid", {static: true}) 
+    public dialogGrid: IgxGridComponent;
 
     private nextRow = 1;
 

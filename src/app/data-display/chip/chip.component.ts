@@ -108,26 +108,20 @@ export class ChipSampleComponent {
     ];
 
     public toastPosition: IgxToastPosition = IgxToastPosition.Middle;
-
-    @ViewChild("chipsAreaCc", { read: IgxChipsAreaComponent })
+    @ViewChild("chipsAreaCc", {static: true})
     public chipsAreaCc: IgxChipsAreaComponent;
-
-    @ViewChild("ccGroup", { read: IgxInputDirective })
+    @ViewChild("ccGroup", {static: true})
     public ccGroup: IgxInputDirective;
-
-    @ViewChild("textArea", { read: ElementRef})
+    @ViewChild("textArea", {static: true})
     public textArea: ElementRef;
-
-    @ViewChild("chipsArea", { read: IgxChipsAreaComponent })
+    @ViewChild("chipsArea", {static: true})
     public chipsArea: IgxChipsAreaComponent;
-
-    @ViewChild("inputForm", { read: IgxInputDirective })
+    @ViewChild("inputForm", {static: true})
     public inputBox: IgxInputDirective;
-
-    @ViewChild(IgxDropDownComponent)
+    @ViewChild(IgxDropDownComponent, {static: true})
     public igxDropDown: IgxDropDownComponent;
 
-    @ViewChild("inputGroup", {read: IgxInputGroupComponent})
+    @ViewChild("inputGroup", {static: true})
     public inputGroup: IgxInputGroupComponent;
 
     private dropDownOpened = false;

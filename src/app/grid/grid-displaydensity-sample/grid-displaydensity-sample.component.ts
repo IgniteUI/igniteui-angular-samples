@@ -30,9 +30,9 @@ class CustomNumberSummary extends IgxSummaryOperand {
 })
 export class GridDisplayDensitySampleComponent implements OnInit {
 
-    @ViewChild("grid", { read: IgxGridComponent })
+    @ViewChild("grid", {static: true})
     public grid: IgxGridComponent;
-    @ViewChild(IgxButtonGroupComponent) public buttonGroup: IgxButtonGroupComponent;
+    public buttonGroup: IgxButtonGroupComponent;
     public data;
     public density = "compact";
     public displayDensities;

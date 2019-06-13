@@ -12,7 +12,7 @@ import { DATA } from "./data";
 })
 
 export class PinningSampleComponent {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+    @ViewChild("grid1", {static: true}) public grid1: IgxGridComponent;
 
     public data: any[];
     public columns: any[];

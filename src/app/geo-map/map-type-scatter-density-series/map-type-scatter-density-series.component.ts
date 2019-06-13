@@ -13,9 +13,9 @@ import { WorldUtils } from "../../utilities/WorldUtils";
 
 export class MapTypeScatterDensitySeriesComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
-    @ViewChild("template")
+    @ViewChild("template", {static: true})
     public tooltip: TemplateRef<object>;
 
     public geoLocations;

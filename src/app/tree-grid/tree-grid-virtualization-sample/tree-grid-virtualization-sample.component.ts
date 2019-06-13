@@ -11,7 +11,7 @@ import { HierFinancialDataService } from "../services/hierFinancialData.service"
 })
 
 export class TreeGridVirtualizationSampleComponent {
-    @ViewChild("grid1") public grid1: IgxTreeGridComponent;
+    @ViewChild("grid1", {static: true}) public grid1: IgxTreeGridComponent;
 
     public data: Observable<any[]>;
     public volume = 10000;

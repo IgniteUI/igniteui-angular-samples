@@ -17,12 +17,11 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     public totalPages: number = 1;
     public totalCount = 0;
     public pages = [];
-    @ViewChild("customPager", { read: TemplateRef })
+    @ViewChild("customPager", {static: true})
     public remotePager: TemplateRef<any>;
-    @ViewChild("secCustomPager", { read: TemplateRef })
+    @ViewChild("secCustomPager", {static: true})
     public secondPagerTemplate: TemplateRef<any>;
-
-    @ViewChild("grid1")
+    @ViewChild("grid1", {static: true})
     public grid1: IgxGridComponent;
     public title = "gridPaging";
     public data: Observable<any[]>;

@@ -20,7 +20,7 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
     public totalCount = 0;
     public maxPerPage = Number.MAX_SAFE_INTEGER;
 
-    @ViewChild("treeGrid")
+    @ViewChild("treeGrid", {static: true})
     public treeGrid: IgxTreeGridComponent;
     public data: Observable<any[]>;
 

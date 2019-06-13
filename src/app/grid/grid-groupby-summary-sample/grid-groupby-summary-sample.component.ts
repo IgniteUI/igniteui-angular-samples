@@ -53,7 +53,7 @@ class SumSummary extends IgxSummaryOperand {
     templateUrl: "./grid-groupby-summary-sample.component.html"
 })
 export class GridGroupBySummarySampleComponent {
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", {static: true})
     public grid1: IgxGridComponent;
     public data;
     public expr: ISortingExpression[];

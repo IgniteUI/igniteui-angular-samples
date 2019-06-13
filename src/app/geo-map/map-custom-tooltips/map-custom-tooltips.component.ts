@@ -11,9 +11,9 @@ import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/ig
 
 export class MapCustomTooltipsComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
-    @ViewChild ("template")
+    @ViewChild("template", {static: true})
     public tooltipTemplate: TemplateRef<object>;
     constructor() {
     }

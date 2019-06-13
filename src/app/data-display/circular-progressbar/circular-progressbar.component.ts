@@ -12,7 +12,7 @@ export class CircularProgressbarComponent implements OnInit {
   public currentValue: number;
   public interval: any;
 
-  @ViewChild(IgxCircularProgressBarComponent) public circularBar: IgxCircularProgressBarComponent;
+  public circularBar: IgxCircularProgressBarComponent;
 
   constructor() { }
 

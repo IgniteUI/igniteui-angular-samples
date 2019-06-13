@@ -11,10 +11,10 @@ export class ListSample7Component implements OnInit {
 
     public contacts;
 
-    @ViewChild("toast")
+    @ViewChild("toast", {static: true})
     public toast: IgxToastComponent;
 
-    @ViewChild("mainIgxList")
+    @ViewChild("mainIgxList", {static: true})
     public list: IgxListComponent;
 
     private dataSource = [{

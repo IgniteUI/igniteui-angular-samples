@@ -14,10 +14,7 @@ import {
     templateUrl: "./expansion-sample-6.component.html"
 })
 export class ExpansionPanelSample6Component {
-
-    @ViewChild(IgxExpansionPanelComponent)
     public panel: IgxExpansionPanelComponent;
-
     public animationSettingsCustom = {
         closeAnimation: useAnimation(slideOutRight, {
                 params: {

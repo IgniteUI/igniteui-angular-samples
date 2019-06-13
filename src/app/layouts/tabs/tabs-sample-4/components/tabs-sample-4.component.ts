@@ -10,7 +10,7 @@ import { filter } from "rxjs/operators";
     templateUrl: "./tabs-sample-4.component.html"
 })
 export class TabsSample4Component implements OnInit, OnDestroy {
-    @ViewChild("tabs1")
+    @ViewChild("tabs1", {static: true})
     public tabs: IgxTabsComponent;
     public routerLinks: any[];
 

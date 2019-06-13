@@ -23,10 +23,10 @@ export class CategoryChartHighFrequencyComponent implements AfterViewInit, OnDes
 
     public data: any[];
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxCategoryChartComponent;
 
-    @ViewChild("fpsSpan")
+    @ViewChild("fpsSpan", {static: true})
     public fpsSpan: ElementRef;
 
     private currValue: number = 15;

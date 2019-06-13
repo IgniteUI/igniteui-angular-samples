@@ -13,8 +13,7 @@ import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-categ
     templateUrl: "./category-chart-highlighting.component.html"
 })
 export class CategoryChartHighlightingComponent implements AfterViewInit {
-
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxCategoryChartComponent;
     public isItemHighlightingEnabled: boolean = true;
     public isSeriesHighlightingEnabled: boolean = true;

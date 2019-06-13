@@ -30,8 +30,6 @@ export class NavdrawerComponent  {
     { name: "android", text: "Toast" }
   ];
   public selected = "Avatar";
-
-  @ViewChild(IgxNavigationDrawerComponent)
   public drawer: IgxNavigationDrawerComponent;
 
   public drawerState = {

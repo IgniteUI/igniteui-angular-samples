@@ -45,11 +45,11 @@ export class Button {
 })
 
 export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
-    @ViewChild("grid1") public grid1: IgxTreeGridComponent;
-    @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
+    @ViewChild("grid1", {static: true}) public grid1: IgxTreeGridComponent;
+    @ViewChild("buttonGroup1", {static: true}) public buttonGroup1: IgxButtonGroupComponent;
 
-    @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
-    @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
+    @ViewChild("slider1", {static: true}) public volumeSlider: IgxSliderComponent;
+    @ViewChild("slider2", {static: true}) public intervalSlider: IgxSliderComponent;
 
     public theme = false;
     public volume = 1000;

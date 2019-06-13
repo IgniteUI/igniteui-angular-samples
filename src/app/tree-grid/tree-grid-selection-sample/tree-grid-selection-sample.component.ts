@@ -9,7 +9,7 @@ import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
 })
 export class TreeGridSelectionSampleComponent implements OnInit {
 
-    @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
+    @ViewChild("treeGrid", {static: true}) public treeGrid: IgxTreeGridComponent;
     public data: any[];
     public selection = true;
 

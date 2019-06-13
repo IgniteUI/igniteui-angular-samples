@@ -9,7 +9,7 @@ import { EMPLOYEE_FLAT_DATA_DETAILED } from "../data/employees-flat-detailed";
 })
 export class TreeGridMultiColumnHeadersSampleComponent {
 
-    @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent })
+    @ViewChild(IgxTreeGridComponent, {static: true})
     public treeGrid: IgxTreeGridComponent;
     public data = EMPLOYEE_FLAT_DATA_DETAILED();
 

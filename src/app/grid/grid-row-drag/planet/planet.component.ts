@@ -10,7 +10,7 @@ import { IPlanet } from "../data";
 
 export class PlanetComponent {
 
-    @ViewChild("info", { read: IgxDialogComponent })
+    @ViewChild("info", {static: true})
     public info: IgxDialogComponent;
 
     @Input()

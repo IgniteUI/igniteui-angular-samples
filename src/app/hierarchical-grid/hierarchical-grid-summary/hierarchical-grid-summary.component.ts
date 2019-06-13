@@ -59,7 +59,7 @@ export class HGridSummarySampleComponent implements OnInit {
     public mySummary = MySummary;
     public myChildSummary = MyChildSummary;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", {static: true})
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {

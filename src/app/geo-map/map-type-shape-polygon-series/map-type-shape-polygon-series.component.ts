@@ -10,10 +10,10 @@ import { IgxGeographicShapeSeriesComponent } from "igniteui-angular-maps/ES5/igx
 })
 export class MapTypeShapePolygonSeriesComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
 
-    @ViewChild("template")
+    @ViewChild("template", {static: true})
     public tooltip: TemplateRef<object>;
 
     public data: any;

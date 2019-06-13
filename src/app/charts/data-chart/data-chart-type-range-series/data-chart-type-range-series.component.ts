@@ -19,13 +19,13 @@ export class DataChartTypeRangeSeriesComponent implements OnInit {
     public data: any[];
     public seriesType: string = "Column";
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxDataChartComponent;
 
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", {static: true})
     public xAxis: IgxCategoryXAxisComponent;
 
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", {static: true})
     public yAxis: IgxNumericYAxisComponent;
 
     constructor() {

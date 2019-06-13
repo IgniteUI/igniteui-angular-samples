@@ -10,8 +10,8 @@ import { Subject } from "rxjs";
 
 export class BannerSample2Component implements OnInit, OnDestroy {
 
-    @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
-    @ViewChild(IgxToastComponent) public eventToast: IgxToastComponent;
+    public banner: IgxBannerComponent;
+    public eventToast: IgxToastComponent;
     public contentWidth = "384px";
     public imageUrls = ["assets/images/card/media/the_red_ice_forest.jpg",
         "assets/images/card/media/yosemite.jpg"];

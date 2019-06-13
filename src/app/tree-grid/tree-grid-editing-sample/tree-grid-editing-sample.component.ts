@@ -35,8 +35,9 @@ export class TreeGridEditingSampleComponent implements OnInit {
 
     public data: any[];
     public numberSummaries = CustomNumberSummary;
-    @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
-    @ViewChild("dialogAdd", { read: IgxDialogComponent }) public dialog: IgxDialogComponent;
+    @ViewChild("treeGrid", {static: true}) public treeGrid: IgxTreeGridComponent;
+    @ViewChild("dialogAdd", {static: true})
+    public dialog: IgxDialogComponent;
     public employee: Employee;
     private nextRow: number;
 

@@ -10,6 +10,6 @@ import { IgxLinearGaugeComponent } from "igniteui-angular-gauges/ES5/igx-linear-
 
 export class LinearGaugeTickmarksComponent {
 
-    @ViewChild("linearGauge")
+    @ViewChild("linearGauge", {static: true})
     public linearGauge: IgxLinearGaugeComponent;
 }

@@ -8,8 +8,8 @@ import { Direction, IgxCarouselComponent, IgxLinearProgressBarComponent } from "
   templateUrl: "./carousel-sample-3.component.html"
 })
 export class CarouselSample3Component implements OnInit {
-  @ViewChild("carousel") public carousel: IgxCarouselComponent;
-  @ViewChild("linearbar") public linearbar: IgxLinearProgressBarComponent;
+  @ViewChild("carousel", {static: true}) public carousel: IgxCarouselComponent;
+  @ViewChild("linearbar", {static: true}) public linearbar: IgxLinearProgressBarComponent;
 
   public slides: any[] = [];
   public loop = true;

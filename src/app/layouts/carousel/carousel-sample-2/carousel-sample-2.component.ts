@@ -8,7 +8,7 @@ import { Direction, IgxCarouselComponent } from "igniteui-angular";
   templateUrl: "./carousel-sample-2.component.html"
 })
 export class CarouselSample2Component implements OnInit {
-  @ViewChild("carousel") public carousel: IgxCarouselComponent;
+  @ViewChild("carousel", {static: true}) public carousel: IgxCarouselComponent;
 
   public slides: any[] = [];
 

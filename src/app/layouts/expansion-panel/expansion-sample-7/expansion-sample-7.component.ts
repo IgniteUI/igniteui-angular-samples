@@ -8,8 +8,6 @@ import { data as weatherData } from "./weather-data";
     templateUrl: "./expansion-sample-7.component.html"
 })
 export class ExpansionPanelSample7Component {
-
-    @ViewChild(IgxExpansionPanelComponent)
     public panel: IgxExpansionPanelComponent;
     public data = weatherData;
 

@@ -13,10 +13,10 @@ export class DataChartSeriesTrendlinesComponent {
     public data: any[];
     public trendlineType: string = "CubicFit";
 
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", {static: true})
     public xAxis: IgxCategoryXAxisComponent;
 
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", {static: true})
     public yAxis: IgxNumericYAxisComponent;
 
     constructor() {

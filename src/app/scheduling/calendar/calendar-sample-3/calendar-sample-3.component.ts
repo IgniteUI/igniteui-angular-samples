@@ -7,8 +7,10 @@ import { IgxCalendarComponent, IgxDialogComponent } from "igniteui-angular";
   templateUrl: "./calendar-sample-3.component.html"
 })
 export class CalendarSample3Component {
-    @ViewChild("calendar") public calendar: IgxCalendarComponent;
-    @ViewChild("alert") public dialog: IgxDialogComponent;
+    @ViewChild("calendar", {static: true})
+    public calendar: IgxCalendarComponent;
+    @ViewChild("alert", {static: true})
+    public dialog: IgxDialogComponent;
 
     public formatOptions: any;
     public formatViews: any;

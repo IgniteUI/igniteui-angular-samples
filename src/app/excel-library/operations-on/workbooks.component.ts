@@ -21,7 +21,7 @@ import { ExcelUtility } from "../../utilities/excel-utility";
 })
 export class ExcelLibraryOperationsOnWorkbooksComponent implements OnInit {
 
-    @ViewChild("gridContainer", {read: ViewContainerRef})
+    @ViewChild("gridContainer", {static: true})
     public gridContainerRef: ViewContainerRef;
     // openPlaceholder = "Choose Excel File:";
     public canSave = false;

@@ -26,8 +26,8 @@ import { take } from "rxjs/operators";
     templateUrl: "./grid-paste-sample.component.html"
 })
 export class GridPasteSampleComponent {
-    @ViewChild("grid1", { read: IgxGridComponent }) public grid1: IgxGridComponent;
-    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
+    @ViewChild("grid1", {static: true}) public grid1: IgxGridComponent;
+    public igxDropDown: IgxDropDownComponent;
     public data;
     public comboData = [
         "Paste data as new records",

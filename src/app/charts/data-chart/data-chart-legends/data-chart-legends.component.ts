@@ -10,16 +10,12 @@ import { SharedData } from "../SharedData";
   templateUrl: "./data-chart-legends.component.html"
 })
 export class DataChartLegendsComponent {
-
     public data: any[];
-
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", {static: true})
     public xAxis: IgxCategoryXAxisComponent;
-
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", {static: true})
     public yAxis: IgxNumericYAxisComponent;
-
-    @ViewChild("legend")
+    @ViewChild("legend", {static: true})
     public legend: IgxLegendComponent;
 
     constructor() {

@@ -14,7 +14,7 @@ import { FOODS_DATA } from "../../../tree-grid/data/foods";
 })
 export class TreeGridCsvExportSample1Component implements OnInit {
 
-  @ViewChild("igxTreeGrid1")
+  @ViewChild("igxTreeGrid1", {static: true})
   public igxTreeGrid1: IgxTreeGridComponent;
 
   public data: any[];

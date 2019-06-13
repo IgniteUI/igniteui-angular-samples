@@ -10,7 +10,7 @@ import { EMPLOYEE_FLAT_DATA_DETAILED } from "../data/employees-flat-detailed";
 export class TreeGridColumnMovingSampleComponent {
 
     public data: any[];
-    @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
+    @ViewChild("treeGrid", {static: true}) public treeGrid: IgxTreeGridComponent;
 
     constructor() {
         this.data = EMPLOYEE_FLAT_DATA_DETAILED();

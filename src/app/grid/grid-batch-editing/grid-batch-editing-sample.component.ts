@@ -9,9 +9,11 @@ import { IgxDialogComponent, IgxGridComponent, Transaction } from "igniteui-angu
     templateUrl: "grid-batch-editing-sample.component.html"
 })
 export class GridBatchEditingSampleComponent implements OnInit {
-    @ViewChild("gridRowEditTransaction", { read: IgxGridComponent }) public grid: IgxGridComponent;
-    @ViewChild(IgxDialogComponent) public dialog: IgxDialogComponent;
-    @ViewChild("dialogGrid", { read: IgxGridComponent }) public dialogGrid: IgxGridComponent;
+    @ViewChild("gridRowEditTransaction", {static: true})
+     public grid: IgxGridComponent;
+    public dialog: IgxDialogComponent;
+    @ViewChild("dialogGrid", {static: true})
+     public dialogGrid: IgxGridComponent;
 
     public currentActiveGrid: { id: string, transactions: any[] } = { id: "", transactions: [] };
 

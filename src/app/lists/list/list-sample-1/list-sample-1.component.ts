@@ -6,8 +6,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
   templateUrl: "./list-sample-1.component.html"
 })
 export class ListSample1Component implements OnInit {
-  @ViewChild("itemInput") public newItem: ElementRef;
-
+  public newItem: ElementRef;
   public emptyListMsg = "Please add something";
   public listItems = [
     {

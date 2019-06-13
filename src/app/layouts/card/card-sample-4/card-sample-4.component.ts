@@ -18,8 +18,6 @@ export class CardSample4Component implements OnInit {
     public cards: Card[];
     public details: IWeatherDetails[];
     public days: IWeatherList[];
-
-    @ViewChild(IgxExpansionPanelComponent)
     public panel: IgxExpansionPanelComponent;
 
     constructor(private iconService: IgxIconService) {

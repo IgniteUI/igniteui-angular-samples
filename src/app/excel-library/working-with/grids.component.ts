@@ -18,7 +18,7 @@ import { ExcelUtility } from "../../utilities/excel-utility";
 })
 export class ExcelLibraryWorkingWithGridsComponent implements OnInit {
 
-    @ViewChild("grid", { read: IgxGridComponent })
+    @ViewChild("grid", {static: true})
     public grid: IgxGridComponent;
     public data: any[];
 

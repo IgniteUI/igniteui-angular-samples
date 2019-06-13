@@ -28,13 +28,13 @@ import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-compo
 })
 export class DataChartTypeCategorySeriesComponent implements OnInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxDataChartComponent;
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", {static: true})
     public xAxis: IgxCategoryXAxisComponent;
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", {static: true})
     public yAxis: IgxNumericYAxisComponent;
-    @ViewChild("legend")
+    @ViewChild("legend", {static: true})
     public legend: IgxLegendComponent;
     public data = [
 

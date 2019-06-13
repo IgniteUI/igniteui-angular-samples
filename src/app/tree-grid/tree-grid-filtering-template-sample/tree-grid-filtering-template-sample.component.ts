@@ -16,9 +16,9 @@ import { FOODS_DATA } from "../data/foods";
 })
 
 export class TreeGridFilteringTemplateSampleComponent implements OnInit {
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent })
-    public treegrid1: IgxTreeGridComponent;
 
+    @ViewChild("treegrid1", {static: true})
+    public treegrid1: IgxTreeGridComponent;
     public data: any[];
 
     constructor() {

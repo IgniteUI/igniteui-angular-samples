@@ -15,13 +15,13 @@ import { WorldConnections } from "../../utilities/WorldConnections";
 
 export class MapBindingMultipleSourcesComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
 
-    @ViewChild("polylineTooltipTemplate")
+    @ViewChild("polylineTooltipTemplate", {static: true})
     public polylineTooltipTemplate: TemplateRef<object>;
 
-    @ViewChild("pointTooltipTemplate")
+    @ViewChild("pointTooltipTemplate", {static: true})
     public pointTooltipTemplate: TemplateRef<object>;
 
     public data: any;

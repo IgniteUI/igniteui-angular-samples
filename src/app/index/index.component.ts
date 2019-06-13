@@ -30,7 +30,7 @@ import { treegridfinjsRoutesData } from "../treegrid-finjs/treegrid-finjs-routes
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 
-    @ViewChild("navdrawer", { read: IgxNavigationDrawerComponent })
+    @ViewChild("navdrawer", {static: true})
     public navdrawer: IgxNavigationDrawerComponent;
 
     public homeRouteItem: IRouteItem;

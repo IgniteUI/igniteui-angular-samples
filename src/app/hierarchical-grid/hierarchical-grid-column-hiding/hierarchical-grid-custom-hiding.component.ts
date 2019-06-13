@@ -10,7 +10,7 @@ import { SINGERS } from "../data";
 
 export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {
     public localdata;
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", {static: true})
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {}

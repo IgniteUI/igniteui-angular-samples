@@ -10,8 +10,8 @@ import { RemoteFilteringService } from "../services/remoteFilteringService";
 })
 export class RemoteFilteringSampleComponent implements OnInit {
     public remoteData: any;
-    @ViewChild("grid") public grid: IgxGridComponent;
-    @ViewChild("toast") public toast: IgxToastComponent;
+    @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
+    @ViewChild("toast", {static: true}) public toast: IgxToastComponent;
     private _prevRequest: any;
     private _chunkSize: number;
 

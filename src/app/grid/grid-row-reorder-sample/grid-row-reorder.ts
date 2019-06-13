@@ -9,7 +9,7 @@ import { DATA } from "../../data/customers";
 })
 export class GridRowReorderComponent {
     public data: any[];
-    @ViewChild("grid", { read: IgxGridComponent })
+    @ViewChild("grid", {static: true})
     public grid: IgxGridComponent;
 
     constructor() {

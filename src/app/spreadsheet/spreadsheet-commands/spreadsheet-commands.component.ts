@@ -10,7 +10,7 @@ import { SpreadsheetAction } from "igniteui-angular-spreadsheet/ES5/SpreadsheetA
   templateUrl: "./spreadsheet-commands.component.html"
 })
 export class SpreadsheetCommandsComponent implements OnInit {
-    @ViewChild("spreadsheet", { read: IgxSpreadsheetComponent })
+    @ViewChild("spreadsheet", {static: true})
     public spreadsheet: IgxSpreadsheetComponent;
 
     constructor() { }

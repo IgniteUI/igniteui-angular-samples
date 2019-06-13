@@ -13,7 +13,7 @@ export class HGridDisplayDensitySampleComponent implements OnInit {
     public density = "compact";
     public displayDensities;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", {static: true})
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {

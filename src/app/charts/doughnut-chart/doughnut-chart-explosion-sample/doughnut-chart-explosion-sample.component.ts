@@ -11,7 +11,7 @@ export class DoughnutChartExplosionSampleComponent implements AfterViewInit {
 
     public data: any;
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxDoughnutChartComponent;
 
     constructor() {

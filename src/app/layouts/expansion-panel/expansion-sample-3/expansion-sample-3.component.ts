@@ -9,9 +9,9 @@ import {
     templateUrl: "./expansion-sample-3.component.html"
 })
 export class ExpansionPanelSample3Component {
-    @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent })
+    @ViewChild(IgxExpansionPanelComponent, {static: true})
     public panel: IgxExpansionPanelComponent;
-    @ViewChild(IgxToastComponent, { read: IgxToastComponent })
+    @ViewChild(IgxToastComponent, {static: true})
     public eventToast: IgxToastComponent;
     public readMore = "https://en.wikipedia.org/wiki/Hummingbird";
     // tslint:disable-next-line:max-line-length

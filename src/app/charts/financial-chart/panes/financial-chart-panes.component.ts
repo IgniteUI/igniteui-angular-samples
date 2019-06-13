@@ -29,7 +29,7 @@ import { StockDataService } from "../services/stock-data.service";
 export class FinancialChartPanesComponent implements AfterViewInit {
 
     public data: any[];
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxFinancialChartComponent;
 
     constructor(private dataService: StockDataService) {

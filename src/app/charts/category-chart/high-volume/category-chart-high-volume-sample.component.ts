@@ -25,18 +25,13 @@ import {
 export class CategoryChartHighVolumeComponent implements AfterViewInit, OnDestroy {
     @Input()
     public scalingRatio: number = 1;
-
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxCategoryChartComponent;
-
-    @ViewChild("loadTimeSpan")
+    @ViewChild("loadTimeSpan", {static: true})
     public loadTimeSpan: ElementRef;
-
     private currValue: number = 15;
     private currIndex: number = 0;
-
     private _maxPoints: number = 500000;
-
     private _refreshMilliseconds: number = 10;
     private _interval: number = -1;
     private _frames: number = 0;

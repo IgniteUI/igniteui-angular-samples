@@ -21,8 +21,7 @@ import { ExcelUtility } from "../../utilities/excel-utility";
     templateUrl: "./sparklines.component.html"
 })
 export class ExcelLibraryWorkingWithSparklinesComponent implements OnInit {
-
-    @ViewChild("grid", { read: IgxGridComponent })
+    @ViewChild("grid", { static: true })
     public grid: IgxGridComponent;
     public data: any[];
     public exportAsTable: boolean = true;

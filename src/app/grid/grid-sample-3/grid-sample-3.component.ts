@@ -31,7 +31,7 @@ class MySummary extends IgxNumberSummaryOperand {
 })
 export class GridSample3Component implements OnInit {
 
-  @ViewChild("grid1", { read: IgxGridComponent })
+  @ViewChild("grid1", {static: true})
   public grid1: IgxGridComponent;
   public mySummary = MySummary;
   public data;

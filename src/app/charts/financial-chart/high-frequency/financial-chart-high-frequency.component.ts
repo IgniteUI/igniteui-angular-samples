@@ -23,10 +23,10 @@ export class FinancialChartHighFrequencyComponent implements AfterViewInit, OnDe
 
     public data: any[];
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxFinancialChartComponent;
 
-    @ViewChild("fpsSpan")
+    @ViewChild("fpsSpan", {static: true})
     public fpsSpan: ElementRef;
 
     private currValue: number = 150;

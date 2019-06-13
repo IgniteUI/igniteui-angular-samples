@@ -23,17 +23,17 @@ export class DefaultThemeSampleComponent implements OnInit {
     public data: any[] = DATA;
     public record;
 
-    @ViewChild("dialog1", { read: IgxDialogComponent })
+    @ViewChild("dialog1", {static: true})
     public dialog: IgxDialogComponent;
 
     @Input()
-    @ViewChild("outlet", { read: IgxOverlayOutletDirective })
+    @ViewChild("outlet", {static: true})
     public outlet: IgxOverlayOutletDirective;
 
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", {static: true})
     public grid1: IgxGridComponent;
 
-    @ViewChild("snackbar")
+    @ViewChild("snackbar", {static: true})
     public snackbar: IgxSnackbarComponent;
 
     private deletedRow;

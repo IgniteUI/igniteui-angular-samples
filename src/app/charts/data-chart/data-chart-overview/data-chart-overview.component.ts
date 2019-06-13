@@ -16,13 +16,13 @@ import { SampleScatterStats } from "../SampleScatterStats";
 })
 export class DataChartOverviewComponent implements OnInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxDataChartComponent;
-    @ViewChild("legend")
+    @ViewChild("legend", {static: true})
     public legend: IgxLegendComponent;
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", {static: true})
     public xAxis: IgxNumericXAxisComponent;
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", {static: true})
     public yAxis: IgxNumericYAxisComponent;
 
     public data1: any;

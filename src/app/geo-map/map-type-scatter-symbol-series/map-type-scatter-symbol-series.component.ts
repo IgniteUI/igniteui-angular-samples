@@ -13,9 +13,9 @@ import { WorldLocations } from "../../utilities/WorldLocations";
 
 export class MapTypeScatterSymbolSeriesComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
-    @ViewChild("template")
+    @ViewChild("template", {static: true})
     public tooltip: TemplateRef<object>;
 
     constructor() {

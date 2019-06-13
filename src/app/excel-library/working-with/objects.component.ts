@@ -23,11 +23,11 @@ import { WorksheetTable } from "igniteui-angular-excel/ES5/WorksheetTable";
 export class ExcelLibraryWorkingWithObjectsComponent implements AfterViewInit {
 
     // TODO if needed, uncomment to get access to IG control
-    // @ViewChild("chart")
+    // @ViewChild("chart", {static: true})
     // public chart: IgxCategoryChartComponent;
-    // @ViewChild("chart")
+    // @ViewChild("chart", {static: true})
     // public chart: IgxDataChartComponent;
-    // @ViewChild("grid")
+    // @ViewChild("grid", { static: true })
     // public chart: IgxGridComponent;
 
     public data: any;

@@ -18,7 +18,7 @@ For urgent matters, please contact qually-t@example.com;
 Regards,
 Gort`;
 
-  @ViewChild(IgxBannerComponent) public banner: IgxBannerComponent;
+  public banner: IgxBannerComponent;
   public contentWidth = "384px";
   public ngOnInit() {
     this.banner.open();

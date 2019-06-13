@@ -24,13 +24,13 @@ export class OverlayScrollSample1Component implements OnDestroy {
 
     public modalValue = true;
 
-    @ViewChild("modalDemo")
+    @ViewChild("modalDemo", {static: true})
     public modalDemo: ElementRef;
 
-    @ViewChild("overlayDemo")
+    @ViewChild("overlayDemo", {static: true})
     public overlayDemo: ElementRef;
 
-    @ViewChild("mainContainer")
+    @ViewChild("mainContainer", {static: true})
     public mainContainer: ElementRef;
 
     private _defaultPositionSettings: PositionSettings = {

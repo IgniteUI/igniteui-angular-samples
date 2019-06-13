@@ -13,7 +13,7 @@ export class TreeGridRowEditSampleComponent implements OnInit {
     public data: any[];
     public columns: any[];
 
-    @ViewChild("treeGrid1") public treeGrid1: IgxTreeGridComponent;
+    @ViewChild("treeGrid1", {static: true}) public treeGrid1: IgxTreeGridComponent;
     public ngOnInit(): void {
         this.data = FLAT_DATA;
 

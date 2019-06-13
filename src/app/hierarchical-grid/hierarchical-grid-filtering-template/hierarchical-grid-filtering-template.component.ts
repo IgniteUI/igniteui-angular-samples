@@ -19,7 +19,7 @@ import { SINGERS } from "../data";
 export class HGridFilteringTemplateSampleComponent implements OnInit {
     public localdata;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", {static: true})
     private hierarchicalGrid: IgxHierarchicalGridComponent;
     private overlaySettings: OverlaySettings = {
         outlet: this.hierarchicalGrid

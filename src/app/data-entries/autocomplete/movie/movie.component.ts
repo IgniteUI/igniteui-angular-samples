@@ -11,7 +11,8 @@ import {
     templateUrl: "./movie.component.html"
 })
 export class MovieComponent {
-    @ViewChild("alert", { read: IgxDialogComponent }) public alert: IgxDialogComponent;
+    @ViewChild("alert", {static: true})
+    public alert: IgxDialogComponent;
     public user;
     public pickerMode = InteractionMode.DropDown;
 

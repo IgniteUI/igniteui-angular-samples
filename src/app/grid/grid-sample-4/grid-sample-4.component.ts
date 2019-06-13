@@ -12,12 +12,12 @@ import { RemoteServiceVirt } from "../services/remoteService";
 export class GridRemoteVirtualizationSampleComponent {
     public remoteData: any;
 
-    @ViewChild("grid") public grid: IgxGridComponent;
-    @ViewChild("remoteDataLoadingLarge", { read: TemplateRef })
+    @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
+    @ViewChild("remoteDataLoadingLarge", {static: true})
     protected remoteDataLoadingLargeTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingMedium", { read: TemplateRef })
+    @ViewChild("remoteDataLoadingMedium", {static: true})
     protected remoteDataLoadingMediumTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingSmall", { read: TemplateRef })
+    @ViewChild("remoteDataLoadingSmall", {static: true})
     protected remoteDataLoadingSmallTemplate: TemplateRef<any>;
 
     private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;

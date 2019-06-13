@@ -34,13 +34,13 @@ export class DataChartSeriesTooltipsComponent {
         return this._toolTipType;
     }
 
-    @ViewChild("chart")
+    @ViewChild("chart", {static: true})
     public chart: IgxDataChartComponent;
 
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", {static: true})
     public xAxis: IgxCategoryXAxisComponent;
 
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", {static: true})
     public yAxis: IgxNumericYAxisComponent;
 
     private _toolTipType: string = "Default";

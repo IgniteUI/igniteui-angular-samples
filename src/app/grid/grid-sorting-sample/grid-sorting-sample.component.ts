@@ -13,12 +13,9 @@ enum TYPE {
 })
 
 export class SortingSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", {static: true})
     public grid1: IgxGridComponent;
-
-    @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
-
     public data: any[];
     public sortingTypes = [{ name: "Multiple Sort", value: TYPE.MULTI }, { name: "Single Sort", value: TYPE.SINGLE }];
     public currentSortingType: TYPE = TYPE.SINGLE;

@@ -9,7 +9,8 @@ import { MARKET_DATA } from "./data";
 })
 export class GridSearchSampleComponent implements OnInit {
 
-    @ViewChild("grid1") public grid: IgxGridComponent;
+    @ViewChild("grid1", {static: true})
+    public grid: IgxGridComponent;
     public data: any[];
     public searchText: string = "";
     public caseSensitive: boolean = false;
@@ -17,12 +18,12 @@ export class GridSearchSampleComponent implements OnInit {
 
     public ngOnInit(): void {
         this.data = MARKET_DATA;
-    }
+    };
 
     public clearSearch() {
         this.searchText = "";
         this.grid.clearSearch();
-    }
+    };
 
     public searchKeyDown(ev) {
         if (ev.key === "Enter" || ev.key === "ArrowDown" || ev.key === "ArrowRight") {
@@ -32,15 +33,15 @@ export class GridSearchSampleComponent implements OnInit {
             ev.preventDefault();
             this.grid.findPrev(this.searchText, this.caseSensitive, this.exactMatch);
         }
-    }
+    };
 
     public updateSearch() {
         this.caseSensitive = !this.caseSensitive;
         this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-    }
+    };
 
     public updateExactSearch() {
         this.exactMatch = !this.exactMatch;
         this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-    }
+    };
 }

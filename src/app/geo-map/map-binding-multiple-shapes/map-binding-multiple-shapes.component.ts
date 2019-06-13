@@ -14,25 +14,25 @@ import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/ig
 
 export class MapBindingMultipleShapesComponent implements AfterViewInit {
 
-    @ViewChild ("map")
+    @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
 
-    @ViewChild ("shapeSeries")
+    @ViewChild("shapeSeries", {static: true})
     public shapeSeries: IgxGeographicShapeSeriesComponent;
 
-    @ViewChild ("polylineSeries")
+    @ViewChild("polylineSeries", {static: true})
     public polylineSeries: IgxGeographicPolylineSeriesComponent;
 
-    @ViewChild ("symbolSeries")
+    @ViewChild("symbolSeries", {static: true})
     public symbolSeries: IgxGeographicSymbolSeriesComponent;
 
-    @ViewChild("polylineTooltipTemplate")
+    @ViewChild("polylineTooltipTemplate", {static: true})
     public polylineTooltipTemplate: TemplateRef<object>;
 
-    @ViewChild("shapeTooltipTemplate")
+    @ViewChild("shapeTooltipTemplate", {static: true})
     public shapeTooltipTemplate: TemplateRef<object>;
 
-    @ViewChild("pointTooltipTemplate")
+    @ViewChild("pointTooltipTemplate", {static: true})
     public pointTooltipTemplate: TemplateRef<object>;
 
     constructor() {

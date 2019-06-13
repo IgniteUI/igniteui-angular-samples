@@ -14,9 +14,9 @@ enum DragIcon {
 })
 
 export class HGridDragSampleComponent implements AfterViewInit {
-    @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent })
+    @ViewChild(IgxHierarchicalGridComponent, {static: true})
     public hGrid: IgxHierarchicalGridComponent;
-    @ViewChild("customDragIcon", { read: TemplateRef })
+    @ViewChild("customDragIcon", {static: true})
     public dragTemplate: TemplateRef<any>;
     public localData: IDrive[] = [];
     constructor() {

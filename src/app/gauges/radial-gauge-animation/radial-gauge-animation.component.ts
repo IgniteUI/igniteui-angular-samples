@@ -15,7 +15,7 @@ import { RadialGaugeScaleOversweepShape } from "igniteui-angular-gauges/ES5/Radi
 })
 export class RadialGaugeAnimationComponent implements AfterViewInit {
 
-    @ViewChild("radialGauge")
+    @ViewChild("radialGauge", {static: true})
     public radialGauge: IgxRadialGaugeComponent;
 
     public ngAfterViewInit(): void {

@@ -14,9 +14,9 @@ import {
     templateUrl: "./expansion-sample-4.component.html"
 })
 export class ExpansionPanelSample4Component implements OnInit {
-    @ViewChild(IgxExpansionPanelComponent)
     public igxExpansionPanel: IgxExpansionPanelComponent;
-    @ViewChild("button") public button: ElementRef;
+    @ViewChild("button", {static: true})
+    public button: ElementRef;
 
     public animationSettings: {
         openAnimation: AnimationReferenceMetadata, closeAnimation: AnimationReferenceMetadata } = {

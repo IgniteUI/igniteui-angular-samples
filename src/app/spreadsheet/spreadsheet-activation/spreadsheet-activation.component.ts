@@ -12,7 +12,7 @@ export class SpreadsheetActivationComponent implements OnInit {
 
     public activeCellText: string;
 
-    @ViewChild("spreadsheet")
+    @ViewChild("spreadsheet", {static: true})
     public spreadsheet: IgxSpreadsheetComponent;
 
     constructor() { }

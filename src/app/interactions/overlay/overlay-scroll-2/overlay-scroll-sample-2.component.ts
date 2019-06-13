@@ -20,15 +20,11 @@ import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-
 export class OverlayScrollSample2Component implements OnInit, OnDestroy {
 
     public previewHidden = false;
-    @ViewChild("scrollDemo")
+    @ViewChild("scrollDemo", {static: true})
     public scrollDemo: ElementRef;
-
-    @ViewChild(MyDynamicCardComponent)
     public overlayDemo: MyDynamicCardComponent;
-
-    @ViewChild("mainContainer")
+    @ViewChild("mainContainer", {static: true})
     public mainContainer: ElementRef;
-
     private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
