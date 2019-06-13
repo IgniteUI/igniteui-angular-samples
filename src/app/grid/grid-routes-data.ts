@@ -10,6 +10,7 @@ export const gridsRoutesData = {
     "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
     "grid-row-drag-base": { displayName: "Grid Row Drag - Base", parentName: "Grid" },
     "grid-row-drag-to-grid": { displayName: "Row Drag between Grids", parentName: "Grid" },
+    "grid-row-reorder": { displayName: "Grid Row Reorder", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
     "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
@@ -42,7 +43,10 @@ export const gridsRoutesData = {
     "grid-state": { displayName: "Grid Save and Load State", parentName: "Grid" },
     "grid-about": { displayName: "Grid About", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
+    "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
+    "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
+    "grid-mrl-custom-navigation":
+     { displayName: "Grid Multi Row Layout Custom Keyboard Navigation", parentName: "Grid" },
     "grid-nested-data-binding": {displayName: "Grid Nested Data Binding", parentName: "Grid"},
-    "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"},
-    "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" }
+    "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"}
 };
