@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
-import { FULL_EMPLOYEE_DATA } from "../data/employees";
+import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
 
 @Component({
     selector: "tree-grid-row-reorder",
@@ -13,14 +13,13 @@ export class TreeGridRowReorderComponent {
 
     public localData = [];
     constructor() {
-        this.localData = FULL_EMPLOYEE_DATA();
+        this.localData = EMPLOYEE_FLAT_DATA();
     }
 
     public rowDragStart(args: any): void {
         const targetRow: IgxTreeGridRowComponent = args.dragData;
         if (targetRow.expanded) {
-            const grid = targetRow.grid;
-            grid.expansionStates = grid.expansionStates.set(targetRow.rowID, false);
+            this.treeGrid.collapseRow(targetRow.rowID);
         }
     }
 
@@ -33,19 +32,37 @@ export class TreeGridRowReorderComponent {
     }
 
     private moveRow(draggedRow: IgxTreeGridRowComponent, cursorPosition: Point): void {
-        const parent: IgxTreeGridComponent = draggedRow.grid;
-        const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
-        draggedRow.delete();
-        parent.data.splice(rowIndex, 0, draggedRow.rowData);
+        const row: IgxTreeGridRowComponent = this.catchCursorPosOnElem(this.treeGrid.rowList.toArray(), cursorPosition);
+        if (!row) { return; }
+        if (row.rowData.ParentID === -1) {
+            this.performDrop(draggedRow, row).ParentID = -1;
+        } else {
+            if (row.rowData.ParentID === draggedRow.rowData.ParentID) {
+                this.performDrop(draggedRow, row);
+            } else {
+                const rowIndex = this.getRowIndex(row);
+                this.localData[rowIndex].ParentID = row.rowData.ParentID;
+            }
+        }
         if (draggedRow.isSelected) {
-            parent.selectRows([parent.rowList.toArray()
+            this.treeGrid.selectRows([this.treeGrid.rowList.toArray()
                 .find((r) => r.rowData.ID === draggedRow.rowData.ID).rowID], false);
         }
+
+        this.localData = [...this.localData];
     }
 
-    private getTargetRowIndex(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point): number {
-        const targetElem: IgxTreeGridRowComponent = this.catchCursorPosOnElem(rowListArr, cursorPosition);
-        return rowListArr.indexOf(rowListArr.find((r) => r.rowData.ID === targetElem.rowData.ID));
+    private performDrop(
+        draggedRow: IgxTreeGridRowComponent, targetRow: IgxTreeGridRowComponent) {
+        const draggedRowIndex = this.getRowIndex(draggedRow.rowData);
+        const targetRowIndex: number = this.getRowIndex(targetRow.rowData);
+        this.localData.splice(draggedRowIndex, 1);
+        this.localData.splice(targetRowIndex, 0, draggedRow.rowData);
+        return this.localData[targetRowIndex];
+    }
+
+    private getRowIndex(rowData: any): number {
+        return this.localData.indexOf(this.localData.find((r) => r === rowData));
     }
 
     private catchCursorPosOnElem(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point)
@@ -57,5 +74,7 @@ export class TreeGridRowReorderComponent {
                 return row;
             }
         }
+
+        return null;
     }
 }
