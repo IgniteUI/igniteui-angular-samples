@@ -1,10 +1,9 @@
-<igx-hierarchical-grid class="hgrid" igxDrop [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'"
+<igx-hierarchical-grid class="hgrid" igxDrop #grid1 [data]="localData" [primaryKey]="'id'"
     [rowDraggable]="true" [rowSelectable]="true" (onRowDragStart)="rowDragStart($event)" (onDrop)="rowDrop($event)"
     [height]="'540px'" [width]="'800px'" #hGrid>
     <igx-column field="name" header="Name"></igx-column>
     <igx-column field="system" header="Is System Drive"></igx-column>
-    <igx-row-island [primaryKey]="'id'" igxDrop [key]="'folders'" #layout1 [rowDraggable]="true" [rowSelectable]="true"
-        (onRowDragStart)="rowDragStart($event)" (onDrop)="rowDrop($event)">
+    <igx-row-island [primaryKey]="'id'" [key]="'folders'" #layout1>
         <igx-column field="name" header="Name"></igx-column>
         <igx-column field="createdOn" header="Created On"></igx-column>
         <igx-column field="createdBy" header="Created By"></igx-column>
