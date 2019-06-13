@@ -11,6 +11,7 @@ import {
     IgxIconModule,
     IgxInputGroupModule,
     IgxListModule,
+    IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
@@ -29,6 +30,7 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
+import { ListSample8Component } from "./list/list-sample-8/list-sample-8.component";
 import { ListComponent } from "./list/list.component";
 import { ListsRoutingModule } from "./lists-routing.module";
 
@@ -42,6 +44,7 @@ import { ListsRoutingModule } from "./lists-routing.module";
         ListSample5Component,
         ListSample6Component,
         ListSample7Component,
+        ListSample8Component,
         ListChatSampleComponent,
         CascadingCombos,
         ComboFeatures,
@@ -65,7 +68,8 @@ import { ListsRoutingModule } from "./lists-routing.module";
         IgxSelectModule,
         IgxToastModule,
         IgxButtonGroupModule,
-        HttpClientModule
+        HttpClientModule,
+        IgxRippleModule
     ]
 })
 export class ListsModule { }

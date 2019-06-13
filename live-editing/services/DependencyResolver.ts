@@ -71,11 +71,20 @@ const EXACT_VERSION_PACKAGES = [
     "igniteui-angular-excel"
 ];
 
+const MAPS_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-core",
+    "igniteui-angular-charts",
+    "igniteui-angular-maps",
+    "tslib"
+];
+
 export class DependencyResolver {
     private _defaultDependencies: Set<string>;
     private _chartsDependencies: Set<string>;
     private _gaugesDependencies: Set<string>;
     private _excelDependencies: Set<string>;
+    private _mapsDependencies: Set<string>;
     private _packageFileDependencies;
     private _specificVersionPackages: Set<string>;
 
@@ -95,6 +104,10 @@ export class DependencyResolver {
         this._excelDependencies = new Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
         EXCEL_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
+
+        this._mapsDependencies = new Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._mapsDependencies.add(d));
+        MAPS_DEPENDENCIES.forEach((d) => this._mapsDependencies.add(d));
 
         let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
         this._packageFileDependencies = packageFile.dependencies;
@@ -120,6 +133,9 @@ export class DependencyResolver {
                 break;
             case DependenciesType.Excel:
                 dependencies = new Set<string>(this._excelDependencies);
+                break;
+            case DependenciesType.Maps:
+                dependencies = new Set<string>(this._mapsDependencies);
                 break;
             default:
                 throw new Error("Unrecognized dependency type.");

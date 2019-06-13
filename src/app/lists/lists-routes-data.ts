@@ -12,5 +12,6 @@ export const listsRoutesData = {
     "list-sample-5": { displayName: "Empty List Template", parentName: "List" },
     "list-sample-6": { displayName: "List Loading", parentName: "List" },
     "list-sample-7": { displayName: "List Item Panning", parentName: "List" },
+    "list-sample-8": { displayName: "List Theming", parentName: "List" },
     "list-chat-sample": { displayName: "Chat Component", parentName: "List" }
 };

@@ -17,7 +17,6 @@ export class ExpansionPanelSample6Component {
 
     @ViewChild(IgxExpansionPanelComponent, { static: true })
     public panel: IgxExpansionPanelComponent;
-
     public animationSettingsCustom = {
         closeAnimation: useAnimation(slideOutRight, {
                 params: {

@@ -15,10 +15,13 @@ enum DragIcon {
 export class TreeGridRowDragBase {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })
     public treeGrid: IgxTreeGridComponent;
-
     public localData = [];
     constructor() {
         this.localData = FULL_EMPLOYEE_DATA();
+    }
+
+    public onRowDragEnd(args) {
+        args.animation = true;
     }
 
     public onDropAllowed(args: IgxDropEventArgs) {

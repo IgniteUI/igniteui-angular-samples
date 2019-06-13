@@ -12,7 +12,6 @@ import { filter } from "rxjs/operators";
 export class TabsSample5Component implements OnDestroy {
     @ViewChild("tabs1", { static: true })
     public tabs: IgxTabsComponent;
-
     private _navigationStartSubscription: Subscription;
     private _navigationEndSubscription: Subscription;
     private _navigationTrigger: string;

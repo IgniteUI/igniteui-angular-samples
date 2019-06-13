@@ -10,7 +10,6 @@ import { SharedData } from "../SharedData";
   templateUrl: "./data-chart-legends.component.html"
 })
 export class DataChartLegendsComponent {
-
     public data: any[];
 
     @ViewChild("xAxis", { static: true })

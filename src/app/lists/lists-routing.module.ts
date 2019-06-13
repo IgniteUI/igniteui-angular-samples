@@ -13,6 +13,7 @@ import { ListSample4Component } from "./list/list-sample-4/list-sample-4.compone
 import { ListSample5Component } from "./list/list-sample-5/list-sample-5.component";
 import { ListSample6Component } from "./list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "./list/list-sample-7/list-sample-7.component";
+import { ListSample8Component } from "./list/list-sample-8/list-sample-8.component";
 import { ListComponent } from "./list/list.component";
 import { listsRoutesData } from "./lists-routes-data";
 
@@ -80,6 +81,11 @@ export const listsRoutes: Routes = [
         component: ListSample7Component,
         data: listsRoutesData["list-sample-7"],
         path: "list-sample-7"
+    },
+    {
+        component: ListSample8Component,
+        data: listsRoutesData["list-sample-8"],
+        path: "list-sample-8"
     },
     {
         component: ListChatSampleComponent,

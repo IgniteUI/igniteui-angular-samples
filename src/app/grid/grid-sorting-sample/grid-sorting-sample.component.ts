@@ -18,7 +18,6 @@ export class SortingSampleComponent implements OnInit {
 
     @ViewChild(IgxSelectComponent, { static: false })
     public igxSelect: IgxSelectComponent;
-
     public data: any[];
     public sortingTypes = [{ name: "Multiple Sort", value: TYPE.MULTI }, { name: "Single Sort", value: TYPE.SINGLE }];
     public currentSortingType: TYPE = TYPE.SINGLE;

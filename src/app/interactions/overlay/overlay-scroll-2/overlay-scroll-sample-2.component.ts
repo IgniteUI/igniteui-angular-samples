@@ -28,7 +28,6 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
 
     @ViewChild("mainContainer", { static: true })
     public mainContainer: ElementRef;
-
     private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 

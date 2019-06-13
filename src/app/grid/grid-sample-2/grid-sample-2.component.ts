@@ -33,13 +33,13 @@ export class FinancialSampleComponent {
     constructor(private localService: LocalService) {
         this.localService.getData(100000);
         this.data = this.localService.records;
-    }
+    };
     public ngOnInit(): void {
-    }
+    };
     public formatNumber(value: number) {
         return value.toFixed(2);
-    }
+    };
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
-    }
+    };
 }
