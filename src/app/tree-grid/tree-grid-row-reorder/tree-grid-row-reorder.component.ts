@@ -40,7 +40,7 @@ export class TreeGridRowReorderComponent {
             if (row.rowData.ParentID === draggedRow.rowData.ParentID) {
                 this.performDrop(draggedRow, row);
             } else {
-                const rowIndex = this.getRowIndex(row);
+                const rowIndex = this.getRowIndex(draggedRow.rowData);
                 this.localData[rowIndex].ParentID = row.rowData.ParentID;
             }
         }
@@ -62,14 +62,14 @@ export class TreeGridRowReorderComponent {
     }
 
     private getRowIndex(rowData: any): number {
-        return this.localData.indexOf(this.localData.find((r) => r === rowData));
+        return this.localData.indexOf(rowData);
     }
 
     private catchCursorPosOnElem(rowListArr: IgxTreeGridRowComponent[], cursorPosition: Point)
         : IgxTreeGridRowComponent {
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();
-            if (cursorPosition.y > rowRect.top && cursorPosition.y < rowRect.bottom &&
+            if (rowRect.top < cursorPosition.y && cursorPosition.y < rowRect.bottom &&
                 cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
                 return row;
             }
