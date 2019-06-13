@@ -1,29 +1,58 @@
+@import '~igniteui-angular/lib/core/styles/themes/utilities';
 
+@import '~igniteui-angular/lib/core/styles/components/grid-paginator/grid-paginator-component';
+@import '~igniteui-angular/lib/core/styles/components/grid-paginator/grid-paginator-theme';
 
-.cell__inner,
-.cell__inner_2 {
-    display: flex;
-    align-items: center;
-    height: 100%;
+$yellow-color: #F9D342;
+$black-color: #292826;
+
+$paginator-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+$dark-grid-paginator: igx-grid-paginator-theme(
+    $palette: $paginator-palette,
+    $text-color: igx-color($paginator-palette, "secondary", 400),
+    $background-color: igx-color($paginator-palette, "primary", 200),
+    $border-color:  igx-color($paginator-palette, "primary", 500)
+);
+
+:host {
+    ::ng-deep {
+            @include igx-grid-paginator($dark-grid-paginator);
+    }
 }
 
-.cell__inner {
-    position: relative;
-    justify-content: space-between;
-}
 
-.igx-paginator>* {
-    margin: 0 .3125rem;
-    display: flex;
-    align-items: center;
-}
+// $light-grid-paginator-schema: extend($_light-grid-pagination,
+//         (
+//             text-color:(
+//                 igx-color: ("primary", 700)
+//             ),
+//             background-color:(
+//                 igx-color: ("secondary", 700)
+//             ),
+//             border-color:(
+//                 igx-color:( "primary", 500)
+//             )
+//         )
+// );
 
-.linear-bar-container {
-    width: 100%;
-}
+// $custom-light-schema: extend($light-schema,(
+//     igx-grid-paginator: $light-grid-paginator-schema
+// ));
+
+// $light-grid-paginator: igx-grid-paginator-theme(
+//   $palette: $paginator-palette,
+//   $schema: $custom-light-schema
+// );
+
+// :host {
+//     ::ng-deep {
+//             @include igx-grid-paginator($light-grid-paginator);
+//     }
+// }
+
 
 .grid__wrapper {
     width: 950px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
-

@@ -644,8 +644,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: CustomGridPagingStyleSample,
-            additionalFiles: ["/src/app/grid/services/data.ts",
-            "src/app/grid/custom-grid-paging-style/grid-paging-themes.scss"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [CustomGridPagingStyleSample, IgxGridModule],
                 ngDeclarations: [CustomGridPagingStyleSample],
