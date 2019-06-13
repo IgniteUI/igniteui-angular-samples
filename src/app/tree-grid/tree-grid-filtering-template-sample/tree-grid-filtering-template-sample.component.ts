@@ -19,8 +19,6 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
     public treegrid1: IgxTreeGridComponent;
 
-    @ViewChild("treegrid1", {static: true})
-    public treegrid1: IgxTreeGridComponent;
     public data: any[];
 
     constructor() {
