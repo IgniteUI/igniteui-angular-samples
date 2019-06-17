@@ -54,6 +54,7 @@ import { TreeGridRemotePagingSampleComponent } from "../../src/app/tree-grid/tre
 import { TreeGridRowDragBase } from "../../src/app/tree-grid/tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "../../src/app/tree-grid/tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridRowReorderComponent } from "../../src/app/tree-grid/tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridSearchSampleComponent } from "../../src/app/tree-grid/tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "../../src/app/tree-grid/tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridContextmenuComponent } from "../../src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
@@ -499,6 +500,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxButtonModule, IgxInputGroupModule, IgxDragDropModule]
             }),
             component: TreeGridRowDragBase,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // Tree Grid Row Rerdering sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridRowReorderComponent, IgxDragDropModule],
+                ngDeclarations: [TreeGridRowReorderComponent],
+                ngImports: [IgxTreeGridModule, IgxDragDropModule]
+            }),
+            component: TreeGridRowReorderComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
