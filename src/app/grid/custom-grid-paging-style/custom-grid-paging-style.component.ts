@@ -21,6 +21,5 @@ export class CustomGridPagingStyleSample {
     public removeRow(rowIndex) {
         const row = this.grid1.getRowByIndex(rowIndex);
         row.delete();
-        window.alert(`Row with index ${rowIndex} has been deleted`);
     }
 }
