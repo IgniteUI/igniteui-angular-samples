@@ -1,0 +1,11 @@
+.container{
+    display: flex; 
+    flex-flow: row; 
+    width: 100%;
+    align-content:stretch;
+}
+
+.group{
+    padding: 10px;
+    width: 100%;
+}

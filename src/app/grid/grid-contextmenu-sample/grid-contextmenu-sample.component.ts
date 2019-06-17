@@ -43,7 +43,7 @@ export class GridContextmenuSampleComponent implements OnInit {
         this.multiCellArgs = {};
         if (this.multiCellSelection) {
             const node = eventArgs.cell.selectionNode;
-            const isCellWithinRange = this.multiCellSelection.selectionRanges.some(range => {
+            const isCellWithinRange = this.multiCellSelection.selectionRanges.some((range) => {
                 if (node.column >= range.columnStart &&
                     node.column <= range.columnEnd &&
                     node.row >= range.rowStart &&
@@ -82,6 +82,7 @@ export class GridContextmenuSampleComponent implements OnInit {
         if (this.multiCellSelection) {
             this.multiCellSelection = undefined;
             this.multiCellArgs = undefined;
+            this.grid1.clearCellSelection();
         }
     }
 

@@ -1,5 +1,6 @@
 /* tslint:disable:max-line-length */
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
@@ -82,6 +83,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         HierarchicalGridRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
