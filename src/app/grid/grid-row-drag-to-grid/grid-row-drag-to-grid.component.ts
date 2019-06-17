@@ -23,6 +23,10 @@ export class GridDragToGridSampleComponent {
         this.data2 = [];
     }
 
+    public onRowDragEnd(args) {
+        args.animation = true;
+    }
+
     public onDropAllowed(args) {
         args.cancel = true;
         this.targetGrid.addRow(args.dragData.rowData);
