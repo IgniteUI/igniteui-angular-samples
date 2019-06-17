@@ -43,6 +43,7 @@ import { HGridRemotePagingSampleComponent } from "../../src/app/hierarchical-gri
 import { HGridRowDragBaseComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
 import { HGridDragSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
+import { HGridRowReorderComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HGridSelectionSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridContextmenuComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component";
 import { HGridSortingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-sorting/hierarchical-grid-sorting.component";
@@ -350,6 +351,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridCustomKBNavigationComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/data/files.data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, IgxDragDropModule, HGridRowReorderComponent],
+                ngDeclarations: [HGridRowReorderComponent],
+                ngImports: [IgxHierarchicalGridModule, IgxDragDropModule]
+            }),
+            component: HGridRowReorderComponent
         }));
 
         return configs;

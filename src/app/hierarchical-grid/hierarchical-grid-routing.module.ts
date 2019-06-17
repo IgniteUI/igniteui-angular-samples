@@ -31,6 +31,7 @@ import { hierarchicalGridRoutesData } from "./hierarchical-grid-routes-data";
 import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
 import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
+import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
 import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarchical-grid-summary.component";
@@ -181,6 +182,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridRowDragBaseComponent,
         data: hierarchicalGridRoutesData["hierarchical-row-drag-base"],
         path: "hierarchical-row-drag-base"
+    },
+    {
+        component: HGridRowReorderComponent,
+        data: hierarchicalGridRoutesData["hierarchical-row-reorder"],
+        path: "hierarchical-row-reorder"
     },
     {
         component: HGridEditingSampleComponent,
