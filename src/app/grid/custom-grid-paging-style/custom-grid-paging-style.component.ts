@@ -1,4 +1,4 @@
-import { Component, ViewChild} from "@angular/core";
+import { Component, ViewChild, ViewEncapsulation} from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 import { athletesData } from "../services/data";
 
@@ -16,5 +16,11 @@ export class CustomGridPagingStyleSample {
     }
     public ngOnInit(): void {
         this.data = athletesData;
+    }
+
+    public removeRow(rowIndex) {
+        const row = this.grid1.getRowByIndex(rowIndex);
+        row.delete();
+        window.alert(`Row with index ${rowIndex} has been deleted`);
     }
 }

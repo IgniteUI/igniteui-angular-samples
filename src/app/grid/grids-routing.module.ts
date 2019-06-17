@@ -284,7 +284,8 @@ export const gridsRoutes: Routes = [
         component: GridMultiRowLayoutConfigurationComponent,
         data: gridsRoutesData["grid-multi-row-layout-configuration"],
         path: "grid-multi-row-layout-configuration"
-    }, {
+    },
+    {
         component: GridMRLCustomNavigationComponent,
         data: gridsRoutesData["grid-multi-row-layout"],
         path: "grid-mrl-custom-navigation"

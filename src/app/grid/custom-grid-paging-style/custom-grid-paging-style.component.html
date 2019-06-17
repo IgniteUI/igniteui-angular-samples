@@ -31,5 +31,12 @@
               </div>
           </ng-template>
       </igx-column>
+      <igx-column [field]="'Delete Row'" [filterable]="false">
+        <ng-template igxCell let-cell="cell">
+            <button igxButton="icon"  (click)="removeRow(cell.cellID.rowIndex)">
+                <igx-icon>delete</igx-icon>
+            </button>
+        </ng-template>
+    </igx-column>
   </igx-grid>
 </div>
