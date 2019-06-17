@@ -20,6 +20,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
+import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
@@ -32,6 +33,7 @@ import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
@@ -97,6 +99,11 @@ export const gridsRoutes: Routes = [
         component: GridDragBaseSampleComponent,
         data: gridsRoutesData["grid-row-drag-base"],
         path: "grid-row-drag-base"
+    },
+    {
+        component: GridRowReorderComponent,
+        data: gridsRoutesData["grid-row-reorder"],
+        path: "grid-row-reorder"
     },
     {
         component: GridBatchEditingSampleComponent,
@@ -274,6 +281,10 @@ export const gridsRoutes: Routes = [
         path: "grid-multi-row-layout"
     },
     {
+        component: GridMultiRowLayoutConfigurationComponent,
+        data: gridsRoutesData["grid-multi-row-layout-configuration"],
+        path: "grid-multi-row-layout-configuration"
+    }, {
         component: GridMRLCustomNavigationComponent,
         data: gridsRoutesData["grid-multi-row-layout"],
         path: "grid-mrl-custom-navigation"

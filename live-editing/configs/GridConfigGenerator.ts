@@ -65,12 +65,16 @@ import {
     FilteringTemplateSampleComponent
 } from "../../src/app/grid/grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
-import { GridGroupBySummarySampleComponent
+import {
+    GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
+import {
+    GridMultiRowLayoutConfigurationComponent
+} from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 
 // tslint:disable-next-line: max-line-length
 import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -87,12 +91,14 @@ import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sa
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
 import {
-    GridDragToGridSampleComponent } from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
+    GridDragToGridSampleComponent
+} from "../../src/app/grid/grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "../../src/app/grid/grid-row-drag/grid-row-drag.component";
 import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.component";
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowReorderComponent } from "../../src/app/grid/grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
@@ -534,6 +540,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxToastModule]
             })
         }));
+
         configs.push(new Config({
             component: GridMultiRowLayoutComponent,
             additionalFiles: ["/src/app/data/customers.ts"],
@@ -564,6 +571,16 @@ export class GridConfigGenerator implements IConfigGenerator {
         });
         gridSaveStateSampleConfig.usesRouting = true;
         configs.push(gridSaveStateSampleConfig);
+
+        configs.push(new Config({
+            component: GridMultiRowLayoutConfigurationComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiRowLayoutConfigurationComponent, IgxGridModule],
+                ngDeclarations: [GridMultiRowLayoutConfigurationComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
 
         configs.push(new Config({
             additionalFiles: ["/src/app/data/customers.ts"],
@@ -649,6 +666,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [CustomGridPagingStyleSample, IgxGridModule],
                 ngDeclarations: [CustomGridPagingStyleSample],
                 ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowReorderComponent,
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridRowReorderComponent, IgxDragDropModule],
+                ngDeclarations: [GridRowReorderComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule]
             })
         }));
 
