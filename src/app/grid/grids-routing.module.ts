@@ -49,6 +49,7 @@ import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
+import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 // tslint:enable:max-line-length
 
@@ -283,10 +284,16 @@ export const gridsRoutes: Routes = [
         component: GridMultiRowLayoutConfigurationComponent,
         data: gridsRoutesData["grid-multi-row-layout-configuration"],
         path: "grid-multi-row-layout-configuration"
-    }, {
+    },
+    {
         component: GridMRLCustomNavigationComponent,
         data: gridsRoutesData["grid-multi-row-layout"],
         path: "grid-mrl-custom-navigation"
+    },
+    {
+        component: CustomGridPagingStyleSample,
+        data: gridsRoutesData["custom-grid-paging-style"],
+        path: "custom-grid-paging-style"
     }
 ];
 
