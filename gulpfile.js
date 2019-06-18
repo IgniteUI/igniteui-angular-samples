@@ -3,6 +3,7 @@ const tsNode = require('ts-node').register({
     transpileOnly: true,
     ignore: [/\/node_modules\/(?!igniteui-angular)/],
     compilerOptions: {
+        module: "commonjs",
         allowJs: true
     }
 });
