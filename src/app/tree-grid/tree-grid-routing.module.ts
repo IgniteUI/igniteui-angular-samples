@@ -62,10 +62,14 @@ import {
 import {
     TreeGridRemoteFilteringSampleComponent
 } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
+import {
+    TreeGridRemotePagingSampleComponent
+} from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
 import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
@@ -272,6 +276,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridKBNavigationComponent,
         data: treeGridRoutesData["treegrid-keyboard-navigation"],
         path: "treegrid-keyboard-navigation"
+    },
+    {
+        component: TreeGridRowReorderComponent,
+        data: treeGridRoutesData["tree-grid-row-reordering"],
+        path: "tree-grid-row-reordering"
+    },
+    {
+        component: TreeGridRemotePagingSampleComponent,
+        data: treeGridRoutesData["treegrid-remote-paging"],
+        path: "treegrid-remote-paging"
     }
 ];
 

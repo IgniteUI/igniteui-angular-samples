@@ -1,0 +1,18 @@
+<igx-hierarchical-grid class="hgrid" igxDrop #grid1 [data]="localData" [primaryKey]="'id'"
+    [rowDraggable]="true" [rowSelectable]="true" (onRowDragStart)="rowDragStart($event)" (onDrop)="rowDrop($event)"
+    [height]="'540px'" [width]="'800px'" #hGrid>
+    <igx-column field="name" header="Name"></igx-column>
+    <igx-column field="system" header="Is System Drive"></igx-column>
+    <igx-row-island [primaryKey]="'id'" [key]="'folders'" #layout1>
+        <igx-column field="name" header="Name"></igx-column>
+        <igx-column field="createdOn" header="Created On"></igx-column>
+        <igx-column field="createdBy" header="Created By"></igx-column>
+        <igx-row-island [primaryKey]="'id'" igxDrop [key]="'files'" [rowDraggable]="true" [rowSelectable]="true"
+            (onRowDragStart)="rowDragStart($event)">
+            <igx-column field="name" header="Name"></igx-column>
+            <igx-column field="extension" header="Extension"></igx-column>
+            <igx-column field="size" header="Size" dataType="number" hasSummary='true'></igx-column>
+            <igx-column field="createdBy" header="createdBy"></igx-column>
+        </igx-row-island>
+    </igx-row-island>
+</igx-hierarchical-grid>

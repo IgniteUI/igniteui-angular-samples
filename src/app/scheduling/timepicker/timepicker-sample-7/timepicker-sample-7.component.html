@@ -1,0 +1,12 @@
+<h5 class="sample-title">Time Picker with custom action buttons</h5>
+<div class="time-width">
+    <igx-time-picker #picker format="HH:mm" mode="dropdown">
+        <ng-template igxTimePickerActions>
+            <div class="container action-buttons">
+                <button igxButton="flat" (click)="picker.cancelButtonClick()">cancel</button>
+                <button igxButton="flat" (click)="picker.okButtonClick()">ok</button>
+                <button igxButton="flat" (click)="selectNow(picker)">now</button>
+            </div>
+        </ng-template>
+    </igx-time-picker>
+</div>

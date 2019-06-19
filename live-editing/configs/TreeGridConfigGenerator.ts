@@ -50,9 +50,11 @@ import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-gr
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRemoteFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
+import { TreeGridRemotePagingSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 import { TreeGridRowDragBase } from "../../src/app/tree-grid/tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "../../src/app/tree-grid/tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
+import { TreeGridRowReorderComponent } from "../../src/app/tree-grid/tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridSearchSampleComponent } from "../../src/app/tree-grid/tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "../../src/app/tree-grid/tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridContextmenuComponent } from "../../src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
@@ -501,6 +503,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/tree-grid/"
         }));
 
+        // Tree Grid Row Rerdering sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridRowReorderComponent, IgxDragDropModule],
+                ngDeclarations: [TreeGridRowReorderComponent],
+                ngImports: [IgxTreeGridModule, IgxDragDropModule]
+            }),
+            component: TreeGridRowReorderComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
         // Tree Grid Keyboard Navigation Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
@@ -510,6 +524,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridKBNavigationComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // Tree Grid Remote Paging Sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/tree-grid-remote-paging-sample/remotePagingService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridRemotePagingSampleComponent],
+                ngDeclarations: [TreeGridRemotePagingSampleComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridRemotePagingSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

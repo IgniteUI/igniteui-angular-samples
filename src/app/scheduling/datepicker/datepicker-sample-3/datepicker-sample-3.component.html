@@ -1,8 +1,17 @@
 <div class="sample-wrapper date-picker-wrapper">
     <h4 class="sample-title">Date Picker with buttons</h4>
     <p class="sample-description">Today and cancel buttons are shown. Two-way data binding is used.</p>
-    <div>
-        <igx-date-picker id="date-picker" cancelButtonLabel="cancel" todayButtonLabel="today" [(ngModel)]="date">
-        </igx-date-picker>
+    <div class="container">
+        <div class="group">
+            <label for="dialogPicker">Dialog Mode</label>
+            <igx-date-picker id="dialogPicker" cancelButtonLabel="close" todayButtonLabel="today" [(ngModel)]="date1">
+            </igx-date-picker>
+        </div>
+        <div class="group">
+            <label for="dropdownPicker">Drop Down Mode</label>
+            <igx-date-picker id="dropdownPicker" mode="dropdown" cancelButtonLabel="close" todayButtonLabel="today"
+                [(ngModel)]="date2">
+            </igx-date-picker>
+        </div>
     </div>
 </div>
