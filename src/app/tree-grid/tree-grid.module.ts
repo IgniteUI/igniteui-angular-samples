@@ -72,6 +72,9 @@ import {
 // tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
+    TreeGridMultiColumnHeaderTemplateSampleComponent
+} from "./tree-grid-multi-column-header-template-sample/tree-grid-multi-column-header-template-sample.component";
+import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
@@ -160,7 +163,8 @@ import {
         TreeGridKBNavigationComponent,
         TreeGridRowReorderComponent,
         TreeGridRemotePagingSampleComponent,
-        TreeGridResizeLineStylingSampleComponent
+        TreeGridResizeLineStylingSampleComponent,
+        TreeGridMultiColumnHeaderTemplateSampleComponent
     ],
     imports: [
         CommonModule,
