@@ -2,3 +2,7 @@
     max-width: 400px;
     min-width: 250px;
 }
+
+:host {
+    display: block;
+}

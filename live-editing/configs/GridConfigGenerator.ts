@@ -82,6 +82,8 @@ import {
 // tslint:disable-next-line: max-line-length
 import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 
+// tslint:disable-next-line: max-line-length
+import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -673,6 +675,17 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: CustomGridPagingStyleSample,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [CustomGridPagingStyleSample, IgxGridModule],
+                ngDeclarations: [CustomGridPagingStyleSample],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowReorderComponent,
             additionalFiles: [
                 "/src/app/data/customers.ts"
             ],
@@ -680,8 +693,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxGridModule, GridRowReorderComponent, IgxDragDropModule],
                 ngDeclarations: [GridRowReorderComponent],
                 ngImports: [IgxGridModule, IgxDragDropModule]
-            }),
-            component: GridRowReorderComponent
+            })
         }));
 
         return configs;
