@@ -82,7 +82,7 @@ export class GridContextmenuSampleComponent implements OnInit {
         if (this.multiCellSelection) {
             this.multiCellSelection = undefined;
             this.multiCellArgs = undefined;
-            this.grid1.clearCellSelection();
+            // this.grid1.clearCellSelection();
         }
     }
 
