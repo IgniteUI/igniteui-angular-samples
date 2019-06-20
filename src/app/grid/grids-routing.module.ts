@@ -7,6 +7,7 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
+import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -289,6 +290,11 @@ export const gridsRoutes: Routes = [
         component: GridMRLCustomNavigationComponent,
         data: gridsRoutesData["grid-multi-row-layout"],
         path: "grid-mrl-custom-navigation"
+    },
+    {
+        component: GridContextmenuSampleComponent,
+        data: gridsRoutesData["grid-contextmenu-sample"],
+        path: "grid-contextmenu-sample"
     },
     {
         component: CustomGridPagingStyleSample,
