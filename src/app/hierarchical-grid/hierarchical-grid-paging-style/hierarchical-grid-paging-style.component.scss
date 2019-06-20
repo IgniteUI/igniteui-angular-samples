@@ -90,7 +90,11 @@ $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826
 //   $palette: $dark-palette,
 //   $schema: $custom-dark-schema
 // );
-.grid__wrapper {
-    width: 950px;
-    margin: 10px auto;
+.photo {
+    vertical-align: middle;
+    max-height: 62px;
+}
+
+.cell__inner_2 {
+    margin: 1px
 }
