@@ -44,6 +44,9 @@ import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-da
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
+import { ContextmenuComponent } from '../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component';
+// tslint:disable-next-line: max-line-length
+import { GridContextmenuSampleComponent } from "../../src/app/grid/grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
 // tslint:disable-next-line: max-line-length
 import { GridCustomKBNavigationComponent } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
@@ -79,6 +82,8 @@ import {
 // tslint:disable-next-line: max-line-length
 import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 
+// tslint:disable-next-line: max-line-length
+import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -622,7 +627,19 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: ["/src/app/data/nwindData.ts",
+            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.ts",
+            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.html",
+            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.scss"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridContextmenuSampleComponent, ContextmenuComponent],
+                ngDeclarations: [GridContextmenuSampleComponent, ContextmenuComponent],
+                ngImports: [IgxGridModule]
+            }),
+            component: GridContextmenuSampleComponent
+        }));
 
+        configs.push(new Config({
             component: GridCustomKBNavigationComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -658,6 +675,17 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: CustomGridPagingStyleSample,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [CustomGridPagingStyleSample, IgxGridModule],
+                ngDeclarations: [CustomGridPagingStyleSample],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridRowReorderComponent,
             additionalFiles: [
                 "/src/app/data/customers.ts"
             ],
@@ -665,8 +693,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxGridModule, GridRowReorderComponent, IgxDragDropModule],
                 ngDeclarations: [GridRowReorderComponent],
                 ngImports: [IgxGridModule, IgxDragDropModule]
-            }),
-            component: GridRowReorderComponent
+            })
         }));
 
         return configs;
