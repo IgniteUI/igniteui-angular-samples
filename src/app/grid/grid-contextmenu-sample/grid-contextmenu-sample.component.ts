@@ -72,7 +72,7 @@ export class GridContextmenuSampleComponent implements OnInit {
 
     public getCells(event) {
         this.multiCellSelection = {
-            data: this.grid1.getSelectedData(),
+            data: this.grid1.getSelectedData()
         };
     }
 
