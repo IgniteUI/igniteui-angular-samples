@@ -75,6 +75,7 @@ import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
+import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -120,6 +121,7 @@ import {
         TreeGridRowEditSampleComponent,
         TreeGridBatchEditingSampleComponent,
         TreeGridEmployeesSampleComponent,
+        TreeGridPagingStyleSampleComponent,
         TreeGridSearchSampleComponent,
         TreeGridColumnHidingSampleComponent,
         TreeGridColumnHidingToolbarSampleComponent,
