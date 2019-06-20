@@ -63,7 +63,7 @@ export class GridContextmenuSampleComponent implements OnInit {
     }
 
     public disableContextMenu() {
-        if (this.contextmenu){
+        if (this.contextmenu) {
             this.multiCellSelection = undefined;
             this.multiCellArgs = undefined;
             this.contextmenu = false;

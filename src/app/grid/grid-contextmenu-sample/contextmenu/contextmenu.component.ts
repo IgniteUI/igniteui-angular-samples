@@ -48,7 +48,7 @@ export class ContextmenuComponent {
         this.onCellValueCopy.emit({ data: selectedData });
     }
 
-    public hasMultiCellSelection(){
+    public hasMultiCellSelection() {
         return this.selectedCells && Object.entries(this.selectedCells).length !== 0;
     }
 
