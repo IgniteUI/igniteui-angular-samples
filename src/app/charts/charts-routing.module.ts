@@ -174,6 +174,13 @@ import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
 
+import { SparklineDisplayTypesComponent } from "./sparkline/sparkline-display-types/sparkline-display-types.component";
+import { SparklineMarkersComponent } from "./sparkline/sparkline-markers/sparkline-markers.component";
+import { SparklineNormalRangeComponent } from "./sparkline/sparkline-normal-range/sparkline-normal-range.component";
+import { SparklineTrendlinesComponent } from "./sparkline/sparkline-trendlines/sparkline-trendlines.component";
+import { SparklineUnknownValuesComponent
+} from "./sparkline/sparkline-unknown-values/sparkline-unknown-values.component";
+
 export const chartsRoutes: Routes = [
     {
         component: DoughnutChartExplosionSampleComponent,
@@ -494,6 +501,31 @@ export const chartsRoutes: Routes = [
         component: FinancialChartTrendlinesComponent,
         data: chartsRoutesData["financial-chart-trendlines"],
         path: "financial-chart-trendlines"
+    },
+    {
+        component: SparklineDisplayTypesComponent,
+        data: chartsRoutesData["sparkline-display-types"],
+        path: "sparkline-display-types"
+    },
+    {
+        component: SparklineMarkersComponent,
+        data: chartsRoutesData["sparkline-markers"],
+        path: "sparkline-markers"
+    },
+    {
+        component: SparklineNormalRangeComponent,
+        data: chartsRoutesData["sparkline-normal-range"],
+        path: "sparkline-normal-range"
+    },
+    {
+        component: SparklineTrendlinesComponent,
+        data: chartsRoutesData["sparkline-trendlines"],
+        path: "sparkline-trendlines"
+    },
+    {
+        component: SparklineUnknownValuesComponent,
+        data: chartsRoutesData["sparkline-unknown-values"],
+        path: "sparkline-unknown-values"
     }
 ];
 
