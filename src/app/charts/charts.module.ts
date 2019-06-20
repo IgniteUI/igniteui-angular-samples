@@ -10,6 +10,7 @@ import { DataChartSamplesModule } from "./data-chart/data-chart-samples-module";
 import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
+import { SparklineSamplesModule } from "./sparkline/sparkline-samples.module";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
         FinancialChartSamplesModule,
         PieChartSamplesModule,
         DoughnutChartSamplesModule,
+        SparklineSamplesModule,
         ChartsRoutingModule,
         IgxCategoryChartModule,
         IgxSliderModule

@@ -7,6 +7,7 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
+import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -49,6 +50,7 @@ import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
+import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 // tslint:enable:max-line-length
 
@@ -283,10 +285,21 @@ export const gridsRoutes: Routes = [
         component: GridMultiRowLayoutConfigurationComponent,
         data: gridsRoutesData["grid-multi-row-layout-configuration"],
         path: "grid-multi-row-layout-configuration"
-    }, {
+    },
+    {
         component: GridMRLCustomNavigationComponent,
         data: gridsRoutesData["grid-multi-row-layout"],
         path: "grid-mrl-custom-navigation"
+    },
+    {
+        component: GridContextmenuSampleComponent,
+        data: gridsRoutesData["grid-contextmenu-sample"],
+        path: "grid-contextmenu-sample"
+    },
+    {
+        component: CustomGridPagingStyleSample,
+        data: gridsRoutesData["custom-grid-paging-style"],
+        path: "custom-grid-paging-style"
     }
 ];
 
