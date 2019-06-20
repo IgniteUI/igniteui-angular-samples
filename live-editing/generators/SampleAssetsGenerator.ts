@@ -11,8 +11,7 @@ import { StyleSyntax } from "./misc/StyleSyntax";
 
 import * as Routing from "../../src/app/app-routing.module";
 
-import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
-import { Type } from "@angular/core/src/type";
+import { ModuleWithProviders, Type } from "@angular/core";
 
 import { Route } from "@angular/router";
 import { CONFIG_GENERATORS } from "./ConfigGenerators";
