@@ -9,7 +9,7 @@ import { athletesData } from "../services/data";
 })
 
 export class CustomGridPagingStyleSample {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+    @ViewChild("grid1", {static: true}) public grid1: IgxGridComponent;
     public data: any[];
 
     constructor() {
