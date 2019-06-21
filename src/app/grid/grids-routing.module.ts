@@ -18,6 +18,7 @@ import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
+import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
@@ -228,6 +229,11 @@ export const gridsRoutes: Routes = [
         component: GridMovingSampleComponent,
         data: gridsRoutesData["grid-moving-sample"],
         path: "grid-moving-sample"
+    },
+    {
+        component: GridMovingStyledSampleComponent,
+        data: gridsRoutesData["grid-moving-styled-sample"],
+        path: "grid-moving-styled-sample"
     },
     {
         component: GridMultiColumnHeadersComponent,

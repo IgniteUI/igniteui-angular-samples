@@ -14,6 +14,7 @@ export const treeGridRoutesData = {
     "treegrid-selection": { displayName: "TreeGrid Selection", parentName: "TreeGrid" },
     "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" },
     "treegrid-column-moving": { displayName: "TreeGrid Column Moving", parentName: "TreeGrid" },
+    "treegrid-column-moving-styled": { displayName: "TreeGrid Column Moving Styled", parentName: "TreeGrid" },
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },

@@ -68,6 +68,7 @@ import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-samp
 import {
     GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
+import { GridMovingStyledSampleComponent } from "../../src/app/grid/grid-moving-styled-sample/grid-moving-sample-styled.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 
 // tslint:disable-next-line: max-line-length
@@ -348,6 +349,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
                 ngDeclarations: [GridMovingSampleComponent],
+                ngImports: [IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMovingStyledSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMovingStyledSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngDeclarations: [GridMovingStyledSampleComponent],
                 ngImports: [IgxGridModule, IgxBadgeModule, IgxIconModule],
                 ngProviders: []
             })
