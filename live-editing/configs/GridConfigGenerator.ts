@@ -68,8 +68,10 @@ import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-samp
 import {
     GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
-import { GridMovingStyledSampleComponent } from "../../src/app/grid/grid-moving-styled-sample/grid-moving-sample-styled.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
+import {
+    GridMovingStyledSampleComponent
+} from "../../src/app/grid/grid-moving-styled-sample/grid-moving-styled-sample.component";
 
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
