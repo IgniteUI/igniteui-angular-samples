@@ -3,6 +3,8 @@ import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } fr
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
     PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+import { timer } from "rxjs";
+import { debounce } from "rxjs/operators";
 import { LocalDataService } from "../grid-finjs/localData.service";
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
 
@@ -86,6 +88,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private subscription;
     private selectedButton;
     private _timer;
+    private volumeChanged;
 
     constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
@@ -94,6 +97,12 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     public ngOnInit() {
         this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
+        this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
+        this.volumeChanged.subscribe(
+            (x) => {
+                this.localService.getData(this.volume);
+            },
+            (err) => console.log("Error: " + err));
     }
 
     public ngAfterViewInit() {
@@ -144,10 +153,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         return value ? "$" + value.toFixed(3) : "";
     }
 
-    public onVolumeChanged(event: any) {
-        this.localService.getData(this.volume);
-    }
-
     /**
      * the below code is needed when accessing the sample through the navigation
      * it will style all the space below the sample component element, but not the navigation menu
@@ -163,6 +168,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     public ngOnDestroy() {
         this.stopFeed();
+        this.volumeChanged.unsubscribe();
     }
 
     public toggleToolbar(event: any) {

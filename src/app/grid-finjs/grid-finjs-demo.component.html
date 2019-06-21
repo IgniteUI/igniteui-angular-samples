@@ -12,7 +12,7 @@
             </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100" (onValueChange)="onVolumeChanged($event)" thumbLabelVisibilityDuration="250"></igx-slider>
+                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100" thumbLabelVisibilityDuration="250"></igx-slider>
             </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Frequency: {{frequency}} ms</label>
@@ -51,8 +51,8 @@
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" name="trending_up">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" name="trending_down">trending_down</igx-icon>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
                 </div>
             </ng-template>
         </igx-column>

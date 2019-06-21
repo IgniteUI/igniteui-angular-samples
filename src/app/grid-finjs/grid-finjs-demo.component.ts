@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { DefaultSortingStrategy, IgxButtonGroupComponent, IgxGridComponent, IgxSliderComponent,
     SortingDirection} from "igniteui-angular";
-import { Observable } from "rxjs";
+import { Observable, timer } from "rxjs";
+import { debounce } from "rxjs/operators";
 import { LocalDataService } from "./localData.service";
 
 @Component({
@@ -44,6 +45,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     private subscription;
     private selectedButton;
     private _timer;
+    private volumeChanged;
 
     constructor(private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
@@ -70,6 +72,12 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
                 strategy: DefaultSortingStrategy.instance()
             }
         ];
+        this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
+        this.volumeChanged.subscribe(
+            (x) => {
+                this.localService.getData(this.volume);
+            },
+            (err) => console.log("Error: " + err));
     }
 
     public ngAfterViewInit() {
@@ -149,10 +157,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         return "$" + value.toFixed(3);
     }
 
-    public onVolumeChanged(event: any) {
-        this.localService.getData(this.volume);
-    }
-
     /**
      * the below code is needed when accessing the sample through the navigation
      * it will style all the space below the sample component element, but not the navigation menu
@@ -168,6 +172,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public ngOnDestroy() {
         this.stopFeed();
+        this.volumeChanged.unsubscribe();
     }
 
     public toggleToolbar(event: any) {
