@@ -19,7 +19,7 @@ export class GridContextmenuSampleComponent implements OnInit {
     public contextmenuY = 0;
     public clickedCell = null;
     public copiedData;
-    public multiCellSelection: { data: any[], selectionRanges: any[] } = { data: [], selectionRanges: [] };
+    public multiCellSelection: { data: any[]} = { data: []};
     public multiCellArgs;
 
     constructor() {
@@ -43,7 +43,7 @@ export class GridContextmenuSampleComponent implements OnInit {
         this.multiCellArgs = {};
         if (this.multiCellSelection) {
             const node = eventArgs.cell.selectionNode;
-            const isCellWithinRange = this.multiCellSelection.selectionRanges.some((range) => {
+            const isCellWithinRange = this.grid1.getSelectedRanges().some((range) => {
                 if (node.column >= range.columnStart &&
                     node.column <= range.columnEnd &&
                     node.row >= range.rowStart &&
@@ -72,8 +72,7 @@ export class GridContextmenuSampleComponent implements OnInit {
 
     public getCells(event) {
         this.multiCellSelection = {
-            data: this.grid1.getSelectedData(),
-            selectionRanges: this.grid1.getSelectedRanges()
+            data: this.grid1.getSelectedData()
         };
     }
 
@@ -82,7 +81,7 @@ export class GridContextmenuSampleComponent implements OnInit {
         if (this.multiCellSelection) {
             this.multiCellSelection = undefined;
             this.multiCellArgs = undefined;
-            // this.grid1.clearCellSelection();
+            this.grid1.clearCellSelection();
         }
     }
 
