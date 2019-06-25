@@ -7,7 +7,7 @@ import { IgxSnackbarComponent } from "igniteui-angular";
   templateUrl: "./snackbar-sample-4.component.html"
 })
 export class SnackbarSample4Component implements OnInit {
-  @ViewChild(IgxSnackbarComponent)
+  @ViewChild(IgxSnackbarComponent, { static: true })
   public snackbar: IgxSnackbarComponent;
   public navItems: any[];
   public deletedItems = [];

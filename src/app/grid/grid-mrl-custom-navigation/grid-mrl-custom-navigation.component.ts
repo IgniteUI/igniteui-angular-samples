@@ -12,7 +12,7 @@ export class GridMRLCustomNavigationComponent {
 
     public sourceData = DATA;
 
-    @ViewChild(IgxGridComponent, { read: IgxGridComponent })
+    @ViewChild(IgxGridComponent, { read: IgxGridComponent , static: true  })
     public grid: IgxGridComponent;
 
     public customNavigation(args) {

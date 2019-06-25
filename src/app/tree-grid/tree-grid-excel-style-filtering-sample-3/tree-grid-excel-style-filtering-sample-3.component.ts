@@ -9,7 +9,7 @@ import { FOODS_DATA } from "../data/foods";
 })
 
 export class TreeGridExcelStyleFilteringSample3Component implements OnInit {
-    @ViewChild("treegrid1", { read: IgxTreeGridComponent })
+    @ViewChild("treegrid1", { read: IgxTreeGridComponent , static: true  })
     public treegrid1: IgxTreeGridComponent;
 
     public data: any[];

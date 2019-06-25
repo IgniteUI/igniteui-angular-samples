@@ -18,7 +18,7 @@ import { IgxSpreadsheetComponent } from "igniteui-angular-spreadsheet/ES5/igx-sp
   templateUrl: "./spreadsheet-data-validation.component.html"
 })
 export class SpreadsheetDataValidComponent implements OnInit {
-    @ViewChild("spreadsheet", { read: IgxSpreadsheetComponent })
+    @ViewChild("spreadsheet", { read: IgxSpreadsheetComponent , static: true  })
     public spreadsheet: IgxSpreadsheetComponent;
 
     constructor() { }

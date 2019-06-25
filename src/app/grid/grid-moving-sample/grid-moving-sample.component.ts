@@ -11,8 +11,8 @@ import { DATA } from "../grid-sample-selection/financialData";
 
 export class GridMovingSampleComponent implements AfterViewInit {
     public data: any[];
-    @ViewChild("dataGrid") public grid: IgxGridComponent;
-    @ViewChild("pinTemplate", { read: TemplateRef })
+    @ViewChild("dataGrid", { static: true }) public grid: IgxGridComponent;
+    @ViewChild("pinTemplate", { read: TemplateRef , static: true  })
     private pinTemplate: TemplateRef<any>;
 
     constructor() {

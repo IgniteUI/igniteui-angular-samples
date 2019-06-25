@@ -14,7 +14,7 @@ enum DragIcon {
 })
 
 export class HGridDragSampleComponent {
-    @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent })
+    @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent , static: true  })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
     constructor() {

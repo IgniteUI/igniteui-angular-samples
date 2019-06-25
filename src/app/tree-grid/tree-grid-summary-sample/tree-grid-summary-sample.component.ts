@@ -10,7 +10,7 @@ import { FOODS_DATA } from "../data/foods";
 })
 export class TreeGridSummarySampleComponent implements OnInit {
 
-  @ViewChild("treegrid1", { read: IgxTreeGridComponent })
+  @ViewChild("treegrid1", { read: IgxTreeGridComponent , static: true  })
   public grid1: IgxTreeGridComponent;
   public data;
 

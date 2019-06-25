@@ -9,7 +9,7 @@ import { IgxSpreadsheetComponent } from "igniteui-angular-spreadsheet/ES5/igx-sp
   templateUrl: "./spreadsheet-overview.component.html"
 })
 export class SpreadsheetOverviewComponent implements OnInit {
-    @ViewChild("spreadsheet", { read: IgxSpreadsheetComponent })
+    @ViewChild("spreadsheet", { read: IgxSpreadsheetComponent , static: true  })
     public spreadsheet: IgxSpreadsheetComponent;
 
     constructor() { }

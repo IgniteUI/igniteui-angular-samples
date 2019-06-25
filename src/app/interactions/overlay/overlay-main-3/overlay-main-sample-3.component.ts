@@ -7,10 +7,10 @@ import { ConnectedPositioningStrategy, IgxOverlayService } from "igniteui-angula
     styleUrls: ["overlay-main-sample-3.component.scss"]
 })
 export class OverlaySampleMain3Component {
-    @ViewChild("cardDiv")
+    @ViewChild("cardDiv", { static: true })
     private cardSample: ElementRef;
 
-    @ViewChild("buttonElement")
+    @ViewChild("buttonElement", { static: true })
     private buttonElement: ElementRef;
 
     constructor(

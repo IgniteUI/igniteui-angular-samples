@@ -9,7 +9,7 @@ import { DATA } from "../../data/nwindData";
 })
 
 export class LocalizationSample1Component implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", { read: IgxGridComponent , static: true  })
     public grid: IgxGridComponent;
 
     public data: any[];

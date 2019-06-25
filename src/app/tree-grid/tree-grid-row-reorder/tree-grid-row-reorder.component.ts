@@ -8,7 +8,7 @@ import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
     templateUrl: "tree-grid-row-reorder.component.html"
 })
 export class TreeGridRowReorderComponent {
-    @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent })
+    @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent , static: true  })
     public treeGrid: IgxTreeGridComponent;
 
     public localData = [];

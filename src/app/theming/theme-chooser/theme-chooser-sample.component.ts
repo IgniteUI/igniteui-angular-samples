@@ -33,19 +33,19 @@ export class ThemeChooserSampleComponent implements OnInit {
     @HostBinding("class")
     public themesClass: THEME = THEME.LIGHT;
 
-    @ViewChild("dialog1", { read: IgxDialogComponent })
+    @ViewChild("dialog1", { read: IgxDialogComponent , static: true  })
     public dialog: IgxDialogComponent;
 
-    @ViewChild(IgxOverlayOutletDirective)
+    @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
 
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", { read: IgxGridComponent , static: true  })
     public grid1: IgxGridComponent;
 
-    @ViewChild("datePicker")
+    @ViewChild("datePicker", { static: true })
     public datePicker: IgxDatePickerComponent;
 
-    @ViewChild("snackbar")
+    @ViewChild("snackbar", { static: true })
     public snackbar: IgxSnackbarComponent;
 
     private deletedRow;

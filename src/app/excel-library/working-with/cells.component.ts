@@ -23,7 +23,7 @@ import { ExcelUtility } from "../../utilities/excel-utility";
 })
 export class ExcelLibraryWorkingWithCellsComponent implements OnInit {
 
-    @ViewChild("gridContainer", {read: ViewContainerRef})
+    @ViewChild("gridContainer", {read: ViewContainerRef, static: true })
     public gridContainerRef: ViewContainerRef;
     public canSave = false;
     public wb: Workbook;

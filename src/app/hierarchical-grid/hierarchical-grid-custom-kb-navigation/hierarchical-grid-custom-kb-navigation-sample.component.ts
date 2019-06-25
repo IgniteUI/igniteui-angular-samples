@@ -12,7 +12,7 @@ import { SINGERS } from "../data";
 })
 
 export class HGridCustomKBNavigationComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxHierarchicalGridComponent })
+    @ViewChild("grid1", { read: IgxHierarchicalGridComponent , static: true  })
     public grid1: IgxHierarchicalGridComponent;
 
     public data: any[];

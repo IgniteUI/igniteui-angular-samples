@@ -10,10 +10,10 @@ import { IgxDatePickerComponent, IgxSnackbarComponent } from "igniteui-angular";
 export class DatepickerSample7Component {
     public currentDate;
 
-    @ViewChild(IgxSnackbarComponent)
+    @ViewChild(IgxSnackbarComponent, { static: true })
     private snackbar;
 
-    @ViewChild(IgxDatePickerComponent)
+    @ViewChild(IgxDatePickerComponent, { static: true })
     private datePicker;
 
     public changeDate(event) {

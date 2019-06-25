@@ -47,22 +47,22 @@ enum DialogType {
 })
 export class GridMultiRowLayoutConfigurationComponent {
 
-    @ViewChild("resultDialog", { read: IgxDialogComponent })
+    @ViewChild("resultDialog", { read: IgxDialogComponent , static: true  })
     public resultDialog: IgxDialogComponent;
 
-    @ViewChild("textArea", { read: ElementRef })
+    @ViewChild("textArea", { read: ElementRef , static: true  })
     public textArea: ElementRef;
 
-    @ViewChild("grid", { read: IgxGridComponent })
+    @ViewChild("grid", { read: IgxGridComponent , static: true  })
     public grid: IgxGridComponent;
 
     @ViewChildren("gridCell", { read: ElementRef })
     public gridCells: QueryList<ElementRef>;
 
-    @ViewChild("resizeIndicator", { read: ElementRef })
+    @ViewChild("resizeIndicator", { read: ElementRef , static: true  })
     public resizeIndicator: ElementRef;
 
-    @ViewChild("layoutContainer", { read: ElementRef })
+    @ViewChild("layoutContainer", { read: ElementRef , static: true  })
     public layoutContainer: ElementRef;
 
     public get layoutScrollTop() {

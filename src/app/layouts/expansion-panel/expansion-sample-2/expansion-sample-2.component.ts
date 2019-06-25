@@ -9,9 +9,9 @@ import {
     templateUrl: "./expansion-sample-2.component.html"
 })
 export class ExpansionPanelSample2Component {
-    @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent })
+    @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent , static: true  })
     public panel: IgxExpansionPanelComponent;
-    @ViewChild(IgxToastComponent, { read: IgxToastComponent })
+    @ViewChild(IgxToastComponent, { read: IgxToastComponent , static: true  })
     public eventToast: IgxToastComponent;
     public readMore = "https://en.wikipedia.org/wiki/Hummingbird";
     public handleExpansion(evt?: {event: Event}) {

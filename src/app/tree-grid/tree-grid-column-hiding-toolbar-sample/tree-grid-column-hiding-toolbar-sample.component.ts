@@ -9,7 +9,7 @@ import { EMPLOYEE_FLAT_DATA_DETAILED } from "../data/employees-flat-detailed";
 })
 export class TreeGridColumnHidingToolbarSampleComponent implements OnInit, AfterViewInit {
 
-    @ViewChild("treeGrid", { read: IgxTreeGridComponent }) public treeGrid: IgxTreeGridComponent;
+    @ViewChild("treeGrid", { read: IgxTreeGridComponent , static: true  }) public treeGrid: IgxTreeGridComponent;
     public data: any[];
 
     constructor() { }

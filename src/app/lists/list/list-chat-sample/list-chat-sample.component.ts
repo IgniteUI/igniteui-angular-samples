@@ -12,11 +12,11 @@ import { IMessage, MessagesService } from "./services/messages.service";
 })
 export class ListChatSampleComponent {
     public message: string;
-    @ViewChild("myMessage")
+    @ViewChild("myMessage", { static: true })
     public myMessageTemplate: TemplateRef<any>;
-    @ViewChild("othersMessage")
+    @ViewChild("othersMessage", { static: true })
     public othersMessageTemplate: TemplateRef<any>;
-    // @ViewChild("list")
+    // @ViewChild("list", { static: true })
     // public listComponent: IgxListComponent;
 
     private myId: number = 4;

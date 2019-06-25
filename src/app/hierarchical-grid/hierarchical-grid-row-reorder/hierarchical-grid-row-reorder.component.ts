@@ -8,7 +8,7 @@ import { createData, IDrive } from "../../data/files.data";
     templateUrl: "hierarchical-grid-row-reorder.component.html"
 })
 export class HGridRowReorderComponent {
-    @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent })
+    @ViewChild(IgxHierarchicalGridComponent, { read: IgxHierarchicalGridComponent , static: true  })
     public hGrid: IgxHierarchicalGridComponent;
     public localData: IDrive[] = [];
     constructor() {

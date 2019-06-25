@@ -13,10 +13,10 @@ enum TYPE {
 })
 
 export class SortingSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", { read: IgxGridComponent , static: true  })
     public grid1: IgxGridComponent;
 
-    @ViewChild(IgxSelectComponent)
+    @ViewChild(IgxSelectComponent, { static: false })
     public igxSelect: IgxSelectComponent;
 
     public data: any[];

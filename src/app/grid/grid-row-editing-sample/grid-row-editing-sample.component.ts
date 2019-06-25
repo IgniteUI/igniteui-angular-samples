@@ -9,7 +9,7 @@ import { IgxGridComponent } from "igniteui-angular";
     templateUrl: "grid-row-editing-sample.component.html"
 })
 export class GridRowEditSampleComponent {
-    @ViewChild("gridRowEdit", { read: IgxGridComponent }) public gridRowEdit: IgxGridComponent;
+    @ViewChild("gridRowEdit", { read: IgxGridComponent , static: true  }) public gridRowEdit: IgxGridComponent;
 
     public data: any[];
 

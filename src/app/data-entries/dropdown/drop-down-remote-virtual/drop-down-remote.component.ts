@@ -13,11 +13,11 @@ import { RemoteService } from "../../../grid/services/remote.service";
     styleUrls: ["./drop-down-remote.component.scss"]
 })
 export class DropDownRemoteComponent implements OnInit, OnDestroy {
-    @ViewChild("loadingToast", { read: IgxToastComponent })
+    @ViewChild("loadingToast", { read: IgxToastComponent , static: true  })
     public loadingToast: IgxToastComponent;
-    @ViewChild(IgxForOfDirective, { read: IgxForOfDirective })
+    @ViewChild(IgxForOfDirective, { read: IgxForOfDirective , static: true  })
     public remoteForDir: IgxForOfDirective<any>;
-    @ViewChild("remoteDropDown", { read: IgxDropDownComponent })
+    @ViewChild("remoteDropDown", { read: IgxDropDownComponent , static: true  })
     public remoteDropDown: IgxDropDownComponent;
     public itemHeight = 48;
     public itemsMaxHeight = 320;
