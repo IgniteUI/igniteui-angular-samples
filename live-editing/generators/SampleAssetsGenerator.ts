@@ -75,8 +75,7 @@ export class SampleAssetsGenerator extends Generator {
             if (route.component) {
                 this._componentRoutes.set(route.component.name, route.path);
             } else if (route.loadChildren) {
-                let loadChildren = route.loadChildren.toString();
-                let moduleName = loadChildren.substring(loadChildren.lastIndexOf("#") + 1);
+                let moduleName = route.data.toString();
                 modulePaths.set(moduleName, route.path);
             }
         }
