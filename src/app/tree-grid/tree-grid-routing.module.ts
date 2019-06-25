@@ -66,6 +66,10 @@ import {
 import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
+
+import {
+    TreeGridResizeLineStylingSampleComponent
+} from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
 import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
@@ -167,6 +171,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnResizingSampleComponent,
         data: treeGridRoutesData["treegrid-column-resizing"],
         path: "treegrid-column-resizing"
+    },
+    {
+        component: TreeGridResizeLineStylingSampleComponent,
+        data: treeGridRoutesData["treegrid-resize-line-styling"],
+        path: "treegrid-resize-line-styling"
     },
     {
         component: TreeGridFilteringSampleComponent,

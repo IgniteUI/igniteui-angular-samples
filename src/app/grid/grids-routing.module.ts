@@ -52,6 +52,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -160,6 +161,11 @@ export const gridsRoutes: Routes = [
         component: ResizingSampleComponent,
         data: gridsRoutesData["grid-resizing-sample"],
         path: "grid-resizing-sample"
+    },
+    {
+        component: GridResizeLineStylingSampleComponent,
+        data: gridsRoutesData["grid-resize-line-styling-sample"],
+        path: "grid-resize-line-styling-sample"
     },
     {
         component: FinancialSampleComponent,
