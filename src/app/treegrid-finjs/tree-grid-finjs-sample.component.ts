@@ -1,41 +1,12 @@
 
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DataUtil, HorizontalAlignment,
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
     IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
-    PositionSettings,
-    SortingDirection,
-    VerticalAlignment} from "igniteui-angular";
+    PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+import { timer } from "rxjs";
+import { debounce } from "rxjs/operators";
 import { LocalDataService } from "../grid-finjs/localData.service";
 import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
-
-interface IButton {
-    ripple ?: string;
-    label ?: string;
-    disabled ?: boolean;
-    togglable ?: boolean;
-    selected ?: boolean;
-    color ?: string;
-    icon ?: string;
-}
-
-export class Button {
-    private ripple: string;
-    private label: string;
-    private disabled: boolean;
-    private togglable: boolean;
-    private selected: boolean;
-    private color: string;
-    private icon: string;
-
-    constructor(obj ?: IButton) {
-        this.label = obj.label;
-        this.selected = obj.selected || false;
-        this.togglable = obj.togglable;
-        this.disabled = obj.disabled || false;
-        this.color = obj.color;
-        this.icon = obj.icon;
-    }
-}
 
 @Component({
     providers: [LocalDataService],
@@ -47,7 +18,6 @@ export class Button {
 export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     @ViewChild("grid1", { static: true }) public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
-
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
 
@@ -55,26 +25,25 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public volume = 1000;
     public frequency = 500;
     public data: any[] = [];
-    public recordsUpdatedLastSecond: number[] ;
     public controls = [
-        new Button({
+        {
             disabled: false,
             icon: "update",
             label: "LIVE PRICES",
             selected: false
-        }),
-        new Button({
+        },
+        {
             disabled: false,
             icon: "update",
             label: "LIVE ALL PRICES",
             selected: false
-        }),
-        new Button({
+        },
+        {
             disabled: true,
             icon: "stop",
             label: "Stop",
             selected: false
-        })
+        }
     ];
     public groupColumns = ["Category", "Type", "Contract"];
     public aggregations: ITreeGridAggregation[] = [
@@ -119,18 +88,21 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private subscription;
     private selectedButton;
     private _timer;
+    private volumeChanged;
 
-    // tslint:disable-next-line:member-ordering
     constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
         this.localService.records.subscribe((d) => this.data = d);
     }
-    // tslint:disable-next-line:member-ordering
+
     public ngOnInit() {
-        if (this.theme) {
-            document.body.classList.add("fin-dark-theme");
-        }
         this.grid1.sortingExpressions = [{ fieldName: this.groupColumnKey, dir: SortingDirection.Desc }];
+        this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
+        this.volumeChanged.subscribe(
+            (x) => {
+                this.localService.getData(this.volume);
+            },
+            (err) => console.log("Error: " + err));
     }
 
     public ngAfterViewInit() {
@@ -181,12 +153,10 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         return value ? "$" + value.toFixed(3) : "";
     }
 
-    public onVolumeChanged(event: any) {
-        this.localService.getData(this.volume);
-    }
-
-    // the below code is needed when accessing the sample through the navigation
-    // it will style all the space below the sample component element, but not the navigation menu
+    /**
+     * the below code is needed when accessing the sample through the navigation
+     * it will style all the space below the sample component element, but not the navigation menu
+     */
     public onThemeChanged(event: any) {
         const parentEl = this.parentComponentEl();
         if (event.checked && parentEl.classList.contains("main")) {
@@ -196,14 +166,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         }
     }
 
-    public parentComponentEl() {
-        // returns the main div container of the Index Component,
-        // if path is /samples/sample-url, or the appRoot, if path is /sample-url
-        return this.elRef.nativeElement.parentElement.parentElement;
-    }
-
     public ngOnDestroy() {
         this.stopFeed();
+        this.volumeChanged.unsubscribe();
     }
 
     public toggleToolbar(event: any) {
@@ -229,7 +194,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         return rowData["Change(%)"] <= -1;
     }
 
-    // tslint:disable-next-line:member-ordering
+    // tslint:disable:member-ordering
     public trends = {
         changeNeg: this.changeNegative,
         changePos: this.changePositive,
@@ -238,17 +203,14 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         strongNegative: this.strongNegative,
         strongPositive: this.strongPositive
     };
-    // tslint:disable-next-line:member-ordering
+
     public trendsChange = {
         changeNeg2: this.changeNegative,
         changePos2: this.changePositive,
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-    // tslint:disable-next-line:member-ordering
-    public buttonCols = {
-        buttonCols: true
-    };
+    // tslint:enable:member-ordering
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         if (this.subscription) {
@@ -264,12 +226,15 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         });
     }
 
-    get buttonSelected(): number {
-      return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
+    /**
+     * returns the main div container of the Index Component,
+     * if path is /samples/sample-url, or the appRoot, if path is /sample-url
+     */
+    private parentComponentEl() {
+        return this.elRef.nativeElement.parentElement.parentElement;
     }
 
-    // tslint:disable-next-line:member-ordering
-    public ticker(data: any) {
+    private ticker(data: any) {
         this.zone.runOutsideAngular(() => {
             this.updateRandomPrices(data);
             this.recalculateAggregations(this.grid1.data);
@@ -277,8 +242,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         });
     }
 
-    // tslint:disable-next-line:member-ordering
-    public tickerAllPrices(data: any) {
+    private tickerAllPrices(data: any) {
         this.zone.runOutsideAngular(() => {
             this.updateAllPrices(data);
             this.recalculateAggregations(this.grid1.data);
@@ -299,25 +263,33 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         }
     }
 
-    // tslint:disable-next-line:member-ordering
-    public updateAllPrices(data: any[]): any {
-        for (const dataRow of data) {
+    /**
+     * Updates values in every record
+     */
+    private updateAllPrices(data: any[]): any {
+        const newData = data.slice();
+        for (const dataRow of newData) {
           this.randomizeObjectData(dataRow);
         }
-        return data;
+        return newData;
       }
 
-    // tslint:disable-next-line:member-ordering
-    public updateRandomPrices(data: any[]): any {
+    /**
+     * Updates values in random number of records
+     */
+    private updateRandomPrices(data: any[]): any {
+        const newData = data.slice();
         let y = 0;
-        for (let i = Math.round(Math.random() * 10); i < data.length; i += Math.round(Math.random() * 10)) {
-          this.randomizeObjectData(data[i]);
+        for (let i = Math.round(Math.random() * 10); i < newData.length; i += Math.round(Math.random() * 10)) {
+          this.randomizeObjectData(newData[i]);
           y++;
         }
-       // return {data: currData, recordsUpdated: y };
-        return data;
+        return newData;
       }
 
+    /**
+     * Generates ne values for Change, Price and ChangeP columns
+     */
     private randomizeObjectData(dataObj) {
         const changeP = "Change(%)";
         const res = this.generateNewPrice(dataObj.Price);
@@ -325,6 +297,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         dataObj.Price = res.Price;
         dataObj[changeP] = res.ChangePercent;
     }
+
     private generateNewPrice(oldPrice): any {
         let rnd = Math.random();
         rnd = Math.round(rnd * 100) / 100;
@@ -344,4 +317,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
         return result;
     }
+
+    get buttonSelected(): number {
+        return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
+      }
 }

@@ -12,18 +12,15 @@
             </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Records: {{volume}}</label>
-                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100"
-                    (onValueChange)="onVolumeChanged($event)" thumbLabelVisibilityDuration="250"></igx-slider>
+                <igx-slider #slider1 id="slider" [minValue]="0" [maxValue]="10000" [(ngModel)]="volume" [step]="100" thumbLabelVisibilityDuration="250"></igx-slider>
             </div>
             <div class="finjs-slider control-item">
                 <label for="slider">Frequency: {{frequency}} ms</label>
-                <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency"
-                    thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
+                <igx-slider #slider2 id="slider" [minValue]="100" [maxValue]="3000" [step]="10" [(ngModel)]="frequency" thumbLabelVisibilityDuration="250" [isContinuous]="true"></igx-slider>
             </div>
         </div>
         <div class="control-item finjs-play-controls">
-            <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls"
-                (onSelect)="onButtonAction($event)"></igx-buttongroup>
+            <igx-buttongroup class="finjssample-btn-group" #buttonGroup1 [multiSelection]="false" [values]="controls" (onSelect)="onButtonAction($event)"></igx-buttongroup>
         </div>
     </div>
     <div class="sample-toolbar">
@@ -33,10 +30,8 @@
             ~{{volume/5}} records updated.</span>
     </div>
 
-    <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
-        columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' (onGroupingDone)="groupingDone($event)"
-        [rowSelectable]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+    <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact' columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true" [allowFiltering]="true"
+        [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true" [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSortingTemplate></ng-template>
@@ -51,48 +46,36 @@
         <igx-column [field]="'Settlement'" [width]="'100px'" [groupable]='true' [sortable]='true'></igx-column>
         <igx-column [field]="'Region'" [width]="'110px'" [groupable]='true' [sortable]='true'></igx-column>
         <igx-column [field]="'Country'" [width]="'100px'" [groupable]='true' [sortable]='true'></igx-column>
-        <igx-column [field]="'Open Price'" [width]="'120px'" [dataType]="'number'" [formatter]="formatCurrency"
-            [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'Price'" [width]="'110px'" [dataType]="'number'" [cellClasses]="trends" [movable]="true"
-            [sortable]="true">
+        <igx-column [field]="'Open Price'" [width]="'120px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Price'" [width]="'110px'" [dataType]="'number'" [cellClasses]="trends" [movable]="true" [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.rowData)" name="trending_up">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.rowData)" name="trending_down">trending_down</igx-icon>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
                 </div>
             </ng-template>
         </igx-column>
 
-        <igx-column [field]="'Change'" [width]="'120px'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'"
-            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
+        <igx-column [field]="'Change'" [width]="'120px'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
         </igx-column>
 
-        <igx-column [field]="'Change(%)'" [width]="'110px'" [dataType]="'number'" [formatter]="percentage" [movable]="true"
-            [sortable]="true" [cellClasses]="trendsChange">
+        <igx-column [field]="'Change(%)'" [width]="'110px'" [dataType]="'number'" [formatter]="percentage" [movable]="true" [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
 
-        <igx-column [field]="'Buy'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'Sell'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
-            [sortable]="true"></igx-column>
+        <igx-column [field]="'Buy'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Sell'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Spread'" [width]="'110px'" [dataType]="'number'" [formatter]="formatNumber" [movable]="true"></igx-column>
-        <igx-column [field]="'Volume'" [width]="'110px'" [dataType]="'number'" [formatter]="formatNumber" [movable]="true"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'High(D)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'Low(D)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'High(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'Low(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
-            [sortable]="true"></igx-column>
-        <igx-column [field]="'Start(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true"
-            [sortable]="true"></igx-column>
+        <igx-column [field]="'Volume'" [width]="'110px'" [dataType]="'number'" [formatter]="formatNumber" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'High(D)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Low(D)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'High(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Low(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Start(Y)'" [width]="'110px'" [dataType]="'number'" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
-                    <igx-icon (click)="chartClick(cell)" fontSet="material">insert_chart_outlined</igx-icon>
+                    <igx-icon fontSet="material">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
         </igx-column>
