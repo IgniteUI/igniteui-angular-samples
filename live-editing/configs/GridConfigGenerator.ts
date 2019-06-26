@@ -44,7 +44,7 @@ import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-da
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
-import { ContextmenuComponent } from '../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component';
+import { ContextmenuComponent } from "../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component";
 // tslint:disable-next-line: max-line-length
 import { GridContextmenuSampleComponent } from "../../src/app/grid/grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-filtering/grid-custom-filtering.component";
@@ -91,6 +91,9 @@ import {
     RemoteFilteringSampleComponent
 } from "../../src/app/grid/grid-remote-filtering-sample/remote-filtering-sample.component";
 import { RemotePagingGridSample } from "../../src/app/grid/grid-remote-paging-sample/remote-paging-sample.component";
+import {
+    GridResizeLineStylingSampleComponent
+} from "../../src/app/grid/grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { ResizingSampleComponent } from "../../src/app/grid/grid-resizing-sample/grid-resizing-sample.component";
 import { GridDragBaseSampleComponent } from "../../src/app/grid/grid-row-drag-base/grid-row-drag-base.component";
 import {
@@ -294,6 +297,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, ResizingSampleComponent],
                 ngDeclarations: [ResizingSampleComponent],
+                ngImports: [IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridResizeLineStylingSampleComponent,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridResizeLineStylingSampleComponent],
+                ngDeclarations: [GridResizeLineStylingSampleComponent],
                 ngImports: [IgxGridModule],
                 ngProviders: []
             })
@@ -628,9 +642,9 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/data/nwindData.ts",
-            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.ts",
-            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.html",
-            "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.scss"],
+                "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.ts",
+                "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.html",
+                "src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridContextmenuSampleComponent, ContextmenuComponent],
                 ngDeclarations: [GridContextmenuSampleComponent, ContextmenuComponent],
