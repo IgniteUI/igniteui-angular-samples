@@ -13,7 +13,7 @@
     "generate-live-editing": "gulp generate-live-editing",
     "watch-live-editing": "gulp watch-live-editing",
     "sass-js-compile-check": "gulp sass-js-compile-check",
-    "build": "gulp generate-live-editing && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --aot=true --vendor-source-map=false --progress=true --verbose=true",
+    "build": "gulp generate-live-editing && gulp overwrite-package-json && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --aot=true --vendor-source-map=false --progress=true --verbose=true",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
