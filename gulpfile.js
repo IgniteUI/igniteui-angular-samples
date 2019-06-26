@@ -1,4 +1,5 @@
 const gulp = require("gulp");
+const fs = require("fs");
 const tsNode = require('ts-node').register({
     transpileOnly: true,
     ignore: [/\/node_modules\/(?!igniteui-angular)/],
@@ -19,6 +20,13 @@ gulp.task("generate-live-editing", (done) => {
     requireFile("./live-editing/LiveEditingManager.ts");
     done();
 });
+
+gulp.task("overwrite-package-json", (done) => {
+    const package = require("./node_modules/igniteui-angular-charts/package.json");
+    fs.writeFileSync("./node_modules/igniteui-angular-charts/package.json", JSON.stringify(package));
+    done();
+});
+
 
 gulp.task("watch-live-editing", gulp.series("generate-live-editing", () => {
     gulp.watch(["./src/**/*.*", "!./src/assets/**", "./live-editing/**/*.*", "package.json"], function () {
