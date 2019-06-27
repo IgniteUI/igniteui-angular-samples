@@ -1,0 +1,16 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- script: npm install
+  displayName: 'Install dependencies'
+  env:
+    AZURE_PIPELINES: "true"
+
+- script: npm run lint
+  displayName: 'Run lint'
+
+- script: npm run build
+  displayName: 'Generate live editing and build samples'
+  env:
+    NODE_OPTIONS: "--max_old_space_size=4096"
