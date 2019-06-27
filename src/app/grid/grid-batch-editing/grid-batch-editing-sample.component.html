@@ -27,7 +27,7 @@
         </igx-grid>
     </app-grid-with-transactions>
     <div class="buttons-row">
-        <button igxButton (click)="addRow('gridRowEditTransaction')">Add Row</button>
+        <button igxButton (click)="addRow()">Add Row</button>
         <div class="buttons-wrapper">
             <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>
             <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>
