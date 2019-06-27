@@ -11,6 +11,6 @@ steps:
   displayName: 'Run lint'
 
 - script: npm run build
-  displayName: 'Build source code and styles'
+  displayName: 'Generate live editing and build samples'
   env:
     NODE_OPTIONS: "--max_old_space_size=4096"
