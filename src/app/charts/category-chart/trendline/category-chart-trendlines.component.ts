@@ -17,7 +17,7 @@ export class CategoryChartTrendlinesComponent implements AfterViewInit {
     public data: any;
     public includedProperties: any;
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxCategoryChartComponent;
 
     constructor() {

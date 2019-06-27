@@ -13,83 +13,103 @@ export const samplesRoutes: Routes = [
         path: "home"
     },
     {
-        loadChildren: "./data-display/data-display.module#DataDisplayModule",
+        data: ["DataDisplayModule"],
+        loadChildren: () => import("./data-display/data-display.module").then(m => m.DataDisplayModule),
         path: "data-display"
     },
     {
-        loadChildren: "./data-entries/data-entries.module#DataEntriesModule",
+        data: ["DataEntriesModule"],
+        loadChildren: () => import("./data-entries/data-entries.module").then(m => m.DataEntriesModule),
         path: "data-entries"
     },
     {
-        loadChildren: "./interactions/interactions.module#InteractionsModule",
+        data: ["InteractionsModule"],
+        loadChildren: () => import("./interactions/interactions.module").then(m => m.InteractionsModule),
         path: "interactions"
     },
     {
-        loadChildren: "./notifications/notifications.module#NotificationsModule",
+        data: ["NotificationsModule"],
+        loadChildren: () => import("./notifications/notifications.module").then(m => m.NotificationsModule),
         path: "notifications"
     },
     {
-        loadChildren: "./charts/charts.module#ChartsModule",
+        data: ["ChartsModule"],
+        loadChildren: () => import("./charts/charts.module").then(m => m.ChartsModule),
         path: "charts"
     },
     {
-        loadChildren: "./lists/lists.module#ListsModule",
+        data: ["ListsModule"],
+        loadChildren: () => import("./lists/lists.module").then(m => m.ListsModule),
         path: "lists"
     },
     {
-        loadChildren: "./theming/theming.module#ThemingModule",
+        data: ["ThemingModule"],
+        loadChildren: () => import("./theming/theming.module").then(m => m.ThemingModule),
         path: "theming"
     },
     {
-        loadChildren: "./scheduling/scheduling.module#SchedulingModule",
+        data: ["SchedulingModule"],
+        loadChildren: () => import("./scheduling/scheduling.module").then(m => m.SchedulingModule),
         path: "scheduling"
     },
     {
-        loadChildren: "./excel-library/excel-library.module#ExcelLibraryModule",
+        data: ["ExcelLibraryModule"],
+        loadChildren: () => import("./excel-library/excel-library.module").then(m => m.ExcelLibraryModule),
         path: "excel-library"
     },
     {
-        loadChildren: "./gauges/gauges.module#GaugesModule",
+        data: ["GaugesModule"],
+        loadChildren: () => import("./gauges/gauges.module").then(m => m.GaugesModule),
         path: "gauges"
     },
     {
-        loadChildren: "./menus/menus.module#MenusModule",
+        data: ["MenusModule"],
+        loadChildren: () => import("./menus/menus.module").then(m => m.MenusModule),
         path: "menus"
     },
     {
-        loadChildren: "./layouts/layouts.module#LayoutsModule",
+        data: ["LayoutsModule"],
+        loadChildren: () => import("./layouts/layouts.module").then(m => m.LayoutsModule),
         path: "layouts"
     },
     {
-        loadChildren: "./services/services.module#ServicesModule",
+        data: ["ServicesModule"],
+        loadChildren: () => import("./services/services.module").then(m => m.ServicesModule),
         path: "services"
     },
     {
-        loadChildren: "./spreadsheet/spreadsheet.module#SpreadsheetModule",
+        data: ["SpreadsheetModule"],
+        loadChildren: () => import("./spreadsheet/spreadsheet.module").then(m => m.SpreadsheetModule),
         path: "spreadsheet"
     },
     {
-        loadChildren: "./tree-grid/tree-grid.module#TreeGridModule",
+        data: ["TreeGridModule"],
+        loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridModule),
         path: "tree-grid"
     },
     {
-        loadChildren: "./grid/grids.module#GridsModule",
+        data: ["GridsModule"],
+        loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
         path: "grid"
     },
     {
-        loadChildren: "./hierarchical-grid/hierarchical-grid.module#HierarchicalGridModule",
+        data: ["HierarchicalGridModule"],
+        loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridModule),
         path: "hierarchical-grid"
     },
     {
-        loadChildren: "./grid-crm/grid-crm.module#GridCRMModule",
+        data: ["GridCRMModule"],
+        loadChildren: () => import("./grid-crm/grid-crm.module").then(m => m.GridCRMModule),
         path: "grid-crm"
     },
     {
-        loadChildren: "./grid-finjs/grid-finjs.module#GridFinjsModule",
+        data: ["GridFinjsModule"],
+        loadChildren: () => import("./grid-finjs/grid-finjs.module").then(m => m.GridFinjsModule),
         path: "finjs-sample"
     },
     {
-        loadChildren: "./treegrid-finjs/treegrid-finjs.module#TreeGridFinjsModule",
+        data: ["TreeGridFinjsModule"],
+        loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
         path: "treegrid-finjs-sample"
     }
 ];

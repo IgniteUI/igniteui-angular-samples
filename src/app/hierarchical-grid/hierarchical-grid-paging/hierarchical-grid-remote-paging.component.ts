@@ -15,14 +15,14 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     public firstPage = true;
     public totalPages: number = 1;
     public totalCount = 0;
-    @ViewChild("customPager", { read: TemplateRef })
+    @ViewChild("customPager", { read: TemplateRef, static: true })
     public remotePager: TemplateRef<any>;
     public title = "gridPaging";
 
-    @ViewChild("layout1")
+    @ViewChild("layout1", { static: false })
     public layout1: IgxRowIslandComponent;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public get perPage(): number {

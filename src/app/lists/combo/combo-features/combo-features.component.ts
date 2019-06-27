@@ -11,7 +11,7 @@ export class ComboFeatures {
 
     public GROUP_KEY = "region";
     public lData: any[];
-    @ViewChild("combo", { read: IgxComboComponent }) public combo: IgxComboComponent;
+    @ViewChild("combo", { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;
 
     public filterable = true;
     public customValues = true;

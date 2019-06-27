@@ -16,7 +16,7 @@ import { DATA } from "../../data/nwindData";
 })
 
 export class FilteringTemplateSampleComponent implements OnInit {
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
     public data: any[];

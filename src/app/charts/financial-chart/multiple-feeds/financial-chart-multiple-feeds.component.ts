@@ -19,18 +19,18 @@ import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-compo
 
 export class FinancialChartMultipleFeedsComponent implements AfterViewInit, OnDestroy {
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxFinancialChartComponent;
-    @ViewChild("legend")
+    @ViewChild("legend", { static: true })
     public legend: IgxLegendComponent;
-    @ViewChild("legend")
+    @ViewChild("legend", { static: true })
     public feedToggleButton: IgxLegendComponent;
 
-    @ViewChild("fpsSpan")
+    @ViewChild("fpsSpan", { static: true })
     public fpsSpan: ElementRef;
-    @ViewChild("feedStatus")
+    @ViewChild("feedStatus", { static: true })
     public feedStatus: ElementRef;
-    @ViewChild("legendBadgeTemplate")
+    @ViewChild("legendBadgeTemplate", { static: false })
     public legendBadgeTemplate: ElementRef;
 
     public dataFeeds: any[];

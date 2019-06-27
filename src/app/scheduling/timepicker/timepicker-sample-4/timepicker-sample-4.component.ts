@@ -11,7 +11,7 @@ export class TimePickerSample4Component implements OnInit {
     public min: string = "09:00";
     public max: string = "18:00";
 
-    @ViewChild("toast")
+    @ViewChild("toast", { static: true })
     private toast: ElementRef;
 
     constructor() { }
