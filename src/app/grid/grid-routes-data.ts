@@ -22,6 +22,7 @@ export const gridsRoutesData = {
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
+    "grid-resize-line-styling-sample": { displayName: "Grid Resize Line Styling", parentName: "Grid" },
     "grid-sample-2": { displayName: "Grid Financial Sample", parentName: "Grid" },
     "grid-sample-pinning": { displayName: "Grid Pinning", parentName: "Grid" },
     "grid-sample-4": { displayName: "Grid Remote Virtualization", parentName: "Grid" },
@@ -47,7 +48,9 @@ export const gridsRoutesData = {
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
     "grid-mrl-custom-navigation":
-     { displayName: "Grid Multi Row Layout Custom Keyboard Navigation", parentName: "Grid" },
-    "grid-nested-data-binding": {displayName: "Grid Nested Data Binding", parentName: "Grid"},
-    "grid-composite-data-binding": {displayName: "Grid Composite Data Binding", parentName: "Grid"}
+        { displayName: "Grid Multi Row Layout Custom Keyboard Navigation", parentName: "Grid" },
+    "custom-grid-paging-style": { displayName: "Custom Grid Paging Style", parentName: "Grid" },
+    "grid-nested-data-binding": { displayName: "Grid Nested Data Binding", parentName: "Grid" },
+    "grid-composite-data-binding": { displayName: "Grid Composite Data Binding", parentName: "Grid" },
+    "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" }
 };

@@ -26,8 +26,10 @@ import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filteri
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
+import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
+import { HGridResizeLineStylingComponent } from "./hierarchical-grid-resize-line-styling/hierarchical-grid-resize-line-styling.component";
 import { hierarchicalGridRoutesData } from "./hierarchical-grid-routes-data";
 import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
 import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
@@ -119,6 +121,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-resizing"],
         path: "hierarchical-grid-resizing"
+    },
+    {
+        component: HGridResizeLineStylingComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-resize-line-styling"],
+        path: "hierarchical-grid-resize-line-styling"
     },
     {
         component: HGridColumnHidingSampleComponent,
@@ -216,6 +224,12 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridCustomKBNavigationComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-custom-kb-navigation"],
         path: "hierarchical-grid-custom-kb-navigation"
+    },
+    {
+        component: HGridPagingStyleSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-paging-style"],
+        path: "hierarchical-grid-paging-style"
     }
 ];
 

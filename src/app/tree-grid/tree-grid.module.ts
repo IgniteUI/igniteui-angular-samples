@@ -78,6 +78,7 @@ import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
+import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -87,6 +88,9 @@ import {
 import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
+import {
+    TreeGridResizeLineStylingSampleComponent
+} from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
 import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
@@ -123,6 +127,7 @@ import {
         TreeGridRowEditSampleComponent,
         TreeGridBatchEditingSampleComponent,
         TreeGridEmployeesSampleComponent,
+        TreeGridPagingStyleSampleComponent,
         TreeGridSearchSampleComponent,
         TreeGridColumnHidingSampleComponent,
         TreeGridColumnHidingToolbarSampleComponent,
@@ -158,7 +163,8 @@ import {
         TreeGridRowDragBase,
         TreeGridKBNavigationComponent,
         TreeGridRowReorderComponent,
-        TreeGridRemotePagingSampleComponent
+        TreeGridRemotePagingSampleComponent,
+        TreeGridResizeLineStylingSampleComponent
     ],
     imports: [
         CommonModule,

@@ -16,6 +16,8 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
+import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
+import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -63,7 +65,9 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
 
+import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -90,6 +94,7 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
         RemoteFilteringSampleComponent,
         RemotePagingGridSample,
         ResizingSampleComponent,
+        GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
         FinancialSampleComponent,
         GridSample3Component,
@@ -118,7 +123,10 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
         PlanetComponent,
         GridDragBaseSampleComponent,
         GridDragToGridSampleComponent,
+        GridContextmenuSampleComponent,
         GridMRLCustomNavigationComponent,
+        ContextmenuComponent,
+        CustomGridPagingStyleSample,
         GridRowReorderComponent
     ],
     imports: [
