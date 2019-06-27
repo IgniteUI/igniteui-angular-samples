@@ -40,6 +40,7 @@ export const chartsRoutesData = {
     "financial-chart-trendlines": { displayName: "Financial Chart Trendlines", parentName: "Financial Chart" },
     // TODO uncomment when implemented
     // "data-chart-axis-locations": { displayName: "Data Chart Axis Locations", parentName: "Data Chart" },
+    "data-chart-axis-annotations": { displayName: "Data Chart Axis Annotations", parentName: "Data Chart" },
     "data-chart-axis-settings": { displayName: "Data Chart Axis Settings", parentName: "Data Chart" },
     "data-chart-axis-sharing": { displayName: "Data Chart Axis Sharing", parentName: "Data Chart" },
     "data-chart-axis-types": { displayName: "Data Chart Axis Types", parentName: "Data Chart" },
@@ -65,9 +66,9 @@ export const chartsRoutesData = {
     "data-chart-type-scatter-series": { displayName: "Data Chart Scatter Series", parentName: "Data Chart" },
     "data-chart-type-shape-series": { displayName: "Data Chart Scatter Shape Series", parentName: "Data Chart" },
     "data-chart-type-stacked-series": { displayName: "Data Chart Stacked Series", parentName: "Data Chart" },
-    // "data-chart-synchronization": { displayName: "Data Chart Synchronization", parentName: "Data Chart" },
+    "data-chart-synchronization": { displayName: "Data Chart Synchronization", parentName: "Data Chart" },
     "data-chart-titles": { displayName: "Data Chart Titles", parentName: "Data Chart" },
-    // "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" }
+    "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" },
     "sparkline-display-types": { displayName: "Sparkline Display Types", parentName: "Sparkline"},
     "sparkline-markers": { displayName: "Sparkline Markers", parentName: "Sparkline"},
     "sparkline-normal-range": { displayName: "Sparkline Normal Range", parentName: "Sparkline"},
