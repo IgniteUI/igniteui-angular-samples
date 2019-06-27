@@ -103,7 +103,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Row Edit Sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-row-edit/data.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridRowEditSampleComponent],
                 ngDeclarations: [TreeGridRowEditSampleComponent],

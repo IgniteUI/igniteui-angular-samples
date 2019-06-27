@@ -478,7 +478,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Batch Editing
         configs.push(new Config({
             component: GridBatchEditingSampleComponent,
-            additionalFiles: ["/src/app/data/nwindData.ts", "src/app/data/utils.ts",
+            additionalFiles: ["/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
                 "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
