@@ -44,6 +44,7 @@ export const gridsRoutesData = {
     "grid-state": { displayName: "Grid Save and Load State", parentName: "Grid" },
     "grid-about": { displayName: "Grid About", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
+    "grid-multi-cell-selection-style": { displayName: "Grid Multi Cell Selection Style", parentName: "Grid" },
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
     "grid-mrl-custom-navigation":
