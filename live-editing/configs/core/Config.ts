@@ -1,4 +1,4 @@
-import { Type } from "@angular/core/src/type";
+import { Type } from "@angular/core";
 import { DependenciesType } from "../../services/DependenciesType";
 import { AppModuleConfig } from "./AppModuleConfig";
 

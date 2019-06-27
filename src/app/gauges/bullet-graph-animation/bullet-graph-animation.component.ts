@@ -11,7 +11,7 @@ import { IgxLinearGraphRangeComponent } from "igniteui-angular-gauges/ES5/igx-li
 
 export class BulletGraphAnimationComponent implements AfterViewInit {
 
-    @ViewChild("bulletGraph")
+    @ViewChild("bulletGraph", { static: true })
     public bulletGraph: IgxBulletGraphComponent;
 
     public ngAfterViewInit(): void {

@@ -25,13 +25,13 @@ import { SamplePolarData } from "../SamplePolarData";
 })
 export class DataChartTypePolarSeriesComponent implements OnInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
-    @ViewChild("angleAxis")
+    @ViewChild("angleAxis", { static: true })
     public angleAxis: IgxNumericAngleAxisComponent;
-    @ViewChild("radiusAxis")
+    @ViewChild("radiusAxis", { static: true })
     public radiusAxis: IgxNumericRadiusAxisComponent;
-    @ViewChild("legend")
+    @ViewChild("legend", { static: true })
     public legend: IgxLegendComponent;
 
     public data: any[] = SamplePolarData.create();

@@ -1,6 +1,4 @@
-import { Provider } from "@angular/core/src/di/provider";
-import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
-import { Type } from "@angular/core/src/type";
+import { ModuleWithProviders, Provider, Type } from "@angular/core";
 
 export class AppModuleConfig {
     public imports: Array<Type<any> | any>;

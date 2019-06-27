@@ -11,8 +11,8 @@ import {
     templateUrl: "./dropdown-sample-4.component.html"
 })
 export class DropDownSample4Component {
-    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
-    @ViewChild("inputGroup", { read: IgxInputGroupComponent}) public inputGroup: IgxInputGroupComponent;
+    @ViewChild(IgxDropDownComponent, { static: true }) public igxDropDown: IgxDropDownComponent;
+    @ViewChild("inputGroup", { read: IgxInputGroupComponent, static: true }) public inputGroup: IgxInputGroupComponent;
 
     public items: Array<{ field: string }> = [
         { field: "Option 1" },

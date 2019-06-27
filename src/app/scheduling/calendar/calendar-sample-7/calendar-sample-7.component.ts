@@ -7,8 +7,8 @@ import { DateRangeDescriptor, DateRangeType, IgxCalendarComponent, IgxSnackbarCo
   templateUrl: "./calendar-sample-7.component.html"
 })
 export class CalendarSample7Component {
-    @ViewChild("calendar") public calendar: IgxCalendarComponent;
-    @ViewChild(IgxSnackbarComponent) public snackbar: IgxSnackbarComponent;
+    @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
+    @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
     public range = [];
 
     public selectPTOdays(dates: Date[]) {

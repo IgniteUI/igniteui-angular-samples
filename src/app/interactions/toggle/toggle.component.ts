@@ -14,8 +14,8 @@ import {
   templateUrl: "./toggle.component.html"
 })
 export class ToggleComponent {
-    @ViewChild(IgxToggleDirective) public igxToggle: IgxToggleDirective;
-    @ViewChild("button") public igxButton: ElementRef;
+    @ViewChild(IgxToggleDirective, { static: true }) public igxToggle: IgxToggleDirective;
+    @ViewChild("button", { static: true }) public igxButton: ElementRef;
     public _positionSettings = {
         horizontalStartPoint: HorizontalAlignment.Left,
         verticalStartPoint: VerticalAlignment.Bottom

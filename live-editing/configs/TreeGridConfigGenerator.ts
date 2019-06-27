@@ -52,6 +52,7 @@ import { TreeGridPagingStyleSampleComponent } from "../../src/app/tree-grid/tree
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridRemoteFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import { TreeGridRemotePagingSampleComponent } from "../../src/app/tree-grid/tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
+import { TreeGridResizeLineStylingSampleComponent } from "../../src/app/tree-grid/tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
 import { TreeGridRowDragBase } from "../../src/app/tree-grid/tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "../../src/app/tree-grid/tree-grid-row-drag/tree-grid-row-drag.component";
 import { TreeGridRowEditSampleComponent } from "../../src/app/tree-grid/tree-grid-row-edit/tree-grid-row-editing-sample.component";
@@ -245,6 +246,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridColumnResizingSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Column Resizing Line Styling sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridResizeLineStylingSampleComponent],
+                ngDeclarations: [TreeGridResizeLineStylingSampleComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridResizeLineStylingSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

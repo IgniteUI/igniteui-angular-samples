@@ -21,13 +21,13 @@ import { SampleRadialData } from "../SampleRadialData";
 })
 export class DataChartTypeRadialSeriesComponent implements OnInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
-    @ViewChild("legend")
+    @ViewChild("legend", { static: true })
     public legend: IgxLegendComponent;
-    @ViewChild("angleAxis")
+    @ViewChild("angleAxis", { static: true })
     public angleAxis: IgxCategoryAngleAxisComponent;
-    @ViewChild("radiusAxis")
+    @ViewChild("radiusAxis", { static: true })
     public radiusAxis: IgxNumericRadiusAxisComponent;
 
     public data: any[];

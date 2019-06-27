@@ -9,7 +9,7 @@ import {
     templateUrl: "./expansion-sample-1.component.html"
 })
 export class ExpansionPanelSample1Component {
-    @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent })
+    @ViewChild(IgxExpansionPanelComponent, { read: IgxExpansionPanelComponent, static: true })
     public panel: IgxExpansionPanelComponent;
     public readMore = "https://en.wikipedia.org/wiki/Hummingbird";
 }

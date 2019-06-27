@@ -7,7 +7,7 @@ import { IgxCalendarComponent } from "igniteui-angular";
   templateUrl: "./calendar-sample-2.component.html"
 })
 export class CalendarSample2Component {
-    @ViewChild("calendar") public calendar: IgxCalendarComponent;
+    @ViewChild("calendar", { static: true }) public calendar: IgxCalendarComponent;
 
     public formatOptions: any;
     public formatViews: any;
