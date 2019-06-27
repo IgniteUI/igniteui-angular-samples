@@ -14,7 +14,7 @@ export class HGridCustomFilteringSampleComponent implements OnInit {
     public caseSensitiveFilteringOperand = CaseSensitiveFilteringOperand.instance();
     public booleanFilteringOperand = BooleanFilteringOperand.instance();
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {

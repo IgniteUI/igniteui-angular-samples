@@ -3,6 +3,7 @@
 // tslint:disable:max-line-length
 // tslint:disable:member-ordering
 // tslint:disable:prefer-const
+import { Type } from "@angular/core";
 import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
 import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
 import { IgxRingSeriesComponent } from "igniteui-angular-charts/ES5/igx-ring-series-component";
@@ -14,7 +15,6 @@ import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { Type } from "@angular/core/src/type";
 
 export class DoughnutChartConfigGenerator implements IConfigGenerator {
 

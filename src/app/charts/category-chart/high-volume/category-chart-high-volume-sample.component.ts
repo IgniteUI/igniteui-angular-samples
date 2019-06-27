@@ -26,10 +26,10 @@ export class CategoryChartHighVolumeComponent implements AfterViewInit, OnDestro
     @Input()
     public scalingRatio: number = 1;
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxCategoryChartComponent;
 
-    @ViewChild("loadTimeSpan")
+    @ViewChild("loadTimeSpan", { static: true })
     public loadTimeSpan: ElementRef;
 
     private currValue: number = 15;

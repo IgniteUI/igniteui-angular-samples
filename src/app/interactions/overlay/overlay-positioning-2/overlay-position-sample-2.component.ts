@@ -18,13 +18,13 @@ export class OverlayPositionSample2Component implements OnDestroy {
 
     public modalValue = true;
 
-    @ViewChild("positionDemo")
+    @ViewChild("positionDemo", { static: true })
     public positionDemo: ElementRef;
 
-    @ViewChild("overlayDemo")
+    @ViewChild("overlayDemo", { static: true })
     public overlayDemo: ElementRef;
 
-    @ViewChild("mainContainer")
+    @ViewChild("mainContainer", { static: true })
     public mainContainer: ElementRef;
 
     private destroy$ = new Subject<boolean>();

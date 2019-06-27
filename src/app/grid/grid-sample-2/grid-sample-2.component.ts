@@ -28,7 +28,7 @@ export class LocalService {
 })
 
 export class FinancialSampleComponent {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
     public data: Observable<any[]>;
     constructor(private localService: LocalService) {
         this.localService.getData(100000);

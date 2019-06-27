@@ -11,7 +11,7 @@ export class PieChartSelectionComponent implements AfterViewInit {
     public selectionType: string;
     public data: any;
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxPieChartComponent;
 
     constructor() {

@@ -7,7 +7,7 @@ import { IgxMonthPickerComponent } from "igniteui-angular";
     templateUrl: "./monthpicker-sample-1.component.html"
 })
 export class MonthpickerSample1Component {
-    @ViewChild(IgxMonthPickerComponent)
+    @ViewChild(IgxMonthPickerComponent, { static: true })
     public monthPicker;
 
     public date = new Date(2020, 6, 18);

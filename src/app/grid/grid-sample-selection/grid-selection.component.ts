@@ -67,7 +67,7 @@ export class LocalService {
 })
 
 export class GridSelectionSampleComponent {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
+    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
     public data: Observable<any[]>;
     public selection = true;
     constructor(private localService: LocalService) {

@@ -32,7 +32,6 @@ const SHARED_DEPENDENCIES = [
 const DEFAULT_DEPENDENCIES = [
     "@angular/animations",
     "@angular/forms",
-    "@angular/http",
     "@angular/router",
     "classlist.js",
     "hammerjs",

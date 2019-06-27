@@ -38,18 +38,18 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     public transactionsDataChild: Transaction[] = [];
     public transactionsDataAll: Transaction[] = [];
 
-    @ViewChild("dialogChanges", { read: IgxDialogComponent })
+    @ViewChild("dialogChanges", { read: IgxDialogComponent, static: true })
     public dialogChanges: IgxDialogComponent;
 
-    @ViewChild("dialogGrid", { read: IgxGridComponent }) public dialogGrid: IgxGridComponent;
+    @ViewChild("dialogGrid", { read: IgxGridComponent, static: true }) public dialogGrid: IgxGridComponent;
 
-    @ViewChild("layout1")
+    @ViewChild("layout1", { static: true })
     private layout1: IgxRowIslandComponent;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
-    @ViewChild("dialogAddSinger", { read: IgxDialogComponent })
+    @ViewChild("dialogAddSinger", { read: IgxDialogComponent, static: true })
     private dialogSinger: IgxDialogComponent;
 
     constructor() {}

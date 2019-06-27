@@ -9,7 +9,7 @@ import { athletesData } from "../services/data";
 })
 export class GridToolbarSample4Component implements OnInit {
 
-    @ViewChild("grid1") public grid: IgxGridComponent;
+    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
     public data: any[];
 
     public ngOnInit() {
