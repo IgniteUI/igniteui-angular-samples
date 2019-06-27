@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxDialogComponent, IgxGridComponent, IgxHierarchicalGridComponent,
     IgxRowIslandComponent, Transaction } from "igniteui-angular";
-import { SINGERS } from "./data";
-import { Singer } from "./singer";
+import { SINGERS } from "../data";
+import { Singer } from "../singer.model";
 
 @Component({
     selector: "hierarchical-grid-batch-editing",

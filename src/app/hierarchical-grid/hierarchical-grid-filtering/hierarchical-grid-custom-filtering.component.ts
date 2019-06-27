@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxBooleanFilteringOperand, IgxHierarchicalGridComponent,
-    IgxRowIslandComponent, IgxStringFilteringOperand } from "igniteui-angular";
-import { SINGERS } from "./data";
+import { IgxBooleanFilteringOperand, IgxHierarchicalGridComponent, IgxStringFilteringOperand } from "igniteui-angular";
+import { SINGERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-custom-filtering",
