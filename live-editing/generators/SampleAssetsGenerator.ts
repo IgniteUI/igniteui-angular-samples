@@ -11,8 +11,7 @@ import { StyleSyntax } from "./misc/StyleSyntax";
 
 import * as Routing from "../../src/app/app-routing.module";
 
-import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
-import { Type } from "@angular/core/src/type";
+import { ModuleWithProviders, Type } from "@angular/core";
 
 import { Route } from "@angular/router";
 import { CONFIG_GENERATORS } from "./ConfigGenerators";
@@ -76,8 +75,7 @@ export class SampleAssetsGenerator extends Generator {
             if (route.component) {
                 this._componentRoutes.set(route.component.name, route.path);
             } else if (route.loadChildren) {
-                let loadChildren = route.loadChildren.toString();
-                let moduleName = loadChildren.substring(loadChildren.lastIndexOf("#") + 1);
+                let moduleName = route.data.toString();
                 modulePaths.set(moduleName, route.path);
             }
         }

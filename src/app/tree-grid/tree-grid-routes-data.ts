@@ -1,8 +1,8 @@
 // tslint:disable:object-literal-sort-keys
 
 export const treeGridRoutesData = {
-    "tree-grid-row-drag": { displayName: "Tree Grid Row Drag", parentName: "TreeGrid"},
-    "tree-grid-row-drag-base": { displayName: "Tree Grid Row Drag - Base", parentName: "TreeGrid"},
+    "tree-grid-row-drag": { displayName: "Tree Grid Row Drag", parentName: "TreeGrid" },
+    "tree-grid-row-drag-base": { displayName: "Tree Grid Row Drag - Base", parentName: "TreeGrid" },
     "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
     "treegrid-primaryforeignkey": { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
@@ -15,6 +15,7 @@ export const treeGridRoutesData = {
     "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" },
     "treegrid-column-moving": { displayName: "TreeGrid Column Moving", parentName: "TreeGrid" },
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
+    "treegrid-resize-line-styling": { displayName: "TreeGrid Resize Line Styling", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
     "treegrid-filtering-template": { displayName: "TreeGrid Filtering Template", parentName: "TreeGrid" },
@@ -49,5 +50,5 @@ export const treeGridRoutesData = {
     "treegrid-keyboard-navigation": { displayName: "TreeGrid Keyboard Navigation", parentName: "TreeGrid" },
     "tree-grid-row-reordering": { displayName: "TreeGrid Row Reordering", parentName: "TreeGrid" },
     "treegrid-remote-paging": { displayName: "TreeGrid Remote Paging", parentName: "TreeGrid" },
-    "treegrid-paging-style": { displayName: "TreeGrid Paging Style", parentName: "TreeGrid"}
+    "treegrid-paging-style": { displayName: "TreeGrid Paging Style", parentName: "TreeGrid" }
 };

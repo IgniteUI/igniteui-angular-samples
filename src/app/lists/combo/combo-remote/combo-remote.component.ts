@@ -12,8 +12,8 @@ export class ComboRemoteComponent implements OnInit {
 
     public prevRequest: any;
     public rData: any;
-    @ViewChild("loadingToast", { read: IgxToastComponent }) public loadingToast: IgxToastComponent;
-    @ViewChild("remoteCombo", { read: IgxComboComponent }) public remoteCombo: IgxComboComponent;
+    @ViewChild("loadingToast", { read: IgxToastComponent, static: true }) public loadingToast: IgxToastComponent;
+    @ViewChild("remoteCombo", { read: IgxComboComponent, static: true }) public remoteCombo: IgxComboComponent;
 
     constructor(private remoteService: RemoteService, public cdr: ChangeDetectorRef) { }
 

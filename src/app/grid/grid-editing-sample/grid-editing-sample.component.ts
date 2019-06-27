@@ -11,9 +11,9 @@ import { Product } from "./product";
 })
 export class GridEditingSampleComponent implements OnInit {
 
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
-    @ViewChild("dialogAdd", { read: IgxDialogComponent })
+    @ViewChild("dialogAdd", { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
     public data;
     public locations;

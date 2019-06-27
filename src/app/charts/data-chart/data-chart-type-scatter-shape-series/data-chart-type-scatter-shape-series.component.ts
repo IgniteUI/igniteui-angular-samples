@@ -14,11 +14,11 @@ import { SampleShapeData } from "../SampleShapeData";
 })
 export class DataChartTypeScatterShapeSeriesComponent implements OnInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", { static: true })
     public xAxis: IgxNumericXAxisComponent;
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", { static: true })
     public yAxis: IgxNumericYAxisComponent;
 
     public data: any = SampleShapeData.create();

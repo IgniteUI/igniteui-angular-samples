@@ -11,7 +11,7 @@ import { FOODS_DATA } from "../data/foods";
 
 export class TreeGridPagingSampleComponent {
 
-    @ViewChild("treegrid1")
+    @ViewChild("treegrid1", { static: true })
     public grid1: IgxTreeGridComponent;
 
     public data: any[];

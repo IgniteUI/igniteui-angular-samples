@@ -9,7 +9,7 @@ import { EMPLOYEE_DATA } from "../tree-grid-childdatakey-sample/data";
 })
 export class TreeGridKBNavigationComponent implements OnInit {
     public localData: any[];
-    @ViewChild("grid1", { read: IgxTreeGridComponent })
+    @ViewChild("grid1", { read: IgxTreeGridComponent, static: true })
     public grid1: IgxTreeGridComponent;
 
     constructor() { }

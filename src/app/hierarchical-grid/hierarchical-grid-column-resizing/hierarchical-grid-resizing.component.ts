@@ -14,7 +14,7 @@ export class HGridColumnResizingSampleComponent implements OnInit {
     public pWidth: string;
     public nWidth: string;
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {

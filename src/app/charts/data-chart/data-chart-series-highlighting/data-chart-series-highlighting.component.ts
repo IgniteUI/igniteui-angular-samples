@@ -26,13 +26,13 @@ export class DataChartSeriesHighlightingComponent {
     public categoryHighlightLayer: IgxCategoryHighlightLayerComponent;
     public itemHighlightLayer: IgxCategoryItemHighlightLayerComponent;
 
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", { static: true })
     public xAxis: IgxCategoryXAxisComponent;
 
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", { static: true })
     public yAxis: IgxNumericYAxisComponent;
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
 
     constructor() {

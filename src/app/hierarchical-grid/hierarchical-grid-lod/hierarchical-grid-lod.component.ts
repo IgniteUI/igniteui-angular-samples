@@ -13,7 +13,7 @@ import { IDataState, RemoteLoDService } from "../services/remote-lod.service";
     templateUrl: "./hierarchical-grid-lod.component.html"
 })
 export class HierarchicalGridLoDSampleComponent implements AfterViewInit {
-    @ViewChild("hGrid")
+    @ViewChild("hGrid", { static: true })
     public hGrid: IgxHierarchicalGridComponent;
 
     constructor(private remoteService: RemoteLoDService) { }

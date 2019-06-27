@@ -14,7 +14,7 @@ import { LOCAL_DATA } from "./data";
     templateUrl: "./grid-groupby-sample.component.html"
 })
 export class GridGroupBySampleComponent {
-    @ViewChild("grid1", { read: IgxGridComponent })
+    @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
     public expr: ISortingExpression[];

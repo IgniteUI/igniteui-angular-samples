@@ -66,6 +66,7 @@ import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -91,6 +92,7 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
         RemoteFilteringSampleComponent,
         RemotePagingGridSample,
         ResizingSampleComponent,
+        GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
         FinancialSampleComponent,
         GridSample3Component,

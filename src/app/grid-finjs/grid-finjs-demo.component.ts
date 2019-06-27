@@ -12,10 +12,10 @@ import { LocalDataService } from "./localData.service";
     templateUrl: "./grid-finjs-demo.component.html"
 })
 export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
-    @ViewChild("grid1") public grid1: IgxGridComponent;
-    @ViewChild("buttonGroup1") public buttonGroup1: IgxButtonGroupComponent;
-    @ViewChild("slider1") public volumeSlider: IgxSliderComponent;
-    @ViewChild("slider2") public intervalSlider: IgxSliderComponent;
+    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+    @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
+    @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
+    @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
 
     public theme = false;
     public volume = 1000;

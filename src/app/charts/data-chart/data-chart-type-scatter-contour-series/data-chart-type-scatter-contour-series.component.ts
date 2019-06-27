@@ -21,13 +21,13 @@ export class DataChartTypeScatterContourSeriesComponent implements OnInit {
     public seriesThickness: number = 5;
     public seriesContours: number = 5;
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
 
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", { static: true })
     public xAxis: IgxNumericXAxisComponent;
 
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", { static: true })
     public yAxis: IgxNumericYAxisComponent;
 
     public brushScale: IgxValueBrushScaleComponent;

@@ -9,7 +9,7 @@ import { MARKET_DATA } from "./data";
 })
 export class GridSearchSampleComponent implements OnInit {
 
-    @ViewChild("grid1") public grid: IgxGridComponent;
+    @ViewChild("grid1", { static: true }) public grid: IgxGridComponent;
     public data: any[];
     public searchText: string = "";
     public caseSensitive: boolean = false;
