@@ -12,7 +12,6 @@ export const geoMapRoutesData = {
     "map-binding-shapefile-polylines": { displayName: "Binding Shapefile Polylines", parentName: "Geo Map" },
     "map-binding-shapefile-points": { displayName: "Binding Shapefile Points", parentName: "Geo Map" },
     "map-custom-tooltip": { displayName: "Custom Tooltip", parentName: "Geo Map" },
-
     "map-type-scatter-area-series": { displayName: "Scatter Area Series", parentName: "Geo Map" },
     "map-type-scatter-contour-series": { displayName: "Scatter Contour Series", parentName: "Geo Map" },
     "map-type-scatter-density-series": { displayName: "Scatter Density Series", parentName: "Geo Map" },
