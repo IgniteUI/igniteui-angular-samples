@@ -1,0 +1,17 @@
+<div class="sample">
+    <div class="options">
+        <span class="optionItem">Axis Annotations: </span>
+        <label class="optionItem"><input type="checkbox" (change)="onValueOverlayChange($event)" /> Value Overlay </label>
+        <label class="optionItem"><input type="checkbox" (change)="onFinalValueChange($event)"/> Final Value </label>
+        <label class="optionItem"><input type="checkbox" (change)="onCrosshairChange($event)" /> Crosshairs </label>
+    </div>
+    <div class="chart">
+        <igx-data-chart #chart [dataSource]="data" width="100%" height="calc(100% - 30px)">
+            <igx-category-x-axis #xAxis interval=1 label="month"></igx-category-x-axis>
+            <igx-numeric-y-axis #yAxis minValue=50 maxValue=120></igx-numeric-y-axis>
+  
+            <igx-column-series [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="temperature"></igx-column-series>
+                              
+        </igx-data-chart>
+    </div>
+  </div>
