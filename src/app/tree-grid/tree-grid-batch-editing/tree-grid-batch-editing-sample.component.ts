@@ -8,7 +8,7 @@ import {
     Transaction
 } from "igniteui-angular";
 import { generateRandomInteger } from "../../data/utils";
-import { EMPLOYEE_FLAT_DATA, IEmployee } from "../data/employees-flat";
+import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
 
 @Component({
     providers: [{ provide: IgxGridTransaction, useClass: IgxHierarchicalTransactionService }],
@@ -28,7 +28,7 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
     private nextRow = 1;
 
     public ngOnInit(): void {
-        this.data = EMPLOYEE_FLAT_DATA();
+        this.data = generateEmployeeFlatData();
         this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);
         this.treeGrid.transactions.onStateUpdate.subscribe(() => {
             this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);

@@ -1,4 +1,4 @@
-export const EMPLOYEE_FLAT_DATA: () => IEmployee[] = () => ([
+export const generateEmployeeFlatData: () => IEmployee[] = () => ([
     {
         Age: 55,
         HireDate: new Date(2008, 3, 20),

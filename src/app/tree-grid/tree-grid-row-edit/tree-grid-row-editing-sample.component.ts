@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxTreeGridComponent } from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA, IEmployee } from "../data/employees-flat";
+import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
 
 @Component({
     selector: "app-tree-grid-row-editing-sample",
@@ -14,7 +14,7 @@ export class TreeGridRowEditSampleComponent implements OnInit {
 
     @ViewChild("treeGrid", { static: true }) public treeGrid1: IgxTreeGridComponent;
     public ngOnInit(): void {
-        this.data = EMPLOYEE_FLAT_DATA();
+        this.data = generateEmployeeFlatData();
 
         this.columns = [
             // tslint:disable:max-line-length
