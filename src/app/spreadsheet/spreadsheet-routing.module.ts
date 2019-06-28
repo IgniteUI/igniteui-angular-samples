@@ -6,6 +6,7 @@ import { spreadsheetRoutesData } from "./spreadsheet-routes-data";
 
 // tslint:enable:max-line-length
 import { SpreadsheetActivationComponent } from "./spreadsheet-activation/spreadsheet-activation.component";
+import { SpreadsheetAdapterComponent } from "./spreadsheet-adapter/spreadsheet-adapter.component";
 import { SpreadsheetClipboardComponent } from "./spreadsheet-clipboard/spreadsheet-clipboard.component";
 import { SpreadsheetCommandsComponent } from "./spreadsheet-commands/spreadsheet-commands.component";
 import { SpreadsheetCondFormatComponent } from "./spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
@@ -22,6 +23,11 @@ export const spreadsheetRoutes: Routes = [
         component: SpreadsheetOverviewComponent,
         data: spreadsheetRoutesData["spreadsheet-overview"],
         path: "spreadsheet-overview"
+    },
+    {
+        component: SpreadsheetAdapterComponent,
+        data: spreadsheetRoutesData["spreadsheet-adapter"],
+        path: "spreadsheet-adapter"
     },
     {
         component: SpreadsheetClipboardComponent,

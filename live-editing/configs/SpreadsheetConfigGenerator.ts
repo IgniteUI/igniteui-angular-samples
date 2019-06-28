@@ -8,10 +8,16 @@ import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
 import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
+import {
+    IgxSpreadsheetChartAdapterModule
+} from "igniteui-angular-spreadsheet-chart-adapter/ES5/igx-spreadsheet-chart-adapter-module";
 import { IgxSpreadsheetModule } from "igniteui-angular-spreadsheet/ES5/igx-spreadsheet-module";
 import {
     SpreadsheetActivationComponent
 } from "../../src/app/spreadsheet/spreadsheet-activation/spreadsheet-activation.component";
+import {
+    SpreadsheetAdapterComponent
+} from "../../src/app/spreadsheet/spreadsheet-adapter/spreadsheet-adapter.component";
 import {
     SpreadsheetClipboardComponent
 } from "../../src/app/spreadsheet/spreadsheet-clipboard/spreadsheet-clipboard.component";
@@ -57,6 +63,17 @@ export class ExcelLibraryConfigGenerator implements IConfigGenerator {
                 imports: [IgxExcelModule, ExcelUtility, SpreadsheetActivationComponent],
                 ngDeclarations: [SpreadsheetActivationComponent],
                 ngImports: [IgxExcelModule, IgxSpreadsheetModule]
+            }),
+            dependenciesType: DependenciesType.Excel
+        }));
+
+        configs.push(new Config({
+            component: SpreadsheetAdapterComponent,
+            additionalFiles: ["/src/app/utilities/excel-utility.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxExcelModule, ExcelUtility, SpreadsheetAdapterComponent],
+                ngDeclarations: [SpreadsheetAdapterComponent],
+                ngImports: [IgxExcelModule, IgxSpreadsheetModule, IgxSpreadsheetChartAdapterModule]
             }),
             dependenciesType: DependenciesType.Excel
         }));
