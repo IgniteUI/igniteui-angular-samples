@@ -7,6 +7,7 @@ import { dataDisplayRoutesData } from "../data-display/data-display-routes-data"
 import { dataEntriesRoutesData } from "../data-entries/data-entries-routes-data";
 import { excelLibraryRoutesData } from "../excel-library/excel-library-routes-data";
 import { gaugesRoutesData } from "../gauges/gauges-routes-data";
+import { geoMapRoutesData } from "../geo-map/geo-map-routes-data";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
 import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
@@ -133,6 +134,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "spreadsheet",
             routesData: spreadsheetRoutesData
+        },
+        {
+            path: "geo-map",
+            routesData: geoMapRoutesData
         }
     ];
 
