@@ -9,7 +9,7 @@ import { TreeGridLoadOnDemandService } from "./remoteService";
 })
 export class TreeGridLoadOnDemandSampleComponent implements OnInit {
     public data = [];
-    @ViewChild("treeGrid") public treeGrid: IgxTreeGridComponent;
+    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     private dataService = new TreeGridLoadOnDemandService();
 
     constructor() { }

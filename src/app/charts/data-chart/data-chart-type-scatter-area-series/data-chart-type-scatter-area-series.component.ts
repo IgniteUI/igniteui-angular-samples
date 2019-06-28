@@ -14,9 +14,9 @@ import { SampleScatterData } from "../SampleScatterData";
 })
 export class DataChartTypeScatterAreaSeriesComponent implements OnInit {
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
-    @ViewChild("series")
+    @ViewChild("series", { static: true })
     public series: IgxScatterAreaSeriesComponent;
 
     public data: any[];

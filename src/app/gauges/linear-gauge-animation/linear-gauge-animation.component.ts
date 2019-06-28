@@ -12,7 +12,7 @@ import { LinearGraphNeedleShape } from "igniteui-angular-gauges/ES5/LinearGraphN
 
 export class LinearGaugeAnimationComponent implements AfterViewInit {
 
-    @ViewChild("linearGauge")
+    @ViewChild("linearGauge", { static: true })
     public linearGauge: IgxLinearGaugeComponent;
 
     public ngAfterViewInit(): void {

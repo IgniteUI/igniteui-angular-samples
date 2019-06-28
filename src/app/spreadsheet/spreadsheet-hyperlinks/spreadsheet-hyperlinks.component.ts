@@ -10,7 +10,7 @@ import { ExcelUtility } from "../../utilities/excel-utility";
 })
 export class SpreadsheetHyperlinksComponent implements OnInit {
 
-    @ViewChild("spreadsheet")
+    @ViewChild("spreadsheet", { static: true })
     public spreadsheet: IgxSpreadsheetComponent;
 
     constructor() { }

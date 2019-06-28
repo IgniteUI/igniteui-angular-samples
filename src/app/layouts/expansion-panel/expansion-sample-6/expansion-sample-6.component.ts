@@ -15,7 +15,7 @@ import {
 })
 export class ExpansionPanelSample6Component {
 
-    @ViewChild(IgxExpansionPanelComponent)
+    @ViewChild(IgxExpansionPanelComponent, { static: true })
     public panel: IgxExpansionPanelComponent;
 
     public animationSettingsCustom = {

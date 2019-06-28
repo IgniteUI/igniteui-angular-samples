@@ -14,7 +14,7 @@ export class OverlaySampleMain2Component implements OnDestroy {
     private _overlayId: string;
     private _cardHidden = true;
 
-    @ViewChild("buttonElement")
+    @ViewChild("buttonElement", { static: true })
     private buttonElement: ElementRef;
 
     constructor(

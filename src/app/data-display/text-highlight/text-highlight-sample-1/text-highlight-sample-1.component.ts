@@ -16,7 +16,7 @@ export class TextHighlightSample1Component {
     `;
     // tslint:enable max-line-length
 
-    @ViewChild(IgxTextHighlightDirective, {read: IgxTextHighlightDirective})
+    @ViewChild(IgxTextHighlightDirective, { read: IgxTextHighlightDirective, static: true })
     public highlight: IgxTextHighlightDirective;
 
     public searchText: string = "";

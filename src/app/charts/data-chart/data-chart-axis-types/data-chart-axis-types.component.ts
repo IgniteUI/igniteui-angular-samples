@@ -30,7 +30,7 @@ export class DataChartAxisTypesComponent implements OnInit {
 
     public chartType: string = "Column (CategoryXAxis)";
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
 
     public numericXAxis: IgxNumericXAxisComponent;

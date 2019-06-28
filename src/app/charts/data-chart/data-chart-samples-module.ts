@@ -70,7 +70,7 @@ import {
 } from "igniteui-angular-charts/ES5/igx-crosshair-layer-module";
 import {
     IgxDataChartCategoryTrendLineModule
-} from "igniteui-angular-charts/ES5/igx-data-chart-category-trendline-module";
+} from "igniteui-angular-charts/ES5/igx-data-chart-category-trend-line-module";
 import { IgxFinalValueLayerModule } from "igniteui-angular-charts/ES5/igx-final-value-layer-module";
 
 // Tooltip Layers

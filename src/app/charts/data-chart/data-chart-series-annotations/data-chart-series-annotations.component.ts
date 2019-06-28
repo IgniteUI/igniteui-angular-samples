@@ -19,13 +19,13 @@ export class DataChartSeriesAnnotationsComponent {
 
     public data: any[];
 
-    @ViewChild("chart")
+    @ViewChild("chart", { static: true })
     public chart: IgxDataChartComponent;
 
-    @ViewChild("xAxis")
+    @ViewChild("xAxis", { static: true })
     public xAxis: IgxCategoryXAxisComponent;
 
-    @ViewChild("yAxis")
+    @ViewChild("yAxis", { static: true })
     public yAxis: IgxNumericYAxisComponent;
 
     public calloutLayer: IgxCalloutLayerComponent;

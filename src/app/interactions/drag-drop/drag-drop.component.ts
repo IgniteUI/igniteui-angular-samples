@@ -13,7 +13,7 @@ export class DragAndDropSampleComponent implements OnInit {
     public readonly boardEdgeLength: number = 3;
     public readonly successfullMessage: string = "You have successfully solved the puzzle.";
 
-    @ViewChild("alert")
+    @ViewChild("alert", { static: true })
     public dialog: IgxDialogComponent;
 
     private tilesArr = [

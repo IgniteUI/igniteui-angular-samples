@@ -10,6 +10,6 @@ import { IgxBulletGraphComponent } from "igniteui-angular-gauges/ES5/igx-bullet-
 
 export class BulletGraphRangesComponent {
 
-    @ViewChild("bulletGraph")
+    @ViewChild("bulletGraph", { static: true })
     public bulletGraph: IgxBulletGraphComponent;
 }

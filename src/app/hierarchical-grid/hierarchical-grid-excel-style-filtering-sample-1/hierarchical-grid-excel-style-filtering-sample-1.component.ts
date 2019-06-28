@@ -10,7 +10,7 @@ import { SINGERS } from "../data";
 
 export class HGridExcelStyleFilteringSample1Component implements OnInit {
 
-    @ViewChild("hierarchicalGrid")
+    @ViewChild("hierarchicalGrid", { static: true })
     public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public localdata;
