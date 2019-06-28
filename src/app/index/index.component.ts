@@ -7,7 +7,6 @@ import { dataDisplayRoutesData } from "../data-display/data-display-routes-data"
 import { dataEntriesRoutesData } from "../data-entries/data-entries-routes-data";
 import { excelLibraryRoutesData } from "../excel-library/excel-library-routes-data";
 import { gaugesRoutesData } from "../gauges/gauges-routes-data";
-import { geoMapRoutesData } from "../geo-map/geo-map-routes-data";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm-routes-data";
 import { gridfinjsRoutesData } from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
@@ -15,6 +14,7 @@ import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-gr
 import { interactionsRoutesData } from "../interactions/interactions-routes-data";
 import { layoutsRoutesData } from "../layouts/layouts-routes-data";
 import { listsRoutesData } from "../lists/lists-routes-data";
+import { geoMapRoutesData } from "../maps/geo-map-routes-data";
 import { menusRoutesData } from "../menus/menus-routes-data";
 import { notificationsRoutesData } from "../notifications/notifications-routes-data";
 import { schedulingRoutesData } from "../scheduling/scheduling-routes-data";
@@ -136,7 +136,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
             routesData: spreadsheetRoutesData
         },
         {
-            path: "geo-map",
+            path: "maps",
             routesData: geoMapRoutesData
         }
     ];
