@@ -2,6 +2,7 @@
 
 .addProdBtn {
     margin-bottom: 5px;
+    margin-right: 10px;
   }
 
   .dialogNewRecord {
@@ -18,12 +19,6 @@
     display: flex;
     justify-content: flex-end;
     padding: 8px 16px;
-    [igxButton] + [igxButton] {
-        margin-left: 8px;
-   }
-    .drop-down-button {
-        width: 92.6719px;
-    }
   }
 
   .snackbar_wrapper{
@@ -42,7 +37,7 @@
       height: $chooser-size;
       border-radius: $chooser-size / 2;
       overflow: hidden;
-      cursor: pointer;
+    //   cursor: pointer;
   }
 
 
@@ -51,7 +46,6 @@
       background-color: $primary;
       color: $secondary;
       padding-left: 22px;
-
       &::before {
           position: relative;
           content: $text;
@@ -80,22 +74,28 @@
           @include theme-chooser-icon($primary, $secondary)
       }
       &:hover {
+          z-index: 999;
           box-shadow: 3px 0 2px 3px $secondary;
       }
   }
 
-  .default-theme-option {
-      width:92.6719px;
+  .light-theme-option {
       @include theme-chooser-item(#f8f8f8, #4169E1,'LIGHT');
   }
 
   .dark-theme-option {
-      width:92.6719px;
       @include theme-chooser-item(#282828, #FFA500, 'DARK');
   }
 
   .black-theme-option {
-      width:92.6719px;
       @include theme-chooser-item(#000000, #00BFFF, 'BLACK');
   }
 
+  .theme{
+      cursor: pointer;
+  }
+
+  igx-select{
+    width: 120px;
+    margin-left: 10px;
+  }
