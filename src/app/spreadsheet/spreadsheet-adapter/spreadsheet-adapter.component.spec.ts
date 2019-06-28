@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SpreadsheetAdapterComponent } from './spreadsheet-adapter.component';
+import { SpreadsheetAdapterComponent } from "./spreadsheet-adapter.component";
 
-describe('SpreadsheetAdapterComponent', () => {
+describe("SpreadsheetAdapterComponent", () => {
   let component: SpreadsheetAdapterComponent;
   let fixture: ComponentFixture<SpreadsheetAdapterComponent>;
 
@@ -19,7 +19,7 @@ describe('SpreadsheetAdapterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
