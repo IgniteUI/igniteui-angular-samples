@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/IgniteUI/igniteui-angular-samples.svg?branch=master)](https://travis-ci.org/IgniteUI/igniteui-angular-samples)
+[![Build Status](https://dev.azure.com/IgniteUI/igniteui-angular/_apis/build/status/IgniteUI.igniteui-angular-samples?branchName=master)](https://dev.azure.com/IgniteUI/igniteui-angular/_build/latest?definitionId=4&branchName=master)
+<!--[![Build Status](https://travis-ci.org/IgniteUI/igniteui-angular-samples.svg?branch=master)](https://travis-ci.org/IgniteUI/igniteui-angular-samples)-->
 
 # Ignite UI for Angular - Samples
 
