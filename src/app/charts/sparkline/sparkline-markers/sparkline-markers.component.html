@@ -1,3 +1,24 @@
-<p>
-  sparkline-markers works!
-</p>
+<div class="sample">
+    <div class="options">
+        <label class="optionItem"><input id="High" defaultChecked=false type="checkbox" (change)="onMarkerCheckboxChanged($event)" />High Markers</label>
+        <label class="optionItem"><input id="Low" defaultChecked=false type="checkbox" (change)="onMarkerCheckboxChanged($event)" />Low Markers</label>
+        <label class="optionItem"><input id="First" defaultChecked=false type="checkbox" (change)="onMarkerCheckboxChanged($event)" />First Markers</label>
+        <label class="optionItem"><input id="Last" defaultChecked=false type="checkbox" (change)="onMarkerCheckboxChanged($event)" />Last Markers</label>
+        <label class="optionItem"><input id="Negative" defaultChecked=false type="checkbox" (change)="onMarkerCheckboxChanged($event)" />Negative Markers</label>
+        <label class="optionItem"><input id="All" defaultChecked=false type="checkbox" (change)="onMarkerCheckboxChanged($event)" />All Markers</label>
+    </div>
+    <div class="chart">
+        <igx-sparkline #sparkline height="calc(100% - 30px)" width="100%"
+            [dataSource]="data"
+            valueMemberPath="Value"
+            displayType="Line"
+            minimum=-3
+            maximum=8
+            markerVisibility="Collapsed"
+            highMarkerVisibility="Collapsed"
+            lowMarkerVisibility="Collapsed"
+            firstMarkerVisibility="Collapsed"
+            lastMarkerVisibility="Collapsed"
+            negativeMarkerVisibility="Collapsed"></igx-sparkline>
+    </div>
+</div >
