@@ -17,7 +17,7 @@ const ANGULAR_JSON_TEMPLATE_CSS_SUPPORT_PATH =
 const MAIN_TS_FILE_PATH = path.join(__dirname, "../templates/main.ts.template");
 const APP_COMPONENT_SCSS_PATH = path.join(__dirname, "../../src/app/app.component.scss");
 const APP_COMPONENT_TS_PATH = path.join(__dirname, "../../src/app/app.component.ts");
-const IE_POLYFILLS_TS__PATH = path.join(__dirname, "../templates/polyfills.ts.template");
+const IE_POLYFILLS_TS_PATH = path.join(__dirname, "../templates/polyfills.ts.template");
 export class SharedAssetsGenerator extends Generator {
     private _showLogs: boolean;
 
@@ -72,15 +72,15 @@ export class SharedAssetsGenerator extends Generator {
         this._generateSharedAssets(args, true);
     }
 
-    private _generateSharedAssets(args: SharedAssetsGeneratorArgs, isIE?: boolean) {
+    private _generateSharedAssets(args: SharedAssetsGeneratorArgs, cssAssets?: boolean) {
         let indexFile = fs.readFileSync(INDEX_FILE_PATH, "utf8");
         let angularJsonFile = fs.readFileSync(args.angularJsonFilePath, "utf8");
         let mainTsFile = fs.readFileSync(MAIN_TS_FILE_PATH, "utf8");
         let files = new Array<LiveEditingFile>();
         let polyfillsFile;
 
-        if (isIE) {
-            polyfillsFile = fs.readFileSync(IE_POLYFILLS_TS__PATH, "utf8");
+        if (cssAssets) {
+            polyfillsFile = fs.readFileSync(IE_POLYFILLS_TS_PATH, "utf8");
         } else {
             polyfillsFile = fs.readFileSync(POLYPFILLS_FILE_PATH, "utf8");
         }
