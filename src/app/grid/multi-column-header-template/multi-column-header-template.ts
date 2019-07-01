@@ -11,8 +11,14 @@ export class GridMultiColumnHeaderTemplateComponent {
 
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
-    public data = data;
+    public data: any[] = data;
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
+
+    constructor() {
+        for (const item of this.data) {
+            item.Location = `${item.Address}, ${item.City}, ${item.Country}`;
+        }
+    }
 
     public toggleColumnGroup(columnGroup: IgxColumnGroupComponent) {
         const columns = columnGroup.children.toArray();
