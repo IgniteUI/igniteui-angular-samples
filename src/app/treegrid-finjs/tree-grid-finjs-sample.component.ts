@@ -235,32 +235,11 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     }
 
     private ticker(data: any) {
-        this.zone.runOutsideAngular(() => {
-            this.updateRandomPrices(data);
-            this.recalculateAggregations(this.grid1.data);
-            this.zone.run(() => this.grid1.markForCheck());
-        });
+        this.data = this.updateRandomPrices(data);
     }
 
     private tickerAllPrices(data: any) {
-        this.zone.runOutsideAngular(() => {
-            this.updateAllPrices(data);
-            this.recalculateAggregations(this.grid1.data);
-            this.zone.run(() => this.grid1.markForCheck());
-        });
-    }
-
-    private recalculateAggregations(data: any[]) {
-        for (const parent of data) {
-            const children = parent[this.childDataKey];
-
-            if (children && children.length) {
-                for (const aggregation of this.aggregations) {
-                    parent[aggregation.field] = aggregation.aggregate(parent, children);
-                }
-                this.recalculateAggregations(children);
-            }
-        }
+        this.data = this.updateAllPrices(data);
     }
 
     /**
@@ -269,10 +248,10 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private updateAllPrices(data: any[]): any {
         const newData = data.slice();
         for (const dataRow of newData) {
-          this.randomizeObjectData(dataRow);
+            this.randomizeObjectData(dataRow);
         }
         return newData;
-      }
+    }
 
     /**
      * Updates values in random number of records
@@ -281,11 +260,11 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         const newData = data.slice();
         let y = 0;
         for (let i = Math.round(Math.random() * 10); i < newData.length; i += Math.round(Math.random() * 10)) {
-          this.randomizeObjectData(newData[i]);
-          y++;
+            this.randomizeObjectData(newData[i]);
+            y++;
         }
         return newData;
-      }
+    }
 
     /**
      * Generates ne values for Change, Price and ChangeP columns
@@ -320,5 +299,5 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     get buttonSelected(): number {
         return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
-      }
+    }
 }
