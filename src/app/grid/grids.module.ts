@@ -126,7 +126,7 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         GridMRLCustomNavigationComponent,
         ContextmenuComponent,
         CustomGridPagingStyleSample,
-        GridRowReorderComponent
+        GridRowReorderComponent,
         GridMultiColumnHeaderTemplateComponent
     ],
     imports: [

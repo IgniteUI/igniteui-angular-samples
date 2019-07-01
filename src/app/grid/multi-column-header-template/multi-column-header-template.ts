@@ -9,7 +9,7 @@ import { data } from "./data";
 })
 export class GridMultiColumnHeaderTemplateComponent {
 
-    @ViewChild(IgxGridComponent, { read: IgxGridComponent })
+    @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public data = data;
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
