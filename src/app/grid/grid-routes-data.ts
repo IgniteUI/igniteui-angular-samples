@@ -53,5 +53,6 @@ export const gridsRoutesData = {
     "custom-grid-paging-style": { displayName: "Custom Grid Paging Style", parentName: "Grid" },
     "grid-nested-data-binding": { displayName: "Grid Nested Data Binding", parentName: "Grid" },
     "grid-composite-data-binding": { displayName: "Grid Composite Data Binding", parentName: "Grid" },
+    "grid-row-edit-style" : { displayName: "Grid Row Edit Style", parentName: "Grid" },
     "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" }
 };

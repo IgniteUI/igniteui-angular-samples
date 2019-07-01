@@ -36,6 +36,7 @@ import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -88,6 +89,11 @@ export const gridsRoutes: Routes = [
         component: GridRowEditSampleComponent,
         data: gridsRoutesData["grid-row-editing"],
         path: "grid-row-editing"
+    },
+    {
+        component: GridRowEditStyleComponent,
+        data: gridsRoutesData["grid-row-editing-style"],
+        path: "grid-row-edit-style"
     },
     {
         component: GridDragSampleComponent,
