@@ -325,11 +325,11 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-type-contour-series"],
         path: "data-chart-type-contour-series"
     },
-    {
-        component: DataChartTypeScatterDensitySeriesComponent,
-        data: chartsRoutesData["data-chart-type-scatter-density-series"],
-        path: "data-chart-type-scatter-density-series"
-    },
+    // {
+    //     component: DataChartTypeScatterDensitySeriesComponent,
+    //     data: chartsRoutesData["data-chart-type-scatter-density-series"],
+    //     path: "data-chart-type-scatter-density-series"
+    // },
     {
         component: DataChartTypeScatterSeriesComponent,
         data: chartsRoutesData["data-chart-type-scatter-series"],

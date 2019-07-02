@@ -15,7 +15,7 @@ export const geoMapRoutesData = {
     "geo-map-binding-shp-polygons": { displayName: "Binding Shapefile Polygons", parentName: "Geo Map" },
     "geo-map-binding-shp-polylines": { displayName: "Binding Shapefile Polylines", parentName: "Geo Map" },
     "geo-map-binding-shp-points": { displayName: "Binding Shapefile Points", parentName: "Geo Map" },
-    "geo-map-custom-tooltip": { displayName: "Custom Tooltip", parentName: "Geo Map" },
+    "geo-map-custom-tooltips": { displayName: "Custom Tooltip", parentName: "Geo Map" },
     "geo-map-type-scatter-area-series": { displayName: "Scatter Area Series", parentName: "Geo Map" },
     "geo-map-type-scatter-bubble-series": { displayName: "Scatter Bubble Series", parentName: "Geo Map" },
     "geo-map-type-scatter-contour-series": { displayName: "Scatter Contour Series", parentName: "Geo Map" },
@@ -23,5 +23,4 @@ export const geoMapRoutesData = {
     "geo-map-type-scatter-symbol-series": { displayName: "Scatter Symbol Series", parentName: "Geo Map" },
     "geo-map-type-shape-polygon-series": { displayName: "Shape Polygon Series", parentName: "Geo Map" },
     "geo-map-type-shape-polyline-series": { displayName: "Shape Polyline Series", parentName: "Geo Map" }
-
 };
