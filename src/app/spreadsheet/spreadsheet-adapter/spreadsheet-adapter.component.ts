@@ -37,7 +37,7 @@ export class SpreadsheetAdapterComponent implements OnInit {
             const cell3: WorksheetCell = sheet.getCell("C1");
             const cell4: WorksheetCell = sheet.getCell("D1");
 
-            const dataCellAddress = "A4:D6";
+            const dataCellAddress = "A3:D6";
 
             const chart1 = sheet.shapes().addChart(ChartType.Line, cell1, { x: 0, y: 0 }, cell1, { x: 100, y: 100 });
 
