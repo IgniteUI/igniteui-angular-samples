@@ -583,9 +583,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridMultiColumnHeaderTemplateSampleComponent, IgxButtonModule],
+                imports: [IgxTreeGridModule, TreeGridMultiColumnHeaderTemplateSampleComponent],
                 ngDeclarations: [TreeGridMultiColumnHeaderTemplateSampleComponent],
-                ngImports: [IgxTreeGridModule, IgxButtonModule]
+                ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridMultiColumnHeaderTemplateSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
