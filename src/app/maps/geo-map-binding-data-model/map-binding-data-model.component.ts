@@ -4,7 +4,7 @@ import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geograp
 import { IgxGeographicPolylineSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
 import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
-import { WorldUtils } from "../../utilities/WorldUtils";
+import { WorldUtility } from "../../utilities/WorldUtility";
 
 @Component({
   selector: "app-map-binding-data-model",
@@ -72,8 +72,8 @@ export class MapBindingDataModelComponent implements AfterViewInit {
     }
 
     public createPolylineSeries(flight: any) {
-        const geoPath = WorldUtils.calcPaths(flight.origin, flight.dest);
-        const geoDistance = WorldUtils.calcDistance(flight.origin, flight.dest);
+        const geoPath = WorldUtility.calcPaths(flight.origin, flight.dest);
+        const geoDistance = WorldUtility.calcDistance(flight.origin, flight.dest);
         const geoRoutes = [
             {
               dest: flight.dest,

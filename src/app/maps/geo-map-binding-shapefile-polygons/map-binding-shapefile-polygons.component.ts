@@ -22,11 +22,11 @@ export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-      const sds = new ShapeDataSource();
-      sds.shapefileSource = "assets/Shapes/WorldCountries.shp";
-      sds.databaseSource  = "assets/Shapes/WorldCountries.dbf";
-      sds.dataBind();
-      sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
+        const sds = new ShapeDataSource();
+        sds.shapefileSource = "assets/Shapes/WorldCountries.shp";
+        sds.databaseSource  = "assets/Shapes/WorldCountries.dbf";
+        sds.dataBind();
+        sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
     }
 
     public onDataLoaded(sds: ShapeDataSource, e: any) {

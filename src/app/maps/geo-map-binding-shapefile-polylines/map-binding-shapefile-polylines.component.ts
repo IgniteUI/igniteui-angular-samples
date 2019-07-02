@@ -16,16 +16,18 @@ export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
 
     @ViewChild("template", {static: true})
     public tooltipTemplate: TemplateRef<object>;
+
     constructor() { }
 
     public ngAfterViewInit() {
-    // loading a shapefile with geographic polygons
-    const sds = new ShapeDataSource();
-    sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
-    sds.shapefileSource = "assets/Shapes/WorldCableRoutes.shp";
-    sds.databaseSource  = "assets/Shapes/WorldCableRoutes.dbf";
-    sds.dataBind();
+        // loading a shapefile with geographic polygons
+        const sds = new ShapeDataSource();
+        sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
+        sds.shapefileSource = "assets/Shapes/WorldCableRoutes.shp";
+        sds.databaseSource  = "assets/Shapes/WorldCableRoutes.dbf";
+        sds.dataBind();
     }
+
     public onDataLoaded(sds: ShapeDataSource, e: any) {
         const shapeRecords = sds.getPointData();
         console.log("loaded /Shapes/WorldCities.shp " + shapeRecords.length);
@@ -55,5 +57,5 @@ export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
         geoSeries.tooltipTemplate = this.tooltipTemplate;
 
         this.map.series.add(geoSeries);
-        }
+    }
 }

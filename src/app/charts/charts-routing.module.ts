@@ -1,179 +1,87 @@
+/* tslint:disable:object-literal-sort-keys */
+// tslint:disable:max-line-length
+// tslint:disable:member-ordering
+
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import {
-    CategoryChartAnnotationsComponent
-} from "./category-chart/annotations/category-chart-annotations.component";
-import {
-    CategoryChartAxisOptionsComponent
-} from "./category-chart/axis-options/category-chart-axis-options-sample.component";
+
+import { chartsRoutesData } from "./charts-routes-data";
+
+// category-chart
+import { CategoryChartAnnotationsComponent } from "./category-chart/annotations/category-chart-annotations.component";
+import { CategoryChartAxisOptionsComponent } from "./category-chart/axis-options/category-chart-axis-options-sample.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
-import {
-    CategoryChartConfigOptionsComponent
-} from "./category-chart/config-options/category-chart-config-options-sample.component";
-import {
-    CategoryChartHighFrequencyComponent
-} from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
-import {
-    CategoryChartHighVolumeComponent
-} from "./category-chart/high-volume/category-chart-high-volume-sample.component";
-import {
-    CategoryChartHighlightingComponent
-} from "./category-chart/highlighting/category-chart-highlighting.component";
-import {
-    CategoryChartOverlapColumnsComponent
-} from "./category-chart/overlap-columns/category-chart-overlap-columns.component";
-import {
-    CategoryChartOverviewComponent
-} from "./category-chart/overview/category-chart-overview-sample.component";
-import {
-    CategoryChartTooltipTemplateComponent
-} from "./category-chart/tooltip-template/category-chart-tooltip-template.component";
-import {
-    CategoryChartTooltipTypesComponent
-} from "./category-chart/tooltip-types/category-chart-tooltip-types.component";
-import {
-    CategoryChartTrendlinesComponent
-} from "./category-chart/trendline/category-chart-trendlines.component";
-import { chartsRoutesData } from "./charts-routes-data";
-import { DataChartSamplesModule } from "./data-chart/data-chart-samples-module";
+import { CategoryChartConfigOptionsComponent } from "./category-chart/config-options/category-chart-config-options-sample.component";
+import { CategoryChartHighFrequencyComponent } from "./category-chart/high-frequency/category-chart-high-frequency-sample.component";
+import { CategoryChartHighVolumeComponent } from "./category-chart/high-volume/category-chart-high-volume-sample.component";
+import { CategoryChartHighlightingComponent } from "./category-chart/highlighting/category-chart-highlighting.component";
+import { CategoryChartOverlapColumnsComponent } from "./category-chart/overlap-columns/category-chart-overlap-columns.component";
+import { CategoryChartOverviewComponent } from "./category-chart/overview/category-chart-overview-sample.component";
+import { CategoryChartTooltipTemplateComponent } from "./category-chart/tooltip-template/category-chart-tooltip-template.component";
+import { CategoryChartTooltipTypesComponent } from "./category-chart/tooltip-types/category-chart-tooltip-types.component";
+import { CategoryChartTrendlinesComponent } from "./category-chart/trendline/category-chart-trendlines.component";
 
-// import { DataChartAxisLocationsComponent
-// } from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
-import { DataChartAxisAnnotationsComponent
-} from "./data-chart/data-chart-axis-annotations/data-chart-axis-annotations.component";
-import {
-    DataChartAxisSettingsComponent
-} from "./data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
+// data-chart
+import { DataChartSamplesModule } from "./data-chart/data-chart-samples-module";
+import { DataChartAxisLocationsComponent } from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
+import { DataChartAxisAnnotationsComponent } from "./data-chart/data-chart-axis-annotations/data-chart-axis-annotations.component";
+import { DataChartAxisSettingsComponent } from "./data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
 import { DataChartAxisSharingComponent } from "./data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
 import { DataChartAxisTypesComponent } from "./data-chart/data-chart-axis-types/data-chart-axis-types.component";
 import { DataChartLegendsComponent } from "./data-chart/data-chart-legends/data-chart-legends.component";
 import { DataChartNavigationComponent } from "./data-chart/data-chart-navigation/data-chart-navigation.component";
-import {
-    DataChartOverviewComponent
-} from "./data-chart/data-chart-overview/data-chart-overview.component";
-// import { DataChartPerformanceComponent } from "./data-chart/data-chart-performance/data-chart-performance.component";
-// import {
-//     DataChartSeriesAnimationsComponent
-// } from "./data-chart/data-chart-series-animations/data-chart-series-animations.component";
-import {
-    DataChartSeriesAnnotationsComponent
-} from "./data-chart/data-chart-series-annotations/data-chart-series-annotations.component";
-import {
-    DataChartSeriesHighlightingComponent
-} from "./data-chart/data-chart-series-highlighting/data-chart-series-highlighting.component";
-import {
-    DataChartSeriesMarkersComponent
-} from "./data-chart/data-chart-series-markers/data-chart-series-markers.component";
-import {
-    DataChartSeriesTooltipsComponent
-} from "./data-chart/data-chart-series-tooltips/data-chart-series-tooltips.component";
-import {
-    DataChartSeriesTrendlinesComponent
-} from "./data-chart/data-chart-series-trendlines/data-chart-series-trendlines.component";
-import {
-    DataChartSynchronizationComponent
-} from "./data-chart/data-chart-synchronization/data-chart-synchronization.component";
+import { DataChartOverviewComponent } from "./data-chart/data-chart-overview/data-chart-overview.component";
+import { DataChartPerformanceComponent } from "./data-chart/data-chart-performance/data-chart-performance.component";
+import { DataChartSeriesAnimationsComponent } from "./data-chart/data-chart-series-animations/data-chart-series-animations.component";
+import { DataChartSeriesAnnotationsComponent } from "./data-chart/data-chart-series-annotations/data-chart-series-annotations.component";
+import { DataChartSeriesHighlightingComponent } from "./data-chart/data-chart-series-highlighting/data-chart-series-highlighting.component";
+import { DataChartSeriesMarkersComponent } from "./data-chart/data-chart-series-markers/data-chart-series-markers.component";
+import { DataChartSeriesTooltipsComponent } from "./data-chart/data-chart-series-tooltips/data-chart-series-tooltips.component";
+import { DataChartSeriesTrendlinesComponent } from "./data-chart/data-chart-series-trendlines/data-chart-series-trendlines.component";
+import { DataChartSynchronizationComponent } from "./data-chart/data-chart-synchronization/data-chart-synchronization.component";
 import { DataChartTitlesComponent } from "./data-chart/data-chart-titles/data-chart-titles.component";
-import {
-    DataChartTypeCategorySeriesComponent
-} from "./data-chart/data-chart-type-category-series/data-chart-type-category-series.component";
-import {
-    DataChartTypeFinancialSeriesComponent
-} from "./data-chart/data-chart-type-financial-series/data-chart-type-financial-series.component";
-import {
-    DataChartTypePolarSeriesComponent
-} from "./data-chart/data-chart-type-polar-series/data-chart-type-polar-series.component";
-import {
-    DataChartTypeRadialSeriesComponent
-} from "./data-chart/data-chart-type-radial-series/data-chart-type-radial-series.component";
-import {
-    DataChartTypeRangeSeriesComponent
-} from "./data-chart/data-chart-type-range-series/data-chart-type-range-series.component";
-import {
-    DataChartTypeScatterAreaSeriesComponent
-} from "./data-chart/data-chart-type-scatter-area-series/data-chart-type-scatter-area-series.component";
-import {
-    DataChartTypeScatterContourSeriesComponent
-} from "./data-chart/data-chart-type-scatter-contour-series/data-chart-type-scatter-contour-series.component";
-// import {
-//     DataChartTypeScatterDensitySeriesComponent
-// } from "./data-chart/data-chart-type-scatter-density-series/data-chart-type-scatter-density-series.component";
-import {
-    DataChartTypeScatterSeriesComponent
-} from "./data-chart/data-chart-type-scatter-series/data-chart-type-scatter-series.component";
-import {
-    DataChartTypeScatterShapeSeriesComponent
-} from "./data-chart/data-chart-type-scatter-shape-series/data-chart-type-scatter-shape-series.component";
-import {
-    DataChartTypeStackedSeriesComponent
-} from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
-import {
-    DataChartTypeValueOverlayComponent
-} from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
+import { DataChartTypeCategorySeriesComponent } from "./data-chart/data-chart-type-category-series/data-chart-type-category-series.component";
+import { DataChartTypeFinancialSeriesComponent } from "./data-chart/data-chart-type-financial-series/data-chart-type-financial-series.component";
+import { DataChartTypePolarSeriesComponent } from "./data-chart/data-chart-type-polar-series/data-chart-type-polar-series.component";
+import { DataChartTypeRadialSeriesComponent } from "./data-chart/data-chart-type-radial-series/data-chart-type-radial-series.component";
+import { DataChartTypeRangeSeriesComponent } from "./data-chart/data-chart-type-range-series/data-chart-type-range-series.component";
+import { DataChartTypeScatterAreaSeriesComponent } from "./data-chart/data-chart-type-scatter-area-series/data-chart-type-scatter-area-series.component";
+import { DataChartTypeScatterContourSeriesComponent } from "./data-chart/data-chart-type-scatter-contour-series/data-chart-type-scatter-contour-series.component";
+import { DataChartTypeScatterDensitySeriesComponent } from "./data-chart/data-chart-type-scatter-density-series/data-chart-type-scatter-density-series.component";
+import { DataChartTypeScatterSeriesComponent } from "./data-chart/data-chart-type-scatter-series/data-chart-type-scatter-series.component";
+import { DataChartTypeScatterShapeSeriesComponent } from "./data-chart/data-chart-type-scatter-shape-series/data-chart-type-scatter-shape-series.component";
+import { DataChartTypeStackedSeriesComponent } from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
+import { DataChartTypeValueOverlayComponent } from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
-import {
-    DoughnutChartExplosionSampleComponent
-} from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
-import {
-    DoughnutChartOverviewSampleComponent
-} from "./doughnut-chart/doughnut-chart-overview-sample/doughnut-chart-overview-sample.component";
+// doughnut-chart
+import { DoughnutChartExplosionSampleComponent } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
+import { DoughnutChartLegendComponent } from "./doughnut-chart/doughnut-chart-legend/doughnut-chart-legend.component";
+import { DoughnutChartOverviewSampleComponent } from "./doughnut-chart/doughnut-chart-overview-sample/doughnut-chart-overview-sample.component";
+import { DoughnutChartRingsComponent } from "./doughnut-chart/doughnut-chart-rings/doughnut-chart-rings.component";
 import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
-import {
-    DoughnutChartSelectionSampleComponent
-} from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
-import {
-    FinancialChartAnnotationsComponent
-} from "./financial-chart/annotations/financial-chart-annotations.component";
-import {
-    FinancialChartAxisTypesComponent
-} from "./financial-chart/axis-types/financial-chart-axis-types.component";
-import {
-    FinancialChartCustomIndicatorsComponent
-} from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
+import { DoughnutChartSelectionSampleComponent } from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
+
+// financial-chart
+import { FinancialChartAnnotationsComponent } from "./financial-chart/annotations/financial-chart-annotations.component";
+import { FinancialChartAxisTypesComponent } from "./financial-chart/axis-types/financial-chart-axis-types.component";
+import { FinancialChartCustomIndicatorsComponent } from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
 import { FinancialChartSamplesModule } from "./financial-chart/financial-chart-samples.module";
-import {
-    FinancialChartHighFrequencyComponent
-} from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
-import {
-    FinancialChartHighVolumeComponent
-} from "./financial-chart/high-volume/financial-chart-high-volume.component";
-import {
-    FinancialChartIndicatorTypesComponent
-} from "./financial-chart/indicator-types/financial-chart-indicator-types.component";
-import {
-    FinancialChartMultipleDataComponent
-} from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
-import {
-    FinancialChartMultipleFeedsComponent
-} from "./financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
-import {
-    FinancialChartOverviewComponent
-} from "./financial-chart/overview/financial-chart-overview-sample.component";
-import {
-    FinancialChartPanesComponent
-} from "./financial-chart/panes/financial-chart-panes.component";
-import {
-    FinancialChartPerformanceComponent
-} from "./financial-chart/performance/financial-chart-performance.component";
-import {
-    FinancialChartTimeBasedDataComponent
-} from "./financial-chart/time-based-data/financial-chart-time-based-data.component";
-import {
-    FinancialChartTitlesComponent
-} from "./financial-chart/titles/financial-chart-titles.component";
-import {
-    FinancialChartTooltipTemplateComponent
-} from "./financial-chart/tooltip-template/financial-chart-tooltip-template.component";
-import {
-    FinancialChartTooltipTypesComponent
-} from "./financial-chart/tooltip-types/financial-chart-tooltip-types.component";
-import {
-    FinancialChartTrendlinesComponent
-} from "./financial-chart/trendlines/financial-chart-trendlines.component";
-import {
-    FinancialChartVolumeTypeComponent
-} from "./financial-chart/volume-type/financial-chart-volume-type.component";
+import { FinancialChartHighFrequencyComponent } from "./financial-chart/high-frequency/financial-chart-high-frequency.component";
+import { FinancialChartHighVolumeComponent } from "./financial-chart/high-volume/financial-chart-high-volume.component";
+import { FinancialChartIndicatorTypesComponent } from "./financial-chart/indicator-types/financial-chart-indicator-types.component";
+import { FinancialChartMultipleDataComponent } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
+import { FinancialChartMultipleFeedsComponent } from "./financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
+import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
+import { FinancialChartPerformanceComponent } from "./financial-chart/performance/financial-chart-performance.component";
+import { FinancialChartTimeBasedDataComponent } from "./financial-chart/time-based-data/financial-chart-time-based-data.component";
+import { FinancialChartTitlesComponent } from "./financial-chart/titles/financial-chart-titles.component";
+import { FinancialChartTooltipTemplateComponent } from "./financial-chart/tooltip-template/financial-chart-tooltip-template.component";
+import { FinancialChartTooltipTypesComponent } from "./financial-chart/tooltip-types/financial-chart-tooltip-types.component";
+import { FinancialChartTrendlinesComponent } from "./financial-chart/trendlines/financial-chart-trendlines.component";
+import { FinancialChartVolumeTypeComponent } from "./financial-chart/volume-type/financial-chart-volume-type.component";
+
 import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
 import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
 import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
@@ -185,11 +93,10 @@ import { SparklineDisplayTypesComponent } from "./sparkline/sparkline-display-ty
 import { SparklineMarkersComponent } from "./sparkline/sparkline-markers/sparkline-markers.component";
 import { SparklineNormalRangeComponent } from "./sparkline/sparkline-normal-range/sparkline-normal-range.component";
 import { SparklineTrendlinesComponent } from "./sparkline/sparkline-trendlines/sparkline-trendlines.component";
-import {
-    SparklineUnknownValuesComponent
-} from "./sparkline/sparkline-unknown-values/sparkline-unknown-values.component";
+import { SparklineUnknownValuesComponent } from "./sparkline/sparkline-unknown-values/sparkline-unknown-values.component";
 
 export const chartsRoutes: Routes = [
+    // DoughnutChart
     {
         component: DoughnutChartExplosionSampleComponent,
         data: chartsRoutesData["doughnut-chart-explosion"],
@@ -205,6 +112,17 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["doughnut-chart-selection"],
         path: "doughnut-chart-selection"
     },
+    {
+        component: DoughnutChartLegendComponent,
+        data: chartsRoutesData["doughnut-chart-legend"],
+        path: "doughnut-chart-legend"
+    },
+    {
+        component: DoughnutChartRingsComponent,
+        data: chartsRoutesData["doughnut-chart-rings"],
+        path: "doughnut-chart-rings"
+    },
+    // PieChart
     {
         component: PieChartDataSampleComponent,
         data: chartsRoutesData["pie-chart-data-sample"],
@@ -230,6 +148,7 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["pie-chart-selection"],
         path: "pie-chart-selection"
     },
+    // category-chart
     {
         component: CategoryChartOverviewComponent,
         data: chartsRoutesData["category-chart-overview"],
@@ -254,11 +173,6 @@ export const chartsRoutes: Routes = [
         component: CategoryChartHighVolumeComponent,
         data: chartsRoutesData["category-chart-high-volume-sample"],
         path: "category-chart-high-volume-sample"
-    },
-    {
-        component: FinancialChartOverviewComponent,
-        data: chartsRoutesData["financial-chart-overview-sample"],
-        path: "financial-chart-overview-sample"
     },
     {
         component: CategoryChartHighFrequencyComponent,
@@ -290,11 +204,12 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["category-chart-trendline"],
         path: "category-chart-trendline"
     },
-    // {
-    //     component: DataChartAxisLocationsComponent,
-    //     data: chartsRoutesData["data-chart-axis-locations"],
-    //     path: "data-chart-axis-locations"
-    // },
+    // data-chart
+    {
+        component: DataChartAxisLocationsComponent,
+        data: chartsRoutesData["data-chart-axis-locations"],
+        path: "data-chart-axis-locations"
+    },
     {
         component: DataChartAxisAnnotationsComponent,
         data: chartsRoutesData["data-chart-axis-annotations"],
@@ -330,16 +245,16 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-overview"],
         path: "data-chart-overview"
     },
-    // {
-    //     component: DataChartPerformanceComponent,
-    //     data: chartsRoutesData["data-chart-performance"],
-    //     path: "data-chart-performance"
-    // },
-    // {
-    //     component: DataChartSeriesAnimationsComponent,
-    //     data: chartsRoutesData["data-chart-series-animations"],
-    //     path: "data-chart-series-animations"
-    // },
+    {
+        component: DataChartPerformanceComponent,
+        data: chartsRoutesData["data-chart-performance"],
+        path: "data-chart-performance"
+    },
+    {
+        component: DataChartSeriesAnimationsComponent,
+        data: chartsRoutesData["data-chart-series-animations"],
+        path: "data-chart-series-animations"
+    },
     {
         component: DataChartSeriesAnnotationsComponent,
         data: chartsRoutesData["data-chart-series-annotations"],
@@ -410,11 +325,11 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["data-chart-type-contour-series"],
         path: "data-chart-type-contour-series"
     },
-    // {
-    //     component: DataChartTypeScatterDensitySeriesComponent,
-    //     data: chartsRoutesData["data-chart-type-scatter-density-series"],
-    //     path: "data-chart-type-scatter-density-series"
-    // },
+    {
+        component: DataChartTypeScatterDensitySeriesComponent,
+        data: chartsRoutesData["data-chart-type-scatter-density-series"],
+        path: "data-chart-type-scatter-density-series"
+    },
     {
         component: DataChartTypeScatterSeriesComponent,
         data: chartsRoutesData["data-chart-type-scatter-series"],
@@ -434,6 +349,12 @@ export const chartsRoutes: Routes = [
         component: DataChartTypeValueOverlayComponent,
         data: chartsRoutesData["data-chart-value-overlay"],
         path: "data-chart-value-overlay"
+    },
+    // financial-chart
+    {
+        component: FinancialChartOverviewComponent,
+        data: chartsRoutesData["financial-chart-overview-sample"],
+        path: "financial-chart-overview-sample"
     },
     {
         component: FinancialChartPerformanceComponent,
@@ -515,6 +436,7 @@ export const chartsRoutes: Routes = [
         data: chartsRoutesData["financial-chart-trendlines"],
         path: "financial-chart-trendlines"
     },
+    // sparkline-chart
     {
         component: SparklineDisplayTypesComponent,
         data: chartsRoutesData["sparkline-display-types"],
