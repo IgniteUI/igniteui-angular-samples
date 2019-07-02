@@ -4,6 +4,7 @@
 // tslint:disable:member-ordering
 // tslint:disable:prefer-const
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
+
 import { FinancialChartAnnotationsComponent } from "../../src/app/charts/financial-chart/annotations/financial-chart-annotations.component";
 import { FinancialChartAxisTypesComponent } from "../../src/app/charts/financial-chart/axis-types/financial-chart-axis-types.component";
 import { FinancialChartCustomIndicatorsComponent } from "../../src/app/charts/financial-chart/custom-indicators/financial-chart-custom-indicators.component";
@@ -33,7 +34,7 @@ import { BaseConfigGenerator } from "./core/BaseConfigGenerator";
 export class FinancialChartConfigGenerator extends BaseConfigGenerator {
 
     constructor() {
-        super(DependenciesType.Charts, "/charts/");
+        super(DependenciesType.Charts, "/charts/financial-chart/");
     }
 
     public generateConfigs(): Config[] {
