@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxAvatarModule, IgxChipsModule, IgxDropDownModule, IgxInputGroupModule, IgxToastModule, IgxButtonModule
+import { IgxAvatarModule, IgxButtonModule, IgxChipsModule, IgxDropDownModule, IgxInputGroupModule, IgxToastModule
 } from "igniteui-angular";
 import { ChipSampleComponent, EmailFilterPipe } from "../../src/app/data-display/chip/chip.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
