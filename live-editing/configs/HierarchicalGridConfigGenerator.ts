@@ -48,6 +48,7 @@ import {
 } from "../../src/app/hierarchical-grid/hierarchical-grid-resize-line-styling/hierarchical-grid-resize-line-styling.component";
 import { HGridRowDragBaseComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
 import { HGridDragSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
+import { HGridRowEditStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowReorderComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HGridSelectionSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-selection/hierarchical-grid-selection.component";
@@ -82,11 +83,21 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridRowEditingSampleComponent, IgxDatePickerModule],
+                imports: [IgxHierarchicalGridModule, HGridRowEditingSampleComponent],
                 ngDeclarations: [HGridRowEditingSampleComponent],
-                ngImports: [IgxHierarchicalGridModule, IgxDatePickerModule]
+                ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridRowEditingSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridRowEditStyleComponent, IgxIconModule],
+                ngDeclarations: [HGridRowEditStyleComponent],
+                ngImports: [IgxHierarchicalGridModule, IgxIconModule]
+            }),
+            component: HGridRowEditStyleComponent
         }));
 
         configs.push(new Config({

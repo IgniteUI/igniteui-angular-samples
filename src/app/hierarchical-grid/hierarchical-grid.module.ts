@@ -42,6 +42,7 @@ import { HGridResizeLineStylingComponent } from "./hierarchical-grid-resize-line
 import { HierarchicalGridRoutingModule } from "./hierarchical-grid-routing.module";
 import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
 import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
+import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
@@ -76,6 +77,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridToolbarOptionsSampleComponent,
         HGridToolbarCustomSampleComponent,
         HGridRowEditingSampleComponent,
+        HGridRowEditStyleComponent,
         HGridEditingSampleComponent,
         HGridBatchEditingSampleComponent,
         HierarchicalGridWithTransactionsComponent,
