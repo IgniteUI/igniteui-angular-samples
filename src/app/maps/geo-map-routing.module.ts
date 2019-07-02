@@ -1,11 +1,16 @@
 // tslint:disable:object-literal-sort-keys
+// tslint:disable:ordered-imports
 // tslint:disable:max-line-length
+// tslint:disable:member-ordering
 
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { geoMapRoutesData } from "./geo-map-routes-data";
+import { MapDisplayImageryBingTiles } from "./MapDisplayImageryBingTiles/component";
+import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/component";
+import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
 import { GeoMapSamplesModule } from "./geo-map-samples.module";
+import { geoMapRoutesData } from "./geo-map-routes-data";
 import { MapBindingDataCsvComponent } from "./geo-map-binding-data-csv/map-binding-data-csv.component";
 import { MapBindingDataJsonPointsComponent } from "./geo-map-binding-data-json-points/map-binding-data-json-points.component";
 import { MapBindingDataModelComponent } from "./geo-map-binding-data-model/map-binding-data-model.component";
@@ -15,6 +20,7 @@ import { MapBindingShapefilePointsComponent } from "./geo-map-binding-shapefile-
 import { MapBindingShapefilePolygonsComponent } from "./geo-map-binding-shapefile-polygons/map-binding-shapefile-polygons.component";
 import { MapBindingShapefilePolylinesComponent } from "./geo-map-binding-shapefile-polylines/map-binding-shapefile-polylines.component";
 import { MapCustomTooltipsComponent } from "./geo-map-custom-tooltips/map-custom-tooltips.component";
+
 import { MapOverviewComponent } from "./geo-map-overview/map-overview.component";
 import { MapTypeScatterAreaSeriesComponent } from "./geo-map-type-scatter-area-series/map-type-scatter-area-series.component";
 import { MapTypeScatterBubbleSeriesComponent } from "./geo-map-type-scatter-bubble-series/map-type-scatter-bubble-series.component";
@@ -23,10 +29,6 @@ import { MapTypeScatterDensitySeriesComponent } from "./geo-map-type-scatter-den
 import { MapTypeScatterSymbolSeriesComponent } from "./geo-map-type-scatter-symbol-series/map-type-scatter-symbol-series.component";
 import { MapTypeShapePolygonSeriesComponent } from "./geo-map-type-shape-polygon-series/map-type-shape-polygon-series.component";
 import { MapTypeShapePolylineSeriesComponent } from "./geo-map-type-shape-polyline-series/map-type-shape-polyline-series.component";
-
-import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
-import { MapDisplayImageryBingTiles } from "./MapDisplayImageryBingTiles/component";
-import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/component";
 
 export const routes: Routes = [
     {

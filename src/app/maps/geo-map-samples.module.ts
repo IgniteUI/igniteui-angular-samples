@@ -1,6 +1,4 @@
-/* tslint:disable:object-literal-sort-keys */
-// tslint:disable:max-line-length
-// tslint:disable:member-ordering
+/* tslint:disable */
 
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
@@ -31,10 +29,9 @@ import { MapTypeScatterDensitySeriesComponent } from "./geo-map-type-scatter-den
 import { MapTypeScatterSymbolSeriesComponent } from "./geo-map-type-scatter-symbol-series/map-type-scatter-symbol-series.component";
 import { MapTypeShapePolygonSeriesComponent } from "./geo-map-type-shape-polygon-series/map-type-shape-polygon-series.component";
 import { MapTypeShapePolylineSeriesComponent } from "./geo-map-type-shape-polyline-series/map-type-shape-polyline-series.component";
-
-import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
 import { MapDisplayImageryBingTiles } from "./MapDisplayImageryBingTiles/component";
 import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/component";
+import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
 
 @NgModule({
     declarations: [

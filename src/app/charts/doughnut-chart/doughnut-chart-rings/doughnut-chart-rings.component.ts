@@ -7,12 +7,12 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 })
 export class DoughnutChartRingsComponent {
 
-    public Months: any[];
-    public Seasons: any[];
+    public months: any[];
+    public seasons: any[];
 
     constructor() {
 
-        this.Months = [
+        this.months = [
             { Value: 1, Label: "December" },
             { Value: 1, Label: "January" },
             { Value: 1, Label: "February" },
@@ -24,13 +24,13 @@ export class DoughnutChartRingsComponent {
             { Value: 1, Label: "August" },
             { Value: 1, Label: "September" },
             { Value: 1, Label: "October" },
-            { Value: 1, Label: "November" },
+            { Value: 1, Label: "November" }
         ];
-        this.Seasons = [
+        this.seasons = [
             { Value: 4, Label: "Winter" },
             { Value: 4, Label: "Spring" },
             { Value: 4, Label: "Summer" },
-            { Value: 4, Label: "Fall" },
+            { Value: 4, Label: "Fall" }
         ];
     }
 

@@ -7,9 +7,9 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
-import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
 import { IgxItemLegendModule } from "igniteui-angular-charts/ES5/igx-item-legend-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
 
 import { DoughnutChartExplosionSampleComponent } from "./doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
 import { DoughnutChartLegendComponent } from "./doughnut-chart-legend/doughnut-chart-legend.component";

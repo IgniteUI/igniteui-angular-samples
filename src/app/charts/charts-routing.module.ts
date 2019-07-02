@@ -23,9 +23,8 @@ import { CategoryChartTooltipTypesComponent } from "./category-chart/tooltip-typ
 import { CategoryChartTrendlinesComponent } from "./category-chart/trendline/category-chart-trendlines.component";
 
 // data-chart
-import { DataChartSamplesModule } from "./data-chart/data-chart-samples-module";
-import { DataChartAxisLocationsComponent } from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisAnnotationsComponent } from "./data-chart/data-chart-axis-annotations/data-chart-axis-annotations.component";
+import { DataChartAxisLocationsComponent } from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisSettingsComponent } from "./data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
 import { DataChartAxisSharingComponent } from "./data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
 import { DataChartAxisTypesComponent } from "./data-chart/data-chart-axis-types/data-chart-axis-types.component";
@@ -33,6 +32,7 @@ import { DataChartLegendsComponent } from "./data-chart/data-chart-legends/data-
 import { DataChartNavigationComponent } from "./data-chart/data-chart-navigation/data-chart-navigation.component";
 import { DataChartOverviewComponent } from "./data-chart/data-chart-overview/data-chart-overview.component";
 import { DataChartPerformanceComponent } from "./data-chart/data-chart-performance/data-chart-performance.component";
+import { DataChartSamplesModule } from "./data-chart/data-chart-samples-module";
 import { DataChartSeriesAnimationsComponent } from "./data-chart/data-chart-series-animations/data-chart-series-animations.component";
 import { DataChartSeriesAnnotationsComponent } from "./data-chart/data-chart-series-annotations/data-chart-series-annotations.component";
 import { DataChartSeriesHighlightingComponent } from "./data-chart/data-chart-series-highlighting/data-chart-series-highlighting.component";
