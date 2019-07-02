@@ -16,9 +16,9 @@ import { MapBindingDataJsonPointsComponent } from "../../src/app/maps/geo-map-bi
 import { MapBindingDataModelComponent } from "../../src/app/maps/geo-map-binding-data-model/map-binding-data-model.component";
 import { MapBindingMultipleShapesComponent } from "../../src/app/maps/geo-map-binding-multiple-shapes/map-binding-multiple-shapes.component";
 import { MapBindingMultipleSourcesComponent } from "../../src/app/maps/geo-map-binding-multiple-sources/map-binding-multiple-sources.component";
-import { MapBindingShapefilePointsComponent } from "../../src/app/maps/geo-map-binding-shapefile-points/map-binding-shapefile-points.component";
-import { MapBindingShapefilePolygonsComponent } from "../../src/app/maps/geo-map-binding-shapefile-polygons/map-binding-shapefile-polygons.component";
-import { MapBindingShapefilePolylinesComponent } from "../../src/app/maps/geo-map-binding-shapefile-polylines/map-binding-shapefile-polylines.component";
+import { MapBindingShapefilePointsComponent } from "../../src/app/maps/geo-map-binding-shp-points/map-binding-shp-points.component";
+import { MapBindingShapefilePolygonsComponent } from "../../src/app/maps/geo-map-binding-shp-polygons/map-binding-shp-polygons.component";
+import { MapBindingShapefilePolylinesComponent } from "../../src/app/maps/geo-map-binding-shp-polylines/map-binding-shp-polylines.component";
 import { MapCustomTooltipsComponent } from "../../src/app/maps/geo-map-custom-tooltips/map-custom-tooltips.component";
 import { MapOverviewComponent } from "../../src/app/maps/geo-map-overview/map-overview.component";
 import { MapTypeScatterAreaSeriesComponent } from "../../src/app/maps/geo-map-type-scatter-area-series/map-type-scatter-area-series.component";

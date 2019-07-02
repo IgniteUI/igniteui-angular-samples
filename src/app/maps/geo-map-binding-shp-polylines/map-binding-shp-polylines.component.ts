@@ -5,9 +5,9 @@ import { IgxGeographicPolylineSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
 
 @Component({
-  selector: "app-map-binding-shapefile-polylines",
-  styleUrls: ["./map-binding-shapefile-polylines.component.scss"],
-  templateUrl: "./map-binding-shapefile-polylines.component.html"
+  selector: "app-map-binding-shp-polylines",
+  styleUrls: ["./map-binding-shp-polylines.component.scss"],
+  templateUrl: "./map-binding-shp-polylines.component.html"
 })
 export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
 

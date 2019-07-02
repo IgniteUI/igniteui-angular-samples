@@ -6,9 +6,9 @@ import { IgxGeographicSymbolSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
 
 @Component({
-  selector: "app-map-binding-shapefile-points",
-  styleUrls: ["./map-binding-shapefile-points.component.scss"],
-  templateUrl: "./map-binding-shapefile-points.component.html"
+  selector: "app-map-binding-shp-points",
+  styleUrls: ["./map-binding-shp-points.component.scss"],
+  templateUrl: "./map-binding-shp-points.component.html"
 })
 export class MapBindingShapefilePointsComponent implements AfterViewInit {
 

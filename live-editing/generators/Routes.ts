@@ -8,8 +8,8 @@ import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-
 import { ExcelLibraryModule } from "../../src/app/excel-library/excel-library.module";
 import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
 import { GaugesModule } from "../../src/app/gauges/gauges.module";
-import * as GeoMapRoutingModule from "../../src/app/maps/geo-map-routing.module";
-import { GeoMapSamplesModule } from "../../src/app/maps/geo-map-samples.module";
+import * as GeoMapRouting from "../../src/app/maps/geo-map-routing.module";
+import { GeoMapModule } from "../../src/app/maps/geo-map.module";
 import * as GridCRMRouting from "../../src/app/grid-crm/grid-crm-routing.module";
 import { GridCRMModule } from "../../src/app/grid-crm/grid-crm.module";
 import * as GridFinjsRouting from "../../src/app/grid-finjs/grid-finjs-routing.module";
@@ -73,8 +73,8 @@ export const MODULE_ROUTES = [
         routes: GaugesRouting.gaugesRoutes
     },
     {
-        module: GeoMapSamplesModule,
-        routes: GeoMapRoutingModule.routes
+        module: GeoMapModule,
+        routes: GeoMapRouting.routes
     },
     {
         module: ListsModule,
