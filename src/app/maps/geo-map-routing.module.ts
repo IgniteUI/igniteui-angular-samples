@@ -4,6 +4,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { geoMapRoutesData } from "./geo-map-routes-data";
+import { GeoMapSamplesModule } from "./geo-map-samples.module";
 import { MapBindingDataCsvComponent } from "./geo-map-binding-data-csv/map-binding-data-csv.component";
 import { MapBindingDataJsonPointsComponent } from "./geo-map-binding-data-json-points/map-binding-data-json-points.component";
 import { MapBindingDataModelComponent } from "./geo-map-binding-data-model/map-binding-data-model.component";
@@ -14,8 +16,6 @@ import { MapBindingShapefilePolygonsComponent } from "./geo-map-binding-shapefil
 import { MapBindingShapefilePolylinesComponent } from "./geo-map-binding-shapefile-polylines/map-binding-shapefile-polylines.component";
 import { MapCustomTooltipsComponent } from "./geo-map-custom-tooltips/map-custom-tooltips.component";
 import { MapOverviewComponent } from "./geo-map-overview/map-overview.component";
-import { geoMapRoutesData } from "./geo-map-routes-data";
-import { GeoMapSamplesModule } from "./geo-map-samples.module";
 import { MapTypeScatterAreaSeriesComponent } from "./geo-map-type-scatter-area-series/map-type-scatter-area-series.component";
 import { MapTypeScatterBubbleSeriesComponent } from "./geo-map-type-scatter-bubble-series/map-type-scatter-bubble-series.component";
 import { MapTypeScatterContourSeriesComponent } from "./geo-map-type-scatter-contour-series/map-type-scatter-contour-series.component";
@@ -24,7 +24,26 @@ import { MapTypeScatterSymbolSeriesComponent } from "./geo-map-type-scatter-symb
 import { MapTypeShapePolygonSeriesComponent } from "./geo-map-type-shape-polygon-series/map-type-shape-polygon-series.component";
 import { MapTypeShapePolylineSeriesComponent } from "./geo-map-type-shape-polyline-series/map-type-shape-polyline-series.component";
 
+import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
+import { MapDisplayImageryBingTiles } from "./MapDisplayImageryBingTiles/component";
+import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/component";
+
 export const routes: Routes = [
+    {
+        component: MapDisplayImageryOSM,
+        data: geoMapRoutesData["geo-map-display-osm-imagery"],
+        path: "geo-map-display-osm-imagery"
+    },
+    {
+        component: MapDisplayImageryBingTiles,
+        data: geoMapRoutesData["geo-map-display-bing-imagery"],
+        path: "geo-map-display-bing-imagery"
+    },
+    {
+        component: MapDisplayImageryEsriTiles,
+        data: geoMapRoutesData["geo-map-display-esri-imagery"],
+        path: "geo-map-display-esri-imagery"
+    },
     {
         component: MapTypeScatterSymbolSeriesComponent,
         data: geoMapRoutesData["geo-map-type-scatter-symbol-series"],

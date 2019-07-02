@@ -1,5 +1,6 @@
-// tslint:disable:object-literal-sort-keys
+/* tslint:disable:object-literal-sort-keys */
 // tslint:disable:max-line-length
+// tslint:disable:member-ordering
 
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
@@ -31,6 +32,10 @@ import { MapTypeScatterSymbolSeriesComponent } from "./geo-map-type-scatter-symb
 import { MapTypeShapePolygonSeriesComponent } from "./geo-map-type-shape-polygon-series/map-type-shape-polygon-series.component";
 import { MapTypeShapePolylineSeriesComponent } from "./geo-map-type-shape-polyline-series/map-type-shape-polyline-series.component";
 
+import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
+import { MapDisplayImageryBingTiles } from "./MapDisplayImageryBingTiles/component";
+import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/component";
+
 @NgModule({
     declarations: [
         MapBindingDataCsvComponent,
@@ -49,8 +54,11 @@ import { MapTypeShapePolylineSeriesComponent } from "./geo-map-type-shape-polyli
         MapTypeShapePolylineSeriesComponent,
         MapBindingShapefilePolygonsComponent,
         MapBindingShapefilePolylinesComponent,
-        MapBindingShapefilePointsComponent
-        ],
+        MapBindingShapefilePointsComponent,
+        MapDisplayImageryOSM,
+        MapDisplayImageryBingTiles,
+        MapDisplayImageryEsriTiles
+    ],
     imports: [
         CommonModule,
         FormsModule,
