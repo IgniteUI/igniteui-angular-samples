@@ -16,13 +16,20 @@ class LiveEditingManager {
         fs.mkdirSync(ASSETS_SAMPLES_DIR);
         fs.mkdirSync(ASSETS_SAMPLES_CSS_SUPPORT_DIR);
 
-        console.log("Live-Editing... CSS with logs:");
-        this._run(StyleSyntax.CSS, false);
-        console.log("Live-Editing... SASS without logs:");
-        this._run(StyleSyntax.Sass, false);
+        this.generate(StyleSyntax.CSS, false);
+        this.generate(StyleSyntax.Sass, false);
     }
 
-    public _run(styleSyntax: StyleSyntax, showLogs?: boolean) {
+    private generate(styleSyntax: StyleSyntax, showLogs?: boolean) {
+
+        let logInfo = "";
+        if (styleSyntax === StyleSyntax.CSS) {
+            logInfo = "CSS syntax"
+        } else {
+            logInfo = "Sass syntax"
+        }
+        console.log("Live-Editing... " + logInfo);
+
         new SharedAssetsGenerator(styleSyntax, showLogs).generateSharedAssets();
         new SampleAssetsGenerator(styleSyntax, showLogs).generateSamplesAssets();
         new MetaDataGenerator(styleSyntax).Generate();

@@ -49,6 +49,14 @@ const CHARTS_DEPENDENCIES = [
     "tslib"
 ];
 
+const MAPS_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-core",
+    "igniteui-angular-charts",
+    "igniteui-angular-maps",
+    "tslib"
+];
+
 const GAUGES_DEPENDENCIES = [
     "@angular/animations",
     "igniteui-angular-core",
@@ -63,19 +71,33 @@ const EXCEL_DEPENDENCIES = [
     "tslib"
 ];
 
+const SPREAD_DEPENDENCIES = [
+    "@angular/animations",
+    "igniteui-angular-core",
+    "igniteui-angular-excel",
+    "igniteui-angular-spreadsheet",
+    "igniteui-angular-spreadsheet-chart-adapter",
+    "tslib"
+];
+
 const EXACT_VERSION_PACKAGES = [
     "igniteui-angular",
     "igniteui-angular-core",
     "igniteui-angular-charts",
     "igniteui-angular-gauges",
-    "igniteui-angular-excel"
+    "igniteui-angular-excel",
+    "igniteui-angular-maps",
+    "igniteui-angular-spreadsheet",
+    "igniteui-angular-spreadsheet-chart-adapter"
 ];
 
 export class DependencyResolver {
     private _defaultDependencies: Set<string>;
     private _chartsDependencies: Set<string>;
+    private _mapsDependencies: Set<string>;
     private _gaugesDependencies: Set<string>;
     private _excelDependencies: Set<string>;
+    private _spreadsheetDependencies: Set<string>;
     private _packageFileDependencies;
     private _specificVersionPackages: Set<string>;
 
@@ -88,6 +110,10 @@ export class DependencyResolver {
         SHARED_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
         CHARTS_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
 
+        this._mapsDependencies = new Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
+        MAPS_DEPENDENCIES.forEach((d) => this._mapsDependencies.add(d));
+
         this._gaugesDependencies = new Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
         GAUGES_DEPENDENCIES.forEach((d) => this._gaugesDependencies.add(d));
@@ -95,6 +121,10 @@ export class DependencyResolver {
         this._excelDependencies = new Set<string>();
         SHARED_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
         EXCEL_DEPENDENCIES.forEach((d) => this._excelDependencies.add(d));
+
+        this._spreadsheetDependencies = new Set<string>();
+        SHARED_DEPENDENCIES.forEach((d) => this._spreadsheetDependencies.add(d));
+        SPREAD_DEPENDENCIES.forEach((d) => this._spreadsheetDependencies.add(d));
 
         let packageFile = JSON.parse(fs.readFileSync(PACKAGES_CONFIG_PATH, "utf8"));
         this._packageFileDependencies = packageFile.dependencies;
@@ -120,6 +150,12 @@ export class DependencyResolver {
                 break;
             case DependenciesType.Excel:
                 dependencies = new Set<string>(this._excelDependencies);
+                break;
+            case DependenciesType.Spreadsheet:
+                dependencies = new Set<string>(this._spreadsheetDependencies);
+                break;
+            case DependenciesType.Maps:
+                dependencies = new Set<string>(this._mapsDependencies);
                 break;
             default:
                 throw new Error("Unrecognized dependency type.");
