@@ -1,0 +1,23 @@
+USGS Earthquake feed from Factual.com
+
+Live feed of earthquake data from around the globe. Data includes: date, lat/long, magnitude, depth, and region. Data originally from USGS and loaded into Factual.com
+
+Attributes:
+lon: Longitude - 
+eqid: ID - 
+region: Region - 
+depth: Depth - 
+nst: Nst - 
+src: Src - 
+version: Version - 
+magnitude: Magnitude - 
+lat: Latitude - 
+datetime: date time - 
+
+exported on Tue Jun 28 07:10:59 -0400 2011
+
+
+http://geocommons.com/overlays/68294
+
+
+feed_from_factual.com
