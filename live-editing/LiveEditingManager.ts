@@ -18,6 +18,9 @@ class LiveEditingManager {
 
         this.generate(StyleSyntax.CSS, false);
         this.generate(StyleSyntax.Sass, false);
+
+        console.log("-----------------------------------------------------");
+        console.log("Live-Editing - output folder: " + ASSETS_SAMPLES_DIR);
     }
 
     private generate(styleSyntax: StyleSyntax, showLogs?: boolean) {
@@ -28,7 +31,8 @@ class LiveEditingManager {
         } else {
             logInfo = "Sass syntax"
         }
-        console.log("Live-Editing... " + logInfo);
+        console.log("-----------------------------------------------------");
+        console.log("Live-Editing - with " + logInfo);
 
         new SharedAssetsGenerator(styleSyntax, showLogs).generateSharedAssets();
         new SampleAssetsGenerator(styleSyntax, showLogs).generateSamplesAssets();

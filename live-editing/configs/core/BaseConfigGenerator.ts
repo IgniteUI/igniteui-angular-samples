@@ -19,28 +19,45 @@ export abstract class BaseConfigGenerator implements IConfigGenerator {
         this.componentPathBy = componentPathBy;
     }
 
-    public getConfig(component: Type<any>, modules: any[], dataSources?: any[], dataPaths?: string[]) {
+    /* for example:
+    getConfig(DataChartAxisSettingsComponent,
+              [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule, IgxNumberAbbreviatorModule],
+              [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]
+    )); */
+    public getConfig(
+        mainComponent: Type<any>, modules: any[], dataSources?: any[], dataPaths?: string[],
+        otherComponents?: Array<Type<any>>) {
+
         const imports: any[] = [];
-        imports.push(component);  // add sample component for importing
+        imports.push(mainComponent); // add sample component for importing
         for (const m of modules) {
             imports.push(m); // add modules for importing
         }
         // add optional data sources
-        if (dataSources !== undefined &&
-            dataSources !== null &&
-            dataSources.length > 0) {
-            for (const ds of dataSources) {
-                imports.push(ds);
+        // if (dataSources !== undefined &&
+        //     dataSources !== null &&
+        //     dataSources.length > 0) {
+        //     for (const ds of dataSources) {
+        //         imports.push(ds);
+        //     }
+        // }
+
+        const declarations = [ mainComponent ];
+        if (otherComponents !== undefined &&
+            otherComponents.length > 0) {
+            for (const comp of otherComponents) {
+                declarations.push(comp);
             }
         }
 
         const fields = {
             additionalFiles: dataPaths,
-            component: component,
+            component: mainComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: imports,
-                ngDeclarations: [component],
-                ngImports: modules
+                ngDeclarations: declarations,
+                ngImports: modules,
+                ngProviders: dataSources
             }),
             dependenciesType: this.dependenciesType,
             shortenComponentPathBy: this.componentPathBy

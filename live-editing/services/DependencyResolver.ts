@@ -111,7 +111,7 @@ export class DependencyResolver {
         CHARTS_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
 
         this._mapsDependencies = new Set<string>();
-        SHARED_DEPENDENCIES.forEach((d) => this._chartsDependencies.add(d));
+        SHARED_DEPENDENCIES.forEach((d) => this._mapsDependencies.add(d));
         MAPS_DEPENDENCIES.forEach((d) => this._mapsDependencies.add(d));
 
         this._gaugesDependencies = new Set<string>();

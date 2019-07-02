@@ -274,6 +274,7 @@ export class SampleAssetsGenerator extends Generator {
 
         let ngProviders = "";
         if (config.appModuleConfig.ngProviders !== undefined &&
+            config.appModuleConfig.ngProviders !== null &&
             config.appModuleConfig.ngProviders.length > 0) {
             let appModuleNgProviders: string[] = config.appModuleConfig.ngProviders
                 .map((p) => p as Type<any>).map((p) => p.name);
