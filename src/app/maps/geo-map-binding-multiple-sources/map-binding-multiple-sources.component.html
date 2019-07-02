@@ -1,27 +1,22 @@
-<div className="sampleRoot" >
-    <igx-geographic-map #map
-        width="700px"
-        height="500px"
-        zoomable="true" >
-    </igx-geographic-map>
-</div>
-<div class="my-legend">
-    <div class="legend-title">Geographic Map: Binding Multiple Sources</div>
-   
-</div>
+<igx-geographic-map #map
+    width="100%"
+    height="calc(100% - 60px)"
+    zoomable="true" >
+</igx-geographic-map>
+
 <ng-template let-series="series" let-item="item" #polylineTooltipTemplate>
         <div>
             <span>
                 Arrival: {{item.origin.country}}
-            </span> 
+            </span>
             <br/>
             <span>
                    Destination: {{item.dest.country}}
             </span>
-            <br/> 
+            <br/>
             <span>
                     Distance: {{item.distance}} miles
-            </span> 
+            </span>
         </div>
     </ng-template>
 
@@ -38,7 +33,7 @@
             <span>
             Population: {{item.pop}} M
             </span>
-            <br/> 
+            <br/>
             <span>
                     Flights: {{item.flights}}
             </span>

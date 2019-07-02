@@ -1,12 +1,9 @@
-<div className="sampleRoot" >
-   
-        <igx-geographic-map #map           
-            width="700px"
-            height="500px"
-            zoomable="true"
-            >
-        </igx-geographic-map>
-</div>
+<igx-geographic-map #map
+    width="100%"
+    height="calc(100% - 60px)"
+    zoomable="true" >
+</igx-geographic-map>
+<!--
 <div class="my-legend">
     <div class="legend-title">Geographic Map: Polygon Series</div>
     <div class="legend-scale">
@@ -16,22 +13,22 @@
         <li><span style="background:rgb(14, 194, 14)"></span>Africa</li>
         </ul>
     </div>
-</div>
+</div> -->
 
 <ng-template let-series="series" let-item="item" #template>
     <div>
         <div *ngIf="item.org;then hasOrg; else notOrg" ></div>
         <span [style.color]="series.brush">
-            {{item.name}} 
+            {{item.name}}
         </span>
         <span>
-            {{item.pop}} M 
+            {{item.pop}} M
         </span>
     </div>
     <ng-template #hasOrg>
         <span>
             {{item.org}}
-        </span>   
+        </span>
         <br />
     </ng-template>
      <ng-template #notOrg>
