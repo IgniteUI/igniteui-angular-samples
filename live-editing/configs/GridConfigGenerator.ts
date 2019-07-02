@@ -74,6 +74,8 @@ import {
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 
 // tslint:disable-next-line: max-line-length
+import { GridMultiCellSelectionStyleComponent } from "../../src/app/grid/grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
+// tslint:disable-next-line:max-line-length
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
 import {
     GridMultiRowLayoutConfigurationComponent
@@ -552,12 +554,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: GridMultiCellSelectionComponent,
+            component: GridMultiCellSelectionStyleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridMultiCellSelectionComponent, IgxGridModule, IgxToastModule],
-                ngDeclarations: [GridMultiCellSelectionComponent],
-                ngImports: [IgxGridModule, IgxToastModule]
+                imports: [GridMultiCellSelectionStyleComponent, IgxGridModule],
+                ngDeclarations: [GridMultiCellSelectionStyleComponent],
+                ngImports: [IgxGridModule]
             })
         }));
 

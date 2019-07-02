@@ -70,6 +70,8 @@ import {
     TreeGridLoadOnDemandSampleComponent
 } from "./tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
 // tslint:disable-next-line: max-line-length
+import { TreeGridMultiCellSelectionStyleComponent } from "./tree-grid-multi-cell-selection-style/tree-grid-multi-cell-selection-style.component";
+// tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
     TreeGridMultiColumnHeaderTemplateSampleComponent
@@ -157,6 +159,7 @@ import {
         TreeGridExcelStyleFilteringSample3Component,
         TreeGridRemoteFilteringSampleComponent,
         TreeGridMultiCellSelectionComponent,
+        TreeGridMultiCellSelectionStyleComponent,
         TreeGridLoadOnDemandSampleComponent,
         TreeGridRowDrag,
         TreeGridRowDragBase,
