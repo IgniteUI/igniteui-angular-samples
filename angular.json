@@ -47,7 +47,10 @@
             },
             "es5": {
               "tsConfig": "src/tsconfig-es5.app.json"
-            }
+            },
+            "es2015": {
+                "tsConfig": "src/tsconfig-es2015.app.json"
+              }
           }
         },
         "serve": {
@@ -61,6 +64,9 @@
             },
             "es5": {
               "browserTarget": "my-app:build:es5"
+            },
+            "es2015": {
+                "browserTarget": "my-app:build:es2015"
             }
           }
         },
