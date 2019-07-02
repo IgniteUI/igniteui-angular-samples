@@ -5,9 +5,9 @@ import { IgxGeographicShapeSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-shape-series-component";
 
 @Component({
-  selector: "app-map-binding-shapefile-polygons",
-  styleUrls: ["./map-binding-shapefile-polygons.component.scss"],
-  templateUrl: "./map-binding-shapefile-polygons.component.html"
+  selector: "app-map-binding-shp-polygons",
+  styleUrls: ["./map-binding-shp-polygons.component.scss"],
+  templateUrl: "./map-binding-shp-polygons.component.html"
 })
 export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
 
@@ -22,11 +22,11 @@ export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-      const sds = new ShapeDataSource();
-      sds.shapefileSource = "assets/Shapes/WorldCountries.shp";
-      sds.databaseSource  = "assets/Shapes/WorldCountries.dbf";
-      sds.dataBind();
-      sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
+        const sds = new ShapeDataSource();
+        sds.shapefileSource = "assets/Shapes/WorldCountries.shp";
+        sds.databaseSource  = "assets/Shapes/WorldCountries.dbf";
+        sds.dataBind();
+        sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
     }
 
     public onDataLoaded(sds: ShapeDataSource, e: any) {
