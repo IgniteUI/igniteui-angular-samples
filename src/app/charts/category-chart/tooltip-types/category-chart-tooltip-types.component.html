@@ -1,7 +1,7 @@
 <div class="sample-wrapper container">
     <div class="options">
         <span>Tooltips Type:</span>
-        <select [(ngModel)]="toolTipType">            
+        <select [(ngModel)]="toolTipType">
             <option>Category</option>
             <option>Default</option>
         </select>
@@ -10,7 +10,7 @@
     <div class="chart">
         <igx-category-chart
             #chart
-            height="98%" width="100%"
+            height="calc(100% - 60px)" width="100%"
             [dataSource]="olympicData"
             [toolTipType]="toolTipType"
             chartType="Column"
