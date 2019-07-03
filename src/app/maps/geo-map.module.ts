@@ -37,6 +37,7 @@ import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/compone
 import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
 
 import { GeoMapRoutingModule } from "./geo-map-routing.module";
+import { MapDisplayImageryHeatTilesComponent } from './geo-map-display-imagery-heat-tiles/map-display-imagery-heat-tiles.component';
 
 @NgModule({
     declarations: [
@@ -59,7 +60,8 @@ import { GeoMapRoutingModule } from "./geo-map-routing.module";
         MapTypeScatterDensitySeriesComponent,
         MapTypeScatterSymbolSeriesComponent,
         MapTypeShapePolygonSeriesComponent,
-        MapTypeShapePolylineSeriesComponent
+        MapTypeShapePolylineSeriesComponent,
+        MapDisplayImageryHeatTilesComponent
     ],
     imports: [
         CommonModule,
