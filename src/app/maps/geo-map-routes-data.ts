@@ -22,5 +22,6 @@ export const geoMapRoutesData = {
     "geo-map-type-scatter-density-series": { displayName: "Scatter Density Series", parentName: "Geo Map" },
     "geo-map-type-scatter-symbol-series": { displayName: "Scatter Symbol Series", parentName: "Geo Map" },
     "geo-map-type-shape-polygon-series": { displayName: "Shape Polygon Series", parentName: "Geo Map" },
-    "geo-map-type-shape-polyline-series": { displayName: "Shape Polyline Series", parentName: "Geo Map" }
+    "geo-map-type-shape-polyline-series": { displayName: "Shape Polyline Series", parentName: "Geo Map" },
+    "geo-map-display-heat-imagery" : { displayName: "Display Heat Tiles", parentName: "Geo Map" }
 };
