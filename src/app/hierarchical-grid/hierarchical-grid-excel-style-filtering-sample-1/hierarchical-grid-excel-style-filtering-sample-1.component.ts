@@ -41,6 +41,8 @@ export class HGridExcelStyleFilteringSample1Component implements OnInit {
         ];
     }
 
+    public formatter = (a) => a;
+
     public selectDensity(event) {
         this.density = this.displayDensities[event.index].label;
         this.hierarchicalGrid.displayDensity = this.displayDensities[event.index].label;

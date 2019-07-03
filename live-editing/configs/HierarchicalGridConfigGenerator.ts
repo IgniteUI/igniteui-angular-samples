@@ -66,7 +66,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts",
-                "/src/app/hierarchical-grid/singer.model.ts"],
+                "/src/app/hierarchical-grid/models.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridEditingSampleComponent, IgxDialogModule,
                     IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule],
@@ -89,7 +89,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts",
-                "/src/app/hierarchical-grid/singer.model.ts",
+                "/src/app/hierarchical-grid/models.ts",
                 "/src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridBatchEditingSampleComponent,

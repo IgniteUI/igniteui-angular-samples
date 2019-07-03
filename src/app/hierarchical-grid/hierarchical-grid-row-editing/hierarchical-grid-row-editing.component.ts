@@ -21,4 +21,5 @@ export class HGridRowEditingSampleComponent implements OnInit {
 
     }
 
+    public formatter = (a) => a;
 }

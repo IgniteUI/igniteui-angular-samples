@@ -32,6 +32,8 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     }
 
+    public formatter = (a) => a;
+
     public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         let operand = null;
         switch (column.dataType) {

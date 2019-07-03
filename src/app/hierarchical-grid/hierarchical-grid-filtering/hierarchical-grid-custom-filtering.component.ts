@@ -21,6 +21,8 @@ export class HGridCustomFilteringSampleComponent implements OnInit {
     }
     public ngOnInit(): void {
     }
+
+    public formatter = (a) => a;
 }
 
 export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
