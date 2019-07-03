@@ -25,7 +25,7 @@ export abstract class BaseConfigGenerator implements IConfigGenerator {
               [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]
     )); */
     public getConfig(
-        mainComponent: Type<any>, modules: any[], dataSources?: any[], dataPaths?: string[],
+        mainComponent: Type<any>, modules: any[], services?: any[], additionalFilesPaths?: string[],
         otherComponents?: Array<Type<any>>) {
 
         const imports: any[] = [];
@@ -33,14 +33,14 @@ export abstract class BaseConfigGenerator implements IConfigGenerator {
         for (const m of modules) {
             imports.push(m); // add modules for importing
         }
-        // add optional data sources
-        // if (dataSources !== undefined &&
-        //     dataSources !== null &&
-        //     dataSources.length > 0) {
-        //     for (const ds of dataSources) {
-        //         imports.push(ds);
-        //     }
-        // }
+        // add optional services to the app-module.ts imports
+        if (services !== undefined &&
+            services !== null &&
+            services.length > 0) {
+            for (const s of services) {
+                imports.push(s);
+            }
+        }
 
         const declarations = [ mainComponent ];
         if (otherComponents !== undefined &&
@@ -51,13 +51,13 @@ export abstract class BaseConfigGenerator implements IConfigGenerator {
         }
 
         const fields = {
-            additionalFiles: dataPaths,
+            additionalFiles: additionalFilesPaths,
             component: mainComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: imports,
                 ngDeclarations: declarations,
                 ngImports: modules,
-                ngProviders: dataSources
+                ngProviders: services
             }),
             dependenciesType: this.dependenciesType,
             shortenComponentPathBy: this.componentPathBy
