@@ -33,7 +33,7 @@ export abstract class BaseConfigGenerator implements IConfigGenerator {
         for (const m of modules) {
             imports.push(m); // add modules for importing
         }
-        // add optional data sources
+        // add optional services to the app-module.ts imports
         if (services !== undefined &&
             services !== null &&
             services.length > 0) {
