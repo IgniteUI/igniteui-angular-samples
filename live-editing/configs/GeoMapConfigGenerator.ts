@@ -5,12 +5,6 @@
 // tslint:disable:prefer-const
 import { IgxGeographicMapModule } from "igniteui-angular-maps/ES5/igx-geographic-map-module";
 
-import { WorldUtility } from "../../src/app/utilities/WorldUtility";
-import { WorldConnections } from "../../src/app/utilities/WorldConnections";
-import { WorldLocations } from "../../src/app/utilities/WorldLocations";
-import { MapUtility } from "../../src/app/utilities/MapUtility";
-import { EsriUtility, EsriStyle } from "../../src/app/utilities/EsriUtility";
-
 import { MapBindingDataCsvComponent } from "../../src/app/maps/geo-map-binding-data-csv/map-binding-data-csv.component";
 import { MapBindingDataJsonPointsComponent } from "../../src/app/maps/geo-map-binding-data-json-points/map-binding-data-json-points.component";
 import { MapBindingDataModelComponent } from "../../src/app/maps/geo-map-binding-data-model/map-binding-data-model.component";
@@ -29,13 +23,13 @@ import { MapTypeScatterSymbolSeriesComponent } from "../../src/app/maps/geo-map-
 import { MapTypeShapePolygonSeriesComponent } from "../../src/app/maps/geo-map-type-shape-polygon-series/map-type-shape-polygon-series.component";
 import { MapTypeShapePolylineSeriesComponent } from "../../src/app/maps/geo-map-type-shape-polyline-series/map-type-shape-polyline-series.component";
 
-import { MapDisplayImageryOSM } from "../../src/app/maps/MapDisplayImageryOSM/component";
 import { MapDisplayImageryBingTiles } from "../../src/app/maps/MapDisplayImageryBingTiles/component";
 import { MapDisplayImageryEsriTiles } from "../../src/app/maps/MapDisplayImageryEsriTiles/component";
+import { MapDisplayImageryOSM } from "../../src/app/maps/MapDisplayImageryOSM/component";
 
-import { Config } from "./core/Config";
 import { DependenciesType } from "../services/DependenciesType";
 import { BaseConfigGenerator } from "./core/BaseConfigGenerator";
+import { Config } from "./core/Config";
 
 export class GeoMapConfigGenerator extends BaseConfigGenerator {
 
@@ -88,8 +82,8 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
              "/src/assets/Shapes/WorldTemperatures.dbf"]));
         configs.push(this.getConfig(
             MapTypeScatterSymbolSeriesComponent,
-            [IgxGeographicMapModule],
-            [WorldLocations], ["/src/app/utilities/WorldLocations.ts"]));
+            [IgxGeographicMapModule], null,
+            ["/src/app/utilities/WorldLocations.ts"]));
         configs.push(this.getConfig(
             MapTypeShapePolygonSeriesComponent,
             [IgxGeographicMapModule], null,
@@ -104,7 +98,8 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             MapTypeScatterDensitySeriesComponent,
             [IgxGeographicMapModule], null,
-            ["/src/assets/Data/AusPlaces.json"]));
+            ["/src/assets/Data/AusPlaces.json",
+             "/src/app/utilities/WorldUtility.ts"]));
 
         configs.push(this.getConfig(
             MapOverviewComponent,
@@ -116,8 +111,10 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
 
         configs.push(this.getConfig(
             MapBindingMultipleSourcesComponent,
-            [IgxGeographicMapModule],
-            [WorldConnections], ["/src/app/utilities/WorldConnections.ts"]));
+            [IgxGeographicMapModule], null,
+            ["/src/app/utilities/WorldConnections.ts",
+             "/src/app/utilities/WorldLocations.ts",
+             "/src/app/utilities/WorldUtility.ts"]));
 
         configs.push(this.getConfig(
             MapBindingDataCsvComponent,
@@ -131,20 +128,20 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
 
         configs.push(this.getConfig(
             MapBindingDataModelComponent,
-            [IgxGeographicMapModule],
-            [WorldUtility], ["/src/app/utilities/WorldUtility.ts"]));
+            [IgxGeographicMapModule], null,
+            ["/src/app/utilities/WorldUtility.ts"]));
 
         configs.push(this.getConfig(
             MapDisplayImageryOSM,
             [IgxGeographicMapModule]));
         configs.push(this.getConfig(
             MapDisplayImageryBingTiles,
-            [IgxGeographicMapModule],
-            [MapUtility], ["/src/app/utilities/MapUtility.ts"]));
+            [IgxGeographicMapModule], null,
+            ["/src/app/utilities/MapUtility.ts"]));
         configs.push(this.getConfig(
             MapDisplayImageryEsriTiles,
-            [IgxGeographicMapModule],
-            [EsriUtility], ["/src/app/utilities/EsriUtility.ts"]));
+            [IgxGeographicMapModule], null,
+            ["/src/app/utilities/EsriUtility.ts"]));
 
         return configs;
     }
