@@ -13,6 +13,7 @@ import { MapBindingShapefilePointsComponent } from "./geo-map-binding-shp-points
 import { MapBindingShapefilePolygonsComponent } from "./geo-map-binding-shp-polygons/map-binding-shp-polygons.component";
 import { MapBindingShapefilePolylinesComponent } from "./geo-map-binding-shp-polylines/map-binding-shp-polylines.component";
 import { MapCustomTooltipsComponent } from "./geo-map-custom-tooltips/map-custom-tooltips.component";
+import { MapDisplayImageryHeatTilesComponent } from "./geo-map-display-imagery-heat-tiles/map-display-imagery-heat-tiles.component";
 import { MapOverviewComponent } from "./geo-map-overview/map-overview.component";
 import { MapTypeScatterAreaSeriesComponent } from "./geo-map-type-scatter-area-series/map-type-scatter-area-series.component";
 import { MapTypeScatterBubbleSeriesComponent } from "./geo-map-type-scatter-bubble-series/map-type-scatter-bubble-series.component";
@@ -24,6 +25,7 @@ import { MapTypeShapePolylineSeriesComponent } from "./geo-map-type-shape-polyli
 import { MapDisplayImageryBingTiles } from "./MapDisplayImageryBingTiles/component";
 import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/component";
 import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
+
 
 export const routes: Routes = [
     {
@@ -40,6 +42,11 @@ export const routes: Routes = [
         component: MapDisplayImageryOSM,
         data: geoMapRoutesData["geo-map-display-osm-imagery"],
         path: "geo-map-display-osm-imagery"
+    },
+    {
+        component: MapDisplayImageryHeatTilesComponent,
+        data: geoMapRoutesData["geo-map-display-heat-imagery"],
+        path: "geo-map-display-heat-imagery"
     },
     {
         component: MapBindingDataCsvComponent,

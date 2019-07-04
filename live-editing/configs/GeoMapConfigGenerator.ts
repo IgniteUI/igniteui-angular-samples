@@ -74,7 +74,8 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
             MapTypeScatterBubbleSeriesComponent,
             [IgxGeographicMapModule], null,
             ["/src/assets/Shapes/WorldTemperatures.shp",
-             "/src/assets/Shapes/WorldTemperatures.dbf"]));
+             "/src/assets/Shapes/WorldTemperatures.dbf",
+             "/src/app/utilities/WorldLocations.ts"]));
         configs.push(this.getConfig(
             MapTypeScatterContourSeriesComponent,
             [IgxGeographicMapModule], null,
