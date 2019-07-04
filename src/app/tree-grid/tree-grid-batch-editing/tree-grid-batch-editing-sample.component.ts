@@ -32,23 +32,23 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
             { Salary: 3500, employeeID: 2, PID: -1, firstName: "Jonathan", lastName: "Smith", Title: "Human resources" },
             { Salary: 1500, employeeID: 3, PID: -1, firstName: "Nancy", lastName: "Davolio", Title: "CFO" },
             { Salary: 2500, employeeID: 4, PID: -1, firstName: "Steven", lastName: "Buchanan", Title: "CTO" },
-            // sub of ID 0
+            // sub of ID 1
             { Salary: 2500, employeeID: 5, PID: 1, firstName: "Janet", lastName: "Leverling", Title: "Sales Manager" },
             { Salary: 3500, employeeID: 6, PID: 1, firstName: "Laura", lastName: "Callahan", Title: "Inside Sales Coordinator" },
             { Salary: 1500, employeeID: 7, PID: 1, firstName: "Margaret", lastName: "Peacock", Title: "Sales Representative" },
             { Salary: 2500, employeeID: 8, PID: 1, firstName: "Michael", lastName: "Suyama", Title: "Sales Representative" },
-            // sub of ID 4
+            // sub of ID 5
             { Salary: 2500, employeeID: 9, PID: 5, firstName: "Anne", lastName: "Dodsworth", Title: "Sales Representative" },
             { Salary: 3500, employeeID: 10, PID: 5, firstName: "Danielle", lastName: "Davis", Title: "Sales Representative" },
             { Salary: 1500, employeeID: 11, PID: 5, firstName: "Robert", lastName: "King", Title: "Sales Representative" },
-            // sub of ID 2
+            // sub of ID 3
             { Salary: 2500, employeeID: 12, PID: 3, firstName: "Peter", lastName: "Lewis", Title: "Chief Accountant" },
             { Salary: 3500, employeeID: 13, PID: 3, firstName: "Ryder", lastName: "Zenaida", Title: "Accountant" },
             { Salary: 1500, employeeID: 14, PID: 3, firstName: "Wang", lastName: "Mercedes", Title: "Accountant" },
-            // sub of ID 3
+            // sub of ID 4
             { Salary: 1500, employeeID: 15, PID: 4, firstName: "Theodore", lastName: "Zia", Title: "Software Architect" },
             { Salary: 4500, employeeID: 16, PID: 4, firstName: "Lacota", lastName: "Mufutau", Title: "Product Manager" },
-            // sub of ID 16
+            // sub of ID 17
             { Salary: 2500, employeeID: 17, PID: 16, firstName: "Jin", lastName: "Elliott", Title: "Product Owner" },
             { Salary: 3500, employeeID: 18, PID: 16, firstName: "Armand", lastName: "Ross", Title: "Product Owner" },
             { Salary: 1500, employeeID: 19, PID: 16, firstName: "Dane", lastName: "Rodriquez", Title: "Team Leader" },
@@ -57,7 +57,7 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
             { Salary: 3500, employeeID: 21, PID: 19, firstName: "Bernard", lastName: "Jarvis", Title: "Senior Software Developer" },
             { Salary: 1500, employeeID: 22, PID: 19, firstName: "Jason", lastName: "Clark", Title: "QA" },
             { Salary: 1500, employeeID: 23, PID: 19, firstName: "Mark", lastName: "Young", Title: "QA" },
-            // sub of ID 20
+            // sub of ID 21
             { Salary: 1500, employeeID: 24, PID: 21, firstName: "Jeremy", lastName: "Donaldson", Title: "Software Developer" }
         ];
         this.transactionsData = this.treeGrid.transactions.getAggregatedChanges(true);
