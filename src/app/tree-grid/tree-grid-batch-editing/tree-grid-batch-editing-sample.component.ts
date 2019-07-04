@@ -46,9 +46,7 @@ export class TreeGridBatchEditingSampleComponent implements OnInit {
             ParentID: -1,
             Title: "Junior Sales Representative"
         };
-        this.treeGrid.addRow({
-            addedData
-        });
+        this.treeGrid.addRow(addedData);
     }
 
     public addChildRow(id) {
