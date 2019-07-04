@@ -1,6 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
+// tslint:disable:object-literal-shorthand
 // tslint:disable:max-line-length
+// tslint:disable:member-ordering
+// tslint:disable:prefer-const
 import { IgxFinancialChartModule } from "igniteui-angular-charts/ES5/igx-financial-chart-module";
+
 import { FinancialChartAnnotationsComponent } from "../../src/app/charts/financial-chart/annotations/financial-chart-annotations.component";
 import { FinancialChartAxisTypesComponent } from "../../src/app/charts/financial-chart/axis-types/financial-chart-axis-types.component";
 import { FinancialChartCustomIndicatorsComponent } from "../../src/app/charts/financial-chart/custom-indicators/financial-chart-custom-indicators.component";
@@ -20,197 +24,104 @@ import { FinancialChartTooltipTemplateComponent} from "../../src/app/charts/fina
 import { FinancialChartTooltipTypesComponent} from "../../src/app/charts/financial-chart/tooltip-types/financial-chart-tooltip-types.component";
 import { FinancialChartTrendlinesComponent} from "../../src/app/charts/financial-chart/trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent} from "../../src/app/charts/financial-chart/volume-type/financial-chart-volume-type.component";
-import { DependenciesType } from "../services/DependenciesType";
-import { AppModuleConfig } from "./core/AppModuleConfig";
-import { Config } from "./core/Config";
-import { IConfigGenerator } from "./core/IConfigGenerator";
-// tslint:enable:max-line-length
+import { FinancialChartMultipleFeedsComponent } from "../../src/app/charts/financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
+import { FinancialChartTimeBasedDataComponent } from "../../src/app/charts/financial-chart/time-based-data/financial-chart-time-based-data.component";
 
-export class FinancialChartConfigGenerator implements IConfigGenerator {
+import { DependenciesType } from "../services/DependenciesType";
+import { Config } from "./core/Config";
+import { BaseConfigGenerator } from "./core/BaseConfigGenerator";
+
+export class FinancialChartConfigGenerator extends BaseConfigGenerator {
+
+    constructor() {
+        super(DependenciesType.Charts, "/charts/financial-chart/");
+    }
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        configs.push(new Config({
-            component: FinancialChartTooltipTemplateComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartTooltipTemplateComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartTooltipTemplateComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartTooltipTemplateComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartTooltipTypesComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartTooltipTypesComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartTooltipTypesComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartTooltipTypesComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartAnnotationsComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartAnnotationsComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartAnnotationsComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartAnnotationsComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartMultipleDataComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartMultipleDataComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartMultipleDataComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartMultipleDataComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartOverviewComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartOverviewComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartOverviewComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartOverviewComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartPanesComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/stock-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartPanesComponent, StockDataService],
-                ngDeclarations: [FinancialChartPanesComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartPanesComponent,
+            [IgxFinancialChartModule],
+            [StockDataService], ["/src/app/charts/financial-chart/services/stock-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartPerformanceComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/generate-ohlc-prices.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartPerformanceComponent, GenerateOhlcPricesService],
-                ngDeclarations: [FinancialChartPerformanceComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartPerformanceComponent,
+            [IgxFinancialChartModule],
+            [GenerateOhlcPricesService], ["/src/app/charts/financial-chart/services/generate-ohlc-prices.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartTitlesComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/stock-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartTitlesComponent, StockDataService],
-                ngDeclarations: [FinancialChartTitlesComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartTitlesComponent,
+            [IgxFinancialChartModule],
+            [StockDataService], ["/src/app/charts/financial-chart/services/stock-data.service.ts"]));
 
-        ///////////////////////////////////////////////////////////////////////////////////////
+        configs.push(this.getConfig(
+            FinancialChartAxisTypesComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartAxisTypesComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartAxisTypesComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartAxisTypesComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartCustomIndicatorsComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartCustomIndicatorsComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartCustomIndicatorsComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartCustomIndicatorsComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartHighFrequencyComponent,
+            [IgxFinancialChartModule]));
 
-        configs.push(new Config({
-            component: FinancialChartHighFrequencyComponent,
-            additionalFiles: [],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartHighFrequencyComponent],
-                ngDeclarations: [FinancialChartHighFrequencyComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartHighVolumeComponent,
+            [IgxFinancialChartModule],
+            [GenerateHourlyPricesService], ["/src/app/charts/financial-chart/services/generate-hourly-prices.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartHighVolumeComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/generate-hourly-prices.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartHighVolumeComponent, GenerateHourlyPricesService],
-                ngDeclarations: [FinancialChartHighVolumeComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartIndicatorTypesComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartIndicatorTypesComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartIndicatorTypesComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartIndicatorTypesComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartTrendlinesComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartTrendlinesComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartTrendlinesComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartTrendlinesComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartVolumeTypeComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
-        configs.push(new Config({
-            component: FinancialChartVolumeTypeComponent,
-            additionalFiles: ["/src/app/charts/financial-chart/services/financial-data.service.ts"],
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxFinancialChartModule, FinancialChartVolumeTypeComponent, FinancialDataService],
-                ngDeclarations: [FinancialChartVolumeTypeComponent],
-                ngImports: [IgxFinancialChartModule]
-            }),
-            dependenciesType: DependenciesType.Charts,
-            shortenComponentPathBy: "/charts/"
-        }));
+        configs.push(this.getConfig(
+            FinancialChartMultipleFeedsComponent,
+            [IgxFinancialChartModule]));
+
+        configs.push(this.getConfig(
+            FinancialChartTimeBasedDataComponent,
+            [IgxFinancialChartModule],
+            [FinancialDataService], ["/src/app/charts/financial-chart/services/financial-data.service.ts"]));
 
         return configs;
     }

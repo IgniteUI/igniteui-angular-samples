@@ -1,3 +1,28 @@
-<p>
-  sparkline-trendlines works!
-</p>
+<div class="sample">
+    <div class="options">
+        <span class="optionItem">Trendline Type: </span>
+        <select (change)="onTrendlineChanged($event)">
+            <option>CubicFit</option>
+            <option>CumulativeAverage</option>
+            <option>ExponentialAverage</option>
+            <option>ExponentialFit</option>
+            <option>LinearFit</option>
+            <option>LogarithmicFit</option>
+            <option>ModifiedAverage</option>
+            <option>None</option>
+            <option>PowerLawFit</option>
+            <option>QuadraticFit</option>
+            <option>QuarticFit</option>
+            <option>QuinticFit</option>
+            <option>SimpleAverage</option>
+            <option>WeightedAverage</option>
+        </select>
+    </div>
+    <div class="chart">
+        <igx-sparkline #sparkline height="calc(100% - 30px)" width="100%"            
+            [dataSource]="data"
+            valueMemberPath="Value"
+            displayType="Area"                        
+            trendLineThickness=1 ></igx-sparkline>        
+    </div>
+</div >

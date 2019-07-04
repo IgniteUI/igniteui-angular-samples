@@ -12,7 +12,7 @@ const types = {
     light: ["Picture", "Anecdote", "Screenshot", "Video"]
 };
 const extensions = {
-    serious: [".pdf", ".xls", ".doc", ".xlsx"],
+    serious: [".pdf", ".xls", ".doc", ".xlsx", ".shp", ".dbf", ".csv", ".json"],
     light: ["jpeg", ".wav", ".png", ".mp3"]
 };
 const employees = ["Dave", "Marta", "Andrew", "Ivan", "Pete", "Yavor",
