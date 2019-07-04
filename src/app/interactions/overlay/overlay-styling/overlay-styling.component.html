@@ -1,0 +1,22 @@
+<button igxButton [igxToggleAction]="dropdown1" [overlaySettings]="{outlet:element}"
+    [igxDropDownItemNavigation]="dropdown1">
+    Styled
+</button>
+<igx-drop-down #dropdown1 height="350px">
+    <igx-drop-down-item-group *ngFor="let group of groups; index as i;" [label]="group" [disabled]="i === 1">
+        <igx-drop-down-item *ngFor="let item of items" [value]="item.id" [selected]="item.id === 2 && i === 0">
+            {{ item.name }}
+        </igx-drop-down-item>
+    </igx-drop-down-item-group>
+</igx-drop-down>
+
+<button igxButton [igxToggleAction]="dropdown2" [igxDropDownItemNavigation]="dropdown2">
+    Not Styled
+</button>
+<igx-drop-down #dropdown2 height="350px">
+    <igx-drop-down-item-group *ngFor="let group of groups; index as i;" [label]="group" [disabled]="i === 1">
+        <igx-drop-down-item *ngFor="let item of items" [value]="item.id" [selected]="item.id === 2 && i === 0">
+            {{ item.name }}
+        </igx-drop-down-item>
+    </igx-drop-down-item-group>
+</igx-drop-down>

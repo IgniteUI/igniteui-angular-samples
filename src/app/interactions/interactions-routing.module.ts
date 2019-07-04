@@ -15,6 +15,7 @@ import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -184,6 +185,11 @@ export const interactionsRoutes: Routes = [
         component: OverlayScrollSample2Component,
         data: interactionsRoutesData["overlay-scroll-sample-2"],
         path: "overlay-scroll-sample-2"
+    },
+    {
+        component: OverlayStylingComponent,
+        data: interactionsRoutesData["overlay-styling"],
+        path: "overlay-styling"
     },
     {
         component: DragAndDropSampleComponent,
