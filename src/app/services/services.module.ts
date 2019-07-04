@@ -13,6 +13,7 @@ import { LocalizationSample1Component } from "./localization-samples/localizatio
 import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
 import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { ServicesRoutingModule } from "./services-routing.module";
+import { TransactionBaseComponent } from "./transaction/transaction-base/transaction-base.component";
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ServicesRoutingModule } from "./services-routing.module";
         TreeGridExcelExportSample1Component,
         LocalizationSample1Component,
         LocalizationSample2Component,
-        LocalizationSample3Component
+        LocalizationSample3Component,
+        TransactionBaseComponent
     ],
     imports: [
         CommonModule,
