@@ -1,39 +1,32 @@
-<div className="sampleRoot">
-    <div className="map" >
-        <igx-geographic-map
-            #map
-            width="700px"
-            height="500px"
-            zoomable="true" >
-            <igx-geographic-shape-series #shapeSeries
+<igx-geographic-map
+    #map
+    width="100%"
+    height="calc(100% - 60px)"
+    zoomable="true" >
+    <igx-geographic-shape-series #shapeSeries
                 name="polygonSeries"
                 shapeMemberPath="points"
                 shapeFill="rgb(150, 150, 150)"
                 shapeStroke="Black"
                 shapeStrokeThickness={1.0} >
-            </igx-geographic-shape-series>
-            <igx-geographic-polyline-series  #polylineSeries
+    </igx-geographic-shape-series>
+    <igx-geographic-polyline-series  #polylineSeries
             [tooltipTemplate]="polylineTooltipTemplate"
                   name="polylineSeries"
                  shapeMemberPath="points"
                  shapeStroke="rgba(147, 15, 180, 0.5)"
                  thickness={3.0} >
-            </igx-geographic-polyline-series>
-            <igx-geographic-symbol-series  #symbolSeries
-                name="symbolSeries"
-                longitudeMemberPath="longitude"
-                latitudeMemberPath="latitude"
-                markerType="Circle"
-                markerOutline="rgb(2, 102, 196)"
-                markerBrush="White" >
-            </igx-geographic-symbol-series>
-        </igx-geographic-map>
-    </div>
-</div>
-<div class="my-legend">
-    <div class="legend-title">Geographic Map: Binding Multiple Shapes</div>
-   
-</div>
+    </igx-geographic-polyline-series>
+    <igx-geographic-symbol-series  #symbolSeries
+        name="symbolSeries"
+        longitudeMemberPath="longitude"
+        latitudeMemberPath="latitude"
+        markerType="Circle"
+        markerOutline="rgb(2, 102, 196)"
+        markerBrush="White" >
+    </igx-geographic-symbol-series>
+</igx-geographic-map>
+
 <ng-template let-series="series" let-item="item" #polylineTooltipTemplate>
     <div>
         <span>
@@ -41,7 +34,7 @@
         </span>
         <br />
         <span>
-        Distance: {{item.distance}} 
+        Distance: {{item.distance}}
         </span>
     </div>
 </ng-template>
@@ -53,7 +46,7 @@
         </span>
         <br />
         <span>
-            Population: {{item.population}} 
+            Population: {{item.population}}
         </span>
     </div>
 </ng-template>

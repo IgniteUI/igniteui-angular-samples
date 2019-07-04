@@ -20,41 +20,42 @@ export class MapTypeScatterBubbleSeriesComponent implements AfterViewInit {
     public map: IgxGeographicMapComponent;
     @ViewChild("template", {static: true})
     public tooltipTemplate: TemplateRef<object>;
+
     constructor() {
     }
 
     public ngAfterViewInit(): void {
-    const sds = new ShapeDataSource();
-    sds.shapefileSource = "assets/Shapes/WorldTemperatures.shp";
-    sds.databaseSource  = "assets/Shapes/WorldTemperatures.dbf";
-    sds.dataBind();
-    sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
-}
-
-    public onDataLoaded(sds: ShapeDataSource, e: any) {
-    const shapeRecords = sds.getPointData();
-    console.log("loaded contour shapes: " + shapeRecords.length + " from /Shapes/WorldTemperatures.shp");
-
-    const contourPoints: any[] = [];
-    for (const record of shapeRecords) {
-        const temp = record.fieldValues.Contour;
-        // using only major contours (every 10th degrees Celsius)
-        if (temp % 10 === 0 && temp >= 0) {
-            for (const shapes of record.points) {
-                 for (let i = 0; i < shapes.length; i++) {
-                    if (i % 5 === 0) {
-                        const p = shapes[i];
-                        const item = { lon: p.x, lat: p.y, value: temp};
-                        contourPoints.push(item);
-                    }
-                 }
-            }
-        }
+        const sds = new ShapeDataSource();
+        sds.shapefileSource = "assets/Shapes/WorldTemperatures.shp";
+        sds.databaseSource  = "assets/Shapes/WorldTemperatures.dbf";
+        sds.dataBind();
+        sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
     }
 
-    console.log("loaded contour points: " + contourPoints.length);
-    this.addSeriesWith(WorldLocations.getAll());
-}
+    public onDataLoaded(sds: ShapeDataSource, e: any) {
+        const shapeRecords = sds.getPointData();
+        console.log("loaded contour shapes: " + shapeRecords.length + " from /Shapes/WorldTemperatures.shp");
+
+        const contourPoints: any[] = [];
+        for (const record of shapeRecords) {
+            const temp = record.fieldValues.Contour;
+            // using only major contours (every 10th degrees Celsius)
+            if (temp % 10 === 0 && temp >= 0) {
+                for (const shapes of record.points) {
+                    for (let i = 0; i < shapes.length; i++) {
+                        if (i % 5 === 0) {
+                            const p = shapes[i];
+                            const item = { lon: p.x, lat: p.y, value: temp};
+                            contourPoints.push(item);
+                        }
+                    }
+                }
+            }
+        }
+
+        console.log("loaded contour points: " + contourPoints.length);
+        this.addSeriesWith(WorldLocations.getAll());
+    }
 
     public addSeriesWith(locations: any[]) {
         const sizeScale = new IgxSizeScaleComponent();

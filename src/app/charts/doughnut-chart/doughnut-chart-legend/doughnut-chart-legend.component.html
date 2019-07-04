@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="legend">
+        <igx-item-legend #legend height="100px" width="100px">
+        </igx-item-legend>
+    </div>
+    <div class="chart">
+        <igx-doughnut-chart #chart height="100%" width="80%">
+            <igx-ring-series
+            [dataSource] = "data"
+            [legend]="legend"
+            valueMemberPath="Value"
+            labelMemberPath="Label"
+            allowSliceSelection="false">
+            </igx-ring-series>
+        </igx-doughnut-chart>
+    </div>
+</div>

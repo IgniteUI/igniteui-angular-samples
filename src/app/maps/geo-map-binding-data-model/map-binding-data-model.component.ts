@@ -4,7 +4,7 @@ import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geograp
 import { IgxGeographicPolylineSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-polyline-series-component";
 import { IgxGeographicSymbolSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-symbol-series-component";
-import { WorldUtils } from "../../utilities/WorldUtils";
+import { WorldUtility } from "../../utilities/WorldUtility";
 
 @Component({
   selector: "app-map-binding-data-model",
@@ -16,8 +16,8 @@ export class MapBindingDataModelComponent implements AfterViewInit {
 
     @ViewChild("map", {static: true})
     public map: IgxGeographicMapComponent;
-    @ViewChild("pointSeriestemplate", {static: true})
-    public pointSeriestemplate: TemplateRef<object>;
+    @ViewChild("pointSeriesTooltipTemplate", {static: true})
+    public pointSeriesTooltipTemplate: TemplateRef<object>;
     @ViewChild("polylineSeriesTooltipTemplate", {static: true})
     public polylineSeriesTooltipTemplate: TemplateRef<object>;
     public flights: any[];
@@ -37,7 +37,7 @@ export class MapBindingDataModelComponent implements AfterViewInit {
         const cityNYC = { lat: 40.750, lon: -74.0999, country: "US", name: "New York" };
         const citySNG = { lat:  1.229, lon: 104.177,  country: "Singapore", name: "Singapore" };
         const cityMOS = { lat: 55.750, lon:  37.700,  country: "Russia", name: "Moscow" };
-        const cityROM = { lat:  41.880, lon: 12.520,  country: "Italy", name: "Roma" };
+        const cityROM = { lat:  41.880, lon: 12.520,  country: "Italy", name: "Rome" };
         const cityLAX = { lat: 34.000, lon: -118.25,  country: "US", name: "Los Angeles" };
 
         this.flights = [
@@ -66,14 +66,14 @@ export class MapBindingDataModelComponent implements AfterViewInit {
         symbolSeries.markerBrush  = "White";
         symbolSeries.markerOutline = flight.color;
         symbolSeries.thickness = 1;
-        symbolSeries.tooltipTemplate = this.pointSeriestemplate;
+        symbolSeries.tooltipTemplate = this.pointSeriesTooltipTemplate;
 
         this.map.series.add(symbolSeries);
     }
 
     public createPolylineSeries(flight: any) {
-        const geoPath = WorldUtils.calcPaths(flight.origin, flight.dest);
-        const geoDistance = WorldUtils.calcDistance(flight.origin, flight.dest);
+        const geoPath = WorldUtility.calcPaths(flight.origin, flight.dest);
+        const geoDistance = WorldUtility.calcDistance(flight.origin, flight.dest);
         const geoRoutes = [
             {
               dest: flight.dest,

@@ -566,7 +566,7 @@
     { "cap": true,  "pop":  0.980, "lat": 33.9201965332031, "lon": -6.74804067611694, "country": "Morocco", "name": "Rabat" },
     { "cap": true,  "pop":  0.138, "lat": 64.3132629394531, "lon": -21.336820602417, "country": "Iceland", "name": "Reykjavik" },
     { "cap": true,  "pop":  1.005, "lat": 56.8800010681152, "lon": 24.0499992370605, "country": "latvia", "name": "Riga" },
-    { "cap": true,  "pop":  3.175, "lat": 41.8800010681152, "lon": 12.5200004577637, "country": "Italy", "name": "Roma" },
+    { "cap": true,  "pop":  3.175, "lat": 41.8800010681152, "lon": 12.5200004577637, "country": "Italy", "name": "Rome" },
     { "cap": false, "pop":  2.050, "lat": -12.6002569198608, "lon": -38.4799995422363, "country": "Brazil", "name": "Salvador" },
     { "cap": false, "pop":  0.848, "lat": 29.6299991607666, "lon": 52.5699996948242, "country": "Iran", "name": "Shiraz" },
     { "cap": true,  "pop":  1.450, "lat": 59.2446327209473, "lon": 18.0842685699463, "country": "Sweden", "name": "Stockholm" },

@@ -63,7 +63,7 @@ export const samplesRoutes: Routes = [
         path: "gauges"
     },
     {
-        data: ["GeoMapsModule"],
+        data: ["GeoMapModule"],
         loadChildren: () => import("./maps/geo-map.module").then(m => m.GeoMapModule),
         path: "maps"
     },

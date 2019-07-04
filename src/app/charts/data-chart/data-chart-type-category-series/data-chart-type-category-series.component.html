@@ -1,10 +1,10 @@
 <div class="container">
 <div class="options">
         <span class="optionLabel">Type of Category Series:</span>
-        <select 
+        <select
         (change)=onSeriesTypeChanged($event)>
                 <option>Column</option>
-                <option>Area</option>                
+                <option>Area</option>
                 <option>Point</option>
                 <option>Line</option>
                 <option>Spline</option>
@@ -24,27 +24,26 @@
         isHorizontalZoomEnabled="true"
         isVerticalZoomEnabled="true"
         width="100%"
-        height="100%"
+        height="calc(100% - 60px)"
         [dataSource]="data" >
         <igx-numeric-y-axis title="Total Olympic Medals"
           #yAxis>
-      
         </igx-numeric-y-axis>
-        <igx-category-x-axis 
+        <igx-category-x-axis
           label="Year" title="Olympic Years"
           #xAxis>
         </igx-category-x-axis>
-      
+
          <!-- series are created in the setSeries function
                         alternatively, you can create series using this code: -->
-                    
+
         <!-- <igx-column-series
-         
+
           valueMemberPath="USA"
           [xAxis]="xAxis"
           [yAxis]="yAxis">
         </igx-column-series>
-      
+
          <igx-column-series
           valueMemberPath="RUS"
           [xAxis]="xAxis"

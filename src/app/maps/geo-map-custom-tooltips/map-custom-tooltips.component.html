@@ -1,17 +1,13 @@
-<div className="sampleRoot" >
 <igx-geographic-map #map
-    width="700px"
-    height="500px"
+    width="100%"
+    height="calc(100% - 60px)"
     zoomable="true" >
 </igx-geographic-map>
-</div>
-<div class="my-legend">
-    <div class="legend-title">Geographic Map: Custom Tooltips</div>
-</div>  
+
 <ng-template let-series="series" let-item="item" #template>
     <div>
         <span>
-            {{item.name}} 
+            {{item.name}}
         </span>
     </div>
 </ng-template>

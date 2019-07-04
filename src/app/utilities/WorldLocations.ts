@@ -4562,7 +4562,7 @@ export class WorldLocations {
             lat: 41.8800010681152,
             lon: 12.5200004577637,
             country: "Italy",
-            name: "Roma"
+            name: "Rome"
         },
         {
             cap: false,

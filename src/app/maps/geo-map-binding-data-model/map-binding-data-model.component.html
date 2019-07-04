@@ -1,20 +1,15 @@
-<div className="sampleRoot" >
-    <igx-geographic-map #map
-        width="700px"
-        height="500px"
-        zoomable="true" >
-    </igx-geographic-map>
-</div>
-<div class="my-legend">
-    <div class="legend-title">Geographic Map: Data Model</div>
-    
-</div>
-<ng-template let-series="series" let-item="item" #pointSeriestemplate>
+<igx-geographic-map #map
+    width="100%"
+    height="calc(100% - 60px)"
+    zoomable="true" >
+</igx-geographic-map>
+
+<ng-template let-series="series" let-item="item" #pointSeriesTooltipTemplate>
         <div>
             <span [style.color]="series.brush">
-                {{item.country}} 
+                {{item.country}}
             </span>
-        </div>      
+        </div>
 </ng-template>
 
 <ng-template let-series="series" let-item="item" #polylineSeriesTooltipTemplate>
@@ -26,5 +21,5 @@
         <span [style.color]="series.brush">
             Arrival: {{item.dest.country}}
         </span>
-    </div>      
+    </div>
 </ng-template>
