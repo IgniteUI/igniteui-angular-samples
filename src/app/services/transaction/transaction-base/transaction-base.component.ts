@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { IgxButtonDirective, IgxTransactionService, State, Transaction, TransactionType } from "igniteui-angular";
 import { IPerson, PEOPLE } from "../data";
 
@@ -8,7 +8,7 @@ import { IPerson, PEOPLE } from "../data";
     templateUrl: "transaction-base.component.html"
 })
 
-export class TransactionBaseComponent implements OnInit {
+export class TransactionBaseComponent {
     @ViewChild("add", { static: false })
     public add: IgxButtonDirective;
 
@@ -20,35 +20,46 @@ export class TransactionBaseComponent implements OnInit {
         this.people = PEOPLE;
     }
 
-    public ngOnInit(): void {
-    }
-
     public onAdd(event): void {
         this.add.disabled = true;
-        this._transactions.add({ id: 2, type: TransactionType.ADD, newValue: { name: "Sile", age: 42 } });
+        const person: IPerson = { name: "Sile", age: 42 };
+        this._transactions.add({ id: 2, type: TransactionType.ADD, newValue: person });
+
         /** visualization */
-        const log = this._transactions.getTransactionLog();
-        this.name = log[0].newValue.name;
-        this.age = log[0].newValue.age;
+        this.name = person.name;
+        this.age = person.age;
     }
 
     public onEdit(event): void {
-        this._transactions.add({ id: 3, type: TransactionType.UPDATE, newValue: { age: 54 } }, this.people[3]);
+        const newAge = 54;
+        this._transactions.add({ id: 3, type: TransactionType.UPDATE, newValue: { age: newAge } }, this.people[1]);
+
+        /** visualization */
+        this.name = this.people[1].name;
+        this.age = newAge;
     }
 
     public onDelete(event): void {
+        /** visualization */
+        this.name = this.people[0].name;
+        this.age = this.people[0].age;
+        /** */
 
+        this._transactions.add(
+            { id: 1, type: TransactionType.DELETE, newValue: { name: this.name, age: this.age } }, this.people[0]);
     }
 
     public onClear(event): void {
         this._transactions.clear();
+
         /** visualization */
         this.name = null;
         this.age = null;
     }
 
     public onCommit(event): void {
-        this._transactions.commit(this.people, 2);
+        this._transactions.commit(this.people);
+
         /** visualization */
         this.name = null;
         this.age = null;

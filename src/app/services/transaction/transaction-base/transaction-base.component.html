@@ -1,5 +1,27 @@
+<!-- <div class="static-table">
+</div> -->
 <div class="data-table">
-    <table #data>
+    <label for="static">Static table</label>
+    <table #static>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>George</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Jack</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Chester</td>
+            <td>47</td>
+        </tr>
+    </table>
+    <label for="dynamid">Dynamic table</label>
+    <table #dynamic>
         <tr>
             <th>Name</th>
             <th>Age</th>
@@ -31,9 +53,10 @@
         <label for="buttonsForm">Options</label>
         <div class="buttons">
             <form #buttonsForm class="options">
-                <button #add igxButton (click)="onAdd($event)" class="add">Add Transaction</button>
-                <button #edit igxButton (click)="onEdit($event)" class="edit">Edit Transaction</button>
-                <button #class igxButton (click)="onClear($event)" class="clear">Clear Transactions</button>
+                <button #add igxButton (click)="onAdd($event)" class="add">Add New Row</button>
+                <button #edit igxButton (click)="onEdit($event)" class="edit">Edit Second Row</button>
+                <button #clear igxButton (click)="onClear($event)" class="clear">Clear Transactions</button>
+                <button #delete igxButton (click)="onDelete($event)">Delete First Row</button>
             </form>
         </div>
     </div>
