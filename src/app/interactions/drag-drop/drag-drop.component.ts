@@ -18,31 +18,31 @@ export class DragAndDropSampleComponent implements OnInit {
 
     private tilesArr = [
         {
-            id: 0, url: "assets/images/drag-drop/infragistics-logo00.jpeg"
+            id: 0, url: "assets/images/drag-drop/profile.png"
         },
         {
-            id: 1, url: "assets/images/drag-drop/infragistics-logo01.jpeg"
+            id: 1, url: "assets/images/drag-drop/calendar.png"
         },
         {
-            id: 2, url: "assets/images/drag-drop/infragistics-logo02.jpeg"
+            id: 2, url: "assets/images/drag-drop/mail.png"
         },
         {
-            id: 3, url: "assets/images/drag-drop/infragistics-logo10.jpeg"
+            id: 3, url: "assets/images/drag-drop/photos.png"
         },
         {
-            id: 4, url: "assets/images/drag-drop/infragistics-logo11.jpeg"
+            id: 4, url: "assets/images/drag-drop/videos.png"
         },
         {
-            id: 5, url: "assets/images/drag-drop/infragistics-logo12.jpeg"
+            id: 5, url: "assets/images/drag-drop/cloud.png"
         },
         {
-            id: 6, url: "assets/images/drag-drop/infragistics-logo20.jpeg"
+            id: 6, url: "assets/images/drag-drop/map.png"
         },
         {
-            id: 7, url: "assets/images/drag-drop/infragistics-logo21.jpeg"
+            id: 7, url: "assets/images/drag-drop/contacts.png"
         },
         {
-            id: 8, url: "assets/images/drag-drop/infragistics-logo22.jpeg"
+            id: 8, url: "assets/images/drag-drop/chat.png"
         }
     ];
 
