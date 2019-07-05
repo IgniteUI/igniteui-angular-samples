@@ -10,6 +10,12 @@ $my-drop-down-theme: igx-drop-down-theme(
     $header-text-color: igx-color($my-palette, "secondary", 500)
 );
 
+$background-purple: #5443b84a;
+
+$my-overlay-theme: igx-overlay-theme(
+    $background-color: $background-purple
+);
+
 :host {
     display: flex;
     width: 600px;
@@ -18,4 +24,7 @@ $my-drop-down-theme: igx-drop-down-theme(
     justify-content: space-around;
     align-items: center;
     @include igx-drop-down($my-drop-down-theme);
+    ::ng-deep {
+        @include igx-overlay($my-overlay-theme);
+    }
 }

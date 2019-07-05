@@ -6,24 +6,35 @@ import { Component, ElementRef } from "@angular/core";
     templateUrl: "overlay-styling.component.html"
 })
 export class OverlayStylingComponent {
-    public groups = ["Group 1", "Group 2", "Group 3"];
-    public items = [{
-        name: "Option 1",
-        id: 0
-    }, {
-        name: "Option 2",
-        id: 1
-    }, {
-        name: "Option 3",
-        id: 2
-    }, {
-        name: "Option 4",
-        id: 3
-    },
-    {
-        name: "Option 5",
-        id: 4
-    }];
+    public items = [
+        {
+            name: "Group 1",
+            header: true,
+            id: 1
+        }, {
+            name: "Option 1",
+            id: 100
+        }, {
+            name: "Option 2",
+            id: 101
+        }, {
+            name: "Option 3",
+            id: 102
+        }, {
+            name: "Group 2",
+            header: true,
+            id: 2
+        }, {
+            name: "Option 1",
+            id: 200
+        }, {
+            name: "Option 2",
+            id: 201
+        }, {
+            name: "Option 3",
+            id: 202
+        }
+    ];
 
     constructor(public element: ElementRef) {
     }
