@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { SparklineDisplayTypesComponent } from "./sparkline-display-types/sparkline-display-types.component";
 import { SparklineMarkersComponent } from "./sparkline-markers/sparkline-markers.component";
 import { SparklineNormalRangeComponent } from "./sparkline-normal-range/sparkline-normal-range.component";
@@ -13,10 +14,12 @@ import { SparklineUnknownValuesComponent } from "./sparkline-unknown-values/spar
         SparklineNormalRangeComponent,
         SparklineTrendlinesComponent,
         SparklineUnknownValuesComponent,
-        SparklineDisplayTypesComponent],
+        SparklineDisplayTypesComponent
+    ],
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        IgxSparklineModule
     ]
 })
 export class SparklineSamplesModule { }

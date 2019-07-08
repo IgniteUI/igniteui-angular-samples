@@ -1,0 +1,25 @@
+<igx-geographic-map #map
+    width="100%"
+    height="calc(100% - 60px)"
+    zoomable="true" >
+</igx-geographic-map>
+
+<ng-template let-series="series" let-item="item" #pointSeriesTooltipTemplate>
+        <div>
+            <span [style.color]="series.brush">
+                {{item.country}}
+            </span>
+        </div>
+</ng-template>
+
+<ng-template let-series="series" let-item="item" #polylineSeriesTooltipTemplate>
+    <div>
+        <span [style.color]="series.brush">
+            Departure: {{item.origin.country}}
+        </span>
+        <br/>
+        <span [style.color]="series.brush">
+            Arrival: {{item.dest.country}}
+        </span>
+    </div>
+</ng-template>

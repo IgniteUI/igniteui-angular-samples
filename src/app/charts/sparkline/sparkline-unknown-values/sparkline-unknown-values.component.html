@@ -1,3 +1,11 @@
-<p>
-  sparkline-unknown-values works!
-</p>
+<div class="sample">
+    <div class="options">
+        <label class="optionItem"><input defaultChecked=false type="checkbox" (change)="onRangeVisibilityChanged($event)"/>Plot Unknown Values</label>                
+    </div>               
+    <div class="chart">
+        <igx-sparkline #sparkline height="calc(100% - 30px)" width="100%"        
+            [dataSource]="data"
+            valueMemberPath="Value"
+            displayType="Area" ></igx-sparkline>        
+    </div>
+</div >

@@ -1,0 +1,41 @@
+<igx-geographic-map #map
+    width="100%"
+    height="calc(100% - 60px)"
+    zoomable="true" >
+</igx-geographic-map>
+
+<ng-template let-series="series" let-item="item" #polylineTooltipTemplate>
+        <div>
+            <span>
+                Arrival: {{item.origin.country}}
+            </span>
+            <br/>
+            <span>
+                   Destination: {{item.dest.country}}
+            </span>
+            <br/>
+            <span>
+                    Distance: {{item.distance}} miles
+            </span>
+        </div>
+    </ng-template>
+
+<ng-template let-series="series" let-item="item" #pointTooltipTemplate>
+        <div>
+            <span>
+            {{item?.country}}
+            </span>
+            <br />
+            <span>
+            {{item?.name}}
+            </span>
+            <br />
+            <span>
+            Population: {{item.pop}} M
+            </span>
+            <br/>
+            <span>
+                    Flights: {{item.flights}}
+            </span>
+        </div>
+    </ng-template>

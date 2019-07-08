@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxAvatarModule, IgxButtonModule, IgxButtonGroupModule, IgxFilterModule, IgxFilterOptions,
-    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxSliderModule, IgxToastModule, 
+    IgxAvatarModule,IgxButtonGroupModule, IgxButtonModule, IgxFilterModule, IgxFilterOptions,
+    IgxIconModule, IgxInputGroupModule, IgxListModule, IgxSliderModule, IgxToastModule,
 } from "igniteui-angular";
 import { ListChatSampleComponent } from "../../src/app/lists/list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "../../src/app/lists/list/list-sample-1/list-sample-1.component";
@@ -11,6 +11,7 @@ import { ListSample4Component } from "../../src/app/lists/list/list-sample-4/lis
 import { ListSample5Component } from "../../src/app/lists/list/list-sample-5/list-sample-5.component";
 import { ListSample6Component } from "../../src/app/lists/list/list-sample-6/list-sample-6.component";
 import { ListSample7Component } from "../../src/app/lists/list/list-sample-7/list-sample-7.component";
+import { ListSample8Component } from "../../src/app/lists/list/list-sample-8/list-sample-8.component";
 import { ListComponent } from "../../src/app/lists/list/list.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -122,6 +123,17 @@ export class ListConfigGenerator implements IConfigGenerator {
                 imports: [IgxAvatarModule, IgxIconModule, IgxListModule, IgxInputGroupModule, ListChatSampleComponent],
                 ngDeclarations: [ListChatSampleComponent],
                 ngImports: [IgxAvatarModule, IgxIconModule, IgxListModule, IgxInputGroupModule]
+            }),
+            shortenComponentPathBy: "/lists/list/"
+        }));
+
+        // list chat sample
+        configs.push(new Config({
+            component: ListSample8Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxToastModule, IgxListModule, IgxIconModule, ListSample8Component, IgxAvatarModule],
+                ngDeclarations: [ListSample8Component],
+                ngImports: [IgxToastModule, IgxListModule, IgxIconModule, IgxAvatarModule]
             }),
             shortenComponentPathBy: "/lists/list/"
         }));

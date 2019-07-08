@@ -1,3 +1,16 @@
-<p>
-  sparkline-normal-range works!
-</p>
+<div class="sample">
+    <div class="options">
+        <label class="optionItem"><input defaultChecked=false type="checkbox" (change)="onRangeVisibilityChanged($event)"/>Range Visibility</label>
+        <label class="optionItem"><input type="range" min=-2 max=7 step="0.5" value=1 (change)="onMinSliderChanged($event)"/>Min Range Slider</label>
+        <label class="optionItem"><input type="range" min=-2 max=7 step="0.5" value=4 (change)="onMaxSliderChanged($event)"/>Max Range Slider</label>
+    </div>        
+    <div class="chart"> 
+        <igx-sparkline #sparkline height="calc(100% - 30px)" width="100%"
+            [dataSource]="data"
+            valueMemberPath="Value"                        
+            displayType="Area"
+            normalRangeVisibility="Collapsed"
+            normalRangeMinimum=1
+            normalRangeMaximum=4 ></igx-sparkline>
+    </div>
+</div >

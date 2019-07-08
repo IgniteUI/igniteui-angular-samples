@@ -55,6 +55,8 @@ import {
     TreeGridLoadOnDemandSampleComponent
 } from "./tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
 // tslint:disable-next-line: max-line-length
+import { TreeGridMultiCellSelectionStyleComponent } from "./tree-grid-multi-cell-selection-style/tree-grid-multi-cell-selection-style.component";
+// tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
     TreeGridMultiColumnHeadersSampleComponent
@@ -285,6 +287,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridMultiCellSelectionComponent,
         data: treeGridRoutesData["tree-grid-multi-cell-selection"],
         path: "tree-grid-multi-cell-selection"
+    },
+    {
+        component: TreeGridMultiCellSelectionStyleComponent,
+        data: treeGridRoutesData["tree-grid-multi-cell-selection-style"],
+        path: "tree-grid-multi-cell-selection-style"
     },
     {
         component: TreeGridLoadOnDemandSampleComponent,

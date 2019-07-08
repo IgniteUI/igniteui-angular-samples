@@ -6,16 +6,16 @@
 
         <div class="sample-controls">
           <span #loadTimeSpan class="load-time">Load Time: </span>
-          <button igxButton="raised"
+          <button igxButton="raised" style="margin-right: 10px;"
             igxRipple="white"
             (click)="onGenerateDataClicked()"
           >Generate Data</button>
-          <button igxButton="raised"
+          <button igxButton="raised" style="margin-right: 10px;"
             igxRipple="white"
             (click)="onAssignDataClicked()"
           >Assign Data</button>
 
-          <div class="max-points-slider">
+          <div class="max-points-slider" style="margin-top: 20px;">
             <span class="label">Data amount: {{ maxPointsText }}</span>
             <igx-slider id="slider"
                 minValue="5000"

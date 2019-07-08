@@ -28,16 +28,11 @@
     <div igxOverlayOutlet>
         <div class="grid-options" igxLayout igxLayoutDir="row" igxLayoutWrap="wrap">
             <button igxButton="raised" class="addProdBtn" (click)="openDialog()">Add New Product</button>
-            <button class="drop-down-button" igxButton="raised" (click)="toggleDropDown($event, dropdown)"
-                [igxDropDownItemNavigation]="dropdown">Themes</button>
-            <igx-drop-down #dropdown class="theme-chooser">
-                <igx-drop-down-item class="light-theme-option" (click)="selectTheme(THEME.LIGHT)">
-                </igx-drop-down-item>
-                <igx-drop-down-item class="dark-theme-option" (click)="selectTheme(THEME.DARK)">
-                </igx-drop-down-item>
-                <igx-drop-down-item class="black-theme-option" (click)="selectTheme(THEME.BLACK)">
-                </igx-drop-down-item>
-            </igx-drop-down>
+            <igx-select type="box">
+                    <label igxLabel>Themes</label>
+                    <igx-select-item *ngFor="let theme of themes" [class]="'theme ' + theme + '-option'" (click)="selectTheme(theme)">
+                    </igx-select-item>
+            </igx-select>
         </div>
         <igx-grid [data]="data" [autoGenerate]="false" height="550px" width="100%" [paging]="true" [perPage]="10"
             displayDensity="comfortable" #grid1 [allowFiltering]="true">

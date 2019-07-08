@@ -1,3 +1,28 @@
-<p>
-  data-chart-synchronization works!
-</p>
+<div>
+    <label><input type="checkbox" (change)="syncHorizontalChanged($event)">Sync Horizontally</label>
+    <label><input type="checkbox" (change)="syncVerticalChanged($event)">Sync Vertically</label>
+  </div>
+
+  <div class="chart">
+      <igx-data-chart
+        width="100%" syncChannel="ChannelA" synchronizeHorizontally=false synchronizeVertically=false
+        height="calc(50% - 20px)" #chart1 isHorizontalZoomEnabled=true isVerticalZoomEnabled=true
+        [dataSource]="data" >
+
+        <igx-category-x-axis #xAxis label="Country"></igx-category-x-axis>
+        <igx-numeric-y-axis #yAxis minimumValue=0></igx-numeric-y-axis>
+
+        <igx-line-series name="series1" [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Coal"></igx-line-series>
+      </igx-data-chart>
+
+      <igx-data-chart isHorizontalZoomEnabled=true isVerticalZoomEnabled=true
+        width="100%" syncChannel="ChannelA" synchronizeHorizontally=false synchronizeVertically=false
+        height="calc(50% - 20px)" #chart2
+        [dataSource]="data" >
+
+        <igx-category-x-axis #xAxis2 label="Country"></igx-category-x-axis>
+        <igx-numeric-y-axis #yAxis2 minimumValue=0></igx-numeric-y-axis>
+
+        <igx-line-series name="series2" [xAxis]="xAxis2" [yAxis]="yAxis2" valueMemberPath="Coal"></igx-line-series>
+      </igx-data-chart>
+  </div>

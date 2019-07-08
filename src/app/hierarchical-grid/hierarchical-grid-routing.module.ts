@@ -25,6 +25,7 @@ import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filte
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
+import { HGridMultiCellStyleComponent } from "./hierarchical-grid-multi-cell-style/hierarchical-grid-multi-cell-style.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
@@ -163,6 +164,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-multi-column"],
         path: "hierarchical-grid-multi-column"
+    },
+    {
+        component: HGridMultiCellStyleComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-multi-cell-style"],
+        path: "hierarchical-grid-multi-cell-style"
     },
     {
         component: HGridToolbarTitleSampleComponent,

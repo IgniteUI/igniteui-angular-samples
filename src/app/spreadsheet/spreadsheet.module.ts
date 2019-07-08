@@ -3,11 +3,15 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { IgxExcelModule } from "igniteui-angular-excel/ES5/igx-excel-module";
+import {
+    IgxSpreadsheetChartAdapterModule
+} from "igniteui-angular-spreadsheet-chart-adapter/ES5/igx-spreadsheet-chart-adapter-module";
 import { IgxSpreadsheetModule } from "igniteui-angular-spreadsheet/ES5/igx-spreadsheet-module";
 
 import { SpreadsheetRoutingModule } from "./spreadsheet-routing.module";
 
 import { SpreadsheetActivationComponent } from "./spreadsheet-activation/spreadsheet-activation.component";
+import { SpreadsheetAdapterComponent } from "./spreadsheet-adapter/spreadsheet-adapter.component";
 import { SpreadsheetClipboardComponent } from "./spreadsheet-clipboard/spreadsheet-clipboard.component";
 import { SpreadsheetCommandsComponent } from "./spreadsheet-commands/spreadsheet-commands.component";
 import { SpreadsheetCondFormatComponent } from "./spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
@@ -22,6 +26,7 @@ import { SpreadsheetSortDialogComponent } from "./spreadsheet-sort-dialog/spread
 @NgModule({
     declarations: [
         SpreadsheetActivationComponent,
+        SpreadsheetAdapterComponent,
         SpreadsheetClipboardComponent,
         SpreadsheetCommandsComponent,
         SpreadsheetCondFormatComponent,
@@ -38,7 +43,8 @@ import { SpreadsheetSortDialogComponent } from "./spreadsheet-sort-dialog/spread
         FormsModule,
         SpreadsheetRoutingModule,
         IgxExcelModule,
-        IgxSpreadsheetModule
+        IgxSpreadsheetModule,
+        IgxSpreadsheetChartAdapterModule
     ]
 })
 export class SpreadsheetModule { }

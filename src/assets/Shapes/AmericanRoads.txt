@@ -1,0 +1,40 @@
+U.S. Geological Survey, North American Atlas - Roads, North America, 2006
+
+A joint venture involving the National Atlas programs in Canada (Natural 
+      Resources Canada), Mexico (Instituto Nacional de Estadística Geografía e 
+      Informática), and the United States (U.S. Geological Survey), as well as 
+      the North American Commission for Environmental Co-operation, has led to 
+      the release (June 2004) of several new products: an updated paper map of 
+      North America, and its associated geospatial data sets and their metadata.  
+      These data sets are available online from each of the partner countries 
+      both for download. This data has been revised and re-released in 2006.
+
+      The North American Atlas data are standardized geospatial data sets at 
+      1:10,000,000 scale.  A variety of basic data layers (e.g. roads, 
+      railroads, populated places, political boundaries, hydrography, 
+      bathymetry, sea ice and glaciers) have been integrated so that their 
+      relative positions are correct.  This collection of data sets forms a base 
+      with which other North American thematic data may be integrated.  Any data 
+      outside of Canada, Mexico, and the United States of America included in 
+      the North American Atlas data sets is strictly to complete the context of 
+      the data.
+
+      The North American Atlas - Roads data set shows the roads of North America 
+      at 1:10,000,000 scale.  The roads included in this data set are either 
+      those that connect major centres of population or selected frontier roads.  
+      Roads under construction are not shown.  There are three road classes: 
+      Major roads, which are divided, multi-lane, limited access highways; 
+      Secondary roads, which are all roads that do not meet the definition of 
+      major roads; and Ferries, which are major ferry links which run either 
+      year round or through periods when ice conditions permit.
+
+Attributes:
+COUNTRY: Country - The country in which the road exists.
+TYPE: Type - The road classification
+UIDENT: Uident -         The unique identifier.  A unique number that is assigned to each feature 
+        in the North American Atlas data.  The last two digits of the identifier 
+        are a suffix indicating the map layer.
+
+ROAD_L_: Road L  - Road
+
+exported on Mon Oct 03 15:45:44 -0400 2011
