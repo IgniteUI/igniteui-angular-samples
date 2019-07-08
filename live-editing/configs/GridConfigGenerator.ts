@@ -491,9 +491,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // Grid Batch Editing
         configs.push(new Config({
             component: GridBatchEditingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts",
+            additionalFiles: ["/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
                 "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
@@ -504,9 +505,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // Grid Row Editing
         configs.push(new Config({
             component: GridRowEditSampleComponent,
-            additionalFiles: ["src/app/grid/grid-row-editing-sample/data.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
                 ngDeclarations: [GridRowEditSampleComponent],

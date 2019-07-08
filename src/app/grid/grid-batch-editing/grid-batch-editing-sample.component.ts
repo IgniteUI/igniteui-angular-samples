@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { data } from "./data";
+import { DATA } from "../../data/nwindData";
+import { generateRandomInteger } from "../../data/utils";
 
 import { IgxDialogComponent, IgxGridComponent, Transaction } from "igniteui-angular";
 
@@ -20,7 +21,7 @@ export class GridBatchEditingSampleComponent implements OnInit {
     private addProductId: number;
 
     constructor() {
-        this.data = data;
+        this.data = DATA;
         this.addProductId = this.data.length + 1;
     }
 
@@ -31,20 +32,21 @@ export class GridBatchEditingSampleComponent implements OnInit {
         });
     }
 
-    public addRow(gridID) {
+    public addRow() {
         this.grid.addRow({
-            CategoryID: this.getRandomInt(1, 10),
-            Discontinued: this.getRandomInt(1, 10) % 2 === 0,
-            OrderDate: new Date(this.getRandomInt(2000, 2050), this.getRandomInt(0, 11), this.getRandomInt(1, 25))
+            CategoryID: generateRandomInteger(1, 10),
+            Discontinued: generateRandomInteger(1, 10) % 2 === 0,
+            OrderDate: new Date(generateRandomInteger(2000, 2050),
+            generateRandomInteger(0, 11), generateRandomInteger(1, 25))
             .toISOString().slice(0, 10),
             ProductID: this.addProductId++,
-            ProductName: "Product with index " + this.getRandomInt(0, 20),
-            QuantityPerUnit: (this.getRandomInt(1, 10) * 10).toString() + " pcs.",
-            ReorderLevel: this.getRandomInt(10, 20),
-            SupplierID: this.getRandomInt(1, 20),
-            UnitPrice: this.getRandomInt(10, 1000),
-            UnitsInStock: this.getRandomInt(1, 100),
-            UnitsOnOrder: this.getRandomInt(1, 20)
+            ProductName: "Product with index " + generateRandomInteger(0, 20),
+            QuantityPerUnit: (generateRandomInteger(1, 10) * 10).toString() + " pcs.",
+            ReorderLevel: generateRandomInteger(10, 20),
+            SupplierID: generateRandomInteger(1, 20),
+            UnitPrice: generateRandomInteger(10, 1000),
+            UnitsInStock: generateRandomInteger(1, 100),
+            UnitsOnOrder: generateRandomInteger(1, 20)
         });
     }
 
@@ -87,11 +89,7 @@ export class GridBatchEditingSampleComponent implements OnInit {
         return value.toUpperCase();
     }
 
-    private getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    private classFromType(type: string): string {
+    public classFromType(type: string): string {
         return `transaction--${type.toLowerCase()}`;
     }
 

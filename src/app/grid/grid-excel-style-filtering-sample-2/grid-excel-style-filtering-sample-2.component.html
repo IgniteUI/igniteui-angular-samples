@@ -4,7 +4,7 @@
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="false" [disablePinning]="true" [disableHiding]="true" [movable]="false" [dataType]="'string'">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [disablePinning]="true" [disableHiding]="true" [sortable]="true" [movable]="true" [dataType]="'number'">
+        <igx-column field="UnitPrice" header="Unit Price" [disablePinning]="true" [disableHiding]="true" [sortable]="true" [movable]="true" dataType="number">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 {{+val | currency}}
             </ng-template>

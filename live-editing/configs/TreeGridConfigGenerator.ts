@@ -105,7 +105,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Row Edit Sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/tree-grid-row-edit/data.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridRowEditSampleComponent],
                 ngDeclarations: [TreeGridRowEditSampleComponent],
@@ -141,6 +141,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Batch Editing sample
         configs.push(new Config({
+            additionalFiles: ["/src/app/data/utils.ts", "/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridBatchEditingSampleComponent, IgxButtonModule, IgxDialogModule, IgxGridModule],
                 ngDeclarations: [TreeGridBatchEditingSampleComponent],

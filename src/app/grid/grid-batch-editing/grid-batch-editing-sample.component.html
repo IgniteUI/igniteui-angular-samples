@@ -11,23 +11,23 @@
             <igx-column field="ProductID" header="Product ID" [pinned]="true" [filterable]="false"></igx-column>
             <igx-column field="ProductName" header="Product Name" [dataType]="'string'" [sortable]="true" [pinned]="true"></igx-column>
             <igx-column field="UnitPrice" header="Unit Price" [dataType]="'string'" [sortable]="true"></igx-column>
-            <igx-column field="UnitsOnOrder" header="Units On Order" [dataType]="'number'" [editable]="false"
+            <igx-column field="UnitsOnOrder" header="Units On Order" dataType="number" [editable]="false"
                 [filterable]="false"></igx-column>
-            <igx-column field="UnitsInStock" header="Units In Stock" [dataType]="'number'" [sortable]="true">
+            <igx-column field="UnitsInStock" header="Units In Stock" dataType="number" [sortable]="true">
                 <ng-template igxCellEditor let-cell="cell">
                     <input name="units" [igxFocus]="true" [(ngModel)]="cell.editValue"
                         style="color: black; width: 30px;" />
                 </ng-template>
             </igx-column>
             <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'" [filterable]="false"></igx-column>
-            <igx-column field="ReorderLevel" header="Reorder Level" [dataType]="'number'" [filterable]="false"></igx-column>
-            <igx-column field="SupplierID" header="Supplier ID" [dataType]="'number'" [editable]="false" [filterable]="false"></igx-column>
-            <igx-column field="CategoryID" header="Category ID" [dataType]="'number'" [filterable]="false"></igx-column>
+            <igx-column field="ReorderLevel" header="Reorder Level" dataType="number" [filterable]="false"></igx-column>
+            <igx-column field="SupplierID" header="Supplier ID" dataType="number" [editable]="false" [filterable]="false"></igx-column>
+            <igx-column field="CategoryID" header="Category ID" dataType="number" [filterable]="false"></igx-column>
             <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'" [pinned]="true" [filterable]="false"></igx-column>
         </igx-grid>
     </app-grid-with-transactions>
     <div class="buttons-row">
-        <button igxButton (click)="addRow('gridRowEditTransaction')">Add Row</button>
+        <button igxButton (click)="addRow()">Add Row</button>
         <div class="buttons-wrapper">
             <button igxButton [disabled]="!undoEnabled" (click)="undo()">Undo</button>
             <button igxButton [disabled]="!redoEnabled" (click)="redo()">Redo</button>

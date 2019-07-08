@@ -67,8 +67,8 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-editing/data.ts",
-                "/src/app/hierarchical-grid/hierarchical-grid-editing/singer.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts",
+                "/src/app/hierarchical-grid/models.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridEditingSampleComponent, IgxDialogModule,
                     IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule],
@@ -80,7 +80,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-row-editing/data.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridRowEditingSampleComponent, IgxDatePickerModule],
                 ngDeclarations: [HGridRowEditingSampleComponent],
@@ -90,8 +90,8 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-batch-editing/data.ts",
-                "/src/app/hierarchical-grid/hierarchical-grid-batch-editing/singer.ts",
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts",
+                "/src/app/hierarchical-grid/models.ts",
                 "/src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridBatchEditingSampleComponent,
@@ -155,7 +155,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-filtering/data.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridCustomFilteringSampleComponent],
                 ngDeclarations: [HGridCustomFilteringSampleComponent],
