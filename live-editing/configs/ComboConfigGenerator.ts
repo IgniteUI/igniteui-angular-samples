@@ -4,6 +4,7 @@ import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { ComboFeatures } from "../../src/app/lists/combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "../../src/app/lists/combo/combo-main/combo-main.component";
 import { ComboRemoteComponent } from "../../src/app/lists/combo/combo-remote/combo-remote.component";
+import { ComboStyling } from "../../src/app/lists/combo/combo-styling/combo-styling.component";
 import { ComboTemplateComponent } from "../../src/app/lists/combo/combo-template/combo-template.component";
 import { CascadingCombos } from "./../../src/app/lists/combo/cascading-combos/cascading-combos.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -22,6 +23,17 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxComboModule, IgxSwitchModule]
             }),
             component: ComboFeatures,
+            shortenComponentPathBy: "/lists/combo/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/data/heroData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxComboModule, ComboStyling],
+                ngDeclarations: [ComboStyling],
+                ngImports: [IgxComboModule]
+            }),
+            component: ComboStyling,
             shortenComponentPathBy: "/lists/combo/"
         }));
 

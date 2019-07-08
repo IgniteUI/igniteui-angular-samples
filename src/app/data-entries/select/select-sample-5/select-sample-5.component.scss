@@ -1,0 +1,52 @@
+// Browser sample related styling
+.select-wrapper {
+    display: flex;
+    padding-top: 160px;
+    padding-left: 40px;
+}
+
+//Ignite UI for Angular Theming engine related styling
+// in component.scss
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$my-primary-color: #ffffff;
+$my-secondary-color: #7344df;
+
+$my-color-palette: igx-palette(
+    $primary: $my-primary-color,
+    $secondary: $my-secondary-color
+);
+
+$my-light-purple: igx-color($my-color-palette, "secondary", 100);
+$my-medium-purple: igx-color($my-color-palette, "secondary", 300);
+$my-medium-plus-purple: igx-color($my-color-palette, "secondary", 400);
+$my-dark-purple: igx-color($my-color-palette, "secondary", 600);
+
+$custom-select-theme: igx-drop-down-theme(
+    $palette: $my-color-palette,
+    $background-color: $my-light-purple,
+    $item-text-color: $my-primary-color,
+    $header-text-color: $my-dark-purple,
+
+    $selected-item-background: $my-medium-plus-purple,
+    $selected-item-text-color: $my-primary-color,
+    $selected-hover-item-background: $my-medium-plus-purple,
+    $selected-hover-item-text-color: $my-primary-color,
+    $selected-focus-item-background: $my-medium-plus-purple,
+    $selected-focus-item-text-color: $my-primary-color,
+
+    $focused-item-background: $my-medium-purple,
+    $focused-item-text-color: $my-primary-color,
+
+    $hover-item-background: $my-primary-color,
+    $hover-item-text-color: $my-dark-purple
+);
+
+// Pass our custom-select-theme to the `igx-drop-down` mixin
+@include igx-drop-down($custom-select-theme);
+
+:host {
+    ::ng-deep {
+            @include igx-drop-down($custom-select-theme);
+    }
+}

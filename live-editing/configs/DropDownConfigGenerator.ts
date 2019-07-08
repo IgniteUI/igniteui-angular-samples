@@ -17,6 +17,10 @@ import { DropDownSample4Component
 } from "../../src/app/data-entries/dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { DropDownSample5Component
 } from "../../src/app/data-entries/dropdown/dropdown-sample-5/dropdown-sample-5.component";
+import { DropDownSample6Component
+} from "../../src/app/data-entries/dropdown/dropdown-sample-6/dropdown-sample-6.component";
+import { DropDownSample7Component
+} from "../../src/app/data-entries/dropdown/dropdown-sample-7/dropdown-sample-7.component";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -63,6 +67,27 @@ export class DropDownConfigGenerator implements IConfigGenerator {
                     IgxToggleModule],
                 ngDeclarations: [DropDownSample5Component],
                 ngImports: [IgxDropDownModule, IgxButtonModule, IgxSwitchModule, IgxToggleModule]
+            }),
+            shortenComponentPathBy: "/data-entries/dropdown/"
+        }));
+
+        configs.push(new Config({
+            component: DropDownSample6Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDropDownModule, DropDownSample6Component, IgxButtonModule, IgxToggleModule],
+                ngDeclarations: [DropDownSample6Component],
+                ngImports: [IgxDropDownModule, IgxButtonModule, IgxToggleModule]
+            }),
+            shortenComponentPathBy: "/data-entries/dropdown/"
+        }));
+
+        configs.push(new Config({
+            component: DropDownSample7Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDropDownModule, DropDownSample7Component, IgxButtonModule,
+                    IgxToggleModule],
+                ngDeclarations: [DropDownSample7Component],
+                ngImports: [IgxDropDownModule, IgxButtonModule]
             }),
             shortenComponentPathBy: "/data-entries/dropdown/"
         }));
