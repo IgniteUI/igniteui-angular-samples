@@ -8,26 +8,26 @@
     <igx-drop-down-item *ngFor="let aLocation of urlLocations" [value]="aLocation.url">{{ aLocation.label }}</igx-drop-down-item>
 </igx-drop-down>
 
-Presenting several input components:<br>
+Presenting several input components<br>
 
-<router-outlet></router-outlet>
-
-<igx-bottom-nav>
-    <igx-tab label="Push Buttons" icon="dashboard"
+<igx-tabs>
+    <igx-tab-item label="Push Buttons" icon="dashboard"
         routerLink="view1"
         routerLinkActive #rla1="routerLinkActive"
         [isSelected]="rla1.isActive">
-    </igx-tab>
-
-    <igx-tab label="Checkbox Buttons" icon="check_circle_outline"
+    </igx-tab-item>
+    
+    <igx-tab-item label="Checkbox Buttons" icon="check_circle_outline"
         routerLink="view2"
         routerLinkActive #rla2="routerLinkActive"
         [isSelected]="rla2.isActive">
-    </igx-tab>
+    </igx-tab-item>
 
-    <igx-tab label="Radio Buttons" icon="radio_button_checked"
+    <igx-tab-item label="Radio Buttons" icon="radio_button_checked"
         routerLink="view3"
         routerLinkActive #rla3="routerLinkActive"
         [isSelected]="rla3.isActive">
-    </igx-tab>
-</igx-bottom-nav>
+    </igx-tab-item>
+</igx-tabs>
+
+<router-outlet></router-outlet>

@@ -7,6 +7,7 @@ import {
     IgxButtonModule,
     IgxCardModule,
     IgxCarouselModule,
+    IgxCheckboxModule,
     IgxDividerModule,
     IgxExpansionPanelModule,
     IgxGridModule,
@@ -16,6 +17,7 @@ import {
     IgxListModule,
     IgxNavbarModule,
     IgxProgressBarModule,
+    IgxRadioModule,
     IgxRippleModule,
     IgxSliderModule,
     IgxTabsModule,
@@ -50,18 +52,31 @@ import {LayoutComponent} from "./layout/layout.component";
 import {LayoutsRoutingModule} from "./layouts-routing.module";
 import {TabbarSample1Component} from "./tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import {TabbarSample2Component} from "./tabbar/tabbar-sample-2/tabbar-sample-2.component";
+import {
+    BottomNavRoutingView1Component,
+    BottomNavRoutingView2Component,
+    BottomNavRoutingView3Component,
+    TabbarSample3Component} from "./tabbar/tabbar-sample-3/tabbar-sample-3.component";
 import {TabbarComponent} from "./tabbar/tabbar.component";
 import {TabsSample1Component} from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import {TabsSample2Component} from "./tabs/tabs-sample-2/tabs-sample-2.component";
 import {TabsSample3Component} from "./tabs/tabs-sample-3/tabs-sample-3.component";
 import {TabsSample4Component} from "./tabs/tabs-sample-4/components/tabs-sample-4.component";
 import {TabsSample5Component} from "./tabs/tabs-sample-5/components/tabs-sample-5.component";
+import {
+    TabsRoutingView1Component,
+    TabsRoutingView2Component,
+    TabsRoutingView3Component,
+    TabsSample6Component} from "./tabs/tabs-sample-6/tabs-sample-6.component";
 
 @NgModule({
     declarations: [
         AvatarSample1Component,
         AvatarSample2Component,
         AvatarSample3Component,
+        BottomNavRoutingView1Component,
+        BottomNavRoutingView2Component,
+        BottomNavRoutingView3Component,
         CardSample1Component,
         CardSample2Component,
         CardSample3Component,
@@ -87,6 +102,11 @@ import {TabsSample5Component} from "./tabs/tabs-sample-5/components/tabs-sample-
         LayoutComponent,
         TabbarSample1Component,
         TabbarSample2Component,
+        TabbarSample3Component,
+        TabsRoutingView1Component,
+        TabsRoutingView2Component,
+        TabsRoutingView3Component,
+        TabsSample6Component,
         TabbarComponent,
         TabsSample1Component,
         TabsSample2Component,
@@ -106,6 +126,7 @@ import {TabsSample5Component} from "./tabs/tabs-sample-5/components/tabs-sample-
         IgxButtonModule,
         IgxCardModule,
         IgxCarouselModule,
+        IgxCheckboxModule,
         IgxDividerModule,
         IgxExpansionPanelModule,
         IgxGridModule,
@@ -115,6 +136,7 @@ import {TabsSample5Component} from "./tabs/tabs-sample-5/components/tabs-sample-
         IgxListModule,
         IgxNavbarModule,
         IgxProgressBarModule,
+        IgxRadioModule,
         IgxRippleModule,
         IgxSliderModule,
         IgxTabsModule,

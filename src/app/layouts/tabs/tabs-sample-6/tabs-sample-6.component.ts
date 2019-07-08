@@ -2,11 +2,11 @@ import { Component } from "@angular/core";
 import { ISelectionEventArgs } from "igniteui-angular";
 
 @Component({
-    selector: "app-tabbar-sample-3",
-    styleUrls: ["tabbar-sample-3.component.scss"],
-    templateUrl: "tabbar-sample-3.component.html"
+    selector: "app-tabs-sample-6",
+    styleUrls: ["./tabs-sample-6.component.scss"],
+    templateUrl: "./tabs-sample-6.component.html"
 })
-export class TabbarSample3Component {
+export class TabsSample6Component {
     public urlLocations = [
         { label: "View 1", url: "view1" },
         { label: "View 2", url: "view2" },
@@ -23,9 +23,9 @@ export class TabbarSample3Component {
         const currentAddress: string = document.location.href;
         let baseAddress: string;
         if (currentAddress.indexOf("samples") !== -1) {
-            baseAddress = "/samples/layouts/tabbar-sample-3/";
+            baseAddress = "/samples/layouts/tabs-sample-6/";
         } else {
-            baseAddress = "/layouts/tabbar-sample-3/";
+            baseAddress = "/layouts/tabs-sample-6/";
         }
         document.location.href = baseAddress + eventArgs.newSelection.value;
     }
@@ -50,7 +50,7 @@ export class TabbarSample3Component {
         </div>
     `
 })
-export class BottomNavRoutingView1Component {
+export class TabsRoutingView1Component {
 }
 
 @Component({
@@ -67,7 +67,7 @@ export class BottomNavRoutingView1Component {
         <igx-checkbox [checked]="false">Integrate</igx-checkbox>
     `
 })
-export class BottomNavRoutingView2Component {
+export class TabsRoutingView2Component {
 }
 
 @Component({
@@ -80,7 +80,7 @@ export class BottomNavRoutingView2Component {
         <igx-radio *ngFor="let food of foods" [(ngModel)]="selectedFood" value="{{ food }}">{{ food }}</igx-radio>
     `
 })
-export class BottomNavRoutingView3Component {
+export class TabsRoutingView3Component {
     public foods = ["Apple", "Apricot", "Banana", "Nectarine", "Orange"];
     public selectedFood: string = this.foods[2];
 }
