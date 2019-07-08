@@ -37,6 +37,7 @@ export const gridsRoutesData = {
     "grid-toolbar-sample-3": { displayName: "Grid Toolbar Export", parentName: "Grid" },
     "grid-toolbar-sample-4": { displayName: "Grid Toolbar Custom Content", parentName: "Grid" },
     "grid-moving-sample": { displayName: "Grid Column Moving", parentName: "Grid" },
+    "grid-moving-styled-sample": { displayName: "Grid Column Moving Styled", parentName: "Grid" },
     "multi-column-headers": { displayName: "Grid Multi Column Headers", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
