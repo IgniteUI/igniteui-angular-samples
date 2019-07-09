@@ -1,9 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
 import { Router, RouterModule, Routes } from "@angular/router";
-import { IgxAvatarModule, IgxBottomNavModule, IgxButtonModule,
-    IgxIconModule, IgxListModule, IgxRippleModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxBottomNavModule, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule,
+    IgxIconModule, IgxListModule, IgxRadioModule, IgxRippleModule, IgxToggleModule } from "igniteui-angular";
 import { TabbarSample1Component } from "../../src/app/layouts/tabbar/tabbar-sample-1/tabbar-sample-1.component";
 import { TabbarSample2Component } from "../../src/app/layouts/tabbar/tabbar-sample-2/tabbar-sample-2.component";
+import { TabbarSample3Component } from "../../src/app/layouts/tabbar/tabbar-sample-3/tabbar-sample-3.component";
 import { TabbarComponent } from "../../src/app/layouts/tabbar/tabbar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -50,6 +51,21 @@ export class TabBarConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TabbarSample2Component],
                 ngImports: [RouterModule, IgxAvatarModule, IgxIconModule,
                     IgxListModule, IgxBottomNavModule]
+            }),
+            shortenComponentPathBy: "/layouts/tabbar/"
+        }));
+
+        // tabbar sample 3
+        configs.push(new Config({
+            component: TabbarSample3Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [TabbarSample3Component, IgxBottomNavModule, IgxButtonModule, IgxCheckboxModule,
+                    IgxDropDownModule, IgxIconModule, IgxRadioModule, IgxRippleModule, IgxToggleModule
+                ],
+                ngDeclarations: [TabbarSample3Component],
+                ngImports: [IgxBottomNavModule, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule,
+                    IgxIconModule, IgxRadioModule, IgxRippleModule, IgxToggleModule
+                ]
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));

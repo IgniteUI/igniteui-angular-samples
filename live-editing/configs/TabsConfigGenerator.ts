@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxIconModule,
-    IgxNavbarModule, IgxRippleModule, IgxTabsModule
+    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxDropDownModule, IgxIconModule,
+    IgxNavbarModule, IgxRadioModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
 } from "igniteui-angular";
 
 import { TabsSample1Component } from "../../src/app/layouts/tabs/tabs-sample-1/tabs-sample-1.component";
@@ -15,6 +15,7 @@ import { AppRouting2Module } from "../../src/app/layouts/tabs/tabs-sample-5/app.
 import { TabsSample5Component } from "../../src/app/layouts/tabs/tabs-sample-5/components/tabs-sample-5.component";
 import { TabsSample5Module } from "../../src/app/layouts/tabs/tabs-sample-5/tabs-sample-5.module";
 import { TabsRouting2Module } from "../../src/app/layouts/tabs/tabs-sample-5/tabs.routing2.module";
+import { TabsSample6Component } from "../../src/app/layouts/tabs/tabs-sample-6/tabs-sample-6.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -98,6 +99,22 @@ export class TabsConfigGenerator implements IConfigGenerator {
                 ],
                 ngDeclarations: [TabsSample5Component],
                 ngImports: [IgxTabsModule, AppRouting2Module, TabsRouting2Module, TabsSample5Module]
+            }),
+            shortenComponentPathBy: "/layouts/tabs/"
+        }));
+
+        configs.push(new Config({
+            component: TabsSample6Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [
+                    TabsSample6Component, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule, IgxIconModule,
+                    IgxRadioModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
+                ],
+                ngDeclarations: [TabsSample6Component],
+                ngImports: [
+                    IgxButtonModule, IgxCheckboxModule, IgxDropDownModule, IgxRadioModule, IgxIconModule,
+                    IgxRippleModule, IgxTabsModule, IgxToggleModule
+                ]
             }),
             shortenComponentPathBy: "/layouts/tabs/"
         }));
