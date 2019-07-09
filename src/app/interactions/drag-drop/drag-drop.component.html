@@ -1,21 +1,20 @@
 <div class="puzzle_board_wrapper">
-    <div class="outside_container" *ngFor="let row of tiles; let i = index">
-        <div *ngFor="let piece of row; let j = index" 
+    <div class="outside_container" *ngFor="let row of icons">
+        <div *ngFor="let icon of row" 
             (onEnter)="onEnterHandler($event)" 
             igxDrop 
-            id="{{piece.id}}" 
+            id="{{icon.id}}" 
             (onDrop)="onTileDropped($event)" 
             class="inside_container" 
             >
             <div igxDrag 
-                id="{{piece.id}}" 
-                (dragStart)="dragStartHandler(piece.id)" 
-                (dragEnd)="dragEndHandler(piece.id)"  
+                id="{{icon.id}}" 
+                (dragStart)="dragStartHandler(icon.id)" 
                 class="puzzle_part_container" 
                 [hideBaseOnDrag]="true" 
                 [ghostImageClass]="'drag_ghost_class'">
                 <img class="puzzle_part" 
-                    [src]="piece.url" 
+                    [src]="icon.url" 
                     draggable="false" 
                     onmousedown="if (event.preventDefault) event.preventDefault()" />
             </div>
