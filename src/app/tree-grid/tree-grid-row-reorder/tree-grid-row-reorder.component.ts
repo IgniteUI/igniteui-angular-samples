@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
+import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Component({
     selector: "tree-grid-row-reorder",
@@ -13,7 +13,7 @@ export class TreeGridRowReorderComponent {
 
     public localData = [];
     constructor() {
-        this.localData = EMPLOYEE_FLAT_DATA();
+        this.localData = generateEmployeeFlatData();
     }
 
     public rowDragStart(args: any): void {

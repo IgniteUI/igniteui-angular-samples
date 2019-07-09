@@ -69,4 +69,5 @@ export class HGridSummarySampleComponent implements OnInit {
 
     }
 
+    public formatter = (a) => a;
 }

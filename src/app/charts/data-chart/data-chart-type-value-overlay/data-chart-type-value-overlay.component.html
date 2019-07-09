@@ -1,3 +1,22 @@
-<p>
-  data-chart-type-value-overlay works!
-</p>
+<div class="chart">
+    <igx-data-chart #chart height="calc(100% - 20px)" width="100%" [dataSource]="data">
+        <igx-category-x-axis #xAxis label="Label"></igx-category-x-axis>
+        <igx-numeric-y-axis #yAxis minimumValue=0 maximumValue=10></igx-numeric-y-axis>
+
+        <igx-column-series [xAxis]="xAxis" [yAxis]="yAxis" valueMemberPath="Value" showDefaultTooltip=true
+            markerType="None"></igx-column-series>
+
+        <igx-value-overlay [axis]="yAxis" value=2.0 thickness=5></igx-value-overlay>
+        <igx-value-overlay [axis]="yAxis" value=3.6 thickness=5></igx-value-overlay>
+        <igx-value-overlay [axis]="yAxis" value=5.8 thickness=5></igx-value-overlay>
+        <igx-value-overlay [axis]="yAxis" value=1.0 thickness=5></igx-value-overlay>
+        <igx-value-overlay [axis]="yAxis" value=8.0 thickness=5></igx-value-overlay>
+        <igx-value-overlay [axis]="yAxis" value=7.0 thickness=5></igx-value-overlay>
+        <igx-value-overlay [axis]="yAxis" value=5.0 thickness=5></igx-value-overlay>
+
+    </igx-data-chart>
+</div>
+
+<div class="legend">
+    <igx-legend #legend></igx-legend>
+</div>

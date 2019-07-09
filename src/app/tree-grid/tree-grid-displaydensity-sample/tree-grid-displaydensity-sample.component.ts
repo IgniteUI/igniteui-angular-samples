@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     IgxButtonGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
 } from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA_DETAILED } from "../data/employees-flat-detailed";
+import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
 
 class CustomNumberSummary extends IgxSummaryOperand {
 
@@ -41,7 +41,7 @@ export class TreeGridDisplaydensitySampleComponent implements OnInit {
     public numberSummaries = CustomNumberSummary;
 
     public ngOnInit() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
+        this.data = generateEmployeeDetailedFlatData();
         this.displayDensities = [
             {
                 label: "compact",

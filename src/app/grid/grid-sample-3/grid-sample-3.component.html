@@ -11,7 +11,7 @@
                 <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
-        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" width="17%" editable="true" [dataType]="'number'"
+        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" width="17%" editable="true" dataType="number"
             [hasSummary]="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 ${{val}}
@@ -21,7 +21,7 @@
                 <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
-        <igx-column #col field="UnitsInStock" header="Units In Stock" width="17%" [dataType]="'number'" editable="true"
+        <igx-column #col field="UnitsInStock" header="Units In Stock" width="17%" dataType="number" editable="true"
             [hasSummary]="false" [summaries]="mySummary">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 {{val}}

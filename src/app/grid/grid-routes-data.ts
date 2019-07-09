@@ -37,6 +37,7 @@ export const gridsRoutesData = {
     "grid-toolbar-sample-3": { displayName: "Grid Toolbar Export", parentName: "Grid" },
     "grid-toolbar-sample-4": { displayName: "Grid Toolbar Custom Content", parentName: "Grid" },
     "grid-moving-sample": { displayName: "Grid Column Moving", parentName: "Grid" },
+    "grid-moving-styled-sample": { displayName: "Grid Column Moving Styled", parentName: "Grid" },
     "multi-column-headers": { displayName: "Grid Multi Column Headers", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
@@ -44,6 +45,7 @@ export const gridsRoutesData = {
     "grid-state": { displayName: "Grid Save and Load State", parentName: "Grid" },
     "grid-about": { displayName: "Grid About", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
+    "grid-multi-cell-selection-style": { displayName: "Grid Multi Cell Selection Style", parentName: "Grid" },
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
     "grid-mrl-custom-navigation":

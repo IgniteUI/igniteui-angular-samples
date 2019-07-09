@@ -29,6 +29,7 @@ export class ThemeChooserSampleComponent implements OnInit {
     public THEME: typeof THEME = THEME;
     public data: any[] = DATA;
     public record;
+    public themes = [THEME.LIGHT, THEME.DARK, THEME.BLACK];
 
     @HostBinding("class")
     public themesClass: THEME = THEME.LIGHT;
@@ -50,18 +51,6 @@ export class ThemeChooserSampleComponent implements OnInit {
 
     private deletedRow;
 
-    private _dropdownPositionSettings = {
-        horizontalStartPoint: HorizontalAlignment.Left,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
-
-    private _dropDownOverlaySettings = {
-        closeOnOutsideClick: true,
-        modal: false,
-        positionStrategy: new ConnectedPositioningStrategy(this._dropdownPositionSettings),
-        scrollStrategy: new CloseScrollStrategy()
-    };
-
     private _dialogOverlaySettings2 = {
         closeOnOutsideClick: true,
         modal: true,
@@ -73,12 +62,6 @@ export class ThemeChooserSampleComponent implements OnInit {
 
     public selectTheme(value: THEME) {
         this.themesClass = value;
-    }
-
-    public toggleDropDown(eventArgs, selectedDropDown: IgxDropDownComponent) {
-        const dropDown = selectedDropDown;
-        this._dropDownOverlaySettings.positionStrategy.settings.target = eventArgs.target;
-        dropDown.toggle(this._dropDownOverlaySettings);
     }
 
     public addRow() {
@@ -111,7 +94,6 @@ export class ThemeChooserSampleComponent implements OnInit {
 
     public ngOnInit() {
         this.datePicker.outlet = this.outlet;
-        // this.grid1.outletDirective = this.outlet;
         this.data = DATA;
         this.record = new Record();
     }

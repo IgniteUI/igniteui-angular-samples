@@ -1,6 +1,11 @@
-<div class="chart">
-    <igx-doughnut-chart #chart height="100%" width="100%">
-        <igx-ring-series [dataSource]="data" valueMemberPath="Value" labelMemberPath="Label">
-        </igx-ring-series>
-    </igx-doughnut-chart>
+<div class="container">
+    <div class="chart">
+        <igx-doughnut-chart #chart height="100%" width="100%">
+            <igx-ring-series
+            [dataSource]="data"
+            valueMemberPath="Value"
+            labelMemberPath="Label">
+            </igx-ring-series>
+        </igx-doughnut-chart>
+    </div>
 </div>

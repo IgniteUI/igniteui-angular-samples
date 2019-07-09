@@ -14,6 +14,7 @@ import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-gr
 import { interactionsRoutesData } from "../interactions/interactions-routes-data";
 import { layoutsRoutesData } from "../layouts/layouts-routes-data";
 import { listsRoutesData } from "../lists/lists-routes-data";
+import { geoMapRoutesData } from "../maps/geo-map-routes-data";
 import { menusRoutesData } from "../menus/menus-routes-data";
 import { notificationsRoutesData } from "../notifications/notifications-routes-data";
 import { schedulingRoutesData } from "../scheduling/scheduling-routes-data";
@@ -133,6 +134,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: "spreadsheet",
             routesData: spreadsheetRoutesData
+        },
+        {
+            path: "maps",
+            routesData: geoMapRoutesData
         }
     ];
 

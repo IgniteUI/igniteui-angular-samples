@@ -25,7 +25,8 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "es5BrowserSupport": true
+            "es5BrowserSupport": true,
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -44,6 +45,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
+            },
+            "es5": {
+              "tsConfig": "src/tsconfig-es5.app.json"
             }
           }
         },
@@ -55,6 +59,9 @@
           "configurations": {
             "production": {
               "browserTarget": "my-app:build:production"
+            },
+            "es5": {
+              "browserTarget": "my-app:build:es5"
             }
           }
         },
@@ -86,7 +93,8 @@
           "options": {
             "tsConfig": [
               "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "src/tsconfig.spec.json",
+              "tsconfig.worker.json"
             ],
             "exclude": [
               "**/node_modules/**"

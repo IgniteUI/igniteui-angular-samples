@@ -12,7 +12,7 @@
                 <igx-icon class="header-icon" color="{{ col.hasSummary ? '#e41c77' : '' }}" (click)="toggleSummary(col)">functions</igx-icon>
             </ng-template>
         </igx-column>
-        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" editable="true" [dataType]="'number'"
+        <igx-column #col field="UnitPrice" header="Price" [filterable]="false" editable="true" dataType="number"
             [hasSummary]="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 ${{ val }}

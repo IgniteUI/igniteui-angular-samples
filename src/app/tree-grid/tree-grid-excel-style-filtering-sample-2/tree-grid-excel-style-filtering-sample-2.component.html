@@ -5,7 +5,7 @@
         </igx-column>
         <igx-column field="Name" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'" [sortable]="false" [disablePinning]="true" [disableHiding]="true" [movable]="false">
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number" [sortable]="false" [disablePinning]="true" [disableHiding]="true" [movable]="false">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
                 <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
