@@ -59,11 +59,13 @@ export class TabBarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TabbarSample3Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [TabbarSample3Component, IgxBottomNavModule, IgxButtonModule, IgxCheckboxModule,
+                imports: [
+                    RouterModule, TabbarSample3Component, IgxBottomNavModule, IgxButtonModule, IgxCheckboxModule,
                     IgxDropDownModule, IgxIconModule, IgxRadioModule, IgxRippleModule, IgxToggleModule
                 ],
                 ngDeclarations: [TabbarSample3Component],
-                ngImports: [IgxBottomNavModule, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule,
+                ngImports: [
+                    RouterModule, IgxBottomNavModule, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule,
                     IgxIconModule, IgxRadioModule, IgxRippleModule, IgxToggleModule
                 ]
             }),

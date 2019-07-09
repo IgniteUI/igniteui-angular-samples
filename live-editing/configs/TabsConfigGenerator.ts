@@ -1,4 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
+
+import { RouterModule } from "@angular/router";
+
 import {
     IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxDropDownModule, IgxIconModule,
     IgxNavbarModule, IgxRadioModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
@@ -107,13 +110,13 @@ export class TabsConfigGenerator implements IConfigGenerator {
             component: TabsSample6Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [
-                    TabsSample6Component, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule, IgxIconModule,
-                    IgxRadioModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
+                    RouterModule, TabsSample6Component, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule,
+                    IgxIconModule, IgxRadioModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
                 ],
                 ngDeclarations: [TabsSample6Component],
                 ngImports: [
-                    IgxButtonModule, IgxCheckboxModule, IgxDropDownModule, IgxRadioModule, IgxIconModule,
-                    IgxRippleModule, IgxTabsModule, IgxToggleModule
+                    RouterModule, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule, IgxRadioModule,
+                    IgxIconModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
                 ]
             }),
             shortenComponentPathBy: "/layouts/tabs/"
