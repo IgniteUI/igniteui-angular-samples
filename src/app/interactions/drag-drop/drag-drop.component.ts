@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxDialogComponent } from "igniteui-angular";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 
 @Component({
     selector: "drag-drop-sample",
@@ -8,14 +7,10 @@ import { IgxDialogComponent } from "igniteui-angular";
 })
 
 export class DragAndDropSampleComponent implements OnInit {
+    public dragIconId: number;
+    public dropTileId: number;
     public tiles = [];
-    public puzzleBoard;
     public readonly boardEdgeLength: number = 3;
-    public readonly successfullMessage: string = "You have successfully solved the puzzle.";
-
-    @ViewChild("alert", { static: true })
-    public dialog: IgxDialogComponent;
-
     private tilesArr = [
         {
             id: 0, url: "assets/images/drag-drop/profile.png"
@@ -45,13 +40,18 @@ export class DragAndDropSampleComponent implements OnInit {
             id: 8, url: "assets/images/drag-drop/chat.png"
         }
     ];
+    constructor(private cdr: ChangeDetectorRef) {
 
-    constructor() {
     }
 
     public ngOnInit() {
-        this.puzzleBoard = [];
-        this.shuffleArray();
+        for (let i = 0; i < this.boardEdgeLength; i++) {
+            this.tiles.push([]);
+            for (let j = 0; j < this.boardEdgeLength; j++) {
+                this.tiles[i].push(this.tilesArr[i * this.boardEdgeLength + j]);
+            }
+        }
+        console.log(this.tiles)
     }
 
     public onTileDropped(ev) {
@@ -65,21 +65,9 @@ export class DragAndDropSampleComponent implements OnInit {
         this.swapTiles(firstPartRow, firstPartColl, secondPartRow, secondPartColl);
         ev.cancel = true;
         ev.drag.dropFinished();
-        if (this.checkForCompletedPuzzle()) {
-            setTimeout(() => {
-                this.showMessage();
-            }, 100);
-        }
-    }
-
-    private showMessage() {
-        this.dialog.open();
     }
 
     private swapTiles(firstPartRow: number, firstPartColl: number, secondPartRow: number, secondPartColl: number) {
-        [this.puzzleBoard[firstPartRow][firstPartColl], this.puzzleBoard[secondPartRow][secondPartColl]] =
-        [this.puzzleBoard[secondPartRow][secondPartColl], this.puzzleBoard[firstPartRow][firstPartColl]];
-
         [this.tiles[firstPartRow][firstPartColl], this.tiles[secondPartRow][secondPartColl]] =
         [this.tiles[secondPartRow][secondPartColl], this.tiles[firstPartRow][firstPartColl]];
     }
@@ -87,51 +75,47 @@ export class DragAndDropSampleComponent implements OnInit {
     private findIndexOfDrag(dragId: number) {
         for (let i = 0; i < this.boardEdgeLength; i++) {
             for (let j = 0; j < this.boardEdgeLength; j++) {
-                if (this.puzzleBoard[i][j] === dragId) {
+                if (this.tiles[i][j].id === dragId) {
                     return { row: i, coll: j };
                 }
             }
         }
     }
 
-    private checkForCompletedPuzzle(): boolean  {
-        for (let i = 0; i < this.boardEdgeLength; i++) {
-            for (let j = 0; j < this.boardEdgeLength; j++) {
-                if (this.puzzleBoard[i][j] !== (i * this.boardEdgeLength + j)) {
-                    return false;
-                }
-            }
+    private onEnterHandler(ev):void {
+        this.dropTileId = parseInt((ev.owner.element.nativeElement.id).slice(-1), 10)
+        //the event get raised immediately, but we want to do something only when we enter another tile
+        if(this.dragIconId === this.dropTileId) {
+            return;
         }
+        let dragIndex = this.findIndexOfDrag(this.dragIconId)
+        let dragRow = dragIndex.row;
+        let dragCol = dragIndex.coll;
 
-        return true;
+        let dropIndex = this.findIndexOfDrag(this.dropTileId)
+        let dropRow = dropIndex.row;
+        let dropCol = dropIndex.coll;
+
+        //if the two tiles are on the same row swap them
+        if (dragRow === dropRow) {
+            this.dragIconId = this.dropTileId;
+            this.swapTiles(dragRow, dragCol, dropRow, dropCol)
+        }
+        console.log(`dragRow: ${dragRow}, dragCol: ${dragCol}`)
+        console.log(`dropRow: ${dropRow}, dropCol: ${dropCol}`)
+
+        //console.log(this.puzzleBoard[0]);
+        // [this.puzzleBoard[this.dropTileId], this.puzzleBoard[this.dragIconId]] = [this.puzzleBoard[this.dragIconId], this.puzzleBoard[this.dropTileId]]
+        // [this.tiles[this.dropTileId], this.tiles[this.dragIconId]] = [this.tiles[this.dragIconId], this.tiles[this.dropTileId]]
+        //console.log(`Entered: ${this.dropTileId}`)
     }
 
-    private shuffleArray(): void {
-        for (let i = this.tilesArr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [this.tilesArr[i], this.tilesArr[j]] = [this.tilesArr[j], this.tilesArr[i]];
-        }
-
-        for (let i = 0; i < this.boardEdgeLength; i++) {
-            this.tiles.push([]);
-            this.puzzleBoard.push([]);
-            for (let j = 0; j < this.boardEdgeLength; j++) {
-                this.tiles[i].push(this.tilesArr[i * this.boardEdgeLength + j]);
-                this.puzzleBoard[i].push(this.tilesArr[i * this.boardEdgeLength + j].id);
-            }
-        }
+    private dragStartHandler(id: string):void {
+        this.dragIconId = parseInt(id, 10);
+        console.log(`drag start: ${this.dragIconId}`)
     }
 
-    private getBorderClasses(row, coll) {
-        let classes = "";
-        if (row === 0 || row === this.boardEdgeLength - 1) {
-            classes += "top_bottom_edge ";
-        }
-
-        if (coll === 0 || coll === this.boardEdgeLength - 1) {
-            classes += "left_right_edge";
-        }
-
-        return classes;
+    private dragEndHandler(id:string):void {
+        console.log(`drag ended: ${id}`)
     }
 }
