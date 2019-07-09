@@ -15,6 +15,7 @@ export class MapCustomTooltipsComponent implements AfterViewInit {
     public map: IgxGeographicMapComponent;
     @ViewChild("template", {static: true})
     public tooltipTemplate: TemplateRef<object>;
+
     constructor() {
     }
 

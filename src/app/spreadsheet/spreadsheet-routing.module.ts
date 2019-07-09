@@ -9,7 +9,8 @@ import { SpreadsheetActivationComponent } from "./spreadsheet-activation/spreads
 import { SpreadsheetAdapterComponent } from "./spreadsheet-adapter/spreadsheet-adapter.component";
 import { SpreadsheetClipboardComponent } from "./spreadsheet-clipboard/spreadsheet-clipboard.component";
 import { SpreadsheetCommandsComponent } from "./spreadsheet-commands/spreadsheet-commands.component";
-import { SpreadsheetCondFormatComponent } from "./spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
+// tslint:disable-next-line: max-line-length
+import { SpreadsheetCondFormatComponent } from "./spreadsheet-conditional-formatting/spreadsheet-cond-formatting.component";
 import { SpreadsheetConfiguringComponent} from "./spreadsheet-configuring/spreadsheet-configuring.component";
 import { SpreadsheetDataValidComponent } from "./spreadsheet-data-validation/spreadsheet-data-validation.component";
 // import { SpreadsheetFilterDialogComponent } from "./spreadsheet-filter-dialog/spreadsheet-filter-dialog.component";
@@ -56,8 +57,8 @@ export const spreadsheetRoutes: Routes = [
     },
     {
         component: SpreadsheetCondFormatComponent,
-        data: spreadsheetRoutesData["spreadsheet-cond-formatting"],
-        path: "spreadsheet-cond-formatting"
+        data: spreadsheetRoutesData["spreadsheet-conditional-formatting"],
+        path: "spreadsheet-conditional-formatting"
     },
     {
         component: SpreadsheetConfiguringComponent,

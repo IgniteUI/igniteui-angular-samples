@@ -1,5 +1,5 @@
 import { WorldLocations } from "./WorldLocations";
-import { WorldUtils } from "./WorldUtils";
+import { WorldUtility } from "./WorldUtility";
 
 export class WorldConnections {
 
@@ -43,7 +43,7 @@ export class WorldConnections {
                 if (origin.name !== dest.name) {
                     const route = [origin.name, dest.name].sort().join("-");
                     const routeIsValid = this.flightsLookup.indexOf(route) === -1;
-                    const distance = Math.round(WorldUtils.calcDistance(origin, dest));
+                    const distance = Math.round(WorldUtility.calcDistance(origin, dest));
                     const distanceIsValid = distance > minDistance && distance < maxDistance;
                     const pass = Math.round((Math.random() * 200)) + 150;
                     const time = distance / 800;
@@ -52,7 +52,7 @@ export class WorldConnections {
                     if (routeIsValid && distanceIsValid && trafficIsValid) {
                          this.flightsLookup.push(route);
 
-                         const paths = WorldUtils.calcPaths(origin, dest);
+                         const paths = WorldUtility.calcPaths(origin, dest);
                          flightsCount++;
                          connectionsCount++;
                          const id = origin.name.substring(0, 3).toUpperCase() + "-" + flightsCount;

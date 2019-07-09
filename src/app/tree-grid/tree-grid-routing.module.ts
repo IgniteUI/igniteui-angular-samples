@@ -16,6 +16,10 @@ import {
     TreeGridColumnMovingSampleComponent
 } from "./tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
 import {
+    TreeGridColumnMovingStyledSampleComponent
+} from "./tree-grid-column-moving-styled-sample/tree-grid-column-moving-styled-sample.component";
+
+import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import {
@@ -166,6 +170,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnMovingSampleComponent,
         data: treeGridRoutesData["treegrid-column-moving"],
         path: "treegrid-column-moving"
+    },
+    {
+        component: TreeGridColumnMovingStyledSampleComponent,
+        data: treeGridRoutesData["treegrid-column-moving-styled"],
+        path: "treegrid-column-moving-styled"
     },
     {
         component: TreeGridColumnPinningSampleComponent,

@@ -13,8 +13,8 @@
         (onSortingDone)="processData(true)">
         <igx-column [field]="'ProductID'" [sortable]="true"></igx-column>
         <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
-        <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency" [sortable]="true"></igx-column>
-        <igx-column [field]="'UnitsInStock'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
+        <igx-column [field]="'UnitPrice'" dataType="number" [formatter]="formatCurrency" [sortable]="true"></igx-column>
+        <igx-column [field]="'UnitsInStock'" dataType="number" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">UnitsInStock</span>
             </ng-template>
@@ -27,7 +27,7 @@
             </ng-template>
         </igx-column>
         <igx-column [field]="'QuantityPerUnit'" [sortable]="true"></igx-column>
-        <igx-column [field]="'ReorderLevel'" [dataType]="'number'" [headerClasses]="'headerAlignSyle'" [sortable]="true">
+        <igx-column [field]="'ReorderLevel'" dataType="number" [headerClasses]="'headerAlignSyle'" [sortable]="true">
             <ng-template igxHeader>
                 <span class="cellAlignSyle">ReorderLevel</span>
             </ng-template>

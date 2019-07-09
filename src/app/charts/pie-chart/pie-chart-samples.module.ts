@@ -1,3 +1,7 @@
+/* tslint:disable:object-literal-sort-keys */
+// tslint:disable:max-line-length
+// tslint:disable:member-ordering
+
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";

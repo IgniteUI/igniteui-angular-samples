@@ -21,60 +21,60 @@ export class MapTypeScatterAreaSeriesComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-    const sds = new ShapeDataSource();
-    sds.shapefileSource = "assets/Shapes/WorldTemperatures.shp";
-    sds.databaseSource  = "assets/Shapes/WorldTemperatures.dbf";
-    sds.dataBind();
-    sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
-}
+        const sds = new ShapeDataSource();
+        sds.shapefileSource = "assets/Shapes/WorldTemperatures.shp";
+        sds.databaseSource  = "assets/Shapes/WorldTemperatures.dbf";
+        sds.dataBind();
+        sds.importCompleted.subscribe(() => this.onDataLoaded(sds, ""));
+    }
 
     public onDataLoaded(sds: ShapeDataSource, e: any) {
-    const shapeRecords = sds.getPointData();
-    console.log("loaded contour shapes: " + shapeRecords.length + " from /Shapes/WorldTemperatures.shp");
+        const shapeRecords = sds.getPointData();
+        console.log("loaded contour shapes: " + shapeRecords.length + " from /Shapes/WorldTemperatures.shp");
 
-    const contourPoints: any[] = [];
-    for (const record of shapeRecords) {
-        const temp = record.fieldValues.Contour;
-        // using only major contours (every 10th degrees Celsius)
-        if (temp % 10 === 0 && temp >= 0) {
-            for (const shapes of record.points) {
-                for (let i = 0; i < shapes.length; i++) {
-                if (i % 5 === 0) {
-                    const p = shapes[i];
-                    const item = { lon: p.x, lat: p.y, value: temp};
-                    contourPoints.push(item);
-                }
+        const contourPoints: any[] = [];
+        for (const record of shapeRecords) {
+            const temp = record.fieldValues.Contour;
+            // using only major contours (every 10th degrees Celsius)
+            if (temp % 10 === 0 && temp >= 0) {
+                for (const shapes of record.points) {
+                    for (let i = 0; i < shapes.length; i++) {
+                    if (i % 5 === 0) {
+                        const p = shapes[i];
+                        const item = { lon: p.x, lat: p.y, value: temp};
+                        contourPoints.push(item);
+                    }
+                    }
                 }
             }
         }
+
+        console.log("loaded contour points: " + contourPoints.length);
+        this.createContourSeries(contourPoints);
     }
 
-    console.log("loaded contour points: " + contourPoints.length);
-    this.createContourSeries(contourPoints);
-}
-
     public createContourSeries(data: any[]) {
-    const brushes = [
-        "rgba(32, 146, 252, 0.5)", // semi-transparent blue
-        "rgba(14, 194, 14, 0.5)",  // semi-transparent green
-        "rgba(252, 120, 32, 0.5)", // semi-transparent orange
-        "rgba(252, 32, 32, 0.5)"  // semi-transparent red
-    ];
+        const brushes = [
+            "rgba(32, 146, 252, 0.5)", // semi-transparent blue
+            "rgba(14, 194, 14, 0.5)",  // semi-transparent green
+            "rgba(252, 120, 32, 0.5)", // semi-transparent orange
+            "rgba(252, 32, 32, 0.5)"  // semi-transparent red
+        ];
 
-    const colorScale = new IgxCustomPaletteColorScaleComponent();
-    colorScale.palette = brushes;
-    colorScale.minimumValue = 0;
-    colorScale.maximumValue = 30;
+        const colorScale = new IgxCustomPaletteColorScaleComponent();
+        colorScale.palette = brushes;
+        colorScale.minimumValue = 0;
+        colorScale.maximumValue = 30;
 
-    const areaSeries = new IgxGeographicScatterAreaSeriesComponent();
-    areaSeries.dataSource = data;
-    areaSeries.longitudeMemberPath = "lon";
-    areaSeries.latitudeMemberPath = "lat";
-    areaSeries.colorMemberPath = "value";
-    areaSeries.colorScale = colorScale;
-    areaSeries.tooltipTemplate = this.tooltipTemplate;
-    areaSeries.thickness = 4;
+        const areaSeries = new IgxGeographicScatterAreaSeriesComponent();
+        areaSeries.dataSource = data;
+        areaSeries.longitudeMemberPath = "lon";
+        areaSeries.latitudeMemberPath = "lat";
+        areaSeries.colorMemberPath = "value";
+        areaSeries.colorScale = colorScale;
+        areaSeries.tooltipTemplate = this.tooltipTemplate;
+        areaSeries.thickness = 4;
 
-    this.map.series.add(areaSeries);
-}
+        this.map.series.add(areaSeries);
+    }
 }

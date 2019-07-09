@@ -35,6 +35,9 @@ import {
     TreeGridColumnMovingSampleComponent
 } from "./tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
 import {
+    TreeGridColumnMovingStyledSampleComponent
+} from "./tree-grid-column-moving-styled-sample/tree-grid-column-moving-styled-sample.component";
+import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import {
@@ -137,6 +140,7 @@ import {
         TreeGridSortingSampleComponent,
         TreeGridContextmenuComponent,
         TreeGridColumnMovingSampleComponent,
+        TreeGridColumnMovingStyledSampleComponent,
         TreeGridColumnPinningSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,

@@ -3,7 +3,7 @@ import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source
 import { IgxGeographicHighDensityScatterSeriesComponent
 } from "igniteui-angular-maps/ES5/igx-geographic-high-density-scatter-series-component";
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
-import { WorldUtils } from "../../utilities/WorldUtils";
+import { WorldUtility } from "../../utilities/WorldUtility";
 
 @Component({
   selector: "app-map-type-scatter-density-series",
@@ -48,7 +48,7 @@ export class MapTypeScatterDensitySeriesComponent implements AfterViewInit {
         this.map.series.add(geoSeries);
 
         // zooming to bound of all geographic locations
-        const geoBounds = WorldUtils.getBounds(this.geoLocations);
+        const geoBounds = WorldUtility.getBounds(this.geoLocations);
         geoBounds.top = 0;
         geoBounds.height = -50;
         this.map.zoomToGeographic(geoBounds);

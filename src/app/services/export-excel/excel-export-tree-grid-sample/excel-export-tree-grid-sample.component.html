@@ -5,7 +5,7 @@
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'">
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
             <ng-template igxCell let-cell="cell" let-val>
                 <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
                 <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>

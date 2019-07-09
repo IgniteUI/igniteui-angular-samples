@@ -19,7 +19,7 @@
         </select>
     </div>
     <div class="chart">
-        <igx-data-chart height="100%" width="100%" [dataSource]="data">
+        <igx-data-chart height="calc(100% - 60px)" width="100%" [dataSource]="data">
 
             <igx-category-x-axis #xAxis name="xAxis" label="Date"></igx-category-x-axis>
             <igx-numeric-y-axis #yAxis name="yAxis"></igx-numeric-y-axis>

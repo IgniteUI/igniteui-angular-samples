@@ -20,5 +20,5 @@ export class HGridToolbarCustomSampleComponent implements OnInit {
     public ngOnInit(): void {
 
     }
-
+    public formatter = (a) => a;
 }

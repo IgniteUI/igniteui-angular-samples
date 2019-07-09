@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA_DETAILED } from "../data/employees-flat-detailed";
+import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
 
 @Component({
   selector: "app-tree-grid-column-resizing-sample",
@@ -15,7 +15,7 @@ export class TreeGridColumnResizingSampleComponent {
     public nWidth: string;
 
     constructor() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
+        this.data = generateEmployeeDetailedFlatData();
     }
 
     public onResize(event) {

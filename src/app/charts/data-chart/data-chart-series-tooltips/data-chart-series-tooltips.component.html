@@ -9,7 +9,7 @@
     </div>
 
     <div class="chart">
-      <igx-data-chart #chart height="100%" width="100%" [dataSource]="data">
+      <igx-data-chart #chart height="calc(100% - 60px)" width="100%" [dataSource]="data">
 
         <igx-category-x-axis #xAxis name="xAxis" label="Country"></igx-category-x-axis>
         <igx-numeric-y-axis #yAxis name="yAxis" minValue=0></igx-numeric-y-axis>

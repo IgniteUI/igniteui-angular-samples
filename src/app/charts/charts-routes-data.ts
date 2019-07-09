@@ -2,14 +2,19 @@
 // tslint:disable:max-line-length
 
 export const chartsRoutesData = {
+    // doughnut-chart
     "doughnut-chart-explosion": { displayName: "Doughnut Chart Explosion", parentName: "Doughnut Chart" },
     "doughnut-chart-overview": { displayName: "Doughnut Chart Overview", parentName: "Doughnut Chart" },
     "doughnut-chart-selection": { displayName: "Doughnut Chart Selection", parentName: "Doughnut Chart" },
+    "doughnut-chart-legend": { displayName: "Doughnut Chart Legend", parentName: "Doughnut Chart" },
+    "doughnut-chart-rings": { displayName: "Doughnut Chart Rings", parentName: "Doughnut Chart" },
+    // pie-chart
     "pie-chart-data-sample": { displayName: "Pie Chart Data Sample", parentName: "Pie Chart" },
     "pie-chart-explosion": { displayName: "Pie Chart Explosion", parentName: "Pie Chart" },
     "pie-chart-legend": { displayName: "Pie Chart Legend", parentName: "Pie Chart" },
     "pie-chart-others": { displayName: "Pie Chart Others Slice", parentName: "Pie Chart" },
     "pie-chart-selection": { displayName: "Pie Chart Selection", parentName: "Pie Chart" },
+    // category-chart
     "category-chart-overview": { displayName: "Category Chart Overview", parentName: "Category Chart" },
     "category-chart-annotations": { displayName: "Category Chart Annotations", parentName: "Category Chart" },
     "category-chart-overlap-columns": { displayName: "Category Chart Overlap Columns", parentName: "Category Chart" },
@@ -21,6 +26,7 @@ export const chartsRoutesData = {
     "category-chart-tooltip-template": { displayName: "Category Chart Tooltips Template", parentName: "Category Chart" },
     "category-chart-tooltip-types": { displayName: "Category Chart Tooltip Types", parentName: "Category Chart" },
     "category-chart-trendline": { displayName: "Category Chart Trendline", parentName: "Category Chart" },
+    // financial-chart
     "financial-chart-overview-sample": { displayName: "Financial Chart Overview", parentName: "Financial Chart" },
     "financial-chart-performance": { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
     "financial-chart-annotations": { displayName: "Financial Chart Annotations", parentName: "Financial Chart" },
@@ -38,6 +44,7 @@ export const chartsRoutesData = {
     "financial-chart-tooltip-types": { displayName: "Financial Chart Tooltip Types", parentName: "Financial Chart" },
     "financial-chart-time-based-data": { displayName: "Financial Chart Time Based Data", parentName: "Financial Chart" },
     "financial-chart-trendlines": { displayName: "Financial Chart Trendlines", parentName: "Financial Chart" },
+    // data-chart
     // TODO uncomment when implemented
     // "data-chart-axis-locations": { displayName: "Data Chart Axis Locations", parentName: "Data Chart" },
     "data-chart-axis-annotations": { displayName: "Data Chart Axis Annotations", parentName: "Data Chart" },
@@ -62,13 +69,14 @@ export const chartsRoutesData = {
     "data-chart-type-range-series": { displayName: "Data Chart Range Series", parentName: "Data Chart" },
     "data-chart-type-area-series": { displayName: "Data Chart Scatter Area Series", parentName: "Data Chart" },
     "data-chart-type-contour-series": { displayName: "Data Chart Scatter Contour Series", parentName: "Data Chart" },
-    "data-chart-type-scatter-density-series": { displayName: "Data Chart Scatter Density Series", parentName: "Data Chart" },
+    // "data-chart-type-scatter-density-series": { displayName: "Data Chart Scatter Density Series", parentName: "Data Chart" },
     "data-chart-type-scatter-series": { displayName: "Data Chart Scatter Series", parentName: "Data Chart" },
     "data-chart-type-shape-series": { displayName: "Data Chart Scatter Shape Series", parentName: "Data Chart" },
     "data-chart-type-stacked-series": { displayName: "Data Chart Stacked Series", parentName: "Data Chart" },
     "data-chart-synchronization": { displayName: "Data Chart Synchronization", parentName: "Data Chart" },
     "data-chart-titles": { displayName: "Data Chart Titles", parentName: "Data Chart" },
     "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" },
+    // sparkline-chart
     "sparkline-display-types": { displayName: "Sparkline Display Types", parentName: "Sparkline"},
     "sparkline-markers": { displayName: "Sparkline Markers", parentName: "Sparkline"},
     "sparkline-normal-range": { displayName: "Sparkline Normal Range", parentName: "Sparkline"},

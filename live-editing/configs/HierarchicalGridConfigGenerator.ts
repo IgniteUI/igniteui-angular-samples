@@ -16,6 +16,7 @@ import { HGridBatchEditingSampleComponent } from "../../src/app/hierarchical-gri
 import { HierarchicalGridWithTransactionsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
 import { HGridCostumHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
+import { HGridColumnMovingSampleComponentStyled } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component";
 import { HGridColumnMovingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridColumnResizingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
@@ -67,8 +68,8 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-editing/data.ts",
-                "/src/app/hierarchical-grid/hierarchical-grid-editing/singer.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts",
+                "/src/app/hierarchical-grid/models.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridEditingSampleComponent, IgxDialogModule,
                     IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule],
@@ -80,7 +81,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-row-editing/data.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridRowEditingSampleComponent, IgxDatePickerModule],
                 ngDeclarations: [HGridRowEditingSampleComponent],
@@ -90,8 +91,8 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-batch-editing/data.ts",
-                "/src/app/hierarchical-grid/hierarchical-grid-batch-editing/singer.ts",
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts",
+                "/src/app/hierarchical-grid/models.ts",
                 "/src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridBatchEditingSampleComponent,
@@ -155,7 +156,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-filtering/data.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridCustomFilteringSampleComponent],
                 ngDeclarations: [HGridCustomFilteringSampleComponent],
@@ -225,6 +226,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridDisplayDensitySampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridColumnMovingSampleComponentStyled],
+                ngDeclarations: [HGridColumnMovingSampleComponentStyled],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridColumnMovingSampleComponentStyled
         }));
 
         configs.push(new Config({
