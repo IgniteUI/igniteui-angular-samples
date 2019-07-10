@@ -1,5 +1,4 @@
-// tslint:disable:object-literal-sort-keys
-// tslint:disable:max-line-length
+/* tslint:disable */
 
 export const chartsRoutesData = {
     // doughnut-chart
@@ -9,7 +8,7 @@ export const chartsRoutesData = {
     "doughnut-chart-legend": { displayName: "Doughnut Chart Legend", parentName: "Doughnut Chart" },
     "doughnut-chart-rings": { displayName: "Doughnut Chart Rings", parentName: "Doughnut Chart" },
     // pie-chart
-    "pie-chart-data-sample": { displayName: "Pie Chart Data Sample", parentName: "Pie Chart" },
+    "pie-chart-overview": { displayName: "Pie Chart Overview", parentName: "Pie Chart" },
     "pie-chart-explosion": { displayName: "Pie Chart Explosion", parentName: "Pie Chart" },
     "pie-chart-legend": { displayName: "Pie Chart Legend", parentName: "Pie Chart" },
     "pie-chart-others": { displayName: "Pie Chart Others Slice", parentName: "Pie Chart" },
@@ -27,7 +26,7 @@ export const chartsRoutesData = {
     "category-chart-tooltip-types": { displayName: "Category Chart Tooltip Types", parentName: "Category Chart" },
     "category-chart-trendline": { displayName: "Category Chart Trendline", parentName: "Category Chart" },
     // financial-chart
-    "financial-chart-overview-sample": { displayName: "Financial Chart Overview", parentName: "Financial Chart" },
+    "financial-chart-overview": { displayName: "Financial Chart Overview", parentName: "Financial Chart" },
     "financial-chart-performance": { displayName: "Financial Chart Performance", parentName: "Financial Chart" },
     "financial-chart-annotations": { displayName: "Financial Chart Annotations", parentName: "Financial Chart" },
     "financial-chart-titles": { displayName: "Financial Chart Titles", parentName: "Financial Chart" },
@@ -81,5 +80,7 @@ export const chartsRoutesData = {
     "sparkline-markers": { displayName: "Sparkline Markers", parentName: "Sparkline"},
     "sparkline-normal-range": { displayName: "Sparkline Normal Range", parentName: "Sparkline"},
     "sparkline-trendlines": { displayName: "Sparkline Trendlines", parentName: "Sparkline"},
-    "sparkline-unknown-values": { displayName: "Sparkline Unknown Values", parentName: "Sparkline"}
+    "sparkline-unknown-values": { displayName: "Sparkline Unknown Values", parentName: "Sparkline"},
+    // zoomslider-chart
+    // "zoomslider-overview": { displayName: "Zoom Slider Overview", parentName: "Zoom Slider"}
 };
