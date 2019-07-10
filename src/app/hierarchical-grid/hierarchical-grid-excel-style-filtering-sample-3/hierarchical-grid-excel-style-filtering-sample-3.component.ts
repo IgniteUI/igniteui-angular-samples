@@ -17,4 +17,5 @@ export class HGridExcelStyleFilteringSample3Component implements OnInit {
 
     }
 
+    public formatter = (a) => a;
 }

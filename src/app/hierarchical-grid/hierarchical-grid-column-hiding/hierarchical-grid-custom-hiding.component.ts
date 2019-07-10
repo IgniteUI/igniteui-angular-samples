@@ -22,4 +22,6 @@ export class HGridCostumHidingSampleComponent implements OnInit, AfterViewInit {
         this.hierarchicalGrid.columnList.forEach((col) => col.width = "20%");
     }
 
+    public formatter = (a) => a;
+
 }

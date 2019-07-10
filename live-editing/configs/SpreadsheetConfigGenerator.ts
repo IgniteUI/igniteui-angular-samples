@@ -16,7 +16,7 @@ import { SpreadsheetActivationComponent } from "../../src/app/spreadsheet/spread
 import { SpreadsheetAdapterComponent } from "../../src/app/spreadsheet/spreadsheet-adapter/spreadsheet-adapter.component";
 import { SpreadsheetClipboardComponent } from "../../src/app/spreadsheet/spreadsheet-clipboard/spreadsheet-clipboard.component";
 import { SpreadsheetCommandsComponent } from "../../src/app/spreadsheet/spreadsheet-commands/spreadsheet-commands.component";
-import { SpreadsheetCondFormatComponent } from "../../src/app/spreadsheet/spreadsheet-cond-formatting/spreadsheet-cond-formatting.component";
+import { SpreadsheetCondFormatComponent } from "../../src/app/spreadsheet/spreadsheet-conditional-formatting/spreadsheet-cond-formatting.component";
 import { SpreadsheetConfiguringComponent } from "../../src/app/spreadsheet/spreadsheet-configuring/spreadsheet-configuring.component";
 import { SpreadsheetDataValidComponent } from "../../src/app/spreadsheet/spreadsheet-data-validation/spreadsheet-data-validation.component";
 // import { SpreadsheetFilterDialogComponent

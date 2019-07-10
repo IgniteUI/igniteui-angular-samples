@@ -46,4 +46,5 @@ export class HGridSortingSampleComponent implements OnInit, AfterViewInit {
         this.contextmenu = false;
     }
 
+    public formatter = (a) => a;
 }

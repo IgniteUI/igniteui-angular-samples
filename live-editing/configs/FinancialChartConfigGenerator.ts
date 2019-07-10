@@ -12,6 +12,7 @@ import { FinancialChartHighFrequencyComponent} from "../../src/app/charts/financ
 import { FinancialChartHighVolumeComponent} from "../../src/app/charts/financial-chart/high-volume/financial-chart-high-volume.component";
 import { FinancialChartIndicatorTypesComponent} from "../../src/app/charts/financial-chart/indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartMultipleDataComponent} from "../../src/app/charts/financial-chart/multiple-data/financial-chart-multiple-data.component";
+import { FinancialChartMultipleFeedsComponent } from "../../src/app/charts/financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
 import { FinancialChartOverviewComponent} from "../../src/app/charts/financial-chart/overview/financial-chart-overview-sample.component";
 import { FinancialChartPanesComponent } from "../../src/app/charts/financial-chart/panes/financial-chart-panes.component";
 import { FinancialChartPerformanceComponent } from "../../src/app/charts/financial-chart/performance/financial-chart-performance.component";
@@ -19,17 +20,17 @@ import { FinancialDataService } from "../../src/app/charts/financial-chart/servi
 import { GenerateHourlyPricesService } from "../../src/app/charts/financial-chart/services/generate-hourly-prices.service";
 import { GenerateOhlcPricesService } from "../../src/app/charts/financial-chart/services/generate-ohlc-prices.service";
 import { StockDataService } from "../../src/app/charts/financial-chart/services/stock-data.service";
+import { FinancialChartTimeBasedDataComponent } from "../../src/app/charts/financial-chart/time-based-data/financial-chart-time-based-data.component";
 import { FinancialChartTitlesComponent } from "../../src/app/charts/financial-chart/titles/financial-chart-titles.component";
 import { FinancialChartTooltipTemplateComponent} from "../../src/app/charts/financial-chart/tooltip-template/financial-chart-tooltip-template.component";
 import { FinancialChartTooltipTypesComponent} from "../../src/app/charts/financial-chart/tooltip-types/financial-chart-tooltip-types.component";
 import { FinancialChartTrendlinesComponent} from "../../src/app/charts/financial-chart/trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent} from "../../src/app/charts/financial-chart/volume-type/financial-chart-volume-type.component";
-import { FinancialChartMultipleFeedsComponent } from "../../src/app/charts/financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
-import { FinancialChartTimeBasedDataComponent } from "../../src/app/charts/financial-chart/time-based-data/financial-chart-time-based-data.component";
 
+import { IgxSliderModule } from "igniteui-angular";
 import { DependenciesType } from "../services/DependenciesType";
-import { Config } from "./core/Config";
 import { BaseConfigGenerator } from "./core/BaseConfigGenerator";
+import { Config } from "./core/Config";
 
 export class FinancialChartConfigGenerator extends BaseConfigGenerator {
 
@@ -92,7 +93,7 @@ export class FinancialChartConfigGenerator extends BaseConfigGenerator {
 
         configs.push(this.getConfig(
             FinancialChartHighFrequencyComponent,
-            [IgxFinancialChartModule]));
+            [IgxFinancialChartModule, IgxSliderModule]));
 
         configs.push(this.getConfig(
             FinancialChartHighVolumeComponent,

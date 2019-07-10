@@ -11,4 +11,6 @@ export class HGridResizeLineStylingComponent {
     constructor() {
         this.localData = SINGERS;
     }
+
+    public formatter = (a) => a;
 }

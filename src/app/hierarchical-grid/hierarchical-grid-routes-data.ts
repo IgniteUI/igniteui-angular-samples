@@ -20,6 +20,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-remote-paging": { displayName: "Hierarchical Grid Remote Paging", parentName: "Hierarchical Grid" },
     "hierarchical-grid-density": { displayName: "Hierarchical Grid Display Density", parentName: "Hierarchical Grid" },
     "hierarchical-grid-moving": { displayName: "Hierarchical Grid Column Moving", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-moving-styled": { displayName: "Hierarchical Grid Column Moving Styled", parentName: "Hierarchical Grid" },
     "hierarchical-grid-pinning": { displayName: "Hierarchical Grid Column Pinning", parentName: "Hierarchical Grid" },
     "hierarchical-grid-resizing": { displayName: "Hierarchical Grid Column Resizing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-resize-line-styling": { displayName: "Hierarchical Grid Resize Line Styling", parentName: "Hierarchical Grid" },
