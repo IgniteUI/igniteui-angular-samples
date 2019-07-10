@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 
 @Component({
     selector: "drag-drop-sample",
@@ -6,11 +6,10 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./drag-drop.component.html"
 })
 
-export class DragAndDropSampleComponent implements OnInit {
+export class DragAndDropSampleComponent implements OnInit{
     public dragIconId: number;
     public dropTileId: number;
-    public icons = [];
-    private iconsArr = [
+    public icons = [
         {
             id: 0, url: "assets/images/drag-drop/profile.png"
         },
@@ -41,29 +40,33 @@ export class DragAndDropSampleComponent implements OnInit {
     ];
 
     public ngOnInit() {
-        for (let i = 0; i < 3; i++) {
-            this.icons.push([]);
-            for (let j = 0; j < 3; j++) {
-                this.icons[i].push(this.iconsArr[i * 3 + j]);
-            }
-        }
     }
 
     public onTileDropped(ev) {
         ev.drag.dropFinished();
     }
 
-    private swapIcons(dragRow: number, dragCol: number, dropRow: number, dropCol: number) {
-        [this.icons[dragRow][dragCol], this.icons[dropRow][dropCol]] =
-        [this.icons[dropRow][dropCol], this.icons[dragRow][dragCol]];
+    private swapIcons(dragIndex: number, dropIndex: number) {
+        // let flattenArr = []
+        //     if (dragRow < dropRow) {
+        // flattenArr = [...this.icons[dragRow], ...this.icons[dropRow]]
+        //     flattenArr.splice(3 + dropCol, 0, flattenArr.splice(dragCol, 1)[0])
+        //     this.icons[dragRow] = flattenArr.slice(0, 3)
+        //     this.icons[dropRow] = flattenArr.slice(3)
+        // } else if( dragRow > dropRow) {
+        // flattenArr = [...this.icons[dropRow], ...this.icons[dragRow]]
+        //     flattenArr.splice(dropCol, 0, flattenArr.splice(dragCol + 3, 1)[0]);
+        //     this.icons[dropRow] = flattenArr.slice(0, 3)
+        //     this.icons[dragRow] = flattenArr.slice(3)
+        // } else {
+            [this.icons[dragIndex], this.icons[dropIndex]] = [this.icons[dropIndex], this.icons[dragIndex]]
+        //}
     }
 
     private findIndexOfDrag(dragId: number) {
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                if (this.icons[i][j].id === dragId) {
-                    return { row: i, col: j };
-                }
+        for (let i = 0; i < 9; i++) {
+            if (this.icons[i].id === dragId) {
+                return i;
             }
         }
     }
@@ -74,28 +77,15 @@ export class DragAndDropSampleComponent implements OnInit {
         if(this.dragIconId === this.dropTileId) {
             return;
         }
-
         let dragIndex = this.findIndexOfDrag(this.dragIconId)
-        let dragRow = dragIndex.row;
-        let dragCol = dragIndex.col;
-
         let dropIndex = this.findIndexOfDrag(this.dropTileId)
-        let dropRow = dropIndex.row;
-        let dropCol = dropIndex.col;
-
-        //if the two icons are on the same row swap them
-        if (dragRow === dropRow) {
-            this.swapIcons(dragRow, dragCol, dropRow, dropCol)
-        }
-
-        console.log(`dragRow: ${dragRow}, dragCol: ${dragCol}`)
-        console.log(`dropRow: ${dropRow}, dropCol: ${dropCol}`)
-
-        console.log(this.icons[0]);
+        this.swapIcons(dragIndex, dropIndex)
     }
 
     private dragStartHandler(id: string):void {
         this.dragIconId = parseInt(id, 10);
-        console.log(`drag start: ${this.dragIconId}`)
+    }
+    private dragEndHandler():void {
+        //debugger;
     }
 }

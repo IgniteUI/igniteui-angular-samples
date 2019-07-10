@@ -1,7 +1,6 @@
 <div class="puzzle_board_wrapper">
-    <div class="outside_container" *ngFor="let row of icons">
-        <div *ngFor="let icon of row" 
-            (onEnter)="onEnterHandler($event)" 
+    <div class="outside_container" *ngFor="let icon of icons">
+        <div (onEnter)="onEnterHandler($event)" 
             igxDrop 
             id="{{icon.id}}" 
             (onDrop)="onTileDropped($event)" 
@@ -10,6 +9,7 @@
             <div igxDrag 
                 id="{{icon.id}}" 
                 (dragStart)="dragStartHandler(icon.id)" 
+                (dragEnd)="dragEndHandler()"
                 class="puzzle_part_container" 
                 [hideBaseOnDrag]="true" 
                 [ghostImageClass]="'drag_ghost_class'">

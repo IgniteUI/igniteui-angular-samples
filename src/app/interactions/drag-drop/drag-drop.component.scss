@@ -1,3 +1,9 @@
+.puzzle_board_wrapper {
+    display: flex;
+    width: 300px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .puzzle_part_container {
     padding: 0px;
     width: 100px;
