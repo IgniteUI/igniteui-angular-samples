@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
 
 import { HeatTileGenerator } from "igniteui-angular-core/ES5/igx-heat-tile-generator";
 import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
@@ -11,7 +11,7 @@ import { TileGeneratorMapImagery } from "igniteui-angular-maps/ES5/igx-tile-gene
     templateUrl: "./map-display-imagery-heat-tiles.component.html",
     styleUrls: ["./map-display-imagery-heat-tiles.component.scss"]
 })
-export class MapDisplayImageryHeatTilesComponent {
+export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
 
     @ViewChild("map", { static: true })
     public map: IgxGeographicMapComponent;
@@ -25,7 +25,6 @@ export class MapDisplayImageryHeatTilesComponent {
         this.tileImagery = new TileGeneratorMapImagery();
 
         const con: ShapeDataSource = new ShapeDataSource();
-
         con.importCompleted.subscribe((s, e) => {
             const data = con.getPointData();
             const lat: number[] = [];
@@ -62,7 +61,8 @@ export class MapDisplayImageryHeatTilesComponent {
             gen.useGlobalMinMaxAdjustedForZoom = true;
             gen.useLogarithmicScale = true;
             gen.useWebWorkers = true;
-            gen.webWorkerInstance = new Worker("../heatworker.worker", { type: "module" });
+            // gen.webWorkerInstance = new Worker();
+            gen.webWorkerInstance = new Worker("../heatmap.worker", { type: "module" });
 
             gen.scaleColors = [
                 "rgba(0, 0, 255, 64)",
@@ -97,5 +97,9 @@ export class MapDisplayImageryHeatTilesComponent {
             value: undefined
         });
         return rows;
+    }
+
+    public ngAfterViewInit(): void {
+        this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
     }
 }
