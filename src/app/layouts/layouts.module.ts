@@ -19,6 +19,7 @@ import {
     IgxProgressBarModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSelectModule,
     IgxSliderModule,
     IgxTabsModule,
     IgxToastModule
@@ -138,6 +139,7 @@ import {
         IgxProgressBarModule,
         IgxRadioModule,
         IgxRippleModule,
+        IgxSelectModule,
         IgxSliderModule,
         IgxTabsModule,
         IgxToastModule

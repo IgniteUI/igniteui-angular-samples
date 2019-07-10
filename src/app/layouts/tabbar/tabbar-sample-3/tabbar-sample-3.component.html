@@ -1,19 +1,16 @@
-<div class="addrBar">
-    URL: 
-    <button igxButton="flat"
-        [igxToggleAction]="dropdown"
-        [igxDropDownItemNavigation]="dropdown">{{ currentDocumentLocation }}</button>
-</div>
-<igx-drop-down #dropdown [width]="'100px'" (onSelection)="onDropDownSelection($event)">
-    <igx-drop-down-item *ngFor="let aLocation of urlLocations" [value]="aLocation.url">{{ aLocation.label }}</igx-drop-down-item>
-</igx-drop-down>
+<igx-select [value]="currentDocumentLocation" (onSelection)="handleSelection($event)">
+    <label igxLabel>URL</label>
+    <igx-select-item *ngFor="let aLocation of urlLocations" [value]="aLocation.url">
+        {{ aLocation.label }}
+    </igx-select-item>
+</igx-select>
 
 Use the tab items to select different group of buttons.<br>
 
 <router-outlet></router-outlet>
 
 <igx-bottom-nav>
-    <igx-tab label="Push Buttons" icon="dashboard"
+    <igx-tab label="Push Buttons" icon="radio_button_unchecked"
         routerLink="view1"
         routerLinkActive #rla1="routerLinkActive"
         [isSelected]="rla1.isActive">

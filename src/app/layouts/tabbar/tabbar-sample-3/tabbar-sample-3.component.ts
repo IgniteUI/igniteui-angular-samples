@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { ISelectionEventArgs } from "igniteui-angular";
 
 @Component({
@@ -6,28 +7,40 @@ import { ISelectionEventArgs } from "igniteui-angular";
     styleUrls: ["tabbar-sample-3.component.scss"],
     templateUrl: "tabbar-sample-3.component.html"
 })
-export class TabbarSample3Component {
-    public urlLocations = [
-        { label: "View 1", url: "view1" },
-        { label: "View 2", url: "view2" },
-        { label: "View 3", url: "view3" }
-    ];
+export class TabbarSample3Component implements OnInit {
+    public urlLocations = [];
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     public get currentDocumentLocation() {
-        return document.location.href;
+        return document.location.pathname;
     }
 
-    public onDropDownSelection(eventArgs: ISelectionEventArgs) {
+    public ngOnInit() {
+        const availableAddresses = [
+            { label: "/layouts/tabbar-sample-3", url: "/layouts/tabbar-sample-3" },
+            { label: "/layouts/tabbar-sample-3/view1", url: "/layouts/tabbar-sample-3/view1" },
+            { label: "/layouts/tabbar-sample-3/view2", url: "/layouts/tabbar-sample-3/view2" },
+            { label: "/layouts/tabbar-sample-3/view3", url: "/layouts/tabbar-sample-3/view3" }
+        ];
+
         const currentAddress: string = document.location.href;
-        let baseAddress: string;
         if (currentAddress.indexOf("samples") !== -1) {
-            baseAddress = "/samples/layouts/tabbar-sample-3/";
+            availableAddresses.forEach(address => {
+                this.urlLocations.push({
+                    label: "/samples" + address.label,
+                    url: "/samples" + address.url
+                });
+            });
         } else {
-            baseAddress = "/layouts/tabbar-sample-3/";
+            availableAddresses.forEach(address => {
+                this.urlLocations.push(address);
+            });
         }
-        document.location.href = baseAddress + eventArgs.newSelection.value;
+    }
+
+    public handleSelection(eventArgs: ISelectionEventArgs): void {
+        this.router.navigateByUrl(eventArgs.newSelection.value);
     }
 }
 
