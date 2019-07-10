@@ -12,10 +12,16 @@
                 class="puzzle_part_container" 
                 [hideBaseOnDrag]="true" 
                 [ghostImageClass]="'drag_ghost_class'">
-                <img class="puzzle_part" 
+                
+                
+                <!-- <img class="puzzle_part" 
                     [src]="icon.url" 
                     draggable="false" 
-                    onmousedown="if (event.preventDefault) event.preventDefault()" />
+                    onmousedown="if (event.preventDefault) event.preventDefault()" /> -->
+
+                    <span class="puzzle_part" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()">
+                        <img [src]="icon.url"/>
+                    </span>
             </div>
         </div>
     </div>
