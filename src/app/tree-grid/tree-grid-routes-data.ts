@@ -14,6 +14,7 @@ export const treeGridRoutesData = {
     "treegrid-selection": { displayName: "TreeGrid Selection", parentName: "TreeGrid" },
     "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" },
     "treegrid-column-moving": { displayName: "TreeGrid Column Moving", parentName: "TreeGrid" },
+    "treegrid-column-moving-styled": { displayName: "TreeGrid Column Moving Styled", parentName: "TreeGrid" },
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-resize-line-styling": { displayName: "TreeGrid Resize Line Styling", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
@@ -46,6 +47,8 @@ export const treeGridRoutesData = {
     "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" },
     "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" },
     "tree-grid-multi-cell-selection": { displayName: "TreeGrid Multi cell selection", parentName: "TreeGrid" },
+    // tslint:disable-next-line:max-line-length
+    "tree-grid-multi-cell-selection-style": { displayName: "TreeGrid Multi Cell Selection Style", parentName: "TreeGrid" },
     "treegrid-load-on-demand": { displayName: "TreeGrid Load On Demand", parentName: "TreeGrid" },
     "treegrid-keyboard-navigation": { displayName: "TreeGrid Keyboard Navigation", parentName: "TreeGrid" },
     "tree-grid-row-reordering": { displayName: "TreeGrid Row Reordering", parentName: "TreeGrid" },

@@ -1,3 +1,17 @@
-<p>
-  sparkline-display-types works!
-</p>
+<div class="sample">
+    <div class="options">
+        <span class="optionItem">Display Type:</span>
+        <select (change)="onDisplayTypeChanged($event)">
+            <option>Area</option>
+            <option>Column</option>
+            <option>Line</option>
+            <option>WinLoss</option>
+        </select>
+    </div>             
+    <div class="chart">
+        <igx-sparkline #sparkline height="calc(100% - 30px)" width="100%"
+            [dataSource]="data"
+            valueMemberPath="Value"
+            displayType="Area"></igx-sparkline>
+    </div>
+</div >

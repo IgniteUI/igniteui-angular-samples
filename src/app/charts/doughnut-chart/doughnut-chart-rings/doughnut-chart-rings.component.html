@@ -1,0 +1,21 @@
+<div class="chart">
+    <igx-doughnut-chart #chart height="90%" width="100%" >
+        <igx-ring-series
+        [dataSource] = "months"
+        valueMemberPath="Value"
+        labelMemberPath="Label"
+        labelsPosition="Center"
+        brushes="#23c7d6, #23c7d6, #23c7d6,
+        #27c52f, #27c52f, #27c52f,
+        #eba613, #eba613, #eba613,
+        #b4b3b3, #b4b3b3, #b4b3b3">
+        </igx-ring-series>
+        <igx-ring-series
+        [dataSource] = "seasons"
+        valueMemberPath="Value"
+        labelMemberPath="Label"
+        labelsPosition="Center"
+        brushes="#1ea8b4, #20a026, #c78d0f, #888888" >
+        </igx-ring-series>
+    </igx-doughnut-chart>
+</div>

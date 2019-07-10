@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxDialogComponent, IgxGridComponent, IgxHierarchicalGridComponent,
     IgxRowIslandComponent, Transaction } from "igniteui-angular";
-import { SINGERS } from "./data";
-import { Singer } from "./singer";
+import { SINGERS } from "../data";
+import { Singer } from "../models";
 
 @Component({
     selector: "hierarchical-grid-batch-editing",
@@ -11,7 +11,6 @@ import { Singer } from "./singer";
 })
 
 export class HGridBatchEditingSampleComponent implements OnInit {
-
     public get undoEnabledParent(): boolean {
         return this.hierarchicalGrid.transactions.canUndo;
     }
@@ -30,10 +29,10 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public get hasTransactions(): boolean {
         return (this.hierarchicalGrid.transactions.getAggregatedChanges(false).length > 0) ||
-            (this.layout1.transactions.getAggregatedChanges(false).length > 0);
+        (this.layout1.transactions.getAggregatedChanges(false).length > 0);
     }
-    public localdata;
-    public singer;
+    public localdata: Singer[];
+    public singer: Singer;
     public transactionsDataParent: Transaction[] = [];
     public transactionsDataChild: Transaction[] = [];
     public transactionsDataAll: Transaction[] = [];
@@ -56,7 +55,13 @@ export class HGridBatchEditingSampleComponent implements OnInit {
 
     public ngOnInit(): void {
         this.localdata = SINGERS;
-        this.singer = new Singer();
+        this.singer = {
+            Artist: "Mock Jagger",
+            Debut: 2005,
+            GrammyAwards: 4,
+            GrammyNominations: 7,
+            HasGrammyAward: false
+        };
         this.transactionsDataParent = this.hierarchicalGrid.transactions.getAggregatedChanges(true);
         this.hierarchicalGrid.transactions.onStateUpdate.subscribe(() => {
             this.transactionsDataParent = this.hierarchicalGrid.transactions.getAggregatedChanges(true);
@@ -66,6 +71,8 @@ export class HGridBatchEditingSampleComponent implements OnInit {
             this.transactionsDataChild = this.layout1.transactions.getAggregatedChanges(true);
         });
     }
+
+    public formatter = a => a;
 
     public undoParent() {
         this.hierarchicalGrid.transactions.undo();
@@ -128,6 +135,12 @@ export class HGridBatchEditingSampleComponent implements OnInit {
     public cancel() {
         this.dialogChanges.close();
         this.dialogSinger.close();
-        this.singer = new Singer();
+        this.singer = {
+            Artist: "Mock Jagger",
+            Debut: 2005,
+            GrammyAwards: 4,
+            GrammyNominations: 7,
+            HasGrammyAward: false
+        };
     }
 }

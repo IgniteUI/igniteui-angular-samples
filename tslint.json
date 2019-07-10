@@ -4,14 +4,18 @@
     "indent": [true, "spaces"],
     "variable-name": [true, "allow-leading-underscore"],
     "interface-name": [true, "always-prefix"],
-    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],    
     "no-empty": false,
     "no-bitwise": false,
+    "no-object-literal-type-assertion": false,
+    "no-string-literal": false,
     "no-submodule-imports": [false],
     "max-classes-per-file": false,
     "prefer-object-spread": false,
     "no-console": false,
     "prefer-conditional-expression": false,
-    "arrow-parens": false
+    "prefer-for-of": false,
+    "arrow-parens": false,
+    "object-literal-sort-keys": false
   }
 }

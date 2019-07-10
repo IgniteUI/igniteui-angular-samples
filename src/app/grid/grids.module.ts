@@ -30,6 +30,8 @@ import { FilteringTemplateSampleComponent } from "./grid-filtering-template-samp
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
+import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
+import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
@@ -87,6 +89,7 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         GridGroupBySampleComponent,
         GridGroupBySummarySampleComponent,
         GridMovingSampleComponent,
+        GridMovingStyledSampleComponent,
         PagingSampleComponent,
         GridPasteSampleComponent,
         RemoteFilteringSampleComponent,
@@ -113,6 +116,7 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         AboutComponent,
         IgxGridStateDirective,
         GridMultiCellSelectionComponent,
+        GridMultiCellSelectionStyleComponent,
         GridNestedDataBindComponent,
         GridCompositeDataComponent,
         GridMultiRowLayoutComponent,

@@ -4,7 +4,7 @@
         <span> stock opened on {{item.time | date}} with a value of ${{item.open | number}}</span>
     </div>
 </ng-template>
-<igx-financial-chart height="100%" width="100%"
+<igx-financial-chart height="calc(100% - 60px)" width="100%"
     [tooltipTemplate]="valueTooltip"
     [dataSource]="data">
 </igx-financial-chart>

@@ -39,6 +39,7 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 
 export class ExcelLibraryConfigGenerator implements IConfigGenerator {
+
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 

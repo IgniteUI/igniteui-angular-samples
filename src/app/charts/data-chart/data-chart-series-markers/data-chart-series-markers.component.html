@@ -20,12 +20,12 @@
     <div class="chart">
         <igx-data-chart
             width="100%"
-            height="100%"
+            height="calc(100% - 60px)"
             [dataSource]="data">
             <igx-category-x-axis #xAxis name="xAxis" label="Year">
             </igx-category-x-axis>
             <igx-numeric-y-axis #yAxis name="yAxis" minimumValue="0">
-            </igx-numeric-y-axis > 
+            </igx-numeric-y-axis >
             <igx-line-series name="series1" title="USA"
                 valueMemberPath="USA"
                 [xAxis]=xAxis

@@ -22,7 +22,6 @@ export class FinancialData {
           // add second level of hier data
           const childData = this.addHierarchicalData(count / 4, i, dataObj.ID);
           for (const childDataObj of childData) {
-            const numberofChildData = this.generateRandomNumber(3, 6);
             childDataObj[categories] = this.addHierarchicalData(childData / 4, i, childDataObj.ID, 4);
           }
 
@@ -62,10 +61,6 @@ export class FinancialData {
         result.ChangePercent = parseFloat(changePercent.toFixed(2));
 
         return result;
-    }
-
-    private generateRandomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     private addMockData(dataObj) {

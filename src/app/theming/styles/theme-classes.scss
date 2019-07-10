@@ -8,9 +8,12 @@
 
 
   //Set the light themes for the components.
-    &.default-theme {
+    &.light-theme {
       background: $light-color;
       ::ng-deep {
+        .sort-icon.material-icons.igx-icon {
+            color: white;
+        }
         @include igx-grid($light-grid-theme);
         @include igx-snackbar($light-snackbar-theme);
         @include igx-input-group($light-input-group-theme);
