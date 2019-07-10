@@ -1,4 +1,4 @@
-export const EMPLOYEE_FLAT_DATA = () => ([
+export const generateEmployeeFlatData: () => IEmployee[] = () => ([
     {
         Age: 55,
         HireDate: new Date(2008, 3, 20),
@@ -162,3 +162,13 @@ export const EMPLOYEE_FLAT_DATA = () => ([
         Title: "Localization Intern"
     }
 ]);
+
+export interface IEmployee {
+    Age: number;
+    HireDate: Date;
+    ID: number;
+    Name: string;
+    OnPTO: boolean;
+    ParentID: number;
+    Title: string;
+}

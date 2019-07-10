@@ -1,12 +1,12 @@
 <button igxButton="raised" (click)="dialogAddSinger.open()" class="addSingerBtn">Add Singer</button>
 <app-hierarchical-grid-with-transactions>
-<igx-hierarchical-grid #hierarchicalGrid class="hgrid" [data]="localdata" [primaryKey]="'artist'" [rowEditable]="true"
+<igx-hierarchical-grid #hierarchicalGrid class="hgrid" [data]="localdata" [primaryKey]="'Artist'" [rowEditable]="true"
     [height]="'580px'" [width]="'100%'">
-    <igx-column field="artist" [editable]="false" [dataType]="'string'"></igx-column>
-    <igx-column field="hasGrammyAward" [editable]="true" [dataType]="'boolean'"></igx-column>
-    <igx-column field="debut" [editable]="true" [dataType]="'number'"></igx-column>
-    <igx-column field="grammyNominations" [editable]="true" [dataType]="'number'"></igx-column>
-    <igx-column field="grammyAwards" [editable]="true" [dataType]="'number'"></igx-column>
+    <igx-column field="Artist" header="Artist" [editable]="false" [dataType]="'string'"></igx-column>
+    <igx-column field="HasGrammyAward" header="Has Grammy Award?" [editable]="true" [dataType]="'boolean'"></igx-column>
+    <igx-column field="Debut" header="Debut" [editable]="true" dataType="number" [formatter]="formatter"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"></igx-column>
     <igx-column width="150px">
         <ng-template igxCell let-cell="cell" let-val>
             <button igxButton (click)="removeRow(cell.cellID.rowIndex)" [disabled]="cell.row.deleted">Delete</button>
@@ -15,9 +15,9 @@
 
     <igx-row-island [key]="'Albums'" #layout1 [primaryKey]="'Album'" [rowEditable]="true">
         <igx-column field="Album" [editable]="false" [dataType]="'string'"></igx-column>
-        <igx-column field="Launch Date" [editable]="true" [dataType]="'date'"></igx-column>
-        <igx-column field="Billboard Review" [editable]="true" [dataType]="'number'"></igx-column>
-        <igx-column field="US Billboard 200" [editable]="true" [dataType]="'number'"></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [editable]="true" [dataType]="'date'"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review" [editable]="true" dataType="number"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200" [editable]="true" dataType="number"></igx-column>
     </igx-row-island>
 </igx-hierarchical-grid>
 </app-hierarchical-grid-with-transactions>

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { data } from "./data";
+import { DATA } from "../../data/nwindData";
 
 import { IgxGridComponent } from "igniteui-angular";
 
@@ -14,6 +14,6 @@ export class GridRowEditSampleComponent {
     public data: any[];
 
     constructor() {
-        this.data = data;
+        this.data = DATA;
     }
 }

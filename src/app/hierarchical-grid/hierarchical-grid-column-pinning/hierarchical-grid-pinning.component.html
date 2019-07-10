@@ -21,7 +21,7 @@
             </div>
         </ng-template>
     </igx-column>
-    <igx-column #debut field="Debut" [width]="'400px'">
+    <igx-column #debut field="Debut" [width]="'400px'" dataType="number" [formatter]="formatter">
         <ng-template igxHeader>
             <div class="title-inner">
                 <span style="float:left">Debut</span>
@@ -29,7 +29,7 @@
             </div>
         </ng-template>
     </igx-column>
-    <igx-column #grammynominations field="Grammy Nominations" [width]="'400px'">
+    <igx-column #grammynominations field="GrammyNominations" header="Grammy Nominations" [width]="'400px'">
         <ng-template igxHeader>
             <div class="title-inner">
                 <span style="float:left">Grammy Nominations</span>
@@ -37,7 +37,7 @@
             </div>
         </ng-template>
     </igx-column>
-    <igx-column #grammyawards field="Grammy Awards" [width]="'400px'">
+    <igx-column #grammyawards field="GrammyAwards" header="Grammy Awards" [width]="'400px'">
         <ng-template igxHeader>
             <div class="title-inner">
                 <span style="float:left">Grammy Awards</span>
@@ -55,7 +55,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Launch Date" [dataType]="'date'" [width]="'400px'">
+        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [width]="'400px'">
             <ng-template igxHeader let-columnRef="column">
                 <div class="title-inner">
                     <span style="float:left"> {{columnRef.field}} </span>
@@ -63,7 +63,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Billboard Review" [width]="'400px'">
+        <igx-column field="BillboardReview" header="Billboard Review" [width]="'400px'">
             <ng-template igxHeader let-columnRef="column">
                 <div class="title-inner">
                     <span style="float:left"> {{columnRef.field}} </span>
@@ -71,7 +71,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="US Billboard 200" [width]="'400px'">
+        <igx-column field="USBillboard200" header="US Billboard 200" [width]="'400px'">
             <ng-template igxHeader let-columnRef="column">
                 <div class="title-inner">
                     <span style="float:left"> {{columnRef.field}} </span>
@@ -80,7 +80,7 @@
             </ng-template>
         </igx-column>
     <igx-row-island [key]="'Songs'" [autoGenerate]="false">
-            <igx-column field="No." [width]="'500px'">
+            <igx-column field="Number" header="No." [width]="'500px'">
                 <ng-template igxHeader let-columnRef="column">
                     <div class="title-inner">
                         <span style="float:left"> {{columnRef.field}} </span>
@@ -96,7 +96,7 @@
                     </div>
                 </ng-template>
             </igx-column>
-            <igx-column field="Released" [width]="'500px'">
+            <igx-column field="Released" dataType="date" [width]="'500px'">
                 <ng-template igxHeader let-columnRef="column">
                     <div class="title-inner">
                         <span style="float:left"> {{columnRef.field}} </span>
@@ -124,7 +124,7 @@
                 </div>
             </ng-template>
         </igx-column>
-        <igx-column field="Started on" [width]="'400px'">
+        <igx-column field="StartedOn" header="Started on" [width]="'400px'">
             <ng-template igxHeader let-columnRef="column">
                 <div class="title-inner">
                     <span style="float:left"> {{columnRef.field}} </span>

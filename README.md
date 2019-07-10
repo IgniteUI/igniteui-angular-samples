@@ -22,23 +22,43 @@ npm run build
 This will produce an AOT build and [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) samples supporting both Sass and CSS.
 
 ## Dev Server
-To start the dev server run:
+To start the dev server (including IE support) run:
 
 ```
 npm run start
 ```
 
+To start in modern browsers only, run:
+
+```
+npm run start:es6
+```
+
+### Starting from Angular v8 the project will not be supported/start in IE due to the new default compilation target es2015.
+
 ## Dev Server and Live Editing
-To generate the live editing applications along with the dev server run:
+To generate the live editing applications along with the dev server (including IE support) run:
 ```
 npm run start:live-editing
 ```
 
+To start in modern browsers only, run:
+
+```
+npm run start:live-editing:es6
+```
+
 ## Live Editing Watcher
-Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made:
+Use this command to start the server with capability to regenerate [live editing](https://github.com/IgniteUI/igniteui-angular-samples/blob/master/live-editing/README.md) JSON files (e.g. `"/src/assets/samples/avatar-sample-3.json"`) when a change related to the samples is made (including IE support):
 
 ```
 npm run start:watch-live-editing
+```
+
+To start in modern browsers only, run:
+
+```
+npm run start:watch-live-editing:es6
 ```
 
 ## Generate Live Editing JSON files

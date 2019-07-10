@@ -24,4 +24,6 @@ export class HGridColumnHidingSampleComponent implements OnInit {
         this.hierarchicalGrid.toolbar.columnHidingUI.columnsAreaMaxHeight = "200px";
     }
 
+    public formatter = (a) => a;
+
 }

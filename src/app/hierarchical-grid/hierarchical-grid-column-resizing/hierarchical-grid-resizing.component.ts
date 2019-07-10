@@ -31,4 +31,5 @@ export class HGridColumnResizingSampleComponent implements OnInit {
         this.nWidth = event.newWidth;
     }
 
+    public formatter = (a) => a;
 }
