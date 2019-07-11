@@ -15,18 +15,14 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
 
     @ViewChild("map", { static: true })
     public map: IgxGeographicMapComponent;
-
-    public data: any[];
     public tileImagery: TileGeneratorMapImagery;
 
     constructor() {
-        this.data = this.initData();
-
         this.tileImagery = new TileGeneratorMapImagery();
 
-        const con: ShapeDataSource = new ShapeDataSource();
-        con.importCompleted.subscribe((s, e) => {
-            const data = con.getPointData();
+        const sds: ShapeDataSource = new ShapeDataSource();
+        sds.importCompleted.subscribe((s, e) => {
+            const data = sds.getPointData();
             const lat: number[] = [];
             const lon: number[] = [];
             const val: number[] = [];
@@ -40,7 +36,7 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
                         lon.push(pointsList[k].x);
                     }
                 }
-                const value = item.fieldValues["POP_2010"];
+                const value = parseInt(item.fieldValues["POP2010"], 10);
                 if (value >= 0) {
                     val.push(value);
                 } else {
@@ -55,8 +51,8 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
             gen.blurRadius = 6;
             gen.maxBlurRadius = 20;
             gen.useBlurRadiusAdjustedForZoom = true;
-            gen.minimumColor = "rgba(100,255, 0, 0.3922)";
-            gen.maximumColor = "rgba(255, 255, 0, 0.9412)";
+            gen.minimumColor = "rgba(100, 255, 0, 0.4)";
+            gen.maximumColor = "rgba(255, 255, 0, 0.95)";
             gen.useGlobalMinMax = true;
             gen.useGlobalMinMaxAdjustedForZoom = true;
             gen.useLogarithmicScale = true;
@@ -65,41 +61,23 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
             gen.webWorkerInstance = new Worker("../heatmap.worker", { type: "module" });
 
             gen.scaleColors = [
-                "rgba(0, 0, 255, 64)",
-                "rgba(0, 255, 255, 96)",
-                "rgba(0, 255, 0, 160)",
-                "rgba(255, 255, 0, 180)",
-                "rgba(255, 0, 0, 200)"
+              "rgba(0, 0, 255, 64)", "rgba(0, 255, 255, 96)",
+              "rgba(0, 255, 0, 160)", "rgba(255, 255, 0, 180)",
+              "rgba(255, 0, 0, 200)"
             ];
-
+            // generating heat map
             this.tileImagery.tileGenerator = gen;
+
+            // zooming to USA region of the map
+            this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
         });
 
-        con.shapefileSource = "assets/Shapes/AmericanCities.shp";
-        con.databaseSource = "assets/Shapes/AmericanCities.dbf";
-        con.dataBind();
-    }
-
-    public initData(): any {
-        const rows: any[] = [];
-        for (let i = 0; i < 5; i++) {
-            rows.push({
-                index: i,
-                name: "row" + i,
-                state: "Initial... Initial... Initial... Initial... ",
-                value: i * 10
-            });
-        }
-        rows.push({
-            index: 5,
-            name: "row5",
-            state: "Initial",
-            value: undefined
-        });
-        return rows;
+        sds.shapefileSource = "assets/Shapes/AmericanCities.shp";
+        sds.databaseSource = "assets/Shapes/AmericanCities.dbf";
+        sds.dataBind();
     }
 
     public ngAfterViewInit(): void {
-        this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
+        // this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
     }
 }
