@@ -4,7 +4,7 @@
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'" [groupable]="true">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'" [groupable]="true">
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number" [groupable]="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 {{+val | currency}}
             </ng-template>

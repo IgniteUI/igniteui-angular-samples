@@ -21,4 +21,5 @@ export class HGridToolbarTitleSampleComponent implements OnInit {
 
     }
 
+    public formatter = (a) => a;
 }

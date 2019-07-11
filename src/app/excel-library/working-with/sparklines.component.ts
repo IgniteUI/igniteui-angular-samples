@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/core";
 // importing IG components:
 import { IgxGridComponent } from "igniteui-angular";
+import { WorkbookFormat } from "igniteui-angular-excel/ES5/excel.core";
 import { SparklineType } from "igniteui-angular-excel/ES5/SparklineType";
+import { Workbook } from "igniteui-angular-excel/ES5/Workbook";
 import {
     WorkbookExportService
 } from "../../utilities/excel-exporter";
 import { ExcelUtility } from "../../utilities/excel-utility";
-import { Workbook } from 'igniteui-angular-excel/ES5/Workbook';
-import { WorkbookFormat } from 'igniteui-angular-excel/ES5/excel.core';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,20 +38,20 @@ export class ExcelLibraryWorkingWithSparklinesComponent implements OnInit {
         exportSheet.defaultColumnWidth = 300 * 20;
         exportSheet.defaultRowHeight = 50 * 20;
 
-        for(let i = 0; i < headers.length; i++) {
+        for (let i = 0; i < headers.length; i++) {
             exportSheet.rows(0).cells(i).value = headers[i];
         }
 
-        for(let i = 0; i < this.data.length; i++) {
+        for (let i = 0; i < this.data.length; i++) {
             const item = this.data[i];
             const orders = item.Orders;
 
-            for(let j = 0; j < orders.length; j++){
+            for (let j = 0; j < orders.length; j++) {
                 ordersSheet.rows(i).cells(j).value = orders[j].Freight;
             }
         }
 
-        for(let i = 0; i < this.data.length; i++) {
+        for (let i = 0; i < this.data.length; i++) {
 
             const index = (i + 1).toString();
             const dataItem = this.data[i];

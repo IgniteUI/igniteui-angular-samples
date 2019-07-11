@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
-import { SINGERS } from "./data";
+import { IgxHierarchicalGridComponent } from "igniteui-angular";
+import { SINGERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-row-editing",
@@ -21,4 +21,5 @@ export class HGridRowEditingSampleComponent implements OnInit {
 
     }
 
+    public formatter = (a) => a;
 }

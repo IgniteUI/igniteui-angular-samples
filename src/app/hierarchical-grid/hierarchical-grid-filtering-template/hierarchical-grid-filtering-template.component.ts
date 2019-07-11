@@ -20,8 +20,8 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     public localdata;
 
     @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
-    private overlaySettings: OverlaySettings = {
+    public hierarchicalGrid: IgxHierarchicalGridComponent;
+    public overlaySettings: OverlaySettings = {
         outlet: this.hierarchicalGrid
     };
 
@@ -31,6 +31,8 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
     public ngOnInit(): void {
 
     }
+
+    public formatter = (a) => a;
 
     public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
         let operand = null;

@@ -9,15 +9,15 @@
                    </div>
                </ng-template>
            </igx-column>
-           <igx-column field="Debut" editable="true" width="20%"></igx-column>
-           <igx-column field="Grammy Nominations" editable="true" dataType="number" width="20%"></igx-column>
-           <igx-column field="Grammy Awards" editable="true" dataType="number" width="20%"></igx-column>
+           <igx-column field="Debut" editable="true" width="20%" dataType="number" [formatter]="formatter"></igx-column>
+           <igx-column field="GrammyNominations" header="Grammy Nominations" editable="true" dataType="number" width="20%"></igx-column>
+           <igx-column field="GrammyAwards" header="Grammy Awards" editable="true" dataType="number" width="20%"></igx-column>
    
            <igx-row-island [key]="'Albums'" [autoGenerate]="false" [showToolbar]="true" toolbarTitle="Albums" (onGridCreated)="childGridCreated($event)">
                <igx-column field="Album"></igx-column>
-               <igx-column field="Launch Date" [dataType]="'date'"></igx-column>
-               <igx-column field="Billboard Review" editable="true"></igx-column>
-               <igx-column field="US Billboard 200" editable="true"></igx-column>
+               <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+               <igx-column field="BillboardReview" header="Billboard Review" editable="true"></igx-column>
+               <igx-column field="USBillboard200" header="US Billboard 200" editable="true"></igx-column>
             </igx-row-island>
    
     </igx-hierarchical-grid>
