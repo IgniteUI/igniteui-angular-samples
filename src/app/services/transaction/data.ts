@@ -1,10 +1,10 @@
-export interface IPerson {
+export interface IItem {
     name: string;
-    age: number;
+    price: string;
 }
 
-export const PEOPLE: IPerson[] = [
-    { name: "George", age: 50 },
-    { name: "Jack", age: 35 },
-    { name: "Chester", age: 47 },
+export const WISHLIST: IItem[] = [
+    { name: "Bike", price: "500$" },
+    { name: "Apple", price: "1.5$" },
+    { name: "Mouse (pet)", price: "75$" }
 ];
