@@ -90,15 +90,15 @@ import { SparklineNormalRangeComponent } from "./sparkline/sparkline-normal-rang
 import { SparklineTrendlinesComponent } from "./sparkline/sparkline-trendlines/sparkline-trendlines.component";
 import { SparklineUnknownValuesComponent } from "./sparkline/sparkline-unknown-values/sparkline-unknown-values.component";
 // zoomslider-chart samples
-// import { ZoomSliderOverviewComponent } from "./zoomslider/zoomslider-overview/zoomslider-overview.component";
+import { ZoomSliderOverviewComponent } from "./zoomslider/zoomslider-overview/zoomslider-overview.component";
 
 export const chartsRoutes: Routes = [
     //  ZoomSlider
-    // {
-    //     component: ZoomSliderOverviewComponent,
-    //     data: chartsRoutesData["zoomslider-overview"],
-    //     path: "zoomslider-overview"
-    // },
+    {
+        component: ZoomSliderOverviewComponent,
+        data: chartsRoutesData["zoomslider-overview"],
+        path: "zoomslider-overview"
+    },
     // DoughnutChart
     {
         component: DoughnutChartExplosionSampleComponent,

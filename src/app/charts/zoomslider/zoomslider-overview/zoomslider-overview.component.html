@@ -1,8 +1,10 @@
-<div class="container" width="100%" height="calc(100% - 100px)">
+<div class="container" width="100%" height="calc(100% - 200px)">
 
-    <igx-data-chart
-    width="100%" subtitle="main-chart"
-    height="calc(100% - 200px)"
+    <igx-data-chart #mainChart name="mainChart"
+    width="100%"
+    height="calc(100% - 160px)"
+    isHorizontalZoomEnabled="true"
+    isVerticalZoomEnabled="false"
     [dataSource]="data" >
         <igx-ordinal-time-x-axis #xAxis name="xAxis" dateTimeMemberPath="time">
         </igx-ordinal-time-x-axis>
@@ -24,8 +26,11 @@
     <div width="100%" height="160px" position="relative">
         <div width="100%" height="160px" position="absolute" top="0px" left="0px" >
             <igx-data-chart
-            width="100%" subtitle="zoom-chart"
-            height="120px"
+            #zoomChart name="zoomChart"
+            width="100%"
+            height="160px"
+            isHorizontalZoomEnabled="true"
+            isVerticalZoomEnabled="true"
             [dataSource]="data" >
                 <igx-ordinal-time-x-axis #xAxis name="xAxis" dateTimeMemberPath="time">
                 </igx-ordinal-time-x-axis>
@@ -45,7 +50,8 @@
             </igx-data-chart>
         </div>
         <div width="100%" height="160px" position="absolute" top="0px" left="0px" >
-            <igx-zoom-slider #zoomSlider name="zoomSlider"
+            <igx-zoom-slider
+            #zoomSlider name="zoomSlider"
             width="100%"
             height="100%" >
             </igx-zoom-slider>

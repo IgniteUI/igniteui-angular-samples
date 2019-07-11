@@ -6,7 +6,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxSliderModule } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 // import { IgxZoomSliderModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-module";
-// import { IgxZoomSliderDynamicModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-dynamic-module";
+import { IgxZoomSliderDynamicModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-dynamic-module";
 
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
 import { CategoryChartSamplesModule } from "./category-chart/category-chart-samples.module";
@@ -32,8 +32,8 @@ import { ZoomSliderSamplesModule } from "./zoomslider/zoomslider-samples.module"
         SparklineSamplesModule,
         ZoomSliderSamplesModule,
         IgxCategoryChartModule,
-        IgxSliderModule // ,
-        // IgxZoomSliderDynamicModule,
+        IgxSliderModule,
+        IgxZoomSliderDynamicModule
         // IgxZoomSliderModule
     ]
 })

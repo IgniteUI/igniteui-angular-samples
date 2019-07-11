@@ -18,8 +18,7 @@ import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-f
 import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
 import { IgxCrosshairLayerModule } from "igniteui-angular-charts/ES5/igx-crosshair-layer-module";
 
-// import { IgxZoomSliderModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-module";
-// import { IgxZoomSliderDynamicModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-dynamic-module";
+import { IgxZoomSliderDynamicModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-dynamic-module";
 
 // sample components
 import { ZoomSliderOverviewComponent } from "./zoomslider-overview/zoomslider-overview.component";
@@ -41,8 +40,8 @@ import { ZoomSliderOverviewComponent } from "./zoomslider-overview/zoomslider-ov
         IgxFinancialPriceSeriesModule,
         IgxDataChartAnnotationModule,
         IgxCalloutLayerModule,
-        IgxCrosshairLayerModule // ,
-        // IgxZoomSliderDynamicModule,
+        IgxCrosshairLayerModule,
+        IgxZoomSliderDynamicModule
         // IgxZoomSliderModule
      ]
 })

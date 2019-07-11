@@ -82,5 +82,5 @@ export const chartsRoutesData = {
     "sparkline-trendlines": { displayName: "Sparkline Trendlines", parentName: "Sparkline"},
     "sparkline-unknown-values": { displayName: "Sparkline Unknown Values", parentName: "Sparkline"},
     // zoomslider-chart
-    // "zoomslider-overview": { displayName: "Zoom Slider Overview", parentName: "Zoom Slider"}
+    "zoomslider-overview": { displayName: "Zoom Slider Overview", parentName: "Zoom Slider"}
 };
