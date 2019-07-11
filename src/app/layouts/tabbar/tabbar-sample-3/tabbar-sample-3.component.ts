@@ -8,7 +8,12 @@ import { ISelectionEventArgs } from "igniteui-angular";
     templateUrl: "tabbar-sample-3.component.html"
 })
 export class TabbarSample3Component implements OnInit {
-    public urlLocations = [];
+    public urlLocations = [
+        "/layouts/tabbar-sample-3",
+        "/layouts/tabbar-sample-3/view1",
+        "/layouts/tabbar-sample-3/view2",
+        "/layouts/tabbar-sample-3/view3"
+    ];
 
     constructor(private router: Router) { }
 
@@ -17,25 +22,11 @@ export class TabbarSample3Component implements OnInit {
     }
 
     public ngOnInit() {
-        const availableAddresses = [
-            { label: "/layouts/tabbar-sample-3", url: "/layouts/tabbar-sample-3" },
-            { label: "/layouts/tabbar-sample-3/view1", url: "/layouts/tabbar-sample-3/view1" },
-            { label: "/layouts/tabbar-sample-3/view2", url: "/layouts/tabbar-sample-3/view2" },
-            { label: "/layouts/tabbar-sample-3/view3", url: "/layouts/tabbar-sample-3/view3" }
-        ];
-
         const currentAddress: string = document.location.href;
         if (currentAddress.indexOf("samples") !== -1) {
-            availableAddresses.forEach(address => {
-                this.urlLocations.push({
-                    label: "/samples" + address.label,
-                    url: "/samples" + address.url
-                });
-            });
-        } else {
-            availableAddresses.forEach(address => {
-                this.urlLocations.push(address);
-            });
+            for (let i = 0; i < this.urlLocations.length; i++) {
+                this.urlLocations[i] = "/samples" + this.urlLocations[i];
+            }
         }
     }
 
