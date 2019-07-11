@@ -70,6 +70,7 @@ export class DropDownConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            additionalFiles: ["/src/app/data/heroData.ts"],
             component: DropDownSample6Component,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDropDownModule, DropDownSample6Component, IgxButtonModule, IgxToggleModule],
