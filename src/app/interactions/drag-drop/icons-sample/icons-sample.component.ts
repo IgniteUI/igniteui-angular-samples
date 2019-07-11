@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "drag-drop-sample",
-    styleUrls: ["./drag-drop.component.scss"],
-    templateUrl: "./drag-drop.component.html"
+    selector: "icons-sample",
+    styleUrls: ["./icons-sample.component.scss"],
+    templateUrl: "./icons-sample.component.html"
 })
 
-export class DragAndDropSampleComponent {
+export class IconsSampleComponent {
     public dragIconId: number;
     public dropTileId: number;
     public icons = [
