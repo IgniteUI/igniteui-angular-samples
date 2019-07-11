@@ -1,4 +1,4 @@
-export const EMPLOYEE_FLAT_DATA_DETAILED = () => ([
+export const generateEmployeeDetailedFlatData = () => ([
     {
         Address: "Obere Str. 57",
         Age: 55,

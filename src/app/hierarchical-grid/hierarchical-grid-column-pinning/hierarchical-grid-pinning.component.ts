@@ -25,4 +25,5 @@ export class HGridPinningSampleComponent implements OnInit {
         col.pinned ? col.unpin() : col.pin();
     }
 
+    public formatter = (a) => a;
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     IgxDialogComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent
 } from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
+import { generateEmployeeFlatData } from "../data/employees-flat";
 import { Employee } from "./employee";
 
 class CustomNumberSummary extends IgxSummaryOperand {
@@ -44,7 +44,7 @@ export class TreeGridEditingSampleComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.data = EMPLOYEE_FLAT_DATA();
+        this.data = generateEmployeeFlatData();
         this.employee = new Employee();
         this.nextRow = this.data.length + 1;
     }

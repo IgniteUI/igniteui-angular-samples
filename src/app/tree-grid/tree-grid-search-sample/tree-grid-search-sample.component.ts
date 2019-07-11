@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxTreeGridComponent} from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
+import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Component({
     selector: "app-tree-grid-search-sample",
@@ -16,7 +16,7 @@ export class TreeGridSearchSampleComponent implements OnInit {
     public exactMatch: boolean = false;
 
     public ngOnInit(): void {
-        this.data = EMPLOYEE_FLAT_DATA();
+        this.data = generateEmployeeFlatData();
     }
 
     public clearSearch() {

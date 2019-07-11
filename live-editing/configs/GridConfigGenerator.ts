@@ -72,6 +72,9 @@ import {
     GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
+import {
+    GridMovingStyledSampleComponent
+} from "../../src/app/grid/grid-moving-styled-sample/grid-moving-styled-sample.component";
 
 // tslint:disable-next-line: max-line-length
 import { GridMultiCellSelectionStyleComponent } from "../../src/app/grid/grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
@@ -375,6 +378,17 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridMovingStyledSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMovingStyledSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngDeclarations: [GridMovingStyledSampleComponent],
+                ngImports: [IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
             component: GridToolbarSample1Component,
             additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -477,9 +491,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // Grid Batch Editing
         configs.push(new Config({
             component: GridBatchEditingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-batch-editing/data.ts",
+            additionalFiles: ["/src/app/data/nwindData.ts", "/src/app/data/utils.ts",
                 "/src/app/grid/grid-batch-editing/grid-transaction.component.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridBatchEditingSampleComponent, IgxGridModule, IgxDialogModule, IgxButtonModule,
@@ -490,9 +505,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // Grid Row Editing
         configs.push(new Config({
             component: GridRowEditSampleComponent,
-            additionalFiles: ["src/app/grid/grid-row-editing-sample/data.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
                 ngDeclarations: [GridRowEditSampleComponent],

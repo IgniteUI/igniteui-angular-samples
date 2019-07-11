@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { FilteringStrategy, IFilteringExpressionsTree } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
-import { EMPLOYEE_FLAT_DATA } from "../data/employees-flat";
+import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Injectable()
 export class RemoteFilteringService {
@@ -14,7 +14,7 @@ export class RemoteFilteringService {
     constructor() {
         this._remoteData = new BehaviorSubject([]);
         this.remoteData = this._remoteData.asObservable();
-        this._employeeData = EMPLOYEE_FLAT_DATA();
+        this._employeeData = generateEmployeeFlatData();
     }
 
     public getData(filteringArgs?: any, callback?: () => void) {

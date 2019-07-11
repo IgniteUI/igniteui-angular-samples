@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { IgxTreeGridComponent } from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA_DETAILED } from "../data/employees-flat-detailed";
+import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
 
 @Component({
   selector: "app-tree-grid-column-hiding-toolbar-sample",
@@ -15,7 +15,7 @@ export class TreeGridColumnHidingToolbarSampleComponent implements OnInit, After
     constructor() { }
 
     public ngOnInit() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
+        this.data = generateEmployeeDetailedFlatData();
     }
 
     public ngAfterViewInit() {

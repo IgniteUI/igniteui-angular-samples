@@ -3,8 +3,8 @@
 // tslint:disable:max-line-length
 // tslint:disable:member-ordering
 // tslint:disable:prefer-const
-import { DataChartAxisLocationsComponent } from "../../src/app/charts/data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisAnnotationsComponent } from "../../src/app/charts/data-chart/data-chart-axis-annotations/data-chart-axis-annotations.component";
+import { DataChartAxisLocationsComponent } from "../../src/app/charts/data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisSettingsComponent } from "../../src/app/charts/data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
 import { DataChartAxisSharingComponent } from "../../src/app/charts/data-chart/data-chart-axis-sharing/data-chart-axis-sharing.component";
 import { DataChartAxisTypesComponent } from "../../src/app/charts/data-chart/data-chart-axis-types/data-chart-axis-types.component";
@@ -100,9 +100,12 @@ import { SampleScatterStats } from "../../src/app/charts/data-chart/SampleScatte
 import { SampleShapeData } from "../../src/app/charts/data-chart/SampleShapeData";
 import { SharedData } from "../../src/app/charts/data-chart/SharedData";
 
+import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
+import { IgxMoneyFlowIndexIndicatorModule } from "igniteui-angular-charts/ES5/igx-money-flow-index-indicator-module";
+import { IgxValueOverlayModule } from "igniteui-angular-charts/ES5/igx-value-overlay-module";
 import { DependenciesType } from "../services/DependenciesType";
-import { Config } from "./core/Config";
 import { BaseConfigGenerator } from "./core/BaseConfigGenerator";
+import { Config } from "./core/Config";
 
 export class DataChartConfigGenerator extends BaseConfigGenerator {
 
@@ -126,7 +129,8 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
 
         configs.push(this.getConfig(
             DataChartAxisSharingComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule],
+            [IgxNumericXAxisModule, IgxNumericYAxisModule, IgxMoneyFlowIndexIndicatorModule,
+             IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxFinancialPriceSeriesModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
@@ -197,7 +201,7 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartSeriesTrendlinesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
-             IgxDataChartInteractivityModule, IgxDataChartCategoryTrendLineModule],
+             IgxDataChartInteractivityModule, IgxDataChartCategoryTrendLineModule, IgxFinancialPriceSeriesModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
@@ -220,7 +224,8 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartTypeFinancialSeriesComponent,
             [IgxDataChartCoreModule, IgxLegendModule, IgxIndicatorsModule, IgxFinancialPriceSeriesModule,
-             IgxDataChartInteractivityModule],
+             IgxDataChartInteractivityModule, IgxBollingerBandsOverlayModule, IgxNumericXAxisModule,
+             IgxNumericYAxisModule, IgxCategoryXAxisModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
@@ -244,7 +249,7 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartTypeScatterAreaSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
-             IgxDataChartInteractivityModule],
+             IgxDataChartInteractivityModule, IgxScatterAreaSeriesModule],
             [SampleScatterData], ["/src/app/charts/data-chart/SampleScatterData.ts"]));
 
         configs.push(this.getConfig(
@@ -263,7 +268,7 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartTypeScatterSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
-             IgxDataChartInteractivityModule],
+             IgxDataChartInteractivityModule, IgxLegendModule],
             [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
 
         configs.push(this.getConfig(
@@ -275,12 +280,12 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartTypeStackedSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule,
-             IgxDataChartInteractivityModule],
+             IgxDataChartInteractivityModule, IgxLegendModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeValueOverlayComponent,
-            [IgxDataChartCoreModule, IgxDataChartCategoryModule],
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxValueOverlayModule, IgxLegendModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(

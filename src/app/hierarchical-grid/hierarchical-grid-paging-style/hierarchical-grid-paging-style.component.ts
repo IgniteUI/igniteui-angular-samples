@@ -21,4 +21,5 @@ export class HGridPagingStyleSampleComponent implements OnInit {
 
     }
 
+    public formatter = (a) => a;
 }
