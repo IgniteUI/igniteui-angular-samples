@@ -1,27 +1,20 @@
-<div class="puzzle_board_wrapper">
+<div class="icon_wrapper">
     <div class="outside_container" *ngFor="let icon of icons">
         <div (onEnter)="onEnterHandler($event)" 
             igxDrop 
             id="{{icon.id}}" 
-            (onDrop)="onTileDropped($event)" 
+            (onDrop)="onIconDropped($event)" 
             class="inside_container" 
             >
             <div igxDrag 
                 id="{{icon.id}}" 
                 (dragStart)="dragStartHandler(icon.id)"
-                class="puzzle_part_container" 
+                class="drag_container" 
                 [hideBaseOnDrag]="true" 
                 [ghostImageClass]="'drag_ghost_class'">
-                
-                
-                <!-- <img class="puzzle_part" 
-                    [src]="icon.url" 
-                    draggable="false" 
-                    onmousedown="if (event.preventDefault) event.preventDefault()" /> -->
-
-                    <span class="puzzle_part" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()">
-                        <img [src]="icon.url"/>
-                    </span>
+                <span class="icon_container" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()">
+                    <img [src]="icon.url"/>
+                </span>
             </div>
         </div>
     </div>

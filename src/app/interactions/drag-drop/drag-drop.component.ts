@@ -39,7 +39,7 @@ export class DragAndDropSampleComponent {
         }
     ];
 
-    public onTileDropped(ev) {
+    public onIconDropped(ev) {
         ev.drag.dropFinished();
     }
 
