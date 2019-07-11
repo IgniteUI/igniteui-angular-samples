@@ -56,9 +56,9 @@ export class SelectConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/data/heroData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample5Component, IgxInputGroupModule],
+                imports: [IgxSelectModule, SelectSample5Component],
                 ngDeclarations: [SelectSample5Component],
-                ngImports: [IgxSelectModule, IgxInputGroupModule]
+                ngImports: [IgxSelectModule]
             }),
             component: SelectSample5Component,
             shortenComponentPathBy: "/data-entries/select/"

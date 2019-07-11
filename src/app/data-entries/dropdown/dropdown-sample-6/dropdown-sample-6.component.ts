@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { ISelectionEventArgs } from "igniteui-angular";
-import { heroClassesData } from "./../../../data/heroData";
+import { getHeroClassData, IHeroClass } from "./../../../data/heroData";
 
 @Component({
     selector: "app-dropdown-sample-6",
@@ -9,18 +9,17 @@ import { heroClassesData } from "./../../../data/heroData";
 })
 export class DropDownSample6Component implements OnInit {
     @ViewChild("button", { static: true }) public button: ElementRef;
-
-    public heroClasses: Array<{}>;
+    public heroClasses: IHeroClass[] = [];
     public hero = "Choose your hero";
 
     constructor(public elem: ElementRef) {
     }
 
     public ngOnInit() {
-        this.heroClasses = heroClassesData;
+        this.heroClasses = getHeroClassData();
     }
 
     public handleDropDownSelection(event: ISelectionEventArgs) {
-        this.button.nativeElement.textContent = event.newSelection.element.nativeElement.innerText;
+        this.hero = event.newSelection.value;
     }
 }

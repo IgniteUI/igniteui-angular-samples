@@ -1,10 +1,10 @@
 <div class='control-wrapper'>
     <button #button class="drop-down" igxButton="raised" [igxToggleAction]="dropDown" [overlaySettings]="{outlet: elem}"
-        [igxDropDownItemNavigation]="dropDown">{{ hero }}</button>
+    [igxDropDownItemNavigation]="dropDown">{{ hero }}</button>
     <igx-drop-down #dropDown class="drop-down" (onSelection)="handleDropDownSelection($event)">
         <div class="drop-down__scroll-container">
             <igx-drop-down-item-group *ngFor="let classGroup of heroClasses" [label]="classGroup['name']">
-                <igx-drop-down-item *ngFor="let class of classGroup['entries']" [value]='class.refNo'>
+                <igx-drop-down-item *ngFor="let class of classGroup['entries']" [value]='class.name'>
                     {{ class.name }}
                 </igx-drop-down-item>
             </igx-drop-down-item-group>

@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
 import { IComboSelectionChangeEventArgs } from "igniteui-angular";
-import { heroWeaponsData } from "./../../../data/heroData";
+import { getHeroWeaponsData, IHeroWeapon } from "./../../../data/heroData";
 
 @Component({
     selector: "app-combo",
@@ -8,13 +8,13 @@ import { heroWeaponsData } from "./../../../data/heroData";
     templateUrl: "./combo-styling.component.html"
 })
 export class ComboStyling implements OnInit {
-    public weaponsData: any[];
+    public weaponsData: IHeroWeapon[] = [];
 
     constructor(public elem: ElementRef) {
     }
 
     public ngOnInit() {
-        this.weaponsData = heroWeaponsData;
+        this.weaponsData = getHeroWeaponsData();
     }
 
     public setWeaponsLimit(event: IComboSelectionChangeEventArgs) {

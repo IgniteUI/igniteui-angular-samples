@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
-import { heroArmorData } from "./../../../data/heroData";
+import { getHeroArmorsData, IHeroArmor } from "./../../../data/heroData";
 
 @Component({
     selector: "select-sample-5",
@@ -8,12 +8,12 @@ import { heroArmorData } from "./../../../data/heroData";
 })
 
 export class SelectSample5Component implements OnInit {
-    public armorData: Array<{}>;
+    public armorData: IHeroArmor[] = [];
     public armor;
 
     constructor(public elem: ElementRef) {
     }
     public ngOnInit() {
-        this.armorData = heroArmorData;
+        this.armorData = getHeroArmorsData();
     }
 }
