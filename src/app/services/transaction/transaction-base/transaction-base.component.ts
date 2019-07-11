@@ -12,8 +12,8 @@ export class TransactionBaseComponent {
     public wishlist: IItem[];
     public name: string;
     public price: string;
-    public addDisabled;
-    public deleteDisabled;
+    public addDisabled: boolean;
+    public deleteDisabled: boolean;
 
     constructor(public transactions: IgxTransactionService<Transaction, State>) {
         this.wishlist = WISHLIST;
@@ -66,7 +66,7 @@ export class TransactionBaseComponent {
         this.reset();
     }
 
-    public getColor(transaction: Transaction) {
+    public getColor(transaction: Transaction): string {
         switch (transaction.type) {
             case TransactionType.ADD:
                 return "green";
@@ -77,7 +77,7 @@ export class TransactionBaseComponent {
         }
     }
 
-    private reset() {
+    private reset(): void {
         this.name = null;
         this.price = null;
         this.addDisabled = false;
