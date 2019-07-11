@@ -42,7 +42,6 @@ import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-
 import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { DropDownSample5Component } from "./dropdown/dropdown-sample-5/dropdown-sample-5.component";
 import { DropDownSample6Component } from "./dropdown/dropdown-sample-6/dropdown-sample-6.component";
-import { DropDownSample7Component } from "./dropdown/dropdown-sample-7/dropdown-sample-7.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -92,7 +91,6 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         DropDownSample4Component,
         DropDownSample5Component,
         DropDownSample6Component,
-        DropDownSample7Component,
         InputGroupSample1Component,
         InputGroupSample2Component,
         InputGroupSample3Component,
