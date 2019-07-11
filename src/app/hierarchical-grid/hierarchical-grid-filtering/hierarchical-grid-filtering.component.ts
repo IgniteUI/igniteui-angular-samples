@@ -21,4 +21,5 @@ export class HGridFilteringSampleComponent implements OnInit {
 
     }
 
+    public formatter = (a) => a;
 }

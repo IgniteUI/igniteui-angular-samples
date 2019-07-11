@@ -23,6 +23,8 @@ export class HGridCustomKBNavigationComponent implements OnInit {
         this.data = SINGERS;
     }
 
+    public formatter = (a) => a;
+
     public childGridCreated(event: IGridCreatedEventArgs) {
         const grid = event.grid;
         event.grid.onGridKeydown.subscribe((args) => {

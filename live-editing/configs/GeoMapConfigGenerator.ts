@@ -27,6 +27,7 @@ import { MapDisplayImageryBingTiles } from "../../src/app/maps/MapDisplayImagery
 import { MapDisplayImageryEsriTiles } from "../../src/app/maps/MapDisplayImageryEsriTiles/component";
 import { MapDisplayImageryOSM } from "../../src/app/maps/MapDisplayImageryOSM/component";
 
+import { MapDisplayImageryHeatTilesComponent } from "../../src/app/maps/geo-map-display-imagery-heat-tiles/map-display-imagery-heat-tiles.component";
 import { DependenciesType } from "../services/DependenciesType";
 import { BaseConfigGenerator } from "./core/BaseConfigGenerator";
 import { Config } from "./core/Config";
@@ -143,6 +144,13 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
             MapDisplayImageryEsriTiles,
             [IgxGeographicMapModule], null,
             ["/src/app/utilities/EsriUtility.ts"]));
+
+        configs.push(this.getConfig(
+                MapDisplayImageryHeatTilesComponent,
+                [IgxGeographicMapModule], null,
+                ["/src/app/maps/heatworker.worker.ts",
+                 "/src/assets/Shapes/AmericanCities.shp",
+                 "src/assets/Shapes/AmericanCities.dbf"]));
 
         return configs;
     }

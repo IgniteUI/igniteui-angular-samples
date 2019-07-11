@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxColumnComponent, IgxTreeGridComponent } from "igniteui-angular";
-import { EMPLOYEE_FLAT_DATA_DETAILED } from "../data/employees-flat-detailed";
+import { generateEmployeeDetailedFlatData } from "../data/employees-flat-detailed";
 
 @Component({
   selector: "app-tree-grid-column-moving-sample",
@@ -13,7 +13,7 @@ export class TreeGridColumnMovingSampleComponent {
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
 
     constructor() {
-        this.data = EMPLOYEE_FLAT_DATA_DETAILED();
+        this.data = generateEmployeeDetailedFlatData();
     }
 
     public toggleColumnPinning(column: IgxColumnComponent) {
