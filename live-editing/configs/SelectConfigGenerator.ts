@@ -3,7 +3,7 @@ import { SelectSample1Component } from "../../src/app/data-entries/select/select
 import { SelectSample2Component } from "../../src/app/data-entries/select/select-sample-2/select-sample-2.component";
 import { SelectSample3Component } from "../../src/app/data-entries/select/select-sample-3/select-sample-3.component";
 import { SelectSample4Component } from "../../src/app/data-entries/select/select-sample-4/select-sample-4.component";
-import { SelectSample5Component } from "../../src/app/data-entries/select/select-sample-5/select-sample-5.component";
+import { SelectStylingComponent } from "../../src/app/data-entries/select/select-styling/select-styling.component";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -56,12 +56,11 @@ export class SelectConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/data/heroData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectSample5Component],
-                ngDeclarations: [SelectSample5Component],
+                imports: [IgxSelectModule, SelectStylingComponent],
+                ngDeclarations: [SelectStylingComponent],
                 ngImports: [IgxSelectModule]
             }),
-            component: SelectSample5Component,
-            shortenComponentPathBy: "/data-entries/select/"
+            component: SelectStylingComponent
         }));
 
         return configs;

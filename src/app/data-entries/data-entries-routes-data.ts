@@ -28,7 +28,7 @@ export const dataEntriesRoutesData = {
     "dropdown-sample-2": { displayName: "Dropdown Selection", parentName: "Dropdown" },
     "dropdown-sample-3": { displayName: "Dropdown Headers", parentName: "Dropdown" },
     "dropdown-sample-5": { displayName: "Dropdown Groups", parentName: "Dropdown" },
-    "dropdown-sample-6": { displayName: "Dropdown Styling", parentName: "Dropdown" },
+    "dropdown-styling": { displayName: "Dropdown Styling", parentName: "Dropdown" },
     "dropdown-sample-4": { displayName: "Input Dropdown Selection", parentName: "Dropdown" },
     "input-group-sample-1": { displayName: "Simple Input Group", parentName: "Input Group" },
     "input-group-sample-2": { displayName: "Input Required", parentName: "Input Group" },
@@ -46,5 +46,5 @@ export const dataEntriesRoutesData = {
     "select-sample-2": { displayName: "Select With Groups", parentName: "Select" },
     "select-sample-3": { displayName: "Select With Forms", parentName: "Select" },
     "select-sample-4": { displayName: "Custom Overlay Settings", parentName: "Select" },
-    "select-sample-5": { displayName: "Select Styling", parentName: "Select" }
+    "select-styling": { displayName: "Select Styling", parentName: "Select" }
 };

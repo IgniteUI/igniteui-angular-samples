@@ -29,7 +29,7 @@ import { DropDownSample2Component } from "./dropdown/dropdown-sample-2/dropdown-
 import { DropDownSample3Component } from "./dropdown/dropdown-sample-3/dropdown-sample-3.component";
 import { DropDownSample4Component } from "./dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { DropDownSample5Component } from "./dropdown/dropdown-sample-5/dropdown-sample-5.component";
-import { DropDownSample6Component } from "./dropdown/dropdown-sample-6/dropdown-sample-6.component";
+import { DropDownStylingComponent } from "./dropdown/dropdown-styling/dropdown-styling.component";
 import { InputGroupSample1Component } from "./input-group/input-group-sample-1/input-group-sample-1.component";
 import { InputGroupSample2Component } from "./input-group/input-group-sample-2/input-group-sample-2.component";
 import { InputGroupSample3Component } from "./input-group/input-group-sample-3/input-group-sample-3.component";
@@ -44,7 +44,7 @@ import { SelectSample1Component } from "./select/select-sample-1/select-sample-1
 import { SelectSample2Component } from "./select/select-sample-2/select-sample-2.component";
 import { SelectSample3Component } from "./select/select-sample-3/select-sample-3.component";
 import { SelectSample4Component } from "./select/select-sample-4/select-sample-4.component";
-import { SelectSample5Component } from "./select/select-sample-5/select-sample-5.component";
+import { SelectStylingComponent } from "./select/select-styling/select-styling.component";
 import { SwitchSample1Component } from "./switch/switch-sample-1/switch-sample-1.component";
 import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2.component";
 
@@ -175,9 +175,9 @@ export const dataEntriesRoutes: Routes = [
         path: "dropdown-sample-5"
     },
     {
-        component: DropDownSample6Component,
-        data: dataEntriesRoutesData["dropdown-sample-6"],
-        path: "dropdown-sample-6"
+        component: DropDownStylingComponent,
+        data: dataEntriesRoutesData["dropdown-styling"],
+        path: "dropdown-styling"
     },
     {
         component: DropDownSample4Component,
@@ -275,9 +275,9 @@ export const dataEntriesRoutes: Routes = [
         path: "select-sample-4"
     },
     {
-        component: SelectSample5Component,
-        data: dataEntriesRoutesData["select-sample-5"],
-        path: "select-sample-5"
+        component: SelectStylingComponent,
+        data: dataEntriesRoutesData["select-styling"],
+        path: "select-styling"
     }
 ];
 

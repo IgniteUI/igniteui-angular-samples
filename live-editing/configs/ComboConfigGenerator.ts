@@ -33,8 +33,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ComboStyling],
                 ngImports: [IgxComboModule]
             }),
-            component: ComboStyling,
-            shortenComponentPathBy: "/lists/combo/"
+            component: ComboStyling
         }));
 
         configs.push(new Config({

@@ -1,13 +1,13 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
-import { getHeroArmorsData, IHeroArmor } from "../data/heroData";
+import { getHeroArmorsData, IHeroArmor } from "../../../data/heroData";
 
 @Component({
-    selector: "select-sample-5",
-    styleUrls: ["select-sample-5.component.scss"],
-    templateUrl: "select-sample-5.component.html"
+    selector: "select-styling",
+    styleUrls: ["select-styling.component.scss"],
+    templateUrl: "select-styling.component.html"
 })
 
-export class SelectSample5Component implements OnInit {
+export class SelectStylingComponent implements OnInit {
     public armorData: IHeroArmor[] = [];
     public armor;
 
