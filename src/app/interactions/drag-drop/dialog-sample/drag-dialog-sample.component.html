@@ -1,2 +1,35 @@
-<button igxButton="raised" (click)="showDialog()">Show Dialog</button>
-<igx-icon fontSet="material">drag_indicator</igx-icon>
+<button igxDrag igxButton="raised" igxRipple="white" (click)="openDialog()">Show Dialog</button>
+<div igxToggle 
+    #toggleForm="toggle" 
+    class="igx-dialog" 
+    [style.width.px]="280"
+    [style.height.px]="148"
+    [style.position]="'relative'"
+    igxDrag [renderGhost]="false" 
+    [dragTolerance]="0" 
+    [dragLinkTo]="'dialog'">
+    <igx-icon igxDragHandle fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
+    <div class="igx-dialog__window">
+        <div class="dialogContainer">
+            <span class="dialog-title">Drag this dialog</span>
+            <span class="dialog-content">This is just a sample</span>
+        </div>
+    </div>
+</div>
+<!-- <igx-dialog 
+    igxDrag
+    #alert 
+    >
+    <div class=dialog-container igxDrag>
+        Drag me
+    </div>
+    <igx-dialog-title>
+        <div class="dialog-container">
+            <div class="dialog-title">Drag this dialog</div>
+            <igx-icon fontSet="material" >drag_indicator</igx-icon>
+        </div>
+    </igx-dialog-title>
+</igx-dialog> -->
+
+
+
