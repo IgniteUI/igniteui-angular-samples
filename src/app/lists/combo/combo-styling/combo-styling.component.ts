@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
 import { IComboSelectionChangeEventArgs } from "igniteui-angular";
-import { getHeroWeaponsData, IHeroWeapon } from "./../../../data/heroData";
+import { getHeroWeaponsData, IHeroWeapon } from "../data/heroData";
 
 @Component({
     selector: "app-combo",

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
-import { getHeroArmorsData, IHeroArmor } from "./../../../data/heroData";
+import { getHeroArmorsData, IHeroArmor } from "../data/heroData";
 
 @Component({
     selector: "select-sample-5",

@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { ISelectionEventArgs } from "igniteui-angular";
-import { getHeroClassData, IHeroClass } from "./../../../data/heroData";
+import { getHeroClassData, IHeroClass } from "../data/heroData";
 
 @Component({
     selector: "app-dropdown-sample-6",
