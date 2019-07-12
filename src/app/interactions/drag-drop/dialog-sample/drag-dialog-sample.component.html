@@ -1,5 +1,11 @@
-<button igxDrag igxButton="raised" igxRipple="white" (click)="openDialog()">Show Dialog</button>
+<button 
+    #dialogButton 
+    igxDrag 
+    igxButton="raised" 
+    igxRipple="white" 
+    (click)="openDialog()">Show Dialog</button>
 <div igxToggle 
+    #toggleFormDiv
     #toggleForm="toggle" 
     class="igx-dialog" 
     [style.width.px]="280"
