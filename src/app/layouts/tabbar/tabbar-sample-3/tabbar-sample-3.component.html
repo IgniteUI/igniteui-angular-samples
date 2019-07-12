@@ -5,25 +5,23 @@
     </igx-select-item>
 </igx-select>
 
-Use the tab items to select different group of buttons.<br>
-
 <router-outlet></router-outlet>
 
 <igx-bottom-nav>
-    <igx-tab label="Push Buttons" icon="radio_button_unchecked"
-        routerLink="view1"
+    <igx-tab label="Arrivals" icon="flight_land"
+        routerLink="arrivals"
         routerLinkActive #rla1="routerLinkActive"
         [isSelected]="rla1.isActive">
     </igx-tab>
 
-    <igx-tab label="Checkbox Buttons" icon="check_circle_outline"
-        routerLink="view2"
+    <igx-tab label="Departures" icon="flight_takeoff"
+        routerLink="departures"
         routerLinkActive #rla2="routerLinkActive"
         [isSelected]="rla2.isActive">
     </igx-tab>
 
-    <igx-tab label="Radio Buttons" icon="radio_button_checked"
-        routerLink="view3"
+    <igx-tab label="Canceled" icon="cancel"
+        routerLink="canceled"
         routerLinkActive #rla3="routerLinkActive"
         [isSelected]="rla3.isActive">
     </igx-tab>

@@ -169,9 +169,9 @@ export const layoutsRoutes: Routes = [
     },
     {
         children: [
-            { path: "view1", component: BottomNavRoutingView1Component },
-            { path: "view2", component: BottomNavRoutingView2Component },
-            { path: "view3", component: BottomNavRoutingView3Component }
+            { path: "arrivals",   component: BottomNavRoutingView1Component },
+            { path: "departures", component: BottomNavRoutingView2Component },
+            { path: "canceled",   component: BottomNavRoutingView3Component }
         ],
         component: TabbarSample3Component,
         data: layoutsRoutesData["tabbar-sample-3"],
@@ -202,9 +202,9 @@ export const layoutsRoutes: Routes = [
     },
     {
         children: [
-            { path: "view1", component: TabsRoutingView1Component },
-            { path: "view2", component: TabsRoutingView2Component },
-            { path: "view3", component: TabsRoutingView3Component }
+            { path: "arrivals",   component: TabsRoutingView1Component },
+            { path: "departures", component: TabsRoutingView2Component },
+            { path: "canceled",   component: TabsRoutingView3Component }
         ],
         component: TabsSample6Component,
         data: layoutsRoutesData["tabs-sample-6"],

@@ -10,9 +10,9 @@ import { ISelectionEventArgs } from "igniteui-angular";
 export class TabsSample6Component implements OnInit {
     public urlLocations = [
         "/layouts/tabs-sample-6",
-        "/layouts/tabs-sample-6/view1",
-        "/layouts/tabs-sample-6/view2",
-        "/layouts/tabs-sample-6/view3"
+        "/layouts/tabs-sample-6/arrivals",
+        "/layouts/tabs-sample-6/departures",
+        "/layouts/tabs-sample-6/canceled"
     ];
 
     constructor(private router: Router) { }
@@ -36,55 +36,56 @@ export class TabsSample6Component implements OnInit {
 }
 
 @Component({
-    styles: [
-        ":host { display: flex; flex-flow: column nowrap; padding: 10px; }"
-    ],
     template: `
-        Push Buttons
-        <div style="display: flex; justify-content: space-around; align-items: center; ">
-            <button igxButton="flat" igxRipple>Flat</button> <br>
-            <button igxButton="raised" igxRipple>Raised</button> <br>
-            <button igxButton="outlined" igxRipple>Outlined</button> <br>
-            <button igxButton="icon" igxRipple>
-                <igx-icon fontSet="material">favorite</igx-icon>
-            </button> <br>
-            <button igxButton="fab" igxRipple>
-                <igx-icon fontSet="material">favorite</igx-icon>
-            </button>
-        </div>
+        <br>
+        <igx-grid [data]="data" [autoGenerate]="true" height="400px" width="700px"></igx-grid>
     `
 })
 export class TabsRoutingView1Component {
+    public data = [
+        { Flight: "LH1702", From: "Munich", Time: "12:25", Status: "Landed"},
+        { Flight: "W64332", From: "Dortmund", Time: "12:25", Status: "Expected"},
+        { Flight: "W64428", From: "Tel Aviv", Time: "12:40", Status: "Expected"},
+        { Flight: "OS795", From: "Vienna", Time: "12:45", Status: "Expected"},
+        { Flight: "UA9832", From: "Vienna", Time: "12:45", Status: "Expected"},
+        { Flight: "W64302", From: "London Luton", Time: "13:10", Status: "Expected"},
+        { Flight: "BA890", From: "London Heathrow", Time: "13:15", Status: "Expected"},
+        { Flight: "LH1426", From: "Frankfurt", Time: "13:45", Status: "Expected"},
+        { Flight: "AC9487", From: "Frankfurt", Time: "13:45", Status: "Expected"},
+        { Flight: "TP7540", From: "Frankfurt", Time: "13:45", Status: "Expected"}
+    ];
 }
 
 @Component({
-    styles: [
-        ":host { display: flex; flex-flow: column nowrap; padding: 10px; }",
-        "igx-checkbox { margin-top: 16px; }"
-    ],
     template: `
-        Checkbox Buttons
-        <igx-checkbox [checked]="true">Research</igx-checkbox>
-        <igx-checkbox [checked]="true">Design</igx-checkbox>
-        <igx-checkbox [checked]="false">Implement</igx-checkbox>
-        <igx-checkbox [checked]="false">Test</igx-checkbox>
-        <igx-checkbox [checked]="false">Integrate</igx-checkbox>
+        <br>
+        <igx-grid [data]="data" [autoGenerate]="true" height="400px" width="700px"></igx-grid>
     `
 })
 export class TabsRoutingView2Component {
+    public data = [
+        { Flight: "SU2061", From: "Moscow", Time: "12:25", Status: "Boarding"},
+        { Flight: "FB1363", From: "Moscow", Time: "12:25", Status: "Boarding"},
+        { Flight: "FB491", From: "Zurich", Time: "12:30", Status: "Taxing"},
+        { Flight: "FR6043", From: "Munich", Time: "12:40", Status: "Boarding"},
+        { Flight: "W64329", From: "Frankfurt", Time: "12:55", Status: "Expected"},
+        { Flight: "QR228", From: "Doha", Time: "13:00", Status: "Check-in"},
+        { Flight: "LH1703", From: "Munich", Time: "13:10", Status: "Check-in"},
+        { Flight: "AC9524", From: "Munich", Time: "13:10", Status: "Check-in"},
+        { Flight: "LX3817", From: "Munich", Time: "13:10", Status: "Check-in"}
+    ];
 }
 
 @Component({
-    styles: [
-        ":host { display: flex; flex-flow: column nowrap; padding: 10px; }",
-        "igx-radio { margin-top: 16px; }"
-    ],
     template: `
-        Radio Buttons
-        <igx-radio *ngFor="let food of foods" [(ngModel)]="selectedFood" value="{{ food }}">{{ food }}</igx-radio>
+        <br>
+        <igx-grid [data]="data" [autoGenerate]="true" height="400px" width="700px"></igx-grid>
     `
 })
 export class TabsRoutingView3Component {
-    public foods = ["Apple", "Apricot", "Banana", "Nectarine", "Orange"];
-    public selectedFood: string = this.foods[2];
+    public data = [
+        { Flight: "FB1363", From: "Moscow", Time: "12:25", Status: "Cancelled"},
+        { Flight: "FB491", From: "Zurich", Time: "12:30", Status: "Cancelled"},
+        { Flight: "FB437", From: "Frankfurt", Time: "12:45", Status: "Cancelled"}
+    ];
 }
