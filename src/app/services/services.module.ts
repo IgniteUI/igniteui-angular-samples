@@ -2,7 +2,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxCardModule, IgxCsvExporterService, IgxExcelExporterService, IgxGridModule, IgxListModule, IgxTimePickerModule, IgxTransactionService, IgxTreeGridModule } from "igniteui-angular";
+import { IgxCardModule, IgxChipsModule, IgxCsvExporterService, IgxExcelExporterService, IgxExpansionPanelModule, IgxGridModule, IgxIconModule, IgxListModule, IgxTimePickerModule, IgxTransactionService, IgxTreeGridModule } from "igniteui-angular";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { TreeGridCsvExportSample1Component } from "./export-csv/csv-export-tree-grid-sample/csv-export-tree-grid-sample.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
@@ -13,6 +13,7 @@ import { LocalizationSample1Component } from "./localization-samples/localizatio
 import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
 import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { ServicesRoutingModule } from "./services-routing.module";
+import { TransactionBasePipe } from "./transaction/pipes/transaction-base.pipe";
 import { TransactionBaseComponent } from "./transaction/transaction-base/transaction-base.component";
 // tslint:enable:max-line-length
 
@@ -27,7 +28,8 @@ import { TransactionBaseComponent } from "./transaction/transaction-base/transac
         LocalizationSample1Component,
         LocalizationSample2Component,
         LocalizationSample3Component,
-        TransactionBaseComponent
+        TransactionBaseComponent,
+        TransactionBasePipe
     ],
     imports: [
         CommonModule,
@@ -37,7 +39,10 @@ import { TransactionBaseComponent } from "./transaction/transaction-base/transac
         IgxTimePickerModule,
         IgxTreeGridModule,
         IgxListModule,
-        IgxCardModule
+        IgxCardModule,
+        IgxChipsModule,
+        IgxExpansionPanelModule,
+        IgxIconModule
     ],
     providers: [
         IgxCsvExporterService,
@@ -45,4 +50,4 @@ import { TransactionBaseComponent } from "./transaction/transaction-base/transac
         IgxTransactionService
     ]
 })
-export class ServicesModule {}
+export class ServicesModule { }

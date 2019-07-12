@@ -7,35 +7,36 @@ import { IItem, WISHLIST } from "../data";
     styleUrls: ["./transaction-base.component.scss"],
     templateUrl: "transaction-base.component.html"
 })
-
 export class TransactionBaseComponent {
     public wishlist: IItem[];
     public name: string;
     public price: string;
     public addDisabled: boolean;
     public deleteDisabled: boolean;
+    public editDisabled: boolean;
 
     constructor(public transactions: IgxTransactionService<Transaction, State>) {
         this.wishlist = WISHLIST;
     }
 
     public onAdd(event): void {
-        const person: IItem = { name: "Yacht", price: "A lot!" };
-        this.transactions.add({ id: 2, type: TransactionType.ADD, newValue: person });
+        const item: IItem = { id: 4, name: "Yacht", price: "A lot!" };
+        this.transactions.add({ id: 4, type: TransactionType.ADD, newValue: item });
 
         /** visualization */
         this.addDisabled = true;
-        this.name = person.name;
-        this.price = person.price;
+        this.name = item.name;
+        this.price = item.price;
     }
 
     public onEdit(event): void {
         const newPrice = "54$";
         this.transactions.add({
-            id: 3, type: TransactionType.UPDATE, newValue: { name: "Apple", price: newPrice }
+            id: 2, type: TransactionType.UPDATE, newValue: { name: "Apple", price: newPrice }
         }, this.wishlist[1]);
 
         /** visualization */
+        this.editDisabled = true;
         this.name = this.wishlist[1].name;
         this.price = newPrice;
     }
@@ -66,6 +67,17 @@ export class TransactionBaseComponent {
         this.reset();
     }
 
+    public applyColor(item?: IItem): string {
+        const states = this.transactions.getAggregatedChanges(true);
+        for (const transaction of states) {
+            if (item && transaction.newValue.id === item.id) {
+                return this.getColor(transaction);
+            }
+        }
+
+        return null;
+    }
+
     public getColor(transaction: Transaction): string {
         switch (transaction.type) {
             case TransactionType.ADD:
@@ -74,6 +86,21 @@ export class TransactionBaseComponent {
                 return "red";
             case TransactionType.UPDATE:
                 return "blue";
+            default:
+                return null;
+        }
+    }
+
+    public setIcon(transaction: Transaction): string {
+        switch (transaction.type) {
+            case TransactionType.ADD:
+                return "check";
+            case TransactionType.DELETE:
+                return "delete";
+            case TransactionType.UPDATE:
+                return "edit";
+            default:
+                return null;
         }
     }
 
@@ -82,5 +109,6 @@ export class TransactionBaseComponent {
         this.price = null;
         this.addDisabled = false;
         this.deleteDisabled = false;
+        this.editDisabled = false;
     }
 }

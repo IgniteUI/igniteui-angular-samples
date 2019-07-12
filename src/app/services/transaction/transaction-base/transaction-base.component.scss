@@ -1,41 +1,25 @@
-.data-lists {
-  padding: 30px;
-}
-
-.static-list,
-.dynamic-list {
-  padding-bottom: 10px;
-}
-
-.transactions {
-  display: flex;
-  flex-flow: column;
-}
-
-.buttons {
-  display: flex;
-  flex-flow: row;
-}
-
-.item {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
-  margin-right: 10px;
-}
-
 .options {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
   padding: 24px;
   margin: auto;
 }
 
-.transaction-log {
-  width: 50%;
-  margin: auto;
-}
-
 .options-wrap {
-  padding-top: 10px;
-  margin: auto;
   display: flex;
   flex-flow: column;
+}
+
+.chip-content {
+  display: flex;
+}
+
+.data-lists {
+    padding: 30px;
+    display: flex;
+    flex-flow: row;
+}
+
+.static-list,
+.dynamic-list {
+    margin: auto;
 }
