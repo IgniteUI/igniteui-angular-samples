@@ -89,6 +89,8 @@ import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-cu
 
 // tslint:disable-next-line: max-line-length
 import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample
+} from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -445,6 +447,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
                     IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxComboModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridEditingStyleSample,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridEditingStyleSample, IgxGridModule, IgxDatePickerModule],
+                ngDeclarations: [GridEditingStyleSample],
+                ngImports: [IgxGridModule, IgxDatePickerModule]
             })
         }));
 

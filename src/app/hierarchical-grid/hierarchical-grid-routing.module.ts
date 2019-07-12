@@ -11,6 +11,7 @@ import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
+import { HGridEditingStyleComponent } from "./hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
 import {
     HGridExcelStyleFilteringSample1Component
@@ -214,6 +215,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-editing"],
         path: "hierarchical-grid-editing"
+    },
+    {
+        component: HGridEditingStyleComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-editing-style"],
+        path: "hierarchical-grid-editing-style"
     },
     {
         component: HGridBatchEditingSampleComponent,
