@@ -44,49 +44,49 @@ export class IconsSampleComponent {
     }
 
     private swapIcons(dragIndex: number, dropIndex: number) {
-        let iconMatrix = [
+        const iconMatrix = [
             [...this.icons.slice(0, 3)],
             [...this.icons.slice(3, 6)],
             [...this.icons.slice(6, 9)]
-        ]
-        let dragRow = dragIndex < 3 ? 0 : dragIndex > 5 ? 2 : 1;
-        let dropRow = dropIndex < 3 ? 0 : dropIndex > 5 ? 2 : 1;
-        let dragCol = dragIndex - 3 * dragRow
-        let dropCol = dropIndex - 3 * dropRow
-        let flattenArr = []
+        ];
+        const dragRow = dragIndex < 3 ? 0 : dragIndex > 5 ? 2 : 1;
+        const dropRow = dropIndex < 3 ? 0 : dropIndex > 5 ? 2 : 1;
+        const dragCol = dragIndex - 3 * dragRow;
+        const dropCol = dropIndex - 3 * dropRow;
+        let flattenArr = [];
         if (dragRow < dropRow) {
-            flattenArr = [...iconMatrix[dragRow], ...iconMatrix[dropRow]]
-            flattenArr.splice(3 + dropCol, 0, flattenArr.splice(dragCol, 1)[0])
-            iconMatrix[dragRow] = flattenArr.slice(0, 3)
-            iconMatrix[dropRow] = flattenArr.slice(3)
-            this.icons = [...iconMatrix[0], ...iconMatrix[1], ...iconMatrix[2]]
-        } else if( dragRow > dropRow) {
-        flattenArr = [...iconMatrix[dropRow], ...iconMatrix[dragRow]]
+            flattenArr = [...iconMatrix[dragRow], ...iconMatrix[dropRow]];
+            flattenArr.splice(3 + dropCol, 0, flattenArr.splice(dragCol, 1)[0]);
+            iconMatrix[dragRow] = flattenArr.slice(0, 3);
+            iconMatrix[dropRow] = flattenArr.slice(3);
+            this.icons = [...iconMatrix[0], ...iconMatrix[1], ...iconMatrix[2]];
+        } else if (dragRow > dropRow) {
+            flattenArr = [...iconMatrix[dropRow], ...iconMatrix[dragRow]];
             flattenArr.splice(dropCol, 0, flattenArr.splice(dragCol + 3, 1)[0]);
-            iconMatrix[dropRow] = flattenArr.slice(0, 3)
-            iconMatrix[dragRow] = flattenArr.slice(3)
-            this.icons = [...iconMatrix[0], ...iconMatrix[1], ...iconMatrix[2]]
+            iconMatrix[dropRow] = flattenArr.slice(0, 3);
+            iconMatrix[dragRow] = flattenArr.slice(3);
+            this.icons = [...iconMatrix[0], ...iconMatrix[1], ...iconMatrix[2]];
         } else {
-            [this.icons[dragIndex], this.icons[dropIndex]] = [this.icons[dropIndex], this.icons[dragIndex]]
+            [this.icons[dragIndex], this.icons[dropIndex]] = [this.icons[dropIndex], this.icons[dragIndex]];
         }
     }
 
-    private onEnterHandler(ev):void {
-        this.dropTileId = parseInt(ev.owner.element.nativeElement.id, 10)
-        //the event get raised immediately, but we want to do something only when we drag over another tile
-        if(this.dragIconId === this.dropTileId) {
+    private onEnterHandler(ev): void {
+        this.dropTileId = parseInt(ev.owner.element.nativeElement.id, 10);
+        // the event get raised immediately, but we want to do something only when we drag over another tile
+        if (this.dragIconId === this.dropTileId) {
             return;
         }
-        let dragIndex = this.icons.findIndex((iconObj) => {
-            return iconObj.id === this.dragIconId
-        })
-        let dropIndex = this.icons.findIndex((iconObj) => {
-            return iconObj.id === this.dropTileId
-        })
-        this.swapIcons(dragIndex, dropIndex)
+        const dragIndex = this.icons.findIndex((iconObj) => {
+            return iconObj.id === this.dragIconId;
+        });
+        const dropIndex = this.icons.findIndex((iconObj) => {
+            return iconObj.id === this.dropTileId;
+        });
+        this.swapIcons(dragIndex, dropIndex);
     }
 
-    private dragStartHandler(id: string):void {
+    private dragStartHandler(id: string): void {
         this.dragIconId = parseInt(id, 10);
     }
 }

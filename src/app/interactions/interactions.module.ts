@@ -13,6 +13,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
 import { InteractionsRoutingModule } from "./interactions-routing.module";
 import { MyDynamicCardComponent } from "./overlay/overlay-dynamic-card/overlay-dynamic-card.component";
@@ -41,7 +42,6 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
-import { DragDialogSampleComponent } from './drag-drop/dialog-sample/drag-dialog-sample.component';
 
 @NgModule({
     declarations: [

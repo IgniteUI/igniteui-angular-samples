@@ -1,40 +1,41 @@
-import { Component, ViewChild, ElementRef, Inject } from '@angular/core';
-import { 
-    IgxToggleDirective, 
-    IgxDragDirective, 
-    OverlaySettings, 
-    GlobalPositionStrategy, 
-    NoOpScrollStrategy, 
-    IgxOverlayService, 
-    ConnectedPositioningStrategy } from 'igniteui-angular';
+import { Component, ElementRef, ViewChild } from "@angular/core";
+import {
+    ConnectedPositioningStrategy,
+    GlobalPositionStrategy,
+    IgxDragDirective,
+    IgxOverlayService,
+    IgxToggleDirective,
+    NoOpScrollStrategy,
+    OverlaySettings } from "igniteui-angular";
 
 @Component({
-  selector: 'drag-dialog-sample',
-  templateUrl: './drag-dialog-sample.component.html',
-  styleUrls: ['./drag-dialog-sample.component.scss']
+  selector: "drag-dialog-sample",
+  templateUrl: "./drag-dialog-sample.component.html",
+  styleUrls: ["./drag-dialog-sample.component.scss"]
 })
 export class DragDialogSampleComponent {
-    public toggleStartPageX;
-    public toggleStartPageY;
-    private overlaySettings: OverlaySettings = {
-        positionStrategy: new GlobalPositionStrategy(),
-        scrollStrategy: new NoOpScrollStrategy(),
-        modal: false,
-        closeOnOutsideClick: true
-    };
-  @ViewChild('toggleForm', { static: true })
+  public toggleStartPageX;
+  public toggleStartPageY;
+  @ViewChild("toggleForm", { static: true })
   public toggleForm: IgxToggleDirective;
-  
-  @ViewChild('toggleFormDiv', {static: true})
-  public toggleFormDiv: ElementRef
 
-  @ViewChild('toggleForm', { read: IgxDragDirective, static: true })
+  @ViewChild("toggleFormDiv", {static: true})
+  public toggleFormDiv: ElementRef;
+
+  @ViewChild("toggleForm", { read: IgxDragDirective, static: true })
   public toggleFormDrag: IgxDragDirective;
 
   @ViewChild("dialogButton", { static: true })
-  private buttonElement: ElementRef;
+  public buttonElement: ElementRef;
 
-  constructor( @Inject(IgxOverlayService) private overlayService: IgxOverlayService ) {}
+  private overlaySettings: OverlaySettings = {
+    positionStrategy: new GlobalPositionStrategy(),
+    scrollStrategy: new NoOpScrollStrategy(),
+    modal: false,
+    closeOnOutsideClick: true
+};
+
+  constructor(private overlayService: IgxOverlayService) {}
 
   public openDialog() {
     const overlayId = this.overlayService.attach(this.toggleFormDiv, {

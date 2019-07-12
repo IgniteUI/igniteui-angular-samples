@@ -6,8 +6,8 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
-import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
 import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
+import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
 import { interactionsRoutesData } from "./interactions-routes-data";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
@@ -195,7 +195,7 @@ export const interactionsRoutes: Routes = [
         component: DragDialogSampleComponent,
         data: interactionsRoutesData["drag-dialog-sample"],
         path: "drag-dialog-sample"
-    },
+    }
 ];
 
 @NgModule({
