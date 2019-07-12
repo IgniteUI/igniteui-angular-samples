@@ -41,7 +41,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
-import { DialogSampleComponent } from './drag-drop/dialog-sample/dialog-sample.component';
+import { DragDialogSampleComponent } from './drag-drop/dialog-sample/drag-dialog-sample.component';
 
 @NgModule({
     declarations: [
@@ -77,7 +77,7 @@ import { DialogSampleComponent } from './drag-drop/dialog-sample/dialog-sample.c
         MyDynamicCardComponent,
         IconsSampleComponent,
         CustomDialogComponent,
-        DialogSampleComponent
+        DragDialogSampleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
