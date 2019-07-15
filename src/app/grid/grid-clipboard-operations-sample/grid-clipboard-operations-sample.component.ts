@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { DATA } from "../../data/nwindData";
 
 @Component({
@@ -6,7 +6,7 @@ import { DATA } from "../../data/nwindData";
     styleUrls: ["grid-clipboard-operations-sample.component.scss"],
     templateUrl: "./grid-clipboard-operations-sample.component.html"
 })
-export class GridClipboardSampleComponent {
+export class GridClipboardSampleComponent implements OnInit {
 
     public data: any[];
     public options = {
@@ -20,10 +20,16 @@ export class GridClipboardSampleComponent {
         this.data = DATA;
     }
 
+    public ngOnInit() {
+    }
+
     public formatter = (value: any) => `** ${value} **`;
 
     public initColumn(column) {
         column.formatter = this.formatter;
-        column.header = `🐱‍👤 ${column.field} 🐱‍🏍`;
+        column.header = `🎉${column.field}`;
+        if (column.index > 6) {
+            column.hidden = true;
+        }
     }
 }

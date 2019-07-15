@@ -725,9 +725,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridClipboardSampleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [GridClipboardSampleComponent, IgxGridModule],
+                imports: [GridClipboardSampleComponent, IgxGridModule, IgxSwitchModule],
                 ngDeclarations: [GridClipboardSampleComponent],
-                ngImports: [IgxGridModule]
+                ngImports: [IgxGridModule, IgxSwitchModule]
             })
         }));
 

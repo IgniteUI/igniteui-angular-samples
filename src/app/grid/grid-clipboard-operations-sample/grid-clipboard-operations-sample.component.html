@@ -12,9 +12,9 @@
                     Click the clear icon to reset it back to tabulation.
                 </igx-hint>
             </igx-input-group>
-            <div style="width: 50wh; height: 50vh">
-                <igx-grid #grid [data]="data" primaryKey="ID" rowEditable="true" (onColumnInit)="initColumn($event)" [showToolbar]="true"
-                    [clipboardOptions]="options" [autoGenerate]="true">
+            <div class="grid-wrapper">
+                <igx-grid #grid [data]="data" primaryKey="ID" rowEditable="true" (onColumnInit)="initColumn($event)"
+                    [showToolbar]="true" [clipboardOptions]="options" [autoGenerate]="true">
                     <ng-template igxToolbarCustomContent let-grid="grid">
                         <div class="tlb">
                             <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
