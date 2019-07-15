@@ -11,14 +11,6 @@ $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
     $button-hover-text-color: #FFCD0F
 );
 
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-    ::ng-deep {
-        @include igx-grid-toolbar($dark-grid-toolbar-theme);
-    }
-}
-
 /*ENHANCED APPROACHES*/
 
 // $yellow-color: #FFCD0F;
@@ -69,6 +61,14 @@ $dark-grid-toolbar-theme: igx-grid-toolbar-theme(
 //   $palette: $dark-palette,
 //   $schema: $custom-dark-schema
 // );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+        @include igx-grid-toolbar($dark-grid-toolbar-theme);
+    }
+}
 
 .hgrid_wrapper {
     margin: 15px;
