@@ -3,8 +3,8 @@
 import { RouterModule } from "@angular/router";
 
 import {
-    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxDropDownModule, IgxIconModule,
-    IgxNavbarModule, IgxRadioModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
+    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxNavbarModule, IgxRippleModule,
+    IgxSelectModule, IgxTabsModule, IgxToggleModule
 } from "igniteui-angular";
 
 import { TabsSample1Component } from "../../src/app/layouts/tabs/tabs-sample-1/tabs-sample-1.component";
@@ -109,15 +109,9 @@ export class TabsConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TabsSample6Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [
-                    RouterModule, TabsSample6Component, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule,
-                    IgxIconModule, IgxRadioModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
-                ],
+                imports: [ RouterModule, TabsSample6Component, IgxSelectModule, IgxTabsModule ],
                 ngDeclarations: [TabsSample6Component],
-                ngImports: [
-                    RouterModule, IgxButtonModule, IgxCheckboxModule, IgxDropDownModule, IgxRadioModule,
-                    IgxIconModule, IgxRippleModule, IgxTabsModule, IgxToggleModule
-                ]
+                ngImports: [ RouterModule, IgxSelectModule, IgxTabsModule ]
             }),
             shortenComponentPathBy: "/layouts/tabs/"
         }));
