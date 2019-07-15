@@ -14,12 +14,13 @@
 }
 
 .data-lists {
-    padding: 30px;
-    display: flex;
-    flex-flow: row;
+  padding: 30px;
+  display: flex;
+  flex-flow: row;
 }
 
 .static-list,
-.dynamic-list {
-    margin: auto;
+.dynamic-list,
+.title {
+  margin: auto;
 }

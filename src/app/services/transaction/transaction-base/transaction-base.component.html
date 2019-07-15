@@ -3,18 +3,12 @@
         <igx-card>
             <igx-list>
                 <igx-list-item [isHeader]="true">Wishlist (no transactions)</igx-list-item>
-                <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content">
-                    <p igxListLineTitle>Bike</p>
-                    <p igxListLineSubTitle>Costs: 500$</p>
-                </igx-list-item>
-                <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content">
-                    <p igxListLineTitle>Apple</p>
-                    <p igxListLineSubTitle>Costs: 1.5$</p>
-                </igx-list-item>
-                <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content">
-                    <p igxListLineTitle>Mouse (pet)</p>
-                    <p igxListLineSubTitle>Costs: 75$</p>
-                </igx-list-item>
+                <ng-template ngFor let-item [ngForOf]="this.wishlist">
+                    <igx-list-item>
+                        <p igxListLineTitle>{{item.name}}</p>
+                        <p igxListLineSubTitle>Costs: {{item.price}}</p>
+                    </igx-list-item>
+                </ng-template>
             </igx-list>
         </igx-card>
     </div>
@@ -23,7 +17,7 @@
             <igx-list>
                 <igx-list-item [isHeader]="true">Wishlist (with transactions)</igx-list-item>
                 <ng-template ngFor [ngForOf]="this.wishlist | transactionBasePipe" let-item>
-                    <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content">
+                    <igx-list-item>
                         <p [ngStyle]="{'color': applyColor(item)}" igxListLineTitle>{{item.name}}</p>
                         <p [ngStyle]="{'color': applyColor(item)}" igxListLineSubTitle>Costs: {{item.price}}</p>
                     </igx-list-item>
@@ -33,6 +27,7 @@
     </div>
 </div>
 <div class="options-wrap">
+    <div class="title">Transaction Log</div>
     <div class="options">
         <igx-expansion-panel [collapsed]="false">
             <igx-expansion-panel-header iconPosition="none" [disabled]="true">
@@ -42,19 +37,19 @@
                     [disabled]="editDisabled || wishlist.length < 2">Edit
                     Second</button>
                 <button #delete igxButton (click)="onDelete($event)"
-                    [disabled]="deleteDisabled || wishlist.length === 0">Delete
-                    First</button>
+                    [disabled]="deleteDisabled || wishlist.length === 0">Delete First</button>
                 <button igxButton (click)="onCommit($event)">Commit Transactions</button>
                 <button #clear igxButton (click)="onClear($event)" class="clear">Clear Transactions</button>
             </igx-expansion-panel-header>
             <igx-expansion-panel-body>
                 <igx-chips-area>
-                    <ng-template ngFor let-transaction [ngForOf]="this.transactions.getTransactionLog()">
+                    <ng-template ngFor let-transaction [ngForOf]="this.getTransactionLog()">
                         <igx-chip>
                             <div class="chip-content">
                                 <igx-icon>{{setIcon(transaction)}}</igx-icon>
-                                <span class="chip-text">{{transaction.newValue.name}} -
-                                    {{transaction.newValue.price}}</span>
+                                <span class="chip-text">
+                                    {{transaction.name}} - {{transaction.price}}
+                                </span>
                             </div>
                         </igx-chip>
                     </ng-template>

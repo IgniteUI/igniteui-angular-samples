@@ -1,30 +1,39 @@
 import { Pipe, PipeTransform } from "@angular/core";
 import { IgxTransactionService, State, Transaction, TransactionType } from "igniteui-angular";
-import { IItem } from "../data";
+import { WishlistItem } from "../data";
 
 @Pipe({
     name: "transactionBasePipe",
     pure: false
 })
 export class TransactionBasePipe implements PipeTransform {
+    // inject the transaction service
     constructor(public transactions: IgxTransactionService<Transaction, State>) { }
 
-    public transform(data: IItem[]) {
+    public transform(data: WishlistItem[]) {
+        // the pipe should NOT operate on the original dataset
+        // we create a copy of the original data and then use it for visualization only
         const _data = [...data];
         const states = this.transactions.getAggregatedChanges(false);
+        // iterate over all pending transactions
         for (const state of states) {
+            // depending on the type of transaction either:
             switch (state.type) {
                 case TransactionType.ADD:
+                    // push the newValue property of the current ADD transaction
                     _data.push(state.newValue);
                     break;
                 // we do not directly operate on records, we just style them
-                // it will be deleted once it's committed
+                // the record will be deleted once the transaction is committed
                 case TransactionType.DELETE:
                     break;
                 case TransactionType.UPDATE:
-                    const record = _data.find(r => r.id === state.id);
-                    Object.assign(record, state.newValue);
+                    const index = _data.findIndex(record => record.id === state.id);
+                    // update the value of the record that corresponds to the index
+                    _data[index] = Object.assign({}, _data[index], state.newValue);
                     break;
+                default:
+                    return _data;
             }
         }
 
