@@ -47,7 +47,7 @@ export class TransactionBaseComponent {
      * Create an 'UPDATE' transaction.
      */
     public onEdit(event): void {
-        const newPrice = "54$";
+        const newPrice = "999$";
         this.transactions.add({
             id: this.wishlist[1].id,
             type: TransactionType.UPDATE,
