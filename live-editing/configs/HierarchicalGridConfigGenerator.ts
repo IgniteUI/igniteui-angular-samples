@@ -1,4 +1,5 @@
 // tslint:disable:max-line-length
+import { HttpClientModule } from "@angular/common/http";
 import {
     IgxButtonGroupModule,
     IgxButtonModule,
@@ -210,9 +211,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-paging/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent],
+                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent, HttpClientModule],
                 ngDeclarations: [HGridRemotePagingSampleComponent],
-                ngImports: [IgxHierarchicalGridModule]
+                ngImports: [IgxHierarchicalGridModule, HttpClientModule]
             }),
             component: HGridRemotePagingSampleComponent
         }));
