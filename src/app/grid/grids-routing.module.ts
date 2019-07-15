@@ -5,6 +5,7 @@ import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
@@ -318,6 +319,11 @@ export const gridsRoutes: Routes = [
         component: CustomGridPagingStyleSample,
         data: gridsRoutesData["custom-grid-paging-style"],
         path: "custom-grid-paging-style"
+    },
+    {
+        component: GridColumnHidingToolbarStyleComponent,
+        data: gridsRoutesData["grid-column-hiding-style"],
+        path: "grid-column-hiding-style"
     }
 ];
 

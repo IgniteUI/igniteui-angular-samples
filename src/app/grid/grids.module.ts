@@ -14,6 +14,7 @@ import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transac
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
@@ -129,7 +130,8 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         GridMRLCustomNavigationComponent,
         ContextmenuComponent,
         CustomGridPagingStyleSample,
-        GridRowReorderComponent
+        GridRowReorderComponent,
+        GridColumnHidingToolbarStyleComponent
     ],
     imports: [
         CommonModule,
