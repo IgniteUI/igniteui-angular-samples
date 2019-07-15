@@ -44,31 +44,9 @@ export class IconsSampleComponent {
     }
 
     private swapIcons(dragIndex: number, dropIndex: number) {
-        const iconMatrix = [
-            [...this.icons.slice(0, 3)],
-            [...this.icons.slice(3, 6)],
-            [...this.icons.slice(6, 9)]
-        ];
-        const dragRow = dragIndex < 3 ? 0 : dragIndex > 5 ? 2 : 1;
-        const dropRow = dropIndex < 3 ? 0 : dropIndex > 5 ? 2 : 1;
-        const dragCol = dragIndex - 3 * dragRow;
-        const dropCol = dropIndex - 3 * dropRow;
-        let flattenArr = [];
-        if (dragRow < dropRow) {
-            flattenArr = [...iconMatrix[dragRow], ...iconMatrix[dropRow]];
-            flattenArr.splice(3 + dropCol, 0, flattenArr.splice(dragCol, 1)[0]);
-            iconMatrix[dragRow] = flattenArr.slice(0, 3);
-            iconMatrix[dropRow] = flattenArr.slice(3);
-            this.icons = [...iconMatrix[0], ...iconMatrix[1], ...iconMatrix[2]];
-        } else if (dragRow > dropRow) {
-            flattenArr = [...iconMatrix[dropRow], ...iconMatrix[dragRow]];
-            flattenArr.splice(dropCol, 0, flattenArr.splice(dragCol + 3, 1)[0]);
-            iconMatrix[dropRow] = flattenArr.slice(0, 3);
-            iconMatrix[dragRow] = flattenArr.slice(3);
-            this.icons = [...iconMatrix[0], ...iconMatrix[1], ...iconMatrix[2]];
-        } else {
-            [this.icons[dragIndex], this.icons[dropIndex]] = [this.icons[dropIndex], this.icons[dragIndex]];
-        }
+        let tempObj = this.icons[dragIndex]
+        this.icons.splice(dragIndex, 1)
+        this.icons.splice(dropIndex, 0, tempObj)
     }
 
     private onEnterHandler(ev): void {
