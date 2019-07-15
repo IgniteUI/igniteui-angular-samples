@@ -4,14 +4,6 @@
 
 $dark-tooltip: igx-tooltip-theme($text-color: #F4D45C, $background: rgb(65,65,65), $border-radius: 10px);
 
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-     ::ng-deep {
-        @include igx-tooltip($dark-tooltip);
-    }
-}
-
 /*ENHANCED APPROACHES*/
 
 // $yellow-color: #F4D45C;
@@ -46,6 +38,14 @@ $dark-tooltip: igx-tooltip-theme($text-color: #F4D45C, $background: rgb(65,65,65
 //   $palette: $dark-palette,
 //   $schema: $custom-dark-schema
 // );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+       @include igx-tooltip($dark-tooltip);
+   }
+}
 
 .wrapper {
     text-align: center;
