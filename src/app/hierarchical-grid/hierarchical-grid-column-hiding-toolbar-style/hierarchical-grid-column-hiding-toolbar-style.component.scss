@@ -8,17 +8,6 @@ $custom-column-hiding-theme: igx-column-hiding-theme(
 );
 $custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black);
 
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
-
-:host {
-    ::ng-deep {
-        @include igx-column-hiding($custom-column-hiding-theme);
-        .igx-column-hiding {
-            @include igx-button($custom-button);
-        }
-    }
-}
-
 /*ENHANCED APPROACHES*/
 
 // $yellow-color: gold;
@@ -74,6 +63,17 @@ $custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black)
 //   $palette: $custom-palette,
 //   $schema: $custom-dark-schema
 // );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+        @include igx-column-hiding($custom-column-hiding-theme);
+        .igx-column-hiding {
+            @include igx-button($custom-button);
+        }
+    }
+}
 
 .hgrid_wrapper {
     margin: 10px;
