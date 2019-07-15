@@ -52,7 +52,7 @@ $custom-button: igx-button-theme($flat-text-color: gold, $disabled-color: black)
 // );
 // 
 // $custom-dark-schema: extend($dark-schema,(
-//     igx-grid-column-hiding: $custom-column-hiding-schema,
+//     igx-column-hiding: $custom-column-hiding-schema,
 //     igx-button: $custom-button-schema
 // ));
 // $custom-column-hiding-theme: igx-column-hiding-theme(
