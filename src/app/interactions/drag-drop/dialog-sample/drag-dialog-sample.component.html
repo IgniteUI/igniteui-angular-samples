@@ -5,12 +5,10 @@
     igxRipple="white" 
     (click)="openDialog()">Show Dialog</button>
 <div igxToggle
+    igxDrag 
     #toggleForm="toggle" 
     class="igx-dialog" 
-    [style.width.px]="280"
-    [style.height.px]="148"
-    [style.position]="'relative'"
-    igxDrag [renderGhost]="false" 
+    [renderGhost]="false" 
     [dragTolerance]="0" 
     [dragLinkTo]="'dialog'">
     <igx-icon igxDragHandle fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
