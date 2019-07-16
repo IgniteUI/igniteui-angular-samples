@@ -38,7 +38,12 @@ export class TabsSample6Component implements OnInit {
 @Component({
     template: `
         <br>
-        <igx-grid [data]="data" [autoGenerate]="true" height="400px" width="700px"></igx-grid>
+        <igx-grid [data]="data">
+            <igx-column [field]="'Flight'" width="100"></igx-column>
+            <igx-column [field]="'From'" width="120"></igx-column>
+            <igx-column [field]="'Time'" width="100"></igx-column>
+            <igx-column [field]="'Status'" width="120"></igx-column>
+        </igx-grid>
     `
 })
 export class TabsRoutingView1Component {
@@ -47,19 +52,19 @@ export class TabsRoutingView1Component {
         { Flight: "W64332", From: "Dortmund", Time: "12:25", Status: "Expected"},
         { Flight: "W64428", From: "Tel Aviv", Time: "12:40", Status: "Expected"},
         { Flight: "OS795", From: "Vienna", Time: "12:45", Status: "Expected"},
-        { Flight: "UA9832", From: "Vienna", Time: "12:45", Status: "Expected"},
-        { Flight: "W64302", From: "London Luton", Time: "13:10", Status: "Expected"},
-        { Flight: "BA890", From: "London Heathrow", Time: "13:15", Status: "Expected"},
-        { Flight: "LH1426", From: "Frankfurt", Time: "13:45", Status: "Expected"},
-        { Flight: "AC9487", From: "Frankfurt", Time: "13:45", Status: "Expected"},
-        { Flight: "TP7540", From: "Frankfurt", Time: "13:45", Status: "Expected"}
+        { Flight: "UA9832", From: "Vienna", Time: "12:45", Status: "Expected"}
     ];
 }
 
 @Component({
     template: `
         <br>
-        <igx-grid [data]="data" [autoGenerate]="true" height="400px" width="700px"></igx-grid>
+        <igx-grid [data]="data">
+            <igx-column [field]="'Flight'" width="100"></igx-column>
+            <igx-column [field]="'From'" width="120"></igx-column>
+            <igx-column [field]="'Time'" width="100"></igx-column>
+            <igx-column [field]="'Status'" width="120"></igx-column>
+        </igx-grid>
     `
 })
 export class TabsRoutingView2Component {
@@ -69,17 +74,19 @@ export class TabsRoutingView2Component {
         { Flight: "FB491", From: "Zurich", Time: "12:30", Status: "Taxing"},
         { Flight: "FR6043", From: "Munich", Time: "12:40", Status: "Boarding"},
         { Flight: "W64329", From: "Frankfurt", Time: "12:55", Status: "Expected"},
-        { Flight: "QR228", From: "Doha", Time: "13:00", Status: "Check-in"},
-        { Flight: "LH1703", From: "Munich", Time: "13:10", Status: "Check-in"},
-        { Flight: "AC9524", From: "Munich", Time: "13:10", Status: "Check-in"},
-        { Flight: "LX3817", From: "Munich", Time: "13:10", Status: "Check-in"}
+        { Flight: "QR228", From: "Doha", Time: "13:00", Status: "Check-in"}
     ];
 }
 
 @Component({
     template: `
         <br>
-        <igx-grid [data]="data" [autoGenerate]="true" height="400px" width="700px"></igx-grid>
+        <igx-grid [data]="data">
+            <igx-column [field]="'Flight'" width="100"></igx-column>
+            <igx-column [field]="'From'" width="120"></igx-column>
+            <igx-column [field]="'Time'" width="100"></igx-column>
+            <igx-column [field]="'Status'" width="120"></igx-column>
+        </igx-grid>
     `
 })
 export class TabsRoutingView3Component {
