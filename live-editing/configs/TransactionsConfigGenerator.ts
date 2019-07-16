@@ -15,7 +15,7 @@ export class TransactionsConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: TransactionBaseComponent,
-            additionalFiles: ["/src/services/transaction/data.ts"],
+            additionalFiles: ["/src/app/services/transaction/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxListModule, IgxCardModule,
                     IgxExpansionPanelModule, IgxChipsModule, IgxIconModule],
