@@ -1,20 +1,10 @@
-<button igxButton [igxToggleAction]="dropdown1" [overlaySettings]="{outlet:element, modal: true}"
-    [igxDropDownItemNavigation]="dropdown1">
+<button igxButton [igxToggleAction]="customDropDown"
+    [igxDropDownItemNavigation]="customDropDown">
     Custom
 </button>
-<igx-drop-down #dropdown1 height="350px">
-    <igx-drop-down-item *ngFor="let item of items" [value]="item.id" [isHeader]="item.header"
-        [selected]="item.id === 102">
-        {{ item.name }}
-    </igx-drop-down-item>
-</igx-drop-down>
-
-<button igxButton [igxToggleAction]="dropdown2" [igxDropDownItemNavigation]="dropdown2" [overlaySettings]="{modal: true}">
-    Default
-</button>
-<igx-drop-down #dropdown2 height="350px">
-    <igx-drop-down-item *ngFor="let item of items" [value]="item.id" [isHeader]="item.header"
-        [selected]="item.id === 102">
+<igx-drop-down #customDropDown height="320px">
+    <igx-drop-down-item *ngFor="let item of items" [value]="item.id"
+        [selected]="item.id === 2">
         {{ item.name }}
     </igx-drop-down-item>
 </igx-drop-down>

@@ -8,31 +8,23 @@ import { Component, ElementRef } from "@angular/core";
 export class OverlayStylingComponent {
     public items = [
         {
-            name: "Group 1",
-            header: true,
+            name: "Option 1",
+            id: 0
+        }, {
+            name: "Option 2",
             id: 1
         }, {
-            name: "Option 1",
-            id: 100
-        }, {
-            name: "Option 2",
-            id: 101
-        }, {
             name: "Option 3",
-            id: 102
-        }, {
-            name: "Group 2",
-            header: true,
             id: 2
         }, {
-            name: "Option 1",
-            id: 200
+            name: "Option 4",
+            id: 3
         }, {
-            name: "Option 2",
-            id: 201
+            name: "Option 5",
+            id: 4
         }, {
-            name: "Option 3",
-            id: 202
+            name: "Option 6",
+            id: 5
         }
     ];
 

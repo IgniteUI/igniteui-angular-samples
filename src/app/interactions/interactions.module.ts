@@ -5,7 +5,7 @@ import {
     IgxAvatarModule, IgxButtonModule,
     IgxCardModule, IgxDialogModule, IgxDragDropModule, IgxDropDownModule, IgxIconModule,
     IgxInputGroupModule, IgxOverlayService, IgxRippleModule, IgxSliderModule, IgxSwitchModule,
-    IgxToggleModule, IgxTooltipModule
+    IgxToggleModule, IgxTooltipModule, IgxComboModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
 import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
@@ -23,6 +23,7 @@ import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { OverlayStylingSimpleComponent } from "./overlay/overlay-styling-simple/overlay-styling-simple.component";
 import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
@@ -75,6 +76,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         OverlayScrollSample1Component,
         OverlayScrollSample2Component,
         OverlayStylingComponent,
+        OverlayStylingSimpleComponent,
         MyDynamicCardComponent,
         DragAndDropSampleComponent,
         CustomDialogComponent
@@ -97,6 +99,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         IgxSwitchModule,
         IgxTooltipModule,
         IgxToggleModule,
+        IgxComboModule,
         LayoutsModule
     ],
     providers: [IgxOverlayService]
