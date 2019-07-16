@@ -51,6 +51,7 @@ import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
+import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-style.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
@@ -324,6 +325,11 @@ export const gridsRoutes: Routes = [
         component: GridColumnHidingToolbarStyleComponent,
         data: gridsRoutesData["grid-column-hiding-style"],
         path: "grid-column-hiding-style"
+    },
+    {
+        component: GridToolbarStyleComponent,
+        data: gridsRoutesData["grid-toolbar-style"],
+        path: "grid-toolbar-style"
     }
 ];
 

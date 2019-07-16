@@ -54,5 +54,6 @@ export const gridsRoutesData = {
     "grid-nested-data-binding": { displayName: "Grid Nested Data Binding", parentName: "Grid" },
     "grid-composite-data-binding": { displayName: "Grid Composite Data Binding", parentName: "Grid" },
     "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" },
-    "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" }
+    "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" },
+    "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" }
 };

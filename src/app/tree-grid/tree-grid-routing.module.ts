@@ -101,6 +101,7 @@ import {
 import {
     TreeGridToolbarSample4Component
 } from "./tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
+import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
@@ -325,6 +326,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnHidingToolbarStyleComponent,
         data: treeGridRoutesData["treegrid-paging-style"],
         path: "treegrid-column-hiding-style"
+    },
+    {
+        component: TreeGridToolbarStyleComponent,
+        data: treeGridRoutesData["treegrid-toolbar-style"],
+        path: "treegrid-toolbar-style"
     }
 ];
 
