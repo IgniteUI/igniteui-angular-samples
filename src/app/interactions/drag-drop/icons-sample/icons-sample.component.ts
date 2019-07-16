@@ -44,9 +44,9 @@ export class IconsSampleComponent {
     }
 
     private swapIcons(dragIndex: number, dropIndex: number) {
-        let tempObj = this.icons[dragIndex]
-        this.icons.splice(dragIndex, 1)
-        this.icons.splice(dropIndex, 0, tempObj)
+        const tempObj = this.icons[dragIndex];
+        this.icons.splice(dragIndex, 1);
+        this.icons.splice(dropIndex, 0, tempObj);
     }
 
     private onEnterHandler(ev): void {
