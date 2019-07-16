@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
     <igx-tree-grid #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [autoGenerate]="false"
-        displayDensity="comfortable" width="100%" height="800px" [paging]="true" [perPage]="10" [allowFiltering]="true">
+        width="100%" height="800px" [paging]="true" [perPage]="10" [allowFiltering]="true">
         <igx-column [field]="'Name'" dataType="string" [editable]="true"></igx-column>
         <igx-column [field]="'Title'" dataType="string" [editable]="true"></igx-column>
         <igx-column [field]="'Age'" dataType="number" [editable]="true"></igx-column>
