@@ -16,8 +16,8 @@
         <igx-card>
             <igx-list>
                 <igx-list-item [isHeader]="true">Wishlist (with transactions)</igx-list-item>
+                <!-- use the transactionBasePipe to apply some changes to the items in the wishlist without affecting the original data -->
                 <ng-template ngFor [ngForOf]="this.wishlist | transactionBasePipe" let-item>
-                    <!-- use the transactionBasePipe to apply some styling to the items in the wishlist -->
                     <igx-list-item>
                         <p [ngStyle]="{'color': applyColor(item)}" igxListLineTitle>{{item.name}}</p>
                         <p [ngStyle]="{'color': applyColor(item)}" igxListLineSubTitle>Costs: {{item.price}}</p>
