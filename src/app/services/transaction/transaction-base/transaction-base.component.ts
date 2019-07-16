@@ -13,7 +13,7 @@ export class TransactionBaseComponent {
     public deleteDisabled: boolean;
     public editDisabled: boolean;
 
-    // inect the transaction service
+    // inject the transaction service
     constructor(public transactions: IgxTransactionService<Transaction, State>) {
         this.wishlist = WISHLIST;
     }
@@ -24,9 +24,9 @@ export class TransactionBaseComponent {
      * and what kind of data we normally pass to each of them.
      *
      * Each transaction needs to have id, type and a newValue properties.
-     * ADD and DELETE transactions should have unique IDs.
+     * ADD and DELETE transactions must have unique IDs.
      * There can be multiple UPDATE transactions with the same ID,
-     * since there can be multiple consecutive changes on a single element.
+     * since there can be multiple consecutive changes on a single data row.
     */
 
     /**
@@ -34,8 +34,9 @@ export class TransactionBaseComponent {
      */
     public onAdd(event): void {
         // the item that will be added, it could be anything
-        // it is a good idea for it to have a unique 'id' property
-        // this would allow you to find it more easily
+        // it must have a unique 'id' property
+        // in an ADD transaction you do not need to provide a 'recordRef' property,
+        // since there is nothing to refer to yet
         const item: WishlistItem = { id: 4, name: "Yacht", price: "A lot!" };
         this.transactions.add({ id: 4, type: TransactionType.ADD, newValue: item });
 
@@ -48,6 +49,8 @@ export class TransactionBaseComponent {
      */
     public onEdit(event): void {
         const newPrice = "999$";
+        // there can be multiple UPDATE transactions with the same id
+        // the 'newValue' property should hold only the changes that we would like to implement
         this.transactions.add({
             id: this.wishlist[1].id,
             type: TransactionType.UPDATE,
@@ -63,6 +66,9 @@ export class TransactionBaseComponent {
      * Create a 'DELETE' transaction.
      */
     public onDelete(event): void {
+        // there cannot be two or more DELETE transactions with the same id
+        // the 'newValue' property should be set to null since we do not change any values,
+        // we just delete the entire record
         this.transactions.add({
             id: this.wishlist[0].id,
             type: TransactionType.DELETE,
@@ -79,9 +85,7 @@ export class TransactionBaseComponent {
      */
     public onClear(event): void {
         /** visualization  */
-        if (this.transactions.getTransactionLog().length !== 0) {
-            this.reset();
-        }
+        this.reset();
         /** */
 
         this.transactions.clear();
@@ -96,22 +100,22 @@ export class TransactionBaseComponent {
     }
 
     /*
-     * The below methos are used for visualization purposes.
+     * The below methods are used for visualization purposes.
      */
 
     /**
      * Apply a color to a specific item.
      */
     public applyColor(item?: WishlistItem): string {
-        // get all pending transactions
+        // get all pending sttes
         const states = this.transactions.getAggregatedChanges(true);
         if (states.length === 0) {
             return null;
         }
-        // iterate over the pending transactions
+        // iterate over the pending states
         for (const transaction of states) {
             if (transaction.newValue.id === item.id) {
-                // get the color that corresponds to the transaction's type
+                // get the color that corresponds to the state's type
                 return this.getColor(transaction);
             }
         }
@@ -165,8 +169,19 @@ export class TransactionBaseComponent {
      * Reset all local parameters.
      */
     private reset(): void {
-        this.addDisabled = false;
-        this.deleteDisabled = false;
-        this.editDisabled = false;
+        const log = this.transactions.getTransactionLog();
+        for (const transaction of log) {
+            switch (transaction.type) {
+                case TransactionType.ADD:
+                    this.addDisabled = false;
+                    break;
+                case TransactionType.DELETE:
+                    this.deleteDisabled = false;
+                    break;
+                case TransactionType.UPDATE:
+                    this.editDisabled = false;
+                    break;
+            }
+        }
     }
 }

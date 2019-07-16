@@ -15,16 +15,18 @@ export class TransactionBasePipe implements PipeTransform {
         // we create a copy of the original data and then use it for visualization only
         const _data = [...data];
         const states = this.transactions.getAggregatedChanges(false);
-        // iterate over all pending transactions
+        // iterate over all pending states
         for (const state of states) {
-            // depending on the type of transaction either:
+            // depending on the type of state either:
             switch (state.type) {
                 case TransactionType.ADD:
-                    // push the newValue property of the current ADD transaction
+                    // push the newValue property of the current ADD state
                     _data.push(state.newValue);
                     break;
-                // we do not directly operate on records, we just style them
-                // the record will be deleted once the transaction is committed
+                // the pipe should not change the data directly, rathen than
+                // it should simply modify it in some way and then return it
+                // thus, we do not directly operate on records, we just style them
+                // the record will be deleted once the state is committed
                 case TransactionType.DELETE:
                     break;
                 case TransactionType.UPDATE:

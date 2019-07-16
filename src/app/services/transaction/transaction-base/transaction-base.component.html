@@ -17,6 +17,7 @@
             <igx-list>
                 <igx-list-item [isHeader]="true">Wishlist (with transactions)</igx-list-item>
                 <ng-template ngFor [ngForOf]="this.wishlist | transactionBasePipe" let-item>
+                    <!-- use the transactionBasePipe to apply some styling to the items in the wishlist -->
                     <igx-list-item>
                         <p [ngStyle]="{'color': applyColor(item)}" igxListLineTitle>{{item.name}}</p>
                         <p [ngStyle]="{'color': applyColor(item)}" igxListLineSubTitle>Costs: {{item.price}}</p>
@@ -32,11 +33,9 @@
             <igx-expansion-panel-header iconPosition="none" [disabled]="true">
                 <button #add igxButton (click)="onAdd($event)" [disabled]="addDisabled" class="add">Add
                     New</button>
-                <button #edit igxButton (click)="onEdit($event)" class="edit"
-                    [disabled]="editDisabled || wishlist.length < 2">Edit
+                <button #edit igxButton (click)="onEdit($event)" class="edit" [disabled]="editDisabled">Edit
                     Second</button>
-                <button #delete igxButton (click)="onDelete($event)"
-                    [disabled]="deleteDisabled || wishlist.length === 0">Delete First</button>
+                <button #delete igxButton (click)="onDelete($event)" [disabled]="deleteDisabled">Delete First</button>
                 <button igxButton (click)="onCommit($event)">Commit Transactions</button>
                 <button #clear igxButton (click)="onClear($event)" class="clear">Clear Transactions</button>
             </igx-expansion-panel-header>
