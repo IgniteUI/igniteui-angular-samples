@@ -14,36 +14,33 @@
 // Using Ignite UI for Angular Theming engine related styling
 // Import the IgniteUI themes library first
 @import '~igniteui-angular/lib/core/styles/themes/index';
-$my-primary-color: #ffffff;
+$my-primary-color:#FFC314;
 $my-secondary-color: #7344df;
+$my-info-color: #ffffff;
 
 $my-color-palette: igx-palette(
     $primary: $my-primary-color,
-    $secondary: $my-secondary-color
+    $secondary: $my-secondary-color,
+    $info: $my-info-color
 );
 
-$my-light-purple: igx-color($my-color-palette, "secondary", 100);
-$my-medium-purple: igx-color($my-color-palette, "secondary", 300);
-$my-medium-plus-purple: igx-color($my-color-palette, "secondary", 400);
-$my-dark-purple: igx-color($my-color-palette, "secondary", 600);
-
 $custom-drop-down-theme: igx-drop-down-theme(
-    $background-color: $my-light-purple,
-    $header-text-color: $my-dark-purple,
-    $item-text-color: $my-primary-color,
+    $background-color: igx-color($my-color-palette, "secondary", 100),
+    $header-text-color: igx-color($my-color-palette, "secondary", 600),
+    $item-text-color: igx-color($my-info-color, "info"),
 
-    $selected-item-background: $my-medium-plus-purple,
-    $selected-item-text-color: $my-primary-color,
-    $selected-hover-item-background: $my-medium-plus-purple,
-    $selected-hover-item-text-color: $my-primary-color,
-    $selected-focus-item-background: $my-medium-plus-purple,
-    $selected-focus-item-text-color: $my-primary-color,
+    $selected-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-item-text-color: igx-color($my-color-palette, "info"),
+    $selected-hover-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-hover-item-text-color: igx-color($my-color-palette, "info"),
+    $selected-focus-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-focus-item-text-color: igx-color($my-color-palette, "info"),
 
-    $focused-item-background: $my-medium-purple,
-    $focused-item-text-color: $my-primary-color,
+    $focused-item-background: igx-color($my-color-palette, "secondary", 300),
+    $focused-item-text-color: igx-color($my-color-palette, "info"),
 
-    $hover-item-background: $my-primary-color,
-    $hover-item-text-color: $my-dark-purple
+    $hover-item-background: igx-color($my-color-palette, "info"),
+    $hover-item-text-color: igx-color($my-color-palette, "secondary", 600)
 );
 
 $custom-button-theme: igx-button-theme(
