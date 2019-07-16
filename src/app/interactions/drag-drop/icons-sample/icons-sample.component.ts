@@ -51,7 +51,7 @@ export class IconsSampleComponent {
 
     private onEnterHandler(ev): void {
         this.dropTileId = parseInt(ev.owner.element.nativeElement.id, 10);
-        // the event get raised immediately, but we want to do something only when we drag over another tile
+        // the event gets raised immediately, but we want to swap only when we drag over another icon
         if (this.dragIconId === this.dropTileId) {
             return;
         }
