@@ -4,6 +4,7 @@ export const gridsRoutesData = {
     "grid": { displayName: "Grid Basic Features", parentName: "Grid" },
     "grid-summary": { displayName: "Grid Summary", parentName: "Grid" },
     "grid-groupby": { displayName: "Grid GroupBy", parentName: "Grid" },
+    "grid-groupby-paging": { displayName: "Grid GroupBy Paging", parentName: "Grid" },
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
     "grid-editing": { displayName: "Grid Editing", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },

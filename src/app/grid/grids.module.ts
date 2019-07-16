@@ -70,6 +70,7 @@ import { DataService } from "./services/data.service";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import { GridGroupByPagingSampleComponent } from './grid-group-by-paging-sample/grid-group-by-paging-sample.component';
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -131,7 +132,8 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         ContextmenuComponent,
         CustomGridPagingStyleSample,
         GridRowReorderComponent,
-        GridToolbarStyleComponent
+        GridToolbarStyleComponent,
+        GridGroupByPagingSampleComponent
     ],
     imports: [
         CommonModule,
