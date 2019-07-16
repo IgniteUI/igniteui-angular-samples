@@ -70,6 +70,7 @@ import { TreeGridToolbarSample1Component } from "../../src/app/tree-grid/tree-gr
 import { TreeGridToolbarSample2Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-2/tree-grid-toolbar-sample-2.component";
 import { TreeGridToolbarSample3Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-3/tree-grid-toolbar-sample-3.component";
 import { TreeGridToolbarSample4Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
+import { TreeGridToolbarStyleComponent } from "../../src/app/tree-grid/tree-grid-toolbar-style/tree-grid-toolbar-style.component"
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -431,6 +432,20 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngProviders: []
             }),
             component: TreeGridToolbarSample4Component,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Toolbar style sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-avatars.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridToolbarStyleComponent, IgxAvatarModule,
+                    IgxExcelExporterService, IgxCsvExporterService],
+                ngDeclarations: [TreeGridToolbarStyleComponent],
+                ngImports: [IgxTreeGridModule, IgxAvatarModule],
+                ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
+            }),
+            component: TreeGridToolbarStyleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
