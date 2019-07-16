@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import {
-    ConnectedPositioningStrategy,
     GlobalPositionStrategy,
     IgxDragDirective,
     IgxOverlayService,
@@ -19,9 +18,6 @@ export class DragDialogSampleComponent {
   @ViewChild("toggleForm", { static: true })
   public toggleForm: IgxToggleDirective;
 
-  @ViewChild("toggleFormDiv", {static: true})
-  public toggleFormDiv: ElementRef;
-
   @ViewChild("toggleForm", { read: IgxDragDirective, static: true })
   public toggleFormDrag: IgxDragDirective;
 
@@ -31,19 +27,13 @@ export class DragDialogSampleComponent {
   private overlaySettings: OverlaySettings = {
     positionStrategy: new GlobalPositionStrategy(),
     scrollStrategy: new NoOpScrollStrategy(),
-    modal: false,
+    modal: true,
     closeOnOutsideClick: true
 };
 
   constructor(private overlayService: IgxOverlayService) {}
 
   public openDialog() {
-    const overlayId = this.overlayService.attach(this.toggleFormDiv, {
-        positionStrategy: new ConnectedPositioningStrategy({
-            target: this.buttonElement.nativeElement
-        })
-    });
-    this.overlayService.show(overlayId);
     this.toggleForm.open(this.overlaySettings);
     if (!this.toggleStartPageX && !this.toggleStartPageY) {
         this.toggleStartPageX = this.toggleFormDrag.pageX;
