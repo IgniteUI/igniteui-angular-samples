@@ -63,9 +63,9 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
             gen.webWorkerInstance = new Worker("../heatmap.worker", { type: "module" });
 
             gen.scaleColors = [
-              "rgba(0, 0, 255, 0.5)", "rgba(0, 255, 255, 0.5)",
-              "rgba(0, 255, 0, 0.5)", "rgba(255, 255, 0, 0.5)",
-              "rgba(255, 0, 0, 0.5)"
+                "rgba(0, 0, 255, .251)", "rgba(0, 255, 255, .3765)",
+                "rgba(50,205,50, .2675)", "rgba(255, 255, 0, .7059)",
+                "rgba(255, 0, 0, .7843)"
             ];
             this.tileImagery.tileGenerator = gen;
 
