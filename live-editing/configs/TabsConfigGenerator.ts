@@ -1,9 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 
-import { RouterModule } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 
 import {
-    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxNavbarModule, IgxRippleModule,
+    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxGridModule, IgxIconModule, IgxNavbarModule, IgxRippleModule,
     IgxSelectModule, IgxTabsModule, IgxToggleModule
 } from "igniteui-angular";
 
@@ -18,7 +18,11 @@ import { AppRouting2Module } from "../../src/app/layouts/tabs/tabs-sample-5/app.
 import { TabsSample5Component } from "../../src/app/layouts/tabs/tabs-sample-5/components/tabs-sample-5.component";
 import { TabsSample5Module } from "../../src/app/layouts/tabs/tabs-sample-5/tabs-sample-5.module";
 import { TabsRouting2Module } from "../../src/app/layouts/tabs/tabs-sample-5/tabs.routing2.module";
-import { TabsSample6Component } from "../../src/app/layouts/tabs/tabs-sample-6/tabs-sample-6.component";
+import {
+    TabsRoutingView1Component,
+    TabsRoutingView2Component,
+    TabsRoutingView3Component,
+    TabsSample6Component } from "../../src/app/layouts/tabs/tabs-sample-6/tabs-sample-6.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -109,9 +113,24 @@ export class TabsConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: TabsSample6Component,
             appModuleConfig: new AppModuleConfig({
-                imports: [ RouterModule, TabsSample6Component, IgxSelectModule, IgxTabsModule ],
-                ngDeclarations: [TabsSample6Component],
-                ngImports: [ RouterModule, IgxSelectModule, IgxTabsModule ]
+                imports: [
+                    Router, RouterModule, TabsSample6Component, IgxGridModule, IgxSelectModule, IgxTabsModule,
+                    TabsRoutingView1Component, TabsRoutingView2Component, TabsRoutingView3Component
+                ],
+                ngDeclarations: [
+                    TabsSample6Component, TabsRoutingView1Component, TabsRoutingView2Component,
+                    TabsRoutingView3Component
+                ],
+                ngImports: [
+                    IgxGridModule, IgxSelectModule, IgxTabsModule,
+                    `
+                    RouterModule.forRoot([
+                        { path: 'arrivals', component: TabsRoutingView1Component },
+                        { path: 'departures', component: TabsRoutingView2Component },
+                        { path: 'canceled', component: TabsRoutingView3Component }
+                    ])
+                    `
+                ]
             }),
             shortenComponentPathBy: "/layouts/tabs/"
         }));

@@ -9,10 +9,10 @@ import { ISelectionEventArgs } from "igniteui-angular";
 })
 export class TabbarSample3Component implements OnInit {
     public urlLocations = [
-        "/layouts/tabbar-sample-3",
-        "/layouts/tabbar-sample-3/arrivals",
-        "/layouts/tabbar-sample-3/departures",
-        "/layouts/tabbar-sample-3/canceled"
+        "/",
+        "/arrivals",
+        "/departures",
+        "/canceled"
     ];
 
     constructor(private router: Router) { }
@@ -23,9 +23,14 @@ export class TabbarSample3Component implements OnInit {
 
     public ngOnInit() {
         const currentAddress: string = document.location.href;
-        if (currentAddress.indexOf("samples") !== -1) {
+        if (currentAddress.indexOf("/samples/layouts") !== -1) {
             for (let i = 0; i < this.urlLocations.length; i++) {
-                this.urlLocations[i] = "/samples" + this.urlLocations[i];
+                this.urlLocations[i] = "/samples/layouts/tabbar-sample-3" + this.urlLocations[i];
+            }
+        } else
+        if (currentAddress.indexOf("/layouts") !== -1) {
+            for (let i = 0; i < this.urlLocations.length; i++) {
+                this.urlLocations[i] = "/layouts/tabbar-sample-3" + this.urlLocations[i];
             }
         }
     }
