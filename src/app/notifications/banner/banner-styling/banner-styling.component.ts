@@ -3,12 +3,12 @@ import { IgxBannerComponent, IgxToastComponent, slideInLeft, slideOutRight } fro
 import { Subject } from "rxjs";
 
 @Component({
-    selector: "banner-sample-3",
-    styleUrls: ["banner-sample-3.component.scss"],
-    templateUrl: "banner-sample-3.component.html"
+    selector: "banner-styling",
+    styleUrls: ["banner-styling.component.scss"],
+    templateUrl: "banner-styling.component.html"
 })
 
-export class BannerSample3Component implements OnInit {
+export class BannerStylingComponent implements OnInit {
     @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;
     @ViewChild(IgxToastComponent, { static: true }) public eventToast: IgxToastComponent;
     public contentWidth = "384px";
