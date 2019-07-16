@@ -57,5 +57,6 @@ export const treeGridRoutesData = {
     "treegrid-multi-column-header-template": {
         displayName: "TreeGrid Multi Column Header Template",
         parentName: "TreeGrid"
-    }
+    },
+    "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" }
 };

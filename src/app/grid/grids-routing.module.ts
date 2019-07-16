@@ -50,6 +50,7 @@ import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
+import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-style.component";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
@@ -324,6 +325,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiColumnHeaderTemplateComponent,
         data: gridsRoutesData["multi-column-header-template"],
         path: "multi-column-header-template"
+    },
+    {
+        component: GridToolbarStyleComponent,
+        data: gridsRoutesData["grid-toolbar-style"],
+        path: "grid-toolbar-style"
     }
 ];
 
