@@ -4,6 +4,7 @@ import { HeatTileGenerator } from "igniteui-angular-core/ES5/igx-heat-tile-gener
 import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
+import { IgxGeographicTileSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-tile-series-component";
 import { TileGeneratorMapImagery } from "igniteui-angular-maps/ES5/igx-tile-generator-map-imagery";
 
 @Component({
@@ -44,6 +45,7 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
                 }
             }
 
+            // generating heat map imagery tiles
             const gen = new HeatTileGenerator();
             gen.xValues = lon;
             gen.yValues = lat;
@@ -51,8 +53,8 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
             gen.blurRadius = 6;
             gen.maxBlurRadius = 20;
             gen.useBlurRadiusAdjustedForZoom = true;
-            gen.minimumColor = "rgba(100, 255, 0, 0.4)";
-            gen.maximumColor = "rgba(255, 255, 0, 0.95)";
+            gen.minimumColor = "rgba(100, 255, 0, 0.5)";
+            gen.maximumColor = "rgba(255, 255, 0, 0.5)";
             gen.useGlobalMinMax = true;
             gen.useGlobalMinMaxAdjustedForZoom = true;
             gen.useLogarithmicScale = true;
@@ -61,15 +63,19 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
             gen.webWorkerInstance = new Worker("../heatmap.worker", { type: "module" });
 
             gen.scaleColors = [
-              "rgba(0, 0, 255, 64)", "rgba(0, 255, 255, 96)",
-              "rgba(0, 255, 0, 160)", "rgba(255, 255, 0, 180)",
-              "rgba(255, 0, 0, 200)"
+              "rgba(0, 0, 255, 0.5)", "rgba(0, 255, 255, 0.5)",
+              "rgba(0, 255, 0, 0.5)", "rgba(255, 255, 0, 0.5)",
+              "rgba(255, 0, 0, 0.5)"
             ];
-            // generating heat map
             this.tileImagery.tileGenerator = gen;
 
-            // zooming to USA region of the map
-            this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
+            // generating heat map series
+            const series = new IgxGeographicTileSeriesComponent();
+            series.name = "heatMapSeries";
+            series.tileImagery = this.tileImagery;
+
+            // add heat map series to the map
+            this.map.series.add(series);
         });
 
         sds.shapefileSource = "assets/Shapes/AmericanCities.shp";
@@ -78,6 +84,6 @@ export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        // this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
+        this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
     }
 }
