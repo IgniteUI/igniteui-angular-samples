@@ -1,0 +1,41 @@
+.dialog-container {
+    display: flex;
+    flex-direction: row;
+}
+.dialogHandle {
+    cursor: move;
+    user-select: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
+div.igx-dialog__window {
+    height: 100%
+}
+div.dialogContainer {
+    margin-top: 20px;
+    margin-left: 20px
+}
+.dialog-title {
+	width: 229px;
+	height: 34px;
+	font-family: Titillium Web;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 20px;
+	letter-spacing: 0.15px;
+	color: #000000DD;
+	text-align: left;
+    vertical-align: center;
+}
+.dialog-content {
+    display: block;
+    margin-top: 20px;
+    font-family: Titillium Web;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	letter-spacing: 0.44px;
+	color: #0000009E;
+}

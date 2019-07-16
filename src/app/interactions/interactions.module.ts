@@ -13,6 +13,7 @@ import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { InteractionsRoutingModule } from "./interactions-routing.module";
 import { MyDynamicCardComponent } from "./overlay/overlay-dynamic-card/overlay-dynamic-card.component";
@@ -44,10 +45,14 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
 
 @NgModule({
     declarations: [
+        CustomDialogComponent,
         DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
+        DragAndDropSampleComponent,
+        DragDialogSampleComponent,
+        MyDynamicCardComponent,
         SliderSample1Component,
         SliderSample2Component,
         SliderSample3Component,
@@ -72,10 +77,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         OverlayPositionSample1Component,
         OverlayPositionSample2Component,
         OverlayScrollSample1Component,
-        OverlayScrollSample2Component,
-        MyDynamicCardComponent,
-        DragAndDropSampleComponent,
-        CustomDialogComponent
+        OverlayScrollSample2Component
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
