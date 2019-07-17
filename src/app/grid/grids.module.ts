@@ -65,6 +65,7 @@ import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-style.component";
 import { GridsRoutingModule } from "./grids-routing.module";
+import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
 
@@ -132,6 +133,7 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         ContextmenuComponent,
         CustomGridPagingStyleSample,
         GridRowReorderComponent,
+        GridMultiColumnHeaderTemplateComponent,
         GridClipboardSampleComponent,
         GridToolbarStyleComponent
     ],

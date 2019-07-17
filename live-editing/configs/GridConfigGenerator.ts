@@ -116,7 +116,10 @@ import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sam
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-4.component";
-import { GridToolbarStyleComponent } from "../../src/app/grid/grid-toolbar-style/grid-toolbar-style.component"
+import { GridToolbarStyleComponent } from "../../src/app/grid/grid-toolbar-style/grid-toolbar-style.component";
+import {
+    GridMultiColumnHeaderTemplateComponent
+} from "../../src/app/grid/multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
@@ -731,6 +734,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxGridModule, GridRowReorderComponent, IgxDragDropModule],
                 ngDeclarations: [GridRowReorderComponent],
                 ngImports: [IgxGridModule, IgxDragDropModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiColumnHeaderTemplateComponent,
+            additionalFiles: ["/src/app/grid/multi-column-header-template/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiColumnHeaderTemplateComponent, IgxGridModule],
+                ngDeclarations: [GridMultiColumnHeaderTemplateComponent],
+                ngImports: [IgxGridModule]
             })
         }));
 
