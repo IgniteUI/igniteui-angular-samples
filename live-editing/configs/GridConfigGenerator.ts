@@ -133,6 +133,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridGroupByPagingSampleComponent } from '../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -738,6 +739,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [IgxGridModule, GridRowReorderComponent, IgxDragDropModule],
                 ngDeclarations: [GridRowReorderComponent],
                 ngImports: [IgxGridModule, IgxDragDropModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupByPagingSampleComponent,
+            additionalFiles: [
+                "/src/app/grid/grid-group-by-paging-sample/data.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxIconModule, GridGroupByPagingSampleComponent],
+                ngDeclarations: [GridGroupByPagingSampleComponent],
+                ngImports: [IgxGridModule, IgxIconModule]
             })
         }));
 
