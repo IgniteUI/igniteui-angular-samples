@@ -26,7 +26,7 @@
 // Ignite UI for Angular Theming engine related styling
 @import '~igniteui-angular/lib/core/styles/themes/index';
 $my-primary-color:#fde71d;
-$my-secondary-color: #DCDCDC;
+$my-secondary-color: #C0C0C0;
 $my-info-color: #ff0000;
 
 $my-color-palette: igx-palette(
@@ -38,14 +38,26 @@ $my-color-palette: igx-palette(
 $custom-banner-theme: igx-banner-theme(
     $palette: $my-color-palette,
     $banner-message-color: igx-color($my-color-palette, "info"),
-    $banner-illustration-color: igx-color($my-color-palette, "secondary", 900),
-    $banner-background: igx-color($my-color-palette, "secondary", 300)
+    $banner-illustration-color: igx-color($my-color-palette, "info"),
+    $banner-background: igx-color($my-color-palette, "secondary", 200)
 );
 
+// Add custom theme for the buttons so they look better with our custom-banner-theme
+$my-button-primary-color:#fde71d;
+$my-button-secondary-color: #09f;
+
+$my-button-color-palette: igx-palette(
+    $primary: $my-button-primary-color,
+    $secondary: $my-button-secondary-color
+);
+$custom-button-theme: igx-button-theme(
+    $palette: $my-button-color-palette
+);
 // Pass our custom-banner-theme to `igx-banner` mixin.
 :host {
    ::ng-deep {
            @include igx-banner($custom-banner-theme);
+           @include igx-button($custom-button-theme);
    }
 }
 
