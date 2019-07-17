@@ -84,6 +84,7 @@ import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-r
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
+import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
 import {
@@ -163,6 +164,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSortingSampleComponent,
         data: treeGridRoutesData["treegrid-sorting"],
         path: "treegrid-sorting"
+    },
+    {
+        component: TreeGridSortingStylingComponent,
+        data: treeGridRoutesData["treegrid-sorting-styling"],
+        path: "treegrid-sorting-styling"
     },
     {
         component: TreeGridColumnMovingSampleComponent,

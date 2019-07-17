@@ -46,6 +46,7 @@ import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
+import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
@@ -214,6 +215,11 @@ export const gridsRoutes: Routes = [
         component: SortingSampleComponent,
         data: gridsRoutesData["grid-sorting-sample"],
         path: "grid-sorting-sample"
+    },
+    {
+        component: SortingStylingComponent,
+        data: gridsRoutesData["grid-sorting-styling"],
+        path: "grid-sorting-styling"
     },
     {
         component: GridToolbarSample1Component,

@@ -120,6 +120,7 @@ import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-
 import { IgxGridStateDirective } from "../../src/app/grid/grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
+import { SortingStylingComponent } from "../../src/app/grid/grid-sorting-styling/grid-sorting-styling.component";
 import { GridToolbarSample1Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "../../src/app/grid/grid-toolbar-sample/grid-toolbar-sample-3.component";
@@ -321,11 +322,23 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: SortingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sorting-sample/localData.ts"],
+            additionalFiles: ["/src/app/data/localData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
                     SortingSampleComponent, IgxInputGroupModule, IgxSelectModule],
                 ngDeclarations: [SortingSampleComponent],
+                ngImports: [IgxGridModule, IgxRippleModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/data/localData.ts"],
+            component: SortingStylingComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxIconModule, IgxRippleModule,
+                    SortingStylingComponent, IgxInputGroupModule, IgxSelectModule],
+                ngDeclarations: [SortingStylingComponent],
                 ngImports: [IgxGridModule, IgxRippleModule, IgxIconModule, IgxInputGroupModule, IgxSelectModule],
                 ngProviders: []
             })

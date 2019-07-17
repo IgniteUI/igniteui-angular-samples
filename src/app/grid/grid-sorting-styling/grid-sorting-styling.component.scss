@@ -1,0 +1,53 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$custom-theme: igx-grid-theme(
+    $sorted-header-icon-color: blue
+);
+
+/*ENHANCED APPROACHES*/
+
+// $primary-color: #09f;
+// $secondary-color: #e41c77;
+
+/*PALETTE*/
+
+// $light-palette: igx-palette(
+//     $primary: $primary-color,
+//     $secondary: $secondary-color
+// );
+
+/*SCHEMAS*/
+
+// $custom-grid-schema: extend($_light-grid,
+//     (
+//         sorted-header-icon-color: igx-color($light-palette, 'secondary', 500),
+//         // sortable-header-icon-hover-color: blue
+//     )
+// );
+
+// $my-custom-schema: extend($light-schema, 
+//     (
+//         igx-grid: $custom-grid-schema
+//     )
+// );
+
+/*THEME*/
+
+// $custom-theme: igx-grid-theme(
+//   $palette: $light-palette,
+//   $schema: $my-custom-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+  ::ng-deep {
+    @include igx-grid($custom-theme);
+  }
+}
+
+.grid__wrapper {
+    margin: 10px 16px;
+}

@@ -104,6 +104,7 @@ import {
     TreeGridContextmenuComponent
 } from "./tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
+import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
 import {
@@ -136,6 +137,7 @@ import {
         TreeGridColumnHidingToolbarSampleComponent,
         TreeGridSelectionSampleComponent,
         TreeGridSortingSampleComponent,
+        TreeGridSortingStylingComponent,
         TreeGridContextmenuComponent,
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnMovingStyledSampleComponent,

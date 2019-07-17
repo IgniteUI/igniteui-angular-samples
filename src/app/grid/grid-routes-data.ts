@@ -32,6 +32,7 @@ export const gridsRoutesData = {
     "grid-column-hiding-sample": { displayName: "Grid Column Hiding", parentName: "Grid" },
     "grid-column-hiding-toolbar-sample": { displayName: "Grid Column Hiding with Toolbar", parentName: "Grid" },
     "grid-sorting-sample": { displayName: "Grid Sorting", parentName: "Grid" },
+    "grid-sorting-styling": { displayName: "Grid Sorting Styling", parentName: "Grid" },
     "grid-toolbar-sample-1": { displayName: "Grid Toolbar Title", parentName: "Grid" },
     "grid-toolbar-sample-2": { displayName: "Grid Toolbar Options", parentName: "Grid" },
     "grid-toolbar-sample-3": { displayName: "Grid Toolbar Export", parentName: "Grid" },
