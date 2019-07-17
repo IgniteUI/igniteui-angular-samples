@@ -9,7 +9,7 @@ import { ISelectionEventArgs } from "igniteui-angular";
 })
 export class TabsSample6Component implements OnInit {
     public urlLocations = [
-        "/",
+        "",
         "/arrivals",
         "/departures",
         "/canceled"
