@@ -1,0 +1,21 @@
+<ul class="list-container">
+    <li *ngFor="let employee of employees">
+        <div igxDrop id="{{employee.id}}" 
+            (onEnter)="onEnterHandler($event)" 
+            (onDrop)="onTileDropped($event)" >
+            <div 
+                igxDrag 
+                (dragStart)="dragStartHandler(employee.id)" 
+                [hideBaseOnDrag]="true" 
+                id="{{employee.id}}" 
+                [ghostImageClass]="'drag-ghost-class'" 
+                class="list-item-container">
+                <div class="text-container"> 
+                    <div class="name">{{employee.name}}</div>
+                    <div class="title">{{employee.title}}</div>
+                </div>
+                <igx-icon igxDragHandle fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
+            </div>
+        </div>
+    </li>
+</ul>

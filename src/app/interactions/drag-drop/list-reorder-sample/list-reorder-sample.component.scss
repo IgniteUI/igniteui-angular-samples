@@ -1,0 +1,42 @@
+li {
+    list-style-type: none
+}
+.list-container {
+    width: 336px;
+}
+.list-item-container {
+    background: white;
+    width: 336px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-container {
+    margin-left: 16px;
+	text-align: left;
+    font-family: Titillium Web;
+	font-weight: 400;
+	font-style: normal;
+}
+.dialogHandle {
+    cursor: move;
+    user-select: none;
+    margin-right: 16px;
+}
+.name {
+	font-size: 16px;
+	letter-spacing: 0.15px;
+	color: #000000DD;
+}
+.title {
+	font-size: 14px;
+	letter-spacing: 0.25px;
+	color: #0000009E;
+}
+.drag-ghost-class {
+    -webkit-box-shadow: 0px 4px 18px 3px #00000014, 0px 10px 14px 1px #0000001F, 0px 6px 6px -3px #00000042;
+    -moz-box-shadow: 0px 4px 18px 3px #00000014, 0px 10px 14px 1px #0000001F, 0px 6px 6px -3px #00000042;
+    box-shadow: 0px 4px 18px 3px #00000014, 0px 10px 14px 1px #0000001F, 0px 6px 6px -3px #00000042;
+}
