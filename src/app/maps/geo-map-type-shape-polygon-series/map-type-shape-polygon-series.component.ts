@@ -30,7 +30,7 @@ export class MapTypeShapePolygonSeriesComponent implements AfterViewInit {
 
     public onDataLoaded(sds: ShapeDataSource, e: any) {
         const shapeRecords = sds.getPointData();
-        console.log("loaded /Shapes/WorldCountries.shp " + shapeRecords.length);
+        console.log("loaded WorldCountries.shp " + shapeRecords.length);
 
         const countriesNATO: any[] = [];
         const countriesSCO: any[] = [];

@@ -31,7 +31,7 @@ export class MapBindingShapefilePolygonsComponent implements AfterViewInit {
 
     public onDataLoaded(sds: ShapeDataSource, e: any) {
         const shapeRecords = sds.getPointData();
-        console.log("loaded /Shapes/WorldCountries.shp " + shapeRecords.length);
+        console.log("loaded WorldCountries.shp " + shapeRecords.length);
 
         const geoPolygons: any[] = [];
         // parsing shapefile data and creating geo-polygons
