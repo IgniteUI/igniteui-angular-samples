@@ -12,6 +12,7 @@ import {
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
+import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
@@ -64,6 +65,7 @@ import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-style.component";
 import { GridsRoutingModule } from "./grids-routing.module";
+import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
 
@@ -131,6 +133,8 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         ContextmenuComponent,
         CustomGridPagingStyleSample,
         GridRowReorderComponent,
+        GridMultiColumnHeaderTemplateComponent,
+        GridClipboardSampleComponent,
         GridToolbarStyleComponent
     ],
     imports: [
