@@ -54,5 +54,6 @@ export const treeGridRoutesData = {
     "tree-grid-row-reordering": { displayName: "TreeGrid Row Reordering", parentName: "TreeGrid" },
     "treegrid-remote-paging": { displayName: "TreeGrid Remote Paging", parentName: "TreeGrid" },
     "treegrid-paging-style": { displayName: "TreeGrid Paging Style", parentName: "TreeGrid" },
+    "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
     "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" }
 };
