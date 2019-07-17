@@ -15,6 +15,7 @@ export class MapBindingDataCsvComponent implements AfterViewInit {
     public map: IgxGeographicMapComponent;
     @ViewChild("template", {static: true})
     public tooltip: TemplateRef<object>;
+
     constructor() {
     }
 
@@ -24,32 +25,27 @@ export class MapBindingDataCsvComponent implements AfterViewInit {
 
     public componentDidMount() {
         // fetching JSON data with geographic locations from public folder
-        fetch("assets/Data/UsaCities.csv")
+        fetch("assets/Data/UsaCitiesPopulation.csv")
             .then((response) => response.text())
             .then((data) => this.onDataLoaded(data));
     }
 
     public onDataLoaded(csvData: string) {
         const csvLines = csvData.split("\n");
-        console.log("loaded assets/Data/UsaCities.csv " + csvLines.length);
+        console.log("loaded UsaCitiesPopulation.csv " + csvLines.length);
 
         // parsing CSV data and creating geographic locations
         const geoLocations: any[] = [];
         for (let i = 1; i < csvLines.length; i++) {
             const columns = csvLines[i].split(",");
             const location = {
-                code: columns[4],
-                county: columns[5],
-                density: Number(columns[6]),
                 latitude:  Number(columns[1]),
                 longitude: Number(columns[2]),
                 name:  columns[0],
-                population: Number(columns[7]),
-                state: columns[3]
+                population: Number(columns[3])
             };
             geoLocations.push(location);
         }
-        console.log("csvLines " + csvLines.length);
 
         // creating HD series with loaded data
         const geoSeries = new IgxGeographicHighDensityScatterSeriesComponent();
