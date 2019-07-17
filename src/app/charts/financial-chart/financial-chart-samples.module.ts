@@ -20,7 +20,7 @@ import { FinancialChartHighVolumeComponent } from "./high-volume/financial-chart
 import { FinancialChartIndicatorTypesComponent } from "./indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartMultipleDataComponent } from "./multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartMultipleFeedsComponent } from "./multiple-feeds/financial-chart-multiple-feeds.component";
-import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview-sample.component";
+import { FinancialChartOverviewComponent } from "./overview/financial-chart-overview.component";
 import { FinancialChartPanesComponent } from "./panes/financial-chart-panes.component";
 import { FinancialChartPerformanceComponent } from "./performance/financial-chart-performance.component";
 import { FinancialDataService } from "./services/financial-data.service";

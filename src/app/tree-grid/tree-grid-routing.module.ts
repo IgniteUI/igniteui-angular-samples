@@ -6,6 +6,8 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+// tslint:disable-next-line: max-line-length
+import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import {
     TreeGridColumnHidingSampleComponent
 } from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -61,6 +63,9 @@ import {
 import { TreeGridMultiCellSelectionStyleComponent } from "./tree-grid-multi-cell-selection-style/tree-grid-multi-cell-selection-style.component";
 // tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
+import {
+    TreeGridMultiColumnHeaderTemplateSampleComponent
+} from "./tree-grid-multi-column-header-template-sample/tree-grid-multi-column-header-template-sample.component";
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
@@ -326,6 +331,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnHidingToolbarStyleComponent,
         data: treeGridRoutesData["treegrid-paging-style"],
         path: "treegrid-column-hiding-style"
+    },
+    {
+        component: TreeGridMultiColumnHeaderTemplateSampleComponent,
+        data: treeGridRoutesData["treegrid-multi-column-header-template"],
+        path: "treegrid-multi-column-header-template"
+    },
+    {
+        component: TreeGridClipboardSampleComponent,
+        data: treeGridRoutesData["treegrid-clipboard-operations-sample"],
+        path: "tree-grid-clipboard-operations-sample"
     },
     {
         component: TreeGridToolbarStyleComponent,

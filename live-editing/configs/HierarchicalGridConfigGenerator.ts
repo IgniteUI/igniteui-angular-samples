@@ -1,4 +1,5 @@
 // tslint:disable:max-line-length
+import { HttpClientModule } from "@angular/common/http";
 import {
     IgxButtonGroupModule,
     IgxButtonModule,
@@ -40,6 +41,7 @@ import { HGridCustomFilteringSampleComponent } from "../../src/app/hierarchical-
 import { HGridFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiCellStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-cell-style/hierarchical-grid-multi-cell-style.component";
+import { HGridMultiHeaderTemplateSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
 import { HGridMultiHeadersSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingStyleSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-paging.component";
@@ -212,9 +214,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-paging/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent],
+                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent, HttpClientModule],
                 ngDeclarations: [HGridRemotePagingSampleComponent],
-                ngImports: [IgxHierarchicalGridModule]
+                ngImports: [IgxHierarchicalGridModule, HttpClientModule]
             }),
             component: HGridRemotePagingSampleComponent
         }));
@@ -431,6 +433,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             }),
             component: HGridPagingStyleSampleComponent,
             shortenComponentPathBy: "/hierarchical-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridMultiHeaderTemplateSampleComponent],
+                ngDeclarations: [HGridMultiHeaderTemplateSampleComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridMultiHeaderTemplateSampleComponent
         }));
 
         return configs;
