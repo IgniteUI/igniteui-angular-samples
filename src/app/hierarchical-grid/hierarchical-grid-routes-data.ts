@@ -33,5 +33,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-toolbar-custom": { displayName: "Hierarchical Grid Toolbar Custom Content", parentName: "Hierarchical Grid" },
     "hierarchical-grid-lod": { displayName: "Hierarchical Grid Load on Demand", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-kb-navigation": { displayName: "Hierarchical Grid Custom Keyboard Navigation", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-paging-style": { displayName: "HGrid Paging Style", parentName: "Hierarchical Grid" }
+    "hierarchical-grid-paging-style": { displayName: "HGrid Paging Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-multi-column-template": { displayName: "Hierarchical Grid Multi Column Header Template", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-toolbar-style": { displayName: "HGrid Toolbar Style", parentName: "Hierarchical Grid" }
 };
