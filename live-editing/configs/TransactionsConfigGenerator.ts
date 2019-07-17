@@ -1,7 +1,8 @@
 import {
-    IgxCardModule, IgxChipsModule, IgxExpansionPanelModule,
-    IgxIconModule, IgxListModule, IgxTransactionService
+    IgxButtonModule, IgxCardModule, IgxChipsModule,
+    IgxExpansionPanelModule, IgxIconModule, IgxListModule, IgxTransactionService
 } from "igniteui-angular";
+import { TransactionBasePipe } from "../../src/app/services/transaction/pipes/transaction-base.pipe";
 import {
     TransactionBaseComponent
 } from "../../src/app/services/transaction/transaction-base/transaction-base.component";
@@ -15,12 +16,14 @@ export class TransactionsConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: TransactionBaseComponent,
-            additionalFiles: ["/src/app/services/transaction/data.ts"],
+            additionalFiles: ["/src/app/services/transaction/data.ts",
+                "/src/app/services/transaction/pipes/transaction-base.pipe.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxListModule, IgxCardModule,
-                    IgxExpansionPanelModule, IgxChipsModule, IgxIconModule],
-                ngDeclarations: [TransactionBaseComponent],
-                ngImports: [IgxListModule, IgxCardModule,
+                    IgxExpansionPanelModule, IgxChipsModule, IgxIconModule, IgxButtonModule,
+                    IgxTransactionService, TransactionBaseComponent, TransactionBasePipe],
+                ngDeclarations: [TransactionBaseComponent, TransactionBasePipe],
+                ngImports: [IgxListModule, IgxCardModule, IgxButtonModule,
                     IgxExpansionPanelModule, IgxChipsModule, IgxIconModule],
                 ngProviders: [IgxTransactionService]
             }),

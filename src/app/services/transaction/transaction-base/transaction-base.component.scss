@@ -7,6 +7,7 @@
 .options-wrap {
   display: flex;
   flex-flow: column;
+  max-width: 500px;
 }
 
 .chip-content {
@@ -14,6 +15,7 @@
 }
 
 .data-lists {
+  max-width: 500px;
   padding: 30px;
   display: flex;
   flex-flow: row;

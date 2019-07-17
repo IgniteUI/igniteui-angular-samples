@@ -36,8 +36,6 @@
                 <button #edit igxButton (click)="onEdit($event)" class="edit" [disabled]="editDisabled">Edit
                     Second</button>
                 <button #delete igxButton (click)="onDelete($event)" [disabled]="deleteDisabled">Delete First</button>
-                <button igxButton (click)="onCommit($event)">Commit Transactions</button>
-                <button #clear igxButton (click)="onClear($event)" class="clear">Clear Transactions</button>
             </igx-expansion-panel-header>
             <igx-expansion-panel-body>
                 <div class="options-wrap">
@@ -57,6 +55,8 @@
                         </igx-chips-area>
                     </div>
                 </div>
+                <button igxButton (click)="onCommit($event)">Commit Transactions</button>
+                <button #clear igxButton (click)="onClear($event)" class="clear">Clear Transactions</button>
             </igx-expansion-panel-body>
         </igx-expansion-panel>
     </div>
