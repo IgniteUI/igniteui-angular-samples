@@ -23,6 +23,7 @@ import {
 } from "igniteui-angular";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import { TreeGridClipboardSampleComponent } from "../../src/app/tree-grid/tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import { TreeGridColumnHidingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
 import { TreeGridColumnHidingToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import { TreeGridColumnMovingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
@@ -616,6 +617,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridMultiColumnHeaderTemplateSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Clipboard actions sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridClipboardSampleComponent, IgxSwitchModule],
+                ngDeclarations: [TreeGridClipboardSampleComponent],
+                ngImports: [IgxTreeGridModule, IgxSwitchModule]
+            }),
+            component: TreeGridClipboardSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

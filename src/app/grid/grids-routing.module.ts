@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
+import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
@@ -325,6 +326,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiColumnHeaderTemplateComponent,
         data: gridsRoutesData["multi-column-header-template"],
         path: "multi-column-header-template"
+    },
+    {
+        component: GridClipboardSampleComponent,
+        data: gridsRoutesData["grid-clipboard-operations-sample"],
+        path: "grid-clipboard-operations-sample"
     },
     {
         component: GridToolbarStyleComponent,

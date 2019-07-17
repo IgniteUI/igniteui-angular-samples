@@ -6,6 +6,8 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+// tslint:disable-next-line: max-line-length
+import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import {
     TreeGridColumnHidingSampleComponent
 } from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -326,6 +328,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridMultiColumnHeaderTemplateSampleComponent,
         data: treeGridRoutesData["treegrid-multi-column-header-template"],
         path: "treegrid-multi-column-header-template"
+    },
+    {
+        component: TreeGridClipboardSampleComponent,
+        data: treeGridRoutesData["treegrid-clipboard-operations-sample"],
+        path: "tree-grid-clipboard-operations-sample"
     },
     {
         component: TreeGridToolbarStyleComponent,
