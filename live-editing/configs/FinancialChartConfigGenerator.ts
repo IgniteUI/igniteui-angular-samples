@@ -13,7 +13,7 @@ import { FinancialChartHighVolumeComponent} from "../../src/app/charts/financial
 import { FinancialChartIndicatorTypesComponent} from "../../src/app/charts/financial-chart/indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartMultipleDataComponent} from "../../src/app/charts/financial-chart/multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartMultipleFeedsComponent } from "../../src/app/charts/financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
-import { FinancialChartOverviewComponent} from "../../src/app/charts/financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartOverviewComponent} from "../../src/app/charts/financial-chart/overview/financial-chart-overview.component";
 import { FinancialChartPanesComponent } from "../../src/app/charts/financial-chart/panes/financial-chart-panes.component";
 import { FinancialChartPerformanceComponent } from "../../src/app/charts/financial-chart/performance/financial-chart-performance.component";
 import { FinancialDataService } from "../../src/app/charts/financial-chart/services/financial-data.service";
