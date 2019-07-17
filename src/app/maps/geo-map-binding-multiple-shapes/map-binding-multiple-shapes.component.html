@@ -1,48 +1,51 @@
 <igx-geographic-map
     #map
+    name="map"
     width="100%"
     height="calc(100% - 60px)"
     zoomable="true" >
-    <igx-geographic-shape-series #shapeSeries
-                name="polygonSeries"
-                shapeMemberPath="points"
-                shapeFill="rgb(150, 150, 150)"
-                shapeStroke="Black"
-                shapeStrokeThickness={1.0} >
+    <igx-geographic-shape-series
+    #shapeSeries
+    name="polygonSeries"
+    shapeMemberPath="points"
+    shapeFill="rgba(184, 183, 183, 0.5)"
+    shapeStroke="Black"
+    shapeStrokeThickness={1.0} >
     </igx-geographic-shape-series>
-    <igx-geographic-polyline-series  #polylineSeries
-            [tooltipTemplate]="polylineTooltipTemplate"
-                  name="polylineSeries"
-                 shapeMemberPath="points"
-                 shapeStroke="rgba(147, 15, 180, 0.5)"
-                 thickness={3.0} >
+    <igx-geographic-polyline-series
+    #polylineSeries
+    name="polylineSeries"
+    shapeMemberPath="points"
+    shapeStroke="rgba(13, 124, 252, 0.9)"
+    thickness={2.0} >
     </igx-geographic-polyline-series>
-    <igx-geographic-symbol-series  #symbolSeries
-        name="symbolSeries"
-        longitudeMemberPath="longitude"
-        latitudeMemberPath="latitude"
-        markerType="Circle"
-        markerOutline="rgb(2, 102, 196)"
-        markerBrush="White" >
+    <igx-geographic-symbol-series
+    #symbolSeries
+    name="symbolSeries"
+    longitudeMemberPath="longitude"
+    latitudeMemberPath="latitude"
+    markerType="Circle"
+    markerOutline="Red"
+    markerBrush="White" >
     </igx-geographic-symbol-series>
 </igx-geographic-map>
 
-<ng-template let-series="series" let-item="item" #polylineTooltipTemplate>
+<ng-template let-series="series" let-item="item" #polylineTooltip>
     <div>
         <span>
-        {{item.capacity}}
+        Cable: {{item.name}}
         </span>
         <br />
         <span>
-        Distance: {{item.distance}}
+        Length: {{item.distance}}
         </span>
     </div>
 </ng-template>
 
-<ng-template let-series="series" let-item="item" #shapeTooltipTemplate>
+<ng-template let-series="series" let-item="item" #shapeTooltip>
     <div>
         <span>
-        {{item.name}}
+            Country: {{item.name}}
         </span>
         <br />
         <span>
@@ -51,10 +54,14 @@
     </div>
 </ng-template>
 
-<ng-template let-series="series" let-item="item" #pointTooltipTemplate>
+<ng-template let-series="series" let-item="item" #pointTooltip>
     <div>
         <span [style.color]="series.brush">
-                City: {{item.city}}
+            City: {{item.city}}
+        </span>
+        <br />
+        <span>
+            Population: {{item.population}}
         </span>
     </div>
 </ng-template>

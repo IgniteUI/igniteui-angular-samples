@@ -12,7 +12,8 @@
         <igx-column field="Size" dataType="number" [formatter]="formatSize"></igx-column>
     </igx-tree-grid>
     <ng-template #customPager let-api>
-        <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple
+      <div class="igx-grid-paginator__pager" style="justify-content: center">
+            <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple
             igxRippleCentered="true">
             <igx-icon fontSet="material">first_page</igx-icon>
         </button>
@@ -31,5 +32,6 @@
             <option [value]="val" [selected]="perPage == val" *ngFor="let val of [5, 10, 25, 50]">{{ val
             }}</option>
         </select>
+      </div>
     </ng-template>
 </div>

@@ -24,7 +24,6 @@ export class MapDisplayImageryBingTiles implements AfterViewInit {
         tileSource.apiKey = MapUtility.getBingKey();
         tileSource.imageryStyle = BingMapsImageryStyle.AerialWithLabels;
         let tileUri = tileSource.actualBingImageryRestUri;
-        console.log("tileUri " + tileUri);
 
         // resolving BingMaps uri based on HTTP protocol of hosting website
         const isHttpSecured = window.location.toString().startsWith("https:");
@@ -34,7 +33,6 @@ export class MapDisplayImageryBingTiles implements AfterViewInit {
             tileUri = tileUri.replace("https:", "http:");
         }
         tileSource.bingImageryRestUri = tileUri;
-        console.log("tileUri " + tileUri);
 
         this.map.backgroundContent = tileSource;
 

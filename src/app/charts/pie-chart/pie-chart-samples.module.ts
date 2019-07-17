@@ -1,9 +1,7 @@
-/* tslint:disable:object-literal-sort-keys */
-// tslint:disable:max-line-length
-// tslint:disable:member-ordering
+/* tslint:disable */
 
 import { CommonModule } from "@angular/common";
-import { ModuleWithProviders, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 import { IgxButtonModule } from "igniteui-angular";
@@ -11,7 +9,7 @@ import { IgxItemLegendModule } from "igniteui-angular-charts/ES5/igx-item-legend
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import { IgxPieChartModule } from "igniteui-angular-charts/ES5/igx-pie-chart-module";
 
-import { PieChartDataSampleComponent } from "./pie-chart-data-sample/pie-chart-data-sample.component";
+import { PieChartDataSampleComponent } from "./pie-chart-overview/pie-chart-overview.component";
 import { PieChartExplosionComponent } from "./pie-chart-explosion/pie-chart-explosion.component";
 import { PieChartLegendComponent } from "./pie-chart-legend/pie-chart-legend.component";
 import { PieChartOthersComponent } from "./pie-chart-others/pie-chart-others.component";
