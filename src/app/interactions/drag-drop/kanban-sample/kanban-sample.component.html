@@ -1,1 +1,62 @@
-<p>kanban-sample works!</p>
+<div class="kanban">
+    <div igxDrop 
+        class="state-container"
+        (onEnter)="onStateContainerEnter($event)"
+        (onLeave)="onStateContainerLeave($event)"
+        >
+        <h4 class="state-title">To Do {{toDoList.length}}</h4>
+        <ul class="list">
+            <li *ngFor="let item of toDoList"
+            igxDrag 
+            class="item-container" 
+            id="{{item.id}}" 
+            [hideBaseOnDrag]="true"
+            [ghostImageClass]="'drag-ghost-class'">
+                <div class="item">
+                    <div class="title">{{item.text}}</div>
+                    <div class="id">{{item.id}}</div>
+                </div>
+            </li>
+        </ul>   
+    </div>
+    <div igxDrop 
+        class="state-container"
+        (onEnter)="onStateContainerEnter($event)"
+        (onLeave)="onStateContainerLeave($event)"
+        >
+        <h4 class="state-title">In Progress {{inProgressList.length}}</h4>
+        <ul class="list">
+            <li *ngFor="let item of inProgressList"
+            igxDrag 
+            class="item-container" 
+            id="{{item.id}}" 
+            [hideBaseOnDrag]="true"
+            [ghostImageClass]="'drag-ghost-class'">
+                <div class="item">
+                    <div class="title">{{item.text}}</div>
+                    <div class="id">{{item.id}}</div>
+                </div>
+            </li>
+        </ul>   
+    </div>
+    <div igxDrop 
+        class="state-container"
+        (onEnter)="onStateContainerEnter($event)"
+        (onLeave)="onStateContainerLeave($event)"
+        >
+        <h4 class="state-title">Done {{inProgressList.length}}</h4>
+        <ul class="list">
+            <li *ngFor="let item of doneList"
+            igxDrag 
+            class="item-container" 
+            id="{{item.id}}" 
+            [hideBaseOnDrag]="true"
+            [ghostImageClass]="'drag-ghost-class'">
+                <div class="item">
+                    <div class="title">{{item.text}}</div>
+                    <div class="id">{{item.id}}</div>
+                </div>
+            </li>
+        </ul>   
+    </div>
+</div>

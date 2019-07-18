@@ -1,0 +1,80 @@
+li {
+    list-style-type: none
+}
+.kanban {
+    max-width: 950px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: space-around;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.state-container {
+    display: flex;
+    flex-direction: column;
+    .state-title {
+        font-family: Titillium Web;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 20px;
+        letter-spacing: 0.15px;
+        color: #000000DD;
+        margin: 0px 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .list {
+        padding: 10px 20px 20px 20px;
+        margin: 0px;
+        height: 100%;
+    }
+}
+.item-container {
+    background: white;
+    width: 280px;
+    height: 98px;
+    margin-bottom: 10px;
+    &:last-child {
+        margin-bottom: unset;
+    }
+    -webkit-box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.078), 0px 2px 2px 0px rgba(0,0,0,0.121), 0px 1px 5px 0px rgba(0,0,0,0.258);
+    -moz-box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.078), 0px 2px 2px 0px rgba(0,0,0,0.121), 0px 1px 5px 0px rgba(0,0,0,0.258);
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.078), 0px 2px 2px 0px rgba(0,0,0,0.121), 0px 1px 5px 0px rgba(0,0,0,0.258);
+    .item {
+        padding: 20px 20px 10px 20px;
+        font-family: Titillium Web;
+        font-style: normal;
+        vertical-align: center;
+        .title {
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.15px;
+            color: #000000DD;
+            text-align: left;
+        }
+        .id {
+            margin-top: 10px;
+            font-weight: 300;
+            font-size: 14px;
+            letter-spacing: 0.1px;
+            color: #0000009E;
+            text-align: right;
+        }
+    }
+    &.drag-ghost-class {
+        -webkit-box-shadow: 0px 4px 18px 3px rgba(0,0,0,0.078), 0px 10px 14px 1px rgba(0,0,0,0.121), 0px 6px 6px -3px rgba(0,0,0,0.258);
+        -moz-box-shadow: 0px 4px 18px 3px rgba(0,0,0,0.078), 0px 10px 14px 1px rgba(0,0,0,0.121), 0px 6px 6px -3px rgba(0,0,0,0.258);
+        box-shadow: 0px 4px 18px 3px rgba(0,0,0,0.078), 0px 10px 14px 1px rgba(0,0,0,0.121), 0px 6px 6px -3px rgba(0,0,0,0.258);
+    }
+}
+
+
+
+
