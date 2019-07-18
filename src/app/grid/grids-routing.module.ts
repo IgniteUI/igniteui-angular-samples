@@ -6,6 +6,7 @@ import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
@@ -37,6 +38,7 @@ import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -56,6 +58,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
@@ -88,9 +91,19 @@ export const gridsRoutes: Routes = [
         path: "grid-editing"
     },
     {
+        component: GridEditingStyleSample,
+        data: gridsRoutesData["grid-editing-style"],
+        path: "grid-editing-style"
+    },
+    {
         component: GridRowEditSampleComponent,
         data: gridsRoutesData["grid-row-editing"],
         path: "grid-row-editing"
+    },
+    {
+        component: GridRowEditStyleComponent,
+        data: gridsRoutesData["grid-row-editing-style"],
+        path: "grid-row-edit-style"
     },
     {
         component: GridDragSampleComponent,
@@ -321,6 +334,11 @@ export const gridsRoutes: Routes = [
         component: CustomGridPagingStyleSample,
         data: gridsRoutesData["custom-grid-paging-style"],
         path: "custom-grid-paging-style"
+    },
+    {
+        component: GridColumnHidingToolbarStyleComponent,
+        data: gridsRoutesData["grid-column-hiding-style"],
+        path: "grid-column-hiding-style"
     },
     {
         component: GridMultiColumnHeaderTemplateComponent,
