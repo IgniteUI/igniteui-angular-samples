@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxComboModule, IgxDialogModule, IgxDragDropModule,
-    IgxDropDownModule, IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule,
+    IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule,
     IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
@@ -89,7 +89,6 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         IgxButtonModule,
         IgxCardModule,
         IgxDialogModule,
-        IgxDropDownModule,
         IgxDragDropModule,
         IgxIconModule,
         IgxInputGroupModule,
