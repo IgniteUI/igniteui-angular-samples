@@ -3,9 +3,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule, IgxButtonModule,
-    IgxCardModule, IgxDialogModule, IgxDragDropModule, IgxDropDownModule, IgxIconModule,
+    IgxCardModule, IgxComboModule, IgxDialogModule, IgxDragDropModule, IgxDropDownModule, IgxIconModule,
     IgxInputGroupModule, IgxOverlayService, IgxRippleModule, IgxSliderModule, IgxSwitchModule,
-    IgxToggleModule, IgxTooltipModule, IgxComboModule
+    IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
 import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
