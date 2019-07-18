@@ -52,9 +52,11 @@ import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
 import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-style.component";
+import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
@@ -85,6 +87,11 @@ export const gridsRoutes: Routes = [
         component: GridEditingSampleComponent,
         data: gridsRoutesData["grid-editing"],
         path: "grid-editing"
+    },
+    {
+        component: GridEditingStyleSample,
+        data: gridsRoutesData["grid-editing-style"],
+        path: "grid-editing-style"
     },
     {
         component: GridRowEditSampleComponent,
@@ -320,6 +327,11 @@ export const gridsRoutes: Routes = [
         component: CustomGridPagingStyleSample,
         data: gridsRoutesData["custom-grid-paging-style"],
         path: "custom-grid-paging-style"
+    },
+    {
+        component: GridMultiColumnHeaderTemplateComponent,
+        data: gridsRoutesData["multi-column-header-template"],
+        path: "multi-column-header-template"
     },
     {
         component: GridClipboardSampleComponent,

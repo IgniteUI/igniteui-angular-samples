@@ -23,6 +23,7 @@ import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hie
 import { HGridColumnResizingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridCustomKBNavigationComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-display-density/hierarchical-grid-density.component";
+import { HGridEditingStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing/hierarchical-grid-editing.component";
 import {
     HGridExcelStyleFilteringSample1Component
@@ -40,6 +41,7 @@ import { HGridCustomFilteringSampleComponent } from "../../src/app/hierarchical-
 import { HGridFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiCellStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-cell-style/hierarchical-grid-multi-cell-style.component";
+import { HGridMultiHeaderTemplateSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
 import { HGridMultiHeadersSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingStyleSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-paging.component";
@@ -89,6 +91,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule, IgxDatePickerModule]
             }),
             component: HGridRowEditingSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridEditingStyleComponent],
+                ngDeclarations: [HGridEditingStyleComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridEditingStyleComponent
         }));
 
         configs.push(new Config({
@@ -421,6 +433,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             }),
             component: HGridPagingStyleSampleComponent,
             shortenComponentPathBy: "/hierarchical-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridMultiHeaderTemplateSampleComponent],
+                ngDeclarations: [HGridMultiHeaderTemplateSampleComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridMultiHeaderTemplateSampleComponent
         }));
 
         return configs;

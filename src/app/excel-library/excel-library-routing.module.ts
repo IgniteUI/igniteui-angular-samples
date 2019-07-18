@@ -48,8 +48,8 @@ export const excelLibraryRoutes: Routes = [
     },
     {
         component: ExcelLibraryWorkingWithTablesComponent,
-        data: excelLibraryRoutesData["excel-library-working-with-tables"],
-        path: "excel-library-working-with-tables"
+        data: excelLibraryRoutesData["working-with-tables"],
+        path: "working-with-tables"
     }
 ];
 

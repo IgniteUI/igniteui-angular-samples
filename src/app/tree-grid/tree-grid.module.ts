@@ -52,6 +52,7 @@ import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
+import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import {
     TreeGridExcelStyleFilteringSample1Component
@@ -78,6 +79,9 @@ import {
 import { TreeGridMultiCellSelectionStyleComponent } from "./tree-grid-multi-cell-selection-style/tree-grid-multi-cell-selection-style.component";
 // tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
+import {
+    TreeGridMultiColumnHeaderTemplateSampleComponent
+} from "./tree-grid-multi-column-header-template-sample/tree-grid-multi-column-header-template-sample.component";
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
@@ -158,6 +162,7 @@ import {
         TreeGridConditionalCellStyleComponent,
         TreeGridPagingSampleComponent,
         TreeGridEditingSampleComponent,
+        TreeGridEditingStyleComponent,
         TreeGridExcelStyleFilteringSample1Component,
         TreeGridExcelStyleFilteringSample2Component,
         TreeGridExcelStyleFilteringSample3Component,
@@ -171,6 +176,7 @@ import {
         TreeGridRowReorderComponent,
         TreeGridRemotePagingSampleComponent,
         TreeGridResizeLineStylingSampleComponent,
+        TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent
     ],

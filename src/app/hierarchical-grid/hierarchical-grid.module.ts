@@ -19,6 +19,7 @@ import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
+import { HGridEditingStyleComponent } from "./hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
 import {
     HGridExcelStyleFilteringSample1Component
@@ -34,6 +35,7 @@ import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filteri
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiCellStyleComponent } from "./hierarchical-grid-multi-cell-style/hierarchical-grid-multi-cell-style.component";
+import { HGridMultiHeaderTemplateSampleComponent } from "./hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
@@ -78,6 +80,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridToolbarCustomSampleComponent,
         HGridRowEditingSampleComponent,
         HGridEditingSampleComponent,
+        HGridEditingStyleComponent,
         HGridBatchEditingSampleComponent,
         HierarchicalGridWithTransactionsComponent,
         HierarchicalGridLoDSampleComponent,
@@ -90,6 +93,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridCustomKBNavigationComponent,
         HGridRowReorderComponent,
         HGridResizeLineStylingComponent,
+        HGridMultiHeaderTemplateSampleComponent,
         HierarchicalGridToolbarStyleComponent
     ],
     imports: [
