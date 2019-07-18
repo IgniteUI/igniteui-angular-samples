@@ -6,6 +6,8 @@ import {
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+// tslint:disable-next-line: max-line-length
+import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import {
     TreeGridColumnHidingSampleComponent
 } from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -59,6 +61,9 @@ import { TreeGridMultiCellSelectionStyleComponent } from "./tree-grid-multi-cell
 // tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
+    TreeGridMultiColumnHeaderTemplateSampleComponent
+} from "./tree-grid-multi-column-header-template-sample/tree-grid-multi-column-header-template-sample.component";
+import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
@@ -73,6 +78,7 @@ import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 
+import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
     TreeGridResizeLineStylingSampleComponent
 } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
@@ -98,6 +104,7 @@ import {
 import {
     TreeGridToolbarSample4Component
 } from "./tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
+import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
@@ -279,6 +286,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-editing"
     },
     {
+        component: TreeGridEditingStyleComponent,
+        data: treeGridRoutesData["treegrid-editing-style"],
+        path: "treegrid-editing-style"
+    },
+    {
         component: TreeGridRemoteFilteringSampleComponent,
         data: treeGridRoutesData["treegrid-remote-filtering"],
         path: "treegrid-remote-filtering"
@@ -317,6 +329,21 @@ export const treeGridRoutes: Routes = [
         component: TreeGridPagingStyleSampleComponent,
         data: treeGridRoutesData["treegrid-paging-style"],
         path: "treegrid-paging-style"
+    },
+    {
+        component: TreeGridMultiColumnHeaderTemplateSampleComponent,
+        data: treeGridRoutesData["treegrid-multi-column-header-template"],
+        path: "treegrid-multi-column-header-template"
+    },
+    {
+        component: TreeGridClipboardSampleComponent,
+        data: treeGridRoutesData["treegrid-clipboard-operations-sample"],
+        path: "tree-grid-clipboard-operations-sample"
+    },
+    {
+        component: TreeGridToolbarStyleComponent,
+        data: treeGridRoutesData["treegrid-toolbar-style"],
+        path: "treegrid-toolbar-style"
     }
 ];
 

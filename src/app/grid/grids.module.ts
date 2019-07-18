@@ -12,6 +12,7 @@ import {
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
+import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
@@ -62,11 +63,14 @@ import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
 import { GridToolbarSample4Component } from "./grid-toolbar-sample/grid-toolbar-sample-4.component";
+import { GridToolbarStyleComponent } from "./grid-toolbar-style/grid-toolbar-style.component";
 import { GridsRoutingModule } from "./grids-routing.module";
+import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
@@ -97,6 +101,7 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         ResizingSampleComponent,
         GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
+        GridEditingStyleSample,
         FinancialSampleComponent,
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
@@ -129,7 +134,10 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         GridMRLCustomNavigationComponent,
         ContextmenuComponent,
         CustomGridPagingStyleSample,
-        GridRowReorderComponent
+        GridRowReorderComponent,
+        GridMultiColumnHeaderTemplateComponent,
+        GridClipboardSampleComponent,
+        GridToolbarStyleComponent
     ],
     imports: [
         CommonModule,

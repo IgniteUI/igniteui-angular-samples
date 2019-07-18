@@ -48,6 +48,7 @@ import { InputGroupSample3Component } from "./input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from "./input-group/input-group-sample-4/input-group-sample-4.component";
 import { InputGroupSample5Component } from "./input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component } from "./input-group/input-group-sample-6/input-group-sample-6.component";
+import { InputGroupStyleComponent } from "./input-group/input-group-styling/input-group-styling.component";
 import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/reactive-forms.component";
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
@@ -97,6 +98,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         InputGroupSample4Component,
         InputGroupSample5Component,
         InputGroupSample6Component,
+        InputGroupStyleComponent,
         MovieComponent,
         ReactiveFormsSampleComponent,
         RadioGroupSampleComponent,
