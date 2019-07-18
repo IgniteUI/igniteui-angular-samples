@@ -105,6 +105,7 @@ import {
 import { TreeGridRoutingModule } from "./tree-grid-routing.module";
 import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
+import { TreeGridRowEditStyleComponent } from "./tree-grid-row-edit-style/tree-grid-row-edit-style.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
@@ -137,6 +138,7 @@ import {
         TreeGridChilddatakeySampleComponent,
         TreeGridPrimaryforeignkeySampleComponent,
         TreeGridRowEditSampleComponent,
+        TreeGridRowEditStyleComponent,
         TreeGridBatchEditingSampleComponent,
         TreeGridEmployeesSampleComponent,
         TreeGridPagingStyleSampleComponent,

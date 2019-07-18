@@ -110,6 +110,9 @@ import { PlanetComponent } from "../../src/app/grid/grid-row-drag/planet/planet.
 import {
     GridRowEditSampleComponent
 } from "../../src/app/grid/grid-row-editing-sample/grid-row-editing-sample.component";
+import {
+    GridRowEditStyleComponent
+} from "../../src/app/grid/grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowReorderComponent } from "../../src/app/grid/grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
@@ -552,6 +555,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridRowEditSampleComponent, IgxGridModule, IgxFocusModule],
                 ngDeclarations: [GridRowEditSampleComponent],
                 ngImports: [IgxGridModule, IgxFocusModule]
+            })
+        }));
+
+        // Grid Row Editing Styling
+        configs.push(new Config({
+            component: GridRowEditStyleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridRowEditStyleComponent, IgxGridModule, IgxFocusModule, IgxIconModule],
+                ngDeclarations: [GridRowEditStyleComponent],
+                ngImports: [IgxGridModule, IgxFocusModule, IgxIconModule]
             })
         }));
 
