@@ -2,6 +2,7 @@
 
 export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing": { displayName: "Hierarchical Grid Editing", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-editing-style": { displayName: "Hierarchical Grid Editing Style", parentName: "Hierarchical Grid"},
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-drag": { displayName: "Hierarchical Grid Row Drag", parentName: "Hierarchical Grid" },
     "hierarchical-row-drag-base": { displayName: "Hierarchical Grid Row Drag - Base", parentName: "Hierarchical Grid" },

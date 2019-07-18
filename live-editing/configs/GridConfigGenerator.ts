@@ -30,6 +30,8 @@ import {
 } from "igniteui-angular";
 // tslint:disable:max-line-length
 import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
+// tslint:disable-next-line: max-line-length
+import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
@@ -58,6 +60,8 @@ import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
+import { GridEditingStyleSample
+} from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import {
     ExcelStyleFilteringSample1Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
@@ -79,6 +83,7 @@ import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample
 import {
     GridMovingStyledSampleComponent
 } from "../../src/app/grid/grid-moving-styled-sample/grid-moving-styled-sample.component";
+// tslint:disable-next-line: max-line-length
 import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridMultiCellSelectionStyleComponent } from "../../src/app/grid/grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
 import { GridMultiCellSelectionComponent } from "../../src/app/grid/grid-multi-cell-selection/grid-multi-cell-selection.component";
@@ -469,6 +474,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
                     IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxComboModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridEditingStyleSample,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridEditingStyleSample, IgxGridModule, IgxDatePickerModule],
+                ngDeclarations: [GridEditingStyleSample],
+                ngImports: [IgxGridModule, IgxDatePickerModule]
             })
         }));
 

@@ -57,6 +57,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
@@ -87,6 +88,11 @@ export const gridsRoutes: Routes = [
         component: GridEditingSampleComponent,
         data: gridsRoutesData["grid-editing"],
         path: "grid-editing"
+    },
+    {
+        component: GridEditingStyleSample,
+        data: gridsRoutesData["grid-editing-style"],
+        path: "grid-editing-style"
     },
     {
         component: GridRowEditSampleComponent,

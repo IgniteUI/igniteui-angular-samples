@@ -55,6 +55,7 @@ import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
+import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import {
     TreeGridExcelStyleFilteringSample1Component
@@ -164,6 +165,7 @@ import {
         TreeGridConditionalCellStyleComponent,
         TreeGridPagingSampleComponent,
         TreeGridEditingSampleComponent,
+        TreeGridEditingStyleComponent,
         TreeGridExcelStyleFilteringSample1Component,
         TreeGridExcelStyleFilteringSample2Component,
         TreeGridExcelStyleFilteringSample3Component,
