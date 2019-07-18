@@ -34,6 +34,9 @@ import {
     TreeGridColumnHidingToolbarSampleComponent
 } from "./tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import {
+    TreeGridColumnHidingToolbarStyleComponent
+} from "./tree-grid-column-hiding-toolbar-style/tree-grid-column-hiding-toolbar-style.component";
+import {
     TreeGridColumnMovingSampleComponent
 } from "./tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
 import {
@@ -176,6 +179,7 @@ import {
         TreeGridRowReorderComponent,
         TreeGridRemotePagingSampleComponent,
         TreeGridResizeLineStylingSampleComponent,
+        TreeGridColumnHidingToolbarStyleComponent,
         TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent
