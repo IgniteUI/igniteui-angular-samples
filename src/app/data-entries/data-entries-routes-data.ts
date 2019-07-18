@@ -18,6 +18,7 @@ export const dataEntriesRoutesData = {
     "buttons-sample-6": { displayName: "Floating Action Button", parentName: "Buttons" },
     "buttons-sample-7": { displayName: "Icon Button", parentName: "Buttons" },
     "buttons-sample-8": { displayName: "Outlined Button", parentName: "Buttons" },
+    "buttons-style": { displayName: "Button Style", parentName: "Buttons" },
     "buttons-roundness-sample": { displayName: "Roundness Button", parentName: "Buttons" },
     "checkbox-sample-1": { displayName: "Simple Checkbox", parentName: "Checkbox" },
     "checkbox-sample-2": { displayName: "Multiple Checkboxes", parentName: "Checkbox" },
