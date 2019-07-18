@@ -6,6 +6,7 @@ export const gridsRoutesData = {
     "grid-groupby": { displayName: "Grid GroupBy", parentName: "Grid" },
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
     "grid-editing": { displayName: "Grid Editing", parentName: "Grid" },
+    "grid-editing-style": { displayName: "Grid Editing Style", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
     "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
     "grid-row-drag-base": { displayName: "Grid Row Drag - Base", parentName: "Grid" },
@@ -53,5 +54,8 @@ export const gridsRoutesData = {
     "custom-grid-paging-style": { displayName: "Custom Grid Paging Style", parentName: "Grid" },
     "grid-nested-data-binding": { displayName: "Grid Nested Data Binding", parentName: "Grid" },
     "grid-composite-data-binding": { displayName: "Grid Composite Data Binding", parentName: "Grid" },
-    "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" }
+    "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" },
+    "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
+    "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
+    "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" }
 };

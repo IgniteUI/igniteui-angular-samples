@@ -26,7 +26,6 @@ import { MapDisplayImageryBingTiles } from "./MapDisplayImageryBingTiles/compone
 import { MapDisplayImageryEsriTiles } from "./MapDisplayImageryEsriTiles/component";
 import { MapDisplayImageryOSM } from "./MapDisplayImageryOSM/component";
 
-
 export const routes: Routes = [
     {
         component: MapDisplayImageryBingTiles,
