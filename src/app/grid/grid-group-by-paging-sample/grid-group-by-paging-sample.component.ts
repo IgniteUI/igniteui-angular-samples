@@ -1,17 +1,17 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from "@angular/core";
 import {
     DefaultSortingStrategy,
+    IgxColumnComponent,
     IgxGridComponent,
     ISortingExpression,
-    SortingDirection,
-    IgxColumnComponent
+    SortingDirection
 } from "igniteui-angular";
 import { LOCAL_DATA } from "./data";
 
 @Component({
-  selector: 'app-grid-group-by-paging-sample',
-  templateUrl: './grid-group-by-paging-sample.component.html',
-  styleUrls: ['./grid-group-by-paging-sample.component.scss']
+  selector: "app-grid-group-by-paging-sample",
+  templateUrl: "./grid-group-by-paging-sample.component.html",
+  styleUrls: ["./grid-group-by-paging-sample.component.scss"]
 })
 export class GridGroupByPagingSampleComponent {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
@@ -22,7 +22,7 @@ export class GridGroupByPagingSampleComponent {
     constructor() {
         this.data = LOCAL_DATA;
         this.expr = [
-            { dir: SortingDirection.Asc, fieldName: "UnitPrice", ignoreCase: false,
+            { dir: SortingDirection.Asc, fieldName: "ShipCountry", ignoreCase: false,
               strategy: DefaultSortingStrategy.instance() }
         ];
     }
