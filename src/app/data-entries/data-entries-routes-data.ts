@@ -21,6 +21,7 @@ export const dataEntriesRoutesData = {
     "buttons-roundness-sample": { displayName: "Roundness Button", parentName: "Buttons" },
     "checkbox-sample-1": { displayName: "Simple Checkbox", parentName: "Checkbox" },
     "checkbox-sample-2": { displayName: "Multiple Checkboxes", parentName: "Checkbox" },
+    "checkbox-styling": { displayName: "Checkbox Styling", parentName: "Checkbox" },
     "dropdown-remote": { displayName: "Virtual Dropdown - Remote Data", parentName: "Dropdown" },
     "dropdown-virtual": { displayName: "Virtual Dropdown", parentName: "Dropdown" },
     "dropdown-menu": { displayName: "Dropdown as Menu", parentName: "Dropdown" },
