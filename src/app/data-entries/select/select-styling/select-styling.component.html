@@ -1,0 +1,7 @@
+<div class='select-wrapper'>
+    <igx-select #select placeholder="Pick Up Your Armor" [overlaySettings]="{outlet: elem}">
+        <igx-select-item-group *ngFor="let armorGroup of armorData" [label]="armorGroup['type']">
+            <igx-select-item *ngFor="let armor of armorGroup['armor']" [value]="armor"> {{ armor }}</igx-select-item>
+        </igx-select-item-group>
+    </igx-select>
+</div>
