@@ -22,16 +22,14 @@ export class TabbarSample3Component implements OnInit {
     }
 
     public ngOnInit() {
-        const currentAddress: string = document.location.href;
-        if (currentAddress.indexOf("/samples/layouts") !== -1) {
-            for (let i = 0; i < this.urlLocations.length; i++) {
-                this.urlLocations[i] = "/samples/layouts/tabbar-sample-3" + this.urlLocations[i];
-            }
-        } else
-        if (currentAddress.indexOf("/layouts") !== -1) {
-            for (let i = 0; i < this.urlLocations.length; i++) {
-                this.urlLocations[i] = "/layouts/tabbar-sample-3" + this.urlLocations[i];
-            }
+        let currentAddress: string = document.location.pathname;
+
+        if (currentAddress && currentAddress[currentAddress.length - 1] === "/") {
+            currentAddress = currentAddress.substring(0, currentAddress.length - 1);
+        }
+
+        for (let i = 0; i < this.urlLocations.length; i++) {
+            this.urlLocations[i] = currentAddress + this.urlLocations[i];
         }
     }
 
