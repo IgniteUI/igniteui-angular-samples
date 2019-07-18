@@ -20,7 +20,7 @@
 }
 
 .layoutListContainer {
-    width: fit-content;
+    display: fit-content;
     margin-top: auto;
     margin-bottom: auto;
     text-align:center;
@@ -173,6 +173,7 @@
     width: 100%;
     height: 6px;
     bottom: -3px;
+    left: 0px;
     z-index: 2;
     cursor: row-resize;
 }
@@ -182,6 +183,7 @@
     width: 100%;
     height: 3px;
     bottom: 0px;
+    left: 0px;
     z-index: 2;
     cursor: row-resize;
 }
@@ -210,4 +212,8 @@
 .igx-input-group__bundle {
     padding-top: 0;
     top: -2px;
+}
+
+.igx-grid__thead-wrapper {
+    position: static;
 }
