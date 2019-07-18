@@ -1,0 +1,57 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$dark-tooltip: igx-tooltip-theme($text-color: #F4D45C, $background: rgb(65,65,65), $border-radius: 10px);
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #F4D45C;
+// $black-color: rgb(65,65,65);
+// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+// $dark-tooltip: igx-tooltip-theme(
+//     $palette: $dark-palette,
+//     $text-color: igx-color($dark-palette, "secondary", 400),
+//     $background: igx-color($dark-palette, "primary", 400),
+//     $border-radius: 10px
+// );
+
+/*SCHEMAS*/
+
+// $dark-tooltip-schema: extend($_dark-tooltip,
+//     (
+//         text-color:(
+//             igx-color: ("secondary", 400)
+//         ),
+//         background: (
+//             igx-color: ("primary", 400)
+//         ),
+//         border-radius: 10px
+//     )
+// );
+
+// $custom-dark-schema: extend($dark-schema,(
+//     igx-tooltip: $dark-tooltip-schema
+// ));
+// $dark-tooltip: igx-tooltip-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+       @include igx-tooltip($dark-tooltip);
+   }
+}
+
+.wrapper {
+    text-align: center;
+    margin: 20px;
+}
+
+.avatar {
+    display: inline-block;
+}

@@ -43,6 +43,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
 
 @NgModule({
     declarations: [
@@ -79,7 +80,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         OverlayStylingSimpleComponent,
         MyDynamicCardComponent,
         DragAndDropSampleComponent,
-        CustomDialogComponent
+        CustomDialogComponent,
+        TooltipStyleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

@@ -6,6 +6,7 @@ export const treeGridRoutesData = {
     "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
     "treegrid-primaryforeignkey": { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
+    "treegrid-row-edit-style": { displayName: "TreeGrid Row Edit Style", parentName: "TreeGrid"},
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
     "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
     "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" },
@@ -14,6 +15,7 @@ export const treeGridRoutesData = {
     "treegrid-selection": { displayName: "TreeGrid Selection", parentName: "TreeGrid" },
     "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" },
     "treegrid-column-moving": { displayName: "TreeGrid Column Moving", parentName: "TreeGrid" },
+    "treegrid-column-moving-styled": { displayName: "TreeGrid Column Moving Styled", parentName: "TreeGrid" },
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-resize-line-styling": { displayName: "TreeGrid Resize Line Styling", parentName: "TreeGrid" },
     "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
@@ -44,6 +46,7 @@ export const treeGridRoutesData = {
     "treegrid-conditional-cell-style": { displayName: "TreeGrid Condition Cell Styling", parentName: "TreeGrid" },
     "treegrid-paging": { displayName: "TreeGrid Paging", parentName: "TreeGrid" },
     "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" },
+    "treegrid-editing-style": { displayName: "TreeGrid Editing Style", parentName: "TreeGrid" },
     "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" },
     "tree-grid-multi-cell-selection": { displayName: "TreeGrid Multi cell selection", parentName: "TreeGrid" },
     // tslint:disable-next-line:max-line-length
@@ -52,5 +55,12 @@ export const treeGridRoutesData = {
     "treegrid-keyboard-navigation": { displayName: "TreeGrid Keyboard Navigation", parentName: "TreeGrid" },
     "tree-grid-row-reordering": { displayName: "TreeGrid Row Reordering", parentName: "TreeGrid" },
     "treegrid-remote-paging": { displayName: "TreeGrid Remote Paging", parentName: "TreeGrid" },
-    "treegrid-paging-style": { displayName: "TreeGrid Paging Style", parentName: "TreeGrid" }
+    "treegrid-paging-style": { displayName: "TreeGrid Paging Style", parentName: "TreeGrid" },
+    "treegrid-column-hiding-style": { displayName: "TreeGrid Column Hiding Style", parentName: "TreeGrid" },
+    "treegrid-multi-column-header-template": {
+        displayName: "TreeGrid Multi Column Header Template",
+        parentName: "TreeGrid"
+    },
+    "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
+    "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" }
 };

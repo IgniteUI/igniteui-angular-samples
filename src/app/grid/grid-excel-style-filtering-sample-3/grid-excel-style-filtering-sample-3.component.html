@@ -8,7 +8,7 @@
         </igx-column>
         <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [sortable]="true" [movable]="true" [dataType]="'string'">
         </igx-column>
-        <igx-column field="UnitPrice" header="Unit Price"  [dataType]="'number'">
+        <igx-column field="UnitPrice" header="Unit Price"  dataType="number">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 {{+val | currency}}
             </ng-template>

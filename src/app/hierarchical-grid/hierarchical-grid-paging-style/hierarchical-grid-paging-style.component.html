@@ -1,5 +1,5 @@
 <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false" [paging]="true" [perPage]="10"
-    [height]="'550px'" [width]="'100%'" #hierarchicalGrid>
+    [height]="'550px'" [width]="'100%'" [paginationTemplate]="customPager" #hierarchicalGrid>
     <igx-column field="Artist"></igx-column>
     <igx-column field="Photo">
         <ng-template igxCell let-cell="cell">
@@ -8,25 +8,43 @@
             </div>
         </ng-template>
     </igx-column>
-    <igx-column field="Debut"></igx-column>
-    <igx-column field="Grammy Nominations"></igx-column>
-    <igx-column field="Grammy Awards"></igx-column>
+    <igx-column field="Debut" dataType="number" [formatter]="formatter"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards"></igx-column>
     <igx-row-island [key]="'Albums'" [autoGenerate]="false" [paging]="true" [perPage]="5">
         <igx-column field="Album"></igx-column>
-        <igx-column field="Launch Date" [dataType]="'date'"></igx-column>
-        <igx-column field="Billboard Review"></igx-column>
-        <igx-column field="US Billboard 200"></igx-column>
-    <igx-row-island [key]="'Songs'" [autoGenerate]="false" [paging]="true" [perPage]="5">
-            <igx-column field="No."></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+        <igx-row-island [key]="'Songs'" [autoGenerate]="false" [paging]="true" [perPage]="5">
+            <igx-column field="Number" header="No."></igx-column>
             <igx-column field="Title"></igx-column>
-            <igx-column field="Released"></igx-column>
+            <igx-column field="Released" dataType="date"></igx-column>
             <igx-column field="Genre"></igx-column>
-    </igx-row-island>
+        </igx-row-island>
     </igx-row-island>
     <igx-row-island [key]="'Tours'" [autoGenerate]="false" [paging]="true" [perPage]="5">
         <igx-column field="Tour"></igx-column>
-        <igx-column field="Started on"></igx-column>
+        <igx-column field="StartedOn" header="Started on"></igx-column>
         <igx-column field="Location"></igx-column>
         <igx-column field="Headliner"></igx-column>
     </igx-row-island>
 </igx-hierarchical-grid>
+
+<ng-template #customPager let-grid>
+        <div *ngIf="grid.paging && grid.totalPages > 0" class="igx-grid-paginator__pager" style="justify-content: center">
+                <button [disabled]="grid.isFirstPage" (click)="grid.paginate(0)" igxButton="icon" igxRipple igxRippleCentered="true">
+                    <igx-icon>first_page</igx-icon>
+                </button>
+                <button [disabled]="grid.isFirstPage" (click)="grid.previousPage()" igxButton="icon" igxRipple igxRippleCentered="true">
+                    <igx-icon>chevron_left</igx-icon>
+                </button>
+                <span>{{ grid.page + 1 }} of {{ grid.totalPages }}</span>
+                <button [disabled]="grid.isLastPage" (click)="grid.nextPage()" igxRipple igxRippleCentered="true" igxButton="icon">
+                    <igx-icon>chevron_right</igx-icon>
+                </button>
+                <button [disabled]="grid.isLastPage" (click)="grid.paginate(grid.totalPages - 1)" igxButton="icon" igxRipple igxRippleCentered="true">
+                    <igx-icon>last_page</igx-icon>
+                </button>
+            </div>
+</ng-template>

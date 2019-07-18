@@ -2,6 +2,7 @@
 
 export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing": { displayName: "Hierarchical Grid Editing", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-editing-style": { displayName: "Hierarchical Grid Editing Style", parentName: "Hierarchical Grid"},
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-drag": { displayName: "Hierarchical Grid Row Drag", parentName: "Hierarchical Grid" },
     "hierarchical-row-drag-base": { displayName: "Hierarchical Grid Row Drag - Base", parentName: "Hierarchical Grid" },
@@ -20,6 +21,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-remote-paging": { displayName: "Hierarchical Grid Remote Paging", parentName: "Hierarchical Grid" },
     "hierarchical-grid-density": { displayName: "Hierarchical Grid Display Density", parentName: "Hierarchical Grid" },
     "hierarchical-grid-moving": { displayName: "Hierarchical Grid Column Moving", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-moving-styled": { displayName: "Hierarchical Grid Column Moving Styled", parentName: "Hierarchical Grid" },
     "hierarchical-grid-pinning": { displayName: "Hierarchical Grid Column Pinning", parentName: "Hierarchical Grid" },
     "hierarchical-grid-resizing": { displayName: "Hierarchical Grid Column Resizing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-resize-line-styling": { displayName: "Hierarchical Grid Resize Line Styling", parentName: "Hierarchical Grid" },
@@ -32,5 +34,9 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-toolbar-custom": { displayName: "Hierarchical Grid Toolbar Custom Content", parentName: "Hierarchical Grid" },
     "hierarchical-grid-lod": { displayName: "Hierarchical Grid Load on Demand", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-kb-navigation": { displayName: "Hierarchical Grid Custom Keyboard Navigation", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-paging-style": { displayName: "HGrid Paging Style", parentName: "Hierarchical Grid" }
+    "hierarchical-grid-paging-style": { displayName: "HGrid Paging Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-column-hiding-style": { displayName: "HGrid Column Hiding Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-multi-column-template": { displayName: "Hierarchical Grid Multi Column Header Template", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-row-edit-style": { displayName: "HGrid Row Edit Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-toolbar-style": { displayName: "HGrid Toolbar Style", parentName: "Hierarchical Grid" }
 };

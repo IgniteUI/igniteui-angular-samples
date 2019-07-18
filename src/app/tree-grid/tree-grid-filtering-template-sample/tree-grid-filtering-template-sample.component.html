@@ -5,7 +5,7 @@
             </igx-column>
             <igx-column field="Name" header="Product Name" [dataType]="'string'" [filterCellTemplate]="defaultFilterTemplate">
             </igx-column>
-            <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'" [filterCellTemplate]="defaultFilterTemplate">
+            <igx-column field="UnitPrice" header="Unit Price" dataType="number" [filterCellTemplate]="defaultFilterTemplate">
                 <ng-template igxCell let-cell="cell" let-val let-row>
                     {{+val | currency}}
                 </ng-template>

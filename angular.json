@@ -45,6 +45,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
+            },
+            "es5": {
+              "tsConfig": "src/tsconfig-es5.app.json"
             }
           }
         },
@@ -56,6 +59,9 @@
           "configurations": {
             "production": {
               "browserTarget": "my-app:build:production"
+            },
+            "es5": {
+              "browserTarget": "my-app:build:es5"
             }
           }
         },

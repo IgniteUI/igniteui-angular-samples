@@ -6,7 +6,7 @@
     </igx-column>
     <igx-column field="Name" header="Product Name" [dataType]="'string'">
     </igx-column>
-    <igx-column field="UnitPrice" header="Unit Price" [dataType]="'number'">
+    <igx-column field="UnitPrice" header="Unit Price" dataType="number">
         <ng-template igxCell let-cell="cell" let-val>
             <span *ngIf="cell.row.rowData.UnitPrice == 0">-</span>
             <span *ngIf="cell.row.rowData.UnitPrice != 0">${{val}}</span>
@@ -24,7 +24,7 @@
   </igx-tree-grid>
 
   <ng-template #pager let-grid>
-      <div *ngIf="grid.paging && grid.totalPages > 0" class="igx-paginator">
+      <div *ngIf="grid.paging && grid.totalPages > 0" class="igx-grid-paginator__pager" style="justify-content: center">
           <button [disabled]="grid.isFirstPage" (click)="grid.paginate(0)" igxButton="icon" igxRipple igxRippleCentered="true">
               <igx-icon>first_page</igx-icon>
           </button>
