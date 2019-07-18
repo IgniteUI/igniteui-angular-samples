@@ -15,6 +15,7 @@ import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
@@ -48,6 +49,7 @@ import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -70,6 +72,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
@@ -100,6 +103,8 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         ResizingSampleComponent,
         GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
+        GridRowEditStyleComponent,
+        GridEditingStyleSample,
         FinancialSampleComponent,
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
@@ -133,6 +138,7 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
         ContextmenuComponent,
         CustomGridPagingStyleSample,
         GridRowReorderComponent,
+        GridColumnHidingToolbarStyleComponent,
         GridMultiColumnHeaderTemplateComponent,
         GridClipboardSampleComponent,
         GridToolbarStyleComponent
