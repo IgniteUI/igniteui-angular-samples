@@ -19,6 +19,7 @@ import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
+import { HGridEditingStyleComponent } from "./hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
 import {
     HGridExcelStyleFilteringSample1Component
@@ -79,6 +80,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridToolbarCustomSampleComponent,
         HGridRowEditingSampleComponent,
         HGridEditingSampleComponent,
+        HGridEditingStyleComponent,
         HGridBatchEditingSampleComponent,
         HierarchicalGridWithTransactionsComponent,
         HierarchicalGridLoDSampleComponent,

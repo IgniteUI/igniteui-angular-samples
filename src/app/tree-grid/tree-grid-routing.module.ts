@@ -78,6 +78,7 @@ import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 
+import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
     TreeGridResizeLineStylingSampleComponent
 } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
@@ -283,6 +284,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridEditingSampleComponent,
         data: treeGridRoutesData["treegrid-editing"],
         path: "treegrid-editing"
+    },
+    {
+        component: TreeGridEditingStyleComponent,
+        data: treeGridRoutesData["treegrid-editing-style"],
+        path: "treegrid-editing-style"
     },
     {
         component: TreeGridRemoteFilteringSampleComponent,

@@ -6,6 +6,7 @@ export const gridsRoutesData = {
     "grid-groupby": { displayName: "Grid GroupBy", parentName: "Grid" },
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
     "grid-editing": { displayName: "Grid Editing", parentName: "Grid" },
+    "grid-editing-style": { displayName: "Grid Editing Style", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
     "grid-row-drag": { displayName: "Grid Row Drag", parentName: "Grid" },
     "grid-row-drag-base": { displayName: "Grid Row Drag - Base", parentName: "Grid" },
