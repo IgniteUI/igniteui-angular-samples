@@ -44,6 +44,10 @@ import {
 import {
     GridColumnHidingToolbarSampleComponent
 } from "../../src/app/grid/grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import {
+    GridColumnHidingToolbarStyleComponent
+} from "../../src/app/grid/grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
+// tslint:disable-next-line:max-line-length
 import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
 import {
     GridConditionalCellStyleComponent
@@ -296,6 +300,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarSampleComponent],
                 ngDeclarations: [GridColumnHidingToolbarSampleComponent],
+                ngImports: [IgxGridModule, HttpClientModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridColumnHidingToolbarStyleComponent,
+            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-style/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarStyleComponent],
+                ngDeclarations: [GridColumnHidingToolbarStyleComponent],
                 ngImports: [IgxGridModule, HttpClientModule],
                 ngProviders: []
             })
