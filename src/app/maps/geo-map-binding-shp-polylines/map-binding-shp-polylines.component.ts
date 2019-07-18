@@ -30,7 +30,7 @@ export class MapBindingShapefilePolylinesComponent implements AfterViewInit {
 
     public onDataLoaded(sds: ShapeDataSource, e: any) {
         const shapeRecords = sds.getPointData();
-        console.log("loaded /Shapes/WorldCableRoutes.shp " + shapeRecords.length);
+        console.log("loaded WorldCableRoutes.shp " + shapeRecords.length);
 
         const geoPolylines: any[] = [];
         // parsing shapefile data and creating geo-polygons

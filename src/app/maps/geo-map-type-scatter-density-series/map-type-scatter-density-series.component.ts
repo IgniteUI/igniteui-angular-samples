@@ -18,24 +18,36 @@ export class MapTypeScatterDensitySeriesComponent implements AfterViewInit {
     @ViewChild("template", {static: true})
     public tooltip: TemplateRef<object>;
 
-    public geoLocations;
     constructor() {
     }
 
     public ngAfterViewInit(): void {
          // fetching geographic locations from public JSON folder
-         fetch("assets/Data/AusPlaces.json")
-         .then((response) => response.json())
-         .then((data) => this.onDataLoaded(data, ""));
+         fetch("assets/Data/AusPlaces.csv")
+         .then((response) => response.text())
+         .then((data) => this.onDataLoaded(data));
       }
 
-    public onDataLoaded(sds: ShapeDataSource, e: any) {
-        this.geoLocations = sds;
+    public onDataLoaded(csvData: string) {
+        const csvLines = csvData.split("\n");
+        console.log("loaded AusPlaces.csv " + csvLines.length);
+
+        const geoLocations: any[] = [];
+        for (let i = 1; i < csvLines.length; i++) {
+            const columns = csvLines[i].split(",");
+            const location = {
+                latitude:  Number(columns[2]),
+                longitude: Number(columns[1]),
+                name:  columns[0]
+            };
+            geoLocations.push(location);
+        }
+
         // creating HD series with loaded data
         const geoSeries = new IgxGeographicHighDensityScatterSeriesComponent();
-        geoSeries.dataSource = sds;
-        geoSeries.longitudeMemberPath = "x";
-        geoSeries.latitudeMemberPath = "y";
+        geoSeries.dataSource = geoLocations;
+        geoSeries.longitudeMemberPath = "longitude";
+        geoSeries.latitudeMemberPath = "latitude";
         geoSeries.heatMaximumColor = "Red";
         geoSeries.heatMinimumColor = "Black";
         geoSeries.heatMinimum = 0;
@@ -48,7 +60,7 @@ export class MapTypeScatterDensitySeriesComponent implements AfterViewInit {
         this.map.series.add(geoSeries);
 
         // zooming to bound of all geographic locations
-        const geoBounds = WorldUtility.getBounds(this.geoLocations);
+        const geoBounds = WorldUtility.getBounds(geoLocations);
         geoBounds.top = 0;
         geoBounds.height = -50;
         this.map.zoomToGeographic(geoBounds);

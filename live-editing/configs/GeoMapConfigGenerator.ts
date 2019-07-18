@@ -100,7 +100,7 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             MapTypeScatterDensitySeriesComponent,
             [IgxGeographicMapModule], null,
-            ["/src/assets/Data/AusPlaces.json",
+            ["/src/assets/Data/AusPlaces.csv",
              "/src/app/utilities/WorldUtility.ts"]));
 
         configs.push(this.getConfig(
@@ -121,7 +121,7 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             MapBindingDataCsvComponent,
             [IgxGeographicMapModule], null,
-            ["/src/assets/Data/UsaCities.csv"]));
+            ["/src/assets/Data/UsaCitiesPopulation.csv"]));
 
         configs.push(this.getConfig(
             MapBindingDataJsonPointsComponent,
@@ -146,11 +146,10 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
             ["/src/app/utilities/EsriUtility.ts"]));
 
         configs.push(this.getConfig(
-                MapDisplayImageryHeatTilesComponent,
-                [IgxGeographicMapModule], null,
-                ["/src/app/maps/heatmap.worker.ts",
-                 "/src/assets/Shapes/AmericanCities.shp",
-                 "src/assets/Shapes/AmericanCities.dbf"]));
+            MapDisplayImageryHeatTilesComponent,
+            [IgxGeographicMapModule], null,
+            ["/src/app/maps/heatmap.worker.ts",
+             "/src/assets/Data/UsaCitiesPopulation.csv"]));
 
         return configs;
     }
