@@ -6,6 +6,9 @@ import {
     IgxCardModule, IgxComboModule, IgxDialogModule, IgxDragDropModule, IgxDropDownModule,
     IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule, IgxSliderModule,
     IgxSwitchModule, IgxToggleModule, IgxTooltipModule
+    IgxCardModule, IgxComboModule, IgxDialogModule, IgxDragDropModule, IgxDropDownModule, IgxIconModule,
+    IgxInputGroupModule, IgxOverlayService, IgxRippleModule, IgxSliderModule, IgxSwitchModule,
+    IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
 import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
@@ -42,6 +45,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
 
 @NgModule({
     declarations: [
@@ -77,7 +81,8 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         OverlayStylingComponent,
         MyDynamicCardComponent,
         DragAndDropSampleComponent,
-        CustomDialogComponent
+        CustomDialogComponent,
+        TooltipStyleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [

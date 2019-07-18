@@ -1,0 +1,16 @@
+<div class="sample-content">
+    <article class="sample-column">
+        <div class="wrapper">
+            <igx-avatar class="avatar" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef"
+                        src="assets/images/avatar/10.jpg" size="medium" [roundShape]="true"
+                        [igxToggleOutlet]="outlet">
+            </igx-avatar>
+
+            <div #outlet="overlay-outlet" igxOverlayOutlet>
+                <div #tooltipRef="tooltip" igxTooltip>
+                    Her name is Toola Tipa
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

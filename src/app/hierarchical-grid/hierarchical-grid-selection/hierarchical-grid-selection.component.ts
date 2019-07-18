@@ -30,4 +30,5 @@ export class HGridSelectionSampleComponent implements OnInit {
         }
     }
 
+    public formatter = (a) => a;
 }

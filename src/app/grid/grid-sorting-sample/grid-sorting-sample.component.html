@@ -17,7 +17,7 @@
         </igx-column>
         <igx-column field="ShipCountry" header="Ship Country" [dataType]="'string'" sortable="true">
         </igx-column>
-        <igx-column field="SaleAmount" header="Sale Amount" [dataType]="'number'" sortable="true">
+        <igx-column field="SaleAmount" header="Sale Amount" dataType="number" sortable="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
                 ${{val}}
             </ng-template>

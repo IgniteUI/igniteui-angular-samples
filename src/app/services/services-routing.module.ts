@@ -11,6 +11,7 @@ import { LocalizationSample1Component } from "./localization-samples/localizatio
 import { LocalizationSample2Component } from "./localization-samples/localization-sample-2/localization-sample-2.component";
 import { LocalizationSample3Component } from "./localization-samples/localization-sample-3/localization-sample-3.component";
 import { servicesRoutesData } from "./services-routes-data";
+import { TransactionBaseComponent } from "./transaction/transaction-base/transaction-base.component";
 // tslint:enable:max-line-length
 
 export const servicesRoutes: Routes = [
@@ -58,6 +59,11 @@ export const servicesRoutes: Routes = [
         component: LocalizationSample3Component,
         data: servicesRoutesData["localization-sample-3"],
         path: "localization-sample-3"
+    },
+    {
+        component: TransactionBaseComponent,
+        data: servicesRoutesData["transaction-base"],
+        path: "transaction-base"
     }
 ];
 

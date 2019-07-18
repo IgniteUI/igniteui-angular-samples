@@ -22,9 +22,9 @@
             </igx-column>
             <igx-column field="Salesperson" header="Salesperson" width="250px" [groupable]="true">
             </igx-column>
-            <igx-column field="UnitPrice" header="Unit Price" width="150px" [formatter]="formatCurrency" [dataType]="'number'" [groupable]="true">
+            <igx-column field="UnitPrice" header="Unit Price" width="150px" [formatter]="formatCurrency" dataType="number" [groupable]="true">
             </igx-column>
-            <igx-column field="Quantity" header="Quantity" width="150px" [dataType]="'number'" [groupable]="true">
+            <igx-column field="Quantity" header="Quantity" width="150px" dataType="number" [groupable]="true">
             </igx-column>
                 <ng-template igxGroupByRow let-groupRow>
                         <div class="igx-group-label">

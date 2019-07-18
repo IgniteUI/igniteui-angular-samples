@@ -1,13 +1,11 @@
-/* tslint:disable:object-literal-sort-keys */
-// tslint:disable:max-line-length
-// tslint:disable:member-ordering
+/* tslint:disable */
 
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { chartsRoutesData } from "./charts-routes-data";
 
-// category-chart
+// category-chart samples
 import { CategoryChartAnnotationsComponent } from "./category-chart/annotations/category-chart-annotations.component";
 import { CategoryChartAxisOptionsComponent } from "./category-chart/axis-options/category-chart-axis-options-sample.component";
 import { CategoryChartPerformanceSamplesModule } from "./category-chart/category-chart-performance-samples.module";
@@ -21,8 +19,7 @@ import { CategoryChartOverviewComponent } from "./category-chart/overview/catego
 import { CategoryChartTooltipTemplateComponent } from "./category-chart/tooltip-template/category-chart-tooltip-template.component";
 import { CategoryChartTooltipTypesComponent } from "./category-chart/tooltip-types/category-chart-tooltip-types.component";
 import { CategoryChartTrendlinesComponent } from "./category-chart/trendline/category-chart-trendlines.component";
-
-// data-chart
+// data-chart samples
 import { DataChartAxisAnnotationsComponent } from "./data-chart/data-chart-axis-annotations/data-chart-axis-annotations.component";
 import { DataChartAxisLocationsComponent } from "./data-chart/data-chart-axis-locations/data-chart-axis-locations.component";
 import { DataChartAxisSettingsComponent } from "./data-chart/data-chart-axis-settings/data-chart-axis-settings.component";
@@ -53,16 +50,14 @@ import { DataChartTypeScatterSeriesComponent } from "./data-chart/data-chart-typ
 import { DataChartTypeScatterShapeSeriesComponent } from "./data-chart/data-chart-type-scatter-shape-series/data-chart-type-scatter-shape-series.component";
 import { DataChartTypeStackedSeriesComponent } from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
 import { DataChartTypeValueOverlayComponent } from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
-
-// doughnut-chart
+// doughnut-chart samples
 import { DoughnutChartExplosionSampleComponent } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
 import { DoughnutChartLegendComponent } from "./doughnut-chart/doughnut-chart-legend/doughnut-chart-legend.component";
 import { DoughnutChartOverviewSampleComponent } from "./doughnut-chart/doughnut-chart-overview-sample/doughnut-chart-overview-sample.component";
 import { DoughnutChartRingsComponent } from "./doughnut-chart/doughnut-chart-rings/doughnut-chart-rings.component";
 import { DoughnutChartSamplesModule } from "./doughnut-chart/doughnut-chart-samples.module";
 import { DoughnutChartSelectionSampleComponent } from "./doughnut-chart/doughnut-chart-selection-sample/doughnut-chart-selection-sample.component";
-
-// financial-chart
+// financial-chart samples
 import { FinancialChartAnnotationsComponent } from "./financial-chart/annotations/financial-chart-annotations.component";
 import { FinancialChartAxisTypesComponent } from "./financial-chart/axis-types/financial-chart-axis-types.component";
 import { FinancialChartCustomIndicatorsComponent } from "./financial-chart/custom-indicators/financial-chart-custom-indicators.component";
@@ -72,7 +67,7 @@ import { FinancialChartHighVolumeComponent } from "./financial-chart/high-volume
 import { FinancialChartIndicatorTypesComponent } from "./financial-chart/indicator-types/financial-chart-indicator-types.component";
 import { FinancialChartMultipleDataComponent } from "./financial-chart/multiple-data/financial-chart-multiple-data.component";
 import { FinancialChartMultipleFeedsComponent } from "./financial-chart/multiple-feeds/financial-chart-multiple-feeds.component";
-import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview-sample.component";
+import { FinancialChartOverviewComponent } from "./financial-chart/overview/financial-chart-overview.component";
 import { FinancialChartPanesComponent } from "./financial-chart/panes/financial-chart-panes.component";
 import { FinancialChartPerformanceComponent } from "./financial-chart/performance/financial-chart-performance.component";
 import { FinancialChartTimeBasedDataComponent } from "./financial-chart/time-based-data/financial-chart-time-based-data.component";
@@ -81,21 +76,29 @@ import { FinancialChartTooltipTemplateComponent } from "./financial-chart/toolti
 import { FinancialChartTooltipTypesComponent } from "./financial-chart/tooltip-types/financial-chart-tooltip-types.component";
 import { FinancialChartTrendlinesComponent } from "./financial-chart/trendlines/financial-chart-trendlines.component";
 import { FinancialChartVolumeTypeComponent } from "./financial-chart/volume-type/financial-chart-volume-type.component";
-
-import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
+// pie-chart samples
+import { PieChartDataSampleComponent } from "./pie-chart/pie-chart-overview/pie-chart-overview.component";
 import { PieChartExplosionComponent } from "./pie-chart/pie-chart-explosion/pie-chart-explosion.component";
 import { PieChartLegendComponent } from "./pie-chart/pie-chart-legend/pie-chart-legend.component";
 import { PieChartOthersComponent } from "./pie-chart/pie-chart-others/pie-chart-others.component";
 import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
-
+// sparkline-chart samples
 import { SparklineDisplayTypesComponent } from "./sparkline/sparkline-display-types/sparkline-display-types.component";
 import { SparklineMarkersComponent } from "./sparkline/sparkline-markers/sparkline-markers.component";
 import { SparklineNormalRangeComponent } from "./sparkline/sparkline-normal-range/sparkline-normal-range.component";
 import { SparklineTrendlinesComponent } from "./sparkline/sparkline-trendlines/sparkline-trendlines.component";
 import { SparklineUnknownValuesComponent } from "./sparkline/sparkline-unknown-values/sparkline-unknown-values.component";
+// zoomslider-chart samples
+import { ZoomSliderOverviewComponent } from "./zoomslider/zoomslider-overview/zoomslider-overview.component";
 
 export const chartsRoutes: Routes = [
+    //  ZoomSlider
+    {
+        component: ZoomSliderOverviewComponent,
+        data: chartsRoutesData["zoomslider-overview"],
+        path: "zoomslider-overview"
+    },
     // DoughnutChart
     {
         component: DoughnutChartExplosionSampleComponent,
@@ -125,8 +128,8 @@ export const chartsRoutes: Routes = [
     // PieChart
     {
         component: PieChartDataSampleComponent,
-        data: chartsRoutesData["pie-chart-data-sample"],
-        path: "pie-chart-data-sample"
+        data: chartsRoutesData["pie-chart-overview"],
+        path: "pie-chart-overview"
     },
     {
         component: PieChartExplosionComponent,
@@ -353,8 +356,8 @@ export const chartsRoutes: Routes = [
     // financial-chart
     {
         component: FinancialChartOverviewComponent,
-        data: chartsRoutesData["financial-chart-overview-sample"],
-        path: "financial-chart-overview-sample"
+        data: chartsRoutesData["financial-chart-overview"],
+        path: "financial-chart-overview"
     },
     {
         component: FinancialChartPerformanceComponent,
