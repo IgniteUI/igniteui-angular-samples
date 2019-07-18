@@ -3,27 +3,27 @@
 /*BASIC THEMING*/
 
 $custom-theme: igx-grid-theme(
-    $sorted-header-icon-color: blue
+    $sorted-header-icon-color: #51f942,
 );
 
 /*ENHANCED APPROACHES*/
 
-// $primary-color: #09f;
-// $secondary-color: #e41c77;
+// $black-color: #292826;
+// $green-color: #51f942;
 
 /*PALETTE*/
 
-// $light-palette: igx-palette(
-//     $primary: $primary-color,
-//     $secondary: $secondary-color
+// $custom-palette: igx-palette(
+//     $primary: $black-color,
+//     $secondary: $green-color
 // );
 
 /*SCHEMAS*/
 
 // $custom-grid-schema: extend($_light-grid,
 //     (
-//         sorted-header-icon-color: igx-color($light-palette, 'secondary', 500),
-//         // sortable-header-icon-hover-color: blue
+//         sorted-header-icon-color: (igx-color:('secondary', 700)),
+//         sortable-header-icon-hover-color: (igx-color:('primary', 300))
 //     )
 // );
 
@@ -36,7 +36,7 @@ $custom-theme: igx-grid-theme(
 /*THEME*/
 
 // $custom-theme: igx-grid-theme(
-//   $palette: $light-palette,
+//   $palette: $custom-palette,
 //   $schema: $my-custom-schema
 // );
 
@@ -49,5 +49,5 @@ $custom-theme: igx-grid-theme(
 }
 
 .grid__wrapper {
-    margin: 0 16px;
+    margin: 10px 16px;
 }
