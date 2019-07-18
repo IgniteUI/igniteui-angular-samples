@@ -4,6 +4,7 @@ import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.compo
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
 import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
+import { ComboStyling } from "./combo/combo-styling/combo-styling.component";
 import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
 import { ListChatSampleComponent } from "./list/list-chat-sample/list-chat-sample.component";
 import { ListSample1Component } from "./list/list-sample-1/list-sample-1.component";
@@ -26,6 +27,11 @@ export const listsRoutes: Routes = [
         component: ComboFeatures,
         data: listsRoutesData["combo-features"],
         path: "combo-features"
+    },
+    {
+        component: ComboStyling,
+        data: listsRoutesData["combo-styling"],
+        path: "combo-styling"
     },
     {
         component: ComboRemoteComponent,
