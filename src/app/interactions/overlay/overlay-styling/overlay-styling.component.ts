@@ -1,4 +1,5 @@
-import { Component, ElementRef } from "@angular/core";
+import { Component, ElementRef, ViewEncapsulation } from "@angular/core";
+import { IgxOverlayService } from "igniteui-angular";
 
 @Component({
     selector: "app-overlay-styling",
@@ -6,8 +7,7 @@ import { Component, ElementRef } from "@angular/core";
     templateUrl: "overlay-styling.component.html"
 })
 export class OverlayStylingComponent {
-    public items = [
-        {
+    public items = [{
             name: "Option 1",
             id: 0
         }, {
@@ -28,6 +28,6 @@ export class OverlayStylingComponent {
         }
     ];
 
-    constructor(public element: ElementRef) {
+    constructor(public element: ElementRef, private overlayService: IgxOverlayService) {
     }
 }

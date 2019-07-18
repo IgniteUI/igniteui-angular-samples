@@ -1,10 +1,2 @@
-<button igxButton [igxToggleAction]="customDropDown"
-    [igxDropDownItemNavigation]="customDropDown">
-    Custom
-</button>
-<igx-drop-down #customDropDown height="320px">
-    <igx-drop-down-item *ngFor="let item of items" [value]="item.id"
-        [selected]="item.id === 2">
-        {{ item.name }}
-    </igx-drop-down-item>
-</igx-drop-down>
+<igx-combo [data]="items" valueKey="name" displayKey="name" [ngModel]="[items[2]]" width="410px" [overlaySettings]="{ outlet: element }">
+</igx-combo>

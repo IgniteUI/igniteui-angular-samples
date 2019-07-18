@@ -1,7 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxButtonDirective, IgxButtonModule, IgxCardModule, IgxDividerModule, IgxDropDownModule,
-    IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxToggleModule
+    IgxButtonDirective, IgxButtonModule, IgxCardModule, IgxComboModule,
+    IgxDividerModule, IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxToggleModule
 } from "igniteui-angular";
 import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/card-sample-1.component";
 
@@ -114,10 +114,10 @@ export class OverlayConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: OverlayStylingComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxToggleModule, IgxDropDownModule, IgxOverlayService, OverlayStylingComponent],
+                imports: [IgxToggleModule, IgxComboModule, IgxOverlayService, OverlayStylingComponent],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlayStylingComponent],
-                ngImports: [IgxToggleModule, IgxDropDownModule]
+                ngImports: [IgxToggleModule, IgxComboModule]
             }),
             shortenComponentPathBy: "/interactions/overlay/"
         }));

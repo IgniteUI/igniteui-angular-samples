@@ -1,3 +1,4 @@
+
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $red: #ac4365;
@@ -10,9 +11,10 @@ $my-drop-down-theme: igx-drop-down-theme(
     $header-text-color: igx-color($my-palette, "secondary", 500)
 );
 
-@include igx-drop-down($my-drop-down-theme);
-
 :host {
     display: block;
     padding: 16px;
+    ::ng-deep {
+        @include igx-drop-down($my-drop-down-theme);
+    }
 }
