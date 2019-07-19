@@ -2,7 +2,6 @@
 import { IgxCheckboxModule } from "igniteui-angular";
 import { CheckboxSample2Component
 } from "../../src/app/data-entries/checkbox/checkbox-sample-2/checkbox-sample-2.component";
-// tslint:disable-next-line: max-line-length
 import { CheckboxStylingComponent
 } from "../../src/app/data-entries/checkbox/checkbox-styling/checkbox-styling.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
