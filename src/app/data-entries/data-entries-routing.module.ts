@@ -20,6 +20,7 @@ import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-samp
 import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-sample-8.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { dataEntriesRoutesData } from "./data-entries-routes-data";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
 import { DropDownVirtualComponent } from "./dropdown/drop-down-virtual/drop-down-virtual.component";
@@ -149,6 +150,11 @@ export const dataEntriesRoutes: Routes = [
         component: CheckboxSample2Component,
         data: dataEntriesRoutesData["checkbox-sample-2"],
         path: "checkbox-sample-2"
+    },
+    {
+        component: CheckboxStylingComponent,
+        data: dataEntriesRoutesData["checkbox-styling"],
+        path: "checkbox-styling"
     },
     {
         component: DropdownMenuComponent,
