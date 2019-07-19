@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
+import { ComboOverlayComponent } from "./combo/combo-overlay/combo-overlay.component";
 import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
 import { ComboStyling } from "./combo/combo-styling/combo-styling.component";
 import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
@@ -47,6 +48,11 @@ export const listsRoutes: Routes = [
         component: CascadingCombos,
         data: listsRoutesData["cascading-combos"],
         path: "cascading-combos"
+    },
+    {
+        component: ComboOverlayComponent,
+        data: listsRoutesData["combo-overlay"],
+        path: "combo-overlay"
     },
     {
         component: ListComponent,
