@@ -165,8 +165,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TreeGridBatchEditingSampleComponent],
                 ngImports: [IgxTreeGridModule, IgxButtonModule, IgxDialogModule, IgxGridModule]
             }),
-            component: TreeGridBatchEditingSampleComponent,
-            shortenComponentPathBy: "/tree-grid/"
+            component: TreeGridBatchEditingSampleComponent
         }));
 
         // TreeGrid Search sample
