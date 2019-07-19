@@ -18,11 +18,11 @@ export class TabsSample6Component implements OnInit {
     constructor(private router: Router) { }
 
     public get currentDocumentLocation() {
-        return document.location.pathname;
+        return this.router.url;
     }
 
     public ngOnInit() {
-        let currentAddress: string = document.location.pathname;
+        let currentAddress: string = this.router.url;
 
         if (currentAddress && currentAddress[currentAddress.length - 1] === "/") {
             currentAddress = currentAddress.substring(0, currentAddress.length - 1);
