@@ -782,7 +782,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridGroupByPagingSampleComponent,
             additionalFiles: [
-                "/src/app/grid/grid-group-by-paging-sample/data.ts"
+                "/src/app/data/invoiceData.ts"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, IgxIconModule, GridGroupByPagingSampleComponent],

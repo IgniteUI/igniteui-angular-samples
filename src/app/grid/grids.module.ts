@@ -76,6 +76,7 @@ import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-g
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+// tslint:enable:max-line-length
 
 @NgModule({
     declarations: [

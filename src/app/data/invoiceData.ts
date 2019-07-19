@@ -1,5 +1,5 @@
 /* tslint:disable */
-export const LOCAL_DATA = [{
+export const INVOICE_DATA = [{
     ShipAddress: "Obere Str. 57",
     ShipCity: "Berlin",
     ShipCountry: "Germany",
