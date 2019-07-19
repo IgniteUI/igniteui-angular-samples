@@ -20,6 +20,7 @@ import {
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
+import { ComboOverlayComponent } from "./combo/combo-overlay/combo-overlay.component";
 import { ComboRemoteComponent } from "./combo/combo-remote/combo-remote.component";
 import { ComboStyling } from "./combo/combo-styling/combo-styling.component";
 import { ComboTemplateComponent } from "./combo/combo-template/combo-template.component";
@@ -52,7 +53,8 @@ import { ListsRoutingModule } from "./lists-routing.module";
         ComboStyling,
         ComboMainComponent,
         ComboRemoteComponent,
-        ComboTemplateComponent
+        ComboTemplateComponent,
+        ComboOverlayComponent
     ],
     imports: [
         CommonModule,
