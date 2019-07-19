@@ -29,6 +29,9 @@ li {
 .state-container {
     display: flex;
     flex-direction: column;
+    width: 320px;
+    position: relative;
+    padding-top: 40px;
     .state-title {
         font-family: Titillium Web;
         font-weight: 600;
@@ -36,9 +39,20 @@ li {
         font-size: 20px;
         letter-spacing: 0.15px;
         color: $title-color;
-        margin: 0px 20px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        margin: 0px auto;
         text-align: center;
         text-transform: uppercase;
+        span {
+            border: 2px solid transparent;        
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            line-height: 16px;
+        }
     }
     .list {
         padding: 10px 20px 20px 20px;
@@ -88,7 +102,16 @@ li {
         }
     }
 }
-
-
-
-
+.dragHovered {
+    background: #A7D8F9;
+    h4 span {
+        border: 2px solid white!important;
+        color: white;
+        background: #0099FF;
+        border-radius: 11px;
+        font-weight: 400;
+        font-size: 13px;
+        vertical-align: 15%;
+        @include vendor-box-shadow(0px, 4px, 18px, 3px, rgba(0,0,0,0.078), 0px, 10px, 14px, 1px, rgba(0,0,0,0.121), 0px, 6px, 6px, -3px, rgba(0,0,0,0.258));
+    }
+}
