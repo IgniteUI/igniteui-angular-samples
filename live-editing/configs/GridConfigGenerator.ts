@@ -28,8 +28,6 @@ import {
     IgxToastModule,
     IgxTooltipModule
 } from "igniteui-angular";
-// tslint:disable:max-line-length
-import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 // tslint:disable-next-line: max-line-length
 import { CustomGridPagingStyleSample } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import {
@@ -140,6 +138,7 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridGroupByPagingSampleComponent } from '../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component';
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -780,7 +779,17 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule]
             })
         }));
-
+        configs.push(new Config({
+            component: GridGroupByPagingSampleComponent,
+            additionalFiles: [
+                "/src/app/data/invoiceData.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxIconModule, GridGroupByPagingSampleComponent],
+                ngDeclarations: [GridGroupByPagingSampleComponent],
+                ngImports: [IgxGridModule, IgxIconModule]
+            })
+        }));
         configs.push(new Config({
             component: GridMultiColumnHeaderTemplateComponent,
             additionalFiles: ["/src/app/grid/multi-column-header-template/data.ts"],
