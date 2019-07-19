@@ -78,7 +78,7 @@ export const gridsRoutes: Routes = [
     },
     {
         component: GridGroupByPagingSampleComponent,
-        data: gridsRoutesData["grid-summary"],
+        data: gridsRoutesData["grid-groupby-paging"],
         path: "grid-groupby-paging"
     },
     {
