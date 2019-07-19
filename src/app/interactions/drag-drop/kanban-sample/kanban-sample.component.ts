@@ -1,8 +1,8 @@
 import { Component, Renderer2 } from "@angular/core";
 import { IgxDropEventArgs } from "igniteui-angular";
 enum state {
-    ToDo = "To Do",
-    InProgress = "In Progress",
+    ToDo = "ToDo",
+    InProgress = "InProgress",
     Done = "Done"
 }
 @Component({
@@ -24,25 +24,47 @@ export class KanbanSampleComponent {
     public doneList = [
         { id: "STR-000129", text: "Add SSL to account pages", state: state.Done }
     ];
-    public tempObj;
-    public lastEnteredList;
+    public dragObj;
+    public dragStartList;
 
     constructor(private renderer: Renderer2) { }
 
-    public onStateContainerEnter(event: IgxDropEventArgs) {
-        //console.log(event.owner.element.nativeElement)
+    onStateContainerEnter(event: IgxDropEventArgs) {
         this.renderer.addClass(event.owner.element.nativeElement, "dragHovered");
     }
 
-    public onStateContainerLeave(event: IgxDropEventArgs) {
-        //console.log(event.owner.element.nativeElement)
+    onStateContainerLeave(event: IgxDropEventArgs) {
         this.renderer.removeClass(event.owner.element.nativeElement,  "dragHovered");
     }
-    public dragStartHandler(event) {
-        //this.renderer.setStyle(event.owner.element.nativeElement, "display", "none");
-        this.tempObj = this.toDoList.filter((elem) => { return elem.id === event.owner.element.nativeElement.id })[0]
-        console.log(this.tempObj)   
-        this.toDoList = this.toDoList.filter((elem) => { return elem.id !== event.owner.element.nativeElement.id});
-        console.log(this.toDoList)
-    } 
+    findCurrentList(state: string): string {
+        let currentList;
+        switch(state) {
+            case "ToDo": 
+                currentList = "toDoList";
+                break;
+            case "InProgress":
+                currentList = "inProgressList";
+                break
+            case "Done":
+                currentList = "doneList";
+                break;
+        };
+        return currentList;
+    }
+    dragStartHandler(event) {
+        let currentList = this.findCurrentList(event.owner.element.nativeElement.dataset.state);
+        this.dragObj = this[currentList].filter((elem) => { return elem.id === event.owner.element.nativeElement.id })[0];
+        this[currentList] = this[currentList].filter((elem) => { return elem.id !== event.owner.element.nativeElement.id});
+    };
+
+    onItemEnter(event) {
+        //console.log("Should swap items")
+    };
+
+    onItemDropped(event) {
+        let currentList = this.findCurrentList(event.owner.element.nativeElement.dataset.state);
+        this.dragObj.state = event.owner.element.nativeElement.dataset.state;
+        this[currentList].push(this.dragObj);
+        event.cancel = true;
+    }
 }
