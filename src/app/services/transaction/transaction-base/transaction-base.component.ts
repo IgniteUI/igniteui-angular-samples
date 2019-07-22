@@ -115,7 +115,7 @@ export class TransactionBaseComponent {
     /**
      * Map the items in the transaction log with the items in the wishlist.
      */
-    public getTransactionLog(): any {
+    public getTransactionLog(): Transaction[] {
         return this.transactions.getTransactionLog().map(transaction => {
             const item = this.wishlist.find(i => i.id === transaction.id);
             return Object.assign({ type: transaction.type }, item, transaction.newValue);
