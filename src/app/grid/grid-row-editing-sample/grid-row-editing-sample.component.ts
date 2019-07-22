@@ -1,7 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 import { DATA } from "../../data/nwindData";
-
-import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
     selector: "app-grid-row-edit",
@@ -9,11 +7,5 @@ import { IgxGridComponent } from "igniteui-angular";
     templateUrl: "grid-row-editing-sample.component.html"
 })
 export class GridRowEditSampleComponent {
-    @ViewChild("gridRowEdit", { read: IgxGridComponent, static: true }) public gridRowEdit: IgxGridComponent;
-
-    public data: any[];
-
-    constructor() {
-        this.data = DATA;
-    }
+    public data: any[] = DATA;
 }
