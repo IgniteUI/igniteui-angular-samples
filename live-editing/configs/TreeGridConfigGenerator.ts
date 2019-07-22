@@ -554,7 +554,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [TreeGridMultiCellSelectionStyleComponent, IgxTreeGridModule],
                 ngDeclarations: [TreeGridMultiCellSelectionStyleComponent],
-                ngImports: [IgxTreeGridModule, IgxToastModule]
+                ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridMultiCellSelectionStyleComponent,
             shortenComponentPathBy: "/tree-grid/"
