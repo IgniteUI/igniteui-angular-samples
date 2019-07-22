@@ -1,0 +1,60 @@
+// Browser samples related styling
+.control-wrapper {
+   margin:10px;
+}
+
+.drop-down {
+    width:180px;
+}
+
+.drop-down__scroll-container {
+    max-height: 280px;
+}
+
+// Using Ignite UI for Angular Theming engine related styling
+// Import the IgniteUI themes library first
+@import '~igniteui-angular/lib/core/styles/themes/index';
+$my-primary-color:#FFC314;
+$my-secondary-color: #7344df;
+$my-info-color: #ffffff;
+
+$my-color-palette: igx-palette(
+    $primary: $my-primary-color,
+    $secondary: $my-secondary-color,
+    $info: $my-info-color
+);
+
+$custom-drop-down-theme: igx-drop-down-theme(
+    $background-color: igx-color($my-color-palette, "secondary", 100),
+    $header-text-color: igx-color($my-color-palette, "secondary", 600),
+    $item-text-color: igx-color($my-info-color, "info"),
+
+    $selected-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-item-text-color: igx-color($my-color-palette, "info"),
+    $selected-hover-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-hover-item-text-color: igx-color($my-color-palette, "info"),
+    $selected-focus-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-focus-item-text-color: igx-color($my-color-palette, "info"),
+
+    $focused-item-background: igx-color($my-color-palette, "secondary", 300),
+    $focused-item-text-color: igx-color($my-color-palette, "info"),
+
+    $hover-item-background: igx-color($my-color-palette, "info"),
+    $hover-item-text-color: igx-color($my-color-palette, "secondary", 600)
+);
+
+$custom-button-theme: igx-button-theme(
+    $palette: $my-color-palette
+);
+
+:host {
+    ::ng-deep {
+        @include igx-drop-down($custom-drop-down-theme);
+        @include igx-button($custom-button-theme);
+    }
+}
+
+
+
+
+

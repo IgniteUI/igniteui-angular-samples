@@ -1,0 +1,41 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$my-light-gray: #e3e3e3;
+
+$my-banner-palette: $purple-palette;
+
+$custom-grid: igx-grid-theme(
+    $palette: $purple-palette
+);
+
+
+.sample-wrapper {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+$banner-theme: igx-banner-theme( 
+    $banner-background: $my-light-gray,
+    $banner-message-color: igx-color($my-banner-palette, "secondary", 600)
+);
+
+$button-theme: igx-button-theme(
+  $palette: $purple-palette
+);
+
+$custom-checkbox: igx-checkbox-theme(
+  $palette: $my-banner-palette
+);
+
+.custom-buttons {
+    @include igx-button($button-theme);
+  }
+
+:host {
+  ::ng-deep {
+          @include igx-checkbox($custom-checkbox);
+          @include igx-grid($custom-grid);
+          @include igx-banner($banner-theme);
+
+  }
+}

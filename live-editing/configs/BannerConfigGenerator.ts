@@ -5,6 +5,7 @@ import { BannerSample1Component } from "../../src/app/notifications/banner/banne
 import { BannerSample2Component } from "../../src/app/notifications/banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "../../src/app/notifications/banner/banner-sample-3/banner-sample-3.component";
 import { BannerSample4Component } from "../../src/app/notifications/banner/banner-sample-4/banner-sample-4.component";
+import { BannerStylingComponent } from "../../src/app/notifications/banner/banner-styling/banner-styling.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -41,6 +42,18 @@ export class BannerConfigGenerator implements IConfigGenerator {
                 imports: [IgxBannerModule, IgxCardModule, IgxToastModule, IgxNavbarModule, IgxButtonModule,
                     IgxRippleModule, IgxIconModule, BannerSample3Component],
                 ngDeclarations: [BannerSample3Component],
+                ngImports: [IgxBannerModule, IgxCardModule, IgxToastModule,  IgxNavbarModule, IgxButtonModule,
+                    IgxRippleModule, IgxIconModule]
+            }),
+            shortenComponentPathBy: "/notifications/banner/"
+        }));
+
+        configs.push(new Config({
+            component: BannerStylingComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxBannerModule, IgxCardModule, IgxToastModule, IgxNavbarModule, IgxButtonModule,
+                    IgxRippleModule, IgxIconModule, BannerStylingComponent],
+                ngDeclarations: [BannerStylingComponent],
                 ngImports: [IgxBannerModule, IgxCardModule, IgxToastModule,  IgxNavbarModule, IgxButtonModule,
                     IgxRippleModule, IgxIconModule]
             }),
