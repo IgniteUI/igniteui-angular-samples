@@ -30,6 +30,7 @@ import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-samp
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
 import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-sample-8.component";
+import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
 import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
@@ -114,7 +115,8 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         SelectSample4Component,
         SelectStylingComponent,
         ButtonGroupSampleComponent,
-        ButtonsDisplayDensityComponent
+        ButtonsDisplayDensityComponent,
+        ButtonsStyleComponent
     ],
     imports: [
         CommonModule,
