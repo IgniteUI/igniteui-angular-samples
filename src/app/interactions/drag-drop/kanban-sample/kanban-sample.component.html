@@ -1,5 +1,7 @@
 <div class="kanban">
-    <div igxDrop 
+    <div 
+        #toDo
+        igxDrop 
         class="state-container"
         [attr.data-state]="'ToDo'"
         (onEnter)="onStateContainerEnter($event)"
@@ -10,8 +12,10 @@
         </h4>
         <div *ngFor="let item of toDoList"
             igxDrag
+            igxDrop
             (dragStart)="dragStartHandler($event)"
             (onEnter)="onItemEnter($event)"
+            (onLeave)="onItemLeave($event)"
             class="item-container" 
             id="{{item.id}}"
             [attr.data-state]="item.state"
@@ -23,7 +27,9 @@
                 </div>
         </div>    
     </div>
-    <div igxDrop 
+    <div 
+        #inProgress
+        igxDrop 
         class="state-container"
         [attr.data-state]="'InProgress'"
         (onEnter)="onStateContainerEnter($event)"
@@ -32,7 +38,10 @@
         <h4 class="state-title">In Progress <span>{{inProgressList.length}}</span></h4>
         <div *ngFor="let item of inProgressList"
             igxDrag
+            igxDrop
             (dragStart)="dragStartHandler($event)"
+            (onEnter)="onItemEnter($event)"
+            (onLeave)="onItemLeave($event)"
             class="item-container" 
             id="{{item.id}}" 
             [attr.data-state]="item.state"
@@ -44,47 +53,30 @@
                 </div>
         </div>
     </div>
-        <div igxDrop 
-        class="state-container"
-        [attr.data-state]="'Done'"
-        (onEnter)="onStateContainerEnter($event)"
-        (onLeave)="onStateContainerLeave($event)"
-        (onDrop)="onItemDropped($event)">
-        <h4 class="state-title">Done <span>{{doneList.length}}</span></h4>
-        <div *ngFor="let item of doneList"
+    <div 
+    #done
+    igxDrop 
+    class="state-container"
+    [attr.data-state]="'Done'"
+    (onEnter)="onStateContainerEnter($event)"
+    (onLeave)="onStateContainerLeave($event)"
+    (onDrop)="onItemDropped($event)">
+    <h4 class="state-title">Done <span>{{doneList.length}}</span></h4>
+    <div *ngFor="let item of doneList"
         igxDrag
+        igxDrop
         (dragStart)="dragStartHandler($event)"
-            class="item-container" 
-            id="{{item.id}}" 
-            [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
-            [ghostImageClass]="'drag-ghost-class'">
-                <div class="item">
-                    <div class="title">{{item.text}}</div>
-                    <div class="id">{{item.id}}</div>
-                </div>
+        (onEnter)="onItemEnter($event)"
+        (onLeave)="onItemLeave($event)"
+        class="item-container" 
+        id="{{item.id}}" 
+        [attr.data-state]="item.state"
+        [hideBaseOnDrag]="true"
+        [ghostImageClass]="'drag-ghost-class'">
+            <div class="item">
+                <div class="title">{{item.text}}</div>
+                <div class="id">{{item.id}}</div>
+            </div>
         </div>  
     </div>
 </div>
-    <!-- <div igxDrop 
-        class="state-container"
-        (onEnter)="onStateContainerEnter($event)"
-        (onLeave)="onStateContainerLeave($event)">
-        <h4 class="state-title">Done <span>{{inProgressList.length}}</span></h4>
-        <ul class="list">
-            <li *ngFor="let item of doneList"
-            igxDrag igxDrop
-            (dragStart)="dragStartHandler($event)"
-            class="item-container" 
-            id="{{item.id}}" 
-            [attr.data-state]="item.state"
-            [hideBaseOnDrag]="true"
-            [ghostImageClass]="'drag-ghost-class'">
-                <div class="item">
-                    <div class="title">{{item.text}}</div>
-                    <div class="id">{{item.id}}</div>
-                </div>
-            </li>
-        </ul>   
-    </div>
-</div> -->
