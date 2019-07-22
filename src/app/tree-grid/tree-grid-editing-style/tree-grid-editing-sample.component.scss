@@ -2,13 +2,14 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $white: #fff;
-$blue: #5ea4ff;
+$blue: #4567bb;
 
 $color-palette: igx-palette($primary: $white, $secondary: $blue);
 
 $grid-theme: igx-grid-theme(
     $cell-editing-background: $blue,
     $cell-active-border-color: $white,
+    $cell-edited-value-color: $white,
     $edit-mode-color: igx-color($color-palette, "secondary", 200)
 );
 
@@ -23,8 +24,24 @@ $datepicker-theme: igx-calendar-theme(
     $date-selected-background: $blue
 );
 
+$input-theme: igx-input-group-theme(
+    $palette: igx-palette,
+    $filled-text-color: $white,
+    $focused-text-color: $white,
+    $idle-text-color: $white,
+    $idle-bottom-line-color: $white,
+    $focused-bottom-line-color: $white,
+    $interim-bottom-line-color: $white,
+    $hover-bottom-line-color: $white,
+    $box-background: $blue
+);
+
 :host {
+    padding: 3px 10px;
     ::ng-deep {
+        .igx-grid__tbody{
+            @include igx-input-group($input-theme);
+        }
         @include igx-checkbox($checkbox-theme);
         @include igx-calendar($datepicker-theme);
         @include igx-grid($grid-theme);
