@@ -29,7 +29,7 @@ export class SortingSampleComponent implements OnInit {
         this.data = DATA;
         this.grid1.sortingExpressions = [
             {
-                dir: SortingDirection.Asc, fieldName: "ProductName",
+                dir: SortingDirection.Asc, fieldName: "CategoryName",
                 ignoreCase: true, strategy: DefaultSortingStrategy.instance()
             }
         ];
