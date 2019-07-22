@@ -16,6 +16,7 @@
             (dragStart)="dragStartHandler($event)"
             (onEnter)="onItemEnter($event)"
             (onLeave)="onItemLeave($event)"
+            [style.visibility]="item.id === 'dummy' ? 'hidden' : 'visible'"
             class="item-container" 
             id="{{item.id}}"
             [attr.data-state]="item.state"
@@ -43,6 +44,7 @@
             (onEnter)="onItemEnter($event)"
             (onLeave)="onItemLeave($event)"
             class="item-container" 
+            [class.notVisible]="item.id === 'dummy'"
             id="{{item.id}}" 
             [attr.data-state]="item.state"
             [hideBaseOnDrag]="true"
@@ -54,25 +56,25 @@
         </div>
     </div>
     <div 
-    #done
-    igxDrop 
-    class="state-container"
-    [attr.data-state]="'Done'"
-    (onEnter)="onStateContainerEnter($event)"
-    (onLeave)="onStateContainerLeave($event)"
-    (onDrop)="onItemDropped($event)">
-    <h4 class="state-title">Done <span>{{doneList.length}}</span></h4>
-    <div *ngFor="let item of doneList"
-        igxDrag
-        igxDrop
-        (dragStart)="dragStartHandler($event)"
-        (onEnter)="onItemEnter($event)"
-        (onLeave)="onItemLeave($event)"
-        class="item-container" 
-        id="{{item.id}}" 
-        [attr.data-state]="item.state"
-        [hideBaseOnDrag]="true"
-        [ghostImageClass]="'drag-ghost-class'">
+        #done
+        igxDrop 
+        class="state-container"
+        [attr.data-state]="'Done'"
+        (onEnter)="onStateContainerEnter($event)"
+        (onLeave)="onStateContainerLeave($event)"
+        (onDrop)="onItemDropped($event)">
+        <h4 class="state-title">Done <span>{{doneList.length}}</span></h4>
+        <div *ngFor="let item of doneList"
+            igxDrag
+            igxDrop
+            (dragStart)="dragStartHandler($event)"
+            (onEnter)="onItemEnter($event)"
+            (onLeave)="onItemLeave($event)"
+            class="item-container" 
+            id="{{item.id}}" 
+            [attr.data-state]="item.state"
+            [hideBaseOnDrag]="true"
+            [ghostImageClass]="'drag-ghost-class'">
             <div class="item">
                 <div class="title">{{item.text}}</div>
                 <div class="id">{{item.id}}</div>

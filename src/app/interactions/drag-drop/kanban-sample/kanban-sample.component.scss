@@ -26,7 +26,9 @@ li {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-
+.notVisible {
+    visibility: hidden !important;
+}
 .state-container {
     display: flex;
     flex-direction: column;

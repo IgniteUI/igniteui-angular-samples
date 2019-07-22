@@ -1,4 +1,4 @@
-import { Component, Renderer2, ViewChild, ElementRef } from "@angular/core";
+import { Component, Renderer2, ViewChild, ElementRef, ChangeDetectorRef } from "@angular/core";
 import { IgxDropEventArgs } from "igniteui-angular";
 enum state {
     toDo = "toDo",
@@ -24,9 +24,9 @@ export class KanbanSampleComponent {
     public doneList = [
         { id: "STR-000129", text: "Add SSL to account pages", state: state.done }
     ];
-    public dragObj = null;
-    public lastDragList: string = "";
-    public dragStartList: string = "";
+    private dragObj = null;
+    private dragStartList: string = "";
+    public dummyObj = null;
     
     @ViewChild("toDo", {static: false})
     private toDo: ElementRef;
@@ -34,7 +34,7 @@ export class KanbanSampleComponent {
     @ViewChild("inProgress", {static: false})
     private inProgress: ElementRef;
 
-    constructor(private renderer: Renderer2) { }
+    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
 
     onStateContainerEnter(event: IgxDropEventArgs) {
         // Add the blue container hightlight when an item starts being dragged
@@ -62,26 +62,31 @@ export class KanbanSampleComponent {
         // applying the container highlighting again
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.addClass(this[listContainer].nativeElement, "dragHovered");
-        
-        // checking if the entered item is in the same list as the one being dragged
         const currentList = event.owner.element.nativeElement.dataset.state + "List";
+        // checking if the entered item is in the same list as the one being dragged
         if (this.dragStartList === listContainer + "List") {
             const draggedItemIndex = this[this.dragStartList].findIndex((item) => {
                 return item.id === this.dragObj.id;
             });
-            const dropItemIndex = this[currentList].findIndex((item) => {
+            const currentItemIndex = this[currentList].findIndex((item) => {
                 return item.id === event.owner.element.nativeElement.id;
             });
-            this.swapTiles(draggedItemIndex, dropItemIndex, this.dragStartList);
+            this.swapTiles(draggedItemIndex, currentItemIndex, this.dragStartList);
         } else {
             // const draggedItemIndex = this[this.dragStartList].findIndex((item) => {
             //     return item.id === this.dragObj.id;
             // });
-            // const dropItemIndex = this[currentList].findIndex((item) => {
-            //     return item.id === event.owner.element.nativeElement.id;
-            // });
-
-            // this.swapTiles(draggedItemIndex, dropItemIndex, this.dragStartList);
+            if(!this.dummyObj) {
+                const currentItemIndex = this[currentList].findIndex((item) => {
+                    return item.id === event.owner.element.nativeElement.id;
+                });
+                this.dummyObj = {id: "dummy", text: "", state: event.owner.element.nativeElement.dataset.state};
+                const newCurrentList = [...this[currentList].slice(0, currentItemIndex), this.dummyObj, ...this[currentList].slice(currentItemIndex)]
+                this[currentList] = newCurrentList;
+                console.log(this[currentList]);
+                this.cdr.detectChanges();
+            }
+            //this.swapTiles(draggedItemIndex, dropItemIndex, this.dragStartList);
         }
     };
     onItemLeave(event) {
