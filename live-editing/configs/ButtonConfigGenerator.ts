@@ -9,6 +9,9 @@ import {
 import {
     ButtonsSample1Component
 } from "../../src/app/data-entries/buttons/buttons-sample-1/buttons-sample-1.component";
+import {
+    ButtonsStyleComponent
+} from "../../src/app/data-entries/buttons/buttons-style/buttons-style.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -46,6 +49,18 @@ export class ButtonConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule,
                     ButtonsDisplayDensityComponent],
                 ngDeclarations: [ButtonsDisplayDensityComponent],
+                ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule]
+            }),
+            shortenComponentPathBy: "/data-entries/buttons/"
+        }));
+
+        // button style
+        configs.push(new Config({
+            component: ButtonsStyleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule,
+                    ButtonsStyleComponent],
+                ngDeclarations: [ButtonsStyleComponent],
                 ngImports: [IgxButtonModule, IgxIconModule, IgxRippleModule, IgxButtonGroupModule]
             }),
             shortenComponentPathBy: "/data-entries/buttons/"
