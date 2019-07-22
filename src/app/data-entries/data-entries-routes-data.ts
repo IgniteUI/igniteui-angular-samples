@@ -21,6 +21,7 @@ export const dataEntriesRoutesData = {
     "buttons-roundness-sample": { displayName: "Roundness Button", parentName: "Buttons" },
     "checkbox-sample-1": { displayName: "Simple Checkbox", parentName: "Checkbox" },
     "checkbox-sample-2": { displayName: "Multiple Checkboxes", parentName: "Checkbox" },
+    "checkbox-styling": { displayName: "Checkbox Styling", parentName: "Checkbox" },
     "dropdown-remote": { displayName: "Virtual Dropdown - Remote Data", parentName: "Dropdown" },
     "dropdown-virtual": { displayName: "Virtual Dropdown", parentName: "Dropdown" },
     "dropdown-menu": { displayName: "Dropdown as Menu", parentName: "Dropdown" },
@@ -28,6 +29,7 @@ export const dataEntriesRoutesData = {
     "dropdown-sample-2": { displayName: "Dropdown Selection", parentName: "Dropdown" },
     "dropdown-sample-3": { displayName: "Dropdown Headers", parentName: "Dropdown" },
     "dropdown-sample-5": { displayName: "Dropdown Groups", parentName: "Dropdown" },
+    "dropdown-styling": { displayName: "Dropdown Styling", parentName: "Dropdown" },
     "dropdown-sample-4": { displayName: "Input Dropdown Selection", parentName: "Dropdown" },
     "input-group-sample-1": { displayName: "Simple Input Group", parentName: "Input Group" },
     "input-group-sample-2": { displayName: "Input Required", parentName: "Input Group" },
@@ -35,6 +37,7 @@ export const dataEntriesRoutesData = {
     "input-group-sample-4": { displayName: "Input Group Hint", parentName: "Input Group" },
     "input-group-sample-5": { displayName: "Input Group Styling", parentName: "Input Group" },
     "input-group-sample-6": { displayName: "Input Group Full Form", parentName: "Input Group" },
+    "input-group-style": { displayName: "Input Group Style", parentName: "Input Group" },
     "reactive-forms": { displayName: "Reactive Forms Overview", parentName: "Reactive Forms" },
     "radio-sample-1": { displayName: "Simple Radio Buttons", parentName: "Radio" },
     "radio-sample-2": { displayName: "Radio Button Binding", parentName: "Radio" },
@@ -44,5 +47,6 @@ export const dataEntriesRoutesData = {
     "select-sample-1": { displayName: "Simple Select", parentName: "Select" },
     "select-sample-2": { displayName: "Select With Groups", parentName: "Select" },
     "select-sample-3": { displayName: "Select With Forms", parentName: "Select" },
-    "select-sample-4": { displayName: "Custom Overlay Settings", parentName: "Select" }
+    "select-sample-4": { displayName: "Custom Overlay Settings", parentName: "Select" },
+    "select-styling": { displayName: "Select Styling", parentName: "Select" }
 };

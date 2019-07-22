@@ -15,6 +15,7 @@ import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
@@ -28,6 +29,7 @@ import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
+import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -48,6 +50,7 @@ import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { PlanetComponent } from "./grid-row-drag/planet/planet.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -70,6 +73,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
@@ -101,6 +105,8 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         ResizingSampleComponent,
         GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
+        GridRowEditStyleComponent,
+        GridEditingStyleSample,
         FinancialSampleComponent,
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
@@ -135,9 +141,11 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         ContextmenuComponent,
         CustomGridPagingStyleSample,
         GridRowReorderComponent,
+        GridColumnHidingToolbarStyleComponent,
         GridMultiColumnHeaderTemplateComponent,
         GridClipboardSampleComponent,
-        GridToolbarStyleComponent
+        GridToolbarStyleComponent,
+        GridGroupByPagingSampleComponent
     ],
     imports: [
         CommonModule,
