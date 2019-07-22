@@ -18,6 +18,15 @@ $dark-grid-column-moving-theme: igx-grid-theme(
 :host {
     ::ng-deep {
         @include igx-grid($dark-grid-column-moving-theme);
+        .igx-grid__th--pinned  {
+            .pin-icon {
+                color: #444;
+        
+                &:hover {
+                    color: #999
+                }
+            }
+        }
     }
 }
 
@@ -47,16 +56,6 @@ $dark-grid-column-moving-theme: igx-grid-theme(
 
     &:hover {
         color: #444
-    }
-}
-
-.igx-grid__th--pinned  {
-    .pin-icon {
-        color: #444;
-
-        &:hover {
-            color: #999
-        }
     }
 }
 
