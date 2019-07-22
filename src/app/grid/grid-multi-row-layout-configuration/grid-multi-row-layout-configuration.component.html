@@ -42,7 +42,7 @@
 
         <div #layoutContainer class="layoutContainer" (scroll)="onContainerScroll()">
             <span>Click on a cell to resize it left/right/down or delete it:</span>
-            <div style="width: fit-content; text-align:center; margin-bottom: 15px; margin: auto;">
+            <div style="display: table; text-align:center; margin-bottom: 15px; margin: auto;">
                 <div class="igx-grid__thead-wrapper igx-grid__tr--mrl" style="display: flex;">
                     <div class="rowLayoutView igx-grid__mrl-block" *ngFor="let block of blocks; index as blockIndex"
                         [ngStyle]="{
@@ -95,8 +95,8 @@
         <div  style="width: 100%; margin-bottom: 15px; text-align:center; min-height: 50px;" >
             <span>Drag a column into a layout cell to apply:</span>
             <igx-chips-area style="margin: auto; justify-content: center;">
-                <igx-chip igxDrag #chip *ngFor="let col of columnsList; let colIndex = index" [style.margin]="'5px'" [data]="col" [draggable]="true" [animateOnRelease]="false"
-                      (dragGhostCreated)="onChipMoved($event)" (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
+                <igx-chip #chip *ngFor="let col of columnsList; let colIndex = index" [style.margin]="'5px'" [data]="col" [draggable]="true" [animateOnRelease]="false"
+                       (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
                     {{col.key}}
                     <div class="material-icons igx-icon"
                         [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
