@@ -7,12 +7,12 @@ enum TYPE {
     MULTI = "multiple"
 }
 @Component({
-    selector: "grid-sample",
-    styleUrls: ["./grid-sorting-sample.component.scss"],
-    templateUrl: "grid-sorting-sample.component.html"
+    selector: "grid-sorting-styling",
+    styleUrls: ["./grid-sorting-styling.component.scss"],
+    templateUrl: "grid-sorting-styling.component.html"
 })
 
-export class SortingSampleComponent implements OnInit {
+export class SortingStylingComponent implements OnInit {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
