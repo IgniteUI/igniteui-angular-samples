@@ -2,7 +2,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxCardModule, IgxChipsModule, IgxCsvExporterService, IgxExcelExporterService, IgxExpansionPanelModule, IgxGridModule, IgxIconModule, IgxListModule, IgxTimePickerModule, IgxTransactionService, IgxTreeGridModule } from "igniteui-angular";
+import { IgxCardModule, IgxCsvExporterService, IgxExcelExporterService, IgxGridModule, IgxIconModule, IgxListModule, IgxTimePickerModule, IgxTransactionService, IgxTreeGridModule } from "igniteui-angular";
 import { CsvExportSample1Component } from "./export-csv/csv-export-sample-1/csv-export-sample-1.component";
 import { TreeGridCsvExportSample1Component } from "./export-csv/csv-export-tree-grid-sample/csv-export-tree-grid-sample.component";
 import { CsvExportComponent } from "./export-csv/csv-export.component";
@@ -40,8 +40,6 @@ import { TransactionBaseComponent } from "./transaction/transaction-base/transac
         IgxTreeGridModule,
         IgxListModule,
         IgxCardModule,
-        IgxChipsModule,
-        IgxExpansionPanelModule,
         IgxIconModule
     ],
     providers: [
