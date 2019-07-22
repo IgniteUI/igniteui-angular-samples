@@ -3,7 +3,6 @@ import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
 import { DATA } from "../grid-sample-selection/financialData";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-grid-moving-styled-sample",
     styleUrls: ["./grid-moving-styled-sample.component.scss"],
     templateUrl: "./grid-moving-styled-sample.component.html"

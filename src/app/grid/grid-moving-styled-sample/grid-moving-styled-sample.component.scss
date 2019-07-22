@@ -7,7 +7,6 @@ $yellow-color: #F4D45C;
 $black-color: #575757;
 
 $dark-palette: igx-palette($primary: $yellow-color, $secondary: $black-color);
-
 $dark-grid-column-moving-theme: igx-grid-theme(
     $palette: $dark-palette,
     $ghost-header-text-color: igx-color($dark-palette, "primary", 400),
@@ -15,9 +14,29 @@ $dark-grid-column-moving-theme: igx-grid-theme(
     $ghost-header-icon-color:  igx-color($dark-palette, "primary", 500)
 );
 
-.grid__wrapper {
-  padding: 5px 1px;
-  @include igx-grid($dark-grid-column-moving-theme);
+:host {
+    ::ng-deep{ 
+        .igx-grid__th--pinned  {
+            .pin-icon {
+                color: #444;
+        
+                &:hover {
+                    color: #999
+                }
+            }
+        }
+
+        .grid__wrapper {
+            padding: 5px 1px;
+            @include igx-grid($dark-grid-column-moving-theme);
+          }
+    }
+}
+  
+.title-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cellAlignSyle {
@@ -32,9 +51,6 @@ $dark-grid-column-moving-theme: igx-grid-theme(
 }
 .down {
     color: red;
-}
-.grid__wrapper {
-  padding: 5px 1px;
 }
 
 .currency-badge-container {
@@ -57,20 +73,4 @@ $dark-grid-column-moving-theme: igx-grid-theme(
     &:hover {
         color: #444
     }
-}
-
-.igx-grid__th--pinned  {
-    .pin-icon {
-        color: #444;
-
-        &:hover {
-            color: #999
-        }
-    }
-}
-
-.title-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
