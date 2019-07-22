@@ -5,7 +5,6 @@ import { LOCATIONS } from "./locations";
 import { Product } from "./product";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-grid-editing-sample",
     styleUrls: ["./grid-editing-sample.component.scss"],
     templateUrl: "./grid-editing-sample.component.html"
