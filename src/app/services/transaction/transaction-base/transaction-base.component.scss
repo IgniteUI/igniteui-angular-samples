@@ -1,33 +1,55 @@
-.options {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
-  padding: 24px;
-  margin: auto;
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+$palette: igx-palette(red, white);
+$err-color: rgba(igx-color($palette, "error"), 0.205);
+
+:host ::ng-deep {
+  .deleted {
+    .igx-list__item-content {
+      background: $err-color;
+      text-decoration: line-through;
+    }
+  }
 }
 
-.options-wrap {
+.edited {
+  font-style: italic;
+}
+
+.interactions {
+  padding: 15px;
+  max-width: 500px;
   display: flex;
   flex-flow: column;
-  max-width: 500px;
 }
 
-.chip-content {
-  display: flex;
-}
-
-.data-lists {
-  max-width: 500px;
-  padding: 30px;
+.buttons {
+  padding-top: 15px;
   display: flex;
   flex-flow: row;
+  justify-content: space-between;
 }
 
-.static-list,
-.dynamic-list,
-.title {
-  margin: auto;
+igx-icon {
+  cursor: pointer;
 }
 
-.chip-area {
-  margin: auto;
-  padding: 15px;
+.output {
+  padding-left: 15px;
+  max-width: 600px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.data {
+  padding-top: 50px;
+  flex-flow: column;
+  justify-content: flex-end;
+}
+
+.item-content {
+  padding-left: 30px;
+  display: flex;
+  flex-flow: column;
 }

@@ -13,6 +13,9 @@ export class TransactionBaseComponent {
     public deleteDisabled: boolean;
     public editDisabled: boolean;
 
+    public applyDelete: boolean;
+    public applyEdit: boolean;
+
     // inject the transaction service
     constructor(public transactions: IgxTransactionService<Transaction, State>) {
         this.wishlist = WISHLIST;
@@ -32,7 +35,7 @@ export class TransactionBaseComponent {
     /**
      * Create an 'ADD' transaction.
      */
-    public onAdd(event): void {
+    public onAdd(): void {
         // the item that will be added, it could be anything
         // it must have a unique 'id' property
         // in an ADD transaction you do not need to provide a 'recordRef' property,
@@ -47,43 +50,45 @@ export class TransactionBaseComponent {
     /**
      * Create an 'UPDATE' transaction.
      */
-    public onEdit(event): void {
+    public onEdit(): void {
         const newPrice = "999$";
         // there can be multiple UPDATE transactions with the same id
         // the 'newValue' property should hold only the changes that we would like to implement
         this.transactions.add({
-            id: this.wishlist[1].id,
+            id: this.wishlist[0].id,
             type: TransactionType.UPDATE,
             newValue: { price: newPrice }
         },
-            this.wishlist[1]);
+            this.wishlist[0]);
 
         /** visualization */
         this.editDisabled = true;
+        this.applyEdit = true;
     }
 
     /**
      * Create a 'DELETE' transaction.
      */
-    public onDelete(event): void {
+    public onDelete(): void {
         // there cannot be two or more DELETE transactions with the same id
         // the 'newValue' property should be set to null since we do not change any values,
         // we just delete the entire record
         this.transactions.add({
-            id: this.wishlist[0].id,
+            id: this.wishlist[1].id,
             type: TransactionType.DELETE,
             newValue: null
         },
-            this.wishlist[0]);
+            this.wishlist[1]);
 
         /** visualization */
         this.deleteDisabled = true;
+        this.applyDelete = true;
     }
 
     /**
      * Clear all pending transactions.
      */
-    public onClear(event): void {
+    public onClear(): void {
         /** visualization  */
         this.reset();
         /** */
@@ -94,9 +99,13 @@ export class TransactionBaseComponent {
     /**
      * Commit all pending transactions.
      */
-    public onCommit(event): void {
+    public onCommit(): void {
         // the commit function expects the dataset as its parameter
         this.transactions.commit(this.wishlist);
+
+        /** visualization */
+        this.applyDelete = false;
+        this.applyEdit = false;
     }
 
     /*
@@ -104,65 +113,13 @@ export class TransactionBaseComponent {
      */
 
     /**
-     * Apply a color to a specific item.
-     */
-    public applyColor(item?: WishlistItem): string {
-        // get all pending sttes
-        const states = this.transactions.getAggregatedChanges(true);
-        if (states.length === 0) {
-            return null;
-        }
-        // iterate over the pending states
-        for (const transaction of states) {
-            if (transaction.newValue.id === item.id) {
-                // get the color that corresponds to the state's type
-                return this.getColor(transaction);
-            }
-        }
-
-        return null;
-    }
-
-    /**
      * Map the items in the transaction log with the items in the wishlist.
      */
-    public getTransactionLog() {
+    public getTransactionLog(): any {
         return this.transactions.getTransactionLog().map(transaction => {
             const item = this.wishlist.find(i => i.id === transaction.id);
             return Object.assign({ type: transaction.type }, item, transaction.newValue);
         });
-    }
-
-    /**
-     * Depending on the type of transaction return a color.
-     */
-    public getColor(transaction: Transaction): string {
-        switch (transaction.type) {
-            case TransactionType.ADD:
-                return "green";
-            case TransactionType.DELETE:
-                return "red";
-            case TransactionType.UPDATE:
-                return "blue";
-            default:
-                return null;
-        }
-    }
-
-    /**
-     * Depending on the type of transaction return a material-based icon.
-     */
-    public setIcon(transaction: Transaction): string {
-        switch (transaction.type) {
-            case TransactionType.ADD:
-                return "check";
-            case TransactionType.DELETE:
-                return "delete";
-            case TransactionType.UPDATE:
-                return "edit";
-            default:
-                return null;
-        }
     }
 
     /**
@@ -183,5 +140,8 @@ export class TransactionBaseComponent {
                     break;
             }
         }
+
+        this.applyDelete = false;
+        this.applyEdit = false;
     }
 }
