@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular";
-import { DATA } from "./data";
+import { DATA } from "../../data/customers";
 
 @Component({
     selector: "grid-resizing-sample",
