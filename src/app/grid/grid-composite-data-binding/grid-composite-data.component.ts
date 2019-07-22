@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {DATA} from "./localData";
+import {DATA} from "../../data/customers";
 
 @Component({
     selector: "app-grid-composite-data",

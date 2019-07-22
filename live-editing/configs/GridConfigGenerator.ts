@@ -189,7 +189,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -200,7 +200,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummarySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-groupby-summary-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -283,7 +283,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, IgxRadioModule,
                     IgxColumnHidingModule, GridColumnHidingSampleComponent],
@@ -295,7 +295,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingToolbarSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarSampleComponent],
                 ngDeclarations: [GridColumnHidingToolbarSampleComponent],
@@ -306,7 +306,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingToolbarStyleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-style/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarStyleComponent],
                 ngDeclarations: [GridColumnHidingToolbarStyleComponent],
@@ -467,7 +467,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridEditingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-editing-sample/data.ts",
+            additionalFiles: ["/src/app/grid/grid-editing-sample/locations.ts",
                 "/src/app/grid/grid-editing-sample/product.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
@@ -512,7 +512,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridDisplayDensitySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-displaydensity-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule,
                     IgxGridModule, GridDisplayDensitySampleComponent],
@@ -692,7 +692,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridCompositeDataComponent,
-            additionalFiles: ["/src/app/grid/grid-composite-data-binding/localData.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCompositeDataComponent, IgxGridModule, IgxInputGroupModule],
                 ngDeclarations: [GridCompositeDataComponent],

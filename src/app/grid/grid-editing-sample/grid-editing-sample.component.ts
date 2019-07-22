@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
-import { DATA, LOCATIONS } from "./data";
+import { DATA } from "../../data/nwindData" ;
+import { LOCATIONS } from "./locations";
 import { Product } from "./product";
 
 @Component({
