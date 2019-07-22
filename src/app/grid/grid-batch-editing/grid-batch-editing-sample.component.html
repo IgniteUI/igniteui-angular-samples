@@ -3,7 +3,7 @@
     <app-grid-with-transactions>
         <igx-grid #gridRowEditTransaction [data]="data" [primaryKey]="'ProductID'" width="100%" height="500px"
             [rowEditable]="true" [allowFiltering]="true">
-            <igx-column [pinned]="true" [filterable]="false">
+            <igx-column [pinned]="true" [filterable]="false" [editable]="false">
                 <ng-template igxCell let-cell="cell" let-val>
                     <button igxButton (click)="deleteRow(cell.cellID.rowID)" [disabled]="cell.row.deleted">Delete</button>
                 </ng-template>
