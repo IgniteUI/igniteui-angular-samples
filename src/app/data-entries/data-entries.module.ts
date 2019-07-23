@@ -20,6 +20,7 @@ import { ButtonGroupSample2Component } from "./buttonGroup/button-group-sample-2
 import { ButtonGroupSample3Component } from "./buttonGroup/button-group-sample-3/button-group-sample-3.component";
 import { ButtonGroupSampleComponent } from "./buttonGroup/button-group-sample-4/button-group-sample.component";
 import { ButtonGroupSample5Component } from "./buttonGroup/button-group-sample-5/button-group-sample-5.component";
+import { ButtonGroupStyleComponent } from "./buttonGroup/button-group-style/button-group-style.component";
 import { ButtonsDisplayDensityComponent } from "./buttons/buttons-display-density/buttons-display-density.component";
 import { ButtonsRoundnessComponent } from "./buttons/buttons-roundness-sample/buttons-roundness-sample";
 import { ButtonsSample1Component } from "./buttons/buttons-sample-1/buttons-sample-1.component";
@@ -112,7 +113,8 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         SelectSample4Component,
         SelectStylingComponent,
         ButtonGroupSampleComponent,
-        ButtonsDisplayDensityComponent
+        ButtonsDisplayDensityComponent,
+        ButtonGroupStyleComponent
     ],
     imports: [
         CommonModule,
