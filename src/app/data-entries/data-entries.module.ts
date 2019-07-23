@@ -31,8 +31,10 @@ import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-samp
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
 import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-sample-8.component";
+import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { DataEntriesRoutingModule } from "./data-entries-routing.module";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
 import { DropDownVirtualComponent } from "./dropdown/drop-down-virtual/drop-down-virtual.component";
@@ -83,6 +85,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         ButtonsSample7Component,
         ButtonsSample8Component,
         CheckboxSample1Component,
+        CheckboxStylingComponent,
         CheckboxSample2Component,
         DropDownRemoteComponent,
         DropDownVirtualComponent,
@@ -114,6 +117,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         SelectStylingComponent,
         ButtonGroupSampleComponent,
         ButtonsDisplayDensityComponent,
+        ButtonsStyleComponent,
         ButtonGroupStyleComponent
     ],
     imports: [

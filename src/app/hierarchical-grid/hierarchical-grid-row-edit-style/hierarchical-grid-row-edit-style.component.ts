@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { SINGERS } from "../data";
 
 @Component({
@@ -10,9 +9,6 @@ import { SINGERS } from "../data";
 
 export class HGridRowEditStyleComponent implements OnInit {
     public localdata;
-
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;

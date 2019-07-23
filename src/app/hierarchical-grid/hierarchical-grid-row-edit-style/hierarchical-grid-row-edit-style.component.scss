@@ -1,6 +1,3 @@
-
-@import '~igniteui-angular/lib/core/styles/themes/index';
-
 .photo {
     vertical-align: middle;
     max-height: 62px;
@@ -9,61 +6,44 @@
     margin: 1px
 }
 
-$button-color: igx-color($default-palette, "primary", 400);
-$changes-color: igx-color($default-palette, "primary", 400);
-$banner-color: igx-color($default-palette, "primary", 400);
-$editing-color: igx-contrast($default-palette, "primary", 100);
-$success: igx-color($default-palette, "success", 500);
-$failure: igx-color($default-palette, "error", 500);
+@import '~igniteui-angular/lib/core/styles/themes/index';
 
-$my-success-error-palette: igx-palette($primary: $success, $secondary: $failure);
+$my-light-gray: #e3e3e3;
+
+$my-banner-palette: $purple-palette;
 
 $custom-grid: igx-grid-theme(
-    $cell-editing-background: igx-color($default-palette, "primary", 200)
+    $palette: $purple-palette
 );
 
 
-$input-group: igx-input-group-theme(
-  $filled-text-color: $editing-color,
-  $focused-text-color: $editing-color,
-  $idle-text-color: $editing-color
+.sample-wrapper {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+$banner-theme: igx-banner-theme( 
+    $banner-background: $my-light-gray,
+    $banner-message-color: igx-color($my-banner-palette, "secondary", 600)
 );
 
-$banner-theme: igx-banner-theme(
-    $banner-background: igx-color($default-palette, "primary", 100),
-    $banner-message-color: igx-contrast($default-palette, "primary", 100),
-    $banner-border-color: igx-color($default-palette, "second", 800)
+$button-theme: igx-button-theme(
+  $palette: $purple-palette
 );
 
-$button-theme-success: igx-button-theme(
-    $icon-color: igx-contrast($my-success-error-palette, "primary", 200),
-    $icon-hover-color: igx-contrast($my-success-error-palette, "primary", 600),
-    $icon-focus-color: igx-contrast($my-success-error-palette, "primary", 300),
-    $icon-background: igx-color($my-success-error-palette, "primary", 200),
-    $icon-hover-background: igx-color($my-success-error-palette, "primary", 600),
-    $icon-focus-background: igx-color($my-success-error-palette, "primary", 300)
-);
-$button-theme-failure: igx-button-theme(
-    $icon-color: igx-contrast($my-success-error-palette, "secondary", 200),
-    $icon-hover-color: igx-contrast($my-success-error-palette, "secondary", 600),
-    $icon-focus-color: igx-contrast($my-success-error-palette, "secondary", 300),
-    $icon-background: igx-color($my-success-error-palette, "secondary", 200),
-    $icon-hover-background: igx-color($my-success-error-palette, "secondary", 600),
-    $icon-focus-background: igx-color($my-success-error-palette, "secondary", 300)
+$custom-checkbox: igx-checkbox-theme(
+  $palette: $my-banner-palette
 );
 
-.custom-failure {
-    @include igx-button($button-theme-failure);
-  }
-
-.custom-success {
-    @include igx-button($button-theme-success);
+.custom-buttons {
+    @include igx-button($button-theme);
   }
 
 :host {
-    ::ng-deep {
-            @include igx-grid($custom-grid);
-            @include igx-input-group($input-group);
-            @include igx-banner($banner-theme);
-    }
+  ::ng-deep {
+          @include igx-checkbox($custom-checkbox);
+          @include igx-grid($custom-grid);
+          @include igx-banner($banner-theme);
+
+  }
 }

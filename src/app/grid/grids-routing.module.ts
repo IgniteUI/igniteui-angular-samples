@@ -19,6 +19,7 @@ import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
+import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -49,6 +50,7 @@ import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
+import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
@@ -74,6 +76,11 @@ export const gridsRoutes: Routes = [
         component: GridSample3Component,
         data: gridsRoutesData["grid-summary"],
         path: "grid-summary"
+    },
+    {
+        component: GridGroupByPagingSampleComponent,
+        data: gridsRoutesData["grid-groupby-paging"],
+        path: "grid-groupby-paging"
     },
     {
         component: GridGroupBySampleComponent,
@@ -229,6 +236,11 @@ export const gridsRoutes: Routes = [
         component: SortingSampleComponent,
         data: gridsRoutesData["grid-sorting-sample"],
         path: "grid-sorting-sample"
+    },
+    {
+        component: SortingStylingComponent,
+        data: gridsRoutesData["grid-sorting-styling"],
+        path: "grid-sorting-styling"
     },
     {
         component: GridToolbarSample1Component,

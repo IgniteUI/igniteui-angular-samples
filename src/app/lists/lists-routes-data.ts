@@ -6,6 +6,7 @@ export const listsRoutesData = {
     "combo-styling": { displayName: "Combo Styling", parentName: "Combo" },
     "combo-template": { displayName: "Templating Combo", parentName: "Combo" },
     "cascading-combos": { displayName: "Cascading Combos", parentName: "Combo" },
+    "combo-overlay": { displayName: "Combo Overlay", parentName: "Combo" },
     "list": { displayName: "List Overview", parentName: "List" },
     "list-sample-2": { displayName: "List Item Header", parentName: "List" },
     "list-sample-3": { displayName: "List Item Template", parentName: "List" },

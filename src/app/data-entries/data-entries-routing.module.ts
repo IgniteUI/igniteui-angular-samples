@@ -19,8 +19,10 @@ import { ButtonsSample5Component } from "./buttons/buttons-sample-5/buttons-samp
 import { ButtonsSample6Component } from "./buttons/buttons-sample-6/buttons-sample-6.component";
 import { ButtonsSample7Component } from "./buttons/buttons-sample-7/buttons-sample-7.component";
 import { ButtonsSample8Component } from "./buttons/buttons-sample-8/buttons-sample-8.component";
+import { ButtonsStyleComponent } from "./buttons/buttons-style/buttons-style.component";
 import { CheckboxSample1Component } from "./checkbox/checkbox-sample-1/checkbox-sample-1.component";
 import { CheckboxSample2Component } from "./checkbox/checkbox-sample-2/checkbox-sample-2.component";
+import { CheckboxStylingComponent } from "./checkbox/checkbox-styling/checkbox-styling.component";
 import { dataEntriesRoutesData } from "./data-entries-routes-data";
 import { DropDownRemoteComponent } from "./dropdown/drop-down-remote-virtual/drop-down-remote.component";
 import { DropDownVirtualComponent } from "./dropdown/drop-down-virtual/drop-down-virtual.component";
@@ -147,6 +149,11 @@ export const dataEntriesRoutes: Routes = [
         path: "buttons-roundness-sample"
     },
     {
+        component: ButtonsStyleComponent,
+        data: dataEntriesRoutesData["buttons-style"],
+        path: "buttons-style"
+    },
+    {
         component: CheckboxSample1Component,
         data: dataEntriesRoutesData["checkbox-sample-1"],
         path: "checkbox-sample-1"
@@ -155,6 +162,11 @@ export const dataEntriesRoutes: Routes = [
         component: CheckboxSample2Component,
         data: dataEntriesRoutesData["checkbox-sample-2"],
         path: "checkbox-sample-2"
+    },
+    {
+        component: CheckboxStylingComponent,
+        data: dataEntriesRoutesData["checkbox-styling"],
+        path: "checkbox-styling"
     },
     {
         component: DropdownMenuComponent,
