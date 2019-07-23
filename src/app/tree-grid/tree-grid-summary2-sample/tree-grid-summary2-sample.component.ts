@@ -31,25 +31,7 @@ class AvgSummary extends IgxSummaryOperand {
     }
 }
 
-class SumSummary extends IgxSummaryOperand {
-
-    constructor() {
-        super();
-    }
-
-    public operate(data?: any[]): IgxSummaryResult[] {
-        const result = [];
-        result.push({
-            key: "sum",
-            label: "Sum",
-            summaryResult: IgxNumberSummaryOperand.sum(data)
-        });
-        return result;
-    }
-}
-
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-tree-grid-summary2-sample",
     styleUrls: ["./tree-grid-summary2-sample.component.scss"],
     templateUrl: "./tree-grid-summary2-sample.component.html"
@@ -62,13 +44,10 @@ export class TreeGridSummary2SampleComponent implements OnInit {
 
     public expr: ISortingExpression[];
     public avgSummary = AvgSummary;
-    public sumSummary = SumSummary;
     public summaryPositions;
     public summaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
     public summaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
-
-    public priceSummary = CustomPriceSummary;
 
     constructor() {
         this.data = FOODS_DATA();
@@ -133,26 +112,7 @@ export class TreeGridSummary2SampleComponent implements OnInit {
         this.grid1.summaryCalculationMode = this.summaryCalculationMode;
     }
 
-    public toggleSummary(column: IgxColumnComponent) {
-        column.hasSummary = !column.hasSummary;
-    }
-}
-
-export class CustomPriceSummary extends IgxNumberSummaryOperand {
-
-    constructor() {
-        super();
-    }
-
-    public operate(data?: any[]): IgxSummaryResult[] {
-        const result = [];
-        result.push(
-            {
-                key: "average",
-                label: "average",
-                summaryResult: data.length ? IgxNumberSummaryOperand.average(data).toFixed(2) : null
-            }
-        );
-        return result;
+    public formatCurrency(value: number) {
+        return "$" + value.toFixed(2);
     }
 }
