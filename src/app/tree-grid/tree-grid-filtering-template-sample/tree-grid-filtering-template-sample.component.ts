@@ -36,6 +36,11 @@ export class TreeGridFilteringTemplateSampleComponent implements OnInit {
     }
 
     public onInput(input: any, column: IgxColumnComponent) {
+        if (input.value === "") {
+            this.treegrid1.clearFilter(column.field);
+            return;
+        }
+
         let operand = null;
         switch (column.dataType) {
             case DataType.Number:
