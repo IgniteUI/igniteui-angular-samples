@@ -25,8 +25,8 @@ export class KanbanSampleComponent {
         { id: "STR-000129", text: "Add SSL to account pages", state: state.done }
     ];
     private dragObj = null;
-    private dragStartList: string = "";
     private lastDragEnterList: string = "";
+    private currentList = "";
     public dummyObj = null;
     
     @ViewChild("toDo", {static: false})
@@ -34,23 +34,37 @@ export class KanbanSampleComponent {
     
     @ViewChild("inProgress", {static: false})
     private inProgress: ElementRef;
+    
+    @ViewChild("done", {static: false})
+    private done: ElementRef;
 
     constructor(private renderer: Renderer2) { }
 
     onStateContainerEnter(event: IgxDropEventArgs) {
+        // if we have entered another list container, we have to remove the "dummy" object from the previous one
+        if (this.currentList !== event.owner.element.nativeElement.id) {
+            const index = this[this.currentList].findIndex((item) => {
+                return item.id === 'dummy';
+            });
+            if (index !== -1) {
+                this[this.currentList].splice(index, 1)
+            }
+            this.currentList = event.owner.element.nativeElement.id;
+            this.dummyObj = null;
+        };
         // Add the blue container hightlight when an item starts being dragged
         this.renderer.addClass(event.owner.element.nativeElement, "dragHovered");
     }
 
     onStateContainerLeave(event: IgxDropEventArgs) {
-        // This event gets raised when the user drags a task over another task tile as well.
-        // That menas we have to re-apply the "dragHovered" class in the `onItemEnter` event handler
+        // This event also gets raised when the user drags a task over another task tile.
+        // That means we have to re-apply the "dragHovered" class in the `onItemEnter` event handler
         this.renderer.removeClass(event.owner.element.nativeElement,  "dragHovered");
     }
     dragStartHandler(event) {
         // we have to save the dragStartList so we could remove the dragged item from it later, when it gets dropped
+        this.currentList = event.owner.element.nativeElement.dataset.state + "List";
         const currentList = event.owner.element.nativeElement.dataset.state + "List";
-        this.dragStartList = currentList;
         this.lastDragEnterList = currentList;
         this.dragObj = this[currentList].filter((elem) => { return elem.id === event.owner.element.nativeElement.id })[0];
     };
@@ -72,10 +86,10 @@ export class KanbanSampleComponent {
         });
         // checking if items in the same list are being reordered
         if (this.lastDragEnterList === currentList) {
-            const draggedItemIndex = this[this.dragStartList].findIndex((item) => {
+            const draggedItemIndex = this[currentList].findIndex((item) => {
                 return item.id === this.dragObj.id;
             });
-            this.swapTiles(draggedItemIndex, currentItemIndex, this.dragStartList);
+            this.swapTiles(draggedItemIndex, currentItemIndex, currentList);
         } else {
             if(!this.dummyObj) {
                 // we need a dummy object that would be hidden and would make an empty space for the dragged element in the list

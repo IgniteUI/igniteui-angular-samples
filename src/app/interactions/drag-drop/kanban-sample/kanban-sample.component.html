@@ -1,7 +1,8 @@
 <div class="kanban">
     <div 
         #toDo
-        igxDrop 
+        igxDrop
+        id="toDoList"
         class="state-container"
         [attr.data-state]="'ToDo'"
         (onEnter)="onStateContainerEnter($event)"
@@ -31,6 +32,7 @@
     <div 
         #inProgress
         igxDrop 
+        id="inProgressList"
         class="state-container"
         [attr.data-state]="'InProgress'"
         (onEnter)="onStateContainerEnter($event)"
@@ -57,7 +59,8 @@
     </div>
     <div 
         #done
-        igxDrop 
+        igxDrop
+        id="doneList"
         class="state-container"
         [attr.data-state]="'Done'"
         (onEnter)="onStateContainerEnter($event)"
