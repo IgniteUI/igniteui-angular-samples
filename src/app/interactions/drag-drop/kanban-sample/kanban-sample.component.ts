@@ -1,4 +1,4 @@
-import { Component, Renderer2, ViewChild, ElementRef } from "@angular/core";
+import { Component, Renderer2, ViewChild, ElementRef, ChangeDetectorRef } from "@angular/core";
 import { IgxDropEventArgs } from "igniteui-angular";
 enum state {
     toDo = "toDo",
@@ -38,17 +38,15 @@ export class KanbanSampleComponent {
     @ViewChild("done", {static: false})
     private done: ElementRef;
 
-    constructor(private renderer: Renderer2) { }
+    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
 
     onStateContainerEnter(event: IgxDropEventArgs) {
         // if we have entered another list container, we have to remove the "dummy" object from the previous one
         if (this.currentList !== event.owner.element.nativeElement.id) {
-            const index = this[this.currentList].findIndex((item) => {
-                return item.id === 'dummy';
-            });
-            if (index !== -1) {
-                this[this.currentList].splice(index, 1)
-            }
+            this[this.currentList] = this[this.currentList].filter((item) => {
+                return item.id !== "dummy"
+            })
+            this.cdr.detectChanges();
             this.currentList = event.owner.element.nativeElement.id;
             this.dummyObj = null;
         };
@@ -64,15 +62,17 @@ export class KanbanSampleComponent {
     dragStartHandler(event) {
         // we have to save the dragStartList so we could remove the dragged item from it later, when it gets dropped
         this.currentList = event.owner.element.nativeElement.dataset.state + "List";
-        const currentList = event.owner.element.nativeElement.dataset.state + "List";
-        this.lastDragEnterList = currentList;
-        this.dragObj = this[currentList].filter((elem) => { return elem.id === event.owner.element.nativeElement.id })[0];
+        this.lastDragEnterList = this.currentList;
+        this.dragObj = this[this.currentList].filter((elem) => {
+            return elem.id === event.owner.element.nativeElement.id
+        })[0];
     };
 
     private swapTiles(currentIndex: number, targetIndex: number, itemList: string): void {
         const tempObj = this[itemList][currentIndex];
         this[itemList].splice(currentIndex, 1);
         this[itemList].splice(targetIndex, 0, tempObj);
+        this.cdr.detectChanges();
     }
 
     onItemEnter(event) {
@@ -91,11 +91,14 @@ export class KanbanSampleComponent {
             });
             this.swapTiles(draggedItemIndex, currentItemIndex, currentList);
         } else {
+            // we need a dummy object that would be hidden and would make an empty space for the dragged element in the list
             if(!this.dummyObj) {
-                // we need a dummy object that would be hidden and would make an empty space for the dragged element in the list
                 this.dummyObj = {id: "dummy", text: "", state: event.owner.element.nativeElement.dataset.state};
-                const newCurrentList = [...this[currentList].slice(0, currentItemIndex), this.dummyObj, ...this[currentList].slice(currentItemIndex)]
+                const newCurrentList = [...this[currentList].slice(0, currentItemIndex),
+                                            this.dummyObj,
+                                        ...this[currentList].slice(currentItemIndex)];
                 this[currentList] = newCurrentList;
+                this.cdr.detectChanges();
             } else {
                 const dummyObjIndex = this[currentList].findIndex((item) => {
                     return item.id === 'dummy';
@@ -111,9 +114,6 @@ export class KanbanSampleComponent {
 
     onItemDropped(event) {
         //when the tile is dropped, it should be removed from dragStartList and added to the current "drop" list
-        // let currentList = this.findCurrentList(event.owner.element.nativeElement.dataset.state);
-        // this.dragObj.state = event.owner.element.nativeElement.dataset.state;
-        // this[currentList].push(this.dragObj);
         this.dragObj = null;
         event.cancel = true;
         event.drag.dropFinished();
