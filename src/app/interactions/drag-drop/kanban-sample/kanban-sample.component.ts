@@ -1,4 +1,4 @@
-import { Component, Renderer2, ViewChild, ElementRef, ChangeDetectorRef } from "@angular/core";
+import { Component, Renderer2, ViewChild, ElementRef } from "@angular/core";
 import { IgxDropEventArgs } from "igniteui-angular";
 enum state {
     toDo = "toDo",
@@ -26,6 +26,7 @@ export class KanbanSampleComponent {
     ];
     private dragObj = null;
     private dragStartList: string = "";
+    private lastDragEnterList: string = "";
     public dummyObj = null;
     
     @ViewChild("toDo", {static: false})
@@ -34,7 +35,7 @@ export class KanbanSampleComponent {
     @ViewChild("inProgress", {static: false})
     private inProgress: ElementRef;
 
-    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
+    constructor(private renderer: Renderer2) { }
 
     onStateContainerEnter(event: IgxDropEventArgs) {
         // Add the blue container hightlight when an item starts being dragged
@@ -50,6 +51,7 @@ export class KanbanSampleComponent {
         // we have to save the dragStartList so we could remove the dragged item from it later, when it gets dropped
         const currentList = event.owner.element.nativeElement.dataset.state + "List";
         this.dragStartList = currentList;
+        this.lastDragEnterList = currentList;
         this.dragObj = this[currentList].filter((elem) => { return elem.id === event.owner.element.nativeElement.id })[0];
     };
 
@@ -58,35 +60,34 @@ export class KanbanSampleComponent {
         this[itemList].splice(currentIndex, 1);
         this[itemList].splice(targetIndex, 0, tempObj);
     }
+
     onItemEnter(event) {
         // applying the container highlighting again
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.addClass(this[listContainer].nativeElement, "dragHovered");
+        
         const currentList = event.owner.element.nativeElement.dataset.state + "List";
-        // checking if the entered item is in the same list as the one being dragged
-        if (this.dragStartList === listContainer + "List") {
+        const currentItemIndex = this[currentList].findIndex((item) => {
+            return item.id === event.owner.element.nativeElement.id;
+        });
+        // checking if items in the same list are being reordered
+        if (this.lastDragEnterList === currentList) {
             const draggedItemIndex = this[this.dragStartList].findIndex((item) => {
                 return item.id === this.dragObj.id;
             });
-            const currentItemIndex = this[currentList].findIndex((item) => {
-                return item.id === event.owner.element.nativeElement.id;
-            });
             this.swapTiles(draggedItemIndex, currentItemIndex, this.dragStartList);
         } else {
-            // const draggedItemIndex = this[this.dragStartList].findIndex((item) => {
-            //     return item.id === this.dragObj.id;
-            // });
             if(!this.dummyObj) {
-                const currentItemIndex = this[currentList].findIndex((item) => {
-                    return item.id === event.owner.element.nativeElement.id;
-                });
+                // we need a dummy object that would be hidden and would make an empty space for the dragged element in the list
                 this.dummyObj = {id: "dummy", text: "", state: event.owner.element.nativeElement.dataset.state};
                 const newCurrentList = [...this[currentList].slice(0, currentItemIndex), this.dummyObj, ...this[currentList].slice(currentItemIndex)]
                 this[currentList] = newCurrentList;
-                console.log(this[currentList]);
-                this.cdr.detectChanges();
+            } else {
+                const dummyObjIndex = this[currentList].findIndex((item) => {
+                    return item.id === 'dummy';
+                });
+                this.swapTiles(dummyObjIndex, currentItemIndex, currentList);
             }
-            //this.swapTiles(draggedItemIndex, dropItemIndex, this.dragStartList);
         }
     };
     onItemLeave(event) {
