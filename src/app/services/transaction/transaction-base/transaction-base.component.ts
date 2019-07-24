@@ -51,7 +51,7 @@ export class TransactionBaseComponent {
      * Create an 'UPDATE' transaction.
      */
     public onEdit(): void {
-        const newPrice = "999$";
+        const newPrice = "$999";
         // there can be multiple UPDATE transactions with the same id
         // the 'newValue' property should hold only the changes that we would like to implement
         this.transactions.add({

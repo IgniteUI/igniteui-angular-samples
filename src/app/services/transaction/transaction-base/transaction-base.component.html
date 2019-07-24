@@ -25,7 +25,7 @@
         <div>
             <h5>Transaction Log</h5>
             <div *ngFor="let transaction of this.getTransactionLog()">
-                {{transaction.type.toUpperCase()}} -> {{transaction.name}} Costs: ${{transaction.price}}
+                {{transaction.type.toUpperCase()}} -> {{transaction.name}} Costs: {{transaction.price}}
             </div>
         </div>
         <div>
