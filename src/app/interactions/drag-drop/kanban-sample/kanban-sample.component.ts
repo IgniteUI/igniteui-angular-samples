@@ -1,43 +1,58 @@
-import { ChangeDetectorRef, Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
-import { IgxDropEventArgs } from "igniteui-angular";
+import { ChangeDetectorRef, Component, ElementRef, Renderer2, ViewChild, OnInit } from "@angular/core";
+import { IgxDropEventArgs, IgxDropLeaveEventArgs, IgxDropEnterEventArgs } from "igniteui-angular";
 
 enum state {
     toDo = "toDo",
     inProgress = "inProgress",
     done = "done"
 }
+interface ListItem {
+    id: string,
+    text: string,
+    state: state
+}
 @Component({
     selector: "app-kanban-sample",
     templateUrl: "./kanban-sample.component.html",
     styleUrls: ["./kanban-sample.component.scss"]
 })
-export class KanbanSampleComponent {
-    public toDoList = [
-        { id: "STR-000132", text: "Implement chat bubble", state: state.toDo },
-        { id: "STR-000097", text: "Implement sticky header", state: state.toDo },
-        { id: "STR-000191", text: "Change trial days to credit", state: state.toDo }
-
-    ];
-    public inProgressList = [
-        { id: "STR-000124", text: "Implement fback widget", state: state.inProgress },
-        { id: "STR-000121", text: "Add analytics", state: state.inProgress }
-    ];
-    public doneList = [
-        { id: "STR-000129", text: "Add SSL to account pages", state: state.done }
-    ];
-    private dragObj = null;
-    private dummyObj = null;
-    private lastDragEnterList: string = "";
-    private currentList: string = "";
-
+export class KanbanSampleComponent implements OnInit {
+    public toDoList: ListItem[];
+    public inProgressList: ListItem[];
+    public doneList: ListItem[];
+    private dragObj;
+    private dummyObj;
+    private lastDragEnterList: string;
+    private currentList: string;
+    
     @ViewChild("toDo", {static: false})
     private toDo: ElementRef;
-
+    
     @ViewChild("inProgress", {static: false})
     private inProgress: ElementRef;
-
+    
     @ViewChild("done", {static: false})
     private done: ElementRef;
+    
+    ngOnInit():void {
+        this.toDoList = [
+            { id: "STR-000132", text: "Implement chat bubble", state: state.toDo },
+            { id: "STR-000097", text: "Implement sticky header", state: state.toDo },
+            { id: "STR-000191", text: "Change trial days to credit", state: state.toDo }
+    
+        ];
+        this.inProgressList = [
+            { id: "STR-000124", text: "Implement fback widget", state: state.inProgress },
+            { id: "STR-000121", text: "Add analytics", state: state.inProgress }
+        ];
+        this.doneList = [
+            { id: "STR-000129", text: "Add SSL to account pages", state: state.done }
+        ];
+        this.dragObj = null;
+        this.dummyObj = null;
+        this.lastDragEnterList = "";
+        this.currentList = "";
+    } 
 
     constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
 
@@ -76,7 +91,7 @@ export class KanbanSampleComponent {
         this.cdr.detectChanges();
     }
 
-    private onItemEnter(event) {
+    private onItemEnter(event: IgxDropEnterEventArgs) {
         // Applying the container highlighting again
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.addClass(this[listContainer].nativeElement, "dragHovered");
@@ -110,18 +125,19 @@ export class KanbanSampleComponent {
             }
         }
     }
-    private onItemLeave(event) {
+    private onItemLeave(event: IgxDropLeaveEventArgs) {
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.removeClass(this[listContainer].nativeElement, "dragHovered");
     }
 
-    private onItemDropped(event) {
+    private onItemDropped(event: IgxDropEventArgs) {
         const dropListState = event.owner.element.nativeElement.id;
         const dragListState = event.drag.element.nativeElement.dataset.state + "List";
         const dummyItemIndex = this[dropListState].findIndex((item) => {
-            return item.id === "dummy"
+            return item.id === "dummy";
         });
         if (dropListState !== dragListState) {
+            // The state of the dragged object should be updated before inserting it in the dropped list
             this.dragObj.state = dropListState.substring(0, dropListState.length - 4);
             this[dragListState] = this[dragListState].filter((item) => {
                 return item.id !== this.dragObj.id;
@@ -133,9 +149,8 @@ export class KanbanSampleComponent {
                 this[dropListState].push(this.dragObj);
             }
         }
-        // When the tile is dropped, it should be removed from dragStartList and added to the current "drop" list
         this.dragObj = null;
+        // The default browser drag behavior should be cancelled
         event.cancel = true;
-        //event.drag.dropFinished();
     }
 }
