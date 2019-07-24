@@ -36,7 +36,7 @@ export class KanbanSampleComponent implements OnInit {
 
     constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
 
-    private ngOnInit(): void {
+    public ngOnInit(): void {
         this.toDoList = [
             { id: "STR-000132", text: "Implement chat bubble", state: state.toDo },
             { id: "STR-000097", text: "Implement sticky header", state: state.toDo },
