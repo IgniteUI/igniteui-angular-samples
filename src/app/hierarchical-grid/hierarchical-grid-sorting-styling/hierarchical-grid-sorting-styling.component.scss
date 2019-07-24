@@ -1,0 +1,62 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$custom-theme: igx-grid-theme(
+    $sorted-header-icon-color: #51f942
+);
+
+/*ENHANCED APPROACHES*/
+
+// $black-color: #292826;
+// $green-color: #51f942;
+
+/*PALETTE*/
+
+// $custom-palette: igx-palette(
+//     $primary: $black-color,
+//     $secondary: $green-color
+// );
+
+// $custom-theme: igx-grid-theme(
+//     $sorted-header-icon-color: igx-color($custom-palette, "secondary", 700)
+// );
+
+/*SCHEMAS*/
+
+// $custom-grid-schema: extend($_light-grid,
+//     (
+//         sorted-header-icon-color: (igx-color:('secondary', 700)),
+//         sortable-header-icon-hover-color: (igx-color:('primary', 300))
+//     )
+// );
+
+// $my-custom-schema: extend($light-schema, 
+//     (
+//         igx-grid: $custom-grid-schema
+//     )
+// );
+
+/*THEME*/
+
+// $custom-theme: igx-grid-theme(
+//   $palette: $custom-palette,
+//   $schema: $my-custom-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+  ::ng-deep {
+    @include igx-grid($custom-theme);
+  }
+}
+
+.photo {
+    vertical-align: middle;
+    max-height: 62px;
+}
+
+.cell__inner_2 {
+    margin: 1px
+}

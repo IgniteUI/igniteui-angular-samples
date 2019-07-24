@@ -1,0 +1,29 @@
+// Sample related styling section
+:host {
+    display: flex;
+    padding: 16px;
+}
+
+// Ignite UI for Angular Theming engine related styling
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$my-primary-color: #f5e492;
+$my-secondary-color: #09f;
+
+$my-color-palette: igx-palette(
+    $primary: $my-primary-color,
+    $secondary: $my-secondary-color,
+);
+
+$custom-checkbox-theme: igx-checkbox-theme(
+    $palette: $my-color-palette,
+    $border-radius: 10px,
+    $label-color: $my-secondary-color,
+    $empty-color: $my-secondary-color
+);
+
+:host {
+    ::ng-deep {
+        @include igx-checkbox($custom-checkbox-theme);
+    }
+}

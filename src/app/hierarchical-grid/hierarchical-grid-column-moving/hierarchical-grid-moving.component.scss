@@ -31,12 +31,16 @@
     }
 }
 
-.igx-grid__th--pinned  {
-    .pin-icon {
-        color: #444;
-
-        &:hover {
-            color: #999
+:host{
+    ::ng-deep{
+        .igx-grid__th--pinned  {
+            .pin-icon {
+                color: #444;
+        
+                &:hover {
+                    color: #999
+                }
+            }
         }
     }
 }

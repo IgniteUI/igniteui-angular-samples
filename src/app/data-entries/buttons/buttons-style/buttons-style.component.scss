@@ -1,0 +1,83 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$dark-button: igx-button-theme(
+    $raised-text-color: #FFCD0F, 
+    $raised-hover-text-color: #292826, 
+    $raised-background: #292826,
+    $raised-hover-background: #FFCD0F,
+    $raised-focus-text-color: #292826,
+    $raised-focus-background: #FFCD0F,
+    $raised-border-radius: 10px,
+    $disabled-color: #16130C
+);
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #FFCD0F;
+// $black-color: #292826;
+// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+/*PALETTE and IGX-COLOR*/
+
+// $dark-button: igx-button-theme(
+//     $palette: $dark-palette,
+//     $raised-text-color: igx-color($dark-palette, "secondary", 700),
+//     $raised-hover-text-color: igx-color($dark-palette, "primary", 500),
+//     $raised-background:  igx-color($dark-palette, "primary", 500),
+//     $raised-hover-background: igx-color($dark-palette, "secondary", 500),
+//     $raised-focus-text-color: igx-color($dark-palette, "primary", 500),
+//     $raised-focus-background: igx-color($dark-palette, "secondary", 500),
+//     $disabled-color: #16130C
+// );
+
+/*SCHEMAS*/
+
+// $dark-button-schema: extend($_dark-button,
+//     (
+//         raised-text-color:(
+//             igx-color:("secondary", 700)
+//         ),
+//         raised-hover-text-color:(
+//             igx-color:("primary", 500)
+//         ),
+//         raised-background:(
+//             igx-color:("primary", 500)
+//         ),
+//         raised-hover-background:(
+//             igx-color:("secondary", 500)
+//         ),
+//         raised-focus-text-color:(
+//             igx-color:("primary", 500)
+//         ),
+//         raised-focus-background:(
+//             igx-color:("secondary", 500)
+//         ),
+//         disabled-color: #16130C
+//     )
+// );
+// $custom-dark-schema: extend($dark-schema,(
+//     igx-button: $dark-button-schema
+// ));
+// $dark-button: igx-button-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+     ::ng-deep {
+        @include igx-button($dark-button);
+    }
+}
+
+.buttons-sample {
+    display: flex;
+}
+
+.button-sample {
+    display: flex;
+    margin-right: 15px;
+}

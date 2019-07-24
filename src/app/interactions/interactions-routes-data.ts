@@ -24,6 +24,7 @@ export const interactionsRoutesData = {
     "toggle-sample-3": { displayName: "Toggle Service Provider", parentName: "Toggle" },
     "tooltip-simple": { displayName: "Simple Tooltip", parentName: "Tooltip" },
     "tooltip-rich": { displayName: "Rich Tooltip", parentName: "Tooltip" },
+    "tooltip-style": { displayName: "Tooltip Style", parentName: "Tooltip" },
     "overlay-sample-main-1": { displayName: "Overlay Main Sample 1", parentName: "Overlay" },
     "overlay-sample-main-2": { displayName: "Overlay Main Sample 2", parentName: "Overlay" },
     "overlay-sample-main-3": { displayName: "Overlay Main Sample 3", parentName: "Overlay" },
@@ -32,5 +33,6 @@ export const interactionsRoutesData = {
     "overlay-scroll-sample-1": { displayName: "Overlay Scroll Sample 1", parentName: "Overlay" },
     "overlay-scroll-sample-2": { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
     "drag-drop-sample": { displayName: "Drag and drop sample", parentName: "Drag and Drop" },
-    "kanban-sample": { displayName: "Kanban sample", parentName: "Drag and Drop" }
+    "kanban-sample": { displayName: "Kanban sample", parentName: "Drag and Drop" },
+    "overlay-styling-simple": { displayName: "Overlay Styling", parentName: "Overlay"}
 };
