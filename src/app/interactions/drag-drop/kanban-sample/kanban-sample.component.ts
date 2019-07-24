@@ -1,15 +1,15 @@
-import { ChangeDetectorRef, Component, ElementRef, Renderer2, ViewChild, OnInit } from "@angular/core";
-import { IgxDropEventArgs, IgxDropLeaveEventArgs, IgxDropEnterEventArgs } from "igniteui-angular";
+import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from "@angular/core";
+import { IgxDropEnterEventArgs, IgxDropEventArgs, IgxDropLeaveEventArgs } from "igniteui-angular";
 
 enum state {
     toDo = "toDo",
     inProgress = "inProgress",
     done = "done"
 }
-interface ListItem {
-    id: string,
-    text: string,
-    state: state
+interface IListItem {
+    id: string;
+    text: string;
+    state: state;
 }
 @Component({
     selector: "app-kanban-sample",
@@ -17,29 +17,31 @@ interface ListItem {
     styleUrls: ["./kanban-sample.component.scss"]
 })
 export class KanbanSampleComponent implements OnInit {
-    public toDoList: ListItem[];
-    public inProgressList: ListItem[];
-    public doneList: ListItem[];
+    public toDoList: IListItem[];
+    public inProgressList: IListItem[];
+    public doneList: IListItem[];
     private dragObj;
     private dummyObj;
     private lastDragEnterList: string;
     private currentList: string;
-    
+
     @ViewChild("toDo", {static: false})
     private toDo: ElementRef;
-    
+
     @ViewChild("inProgress", {static: false})
     private inProgress: ElementRef;
-    
+
     @ViewChild("done", {static: false})
     private done: ElementRef;
-    
-    ngOnInit():void {
+
+    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
+
+    private ngOnInit(): void {
         this.toDoList = [
             { id: "STR-000132", text: "Implement chat bubble", state: state.toDo },
             { id: "STR-000097", text: "Implement sticky header", state: state.toDo },
             { id: "STR-000191", text: "Change trial days to credit", state: state.toDo }
-    
+
         ];
         this.inProgressList = [
             { id: "STR-000124", text: "Implement fback widget", state: state.inProgress },
@@ -52,9 +54,7 @@ export class KanbanSampleComponent implements OnInit {
         this.dummyObj = null;
         this.lastDragEnterList = "";
         this.currentList = "";
-    } 
-
-    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
+    }
 
     private onStateContainerEnter(event: IgxDropEventArgs) {
         // If we have entered another list container, we have to remove the "dummy" object from the previous one
@@ -75,6 +75,7 @@ export class KanbanSampleComponent implements OnInit {
         // That means we have to re-apply the "dragHovered" class in the `onItemEnter` event handler
         this.renderer.removeClass(event.owner.element.nativeElement,  "dragHovered");
     }
+
     private dragStartHandler(event) {
         // We have to save the dragStartList so we could remove the dragged item from it later, when it gets dropped
         this.currentList = event.owner.element.nativeElement.dataset.state + "List";
@@ -125,6 +126,7 @@ export class KanbanSampleComponent implements OnInit {
             }
         }
     }
+
     private onItemLeave(event: IgxDropLeaveEventArgs) {
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.removeClass(this[listContainer].nativeElement, "dragHovered");
