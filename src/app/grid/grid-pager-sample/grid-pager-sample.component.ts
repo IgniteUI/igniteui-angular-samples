@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { athletesData } from "../services/data";
 
 @Component({
@@ -8,8 +7,6 @@ import { athletesData } from "../services/data";
     templateUrl: "./grid-pager-sample.component.html"
 })
 export class GridPagerSampleComponent implements OnInit {
-    @ViewChild("grid1", { static: true })
-    public grid1: IgxGridComponent;
     public data: any[];
     public densityOptions: string[];
     public isDropdownHidden = false;
