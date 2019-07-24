@@ -1,4 +1,4 @@
-<div class="interactions">
+<div class="demo">
     <igx-card>
         <igx-list>
             <igx-list-item [isHeader]="true">Wishlist</igx-list-item>
@@ -12,29 +12,26 @@
                 <igx-icon (click)="onEdit()" *ngIf="i === 0 && !editDisabled">edit</igx-icon>
                 <igx-icon (click)="onDelete()" *ngIf="i === 1 && !deleteDisabled">delete</igx-icon>
             </igx-list-item>
-            <button igxButton (click)="onAdd()" [disabled]="addDisabled" class="add">Add New</button>
+            <button igxButton (click)="onAdd()" [disabled]="addDisabled">Add New</button>
         </igx-list>
     </igx-card>
     <div class="buttons">
-        <button igxButton="raised" (click)="onClear()" class="clear" [disabled]="this.getTransactionLog().length === 0">Clear Transactions</button>
-        <button igxButton="raised" (click)="onCommit()" class="commit" [disabled]="this.getTransactionLog().length === 0">Commit Transactions</button>
+        <button igxButton="raised" (click)="onClear()" [disabled]="this.getTransactionLog().length === 0">Clear
+            Transactions</button>
+        <button igxButton="raised" (click)="onCommit()" [disabled]="this.getTransactionLog().length === 0">Commit
+            Transactions</button>
     </div>
-</div>
-<div class="output">
-    <div class="log">
-        <h5 class="title">Transaction Log</h5>
-        <div *ngFor="let transaction of this.getTransactionLog()">
-            Transaction/{{transaction.type.toUpperCase()}} -> {{transaction.name}} Costs: ${{transaction.price}}
-        </div>
-    </div>
-    <div class="data">
-        <div class="item" *ngFor="let item of this.wishlist; let i = index">
-            <div class="item-head">
-                Item{{i + 1}}:
+    <div class="output">
+        <div>
+            <h5>Transaction Log</h5>
+            <div *ngFor="let transaction of this.getTransactionLog()">
+                {{transaction.type.toUpperCase()}} -> {{transaction.name}} Costs: ${{transaction.price}}
             </div>
-            <div class="item-content">
-                <span>{{item.name}}</span>
-                <span>Costs: {{item.price}}</span>
+        </div>
+        <div>
+            <h5>Data Items</h5>
+            <div *ngFor="let item of this.wishlist">
+                <div>{{item.name}} - {{item.price}}</div>
             </div>
         </div>
     </div>

@@ -12,45 +12,28 @@ $err-color: rgba(igx-color($palette, "error"), 0.205);
   }
 }
 
+.demo {
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  max-width: 500px;
+}
+
 .edited {
   font-style: italic;
 }
 
-.interactions {
-  padding: 15px;
-  max-width: 500px;
+.output {
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
+  justify-content: space-between;
 }
 
 .buttons {
   padding-top: 15px;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+  @extend .output;
 }
 
 igx-icon {
   cursor: pointer;
-}
-
-.output {
-  padding-left: 15px;
-  margin-right: 15px;
-  max-width: 600px;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-}
-
-.data {
-  padding-top: 50px;
-  flex-flow: column;
-  justify-content: flex-end;
-}
-
-.item-content {
-  padding-left: 30px;
-  display: flex;
-  flex-flow: column;
 }
