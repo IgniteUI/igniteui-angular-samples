@@ -1,0 +1,30 @@
+.cellAlignSyle {
+    text-align: right;
+    float:right;
+}
+.cellAlignSyle > span {
+    float:right;
+}
+.up {
+    color: green;
+}
+.down {
+    color: red;
+}
+.headerAlignSyle {
+    text-align: right !important;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.currency-badge-container {
+    width: 80px;
+    float: right;
+}
+
+.badge-left {
+    float: left;
+}
