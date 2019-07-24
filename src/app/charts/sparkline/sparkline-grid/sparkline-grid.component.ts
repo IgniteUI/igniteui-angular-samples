@@ -14,9 +14,7 @@ export class LocalService {
         this.records = this._records.asObservable();
     }
 
-    public getData(count: number = 100) {
-        // const fd: FinancialData = new FinancialData();
-        // const data = fd.generateData(count);
+    public getData() {
         const data = Products.getData();
         this._records.next(data);
     }
@@ -35,7 +33,7 @@ export class SparklineGridComponent {
     public data: Observable<any[]>;
 
     constructor(private localService: LocalService) {
-        this.localService.getData(1000);
+        this.localService.getData();
         this.data = this.localService.records;
     }
 

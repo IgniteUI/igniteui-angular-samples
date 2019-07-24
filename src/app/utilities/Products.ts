@@ -41,7 +41,7 @@ export class Products {
                 sales.push({Value: sale, Month: m});
             }
             items.push({
-                Country: this.getCountryFlag(country),
+                CountryFlag: this.getCountryFlag(country),
                 CountryName: country,
                 Margin: margin,
                 // data source for embedded sparklines
