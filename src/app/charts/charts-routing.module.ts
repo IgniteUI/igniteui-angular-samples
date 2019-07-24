@@ -85,6 +85,7 @@ import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 import { PieChartSelectionComponent } from "./pie-chart/pie-chart-selection/pie-chart-selection.component";
 // sparkline-chart samples
 import { SparklineDisplayTypesComponent } from "./sparkline/sparkline-display-types/sparkline-display-types.component";
+import { SparklineGridComponent } from "./sparkline/sparkline-grid/sparkline-grid.component";
 import { SparklineMarkersComponent } from "./sparkline/sparkline-markers/sparkline-markers.component";
 import { SparklineNormalRangeComponent } from "./sparkline/sparkline-normal-range/sparkline-normal-range.component";
 import { SparklineTrendlinesComponent } from "./sparkline/sparkline-trendlines/sparkline-trendlines.component";
@@ -444,6 +445,11 @@ export const chartsRoutes: Routes = [
         component: SparklineDisplayTypesComponent,
         data: chartsRoutesData["sparkline-display-types"],
         path: "sparkline-display-types"
+    },
+    {
+        component: SparklineGridComponent,
+        data: chartsRoutesData["sparkline-grid"],
+        path: "sparkline-grid"
     },
     {
         component: SparklineMarkersComponent,
