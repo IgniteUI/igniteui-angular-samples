@@ -116,9 +116,26 @@ export class KanbanSampleComponent {
     }
 
     private onItemDropped(event) {
+        const dropListState = event.owner.element.nativeElement.id;
+        const dragListState = event.drag.element.nativeElement.dataset.state + "List";
+        const dummyItemIndex = this[dropListState].findIndex((item) => {
+            return item.id === "dummy"
+        });
+        if (dropListState !== dragListState) {
+            this.dragObj.state = dropListState.substring(0, dropListState.length - 4);
+            this[dragListState] = this[dragListState].filter((item) => {
+                return item.id !== this.dragObj.id;
+            });
+            // Check if there is a dummy item and replace it with the dragged one
+            if (dummyItemIndex !== -1) {
+                this[dropListState].splice(dummyItemIndex, 1, this.dragObj);
+            } else {
+                this[dropListState].push(this.dragObj);
+            }
+        }
         // When the tile is dropped, it should be removed from dragStartList and added to the current "drop" list
         this.dragObj = null;
         event.cancel = true;
-        event.drag.dropFinished();
+        //event.drag.dropFinished();
     }
 }
