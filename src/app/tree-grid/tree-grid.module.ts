@@ -12,6 +12,7 @@ import {
     IgxIconModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
     IgxToastModule,
@@ -204,7 +205,8 @@ import {
         IgxDialogModule,
         IgxRadioModule,
         IgxAvatarModule,
-        IgxToastModule
+        IgxToastModule,
+        IgxSelectModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
