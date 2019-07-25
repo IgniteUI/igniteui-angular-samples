@@ -8,8 +8,7 @@
         (onEnter)="onStateContainerEnter($event)"
         (onLeave)="onStateContainerLeave($event)"
         (onDrop)="onItemDropped($event)">        
-        <h4 class="state-title">To Do  
-            <span>{{toDoList.length}}</span>
+        <h4 class="state-title">To Do {{toDoList.length}}
         </h4>
         <div *ngFor="let item of toDoList"
             igxDrag
@@ -39,7 +38,7 @@
         (onEnter)="onStateContainerEnter($event)"
         (onLeave)="onStateContainerLeave($event)"
         (onDrop)="onItemDropped($event)">
-        <h4 class="state-title">In Progress <span>{{inProgressList.length}}</span></h4>
+        <h4 class="state-title">In Progress {{inProgressList.length}}</h4>
         <div *ngFor="let item of inProgressList"
             igxDrag
             igxDrop
@@ -68,7 +67,7 @@
         (onEnter)="onStateContainerEnter($event)"
         (onLeave)="onStateContainerLeave($event)"
         (onDrop)="onItemDropped($event)">
-        <h4 class="state-title">Done <span>{{doneList.length}}</span></h4>
+        <h4 class="state-title">Done {{doneList.length}}</h4>
         <div *ngFor="let item of doneList"
             igxDrag
             igxDrop
