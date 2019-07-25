@@ -1,1 +1,27 @@
-<p>email-sample works!</p>
+<div class="mailbox">
+    <ul class="folders flexlist">
+        <li *ngFor="let folder of folders">
+            <igx-icon fontSet="material">{{folder.icon}}</igx-icon> {{folder.text}}
+        </li>
+    </ul>
+    <div class="emails-container flexlist">
+        <div class="period">
+            Today
+        </div>
+        <ul class="emails">
+            <li *ngFor="let email of emails"
+                [class.email-checked]="email.checked">
+                <div class="email-content flexlist">
+                    <div class="sender">
+                        {{email.sender}} 
+                    </div>
+                    <div class="email-title">
+                        {{email.title}}
+                    </div>
+                </div>
+                <igx-checkbox [(ngModel)]="email.checked">
+                </igx-checkbox>
+            </li>
+        </ul>
+    </div>
+</div>
