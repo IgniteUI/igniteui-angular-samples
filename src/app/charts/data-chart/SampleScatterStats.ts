@@ -336,6 +336,14 @@ export class SampleScatterStats {
         }
         return countries;
     }
+
+    public static abbreviate(value: number): string {
+        const suffixes = ["", "K", "M", "B", "T"];
+        const suffixNum = Math.floor(("" + value).length / 3);
+        const shortValue = parseFloat((suffixNum !== 0 ? (value / Math.pow(1000, suffixNum)) : value).toFixed(1));
+
+        return shortValue + suffixes[suffixNum];
+    }
 }
 
 class Country {
@@ -356,9 +364,19 @@ class Country {
 
         this.population = pop;
         this.gdpPerCapita = gdp;
-        this.gdpTotal = gdp * pop; // / 1000000;
+        this.gdpTotal = gdp * pop;
         this.dptPerCapita = dpt;
         this.phonePer100 = phones;
+    }
+
+    public getPopulation(): string {
+        return SampleScatterStats.abbreviate(this.population);
+    }
+    public getGdpTotal(): string {
+        return SampleScatterStats.abbreviate(this.gdpTotal);
+    }
+    public getGdpPerCapita(): string {
+        return SampleScatterStats.abbreviate(this.gdpPerCapita);
     }
 
     public isValid(): boolean {
