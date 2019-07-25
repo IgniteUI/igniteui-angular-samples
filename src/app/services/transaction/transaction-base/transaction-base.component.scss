@@ -1,26 +1,20 @@
-@import "~igniteui-angular/lib/core/styles/themes/index";
-
-$palette: igx-palette(red, white);
-$err-color: rgba(igx-color($palette, "error"), 0.205);
-
-:host ::ng-deep {
-  .deleted {
-    .igx-list__item-content {
-      background: $err-color;
-      text-decoration: line-through;
-    }
-  }
-}
-
-.demo {
-  padding: 20px;
-  display: flex;
-  flex-flow: column;
-  max-width: 500px;
+.deleted {
+  text-decoration: line-through;
 }
 
 .edited {
   font-style: italic;
+}
+
+igx-icon {
+  cursor: pointer;
+}
+
+:host {
+  padding: 20px;
+  display: block;
+  flex-flow: column;
+  max-width: 500px;
 }
 
 .output {
@@ -32,8 +26,4 @@ $err-color: rgba(igx-color($palette, "error"), 0.205);
 .buttons {
   padding-top: 15px;
   @extend .output;
-}
-
-igx-icon {
-  cursor: pointer;
 }

@@ -7,7 +7,9 @@ import { WishlistItem } from "../data";
     pure: false
 })
 export class TransactionBasePipe implements PipeTransform {
-    // inject the transaction service
+    /**
+     * @param transactions Injected Transaction Service.
+     */
     constructor(public transactions: IgxTransactionService<Transaction, State>) { }
 
     public transform(data: WishlistItem[]) {
