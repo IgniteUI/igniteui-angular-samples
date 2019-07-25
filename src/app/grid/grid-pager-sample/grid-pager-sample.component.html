@@ -22,6 +22,7 @@
     <ng-template #pager>
         <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [(perPage)]="grid.perPage"
             [dropdownHidden]="isDropdownHidden" [pagerHidden]="isPagerHidden" [selectLabel]="'Records per page:'"
+            [dropdownEnabled]="!isDropdownDisabled" [pagerEnabled]="!isPagerDisabled"
             [selectOptions]="selectOptions" [displayDensity]="grid.displayDensity">
         </igx-paginator>
     </ng-template>
@@ -37,5 +38,7 @@
         </div>
         <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
         <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
+        <igx-switch [(ngModel)]="isDropdownDisabled">Disable Dropdown</igx-switch>
+        <igx-switch [(ngModel)]="isPagerDisabled">Disable Pager</igx-switch>
     </div>
 </div>

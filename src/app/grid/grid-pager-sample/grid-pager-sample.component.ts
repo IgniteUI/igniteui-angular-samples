@@ -11,6 +11,8 @@ export class GridPagerSampleComponent implements OnInit {
     public densityOptions: string[];
     public isDropdownHidden = false;
     public isPagerHidden = false;
+    public isDropdownDisabled = false;
+    public isPagerDisabled = false;
     public selectOptions = [5, 15, 20, 50];
 
     public ngOnInit(): void {
