@@ -1,15 +1,15 @@
 <igx-card>
     <igx-list>
         <igx-list-item [isHeader]="true">Wishlist</igx-list-item>
-        <!-- use the transactionBasePipe to applydisplay changes to the items in the wishlist without affecting the original data -->
-        <igx-list-item *ngFor="let item of this.wishlist | transactionBasePipe; let i = index"
-            [ngClass]="{deleted: applyDelete && i === 1, edited: applyEdit && i === 0}">
+        <!-- use the transactionBasePipe to display changes to the items in the wishlist without affecting the original data -->
+        <igx-list-item *ngFor="let item of this.wishlist | transactionBasePipe"
+            [ngClass]="{ deleted: isDeleted(item.id), edited: isEdited(item.id) }">
             <p igxListLineTitle>{{item.name}}</p>
             <p igxListLineSubTitle>Costs: {{item.price}}</p>
-            <igx-icon igxListAction (click)="onEdit()" *ngIf="i === 0 && !editDisabled">edit</igx-icon>
-            <igx-icon igxListAction (click)="onDelete()" *ngIf="i === 1 && !deleteDisabled">delete</igx-icon>
+            <igx-icon igxListAction (click)="onEdit()" *ngIf="item.id === 1 && item.price !== '$999'">edit</igx-icon>
+            <igx-icon igxListAction (click)="onDelete()" *ngIf="item.id === 2 && !isDeleted(item.id)">delete</igx-icon>
         </igx-list-item>
-        <button igxButton (click)="onAdd()" [disabled]="addDisabled">Add New</button>
+        <button igxButton (click)="onAdd()" [disabled]="itemAdded(4)">Add New</button>
     </igx-list>
 </igx-card>
 <div class="buttons">

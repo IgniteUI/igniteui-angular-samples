@@ -16,24 +16,22 @@ export class TransactionBasePipe implements PipeTransform {
         // the pipe should NOT operate on the original dataset
         // we create a copy of the original data and then use it for visualization only
         const _data = [...data];
-        const states = this.transactions.getAggregatedChanges(false);
-        // iterate over all pending states
-        for (const state of states) {
-            // depending on the type of state either:
+        const pendingStates = this.transactions.getAggregatedChanges(false);
+
+        for (const state of pendingStates) {
             switch (state.type) {
                 case TransactionType.ADD:
-                    // push the newValue property of the current ADD state
+                    // push the newValue property of the current `ADD` state
                     _data.push(state.newValue);
                     break;
-                // the pipe should not change the data directly, rathen than
-                // it should simply modify it in some way and then return it
-                // thus, we do not directly operate on records, we just style them
-                // the record will be deleted once the state is committed
                 case TransactionType.DELETE:
+                    // pipe doesn't delete items because the demo displays them with a different style
+                    // the record will be deleted once the state is committed
                     break;
                 case TransactionType.UPDATE:
-                    const index = _data.findIndex(record => record.id === state.id);
-                    // update the value of the record that corresponds to the index
+                    const index = _data.findIndex(x => x.id === state.id);
+                    // merge changes with the item into a new object
+                    // to avoid modifying the original data item
                     _data[index] = Object.assign({}, _data[index], state.newValue);
                     break;
                 default:

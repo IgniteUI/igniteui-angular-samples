@@ -9,12 +9,6 @@ import { WISHLIST, WishlistItem } from "../data";
 })
 export class TransactionBaseComponent {
     public wishlist: WishlistItem[];
-    public addDisabled: boolean;
-    public deleteDisabled: boolean;
-    public editDisabled: boolean;
-
-    public applyDelete: boolean;
-    public applyEdit: boolean;
 
     /**
      * @param transactions Injected Transaction Service.
@@ -23,78 +17,72 @@ export class TransactionBaseComponent {
         this.wishlist = WISHLIST;
     }
 
-    /*
-     * For each type of action that we want to perform we can add different types of transactions.
+    /** Check item for unsaved deletion */
+    public isDeleted(id): boolean {
+        const state = this.transactions.getState(id);
+        return state && state.type === TransactionType.DELETE;
+    }
+
+    /** Check item for unsaved editing */
+    public isEdited(id): boolean {
+        const state = this.transactions.getState(id);
+        return state && state.type === TransactionType.UPDATE;
+    }
+
+    /*********************************************************************************************
      * The below methods - `onAdd`, `onEdit`, `onDelete` demonstrate the different types of transactions
      * and what kind of data we normally pass to each of them.
      *
-     * Each transaction needs to have `id`, `type` and a `newValue` properties.
-     * `ADD` and `DELETE` transactions must have unique IDs.
-     * There can be multiple `UPDATE` transactions with the same ID,
-     * since there can be multiple consecutive changes on a single data row.
-    */
-
-    /**
-     * Create an `ADD` transaction.
+     * Each transaction has `id`, `type` and `newValue` properties.
      */
-    public onAdd(): void {
-        // the item that will be added, it could be anything
-        // it must have a unique 'id' property
-        // in an `ADD` transaction you do not need to provide a `recordRef` property,
-        // since there is nothing to refer to yet
-        const item: WishlistItem = { id: 4, name: "Yacht", price: "A lot!" };
-        this.transactions.add({ id: 4, type: TransactionType.ADD, newValue: item });
-
-        /** visualization */
-        this.addDisabled = true;
-    }
 
     /**
      * Create an `UPDATE` transaction.
      */
     public onEdit(): void {
         const newPrice = "$999";
-        // there can be multiple `UPDATE` transactions with the same `id`
-        // the `newValue` property should hold only the changes that we would like to implement
-        this.transactions.add({
+        // there can be multiple `UPDATE` transactions for the same item `id`
+        // the `newValue` property should hold only the changed properties
+        const editTransaction: Transaction = {
             id: this.wishlist[0].id,
             type: TransactionType.UPDATE,
             newValue: { price: newPrice }
-        },
-            this.wishlist[0]);
+        };
+        // provide the first wishlist item as a `recordRef` argument
+        this.transactions.add(editTransaction, this.wishlist[0]);
+    }
 
-        /** visualization */
-        this.editDisabled = true;
-        this.applyEdit = true;
+    /**
+     * Create an `ADD` transaction.
+     */
+    public onAdd(): void {
+        // it must have a unique 'id' property
+        const item: WishlistItem = { id: 4, name: "Yacht", price: "A lot!" };
+
+        // in an `ADD` transaction you do not need to provide a `recordRef` argument,
+        // since there is nothing to refer to yet
+        this.transactions.add({ id: 4, type: TransactionType.ADD, newValue: item });
     }
 
     /**
      * Create a `DELETE` transaction.
      */
     public onDelete(): void {
-        // there cannot be more than one `DELETE` transactions with the same `id`
+        // after a `DELETE` transaction, no further changes should be made for the same `id`
         // the `newValue` property should be set to `null` since we do not change any values,
-        // we just delete the entire record
-        this.transactions.add({
+        const deleteTransaction: Transaction = {
             id: this.wishlist[1].id,
             type: TransactionType.DELETE,
             newValue: null
-        },
-            this.wishlist[1]);
-
-        /** visualization */
-        this.deleteDisabled = true;
-        this.applyDelete = true;
+        };
+        // provide the second wishlist item as a `recordRef` argument
+        this.transactions.add(deleteTransaction, this.wishlist[1]);
     }
 
     /**
      * Clear all pending transactions.
      */
     public onClear(): void {
-        /** visualization  */
-        this.reset();
-        /** */
-
         this.transactions.clear();
     }
 
@@ -102,48 +90,25 @@ export class TransactionBaseComponent {
      * Commit all pending transactions.
      */
     public onCommit(): void {
-        // the `commit` function expects the dataset as its parameter
+        // the `commit` function expects the original data array as its parameter
         this.transactions.commit(this.wishlist);
-
-        /** visualization */
-        this.applyDelete = false;
-        this.applyEdit = false;
     }
 
     /*********************************************************************************************
      * The below methods are used for visualization purposes.
      */
 
-    /**
-     * Map the items in the transaction log with the items in the wishlist.
-     */
-    public getTransactionLog(): Transaction[] {
-        return this.transactions.getTransactionLog().map(transaction => {
-            const item = this.wishlist.find(i => i.id === transaction.id);
-            return Object.assign({ type: transaction.type }, item, transaction.newValue);
-        });
+    /** Check if item with ID has been added (even unsaved) */
+    public itemAdded(id: number): boolean {
+        const found = this.transactions.getState(id) || this.wishlist.find(x => x.id === 4);
+        return !!found;
     }
 
-    /**
-     * Reset all local parameters.
-     */
-    private reset(): void {
-        const log = this.transactions.getTransactionLog();
-        for (const transaction of log) {
-            switch (transaction.type) {
-                case TransactionType.ADD:
-                    this.addDisabled = false;
-                    break;
-                case TransactionType.DELETE:
-                    this.deleteDisabled = false;
-                    break;
-                case TransactionType.UPDATE:
-                    this.editDisabled = false;
-                    break;
-            }
-        }
-
-        this.applyDelete = false;
-        this.applyEdit = false;
+    /* Get transactions, merge with wishlist data for display purposes */
+    public getTransactionLog(): any[] {
+        return this.transactions.getTransactionLog().map(transaction => {
+            const item = this.wishlist.find(x => x.id === transaction.id);
+            return Object.assign({ type: transaction.type }, item, transaction.newValue);
+        });
     }
 }
