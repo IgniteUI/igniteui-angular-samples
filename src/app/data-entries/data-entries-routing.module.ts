@@ -43,6 +43,7 @@ import { ReactiveFormsSampleComponent } from "./input-group/reactive-forms/react
 import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-group-sample.component";
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
+import { SelectInputDirectivesComponent } from "./select/select-input-directives/select-input-directives";
 import { SelectSample1Component } from "./select/select-sample-1/select-sample-1.component";
 import { SelectSample2Component } from "./select/select-sample-2/select-sample-2.component";
 import { SelectSample3Component } from "./select/select-sample-3/select-sample-3.component";
@@ -296,6 +297,11 @@ export const dataEntriesRoutes: Routes = [
         component: SelectStylingComponent,
         data: dataEntriesRoutesData["select-styling"],
         path: "select-styling"
+    },
+    {
+        component: SelectInputDirectivesComponent,
+        data: dataEntriesRoutesData["select-input-directives"],
+        path: "select-input-directives"
     }
 ];
 
