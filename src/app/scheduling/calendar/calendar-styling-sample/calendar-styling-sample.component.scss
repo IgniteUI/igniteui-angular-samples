@@ -2,10 +2,15 @@
 
 $calendar-header-color: #345779;
 
+.sample-wrapper {
+    overflow-y: auto;
+}
+
 .cal-wrapper {
-    margin: 30px;
+    margin: 20px;
     height: 100%;
-    min-width: 400px;
+    float: left;
+    min-width: 350px;
     max-width: 400px;
     border: 0 solid $calendar-header-color;
     border-radius: 4px;
