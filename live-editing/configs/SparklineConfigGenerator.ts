@@ -5,8 +5,10 @@
 // tslint:disable:prefer-const
 
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { IgxGridModule } from "igniteui-angular";
 
 import { SparklineDisplayTypesComponent } from "../../src/app/charts/sparkline/sparkline-display-types/sparkline-display-types.component";
+import { SparklineGridComponent } from "../../src/app/charts/sparkline/sparkline-grid/sparkline-grid.component";
 import { SparklineMarkersComponent } from "../../src/app/charts/sparkline/sparkline-markers/sparkline-markers.component";
 import { SparklineNormalRangeComponent } from "../../src/app/charts/sparkline/sparkline-normal-range/sparkline-normal-range.component";
 import { SparklineTrendlinesComponent } from "../../src/app/charts/sparkline/sparkline-trendlines/sparkline-trendlines.component";
@@ -49,6 +51,11 @@ export class SparklineConfigGenerator extends BaseConfigGenerator {
             SparklineUnknownValuesComponent,
             [IgxSparklineModule], null,
             ["/src/app/charts/sparkline/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            SparklineGridComponent,
+            [IgxSparklineModule, IgxGridModule], null,
+            ["/src/app/utilities/Products.ts"]));
 
         return configs;
     }

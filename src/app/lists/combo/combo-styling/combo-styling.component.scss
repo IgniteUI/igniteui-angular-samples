@@ -43,10 +43,19 @@ $custom-combo-theme: igx-combo-theme(
     $search-separator-border-color: igx-color($my-color-palette, "secondary", 600)
 );
 
+$custom-checkbox-theme: igx-checkbox-theme(
+    $palette: $my-color-palette,
+    $border-radius: 10px,
+    $label-color: $my-secondary-color,
+    $empty-color: $my-secondary-color
+);
+
 // Pass our custom-drop-down-theme and custom-combo-theme to respectively `igx-drop-down` and igx-combo mixins.
+// Add custom-checkbox-theme to complete the sample look and feel as well
 :host {
    ::ng-deep {
            @include igx-drop-down($custom-drop-down-theme);
            @include igx-combo($custom-combo-theme);
+           @include igx-checkbox($custom-checkbox-theme);
    }
 }
