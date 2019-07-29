@@ -76,9 +76,9 @@ export class SelectConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSelectModule, SelectFormComponent],
+                imports: [IgxSelectModule, SelectFormComponent, IgxInputGroupModule],
                 ngDeclarations: [SelectFormComponent],
-                ngImports: [IgxSelectModule]
+                ngImports: [IgxSelectModule, IgxInputGroupModule]
             }),
             component: SelectFormComponent
         }));
