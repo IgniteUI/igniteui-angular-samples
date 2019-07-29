@@ -17,20 +17,10 @@ $calendar-header-color: #345779;
     box-shadow:  1px 1px 5px 1px #888888;
 }
 
-$blue-color: $calendar-header-color;
-$light-gray-color: #fdfdfd;
-
-/*PALETTE*/
-
-$my-custom-palette: igx-palette(
-    $primary: $blue-color,
-    $secondary: $light-gray-color,
-);
-
 /*BASIC THEMING*/
 
 $my-calendar-theme: igx-calendar-theme(
-  $header-background: igx-color($my-custom-palette, "primary", 500),
+  $header-background: #345779,
   $content-background: #fdfdfd,
   $header-text-color: #ffffff,
   $date-current-text-color: #2dabe8,
@@ -41,10 +31,37 @@ $my-calendar-theme: igx-calendar-theme(
   $month-current-text-color: #2dabe8,
   $month-hover-text-color: #2dabe8,
   $picker-text-color: #2dabe8,
-  $picker-text-hover-color: #000000,
+  $picker-text-hover-color: #000000
 );
 
 /*ENHANCED APPROACHES*/
+
+// $blue-color: $calendar-header-color;
+// $light-gray-color: #fdfdfd;
+
+/*PALETTE*/
+
+// $my-custom-palette: igx-palette(
+//     $primary: $blue-color,
+//     $secondary: $light-gray-color,
+// );
+
+// $my-calendar-theme: igx-calendar-theme(
+//   $header-background: igx-color($my-custom-palette, "primary", 500),
+//   $content-background: igx-color($my-custom-palette, "secondary", 500),
+//   $header-text-color: igx-color($my-custom-palette, "secondary", 50),
+//   $date-current-text-color: igx-color($my-custom-palette, "primary", 50),
+//   $picker-arrow-color: igx-color($my-custom-palette, "primary", 50),
+//   $picker-arrow-hover-color: igx-color($my-custom-palette, "grays", 900),
+//   $year-current-text-color: igx-color($my-custom-palette, "primary", 50),
+//   $year-hover-text-color: igx-color($my-custom-palette, "primary", 50),
+//   $month-current-text-color: igx-color($my-custom-palette, "primary", 50),
+//   $month-hover-text-color: igx-color($my-custom-palette, "primary", 50),
+//   $picker-text-color: igx-color($my-custom-palette, "primary", 50),
+//   $picker-text-hover-color: igx-color($my-custom-palette, "grays", 900),
+//   $date-selected-background: igx-color($my-custom-palette, "primary", 500),
+//   $date-selected-text-color: igx-color($my-custom-palette, "secondary", 500)
+// );
 
 /*SCHEMAS*/
 
@@ -79,6 +96,8 @@ $my-calendar-theme: igx-calendar-theme(
 //   $palette: $my-custom-palette,
 //   $schema: $my-custom-schema
 // );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host{
     ::ng-deep{
