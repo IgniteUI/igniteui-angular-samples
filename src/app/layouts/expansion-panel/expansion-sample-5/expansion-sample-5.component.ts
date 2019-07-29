@@ -14,7 +14,7 @@ export class ExpansionPanelSample5Component {
     public user = {
         email: "",
         fullName: "",
-        phone: ""
+        phone: undefined
     };
 
     public billingAddress = {

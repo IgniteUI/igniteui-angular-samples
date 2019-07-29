@@ -77,6 +77,7 @@ export const chartsRoutesData = {
     "data-chart-value-overlay": { displayName: "Data Chart Value Overlay", parentName: "Data Chart" },
     // sparkline-chart
     "sparkline-display-types": { displayName: "Sparkline Display Types", parentName: "Sparkline"},
+    "sparkline-grid": { displayName: "Sparkline Grid", parentName: "Sparkline"},
     "sparkline-markers": { displayName: "Sparkline Markers", parentName: "Sparkline"},
     "sparkline-normal-range": { displayName: "Sparkline Normal Range", parentName: "Sparkline"},
     "sparkline-trendlines": { displayName: "Sparkline Trendlines", parentName: "Sparkline"},
