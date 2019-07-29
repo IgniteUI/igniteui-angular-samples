@@ -7,9 +7,6 @@ import { IgxSelectComponent } from "igniteui-angular";
     templateUrl: "select-form.component.html"
 })
 export class SelectFormComponent {
-    @ViewChild(IgxSelectComponent, { static: true })
-    public selectFruits: IgxSelectComponent;
-
     public fruits: string[] = ["Orange", "Apple", "Banana", "Mango"];
     public selected: string = "Apple";
 }
