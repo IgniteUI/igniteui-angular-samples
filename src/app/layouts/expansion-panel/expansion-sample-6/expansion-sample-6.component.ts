@@ -37,7 +37,7 @@ export class ExpansionPanelSample6Component {
     public user = {
         email: "",
         fullName: "",
-        phone: ""
+        phone: undefined
     };
 
     public collapsed() {
