@@ -6,6 +6,7 @@ export const interactionsRoutesData = {
     "dialog-sample-1": { displayName: "Completed Action Dialog", parentName: "Dialog" },
     "dialog-sample-2": { displayName: "Confirmation Dialog", parentName: "Dialog" },
     "dialog-sample-3": { displayName: "Sign-in form Dialog", parentName: "Dialog" },
+    "dialog-styling-sample": {displayName: "Dialog Styling", parentName: "Dialog" },
     "slider-sample-1": { displayName: "Slider Lower and Upper range values", parentName: "Slider" },
     "slider-sample-2": { displayName: "Continuous Slider", parentName: "Slider" },
     "slider-sample-3": { displayName: "Discrete Slider", parentName: "Slider" },

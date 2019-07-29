@@ -1,0 +1,53 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$color-1: rgb(222, 235, 51); // Umbra
+$color-2: #e41c77; // Penumbra
+$color-3: rgb(92, 61, 70); // Ambient
+
+$elevations-color: igx-elevations($color-1 , $color-2, $color-3);
+
+$my-dialog-theme: igx-dialog-theme(
+    $background: #000000,
+    $title-color: #e41c77,
+    $message-color: #ffffff,
+    $border-radius: .3,
+    $shadow: igx-elevation($elevations-color, 4)
+);
+
+$margin:  8px 8px 8px 0px;
+$padding: rem(24px) rem(24px) rem(12px) rem(24px);
+$actions-height: 52px;
+
+.dialog-container{
+    display: flex; flex-direction: row;
+    margin-left: 24px;
+}
+
+igx-icon {
+    margin: $margin;
+}
+
+.dialog-title{
+    padding: $padding;
+    margin: $margin; 
+}
+
+.dialog-actions {
+    justify-content: flex-end;
+    align-items: center;
+    height: $actions-height;
+
+    [igxButton] {
+        margin: $margin;
+    }
+}
+
+:host {
+    display: block;
+    padding: 0 16px;
+    ::ng-deep {
+        @include igx-dialog($my-dialog-theme);
+    }
+}
+
+
