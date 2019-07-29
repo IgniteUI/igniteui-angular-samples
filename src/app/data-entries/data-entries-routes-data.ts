@@ -50,5 +50,6 @@ export const dataEntriesRoutesData = {
     "select-sample-3": { displayName: "Select With Forms", parentName: "Select" },
     "select-sample-4": { displayName: "Custom Overlay Settings", parentName: "Select" },
     "select-styling": { displayName: "Select Styling", parentName: "Select" },
-    "select-input-directives": { displayName: "Select Input Directives", parentName: "Select" }
+    "select-input-directives": { displayName: "Select Input Directives", parentName: "Select" },
+    "select-form": { displayName: "Select In a Form", parentName: "Select" }
 };

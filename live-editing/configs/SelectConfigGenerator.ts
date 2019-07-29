@@ -1,4 +1,5 @@
 import { IgxButtonModule, IgxDropDownModule, IgxInputGroupModule, IgxSelectModule } from "igniteui-angular";
+import { SelectFormComponent } from "../../src/app/data-entries/select/select-form/select-form.component";
 import { SelectInputDirectivesComponent
 } from "../../src/app/data-entries/select/select-input-directives/select-input-directives";
 import { SelectSample1Component } from "../../src/app/data-entries/select/select-sample-1/select-sample-1.component";
@@ -71,6 +72,15 @@ export class SelectConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxSelectModule]
             }),
             component: SelectInputDirectivesComponent
+        }));
+
+        configs.push(new Config({
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSelectModule, SelectFormComponent],
+                ngDeclarations: [SelectFormComponent],
+                ngImports: [IgxSelectModule]
+            }),
+            component: SelectFormComponent
         }));
 
         return configs;
