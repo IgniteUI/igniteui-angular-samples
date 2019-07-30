@@ -1,0 +1,48 @@
+<div class="container">
+    <igx-grid #grid1 [data]="data | async" [height]="'500px'" width="100%" [autoGenerate]='false' [allowFiltering]="false">
+        <igx-column [width]="'80px'" [field]="'ID'"  dataType="number"></igx-column>
+        <igx-column [width]="'150px'" [field]="'Product'"></igx-column>
+        <igx-column [width]="'100px'" [field]="'Price'" dataType="number" [formatter]="formatCurrency"></igx-column>
+
+        <igx-column [field]="'OrderHistory'" [width]="'160px'"  >
+            <ng-template igxHeader>
+                <span>Order History</span>
+            </ng-template>
+
+            <ng-template igxCell let-val>
+
+                <igx-sparkline height="40px" width="150px"
+                [dataSource]="val"
+                valueMemberPath="Sold"
+                displayType="Line"
+                lineThickness="2"
+                brush="rgb(21, 190, 6)"
+                negativeBrush="rgb(211, 17, 3)" >
+                </igx-sparkline>
+            </ng-template>
+        </igx-column>
+
+        <igx-column [width]="'100px'" [field]="'OrderCount'"  dataType="number" header="Orders"></igx-column>
+
+        <igx-column [field]="'ReturnRate'" [width]="'160px'"  >
+            <ng-template igxHeader>
+                <span>Return Rate</span>
+            </ng-template>
+
+            <ng-template igxCell let-val>
+
+                <igx-sparkline height="40px" width="150px"
+                [dataSource]="val"
+                valueMemberPath="Balance"
+                displayType="Column"
+                lineThickness="2"
+                brush="rgb(21, 190, 6)"
+                negativeBrush="rgb(211, 17, 3)" >
+                </igx-sparkline>
+            </ng-template>
+        </igx-column>
+        <igx-column [width]="'190px'" [field]="'Status'"></igx-column>
+
+    </igx-grid>
+    <br />
+</div>
