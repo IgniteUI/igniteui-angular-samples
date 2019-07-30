@@ -1,12 +1,15 @@
 /* tslint:disable:object-literal-sort-keys */
 import {
-    IgxButtonModule, IgxDialogModule, IgxIconModule, IgxInputGroupModule, IgxRippleModule
+    IgxButtonModule, IgxDialogModule, IgxIconModule,
+    IgxInputGroupModule, IgxRippleModule, IgxToggleModule
 } from "igniteui-angular";
 import { CustomDialogComponent } from "../../src/app/interactions/dialog/custom-dialog/custom-dialog.component";
 import { DialogSample1Component } from "../../src/app/interactions/dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "../../src/app/interactions/dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "../../src/app/interactions/dialog/dialog-sample-3/dialog-sample-3.component";
-import { DialogStylingSample } from "../../src/app/interactions/dialog/dialog-styling-sample/dialog-styling-sample.component";
+import {
+    DialogStylingSample
+} from "../../src/app/interactions/dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "../../src/app/interactions/dialog/dialog.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -79,11 +82,11 @@ export class DialogConfigGenerator implements IConfigGenerator {
             component: DialogStylingSample,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxDialogModule, IgxRippleModule,
-                    DialogStylingSample, IgxIconModule],
+                    DialogStylingSample, IgxIconModule, IgxToggleModule],
                 ngDeclarations: [DialogStylingSample],
-                ngImports: [IgxButtonModule, IgxDialogModule, IgxRippleModule, IgxIconModule]
+                ngImports: [IgxButtonModule, IgxDialogModule, IgxRippleModule, IgxIconModule, IgxToggleModule]
             }),
-            shortenComponentPathBy: "/interactions/dialog/"
+            shortenComponentPathBy: "/interactions/"
         }));
 
         return configs;

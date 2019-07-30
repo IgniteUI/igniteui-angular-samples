@@ -1,5 +1,12 @@
+import { useAnimation } from "@angular/animations";
 import { Component, ViewChild } from "@angular/core";
-import { CloseScrollStrategy, IgxDialogComponent, IgxOverlayOutletDirective } from "igniteui-angular";
+import { CloseScrollStrategy,
+    GlobalPositionStrategy,
+    IgxDialogComponent,
+    IgxOverlayOutletDirective,
+    PositionSettings,
+    slideInBottom,
+    slideOutTop } from "igniteui-angular";
 
 @Component({
     selector: "app-dialog-styling-sample",
@@ -14,11 +21,17 @@ export class DialogStylingSample {
     @ViewChild("dialog1", { read: IgxDialogComponent, static: true })
     public dialog: IgxDialogComponent;
 
+    private _animaitonSettings: PositionSettings = {
+        openAnimation: useAnimation(slideInBottom, { params: { fromPosition: "translateY(100%)" } }),
+        closeAnimation: useAnimation(slideOutTop, { params: { toPosition: "translateY(-100%)" } })
+    };
+
     private _dialogOverlaySettings2 = {
         closeOnOutsideClick: false,
         modal: true,
         outlet: this.outlet,
-        scrollStrategy: new CloseScrollStrategy()
+        scrollStrategy: new CloseScrollStrategy(),
+        positionStrategy: new GlobalPositionStrategy(this._animaitonSettings)
     };
 
     public openDialog() {
