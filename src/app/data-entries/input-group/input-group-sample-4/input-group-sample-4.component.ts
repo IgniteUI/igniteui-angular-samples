@@ -7,6 +7,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class InputGroupSample4Component {
     public user = {
-        phone: ""
+        phone: undefined
     };
 }

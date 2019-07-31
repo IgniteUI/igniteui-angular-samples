@@ -6,17 +6,17 @@ import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data
 import { IgxDataChartCategoryCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-core-module";
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
-import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
-import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
+import { IgxDataChartScatterCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-core-module";
+import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-module";
 import { IgxCrosshairLayerModule } from "igniteui-angular-charts/ES5/igx-crosshair-layer-module";
-import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
-import { IgxOrdinalTimeXAxisModule } from "igniteui-angular-charts/ES5/igx-ordinal-time-x-axis-module";
+import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
+import { IgxBubbleSeriesModule } from "igniteui-angular-charts/ES5/igx-bubble-series-module";
 
 // import { IgxZoomSliderModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-module";
 import { IgxZoomSliderDynamicModule } from "igniteui-angular-charts/ES5/igx-zoom-slider-dynamic-module";
 
-import { StockDataService } from "../../src/app/charts/financial-chart/services/stock-data.service";
+import { SampleScatterStats } from "../../src/app/charts/data-chart/SampleScatterStats";
 import { ZoomSliderOverviewComponent } from "../../src/app/charts/zoomslider/zoomslider-overview/zoomslider-overview.component";
 
 import { DependenciesType } from "../services/DependenciesType";
@@ -36,12 +36,12 @@ export class ZoomSliderConfigGenerator extends BaseConfigGenerator {
 
         configs.push(this.getConfig(
             ZoomSliderOverviewComponent,
-            [IgxZoomSliderDynamicModule, IgxNumericYAxisModule, IgxOrdinalTimeXAxisModule,
-             IgxCrosshairLayerModule, IgxCategoryXAxisModule, IgxCalloutLayerModule,
+            [IgxZoomSliderDynamicModule, IgxNumericYAxisModule, IgxNumericXAxisModule,
+             IgxCrosshairLayerModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
              IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxDataChartCategoryCoreModule,
              IgxDataChartAnnotationModule, IgxDataChartInteractivityModule,
-             IgxFinancialPriceSeriesModule],
-            [StockDataService], ["/src/app/charts/financial-chart/services/stock-data.service.ts"]));
+             IgxBubbleSeriesModule],
+            [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
 
         return configs;
     }
