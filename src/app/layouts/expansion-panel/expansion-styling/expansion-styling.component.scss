@@ -4,15 +4,11 @@
     width: 340px;
 }
 
-.body {
-    padding: 0em 1em;
+igx-expansion-panel-body {
+    padding: 0em 1em 1em 1em;
 }
 
-.group {
-    padding: 0em 0em 1em 0px;
-}
-
-.sample-title {
+igx-expansion-panel-title {
     font-weight: 600;
 }
 
@@ -35,7 +31,7 @@ $custom-panel-theme: igx-expansion-panel-theme(
     $header-title-color: igx-color($my-color-palette, "info"),
     $header-icon-color: igx-color($my-color-palette, "info"),
     $body-background: igx-color($my-color-palette, "secondary", 100),
-    $border-radius: 10px
+    $border-radius: 0.35em
 );
 
 // Pass our custom-panel-theme to `igx-panel` mixin.

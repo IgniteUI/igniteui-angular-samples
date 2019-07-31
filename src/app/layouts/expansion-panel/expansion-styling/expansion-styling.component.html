@@ -1,12 +1,9 @@
 <div class="sample-wrapper">
-    <igx-expansion-panel [animationSettings] = "animationSettingsCustom">
-        <igx-expansion-panel-header [disabled]="false">
-            <igx-expansion-panel-title class="sample-title">Personal Information</igx-expansion-panel-title>
-            <igx-expansion-panel-icon>
-                <igx-icon style="vertical-align: middle;" fontSet="material">{{collapsed() ? 'expand_more':'expand_less'}}</igx-icon>
-            </igx-expansion-panel-icon>
+    <igx-expansion-panel>
+        <igx-expansion-panel-header>
+            <igx-expansion-panel-title>Personal Information</igx-expansion-panel-title>
         </igx-expansion-panel-header>
-        <igx-expansion-panel-body class="body">
+        <igx-expansion-panel-body>
                 <igx-input-group class="group">
                     <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName"/>
                     <label igxLabel for="fullName">Full Name</label>
@@ -17,11 +14,10 @@
                 <igx-input-group class="group">
                     <igx-prefix>+359</igx-prefix>
                     <label igxLabel for="phone">Phone</label>
-                    <input type="number" igxInput name="phone" [(ngModel)]="user.phone" />
+                    <input igxInput name="phone" type="number" [(ngModel)]="user.phone" />
                     <igx-suffix>
                         <igx-icon>phone</igx-icon>
                     </igx-suffix>
-                    <igx-hint position="start">Ex.: +359 555 123 456</igx-hint>
                 </igx-input-group>
                 <igx-input-group class="group">
                     <label igxLabel for="email">Email address</label>
