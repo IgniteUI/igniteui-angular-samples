@@ -1,9 +1,5 @@
 .sample-wrapper {
-    width: 420px;
-}
-
-.content {
-    width: 100%;
+    width: 400px;
 }
 
 .content__collapsible {
@@ -13,12 +9,8 @@
     box-shadow: 0 1px 2px hsl(0, 0%, 82%);
 }
 
-.body {
-    padding: 0em 1em;
-}
-
-.group {
-    padding: 0em 0em 1em 0px;
+igx-expansion-panel-body {
+    padding: 0em 1em 1em 1em;
 }
 
 .sample-title {
