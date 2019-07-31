@@ -70,6 +70,7 @@ import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tree-grid-filtering-style.component";
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
@@ -186,7 +187,8 @@ import {
         TreeGridColumnHidingToolbarStyleComponent,
         TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
-        TreeGridToolbarStyleComponent
+        TreeGridToolbarStyleComponent,
+        TreeGridFilteringStyleComponent
     ],
     imports: [
         CommonModule,
