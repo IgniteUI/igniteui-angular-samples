@@ -5,6 +5,7 @@ import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.comp
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
+import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { interactionsRoutesData } from "./interactions-routes-data";
@@ -61,6 +62,11 @@ export const interactionsRoutes: Routes = [
         component: CustomDialogComponent,
         data: interactionsRoutesData["custom-dialog-sample"],
         path: "custom-dialog-sample"
+    },
+    {
+        component: DialogStylingSample,
+        data: interactionsRoutesData["dialog-styling-sample"],
+        path: "dialog-styling-sample"
     },
     {
         component: SliderSample1Component,
