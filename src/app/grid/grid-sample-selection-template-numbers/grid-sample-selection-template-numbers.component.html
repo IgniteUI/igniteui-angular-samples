@@ -1,0 +1,12 @@
+<div class="grid__wrapper">
+    <igx-grid #myGrid [data]="data" [height]="'530px'" width="100%" [rowSelectable]="true">
+        <igx-column [field]="'Category'" [width]="'12%'"></igx-column>
+        <igx-column [field]="'Type'" [width]="'10%'"></igx-column>
+        <igx-column [field]="'Price'" [width]="'12%'" dataType="number"></igx-column>
+        <igx-column [field]="'Buy'" [width]="'12%'" dataType="number"></igx-column>
+        <igx-column [field]="'Sell'" [width]="'12%'" dataType="number"></igx-column>
+        <igx-column [field]="'Change'" [width]="'12%'" dataType="number"></igx-column>
+        <igx-column [field]="'Change(%)'" [width]="'14%'" dataType="number"></igx-column>
+        <igx-column [field]="'Change On Year(%)'" [width]="'16%'" dataType="number"></igx-column>
+    </igx-grid>
+</div>

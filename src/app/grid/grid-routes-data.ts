@@ -30,6 +30,7 @@ export const gridsRoutesData = {
     "grid-sample-4": { displayName: "Grid Remote Virtualization", parentName: "Grid" },
     "grid-remote-filtering": { displayName: "Grid Remote Filtering", parentName: "Grid" },
     "grid-selection": { displayName: "Grid Selection", parentName: "Grid" },
+    "grid-selection-template-numbering": { displayName: "Grid Row Selectors Template - Numbers", parentName: "Grid" },
     "grid-search-sample": { displayName: "Grid Search", parentName: "Grid" },
     "grid-column-hiding-sample": { displayName: "Grid Column Hiding", parentName: "Grid" },
     "grid-column-hiding-toolbar-sample": { displayName: "Grid Column Hiding with Toolbar", parentName: "Grid" },
