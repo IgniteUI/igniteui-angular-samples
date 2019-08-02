@@ -17,7 +17,6 @@ import { athletesData } from "./../services/data";
 import { DataService } from "./../services/data.service";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-grid",
     styleUrls: ["./grid.component.scss"],
     templateUrl: "./grid.component.html"
