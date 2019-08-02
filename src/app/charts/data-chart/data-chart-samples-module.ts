@@ -144,6 +144,40 @@ import {
     DataChartTypeValueOverlayComponent
 } from "./data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
+import { DataChartTypeCategoryAreaSeriesComponent } from "./data-chart-type-category-area-series/data-chart-type-category-area-series.component";
+import { DataChartTypeCategoryBarSeriesComponent } from "./data-chart-type-category-bar-series/data-chart-type-category-bar-series.component";
+import { DataChartTypeCategoryColumnSeriesComponent } from "./data-chart-type-category-column-series/data-chart-type-category-column-series.component";
+import { DataChartTypeCategoryLineSeriesComponent } from "./data-chart-type-category-line-series/data-chart-type-category-line-series.component";
+import { DataChartTypeCategoryPointSeriesComponent } from "./data-chart-type-category-point-series/data-chart-type-category-point-series.component";
+import { DataChartTypeCategorySplineAreaSeriesComponent } from "./data-chart-type-category-spline-area-series/data-chart-type-category-spline-area-series.component";
+import { DataChartTypeCategorySplineSeriesComponent } from "./data-chart-type-category-spline-series/data-chart-type-category-spline-series.component";
+import { DataChartTypeCategoryStepAreaSeriesComponent } from "./data-chart-type-category-step-area-series/data-chart-type-category-step-area-series.component";
+import { DataChartTypeCategoryStepLineSeriesComponent } from "./data-chart-type-category-step-line-series/data-chart-type-category-step-line-series.component";
+import { DataChartTypeCategoryWaterfallSeriesComponent } from "./data-chart-type-category-waterfall-series/data-chart-type-category-waterfall-series.component";
+import { DataChartTypeFinancialCandlestickSeriesComponent } from "./data-chart-type-financial-candlestick-series/data-chart-type-financial-candlestick-series.component";
+import { DataChartTypeFinancialOhlcSeriesComponent } from "./data-chart-type-financial-ohlc-series/data-chart-type-financial-ohlc-series.component";
+import { DataChartTypePolarAreaSeriesComponent } from "./data-chart-type-polar-area-series/data-chart-type-polar-area-series.component";
+import { DataChartTypePolarLineSeriesComponent } from "./data-chart-type-polar-line-series/data-chart-type-polar-line-series.component";
+import { DataChartTypePolarScatterSeriesComponent } from "./data-chart-type-polar-scatter-series/data-chart-type-polar-scatter-series.component";
+import { DataChartTypePolarSplineAreaSeriesComponent } from "./data-chart-type-polar-spline-area-series/data-chart-type-polar-spline-area-series.component";
+import { DataChartTypePolarSplineSeriesComponent } from "./data-chart-type-polar-spline-series/data-chart-type-polar-spline-series.component";
+import { DataChartTypeRadialAreaSeriesComponent } from "./data-chart-type-radial-area-series/data-chart-type-radial-area-series.component";
+import { DataChartTypeRadialColumnSeriesComponent } from "./data-chart-type-radial-column-series/data-chart-type-radial-column-series.component";
+import { DataChartTypeRadialLineSeriesComponent } from "./data-chart-type-radial-line-series/data-chart-type-radial-line-series.component";
+import { DataChartTypeRadialPieSeriesComponent } from "./data-chart-type-radial-pie-series/data-chart-type-radial-pie-series.component";
+import { DataChartTypeRangeAreaSeriesComponent } from "./data-chart-type-range-area-series/data-chart-type-range-area-series.component";
+import { DataChartTypeRangeColumnSeriesComponent } from "./data-chart-type-range-column-series/data-chart-type-range-column-series.component";
+import { DataChartTypeStackedAreaSeriesComponent } from "./data-chart-type-stacked-area-series/data-chart-type-stacked-area-series.component";
+import { DataChartTypeStackedBarSeriesComponent } from "./data-chart-type-stacked-bar-series/data-chart-type-stacked-bar-series.component";
+import { DataChartTypeStackedColumnSeriesComponent } from "./data-chart-type-stacked-column-series/data-chart-type-stacked-column-series.component";
+import { DataChartTypeStackedLineSeriesComponent } from "./data-chart-type-stacked-line-series/data-chart-type-stacked-line-series.component";
+import { DataChartTypeStackedSplineSeriesComponent } from "./data-chart-type-stacked-spline-series/data-chart-type-stacked-spline-series.component";
+import { DataChartTypeStacked100AreaSeriesComponent } from "./data-chart-type-stacked100-area-series/data-chart-type-stacked100-area-series.component";
+import { DataChartTypeStacked100BarSeriesComponent } from "./data-chart-type-stacked100-bar-series/data-chart-type-stacked100-bar-series.component";
+import { DataChartTypeStacked100ColumnSeriesComponent } from "./data-chart-type-stacked100-column-series/data-chart-type-stacked100-column-series.component";
+import { DataChartTypeStacked100LineSeriesComponent } from "./data-chart-type-stacked100-line-series/data-chart-type-stacked100-line-series.component";
+import { DataChartTypeStacked100SplineSeriesComponent } from "./data-chart-type-stacked100-spline-series/data-chart-type-stacked100-spline-series.component";
+
 import { SampleCategoryData } from "./SampleCategoryData";
 import { SampleDensityData } from "./SampleDensityData";
 import { SampleFinancialData } from "./SampleFinancialData";
@@ -193,7 +227,40 @@ import { FormsModule } from "@angular/forms";
         DataChartTypeScatterSeriesComponent,
         DataChartTypeScatterShapeSeriesComponent,
         DataChartTypeStackedSeriesComponent,
-        DataChartTypeValueOverlayComponent
+        DataChartTypeValueOverlayComponent,
+        DataChartTypeCategoryAreaSeriesComponent,
+        DataChartTypeCategoryBarSeriesComponent,
+        DataChartTypeCategoryColumnSeriesComponent,
+        DataChartTypeCategoryLineSeriesComponent,
+        DataChartTypeCategoryPointSeriesComponent,
+        DataChartTypeCategorySplineAreaSeriesComponent,
+        DataChartTypeCategorySplineSeriesComponent,
+        DataChartTypeCategoryStepAreaSeriesComponent,
+        DataChartTypeCategoryStepLineSeriesComponent,
+        DataChartTypeCategoryWaterfallSeriesComponent,
+        DataChartTypeFinancialCandlestickSeriesComponent,
+        DataChartTypeFinancialOhlcSeriesComponent,
+        DataChartTypePolarAreaSeriesComponent,
+        DataChartTypePolarLineSeriesComponent,
+        DataChartTypePolarScatterSeriesComponent,
+        DataChartTypePolarSplineAreaSeriesComponent,
+        DataChartTypePolarSplineSeriesComponent,
+        DataChartTypeRadialAreaSeriesComponent,
+        DataChartTypeRadialColumnSeriesComponent,
+        DataChartTypeRadialLineSeriesComponent,
+        DataChartTypeRadialPieSeriesComponent,
+        DataChartTypeRangeAreaSeriesComponent,
+        DataChartTypeRangeColumnSeriesComponent,
+        DataChartTypeStacked100AreaSeriesComponent,
+        DataChartTypeStacked100BarSeriesComponent,
+        DataChartTypeStacked100ColumnSeriesComponent,
+        DataChartTypeStacked100LineSeriesComponent,
+        DataChartTypeStacked100SplineSeriesComponent,
+        DataChartTypeStackedSplineSeriesComponent,
+        DataChartTypeStackedLineSeriesComponent,
+        DataChartTypeStackedColumnSeriesComponent,
+        DataChartTypeStackedBarSeriesComponent,
+        DataChartTypeStackedAreaSeriesComponent
     ],
     imports: [
         FormsModule,

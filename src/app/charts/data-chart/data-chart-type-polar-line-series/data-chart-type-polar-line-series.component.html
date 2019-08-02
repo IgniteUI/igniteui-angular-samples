@@ -1,0 +1,28 @@
+<div class="sample">
+    <div class="options">
+        <span class="legendTitle">Legend: </span>
+        <div class="legendInline">
+            <igx-legend #legend orientation="Horizontal"></igx-legend>
+        </div>
+    </div>
+
+    <div class="chart">
+        <igx-data-chart #chart isHorizontalZoomEnabled="true" isVerticalZoomEnabled="true" titleTopMargin="10px"
+            chartTitle="SAIL CHART" subtitle="Wind Speed vs. Boat Speed" width="100%" height="calc(100% - 60px)"
+            [dataSource]="data" [legend]="legend">
+            <igx-numeric-angle-axis #angleAxis name="angleAxis" startAngleOffset="-90" interval="30" minimumValue="0"
+                maximumValue="360"></igx-numeric-angle-axis>
+            <igx-numeric-radius-axis #radiusAxis name="radiusAxis" innerRadiusExtentScale="0.1" radiusExtentScale="0.9"
+                minimumValue="0" maximumValue="100" interval="25"></igx-numeric-radius-axis>
+
+            <igx-polar-line-series name="series1" angleMemberPath="Direction" radiusMemberPath="WindSpeed"
+                [radiusAxis]="radiusAxis" [angleAxis]="angleAxis" title="Wind Speed">
+            </igx-polar-line-series>
+            <igx-polar-line-series name="series2" angleMemberPath="Direction" radiusMemberPath="BoatSpeed"
+                [radiusAxis]="radiusAxis" [angleAxis]="angleAxis" title="Boat Speed">
+            </igx-polar-line-series>
+
+        </igx-data-chart>
+
+    </div>
+</div>

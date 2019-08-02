@@ -1,0 +1,58 @@
+<div class="sample">
+    <div class="options">
+        <span class="optionLabel"> Indicator Display Type: </span>
+        <select [(ngModel)]="displayTypeIndicator">
+            <option>Line</option>
+            <option>Area</option>
+            <option>Column</option>
+        </select>
+    </div>
+
+    <div class="chart">
+        <igx-data-chart
+            width="100%"
+            height="calc(100% - 60px)"
+            [dataSource]="data" >
+
+            <igx-category-x-axis #xAxis name="xAxis" label="Date"></igx-category-x-axis>
+            <igx-numeric-y-axis #yAxis1 name="yAxis1" labelLocation="OutsideRight"
+                title="Financial Prices"></igx-numeric-y-axis>
+            <igx-numeric-y-axis #yAxis2 name="yAxis2" labelLocation="OutsideLeft"
+                title="Indicator Values" majorStrokeThickness="0" maximumValue="800"></igx-numeric-y-axis>
+
+            <igx-bollinger-bands-overlay
+                name="series1"
+                [xAxis]="xAxis"
+                [yAxis]="yAxis1"
+                highMemberPath="High"
+                lowMemberPath="Low"
+                closeMemberPath="Close"
+                openMemberPath="Open"
+                brush="rgba(171, 82, 235, 0.39)"></igx-bollinger-bands-overlay>
+
+            <igx-financial-price-series
+                name="series2"
+                [xAxis]="xAxis"
+                [yAxis]="yAxis1"
+                displayType="OHLC"
+                highMemberPath="High"
+                lowMemberPath="Low"
+                closeMemberPath="Close"
+                openMemberPath="Open"
+                volumeMemberPath="Volume"></igx-financial-price-series>
+
+            <igx-median-price-indicator
+                name="series3"
+                [xAxis]="xAxis"
+                [yAxis]="yAxis2"
+                [displayType]="displayTypeIndicator"
+                highMemberPath="High"
+                lowMemberPath="Low"
+                closeMemberPath="Close"
+                openMemberPath="Open"
+                volumeMemberPath="Volume"></igx-median-price-indicator>
+
+        </igx-data-chart>
+
+    </div>
+</div>

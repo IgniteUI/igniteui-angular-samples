@@ -1,0 +1,39 @@
+<div class="sample">
+    <div class="options">
+        <span class="legendTitle">Legend: </span>
+        <div class="legendInline">
+            <igx-legend #legend orientation="Horizontal">
+            </igx-legend>
+        </div>
+    </div>
+    <div class="chart">
+        <igx-data-chart #chart
+            [legend]=legend
+            chartTitle="COMPANY FINANCES BY DEPARTMENT"
+            width="100%"
+            height="calc(100% - 60px)"
+            gridMode="BeforeSeries"
+            brushes="#9FB328, #7446B9"
+            outlines="#9FB328, #7446B9"
+            [dataSource]="data">            
+            <igx-category-angle-axis #angleAxis
+                name="angleAxis"
+                label="Department">
+            </igx-category-angle-axis>
+            <igx-numeric-radius-axis #radiusAxis
+                name="radiusAxis"
+                innerRadiusExtentScale="0.1"
+                minimumValue="0">
+            </igx-numeric-radius-axis>
+
+            <igx-radial-line-series name="series1" valueMemberPath="Budget" [valueAxis]="radiusAxis"
+                [angleAxis]="angleAxis" title="Budget">
+            </igx-radial-line-series>
+
+            <igx-radial-line-series name="series2" valueMemberPath="Spending" [valueAxis]="radiusAxis"
+                [angleAxis]="angleAxis" title="Spending">
+            </igx-radial-line-series>
+
+       </igx-data-chart >
+    </div>
+</div>

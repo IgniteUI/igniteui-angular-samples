@@ -7,14 +7,11 @@ import { SampleFinancialData } from "../SampleFinancialData";
     styleUrls: ["./data-chart-type-financial-series.component.scss"],
     templateUrl: "./data-chart-type-financial-series.component.html"
 })
-export class DataChartTypeFinancialSeriesComponent implements OnInit {
+export class DataChartTypeFinancialSeriesComponent {
 
     public data: any = SampleFinancialData.create();
     public displayTypeSeries: string = "Candlestick";
     public displayTypeIndicator: string = "Line";
 
     constructor() { }
-
-    public ngOnInit() {
-    }
 }

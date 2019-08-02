@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="options">
+        <span class="legendTitle">Legend: </span>
+        <div class="legendInline">
+            <igx-legend #legend orientation="Horizontal"></igx-legend>
+        </div>
+    </div>
+
+    <div class="chart">
+        <igx-data-chart #chart isHorizontalZoomEnabled="true" isVerticalZoomEnabled="true" width="100%"
+            height="calc(100% - 60px)" [dataSource]="data" [legend]="legend">
+            <igx-numeric-y-axis title="Total Olympic Medals" #yAxis>
+            </igx-numeric-y-axis>
+            <igx-category-x-axis label="Year" title="Olympic Years" #xAxis>
+            </igx-category-x-axis>
+
+            <igx-point-series valueMemberPath="USA" [xAxis]="xAxis" [yAxis]="yAxis" title="USA">
+            </igx-point-series>
+
+            <igx-point-series valueMemberPath="RUS" [xAxis]="xAxis" [yAxis]="yAxis" title="Russia">
+            </igx-point-series>
+        </igx-data-chart>
+    </div>
+</div>

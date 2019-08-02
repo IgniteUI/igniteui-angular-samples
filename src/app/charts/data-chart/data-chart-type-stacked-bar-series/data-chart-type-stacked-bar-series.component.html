@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="options">
+        <span class="legendTitle">Legend: </span>
+        <div class="legendInline">
+            <igx-legend #legend orientation="Horizontal"></igx-legend>
+        </div>
+    </div>
+
+    <div class="chart">
+        <igx-data-chart #chart width="100%" height="calc(100% - 60px)" [dataSource]="data" [legend]="legend">
+
+            <igx-numeric-x-axis #xAxis name="yAxis"></igx-numeric-x-axis>
+            <igx-category-y-axis #yAxis name="xAxis" label="Country"></igx-category-y-axis>
+
+            <igx-stacked-bar-series [xAxis]="xAxis" [yAxis]="yAxis" name="series1">
+                <igx-stacked-fragment-series valueMemberPath="Coal" title="Coal"></igx-stacked-fragment-series>
+                <igx-stacked-fragment-series valueMemberPath="Hydro" title="Hydro"></igx-stacked-fragment-series>
+                <igx-stacked-fragment-series valueMemberPath="Nuclear" title="Nuclear"></igx-stacked-fragment-series>
+                <igx-stacked-fragment-series valueMemberPath="Gas" title="Gas"></igx-stacked-fragment-series>
+                <igx-stacked-fragment-series valueMemberPath="Oil" title="Oil"></igx-stacked-fragment-series>
+            </igx-stacked-bar-series>
+
+        </igx-data-chart>
+    </div>
+</div>

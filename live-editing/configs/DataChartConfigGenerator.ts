@@ -33,6 +33,40 @@ import { DataChartTypeScatterShapeSeriesComponent } from "../../src/app/charts/d
 import { DataChartTypeStackedSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
 import { DataChartTypeValueOverlayComponent } from "../../src/app/charts/data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
 
+import { DataChartTypeCategoryAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-area-series/data-chart-type-category-area-series.component";
+import { DataChartTypeCategoryBarSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-bar-series/data-chart-type-category-bar-series.component";
+import { DataChartTypeCategoryColumnSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-column-series/data-chart-type-category-column-series.component";
+import { DataChartTypeCategoryLineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-line-series/data-chart-type-category-line-series.component";
+import { DataChartTypeCategoryPointSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-point-series/data-chart-type-category-point-series.component";
+import { DataChartTypeCategorySplineAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-spline-area-series/data-chart-type-category-spline-area-series.component";
+import { DataChartTypeCategorySplineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-spline-series/data-chart-type-category-spline-series.component";
+import { DataChartTypeCategoryStepAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-step-area-series/data-chart-type-category-step-area-series.component";
+import { DataChartTypeCategoryStepLineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-step-line-series/data-chart-type-category-step-line-series.component";
+import { DataChartTypeCategoryWaterfallSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-category-waterfall-series/data-chart-type-category-waterfall-series.component";
+import { DataChartTypeFinancialCandlestickSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-financial-candlestick-series/data-chart-type-financial-candlestick-series.component";
+import { DataChartTypeFinancialOhlcSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-financial-ohlc-series/data-chart-type-financial-ohlc-series.component";
+import { DataChartTypePolarAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-polar-area-series/data-chart-type-polar-area-series.component";
+import { DataChartTypePolarLineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-polar-line-series/data-chart-type-polar-line-series.component";
+import { DataChartTypePolarScatterSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-polar-scatter-series/data-chart-type-polar-scatter-series.component";
+import { DataChartTypePolarSplineAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-polar-spline-area-series/data-chart-type-polar-spline-area-series.component";
+import { DataChartTypePolarSplineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-polar-spline-series/data-chart-type-polar-spline-series.component";
+import { DataChartTypeRadialAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-radial-area-series/data-chart-type-radial-area-series.component";
+import { DataChartTypeRadialColumnSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-radial-column-series/data-chart-type-radial-column-series.component";
+import { DataChartTypeRadialLineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-radial-line-series/data-chart-type-radial-line-series.component";
+import { DataChartTypeRadialPieSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-radial-pie-series/data-chart-type-radial-pie-series.component";
+import { DataChartTypeRangeAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-range-area-series/data-chart-type-range-area-series.component";
+import { DataChartTypeRangeColumnSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-range-column-series/data-chart-type-range-column-series.component";
+import { DataChartTypeStackedAreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked-area-series/data-chart-type-stacked-area-series.component";
+import { DataChartTypeStackedBarSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked-bar-series/data-chart-type-stacked-bar-series.component";
+import { DataChartTypeStackedColumnSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked-column-series/data-chart-type-stacked-column-series.component";
+import { DataChartTypeStackedLineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked-line-series/data-chart-type-stacked-line-series.component";
+import { DataChartTypeStackedSplineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked-spline-series/data-chart-type-stacked-spline-series.component";
+import { DataChartTypeStacked100AreaSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked100-area-series/data-chart-type-stacked100-area-series.component";
+import { DataChartTypeStacked100BarSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked100-bar-series/data-chart-type-stacked100-bar-series.component";
+import { DataChartTypeStacked100ColumnSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked100-column-series/data-chart-type-stacked100-column-series.component";
+import { DataChartTypeStacked100LineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked100-line-series/data-chart-type-stacked100-line-series.component";
+import { DataChartTypeStacked100SplineSeriesComponent } from "../../src/app/charts/data-chart/data-chart-type-stacked100-spline-series/data-chart-type-stacked100-spline-series.component";
+
 // Chart Modules
 import { IgxCalloutLayerModule } from "igniteui-angular-charts/ES5/igx-callout-layer-module";
 // import { IgxCategoryToolTipLayer } from "igniteui-angular-charts/ES5/igx-category-tool-tip-layer";
@@ -52,9 +86,9 @@ import { IgxDataChartShapeCoreModule } from "igniteui-angular-charts/ES5/igx-dat
 import { IgxDataChartShapeModule } from "igniteui-angular-charts/ES5/igx-data-chart-shape-module";
 
 // Series Modules
-import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
+import { IgxBarSeriesModule } from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBubbleSeriesModule } from "igniteui-angular-charts/ES5/igx-bubble-series-module";
- // Axes
+// Axes
 import { IgxCategoryAngleAxisModule } from "igniteui-angular-charts/ES5/igx-category-angle-axis-module";
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
 import { IgxCategoryYAxisModule } from "igniteui-angular-charts/ES5/igx-category-y-axis-module";
@@ -130,21 +164,21 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartAxisSharingComponent,
             [IgxNumericXAxisModule, IgxNumericYAxisModule, IgxMoneyFlowIndexIndicatorModule,
-             IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxFinancialPriceSeriesModule],
+                IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxFinancialPriceSeriesModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
             DataChartAxisTypesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule,
-             IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
-             IgxTimeXAxisModule, IgxCategoryXAxisModule, IgxCategoryYAxisModule,
-             IgxNumericXAxisModule, IgxNumericYAxisModule,
-             IgxNumericAngleAxisModule, IgxNumericRadiusAxisModule,
-             IgxCategoryAngleAxisModule ],
+                IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
+                IgxTimeXAxisModule, IgxCategoryXAxisModule, IgxCategoryYAxisModule,
+                IgxNumericXAxisModule, IgxNumericYAxisModule,
+                IgxNumericAngleAxisModule, IgxNumericRadiusAxisModule,
+                IgxCategoryAngleAxisModule],
             [SampleFinancialData, SampleCategoryData, SampleScatterData],
             ["/src/app/charts/data-chart/SampleCategoryData.ts",
-             "/src/app/charts/data-chart/SampleFinancialData.ts",
-             "/src/app/charts/data-chart/SampleScatterData.ts"]));
+                "/src/app/charts/data-chart/SampleFinancialData.ts",
+                "/src/app/charts/data-chart/SampleScatterData.ts"]));
 
         configs.push(this.getConfig(
             DataChartLegendsComponent,
@@ -154,13 +188,13 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartNavigationComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
-             IgxNumberAbbreviatorModule, IgxDataChartInteractivityModule],
+                IgxNumberAbbreviatorModule, IgxDataChartInteractivityModule],
             [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
 
         configs.push(this.getConfig(
             DataChartOverviewComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
-             IgxNumberAbbreviatorModule, IgxDataChartInteractivityModule, IgxLegendModule ],
+                IgxNumberAbbreviatorModule, IgxDataChartInteractivityModule, IgxLegendModule],
             [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
 
         configs.push(this.getConfig(
@@ -176,8 +210,8 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartSeriesAnnotationsComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxDataChartAnnotationModule,
-             IgxCalloutLayerModule, IgxCrosshairLayerModule, IgxFinalValueLayerModule,
-             IgxDataChartInteractivityModule],
+                IgxCalloutLayerModule, IgxCrosshairLayerModule, IgxFinalValueLayerModule,
+                IgxDataChartInteractivityModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
@@ -188,26 +222,26 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartSeriesMarkersComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule,
-             IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
-             IgxNumberAbbreviatorModule],
+                IgxDataChartScatterCoreModule, IgxDataChartScatterModule,
+                IgxNumberAbbreviatorModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
             DataChartSeriesTooltipsComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
-             IgxDataChartInteractivityModule],
+                IgxDataChartInteractivityModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
             DataChartSeriesTrendlinesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
-             IgxDataChartInteractivityModule, IgxDataChartCategoryTrendLineModule, IgxFinancialPriceSeriesModule],
+                IgxDataChartInteractivityModule, IgxDataChartCategoryTrendLineModule, IgxFinancialPriceSeriesModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
             DataChartSynchronizationComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
-             IgxDataChartInteractivityModule],
+                IgxDataChartInteractivityModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
@@ -218,69 +252,269 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartTypeCategorySeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
-             IgxDataChartInteractivityModule],
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryBarSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryColumnSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryLineSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryPointSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategorySplineAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategorySplineSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryStepAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryStepLineSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
+            [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeCategoryWaterfallSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule,
+                IgxDataChartInteractivityModule],
             [SampleCategoryData], ["/src/app/charts/data-chart/SampleCategoryData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeFinancialSeriesComponent,
             [IgxDataChartCoreModule, IgxLegendModule, IgxIndicatorsModule, IgxFinancialPriceSeriesModule,
-             IgxDataChartInteractivityModule, IgxBollingerBandsOverlayModule, IgxNumericXAxisModule,
-             IgxNumericYAxisModule, IgxCategoryXAxisModule],
+                IgxDataChartInteractivityModule, IgxBollingerBandsOverlayModule, IgxNumericXAxisModule,
+                IgxNumericYAxisModule, IgxCategoryXAxisModule],
+            [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeFinancialCandlestickSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxIndicatorsModule, IgxFinancialPriceSeriesModule,
+                IgxDataChartInteractivityModule, IgxBollingerBandsOverlayModule, IgxNumericXAxisModule,
+                IgxNumericYAxisModule, IgxCategoryXAxisModule],
+            [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeFinancialOhlcSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxIndicatorsModule, IgxFinancialPriceSeriesModule,
+                IgxDataChartInteractivityModule, IgxBollingerBandsOverlayModule, IgxNumericXAxisModule,
+                IgxNumericYAxisModule, IgxCategoryXAxisModule],
             [SampleFinancialData], ["/src/app/charts/data-chart/SampleFinancialData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypePolarSeriesComponent,
             [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule,
-             IgxDataChartInteractivityModule],
+                IgxDataChartInteractivityModule],
+            [SamplePolarData], ["/src/app/charts/data-chart/SamplePolarData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypePolarAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule,
+                IgxDataChartInteractivityModule],
+            [SamplePolarData], ["/src/app/charts/data-chart/SamplePolarData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypePolarLineSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule,
+                IgxDataChartInteractivityModule],
+            [SamplePolarData], ["/src/app/charts/data-chart/SamplePolarData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypePolarScatterSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule,
+                IgxDataChartInteractivityModule],
+            [SamplePolarData], ["/src/app/charts/data-chart/SamplePolarData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypePolarSplineAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule,
+                IgxDataChartInteractivityModule],
+            [SamplePolarData], ["/src/app/charts/data-chart/SamplePolarData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypePolarSplineSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartPolarModule, IgxDataChartPolarCoreModule,
+                IgxDataChartInteractivityModule],
             [SamplePolarData], ["/src/app/charts/data-chart/SamplePolarData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeRadialSeriesComponent,
             [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartRadialModule, IgxDataChartRadialCoreModule,
-             IgxDataChartInteractivityModule],
+                IgxDataChartInteractivityModule],
+            [SampleRadialData], ["/src/app/charts/data-chart/SampleRadialData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeRadialAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartRadialModule, IgxDataChartRadialCoreModule,
+                IgxDataChartInteractivityModule],
+            [SampleRadialData], ["/src/app/charts/data-chart/SampleRadialData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeRadialColumnSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartRadialModule, IgxDataChartRadialCoreModule,
+                IgxDataChartInteractivityModule],
+            [SampleRadialData], ["/src/app/charts/data-chart/SampleRadialData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeRadialLineSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartRadialModule, IgxDataChartRadialCoreModule,
+                IgxDataChartInteractivityModule],
+            [SampleRadialData], ["/src/app/charts/data-chart/SampleRadialData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeRadialPieSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartRadialModule, IgxDataChartRadialCoreModule,
+                IgxDataChartInteractivityModule],
             [SampleRadialData], ["/src/app/charts/data-chart/SampleRadialData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeRangeSeriesComponent,
             [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartCategoryModule,
-             IgxDataChartInteractivityModule],
+                IgxDataChartInteractivityModule],
+            [SampleRangeData], ["/src/app/charts/data-chart/SampleRangeData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeRangeAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule],
+            [SampleRangeData], ["/src/app/charts/data-chart/SampleRangeData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeRangeColumnSeriesComponent,
+            [IgxDataChartCoreModule, IgxLegendModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule],
             [SampleRangeData], ["/src/app/charts/data-chart/SampleRangeData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterAreaSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
-             IgxDataChartInteractivityModule, IgxScatterAreaSeriesModule],
+                IgxDataChartInteractivityModule, IgxScatterAreaSeriesModule],
             [SampleScatterData], ["/src/app/charts/data-chart/SampleScatterData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterContourSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
-             IgxScatterContourSeriesModule, IgxScatterAreaSeriesModule,
-             IgxDataChartInteractivityModule],
+                IgxScatterContourSeriesModule, IgxScatterAreaSeriesModule,
+                IgxDataChartInteractivityModule],
             [SampleScatterData], ["/src/app/charts/data-chart/SampleScatterData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterDensitySeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
-             IgxDataChartInteractivityModule],
+                IgxDataChartInteractivityModule],
             [SampleDensityData], ["/src/app/charts/data-chart/SampleDensityData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartScatterModule, IgxDataChartScatterCoreModule,
-             IgxDataChartInteractivityModule, IgxLegendModule],
+                IgxDataChartInteractivityModule, IgxLegendModule],
             [SampleScatterStats], ["/src/app/charts/data-chart/SampleScatterStats.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeScatterShapeSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartShapeModule, IgxDataChartShapeCoreModule,
-             IgxDataChartInteractivityModule, IgxDataChartScatterModule],
+                IgxDataChartInteractivityModule, IgxDataChartScatterModule],
             [SampleShapeData], ["/src/app/charts/data-chart/SampleShapeData.ts"]));
 
         configs.push(this.getConfig(
             DataChartTypeStackedSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule,
-             IgxDataChartInteractivityModule, IgxLegendModule],
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStacked100AreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStacked100BarSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStacked100ColumnSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStacked100LineSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStacked100SplineSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStackedAreaSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStackedBarSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStackedColumnSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStackedLineSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
+            [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
+
+        configs.push(this.getConfig(
+            DataChartTypeStackedSplineSeriesComponent,
+            [IgxDataChartCoreModule, IgxDataChartCategoryModule,
+                IgxDataChartInteractivityModule, IgxLegendModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(

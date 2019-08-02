@@ -18,6 +18,7 @@ import { PieChartSamplesModule } from "./pie-chart/pie-chart-samples.module";
 import { SparklineSamplesModule } from "./sparkline/sparkline-samples.module";
 import { ZoomSliderSamplesModule } from "./zoomslider/zoomslider-samples.module";
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -35,6 +36,6 @@ import { ZoomSliderSamplesModule } from "./zoomslider/zoomslider-samples.module"
         IgxSliderModule,
         IgxZoomSliderDynamicModule
         // IgxZoomSliderModule
-    ]
+    ],
 })
 export class ChartsModule { }

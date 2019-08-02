@@ -50,6 +50,41 @@ import { DataChartTypeScatterSeriesComponent } from "./data-chart/data-chart-typ
 import { DataChartTypeScatterShapeSeriesComponent } from "./data-chart/data-chart-type-scatter-shape-series/data-chart-type-scatter-shape-series.component";
 import { DataChartTypeStackedSeriesComponent } from "./data-chart/data-chart-type-stacked-series/data-chart-type-stacked-series.component";
 import { DataChartTypeValueOverlayComponent } from "./data-chart/data-chart-type-value-overlay/data-chart-type-value-overlay.component";
+
+import { DataChartTypeCategoryAreaSeriesComponent } from "./data-chart/data-chart-type-category-area-series/data-chart-type-category-area-series.component";
+import { DataChartTypeCategoryBarSeriesComponent } from "./data-chart/data-chart-type-category-bar-series/data-chart-type-category-bar-series.component";
+import { DataChartTypeCategoryColumnSeriesComponent } from "./data-chart/data-chart-type-category-column-series/data-chart-type-category-column-series.component";
+import { DataChartTypeCategoryLineSeriesComponent } from "./data-chart/data-chart-type-category-line-series/data-chart-type-category-line-series.component";
+import { DataChartTypeCategoryPointSeriesComponent } from "./data-chart/data-chart-type-category-point-series/data-chart-type-category-point-series.component";
+import { DataChartTypeCategorySplineAreaSeriesComponent } from "./data-chart/data-chart-type-category-spline-area-series/data-chart-type-category-spline-area-series.component";
+import { DataChartTypeCategorySplineSeriesComponent } from "./data-chart/data-chart-type-category-spline-series/data-chart-type-category-spline-series.component";
+import { DataChartTypeCategoryStepAreaSeriesComponent } from "./data-chart/data-chart-type-category-step-area-series/data-chart-type-category-step-area-series.component";
+import { DataChartTypeCategoryStepLineSeriesComponent } from "./data-chart/data-chart-type-category-step-line-series/data-chart-type-category-step-line-series.component";
+import { DataChartTypeCategoryWaterfallSeriesComponent } from "./data-chart/data-chart-type-category-waterfall-series/data-chart-type-category-waterfall-series.component";
+import { DataChartTypeFinancialCandlestickSeriesComponent } from "./data-chart/data-chart-type-financial-candlestick-series/data-chart-type-financial-candlestick-series.component";
+import { DataChartTypeFinancialOhlcSeriesComponent } from "./data-chart/data-chart-type-financial-ohlc-series/data-chart-type-financial-ohlc-series.component";
+import { DataChartTypePolarAreaSeriesComponent } from "./data-chart/data-chart-type-polar-area-series/data-chart-type-polar-area-series.component";
+import { DataChartTypePolarLineSeriesComponent } from "./data-chart/data-chart-type-polar-line-series/data-chart-type-polar-line-series.component";
+import { DataChartTypePolarScatterSeriesComponent } from "./data-chart/data-chart-type-polar-scatter-series/data-chart-type-polar-scatter-series.component";
+import { DataChartTypePolarSplineAreaSeriesComponent } from "./data-chart/data-chart-type-polar-spline-area-series/data-chart-type-polar-spline-area-series.component";
+import { DataChartTypePolarSplineSeriesComponent } from "./data-chart/data-chart-type-polar-spline-series/data-chart-type-polar-spline-series.component";
+import { DataChartTypeRadialAreaSeriesComponent } from "./data-chart/data-chart-type-radial-area-series/data-chart-type-radial-area-series.component";
+import { DataChartTypeRadialColumnSeriesComponent } from "./data-chart/data-chart-type-radial-column-series/data-chart-type-radial-column-series.component";
+import { DataChartTypeRadialLineSeriesComponent } from "./data-chart/data-chart-type-radial-line-series/data-chart-type-radial-line-series.component";
+import { DataChartTypeRadialPieSeriesComponent } from "./data-chart/data-chart-type-radial-pie-series/data-chart-type-radial-pie-series.component";
+import { DataChartTypeRangeAreaSeriesComponent } from "./data-chart/data-chart-type-range-area-series/data-chart-type-range-area-series.component";
+import { DataChartTypeRangeColumnSeriesComponent } from "./data-chart/data-chart-type-range-column-series/data-chart-type-range-column-series.component";
+import { DataChartTypeStackedAreaSeriesComponent } from "./data-chart/data-chart-type-stacked-area-series/data-chart-type-stacked-area-series.component";
+import { DataChartTypeStackedBarSeriesComponent } from "./data-chart/data-chart-type-stacked-bar-series/data-chart-type-stacked-bar-series.component";
+import { DataChartTypeStackedColumnSeriesComponent } from "./data-chart/data-chart-type-stacked-column-series/data-chart-type-stacked-column-series.component";
+import { DataChartTypeStackedLineSeriesComponent } from "./data-chart/data-chart-type-stacked-line-series/data-chart-type-stacked-line-series.component";
+import { DataChartTypeStackedSplineSeriesComponent } from "./data-chart/data-chart-type-stacked-spline-series/data-chart-type-stacked-spline-series.component";
+import { DataChartTypeStacked100AreaSeriesComponent } from "./data-chart/data-chart-type-stacked100-area-series/data-chart-type-stacked100-area-series.component";
+import { DataChartTypeStacked100BarSeriesComponent } from "./data-chart/data-chart-type-stacked100-bar-series/data-chart-type-stacked100-bar-series.component";
+import { DataChartTypeStacked100ColumnSeriesComponent } from "./data-chart/data-chart-type-stacked100-column-series/data-chart-type-stacked100-column-series.component";
+import { DataChartTypeStacked100LineSeriesComponent } from "./data-chart/data-chart-type-stacked100-line-series/data-chart-type-stacked100-line-series.component";
+import { DataChartTypeStacked100SplineSeriesComponent } from "./data-chart/data-chart-type-stacked100-spline-series/data-chart-type-stacked100-spline-series.component";
+
 // doughnut-chart samples
 import { DoughnutChartExplosionSampleComponent } from "./doughnut-chart/doughnut-chart-explosion-sample/doughnut-chart-explosion-sample.component";
 import { DoughnutChartLegendComponent } from "./doughnut-chart/doughnut-chart-legend/doughnut-chart-legend.component";
@@ -300,9 +335,69 @@ export const chartsRoutes: Routes = [
         path: "data-chart-type-category-series"
     },
     {
+        component: DataChartTypeCategoryAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-area-series"],
+        path: "data-chart-type-category-area-series"
+    },
+    {
+        component: DataChartTypeCategoryBarSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-bar-series"],
+        path: "data-chart-type-category-bar-series"
+    },
+    {
+        component: DataChartTypeCategoryColumnSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-column-series"],
+        path: "data-chart-type-category-column-series"
+    },
+    {
+        component: DataChartTypeCategoryLineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-line-series"],
+        path: "data-chart-type-category-line-series"
+    },
+    {
+        component: DataChartTypeCategoryPointSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-point-series"],
+        path: "data-chart-type-category-point-series"
+    },
+    {
+        component: DataChartTypeCategorySplineAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-spline-area-series"],
+        path: "data-chart-type-category-spline-area-series"
+    },
+    {
+        component: DataChartTypeCategorySplineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-spline-series"],
+        path: "data-chart-type-category-spline-series"
+    },
+    {
+        component: DataChartTypeCategoryStepAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-step-area-series"],
+        path: "data-chart-type-category-step-area-series"
+    },
+    {
+        component: DataChartTypeCategoryStepLineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-step-line-series"],
+        path: "data-chart-type-category-step-line-series"
+    },
+    {
+        component: DataChartTypeCategoryWaterfallSeriesComponent,
+        data: chartsRoutesData["data-chart-type-category-waterfall-series"],
+        path: "data-chart-type-category-waterfall-series"
+    },
+    {
         component: DataChartTypeFinancialSeriesComponent,
         data: chartsRoutesData["data-chart-type-financial-series"],
         path: "data-chart-type-financial-series"
+    },
+    {
+        component: DataChartTypeFinancialCandlestickSeriesComponent,
+        data: chartsRoutesData["data-chart-type-financial-candlestick-series"],
+        path: "data-chart-type-financial-candlestick-series"
+    },
+    {
+        component: DataChartTypeFinancialOhlcSeriesComponent,
+        data: chartsRoutesData["data-chart-type-financial-ohlc-series"],
+        path: "data-chart-type-financial-ohlc-series"
     },
     {
         component: DataChartTypePolarSeriesComponent,
@@ -310,14 +405,69 @@ export const chartsRoutes: Routes = [
         path: "data-chart-type-polar-series"
     },
     {
+        component: DataChartTypePolarAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-polar-area-series"],
+        path: "data-chart-type-polar-area-series"
+    },
+    {
+        component: DataChartTypePolarLineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-polar-line-series"],
+        path: "data-chart-type-polar-line-series"
+    },
+    {
+        component: DataChartTypePolarScatterSeriesComponent,
+        data: chartsRoutesData["data-chart-type-polar-scatter-series"],
+        path: "data-chart-type-polar-scatter-series"
+    },
+    {
+        component: DataChartTypePolarSplineAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-polar-spline-area-series"],
+        path: "data-chart-type-polar-spline-area-series"
+    },
+    {
+        component: DataChartTypePolarSplineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-polar-spline-series"],
+        path: "data-chart-type-polar-spline-series"
+    },
+    {
         component: DataChartTypeRadialSeriesComponent,
         data: chartsRoutesData["data-chart-type-radial-series"],
         path: "data-chart-type-radial-series"
     },
     {
+        component: DataChartTypeRadialAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-radial-area-series"],
+        path: "data-chart-type-radial-area-series"
+    },
+    {
+        component: DataChartTypeRadialColumnSeriesComponent,
+        data: chartsRoutesData["data-chart-type-radial-column-series"],
+        path: "data-chart-type-radial-column-series"
+    },
+    {
+        component: DataChartTypeRadialLineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-radial-line-series"],
+        path: "data-chart-type-radial-line-series"
+    },
+    {
+        component: DataChartTypeRadialPieSeriesComponent,
+        data: chartsRoutesData["data-chart-type-radial-pie-series"],
+        path: "data-chart-type-radial-pie-series"
+    },
+    {
         component: DataChartTypeRangeSeriesComponent,
         data: chartsRoutesData["data-chart-type-range-series"],
         path: "data-chart-type-range-series"
+    },
+    {
+        component: DataChartTypeRangeAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-range-area-series"],
+        path: "data-chart-type-range-area-series"
+    },
+    {
+        component: DataChartTypeRangeColumnSeriesComponent,
+        data: chartsRoutesData["data-chart-type-range-column-series"],
+        path: "data-chart-type-range-column-series"
     },
     {
         component: DataChartTypeScatterAreaSeriesComponent,
@@ -348,6 +498,56 @@ export const chartsRoutes: Routes = [
         component: DataChartTypeStackedSeriesComponent,
         data: chartsRoutesData["data-chart-type-stacked-series"],
         path: "data-chart-type-stacked-series"
+    },
+    {
+        component: DataChartTypeStacked100AreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-100-area-series"],
+        path: "data-chart-type-stacked-100-area-series"
+    },
+    {
+        component: DataChartTypeStacked100BarSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-100-bar-series"],
+        path: "data-chart-type-stacked-100-bar-series"
+    },
+    {
+        component: DataChartTypeStacked100ColumnSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-100-column-series"],
+        path: "data-chart-type-stacked-100-column-series"
+    },
+    {
+        component: DataChartTypeStacked100LineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-100-line-series"],
+        path: "data-chart-type-stacked-100-line-series"
+    },
+    {
+        component: DataChartTypeStacked100SplineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-100-spline-series"],
+        path: "data-chart-type-stacked-100-spline-series"
+    },
+    {
+        component: DataChartTypeStackedAreaSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-area-series"],
+        path: "data-chart-type-stacked-area-series"
+    },
+    {
+        component: DataChartTypeStackedBarSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-bar-series"],
+        path: "data-chart-type-stacked-bar-series"
+    },
+    {
+        component: DataChartTypeStackedColumnSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-column-series"],
+        path: "data-chart-type-stacked-column-series"
+    },
+    {
+        component: DataChartTypeStackedLineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-line-series"],
+        path: "data-chart-type-stacked-line-series"
+    },
+    {
+        component: DataChartTypeStackedSplineSeriesComponent,
+        data: chartsRoutesData["data-chart-type-stacked-spline-series"],
+        path: "data-chart-type-stacked-spline-series"
     },
     {
         component: DataChartTypeValueOverlayComponent,
