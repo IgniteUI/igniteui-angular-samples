@@ -61,5 +61,6 @@ export const gridsRoutesData = {
     "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" },
     "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
-    "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" }
+    "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
+    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" }
 };

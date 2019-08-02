@@ -51,6 +51,7 @@ import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tree-grid-filtering-style.component";
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
@@ -364,6 +365,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridToolbarStyleComponent,
         data: treeGridRoutesData["treegrid-toolbar-style"],
         path: "treegrid-toolbar-style"
+    },
+    {
+        component: TreeGridFilteringStyleComponent,
+        data: treeGridRoutesData["treegrid-filtering-style"],
+        path: "treegrid-filtering-style"
     }
 ];
 
