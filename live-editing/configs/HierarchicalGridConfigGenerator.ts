@@ -35,6 +35,7 @@ import {
 import {
     HGridExcelStyleFilteringSample3Component
 } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import { HierarchicalGridFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import {
     HGridFilteringTemplateSampleComponent
 } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
@@ -130,6 +131,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                     IgxDatePickerModule, IgxGridModule, IgxDialogModule]
             }),
             component: HGridBatchEditingSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HierarchicalGridFilteringStyleComponent],
+                ngDeclarations: [HierarchicalGridFilteringStyleComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HierarchicalGridFilteringStyleComponent
         }));
 
         configs.push(new Config({
