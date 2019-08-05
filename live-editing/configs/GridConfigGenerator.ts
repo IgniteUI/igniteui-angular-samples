@@ -140,7 +140,9 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridGroupByPagingSampleComponent } from '../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component';
+import { GridGroupByPagingSampleComponent } from "../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component";
+import { GridCustomAggregateSelection } from "../../src/app/grid/grid-custom-aggregate-selection/grid-custom-aggregate-selection.component";
+import { AggregatedData } from "../../src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component";
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -568,6 +570,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridBatchEditingSampleComponent, GridWithTransactionsComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxFocusModule]
+            })
+        }));
+
+        // Grid Custom Aggregates
+        configs.push(new Config({
+            component: GridCustomAggregateSelection,
+            additionalFiles: ["/src/app/data/nwindData.ts", 
+                "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.html",
+                "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.scss",
+                "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [AggregatedData, GridCustomAggregateSelection, IgxGridModule],
+                ngDeclarations: [AggregatedData, GridCustomAggregateSelection],
+                ngImports: [IgxGridModule]
             })
         }));
 
