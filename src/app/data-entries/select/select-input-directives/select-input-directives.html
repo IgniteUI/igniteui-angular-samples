@@ -4,8 +4,8 @@
         <igx-prefix>
             <igx-icon color="green" style="width:48px; height:32px;">BIO</igx-icon>
         </igx-prefix>
-        <igx-suffix>
-            <igx-icon (click)="clearSelection($event)">{{ selected ? 'clear' : null}}</igx-icon>
+        <igx-suffix *ngIf="selected">
+            <igx-icon (click)="clearSelection($event)">clear</igx-icon>
         </igx-suffix>
         <igx-select-item *ngFor="let item of items" [value]="item">
             {{item}}
