@@ -1,25 +1,22 @@
 .grid__wrapper {
-    padding: 3px 10px;
+    margin: 0 16px;
 }
 
-:host{
-    ::ng-deep{
+:host {
+     ::ng-deep {
         .igx-grid {
             margin-top: 10px;
         }
-        
         .dialogNewRecord {
             margin: 10px;
-            padding: 10px;;
+            padding: 10px;
         }
-                
         .igx-checkbox {
             margin-top: 5px;
             margin-bottom: 5px;
             padding-top: 8px;
             padding-bottom: 5px;
         }
-        
         .igx-combo {
             margin-top: 25px;
             .igx-input-group {
@@ -27,21 +24,39 @@
                 padding: 5px;
             }
         }
-        
         .reorderLevelInput {
             color: black;
             width: 100%;
+        }
+        .locations {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        @media screen and (max-width: 934px) {
+            .igx-grid {
+                overflow-x: none;
+            }
+        }
+        .igx-overlay__content {
+            width: 300px !important;
         }
     }
 }
 
 .default-theme {
-    .addProdBtn.igx-button--raised{
+    .addProdBtn.igx-button--raised {
         background-color: lightgrey;
         color: black;
         &:hover {
-            background-color:  rgba(0, 0, 0, 0.26)
+            background-color: rgba(0, 0, 0, 0.26)
         }
     }
 }
 
+::ng-deep body .igx-combo__content .igx-display-container {
+    .igx-combo-item {
+        padding: 0 0.5rem;
+        font-size: 13px;
+    }
+}

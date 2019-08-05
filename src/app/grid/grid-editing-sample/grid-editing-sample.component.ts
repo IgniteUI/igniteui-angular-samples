@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { IgxDialogComponent, IgxGridComponent, IgxOverlayService } from "igniteui-angular";
 import { DATA, LOCATIONS } from "./data";
 import { Product } from "./product";
 
@@ -17,7 +17,8 @@ export class GridEditingSampleComponent implements OnInit {
     public data;
     public locations;
     public product;
-    constructor() { }
+    constructor(public element: ElementRef) {
+    }
 
     public ngOnInit() {
         this.data = DATA.map((e) => {
