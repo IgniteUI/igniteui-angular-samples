@@ -28,6 +28,7 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
+import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
@@ -147,7 +148,8 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridClipboardSampleComponent,
         GridToolbarStyleComponent,
         GridGroupByPagingSampleComponent,
-        GridPagerSampleComponent
+        GridPagerSampleComponent,
+        GridFilteringStyleComponent
     ],
     imports: [
         CommonModule,

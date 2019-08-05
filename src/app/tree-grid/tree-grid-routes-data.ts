@@ -63,5 +63,6 @@ export const treeGridRoutesData = {
         parentName: "TreeGrid"
     },
     "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
-    "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" }
+    "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
+    "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" }
 };
