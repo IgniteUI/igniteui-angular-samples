@@ -7,6 +7,7 @@ import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-
 import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarStylingSample } from "./calendar/calendar-styling-sample/calendar-styling-sample.component";
 import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
@@ -71,6 +72,11 @@ export const schedulingRoutes: Routes = [
         component: CalendarSample7Component,
         data: schedulingRoutesData["calendar-sample-7"],
         path: "calendar-sample-7"
+    },
+    {
+        component: CalendarStylingSample,
+        data: schedulingRoutesData["calendar-styling-sample"],
+        path: "calendar-styling-sample"
     },
     {
         component: CalendarViewsComponent,
