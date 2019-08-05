@@ -8,5 +8,24 @@
         <igx-column [field]="'Change'" [width]="'12%'" dataType="number"></igx-column>
         <igx-column [field]="'Change(%)'" [width]="'14%'" dataType="number"></igx-column>
         <igx-column [field]="'Change On Year(%)'" [width]="'16%'" dataType="number"></igx-column>
+
+        <ng-template igxHeadSelector let-headContext>
+            <div style="width: 53px; height: 100%;" (click)="myGrid.onHeadSelectorClick($event, filteredData)"></div>
+        </ng-template>
+
+        <ng-template igxRowSelector let-rowContext>
+            <div style="width: 53px;">
+                <span style="padding-right: 5px;">{{ (rowContext.index + 1) | number}}</span>
+                <igx-checkbox [checked]="rowContext.selected"
+                    (change)="!rowContext.selected ? myGrid.selectRows([rowContext.rowID]) : myGrid.deselectRows([rowContext.rowID])"
+                    disableRipple="true" [disableTransitions]="myGrid.disableTransitions"
+                    [aria-label]="myGrid.rowCheckboxAriaLabel" style="padding-right: 10px;">
+                </igx-checkbox>
+            </div>
+        </ng-template>
     </igx-grid>
+    <ng-template igxRowSelector let-context>
+        <div>context.index</div>
+    </ng-template>
+
 </div>
