@@ -58,7 +58,8 @@ import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
-import { GridEditingStyleSample
+import {
+    GridEditingStyleSample
 } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import {
     ExcelStyleFilteringSample1Component
@@ -69,10 +70,12 @@ import {
 import {
     ExcelStyleFilteringSample3Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
+import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import {
     FilteringTemplateSampleComponent
 } from "../../src/app/grid/grid-filtering-template-sample/grid-filtering-template-sample.component";
+import { GridGroupByPagingSampleComponent } from '../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component';
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
 import {
     GridGroupBySummarySampleComponent
@@ -90,6 +93,7 @@ import {
 } from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
+import { GridPagerSampleComponent } from "../../src/app/grid/grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
 import {
     RemoteFilteringSampleComponent
@@ -139,7 +143,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridGroupByPagingSampleComponent } from '../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component';
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -212,6 +215,17 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridFilteringStyleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridFilteringStyleComponent],
+                ngDeclarations: [GridFilteringStyleComponent],
+                ngImports: [IgxGridModule],
+                ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
             component: FilteringSampleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -250,6 +264,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
                     IgxRippleModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: [DataService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridPagerSampleComponent,
+            additionalFiles: ["/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxRippleModule, IgxSwitchModule, GridPagerSampleComponent, IgxSelectModule],
+                ngDeclarations: [GridPagerSampleComponent],
+                ngImports: [IgxGridModule, IgxRippleModule, IgxSwitchModule, IgxSelectModule]
             })
         }));
 
@@ -516,9 +540,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: RemotePagingGridSample,
             additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [RemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule, RemotePagingService],
+                imports: [RemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule, RemotePagingService,
+                    IgxSelectModule],
                 ngDeclarations: [RemotePagingGridSample],
-                ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule],
+                ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule, IgxSelectModule],
                 ngProviders: [RemotePagingService]
             })
         }));

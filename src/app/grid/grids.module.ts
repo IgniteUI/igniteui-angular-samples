@@ -28,6 +28,7 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
+import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
@@ -75,6 +76,7 @@ import { DataService } from "./services/data.service";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
 // tslint:enable:max-line-length
@@ -145,7 +147,9 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridMultiColumnHeaderTemplateComponent,
         GridClipboardSampleComponent,
         GridToolbarStyleComponent,
-        GridGroupByPagingSampleComponent
+        GridGroupByPagingSampleComponent,
+        GridPagerSampleComponent,
+        GridFilteringStyleComponent
     ],
     imports: [
         CommonModule,
