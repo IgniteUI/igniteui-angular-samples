@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
     selector: "app-email-sample",
@@ -7,6 +7,9 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class EmailSampleComponent implements OnInit {
+
+    @Input() ghostTemplate: any;
+
     public folders: any[] = [
         { icon: "inbox", text: "Inbox"},
         { icon: "star_rate", text: "Starred"},
@@ -33,8 +36,8 @@ export class EmailSampleComponent implements OnInit {
         email.checked = !email.checked;
     }
 
-    public dropElement(email: any): void {
-        console.log(email);
+    public dropElement(event: any): void {
+        this.emails = this.emails.filter(x=>x.sender!=event.dragData.sender);
     }
 
 }

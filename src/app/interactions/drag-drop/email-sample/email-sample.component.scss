@@ -101,6 +101,15 @@ ul {
         background-color: #eee;
         cursor: pointer;
     }
+    li:active {
+        background-color: #e0e0e0;
+    }
+    li.email-checked:hover {
+        background-color: #F4C7DE;
+    }
+    li.email-checked:active {
+        background-color: #cfaabd;
+    }
 }
 .email-checked {
     background: #F4C7DE;
