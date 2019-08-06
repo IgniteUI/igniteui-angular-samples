@@ -45,17 +45,17 @@ ul {
         }
         &:nth-child(5) {
             igx-icon {
-                color: #E41C77;
+                color: #af1159;
             }
         }
         &:nth-child(6) {
             igx-icon {
-                color: #0099FF;
+                color: #0071bf;
             }
         }
         &:nth-child(7) {
             igx-icon {
-                color: #4EB862;
+                color: #4eb862;
             }
         }
     }
@@ -63,7 +63,7 @@ ul {
 .emails-container {
     width: 760px;
     .period {
-        color: #E41C77;
+        color: #ed6ca7;
         text-align: left;
         height: 48px;
         padding-left: 15px;
@@ -88,16 +88,20 @@ ul {
             .sender {
                 font-size: 16px;
                 letter-spacing: 0.15px;
-                color: rgba(0,0,0,0.866);
+                color: rgba(0, 0, 0, 1);
             }
             .email-title {
                 font-size: 14px;
                 letter-spacing: 0.25px;
-                color: rgba(0,0,0,0.619);
+                color: rgba(0, 0, 0, 0.619);
             }
         }
     }
 }
 .email-checked {
     background: #F4C7DE;
+    -webkit-transition: background .1s ease-out;
+    -moz-transition: background .1s ease-out;
+    -o-transition: background .1s ease-out;
+    transition: background .1s ease-out;
 }
