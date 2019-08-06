@@ -17,6 +17,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting-styling": { displayName: "Hierarchical Grid Sorting Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-selection": { displayName: "Hierarchical Grid Selection", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-selection-template-numbers": { displayName: "Hierarchical Grid Row Selectors Template - Numbers", parentName: "Hierarchical Grid" },
     "hierarchical-grid-summary": { displayName: "Hierarchical Grid Summary", parentName: "Hierarchical Grid" },
     "hierarchical-grid-paging": { displayName: "Hierarchical Grid Paging", parentName: "Hierarchical Grid" },
     "hierarchical-grid-remote-paging": { displayName: "Hierarchical Grid Remote Paging", parentName: "Hierarchical Grid" },
