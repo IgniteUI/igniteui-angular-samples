@@ -10,7 +10,8 @@
         </div>
         <ul class="emails">
             <li *ngFor="let email of emails"
-                [class.email-checked]="email.checked">
+                [class.email-checked]="email.checked"
+                (click)="toggleCheck(email)">
                 <div class="email-content flexlist">
                     <div class="sender">
                         {{email.sender}} 

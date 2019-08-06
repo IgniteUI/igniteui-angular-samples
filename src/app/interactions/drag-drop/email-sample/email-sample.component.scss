@@ -97,6 +97,10 @@ ul {
             }
         }
     }
+    li:hover {
+        background-color: #eee;
+        cursor: pointer;
+    }
 }
 .email-checked {
     background: #F4C7DE;
