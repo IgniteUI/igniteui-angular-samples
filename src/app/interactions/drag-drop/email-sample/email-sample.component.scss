@@ -109,3 +109,25 @@ ul {
     -o-transition: background .1s ease-out;
     transition: background .1s ease-out;
 }
+
+.dragGhost {
+    // width: 173px;
+    // height: 38px;
+
+    width: 173px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    background-color: #dd75b1;
+    font-size: 0.8em;
+    padding: 5px;
+
+    & igx-icon {
+        margin: 0 0.5rem;
+    }
+}

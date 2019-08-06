@@ -33,4 +33,8 @@ export class EmailSampleComponent implements OnInit {
         email.checked = !email.checked;
     }
 
+    public dropElement(email: any): void {
+        console.log(email);
+    }
+
 }

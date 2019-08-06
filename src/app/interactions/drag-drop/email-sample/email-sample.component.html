@@ -1,6 +1,6 @@
 <div class="mailbox">
     <ul class="folders flexlist">
-        <li *ngFor="let folder of folders">
+        <li *ngFor="let folder of folders" igxDrop (onDrop)="dropElement(email)">
             <igx-icon fontSet="material">{{folder.icon}}</igx-icon> {{folder.text}}
         </li>
     </ul>
@@ -8,10 +8,15 @@
         <div class="period">
             Today
         </div>
-        <ul class="emails">
+        <div #ghostHostItem class="dragGhost">
+            <igx-icon fontSet="material">email</igx-icon> Moving 1 item
+        </div>
+        <ul class="emails" igxDrop>
             <li *ngFor="let email of emails"
                 [class.email-checked]="email.checked"
-                (click)="toggleCheck(email)">
+                (click)="toggleCheck(email)"
+                igxDrag
+                [dragGhostHost]="ghostHostItem">
                 <div class="email-content flexlist">
                     <div class="sender">
                         {{email.sender}} 
