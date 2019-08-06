@@ -1,5 +1,5 @@
 <igx-hierarchical-grid class="hgrid" [data]="localdata" [autoGenerate]="false" [height]="'600px'" [width]="'100%'"
-    [rowHeight]="'65px'" [rowSelectable]="true" (onSelection)="handleRowSelection($event)" #hierarchicalGrid>
+    [rowSelectable]="true" #hierarchicalGrid>
     <igx-column field="Artist"></igx-column>
     <igx-column field="Debut"></igx-column>
     <igx-column field="GrammyNominations" header="Grammy Nominations"></igx-column>
@@ -24,4 +24,18 @@
         <igx-column field="Location"></igx-column>
         <igx-column field="Headliner"></igx-column>
     </igx-row-island>
+    <ng-template igxHeadSelector>
+        <div style="width: 53px; height: 100%;"></div>
+    </ng-template>
+
+    <ng-template igxRowSelector let-rowContext>
+        <div style="width: 53px;">
+            <span style="padding-right: 5px;">{{ (rowContext.index + 1) | number: '2.0-0'}}</span>
+            <igx-checkbox [checked]="rowContext.selected"
+                (change)="!rowContext.selected ? hierarchicalGrid.selectRows([rowContext.rowID]) : hierarchicalGrid.deselectRows([rowContext.rowID])"
+                disableRipple="true" [disableTransitions]="hierarchicalGrid.disableTransitions"
+                [aria-label]="hierarchicalGrid.rowCheckboxAriaLabel" style="padding-right: 10px;">
+            </igx-checkbox>
+        </div>
+    </ng-template>
 </igx-hierarchical-grid>
