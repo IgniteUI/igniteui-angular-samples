@@ -1,0 +1,12 @@
+<h4>Order Price: <div class="{{ orderBalance > balance ? 'invalid' : 'valid' }}">{{ orderBalance | number:"1.2-2" }} / {{ balance }}</div></h4>
+<igx-grid [data]="products" width="800px" height="500px" primaryKey="ProductID" (onCellEdit)="handleCellEdit($event)">
+    <igx-column field="ProductName" header="Product Name" dataType="string">
+    </igx-column>
+    <igx-column field="UnitPrice" header="Price" dataType="number"></igx-column>
+    <igx-column field="UnitsInStock" header="Units In Stock" dataType="number"></igx-column>
+    <igx-column field="Ordered" header="Ordered" dataType="number" [editable]="true">
+    </igx-column>
+    <igx-column field="OrderPrice" hasSummary="true" dataType="number">
+    </igx-column>
+</igx-grid>
+<igx-toast #loadingToast message="You cannot order more than the units in stock!"></igx-toast>

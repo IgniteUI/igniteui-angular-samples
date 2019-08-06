@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { IgxDialogComponent, IgxGridComponent, IgxOverlayService } from "igniteui-angular";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
 import { DATA, LOCATIONS } from "./data";
 import { Product } from "./product";
 
@@ -17,13 +17,11 @@ export class GridEditingSampleComponent implements OnInit {
     public data;
     public locations;
     public product;
-    constructor(public element: ElementRef) {
-    }
 
     public ngOnInit() {
         this.data = DATA.map((e) => {
             const index = Math.floor(Math.random() * LOCATIONS.length);
-            const count = Math.floor(Math.random() * (LOCATIONS.length - index)) + 1;
+            const count = Math.floor(Math.random() * 3) + 1;
             e.Locations = [...LOCATIONS].splice(index, count);
             return e;
         });
@@ -46,7 +44,7 @@ export class GridEditingSampleComponent implements OnInit {
         this.product = new Product();
     }
 
-    public parseArray(arr: Array<{ shop: string, lastInventory: string}>): string[] {
-        return  (arr || []).map((e) => e.shop);
+    public parseArray(arr: Array<{ shop: string, lastInventory: string}>): string {
+        return  (arr || []).map((e) => e.shop).join(", ");
     }
 }
