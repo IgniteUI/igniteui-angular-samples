@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { DATA } from "../services/financialData";
+import { DATA } from "../../data/customers";
 
 import { IgxGridComponent } from "igniteui-angular";
 
@@ -10,7 +10,6 @@ import { IgxGridComponent } from "igniteui-angular";
 })
 
 export class GridSelectionTemplateNumbersComponent {
-    @ViewChild("myGrid", { static: true }) public myGrid: IgxGridComponent;
     public data: any[];
 
     constructor() {
