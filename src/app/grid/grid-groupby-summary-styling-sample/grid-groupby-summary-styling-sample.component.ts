@@ -20,7 +20,6 @@ class CustomSummary extends IgxSummaryOperand {
 
     public operate(data?: any[]): IgxSummaryResult[] {
         const result = [];
-        const avg = IgxNumberSummaryOperand.average(data);
         result.push({
             key: "sum",
             label: "Sum",

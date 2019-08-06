@@ -2,39 +2,66 @@
 
 /*BASIC THEMING*/
 
-// $custom-theme: igx-grid-summary-theme(
-//     $background-color: black,
-//     $focus-background-color: gray,
-//     $label-color: green,
-//     $result-color: red,
-//     $pinned-border-width: 5px,
-//     $pinned-border-style: dotted,
-//     $pinned-border-color: yellow,
+$custom-theme: igx-grid-summary-theme(
+    $background-color: #3d7bbe,
+    $focus-background-color: #3972ae,
+    $label-color: #00ff2d,
+    $result-color: black,
+    $pinned-border-width: 2px,
+    $pinned-border-style: dotted,
+    $pinned-border-color: #00ff2d
+);
+
+/*ENHANCED APPROACHES*/
+
+// $blue-color: #7793b1;
+// $green-color: #00ff2d;
+
+/*PALETTE*/
+
+// $my-custom-palette: igx-palette(
+//     $primary: $blue-color,
+//     $secondary: $green-color
 // );
 
-$my-summary-schema: extend($_light-grid-summary,
-    (
-        background-color: black,
-        focus-background-color: gray,
-        label-color: green,
-        result-color: red,
-        pinned-border-width: 5px,
-        pinned-border-style: dotted,
-        pinned-border-color: yellow,
-    )
-);
+// $custom-theme: igx-grid-summary-theme(
+//     $background-color: igx-color($my-custom-palette, "primary", 700),
+//     $focus-background-color: igx-color($my-custom-palette, "primary", 800),
+//     $label-color: igx-color($my-custom-palette, "secondary", 500),
+//     $result-color: igx-color($my-custom-palette, "grays", 900),
+//     $pinned-border-width: 2px,
+//     $pinned-border-style: dotted,
+//     $pinned-border-color: igx-color($my-custom-palette, "secondary", 500)
+// );
 
-$my-custom-schema: extend($light-schema,
-    (
-        igx-grid-summary: $my-summary-schema
-    )
-);
+/*SCHEMAS*/
 
-$custom-theme: igx-grid-summary-theme(
-    $schema: $my-custom-schema
-);
+// $my-summary-schema: extend($_light-grid-summary,
+//     (
+//         background-color: (igx-color: ('primary', 700)),
+//         focus-background-color: (igx-color: ('primary', 800)),
+//         label-color: (igx-color: ('secondary', 500)),
+//         result-color: (igx-color: ('grays', 900)),
+//         pinned-border-width: 2px,
+//         pinned-border-style: dotted,
+//         pinned-border-color: (igx-color: ('secondary', 500))
+//     )
+// );
 
+// $my-custom-schema: extend($light-schema,
+//     (
+//         igx-grid-summary: $my-summary-schema
+//     )
+// );
 
+/*THEME*/
+
+// $custom-theme: igx-grid-summary-theme(
+//     $palette: $my-custom-palette,
+//     $schema: $my-custom-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
     ::ng-deep {
