@@ -63,5 +63,5 @@ export const gridsRoutesData = {
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
     "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
-    "grid-custom-aggregates": { displayName: "Selection Based Aggregate", parentName: "Grid" }
+    "grid-selection-custom-summaries": { displayName: "Grid Selection Based Summaries", parentName: "Grid" }
 };

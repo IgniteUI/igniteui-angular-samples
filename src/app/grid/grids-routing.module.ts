@@ -376,8 +376,8 @@ export const gridsRoutes: Routes = [
     },
     {
         component: GridCustomAggregateSelection,
-        data: gridsRoutesData["grid-custom-aggregates"],
-        path: "grid-custom-aggregates"
+        data: gridsRoutesData["grid-selection-custom-summaries"],
+        path: "grid-selection-custom-summaries"
     }
 ];
 
