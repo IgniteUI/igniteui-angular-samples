@@ -17,6 +17,7 @@ import {
     IgxInputGroupModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSelectModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTreeGridModule
@@ -234,9 +235,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid Sorting sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/foods.ts",
-            "/src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component.html",
-            "/src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component.ts",
-            "/src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component.scss"],
+                "/src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component.html",
+                "/src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component.ts",
+                "/src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component.scss"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridSortingSampleComponent, IgxIconModule, TreeGridContextmenuComponent],
                 ngDeclarations: [TreeGridSortingSampleComponent, TreeGridContextmenuComponent],
@@ -650,9 +651,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-remote-paging-sample/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridRemotePagingSampleComponent],
+                imports: [IgxTreeGridModule, TreeGridRemotePagingSampleComponent, IgxSelectModule],
                 ngDeclarations: [TreeGridRemotePagingSampleComponent],
-                ngImports: [IgxTreeGridModule]
+                ngImports: [IgxTreeGridModule, IgxSelectModule]
             }),
             component: TreeGridRemotePagingSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
