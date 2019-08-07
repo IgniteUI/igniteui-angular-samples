@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from "@angular/core";
 export class EmailSampleComponent implements OnInit {
 
     @Input() ghostTemplate: any;
+    public hasChecked: boolean = false;
 
     public folders: any[] = [
         { icon: "inbox", text: "Inbox"},
@@ -28,12 +29,19 @@ export class EmailSampleComponent implements OnInit {
 
     constructor() { }
 
-    public ngOnInit() {
+    public ngOnInit() { }
 
-    }
-
-    public toggleCheck(email: any): void {
-        email.checked = !email.checked;
+    public toggleCheck(email: any, checkbox: any): void {
+        if (email.checked || this.hasChecked !== true) {
+            email.checked = !email.checked;
+            checkbox.toggle();
+            this.hasChecked = false;
+            this.emails.forEach(x => {
+                if (x.checked === true) {
+                    this.hasChecked = true;
+                }
+            });
+        }
     }
 
     public dropElement(event: any): void {

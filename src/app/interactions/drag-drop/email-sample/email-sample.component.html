@@ -11,15 +11,15 @@
         <div class="period">
             Today
         </div>
-        <ng-template #customGhost>
-            <div class="dragGhost">
-                <igx-icon fontSet="material">email</igx-icon> Moving 1 item
-            </div>
-        </ng-template>
         <ul class="emails" igxDrop>
+            <ng-template #customGhost>
+                <div class="dragGhost">
+                    <igx-icon fontSet="material">email</igx-icon> Moving 1 item
+                </div>
+            </ng-template>
             <li *ngFor="let email of emails"
                 [class.email-checked]="email.checked"
-                (click)="toggleCheck(email)"
+                (click)="toggleCheck(email, checkbox)"
                 [igxDrag]="email"
                 [ghostTemplate]="customGhost"
                 [ghostOffsetX]="-5"
@@ -32,7 +32,9 @@
                         {{email.title}}
                     </div>
                 </div>
-                <igx-checkbox [(ngModel)]="email.checked">
+                <igx-checkbox #checkbox
+                    [disabled]="email.checked"
+                    [(ngModel)]="email.checked">
                 </igx-checkbox>
             </li>
         </ul>
