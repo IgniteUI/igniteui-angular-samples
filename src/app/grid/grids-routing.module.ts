@@ -64,6 +64,7 @@ import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-g
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
 
@@ -183,6 +184,11 @@ export const gridsRoutes: Routes = [
         component: GridCustomFilteringComponent,
         data: gridsRoutesData["grid-filter-conditions"],
         path: "grid-filter-conditions"
+    },
+    {
+        component: GridPagerSampleComponent,
+        data: gridsRoutesData["grid-pager-sample"],
+        path: "grid-pager-sample"
     },
     {
         component: PagingSampleComponent,

@@ -77,6 +77,7 @@ import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-g
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
 // tslint:enable:max-line-length
@@ -149,6 +150,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridClipboardSampleComponent,
         GridToolbarStyleComponent,
         GridGroupByPagingSampleComponent,
+        GridPagerSampleComponent,
         GridFilteringStyleComponent
     ],
     imports: [

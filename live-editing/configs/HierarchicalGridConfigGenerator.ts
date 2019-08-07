@@ -11,6 +11,7 @@ import {
     IgxHierarchicalGridModule,
     IgxIconModule,
     IgxInputGroupModule,
+    IgxSelectModule,
     IgxSwitchModule,
     IgxToastModule
 } from "igniteui-angular";
@@ -272,9 +273,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-paging/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent, HttpClientModule],
+                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent, HttpClientModule, IgxSelectModule],
                 ngDeclarations: [HGridRemotePagingSampleComponent],
-                ngImports: [IgxHierarchicalGridModule, HttpClientModule]
+                ngImports: [IgxHierarchicalGridModule, HttpClientModule, IgxSelectModule]
             }),
             component: HGridRemotePagingSampleComponent
         }));
