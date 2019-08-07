@@ -38,6 +38,15 @@ export class EmailSampleComponent implements OnInit {
 
     public dropElement(event: any): void {
         this.emails = this.emails.filter(x=>x.sender!=event.dragData.sender);
+        this.leaveDropZone(event);
+    }
+
+    public enterDropZone(event: any): void {
+        event.owner.element.nativeElement.style.background = "#d8d8d8";
+    }
+
+    public leaveDropZone(event: any): void {
+        event.owner.element.nativeElement.style.background = "#ebebeb";
     }
 
 }
