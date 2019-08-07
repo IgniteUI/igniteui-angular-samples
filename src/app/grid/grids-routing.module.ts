@@ -65,6 +65,9 @@ import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import {
+    GridMultiColumnHeadersStylingComponent
+} from "./multi-column-headers-styling/multi-column-headers-styling";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -283,6 +286,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiColumnHeadersComponent,
         data: gridsRoutesData["multi-column-headers"],
         path: "multi-column-headers"
+    },
+    {
+        component: GridMultiColumnHeadersStylingComponent,
+        data: gridsRoutesData["multi-column-headers-styling"],
+        path: "multi-column-headers-styling"
     },
     {
         component: RemotePagingGridSample,
