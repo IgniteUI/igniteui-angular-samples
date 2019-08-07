@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input} from "@angular/core";
+import { AfterViewInit, Component, Input } from "@angular/core";
 
 import { IgxGridComponent } from "igniteui-angular";
 
@@ -26,7 +26,7 @@ export class AggregatedData implements AfterViewInit {
       });
     }
 
-    protected updateData(res: any): void {
+    public updateData(res: any): void {
       for (const key in this.aggregatedData) {
         if (this.aggregatedData.hasOwnProperty(key)) {
             delete this.aggregatedData[key];
