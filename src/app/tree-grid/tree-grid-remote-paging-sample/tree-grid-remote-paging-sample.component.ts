@@ -1,5 +1,5 @@
 import { formatNumber } from "@angular/common";
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxTreeGridComponent } from "igniteui-angular";
 import { Observable } from "rxjs";
 import { RemotePagingService } from "./remotePagingService";
@@ -12,17 +12,21 @@ import { RemotePagingService } from "./remotePagingService";
     templateUrl: "./tree-grid-remote-paging-sample.component.html"
 })
 export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {
-
     public page = 0;
     public lastPage = false;
     public firstPage = true;
     public totalPages: number = 1;
     public totalCount = 0;
     public maxPerPage = Number.MAX_SAFE_INTEGER;
-
-    @ViewChild("treeGrid", { static : true})
-    public treeGrid: IgxTreeGridComponent;
     public data: Observable<any[]>;
+    @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
+
+    private _perPage = 10;
+    private _dataLengthSubscriber;
+
+    constructor(
+        private remoteService: RemotePagingService) {
+    }
 
     public get perPage(): number {
         return this._perPage;
@@ -31,13 +35,6 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
     public set perPage(val: number) {
         this._perPage = val;
         this.paginate(0, true);
-    }
-
-    private _perPage = 10;
-    private _dataLengthSubscriber;
-
-    constructor(
-        private remoteService: RemotePagingService) {
     }
 
     public ngOnInit() {
@@ -111,10 +108,6 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
             this.lastPage = false;
             this.firstPage = true;
         }
-    }
-
-    public parseToInt(val) {
-        return parseInt(val, 10);
     }
 
     public formatSize(value: number) {

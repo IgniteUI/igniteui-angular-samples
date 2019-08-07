@@ -11,13 +11,14 @@ import {
     IgxHierarchicalGridModule,
     IgxIconModule,
     IgxInputGroupModule,
+    IgxSelectModule,
     IgxSwitchModule
 } from "igniteui-angular";
 import { HGridBatchEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridWithTransactionsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
+import { HierarchicalGridColumnHidingToolbarStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component"
 import { HGridCostumHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
-import { HierarchicalGridColumnHidingToolbarStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component"
 import { HGridColumnMovingSampleComponentStyled } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component";
 import { HGridColumnMovingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
@@ -259,9 +260,9 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-paging/remotePagingService.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent, HttpClientModule],
+                imports: [IgxHierarchicalGridModule, HGridRemotePagingSampleComponent, HttpClientModule, IgxSelectModule],
                 ngDeclarations: [HGridRemotePagingSampleComponent],
-                ngImports: [IgxHierarchicalGridModule, HttpClientModule]
+                ngImports: [IgxHierarchicalGridModule, HttpClientModule, IgxSelectModule]
             }),
             component: HGridRemotePagingSampleComponent
         }));
