@@ -16,7 +16,7 @@
         <ng-template igxRowSelector let-rowContext>
             <div style="min-width: 60px; display: flex;">
                 <div style="padding-right: 5px; width: 25px;">
-                    <span>{{ rowContext.index }}</span>
+                    <span>{{ rowContext.index + 1 }}</span>
                 </div>
                 <igx-checkbox [checked]="rowContext.selected"
                     (change)="!rowContext.selected ? treeGrid.selectRows([rowContext.rowID]) : treeGrid.deselectRows([rowContext.rowID])"
