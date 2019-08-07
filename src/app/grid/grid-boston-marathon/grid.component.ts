@@ -5,7 +5,6 @@ import {
     OnDestroy,
     OnInit,
     ViewChild,
-    ViewEncapsulation
 } from "@angular/core";
 import {
     IgxGridComponent,
