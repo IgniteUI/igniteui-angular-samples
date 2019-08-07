@@ -3,7 +3,7 @@
         <li *ngFor="let folder of folders" igxDrop 
             (onEnter)="enterDropZone($event)"
             (onLeave)="leaveDropZone($event)"
-            (onDrop)="dropElement($event)" >
+            (onDrop)="dropElement($event)">
             <igx-icon fontSet="material">{{folder.icon}}</igx-icon> {{folder.text}}
         </li>
     </ul>

@@ -45,8 +45,14 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public dropElement(event: any): void {
-        this.emails = this.emails.filter(x=>x.sender!=event.dragData.sender);
-        this.leaveDropZone(event);
+        if (event.dragData.checked === true) {
+            this.hasChecked = false;
+            this.emails = this.emails.filter(x=>x.sender!=event.dragData.sender);
+            this.leaveDropZone(event);
+        } else {
+            // event.drag.animateToOrigin();
+            event.cancel = true;
+        }
     }
 
     public enterDropZone(event: any): void {
