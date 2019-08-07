@@ -22,6 +22,7 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-sample-2": { displayName: "Grid Excel Style Filtering Operations", parentName: "Grid" },
     "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
+    "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
     "grid-resize-line-styling-sample": { displayName: "Grid Resize Line Styling", parentName: "Grid" },
@@ -56,12 +57,12 @@ export const gridsRoutesData = {
     "custom-grid-paging-style": { displayName: "Custom Grid Paging Style", parentName: "Grid" },
     "grid-nested-data-binding": { displayName: "Grid Nested Data Binding", parentName: "Grid" },
     "grid-composite-data-binding": { displayName: "Grid Composite Data Binding", parentName: "Grid" },
-    "grid-row-edit-style" : { displayName: "Grid Row Edit Style", parentName: "Grid" },
+    "grid-row-edit-style": { displayName: "Grid Row Edit Style", parentName: "Grid" },
     "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" },
     "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" },
     "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
     "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
-    "grid-custom-aggregates": { displayName: "Selection Based Aggregate", parentName: "Grid" }
+    "grid-selection-custom-summaries": { displayName: "Grid Selection Based Summaries", parentName: "Grid" }
 };
