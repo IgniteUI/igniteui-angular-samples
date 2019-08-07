@@ -28,15 +28,16 @@ $my-color-palette: igx-palette(
 $custom-panel-theme: igx-expansion-panel-theme(
     $palette: $my-color-palette,
     $header-background: igx-color($my-color-palette, "primary", 200),
+    $header-focus-background: igx-color($my-color-palette, "primary", 300),
     $header-title-color: igx-color($my-color-palette, "info"),
     $header-icon-color: igx-color($my-color-palette, "info"),
     $body-background: igx-color($my-color-palette, "secondary", 100),
     $border-radius: 0.35em
 );
 
-// Pass our custom-panel-theme to `igx-panel` mixin.
+// Pass our custom-panel-theme to `igx-expansion-panel` mixin.
 :host {
    ::ng-deep {
-           @include igx-expansion-panel($custom-panel-theme);
+        @include igx-expansion-panel($custom-panel-theme);
    }
 }
