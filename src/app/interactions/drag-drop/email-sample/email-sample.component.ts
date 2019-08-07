@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from "@angular/core";
 
 export class EmailSampleComponent implements OnInit {
 
-    @Input() ghostTemplate: any;
+    @Input()
+    public ghostTemplate: any;
     public hasChecked: boolean = false;
 
     public folders: any[] = [
@@ -18,14 +19,15 @@ export class EmailSampleComponent implements OnInit {
         { icon: "send", text: "Sent"},
         { icon: "label", text: "Personal"},
         { icon: "label", text: "Work"},
-        { icon: "label", text: "Finances"},
-    ]
+        { icon: "label", text: "Finances"}
+    ];
+
     public emails: any[] = [
         { sender: "Ivan Cornejo", title: "We have exciting news", checked: false},
         { sender: "Amish Shiravadakar", title: "RE: Document Libraries status", checked: false},
         { sender: "Elsi Hansdottir", title: "SEO Keywords", checked: false},
         { sender: "Benito Noboa", title: "Last Chance: Win an Amazon Gift Card", checked: false}
-    ]
+    ];
 
     constructor() { }
 
@@ -47,7 +49,7 @@ export class EmailSampleComponent implements OnInit {
     public dropElement(event: any): void {
         if (event.dragData.checked === true) {
             this.hasChecked = false;
-            this.emails = this.emails.filter(x=>x.sender!=event.dragData.sender);
+            this.emails = this.emails.filter(x => x.sender !== event.dragData.sender);
             this.leaveDropZone(event);
         } else {
             // event.drag.animateToOrigin();

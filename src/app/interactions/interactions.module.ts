@@ -2,7 +2,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule, IgxDialogModule, IgxDragDropModule,
+    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule,
+    IgxComboModule, IgxDialogModule, IgxDragDropModule,
     IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule,
     IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
