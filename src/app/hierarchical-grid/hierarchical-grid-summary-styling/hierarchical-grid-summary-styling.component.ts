@@ -49,12 +49,12 @@ class MyChildSummary extends IgxNumberSummaryOperand {
 }
 
 @Component({
-    selector: "hierarchical-grid-summary",
-    styleUrls: ["./hierarchical-grid-summary.component.scss"],
-    templateUrl: "hierarchical-grid-summary.component.html"
+    selector: "hierarchical-grid-summary-styling",
+    styleUrls: ["./hierarchical-grid-summary-styling.component.scss"],
+    templateUrl: "hierarchical-grid-summary-styling.component.html"
 })
 
-export class HGridSummarySampleComponent implements OnInit {
+export class HGridSummaryStylingComponent implements OnInit {
     public localdata;
     public mySummary = MySummary;
     public myChildSummary = MyChildSummary;
