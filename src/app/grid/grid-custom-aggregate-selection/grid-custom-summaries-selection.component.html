@@ -1,5 +1,13 @@
+<div class="density-chooser">
+    <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
+</div>
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data" [height]="'530px'" width="100%" [autoGenerate]='false'>
+    <igx-grid #grid1 
+        [data]="data" 
+        [height]="'530px'" 
+        width="100%" 
+        [autoGenerate]='false'
+        [displayDensity]="density">
         <igx-column [field]="'ProductID'"></igx-column>
         <igx-column [field]="'ProductName'"></igx-column>
         <igx-column [field]="'UnitPrice'" dataType="number" [formatter]="formatCurrency"></igx-column>
@@ -12,7 +20,8 @@
         </igx-column>
         <igx-column [field]="'OrderDate'" dataType="date"></igx-column>
     </igx-grid>
-    <div class="igx-grid__tfoot">
-      <summarized-data #aggrData [grid]="grid1" style="margin-left: auto"></summarized-data>
+    <div class="igx-grid__tfoot"
+        [style.height.px]="grid1.rowHeight">
+        <summarized-data #aggrData [grid]="grid1" style="margin-left: auto"></summarized-data>
     </div>
 </div>
