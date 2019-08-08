@@ -143,8 +143,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridCustomAggregateSelection } from "../../src/app/grid/grid-custom-aggregate-selection/grid-custom-aggregate-selection.component";
-import { AggregatedData } from "../../src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component";
+import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-aggregate-selection/grid-custom-summaries-selection.component";
+import { SummarizedData } from "../../src/app/grid/grid-custom-aggregate-selection/aggregated-data/summarized-data.component";
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -588,14 +588,14 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         // Grid Custom Aggregates
         configs.push(new Config({
-            component: GridCustomAggregateSelection,
+            component: GridCustomSummariesSelection,
             additionalFiles: ["/src/app/data/nwindData.ts", 
                 "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.html",
                 "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.scss",
                 "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [AggregatedData, GridCustomAggregateSelection, IgxGridModule],
-                ngDeclarations: [AggregatedData, GridCustomAggregateSelection],
+                imports: [SummarizedData, GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [SummarizedData, GridCustomSummariesSelection],
                 ngImports: [IgxGridModule]
             })
         }));

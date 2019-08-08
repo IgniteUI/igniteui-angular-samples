@@ -20,8 +20,8 @@ import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-c
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
-import { AggregatedData } from "./grid-custom-aggregate-selection/aggregated-data/aggregated-data.component";
-import { GridCustomAggregateSelection } from "./grid-custom-aggregate-selection/grid-custom-aggregate-selection.component";
+import { SummarizedData } from "./grid-custom-aggregate-selection/aggregated-data/summarized-data.component";
+import { GridCustomSummariesSelection } from "./grid-custom-aggregate-selection/grid-custom-summaries-selection.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -85,7 +85,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
 
 @NgModule({
     declarations: [
-        AggregatedData,
+        SummarizedData,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridColumnHidingSampleComponent,
@@ -153,7 +153,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridGroupByPagingSampleComponent,
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
-        GridCustomAggregateSelection
+        GridCustomSummariesSelection
     ],
     imports: [
         CommonModule,
