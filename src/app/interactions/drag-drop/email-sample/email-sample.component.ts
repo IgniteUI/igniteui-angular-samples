@@ -65,4 +65,18 @@ export class EmailSampleComponent implements OnInit {
         event.owner.element.nativeElement.style.background = "#ebebeb";
     }
 
+    public onDragStart(event: any): void {
+        this.aggressiveToggle(event);
+    }
+
+    private aggressiveToggle(event: any): void {
+        this.emails.forEach(x => {
+            if (x.checked === true) {
+                x.checked = false;
+            }
+        });
+        event.owner.element.nativeElement.querySelector('igx-checkbox').click();
+        event.owner.data.checked = true;
+    }
+
 }

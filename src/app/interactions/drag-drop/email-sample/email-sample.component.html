@@ -20,6 +20,7 @@
             <li *ngFor="let email of emails"
                 [class.email-checked]="email.checked"
                 (click)="toggleCheck(email, checkbox)"
+                (dragStart)="onDragStart($event)"
                 [igxDrag]="email"
                 [ghostTemplate]="customGhost"
                 [ghostOffsetX]="-5"
