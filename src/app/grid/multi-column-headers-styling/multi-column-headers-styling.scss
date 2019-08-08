@@ -4,8 +4,10 @@
 
 $custom-theme: igx-grid-theme(
     $header-background: lightblue,
-    $header-text-color: red,
-
+    $header-text-color: black,
+    $header-border-width: 1px,
+    $header-border-style: solid,
+    $header-border-color: black
 );
 
 /*ENHANCED APPROACHES*/
