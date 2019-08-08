@@ -88,6 +88,9 @@ import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-samp
 import {
     GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
+import {
+    GridGroupBySummaryStylingSampleComponent
+} from "../../src/app/grid/grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import {
     GridMovingStyledSampleComponent
@@ -219,7 +222,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummarySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-groupby-summary-sample/data.ts"],
+            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -227,6 +230,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxIconModule, IgxBadgeModule]
             })
+        }));
+
+        configs.push(new Config({
+            component: GridGroupBySummaryStylingSampleComponent,
+            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
+                    IgxSwitchModule, GridGroupBySummaryStylingSampleComponent, IgxIconModule, IgxBadgeModule],
+                ngDeclarations: [GridGroupBySummaryStylingSampleComponent],
+                ngImports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
+                    IgxIconModule, IgxBadgeModule]
+                })
         }));
 
         configs.push(new Config({
