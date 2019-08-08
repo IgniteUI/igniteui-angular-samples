@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { IGridCreatedEventArgs, IGridEditEventArgs,
-    IgxGridBaseComponent, IgxHierarchicalGridComponent, IgxToastComponent } from "igniteui-angular";
+    IgxGridBaseComponent, IgxHierarchicalGridComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { SINGERS } from "../data";
@@ -27,6 +27,7 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this.localData = SINGERS;
+        this.toast.position = IgxToastPosition.Middle;
     }
 
     public ngOnDestroy(): void {
@@ -54,7 +55,7 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
         }
     }
 
-    public handleCreate(event: IGridCreatedEventArgs, gridString: string) {
+    public handleCreate(event: IGridCreatedEventArgs) {
         event.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((e) => this.handleCellEdit(e, event.grid));
     }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IGridEditEventArgs, IgxToastComponent, IgxTreeGridComponent } from "igniteui-angular";
+import { IGridEditEventArgs, IgxToastComponent, IgxToastPosition, IgxTreeGridComponent } from "igniteui-angular";
 import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
 
 @Component({
@@ -17,6 +17,7 @@ export class TreeGridEditingEventsComponent implements OnInit {
     public data: IEmployee[] = [];
     public ngOnInit() {
         this.data = generateEmployeeFlatData();
+        this.toast.position = IgxToastPosition.Middle;
     }
 
     public handleEdit(event: IGridEditEventArgs) {
@@ -25,13 +26,13 @@ export class TreeGridEditingEventsComponent implements OnInit {
             return;
         }
         const column = this.grid.columnList.find(col => col.index === event.cellID.columnID);
-        if (column.field === "Age") { // Age column
+        if (column.field === "Age") {
             if (event.newValue < 18) {
                 event.cancel = true;
                 this.toast.message = "Employees must be at least 18 years old!";
                 this.toast.show();
             }
-        } else if (column.field === "HireDate") { // Hire date
+        } else if (column.field === "HireDate") {
             if (event.newValue > new Date().getTime()) {
                 event.cancel = true;
                 this.toast.message = "The employee hire date must be in the past!";

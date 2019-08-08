@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { NgModel } from "@angular/forms";
-import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent } from "igniteui-angular";
+import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
 @Component({
@@ -30,12 +30,12 @@ export class GridEditingEventsComponent implements OnInit {
             e.Ordered = Math.floor(Math.random() * e.UnitsInStock);
             return e;
         });
+        this.toast.position = IgxToastPosition.Middle;
     }
 
     public handleCellEdit(event: IGridEditEventArgs) {
         const column = this.grid.columnList.find(e => e.index === event.cellID.columnID);
         if (column.header === "Ordered") {
-            // event.cancel = this.myTemplate.invalid;
             const rowData = this.grid.data
             .find(entry => entry[this.grid.primaryKey] === event.cellID.rowID);
             if (!rowData) {
