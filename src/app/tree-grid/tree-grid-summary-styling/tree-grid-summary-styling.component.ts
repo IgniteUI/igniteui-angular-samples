@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
 import { IgxColumnComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { FOODS_DATA } from "../data/foods";
 
 @Component({
-  selector: "app-tree-grid-summary-sample",
-  styleUrls: ["./tree-grid-summary-sample.component.scss"],
-  templateUrl: "./tree-grid-summary-sample.component.html"
+  selector: "app-tree-grid-summary-styling",
+  styleUrls: ["./tree-grid-summary-styling.component.scss"],
+  templateUrl: "./tree-grid-summary-styling.component.html"
 })
-export class TreeGridSummarySampleComponent implements OnInit {
+export class TreeGridSummaryStylingComponent implements OnInit {
 
   @ViewChild("treegrid1", { read: IgxTreeGridComponent, static: true })
   public grid1: IgxTreeGridComponent;
