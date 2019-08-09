@@ -13,39 +13,19 @@ import { SummariesData } from "./summaries-data/summaries-data.component";
 
 export class GridCustomSummariesSelection implements AfterViewChecked {
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
-    @ViewChild(SummariesData, { static: true }) public summariesData: any;
+    @ViewChild(SummariesData, { static: true }) public summariesData: SummariesData;
 
-    public density: any;
-    public displayDensities: any[];
     public data: any[];
     public selection = true;
-    public selectedCells: any[];
-    public justMade: boolean = true;
+    public initialRender: boolean = true;
 
     constructor() { }
 
     public ngOnInit(): void {
       this.data = DATA;
-      this.displayDensities = [
-        {
-            label: "compact",
-            selected: this.density === "compact",
-            togglable: true
-        },
-        {
-            label: "cosy",
-            selected: this.density === "cosy",
-            togglable: true
-        },
-        {
-            label: "comfortable",
-            selected: this.density === "comfortable",
-            togglable: true
-        }
-    ];
     }
     public ngAfterViewChecked(): void {
-        if (this.justMade) {
+        if (this.initialRender) {
             this.grid1.selectRange({
                 rowStart: 2,
                 rowEnd: 4,
@@ -53,7 +33,7 @@ export class GridCustomSummariesSelection implements AfterViewChecked {
                 columnEnd: 4
             });
             this.summariesData.updateData(this.grid1.selectedCells);
-            this.justMade = false;
+            this.initialRender = false;
         }
     }
     public formatNumber(value: number) {
@@ -62,11 +42,4 @@ export class GridCustomSummariesSelection implements AfterViewChecked {
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
     }
-
-    public selectDensity(event) {
-        this.density = this.displayDensities[event.index].label;
-        this.grid1.displayDensity = this.displayDensities[event.index].label;
-        this.grid1.reflow();
-    }
-
 }
