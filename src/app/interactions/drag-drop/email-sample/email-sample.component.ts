@@ -11,6 +11,7 @@ export class EmailSampleComponent implements OnInit {
     @Input()
     public ghostTemplate: any;
     public hasChecked: boolean = false;
+    public draggedElements: number = 0;
 
     public folders: any[] = [
         { icon: "inbox", text: "Inbox"},
@@ -34,27 +35,20 @@ export class EmailSampleComponent implements OnInit {
     public ngOnInit() { }
 
     public toggleCheck(email: any, checkbox: any): void {
-        if (email.checked || this.hasChecked !== true) {
-            email.checked = !email.checked;
-            checkbox.toggle();
-            this.hasChecked = false;
-            this.emails.forEach(x => {
-                if (x.checked === true) {
-                    this.hasChecked = true;
-                }
-            });
-        }
+        this.emails.forEach(x => x.checked = false);
+        email.checked = true;
+        checkbox.checked = true;
+    }
+
+    public toggleCheckbox(email: any): void {
+        email.checked = !email.checked;
     }
 
     public dropElement(event: any): void {
-        if (event.dragData.checked === true) {
-            this.hasChecked = false;
-            this.emails = this.emails.filter(x => x.sender !== event.dragData.sender);
-            this.leaveDropZone(event);
-        } else {
-            // event.drag.animateToOrigin();
-            event.cancel = true;
-        }
+        this.emails = this.emails.filter(x => x.checked !== true);
+        event.dragData = {};
+        event.cancel = true;
+        this.leaveDropZone(event);
     }
 
     public enterDropZone(event: any): void {
@@ -67,16 +61,19 @@ export class EmailSampleComponent implements OnInit {
 
     public onDragStart(event: any): void {
         this.aggressiveToggle(event);
+        this.draggedElements = this.emails.filter(x => x.checked === true).length;
     }
 
     private aggressiveToggle(event: any): void {
-        this.emails.forEach(x => {
-            if (x.checked === true) {
-                x.checked = false;
-            }
-        });
-        event.owner.element.nativeElement.querySelector('igx-checkbox').click();
+        const checkbox = event.owner.element.nativeElement.parentElement.querySelector("igx-checkbox");
         event.owner.data.checked = true;
+        if (!this.nativeCheckboxChecked(checkbox)) {
+            checkbox.click();
+        }
+    }
+
+    private nativeCheckboxChecked(nativeElement: any): boolean {
+        return nativeElement.classList.contains("igx-checkbox--checked");
     }
 
 }

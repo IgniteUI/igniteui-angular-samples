@@ -83,6 +83,7 @@ ul {
         flex-direction: row;
         justify-content: space-between;
         .email-content {
+            width: 100%;
             margin-right: auto;
             justify-content: center;
             .sender {
@@ -108,7 +109,7 @@ ul {
         background-color: #F4C7DE;
     }
     li.email-checked:active {
-        background-color: #cfaabd;
+        background-color: #F4C7DE;
     }
 }
 .email-checked {
@@ -118,6 +119,8 @@ ul {
     -o-transition: background .1s ease-out;
     transition: background .1s ease-out;
 }
+
+
 
 .dragGhost {
     width: 173px;
