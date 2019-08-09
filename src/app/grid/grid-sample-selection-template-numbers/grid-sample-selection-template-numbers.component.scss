@@ -1,0 +1,56 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@include igx-core();
+@include igx-theme($default-palette);
+
+$default-arrow-color: igx-color($default-palette, 'grays', 400);
+$default-arrow-hover-color: igx-color($default-palette, 'grays', 800);
+$default-arrow-all-color: igx-color($default-palette, 'secondary', 100);
+$border-width: 12px;
+$border-style: solid;
+
+@mixin triangle($color) {
+    width: 0;
+    height: 0;
+    border-left: $border-width $border-style transparent;
+    border-top: $border-width $border-style transparent;
+    margin: 2;
+    border-right: $border-width $border-style $color;
+    border-bottom: $border-width $border-style $color;
+}
+
+@mixin selector($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+.header-selector {
+    @include selector(flex-end, flex-end);
+    height: 100%;
+    padding: 8px;
+
+    &:hover .excel-style-arrow {
+        @include triangle($default-arrow-hover-color);
+    }
+}
+
+.row-selector {
+    @include selector(center, center);
+}
+
+::ng-deep {
+    .igx-grid__cbx-selection {
+        padding: 0;
+    }
+}
+
+.excel-style-arrow {
+    @include triangle($default-arrow-color);
+}
+
+.excel-style-arrow-all {
+    @include triangle($default-arrow-all-color);
+}
+

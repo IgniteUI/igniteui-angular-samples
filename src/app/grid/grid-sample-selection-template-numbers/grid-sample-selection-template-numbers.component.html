@@ -7,19 +7,18 @@
         <igx-column [field]="'CompanyName'" [width]="'20%'" dataType="number"></igx-column>
 
         <ng-template igxHeadSelector let-headContext>
-            <div style="min-width: 60px; height: 100%;" (click)="myGrid.onHeadSelectorClick($event, filteredData)"></div>
+            <div class="header-selector" (click)="myGrid.onHeadSelectorClick($event, filteredData)">
+                <div *ngIf="headContext.selectedCount === headContext.totalCount && headContext.totalCount !== 0"
+                    class="excel-style-arrow-all"></div>
+                <div *ngIf="headContext.selectedCount !== headContext.totalCount" class="excel-style-arrow">
+                </div>
+            </div>
         </ng-template>
 
         <ng-template igxRowSelector let-rowContext>
-            <div style="min-width: 60px; display: flex;">
-                <div style="padding-right: 5px; width: 25px;">
-                    <span>{{ rowContext.index + 1 }}</span>
-                </div>
-                <igx-checkbox [checked]="rowContext.selected"
-                    (change)="!rowContext.selected ? myGrid.selectRows([rowContext.rowID]) : myGrid.deselectRows([rowContext.rowID])"
-                    disableRipple="true" [disableTransitions]="myGrid.disableTransitions"
-                    [aria-label]="myGrid.rowCheckboxAriaLabel" style="padding-right: 10px;">
-                </igx-checkbox>
+            <div class="row-selector"
+                (click)="!rowContext.selected ? myGrid.selectRows([rowContext.rowID]) : myGrid.deselectRows([rowContext.rowID])">
+                <span>{{ rowContext.index + 1 }}</span>
             </div>
         </ng-template>
     </igx-grid>
