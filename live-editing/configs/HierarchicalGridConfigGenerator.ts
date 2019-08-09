@@ -381,7 +381,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/data/customers.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridMultiHeadersSampleComponent],
                 ngDeclarations: [HGridMultiHeadersSampleComponent],
@@ -391,7 +391,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/data/customers.ts"],
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridMultiHeadersStylingComponent],
                 ngDeclarations: [HGridMultiHeadersStylingComponent],
