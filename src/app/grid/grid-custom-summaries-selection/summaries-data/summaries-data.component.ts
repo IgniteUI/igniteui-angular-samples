@@ -3,16 +3,16 @@ import { AfterViewInit, Component, Input } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
-  selector: "summarized-data",
-  styleUrls: ["./summarized-data.component.scss"],
-  templateUrl: "summarized-data.component.html"
+  selector: "summaries-data",
+  styleUrls: ["./summaries-data.component.scss"],
+  templateUrl: "summaries-data.component.html"
 })
-export class SummarizedData implements AfterViewInit {
+export class SummariesData implements AfterViewInit {
 
     @Input() public grid: IgxGridComponent;
 
     public data: any[] = [];
-    public summarizedData: any = {};
+    public summariesData: any = {};
     public dataExists: boolean = false;
     public gridSelectedCells: any;
     public objectKeys = Object.keys;
@@ -27,9 +27,9 @@ export class SummarizedData implements AfterViewInit {
     }
 
     public updateData(res: any): void {
-      for (const key in this.summarizedData) {
-        if (this.summarizedData.hasOwnProperty(key)) {
-            delete this.summarizedData[key];
+      for (const key in this.summariesData) {
+        if (this.summariesData.hasOwnProperty(key)) {
+            delete this.summariesData[key];
         }
       }
       this.data = [];
@@ -51,12 +51,12 @@ export class SummarizedData implements AfterViewInit {
     }
 
     protected summarizeData(objectiveLength: number): void {
-      this.summarizedData.Count = (objectiveLength === 0) ? 1 : objectiveLength;
+      this.summariesData.Count = (objectiveLength === 0) ? 1 : objectiveLength;
       if (this.data.length > 0) {
-        this.summarizedData.Sum = this.data.reduce((a, b) => a + b, 0);
-        this.summarizedData.Min = Math.min(...this.data);
-        this.summarizedData.Max = Math.max(...this.data);
-        this.summarizedData.Avg = this.data.reduce((a, b) => a + b, 0) / this.data.length;
+        this.summariesData.Sum = this.data.reduce((a, b) => a + b, 0);
+        this.summariesData.Min = Math.min(...this.data);
+        this.summariesData.Max = Math.max(...this.data);
+        this.summariesData.Avg = this.data.reduce((a, b) => a + b, 0) / this.data.length;
       }
     }
 

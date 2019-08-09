@@ -1,7 +1,0 @@
-<div *ngIf="dataExists">
-  <div *ngFor="let key of objectKeys(summarizedData)" class="aggregated-data-wrapper" [ngClass]="grid.displayDensity">
-    <span class="igx-grid-summary__label">{{ key }}</span>
-    <span *ngIf="key === 'Count'" class="igx-grid-summary__result">{{ summarizedData[key] }}</span>
-    <span *ngIf="key !== 'Count'" class="igx-grid-summary__result">{{ summarizedData[key] | number: '1.2-2' }}</span>
-  </div>
-</div>

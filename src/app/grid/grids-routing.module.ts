@@ -10,7 +10,7 @@ import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-tool
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
-import { GridCustomSummariesSelection } from "./grid-custom-aggregate-selection/grid-custom-summaries-selection.component";
+import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";

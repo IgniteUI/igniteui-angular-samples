@@ -143,8 +143,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-aggregate-selection/grid-custom-summaries-selection.component";
-import { SummarizedData } from "../../src/app/grid/grid-custom-aggregate-selection/aggregated-data/summarized-data.component";
+import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
+import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -586,16 +586,16 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
-        // Grid Custom Aggregates
+        // Grid Custom Summaries
         configs.push(new Config({
             component: GridCustomSummariesSelection,
             additionalFiles: ["/src/app/data/nwindData.ts", 
-                "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.html",
-                "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.scss",
-                "/src/app/grid/grid-custom-aggregate-selection/aggregated-data/aggregated-data.component.ts"],
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.html",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.scss",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [SummarizedData, GridCustomSummariesSelection, IgxGridModule],
-                ngDeclarations: [SummarizedData, GridCustomSummariesSelection],
+                imports: [SummariesData, GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [SummariesData, GridCustomSummariesSelection],
                 ngImports: [IgxGridModule]
             })
         }));

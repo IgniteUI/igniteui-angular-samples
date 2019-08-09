@@ -2,7 +2,7 @@ import { AfterViewChecked, Component, ViewChild } from "@angular/core";
 
 import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
-import { SummarizedData } from "./aggregated-data/summarized-data.component";
+import { SummariesData } from "./summaries-data/summaries-data.component";
 
 @Component({
     providers: [],
@@ -13,7 +13,7 @@ import { SummarizedData } from "./aggregated-data/summarized-data.component";
 
 export class GridCustomSummariesSelection implements AfterViewChecked {
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
-    @ViewChild(SummarizedData, { static: true }) public summarizedData: any;
+    @ViewChild(SummariesData, { static: true }) public summariesData: any;
 
     public density: any;
     public displayDensities: any[];
@@ -52,7 +52,7 @@ export class GridCustomSummariesSelection implements AfterViewChecked {
                 columnStart: 1,
                 columnEnd: 4
             });
-            this.summarizedData.updateData(this.grid1.selectedCells);
+            this.summariesData.updateData(this.grid1.selectedCells);
             this.justMade = false;
         }
     }
