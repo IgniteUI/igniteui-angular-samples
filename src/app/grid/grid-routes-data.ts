@@ -44,6 +44,7 @@ export const gridsRoutesData = {
     "grid-moving-sample": { displayName: "Grid Column Moving", parentName: "Grid" },
     "grid-moving-styled-sample": { displayName: "Grid Column Moving Styled", parentName: "Grid" },
     "multi-column-headers": { displayName: "Grid Multi Column Headers", parentName: "Grid" },
+    "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "multi-column-headers-styling": { displayName: "Grid Multi Column Headers Styling", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
@@ -62,7 +63,6 @@ export const gridsRoutesData = {
     "grid-row-edit-style": { displayName: "Grid Row Edit Style", parentName: "Grid" },
     "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" },
     "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" },
-    "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
     "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" }

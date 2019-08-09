@@ -4,8 +4,8 @@ import { DATA } from "../../data/customers";
 
 @Component({
     selector: "multi-column-headers-styling",
-    styleUrls: [ "multi-column-headers-styling.scss" ],
-    templateUrl: "multi-column-headers-styling.html"
+    styleUrls: [ "./multi-column-headers-styling.component.scss" ],
+    templateUrl: "./multi-column-headers-styling.component.html"
 })
 export class GridMultiColumnHeadersStylingComponent {
 

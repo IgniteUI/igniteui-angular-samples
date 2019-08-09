@@ -152,7 +152,7 @@ import {
 } from "../../src/app/grid/multi-column-header-template/multi-column-header-template";
 import {
     GridMultiColumnHeadersStylingComponent
-} from "../../src/app/grid/multi-column-headers-styling/multi-column-headers-styling";
+} from "../../src/app/grid/multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";

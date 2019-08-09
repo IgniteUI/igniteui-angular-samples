@@ -68,7 +68,7 @@ import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import {
     GridMultiColumnHeadersStylingComponent
-} from "./multi-column-headers-styling/multi-column-headers-styling";
+} from "./multi-column-headers-styling/multi-column-headers-styling.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
