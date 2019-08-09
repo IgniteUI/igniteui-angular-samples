@@ -1,0 +1,63 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.card-wrapper {
+    max-width: 320px;
+    min-width: 220px;
+}
+
+$dark-card: igx-card-theme(
+    $background:#fd6bd93a,
+    $header-text-color:#f2f607,
+    $subtitle-text-color: #fa2509,
+    $content-text-color:#0a41f7
+);
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #e7eb0b;
+// $black-color: #f00b1e;
+// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+/*PALETTE and IGX-COLOR*/
+
+// $dark-card: igx-card-theme(
+//     $palette: $dark-palette,
+//     $background:#fd6bd93a,
+//     $header-text-color:#f2f607,
+//     $subtitle-text-color: #fa2509,
+//     $content-text-color:#0a41f7
+// );
+
+/*SCHEMAS*/
+
+// $dark-card-schema: extend($_dark-card,
+//     (
+//         background:(
+//             igx-color:("secondary", 100)
+//         ),
+//         header-text-color:(
+//             igx-color:("primary", 500)
+//         ),
+//         subtitle-text-color:(
+//             igx-color:("primary", 500)
+//         ),
+//         content-text-color:(
+//             igx-color:("primary", 700)
+//         )
+//     )
+// );
+// $custom-dark-schema: extend($dark-schema,(
+//     igx-card: $dark-card-schema
+// ));
+// $dark-card: igx-card-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+       @include igx-card($dark-card);
+   }
+}
