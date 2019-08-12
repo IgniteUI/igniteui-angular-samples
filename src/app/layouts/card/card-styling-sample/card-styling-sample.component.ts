@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IgxExpansionPanelComponent, IgxIconService } from "igniteui-angular";
-import {Card} from "../card.blueprint";
+import { Card } from "../card.blueprint";
 
 @Component({
   selector: "app-card-styling-sample",

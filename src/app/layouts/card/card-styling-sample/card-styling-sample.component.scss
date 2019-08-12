@@ -5,32 +5,34 @@
     min-width: 220px;
 }
 
-$dark-card: igx-card-theme(
-    $background:#fd6bd93a,
-    $header-text-color:#f2f607,
-    $subtitle-text-color: #fa2509,
-    $content-text-color:#0a41f7
+/*BASIC THEMING*/
+
+$colorful-card: igx-card-theme(
+    $background: #FD6BD93A,
+    $header-text-color: #F2F607,
+    $subtitle-text-color: #FA2509,
+    $content-text-color: #0A41F7
 );
 
 /*ENHANCED APPROACHES*/
 
 // $yellow-color: #e7eb0b;
-// $black-color: #f00b1e;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+// $red-color: #f00b1e;
+// $colorful-palette: igx-palette($primary: $red-color, $secondary: $yellow-color);
 
 /*PALETTE and IGX-COLOR*/
 
-// $dark-card: igx-card-theme(
-//     $palette: $dark-palette,
-//     $background:#fd6bd93a,
-//     $header-text-color:#f2f607,
-//     $subtitle-text-color: #fa2509,
-//     $content-text-color:#0a41f7
+// $colorful-card: igx-card-theme(
+//     $palette: $colorful-palette,
+//     $background: igx-color($colorful-palette, "secondary", 100),
+//     $header-text-color: igx-color($colorful-palette, "primary", 200),
+//     $subtitle-text-color: igx-color($colorful-palette, "primary", 500),
+//     $content-text-color: igx-color($colorful-palette, "primary", 700),
 // );
 
 /*SCHEMAS*/
 
-// $dark-card-schema: extend($_dark-card,
+// $colorful-card-schema: extend($_dark-card,
 //     (
 //         background:(
 //             igx-color:("secondary", 100)
@@ -46,18 +48,18 @@ $dark-card: igx-card-theme(
 //         )
 //     )
 // );
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-card: $dark-card-schema
+// $custom-colorful-schema: extend($dark-schema,(
+//     igx-card: $colorful-card-schema
 // ));
-// $dark-card: igx-card-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
+// $colorful-card: igx-card-theme(
+//   $palette: $colorful-palette,
+//   $schema: $custom-colorful-schema
 // );
 
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
     ::ng-deep {
-       @include igx-card($dark-card);
+       @include igx-card($colorful-card);
    }
 }
