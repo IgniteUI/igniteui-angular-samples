@@ -12,6 +12,7 @@ import {
     IgxIconModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
     IgxToastModule,
@@ -70,6 +71,7 @@ import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tree-grid-filtering-style.component";
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
@@ -116,6 +118,7 @@ import {
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
+import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
 import {
     TreeGridToolbarSample1Component
@@ -165,6 +168,7 @@ import {
         TreeGridToolbarSample3Component,
         TreeGridToolbarSample4Component,
         TreeGridSummarySampleComponent,
+        TreeGridSummaryStylingComponent,
         TreeGridSummary2SampleComponent,
         TreeGridConditionalCellStyleComponent,
         TreeGridPagingSampleComponent,
@@ -186,7 +190,8 @@ import {
         TreeGridColumnHidingToolbarStyleComponent,
         TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
-        TreeGridToolbarStyleComponent
+        TreeGridToolbarStyleComponent,
+        TreeGridFilteringStyleComponent
     ],
     imports: [
         CommonModule,
@@ -204,7 +209,8 @@ import {
         IgxDialogModule,
         IgxRadioModule,
         IgxAvatarModule,
-        IgxToastModule
+        IgxToastModule,
+        IgxSelectModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })

@@ -6,6 +6,7 @@ export const schedulingRoutesData = {
     "calendar-sample-5": { displayName: "Calendar Selection", parentName: "Calendar" },
     "calendar-sample-6": { displayName: "Calendar disabled dates", parentName: "Calendar" },
     "calendar-sample-7": { displayName: "Calendar special dates", parentName: "Calendar" },
+    "calendar-styling-sample": { displayName: "Calendar Styling", parentName: "Calendar" },
     "calendar-views": { displayName: "Calendar Views", parentName: "Calendar" },
     "datepicker-dropdown": { displayName: "Editable Datepicker", parentName: "Datepicker" },
     "datepicker-sample-1": { displayName: "Simple Datepicker", parentName: "Datepicker" },
