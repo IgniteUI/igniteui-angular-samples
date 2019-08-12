@@ -64,5 +64,7 @@ export const gridsRoutesData = {
     "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
-    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" }
+    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
+    "grid-excel-style-filtering-load-on-demand":
+        { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" }
 };
