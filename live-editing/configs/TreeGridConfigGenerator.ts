@@ -393,9 +393,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringStyleComponent, IgxInputGroupModule],
+                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringStyleComponent],
                 ngDeclarations: [TreeGridExcelStyleFilteringStyleComponent],
-                ngImports: [IgxTreeGridModule, IgxInputGroupModule]
+                ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridExcelStyleFilteringStyleComponent,
             shortenComponentPathBy: "/tree-grid/"
