@@ -148,7 +148,7 @@ export class GeoMapConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
                 MapDisplayImageryHeatTilesComponent,
                 [IgxGeographicMapModule], null,
-                ["/src/app/maps/heatworker.worker.ts",
+                ["/src/app/maps/heatmap.worker.ts",
                  "/src/assets/Shapes/AmericanCities.shp",
                  "src/assets/Shapes/AmericanCities.dbf"]));
 

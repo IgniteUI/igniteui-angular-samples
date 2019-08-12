@@ -6,6 +6,7 @@ import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
+import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
@@ -17,9 +18,12 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
+import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
+import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
+import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
@@ -37,6 +41,7 @@ import { GridDragBaseSampleComponent } from "./grid-row-drag-base/grid-row-drag-
 import { GridDragToGridSampleComponent } from "./grid-row-drag-to-grid/grid-row-drag-to-grid.component";
 import { GridDragSampleComponent } from "./grid-row-drag/grid-row-drag.component";
 import { GridRowEditSampleComponent } from "./grid-row-editing-sample/grid-row-editing-sample.component";
+import { GridRowEditStyleComponent } from "./grid-row-editing-style/grid-row-editing-style.component";
 import { GridRowReorderComponent } from "./grid-row-reorder-sample/grid-row-reorder";
 import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
@@ -47,6 +52,7 @@ import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
+import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
 import { GridToolbarSample1Component } from "./grid-toolbar-sample/grid-toolbar-sample-1.component";
 import { GridToolbarSample2Component } from "./grid-toolbar-sample/grid-toolbar-sample-2.component";
 import { GridToolbarSample3Component } from "./grid-toolbar-sample/grid-toolbar-sample-3.component";
@@ -56,7 +62,9 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 // tslint:enable:max-line-length
 
@@ -73,6 +81,11 @@ export const gridsRoutes: Routes = [
         path: "grid-summary"
     },
     {
+        component: GridGroupByPagingSampleComponent,
+        data: gridsRoutesData["grid-groupby-paging"],
+        path: "grid-groupby-paging"
+    },
+    {
         component: GridGroupBySampleComponent,
         data: gridsRoutesData["grid-groupby"],
         path: "grid-groupby"
@@ -83,14 +96,29 @@ export const gridsRoutes: Routes = [
         path: "grid-groupby-summary"
     },
     {
+        component: GridGroupBySummaryStylingSampleComponent,
+        data: gridsRoutesData["grid-groupby-summary-styling"],
+        path: "grid-groupby-summary-styling"
+    },
+    {
         component: GridEditingSampleComponent,
         data: gridsRoutesData["grid-editing"],
         path: "grid-editing"
     },
     {
+        component: GridEditingStyleSample,
+        data: gridsRoutesData["grid-editing-style"],
+        path: "grid-editing-style"
+    },
+    {
         component: GridRowEditSampleComponent,
         data: gridsRoutesData["grid-row-editing"],
         path: "grid-row-editing"
+    },
+    {
+        component: GridRowEditStyleComponent,
+        data: gridsRoutesData["grid-row-editing-style"],
+        path: "grid-row-edit-style"
     },
     {
         component: GridDragSampleComponent,
@@ -158,6 +186,11 @@ export const gridsRoutes: Routes = [
         path: "grid-filter-conditions"
     },
     {
+        component: GridPagerSampleComponent,
+        data: gridsRoutesData["grid-pager-sample"],
+        path: "grid-pager-sample"
+    },
+    {
         component: PagingSampleComponent,
         data: gridsRoutesData["grid-paging-sample"],
         path: "grid-paging-sample"
@@ -216,6 +249,11 @@ export const gridsRoutes: Routes = [
         component: SortingSampleComponent,
         data: gridsRoutesData["grid-sorting-sample"],
         path: "grid-sorting-sample"
+    },
+    {
+        component: SortingStylingComponent,
+        data: gridsRoutesData["grid-sorting-styling"],
+        path: "grid-sorting-styling"
     },
     {
         component: GridToolbarSample1Component,
@@ -323,6 +361,11 @@ export const gridsRoutes: Routes = [
         path: "custom-grid-paging-style"
     },
     {
+        component: GridColumnHidingToolbarStyleComponent,
+        data: gridsRoutesData["grid-column-hiding-style"],
+        path: "grid-column-hiding-style"
+    },
+    {
         component: GridMultiColumnHeaderTemplateComponent,
         data: gridsRoutesData["multi-column-header-template"],
         path: "multi-column-header-template"
@@ -336,6 +379,11 @@ export const gridsRoutes: Routes = [
         component: GridToolbarStyleComponent,
         data: gridsRoutesData["grid-toolbar-style"],
         path: "grid-toolbar-style"
+    },
+    {
+        component: GridFilteringStyleComponent,
+        data: gridsRoutesData["grid-filtering-style"],
+        path: "grid-filtering-style"
     }
 ];
 

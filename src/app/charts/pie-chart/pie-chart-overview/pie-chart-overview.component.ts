@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-pie-chart-data-sample",
-  styleUrls: ["./pie-chart-data-sample.component.scss"],
-  templateUrl: "./pie-chart-data-sample.component.html"
+  selector: "app-pie-chart-overview",
+  styleUrls: ["./pie-chart-overview.component.scss"],
+  templateUrl: "./pie-chart-overview.component.html"
 })
 export class PieChartDataSampleComponent {
 

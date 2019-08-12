@@ -38,7 +38,7 @@ export class DisplayDensityComponent implements OnInit {
         this.user = {
             firstName: "John",
             lastName: "Smith",
-            phone: "888 123 456"
+            phone: 888123456
         };
     }
 

@@ -17,6 +17,8 @@ import { DropDownSample4Component
 } from "../../src/app/data-entries/dropdown/dropdown-sample-4/dropdown-sample-4.component";
 import { DropDownSample5Component
 } from "../../src/app/data-entries/dropdown/dropdown-sample-5/dropdown-sample-5.component";
+import { DropDownStylingComponent
+} from "../../src/app/data-entries/dropdown/dropdown-styling/dropdown-styling.component";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -65,6 +67,16 @@ export class DropDownConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxDropDownModule, IgxButtonModule, IgxSwitchModule, IgxToggleModule]
             }),
             shortenComponentPathBy: "/data-entries/dropdown/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/data/heroData.ts"],
+            component: DropDownStylingComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDropDownModule, DropDownStylingComponent, IgxButtonModule, IgxToggleModule],
+                ngDeclarations: [DropDownStylingComponent],
+                ngImports: [IgxDropDownModule, IgxButtonModule, IgxToggleModule]
+            })
         }));
 
         configs.push(new Config({

@@ -903,7 +903,7 @@ export class GridMultiRowLayoutConfigurationComponent {
 
     public onCellKey(event, blockIndex, rowIndex, colIndex) {
         const curBlock = this.blocks[blockIndex];
-        if (event.key === "Delete") {
+        if (event.key === "Delete" || event.key === "Del") {
             for (let i = rowIndex; i < rowIndex + this.cellSelected.rowSpan; i++) {
                 const rowFirstHalf = [];
                 for (const record of curBlock.collection[i]) {

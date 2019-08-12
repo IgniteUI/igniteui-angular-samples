@@ -15,6 +15,9 @@ import {
     TreeGridColumnHidingToolbarSampleComponent
 } from "./tree-grid-column-hiding-toolbar-sample/tree-grid-column-hiding-toolbar-sample.component";
 import {
+    TreeGridColumnHidingToolbarStyleComponent
+} from "./tree-grid-column-hiding-toolbar-style/tree-grid-column-hiding-toolbar-style.component";
+import {
     TreeGridColumnMovingSampleComponent
 } from "./tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
 import {
@@ -48,6 +51,7 @@ import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tree-grid-filtering-style.component";
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
@@ -78,18 +82,22 @@ import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 
+import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
     TreeGridResizeLineStylingSampleComponent
 } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
 import { TreeGridRowDragBase } from "./tree-grid-row-drag-base/tree-grid-row-drag-base.component";
 import { TreeGridRowDrag } from "./tree-grid-row-drag/tree-grid-row-drag.component";
+import { TreeGridRowEditStyleComponent } from "./tree-grid-row-edit-style/tree-grid-row-edit-style.component";
 import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-row-editing-sample.component";
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
+import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
+import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
 import {
     TreeGridToolbarSample1Component
@@ -123,6 +131,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRowEditSampleComponent,
         data: treeGridRoutesData["treegrid-row-edit"],
         path: "treegrid-row-edit"
+    },
+    {
+        component: TreeGridRowEditStyleComponent,
+        data: treeGridRoutesData["treegrid-row-edit-style"],
+        path: "treegrid-row-edit-style"
     },
     {
         component: TreeGridBatchEditingSampleComponent,
@@ -168,6 +181,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSortingSampleComponent,
         data: treeGridRoutesData["treegrid-sorting"],
         path: "treegrid-sorting"
+    },
+    {
+        component: TreeGridSortingStylingComponent,
+        data: treeGridRoutesData["treegrid-sorting-styling"],
+        path: "treegrid-sorting-styling"
     },
     {
         component: TreeGridColumnMovingSampleComponent,
@@ -265,6 +283,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-summary"
     },
     {
+        component: TreeGridSummaryStylingComponent,
+        data: treeGridRoutesData["treegrid-summary-styling"],
+        path: "treegrid-summary-styling"
+    },
+    {
         component: TreeGridSummary2SampleComponent,
         data: treeGridRoutesData["treegrid-summary2"],
         path: "treegrid-summary2"
@@ -283,6 +306,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridEditingSampleComponent,
         data: treeGridRoutesData["treegrid-editing"],
         path: "treegrid-editing"
+    },
+    {
+        component: TreeGridEditingStyleComponent,
+        data: treeGridRoutesData["treegrid-editing-style"],
+        path: "treegrid-editing-style"
     },
     {
         component: TreeGridRemoteFilteringSampleComponent,
@@ -325,6 +353,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-paging-style"
     },
     {
+        component: TreeGridColumnHidingToolbarStyleComponent,
+        data: treeGridRoutesData["treegrid-paging-style"],
+        path: "treegrid-column-hiding-style"
+    },
+    {
         component: TreeGridMultiColumnHeaderTemplateSampleComponent,
         data: treeGridRoutesData["treegrid-multi-column-header-template"],
         path: "treegrid-multi-column-header-template"
@@ -338,6 +371,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridToolbarStyleComponent,
         data: treeGridRoutesData["treegrid-toolbar-style"],
         path: "treegrid-toolbar-style"
+    },
+    {
+        component: TreeGridFilteringStyleComponent,
+        data: treeGridRoutesData["treegrid-filtering-style"],
+        path: "treegrid-filtering-style"
     }
 ];
 

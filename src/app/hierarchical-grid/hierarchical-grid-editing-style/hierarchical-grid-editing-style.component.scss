@@ -1,0 +1,51 @@
+// custom-grid-paging-style.component.scss
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$white: #fff;
+$blue: #4567bb;
+
+$color-palette: igx-palette($primary: $white, $secondary: $blue);
+
+$grid-theme: igx-grid-theme(
+    $cell-editing-background: $blue,
+    $cell-edited-value-color: $white,
+    $cell-active-border-color: $white,
+    $edit-mode-color: igx-color($color-palette, "secondary", 200)
+);
+
+$input-theme: igx-input-group-theme(
+    $palette: igx-palette,
+    $filled-text-color: $white,
+    $focused-text-color: $white,
+    $idle-text-color: $white,
+    $idle-bottom-line-color: $white,
+    $focused-bottom-line-color: $white,
+    $interim-bottom-line-color: $white,
+    $hover-bottom-line-color: $white,
+    $box-background: $blue
+);
+
+$checkbox-theme: igx-checkbox-theme(
+    $empty-color: igx-color($color-palette, "secondary", 200),
+    $fill-color: $white,
+    $tick-color: $blue
+);
+
+$datepicker-theme: igx-calendar-theme(
+    $date-selected-text-color: $white,
+    $date-selected-background: $blue
+);
+
+:host {
+    padding: 3px 10px;
+    ::ng-deep {
+        @include igx-checkbox($checkbox-theme);
+        @include igx-input-group($input-theme);
+        @include igx-calendar($datepicker-theme);
+        @include igx-grid($grid-theme);
+    }
+}
+
+.igx-hierarchical-grid {
+    margin-top: 10px;
+}

@@ -4,9 +4,9 @@ import { FinancialDataService } from "../services/financial-data.service";
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ FinancialDataService ],
-    selector: "app-financial-chart-overview-sample",
-    styleUrls: ["./financial-chart-overview-sample.component.scss"],
-    templateUrl: "./financial-chart-overview-sample.component.html"
+    selector: "app-financial-chart-overview",
+    styleUrls: ["./financial-chart-overview.component.scss"],
+    templateUrl: "./financial-chart-overview.component.html"
 })
 export class FinancialChartOverviewComponent {
 

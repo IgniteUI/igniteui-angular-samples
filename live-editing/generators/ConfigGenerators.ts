@@ -59,8 +59,10 @@ import { TimePickerConfigGenerator } from "../configs/TimePickerConfigGenerator"
 import { ToastConfigGenerator } from "../configs/ToastConfigGenerator";
 import { ToggleConfigGenerator } from "../configs/ToggleConfigGenerator";
 import { TooltipConfigGenerator } from "../configs/TooltipConfigGenerator";
+import { TransactionsConfigGenerator } from "../configs/TransactionsConfigGenerator";
 import { TreeGridConfigGenerator } from "../configs/TreeGridConfigGenerator";
 import { TreeGridFinjsConfigGenerator } from "../configs/TreeGridFinjsConfigGenerator";
+import { ZoomSliderConfigGenerator } from "../configs/ZoomSliderConfigGenerator";
 
 export const CONFIG_GENERATORS =
     [
@@ -73,6 +75,7 @@ export const CONFIG_GENERATORS =
         SparklineConfigGenerator,
         GaugesConfigGenerator,
         GeoMapConfigGenerator,
+        ZoomSliderConfigGenerator,
 
         // frameworks:
         DragAndDropConfigGenerator,
@@ -137,5 +140,6 @@ export const CONFIG_GENERATORS =
         TextHighlightConfigGenerator,
         ToastConfigGenerator,
         TooltipConfigGenerator,
-        ThemingConfigGenerator
+        ThemingConfigGenerator,
+        TransactionsConfigGenerator
     ];

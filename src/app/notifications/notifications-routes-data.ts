@@ -3,6 +3,7 @@ export const notificationsRoutesData = {
     "banner-sample-2": { displayName: "Custom Actions Banner", parentName: "Banner" },
     "banner-sample-3": { displayName: "Animations Banner", parentName: "Banner" },
     "banner-sample-4": { displayName: "Settings Banner", parentName: "Banner" },
+    "banner-styling": { displayName: "Banner Styling", parentName: "Banner" },
     "snackbar-sample-1": { displayName: "Show Snackbar", parentName: "Snackbar" },
     "snackbar-sample-2": { displayName: "Hide/Auto Hide Snackbar", parentName: "Snackbar" },
     "snackbar-sample-3": { displayName: "Snackbar Display Time", parentName: "Snackbar" },
