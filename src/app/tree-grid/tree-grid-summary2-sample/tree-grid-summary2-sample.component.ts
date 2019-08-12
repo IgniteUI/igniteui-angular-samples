@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     DefaultSortingStrategy,
     GridSummaryCalculationMode,
     GridSummaryPosition,
-    IgxColumnComponent,
     IgxNumberSummaryOperand,
     IgxSummaryOperand,
     IgxSummaryResult,

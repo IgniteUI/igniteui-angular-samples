@@ -12,25 +12,7 @@ import {
 } from "igniteui-angular";
 import { LOCAL_DATA } from "../../data/grid-groupby-summary-data";
 
-class AvgSummary extends IgxSummaryOperand {
-
-    constructor() {
-        super();
-    }
-
-    public operate(data?: any[]): IgxSummaryResult[] {
-        const result = [];
-        const avg = IgxNumberSummaryOperand.average(data);
-        result.push({
-            key: "avg",
-            label: "Average",
-            summaryResult: data.length ? "$" + avg.toFixed(2) : ""
-        });
-        return result;
-    }
-}
-
-class SumSummary extends IgxSummaryOperand {
+class CustomSummary extends IgxSummaryOperand {
 
     constructor() {
         super();
@@ -42,6 +24,10 @@ class SumSummary extends IgxSummaryOperand {
             key: "sum",
             label: "Sum",
             summaryResult: IgxNumberSummaryOperand.sum(data)
+        }, {
+            key: "count",
+            label: "Count",
+            summaryResult: data.length ? data.length : 0
         });
         return result;
     }
@@ -49,16 +35,15 @@ class SumSummary extends IgxSummaryOperand {
 
 @Component({
     selector: "app-grid-groupby-summary-sample",
-    styleUrls: ["./grid-groupby-summary-sample.component.scss"],
-    templateUrl: "./grid-groupby-summary-sample.component.html"
+    styleUrls: ["./grid-groupby-summary-styling-sample.component.scss"],
+    templateUrl: "./grid-groupby-summary-styling-sample.component.html"
 })
-export class GridGroupBySummarySampleComponent {
+export class GridGroupBySummaryStylingSampleComponent {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
     public expr: ISortingExpression[];
-    public avgSummary = AvgSummary;
-    public sumSummary = SumSummary;
+    public customSummary = CustomSummary;
     public summaryPositions;
     public summaryPosition = GridSummaryPosition.bottom;
     public summaryCalcModes;
@@ -131,4 +116,5 @@ export class GridGroupBySummarySampleComponent {
             return false;
         }
     }
+
 }
