@@ -68,6 +68,9 @@ import {
     TreeGridExcelStyleFilteringSample3Component
 } from "./tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
 import {
+    TreeGridExcelStyleFilteringStyleComponent
+} from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
@@ -175,6 +178,7 @@ import {
         TreeGridExcelStyleFilteringSample1Component,
         TreeGridExcelStyleFilteringSample2Component,
         TreeGridExcelStyleFilteringSample3Component,
+        TreeGridExcelStyleFilteringStyleComponent,
         TreeGridRemoteFilteringSampleComponent,
         TreeGridMultiCellSelectionComponent,
         TreeGridMultiCellSelectionStyleComponent,
