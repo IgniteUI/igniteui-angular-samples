@@ -242,7 +242,7 @@ $custom-drop-down: igx-drop-down-theme(
     ::ng-deep {
         @include igx-drop-down($custom-drop-down);
         @include igx-grid($custom-grid);
-        .igx-excel-filter {
+        .igx-excel-filter, .igx-excel-filter__secondary {
             @include igx-button($custom-button);
             @include igx-input-group($custom-input-group);
             @include igx-checkbox($custom-checkbox);
