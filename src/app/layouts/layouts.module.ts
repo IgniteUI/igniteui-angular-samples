@@ -31,6 +31,7 @@ import { CardSample1Component } from "./card/card-sample-1/card-sample-1.compone
 import { CardSample2Component } from "./card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "./card/card-sample-3/card-sample-3.component";
 import { CardSample4Component } from "./card/card-sample-4/card-sample-4.component";
+import { CardStylingSampleComponent } from "./card/card-styling-sample/card-styling-sample.component";
 import { CardComponent } from "./card/card.component";
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
@@ -117,7 +118,8 @@ import {
         TabsSample2Component,
         TabsSample3Component,
         TabsSample4Component,
-        TabsSample5Component
+        TabsSample5Component,
+        CardStylingSampleComponent
     ],
     exports: [
         CardSample1Component
