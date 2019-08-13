@@ -12,6 +12,7 @@ export class SummariesData implements AfterViewInit {
     @Input() public grid: IgxGridComponent;
 
     public data: any[] = [];
+    public dates: any[] = [];
     public summariesData: any = {};
     public dataExists: boolean = false;
     public gridSelectedCells: any;
@@ -33,16 +34,23 @@ export class SummariesData implements AfterViewInit {
         }
       }
       this.data = [];
+      this.dates = [];
       this.dataExists = true;
 
       if (res.hasOwnProperty("cell")) {
         if (res.cell.column.dataType === "number") {
           this.data.push(res.cell.value);
         }
+        if (res.cell.column.dataType === "date") {
+          this.dates.push(res.cell.value);
+        }
       } else {
         res.map((x) => {
           if (x.column.dataType === "number") {
             this.data.push(x.value);
+          }
+          if (x.column.dataType === "date") {
+              this.dates.push(x.value);
           }
         });
       }
@@ -58,6 +66,23 @@ export class SummariesData implements AfterViewInit {
         this.summariesData.Max = Math.max(...this.data);
         this.summariesData.Avg = this.data.reduce((a, b) => a + b, 0) / this.data.length;
       }
+      if (this.dates.length > 0) {
+          let minDate = 0;
+          let maxDate = 0;
+          this.dates.forEach((date) => {
+            const dMinDate = new Date(minDate);
+            const dMaxDate = new Date(maxDate);
+            const dDate = new Date(date);
+            if (dDate > dMaxDate) {
+                maxDate = date;
+            }
+            if (dDate < dMinDate || minDate === 0) {
+                minDate = date;
+            }
+          });
+          this.summariesData.MinDate = minDate;
+          this.summariesData.MaxDate = maxDate;
+        }
     }
 
 }
