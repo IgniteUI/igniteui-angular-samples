@@ -1,0 +1,23 @@
+.container {
+    display: block;
+    height: 100%;
+}
+
+.zoomPane {
+    position: relative;
+    height: 160px;
+}
+
+.zoomChart {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.zoomSlider {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}

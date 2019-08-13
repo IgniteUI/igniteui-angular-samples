@@ -3,12 +3,12 @@
 // tslint:disable:max-line-length
 // tslint:disable:member-ordering
 // tslint:disable:prefer-const
-import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
+
 import { IgxPieChartModule } from "igniteui-angular-charts/ES5/igx-pie-chart-module";
 import { IgxItemLegendModule } from "igniteui-angular-charts/ES5/igx-item-legend-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 
-import { PieChartDataSampleComponent } from "../../src/app/charts/pie-chart/pie-chart-data-sample/pie-chart-data-sample.component";
+import { PieChartDataSampleComponent } from "../../src/app/charts/pie-chart/pie-chart-overview/pie-chart-overview.component";
 import { PieChartExplosionComponent } from "../../src/app/charts/pie-chart/pie-chart-explosion/pie-chart-explosion.component";
 import { PieChartLegendComponent } from "../../src/app/charts/pie-chart/pie-chart-legend/pie-chart-legend.component";
 import { PieChartOthersComponent } from "../../src/app/charts/pie-chart/pie-chart-others/pie-chart-others.component";
@@ -23,8 +23,6 @@ export class PieChartConfigGenerator extends BaseConfigGenerator {
     constructor() {
         super(DependenciesType.Charts, "/charts/pie-chart/");
     }
-
-// export class PieChartConfigGenerator implements IConfigGenerator {
 
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();

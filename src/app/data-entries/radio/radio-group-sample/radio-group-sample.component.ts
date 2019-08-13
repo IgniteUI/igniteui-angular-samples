@@ -39,6 +39,7 @@ export class RadioGroupSampleComponent {
             favoriteFruit: this.model.favFruit,
             fullName: this.model.fullName
         });
+        this.newModel = null;
     }
 
     private createForm() {

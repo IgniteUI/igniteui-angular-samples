@@ -1,9 +1,10 @@
-import { Component, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
 
 import { HeatTileGenerator } from "igniteui-angular-core/ES5/igx-heat-tile-generator";
 import { ShapeDataSource } from "igniteui-angular-core/ES5/igx-shape-data-source";
 
 import { IgxGeographicMapComponent } from "igniteui-angular-maps/ES5/igx-geographic-map-component";
+import { IgxGeographicTileSeriesComponent } from "igniteui-angular-maps/ES5/igx-geographic-tile-series-component";
 import { TileGeneratorMapImagery } from "igniteui-angular-maps/ES5/igx-tile-generator-map-imagery";
 
 @Component({
@@ -11,23 +12,18 @@ import { TileGeneratorMapImagery } from "igniteui-angular-maps/ES5/igx-tile-gene
     templateUrl: "./map-display-imagery-heat-tiles.component.html",
     styleUrls: ["./map-display-imagery-heat-tiles.component.scss"]
 })
-export class MapDisplayImageryHeatTilesComponent {
+export class MapDisplayImageryHeatTilesComponent implements AfterViewInit {
 
     @ViewChild("map", { static: true })
     public map: IgxGeographicMapComponent;
-
-    public data: any[];
     public tileImagery: TileGeneratorMapImagery;
 
     constructor() {
-        this.data = this.initData();
-
         this.tileImagery = new TileGeneratorMapImagery();
 
-        const con: ShapeDataSource = new ShapeDataSource();
-
-        con.importCompleted.subscribe((s, e) => {
-            const data = con.getPointData();
+        const sds: ShapeDataSource = new ShapeDataSource();
+        sds.importCompleted.subscribe((s, e) => {
+            const data = sds.getPointData();
             const lat: number[] = [];
             const lon: number[] = [];
             const val: number[] = [];
@@ -41,7 +37,7 @@ export class MapDisplayImageryHeatTilesComponent {
                         lon.push(pointsList[k].x);
                     }
                 }
-                const value = item.fieldValues["POP_2010"];
+                const value = parseInt(item.fieldValues["POP2010"], 10);
                 if (value >= 0) {
                     val.push(value);
                 } else {
@@ -49,6 +45,7 @@ export class MapDisplayImageryHeatTilesComponent {
                 }
             }
 
+            // generating heat map imagery tiles
             const gen = new HeatTileGenerator();
             gen.xValues = lon;
             gen.yValues = lat;
@@ -56,46 +53,37 @@ export class MapDisplayImageryHeatTilesComponent {
             gen.blurRadius = 6;
             gen.maxBlurRadius = 20;
             gen.useBlurRadiusAdjustedForZoom = true;
-            gen.minimumColor = "rgba(100,255, 0, 0.3922)";
-            gen.maximumColor = "rgba(255, 255, 0, 0.9412)";
+            gen.minimumColor = "rgba(100, 255, 0, 0.5)";
+            gen.maximumColor = "rgba(255, 255, 0, 0.5)";
             gen.useGlobalMinMax = true;
             gen.useGlobalMinMaxAdjustedForZoom = true;
             gen.useLogarithmicScale = true;
             gen.useWebWorkers = true;
-            gen.webWorkerInstance = new Worker("../heatworker.worker", { type: "module" });
+            // gen.webWorkerInstance = new Worker();
+            gen.webWorkerInstance = new Worker("../heatmap.worker", { type: "module" });
 
             gen.scaleColors = [
-                "rgba(0, 0, 255, 64)",
-                "rgba(0, 255, 255, 96)",
-                "rgba(0, 255, 0, 160)",
-                "rgba(255, 255, 0, 180)",
-                "rgba(255, 0, 0, 200)"
+                "rgba(0, 0, 255, .251)", "rgba(0, 255, 255, .3765)",
+                "rgba(50,205,50, .2675)", "rgba(255, 255, 0, .7059)",
+                "rgba(255, 0, 0, .7843)"
             ];
-
             this.tileImagery.tileGenerator = gen;
+
+            // generating heat map series
+            const series = new IgxGeographicTileSeriesComponent();
+            series.name = "heatMapSeries";
+            series.tileImagery = this.tileImagery;
+
+            // add heat map series to the map
+            this.map.series.add(series);
         });
 
-        con.shapefileSource = "assets/Shapes/AmericanCities.shp";
-        con.databaseSource = "assets/Shapes/AmericanCities.dbf";
-        con.dataBind();
+        sds.shapefileSource = "assets/Shapes/AmericanCities.shp";
+        sds.databaseSource = "assets/Shapes/AmericanCities.dbf";
+        sds.dataBind();
     }
 
-    public initData(): any {
-        const rows: any[] = [];
-        for (let i = 0; i < 5; i++) {
-            rows.push({
-                index: i,
-                name: "row" + i,
-                state: "Initial... Initial... Initial... Initial... ",
-                value: i * 10
-            });
-        }
-        rows.push({
-            index: 5,
-            name: "row5",
-            state: "Initial",
-            value: undefined
-        });
-        return rows;
+    public ngAfterViewInit(): void {
+        this.map.zoomToGeographic({ left: -134.5, top: 16.0, width: 70.0, height: 37.0 });
     }
 }

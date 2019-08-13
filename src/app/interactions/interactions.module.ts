@@ -2,19 +2,19 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxButtonModule,
-    IgxCardModule, IgxDialogModule, IgxDragDropModule, IgxIconModule, IgxInputGroupModule,
-    IgxOverlayService, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToggleModule,
-    IgxTooltipModule
+    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxComboModule, IgxDialogModule, IgxDragDropModule,
+    IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule,
+    IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
 import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
+import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
-import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
+import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
 import { InteractionsRoutingModule } from "./interactions-routing.module";
 import { MyDynamicCardComponent } from "./overlay/overlay-dynamic-card/overlay-dynamic-card.component";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
@@ -24,6 +24,7 @@ import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -42,14 +43,18 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
 
 @NgModule({
     declarations: [
+        CustomDialogComponent,
         DialogComponent,
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
         ListReorderSampleComponent,
+        IconsSampleComponent,
+        MyDynamicCardComponent,
         SliderSample1Component,
         SliderSample2Component,
         SliderSample3Component,
@@ -75,9 +80,11 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         OverlayPositionSample2Component,
         OverlayScrollSample1Component,
         OverlayScrollSample2Component,
+        OverlayStylingComponent,
         MyDynamicCardComponent,
-        DragAndDropSampleComponent,
-        CustomDialogComponent
+        CustomDialogComponent,
+        DialogStylingSample,
+        TooltipStyleComponent
     ],
     entryComponents: [MyDynamicCardComponent],
     imports: [
@@ -96,6 +103,7 @@ import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.
         IgxSwitchModule,
         IgxTooltipModule,
         IgxToggleModule,
+        IgxComboModule,
         LayoutsModule
     ],
     providers: [IgxOverlayService]

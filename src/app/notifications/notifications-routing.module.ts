@@ -4,6 +4,7 @@ import { BannerSample1Component } from "./banner/banner-sample-1/banner-sample-1
 import { BannerSample2Component } from "./banner/banner-sample-2/banner-sample-2.component";
 import { BannerSample3Component } from "./banner/banner-sample-3/banner-sample-3.component";
 import { BannerSample4Component } from "./banner/banner-sample-4/banner-sample-4.component";
+import { BannerStylingComponent } from "./banner/banner-styling/banner-styling.component";
 import { notificationsRoutesData } from "./notifications-routes-data";
 import { SnackbarSample1Component } from "./snackbar/snackbar-sample-1/snackbar-sample-1.component";
 import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-sample-2.component";
@@ -31,6 +32,11 @@ export const notificationsRoutes: Routes = [
         component: BannerSample3Component,
         data: notificationsRoutesData["banner-sample-3"],
         path: "banner-sample-3"
+    },
+    {
+        component: BannerStylingComponent,
+        data: notificationsRoutesData["banner-styling"],
+        path: "banner-styling"
     },
     {
         component: BannerSample4Component,

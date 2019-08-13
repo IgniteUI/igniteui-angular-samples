@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { Component } from "@angular/core";
 import { SINGERS } from "../data";
 
 @Component({
@@ -8,17 +7,11 @@ import { SINGERS } from "../data";
     templateUrl: "hierarchical-grid-paging-style.component.html"
 })
 
-export class HGridPagingStyleSampleComponent implements OnInit {
+export class HGridPagingStyleSampleComponent {
     public localdata;
-
-    @ViewChild("hierarchicalGrid", {static: true})
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;
-    }
-    public ngOnInit(): void {
-
     }
 
     public formatter = (a) => a;

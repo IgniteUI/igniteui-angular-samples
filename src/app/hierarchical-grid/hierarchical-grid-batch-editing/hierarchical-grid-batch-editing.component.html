@@ -7,7 +7,7 @@
     <igx-column field="Debut" header="Debut" [editable]="true" dataType="number" [formatter]="formatter"></igx-column>
     <igx-column field="GrammyNominations" header="Grammy Nominations" [editable]="true" dataType="number"></igx-column>
     <igx-column field="GrammyAwards" header="Grammy Awards" [editable]="true" dataType="number"></igx-column>
-    <igx-column width="150px">
+    <igx-column width="150px" [editable]="false">
         <ng-template igxCell let-cell="cell" let-val>
             <button igxButton (click)="removeRow(cell.cellID.rowIndex)" [disabled]="cell.row.deleted">Delete</button>
         </ng-template>

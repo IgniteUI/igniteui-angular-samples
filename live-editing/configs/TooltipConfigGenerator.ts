@@ -1,8 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxIconModule, IgxSliderModule,
-    IgxSwitchModule, IgxTooltipModule } from "igniteui-angular";
+    IgxSwitchModule, IgxTooltipModule, IgxToggleModule } from "igniteui-angular";
 import { TooltipRichComponent } from "../../src/app/interactions/tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "../../src/app/interactions/tooltip/tooltip-simple/tooltip-simple.component";
+import { TooltipStyleComponent } from "../../src/app/interactions/tooltip/tooltip-style/tooltip-style.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -30,6 +31,17 @@ export class TooltipConfigGenerator implements IConfigGenerator {
                     IgxButtonModule, TooltipRichComponent],
                 ngDeclarations: [TooltipRichComponent],
                 ngImports: [IgxAvatarModule, IgxTooltipModule, IgxCardModule, IgxIconModule, IgxButtonModule]
+            }),
+            shortenComponentPathBy: "/interactions/tooltip/"
+        }));
+
+        // Style Tooltip Sample
+        configs.push(new Config({
+            component: TooltipStyleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxAvatarModule, IgxTooltipModule, IgxToggleModule, TooltipStyleComponent],
+                ngDeclarations: [TooltipStyleComponent],
+                ngImports: [IgxAvatarModule, IgxTooltipModule, IgxToggleModule]
             }),
             shortenComponentPathBy: "/interactions/tooltip/"
         }));

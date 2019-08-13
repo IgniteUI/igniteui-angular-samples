@@ -5,9 +5,10 @@ import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.comp
 import { DialogSample1Component } from "./dialog/dialog-sample-1/dialog-sample-1.component";
 import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2.component";
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
+import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
-import { DragAndDropSampleComponent } from "./drag-drop/drag-drop.component";
 import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
+import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
 import { interactionsRoutesData } from "./interactions-routes-data";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
@@ -16,6 +17,7 @@ import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
+import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
 import { RippleSample1Component } from "./ripple/ripple-sample-1/ripple-sample-1.component";
 import { RippleSample2Component } from "./ripple/ripple-sample-2/ripple-sample-2.component";
 import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3.component";
@@ -34,6 +36,7 @@ import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3
 import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
+import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
 
 export const interactionsRoutes: Routes = [
     {
@@ -60,6 +63,11 @@ export const interactionsRoutes: Routes = [
         component: CustomDialogComponent,
         data: interactionsRoutesData["custom-dialog-sample"],
         path: "custom-dialog-sample"
+    },
+    {
+        component: DialogStylingSample,
+        data: interactionsRoutesData["dialog-styling-sample"],
+        path: "dialog-styling-sample"
     },
     {
         component: SliderSample1Component,
@@ -152,6 +160,11 @@ export const interactionsRoutes: Routes = [
         path: "tooltip-rich"
     },
     {
+        component: TooltipStyleComponent,
+        data: interactionsRoutesData["tooltip-style"],
+        path: "tooltip-style"
+    },
+    {
         component: OverlaySampleMain1Component,
         data: interactionsRoutesData["overlay-sample-main-1"],
         path: "overlay-sample-main-1"
@@ -187,14 +200,19 @@ export const interactionsRoutes: Routes = [
         path: "overlay-scroll-sample-2"
     },
     {
-        component: DragAndDropSampleComponent,
-        data: interactionsRoutesData["drag-drop-sample"],
-        path: "drag-drop-sample"
-    },
-    {
         component: ListReorderSampleComponent,
         data: interactionsRoutesData["list-reorder-sample"],
         path: "list-reorder-sample"
+    },
+    {
+        component: OverlayStylingComponent,
+        data: interactionsRoutesData["overlay-styling"],
+        path: "overlay-styling-simple"
+    },
+    {
+        component: IconsSampleComponent,
+        data: interactionsRoutesData["icons-sample"],
+        path: "icons-sample"
     }
 ];
 
