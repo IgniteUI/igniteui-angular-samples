@@ -27,6 +27,7 @@ import { HGridCustomKBNavigationComponent } from "../../src/app/hierarchical-gri
 import { HGridDisplayDensitySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-editing/hierarchical-grid-editing.component";
+import { HierarchicalGridExcelStyleFilteringLoadOnDemandComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/hierarchical-grid-excel-style-filtering-load-on-demand.component";
 import {
     HGridExcelStyleFilteringSample1Component
 } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
@@ -68,6 +69,7 @@ import { HGridToolbarCustomSampleComponent } from "../../src/app/hierarchical-gr
 import { HGridToolbarOptionsSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
 import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remote-lod.service";
+import { RemoteValuesService } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -439,6 +441,19 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngProviders: [RemoteLoDService]
             }),
             component: HierarchicalGridLoDSampleComponent
+        }));
+
+        // Hierarchical Grid Excel Style Filtering Load On Demand Sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
+                              "/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HierarchicalGridExcelStyleFilteringLoadOnDemandComponent, RemoteValuesService],
+                ngDeclarations: [HierarchicalGridExcelStyleFilteringLoadOnDemandComponent],
+                ngImports: [IgxHierarchicalGridModule],
+                ngProviders: [RemoteValuesService]
+            }),
+            component: HierarchicalGridExcelStyleFilteringLoadOnDemandComponent
         }));
 
         configs.push(new Config({
