@@ -45,7 +45,8 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public dropElement(event: any): void {
-        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent") {
+        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent" &&
+            event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Inbox") {
             this.emails = this.emails.filter(x => x.checked !== true);
         }
         event.dragData = {};
@@ -54,7 +55,8 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public enterDropZone(event: any): void {
-        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent") {
+        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent" &&
+            event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Inbox") {
             event.owner.element.nativeElement.style.background = "#d8d8d8";
         }
     }
