@@ -77,6 +77,9 @@ import {
     ExcelStyleFilteringSample3Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import {
+    ExcelStyleFilteringStyleComponent
+} from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import {
     GridExcelStyleFilteringLoadOnDemandComponent
 } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
@@ -686,6 +689,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridExcelStyleFilteringLoadOnDemandComponent],
                 ngImports: [IgxGridModule],
                 ngProviders: [RemoteValuesService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: ExcelStyleFilteringStyleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule ],
+                ngDeclarations: [ExcelStyleFilteringStyleComponent],
+                ngImports: [IgxGridModule]
             })
         }));
 

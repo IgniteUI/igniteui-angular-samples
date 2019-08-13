@@ -28,6 +28,7 @@ import { GridExcelStyleFilteringLoadOnDemandComponent } from "./grid-excel-style
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
+import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -96,6 +97,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         ExcelStyleFilteringSample1Component,
         ExcelStyleFilteringSample2Component,
         ExcelStyleFilteringSample3Component,
+        ExcelStyleFilteringStyleComponent,
         FilteringSampleComponent,
         FilteringTemplateSampleComponent,
         GridGroupBySampleComponent,

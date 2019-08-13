@@ -24,6 +24,9 @@ import {
 import {
     HGridExcelStyleFilteringSample3Component
 } from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import {
+    HGridExcelStyleFilteringStyleComponent
+} from "./hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
 import { HierarchicalGridFilteringStyleComponent } from "./hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
@@ -88,6 +91,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-load-on-demand"],
         path: "hierarchical-grid-excel-style-filtering-load-on-demand"
+    },
+    {
+        component: HGridExcelStyleFilteringStyleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-style"],
+        path: "hierarchical-grid-excel-style-filtering-style"
     },
     {
         component: HGridCustomFilteringSampleComponent,
