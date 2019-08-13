@@ -45,14 +45,18 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public dropElement(event: any): void {
-        this.emails = this.emails.filter(x => x.checked !== true);
+        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent") {
+            this.emails = this.emails.filter(x => x.checked !== true);
+        }
         event.dragData = {};
         event.cancel = true;
         this.leaveDropZone(event);
     }
 
     public enterDropZone(event: any): void {
-        event.owner.element.nativeElement.style.background = "#d8d8d8";
+        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent") {
+            event.owner.element.nativeElement.style.background = "#d8d8d8";
+        }
     }
 
     public leaveDropZone(event: any): void {

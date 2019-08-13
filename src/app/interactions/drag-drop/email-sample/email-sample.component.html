@@ -3,8 +3,9 @@
         <li *ngFor="let folder of folders" igxDrop 
             (onEnter)="enterDropZone($event)"
             (onLeave)="leaveDropZone($event)"
-            (onDrop)="dropElement($event)">
-            <igx-icon fontSet="material">{{folder.icon}}</igx-icon> {{folder.text}}
+            (onDrop)="dropElement($event)" >
+            <igx-icon fontSet="material">{{folder.icon}}</igx-icon> 
+            <span class="folder-title">{{folder.text}}</span>
         </li>
     </ul>
     <div class="emails-container flexlist">
@@ -19,7 +20,7 @@
                 </div>
             </ng-template>
             <li *ngFor="let email of emails"
-                [class.email-checked]="email.checked" >
+                [class.email-checked]="email.checked">
                 <div class="email-content flexlist"
                     [igxDrag]="email"
                     [ghostTemplate]="customGhost"

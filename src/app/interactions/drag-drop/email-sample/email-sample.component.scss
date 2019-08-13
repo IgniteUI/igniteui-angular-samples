@@ -35,8 +35,12 @@ ul {
         color: rgba(0,0,0,0.866);
         background: #EBEBEB;
         height: 48px;
+        cursor: pointer;
         &:hover {
             background: #D8D8D8;
+        }
+        &:active {
+            background: #d2d2d2;
         }
         igx-icon {
             margin-left: 16px;
