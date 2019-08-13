@@ -7,6 +7,7 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { EmailSampleComponent } from "./drag-drop/email-sample/email-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
 import { interactionsRoutesData } from "./interactions-routes-data";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
@@ -36,7 +37,6 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
-import { EmailSampleComponent } from './drag-drop/email-sample/email-sample.component';
 
 export const interactionsRoutes: Routes = [
     {
