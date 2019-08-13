@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 
+const DROP_ZONE_ACTIVE_COLOR = "#d8d8d8";
+const DROP_ZONE_INACTIVE_COLOR = "#ebebeb";
+
 @Component({
     selector: "app-email-sample",
     templateUrl: "./email-sample.component.html",
@@ -45,8 +48,8 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public dropElement(event: any): void {
-        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent" &&
-            event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Inbox") {
+        const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
+        if (folderTitle !== "Sent" && folderTitle !== "Inbox") {
             this.emails = this.emails.filter(x => x.checked !== true);
         }
         event.dragData = {};
@@ -55,14 +58,14 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public enterDropZone(event: any): void {
-        if (event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Sent" &&
-            event.owner.element.nativeElement.querySelector(".folder-title").innerText !== "Inbox") {
-            event.owner.element.nativeElement.style.background = "#d8d8d8";
+        const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
+        if (folderTitle !== "Sent" && folderTitle !== "Inbox") {
+            event.owner.element.nativeElement.style.background = DROP_ZONE_ACTIVE_COLOR;
         }
     }
 
     public leaveDropZone(event: any): void {
-        event.owner.element.nativeElement.style.background = "#ebebeb";
+        event.owner.element.nativeElement.style.background = DROP_ZONE_INACTIVE_COLOR;
     }
 
     public onDragStart(event: any): void {
