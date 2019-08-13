@@ -5,8 +5,8 @@
         </igx-expansion-panel-header>
         <igx-expansion-panel-body class="body">
             <igx-input-group class="group">
-                <input igxInput name="fullName" type="text" [(ngModel)]="user.fullName"/>
                 <label igxLabel for="fullName">Full Name</label>
+                <input igxInput autocomplete="off" type="text" name="fullName" [(ngModel)]="user.fullName"/>
                 <igx-suffix>
                     <igx-icon>person</igx-icon>
                 </igx-suffix>
@@ -14,7 +14,7 @@
             <igx-input-group class="group">
                 <igx-prefix>+359</igx-prefix>
                 <label igxLabel for="phone">Phone</label>
-                <input type="number" igxInput name="phone" [(ngModel)]="user.phone" />
+                <input igxInput autocomplete="off" type="number" name="phone" [(ngModel)]="user.phone" />
                 <igx-suffix>
                     <igx-icon>phone</igx-icon>
                 </igx-suffix>
@@ -22,7 +22,7 @@
             </igx-input-group>
             <igx-input-group class="group">
                 <label igxLabel for="email">Email address</label>
-                <input igxInput name="email" type="email" [(ngModel)]="user.email"/>
+                <input igxInput autocomplete="off" type="email" name="email" [(ngModel)]="user.email"/>
                 <igx-suffix>
                     <igx-icon>email</igx-icon>
                 </igx-suffix>
