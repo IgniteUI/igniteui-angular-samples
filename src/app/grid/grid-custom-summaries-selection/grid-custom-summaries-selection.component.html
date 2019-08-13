@@ -16,7 +16,7 @@
         </igx-column>
         <igx-column [field]="'OrderDate'" dataType="date"></igx-column>
     </igx-grid>
-    <div class="igx-grid__tfoot" [style.height.px]="grid1.rowHeight">
-        <summaries-data [grid]="grid1" style="margin-left: auto"></summaries-data>
+    <div class="igx-grid__tfoot">
+        <summaries-data [grid]="grid1" class="custom-summaries"></summaries-data>
     </div>
 </div>

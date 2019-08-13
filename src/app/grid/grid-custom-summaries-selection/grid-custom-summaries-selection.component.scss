@@ -42,3 +42,15 @@
 .badge-left {
     float: left;
 }
+
+div.igx-grid__tfoot {
+    z-index: 1;
+}
+
+.custom-summaries {
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row-reverse;
+}
