@@ -4,7 +4,7 @@ import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxComboModule, IgxDialogModule, IgxDragDropModule,
     IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule,
-    IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule
+    IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule, IgxCheckboxModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
 import { CustomDialogComponent } from "./dialog/custom-dialog/custom-dialog.component";
@@ -43,6 +43,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
+import { EmailSampleComponent } from './drag-drop/email-sample/email-sample.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
+        EmailSampleComponent,
         IconsSampleComponent,
         MyDynamicCardComponent,
         SliderSample1Component,
@@ -92,6 +94,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         IgxAvatarModule,
         IgxButtonModule,
         IgxCardModule,
+        IgxCheckboxModule,
         IgxDialogModule,
         IgxDragDropModule,
         IgxIconModule,

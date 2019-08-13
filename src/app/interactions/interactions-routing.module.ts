@@ -36,6 +36,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
+import { EmailSampleComponent } from './drag-drop/email-sample/email-sample.component';
 
 export const interactionsRoutes: Routes = [
     {
@@ -202,6 +203,11 @@ export const interactionsRoutes: Routes = [
         component: OverlayStylingComponent,
         data: interactionsRoutesData["overlay-styling"],
         path: "overlay-styling-simple"
+    },
+    {
+        component: EmailSampleComponent,
+        data: interactionsRoutesData["email-sample"],
+        path: "email-sample"
     },
     {
         component: IconsSampleComponent,

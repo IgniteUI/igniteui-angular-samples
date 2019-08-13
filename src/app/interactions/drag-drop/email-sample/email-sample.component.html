@@ -1,0 +1,46 @@
+<div class="mailbox">
+    <ul class="folders flexlist">
+        <li *ngFor="let folder of folders" igxDrop 
+            (onEnter)="enterDropZone($event)"
+            (onLeave)="leaveDropZone($event)"
+            (onDrop)="dropElement($event)" >
+            <igx-icon fontSet="material">{{folder.icon}}</igx-icon> 
+            <span class="folder-title">{{folder.text}}</span>
+        </li>
+    </ul>
+    <div class="emails-container flexlist">
+        <div class="period">
+            Today
+        </div>
+        <ul class="emails">
+            <ng-template #customGhost>
+                <div class="dragGhost">
+                    <igx-icon fontSet="material">email</igx-icon> 
+                    Moving {{ draggedElements }} item{{ (draggedElements > 1 ? 's' : '')}}
+                </div>
+            </ng-template>
+            <li *ngFor="let email of emails"
+                [class.email-checked]="email.checked">
+                <div class="email-content flexlist"
+                    [igxDrag]="email"
+                    [ghostTemplate]="customGhost"
+                    [ghostOffsetX]="-5"
+                    [ghostOffsetY]="-5"
+                    (dragStart)="onDragStart($event)" 
+                    (click)="toggleCheck(email, checkbox)" >
+                    <div class="sender">
+                        {{email.sender}} 
+                    </div>
+                    <div class="email-title">
+                        {{email.title}}
+                    </div>
+                </div>
+                <igx-checkbox #checkbox 
+                    [(ngModel)]="email.checked" 
+                    (change)="toggleCheckbox(email)">
+                </igx-checkbox>
+            </li>
+        </ul>
+        
+    </div>
+</div>
