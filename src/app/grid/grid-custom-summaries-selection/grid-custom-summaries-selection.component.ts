@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
 
 import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
@@ -11,21 +11,20 @@ import { SummariesData } from "./summaries-data/summaries-data.component";
     templateUrl: "grid-custom-summaries-selection.component.html"
 })
 
-export class GridCustomSummariesSelection implements AfterViewChecked {
+export class GridCustomSummariesSelection implements AfterViewInit {
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
     @ViewChild(SummariesData, { static: true }) public summariesData: SummariesData;
 
     public data: any[];
     public selection = true;
-    public initialRender: boolean = true;
 
     constructor() { }
 
     public ngOnInit(): void {
       this.data = DATA;
     }
-    public ngAfterViewChecked(): void {
-        if (this.initialRender) {
+    public ngAfterViewInit(): void {
+        setTimeout(() => {
             this.grid1.selectRange({
                 rowStart: 2,
                 rowEnd: 4,
@@ -33,13 +32,13 @@ export class GridCustomSummariesSelection implements AfterViewChecked {
                 columnEnd: 4
             });
             this.summariesData.updateData(this.grid1.selectedCells);
-            this.initialRender = false;
-        }
+        });
     }
     public formatNumber(value: number) {
         return value.toFixed(2);
     }
     public formatCurrency(value: number) {
+        if (!value) { return; }
         return "$" + value.toFixed(2);
     }
 }
