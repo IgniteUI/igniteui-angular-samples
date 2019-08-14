@@ -1,5 +1,5 @@
-import { formatDate } from '@angular/common';
-import { AfterViewInit, Component, Input, LOCALE_ID, Inject, InjectionToken } from "@angular/core";
+import { formatDate } from "@angular/common";
+import { AfterViewInit, Component, Input } from "@angular/core";
 
 import { IgxGridComponent } from "igniteui-angular";
 
@@ -89,8 +89,8 @@ export class SummariesData implements AfterViewInit {
                 minDate = date;
             }
           });
-          this.summariesData["Min Date"] = formatDate(minDate, 'mediumDate', 'en');
-          this.summariesData["Max Date"] = formatDate(maxDate, 'mediumDate', 'en');
+          this.summariesData["Min Date"] = formatDate(minDate, "mediumDate", "en");
+          this.summariesData["Max Date"] = formatDate(maxDate, "mediumDate", "en");
       }
       if (this.bools.length > 0) {
            let trues = 0;
