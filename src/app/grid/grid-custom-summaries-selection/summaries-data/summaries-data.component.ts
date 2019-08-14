@@ -13,6 +13,7 @@ export class SummariesData implements AfterViewInit {
 
     public data: any[] = [];
     public dates: any[] = [];
+    public bools: any[] = [];
     public summariesData: any = {};
     public dataExists: boolean = false;
     public gridSelectedCells: any;
@@ -35,6 +36,7 @@ export class SummariesData implements AfterViewInit {
       }
       this.data = [];
       this.dates = [];
+      this.bools = [];
       this.dataExists = true;
 
       if (res.hasOwnProperty("cell")) {
@@ -44,6 +46,9 @@ export class SummariesData implements AfterViewInit {
         if (res.cell.column.dataType === "date") {
           this.dates.push(res.cell.value);
         }
+        if (res.cell.column.dataType === "boolean") {
+          this.bools.push(res.cell.value);
+        }
       } else {
         res.map((x) => {
           if (x.column.dataType === "number") {
@@ -51,6 +56,9 @@ export class SummariesData implements AfterViewInit {
           }
           if (x.column.dataType === "date") {
               this.dates.push(x.value);
+          }
+          if (x.column.dataType === "boolean") {
+            this.bools.push(x.value);
           }
         });
       }
@@ -61,10 +69,10 @@ export class SummariesData implements AfterViewInit {
     protected summarizeData(objectiveLength: number): void {
       this.summariesData.Count = (objectiveLength === 0) ? 1 : objectiveLength;
       if (this.data.length > 0) {
-        this.summariesData.Sum = this.data.reduce((a, b) => a + b, 0);
-        this.summariesData.Min = Math.min(...this.data);
-        this.summariesData.Max = Math.max(...this.data);
-        this.summariesData.Avg = this.data.reduce((a, b) => a + b, 0) / this.data.length;
+        this.summariesData["Sum"] = this.data.reduce((a, b) => a + b, 0);
+        this.summariesData["Min"] = Math.min(...this.data);
+        this.summariesData["Max"] = Math.max(...this.data);
+        this.summariesData["Avg"] = this.data.reduce((a, b) => a + b, 0) / this.data.length;
       }
       if (this.dates.length > 0) {
           let minDate = 0;
@@ -80,9 +88,25 @@ export class SummariesData implements AfterViewInit {
                 minDate = date;
             }
           });
-          this.summariesData.MinDate = minDate;
-          this.summariesData.MaxDate = maxDate;
-        }
+          this.summariesData["Min Date"] = minDate;
+          this.summariesData["Max Date"] = maxDate;
+      }
+      if (this.bools.length > 0) {
+           let trues = 0;
+           let falses = 0;
+           let count = 0;
+           this.bools.forEach((bool) => {
+                if (bool) {
+                    trues += 1;
+                } else {
+                    falses += 1;
+                }
+           });
+           count = trues + falses;
+           this.summariesData["Total Booleans"] = count;
+           this.summariesData["Trues"] = trues;
+           this.summariesData["Falses"] = falses;
+      }
     }
 
 }
