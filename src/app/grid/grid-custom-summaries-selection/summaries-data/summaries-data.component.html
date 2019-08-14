@@ -1,12 +1,6 @@
 <div *ngIf="dataExists">
   <div *ngFor="let key of objectKeys(summariesData)" class="summaries-data-wrapper" [ngClass]="grid.displayDensity">
     <span class="igx-grid-summary__label">{{ key }}</span>
-    <span *ngIf="key === 'Count'" class="igx-grid-summary__result">{{ summariesData[key] }}</span>
-    <span *ngIf="key !== 'Count' && key !== 'Min Date' && key !== 'Max Date'" class="igx-grid-summary__result">
-        {{ summariesData[key] | number: '1.2-2' }}
-    </span>
-    <span *ngIf="key === 'Min Date' || key === 'Max Date'" class="igx-grid-summary__result">
-        {{ summariesData[key] | date: 'mediumDate' }}
-    </span>
+    <span class="igx-grid-summary__result">{{ summariesData[key] }}</span>
   </div>
 </div>

@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, Input } from "@angular/core";
+import { formatDate } from '@angular/common';
+import { AfterViewInit, Component, Input, LOCALE_ID, Inject, InjectionToken } from "@angular/core";
 
 import { IgxGridComponent } from "igniteui-angular";
 
@@ -69,10 +70,10 @@ export class SummariesData implements AfterViewInit {
     protected summarizeData(objectiveLength: number): void {
       this.summariesData.Count = (objectiveLength === 0) ? 1 : objectiveLength;
       if (this.data.length > 0) {
-        this.summariesData["Sum"] = this.data.reduce((a, b) => a + b, 0);
-        this.summariesData["Min"] = Math.min(...this.data);
-        this.summariesData["Max"] = Math.max(...this.data);
-        this.summariesData["Avg"] = this.data.reduce((a, b) => a + b, 0) / this.data.length;
+        this.summariesData["Sum"] = this.data.reduce((a, b) => a + b, 0).toFixed(2);
+        this.summariesData["Min"] = Math.min(...this.data).toFixed(2);
+        this.summariesData["Max"] = Math.max(...this.data).toFixed(2);
+        this.summariesData["Avg"] = (this.data.reduce((a, b) => a + b, 0) / this.data.length).toFixed(2);
       }
       if (this.dates.length > 0) {
           let minDate = 0;
@@ -88,8 +89,8 @@ export class SummariesData implements AfterViewInit {
                 minDate = date;
             }
           });
-          this.summariesData["Min Date"] = minDate;
-          this.summariesData["Max Date"] = maxDate;
+          this.summariesData["Min Date"] = formatDate(minDate, 'mediumDate', 'en');
+          this.summariesData["Max Date"] = formatDate(maxDate, 'mediumDate', 'en');
       }
       if (this.bools.length > 0) {
            let trues = 0;
