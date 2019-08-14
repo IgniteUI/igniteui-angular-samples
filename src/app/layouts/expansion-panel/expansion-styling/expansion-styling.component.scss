@@ -1,0 +1,43 @@
+
+// sample related styling
+.sample-wrapper {
+    width: 340px;
+}
+
+igx-expansion-panel-body {
+    padding: 0em 1em 1em 1em;
+}
+
+igx-expansion-panel-title {
+    font-weight: 600;
+}
+
+// Styling the igxExpansionPanel component
+@import '~igniteui-angular/lib/core/styles/themes/index';
+$my-primary-color:#72da67;
+$my-secondary-color: #7344df81;
+$my-info-color:rgba(0, 0, 0, 0.54);
+
+
+$my-color-palette: igx-palette(
+    $primary: $my-primary-color,
+    $secondary: $my-secondary-color,
+    $info: $my-info-color
+);
+
+$custom-panel-theme: igx-expansion-panel-theme(
+    $palette: $my-color-palette,
+    $header-background: igx-color($my-color-palette, "primary", 200),
+    $header-focus-background: igx-color($my-color-palette, "primary", 300),
+    $header-title-color: igx-color($my-color-palette, "info"),
+    $header-icon-color: igx-color($my-color-palette, "info"),
+    $body-background: igx-color($my-color-palette, "secondary", 100),
+    $border-radius: 0.35em
+);
+
+// Pass our custom-panel-theme to `igx-expansion-panel` mixin.
+:host {
+   ::ng-deep {
+        @include igx-expansion-panel($custom-panel-theme);
+   }
+}
