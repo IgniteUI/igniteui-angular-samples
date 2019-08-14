@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxColumnComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { FOODS_DATA } from "../data/foods";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-tree-grid-summary-sample",
   styleUrls: ["./tree-grid-summary-sample.component.scss"],
   templateUrl: "./tree-grid-summary-sample.component.html"

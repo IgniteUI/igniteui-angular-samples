@@ -2,14 +2,18 @@
     margin: 0 16px;
 }
 
-:host {
-     ::ng-deep {
+.dialogNewRecord {
+    margin: 10px;
+    padding: 10px;
+    #discontinued {
+        margin-top: 15px; 
+    }
+}
+
+:host{
+    ::ng-deep{
         .igx-grid {
             margin-top: 10px;
-        }
-        .dialogNewRecord {
-            margin: 10px;
-            padding: 10px;
         }
         .igx-checkbox {
             margin-top: 5px;

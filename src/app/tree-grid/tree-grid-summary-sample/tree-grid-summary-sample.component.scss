@@ -1,28 +1,33 @@
-.grid-controls {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    margin: 0 16px 24px;
+:host{
+    ::ng-deep {
+        .grid-controls {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            margin: 0 16px 24px;
+    
+            igx-switch {
+                margin-top: 24px;
+            }
+    
+        }
 
-    igx-switch {
-        margin-top: 24px;
+        .header {
+            height: 100%;
+        }
+
+        .igx-grid__th .title{
+            width: 100%;
+            cursor: auto;
+        }
+          
     }
-
 }
 
 .grid__wrapper {
     margin: 0 16px;
 }
 
-.header {
-    height: 100%;
-}
-
-.igx-grid__th .title{
-    width: 100%;
-    cursor: auto;
-}
-  
 @media screen and (max-width: 677px){
 
     [class*=header-icon]{

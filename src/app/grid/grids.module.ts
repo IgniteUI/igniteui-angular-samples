@@ -27,12 +27,14 @@ import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-s
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
+import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
+import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
@@ -95,10 +97,12 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         ExcelStyleFilteringSample1Component,
         ExcelStyleFilteringSample2Component,
         ExcelStyleFilteringSample3Component,
+        ExcelStyleFilteringStyleComponent,
         FilteringSampleComponent,
         FilteringTemplateSampleComponent,
         GridGroupBySampleComponent,
         GridGroupBySummarySampleComponent,
+        GridGroupBySummaryStylingSampleComponent,
         GridMovingSampleComponent,
         GridMovingStyledSampleComponent,
         PagingSampleComponent,
