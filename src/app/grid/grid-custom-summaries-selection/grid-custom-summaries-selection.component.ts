@@ -21,18 +21,16 @@ export class GridCustomSummariesSelection implements AfterViewInit {
     constructor() { }
 
     public ngOnInit(): void {
-      this.data = DATA;
+        this.data = DATA;
     }
     public ngAfterViewInit(): void {
-        setTimeout(() => {
-            this.grid1.selectRange({
-                rowStart: 2,
-                rowEnd: 4,
-                columnStart: 1,
-                columnEnd: 4
-            });
-            this.summariesData.updateData(this.grid1.selectedCells);
+        this.grid1.setSelection({
+            rowStart: 2,
+            rowEnd: 4,
+            columnStart: 1,
+            columnEnd: 4
         });
+        this.summariesData.updateData(this.grid1.selectedCells);
     }
     public formatNumber(value: number) {
         return value.toFixed(2);
