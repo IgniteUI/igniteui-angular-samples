@@ -52,6 +52,7 @@ export const gridsRoutesData = {
     "grid-about": { displayName: "Grid About", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
     "grid-multi-cell-selection-style": { displayName: "Grid Multi Cell Selection Style", parentName: "Grid" },
+    "grid-selection-custom-summaries": { displayName: "Grid Selection Based Summaries", parentName: "Grid" },
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
     "grid-mrl-custom-navigation":
@@ -65,6 +66,5 @@ export const gridsRoutesData = {
     "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
-    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
-    "grid-selection-custom-summaries": { displayName: "Grid Selection Based Summaries", parentName: "Grid" }
+    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" }
 };

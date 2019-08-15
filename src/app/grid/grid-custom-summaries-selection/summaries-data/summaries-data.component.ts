@@ -104,9 +104,7 @@ export class SummariesData implements AfterViewInit {
                 }
            });
            count = trues + falses;
-           this.summariesData["Total Booleans"] = count;
-           this.summariesData["Trues"] = trues;
-           this.summariesData["Falses"] = falses;
+           this.summariesData["Discontinued"] = trues + " of " + count;
       }
     }
 
