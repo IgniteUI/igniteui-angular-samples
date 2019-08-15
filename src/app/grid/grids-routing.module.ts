@@ -12,6 +12,7 @@ import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
@@ -390,6 +391,11 @@ export const gridsRoutes: Routes = [
         component: GridFilteringStyleComponent,
         data: gridsRoutesData["grid-filtering-style"],
         path: "grid-filtering-style"
+    },
+    {
+        component: GridCustomSummariesSelection,
+        data: gridsRoutesData["grid-selection-custom-summaries"],
+        path: "grid-selection-custom-summaries"
     }
 ];
 
