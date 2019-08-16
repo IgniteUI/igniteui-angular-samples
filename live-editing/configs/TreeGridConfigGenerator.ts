@@ -31,6 +31,8 @@ import { TreeGridColumnHidingToolbarStyleComponent } from "../../src/app/tree-gr
 import { TreeGridColumnMovingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
 import { TreeGridColumnMovingStyledSampleComponent } from "../../src/app/tree-grid/tree-grid-column-moving-styled-sample/tree-grid-column-moving-styled-sample.component";
 import { TreeGridColumnPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
+import { TreeGridPinningToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
+
 import { TreeGridColumnResizingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
@@ -295,6 +297,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxIconModule]
             }),
             component: TreeGridColumnPinningSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Toolbar Pinning sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridPinningToolbarSampleComponent, IgxIconModule],
+                ngDeclarations: [TreeGridPinningToolbarSampleComponent],
+                ngImports: [IgxTreeGridModule, IgxIconModule]
+            }),
+            component: TreeGridPinningToolbarSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

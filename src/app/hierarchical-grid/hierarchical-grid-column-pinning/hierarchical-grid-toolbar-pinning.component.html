@@ -1,0 +1,33 @@
+<igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
+    [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'" [showToolbar]='true' [columnPinning]='true' #hierarchicalGrid>
+    <igx-column #artist field="Artist" [width]="'400px'"></igx-column>
+    <igx-column #photo field="Photo" [width]="'400px'" [pinned]='true'>
+        <ng-template igxCell let-cell="cell">
+            <div class="cell__inner_2">
+                <img [src]="cell.value" class="photo" />
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #debut field="Debut" [width]="'400px'" dataType="number" [formatter]="formatter"></igx-column>
+    <igx-column #grammynominations field="GrammyNominations" header="Grammy Nominations" [width]="'400px'"></igx-column>
+    <igx-column #grammyawards field="GrammyAwards" header="Grammy Awards" [width]="'400px'"></igx-column>
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false" [showToolbar]='true' [columnPinning]='true'>
+        <igx-column field="Album" [width]="'400px'"></igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [width]="'400px'"></igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review" [width]="'400px'"></igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200" [width]="'400px'"></igx-column>
+    <igx-row-island [key]="'Songs'" [autoGenerate]="false" [showToolbar]='true' [columnPinning]='true'>
+            <igx-column field="Number" header="No." [width]="'500px'"></igx-column>
+            <igx-column field="Title" [width]="'500px'"></igx-column>
+            <igx-column field="Released" dataType="date" [width]="'500px'"></igx-column>
+            <igx-column field="Genre" [width]="'500px'"></igx-column>
+    </igx-row-island>
+    </igx-row-island>
+
+    <igx-row-island [key]="'Tours'" [autoGenerate]="false" [width]="'400px'" [showToolbar]='true' [columnPinning]='true'>
+        <igx-column field="Tour"></igx-column>
+        <igx-column field="StartedOn" header="Started on" [width]="'400px'"></igx-column>
+        <igx-column field="Location" [width]="'400px'"></igx-column>
+        <igx-column field="Headliner" [width]="'400px'"></igx-column>
+    </igx-row-island>
+</igx-hierarchical-grid>
