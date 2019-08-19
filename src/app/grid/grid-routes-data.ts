@@ -6,6 +6,7 @@ export const gridsRoutesData = {
     "grid-groupby": { displayName: "Grid GroupBy", parentName: "Grid" },
     "grid-groupby-paging": { displayName: "Grid GroupBy Paging", parentName: "Grid" },
     "grid-groupby-summary": { displayName: "Grid GroupBy Summary", parentName: "Grid" },
+    "grid-groupby-summary-styling": { displayName: "Grid GroupBy Summary Styling", parentName: "Grid" },
     "grid-editing": { displayName: "Grid Editing", parentName: "Grid" },
     "grid-editing-style": { displayName: "Grid Editing Style", parentName: "Grid" },
     "grid-row-editing": { displayName: "Grid Row Editing", parentName: "Grid" },
@@ -21,6 +22,7 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-sample-1": { displayName: "Grid Excel Style Filtering", parentName: "Grid" },
     "grid-excel-style-filtering-sample-2": { displayName: "Grid Excel Style Filtering Operations", parentName: "Grid" },
     "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
+    "grid-excel-style-filtering-style": { displayName: "Grid Excel Style Filtering Styling", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
@@ -50,6 +52,7 @@ export const gridsRoutesData = {
     "grid-about": { displayName: "Grid About", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
     "grid-multi-cell-selection-style": { displayName: "Grid Multi Cell Selection Style", parentName: "Grid" },
+    "grid-selection-custom-summaries": { displayName: "Grid Selection Based Summaries", parentName: "Grid" },
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
     "grid-mrl-custom-navigation":
