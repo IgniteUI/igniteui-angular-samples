@@ -35,6 +35,7 @@ import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filteri
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -157,7 +158,8 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridGroupByPagingSampleComponent,
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
-        GridCustomSummariesSelection
+        GridCustomSummariesSelection,
+        GridGroupByStyling
     ],
     imports: [
         CommonModule,
