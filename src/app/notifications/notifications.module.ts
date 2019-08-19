@@ -20,6 +20,7 @@ import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.com
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
 import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
 import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
+import { ToastStyleComponent } from "./toast/toast-style/toast-style.component";
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.com
         ToastSample2Component,
         ToastSample3Component,
         ToastSample4Component,
-        ToastSample5Component
+        ToastSample5Component,
+        ToastStyleComponent
     ],
     imports: [
         CommonModule,
