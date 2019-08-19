@@ -6,6 +6,7 @@ export const interactionsRoutesData = {
     "dialog-sample-1": { displayName: "Completed Action Dialog", parentName: "Dialog" },
     "dialog-sample-2": { displayName: "Confirmation Dialog", parentName: "Dialog" },
     "dialog-sample-3": { displayName: "Sign-in form Dialog", parentName: "Dialog" },
+    "dialog-styling-sample": {displayName: "Dialog Styling", parentName: "Dialog" },
     "slider-sample-1": { displayName: "Slider Lower and Upper range values", parentName: "Slider" },
     "slider-sample-2": { displayName: "Continuous Slider", parentName: "Slider" },
     "slider-sample-3": { displayName: "Discrete Slider", parentName: "Slider" },
@@ -33,5 +34,5 @@ export const interactionsRoutesData = {
     "overlay-scroll-sample-1": { displayName: "Overlay Scroll Sample 1", parentName: "Overlay" },
     "overlay-scroll-sample-2": { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
     "overlay-styling-simple": { displayName: "Overlay Styling", parentName: "Overlay"},
-    "drag-drop-sample": { displayName: "Drag and drop sample", parentName: "Drag and Drop" }
+    "icons-sample": { displayName: "Icons sample", parentName: "Drag and Drop" }
 };

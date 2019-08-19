@@ -48,9 +48,13 @@ import {
     TreeGridExcelStyleFilteringSample3Component
 } from "./tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
 import {
+    TreeGridExcelStyleFilteringStyleComponent
+} from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tree-grid-filtering-style.component";
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
@@ -96,6 +100,7 @@ import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/t
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
+import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
 import {
     TreeGridToolbarSample1Component
@@ -236,6 +241,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-excel-style-filtering-sample-3"
     },
     {
+        component: TreeGridExcelStyleFilteringStyleComponent,
+        data: treeGridRoutesData["treegrid-excel-style-filtering-style"],
+        path: "treegrid-excel-style-filtering-style"
+    },
+    {
         component: TreeGridFilteringCustomSampleComponent,
         data: treeGridRoutesData["treegrid-filtering-custom"],
         path: "treegrid-filtering-custom"
@@ -279,6 +289,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSummarySampleComponent,
         data: treeGridRoutesData["treegrid-summary"],
         path: "treegrid-summary"
+    },
+    {
+        component: TreeGridSummaryStylingComponent,
+        data: treeGridRoutesData["treegrid-summary-styling"],
+        path: "treegrid-summary-styling"
     },
     {
         component: TreeGridSummary2SampleComponent,
@@ -364,6 +379,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridToolbarStyleComponent,
         data: treeGridRoutesData["treegrid-toolbar-style"],
         path: "treegrid-toolbar-style"
+    },
+    {
+        component: TreeGridFilteringStyleComponent,
+        data: treeGridRoutesData["treegrid-filtering-style"],
+        path: "treegrid-filtering-style"
     }
 ];
 

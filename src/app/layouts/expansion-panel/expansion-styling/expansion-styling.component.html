@@ -1,0 +1,31 @@
+<div class="sample-wrapper">
+    <igx-expansion-panel>
+        <igx-expansion-panel-header>
+            <igx-expansion-panel-title>Personal Information</igx-expansion-panel-title>
+        </igx-expansion-panel-header>
+        <igx-expansion-panel-body>
+                <igx-input-group class="group">
+                    <label igxLabel for="fullName">Full Name</label>
+                    <input igxInput autocomplete="off" name="fullName" type="text" [(ngModel)]="user.fullName"/>
+                    <igx-suffix>
+                        <igx-icon>person</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group class="group">
+                    <igx-prefix>+359</igx-prefix>
+                    <label igxLabel for="phone">Phone</label>
+                    <input igxInput autocomplete="off" name="phone" type="number" [(ngModel)]="user.phone" />
+                    <igx-suffix>
+                        <igx-icon>phone</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+                <igx-input-group class="group">
+                    <label igxLabel for="email">Email address</label>
+                    <input igxInput autocomplete="off" name="email" type="email" [(ngModel)]="user.email"/>
+                    <igx-suffix>
+                        <igx-icon>email</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+        </igx-expansion-panel-body>
+    </igx-expansion-panel>
+</div>

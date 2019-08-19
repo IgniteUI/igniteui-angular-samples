@@ -1,5 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
-import { IgxTreeGridComponent } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { FOODS_DATA } from "../data/foods";
 
 @Component({
@@ -8,22 +7,11 @@ import { FOODS_DATA } from "../data/foods";
     templateUrl: "tree-grid-paging-style-sample.component.html"
 })
 
-export class TreeGridPagingStyleSampleComponent {
-
-    @ViewChild("treegrid1", {static: true})
-    public grid1: IgxTreeGridComponent;
+export class TreeGridPagingStyleSampleComponent implements OnInit {
 
     public data: any[];
 
-    constructor() {
-    }
-
     public ngOnInit(): void {
         this.data = FOODS_DATA();
-    }
-
-    public cellSelection(evt) {
-        const cell = evt.cell;
-        this.grid1.selectRows([cell.row.rowID], true);
     }
 }

@@ -101,6 +101,7 @@ import { SampleShapeData } from "../../src/app/charts/data-chart/SampleShapeData
 import { SharedData } from "../../src/app/charts/data-chart/SharedData";
 
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
+import { IgxDataChartStackedModule } from "igniteui-angular-charts/ES5/igx-data-chart-stacked-module";
 import { IgxMoneyFlowIndexIndicatorModule } from "igniteui-angular-charts/ES5/igx-money-flow-index-indicator-module";
 import { IgxValueOverlayModule } from "igniteui-angular-charts/ES5/igx-value-overlay-module";
 import { DependenciesType } from "../services/DependenciesType";
@@ -280,7 +281,7 @@ export class DataChartConfigGenerator extends BaseConfigGenerator {
         configs.push(this.getConfig(
             DataChartTypeStackedSeriesComponent,
             [IgxDataChartCoreModule, IgxDataChartCategoryModule,
-             IgxDataChartInteractivityModule, IgxLegendModule],
+             IgxDataChartInteractivityModule, IgxLegendModule, IgxDataChartStackedModule],
             [SharedData], ["/src/app/charts/data-chart/SharedData.ts"]));
 
         configs.push(this.getConfig(
