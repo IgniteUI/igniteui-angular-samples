@@ -161,6 +161,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
+import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -611,6 +613,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridBatchEditingSampleComponent, GridWithTransactionsComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxFocusModule]
+            })
+        }));
+
+        // Grid Custom Summaries
+        configs.push(new Config({
+            component: GridCustomSummariesSelection,
+            additionalFiles: ["/src/app/data/nwindData.ts", 
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.html",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.scss",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [SummariesData, GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [SummariesData, GridCustomSummariesSelection],
+                ngImports: [IgxGridModule]
             })
         }));
 
