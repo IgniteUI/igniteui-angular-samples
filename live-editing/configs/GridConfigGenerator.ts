@@ -911,7 +911,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [PinningStylingComponent],
                 ngImports: [IgxGridModule, IgxIconModule],
                 ngProviders: []
-            });
+            })
         }));
 
         return configs;
