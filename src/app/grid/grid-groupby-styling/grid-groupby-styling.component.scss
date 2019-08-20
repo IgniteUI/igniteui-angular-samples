@@ -1,6 +1,6 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
+/* Basic theming */
 
 $custom-theme: igx-grid-theme(
     $group-row-background: #CCC,
@@ -14,21 +14,41 @@ $custom-theme: igx-grid-theme(
     $expand-icon-hover-color: #0383d9
 );
 
-// $black-color: #000;
-// $white-color: #FFF;
+/* Palette */
+
+// $black-color: #292826;
+// $blue-color: #2184c7;
 
 // $custom-palette: igx-palette(
 //   $primary: $black-color,
-//   $secondary: $white-color
+//   $secondary: $blue-color
 // );
 
 // $custom-theme: igx-grid-theme(
-//   $group-row-background: igx-color($custom-palette, "primary", 600)
+//     $group-row-background: igx-color($custom-palette, "secondary", 100),
+//     $group-row-selected-background: igx-color($custom-palette, "primary", 400),
+//     $group-label-column-name-text: igx-color($custom-palette, "primary", 600),
+//     $group-label-icon: igx-color($custom-palette, "primary", 600),
+//     $group-label-text: igx-color($custom-palette, "secondary", 700),
+//     $group-count-background: igx-color($custom-palette, "primary", 600),
+//     $group-count-text-color: igx-color($custom-palette, "secondary", 400),
+//     $expand-icon-color: igx-color($custom-palette, "primary", 600),
+//     $expand-icon-hover-color: igx-color($custom-palette, "primary", 300)
 // );
+
+/* Schema */
 
 // $custom-grid-schema: extend($_light-grid,
 //     (
-//         group-row-background: (igx-color:('secondary', 500))
+//         group-row-background: (igx-color:('secondary', 100)),
+//         group-row-selected-background: (igx-color:('primary', 400)),
+//         group-label-column-name-text: (igx-color:('primary', 600)),
+//         group-label-icon: (igx-color:('primary', 600)),
+//         group-label-text: (igx-color:('secondary', 700)),
+//         group-count-background: (igx-color:('primary', 600)),
+//         group-count-text-color: (igx-color:('secondary', 400)),
+//         expand-icon-color: (igx-color:('primary', 600)),
+//         expand-icon-hover-color: (igx-color:('primary', 400))
 //     )
 // );
 
@@ -38,13 +58,10 @@ $custom-theme: igx-grid-theme(
 //     )
 // );
 
-/*THEME*/
-
 // $custom-theme: igx-grid-theme(
 //   $palette: $custom-palette,
 //   $schema: $my-custom-schema
 // );
-
 
 .grid-controls {
     display: flex;
