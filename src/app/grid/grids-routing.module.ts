@@ -68,6 +68,7 @@ import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -396,6 +397,11 @@ export const gridsRoutes: Routes = [
         component: GridCustomSummariesSelection,
         data: gridsRoutesData["grid-selection-custom-summaries"],
         path: "grid-selection-custom-summaries"
+    },
+    {
+        component: PinningStylingComponent,
+        data: gridsRoutesData["grid-pinning-styling"],
+        path: "grid-pinning-styling"
     }
 ];
 
