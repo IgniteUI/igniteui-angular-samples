@@ -909,8 +909,7 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [PinningStylingComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningStylingComponent],
-                ngImports: [IgxGridModule, IgxIconModule],
-                ngProviders: []
+                ngImports: [IgxGridModule, IgxIconModule]
             })
         }));
 
