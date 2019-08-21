@@ -30,7 +30,9 @@
             ~{{volume/5}} records updated.</span>
     </div>
 
-    <igx-grid #grid1 [data]="data | async" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact' columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true" [allowFiltering]="true"
+    <igx-grid #grid1 (onRangeSelection)="transferData($event, source, target, notification)"
+    (onRowSelectionChange)="transferDataFromCheckboxSelection($event, source, target, notification)"
+     [data]="data" [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact' columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true" [allowFiltering]="true"
         [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true" [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
@@ -162,4 +164,6 @@
         <igx-column [field]="'Ticker'" [width]="'60px'" [filterable]='false'></igx-column>
         <igx-column [field]="'Cpn'" [width]="'80px'" [filterable]='false'></igx-column>
     </igx-grid>
+
+  
 </div>

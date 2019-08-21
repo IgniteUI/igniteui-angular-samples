@@ -1,8 +1,12 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import { DefaultSortingStrategy, IgxButtonGroupComponent, IgxGridComponent, IgxSliderComponent,
     SortingDirection} from "igniteui-angular";
+import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 import { Observable, timer } from "rxjs";
 import { debounce } from "rxjs/operators";
+import { ContextDialogWithChartComponent
+} from "./context-dialog-with-chart/context-dialog-with-chart.component";
 import { LocalDataService } from "./localData.service";
 
 @Component({
@@ -14,13 +18,17 @@ import { LocalDataService } from "./localData.service";
 export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
+    @ViewChild("buttonGroup2", { static: true }) public buttonGroup2: IgxButtonGroupComponent;
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
 
     public theme = false;
     public volume = 1000;
     public frequency = 500;
-    public data: Observable <any[]> ;
+    public data = [];
+    public selectedData = [];
+    public chartData = [];
+    public multiCellSelection: { data: any[]} = { data: []};
     public controls = [
         {
             disabled: false,
@@ -39,20 +47,25 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
             icon: "stop",
             label: "Stop",
             selected: false
+        },
+        {
+            disabled: false,
+            icon: "update",
+            label: "Chart",
+            selected: false
         }
     ];
-
     private subscription;
     private selectedButton;
     private _timer;
     private volumeChanged;
-
-    constructor(private localService: LocalDataService, private elRef: ElementRef) {
+    constructor(public dialog: MatDialog, private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
-        this.data = this.localService.records;
+        this.localService.records.subscribe(x => { this.data = x; });
     }
 
     public ngOnInit() {
+        this.selectedData = this.data;
         this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: "Category",
@@ -84,6 +97,29 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         this.grid1.reflow();
     }
 
+    public transferData(args, grid1: IgxGridComponent, target: IgxDataChartComponent) {
+        this.multiCellSelection = {
+            data: this.grid1.selectedRows()
+        };
+        const range = {
+            rowStart: args.rowStart, rowEnd: args.rowEnd, columnStart: args.columnStart, columnEnd: args.columnEnd };
+        this.grid1.deselectAllRows();
+        this.grid1.clearCellSelection();
+        this.grid1.selectRange(range);
+        this.selectedData = this.grid1.getSelectedData();
+
+}
+    public transferDataFromCheckboxSelection(args, source: IgxGridComponent, target: IgxDataChartComponent) {
+        this.grid1.clearCellSelection();
+
+        this.selectedData = args.newSelection;
+        const pushData = [];
+        this.selectedData.forEach(element => {
+            pushData.push(this.grid1.data[element]);
+        });
+        this.selectedData = pushData;
+}
+
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
@@ -98,17 +134,34 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
                     this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
                     break;
                 }
-                case 2: {
-                    this.disableOtherButtons(event.index, false);
-                    this.stopFeed();
-                    break;
-                }
+            case 2: {
+                this.disableOtherButtons(event.index, false);
+                this.stopFeed();
+                break;
+            }
+            case 3: {
+                this.disableOtherButtons(event.index, true);
+                this.openDialog();
+                break;
+            }
             default:
                 {
                     break;
                 }
         }
     }
+
+    public openDialog(): void {
+        console.log(this.selectedData);
+        const dialogRef = this.dialog.open(ContextDialogWithChartComponent, {
+                data: this.selectedData
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          this.buttonGroup1.selectButton(2);
+
+          console.log("The dialog was closed");
+        });
+      }
 
     public onChange(event: any) {
         if (this.grid1.groupingExpressions.length > 0) {
@@ -225,7 +278,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
             if (index === 2) { button.disabled = !disableButtons; } else {
-                button.disabled = disableButtons;
+                this.buttonGroup1.buttons[0].disabled = disableButtons;
+                this.buttonGroup1.buttons[1].disabled = disableButtons;
             }
         });
     }
