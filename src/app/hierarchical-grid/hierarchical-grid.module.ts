@@ -44,13 +44,13 @@ import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hie
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
 import { HGridContextmenuComponent } from "./hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
+import { HGridStylingComponent } from "./hierarchical-grid-styling/hierarchical-grid-styling.component";
 import { HGridSummaryStylingComponent } from "./hierarchical-grid-summary-styling/hierarchical-grid-summary-styling.component";
 import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarchical-grid-summary.component";
 import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolbar-style/hierarchical-grid-toolbar-style.component";
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-import { HGridStylingComponent } from './hierarchical-grid-styling/hierarchical-grid-styling.component';
 
 @NgModule({
     declarations: [

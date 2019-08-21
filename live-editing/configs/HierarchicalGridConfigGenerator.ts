@@ -75,6 +75,7 @@ import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remot
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { HGridStylingComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-styling/hierarchical-grid-styling.component';
 
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -524,6 +525,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridMultiHeaderTemplateSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridStylingComponent],
+                ngDeclarations: [HGridStylingComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridStylingComponent
         }));
 
         return configs;
