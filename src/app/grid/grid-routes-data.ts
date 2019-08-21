@@ -30,7 +30,8 @@ export const gridsRoutesData = {
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
     "grid-resize-line-styling-sample": { displayName: "Grid Resize Line Styling", parentName: "Grid" },
     "grid-sample-2": { displayName: "Grid Financial Sample", parentName: "Grid" },
-    "grid-sample-pinning": { displayName: "Grid Pinning", parentName: "Grid" },
+    "grid-sample-pinning": { displayName: "Grid Header Template with Pinning", parentName: "Grid" },
+    "grid-sample-toolbar-pinning": { displayName: "Grid Toolbar Pinning", parentName: "Grid" },
     "grid-sample-4": { displayName: "Grid Remote Virtualization", parentName: "Grid" },
     "grid-remote-filtering": { displayName: "Grid Remote Filtering", parentName: "Grid" },
     "grid-selection": { displayName: "Grid Selection", parentName: "Grid" },
@@ -53,6 +54,7 @@ export const gridsRoutesData = {
     "grid-about": { displayName: "Grid About", parentName: "Grid" },
     "grid-multi-cell-selection": { displayName: "Grid Multi cell selection", parentName: "Grid" },
     "grid-multi-cell-selection-style": { displayName: "Grid Multi Cell Selection Style", parentName: "Grid" },
+    "grid-selection-custom-summaries": { displayName: "Grid Selection Based Summaries", parentName: "Grid" },
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
     "grid-mrl-custom-navigation":

@@ -139,6 +139,7 @@ import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
+import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "../../src/app/grid/grid-save-state/about.component";
 import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
@@ -162,6 +163,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
+import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -452,6 +455,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: PinningToolbarSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [PinningToolbarSampleComponent, IgxGridModule, IgxIconModule],
+                ngDeclarations: [PinningToolbarSampleComponent],
+                ngImports: [IgxGridModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
         // column-moving sample
         configs.push(new Config({
             component: GridMovingSampleComponent,
@@ -622,6 +636,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridBatchEditingSampleComponent, GridWithTransactionsComponent],
                 ngImports: [IgxGridModule, IgxDialogModule, IgxButtonModule,
                     IgxFocusModule]
+            })
+        }));
+
+        // Grid Custom Summaries
+        configs.push(new Config({
+            component: GridCustomSummariesSelection,
+            additionalFiles: ["/src/app/data/nwindData.ts",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.html",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.scss",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [SummariesData, GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [SummariesData, GridCustomSummariesSelection],
+                ngImports: [IgxGridModule]
             })
         }));
 

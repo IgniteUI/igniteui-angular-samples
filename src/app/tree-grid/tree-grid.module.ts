@@ -47,6 +47,9 @@ import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import {
+    TreeGridPinningToolbarSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
+import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
@@ -161,6 +164,7 @@ import {
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnMovingStyledSampleComponent,
         TreeGridColumnPinningSampleComponent,
+        TreeGridPinningToolbarSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
         TreeGridFilteringTemplateSampleComponent,
