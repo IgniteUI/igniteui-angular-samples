@@ -233,7 +233,7 @@ export const DATA: any[] = [{
     SupplierID: 8,
     CategoryID: 3,
     QuantityPerUnit: undefined,
-    UnitPrice: undefined,
+    UnitPrice: 4.5,
     UnitsInStock: 40,
     UnitsOnOrder: 0,
     ReorderLevel: 0,
