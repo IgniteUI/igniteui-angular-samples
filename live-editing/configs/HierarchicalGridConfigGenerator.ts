@@ -22,6 +22,7 @@ import { HGridColumnHidingSampleComponent } from "../../src/app/hierarchical-gri
 import { HGridColumnMovingSampleComponentStyled } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component";
 import { HGridColumnMovingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
+import { HGridToolbarPinningComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
 import { HGridColumnResizingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridCustomKBNavigationComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-display-density/hierarchical-grid-density.component";
@@ -36,6 +37,9 @@ import {
 import {
     HGridExcelStyleFilteringSample3Component
 } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import {
+    HGridExcelStyleFilteringStyleComponent
+} from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
 import { HierarchicalGridFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import {
     HGridFilteringTemplateSampleComponent
@@ -199,6 +203,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExcelStyleFilteringStyleComponent],
+                ngDeclarations: [HGridExcelStyleFilteringStyleComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridExcelStyleFilteringStyleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridCustomFilteringSampleComponent],
                 ngDeclarations: [HGridCustomFilteringSampleComponent],
                 ngImports: [IgxHierarchicalGridModule]
@@ -317,6 +331,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridPinningSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridToolbarPinningComponent],
+                ngDeclarations: [HGridToolbarPinningComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridToolbarPinningComponent
         }));
 
         configs.push(new Config({

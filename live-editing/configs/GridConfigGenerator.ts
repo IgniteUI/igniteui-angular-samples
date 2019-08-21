@@ -76,6 +76,9 @@ import {
 import {
     ExcelStyleFilteringSample3Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
+import {
+    ExcelStyleFilteringStyleComponent
+} from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import {
@@ -135,6 +138,7 @@ import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
+import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "../../src/app/grid/grid-save-state/about.component";
 import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
@@ -161,6 +165,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
+import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -451,6 +457,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: PinningToolbarSampleComponent,
+            additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [PinningToolbarSampleComponent, IgxGridModule, IgxIconModule],
+                ngDeclarations: [PinningToolbarSampleComponent],
+                ngImports: [IgxGridModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
         // column-moving sample
         configs.push(new Config({
             component: GridMovingSampleComponent,
@@ -624,6 +641,20 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // Grid Custom Summaries
+        configs.push(new Config({
+            component: GridCustomSummariesSelection,
+            additionalFiles: ["/src/app/data/nwindData.ts",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.html",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.scss",
+                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [SummariesData, GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [SummariesData, GridCustomSummariesSelection],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
         // Grid Row Editing
         configs.push(new Config({
             component: GridRowEditSampleComponent,
@@ -682,6 +713,16 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [ExcelStyleFilteringSample3Component, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringSample3Component],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: ExcelStyleFilteringStyleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [ExcelStyleFilteringStyleComponent, IgxGridModule ],
+                ngDeclarations: [ExcelStyleFilteringStyleComponent],
                 ngImports: [IgxGridModule]
             })
         }));

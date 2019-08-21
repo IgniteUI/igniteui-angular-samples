@@ -19,7 +19,8 @@ export const treeGridRoutesData = {
     "treegrid-column-moving-styled": { displayName: "TreeGrid Column Moving Styled", parentName: "TreeGrid" },
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-resize-line-styling": { displayName: "TreeGrid Resize Line Styling", parentName: "TreeGrid" },
-    "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
+    "treegrid-column-pinning": { displayName: "TreeGrid Header Template with Pinning", parentName: "TreeGrid" },
+    "treegrid-toolbar-pinning": { displayName: "TreeGrid Toolbar Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
     "treegrid-filtering-template": { displayName: "TreeGrid Filtering Template", parentName: "TreeGrid" },
     "treegrid-excel-style-filtering-sample-1": {
@@ -32,6 +33,10 @@ export const treeGridRoutesData = {
     },
     "treegrid-excel-style-filtering-sample-3": {
         displayName: "TreeGrid Excel Style Filtering Templates",
+        parentName: "TreeGrid"
+    },
+    "treegrid-excel-style-filtering-style": {
+        displayName: "TreeGrid Excel Style Filtering Styling",
         parentName: "TreeGrid"
     },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },

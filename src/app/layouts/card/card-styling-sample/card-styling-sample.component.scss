@@ -1,0 +1,65 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.card-wrapper {
+    max-width: 320px;
+    min-width: 220px;
+}
+
+/*BASIC THEMING*/
+
+$colorful-card: igx-card-theme(
+    $background: #FD6BD93A,
+    $header-text-color: #F2F607,
+    $subtitle-text-color: #FA2509,
+    $content-text-color: #0A41F7
+);
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #E7EB0B;
+// $red-color: #F00B1E;
+// $colorful-palette: igx-palette($primary: $red-color, $secondary: $yellow-color);
+
+/*PALETTE and IGX-COLOR*/
+
+// $colorful-card: igx-card-theme(
+//     $palette: $colorful-palette,
+//     $background: igx-color($colorful-palette, "secondary", 100),
+//     $header-text-color: igx-color($colorful-palette, "primary", 200),
+//     $subtitle-text-color: igx-color($colorful-palette, "primary", 500),
+//     $content-text-color: igx-color($colorful-palette, "primary", 700),
+// );
+
+/*SCHEMAS*/
+
+// $colorful-card-schema: extend($_dark-card,
+//     (
+//         background:(
+//             igx-color:("secondary", 100)
+//         ),
+//         header-text-color:(
+//             igx-color:("primary", 500)
+//         ),
+//         subtitle-text-color:(
+//             igx-color:("primary", 500)
+//         ),
+//         content-text-color:(
+//             igx-color:("primary", 700)
+//         )
+//     )
+// );
+// $custom-colorful-schema: extend($dark-schema,(
+//     igx-card: $colorful-card-schema
+// ));
+// $colorful-card: igx-card-theme(
+//   $palette: $colorful-palette,
+//   $schema: $custom-colorful-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+       @include igx-card($colorful-card);
+   }
+}

@@ -47,6 +47,9 @@ import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import {
+    TreeGridPinningToolbarSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
+import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
@@ -67,6 +70,9 @@ import {
 import {
     TreeGridExcelStyleFilteringSample3Component
 } from "./tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
+import {
+    TreeGridExcelStyleFilteringStyleComponent
+} from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -159,6 +165,7 @@ import {
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnMovingStyledSampleComponent,
         TreeGridColumnPinningSampleComponent,
+        TreeGridPinningToolbarSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
         TreeGridFilteringTemplateSampleComponent,
@@ -181,6 +188,7 @@ import {
         TreeGridExcelStyleFilteringSample1Component,
         TreeGridExcelStyleFilteringSample2Component,
         TreeGridExcelStyleFilteringSample3Component,
+        TreeGridExcelStyleFilteringStyleComponent,
         TreeGridRemoteFilteringSampleComponent,
         TreeGridMultiCellSelectionComponent,
         TreeGridMultiCellSelectionStyleComponent,

@@ -12,6 +12,7 @@ import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hid
 import { HGridColumnMovingSampleComponentStyled } from "./hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component";
 import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
+import { HGridToolbarPinningComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
@@ -20,6 +21,7 @@ import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarc
 import { HGridExcelStyleFilteringSample1Component } from "./hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
 import { HGridExcelStyleFilteringSample2Component } from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
 import { HGridExcelStyleFilteringSample3Component } from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import { HGridExcelStyleFilteringStyleComponent } from "./hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
 import { HierarchicalGridFilteringStyleComponent } from "./hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
@@ -64,6 +66,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridPagingStyleSampleComponent,
         HGridRemotePagingSampleComponent,
         HGridPinningSampleComponent,
+        HGridToolbarPinningComponent,
         HGridColumnResizingSampleComponent,
         HGridColumnHidingSampleComponent,
         HGridCostumHidingSampleComponent,
@@ -86,6 +89,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridExcelStyleFilteringSample1Component,
         HGridExcelStyleFilteringSample2Component,
         HGridExcelStyleFilteringSample3Component,
+        HGridExcelStyleFilteringStyleComponent,
         HGridFilteringTemplateSampleComponent,
         HGridDragSampleComponent,
         HGridRowDragBaseComponent,

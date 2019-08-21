@@ -31,6 +31,8 @@ import { TreeGridColumnHidingToolbarStyleComponent } from "../../src/app/tree-gr
 import { TreeGridColumnMovingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-moving-sample/tree-grid-column-moving-sample.component";
 import { TreeGridColumnMovingStyledSampleComponent } from "../../src/app/tree-grid/tree-grid-column-moving-styled-sample/tree-grid-column-moving-styled-sample.component";
 import { TreeGridColumnPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
+import { TreeGridPinningToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
+
 import { TreeGridColumnResizingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
@@ -45,6 +47,9 @@ import {
 import {
     TreeGridExcelStyleFilteringSample3Component
 } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
+import {
+    TreeGridExcelStyleFilteringStyleComponent
+} from "../../src/app/tree-grid/tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
 import { TreeGridFilteringCustomSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-filtering-sample/tree-grid-filtering-sample.component";
 import { TreeGridFilteringStyleComponent } from "../../src/app/tree-grid/tree-grid-filtering-style/tree-grid-filtering-style.component";
@@ -296,6 +301,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/tree-grid/"
         }));
 
+        // TreeGrid Toolbar Pinning sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridPinningToolbarSampleComponent, IgxIconModule],
+                ngDeclarations: [TreeGridPinningToolbarSampleComponent],
+                ngImports: [IgxTreeGridModule, IgxIconModule]
+            }),
+            component: TreeGridPinningToolbarSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
         // TreeGrid Column Resizing sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
@@ -385,6 +402,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxInputGroupModule]
             }),
             component: TreeGridExcelStyleFilteringSample3Component,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringStyleComponent],
+                ngDeclarations: [TreeGridExcelStyleFilteringStyleComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridExcelStyleFilteringStyleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

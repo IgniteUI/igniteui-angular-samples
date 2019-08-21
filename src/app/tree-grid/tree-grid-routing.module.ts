@@ -27,6 +27,10 @@ import {
 import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
+
+import {
+    TreeGridPinningToolbarSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
 import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
@@ -47,6 +51,9 @@ import {
 import {
     TreeGridExcelStyleFilteringSample3Component
 } from "./tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
+import {
+    TreeGridExcelStyleFilteringStyleComponent
+} from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -206,6 +213,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-column-pinning"
     },
     {
+        component: TreeGridPinningToolbarSampleComponent,
+        data: treeGridRoutesData["treegrid-toolbar-pinning"],
+        path: "treegrid-toolbar-pinning"
+    },
+    {
         component: TreeGridColumnResizingSampleComponent,
         data: treeGridRoutesData["treegrid-column-resizing"],
         path: "treegrid-column-resizing"
@@ -239,6 +251,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridExcelStyleFilteringSample3Component,
         data: treeGridRoutesData["treegrid-excel-style-filtering-sample-3"],
         path: "treegrid-excel-style-filtering-sample-3"
+    },
+    {
+        component: TreeGridExcelStyleFilteringStyleComponent,
+        data: treeGridRoutesData["treegrid-excel-style-filtering-style"],
+        path: "treegrid-excel-style-filtering-style"
     },
     {
         component: TreeGridFilteringCustomSampleComponent,
