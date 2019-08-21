@@ -11,6 +11,8 @@ import {
     IgxSwitchModule,
     IgxToggleModule
 } from "igniteui-angular";
+import { ContextDialogWithChartComponent
+} from "../../src/app/grid-finjs/context-dialog-with-chart/context-dialog-with-chart.component";
 import { FinJSDemoComponent } from "../../src/app/grid-finjs/grid-finjs-demo.component";
 import { LocalDataService } from "../../src/app/grid-finjs/localData.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -30,7 +32,7 @@ export class GridFinjsConfigGenerator implements IConfigGenerator {
                     IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
                     IgxRippleModule, FinJSDemoComponent,
                     LocalDataService],
-                ngDeclarations: [FinJSDemoComponent],
+                ngDeclarations: [ContextDialogWithChartComponent, FinJSDemoComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule],
                 ngProviders: [LocalDataService, IgxExcelExporterService, IgxCsvExporterService]
