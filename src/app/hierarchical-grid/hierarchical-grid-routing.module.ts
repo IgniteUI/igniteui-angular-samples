@@ -54,6 +54,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HGridStylingComponent } from './hierarchical-grid-styling/hierarchical-grid-styling.component';
 
 export const hierarchicalGridRoutes: Routes = [
     {
@@ -305,6 +306,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-filtering-style"],
         path: "hierarchical-grid-filtering-style"
+    }, 
+    {
+        component: HGridStylingComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-styling"],
+        path: "hierarchical-grid-styling"
     }
 ];
 

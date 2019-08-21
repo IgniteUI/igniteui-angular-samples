@@ -50,6 +50,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HGridStylingComponent } from './hierarchical-grid-styling/hierarchical-grid-styling.component';
 
 @NgModule({
     declarations: [
@@ -97,7 +98,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HierarchicalGridColumnHidingToolbarStyleComponent,
         HGridMultiHeaderTemplateSampleComponent,
         HierarchicalGridToolbarStyleComponent,
-        HierarchicalGridFilteringStyleComponent
+        HierarchicalGridFilteringStyleComponent,
+        HGridStylingComponent
     ],
     imports: [
         CommonModule,
