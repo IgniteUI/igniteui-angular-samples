@@ -565,8 +565,8 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridEditingEventsComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxToastModule, GridEditingSampleComponent],
-                ngDeclarations: [GridEditingSampleComponent],
+                imports: [IgxGridModule, IgxToastModule, GridEditingEventsComponent],
+                ngDeclarations: [GridEditingEventsComponent],
                 ngImports: [IgxGridModule, IgxToastModule]
             })
         }));
