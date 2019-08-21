@@ -27,6 +27,10 @@ import {
 import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
+
+import {
+    TreeGridPinningToolbarSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
 import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
@@ -204,6 +208,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnPinningSampleComponent,
         data: treeGridRoutesData["treegrid-column-pinning"],
         path: "treegrid-column-pinning"
+    },
+    {
+        component: TreeGridPinningToolbarSampleComponent,
+        data: treeGridRoutesData["treegrid-toolbar-pinning"],
+        path: "treegrid-toolbar-pinning"
     },
     {
         component: TreeGridColumnResizingSampleComponent,
