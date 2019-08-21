@@ -62,6 +62,7 @@ import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.componen
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
+import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
@@ -121,6 +122,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
         PinningSampleComponent,
+        PinningToolbarSampleComponent,
         GridSelectionSampleComponent,
         GridSearchSampleComponent,
         SortingSampleComponent,
