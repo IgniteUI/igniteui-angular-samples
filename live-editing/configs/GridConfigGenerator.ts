@@ -163,6 +163,7 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
+import { GridMultiRowLayoutStylingComponent } from '../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component';
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -901,6 +902,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridClipboardSampleComponent, IgxGridModule, IgxSwitchModule],
                 ngDeclarations: [GridClipboardSampleComponent],
                 ngImports: [IgxGridModule, IgxSwitchModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiRowLayoutStylingComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiRowLayoutStylingComponent, IgxGridModule],
+                ngDeclarations: [GridMultiRowLayoutStylingComponent],
+                ngImports: [IgxGridModule]
             })
         }));
 
