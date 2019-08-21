@@ -184,31 +184,31 @@ export const DATA: any[] = [{
 export const LOCATIONS = [
     {
         shop: "My Cool Market",
-        lastInventory: "07/03/2018"
+        lastInventory: "21/09/2018"
     },
     {
         shop: "MarMaMarket",
-        lastInventory: "12/06/2018"
+        lastInventory: "21/09/2018"
     },
     {
-        shop: "Fun-Tasty Co.",
-        lastInventory: "06/12/2018"
+        shop: "Marketplace from Outerspace",
+        lastInventory: "21/09/2018"
     },
     {
         shop: "Markt Mart",
-        lastInventory: "04/04/2018"
+        lastInventory: "21/09/2018"
     },
     {
         shop: "Ceilmart",
-        lastInventory: "12/12/2018"
+        lastInventory: "21/09/2018"
     },
     {
         shop: "14/22",
-        lastInventory: "11/11/2011"
+        lastInventory: "21/09/2018"
     },
     {
         shop: "Sbubby",
-        lastInventory: "09/09/2018"
+        lastInventory: "21/09/2018"
     }
     // Using data of type { key: value } because of a bug in combo binding to simple data
     // "MarMaMarket",

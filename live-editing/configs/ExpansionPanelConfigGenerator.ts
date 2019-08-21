@@ -1,32 +1,24 @@
 
+/* tslint:disable:object-literal-sort-keys */
+// tslint:disable-next-line:max-line-length
 import {
     IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxExpansionPanelModule,
     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxRippleModule, IgxToastModule
 } from "igniteui-angular";
-
-import { ExpansionPanelSample1Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-1/expansion-sample-1.component";
-
-import { ExpansionPanelSample2Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-2/expansion-sample-2.component";
-
-import { ExpansionPanelSample3Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-3/expansion-sample-3.component";
-
-import { ExpansionPanelSample4Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-4/expansion-sample-4.component";
-
-import { ExpansionPanelSample5Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-5/expansion-sample-5.component";
-
-import { ExpansionPanelSample6Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-6/expansion-sample-6.component";
-
-import { ExpansionPanelSample7Component
-} from "../../src/app/layouts/expansion-panel/expansion-sample-7/expansion-sample-7.component";
-
-import { ExpansionPanelStylingComponent
-} from "./../../src/app/layouts/expansion-panel/expansion-styling/expansion-styling.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample1Component } from "../../src/app/layouts/expansion-panel/expansion-sample-1/expansion-sample-1.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample2Component } from "../../src/app/layouts/expansion-panel/expansion-sample-2/expansion-sample-2.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample3Component } from "../../src/app/layouts/expansion-panel/expansion-sample-3/expansion-sample-3.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample4Component } from "../../src/app/layouts/expansion-panel/expansion-sample-4/expansion-sample-4.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample5Component } from "../../src/app/layouts/expansion-panel/expansion-sample-5/expansion-sample-5.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample6Component } from "../../src/app/layouts/expansion-panel/expansion-sample-6/expansion-sample-6.component";
+// tslint:disable-next-line:max-line-length
+import { ExpansionPanelSample7Component } from "../../src/app/layouts/expansion-panel/expansion-sample-7/expansion-sample-7.component";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -95,17 +87,6 @@ export class ExpansionPanelConfigGenerator implements IConfigGenerator {
                 imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
                     ExpansionPanelSample6Component],
                 ngDeclarations: [ExpansionPanelSample6Component],
-                ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
-            }),
-            shortenComponentPathBy: "/layouts/expansion-panel/"
-        }));
-
-        configs.push(new Config({
-            component: ExpansionPanelStylingComponent,
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule,
-                    ExpansionPanelStylingComponent],
-                ngDeclarations: [ExpansionPanelStylingComponent],
                 ngImports: [IgxIconModule, IgxExpansionPanelModule, IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/layouts/expansion-panel/"

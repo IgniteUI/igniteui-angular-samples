@@ -1,36 +1,152 @@
-<ng-template igxHeader let-column #pinTemplate>
-    <div class="title-inner">
-        <span style="float:left">{{column.header || column.field}}</span>
-        <igx-icon class="pin-icon" [class.pinned]="column.pinned" [class.unpinned]="!column.pinned" fontSet="fas" name="fa-thumbtack"
-            (click)="toggleColumn(column)"></igx-icon>
-    </div>
-</ng-template>
 <igx-hierarchical-grid class="hierarchicalGrid" [data]="localdata" [autoGenerate]="false"
-    [height]="'500px'" [width]="'100%'" #hierarchicalGrid>
-    <igx-column field="CompanyName" header="Company Name" [headerTemplate]="pinTemplate" width="200px" [pinned]="true"></igx-column>
-    <igx-column field="ContactName" header="Contact Name" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-    <igx-column field="ContactTitle" header="Contact Title" [headerTemplate]="pinTemplate" width="200px"></igx-column>
-    <igx-column field="Address" [headerTemplate]="pinTemplate" width="200px"></igx-column>
-    <igx-column field="City" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-    <igx-column field="PostalCode" header="Postal Code" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-    <igx-column field="Country" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-    <igx-column field="Phone" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-    <igx-column field="Fax" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-    <igx-row-island [key]="'Orders'" [autoGenerate]="false">
-            <igx-column field="OrderDate" header="Order Date" [headerTemplate]="pinTemplate" [dataType]="'date'" width="150px"></igx-column>
-            <igx-column field="RequiredDate" header="Required Date" [headerTemplate]="pinTemplate" [dataType]="'date'" width="150px"></igx-column>
-            <igx-column field="ShippedDate" header="Shipped Date" [headerTemplate]="pinTemplate" [dataType]="'date'" width="150px"></igx-column>
-            <igx-column field="ShipVia" header="Ship Via" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-            <igx-column field="Freight" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-            <igx-column field="ShipName" header="Ship Name" [headerTemplate]="pinTemplate" width="200px" pinned="true"></igx-column>
-            <igx-column field="ShipAddress" header="Ship Address" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-            <igx-column field="ShipCity" header="Ship City" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-            <igx-column field="ShipPostalCode" header="Ship Postal Code" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-            <igx-column field="ShipCountry" header="Ship Country" [headerTemplate]="pinTemplate" width="150px"></igx-column>
-        <igx-row-island [key]="'OrderDetails'" [autoGenerate]="false">
-                <igx-column field="UnitPrice" header="Unit Price" width="150px"></igx-column>
-                <igx-column field="Quantity" width="150px"></igx-column>
-                <igx-column field="Discount" width="150px"></igx-column>
-        </igx-row-island>
+    [height]="'500px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+    <igx-column #artist field="Artist" [width]="'400px'">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Artist</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(artist)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #photo field="Photo" [width]="'400px'">
+            <ng-template igxHeader>
+                    <div class="title-inner">
+                        <span style="float:left">Photo</span>
+                        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(photo)"></igx-icon>
+                    </div>
+                </ng-template>
+        <ng-template igxCell let-cell="cell">
+            <div class="cell__inner_2">
+                <img [src]="cell.value" class="photo" />
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #debut field="Debut" [width]="'400px'" dataType="number" [formatter]="formatter">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Debut</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(debut)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #grammynominations field="GrammyNominations" header="Grammy Nominations" [width]="'400px'">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Grammy Nominations</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(grammynominations)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column #grammyawards field="GrammyAwards" header="Grammy Awards" [width]="'400px'">
+        <ng-template igxHeader>
+            <div class="title-inner">
+                <span style="float:left">Grammy Awards</span>
+                <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(grammyawards)"></igx-icon>
+            </div>
+        </ng-template>
+    </igx-column>
+
+    <igx-row-island [key]="'Albums'" [autoGenerate]="false">
+        <igx-column field="Album" [width]="'400px'">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [width]="'400px'">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="BillboardReview" header="Billboard Review" [width]="'400px'">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="USBillboard200" header="US Billboard 200" [width]="'400px'">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+    <igx-row-island [key]="'Songs'" [autoGenerate]="false">
+            <igx-column field="Number" header="No." [width]="'500px'">
+                <ng-template igxHeader let-columnRef="column">
+                    <div class="title-inner">
+                        <span style="float:left"> {{columnRef.field}} </span>
+                        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="Title" [width]="'500px'">
+                <ng-template igxHeader let-columnRef="column">
+                    <div class="title-inner">
+                        <span style="float:left"> {{columnRef.field}} </span>
+                        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="Released" dataType="date" [width]="'500px'">
+                <ng-template igxHeader let-columnRef="column">
+                    <div class="title-inner">
+                        <span style="float:left"> {{columnRef.field}} </span>
+                        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+            <igx-column field="Genre" [width]="'500px'">
+                <ng-template igxHeader let-columnRef="column">
+                    <div class="title-inner">
+                        <span style="float:left"> {{columnRef.field}} </span>
+                        <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                    </div>
+                </ng-template>
+            </igx-column>
+    </igx-row-island>
+    </igx-row-island>
+
+    <igx-row-island [key]="'Tours'" [autoGenerate]="false" [width]="'400px'">
+        <igx-column field="Tour">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="StartedOn" header="Started on" [width]="'400px'">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Location" [width]="'400px'">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Headliner" [width]="'400px'">
+            <ng-template igxHeader let-columnRef="column">
+                <div class="title-inner">
+                    <span style="float:left"> {{columnRef.field}} </span>
+                    <igx-icon class="pin-icon" fontSet="fas" name="fa-thumbtack" (click)="toggleColumn(columnRef)"></igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
     </igx-row-island>
 </igx-hierarchical-grid>

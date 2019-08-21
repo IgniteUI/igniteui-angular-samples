@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, ViewEncapsulation} from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 import { athletesData } from "../services/data";
 
@@ -9,9 +9,11 @@ import { athletesData } from "../services/data";
 })
 
 export class CustomGridPagingStyleSample {
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+    @ViewChild("grid1", {static: true}) public grid1: IgxGridComponent;
     public data: any[];
 
+    constructor() {
+    }
     public ngOnInit(): void {
         this.data = athletesData;
     }

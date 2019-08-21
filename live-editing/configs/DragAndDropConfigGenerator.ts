@@ -1,6 +1,6 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxDialogModule, IgxDragDirective, IgxDragDropModule, IgxDropDirective } from "igniteui-angular";
-import { IconsSampleComponent } from "../../src/app/interactions/drag-drop/icons-sample/icons-sample.component";
+import { DragAndDropSampleComponent } from "../../src/app/interactions/drag-drop/drag-drop.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -10,11 +10,11 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: IconsSampleComponent,
+            component: DragAndDropSampleComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxDragDirective, IgxDropDirective,
-                    IgxDragDropModule, IgxDialogModule, IconsSampleComponent],
-                ngDeclarations: [IconsSampleComponent],
+                    IgxDragDropModule, IgxDialogModule, DragAndDropSampleComponent],
+                ngDeclarations: [DragAndDropSampleComponent],
                 ngImports: [IgxDragDropModule, IgxDialogModule]
             }),
             shortenComponentPathBy: "/interactions/"

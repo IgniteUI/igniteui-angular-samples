@@ -17,20 +17,15 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     public totalPages: number = 1;
     public totalCount = 0;
     public pages = [];
+    @ViewChild("customPager", { read: TemplateRef, static: true })
+    public remotePager: TemplateRef<any>;
+    @ViewChild("secCustomPager", { read: TemplateRef, static: true })
+    public secondPagerTemplate: TemplateRef<any>;
+
+    @ViewChild("grid1", { static: true })
+    public grid1: IgxGridComponent;
     public title = "gridPaging";
     public data: Observable<any[]>;
-
-    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
-    @ViewChild("secCustomPager", { read: TemplateRef, static: true }) public secondPagerTemplate: TemplateRef<any>;
-    @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
-
-    private visibleElements = 5;
-    private _perPage = 10;
-    private _dataLengthSubscriber;
-
-    constructor(
-        private remoteService: RemotePagingService) {
-    }
 
     public get perPage(): number {
         return this._perPage;
@@ -47,6 +42,14 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
 
     public get shouldShowFirstPage() {
         return this.pages[0] !== 0;
+    }
+    private visibleElements = 5;
+
+    private _perPage = 10;
+    private _dataLengthSubscriber;
+
+    constructor(
+        private remoteService: RemotePagingService) {
     }
 
     public ngOnInit() {
@@ -131,6 +134,9 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
         }
     }
 
+    public parseToInt(val) {
+        return parseInt(val, 10);
+    }
     public activePage(page) {
         return page === this.page ? "activePage" : "";
     }
@@ -144,7 +150,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
                 currentPage + this.visibleElements : totalPages;
             const firstPage = currentPage < totalPages - this.visibleElements ?
                 currentPage : totalPages - this.visibleElements;
-            for (let item = firstPage; item < lastPage; item++) {
+            for (let item = firstPage; item < lastPage ; item++) {
                 this.pages.push(item);
             }
             return;

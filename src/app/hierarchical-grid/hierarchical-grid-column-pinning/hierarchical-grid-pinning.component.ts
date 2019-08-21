@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
-import { CUSTOMERS } from "../data";
+import { SINGERS } from "../data";
 
 @Component({
     selector: "hierarchical-grid-pinning",
@@ -15,7 +15,7 @@ export class HGridPinningSampleComponent implements OnInit {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
-        this.localdata = CUSTOMERS;
+        this.localdata = SINGERS;
     }
     public ngOnInit(): void {
 
@@ -24,4 +24,6 @@ export class HGridPinningSampleComponent implements OnInit {
     public toggleColumn(col: IgxColumnComponent) {
         col.pinned ? col.unpin() : col.pin();
     }
+
+    public formatter = (a) => a;
 }
