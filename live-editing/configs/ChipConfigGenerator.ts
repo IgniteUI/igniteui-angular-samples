@@ -1,6 +1,7 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxAvatarModule, IgxButtonModule, IgxChipsModule, IgxDropDownModule, IgxInputGroupModule, IgxToastModule
 } from "igniteui-angular";
+import { ChipStylingSampleComponent } from "../../src/app/data-display/chip-styling/chip-styling.component";
 import { ChipSampleComponent, EmailFilterPipe } from "../../src/app/data-display/chip/chip.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -21,6 +22,18 @@ export class ChipConfigGenerator implements IConfigGenerator {
             }),
             shortenComponentPathBy: "/data-display/"
         }));
+
+        configs.push(new Config({
+            component: ChipStylingSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxChipsModule, IgxDropDownModule, IgxInputGroupModule, IgxButtonModule,
+                    IgxToastModule, IgxAvatarModule, ChipStylingSampleComponent, EmailFilterPipe],
+                ngDeclarations: [ChipStylingSampleComponent, EmailFilterPipe],
+                ngImports: [IgxChipsModule, IgxDropDownModule, IgxButtonModule,
+                    IgxInputGroupModule, IgxToastModule, IgxAvatarModule]
+            }),
+            shortenComponentPathBy: "/data-display/"
+        })); 
 
         return configs;
     }
