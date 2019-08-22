@@ -39,15 +39,16 @@ $custom-checkbox-theme: igx-checkbox-theme(
 // );
 
 // $custom-theme: igx-grid-theme(
-//     $group-row-background: igx-color($custom-palette, "secondary", 100),
+//     $group-row-background: igx-color($custom-palette, "primary", 300),
 //     $group-row-selected-background: igx-color($custom-palette, "primary", 400),
-//     $group-label-column-name-text: igx-color($custom-palette, "primary", 600),
-//     $group-label-icon: igx-color($custom-palette, "primary", 600),
-//     $group-label-text: igx-color($custom-palette, "secondary", 700),
-//     $group-count-background: igx-color($custom-palette, "primary", 600),
-//     $group-count-text-color: igx-color($custom-palette, "secondary", 400),
-//     $expand-icon-color: igx-color($custom-palette, "primary", 600),
-//     $expand-icon-hover-color: igx-color($custom-palette, "primary", 300)
+//     $group-label-column-name-text: igx-contrast-color($custom-palette, "primary", 500),
+//     $group-label-icon: igx-color($custom-palette, "secondary", 600),
+//     $group-label-text: igx-contrast-color($custom-palette, "primary", 500),
+//     $group-count-background: igx-color($custom-palette, "secondary", 600),
+//     $group-count-text-color: igx-color($custom-palette, "primary", 400),
+//     $expand-icon-color: igx-color($custom-palette, "secondary", 600),
+//     $expand-icon-hover-color: igx-color($custom-palette, "secondary", 300),
+//     $cell-active-border-color: igx-color($custom-palette, "secondary", 600)
 // );
 
 /* Schema */
@@ -77,6 +78,10 @@ $custom-checkbox-theme: igx-checkbox-theme(
 //   $schema: $my-custom-schema
 // );
 
+.igx-grid__grouparea-connector {
+    color: #000;
+}
+
 .grid-controls {
     display: flex;
     flex-flow: column nowrap;
@@ -90,7 +95,7 @@ $custom-checkbox-theme: igx-checkbox-theme(
 }
 
 .grid__wrapper {
-    margin: 0 16px;
+    margin: 0;
 }
 
 .header-icon {
@@ -117,3 +122,5 @@ $custom-checkbox-theme: igx-checkbox-theme(
         @include igx-checkbox($custom-checkbox-theme);
     }
 }
+
+
