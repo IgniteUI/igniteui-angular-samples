@@ -4,10 +4,12 @@
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
 
 $custom-theme: igx-grid-theme(
-  $pinned-border-width: 5px,
-  $pinned-border-style: double,
-  $pinned-border-color: #000280
+    $pinned-border-width: 5px,
+    $pinned-border-style: double,
+    $pinned-border-color: #FFCD0F
 );
+    
+@include igx-grid($custom-theme);
 
 .header-icon {
     font-size: 1.1em;
@@ -58,5 +60,3 @@ $custom-theme: igx-grid-theme(
     margin: 0 auto;
     padding: 5px;
 }
-
-@include igx-grid($custom-theme);
