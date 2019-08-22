@@ -3,25 +3,39 @@
 /* Basic theming */
 
 $custom-theme: igx-grid-theme(
-    $group-row-background: #CCC,
-    $group-row-selected-background: #bdbdbd,
-    $group-label-column-name-text: #000,
-    $group-label-icon: #0383d9,
-    $group-label-text: #2b2b2b,
-    $group-count-background: #09F,
+    $group-row-background: #494949,
+    $group-row-selected-background: #383838,
+    $group-label-column-name-text: #f8f8f8,
+    $group-label-icon: #FFCD0F,
+    $group-label-text: #f8f8f8,
+    $group-count-background: #FFCD0F,
     $group-count-text-color: #000,
-    $expand-icon-color: #09F,
-    $expand-icon-hover-color: #0383d9
+    $expand-icon-color: #FFCD0F,
+    $expand-icon-hover-color: rgb(223, 181, 13),
+    $cell-active-border-color: #FFCD0F,
+    $row-selected-background: #fff6d3,
+    $row-selected-text-color: #000,
+    $drop-indicator-color: #FFCD0F
+);
+
+$custom-chips-theme: igx-chip-theme(
+    $background: #494949,
+    $text-color: #f8f8f8,
+    $hover-text-color: #e7e7e7
+);
+
+$custom-checkbox-theme: igx-checkbox-theme(
+    $fill-color: #ffcd0f
 );
 
 /* Palette */
 
 // $black-color: #292826;
-// $blue-color: #2184c7;
+// $yellow-color: #FFCD0F;
 
 // $custom-palette: igx-palette(
 //   $primary: $black-color,
-//   $secondary: $blue-color
+//   $secondary: $yellow-color
 // );
 
 // $custom-theme: igx-grid-theme(
@@ -99,5 +113,7 @@ $custom-theme: igx-grid-theme(
 :host {
     ::ng-deep {
         @include igx-grid($custom-theme);
+        @include igx-chip($custom-chips-theme);
+        @include igx-checkbox($custom-checkbox-theme);
     }
 }
