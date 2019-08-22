@@ -63,6 +63,7 @@ import {
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
+import { GridEditingEventsComponent } from "../../src/app/grid/grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import {
     GridEditingStyleSample
@@ -561,6 +562,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridEditingSampleComponent],
                 ngImports: [IgxButtonModule, IgxCheckboxModule, IgxDatePickerModule, IgxDialogModule,
                     IgxGridModule, IgxInputGroupModule, IgxIconModule, IgxRippleModule, IgxComboModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridEditingEventsComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxToastModule, GridEditingEventsComponent],
+                ngDeclarations: [GridEditingEventsComponent],
+                ngImports: [IgxGridModule, IgxToastModule]
             })
         }));
 
