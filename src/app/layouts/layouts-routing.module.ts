@@ -15,6 +15,9 @@ import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-
 import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-sample-2.component";
 import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
 import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
+import {
+    CarouselStylingSampleComponent
+} from "./carousel/carousel-styling-sample/carousel-styling-sample.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
@@ -80,6 +83,11 @@ export const layoutsRoutes: Routes = [
         component: CarouselSample3Component,
         data: layoutsRoutesData["carousel-sample-3"],
         path: "carousel-sample-3"
+    },
+    {
+        component: CarouselStylingSampleComponent,
+        data: layoutsRoutesData["carousel-styling-sample"],
+        path: "carousel-styling-sample"
     },
     {
         component: CarouselSample4Component,

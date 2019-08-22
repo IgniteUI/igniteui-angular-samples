@@ -9,6 +9,7 @@ export const layoutsRoutesData = {
     "carousel-sample-3": { displayName: "Carousel Navigation", parentName: "Carousel" },
     "carousel-sample-4": { displayName: "Carousel Router Navigation", parentName: "Carousel" },
     "carousel": { displayName: "Carousel Image Viewer", parentName: "Carousel" },
+    "carousel-styling-sample": { displayName: "Carousel Styling", parentName: "Carousel" },
     "expansion-sample-1": { displayName: "Expansion Panel 1", parentName: "Expansion Panel" },
     "expansion-sample-2": { displayName: "Expansion Panel 2", parentName: "Expansion Panel" },
     "expansion-sample-3": { displayName: "Expansion Panel 3", parentName: "Expansion Panel" },
