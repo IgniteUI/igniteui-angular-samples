@@ -3,13 +3,51 @@
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-regular.css");
 @import url("https://unpkg.com/@fortawesome/fontawesome-free-webfonts@^1.0.9/css/fa-solid.css");
 
+/* Custom Theming */
+
 $custom-theme: igx-grid-theme(
     $pinned-border-width: 5px,
     $pinned-border-style: double,
     $pinned-border-color: #FFCD0F,
     $cell-active-border-color: #FFCD0F
 );
+
+// $primary-color: #292826;
+// $secondary-color: #ffcd0f;
+
+/* Using Custom Palette */
+
+// $custom-palette: igx-palette(
+//     $primary: $primary-color,
+//     $secondary: $secondary-color
+// );
+
+// $custom-theme: igx-grid-theme(
+//     $pinned-border-width: 5px,
+//     $pinned-border-style: double,
+//     $pinned-border-color: igx-color($custom-palette, "secondary", 500),
+//     $cell-active-border-color: igx-color($custom-palette, "secondary", 500)
+// );
+
+/* Using Custom Schema */
+
+// $custom-grid-schema: extend($_light-grid, (
+//     pinned-border-width: 5px,
+//     pinned-border-style: double,
+//     pinned-border-color: (igx-color:("secondary", 500)),
+//     cell-active-border-color: (igx-color:("secondary", 500))
+// ));
     
+
+// $my-custom-schema: extend($light-schema, (
+//     igx-grid: $custom-grid-schema
+// ));
+
+// $custom-theme: igx-grid-theme(
+//     $palette: $custom-palette,
+//     $schema: $my-custom-schema
+// );
+
 @include igx-grid($custom-theme);
 
 .header-icon {
