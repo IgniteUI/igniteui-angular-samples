@@ -20,6 +20,14 @@ export class ListReorderSampleComponent {
         ev.drag.dropFinished();
     }
 
+    public dragEndHandler(dragRef: HTMLElement) {
+        dragRef.style.visibility = "visible";
+    }
+
+    public ghostCreateHandler(dragRef: HTMLElement) {
+        dragRef.style.visibility = "hidden";
+    }
+
     private swapTiles(dragIndex: number, dropIndex: number) {
         const tempObj = this.employees[dragIndex];
         this.employees.splice(dragIndex, 1);
@@ -44,5 +52,4 @@ export class ListReorderSampleComponent {
     private dragStartHandler(id: string): void {
         this.dragTileId = parseInt(id, 10);
     }
-
 }

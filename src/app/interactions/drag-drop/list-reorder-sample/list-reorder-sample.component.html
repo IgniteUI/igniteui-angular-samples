@@ -1,13 +1,15 @@
 <ul class="list-container">
-    <li *ngFor="let employee of employees" 
+    <li *ngFor="let employee of employees"
+        #dragRef
+        igxDrop 
         igxDrag 
-        igxDrop
         id="{{employee.id}}" 
         (enter)="onEnterHandler($event)" 
         (dropped)="onTileDropped($event)" 
         (dragStart)="dragStartHandler(employee.id)" 
-        [hideBaseOnDrag]="true"
-        [ngStyle]="{ 'visibility': dragged ? 'hidden' : 'visible' }"
+        (ghostCreate)="ghostCreateHandler(dragRef)"
+        (dragEnd)="dragEndHandler(dragRef)"
+        [ghostClass]="'drag-ghost-class'" 
         class="list-item-container">
             <div class="text-container"> 
                 <div class="name">{{employee.name}}</div>
