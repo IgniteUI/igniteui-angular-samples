@@ -18,27 +18,26 @@ $custom-button-theme: igx-button-theme(
     $raised-hover-background: #ffcd0f
 );
 
-$black-color: #494949;
-$yellow-color: #ffcd0f;
-
-
-$custom-palette: igx-palette(
-  $primary: $black-color,
-  $secondary: $yellow-color
-);
+// $black-color: #494949;
+// $yellow-color: #ffcd0f;
 
 /* Custom Palette */
+
+// $custom-palette: igx-palette(
+//   $primary: $black-color,
+//   $secondary: $yellow-color
+// );
     
-$custom-theme: igx-chip-theme(
-  $background: igx-color($custom-palette, "primary", 500),
-  $text-color: igx-contrast-color($custom-palette, "primary", 500),
-  $hover-text-color: igx-contrast-color($custom-palette, "primary", 500),
-  $selected-background: igx-color($custom-palette, "secondary", 500),
-  $selected-border-color: igx-color($custom-palette, "secondary", 500),
-  $hover-selected-background: igx-color($custom-palette, "secondary", 600),
-  $focus-selected-background: igx-color($custom-palette, "secondary", 500),
-  $border-radius: 5px
-);
+// $custom-theme: igx-chip-theme(
+//   $background: igx-color($custom-palette, "primary", 500),
+//   $text-color: igx-contrast-color($custom-palette, "primary", 500),
+//   $hover-text-color: igx-contrast-color($custom-palette, "primary", 500),
+//   $selected-background: igx-color($custom-palette, "secondary", 500),
+//   $selected-border-color: igx-color($custom-palette, "secondary", 500),
+//   $hover-selected-background: igx-color($custom-palette, "secondary", 600),
+//   $focus-selected-background: igx-color($custom-palette, "secondary", 500),
+//   $border-radius: 5px
+// );
 
 /* Custom Schema */
 
