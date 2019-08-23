@@ -168,14 +168,17 @@
     }
     .finjs-slider {
         width: 40%;
+        min-width: 145px;
     }
     .finjs-play-controls {
         width: 45%;
         min-width: 500px;
+        margin-top: 20px;
     }
     .sample-toolbar {
         height: 20px;
         font-size: 0.8rem;
+        line-height: 20px;
     }
     .fin-dark-theme {
         .finjs-slider,

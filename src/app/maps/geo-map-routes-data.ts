@@ -6,6 +6,7 @@ export const geoMapRoutesData = {
     "geo-map-display-osm-imagery": { displayName: "Displaying OSM Imagery", parentName: "Geo Map" },
     "geo-map-display-bing-imagery": { displayName: "Displaying Bing Imagery", parentName: "Geo Map" },
     "geo-map-display-esri-imagery": { displayName: "Displaying Esri Imagery", parentName: "Geo Map" },
+    "geo-map-display-heat-imagery": { displayName: "Displaying Heat Tiles", parentName: "Geo Map" },
 
     "geo-map-binding-data-csv": { displayName: "Binding Data CSV", parentName: "Geo Map" },
     "geo-map-binding-data-json-points": { displayName: "Binding Data JSON", parentName: "Geo Map" },
@@ -22,6 +23,5 @@ export const geoMapRoutesData = {
     "geo-map-type-scatter-density-series": { displayName: "Scatter Density Series", parentName: "Geo Map" },
     "geo-map-type-scatter-symbol-series": { displayName: "Scatter Symbol Series", parentName: "Geo Map" },
     "geo-map-type-shape-polygon-series": { displayName: "Shape Polygon Series", parentName: "Geo Map" },
-    "geo-map-type-shape-polyline-series": { displayName: "Shape Polyline Series", parentName: "Geo Map" },
-    "geo-map-display-heat-imagery" : { displayName: "Display Heat Tiles", parentName: "Geo Map" }
+    "geo-map-type-shape-polyline-series": { displayName: "Shape Polyline Series", parentName: "Geo Map" }
 };

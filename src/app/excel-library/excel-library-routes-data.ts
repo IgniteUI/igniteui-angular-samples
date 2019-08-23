@@ -8,5 +8,5 @@ export const excelLibraryRoutesData = {
     "working-with-grids": { displayName: "Working With Grids", parentName: "Excel Library" },
     "working-with-objects": { displayName: "Working With Objects", parentName: "Excel Library" },
     "working-with-sparklines": { displayName: "Working With Sparklines", parentName: "Excel Library" },
-    "excel-library-working-with-tables": { displayName: "Working With Tables", parentName: "Excel Library" }
+    "working-with-tables": { displayName: "Working With Tables", parentName: "Excel Library" }
 };

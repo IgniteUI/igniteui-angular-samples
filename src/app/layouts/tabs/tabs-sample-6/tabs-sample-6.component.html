@@ -1,0 +1,28 @@
+<igx-select [value]="currentDocumentLocation" (onSelection)="handleSelection($event)">
+    <label igxLabel>URL</label>
+    <igx-select-item *ngFor="let aLocation of urlLocations" [value]="aLocation">
+        {{ aLocation }}
+    </igx-select-item>
+</igx-select>
+
+<igx-tabs>
+    <igx-tab-item label="Arrivals" icon="flight_land"
+        routerLink="arrivals"
+        routerLinkActive #rla1="routerLinkActive"
+        [isSelected]="rla1.isActive">
+    </igx-tab-item>
+    
+    <igx-tab-item label="Departures" icon="flight_takeoff"
+        routerLink="departures"
+        routerLinkActive #rla2="routerLinkActive"
+        [isSelected]="rla2.isActive">
+    </igx-tab-item>
+
+    <igx-tab-item label="Canceled" icon="cancel"
+        routerLink="canceled"
+        routerLinkActive #rla3="routerLinkActive"
+        [isSelected]="rla3.isActive">
+    </igx-tab-item>
+</igx-tabs>
+
+<router-outlet></router-outlet>

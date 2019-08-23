@@ -1,0 +1,61 @@
+// Browser samples related styling
+.control-wrapper {
+    display: flex;
+    flex-flow: row;
+    max-width: 900px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+// Ignite UI for Angular Theming engine related styling
+@import '~igniteui-angular/lib/core/styles/themes/index';
+$my-primary-color:#FFC314;
+$my-secondary-color: #7344df;
+$my-info-color: #ffffff;
+
+$my-color-palette: igx-palette(
+    $primary: $my-primary-color,
+    $secondary: $my-secondary-color,
+    $info: $my-info-color
+);
+
+$custom-drop-down-theme: igx-drop-down-theme(
+    $background-color: igx-color($my-color-palette, "secondary", 100),
+    $header-text-color: igx-color($my-color-palette, "secondary", 600),
+    $item-text-color: igx-color($my-info-color, "info", 100),
+
+    $selected-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-item-text-color: igx-color($my-color-palette, "info"),
+    $selected-hover-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-hover-item-text-color: igx-color($my-color-palette, "info"),
+    $selected-focus-item-background: igx-color($my-color-palette, "secondary", 400),
+    $selected-focus-item-text-color: igx-color($my-color-palette, "info"),
+
+    $focused-item-background: igx-color($my-color-palette, "secondary", 300),
+    $focused-item-text-color: igx-color($my-color-palette, "info"),
+
+    $hover-item-background: igx-color($my-color-palette, "info"),
+    $hover-item-text-color: igx-color($my-color-palette, "secondary", 600)
+);
+
+// igx-combo-theme exposes several parameters on top of the igx-drop-down-theme.
+$custom-combo-theme: igx-combo-theme(
+    $search-separator-border-color: igx-color($my-color-palette, "secondary", 600)
+);
+
+$custom-checkbox-theme: igx-checkbox-theme(
+    $palette: $my-color-palette,
+    $border-radius: 10px,
+    $label-color: $my-secondary-color,
+    $empty-color: $my-secondary-color
+);
+
+// Pass our custom-drop-down-theme and custom-combo-theme to respectively `igx-drop-down` and igx-combo mixins.
+// Add custom-checkbox-theme to complete the sample look and feel as well
+:host {
+   ::ng-deep {
+           @include igx-drop-down($custom-drop-down-theme);
+           @include igx-combo($custom-combo-theme);
+           @include igx-checkbox($custom-checkbox-theme);
+   }
+}

@@ -16,6 +16,7 @@ import { CardSample1Component } from "../../src/app/layouts/card/card-sample-1/c
 import { CardSample2Component } from "../../src/app/layouts/card/card-sample-2/card-sample-2.component";
 import { CardSample3Component } from "../../src/app/layouts/card/card-sample-3/card-sample-3.component";
 import { CardSample4Component } from "../../src/app/layouts/card/card-sample-4/card-sample-4.component";
+import { CardStylingSampleComponent } from '../../src/app/layouts/card/card-styling-sample/card-styling-sample.component';
 import { CardComponent } from "../../src/app/layouts/card/card.component";
 
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -155,6 +156,31 @@ export class CardConfigGenerator implements IConfigGenerator {
                     IgxListModule,
                     IgxExpansionPanelModule,
                     IgxSliderModule
+                ]
+            }),
+            additionalFiles: [
+                "/src/app/layouts/card/card.blueprint.ts"
+            ],
+            shortenComponentPathBy: "/layouts/card/"
+        }));
+
+        // card styling sample
+        configs.push(new Config({
+            component: CardStylingSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [
+                    IgxButtonModule,
+                    IgxIconModule,
+                    IgxCardModule,
+                    IgxRippleModule,
+                    CardStylingSampleComponent
+                ],
+                ngDeclarations: [CardStylingSampleComponent],
+                ngImports: [
+                    IgxButtonModule,
+                    IgxIconModule,
+                    IgxCardModule,
+                    IgxRippleModule
                 ]
             }),
             additionalFiles: [

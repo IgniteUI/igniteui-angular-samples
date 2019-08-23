@@ -8,6 +8,8 @@ import { InputGroupSample5Component
 } from "../../src/app/data-entries/input-group/input-group-sample-5/input-group-sample-5.component";
 import { InputGroupSample6Component
 } from "../../src/app/data-entries/input-group/input-group-sample-6/input-group-sample-6.component";
+import { InputGroupStyleComponent
+} from "../../src/app/data-entries/input-group/input-group-styling/input-group-styling.component";
 import { ReactiveFormsSampleComponent
 } from "../../src/app/data-entries/input-group/reactive-forms/reactive-forms.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -65,7 +67,17 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ReactiveFormsSampleComponent],
                 ngImports: [IgxIconModule, IgxInputGroupModule, IgxButtonModule,
                      IgxRippleModule, IgxDatePickerModule, IgxTimePickerModule, IgxComboModule,
-                     FormsModule, ReactiveFormsModule, IgxDropDownModule, IgxSelectModule],
+                     FormsModule, ReactiveFormsModule, IgxDropDownModule, IgxSelectModule]
+            }),
+            shortenComponentPathBy: "/data-entries/"
+        }));
+
+        configs.push(new Config({
+            component: InputGroupStyleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxInputGroupModule, InputGroupStyleComponent],
+                ngDeclarations: [InputGroupStyleComponent],
+                ngImports: [IgxIconModule, IgxInputGroupModule]
             }),
             shortenComponentPathBy: "/data-entries/"
         }));

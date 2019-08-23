@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { DefaultSortingStrategy, IgxGridComponent, IgxSelectComponent, SortingDirection } from "igniteui-angular";
-import { DATA } from "./localData";
+import { DATA } from "../../data/localData";
 
 enum TYPE {
     SINGLE = "single",
@@ -29,7 +29,7 @@ export class SortingSampleComponent implements OnInit {
         this.data = DATA;
         this.grid1.sortingExpressions = [
             {
-                dir: SortingDirection.Asc, fieldName: "ProductName",
+                dir: SortingDirection.Asc, fieldName: "CategoryName",
                 ignoreCase: true, strategy: DefaultSortingStrategy.instance()
             }
         ];

@@ -1,0 +1,69 @@
+<div #container class="container" width="100%" height="calc(100% - 200px)">
+
+    <igx-data-chart #mainChart name="mainChart"
+    width="100%"
+    height="calc(100% - 200px)"
+    isHorizontalZoomEnabled="true"
+    isVerticalZoomEnabled="false"
+    [dataSource]="countriesAll"
+    chartTitle="World GDP vs Population"
+    titleTopMargin="10">
+
+        <igx-numeric-x-axis #mainXAxis
+            isLogarithmic=true
+            abbreviateLargeNumbers=true
+            title="Population">
+        </igx-numeric-x-axis>
+        <igx-numeric-y-axis #mainYAxis
+            isLogarithmic=true
+            abbreviateLargeNumbers=true
+            titleLeftMargin="10"
+            title="Total GDP ($)">
+        </igx-numeric-y-axis>
+    </igx-data-chart>
+
+    <div  class="zoomPane" width="100%" height="160px" >
+        <div class="zoomChart" width="100%" height="160px"  >
+            <igx-data-chart
+            #zoomChart name="zoomChart"
+            width="100%"
+            height="160px"
+            isHorizontalZoomEnabled="true"
+            isVerticalZoomEnabled="true"
+            [dataSource]="countriesAll">
+
+                <igx-numeric-x-axis #zoomXAxis
+                    isLogarithmic=true
+                    abbreviateLargeNumbers=true
+                    labelVisibility="collapsed" >
+                </igx-numeric-x-axis>
+                <igx-numeric-y-axis #zoomYAxis
+                    isLogarithmic=true
+                    abbreviateLargeNumbers=true
+                    labelVisibility="collapsed" >
+                </igx-numeric-y-axis>
+
+            </igx-data-chart>
+        </div>
+        <div class="zoomSlider" width="100%" height="160px" >
+
+            <igx-zoom-slider
+            #zoomSlider name="zoomSlider"
+            width="100%"
+            height="160px" >
+            </igx-zoom-slider>
+        </div>
+    </div>
+
+    <ng-template let-series="series" let-item="item" #seriesTooltip>
+        <div>
+            <span>Region: {{item.region}}<br/></span>
+            <span>Country: {{item.name}}<br/></span>
+            <span>Population: {{item.getPopulation()}}<br/></span>
+            <span>GDP Total: {{item.getGdpTotal()}}<br/></span>
+            <span [style.color]="series.actualBrush">GDP Per Capita: {{item.getGdpPerCapita()}}<br/></span>
+            <span [style.color]="series.actualBrush">{{series.title}}<br/></span>
+
+        </div>
+    </ng-template>
+</div>

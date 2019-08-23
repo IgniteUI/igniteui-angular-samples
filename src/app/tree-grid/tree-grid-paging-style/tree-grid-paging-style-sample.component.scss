@@ -1,3 +1,8 @@
+.grid__wrapper {
+    margin: 0 16px;
+    padding-top: 10px;
+}
+
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 /*BASIC THEMING*/
@@ -10,13 +15,8 @@ $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826
 :host {
      ::ng-deep {
         @include igx-grid-paginator($dark-grid-paginator);
-        .igx-paginator {
+        .igx-grid-paginator__pager{
             @include igx-button($dark-button);
-        }
-        .igx-paginator>* {
-            margin: 0 .3125rem;
-            display: flex;
-            align-items: center;
         }
     }
 }
