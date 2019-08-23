@@ -1,24 +1,25 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
+
 $custom-theme: igx-chip-theme(
-  $background: #7c7373,
-  $text-color: #e2e2e2,
-  $hover-text-color: #f2f2f2,
-  $selected-background: #a94f44,
-  $selected-border-color: #a94f44,
-  $hover-selected-background: #94443a,
-  $focus-selected-background: #803a31,
-  $border-radius: 5px
+    $background: #292826,
+    $text-color: #e2e2e2,
+    $hover-text-color: #f2f2f2,
+    $selected-background: #ffcd0f,
+    $selected-border-color: #ffcd0f,
+    $hover-selected-background: #ebbf11,
+    $focus-selected-background: #ffcd0f,
+    $border-radius: 5px
 );
 
-// $primary-color: #a94f44;
-// $secondary-color: #7c7373;
+// $black-color: #494949;
+// $yellow-color: #ffcd0f;
 
 /* Palette */
 
 // $custom-palette: igx-palette(
-//   $primary: $primary-color,
-//   $secondary: $secondary-color
+//   $primary: $black-color,
+//   $secondary: $yellow-color
 // );
 
 // $custom-theme: igx-chip-theme(
@@ -55,6 +56,10 @@ $custom-theme: igx-chip-theme(
 :host {
   ::ng-deep {
     @include igx-chip($custom-theme);
+
+    .igx-chip__remove:focus-within {
+        color: #ffcd0f;
+    }
   }
 }
 
