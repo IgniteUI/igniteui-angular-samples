@@ -47,6 +47,9 @@ import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import {
+    TreeGridPinningToolbarSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
+import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
@@ -55,6 +58,7 @@ import {
 import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
+import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
@@ -147,6 +151,7 @@ import {
         TreeGridRowEditSampleComponent,
         TreeGridRowEditStyleComponent,
         TreeGridBatchEditingSampleComponent,
+        TreeGridEditingEventsComponent,
         TreeGridEmployeesSampleComponent,
         TreeGridPagingStyleSampleComponent,
         TreeGridSearchSampleComponent,
@@ -159,6 +164,7 @@ import {
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnMovingStyledSampleComponent,
         TreeGridColumnPinningSampleComponent,
+        TreeGridPinningToolbarSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
         TreeGridFilteringTemplateSampleComponent,
