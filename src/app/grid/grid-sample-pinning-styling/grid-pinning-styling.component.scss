@@ -6,7 +6,8 @@
 $custom-theme: igx-grid-theme(
     $pinned-border-width: 5px,
     $pinned-border-style: double,
-    $pinned-border-color: #FFCD0F
+    $pinned-border-color: #FFCD0F,
+    $cell-active-border-color: #FFCD0F
 );
     
 @include igx-grid($custom-theme);
