@@ -98,10 +98,10 @@ export class ChipStylingSampleComponent {
     ];
 
     public tagList = [
-        { id: "Austria Team", text: "Branch Austria", flag: "assets/images/grid/flags/at.png" },
-        { id: "Singapore Team", text: "Branch Singapore", flag: "assets/images/grid/flags/sg.png" },
-        { id: "USA Team", text: "Branch USA", flag: "assets/images/grid/flags/us.png" },
-        { id: "UN Team", text: "Branch Japan", flag: "assets/images/grid/flags/jp.png" }
+        { id: "Branch Austria", text: "Branch Austria", flag: "assets/images/grid/flags/at.png" },
+        { id: "Branch Singapore", text: "Branch Singapore", flag: "assets/images/grid/flags/sg.png" },
+        { id: "Branch USA", text: "Branch USA", flag: "assets/images/grid/flags/us.png" },
+        { id: "Branch Japan", text: "Branch Japan", flag: "assets/images/grid/flags/jp.png" }
     ];
 
     public toastPosition: IgxToastPosition = IgxToastPosition.Middle;
@@ -200,8 +200,7 @@ export class ChipStylingSampleComponent {
                     this.chipList.push({
                         email: this.dropDownList[i].email,
                         id: this.dropDownList[i].id,
-                        name: this.dropDownList[i].name,
-                        photo: this.dropDownList[i].photo
+                        name: this.dropDownList[i].name
                     });
                     exists = true;
                 }
@@ -210,8 +209,7 @@ export class ChipStylingSampleComponent {
                 this.chipList.push({
                     email: this.inputBox.value,
                     id: this.inputBox.value,
-                    name: this.inputBox.value,
-                    photo: "assets/images/list/empty.png"
+                    name: this.inputBox.value
                 });
             }
         }
@@ -262,8 +260,7 @@ export class ChipStylingSampleComponent {
                 this.chipList.push({
                     email: this.dropDownList[i].email,
                     id: this.dropDownList[i].id,
-                    name: this.dropDownList[i].name,
-                    photo: this.dropDownList[i].photo
+                    name: this.dropDownList[i].name
                 });
                 this.igxDropDown.close();
                 this.dropDownOpened = false;
