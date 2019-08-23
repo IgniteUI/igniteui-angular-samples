@@ -5,7 +5,6 @@
         [data]="sourceData"
         [autoGenerate]="false"
         [sortingExpressions]="sort"
-        [allowFiltering]="true"
         [showToolbar]="true"
         [displayDensity]="'cosy'">
         <igx-column-layout [header]="'ID'">
@@ -17,15 +16,15 @@
             <igx-column [rowEnd]="3" [rowStart]="2" [colStart]="2" [colEnd]="3" field="ContactTitle" [header]="'Contact Title'"></igx-column>
         </igx-column-layout>
         <igx-column-layout [header]="'Address Details'">
-            <igx-column [rowStart]="1" [colStart]="1" [colEnd]="3" field="Country" [filterable]="false" [width]="'220px'"></igx-column>
-            <igx-column [rowStart]="1" [colStart]="3" [colEnd]="5" field="Region" [filterable]="false" [width]="'220px'"></igx-column>
+            <igx-column [rowStart]="1" [colStart]="1" [colEnd]="3" field="Country" [width]="'220px'"></igx-column>
+            <igx-column [rowStart]="1" [colStart]="3" [colEnd]="5" field="Region" [width]="'220px'"></igx-column>
             <igx-column [rowStart]="1" [colStart]="5" [colEnd]="7" field="PostalCode" [header]="'Postal Code'" [filterable]="false" [width]="'220px'"></igx-column>
-            <igx-column [rowStart]="2" [colStart]="1" [colEnd]="4" field="City" [filterable]="false"></igx-column>
-            <igx-column [rowStart]="2" [colStart]="4" [colEnd]="7" field="Address" [filterable]="false"></igx-column>
+            <igx-column [rowStart]="2" [colStart]="1" [colEnd]="4" field="City"></igx-column>
+            <igx-column [rowStart]="2" [colStart]="4" [colEnd]="7" field="Address"></igx-column>
         </igx-column-layout>
         <igx-column-layout [header]="'Phone Details'">
-                <igx-column [rowStart]="1" [colStart]="1" [colEnd]="2" field="Phone" [filterable]="false" [width]="'220px'"></igx-column>
-                <igx-column [rowStart]="2" [colStart]="1" [colEnd]="2" field="Fax" [filterable]="false"></igx-column>
+                <igx-column [rowStart]="1" [colStart]="1" [colEnd]="2" field="Phone" [width]="'220px'"></igx-column>
+                <igx-column [rowStart]="2" [colStart]="1" [colEnd]="2" field="Fax"></igx-column>
             </igx-column-layout>
     </igx-grid>
 </div>
