@@ -1,56 +1,56 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-theme: igx-grid-theme(
-  $cell-active-border-color: #ff0000,
+  $cell-active-border-color: #ffcd0f,
   $cell-selected-background: #6f6f6f,
-  $row-hover-background: #979696,
+  $row-hover-background: #f8e495,
   $row-selected-background: #8d8d8d,
   $header-background: #494949,
   $header-text-color: #fff,
-  $expand-icon-color: #ff0000,
-  $expand-icon-hover-color: #ac0000,
-  $resize-line-color: #ff0000,
-  $row-highlight: #ffcc00
+  $expand-icon-color: #ffcd0f,
+  $expand-icon-hover-color: #e0b710,
+  $resize-line-color: #ffcd0f,
+  $row-highlight: #ffcd0f
 );
+
+
+// $black-color: #494949;
+// $yellow-color: #ffcd0f;
 
 /* Custom palette */
 
-// $black-color: #000000;
-// $red-color: #ff0000;
-
 // $custom-palette: igx-palette(
 //     $primary: $black-color,
-//     $secondary: $red-color
+//     $secondary: $yellow-color
 // );
 
 // $custom-theme: igx-grid-theme(
 //     $cell-active-border-color: (igx-color($custom-palette, "secondary", 500)),
 //     $cell-selected-background: (igx-color($custom-palette, "primary", 300)),
-//     $row-hover-background: (igx-color($custom-palette, "primary", 100)),
-//     $row-selected-background: (igx-color($custom-palette, "primary", 200)),
-//     $header-background: (igx-color($custom-palette, "primary", 400)),
-//     $header-text-color: (igx-contrast($custom-palette, "primary", 500)),
+//     $row-hover-background: (igx-color($custom-palette, "secondary", 100)),
+//     $row-selected-background: (igx-color($custom-palette, "primary", 100)),
+//     $header-background: (igx-color($custom-palette, "primary", 500)),
+//     $header-text-color: (igx-contrast-color($custom-palette, "primary", 500)),
 //     $expand-icon-color: (igx-color($custom-palette, "secondary", 500)),
 //     $expand-icon-hover-color: (igx-color($custom-palette, "secondary", 600)),
 //     $resize-line-color: (igx-color($custom-palette, "secondary", 500)),
-//     $row-highlight: (igx-color($custom-palette, "secondary", 100))
+//     $row-highlight: (igx-color($custom-palette, "secondary", 500))
 // );
 
 /* Schema */
 
-$custom-grid-schema: extend($_dark-grid, (
-    cell-active-border-color: (igx-color:('secondary', 500)),
-    cell-selected-background: (igx-color:('primary', 300)),
-    row-hover-background: (igx-color:('primary', 100)),
-    row-selected-background: (igx-color:('primary', 200)),
-    header-background: (igx-color:('primary', 400)),
-    header-text-color: (igx-contrast-color:('primary', 100)),
-    expand-icon-color: (igx-color:('secondary', 500)),
-    expand-icon-hover-color: (igx-color:('secondary', 600)),
-    resize-line-color: (igx-color:('secondary', 500)),
-    row-highlight: (igx-color:('secondary', 500)),
-    content-text-color: (igx-contrast-color:('primary', 300))
-));
+// $custom-grid-schema: extend($_dark-grid, (
+//     cell-active-border-color: (igx-color:('secondary', 500)),
+//     cell-selected-background: (igx-color:('primary', 300)),
+//     row-hover-background: (igx-color:('secondary', 100)),
+//     row-selected-background: (igx-color:('primary', 100)),
+//     header-background: (igx-color:('primary', 500)),
+//     header-text-color: (igx-contrast-color:('primary', 500)),
+//     expand-icon-color: (igx-color:('secondary', 500)),
+//     expand-icon-hover-color: (igx-color:('secondary', 600)),
+//     resize-line-color: (igx-color:('secondary', 500)),
+//     row-highlight: (igx-color:('secondary', 500)),
+// ));
 
 // $my-custom-schema: extend($dark-schema, (
 //     igx-grid: $custom-grid-schema
