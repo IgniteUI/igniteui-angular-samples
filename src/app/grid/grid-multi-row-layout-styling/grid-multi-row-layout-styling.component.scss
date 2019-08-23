@@ -1,43 +1,48 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $custom-theme: igx-grid-theme(
-  $cell-active-border-color: #ff0000,
+  $cell-active-border-color: #ffcd0f,
   $cell-selected-background: #6f6f6f,
-  $row-hover-background: #979696,
+  $row-hover-background: #fde069,
   $row-selected-background: #8d8d8d,
   $header-background: #494949,
-  $header-text-color: #fff
+  $header-text-color: #fff,
+  $sorted-header-icon-color: #ffcd0f,
+  $sortable-header-icon-hover-color: #e9bd0d
 );
+
+// $black-color: #494949;
+// $yellow-color: #ffcd0f;
 
 /* Custom palette */
 
-// $black-color: #292826;
-// $red-color: #c72121;
-
 // $custom-palette: igx-palette(
 //   $primary: $black-color,
-//   $secondary: $red-color
+//   $secondary: $yellow-color
 // );
 
 // $custom-theme: igx-grid-theme(
-//     $cell-active-border-color: igx-color($custom-palette, "secondary", 100),
-//     $cell-selected-background: igx-color($custom-palette, "primary", 400),
-//     $row-hover-background: igx-color($custom-palette, "primary", 600),
-//     $row-selected-background: igx-color($custom-palette, "primary", 600),
-//     $header-background: igx-color($custom-palette, "secondary", 700),
-//     $header-text-color: igx-color($custom-palette, "primary", 600)
+//     $cell-active-border-color: igx-color($custom-palette, "secondary", 500),
+//     $cell-selected-background: igx-color($custom-palette, "primary", 300),
+//     $row-hover-background: igx-color($custom-palette, "secondary", 300),
+//     $row-selected-background: igx-color($custom-palette, "primary", 100),
+//     $header-background: igx-color($custom-palette, "primary", 500),
+//     $header-text-color: igx-contrast-color($custom-palette, "primary", 500),
+//     $sorted-header-icon-color: igx-color($custom-palette, "secondary", 500),
+//     $sortable-header-icon-hover-color: igx-color($custom-palette, "secondary", 600)
 // );
 
 /* Schemas */
 
 // $custom-grid-schema: extend($_light-grid,(
-//     cell-active-border-color: (igx-color:('secondary', 100)),
-//     cell-selected-background: (igx-color:('primary', 400)),
-//     cell-selected-text-color: (igx-color:('primary', 100)),
-//     row-hover-background: (igx-color:('secondary', 600)),
-//     row-selected-background: (igx-color:('primary', 600)),
-//     header-background: (igx-color:('secondary', 700)),
-//     header-text-color: (igx-color:('primary', 600))
+//     cell-active-border-color: (igx-color:('secondary', 500)),
+//     cell-selected-background: (igx-color:('primary', 300)),
+//     row-hover-background: (igx-color:('secondary', 300)),
+//     row-selected-background: (igx-color:('primary', 100)),
+//     header-background: (igx-color:('primary', 500)),
+//     header-text-color: (igx-contrast-color:('primary', 500)),
+//     sorted-header-icon-color: (igx-color:('secondary', 500)),
+//     sortable-header-icon-hover-color: (igx-color:('secondary', 600)) 
 // ));
 
 // $my-custom-schema: extend($light-schema, ( 
