@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from "@angular/core";
-import { IgxDropEnterEventArgs, IgxDropEventArgs, IgxDropLeaveEventArgs } from "igniteui-angular";
+import { IDropBaseEventArgs, IDropDroppedEventArgs } from "igniteui-angular";
 
 enum state {
     toDo = "toDo",
@@ -56,7 +56,7 @@ export class KanbanSampleComponent implements OnInit {
         this.currentList = "";
     }
 
-    private onStateContainerEnter(event: IgxDropEventArgs) {
+    private onStateContainerEnter(event: IDropDroppedEventArgs) {
         // If we have entered another list container, we have to remove the "dummy" object from the previous one
         if (this.currentList !== event.owner.element.nativeElement.id) {
             this[this.currentList] = this[this.currentList].filter((item) => {
@@ -70,7 +70,7 @@ export class KanbanSampleComponent implements OnInit {
         this.renderer.addClass(event.owner.element.nativeElement, "dragHovered");
     }
 
-    private onStateContainerLeave(event: IgxDropEventArgs) {
+    private onStateContainerLeave(event: IDropDroppedEventArgs) {
         // This event also gets raised when the user drags a task over another task tile.
         // That means we have to re-apply the "dragHovered" class in the `onItemEnter` event handler
         this.renderer.removeClass(event.owner.element.nativeElement,  "dragHovered");
@@ -92,7 +92,7 @@ export class KanbanSampleComponent implements OnInit {
         this.cdr.detectChanges();
     }
 
-    private onItemEnter(event: IgxDropEnterEventArgs) {
+    private onItemEnter(event: IDropBaseEventArgs) {
         // Applying the container highlighting again
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.addClass(this[listContainer].nativeElement, "dragHovered");
@@ -127,12 +127,12 @@ export class KanbanSampleComponent implements OnInit {
         }
     }
 
-    private onItemLeave(event: IgxDropLeaveEventArgs) {
+    private onItemLeave(event: IDropBaseEventArgs) {
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.removeClass(this[listContainer].nativeElement, "dragHovered");
     }
 
-    private onItemDropped(event: IgxDropEventArgs) {
+    private onItemDropped(event: IDropDroppedEventArgs) {
         const dropListState = event.owner.element.nativeElement.id;
         const dragListState = event.drag.element.nativeElement.dataset.state + "List";
         const dummyItemIndex = this[dropListState].findIndex((item) => {
