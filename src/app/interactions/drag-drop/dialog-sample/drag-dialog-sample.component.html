@@ -1,6 +1,5 @@
 <button 
-    #dialogButton 
-    igxDrag 
+    #dialogButton
     igxButton="raised" 
     igxRipple="white" 
     (click)="openDialog()">Show Dialog</button>
@@ -8,9 +7,8 @@
     igxDrag 
     #toggleForm="toggle" 
     class="igx-dialog" 
-    [renderGhost]="false" 
-    [dragTolerance]="0" 
-    [dragLinkTo]="'dialog'">
+    [ghost]="false" 
+    [dragTolerance]="0">
     <igx-icon igxDragHandle fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
     <div class="igx-dialog__window">
         <div class="dialogContainer">

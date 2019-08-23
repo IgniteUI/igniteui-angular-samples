@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from "@angular/core";
 import {
     GlobalPositionStrategy,
     IgxDragDirective,
-    IgxOverlayService,
+    IgxDragLocation,
     IgxToggleDirective,
     NoOpScrollStrategy,
     OverlaySettings } from "igniteui-angular";
@@ -31,7 +31,7 @@ export class DragDialogSampleComponent {
     closeOnOutsideClick: true
 };
 
-  constructor(private overlayService: IgxOverlayService) {}
+  constructor() {}
 
   public openDialog() {
     this.toggleForm.open(this.overlaySettings);
@@ -39,6 +39,6 @@ export class DragDialogSampleComponent {
         this.toggleStartPageX = this.toggleFormDrag.pageX;
         this.toggleStartPageY = this.toggleFormDrag.pageY;
     }
-    this.toggleFormDrag.setPageXY(this.toggleStartPageX, this.toggleStartPageY);
+    this.toggleFormDrag.setLocation(new IgxDragLocation(this.toggleStartPageX, this.toggleStartPageY));
   }
 }
