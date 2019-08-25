@@ -50,6 +50,7 @@ import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.componen
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
+import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
@@ -65,6 +66,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
@@ -117,6 +119,11 @@ export const gridsRoutes: Routes = [
         component: GridEditingStyleSample,
         data: gridsRoutesData["grid-editing-style"],
         path: "grid-editing-style"
+    },
+    {
+        component: GridEditingEventsComponent,
+        data: gridsRoutesData["grid-editing-events"],
+        path: "grid-editing-events"
     },
     {
         component: GridRowEditSampleComponent,
@@ -227,6 +234,11 @@ export const gridsRoutes: Routes = [
         component: PinningSampleComponent,
         data: gridsRoutesData["grid-sample-pinning"],
         path: "grid-sample-pinning"
+    },
+    {
+        component: PinningToolbarSampleComponent,
+        data: gridsRoutesData["grid-sample-toolbar-pinning"],
+        path: "grid-sample-toolbar-pinning"
     },
     {
         component: GridRemoteVirtualizationSampleComponent,
