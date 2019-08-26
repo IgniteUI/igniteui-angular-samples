@@ -31,7 +31,7 @@
             <div class="chips">
                 <igx-chips-area #chipsAreaCc (onReorder)="chipsOrderChangedCc($event)">
                     <igx-chip class="chipStyle" *ngFor="let chip of tagList" [id]="chip.id" [selectable]="true" (onRemove)="chipRemovedCc($event)" (onSelection)="selectChipCc(chip.id)">
-                        <igx-avatar class="chip-avatar-resized" igxPrefix fontSet="material" [src]="chip.flag" roundShape="true"></igx-avatar>
+                        <igx-avatar class="chip-avatar-resized" style="min-width: 1.5em; height: 1.5em; width: 1.5em; margin-left: 0" igxPrefix fontSet="material" [src]="chip.flag" roundShape="true"></igx-avatar>
                         <span #label [class]="'igx-chip__text'">{{chip.text}}</span>
                     </igx-chip>
                 </igx-chips-area>
