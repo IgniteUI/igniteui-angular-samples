@@ -18,7 +18,7 @@ import {
     styleUrls: ["./list-reorder-sample.component.scss"]
 })
 export class ListReorderSampleComponent {
-    @ViewChildren("dragRef", { read: IgxDragDirective })
+    @ViewChildren("dragDirRef", { read: IgxDragDirective })
     public dragDirs: QueryList<IgxDragDirective>;
 
     @ViewChild("listContainer", { read: ElementRef, static: false })
@@ -83,7 +83,8 @@ export class ListReorderSampleComponent {
         // Relative position of the dragged element to the list container.
         const relativePosY = event.nextPageY - containerPosY;
 
-        const newIndex = Math.floor(relativePosY / 72);
+        let newIndex = Math.floor(relativePosY / 72);
+        newIndex = newIndex < 0 ? 0 : (newIndex >= this.employees.length ? this.employees.length - 1 : newIndex);
         if (newIndex === this.newIndex) {
             // If the current new index is unchanged do nothing.
             return;

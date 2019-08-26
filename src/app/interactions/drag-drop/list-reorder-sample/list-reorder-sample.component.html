@@ -1,15 +1,13 @@
 ﻿<ul #listContainer class="list-container">
     <li *ngFor="let employee of employees; index as targetIndex;"
-        #dragRef
         #dragDirRef=drag
         igxDrop 
         [igxDrag]="{ id: employee.id, dragged: false }"
-        id="{{employee.id}}" 
+        [ghost]="false"
         (dragStart)="onDragStart($event, targetIndex)"
         (dragMove)="onDragMove($event, targetIndex)"
         (dragEnd)="onDragEnd($event, targetIndex)"
         (transitioned)="onTransitioned($event, targetIndex)"
-        [ghost]="false"
         class="list-item-container"
         [class.list-item-dragged]="dragDirRef.data.dragged">
             <div class="text-container">
