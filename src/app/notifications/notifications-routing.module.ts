@@ -17,6 +17,7 @@ import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.com
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
 import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
 import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
+import { ToastStyleComponent } from "./toast/toast-style/toast-style.component";
 
 export const notificationsRoutes: Routes = [
     {
@@ -98,6 +99,11 @@ export const notificationsRoutes: Routes = [
         component: ToastSample5Component,
         data: notificationsRoutesData["toast-sample-5"],
         path: "toast-sample-5"
+    },
+    {
+        component: ToastStyleComponent,
+        data: notificationsRoutesData["toast-style"],
+        path: "toast-style"
     }
 ];
 

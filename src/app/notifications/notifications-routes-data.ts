@@ -14,5 +14,6 @@ export const notificationsRoutesData = {
     "toast-sample-2": { displayName: "Show Toast", parentName: "Toast" },
     "toast-sample-3": { displayName: "Hide/Auto Hide Toast", parentName: "Toast" },
     "toast-sample-4": { displayName: "Toast Display Time", parentName: "Toast" },
-    "toast-sample-5": { displayName: "Toast Positioning", parentName: "Toast" }
+    "toast-sample-5": { displayName: "Toast Positioning", parentName: "Toast" },
+    "toast-style": { displayName: "Toast Style", parentName: "Toast" }
 };
