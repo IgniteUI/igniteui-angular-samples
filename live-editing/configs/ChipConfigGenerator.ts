@@ -28,7 +28,7 @@ export class ChipConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxChipsModule, IgxDropDownModule, IgxInputGroupModule, IgxButtonModule,
                     IgxToastModule, IgxAvatarModule, ChipStylingSampleComponent, EmailFilterPipe],
-                ngDeclarations: [ChipStylingSampleComponent, EmailFilterPipe],
+                ngDeclarations: [ChipStylingSampleComponent],
                 ngImports: [IgxChipsModule, IgxDropDownModule, IgxButtonModule,
                     IgxInputGroupModule, IgxToastModule, IgxAvatarModule]
             }),
