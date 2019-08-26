@@ -298,9 +298,13 @@ export class ChipSampleComponent {
             return chip.id === chipId;
         });
         if (chipToSelect.selected === true) {
-            this.ccGroup.value = this.ccGroup.value.replace(chipToSelect.id + ", ", "");
+            this.ccGroup.value = this.ccGroup.value.split(", ").filter((z) => {
+                return z !== chipToSelect.id;
+            }).join(", ");
         } else {
-            this.ccGroup.value += chipToSelect.id + ", ";
+            this.ccGroup.value = this.ccGroup.value.split(", ").filter((z) => {
+                return z !== "";
+            }).concat(chipToSelect.id).join(", ");
         }
     }
 
