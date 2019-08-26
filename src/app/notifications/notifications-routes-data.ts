@@ -9,6 +9,7 @@ export const notificationsRoutesData = {
     "snackbar-sample-3": { displayName: "Snackbar Display Time", parentName: "Snackbar" },
     "snackbar-sample-4": { displayName: "Snackbar in List", parentName: "Snackbar" },
     "snackbar-sample-5": { displayName: "Display custom content", parentName: "Snackbar" },
+    "snackbar-style": { displayName: "Snackbar Style", parentName: "Snackbar" },
     "toast-sample-1": { displayName: "Toast Overview", parentName: "Toast" },
     "toast-sample-2": { displayName: "Show Toast", parentName: "Toast" },
     "toast-sample-3": { displayName: "Hide/Auto Hide Toast", parentName: "Toast" },
