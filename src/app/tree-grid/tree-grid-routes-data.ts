@@ -19,7 +19,8 @@ export const treeGridRoutesData = {
     "treegrid-column-moving-styled": { displayName: "TreeGrid Column Moving Styled", parentName: "TreeGrid" },
     "treegrid-column-resizing": { displayName: "TreeGrid Column Resizing", parentName: "TreeGrid" },
     "treegrid-resize-line-styling": { displayName: "TreeGrid Resize Line Styling", parentName: "TreeGrid" },
-    "treegrid-column-pinning": { displayName: "TreeGrid Column Pinning", parentName: "TreeGrid" },
+    "treegrid-column-pinning": { displayName: "TreeGrid Header Template with Pinning", parentName: "TreeGrid" },
+    "treegrid-toolbar-pinning": { displayName: "TreeGrid Toolbar Pinning", parentName: "TreeGrid" },
     "treegrid-filtering": { displayName: "TreeGrid Filtering", parentName: "TreeGrid" },
     "treegrid-filtering-template": { displayName: "TreeGrid Filtering Template", parentName: "TreeGrid" },
     "treegrid-excel-style-filtering-sample-1": {
@@ -34,6 +35,10 @@ export const treeGridRoutesData = {
         displayName: "TreeGrid Excel Style Filtering Templates",
         parentName: "TreeGrid"
     },
+    "treegrid-excel-style-filtering-style": {
+        displayName: "TreeGrid Excel Style Filtering Styling",
+        parentName: "TreeGrid"
+    },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-headers": { displayName: "TreeGrid Multi Column Headers", parentName: "TreeGrid" },
     "treegrid-virtualization": { displayName: "TreeGrid Virtualization", parentName: "TreeGrid" },
@@ -43,10 +48,12 @@ export const treeGridRoutesData = {
     "treegrid-toolbar-3": { displayName: "TreeGrid Toolbar 3", parentName: "TreeGrid" },
     "treegrid-toolbar-4": { displayName: "TreeGrid Toolbar 4", parentName: "TreeGrid" },
     "treegrid-summary": { displayName: "TreeGrid Summary", parentName: "TreeGrid" },
+    "treegrid-summary-styling": { displayName: "TreeGrid Summary Styling", parentName: "TreeGrid" },
     "treegrid-summary2": { displayName: "TreeGrid Child Summary", parentName: "TreeGrid" },
     "treegrid-conditional-cell-style": { displayName: "TreeGrid Condition Cell Styling", parentName: "TreeGrid" },
     "treegrid-paging": { displayName: "TreeGrid Paging", parentName: "TreeGrid" },
     "treegrid-editing": { displayName: "TreeGrid Editing", parentName: "TreeGrid" },
+    "treegrid-editing-events": { displayName: "TreeGrid Editing Events", parentName: "TreeGrid" },
     "treegrid-editing-style": { displayName: "TreeGrid Editing Style", parentName: "TreeGrid" },
     "treegrid-remote-filtering": { displayName: "TreeGrid Remote Filtering", parentName: "TreeGrid" },
     "tree-grid-multi-cell-selection": { displayName: "TreeGrid Multi cell selection", parentName: "TreeGrid" },
@@ -63,5 +70,6 @@ export const treeGridRoutesData = {
         parentName: "TreeGrid"
     },
     "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
-    "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" }
+    "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
+    "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" }
 };

@@ -16,7 +16,7 @@ export class TreeGridColumnPinningSampleComponent {
         this.data = generateEmployeeDetailedFlatData();
     }
 
-    public toggleColumnPinning(column: IgxColumnComponent) {
+    public toggleColumn(column: IgxColumnComponent) {
         column.pinned ? column.unpin() : column.pin();
     }
 }

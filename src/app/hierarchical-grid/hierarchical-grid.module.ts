@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule } from "igniteui-angular";
+import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule } from "igniteui-angular";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridWithTransactionsComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "./hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
@@ -12,14 +12,18 @@ import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hid
 import { HGridColumnMovingSampleComponentStyled } from "./hierarchical-grid-column-moving-styled/hierarchical-grid-moving-styled.component";
 import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
+import { HGridToolbarPinningComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
+import { HGridEditingEventsComponent } from "./hierarchical-grid-editing-events/hierarchical-grid-editing-events.component";
 import { HGridEditingStyleComponent } from "./hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
 import { HGridExcelStyleFilteringSample1Component } from "./hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
 import { HGridExcelStyleFilteringSample2Component } from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
 import { HGridExcelStyleFilteringSample3Component } from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
+import { HGridExcelStyleFilteringStyleComponent } from "./hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
+import { HierarchicalGridFilteringStyleComponent } from "./hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
 import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-filtering.component";
@@ -41,6 +45,7 @@ import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hie
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
 import { HGridContextmenuComponent } from "./hierarchical-grid-sorting/hgrid-contextmenu/hgrid-contextmenu.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
+import { HGridSummaryStylingComponent } from "./hierarchical-grid-summary-styling/hierarchical-grid-summary-styling.component";
 import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarchical-grid-summary.component";
 import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolbar-style/hierarchical-grid-toolbar-style.component";
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
@@ -56,10 +61,12 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridContextmenuComponent,
         HGridSelectionSampleComponent,
         HGridSummarySampleComponent,
+        HGridSummaryStylingComponent,
         HGridPagingSampleComponent,
         HGridPagingStyleSampleComponent,
         HGridRemotePagingSampleComponent,
         HGridPinningSampleComponent,
+        HGridToolbarPinningComponent,
         HGridColumnResizingSampleComponent,
         HGridColumnHidingSampleComponent,
         HGridCostumHidingSampleComponent,
@@ -75,12 +82,14 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridRowEditStyleComponent,
         HGridEditingSampleComponent,
         HGridEditingStyleComponent,
+        HGridEditingEventsComponent,
         HGridBatchEditingSampleComponent,
         HierarchicalGridWithTransactionsComponent,
         HierarchicalGridLoDSampleComponent,
         HGridExcelStyleFilteringSample1Component,
         HGridExcelStyleFilteringSample2Component,
         HGridExcelStyleFilteringSample3Component,
+        HGridExcelStyleFilteringStyleComponent,
         HGridFilteringTemplateSampleComponent,
         HGridDragSampleComponent,
         HGridRowDragBaseComponent,
@@ -89,7 +98,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridResizeLineStylingComponent,
         HierarchicalGridColumnHidingToolbarStyleComponent,
         HGridMultiHeaderTemplateSampleComponent,
-        HierarchicalGridToolbarStyleComponent
+        HierarchicalGridToolbarStyleComponent,
+        HierarchicalGridFilteringStyleComponent
     ],
     imports: [
         CommonModule,
@@ -117,7 +127,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         IgxSliderModule,
         IgxSwitchModule,
         IgxToastModule,
-        IgxToggleModule
+        IgxToggleModule,
+        IgxSelectModule
     ],
     providers: [
         IgxCsvExporterService,
