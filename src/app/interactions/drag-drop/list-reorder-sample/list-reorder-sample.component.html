@@ -1,17 +1,18 @@
-<ul class="list-container">
-    <li *ngFor="let employee of employees"
+﻿<ul #listContainer class="list-container">
+    <li *ngFor="let employee of employees; index as targetIndex;"
         #dragRef
+        #dragDirRef=drag
         igxDrop 
-        igxDrag 
+        [igxDrag]="{ id: employee.id, dragged: false }"
         id="{{employee.id}}" 
-        (enter)="onEnterHandler($event)" 
-        (dropped)="onTileDropped($event)" 
-        (dragStart)="dragStartHandler(employee.id)" 
-        (ghostCreate)="ghostCreateHandler(dragRef)"
-        (dragEnd)="dragEndHandler(dragRef)"
-        [ghostClass]="'drag-ghost-class'" 
-        class="list-item-container">
-            <div class="text-container"> 
+        (dragStart)="onDragStart($event, targetIndex)"
+        (dragMove)="onDragMove($event, targetIndex)"
+        (dragEnd)="onDragEnd($event, targetIndex)"
+        (transitioned)="onTransitioned($event, targetIndex)"
+        [ghost]="false"
+        class="list-item-container"
+        [class.list-item-dragged]="dragDirRef.data.dragged">
+            <div class="text-container">
                 <div class="name">{{employee.name}}</div>
                 <div class="title">{{employee.title}}</div>
             </div>
