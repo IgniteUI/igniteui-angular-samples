@@ -34,16 +34,4 @@ export class GridGroupByStyling {
     public formatCurrency(value: number) {
         return "$" + value.toFixed(2);
     }
-    public isDate(value: any) {
-        if (value instanceof Date) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public calc2017(values: any[]) {
-        const startDate = new Date("1/1/2017");
-        const endDate = new Date("12/31/2017");
-        return values.filter((x) => x.OrderDate >= startDate && x.OrderDate <= endDate).length;
-    }
 }
