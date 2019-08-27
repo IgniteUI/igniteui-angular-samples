@@ -1,15 +1,43 @@
-.header-container {
+.grid__wrapper {
+    margin: 0 16px;
+}
+
+.header-selector {
     width: 60px;
     height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-image {
     width: 40px;
     height: 40px;
-    margin: 10px;
 }
 
 .row-selector {
     width: 60px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+}
+
+.row-selector-checkbox {
+    pointer-events: none;
+}
+
+.row-selector-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        width: 30px;
+        text-align: center;
+    }
+}
+
+::ng-deep .igx-grid__cbx-selection {
+    padding: 0;
 }

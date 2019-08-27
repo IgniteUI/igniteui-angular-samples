@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxTreeGridComponent } from "igniteui-angular";
+import { Component, OnInit } from "@angular/core";
 import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Component({

@@ -1,27 +1,28 @@
 <div class="grid__wrapper">
-    <igx-tree-grid #treeGrid [data]="data" primaryKey="ID" foreignKey="ParentID" [height]="'530px'" width="100%"
-        [autoGenerate]="false" [rowSelectable]="true" [paging]="true">
+    <igx-tree-grid #treeGrid [data]="data" [rowSelection]="'multiple'" [cellSelection]="'none'" primaryKey="ID"
+        foreignKey="ParentID" [height]="'530px'" width="100%" [autoGenerate]="false" [paging]="true">
         <igx-column [field]="'Name'"></igx-column>
         <igx-column [field]="'Title'"></igx-column>
         <igx-column [field]="'HireDate'"></igx-column>
-        <igx-column [field]="'ID'" width="15%"></igx-column>
         <igx-column [field]="'Age'" width="15%"></igx-column>
         <igx-column [field]="'OnPTO'" width="15%"></igx-column>
 
-        <ng-template igxHeadSelector let-headContext>
-            <div style="min-width: 60px; height: 100%;">
+        <ng-template igxHeadSelector>
+            <div class="header-selector">
+                <img src="..\..\..\assets\images\card\avatars\igLogo.png" class="header-image">
             </div>
         </ng-template>
 
         <ng-template igxRowSelector let-rowContext>
-            <div style="min-width: 60px; display: flex;">
-                <div style="padding-right: 5px; width: 25px;">
+            <div class="row-selector"
+                (click)="$event.stopPropagation(); !rowContext.selected ? treeGrid.selectRows([rowContext.rowID]) : treeGrid.deselectRows([rowContext.rowID])">
+                <div class="row-selector-index">
                     <span>{{ rowContext.index + 1 }}</span>
                 </div>
-                <igx-checkbox [checked]="rowContext.selected"
-                    (change)="!rowContext.selected ? treeGrid.selectRows([rowContext.rowID]) : treeGrid.deselectRows([rowContext.rowID])"
+                <igx-checkbox class="row-selector-checkbox"
+                    [checked]="rowContext.selected"
                     disableRipple="true" [disableTransitions]="treeGrid.disableTransitions"
-                    [aria-label]="treeGrid.rowCheckboxAriaLabel" style="padding-right: 10px;">
+                    [aria-label]="treeGrid.rowCheckboxAriaLabel">
                 </igx-checkbox>
             </div>
         </ng-template>

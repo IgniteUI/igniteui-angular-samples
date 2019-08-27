@@ -1,5 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent } from "igniteui-angular";
+import { Component } from "@angular/core";
 import { SINGERS } from "../data";
 
 @Component({
@@ -9,12 +8,9 @@ import { SINGERS } from "../data";
 })
 
 export class HGridSelectionTemplateNumbersSampleComponent {
-    public localdata;
-
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
+    public localData;
 
     constructor() {
-        this.localdata = SINGERS;
+        this.localData = SINGERS;
     }
 }
