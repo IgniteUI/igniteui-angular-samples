@@ -7,23 +7,19 @@
         <igx-column [field]="'PostalCode'" [width]="'20%'" dataType="number"></igx-column>
         <igx-column [field]="'CompanyName'" [width]="'20%'" dataType="number"></igx-column>
 
-        <ng-template igxHeadSelector>
-            <div class="header-selector">
-                <img src="..\..\..\assets\images\card\avatars\igLogo.png" class="header-image">
+        <ng-template igxHeadSelector let-headContext>
+            <div class="header-selector" (click)="$event.stopPropagation(); myGrid.onHeaderSelectorClick($event)">
+                <div *ngIf="headContext.selectedCount === headContext.totalCount && headContext.totalCount !== 0"
+                    class="excel-style-arrow-all"></div>
+                <div *ngIf="headContext.selectedCount !== headContext.totalCount" class="excel-style-arrow">
+                </div>
             </div>
         </ng-template>
 
         <ng-template igxRowSelector let-rowContext>
             <div class="row-selector"
-                (click)="$event.stopPropagation(); !rowContext.selected ? myGrid.selectRows([rowContext.rowID]) : myGrid.deselectRows([rowContext.rowID])">
-                <div class="row-selector-index">
-                    <span>{{ rowContext.index + 1 }}</span>
-                </div>
-                <igx-checkbox class="row-selector-checkbox"
-                    [checked]="rowContext.selected"
-                    disableRipple="true" [disableTransitions]="myGrid.disableTransitions"
-                    [aria-label]="myGrid.rowCheckboxAriaLabel">
-                </igx-checkbox>
+                (click)="$event.stopPropagation(); rowContext.selected ? myGrid.deselectRows([rowContext.rowID]) : myGrid.selectRows([rowContext.rowID])">
+                <span>{{ rowContext.index + 1 }}</span>
             </div>
         </ng-template>
     </igx-grid>
