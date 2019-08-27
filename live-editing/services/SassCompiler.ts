@@ -29,7 +29,7 @@ export class SassCompiler {
             includePaths: NODE_SASS_PATHS
         });
 
-        return postcss([autoprefixer({browsers: ["last 5 versions", "> 3%"], grid: true})])
+        return postcss([autoprefixer()])
               .process(renderedSassResult.css).css;
     }
 
