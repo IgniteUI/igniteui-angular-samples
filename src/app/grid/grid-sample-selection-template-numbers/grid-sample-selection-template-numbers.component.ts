@@ -1,7 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 import { DATA } from "../../data/customers";
-
-import { IgxGridComponent } from "igniteui-angular";
 
 @Component({
     selector: "grid-selection-template-numbers",
