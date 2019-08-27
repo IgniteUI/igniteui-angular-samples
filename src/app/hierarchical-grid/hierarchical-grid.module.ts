@@ -19,6 +19,9 @@ import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-mov
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridToolbarPinningComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
+import {
+    HGridConditionalRowSelectorsComponent
+} from "./hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component";
 import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingEventsComponent } from "./hierarchical-grid-editing-events/hierarchical-grid-editing-events.component";
@@ -110,7 +113,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HierarchicalGridToolbarStyleComponent,
         HierarchicalGridFilteringStyleComponent,
         HierarchicalGridExcelStyleFilteringLoadOnDemandComponent,
-        HGridStylingComponent
+        HGridStylingComponent,
+        HGridConditionalRowSelectorsComponent
     ],
     imports: [
         CommonModule,

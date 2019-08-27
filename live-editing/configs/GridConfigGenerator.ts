@@ -54,6 +54,9 @@ import { GridCompositeDataComponent } from "../../src/app/grid/grid-composite-da
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
+import {
+    GridConditionalRowSelectorsComponent
+} from "../../src/app/grid/grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { ContextmenuComponent } from "../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component";
 import {
     GridContextmenuSampleComponent
@@ -62,8 +65,12 @@ import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-fil
 import {
     GridCustomKBNavigationComponent
 } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
-import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
-import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
+import {
+    GridCustomSummariesSelection
+} from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
+import {
+    SummariesData
+} from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -72,6 +79,11 @@ import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-samp
 import {
     GridEditingStyleSample
 } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
+import {
+    GridExcelStyleFilteringLoadOnDemandComponent
+// tslint:disable-next-line: max-line-length
+} from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
+import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import {
     ExcelStyleFilteringSample1Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
@@ -84,9 +96,6 @@ import {
 import {
     ExcelStyleFilteringStyleComponent
 } from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
-import {
-    GridExcelStyleFilteringLoadOnDemandComponent
-} from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import {
@@ -96,7 +105,7 @@ import {
     GridGroupByPagingSampleComponent
 } from "../../src/app/grid/grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "../../src/app/grid/grid-groupby-sample/grid-groupby-sample.component";
-import { GridGroupByStyling } from '../../src/app/grid/grid-groupby-styling/grid-groupby-styling.component';
+import { GridGroupByStyling } from "../../src/app/grid/grid-groupby-styling/grid-groupby-styling.component";
 import {
     GridGroupBySummarySampleComponent
 } from "../../src/app/grid/grid-groupby-summary-sample/grid-groupby-summary-sample.component";
@@ -118,6 +127,9 @@ import {
 import {
     GridMultiRowLayoutConfigurationComponent
 } from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
+import {
+    GridMultiRowLayoutStylingComponent
+} from "../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { GridPagerSampleComponent } from "../../src/app/grid/grid-pager-sample/grid-pager-sample.component";
@@ -146,7 +158,7 @@ import { GridRowReorderComponent } from "../../src/app/grid/grid-row-reorder-sam
 import { FinancialSampleComponent, LocalService } from "../../src/app/grid/grid-sample-2/grid-sample-2.component";
 import { GridSample3Component } from "../../src/app/grid/grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "../../src/app/grid/grid-sample-4/grid-sample-4.component";
-import { PinningStylingComponent } from '../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component';
+import { PinningStylingComponent } from "../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "../../src/app/grid/grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
@@ -172,14 +184,9 @@ import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
-import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridMultiRowLayoutStylingComponent }
-    from'../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component';
-
-// tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -999,6 +1006,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: GridConditionalRowSelectorsComponent,
+            additionalFiles: ["/src/app/grid/services/financialData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [
+                    IgxGridModule, GridConditionalRowSelectorsComponent, IgxCheckboxModule],
+                ngDeclarations: [GridConditionalRowSelectorsComponent],
+                ngImports: [IgxGridModule, IgxCheckboxModule],
+                ngProviders: []
+            })
+        }));
         return configs;
     }
 }
