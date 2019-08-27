@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { menusRoutesData } from "./menus-routes-data";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
+import { NavbarStyleComponent } from "./navbar/navbar-style/navbar-style.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -41,6 +42,11 @@ export const menusRoutes: Routes = [
         component: NavbarSample2Component,
         data: menusRoutesData["navbar-sample-2"],
         path: "navbar-sample-2"
+    },
+    {
+        component: NavbarStyleComponent,
+        data: menusRoutesData["navbar-style"],
+        path: "navbar-style"
     }
 ];
 
