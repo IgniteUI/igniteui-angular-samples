@@ -12,6 +12,7 @@ import {
     IgxIconModule,
     IgxRadioModule,
     IgxRippleModule,
+    IgxSelectModule,
     IgxSliderModule,
     IgxSwitchModule,
     IgxToastModule,
@@ -46,6 +47,9 @@ import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import {
+    TreeGridPinningToolbarSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
+import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
@@ -54,6 +58,7 @@ import {
 import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
+import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
@@ -67,9 +72,13 @@ import {
     TreeGridExcelStyleFilteringSample3Component
 } from "./tree-grid-excel-style-filtering-sample-3/tree-grid-excel-style-filtering-sample-3.component";
 import {
+    TreeGridExcelStyleFilteringStyleComponent
+} from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
 import { TreeGridFilteringSampleComponent } from "./tree-grid-filtering-sample/tree-grid-filtering-sample.component";
+import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tree-grid-filtering-style.component";
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
@@ -119,6 +128,7 @@ import {
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
+import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
 import {
     TreeGridToolbarSample1Component
@@ -144,6 +154,7 @@ import {
         TreeGridRowEditSampleComponent,
         TreeGridRowEditStyleComponent,
         TreeGridBatchEditingSampleComponent,
+        TreeGridEditingEventsComponent,
         TreeGridEmployeesSampleComponent,
         TreeGridPagingStyleSampleComponent,
         TreeGridSearchSampleComponent,
@@ -157,6 +168,7 @@ import {
         TreeGridColumnMovingSampleComponent,
         TreeGridColumnMovingStyledSampleComponent,
         TreeGridColumnPinningSampleComponent,
+        TreeGridPinningToolbarSampleComponent,
         TreeGridColumnResizingSampleComponent,
         TreeGridFilteringSampleComponent,
         TreeGridFilteringTemplateSampleComponent,
@@ -169,6 +181,7 @@ import {
         TreeGridToolbarSample3Component,
         TreeGridToolbarSample4Component,
         TreeGridSummarySampleComponent,
+        TreeGridSummaryStylingComponent,
         TreeGridSummary2SampleComponent,
         TreeGridConditionalCellStyleComponent,
         TreeGridPagingSampleComponent,
@@ -177,6 +190,7 @@ import {
         TreeGridExcelStyleFilteringSample1Component,
         TreeGridExcelStyleFilteringSample2Component,
         TreeGridExcelStyleFilteringSample3Component,
+        TreeGridExcelStyleFilteringStyleComponent,
         TreeGridRemoteFilteringSampleComponent,
         TreeGridMultiCellSelectionComponent,
         TreeGridMultiCellSelectionStyleComponent,
@@ -190,7 +204,8 @@ import {
         TreeGridColumnHidingToolbarStyleComponent,
         TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
-        TreeGridToolbarStyleComponent
+        TreeGridToolbarStyleComponent,
+        TreeGridFilteringStyleComponent
     ],
     imports: [
         CommonModule,
@@ -208,7 +223,8 @@ import {
         IgxDialogModule,
         IgxRadioModule,
         IgxAvatarModule,
-        IgxToastModule
+        IgxToastModule,
+        IgxSelectModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })

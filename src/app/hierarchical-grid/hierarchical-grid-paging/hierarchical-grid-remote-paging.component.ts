@@ -15,15 +15,16 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     public firstPage = true;
     public totalPages: number = 1;
     public totalCount = 0;
-    @ViewChild("customPager", { read: TemplateRef, static: true })
-    public remotePager: TemplateRef<any>;
     public title = "gridPaging";
 
-    @ViewChild("layout1", { static: false })
-    public layout1: IgxRowIslandComponent;
+    @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
+    @ViewChild("layout1", { static: false }) public layout1: IgxRowIslandComponent;
+    @ViewChild("hierarchicalGrid", { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
 
-    @ViewChild("hierarchicalGrid", { static: true })
-    public hierarchicalGrid: IgxHierarchicalGridComponent;
+    private _perPage = 10;
+    private _dataLengthSubscriber;
+
+    constructor(private remoteService: RemotePagingService) { }
 
     public get perPage(): number {
         return this._perPage;
@@ -34,18 +35,13 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
         this.paginate(0, true);
     }
 
-    private _perPage = 10;
-    private _dataLengthSubscriber;
-
-    constructor(private remoteService: RemotePagingService) {}
-
     public ngOnInit(): void {
         this._dataLengthSubscriber = this.remoteService.getDataLength(
             { parentID: null, rootLevel: true, key: "Customers" }).subscribe((length) => {
-            this.totalCount = length;
-            this.totalPages = Math.ceil(length / this.perPage);
-            this.buttonDeselection(this.page, this.totalPages);
-        });
+                this.totalCount = length;
+                this.totalPages = Math.ceil(length / this.perPage);
+                this.buttonDeselection(this.page, this.totalPages);
+            });
     }
 
     public ngOnDestroy() {
@@ -63,12 +59,12 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
                 this.hierarchicalGrid.paginationTemplate = this.remotePager;
                 this.hierarchicalGrid.cdr.detectChanges();
             },
-            (error) => {
-                this.hierarchicalGrid.emptyGridMessage = error.message;
-                this.hierarchicalGrid.isLoading = false;
-                this.hierarchicalGrid.cdr.detectChanges();
-            }
-        );
+                (error) => {
+                    this.hierarchicalGrid.emptyGridMessage = error.message;
+                    this.hierarchicalGrid.isLoading = false;
+                    this.hierarchicalGrid.cdr.detectChanges();
+                }
+            );
     }
 
     public dateFormatter(val: string) {
@@ -107,12 +103,12 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
                 this.hierarchicalGrid.data = data;
                 this.hierarchicalGrid.cdr.detectChanges();
             },
-            (error) => {
-                this.hierarchicalGrid.emptyGridMessage = error.message;
-                this.hierarchicalGrid.data = null;
-                this.hierarchicalGrid.cdr.detectChanges();
-            }
-        );
+                (error) => {
+                    this.hierarchicalGrid.emptyGridMessage = error.message;
+                    this.hierarchicalGrid.data = null;
+                    this.hierarchicalGrid.cdr.detectChanges();
+                }
+            );
         if (this.page + 1 >= this.totalPages) {
             this.lastPage = true;
         }
@@ -128,12 +124,12 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
                 this.hierarchicalGrid.data = data;
                 this.hierarchicalGrid.cdr.detectChanges();
             },
-            (error) => {
-                this.hierarchicalGrid.emptyGridMessage = error.message;
-                this.hierarchicalGrid.data = null;
-                this.hierarchicalGrid.cdr.detectChanges();
-            }
-        );
+                (error) => {
+                    this.hierarchicalGrid.emptyGridMessage = error.message;
+                    this.hierarchicalGrid.data = null;
+                    this.hierarchicalGrid.cdr.detectChanges();
+                }
+            );
         if (this.page <= 0) {
             this.firstPage = true;
         }
@@ -151,12 +147,12 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
                 this.hierarchicalGrid.data = data;
                 this.hierarchicalGrid.cdr.detectChanges();
             },
-            (error) => {
-                this.hierarchicalGrid.emptyGridMessage = error.message;
-                this.hierarchicalGrid.data = null;
-                this.hierarchicalGrid.cdr.detectChanges();
-            }
-        );
+                (error) => {
+                    this.hierarchicalGrid.emptyGridMessage = error.message;
+                    this.hierarchicalGrid.data = null;
+                    this.hierarchicalGrid.cdr.detectChanges();
+                }
+            );
         this.buttonDeselection(this.page, this.totalPages);
     }
 
@@ -172,10 +168,4 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
             this.firstPage = true;
         }
     }
-
-    public parseToInt(val) {
-        this.perPage = parseInt(val, 10);
-        this.hierarchicalGrid.cdr.detectChanges();
-    }
-
 }
