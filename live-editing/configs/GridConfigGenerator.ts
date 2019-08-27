@@ -63,6 +63,7 @@ import {
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
+import { GridEditingEventsComponent } from "../../src/app/grid/grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import {
     GridEditingStyleSample
@@ -164,6 +165,7 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
+import { GridGroupByStyling } from '../../src/app/grid/grid-groupby-styling/grid-groupby-styling.component';
 // tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
@@ -561,6 +563,16 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridEditingEventsComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, IgxToastModule, GridEditingEventsComponent],
+                ngDeclarations: [GridEditingEventsComponent],
+                ngImports: [IgxGridModule, IgxToastModule]
+            })
+        }));
+
+        configs.push(new Config({
             component: GridEditingStyleSample,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -905,7 +917,6 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule]
             })
         }));
-
         configs.push(new Config({
             component: GridClipboardSampleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
@@ -913,6 +924,15 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridClipboardSampleComponent, IgxGridModule, IgxSwitchModule],
                 ngDeclarations: [GridClipboardSampleComponent],
                 ngImports: [IgxGridModule, IgxSwitchModule]
+            })
+        }));
+        configs.push(new Config({
+            component: GridGroupByStyling,
+            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridGroupByStyling, IgxGridModule],
+                ngDeclarations: [GridGroupByStyling],
+                ngImports: [IgxGridModule]
             })
         }));
 
