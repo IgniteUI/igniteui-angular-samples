@@ -2,6 +2,7 @@
 
 export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing": { displayName: "Hierarchical Grid Editing", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-editing-events": { displayName: "Hierarchical Grid Editing Events", parentName: "Hierarchical Grid"},
     "hierarchical-grid-editing-style": { displayName: "Hierarchical Grid Editing Style", parentName: "Hierarchical Grid"},
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-drag": { displayName: "Hierarchical Grid Row Drag", parentName: "Hierarchical Grid" },
@@ -25,7 +26,8 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-density": { displayName: "Hierarchical Grid Display Density", parentName: "Hierarchical Grid" },
     "hierarchical-grid-moving": { displayName: "Hierarchical Grid Column Moving", parentName: "Hierarchical Grid" },
     "hierarchical-grid-moving-styled": { displayName: "Hierarchical Grid Column Moving Styled", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-pinning": { displayName: "Hierarchical Grid Column Pinning", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-pinning": { displayName: "Hierarchical Grid Header Template with Pinning", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-toolbar-pinning": { displayName: "Hierarchical Grid Toolbar Pinning", parentName: "Hierarchical Grid" },
     "hierarchical-grid-resizing": { displayName: "Hierarchical Grid Column Resizing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-resize-line-styling": { displayName: "Hierarchical Grid Resize Line Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-hiding": { displayName: "Hierarchical Grid Column Hiding", parentName: "Hierarchical Grid" },

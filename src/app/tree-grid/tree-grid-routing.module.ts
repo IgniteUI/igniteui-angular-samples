@@ -27,6 +27,10 @@ import {
 import {
     TreeGridColumnPinningSampleComponent
 } from "./tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
+
+import {
+    TreeGridPinningToolbarSampleComponent
+} from "./tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
 import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
@@ -85,6 +89,7 @@ import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 
+import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
     TreeGridResizeLineStylingSampleComponent
@@ -146,6 +151,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-batchediting"
     },
     {
+        component: TreeGridEditingEventsComponent,
+        data: treeGridRoutesData["treegrid-editing-events"],
+        path: "treegrid-editing-events"
+    },
+    {
         component: TreeGridEmployeesSampleComponent,
         data: treeGridRoutesData["treegrid-employees"],
         path: "treegrid-employees"
@@ -204,6 +214,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridColumnPinningSampleComponent,
         data: treeGridRoutesData["treegrid-column-pinning"],
         path: "treegrid-column-pinning"
+    },
+    {
+        component: TreeGridPinningToolbarSampleComponent,
+        data: treeGridRoutesData["treegrid-toolbar-pinning"],
+        path: "treegrid-toolbar-pinning"
     },
     {
         component: TreeGridColumnResizingSampleComponent,
