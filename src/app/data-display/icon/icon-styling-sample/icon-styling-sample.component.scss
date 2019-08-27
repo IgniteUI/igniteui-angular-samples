@@ -8,29 +8,33 @@ $custom-theme: igx-icon-theme(
 $black-color: #494949;
 $yellow-color: #ffcd0f;
 
-$custom-palette: igx-palette(
-    $primary: $black-color,
-    $secondary: $yellow-color
-);
+/* Custom theme */
 
-$custom-theme: igx-icon-theme(
-    $color: igx-color($custom-palette, "secondary", 600),
-    $disabled-color: igx-color($custom-palette, "primary", 500)
-);
+// $custom-palette: igx-palette(
+//     $primary: $black-color,
+//     $secondary: $yellow-color
+// );
 
-$custom-icon-schema: extend($_dark-icon, (
-    color: (igx-color("secondary", 500)),
-    disabled-color: (igx-color("primary", 500))
-));
+// $custom-theme: igx-icon-theme(
+//     $color: igx-color($custom-palette, "secondary", 600),
+//     $disabled-color: igx-color($custom-palette, "primary", 500)
+// );
 
-$my-custom-schema: extend($dark-schema, (
-    igx-icon: $custom-icon-schema
-));
+/* Custom Schema */
 
-$custom-theme: igx-icon-theme(
-    $palette: $custom-palette,
-    $schema: $my-custom-schema
-);
+// $custom-icon-schema: extend($_dark-icon, (
+//     color: (igx-color("secondary", 500)),
+//     disabled-color: (igx-color("primary", 500))
+// ));
+
+// $my-custom-schema: extend($dark-schema, (
+//     igx-icon: $custom-icon-schema
+// ));
+
+// $custom-theme: igx-icon-theme(
+//     $palette: $custom-palette,
+//     $schema: $my-custom-schema
+// );
 
 :host {
   ::ng-deep {
