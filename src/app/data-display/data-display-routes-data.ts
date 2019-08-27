@@ -9,6 +9,7 @@ export const dataDisplayRoutesData = {
     // tslint:disable-next-line:max-line-length
     "circular-indeterminate-progressbar": { displayName: "Circular Indeterminate Progressbar", parentName: "Circular Progressbar" },
     "icon-sample-1": { displayName: "Simple Icons", parentName: "Icon" },
+    "icon-styling": { displayName: "Icon Styling", parentName: "Icon" },
     "svg-icon-sample": { displayName: "SVG Icons", parentName: "Icon" },
     "igx-for-sample-1": { displayName: "List with igxFor directive", parentName: "For" },
     "linear-progressbar": { displayName: "Simple Linear Progressbar", parentName: "Linear Progressbar" },
