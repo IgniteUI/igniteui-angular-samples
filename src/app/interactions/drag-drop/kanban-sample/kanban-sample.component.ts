@@ -56,7 +56,7 @@ export class KanbanSampleComponent implements OnInit {
         this.currentList = "";
     }
 
-    private onStateContainerEnter(event: IDropDroppedEventArgs) {
+    public onStateContainerEnter(event: IDropDroppedEventArgs) {
         // If we have entered another list container, we have to remove the "dummy" object from the previous one
         if (this.currentList !== event.owner.element.nativeElement.id) {
             this[this.currentList] = this[this.currentList].filter((item) => {
@@ -70,13 +70,13 @@ export class KanbanSampleComponent implements OnInit {
         this.renderer.addClass(event.owner.element.nativeElement, "dragHovered");
     }
 
-    private onStateContainerLeave(event: IDropDroppedEventArgs) {
+    public onStateContainerLeave(event: IDropDroppedEventArgs) {
         // This event also gets raised when the user drags a task over another task tile.
         // That means we have to re-apply the "dragHovered" class in the `onItemEnter` event handler
         this.renderer.removeClass(event.owner.element.nativeElement,  "dragHovered");
     }
 
-    private dragStartHandler(event) {
+    public dragStartHandler(event) {
         // We have to save the dragStartList so we could remove the dragged item from it later, when it gets dropped
         this.currentList = event.owner.element.nativeElement.dataset.state + "List";
         this.lastDragEnterList = this.currentList;
@@ -85,14 +85,7 @@ export class KanbanSampleComponent implements OnInit {
         })[0];
     }
 
-    private swapTiles(currentIndex: number, targetIndex: number, itemList: string): void {
-        const tempObj = this[itemList][currentIndex];
-        this[itemList].splice(currentIndex, 1);
-        this[itemList].splice(targetIndex, 0, tempObj);
-        this.cdr.detectChanges();
-    }
-
-    private onItemEnter(event: IDropBaseEventArgs) {
+    public onItemEnter(event: IDropBaseEventArgs) {
         // Applying the container highlighting again
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.addClass(this[listContainer].nativeElement, "dragHovered");
@@ -127,12 +120,12 @@ export class KanbanSampleComponent implements OnInit {
         }
     }
 
-    private onItemLeave(event: IDropBaseEventArgs) {
+    public onItemLeave(event: IDropBaseEventArgs) {
         const listContainer = event.owner.element.nativeElement.dataset.state;
         this.renderer.removeClass(this[listContainer].nativeElement, "dragHovered");
     }
 
-    private onItemDropped(event: IDropDroppedEventArgs) {
+    public onItemDropped(event: IDropDroppedEventArgs) {
         const dropListState = event.owner.element.nativeElement.id;
         const dragListState = event.drag.element.nativeElement.dataset.state + "List";
         const dummyItemIndex = this[dropListState].findIndex((item) => {
@@ -154,5 +147,12 @@ export class KanbanSampleComponent implements OnInit {
         this.dragObj = null;
         // The default browser drag behavior should be cancelled
         event.cancel = true;
+    }
+
+    private swapTiles(currentIndex: number, targetIndex: number, itemList: string): void {
+        const tempObj = this[itemList][currentIndex];
+        this[itemList].splice(currentIndex, 1);
+        this[itemList].splice(targetIndex, 0, tempObj);
+        this.cdr.detectChanges();
     }
 }
