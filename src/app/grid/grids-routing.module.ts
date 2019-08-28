@@ -25,6 +25,7 @@ import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filteri
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -71,6 +72,7 @@ import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -94,6 +96,11 @@ export const gridsRoutes: Routes = [
         component: GridGroupBySampleComponent,
         data: gridsRoutesData["grid-groupby"],
         path: "grid-groupby"
+    },
+    {
+        component: GridGroupByStyling,
+        data: gridsRoutesData["grid-groupby-styling"],
+        path: "grid-groupby-styling"
     },
     {
         component: GridGroupBySummarySampleComponent,
@@ -414,6 +421,11 @@ export const gridsRoutes: Routes = [
         component: GridCustomSummariesSelection,
         data: gridsRoutesData["grid-selection-custom-summaries"],
         path: "grid-selection-custom-summaries"
+    },
+    {
+        component: PinningStylingComponent,
+        data: gridsRoutesData["grid-pinning-styling"],
+        path: "grid-pinning-styling"
     }
 ];
 
