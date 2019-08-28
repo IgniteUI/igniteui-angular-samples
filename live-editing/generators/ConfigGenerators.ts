@@ -7,26 +7,19 @@ import { ButtonGroupConfigGenerator } from "../configs/ButtonGroupConfigGenerato
 import { CalendarConfigGenerator } from "../configs/CalendarConfigGenerator";
 import { CardConfigGenerator } from "../configs/CardConfigGenerator";
 import { CarouselConfigGenerator } from "../configs/CarouselConfigGenerator";
-import { CategoryChartConfigGenerator } from "../configs/CategoryChartConfigGenerator";
 import { CheckboxConfigGenerator } from "../configs/CheckboxConfigGenerator";
 import { ChipConfigGenerator } from "../configs/ChipConfigGenerator";
 import { CircularProgressbarConfigGenerator } from "../configs/CircularProgressbarConfigGenerator";
 import { ComboConfigGenerator } from "../configs/ComboConfigGenerator";
-import { DataChartConfigGenerator } from "../configs/DataChartConfigGenerator";
 import { DatePickerConfigGenerator } from "../configs/DatePickerConfigGenerator";
 import { DialogConfigGenerator } from "../configs/DialogConfigGenerator";
 import { DividerConfigGenerator } from "../configs/DividerConfigGenerator";
-import { DoughnutChartConfigGenerator } from "../configs/DoughnutChartConfigGenerator";
 import { DragAndDropConfigGenerator } from "../configs/DragAndDropConfigGenerator";
 import { DropDownConfigGenerator } from "../configs/DropDownConfigGenerator";
-import { ExcelLibraryConfigGenerator } from "../configs/ExcelLibraryConfigGenerator";
 import { ExpansionPanelConfigGenerator } from "../configs/ExpansionPanelConfigGenerator";
 import { ExportCsvConfigGenerator } from "../configs/ExportCsvConfigGenerator";
 import { ExportExcelConfigGenerator } from "../configs/ExportExcelConfigGenerator";
-import { FinancialChartConfigGenerator } from "../configs/FinancialChartConfigGenerator";
 import { ForConfigGenerator } from "../configs/ForConfigGenerator";
-import { GaugesConfigGenerator } from "../configs/GaugesConfigGenerator";
-import { GeoMapConfigGenerator } from "../configs/GeoMapConfigGenerator";
 import { GridConfigGenerator } from "../configs/GridConfigGenerator";
 import { GridCRMConfigGenerator } from "../configs/GridCRMConfigGenerator";
 import { GridFinjsConfigGenerator } from "../configs/GridFinjsConfigGenerator";
@@ -42,14 +35,11 @@ import { MonthPickerConfigGenerator } from "../configs/MonthPickerConfigGenerato
 import { NavbarConfigGenerator } from "../configs/NavbarConfigGenerator";
 import { NavdrawerConfigGenerator } from "../configs/NavDrawerConfigGenerator";
 import { OverlayConfigGenerator } from "../configs/OverlayConfigGenerator";
-import { PieChartConfigGenerator } from "../configs/PieChartConfigGenerator";
 import { RadioConfigGenerator } from "../configs/RadioConfigGenerator";
 import { RippleConfigGenerator } from "../configs/RippleConfigGenerator";
 import { SelectConfigGenerator } from "../configs/SelectConfigGenerator";
 import { SliderConfigGenerator } from "../configs/SliderConfigGenerator";
 import { SnackbarConfigGenerator } from "../configs/SnackbarConfigGenerator";
-import { SparklineConfigGenerator } from "../configs/SparklineConfigGenerator";
-import { SpreadsheetConfigGenerator } from "../configs/SpreadsheetConfigGenerator";
 import { SwitchConfigGenerator } from "../configs/SwitchConfigGenerator";
 import { TabBarConfigGenerator } from "../configs/TabBarConfigGenerator";
 import { TabsConfigGenerator } from "../configs/TabsConfigGenerator";
@@ -62,27 +52,13 @@ import { TooltipConfigGenerator } from "../configs/TooltipConfigGenerator";
 import { TransactionsConfigGenerator } from "../configs/TransactionsConfigGenerator";
 import { TreeGridConfigGenerator } from "../configs/TreeGridConfigGenerator";
 import { TreeGridFinjsConfigGenerator } from "../configs/TreeGridFinjsConfigGenerator";
-import { ZoomSliderConfigGenerator } from "../configs/ZoomSliderConfigGenerator";
 
 export const CONFIG_GENERATORS =
     [
-        // DV:
-        CategoryChartConfigGenerator,
-        DataChartConfigGenerator,
-        DoughnutChartConfigGenerator,
-        FinancialChartConfigGenerator,
-        PieChartConfigGenerator,
-        SparklineConfigGenerator,
-        GaugesConfigGenerator,
-        GeoMapConfigGenerator,
-        ZoomSliderConfigGenerator,
-
         // frameworks:
         DragAndDropConfigGenerator,
-        ExcelLibraryConfigGenerator,
         ExportCsvConfigGenerator,
         ExportExcelConfigGenerator,
-        SpreadsheetConfigGenerator,
 
         // containers:
         AvatarConfigGenerator,
