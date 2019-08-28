@@ -1,0 +1,88 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/* Basic theming */
+
+$custom-theme: igx-grid-theme(
+    $group-row-background: #494949,
+    $group-row-selected-background: #383838,
+    $group-label-column-name-text: #f8f8f8,
+    $group-label-icon: #FFCD0F,
+    $group-label-text: #f8f8f8,
+    $group-count-background: #FFCD0F,
+    $group-count-text-color: #000,
+    $expand-icon-color: #FFCD0F,
+    $expand-icon-hover-color: rgb(223, 181, 13),
+    $cell-active-border-color: #FFCD0F,
+    $row-selected-background: #fff6d3,
+    $row-selected-text-color: #000,
+    $drop-indicator-color: #FFCD0F
+);
+
+$custom-chips-theme: igx-chip-theme(
+    $background: #494949,
+    $text-color: #f8f8f8,
+    $hover-text-color: #e7e7e7
+);
+
+/* Palette */
+
+// $black-color: #292826;
+// $yellow-color: #FFCD0F;
+
+// $custom-palette: igx-palette(
+//   $primary: $black-color,
+//   $secondary: $yellow-color
+// );
+
+// $custom-theme: igx-grid-theme(
+//     $group-row-background: igx-color($custom-palette, "primary", 300),
+//     $group-row-selected-background: igx-color($custom-palette, "primary", 400),
+//     $group-label-column-name-text: igx-contrast-color($custom-palette, "primary", 500),
+//     $group-label-icon: igx-color($custom-palette, "secondary", 600),
+//     $group-label-text: igx-contrast-color($custom-palette, "primary", 500),
+//     $group-count-background: igx-color($custom-palette, "secondary", 600),
+//     $group-count-text-color: igx-color($custom-palette, "primary", 400),
+//     $expand-icon-color: igx-color($custom-palette, "secondary", 600),
+//     $expand-icon-hover-color: igx-color($custom-palette, "secondary", 300),
+//     $cell-active-border-color: igx-color($custom-palette, "secondary", 600)
+// );
+
+// $custom-chips-theme: igx-chip-theme(
+//     $background: igx-color($custom-palette, "primary", 300),
+//     $text-color: igx-contrast-color($custom-palette, "primary", 500),
+//     $hover-text-color: igx-contrast-color($custom-palette, "primary", 600)
+// );
+
+/* Schema */
+
+// $custom-grid-schema: extend($_light-grid,
+//     (
+//         group-row-background: (igx-color:('secondary', 100)),
+//         group-row-selected-background: (igx-color:('primary', 400)),
+//         group-label-column-name-text: (igx-color:('primary', 600)),
+//         group-label-icon: (igx-color:('primary', 600)),
+//         group-label-text: (igx-color:('secondary', 700)),
+//         group-count-background: (igx-color:('primary', 600)),
+//         group-count-text-color: (igx-color:('secondary', 400)),
+//         expand-icon-color: (igx-color:('primary', 600)),
+//         expand-icon-hover-color: (igx-color:('primary', 400))
+//     )
+// );
+
+// $my-custom-schema: extend($light-schema, 
+//     (
+//         igx-grid: $custom-grid-schema
+//     )
+// );
+
+// $custom-theme: igx-grid-theme(
+//   $palette: $custom-palette,
+//   $schema: $my-custom-schema
+// );
+
+:host {
+    ::ng-deep {
+        @include igx-grid($custom-theme);
+        @include igx-chip($custom-chips-theme);
+    }
+}

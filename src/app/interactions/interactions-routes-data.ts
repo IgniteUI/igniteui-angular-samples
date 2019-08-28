@@ -35,5 +35,6 @@ export const interactionsRoutesData = {
     "overlay-scroll-sample-2": { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
     "list-reorder-sample": { displayName: "List Reorder sample", parentName: "Drag and Drop" },
     "overlay-styling-simple": { displayName: "Overlay Styling", parentName: "Overlay"},
+    "drag-dialog-sample": { displayName: "Drag Dialog Sample", parentName: "Drag and Drop"},
     "icons-sample": { displayName: "Icons sample", parentName: "Drag and Drop" }
 };

@@ -1,14 +1,16 @@
 <!-- <div class="icons_wrapper">
     <ng-container *ngFor="let icon of icons">
-        <div (onEnter)="onEnterHandler($event)"
-            class="drag_container" 
+        <div class="drag_container" 
             igxDrag
-            igxDrop 
+            igxDrop
+            #dragRef
             id="{{icon.id}}" 
-            (onDrop)="onIconDropped($event)" 
+            (dropped)="onIconDropped($event)" 
             (dragStart)="dragStartHandler(icon.id)"
-            [hideBaseOnDrag]="true" 
-            [ghostImageClass]="'drag_ghost_class'">
+            (ghostCreate)="ghostCreateHandler(dragRef)"
+            (dragEnd)="dragEndHandler(dragRef)"
+            (enter)="onEnterHandler($event)"
+            [ghostClass]="'drag_ghost_class'">
             <span class="icon_container" draggable="false" onmousedown="if (event.preventDefault) event.preventDefault()">
                 <img [src]="icon.url"/>
             </span>

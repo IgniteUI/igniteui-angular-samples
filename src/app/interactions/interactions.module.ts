@@ -13,6 +13,7 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
 import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { InteractionsRoutingModule } from "./interactions-routing.module";
@@ -53,6 +54,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         DialogSample2Component,
         DialogSample3Component,
         ListReorderSampleComponent,
+        DragDialogSampleComponent,
         IconsSampleComponent,
         MyDynamicCardComponent,
         SliderSample1Component,
