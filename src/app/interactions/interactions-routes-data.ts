@@ -33,8 +33,9 @@ export const interactionsRoutesData = {
     "overlay-position-sample-2": { displayName: "Overlay Position Sample 2", parentName: "Overlay" },
     "overlay-scroll-sample-1": { displayName: "Overlay Scroll Sample 1", parentName: "Overlay" },
     "overlay-scroll-sample-2": { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
-    "list-reorder-sample": { displayName: "List Reorder sample", parentName: "Drag and Drop" },
     "overlay-styling-simple": { displayName: "Overlay Styling", parentName: "Overlay"},
+    "kanban-sample": { displayName: "Kanban sample", parentName: "Drag and Drop" },
+    "list-reorder-sample": { displayName: "List Reorder sample", parentName: "Drag and Drop" },
     "drag-dialog-sample": { displayName: "Drag Dialog Sample", parentName: "Drag and Drop"},
     "icons-sample": { displayName: "Icons sample", parentName: "Drag and Drop" }
 };

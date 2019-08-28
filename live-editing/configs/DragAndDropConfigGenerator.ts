@@ -1,4 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
+import { KanbanSampleComponent } from "../../src/app/interactions/drag-drop/kanban-sample/kanban-sample.component";
 import {
     IgxDialogModule,
     IgxDragDirective,
@@ -53,6 +54,16 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/interactions/"
         }));
 
+        configs.push(new Config({
+            component: KanbanSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDragDirective, IgxDropDirective,
+                    IgxDragDropModule, IgxDialogModule, KanbanSampleComponent],
+                ngDeclarations: [KanbanSampleComponent],
+                ngImports: [IgxDragDropModule]
+            }),
+            shortenComponentPathBy: "/interactions/"
+        }));
         return configs;
     }
 }

@@ -15,6 +15,7 @@ import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styli
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
+import { KanbanSampleComponent } from "./drag-drop/kanban-sample/kanban-sample.component";
 import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { InteractionsRoutingModule } from "./interactions-routing.module";
 import { MyDynamicCardComponent } from "./overlay/overlay-dynamic-card/overlay-dynamic-card.component";
@@ -53,6 +54,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
+        KanbanSampleComponent,
         ListReorderSampleComponent,
         DragDialogSampleComponent,
         IconsSampleComponent,
