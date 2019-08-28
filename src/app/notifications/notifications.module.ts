@@ -15,11 +15,13 @@ import { SnackbarSample2Component } from "./snackbar/snackbar-sample-2/snackbar-
 import { SnackbarSample3Component } from "./snackbar/snackbar-sample-3/snackbar-sample-3.component";
 import { SnackbarSample4Component } from "./snackbar/snackbar-sample-4/snackbar-sample-4.component";
 import { SnackbarSample5Component } from "./snackbar/snackbar-sample-5/snackbar-sample-5.component";
+import { SnackbarStyleComponent } from "./snackbar/snackbar-style/snackbar-style.component";
 import { ToastSample1Component } from "./toast/toast-sample-1/toast-sample-1.component";
 import { ToastSample2Component } from "./toast/toast-sample-2/toast-sample-2.component";
 import { ToastSample3Component } from "./toast/toast-sample-3/toast-sample-3.component";
 import { ToastSample4Component } from "./toast/toast-sample-4/toast-sample-4.component";
 import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.component";
+import { ToastStyleComponent } from "./toast/toast-style/toast-style.component";
 
 @NgModule({
     declarations: [
@@ -33,11 +35,13 @@ import { ToastSample5Component } from "./toast/toast-sample-5/toast-sample-5.com
         SnackbarSample3Component,
         SnackbarSample4Component,
         SnackbarSample5Component,
+        SnackbarStyleComponent,
         ToastSample1Component,
         ToastSample2Component,
         ToastSample3Component,
         ToastSample4Component,
-        ToastSample5Component
+        ToastSample5Component,
+        ToastStyleComponent
     ],
     imports: [
         CommonModule,
