@@ -25,6 +25,8 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
         outlet: this.hierarchicalGrid
     };
 
+    private _filterValues = new Map<IgxColumnComponent, any>();
+
     constructor() {
         this.localdata = SINGERS;
     }
@@ -34,7 +36,13 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
 
     public formatter = (a) => a;
 
+    public getFilterValue(column: IgxColumnComponent): any {
+        return this._filterValues.has(column) ? this._filterValues.get(column) : null;
+    }
+
     public onInput(input: any, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+        this._filterValues.set(column, input.value);
+
         if (input.value === "") {
             grid.clearFilter(column.field);
             return;
@@ -52,12 +60,14 @@ export class HGridFilteringTemplateSampleComponent implements OnInit {
             this.transformValue(input.value, column), operand, column.filteringIgnoreCase);
     }
 
-    public clearInput(input: any, column: any, grid: IgxHierarchicalGridComponent) {
-        input.value = null;
+    public clearInput(column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+        this._filterValues.delete(column);
         grid.clearFilter(column.field);
     }
 
     public onDateSelected(event, column: IgxColumnComponent, grid: IgxHierarchicalGridComponent) {
+        this._filterValues.set(column, event);
+
         grid.filter(column.field, event, IgxDateFilteringOperand.instance().condition("equals"),
             column.filteringIgnoreCase);
     }

@@ -10,7 +10,7 @@ import {
     ISortingExpression,
     SortingDirection
 } from "igniteui-angular";
-import { LOCAL_DATA } from "./data";
+import { LOCAL_DATA } from "../../data/grid-groupby-summary-data";
 
 class AvgSummary extends IgxSummaryOperand {
 

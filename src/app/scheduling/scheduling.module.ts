@@ -13,6 +13,7 @@ import { CalendarSample4Component } from "./calendar/calendar-sample-4/calendar-
 import { CalendarSample5Component } from "./calendar/calendar-sample-5/calendar-sample-5.component";
 import { CalendarSample6Component } from "./calendar/calendar-sample-6/calendar-sample-6.component";
 import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-sample-7.component";
+import { CalendarStylingSample } from "./calendar/calendar-styling-sample/calendar-styling-sample.component";
 import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
@@ -48,6 +49,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         CalendarSample5Component,
         CalendarSample6Component,
         CalendarSample7Component,
+        CalendarStylingSample,
         DatepickerSample1Component,
         DatepickerSample2Component,
         DatepickerSample3Component,

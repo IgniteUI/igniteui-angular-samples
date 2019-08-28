@@ -1,15 +1,8 @@
-import * as ChartsRouting from "../../src/app/charts/charts-routing.module";
-import { ChartsModule } from "../../src/app/charts/charts.module";
+
 import * as DataDisplayRouting from "../../src/app/data-display/data-display-routing.module";
 import { DataDisplayModule } from "../../src/app/data-display/data-display.module";
 import * as DataEntriesRouting from "../../src/app/data-entries/data-entries-routing.module";
 import { DataEntriesModule } from "../../src/app/data-entries/data-entries.module";
-import * as ExcelLibraryRouting from "../../src/app/excel-library/excel-library-routing.module";
-import { ExcelLibraryModule } from "../../src/app/excel-library/excel-library.module";
-import * as GaugesRouting from "../../src/app/gauges/gauges-routing.module";
-import { GaugesModule } from "../../src/app/gauges/gauges.module";
-import * as GeoMapRouting from "../../src/app/maps/geo-map-routing.module";
-import { GeoMapModule } from "../../src/app/maps/geo-map.module";
 import * as GridCRMRouting from "../../src/app/grid-crm/grid-crm-routing.module";
 import { GridCRMModule } from "../../src/app/grid-crm/grid-crm.module";
 import * as GridFinjsRouting from "../../src/app/grid-finjs/grid-finjs-routing.module";
@@ -49,10 +42,6 @@ export const MODULE_ROUTES = [
         routes: DataDisplayRouting.dataDisplayRoutes
     },
     {
-        module: ChartsModule,
-        routes: ChartsRouting.chartsRoutes
-    },
-    {
         module: DataEntriesModule,
         routes: DataEntriesRouting.dataEntriesRoutes
     },
@@ -69,24 +58,12 @@ export const MODULE_ROUTES = [
         routes: SchedulingRouting.schedulingRoutes
     },
     {
-        module: GaugesModule,
-        routes: GaugesRouting.gaugesRoutes
-    },
-    {
-        module: GeoMapModule,
-        routes: GeoMapRouting.routes
-    },
-    {
         module: ListsModule,
         routes: ListsRouting.listsRoutes
     },
     {
         module: InteractionsModule,
         routes: InteractionsRouting.interactionsRoutes
-    },
-    {
-        module: ExcelLibraryModule,
-        routes: ExcelLibraryRouting.excelLibraryRoutes
     },
     {
         module: LayoutsModule,

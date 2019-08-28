@@ -7,6 +7,6 @@ import { Component } from "@angular/core";
 })
 export class InputGroupSample3Component {
     public user = {
-        phone: ""
+        phone: undefined
     };
 }

@@ -22,16 +22,22 @@ import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/cont
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
+import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
+import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
+import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
+import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
@@ -56,6 +62,7 @@ import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.componen
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
+import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
@@ -73,14 +80,18 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
 // tslint:enable:max-line-length
 
 @NgModule({
     declarations: [
+        SummariesData,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridColumnHidingSampleComponent,
@@ -92,10 +103,12 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         ExcelStyleFilteringSample1Component,
         ExcelStyleFilteringSample2Component,
         ExcelStyleFilteringSample3Component,
+        ExcelStyleFilteringStyleComponent,
         FilteringSampleComponent,
         FilteringTemplateSampleComponent,
         GridGroupBySampleComponent,
         GridGroupBySummarySampleComponent,
+        GridGroupBySummaryStylingSampleComponent,
         GridMovingSampleComponent,
         GridMovingStyledSampleComponent,
         PagingSampleComponent,
@@ -107,10 +120,12 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridRowEditSampleComponent,
         GridRowEditStyleComponent,
         GridEditingStyleSample,
+        GridEditingEventsComponent,
         FinancialSampleComponent,
         GridSample3Component,
         GridRemoteVirtualizationSampleComponent,
         PinningSampleComponent,
+        PinningToolbarSampleComponent,
         GridSelectionSampleComponent,
         GridSearchSampleComponent,
         SortingSampleComponent,
@@ -145,7 +160,12 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridMultiColumnHeaderTemplateComponent,
         GridClipboardSampleComponent,
         GridToolbarStyleComponent,
-        GridGroupByPagingSampleComponent
+        GridGroupByPagingSampleComponent,
+        GridPagerSampleComponent,
+        GridFilteringStyleComponent,
+        GridCustomSummariesSelection,
+        PinningStylingComponent,
+        GridGroupByStyling
     ],
     imports: [
         CommonModule,
