@@ -15,6 +15,7 @@ import {
 import { MenusRoutingModule } from "./menus-routing.module";
 import { NavbarSample1Component } from "./navbar/navbar-sample-1/navbar-sample-1.component";
 import { NavbarSample2Component } from "./navbar/navbar-sample-2/navbar-sample-2.component";
+import { NavbarStyleComponent } from "./navbar/navbar-style/navbar-style.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { NavDrawerMiniComponent } from "./navdrawer/nav-drawer-mini/nav-drawer-mini.component";
 import { NavDrawerPinComponent } from "./navdrawer/nav-drawer-pin/nav-drawer-pin.component";
@@ -29,7 +30,8 @@ import { NavdrawerComponent } from "./navdrawer/navdrawer.component";
         NavDrawerSimpleComponent,
         NavbarComponent,
         NavbarSample1Component,
-        NavbarSample2Component
+        NavbarSample2Component,
+        NavbarStyleComponent
     ],
     imports: [
         CommonModule,
