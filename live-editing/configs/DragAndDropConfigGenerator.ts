@@ -1,5 +1,13 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxDialogModule, IgxDragDirective, IgxDragDropModule, IgxDropDirective } from "igniteui-angular";
+import {
+    IgxDialogModule,
+    IgxDragDirective,
+    IgxDragDropModule,
+    IgxDropDirective,
+    NoOpScrollStrategy,
+    ConnectedPositioningStrategy,
+    GlobalPositionStrategy } from "igniteui-angular";
+import { DragDialogSampleComponent } from "../../src/app/interactions/drag-drop/dialog-sample/drag-dialog-sample.component";
 import { IconsSampleComponent } from "../../src/app/interactions/drag-drop/icons-sample/icons-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -15,6 +23,19 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
                 imports: [IgxDragDirective, IgxDropDirective,
                     IgxDragDropModule, IgxDialogModule, IconsSampleComponent],
                 ngDeclarations: [IconsSampleComponent],
+                ngImports: [IgxDragDropModule, IgxDialogModule]
+            }),
+            shortenComponentPathBy: "/interactions/"
+        }));
+
+        configs.push(new Config({
+            component: DragDialogSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDragDirective, IgxDropDirective,
+                    IgxDragDropModule, IgxDialogModule, 
+                    NoOpScrollStrategy, ConnectedPositioningStrategy, 
+                    GlobalPositionStrategy,],
+                ngDeclarations: [DragDialogSampleComponent],
                 ngImports: [IgxDragDropModule, IgxDialogModule]
             }),
             shortenComponentPathBy: "/interactions/"
