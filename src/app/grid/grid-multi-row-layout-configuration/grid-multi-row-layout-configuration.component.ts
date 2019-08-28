@@ -8,7 +8,7 @@ import {
     ViewChildren,
     ViewEncapsulation } from "@angular/core";
 import {
-    IDragBaseEventArgs,
+    IDropBaseEventArgs,
     IDropDroppedEventArgs,
     IgxDialogComponent,
     IgxGridComponent
@@ -347,11 +347,11 @@ export class GridMultiRowLayoutConfigurationComponent {
         this.selectedBlock.colsWidth = event.target.value;
     }
 
-    public onColEnter(event: IDragBaseEventArgs, blockIndex, rowIndex, colIndex) {
+    public onColEnter(event: IDropBaseEventArgs, blockIndex, rowIndex, colIndex) {
         this.blocks[blockIndex].collection[rowIndex][colIndex].hovered = true;
     }
 
-    public onColLeave(event: IDragBaseEventArgs, blockIndex, rowIndex, colIndex) {
+    public onColLeave(event: IDropBaseEventArgs, blockIndex, rowIndex, colIndex) {
         this.blocks[blockIndex].collection[rowIndex][colIndex].hovered = false;
     }
 
