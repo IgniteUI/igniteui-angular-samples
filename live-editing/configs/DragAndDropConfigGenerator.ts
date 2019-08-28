@@ -8,6 +8,7 @@ import {
     ConnectedPositioningStrategy,
     GlobalPositionStrategy } from "igniteui-angular";
 import { DragDialogSampleComponent } from "../../src/app/interactions/drag-drop/dialog-sample/drag-dialog-sample.component";
+import { ListReorderSampleComponent } from "../../src/app/interactions/drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { IconsSampleComponent } from "../../src/app/interactions/drag-drop/icons-sample/icons-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -24,6 +25,17 @@ export class DragAndDropConfigGenerator implements IConfigGenerator {
                     IgxDragDropModule, IgxDialogModule, IconsSampleComponent],
                 ngDeclarations: [IconsSampleComponent],
                 ngImports: [IgxDragDropModule, IgxDialogModule]
+            }),
+            shortenComponentPathBy: "/interactions/"
+        }));
+
+        configs.push(new Config({
+            component: ListReorderSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxDragDirective, IgxDropDirective,
+                    IgxDragDropModule, ListReorderSampleComponent],
+                ngDeclarations: [ListReorderSampleComponent],
+                ngImports: [IgxDragDropModule]
             }),
             shortenComponentPathBy: "/interactions/"
         }));

@@ -9,6 +9,7 @@ import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styli
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
+import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { interactionsRoutesData } from "./interactions-routes-data";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
@@ -198,6 +199,11 @@ export const interactionsRoutes: Routes = [
         component: OverlayScrollSample2Component,
         data: interactionsRoutesData["overlay-scroll-sample-2"],
         path: "overlay-scroll-sample-2"
+    },
+    {
+        component: ListReorderSampleComponent,
+        data: interactionsRoutesData["list-reorder-sample"],
+        path: "list-reorder-sample"
     },
     {
         component: OverlayStylingComponent,
