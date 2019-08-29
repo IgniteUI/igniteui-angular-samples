@@ -4,30 +4,30 @@
 
 $custom-theme: igx-grid-theme(
     $header-background: #e0f3ff,
-    $header-text-color: black,
+    $header-text-color: #e41c77,
     $header-border-width: 1px,
-    $header-border-style: default,
-    $header-border-color: black
+    $header-border-style: solid,
+    $header-border-color: rgba(0, 0, 0, 0.08)
 );
 
 /*ENHANCED APPROACHES*/
 
 // $light-blue-color: #e0f3ff;
-// $black-color: #000000;
+// $deep-pink-color: #e41c77;
 
 /*PALETTE*/
 
 // $custom-palette: igx-palette(
 //     $primary: $light-blue-color,
-//     $secondary: $black-color
+//     $secondary: $deep-pink-color
 // );
 
 // $custom-theme: igx-grid-theme(
 //     $header-background: igx-color($custom-palette, "primary", 500),
 //     $header-text-color: igx-color($custom-palette, "secondary", 500),
 //     $header-border-width: 1px,
-//     $header-border-style: default,
-//     $header-border-color: igx-color($custom-palette, "secondary", 500)
+//     $header-border-style: solid,
+//     $header-border-color: igx-color($custom-palette, "grays", 200)
 // );
 
 /*SCHEMAS*/
@@ -37,8 +37,8 @@ $custom-theme: igx-grid-theme(
 //         header-background: (igx-color:('primary', 500)),
 //         header-text-color: (igx-color:('secondary', 500)),
 //         header-border-width: 1px,
-//         header-border-style: default,
-//         header-border-color: (igx-color:('secondary', 500))
+//         header-border-style: solid,
+//         header-border-color: (igx-color:('grays', 200))
 //     )
 // );
 
