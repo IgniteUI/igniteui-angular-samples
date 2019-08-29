@@ -1,0 +1,68 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$custom-theme: igx-grid-theme(
+    $header-background: #e0f3ff,
+    $header-text-color: #e41c77,
+    $header-border-width: 1px,
+    $header-border-style: solid,
+    $header-border-color: rgba(0, 0, 0, 0.08)
+);
+
+/*ENHANCED APPROACHES*/
+
+// $light-blue-color: #e0f3ff;
+// $deep-pink-color: #e41c77;
+
+/*PALETTE*/
+
+// $custom-palette: igx-palette(
+//     $primary: $light-blue-color,
+//     $secondary: $deep-pink-color
+// );
+
+// $custom-theme: igx-grid-theme(
+//     $header-background: igx-color($custom-palette, "primary", 500),
+//     $header-text-color: igx-color($custom-palette, "secondary", 500),
+//     $header-border-width: 1px,
+//     $header-border-style: solid,
+//     $header-border-color: igx-color($custom-palette, "grays", 200)
+// );
+
+/*SCHEMAS*/
+
+// $custom-grid-schema: extend($_light-grid,
+//     (
+//         header-background: (igx-color:('primary', 500)),
+//         header-text-color: (igx-color:('secondary', 500)),
+//         header-border-width: 1px,
+//         header-border-style: solid,
+//         header-border-color: (igx-color:('grays', 200))
+//     )
+// );
+
+// $my-custom-schema: extend($light-schema, 
+//     (
+//         igx-grid: $custom-grid-schema
+//     )
+// );
+
+/*THEME*/
+
+// $custom-theme: igx-grid-theme(
+//   $palette: $custom-palette,
+//   $schema: $my-custom-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+  ::ng-deep {
+    @include igx-grid($custom-theme);
+  }
+}
+
+.grid__wrapper {
+    margin: 10px;
+}

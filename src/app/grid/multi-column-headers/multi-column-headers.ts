@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
-import { data } from "./data";
+import { DATA } from "../../data/customers";
 
 @Component({
     selector: "multi-column-headers",
@@ -11,7 +11,7 @@ export class GridMultiColumnHeadersComponent {
 
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
-    public data = data;
+    public data = DATA;
 
     public pinGroup() {
         const firstColumnGroup = this.grid.columnList.filter((c) => c.header === "General Information")[0];

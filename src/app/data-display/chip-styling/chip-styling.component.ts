@@ -11,11 +11,11 @@ import {
 
 @Component({
     selector: "app-chip",
-    styleUrls: ["./chip.component.scss"],
-    templateUrl: "./chip.component.html"
+    styleUrls: ["./chip-styling.component.scss"],
+    templateUrl: "./chip-styling.component.html"
 })
 
-export class ChipSampleComponent {
+export class ChipStylingSampleComponent {
     public dropDownList = [
         {
             email: "lisalanders@gmail.com",
@@ -83,28 +83,25 @@ export class ChipSampleComponent {
         {
             email: "terranceorta@gmail.com",
             id: "770-504-2217",
-            name: "Terrance Orta",
-            photo: "assets/images/men/27.jpg"
+            name: "Terrance Orta"
         },
         {
             email: "richard@gmail.com",
             id: "423-676-2869",
-            name: "Richard Mahoney",
-            photo: "assets/images/men/13.jpg"
+            name: "Richard Mahoney"
         },
         {
             email: "donnaprice@gmail.com",
             id: "859-496-2817",
-            name: "Donna Price",
-            photo: "assets/images/women/50.jpg"
+            name: "Donna Price"
         }
     ];
 
     public tagList = [
-        { id: "All Users", text: "All Users" },
-        { id: "My Team", text: "My Team" },
-        { id: "USA Team", text: "USA Team" },
-        { id: "Engineering Services", text: "Engineering Services" }
+        { id: "Branch Austria", text: "Branch Austria", flag: "assets/images/grid/flags/at.png" },
+        { id: "Branch Singapore", text: "Branch Singapore", flag: "assets/images/grid/flags/sg.png" },
+        { id: "Branch USA", text: "Branch USA", flag: "assets/images/grid/flags/us.png" },
+        { id: "Branch Japan", text: "Branch Japan", flag: "assets/images/grid/flags/jp.png" }
     ];
 
     public toastPosition: IgxToastPosition = IgxToastPosition.Middle;
@@ -203,8 +200,7 @@ export class ChipSampleComponent {
                     this.chipList.push({
                         email: this.dropDownList[i].email,
                         id: this.dropDownList[i].id,
-                        name: this.dropDownList[i].name,
-                        photo: this.dropDownList[i].photo
+                        name: this.dropDownList[i].name
                     });
                     exists = true;
                 }
@@ -213,8 +209,7 @@ export class ChipSampleComponent {
                 this.chipList.push({
                     email: this.inputBox.value,
                     id: this.inputBox.value,
-                    name: this.inputBox.value,
-                    photo: "assets/images/list/empty.png"
+                    name: this.inputBox.value
                 });
             }
         }
@@ -265,8 +260,7 @@ export class ChipSampleComponent {
                 this.chipList.push({
                     email: this.dropDownList[i].email,
                     id: this.dropDownList[i].id,
-                    name: this.dropDownList[i].name,
-                    photo: this.dropDownList[i].photo
+                    name: this.dropDownList[i].name
                 });
                 this.igxDropDown.close();
                 this.dropDownOpened = false;
@@ -298,9 +292,13 @@ export class ChipSampleComponent {
             return chip.id === chipId;
         });
         if (chipToSelect.selected === true) {
-            this.ccGroup.value = this.ccGroup.value.replace(chipToSelect.id + ", ", "");
+            this.ccGroup.value = this.ccGroup.value.split(", ").filter((z) => {
+                return z !== chipToSelect.id;
+            }).join(", ");
         } else {
-            this.ccGroup.value += chipToSelect.id + ", ";
+            this.ccGroup.value = this.ccGroup.value.split(", ").filter((z) => {
+                return z !== "";
+            }).concat(chipToSelect.id).join(", ");
         }
     }
 
