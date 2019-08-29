@@ -33,11 +33,6 @@ export const samplesRoutes: Routes = [
         path: "notifications"
     },
     {
-        data: ["ChartsModule"],
-        loadChildren: () => import("./charts/charts.module").then(m => m.ChartsModule),
-        path: "charts"
-    },
-    {
         data: ["ListsModule"],
         loadChildren: () => import("./lists/lists.module").then(m => m.ListsModule),
         path: "lists"
@@ -53,21 +48,6 @@ export const samplesRoutes: Routes = [
         path: "scheduling"
     },
     {
-        data: ["ExcelLibraryModule"],
-        loadChildren: () => import("./excel-library/excel-library.module").then(m => m.ExcelLibraryModule),
-        path: "excel-library"
-    },
-    {
-        data: ["GaugesModule"],
-        loadChildren: () => import("./gauges/gauges.module").then(m => m.GaugesModule),
-        path: "gauges"
-    },
-    {
-        data: ["GeoMapModule"],
-        loadChildren: () => import("./maps/geo-map.module").then(m => m.GeoMapModule),
-        path: "maps"
-    },
-    {
         data: ["MenusModule"],
         loadChildren: () => import("./menus/menus.module").then(m => m.MenusModule),
         path: "menus"
@@ -81,11 +61,6 @@ export const samplesRoutes: Routes = [
         data: ["ServicesModule"],
         loadChildren: () => import("./services/services.module").then(m => m.ServicesModule),
         path: "services"
-    },
-    {
-        data: ["SpreadsheetModule"],
-        loadChildren: () => import("./spreadsheet/spreadsheet.module").then(m => m.SpreadsheetModule),
-        path: "spreadsheet"
     },
     {
         data: ["TreeGridModule"],

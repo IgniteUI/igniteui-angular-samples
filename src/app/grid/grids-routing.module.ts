@@ -24,6 +24,7 @@ import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filteri
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -50,6 +51,7 @@ import { FinancialSampleComponent } from "./grid-sample-2/grid-sample-2.componen
 import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
+import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
@@ -65,10 +67,12 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -94,6 +98,11 @@ export const gridsRoutes: Routes = [
         path: "grid-groupby"
     },
     {
+        component: GridGroupByStyling,
+        data: gridsRoutesData["grid-groupby-styling"],
+        path: "grid-groupby-styling"
+    },
+    {
         component: GridGroupBySummarySampleComponent,
         data: gridsRoutesData["grid-groupby-summary"],
         path: "grid-groupby-summary"
@@ -112,6 +121,11 @@ export const gridsRoutes: Routes = [
         component: GridEditingStyleSample,
         data: gridsRoutesData["grid-editing-style"],
         path: "grid-editing-style"
+    },
+    {
+        component: GridEditingEventsComponent,
+        data: gridsRoutesData["grid-editing-events"],
+        path: "grid-editing-events"
     },
     {
         component: GridRowEditSampleComponent,
@@ -222,6 +236,11 @@ export const gridsRoutes: Routes = [
         component: PinningSampleComponent,
         data: gridsRoutesData["grid-sample-pinning"],
         path: "grid-sample-pinning"
+    },
+    {
+        component: PinningToolbarSampleComponent,
+        data: gridsRoutesData["grid-sample-toolbar-pinning"],
+        path: "grid-sample-toolbar-pinning"
     },
     {
         component: GridRemoteVirtualizationSampleComponent,
@@ -402,6 +421,11 @@ export const gridsRoutes: Routes = [
         component: GridMultiRowLayoutStylingComponent,
         data: gridsRoutesData["grid-multi-row-layout-styling"],
         path: "grid-multi-row-layout-styling"
+    },
+    {
+        component: PinningStylingComponent,
+        data: gridsRoutesData["grid-pinning-styling"],
+        path: "grid-pinning-styling"
     }
 ];
 
