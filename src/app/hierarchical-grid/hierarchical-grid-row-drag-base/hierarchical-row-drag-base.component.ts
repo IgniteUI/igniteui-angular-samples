@@ -1,9 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-<<<<<<< HEAD
-import { IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from "igniteui-angular";
-=======
 import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent } from "igniteui-angular";
->>>>>>> remotes/origin/vNext
 import { createData, IDrive } from "../../data/files.data";
 
 enum DragIcon {
@@ -29,11 +25,7 @@ export class HGridRowDragBaseComponent {
         args.animation = true;
     }
 
-<<<<<<< HEAD
-    public onDropAllowed(args) {
-=======
     public onDropAllowed(args: IDropDroppedEventArgs) {
->>>>>>> remotes/origin/vNext
         args.cancel = true;
         const draggedRow: IgxHierarchicalRowComponent = args.dragData;
         draggedRow.delete();
