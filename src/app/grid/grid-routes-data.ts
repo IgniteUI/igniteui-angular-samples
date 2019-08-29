@@ -59,6 +59,7 @@ export const gridsRoutesData = {
     "grid-selection-custom-summaries": { displayName: "Grid Selection Based Summaries", parentName: "Grid" },
     "grid-multi-row-layout": { displayName: "Grid Multi Row Layout", parentName: "Grid" },
     "grid-multi-row-layout-configuration": { displayName: "Grid Multi Row Layout Configuration", parentName: "Grid" },
+    "grid-multi-row-layout-styling": { displayName: "Grid Multi Row Layout Styling", parentName: "Grid" },
     "grid-mrl-custom-navigation":
         { displayName: "Grid Multi Row Layout Custom Keyboard Navigation", parentName: "Grid" },
     "custom-grid-paging-style": { displayName: "Custom Grid Paging Style", parentName: "Grid" },

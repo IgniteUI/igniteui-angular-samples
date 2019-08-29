@@ -43,6 +43,7 @@ import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/gri
 import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
+import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
@@ -164,6 +165,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
         GridCustomSummariesSelection,
+        GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
         GridGroupByStyling
     ],
