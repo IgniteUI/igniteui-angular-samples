@@ -8,7 +8,9 @@ import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
 import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
+import { EmailSampleComponent } from "./drag-drop/email-sample/email-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
+import { KanbanSampleComponent } from "./drag-drop/kanban-sample/kanban-sample.component";
 import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { interactionsRoutesData } from "./interactions-routes-data";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
@@ -209,6 +211,16 @@ export const interactionsRoutes: Routes = [
         component: OverlayStylingComponent,
         data: interactionsRoutesData["overlay-styling"],
         path: "overlay-styling-simple"
+    },
+    {
+        component: EmailSampleComponent,
+        data: interactionsRoutesData["email-sample"],
+        path: "email-sample"
+    },
+    {
+        component: KanbanSampleComponent,
+        data: interactionsRoutesData["kanban-sample"],
+        path: "kanban-sample"
     },
     {
         component: DragDialogSampleComponent,
