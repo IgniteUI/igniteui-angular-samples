@@ -33,7 +33,6 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-resize-line-styling": { displayName: "Hierarchical Grid Resize Line Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-hiding": { displayName: "Hierarchical Grid Column Hiding", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-hiding": { displayName: "Hierarchical Grid Custom Hiding", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-multi-column": { displayName: "Hierarchical Grid Multi Column Headers", parentName: "Hierarchical Grid" },
     "hierarchical-grid-multi-cell-style": { displayName: "Hierarchical Grid Multi Cell Selection Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-title": { displayName: "Hierarchical Grid Toolbar Title", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-options": { displayName: "Hierarchical Grid Toolbar Options", parentName: "Hierarchical Grid" },
@@ -42,7 +41,9 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-custom-kb-navigation": { displayName: "Hierarchical Grid Custom Keyboard Navigation", parentName: "Hierarchical Grid" },
     "hierarchical-grid-paging-style": { displayName: "HGrid Paging Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-column-hiding-style": { displayName: "HGrid Column Hiding Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-multi-column": { displayName: "Hierarchical Grid Multi Column Headers", parentName: "Hierarchical Grid" },
     "hierarchical-grid-multi-column-template": { displayName: "Hierarchical Grid Multi Column Header Template", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-multi-column-styling": { displayName: "Hierarchical Grid Multi Column Header Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-edit-style": { displayName: "HGrid Row Edit Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-style": { displayName: "HGrid Toolbar Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" }

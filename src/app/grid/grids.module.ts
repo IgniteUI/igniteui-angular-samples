@@ -88,6 +88,7 @@ import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
+import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -136,6 +137,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridToolbarSample3Component,
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
+        GridMultiColumnHeadersStylingComponent,
         GridComponent,
         PasteHandler,
         GridCustomKBNavigationComponent,

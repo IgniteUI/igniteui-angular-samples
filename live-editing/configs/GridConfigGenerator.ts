@@ -155,6 +155,9 @@ import { GridToolbarStyleComponent } from "../../src/app/grid/grid-toolbar-style
 import {
     GridMultiColumnHeaderTemplateComponent
 } from "../../src/app/grid/multi-column-header-template/multi-column-header-template";
+import {
+    GridMultiColumnHeadersStylingComponent
+} from "../../src/app/grid/multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
 import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
@@ -586,10 +589,20 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridMultiColumnHeadersComponent,
-            additionalFiles: ["/src/app/grid/multi-column-headers/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMultiColumnHeadersComponent, IgxGridModule, IgxButtonModule],
                 ngDeclarations: [GridMultiColumnHeadersComponent],
+                ngImports: [IgxGridModule, IgxButtonModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridMultiColumnHeadersStylingComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMultiColumnHeadersStylingComponent, IgxGridModule, IgxButtonModule],
+                ngDeclarations: [GridMultiColumnHeadersStylingComponent],
                 ngImports: [IgxGridModule, IgxButtonModule]
             })
         }));
@@ -912,7 +925,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
         configs.push(new Config({
             component: GridMultiColumnHeaderTemplateComponent,
-            additionalFiles: ["/src/app/grid/multi-column-header-template/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMultiColumnHeaderTemplateComponent, IgxGridModule],
                 ngDeclarations: [GridMultiColumnHeaderTemplateComponent],
