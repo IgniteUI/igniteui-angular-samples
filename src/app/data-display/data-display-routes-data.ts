@@ -5,6 +5,7 @@ export const dataDisplayRoutesData = {
     "badge-sample-2": { displayName: "Badge for List with Avatars", parentName: "Badge" },
     "badge-sample-3": { displayName: "Badge for List Items", parentName: "Badge" },
     "chip-sample": { displayName: "Chip Overview", parentName: "Chip" },
+    "chip-styling": { displayName: "Chip Styling", parentName: "Chip" },
     "circular-progressbar": { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
     // tslint:disable-next-line:max-line-length
     "circular-indeterminate-progressbar": { displayName: "Circular Indeterminate Progressbar", parentName: "Circular Progressbar" },
