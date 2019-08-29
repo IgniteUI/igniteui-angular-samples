@@ -1,0 +1,57 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$dark-snackbar: igx-snackbar-theme(
+    $text-color: #FFCD0F,
+    $background: #292826,
+    $button-color: #FFCD0F,
+    $border-radius: 12px
+);
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #FFCD0F;
+// $black-color: #292826;
+// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+/*PALETTE and IGX-COLOR*/
+
+// $dark-snackbar: igx-snackbar-theme(
+//     $text-color: igx-color($dark-palette, "secondary", 400),
+//     $background: igx-color($dark-palette, "primary", 400),
+//     $button-color: igx-color($dark-palette, "secondary", 400),
+//     $border-radius: 12px
+// );
+
+/*SCHEMAS*/
+
+// $dark-snackbar-schema: extend($_dark-snackbar,
+//     (
+//         text-color:(
+//             igx-color: ("secondary", 400)
+//         ),
+//         background: (
+//             igx-color: ("primary", 400)
+//         ),
+//         button-color: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         border-radius: 12px
+//     )
+// );
+
+// $custom-dark-schema: extend($dark-schema,(
+//     igx-snackbar: $dark-snackbar-schema
+// ));
+
+// $dark-snackbar: igx-snackbar-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+
+:host {
+    ::ng-deep {
+       @include igx-snackbar($dark-snackbar);
+   }
+}

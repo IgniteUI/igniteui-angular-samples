@@ -8,6 +8,8 @@ import {
     ViewChildren,
     ViewEncapsulation } from "@angular/core";
 import {
+    IDropBaseEventArgs,
+    IDropDroppedEventArgs,
     IgxDialogComponent,
     IgxGridComponent
 } from "igniteui-angular";
@@ -345,15 +347,15 @@ export class GridMultiRowLayoutConfigurationComponent {
         this.selectedBlock.colsWidth = event.target.value;
     }
 
-    public onColEnter(event, blockIndex, rowIndex, colIndex) {
+    public onColEnter(event: IDropBaseEventArgs, blockIndex, rowIndex, colIndex) {
         this.blocks[blockIndex].collection[rowIndex][colIndex].hovered = true;
     }
 
-    public onColLeave(event, blockIndex, rowIndex, colIndex) {
+    public onColLeave(event: IDropBaseEventArgs, blockIndex, rowIndex, colIndex) {
         this.blocks[blockIndex].collection[rowIndex][colIndex].hovered = false;
     }
 
-    public onColDropped(event, blockIndex, rowIndex, colIndex) {
+    public onColDropped(event: IDropDroppedEventArgs, blockIndex, rowIndex, colIndex) {
         event.cancel = true;
         this.blocks[blockIndex].collection[rowIndex][colIndex].key = event.drag.data.chip.data.key;
         this.updateCollectionLayout(blockIndex);

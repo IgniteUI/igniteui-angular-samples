@@ -97,6 +97,9 @@ import {
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
+import {
+    TreeGridMultiColumnHeadersStylingComponent
+} from "./tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
@@ -174,6 +177,7 @@ import {
         TreeGridFilteringTemplateSampleComponent,
         TreeGridFilteringCustomSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
+        TreeGridMultiColumnHeadersStylingComponent,
         TreeGridVirtualizationSampleComponent,
         TreeGridDisplaydensitySampleComponent,
         TreeGridToolbarSample1Component,
