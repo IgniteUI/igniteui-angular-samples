@@ -28,6 +28,7 @@ export const gridsRoutesData = {
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
+    "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
     "grid-resizing-sample": { displayName: "Grid Resizing", parentName: "Grid" },
     "grid-resize-line-styling-sample": { displayName: "Grid Resize Line Styling", parentName: "Grid" },
     "grid-sample-2": { displayName: "Grid Financial Sample", parentName: "Grid" },

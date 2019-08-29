@@ -165,6 +165,7 @@ import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
+import { PinningStylingComponent } from '../../src/app/grid/grid-sample-pinning-styling/grid-pinning-styling.component';
 import { GridGroupByStyling } from '../../src/app/grid/grid-groupby-styling/grid-groupby-styling.component';
 // tslint:enable:max-line-length
 
@@ -924,6 +925,15 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridClipboardSampleComponent, IgxGridModule, IgxSwitchModule],
                 ngDeclarations: [GridClipboardSampleComponent],
                 ngImports: [IgxGridModule, IgxSwitchModule]
+            })
+        }));
+        configs.push(new Config({
+            component: PinningStylingComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [PinningStylingComponent, IgxGridModule, IgxIconModule],
+                ngDeclarations: [PinningStylingComponent],
+                ngImports: [IgxGridModule, IgxIconModule]
             })
         }));
         configs.push(new Config({

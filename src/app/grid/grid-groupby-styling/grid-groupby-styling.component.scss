@@ -24,10 +24,6 @@ $custom-chips-theme: igx-chip-theme(
     $hover-text-color: #e7e7e7
 );
 
-$custom-checkbox-theme: igx-checkbox-theme(
-    $fill-color: #ffcd0f
-);
-
 /* Palette */
 
 // $black-color: #292826;
@@ -49,6 +45,12 @@ $custom-checkbox-theme: igx-checkbox-theme(
 //     $expand-icon-color: igx-color($custom-palette, "secondary", 600),
 //     $expand-icon-hover-color: igx-color($custom-palette, "secondary", 300),
 //     $cell-active-border-color: igx-color($custom-palette, "secondary", 600)
+// );
+
+// $custom-chips-theme: igx-chip-theme(
+//     $background: igx-color($custom-palette, "primary", 300),
+//     $text-color: igx-contrast-color($custom-palette, "primary", 500),
+//     $hover-text-color: igx-contrast-color($custom-palette, "primary", 600)
 // );
 
 /* Schema */
@@ -78,49 +80,9 @@ $custom-checkbox-theme: igx-checkbox-theme(
 //   $schema: $my-custom-schema
 // );
 
-.igx-grid__grouparea-connector {
-    color: #000;
-}
-
-.grid-controls {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    margin: 0 16px 24px;
-
-    igx-switch {
-        margin-top: 24px;
-    }
-
-}
-
-.grid__wrapper {
-    margin: 0;
-}
-
-.header-icon {
-    font-size: 1.4em;
-    width: 1.1em;
-    height: 1.1em;
-    float: right;
-    cursor: pointer;
-}
-
-.header {
-    height: 100%;
-}
-
-.igx-grid__th .title {
-    width: 100%;
-    cursor: auto;
-}
-
 :host {
     ::ng-deep {
         @include igx-grid($custom-theme);
         @include igx-chip($custom-chips-theme);
-        @include igx-checkbox($custom-checkbox-theme);
     }
 }
-
-
