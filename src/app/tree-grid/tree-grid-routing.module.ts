@@ -95,6 +95,9 @@ import {
 import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
+    TreeGridMultiColumnHeadersStylingComponent
+} from "./tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
+import {
     TreeGridResizeLineStylingSampleComponent
 } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
@@ -277,6 +280,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridMultiColumnHeadersSampleComponent,
         data: treeGridRoutesData["treegrid-multi-column-headers"],
         path: "treegrid-multi-column-headers"
+    },
+    {
+        component: TreeGridMultiColumnHeadersStylingComponent,
+        data: treeGridRoutesData["treegrid-multi-column-headers-styling"],
+        path: "treegrid-multi-column-headers-styling"
     },
     {
         component: TreeGridVirtualizationSampleComponent,

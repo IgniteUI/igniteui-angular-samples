@@ -62,6 +62,7 @@ import { TreeGridMultiCellSelectionStyleComponent } from "../../src/app/tree-gri
 import { TreeGridMultiCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import { TreeGridMultiColumnHeaderTemplateSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-header-template-sample/tree-grid-multi-column-header-template-sample.component";
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
+import { TreeGridMultiColumnHeadersStylingComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -439,6 +440,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxButtonModule]
             }),
             component: TreeGridMultiColumnHeadersSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid Multi Column Headers Styling
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridMultiColumnHeadersStylingComponent, IgxButtonModule],
+                ngDeclarations: [TreeGridMultiColumnHeadersStylingComponent],
+                ngImports: [IgxTreeGridModule, IgxButtonModule]
+            }),
+            component: TreeGridMultiColumnHeadersStylingComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 
