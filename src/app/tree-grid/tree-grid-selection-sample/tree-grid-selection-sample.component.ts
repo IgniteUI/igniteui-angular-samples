@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxTreeGridComponent } from "igniteui-angular";
+import { IgxBannerComponent, IgxTreeGridComponent } from "igniteui-angular";
 import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Component({
@@ -10,20 +10,30 @@ import { generateEmployeeFlatData } from "../data/employees-flat";
 export class TreeGridSelectionSampleComponent implements OnInit {
 
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
+    @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;
     public data: any[];
-    public selection = true;
+    public selectionMode = "multiple";
+    public selectionModes = [];
+    public hideRowSelectors = false;
 
     constructor() { }
 
     public ngOnInit(): void {
         this.data = generateEmployeeFlatData();
+        this.selectionModes = [
+            { label: "none", selected: this.selectionMode === "none", togglable: true },
+            { label: "single", selected: this.selectionMode === "single", togglable: true },
+            { label: "multiple", selected: this.selectionMode === "multiple", togglable: true }
+        ];
+        this.banner.open();
     }
 
     public handleRowSelection(event) {
-        const targetCell = event.cell;
-        if (!this.selection) {
-            this.treeGrid.deselectAllRows();
-            this.treeGrid.selectRows([targetCell.row.rowID]);
-        }
+
+    }
+
+    public selectCellSelectionMode(args) {
+        this.selectionMode = this.selectionModes[args.index].label;
+        this.banner.open();
     }
 }

@@ -1,0 +1,13 @@
+<div class="grid__wrapper">
+    <igx-buttongroup [values]="selectionModes" (onSelect)="selectCellSelectionMode($event)"></igx-buttongroup>
+
+    <igx-tree-grid #treeGrid  [data]="data" [height]="'530px'" [width]="'100%'"  primaryKey="ID" foreignKey="ParentID" [cellSelection]="cellSelectionMode">
+        <igx-column [field]="'ID'"></igx-column>
+        <igx-column [field]="'Name'"></igx-column>
+        <igx-column [field]="'Age'" [dataType]="'number'"></igx-column>
+        <igx-column [field]="'Title'"></igx-column>
+        <igx-column [field]="'HireDate'" [dataType]="'boolean'">
+        </igx-column>
+        <igx-column [field]="'OnPTO'" [dataType]="'date'"></igx-column>
+    </igx-tree-grid>
+</div>
