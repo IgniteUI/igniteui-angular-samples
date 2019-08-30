@@ -4,6 +4,7 @@ export const dataDisplayRoutesData = {
     "badge-sample-1": { displayName: "Badge for List", parentName: "Badge" },
     "badge-sample-2": { displayName: "Badge for List with Avatars", parentName: "Badge" },
     "badge-sample-3": { displayName: "Badge for List Items", parentName: "Badge" },
+    "badge-styling-sample": { displayName: "Badge Styling Sample", parentName: "Badge" },
     "chip-sample": { displayName: "Chip Overview", parentName: "Chip" },
     "chip-styling": { displayName: "Chip Styling", parentName: "Chip" },
     "circular-progressbar": { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
