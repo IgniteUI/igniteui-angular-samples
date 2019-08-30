@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import { HttpClientModule } from "@angular/common/http";
 import {
+    IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCheckboxModule,
@@ -258,9 +259,10 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridSelectionSampleComponent, IgxSwitchModule],
+                imports: [IgxHierarchicalGridModule, HGridSelectionSampleComponent, IgxSwitchModule,
+                IgxBannerModule, IgxButtonGroupModule],
                 ngDeclarations: [HGridSelectionSampleComponent],
-                ngImports: [IgxHierarchicalGridModule, IgxSwitchModule]
+                ngImports: [IgxHierarchicalGridModule, IgxSwitchModule, IgxBannerModule, IgxButtonGroupModule]
             }),
             component: HGridSelectionSampleComponent
         }));

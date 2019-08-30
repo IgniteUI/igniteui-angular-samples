@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
+import { IgxBannerComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent } from "igniteui-angular";
 import { SINGERS } from "../data";
 
 @Component({
@@ -10,8 +10,11 @@ import { SINGERS } from "../data";
 
 export class HGridSelectionSampleComponent implements OnInit {
     public localdata;
-    public selection = true;
+    public selectionMode = "multiple";
+    public selectionModes = [];
+    public hideRowSelectors = false;
 
+    @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;
     @ViewChild("hierarchicalGrid", { static: true })
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
@@ -19,15 +22,21 @@ export class HGridSelectionSampleComponent implements OnInit {
         this.localdata = SINGERS;
     }
     public ngOnInit(): void {
+        this.selectionModes = [
+            { label: "none", selected: this.selectionMode === "none", togglable: true },
+            { label: "single", selected: this.selectionMode === "single", togglable: true },
+            { label: "multiple", selected: this.selectionMode === "multiple", togglable: true }
+        ];
+        this.banner.open();
+    }
 
+    public selectCellSelectionMode(args) {
+        this.selectionMode = this.selectionModes[args.index].label;
+        this.banner.open();
     }
 
     public handleRowSelection(event) {
         const targetCell = event.cell;
-        if (!this.selection) {
-            this.hierarchicalGrid.deselectAllRows();
-            this.hierarchicalGrid.selectRows([targetCell.row.rowID]);
-        }
     }
 
     public formatter = (a) => a;
