@@ -84,5 +84,12 @@
     "ts-node": "^7.0.1",
     "tslint": "5.12.1",
     "typescript": "3.5.3"
-  }
+  },
+  "browserslist": [
+    "> 3%",
+    "last 5 versions",
+    "Firefox ESR",
+    "not dead",
+    "IE 9-11"
+  ]
 }
