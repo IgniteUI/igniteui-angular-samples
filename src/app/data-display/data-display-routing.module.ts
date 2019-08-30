@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
@@ -126,6 +127,11 @@ export const dataDisplayRoutes: Routes = [
         component: TextHighlightSample2Component,
         data: dataDisplayRoutesData["text-highlight-2"],
         path: "text-highlight-2"
+    },
+    {
+        component: ChipStylingSampleComponent,
+        data: dataDisplayRoutesData["chip-styling"],
+        path: "chip-styling"
     }
 ];
 

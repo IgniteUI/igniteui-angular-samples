@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxHierarchicalGridComponent, IgxNumberSummaryOperand,
+import { Component, OnInit } from "@angular/core";
+import { IgxNumberSummaryOperand,
     IgxSummaryResult } from "igniteui-angular";
 import { SINGERS } from "../data";
 
@@ -58,9 +58,6 @@ export class HGridSummaryStylingComponent implements OnInit {
     public localdata;
     public mySummary = MySummary;
     public myChildSummary = MyChildSummary;
-
-    @ViewChild("hierarchicalGrid", { static: true })
-    private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
         this.localdata = SINGERS;

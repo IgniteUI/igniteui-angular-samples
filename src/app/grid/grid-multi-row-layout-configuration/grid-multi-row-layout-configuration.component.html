@@ -56,7 +56,7 @@
                             <div #gridCell tabindex="0" *ngFor="let col of row; index as colIndex" class="columnIn" [class.columnInHovered]="col.hovered"
                                 [ngStyle]="{'grid-row-start': col.rowStart, 'grid-column-start': col.colStart, 'grid-column-end': col.colStart + col.colSpan, 'grid-row-end': col.rowStart + col.rowSpan,
                                 '-ms-grid-row': col.rowStart, '-ms-grid-column': col.colStart, '-ms-grid-column-span': col.colSpan, '-ms-grid-row-span': col.rowSpan}"
-                                igxDrop (onDrop)="onColDropped($event, blockIndex, rowIndex, colIndex)" (onEnter)="onColEnter($event, blockIndex, rowIndex, colIndex)" (onLeave)="onColLeave($event, blockIndex, rowIndex, colIndex)"
+                                igxDrop (dropped)="onColDropped($event, blockIndex, rowIndex, colIndex)" (enter)="onColEnter($event, blockIndex, rowIndex, colIndex)" (leave)="onColLeave($event, blockIndex, rowIndex, colIndex)"
                                     (click)="clickCell(gridCell, blockIndex, rowIndex, colIndex)" (blur)="onBlur($event, blockIndex, rowIndex, colIndex)" (keyup)="onCellKey($event, blockIndex, rowIndex, colIndex)">
                                 <div class="igx-grid__th-title textWrapper">{{col.key}}</div>
                                 <ng-container *ngIf="block.collection[rowIndex][colIndex].selected">
@@ -95,7 +95,7 @@
         <div  style="width: 100%; margin-bottom: 15px; text-align:center; min-height: 50px;" >
             <span>Drag a column into a layout cell to apply:</span>
             <igx-chips-area style="margin: auto; justify-content: center;">
-                <igx-chip #chip *ngFor="let col of columnsList; let colIndex = index" [style.margin]="'5px'" [data]="col" [draggable]="true" [animateOnRelease]="false"
+                <igx-chip #chip *ngFor="let col of columnsList; let colIndex = index" [style.margin]="'5px'" [data]="col" [draggable]="true"
                        (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
                     {{col.key}}
                     <div class="material-icons igx-icon"

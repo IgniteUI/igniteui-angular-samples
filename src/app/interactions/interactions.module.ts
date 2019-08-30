@@ -2,8 +2,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxComboModule, IgxDialogModule, IgxDragDropModule,
-    IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule,
+    IgxAvatarModule, IgxButtonModule, IgxCardModule, IgxCheckboxModule, IgxComboModule, IgxDialogModule,
+    IgxDragDropModule, IgxIconModule, IgxInputGroupModule, IgxOverlayService, IgxRippleModule,
     IgxSliderModule, IgxSwitchModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { LayoutsModule } from "../layouts/layouts.module";
@@ -13,7 +13,11 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
+import { EmailSampleComponent } from "./drag-drop/email-sample/email-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
+import { KanbanSampleComponent } from "./drag-drop/kanban-sample/kanban-sample.component";
+import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { InteractionsRoutingModule } from "./interactions-routing.module";
 import { MyDynamicCardComponent } from "./overlay/overlay-dynamic-card/overlay-dynamic-card.component";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
@@ -52,6 +56,10 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         DialogSample1Component,
         DialogSample2Component,
         DialogSample3Component,
+        EmailSampleComponent,
+        KanbanSampleComponent,
+        ListReorderSampleComponent,
+        DragDialogSampleComponent,
         IconsSampleComponent,
         MyDynamicCardComponent,
         SliderSample1Component,
@@ -94,6 +102,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         IgxAvatarModule,
         IgxButtonModule,
         IgxCardModule,
+        IgxCheckboxModule,
         IgxDialogModule,
         IgxDragDropModule,
         IgxIconModule,
