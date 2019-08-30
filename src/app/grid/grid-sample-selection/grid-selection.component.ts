@@ -1,6 +1,6 @@
 import { Component, Injectable, ViewChild } from "@angular/core";
 
-import { IgxGridComponent } from "igniteui-angular";
+import { IgxBannerComponent, IgxGridComponent } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
 import { DATA } from "./financialData";
 
@@ -68,13 +68,23 @@ export class LocalService {
 
 export class GridSelectionSampleComponent {
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
+    @ViewChild(IgxBannerComponent, { static: true }) public banner: IgxBannerComponent;
     public data: Observable<any[]>;
-    public selection = true;
+    public selectionMode = "multiple";
+    public selectionModes = [];
+    public hideRowSelectors = false;
+
     constructor(private localService: LocalService) {
         this.localService.getData(100000);
         this.data = this.localService.records;
+        this.selectionModes = [
+            { label: "none", selected: this.selectionMode === "none", togglable: true },
+            { label: "single", selected: this.selectionMode === "single", togglable: true },
+            { label: "multiple", selected: this.selectionMode === "multiple", togglable: true }
+        ];
     }
     public ngOnInit(): void {
+        this.banner.open();
     }
     public formatNumber(value: number) {
         return value.toFixed(2);
@@ -84,9 +94,10 @@ export class GridSelectionSampleComponent {
     }
     public handleRowSelection(event) {
         const targetCell = event.cell;
-        if (!this.selection) {
-            this.grid1.deselectAllRows();
-            this.grid1.selectRows([targetCell.row.rowID]);
-        }
+    }
+
+    public selectCellSelectionMode(args) {
+        this.selectionMode = this.selectionModes[args.index].label;
+        this.banner.open();
     }
 }

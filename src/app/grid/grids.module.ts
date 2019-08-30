@@ -4,7 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
+    IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
     IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
     IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
@@ -80,6 +80,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -165,7 +166,8 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridFilteringStyleComponent,
         GridCustomSummariesSelection,
         PinningStylingComponent,
-        GridGroupByStyling
+        GridGroupByStyling,
+        GridCellSelectionComponent
     ],
     imports: [
         CommonModule,
@@ -174,6 +176,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridsRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
+        IgxBannerModule,
         IgxButtonGroupModule,
         IgxButtonModule,
         IgxCheckboxModule,

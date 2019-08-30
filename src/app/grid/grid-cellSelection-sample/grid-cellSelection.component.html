@@ -1,0 +1,13 @@
+<div class="grid__wrapper">
+    <igx-buttongroup [values]="selectionModes" (onSelect)="selectCellSelectionMode($event)"></igx-buttongroup>
+
+    <igx-grid #grid  [data]="data" [height]="'530px'" [width]="'100%'" [cellSelection]="cellSelectionMode">
+        <igx-column [field]="'ProductID'"></igx-column>
+        <igx-column [field]="'ProductName'"></igx-column>
+        <igx-column [field]="'UnitsInStock'" [dataType]="'number'"></igx-column>
+        <igx-column [field]="'UnitPrice'" [dataType]="'number'"></igx-column>
+        <igx-column [field]="'Discontinued'" [dataType]="'boolean'">
+        </igx-column>
+        <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
+    </igx-grid>
+</div>
