@@ -32,6 +32,7 @@ import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/gri
 import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
+import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
@@ -73,6 +74,9 @@ import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/g
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
+import {
+    GridMultiColumnHeadersStylingComponent
+} from "./multi-column-headers-styling/multi-column-headers-styling.component";
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -318,6 +322,11 @@ export const gridsRoutes: Routes = [
         path: "multi-column-headers"
     },
     {
+        component: GridMultiColumnHeadersStylingComponent,
+        data: gridsRoutesData["multi-column-headers-styling"],
+        path: "multi-column-headers-styling"
+    },
+    {
         component: RemotePagingGridSample,
         data: gridsRoutesData["grid-remote-paging-sample"],
         path: "grid-remote-paging-sample"
@@ -416,6 +425,11 @@ export const gridsRoutes: Routes = [
         component: GridCustomSummariesSelection,
         data: gridsRoutesData["grid-selection-custom-summaries"],
         path: "grid-selection-custom-summaries"
+    },
+    {
+        component: GridMultiRowLayoutStylingComponent,
+        data: gridsRoutesData["grid-multi-row-layout-styling"],
+        path: "grid-multi-row-layout-styling"
     },
     {
         component: PinningStylingComponent,

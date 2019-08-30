@@ -40,7 +40,15 @@ export const treeGridRoutesData = {
         parentName: "TreeGrid"
     },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
+    "treegrid-multi-column-header-template": {
+        displayName: "TreeGrid Multi Column Header Template",
+        parentName: "TreeGrid"
+    },
     "treegrid-multi-column-headers": { displayName: "TreeGrid Multi Column Headers", parentName: "TreeGrid" },
+    "treegrid-multi-column-headers-styling": {
+        displayName: "TreeGrid Multi Column Headers Styling",
+        parentName: "TreeGrid"
+    },
     "treegrid-virtualization": { displayName: "TreeGrid Virtualization", parentName: "TreeGrid" },
     "treegrid-display-density": { displayName: "TreeGrid Display Density", parentName: "TreeGrid" },
     "treegrid-toolbar-1": { displayName: "TreeGrid Toolbar 1", parentName: "TreeGrid" },
@@ -65,10 +73,6 @@ export const treeGridRoutesData = {
     "treegrid-remote-paging": { displayName: "TreeGrid Remote Paging", parentName: "TreeGrid" },
     "treegrid-paging-style": { displayName: "TreeGrid Paging Style", parentName: "TreeGrid" },
     "treegrid-column-hiding-style": { displayName: "TreeGrid Column Hiding Style", parentName: "TreeGrid" },
-    "treegrid-multi-column-header-template": {
-        displayName: "TreeGrid Multi Column Header Template",
-        parentName: "TreeGrid"
-    },
     "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
     "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
     "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" },
