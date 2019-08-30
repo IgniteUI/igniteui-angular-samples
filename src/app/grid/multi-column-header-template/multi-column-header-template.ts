@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxColumnGroupComponent, IgxGridComponent } from "igniteui-angular";
-import { data } from "./data";
+import { DATA } from "../../data/customers";
 
 @Component({
     selector: "multi-column-header-template",
@@ -11,7 +11,7 @@ export class GridMultiColumnHeaderTemplateComponent {
 
     @ViewChild(IgxGridComponent, { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
-    public data: any[] = data;
+    public data: any[] = DATA;
     public columnGroupStates = new Map<IgxColumnGroupComponent, boolean>();
 
     constructor() {
