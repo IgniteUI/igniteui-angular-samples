@@ -19,6 +19,7 @@ export const interactionsRoutesData = {
     "ripple-sample-4": { displayName: "Ripple Duration", parentName: "Ripple" },
     "ripple-sample-5": { displayName: "Ripple Effect", parentName: "Ripple" },
     "ripple-sample-6": { displayName: "Ripple Color", parentName: "Ripple" },
+    "ripple-styling": { displayName: "Ripple Styling", parentName: "Ripple" },
     "toggle": { displayName: "Toggle Overview", parentName: "Toggle" },
     "toggle-sample-1": { displayName: "Toggle Content", parentName: "Toggle" },
     "toggle-sample-2": { displayName: "Automatic Toggle Actions", parentName: "Toggle" },
