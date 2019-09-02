@@ -4,7 +4,6 @@ import { Router, RouterModule } from "@angular/router";
 import {
     IgxAvatarModule,
     IgxBadgeModule,
-    IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCheckboxModule,
@@ -25,6 +24,7 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule
@@ -36,7 +36,7 @@ import {
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "../../src/app/grid/grid-boston-marathon/grid.component";
-import { GridCellSelectionComponent } from '../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component';
+import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component";
 import {
     GridClipboardSampleComponent
 } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
@@ -325,10 +325,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridSelectionSampleComponent,
             additionalFiles: ["/src/app/grid/grid-sample-selection/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxBannerModule,
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxSnackbarModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxSwitchModule, GridSelectionSampleComponent],
                 ngDeclarations: [GridSelectionSampleComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule, IgxBannerModule,
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule, IgxSnackbarModule,
                     IgxIconModule, IgxInputGroupModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: []
             })

@@ -2,7 +2,6 @@
 import {
     IgxAvatarModule,
     IgxBadgeModule,
-    IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCheckboxModule,
@@ -19,6 +18,7 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTreeGridModule
@@ -235,9 +235,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridSelectionSampleComponent,
-                    IgxSwitchModule, IgxBannerModule, IgxButtonGroupModule],
+                    IgxSwitchModule, IgxSnackbarModule, IgxButtonGroupModule],
                 ngDeclarations: [TreeGridSelectionSampleComponent],
-                ngImports: [IgxTreeGridModule, IgxSwitchModule, IgxBannerModule, IgxButtonGroupModule]
+                ngImports: [IgxTreeGridModule, IgxSwitchModule, IgxSnackbarModule, IgxButtonGroupModule]
             }),
             component: TreeGridSelectionSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
@@ -634,9 +634,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [TreeGridMultiCellSelectionComponent, IgxGridModule, IgxTreeGridModule, IgxToastModule],
+                imports: [TreeGridMultiCellSelectionComponent, IgxGridModule, IgxTreeGridModule, IgxToastModule, IgxSnackbarModule],
                 ngDeclarations: [TreeGridMultiCellSelectionComponent],
-                ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule]
+                ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule, IgxSnackbarModule]
             }),
             component: TreeGridMultiCellSelectionComponent,
             shortenComponentPathBy: "/tree-grid/"
