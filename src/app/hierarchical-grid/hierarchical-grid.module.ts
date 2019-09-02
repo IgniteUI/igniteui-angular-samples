@@ -19,6 +19,7 @@ import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-
 import { HGridEditingEventsComponent } from "./hierarchical-grid-editing-events/hierarchical-grid-editing-events.component";
 import { HGridEditingStyleComponent } from "./hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
+import { HierarchicalGridExcelStyleFilteringLoadOnDemandComponent } from "./hierarchical-grid-excel-style-filtering-load-on-demand/hierarchical-grid-excel-style-filtering-load-on-demand.component";
 import { HGridExcelStyleFilteringSample1Component } from "./hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
 import { HGridExcelStyleFilteringSample2Component } from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
 import { HGridExcelStyleFilteringSample3Component } from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
@@ -103,6 +104,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridMultiHeaderTemplateSampleComponent,
         HierarchicalGridToolbarStyleComponent,
         HierarchicalGridFilteringStyleComponent,
+        HierarchicalGridExcelStyleFilteringLoadOnDemandComponent,
         HGridStylingComponent
     ],
     imports: [
