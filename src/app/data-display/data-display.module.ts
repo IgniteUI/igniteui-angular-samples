@@ -10,13 +10,16 @@ import {
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
-import { ChipSampleComponent, EmailFilterPipe } from "./chip/chip.component";
+import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
+import { ChipSampleComponent } from "./chip/chip.component";
+import { EmailFilterPipe } from "./chip/email-filter-pipe";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
 import { DataDisplayRoutingModule } from "./data-display-routing.module";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import {
@@ -50,6 +53,7 @@ import {
         CircularProgressbarComponent,
         IconSample1Component,
         IconSample2Component,
+        IconStylingSample,
         SvgIconSampleComponent,
         IgxForComponent,
         LinearProgressbarComponent,
@@ -62,7 +66,8 @@ import {
         MaskSample5Component,
         TextHighlightSample1Component,
         TextHighlightSample2Component,
-        CircularIndeterminateProgressbarComponent
+        CircularIndeterminateProgressbarComponent,
+        ChipStylingSampleComponent
     ],
     imports: [
         CommonModule,

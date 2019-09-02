@@ -5,6 +5,7 @@ import { SvgIconSampleComponent } from "../../src/app/data-display/icon/svg-icon
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { IconStylingSample } from '../../src/app/data-display/icon/icon-styling-sample/icon-styling-sample.component';
 
 export class IconConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -27,6 +28,17 @@ export class IconConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, SvgIconSampleComponent],
                 ngDeclarations: [SvgIconSampleComponent],
+                ngImports: [IgxIconModule]
+            }),
+            shortenComponentPathBy: "/data-display/icon/"
+        }));
+
+        // Icon Styling Sample
+        configs.push(new Config({
+            component: IconStylingSample,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IconStylingSample],
+                ngDeclarations: [IconStylingSample],
                 ngImports: [IgxIconModule]
             }),
             shortenComponentPathBy: "/data-display/icon/"

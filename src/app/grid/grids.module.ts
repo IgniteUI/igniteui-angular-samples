@@ -35,6 +35,7 @@ import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filteri
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -42,6 +43,7 @@ import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/gri
 import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
+import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
@@ -84,7 +86,9 @@ import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
+import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -133,6 +137,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridToolbarSample3Component,
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
+        GridMultiColumnHeadersStylingComponent,
         GridComponent,
         PasteHandler,
         GridCustomKBNavigationComponent,
@@ -161,7 +166,10 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridGroupByPagingSampleComponent,
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
-        GridCustomSummariesSelection
+        GridCustomSummariesSelection,
+        GridMultiRowLayoutStylingComponent,
+        PinningStylingComponent,
+        GridGroupByStyling
     ],
     imports: [
         CommonModule,

@@ -43,13 +43,7 @@ export class IconsSampleComponent {
         ev.drag.dropFinished();
     }
 
-    private swapIcons(dragIndex: number, dropIndex: number) {
-        const tempObj = this.icons[dragIndex];
-        this.icons.splice(dragIndex, 1);
-        this.icons.splice(dropIndex, 0, tempObj);
-    }
-
-    private onEnterHandler(ev): void {
+    public onEnterHandler(ev): void {
         this.dropTileId = parseInt(ev.owner.element.nativeElement.id, 10);
         // the event gets raised immediately, but we want to swap only when we drag over another icon
         if (this.dragIconId === this.dropTileId) {
@@ -64,7 +58,21 @@ export class IconsSampleComponent {
         this.swapIcons(dragIndex, dropIndex);
     }
 
-    private dragStartHandler(id: string): void {
+    public dragStartHandler(id: string): void {
         this.dragIconId = parseInt(id, 10);
+    }
+
+    public dragEndHandler(dragRef: HTMLElement) {
+        dragRef.style.visibility = "visible";
+    }
+
+    public ghostCreateHandler(dragRef: HTMLElement) {
+        dragRef.style.visibility = "hidden";
+    }
+
+    private swapIcons(dragIndex: number, dropIndex: number) {
+        const tempObj = this.icons[dragIndex];
+        this.icons.splice(dragIndex, 1);
+        this.icons.splice(dropIndex, 0, tempObj);
     }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, Pipe, PipeTransform, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from "@angular/core";
 import {
     ConnectedPositioningStrategy,
     IgxChipsAreaComponent,
@@ -345,11 +345,5 @@ export class ChipSampleComponent {
         if (this.inputBox.value === "" || this.inputBox.value === null) {
             this.inputBox.valid = IgxInputState.INITIAL;
         }
-    }
-}
-@Pipe({ name: "filter" })
-export class EmailFilterPipe implements PipeTransform {
-    public transform(item: any, inputVal) {
-        return item.filter((e) => e.email.startsWith(inputVal.toLowerCase()));
     }
 }
