@@ -80,6 +80,9 @@ import {
 import {
     ExcelStyleFilteringStyleComponent
 } from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import {
+    GridExcelStyleFilteringLoadOnDemandComponent
+} from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import {
@@ -163,6 +166,7 @@ import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
+import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -728,6 +732,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [ExcelStyleFilteringSample3Component, IgxGridModule],
                 ngDeclarations: [ExcelStyleFilteringSample3Component],
                 ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridExcelStyleFilteringLoadOnDemandComponent,
+            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
+                              "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridExcelStyleFilteringLoadOnDemandComponent, IgxGridModule, RemoteValuesService],
+                ngDeclarations: [GridExcelStyleFilteringLoadOnDemandComponent],
+                ngImports: [IgxGridModule],
+                ngProviders: [RemoteValuesService]
             })
         }));
 

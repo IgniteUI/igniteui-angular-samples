@@ -43,6 +43,9 @@ import { TreeGridDisplaydensitySampleComponent } from "./tree-grid-displaydensit
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import {
+    TreeGridExcelStyleFilteringLoadOnDemandComponent
+} from "./tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
+import {
     TreeGridExcelStyleFilteringSample1Component
 } from "./tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
 import {
@@ -262,6 +265,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridExcelStyleFilteringStyleComponent,
         data: treeGridRoutesData["treegrid-excel-style-filtering-style"],
         path: "treegrid-excel-style-filtering-style"
+    },
+    {
+        component: TreeGridExcelStyleFilteringLoadOnDemandComponent,
+        data: treeGridRoutesData["treegrid-excel-style-filtering-load-on-demand"],
+        path: "treegrid-excel-style-filtering-load-on-demand"
     },
     {
         component: TreeGridFilteringCustomSampleComponent,

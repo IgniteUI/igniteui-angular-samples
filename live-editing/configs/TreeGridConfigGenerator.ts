@@ -39,6 +39,7 @@ import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/t
 import { TreeGridEditingEventsComponent } from "../../src/app/tree-grid/tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEditingStyleComponent } from "../../src/app/tree-grid/tree-grid-editing-style/tree-grid-editing-sample.component";
+import { TreeGridExcelStyleFilteringLoadOnDemandComponent } from '../../src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component';
 import {
     TreeGridExcelStyleFilteringSample1Component
 } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
@@ -87,6 +88,7 @@ import { TreeGridToolbarSample3Component } from "../../src/app/tree-grid/tree-gr
 import { TreeGridToolbarSample4Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
 import { TreeGridToolbarStyleComponent } from "../../src/app/tree-grid/tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
+import { RemoteValuesService } from '../../src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/remoteValues.service';
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -660,6 +662,19 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule]
             }),
             component: TreeGridLoadOnDemandSampleComponent
+        }));
+
+        // TreeGrid Excel Style Filtering Load On Demand Sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
+                              "/src/app/tree-grid/data/employees-flat.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExcelStyleFilteringLoadOnDemandComponent, IgxIconModule, RemoteValuesService],
+                ngDeclarations: [TreeGridExcelStyleFilteringLoadOnDemandComponent],
+                ngImports: [IgxTreeGridModule, IgxIconModule],
+                ngProviders: [RemoteValuesService]
+            }),
+            component: TreeGridExcelStyleFilteringLoadOnDemandComponent
         }));
 
         // Tree Grid Row Drag - Advanced Sample
