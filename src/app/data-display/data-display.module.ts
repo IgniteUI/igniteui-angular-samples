@@ -19,6 +19,7 @@ import { CircularProgressbarComponent } from "./circular-progressbar/circular-pr
 import { DataDisplayRoutingModule } from "./data-display-routing.module";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import {
@@ -52,6 +53,7 @@ import {
         CircularProgressbarComponent,
         IconSample1Component,
         IconSample2Component,
+        IconStylingSample,
         SvgIconSampleComponent,
         IgxForComponent,
         LinearProgressbarComponent,

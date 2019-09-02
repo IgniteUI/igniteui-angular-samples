@@ -39,6 +39,8 @@ export const treeGridRoutesData = {
         displayName: "TreeGrid Excel Style Filtering Styling",
         parentName: "TreeGrid"
     },
+    "treegrid-excel-style-filtering-load-on-demand":
+        { displayName: "TreeGrid Excel Style Filtering Load On Demand", parentName: "TreeGrid" },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-header-template": {
         displayName: "TreeGrid Multi Column Header Template",

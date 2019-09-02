@@ -66,6 +66,9 @@ import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import {
+    TreeGridExcelStyleFilteringLoadOnDemandComponent
+} from "./tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
+import {
     TreeGridExcelStyleFilteringSample1Component
 } from "./tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
 import {
@@ -208,7 +211,8 @@ import {
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent,
         TreeGridFilteringStyleComponent,
-        TreeGridCellSelectionComponent
+        TreeGridCellSelectionComponent,
+        TreeGridExcelStyleFilteringLoadOnDemandComponent
     ],
     imports: [
         CommonModule,
