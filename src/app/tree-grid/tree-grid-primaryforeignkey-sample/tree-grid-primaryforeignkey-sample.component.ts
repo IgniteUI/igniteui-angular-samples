@@ -12,24 +12,24 @@ export class TreeGridPrimaryforeignkeySampleComponent implements OnInit {
     constructor() { }
 
     public ngOnInit() {
-        let employees = Data.employeePrimaryForeignKeyTreeData();
-        for (let employee of employees) {
-            this.getPerformance(employee);   
+        const employees = Data.employeePrimaryForeignKeyTreeData();
+        for (const employee of employees) {
+            this.getPerformance(employee);
         }
         this.data = employees;
     }
 
     public getPerformance(employee: any): any {
         employee["Performance"] = this.getPerformanceData(12);
-        const hasEmployees = employee.Employees == undefined;
+        const hasEmployees = employee.Employees === undefined;
         if (hasEmployees) {
             return employee;
         } else {
-            for (let employer of employee.Employees) {
-                this.getPerformance(employer);   
+            for (const employer of employee.Employees) {
+                this.getPerformance(employer);
             }
         }
-    };
+    }
 
     public getPerformanceData(weeks?: number): any[] {
         if (weeks === undefined) {
@@ -42,7 +42,7 @@ export class TreeGridPrimaryforeignkeySampleComponent implements OnInit {
         }
         return performance;
     }
-    
+
     public  getRandomNumber(min: number, max: number): number {
         return Math.round(min + Math.random() * (max - min));
     }
