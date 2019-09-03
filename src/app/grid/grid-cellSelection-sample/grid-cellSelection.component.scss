@@ -1,13 +1,9 @@
-.grid-controls {
+.grid__wrapper {
     display: flex;
     justify-content: space-between;
     margin: 0 16px 24px;
     flex-flow: column;
     align-items: flex-start;
-}
-
-.grid__wrapper {
-    margin: 0 16px;
 }
 
 igx-snackbar {
