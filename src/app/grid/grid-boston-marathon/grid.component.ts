@@ -56,7 +56,13 @@ export class GridComponent implements OnInit, OnDestroy {
     constructor(private zone: NgZone, private dataService: DataService) { }
 
     public ngOnInit() {
-        this.localData = athletesData;
+        let athletes = athletesData;
+
+        for (let athlete of athletes) {
+            this.getSpeed(athlete);   
+        }
+
+        this.localData = athletes;
         this.windowWidth = window.innerWidth;
         this._timer = setInterval(() => this.ticker(), 3000);
     }
@@ -100,6 +106,26 @@ export class GridComponent implements OnInit, OnDestroy {
             case "down":
                 return "error";
         }
+    }
+
+    public getSpeed(athlete: any): any {
+        athlete["Speed"] = this.getSpeedeData(30);
+    };
+
+    public getSpeedeData(minutes?: number): any[] {
+        if (minutes === undefined) {
+            minutes = 20;
+        }
+        const speed: any[] = [];
+        for (let m = 0; m < minutes; m++) {
+            const value = this.getRandomNumber(20, 50);
+            speed.push({Speed: value, Minute: m});
+        }
+        return speed;
+    }
+
+    public getRandomNumber(min: number, max: number): number {
+        return Math.round(min + Math.random() * (max - min));
     }
 
     @HostListener("window:resize", ["$event"])
