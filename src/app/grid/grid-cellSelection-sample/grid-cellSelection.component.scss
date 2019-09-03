@@ -1,6 +1,9 @@
 .grid__wrapper {
-    width: 1050px;
-    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px 24px;
+    flex-flow: column;
+    align-items: flex-start;
 }
 
 igx-snackbar {
