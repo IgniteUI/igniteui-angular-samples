@@ -1,14 +1,12 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import {
-    IgxAvatarModule, IgxCsvExporterService, IgxExcelExporterService, IgxGridModule, IgxProgressBarModule
-} from "igniteui-angular";
+import { IgxAvatarModule, IgxCsvExporterService, IgxExcelExporterService, IgxGridModule,
+    IgxProgressBarModule } from "igniteui-angular";
+import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { GridCRMRoutingModule } from "./grid-crm-routing.module";
 import { GridCRMComponent } from "./grid-crm/grid-crm.component";
-import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
-import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
-import { SparklineDisplayType } from 'igniteui-angular-charts/ES5/SparklineDisplayType';
 
 @NgModule({
     declarations: [
@@ -22,7 +20,7 @@ import { SparklineDisplayType } from 'igniteui-angular-charts/ES5/SparklineDispl
         IgxAvatarModule,
         IgxProgressBarModule,
         IgxSparklineModule,
-        IgxSparklineCoreModule,
+        IgxSparklineCoreModule
     ],
     providers: [IgxCsvExporterService, IgxExcelExporterService]
 })

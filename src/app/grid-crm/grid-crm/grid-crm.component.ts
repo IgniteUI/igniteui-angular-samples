@@ -126,9 +126,9 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
-        let employees = data;
-        for (let employee of employees) {
-            this.getDeals(employee);   
+        const employees = data;
+        for (const employee of employees) {
+            this.getDeals(employee);
         }
         this.localData = employees;
     }
@@ -209,8 +209,8 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     }
 
     public getDeals(employee: any): any {
-        employee["Deals"] = this.getDealsData();     
-    };
+        employee["Deals"] = this.getDealsData();
+    }
 
     public getDealsData(months?: number): any[] {
         if (months === undefined) {

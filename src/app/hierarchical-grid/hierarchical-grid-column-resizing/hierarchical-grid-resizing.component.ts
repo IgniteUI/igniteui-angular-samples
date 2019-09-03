@@ -18,9 +18,9 @@ export class HGridColumnResizingSampleComponent implements OnInit {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
-        let singers = SINGERS;
-        for (let singer of singers) {
-            this.getSales(singer);   
+        const singers = SINGERS;
+        for (const singer of singers) {
+            this.getSales(singer);
         }
         this.localdata = singers;
     }
@@ -36,8 +36,8 @@ export class HGridColumnResizingSampleComponent implements OnInit {
     }
 
     public getSales(singer: any): any {
-        singer["Sales"] = this.getSalesData(10);     
-    };
+        singer["Sales"] = this.getSalesData(10);
+    }
 
     public getSalesData(years?: number): any[] {
         if (years === undefined) {

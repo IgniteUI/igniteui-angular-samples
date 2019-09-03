@@ -56,10 +56,10 @@ export class GridComponent implements OnInit, OnDestroy {
     constructor(private zone: NgZone, private dataService: DataService) { }
 
     public ngOnInit() {
-        let athletes = athletesData;
+        const athletes = athletesData;
 
-        for (let athlete of athletes) {
-            this.getSpeed(athlete);   
+        for (const athlete of athletes) {
+            this.getSpeed(athlete);
         }
 
         this.localData = athletes;
@@ -110,7 +110,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
     public getSpeed(athlete: any): any {
         athlete["Speed"] = this.getSpeedeData(30);
-    };
+    }
 
     public getSpeedeData(minutes?: number): any[] {
         if (minutes === undefined) {

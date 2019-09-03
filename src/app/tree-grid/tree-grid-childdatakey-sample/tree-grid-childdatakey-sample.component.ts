@@ -11,25 +11,25 @@ export class TreeGridChilddatakeySampleComponent implements OnInit {
 
     constructor() { }
 
-    public ngOnInit() {  
-        let employees = EMPLOYEE_DATA;
-        for (let employee of employees) {
-            this.getPerformance(employee);   
+    public ngOnInit() {
+        const employees = EMPLOYEE_DATA;
+        for (const employee of employees) {
+            this.getPerformance(employee);
         }
         this.localData = employees;
     }
 
     public getPerformance(employee: any): any {
         employee["Performance"] = this.getPerformanceData(12);
-        const hasEmployees = employee.Employees == undefined;
+        const hasEmployees = employee.Employees === undefined;
         if (hasEmployees) {
             return employee;
         } else {
-            for (let employer of employee.Employees) {
-                this.getPerformance(employer);   
+            for (const employer of employee.Employees) {
+                this.getPerformance(employer);
             }
         }
-    };
+    }
 
     public getPerformanceData(weeks?: number): any[] {
         if (weeks === undefined) {
@@ -42,7 +42,7 @@ export class TreeGridChilddatakeySampleComponent implements OnInit {
         }
         return performance;
     }
-    
+
     public  getRandomNumber(min: number, max: number): number {
         return Math.round(min + Math.random() * (max - min));
     }
