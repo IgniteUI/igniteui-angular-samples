@@ -32,7 +32,7 @@ export class GridFinjsConfigGenerator implements IConfigGenerator {
                     IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
                     IgxRippleModule, FinJSDemoComponent,
                     LocalDataService],
-                ngDeclarations: [ContextDialogWithChartComponent, FinJSDemoComponent],
+                ngDeclarations: [FinJSDemoComponent],
                 ngImports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxSwitchModule, IgxRippleModule, IgxGridModule],
                 ngProviders: [LocalDataService, IgxExcelExporterService, IgxCsvExporterService]
