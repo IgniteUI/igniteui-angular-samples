@@ -6,6 +6,9 @@ import {
 } from "igniteui-angular";
 import { GridCRMRoutingModule } from "./grid-crm-routing.module";
 import { GridCRMComponent } from "./grid-crm/grid-crm.component";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { SparklineDisplayType } from 'igniteui-angular-charts/ES5/SparklineDisplayType';
 
 @NgModule({
     declarations: [
@@ -17,7 +20,9 @@ import { GridCRMComponent } from "./grid-crm/grid-crm.component";
         GridCRMRoutingModule,
         IgxGridModule,
         IgxAvatarModule,
-        IgxProgressBarModule
+        IgxProgressBarModule,
+        IgxSparklineModule,
+        IgxSparklineCoreModule,
     ],
     providers: [IgxCsvExporterService, IgxExcelExporterService]
 })

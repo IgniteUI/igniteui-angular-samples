@@ -89,6 +89,9 @@ import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { SparklineDisplayType } from 'igniteui-angular-charts/ES5/SparklineDisplayType';
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -199,7 +202,9 @@ import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-s
         IgxToggleModule,
         IgxTooltipModule,
         IgxExpansionPanelModule,
-        IgxSelectModule
+        IgxSelectModule,
+        IgxSparklineModule,
+        IgxSparklineCoreModule,
     ],
     providers: [
         DataService,

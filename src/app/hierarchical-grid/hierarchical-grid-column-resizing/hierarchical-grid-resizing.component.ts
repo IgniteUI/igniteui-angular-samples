@@ -18,7 +18,11 @@ export class HGridColumnResizingSampleComponent implements OnInit {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     constructor() {
-        this.localdata = SINGERS;
+        let singers = SINGERS;
+        for (let singer of singers) {
+            this.getSales(singer);   
+        }
+        this.localdata = singers;
     }
 
     public ngOnInit(): void {
@@ -29,6 +33,26 @@ export class HGridColumnResizingSampleComponent implements OnInit {
         this.col = event.column;
         this.pWidth = event.prevWidth;
         this.nWidth = event.newWidth;
+    }
+
+    public getSales(singer: any): any {
+        singer["Sales"] = this.getSalesData(10);     
+    };
+
+    public getSalesData(years?: number): any[] {
+        if (years === undefined) {
+            years = 20;
+        }
+        const sales: any[] = [];
+        for (let y = 0; y < years; y++) {
+            const value = this.getRandomNumber(0, 1000);
+            sales.push({Copies: value, Year: y});
+        }
+        return sales;
+    }
+
+    public  getRandomNumber(min: number, max: number): number {
+        return Math.round(min + Math.random() * (max - min));
     }
 
     public formatter = (a) => a;
