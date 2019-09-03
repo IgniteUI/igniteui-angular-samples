@@ -9,7 +9,8 @@ import { SINGERS } from "../data";
 })
 
 export class HGridColumnResizingSampleComponent implements OnInit {
-    public localdata;
+    public years = 10;
+    public localdata: any[];
     public col: IgxColumnComponent;
     public pWidth: string;
     public nWidth: string;
