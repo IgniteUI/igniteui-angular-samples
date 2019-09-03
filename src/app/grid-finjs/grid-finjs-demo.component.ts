@@ -10,8 +10,6 @@ import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-char
 import { timer } from "rxjs";
 import { debounce } from "rxjs/operators";
 import { LocalDataService } from "./localData.service";
-import { HorizontalAlignment } from 'igniteui-angular-core/ES5/HorizontalAlignment';
-import { VerticalAlignment } from 'igniteui-angular-core/ES5/VerticalAlignment';
 
 @Component({
     providers: [LocalDataService],
@@ -213,7 +211,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public chartClick(cell: IgxGridCellComponent) {
-        debugger;
+        // debugger;
         this.dialog.open();
     }
 
