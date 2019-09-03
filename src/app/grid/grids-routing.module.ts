@@ -68,6 +68,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -440,6 +441,11 @@ export const gridsRoutes: Routes = [
         component: PinningStylingComponent,
         data: gridsRoutesData["grid-pinning-styling"],
         path: "grid-pinning-styling"
+    },
+    {
+        component: GridCellSelectionComponent,
+        data: gridsRoutesData["grid-cell-selection"],
+        path: "grid-cell-selection"
     }
 ];
 

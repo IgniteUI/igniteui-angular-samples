@@ -1,29 +1,30 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxSnackbarComponent } from "igniteui-angular";
-import { SINGERS } from "../data";
+import { IgxGridComponent, IgxSnackbarComponent } from "igniteui-angular";
+import { DATA } from "../../data/nwindData";
 
 @Component({
-    selector: "hierarchical-grid-selection",
-    styleUrls: ["./hierarchical-grid-selection.component.scss"],
-    templateUrl: "hierarchical-grid-selection.component.html"
+    selector: "grid-cellSelection",
+    styleUrls: ["./grid-cellSelection.component.scss"],
+    templateUrl: "grid-cellSelection.component.html"
 })
-
-export class HGridSelectionSampleComponent implements OnInit {
-    public localdata;
+export class GridCellSelectionComponent implements OnInit {
+    public data: any[];
+    public selection = true;
     public selectionMode = "multiple";
     public selectionModes = [];
-    public hideRowSelectors = false;
+
+    @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxSnackbarComponent, { static: true }) public snackbar: IgxSnackbarComponent;
 
-    constructor() {
-        this.localdata = SINGERS;
+    constructor() { }
+
+    public ngOnInit(): void {
+        this.data = DATA;
         this.selectionModes = [
             { label: "none", selected: this.selectionMode === "none", togglable: true },
             { label: "single", selected: this.selectionMode === "single", togglable: true },
             { label: "multiple", selected: this.selectionMode === "multiple", togglable: true }
         ];
-    }
-    public ngOnInit(): void {
         this.snackbar.autoHide = false;
         this.snackbar.show();
     }
@@ -32,10 +33,4 @@ export class HGridSelectionSampleComponent implements OnInit {
         this.selectionMode = this.selectionModes[args.index].label;
         this.snackbar.show();
     }
-
-    public handleRowSelection(event) {
-        const targetCell = event.cell;
-    }
-
-    public formatter = (a) => a;
 }

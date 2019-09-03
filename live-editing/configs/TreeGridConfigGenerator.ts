@@ -18,6 +18,7 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTreeGridModule
@@ -33,6 +34,7 @@ import { TreeGridColumnMovingStyledSampleComponent } from "../../src/app/tree-gr
 import { TreeGridColumnPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import { TreeGridPinningToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
 
+import { TreeGridCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import { TreeGridColumnResizingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
@@ -234,9 +236,10 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridSelectionSampleComponent, IgxSwitchModule],
+                imports: [IgxTreeGridModule, TreeGridSelectionSampleComponent,
+                    IgxSwitchModule, IgxSnackbarModule, IgxButtonGroupModule],
                 ngDeclarations: [TreeGridSelectionSampleComponent],
-                ngImports: [IgxTreeGridModule, IgxSwitchModule]
+                ngImports: [IgxTreeGridModule, IgxSwitchModule, IgxSnackbarModule, IgxButtonGroupModule]
             }),
             component: TreeGridSelectionSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
@@ -633,9 +636,9 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [TreeGridMultiCellSelectionComponent, IgxGridModule, IgxTreeGridModule, IgxToastModule],
+                imports: [TreeGridMultiCellSelectionComponent, IgxGridModule, IgxTreeGridModule, IgxToastModule, IgxSnackbarModule],
                 ngDeclarations: [TreeGridMultiCellSelectionComponent],
-                ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule]
+                ngImports: [IgxGridModule, IgxTreeGridModule, IgxToastModule, IgxSnackbarModule]
             }),
             component: TreeGridMultiCellSelectionComponent,
             shortenComponentPathBy: "/tree-grid/"
@@ -773,6 +776,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             }),
             component: TreeGridClipboardSampleComponent,
             shortenComponentPathBy: "/tree-grid/"
+        }));
+        // Tree Grid cell selection sample
+        configs.push(new Config({
+            component: TreeGridCellSelectionComponent,
+            additionalFiles: ["/src/app/data/utils.ts", "/src/app/tree-grid/data/employees-flat.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [TreeGridCellSelectionComponent, IgxGridModule, IgxSwitchModule,
+                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule],
+                ngDeclarations: [TreeGridCellSelectionComponent, IgxGridModule, IgxIconModule, IgxSwitchModule,
+                    IgxButtonGroupModule, IgxAvatarModule],
+                ngImports: [IgxGridModule]
+            })
         }));
 
         return configs;
