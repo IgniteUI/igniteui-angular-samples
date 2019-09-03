@@ -17,10 +17,10 @@ export class EmailSampleComponent implements OnInit {
     public draggedElements: number = 0;
 
     public folders: any[] = [
-        { icon: "inbox", text: "Inbox", dropChannel: ""},
+        { icon: "inbox", text: "Inbox", dropChannel: "inbox"},
         { icon: "star_rate", text: "Starred", dropChannel: "starred"},
         { icon: "error", text: "Important", dropChannel: "important"},
-        { icon: "send", text: "Sent", dropChannel: ""},
+        { icon: "send", text: "Sent", dropChannel: "sent"},
         { icon: "label", text: "Personal", dropChannel: "personal"},
         { icon: "label", text: "Work", dropChannel: "work"},
         { icon: "label", text: "Finances", dropChannel: "finances"}
