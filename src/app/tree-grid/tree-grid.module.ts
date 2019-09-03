@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
+    IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCsvExporterService,
@@ -14,6 +15,7 @@ import {
     IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule,
@@ -23,6 +25,7 @@ import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -149,7 +152,6 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
-
 @NgModule({
     declarations: [
         TreeGridChilddatakeySampleComponent,
@@ -209,6 +211,7 @@ import {
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent,
         TreeGridFilteringStyleComponent,
+        TreeGridCellSelectionComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent
     ],
     imports: [
@@ -228,7 +231,9 @@ import {
         IgxRadioModule,
         IgxAvatarModule,
         IgxToastModule,
-        IgxSelectModule
+        IgxSelectModule,
+        IgxBannerModule,
+        IgxSnackbarModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
