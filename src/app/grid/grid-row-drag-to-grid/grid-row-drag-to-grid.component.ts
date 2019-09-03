@@ -28,7 +28,6 @@ export class GridDragToGridSampleComponent {
     }
 
     public onDropAllowed(args) {
-        args.cancel = true;
         this.targetGrid.addRow(args.dragData.rowData);
         this.sourceGrid.deleteRow(args.dragData.rowID);
     }

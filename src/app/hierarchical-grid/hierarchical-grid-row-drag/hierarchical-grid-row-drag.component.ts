@@ -26,7 +26,6 @@ export class HGridDragSampleComponent {
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
-        args.cancel = true;
         const draggedRow: IgxHierarchicalRowComponent = args.dragData;
         draggedRow.delete();
     }

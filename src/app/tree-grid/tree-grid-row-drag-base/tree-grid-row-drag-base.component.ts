@@ -26,7 +26,6 @@ export class TreeGridRowDragBase {
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
-        args.cancel = true;
         const draggedRow: IgxTreeGridRowComponent = args.dragData;
         draggedRow.delete();
     }

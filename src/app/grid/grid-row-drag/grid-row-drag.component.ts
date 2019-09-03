@@ -49,8 +49,6 @@ export class GridDragSampleComponent {
     }
 
     public onDrop(args, planet: PlanetComponent) {
-        args.cancel = true;
-
         const row: IgxRowComponent<IgxGridBaseComponent & IGridDataBindable> = args.dragData;
         if (this.isDropAllowed(row.rowData.name, planet.name)) {
             row.rowData.planet = planet.name;
