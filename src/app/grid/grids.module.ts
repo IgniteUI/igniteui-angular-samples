@@ -4,10 +4,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
+    IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
     IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
-    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule,
+    IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
@@ -26,6 +27,7 @@ import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/
 import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
+import { GridExcelStyleFilteringLoadOnDemandComponent } from "./grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
@@ -35,6 +37,7 @@ import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filteri
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
 import { GridGroupByPagingSampleComponent } from "./grid-group-by-paging-sample/grid-group-by-paging-sample.component";
 import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-sample.component";
+import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
@@ -42,6 +45,7 @@ import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/gri
 import { GridMultiCellSelectionStyleComponent } from "./grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
 import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/grid-multi-cell-selection.component";
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
+import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
@@ -79,12 +83,15 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
+import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
+import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 // tslint:enable:max-line-length
 
 @NgModule({
@@ -133,6 +140,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridToolbarSample3Component,
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
+        GridMultiColumnHeadersStylingComponent,
         GridComponent,
         PasteHandler,
         GridCustomKBNavigationComponent,
@@ -161,7 +169,12 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridGroupByPagingSampleComponent,
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
-        GridCustomSummariesSelection
+        GridExcelStyleFilteringLoadOnDemandComponent,
+        GridCustomSummariesSelection,
+        GridMultiRowLayoutStylingComponent,
+        PinningStylingComponent,
+        GridGroupByStyling,
+        GridCellSelectionComponent
     ],
     imports: [
         CommonModule,
@@ -170,6 +183,7 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         GridsRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
+        IgxBannerModule,
         IgxButtonGroupModule,
         IgxButtonModule,
         IgxCheckboxModule,
@@ -191,7 +205,8 @@ import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-sty
         IgxToggleModule,
         IgxTooltipModule,
         IgxExpansionPanelModule,
-        IgxSelectModule
+        IgxSelectModule,
+        IgxSnackbarModule
     ],
     providers: [
         DataService,

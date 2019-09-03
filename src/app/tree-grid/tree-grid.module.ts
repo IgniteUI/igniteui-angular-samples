@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
+    IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCsvExporterService,
@@ -14,6 +15,7 @@ import {
     IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule,
@@ -23,6 +25,7 @@ import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -63,6 +66,9 @@ import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import {
+    TreeGridExcelStyleFilteringLoadOnDemandComponent
+} from "./tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
+import {
     TreeGridExcelStyleFilteringSample1Component
 } from "./tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
 import {
@@ -97,6 +103,9 @@ import {
 import {
     TreeGridMultiColumnHeadersSampleComponent
 } from "./tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
+import {
+    TreeGridMultiColumnHeadersStylingComponent
+} from "./tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
@@ -143,7 +152,6 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
-
 @NgModule({
     declarations: [
         TreeGridChilddatakeySampleComponent,
@@ -170,6 +178,7 @@ import {
         TreeGridFilteringTemplateSampleComponent,
         TreeGridFilteringCustomSampleComponent,
         TreeGridMultiColumnHeadersSampleComponent,
+        TreeGridMultiColumnHeadersStylingComponent,
         TreeGridVirtualizationSampleComponent,
         TreeGridDisplaydensitySampleComponent,
         TreeGridToolbarSample1Component,
@@ -201,7 +210,9 @@ import {
         TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent,
-        TreeGridFilteringStyleComponent
+        TreeGridFilteringStyleComponent,
+        TreeGridCellSelectionComponent,
+        TreeGridExcelStyleFilteringLoadOnDemandComponent
     ],
     imports: [
         CommonModule,
@@ -220,7 +231,9 @@ import {
         IgxRadioModule,
         IgxAvatarModule,
         IgxToastModule,
-        IgxSelectModule
+        IgxSelectModule,
+        IgxBannerModule,
+        IgxSnackbarModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })

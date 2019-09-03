@@ -19,6 +19,7 @@ export const interactionsRoutesData = {
     "ripple-sample-4": { displayName: "Ripple Duration", parentName: "Ripple" },
     "ripple-sample-5": { displayName: "Ripple Effect", parentName: "Ripple" },
     "ripple-sample-6": { displayName: "Ripple Color", parentName: "Ripple" },
+    "ripple-styling": { displayName: "Ripple Styling", parentName: "Ripple" },
     "toggle": { displayName: "Toggle Overview", parentName: "Toggle" },
     "toggle-sample-1": { displayName: "Toggle Content", parentName: "Toggle" },
     "toggle-sample-2": { displayName: "Automatic Toggle Actions", parentName: "Toggle" },
@@ -34,5 +35,9 @@ export const interactionsRoutesData = {
     "overlay-scroll-sample-1": { displayName: "Overlay Scroll Sample 1", parentName: "Overlay" },
     "overlay-scroll-sample-2": { displayName: "Overlay Scroll Sample 2", parentName: "Overlay" },
     "overlay-styling-simple": { displayName: "Overlay Styling", parentName: "Overlay"},
+    "email-sample": { displayName: "Email sample", parentName: "Drag and Drop" },
+    "kanban-sample": { displayName: "Kanban sample", parentName: "Drag and Drop" },
+    "list-reorder-sample": { displayName: "List Reorder sample", parentName: "Drag and Drop" },
+    "drag-dialog-sample": { displayName: "Drag Dialog Sample", parentName: "Drag and Drop"},
     "icons-sample": { displayName: "Icons sample", parentName: "Drag and Drop" }
 };

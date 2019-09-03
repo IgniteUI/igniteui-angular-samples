@@ -16,6 +16,7 @@ import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-
 import { HGridEditingEventsComponent } from "./hierarchical-grid-editing-events/hierarchical-grid-editing-events.component";
 import { HGridEditingStyleComponent } from "./hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
+import { HierarchicalGridExcelStyleFilteringLoadOnDemandComponent } from "./hierarchical-grid-excel-style-filtering-load-on-demand/hierarchical-grid-excel-style-filtering-load-on-demand.component";
 import {
     HGridExcelStyleFilteringSample1Component
 } from "./hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
@@ -35,6 +36,7 @@ import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hie
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiCellStyleComponent } from "./hierarchical-grid-multi-cell-style/hierarchical-grid-multi-cell-style.component";
 import { HGridMultiHeaderTemplateSampleComponent } from "./hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
+import { HGridMultiHeadersStylingComponent } from "./hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
@@ -49,6 +51,7 @@ import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierar
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
+import { HGridStylingComponent } from "./hierarchical-grid-styling/hierarchical-grid-styling.component";
 import { HGridSummaryStylingComponent } from "./hierarchical-grid-summary-styling/hierarchical-grid-summary-styling.component";
 import { HGridSummarySampleComponent } from "./hierarchical-grid-summary/hierarchical-grid-summary.component";
 import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolbar-style/hierarchical-grid-toolbar-style.component";
@@ -86,6 +89,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-sample-3"],
         path: "hierarchical-grid-excel-style-filtering-sample-3"
+    },
+    {
+        component: HierarchicalGridExcelStyleFilteringLoadOnDemandComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-load-on-demand"],
+        path: "hierarchical-grid-excel-style-filtering-load-on-demand"
     },
     {
         component: HGridExcelStyleFilteringStyleComponent,
@@ -202,6 +211,12 @@ export const hierarchicalGridRoutes: Routes = [
         path: "hierarchical-grid-multi-column"
     },
     {
+        component: HGridMultiHeadersStylingComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-multi-column-styling"],
+        path: "hierarchical-grid-multi-column-styling"
+    },
+    {
         component: HGridMultiCellStyleComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-multi-cell-style"],
         path: "hierarchical-grid-multi-cell-style"
@@ -312,6 +327,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-filtering-style"],
         path: "hierarchical-grid-filtering-style"
+    },
+    {
+        component: HGridStylingComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-styling"],
+        path: "hierarchical-grid-styling"
     }
 ];
 
