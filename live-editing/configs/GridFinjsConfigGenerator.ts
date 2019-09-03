@@ -12,8 +12,6 @@ import {
     IgxToggleModule
 } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
-import { ContextDialogWithChartComponent
-} from "../../src/app/grid-finjs/context-dialog-with-chart/context-dialog-with-chart.component";
 import { FinJSDemoComponent } from "../../src/app/grid-finjs/grid-finjs-demo.component";
 import { LocalDataService } from "../../src/app/grid-finjs/localData.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";

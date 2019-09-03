@@ -1,8 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { MatDialogModule} from "@angular/material";
-import { IgxButtonModule, IgxExcelExporterService, IgxGridModule,
+import { IgxButtonModule, IgxDialogModule, IgxExcelExporterService, IgxGridModule,
     IgxSliderModule, IgxSwitchModule } from "igniteui-angular";
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
@@ -16,15 +15,13 @@ import { IgxIndicatorsModule } from "igniteui-angular-charts/ES5/igx-indicators-
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
-import { ContextDialogWithChartComponent
-} from "./context-dialog-with-chart/context-dialog-with-chart.component";
 import { FinJSDemoComponent} from "./grid-finjs-demo.component";
 import { GridFinjsRoutingModule } from "./grid-finjs-routing.module";
 import { LocalDataService } from "./localData.service";
 
 @NgModule({
     declarations: [
-        FinJSDemoComponent, ContextDialogWithChartComponent
+        FinJSDemoComponent
     ],
     imports: [
 
@@ -42,16 +39,12 @@ import { LocalDataService } from "./localData.service";
         IgxNumericXAxisModule,
         IgxNumericYAxisModule,
         IgxCategoryXAxisModule,
-        MatDialogModule,
         IgxSwitchModule,
         IgxSliderModule,
         GridFinjsRoutingModule,
-        IgxGridModule
+        IgxGridModule,
+        IgxDialogModule
     ],
-    entryComponents: [
-        ContextDialogWithChartComponent
-    ],
-
     providers: [LocalDataService, IgxExcelExporterService]
 })
 export class GridFinjsModule {}
