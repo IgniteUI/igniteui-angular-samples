@@ -109,7 +109,7 @@ export class GridComponent implements OnInit, OnDestroy {
     }
 
     public getSpeed(athlete: any): any {
-        athlete["Speed"] = this.getSpeedeData(30);
+        athlete["Speed"] = this.getSpeedeData(40);
     }
 
     public getSpeedeData(minutes?: number): any[] {
@@ -118,7 +118,7 @@ export class GridComponent implements OnInit, OnDestroy {
         }
         const speed: any[] = [];
         for (let m = 0; m < minutes; m++) {
-            const value = this.getRandomNumber(20, 50);
+            const value = this.getRandomNumber(15, 20);
             speed.push({Speed: value, Minute: m});
         }
         return speed;
