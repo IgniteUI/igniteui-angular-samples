@@ -23,6 +23,7 @@ import {
     IgxRadioModule,
     IgxRippleModule,
     IgxSelectModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxTooltipModule
@@ -35,6 +36,7 @@ import {
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "../../src/app/grid/grid-boston-marathon/grid.component";
+import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component";
 import {
     GridClipboardSampleComponent
 } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
@@ -61,6 +63,8 @@ import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-fil
 import {
     GridCustomKBNavigationComponent
 } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
+import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import {
     GridCustomSummariesSelection
 } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
@@ -87,6 +91,9 @@ import {
 import {
     ExcelStyleFilteringStyleComponent
 } from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import {
+    GridExcelStyleFilteringLoadOnDemandComponent
+} from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import {
@@ -179,9 +186,12 @@ import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
+import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+
+// tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -331,13 +341,11 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridSelectionSampleComponent,
             additionalFiles: ["/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridSelectionSampleComponent],
+                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxSnackbarModule,
+                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxSwitchModule, GridSelectionSampleComponent],
                 ngDeclarations: [GridSelectionSampleComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
-                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule, IgxSnackbarModule,
+                    IgxIconModule, IgxInputGroupModule, IgxSwitchModule, HttpClientModule],
                 ngProviders: []
             })
         }));
@@ -772,6 +780,18 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridExcelStyleFilteringLoadOnDemandComponent,
+            additionalFiles: ["/src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service.ts",
+                              "/src/app/grid/grid-excel-style-filtering-load-on-demand/employees.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridExcelStyleFilteringLoadOnDemandComponent, IgxGridModule, RemoteValuesService],
+                ngDeclarations: [GridExcelStyleFilteringLoadOnDemandComponent],
+                ngImports: [IgxGridModule],
+                ngProviders: [RemoteValuesService]
+            })
+        }));
+
+        configs.push(new Config({
             component: ExcelStyleFilteringStyleComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -996,6 +1016,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridGroupByStyling, IgxGridModule],
                 ngDeclarations: [GridGroupByStyling],
+                ngImports: [IgxGridModule]
+            })
+        }));
+        configs.push(new Config({
+            component: GridCellSelectionComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCellSelectionComponent, IgxGridModule, IgxSwitchModule,
+                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule],
+                ngDeclarations: [GridCellSelectionComponent, IgxGridModule, IgxIconModule, IgxSwitchModule,
+                    IgxButtonGroupModule, IgxAvatarModule],
                 ngImports: [IgxGridModule]
             })
         }));

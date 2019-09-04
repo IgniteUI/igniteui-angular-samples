@@ -14,6 +14,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-excel-style-filtering-sample-1": { displayName: "Hierarchical Grid Excel Style Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-excel-style-filtering-sample-2": { displayName: "Hierarchical Grid Excel Style Filtering Operations", parentName: "Hierarchical Grid" },
     "hierarchical-grid-excel-style-filtering-sample-3": { displayName: "Hierarchical Grid Excel Style Filtering Templates", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-excel-style-filtering-load-on-demand": { displayName: "Hierarchical Grid Excel Style Filtering Load On Demand", parentName: "Hierarchical Grid" },
     "hierarchical-grid-excel-style-filtering-style": { displayName: "Hierarchical Grid Excel Style Filtering Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-filtering": { displayName: "Hierarchical Grid Custom Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },

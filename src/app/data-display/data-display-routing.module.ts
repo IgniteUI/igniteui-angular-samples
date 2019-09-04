@@ -11,6 +11,7 @@ import { CircularProgressbarComponent } from "./circular-progressbar/circular-pr
 import { dataDisplayRoutesData } from "./data-display-routes-data";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
+import { IconStylingSample } from "./icon/icon-styling-sample/icon-styling-sample.component";
 import { SvgIconSampleComponent } from "./icon/svg-icon-sample/svg-icon-sample.component";
 import { IgxForComponent } from "./igxFor/igxFor.component";
 import { LinearProgressbarSample1Component
@@ -127,6 +128,11 @@ export const dataDisplayRoutes: Routes = [
         component: TextHighlightSample2Component,
         data: dataDisplayRoutesData["text-highlight-2"],
         path: "text-highlight-2"
+    },
+    {
+        component: IconStylingSample,
+        data: dataDisplayRoutesData["icon-styling"],
+        path: "icon-styling"
     },
     {
         component: ChipStylingSampleComponent,

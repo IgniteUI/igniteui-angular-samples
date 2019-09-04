@@ -43,6 +43,9 @@ import { TreeGridDisplaydensitySampleComponent } from "./tree-grid-displaydensit
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
 import {
+    TreeGridExcelStyleFilteringLoadOnDemandComponent
+} from "./tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
+import {
     TreeGridExcelStyleFilteringSample1Component
 } from "./tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
 import {
@@ -89,6 +92,7 @@ import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 
+import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
@@ -272,6 +276,11 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-excel-style-filtering-style"
     },
     {
+        component: TreeGridExcelStyleFilteringLoadOnDemandComponent,
+        data: treeGridRoutesData["treegrid-excel-style-filtering-load-on-demand"],
+        path: "treegrid-excel-style-filtering-load-on-demand"
+    },
+    {
         component: TreeGridFilteringCustomSampleComponent,
         data: treeGridRoutesData["treegrid-filtering-custom"],
         path: "treegrid-filtering-custom"
@@ -415,6 +424,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridFilteringStyleComponent,
         data: treeGridRoutesData["treegrid-filtering-style"],
         path: "treegrid-filtering-style"
+    },
+    {
+        component: TreeGridCellSelectionComponent,
+        data: treeGridRoutesData["treegrid-cell-selection"],
+        path: "treegrid-cell-selection"
     }
 ];
 

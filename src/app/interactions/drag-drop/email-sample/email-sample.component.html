@@ -3,7 +3,8 @@
         <li *ngFor="let folder of folders" igxDrop 
             (enter)="enterDropZone($event)"
             (leave)="leaveDropZone($event)"
-            (dropped)="dropElement($event)" >
+            (dropped)="dropElement($event)"
+            [dropChannel]="folder.dropChannel" >
             <igx-icon fontSet="material">{{folder.icon}}</igx-icon> 
             <span class="folder-title">{{folder.text}}</span>
         </li>
@@ -23,6 +24,7 @@
                 [class.email-checked]="email.checked">
                 <div class="email-content flexlist"
                     [igxDrag]="email"
+                    [dragChannel]="['starred', 'important', 'personal', 'work', 'finances']"
                     [ghostTemplate]="customGhost"
                     [ghostOffsetX]="-5"
                     [ghostOffsetY]="-5"

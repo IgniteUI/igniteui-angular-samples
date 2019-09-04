@@ -4,10 +4,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
+    IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule,
     IgxColumnHidingModule, IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule,
     IgxExcelExporterService, IgxExpansionPanelModule, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule,
-    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
+    IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule,
+    IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
@@ -26,6 +27,7 @@ import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/
 import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
+import { GridExcelStyleFilteringLoadOnDemandComponent } from "./grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
@@ -83,6 +85,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { DataService } from "./services/data.service";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -170,10 +173,12 @@ import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-s
         GridGroupByPagingSampleComponent,
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
+        GridExcelStyleFilteringLoadOnDemandComponent,
         GridCustomSummariesSelection,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
-        GridGroupByStyling
+        GridGroupByStyling,
+        GridCellSelectionComponent
     ],
     imports: [
         CommonModule,
@@ -182,6 +187,7 @@ import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-s
         GridsRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
+        IgxBannerModule,
         IgxButtonGroupModule,
         IgxButtonModule,
         IgxCheckboxModule,
@@ -203,7 +209,8 @@ import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-s
         IgxToggleModule,
         IgxTooltipModule,
         IgxExpansionPanelModule,
-        IgxSelectModule
+        IgxSelectModule,
+        IgxSnackbarModule
     ],
     providers: [
         DataService,

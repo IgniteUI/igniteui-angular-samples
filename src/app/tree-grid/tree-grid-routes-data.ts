@@ -43,6 +43,8 @@ export const treeGridRoutesData = {
         displayName: "TreeGrid Excel Style Filtering Styling",
         parentName: "TreeGrid"
     },
+    "treegrid-excel-style-filtering-load-on-demand":
+        { displayName: "TreeGrid Excel Style Filtering Load On Demand", parentName: "TreeGrid" },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-header-template": {
         displayName: "TreeGrid Multi Column Header Template",
@@ -79,5 +81,6 @@ export const treeGridRoutesData = {
     "treegrid-column-hiding-style": { displayName: "TreeGrid Column Hiding Style", parentName: "TreeGrid" },
     "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
     "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
-    "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" }
+    "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" },
+    "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" }
 };
