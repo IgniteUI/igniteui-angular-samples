@@ -36,7 +36,7 @@
     </div>
 
     <igx-grid #grid1
-        (onRowSelectionChange)="changeChartDataSource($event, source, target, notification)" [data]="data"
+        (onRowSelectionChange)="rowSelectionChanged($event)" [data]="data"
         [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true"
         [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
@@ -71,7 +71,7 @@
         <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
             <ng-template igxCell let-cell="cell" class="center-text">
                 <button class="button-icon" igxButton="icon" igxRippleCentered="true">
-                    <igx-icon fontSet="material" (click)="chartClick(cell)">insert_chart_outlined</igx-icon>
+                    <igx-icon fontSet="material" (click)="openSingleRowChart(cell)">insert_chart_outlined</igx-icon>
                 </button>
             </ng-template>
         </igx-column>
@@ -188,7 +188,7 @@
 </div>
 
 <igx-dialog #dialog title="Chart" (onRightButtonSelect)="dialog.close()" rightButtonLabel="OK"
-    closeOnOutsideSelect="true" (onClose)="onClosing($event)">
+    closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
     <div style="padding: 20px">
         <igx-category-chart #chart1 [dataSource]="chartData" width="900px" chartType="column" xAxisInterval="20"
             xAxisLabelAngle="90" [includedProperties]="properties"
@@ -197,14 +197,16 @@
     </div>
 </igx-dialog>
 
-
 <ng-template let-series="series" let-item="item" #seriesTooltip>
     <div class="tooltipTable">
         <div class="tooltipRow">
             <div><b>Category:</b> {{ item.Category }}</div>
         </div>
         <div class="tooltipRow">
-            <div><b>Price:</b> {{ item.Price }}</div>
+            <div><b>Country:</b> {{ item.Country }}</div>
+        </div>
+        <div class="tooltipRow">
+            <div><b>Price:</b> ${{ item.Price }}</div>
         </div>
     </div>
 </ng-template>
