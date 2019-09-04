@@ -18,7 +18,7 @@
         </igx-row-island>
     </igx-row-island>
 
-    <igx-row-island [key]="'Tours'" [autoGenerate]="false" [rowSelectable]="true">
+    <igx-row-island [key]="'Tours'" [autoGenerate]="false" [rowSelection]="'multiple'">
         <igx-column field="Tour"></igx-column>
         <igx-column field="StartedOn" header="Started on"></igx-column>
         <igx-column field="Location"></igx-column>
@@ -38,6 +38,7 @@
             </div>
             <igx-checkbox class="row-selector-checkbox"
                 [checked]="rowContext.selected"
+                [readonly]="true"
                 disableRipple="true" [disableTransitions]="hierarchicalGrid.disableTransitions"
                 [aria-label]="hierarchicalGrid.rowCheckboxAriaLabel">
             </igx-checkbox>
