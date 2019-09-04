@@ -11,6 +11,7 @@ import {
     IgxSwitchModule,
     IgxToggleModule
 } from "igniteui-angular";
+import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { FinJSDemoComponent } from "../../src/app/grid-finjs/grid-finjs-demo.component";
 import { LocalDataService } from "../../src/app/grid-finjs/localData.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
@@ -26,7 +27,8 @@ export class GridFinjsConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/grid-finjs/localData.service.ts",
                 "/src/app/grid/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
+                imports: [IgxCategoryChartModule,
+                    IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,
                     IgxButtonModule, IgxExcelExporterService, IgxCsvExporterService, IgxSwitchModule,
                     IgxRippleModule, FinJSDemoComponent,
                     LocalDataService],
