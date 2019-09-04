@@ -72,5 +72,8 @@ export const gridsRoutesData = {
     "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
-    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" }
+    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
+    "grid-cell-selection": { displayName: "Grid Cell Selection", parentName: "Grid" },
+    "grid-excel-style-filtering-load-on-demand":
+        { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" }
 };

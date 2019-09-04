@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
+    IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCsvExporterService,
@@ -14,6 +15,7 @@ import {
     IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule,
@@ -25,6 +27,7 @@ import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -64,6 +67,9 @@ import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
+import {
+    TreeGridExcelStyleFilteringLoadOnDemandComponent
+} from "./tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
 import {
     TreeGridExcelStyleFilteringSample1Component
 } from "./tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
@@ -148,7 +154,6 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
-
 @NgModule({
     declarations: [
         TreeGridChilddatakeySampleComponent,
@@ -207,7 +212,9 @@ import {
         TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent,
-        TreeGridFilteringStyleComponent
+        TreeGridFilteringStyleComponent,
+        TreeGridCellSelectionComponent,
+        TreeGridExcelStyleFilteringLoadOnDemandComponent
     ],
     imports: [
         CommonModule,
@@ -228,7 +235,9 @@ import {
         IgxToastModule,
         IgxSelectModule,
         IgxSparklineModule,
-        IgxSparklineCoreModule
+        IgxSparklineCoreModule,
+        IgxBannerModule,
+        IgxSnackbarModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })

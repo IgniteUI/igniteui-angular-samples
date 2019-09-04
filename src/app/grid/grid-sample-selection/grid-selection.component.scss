@@ -35,10 +35,33 @@
 }
 
 .currency-badge-container {
-    width: 80px; 
+    width: 80px;
     float: right;
 }
 
 .badge-left {
     float: left;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+igx-snackbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.igx-snackbar {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    display: flex;
+    igx-icon {
+        margin: 20px;
+    }
 }
