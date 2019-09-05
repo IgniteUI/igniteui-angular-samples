@@ -42,6 +42,19 @@
             </ng-template>
         </igx-column>
 
+        <igx-column field="Speed" header="Speed" [width]="'190px'" [filterable]="false">
+            <ng-template igxCell let-val>
+                <igx-sparkline height="40px" width="180px"
+                    [dataSource]="val"
+                    valueMemberPath="Speed"
+                    displayType="Line"
+                    minimum="0"
+                    lineThickness="2"
+                    brush="rgb(0, 153, 255)">
+                </igx-sparkline>
+            </ng-template>
+        </igx-column>
+
         <igx-column field="BeatsPerMinute" header="Beats per minute" [hasSummary]="true" dataType="number" [summaries]="bnpSummary"
             [hidden]="hideBeatsPerMinute" [filterable]="false">
             <ng-template igxCell let-val>

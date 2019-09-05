@@ -126,7 +126,11 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     constructor(private excelExporterService: IgxExcelExporterService) { }
 
     public ngOnInit() {
-        this.localData = data;
+        const employees = data;
+        for (const employee of employees) {
+            this.getDeals(employee);
+        }
+        this.localData = employees;
     }
 
     public toggleHiding() {
@@ -202,5 +206,25 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
 
     public formatValue(val: any): string {
         return val.toLocaleString("en-us", { maximumFractionDigits: 2 });
+    }
+
+    public getDeals(employee: any): any {
+        employee["Deals"] = this.getDealsData();
+    }
+
+    public getDealsData(months?: number): any[] {
+        if (months === undefined) {
+            months = 12;
+        }
+        const deals: any[] = [];
+        for (let m = 0; m < months; m++) {
+            const value = this.getRandomNumber(-20, 30);
+            deals.push({Deals: value, Month: m});
+        }
+        return deals;
+    }
+
+    public  getRandomNumber(min: number, max: number): number {
+        return Math.round(min + Math.random() * (max - min));
     }
 }
