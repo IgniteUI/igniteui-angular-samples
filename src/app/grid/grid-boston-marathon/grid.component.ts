@@ -118,7 +118,7 @@ export class GridComponent implements OnInit, OnDestroy {
         }
         const speed: any[] = [];
         for (let m = 0; m < minutes; m++) {
-            const value = this.getRandomNumber(15, 20);
+            const value = this.getRandomNumber(17, 20);
             speed.push({Speed: value, Minute: m});
         }
         return speed;
