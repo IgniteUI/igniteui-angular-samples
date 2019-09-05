@@ -10,7 +10,7 @@ import { CalendarSample7Component } from "./calendar/calendar-sample-7/calendar-
 import { CalendarStylingSample } from "./calendar/calendar-styling-sample/calendar-styling-sample.component";
 import { CalendarViewsComponent } from "./calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "./calendar/calendar.component";
-import { CalendarMultiViewComponent } from './calendar/multiview/multiview.component';
+import { CalendarMultiViewComponent } from "./calendar/multiview/multiview.component";
 import { DatepickerDropdownComponent } from "./datepicker/datepicker-dropdown/datepicker-dropdown.component";
 import { DatepickerSample1Component } from "./datepicker/datepicker-sample-1/datepicker-sample-1.component";
 import { DatepickerSample2Component } from "./datepicker/datepicker-sample-2/datepicker-sample-2.component";
