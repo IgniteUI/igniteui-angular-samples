@@ -21,15 +21,15 @@ export class SummariesData implements AfterViewInit {
     public objectKeys = Object.keys;
 
     public ngAfterViewInit(): void {
-      this.grid.onSelection.subscribe((res) => {
-        this.updateData(res);
+      this.grid.onSelection.subscribe(() => {
+        this.updateData(this.grid.selectedCells);
       });
-      this.grid.onRangeSelection.subscribe((res) => {
+      this.grid.onRangeSelection.subscribe(() => {
         this.updateData(this.grid.selectedCells);
       });
     }
 
-    public updateData(res: any): void {
+    public updateData(cells: any): void {
       for (const key in this.summariesData) {
         if (this.summariesData.hasOwnProperty(key)) {
             delete this.summariesData[key];
@@ -40,29 +40,18 @@ export class SummariesData implements AfterViewInit {
       this.bools = [];
       this.dataExists = true;
 
-      if (res.hasOwnProperty("cell")) {
-        if (res.cell.column.dataType === "number") {
-          this.data.push(res.cell.value);
-        }
-        if (res.cell.column.dataType === "date") {
-          this.dates.push(res.cell.value);
-        }
-        if (res.cell.column.dataType === "boolean") {
-          this.bools.push(res.cell.value);
-        }
-      } else {
-        res.map((x) => {
-          if (x.column.dataType === "number") {
+      cells.map((x) => {
+        if (x.column.dataType === "number") {
             this.data.push(x.value);
-          }
-          if (x.column.dataType === "date") {
-              this.dates.push(x.value);
-          }
-          if (x.column.dataType === "boolean") {
+        }
+        if (x.column.dataType === "date") {
+            this.dates.push(x.value);
+        }
+        if (x.column.dataType === "boolean") {
             this.bools.push(x.value);
-          }
-        });
-      }
+        }
+      });
+
       const objectiveLength = this.grid.selectedCells.length;
       this.summarizeData(objectiveLength);
     }
