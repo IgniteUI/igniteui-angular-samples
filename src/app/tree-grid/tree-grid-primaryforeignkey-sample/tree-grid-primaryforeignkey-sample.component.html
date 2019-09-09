@@ -5,5 +5,16 @@
         <igx-column field="Name" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
         <igx-column field="JobTitle" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
         <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
+        <igx-column field="Performance" header="Performance" [width]="'260px'" [filterable]="false" >
+            <ng-template igxCell let-val>
+                <igx-sparkline height="40px" width="250px"
+                    [dataSource]="val"
+                    valueMemberPath="Points"
+                    displayType="Line"
+                    lineThickness="2"
+                    brush="rgb(21, 190, 6)" >
+                </igx-sparkline>
+            </ng-template>
+        </igx-column>
     </igx-tree-grid>
 </div>
