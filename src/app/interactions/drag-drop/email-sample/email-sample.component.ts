@@ -17,13 +17,13 @@ export class EmailSampleComponent implements OnInit {
     public draggedElements: number = 0;
 
     public folders: any[] = [
-        { icon: "inbox", text: "Inbox"},
-        { icon: "star_rate", text: "Starred"},
-        { icon: "error", text: "Important"},
-        { icon: "send", text: "Sent"},
-        { icon: "label", text: "Personal"},
-        { icon: "label", text: "Work"},
-        { icon: "label", text: "Finances"}
+        { icon: "inbox", text: "Inbox", dropChannel: "inbox"},
+        { icon: "star_rate", text: "Starred", dropChannel: "starred"},
+        { icon: "error", text: "Important", dropChannel: "important"},
+        { icon: "send", text: "Sent", dropChannel: "sent"},
+        { icon: "label", text: "Personal", dropChannel: "personal"},
+        { icon: "label", text: "Work", dropChannel: "work"},
+        { icon: "label", text: "Finances", dropChannel: "finances"}
     ];
 
     public emails: any[] = [
@@ -49,9 +49,7 @@ export class EmailSampleComponent implements OnInit {
 
     public dropElement(event: any): void {
         const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
-        if (folderTitle !== "Sent" && folderTitle !== "Inbox") {
-            this.emails = this.emails.filter(x => x.checked !== true);
-        }
+        this.emails = this.emails.filter(x => x.checked !== true);
         event.dragData = {};
         event.cancel = true;
         this.leaveDropZone(event);
@@ -59,9 +57,7 @@ export class EmailSampleComponent implements OnInit {
 
     public enterDropZone(event: any): void {
         const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
-        if (folderTitle !== "Sent" && folderTitle !== "Inbox") {
-            event.owner.element.nativeElement.style.background = DROP_ZONE_ACTIVE_COLOR;
-        }
+        event.owner.element.nativeElement.style.background = DROP_ZONE_ACTIVE_COLOR;
     }
 
     public leaveDropZone(event: any): void {

@@ -12,6 +12,7 @@ import {
     IgxIconModule,
     IgxInputGroupModule,
     IgxSelectModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule
 } from "igniteui-angular";
@@ -262,9 +263,10 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridSelectionSampleComponent, IgxSwitchModule],
+                imports: [IgxHierarchicalGridModule, HGridSelectionSampleComponent, IgxSwitchModule,
+                IgxSnackbarModule, IgxButtonGroupModule],
                 ngDeclarations: [HGridSelectionSampleComponent],
-                ngImports: [IgxHierarchicalGridModule, IgxSwitchModule]
+                ngImports: [IgxHierarchicalGridModule, IgxSwitchModule, IgxSnackbarModule, IgxButtonGroupModule]
             }),
             component: HGridSelectionSampleComponent
         }));
