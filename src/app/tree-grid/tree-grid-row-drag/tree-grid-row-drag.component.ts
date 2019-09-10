@@ -26,17 +26,16 @@ export class TreeGridRowDrag {
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
-        args.cancel = true;
         const draggedRow: IgxTreeGridRowComponent = args.dragData;
         draggedRow.delete();
     }
 
     public onEnterAllowed(args) {
-        this.changeGhostIcon(args.drag.dragGhost, DragIcon.ALLOW);
+        this.changeGhostIcon(args.drag.ghostElement, DragIcon.ALLOW);
     }
 
     public onLeaveAllowed(args) {
-        this.changeGhostIcon(args.drag.dragGhost, DragIcon.DEFAULT);
+        this.changeGhostIcon(args.drag.ghostElement, DragIcon.DEFAULT);
     }
 
     private changeGhostIcon(ghost, icon: string) {
