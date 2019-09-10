@@ -1,6 +1,8 @@
 import { HttpClientModule } from "@angular/common/http";
-import { IgxComboModule, IgxSelectModule, IgxSwitchModule, IgxToastModule } from "igniteui-angular";
+import { IgxButtonModule, IgxCardModule, IgxComboModule, IgxSelectModule,
+    IgxSwitchModule, IgxToastModule } from "igniteui-angular";
 import { RemoteService } from "../../src/app/grid/services/remote.service";
+import { ComboBindingComponent } from "../../src/app/lists/combo/combo-binding/combo-binding.component";
 import { ComboFeatures } from "../../src/app/lists/combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "../../src/app/lists/combo/combo-main/combo-main.component";
 import { ComboOverlayComponent } from "../../src/app/lists/combo/combo-overlay/combo-overlay.component";
@@ -89,6 +91,17 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxComboModule]
             }),
             component: ComboOverlayComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/lists/combo/combo-binding/cities.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxComboModule, IgxButtonModule, IgxCardModule, ComboBindingComponent],
+                ngDeclarations: [ComboBindingComponent],
+                ngImports: [IgxComboModule, IgxButtonModule, IgxCardModule]
+            }),
+            component: ComboFeatures,
+            shortenComponentPathBy: "/lists/combo/"
         }));
 
         return configs;
