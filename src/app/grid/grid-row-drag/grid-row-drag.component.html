@@ -11,7 +11,7 @@
     <div class="solar-system">
         <div class="planets">
             <planet #planet *ngFor="let data of planetData" [data]="data"
-                igxDrop (onEnter)="onEnter($event, planet)" (onLeave)="onLeave($event)" (onDrop)="onDrop($event, planet)"></planet>
+                igxDrop (enter)="onEnter($event, planet)" (leave)="onLeave($event)" (dropped)="onDrop($event, planet)"></planet>
         </div>
         <div class="sun-wrapper">
             <div class="sun">

@@ -17,7 +17,6 @@ export class GridRowReorderComponent {
     }
 
     public onDropAllowed(args) {
-        args.cancel = true;
         const event = args.originalEvent;
         const currRowIndex = this.getCurrentRowIndex(this.grid.rowList.toArray(),
             { x: event.pageX, y: event.pageY });
