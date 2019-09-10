@@ -13,9 +13,9 @@ export class ComboBindingComponent {
     @ViewChild("noValueKey", { read: IgxComboComponent, static: false })
     public comboNoValueKey: IgxComboComponent;
 
-    public towns: ICity[] = CITIES;
+    public cities: ICity[] = CITIES;
     public selectedValueKey: string[] = ["UK01", "BG01"];
-    public selectedNoValueKey: ICity[] = [this.towns[4], this.towns[0]];
+    public selectedNoValueKey: ICity[] = [this.cities[4], this.cities[0]];
 
     public handleSelectionChange(event: IComboSelectionChangeEventArgs) {
         console.log(event);
@@ -25,7 +25,7 @@ export class ComboBindingComponent {
         if (valueKey) {
             this.comboValueKey.selectItems(["UK01", "BG01", "DE01", "JP01"]);
         } else {
-            const selectedItems: ICity[] = this.towns.filter((e: ICity) => {
+            const selectedItems: ICity[] = this.cities.filter((e: ICity) => {
                 return ["UK01", "BG01", "DE01", "JP01"].indexOf(e.id) > -1;
             });
             this.comboNoValueKey.selectItems(selectedItems);

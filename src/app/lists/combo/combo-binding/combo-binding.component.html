@@ -1,5 +1,5 @@
 <div class="combo-section">
-    <igx-combo #withValueKey [data]="towns" valueKey="id" displayKey="name" groupKey="country"
+    <igx-combo #withValueKey [data]="cities" valueKey="id" displayKey="name" groupKey="country"
         [(ngModel)]="selectedValueKey">
     </igx-combo>
     <button igxButton  (click)="selectFavorites(true)">Select Favorites</button>
@@ -7,7 +7,7 @@
     <div>{{ selectedValueKey }}</div>
 </div>
 <div class="combo-section">
-    <igx-combo #noValueKey [data]="towns" displayKey="name" groupKey="country" [(ngModel)]="selectedNoValueKey">
+    <igx-combo #noValueKey [data]="cities" displayKey="name" groupKey="country" [(ngModel)]="selectedNoValueKey">
     </igx-combo>
     <button igxButton (click)="selectFavorites(false)">Select Favorites</button>
     <h6>Selected Cities:</h6>
