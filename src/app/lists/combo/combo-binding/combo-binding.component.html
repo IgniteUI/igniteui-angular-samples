@@ -1,27 +1,23 @@
 <div class="combo-section">
-    <button igxButton="raised" (click)="selectTopItems(true)">Select Most Populated</button>
     <igx-combo #withValueKey [data]="towns" valueKey="id" displayKey="name" groupKey="country"
         [(ngModel)]="selectedValueKey">
     </igx-combo>
-    <div>
-        <label for="codes">Selected IDs:</label>
-        <div name="codes">{{ selectedValueKey }}</div>
-    </div>
+    <button igxButton  (click)="selectFavorites(true)">Select Favorites</button>
+    <h6>Selected Cities:</h6>
+    <div>{{ selectedValueKey }}</div>
 </div>
 <div class="combo-section">
-    <button igxButton="raised" (click)="selectTopItems(false)">Select Most Populated</button>
     <igx-combo #noValueKey [data]="towns" displayKey="name" groupKey="country" [(ngModel)]="selectedNoValueKey">
     </igx-combo>
-    <label for="cities">Selected Cities:</label>
-    <div name="cities" class="cities-container">
-        <div class="card-wrapper" *ngFor="let city of selectedNoValueKey">
-            <igx-card type="outlined" width="120px">
-                <igx-card-header>
-                    <h5 igxCardHeaderTitle>{{ city.name }}</h5>
-                    <h5 igxCardHeaderSubtitle>{{ city.country }}</h5>
-                    <div class="card-id">{{ city.id }}</div>
-                </igx-card-header>
-            </igx-card>
-        </div>
+    <button igxButton (click)="selectFavorites(false)">Select Favorites</button>
+    <h6>Selected Cities:</h6>
+    <div class="cities-container">
+        <igx-card type="outlined" *ngFor="let city of selectedNoValueKey">
+            <igx-card-header>
+                <h5 igxCardHeaderTitle>{{ city.name }}</h5>
+                <h5 igxCardHeaderSubtitle>{{ city.country }}</h5>
+                {{ city.id }}
+            </igx-card-header>
+        </igx-card>
     </div>
 </div>

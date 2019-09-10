@@ -1,7 +1,7 @@
 :host {
     display: flex;
     width: 100%;
-    flex-flow: row;
+    flex-flow: row wrap;
 }
 
 button {
@@ -17,33 +17,13 @@ button {
     }
 }
 
-.model-container {
-    max-width: 100%;
-    height: 56px;
-    overflow: hidden;
-    margin-bottom: 8px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid black;
-}
 .cities-container {
-    display: flex;
-    flex-flow: column;
     max-height: 200px;
-    border-bottom: 1px solid #a3a3a3;
     overflow-y: auto;
     margin: 8px 0px;
-}
-.card-wrapper {
-    padding: 8px;
-}
 
-.card-id {
-  display:flex;
-  width: 64px;
-  justify-content: center;
-  align-items: center;
-  background: #838388;
-  border-radius: 4px;
-  color: white;
-  padding-bottom: 4px;
+    igx-card {
+        padding: 8px;
+        overflow: visible;
+    }
 }

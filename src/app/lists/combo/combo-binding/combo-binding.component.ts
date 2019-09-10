@@ -21,7 +21,7 @@ export class ComboBindingComponent {
         console.log(event);
     }
 
-    public selectTopItems(valueKey: boolean) {
+    public selectFavorites(valueKey: boolean) {
         if (valueKey) {
             this.comboValueKey.selectItems(["UK01", "BG01", "DE01", "JP01"]);
         } else {
