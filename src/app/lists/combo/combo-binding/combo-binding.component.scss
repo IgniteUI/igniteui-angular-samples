@@ -11,19 +11,13 @@ button {
 .combo-section {
     margin: 24px;
     width: 320px;
-
-    label {
-        font-weight: 800;
-    }
 }
 
 .cities-container {
     max-height: 200px;
     overflow-y: auto;
-    margin: 8px 0px;
 
     igx-card {
-        padding: 8px;
-        overflow: visible;
+        margin: 8px 8px 8px 0;
     }
 }
