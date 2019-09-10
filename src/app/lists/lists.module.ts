@@ -6,6 +6,7 @@ import {
     IgxAvatarModule,
     IgxButtonGroupModule,
     IgxButtonModule,
+    IgxCardModule,
     IgxComboModule,
     IgxFilterModule,
     IgxIconModule,
@@ -18,6 +19,7 @@ import {
     IgxToastModule
 } from "igniteui-angular";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
+import { ComboBindingComponent } from "./combo/combo-binding/combo-binding.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
 import { ComboOverlayComponent } from "./combo/combo-overlay/combo-overlay.component";
@@ -54,7 +56,8 @@ import { ListsRoutingModule } from "./lists-routing.module";
         ComboMainComponent,
         ComboRemoteComponent,
         ComboTemplateComponent,
-        ComboOverlayComponent
+        ComboOverlayComponent,
+        ComboBindingComponent
     ],
     imports: [
         CommonModule,
@@ -73,7 +76,8 @@ import { ListsRoutingModule } from "./lists-routing.module";
         IgxToastModule,
         IgxButtonGroupModule,
         HttpClientModule,
-        IgxRippleModule
+        IgxRippleModule,
+        IgxCardModule
     ]
 })
 export class ListsModule { }
