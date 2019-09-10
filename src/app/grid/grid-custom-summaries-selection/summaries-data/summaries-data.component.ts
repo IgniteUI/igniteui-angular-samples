@@ -52,7 +52,8 @@ export class SummariesData implements AfterViewInit {
         }
       });
 
-      const objectiveLength = this.grid.selectedCells.length;
+      let objectiveLength = 0;
+      this.grid.getSelectedData().forEach((x) => { objectiveLength += Object.keys(x).length })
       this.summarizeData(objectiveLength);
     }
 
