@@ -352,30 +352,25 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridSelectionTemplateExcelComponent,
-            additionalFiles: ["/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridSelectionTemplateExcelComponent],
+                imports: [IgxGridModule, GridSelectionTemplateExcelComponent],
                 ngDeclarations: [GridSelectionTemplateExcelComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
-                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngImports: [IgxGridModule],
                 ngProviders: []
             })
         }));
 
         configs.push(new Config({
             component: GridSelectionTemplateNumbersComponent,
-            additionalFiles: ["/src/app/grid/services/financialData.ts"],
+            additionalFiles: [
+                "/src/app/data/customers.ts",
+                "src/assets/images/card/avatars/igLogo.png"
+            ],
             appModuleConfig: new AppModuleConfig({
-                imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
-                    IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridSelectionTemplateNumbersComponent],
+                imports: [IgxCheckboxModule, IgxGridModule, GridSelectionTemplateNumbersComponent],
                 ngDeclarations: [GridSelectionTemplateNumbersComponent],
-                ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
-                    IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
+                ngImports: [IgxCheckboxModule, IgxGridModule],
                 ngProviders: []
             })
         }));

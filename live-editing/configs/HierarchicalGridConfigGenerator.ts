@@ -76,12 +76,13 @@ import { HierarchicalGridToolbarStyleComponent } from "../../src/app/hierarchica
 import { HGridToolbarCustomSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HGridSelectionTemplateNumbersSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component"
 import { RemoteLoDService } from "../../src/app/hierarchical-grid/services/remote-lod.service";
 import { RemoteValuesService } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { HGridStylingComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-styling/hierarchical-grid-styling.component';
+import { HGridStylingComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-styling/hierarchical-grid-styling.component";
 
 export class HierarchicalGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -576,6 +577,19 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridStylingComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/hierarchical-grid/data.ts",
+                "src/assets/images/card/avatars/igLogo.png"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCheckboxModule, IgxHierarchicalGridModule, HGridSelectionTemplateNumbersSampleComponent],
+                ngDeclarations: [HGridSelectionTemplateNumbersSampleComponent],
+                ngImports: [IgxCheckboxModule, IgxHierarchicalGridModule]
+            }),
+            component: HGridSelectionTemplateNumbersSampleComponent
         }));
 
         return configs;
