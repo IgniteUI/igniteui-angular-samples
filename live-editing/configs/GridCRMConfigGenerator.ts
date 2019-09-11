@@ -28,6 +28,7 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridCRMComponent,
             additionalFiles: ["/src/app/grid-crm/grid-crm/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts, igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
