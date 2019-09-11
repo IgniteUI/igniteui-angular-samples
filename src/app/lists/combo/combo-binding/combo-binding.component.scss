@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+}
+
+button {
+    margin: 8px 0px;
+}
+
+.combo-section {
+    margin: 24px;
+    width: 320px;
+}
+
+.cities-container {
+    max-height: 200px;
+    overflow-y: auto;
+
+    igx-card {
+        margin: 8px 8px 8px 0;
+    }
+}

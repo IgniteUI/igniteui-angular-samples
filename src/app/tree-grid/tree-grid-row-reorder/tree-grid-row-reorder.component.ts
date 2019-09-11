@@ -24,7 +24,6 @@ export class TreeGridRowReorderComponent {
     }
 
     public dropInGrid(args: IDropDroppedEventArgs): void {
-        args.cancel = true;
         const draggedRow: IgxTreeGridRowComponent = args.dragData;
         const event = args.originalEvent;
         const cursorPosition: Point = { x: event.pageX, y: event.pageY };
