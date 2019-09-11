@@ -104,7 +104,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid ChildDataKey Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts, igniteui-angular-core"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent, IgxExcelExporterService, IgxCsvExporterService, IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [TreeGridChilddatakeySampleComponent],
@@ -118,7 +118,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid Primary/Foreign Key Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts, igniteui-angular-core"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridPrimaryforeignkeySampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [TreeGridPrimaryforeignkeySampleComponent],

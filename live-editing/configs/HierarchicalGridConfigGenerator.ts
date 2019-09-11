@@ -365,7 +365,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts, igniteui-angular-core"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridColumnResizingSampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [HGridColumnResizingSampleComponent],
