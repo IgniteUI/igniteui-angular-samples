@@ -1,7 +1,7 @@
 import { formatDate } from "@angular/common";
 import { AfterViewInit, Component, Input } from "@angular/core";
 
-import { IgxGridComponent } from "igniteui-angular";
+import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
 
 @Component({
   selector: "summaries-data",
@@ -22,14 +22,14 @@ export class SummariesData implements AfterViewInit {
 
     public ngAfterViewInit(): void {
       this.grid.onSelection.subscribe(() => {
-        this.updateData(this.grid.selectedCells);
+        this.updateData(this.grid.getSelectedData());
       });
       this.grid.onRangeSelection.subscribe(() => {
-        this.updateData(this.grid.selectedCells);
+        this.updateData(this.grid.getSelectedData());
       });
     }
 
-    public updateData(cells: any): void {
+    public updateData(selectedData: any): void {
       for (const key in this.summariesData) {
         if (this.summariesData.hasOwnProperty(key)) {
             delete this.summariesData[key];
@@ -39,21 +39,24 @@ export class SummariesData implements AfterViewInit {
       this.dates = [];
       this.bools = [];
       this.dataExists = true;
-
-      cells.map((x) => {
-        if (x.column.dataType === "number") {
-            this.data.push(x.value);
-        }
-        if (x.column.dataType === "date") {
-            this.dates.push(x.value);
-        }
-        if (x.column.dataType === "boolean") {
-            this.bools.push(x.value);
-        }
-      });
-
       let objectiveLength = 0;
-      this.grid.getSelectedData().forEach((x) => { objectiveLength += Object.keys(x).length })
+
+      selectedData.forEach((x) => {
+        objectiveLength += Object.keys(x).length;
+        Object.keys(x).forEach((y) => {
+            const cellColumn: IgxColumnComponent = this.grid.columns.filter((z) => z.field === y)[0];
+            if (cellColumn.dataType === "number") {
+                this.data.push(x[y]);
+            }
+            if (cellColumn.dataType === "date") {
+                this.dates.push(x[y]);
+            }
+            if (cellColumn.dataType === "boolean") {
+                this.bools.push(x[y]);
+            }
+        });
+       });
+
       this.summarizeData(objectiveLength);
     }
 
