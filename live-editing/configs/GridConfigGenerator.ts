@@ -192,7 +192,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts, igniteui-angular-core"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
