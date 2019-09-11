@@ -19,6 +19,8 @@ import {
     IgxToggleModule,
     IgxTreeGridModule
 } from "igniteui-angular";
+import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
     TreeGridBatchEditingSampleComponent
@@ -224,7 +226,9 @@ import {
         IgxRadioModule,
         IgxAvatarModule,
         IgxToastModule,
-        IgxSelectModule
+        IgxSelectModule,
+        IgxSparklineModule,
+        IgxSparklineCoreModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
