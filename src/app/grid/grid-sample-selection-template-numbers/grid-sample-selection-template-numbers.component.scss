@@ -18,24 +18,14 @@
 .row-selector {
     width: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 0 10px;
     height: 100%;
 }
 
-.row-selector-checkbox {
-    pointer-events: none;
-}
-
 .row-selector-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    span {
-        width: 40px;
-        text-align: center;
-    }
+    width: 35px;
+    text-align: center;
 }
 
 ::ng-deep .igx-grid__cbx-selection {
