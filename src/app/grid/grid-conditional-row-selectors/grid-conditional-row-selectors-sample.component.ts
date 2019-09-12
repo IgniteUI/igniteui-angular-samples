@@ -14,7 +14,7 @@ export class GridConditionalRowSelectorsComponent {
 
     constructor() {
         this.data = DATA;
-        this.data.filter(dataItem => dataItem.Country === "Mexico").map((item) => {
+        this.data.filter(dataItem => dataItem.ID.indexOf("A") === -1).map((item) => {
             this.disabledCollection.push(item.ID);
         });
     }
