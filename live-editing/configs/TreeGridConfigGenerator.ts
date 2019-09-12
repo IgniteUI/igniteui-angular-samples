@@ -22,6 +22,8 @@ import {
     IgxToastModule,
     IgxTreeGridModule
 } from "igniteui-angular";
+import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridClipboardSampleComponent } from "../../src/app/tree-grid/tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
@@ -98,10 +100,11 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid ChildDataKey Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent, IgxExcelExporterService, IgxCsvExporterService],
+                imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent, IgxExcelExporterService, IgxCsvExporterService, IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [TreeGridChilddatakeySampleComponent],
-                ngImports: [IgxTreeGridModule],
+                ngImports: [IgxTreeGridModule, IgxSparklineCoreModule, IgxSparklineModule],
                 ngProviders: [IgxExcelExporterService, IgxCsvExporterService]
             }),
             component: TreeGridChilddatakeySampleComponent,
@@ -111,10 +114,11 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         // TreeGrid Primary/Foreign Key Sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule, TreeGridPrimaryforeignkeySampleComponent],
+                imports: [IgxTreeGridModule, TreeGridPrimaryforeignkeySampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [TreeGridPrimaryforeignkeySampleComponent],
-                ngImports: [IgxTreeGridModule]
+                ngImports: [IgxTreeGridModule, IgxSparklineCoreModule, IgxSparklineModule]
             }),
             component: TreeGridPrimaryforeignkeySampleComponent,
             shortenComponentPathBy: "/tree-grid/"
