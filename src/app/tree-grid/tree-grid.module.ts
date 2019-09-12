@@ -25,6 +25,9 @@ import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
+    TreeGridAdvancedFilteringSampleComponent
+} from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
+import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
@@ -214,6 +217,7 @@ import {
         TreeGridToolbarStyleComponent,
         TreeGridFilteringStyleComponent,
         TreeGridCellSelectionComponent,
+        TreeGridAdvancedFilteringSampleComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent
     ],
     imports: [

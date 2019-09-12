@@ -94,6 +94,7 @@ import { RemoteValuesService } from '../../src/app/tree-grid/tree-grid-excel-sty
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { TreeGridAdvancedFilteringSampleComponent } from '../../src/app/tree-grid/tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component';
 
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -788,6 +789,18 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                     IgxButtonGroupModule, IgxAvatarModule],
                 ngImports: [IgxGridModule]
             })
+        }));
+
+        // TreeGrid Advanced Filtering sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridAdvancedFilteringSampleComponent],
+                ngDeclarations: [TreeGridAdvancedFilteringSampleComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridAdvancedFilteringSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
         }));
 
         return configs;
