@@ -63,8 +63,6 @@ import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-fil
 import {
     GridCustomKBNavigationComponent
 } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
-import { GridCustomSummariesSelection } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
-import { SummariesData } from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import {
     GridCustomSummariesSelection
 } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
@@ -80,6 +78,10 @@ import {
     GridEditingStyleSample
 } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import {
+    GridExcelStyleFilteringLoadOnDemandComponent
+} from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
+import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
+import {
     ExcelStyleFilteringSample1Component
 } from "../../src/app/grid/grid-excel-style-filtering-sample-1/grid-excel-style-filtering-sample-1.component";
 import {
@@ -91,9 +93,6 @@ import {
 import {
     ExcelStyleFilteringStyleComponent
 } from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
-import {
-    GridExcelStyleFilteringLoadOnDemandComponent
-} from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import {
@@ -186,7 +185,6 @@ import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
-import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -364,11 +362,11 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridSelectionTemplateNumbersComponent,
             additionalFiles: [
-                "/src/app/data/customers.ts",
-                "src/assets/images/card/avatars/igLogo.png"
+                "/src/app/data/customers.ts"
             ],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCheckboxModule, IgxGridModule, GridSelectionTemplateNumbersComponent],
+                imports: [IgxCheckboxModule, IgxGridModule,
+                    GridSelectionTemplateNumbersComponent],
                 ngDeclarations: [GridSelectionTemplateNumbersComponent],
                 ngImports: [IgxCheckboxModule, IgxGridModule],
                 ngProviders: []
