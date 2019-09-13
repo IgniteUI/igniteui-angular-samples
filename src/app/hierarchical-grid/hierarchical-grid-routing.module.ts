@@ -2,6 +2,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "./hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
 import { HGridCostumHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
@@ -327,6 +328,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-filtering-style"],
         path: "hierarchical-grid-filtering-style"
+    },
+    {
+        component: HGridAdvancedFilteringSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-advanced-filtering"],
+        path: "hierarchical-grid-advanced-filtering"
     },
     {
         component: HGridStylingComponent,
