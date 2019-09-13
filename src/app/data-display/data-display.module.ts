@@ -28,6 +28,9 @@ import {
 import {
     LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
+import {
+    LinearProgressbarStylingComponent
+} from "./linear-progressbar/linear-progressbar-styling-sample/linear-progressbar-styling-sample.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
@@ -59,6 +62,7 @@ import {
         LinearProgressbarComponent,
         LinearProgressbarSample1Component,
         LinearProgressbarSample2Component,
+        LinearProgressbarStylingComponent,
         MaskSample1Component,
         MaskSample2Component,
         MaskSample3Component,

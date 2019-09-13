@@ -18,6 +18,9 @@ import { LinearProgressbarSample1Component
 } from "./linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component";
 import { LinearProgressbarSample2Component
 } from "./linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component";
+import {
+    LinearProgressbarStylingComponent
+} from "./linear-progressbar/linear-progressbar-styling-sample/linear-progressbar-styling-sample.component";
 import { LinearProgressbarComponent } from "./linear-progressbar/linear-progressbar.component";
 import { MaskSample1Component } from "./mask/mask-sample-1/mask-sample-1.component";
 import { MaskSample2Component } from "./mask/mask-sample-2/mask-sample-2.component";
@@ -93,6 +96,11 @@ export const dataDisplayRoutes: Routes = [
         component: LinearProgressbarSample2Component,
         data: dataDisplayRoutesData["linear-progressbar-sample-2"],
         path: "linear-progressbar-sample-2"
+    },
+    {
+        component: LinearProgressbarStylingComponent,
+        data: dataDisplayRoutesData["linear-progressbar-styling"],
+        path: "linear-progressbar-styling"
     },
     {
         component: MaskSample1Component,
