@@ -16,6 +16,9 @@ import { EmailFilterPipe } from "./chip/email-filter-pipe";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import {
+    CircularStylingSampleComponent
+} from "./circular-progressbar/circular-styling-sample/circular-styling-sample.component";
 import { DataDisplayRoutingModule } from "./data-display-routing.module";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
@@ -67,6 +70,7 @@ import {
         TextHighlightSample1Component,
         TextHighlightSample2Component,
         CircularIndeterminateProgressbarComponent,
+        CircularStylingSampleComponent,
         ChipStylingSampleComponent
     ],
     imports: [

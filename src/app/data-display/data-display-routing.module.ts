@@ -8,6 +8,9 @@ import { ChipSampleComponent } from "./chip/chip.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import {
+    CircularStylingSampleComponent
+} from "./circular-progressbar/circular-styling-sample/circular-styling-sample.component";
 import { dataDisplayRoutesData } from "./data-display-routes-data";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
@@ -54,6 +57,11 @@ export const dataDisplayRoutes: Routes = [
         component: CircularIndeterminateProgressbarComponent,
         data: dataDisplayRoutesData["circular-indeterminate-progressbar"],
         path: "circular-indeterminate-progressbar"
+    },
+    {
+        component: CircularStylingSampleComponent,
+        data: dataDisplayRoutesData["circular-styling-sample"],
+        path: "circular-styling-sample"
     },
     {
         component: CircularProgressbarComponent,
