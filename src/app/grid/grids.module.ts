@@ -77,6 +77,8 @@ import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sa
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
+import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
+import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
@@ -134,6 +136,8 @@ import { DataService } from "./services/data.service";
         PinningSampleComponent,
         PinningToolbarSampleComponent,
         GridSelectionSampleComponent,
+        GridSelectionTemplateExcelComponent,
+        GridSelectionTemplateNumbersComponent,
         GridSearchSampleComponent,
         SortingSampleComponent,
         SortingStylingComponent,

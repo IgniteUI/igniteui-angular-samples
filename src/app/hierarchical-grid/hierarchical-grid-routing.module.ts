@@ -49,6 +49,7 @@ import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchi
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
+import { HGridSelectionTemplateNumbersSampleComponent} from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
@@ -126,6 +127,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-selection"],
         path: "hierarchical-grid-selection"
+    },
+    {
+        component: HGridSelectionTemplateNumbersSampleComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-selection-template-numbers"],
+        path: "hierarchical-grid-selection-template-numbers"
     },
     {
         component: HGridSummarySampleComponent,

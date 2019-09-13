@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, TemplateRef, ViewChild, ViewEncapsulation } from "@angular/core";
 import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
-import { DATA } from "../grid-sample-selection/financialData";
+import { DATA } from "../services/financialData";
 
 @Component({
     selector: "app-grid-moving-styled-sample",
