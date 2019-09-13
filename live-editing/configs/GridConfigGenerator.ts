@@ -1008,7 +1008,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridConditionalRowSelectorsComponent,
-            additionalFiles: ["/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [
                     IgxGridModule, GridConditionalRowSelectorsComponent, IgxCheckboxModule],

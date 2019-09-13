@@ -176,7 +176,6 @@ import { DataService } from "./services/data.service";
         PinningStylingComponent,
         GridGroupByStyling,
         GridCellSelectionComponent,
-        GridCustomSummariesSelection,
         GridConditionalRowSelectorsComponent
     ],
     imports: [
