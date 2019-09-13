@@ -7,7 +7,7 @@ import { SINGERS } from "../data";
     templateUrl: "hierarchical-grid-advanced-filtering.component.html"
 })
 
-export class HGridAdvancedFilteringSampleComponent{
+export class HGridAdvancedFilteringSampleComponent {
     public localdata;
 
     constructor() {
