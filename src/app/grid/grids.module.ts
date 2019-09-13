@@ -23,6 +23,7 @@ import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-too
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
+import { GridConditionalRowSelectorsComponent } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
@@ -95,7 +96,6 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
-// tslint:enable:max-line-length
 
 @NgModule({
     declarations: [
@@ -179,7 +179,8 @@ import { DataService } from "./services/data.service";
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
         GridGroupByStyling,
-        GridCellSelectionComponent
+        GridCellSelectionComponent,
+        GridConditionalRowSelectorsComponent
     ],
     imports: [
         CommonModule,

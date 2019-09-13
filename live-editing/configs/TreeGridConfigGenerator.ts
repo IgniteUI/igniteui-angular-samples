@@ -37,6 +37,9 @@ import { TreeGridPinningToolbarSampleComponent } from "../../src/app/tree-grid/t
 import { TreeGridCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import { TreeGridColumnResizingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
+import {
+    TreeGridConditionalRowSelectorsSampleComponent
+} from "../../src/app/tree-grid/tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
 import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingEventsComponent } from "../../src/app/tree-grid/tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-editing-sample/tree-grid-editing-sample.component";
@@ -789,6 +792,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                     IgxButtonGroupModule, IgxAvatarModule],
                 ngImports: [IgxGridModule]
             })
+        }));
+
+        // TreeGrid Conditional Row Selection Template actions sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridConditionalRowSelectorsSampleComponent, IgxCheckboxModule],
+                ngDeclarations: [TreeGridConditionalRowSelectorsSampleComponent],
+                ngImports: [IgxTreeGridModule, IgxCheckboxModule]
+            }),
+            component: TreeGridConditionalRowSelectorsSampleComponent
         }));
 
         // TreeGrid Row Selectors Template - Numbers

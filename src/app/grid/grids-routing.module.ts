@@ -71,6 +71,9 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
+import {
+    GridConditionalRowSelectorsComponent
+} from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -458,6 +461,11 @@ export const gridsRoutes: Routes = [
         component: GridCellSelectionComponent,
         data: gridsRoutesData["grid-cell-selection"],
         path: "grid-cell-selection"
+    },
+    {
+        component: GridConditionalRowSelectorsComponent,
+        data: gridsRoutesData["grid-conditional-row-selectors"],
+        path: "grid-conditional-row-selectors"
     }
 ];
 
