@@ -131,6 +131,9 @@ import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-r
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import {
+    TreeGridSelectionTemplateNumbersSampleComponent
+} from "./tree-grid-selection-template-numbers/tree-grid-selection-template-numbers.component";
+import {
     TreeGridContextmenuComponent
 } from "./tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
@@ -168,6 +171,7 @@ import {
         TreeGridColumnHidingSampleComponent,
         TreeGridColumnHidingToolbarSampleComponent,
         TreeGridSelectionSampleComponent,
+        TreeGridSelectionTemplateNumbersSampleComponent,
         TreeGridSortingSampleComponent,
         TreeGridSortingStylingComponent,
         TreeGridContextmenuComponent,
