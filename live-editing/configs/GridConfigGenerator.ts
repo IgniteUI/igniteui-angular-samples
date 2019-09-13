@@ -28,7 +28,6 @@ import {
     IgxToastModule,
     IgxTooltipModule
 } from "igniteui-angular";
-// tslint:disable-next-line: max-line-length
 import {
     CustomGridPagingStyleSample
 } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
