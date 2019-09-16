@@ -28,9 +28,12 @@ import {
     IgxToastModule,
     IgxTooltipModule
 } from "igniteui-angular";
+// tslint:disable-next-line: max-line-length
+import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import {
-    CustomGridPagingStyleSample
-} from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
+     CustomGridPagingStyleSample
+    } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
 import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
@@ -75,14 +78,15 @@ import {
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
-import { GridEditingEventsComponent } from "../../src/app/grid/grid-editing-events/grid-editing-events.component";
+import {
+    GridEditingEventsComponent
+} from "../../src/app/grid/grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import {
     GridEditingStyleSample
 } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import {
     GridExcelStyleFilteringLoadOnDemandComponent
-// tslint:disable-next-line: max-line-length
 } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import {
@@ -201,14 +205,16 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridComponent, DataService],
+                    IgxRippleModule, IgxSwitchModule, GridComponent, DataService,
+                    IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
-                    IgxSwitchModule, HttpClientModule],
+                    IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule],
                 ngProviders: [DataService]
             })
         }));
