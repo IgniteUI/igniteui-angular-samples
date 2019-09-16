@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild, ChangeDetectorRef } from "@angular/core";
+// tslint:disable-next-line:max-line-length
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
     DefaultSortingStrategy, IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent,
     IgxGridCellComponent,
