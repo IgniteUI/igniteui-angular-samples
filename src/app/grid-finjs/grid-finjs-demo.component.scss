@@ -210,3 +210,10 @@
     padding: 5px 15px;
     height: 95%;
 }
+:host ::ng-deep{
+    .finjs-play-controls {
+        .igx-button--flat{
+            font-size: 0.7em
+        }
+    }
+}
