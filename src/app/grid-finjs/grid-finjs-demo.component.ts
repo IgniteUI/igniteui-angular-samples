@@ -1,7 +1,13 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { DefaultSortingStrategy, IgxButtonGroupComponent, IgxGridComponent, IgxSliderComponent,
-    SortingDirection} from "igniteui-angular";
-import { Observable, timer } from "rxjs";
+import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild, ChangeDetectorRef } from "@angular/core";
+import {
+    DefaultSortingStrategy, IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent,
+    IgxGridCellComponent,
+    IgxGridComponent,
+    IgxSliderComponent,
+    SortingDirection
+} from "igniteui-angular";
+import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
+import { timer } from "rxjs";
 import { debounce } from "rxjs/operators";
 import { LocalDataService } from "./localData.service";
 
@@ -14,13 +20,20 @@ import { LocalDataService } from "./localData.service";
 export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
+    @ViewChild("buttonGroup2", { static: true }) public buttonGroup2: IgxButtonGroupComponent;
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
+    @ViewChild("chart1", { static: true }) public chart1: IgxCategoryChartComponent;
+    @ViewChild("dialog", { static: true }) public dialog: IgxDialogComponent;
+
+    public properties;
 
     public theme = false;
     public volume = 1000;
     public frequency = 500;
-    public data: Observable <any[]> ;
+    public data = [];
+    public chartData = [];
+    public multiCellSelection: { data: any[] } = { data: [] };
     public controls = [
         {
             disabled: false,
@@ -39,38 +52,42 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
             icon: "stop",
             label: "Stop",
             selected: false
+        },
+        {
+            disabled: false,
+            icon: "insert_chart_outlined",
+            label: "Chart",
+            selected: false
         }
     ];
-
     private subscription;
     private selectedButton;
     private _timer;
     private volumeChanged;
-
-    constructor(private localService: LocalDataService, private elRef: ElementRef) {
+    constructor(private localService: LocalDataService, private elRef: ElementRef, private cdr: ChangeDetectorRef) {
         this.subscription = this.localService.getData(this.volume);
-        this.data = this.localService.records;
+        this.localService.records.subscribe(x => { this.data = x; });
     }
 
     public ngOnInit() {
         this.grid1.groupingExpressions = [{
-                dir: SortingDirection.Desc,
-                fieldName: "Category",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Type",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            },
-            {
-                dir: SortingDirection.Desc,
-                fieldName: "Contract",
-                ignoreCase: false,
-                strategy: DefaultSortingStrategy.instance()
-            }
+            dir: SortingDirection.Desc,
+            fieldName: "Category",
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        },
+        {
+            dir: SortingDirection.Desc,
+            fieldName: "Type",
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        },
+        {
+            dir: SortingDirection.Desc,
+            fieldName: "Contract",
+            ignoreCase: false,
+            strategy: DefaultSortingStrategy.instance()
+        }
         ];
         this.volumeChanged = this.volumeSlider.onValueChange.pipe(debounce(() => timer(200)));
         this.volumeChanged.subscribe(
@@ -82,32 +99,61 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public ngAfterViewInit() {
         this.grid1.reflow();
+        this.selectFirstGroupAndFillChart();
+    }
+
+    public selectFirstGroupAndFillChart() {
+        this.properties = ["Price", "Country"];
+        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
+        const recordIDs = [];
+        this.grid1.groupsRecords[0].groups[0].groups[0].records.forEach(item => {
+            recordIDs.push(item.ID);
+        });
+        this.grid1.selectRows(recordIDs);
+    }
+    public setChartConfig(xAsis, yAxis, title) {
+        // update label interval and angle based on data
+        this.setLabelIntervalAndAngle();
+
+        // this.chart1.yAxisFormatLabel = this.formatYAxisLabel;
+        this.chart1.xAxisTitle = xAsis;
+        this.chart1.yAxisTitle = yAxis;
+        this.chart1.chartTitle = title;
     }
 
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
-                    this.disableOtherButtons(event.index, true);
-                    const currData = this.grid1.data;
-                    this._timer = setInterval(() => this.ticker(currData), this.frequency);
-                    break;
-                }
+                this.disableOtherButtons(event.index, true);
+                const currData = this.grid1.data;
+                this._timer = setInterval(() => this.ticker(currData), this.frequency);
+                break;
+            }
             case 1: {
-                    this.disableOtherButtons(event.index, true);
-                    const currData = this.grid1.data;
-                    this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
-                    break;
-                }
-                case 2: {
-                    this.disableOtherButtons(event.index, false);
-                    this.stopFeed();
-                    break;
-                }
+                this.disableOtherButtons(event.index, true);
+                const currData = this.grid1.data;
+                this._timer = setInterval(() => this.tickerAllPrices(currData), this.frequency);
+                break;
+            }
+            case 2: {
+                this.disableOtherButtons(event.index, false);
+                this.stopFeed();
+                break;
+            }
+            case 3: {
+                this.disableOtherButtons(event.index, true);
+                this.dialog.open();
+                break;
+            }
             default:
                 {
                     break;
                 }
         }
+    }
+
+    public onCloseHandler(evt: IDialogEventArgs) {
+        this.buttonGroup1.selectButton(2);
     }
 
     public onChange(event: any) {
@@ -132,8 +178,36 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }
-        ];
+            ];
         }
+    }
+
+    public rowSelectionChanged(args) {
+        this.grid1.clearCellSelection();
+        this.chartData = [];
+        args.newSelection.forEach(row => {
+            this.chartData.push(this.grid1.data[row]);
+            this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1,
+                this.grid1.data[row]);
+        });
+        this.setLabelIntervalAndAngle();
+        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
+    }
+
+    public openSingleRowChart(cell: IgxGridCellComponent) {
+        this.chartData = [];
+        setTimeout(() => {
+            this.chartData = this.data.filter(item => item.Region === cell.rowData.Region &&
+                item.Category === cell.rowData.Category);
+
+            this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
+
+            this.setLabelIntervalAndAngle();
+            this.chart1.chartTitle = "Data Chart with prices of " + this.chartData[0].Category + " in " +
+                this.chartData[0].Region + " Region";
+
+            this.dialog.open();
+        }, 200);
     }
 
     public stopFeed() {
@@ -214,6 +288,37 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
+
+    public setLabelIntervalAndAngle() {
+        const intervalSet = this.chartData.length;
+        if (intervalSet < 10) {
+            this.chart1.xAxisLabelAngle = 0;
+            this.chart1.xAxisInterval = 1;
+        } else if (intervalSet < 15) {
+            this.chart1.xAxisLabelAngle = 30;
+            this.chart1.xAxisInterval = 1;
+        } else if (intervalSet < 40) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 1;
+        } else if (intervalSet < 100) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 3;
+        } else if (intervalSet < 200) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 5;
+        } else if (intervalSet < 400) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 7;
+        } else if (intervalSet > 400) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 10;
+        }
+        this.chart1.yAxisAbbreviateLargeNumbers = true;
+    }
+
+    public formatYAxisLabel(item: any): string {
+        return item + "test test";
+    }
     // tslint:enable:member-ordering
 
     private disableOtherButtons(ind: number, disableButtons: boolean) {
@@ -225,7 +330,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
             if (index === 2) { button.disabled = !disableButtons; } else {
-                button.disabled = disableButtons;
+                this.buttonGroup1.buttons[0].disabled = disableButtons;
+                this.buttonGroup1.buttons[1].disabled = disableButtons;
             }
         });
     }
@@ -252,7 +358,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     private updateAllPrices(data: any[]): any {
         const newData = data.slice();
         for (const dataRow of newData) {
-          this.randomizeObjectData(dataRow);
+            this.randomizeObjectData(dataRow);
         }
         return newData;
     }
@@ -264,8 +370,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         const newData = data.slice();
         let y = 0;
         for (let i = Math.round(Math.random() * 10); i < newData.length; i += Math.round(Math.random() * 10)) {
-          this.randomizeObjectData(newData[i]);
-          y++;
+            this.randomizeObjectData(newData[i]);
+            y++;
         }
         return newData;
     }
@@ -293,7 +399,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         const changeAmount = oldPrice * (changePercent / 100);
         newPrice = oldPrice + changeAmount;
         newPrice = Math.round(newPrice * 100) / 100;
-        const result = {Price: 0, ChangePercent: 0};
+        const result = { Price: 0, ChangePercent: 0 };
         changePercent = Math.round(changePercent * 100) / 100;
         result.Price = newPrice;
         result.ChangePercent = changePercent;
@@ -306,6 +412,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     get buttonSelected(): number {
-      return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
+        return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
     }
 }
