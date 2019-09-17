@@ -1,5 +1,5 @@
 <igx-hierarchical-grid class="hgrid" igxDrop #grid1 [data]="localData" [primaryKey]="'id'"
-    [rowDraggable]="true" [rowSelectable]="true" (onRowDragStart)="rowDragStart($event)" (onDrop)="rowDrop($event)"
+    [rowDraggable]="true" [rowSelectable]="true" (onRowDragStart)="rowDragStart($event)" (dropped)="rowDrop($event)"
     [height]="'540px'" [width]="'800px'" #hGrid>
     <igx-column field="name" header="Name"></igx-column>
     <igx-column field="system" header="Is System Drive"></igx-column>

@@ -93,6 +93,9 @@ import {
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
+import {
+    TreeGridConditionalRowSelectorsSampleComponent
+} from "./tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
 import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
@@ -109,6 +112,9 @@ import { TreeGridRowEditSampleComponent } from "./tree-grid-row-edit/tree-grid-r
 import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-row-reorder.component";
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
+import {
+    TreeGridSelectionTemplateNumbersSampleComponent
+} from "./tree-grid-selection-template-numbers/tree-grid-selection-template-numbers.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
@@ -196,6 +202,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridSelectionSampleComponent,
         data: treeGridRoutesData["treegrid-selection"],
         path: "treegrid-selection"
+    },
+    {
+        component: TreeGridSelectionTemplateNumbersSampleComponent,
+        data: treeGridRoutesData["tree-grid-selection-template-numbers"],
+        path: "tree-grid-selection-template-numbers"
     },
     {
         component: TreeGridSortingSampleComponent,
@@ -421,6 +432,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridCellSelectionComponent,
         data: treeGridRoutesData["treegrid-cell-selection"],
         path: "treegrid-cell-selection"
+    },
+    {
+        component: TreeGridConditionalRowSelectorsSampleComponent,
+        data: treeGridRoutesData["treegrid-conditional-row-selectors"],
+        path: "treegrid-conditional-row-selectors"
     }
 ];
 

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Injectable, ViewChild } from "@angular/core";
 
 import { IgxBannerComponent, IgxGridComponent, IgxSnackbarComponent } from "igniteui-angular";
 import { BehaviorSubject, Observable } from "rxjs";
-import { DATA } from "./financialData";
+import { DATA } from "../services/financialData";
 
 @Injectable()
 export class LocalService {

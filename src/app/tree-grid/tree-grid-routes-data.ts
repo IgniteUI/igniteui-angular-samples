@@ -13,6 +13,10 @@ export const treeGridRoutesData = {
     "treegrid-column-hiding": { displayName: "TreeGrid Column Hiding", parentName: "TreeGrid" },
     "treegrid-column-hiding-toolbar": { displayName: "TreeGrid Column Hiding Toolbar", parentName: "TreeGrid" },
     "treegrid-selection": { displayName: "TreeGrid Selection", parentName: "TreeGrid" },
+    "tree-grid-selection-template-numbers": {
+        displayName: "TreeGrid Row Selectors Template - Numbers",
+        parentName: "TreeGrid"
+    },
     "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" },
     "treegrid-sorting-styling": { displayName: "TreeGrid Sorting Styling", parentName: "TreeGrid" },
     "treegrid-column-moving": { displayName: "TreeGrid Column Moving", parentName: "TreeGrid" },
@@ -78,5 +82,6 @@ export const treeGridRoutesData = {
     "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
     "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
     "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" },
-    "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" }
+    "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" },
+    "treegrid-conditional-row-selectors": { displayName: "TreeGrid Conditional Row Selectors", parentName: "TreeGrid" }
 };

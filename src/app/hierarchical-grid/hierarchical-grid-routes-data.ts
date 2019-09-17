@@ -20,6 +20,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting-styling": { displayName: "Hierarchical Grid Sorting Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-selection": { displayName: "Hierarchical Grid Selection", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-selection-template-numbers": { displayName: "Hierarchical Grid Row Selectors Template - Numbers", parentName: "Hierarchical Grid" },
     "hierarchical-grid-styling": { displayName: "Hierarchical Grid Styling", parentName: "Hierarchical Grid"},
     "hierarchical-grid-summary": { displayName: "Hierarchical Grid Summary", parentName: "Hierarchical Grid" },
     "hierarchical-grid-summary-styling": { displayName: "Hierarchical Grid Summary Styling", parentName: "Hierarchical Grid" },
@@ -47,5 +48,6 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-multi-column-styling": { displayName: "Hierarchical Grid Multi Column Header Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-edit-style": { displayName: "HGrid Row Edit Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-style": { displayName: "HGrid Toolbar Style", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" }
+    "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-conditional-row-selectors": { displayName: "HGrid Conditional Row Selectors", parentName: "Hierarchical Grid" }
 };

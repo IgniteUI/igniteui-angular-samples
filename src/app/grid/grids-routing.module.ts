@@ -53,6 +53,8 @@ import { GridSample3Component } from "./grid-sample-3/grid-sample-3.component";
 import { GridRemoteVirtualizationSampleComponent } from "./grid-sample-4/grid-sample-4.component";
 import { PinningSampleComponent } from "./grid-sample-pinning/grid-pinning.component";
 import { PinningToolbarSampleComponent } from "./grid-sample-pinning/grid-toolbar-pinning.component";
+import { GridSelectionTemplateExcelComponent} from "./grid-sample-selection-template-excel/grid-sample-selection-template-excel.component";
+import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-template-numbers/grid-sample-selection-template-numbers.component";
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
@@ -69,6 +71,9 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
+import {
+    GridConditionalRowSelectorsComponent
+} from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -263,6 +268,16 @@ export const gridsRoutes: Routes = [
         path: "grid-selection"
     },
     {
+        component: GridSelectionTemplateNumbersComponent,
+        data: gridsRoutesData["grid-selection-template-numbering"],
+        path: "grid-selection-template-numbering"
+    },
+    {
+        component: GridSelectionTemplateExcelComponent,
+        data: gridsRoutesData["grid-selection-template-excel"],
+        path: "grid-selection-template-excel"
+    },
+    {
         component: GridSearchSampleComponent,
         data: gridsRoutesData["grid-search-sample"],
         path: "grid-search-sample"
@@ -446,6 +461,11 @@ export const gridsRoutes: Routes = [
         component: GridCellSelectionComponent,
         data: gridsRoutesData["grid-cell-selection"],
         path: "grid-cell-selection"
+    },
+    {
+        component: GridConditionalRowSelectorsComponent,
+        data: gridsRoutesData["grid-conditional-row-selectors"],
+        path: "grid-conditional-row-selectors"
     }
 ];
 

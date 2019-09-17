@@ -1,6 +1,6 @@
 <div class="grid-container">
     <igx-grid #grid [data]="data" [height]="'800px'" [width]="'1000px'" [autoGenerate]="false" [rowDraggable]="true"
-        [primaryKey]="'ID'" igxDrop (onDrop)="onDropAllowed($event)">
+        [primaryKey]="'ID'" igxDrop (dropped)="onDropAllowed($event)">
         <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
         <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
         <igx-column [field]="'ContactName'" [header]="'Contact Name'" width="100px" [minWidth]="'60px'"
