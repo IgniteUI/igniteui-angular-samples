@@ -77,6 +77,7 @@ export const gridsRoutesData = {
     "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
     "grid-cell-selection": { displayName: "Grid Cell Selection", parentName: "Grid" },
     "grid-advanced-filtering": { displayName: "Grid Advanced Filtering", parentName: "Grid" },
+    "grid-advanced-filtering-style": { displayName: "Grid Advanced Filtering Style", parentName: "Grid" },
     "grid-excel-style-filtering-load-on-demand":
         { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" }
 };

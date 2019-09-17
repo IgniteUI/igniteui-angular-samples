@@ -14,6 +14,7 @@ import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparklin
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
+import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
@@ -181,6 +182,7 @@ import { DataService } from "./services/data.service";
         PinningStylingComponent,
         GridGroupByStyling,
         GridAdvancedFilteringSampleComponent,
+        GridAdvancedFilteringStyleComponent,
         GridCellSelectionComponent
     ],
     imports: [

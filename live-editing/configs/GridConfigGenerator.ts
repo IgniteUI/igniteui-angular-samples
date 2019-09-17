@@ -35,6 +35,9 @@ import {
     GridAdvancedFilteringSampleComponent
 } from "../../src/app/grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import {
+    GridAdvancedFilteringStyleComponent
+} from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
@@ -1043,6 +1046,16 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [GridAdvancedFilteringSampleComponent, IgxGridModule],
                 ngDeclarations: [GridAdvancedFilteringSampleComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridAdvancedFilteringStyleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule ],
+                ngDeclarations: [GridAdvancedFilteringStyleComponent],
                 ngImports: [IgxGridModule]
             })
         }));
