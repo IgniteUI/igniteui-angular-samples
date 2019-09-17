@@ -33,6 +33,8 @@ $custom-button: igx-button-theme(
 
 $custom-button-group: igx-button-group-theme(
     $item-background:  #292826,
+    $item-text-color: #FFCD0F,
+    $item-border-color: #FFCD0F,
     $item-selected-background: #FFCD0F,
     $item-hover-background: #FFCD0F,
     $item-selected-hover-background: #FFCD0F
@@ -54,100 +56,156 @@ $custom-chip: igx-chip-theme(
 );
 
 $custom-drop-down: igx-drop-down-theme(
-    $background-color: #FFCD0F,
-    $item-text-color: #292826,
-    $hover-item-background: #292826,
-    $hover-item-text-color: #FFCD0F,
-    $selected-item-background: #292826,
-    $selected-item-text-color: #FFCD0F,
-    $selected-focus-item-background: #292826,
-    $selected-focus-item-text-color: #FFCD0F,
-    $selected-hover-item-background: #292826,
-    $selected-hover-item-text-color: #FFCD0F,
+    $background-color: #292826,
+    $item-text-color: #FFCD0F,
+    $hover-item-background: #FFCD0F,
+    $hover-item-text-color: #292826,
+    $focused-item-background: #FFCD0F,
+    $focused-item-text-color: #292826,
+    $selected-item-background: #FFCD0F,
+    $selected-item-text-color: #292826,
+    $selected-focus-item-background: #FFCD0F,
+    $selected-focus-item-text-color: #292826,
+    $selected-hover-item-background: #FFCD0F,
+    $selected-hover-item-text-color: #292826,
 );
 
 /*ENHANCED APPROACHES*/
 
 // $yellow-color: #FFCD0F;
 // $black-color: #292826;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+// $dark-palette: igx-palette($primary: $yellow-color, $secondary: $black-color);
 
 /*PALETTE and IGX-COLOR*/
 
 // $custom-grid: igx-grid-theme(
-//     $filtering-row-background: #FFCD0F
+//     $filtering-row-background: igx-color($dark-palette, "secondary", 400)
 // );
 
 // $custom-button: igx-button-theme(
-//     $flat-background: igx-color($dark-palette, "secondary", 400),
+//     $disabled-color: igx-color($dark-palette, "secondary", 100),
+//     $outlined-text-color: igx-color($dark-palette, "primary", 400),
+//     $outlined-outline-color: igx-color($dark-palette, "primary", 400),
+//     $outlined-hover-text-color: igx-color($dark-palette, "secondary", 400),
+//     $outlined-hover-background: igx-color($dark-palette, "primary", 400),
+//     $outlined-focus-text-color: igx-color($dark-palette, "secondary", 400),
+//     $outlined-focus-background: igx-color($dark-palette, "primary", 900),
+//     $icon-color: igx-color($dark-palette, "primary", 400),
+//     $icon-hover-color: igx-color($dark-palette, "primary", 400),
 //     $flat-text-color: igx-color($dark-palette, "primary", 400),
-//     $flat-hover-background: igx-color($dark-palette, "primary", 400),
 //     $flat-hover-text-color: igx-color($dark-palette, "secondary", 400),
-
-//     $raised-background: igx-color($dark-palette, "secondary", 400),
-//     $raised-text-color: igx-color($dark-palette, "primary", 400),
-//     $raised-hover-background: igx-color($dark-palette, "primary", 400),
+//     $flat-hover-background: igx-color($dark-palette, "primary", 400),
+//     $flat-focus-text-color: igx-color($dark-palette, "secondary", 400),
+//     $flat-focus-background: igx-color($dark-palette, "primary", 900),
+//     $raised-background: igx-color($dark-palette, "primary", 400),
+//     $raised-text-color: igx-color($dark-palette, "secondary", 400),
+//     $raised-hover-background: igx-color($dark-palette, "primary", 200),
 //     $raised-hover-text-color: igx-color($dark-palette, "secondary", 400)
 // );
 
+// $custom-button-group: igx-button-group-theme(
+//     $item-background:  igx-color($dark-palette, "secondary", 400),
+//     $item-text-color: igx-color($dark-palette, "primary", 400),
+//     $item-border-color: igx-color($dark-palette, "primary", 400),
+//     $item-selected-background: igx-color($dark-palette, "primary", 400),
+//     $item-hover-background: igx-color($dark-palette, "primary", 400),
+//     $item-selected-hover-background: igx-color($dark-palette, "primary", 400)
+// );
+
 // $custom-input-group: igx-input-group-theme(
-//     $box-background: igx-color($dark-palette, "primary", 400),
-//     $idle-text-color: igx-color($dark-palette, "secondary", 400),
-//     $focused-text-color: igx-color($dark-palette, "secondary", 400),
-//     $filled-text-color: igx-color($dark-palette, "secondary", 400)
+//     $box-background: igx-color($dark-palette, "secondary", 200),
+//     $box-disabled-background: igx-color($dark-palette, "secondary", 200),
+//     $idle-text-color: igx-color($dark-palette, "primary", 400),
+//     $focused-text-color: igx-color($dark-palette, "primary", 400),
+//     $filled-text-color: igx-color($dark-palette, "primary", 400),
+//     $idle-bottom-line-color: igx-color($dark-palette, "primary", 400),
+//     $focused-secondary-color: igx-color($dark-palette, "primary", 100)
 // );
 
-// $custom-list: igx-list-theme(
-//     $background: igx-color($dark-palette, "secondary", 400)
-// );
-
-// $custom-checkbox: igx-checkbox-theme(
-//     $empty-color: igx-color($dark-palette, "primary", 400),
-//     $fill-color: igx-color($dark-palette, "primary", 400),
-//     $tick-color: igx-color($dark-palette, "secondary", 400),
-//     $label-color: igx-color($dark-palette, "primary", 400)
+// $custom-chip: igx-chip-theme(
+//     $background: igx-color($dark-palette, "primary", 400),
+//     $text-color: igx-color($dark-palette, "secondary", 400)
 // );
 
 // $custom-drop-down: igx-drop-down-theme(
 //     $background-color: igx-color($dark-palette, "secondary", 400),
 //     $item-text-color: igx-color($dark-palette, "primary", 400),
 //     $hover-item-background: igx-color($dark-palette, "primary", 400),
-//     $hover-item-text-color: igx-color($dark-palette, "secondary", 400)
+//     $hover-item-text-color: igx-color($dark-palette, "secondary", 400),
+//     $focused-item-background: igx-color($dark-palette, "primary", 100),
+//     $focused-item-text-color: igx-color($dark-palette, "secondary", 400),
+//     $selected-item-background: igx-color($dark-palette, "primary", 400),
+//     $selected-item-text-color: igx-color($dark-palette, "secondary", 400),
+//     $selected-focus-item-background: igx-color($dark-palette, "primary", 400),
+//     $selected-focus-item-text-color: igx-color($dark-palette, "secondary", 400),
+//     $selected-hover-item-background: igx-color($dark-palette, "primary", 400),
+//     $selected-hover-item-text-color: igx-color($dark-palette, "secondary", 400),
 // );
 
 /*SCHEMAS*/
 
+// $grid-dark-palette: igx-palette($primary: #11bd7b, $secondary: #e32057, $info: $black-color);
+
 // $custom-grid-schema: extend($_light-grid,
 //     (
 //         filtering-row-background:(
-//             igx-color: ("secondary", 400)
+//             igx-color: ("info")
 //         )
 //     )
 // );
 
 // $custom-button-schema: extend($_light-button,
 //     (
-//         flat-background:(
-//             igx-color: ("secondary", 400)
+//         disabled-color:(
+//             igx-color: ("secondary", 100)
 //         ),
-//         flat-text-color:(
+//         outlined-text-color: (
 //             igx-color: ("primary", 400)
 //         ),
-//         flat-hover-background:(
+//         outlined-outline-color:(
+//             igx-color: ("primary", 400)
+//         ),
+//         outlined-hover-text-color: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         outlined-hover-background: (
+//             igx-color: ("primary", 400)
+//         ),
+//         outlined-focus-text-color: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         outlined-focus-background: (
+//             igx-color: ("primary", 900)
+//         ),
+//         icon-color:(
+//             igx-color: ("primary", 400)
+//         ),
+//         icon-hover-color:(
+//             igx-color: ("primary", 400)
+//         ),
+//         flat-text-color:(
 //             igx-color: ("primary", 400)
 //         ),
 //         flat-hover-text-color:(
 //             igx-color: ("secondary", 400)
 //         ),
-
-//         raised-background:(
+//         flat-hover-background:(
+//             igx-color: ("primary", 400)
+//         ),
+//         flat-focus-text-color:(
 //             igx-color: ("secondary", 400)
 //         ),
-//         raised-text-color:(
+//         flat-focus-background:(
+//             igx-color: ("primary", 900)
+//         ),
+//         raised-background:(
 //             igx-color: ("primary", 400)
 //         ),
+//         raised-text-color:(
+//             igx-color: ("secondary", 400)
+//         ),
 //         raised-hover-background:(
-//             igx-color: ("primary", 400)
+//             igx-color: ("primary", 200)
 //         ),
 //         raised-hover-text-color:(
 //             igx-color: ("secondary", 400)
@@ -155,50 +213,77 @@ $custom-drop-down: igx-drop-down-theme(
 //     )
 // );
 
-// $custom-input-group-schema: extend($_light-input-group,
+// $custom-button-group-schema: extend($_light-button-group,
 //     (
-//         box-background:(
-//             igx-color: ("primary", 400)
-//         ),
-//         idle-text-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         focused-text-color:(
-//             igx-color: ("secondary", 400)
-//         ),
-//         filled-text-color:(
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
-
-// $custom-list-schema: extend($_light-list,
-//     (
-//         background:(
-//             igx-color: ("secondary", 400)
-//         ),
 //         item-background:(
 //             igx-color: ("secondary", 400)
 //         ),
-//         item-background-hover:(
-//             igx-color: ('secondary', 600)
+//         item-text-color:(
+//             igx-color: ("primary", 400)
+//         ),
+//         item-border-color:(
+//             igx-color: ("primary", 400)
+//         ),
+//         item-selected-background:(
+//             igx-color: ("primary", 400)
+//         ),
+//         item-hover-background:(
+//             igx-color: ("primary", 400)
+//         ),
+//         item-selected-hover-background:(
+//             igx-color: ("primary", 400)
 //         )
 //     )
 // );
 
-// $custom-checkbox-schema: extend($_light-checkbox,
+// $custom-input-group-schema: extend($_light-input-group,
 //     (
-//         empty-color:(
+//         box-background:(
+//             igx-color: ("secondary", 200)
+//         ),
+//         box-disabled-background:(
+//             igx-color: ("secondary", 200)
+//         ),
+//         idle-text-color:(
 //             igx-color: ("primary", 400)
 //         ),
-//         fill-color:(
+//         focused-text-color:(
 //             igx-color: ("primary", 400)
 //         ),
-//         tick-color:(
+//         filled-text-color:(
+//             igx-color: ("primary", 400)
+//         ),
+//         idle-bottom-line-color:(
+//             igx-color: ("primary", 400)
+//         ),
+//         focused-secondary-color:(
+//             igx-color: ("primary", 100)
+//         )
+//     )
+// );
+
+// $custom-chip-schema: extend($_light-chip,
+//     (
+//         background:(
+//             igx-color: ("primary", 400)
+//         ),
+//         text-color:(
 //             igx-color: ("secondary", 400)
 //         ),
-//         label-color:(
-//             igx-color: ("primary", 400)
+//         hover-background: (
+//             igx-color: ("primary", 800)
+//         ),
+//         focus-background: (
+//             igx-color: ("primary", 800)
+//         ),
+//         selected-background: (
+//             igx-color: ("primary", 800)
+//         ),
+//         hover-selected-background: (
+//             igx-color: ("primary", 800)
+//         ),
+//         focus-selected-background: (
+//             igx-color: ("primary", 800)
 //         )
 //     )
 // );
@@ -216,6 +301,30 @@ $custom-drop-down: igx-drop-down-theme(
 //         ),
 //         hover-item-text-color:(
 //             igx-color: ("secondary", 400)
+//         ),
+//         focused-item-background:(
+//             igx-color: ("primary", 100)
+//         ),
+//         focused-item-text-color:(
+//             igx-color: ("secondary", 400)
+//         ),
+//         selected-item-background:(
+//             igx-color: ("primary", 400)
+//         ),
+//         selected-item-text-color:(
+//             igx-color: ("secondary", 400)
+//         ),
+//         selected-focus-item-background:(
+//             igx-color: ("primary", 400)
+//         ),
+//         selected-focus-item-text-color:(
+//             igx-color: ("secondary", 400)
+//         ),
+//         selected-hover-item-background:(
+//             igx-color: ("primary", 400)
+//         ),
+//         selected-hover-item-text-color:(
+//             igx-color: ("secondary", 400)
 //         )
 //     )
 // );
@@ -223,18 +332,23 @@ $custom-drop-down: igx-drop-down-theme(
 // $custom-light-schema: extend($light-schema,(
 //     igx-grid: $custom-grid-schema,
 //     igx-button: $custom-button-schema,
+//     igx-button-group: $custom-button-group-schema,
 //     igx-input-group: $custom-input-group-schema,
-//     igx-checkbox: $custom-checkbox-schema,
-//     igx-drop-down: $custom-drop-down-schema,
-//     igx-list: $custom-list-schema
+//     igx-chip: $custom-chip-schema,
+//     igx-drop-down: $custom-drop-down-schema
 // ));
 
 // $custom-grid: igx-grid-theme(
-//     $palette: $dark-palette,
+//     $palette: $grid-dark-palette,
 //     $schema: $custom-light-schema
 // );
 
 // $custom-button: igx-button-theme(
+//     $palette: $dark-palette,
+//     $schema: $custom-light-schema
+// );
+
+// $custom-button-group: igx-button-group-theme(
 //     $palette: $dark-palette,
 //     $schema: $custom-light-schema
 // );
@@ -244,12 +358,7 @@ $custom-drop-down: igx-drop-down-theme(
 //     $schema: $custom-light-schema
 // );
 
-// $custom-list: igx-list-theme(
-//     $palette: $dark-palette,
-//     $schema: $custom-light-schema
-// );
-
-// $custom-checkbox: igx-checkbox-theme(
+// $custom-chip: igx-chip-theme(
 //     $palette: $dark-palette,
 //     $schema: $custom-light-schema
 // );
@@ -274,6 +383,20 @@ $custom-drop-down: igx-drop-down-theme(
             }
             .igx-filter-tree__expression-actions igx-icon {
                 color: #FFCD0F
+            }
+            .igx-filter-tree__expression-actions igx-icon:hover {
+                color: #ffe482
+            }
+            .igx-filter-tree__expression-actions igx-icon:focus {
+                color: #ffe482
+            }
+            .igx-filter-contextual-menu {
+                border: 1px solid #FFCD0F
+            }
+            .igx-filter-contextual-menu__close-btn {
+                position: absolute !important;
+                background: #292826 !important;
+                border-color: #FFCD0F !important;
             }
             @include igx-button($custom-button);
             @include igx-button-group($custom-button-group);
