@@ -83,5 +83,6 @@ export const treeGridRoutesData = {
     "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
     "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" },
     "treegrid-advanced-filtering": { displayName: "TreeGrid Advanced Filtering", parentName: "TreeGrid" },
-    "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" }
+    "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" },
+    "treegrid-conditional-row-selectors": { displayName: "TreeGrid Conditional Row Selectors", parentName: "TreeGrid" }
 };

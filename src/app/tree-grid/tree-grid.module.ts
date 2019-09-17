@@ -64,6 +64,9 @@ import {
     TreeGridConditionalCellStyleComponent
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import {
+    TreeGridConditionalRowSelectorsSampleComponent
+} from "./tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
+import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
@@ -222,7 +225,8 @@ import {
         TreeGridFilteringStyleComponent,
         TreeGridCellSelectionComponent,
         TreeGridAdvancedFilteringSampleComponent,
-        TreeGridExcelStyleFilteringLoadOnDemandComponent
+        TreeGridExcelStyleFilteringLoadOnDemandComponent,
+        TreeGridConditionalRowSelectorsSampleComponent
     ],
     imports: [
         CommonModule,
