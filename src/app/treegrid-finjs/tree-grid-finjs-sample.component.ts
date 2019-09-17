@@ -1,8 +1,12 @@
 
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
-    IgxButtonGroupComponent, IgxSliderComponent, IgxTreeGridComponent, OverlaySettings,
-    PositionSettings, SortingDirection, VerticalAlignment} from "igniteui-angular";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
+import {
+    AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
+    IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent, IgxSliderComponent,
+    IgxTreeGridCellComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings, SortingDirection,
+    VerticalAlignment
+} from "igniteui-angular";
+import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 import { timer } from "rxjs";
 import { debounce } from "rxjs/operators";
 import { LocalDataService } from "../grid-finjs/localData.service";
@@ -15,16 +19,23 @@ import { ITreeGridAggregation } from "./tree-grid-grouping.pipe";
     templateUrl: "./tree-grid-finjs-sample.component.html"
 })
 
-export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
+export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     @ViewChild("grid1", { static: true }) public grid1: IgxTreeGridComponent;
     @ViewChild("buttonGroup1", { static: true }) public buttonGroup1: IgxButtonGroupComponent;
+    @ViewChild("buttonGroup2", { static: true }) public buttonGroup2: IgxButtonGroupComponent;
     @ViewChild("slider1", { static: true }) public volumeSlider: IgxSliderComponent;
     @ViewChild("slider2", { static: true }) public intervalSlider: IgxSliderComponent;
+    @ViewChild("chart1", { static: true }) public chart1: IgxCategoryChartComponent;
+    @ViewChild("dialog", { static: true }) public dialog: IgxDialogComponent;
+
+    public properties;
 
     public theme = false;
     public volume = 1000;
     public frequency = 500;
     public data: any[] = [];
+    public chartData = [];
+    public multiCellSelection: { data: any[] } = { data: [] };
     public controls = [
         {
             disabled: false,
@@ -42,6 +53,12 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
             disabled: true,
             icon: "stop",
             label: "Stop",
+            selected: false
+        },
+        {
+            disabled: false,
+            icon: "insert_chart_outlined",
+            label: "Chart",
             selected: false
         }
     ];
@@ -70,7 +87,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     public childDataKey = "Children";
     public groupColumnKey = "Categories";
 
-    public items: any[] = [{field: "Export native"}, { field: "Export JS Excel"}];
+    public items: any[] = [{ field: "Export native" }, { field: "Export JS Excel" }];
 
     public _positionSettings: PositionSettings = {
         horizontalDirection: HorizontalAlignment.Left,
@@ -90,9 +107,10 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
     private _timer;
     private volumeChanged;
 
-    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef) {
+    // tslint:disable-next-line: max-line-length
+    constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef, private cdr: ChangeDetectorRef) {
         this.subscription = this.localService.getData(this.volume);
-        this.localService.records.subscribe((d) => this.data = d);
+        this.localService.records.subscribe(x => { this.data = x; });
     }
 
     public ngOnInit() {
@@ -107,29 +125,87 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     public ngAfterViewInit() {
         this.grid1.reflow();
+        this.selectFirstGroupAndFillChart();
+    }
+
+    public selectFirstGroupAndFillChart() {
+        this.properties = ["Price", "Country"];
+        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
+        const rowIds = [];
+        const root = this.grid1.flatData.find(r => r.ID === "OilUraniumSwap");
+        root.Children.forEach(child => {
+            rowIds.push(child.ID);
+        });
+
+        this.grid1.selectRows(rowIds);
+        this.cdr.detectChanges();
+    }
+    public setChartConfig(xAsis, yAxis, title) {
+        // update label interval and angle based on data
+        this.setLabelIntervalAndAngle();
+
+        // this.chart1.yAxisFormatLabel = this.formatYAxisLabel;
+        this.chart1.xAxisTitle = xAsis;
+        this.chart1.yAxisTitle = yAxis;
+        this.chart1.chartTitle = title;
     }
     public onButtonAction(event: any) {
         switch (event.index) {
             case 0: {
-                    this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.ticker(this.data), this.frequency);
-                    break;
-                }
+                this.disableOtherButtons(event.index, true);
+                this._timer = setInterval(() => this.ticker(this.data), this.frequency);
+                break;
+            }
             case 1: {
-                    this.disableOtherButtons(event.index, true);
-                    this._timer = setInterval(() => this.tickerAllPrices(this.data), this.frequency);
-                    break;
-                }
-                case 2: {
-                    this.disableOtherButtons(event.index, false);
-                    this.stopFeed();
-                    break;
-                }
+                this.disableOtherButtons(event.index, true);
+                this._timer = setInterval(() => this.tickerAllPrices(this.data), this.frequency);
+                break;
+            }
+            case 2: {
+                this.disableOtherButtons(event.index, false);
+                this.stopFeed();
+                break;
+            }
+            case 3: {
+                this.disableOtherButtons(event.index, true);
+                this.dialog.open();
+                break;
+            }
             default:
                 {
                     break;
                 }
         }
+    }
+    public onCloseHandler(evt: IDialogEventArgs) {
+        this.buttonGroup1.selectButton(2);
+    }
+
+    public rowSelectionChanged(args) {
+        this.grid1.clearCellSelection();
+        this.chartData = [];
+        args.newSelection.forEach(rowId => {
+                this.getLeafNodesData(rowId);
+        });
+        this.setLabelIntervalAndAngle();
+        this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
+    }
+
+    public openSingleRowChart(cell: IgxTreeGridCellComponent) {
+        this.chartData = [];
+        setTimeout(() => {
+            this.grid1.deselectAllRows();
+            this.grid1.selectRows([cell.rowData.ID]);
+
+            this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
+            const types = new Set<string>();
+            this.chartData.forEach(record => types.add(record.Type));
+            this.setLabelIntervalAndAngle();
+            // tslint:disable-next-line:max-line-length
+            this.chart1.chartTitle = `Data Chart with prices of ${this.chartData[0].Category} of type ${this.getSetValue(types)}${this.chartData.length > 1 ? "" : " in " + this.chartData[0].Country}`;
+
+            this.dialog.open();
+        }, 200);
     }
 
     public stopFeed() {
@@ -210,8 +286,39 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         strongNegative2: this.strongNegative,
         strongPositive2: this.strongPositive
     };
-    // tslint:enable:member-ordering
 
+    public setLabelIntervalAndAngle() {
+        const intervalSet = this.chartData.length;
+        if (intervalSet < 10) {
+            this.chart1.xAxisLabelAngle = 0;
+            this.chart1.xAxisInterval = 1;
+        } else if (intervalSet < 15) {
+            this.chart1.xAxisLabelAngle = 30;
+            this.chart1.xAxisInterval = 1;
+        } else if (intervalSet < 40) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 1;
+        } else if (intervalSet < 100) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 3;
+        } else if (intervalSet < 200) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 5;
+        } else if (intervalSet < 400) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 7;
+        } else if (intervalSet > 400) {
+            this.chart1.xAxisLabelAngle = 90;
+            this.chart1.xAxisInterval = 10;
+        }
+        this.chart1.yAxisAbbreviateLargeNumbers = true;
+    }
+
+    public formatYAxisLabel(item: any): string {
+        return item + "test test";
+    }
+
+    // tslint:enable:member-ordering
     private disableOtherButtons(ind: number, disableButtons: boolean) {
         if (this.subscription) {
             this.subscription.unsubscribe();
@@ -221,7 +328,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         this.selectedButton = ind;
         this.buttonGroup1.buttons.forEach((button, index) => {
             if (index === 2) { button.disabled = !disableButtons; } else {
-                button.disabled = disableButtons;
+                this.buttonGroup1.buttons[0].disabled = disableButtons;
+                this.buttonGroup1.buttons[1].disabled = disableButtons;
             }
         });
     }
@@ -240,6 +348,17 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     private tickerAllPrices(data: any) {
         this.data = this.updateAllPrices(data);
+    }
+
+    private getSetValue(set: Set<string>) {
+        if (set.size > 1) {
+            const res = [];
+            for (const value of set.values()) {
+                res.push(value);
+            }
+            return res.toString().replace(/,/g, ", ");
+        }
+        return set.values().next().value;
     }
 
     /**
@@ -289,7 +408,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
         const changeAmount = oldPrice * (changePercent / 100);
         newPrice = oldPrice + changeAmount;
         newPrice = Math.round(newPrice * 100) / 100;
-        const result = {Price: 0, ChangePercent: 0};
+        const result = { Price: 0, ChangePercent: 0 };
         changePercent = Math.round(changePercent * 100) / 100;
         result.Price = newPrice;
         result.ChangePercent = changePercent;
@@ -299,5 +418,16 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy  {
 
     get buttonSelected(): number {
         return this.selectedButton || this.selectedButton === 0 ? this.selectedButton : -1;
+    }
+
+    private getLeafNodesData(rowId) {
+        const row = this.grid1.flatData.find(r => r.ID === rowId);
+        if (row.Children) {
+            this.grid1.collapseRow(rowId);
+            row.Children.forEach(child => this.getLeafNodesData(child.ID));
+        } else if (row.Country && this.chartData.indexOf(row) === -1) {
+            this.chartData.push(row);
+            this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
+        }
     }
 }
