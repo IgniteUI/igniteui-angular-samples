@@ -201,6 +201,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
             const types = new Set<string>();
             this.chartData.forEach(record => types.add(record.Type));
             this.setLabelIntervalAndAngle();
+            // tslint:disable-next-line:max-line-length
             this.chart1.chartTitle = `Data Chart with prices of ${this.chartData[0].Category} of type ${this.getSetValue(types)}${this.chartData.length > 1 ? "" : " in " + this.chartData[0].Country}`;
 
             this.dialog.open();
@@ -351,7 +352,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
 
     private getSetValue(set: Set<string>) {
         if (set.size > 1) {
-            let res = [];
+            const res = [];
             for (const value of set.values()) {
                 res.push(value);
             }
@@ -424,7 +425,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         if (row.Children) {
             this.grid1.collapseRow(rowId);
             row.Children.forEach(child => this.getLeafNodesData(child.ID));
-        } else if (row.Country && this.chartData.indexOf(row) === -1 ) {
+        } else if (row.Country && this.chartData.indexOf(row) === -1) {
             this.chartData.push(row);
             this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         }
