@@ -353,8 +353,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     private getSetValue(set: Set<string>) {
         if (set.size > 1) {
             const res = [];
-            for (const value of set.values()) {
-                res.push(value);
+            // tslint:disable-next-line:no-conditional-assignment
+            for (let vals = set.values(), currVal = null; currVal = vals.next().value;) {
+                res.push(currVal);
             }
             return res.toString().replace(/,/g, ", ");
         }

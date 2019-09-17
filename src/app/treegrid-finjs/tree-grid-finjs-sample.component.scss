@@ -210,3 +210,11 @@
     padding: 5px 15px;
     height: 95%;
 }
+
+::ng-deep .dark-theme {
+    igx-category-chart {
+      .ig-tooltip-container-background {
+        background: black
+      }
+    }
+}
