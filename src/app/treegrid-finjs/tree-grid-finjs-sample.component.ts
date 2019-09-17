@@ -1,9 +1,10 @@
 
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild, ChangeDetectorRef } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
-    IgxButtonGroupComponent, IgxDialogComponent, IgxSliderComponent, IgxTreeGridComponent,
-    OverlaySettings, PositionSettings, SortingDirection, VerticalAlignment, IDialogEventArgs, IgxGridCellComponent, IgxTreeGridCellComponent
+    IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent, IgxSliderComponent,
+    IgxTreeGridCellComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings, SortingDirection,
+    VerticalAlignment
 } from "igniteui-angular";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
 import { timer } from "rxjs";
@@ -105,7 +106,6 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     private selectedButton;
     private _timer;
     private volumeChanged;
-    private rowIds = [];
 
     // tslint:disable-next-line: max-line-length
     constructor(private zone: NgZone, private localService: LocalDataService, private elRef: ElementRef, private cdr: ChangeDetectorRef) {
@@ -131,13 +131,13 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public selectFirstGroupAndFillChart() {
         this.properties = ["Price", "Country"];
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-        const root = this.grid1.flatData.find(r => r.ID === "Oil");
-
+        const rowIds = [];
+        const root = this.grid1.flatData.find(r => r.ID === "OilUraniumSwap");
         root.Children.forEach(child => {
-        this.rowIds.push(child.ID);
+            rowIds.push(child.ID);
         });
 
-        this.grid1.selectRows(this.rowIds);
+        this.grid1.selectRows(rowIds);
         this.cdr.detectChanges();
     }
     public setChartConfig(xAsis, yAxis, title) {
@@ -185,7 +185,7 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         this.grid1.clearCellSelection();
         this.chartData = [];
         args.newSelection.forEach(rowId => {
-            this.getLeafNodesData(rowId);
+                this.getLeafNodesData(rowId);
         });
         this.setLabelIntervalAndAngle();
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
@@ -196,14 +196,12 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         setTimeout(() => {
             this.grid1.deselectAllRows();
             this.grid1.selectRows([cell.rowData.ID]);
-            this.chartData = this.data.filter(item => item.Region === cell.rowData.Region &&
-                item.Category === cell.rowData.Category);
 
             this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
-
+            const types = new Set<string>();
+            this.chartData.forEach(record => types.add(record.Type));
             this.setLabelIntervalAndAngle();
-            this.chart1.chartTitle = "Data Chart with prices of " + this.chartData[0].Category + " in " +
-                this.chartData[0].Region + " Region";
+            this.chart1.chartTitle = `Data Chart with prices of ${this.chartData[0].Category} of type ${this.getSetValue(types)}${this.chartData.length > 1 ? "" : " in " + this.chartData[0].Country}`;
 
             this.dialog.open();
         }, 200);
@@ -351,6 +349,17 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         this.data = this.updateAllPrices(data);
     }
 
+    private getSetValue(set: Set<string>) {
+        if (set.size > 1) {
+            let res = [];
+            for (const value of set.values()) {
+                res.push(value);
+            }
+            return res.toString().replace(/,/g, ", ");
+        }
+        return set.values().next().value;
+    }
+
     /**
      * Updates values in every record
      */
@@ -413,8 +422,9 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     private getLeafNodesData(rowId) {
         const row = this.grid1.flatData.find(r => r.ID === rowId);
         if (row.Children) {
+            this.grid1.collapseRow(rowId);
             row.Children.forEach(child => this.getLeafNodesData(child.ID));
-        } else if (row.Country) {
+        } else if (row.Country && this.chartData.indexOf(row) === -1 ) {
             this.chartData.push(row);
             this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         }
