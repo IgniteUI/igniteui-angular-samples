@@ -95,6 +95,9 @@ import {
 import {
     TreeGridAdvancedFilteringSampleComponent
 } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
+import {
+    TreeGridAdvancedFilteringStyleComponent
+} from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import {
     TreeGridConditionalRowSelectorsSampleComponent
@@ -435,6 +438,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridAdvancedFilteringSampleComponent,
         data: treeGridRoutesData["treegrid-advanced-filtering"],
         path: "treegrid-advanced-filtering"
+    },
+    {
+        component: TreeGridAdvancedFilteringStyleComponent,
+        data: treeGridRoutesData["treegrid-advanced-filtering-style"],
+        path: "treegrid-advanced-filtering-style"
     },
     {
         component: TreeGridCellSelectionComponent,

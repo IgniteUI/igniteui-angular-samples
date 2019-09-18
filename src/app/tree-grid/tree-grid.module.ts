@@ -28,6 +28,9 @@ import {
     TreeGridAdvancedFilteringSampleComponent
 } from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import {
+    TreeGridAdvancedFilteringStyleComponent
+} from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
+import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
@@ -225,6 +228,7 @@ import {
         TreeGridFilteringStyleComponent,
         TreeGridCellSelectionComponent,
         TreeGridAdvancedFilteringSampleComponent,
+        TreeGridAdvancedFilteringStyleComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent,
         TreeGridConditionalRowSelectorsSampleComponent
     ],
