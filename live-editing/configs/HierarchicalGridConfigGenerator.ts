@@ -602,6 +602,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             additionalFiles: [
                 "/src/app/hierarchical-grid/data.ts"
             ],
+            appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridConditionalRowSelectorsComponent, IgxCheckboxModule],
                 ngDeclarations: [HGridConditionalRowSelectorsComponent],
                 ngImports: [IgxHierarchicalGridModule, IgxCheckboxModule]
