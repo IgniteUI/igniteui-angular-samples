@@ -9,6 +9,7 @@ import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule,
     IgxToastModule, IgxToggleModule } from "igniteui-angular";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridWithTransactionsComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
@@ -117,6 +118,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HierarchicalGridFilteringStyleComponent,
         HierarchicalGridExcelStyleFilteringLoadOnDemandComponent,
         HGridAdvancedFilteringSampleComponent,
+        HGridAdvancedFilteringStyleComponent,
         HGridStylingComponent,
         HGridConditionalRowSelectorsComponent
     ],
