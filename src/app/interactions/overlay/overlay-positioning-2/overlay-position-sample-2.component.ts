@@ -3,11 +3,13 @@ import {
     ConnectedPositioningStrategy,
     HorizontalAlignment,
     IgxOverlayService,
+    OverlaySettings,
+    PositionSettings,
     VerticalAlignment
 } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
-// tslint:disable:object-literal-sort-keys
+import { MyDynamicCardComponent } from "../overlay-dynamic-card/overlay-dynamic-card.component";
 @Component({
     selector: "overlay-sample",
     styleUrls: ["./overlay-position-sample-2.component.scss"],
@@ -15,27 +17,18 @@ import { filter, takeUntil } from "rxjs/operators";
     providers: [IgxOverlayService]
 })
 export class OverlayPositionSample2Component implements OnDestroy {
-
-    public modalValue = true;
-
-    @ViewChild("positionDemo", { static: true })
-    public positionDemo: ElementRef;
-
-    @ViewChild("overlayDemo", { static: true })
-    public overlayDemo: ElementRef;
-
-    @ViewChild("mainContainer", { static: true })
-    public mainContainer: ElementRef;
-
     private destroy$ = new Subject<boolean>();
     private _overlayId: string;
 
+    @ViewChild("buttonElement", { static: true })
+    private buttonElement: ElementRef;
+
     constructor(
-        @Inject(IgxOverlayService) public overlay: IgxOverlayService
+        @Inject(IgxOverlayService) public overlayService: IgxOverlayService
     ) {
         //  overlay service deletes the id when onClosed is called. We should clear our id
         //  also in same event
-        this.overlay
+        this.overlayService
             .onClosed
             .pipe(
                 filter((x) => x.id === this._overlayId),
@@ -43,21 +36,26 @@ export class OverlayPositionSample2Component implements OnDestroy {
             .subscribe(() => delete this._overlayId);
     }
 
-    public onClickPosition(horizontalStartPoint: HorizontalAlignment, verticalStartPoint: VerticalAlignment) {
-        this.overlay.show(this.overlayId, {
-            positionStrategy: new ConnectedPositioningStrategy({
-                target: this.positionDemo.nativeElement,
-                horizontalStartPoint,
-                verticalStartPoint
-            })
-        });
-    }
-
-    private get overlayId(): string {
+    public showOverlay() {
         if (!this._overlayId) {
-            this._overlayId = this.overlay.attach(this.overlayDemo);
+            const positionSettings: PositionSettings = {
+                target: this.buttonElement.nativeElement,
+                horizontalDirection: HorizontalAlignment.Left,
+                verticalDirection: VerticalAlignment.Top,
+                horizontalStartPoint: HorizontalAlignment.Right,
+                verticalStartPoint: VerticalAlignment.Top
+            };
+            const strategy = new ConnectedPositioningStrategy(positionSettings);
+
+            // Initializing and using overlay settings
+            const overlaySettings: OverlaySettings = {
+                // Passes the positioning strategy
+                positionStrategy: strategy
+            };
+            this._overlayId = this.overlayService.attach(MyDynamicCardComponent, overlaySettings);
         }
-        return this._overlayId;
+
+        this.overlayService.show(this._overlayId);
     }
 
     public ngOnDestroy() {
