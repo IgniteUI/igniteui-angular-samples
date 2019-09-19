@@ -204,9 +204,8 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     public openSingleRowChart(cell: IgxGridCellComponent) {
         this.chartData = [];
         setTimeout(() => {
-            // why opening a chart change the selection ?
-            // this.grid1.deselectAllRows();
-            // this.grid1.selectRows([cell.rowData.ID]);
+            this.grid1.deselectAllRows();
+            this.grid1.selectRows([cell.rowData.ID]);
             this.chartData = this.data.filter(item => item.Region === cell.rowData.Region &&
                 item.Category === cell.rowData.Category);
 
