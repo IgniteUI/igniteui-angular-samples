@@ -70,6 +70,8 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
+import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import {
     GridConditionalRowSelectorsComponent
@@ -456,6 +458,16 @@ export const gridsRoutes: Routes = [
         component: PinningStylingComponent,
         data: gridsRoutesData["grid-pinning-styling"],
         path: "grid-pinning-styling"
+    },
+    {
+        component: GridAdvancedFilteringSampleComponent,
+        data: gridsRoutesData["grid-pinning-styling"],
+        path: "grid-advanced-filtering"
+    },
+    {
+        component: GridAdvancedFilteringStyleComponent,
+        data: gridsRoutesData["grid-advanced-filtering-style"],
+        path: "grid-advanced-filtering-style"
     },
     {
         component: GridCellSelectionComponent,
