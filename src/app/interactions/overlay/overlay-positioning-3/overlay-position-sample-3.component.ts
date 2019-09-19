@@ -31,8 +31,9 @@ export class OverlayPositionSample3Component implements OnDestroy {
 
     public showOverlay() {
         if (!this._overlayId) {
-            const positionStrategy = new AutoPositionStrategy({ target: this.buttonElement.nativeElement });
-            this._overlayId = this.overlayService.attach(MyDynamicCardComponent, { positionStrategy });
+            const myPositionStrategy = new AutoPositionStrategy({ target: this.buttonElement.nativeElement });
+            this._overlayId = this.overlayService.attach(
+                MyDynamicCardComponent, { positionStrategy: myPositionStrategy });
         }
 
         this.overlayService.show(this._overlayId);

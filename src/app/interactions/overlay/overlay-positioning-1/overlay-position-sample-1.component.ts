@@ -31,9 +31,9 @@ export class OverlayPositionSample1Component implements OnDestroy {
 
     public showOverlay() {
         if (!this._overlayId) {
-            // Initializing and using overlay settings
+            // Initialize and use overlay settings
             const overlaySettings: OverlaySettings = {
-                // Passes the positioning strategy
+                // Pass in the positioning strategy
                 positionStrategy: new ConnectedPositioningStrategy({
                     // Set the target where content should be shown
                     target: this.buttonElement.nativeElement

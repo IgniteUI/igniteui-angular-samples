@@ -47,9 +47,9 @@ export class OverlayPositionSample2Component implements OnDestroy {
             };
             const strategy = new ConnectedPositioningStrategy(positionSettings);
 
-            // Initializing and using overlay settings
+            // Initialize and use overlay settings
             const overlaySettings: OverlaySettings = {
-                // Passes the positioning strategy
+                // Pass in the positioning strategy
                 positionStrategy: strategy
             };
             this._overlayId = this.overlayService.attach(MyDynamicCardComponent, overlaySettings);
