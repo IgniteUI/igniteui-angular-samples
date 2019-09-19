@@ -199,9 +199,8 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
     public openSingleRowChart(cell: IgxTreeGridCellComponent) {
         this.chartData = [];
         setTimeout(() => {
-            // why changing the selection ?
-            // this.grid1.deselectAllRows();
-            // this.grid1.selectRows([cell.rowData.ID]);
+            this.grid1.deselectAllRows();
+            this.grid1.selectRows([cell.rowData.ID]);
 
             this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
             const types = new Set<string>();
