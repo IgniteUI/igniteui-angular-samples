@@ -35,12 +35,12 @@ export class GridDragSampleComponent {
     }
 
     public onEnter(args, planet: PlanetComponent) {
-        args.drag.dragGhost.classList.add(
+        args.drag.ghostElement.classList.add(
             this.isDropAllowed(args.dragData.rowData.name, planet.name) ? HoverClassList.ALLOW : HoverClassList.DENY);
     }
 
     public onLeave(args) {
-        const dragGhost: HTMLElement =  args.drag.dragGhost;
+        const dragGhost: HTMLElement =  args.drag.ghostElement;
 
         if (dragGhost) {
             dragGhost.classList.remove(HoverClassList.ALLOW);
@@ -49,8 +49,6 @@ export class GridDragSampleComponent {
     }
 
     public onDrop(args, planet: PlanetComponent) {
-        args.cancel = true;
-
         const row: IgxRowComponent<IgxGridBaseComponent & IGridDataBindable> = args.dragData;
         if (this.isDropAllowed(row.rowData.name, planet.name)) {
             row.rowData.planet = planet.name;
