@@ -40,7 +40,7 @@
         [height]="'calc(100% - 71px)'" width="100%" [autoGenerate]='false' displayDensity='compact'
         columnHidingTitle="Indicators" hiddenColumnsText="Hidden" primaryKey='ID' [rowSelectable]="true"
         [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="false" [columnHiding]="true"
-        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+        [columnPinning]="true" [exportExcel]="true" exportExcelText="Export to Excel" (onFilteringDone)="filteringDone($event)" >
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSortingTemplate></ng-template>

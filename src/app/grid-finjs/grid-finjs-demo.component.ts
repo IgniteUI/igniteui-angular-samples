@@ -1,7 +1,8 @@
 // tslint:disable-next-line:max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
-    DefaultSortingStrategy, IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent,
+    DefaultSortingStrategy, IDialogEventArgs, IFilteringExpressionsTree, IgxButtonGroupComponent,
+    IgxDialogComponent,
     IgxGridCellComponent,
     IgxGridComponent,
     IgxSliderComponent,
@@ -196,11 +197,16 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
     }
 
+    public filteringDone(event: IFilteringExpressionsTree) {
+        this.grid1.deselectAllRows();
+    }
+
     public openSingleRowChart(cell: IgxGridCellComponent) {
         this.chartData = [];
         setTimeout(() => {
-            this.grid1.deselectAllRows();
-            this.grid1.selectRows([cell.rowData.ID]);
+            // why opening a chart change the selection ?
+            // this.grid1.deselectAllRows();
+            // this.grid1.selectRows([cell.rowData.ID]);
             this.chartData = this.data.filter(item => item.Region === cell.rowData.Region &&
                 item.Category === cell.rowData.Category);
 

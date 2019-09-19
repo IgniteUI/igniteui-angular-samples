@@ -2,8 +2,9 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, ViewChild } from "@angular/core";
 import {
     AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment,
-    IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent, IgxSliderComponent,
-    IgxTreeGridCellComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings, SortingDirection,
+    IDialogEventArgs, IFilteringExpressionsTree, IgxButtonGroupComponent, IgxDialogComponent,
+    IgxSliderComponent, IgxTreeGridCellComponent, IgxTreeGridComponent, OverlaySettings, PositionSettings,
+    SortingDirection,
     VerticalAlignment
 } from "igniteui-angular";
 import { IgxCategoryChartComponent } from "igniteui-angular-charts/ES5/igx-category-chart-component";
@@ -191,11 +192,16 @@ export class TreeGridFinJSComponent implements AfterViewInit, OnDestroy {
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
     }
 
+    public filteringDone(event: IFilteringExpressionsTree) {
+        this.grid1.deselectAllRows();
+    }
+
     public openSingleRowChart(cell: IgxTreeGridCellComponent) {
         this.chartData = [];
         setTimeout(() => {
-            this.grid1.deselectAllRows();
-            this.grid1.selectRows([cell.rowData.ID]);
+            // why changing the selection ?
+            // this.grid1.deselectAllRows();
+            // this.grid1.selectRows([cell.rowData.ID]);
 
             this.chart1.notifyInsertItem(this.chartData, this.chartData.length - 1, {});
             const types = new Set<string>();
