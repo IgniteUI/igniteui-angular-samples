@@ -5,7 +5,7 @@ import {
     IgxCsvExporterService,
     IgxDialogModule,
     IgxExcelExporterService,
-    IgxGridModule
+    IgxGridModule,
     IgxIconModule,
     IgxRippleModule,
     IgxSliderModule,
