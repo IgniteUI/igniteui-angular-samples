@@ -8,7 +8,7 @@
             </div>
 
             <igx-calendar #calendar
-                selection="range" [monthsViewNumber]="2"
+                selection="range" [monthsViewNumber]="2" [hideOutsideDays]="'true'"
                 (onSelection)="selectDates($event)">
             </igx-calendar>
             <button igxButton="raised" (click)="submitDates($event)">Check Availability</button>

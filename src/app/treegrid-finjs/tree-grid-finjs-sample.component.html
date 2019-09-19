@@ -27,7 +27,7 @@
             ~{{volume/5}} records updated.</span>
     </div>
     <igx-tree-grid #grid1 [data]="data | treeGridGrouping:groupColumns:aggregations:groupColumnKey:primaryKey:childDataKey" [height]="'calc(100% - 76px)'" width="100%" [autoGenerate]='false' displayDensity='compact' [primaryKey]="primaryKey" [childDataKey]="childDataKey"
-        columnHidingTitle="Indicators" hiddenColumnsText="Hidden" [rowSelectable]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="true" [columnHiding]="true" [exportExcel]="true" exportExcelText="Export to Excel">
+        columnHidingTitle="Indicators" (onRowSelectionChange)="rowSelectionChanged($event)" hiddenColumnsText="Hidden" [rowSelectable]="true" [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [showToolbar]="true" [columnHiding]="true" [exportExcel]="true" exportExcelText="Export to Excel">
 
         <!-- Empty templates for Sorting,Moving,Hiding, Pinning actions inside ESF dialog -->
         <!-- <ng-template igxExcelStyleSortingTemplate></ng-template>
@@ -49,7 +49,13 @@
                 </div>
             </ng-template>
         </igx-column>
-
+        <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]='false'>
+            <ng-template igxCell let-cell="cell" class="center-text">
+                <button class="button-icon" igxButton="icon" igxRippleCentered="true">
+                    <igx-icon fontSet="material" (click)="openSingleRowChart(cell)">insert_chart_outlined</igx-icon>
+                </button>
+            </ng-template>
+        </igx-column>
         <igx-column [field]="'Change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'" [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
         </igx-column>
 
@@ -67,3 +73,30 @@
         <igx-column [field]="'Start(Y)'" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
     </igx-tree-grid>
 </div>
+
+<igx-dialog #dialog title="Chart" (onRightButtonSelect)="dialog.close()" rightButtonLabel="OK"
+    closeOnOutsideSelect="true" (onClose)="onCloseHandler($event)">
+    <div style="padding: 20px">
+        <igx-category-chart #chart1 [dataSource]="chartData" width="900px" chartType="column" xAxisInterval="20"
+            xAxisLabelAngle="90" [includedProperties]="properties"
+            height="400px" [tooltipTemplate]="seriesTooltip">
+        </igx-category-chart>
+    </div>
+</igx-dialog>
+
+<ng-template let-series="series" let-item="item" #seriesTooltip>
+    <div class="tooltipTable">
+        <div class="tooltipRow">
+            <div><b>Category:</b> {{ item.Category }}</div>
+        </div>
+        <div class="tooltipRow">
+            <div><b>Type:</b> {{ item.Type }}</div>
+        </div>
+        <div class="tooltipRow">
+            <div><b>Country:</b> {{ item.Country }}</div>
+        </div>
+        <div class="tooltipRow">
+            <div><b>Price:</b> ${{ item.Price }}</div>
+        </div>
+    </div>
+</ng-template>

@@ -7,6 +7,7 @@ import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule,
     IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxToastModule, IgxToggleModule } from "igniteui-angular";
+
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";

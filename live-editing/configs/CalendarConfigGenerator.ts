@@ -11,10 +11,10 @@ import { CalendarSample7Component } from "../../src/app/scheduling/calendar/cale
 import { CalendarStylingSample } from "../../src/app/scheduling/calendar/calendar-styling-sample/calendar-styling-sample.component";
 import { CalendarViewsComponent } from "../../src/app/scheduling/calendar/calendar-views/calendar-views.component";
 import { CalendarComponent } from "../../src/app/scheduling/calendar/calendar.component";
+import { CalendarMultiViewComponent } from "../../src/app/scheduling/calendar/multiview/multiview.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { CalendarMultiViewComponent } from '../../src/app/scheduling/calendar/multiview/multiview.component';
 // tslint:enable:max-line-length
 
 export class CalendarConfigGenerator implements IConfigGenerator {
@@ -123,9 +123,9 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CalendarMultiViewComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxCalendarModule, CalendarMultiViewComponent],
+                imports: [IgxCalendarModule, IgxSnackbarModule, CalendarMultiViewComponent],
                 ngDeclarations: [CalendarMultiViewComponent],
-                ngImports: [IgxCalendarModule]
+                ngImports: [IgxCalendarModule, IgxSnackbarModule]
             }),
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
