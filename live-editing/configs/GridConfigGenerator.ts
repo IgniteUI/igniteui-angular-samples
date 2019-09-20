@@ -128,6 +128,7 @@ import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample
 import {
     GridMovingStyledSampleComponent
 } from "../../src/app/grid/grid-moving-styled-sample/grid-moving-styled-sample.component";
+import { GridMRLCustomNavigationComponent } from '../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component';
 import {
     GridMultiCellSelectionStyleComponent
 } from "../../src/app/grid/grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
