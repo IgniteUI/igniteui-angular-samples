@@ -16,14 +16,8 @@ export class CalendarMultiViewComponent {
     }
 
     public submitDates(eventArgs) {
-        this.calendar.specialDates =
-            [{ type: DateRangeType.Between, dateRange: this.range }];
 
-        this.range.forEach((item) => {
-            this.calendar.selectDate(item);
-        });
-
-        if (this.range.length === 0) {
+        if (this.range.length < 2) {
             this.snackbar.message = "Select dates from the Calendar first.";
         } else {
             this.snackbar.message = "Request for your stay has been submitted !";
