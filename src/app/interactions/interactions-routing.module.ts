@@ -18,6 +18,7 @@ import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-ma
 import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
 import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1/overlay-position-sample-1.component";
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
+import { OverlayPositionSample3Component } from "./overlay/overlay-positioning-3/overlay-position-sample-3.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
 import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
@@ -192,6 +193,11 @@ export const interactionsRoutes: Routes = [
         component: OverlayPositionSample2Component,
         data: interactionsRoutesData["overlay-position-sample-2"],
         path: "overlay-position-sample-2"
+    },
+    {
+        component: OverlayPositionSample3Component,
+        data: interactionsRoutesData["overlay-position-sample-3"],
+        path: "overlay-position-sample-3"
     },
     {
         component: OverlayScrollSample1Component,
