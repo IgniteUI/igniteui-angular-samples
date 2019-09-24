@@ -48,6 +48,7 @@ import {
     TabsRoutingView2Component,
     TabsRoutingView3Component,
     TabsSample6Component} from "./tabs/tabs-sample-6/tabs-sample-6.component";
+import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
 
 export const layoutsRoutes: Routes = [
     {
@@ -216,6 +217,10 @@ export const layoutsRoutes: Routes = [
         component: TabsSample6Component,
         data: layoutsRoutesData["tabs-sample-6"],
         path: "tabs-sample-6"
+    },
+    {
+        component: TabsStyleComponent,
+        path: "tabs-style"
     },
     {
         component: CardComponent,
