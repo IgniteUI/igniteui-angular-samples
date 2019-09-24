@@ -1,4 +1,3 @@
-// tslint:disable:max-line-length
 import { HttpClientModule } from "@angular/common/http";
 import { Router, RouterModule } from "@angular/router";
 import {
@@ -29,6 +28,7 @@ import {
     IgxToastModule,
     IgxTooltipModule
 } from "igniteui-angular";
+// tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import {
@@ -58,7 +58,6 @@ import {
 import {
     GridColumnHidingToolbarStyleComponent
 } from "../../src/app/grid/grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
-
 import {
     GridCompositeDataComponent
 } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
@@ -128,7 +127,8 @@ import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample
 import {
     GridMovingStyledSampleComponent
 } from "../../src/app/grid/grid-moving-styled-sample/grid-moving-styled-sample.component";
-import { GridMRLCustomNavigationComponent } from '../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component';
+// tslint:disable-next-line: max-line-length
+import { GridMRLCustomNavigationComponent } from "../../src/app/grid/grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import {
     GridMultiCellSelectionStyleComponent
 } from "../../src/app/grid/grid-multi-cell-selection-style/grid-multi-cell-selection-style.component";
@@ -203,7 +203,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-// tslint:enable:max-line-length
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
