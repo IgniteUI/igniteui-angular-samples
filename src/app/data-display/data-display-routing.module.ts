@@ -3,6 +3,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import {
+    BadgeStylingSampleComponent
+} from "./badge/badge-styling-sample/badge-styling-sample.component";
 import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 // tslint:disable-next-line:max-line-length
@@ -44,6 +47,11 @@ export const dataDisplayRoutes: Routes = [
         component: BadgeSample3Component,
         data: dataDisplayRoutesData["badge-sample-3"],
         path: "badge-sample-3"
+    },
+    {
+        component: BadgeStylingSampleComponent,
+        data: dataDisplayRoutesData["badge-styling-sample"],
+        path: "badge-styling-sample"
     },
     {
         component: ChipSampleComponent,
