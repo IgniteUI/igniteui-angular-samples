@@ -1,0 +1,80 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$dark-tabs: igx-tabs-theme(
+    $item-text-color: #F4D45C,
+    $item-background: #292826,
+    $item-hover-background: #F4D45C,
+    $item-hover-color: #292826,
+    $item-active-color: #F4D45C,
+    $item-active-icon-color: #F4D45C,
+    $indicator-color: #F4D45C,
+    $tab-ripple-color: #F4D45C
+);
+
+/*ENHANCED APPROACHES*/
+
+// $yellow-color: #F4D45C;
+// $black-color: #292826;
+// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
+
+// $dark-tabs: igx-tabs-theme(
+//     $palette: $dark-palette,
+//     $item-text-color: igx-color($dark-palette, "secondary", 400),
+//     $item-background: igx-color($dark-palette, "primary", 400),
+//     $item-hover-background: igx-color($dark-palette, "secondary", 400),
+//     $item-hover-color: igx-color($dark-palette, "primary", 400),
+//     $item-active-color: igx-color($dark-palette, "secondary", 400),
+//     $item-active-icon-color: igx-color($dark-palette, "secondary", 400),
+//     $indicator-color: igx-color($dark-palette, "secondary", 400),
+//     $tab-ripple-color: igx-color($dark-palette, "secondary", 400)
+// );
+
+/*SCHEMAS*/
+
+// $dark-tabs-schema: extend($_dark-tabs,
+//     (
+//         item-text-color: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         item-background: (
+//             igx-color: ("primary", 400)
+//         ),
+//         item-hover-background: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         item-hover-color: (
+//             igx-color: ("primary", 400)
+//         ),
+//         item-active-color: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         item-active-icon-color: (
+//             igx-color: ("secondary", 400)
+//         ),
+//         indicator-color: (
+//             igx-color: ("secondary", 400)
+//         ), 
+//         tab-ripple-color: (
+//             igx-color: ("secondary", 400)
+//         )
+//     )
+// );
+
+// $custom-dark-schema: extend($dark-schema,(
+//     igx-tabs: $dark-tabs-schema
+// ));
+
+// $dark-tabs: igx-tabs-theme(
+//   $palette: $dark-palette,
+//   $schema: $custom-dark-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+       @include igx-tabs($dark-tabs);
+   }
+}
