@@ -10,6 +10,9 @@ import {
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import {
+    BadgeStylingSampleComponent
+} from "./badge/badge-styling-sample/badge-styling-sample.component";
 import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 import { EmailFilterPipe } from "./chip/email-filter-pipe";
@@ -52,6 +55,7 @@ import {
         BadgeSample1Component,
         BadgeSample2Component,
         BadgeSample3Component,
+        BadgeStylingSampleComponent,
         ChipSampleComponent,
         CircularProgressbarComponent,
         IconSample1Component,
