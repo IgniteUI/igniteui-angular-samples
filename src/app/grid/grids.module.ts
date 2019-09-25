@@ -33,6 +33,7 @@ import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/gri
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
+import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
@@ -184,7 +185,8 @@ import { DataService } from "./services/data.service";
         GridAdvancedFilteringSampleComponent,
         GridAdvancedFilteringStyleComponent,
         GridCellSelectionComponent,
-        GridConditionalRowSelectorsComponent
+        GridConditionalRowSelectorsComponent,
+        GridDynamicChartDataComponent
     ],
     imports: [
         CommonModule,
