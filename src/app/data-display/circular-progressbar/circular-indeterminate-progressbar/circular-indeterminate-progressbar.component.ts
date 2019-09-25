@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-circular-indeterminate-progressbar",
     styleUrls: ["./circular-indeterminate-progressbar.component.scss"],
     templateUrl: "./circular-indeterminate-progressbar.component.html"
