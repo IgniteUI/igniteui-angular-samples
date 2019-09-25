@@ -28,9 +28,18 @@ import {
     IgxToastModule,
     IgxTooltipModule
 } from "igniteui-angular";
+// tslint:disable-next-line: max-line-length
+import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import {
-    CustomGridPagingStyleSample
-} from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
+     CustomGridPagingStyleSample
+    } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
+import {
+    GridAdvancedFilteringSampleComponent
+} from "../../src/app/grid/grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
+import {
+    GridAdvancedFilteringStyleComponent
+} from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
@@ -55,6 +64,9 @@ import {
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
+import {
+    GridConditionalRowSelectorsComponent
+} from "../../src/app/grid/grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { ContextmenuComponent } from "../../src/app/grid/grid-contextmenu-sample/contextmenu/contextmenu.component";
 import {
     GridContextmenuSampleComponent
@@ -72,7 +84,9 @@ import {
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
-import { GridEditingEventsComponent } from "../../src/app/grid/grid-editing-events/grid-editing-events.component";
+import {
+    GridEditingEventsComponent
+} from "../../src/app/grid/grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "../../src/app/grid/grid-editing-sample/grid-editing-sample.component";
 import {
     GridEditingStyleSample
@@ -124,7 +138,8 @@ import {
 import {
     GridMultiRowLayoutConfigurationComponent
 } from "../../src/app/grid/grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
-import { GridMultiRowLayoutStylingComponent
+import {
+    GridMultiRowLayoutStylingComponent
 } from "../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
@@ -189,8 +204,6 @@ import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
 
-// tslint:enable:max-line-length
-
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -198,14 +211,16 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridComponent, DataService],
+                    IgxRippleModule, IgxSwitchModule, GridComponent, DataService,
+                    IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
-                    IgxSwitchModule, HttpClientModule],
+                    IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule],
                 ngProviders: [DataService]
             })
         }));
@@ -1034,6 +1049,37 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        configs.push(new Config({
+            component: GridAdvancedFilteringSampleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridAdvancedFilteringSampleComponent, IgxGridModule],
+                ngDeclarations: [GridAdvancedFilteringSampleComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridAdvancedFilteringStyleComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridAdvancedFilteringStyleComponent, IgxGridModule ],
+                ngDeclarations: [GridAdvancedFilteringStyleComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridConditionalRowSelectorsComponent,
+            additionalFiles: ["/src/app/data/customers.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [
+                    IgxGridModule, GridConditionalRowSelectorsComponent, IgxCheckboxModule],
+                ngDeclarations: [GridConditionalRowSelectorsComponent],
+                ngImports: [IgxGridModule, IgxCheckboxModule],
+                ngProviders: []
+            })
+        }));
         return configs;
     }
 }

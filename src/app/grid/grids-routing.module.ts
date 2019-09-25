@@ -70,7 +70,12 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
+import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
+import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
+import {
+    GridConditionalRowSelectorsComponent
+} from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -455,9 +460,24 @@ export const gridsRoutes: Routes = [
         path: "grid-pinning-styling"
     },
     {
+        component: GridAdvancedFilteringSampleComponent,
+        data: gridsRoutesData["grid-pinning-styling"],
+        path: "grid-advanced-filtering"
+    },
+    {
+        component: GridAdvancedFilteringStyleComponent,
+        data: gridsRoutesData["grid-advanced-filtering-style"],
+        path: "grid-advanced-filtering-style"
+    },
+    {
         component: GridCellSelectionComponent,
         data: gridsRoutesData["grid-cell-selection"],
         path: "grid-cell-selection"
+    },
+    {
+        component: GridConditionalRowSelectorsComponent,
+        data: gridsRoutesData["grid-conditional-row-selectors"],
+        path: "grid-conditional-row-selectors"
     }
 ];
 

@@ -92,7 +92,16 @@ import {
     TreeGridRemotePagingSampleComponent
 } from "./tree-grid-remote-paging-sample/tree-grid-remote-paging-sample.component";
 
+import {
+    TreeGridAdvancedFilteringSampleComponent
+} from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
+import {
+    TreeGridAdvancedFilteringStyleComponent
+} from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
+import {
+    TreeGridConditionalRowSelectorsSampleComponent
+} from "./tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
 import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import {
@@ -426,9 +435,24 @@ export const treeGridRoutes: Routes = [
         path: "treegrid-filtering-style"
     },
     {
+        component: TreeGridAdvancedFilteringSampleComponent,
+        data: treeGridRoutesData["treegrid-advanced-filtering"],
+        path: "treegrid-advanced-filtering"
+    },
+    {
+        component: TreeGridAdvancedFilteringStyleComponent,
+        data: treeGridRoutesData["treegrid-advanced-filtering-style"],
+        path: "treegrid-advanced-filtering-style"
+    },
+    {
         component: TreeGridCellSelectionComponent,
         data: treeGridRoutesData["treegrid-cell-selection"],
         path: "treegrid-cell-selection"
+    },
+    {
+        component: TreeGridConditionalRowSelectorsSampleComponent,
+        data: treeGridRoutesData["treegrid-conditional-row-selectors"],
+        path: "treegrid-conditional-row-selectors"
     }
 ];
 

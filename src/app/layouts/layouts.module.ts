@@ -73,6 +73,7 @@ import {
     TabsRoutingView3Component,
     TabsSample6Component
 } from "./tabs/tabs-sample-6/tabs-sample-6.component";
+import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
 
 @NgModule({
     declarations: [
@@ -119,7 +120,8 @@ import {
         TabsSample3Component,
         TabsSample4Component,
         TabsSample5Component,
-        CardStylingSampleComponent
+        CardStylingSampleComponent,
+        TabsStyleComponent
     ],
     exports: [
         CardSample1Component
