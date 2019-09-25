@@ -15,6 +15,8 @@ import { OverlayPositionSample1Component
 } from "../../src/app/interactions/overlay/overlay-positioning-1/overlay-position-sample-1.component";
 import { OverlayPositionSample2Component
 } from "../../src/app/interactions/overlay/overlay-positioning-2/overlay-position-sample-2.component";
+import { OverlayPositionSample3Component
+} from "../../src/app/interactions/overlay/overlay-positioning-3/overlay-position-sample-3.component";
 import { OverlayScrollSample1Component
 } from "../../src/app/interactions/overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component
@@ -78,6 +80,17 @@ export class OverlayConfigGenerator implements IConfigGenerator {
                 imports: [IgxIconModule, IgxOverlayService, OverlayPositionSample2Component, IgxCardModule],
                 ngProviders: [IgxOverlayService],
                 ngDeclarations: [OverlayPositionSample2Component],
+                ngImports: [IgxIconModule, IgxCardModule]
+            }),
+            shortenComponentPathBy: "/interactions/overlay/"
+        }));
+
+        configs.push(new Config({
+            component: OverlayPositionSample3Component,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxIconModule, IgxOverlayService, OverlayPositionSample3Component, IgxCardModule],
+                ngProviders: [IgxOverlayService],
+                ngDeclarations: [OverlayPositionSample3Component],
                 ngImports: [IgxIconModule, IgxCardModule]
             }),
             shortenComponentPathBy: "/interactions/overlay/"

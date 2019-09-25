@@ -16,6 +16,10 @@ import {
     IgxSwitchModule,
     IgxToastModule
 } from "igniteui-angular";
+import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
+import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { HGridAdvancedFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
+import { HGridAdvancedFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridBatchEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridWithTransactionsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
@@ -369,10 +373,11 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxHierarchicalGridModule, HGridColumnResizingSampleComponent],
+                imports: [IgxHierarchicalGridModule, HGridColumnResizingSampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [HGridColumnResizingSampleComponent],
-                ngImports: [IgxHierarchicalGridModule]
+                ngImports: [IgxHierarchicalGridModule, IgxSparklineCoreModule, IgxSparklineModule]
             }),
             component: HGridColumnResizingSampleComponent
         }));
@@ -586,6 +591,28 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridAdvancedFilteringSampleComponent],
+                ngDeclarations: [HGridAdvancedFilteringSampleComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridAdvancedFilteringSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridAdvancedFilteringStyleComponent],
+                ngDeclarations: [HGridAdvancedFilteringStyleComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridAdvancedFilteringStyleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/hierarchical-grid/data.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridConditionalRowSelectorsComponent, IgxCheckboxModule],
                 ngDeclarations: [HGridConditionalRowSelectorsComponent],
