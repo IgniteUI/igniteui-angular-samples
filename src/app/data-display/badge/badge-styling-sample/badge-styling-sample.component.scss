@@ -15,7 +15,6 @@ $custom-theme: igx-badge-theme(
     $text-color: black,
     $border-radius: 20px,
     $disable-border: true,
-    $disable-shadow: false,
     $shadow: igx-elevation($elevations-color, 5)
 );
 
@@ -36,14 +35,13 @@ $custom-theme: igx-badge-theme(
 //     $text-color: igx-color($custom-palette, "secondary", 500),
 //     $border-radius: 20px,
 //     $disable-border: true,
-//     $disable-shadow: false,
 //     $shadow: igx-elevation($elevations-color, 5)
 // );
 
 /*SCHEMAS*/
 
 // $custom-badge-schema: extend($_light-badge,
-//     (   
+//     (
 //         icon-color: (igx-color:('primary', 500)),
 //         text-color: (igx-color:('secondary', 500)),
 //         border-radius: 20px,
@@ -51,7 +49,7 @@ $custom-theme: igx-badge-theme(
 //     )
 // );
 
-// $my-custom-schema: extend($light-schema, 
+// $my-custom-schema: extend($light-schema,
 //     (
 //         igx-badge: $custom-badge-schema
 //     )
@@ -62,7 +60,6 @@ $custom-theme: igx-badge-theme(
 // $custom-theme: igx-badge-theme(
 //   $palette: $custom-palette,
 //   $schema: $my-custom-schema,
-//   $disable-shadow: false,
 //   $elevations: $elevations-color
 // );
 
@@ -71,6 +68,10 @@ $custom-theme: igx-badge-theme(
 :host {
   ::ng-deep {
     @include igx-badge($custom-theme);
+
+    igx-list-item.igx-list__item-base{
+        margin-bottom: 10px;
+    }
   }
 }
 
