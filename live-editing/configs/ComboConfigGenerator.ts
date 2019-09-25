@@ -100,7 +100,7 @@ export class ComboConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [ComboBindingComponent],
                 ngImports: [IgxComboModule, IgxButtonModule, IgxCardModule]
             }),
-            component: ComboFeatures,
+            component: ComboBindingComponent,
             shortenComponentPathBy: "/lists/combo/"
         }));
 
