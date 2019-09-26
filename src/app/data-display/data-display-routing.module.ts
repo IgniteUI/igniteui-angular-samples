@@ -3,11 +3,17 @@ import { RouterModule, Routes } from "@angular/router";
 import { BadgeSample1Component } from "./badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "./badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "./badge/badge-sample-3/badge-sample-3.component";
+import {
+    BadgeStylingSampleComponent
+} from "./badge/badge-styling-sample/badge-styling-sample.component";
 import { ChipStylingSampleComponent } from "./chip-styling/chip-styling.component";
 import { ChipSampleComponent } from "./chip/chip.component";
 // tslint:disable-next-line:max-line-length
 import { CircularIndeterminateProgressbarComponent } from "./circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component";
 import { CircularProgressbarComponent } from "./circular-progressbar/circular-progressbar.component";
+import {
+    CircularStylingSampleComponent
+} from "./circular-progressbar/circular-styling-sample/circular-styling-sample.component";
 import { dataDisplayRoutesData } from "./data-display-routes-data";
 import { IconSample1Component } from "./icon/icon-sample-1/icon-sample-1.component";
 import { IconSample2Component } from "./icon/icon-sample2/icon-sample2.component";
@@ -46,6 +52,11 @@ export const dataDisplayRoutes: Routes = [
         path: "badge-sample-3"
     },
     {
+        component: BadgeStylingSampleComponent,
+        data: dataDisplayRoutesData["badge-styling-sample"],
+        path: "badge-styling-sample"
+    },
+    {
         component: ChipSampleComponent,
         data: dataDisplayRoutesData["chip-sample"],
         path: "chip-sample"
@@ -54,6 +65,11 @@ export const dataDisplayRoutes: Routes = [
         component: CircularIndeterminateProgressbarComponent,
         data: dataDisplayRoutesData["circular-indeterminate-progressbar"],
         path: "circular-indeterminate-progressbar"
+    },
+    {
+        component: CircularStylingSampleComponent,
+        data: dataDisplayRoutesData["circular-styling-sample"],
+        path: "circular-styling-sample"
     },
     {
         component: CircularProgressbarComponent,

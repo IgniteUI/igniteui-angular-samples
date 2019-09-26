@@ -1,0 +1,93 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*ELEVATIONS*/
+
+$color-1: #3d5770;
+$color-2: rgb(119, 119, 119);
+$color-3: rgb(16, 4, 51);
+
+$elevations-color: igx-elevations($color-1, $color-2, $color-3);
+
+/*BASIC THEMING*/
+
+$custom-theme: igx-badge-theme(
+    $icon-color: white,
+    $text-color: black,
+    $border-radius: 20px,
+    $disable-border: true,
+    $shadow: igx-elevation($elevations-color, 5)
+);
+
+/*ENHANCED APPROACHES*/
+
+// $white-color: white;
+// $black-color: black;
+
+/*PALETTE*/
+
+// $custom-palette: igx-palette(
+//     $primary: $white-color,
+//     $secondary: $black-color
+// );
+
+// $custom-theme: igx-badge-theme(
+//     $icon-color: igx-color($custom-palette, "primary", 500),
+//     $text-color: igx-color($custom-palette, "secondary", 500),
+//     $border-radius: 20px,
+//     $disable-border: true,
+//     $shadow: igx-elevation($elevations-color, 5)
+// );
+
+/*SCHEMAS*/
+
+// $custom-badge-schema: extend($_light-badge,
+//     (
+//         icon-color: (igx-color:('primary', 500)),
+//         text-color: (igx-color:('secondary', 500)),
+//         border-radius: 20px,
+//         elevation: 5
+//     )
+// );
+
+// $my-custom-schema: extend($light-schema,
+//     (
+//         igx-badge: $custom-badge-schema
+//     )
+// );
+
+/*THEME*/
+
+// $custom-theme: igx-badge-theme(
+//   $palette: $custom-palette,
+//   $schema: $my-custom-schema,
+//   $elevations: $elevations-color
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+  ::ng-deep {
+    @include igx-badge($custom-theme);
+
+    igx-list-item.igx-list__item-base{
+        margin-bottom: 10px;
+    }
+  }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.contact-name {
+    font-weight: 600;
+}
+.contact-container{
+    margin-left: 20px;
+}
+.badge-style
+{
+  position: absolute;
+  bottom: 2.5px;
+  left: 35px;
+ }

@@ -2,8 +2,7 @@ import { Component, Inject, OnDestroy } from "@angular/core";
 import { IgxOverlayService } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { filter, takeUntil } from "rxjs/operators";
-import { CardSample1Component } from "../../../layouts/card/card-sample-1/card-sample-1.component";
-// tslint:disable:object-literal-sort-keys
+import { MyDynamicCardComponent} from "../overlay-dynamic-card/overlay-dynamic-card.component";
 @Component({
     selector: "overlay-sample",
     templateUrl: `./overlay-main-sample-1.component.html`,
@@ -28,7 +27,7 @@ export class OverlaySampleMain1Component implements OnDestroy {
 
     public showOverlay() {
         if (!this._overlayId) {
-            this._overlayId = this.overlayService.attach(CardSample1Component);
+            this._overlayId = this.overlayService.attach(MyDynamicCardComponent);
         }
 
         this.overlayService.show(this._overlayId);
