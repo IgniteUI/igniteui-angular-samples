@@ -1,1 +1,52 @@
-<p>grid-dynamic-chart-data works!</p>
+<div class="sample-wrapper">
+    <div class="grid-wrapper">
+        <igx-grid #grid [data]="data" [autoGenerate]="false">
+            <igx-column field='ID' [hidden]='true'></igx-column>
+            <igx-column field='Category'   [sortable]='true'></igx-column>
+            <igx-column field='Type'  [sortable]='true' [filterable]='false'>
+            </igx-column>
+            <igx-column field='Contract'   [sortable]='true'></igx-column>
+            <igx-column field='Settlement' [width]="'150px'"  [sortable]='true'></igx-column>
+
+            <igx-column field='Price'  dataType="number" [cellClasses]="trends" [movable]="true"
+            [sortable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field='Change' [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatNumber" [movable]="true">
+        </igx-column>
+
+        <igx-column field='Change(%)' [width]="'150px'"  dataType="number" [formatter]="percentage" [movable]="true"
+            [sortable]="true" [cellClasses]="trendsChange">
+        </igx-column>Change On Year(%)
+
+        <igx-column field='Change On Year(%)' [width]="'200px'"  dataType="number" [formatter]="percentage" [movable]="true"
+        [sortable]="true" [cellClasses]="trendsOnYear">
+    </igx-column>
+            <igx-column [field]="'Open Price'"  dataType="number" [formatter]="formatCurrency"
+                [movable]="true" [sortable]="true" [cellClasses]="trendsChange"></igx-column>
+
+            <igx-column [field]="'Buy'" [cellClasses]="trendsChange" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+            [sortable]="true"></igx-column>
+        <igx-column [field]="'Sell'" [cellClasses]="trendsChange" [width]="'110px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+            [sortable]="true"></igx-column>
+            <igx-column field='Region'   [sortable]='true'></igx-column>
+            <igx-column field='Country'  [sortable]='true'></igx-column>
+            <igx-column [field]="'IndGrou'" [filterable]='false'></igx-column>
+            <igx-column [field]="'IndSect'" [filterable]='false' [resizable]='true'></igx-column>
+            <igx-column [field]="'IndSubg'" [filterable]='false'></igx-column>
+            <igx-column [field]="'SecType'" [filterable]='false'></igx-column>
+            <igx-column [field]="'IssuerN'" [filterable]='false' [resizable]='true'></igx-column>
+            <igx-column [field]="'Moodys'" [filterable]='false'></igx-column>
+            <igx-column [field]="'Fitch'" [filterable]='false'></igx-column>
+            <igx-column [field]="'DBRS'" [filterable]='false'></igx-column>
+        </igx-grid>
+    </div>
+</div>
