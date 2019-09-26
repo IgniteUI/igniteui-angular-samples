@@ -2,8 +2,6 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     IgxDialogComponent,
     IgxGridComponent,
-    IgxGridTransaction,
-    IgxHierarchicalTransactionService,
     IgxTreeGridComponent,
     Transaction
 } from "igniteui-angular";
