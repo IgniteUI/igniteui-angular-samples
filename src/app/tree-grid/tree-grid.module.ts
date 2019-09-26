@@ -33,6 +33,9 @@ import {
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import {
+    TreeGridWithTransactionsComponent
+} from "./tree-grid-batch-editing/tree-grid-with-transactions.component";
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import {
     TreeGridChilddatakeySampleComponent
@@ -173,6 +176,7 @@ import {
         TreeGridRowEditSampleComponent,
         TreeGridRowEditStyleComponent,
         TreeGridBatchEditingSampleComponent,
+        TreeGridWithTransactionsComponent,
         TreeGridEditingEventsComponent,
         TreeGridEmployeesSampleComponent,
         TreeGridPagingStyleSampleComponent,
