@@ -26,7 +26,7 @@ import {
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
-import { TreeGridWithTransactionsComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-with-transactions.component"
+import { TreeGridWithTransactionsComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-with-transactions.component";
 import { TreeGridChilddatakeySampleComponent } from "../../src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridClipboardSampleComponent } from "../../src/app/tree-grid/tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import { TreeGridColumnHidingSampleComponent } from "../../src/app/tree-grid/tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -185,7 +185,11 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Batch Editing sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/data/utils.ts", "/src/app/tree-grid/data/employees-flat.ts"],
+            additionalFiles: [
+                "/src/app/data/utils.ts",
+                "/src/app/tree-grid/data/employees-flat.ts",
+                "/src/app/tree-grid/tree-grid-batch-editing/tree-grid-with-transactions.component.ts"
+            ],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridBatchEditingSampleComponent, TreeGridWithTransactionsComponent,
                     IgxButtonModule, IgxDialogModule, IgxGridModule],
