@@ -1,5 +1,10 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxDropEventArgs, IgxHierarchicalGridComponent, IgxHierarchicalRowComponent, Point } from "igniteui-angular";
+import {
+    IDropDroppedEventArgs,
+    IgxHierarchicalGridComponent,
+    IgxHierarchicalRowComponent,
+    Point
+} from "igniteui-angular";
 import { createData, IDrive } from "../../data/files.data";
 
 @Component({
@@ -23,8 +28,7 @@ export class HGridRowReorderComponent {
         }
     }
 
-    public rowDrop(args: IgxDropEventArgs): void {
-        args.cancel = true;
+    public rowDrop(args: IDropDroppedEventArgs): void {
         const targetRow = args.dragData;
         const event = args.originalEvent;
         const cursorPosition: Point = { x: event.pageX, y: event.pageY };

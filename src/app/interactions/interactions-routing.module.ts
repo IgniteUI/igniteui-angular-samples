@@ -7,13 +7,18 @@ import { DialogSample2Component } from "./dialog/dialog-sample-2/dialog-sample-2
 import { DialogSample3Component } from "./dialog/dialog-sample-3/dialog-sample-3.component";
 import { DialogStylingSample } from "./dialog/dialog-styling-sample/dialog-styling-sample.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { DragDialogSampleComponent } from "./drag-drop/dialog-sample/drag-dialog-sample.component";
+import { EmailSampleComponent } from "./drag-drop/email-sample/email-sample.component";
 import { IconsSampleComponent } from "./drag-drop/icons-sample/icons-sample.component";
+import { KanbanSampleComponent } from "./drag-drop/kanban-sample/kanban-sample.component";
+import { ListReorderSampleComponent } from "./drag-drop/list-reorder-sample/list-reorder-sample.component";
 import { interactionsRoutesData } from "./interactions-routes-data";
 import { OverlaySampleMain1Component } from "./overlay/overlay-main-1/overlay-main-sample-1.component";
 import { OverlaySampleMain2Component } from "./overlay/overlay-main-2/overlay-main-sample-2.component";
 import { OverlaySampleMain3Component } from "./overlay/overlay-main-3/overlay-main-sample-3.component";
 import { OverlayPositionSample1Component } from "./overlay/overlay-positioning-1/overlay-position-sample-1.component";
 import { OverlayPositionSample2Component } from "./overlay/overlay-positioning-2/overlay-position-sample-2.component";
+import { OverlayPositionSample3Component } from "./overlay/overlay-positioning-3/overlay-position-sample-3.component";
 import { OverlayScrollSample1Component } from "./overlay/overlay-scroll-1/overlay-scroll-sample-1.component";
 import { OverlayScrollSample2Component } from "./overlay/overlay-scroll-2/overlay-scroll-sample-2.component";
 import { OverlayStylingComponent } from "./overlay/overlay-styling/overlay-styling.component";
@@ -23,6 +28,7 @@ import { RippleSample3Component } from "./ripple/ripple-sample-3/ripple-sample-3
 import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4.component";
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
+import { RippleStylingSampleComponent } from "./ripple/ripple-stying/ripple-styling-sample.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -189,6 +195,11 @@ export const interactionsRoutes: Routes = [
         path: "overlay-position-sample-2"
     },
     {
+        component: OverlayPositionSample3Component,
+        data: interactionsRoutesData["overlay-position-sample-3"],
+        path: "overlay-position-sample-3"
+    },
+    {
         component: OverlayScrollSample1Component,
         data: interactionsRoutesData["overlay-scroll-sample-1"],
         path: "overlay-scroll-sample-1"
@@ -199,14 +210,39 @@ export const interactionsRoutes: Routes = [
         path: "overlay-scroll-sample-2"
     },
     {
+        component: ListReorderSampleComponent,
+        data: interactionsRoutesData["list-reorder-sample"],
+        path: "list-reorder-sample"
+    },
+    {
         component: OverlayStylingComponent,
         data: interactionsRoutesData["overlay-styling"],
         path: "overlay-styling-simple"
     },
     {
+        component: EmailSampleComponent,
+        data: interactionsRoutesData["email-sample"],
+        path: "email-sample"
+    },
+    {
+        component: KanbanSampleComponent,
+        data: interactionsRoutesData["kanban-sample"],
+        path: "kanban-sample"
+    },
+    {
+        component: DragDialogSampleComponent,
+        data: interactionsRoutesData["drag-dialog-sample"],
+        path: "drag-dialog-sample"
+    },
+    {
         component: IconsSampleComponent,
         data: interactionsRoutesData["icons-sample"],
         path: "icons-sample"
+    },
+    {
+        component: RippleStylingSampleComponent,
+        data: interactionsRoutesData["ripple-styling"],
+        path: "ripple-styling"
     }
 ];
 

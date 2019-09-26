@@ -2,6 +2,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
+import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "./hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
 import { HGridCostumHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
@@ -11,11 +13,15 @@ import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-mov
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridToolbarPinningComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
+import {
+    HGridConditionalRowSelectorsComponent
+} from "./hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component";
 import { HGridCustomKBNavigationComponent } from "./hierarchical-grid-custom-kb-navigation/hierarchical-grid-custom-kb-navigation-sample.component";
 import { HGridDisplayDensitySampleComponent } from "./hierarchical-grid-display-density/hierarchical-grid-density.component";
 import { HGridEditingEventsComponent } from "./hierarchical-grid-editing-events/hierarchical-grid-editing-events.component";
 import { HGridEditingStyleComponent } from "./hierarchical-grid-editing-style/hierarchical-grid-editing-style.component";
 import { HGridEditingSampleComponent } from "./hierarchical-grid-editing/hierarchical-grid-editing.component";
+import { HierarchicalGridExcelStyleFilteringLoadOnDemandComponent } from "./hierarchical-grid-excel-style-filtering-load-on-demand/hierarchical-grid-excel-style-filtering-load-on-demand.component";
 import {
     HGridExcelStyleFilteringSample1Component
 } from "./hierarchical-grid-excel-style-filtering-sample-1/hierarchical-grid-excel-style-filtering-sample-1.component";
@@ -35,6 +41,7 @@ import { HGridFilteringSampleComponent } from "./hierarchical-grid-filtering/hie
 import { HierarchicalGridLoDSampleComponent } from "./hierarchical-grid-lod/hierarchical-grid-lod.component";
 import { HGridMultiCellStyleComponent } from "./hierarchical-grid-multi-cell-style/hierarchical-grid-multi-cell-style.component";
 import { HGridMultiHeaderTemplateSampleComponent } from "./hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
+import { HGridMultiHeadersStylingComponent } from "./hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
@@ -46,6 +53,7 @@ import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchi
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
+import { HGridSelectionTemplateNumbersSampleComponent} from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
@@ -89,6 +97,12 @@ export const hierarchicalGridRoutes: Routes = [
         path: "hierarchical-grid-excel-style-filtering-sample-3"
     },
     {
+        component: HierarchicalGridExcelStyleFilteringLoadOnDemandComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-load-on-demand"],
+        path: "hierarchical-grid-excel-style-filtering-load-on-demand"
+    },
+    {
         component: HGridExcelStyleFilteringStyleComponent,
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-style"],
@@ -117,6 +131,11 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-selection"],
         path: "hierarchical-grid-selection"
+    },
+    {
+        component: HGridSelectionTemplateNumbersSampleComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-selection-template-numbers"],
+        path: "hierarchical-grid-selection-template-numbers"
     },
     {
         component: HGridSummarySampleComponent,
@@ -201,6 +220,12 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-multi-column"],
         path: "hierarchical-grid-multi-column"
+    },
+    {
+        component: HGridMultiHeadersStylingComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-multi-column-styling"],
+        path: "hierarchical-grid-multi-column-styling"
     },
     {
         component: HGridMultiCellStyleComponent,
@@ -315,9 +340,26 @@ export const hierarchicalGridRoutes: Routes = [
         path: "hierarchical-grid-filtering-style"
     },
     {
+        component: HGridAdvancedFilteringSampleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-advanced-filtering"],
+        path: "hierarchical-grid-advanced-filtering"
+    },
+    {
+        component: HGridAdvancedFilteringStyleComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-advanced-filtering-style"],
+        path: "hierarchical-grid-advanced-filtering-style"
+    },
+    {
         component: HGridStylingComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-styling"],
         path: "hierarchical-grid-styling"
+    },
+    {
+        component: HGridConditionalRowSelectorsComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-conditional-row-selectors"],
+        path: "hierarchical-grid-conditional-row-selectors"
     }
 ];
 

@@ -4,12 +4,12 @@
     <div class="container">
         <div class="group">
             <label for="dialogPicker">Dialog Mode</label>
-            <igx-date-picker id="dialogPicker" cancelButtonLabel="close" todayButtonLabel="today" [(ngModel)]="date1">
+            <igx-date-picker id="dialogPicker" cancelButtonLabel="close" todayButtonLabel="today" [(ngModel)]="date1" monthsViewNumber="2" [hideOutsideDays]="true">
             </igx-date-picker>
         </div>
         <div class="group">
             <label for="dropdownPicker">Drop Down Mode</label>
-            <igx-date-picker id="dropdownPicker" mode="dropdown" cancelButtonLabel="close" todayButtonLabel="today"
+            <igx-date-picker id="dropdownPicker" mode="dropdown" cancelButtonLabel="close" todayButtonLabel="today" monthsViewNumber="2" [hideOutsideDays]="true"
                 [(ngModel)]="date2">
             </igx-date-picker>
         </div>

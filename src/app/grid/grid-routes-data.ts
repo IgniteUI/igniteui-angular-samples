@@ -37,6 +37,8 @@ export const gridsRoutesData = {
     "grid-sample-4": { displayName: "Grid Remote Virtualization", parentName: "Grid" },
     "grid-remote-filtering": { displayName: "Grid Remote Filtering", parentName: "Grid" },
     "grid-selection": { displayName: "Grid Selection", parentName: "Grid" },
+    "grid-selection-template-numbering": { displayName: "Grid Row Selectors Template - Numbers", parentName: "Grid" },
+    "grid-selection-template-excel": { displayName: "Grid Row Selectors Template - Excel", parentName: "Grid" },
     "grid-search-sample": { displayName: "Grid Search", parentName: "Grid" },
     "grid-column-hiding-sample": { displayName: "Grid Column Hiding", parentName: "Grid" },
     "grid-column-hiding-toolbar-sample": { displayName: "Grid Column Hiding with Toolbar", parentName: "Grid" },
@@ -49,6 +51,8 @@ export const gridsRoutesData = {
     "grid-moving-sample": { displayName: "Grid Column Moving", parentName: "Grid" },
     "grid-moving-styled-sample": { displayName: "Grid Column Moving Styled", parentName: "Grid" },
     "multi-column-headers": { displayName: "Grid Multi Column Headers", parentName: "Grid" },
+    "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
+    "multi-column-headers-styling": { displayName: "Grid Multi Column Headers Styling", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
     "grid-custom-keyboard-navigation": { displayName: "Custom Keyboard Navigation", parentName: "Grid" },
@@ -68,8 +72,13 @@ export const gridsRoutesData = {
     "grid-row-edit-style": { displayName: "Grid Row Edit Style", parentName: "Grid" },
     "grid-contextmenu-sample": { displayName: "Grid Context Menu", parentName: "Grid" },
     "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" },
-    "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
-    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" }
+    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
+    "grid-cell-selection": { displayName: "Grid Cell Selection", parentName: "Grid" },
+    "grid-advanced-filtering": { displayName: "Grid Advanced Filtering", parentName: "Grid" },
+    "grid-advanced-filtering-style": { displayName: "Grid Advanced Filtering Style", parentName: "Grid" },
+    "grid-excel-style-filtering-load-on-demand":
+        { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
+    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" }
 };

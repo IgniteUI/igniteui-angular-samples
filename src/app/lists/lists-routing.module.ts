@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CascadingCombos } from "./combo/cascading-combos/cascading-combos.component";
+import { ComboBindingComponent } from "./combo/combo-binding/combo-binding.component";
 import { ComboFeatures } from "./combo/combo-features/combo-features.component";
 import { ComboMainComponent } from "./combo/combo-main/combo-main.component";
 import { ComboOverlayComponent } from "./combo/combo-overlay/combo-overlay.component";
@@ -23,6 +24,11 @@ export const listsRoutes: Routes = [
     {
         component: ComboMainComponent,
         path: "combo"
+    },
+    {
+        component: ComboBindingComponent,
+        data: listsRoutesData["combo-binding"],
+        path: "combo-binding"
     },
     {
         component: ComboFeatures,
