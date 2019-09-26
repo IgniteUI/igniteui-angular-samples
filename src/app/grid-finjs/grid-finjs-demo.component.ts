@@ -1,5 +1,4 @@
-// tslint:disable-next-line:max-line-length
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import {
     DefaultSortingStrategy, IDialogEventArgs, IgxButtonGroupComponent, IgxDialogComponent,
     IgxGridCellComponent,
@@ -65,7 +64,7 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     private selectedButton;
     private _timer;
     private volumeChanged;
-    constructor(private localService: LocalDataService, private elRef: ElementRef, private cdr: ChangeDetectorRef) {
+    constructor(private localService: LocalDataService, private elRef: ElementRef) {
         this.subscription = this.localService.getData(this.volume);
         this.localService.records.subscribe(x => { this.data = x; });
     }
@@ -106,12 +105,11 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     public selectFirstGroupAndFillChart() {
         this.properties = ["Price", "Country"];
         this.setChartConfig("Countries", "Prices (USD)", "Data Chart with prices by Category and Country");
-        const recordIDs = [];
-        this.grid1.groupsRecords[0].groups[0].groups[0].records.forEach(item => {
-            recordIDs.push(item.ID);
+        // tslint:disable-next-line: max-line-length
+        const recordsToBeSelected = this.grid1.selectionService.getRowIDs(this.grid1.groupsRecords[0].groups[0].groups[0].records);
+        recordsToBeSelected.forEach(item => {
+            this.grid1.selectionService.selectRowById(item, false, true);
         });
-        this.grid1.selectRows(recordIDs);
-        this.cdr.detectChanges();
     }
     public setChartConfig(xAsis, yAxis, title) {
         // update label interval and angle based on data
@@ -199,8 +197,6 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     public openSingleRowChart(cell: IgxGridCellComponent) {
         this.chartData = [];
         setTimeout(() => {
-            this.grid1.deselectAllRows();
-            this.grid1.selectRows([cell.rowData.ID]);
             this.chartData = this.data.filter(item => item.Region === cell.rowData.Region &&
                 item.Category === cell.rowData.Category);
 

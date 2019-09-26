@@ -3,6 +3,9 @@ import { IgxAvatarModule, IgxBadgeModule, IgxListModule } from "igniteui-angular
 import { BadgeSample1Component } from "../../src/app/data-display/badge/badge-sample-1/badge-sample-1.component";
 import { BadgeSample2Component } from "../../src/app/data-display/badge/badge-sample-2/badge-sample-2.component";
 import { BadgeSample3Component } from "../../src/app/data-display/badge/badge-sample-3/badge-sample-3.component";
+import {
+    BadgeStylingSampleComponent
+} from "../../src/app/data-display/badge/badge-styling-sample/badge-styling-sample.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -43,6 +46,17 @@ export class BadgeConfigGenerator implements IConfigGenerator {
                 imports: [IgxBadgeModule, IgxListModule, IgxAvatarModule, BadgeSample3Component],
                 ngDeclarations: [BadgeSample3Component],
                 ngImports: [IgxBadgeModule, IgxListModule, IgxAvatarModule]
+            }),
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        configs.push(new Config({
+            component: BadgeStylingSampleComponent,
+            additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxBadgeModule, IgxListModule, BadgeStylingSampleComponent],
+                ngDeclarations: [BadgeStylingSampleComponent],
+                ngImports: [IgxBadgeModule, IgxListModule]
             }),
             shortenComponentPathBy: "/data-display/badge/"
         }));

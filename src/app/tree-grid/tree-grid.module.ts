@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
     IgxAvatarModule,
+    IgxBannerModule,
     IgxButtonGroupModule,
     IgxButtonModule,
     IgxCsvExporterService,
@@ -14,6 +15,7 @@ import {
     IgxRippleModule,
     IgxSelectModule,
     IgxSliderModule,
+    IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule,
@@ -23,8 +25,15 @@ import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
+    TreeGridAdvancedFilteringSampleComponent
+} from "./tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
+import {
+    TreeGridAdvancedFilteringStyleComponent
+} from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
+import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
+import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
@@ -58,12 +67,18 @@ import {
     TreeGridConditionalCellStyleComponent
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import {
+    TreeGridConditionalRowSelectorsSampleComponent
+} from "./tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
+import {
     TreeGridDisplaydensitySampleComponent
 } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingEventsComponent } from "./tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
+import {
+    TreeGridExcelStyleFilteringLoadOnDemandComponent
+} from "./tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
 import {
     TreeGridExcelStyleFilteringSample1Component
 } from "./tree-grid-excel-style-filtering-sample-1/tree-grid-excel-style-filtering-sample-1.component";
@@ -125,6 +140,9 @@ import { TreeGridRowReorderComponent } from "./tree-grid-row-reorder/tree-grid-r
 import { TreeGridSearchSampleComponent } from "./tree-grid-search-sample/tree-grid-search-sample.component";
 import { TreeGridSelectionSampleComponent } from "./tree-grid-selection-sample/tree-grid-selection-sample.component";
 import {
+    TreeGridSelectionTemplateNumbersSampleComponent
+} from "./tree-grid-selection-template-numbers/tree-grid-selection-template-numbers.component";
+import {
     TreeGridContextmenuComponent
 } from "./tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
@@ -148,7 +166,6 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
-
 @NgModule({
     declarations: [
         TreeGridChilddatakeySampleComponent,
@@ -163,6 +180,7 @@ import {
         TreeGridColumnHidingSampleComponent,
         TreeGridColumnHidingToolbarSampleComponent,
         TreeGridSelectionSampleComponent,
+        TreeGridSelectionTemplateNumbersSampleComponent,
         TreeGridSortingSampleComponent,
         TreeGridSortingStylingComponent,
         TreeGridContextmenuComponent,
@@ -207,7 +225,12 @@ import {
         TreeGridMultiColumnHeaderTemplateSampleComponent,
         TreeGridClipboardSampleComponent,
         TreeGridToolbarStyleComponent,
-        TreeGridFilteringStyleComponent
+        TreeGridFilteringStyleComponent,
+        TreeGridCellSelectionComponent,
+        TreeGridAdvancedFilteringSampleComponent,
+        TreeGridAdvancedFilteringStyleComponent,
+        TreeGridExcelStyleFilteringLoadOnDemandComponent,
+        TreeGridConditionalRowSelectorsSampleComponent
     ],
     imports: [
         CommonModule,
@@ -228,7 +251,9 @@ import {
         IgxToastModule,
         IgxSelectModule,
         IgxSparklineModule,
-        IgxSparklineCoreModule
+        IgxSparklineCoreModule,
+        IgxBannerModule,
+        IgxSnackbarModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })

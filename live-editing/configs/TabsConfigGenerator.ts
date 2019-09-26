@@ -23,6 +23,7 @@ import {
     TabsRoutingView2Component,
     TabsRoutingView3Component,
     TabsSample6Component } from "../../src/app/layouts/tabs/tabs-sample-6/tabs-sample-6.component";
+import { TabsStyleComponent } from "../../src/app/layouts/tabs/tabs-style/tabs-style.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -131,6 +132,17 @@ export class TabsConfigGenerator implements IConfigGenerator {
                     ])
                     `
                 ]
+            }),
+            shortenComponentPathBy: "/layouts/tabs/"
+        }));
+
+        configs.push(new Config({
+            component: TabsStyleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTabsModule, IgxCardModule, IgxAvatarModule,
+                    IgxButtonModule, IgxRippleModule, TabsStyleComponent],
+                ngDeclarations: [TabsStyleComponent],
+                ngImports: [IgxTabsModule, IgxCardModule, IgxAvatarModule, IgxButtonModule, IgxRippleModule]
             }),
             shortenComponentPathBy: "/layouts/tabs/"
         }));

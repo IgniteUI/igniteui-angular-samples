@@ -2,15 +2,3 @@
     max-width: 400px;
     min-width: 250px;
 }
-
-.h-sample-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 1 0%;
-    margin: 0;
-
-    igx-card-header {
-        padding-bottom: 0;
-    }
-}

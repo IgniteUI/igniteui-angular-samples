@@ -1,0 +1,26 @@
+.sample-wrapper {
+    overflow-y: auto;
+}
+
+.calendar-wrapper {
+    max-width: 700px;
+    min-width: 200px;
+    border: 1px solid #e41c77;
+    text-align: center;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stay__info > span {
+    color: #e41c77;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.046875rem;
+    text-transform: uppercase;
+    line-height: 1rem;
+    text-align: center;
+  }

@@ -1,10 +1,10 @@
 <div class="grid__wrapper">
     <igx-tree-grid #treegrid1 [data]="data" [showToolbar]="true" [columnHiding]="true" [autoGenerate]="false" height="850px" width="100%" [allowFiltering]="true" 
         primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter">
-        <ng-template igxExcelStyleSortingTemplate>Sorting Template</ng-template>
-        <ng-template igxExcelStyleHidingTemplate>Hiding Template</ng-template>
-        <ng-template igxExcelStyleMovingTemplate>Moving Template</ng-template>
-        <ng-template igxExcelStylePinningTemplate>Pinning Template</ng-template>
+        <ng-template igxExcelStyleSorting>Sorting Template</ng-template>
+        <ng-template igxExcelStyleHiding>Hiding Template</ng-template>
+        <ng-template igxExcelStyleMoving>Moving Template</ng-template>
+        <ng-template igxExcelStylePinning>Pinning Template</ng-template>
         <igx-column field="ID" header="Product ID" [dataType]="'string'">
         </igx-column>
         <igx-column field="Name" header="Product Name" [sortable]="true" [movable]="true" [dataType]="'string'">

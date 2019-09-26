@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { IgxDropEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
+import { IDropDroppedEventArgs, IgxTreeGridComponent, IgxTreeGridRowComponent, Point } from "igniteui-angular";
 import { generateEmployeeFlatData } from "../data/employees-flat";
 
 @Component({
@@ -23,8 +23,7 @@ export class TreeGridRowReorderComponent {
         }
     }
 
-    public dropInGrid(args: IgxDropEventArgs): void {
-        args.cancel = true;
+    public dropInGrid(args: IDropDroppedEventArgs): void {
         const draggedRow: IgxTreeGridRowComponent = args.dragData;
         const event = args.originalEvent;
         const cursorPosition: Point = { x: event.pageX, y: event.pageY };

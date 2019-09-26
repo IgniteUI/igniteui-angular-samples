@@ -1,8 +1,7 @@
-import { Component, QueryList, ViewChildren, ViewEncapsulation } from "@angular/core";
-import { IgxCircularProgressBarComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
+import { Component, QueryList, ViewChildren } from "@angular/core";
+import { IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-linear-progressbar",
   styleUrls: ["./linear-progressbar.component.scss"],
   templateUrl: "./linear-progressbar.component.html"

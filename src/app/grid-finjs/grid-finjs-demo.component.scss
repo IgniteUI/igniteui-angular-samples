@@ -174,10 +174,6 @@
         width: 45%;
         min-width: 500px;
         margin-top: 20px;
-
-        .igx-button--flat {
-            font-size: 0.7em
-        }
     }
     .sample-toolbar {
         height: 20px;
@@ -213,12 +209,4 @@
 .grid__wrapper {
     padding: 5px 15px;
     height: 95%;
-}
-
-::ng-deep .dark-theme {
-    igx-category-chart {
-      .ig-tooltip-container-background {
-        background: black
-      }
-    }
 }

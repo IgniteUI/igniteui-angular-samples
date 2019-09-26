@@ -37,6 +37,8 @@ export const gridsRoutesData = {
     "grid-sample-4": { displayName: "Grid Remote Virtualization", parentName: "Grid" },
     "grid-remote-filtering": { displayName: "Grid Remote Filtering", parentName: "Grid" },
     "grid-selection": { displayName: "Grid Selection", parentName: "Grid" },
+    "grid-selection-template-numbering": { displayName: "Grid Row Selectors Template - Numbers", parentName: "Grid" },
+    "grid-selection-template-excel": { displayName: "Grid Row Selectors Template - Excel", parentName: "Grid" },
     "grid-search-sample": { displayName: "Grid Search", parentName: "Grid" },
     "grid-column-hiding-sample": { displayName: "Grid Column Hiding", parentName: "Grid" },
     "grid-column-hiding-toolbar-sample": { displayName: "Grid Column Hiding with Toolbar", parentName: "Grid" },
@@ -72,5 +74,11 @@ export const gridsRoutesData = {
     "grid-column-hiding-style": { displayName: "Grid Column Hiding Style", parentName: "Grid" },
     "grid-clipboard-operations-sample": { displayName: "Grid Clipboard Operations", parentName: "Grid" },
     "grid-toolbar-style": { displayName: "Grid Toolbar Style", parentName: "Grid" },
-    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" }
+    "grid-filtering-style": { displayName: "Grid Filtering Style", parentName: "Grid" },
+    "grid-cell-selection": { displayName: "Grid Cell Selection", parentName: "Grid" },
+    "grid-advanced-filtering": { displayName: "Grid Advanced Filtering", parentName: "Grid" },
+    "grid-advanced-filtering-style": { displayName: "Grid Advanced Filtering Style", parentName: "Grid" },
+    "grid-excel-style-filtering-load-on-demand":
+        { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
+    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" }
 };

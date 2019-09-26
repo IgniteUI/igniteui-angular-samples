@@ -13,6 +13,10 @@ export const treeGridRoutesData = {
     "treegrid-column-hiding": { displayName: "TreeGrid Column Hiding", parentName: "TreeGrid" },
     "treegrid-column-hiding-toolbar": { displayName: "TreeGrid Column Hiding Toolbar", parentName: "TreeGrid" },
     "treegrid-selection": { displayName: "TreeGrid Selection", parentName: "TreeGrid" },
+    "tree-grid-selection-template-numbers": {
+        displayName: "TreeGrid Row Selectors Template - Numbers",
+        parentName: "TreeGrid"
+    },
     "treegrid-sorting": { displayName: "TreeGrid Sorting", parentName: "TreeGrid" },
     "treegrid-sorting-styling": { displayName: "TreeGrid Sorting Styling", parentName: "TreeGrid" },
     "treegrid-column-moving": { displayName: "TreeGrid Column Moving", parentName: "TreeGrid" },
@@ -39,6 +43,8 @@ export const treeGridRoutesData = {
         displayName: "TreeGrid Excel Style Filtering Styling",
         parentName: "TreeGrid"
     },
+    "treegrid-excel-style-filtering-load-on-demand":
+        { displayName: "TreeGrid Excel Style Filtering Load On Demand", parentName: "TreeGrid" },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-header-template": {
         displayName: "TreeGrid Multi Column Header Template",
@@ -75,5 +81,9 @@ export const treeGridRoutesData = {
     "treegrid-column-hiding-style": { displayName: "TreeGrid Column Hiding Style", parentName: "TreeGrid" },
     "tree-grid-clipboard-operations-sample": { displayName: "TreeGrid Clipboard Operations", parentName: "TreeGrid" },
     "treegrid-toolbar-style": { displayName: "TreeGrid Toolbar Style", parentName: "TreeGrid" },
-    "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" }
+    "treegrid-filtering-style": { displayName: "TreeGrid Filtering Style", parentName: "TreeGrid" },
+    "treegrid-advanced-filtering": { displayName: "TreeGrid Advanced Filtering", parentName: "TreeGrid" },
+    "treegrid-advanced-filtering-style": { displayName: "TreeGrid Advanced Filtering Style", parentName: "TreeGrid" },
+    "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" },
+    "treegrid-conditional-row-selectors": { displayName: "TreeGrid Conditional Row Selectors", parentName: "TreeGrid" }
 };
