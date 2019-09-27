@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FinancialData } from "../services/financialData";
+import { IgxGridComponent } from 'igniteui-angular';
+import { GridSelectionRange } from 'igniteui-angular/lib/core/grid-selection';
 @Component({
     selector: "app-grid-dynamic-chart-data",
     templateUrl: "./grid-dynamic-chart-data.component.html",
@@ -8,12 +10,28 @@ import { FinancialData } from "../services/financialData";
 export class GridDynamicChartDataComponent implements OnInit {
     public data;
 
+    @ViewChild(IgxGridComponent, {static: true})
+    public grid: IgxGridComponent;
+
+    public selectedData = [];
+    public contextmenu = false;
+    public contextmenuX = 0;
+    public contextmenuY = 0;
+    public clickedCell = null;
+    public dataRows = []
     constructor() {
     }
 
     public ngOnInit() {
         this.data = new FinancialData().generateData(1000);
-        console.log(this.data);
+
+        this.grid.onRangeSelection.subscribe( range => {
+            this.selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
+            this.dataRows = this.grid.data.slice(range.rowStart, range.rowEnd);
+
+            console.log(this.dataRows);
+        });
+
     }
 
     private negative = (rowData: any): boolean => {
@@ -92,4 +110,36 @@ export class GridDynamicChartDataComponent implements OnInit {
         return value.toFixed(2) + "%";
     }
 
+    private dataMap(dataRecord: any) {
+        Object.keys(dataRecord).forEach(k => {
+            switch (k) {
+                case "Price":
+                case "Change":
+                case "Change(%)":
+                case "Change On Year(%)":
+                case "Open Price":
+                case "Buy":
+                case "Sell":
+                break;
+                default:
+                    delete dataRecord[k];
+            }
+        });
+        return dataRecord;
+    }
+
+    public rightClick(eventArgs) {
+        debugger;
+        eventArgs.event.preventDefault();
+        this.contextmenuX = eventArgs.event.clientX;
+        this.contextmenuY = eventArgs.event.clientY;
+        this.clickedCell = eventArgs.cell;
+        this.contextmenu = true;
+    }
+
+    public disableContextMenu() {
+        if (this.contextmenu) {
+            this.contextmenu = false;
+        }
+    }
 }
