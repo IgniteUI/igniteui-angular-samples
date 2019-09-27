@@ -10,6 +10,16 @@ import {
     IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule,
     IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
+import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
+import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
+import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
+import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
+import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
+import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
+import { IgxIndicatorsModule } from "igniteui-angular-charts/ES5/igx-indicators-module";
+import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
+import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
@@ -33,6 +43,7 @@ import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/gri
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
+import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
 import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
@@ -186,7 +197,8 @@ import { DataService } from "./services/data.service";
         GridAdvancedFilteringStyleComponent,
         GridCellSelectionComponent,
         GridConditionalRowSelectorsComponent,
-        GridDynamicChartDataComponent
+        GridDynamicChartDataComponent,
+        ContextMenuComponent
     ],
     imports: [
         CommonModule,
@@ -220,7 +232,17 @@ import { DataService } from "./services/data.service";
         IgxSelectModule,
         IgxSparklineModule,
         IgxSparklineCoreModule,
-        IgxSnackbarModule
+        IgxSnackbarModule,
+        IgxDataChartCategoryModule,
+        IgxDataChartCoreModule,
+        IgxLegendModule,
+        IgxIndicatorsModule,
+        IgxFinancialPriceSeriesModule,
+        IgxDataChartInteractivityModule,
+        IgxBollingerBandsOverlayModule,
+        IgxNumericXAxisModule,
+        IgxNumericYAxisModule,
+        IgxCategoryXAxisModule
     ],
     providers: [
         DataService,
