@@ -254,7 +254,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
