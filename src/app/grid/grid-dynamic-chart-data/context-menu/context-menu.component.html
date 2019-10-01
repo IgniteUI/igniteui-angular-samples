@@ -1,5 +1,38 @@
 <div *ngIf="cell" class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
-    <span class=item (click)="log($event)">
-        <igx-icon class="icon" fontSet="material">content_copy </igx-icon>Copy Cell Data
+    <span *ngIf="hasChartDataSelection()" class=item (mouseenter)="renderChartsMenu($event)">
+        <span><igx-icon class="icon" fontSet="material">show_chart </igx-icon>View Chart</span><igx-icon class="icon forward" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item (mouseenter)="renderExportMenu($event)">
+        <igx-icon class="icon" fontSet="material">get_app </igx-icon>Export Data {{hasMultiCellSelection() ? '' : 'Row'}} <igx-icon class="icon forward" fontSet="material">arrow_right</igx-icon>
     </span>
 </div>
+
+
+
+<div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2" (mouseleave)="chartsMenu = false">
+    <span class=item >
+        <span><igx-icon class="icon" fontSet="material">bar_chart</igx-icon>Column</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item >
+        <span><igx-icon class="icon" fontSet="material">scatter_plot</igx-icon>Scatter</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item >
+        <igx-icon class="icon" fontSet="material">pie_chart</igx-icon>Pie
+    </span>
+    <span class=item >
+        <igx-icon class="icon" fontSet="material">data_usage</igx-icon>Doughnut
+    </span>
+</div>
+
+<div *ngIf="exportMenu" [ngStyle]="{'left.px': exportMenuX, 'top.px': exportMenuY}" class="contextmenu level2" (mouseleave)="exportMenu = false">
+    <span class=item style="text-align: center">
+        CSV Export
+    </span>
+    <span class=item style="text-align: center">
+        Excel Export
+    </span>
+</div>
+
+<!-- <div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2" (mouseleave)="chartsMenu = false">
+
+</div> -->
