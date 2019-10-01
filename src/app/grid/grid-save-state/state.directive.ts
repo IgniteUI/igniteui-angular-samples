@@ -9,6 +9,7 @@ interface IGridState {
     paging: {index: number, recordsPerPage: number};
     selection: any[];
     filtering: FilteringExpressionsTree;
+    advancedFiltering: FilteringExpressionsTree;
     sorting: ISortingExpression[];
     columns: any[];
 }
@@ -21,6 +22,7 @@ export class IgxGridStateDirective implements AfterViewInit {
     public perPage = 15;
     public selection = true;
     public filtering = true;
+    public advancedFiltering = true;
     public paging = true;
     public sorting = true;
     public columns = true;
@@ -28,6 +30,7 @@ export class IgxGridStateDirective implements AfterViewInit {
 
     public initialState: IGridState = {
         filtering: new FilteringExpressionsTree(0),
+        advancedFiltering: undefined,
         paging: {index: 0, recordsPerPage: this.perPage},
         selection: [],
         sorting: [],
@@ -64,6 +67,9 @@ export class IgxGridStateDirective implements AfterViewInit {
         const filteringState = { filtering: this.grid.filteringExpressionsTree};
         this.storeState("filtering", filteringState);
 
+        const advancedFilteringState = { advancedFiltering: this.grid.advancedFilteringExpressionsTree};
+        this.storeState("advancedFiltering", advancedFilteringState);
+
         const selectionState = {selection: this.grid.selectedRows()};
         this.storeState("selection", selectionState);
 
@@ -88,33 +94,40 @@ export class IgxGridStateDirective implements AfterViewInit {
             const gridFilteringExpressionsTree = new FilteringExpressionsTree(this.gridState.filtering.operator);
 
             for (const f of this.gridState.filtering.filteringOperands) {
-              const filtOperand = f as FilteringExpressionsTree;
-              let columnsFiltOperands: any;
+                const filtOperand = f as FilteringExpressionsTree;
+                let columnsFiltOperands: any;
 
-              // We need to make sure that we have a IFilteringExpression[] to pass to the createExpressionsTree method
-              // Depending on filtering logic (AND or OR), filtOperand.filteringOperands returns different content,
-              // so we have three cases, where to build IFilteringExpression[], see #1, #2 and #3
-              if (filtOperand.filteringOperands.length > 1) {
+                // We need to make sure that we have a IFilteringExpression[]
+                // to pass to the createExpressionsTree method.
+                // Depending on filtering logic (AND or OR), filtOperand.filteringOperands returns different content,
+                // so we have three cases, where to build IFilteringExpression[], see #1, #2 and #3
+                if (filtOperand.filteringOperands.length > 1) {
                 // #1 filtOperand.filteringOperands is an array of IFilteringExpression objects
                 columnsFiltOperands = filtOperand.filteringOperands as IFilteringExpression[];
-              } else {
+                } else {
                 columnsFiltOperands = filtOperand.filteringOperands[0] as IFilteringExpression;
                 if (Array.isArray(columnsFiltOperands.filteringOperands)) {
-                  // #2 filtOperand.filteringOperands is an array of just one IFilteringExpression\
-                  // containing filteringOperands property, which value is an array of IFilteringExpression objects
-                  columnsFiltOperands = columnsFiltOperands.filteringOperands;
+                    // #2 filtOperand.filteringOperands is an array of just one IFilteringExpression\
+                    // containing filteringOperands property, which value is an array of IFilteringExpression objects
+                    columnsFiltOperands = columnsFiltOperands.filteringOperands;
                 } else {
-                  // #3 just an IFilteringExpression object, that we wrap in an array
-                  columnsFiltOperands = [columnsFiltOperands];
+                    // #3 just an IFilteringExpression object, that we wrap in an array
+                    columnsFiltOperands = [columnsFiltOperands];
                 }
-              }
-              // we pass an array of IFilteringExpression to the createExpressionsTree
-              const columnFilteringExpressionsTree = this.createExpressionsTree(columnsFiltOperands, filtOperand);
-              gridFilteringExpressionsTree.filteringOperands.push(columnFilteringExpressionsTree);
+                }
+                // we pass an array of IFilteringExpression to the createExpressionsTree
+                const columnFilteringExpressionsTree = this.createExpressionsTree(columnsFiltOperands, filtOperand);
+                gridFilteringExpressionsTree.filteringOperands.push(columnFilteringExpressionsTree);
             }
 
             this.grid.filteringExpressionsTree = gridFilteringExpressionsTree;
-          }
+        }
+
+        // restore advanced filtering
+        if (this.advancedFiltering && this.gridState.advancedFiltering) {
+            const exprTree = this.createExpressionsTreeFromObject(this.gridState.advancedFiltering);
+            this.grid.advancedFilteringExpressionsTree = exprTree;
+        }
 
         // restore paging
         if (this.paging && this.gridState.paging) {
@@ -143,14 +156,14 @@ export class IgxGridStateDirective implements AfterViewInit {
     public storeState(action: string, args: any) {
         if (this[action]) {
             const actionKey = action + "-" + this.grid.id;
-            window.localStorage.setItem(actionKey, JSON.stringify(args));
+            window.localStorage.setItem(actionKey, JSON.stringify(args, this.stringifyCallback));
         }
     }
 
     public getStoredState(action: string, gridId?: string): any {
         gridId = gridId ?  gridId : this.grid.id;
         const actionKey = action + "-" + gridId;
-        const item = JSON.parse(window.localStorage.getItem(actionKey));
+        const item = JSON.parse(window.localStorage.getItem(actionKey), this.parseCallback);
         return item ? item[action] : null;
     }
 
@@ -199,6 +212,33 @@ export class IgxGridStateDirective implements AfterViewInit {
         return columnFilteringExpressionsTree;
     }
 
+    /**
+     * This method builds a FilteringExpressionsTree from a provided object.
+     */
+    private createExpressionsTreeFromObject(exprTreeObject: any): FilteringExpressionsTree {
+        if (!exprTreeObject || !exprTreeObject.filteringOperands) {
+            return null;
+        }
+
+        const expressionsTree = new FilteringExpressionsTree(exprTreeObject.operator);
+
+        for (const item of exprTreeObject.filteringOperands) {
+            // Check if item is an expressions tree or a single expression.
+            if (item.filteringOperands) {
+                const subTree = this.createExpressionsTreeFromObject((item as FilteringExpressionsTree));
+                expressionsTree.filteringOperands.push(subTree);
+            } else {
+                const expr = item as IFilteringExpression;
+                const column = this.grid.getColumnByName(expr.fieldName);
+                expr.condition = column.filters.condition(expr.condition.name);
+                expr.searchVal = (column.dataType === "date") ? new Date(Date.parse(expr.searchVal)) : expr.searchVal;
+                expressionsTree.filteringOperands.push(expr);
+            }
+        }
+
+        return expressionsTree;
+    }
+
     private getColumns() {
         const gridColumns = this.grid.columns.map((c) => {
             return {
@@ -214,6 +254,24 @@ export class IgxGridStateDirective implements AfterViewInit {
             };
         });
         return gridColumns;
+    }
+
+    private stringifyCallback(key: string, val: any) {
+        const expr = val as IFilteringExpression;
+        if (expr && expr.searchVal instanceof Set) {
+            expr.searchVal = Array.from(expr.searchVal);
+            return expr;
+        }
+        return val;
+    }
+
+    private parseCallback(key: string, val: any) {
+        const expr = val as IFilteringExpression;
+        if (expr && Array.isArray(expr.searchVal)) {
+            expr.searchVal = new Set(expr.searchVal);
+            return expr;
+        }
+        return val;
     }
 }
 // tslint:enable:object-literal-sort-keys
