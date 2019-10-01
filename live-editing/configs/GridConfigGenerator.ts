@@ -265,7 +265,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummarySampleComponent,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -277,7 +277,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummaryStylingSampleComponent,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummaryStylingSampleComponent, IgxIconModule, IgxBadgeModule],
@@ -1020,7 +1020,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
         configs.push(new Config({
             component: GridGroupByStyling,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridGroupByStyling, IgxGridModule],
                 ngDeclarations: [GridGroupByStyling],

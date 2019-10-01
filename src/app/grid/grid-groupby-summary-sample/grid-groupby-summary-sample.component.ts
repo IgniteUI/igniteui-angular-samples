@@ -10,7 +10,7 @@ import {
     ISortingExpression,
     SortingDirection
 } from "igniteui-angular";
-import { LOCAL_DATA } from "../../data/grid-groupby-summary-data";
+import { INVOICE_DATA } from "../../data/invoiceData";
 
 class AvgSummary extends IgxSummaryOperand {
 
@@ -65,7 +65,7 @@ export class GridGroupBySummarySampleComponent {
     public summaryCalculationMode = GridSummaryCalculationMode.rootAndChildLevels;
 
     constructor() {
-        this.data = LOCAL_DATA;
+        this.data = INVOICE_DATA;
         this.expr = [
             { dir: SortingDirection.Asc, fieldName: "ShipCountry", ignoreCase: false,
               strategy: DefaultSortingStrategy.instance() }
