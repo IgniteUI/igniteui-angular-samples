@@ -7,6 +7,15 @@ import { IGridDataSelection } from "../grid-dynamic-chart-data.component";
 })
 export class ContextMenuComponent implements OnInit {
 
+    public chartsMenu = false;
+    public exportMenu  = false;
+
+    public chartsMenuX;
+    public chartsMenuY;
+
+    public exportMenuX;
+    public exportMenuY;
+
     @Input()
     public x = 0;
 
@@ -31,6 +40,22 @@ export class ContextMenuComponent implements OnInit {
     }
     public hasChartDataSelection() {
         return this.selectedData.some(data => data.selectedData && Object.keys(data.selectedData).length > 0);
+    }
+
+    public renderChartsMenu(event) {
+        this.exportMenu  =  false;
+        this.chartsMenu = true;
+
+        this.chartsMenuX = event.target.getBoundingClientRect()["x"] + 180;
+        this.chartsMenuY = event.target.getBoundingClientRect()["y"] + 5;
+    }
+
+    public renderExportMenu(event) {
+        this.chartsMenu  =  false;
+        this.exportMenu = true;
+
+        this.exportMenuX = event.target.getBoundingClientRect()["x"] + 180;
+        this.exportMenuY = event.target.getBoundingClientRect()["y"] + 5;
     }
 
     public ngOnInit() {
