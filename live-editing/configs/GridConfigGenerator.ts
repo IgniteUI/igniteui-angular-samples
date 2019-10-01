@@ -242,7 +242,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridSample3Component,
-            additionalFiles: ["/src/app/grid/grid-sample-3/data.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
