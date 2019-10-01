@@ -28,23 +28,23 @@
         <igx-column field='Change On Year(%)' [width]="'200px'" dataType="number" [formatter]="percentage"
             [movable]="true" [sortable]="true" [cellClasses]="trendsOnYear">
         </igx-column>
-        <igx-column [field]="'Open Price'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency" [movable]="true"
             [sortable]="true" [cellClasses]="trendsChange"></igx-column>
 
-        <igx-column [field]="'Buy'" [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
+        <igx-column field='Buy' [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
             [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
-        <igx-column [field]="'Sell'" [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
+        <igx-column field='Sell' [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
             [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column field='Region' [sortable]='true'></igx-column>
         <igx-column field='Country' [sortable]='true'></igx-column>
-        <igx-column [field]="'IndGrou'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IndSect'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'IndSubg'" [filterable]='false'></igx-column>
-        <igx-column [field]="'SecType'" [filterable]='false'></igx-column>
-        <igx-column [field]="'IssuerN'" [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column [field]="'Moodys'" [filterable]='false'></igx-column>
-        <igx-column [field]="'Fitch'" [filterable]='false'></igx-column>
-        <igx-column [field]="'DBRS'" [filterable]='false'></igx-column>
+        <igx-column field='IndGrou' [filterable]='false'></igx-column>
+        <igx-column field='IndSect' [filterable]='false' [resizable]='true'></igx-column>
+        <igx-column field='IndSubg' [filterable]='false'></igx-column>
+        <igx-column field='SecType' [filterable]='false'></igx-column>
+        <igx-column field='IssuerN' [filterable]='false' [resizable]='true'></igx-column>
+        <igx-column field='Moodys' [filterable]='false'></igx-column>
+        <igx-column field='Fitch' [filterable]='false'></igx-column>
+        <igx-column field='DBRS' [filterable]='false'></igx-column>
     </igx-grid>
 </div>
 
@@ -56,7 +56,7 @@
     </div>
 </igx-dialog>
 
-<div *ngIf="contextmenu==true">
-    <context-menu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell">
+<div *ngIf="contextmenu === true">
+    <context-menu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell" [selectedData]="gridDataSelection">
     </context-menu>
 </div>

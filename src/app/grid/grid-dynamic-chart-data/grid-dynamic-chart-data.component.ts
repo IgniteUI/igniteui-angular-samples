@@ -1,7 +1,12 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
+import { IgxGridComponent } from "igniteui-angular";
+import { GridSelectionRange } from "igniteui-angular/lib/core/grid-selection";
 import { FinancialData } from "../services/financialData";
-import { IgxGridComponent } from 'igniteui-angular';
-import { GridSelectionRange } from 'igniteui-angular/lib/core/grid-selection';
+
+export interface IGridDataSelection {
+    selectedData: any[];
+    rowID: any;
+}
 @Component({
     selector: "app-grid-dynamic-chart-data",
     templateUrl: "./grid-dynamic-chart-data.component.html",
@@ -13,23 +18,29 @@ export class GridDynamicChartDataComponent implements OnInit {
     @ViewChild(IgxGridComponent, {static: true})
     public grid: IgxGridComponent;
 
+    public gridDataSelection = new Array<IGridDataSelection>();
     public selectedData = [];
     public contextmenu = false;
     public contextmenuX = 0;
     public contextmenuY = 0;
     public clickedCell = null;
-    public dataRows = []
+    public dataRows = [];
+    public selectedCells = [];
     constructor() {
     }
 
     public ngOnInit() {
         this.data = new FinancialData().generateData(1000);
 
-        this.grid.onRangeSelection.subscribe( range => {
+        this.grid.onRangeSelection.subscribe(range => {
+            this.gridDataSelection = [];
             this.selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
             this.dataRows = this.grid.data.slice(range.rowStart, range.rowEnd);
 
-            console.log(this.dataRows);
+            for (let i = 0; i < this.dataRows.length ; i++) {
+                this.gridDataSelection.push({selectedData: this.selectedData[i], rowID: this.dataRows[i]});
+            }
+
         });
 
     }
@@ -65,13 +76,6 @@ export class GridDynamicChartDataComponent implements OnInit {
     }
     private negativeOnYear = (rowData: any, key: string): boolean => {
         return rowData["Change On Year(%)"] < 0;
-    }
-
-    private positiveBuy = (rowData: any, key: string): boolean => {
-        return rowData["Buy"] <= rowData["Sell"];
-    }
-    private negativeBuy = (rowData: any, key: string): boolean => {
-        return rowData["Sell"] > rowData["Sell"];
     }
 
     // tslint:disable:member-ordering
@@ -128,17 +132,40 @@ export class GridDynamicChartDataComponent implements OnInit {
         return dataRecord;
     }
 
-    public rightClick(eventArgs) {
-        debugger;
+    public rightClick(eventArgs: any) {
         eventArgs.event.preventDefault();
+        this.selectedCells = [];
+        const node = eventArgs.cell.selectionNode;
+        const isCellWithinRange = this.grid.getSelectedRanges().some((range) => {
+            if (node.column >= range.columnStart &&
+                node.column <= range.columnEnd &&
+                node.row >= range.rowStart &&
+                node.row <= range.rowEnd) {
+                return true;
+            }
+            return false;
+        });
+
+        if (!isCellWithinRange) {
+            this.disableContextMenu();
+
+            const tempObj = {};
+            tempObj[eventArgs.cell.column.field] = eventArgs.cell.value;
+            // tslint:disable-next-line: max-line-length
+            this.gridDataSelection = [{selectedData: this.dataMap(tempObj), rowID: eventArgs.cell.cellID.rowID}];
+            this.grid.clearCellSelection();
+            this.grid.selectionService.add(eventArgs.cell.selectionNode);
+        }
         this.contextmenuX = eventArgs.event.clientX;
         this.contextmenuY = eventArgs.event.clientY;
         this.clickedCell = eventArgs.cell;
         this.contextmenu = true;
+
     }
 
     public disableContextMenu() {
         if (this.contextmenu) {
+            this.selectedCells = [];
             this.contextmenu = false;
         }
     }
