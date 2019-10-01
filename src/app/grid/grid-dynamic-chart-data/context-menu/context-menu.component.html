@@ -1,5 +1,5 @@
 <div *ngIf="cell" class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
-    <span class=item >
+    <span class=item (click)="log($event)">
         <igx-icon class="icon" fontSet="material">content_copy </igx-icon>Copy Cell Data
     </span>
 </div>
