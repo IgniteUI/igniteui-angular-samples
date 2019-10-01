@@ -1,4 +1,8 @@
 .contextmenu {
+
+    &.level2{
+        width: 120px;
+    }
     position: absolute;
     width: 180px;
     background: white;
@@ -31,5 +35,14 @@
             background: #333;
         }
     }
+   .item{
+    .igx-icon.forward {
+        position:absolute;
+        left: 9rem;
+        &.lvl2{
+            left: 7rem
+        }
+    }
+   }
 }
 

@@ -1,5 +1,5 @@
 <div class="grid-wrapper" (window:click)="disableContextMenu()">
-    <igx-grid #grid [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
+    <igx-grid #grid primaryKey='ID' [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [sortable]='true'></igx-column>
         <igx-column field='Type' [sortable]='true' [filterable]='false'>
