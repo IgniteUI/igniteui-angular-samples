@@ -677,7 +677,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridDisplayDensitySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-displaydensity-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule,
                     IgxGridModule, GridDisplayDensitySampleComponent],
