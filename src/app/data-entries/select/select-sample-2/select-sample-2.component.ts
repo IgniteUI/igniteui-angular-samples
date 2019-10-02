@@ -1,3 +1,4 @@
+
 import { Component } from "@angular/core";
 
 @Component({
@@ -6,8 +7,8 @@ import { Component } from "@angular/core";
     templateUrl: "select-sample-2.component.html"
 })
 export class SelectSample2Component {
-    public items: any[] = [
-        { type: "Fruits", fruits: [ "Apple", "Orange", "Banana" ] },
-        { type: "Vegetables", vegetables: [ "Cucumber", "Potato", "Pepper" ] }
+    public greengrocery: any[] = [
+        { label: "Fruits", items: [ "Apple", "Orange", "Banana" ] },
+        { label: "Vegetables", items: [ "Cucumber", "Potato", "Pepper" ] }
     ];
 }
