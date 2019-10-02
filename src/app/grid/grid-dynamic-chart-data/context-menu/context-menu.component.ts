@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { IGridDataSelection } from "../grid-dynamic-chart-data.component";
+export interface IChartArgs {
+    chartData: any;
+    type: string;
+}
 @Component({
   selector: "context-menu",
   templateUrl: "./context-menu.component.html",
@@ -28,13 +32,16 @@ export class ContextMenuComponent implements OnInit {
     @Input()
     public selectedData: IGridDataSelection[];
 
+    @Output()
+    public onChartSelected = new  EventEmitter<IChartArgs>();
+
     constructor() { }
 
     public hasMultiCellSelection() {
         return this.selectedData.length > 1;
     }
 
-    log(event){
+    public log(event) {
         console.log(this.selectedData);
         console.log(this.hasChartDataSelection());
     }
@@ -56,6 +63,10 @@ export class ContextMenuComponent implements OnInit {
 
         this.exportMenuX = event.target.getBoundingClientRect()["x"] + 180;
         this.exportMenuY = event.target.getBoundingClientRect()["y"] + 5;
+    }
+
+    public selectChart(type) {
+        this.onChartSelected.emit({chartData: this.selectedData, type});
     }
 
     public ngOnInit() {

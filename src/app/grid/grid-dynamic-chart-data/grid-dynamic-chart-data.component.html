@@ -6,7 +6,8 @@
         </igx-column>
         <igx-column field='Contract' [sortable]='true'></igx-column>
         <igx-column field='Settlement' [width]="'150px'" [sortable]='true'></igx-column>
-
+        <igx-column field='Region' [sortable]='true'></igx-column>
+        <igx-column field='Country' [sortable]='true'></igx-column>
         <igx-column field='Price' dataType="number" [cellClasses]="trends" [movable]="true" [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -35,28 +36,20 @@
             [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
         <igx-column field='Sell' [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
             [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
-        <igx-column field='Region' [sortable]='true'></igx-column>
-        <igx-column field='Country' [sortable]='true'></igx-column>
-        <igx-column field='IndGrou' [filterable]='false'></igx-column>
-        <igx-column field='IndSect' [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column field='IndSubg' [filterable]='false'></igx-column>
-        <igx-column field='SecType' [filterable]='false'></igx-column>
-        <igx-column field='IssuerN' [filterable]='false' [resizable]='true'></igx-column>
-        <igx-column field='Moodys' [filterable]='false'></igx-column>
-        <igx-column field='Fitch' [filterable]='false'></igx-column>
-        <igx-column field='DBRS' [filterable]='false'></igx-column>
     </igx-grid>
 </div>
 
-<igx-dialog class="chart-dialog">
-    <div class="dv-container">
-        <div class="chart-container">
-            <igx-data-chart></igx-data-chart>
-        </div>
-    </div>
+<igx-dialog class="chart-dialog" [closeOnOutsideSelect]="true">
+
+<div style="width: 600px; height: 500px">
+        <ng-template chartHost></ng-template>
+</div>
+<igx-item-legend #legend height="100px" width="100px">
+    </igx-item-legend>
 </igx-dialog>
 
 <div *ngIf="contextmenu === true">
-    <context-menu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell" [selectedData]="gridDataSelection">
+    <context-menu [x]="contextmenuX" [y]="contextmenuY" [cell]="clickedCell" [selectedData]="gridDataSelection" (onChartSelected)="openChart($event)">
     </context-menu>
 </div>
+

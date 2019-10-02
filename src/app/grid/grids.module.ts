@@ -15,11 +15,15 @@ import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category
 import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
+import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
+import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
 import { IgxIndicatorsModule } from "igniteui-angular-charts/ES5/igx-indicators-module";
+import {IgxItemLegendModule} from "igniteui-angular-charts/ES5/igx-item-legend-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
+import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
@@ -44,7 +48,7 @@ import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/
 import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
-import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
+import { ChartHostDirective, GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
@@ -110,7 +114,6 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
-
 @NgModule({
     declarations: [
         SummariesData,
@@ -198,7 +201,8 @@ import { DataService } from "./services/data.service";
         GridCellSelectionComponent,
         GridConditionalRowSelectorsComponent,
         GridDynamicChartDataComponent,
-        ContextMenuComponent
+        ContextMenuComponent,
+        ChartHostDirective
     ],
     imports: [
         CommonModule,
@@ -242,12 +246,16 @@ import { DataService } from "./services/data.service";
         IgxBollingerBandsOverlayModule,
         IgxNumericXAxisModule,
         IgxNumericYAxisModule,
-        IgxCategoryXAxisModule
+        IgxCategoryXAxisModule,
+        IgxDoughnutChartModule,
+        IgxRingSeriesModule,
+        IgxItemLegendModule
     ],
     providers: [
         DataService,
         IgxCsvExporterService,
         IgxExcelExporterService
-    ]
+    ],
+    entryComponents: [IgxDoughnutChartComponent]
 })
 export class GridsModule { }

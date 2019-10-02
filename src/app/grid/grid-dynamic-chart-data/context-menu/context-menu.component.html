@@ -10,16 +10,16 @@
 
 
 <div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2" (mouseleave)="chartsMenu = false">
-    <span class=item >
+    <span class=item>
         <span><igx-icon class="icon" fontSet="material">bar_chart</igx-icon>Column</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
     </span>
     <span class=item >
         <span><igx-icon class="icon" fontSet="material">scatter_plot</igx-icon>Scatter</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
     </span>
-    <span class=item >
+    <span class=item>
         <igx-icon class="icon" fontSet="material">pie_chart</igx-icon>Pie
     </span>
-    <span class=item >
+    <span class=item (click)="selectChart('doughnut')">
         <igx-icon class="icon" fontSet="material">data_usage</igx-icon>Doughnut
     </span>
 </div>
