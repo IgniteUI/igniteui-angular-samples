@@ -1,16 +1,27 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { GridSelectionRange } from "igniteui-angular/lib/core/grid-selection";
+import { ChangeDetectorRef, Component, Directive, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
+import {IgxItemLegendComponent} from "igniteui-angular-charts/ES5/igx-item-legend-component";
 import { FinancialData } from "../services/financialData";
+import { ChartService } from "./chart.service";
+import { IChartArgs } from "./context-menu/context-menu.component";
 
 export interface IGridDataSelection {
     selectedData: any[];
+    subjectArea: string;
     rowID: any;
+}
+
+@Directive({
+    selector: "[chartHost]"
+})
+export class ChartHostDirective {
+    constructor(public viewContainerRef: ViewContainerRef) {}
 }
 @Component({
     selector: "app-grid-dynamic-chart-data",
     templateUrl: "./grid-dynamic-chart-data.component.html",
-    styleUrls: ["./grid-dynamic-chart-data.component.scss"]
+    styleUrls: ["./grid-dynamic-chart-data.component.scss"],
+    providers: [ChartService]
 })
 export class GridDynamicChartDataComponent implements OnInit {
     public data;
@@ -18,29 +29,43 @@ export class GridDynamicChartDataComponent implements OnInit {
     @ViewChild(IgxGridComponent, {static: true})
     public grid: IgxGridComponent;
 
+    @ViewChild(ChartHostDirective, {static: true})
+    public chartHost: ChartHostDirective;
+
+    @ViewChild(IgxDialogComponent, {static: true})
+    public dialog: IgxDialogComponent;
+
+    @ViewChild(IgxItemLegendComponent, {static: true})
+    public itemLegend: IgxItemLegendComponent;
+
     public gridDataSelection = new Array<IGridDataSelection>();
     public selectedData = [];
+    public colForSubjectArea = null;
     public contextmenu = false;
     public contextmenuX = 0;
     public contextmenuY = 0;
     public clickedCell = null;
     public dataRows = [];
     public selectedCells = [];
-    constructor() {
+
+    constructor(private chartService: ChartService, private cdr: ChangeDetectorRef) {
     }
 
     public ngOnInit() {
         this.data = new FinancialData().generateData(1000);
-
         this.grid.onRangeSelection.subscribe(range => {
+            debugger;
             this.gridDataSelection = [];
+            this.colForSubjectArea = null;
             this.selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
-            this.dataRows = this.grid.data.slice(range.rowStart, range.rowEnd);
+            this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1 );
+                // tslint:disable-next-line: max-line-length
+            this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
             for (let i = 0; i < this.dataRows.length ; i++) {
-                this.gridDataSelection.push({selectedData: this.selectedData[i], rowID: this.dataRows[i]});
+                // tslint:disable-next-line: max-line-length
+                this.gridDataSelection.push({selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i]});
             }
-
         });
 
     }
@@ -152,7 +177,7 @@ export class GridDynamicChartDataComponent implements OnInit {
             const tempObj = {};
             tempObj[eventArgs.cell.column.field] = eventArgs.cell.value;
             // tslint:disable-next-line: max-line-length
-            this.gridDataSelection = [{selectedData: this.dataMap(tempObj), rowID: eventArgs.cell.cellID.rowID}];
+            this.gridDataSelection = [{selectedData: this.dataMap(tempObj), subjectArea: this.colForSubjectArea = eventArgs.cell.column.field,  rowID: eventArgs.cell.cellID.rowID}];
             this.grid.clearCellSelection();
             this.grid.selectionService.add(eventArgs.cell.selectionNode);
         }
@@ -161,6 +186,12 @@ export class GridDynamicChartDataComponent implements OnInit {
         this.clickedCell = eventArgs.cell;
         this.contextmenu = true;
 
+    }
+
+    public openChart(args: IChartArgs) {
+        this.chartService.chartFactory(args.type, args.chartData, this.chartHost.viewContainerRef, this.itemLegend);
+        this.cdr.detectChanges();
+        this.dialog.open();
     }
 
     public disableContextMenu() {
