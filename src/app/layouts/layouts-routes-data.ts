@@ -22,6 +22,7 @@ export const layoutsRoutesData = {
     "tabbar-sample-1": { displayName: "Bottom Navigation Simple Panels", parentName: "Bottom Navigation" },
     "tabbar-sample-2": { displayName: "Bottom Navigation Customizing Panels", parentName: "Bottom Navigation" },
     "tabbar-sample-3": { displayName: "Bottom Navigation Routing", parentName: "Bottom Navigation" },
+    "tabbar-style": { displayName: "Bottom Navigation Styling", parentName: "Bottom Navigation" },
     "tabs-sample-1": { displayName: "Tabs Overview", parentName: "Tabs" },
     "tabs-sample-2": { displayName: "Tabs Types", parentName: "Tabs" },
     "tabs-sample-3": { displayName: "Tabs Customizing", parentName: "Tabs" },
