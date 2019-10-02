@@ -2,8 +2,6 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import {
     IgxDialogComponent,
     IgxGridComponent,
-    IgxGridTransaction,
-    IgxHierarchicalTransactionService,
     IgxTreeGridComponent,
     Transaction
 } from "igniteui-angular";
@@ -11,7 +9,6 @@ import { generateRandomInteger } from "../../data/utils";
 import { generateEmployeeFlatData, IEmployee } from "../data/employees-flat";
 
 @Component({
-    providers: [{ provide: IgxGridTransaction, useClass: IgxHierarchicalTransactionService }],
     selector: "app-tree-grid-batch-editing-sample",
     styleUrls: ["tree-grid-batch-editing-sample.component.scss"],
     templateUrl: "tree-grid-batch-editing-sample.component.html"

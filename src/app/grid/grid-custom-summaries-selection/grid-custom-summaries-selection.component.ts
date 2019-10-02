@@ -30,7 +30,7 @@ export class GridCustomSummariesSelection implements AfterViewInit {
             columnStart: 1,
             columnEnd: 4
         });
-        this.summariesData.updateData(this.grid1.selectedCells);
+        this.summariesData.updateData(this.grid1.getSelectedData());
     }
     public formatNumber(value: number) {
         return value.toFixed(2);
