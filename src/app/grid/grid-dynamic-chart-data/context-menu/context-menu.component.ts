@@ -13,13 +13,21 @@ export class ContextMenuComponent implements OnInit {
 
     public chartsMenu = false;
     public exportMenu  = false;
+    public chartSeriesTypeMenu = false;
 
     public chartsMenuX;
     public chartsMenuY;
 
+    public chartSeriesTypeMenuX;
+    public chartSeriesTypeMenuY;
+
+
     public exportMenuX;
     public exportMenuY;
 
+    public chartType: string;
+
+    public chartSeriesTypes: string[] = [];
     @Input()
     public x = 0;
 
@@ -41,10 +49,6 @@ export class ContextMenuComponent implements OnInit {
         return this.selectedData.length > 1;
     }
 
-    public log(event) {
-        console.log(this.selectedData);
-        console.log(this.hasChartDataSelection());
-    }
     public hasChartDataSelection() {
         return this.selectedData.some(data => data.selectedData && Object.keys(data.selectedData).length > 0);
     }
@@ -59,18 +63,25 @@ export class ContextMenuComponent implements OnInit {
 
     public renderExportMenu(event) {
         this.chartsMenu  =  false;
+        this.chartSeriesTypeMenu = false;
         this.exportMenu = true;
 
         this.exportMenuX = event.target.getBoundingClientRect()["x"] + 180;
         this.exportMenuY = event.target.getBoundingClientRect()["y"] + 5;
     }
 
-    public selectChart(type) {
-        this.onChartSelected.emit({chartData: this.selectedData, type});
+    public renderChartSeriesTypeMenu(event, chartType: string, ...args: string[]) {
+        this.chartType = chartType;
+        this.chartSeriesTypes = [...args];
+        this.chartSeriesTypeMenu = true;
+        this.chartSeriesTypeMenuX = event.target.getBoundingClientRect()["x"] + 120;
+        this.chartSeriesTypeMenuY = event.target.getBoundingClientRect()["y"] + 5;
+    }
+
+    public selectChart(chartType, seriesType = "") {
+        this.onChartSelected.emit({chartData: this.selectedData, type: chartType + seriesType});
     }
 
     public ngOnInit() {
-        // console.log(this.selectedData);
-        // console.log(this.hasChartDataSelection());
     }
 }
