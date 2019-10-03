@@ -70,7 +70,7 @@ export class IgxGridStateDirective implements AfterViewInit {
         this.storeState("filtering", filteringState, this.stringifyCallback);
 
         const advancedFilteringState = { advancedFiltering: this.grid.advancedFilteringExpressionsTree };
-        this.storeState("advancedFiltering", advancedFilteringState, this.stringifyCallback);
+        this.storeState("advancedFiltering", advancedFilteringState);
 
         const selectionState = { selection: this.grid.selectedRows() };
         this.storeState("selection", selectionState);
@@ -132,19 +132,14 @@ export class IgxGridStateDirective implements AfterViewInit {
     public storeState(action: string, args: any, stringifyCb?: (key, val) => any) {
         if (this[action]) {
             const actionKey = action + "-" + this.grid.id;
-            if (stringifyCb) {
-                window.localStorage.setItem(actionKey, JSON.stringify(args, stringifyCb));
-            } else {
-                window.localStorage.setItem(actionKey, JSON.stringify(args));
-            }
+            window.localStorage.setItem(actionKey, JSON.stringify(args, stringifyCb));
         }
     }
 
     public getStoredState(action: string, gridId?: string, parseCb?: (key, val) => any): any {
         gridId = gridId ? gridId : this.grid.id;
         const actionKey = action + "-" + gridId;
-        const item = (parseCb) ? JSON.parse(window.localStorage.getItem(actionKey), parseCb) :
-                                 JSON.parse(window.localStorage.getItem(actionKey));
+        const item = JSON.parse(window.localStorage.getItem(actionKey), parseCb);
         return item ? item[action] : null;
     }
 
