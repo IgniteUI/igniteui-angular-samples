@@ -114,6 +114,9 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
+import { IgxDataChartComponent } from 'igniteui-angular-charts/ES5/igx-data-chart-component';
+import { IgxCategoryXAxisComponent } from 'igniteui-angular-charts/ES5/igx-category-x-axis-component';
+import { IgxNumericYAxisComponent } from 'igniteui-angular-charts/ES5/igx-numeric-y-axis-component';
 @NgModule({
     declarations: [
         SummariesData,
@@ -256,6 +259,11 @@ import { DataService } from "./services/data.service";
         IgxCsvExporterService,
         IgxExcelExporterService
     ],
-    entryComponents: [IgxDoughnutChartComponent]
+    entryComponents: [
+        IgxDoughnutChartComponent,
+        IgxDataChartComponent,
+        IgxCategoryXAxisComponent,
+        IgxNumericYAxisComponent
+    ]
 })
 export class GridsModule { }
