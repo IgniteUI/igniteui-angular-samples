@@ -67,10 +67,10 @@ export class IgxGridStateDirective implements AfterViewInit {
         this.storeState("sorting", sortingState);
 
         const filteringState = { filtering: this.grid.filteringExpressionsTree };
-        this.storeState("filtering", filteringState);
+        this.storeState("filtering", filteringState, this.stringifyCallback);
 
         const advancedFilteringState = { advancedFiltering: this.grid.advancedFilteringExpressionsTree };
-        this.storeState("advancedFiltering", advancedFilteringState);
+        this.storeState("advancedFiltering", advancedFilteringState, this.stringifyCallback);
 
         const selectionState = { selection: this.grid.selectedRows() };
         this.storeState("selection", selectionState);
@@ -83,7 +83,9 @@ export class IgxGridStateDirective implements AfterViewInit {
         this.gridState = Object.assign({}, this.initialState);
         for (const propt in this.gridState) {
             if ((this.gridState as any).hasOwnProperty(propt)) {
-                this.gridState[propt] = this.getStoredState(propt);
+                this.gridState[propt] = (propt === "filtering" || propt === "advancedFiltering") ?
+                                            this.getStoredState(propt, null, this.parseCallback) :
+                                            this.getStoredState(propt);
             }
         }
     }
@@ -127,17 +129,22 @@ export class IgxGridStateDirective implements AfterViewInit {
         }
     }
 
-    public storeState(action: string, args: any) {
+    public storeState(action: string, args: any, stringifyCb?: (key, val) => any) {
         if (this[action]) {
             const actionKey = action + "-" + this.grid.id;
-            window.localStorage.setItem(actionKey, JSON.stringify(args, this.stringifyCallback));
+            if (stringifyCb) {
+                window.localStorage.setItem(actionKey, JSON.stringify(args, stringifyCb));
+            } else {
+                window.localStorage.setItem(actionKey, JSON.stringify(args));
+            }
         }
     }
 
-    public getStoredState(action: string, gridId?: string): any {
+    public getStoredState(action: string, gridId?: string, parseCb?: (key, val) => any): any {
         gridId = gridId ? gridId : this.grid.id;
         const actionKey = action + "-" + gridId;
-        const item = JSON.parse(window.localStorage.getItem(actionKey), this.parseCallback);
+        const item = (parseCb) ? JSON.parse(window.localStorage.getItem(actionKey), parseCb) :
+                                 JSON.parse(window.localStorage.getItem(actionKey));
         return item ? item[action] : null;
     }
 
@@ -211,19 +218,15 @@ export class IgxGridStateDirective implements AfterViewInit {
     }
 
     private stringifyCallback(key: string, val: any) {
-        const expr = val as IFilteringExpression;
-        if (expr && expr.searchVal instanceof Set) {
-            expr.searchVal = Array.from(expr.searchVal);
-            return expr;
+        if (key === "searchVal" && val instanceof Set) {
+            return Array.from(val);
         }
         return val;
     }
 
     private parseCallback(key: string, val: any) {
-        const expr = val as IFilteringExpression;
-        if (expr && Array.isArray(expr.searchVal)) {
-            expr.searchVal = new Set(expr.searchVal);
-            return expr;
+        if (key === "searchVal" && Array.isArray(val)) {
+            return new Set(val);
         }
         return val;
     }
