@@ -83,7 +83,7 @@ export class IgxGridStateDirective implements AfterViewInit {
         this.gridState = Object.assign({}, this.initialState);
         for (const propt in this.gridState) {
             if ((this.gridState as any).hasOwnProperty(propt)) {
-                this.gridState[propt] = (propt === "filtering" || propt === "advancedFiltering") ?
+                this.gridState[propt] = (propt === "filtering") ?
                                             this.getStoredState(propt, null, this.parseCallback) :
                                             this.getStoredState(propt);
             }
