@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, Directive, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+// tslint:disable: max-line-length
+import { ChangeDetectorRef, Component, Directive, HostListener, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
 import {IgxItemLegendComponent} from "igniteui-angular-charts/ES5/igx-item-legend-component";
 import { FinancialData } from "../services/financialData";
@@ -54,11 +55,10 @@ export class GridDynamicChartDataComponent implements OnInit {
     public ngOnInit() {
         this.data = new FinancialData().generateData(1000);
         this.grid.onRangeSelection.subscribe(range => {
-            debugger;
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
             this.selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
-            this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1 );
+            this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
                 // tslint:disable-next-line: max-line-length
             this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
@@ -66,6 +66,7 @@ export class GridDynamicChartDataComponent implements OnInit {
                 // tslint:disable-next-line: max-line-length
                 this.gridDataSelection.push({selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i]});
             }
+            console.log(this.grid.getSelectedData());
         });
 
     }
@@ -131,24 +132,18 @@ export class GridDynamicChartDataComponent implements OnInit {
         return "$" + value.toFixed(3);
     }
 
-    public formatNumber(value: number) {
-        return value.toFixed(2);
-    }
-
-    public percentage(value: number) {
-        return value.toFixed(2) + "%";
-    }
-
     private dataMap(dataRecord: any) {
         Object.keys(dataRecord).forEach(k => {
             switch (k) {
                 case "Price":
-                case "Change":
-                case "Change(%)":
-                case "Change On Year(%)":
                 case "Open Price":
                 case "Buy":
                 case "Sell":
+                case "Start(Y)":
+                case "High(Y)":
+                case "Low(Y)":
+                case "High(D)":
+                case "Low(D)":
                 break;
                 default:
                     delete dataRecord[k];
@@ -176,7 +171,6 @@ export class GridDynamicChartDataComponent implements OnInit {
 
             const tempObj = {};
             tempObj[eventArgs.cell.column.field] = eventArgs.cell.value;
-            // tslint:disable-next-line: max-line-length
             this.gridDataSelection = [{selectedData: this.dataMap(tempObj), subjectArea: this.colForSubjectArea = eventArgs.cell.column.field,  rowID: eventArgs.cell.cellID.rowID}];
             this.grid.clearCellSelection();
             this.grid.selectionService.add(eventArgs.cell.selectionNode);
@@ -200,4 +194,12 @@ export class GridDynamicChartDataComponent implements OnInit {
             this.contextmenu = false;
         }
     }
+
+    @HostListener("pointerdown", ["$event"])
+    public onPointerDown(event) {
+        // tslint:disable-next-line: max-line-length
+        if (this.contextmenu && event.button === 0 && !event.target.parentElement.classList.contains("contextmenu")) {
+            this.disableContextMenu();
+        }
+   }
 }

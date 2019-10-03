@@ -9,17 +9,17 @@
 
 
 
-<div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2" (mouseleave)="chartsMenu = false">
-    <span class=item>
+<div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2">
+    <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'column', 'Grouped', 'Stacked', '100% Stacked')">
         <span><igx-icon class="icon" fontSet="material">bar_chart</igx-icon>Column</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
     </span>
-    <span class=item >
+    <span class=item (mouseenter)="renderChartSeriesTypeMenu($event, 'scatter', 'Scatter', 'Bubble')">
         <span><igx-icon class="icon" fontSet="material">scatter_plot</igx-icon>Scatter</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
     </span>
-    <span class=item>
+    <span class=item (mouseenter)="chartSeriesTypeMenu = false">
         <igx-icon class="icon" fontSet="material">pie_chart</igx-icon>Pie
     </span>
-    <span class=item (click)="selectChart('doughnut')">
+    <span class=item (click)="selectChart('doughnut')" (mouseenter)="chartSeriesTypeMenu = false">
         <igx-icon class="icon" fontSet="material">data_usage</igx-icon>Doughnut
     </span>
 </div>
@@ -33,6 +33,8 @@
     </span>
 </div>
 
-<!-- <div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2" (mouseleave)="chartsMenu = false">
-
-</div> -->
+<div *ngIf="chartSeriesTypeMenu" [ngStyle]="{'left.px': chartSeriesTypeMenuX, 'top.px': chartSeriesTypeMenuY}" class="contextmenu level3" (mouseleave)="chartSeriesTypeMenu = false">
+    <span *ngFor="let type of chartSeriesTypes" class=item (click)="selectChart(chartType, type)" style="text-align: center">
+        {{type}}
+    </span>
+</div>
