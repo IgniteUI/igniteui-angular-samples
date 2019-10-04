@@ -2,7 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { IGridDataSelection } from "../grid-dynamic-chart-data.component";
 export interface IChartArgs {
     chartData: any;
-    type: string;
+    chartType: string;
+    seriesType: string;
 }
 @Component({
   selector: "context-menu",
@@ -21,12 +22,11 @@ export class ContextMenuComponent implements OnInit {
     public chartSeriesTypeMenuX;
     public chartSeriesTypeMenuY;
 
-
     public exportMenuX;
     public exportMenuY;
 
     public chartType: string;
-
+    public series: string;
     public chartSeriesTypes: string[] = [];
     @Input()
     public x = 0;
@@ -79,7 +79,9 @@ export class ContextMenuComponent implements OnInit {
     }
 
     public selectChart(chartType, seriesType = "") {
-        this.onChartSelected.emit({chartData: this.selectedData, type: chartType + seriesType});
+        this.chartType = chartType;
+        // tslint:disable-next-line: max-line-length
+        this.onChartSelected.emit({chartData: this.selectedData, chartType: this.chartType, seriesType});
     }
 
     public ngOnInit() {
