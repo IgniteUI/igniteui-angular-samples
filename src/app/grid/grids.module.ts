@@ -11,17 +11,22 @@ import {
     IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
+import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
 import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
+import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
 import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
 import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
 import { IgxIndicatorsModule } from "igniteui-angular-charts/ES5/igx-indicators-module";
+import { IgxItemLegendComponent } from "igniteui-angular-charts/ES5/igx-item-legend-component";
 import {IgxItemLegendModule} from "igniteui-angular-charts/ES5/igx-item-legend-module";
+import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
+import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
 import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
@@ -114,9 +119,6 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
-import { IgxDataChartComponent } from 'igniteui-angular-charts/ES5/igx-data-chart-component';
-import { IgxCategoryXAxisComponent } from 'igniteui-angular-charts/ES5/igx-category-x-axis-component';
-import { IgxNumericYAxisComponent } from 'igniteui-angular-charts/ES5/igx-numeric-y-axis-component';
 @NgModule({
     declarations: [
         SummariesData,
@@ -263,7 +265,9 @@ import { IgxNumericYAxisComponent } from 'igniteui-angular-charts/ES5/igx-numeri
         IgxDoughnutChartComponent,
         IgxDataChartComponent,
         IgxCategoryXAxisComponent,
-        IgxNumericYAxisComponent
+        IgxNumericYAxisComponent,
+        IgxItemLegendComponent,
+        IgxLegendComponent
     ]
 })
 export class GridsModule { }

@@ -1,7 +1,6 @@
 // tslint:disable: max-line-length
 import { ChangeDetectorRef, Component, Directive, HostListener, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
-import {IgxItemLegendComponent} from "igniteui-angular-charts/ES5/igx-item-legend-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService } from "./chart.service";
 import { IChartArgs } from "./context-menu/context-menu.component";
@@ -35,9 +34,6 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     @ViewChild(IgxDialogComponent, {static: true})
     public dialog: IgxDialogComponent;
-
-    @ViewChild(IgxItemLegendComponent, {static: true})
-    public itemLegend: IgxItemLegendComponent;
 
     public gridDataSelection = new Array<IGridDataSelection>();
     public selectedData = [];
@@ -183,7 +179,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     }
 
     public openChart(args: IChartArgs) {
-        this.chartService.chartFactory(args.type, args.chartData, this.chartHost.viewContainerRef, this.itemLegend);
+        this.chartService.chartFactory(args.chartType, args.chartData, this.chartHost.viewContainerRef, args.seriesType);
         this.cdr.detectChanges();
         this.dialog.open();
     }
