@@ -15,6 +15,9 @@
                 <igx-switch [(ngModel)]="state.filtering" (change)="onChange($event, 'filtering')">Filtering</igx-switch>
             </div>
             <div class="control-item">
+                <igx-switch [(ngModel)]="state.advancedFiltering" (change)="onChange($event, 'advancedFiltering')">Advanced Filtering</igx-switch>
+            </div>
+            <div class="control-item">
                 <igx-switch [(ngModel)]="state.paging" (change)="onChange($event, 'paging')">Paging</igx-switch>
             </div>
             <div class="control-item">
@@ -33,8 +36,9 @@
     </div>
 
     <igx-grid [id]="gridId" #grid1 igxState [data]="localData" [primaryKey]="'EmployeeID'" width="950px" height="550px"
-        [rowEditable]="true" [allowFiltering]="true" [rowSelectable]="true"
-        [paging]="true" [columnPinning]="true">
+        [rowEditable]="true" [allowFiltering]="true" [allowAdvancedFiltering]="true" [rowSelectable]="true"
+        [paging]="true" [showToolbar]="true" [columnPinning]="true" [columnHiding]="true"
+        [filterMode]="'excelStyleFilter'" [displayDensity]="'cosy'">
         <igx-column *ngFor="let c of columns" [sortable]="true" [movable]="true" [filterable]="true"
             [field]="c.field" [header]="c.header" [dataType]="c.dataType" [pinned]="c.pinned" [hidden]="c.hidden"></igx-column>
     </igx-grid>
