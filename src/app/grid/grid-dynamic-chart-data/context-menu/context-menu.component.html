@@ -13,10 +13,10 @@
     <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'datachart', 'Column', 'Area', 'Line')">
         <span><igx-icon class="icon" fontSet="material">bar_chart</igx-icon>Column</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
     </span>
-    <span class=item (mouseenter)="renderChartSeriesTypeMenu($event, 'scatter', 'Scatter', 'Bubble')">
+    <span class=item (mouseenter)="renderChartSeriesTypeMenu($event, 'scatter', 'Point', 'Line', 'Bubble')">
         <span><igx-icon class="icon" fontSet="material">scatter_plot</igx-icon>Scatter</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
     </span>
-    <span class=item (mouseenter)="chartSeriesTypeMenu = false">
+    <span class=item (mouseenter)="chartSeriesTypeMenu = false" (click)="selectChart('pie', null)">
         <igx-icon class="icon" fontSet="material">pie_chart</igx-icon>Pie
     </span>
     <span class=item (click)="selectChart('doughnut', null)" (mouseenter)="chartSeriesTypeMenu = false">

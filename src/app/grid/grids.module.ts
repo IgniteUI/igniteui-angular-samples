@@ -25,9 +25,12 @@ import { IgxItemLegendComponent } from "igniteui-angular-charts/ES5/igx-item-leg
 import {IgxItemLegendModule} from "igniteui-angular-charts/ES5/igx-item-legend-module";
 import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
 import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
 import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
 import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
+import { IgxPieChartComponent} from "igniteui-angular-charts/ES5/igx-pie-chart-component";
+import { IgxPieChartModule} from "igniteui-angular-charts/ES5/igx-pie-chart-module";
 import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
@@ -254,7 +257,8 @@ import { DataService } from "./services/data.service";
         IgxCategoryXAxisModule,
         IgxDoughnutChartModule,
         IgxRingSeriesModule,
-        IgxItemLegendModule
+        IgxItemLegendModule,
+        IgxPieChartModule
     ],
     providers: [
         DataService,
@@ -267,7 +271,9 @@ import { DataService } from "./services/data.service";
         IgxCategoryXAxisComponent,
         IgxNumericYAxisComponent,
         IgxItemLegendComponent,
-        IgxLegendComponent
+        IgxLegendComponent,
+        IgxNumericXAxisComponent,
+        IgxPieChartComponent
     ]
 })
 export class GridsModule { }
