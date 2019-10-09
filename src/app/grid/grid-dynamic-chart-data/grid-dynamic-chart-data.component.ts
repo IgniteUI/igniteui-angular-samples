@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { ChangeDetectorRef, Component, Directive, HostListener, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
-import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
+import { CloseScrollStrategy, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
 import { FinancialData } from "../services/financialData";
 import { ChartService } from "./chart.service";
 import { IChartArgs } from "./context-menu/context-menu.component";
@@ -24,6 +24,7 @@ export class ChartHostDirective {
     providers: [ChartService]
 })
 export class GridDynamicChartDataComponent implements OnInit {
+    
     public data;
 
     @ViewChild(IgxGridComponent, {static: true})
@@ -35,6 +36,9 @@ export class GridDynamicChartDataComponent implements OnInit {
     @ViewChild(IgxDialogComponent, {static: true})
     public dialog: IgxDialogComponent;
 
+    @ViewChild(IgxOverlayOutletDirective, { static: true })
+    public outlet: IgxOverlayOutletDirective;
+
     public gridDataSelection = new Array<IGridDataSelection>();
     public selectedData = [];
     public colForSubjectArea = null;
@@ -44,6 +48,14 @@ export class GridDynamicChartDataComponent implements OnInit {
     public clickedCell = null;
     public dataRows = [];
     public selectedCells = [];
+
+
+    private _dialogOverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: true,
+        outlet: null,
+        scrollStrategy: new CloseScrollStrategy()
+    };
 
     constructor(private chartService: ChartService, private cdr: ChangeDetectorRef) {
     }
@@ -181,7 +193,8 @@ export class GridDynamicChartDataComponent implements OnInit {
     public openChart(args: IChartArgs) {
         this.chartService.chartFactory(args.chartType, args.chartData, this.chartHost.viewContainerRef, args.seriesType);
         this.cdr.detectChanges();
-        this.dialog.open();
+        this._dialogOverlaySettings.outlet = this.outlet;
+        this.dialog.open(this._dialogOverlaySettings);
     }
 
     public disableContextMenu() {

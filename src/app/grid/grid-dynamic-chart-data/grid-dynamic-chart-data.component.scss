@@ -1,8 +1,15 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+:host ::ng-deep{
+    @include igx-fluent-theme($fluent-excel-palette);
+}
 .grid-wrapper{
     width: 90%;
     margin: 50px auto;
-    height: 70%;
+    height: 80%;
 }
+
+
 
 :host ::ng-deep {
     .finjs-icons {
@@ -15,6 +22,20 @@
             margin-left: 4px;
         }
     }
+
+    .ig-chart-legend-items-list{
+        height: 20%;
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .selection-area{
+        padding-left:3rem;
+        .chart-area{
+            padding-bottom: 3.5rem;
+        }
+    }
+
     .igx-grid__grouparea {
         max-height: 100%;
         height: auto;
