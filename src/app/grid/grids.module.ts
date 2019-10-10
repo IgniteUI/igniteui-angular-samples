@@ -17,6 +17,7 @@ import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data
 import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
 import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
+import { IgxDataChartStackedModule } from "igniteui-angular-charts/ES5/igx-data-chart-stacked-module";
 import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
 import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
 import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
@@ -259,7 +260,8 @@ import { DataService } from "./services/data.service";
         IgxRingSeriesModule,
         IgxItemLegendModule,
         IgxPieChartModule,
-        IgxTabsModule
+        IgxTabsModule,
+        IgxDataChartStackedModule
     ],
     providers: [
         DataService,
