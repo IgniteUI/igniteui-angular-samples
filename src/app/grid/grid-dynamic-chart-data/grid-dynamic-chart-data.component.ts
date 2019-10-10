@@ -2,20 +2,14 @@
 import { ChangeDetectorRef, Component, Directive, HostListener, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { CloseScrollStrategy, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
 import { FinancialData } from "../services/financialData";
-import { ChartService } from "./chart.service";
+import { ChartService, IGridDataSelection } from "./chart.service";
 import { IChartArgs } from "./context-menu/context-menu.component";
-
-export interface IGridDataSelection {
-    selectedData: any[];
-    subjectArea: string;
-    rowID: any;
-}
 
 @Directive({
     selector: "[chartHost]"
 })
 export class ChartHostDirective {
-    constructor(public viewContainerRef: ViewContainerRef) {}
+    constructor(public viewContainerRef: ViewContainerRef) { }
 }
 @Component({
     selector: "app-grid-dynamic-chart-data",
@@ -24,16 +18,16 @@ export class ChartHostDirective {
     providers: [ChartService]
 })
 export class GridDynamicChartDataComponent implements OnInit {
-    
+
     public data;
 
-    @ViewChild(IgxGridComponent, {static: true})
+    @ViewChild(IgxGridComponent, { static: true })
     public grid: IgxGridComponent;
 
-    @ViewChild(ChartHostDirective, {static: true})
+    @ViewChild(ChartHostDirective, { static: true })
     public chartHost: ChartHostDirective;
 
-    @ViewChild(IgxDialogComponent, {static: true})
+    @ViewChild(IgxDialogComponent, { static: true })
     public dialog: IgxDialogComponent;
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
@@ -48,7 +42,8 @@ export class GridDynamicChartDataComponent implements OnInit {
     public clickedCell = null;
     public dataRows = [];
     public selectedCells = [];
-
+    public currentChart;
+    public chartTypes = ["Column", "Area", "Scatter"];
 
     private _dialogOverlaySettings = {
         closeOnOutsideClick: true,
@@ -67,16 +62,14 @@ export class GridDynamicChartDataComponent implements OnInit {
             this.colForSubjectArea = null;
             this.selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
             this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
-                // tslint:disable-next-line: max-line-length
+            // tslint:disable-next-line: max-line-length
             this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
-            for (let i = 0; i < this.dataRows.length ; i++) {
+            for (let i = 0; i < this.dataRows.length; i++) {
                 // tslint:disable-next-line: max-line-length
-                this.gridDataSelection.push({selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i]});
+                this.gridDataSelection.push({ selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
             }
-            console.log(this.grid.getSelectedData());
         });
-
     }
 
     private negative = (rowData: any): boolean => {
@@ -140,6 +133,19 @@ export class GridDynamicChartDataComponent implements OnInit {
         return "$" + value.toFixed(3);
     }
 
+    public types = ["column", "area",  "line", "scatter"];
+
+    public getSeriesType(chart: string): string[] {
+        switch (chart) {
+            case "column":
+            case "area":
+            case "line":
+                return ["Grouped", "Stacked", "100Stacked"];
+            case "scatter":
+                return ["Bubble", "Point", "Line"];
+        }
+    }
+
     private dataMap(dataRecord: any) {
         Object.keys(dataRecord).forEach(k => {
             switch (k) {
@@ -152,7 +158,7 @@ export class GridDynamicChartDataComponent implements OnInit {
                 case "Low(Y)":
                 case "High(D)":
                 case "Low(D)":
-                break;
+                    break;
                 default:
                     delete dataRecord[k];
             }
@@ -179,7 +185,7 @@ export class GridDynamicChartDataComponent implements OnInit {
 
             const tempObj = {};
             tempObj[eventArgs.cell.column.field] = eventArgs.cell.value;
-            this.gridDataSelection = [{selectedData: this.dataMap(tempObj), subjectArea: this.colForSubjectArea = eventArgs.cell.column.field,  rowID: eventArgs.cell.cellID.rowID}];
+            this.gridDataSelection = [{ selectedData: this.dataMap(tempObj), subjectArea: this.colForSubjectArea = eventArgs.cell.column.field, rowID: eventArgs.cell.cellID.rowID }];
             this.grid.clearCellSelection();
             this.grid.selectionService.add(eventArgs.cell.selectionNode);
         }
@@ -192,6 +198,7 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     public openChart(args: IChartArgs) {
         this.chartService.chartFactory(args.chartType, args.chartData, this.chartHost.viewContainerRef, args.seriesType);
+        this.currentChart = this.chartService.chart;
         this.cdr.detectChanges();
         this._dialogOverlaySettings.outlet = this.outlet;
         this.dialog.open(this._dialogOverlaySettings);
@@ -206,9 +213,13 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
-        // tslint:disable-next-line: max-line-length
         if (this.contextmenu && event.button === 0 && !event.target.parentElement.classList.contains("contextmenu")) {
             this.disableContextMenu();
         }
-   }
+    }
+
+    public changeChart(newChartType: string, seriesType: string = "") {
+        this.chartService.chartFactory(newChartType, this.gridDataSelection, this.chartHost.viewContainerRef, seriesType);
+        this.currentChart =  this.chartService.chart;
+    }
 }
