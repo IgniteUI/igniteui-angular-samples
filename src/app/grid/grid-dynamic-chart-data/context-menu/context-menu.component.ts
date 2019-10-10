@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { IGridDataSelection } from "../grid-dynamic-chart-data.component";
+import { IGridDataSelection } from "../chart.service";
 export interface IChartArgs {
     chartData: any;
     chartType: string;
@@ -58,7 +58,7 @@ export class ContextMenuComponent implements OnInit {
         this.chartsMenu = true;
 
         this.chartsMenuX = event.target.getBoundingClientRect()["x"] + 180;
-        this.chartsMenuY = event.target.getBoundingClientRect()["y"] + 5;
+        this.chartsMenuY = event.target.getBoundingClientRect()["y"] - 50;
     }
 
     public renderExportMenu(event) {
