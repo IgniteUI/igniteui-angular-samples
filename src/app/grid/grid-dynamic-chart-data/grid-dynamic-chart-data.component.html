@@ -54,9 +54,33 @@
 </div>
 
 <igx-dialog class="chart-dialog" [closeOnOutsideSelect]="true">
- <div class="selection-area" style="width: 1500px; height: 90%;">
+ <div class="selection-area">
     <div class="chart-area">
         <ng-template chartHost></ng-template>
+    </div>
+    <div class="chart-config-area">
+        <igx-tabs>
+            <igx-tabs-group label="Type Settings" icon="insert_chart">
+                <div *ngFor="let chartType of types">
+                    <div style="text-align: center">{{chartType | uppercase}}</div>
+                    <div style="display: inline-flex">
+                        <button igxButton="flat" (click)="changeChart(chartType, series)" *ngFor="let series of getSeriesType(chartType)">{{series}}</button>
+                    </div>
+                </div>
+                <div>
+                        <div style="text-align: center">{{'doughnut' | uppercase}}</div>
+                    <div style="text-align: center">
+                        <button igxButton="flat" (click)="changeChart('doughnut', null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">donut_small</igx-icon></button>
+                    </div>
+                </div>
+                <div >
+                    <div style="text-align: center">{{'pie' | uppercase}}</div>
+                    <div style="text-align: center">
+                        <button igxButton="flat" (click)="changeChart('pie', null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">pie_chart</igx-icon></button>
+                    </div>
+                </div>
+            </igx-tabs-group>
+        </igx-tabs>
     </div>
  </div>
 </igx-dialog>

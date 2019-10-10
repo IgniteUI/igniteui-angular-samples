@@ -1,14 +1,33 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
+@mixin scrollbar-love($scrollbar-color: null, $scrollbar-width: 16px, $scrollbar-height: 16px) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+    
+    @if $scrollbar-color and luminance($scrollbar-color) < .5 {
+        $scrollbar-track: darken($scrollbar-color, 8%);
+        $scrollbar-thumb: lighten($scrollbar-color, 20%);
+    }
+
+    ::-webkit-scrollbar {
+        width: $scrollbar-width;
+        height: $scrollbar-height;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
 :host ::ng-deep{
     @include igx-fluent-theme($fluent-excel-palette);
+    @include scrollbar-love();
 }
 .grid-wrapper{
     width: 90%;
     margin: 50px auto;
     height: 80%;
 }
-
 
 
 :host ::ng-deep {
@@ -22,17 +41,35 @@
             margin-left: 4px;
         }
     }
+    .igx-tabs{
+        height: 100%;
+
+    }
+    .igx-tabs__content-fixed {
+        height: 400px;
+        overflow-y: auto; 
+    }
 
     .ig-chart-legend-items-list{
         height: 20%;
         display: inline-flex;
         flex-wrap: wrap;
+        margin-bottom: 1rem;
     }
 
     .selection-area{
-        padding-left:3rem;
+        @include scrollbar-love(null, 8px, 8px);
+        width: 1500px;
+        height: 500px;
+        display: inline-flex;
         .chart-area{
-            padding-bottom: 3.5rem;
+            overflow-y: auto;
+            width: 80%;
+        }
+
+        .chart-config-area{
+            margin-left: 0.2rem;
+            width: 20%;
         }
     }
 
