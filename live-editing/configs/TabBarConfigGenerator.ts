@@ -9,6 +9,7 @@ import {
     BottomNavRoutingView2Component,
     BottomNavRoutingView3Component,
     TabbarSample3Component } from "../../src/app/layouts/tabbar/tabbar-sample-3/tabbar-sample-3.component";
+import { TabbarStyleComponent } from "../../src/app/layouts/tabbar/tabbar-style/tabbar-style.component";
 import { TabbarComponent } from "../../src/app/layouts/tabbar/tabbar.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -85,6 +86,21 @@ export class TabBarConfigGenerator implements IConfigGenerator {
             }),
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
+
+        // tabbar styling sample
+        configs.push(new Config({
+            component: TabbarStyleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxAvatarModule, IgxButtonModule, IgxIconModule,
+                    IgxRippleModule, IgxListModule, IgxBottomNavModule, "Routes",
+                    Router, RouterModule, TabbarStyleComponent],
+                ngDeclarations: [TabbarStyleComponent],
+                ngImports: [ "RouterModule.forRoot(Routes = [\{component: TabbarStyleComponent, path: 'tabbar-style'}])",
+                    IgxAvatarModule, IgxButtonModule, IgxIconModule,
+                    IgxRippleModule, IgxListModule, IgxBottomNavModule]
+            }),
+            shortenComponentPathBy: "/layouts/"
+        }));        
 
         return configs;
     }

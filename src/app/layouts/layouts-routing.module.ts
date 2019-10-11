@@ -37,6 +37,7 @@ import {
     BottomNavRoutingView2Component,
     BottomNavRoutingView3Component,
     TabbarSample3Component } from "./tabbar/tabbar-sample-3/tabbar-sample-3.component";
+import { TabbarStyleComponent } from "./tabbar/tabbar-style/tabbar-style.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
@@ -184,6 +185,11 @@ export const layoutsRoutes: Routes = [
         component: TabbarSample3Component,
         data: layoutsRoutesData["tabbar-sample-3"],
         path: "tabbar-sample-3"
+    },
+    {
+        component: TabbarStyleComponent,
+        data: layoutsRoutesData["tabbar-style"],
+        path: "tabbar-style"
     },
     {
         component: TabsSample1Component,
