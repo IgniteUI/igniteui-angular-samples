@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IgxButtonGroupComponent, IgxGridComponent, IgxNumberSummaryOperand,
     IgxSummaryOperand, IgxSummaryResult } from "igniteui-angular";
-import { DATA } from "./data";
+import { INVOICE_DATA } from "../../data/invoiceData";
 
 class CustomNumberSummary extends IgxSummaryOperand {
 
@@ -39,7 +39,7 @@ export class GridDisplayDensitySampleComponent implements OnInit {
     public numberSummaries = CustomNumberSummary;
 
     public ngOnInit() {
-        this.data = DATA;
+        this.data = INVOICE_DATA;
         this.displayDensities = [
             {
                 label: "compact",
