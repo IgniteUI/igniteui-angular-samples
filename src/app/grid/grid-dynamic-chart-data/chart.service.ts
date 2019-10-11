@@ -27,17 +27,14 @@ import { IgxStackedColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx
 import { IgxStackedFragmentSeriesComponent } from 'igniteui-angular-charts/ES5/igx-stacked-fragment-series-component';
 import { IgxStackedLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-line-series-component";
 import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
+import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-series-component";
+import { IgxStackedBarSeriesComponent} from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
+import { IgxStacked100BarSeriesComponent} from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-component";
 export interface IGridDataSelection {
     selectedData: any[];
     subjectArea: string;
     rowID: any;
 }
-class SeriesFactory {
-    public create<T>(type: (new () => T)): T {
-        return new type();
-    }
-}
-
 @Injectable({
   providedIn: "root"
 })
@@ -46,7 +43,6 @@ export class ChartService {
   public dataChartSeries = new Map<string, Type<any>>();
   public scatterChartSeries = new Map<string, Type<any>>();
   public currentChartType;
-  public valueMemberPath: string;
   public labelMemberPath: string;
   private selectionData: IGridDataSelection[];
   private _chart;
@@ -55,14 +51,17 @@ export class ChartService {
       this.dataChartSeries.set("columnGrouped", IgxColumnSeriesComponent);
       this.dataChartSeries.set("areaGrouped", IgxAreaSeriesComponent);
       this.dataChartSeries.set("lineGrouped", IgxLineSeriesComponent);
+      this.dataChartSeries.set("barGrouped", IgxBarSeriesComponent);
 
       this.dataChartSeries.set("columnStacked", IgxStackedColumnSeriesComponent);
       this.dataChartSeries.set("areaStacked", IgxStackedAreaSeriesComponent);
       this.dataChartSeries.set("lineStacked", IgxStackedLineSeriesComponent);
+      this.dataChartSeries.set("barStacked", IgxStackedBarSeriesComponent);
 
       this.dataChartSeries.set("column100Stacked", IgxStacked100ColumnSeriesComponent);
       this.dataChartSeries.set("area100Stacked", IgxStacked100AreaSeriesComponent);
       this.dataChartSeries.set("line100Stacked", IgxStacked100LineSeriesComponent);
+      this.dataChartSeries.set("bar100Stacked", IgxStacked100BarSeriesComponent);
 
       this.scatterChartSeries.set("scatterPoint", IgxScatterSeriesComponent);
       this.scatterChartSeries.set("scatterBubble", IgxBubbleSeriesComponent);
@@ -74,14 +73,12 @@ export class ChartService {
       let componentFactory: ComponentFactory<any>;
       let componentRef: ComponentRef<any>;
 
-      const yAxisFactory =  this.factoryResolver.resolveComponentFactory(IgxNumericYAxisComponent);
       const itemLegendFactory = this.factoryResolver.resolveComponentFactory(IgxItemLegendComponent);
       const legendFactory = this.factoryResolver.resolveComponentFactory(IgxLegendComponent);
 
       viewContainerRef.clear();
       let itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
       let legendComponentRef = viewContainerRef.createComponent(legendFactory);
-      const yAxisComponentRef = viewContainerRef.createComponent(yAxisFactory);
 
       switch (chartType) {
            case "doughnut":
@@ -104,23 +101,16 @@ export class ChartService {
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
                 legendComponentRef = viewContainerRef.createComponent(legendFactory);
-
-                const categoryXAxisFactory = this.factoryResolver.resolveComponentFactory(IgxCategoryXAxisComponent);
-                const catoryXAxisComponentRef = viewContainerRef.createComponent(categoryXAxisFactory);
-
-                if (seriesType.indexOf("Stacked") === -1) {
-                    this.chart =  this.initDataChart(componentRef.instance, legendComponentRef.instance, catoryXAxisComponentRef.instance, yAxisComponentRef.instance, this.dataChartSeries.get(`${chartType + seriesType}`));
-                } else {
-                    this.chart =  this.initStackedDataChart(componentRef.instance, legendComponentRef.instance, catoryXAxisComponentRef.instance, yAxisComponentRef.instance, this.dataChartSeries.get(`${chartType + seriesType}`));
-                }
+                this.chart = 
                 break;
+           case "bar":
+
            case "scatter":
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
                 legendComponentRef = viewContainerRef.createComponent(legendFactory);
-                const numericXAxisFactory = this.factoryResolver.resolveComponentFactory(IgxNumericXAxisComponent);
-                const numericXAxisComponentRef = viewContainerRef.createComponent(numericXAxisFactory);
-                const scatterChart = this.initScatterChart(componentRef.instance, legendComponentRef.instance, numericXAxisComponentRef.instance, yAxisComponentRef.instance, this.scatterChartSeries.get(`${chartType + seriesType}`));
+
+                const scatterChart = this.initScatterChart(componentRef.instance, legendComponentRef.instance, this.scatterChartSeries.get(`${chartType + seriesType}`));
                 this.chart = scatterChart;
                 break;
         }
@@ -202,7 +192,7 @@ export class ChartService {
         return chart;
   }
 
-  private initDataChart(chart: IgxDataChartComponent, legend: IgxLegendComponent, xAxis: IgxCategoryXAxisComponent, yAxis: IgxNumericYAxisComponent, seriesType: Type<any>): IgxDataChartComponent {
+  private initDataChart(chart: IgxDataChartComponent, legend: IgxLegendComponent, seriesType: Type<any>): IgxDataChartComponent {
     const seriesFactory = new SeriesFactory();
     const valueMemberPaths = Object.keys(this.selectionData[0].selectedData);
     chart.axes.add(xAxis);
@@ -231,8 +221,9 @@ export class ChartService {
     return chart;
   }
 
-  private initStackedDataChart(chart: IgxDataChartComponent, legend: IgxLegendComponent, xAxis: IgxCategoryXAxisComponent, yAxis: IgxNumericYAxisComponent, seriesType: Type<any>): IgxDataChartComponent {
-
+  private initStackedDataChart(chart: IgxDataChartComponent, legend: IgxLegendComponent, seriesType: Type<any>): IgxDataChartComponent {
+    const xAxis = new IgxCategoryXAxisComponent();
+    const yAxis = new IgxNumericYAxisComponent();
     xAxis.label = this.labelMemberPath;
 
     const seriesFactory = new SeriesFactory();
@@ -261,7 +252,9 @@ export class ChartService {
     return chart;
   }
 
-  private initScatterChart(chart: IgxDataChartComponent, legend: IgxLegendComponent, xAxis: IgxNumericXAxisComponent, yAxis: IgxNumericYAxisComponent, seriesType: Type<any>): IgxDataChartComponent {
+  private initScatterChart(chart: IgxDataChartComponent, legend: IgxLegendComponent, seriesType: Type<any>): IgxDataChartComponent {
+    const xAxis = new IgxNumericXAxisComponent();
+    const yAxis = new IgxNumericYAxisComponent();
     const seriesFactory = new SeriesFactory();
     const valueMemberPaths = Object.keys(this.selectionData[0].selectedData);
     yAxis.formatLabel = (value) => `$${value.toFixed(2)}`;
