@@ -725,7 +725,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // Tree Grid Row Rerdering sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/data/employees.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridRowReorderComponent, IgxDragDropModule],
                 ngDeclarations: [TreeGridRowReorderComponent],
