@@ -30,6 +30,7 @@ import { MarkerType } from "igniteui-angular-charts/ES5/MarkerType";
 import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-series-component";
 import { IgxStackedBarSeriesComponent} from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
 import { IgxStacked100BarSeriesComponent} from "igniteui-angular-charts/ES5/igx-stacked-100-bar-series-component";
+import { IgxDataChartInitializer, ChartInitializer } from './initializers';
 export interface IGridDataSelection {
     selectedData: any[];
     subjectArea: string;
@@ -101,7 +102,7 @@ export class ChartService {
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
                 legendComponentRef = viewContainerRef.createComponent(legendFactory);
-                this.chart = 
+                this.chart = new IgxDataChartInitializer(this.dataChartSeries.get(`${chartType + seriesType}`)).initChart(componentRef, );
                 break;
            case "bar":
 
@@ -114,6 +115,10 @@ export class ChartService {
                 this.chart = scatterChart;
                 break;
         }
+  }
+
+  private chartInstance(initializer: ChartInitializer) {
+
   }
 
   public get chart() {
