@@ -89,7 +89,7 @@ export abstract class ChartInitializer {
     protected xAxis;
     protected seriesFactory = new SeriesFactory();
     constructor() {}
-    public abstract initChart(chart: any, options: IChartComponentOptions, data: any[]): any;
+    public abstract initChart(chart: any, data: any[], options?: IChartComponentOptions): any;
 }
 
 export class IgxDataChartInitializer extends ChartInitializer {
@@ -103,7 +103,7 @@ export class IgxDataChartInitializer extends ChartInitializer {
         this.seriesType = seriesType;
     }
 
-    public initChart(chart: IgxDataChartComponent, options: IChartComponentOptions, data: any[]): IgxDataChartComponent {
+    public initChart(chart: IgxDataChartComponent, data: any[], options?: IChartComponentOptions): IgxDataChartComponent {
         data.forEach(dataObject => {
             const series = this.seriesFactory.create(this.seriesType);
             series.xAxis = this.xAxis;
@@ -133,7 +133,7 @@ export class IgxScatterChartInitializer extends IgxDataChartInitializer {
 
 export class IgxStackedDataChartInitializer extends IgxDataChartInitializer {
 
-    public initChart(chart: IgxDataChartComponent, options: IChartComponentOptions, data: any[]): IgxDataChartComponent {
+    public initChart(chart: IgxDataChartComponent, data: any[], options?: IChartComponentOptions): IgxDataChartComponent {
         const series = this.seriesFactory.create(this.seriesType);
         data.forEach(dataObject => {
             Object.keys(options.chartOptions).forEach(key => {
