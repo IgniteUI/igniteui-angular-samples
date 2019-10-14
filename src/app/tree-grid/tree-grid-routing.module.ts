@@ -123,6 +123,7 @@ import {
 } from "./tree-grid-selection-template-numbers/tree-grid-selection-template-numbers.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
+import { TreeGridStyleComponent } from "./tree-grid-style/tree-grid-style.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
 import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
@@ -453,6 +454,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridConditionalRowSelectorsSampleComponent,
         data: treeGridRoutesData["treegrid-conditional-row-selectors"],
         path: "treegrid-conditional-row-selectors"
+    },
+    {
+        component: TreeGridStyleComponent,
+        data: treeGridRoutesData["treegrid-style"],
+        path: "treegrid-style"
     }
 ];
 
