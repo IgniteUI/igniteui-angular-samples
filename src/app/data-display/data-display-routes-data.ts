@@ -25,5 +25,6 @@ export const dataDisplayRoutesData = {
     "mask-sample-4": { displayName: "Additional custom formatting", parentName: "Mask" },
     "mask-sample-5": { displayName: "Placeholder", parentName: "Mask" },
     "text-highlight-1": { displayName: "Search within a single container", parentName: "Text Highlight" },
-    "text-highlight-2": { displayName: "Search within multiple containers", parentName: "Text Highlight" }
+    "text-highlight-2": { displayName: "Search within multiple containers", parentName: "Text Highlight" },
+    "text-highlight-style": { displayName: "Text Highlight Style", parentName: "Text Highlight" }
 };
