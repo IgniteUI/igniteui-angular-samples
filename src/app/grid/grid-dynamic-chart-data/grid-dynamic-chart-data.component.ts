@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { ChangeDetectorRef, Component, Directive, HostListener, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+import { ChangeDetectorRef, Component, Directive, HostListener, OnInit, ViewChild, ViewContainerRef, NgZone, ChangeDetectionStrategy, Pipe, PipeTransform } from "@angular/core";
 import { CloseScrollStrategy, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
@@ -11,6 +11,31 @@ import { IChartComponentOptions, IChartOptions, IChartSeriesOptions, IXAxesOptio
 })
 export class ChartHostDirective {
     constructor(public viewContainerRef: ViewContainerRef) { }
+}
+
+@Pipe({
+    name: "getChartArgs"
+})
+export class ChartArgsPipe implements PipeTransform {
+    public transform(value: string): IChartArgs[] {
+        switch (value) {
+            case "column":
+            case "area":
+            case "line":
+            case "bar":
+                return [
+                    {chartType: value, seriesType: "Grouped"},
+                    {chartType: value, seriesType: "Stacked"},
+                    {chartType: value, seriesType: "100Stacked"}
+                ];
+            case "scatter":
+                return [
+                    {chartType: value, seriesType: "Bubble"},
+                    {chartType: value, seriesType: "Point"},
+                    {chartType: value, seriesType: "Line"}
+                ];
+        }
+    }
 }
 @Component({
     selector: "app-grid-dynamic-chart-data",
@@ -44,21 +69,15 @@ export class GridDynamicChartDataComponent implements OnInit {
     public dataRows = [];
     public selectedCells = [];
     public currentChart;
-    public chartTypes = ["Column", "Area", "Scatter"];
 
+    private currentChartArg: IChartArgs = {chartType: undefined, seriesType:undefined};
     private bubbleChartSizeScale = new IgxSizeScaleComponent();
+
     private _dialogOverlaySettings = {
         closeOnOutsideClick: true,
         modal: true,
         outlet: null,
         scrollStrategy: new CloseScrollStrategy()
-    };
-
-    private dataChartOptions: IChartOptions = {
-        width: "85%",
-        height: "400px",
-        isVerticalZoomEnabled: true,
-        isHorizontalZoomEnabled: true
     };
 
     private dataChartSeriesOptionsModel: IChartSeriesOptions = {
@@ -90,14 +109,40 @@ export class GridDynamicChartDataComponent implements OnInit {
         formatLabel: (value) => this.formatCurrency(value)
     };
 
+    private dataChartOptions: IChartOptions = {
+        width: "800px",
+        height: "400px",
+        isVerticalZoomEnabled: true,
+        isHorizontalZoomEnabled: true,
+        animateSeriesWhenAxisRangeChanges: true
+    };
+
+    private dataChartComponentOptions: IChartComponentOptions = {
+        chartOptions: this.dataChartOptions
+    };
+
+    private scatterChartComponentOptions =  {
+        chartOptions: this.dataChartOptions,
+        xAxisOptions: this.scatterChartXAxisOptions,
+        yAxisOptions: this.scatterChartYAxisOptions
+    };
+
     private chartComponentOptions: IChartComponentOptions;
 
-    constructor(private chartService: ChartService, private cdr: ChangeDetectorRef) {
+    constructor(private chartService: ChartService, private cdr: ChangeDetectorRef, private zone: NgZone) {
         this.bubbleChartSizeScale.maximumValue = 60;
         this.bubbleChartSizeScale.minimumValue = 10;
     }
 
     public ngOnInit() {
+        this.chartService.chartData.subscribe(chart => {
+            this.currentChart  = chart;
+            if (!this.dialog.isOpen) {
+                this.currentChartArg = {chartType: undefined, seriesType: undefined};
+                this._dialogOverlaySettings.outlet = this.outlet;
+                this.dialog.open(this._dialogOverlaySettings);
+            }
+        });
         this.data = new FinancialData().generateData(1000);
         this.grid.onRangeSelection.subscribe(range => {
             this.gridDataSelection = [];
@@ -175,20 +220,7 @@ export class GridDynamicChartDataComponent implements OnInit {
         return "$" + value.toFixed(3);
     }
 
-    public types = ["column", "area", "bar", "line", "scatter"];
-
-    public getSeriesType(chart: string): string[] {
-        switch (chart) {
-            case "column":
-            case "area":
-            case "line":
-                return [
-                    {type: "Grouped", chartOptions: this.dataChartOptions, seriesModel: this.dataChartSeriesOptionsModel},
-                     "Stacked", "100Stacked"];
-            case "scatter":
-                return ["Bubble", "Point", "Line"];
-        }
-    }
+    public chartTypes = ["column", "area", "bar", "line", "scatter"];
 
     private dataMap(dataRecord: any) {
         Object.keys(dataRecord).forEach(k => {
@@ -240,37 +272,32 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     }
 
-    public openChart(args: IChartArgs) {
+    public createChart(args: IChartArgs) {
+        if (this.currentChartArg.chartType === args.chartType && this.currentChartArg.seriesType === args.seriesType) {
+            return;
+        }
+        this.currentChartArg = args;
         let seriesOptionModel: IChartSeriesOptions;
         switch (`${args.seriesType}`) {
             case "Grouped":
             case "Stacked":
             case "100Stacked":
-                this.chartComponentOptions = {chartOptions: this.dataChartOptions};
+                this.chartComponentOptions = this.dataChartComponentOptions;
                 seriesOptionModel = this.dataChartSeriesOptionsModel;
                 break;
             case "Line":
             case "Point":
-                this.chartComponentOptions = {
-                    chartOptions: this.dataChartOptions,
-                    xAxisOptions: this.scatterChartXAxisOptions,
-                    yAxisOptions: this.scatterChartYAxisOptions
-                };
+                this.chartComponentOptions = this.scatterChartComponentOptions;
                 seriesOptionModel = this.scatterChartSeriesOptionsModel;
                 break;
             case "Bubble":
-                this.chartComponentOptions = {
-                    chartOptions: this.dataChartOptions,
-                    xAxisOptions: this.scatterChartXAxisOptions,
-                    yAxisOptions: this.scatterChartYAxisOptions
-                };
+                this.chartComponentOptions = this.scatterChartComponentOptions;
                 seriesOptionModel = this.bubbleChartSeriesOptionsModel;
             }
-        this.chartService.chartFactory(args.chartType, args.chartData, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
-        this.currentChart = this.chartService.chart;
-        this.cdr.detectChanges();
-        this._dialogOverlaySettings.outlet = this.outlet;
-        this.dialog.open(this._dialogOverlaySettings);
+
+        this.zone.runOutsideAngular(() => {
+                this.chartService.chartFactory(args.chartType, this.gridDataSelection, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
+            });
     }
 
     public disableContextMenu() {
@@ -287,8 +314,7 @@ export class GridDynamicChartDataComponent implements OnInit {
         }
     }
 
-    public changeChart(newChartType: string, seriesType: string = "") {
-        this.chartService.chartFactory(newChartType, this.gridDataSelection, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType});
-        this.currentChart =  this.chartService.chart;
+    public trackByFn(index, item) {
+        return index;
     }
 }

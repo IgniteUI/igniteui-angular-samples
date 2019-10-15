@@ -57,7 +57,7 @@ import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/
 import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
-import { ChartHostDirective, GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
+import { ChartArgsPipe, ChartHostDirective, GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
@@ -211,7 +211,8 @@ import { DataService } from "./services/data.service";
         GridConditionalRowSelectorsComponent,
         GridDynamicChartDataComponent,
         ContextMenuComponent,
-        ChartHostDirective
+        ChartHostDirective,
+        ChartArgsPipe
     ],
     imports: [
         CommonModule,

@@ -1,9 +1,9 @@
 <div *ngIf="cell" class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
-    <span *ngIf="hasChartDataSelection()" class=item (mouseenter)="renderChartsMenu($event)">
+    <span *ngIf="multiSelection" class=item (mouseenter)="renderChartsMenu($event)">
         <span><igx-icon class="icon" fontSet="material">insert_chart </igx-icon>View Chart</span><igx-icon class="icon forward" fontSet="material">arrow_right</igx-icon>
     </span>
     <span class=item (mouseenter)="renderExportMenu($event)">
-        <igx-icon class="icon" fontSet="material">get_app </igx-icon>Export Data {{hasMultiCellSelection() ? '' : 'Row'}} <igx-icon class="icon forward" fontSet="material">arrow_right</igx-icon>
+        <igx-icon class="icon" fontSet="material">get_app </igx-icon>Export Data {{multiSelection ? '' : 'Row'}} <igx-icon class="icon forward" fontSet="material">arrow_right</igx-icon>
     </span>
 </div>
 
