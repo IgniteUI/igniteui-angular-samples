@@ -52,6 +52,6 @@ export class CarouselSample4Component implements OnInit {
   }
 
   public goTo(index: number) {
-    this.router.navigate(["/details", index]);
+    this.router.navigate(["layouts/details", index]);
   }
 }

@@ -22,6 +22,6 @@ export class CarouselDetailsViewComponent implements OnInit {
   }
 
   public goBack() {
-    this.router.navigate(["/carousel-sample-4"]);
+    this.router.navigate(["layouts/carousel-sample-4"]);
   }
 }
