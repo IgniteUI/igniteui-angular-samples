@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { IGridDataSelection } from "../chart.service";
 export interface IChartArgs {
-    chartData: any;
     chartType: string;
     seriesType: string;
 }
@@ -10,7 +9,7 @@ export interface IChartArgs {
   templateUrl: "./context-menu.component.html",
   styleUrls: ["./context-menu.component.scss"]
 })
-export class ContextMenuComponent implements OnInit {
+export class ContextMenuComponent {
 
     public chartsMenu = false;
     public exportMenu  = false;
@@ -38,20 +37,12 @@ export class ContextMenuComponent implements OnInit {
     public cell;
 
     @Input()
-    public selectedData: IGridDataSelection[];
+    public multiSelection: boolean;
 
     @Output()
     public onChartSelected = new  EventEmitter<IChartArgs>();
 
     constructor() { }
-
-    public hasMultiCellSelection() {
-        return this.selectedData.length > 1;
-    }
-
-    public hasChartDataSelection() {
-        return this.selectedData.some(data => data.selectedData && Object.keys(data.selectedData).length > 0);
-    }
 
     public renderChartsMenu(event) {
         this.exportMenu  =  false;
@@ -81,9 +72,6 @@ export class ContextMenuComponent implements OnInit {
     public selectChart(chartType, seriesType = "") {
         this.chartType = chartType;
         // tslint:disable-next-line: max-line-length
-        this.onChartSelected.emit({chartData: this.selectedData, chartType: this.chartType, seriesType});
-    }
-
-    public ngOnInit() {
+        this.onChartSelected.emit({chartType: this.chartType, seriesType});
     }
 }
