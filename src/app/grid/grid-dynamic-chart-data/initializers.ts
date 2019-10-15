@@ -1,30 +1,12 @@
+// tslint:disable: max-line-length
 import { Type } from "@angular/core";
 import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
 import { IgxCategoryYAxisComponent } from "igniteui-angular-charts/ES5/igx-category-y-axis-component";
 import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
 import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
-import { IgxStackedFragmentSeriesComponent } from 'igniteui-angular-charts/ES5/igx-stacked-fragment-series-component';
+import { IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-fragment-series-component";
 
-// tslint:disable: max-line-length
-function getSeriesData(valueMemberPaths: string[], data: any[], yAxisValueMemberPath?: string, radiusMemberPath?: string) {
-    let dataValues;
-    const chartData = [];
-    valueMemberPaths.filter(v => !(v === yAxisValueMemberPath || v === radiusMemberPath)).forEach(valueMemberPath => {
-        dataValues = [];
-        data.forEach(record => {
-            // tslint:disable-next-line: max-line-length
-            dataValues.push({
-                [this.labelMemberPath]: record.rowID[this.labelMemberPath],
-                [valueMemberPath]: record.rowID[valueMemberPath],
-                [yAxisValueMemberPath]: record.rowID[yAxisValueMemberPath],
-                [radiusMemberPath]: record.rowID[radiusMemberPath]
-            });
-        });
-        chartData.push({ data: dataValues, valueMemberPath, yAxisValueMemberPath, radiusMemberPath });
-    });
-    return chartData;
-}
 function applyXAxisOptions(xAxis: any, options: IXAxesOptions) {
     if (options) {
         Object.keys(options).forEach(key => {
