@@ -10,8 +10,8 @@ export class TextHighlightSample2Component {
     // tslint:disable max-line-length
     public firstParagraph = `
     Use the search box to search for a certain string in this text.
-    All the results will be highlighted in the secondary color of the current theme with
-    the first occurrence of the string having a slightly modified color shade to tell it apart.
+    All the results will be highlighted in the same color with the exception of the
+    the first occurrence of the string, which will have a different color in order to tell it apart.
     You can use the button in the searchbox to specify if the search will be case sensitive.
     You can move the active highlight by either pressing the buttons on the searchbox or by using the Enter or the arrow keys on your keyboard.
     `;
