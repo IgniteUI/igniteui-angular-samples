@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { ChangeDetectorRef, Component, Directive, HostListener, OnInit, ViewChild, ViewContainerRef, NgZone, ChangeDetectionStrategy, Pipe, PipeTransform } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
 import { CloseScrollStrategy, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
@@ -70,7 +70,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     public selectedCells = [];
     public currentChart;
 
-    private currentChartArg: IChartArgs = {chartType: undefined, seriesType:undefined};
+    private currentChartArg: IChartArgs = {chartType: undefined, seriesType: undefined};
     private bubbleChartSizeScale = new IgxSizeScaleComponent();
 
     private _dialogOverlaySettings = {
@@ -84,7 +84,8 @@ export class GridDynamicChartDataComponent implements OnInit {
         isHighlightingEnabled: true,
         areaFillOpacity: .4,
         markerType: 3,
-        showDefaultTooltip: true
+        showDefaultTooltip: true,
+        isTransitionInEnabled: true
     };
 
     private scatterChartSeriesOptionsModel: IChartSeriesOptions = {
@@ -110,8 +111,9 @@ export class GridDynamicChartDataComponent implements OnInit {
     };
 
     private dataChartOptions: IChartOptions = {
-        width: "800px",
+        width: "100%",
         height: "400px",
+        transitionDuration: 300,
         isVerticalZoomEnabled: true,
         isHorizontalZoomEnabled: true,
         animateSeriesWhenAxisRangeChanges: true

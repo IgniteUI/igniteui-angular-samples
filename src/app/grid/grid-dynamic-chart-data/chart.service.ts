@@ -174,9 +174,15 @@ export class ChartService {
         }
     }
   private addScatterChartDataOptions(options: IChartComponentOptions, model?: IChartSeriesOptions) {
-        const valueMemberPaths = Object.keys(this.selectionData[0].selectedData);
+        const dataSubjects = new Set(Object.keys(this.selectionData[0].selectedData));
+        dataSubjects.add(model["yMemberPath"]);
+        if (model["radiusScale"]) {
+            dataSubjects.add(model["radiusMemberPath"]);
+         }
+        const valueMemberPaths =  [...dataSubjects];
         options.chartOptions["dataSource"] = this.getChartData(valueMemberPaths);
         if (model) {
+
             const seriesOptions: IChartSeriesOptions[] = [];
             valueMemberPaths.filter(v => !(v === model["yMemberPath"] || v === model["radiusMemberPath"])).forEach(valueMemberPath => {
                     const tempObj = new Object();
