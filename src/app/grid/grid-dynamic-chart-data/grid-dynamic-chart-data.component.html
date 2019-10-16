@@ -1,4 +1,4 @@
-<div igxOverlayOutlet class="grid-wrapper" (window:click)="disableContextMenu()">
+<div igxOverlayOutlet class="grid-chart-contextmenu-wrapper" (window:click)="disableContextMenu()">
     <igx-grid #grid primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [sortable]='true'></igx-column>
@@ -56,7 +56,7 @@
 <igx-dialog class="chart-dialog" [closeOnOutsideSelect]="true">
  <div class="selection-area">
     <div class="chart-area">
-        <ng-template chartHost></ng-template>
+        <ng-template #chart chartHost></ng-template>
     </div>
     <div class="chart-config-area">
         <igx-tabs>
@@ -70,13 +70,13 @@
                 <div>
                         <div style="text-align: center">{{'doughnut' | uppercase}}</div>
                     <div style="text-align: center">
-                        <button igxButton="flat" (click)="changeChart('doughnut', null, null, null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">donut_small</igx-icon></button>
+                        <button igxButton="flat" (click)="createChart('doughnut', null, null, null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">donut_small</igx-icon></button>
                     </div>
                 </div>
                 <div >
                     <div style="text-align: center">{{'pie' | uppercase}}</div>
                     <div style="text-align: center">
-                        <button igxButton="flat" (click)="changeChart('pie', null, null, null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">pie_chart</igx-icon></button>
+                        <button igxButton="flat" (click)="createChart('pie', null, null, null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">pie_chart</igx-icon></button>
                     </div>
                 </div>
             </igx-tabs-group>
