@@ -70,13 +70,13 @@
                 <div>
                         <div style="text-align: center">{{'doughnut' | uppercase}}</div>
                     <div style="text-align: center">
-                        <button igxButton="flat" (click)="createChart('doughnut', null, null, null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">donut_small</igx-icon></button>
+                        <button igxButton="flat" (click)="createChart('doughnut')"><igx-icon class="icon" style="font-size: 20px" fontSet="material">donut_small</igx-icon></button>
                     </div>
                 </div>
                 <div >
                     <div style="text-align: center">{{'pie' | uppercase}}</div>
                     <div style="text-align: center">
-                        <button igxButton="flat" (click)="createChart('pie', null, null, null)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">pie_chart</igx-icon></button>
+                        <button igxButton="flat" (mouseenter)="createChart(pieChartArgs)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">pie_chart</igx-icon></button>
                     </div>
                 </div>
             </igx-tabs-group>
