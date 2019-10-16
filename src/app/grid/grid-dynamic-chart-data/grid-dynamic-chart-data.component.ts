@@ -79,6 +79,14 @@ export class GridDynamicChartDataComponent implements OnInit {
         outlet: null,
         scrollStrategy: new CloseScrollStrategy()
     };
+    private pieChartOptions: IChartOptions = {
+        width: "85%",
+        height: "400px",
+        labelsPosition: 3,
+        allowSliceExplosion: true,
+        othersCategoryThreshold: -1,
+        sliceClick: (evt) => {evt.args.isExploded = !evt.args.isExploded; }
+    };
 
     private dataChartSeriesOptionsModel: IChartSeriesOptions = {
         isHighlightingEnabled: true,
@@ -223,7 +231,10 @@ export class GridDynamicChartDataComponent implements OnInit {
     }
 
     public chartTypes = ["column", "area", "bar", "line", "scatter"];
-
+    public pieChartArgs: IChartArgs = {
+        chartType: "pie",
+        seriesType: undefined
+    };
     private dataMap(dataRecord: any) {
         Object.keys(dataRecord).forEach(k => {
             switch (k) {
@@ -295,11 +306,16 @@ export class GridDynamicChartDataComponent implements OnInit {
             case "Bubble":
                 this.chartComponentOptions = this.scatterChartComponentOptions;
                 seriesOptionModel = this.bubbleChartSeriesOptionsModel;
+            default:
+                if (args.chartType === "pie") {
+                    this.chartComponentOptions = {
+                        chartOptions: this.pieChartOptions
+                    };
+                    seriesOptionModel = null;
+                }
             }
-
-        this.zone.runOutsideAngular(() => {
-                this.chartService.chartFactory(args.chartType, this.gridDataSelection, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
-            });
+        this.chartHost.viewContainerRef.clear();
+        this.chartService.chartFactory(args.chartType, this.gridDataSelection, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
     }
 
     public disableContextMenu() {

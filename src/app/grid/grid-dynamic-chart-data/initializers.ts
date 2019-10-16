@@ -1,10 +1,11 @@
 // tslint:disable: max-line-length
-import { Type } from "@angular/core";
+import { Type, EventEmitter } from "@angular/core";
 import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
 import { IgxCategoryYAxisComponent } from "igniteui-angular-charts/ES5/igx-category-y-axis-component";
 import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
 import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
 import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
+import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
 import { IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-fragment-series-component";
 
 function applyXAxisOptions(xAxis: any, options: IXAxesOptions) {
@@ -26,7 +27,11 @@ function applyYAxisOptions(yAxis: any, options: IYAxesOptions) {
 function applyChartOptions(chart: any, options: IChartOptions) {
     if (options) {
         Object.keys(options).forEach(key => {
-            chart[key] = options[key];
+            if (chart[key] instanceof EventEmitter) {
+                chart[key].subscribe(options[key]);
+            } else {
+                chart[key] = options[key];
+            }
         });
     }
 }
@@ -34,7 +39,11 @@ function applyChartOptions(chart: any, options: IChartOptions) {
 function applySeriesOptions(series: any, options: IChartSeriesOptions | IStackedFragmentOptions) {
     if (options) {
         Object.keys(options).forEach(key => {
-            series[key] = options[key];
+            if (series[key] instanceof EventEmitter) {
+                series[key].subscribe(options[key]);
+            } else {
+                series[key] = options[key];
+            }
         });
     }
 }
@@ -79,6 +88,18 @@ export abstract class ChartInitializer {
     protected seriesFactory = new SeriesFactory();
     constructor() { }
     public abstract initChart(chart: any, options?: IChartComponentOptions): any;
+}
+
+export class IgxPieChartInitializer extends ChartInitializer {
+    constructor() {
+        super();
+    }
+
+    public initChart(chart: IgxPieChartComponent, options?: IChartComponentOptions) {
+
+        applyChartOptions(chart, options.chartOptions);
+        return chart;
+    }
 }
 
 export class IgxDataChartInitializer extends ChartInitializer {

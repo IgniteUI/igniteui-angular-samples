@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Injectable, Type, ViewContainerRef } from "@angular/core";
+import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Injectable, NgZone, Type, ViewContainerRef } from "@angular/core";
 import { IgxAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-area-series-component";
 import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-series-component";
 import { IgxBubbleSeriesComponent } from "igniteui-angular-charts/ES5/igx-bubble-series-component";
@@ -20,16 +20,17 @@ import { IgxStackedAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-s
 import { IgxStackedBarSeriesComponent} from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
 import { IgxStackedColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-column-series-component";
 import { IgxStackedLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-line-series-component";
+import { Subject } from "rxjs";
 import { ChartInitializer,
          IChartComponentOptions,
          IChartSeriesOptions,
          IgxBarDataChartInitializer,
          IgxDataChartInitializer,
+         IgxPieChartInitializer,
          IgxScatterChartInitializer,
          IgxStackedBarDataChartInitializer,
          IgxStackedDataChartInitializer,
-         IStackedFragmentOptions } from "./initializers";
-import { Subject } from "rxjs";
+         IStackedFragmentOptions} from "./initializers";
 export interface IGridDataSelection {
     selectedData: any[];
     subjectArea: string;
@@ -47,7 +48,7 @@ export class ChartService {
 
   private selectionData: IGridDataSelection[];
   private _chart;
-  constructor(private factoryResolver: ComponentFactoryResolver) {
+  constructor(private factoryResolver: ComponentFactoryResolver, private zone: NgZone) {
       this.dataChartSeries.set("columnGrouped", IgxColumnSeriesComponent);
       this.dataChartSeries.set("areaGrouped", IgxAreaSeriesComponent);
       this.dataChartSeries.set("lineGrouped", IgxLineSeriesComponent);
@@ -75,7 +76,6 @@ export class ChartService {
       let componentRef: ComponentRef<any>;
       const itemLegendFactory = this.factoryResolver.resolveComponentFactory(IgxItemLegendComponent);
       const legendFactory = this.factoryResolver.resolveComponentFactory(IgxLegendComponent);
-      viewContainerRef.clear();
       let itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
       let legendComponentRef = viewContainerRef.createComponent(legendFactory);
       let initializer: ChartInitializer;
@@ -91,8 +91,9 @@ export class ChartService {
                 componentFactory =  this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
                 itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
-                const pieChart = this.initPieChart(componentRef.instance, itemLegendComponentRef.instance);
-                this._chart = pieChart;
+                options.chartOptions["legend"] = itemLegendComponentRef.instance;
+                this.addPieChartDataOptions(options);
+                initializer = new IgxPieChartInitializer();
                 break;
            case "column":
            case "area":
@@ -112,6 +113,7 @@ export class ChartService {
                     this.addDataChartDataOptions(options, false, seriesInfo.seriesModel);
                     initializer = new IgxDataChartInitializer(this.dataChartSeries.get(`${chartType + seriesInfo.seriesType}`));
                 }
+                options.chartOptions["legend"] = legendComponentRef.instance;
                 break;
            case "bar":
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
@@ -128,16 +130,17 @@ export class ChartService {
                     this.addDataChartDataOptions(options, false, seriesInfo.seriesModel);
                     initializer = new IgxBarDataChartInitializer(this.dataChartSeries.get(`${chartType + seriesInfo.seriesType}`));
                 }
+                options.chartOptions["legend"] = legendComponentRef.instance;
                 break;
            case "scatter":
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
                 legendComponentRef = viewContainerRef.createComponent(legendFactory);
                 this.addScatterChartDataOptions(options, seriesInfo.seriesModel);
+                options.chartOptions["legend"] = legendComponentRef.instance;
                 initializer = new IgxScatterChartInitializer(this.scatterChartSeries.get(`${chartType + seriesInfo.seriesType}`));
                 break;
         }
-      options.chartOptions["legend"] = legendComponentRef.instance;
       this.chartInstance(initializer, componentRef.instance, options);
   }
 
@@ -148,6 +151,13 @@ export class ChartService {
         this._chart = initializer.initChart(chart, options);
     }
     this.chartData.next(this._chart);
+  }
+
+  private addPieChartDataOptions(options: IChartComponentOptions) {
+      const valueMemberPaths = Object.keys(this.selectionData[0].selectedData);
+      options.chartOptions["dataSource"] = this.getChartData(valueMemberPaths);
+      options.chartOptions["valueMemberPath"]  = valueMemberPaths[0];
+      options.chartOptions["labelMemberPath"] = this.labelMemberPath;
   }
 
   private addDataChartDataOptions(options: IChartComponentOptions, stacked: boolean,  model?: IChartSeriesOptions) {
@@ -199,29 +209,15 @@ export class ChartService {
     const chartData = [];
     this.labelMemberPath = this.selectionData[0].subjectArea;
     this.selectionData.forEach(record => {
-        const temp = {};
-        temp[this.labelMemberPath] = record.rowID[this.labelMemberPath];
-        valueMemberPaths.forEach(valueMemberPath => {
-           temp[valueMemberPath] = record.rowID[valueMemberPath];
-      });
-        chartData.push(temp);
-    });
-    return chartData;
-  }
+            const temp = {};
+            temp[this.labelMemberPath] = record.rowID[this.labelMemberPath];
+            valueMemberPaths.forEach(valueMemberPath => {
+               temp[valueMemberPath] = record.rowID[valueMemberPath];
+          });
+            chartData.push(temp);
+        });
 
-  private initPieChart(chart: IgxPieChartComponent, legend: IgxItemLegendComponent): IgxPieChartComponent {
-      chart.width = "85%";
-      chart.height = "400px";
-      const valueMemberPaths = Object.keys(this.selectionData[0].selectedData);
-      chart.legend = legend;
-      chart.labelsPosition = 3;
-      chart.sliceClick.subscribe((evt) => {evt.args.isExploded = !evt.args.isExploded; });
-      chart.allowSliceExplosion = true;
-      chart.dataSource = this.getChartData(valueMemberPaths)[0].data;
-      chart.valueMemberPath  = valueMemberPaths[0];
-      chart.legendLabelMemberPath = this.labelMemberPath;
-      chart.othersCategoryThreshold = -1;
-      return chart;
+    return chartData;
   }
 
   private initDoughnutChart(chart: IgxDoughnutChartComponent, legend: IgxItemLegendComponent): IgxDoughnutChartComponent {
