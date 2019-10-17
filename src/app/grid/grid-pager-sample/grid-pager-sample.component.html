@@ -36,9 +36,9 @@
                 </igx-select-item>
             </igx-select>
         </div>
-        <igx-switch [(ngModel)]="isDropdownHidden">Hide Dropdown</igx-switch>
-        <igx-switch [(ngModel)]="isPagerHidden">Hide Pager</igx-switch>
-        <igx-switch [(ngModel)]="isDropdownDisabled">Disable Dropdown</igx-switch>
-        <igx-switch [(ngModel)]="isPagerDisabled">Disable Pager</igx-switch>
+        <igx-switch (click)="isDropdownHidden = !isDropdownHidden; grid.notifyChanges();">Hide Dropdown</igx-switch>
+        <igx-switch (click)="isPagerHidden = !isPagerHidden; grid.notifyChanges();">Hide Pager</igx-switch>
+        <igx-switch (click)="isDropdownDisabled = !isDropdownDisabled; grid.notifyChanges();">Disable Dropdown</igx-switch>
+        <igx-switch (click)="isPagerDisabled = !isPagerDisabled; grid.notifyChanges();">Disable Pager</igx-switch>
     </div>
 </div>
