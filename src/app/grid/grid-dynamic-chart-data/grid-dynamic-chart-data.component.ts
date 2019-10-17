@@ -315,7 +315,9 @@ export class GridDynamicChartDataComponent implements OnInit {
                 }
             }
         this.chartHost.viewContainerRef.clear();
-        this.chartService.chartFactory(args.chartType, this.gridDataSelection, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
+        requestAnimationFrame(() => {
+            this.chartService.chartFactory(args.chartType, this.gridDataSelection, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
+        });
     }
 
     public disableContextMenu() {
