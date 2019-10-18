@@ -56,8 +56,12 @@
     }
     .igx-tabs{
         height: 100%;
-
     }
+
+    .igx-tabs__header-menu-item-indicator, .igx-tabs__header-menu-item--selected {
+        min-width: 100%;
+    }
+
     .igx-tabs__content-fixed {
         height: 400px;
         overflow-y: auto; 
