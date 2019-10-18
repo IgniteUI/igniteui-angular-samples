@@ -10,9 +10,10 @@ export class TextHighlightSample1Component {
     // tslint:disable max-line-length
     public html = `
     Use the search box to search for a certain string in this text.
-    All the results will be highlighted in yellow, while the first occurrence of the string will be in orange.
+    All the results will be highlighted in the same color with the exception of the
+    the first occurrence of the string, which will have a different color in order to tell it apart.
     You can use the button in the searchbox to specify if the search will be case sensitive.
-    You can move the orange highlight by either pressing the buttons on the searchbox or by using the Enter or the arrow keys on your keyboard.
+    You can move the active highlight by either pressing the buttons on the searchbox or by using the Enter or the arrow keys on your keyboard.
     `;
     // tslint:enable max-line-length
 
