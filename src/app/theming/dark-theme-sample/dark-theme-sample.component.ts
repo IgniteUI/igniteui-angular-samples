@@ -28,7 +28,6 @@ export class DarkThemeSampleComponent implements OnInit {
   @ViewChild("dialog1", { read: IgxDialogComponent, static: true })
   public dialog: IgxDialogComponent;
 
-  @Input()
   @ViewChild("outlet", { read: IgxOverlayOutletDirective, static: true })
   public outlet: IgxOverlayOutletDirective;
 

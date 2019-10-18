@@ -1,4 +1,5 @@
 <div class="grid__wrapper">
+    <igx-toast #toast></igx-toast>
     <igx-grid #grid [data]="remoteData | async" [height]="'440px'" [width]="'100%'" [autoGenerate]='false'
         (onDataPreLoad)="processData()" (onSortingDone)="processData()" (onFilteringDone)="processData()"
         [allowFiltering]="true">
@@ -32,5 +33,4 @@
         </igx-column>
     </igx-grid>
 
-    <igx-toast #toast></igx-toast>
 </div>

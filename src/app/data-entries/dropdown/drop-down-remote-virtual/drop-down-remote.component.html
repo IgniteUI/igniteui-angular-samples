@@ -1,3 +1,4 @@
+<igx-toast #loadingToast></igx-toast>
 <button igxButton [igxToggleAction]="remoteDropDown" [igxDropDownItemNavigation]="remoteDropDown">Products</button>
 <igx-drop-down #remoteDropDown>
     <div class="drop-down-virtual-wrapper">
@@ -12,4 +13,3 @@
 <div class="selection">Selected Product: <span
         class="selection__name">{{ remoteDropDown.selectedItem?.value.ProductName }}</span>
 </div>
-<igx-toast #loadingToast></igx-toast>
