@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
-import { CloseScrollStrategy, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective } from "igniteui-angular";
+import { CloseScrollStrategy, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxIconService, ConnectedPositioningStrategy, HorizontalAlignment, VerticalAlignment, AutoPositionStrategy, IgxCardComponent } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
@@ -50,14 +50,26 @@ export class GridDynamicChartDataComponent implements OnInit {
     @ViewChild(IgxGridComponent, { static: true })
     public grid: IgxGridComponent;
 
-    @ViewChild(ChartHostDirective, { static: true })
+    @ViewChild("chart", {read: ChartHostDirective,  static: true })
     public chartHost: ChartHostDirective;
 
-    @ViewChild(IgxDialogComponent, { static: true })
+    @ViewChild("chartDialog", {static: true })
     public dialog: IgxDialogComponent;
 
     @ViewChild(IgxOverlayOutletDirective, { static: true })
     public outlet: IgxOverlayOutletDirective;
+
+    @ViewChild("chartSelectionDialog", {static: true})
+    public chartSelectionDialog: IgxDialogComponent;
+
+    @ViewChild("chartPreviewDialog", {static: true})
+    public chartPreviewDialog: IgxDialogComponent;
+
+    @ViewChild("chartPreview", {read: ChartHostDirective, static: true})
+    public chartPreview: ChartHostDirective;
+
+    @ViewChild(IgxCardComponent, {static: true})
+    public card: IgxCardComponent;
 
     public gridDataSelection = new Array<IGridDataSelection>();
     public selectedData = [];
@@ -69,16 +81,45 @@ export class GridDynamicChartDataComponent implements OnInit {
     public dataRows = [];
     public selectedCells = [];
     public currentChart;
+    public currentChartArg: IChartArgs = {chartType: undefined, seriesType: undefined};
 
-    private currentChartArg: IChartArgs = {chartType: undefined, seriesType: undefined};
-    private bubbleChartSizeScale = new IgxSizeScaleComponent();
-
-    private _dialogOverlaySettings = {
+    // Dialogs options
+    public _chartDialogOverlaySettings = {
         closeOnOutsideClick: true,
         modal: true,
         outlet: null,
         scrollStrategy: new CloseScrollStrategy()
     };
+
+    private _chartSelectionDilogOverlaySettings = {
+        closeOnOutsideClick: true,
+        modal: false,
+        outlet: null,
+        scrollStrategy: new CloseScrollStrategy(),
+        positionStrategy: new ConnectedPositioningStrategy({
+            horizontalDirection: HorizontalAlignment.Center,
+            horizontalStartPoint: HorizontalAlignment.Center,
+            verticalStartPoint: VerticalAlignment.Bottom
+          })
+    };
+
+    private _chartPreviewDialogOverlaySettings = {
+        closeOnOutsideClick: false,
+        modal: false,
+        outlet: null,
+        scrollStrategy: new CloseScrollStrategy(),
+        positionStrategy: new AutoPositionStrategy({
+            horizontalDirection: HorizontalAlignment.Right,
+            horizontalStartPoint: HorizontalAlignment.Left,
+            verticalStartPoint: VerticalAlignment.Bottom,
+            openAnimation: null,
+            closeAnimation: null
+          })
+    };
+
+    // Chart, Series, Axes options
+    private bubbleChartSizeScale = new IgxSizeScaleComponent();
+
     private pieChartOptions: IChartOptions = {
         width: "85%",
         height: "400px",
@@ -119,8 +160,8 @@ export class GridDynamicChartDataComponent implements OnInit {
     };
 
     private dataChartOptions: IChartOptions = {
-        width: "100%",
-        height: "400px",
+        width: "90%",
+        height: "80%",
         transitionDuration: 300,
         isVerticalZoomEnabled: true,
         isHorizontalZoomEnabled: true,
@@ -145,14 +186,11 @@ export class GridDynamicChartDataComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.chartService.chartData.subscribe(chart => {
-            this.currentChart  = chart;
-            if (!this.dialog.isOpen) {
-                this.currentChartArg = {chartType: undefined, seriesType: undefined};
-                this._dialogOverlaySettings.outlet = this.outlet;
-                this.dialog.open(this._dialogOverlaySettings);
-            }
+        this.chartSelectionDialog.onOpen.subscribe(() => {
+            this.contextmenu = false;
+            this.currentChartArg = {chartType: undefined, seriesType: undefined};
         });
+
         this.data = new FinancialData().generateData(1000);
         this.grid.onRangeSelection.subscribe(range => {
             this.gridDataSelection = [];
@@ -166,6 +204,10 @@ export class GridDynamicChartDataComponent implements OnInit {
                 // tslint:disable-next-line: max-line-length
                 this.gridDataSelection.push({ selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
             }
+            this.clickedCell = this.grid.selectedCells[this.grid.selectedCells.length - 1];
+            this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
+            this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
+            this.contextmenu = true;
         });
     }
 
@@ -201,7 +243,6 @@ export class GridDynamicChartDataComponent implements OnInit {
     private negativeOnYear = (rowData: any, key: string): boolean => {
         return rowData["Change On Year(%)"] < 0;
     }
-
     // tslint:disable:member-ordering
     public trends = {
         changeNeg: this.changeNegative,
@@ -230,11 +271,20 @@ export class GridDynamicChartDataComponent implements OnInit {
         return "$" + value.toFixed(3);
     }
 
-    public chartTypes = ["column", "area", "bar", "line", "scatter"];
+    public chartTypesMenuX;
+    public chartTypesMenuY;
+
+    public chartTypes = [
+        {name: "column", icon: "bar_chart" },
+        {name: "area", icon: `<i class='fas fa-chart-area'></i>`},
+        {name: "line", icon: "linear_scale"}
+    ];
+
     public pieChartArgs: IChartArgs = {
         chartType: "pie",
         seriesType: undefined
     };
+
     private dataMap(dataRecord: any) {
         Object.keys(dataRecord).forEach(k => {
             switch (k) {
@@ -253,6 +303,17 @@ export class GridDynamicChartDataComponent implements OnInit {
             }
         });
         return dataRecord;
+    }
+
+    public toggleChartSelectionDialog(target: HTMLElement) {
+        this._chartSelectionDilogOverlaySettings.outlet  = this.outlet;
+        this._chartSelectionDilogOverlaySettings.positionStrategy.settings.target = target;
+        !this.chartSelectionDialog.isOpen ? this.chartSelectionDialog.open(this._chartSelectionDilogOverlaySettings) :this.chartSelectionDialog.close();
+    }
+
+    public previewChart(chart: string) {
+        this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = document.getElementById(this.card.id);
+        this.createChart({chartType: chart, seriesType: "Grouped"}, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
     public rightClick(eventArgs: any) {
@@ -285,10 +346,13 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     }
 
-    public createChart(args: IChartArgs) {
-        if (this.currentChartArg.chartType === args.chartType && this.currentChartArg.seriesType === args.seriesType) {
-            return;
-        }
+    public createChart(args: IChartArgs, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
+        const chartHost  = host;
+        const dialogToOpen = dialog;
+        const dialogOverlaySettings = overlaySettings;
+        // if (this.currentChartArg.chartType === args.chartType && this.currentChartArg.seriesType === args.seriesType) {
+        //     return;
+        // }
         this.currentChartArg = args;
         let seriesOptionModel: IChartSeriesOptions;
         switch (`${args.seriesType}`) {
@@ -314,11 +378,16 @@ export class GridDynamicChartDataComponent implements OnInit {
                     seriesOptionModel = null;
                 }
             }
-        this.chartHost.viewContainerRef.clear();
+
+        chartHost.viewContainerRef.clear();
         requestAnimationFrame(() => {
-            this.chartService.chartFactory(args.chartType, this.gridDataSelection, this.chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
+            this.currentChart = this.chartService.chartFactory(args.chartType, this.gridDataSelection, chartHost.viewContainerRef, this.chartComponentOptions, {seriesModel: seriesOptionModel, seriesType: args.seriesType});
+            dialogOverlaySettings.outlet = this.outlet;
+            dialogToOpen.open(overlaySettings);
         });
+
     }
+
 
     public disableContextMenu() {
         if (this.contextmenu) {
@@ -327,12 +396,12 @@ export class GridDynamicChartDataComponent implements OnInit {
         }
     }
 
-    @HostListener("pointerdown", ["$event"])
-    public onPointerDown(event) {
-        if (this.contextmenu && event.button === 0 && !event.target.parentElement.classList.contains("contextmenu")) {
-            this.disableContextMenu();
-        }
-    }
+    // @HostListener("pointerdown", ["$event"])
+    // public onPointerDown(event) {
+    //     if (this.contextmenu && event.button === 0 && !event.target.parentElement.classList.contains("contextmenu")) {
+    //         this.disableContextMenu();
+    //     }
+    // }
 
     public trackByFn(index, item) {
         return index;
