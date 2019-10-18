@@ -4,7 +4,7 @@ import {
     IgxGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryResult } from "igniteui-angular";
-import { LOCAL_DATA } from "./data";
+import { DATA } from "../../data/nwindData";
 
 class MySummary extends IgxNumberSummaryOperand {
 
@@ -38,8 +38,8 @@ export class GridSample3Component implements OnInit {
   public productId = 0;
 
   constructor() {
-    this.data = LOCAL_DATA;
-    this.productId = LOCAL_DATA.length;
+    this.data = DATA;
+    this.productId = DATA.length;
    }
 
   public ngOnInit() {
