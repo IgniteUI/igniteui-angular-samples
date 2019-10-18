@@ -80,13 +80,13 @@ export class ChartService {
       let legendComponentRef = viewContainerRef.createComponent(legendFactory);
       let initializer: ChartInitializer;
       switch (chartType) {
-           case "doughnut":
-                componentFactory =  this.factoryResolver.resolveComponentFactory(IgxDoughnutChartComponent);
-                componentRef = viewContainerRef.createComponent(componentFactory);
-                itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
-                const doughnutChart = this.initDoughnutChart(componentRef.instance, itemLegendComponentRef.instance);
-                this._chart = doughnutChart;
-                break;
+        //    case "doughnut":
+        //         componentFactory =  this.factoryResolver.resolveComponentFactory(IgxDoughnutChartComponent);
+        //         componentRef = viewContainerRef.createComponent(componentFactory);
+        //         itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
+        //         const doughnutChart = this.initDoughnutChart(componentRef.instance, itemLegendComponentRef.instance);
+        //         this._chart = doughnutChart;
+        //         break;
             case "pie":
                 componentFactory =  this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
@@ -221,23 +221,23 @@ export class ChartService {
     return chartData;
   }
 
-  private initDoughnutChart(chart: IgxDoughnutChartComponent, legend: IgxItemLegendComponent): IgxDoughnutChartComponent {
-        const valueMemberPaths = Object.keys(this.selectionData[0].selectedData);
-        // const data = this.getSeriesData(valueMemberPaths);
-        // data.forEach(dataArray => {
-        //     const series = new IgxRingSeriesComponent();
-        //     series.labelMemberPath = this.labelMemberPath;
-        //     series.dataSource = dataArray.data;
-        //     series.valueMemberPath = dataArray.valueMemberPath;
-        //     series.showDefaultTooltip = true;
-        //     series.formatLabel = (value) =>  "";
-        //     chart.series.add(series);
-        // });
-        chart.width = "85%";
-        chart.height = "400px";
-        chart.series.toArray()[0].legend = legend;
-        chart.series.toArray()[0].labelsPosition = 4;
-        chart.series.toArray()[0].othersCategoryThreshold = -1;
-        return chart;
-  }
+//   private initDoughnutChart(chart: IgxDoughnutChartComponent, legend: IgxItemLegendComponent): IgxDoughnutChartComponent {
+//         const valueMemberPaths = Object.keys(this.selectionData[0].selectedData);
+//         // const data = this.getSeriesData(valueMemberPaths);
+//         // data.forEach(dataArray => {
+//         //     const series = new IgxRingSeriesComponent();
+//         //     series.labelMemberPath = this.labelMemberPath;
+//         //     series.dataSource = dataArray.data;
+//         //     series.valueMemberPath = dataArray.valueMemberPath;
+//         //     series.showDefaultTooltip = true;
+//         //     series.formatLabel = (value) =>  "";
+//         //     chart.series.add(series);
+//         // });
+//         chart.width = "85%";
+//         chart.height = "400px";
+//         chart.series.toArray()[0].legend = legend;
+//         chart.series.toArray()[0].labelsPosition = 4;
+//         chart.series.toArray()[0].othersCategoryThreshold = -1;
+//         return chart;
+//   }
 }
