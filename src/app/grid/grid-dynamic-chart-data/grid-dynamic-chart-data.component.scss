@@ -77,11 +77,16 @@
         display: inline-flex;
         .chart-area{
             overflow-y: auto;
-            width: 80%;
+            width: 75%;
         }
 
         .chart-config-area{
-            width: 20%;
+            button{
+                margin-right: 4px;
+            }
+            width: 25%;
+            margin-right: 10px;
+            margin-left: 10px;
         }
     }
 
