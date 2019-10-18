@@ -142,15 +142,16 @@ export class ChartService {
                 break;
         }
       this.chartInstance(initializer, componentRef.instance, options);
+
+      return this._chart;
   }
 
   private chartInstance(initializer: ChartInitializer, chart: any, options?: IChartComponentOptions) {
     if (options) {
         this._chart = initializer.initChart(chart, options);
     } else {
-        this._chart = initializer.initChart(chart, options);
+        this._chart = initializer.initChart(chart);
     }
-    this.chartData.next(this._chart);
   }
 
   private addPieChartDataOptions(options: IChartComponentOptions) {

@@ -27,6 +27,13 @@ export class ContextMenuComponent {
     public chartType: string;
     public series: string;
     public chartSeriesTypes: string[] = [];
+
+    public charts = ["column", "bar", "area", "line", "scatter", "pie", "doughnut"];
+
+    public trackByFn(index, item) {
+        return index;
+    }
+
     @Input()
     public x = 0;
 

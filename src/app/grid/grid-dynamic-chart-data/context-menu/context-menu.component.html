@@ -11,7 +11,7 @@
 
 <div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2">
     <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'column', 'Grouped', 'Stacked', '100Stacked')">
-        <span><igx-icon class="icon" fontSet="material">bar_chart</igx-icon>Column</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+        <span><igx-icon class="icon" fontSet="material" name="bar_chart"></igx-icon>Column</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
     </span>
     <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'bar', 'Grouped', 'Stacked', '100Stacked')">
             <span><igx-icon class="icon" fontSet="material">bar_chart</igx-icon>Bar</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
