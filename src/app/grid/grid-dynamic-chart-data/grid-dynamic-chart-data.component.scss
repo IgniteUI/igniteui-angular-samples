@@ -19,10 +19,6 @@
         background-color: $scrollbar-thumb;
     }
 }
-:host ::ng-deep {
-    @include igx-fluent-theme($fluent-excel-palette);
-    @include scrollbar-love();
-}
 
 .grid-chart-contextmenu-wrapper{
     width: 90%;
@@ -32,6 +28,22 @@
 
 
 :host ::ng-deep {
+    @include igx-fluent-theme($fluent-excel-palette);
+    @include scrollbar-love();
+
+    .analytics-btn{
+        z-index: 99999;
+        position: absolute;
+        background: white;
+        width: 32px;
+        .igx-icon{
+            cursor: pointer;
+            &:hover{
+                background: rgba(218, 214, 214, 0.1);
+            }
+        }
+    }
+
     .finjs-icons {
         display: flex;
         align-items: center;
@@ -65,12 +77,11 @@
         display: inline-flex;
         .chart-area{
             overflow-y: auto;
-            width: 1000px;
-            margin-right: 20px;
+            width: 80%;
         }
 
         .chart-config-area{
-            width: 500px;
+            width: 20%;
         }
     }
 
