@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { Type, EventEmitter } from "@angular/core";
+import { EventEmitter, Type } from "@angular/core";
 import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
 import { IgxCategoryYAxisComponent } from "igniteui-angular-charts/ES5/igx-category-y-axis-component";
 import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
