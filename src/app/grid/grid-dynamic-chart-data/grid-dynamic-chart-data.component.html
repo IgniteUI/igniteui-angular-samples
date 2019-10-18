@@ -1,5 +1,5 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-    <igx-grid #grid primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
+    <igx-grid #grid primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [sortable]='true'></igx-column>
         <igx-column field='Type' [sortable]='true' [filterable]='false'>

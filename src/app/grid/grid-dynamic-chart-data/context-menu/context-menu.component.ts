@@ -30,10 +30,6 @@ export class ContextMenuComponent {
 
     public charts = ["column", "bar", "area", "line", "scatter", "pie", "doughnut"];
 
-    public trackByFn(index, item) {
-        return index;
-    }
-
     @Input()
     public x = 0;
 
@@ -50,6 +46,10 @@ export class ContextMenuComponent {
     public onChartSelected = new  EventEmitter<IChartArgs>();
 
     constructor() { }
+
+    public trackByFn(index, item) {
+        return index;
+    }
 
     public renderChartsMenu(event) {
         this.exportMenu  =  false;

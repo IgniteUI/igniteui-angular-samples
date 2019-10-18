@@ -191,17 +191,20 @@ export class GridDynamicChartDataComponent implements OnInit {
             this.currentChartArg = {chartType: "column", seriesType: "Grouped"};
         });
 
+        this.dialog.onOpen.subscribe(() => {
+            this.chartSelectionDialog.close();
+        });
+        this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
+        this.grid.onDataPreLoad.subscribe((evt) => this.disableContextMenu());
         this.data = new FinancialData().generateData(1000);
         this.grid.onRangeSelection.subscribe(range => {
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
             this.selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
             this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
-            // tslint:disable-next-line: max-line-length
             this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
             for (let i = 0; i < this.dataRows.length; i++) {
-                // tslint:disable-next-line: max-line-length
                 this.gridDataSelection.push({ selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
             }
             this.clickedCell = this.grid.selectedCells[this.grid.selectedCells.length - 1];
@@ -318,35 +321,35 @@ export class GridDynamicChartDataComponent implements OnInit {
         this.createChart({chartType: chart, seriesType: "Grouped"}, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
-    public rightClick(eventArgs: any) {
-        eventArgs.event.preventDefault();
-        this.selectedCells = [];
-        const node = eventArgs.cell.selectionNode;
-        const isCellWithinRange = this.grid.getSelectedRanges().some((range) => {
-            if (node.column >= range.columnStart &&
-                node.column <= range.columnEnd &&
-                node.row >= range.rowStart &&
-                node.row <= range.rowEnd) {
-                return true;
-            }
-            return false;
-        });
+    // public rightClick(eventArgs: any) {
+    //     eventArgs.event.preventDefault();
+    //     this.selectedCells = [];
+    //     const node = eventArgs.cell.selectionNode;
+    //     const isCellWithinRange = this.grid.getSelectedRanges().some((range) => {
+    //         if (node.column >= range.columnStart &&
+    //             node.column <= range.columnEnd &&
+    //             node.row >= range.rowStart &&
+    //             node.row <= range.rowEnd) {
+    //             return true;
+    //         }
+    //         return false;
+    //     });
 
-        if (!isCellWithinRange) {
-            this.disableContextMenu();
+    //     if (!isCellWithinRange) {
+    //         this.disableContextMenu();
 
-            const tempObj = {};
-            tempObj[eventArgs.cell.column.field] = eventArgs.cell.value;
-            this.gridDataSelection = [{ selectedData: this.dataMap(tempObj), subjectArea: this.colForSubjectArea = eventArgs.cell.column.field, rowID: eventArgs.cell.cellID.rowID }];
-            this.grid.clearCellSelection();
-            this.grid.selectionService.add(eventArgs.cell.selectionNode);
-        }
-        this.contextmenuX = eventArgs.event.clientX;
-        this.contextmenuY = eventArgs.event.clientY;
-        this.clickedCell = eventArgs.cell;
-        this.contextmenu = true;
+    //         const tempObj = {};
+    //         tempObj[eventArgs.cell.column.field] = eventArgs.cell.value;
+    //         this.gridDataSelection = [{ selectedData: this.dataMap(tempObj), subjectArea: this.colForSubjectArea = eventArgs.cell.column.field, rowID: eventArgs.cell.cellID.rowID }];
+    //         this.grid.clearCellSelection();
+    //         this.grid.selectionService.add(eventArgs.cell.selectionNode);
+    //     }
+    //     this.contextmenuX = eventArgs.event.clientX;
+    //     this.contextmenuY = eventArgs.event.clientY;
+    //     this.clickedCell = eventArgs.cell;
+    //     this.contextmenu = true;
 
-    }
+    // }
 
     public createChart(args: IChartArgs, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
         const chartHost  = host;
@@ -388,15 +391,12 @@ export class GridDynamicChartDataComponent implements OnInit {
     }
 
     public disableContextMenu() {
-        if (this.contextmenu) {
-            this.selectedCells = [];
             this.contextmenu = false;
-        }
+            this.chartSelectionDialog.close();
     }
 
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
-        console.log(event.target.parentElement.classList.contains("analytics-btn"));
         if (this.contextmenu  && !event.target.parentElement.classList.contains("analytics-btn")) {
             this.disableContextMenu();
         }
