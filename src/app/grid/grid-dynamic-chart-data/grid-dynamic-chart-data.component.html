@@ -65,7 +65,7 @@
             <igx-divider></igx-divider>
             <igx-card-content>
             <div class="chart-types">
-                    <button *ngFor="let chart of chartTypes; trackBy: trackByFn" class="chart-btn" 
+                    <button *ngFor="let chart of chartTypes1; trackBy: trackByFn" class="chart-btn" 
                              (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                              (mouseleave)="chartPreviewDialog.close()"
                              (mouseenter)="previewChart(chart.name)"
@@ -93,12 +93,12 @@
     <div class="chart-config-area">
         <igx-tabs>
             <igx-tabs-group label="Type Settings" icon="insert_chart">
-                <div *ngFor="let chartType of chartTypes.slice(chartTypes.length - 2)">
-                    <div style="text-align: center">{{chartType.name | uppercase}}</div>
+                <div *ngFor="let chartType of chartTypes">
+                    <div style="text-align: center">{{chartType | uppercase}}</div>
                     <div style="display: inline-flex">
                         <button igxButton="raised" 
                                 (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
-                                *ngFor="let chart of (chartType.name | getChartArgs); trackBy: trackByFn">{{chart.seriesType}}</button>
+                                *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn">{{chart.seriesType}}</button>
                     </div>
                 </div>
                 <div >
