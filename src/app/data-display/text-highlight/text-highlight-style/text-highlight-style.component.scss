@@ -1,116 +1,116 @@
 
-@import '~igniteui-angular/lib/core/styles/themes/index';
+// @import '~igniteui-angular/lib/core/styles/themes/index';
 
-/*BASIC THEMING*/
-
-$dark-highlight: igx-highlight-theme(
-    $resting-background: #FFCD0F,
-    $resting-color: #292826,
-    $active-background: #292826,
-    $active-color: #FFCD0F
-);
-
-/*ENHANCED APPROACHES*/
-
-// $yellow-color: #FFCD0F;
-// $black-color: #292826;
-// $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
-
-/*PALETTE and IGX-COLOR*/
+// /*BASIC THEMING*/
 
 // $dark-highlight: igx-highlight-theme(
-//     $resting-background: igx-color($dark-palette, "secondary", 400),
-//     $resting-color: igx-color($dark-palette, "primary", 400),
-//     $active-background: igx-color($dark-palette, "primary", 400),
-//     $active-color: igx-color($dark-palette, "secondary", 400)
+//     $resting-background: #FFCD0F,
+//     $resting-color: #292826,
+//     $active-background: #292826,
+//     $active-color: #FFCD0F
 // );
 
-/*SCHEMAS*/
+// /*ENHANCED APPROACHES*/
 
-// $dark-highlight-schema: extend($_dark-highlight,
-//     (
-//         resting-background: (
-//             igx-color: ("secondary", 400)
-//         ),
-//         resting-color: (
-//             igx-color: ("primary", 400)
-//         ),
-//         active-background: (
-//             igx-color: ("primary", 400)
-//         ),
-//         active-color: (
-//             igx-color: ("secondary", 400)
-//         )
-//     )
-// );
+// // $yellow-color: #FFCD0F;
+// // $black-color: #292826;
+// // $dark-palette: igx-palette($primary: $black-color, $secondary: $yellow-color);
 
-// $custom-dark-schema: extend($dark-schema,(
-//     igx-highlight: $dark-highlight-schema
-// ));
+// /*PALETTE and IGX-COLOR*/
 
-// $dark-highlight: igx-highlight-theme(
-//   $palette: $dark-palette,
-//   $schema: $custom-dark-schema
-// );
+// // $dark-highlight: igx-highlight-theme(
+// //     $resting-background: igx-color($dark-palette, "secondary", 400),
+// //     $resting-color: igx-color($dark-palette, "primary", 400),
+// //     $active-background: igx-color($dark-palette, "primary", 400),
+// //     $active-color: igx-color($dark-palette, "secondary", 400)
+// // );
 
-/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+// /*SCHEMAS*/
 
-:host {
-    ::ng-deep {
-       @include igx-highlight($dark-highlight);
+// // $dark-highlight-schema: extend($_dark-highlight,
+// //     (
+// //         resting-background: (
+// //             igx-color: ("secondary", 400)
+// //         ),
+// //         resting-color: (
+// //             igx-color: ("primary", 400)
+// //         ),
+// //         active-background: (
+// //             igx-color: ("primary", 400)
+// //         ),
+// //         active-color: (
+// //             igx-color: ("secondary", 400)
+// //         )
+// //     )
+// // );
 
-       .custom-highlight {
-            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
-       }
-       .custom-active-highlight {
-            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
-        }
-   }
-}
+// // $custom-dark-schema: extend($dark-schema,(
+// //     igx-highlight: $dark-highlight-schema
+// // ));
 
-.search-text {
-    margin: 1em;
-}
+// // $dark-highlight: igx-highlight-theme(
+// //   $palette: $dark-palette,
+// //   $schema: $custom-dark-schema
+// // );
 
-.search-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+// /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
-.input-group {
-    width: 80%;
-    min-width: 370px;
-    margin-bottom: .5em;
-}
+// :host {
+//     ::ng-deep {
+//        @include igx-highlight($dark-highlight);
 
-hr {
-    color: #ccc;
-}
+//        .custom-highlight {
+//             box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+//        }
+//        .custom-active-highlight {
+//             box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+//         }
+//    }
+// }
 
-.description {
-    font-size: 1.1em;
-    margin-bottom: 0.5em;
-    text-align: center;
-}
+// .search-text {
+//     margin: 1em;
+// }
 
-.caseSensitiveIcon {
-    width: 1.25rem;
-    height: 1.25rem;
-    font-size: 1.25rem;
-    color: rgba(0, 0, 0, .54);
-}
+// .search-container {
+//     margin-top: 20px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+// }
 
-.searchButtons {
-    margin-left: 5px;
-}
+// .input-group {
+//     width: 80%;
+//     min-width: 370px;
+//     margin-bottom: .5em;
+// }
 
-p {
-    line-height: 27px;
-}
+// hr {
+//     color: #ccc;
+// }
 
-.input-group {
-    margin-top: 10px;
-}
+// .description {
+//     font-size: 1.1em;
+//     margin-bottom: 0.5em;
+//     text-align: center;
+// }
+
+// .caseSensitiveIcon {
+//     width: 1.25rem;
+//     height: 1.25rem;
+//     font-size: 1.25rem;
+//     color: rgba(0, 0, 0, .54);
+// }
+
+// .searchButtons {
+//     margin-left: 5px;
+// }
+
+// p {
+//     line-height: 27px;
+// }
+
+// .input-group {
+//     margin-top: 10px;
+// }
