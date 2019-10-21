@@ -5,7 +5,7 @@ import {
     ISortingExpression,
     SortingDirection
 } from "igniteui-angular";
-import { LOCAL_DATA } from "../../data/grid-groupby-summary-data";
+import { INVOICE_DATA } from "../../data/invoiceData";
 
 @Component({
     encapsulation: ViewEncapsulation.Emulated,
@@ -20,7 +20,7 @@ export class GridGroupByStyling {
     public expr: ISortingExpression[];
 
     constructor() {
-        this.data = LOCAL_DATA;
+        this.data = INVOICE_DATA;
         this.expr = [
             { dir: SortingDirection.Asc, fieldName: "ShipCountry", ignoreCase: false,
               strategy: DefaultSortingStrategy.instance() },

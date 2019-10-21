@@ -1,7 +1,7 @@
 <div class="grid__wrapper">
     <igx-grid #grid1 
         [data]="data" 
-        [height]="'530px'" 
+        [height]="'530px'"
         [width]="'100%'"
         [autoGenerate]='false'>
         <igx-column [field]="'ProductID'"></igx-column>
@@ -15,8 +15,8 @@
             </ng-template>
         </igx-column>
         <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
+        <igx-grid-footer>
+            <summaries-data [grid]="grid1" class="custom-summaries"></summaries-data>
+        </igx-grid-footer>
     </igx-grid>
-    <div class="igx-grid__tfoot">
-        <summaries-data [grid]="grid1" class="custom-summaries"></summaries-data>
-    </div>
 </div>

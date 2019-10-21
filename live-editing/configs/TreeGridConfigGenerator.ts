@@ -100,6 +100,7 @@ import { TreeGridToolbarSample3Component } from "../../src/app/tree-grid/tree-gr
 import { TreeGridToolbarSample4Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
 import { TreeGridToolbarStyleComponent } from "../../src/app/tree-grid/tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
+import { TreeGridStyleComponent } from "../../src/app/tree-grid/tree-grid-style/tree-grid-style.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -724,7 +725,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // Tree Grid Row Rerdering sample
         configs.push(new Config({
-            additionalFiles: ["/src/app/tree-grid/data/employees.ts"],
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridRowReorderComponent, IgxDragDropModule],
                 ngDeclarations: [TreeGridRowReorderComponent],
@@ -850,6 +851,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCheckboxModule, IgxTreeGridModule]
             }),
             component: TreeGridSelectionTemplateNumbersSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-avatars.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridStyleComponent, IgxAvatarModule],
+                ngDeclarations: [TreeGridStyleComponent],
+                ngImports: [IgxTreeGridModule, IgxAvatarModule]
+            }),
+            component: TreeGridStyleComponent,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

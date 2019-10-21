@@ -150,6 +150,7 @@ import {
 } from "./tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
+import { TreeGridStyleComponent } from "./tree-grid-style/tree-grid-style.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
 import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
@@ -234,7 +235,8 @@ import {
         TreeGridAdvancedFilteringSampleComponent,
         TreeGridAdvancedFilteringStyleComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent,
-        TreeGridConditionalRowSelectorsSampleComponent
+        TreeGridConditionalRowSelectorsSampleComponent,
+        TreeGridStyleComponent
     ],
     imports: [
         CommonModule,

@@ -242,7 +242,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridSample3Component,
-            additionalFiles: ["/src/app/grid/grid-sample-3/data.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
@@ -254,7 +254,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -265,7 +265,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummarySampleComponent,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -277,7 +277,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummaryStylingSampleComponent,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummaryStylingSampleComponent, IgxIconModule, IgxBadgeModule],
@@ -404,7 +404,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, IgxRadioModule,
                     IgxColumnHidingModule, GridColumnHidingSampleComponent],
@@ -416,7 +416,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingToolbarSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarSampleComponent],
                 ngDeclarations: [GridColumnHidingToolbarSampleComponent],
@@ -427,7 +427,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingToolbarStyleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-style/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarStyleComponent],
                 ngDeclarations: [GridColumnHidingToolbarStyleComponent],
@@ -438,7 +438,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: ResizingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-resizing-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, ResizingSampleComponent],
                 ngDeclarations: [ResizingSampleComponent],
@@ -508,7 +508,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: PinningSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [PinningSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningSampleComponent],
@@ -519,7 +519,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: PinningToolbarSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [PinningToolbarSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningToolbarSampleComponent],
@@ -677,7 +677,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridDisplayDensitySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-displaydensity-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule,
                     IgxGridModule, GridDisplayDensitySampleComponent],
@@ -893,7 +893,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridCompositeDataComponent,
-            additionalFiles: ["/src/app/grid/grid-composite-data-binding/localData.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCompositeDataComponent, IgxGridModule, IgxInputGroupModule],
                 ngDeclarations: [GridCompositeDataComponent],
@@ -1020,7 +1020,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
         configs.push(new Config({
             component: GridGroupByStyling,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridGroupByStyling, IgxGridModule],
                 ngDeclarations: [GridGroupByStyling],
