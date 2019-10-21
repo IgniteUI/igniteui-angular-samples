@@ -8,6 +8,7 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
+import { GridConditionalCellStyle2Component } from "./grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
@@ -183,6 +184,11 @@ export const gridsRoutes: Routes = [
         component: GridConditionalCellStyleComponent,
         data: gridsRoutesData["grid-cell-styling"],
         path: "grid-cell-styling"
+    },
+    {
+        component: GridConditionalCellStyle2Component,
+        data: gridsRoutesData["grid-cell-cellStyling"],
+        path: "grid-cell-cellStyling"
     },
     {
         component: FilteringSampleComponent,
