@@ -99,7 +99,7 @@ export class GridDynamicChartDataComponent implements OnInit {
         positionStrategy: new ConnectedPositioningStrategy({
             horizontalDirection: HorizontalAlignment.Center,
             horizontalStartPoint: HorizontalAlignment.Center,
-            verticalStartPoint: VerticalAlignment.Bottom
+            verticalStartPoint: VerticalAlignment.Bottom,
           })
     };
 
@@ -109,9 +109,10 @@ export class GridDynamicChartDataComponent implements OnInit {
         outlet: null,
         scrollStrategy: new CloseScrollStrategy(),
         positionStrategy: new AutoPositionStrategy({
-            horizontalDirection: HorizontalAlignment.Right,
-            horizontalStartPoint: HorizontalAlignment.Left,
-            verticalStartPoint: VerticalAlignment.Bottom,
+            horizontalDirection: HorizontalAlignment.Center,
+            horizontalStartPoint: HorizontalAlignment.Center,
+            verticalStartPoint: VerticalAlignment.Top,
+            verticalDirection: VerticalAlignment.Top,
             openAnimation: null,
             closeAnimation: null
           })
@@ -317,6 +318,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     }
 
     public previewChart(chart: string) {
+        debugger;
         this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = document.getElementById(this.card.id);
         this.createChart({chartType: chart, seriesType: "Grouped"}, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
