@@ -1,0 +1,49 @@
+<div *ngIf="cell" class="contextmenu" [ngStyle]="{'left.px': x, 'top.px': y}">
+    <span *ngIf="multiSelection" class=item (mouseenter)="renderChartsMenu($event)">
+        <span><igx-icon class="icon" fontSet="material">insert_chart </igx-icon>View Chart</span><igx-icon class="icon forward" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item (mouseenter)="renderExportMenu($event)">
+        <igx-icon class="icon" fontSet="material">get_app </igx-icon>Export Data {{multiSelection ? '' : 'Row'}} <igx-icon class="icon forward" fontSet="material">arrow_right</igx-icon>
+    </span>
+</div>
+
+
+
+<div *ngIf="chartsMenu" [ngStyle]="{'left.px': chartsMenuX, 'top.px': chartsMenuY}" class="contextmenu level2">
+    <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'column', 'Grouped', 'Stacked', '100Stacked')">
+        <span><igx-icon class="icon" fontSet="material" name="bar_chart"></igx-icon>Column</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'bar', 'Grouped', 'Stacked', '100Stacked')">
+            <span><igx-icon class="icon" fontSet="material">bar_chart</igx-icon>Bar</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'area', 'Grouped', 'Stacked', '100Stacked')">
+        <span><igx-icon class="icon" fontSet="material">multiline_chart</igx-icon>Area</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item  (mouseenter)="renderChartSeriesTypeMenu($event, 'line', 'Grouped', 'Stacked', '100Stacked')">
+        <span><igx-icon class="icon" fontSet="material">linear_scale</igx-icon>Line</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item (mouseenter)="renderChartSeriesTypeMenu($event, 'scatter', 'Point', 'Line', 'Bubble')">
+        <span><igx-icon class="icon" fontSet="material">scatter_plot</igx-icon>Scatter</span><igx-icon class="icon forward lvl2" fontSet="material">arrow_right</igx-icon>
+    </span>
+    <span class=item (mouseenter)="chartSeriesTypeMenu = false" (click)="selectChart('pie', null)">
+        <igx-icon class="icon" fontSet="material">pie_chart</igx-icon>Pie
+    </span>
+    <span class=item (mouseenter)="chartSeriesTypeMenu = false" (click)="selectChart('doughnut', null)">
+        <igx-icon class="icon" fontSet="material">donut_small</igx-icon>Doughnut
+    </span>
+</div>
+
+<div *ngIf="exportMenu" [ngStyle]="{'left.px': exportMenuX, 'top.px': exportMenuY}" class="contextmenu level2" (mouseleave)="exportMenu = false">
+    <span class=item style="text-align: center">
+        CSV Export
+    </span>
+    <span class=item style="text-align: center">
+        Excel Export
+    </span>
+</div>
+
+<div *ngIf="chartSeriesTypeMenu" [ngStyle]="{'left.px': chartSeriesTypeMenuX, 'top.px': chartSeriesTypeMenuY}" class="contextmenu level3" (mouseleave)="chartSeriesTypeMenu = false">
+    <span *ngFor="let type of chartSeriesTypes" class=item (click)="selectChart(chartType, type)" style="text-align: center">
+        {{type}}
+    </span>
+</div>
