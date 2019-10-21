@@ -60,12 +60,12 @@
     <igx-dialog #chartSelectionDialog>
         <igx-card >
             <igx-card-header  style="text-align: center;">
-               <h4 #header igxCardHeaderTitle>Create Chart</h4>
+               <h4 igxCardHeaderTitle>Create Chart</h4>
             </igx-card-header>
             <igx-divider></igx-divider>
             <igx-card-content>
             <div class="chart-types">
-                    <button *ngFor="let chart of chartTypes1; trackBy: trackByFn" class="chart-btn" 
+                    <button *ngFor="let chart of chartTypes1; trackBy: trackByFn" class="chart-btn"
                              (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                              (mouseleave)="chartPreviewDialog.close()"
                              (mouseenter)="previewChart(chart.name)"
@@ -79,7 +79,7 @@
         </igx-card>
     </igx-dialog>
 
-    <igx-dialog #chartPreviewDialog title="Preview Chart">
+    <igx-dialog #chartPreviewDialog>
         <div style="width: 400px; height: 300px;">
                 <ng-template #chartPreview chartHost></ng-template>
         </div>
@@ -92,9 +92,9 @@
     </div>
     <div class="chart-config-area">
         <igx-tabs>
-            <igx-tabs-group label="Type Settings" icon="insert_chart">
+            <igx-tabs-group label="Chart Types" icon="insert_chart">
                 <div *ngFor="let chartType of chartTypes">
-                    <div style="text-align: center">{{chartType | uppercase}}</div>
+                    <h4 igxCardHeaderTitle style="text-align: center">{{chartType | uppercase}}</h4>
                     <div style="display: inline-flex">
                         <button igxButton="raised" 
                                 (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
