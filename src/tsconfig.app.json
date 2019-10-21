@@ -7,7 +7,10 @@
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
-
+    "**/*.spec.ts",
+    "app/layouts/tabs/tabs-sample-4/*.module.ts",
+    "app/layouts/tabs/tabs-sample-5/*.module.ts",
+    "app/layouts/tabs/views/*.module.ts",
+    "app/layouts/tabs/views/**/*.ts"
   ]
 }
