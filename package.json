@@ -25,11 +25,11 @@
     "url": "git://github.com/IgniteUI/igniteui-angular-samples/repository.git"
   },
   "dependencies": {
-    "@angular/animations": "8.2.8",
-    "@angular/common": "8.2.8",
+    "@angular/animations": "8.2.11",
+    "@angular/common": "8.2.11",
     "@angular/compiler": "8.2.8",
     "@angular/core": "^8.2.8",
-    "@angular/forms": "8.2.8",
+    "@angular/forms": "8.2.11",
     "@angular/platform-browser": "8.2.8",
     "@angular/platform-browser-dynamic": "8.2.8",
     "@angular/router": "8.2.8",
