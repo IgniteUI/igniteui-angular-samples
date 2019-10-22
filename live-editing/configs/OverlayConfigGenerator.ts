@@ -32,9 +32,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlaySampleMain1Component,
-            additionalFiles: ["/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.component.ts",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.component.scss",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.component.html"],
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxCardModule, CardSample1Component,
                     OverlaySampleMain1Component, IgxButtonDirective, IgxDividerModule, IgxButtonModule],
