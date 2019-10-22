@@ -9,7 +9,6 @@ class MySummary extends IgxSummaryOperand {
     constructor() {
         super();
     }
-
     public operate(data: any[] = []): IgxSummaryResult[] {
         const result = super.operate(data);
         if (data.length < 1) { return result; }
@@ -35,7 +34,6 @@ class MySummary extends IgxSummaryOperand {
     }
 }
 @Component({
-    providers: [],
     selector: "grid-sample",
     styleUrls: ["./grid-custom-summaries-selection.component.scss"],
     templateUrl: "grid-custom-summaries-selection.component.html"
