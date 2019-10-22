@@ -1,9 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1
-        [data]="data"
-        [height]="'530px'"
-        [width]="'100%'"
-        [autoGenerate]='false'
+    <igx-grid #grid1 [data]="data" [height]="'530px'" [width]="'100%'"
         (onSelection)='calculateSummary()'
         (onRangeSelection)='calculateSummary()'>
         <igx-column [field]="'ProductID'"></igx-column>
