@@ -32,9 +32,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlaySampleMain1Component,
-            additionalFiles: ["/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.component.ts",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.scss",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.html"],
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, IgxSwitchModule, IgxCardModule, CardSample1Component,
                     OverlaySampleMain1Component, IgxButtonDirective, IgxDividerModule, IgxButtonModule],
@@ -64,9 +64,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlayPositionSample1Component,
-            additionalFiles: ["/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.component.ts",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.scss",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.html"],
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, OverlayPositionSample1Component, IgxCardModule],
                 ngProviders: [IgxOverlayService],
@@ -78,9 +78,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlayPositionSample2Component,
-            additionalFiles: ["/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.component.ts",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.scss",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.html"],
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, OverlayPositionSample2Component, IgxCardModule],
                 ngProviders: [IgxOverlayService],
@@ -92,9 +92,9 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: OverlayPositionSample3Component,
-            additionalFiles: ["/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.component.ts",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.scss",
-                "/src/app/layouts/card/overlay-dynamic-card/overlay-dynamic-card.html"],
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxIconModule, IgxOverlayService, OverlayPositionSample3Component, IgxCardModule],
                 ngProviders: [IgxOverlayService],
