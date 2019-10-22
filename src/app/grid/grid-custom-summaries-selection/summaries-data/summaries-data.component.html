@@ -1,6 +1,0 @@
-<div *ngIf="dataExists">
-  <div *ngFor="let key of objectKeys(summariesData)" class="summaries-data-wrapper" [ngClass]="grid.displayDensity">
-    <span class="igx-grid-summary__label">{{ key }}</span>
-    <span class="igx-grid-summary__result">{{ summariesData[key] }}</span>
-  </div>
-</div>
