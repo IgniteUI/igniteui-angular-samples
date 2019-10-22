@@ -80,5 +80,6 @@ export const gridsRoutesData = {
     "grid-advanced-filtering-style": { displayName: "Grid Advanced Filtering Style", parentName: "Grid" },
     "grid-excel-style-filtering-load-on-demand":
         { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
-    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" }
+    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" },
+    "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" }
 };
