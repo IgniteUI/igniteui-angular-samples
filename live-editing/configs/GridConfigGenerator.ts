@@ -79,9 +79,6 @@ import {
     GridCustomSummariesSelection
 } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import {
-    SummariesData
-} from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
-import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
 import {
@@ -714,13 +711,10 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Custom Summaries
         configs.push(new Config({
             component: GridCustomSummariesSelection,
-            additionalFiles: ["/src/app/data/nwindData.ts",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.html",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.scss",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [SummariesData, GridCustomSummariesSelection, IgxGridModule],
-                ngDeclarations: [SummariesData, GridCustomSummariesSelection],
+                imports: [GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [GridCustomSummariesSelection],
                 ngImports: [IgxGridModule]
             })
         }));
