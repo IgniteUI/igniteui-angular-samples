@@ -24,7 +24,7 @@ class MySummary extends IgxSummaryOperand {
         if (boolData.length) {
             result.push({
                 key: "test", label: "Discounted",
-                summaryResult: boolData.filter(rec => rec).length  + "of" + boolData.length });
+                summaryResult: boolData.filter(rec => rec).length  + " of " + boolData.length });
         }
         if (dates.length) {
             result.push({ key: "earliest", label: "Earliest", summaryResult: IgxDateSummaryOperand.earliest(dates)});
