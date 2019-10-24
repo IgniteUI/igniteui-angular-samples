@@ -56,7 +56,6 @@ import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-c
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
-import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
 import { ChartArgsPipe, ChartHostDirective, GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
@@ -128,7 +127,6 @@ import { DataService } from "./services/data.service";
 
 @NgModule({
     declarations: [
-        SummariesData,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridColumnHidingSampleComponent,
