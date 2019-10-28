@@ -32,16 +32,17 @@
     @include scrollbar-love();
 
     .analytics-btn{
-        z-index: 99999;
+        @include igx-button(
+            igx-button-theme(
+                $palette: $fluent-excel-palette,
+                $icon-color: #fff,
+                $icon-background: #335e3b,
+                $icon-hover-background: #459a55,
+                $icon-border-radius: 0
+            )
+        );
+        z-index: 9;
         position: absolute;
-        background: white;
-        width: 32px;
-        .igx-icon{
-            cursor: pointer;
-            &:hover{
-                background: rgba(218, 214, 214, 0.1);
-            }
-        }
     }
 
     .finjs-icons {
@@ -79,18 +80,27 @@
         width: 1400px;
         height: 500px;
         display: inline-flex;
-        .chart-area{
+        .chart-area {
             overflow-y: auto;
-            width: 75%;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .chart-config-area{
             button{
                 margin-right: 4px;
             }
-            width: 25%;
-            margin-right: 10px;
-            margin-left: 10px;
+            &.opened{
+                width: 25%;
+                flex-basis: 25%;
+            }
+            &.closed{
+                width: 0px;
+                flex-basis: 0px;
+            }
+            transition: flex-basis, width;
+            transition-duration: .3s;
+            transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
 

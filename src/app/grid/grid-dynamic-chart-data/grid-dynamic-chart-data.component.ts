@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, ElementRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
@@ -46,7 +46,7 @@ export class ChartArgsPipe implements PipeTransform {
 export class GridDynamicChartDataComponent implements OnInit {
 
     public data;
-
+    public opened = true;
     @ViewChild(IgxGridComponent, { static: true })
     public grid: IgxGridComponent;
 
@@ -71,6 +71,11 @@ export class GridDynamicChartDataComponent implements OnInit {
     @ViewChild(IgxCardComponent, {static: true})
     public card: IgxCardComponent;
 
+    @ViewChild("configArea", {static: true})
+    public area: ElementRef;
+
+
+    public chartCondigAreaState = "opened";
     public gridDataSelection = new Array<IGridDataSelection>();
     public selectedData = [];
     public colForSubjectArea = null;
@@ -161,7 +166,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     };
 
     private dataChartOptions: IChartOptions = {
-        width: "90%",
+        width: "100%",
         height: "70%",
         transitionDuration: 300,
         isVerticalZoomEnabled: true,
@@ -188,7 +193,6 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     public ngOnInit() {
         this.chartSelectionDialog.onOpen.subscribe(() => {
-            this.contextmenu = false;
             this.currentChartArg = {chartType: "column", seriesType: "Grouped"};
         });
 
@@ -311,9 +315,10 @@ export class GridDynamicChartDataComponent implements OnInit {
         return dataRecord;
     }
 
-    public toggleChartSelectionDialog(target: HTMLElement) {
+    public toggleChartSelectionDialog(event) {
+        console.log(event)
         this._chartSelectionDilogOverlaySettings.outlet  = this.outlet;
-        this._chartSelectionDilogOverlaySettings.positionStrategy.settings.target = target;
+        this._chartSelectionDilogOverlaySettings.positionStrategy.settings.target = event.target;
         !this.chartSelectionDialog.isOpen ? this.chartSelectionDialog.open(this._chartSelectionDilogOverlaySettings) : this.chartSelectionDialog.close();
     }
 
@@ -398,12 +403,17 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
-        if (this.contextmenu  && !event.target.parentElement.classList.contains("analytics-btn")) {
+        if (!event.target.parentElement.classList.contains("analytics-btn")) {
             this.disableContextMenu();
         }
     }
 
     public trackByFn(index, item) {
         return index;
+    }
+
+    public toggle() {
+        this.chartCondigAreaState  = this.opened ? "closed"  : "opened";
+        this.opened  = !this.opened;
     }
 }

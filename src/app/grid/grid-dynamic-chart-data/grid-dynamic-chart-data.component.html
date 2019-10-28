@@ -53,12 +53,14 @@
     </igx-grid>
 </div>
 
-    <span *ngIf="contextmenu" class="analytics-btn"  (click)="toggleChartSelectionDialog($event.target)" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
-           <igx-icon class="icon" style="font-size: 32px" fontSet="material">insert_chart_outlined</igx-icon>
-    </span>
+<span *ngIf="contextmenu" class="analytics-btn"  [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
+    <button igxButton="icon" (click)="toggleChartSelectionDialog($event)">
+            <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
+    </button>
+</span>
 
     <igx-dialog #chartSelectionDialog>
-        <igx-card >
+        <igx-card type="outlined" >
             <igx-card-header  style="text-align: center;">
                <h4 igxCardHeaderTitle>Create Chart</h4>
             </igx-card-header>
@@ -90,25 +92,30 @@
     <div class="chart-area">
         <ng-template #chart chartHost></ng-template>
     </div>
-    <div class="chart-config-area">
-        <igx-tabs>
-            <igx-tabs-group label="Chart Types" icon="insert_chart">
-                <div *ngFor="let chartType of chartTypes">
-                    <h4 igxCardHeaderTitle style="text-align: center">{{chartType | uppercase}}</h4>
-                    <div style="display: inline-flex">
-                        <button igxButton="raised" 
-                                (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
-                                *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn">{{chart.seriesType}}</button>
+    <span>
+            <button igxButton="icon" igxRipple (click)="toggle()">
+            <igx-icon fontSet="material">chevron_{{ opened ? 'right': 'left'}}</igx-icon>
+        </button>
+    </span>
+    <div #configArea class="chart-config-area {{chartCondigAreaState}}">
+            <igx-tabs [tabsType]="'fixed'">
+                <igx-tabs-group label="Chart Types" icon="insert_chart">
+                    <div *ngFor="let chartType of chartTypes">
+                        <h4 igxCardHeaderTitle style="text-align: center">{{chartType | uppercase}}</h4>
+                        <div style="display: inline-flex">
+                            <button igxButton="raised" 
+                                    (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
+                                    *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn">{{chart.seriesType}}</button>
+                        </div>
                     </div>
-                </div>
-                <div >
-                    <div style="text-align: center">{{'pie' | uppercase}}</div>
-                    <div style="text-align: center">
-                        <button igxButton="flat" (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">pie_chart</igx-icon></button>
+                    <div >
+                        <div style="text-align: center">{{'pie' | uppercase}}</div>
+                        <div style="text-align: center">
+                            <button igxButton="flat" (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><igx-icon class="icon" style="font-size: 20px" fontSet="material">pie_chart</igx-icon></button>
+                        </div>
                     </div>
-                </div>
-            </igx-tabs-group>
-        </igx-tabs>
+                </igx-tabs-group>
+            </igx-tabs>
     </div>
  </div>
 </igx-dialog>
