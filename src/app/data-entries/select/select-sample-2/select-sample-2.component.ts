@@ -1,6 +1,6 @@
 
 import { Component, ViewChild } from "@angular/core";
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular';
+import { IgxSelectComponent, IgxSelectItemComponent } from "igniteui-angular";
 
 @Component({
     selector: "select-sample-2",
