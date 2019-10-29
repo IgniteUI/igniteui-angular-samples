@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, IRowDragStartEventArgs } from "igniteui-angular";
+import { Component, ViewChild } from "@angular/core";
+import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "../../data/customers";
 
 enum DragIcon {
@@ -8,32 +8,29 @@ enum DragIcon {
 }
 
 @Component({
-    selector: 'grid-multiple-row-drag',
-    styleUrls: ['./grid-multiple-row-drag.component.scss'],
-    templateUrl: './grid-multiple-row-drag.component.html'
+    selector: "grid-multiple-row-drag",
+    styleUrls: ["./grid-multiple-row-drag.component.scss"],
+    templateUrl: "./grid-multiple-row-drag.component.html"
 })
 export class GridMultipleRowDragComponent  {
     public data1: any[];
     public data2: any[];
-    @ViewChild("sourceGrid", { read: IgxGridComponent, static: true }) 
+    @ViewChild("sourceGrid", { read: IgxGridComponent, static: true })
     public sourceGrid: IgxGridComponent;
-    @ViewChild("targetGrid", { read: IgxGridComponent, static: true }) 
+    @ViewChild("targetGrid", { read: IgxGridComponent, static: true })
     public targetGrid: IgxGridComponent;
     public selectionMode = "multiple";
     constructor() {
         this.data1 = DATA;
         this.data2 = [];
-        
-    }
+   }
 
     public onRowDragEnd(args) {
         args.animation = true;
     }
-    
     public onRowDragStart(args) {
         args.drag.ghostElement.classList.add(DragIcon.ALLOW);
     }
-    
     public onDropAllowed(args, draggedElements) {
         let selected = false;
         const ids = this.sourceGrid.selectedRows();
@@ -54,7 +51,6 @@ export class GridMultipleRowDragComponent  {
 
     public onEnter(args) {
         args.drag.ghostElement.classList.add(DragIcon.ALLOW);
-        
     }
 
     public onLeave(args) {
