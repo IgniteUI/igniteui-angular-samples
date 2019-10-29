@@ -8,7 +8,7 @@
         background: $dark-color;
         ::ng-deep {
           @include igx-grid($dark-grid-theme);
-          @include igx-grid-paginator($dark-grid-paginator-theme);
+          @include igx-paginator($dark-paginator-theme);
           @include igx-dialog($dark-dialog-theme);
           @include igx-input-group($dark-input-group-theme);
           @include igx-snackbar($dark-snackbar-theme);
