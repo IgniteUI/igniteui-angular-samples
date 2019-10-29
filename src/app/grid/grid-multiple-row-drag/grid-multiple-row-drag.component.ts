@@ -31,14 +31,13 @@ export class GridMultipleRowDragComponent  {
     public onRowDragStart(args) {
         args.drag.ghostElement.classList.add(DragIcon.ALLOW);
     }
-    public onDropAllowed(args, draggedElements) {
+    public onDropAllowed(args) {
         let selected = false;
         const ids = this.sourceGrid.selectedRows();
         const selectedRowData = this.sourceGrid.data.filter((record) => {
             return ids.includes(record.ID);
         });
         selectedRowData.forEach((rowData) => {
-            draggedElements++;
             selected = true;
             this.targetGrid.addRow(rowData);
             this.sourceGrid.deleteRow(rowData.ID);
