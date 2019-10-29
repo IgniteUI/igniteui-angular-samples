@@ -43,7 +43,7 @@ export class GridMultipleRowDragComponent  {
             this.targetGrid.addRow(rowData);
             this.sourceGrid.deleteRow(rowData.ID);
         });
-        if(selected === false){
+        if (selected === false) {
             this.targetGrid.addRow(args.dragData.rowData);
             this.sourceGrid.deleteRow(args.dragData.rowID);
         }
