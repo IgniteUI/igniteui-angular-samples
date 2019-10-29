@@ -125,6 +125,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
+import { GridMultipleRowDragComponent } from './grid-multiple-row-drag/grid-multiple-row-drag.component';
 
 @NgModule({
     declarations: [
@@ -214,6 +215,7 @@ import { DataService } from "./services/data.service";
         GridConditionalRowSelectorsComponent,
         GridDynamicChartDataComponent,
         ContextMenuComponent,
+        GridMultipleRowDragComponent,
         ChartHostDirective,
         ChartArgsPipe
     ],

@@ -86,6 +86,7 @@ import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinn
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { GridMultipleRowDragComponent } from './grid-multiple-row-drag/grid-multiple-row-drag.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -164,6 +165,11 @@ export const gridsRoutes: Routes = [
         component: GridDragBaseSampleComponent,
         data: gridsRoutesData["grid-row-drag-base"],
         path: "grid-row-drag-base"
+    },
+    {
+        component: GridMultipleRowDragComponent,
+        data:  gridsRoutesData["grid-multiple-row-drag"],
+        path: "grid-multiple-row-drag"
     },
     {
         component: GridRowReorderComponent,
