@@ -6,7 +6,8 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule,
     IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
-    IgxToastModule, IgxToggleModule } from "igniteui-angular";
+    IgxToastModule, IgxToggleModule, IgxTabsModule } from "igniteui-angular";
+import { IgxPieChartModule} from "igniteui-angular-charts/ES5/igx-pie-chart-module";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
@@ -65,6 +66,7 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
+import { HierarchicalGridMasterDetailSampleComponent } from './hierarchical-grid-master-detail/hierarchical-grid-master-detail.component';
 
 @NgModule({
     declarations: [
@@ -89,6 +91,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridColumnMovingSampleComponentStyled,
         HGridColumnMovingSampleComponent,
         HGridMultiCellStyleComponent,
+        HierarchicalGridMasterDetailSampleComponent,
         HGridMultiHeadersSampleComponent,
         HGridMultiHeadersStylingComponent,
         HGridToolbarTitleSampleComponent,
@@ -153,7 +156,9 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         IgxSparklineModule,
         IgxSparklineCoreModule,
         IgxBannerModule,
-        IgxSnackbarModule
+        IgxSnackbarModule,
+        IgxTabsModule,
+        IgxPieChartModule
     ],
     providers: [
         IgxCsvExporterService,
