@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, VerticalAlignment, IgxGridCellComponent } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
@@ -216,11 +216,19 @@ export class GridDynamicChartDataComponent implements OnInit {
             for (let i = 0; i < this.dataRows.length; i++) {
                 this.gridDataSelection.push({ selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
             }
-            this.clickedCell = this.grid.selectedCells[this.grid.selectedCells.length - 1 ];
-            console.log(this.clickedCell.columnIndex)
-            if (!this.grid.getRowByIndex(range.rowEnd + 1)) {
-                this.clickedCell = this.grid.rowList.toArray()[this.grid.rowList.length - 2].cells.toArray()[this.clickedCell.columnIndex - 1];
+            const rowIndex = range.rowEnd;
+            let colIndex = range.columnEnd;
+            while (!this.grid.navigation.isColumnFullyVisible(colIndex)) {
+                colIndex--;
             }
+            if (!this.grid.getRowByIndex(rowIndex)) {
+                const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 2].index;
+                const field =  this.grid.visibleColumns[colIndex].field;
+                this.clickedCell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
+            } else {
+                this.clickedCell = this.grid.getCellByColumn(rowIndex, this.grid.visibleColumns[colIndex].field);
+            }
+
             this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
             this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
             this.contextmenu = true;
