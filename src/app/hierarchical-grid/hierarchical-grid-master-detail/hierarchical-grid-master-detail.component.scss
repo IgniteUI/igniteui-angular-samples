@@ -1,33 +1,17 @@
-.photo {
-    vertical-align: middle;
-    max-height: 62px;
+.categoryStyle{
+    font-weight: 600;
 }
-.cell__inner_2 {
-    margin: 1px
-}
-.grid-controls {
-    display: flex;
+.tabContent {
+    display:flex;
     justify-content: space-between;
-    margin: 0 16px 24px;
-    flex-flow: column;
-    align-items: flex-start;
+    margin: 10px;
 }
 
-igx-snackbar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
+.tabInnerContent {
+    display:flex;
+    justify-content: space-around;
+    width: 100%;
 }
-
-.igx-snackbar {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.container {
-    display: flex;
-    igx-icon {
-        margin: 20px;
-    }
+.tabInnerContent > div {
+    margin: 10px;
 }

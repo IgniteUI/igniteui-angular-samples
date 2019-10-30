@@ -14,23 +14,23 @@
         <ng-template igxChildDetails let-dataItem>
                 <igx-tabs>
                         <igx-tabs-group label="Details">
-                            <div style='display:flex; margin: 10px;' >
+                            <div class='tabContent'>
                                 <igx-avatar src="https://www.infragistics.com/angular-demos/{{dataItem.avatar}}" roundShape="false" size="large"></igx-avatar>
-                                <div style='display:flex;justify-content: space-around; width: 100%;'>
-                                    <div style='margin: 10px;'>
-                                            <div><span style='font-weight: 600;'>Country:</span> {{dataItem.country}}</div>
-                                            <div><span style='font-weight: 600;'>City:</span> {{dataItem.city}}</div>
-                                            <div><span style='font-weight: 600;'>Street:</span> {{dataItem.street}}</div>
+                                <div class='tabInnerContent'>
+                                    <div>
+                                            <div><span class='categoryStyle'>Country:</span> {{dataItem.country}}</div>
+                                            <div><span class='categoryStyle'>City:</span> {{dataItem.city}}</div>
+                                            <div><span class='categoryStyle'>Street:</span> {{dataItem.street}}</div>
                                     </div>
-                                    <div style='margin: 10px;'>
-                                            <div> <span style='font-weight: 600;'>Work Phone:</span> {{dataItem.work_phone}}</div>
-                                            <div> <span style='font-weight: 600;'>Mobile Phone:</span> {{dataItem.mobile_phone}}</div>
+                                    <div>
+                                            <div> <span class='categoryStyle'>Work Phone:</span> {{dataItem.work_phone}}</div>
+                                            <div> <span class='categoryStyle'>Mobile Phone:</span> {{dataItem.mobile_phone}}</div>
                                     </div>
                                 </div>
                             </div>
                         </igx-tabs-group>
                         <igx-tabs-group label="Deals">
-                        <div style='display:flex;justify-content: space-between;'>
+                        <div class='tabContent'>
                             <igx-pie-chart [dataSource]="getPieData(dataItem)"
                                 width="50%"
                                 height="200px"
@@ -44,7 +44,9 @@
                         </div>
                         </igx-tabs-group>
                         <igx-tabs-group label="Sales">
-                                <igx-category-chart height="300px" width="700px"
+                            <div class='tabContent' style='flex-direction: column;'>
+                                <igx-legend #legend orientation="horizontal"></igx-legend>
+                                <igx-category-chart height="300px" width="700px" [legend]="legend"
                                     [dataSource]="dataItem.chartData ? dataItem.chartData : getChartData(dataItem)"
                                     chartType="Line"
                                     chartTitle="Sales"
@@ -56,6 +58,7 @@
                                     [crosshairsDisplayMode]="'Horizontal'"
                                     [crosshairsAnnotationEnabled]="true">
                                 </igx-category-chart>
+                            </div>
                         </igx-tabs-group>
                 </igx-tabs>
 

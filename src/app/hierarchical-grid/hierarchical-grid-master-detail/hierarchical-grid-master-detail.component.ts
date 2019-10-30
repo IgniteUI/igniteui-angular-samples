@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { data } from "../../grid-crm/grid-crm/data";
+import { IgxLegendComponent } from 'igniteui-angular-charts/ES5/igx-legend-component';
 
 
 @Component({
@@ -9,18 +10,21 @@ import { data } from "../../grid-crm/grid-crm/data";
 })
 
 export class HierarchicalGridMasterDetailSampleComponent {
+    @ViewChild("legend", { static: true })
+    public legend: IgxLegendComponent;
 
     public data = [];
     public include = ["date", "estimated", "actual"];
     constructor() {
         this.data = data;
     }
+
     public formatPieLabel = (args) => {
         return args.item.Value + " " + args.item.Label;
     }
 
     public formatDateLabel(item: any): string {
-        return item.date.toLocaleDateString(undefined, {month: "long"});
+        return item.date.toLocaleDateString(undefined, {month: "short"});
     }
 
     public formatValue(val: any): string {
