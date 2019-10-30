@@ -13,59 +13,49 @@
         </igx-column>
         <ng-template igxChildDetails let-dataItem>
                 <igx-tabs>
-                        <igx-tabs-group label="Info">
+                        <igx-tabs-group label="Details">
                             <div style='display:flex; margin: 10px;' >
                                 <igx-avatar src="https://www.infragistics.com/angular-demos/{{dataItem.avatar}}" roundShape="false" size="large"></igx-avatar>
                                 <div style='display:flex;justify-content: space-around; width: 100%;'>
                                     <div style='margin: 10px;'>
-                                            <div>Country: {{dataItem.country}}</div>
-                                            <div>City: {{dataItem.city}}</div>
-                                            <div>Street: {{dataItem.street}}</div>
+                                            <div><span style='font-weight: 600;'>Country:</span> {{dataItem.country}}</div>
+                                            <div><span style='font-weight: 600;'>City:</span> {{dataItem.city}}</div>
+                                            <div><span style='font-weight: 600;'>Street:</span> {{dataItem.street}}</div>
                                     </div>
                                     <div style='margin: 10px;'>
-                                            <div> Work Phone: {{dataItem.work_phone}}</div>
-                                            <div> Mobile Phone: {{dataItem.mobile_phone}}</div>
+                                            <div> <span style='font-weight: 600;'>Work Phone:</span> {{dataItem.work_phone}}</div>
+                                            <div> <span style='font-weight: 600;'>Mobile Phone:</span> {{dataItem.mobile_phone}}</div>
                                     </div>
                                 </div>
                             </div>
                         </igx-tabs-group>
                         <igx-tabs-group label="Deals">
-                                <div style='display:flex;flex-flow: row; justify-content: space-around;'>
-                                        <div>
-                                            <span>Won: {{dataItem.deals_won}}</span>
-                                        </div>
-                                        <div>
-                                                <span>Lost: {{dataItem.deals_lost}}</span>
-                                        </div>
-                                        <div>
-                                                <span>Pending: {{dataItem.deals_pending}}</span>
-                                        </div>
-                                        <div>
-                                                <span>Total: {{dataItem.deals_total}}</span>
-                                        </div>
-                                </div>
+                        <div style='display:flex;justify-content: space-between;'>
                             <igx-pie-chart [dataSource]="getPieData(dataItem)"
-                                width="100%"
+                                width="50%"
                                 height="200px"
-                                labelMemberPath="Label"
-                                valueMemberPath="Value" [brushes]='["rgb(21, 190, 6)", "rgb(255, 51, 51)", "gray"]'>
+                                [outlines]="['transparent']"
+                                leaderLineVisibility='collapsed'
+                                labelMemberPath="Label" [formatLabel]='formatPieLabel'
+                                valueMemberPath="Value" [brushes]='["rgb(171, 223, 29)", "rgb(228, 19, 16)", "rgb(0, 111, 138)"]'
+                               [labelsPosition]="'outsideEnd'">
                             </igx-pie-chart>
+                            <igx-grid style='margin:10px;' displayDensity="compact" [autoGenerate]='true' [columnWidth]='"70px"' width='280px' [data]='dataItem.gridData ? dataItem.gridData: gridData(dataItem)'></igx-grid>
+                        </div>
                         </igx-tabs-group>
                         <igx-tabs-group label="Sales">
-                            <div style='width:100%; display:flex; flex-flow: row; '>
-                                <igx-sparkline height="150px" width="100%"
-                                [dataSource]="dataItem.sparkData ? dataItem.sparkData : getSparklineData(dataItem)"
-                                valueMemberPath="Sold"
-                                lab
-                                displayType="Line"
-                                lineThickness="2"
-                                brush="rgb(21, 190, 6)"
-                                negativeBrush="rgb(211, 17, 3)" ></igx-sparkline>
-                                <div style='display: flex; flex-direction: column; margin:10px;'>
-                                    <div>Estimated: <span> {{dataItem.estimated_sales}} </span></div>
-                                    <div>Actual: <span> {{dataItem.actual_sales}} </span></div>
-                                </div>
-                            </div>
+                                <igx-category-chart height="300px" width="700px"
+                                    [dataSource]="dataItem.chartData ? dataItem.chartData : getChartData(dataItem)"
+                                    chartType="Line"
+                                    chartTitle="Sales"
+                                    subtitle="(Estimated, Actual)"
+                                    xAxisInterval="1"
+                                    [brushes]='["rgb(0, 111, 138)", "rgb(171, 223, 29)"]'
+                                    [xAxisFormatLabel]="formatDateLabel"
+                                    [includedProperties]="include"
+                                    [crosshairsDisplayMode]="'Horizontal'"
+                                    [crosshairsAnnotationEnabled]="true">
+                                </igx-category-chart>
                         </igx-tabs-group>
                 </igx-tabs>
 

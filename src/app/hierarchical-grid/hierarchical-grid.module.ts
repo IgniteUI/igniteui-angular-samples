@@ -67,6 +67,7 @@ import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/h
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
 import { HierarchicalGridMasterDetailSampleComponent } from './hierarchical-grid-master-detail/hierarchical-grid-master-detail.component';
+import { IgxCategoryChartModule } from 'igniteui-angular-charts/ES5/igx-category-chart-module';
 
 @NgModule({
     declarations: [
@@ -158,7 +159,8 @@ import { HierarchicalGridMasterDetailSampleComponent } from './hierarchical-grid
         IgxBannerModule,
         IgxSnackbarModule,
         IgxTabsModule,
-        IgxPieChartModule
+        IgxPieChartModule,
+        IgxCategoryChartModule
     ],
     providers: [
         IgxCsvExporterService,

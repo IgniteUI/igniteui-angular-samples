@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { data } from "../../grid-crm/grid-crm/data";
 
+
 @Component({
     selector: "hierarchical-grid-master-detail",
     styleUrls: ["./hierarchical-grid-master-detail.component.scss"],
@@ -10,15 +11,21 @@ import { data } from "../../grid-crm/grid-crm/data";
 export class HierarchicalGridMasterDetailSampleComponent {
 
     public data = [];
-
+    public include = ["date", "estimated", "actual"];
     constructor() {
         this.data = data;
+    }
+    public formatPieLabel = (args) => {
+        return args.item.Value + " " + args.item.Label;
+    }
+
+    public formatDateLabel(item: any): string {
+        return item.date.toLocaleDateString(undefined, {month: "long"});
     }
 
     public formatValue(val: any): string {
         return val.toLocaleString("en-us", { maximumFractionDigits: 2 });
     }
-
     public getPieData(dataItem) {
         return [
             { Label: "Won", Value: dataItem.deals_won},
@@ -26,20 +33,47 @@ export class HierarchicalGridMasterDetailSampleComponent {
             { Label: "Pending", Value: dataItem.deals_pending}];
     }
 
-    public getSparklineData(dataItem) {
+    public getChartData(dataItem) {
+        const year: number = new Date().getFullYear();
         const sales: any[] = [];
-        for (let w = 0; w < 31; w++) {
-            const value = this.getRandomNumber(0, 100);
-            sales.push({Sold: value, Week: w});
+        for (let i = 0; i < 12; i++) {
+            const value = this.getRandomNumber(2000, 10000);
+            sales.push({
+                estimated: value + this.getRandomNumber(-2000 , 1000),
+                actual: value, date: new Date(year, i, 1) });
         }
-        dataItem.sparkData = sales;
-        return dataItem.sparkData;
+        dataItem.chartData = sales;
+        return dataItem.chartData;
+    }
+
+    public gridData(dataItem) {
+        const detailsData = [];
+        let won = dataItem.deals_won;
+        let lost = dataItem.deals_lost;
+        let pending = dataItem.deals_pending;
+        for (let j = 0; j < 3; j++) {
+            detailsData.push({
+                Q: "Q" + (j + 1),
+                Won: this.getRandomNumber(0, won),
+                Lost: this.getRandomNumber(0, lost),
+                Pending: this.getRandomNumber(0, pending)
+            });
+            won -= detailsData[j].Won;
+            lost -= detailsData[j].Lost;
+            pending -= detailsData[j].Pending;
+        }
+        detailsData.push({
+            Q: "Q4",
+            Won: won,
+            Lost: lost,
+            Pending: pending
+        });
+        dataItem.gridData = detailsData;
+        return dataItem.gridData;
     }
 
     public getRandomNumber(min: number, max: number): number {
         return Math.round(min + Math.random() * (max - min));
     }
-
-
 
 }
