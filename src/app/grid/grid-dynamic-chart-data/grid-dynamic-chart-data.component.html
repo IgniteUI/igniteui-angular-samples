@@ -88,6 +88,15 @@
     </igx-dialog>
 
 <igx-dialog #chartDialog class="chart-dialog" [closeOnOutsideSelect]="true">
+<div class="header">
+    <span class="header-text">
+        {{currentChartArg.seriesType ? (currentChartArg.seriesType.replace('100', '100% ') | titlecase) : '' }} {{currentChartArg.chartType | titlecase }} Chart
+    </span>
+    <div class="action-buttons-wrapper">
+            <button igxButton="icon" (click)="toggleFullScreen()"><igx-icon class="material">fullscreen{{fullScreenOpened ? '_exit' : ''}}</igx-icon></button>
+            <button igxButton="icon" (click)="chartDialog.close()"><igx-icon class="material">close</igx-icon></button>
+    </div>
+</div>
  <div class="selection-area">
     <div class="chart-area">
         <ng-template #chart chartHost></ng-template>
