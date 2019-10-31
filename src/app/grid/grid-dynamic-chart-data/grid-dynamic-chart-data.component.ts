@@ -87,6 +87,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     public currentChartArg: IChartArgs = {chartType: "column", seriesType: "Grouped"};
     public fullScreenOpened = false;
     public row;
+    public range;
     // Dialogs options
     public _chartDialogOverlaySettings = {
         closeOnOutsideClick: false,
@@ -217,22 +218,8 @@ export class GridDynamicChartDataComponent implements OnInit {
             for (let i = 0; i < this.dataRows.length; i++) {
                 this.gridDataSelection.push({ selectedData: selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
             }
-            this.rowIndex = range.rowEnd;
-            this.colIndex = range.columnEnd;
-            while (!this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
-                this.colIndex--;
-            }
-            if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 <  this.grid.dataLength)) {
-                const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
-                const field =  this.grid.visibleColumns[this.colIndex].field;
-                this.clickedCell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
-            } else {
-                this.clickedCell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
-            }
-
-            this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
-            this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
-            this.contextmenu = true;
+            this.range = range;
+            this.renderButton();
         });
     }
 
@@ -360,20 +347,7 @@ export class GridDynamicChartDataComponent implements OnInit {
             this.disableContextMenu();
 
         } else {
-            while (!this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
-                this.colIndex--;
-            }
-            if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 <  this.grid.dataLength)) {
-                const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
-                const field =  this.grid.visibleColumns[this.colIndex].field;
-                this.clickedCell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
-            } else {
-                this.clickedCell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
-            }
-
-            this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
-            this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
-            this.contextmenu = true;
+            this.renderButton();
         }
     }
 
@@ -462,5 +436,23 @@ export class GridDynamicChartDataComponent implements OnInit {
         this.fullScreenOpened = false;
         this.dialog.toggleRef.element.style.width = (this.grid.nativeElement.clientWidth * (70 / 100)) + "px";
         (this.dialog.toggleRef.element.firstChild as HTMLElement).style.height = (this.grid.nativeElement.clientHeight * (70 / 100)) + "px";
+    }
+    public renderButton() {
+        this.rowIndex = this.range.rowEnd;
+        this.colIndex = this.range.columnEnd;
+        while (!this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
+            this.colIndex--;
+        }
+        if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 <  this.grid.dataLength)) {
+            const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
+            const field =  this.grid.visibleColumns[this.colIndex].field;
+            this.clickedCell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
+        } else {
+            this.clickedCell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
+        }
+
+        this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
+        this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
+        this.contextmenu = true;
     }
 }
