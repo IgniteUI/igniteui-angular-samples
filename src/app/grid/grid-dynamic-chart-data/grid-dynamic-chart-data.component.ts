@@ -76,7 +76,6 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     public chartCondigAreaState = "opened";
     public gridDataSelection = new Array<IGridDataSelection>();
-    public selectedData = [];
     public colForSubjectArea = null;
     public contextmenu = false;
     public contextmenuX = 0;
@@ -87,6 +86,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     public currentChart;
     public currentChartArg: IChartArgs = {chartType: "column", seriesType: "Grouped"};
     public fullScreenOpened = false;
+    public row;
     // Dialogs options
     public _chartDialogOverlaySettings = {
         closeOnOutsideClick: false,
@@ -124,7 +124,8 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     // Chart, Series, Axes options
     private bubbleChartSizeScale = new IgxSizeScaleComponent();
-
+    private rowIndex;
+    private colIndex;
     private pieChartOptions: IChartOptions = {
         width: "85%",
         height: "65%",
@@ -204,29 +205,29 @@ export class GridDynamicChartDataComponent implements OnInit {
         });
 
         this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
-        //  this.grid.onDataPreLoad.subscribe((evt) => this.disableContextMenu());
+        this.grid.onDataPreLoad.subscribe((evt) => this.disableContextMenu());
         this.data = new FinancialData().generateData(1000);
         this.grid.onRangeSelection.subscribe(range => {
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
-            this.selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
+            const selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
             this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
             this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
             for (let i = 0; i < this.dataRows.length; i++) {
-                this.gridDataSelection.push({ selectedData: this.selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
+                this.gridDataSelection.push({ selectedData: selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
             }
-            const rowIndex = range.rowEnd;
-            let colIndex = range.columnEnd;
-            while (!this.grid.navigation.isColumnFullyVisible(colIndex)) {
-                colIndex--;
+            this.rowIndex = range.rowEnd;
+            this.colIndex = range.columnEnd;
+            while (!this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
+                this.colIndex--;
             }
-            if (!this.grid.getRowByIndex(rowIndex)) {
-                const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 2].index;
-                const field =  this.grid.visibleColumns[colIndex].field;
+            if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 <  this.grid.dataLength)) {
+                const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
+                const field =  this.grid.visibleColumns[this.colIndex].field;
                 this.clickedCell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
             } else {
-                this.clickedCell = this.grid.getCellByColumn(rowIndex, this.grid.visibleColumns[colIndex].field);
+                this.clickedCell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
             }
 
             this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
@@ -342,35 +343,39 @@ export class GridDynamicChartDataComponent implements OnInit {
         this.createChart({chartType: chart, seriesType: "Grouped"}, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
-    // public rightClick(eventArgs: any) {
-    //     eventArgs.event.preventDefault();
-    //     this.selectedCells = [];
-    //     const node = eventArgs.cell.selectionNode;
-    //     const isCellWithinRange = this.grid.getSelectedRanges().some((range) => {
-    //         if (node.column >= range.columnStart &&
-    //             node.column <= range.columnEnd &&
-    //             node.row >= range.rowStart &&
-    //             node.row <= range.rowEnd) {
-    //             return true;
-    //         }
-    //         return false;
-    //     });
+    public rightClick(eventArgs: any) {
+        eventArgs.event.preventDefault();
+        const node = eventArgs.cell.selectionNode;
+        const isCellWithinRange = this.grid.getSelectedRanges().some((range) => {
+            if (node.column >= range.columnStart &&
+                node.column <= range.columnEnd &&
+                node.row >= range.rowStart &&
+                node.row <= range.rowEnd) {
+                return true;
+            }
+            return false;
+        });
 
-    //     if (!isCellWithinRange) {
-    //         this.disableContextMenu();
+        if (!isCellWithinRange) {
+            this.disableContextMenu();
 
-    //         const tempObj = {};
-    //         tempObj[eventArgs.cell.column.field] = eventArgs.cell.value;
-    //         this.gridDataSelection = [{ selectedData: this.dataMap(tempObj), subjectArea: this.colForSubjectArea = eventArgs.cell.column.field, rowID: eventArgs.cell.cellID.rowID }];
-    //         this.grid.clearCellSelection();
-    //         this.grid.selectionService.add(eventArgs.cell.selectionNode);
-    //     }
-    //     this.contextmenuX = eventArgs.event.clientX;
-    //     this.contextmenuY = eventArgs.event.clientY;
-    //     this.clickedCell = eventArgs.cell;
-    //     this.contextmenu = true;
+        } else {
+            while (!this.grid.navigation.isColumnFullyVisible(this.colIndex)) {
+                this.colIndex--;
+            }
+            if ((!this.grid.getRowByIndex(this.rowIndex) || (this.grid.rowList.toArray().indexOf(this.grid.getRowByIndex(this.rowIndex)) >= this.grid.rowList.length - 2) && this.rowIndex + 2 <  this.grid.dataLength)) {
+                const lastFullyVisibleRowIndex = this.grid.rowList.toArray()[this.grid.rowList.length - 3].index;
+                const field =  this.grid.visibleColumns[this.colIndex].field;
+                this.clickedCell = this.grid.getCellByColumn(lastFullyVisibleRowIndex, field);
+            } else {
+                this.clickedCell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
+            }
 
-    // }
+            this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
+            this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
+            this.contextmenu = true;
+        }
+    }
 
     public createChart(args: IChartArgs, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
         const chartHost  = host;
@@ -441,21 +446,21 @@ export class GridDynamicChartDataComponent implements OnInit {
             height = this.grid.nativeElement.clientHeight + "px";
             width = this.grid.nativeElement.clientWidth + "px";
         } else {
-            height = "500px";
-            width = "1400px";
+            height = (this.grid.nativeElement.clientHeight * (70 / 100)) + "px";
+            width = (this.grid.nativeElement.clientWidth * (70 / 100)) + "px";
         }
 
         requestAnimationFrame(() => {
             (this.dialog.toggleRef as any).elementRef.nativeElement.style.width =  width;
             (this.dialog.toggleRef as any).elementRef.nativeElement.firstElementChild.style.height = height;
-            (this.dialog.toggleRef as any).elementRef.nativeElement.style.transition = "width .1s ease-in-out";
+            (this.dialog.toggleRef as any).elementRef.nativeElement.style.transition = "width .2s ease-in-out";
             (this.dialog.toggleRef as any).elementRef.nativeElement.firstElementChild.style.transition = "height .3s ease-in-out";
         });
         this.fullScreenOpened = !this.fullScreenOpened;
     }
     private resetChartDialogInitialDimensions() {
         this.fullScreenOpened = false;
-        this.dialog.toggleRef.element.style.width = "1400px";
-        (this.dialog.toggleRef.element.firstChild as HTMLElement).style.height = "500px";
+        this.dialog.toggleRef.element.style.width = (this.grid.nativeElement.clientWidth * (70 / 100)) + "px";
+        (this.dialog.toggleRef.element.firstChild as HTMLElement).style.height = (this.grid.nativeElement.clientHeight * (70 / 100)) + "px";
     }
 }
