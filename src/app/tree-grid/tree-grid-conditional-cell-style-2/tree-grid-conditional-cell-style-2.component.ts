@@ -1,17 +1,17 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
-import { athletesData } from "../services/data";
+import { IgxTreeGridComponent } from "igniteui-angular";
+import { FOODS_DATA } from "../data/foods";
 
 @Component({
     selector: "app-grid-conditional-cell-style-2",
-    styleUrls: ["./grid-conditional-cell-style-2.component.scss"],
-    templateUrl: "./grid-conditional-cell-style-2.component.html"
+    styleUrls: ["./tree-grid-conditional-cell-style-2.component.scss"],
+    templateUrl: "./tree-grid-conditional-cell-style-2.component.html"
 })
-export class GridConditionalCellStyle2Component implements OnInit {
+export class TreeGridConditionalCellStyle2Component implements OnInit {
     public data: any[];
     public columns: any[];
-    @ViewChild("grid1", { read: IgxGridComponent, static: true })
-    public grid1: IgxGridComponent;
+    @ViewChild("grid1", { read: IgxTreeGridComponent, static: true })
+    public grid1: IgxTreeGridComponent;
 
     public oddColStyles = {
         background: "linear-gradient(to right, #b993d6, #8ca6db)",
@@ -28,13 +28,12 @@ export class GridConditionalCellStyle2Component implements OnInit {
     };
 
     public ngOnInit() {
-        this.data = athletesData;
+        this.data = FOODS_DATA();
         this.columns = [
-            { field: "Id" },
-            { field: "Position" },
+            { field: "ID" },
             { field: "Name" },
-            { field: "AthleteNumber" },
-            { field: "CountryName" }
+            { field: "UnitPrice" },
+            { field: "AddedDate" }
         ];
 
         this.applyCSS();
