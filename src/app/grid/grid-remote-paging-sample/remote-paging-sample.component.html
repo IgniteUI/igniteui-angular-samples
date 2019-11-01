@@ -9,10 +9,10 @@
     </igx-grid>
     <ng-template #customPager let-api>
         <div class="igx-grid__footer">
-            <div class="igx-grid-paginator">
-                <div class="igx-grid-paginator__select">
-                    <label class="igx-grid-paginator__label">Items per page</label>
-                    <div class="igx-grid-paginator__select-input">
+            <div class="igx-paginator">
+                <div class="igx-paginator__select">
+                    <label class="igx-paginator__label">Items per page</label>
+                    <div class="igx-paginator__select-input">
                         <igx-select [(ngModel)]="perPage" type="border">
                             <igx-select-item *ngFor=" let item of [5, 10, 15, 25, 50, 100, 500]" [value]="item">
                                 {{item}}
@@ -20,7 +20,7 @@
                         </igx-select>
                     </div>
                 </div>
-                <div class="igx-grid-paginator__pager">
+                <div class="igx-paginator__pager">
                     <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple
                         igxRippleCentered="true">
                         <igx-icon fontSet="material">first_page</igx-icon>
@@ -44,7 +44,7 @@
     </ng-template>
     <ng-template #secCustomPager let-api>
         <div class="igx-grid__footer">
-            <div id="numberPager" class="igx-grid-paginator" style="justify-content: center;">
+            <div id="numberPager" class="igx-paginator" style="justify-content: center;">
                 <button [disabled]="firstPage" (click)="previousPage()" igxButton="flat">
                     PREV
                 </button>

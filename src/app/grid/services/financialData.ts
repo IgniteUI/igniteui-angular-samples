@@ -1000,7 +1000,7 @@ export class FinancialData {
                 break;
             }
             case "Africa": {
-                country = region.Countries[this.generateRandomNumber(0, 11)];
+                country = region.Countries[this.generateRandomNumber(0, 10)];
                 break;
             }
             case "Middle East": {
