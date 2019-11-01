@@ -67,7 +67,7 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
-import { GridExternalFilteringComponent } from "./grid-external-filtering/grid-external-filtering.component";
+import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -125,6 +125,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
+import { GridExternalAdvancedFilteringComponent } from './grid-external-advanced-filtering/grid-external-advanced-filtering.component';
 
 @NgModule({
     declarations: [
@@ -203,7 +204,7 @@ import { DataService } from "./services/data.service";
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
         GridExcelStyleFilteringLoadOnDemandComponent,
-        GridExternalFilteringComponent,
+        GridExternalExcelStyleFilteringComponent,
         GridCustomSummariesSelection,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
@@ -215,7 +216,8 @@ import { DataService } from "./services/data.service";
         GridDynamicChartDataComponent,
         ContextMenuComponent,
         ChartHostDirective,
-        ChartArgsPipe
+        ChartArgsPipe,
+        GridExternalAdvancedFilteringComponent
     ],
     imports: [
         CommonModule,

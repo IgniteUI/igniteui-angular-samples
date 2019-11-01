@@ -1,16 +1,4 @@
 <div class="flex-row">
-    <div class="flex-column">
-        <igx-select #gridColums value="ProductID">
-            <label igxLabel>Columns:</label>
-            <igx-select-item *ngFor="let c of grid1.columns" [value]="c.field">
-                {{ c.field }}
-            </igx-select-item>
-        </igx-select>
-
-        <igx-grid-excel-style-filtering [column]="grid1.getColumnByName(gridColums.value)" displayDensity="compact">
-        </igx-grid-excel-style-filtering>
-    </div>
-
     <igx-grid #grid1 autoGenerate="false" [data]="data" width="800px" height="650px" [showToolbar]="true"
         [columnHiding]="true" [columnPinning]="true" [exportExcel]="true" [exportCsv]="true" exportText="Export"
         exportExcelText="Export to Excel" exportCsvText="Export to CSV">
@@ -32,4 +20,16 @@
             </ng-template>
         </igx-column>
     </igx-grid>
+
+    <div class="flex-column">
+        <igx-select #gridColums value="ProductID">
+            <label igxLabel>Columns:</label>
+            <igx-select-item *ngFor="let c of grid1.columns" [value]="c.field">
+                {{ c.field }}
+            </igx-select-item>
+        </igx-select>
+
+        <igx-grid-excel-style-filtering [column]="grid1.getColumnByName(gridColums.value)" displayDensity="compact">
+        </igx-grid-excel-style-filtering>
+    </div>
 </div>
