@@ -101,9 +101,7 @@ export class GridDynamicChartDataComponent implements OnInit {
         modal: false,
         outlet: null,
         scrollStrategy: new CloseScrollStrategy(),
-        positionStrategy: new AutoPositionStrategy({
-            verticalStartPoint: VerticalAlignment.Bottom
-        })
+        positionStrategy: null
     };
 
     private _chartPreviewDialogOverlaySettings = {
@@ -321,14 +319,19 @@ export class GridDynamicChartDataComponent implements OnInit {
 
         if (!this.chartSelectionDialog.isOpen) {
             this._chartSelectionDilogOverlaySettings.outlet = this.outlet;
-            this._chartSelectionDilogOverlaySettings.positionStrategy.settings.target = event.target;
-            if (this.colIndex === this.grid.visibleColumns.length - 1) {
-                this._chartSelectionDilogOverlaySettings.positionStrategy.settings.horizontalDirection = HorizontalAlignment.Left;
-                this._chartSelectionDilogOverlaySettings.positionStrategy.settings.horizontalStartPoint = HorizontalAlignment.Right;
+            const positionStrategy = {
+                verticalStartPoint: VerticalAlignment.Bottom,
+                target: event.target
+            };
+
+            if (this.colIndex === this.grid.visibleColumns.length - 1 || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
+                    positionStrategy["horizontalDirection"] = HorizontalAlignment.Left;
+                    positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Right;
             } else {
-                this._chartSelectionDilogOverlaySettings.positionStrategy.settings.horizontalDirection = HorizontalAlignment.Center;
-                this._chartSelectionDilogOverlaySettings.positionStrategy.settings.horizontalStartPoint = HorizontalAlignment.Center;
+                    positionStrategy["horizontalDirection"] = HorizontalAlignment.Center;
+                    positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Center;
             }
+            this._chartSelectionDilogOverlaySettings.positionStrategy = new AutoPositionStrategy({...positionStrategy});
             this.chartSelectionDialog.open(this._chartSelectionDilogOverlaySettings);
         } else {
             this.chartSelectionDialog.close();
