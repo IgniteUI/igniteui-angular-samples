@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxToastComponent } from "igniteui-angular";
+import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from "igniteui-angular";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
 @Component({
@@ -11,7 +11,9 @@ import { RemoteFilteringService } from "../services/remoteFilteringService";
 export class RemoteFilteringSampleComponent implements OnInit {
     public remoteData: any;
     @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
-    @ViewChild("toast", { static: true }) public toast: IgxToastComponent;
+    public noopFilterStrategy = NoopFilteringStrategy.instance();
+    public noopSortStrategy = NoopSortingStrategy.instance();
+
     private _prevRequest: any;
     private _chunkSize: number;
 
@@ -45,11 +47,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             this._prevRequest.unsubscribe();
         }
 
-        this.toast.message = "Loading Remote Data...";
-        this.toast.position = 1;
-        this.toast.displayTime = 1000;
-        this.toast.show();
-        this.cdr.detectChanges();
+        this.grid.isLoading = true;
 
         const virtualizationState = this.grid.virtualizationState;
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
@@ -64,8 +62,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             sortingExpr,
             (data) => {
                 this.grid.totalItemCount = data["@odata.count"];
-                this.toast.hide();
-                this.cdr.detectChanges();
+                this.grid.isLoading = false;
             });
     }
 
