@@ -20,6 +20,7 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalFilteringComponent } from "./grid-external-filtering/grid-external-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -214,6 +215,11 @@ export const gridsRoutes: Routes = [
         component: ExcelStyleFilteringStyleComponent,
         data: gridsRoutesData["grid-excel-style-filtering-style"],
         path: "grid-excel-style-filtering-style"
+    },
+    {
+        component: GridExternalFilteringComponent,
+        data: gridsRoutesData["grid-external-filtering"],
+        path: "grid-external-filtering"
     },
     {
         component: GridCustomFilteringComponent,

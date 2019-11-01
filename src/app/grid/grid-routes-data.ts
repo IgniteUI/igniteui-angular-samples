@@ -26,6 +26,7 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
     "grid-excel-style-filtering-style": { displayName: "Grid Excel Style Filtering Styling", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
+    "grid-external-filtering": { displayName: "External Filtering", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
