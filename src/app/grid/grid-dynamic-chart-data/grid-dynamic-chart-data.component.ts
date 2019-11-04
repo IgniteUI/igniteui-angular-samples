@@ -223,8 +223,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        this.grid.headerContainer.getHorizontalScroll().onscroll = () => this.disableContextMenu();
-
+        this.grid.headerContainer.onHScroll = () => this.disableContextMenu();
     }
 
     private negative = (rowData: any): boolean => {
