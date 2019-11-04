@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, VerticalAlignment } from "igniteui-angular";
+import { Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, AfterViewInit } from "@angular/core";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
@@ -19,16 +19,16 @@ export class ChartHostDirective {
 export class ChartArgsPipe implements PipeTransform {
     public transform(value: string): IChartArgs[] {
         switch (value) {
-            case "column":
-            case "area":
-            case "line":
-            case "bar":
+            case "Column":
+            case "Area":
+            case "Line":
+            case "Bar":
                 return [
                     { chartType: value, seriesType: "Grouped" },
                     { chartType: value, seriesType: "Stacked" },
                     { chartType: value, seriesType: "100Stacked" }
                 ];
-            case "scatter":
+            case "Scatter":
                 return [
                     { chartType: value, seriesType: "Bubble" },
                     { chartType: value, seriesType: "Point" },
@@ -43,7 +43,7 @@ export class ChartArgsPipe implements PipeTransform {
     styleUrls: ["./grid-dynamic-chart-data.component.scss"],
     providers: [ChartService]
 })
-export class GridDynamicChartDataComponent implements OnInit {
+export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public data;
     public opened = true;
@@ -87,6 +87,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     public fullScreenOpened = false;
     public row;
     public range;
+    public chartTypesData = [];
 
     // Dialogs options
     public _chartDialogOverlaySettings = {
@@ -125,7 +126,7 @@ export class GridDynamicChartDataComponent implements OnInit {
     private colIndex;
     private pieChartOptions: IChartOptions = {
         width: "85%",
-        height: "65%",
+        height: "75%",
         labelsPosition: 3,
         allowSliceExplosion: true,
         othersCategoryThreshold: -1,
@@ -163,7 +164,7 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     private dataChartOptions: IChartOptions = {
         width: "100%",
-        height: "70%",
+        height: "85%",
         transitionDuration: 300,
         isVerticalZoomEnabled: true,
         isHorizontalZoomEnabled: true
@@ -181,14 +182,14 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     private chartComponentOptions: IChartComponentOptions;
 
-    constructor(private chartService: ChartService) {
+    constructor(private chartService: ChartService, private iconService: IgxIconService) {
         this.bubbleChartSizeScale.maximumValue = 60;
         this.bubbleChartSizeScale.minimumValue = 10;
     }
 
     public ngOnInit() {
         this.chartSelectionDialog.onOpen.subscribe(() => {
-            this.currentChartArg = { chartType: "column", seriesType: "Grouped" };
+            this.currentChartArg = { chartType: "Column", seriesType: "Grouped" };
         });
 
         this.dialog.onOpen.subscribe(() => {
@@ -199,6 +200,8 @@ export class GridDynamicChartDataComponent implements OnInit {
         this.dialog.onClose.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.contextmenu = true;
+            this.chartCondigAreaState = "opened";
+            this.opened = true;
         });
 
         this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
@@ -217,6 +220,11 @@ export class GridDynamicChartDataComponent implements OnInit {
             this.range = range;
             this.renderButton();
         });
+    }
+
+    public ngAfterViewInit(): void {
+        this.grid.headerContainer.getHorizontalScroll().onscroll = () => this.disableContextMenu();
+
     }
 
     private negative = (rowData: any): boolean => {
@@ -282,16 +290,12 @@ export class GridDynamicChartDataComponent implements OnInit {
     public chartTypesMenuX;
     public chartTypesMenuY;
 
-    public chartTypes1 = [
-        { name: "column", icon: "bar_chart" },
-        { name: "area", icon: `<i class='fas fa-chart-area'></i>` },
-        { name: "line", icon: "linear_scale" }
-    ];
+    public previewChartTypes = ["Column", "Area", "Line", "Bar"];
 
-    public chartTypes = ["column", "area", "bar", "line", "scatter"];
+    public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter"];
 
     public pieChartArgs: IChartArgs = {
-        chartType: "pie",
+        chartType: "Pie",
         seriesType: undefined
     };
 
@@ -340,6 +344,7 @@ export class GridDynamicChartDataComponent implements OnInit {
 
     public previewChart(chart: string) {
         this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = document.getElementById(this.card.id);
+        this.chartPreviewDialog.toggleRef.element.style.width =  (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + "px";
         this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
@@ -386,7 +391,7 @@ export class GridDynamicChartDataComponent implements OnInit {
                 this.chartComponentOptions = this.scatterChartComponentOptions;
                 seriesOptionModel = this.bubbleChartSeriesOptionsModel;
             default:
-                if (args.chartType === "pie") {
+                if (args.chartType === "Pie") {
                     this.chartComponentOptions = {
                         chartOptions: this.pieChartOptions
                     };

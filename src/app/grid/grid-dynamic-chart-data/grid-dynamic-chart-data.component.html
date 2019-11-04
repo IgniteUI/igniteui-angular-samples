@@ -67,14 +67,14 @@
             <igx-divider></igx-divider>
             <igx-card-content>
             <div class="chart-types">
-                    <button *ngFor="let chart of chartTypes1; trackBy: trackByFn" class="chart-btn"
-                             (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                    <div *ngFor="let chart of previewChartTypes; trackBy: trackByFn" class="chart-btn">
+                        <div (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                              (mouseleave)="chartPreviewDialog.close()"
-                             (mouseenter)="previewChart(chart.name)"
-                             igxButton="fab" igxButtonBackground="white" igxButtonColor="black" >
-                            <igx-icon class="icon" [innerHTML]="chart.icon"></igx-icon>
-                            {{ chart.name }}
-                    </button>
+                             (mouseenter)="previewChart(chart)" >
+                            <img style="width: 100%" src="/assets/images/svg/charts/Grouped{{chart}}.svg"/>
+                             <span class="chart-name">{{chart}}</span>
+                        </div>
+                    </div>
                     <button class="more-btn" (click)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)" igxButton="fab" igxButtonBackground="white" igxButtonColor="black">
                         <igx-icon class="icon" fontSet="material">more</igx-icon>
                     </button>
@@ -84,7 +84,10 @@
     </igx-dialog>
 
     <igx-dialog #chartPreviewDialog>
-        <div style="width: 400px; height: 300px;">
+        <div style="height: 300px;">
+            <div style="margin: 1rem;">
+                <h5 igxCardHeaderTitle style="justify-self: center;">Preview Chart</h5>
+            </div>
                 <ng-template #chartPreview chartHost></ng-template>
         </div>
     </igx-dialog>
@@ -110,22 +113,24 @@
     </span>
     <div #configArea class="chart-config-area {{chartCondigAreaState}}">
         <div class="config-area-header">
-            <span>Chart Types</span>
+            <span style="font-weight: bold;">Chart Types</span>
         </div>
         <igx-divider class="divider"></igx-divider>
         <div *ngFor="let chartType of chartTypes" class="wrapper">
             <div >{{chartType | titlecase}}</div>
             <div class="types-section">
-                <button igxButton="raised" 
+                <div 
                         (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
-                        *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn">{{chart.seriesType}}</button>
+                        *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn" style="width: 40%;margin-right: 5px; cursor: pointer;">
+                            <img src="/assets/images/svg/charts/{{chart.seriesType}}{{chart.chartType}}.svg"/>    
+            </div>
             </div>
             <igx-divider></igx-divider>
         </div>
         <div class="wrapper" >
             <div style="text-align: centre;">{{'pie' | titlecase}}</div>
             <div style="text-align: center">
-                <button igxButton="flat" (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><igx-icon class="icon" style="font-size: 1.5rem" fontSet="material">pie_chart</igx-icon></button>
+                <div  style="width: 50%; cursor: pointer;" (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><img src="/assets/images/svg/charts/Pie.svg"></div>
             </div>
         </div>  
     </div>

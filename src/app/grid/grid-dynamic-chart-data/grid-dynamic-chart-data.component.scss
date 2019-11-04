@@ -26,8 +26,9 @@
     height: 80%;
 }
 
-
 :host ::ng-deep {
+
+
     @include igx-fluent-theme($fluent-excel-palette);
     @include scrollbar-love();
 
@@ -49,7 +50,9 @@
         }
 
         .header-text {
-            margin: auto;
+            margin-right: auto;
+            align-self: center;
+            margin-left: 3rem;
         }
     }
 
@@ -103,12 +106,10 @@
         display: inline-flex;
 
         .chart-area {
-            overflow-y: auto;
+            margin-top: 1rem;
+            overflow-y: hidden;
             overflow-x: hidden;
             width: 100%;
-
-            &.expanded{
-            }
         }
 
 
@@ -300,7 +301,6 @@
 
 .wrapper {
     padding: 3px;
-
     .types-section {
 
         // .opened &{
@@ -322,5 +322,17 @@
     .igx-divider {
         margin: 5px !important;
         background: black !important;
+    }
+}
+
+.chart-types{
+    div{
+        margin-right: 1.1rem;
+    }
+    .chart-btn{
+        cursor: pointer;
+        display: inline-flex;
+        width: 4.5rem;
+        height: 4.5rem;
     }
 }
