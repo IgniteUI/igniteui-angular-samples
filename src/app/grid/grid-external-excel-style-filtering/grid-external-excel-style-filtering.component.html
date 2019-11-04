@@ -1,5 +1,5 @@
 <div class="flex-row">
-    <igx-grid #grid1 autoGenerate="false" [data]="data" width="800px" height="650px" [showToolbar]="true"
+    <igx-grid #grid1 autoGenerate="false" [data]="data" width="800px" height="653px" [showToolbar]="true"
         [columnHiding]="true" [columnPinning]="true" [exportExcel]="true" [exportCsv]="true" exportText="Export"
         exportExcelText="Export to Excel" exportCsvText="Export to CSV">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
@@ -29,7 +29,7 @@
             </igx-select-item>
         </igx-select>
 
-        <igx-grid-excel-style-filtering [column]="grid1.getColumnByName(gridColums.value)" displayDensity="compact">
+        <igx-grid-excel-style-filtering [column]="grid1.getColumnByName(gridColums.value)">
         </igx-grid-excel-style-filtering>
     </div>
 </div>
