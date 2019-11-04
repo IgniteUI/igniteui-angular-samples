@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, AfterViewInit } from "@angular/core";
+import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
