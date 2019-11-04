@@ -41,4 +41,11 @@ export class DragDialogSampleComponent {
     }
     this.toggleFormDrag.setLocation(new IgxDragLocation(this.toggleStartPageX, this.toggleStartPageY));
   }
+
+  public onDragMove(e) {
+    const deltaX = e.nextPageX - e.pageX;
+    const deltaY = e.nextPageY - e.pageY;
+
+    this.toggleForm.setOffset(deltaX, deltaY);
+  }
 }
