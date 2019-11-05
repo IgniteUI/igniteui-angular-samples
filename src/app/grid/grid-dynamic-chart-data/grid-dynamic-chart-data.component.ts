@@ -129,7 +129,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         height: "75%",
         labelsPosition: 3,
         allowSliceExplosion: true,
-        othersCategoryThreshold: -1,
         sliceClick: (evt) => { evt.args.isExploded = !evt.args.isExploded; }
     };
 
@@ -205,12 +204,20 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         });
 
         this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
+
         this.grid.onDataPreLoad.subscribe((evt) => this.disableContextMenu());
+
         this.data = new FinancialData().generateData(1000);
         this.grid.onRangeSelection.subscribe(range => {
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
-            const selectedData = this.grid.getSelectedData().map(this.dataMap).filter(r => Object.keys(r).length !== 0);
+            const selectedData = this.grid.getSelectedData()
+                                          .map(this.dataMap)
+                                          .filter(r => Object.keys(r).length !== 0);
+
+            if (selectedData.length === 0) {
+                return;
+            }
             this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
             this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
@@ -223,8 +230,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        this.grid.headerContainer.onHScroll = () => this.disableContextMenu();
-
+        this.grid.headerContainer.getScroll().onscroll = () => this.disableContextMenu();
     }
 
     private negative = (rowData: any): boolean => {
@@ -328,7 +334,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
                 target: event.target
             };
 
-            if (this.colIndex === this.grid.visibleColumns.length - 1 || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
+            if (((this.grid.visibleColumns.length - 1) - this.colIndex) < 2  || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
                     positionStrategy["horizontalDirection"] = HorizontalAlignment.Left;
                     positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Right;
             } else {
@@ -349,6 +355,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public rightClick(eventArgs: any) {
+        if (this.gridDataSelection.length === 0) {
+            return;
+        }
         eventArgs.event.preventDefault();
         const node = eventArgs.cell.selectionNode;
         const isCellWithinRange = this.grid.getSelectedRanges().some((range) => {
@@ -417,8 +426,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
-        if (!event.target.parentElement.classList.contains("analytics-btn")) {
-            this.disableContextMenu();
+        if (!event.target.parentElement.classList.contains("analytics-btn") && !event.target.classList.contains("more-btn")) {
+             this.disableContextMenu();
         }
     }
 
