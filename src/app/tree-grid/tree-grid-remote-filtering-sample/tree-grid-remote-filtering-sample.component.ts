@@ -4,6 +4,8 @@ import { Observable, Subject } from "rxjs";
 import { debounceTime, takeUntil } from "rxjs/operators";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
+const DEBOUNCE_TIME = 300;
+
 @Component({
     providers: [RemoteFilteringService],
     selector: "app-tree-grid-remote-filtering-sample",
@@ -29,7 +31,7 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
         this._cdr.detectChanges();
 
         this.treeGrid.filteringExpressionsTreeChange.pipe(
-            debounceTime(300),
+            debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {
             this.processData();

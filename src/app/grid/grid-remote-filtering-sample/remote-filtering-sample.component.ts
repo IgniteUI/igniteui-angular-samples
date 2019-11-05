@@ -4,6 +4,8 @@ import { Subject } from "rxjs";
 import { debounceTime, takeUntil } from "rxjs/operators";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
+const DEBOUNCE_TIME = 300;
+
 @Component({
     providers: [RemoteFilteringService],
     selector: "app-grid-remote-filtering-sample",
@@ -45,19 +47,19 @@ export class RemoteFilteringSampleComponent implements OnInit {
         });
 
         this.grid.onDataPreLoad.pipe(
-            debounceTime(300),
+            debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {
             this.processData();
         });
         this.grid.filteringExpressionsTreeChange.pipe(
-            debounceTime(300),
+            debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {
             this.processData();
         });
         this.grid.sortingExpressionsChange.pipe(
-            debounceTime(300),
+            debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {
             this.processData();
