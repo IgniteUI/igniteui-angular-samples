@@ -16,7 +16,7 @@
 @import '~igniteui-angular/lib/core/styles//components/dialog/dialog-component';
 @import '~igniteui-angular/lib/core/styles//components/dialog/dialog-theme';
 
-// Import grid-paginator component and theme styles
+// Import paginator component and theme styles
 @import '~igniteui-angular/lib/core/styles//components/paginator/paginator-component';
 @import '~igniteui-angular/lib/core/styles//components/paginator/paginator-theme';
 
@@ -222,23 +222,23 @@ $black-grid-theme: igx-grid-theme(
   $schema: $my-black-schema
 );
 
-// Define light theme for the grid-paginator
-$light-grid-paginator-theme:  igx-paginator-theme(
+// Define light theme for the paginator
+$light-paginator-theme: igx-paginator-theme(
   $palette: $light-theme-palette,
   $background-color:igx-color($light-theme-palette, "primary", 100),
   $border-color: igx-color($light-theme-palette, "secondary", 500)
 );
 
-// Define dark theme for the grid-paginator
-$dark-paginator-theme:  igx-paginator-theme(
+// Define dark theme for the paginator
+$dark-paginator-theme: igx-paginator-theme(
   $palette: $dark-theme-palette,
   $text-color: igx-color($dark-theme-palette, "secondary", 700),
   $background-color:igx-color($dark-theme-palette, "primary", 500),
   $border-color: igx-color($dark-theme-palette, "secondary", 500)
 );
 
-// Define black theme for the grid-paginator
-$black-grid-paginator-theme:  igx-paginator-theme(
+// Define black theme for the paginator
+$black-paginator-theme: igx-paginator-theme(
   $palette: $black-theme-palette,
   $schema: $my-black-schema  
 );

@@ -2,14 +2,14 @@
 
 /*BASIC THEMING*/
 
-$dark-grid-paginator: igx-paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
+$dark-paginator: igx-paginator-theme( $text-color: #F4D45C, $background-color: #575757, $border-color: #292826);
 $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826, $icon-hover-background: #FFCD0F, $icon-focus-color: #292826, $icon-focus-background: #FFCD0F, $disabled-color: #16130C);
 
 /*INCLUSION by DEFAULT ViewEncapsulation strategy*/
 
 :host {
      ::ng-deep {
-        @include igx-paginator($dark-grid-paginator);
+        @include igx-paginator($dark-paginator);
         .igx-paginator__pager {
             @include igx-button($dark-button);
         }
@@ -25,7 +25,7 @@ $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826
 
 /*PALETTE and IGX-COLOR*/
 
-// $dark-grid-paginator:  igx-paginator-theme(
+// $dark-paginator: igx-paginator-theme(
 //     $palette: $dark-palette,
 //     $text-color: igx-color($dark-palette, "secondary", 400),
 //     $background-color: igx-color($dark-palette, "primary", 200),
@@ -43,7 +43,7 @@ $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826
 
 /*SCHEMAS*/
 
-// $dark-grid-paginator-schema: extend($_dark-pagination,
+// $dark-paginator-schema: extend($_dark-pagination,
 //         (
 //             text-color:(
 //                 igx-color: ("secondary", 400)
@@ -79,10 +79,10 @@ $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826
 //         )
 // );
 // $custom-dark-schema: extend($dark-schema,(
-//     igx-paginator: $dark-grid-paginator-schema,
+//     igx-paginator: $dark-paginator-schema,
 //     igx-button: $dark-button-schema
 // ));
-// $dark-grid-paginator:  igx-paginator-theme(
+// $dark-paginator: igx-paginator-theme(
 //   $palette: $dark-palette,
 //   $schema: $custom-dark-schema
 // );
