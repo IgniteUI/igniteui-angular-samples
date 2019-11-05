@@ -1,6 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { data } from "../../grid-crm/grid-crm/data";
 import { IgxLegendComponent } from 'igniteui-angular-charts/ES5/igx-legend-component';
+import { IgxColumnComponent } from 'igniteui-angular';
 
 @Component({
     selector: "grid-master-detail",
@@ -73,6 +74,13 @@ export class GridMasterDetailSampleComponent {
         });
         dataItem.gridData = detailsData;
         return dataItem.gridData;
+    }
+
+    public columnInit(event: IgxColumnComponent) {
+        if (event.field === "Q") {
+            event.width = "50px";
+            event.header = "";
+        }
     }
 
     public getRandomNumber(min: number, max: number): number {

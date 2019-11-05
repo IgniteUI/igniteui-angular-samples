@@ -1,4 +1,4 @@
-    <igx-grid displayDensity="cosy" [data]="data" [autoGenerate]="false" [height]="'600px'" [width]="'800px'">
+    <igx-grid displayDensity="cosy" [data]="data" [autoGenerate]="false" [height]="'600px'" [width]="'738px'">
         <igx-column field="name" header="Name" width="150px"></igx-column>
         <igx-column field="position" header="Position" width="200px"></igx-column>
         <igx-column field="company" header="Company" width="130px"></igx-column>
@@ -33,11 +33,7 @@
                                 valueMemberPath="Value" [brushes]='["rgb(171, 223, 29)", "rgb(228, 19, 16)", "rgb(0, 111, 138)"]'
                                [labelsPosition]="'outsideEnd'">
                             </igx-pie-chart>
-                            <igx-grid style='margin:10px;' displayDensity="compact" [autoGenerate]='false' [columnWidth]='"70px"' width='260px' [data]='dataItem.gridData ? dataItem.gridData: gridData(dataItem)'>
-                                <igx-column field='Q' header=" " width='50px'></igx-column>
-                                <igx-column field='Won' header="Won"></igx-column>
-                                <igx-column field='Lost' header="Lost"></igx-column>
-                                <igx-column field='Pending' header="Pending"></igx-column>
+                            <igx-grid style='margin:10px;' displayDensity="compact" (onColumnInit)='columnInit($event)' [autoGenerate]='true' [columnWidth]='"70px"' width='260px' [data]='dataItem.gridData ? dataItem.gridData: gridData(dataItem)'>
                             </igx-grid>
                         </div>
                         </igx-tabs-group>
@@ -61,6 +57,4 @@
                 </igx-tabs>
             </div>
         </ng-template>
-
-
 </igx-grid>
