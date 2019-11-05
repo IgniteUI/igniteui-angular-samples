@@ -8,17 +8,7 @@
         <igx-column field='Settlement' [width]="'150px'" [sortable]='true'></igx-column>
         <igx-column field='Region' [sortable]='true'></igx-column>
         <igx-column field='Country' [sortable]='true'></igx-column>
-        <igx-column field='Price' dataType="number" [cellClasses]="trends" [movable]="true" [sortable]="true">
-            <ng-template igxCell let-cell="cell">
-                <div class="finjs-icons">
-                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
-                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency" [movable]="true" [sortable]="true"
-            [cellClasses]="trends">
+        <igx-column field='Price' dataType="number" [cellClasses]="trends"  [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
@@ -29,27 +19,36 @@
         </igx-column>
 
         <igx-column field='Buy' [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
-            [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+            [formatter]="formatCurrency"  [sortable]="true"></igx-column>
 
-        <igx-column field='Start(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column field='Start(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" 
             [sortable]="true" [cellClasses]="trendsOnYear">
         </igx-column>
-        <igx-column field='High(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column field='High(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" 
             [sortable]="true" [cellClasses]="trendsOnYear">
         </igx-column>
-
-        <igx-column field='Low(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency"  [sortable]="true"
+            [cellClasses]="trends">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Low(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" 
             [sortable]="true" [cellClasses]="trendsOnYear">
         </igx-column>
         <igx-column field='High(D)' [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatCurrency" [movable]="true">
+            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatCurrency" >
         </igx-column>
 
-        <igx-column field='Low(D)' [width]="'150px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+        <igx-column field='Low(D)' [width]="'150px'" dataType="number" [formatter]="formatCurrency" 
             [sortable]="true" [cellClasses]="trendsChange">
         </igx-column>
         <igx-column field='Sell' [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
-        [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+        [formatter]="formatCurrency"  [sortable]="true"></igx-column>
     </igx-grid>
 </div>
 
@@ -76,7 +75,7 @@
                         </div>
                     </div>
                     <button class="more-btn" (click)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)" igxButton="fab" igxButtonBackground="white" igxButtonColor="black">
-                        <igx-icon class="icon" fontSet="material">more</igx-icon>
+                        <igx-icon class="icon" style="pointer-events: none;" fontSet="material">more</igx-icon>
                     </button>
             </div>
             </igx-card-content>
@@ -120,7 +119,7 @@
             <div >{{chartType | titlecase}}</div>
             <div class="types-section">
                 <div 
-                        (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
+                        (click)="createChart(chart, chartHost, chartDialog, chartDialog)" [ngClass]="{'disableButton': chartsToDisable[chart.seriesType + chart.chartType]}"
                         *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn" style="width: 40%;margin-right: 5px; cursor: pointer;">
                             <img src="/assets/images/svg/charts/{{chart.seriesType}}{{chart.chartType}}.svg"/>    
             </div>
