@@ -34,6 +34,12 @@ import {
 import {
     HGridExcelStyleFilteringStyleComponent
 } from "./hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
+import {
+    HGridExternalAdvancedFilteringComponent
+} from "./hierarchical-grid-external-advanced-filtering/hierarchical-grid-external-advanced-filtering.component";
+import {
+    HGridExternalExcelStyleFilteringComponent
+} from "./hierarchical-grid-external-excel-style-filtering/hierarchical-grid-external-excel-style-filtering.component";
 import { HierarchicalGridFilteringStyleComponent } from "./hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
@@ -53,7 +59,7 @@ import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchi
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
 import { HGridRowReorderComponent } from "./hierarchical-grid-row-reorder/hierarchical-grid-row-reorder.component";
-import { HGridSelectionTemplateNumbersSampleComponent} from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
+import { HGridSelectionTemplateNumbersSampleComponent } from "./hierarchical-grid-selection-template-numbers/hierarchical-grid-selection-template-numbers.component";
 import { HGridSelectionSampleComponent } from "./hierarchical-grid-selection/hierarchical-grid-selection.component";
 import { HGridSortingStylingComponent } from "./hierarchical-grid-sorting-styling/hierarchical-grid-sorting-styling.component";
 import { HGridSortingSampleComponent } from "./hierarchical-grid-sorting/hierarchical-grid-sorting.component";
@@ -107,6 +113,18 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-excel-style-filtering-style"],
         path: "hierarchical-grid-excel-style-filtering-style"
+    },
+    {
+        component: HGridExternalExcelStyleFilteringComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-external-excel-style-filtering"],
+        path: "hierarchical-grid-external-excel-style-filtering"
+    },
+    {
+        component: HGridExternalAdvancedFilteringComponent,
+        // tslint:disable-next-line:no-string-literal
+        data: hierarchicalGridRoutesData["hierarchical-grid-external-advanced-filtering"],
+        path: "hierarchical-grid-external-advanced-filtering"
     },
     {
         component: HGridCustomFilteringSampleComponent,

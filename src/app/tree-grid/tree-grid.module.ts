@@ -94,6 +94,10 @@ import {
 import {
     TreeGridExcelStyleFilteringStyleComponent
 } from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import { TreeGridExternalAdvancedFilteringComponent
+} from "./tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
+import { TreeGridExternalExcelStyleFilteringComponent
+} from "./tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -236,7 +240,9 @@ import {
         TreeGridAdvancedFilteringStyleComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent,
         TreeGridConditionalRowSelectorsSampleComponent,
-        TreeGridStyleComponent
+        TreeGridStyleComponent,
+        TreeGridExternalExcelStyleFilteringComponent,
+        TreeGridExternalAdvancedFilteringComponent
     ],
     imports: [
         CommonModule,

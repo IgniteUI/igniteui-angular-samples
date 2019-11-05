@@ -54,6 +54,12 @@ import {
 import {
     HGridExcelStyleFilteringStyleComponent
 } from "../../src/app/hierarchical-grid/hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
+import {
+    HGridExternalAdvancedFilteringComponent
+} from "../../src/app/hierarchical-grid/hierarchical-grid-external-advanced-filtering/hierarchical-grid-external-advanced-filtering.component";
+import {
+    HGridExternalExcelStyleFilteringComponent
+} from "../../src/app/hierarchical-grid/hierarchical-grid-external-excel-style-filtering/hierarchical-grid-external-excel-style-filtering.component";
 import { HierarchicalGridFilteringStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import {
     HGridFilteringTemplateSampleComponent
@@ -235,6 +241,26 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule]
             }),
             component: HGridExcelStyleFilteringStyleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExternalExcelStyleFilteringComponent],
+                ngDeclarations: [HGridExternalExcelStyleFilteringComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridExternalExcelStyleFilteringComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridExternalAdvancedFilteringComponent],
+                ngDeclarations: [HGridExternalAdvancedFilteringComponent],
+                ngImports: [IgxHierarchicalGridModule]
+            }),
+            component: HGridExternalAdvancedFilteringComponent
         }));
 
         configs.push(new Config({

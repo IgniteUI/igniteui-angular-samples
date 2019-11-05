@@ -10,7 +10,7 @@ import { DATA } from "../../data/nwindData";
 })
 export class GridExternalExcelStyleFilteringComponent {
 
-    public data: any;
+    public data: any[];
 
     constructor() {
         this.data = DATA;
