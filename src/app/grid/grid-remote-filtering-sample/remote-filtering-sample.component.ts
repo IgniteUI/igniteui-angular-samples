@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { debounceTime, takeUntil } from "rxjs/operators";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
 @Component({
@@ -16,6 +18,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
 
     private _prevRequest: any;
     private _chunkSize: number;
+    private destroy$ = new Subject<boolean>();
 
     constructor(private _remoteService: RemoteFilteringService, public cdr: ChangeDetectorRef) { }
 
@@ -30,16 +33,35 @@ export class RemoteFilteringSampleComponent implements OnInit {
         this.grid.isLoading = true;
 
         this._remoteService.getData(
-            {
-                chunkSize: this._chunkSize,
-                startIndex: this.grid.virtualizationState.startIndex
-            },
-            filteringExpr,
-            sortingExpr,
-            (data) => {
-                this.grid.totalItemCount = data["@odata.count"];
-                this.grid.isLoading = false;
-            });
+        {
+            chunkSize: this._chunkSize,
+            startIndex: this.grid.virtualizationState.startIndex
+        },
+        filteringExpr,
+        sortingExpr,
+        (data) => {
+            this.grid.totalItemCount = data["@odata.count"];
+            this.grid.isLoading = false;
+        });
+
+        this.grid.onDataPreLoad.pipe(
+            debounceTime(300),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData();
+        });
+        this.grid.filteringExpressionsTreeChange.pipe(
+            debounceTime(300),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData();
+        });
+        this.grid.sortingExpressionsChange.pipe(
+            debounceTime(300),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData();
+        });
     }
 
     public processData() {
@@ -78,5 +100,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 }

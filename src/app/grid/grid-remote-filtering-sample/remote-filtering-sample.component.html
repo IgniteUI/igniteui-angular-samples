@@ -2,9 +2,6 @@
     <igx-grid #grid [data]="remoteData | async" [height]="'440px'" [width]="'100%'" [autoGenerate]='false'
         [filterStrategy]="noopFilterStrategy"
         [sortStrategy]="noopSortStrategy"
-        (onDataPreLoad)="processData()"
-        (sortingExpressionsChange)="processData()"
-        (filteringExpressionsTreeChange)="processData()"
         [allowFiltering]="true">
         <igx-column [field]="'ProductID'" [sortable]="true" [filterable]="false"></igx-column>
         <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>

@@ -1,6 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { IgxTreeGridComponent, NoopFilteringStrategy } from "igniteui-angular";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
+import { debounceTime, takeUntil } from "rxjs/operators";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
 
 @Component({
@@ -9,11 +10,12 @@ import { RemoteFilteringService } from "../services/remoteFilteringService";
     styleUrls: ["./tree-grid-remote-filtering-sample.component.scss"],
     templateUrl: "./tree-grid-remote-filtering-sample.component.html"
 })
-export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit {
-
+export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     public remoteData: Observable<any[]>;
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
     public noopFilterStrategy = NoopFilteringStrategy.instance();
+
+    private destroy$ = new Subject<boolean>();
 
     constructor(private _remoteService: RemoteFilteringService, private _cdr: ChangeDetectorRef) {
     }
@@ -25,6 +27,13 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
     public ngAfterViewInit() {
         this.processData();
         this._cdr.detectChanges();
+
+        this.treeGrid.filteringExpressionsTreeChange.pipe(
+            debounceTime(300),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData();
+        });
     }
 
     public processData() {
@@ -35,5 +44,10 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
         this._remoteService.getData(filteringExpr, () => {
             this.treeGrid.isLoading = false;
         });
+    }
+
+    public ngOnDestroy() {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 }
