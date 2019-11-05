@@ -15,4 +15,12 @@ export class GridExternalExcelStyleFilteringComponent {
     constructor() {
         this.data = DATA;
     }
+
+    public formatDate(val) {
+        if (val !== "Select All") {
+            return new Intl.DateTimeFormat("en-US").format(val);
+        } else {
+            return val;
+        }
+    }
 }

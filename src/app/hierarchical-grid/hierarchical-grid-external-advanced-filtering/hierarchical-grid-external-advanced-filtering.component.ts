@@ -12,4 +12,6 @@ export class HGridExternalAdvancedFilteringComponent {
     constructor() {
         this.localdata = SINGERS;
     }
+
+    public formatter = (a) => a;
 }

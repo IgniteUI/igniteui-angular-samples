@@ -12,6 +12,8 @@ export class HGridExternalExcelStyleFilteringComponent {
     public localdata: any;
     constructor() {
         this.localdata = SINGERS;
-   }
+    }
+
+    public formatter = (a) => a;
 
 }
