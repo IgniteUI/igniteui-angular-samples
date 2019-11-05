@@ -119,7 +119,7 @@
             <div >{{chartType | titlecase}}</div>
             <div class="types-section">
                 <div 
-                        (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
+                        (click)="createChart(chart, chartHost, chartDialog, chartDialog)" [ngClass]="{'disableButton': chartsToDisable[chart.seriesType + chart.chartType]}"
                         *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn" style="width: 40%;margin-right: 5px; cursor: pointer;">
                             <img src="assets/images/svg/charts/{{chart.seriesType}}{{chart.chartType}}.svg"/>    
             </div>

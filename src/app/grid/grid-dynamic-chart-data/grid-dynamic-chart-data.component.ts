@@ -88,6 +88,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public row;
     public range;
     public chartTypesData = [];
+    public chartsToDisable = {};
 
     // Dialogs options
     public _chartDialogOverlaySettings = {
@@ -209,14 +210,42 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
         this.data = new FinancialData().generateData(1000);
         this.grid.onRangeSelection.subscribe(range => {
+
+            this.chartsToDisable = {
+                BubbleScatter: false,
+                PointScatter: false,
+                LineScatter: false
+            };
+
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
             const selectedData = this.grid.getSelectedData()
-                                          .map(this.dataMap)
-                                          .filter(r => Object.keys(r).length !== 0);
+                .map(this.dataMap)
+                .filter(r => Object.keys(r).length !== 0);
 
             if (selectedData.length === 0) {
                 return;
+            }
+
+            const valueMemberPaths = Object.keys(selectedData[0]);
+
+            if (valueMemberPaths.length === 1) {
+                switch (valueMemberPaths[0]) {
+                    case "Price":
+                        this.chartsToDisable = {
+                            BubbleScatter: true,
+                            PointScatter: true,
+                            LineScatter: true
+                        };
+                        break;
+                    case "Open Price":
+                        this.chartsToDisable = {
+                            BubbleScatter: true,
+                            PointScatter: false,
+                            LineScatter: false
+                        };
+                        break;
+                }
             }
             this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
             this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
@@ -265,6 +294,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     private negativeOnYear = (rowData: any, key: string): boolean => {
         return rowData["Change On Year(%)"] < 0;
     }
+
     // tslint:disable:member-ordering
     public trends = {
         changeNeg: this.changeNegative,
@@ -334,14 +364,14 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
                 target: event.target
             };
 
-            if (((this.grid.visibleColumns.length - 1) - this.colIndex) < 2  || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
-                    positionStrategy["horizontalDirection"] = HorizontalAlignment.Left;
-                    positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Right;
+            if (((this.grid.visibleColumns.length - 1) - this.colIndex) < 2 || !this.grid.navigation.isColumnFullyVisible(this.colIndex + 1)) {
+                positionStrategy["horizontalDirection"] = HorizontalAlignment.Left;
+                positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Right;
             } else {
-                    positionStrategy["horizontalDirection"] = HorizontalAlignment.Center;
-                    positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Center;
+                positionStrategy["horizontalDirection"] = HorizontalAlignment.Center;
+                positionStrategy["horizontalStartPoint"] = HorizontalAlignment.Center;
             }
-            this._chartSelectionDilogOverlaySettings.positionStrategy = new AutoPositionStrategy({...positionStrategy});
+            this._chartSelectionDilogOverlaySettings.positionStrategy = new AutoPositionStrategy({ ...positionStrategy });
             this.chartSelectionDialog.open(this._chartSelectionDilogOverlaySettings);
         } else {
             this.chartSelectionDialog.close();
@@ -350,7 +380,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public previewChart(chart: string) {
         this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = document.getElementById(this.card.id);
-        this.chartPreviewDialog.toggleRef.element.style.width =  (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + "px";
+        this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + "px";
         this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
@@ -358,6 +388,13 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         if (this.gridDataSelection.length === 0) {
             return;
         }
+
+        const gridRange = this.grid.selectionService.ranges[0];
+
+        if (gridRange.columnEnd === gridRange.columnStart && gridRange.rowEnd === gridRange.rowStart) {
+            return;
+        }
+
         eventArgs.event.preventDefault();
         const node = eventArgs.cell.selectionNode;
         const isCellWithinRange = this.grid.getSelectedRanges().some((range) => {
@@ -427,7 +464,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
         if (!event.target.parentElement.classList.contains("analytics-btn") && !event.target.classList.contains("more-btn")) {
-             this.disableContextMenu();
+            this.disableContextMenu();
         }
     }
 
