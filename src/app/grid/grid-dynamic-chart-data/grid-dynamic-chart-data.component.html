@@ -70,7 +70,7 @@
                         <div (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                              (mouseleave)="chartPreviewDialog.close()"
                              (mouseenter)="previewChart(chart)" >
-                            <img style="width: 100%" src="/assets/images/svg/charts/Grouped{{chart}}.svg"/>
+                            <img style="width: 100%" src="assets/images/svg/charts/Grouped{{chart}}.svg"/>
                              <span class="chart-name">{{chart}}</span>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                 <div 
                         (click)="createChart(chart, chartHost, chartDialog, chartDialog)" [ngClass]="{'disableButton': chartsToDisable[chart.seriesType + chart.chartType]}"
                         *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn" style="width: 40%;margin-right: 5px; cursor: pointer;">
-                            <img src="/assets/images/svg/charts/{{chart.seriesType}}{{chart.chartType}}.svg"/>    
+                            <img src="assets/images/svg/charts/{{chart.seriesType}}{{chart.chartType}}.svg"/>    
             </div>
             </div>
             <igx-divider></igx-divider>
@@ -129,7 +129,7 @@
         <div class="wrapper" >
             <div style="text-align: centre;">{{'pie' | titlecase}}</div>
             <div style="text-align: center">
-                <div  style="width: 50%; cursor: pointer;" (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><img src="/assets/images/svg/charts/Pie.svg"></div>
+                <div  style="width: 50%; cursor: pointer;" (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><img src="assets/images/svg/charts/Pie.svg"></div>
             </div>
         </div>  
     </div>
