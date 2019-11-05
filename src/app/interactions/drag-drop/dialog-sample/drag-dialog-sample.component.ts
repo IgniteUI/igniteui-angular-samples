@@ -45,7 +45,7 @@ export class DragDialogSampleComponent {
   public onDragMove(e) {
     const deltaX = e.nextPageX - e.pageX;
     const deltaY = e.nextPageY - e.pageY;
-
+    e.cancel = true;
     this.toggleForm.setOffset(deltaX, deltaY);
   }
 }
