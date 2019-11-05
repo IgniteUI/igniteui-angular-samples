@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IgxDatePickerComponent } from "igniteui-angular";
+import { CalendarView, IgxDatePickerComponent  } from "igniteui-angular";
 
 @Component({
     selector: "app-datepicker-sample-8",
@@ -10,10 +10,10 @@ import { IgxDatePickerComponent } from "igniteui-angular";
 export class DatepickerSample8Component {
     public date = new Date();
     public monthsView(datePicker: IgxDatePickerComponent) {
-        datePicker.calendar.activeViewYear(new Date, event);
+        datePicker.calendar.activeView = CalendarView.YEAR;
     }
 
     public yearsView(datePicker: IgxDatePickerComponent) {
-        datePicker.calendar.activeViewDecade(new Date);
+        datePicker.calendar.activeView = CalendarView.DECADE;
     }
 }

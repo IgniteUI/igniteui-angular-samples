@@ -1,0 +1,138 @@
+<div igxOverlayOutlet class="grid-chart-contextmenu-wrapper" >
+    <igx-grid #grid primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
+        <igx-column field='ID' [hidden]='true'></igx-column>
+        <igx-column field='Category' [sortable]='true'></igx-column>
+        <igx-column field='Type' [sortable]='true' [filterable]='false'>
+        </igx-column>
+        <igx-column field='Contract' [sortable]='true'></igx-column>
+        <igx-column field='Settlement' [width]="'150px'" [sortable]='true'></igx-column>
+        <igx-column field='Region' [sortable]='true'></igx-column>
+        <igx-column field='Country' [sortable]='true'></igx-column>
+        <igx-column field='Price' dataType="number" [cellClasses]="trends" [movable]="true" [sortable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency" [movable]="true" [sortable]="true"
+            [cellClasses]="trends">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
+                    <igx-icon *ngIf="trends.positive(cell.row.rowData)">trending_up</igx-icon>
+                    <igx-icon *ngIf="trends.negative(cell.row.rowData)">trending_down</igx-icon>
+                </div>
+            </ng-template>
+        </igx-column>
+
+        <igx-column field='Buy' [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
+            [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+
+        <igx-column field='Start(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+            [sortable]="true" [cellClasses]="trendsOnYear">
+        </igx-column>
+        <igx-column field='High(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+            [sortable]="true" [cellClasses]="trendsOnYear">
+        </igx-column>
+
+        <igx-column field='Low(Y)' [width]="'200px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+            [sortable]="true" [cellClasses]="trendsOnYear">
+        </igx-column>
+        <igx-column field='High(D)' [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
+            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatCurrency" [movable]="true">
+        </igx-column>
+
+        <igx-column field='Low(D)' [width]="'150px'" dataType="number" [formatter]="formatCurrency" [movable]="true"
+            [sortable]="true" [cellClasses]="trendsChange">
+        </igx-column>
+        <igx-column field='Sell' [cellClasses]="trendsChange" [width]="'110px'" dataType="number"
+        [formatter]="formatCurrency" [movable]="true" [sortable]="true"></igx-column>
+    </igx-grid>
+</div>
+
+<span *ngIf="contextmenu" class="analytics-btn"  [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
+    <button igxButton="icon" (click)="toggleChartSelectionDialog($event)">
+            <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
+    </button>
+</span>
+
+    <igx-dialog #chartSelectionDialog>
+        <igx-card>
+            <igx-card-header  style="text-align: center;">
+               <h4 igxCardHeaderTitle>Create Chart</h4>
+            </igx-card-header>
+            <igx-divider></igx-divider>
+            <igx-card-content>
+            <div class="chart-types">
+                    <div *ngFor="let chart of previewChartTypes; trackBy: trackByFn" class="chart-btn">
+                        <div (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                             (mouseleave)="chartPreviewDialog.close()"
+                             (mouseenter)="previewChart(chart)" >
+                            <img style="width: 100%" src="assets/images/svg/charts/Grouped{{chart}}.svg"/>
+                             <span class="chart-name">{{chart}}</span>
+                        </div>
+                    </div>
+                    <button class="more-btn" (click)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)" igxButton="fab" igxButtonBackground="white" igxButtonColor="black">
+                        <igx-icon class="icon" fontSet="material">more</igx-icon>
+                    </button>
+            </div>
+            </igx-card-content>
+        </igx-card>
+    </igx-dialog>
+
+    <igx-dialog #chartPreviewDialog>
+        <div style="height: 300px;">
+            <div style="margin: 1rem;">
+                <h5 igxCardHeaderTitle style="justify-self: center;">Preview Chart</h5>
+            </div>
+                <ng-template #chartPreview chartHost></ng-template>
+        </div>
+    </igx-dialog>
+
+<igx-dialog #chartDialog class="chart-dialog" [closeOnOutsideSelect]="true">
+<div class="header">
+    <span class="header-text">
+        {{currentChartArg.seriesType ? (currentChartArg.seriesType.replace('100', '100% ') | titlecase) : '' }} {{currentChartArg.chartType | titlecase }} Chart
+    </span>
+    <div class="action-buttons-wrapper">
+            <button igxButton="icon" (click)="toggleFullScreen()"><igx-icon class="material">fullscreen{{fullScreenOpened ? '_exit' : ''}}</igx-icon></button>
+            <button igxButton="icon" (click)="chartDialog.close()"><igx-icon class="material">close</igx-icon></button>
+    </div>
+</div>
+ <div class="selection-area">
+    <div class="chart-area" [ngClass]="{'expanded': chartCondigAreaState === 'closed'}">
+        <ng-template #chart chartHost></ng-template>
+    </div>
+    <span>
+            <button igxButton="icon" igxRipple (click)="toggle()">
+            <igx-icon fontSet="material">chevron_{{ opened ? 'right': 'left'}}</igx-icon>
+        </button>
+    </span>
+    <div #configArea class="chart-config-area {{chartCondigAreaState}}">
+        <div class="config-area-header">
+            <span style="font-weight: bold;">Chart Types</span>
+        </div>
+        <igx-divider class="divider"></igx-divider>
+        <div *ngFor="let chartType of chartTypes" class="wrapper">
+            <div >{{chartType | titlecase}}</div>
+            <div class="types-section">
+                <div 
+                        (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
+                        *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn" style="width: 40%;margin-right: 5px; cursor: pointer;">
+                            <img src="assets/images/svg/charts/{{chart.seriesType}}{{chart.chartType}}.svg"/>    
+            </div>
+            </div>
+            <igx-divider></igx-divider>
+        </div>
+        <div class="wrapper" >
+            <div style="text-align: centre;">{{'pie' | titlecase}}</div>
+            <div style="text-align: center">
+                <div  style="width: 50%; cursor: pointer;" (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><img src="assets/images/svg/charts/Pie.svg"></div>
+            </div>
+        </div>  
+    </div>
+ </div>
+</igx-dialog>

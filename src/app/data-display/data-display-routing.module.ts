@@ -37,6 +37,7 @@ import { TextHighlightSample1Component
 } from "./text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
 import { TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-style/text-highlight-style.component";
 
 export const dataDisplayRoutes: Routes = [
     {
@@ -152,6 +153,11 @@ export const dataDisplayRoutes: Routes = [
         component: TextHighlightSample2Component,
         data: dataDisplayRoutesData["text-highlight-2"],
         path: "text-highlight-2"
+    },
+    {
+        component: TextHighlightStyleComponent,
+        data: dataDisplayRoutesData["text-highlight-style"],
+        path: "text-highlight-style"
     },
     {
         component: IconStylingSample,

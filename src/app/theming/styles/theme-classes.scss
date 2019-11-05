@@ -17,7 +17,7 @@
         @include igx-grid($light-grid-theme);
         @include igx-snackbar($light-snackbar-theme);
         @include igx-input-group($light-input-group-theme);
-        @include igx-paginator($light-grid-paginator-theme);
+        @include igx-paginator($light-paginator-theme);
         @include igx-button($light-button-theme);
         @include igx-dialog($light-dialog-theme);
         @include igx-button-group($light-button-group-theme);
@@ -55,7 +55,7 @@
         @include igx-grid($black-grid-theme);
         @include igx-snackbar($black-snackbar-theme);
         @include igx-input-group($black-input-group-theme);
-        @include igx-paginator($black-grid-paginator-theme);
+        @include igx-paginator($black-paginator-theme);
         @include igx-button($black-button-theme);
         @include igx-dialog($black-dialog-theme);
         @include igx-button-group($black-button-group-theme);

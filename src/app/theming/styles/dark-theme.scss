@@ -5,7 +5,7 @@
 @import '~igniteui-angular/lib/core/styles/components/grid/grid-component';
 @import '~igniteui-angular/lib/core/styles/components/grid/grid-theme';
 
-// Import grid-paginator component and theme styles
+// Import paginator component and theme styles
 @import '~igniteui-angular/lib/core/styles/components/paginator/paginator-component';
 @import '~igniteui-angular/lib/core/styles/components/paginator/paginator-theme';
 
@@ -69,8 +69,8 @@ $row-hover-background: igx-color($dark-theme-palette, "primary", 100),
 $header-border-color: igx-color($dark-theme-palette, "primary", 600)
 );
 
-// Define dark theme for the grid-paginator
-$dark-paginator-theme:  igx-paginator-theme(
+// Define dark theme for the paginator
+$dark-paginator-theme: igx-paginator-theme(
   $palette: $dark-theme-palette,
   $text-color: igx-color($dark-theme-palette, "secondary", 700),
   $background-color:igx-color($dark-theme-palette, "primary", 500),

@@ -35,7 +35,7 @@
 }
 
 .currency-badge-container {
-    width: 80px; 
+    width: 80px;
     float: right;
 }
 
@@ -52,5 +52,20 @@ div.igx-grid__tfoot {
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-flow: row-reverse;
+    justify-content: flex-end;
+}
+
+.summaries-data-wrapper { display: inline-block; }
+.summaries-data-wrapper span:first-child { margin-right: 16px }
+
+.cosy {
+    padding-right: 16px;
+}
+
+.compact {
+    padding-right: 12px;
+}
+
+.comfortable {
+    padding-right: 24px;
 }

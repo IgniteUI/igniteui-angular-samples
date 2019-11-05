@@ -1,0 +1,338 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+@mixin scrollbar-love($scrollbar-color: null, $scrollbar-width: 16px, $scrollbar-height: 16px) {
+    $scrollbar-track: hexrgba(igx-color($default-palette, 'grays', 200));
+    $scrollbar-thumb: hexrgba(igx-color($default-palette, 'grays', 400));
+
+    @if $scrollbar-color and luminance($scrollbar-color) < .5 {
+        $scrollbar-track: darken($scrollbar-color, 8%);
+        $scrollbar-thumb: lighten($scrollbar-color, 20%);
+    }
+
+    ::-webkit-scrollbar {
+        width: $scrollbar-width;
+        height: $scrollbar-height;
+        background-color: $scrollbar-track;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+}
+
+.grid-chart-contextmenu-wrapper {
+    width: 90%;
+    margin: 50px auto;
+    height: 80%;
+}
+
+:host ::ng-deep {
+
+
+    @include igx-fluent-theme($fluent-excel-palette);
+    @include scrollbar-love();
+
+    .igx-tabs__header-button {
+        display: none;
+    }
+
+    .header {
+        height: 10%;
+        background-color: #e0e0e0;
+        display: flex;
+        font-size: 1.8rem;
+        align-self: center;
+
+        .action-buttons-wrapper {
+            margin-left: auto;
+            margin-right: 10px;
+            align-self: center;
+        }
+
+        .header-text {
+            margin-right: auto;
+            align-self: center;
+            margin-left: 3rem;
+        }
+    }
+
+    .analytics-btn {
+        @include igx-button(igx-button-theme($palette: $fluent-excel-palette,
+                $icon-color: #fff,
+                $icon-background: #335e3b,
+                $icon-hover-background: #459a55,
+                $icon-border-radius: 0));
+        z-index: 9;
+        position: absolute;
+    }
+
+    .finjs-icons {
+        display: flex;
+        align-items: center;
+
+        igx-icon {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            margin-left: 4px;
+        }
+    }
+
+    .igx-tabs {
+        height: 100%;
+    }
+
+    .igx-tabs__header-menu-item-indicator,
+    .igx-tabs__header-menu-item--selected {
+        min-width: 100%;
+    }
+
+    .igx-tabs__content-fixed {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .ig-chart-legend-items-list {
+        height: 20%;
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .selection-area {
+        @include scrollbar-love(6px, 6px);
+        width: 100%;
+        height: 90%;
+        display: inline-flex;
+
+        .chart-area {
+            margin-top: 1rem;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+
+        .chart-config-area {
+            &.opened {
+                width: 25%;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            &.closed {
+                width: 0px;
+                transform: translateX(100%);
+
+            }
+            transition: all;
+            transition-duration: .3s;
+            transition-timing-function: ease-in-out;
+
+            .config-area-header {
+                margin-bottom: 3px;
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .igx-grid__grouparea {
+        max-height: 100%;
+        height: auto;
+    }
+
+    .changePos,
+    .changeNeg,
+    .strongPositive,
+    .strongNegative {
+        color: #fff !important;
+
+        .igx-grid__td-text {
+            padding: 2px 5px;
+        }
+    }
+
+    .positive {
+        color: #4eb862 !important;
+    }
+
+    .positive.strongPositive {
+        .igx-grid__td-text {
+            color: rgba(78, 184, 98, 0.8) !important;
+        }
+    }
+
+    .negative {
+        color: #d31642 !important;
+    }
+
+    .negative.strongNegative {
+        .igx-grid__td-text {
+            color: rgba(255, 19, 74, 0.8) !important;
+        }
+    }
+
+    // NORMAL
+    // positive
+    .changePos {
+        .igx-grid__td-text {
+            background: #335e3b;
+        }
+    }
+
+    .changePos1 {
+        background: #335e3b;
+        color: #fff;
+    }
+
+    .changePos2 {
+        .igx-grid__td-text {
+            border-right: 4px solid #335e3b;
+            padding-right: 4px;
+        }
+    }
+
+    // negative
+    .changeNeg {
+        .igx-grid__td-text {
+            background: #7a1c32;
+        }
+    }
+
+    .changeNeg1 {
+        color: #fff;
+        background: #7a1c32;
+    }
+
+    .changeNeg2 {
+        .igx-grid__td-text {
+            border-right: 4px solid #7a1c32;
+            padding-right: 4px;
+        }
+    }
+
+    // selected
+    .igx-grid__td--selected.changePos1,
+    .igx-grid__td--selected.changePos2,
+    .igx-grid__td--selected.changePos {
+        background-color: #335e3b !important;
+
+        .finjs-icons,
+        .igx-grid__td-text {
+            color: #fff;
+        }
+    }
+
+    .igx-grid__td--selected.changeNeg1,
+    .igx-grid__td--selected.changeNeg2,
+    .igx-grid__td--selected.changeNeg {
+        background-color: #7a1c32 !important;
+
+        .finjs-icons,
+        .igx-grid__td-text {
+            color: #fff;
+        }
+    }
+
+    // STRONG
+    // positive
+    .strongPositive {
+        .igx-grid__td-text {
+            background: #459a55;
+        }
+    }
+
+    .strongPositive1 {
+        background: #459a55;
+        color: #fff;
+    }
+
+    .strongPositive2 {
+        .igx-grid__td-text {
+            border-right: 4px solid #459a55;
+            padding-right: 4px;
+        }
+    }
+
+    // negative
+    .strongNegative {
+        .igx-grid__td-text {
+            background: #d31642;
+            color: #fff;
+        }
+    }
+
+    .strongNegative1 {
+        background: #d31642;
+        color: #fff;
+    }
+
+    .strongNegative2 {
+        .igx-grid__td-text {
+            border-right: 4px solid #d31642;
+            padding-right: 4px;
+        }
+    }
+
+    // selected
+    .igx-grid__td--selected.strongPositive1,
+    .igx-grid__td--selected.strongPositive2,
+    .igx-grid__td--selected.strongPositive {
+        background-color: #459a55 !important;
+
+        .finjs-icons,
+        .igx-grid__td-text {
+            color: #fff;
+        }
+    }
+
+    .igx-grid__td--selected.strongNegative1,
+    .igx-grid__td--selected.strongNegative2,
+    .igx-grid__td--selected.strongNegative {
+        background-color: #d31642 !important;
+
+        .finjs-icons,
+        .igx-grid__td-text {
+            color: #fff;
+        }
+    }
+}
+
+.wrapper {
+    padding: 3px;
+    .types-section {
+
+        // .opened &{
+        // }
+
+        // .closed &{
+        //     flex-wrap: nowrap;
+        // }
+
+        display: flex;
+        flex-wrap: wrap;
+
+        button {
+            margin-right: 4px;
+            margin-top: 4px;
+        }
+    }
+
+    .igx-divider {
+        margin: 5px !important;
+        background: black !important;
+    }
+}
+
+.chart-types{
+    div{
+        margin-right: 0.5rem;
+    }
+    .chart-btn{
+        cursor: pointer;
+        display: inline-flex;
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
