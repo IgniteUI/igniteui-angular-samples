@@ -124,6 +124,8 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
+import { GridMasterDetailSampleComponent } from './grid-master-detail/grid-master-detail.component';
+import { IgxCategoryChartModule } from 'igniteui-angular-charts/ES5/igx-category-chart-module';
 
 @NgModule({
     declarations: [
@@ -213,7 +215,8 @@ import { DataService } from "./services/data.service";
         GridDynamicChartDataComponent,
         ContextMenuComponent,
         ChartHostDirective,
-        ChartArgsPipe
+        ChartArgsPipe,
+        GridMasterDetailSampleComponent
     ],
     imports: [
         CommonModule,
@@ -267,7 +270,8 @@ import { DataService } from "./services/data.service";
         IgxCardModule,
         IgxDividerModule,
         IgxDataChartScatterModule,
-        IgxBarSeriesModule
+        IgxBarSeriesModule,
+        IgxCategoryChartModule
     ],
     providers: [
         DataService,

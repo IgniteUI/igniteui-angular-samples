@@ -86,6 +86,7 @@ import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinn
 import {
     GridMultiColumnHeadersStylingComponent
 } from "./multi-column-headers-styling/multi-column-headers-styling.component";
+import { GridMasterDetailSampleComponent } from './grid-master-detail/grid-master-detail.component';
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
@@ -484,6 +485,11 @@ export const gridsRoutes: Routes = [
         component: GridDynamicChartDataComponent,
         data: gridsRoutesData["grid-dynamic-chart-data"],
         path: "grid-dynamic-chart-data"
+    },
+    {
+        component: GridMasterDetailSampleComponent,
+        data: gridsRoutesData["grid-master-detail"],
+        path: "grid-master-detail"
     }
 ];
 

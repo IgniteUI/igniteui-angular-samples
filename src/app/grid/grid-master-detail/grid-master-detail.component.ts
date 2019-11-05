@@ -2,14 +2,13 @@ import { Component, ViewChild } from "@angular/core";
 import { data } from "../../grid-crm/grid-crm/data";
 import { IgxLegendComponent } from 'igniteui-angular-charts/ES5/igx-legend-component';
 
-
 @Component({
-    selector: "hierarchical-grid-master-detail",
-    styleUrls: ["./hierarchical-grid-master-detail.component.scss"],
-    templateUrl: "hierarchical-grid-master-detail.component.html"
+    selector: "grid-master-detail",
+    styleUrls: ["./grid-master-detail.component.scss"],
+    templateUrl: "grid-master-detail.component.html"
 })
 
-export class HierarchicalGridMasterDetailSampleComponent {
+export class GridMasterDetailSampleComponent {
     @ViewChild("legend", { static: true })
     public legend: IgxLegendComponent;
 

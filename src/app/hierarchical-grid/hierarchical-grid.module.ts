@@ -66,9 +66,6 @@ import { HierarchicalGridToolbarStyleComponent } from "./hierarchical-grid-toolb
 import { HGridToolbarCustomSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-custom.component";
 import { HGridToolbarOptionsSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-options.component";
 import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hierarchical-grid-toolbar-title.component";
-import { HierarchicalGridMasterDetailSampleComponent } from './hierarchical-grid-master-detail/hierarchical-grid-master-detail.component';
-import { IgxCategoryChartModule } from 'igniteui-angular-charts/ES5/igx-category-chart-module';
-import { IgxLegendModule } from 'igniteui-angular-charts/ES5/igx-legend-module';
 
 @NgModule({
     declarations: [
@@ -93,7 +90,6 @@ import { IgxLegendModule } from 'igniteui-angular-charts/ES5/igx-legend-module';
         HGridColumnMovingSampleComponentStyled,
         HGridColumnMovingSampleComponent,
         HGridMultiCellStyleComponent,
-        HierarchicalGridMasterDetailSampleComponent,
         HGridMultiHeadersSampleComponent,
         HGridMultiHeadersStylingComponent,
         HGridToolbarTitleSampleComponent,
@@ -160,9 +156,7 @@ import { IgxLegendModule } from 'igniteui-angular-charts/ES5/igx-legend-module';
         IgxBannerModule,
         IgxSnackbarModule,
         IgxTabsModule,
-        IgxPieChartModule,
-        IgxCategoryChartModule,
-        IgxLegendModule
+        IgxPieChartModule
     ],
     providers: [
         IgxCsvExporterService,

@@ -1,17 +1,10 @@
-    <igx-hierarchical-grid displayDensity="cosy" [data]="data" [autoGenerate]="false" [height]="'600px'" [width]="'800px'">
-        <igx-column field="name" header="Name" [sortable]="true" width="150" [resizable]="true"
-            [hasSummary]="false" [movable]="true">
-        </igx-column>
-        <igx-column field="position" header="Position" width="200" [resizable]="true" [movable]="true">
-        </igx-column>
-
-        <igx-column field="company" header="Company" [sortable]="true" width="130" [hasSummary]="false" [resizable]="true"
-            [movable]="true">
-        </igx-column>
-
-        <igx-column field="email" header="Email" width="240" [resizable]="true" [movable]="true" [filterable]="false">
-        </igx-column>
-        <ng-template igxChildDetails let-dataItem>
+    <igx-grid displayDensity="cosy" [data]="data" [autoGenerate]="false" [height]="'600px'" [width]="'800px'">
+        <igx-column field="name" header="Name" width="150px"></igx-column>
+        <igx-column field="position" header="Position" width="200px"></igx-column>
+        <igx-column field="company" header="Company" width="130px"></igx-column>
+        <igx-column field="email" header="Email" width="240px"></igx-column>
+        <ng-template igxGridDetail let-dataItem>
+            <div style='width:100%;'>
                 <igx-tabs>
                         <igx-tabs-group label="Details">
                             <div class='tabContent'>
@@ -66,6 +59,8 @@
                             </div>
                         </igx-tabs-group>
                 </igx-tabs>
-
+            </div>
         </ng-template>
-</igx-hierarchical-grid>
+
+
+</igx-grid>

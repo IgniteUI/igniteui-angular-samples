@@ -35,7 +35,6 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-resize-line-styling": { displayName: "Hierarchical Grid Resize Line Styling", parentName: "Hierarchical Grid" },
     "hierarchical-grid-hiding": { displayName: "Hierarchical Grid Column Hiding", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-hiding": { displayName: "Hierarchical Grid Custom Hiding", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-master-detail" : { displayName: "Hierarchical Grid Master Detail", parentName: "Hierarchical Grid" },
     "hierarchical-grid-multi-cell-style": { displayName: "Hierarchical Grid Multi Cell Selection Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-title": { displayName: "Hierarchical Grid Toolbar Title", parentName: "Hierarchical Grid" },
     "hierarchical-grid-toolbar-options": { displayName: "Hierarchical Grid Toolbar Options", parentName: "Hierarchical Grid" },
