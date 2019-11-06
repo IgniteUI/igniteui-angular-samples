@@ -6,7 +6,7 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule,
     IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
-    IgxToastModule, IgxToggleModule, IgxTabsModule } from "igniteui-angular";
+    IgxTabsModule, IgxToastModule, IgxToggleModule } from "igniteui-angular";
 import { IgxPieChartModule} from "igniteui-angular-charts/ES5/igx-pie-chart-module";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
