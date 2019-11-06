@@ -48,7 +48,7 @@ $dark-button: igx-button-theme( $icon-color: #FFCD0F, $icon-hover-color: #292826
 
 /*SCHEMAS*/
 
-// $dark-paginator-schema: extend($_dark-grid-pagination,
+// $dark-paginator-schema: extend($_dark-pagination,
 //         (
 //             text-color:(
 //                 igx-color: ("secondary", 400)
