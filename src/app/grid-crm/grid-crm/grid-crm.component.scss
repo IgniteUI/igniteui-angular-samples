@@ -34,13 +34,7 @@
     );
 
     $crm-grid-toolbar: igx-grid-toolbar-theme(
-        $background-color: igx-color($crm-grid-palette, "primary", 500),
-        $button-background: #0072be,
-        $button-text-color: #fff,
-        $button-hover-background: #0065a8,
-        $button-hover-text-color: #fff,
-        $button-focus-background: #0065a8,
-        $button-focus-text-color: #fff
+        $background-color: igx-color($crm-grid-palette, "primary", 500)
     );
 
     $crm-grid-search-button: igx-button-theme(
