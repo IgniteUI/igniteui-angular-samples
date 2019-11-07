@@ -543,7 +543,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // master-detail sample
         configs.push(new Config({
             component: GridMasterDetailSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-crm/data.ts"],
+            additionalFiles: ["/src/app/grid-crm/grid-crm/data.ts"],
             additionalDependencies: ["igniteui-angular-charts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
