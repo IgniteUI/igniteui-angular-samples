@@ -35,16 +35,16 @@ export class RemoteFilteringSampleComponent implements OnInit {
         this.grid.isLoading = true;
 
         this._remoteService.getData(
-        {
-            chunkSize: this._chunkSize,
-            startIndex: this.grid.virtualizationState.startIndex
-        },
-        filteringExpr,
-        sortingExpr,
-        (data) => {
-            this.grid.totalItemCount = data["@odata.count"];
-            this.grid.isLoading = false;
-        });
+            {
+                chunkSize: this._chunkSize,
+                startIndex: this.grid.virtualizationState.startIndex
+            },
+            filteringExpr,
+            sortingExpr,
+            (data) => {
+                this.grid.totalItemCount = data["@odata.count"];
+                this.grid.isLoading = false;
+            });
 
         this.grid.onDataPreLoad.pipe(
             debounceTime(DEBOUNCE_TIME),
@@ -56,7 +56,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
             debounceTime(DEBOUNCE_TIME),
             takeUntil(this.destroy$)
         ).subscribe(() => {
-            this.processData();
+            this.processData(true);
         });
         this.grid.sortingExpressionsChange.pipe(
             debounceTime(DEBOUNCE_TIME),
@@ -66,12 +66,14 @@ export class RemoteFilteringSampleComponent implements OnInit {
         });
     }
 
-    public processData() {
+    public processData(isFiltering: boolean = false) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
 
-        this.grid.isLoading = true;
+        if (!this.grid.isLoading) {
+            this.grid.isLoading = true;
+        }
 
         const virtualizationState = this.grid.virtualizationState;
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
@@ -80,13 +82,15 @@ export class RemoteFilteringSampleComponent implements OnInit {
         this._prevRequest = this._remoteService.getData(
             {
                 chunkSize: this._chunkSize,
-                startIndex: virtualizationState.startIndex
+                startIndex: isFiltering ? 0 : virtualizationState.startIndex
             },
             filteringExpr,
             sortingExpr,
             (data) => {
                 this.grid.totalItemCount = data["@odata.count"];
-                this.grid.isLoading = false;
+                if (this.grid.isLoading) {
+                    this.grid.isLoading = false;
+                }
             });
     }
 
