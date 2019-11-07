@@ -15,15 +15,13 @@ export class TreeGridConditionalCellStyle2Component implements OnInit {
 
     public oddColStyles = {
         background: "linear-gradient(to right, #b993d6, #8ca6db)",
-        color: "white",
-        // "color": (rowData, coljey, cellValue, rowIndex) => rowIndex % 2 === 0 ? "red" : "green",
+        color: (rowData, coljey, cellValue, rowIndex) => rowIndex % 2 === 0 ? "white" : "gray",
         animation: "0.75s popin"
     };
 
     public evenColStyles = {
         background: "linear-gradient(to right, #8ca6db, #b993d6)",
-        color: "white",
-        // "color": (rowData, coljey, cellValue, rowIndex) => rowIndex % 2 === 0 ? "red" : "green",
+        color: (rowData, coljey, cellValue, rowIndex) => rowIndex % 2 === 0 ? "gray" : "white",
         animation: "0.75s popin"
     };
 
@@ -46,7 +44,7 @@ export class TreeGridConditionalCellStyle2Component implements OnInit {
 
     public updateCSS(css: string) {
         this.oddColStyles = {...this.oddColStyles, ...JSON.parse(css)};
-        this.evenColStyles = {...this.oddColStyles, ...JSON.parse(css)};
+        this.evenColStyles = {...this.evenColStyles, ...JSON.parse(css)};
         this.applyCSS();
     }
 }
