@@ -38,7 +38,7 @@ export class TreeGridConditionalCellStyle2Component implements OnInit {
     }
     public applyCSS() {
         this.columns.forEach((column, index) => {
-            column.cellStyles = (index % 2 === 0 ? this.oddColStyles : this.evenColStyles);
+            column.cellStyles = (index % 2 === 0 ? this.evenColStyles : this.oddColStyles);
         });
     }
 
