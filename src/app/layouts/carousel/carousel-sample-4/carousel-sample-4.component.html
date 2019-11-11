@@ -1,11 +1,36 @@
-<igx-carousel #carousel [loop]="loop" pause="false" 
-    (onSlideChanged)="onSlideChanged(carousel)">
-    <igx-slide *ngFor="let slide of slides;">
-        <br />
-        <span igxButton="raised" igxButtonColor="white" igxButtonBackground="#e41c77" (click)="goTo(carousel.current)">{{slide.heading}}</span>
-        <p>{{slide.description}}</p>
-        <img [src]="slide.image">
-    </igx-slide>
-    <igx-linear-bar #linearbar [striped]="false" [max]="total" animate="true"></igx-linear-bar>
-    <span>{{current}} out of {{total}}</span>
-</igx-carousel>
+<div style="width: 60%;height: 100%; margin: 16px auto">
+    <igx-carousel #carousel [loop]="false" pause="false" indicatorsOrientation="top">
+            <igx-slide *ngFor="let slide of slides;">
+                    <div style="margin: 20px auto; width: 100%">
+
+                    <img style="max-width: 100%; max-height: 100%;" [src]="slide.src">
+                </div>
+
+             </igx-slide>
+        <igx-slide>
+            <div class="form-wrapper">
+                <img src="assets/images/svg/carousel/SignUp.svg">
+                <form class="signInForm">
+                    <igx-input-group>
+                        <igx-prefix>
+                            <igx-icon>person</igx-icon>
+                        </igx-prefix>
+                        <label style="display: flex;" igxLabel for="username">Username</label>
+                        <input igxInput id="username" type="text" />
+                    </igx-input-group>
+                    <igx-input-group>
+                        <igx-prefix>
+                            <igx-icon>lock</igx-icon>
+                        </igx-prefix>
+                        <label style="display: flex;" igxLabel for="password">Password</label>
+                        <input igxInput id="password" type="password" />
+                    </igx-input-group>
+                </form>
+                <button igxButton="raised" >Submit</button>
+            </div>
+            <ng-template igxCarouselIndicator let-slide>
+                <div [ngClass]="{'selected': slide.current === current}" class="indicator"></div>
+            </ng-template>
+        </igx-slide>
+    </igx-carousel>
+</div>

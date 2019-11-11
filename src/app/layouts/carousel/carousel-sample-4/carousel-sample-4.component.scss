@@ -1,16 +1,51 @@
-.igx-carousel__inner {
-    width: 100%;
-    text-align: center; 
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+$button-theme: igx-button-theme(
+    $raised-text-color: #fff,
+    $raised-background: igx-color($default-palette, "primary", 500)
+);
+
+:host ::ng-deep{
+    @include igx-button($button-theme);
+    .igx-carousel__inner {
+        width: 100%;
+        text-align: center; 
+    }
+
+    span.progress-linear__value {
+        display: none;
+    }
+    ul.igx-carousel__indicators {
+        display: none;
+    }
+
+    .indicator{
+        width: 12px;
+        height: 12px;
+        content: ' ';
+        border-radius: 50%;
+        background: #dad8d8;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, .60);
+    }
+
+    [aria-selected=true] .indicator{
+        background: igx-color($default-palette, "primary", 500);
+    }
+
+    .igx-carousel-indicators--top{
+        margin-top: 0;
+    }
+    .form-wrapper{
+        .signInForm {
+            margin-bottom: 1rem;
+            margin: 10px auto;
+            width: 70%;    
+            igx-input-group + igx-input-group {
+                margin-top: 10px;
+            }
+        }
+    }
+    
 }
-igx-carousel igx-icon.igx-icon{
-    color: #e41c77;
-}
-span.progress-linear__value {
-    display: none;
-}
-ul.igx-carousel__indicators {
-    display: none;
-}
-div.igx-slide img {
-    width: 80%
-}
+
+
