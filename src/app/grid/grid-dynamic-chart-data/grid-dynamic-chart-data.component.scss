@@ -310,6 +310,11 @@
         //     flex-wrap: nowrap;
         // }
 
+        .disableButton{
+            opacity: .4;
+            pointer-events: none;
+        }
+
         display: flex;
         flex-wrap: wrap;
 
