@@ -42,6 +42,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
+import { SliderTicksBottom } from './slider/slider-ticks-bottom/slider-ticks-bottom.component';
 
 export const interactionsRoutes: Routes = [
     {
@@ -103,6 +104,11 @@ export const interactionsRoutes: Routes = [
         component: SliderSample6Component,
         data: interactionsRoutesData["slider-sample-6"],
         path: "slider-sample-6"
+    },
+    {
+        component: SliderTicksBottom,
+        data: interactionsRoutesData["slider-ticks-bottom"],
+        path: "slider-ticks-bottom"
     },
     {
         component: RippleSample1Component,
