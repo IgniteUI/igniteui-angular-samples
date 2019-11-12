@@ -67,7 +67,7 @@ export class CarouselSample4Component implements OnInit, AfterViewInit {
     );
   }
 
-  public goTo(index: number) {
-    this.router.navigate(["layouts/details", index]);
+  public goTo() {
+    this.router.navigate(["layouts/details"]);
   }
 }

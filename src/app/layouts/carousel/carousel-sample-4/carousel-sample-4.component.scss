@@ -23,29 +23,43 @@ $button-theme: igx-button-theme(
         width: 12px;
         height: 12px;
         content: ' ';
-        border-radius: 50%;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        border-radius: 4px;
         background: #dad8d8;
-        box-shadow: 1px 2px 4px rgba(0, 0, 0, .60);
+        box-shadow: igx-elevation($elevations, 1);
     }
 
     [aria-selected=true] .indicator{
         background: igx-color($default-palette, "primary", 500);
+        border: none
     }
 
     .igx-carousel-indicators--top{
         margin-top: 0;
     }
+
+    .icon {
+        color: peru;
+        width: 2rem;
+        height: 2rem;
+        pointer-events: none;
+    }
+
     .form-wrapper{
         .signInForm {
             margin-bottom: 1rem;
             margin: 10px auto;
-            width: 70%;    
+            width: 60%;    
             igx-input-group + igx-input-group {
                 margin-top: 10px;
             }
         }
     }
-    
+
+    .igx-slide img{
+        object-fit: fill;
+    }
+
 }
 
 

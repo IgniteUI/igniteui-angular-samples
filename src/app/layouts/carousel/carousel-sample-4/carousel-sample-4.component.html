@@ -1,16 +1,19 @@
-<div style="width: 60%;height: 100%; margin: 16px auto">
+<div style="width: 60%; height: 100%; margin: 16px auto">
     <igx-carousel #carousel [loop]="false" pause="false" indicatorsOrientation="top">
-            <igx-slide *ngFor="let slide of slides;">
-                    <div style="margin: 20px auto; width: 100%">
+            <igx-slide  *ngFor="let slide of slides;">
+                    <div style="margin: 20px auto; height: 350px; display: flex; align-items: center; justify-content: center;">
 
-                    <img style="max-width: 100%; max-height: 100%;" [src]="slide.src">
+                    <img style="width: 80%" [src]="slide.src">
                 </div>
 
              </igx-slide>
         <igx-slide>
             <div class="form-wrapper">
-                <img src="assets/images/svg/carousel/SignUp.svg">
-                <form class="signInForm">
+                <div style="margin: 20px auto; width: 60%">
+                    <img style="width: 80%" src="assets/images/svg/carousel/SignUp.svg">
+                    <div (click)="goTo()" style="cursor: pointer; display: inline-block"><igx-icon class="icon" fontSet="material">info</igx-icon></div>
+                </div>
+                <form #form class="signInForm" >
                     <igx-input-group>
                         <igx-prefix>
                             <igx-icon>person</igx-icon>
@@ -26,7 +29,7 @@
                         <input igxInput id="password" type="password" />
                     </igx-input-group>
                 </form>
-                <button igxButton="raised" >Submit</button>
+                <button igxButton="raised" type="submit" (click)="form.reset()">Sign Up</button>
             </div>
             <ng-template igxCarouselIndicator let-slide>
                 <div [ngClass]="{'selected': slide.current === current}" class="indicator"></div>

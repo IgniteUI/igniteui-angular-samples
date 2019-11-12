@@ -94,7 +94,7 @@ export const layoutsRoutes: Routes = [
     },
     {
         component: CarouselDetailsViewComponent,
-        path: "details/:index"
+        path: "details"
     },
     {
         component: DividerDefaultComponent,
