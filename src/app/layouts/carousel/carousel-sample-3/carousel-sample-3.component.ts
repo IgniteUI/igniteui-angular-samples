@@ -1,32 +1,49 @@
-import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation, HostListener } from "@angular/core";
 import { IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "app-carousel",
   styleUrls: ["./carousel-sample-3.component.scss"],
   templateUrl: "./carousel-sample-3.component.html"
 })
 export class CarouselSample3Component implements OnInit {
   @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
-  @ViewChild("linearbar", { static: true }) public linearbar: IgxLinearProgressBarComponent;
 
   public slides: any[] = [];
   public loop = true;
-  public pause = true;
+  public play = true;
   public total: number;
   public current: number;
+  public animations = ["slide", "fade", "none"];
+  constructor() { 
 
-  constructor() { }
+  }
 
   public ngOnInit() {
-    this.addNewSlide();
-    this.carousel.stop();
+
+    (this.carousel.nativeElement as HTMLElement).addEventListener("mouseleave", (evt) => {
+        if (!this.play) {
+            this.carousel.stop();
+        }
+    });
+
+    this.addSlides();
     this.total = this.slides.length;
     this.current = this.carousel.current;
   }
 
-  public addNewSlide() {
+  public toggleNavigation() {
+      this.play = !this.play;
+
+      if (this.play) {
+        this.carousel.play();
+      } else {
+          this.carousel.navigation = false;
+          this.carousel.pause = true;
+          this.carousel.stop();
+      }
+  }
+  public addSlides() {
     this.slides.push(
       {
         description: "30+ Material-based Angular components to code speedy web apps faster.",
@@ -44,10 +61,5 @@ export class CarouselSample3Component implements OnInit {
         image: "assets/images/carousel/slide3-aspnet.png"
       }
     );
-  }
-
-  public onSlideChanged(carousel: IgxCarouselComponent) {
-    this.current = carousel.current + 1;
-    this.linearbar.value = carousel.current + 1;
   }
 }

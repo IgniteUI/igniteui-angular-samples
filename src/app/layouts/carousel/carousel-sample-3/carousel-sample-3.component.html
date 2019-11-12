@@ -1,10 +1,24 @@
-<igx-carousel #carousel [loop]="loop" [pause]="pause" 
-    (onSlideChanged)="onSlideChanged(carousel)">
-    <igx-slide *ngFor="let slide of slides;">
-        <h3>{{slide.heading}}</h3>
-        <p>{{slide.description}}</p>
-        <img [src]="slide.image">
-    </igx-slide>
-    <igx-linear-bar #linearbar [striped]="false" [max]="total" animate="true"></igx-linear-bar>
-    <span>{{current}} out of {{total}}</span>
-</igx-carousel>
+<div class="carousel-animation-wrapper">
+    <div class="action-wrapper">
+        <button igxButton="raised" (click)=toggleNavigation()>{{play ? 'Pause': 'Play'}}</button>
+        <span style="margin: 0 15px 0 2px">Current animation: </span>
+        <span style="max-width: 100px;" >
+            <igx-select #select [(ngModel)]="carousel.animationType">
+                    <igx-select-item *ngFor="let animation of animations" [value]="animation">
+                        {{animation | titlecase}}
+                    </igx-select-item>
+            </igx-select>
+        </span> 
+    </div>
+    <div class="carousel-wrapper">
+        <igx-carousel #carousel [loop]="loop" [navigation]="play" [interval]="1500">
+                <igx-slide *ngFor="let slide of slides;">
+                    <div class="slide-wrapper">
+                        <h3>{{slide.heading}}</h3>
+                        <p>{{slide.description}}</p>
+                        <img  [src]="slide.image">
+                    </div>
+                </igx-slide>
+        </igx-carousel>
+    </div>
+</div>

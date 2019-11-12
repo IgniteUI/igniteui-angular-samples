@@ -1,20 +1,55 @@
-.igx-carousel__inner {
-    width: 100%;
-    text-align: center; 
+:host ::ng-deep{
+    .igx-carousel__inner {
+        width: 100%;
+        text-align: center; 
+    }
+    
+    igx-carousel igx-icon.igx-icon{
+        color: #e41c77;
+    }
+    
+    span.progress-linear__value {
+        display: none;
+    }
+    
+    ul.igx-carousel__indicators {
+        display: none;
+    }
+    
+    .slide-wrapper{
+        margin: 30px auto;
+        height: 350px;
+        display: inline-flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            width:80%;
+            height: 80%; 
+        }
+    }
+    
+    .igx-slide img{
+        object-fit: fill;
+    }
 }
 
-igx-carousel igx-icon.igx-icon{
-    color: #e41c77;
+.carousel-wrapper{
+    height: 100%;
+    width: 90%;
+    margin: 20px auto;
 }
 
-span.progress-linear__value {
-    display: none;
+.action-wrapper{
+    height: 40px;
+    width: 70%;
+    display: flex;
+    align-items: baseline
 }
 
-ul.igx-carousel__indicators {
-    display: none;
-}
-
-div.igx-slide img {
-    width: 80%
+.carousel-animation-wrapper{
+    height: 100%;
+    margin: 16px auto;
+    display: flex;
+    flex-flow:column;
 }
