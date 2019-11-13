@@ -1,7 +1,8 @@
-.flex-row {
+.grid__wrapper {
     display: flex;
     flex-flow: row;
     height: 650px;
+    margin: 15px;
 }
 
 .flex-column {

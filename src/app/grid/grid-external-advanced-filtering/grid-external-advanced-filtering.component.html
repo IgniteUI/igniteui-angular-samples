@@ -1,27 +1,25 @@
-<div class="flex-row">
-       <igx-grid #grid1 autoGenerate="false" [data]="data" width="700px" height="500px" [showToolbar]="true"
-            [columnHiding]="true" [columnPinning]="true" [exportExcel]="true" [exportCsv]="true" exportText="Export"
-            exportExcelText="Export to Excel" exportCsvText="Export to CSV">
-            <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
-            </igx-column>
-            <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'">
-            </igx-column>
-            <igx-column field="UnitPrice" header="Unit Price" dataType="number">
-                <ng-template igxCell let-cell="cell" let-val let-row>
-                    {{+val | currency}}
-                </ng-template>
-            </igx-column>
-            <igx-column field="OrderDate" header="Order Date" [dataType]="'date'" [formatter]="formatDate">
-            </igx-column>
-            <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
-                <ng-template igxCell let-cell="cell" let-val>
-                    <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
-                    <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
-                </ng-template>
-            </igx-column>
-        </igx-grid>
-
-        <igx-advanced-filtering-dialog 
-            [grid]="grid1">
+<div class="grid__wrapper">
+    <div class="advanced-dialog">
+        <igx-advanced-filtering-dialog [grid]="grid1" >
         </igx-advanced-filtering-dialog>
     </div>
+    <igx-grid #grid1 autoGenerate="false" [data]="data" width="800px" height="400px">
+        <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="QuantityPerUnit" header="Quantity Per Unit" [dataType]="'string'">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" dataType="number">
+            <ng-template igxCell let-cell="cell" let-val let-row>
+                {{+val | currency}}
+            </ng-template>
+        </igx-column>
+        <igx-column field="OrderDate" header="Order Date" [dataType]="'date'">
+        </igx-column>
+        <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'">
+            <ng-template igxCell let-cell="cell" let-val>
+                <img *ngIf="val" src="assets/images/grid/active.png" title="Continued" alt="Continued" />
+                <img *ngIf="!val" src="assets/images/grid/expired.png" title="Discontinued" alt="Discontinued" />
+            </ng-template>
+        </igx-column>
+    </igx-grid>
+</div>

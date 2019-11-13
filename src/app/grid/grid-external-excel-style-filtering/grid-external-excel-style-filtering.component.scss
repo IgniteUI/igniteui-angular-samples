@@ -1,13 +1,13 @@
-.flex-row {
+.grid__wrapper {
     display: flex;
     flex-flow: row;
+    margin: 15px;
 }
 
 .flex-column {
     display: flex;
     flex-flow: column;
     height: 650px;
-    margin-left: 1px;
 }
 
 .igSelect {

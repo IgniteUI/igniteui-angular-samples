@@ -12,12 +12,4 @@ export class TreeGridExternalExcelStyleFilteringComponent {
     constructor() {
         this.data = FOODS_DATA();
     }
-
-    public formatDate(val) {
-        if (val !== "Select All") {
-            return new Intl.DateTimeFormat("en-US").format(val);
-        } else {
-            return val;
-        }
-    }
 }

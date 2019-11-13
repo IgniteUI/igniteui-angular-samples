@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/core";
+import { IgxHierarchicalGridComponent } from "igniteui-angular";
 import { SINGERS } from "../data";
 
 @Component({
@@ -9,11 +10,18 @@ import { SINGERS } from "../data";
 })
 export class HGridExternalExcelStyleFilteringComponent {
 
-    public localdata: any;
+    @ViewChild("hierarchicalGrid", { read: IgxHierarchicalGridComponent, static: true })
+    public hgrid: IgxHierarchicalGridComponent;
+
+    public columns: any[];
+    public localdata: any[];
+
     constructor() {
         this.localdata = SINGERS;
     }
 
-    public formatter = (a) => a;
+    public ngAfterViewInit() {
+        this.columns = this.hgrid.columns.filter(c => c.filterable);
 
+    }
 }

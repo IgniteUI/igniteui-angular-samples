@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
@@ -8,19 +8,12 @@ import { DATA } from "../../data/nwindData";
     templateUrl: "./grid-external-excel-style-filtering.component.html",
     styleUrls: ["./grid-external-excel-style-filtering.component.scss"]
 })
-export class GridExternalExcelStyleFilteringComponent {
+export class GridExternalExcelStyleFilteringComponent implements OnInit {
 
     public data: any[];
+    constructor() {}
 
-    constructor() {
+    public ngOnInit(): void {
         this.data = DATA;
-    }
-
-    public formatDate(val) {
-        if (val !== "Select All") {
-            return new Intl.DateTimeFormat("en-US").format(val);
-        } else {
-            return val;
-        }
     }
 }

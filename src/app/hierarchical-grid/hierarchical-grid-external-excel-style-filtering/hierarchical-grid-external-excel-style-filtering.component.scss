@@ -1,5 +1,5 @@
-.wrapper {
-    margin: 16px;
+.grid__wrapper {
+    margin: 15px;
     display: flex;
     flex-flow: row;
 }
@@ -10,10 +10,6 @@
 }
 .cell__inner_2 {
     margin: 1px
-}
-
-.density-chooser {
-    margin-bottom: 16px;
 }
 
 igx-buttongroup{

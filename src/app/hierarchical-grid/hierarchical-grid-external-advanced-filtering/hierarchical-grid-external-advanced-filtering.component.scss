@@ -1,7 +1,7 @@
 .grid__wrapper {
     margin: 15px;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
 }
 
 .photo {
@@ -12,13 +12,7 @@
     margin: 1px
 }
 
-.flex-column {
-    display: flex;
-    flex-flow: column;
-    height: 650px;
-    margin-left: 1px;
-}
-
-.igSelect {
-    margin-left: 1px;
+.advanced-dialog {
+    margin-bottom: 2px;
+    width: 800px;
 }
