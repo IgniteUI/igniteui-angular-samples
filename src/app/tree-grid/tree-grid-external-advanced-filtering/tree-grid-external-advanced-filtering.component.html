@@ -3,7 +3,7 @@
     </igx-advanced-filtering-dialog>
 
     <igx-tree-grid #treegrid1 [data]="data" [autoGenerate]="false" height="400px" width="100%" [allowFiltering]="true"
-        primaryKey="ID" foreignKey="ParentID" filterMode="excelStyleFilter">
+        primaryKey="ID" foreignKey="ParentID">
         <igx-column field="ID" header="Product ID" [dataType]="'string'" [sortable]="true" [movable]="true">
         </igx-column>
         <igx-column field="Name" header="Product Name" [dataType]="'string'" [sortable]="true" [movable]="true">
