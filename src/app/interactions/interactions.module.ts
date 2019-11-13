@@ -50,6 +50,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
+import { DiscreteSliderTicksBottom } from './slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component';
+import { SliderTicksBottomtotopLabels } from './slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component';
 
 @NgModule({
     declarations: [
@@ -71,6 +73,8 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         SliderSample5Component,
         SliderSample6Component,
         SliderTicksBottom,
+        DiscreteSliderTicksBottom,
+        SliderTicksBottomtotopLabels,
         RippleSample1Component,
         RippleSample2Component,
         RippleSample3Component,

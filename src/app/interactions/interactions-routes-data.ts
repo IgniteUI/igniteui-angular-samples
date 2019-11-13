@@ -14,6 +14,8 @@ export const interactionsRoutesData = {
     "slider-sample-5": { displayName: "Slider Lower and Upper bounds", parentName: "Slider" },
     "slider-sample-6": { displayName: "Slider Labels", parentName: "Slider" },
     "slider-ticks-bottom": { displayName: "Slider Ticks Bottom", parentName: "Slider" },
+    "discrete-slider-ticks-bottom": { displayName: "Discret Slider Ticks Bottom", parentName: "Slider" },
+    "slider-ticks-bottomtotop-labels": { displayName: "Slider Ticks Bottomtotop Labels", parentName: "Slider" },
     "ripple-sample-1": { displayName: "Ripple Overview", parentName: "Ripple" },
     "ripple-sample-2": { displayName: "Ripple Target", parentName: "Ripple" },
     "ripple-sample-3": { displayName: "Ripple Centered Effect", parentName: "Ripple" },

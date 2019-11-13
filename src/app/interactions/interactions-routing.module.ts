@@ -43,6 +43,8 @@ import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.compon
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
 import { SliderTicksBottom } from './slider/slider-ticks-bottom/slider-ticks-bottom.component';
+import { DiscreteSliderTicksBottom } from './slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component';
+import { SliderTicksBottomtotopLabels } from './slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component';
 
 export const interactionsRoutes: Routes = [
     {
@@ -109,6 +111,16 @@ export const interactionsRoutes: Routes = [
         component: SliderTicksBottom,
         data: interactionsRoutesData["slider-ticks-bottom"],
         path: "slider-ticks-bottom"
+    },
+    {
+        component: SliderTicksBottomtotopLabels,
+        data: interactionsRoutesData["slider-ticks-bottomtotop-labels"],
+        path: "slider-ticks-bottomtotop-labels"
+    },
+    {
+        component: DiscreteSliderTicksBottom,
+        data: interactionsRoutesData["discrete-slider-ticks-bottom"],
+        path: "discrete-slider-ticks-bottom"
     },
     {
         component: RippleSample1Component,
