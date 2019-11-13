@@ -17,11 +17,8 @@ export class CarouselSample3Component implements OnInit {
 
   public ngOnInit() {
 
-    (this.carousel.nativeElement as HTMLElement).addEventListener("mouseleave", (evt) => {
-        if (!this.play) {
-            this.carousel.stop();
-        }
-    });
+    this.carousel.onCarouselPaused.subscribe(() => this.play = false);
+    this.carousel.onCarouselPlaying.subscribe(() => this.play = true);
 
     this.addSlides();
     this.total = this.slides.length;
