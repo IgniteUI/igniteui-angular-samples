@@ -49,24 +49,24 @@ export class ChartService {
   private selectionData: IGridDataSelection[];
   private _chart;
   constructor(private factoryResolver: ComponentFactoryResolver, private zone: NgZone) {
-      this.dataChartSeries.set("columnGrouped", IgxColumnSeriesComponent);
-      this.dataChartSeries.set("areaGrouped", IgxAreaSeriesComponent);
-      this.dataChartSeries.set("lineGrouped", IgxLineSeriesComponent);
-      this.dataChartSeries.set("barGrouped", IgxBarSeriesComponent);
+      this.dataChartSeries.set("ColumnGrouped", IgxColumnSeriesComponent);
+      this.dataChartSeries.set("AreaGrouped", IgxAreaSeriesComponent);
+      this.dataChartSeries.set("LineGrouped", IgxLineSeriesComponent);
+      this.dataChartSeries.set("BarGrouped", IgxBarSeriesComponent);
 
-      this.dataChartSeries.set("columnStacked", IgxStackedColumnSeriesComponent);
-      this.dataChartSeries.set("areaStacked", IgxStackedAreaSeriesComponent);
-      this.dataChartSeries.set("lineStacked", IgxStackedLineSeriesComponent);
-      this.dataChartSeries.set("barStacked", IgxStackedBarSeriesComponent);
+      this.dataChartSeries.set("ColumnStacked", IgxStackedColumnSeriesComponent);
+      this.dataChartSeries.set("AreaStacked", IgxStackedAreaSeriesComponent);
+      this.dataChartSeries.set("LineStacked", IgxStackedLineSeriesComponent);
+      this.dataChartSeries.set("BarStacked", IgxStackedBarSeriesComponent);
 
-      this.dataChartSeries.set("column100Stacked", IgxStacked100ColumnSeriesComponent);
-      this.dataChartSeries.set("area100Stacked", IgxStacked100AreaSeriesComponent);
-      this.dataChartSeries.set("line100Stacked", IgxStacked100LineSeriesComponent);
-      this.dataChartSeries.set("bar100Stacked", IgxStacked100BarSeriesComponent);
+      this.dataChartSeries.set("Column100Stacked", IgxStacked100ColumnSeriesComponent);
+      this.dataChartSeries.set("Area100Stacked", IgxStacked100AreaSeriesComponent);
+      this.dataChartSeries.set("Line100Stacked", IgxStacked100LineSeriesComponent);
+      this.dataChartSeries.set("Bar100Stacked", IgxStacked100BarSeriesComponent);
 
-      this.scatterChartSeries.set("scatterPoint", IgxScatterSeriesComponent);
-      this.scatterChartSeries.set("scatterBubble", IgxBubbleSeriesComponent);
-      this.scatterChartSeries.set("scatterLine", IgxScatterLineSeriesComponent);
+      this.scatterChartSeries.set("ScatterPoint", IgxScatterSeriesComponent);
+      this.scatterChartSeries.set("ScatterBubble", IgxBubbleSeriesComponent);
+      this.scatterChartSeries.set("ScatterLine", IgxScatterLineSeriesComponent);
    }
 
   public chartFactory(chartType: string, data: IGridDataSelection[], viewContainerRef: ViewContainerRef, options: IChartComponentOptions, seriesInfo?: {seriesType?: string, seriesModel?: IChartSeriesOptions}) {
@@ -76,8 +76,8 @@ export class ChartService {
       let componentRef: ComponentRef<any>;
       const itemLegendFactory = this.factoryResolver.resolveComponentFactory(IgxItemLegendComponent);
       const legendFactory = this.factoryResolver.resolveComponentFactory(IgxLegendComponent);
-      let itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
-      let legendComponentRef = viewContainerRef.createComponent(legendFactory);
+
+      let legendComponentRef;
       let initializer: ChartInitializer;
       switch (chartType) {
         //    case "doughnut":
@@ -87,20 +87,19 @@ export class ChartService {
         //         const doughnutChart = this.initDoughnutChart(componentRef.instance, itemLegendComponentRef.instance);
         //         this._chart = doughnutChart;
         //         break;
-            case "pie":
+            case "Pie":
                 componentFactory =  this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
-                itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
+                const itemLegendComponentRef = viewContainerRef.createComponent(itemLegendFactory);
                 options.chartOptions["legend"] = itemLegendComponentRef.instance;
                 this.addPieChartDataOptions(options);
                 initializer = new IgxPieChartInitializer();
                 break;
-           case "column":
-           case "area":
-           case "line":
+           case "Column":
+           case "Area":
+           case "Line":
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
-                legendComponentRef = viewContainerRef.createComponent(legendFactory);
                 options.xAxisOptions = {
                     label: this.selectionData[0].subjectArea
                 };
@@ -113,9 +112,10 @@ export class ChartService {
                     this.addDataChartDataOptions(options, false, seriesInfo.seriesModel);
                     initializer = new IgxDataChartInitializer(this.dataChartSeries.get(`${chartType + seriesInfo.seriesType}`));
                 }
+                legendComponentRef = viewContainerRef.createComponent(legendFactory);
                 options.chartOptions["legend"] = legendComponentRef.instance;
                 break;
-           case "bar":
+           case "Bar":
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
                 legendComponentRef = viewContainerRef.createComponent(legendFactory);
@@ -132,7 +132,7 @@ export class ChartService {
                 }
                 options.chartOptions["legend"] = legendComponentRef.instance;
                 break;
-           case "scatter":
+           case "Scatter":
                 componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
                 componentRef = viewContainerRef.createComponent(componentFactory);
                 legendComponentRef = viewContainerRef.createComponent(legendFactory);

@@ -1,9 +1,7 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 
-        [data]="data" 
-        [height]="'530px'"
-        [width]="'100%'"
-        [autoGenerate]='false'>
+    <igx-grid #grid1 [data]="data" [height]="'530px'" [width]="'100%'"
+        (onSelection)='calculateSummary()'
+        (onRangeSelection)='calculateSummary()'>
         <igx-column [field]="'ProductID'"></igx-column>
         <igx-column [field]="'ProductName'"></igx-column>
         <igx-column [field]="'UnitPrice'" [dataType]="'number'" [formatter]="formatCurrency"></igx-column>
@@ -16,7 +14,12 @@
         </igx-column>
         <igx-column [field]="'OrderDate'" [dataType]="'date'"></igx-column>
         <igx-grid-footer>
-            <summaries-data [grid]="grid1" class="custom-summaries"></summaries-data>
+            <div class="custom-summaries">
+                <div *ngFor="let summary of selectionSummaries" class="summaries-data-wrapper" [ngClass]="grid1.displayDensity">
+                    <span class="igx-grid-summary__label">{{ summary.label }}</span>
+                    <span class="igx-grid-summary__result">{{ format(summary.summaryResult) }}</span>
+                </div>
+            </div>
         </igx-grid-footer>
     </igx-grid>
 </div>

@@ -62,6 +62,9 @@ import {
     GridCompositeDataComponent
 } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
 import {
+    GridConditionalCellStyle2Component
+} from "../../src/app/grid/grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
+import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
 import {
@@ -78,9 +81,6 @@ import {
 import {
     GridCustomSummariesSelection
 } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
-import {
-    SummariesData
-} from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -687,12 +687,24 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // Grid cellClasses
         configs.push(new Config({
             component: GridConditionalCellStyleComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyleComponent],
                 ngDeclarations: [GridConditionalCellStyleComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        // Grid cellStyles
+        configs.push(new Config({
+            component: GridConditionalCellStyle2Component,
+            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridConditionalCellStyle2Component],
+                ngDeclarations: [GridConditionalCellStyle2Component],
                 ngImports: [IgxGridModule]
             })
         }));
@@ -714,13 +726,10 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Custom Summaries
         configs.push(new Config({
             component: GridCustomSummariesSelection,
-            additionalFiles: ["/src/app/data/nwindData.ts",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.html",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.scss",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [SummariesData, GridCustomSummariesSelection, IgxGridModule],
-                ngDeclarations: [SummariesData, GridCustomSummariesSelection],
+                imports: [GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [GridCustomSummariesSelection],
                 ngImports: [IgxGridModule]
             })
         }));

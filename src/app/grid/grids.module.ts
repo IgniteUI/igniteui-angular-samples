@@ -49,6 +49,7 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
+import { GridConditionalCellStyle2Component } from "./grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridConditionalRowSelectorsComponent } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
@@ -56,7 +57,6 @@ import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-c
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
-import { SummariesData } from "./grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
 import { ChartArgsPipe, ChartHostDirective, GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
@@ -129,11 +129,11 @@ import { DataService } from "./services/data.service";
 
 @NgModule({
     declarations: [
-        SummariesData,
         GridWithTransactionsComponent,
         GridBatchEditingSampleComponent,
         GridColumnHidingSampleComponent,
         GridColumnHidingToolbarSampleComponent,
+        GridConditionalCellStyle2Component,
         GridConditionalCellStyleComponent,
         GridCustomFilteringComponent,
         GridDisplayDensitySampleComponent,
