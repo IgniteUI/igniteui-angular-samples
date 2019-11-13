@@ -1,7 +1,31 @@
-<igx-carousel #carousel>
-    <igx-slide *ngFor="let slide of slides;">
-        <h3>{{slide.heading}}</h3>
-        <p>{{slide.description}}</p>
-        <img [src]="slide.image">
-    </igx-slide>
-</igx-carousel>
+<div class="carousel-animation-wrapper">
+    <div class="carousel-wrapper">
+        <igx-carousel [loop]="true" [navigation]="false" animationType="fade" [interval]="2000">
+            <div class="slide-wrapper">
+                <igx-slide *ngFor="let slide of slides">
+                            <img src="{{slide.image}}.png" >
+                        <div class="text-container">
+                                <span class="description">
+                                        {{slide.description}}
+                                </span>
+                                <span class="price">{{slide.price | currency: 'USD': 'symbol': '3.0'}}</span>
+                        </div>
+                    </igx-slide>
+            </div>
+            <ng-template igxCarouselIndicator></ng-template>
+        </igx-carousel>
+    </div>
+    <div class="list-wrapper">
+            <igx-list>
+                    <igx-list-item *ngFor="let item of slides; let i=index">
+                        <div class="item-wrapper" [ngClass]="{'disabled': i !== currentIndex}">
+                            <span class="image"><img  src="{{item.image}}Thumb.png" ></span>
+                            <span class="titles">
+                                <h6>{{item.title}}</h6>
+                                <span style="font-size: 1rem; font-weight: 600; color: #585858cc">{{item.subTitle}}</span>
+                            </span>    
+                        </div>
+                    </igx-list-item>
+            </igx-list>
+    </div>
+</div>

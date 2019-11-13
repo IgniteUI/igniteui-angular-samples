@@ -8,14 +8,6 @@
         color: #e41c77;
     }
     
-    span.progress-linear__value {
-        display: none;
-    }
-    
-    ul.igx-carousel__indicators {
-        display: none;
-    }
-    
     .slide-wrapper{
 
         width: 80%;
@@ -41,7 +33,8 @@
     height: 40px;
     width: 70%;
     display: flex;
-    align-items: baseline
+    align-items: baseline;
+    margin-bottom: 1rem;
 }
 
 .carousel-animation-wrapper{

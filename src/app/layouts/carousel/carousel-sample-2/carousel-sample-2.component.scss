@@ -1,12 +1,61 @@
-.igx-carousel__inner {
-    width: 100%;
-    text-align: center; 
+.carousel-wrapper{
+    height: 80%;
+    width: 60%;
 }
 
-igx-carousel igx-icon.igx-icon{
-    color: #e41c77;
+.list-wrapper{
+    display: inline-flex;
+    margin-left: 5px;
 }
 
-/* div.igx-slide img {
-    width: 80% 
-} */
+.carousel-animation-wrapper{
+    height: 100%;
+    margin: 20px auto;
+    display: flex;
+}
+
+:host ::ng-deep{
+    igx-list{
+        height: 85%;
+    }
+    .slide-wrapper{
+
+        .text-container{
+            height: fit-content;
+            margin-left: 1.5rem;
+            width: 90%;
+            padding: 0 1rem 1rem 1rem;
+            display: flex;
+            position: absolute;
+            top: 10px;
+            background: rgba(255, 255 , 255 , 0.6);
+            align-items: center;
+            .description{
+                font-size: 1.56rem;
+            }
+            .price{
+                margin-left: 0.4rem;
+                font-size: 2rem;
+                color: #e41c77;
+            }
+        }
+    }
+
+    .igx-list__item-content {
+        padding: 0;
+    }
+
+    .item-wrapper {
+        display: flex;
+        .titles{
+            display: inline-flex;
+            flex-flow: column;
+            margin-left: 1rem;
+            align-self: center;
+        }
+
+    }
+    .disabled{
+        opacity: .5;
+    }
+}
