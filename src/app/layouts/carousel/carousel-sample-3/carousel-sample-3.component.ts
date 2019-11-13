@@ -10,7 +10,6 @@ export class CarouselSample3Component implements OnInit {
   @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
 
   public slides: any[] = [];
-  public loop = true;
   public play = true;
   public total: number;
   public current: number;
