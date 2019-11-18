@@ -22,7 +22,11 @@ igx-grid {
 ::ng-deep {
     .allow-drop {
         background-color: #dd75b1 !important;
-        opacity: 0.4;
+        //opacity: 1;
+        z-index: 1;
     }
     
+}
+igx-icon{
+    margin-top: 10px;
 }
