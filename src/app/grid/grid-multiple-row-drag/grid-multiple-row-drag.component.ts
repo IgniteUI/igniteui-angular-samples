@@ -4,7 +4,7 @@ import { DATA } from "../../data/customers";
 
 enum DragIcon {
     DEFAULT = "drag_indicator",
-    ALLOW = "allow-drop"
+    ALLOW = "add"
 }
 
 @Component({
@@ -15,6 +15,7 @@ enum DragIcon {
 export class GridMultipleRowDragComponent  {
     public data1: any[];
     public data2: any[];
+    public icon = DragIcon.DEFAULT;
     @ViewChild("sourceGrid", { read: IgxGridComponent, static: true })
     public sourceGrid: IgxGridComponent;
     @ViewChild("targetGrid", { read: IgxGridComponent, static: true })
@@ -28,9 +29,7 @@ export class GridMultipleRowDragComponent  {
     public onRowDragEnd(args) {
         args.animation = true;
     }
-    public onRowDragStart(args) {
-        args.drag.ghostElement.classList.add(DragIcon.ALLOW);
-    }
+
     public onDropAllowed(args) {
         let selected = false;
         const ids = this.sourceGrid.selectedRows();
@@ -49,14 +48,10 @@ export class GridMultipleRowDragComponent  {
     }
 
     public onEnter(args) {
-        args.drag.ghostElement.classList.add(DragIcon.ALLOW);
+        this.icon = DragIcon.ALLOW;
     }
 
     public onLeave(args) {
-        const dragGhost: HTMLElement =  args.drag.ghostElement;
-        if (dragGhost) {
-            dragGhost.classList.remove(DragIcon.ALLOW);
-        }
+        this.icon = DragIcon.DEFAULT;
     }
-
 }

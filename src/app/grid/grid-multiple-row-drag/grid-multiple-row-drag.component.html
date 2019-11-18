@@ -1,6 +1,6 @@
 <div class="grid-container">
         <igx-grid #sourceGrid [data]="data1" [height]="'480px'" [width]="'640px'" [autoGenerate]="false"
-            [rowDraggable]="true" [primaryKey]="'ID'" (onRowDragStart)="onRowDragStart($event)"
+            [rowDraggable]="true" [primaryKey]="'ID'"
             (onRowDragEnd)="onRowDragEnd($event)" [cellSelection]="'none'" [rowSelection]="selectionMode">
             <igx-column [field]="'ID'" [header]="'ID'" width="100px"></igx-column>
             <igx-column [field]="'CompanyName'" [header]="'Company Name'" width="100px"></igx-column>
@@ -13,10 +13,20 @@
             <igx-column [field]="'PostalCode'" [header]="'Postal Code'" width="100px"></igx-column>
             <igx-column [field]="'Phone'" [header]="'Phone'" width="100px"></igx-column>
             <igx-column [field]="'Fax'" [header]="'Fax'" width="100px"></igx-column>
-            
+            <ng-template let-data igxRowDragGhost *ngIf = "sourceGrid.selectedRows().length > 0; else move">
+                <div class = "allow-drop"> 
+                    <igx-icon fontSet="material">{{icon}}</igx-icon> 
+                    Moving {{sourceGrid.selectedRows().length}}
+                </div>
+            </ng-template>
+            <ng-template let-data igxRowDragGhost #move>
+                    <div class = "allow-drop"> 
+                        <igx-icon fontSet="material">{{icon}}</igx-icon>
+                        Moving 1
+                    </div>
+            </ng-template>
         </igx-grid>
         
-         
         <igx-grid #targetGrid igxDrop [data]="data2" [height]="'480px'" [width]="'640px'" [autoGenerate]="false"
             [emptyGridTemplate]="dragHereTemplate" (enter)="onEnter($event)" (leave)="onLeave($event)"
             (dropped)="onDropAllowed($event)" [primaryKey]="'ID'">
