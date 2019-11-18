@@ -7,7 +7,7 @@ export const layoutsRoutesData = {
     "carousel-sample-1": { displayName: "Carousel items with text", parentName: "Carousel" },
     "carousel-sample-2": { displayName: "Slides with ngFor directive", parentName: "Carousel" },
     "carousel-animations-sample": { displayName: "Carousel Animations", parentName: "Carousel" },
-    "carousel-base-sample": { displayName: "Carousel Router Navigation", parentName: "Carousel" },
+    "carousel-base-sample": { displayName: "Carousel Base", parentName: "Carousel" },
     "carousel": { displayName: "Carousel Image Viewer", parentName: "Carousel" },
     "expansion-sample-1": { displayName: "Expansion Panel 1", parentName: "Expansion Panel" },
     "expansion-sample-2": { displayName: "Expansion Panel 2", parentName: "Expansion Panel" },
