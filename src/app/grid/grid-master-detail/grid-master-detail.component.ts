@@ -79,7 +79,7 @@ export class GridMasterDetailSampleComponent {
     public columnInit(event: IgxColumnComponent) {
         if (event.field === "Q") {
             event.width = "50px";
-            event.header = "";
+            event.header = " ";
         }
     }
 

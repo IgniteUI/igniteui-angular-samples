@@ -40,7 +40,7 @@
                         <igx-tabs-group label="Sales">
                             <div class='tabContent' style='flex-direction: column;'>
                                 <igx-legend #legend orientation="horizontal"></igx-legend>
-                                <igx-category-chart height="300px" width="700px" [legend]="legend"
+                                <igx-category-chart height="300px" [legend]="legend"
                                     [dataSource]="dataItem.chartData ? dataItem.chartData : getChartData(dataItem)"
                                     chartType="Line"
                                     chartTitle="Sales"
