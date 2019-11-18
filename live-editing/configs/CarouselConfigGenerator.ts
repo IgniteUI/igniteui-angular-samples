@@ -3,7 +3,7 @@ import { Direction, IgxCarouselComponent, IgxCarouselModule,
     IgxLinearProgressBarComponent, IgxProgressBarModule, IgxSliderModule } from "igniteui-angular";
 import { CarouselSample1Component } from "../../src/app/layouts/carousel/carousel-sample-1/carousel-sample-1.component";
 import { CarouselSample2Component } from "../../src/app/layouts/carousel/carousel-sample-2/carousel-sample-2.component";
-import { CarouselSample3Component } from "../../src/app/layouts/carousel/carousel-sample-3/carousel-sample-3.component";
+import { CarouselAnimationsSampleComponent } from "../../src/app/layouts/carousel/carousel-animations-sample/carousel-animations-sample.component";
 import { CarouselComponent } from "../../src/app/layouts/carousel/carousel.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -45,12 +45,12 @@ export class CarouselConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: CarouselSample3Component,
+            component: CarouselAnimationsSampleComponent,
             appModuleConfig: new AppModuleConfig({
                 imports: ["Direction", IgxCarouselComponent, IgxCarouselModule,
                     IgxLinearProgressBarComponent, IgxProgressBarModule,
-                    IgxSliderModule, CarouselSample3Component],
-                ngDeclarations: [CarouselSample3Component],
+                    IgxSliderModule, CarouselAnimationsSampleComponent],
+                ngDeclarations: [CarouselAnimationsSampleComponent],
                 ngImports: [IgxCarouselModule, IgxProgressBarModule, IgxSliderModule]
             }),
             shortenComponentPathBy: "/layouts/carousel/"

@@ -3,10 +3,10 @@ import { IgxCarouselComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-carousel",
-  styleUrls: ["./carousel-sample-3.component.scss"],
-  templateUrl: "./carousel-sample-3.component.html"
+  styleUrls: ["./carousel-animations-sample.component.scss"],
+  templateUrl: "./carousel-animations-sample.component.html"
 })
-export class CarouselSample3Component implements OnInit {
+export class CarouselAnimationsSampleComponent implements OnInit {
   @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
 
   public slides: any[] = [];
