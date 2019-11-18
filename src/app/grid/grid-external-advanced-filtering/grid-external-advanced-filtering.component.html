@@ -1,8 +1,7 @@
 <div class="grid__wrapper">
-    <div class="advanced-dialog">
-        <igx-advanced-filtering-dialog [grid]="grid1" >
-        </igx-advanced-filtering-dialog>
-    </div>
+    <igx-advanced-filtering-dialog [grid]="grid1" class="advanced-dialog">
+    </igx-advanced-filtering-dialog>
+    
     <igx-grid #grid1 autoGenerate="false" [data]="data" width="800px" height="400px">
         <igx-column field="ProductName" header="Product Name" [dataType]="'string'">
         </igx-column>

@@ -46,9 +46,9 @@ export const treeGridRoutesData = {
     "treegrid-excel-style-filtering-load-on-demand":
         { displayName: "TreeGrid Excel Style Filtering Load On Demand", parentName: "TreeGrid" },
     "tree-grid-external-excel-style-filtering":
-        { displayName: "TreeGrid Extenral Excel Style Filtering", parentName: "TreeGrid" },
+        { displayName: "TreeGrid External Excel Style Filtering", parentName: "TreeGrid" },
     "tree-grid-external-advanced-filtering":
-        { displayName: "TreeGrid Extenral Advanced Filtering", parentName: "TreeGrid" },
+        { displayName: "TreeGrid External Advanced Filtering", parentName: "TreeGrid" },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-header-template": {
         displayName: "TreeGrid Multi Column Header Template",
