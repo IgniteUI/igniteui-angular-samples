@@ -37,8 +37,9 @@ import { CardComponent } from "./card/card.component";
 import { CarouselAnimationsSampleComponent } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
 import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/carousel-base-sample.component";
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
+// tslint:disable-next-line: max-line-length
+import { CarouselNoNavigationSampleComponent } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
 import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
-import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-sample-2.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
@@ -92,7 +93,7 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         CardComponent,
         CarouselDetailsViewComponent,
         CarouselSample1Component,
-        CarouselSample2Component,
+        CarouselNoNavigationSampleComponent,
         CarouselAnimationsSampleComponent,
         CarouselBaseSampleComponent,
         CarouselComponent,
