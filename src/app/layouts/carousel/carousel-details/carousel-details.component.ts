@@ -13,6 +13,6 @@ export class CarouselDetailsViewComponent {
   constructor(private router: Router) { }
 
   public goBack() {
-    this.router.navigate(["layouts/carousel-sample-4"]);
+    this.router.navigate(["layouts/carousel-base-sample"]);
   }
 }

@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation, AfterViewInit } from "@angular/core";
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
-import {IgxButtonModule, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
+import { IgxCarouselComponent } from "igniteui-angular";
 
 @Component({
   selector: "app-carousel",
-  styleUrls: ["./carousel-sample-4.component.scss"],
-  templateUrl: "./carousel-sample-4.component.html"
+  styleUrls: ["./carousel-base-sample.component.scss"],
+  templateUrl: "./carousel-base-sample.component.html"
 })
-export class CarouselSample4Component implements OnInit, AfterViewInit {
+export class CarouselBaseSampleComponent implements OnInit, AfterViewInit {
   @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
 
   public slides: any[] = [];

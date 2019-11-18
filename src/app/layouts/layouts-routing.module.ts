@@ -15,7 +15,7 @@ import { CarouselAnimationsSampleComponent } from "./carousel/carousel-animation
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
 import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-sample-2.component";
-import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
+import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/carousel-base-sample.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
@@ -84,9 +84,9 @@ export const layoutsRoutes: Routes = [
         path: "carousel-animations-sample"
     },
     {
-        component: CarouselSample4Component,
-        data: layoutsRoutesData["carousel-sample-4"],
-        path: "carousel-sample-4"
+        component: CarouselBaseSampleComponent,
+        data: layoutsRoutesData["carousel-base-sample"],
+        path: "carousel-base-sample"
     },
     {
         component: CarouselComponent,

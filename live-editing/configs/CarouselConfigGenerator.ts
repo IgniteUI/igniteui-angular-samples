@@ -1,9 +1,10 @@
 /* tslint:disable:object-literal-sort-keys */
-import { Direction, IgxCarouselComponent, IgxCarouselModule,
+import { IgxCarouselComponent, IgxCarouselModule,
     IgxLinearProgressBarComponent, IgxProgressBarModule, IgxSliderModule } from "igniteui-angular";
+// tslint:disable-next-line: max-line-length
+import { CarouselAnimationsSampleComponent } from "../../src/app/layouts/carousel/carousel-animations-sample/carousel-animations-sample.component";
 import { CarouselSample1Component } from "../../src/app/layouts/carousel/carousel-sample-1/carousel-sample-1.component";
 import { CarouselSample2Component } from "../../src/app/layouts/carousel/carousel-sample-2/carousel-sample-2.component";
-import { CarouselAnimationsSampleComponent } from "../../src/app/layouts/carousel/carousel-animations-sample/carousel-animations-sample.component";
 import { CarouselComponent } from "../../src/app/layouts/carousel/carousel.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -61,8 +62,8 @@ export class CarouselConfigGenerator implements IConfigGenerator {
 }
 
 //    {
-//      componentPath: "/carousel/carousel-sample-4/",
-//      componentRoutePath: "carousel-sample-4",
+//      componentPath: "/carousel/carousel-base-sample/",
+//      componentRoutePath: "carousel-base-sample",
 //      additionalFiles: ["/carousel/carousel-details/carousel-details.component.ts",
 //          "/carousel/carousel-details/carousel-details.component.html", "/carousel/mock-slides.ts"],
 //      appModuleConfig: {
@@ -72,8 +73,8 @@ export class CarouselConfigGenerator implements IConfigGenerator {
 //              IgxRippleModule, IgxSliderModule", from: "igniteui-angular" },
 //          { import: "CarouselDetailsViewComponent", from: "./carousel/carousel-details/carousel-details.component"},
 //          { import: "Routes, Router, RouterModule", from: "@angular/router"},
-//          { import: "CarouselSample4Component", from: "./carousel/carousel-sample-4/carousel-sample-4.component" }],
-//        ngDeclarations: "CarouselDetailsViewComponent, CarouselSample4Component",
+//          { import: "CarouselBaseSampleComponent", from: "./carousel/carousel-base-sample/carousel-base-sample.component" }],
+//        ngDeclarations: "CarouselDetailsViewComponent, CarouselBaseSampleComponent",
 //        ngImports:
 //          `RouterModule.forRoot(Routes = [\{component: CarouselDetailsViewComponent, path: 'details/:index'}]),
 //        IgxButtonModule, IgxCarouselModule, IgxProgressBarModule, IgxRippleModule, IgxSliderModule`
