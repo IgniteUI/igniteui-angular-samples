@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxCarouselComponent, IgxListComponent, ISlideEventArgs, IListItemClickEventArgs } from "igniteui-angular";
+import { IgxCarouselComponent, IgxListComponent, IListItemClickEventArgs, ISlideEventArgs } from "igniteui-angular";
 
 @Component({
   selector: "app-carousel",

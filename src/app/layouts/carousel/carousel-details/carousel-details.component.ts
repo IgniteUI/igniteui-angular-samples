@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-details",
   templateUrl: "./carousel-details.component.html",
-  styleUrls:["./carousel-details.component.scss"]
+  styleUrls: ["./carousel-details.component.scss"]
 })
 export class CarouselDetailsViewComponent {
   public slide: any;
