@@ -1,9 +1,9 @@
 /* tslint:disable:object-literal-sort-keys */
 import { RouterModule } from "@angular/router";
 import { IgxButtonModule,
+         IgxCardModule,
          IgxCarouselModule,
-         IgxIconModule,
-         IgxInputGroupModule, IgxListModule, IgxSelectModule, IgxSliderModule, IgxCardModule } from "igniteui-angular";
+         IgxIconModule, IgxInputGroupModule, IgxListModule, IgxSelectModule, IgxSliderModule } from "igniteui-angular";
 // tslint:disable-next-line: max-line-length
 import { CarouselAnimationsSampleComponent } from "../../src/app/layouts/carousel/carousel-animations-sample/carousel-animations-sample.component";
 // tslint:disable-next-line: max-line-length

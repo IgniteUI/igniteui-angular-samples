@@ -37,6 +37,12 @@
         $background-color: igx-color($crm-grid-palette, "primary", 500)
     );
 
+    $crm-grid-toolbar-button: igx-button-theme(
+        $outlined-background: igx-color($crm-grid-palette, "primary", 800),
+        $outlined-hover-background: igx-color($crm-grid-palette, "primary", 900),
+        $outlined-focus-text-color: #fff
+    );
+
     $crm-grid-search-button: igx-button-theme(
         $flat-background: transparent,
         $flat-focus-background: igx-color($crm-grid-palette, "grays", 200),
@@ -143,6 +149,15 @@
 
     .igx-grid-toolbar__custom-content {
         flex: 1 0 0%;
+    }
+
+    .igx-grid-toolbar__actions {
+        @include igx-button($crm-grid-toolbar-button);
+
+        .igx-button--outlined {
+            margin-left: 0.5rem;
+            border: none;
+        }
     }
 
     .igx-input-group--search .igx-input-group__bundle {
