@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CalendarView, IgxDatePickerComponent  } from "igniteui-angular";
+import { CalendarView, IgxDatePickerComponent } from "igniteui-angular";
 
 @Component({
     selector: "app-datepicker-sample-8",
