@@ -48,7 +48,7 @@ export class GridDragSampleComponent {
     }
 
     public onDrop(args, planet: PlanetComponent) {
-        const row = args.dragData;
+        const row: any = args.dragData;
         if (this.isDropAllowed(row.rowData.name, planet.name)) {
             row.rowData.planet = planet.name;
             row.grid.selectRows([row.rowID]);

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { IGridCreatedEventArgs, IGridEditEventArgs,
-    IgxHierarchicalGridComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
+    IgxGridBaseDirective, IgxHierarchicalGridComponent, IgxToastComponent, IgxToastPosition } from "igniteui-angular";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { SINGERS } from "../data";
@@ -37,7 +37,7 @@ export class HGridEditingEventsComponent implements OnInit, OnDestroy {
 
     public formatter = (a) => a;
 
-    public handleCellEdit(event: IGridEditEventArgs, grid: any) {
+    public handleCellEdit(event: IGridEditEventArgs, grid: IgxGridBaseDirective) {
         const today = new Date();
         const column = grid.columnList.find(col => col.index === event.cellID.columnID);
         if (column.field === "Debut") {
