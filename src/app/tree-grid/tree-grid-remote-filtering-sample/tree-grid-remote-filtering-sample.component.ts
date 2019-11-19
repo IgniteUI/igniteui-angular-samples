@@ -1,7 +1,10 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxToastComponent, IgxTreeGridComponent } from "igniteui-angular";
-import { Observable } from "rxjs";
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { IgxTreeGridComponent, NoopFilteringStrategy } from "igniteui-angular";
+import { Observable, Subject } from "rxjs";
+import { debounceTime, takeUntil } from "rxjs/operators";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
+
+const DEBOUNCE_TIME = 300;
 
 @Component({
     providers: [RemoteFilteringService],
@@ -9,11 +12,12 @@ import { RemoteFilteringService } from "../services/remoteFilteringService";
     styleUrls: ["./tree-grid-remote-filtering-sample.component.scss"],
     templateUrl: "./tree-grid-remote-filtering-sample.component.html"
 })
-export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit {
-
+export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     public remoteData: Observable<any[]>;
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
-    @ViewChild("toast", { static: true }) public toast: IgxToastComponent;
+    public noopFilterStrategy = NoopFilteringStrategy.instance();
+
+    private destroy$ = new Subject<boolean>();
 
     constructor(private _remoteService: RemoteFilteringService, private _cdr: ChangeDetectorRef) {
     }
@@ -25,15 +29,27 @@ export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterView
     public ngAfterViewInit() {
         this.processData();
         this._cdr.detectChanges();
+
+        this.treeGrid.filteringExpressionsTreeChange.pipe(
+            debounceTime(DEBOUNCE_TIME),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData();
+        });
     }
 
     public processData() {
-        this.toast.show();
+        this.treeGrid.isLoading = true;
 
         const filteringExpr = this.treeGrid.filteringExpressionsTree;
 
         this._remoteService.getData(filteringExpr, () => {
-            this.toast.hide();
+            this.treeGrid.isLoading = false;
         });
+    }
+
+    public ngOnDestroy() {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 }

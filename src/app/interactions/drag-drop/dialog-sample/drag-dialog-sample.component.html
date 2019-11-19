@@ -8,7 +8,8 @@
     #toggleForm="toggle" 
     class="igx-dialog" 
     [ghost]="false" 
-    [dragTolerance]="0">
+    [dragTolerance]="0"
+    (dragMove)=onDragMove($event)>
     <igx-icon igxDragHandle fontSet="material" class="dialogHandle">drag_indicator</igx-icon>
     <div class="igx-dialog__window">
         <div class="dialogContainer">
