@@ -1,6 +1,7 @@
 <div class="grid__wrapper">
     <igx-grid #grid [data]="remoteData | async" [height]="'440px'" [width]="'100%'" [autoGenerate]='false'
-        (onDataPreLoad)="processData()" (onSortingDone)="processData()" (onFilteringDone)="processData()"
+        [filterStrategy]="noopFilterStrategy"
+        [sortStrategy]="noopSortStrategy"
         [allowFiltering]="true">
         <igx-column [field]="'ProductID'" [sortable]="true" [filterable]="false"></igx-column>
         <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
@@ -31,6 +32,4 @@
             </ng-template>
         </igx-column>
     </igx-grid>
-
-    <igx-toast #toast></igx-toast>
 </div>

@@ -860,7 +860,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridSaveStateComponent, IgxGridModule, IgxTooltipModule,
                     IgxToastModule, IgxSwitchModule, AboutComponent, Router, RouterModule, IgxGridStateDirective],
                 ngDeclarations: [GridSaveStateComponent, AboutComponent, IgxGridStateDirective],
-                ngImports: [IgxGridModule.forRoot(), IgxTooltipModule,
+                ngImports: [IgxGridModule, IgxTooltipModule,
                     // tslint:disable-next-line:max-line-length
                     "RouterModule.forRoot([\{component: AboutComponent, path: 'grid-about'},\{component: GridSaveStateComponent, path: 'grid-state'},\{ path: '', redirectTo: '/grid-state', pathMatch: 'full' }])",
                     IgxToastModule, IgxSwitchModule]
