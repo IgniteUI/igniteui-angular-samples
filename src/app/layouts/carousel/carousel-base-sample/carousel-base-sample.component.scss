@@ -5,11 +5,25 @@ $button-theme: igx-button-theme(
     $raised-background: igx-color($default-palette, "primary", 500)
 );
 
+.carousel-container{
+    width: 60%;
+    height: 100%;
+    margin: 16px auto;
+}
+
 :host ::ng-deep{
     @include igx-button($button-theme);
     .igx-carousel__inner {
         width: 100%;
         text-align: center; 
+    }
+
+    .image-container{
+        margin: 20px auto;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     span.progress-linear__value {

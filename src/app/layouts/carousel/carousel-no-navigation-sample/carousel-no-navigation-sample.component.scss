@@ -1,26 +1,27 @@
-.carousel-wrapper{
+.carousel-wrapper {
     height: 80%;
     width: 60%;
 }
 
-.list-wrapper{
+.list-wrapper {
     display: inline-flex;
     margin-left: 5px;
 }
 
-.carousel-animation-wrapper{
-    height: 100%;
+.carousel-animation-wrapper {
+    height: 750px;
     margin: 20px auto;
     display: flex;
 }
 
-:host ::ng-deep{
-    igx-list{
+:host ::ng-deep {
+    igx-list {
         height: 85%;
     }
-    .slide-wrapper{
 
-        .text-container{
+    .slide-wrapper {
+
+        .text-container {
             height: fit-content;
             margin-left: 1.5rem;
             width: 90%;
@@ -28,12 +29,14 @@
             display: flex;
             position: absolute;
             top: 10px;
-            background: rgba(255, 255 , 255 , 0.6);
+            background: rgba(255, 255, 255, 0.6);
             align-items: center;
-            .description{
+
+            .description {
                 font-size: 1.56rem;
             }
-            .price{
+
+            .price {
                 margin-left: 0.4rem;
                 font-size: 2rem;
                 color: #e41c77;
@@ -47,15 +50,23 @@
 
     .item-wrapper {
         display: flex;
-        .titles{
+
+        .titles {
             display: inline-flex;
             flex-flow: column;
             margin-left: 1rem;
             align-self: center;
         }
 
+        .list-item-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #585858cc;
+        }
+
+        &.disabled{
+            opacity: .5;
+        }
     }
-    .disabled{
-        opacity: .5;
-    }
+
 }

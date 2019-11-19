@@ -1,11 +1,9 @@
-<div style="width: 60%; height: 100%; margin: 16px auto">
+<div class="carousel-container">
     <igx-carousel #carousel [loop]="false" pause="false" indicatorsOrientation="top">
             <igx-slide  *ngFor="let slide of slides;">
-                    <div style="margin: 20px auto; height: 350px; display: flex; align-items: center; justify-content: center;">
-
+                <div class="image-container">
                     <img style="width: 80%" [src]="slide.src">
                 </div>
-
              </igx-slide>
         <igx-slide>
             <div class="form-wrapper">

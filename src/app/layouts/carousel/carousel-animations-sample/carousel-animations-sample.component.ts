@@ -31,8 +31,7 @@ export class CarouselAnimationsSampleComponent implements OnInit {
       if (this.play) {
         this.carousel.play();
       } else {
-          this.carousel.navigation = false;
-          this.carousel.stop();
+        this.carousel.stop();
       }
   }
 
