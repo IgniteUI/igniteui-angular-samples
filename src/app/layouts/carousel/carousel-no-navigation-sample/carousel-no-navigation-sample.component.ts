@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IgxCarouselComponent, IgxListComponent, ISlideEventArgs } from "igniteui-angular";
+import { IgxCarouselComponent, IgxListComponent, ISlideEventArgs, IListItemClickEventArgs } from "igniteui-angular";
 
 @Component({
   selector: "app-carousel",
@@ -17,6 +17,11 @@ export class CarouselNoNavigationSampleComponent implements OnInit {
 
   public ngOnInit() {
     this.addSlides();
+
+    this.list.onItemClicked.subscribe((args: IListItemClickEventArgs) => {
+        this.currentIndex = args.item.index;
+        this.carousel.select(this.carousel.get(this.currentIndex));
+    });
 
     this.carousel.onSlideChanged.subscribe((args: ISlideEventArgs) => {
         this.currentIndex = args.slide.index;
