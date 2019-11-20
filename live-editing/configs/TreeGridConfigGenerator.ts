@@ -646,7 +646,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule],
+                imports: [IgxTreeGridModule, TreeGridExternalExcelStyleFilteringComponent],
                 ngDeclarations: [TreeGridExternalExcelStyleFilteringComponent],
                 ngImports: [IgxTreeGridModule]
             }),
@@ -657,7 +657,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxTreeGridModule],
+                imports: [IgxTreeGridModule, TreeGridExternalAdvancedFilteringComponent],
                 ngDeclarations: [TreeGridExternalAdvancedFilteringComponent],
                 ngImports: [IgxTreeGridModule]
             }),
