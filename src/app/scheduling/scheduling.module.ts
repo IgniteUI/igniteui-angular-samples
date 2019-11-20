@@ -2,8 +2,8 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
-    IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDialogModule, IgxIconModule,
-    IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule,
+    IgxButtonModule, IgxCalendarModule, IgxCardModule, IgxDatePickerModule, IgxDateRangeModule, IgxDialogModule,
+    IgxIconModule, IgxInputGroupModule, IgxSelectModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTimePickerModule, IgxToastModule
 } from "igniteui-angular";
 import { CalendarSample1Component } from "./calendar/calendar-sample-1/calendar-sample-1.component";
@@ -26,6 +26,8 @@ import { DatepickerSample5Component } from "./datepicker/datepicker-sample-5/dat
 import { DatepickerSample6Component } from "./datepicker/datepicker-sample-6/datepicker-sample-6.component";
 import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/datepicker-sample-7.component";
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
+import { DateRangeFormatterSampleComponent } from "./daterange/date-range-formatter/daterange-formatter-sample.component";
+import { DateRangeSampleComponent } from "./daterange/simple-date-range/daterange-sample.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -61,6 +63,8 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         DatepickerSample7Component,
         DatepickerSample8Component,
         DatepickerDropdownComponent,
+        DateRangeFormatterSampleComponent,
+        DateRangeSampleComponent,
         TimePickerSample1Component,
         TimePickerSample2Component,
         TimePickerSample3Component,
@@ -83,6 +87,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         IgxCalendarModule,
         IgxCardModule,
         IgxDatePickerModule,
+        IgxDateRangeModule,
         IgxDialogModule,
         IgxIconModule,
         IgxInputGroupModule,

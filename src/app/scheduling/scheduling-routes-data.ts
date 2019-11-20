@@ -17,6 +17,8 @@ export const schedulingRoutesData = {
     "datepicker-sample-6": { displayName: "Datepicker Input Group Template", parentName: "Datepicker" },
     "datepicker-sample-7": { displayName: "Dropdown Datepicker Template", parentName: "Datepicker" },
     "datepicker-sample-8": { displayName: "Custom Action Buttons", parentName: "Datepicker" },
+    "daterange-sample": { displayName: "Simple Daterange", parentName: "Daterange" },
+    "daterange-formatter-sample": { displayName: "Daterange formatter", parentName: "Daterange" },
     "monthpicker-sample-1": { displayName: "Default Month Picker", parentName: "Monthpicker" },
     "monthpicker-sample-2": { displayName: "Month Picker with Format Options", parentName: "Monthpicker" },
     "monthpicker-sample-3": { displayName: "Localized Month Picker", parentName: "Monthpicker" },

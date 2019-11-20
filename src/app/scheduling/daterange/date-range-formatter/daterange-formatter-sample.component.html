@@ -1,0 +1,15 @@
+<div class="sample-wrapper date-range-wrapper">
+    <h4 class="sample-title">Custom Format Date Range</h4>
+    <p class="sample-description">Displaying the selected date range in custom format</p>
+    <div>
+        <igx-date-range [formatter]="formatter">
+            <igx-input-group>
+                <input #singleInput igxInput igxDateRange type="text">
+                <label igxLabel for="singleInput">Input Date</label>
+                <igx-prefix>
+                    <igx-icon>today</igx-icon>
+                </igx-prefix>
+            </igx-input-group>
+        </igx-date-range>
+    </div>
+</div>
