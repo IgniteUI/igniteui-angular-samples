@@ -10,9 +10,19 @@ import { IgxCarouselComponent } from "igniteui-angular";
 export class CarouselBaseSampleComponent implements OnInit, AfterViewInit {
   @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
 
-  public slides: any[] = [];
+  public slides = [
+      {
+        src: "assets/images/svg/carousel/Onboarding1.svg"
+      },
+      {
+        src: "assets/images/svg/carousel/Onboarding2.svg"
+      },
+      {
+        src: "assets/images/svg/carousel/Onboarding3.svg"
+      }
+  ];
+
   public loop = false;
-  public total: number;
   public current: number;
   private _prevArrow: HTMLElement;
   private _nextArrow: HTMLElement;
@@ -20,9 +30,6 @@ export class CarouselBaseSampleComponent implements OnInit, AfterViewInit {
   constructor(private router: Router) { }
 
   public ngOnInit() {
-      this.addNewSlide();
-      this.carousel.stop();
-      this.total = this.slides.length;
       this.current = this.carousel.current;
       this.carousel.onSlideChanged.subscribe((evt) => {
         this.current = evt.carousel.current + 1;
@@ -51,20 +58,6 @@ export class CarouselBaseSampleComponent implements OnInit, AfterViewInit {
   public ngAfterViewInit() {
     this._nextArrow = (document.getElementsByClassName("igx-carousel__arrow--next")[0] as HTMLElement);
     this._prevArrow = (document.getElementsByClassName("igx-carousel__arrow--prev")[0] as HTMLElement);
-  }
-
-  public addNewSlide() {
-    this.slides.push(
-      {
-        src: "assets/images/svg/carousel/Onboarding1.svg"
-      },
-      {
-        src: "assets/images/svg/carousel/Onboarding2.svg"
-      },
-      {
-        src: "assets/images/svg/carousel/Onboarding3.svg"
-      }
-    );
   }
 
   public goTo() {
