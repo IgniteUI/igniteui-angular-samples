@@ -29,9 +29,9 @@
                 </form>
                 <button igxButton="raised" type="submit" (click)="form.reset()">Sign Up</button>
             </div>
-            <ng-template igxCarouselIndicator let-slide>
-                <div [ngClass]="{'selected': slide.current === current}" class="indicator"></div>
-            </ng-template>
         </igx-slide>
+        <ng-template igxCarouselIndicator let-slide>
+            <div [ngClass]="{'selected': slide.current === current}" class="indicator"></div>
+        </ng-template>
     </igx-carousel>
 </div>
