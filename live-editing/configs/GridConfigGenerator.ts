@@ -107,6 +107,10 @@ import {
 import {
     ExcelStyleFilteringStyleComponent
 } from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent
+} from "../../src/app/grid/grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent
+} from "../../src/app/grid/grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import {
@@ -814,6 +818,26 @@ export class GridConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [ExcelStyleFilteringStyleComponent, IgxGridModule ],
                 ngDeclarations: [ExcelStyleFilteringStyleComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridExternalExcelStyleFilteringComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule ],
+                ngDeclarations: [GridExternalExcelStyleFilteringComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridExternalAdvancedFilteringComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule ],
+                ngDeclarations: [GridExternalAdvancedFilteringComponent],
                 ngImports: [IgxGridModule]
             })
         }));
