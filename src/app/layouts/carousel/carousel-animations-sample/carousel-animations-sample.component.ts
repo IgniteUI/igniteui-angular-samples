@@ -11,8 +11,6 @@ export class CarouselAnimationsSampleComponent implements OnInit {
 
   public slides: any[] = [];
   public play = true;
-  public total: number;
-  public current: number;
   public animations = ["slide", "fade", "none"];
 
   public ngOnInit() {
@@ -21,8 +19,6 @@ export class CarouselAnimationsSampleComponent implements OnInit {
     this.carousel.onCarouselPlaying.subscribe(() => this.play = true);
 
     this.addSlides();
-    this.total = this.slides.length;
-    this.current = this.carousel.current;
   }
 
   public toggleNavigation() {
@@ -33,10 +29,6 @@ export class CarouselAnimationsSampleComponent implements OnInit {
       } else {
         this.carousel.stop();
       }
-  }
-
-  public visitPage(location) {
-      window.location.href = location;
   }
 
   public addSlides() {
