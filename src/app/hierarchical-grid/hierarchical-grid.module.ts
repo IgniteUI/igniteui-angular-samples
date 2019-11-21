@@ -43,13 +43,13 @@ import { HGridMultiCellStyleComponent } from "./hierarchical-grid-multi-cell-sty
 import { HGridMultiHeaderTemplateSampleComponent } from "./hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
 import { HGridMultiHeadersStylingComponent } from "./hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
+import { HGridMultiRowDragComponent } from "./hierarchical-grid-multi-row-drag/hierarchical-grid-multi-row-drag.component";
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
 import { HGridResizeLineStylingComponent } from "./hierarchical-grid-resize-line-styling/hierarchical-grid-resize-line-styling.component";
 import { HierarchicalGridRoutingModule } from "./hierarchical-grid-routing.module";
 import { HGridRowDragBaseComponent } from "./hierarchical-grid-row-drag-base/hierarchical-row-drag-base.component";
-import { HGridMultiRowDragComponent } from "./hierarchical-grid-multi-row-drag/hierarchical-grid-multi-row-drag.component";
 import { HGridDragSampleComponent } from "./hierarchical-grid-row-drag/hierarchical-grid-row-drag.component";
 import { HGridRowEditStyleComponent } from "./hierarchical-grid-row-edit-style/hierarchical-grid-row-edit-style.component";
 import { HGridRowEditingSampleComponent } from "./hierarchical-grid-row-editing/hierarchical-grid-row-editing.component";
