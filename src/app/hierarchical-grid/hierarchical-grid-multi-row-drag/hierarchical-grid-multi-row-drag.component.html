@@ -1,6 +1,5 @@
 <div class="drop-area" igxDrop (enter)="onEnterAllowed($event)" (leave)="onLeaveAllowed($event)"
     (dropped)="onDropAllowed($event)">
-    <!-- <igx-icon>delete</igx-icon> -->
     <div>Drag a row here to delete it</div>
 </div>
 <igx-hierarchical-grid class="hgrid" [allowFiltering]='true' #grid1 [data]="localData" [primaryKey]="'id'" [rowDraggable]="true"
