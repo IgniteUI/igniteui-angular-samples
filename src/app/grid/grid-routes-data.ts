@@ -18,7 +18,8 @@ export const gridsRoutesData = {
     "grid-row-reorder": { displayName: "Grid Row Reorder", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
-    "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
+    "grid-cell-styling": { displayName: "Grid Conditional Cell Classes", parentName: "Grid" },
+    "grid-cell-cellStyling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
     "grid-filtering-sample": { displayName: "Grid Filtering", parentName: "Grid" },
     "grid-filtering-template-sample": { displayName: "Grid Filtering Template", parentName: "Grid" },
     "grid-excel-style-filtering-sample-1": { displayName: "Grid Excel Style Filtering", parentName: "Grid" },
@@ -26,6 +27,8 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
     "grid-excel-style-filtering-style": { displayName: "Grid Excel Style Filtering Styling", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
+    "grid-external-excel-style-filtering": { displayName: "Grid External Excel Style Filtering", parentName: "Grid" },
+    "grid-external-advanced-filtering": { displayName: "Grid External Advanced Filtering", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
@@ -80,5 +83,6 @@ export const gridsRoutesData = {
     "grid-advanced-filtering-style": { displayName: "Grid Advanced Filtering Style", parentName: "Grid" },
     "grid-excel-style-filtering-load-on-demand":
         { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
-    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" }
+    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" },
+    "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" }
 };

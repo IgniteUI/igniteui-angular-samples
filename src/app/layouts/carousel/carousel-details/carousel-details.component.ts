@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { IgxButtonModule, IgxSlideComponent } from "igniteui-angular";
 import { slides } from "../mock-slides";
 
 @Component({
@@ -22,6 +21,6 @@ export class CarouselDetailsViewComponent implements OnInit {
   }
 
   public goBack() {
-    this.router.navigate(["/carousel-sample-4"]);
+    this.router.navigate(["layouts/carousel-sample-4"]);
   }
 }

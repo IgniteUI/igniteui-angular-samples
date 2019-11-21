@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ViewChildren, ViewEncapsulation } from "@angular/core";
-import { Direction, IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
+import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { IgxCarouselComponent, IgxLinearProgressBarComponent } from "igniteui-angular";
 
 @Component({
   encapsulation: ViewEncapsulation.None,

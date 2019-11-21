@@ -129,7 +129,7 @@ $_black-grid-schema: extend($_dark-grid,
         )
 );
 
-$_black-grid-paginator-schema: extend($_dark-grid-pagination,
+$_black-paginator-schema: extend($_dark-pagination,
         (
             text-color:(
                 igx-color: ("secondary", 700)
@@ -184,7 +184,7 @@ $my-black-schema: extend( $dark-schema, (
         igx-button: $_black-button-schema,
         igx-button-group: $_black-button-group-schema,
         igx-grid: $_black-grid-schema,
-        igx-grid-paginator: $_black-grid-paginator-schema,
+        igx-paginator: $_black-paginator-schema,
         igx-calendar: $_black-calendar-schema,
         igx-badge: $_black-badge-schema 
     )

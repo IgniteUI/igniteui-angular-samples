@@ -43,7 +43,7 @@
         </igx-column>
         <igx-column #col field="OrderDate" width="15%" [dataType]="'date'" [hasSummary]="true">
             <ng-template igxCell let-cell="cell" let-val let-row>
-                {{val}}
+                {{ val | date: 'MMM d, yyyy' }}
             </ng-template>
             <ng-template igxHeader let-col>
                 <div class="text">{{col.field}}</div>

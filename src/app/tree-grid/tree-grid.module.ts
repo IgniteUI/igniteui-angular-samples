@@ -67,6 +67,9 @@ import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
+    TreeGridConditionalCellStyle2Component
+} from "./tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component";
+import {
     TreeGridConditionalCellStyleComponent
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import {
@@ -94,6 +97,10 @@ import {
 import {
     TreeGridExcelStyleFilteringStyleComponent
 } from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import { TreeGridExternalAdvancedFilteringComponent
+} from "./tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
+import { TreeGridExternalExcelStyleFilteringComponent
+} from "./tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -150,6 +157,7 @@ import {
 } from "./tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
+import { TreeGridStyleComponent } from "./tree-grid-style/tree-grid-style.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
 import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
@@ -234,7 +242,11 @@ import {
         TreeGridAdvancedFilteringSampleComponent,
         TreeGridAdvancedFilteringStyleComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent,
-        TreeGridConditionalRowSelectorsSampleComponent
+        TreeGridConditionalRowSelectorsSampleComponent,
+        TreeGridStyleComponent,
+        TreeGridExternalExcelStyleFilteringComponent,
+        TreeGridExternalAdvancedFilteringComponent,
+        TreeGridConditionalCellStyle2Component
     ],
     imports: [
         CommonModule,

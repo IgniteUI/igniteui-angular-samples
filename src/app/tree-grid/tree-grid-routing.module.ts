@@ -35,6 +35,9 @@ import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
+    TreeGridConditionalCellStyle2Component
+} from "./tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component";
+import {
     TreeGridConditionalCellStyleComponent
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 
@@ -57,6 +60,10 @@ import {
 import {
     TreeGridExcelStyleFilteringStyleComponent
 } from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import { TreeGridExternalAdvancedFilteringComponent
+} from "./tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
+import { TreeGridExternalExcelStyleFilteringComponent
+} from "./tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -123,6 +130,7 @@ import {
 } from "./tree-grid-selection-template-numbers/tree-grid-selection-template-numbers.component";
 import { TreeGridSortingSampleComponent } from "./tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "./tree-grid-sorting-styling/tree-grid-sorting-styling.component";
+import { TreeGridStyleComponent } from "./tree-grid-style/tree-grid-style.component";
 import { TreeGridSummarySampleComponent } from "./tree-grid-summary-sample/tree-grid-summary-sample.component";
 import { TreeGridSummaryStylingComponent } from "./tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "./tree-grid-summary2-sample/tree-grid-summary2-sample.component";
@@ -283,6 +291,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridExcelStyleFilteringStyleComponent,
         data: treeGridRoutesData["treegrid-excel-style-filtering-style"],
         path: "treegrid-excel-style-filtering-style"
+    },
+    {
+        component: TreeGridExternalExcelStyleFilteringComponent,
+        data: treeGridRoutesData["tree-grid-external-excel-style-filtering"],
+        path: "tree-grid-external-excel-style-filtering"
+    },
+    {
+        component: TreeGridExternalAdvancedFilteringComponent,
+        data: treeGridRoutesData["tree-grid-external-advanced-filtering"],
+        path: "tree-grid-external-advanced-filtering"
     },
     {
         component: TreeGridExcelStyleFilteringLoadOnDemandComponent,
@@ -453,6 +471,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridConditionalRowSelectorsSampleComponent,
         data: treeGridRoutesData["treegrid-conditional-row-selectors"],
         path: "treegrid-conditional-row-selectors"
+    },
+    {
+        component: TreeGridStyleComponent,
+        data: treeGridRoutesData["treegrid-style"],
+        path: "treegrid-style"
+    },
+    {
+        component: TreeGridConditionalCellStyle2Component,
+        data: treeGridRoutesData["tree-grid-cell-cellStyling"],
+        path: "tree-grid-cell-cellStyling"
     }
 ];
 
