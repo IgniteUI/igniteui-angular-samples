@@ -67,6 +67,9 @@ import {
     TreeGridColumnResizingSampleComponent
 } from "./tree-grid-column-resizing-sample/tree-grid-column-resizing-sample.component";
 import {
+    TreeGridConditionalCellStyle2Component
+} from "./tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component";
+import {
     TreeGridConditionalCellStyleComponent
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 import {
@@ -94,6 +97,10 @@ import {
 import {
     TreeGridExcelStyleFilteringStyleComponent
 } from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import { TreeGridExternalAdvancedFilteringComponent
+} from "./tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
+import { TreeGridExternalExcelStyleFilteringComponent
+} from "./tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -236,7 +243,10 @@ import {
         TreeGridAdvancedFilteringStyleComponent,
         TreeGridExcelStyleFilteringLoadOnDemandComponent,
         TreeGridConditionalRowSelectorsSampleComponent,
-        TreeGridStyleComponent
+        TreeGridStyleComponent,
+        TreeGridExternalExcelStyleFilteringComponent,
+        TreeGridExternalAdvancedFilteringComponent,
+        TreeGridConditionalCellStyle2Component
     ],
     imports: [
         CommonModule,

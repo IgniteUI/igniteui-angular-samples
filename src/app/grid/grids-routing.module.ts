@@ -8,6 +8,7 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
+import { GridConditionalCellStyle2Component } from "./grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
@@ -20,6 +21,8 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -186,6 +189,11 @@ export const gridsRoutes: Routes = [
         path: "grid-cell-styling"
     },
     {
+        component: GridConditionalCellStyle2Component,
+        data: gridsRoutesData["grid-cell-cellStyling"],
+        path: "grid-cell-cellStyling"
+    },
+    {
         component: FilteringSampleComponent,
         data: gridsRoutesData["grid-filtering-sample"],
         path: "grid-filtering-sample"
@@ -214,6 +222,16 @@ export const gridsRoutes: Routes = [
         component: ExcelStyleFilteringStyleComponent,
         data: gridsRoutesData["grid-excel-style-filtering-style"],
         path: "grid-excel-style-filtering-style"
+    },
+    {
+        component: GridExternalExcelStyleFilteringComponent,
+        data: gridsRoutesData["grid-external-excel-style-filtering"],
+        path: "grid-external-excel-style-filtering"
+    },
+    {
+        component: GridExternalAdvancedFilteringComponent,
+        data: gridsRoutesData["grid-external-advanced-filtering"],
+        path: "grid-external-advanced-filtering"
     },
     {
         component: GridCustomFilteringComponent,
