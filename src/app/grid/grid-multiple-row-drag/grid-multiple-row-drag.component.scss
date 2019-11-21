@@ -19,14 +19,11 @@ igx-grid {
     text-align: center;
     height: 100%;
 }
-::ng-deep {
-    .allow-drop {
-        background-color: #dd75b1 !important;
-        //opacity: 1;
-        z-index: 1;
-    }
-    
+
+.allow-drop {
+    z-index: 1;
 }
+    
 igx-icon{
     margin-top: 10px;
 }

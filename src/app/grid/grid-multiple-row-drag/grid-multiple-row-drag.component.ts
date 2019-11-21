@@ -1,12 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxGridComponent } from "igniteui-angular";
 import { DATA } from "../../data/customers";
-
-enum DragIcon {
-    DEFAULT = "drag_indicator",
-    ALLOW = "add"
-}
-
 @Component({
     selector: "grid-multiple-row-drag",
     styleUrls: ["./grid-multiple-row-drag.component.scss"],
@@ -15,7 +9,8 @@ enum DragIcon {
 export class GridMultipleRowDragComponent  {
     public data1: any[];
     public data2: any[];
-    public icon = DragIcon.DEFAULT;
+    public icon = "drag_indicator";
+    public secondIcon = "arrow_right_alt";
     @ViewChild("sourceGrid", { read: IgxGridComponent, static: true })
     public sourceGrid: IgxGridComponent;
     @ViewChild("targetGrid", { read: IgxGridComponent, static: true })
@@ -48,10 +43,21 @@ export class GridMultipleRowDragComponent  {
     }
 
     public onEnter(args) {
-        this.icon = DragIcon.ALLOW;
+        this.secondIcon = "add";
     }
-
+    public onRowDragStart(args) {
+        let count = this.sourceGrid.selectedRows().length;
+        if (count === 0) {
+            count = 1;
+        }
+        if (count > 9) {
+            this.icon = `filter_9_plus`;
+        } else {
+            this.icon = `filter_${count}`;
+        }
+    }
     public onLeave(args) {
-        this.icon = DragIcon.DEFAULT;
+        this.onRowDragStart(args);
+        this.secondIcon = "arrow_right_alt";
     }
 }
