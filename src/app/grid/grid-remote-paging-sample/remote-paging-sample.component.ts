@@ -19,6 +19,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     public pages = [];
     public title = "gridPaging";
     public data: Observable<any[]>;
+    public selectOptions = [5, 10, 15, 25, 50, 100, 500];
 
     @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild("secCustomPager", { read: TemplateRef, static: true }) public secondPagerTemplate: TemplateRef<any>;
@@ -38,7 +39,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
 
     public set perPage(val: number) {
         this._perPage = val;
-        this.paginate(0, true);
+        this.paginate(0);
     }
 
     public get shouldShowLastPage() {
@@ -68,9 +69,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
 
     public ngAfterViewInit() {
         this.grid1.isLoading = true;
-
         this.remoteService.getData(0, this.perPage);
-        this.grid1.paginationTemplate = this.remotePager;
     }
 
     public nextPage() {
@@ -101,13 +100,10 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
         }
     }
 
-    public paginate(page: number, recalc: true) {
+    public paginate(page: number) {
         this.page = page;
         const skip = this.page * this.perPage;
         const top = this.perPage;
-        if (recalc) {
-            this.totalPages = Math.ceil(this.totalCount / this.perPage);
-        }
         if (this.grid1.paginationTemplate === this.secondPagerTemplate) {
             this.setNumberOfPagingItems(this.page, this.totalPages);
         }
