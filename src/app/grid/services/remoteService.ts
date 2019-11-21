@@ -22,10 +22,22 @@ export class RemoteServiceVirt {
         this.data = this._data.asObservable();
     }
 
-    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean, cb?: (any) => void): any {
+    public hasItemsInCache(virtualizationArgs?: IForOfState) {
         const startIndex = virtualizationArgs.startIndex;
         const endIndex = virtualizationArgs.chunkSize + startIndex;
         let areAllItemsInCache = true;
+        for (let i = startIndex; i < endIndex; i++) {
+            if (this._cachedData[i] === null) {
+                areAllItemsInCache = false;
+                break;
+            }
+        }
+        return areAllItemsInCache;
+    }
+
+    public getData(virtualizationArgs?: IForOfState, sortingArgs?: any, resetData?: boolean, cb?: (any) => void): any {
+        const startIndex = virtualizationArgs.startIndex;
+        const endIndex = virtualizationArgs.chunkSize + startIndex;
 
         if (resetData) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
@@ -39,14 +51,7 @@ export class RemoteServiceVirt {
             return;
         }
 
-        for (let i = startIndex; i < endIndex; i++) {
-            if (this._cachedData[i] === null) {
-                areAllItemsInCache = false;
-                break;
-            }
-        }
-
-        if (!areAllItemsInCache) {
+        if (!this.hasItemsInCache(virtualizationArgs)) {
             this._http.get(this._buildDataUrl(virtualizationArgs, sortingArgs)).subscribe((data: any) => {
                 this._updateData(data, startIndex);
                 if (cb) {
