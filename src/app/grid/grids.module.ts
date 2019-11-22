@@ -49,6 +49,7 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
+import { GridConditionalCellStyle2Component } from "./grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridConditionalRowSelectorsComponent } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/contextmenu.component";
@@ -67,6 +68,8 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -132,6 +135,7 @@ import { DataService } from "./services/data.service";
         GridBatchEditingSampleComponent,
         GridColumnHidingSampleComponent,
         GridColumnHidingToolbarSampleComponent,
+        GridConditionalCellStyle2Component,
         GridConditionalCellStyleComponent,
         GridCustomFilteringComponent,
         GridDisplayDensitySampleComponent,
@@ -203,6 +207,7 @@ import { DataService } from "./services/data.service";
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
         GridExcelStyleFilteringLoadOnDemandComponent,
+        GridExternalExcelStyleFilteringComponent,
         GridCustomSummariesSelection,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
@@ -215,7 +220,8 @@ import { DataService } from "./services/data.service";
         ContextMenuComponent,
         GridMultipleRowDragComponent,
         ChartHostDirective,
-        ChartArgsPipe
+        ChartArgsPipe,
+        GridExternalAdvancedFilteringComponent
     ],
     imports: [
         CommonModule,
