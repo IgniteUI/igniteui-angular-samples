@@ -14,8 +14,8 @@
         <igx-column field="createdOn" header="Created On"></igx-column>
         <igx-column field="createdBy" header="Created By"></igx-column>
         <ng-template let-data igxRowDragGhost>
-            <div class = "allow-drop"> 
-                <igx-icon fontSet="material">{{secondIcon}}{{icon}}</igx-icon> 
+            <div class="allow-drop"> 
+                <igx-icon fontSet="material">{{dragIcon}}{{countIcon}}</igx-icon> 
             </div>
         </ng-template>
         <igx-row-island [rowDraggable]="true" [primaryKey]="'id'" igxDrop [key]="'files'" [rowSelection]="selectionMode"
@@ -25,15 +25,15 @@
             <igx-column field="size" header="Size" dataType="number" hasSummary='true'></igx-column>
             <igx-column field="createdBy" header="createdBy"></igx-column>
             <ng-template let-data igxRowDragGhost>
-                <div class = "allow-drop"> 
-                    <igx-icon fontSet="material">{{secondIcon}}{{icon}}</igx-icon> 
+                <div class="allow-drop"> 
+                    <igx-icon fontSet="material">{{dragIcon}}{{countIcon}}</igx-icon> 
                 </div>
             </ng-template>
         </igx-row-island>
     </igx-row-island>
     <ng-template let-data igxRowDragGhost>
-        <div class = "allow-drop"> 
-            <igx-icon fontSet="material">{{secondIcon}}{{icon}}</igx-icon> 
+        <div class="allow-drop"> 
+            <igx-icon fontSet="material">{{dragIcon}}{{countIcon}}</igx-icon> 
         </div>
     </ng-template>
 </igx-hierarchical-grid>

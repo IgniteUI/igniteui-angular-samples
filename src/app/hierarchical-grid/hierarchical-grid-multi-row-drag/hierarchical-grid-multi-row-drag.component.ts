@@ -16,8 +16,8 @@ export class HGridMultiRowDragComponent {
     public ids;
     public grid;
     public selected = false;
-    public icon = "drag_indicator";
-    public secondIcon = "keyboard_backspace";
+    public countIcon = "drag_indicator";
+    public dragIcon = "keyboard_backspace";
     constructor() {
         this.localData = createData(3, 12, 8);
     }
@@ -53,23 +53,19 @@ export class HGridMultiRowDragComponent {
 
     public onRowDragStart(args) {
         if (this.selected === false) {
-            this.icon = `filter_1`;
+            this.countIcon = `filter_1`;
         } else {
             const count = this.ids.length;
-            if (count > 9) {
-                this.icon = `filter_9_plus`;
-            } else {
-                this.icon = `filter_${count}`;
-            }
+            this.countIcon = `filter_${count > 9 ? "9_plus" : `${count}`}`;
         }
     }
 
     public onLeaveAllowed(args) {
         this.onRowDragStart(args);
-        this.secondIcon = "keyboard_backspace";
+        this.dragIcon = "keyboard_backspace";
     }
 
     public onEnterAllowed(args) {
-        this.secondIcon = "remove";
+        this.dragIcon = "remove";
     }
 }
