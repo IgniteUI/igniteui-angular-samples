@@ -1,22 +1,11 @@
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
 $theme: igx-carousel-theme(
-    $slide-background: rgba( 0, 0, 0, .20)
+    $slide-background: #333
 );
 
 :host ::ng-deep{
     @include igx-carousel($theme);
-    .igx-slide{
-        visibility: hidden;
-    }
-
-    .igx-slide--previous{
-        visibility: visible;
-    }
-
-    .igx-slide--current{
-        visibility: visible;
-    }
 }
 
 .slide-wrapper{
