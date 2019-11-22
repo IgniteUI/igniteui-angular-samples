@@ -39,6 +39,19 @@
     .description {
         font-size: 1.75rem;
     }
+        
+    .titles {
+        display: inline-flex;
+        flex-flow: column;
+        margin-left: 1rem;
+        align-self: center;
+
+        .subTitle{
+            font-size: 1rem;
+            font-weight: 600;
+            color: #585858cc;
+        }
+    }
 
     .price {
         padding-left: .5rem;
