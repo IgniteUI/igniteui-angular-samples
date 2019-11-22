@@ -6,6 +6,7 @@
 .list-wrapper {
     display: inline-flex;
     margin-left: 5px;
+    padding: 0;
 }
 
 .carousel-animation-wrapper {
@@ -19,7 +20,7 @@
         height: 85%;
     }
 
-    .slide-wrapper {
+    .slides-wrapper {
 
         .text-container {
             height: fit-content;
@@ -42,10 +43,6 @@
                 color: #e41c77;
             }
         }
-    }
-
-    .igx-list__item-content {
-        padding: 0;
     }
 
     .item-wrapper {
