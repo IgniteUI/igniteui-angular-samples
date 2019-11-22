@@ -9,8 +9,8 @@ import { DATA } from "../../data/customers";
 export class GridMultipleRowDragComponent  {
     public data1: any[];
     public data2: any[];
-    public icon = "drag_indicator";
-    public secondIcon = "arrow_right_alt";
+    public countIcon = "drag_indicator";
+    public dragIcon = "arrow_right_alt";
     @ViewChild("sourceGrid", { read: IgxGridComponent, static: true })
     public sourceGrid: IgxGridComponent;
     @ViewChild("targetGrid", { read: IgxGridComponent, static: true })
@@ -43,21 +43,14 @@ export class GridMultipleRowDragComponent  {
     }
 
     public onEnter(args) {
-        this.secondIcon = "add";
+        this.dragIcon = "add";
     }
     public onRowDragStart(args) {
-        let count = this.sourceGrid.selectedRows().length;
-        if (count === 0) {
-            count = 1;
-        }
-        if (count > 9) {
-            this.icon = `filter_9_plus`;
-        } else {
-            this.icon = `filter_${count}`;
-        }
+        const count = this.sourceGrid.selectedRows().length || 1;
+        this.countIcon = `filter_${count > 9 ? "9_plus" : `${count}`}`;
     }
     public onLeave(args) {
         this.onRowDragStart(args);
-        this.secondIcon = "arrow_right_alt";
+        this.dragIcon = "arrow_right_alt";
     }
 }
