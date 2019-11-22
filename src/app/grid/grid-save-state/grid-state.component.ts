@@ -1,9 +1,27 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
-import { FilteringExpressionsTree, FilteringLogic, IGridState, IGroupingExpression, IgxGridComponent
-    , IgxGridStateDirective, IPagingState, ISortingExpression } from "igniteui-angular";
+import { FilteringExpressionsTree, FilteringLogic, IGridState, IGroupingExpression, IgxGridComponent,
+    IgxGridStateDirective, IgxNumberSummaryOperand, IgxSummaryResult, IPagingState,
+    ISortingExpression } from "igniteui-angular";
 import { take } from "rxjs/operators";
 import { employeesData } from "./localData";
+
+class MySummary extends IgxNumberSummaryOperand {
+
+    constructor() {
+        super();
+    }
+
+    public operate(data?: any[]): IgxSummaryResult[] {
+        const result = super.operate(data);
+        result.push({
+            key: "test",
+            label: "Test",
+            summaryResult: data.filter(rec => rec > 10 && rec < 30).length
+        });
+        return result;
+    }
+  }
 
 // tslint:disable:object-literal-sort-keys
 @Component({
@@ -39,7 +57,7 @@ export class GridSaveStateComponent implements OnInit {
       { field: "FirstName", header: "First Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
       { field: "LastName", header: "Last Name", width: "150px", dataType: "string", pinned: true, movable: true, sortable: true, filterable: true},
       { field: "Country", header: "Country", width: "140px", dataType: "string", groupable: true, movable: true, sortable: true, filterable: true, resizable: true },
-      { field: "Age", header: "Age", width: "110px", dataType: "number", movable: true, sortable: true, filterable: true, hasSummary: true, resizable: true},
+      { field: "Age", header: "Age", width: "110px", dataType: "number", movable: true, sortable: true, filterable: true, hasSummary: true, resizable: true, summaries: MySummary},
       { field: "RegistererDate", header: "Registerer Date", width: "180px", dataType: "date", movable: true, sortable: true, filterable: true, resizable: true },
       { field: "IsActive", header: "Is Active", width: "140px", dataType: "boolean", groupable: true, movable: true, sortable: true, filterable: true }
       // tslint:enable:max-line-length

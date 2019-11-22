@@ -7,9 +7,9 @@
             </ul>
         </div>
         <div class="switches">
-            <div class="control-item">
+            <!-- <div class="control-item">
                 <igx-switch [(ngModel)]="options.rowSelection" (change)="onChange($event, 'rowSelection')">Row Selection</igx-switch>
-            </div>
+            </div> -->
             <div class="control-item">
                 <igx-switch [(ngModel)]="options.cellSelection" (change)="onChange($event, 'cellSelection')">Cell Selection</igx-switch>
             </div>
@@ -57,9 +57,9 @@
             <div class="control-item">
                 <button igxButton="raised" (click)="restoreGroupby()">GroupBy</button>
             </div>
-            <div class="control-item">
+            <!-- <div class="control-item">
                 <button igxButton="raised" (click)="restoreRowSelection()">Row Selection</button>
-            </div>
+            </div> -->
             <div class="control-item">
                 <button igxButton="raised" (click)="restoreCellSelection()">Cell Selection</button>
             </div>
@@ -79,7 +79,7 @@
     </div>
 
     <igx-grid [id]="gridId" #grid1 [igxGridState]="options"
-        width="1300px" height="550px" [autoGenerate]="false"
+        width="1100px" height="550px" [autoGenerate]="false"
         [data]="localData"
         [primaryKey]="'EmployeeID'" 
         [rowEditable]="false"
