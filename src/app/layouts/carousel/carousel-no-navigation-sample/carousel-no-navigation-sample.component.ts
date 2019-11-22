@@ -7,7 +7,9 @@ import { IgxCarouselComponent, IgxListComponent, IListItemClickEventArgs, ISlide
   templateUrl: "./carousel-no-navigation-sample.component.html"
 })
 export class CarouselNoNavigationSampleComponent implements OnInit {
-  @ViewChild(IgxCarouselComponent, { static: true }) public carousel: IgxCarouselComponent;
+  @ViewChild(IgxCarouselComponent, { static: true })
+  public carousel: IgxCarouselComponent;
+
   @ViewChild(IgxListComponent, {static: true})
   public list: IgxListComponent;
 
