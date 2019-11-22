@@ -39,7 +39,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
 
     public set perPage(val: number) {
         this._perPage = val;
-        this.paginate(0);
+        this.paginate(0, true);
     }
 
     public get shouldShowLastPage() {
@@ -100,10 +100,13 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
         }
     }
 
-    public paginate(page: number) {
+    public paginate(page: number, recalc = false) {
         this.page = page;
         const skip = this.page * this.perPage;
         const top = this.perPage;
+        if (recalc) {
+            this.totalPages = Math.ceil(this.totalCount / this.perPage);
+        }
         if (this.grid1.paginationTemplate === this.secondPagerTemplate) {
             this.setNumberOfPagingItems(this.page, this.totalPages);
         }
@@ -138,9 +141,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
         if (this.pages.length === 0) {
             const lastPage = (currentPage + this.visibleElements) <= totalPages ?
                 currentPage + this.visibleElements : totalPages;
-            const firstPage = currentPage < totalPages - this.visibleElements ?
-                currentPage : totalPages - this.visibleElements;
-            for (let item = firstPage; item < lastPage; item++) {
+            for (let item = 0; item < lastPage; item++) {
                 this.pages.push(item);
             }
             return;
@@ -150,18 +151,21 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
             let firstPage = currentPage - 1 < 0 ? 0 : currentPage - 1;
             firstPage = firstPage > totalPages - this.visibleElements ?
                 totalPages - this.visibleElements : firstPage;
+            firstPage = firstPage >= 0 ? firstPage : 0;
             const lastPage = (firstPage + this.visibleElements) <= totalPages ?
                 firstPage + this.visibleElements : totalPages;
             for (let item = firstPage; item < lastPage; item++) {
                 this.pages.push(item);
             }
+
         } else if (currentPage >= this.pages[this.pages.length - 1]) {
             this.pages = [];
-            const firtsPage = currentPage > totalPages - this.visibleElements ?
+            let firstPage = currentPage > totalPages - this.visibleElements ?
                 totalPages - this.visibleElements : currentPage - 1;
-            const lastPage = (firtsPage + this.visibleElements) <= totalPages ?
-                firtsPage + this.visibleElements : totalPages - 1;
-            for (let item = firtsPage; item < lastPage; item++) {
+            firstPage = firstPage >= 0 ? firstPage : 0;
+            const lastPage = (firstPage + this.visibleElements) <= totalPages ?
+            firstPage + this.visibleElements : totalPages;
+            for (let item = firstPage; item < lastPage; item++) {
                 this.pages.push(item);
             }
         }
