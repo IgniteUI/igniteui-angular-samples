@@ -10,25 +10,10 @@ export class CarouselAnimationsSampleComponent implements OnInit {
   @ViewChild("carousel", { static: true }) public carousel: IgxCarouselComponent;
 
   public slides: any[] = [];
-  public play = true;
   public animations = ["slide", "fade", "none"];
 
   public ngOnInit() {
-
-    this.carousel.onCarouselPaused.subscribe(() => this.play = false);
-    this.carousel.onCarouselPlaying.subscribe(() => this.play = true);
-
     this.addSlides();
-  }
-
-  public toggleNavigation() {
-      this.play = !this.play;
-
-      if (this.play) {
-        this.carousel.play();
-      } else {
-        this.carousel.stop();
-      }
   }
 
   public addSlides() {

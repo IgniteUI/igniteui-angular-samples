@@ -1,29 +1,40 @@
-:host ::ng-deep{
-    .igx-carousel__inner {
-        width: 100%;
-        text-align: center; 
-    }
-    
-    igx-carousel igx-icon.igx-icon{
-        color: #e41c77;
-    }
-    
-    .slide-wrapper{
+@import '~igniteui-angular/lib/core/styles/themes/index';
 
-        width: 80%;
-        margin: 10px auto;
-        img {
-            width:80%;
-            height: 80%; 
-        }
+$theme: igx-carousel-theme(
+    $slide-background: rgba( 0, 0, 0, .20)
+);
+
+:host ::ng-deep{
+    @include igx-carousel($theme);
+    .igx-slide{
+        visibility: hidden;
     }
-    
-    .igx-slide img{
-        object-fit: fill;
+
+    .igx-slide--previous{
+        visibility: visible;
+    }
+
+    .igx-slide--current{
+        visibility: visible;
+    }
+}
+
+.slide-wrapper{
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+
+    img {
+        width: 100%;
+        object-fit: contain;
     }
 }
 
 .carousel-wrapper{
+    max-height: 600px;
     height: 100%;
     width: 90%;
     margin: 20px auto;
@@ -39,7 +50,7 @@
 }
 
 .carousel-animation-wrapper{
-    height: 100%;
+    height: 700px;
     margin: 16px auto;
     display: flex;
     flex-flow:column;

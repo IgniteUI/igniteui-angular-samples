@@ -13,10 +13,6 @@ $button-theme: igx-button-theme(
 
 :host ::ng-deep{
     @include igx-button($button-theme);
-    .igx-carousel__inner {
-        width: 100%;
-        text-align: center; 
-    }
 
     .image-container{
         margin: 20px auto;
@@ -24,13 +20,6 @@ $button-theme: igx-button-theme(
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    span.progress-linear__value {
-        display: none;
-    }
-    ul.igx-carousel__indicators {
-        display: none;
     }
 
     .indicator{
@@ -46,10 +35,6 @@ $button-theme: igx-button-theme(
     [aria-selected=true] .indicator{
         background: igx-color($default-palette, "primary", 500);
         border: none
-    }
-
-    .igx-carousel-indicators--top{
-        margin-top: 0;
     }
 
     .icon {

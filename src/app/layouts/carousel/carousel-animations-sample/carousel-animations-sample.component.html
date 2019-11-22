@@ -1,6 +1,5 @@
 <div class="carousel-animation-wrapper">
     <div class="action-wrapper">
-        <button igxButton="raised" (click)=toggleNavigation()>{{play ? 'Pause': 'Play'}}</button>
         <span style="margin: 0 5px 0 10px">Current animation: </span>
         <span style="max-width: 100px;">
             <igx-select #select [(ngModel)]="carousel.animationType">
@@ -11,7 +10,7 @@
         </span>
     </div>
     <div class="carousel-wrapper">
-        <igx-carousel #carousel [navigation]="false" [interval]="1500">
+        <igx-carousel #carousel >
             <igx-slide *ngFor="let slide of slides;">
                 <div class="slide-wrapper">
                     <igx-card>
