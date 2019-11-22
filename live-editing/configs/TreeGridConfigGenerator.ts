@@ -45,10 +45,16 @@ import { TreeGridConditionalCellStyleComponent } from "../../src/app/tree-grid/t
 import {
     TreeGridConditionalRowSelectorsSampleComponent
 } from "../../src/app/tree-grid/tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
+// tslint:disable-next-line: ordered-imports
+import {
+    TreeGridConditionalCellStyle2Component
+} from "../../src/app/tree-grid/tree-grid-conditional-cell-style-2/tree-grid-conditional-cell-style-2.component";
 import { TreeGridDisplaydensitySampleComponent } from "../../src/app/tree-grid/tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingEventsComponent } from "../../src/app/tree-grid/tree-grid-editing-events/tree-grid-editing-events.component";
 import { TreeGridEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEditingStyleComponent } from "../../src/app/tree-grid/tree-grid-editing-style/tree-grid-editing-sample.component";
+import { TreeGridExternalAdvancedFilteringComponent } from "../../src/app/tree-grid/tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
+import { TreeGridExternalExcelStyleFilteringComponent } from "../../src/app/tree-grid/tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import { RemoteValuesService } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import { TreeGridExcelStyleFilteringLoadOnDemandComponent } from "../../src/app/tree-grid/tree-grid-excel-style-filtering-load-on-demand/tree-grid-excel-style-filtering-load-on-demand.component";
 import {
@@ -638,6 +644,28 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/tree-grid/"
         }));
 
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExternalExcelStyleFilteringComponent],
+                ngDeclarations: [TreeGridExternalExcelStyleFilteringComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridExternalExcelStyleFilteringComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridExternalAdvancedFilteringComponent],
+                ngDeclarations: [TreeGridExternalAdvancedFilteringComponent],
+                ngImports: [IgxTreeGridModule]
+            }),
+            component: TreeGridExternalAdvancedFilteringComponent,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
         // TreeGrid Remote Filtering sample
         configs.push(new Config({
             additionalFiles: ["/src/app/tree-grid/data/employees-flat.ts", "/src/app/tree-grid/services/remoteFilteringService.ts"],
@@ -877,6 +905,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             }),
             component: TreeGridStyleComponent,
             shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // TreeGrid cellStyles
+        configs.push(new Config({
+            component: TreeGridConditionalCellStyle2Component,
+            additionalFiles: ["/src/app/tree-grid/data/foods.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridConditionalCellStyle2Component],
+                ngDeclarations: [TreeGridConditionalCellStyle2Component],
+                ngImports: [IgxTreeGridModule]
+            })
         }));
 
         return configs;

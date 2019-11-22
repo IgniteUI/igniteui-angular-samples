@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { Direction, IgxCarouselComponent, IgxCarouselModule,
+import { IgxCarouselComponent, IgxCarouselModule,
     IgxLinearProgressBarComponent, IgxProgressBarModule, IgxSliderModule } from "igniteui-angular";
 import { CarouselSample1Component } from "../../src/app/layouts/carousel/carousel-sample-1/carousel-sample-1.component";
 import { CarouselSample2Component } from "../../src/app/layouts/carousel/carousel-sample-2/carousel-sample-2.component";
@@ -36,7 +36,7 @@ export class CarouselConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CarouselSample2Component,
             appModuleConfig: new AppModuleConfig({
-                imports: ["Direction", IgxCarouselComponent, IgxCarouselModule,
+                imports: [IgxCarouselComponent, IgxCarouselModule,
                     IgxSliderModule, CarouselSample2Component],
                 ngDeclarations: [CarouselSample2Component],
                 ngImports: [IgxCarouselModule, IgxSliderModule]
@@ -47,7 +47,7 @@ export class CarouselConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CarouselSample3Component,
             appModuleConfig: new AppModuleConfig({
-                imports: ["Direction", IgxCarouselComponent, IgxCarouselModule,
+                imports: [IgxCarouselComponent, IgxCarouselModule,
                     IgxLinearProgressBarComponent, IgxProgressBarModule,
                     IgxSliderModule, CarouselSample3Component],
                 ngDeclarations: [CarouselSample3Component],
@@ -67,7 +67,7 @@ export class CarouselConfigGenerator implements IConfigGenerator {
 //          "/carousel/carousel-details/carousel-details.component.html", "/carousel/mock-slides.ts"],
 //      appModuleConfig: {
 //        imports: [
-//          { import: "Direction, IgxButtonModule, IgxCarouselComponent, IgxCarouselModule,
+//          { import: IgxButtonModule, IgxCarouselComponent, IgxCarouselModule,
 //              IgxLinearProgressBarComponent, IgxProgressBarModule,
 //              IgxRippleModule, IgxSliderModule", from: "igniteui-angular" },
 //          { import: "CarouselDetailsViewComponent", from: "./carousel/carousel-details/carousel-details.component"},

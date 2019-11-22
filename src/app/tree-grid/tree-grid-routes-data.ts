@@ -7,7 +7,7 @@ export const treeGridRoutesData = {
     "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
     "treegrid-primaryforeignkey": { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
-    "treegrid-row-edit-style": { displayName: "TreeGrid Row Edit Style", parentName: "TreeGrid"},
+    "treegrid-row-edit-style": { displayName: "TreeGrid Row Edit Style", parentName: "TreeGrid" },
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },
     "treegrid-employees": { displayName: "TreeGrid Employees", parentName: "TreeGrid" },
     "treegrid-search": { displayName: "TreeGrid Search", parentName: "TreeGrid" },
@@ -46,6 +46,10 @@ export const treeGridRoutesData = {
     },
     "treegrid-excel-style-filtering-load-on-demand":
         { displayName: "TreeGrid Excel Style Filtering Load On Demand", parentName: "TreeGrid" },
+    "tree-grid-external-excel-style-filtering":
+        { displayName: "TreeGrid External Excel Style Filtering", parentName: "TreeGrid" },
+    "tree-grid-external-advanced-filtering":
+        { displayName: "TreeGrid External Advanced Filtering", parentName: "TreeGrid" },
     "treegrid-filtering-custom": { displayName: "TreeGrid Custom Filtering", parentName: "TreeGrid" },
     "treegrid-multi-column-header-template": {
         displayName: "TreeGrid Multi Column Header Template",
@@ -87,5 +91,6 @@ export const treeGridRoutesData = {
     "treegrid-advanced-filtering-style": { displayName: "TreeGrid Advanced Filtering Style", parentName: "TreeGrid" },
     "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" },
     "treegrid-conditional-row-selectors": { displayName: "TreeGrid Conditional Row Selectors", parentName: "TreeGrid" },
-    "treegrid-style": { displayName: "TreeGrid Style", parentName: "TreeGrid" }
+    "treegrid-style": { displayName: "TreeGrid Style", parentName: "TreeGrid" },
+    "tree-grid-cell-cellStyling": { displayName: "TreeGrid Conditional Cell Styling", parentName: "TreeGrid" }
 };
