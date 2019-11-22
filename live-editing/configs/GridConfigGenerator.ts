@@ -17,6 +17,7 @@ import {
     IgxExpansionPanelModule,
     IgxFocusModule,
     IgxGridModule,
+    IgxGridStateDirective,
     IgxIconModule,
     IgxInputGroupModule,
     IgxProgressBarModule,
@@ -184,7 +185,6 @@ import {
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "../../src/app/grid/grid-save-state/about.component";
 import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
-import { IgxGridStateDirective } from "../../src/app/grid/grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { SortingStylingComponent } from "../../src/app/grid/grid-sorting-styling/grid-sorting-styling.component";
