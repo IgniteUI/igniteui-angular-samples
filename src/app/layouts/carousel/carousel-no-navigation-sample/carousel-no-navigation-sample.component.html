@@ -2,13 +2,12 @@
     <div class="carousel-wrapper">
         <igx-carousel [navigation]="false" [pause]="false" animationType="fade" [interval]="2000">
             <div class="slides-wrapper">
-                <igx-slide *ngFor="let slide of slides">
-                            <img src="{{slide.image}}.png" >
-                        <div class="text-container">
-                                <span class="description">
-                                        {{slide.description}}
-                                </span>
-                                <span class="price">{{slide.price | currency: 'USD': 'symbol': '3.0'}}</span>
+                <igx-slide #slide *ngFor="let item of slides">
+                        <div style="height: 100%" [ngStyle]="slideStyle(item.image)">
+                            <section class="promo-price" [ngClass]="{'animated': slide.active}">
+                                <div class="description">{{ item.description }}</div>
+                                <div class="price">{{ item.price | currency: 'USD': 'symbol': '3.0' }}</div>
+                            </section>
                         </div>
                     </igx-slide>
             </div>
@@ -16,16 +15,14 @@
         </igx-carousel>
     </div>
     <div class="list-wrapper">
-            <igx-list>
-                    <igx-list-item *ngFor="let item of slides; let i=index">
-                        <div class="item-wrapper" [ngClass]="{'disabled': i !== currentIndex}">
-                            <span class="image"><img  src="{{item.image}}Thumb.png" ></span>
-                            <span class="titles">
-                                <h6>{{item.title}}</h6>
-                                <span class="list-item-text">{{item.subTitle}}</span>
-                            </span>    
-                        </div>
-                    </igx-list-item>
-            </igx-list>
+        <igx-list displayDensity="compact">
+            <igx-list-item *ngFor="let item of slides; let i=index" [ngClass]="{'disabled': i !== currentIndex }" >
+                <img igxListThumbnail src="{{item.thumb}}" />
+                <span igxListLine>
+                    <h6 igxListLineTitle>{{item.title}}</h6>
+                    <span igxListLineSubTitle>{{item.subTitle}}</span>
+                </span>    
+            </igx-list-item>
+        </igx-list>
     </div>
 </div>
