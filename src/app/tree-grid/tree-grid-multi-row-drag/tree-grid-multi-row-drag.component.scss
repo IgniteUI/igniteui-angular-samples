@@ -1,0 +1,24 @@
+.drop-area {
+    width: 160px;
+    height: 160px;
+    background-color: #d3d3d3;
+    border: 1px dashed #131313;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    margin: 8px;
+}
+
+:host {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row;
+    width: 100%;
+}
+
+.allow-drop {
+    z-index: 1;
+}
