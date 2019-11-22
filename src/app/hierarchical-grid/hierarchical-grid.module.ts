@@ -34,6 +34,8 @@ import { HGridExcelStyleFilteringSample1Component } from "./hierarchical-grid-ex
 import { HGridExcelStyleFilteringSample2Component } from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
 import { HGridExcelStyleFilteringSample3Component } from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
 import { HGridExcelStyleFilteringStyleComponent } from "./hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
+import { HGridExternalAdvancedFilteringComponent } from "./hierarchical-grid-external-advanced-filtering/hierarchical-grid-external-advanced-filtering.component";
+import { HGridExternalExcelStyleFilteringComponent } from "./hierarchical-grid-external-excel-style-filtering/hierarchical-grid-external-excel-style-filtering.component";
 import { HierarchicalGridFilteringStyleComponent } from "./hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
@@ -120,7 +122,9 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridAdvancedFilteringSampleComponent,
         HGridAdvancedFilteringStyleComponent,
         HGridStylingComponent,
-        HGridConditionalRowSelectorsComponent
+        HGridConditionalRowSelectorsComponent,
+        HGridExternalAdvancedFilteringComponent,
+        HGridExternalExcelStyleFilteringComponent
     ],
     imports: [
         CommonModule,
