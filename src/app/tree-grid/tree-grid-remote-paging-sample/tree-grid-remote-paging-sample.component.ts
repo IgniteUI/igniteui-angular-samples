@@ -19,6 +19,7 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
     public totalCount = 0;
     public maxPerPage = Number.MAX_SAFE_INTEGER;
     public data: Observable<any[]>;
+    public selectOptions = [5, 10, 25, 50];
     @ViewChild("treeGrid", { static: true }) public treeGrid: IgxTreeGridComponent;
 
     private _perPage = 10;
@@ -34,7 +35,7 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
 
     public set perPage(val: number) {
         this._perPage = val;
-        this.paginate(0, true);
+        this.paginate(0);
     }
 
     public ngOnInit() {
@@ -43,7 +44,6 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
         this._dataLengthSubscriber = this.remoteService.dataLength.subscribe((data) => {
             this.totalCount = data;
             this.totalPages = Math.ceil(data / this.perPage);
-            this.buttonDeselection(this.page, this.totalPages);
             this.treeGrid.isLoading = false;
         });
     }
@@ -61,53 +61,11 @@ export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewIni
         this.remoteService.getDataLength();
     }
 
-    public nextPage() {
-        this.firstPage = false;
-        this.page++;
-        const skip = this.page * this.perPage;
-        const top = this.perPage;
-        this.remoteService.getData(skip, top);
-        if (this.page + 1 >= this.totalPages) {
-            this.lastPage = true;
-        }
-    }
-
-    public previousPage() {
-        this.lastPage = false;
-        this.page--;
-        const skip = this.page * this.perPage;
-        const top = this.perPage;
-        this.remoteService.getData(skip, top);
-        if (this.page <= 0) {
-            this.firstPage = true;
-        }
-    }
-
-    public paginate(page: number, recalc: true) {
+    public paginate(page: number) {
         this.page = page;
         const skip = this.page * this.perPage;
         const top = this.perPage;
-        if (recalc) {
-            this.totalPages = Math.ceil(this.totalCount / this.perPage);
-        }
         this.remoteService.getData(skip, top);
-        this.buttonDeselection(this.page, this.totalPages);
-    }
-
-    public buttonDeselection(page: number, totalPages: number) {
-        if (totalPages === 1) {
-            this.lastPage = true;
-            this.firstPage = true;
-        } else if (page + 1 >= totalPages) {
-            this.lastPage = true;
-            this.firstPage = false;
-        } else if (page !== 0 && page !== totalPages) {
-            this.lastPage = false;
-            this.firstPage = false;
-        } else {
-            this.lastPage = false;
-            this.firstPage = true;
-        }
     }
 
     public formatSize(value: number) {
