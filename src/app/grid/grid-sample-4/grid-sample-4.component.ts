@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from "@angular/core";
 import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
+import { debounceTime } from "rxjs/operators";
 import { RemoteServiceVirt } from "../services/remoteService";
 
 @Component({
@@ -38,13 +39,13 @@ export class GridRemoteVirtualizationSampleComponent {
             this.grid.totalItemCount = data["@odata.count"];
             this.grid.isLoading = false;
         });
+
+        this.grid.onDataPreLoad.pipe(debounceTime(250)).subscribe(() => {
+            this.processData(false);
+        });
     }
 
-    public processData(reset) {
-        if (this._prevRequest) {
-            this._prevRequest.unsubscribe();
-        }
-
+    public applyLoadingStyles() {
         if (this.grid.columns.length > 0) {
             this.grid.columns.forEach((column: IgxColumnComponent) => {
                 if (column.bodyTemplate && !this._isColumnCellTemplateReset) {
@@ -56,7 +57,21 @@ export class GridRemoteVirtualizationSampleComponent {
 
             this._isColumnCellTemplateReset = true;
         }
+    }
 
+    public handlePreLoad() {
+        if (this._remoteService.hasItemsInCache(this.grid.virtualizationState)) {
+            this.processData(false);
+        } else {
+            this.applyLoadingStyles();
+        }
+    }
+
+    public processData(reset) {
+        if (this._prevRequest) {
+            this._prevRequest.unsubscribe();
+        }
+        this.applyLoadingStyles();
         this._prevRequest = this._remoteService.getData(this.grid.virtualizationState,
             this.grid.sortingExpressions[0], reset, () => {
                 if (this._isColumnCellTemplateReset) {
