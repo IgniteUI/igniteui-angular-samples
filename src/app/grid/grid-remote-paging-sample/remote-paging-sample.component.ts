@@ -19,7 +19,7 @@ export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy 
     public pages = [];
     public title = "gridPaging";
     public data: Observable<any[]>;
-    public selectOptions = [5, 10, 15, 25, 50, 100, 500];
+    public selectOptions = [5, 10, 15, 25, 50];
 
     @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild("secCustomPager", { read: TemplateRef, static: true }) public secondPagerTemplate: TemplateRef<any>;
