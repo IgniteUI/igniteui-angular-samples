@@ -114,6 +114,7 @@ import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-gr
 import {
     TreeGridMultiColumnHeadersStylingComponent
 } from "./tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
+import { TreeGridMultiRowDrag } from "./tree-grid-multi-row-drag/tree-grid-multi-row-drag.component";
 import {
     TreeGridResizeLineStylingSampleComponent
 } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
@@ -211,6 +212,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridRowDragBase,
         data: treeGridRoutesData["tree-grid-row-drag-base"],
         path: "tree-grid-row-drag-base"
+    },
+    {
+        component: TreeGridMultiRowDrag,
+        data: treeGridRoutesData["tree-grid-multi-row-drag"],
+        path: "tree-grid-multi-row-drag"
     },
     {
         component: TreeGridSelectionSampleComponent,
