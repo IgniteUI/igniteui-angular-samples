@@ -28,6 +28,7 @@ import { DatepickerSample7Component } from "./datepicker/datepicker-sample-7/dat
 import { DatepickerSample8Component } from "./datepicker/datepicker-sample-8/datepicker-sample-8.component";
 import { DateRangeFormatterSampleComponent } from "./daterange/date-range-formatter/daterange-formatter-sample.component";
 import { DateRangeSampleComponent } from "./daterange/simple-date-range/daterange-sample.component";
+import { DateRangeTwoInputsComponent } from "./daterange/date-range-two-inputs/daterange-two-inputs.component";
 import { MonthpickerSample1Component } from "./monthpicker/monthpicker-sample-1/monthpicker-sample-1.component";
 import { MonthpickerSample2Component } from "./monthpicker/monthpicker-sample-2/monthpicker-sample-2.component";
 import { MonthpickerSample3Component } from "./monthpicker/monthpicker-sample-3/monthpicker-sample-3.component";
@@ -65,6 +66,7 @@ import { TimePickerSample8Component } from "./timepicker/timepicker-sample-8/tim
         DatepickerDropdownComponent,
         DateRangeFormatterSampleComponent,
         DateRangeSampleComponent,
+        DateRangeTwoInputsComponent,
         TimePickerSample1Component,
         TimePickerSample2Component,
         TimePickerSample3Component,

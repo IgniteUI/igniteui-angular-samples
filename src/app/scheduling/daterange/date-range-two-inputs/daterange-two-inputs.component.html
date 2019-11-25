@@ -1,0 +1,23 @@
+<div class="sample-wrapper date-range-wrapper">
+    <h4 class="sample-title">Date Range With Two Inputs</h4>
+    <p class="sample-description">Date range with start and end date input</p>
+    <div>
+        <igx-date-range [weekStart]="1" [todayButtonText]="'Show Today'" [monthsViewNumber]="1"
+                    [hideOutsideDays]="true" [mode]="'dialog'">
+                    <igx-input-group>
+                        <input #startDate igxDateRangeStart igxInput type="text">
+                        <label for="startDate" igxLabel>Start date</label>
+                        <igx-prefix>
+                            <igx-icon>today</igx-icon>
+                        </igx-prefix>
+                    </igx-input-group>
+                    <igx-input-group>
+                        <input #endDate igxDateRangeEnd igxInput type="text">
+                        <label for="endDate" igxLabel>End date</label>
+                        <igx-prefix>
+                            <igx-icon>today</igx-icon>
+                        </igx-prefix>
+                    </igx-input-group>
+                </igx-date-range>
+    </div>
+</div>
