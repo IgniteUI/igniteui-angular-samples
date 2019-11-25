@@ -4,7 +4,6 @@ export const layoutsRoutesData = {
     "avatar-sample-1": { displayName: "Avatar with Initials", parentName: "Avatar" },
     "avatar-sample-2": { displayName: "Avatar with Image", parentName: "Avatar" },
     "avatar-sample-3": { displayName: "Multiple avatars", parentName: "Avatar" },
-    "carousel-sample-1": { displayName: "Carousel items with text", parentName: "Carousel" },
     "carousel-no-navigation-sample": { displayName: "Carousel No Navigation", parentName: "Carousel" },
     "carousel-animations-sample": { displayName: "Carousel Animations", parentName: "Carousel" },
     "carousel-base-sample": { displayName: "Carousel Base", parentName: "Carousel" },

@@ -12,7 +12,6 @@ import { CarouselBaseSampleComponent } from "../../src/app/layouts/carousel/caro
 import { CarouselDetailsViewComponent } from "../../src/app/layouts/carousel/carousel-details/carousel-details.component";
 // tslint:disable-next-line: max-line-length
 import { CarouselNoNavigationSampleComponent } from "../../src/app/layouts/carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
-import { CarouselSample1Component } from "../../src/app/layouts/carousel/carousel-sample-1/carousel-sample-1.component";
 import { CarouselComponent } from "../../src/app/layouts/carousel/carousel.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -30,16 +29,6 @@ export class CarouselConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCarouselModule, IgxSliderModule]
             }),
             shortenComponentPathBy: "/layouts/"
-        }));
-
-        configs.push(new Config({
-            component: CarouselSample1Component,
-            appModuleConfig: new AppModuleConfig({
-                imports: [IgxCarouselModule, IgxSliderModule, CarouselSample1Component],
-                ngDeclarations: [CarouselSample1Component],
-                ngImports: [IgxCarouselModule, IgxSliderModule]
-            }),
-            shortenComponentPathBy: "/layouts/carousel/"
         }));
 
         configs.push(new Config({

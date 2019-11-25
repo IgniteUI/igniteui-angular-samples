@@ -16,7 +16,6 @@ import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/car
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 // tslint:disable-next-line: max-line-length
 import { CarouselNoNavigationSampleComponent } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
-import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
@@ -66,11 +65,6 @@ export const layoutsRoutes: Routes = [
         component: AvatarSample3Component,
         data: layoutsRoutesData["avatar-sample-3"],
         path: "avatar-sample-3"
-    },
-    {
-        component: CarouselSample1Component,
-        data: layoutsRoutesData["carousel-sample-1"],
-        path: "carousel-sample-1"
     },
     {
         component: CarouselNoNavigationSampleComponent,
