@@ -34,6 +34,8 @@ import { HGridExcelStyleFilteringSample1Component } from "./hierarchical-grid-ex
 import { HGridExcelStyleFilteringSample2Component } from "./hierarchical-grid-excel-style-filtering-sample-2/hierarchical-grid-excel-style-filtering-sample-2.component";
 import { HGridExcelStyleFilteringSample3Component } from "./hierarchical-grid-excel-style-filtering-sample-3/hierarchical-grid-excel-style-filtering-sample-3.component";
 import { HGridExcelStyleFilteringStyleComponent } from "./hierarchical-grid-excel-style-filtering-style/hierarchical-grid-excel-style-filtering-style.component";
+import { HGridExternalAdvancedFilteringComponent } from "./hierarchical-grid-external-advanced-filtering/hierarchical-grid-external-advanced-filtering.component";
+import { HGridExternalExcelStyleFilteringComponent } from "./hierarchical-grid-external-excel-style-filtering/hierarchical-grid-external-excel-style-filtering.component";
 import { HierarchicalGridFilteringStyleComponent } from "./hierarchical-grid-filtering-style/hierarchical-grid-filtering-style.component";
 import { HGridFilteringTemplateSampleComponent } from "./hierarchical-grid-filtering-template/hierarchical-grid-filtering-template.component";
 import { HGridCustomFilteringSampleComponent } from "./hierarchical-grid-filtering/hierarchical-grid-custom-filtering.component";
@@ -43,6 +45,7 @@ import { HGridMultiCellStyleComponent } from "./hierarchical-grid-multi-cell-sty
 import { HGridMultiHeaderTemplateSampleComponent } from "./hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
 import { HGridMultiHeadersStylingComponent } from "./hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
+import { HGridMultiRowDragComponent } from "./hierarchical-grid-multi-row-drag/hierarchical-grid-multi-row-drag.component";
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
@@ -109,6 +112,7 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridFilteringTemplateSampleComponent,
         HGridDragSampleComponent,
         HGridRowDragBaseComponent,
+        HGridMultiRowDragComponent,
         HGridCustomKBNavigationComponent,
         HGridRowReorderComponent,
         HGridResizeLineStylingComponent,
@@ -120,7 +124,9 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridAdvancedFilteringSampleComponent,
         HGridAdvancedFilteringStyleComponent,
         HGridStylingComponent,
-        HGridConditionalRowSelectorsComponent
+        HGridConditionalRowSelectorsComponent,
+        HGridExternalAdvancedFilteringComponent,
+        HGridExternalExcelStyleFilteringComponent
     ],
     imports: [
         CommonModule,

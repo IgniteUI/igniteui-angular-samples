@@ -27,6 +27,8 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
     "grid-excel-style-filtering-style": { displayName: "Grid Excel Style Filtering Styling", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
+    "grid-external-excel-style-filtering": { displayName: "Grid External Excel Style Filtering", parentName: "Grid" },
+    "grid-external-advanced-filtering": { displayName: "Grid External Advanced Filtering", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
@@ -82,5 +84,6 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-load-on-demand":
         { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
     "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" },
-    "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" }
+    "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" },
+    "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"}
 };

@@ -97,6 +97,10 @@ import {
 import {
     TreeGridExcelStyleFilteringStyleComponent
 } from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import { TreeGridExternalAdvancedFilteringComponent
+} from "./tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
+import { TreeGridExternalExcelStyleFilteringComponent
+} from "./tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -123,6 +127,7 @@ import {
 import {
     TreeGridMultiColumnHeadersStylingComponent
 } from "./tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
+import { TreeGridMultiRowDrag } from "./tree-grid-multi-row-drag/tree-grid-multi-row-drag.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
@@ -225,6 +230,7 @@ import {
         TreeGridLoadOnDemandSampleComponent,
         TreeGridRowDrag,
         TreeGridRowDragBase,
+        TreeGridMultiRowDrag,
         TreeGridKBNavigationComponent,
         TreeGridRowReorderComponent,
         TreeGridRemotePagingSampleComponent,
@@ -240,6 +246,8 @@ import {
         TreeGridExcelStyleFilteringLoadOnDemandComponent,
         TreeGridConditionalRowSelectorsSampleComponent,
         TreeGridStyleComponent,
+        TreeGridExternalExcelStyleFilteringComponent,
+        TreeGridExternalAdvancedFilteringComponent,
         TreeGridConditionalCellStyle2Component
     ],
     imports: [

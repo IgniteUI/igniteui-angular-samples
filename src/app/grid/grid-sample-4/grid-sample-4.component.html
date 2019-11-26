@@ -9,7 +9,7 @@
         <div class="remote-data-loading-template-small"></div>
     </ng-template>
 
-    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="processData(false)"
+    <igx-grid #grid [data]="remoteData | async" [height]="'500px'" [width]="'100%'" [autoGenerate]='false' (onDataPreLoad)="handlePreLoad()"
         (onSortingDone)="processData(true)">
         <igx-column [field]="'ProductID'" [sortable]="true"></igx-column>
         <igx-column [field]="'ProductName'" [sortable]="true"></igx-column>
