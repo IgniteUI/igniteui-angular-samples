@@ -1056,9 +1056,10 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCellSelectionComponent, IgxGridModule, IgxSwitchModule,
-                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule, IgxSnackbarModule],
-                ngDeclarations: [GridCellSelectionComponent],
-                ngImports: [IgxGridModule, IgxSnackbarModule]
+                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule],
+                ngDeclarations: [GridCellSelectionComponent, IgxGridModule, IgxIconModule, IgxSwitchModule,
+                    IgxButtonGroupModule, IgxAvatarModule],
+                ngImports: [IgxGridModule]
             })
         }));
 
