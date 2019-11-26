@@ -78,6 +78,7 @@ import { TreeGridMultiCellSelectionComponent } from "../../src/app/tree-grid/tre
 import { TreeGridMultiColumnHeaderTemplateSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-header-template-sample/tree-grid-multi-column-header-template-sample.component";
 import { TreeGridMultiColumnHeadersSampleComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-sample/tree-grid-multi-column-headers-sample.component";
 import { TreeGridMultiColumnHeadersStylingComponent } from "../../src/app/tree-grid/tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
+import { TreeGridMultiRowDrag } from "../../src/app/tree-grid/tree-grid-multi-row-drag/tree-grid-multi-row-drag.component";
 import { TreeGridPagingSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "../../src/app/tree-grid/tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import { TreeGridPrimaryforeignkeySampleComponent } from "../../src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
@@ -95,6 +96,7 @@ import { TreeGridSelectionTemplateNumbersSampleComponent } from "../../src/app/t
 import { TreeGridContextmenuComponent } from "../../src/app/tree-grid/tree-grid-sorting-sample/tree-grid-contextmenu/tree-grid-contextmenu.component";
 import { TreeGridSortingSampleComponent } from "../../src/app/tree-grid/tree-grid-sorting-sample/tree-grid-sorting-sample.component";
 import { TreeGridSortingStylingComponent } from "../../src/app/tree-grid/tree-grid-sorting-styling/tree-grid-sorting-styling.component";
+import { TreeGridStyleComponent } from "../../src/app/tree-grid/tree-grid-style/tree-grid-style.component";
 import { TreeGridSummarySampleComponent } from "../../src/app/tree-grid/tree-grid-summary-sample/tree-grid-summary-sample.component";
 import { TreeGridSummaryStylingComponent } from "../../src/app/tree-grid/tree-grid-summary-styling/tree-grid-summary-styling.component";
 import { TreeGridSummary2SampleComponent } from "../../src/app/tree-grid/tree-grid-summary2-sample/tree-grid-summary2-sample.component";
@@ -104,7 +106,6 @@ import { TreeGridToolbarSample3Component } from "../../src/app/tree-grid/tree-gr
 import { TreeGridToolbarSample4Component } from "../../src/app/tree-grid/tree-grid-toolbar-sample-4/tree-grid-toolbar-sample-4.component";
 import { TreeGridToolbarStyleComponent } from "../../src/app/tree-grid/tree-grid-toolbar-style/tree-grid-toolbar-style.component";
 import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
-import { TreeGridStyleComponent } from "../../src/app/tree-grid/tree-grid-style/tree-grid-style.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -724,6 +725,19 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxTreeGridModule, IgxButtonModule, IgxInputGroupModule, IgxDragDropModule]
             }),
             component: TreeGridRowDragBase,
+            shortenComponentPathBy: "/tree-grid/"
+        }));
+
+        // Tree Grid Multi Row Drag sample
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, TreeGridMultiRowDrag, IgxButtonModule,
+                    IgxInputGroupModule, IgxIconModule, IgxDragDropModule],
+                ngDeclarations: [TreeGridMultiRowDrag],
+                ngImports: [IgxTreeGridModule, IgxButtonModule, IgxInputGroupModule, IgxIconModule, IgxDragDropModule]
+            }),
+            component: TreeGridMultiRowDrag,
             shortenComponentPathBy: "/tree-grid/"
         }));
 

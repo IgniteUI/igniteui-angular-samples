@@ -43,6 +43,7 @@ import { HGridMultiCellStyleComponent } from "./hierarchical-grid-multi-cell-sty
 import { HGridMultiHeaderTemplateSampleComponent } from "./hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
 import { HGridMultiHeadersStylingComponent } from "./hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component";
 import { HGridMultiHeadersSampleComponent } from "./hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
+import { HGridMultiRowDragComponent } from "./hierarchical-grid-multi-row-drag/hierarchical-grid-multi-row-drag.component";
 import { HGridPagingStyleSampleComponent } from "./hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "./hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
@@ -271,6 +272,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridRowDragBaseComponent,
         data: hierarchicalGridRoutesData["hierarchical-row-drag-base"],
         path: "hierarchical-row-drag-base"
+    },
+    {
+        component: HGridMultiRowDragComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-multi-row-drag"],
+        path: "hierarchical-grid-multi-row-drag"
     },
     {
         component: HGridRowReorderComponent,

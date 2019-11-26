@@ -81,6 +81,7 @@ import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dy
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
@@ -165,6 +166,11 @@ export const gridsRoutes: Routes = [
         component: GridDragBaseSampleComponent,
         data: gridsRoutesData["grid-row-drag-base"],
         path: "grid-row-drag-base"
+    },
+    {
+        component: GridMultipleRowDragComponent,
+        data:  gridsRoutesData["grid-multiple-row-drag"],
+        path: "grid-multiple-row-drag"
     },
     {
         component: GridRowReorderComponent,
