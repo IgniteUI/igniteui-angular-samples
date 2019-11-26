@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, VerticalAlignment } from "igniteui-angular";
+import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, NgZone } from "@angular/core";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
@@ -37,6 +37,13 @@ export class ChartArgsPipe implements PipeTransform {
         }
     }
 }
+
+enum CellFormatType {
+    NUMERIC = "numeric",
+    TEXT = "text",
+    COMPOSITE = "composite"
+}
+
 @Component({
     selector: "app-grid-dynamic-chart-data",
     templateUrl: "./grid-dynamic-chart-data.component.html",
@@ -68,8 +75,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     @ViewChild("chartPreview", { read: ChartHostDirective, static: true })
     public chartPreview: ChartHostDirective;
 
-    @ViewChild(IgxCardComponent, { static: true })
-    public card: IgxCardComponent;
+    @ViewChild(IgxTabsComponent, { static: true })
+    public tabs: IgxTabsComponent;
 
     @ViewChild("configArea", { static: true })
     public area: ElementRef;
@@ -89,7 +96,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public range;
     public chartTypesData = [];
     public chartsToDisable = {};
-
+    public disableCreateChart = false;
+    public cellsToFormat = [];
+    public cellsFormatType;
     // Dialogs options
     public _chartDialogOverlaySettings = {
         closeOnOutsideClick: false,
@@ -165,6 +174,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     private dataChartOptions: IChartOptions = {
         width: "100%",
         height: "85%",
+        autoMarginWidth: 50,
         transitionDuration: 300,
         isVerticalZoomEnabled: true,
         isHorizontalZoomEnabled: true
@@ -182,12 +192,15 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     private chartComponentOptions: IChartComponentOptions;
 
-    constructor(private chartService: ChartService, private iconService: IgxIconService) {
+    constructor(private chartService: ChartService, private zone: NgZone) {
         this.bubbleChartSizeScale.maximumValue = 60;
         this.bubbleChartSizeScale.minimumValue = 10;
     }
 
     public ngOnInit() {
+
+        (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
+
         this.chartSelectionDialog.onOpen.subscribe(() => {
             this.currentChartArg = { chartType: "Column", seriesType: "Grouped" };
         });
@@ -209,6 +222,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.grid.onDataPreLoad.subscribe((evt) => this.disableContextMenu());
 
         this.data = new FinancialData().generateData(1000);
+
         this.grid.onRangeSelection.subscribe(range => {
 
             this.chartsToDisable = {
@@ -219,41 +233,79 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
-            const selectedData = this.grid.getSelectedData()
+            let minCol;
+            let minRow;
+            let maxValue;
+            let cellForComparison;
+
+            this.zone.runOutsideAngular(() => {
+            this.cellsToFormat = (this.grid.selectedCells as IgxGridCellComponent[]).map(cell => ({value: cell.value, column: cell.column.field, cellID: cell.cellID}));
+            const numericCells = this.cellsToFormat.filter(c =>  typeof c.value === "number");
+            const textCells = this.cellsToFormat.filter(c =>  typeof c.value === "string");
+
+            if (numericCells.length === 0) {
+                this.cellsFormatType = CellFormatType.TEXT;
+                minCol = Math.min.apply(Math, textCells.map(c => c.cellID.columnID));
+                minRow = Math.min.apply(Math, textCells.map(c => c.cellID.rowID as number));
+                cellForComparison = this.cellsToFormat.find(cell => {
+
+                    return cell.cellID.columnID === minCol && cell.cellID.rowID === minRow;
+                });
+            } else if (textCells.length === 0) {
+                this.cellsFormatType = CellFormatType.NUMERIC;
+                maxValue = Math.max.apply(Math, numericCells.map(c => c.value));
+            } else {
+                 minCol = Math.min.apply(Math, textCells.map(c => c.cellID.columnID));
+                 minRow = Math.min.apply(Math, textCells.map(c => c.cellID.rowID as number));
+                 cellForComparison = this.cellsToFormat.find(cell => {
+                    return cell.cellID.columnID === minCol && cell.cellID.rowID === minRow;
+                });
+                 maxValue = Math.max.apply(Math, numericCells.map(c => c.value));
+                 this.cellsFormatType = CellFormatType.COMPOSITE;
+            }
+
+            const chartData = this.grid.getSelectedData()
                 .map(this.dataMap)
                 .filter(r => Object.keys(r).length !== 0);
 
-            if (selectedData.length === 0) {
-                return;
-            }
+            if (chartData.length === 0) {
+                this.disableCreateChart = true;
+                this.cellsFormatType = CellFormatType.TEXT;
+            } else {
+                this.disableCreateChart = false;
+                const valueMemberPaths = Object.keys(chartData[0]);
 
-            const valueMemberPaths = Object.keys(selectedData[0]);
+                if (valueMemberPaths.length === 1) {
+                    switch (valueMemberPaths[0]) {
+                        case "Price":
+                            this.chartsToDisable = {
+                                BubbleScatter: true,
+                                PointScatter: true,
+                                LineScatter: true
+                            };
+                            break;
+                        case "Open Price":
+                            this.chartsToDisable = {
+                                BubbleScatter: true,
+                                PointScatter: false,
+                                LineScatter: false
+                            };
+                            break;
+                    }
+                }
+                this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
+                this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
-            if (valueMemberPaths.length === 1) {
-                switch (valueMemberPaths[0]) {
-                    case "Price":
-                        this.chartsToDisable = {
-                            BubbleScatter: true,
-                            PointScatter: true,
-                            LineScatter: true
-                        };
-                        break;
-                    case "Open Price":
-                        this.chartsToDisable = {
-                            BubbleScatter: true,
-                            PointScatter: false,
-                            LineScatter: false
-                        };
-                        break;
+                for (let i = 0; i < this.dataRows.length; i++) {
+                    this.gridDataSelection.push({ selectedData: chartData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
                 }
             }
-            this.dataRows = this.grid.filteredSortedData.slice(range.rowStart, range.rowEnd + 1);
-            this.colForSubjectArea = this.grid.visibleColumns[range.columnStart].dataType !== "number" ? this.grid.visibleColumns[range.columnStart].field : this.grid.visibleColumns[1].field;
 
-            for (let i = 0; i < this.dataRows.length; i++) {
-                this.gridDataSelection.push({ selectedData: selectedData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
-            }
+            this.tabs.tabs.first.isSelected = true;
             this.range = range;
+        });
+            console.log(maxValue);
+            console.log(cellForComparison);
             this.renderButton();
         });
     }
@@ -262,73 +314,77 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.grid.headerContainer.getScroll().onscroll = () => this.disableContextMenu();
     }
 
-    private negative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0;
-    }
-    private positive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0;
-    }
-    private changeNegative = (rowData: any): boolean => {
-        return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
-    }
-    private changePositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
-    }
-    private strongPositive = (rowData: any): boolean => {
-        return rowData["Change(%)"] >= 1;
-    }
-    private strongNegative = (rowData: any, key: string): boolean => {
-        return rowData["Change(%)"] <= -1;
-    }
+    // private negative = (rowData: any): boolean => {
+    //     return rowData["Change(%)"] < 0;
+    // }
+    // private positive = (rowData: any): boolean => {
+    //     return rowData["Change(%)"] > 0;
+    // }
+    // private changeNegative = (rowData: any): boolean => {
+    //     return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
+    // }
+    // private changePositive = (rowData: any): boolean => {
+    //     return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
+    // }
+    // private strongPositive = (rowData: any): boolean => {
+    //     return rowData["Change(%)"] >= 1;
+    // }
+    // private strongNegative = (rowData: any, key: string): boolean => {
+    //     return rowData["Change(%)"] <= -1;
+    // }
 
-    private strongPositiveOnYear = (rowData: any): boolean => {
-        return rowData["Change On Year(%)"] >= 1;
-    }
-    private positiveOnYear = (rowData: any): boolean => {
-        return rowData["Change On Year(%)"] > 0;
-    }
+    // private strongPositiveOnYear = (rowData: any): boolean => {
+    //     return rowData["Change On Year(%)"] >= 1;
+    // }
+    // private positiveOnYear = (rowData: any): boolean => {
+    //     return rowData["Change On Year(%)"] > 0;
+    // }
 
-    private strongNegativeOnYear = (rowData: any, key: string): boolean => {
-        return rowData["Change On Year(%)"] <= -1;
-    }
-    private negativeOnYear = (rowData: any, key: string): boolean => {
-        return rowData["Change On Year(%)"] < 0;
-    }
+    // private strongNegativeOnYear = (rowData: any, key: string): boolean => {
+    //     return rowData["Change On Year(%)"] <= -1;
+    // }
+    // private negativeOnYear = (rowData: any, key: string): boolean => {
+    //     return rowData["Change On Year(%)"] < 0;
+    // }
 
-    // tslint:disable:member-ordering
-    public trends = {
-        changeNeg: this.changeNegative,
-        changePos: this.changePositive,
-        negative: this.negative,
-        positive: this.positive,
-        strongNegative: this.strongNegative,
-        strongPositive: this.strongPositive
-    };
+    // // tslint:disable:member-ordering
+    // public trends = {
+    //     changeNeg: this.changeNegative,
+    //     changePos: this.changePositive,
+    //     negative: this.negative,
+    //     positive: this.positive,
+    //     strongNegative: this.strongNegative,
+    //     strongPositive: this.strongPositive
+    // };
 
-    public trendsOnYear = {
-        changeNeg2: this.negativeOnYear,
-        changePos2: this.positiveOnYear,
-        strongNegative2: this.strongNegativeOnYear,
-        strongPositive2: this.strongPositiveOnYear
-    };
+    // public trendsOnYear = {
+    //     changeNeg2: this.negativeOnYear,
+    //     changePos2: this.positiveOnYear,
+    //     strongNegative2: this.strongNegativeOnYear,
+    //     strongPositive2: this.strongPositiveOnYear
+    // };
 
-    public trendsChange = {
-        changeNeg2: this.changeNegative,
-        changePos2: this.changePositive,
-        strongNegative2: this.strongNegative,
-        strongPositive2: this.strongPositive
-    };
+    // public trendsChange = {
+    //     changeNeg2: this.changeNegative,
+    //     changePos2: this.changePositive,
+    //     strongNegative2: this.strongNegative,
+    //     strongPositive2: this.strongPositive
+    // };
     // tslint:disable-next-line: align
+
     public formatCurrency(value: number) {
         return "$" + value.toFixed(3);
     }
 
+    // tslint:disable: member-ordering
     public chartTypesMenuX;
     public chartTypesMenuY;
 
     public previewChartTypes = ["Column", "Area", "Line", "Bar"];
 
     public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter"];
+
+    public numericFormatings = ["Data Bars", "Color Scale"];
 
     public pieChartArgs: IChartArgs = {
         chartType: "Pie",
@@ -379,7 +435,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public previewChart(chart: string) {
-        this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = document.getElementById(this.card.id);
+        this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = this.tabs.tabsContainer.nativeElement;
         this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + "px";
         this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
@@ -463,7 +519,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
-        if (!event.target.parentElement.classList.contains("analytics-btn") && !event.target.classList.contains("more-btn")) {
+        if (!event.target.parentElement.classList.contains("analytics-btn") &&
+            !event.target.classList.contains("more-btn")) {
             this.disableContextMenu();
         }
     }
@@ -520,4 +577,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
         this.contextmenu = true;
     }
+
+    
 }
