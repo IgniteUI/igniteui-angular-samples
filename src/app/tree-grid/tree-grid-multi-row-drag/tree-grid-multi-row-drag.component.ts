@@ -26,11 +26,7 @@ export class TreeGridMultiRowDrag {
 
     public handleRowSelectionChange(args) {
         this.ids = args.newSelection;
-        if (this.ids.length !== 0) {
-            this.selected = true;
-        } else {
-            this.selected = false;
-        }
+        this.selected = this.ids.length !== 0 ? true : false;
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
