@@ -14,7 +14,8 @@ import {
     IgxSelectModule,
     IgxSnackbarModule,
     IgxSwitchModule,
-    IgxToastModule
+    IgxToastModule,
+    IgxTooltipModule
 } from "igniteui-angular";
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
@@ -22,6 +23,7 @@ import { HGridAdvancedFilteringStyleComponent } from "../../src/app/hierarchical
 import { HGridAdvancedFilteringSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridBatchEditingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridWithTransactionsComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
+import { HGridCollapsibleColumnGroupComponent } from '../../src/app/hierarchical-grid/hierarchical-grid-collapsible-column-groups/hierarchical-grid-collapsible-column-groups.component';
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
 import { HGridCostumHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
@@ -668,6 +670,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxCheckboxModule, IgxHierarchicalGridModule]
             }),
             component: HGridSelectionTemplateNumbersSampleComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/hierarchical-grid/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, IgxTooltipModule, HGridCollapsibleColumnGroupComponent],
+                ngDeclarations: [HGridCollapsibleColumnGroupComponent],
+                ngImports: [IgxHierarchicalGridModule, IgxTooltipModule]
+            }),
+            component: HGridCollapsibleColumnGroupComponent
         }));
 
         return configs;
