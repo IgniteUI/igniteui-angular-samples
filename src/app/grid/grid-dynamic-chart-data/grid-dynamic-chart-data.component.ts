@@ -6,6 +6,7 @@ import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
 import { IChartArgs } from "./context-menu/context-menu.component";
 import { IChartComponentOptions, IChartOptions, IChartSeriesOptions, IXAxesOptions, IYAxesOptions } from "./initializers";
+import { ConditionalFormatingDirective } from './conditional-formating.directive';
 @Directive({
     selector: "[chartHost]"
 })
@@ -47,6 +48,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public data;
     public opened = true;
+    @ViewChild(ConditionalFormatingDirective, {read: ConditionalFormatingDirective, static: true})
+    public formatting: ConditionalFormatingDirective;
+
     @ViewChild("grid", {read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
@@ -401,6 +405,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
+    public analyse() {
+        this.formatting.formatCells();
+    }
+
     public rightClick(eventArgs: any) {
         if (this.gridDataSelection.length === 0) {
             return;
@@ -481,7 +489,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
         if (!event.target.parentElement.classList.contains("analytics-btn") &&
-            !event.target.classList.contains("more-btn")) {
+            !event.target.classList.contains("more-btn") &&
+            event.target.className.indexOf("igx-button") === -1) {
             this.disableContextMenu();
         }
     }
@@ -538,6 +547,4 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
         this.contextmenu = true;
     }
-
-    
 }

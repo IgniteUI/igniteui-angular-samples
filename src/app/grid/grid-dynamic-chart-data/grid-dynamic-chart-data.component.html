@@ -59,7 +59,7 @@
                     <igx-tabs-group label="Cell Formatting">
                         <div class="tab-option">
                             <div *ngFor="let item of numericFormatings" class="formatting-container">
-                                <button igxButton="raised" >{{item}}</button>
+                                <button igxButton="raised" (click) = analyse()>{{item}}</button>
                             </div> 
                         </div>
                     </igx-tabs-group >
