@@ -21,6 +21,7 @@ import {
     IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
+    IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
@@ -111,6 +112,7 @@ import { TreeGridVirtualizationSampleComponent } from "../../src/app/tree-grid/t
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { TreeGridMultiCollapsibleColumnGroupsComponent } from '../../src/app/tree-grid/tree-grid-collapsible-groups/tree-grid-collapsible-column-groups.component';
 
 export class TreeGridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -916,6 +918,17 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TreeGridConditionalCellStyle2Component],
                 ngImports: [IgxTreeGridModule]
             })
+        }));
+
+        configs.push(new Config({
+            additionalFiles: ["/src/app/tree-grid/data/employees-flat-detailed.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxTreeGridModule, IgxTooltipModule, TreeGridMultiCollapsibleColumnGroupsComponent],
+                ngDeclarations: [TreeGridMultiCollapsibleColumnGroupsComponent],
+                ngImports: [IgxTreeGridModule, IgxTooltipModule]
+            }),
+            component: TreeGridMultiColumnHeaderTemplateSampleComponent,
+            shortenComponentPathBy: "/tree-grid/"
         }));
 
         return configs;
