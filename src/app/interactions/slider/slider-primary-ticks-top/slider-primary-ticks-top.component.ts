@@ -9,4 +9,3 @@ import { TicksOrientation } from "igniteui-angular";
 export class SliderPrimaryTicksTopComponent {
     public ticksOreintation = TicksOrientation.top;
 }
-

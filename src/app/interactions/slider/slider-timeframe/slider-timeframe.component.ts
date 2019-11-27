@@ -8,5 +8,5 @@ import { SliderType } from "igniteui-angular";
 })
 export class SliderTimeframeComponent {
     public type: SliderType = SliderType.RANGE;
-    public labels = ["04:00", "08:00", "12:00", "16:00", "20:00", "00:00"]
+    public labels = ["04:00", "08:00", "12:00", "16:00", "20:00", "00:00"];
 }

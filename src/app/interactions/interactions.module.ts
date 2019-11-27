@@ -36,6 +36,12 @@ import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
 import { RippleStylingSampleComponent } from "./ripple/ripple-stying/ripple-styling-sample.component";
+import {
+    SliderDiscreteTicksBottomComponent
+} from "./slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component";
+import {
+    SliderPrimaryTicksTopComponent
+} from "./slider/slider-primary-ticks-top/slider-primary-ticks-top.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
@@ -48,12 +54,6 @@ import {
 import {
     SliderTicksBottomtotopLabelsComponent
 } from "./slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component";
-import {
-    SliderDiscreteTicksBottomComponent
-} from "./slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component";
-import {
-    SliderPrimaryTicksTopComponent
-} from "./slider/slider-primary-ticks-top/slider-primary-ticks-top.component";
 import { SliderTimeframeComponent } from "./slider/slider-timeframe/slider-timeframe.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";

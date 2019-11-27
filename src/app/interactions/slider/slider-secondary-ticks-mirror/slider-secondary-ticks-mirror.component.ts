@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { TicksOrientation, IgxSliderComponent } from "igniteui-angular";
+import { IgxSliderComponent, TicksOrientation} from "igniteui-angular";
 
 @Component({
     selector: "app-slider-bottom-ticks",
@@ -13,7 +13,6 @@ export class SliderSecondaryTicksMirrorComponent {
     public ticksOrientation = TicksOrientation.mirror;
 
     public decrease() {
-        debugger;
         this.slider.value = (this.slider.value as number) - this.slider.step;
         this.slider.getEditElement().focus();
     }
