@@ -37,13 +37,6 @@ export class ChartArgsPipe implements PipeTransform {
         }
     }
 }
-
-enum CellFormatType {
-    NUMERIC = "numeric",
-    TEXT = "text",
-    COMPOSITE = "composite"
-}
-
 @Component({
     selector: "app-grid-dynamic-chart-data",
     templateUrl: "./grid-dynamic-chart-data.component.html",
@@ -54,7 +47,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public data;
     public opened = true;
-    @ViewChild(IgxGridComponent, { static: true })
+    @ViewChild("grid", {read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
     @ViewChild("chart", { read: ChartHostDirective, static: true })
@@ -204,7 +197,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.chartSelectionDialog.onOpen.subscribe(() => {
             this.currentChartArg = { chartType: "Column", seriesType: "Grouped" };
         });
-
         this.dialog.onOpen.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.chartSelectionDialog.close();
@@ -233,36 +225,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
-            let minCol;
-            let minRow;
-            let maxValue;
-            let cellForComparison;
 
             this.zone.runOutsideAngular(() => {
-            this.cellsToFormat = (this.grid.selectedCells as IgxGridCellComponent[]).map(cell => ({value: cell.value, column: cell.column.field, cellID: cell.cellID}));
-            const numericCells = this.cellsToFormat.filter(c =>  typeof c.value === "number");
-            const textCells = this.cellsToFormat.filter(c =>  typeof c.value === "string");
-
-            if (numericCells.length === 0) {
-                this.cellsFormatType = CellFormatType.TEXT;
-                minCol = Math.min.apply(Math, textCells.map(c => c.cellID.columnID));
-                minRow = Math.min.apply(Math, textCells.map(c => c.cellID.rowID as number));
-                cellForComparison = this.cellsToFormat.find(cell => {
-
-                    return cell.cellID.columnID === minCol && cell.cellID.rowID === minRow;
-                });
-            } else if (textCells.length === 0) {
-                this.cellsFormatType = CellFormatType.NUMERIC;
-                maxValue = Math.max.apply(Math, numericCells.map(c => c.value));
-            } else {
-                 minCol = Math.min.apply(Math, textCells.map(c => c.cellID.columnID));
-                 minRow = Math.min.apply(Math, textCells.map(c => c.cellID.rowID as number));
-                 cellForComparison = this.cellsToFormat.find(cell => {
-                    return cell.cellID.columnID === minCol && cell.cellID.rowID === minRow;
-                });
-                 maxValue = Math.max.apply(Math, numericCells.map(c => c.value));
-                 this.cellsFormatType = CellFormatType.COMPOSITE;
-            }
 
             const chartData = this.grid.getSelectedData()
                 .map(this.dataMap)
@@ -270,7 +234,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
             if (chartData.length === 0) {
                 this.disableCreateChart = true;
-                this.cellsFormatType = CellFormatType.TEXT;
             } else {
                 this.disableCreateChart = false;
                 const valueMemberPaths = Object.keys(chartData[0]);
@@ -304,8 +267,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             this.tabs.tabs.first.isSelected = true;
             this.range = range;
         });
-            console.log(maxValue);
-            console.log(cellForComparison);
             this.renderButton();
         });
     }
