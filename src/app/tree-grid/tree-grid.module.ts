@@ -42,6 +42,7 @@ import {
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 // tslint:disable-next-line: max-line-length
 import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
+import { TreeGridMultiCollapsibleColumnGroupsComponent } from './tree-grid-collapsible-groups/tree-grid-collapsible-column-groups.component';
 import {
     TreeGridColumnHidingSampleComponent
 } from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -248,7 +249,8 @@ import {
         TreeGridStyleComponent,
         TreeGridExternalExcelStyleFilteringComponent,
         TreeGridExternalAdvancedFilteringComponent,
-        TreeGridConditionalCellStyle2Component
+        TreeGridConditionalCellStyle2Component,
+        TreeGridMultiCollapsibleColumnGroupsComponent
     ],
     imports: [
         CommonModule,
