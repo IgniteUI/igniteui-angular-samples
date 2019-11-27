@@ -29,11 +29,7 @@ export class HGridMultiRowDragComponent {
     public handleRowSelectionChange(args) {
         this.ids = args.newSelection;
         this.grid = args.owner;
-        if (this.ids.length !== 0) {
-            this.selected = true;
-        } else {
-            this.selected = false;
-        }
+        this.selected = this.ids.length !== 0;
     }
 
     public onDropAllowed(args: IDropDroppedEventArgs) {
