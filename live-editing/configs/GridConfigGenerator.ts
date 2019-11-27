@@ -49,6 +49,7 @@ import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelectio
 import {
     GridClipboardSampleComponent
 } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
+import { GridCollapsibleColumnGroupsComponent } from '../../src/app/grid/grid-collapsible-columnGroups/grid-collapsible-column-groups.component';
 import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -1125,6 +1126,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridConditionalRowSelectorsComponent],
                 ngImports: [IgxGridModule, IgxCheckboxModule],
                 ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCollapsibleColumnGroupsComponent,
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCollapsibleColumnGroupsComponent, IgxGridModule, IgxTooltipModule],
+                ngDeclarations: [GridCollapsibleColumnGroupsComponent],
+                ngImports: [IgxGridModule, IgxTooltipModule]
             })
         }));
         return configs;
