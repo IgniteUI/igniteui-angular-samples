@@ -76,6 +76,7 @@ import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-g
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
+import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
@@ -508,6 +509,11 @@ export const gridsRoutes: Routes = [
         component: GridDynamicChartDataComponent,
         data: gridsRoutesData["grid-dynamic-chart-data"],
         path: "grid-dynamic-chart-data"
+    },
+    {
+        component: GridCollapsibleColumnGroupsComponent,
+        data: gridsRoutesData["grid-collapsible-groups"],
+        path: "grid-collapsible-groups"
     }
 ];
 
