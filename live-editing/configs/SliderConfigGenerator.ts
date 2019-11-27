@@ -1,27 +1,19 @@
 /* tslint:disable:object-literal-sort-keys */
 import { IgxInputGroupModule, IgxSliderModule } from "igniteui-angular";
+import { SliderDiscreteTicksBottomComponent } from "../../src/app/interactions/slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component";
+import { SliderPrimaryTicksTopComponent } from "../../src/app/interactions/slider/slider-primary-ticks-top/slider-primary-ticks-top.component";
 import { SliderSample1Component } from "../../src/app/interactions/slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "../../src/app/interactions/slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "../../src/app/interactions/slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "../../src/app/interactions/slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "../../src/app/interactions/slider/slider-sample-5/slider-sample-5.component";
 import { SliderSample6Component } from "../../src/app/interactions/slider/slider-sample-6/slider-sample-6.component";
-import {
-    SliderSecondaryTicksMirrorComponent
-} from "../../src/app/interactions/slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
-import {
-    SliderDiscreteTicksBottomComponent
-} from "../../src/app/interactions/slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component";
-import {
-    SliderTicksBottomtotopLabelsComponent
-} from "../../src/app/interactions/slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component";
-import {
-    SliderPrimaryTicksTopComponent
-} from "../../src/app/interactions/slider/slider-primary-ticks-top/slider-primary-ticks-top.component";
+import { SliderSecondaryTicksMirrorComponent } from "../../src/app/interactions/slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
+import { SliderTicksBottomtotopLabelsComponent } from "../../src/app/interactions/slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component";
+import { SliderTimeframeComponent } from '../../src/app/interactions/slider/slider-timeframe/slider-timeframe.component';
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { SliderTimeframeComponent } from '../../src/app/interactions/slider/slider-timeframe/slider-timeframe.component';
 
 export class SliderConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
