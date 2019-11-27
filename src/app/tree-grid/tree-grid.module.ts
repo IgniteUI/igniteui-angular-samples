@@ -19,6 +19,7 @@ import {
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule,
+    IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
@@ -273,7 +274,8 @@ import {
         IgxSparklineModule,
         IgxSparklineCoreModule,
         IgxBannerModule,
-        IgxSnackbarModule
+        IgxSnackbarModule,
+        IgxTooltipModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
