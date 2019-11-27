@@ -123,6 +123,7 @@ import {
 import {
     TreeGridMultiColumnHeadersStylingComponent
 } from "./tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
+import { TreeGridMultiRowDrag } from "./tree-grid-multi-row-drag/tree-grid-multi-row-drag.component";
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
@@ -225,6 +226,7 @@ import {
         TreeGridLoadOnDemandSampleComponent,
         TreeGridRowDrag,
         TreeGridRowDragBase,
+        TreeGridMultiRowDrag,
         TreeGridKBNavigationComponent,
         TreeGridRowReorderComponent,
         TreeGridRemotePagingSampleComponent,
