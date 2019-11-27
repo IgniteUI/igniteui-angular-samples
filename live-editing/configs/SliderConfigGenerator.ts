@@ -6,9 +6,12 @@ import { SliderSample3Component } from "../../src/app/interactions/slider/slider
 import { SliderSample4Component } from "../../src/app/interactions/slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "../../src/app/interactions/slider/slider-sample-5/slider-sample-5.component";
 import { SliderSample6Component } from "../../src/app/interactions/slider/slider-sample-6/slider-sample-6.component";
+import { SliderTicksBottom } from "../../src/app/interactions/slider/slider-ticks-bottom/slider-ticks-bottom.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { DiscreteSliderTicksBottom } from '../../src/app/interactions/slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component';
+import { SliderTicksBottomtotopLabels } from '../../src/app/interactions/slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component';
 
 export class SliderConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -75,6 +78,36 @@ export class SliderConfigGenerator implements IConfigGenerator {
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxSliderModule, SliderSample6Component],
                 ngDeclarations: [SliderSample6Component],
+                ngImports: [IgxSliderModule]
+            }),
+            shortenComponentPathBy: "/interactions/slider/"
+        }));
+
+        configs.push(new Config({
+            component: SliderTicksBottom,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSliderModule, SliderTicksBottom],
+                ngDeclarations: [SliderTicksBottom],
+                ngImports: [IgxSliderModule]
+            }),
+            shortenComponentPathBy: "/interactions/slider/"
+        }));
+
+        configs.push(new Config({
+            component: DiscreteSliderTicksBottom,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSliderModule, DiscreteSliderTicksBottom],
+                ngDeclarations: [DiscreteSliderTicksBottom],
+                ngImports: [IgxSliderModule]
+            }),
+            shortenComponentPathBy: "/interactions/slider/"
+        }));
+
+        configs.push(new Config({
+            component: SliderTicksBottomtotopLabels,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSliderModule, SliderTicksBottomtotopLabels],
+                ngDeclarations: [SliderTicksBottomtotopLabels],
                 ngImports: [IgxSliderModule]
             }),
             shortenComponentPathBy: "/interactions/slider/"

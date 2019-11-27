@@ -42,6 +42,7 @@ import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
 import { SliderSample6Component } from "./slider/slider-sample-6/slider-sample-6.component";
+import { SliderTicksBottom } from "./slider/slider-ticks-bottom/slider-ticks-bottom.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -49,6 +50,8 @@ import { ToggleComponent } from "./toggle/toggle.component";
 import { TooltipRichComponent } from "./tooltip/tooltip-rich/tooltip-rich.component";
 import { TooltipSimpleComponent } from "./tooltip/tooltip-simple/tooltip-simple.component";
 import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.component";
+import { DiscreteSliderTicksBottom } from './slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component';
+import { SliderTicksBottomtotopLabels } from './slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component';
 
 @NgModule({
     declarations: [
@@ -69,6 +72,9 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         SliderSample4Component,
         SliderSample5Component,
         SliderSample6Component,
+        SliderTicksBottom,
+        DiscreteSliderTicksBottom,
+        SliderTicksBottomtotopLabels,
         RippleSample1Component,
         RippleSample2Component,
         RippleSample3Component,
