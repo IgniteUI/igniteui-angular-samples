@@ -6,13 +6,14 @@ import { FormsModule } from "@angular/forms";
 import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule, IgxButtonModule, IgxCheckboxModule, IgxChipsModule, IgxColumnHidingModule,
     IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
-    IgxToastModule, IgxToggleModule } from "igniteui-angular";
+    IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
 import { HierarchicalGridWithTransactionsComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-transactions.component";
+import { HGridCollapsibleColumnGroupComponent } from './hierarchical-grid-collapsible-column-groups/hierarchical-grid-collapsible-column-groups.component';
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "./hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
 import { HGridCostumHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
@@ -126,7 +127,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridStylingComponent,
         HGridConditionalRowSelectorsComponent,
         HGridExternalAdvancedFilteringComponent,
-        HGridExternalExcelStyleFilteringComponent
+        HGridExternalExcelStyleFilteringComponent,
+        HGridCollapsibleColumnGroupComponent
     ],
     imports: [
         CommonModule,
@@ -159,7 +161,8 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         IgxSparklineModule,
         IgxSparklineCoreModule,
         IgxBannerModule,
-        IgxSnackbarModule
+        IgxSnackbarModule,
+        IgxTooltipModule
     ],
     providers: [
         IgxCsvExporterService,

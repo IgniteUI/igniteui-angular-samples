@@ -927,8 +927,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [TreeGridMultiCollapsibleColumnGroupsComponent],
                 ngImports: [IgxTreeGridModule, IgxTooltipModule]
             }),
-            component: TreeGridMultiColumnHeaderTemplateSampleComponent,
-            shortenComponentPathBy: "/tree-grid/"
+            component: TreeGridMultiCollapsibleColumnGroupsComponent
         }));
 
         return configs;
