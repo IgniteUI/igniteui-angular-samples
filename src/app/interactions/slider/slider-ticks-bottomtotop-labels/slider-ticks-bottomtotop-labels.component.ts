@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
-import { SliderType, TickLabelsOrientation } from 'igniteui-angular';
+import { SliderType, TickLabelsOrientation } from "igniteui-angular";
 
 @Component({
     selector: "app-slider-ticks-bottomtotop-labels",
     styleUrls: ["./slider-ticks-bottomtotop-labels.component.scss"],
     templateUrl: "./slider-ticks-bottomtotop-labels.component.html"
 })
-export class SliderTicksBottomtotopLabels {
+export class SliderTicksBottomtotopLabelsComponent {
     public type: SliderType = SliderType.RANGE;
     public labelsOrientation = TickLabelsOrientation.bottomtotop;
 

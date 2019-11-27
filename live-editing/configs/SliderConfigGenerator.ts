@@ -6,12 +6,22 @@ import { SliderSample3Component } from "../../src/app/interactions/slider/slider
 import { SliderSample4Component } from "../../src/app/interactions/slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "../../src/app/interactions/slider/slider-sample-5/slider-sample-5.component";
 import { SliderSample6Component } from "../../src/app/interactions/slider/slider-sample-6/slider-sample-6.component";
-import { SliderTicksBottom } from "../../src/app/interactions/slider/slider-ticks-bottom/slider-ticks-bottom.component";
+import {
+    SliderSecondaryTicksMirrorComponent
+} from "../../src/app/interactions/slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
+import {
+    SliderDiscreteTicksBottomComponent
+} from "../../src/app/interactions/slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component";
+import {
+    SliderTicksBottomtotopLabelsComponent
+} from "../../src/app/interactions/slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component";
+import {
+    SliderPrimaryTicksTopComponent
+} from "../../src/app/interactions/slider/slider-primary-ticks-top/slider-primary-ticks-top.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { DiscreteSliderTicksBottom } from '../../src/app/interactions/slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component';
-import { SliderTicksBottomtotopLabels } from '../../src/app/interactions/slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component';
+import { SliderTimeframeComponent } from '../../src/app/interactions/slider/slider-timeframe/slider-timeframe.component';
 
 export class SliderConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -84,30 +94,50 @@ export class SliderConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: SliderTicksBottom,
+            component: SliderSecondaryTicksMirrorComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSliderModule, SliderTicksBottom],
-                ngDeclarations: [SliderTicksBottom],
+                imports: [IgxSliderModule, SliderSecondaryTicksMirrorComponent],
+                ngDeclarations: [SliderSecondaryTicksMirrorComponent],
                 ngImports: [IgxSliderModule]
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
 
         configs.push(new Config({
-            component: DiscreteSliderTicksBottom,
+            component: SliderDiscreteTicksBottomComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSliderModule, DiscreteSliderTicksBottom],
-                ngDeclarations: [DiscreteSliderTicksBottom],
+                imports: [IgxSliderModule, SliderDiscreteTicksBottomComponent],
+                ngDeclarations: [SliderDiscreteTicksBottomComponent],
                 ngImports: [IgxSliderModule]
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
 
         configs.push(new Config({
-            component: SliderTicksBottomtotopLabels,
+            component: SliderTicksBottomtotopLabelsComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSliderModule, SliderTicksBottomtotopLabels],
-                ngDeclarations: [SliderTicksBottomtotopLabels],
+                imports: [IgxSliderModule, SliderTicksBottomtotopLabelsComponent],
+                ngDeclarations: [SliderTicksBottomtotopLabelsComponent],
+                ngImports: [IgxSliderModule]
+            }),
+            shortenComponentPathBy: "/interactions/slider/"
+        }));
+
+        configs.push(new Config({
+            component: SliderPrimaryTicksTopComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSliderModule, SliderPrimaryTicksTopComponent],
+                ngDeclarations: [SliderPrimaryTicksTopComponent],
+                ngImports: [IgxSliderModule]
+            }),
+            shortenComponentPathBy: "/interactions/slider/"
+        }));
+
+        configs.push(new Config({
+            component: SliderTimeframeComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxSliderModule, SliderTimeframeComponent],
+                ngDeclarations: [SliderTimeframeComponent],
                 ngImports: [IgxSliderModule]
             }),
             shortenComponentPathBy: "/interactions/slider/"
