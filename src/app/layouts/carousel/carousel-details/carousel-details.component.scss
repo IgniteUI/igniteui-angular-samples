@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    text-align: center;
+    display: inline-flex;
+    flex-flow: column;
+    margin-top: 5px;
+    button{
+        justify-self: center;
+        margin-bottom: 1rem;
+    }
+}
