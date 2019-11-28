@@ -149,6 +149,8 @@ import {
     GridMultiRowLayoutStylingComponent
 } from "../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridMultipleRowDragComponent } from
+    "../../src/app/grid/grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { GridPagerSampleComponent } from "../../src/app/grid/grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -1018,6 +1020,18 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridMultipleRowDragComponent,
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridMultipleRowDragComponent, IgxDragDropModule],
+                ngDeclarations: [GridMultipleRowDragComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule]
+            })
+        }));
+
+        configs.push(new Config({
             component: GridRowReorderComponent,
             additionalFiles: [
                 "/src/app/data/customers.ts"
@@ -1028,6 +1042,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule]
             })
         }));
+
         configs.push(new Config({
             component: GridGroupByPagingSampleComponent,
             additionalFiles: [
@@ -1080,10 +1095,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCellSelectionComponent, IgxGridModule, IgxSwitchModule,
-                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule],
-                ngDeclarations: [GridCellSelectionComponent, IgxGridModule, IgxIconModule, IgxSwitchModule,
-                    IgxButtonGroupModule, IgxAvatarModule],
-                ngImports: [IgxGridModule]
+                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule, IgxSnackbarModule],
+                ngDeclarations: [GridCellSelectionComponent],
+                ngImports: [IgxGridModule, IgxSnackbarModule]
             })
         }));
 
