@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
-import { FilteringExpressionsTree, FilteringLogic, IGridState, IGroupingExpression, IgxGridComponent,
-    IgxGridStateDirective, IgxNumberSummaryOperand, IgxSummaryResult, IPagingState,
-    ISortingExpression } from "igniteui-angular";
+import { FilteringExpressionsTree, FilteringLogic, IGridState, IGroupingState,
+    IgxGridComponent, IgxGridStateDirective, IgxNumberSummaryOperand, IgxSummaryResult,
+    IPagingState,
+    ISortingExpression} from "igniteui-angular";
 import { take } from "rxjs/operators";
 import { employeesData } from "./localData";
 
@@ -132,7 +133,7 @@ export class GridSaveStateComponent implements OnInit {
 
     public restoreGroupby() {
       const state = window.localStorage.getItem(this.stateKey);
-      const groupByState: IGroupingExpression[] = state ? JSON.parse(state).groupBy : null;
+      const groupByState: IGroupingState = state ? JSON.parse(state).groupBy : null;
       if (groupByState) {
         const gridGroupiByState: IGridState = { groupBy: groupByState};
         this.state.setState(gridGroupiByState);
@@ -171,6 +172,8 @@ export class GridSaveStateComponent implements OnInit {
       this.grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
       this.grid.sortingExpressions = [];
       this.grid.groupingExpressions = [];
+      this.grid.deselectAllRows();
+      this.grid.clearCellSelection();
     }
 
     public onChange(event: any, action: string) {
