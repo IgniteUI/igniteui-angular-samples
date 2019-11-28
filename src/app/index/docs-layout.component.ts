@@ -12,15 +12,24 @@ export class DocsLayoutComponent implements OnInit {
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
     public ngOnInit() {
-        this.document.body.classList.add(this.theme);
+        //this.document.body.classList.add(this.theme);
     }
 
     @HostListener("window:message", ["$event"])
     private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin) {
-            this.document.body.classList.remove(this.theme);
-            this.document.body.classList.add(e.data.theme);
-            this.theme = e.data.theme;
+            // this.document.body.classList.remove(this.theme);
+            // this.document.body.classList.add(e.data.theme);
+            // this.theme = e.data.theme;
+        }
+
+        // TODO add origin check
+        if (typeof e.data === "string") {
+            //document.querySelectorAll("style").forEach(element => element.remove());
+
+            var style = document.createElement('style');
+            style.textContent = e.data;
+            document.head.insertBefore(style, this.document.head.lastElementChild);
         }
     }
 }
