@@ -86,6 +86,7 @@ import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/gri
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
@@ -215,6 +216,7 @@ import { DataService } from "./services/data.service";
         GridConditionalRowSelectorsComponent,
         GridDynamicChartDataComponent,
         ContextMenuComponent,
+        GridMultipleRowDragComponent,
         ChartHostDirective,
         ChartArgsPipe,
         GridExternalAdvancedFilteringComponent

@@ -71,6 +71,7 @@ import { HGridMultiCellStyleComponent } from "../../src/app/hierarchical-grid/hi
 import { HGridMultiHeaderTemplateSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-header-template/hierarchical-grid-multi-column-template.component";
 import { HGridMultiHeadersStylingComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-headers-styling/hierarchical-grid-multi-column-styling.component";
 import { HGridMultiHeadersSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-column-headers/hierarchical-grid-multi-column.component";
+import { HGridMultiRowDragComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-multi-row-drag/hierarchical-grid-multi-row-drag.component";
 import { HGridPagingStyleSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging-style/hierarchical-grid-paging-style.component";
 import { HGridPagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-paging.component";
 import { HGridRemotePagingSampleComponent } from "../../src/app/hierarchical-grid/hierarchical-grid-paging/hierarchical-grid-remote-paging.component";
@@ -562,6 +563,18 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxHierarchicalGridModule, IgxDragDropModule, IgxButtonModule]
             }),
             component: HGridRowDragBaseComponent
+        }));
+
+        configs.push(new Config({
+            additionalFiles: [
+                "/src/app/data/utils.ts",
+                "/src/app/data/files.data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxHierarchicalGridModule, HGridMultiRowDragComponent, IgxDragDropModule, IgxButtonModule],
+                ngDeclarations: [HGridMultiRowDragComponent],
+                ngImports: [IgxHierarchicalGridModule, IgxDragDropModule, IgxButtonModule]
+            }),
+            component: HGridMultiRowDragComponent
         }));
 
         configs.push(new Config({
