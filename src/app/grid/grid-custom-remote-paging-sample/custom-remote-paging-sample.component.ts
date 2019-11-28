@@ -5,11 +5,11 @@ import { RemotePagingService } from "../services/remotePagingService";
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
-    selector: "remote-paging-grid-sample",
-    styleUrls: ["./remote-paging-sample.component.scss"],
-    templateUrl: "./remote-paging-sample.component.html"
+    selector: "custom-remote-paging-grid-sample",
+    styleUrls: ["./custom-remote-paging-sample.component.scss"],
+    templateUrl: "./custom-remote-paging-sample.component.html"
 })
-export class RemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
+export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDestroy {
 
     public page = 0;
     public lastPage = false;
