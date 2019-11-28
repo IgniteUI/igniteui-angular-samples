@@ -546,7 +546,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/data/files.data.ts"],
+            additionalFiles: ["/src/app/data/utils.ts", "/src/app/data/files.data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridDragSampleComponent, IgxDragDropModule, IgxIconModule, IgxButtonModule],
                 ngDeclarations: [HGridDragSampleComponent],
@@ -556,7 +556,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/data/files.data.ts"],
+            additionalFiles: ["/src/app/data/utils.ts", "/src/app/data/files.data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, HGridRowDragBaseComponent, IgxDragDropModule, IgxButtonModule],
                 ngDeclarations: [HGridRowDragBaseComponent],
@@ -588,7 +588,7 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: ["/src/app/data/files.data.ts"],
+            additionalFiles: ["/src/app/data/utils.ts", "/src/app/data/files.data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxHierarchicalGridModule, IgxDragDropModule, HGridRowReorderComponent],
                 ngDeclarations: [HGridRowReorderComponent],
