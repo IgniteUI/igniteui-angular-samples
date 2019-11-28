@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, NgZone } from "@angular/core";
+import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, NgZone, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
@@ -189,7 +189,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     private chartComponentOptions: IChartComponentOptions;
 
-    constructor(private chartService: ChartService, private zone: NgZone) {
+    constructor(private chartService: ChartService, private zone: NgZone, private cdr: ChangeDetectorRef) {
         this.bubbleChartSizeScale.maximumValue = 60;
         this.bubbleChartSizeScale.minimumValue = 10;
     }
@@ -270,6 +270,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
             this.tabs.tabs.first.isSelected = true;
             this.range = range;
+            this.formatting.range = range;
         });
             this.renderButton();
         });
@@ -407,6 +408,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public analyse() {
         this.formatting.formatCells();
+        this.grid.reflow()
     }
 
     public rightClick(eventArgs: any) {

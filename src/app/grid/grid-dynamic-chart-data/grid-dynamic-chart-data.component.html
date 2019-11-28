@@ -1,11 +1,11 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper" >
-    <igx-grid #grid  conditionalFormating [selectionRange]="range"  primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
+    <igx-grid #grid  conditionalFormating  primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [sortable]='true' [width]="'110px'"></igx-column>
         <igx-column field='Type' [sortable]='true' [filterable]='false' [width]="'130px'">
         </igx-column>
         <igx-column field='Country' [sortable]='true' [width]="'100px'"></igx-column>
-        <igx-column field='Price' dataType="number" [cellClasses]="trends" [width]="'120px'" [sortable]="true">
+        <igx-column field='Price' dataType="number" [width]="'120px'" [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
@@ -13,17 +13,17 @@
             </ng-template>
         </igx-column>
 
-        <igx-column field='Buy' [cellClasses]="trendsChange" [width]="'100px'" dataType="number"
+        <igx-column field='Buy' [width]="'100px'" dataType="number"
             [formatter]="formatCurrency"  [sortable]="true"></igx-column>
 
         <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" 
-            [sortable]="true" [cellClasses]="trendsOnYear">
+            [sortable]="true">
         </igx-column>
         <igx-column field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" 
-            [sortable]="true" [cellClasses]="trendsOnYear">
+            [sortable]="true">
         </igx-column>
         <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency"  [sortable]="true"
-            [cellClasses]="trends" [width]="'130px'">
+         [width]="'130px'">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
@@ -31,14 +31,14 @@
             </ng-template>
         </igx-column>
         <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" 
-            [sortable]="true" [cellClasses]="trendsOnYear">
+            [sortable]="true">
         </igx-column>
         <igx-column field='High(D)' [width]="'100px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-            [sortable]="true" [cellClasses]="trendsChange" [formatter]="formatCurrency" >
+            [sortable]="true" [formatter]="formatCurrency" >
         </igx-column>
 
         <igx-column field='Low(D)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" 
-            [sortable]="true" [cellClasses]="trendsChange">
+            [sortable]="true">
         </igx-column>
         <igx-column field='Sell' [width]="'110px'" dataType="number"
         [formatter]="formatCurrency"  [sortable]="true"></igx-column>
