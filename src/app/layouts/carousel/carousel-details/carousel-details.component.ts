@@ -1,26 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { slides } from "../mock-slides";
+import { Component} from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-details",
-  templateUrl: "./carousel-details.component.html"
+  templateUrl: "./carousel-details.component.html",
+  styleUrls: ["./carousel-details.component.scss"]
 })
-export class CarouselDetailsViewComponent implements OnInit {
+export class CarouselDetailsViewComponent {
   public slide: any;
   public index: number;
-  private sub: any;
 
-  constructor(private rout: ActivatedRoute, private router: Router) { }
-
-  public ngOnInit() {
-    this.sub = this.rout.params.subscribe((params) => {
-      this.index = +params.index; // (+) converts string 'id' to a number
-      this.slide = slides[this.index];
-    });
-  }
+  constructor(private router: Router) { }
 
   public goBack() {
-    this.router.navigate(["layouts/carousel-sample-4"]);
+    this.router.navigate(["layouts/carousel-base-sample"]);
   }
 }
