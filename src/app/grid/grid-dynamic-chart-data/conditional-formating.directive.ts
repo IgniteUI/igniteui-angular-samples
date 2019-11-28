@@ -64,7 +64,6 @@ export class ConditionalFormatingDirective implements AfterViewInit {
                     this._errorValue = (33 * Math.floor(this.maxValue)) / 100;
                 }
             });
-
         }
 
     }
@@ -75,9 +74,9 @@ export class ConditionalFormatingDirective implements AfterViewInit {
 
     // tslint:disable: member-ordering
     public colorScale = {
-        background: (rowData, coljey, cellValue, rowIndex) => {
+        background: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowData[this.grid.primaryKey])) {
-                console.log(`${rowData[this.grid.primaryKey]}: ${coljey}`);
+                console.log(`${rowData[this.grid.primaryKey]}: ${colname}`);
                 return this._errorValue >= cellValue ? this._errorColor :
                        this._warnValue >= cellValue ? this._warningColor : this._successColor;
             }
@@ -95,12 +94,13 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     }
 
     public formatCells() {
-        this.grid.visibleColumns.forEach(c => {
-            c.cellStyles = null;
-            if (c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd) {
-                c.cellStyles = this.colorScale;
-            }
-        });
+          this.grid.visibleColumns.forEach(c => {
+              c.cellStyles = null;
+              this.grid.cdr.detectChanges();
+              if(c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd) {
+                  c.cellStyles = this.colorScale;
+              }
+          })
     }
 
     public ngAfterViewInit() {

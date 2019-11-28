@@ -269,9 +269,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             }
 
             this.tabs.tabs.first.isSelected = true;
-            this.range = range;
-            this.formatting.range = range;
         });
+            this.range = range;
             this.renderButton();
         });
     }
@@ -279,64 +278,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public ngAfterViewInit(): void {
         this.grid.headerContainer.getScroll().onscroll = () => this.disableContextMenu();
     }
-
-    // private negative = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] < 0;
-    // }
-    // private positive = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] > 0;
-    // }
-    // private changeNegative = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
-    // }
-    // private changePositive = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
-    // }
-    // private strongPositive = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] >= 1;
-    // }
-    // private strongNegative = (rowData: any, key: string): boolean => {
-    //     return rowData["Change(%)"] <= -1;
-    // }
-
-    // private strongPositiveOnYear = (rowData: any): boolean => {
-    //     return rowData["Change On Year(%)"] >= 1;
-    // }
-    // private positiveOnYear = (rowData: any): boolean => {
-    //     return rowData["Change On Year(%)"] > 0;
-    // }
-
-    // private strongNegativeOnYear = (rowData: any, key: string): boolean => {
-    //     return rowData["Change On Year(%)"] <= -1;
-    // }
-    // private negativeOnYear = (rowData: any, key: string): boolean => {
-    //     return rowData["Change On Year(%)"] < 0;
-    // }
-
-    // // tslint:disable:member-ordering
-    // public trends = {
-    //     changeNeg: this.changeNegative,
-    //     changePos: this.changePositive,
-    //     negative: this.negative,
-    //     positive: this.positive,
-    //     strongNegative: this.strongNegative,
-    //     strongPositive: this.strongPositive
-    // };
-
-    // public trendsOnYear = {
-    //     changeNeg2: this.negativeOnYear,
-    //     changePos2: this.positiveOnYear,
-    //     strongNegative2: this.strongNegativeOnYear,
-    //     strongPositive2: this.strongPositiveOnYear
-    // };
-
-    // public trendsChange = {
-    //     changeNeg2: this.changeNegative,
-    //     changePos2: this.changePositive,
-    //     strongNegative2: this.strongNegative,
-    //     strongPositive2: this.strongPositive
-    // };
-    // tslint:disable-next-line: align
 
     public formatCurrency(value: number) {
         return "$" + value.toFixed(3);
@@ -407,8 +348,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public analyse() {
+        this.formatting.range = this.range;
         this.formatting.formatCells();
-        this.grid.reflow()
     }
 
     public rightClick(eventArgs: any) {
