@@ -51,6 +51,7 @@ import { SliderSample6Component } from "./slider/slider-sample-6/slider-sample-6
 import {
     SliderSecondaryTicksMirrorComponent
 } from "./slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
+import { TickLabelsTemplateComponent } from "./slider/slider-tick-labels-template/tick-labels-template.component";
 import {
     SliderTicksBottomtotopLabelsComponent
 } from "./slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component";
@@ -87,6 +88,7 @@ import { TooltipStyleComponent } from "./tooltip/tooltip-style/tooltip-style.com
         SliderTicksBottomtotopLabelsComponent,
         SliderPrimaryTicksTopComponent,
         SliderTimeframeComponent,
+        TickLabelsTemplateComponent,
         RippleSample1Component,
         RippleSample2Component,
         RippleSample3Component,
