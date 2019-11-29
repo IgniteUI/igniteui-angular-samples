@@ -349,18 +349,17 @@ export class FinJSDemoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     private tickerAllPrices(data: any) {
-        this.grid1.data = this.updateAllPrices(data);
+        this.updateAllPrices(data);
     }
 
     /**
      * Updates values in every record
      */
     private updateAllPrices(data: any[]): any {
-        const newData = data.slice();
-        for (const dataRow of newData) {
+        for (const dataRow of data) {
             this.randomizeObjectData(dataRow);
         }
-        return newData;
+        (this.grid1 as any).notifyChanges();
     }
 
     /**
