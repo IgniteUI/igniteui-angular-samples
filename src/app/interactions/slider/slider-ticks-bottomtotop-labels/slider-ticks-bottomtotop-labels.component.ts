@@ -8,7 +8,7 @@ import { SliderType, TickLabelsOrientation } from "igniteui-angular";
 })
 export class SliderTicksBottomtotopLabelsComponent {
     public type: SliderType = SliderType.RANGE;
-    public labelsOrientation = TickLabelsOrientation.bottomtotop;
+    public labelsOrientation = TickLabelsOrientation.BottomToTop;
 
     public priceRange: PriceRange = new PriceRange(20, 40);
 }

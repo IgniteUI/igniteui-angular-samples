@@ -10,7 +10,7 @@ export class SliderSecondaryTicksMirrorComponent {
     @ViewChild(IgxSliderComponent, { static: true })
     public slider: IgxSliderComponent;
 
-    public ticksOrientation = TicksOrientation.mirror;
+    public ticksOrientation = TicksOrientation.Mirror;
 
     public decrease() {
         this.slider.value = (this.slider.value as number) - this.slider.step;
