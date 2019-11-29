@@ -1,6 +1,7 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper" >
     <igx-grid #grid  conditionalFormating  primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
         <igx-column field='ID' [hidden]='true'></igx-column>
+        <igx-column field='fhdjsk' ></igx-column>
         <igx-column field='Category' [sortable]='true' [width]="'110px'"></igx-column>
         <igx-column field='Type' [sortable]='true' [filterable]='false' [width]="'130px'">
         </igx-column>

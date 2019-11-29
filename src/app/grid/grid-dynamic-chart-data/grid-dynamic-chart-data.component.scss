@@ -28,6 +28,9 @@
 
 :host ::ng-deep {
 
+    .selected{
+        background: #e0e0e0;
+    }
 
     @include igx-fluent-theme($fluent-excel-palette);
     @include scrollbar-love();
