@@ -1,12 +1,12 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, NgZone, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
+import { ConditionalFormatingDirective } from "./conditional-formating.directive";
 import { IChartArgs } from "./context-menu/context-menu.component";
 import { IChartComponentOptions, IChartOptions, IChartSeriesOptions, IXAxesOptions, IYAxesOptions } from "./initializers";
-import { ConditionalFormatingDirective } from './conditional-formating.directive';
 @Directive({
     selector: "[chartHost]"
 })
@@ -196,7 +196,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public ngOnInit() {
 
-        this.formatting.onFormattersReady.subscribe( names => this.formattersNames = names);
+        this.formatting.onFormattersReady.subscribe(names => this.formattersNames = names);
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
         this.chartSelectionDialog.onOpen.subscribe(() => {
