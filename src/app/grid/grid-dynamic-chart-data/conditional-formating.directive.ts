@@ -1,10 +1,10 @@
 import { AfterViewInit, Directive, Inject, Input, NgZone, Output, EventEmitter } from "@angular/core";
-import { IgxGridCellComponent, IgxGridComponent } from "igniteui-angular";
+import { IgxGridCellComponent, IgxGridComponent, IgxColumnComponent } from "igniteui-angular";
 import { GridSelectionRange } from "igniteui-angular/lib/grids/selection/selection.service";
 
 export enum CellFormatType {
-    NUMERIC = "numeric",
-    TEXT = "text",
+    NUMERIC = "number",
+    TEXT = "string",
     COMPOSITE = "composite"
 }
 
@@ -27,7 +27,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
             this.zone.runOutsideAngular(() => {
 
                 // tslint:disable: max-line-length
-                this._numericData = selectedData.filter(value => typeof  value === "number");
+                this._numericData = selectedData.filter(value => typeof value === "number");
                 this._textData = selectedData.filter(value => typeof value === "string");
                 if (this._numericData.length === 0) {
                     this.formatType = CellFormatType.TEXT;
@@ -68,13 +68,13 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     }
 
     @Output()
-    public onFormattersReady =  new EventEmitter<string[]>();
+    public onFormattersReady = new EventEmitter<string[]>();
 
     public colorScale = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex)) {
                 return this._errorValue >= cellValue ? this._errorColor :
-                       this._warnValue >= cellValue ? this._warningColor : this._successColor;
+                    this._warnValue >= cellValue ? this._warningColor : this._successColor;
             }
         }
     };
@@ -92,16 +92,24 @@ export class ConditionalFormatingDirective implements AfterViewInit {
 
     public top10Percent = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex) && cellValue >= this._top10Value) {
+            if (this.isWithingRange(rowIndex)) {
+                if (cellValue > this._top10Value) {
                     return this._top10Color;
+                } else {
+                    return this.colorScale.backgroundColor(rowData, colname, cellValue, rowIndex);
+                }
             }
         }
     };
 
     public greaterThan = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
+            if (this.isWithingRange(rowIndex)) {
+                if (cellValue > this._averageValue) {
                     return this._averageColor;
+                } else {
+                    return this.colorScale.backgroundColor(rowData, colname, cellValue, rowIndex);
+                }
             }
         }
     };
@@ -109,7 +117,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     public empty = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex) && cellValue === undefined) {
-                    return this._errorColor;
+                return this._errorColor;
             }
         }
     };
@@ -119,7 +127,8 @@ export class ConditionalFormatingDirective implements AfterViewInit {
             if (this.isWithingRange(rowIndex)) {
                 const color = this.zone.runOutsideAngular(() => {
                     const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                    return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ? this._warningColor : ""; });
+                    return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ? this._warningColor : "";
+                });
                 return color;
             }
         }
@@ -138,7 +147,8 @@ export class ConditionalFormatingDirective implements AfterViewInit {
             if (this.isWithingRange(rowIndex)) {
                 const color = this.zone.runOutsideAngular(() => {
                     const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                    return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ? this._warningColor : ""; });
+                    return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ? this._warningColor : "";
+                });
                 return color;
             }
         }
@@ -148,11 +158,11 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     private _successColor = "rgba(78, 184, 98, .7)";
     private _warningColor = "rgba(251,177,60, .7)";
     private _errorColor = "rgba(255,19,74, .7)";
-    private _top10Color = "rgb(78, 184, 98)";
+    private _top10Color = "rgb(78, 150, 98)";
     private _averageColor = "rgba(78, 184, 98, .5)";
 
     private _numericFormatters = ["Data Bars", "Color Scale", "Top 10%", "Greater Than"];
-    private _textFormatters =  ["Text Contains"];
+    private _textFormatters = ["Text Contains"];
 
     private _top10Value;
     private _errorValue;
@@ -178,38 +188,36 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     }
 
     public formatCells(formatterName) {
-          const formatter = this._formattersData.get(formatterName);
-          this.grid.visibleColumns.forEach(c => {
-              if (!(c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd)) {
-                    c.cellStyles = null;
-                    this.grid.cdr.detectChanges();
-              } else if (this._numericFormatters.indexOf(formatterName) !== -1) {
-                      if (c.dataType === "number") {
-                          if (c.cellStyles) {
-                              c.cellStyles = {...c.cellStyles, ...formatter };
-                              console.log(c.cellStyles)
-                          } else {
-                              c.cellStyles = formatter;
-                          }
-                          this.grid.notifyChanges();
-                      }
-
-              } else if (this._textFormatters.indexOf(formatterName) !== -1) {
-                if (c.dataType === "string") {
-                    c.cellStyles = formatter;
-                  }
-              } else {
-                c.cellStyles = formatter;
-              }
-          });
+        const formatter = this._formattersData.get(formatterName);
+        const formatType = this._numericFormatters.indexOf(formatterName) !== -1 ? CellFormatType.NUMERIC :
+                           this._textFormatters.indexOf(formatterName) !== - 1 ? CellFormatType.TEXT : CellFormatType.COMPOSITE; 
+        this.grid.visibleColumns.forEach(c => {
+            if (!(c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd)) {
+                this.removeFormatting(c);
+            } else {
+                this.applyFormatting(c, formatType, formatter)
+            }
+        });
 
     }
 
     public clearFormatting() {
         this.grid.visibleColumns.forEach(c => {
             c.cellStyles = null;
-            this.grid.cdr.detectChanges();
+            this.grid.notifyChanges();
         });
+    }
+
+    public removeFormatting(column) {
+        column.cellStyles = null;
+        this.grid.notifyChanges();
+    }
+
+    private applyFormatting(column: IgxColumnComponent, type: CellFormatType, formatter: any) {
+        if ((column.dataType as string) === (type as string) || type === CellFormatType.COMPOSITE) {
+            column.cellStyles = { ...column.cellStyles, ...formatter };
+            this.grid.notifyChanges();
+        }
     }
 
     public ngAfterViewInit() {
@@ -218,7 +226,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
 
     private isWithingRange(rowId) {
         return rowId >= this.range.rowStart &&
-               rowId <= this.range.rowEnd;
+            rowId <= this.range.rowEnd;
     }
 
     private middleTresholdValue() {
@@ -234,7 +242,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     }
 
     private getAvgValue(data: number[]) {
-        return Math.floor((data.reduce((a, b) => a + b , 0)) / data.length);
+        return Math.floor((data.reduce((a, b) => a + b, 0)) / data.length);
     }
 
     private getPercentage(val) {
