@@ -22,7 +22,6 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
     public selectOptions = [5, 10, 15, 25, 50];
 
     @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
-    @ViewChild("secCustomPager", { read: TemplateRef, static: true }) public secondPagerTemplate: TemplateRef<any>;
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
 
     private visibleElements = 5;
@@ -81,9 +80,7 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
         if (this.page + 1 >= this.totalPages) {
             this.lastPage = true;
         }
-        if (this.grid1.paginationTemplate === this.secondPagerTemplate) {
-            this.setNumberOfPagingItems(this.page, this.totalPages);
-        }
+        this.setNumberOfPagingItems(this.page, this.totalPages);
     }
 
     public previousPage() {
@@ -95,9 +92,7 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
         if (this.page <= 0) {
             this.firstPage = true;
         }
-        if (this.grid1.paginationTemplate === this.secondPagerTemplate) {
-            this.setNumberOfPagingItems(this.page, this.totalPages);
-        }
+        this.setNumberOfPagingItems(this.page, this.totalPages);
     }
 
     public paginate(page: number, recalc = false) {
@@ -107,9 +102,7 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
         if (recalc) {
             this.totalPages = Math.ceil(this.totalCount / this.perPage);
         }
-        if (this.grid1.paginationTemplate === this.secondPagerTemplate) {
-            this.setNumberOfPagingItems(this.page, this.totalPages);
-        }
+        this.setNumberOfPagingItems(this.page, this.totalPages);
         this.remoteService.getData(skip, top);
         this.buttonDeselection(this.page, this.totalPages);
     }
@@ -169,16 +162,5 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
                 this.pages.push(item);
             }
         }
-    }
-
-    public changeTemplate() {
-        if (this.grid1.paginationTemplate === this.remotePager) {
-            this.grid1.paginationTemplate = this.secondPagerTemplate;
-            this.setNumberOfPagingItems(this.page, this.totalPages);
-        } else {
-            this.pages = [];
-            this.grid1.paginationTemplate = this.remotePager;
-        }
-        this.grid1.cdr.detectChanges();
     }
 }
