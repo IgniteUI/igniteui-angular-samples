@@ -1,7 +1,6 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper" >
     <igx-grid #grid  conditionalFormating  primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
         <igx-column field='ID' [hidden]='true'></igx-column>
-        <igx-column field='fhdjsk' ></igx-column>
         <igx-column field='Category' [sortable]='true' [width]="'110px'"></igx-column>
         <igx-column field='Type' [sortable]='true' [filterable]='false' [width]="'130px'">
         </igx-column>
@@ -59,8 +58,8 @@
             <igx-tabs tabsType="fixed">
                     <igx-tabs-group label="Cell Formatting">
                         <div class="tab-option">
-                            <div *ngFor="let item of numericFormatings" class="formatting-container">
-                                <button igxButton="raised" (click) = analyse()>{{item}}</button>
+                            <div *ngFor="let name of formattersNames" class="formatting-container">
+                                <button igxButton="raised" (click)=analyse(name)>{{name}}</button>
                             </div> 
                         </div>
                     </igx-tabs-group >

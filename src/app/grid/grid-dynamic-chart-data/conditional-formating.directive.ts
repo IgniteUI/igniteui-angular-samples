@@ -1,16 +1,6 @@
-import { AfterViewInit, Directive, Inject, Input, NgZone, Optional } from "@angular/core";
+import { AfterViewInit, Directive, Inject, Input, NgZone, Output, EventEmitter } from "@angular/core";
 import { IgxGridCellComponent, IgxGridComponent } from "igniteui-angular";
 import { GridSelectionRange } from "igniteui-angular/lib/grids/selection/selection.service";
-
-export interface IgxCellData {
-    value: any;
-    column: string;
-    cellID: {
-        rowID: any;
-        columnID: number;
-        rowIndex: number;
-    };
-}
 
 export enum CellFormatType {
     NUMERIC = "numeric",
@@ -29,6 +19,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
             let minCol;
             let minRow;
             let maxValue;
+            const formattersName = ["Duplicate Values", "Unique Values", "Empty Values"];
             const selectedData = this.grid.getSelectedData().reduce((accumulator, currentValue) => {
                 return Object.values(accumulator).concat(Object.values(currentValue));
             });
@@ -42,8 +33,8 @@ export class ConditionalFormatingDirective implements AfterViewInit {
                     this.formatType = CellFormatType.TEXT;
                     minCol = range.columnStart;
                     minRow = range.rowStart;
-                    this._cellValueForComparison = {minRow, minCol};
-
+                    this._valueForComparison = this._textData[0];
+                    formattersName.splice(0, 0, ...this._textFormatters);
                 } else if (this._textData.length === 0) {
                     this.formatType = CellFormatType.NUMERIC;
                     maxValue = Math.max(...this._numericData);
@@ -52,10 +43,11 @@ export class ConditionalFormatingDirective implements AfterViewInit {
                     this._errorValue = this.lowTresholdValue();
                     this._top10Value = this.top10PercentTreshold();
                     this._averageValue = this.getAvgValue(this._numericData);
+                    formattersName.splice(0, 0, ...this._numericFormatters);
                 } else {
                     minCol = range.columnStart;
                     minRow = range.rowStart;
-                    this._cellValueForComparison = this.grid.getCellByColumn(minRow, this.grid.visibleColumns[minCol].field);
+                    this._valueForComparison = this._textData[0];
                     maxValue = Math.max(...this._numericData);
                     this._maxValue = maxValue;
                     this.formatType = CellFormatType.COMPOSITE;
@@ -63,8 +55,10 @@ export class ConditionalFormatingDirective implements AfterViewInit {
                     this._errorValue = this.lowTresholdValue();
                     this._top10Value = this.top10PercentTreshold();
                     this._averageValue = this.getAvgValue(this._numericData);
+                    formattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
                 }
             });
+            this.onFormattersReady.emit(formattersName);
         }
 
     }
@@ -73,8 +67,11 @@ export class ConditionalFormatingDirective implements AfterViewInit {
         return this._range;
     }
 
+    @Output()
+    public onFormattersReady =  new EventEmitter<string[]>();
+
     public colorScale = {
-        background: (rowData, colname, cellValue, rowIndex) => {
+        backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex)) {
                 return this._errorValue >= cellValue ? this._errorColor :
                        this._warnValue >= cellValue ? this._warningColor : this._successColor;
@@ -87,11 +84,14 @@ export class ConditionalFormatingDirective implements AfterViewInit {
             if (this.isWithingRange(rowIndex)) {
                 return `linear-gradient(90deg, rgb(0, 194, 255) ${this.getPercentage(cellValue)}%, transparent 0%)`;
             }
-        }
+        },
+        backgroundSize: "90% 70%",
+        backgroundRepeat: "no-repeat",
+        backgroundPositionY: "center"
     };
 
     public top10Percent = {
-        background: (rowData, colname, cellValue, rowIndex) => {
+        backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex) && cellValue >= this._top10Value) {
                     return this._top10Color;
             }
@@ -99,7 +99,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     };
 
     public greaterThan = {
-        background: (rowData, colname, cellValue, rowIndex) => {
+        backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
                     return this._averageColor;
             }
@@ -107,7 +107,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     };
 
     public empty = {
-        background: (rowData, colname, cellValue, rowIndex) => {
+        backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex) && cellValue === undefined) {
                     return this._errorColor;
             }
@@ -115,7 +115,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     };
 
     public duplicates = {
-        background: (rowData, colname, cellValue, rowIndex) => {
+        backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex)) {
                 const color = this.zone.runOutsideAngular(() => {
                     const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
@@ -126,15 +126,15 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     };
 
     public textContains = {
-        background: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex) && rowIndex === this._cellValueForComparison.minRow) {
+        backgroundColor: (rowData, colname, cellValue, rowIndex) => {
+            if (this.isWithingRange(rowIndex) && cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
                 return this._warningColor;
             }
         }
     };
 
     public uniques = {
-        background: (rowData, colname, cellValue, rowIndex) => {
+        backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex)) {
                 const color = this.zone.runOutsideAngular(() => {
                     const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
@@ -150,6 +150,10 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     private _errorColor = "rgba(255,19,74, .7)";
     private _top10Color = "rgb(78, 184, 98)";
     private _averageColor = "rgba(78, 184, 98, .5)";
+
+    private _numericFormatters = ["Data Bars", "Color Scale", "Top 10%", "Greater Than"];
+    private _textFormatters =  ["Text Contains"];
+
     private _top10Value;
     private _errorValue;
     private _warnValue;
@@ -159,18 +163,53 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     private _selectedData;
     private _numericData;
     private _textData;
-    private _cellValueForComparison;
+    private _valueForComparison;
+    private _formattersData = new Map<string, any>();
+
     constructor(@Inject(IgxGridComponent) public grid: IgxGridComponent, private zone: NgZone) {
+        this._formattersData.set("Data Bars", this.dataBars);
+        this._formattersData.set("Color Scale", this.colorScale);
+        this._formattersData.set("Greater Than", this.greaterThan);
+        this._formattersData.set("Top 10%", this.top10Percent);
+        this._formattersData.set("Text Contains", this.textContains);
+        this._formattersData.set("Duplicate Values", this.duplicates);
+        this._formattersData.set("Unique Values", this.uniques);
+        this._formattersData.set("Empty Values", this.empty);
     }
 
-    public formatCells() {
+    public formatCells(formatterName) {
+          const formatter = this._formattersData.get(formatterName);
           this.grid.visibleColumns.forEach(c => {
-              c.cellStyles = null;
-              this.grid.cdr.detectChanges();
-              if (c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd) {
-                  c.cellStyles = this.textContains;
+              if (!(c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd)) {
+                    c.cellStyles = null;
+                    this.grid.cdr.detectChanges();
+              } else if (this._numericFormatters.indexOf(formatterName) !== -1) {
+                      if (c.dataType === "number") {
+                          if (c.cellStyles) {
+                              c.cellStyles = {...c.cellStyles, ...formatter };
+                              console.log(c.cellStyles)
+                          } else {
+                              c.cellStyles = formatter;
+                          }
+                          this.grid.notifyChanges();
+                      }
+
+              } else if (this._textFormatters.indexOf(formatterName) !== -1) {
+                if (c.dataType === "string") {
+                    c.cellStyles = formatter;
+                  }
+              } else {
+                c.cellStyles = formatter;
               }
           });
+
+    }
+
+    public clearFormatting() {
+        this.grid.visibleColumns.forEach(c => {
+            c.cellStyles = null;
+            this.grid.cdr.detectChanges();
+        });
     }
 
     public ngAfterViewInit() {
@@ -191,7 +230,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     }
 
     private top10PercentTreshold() {
-        return (10 * Math.floor(this._maxValue)) / 100;
+        return (90 * Math.floor(this._maxValue)) / 100;
     }
 
     private getAvgValue(data: number[]) {

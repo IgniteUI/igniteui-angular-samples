@@ -195,7 +195,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public ngOnInit() {
-
+        
+        this.formatting.onFormattersReady.subscribe( names => this.formattersNames = names);
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
         this.chartSelectionDialog.onOpen.subscribe(() => {
@@ -267,10 +268,13 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
                     this.gridDataSelection.push({ selectedData: chartData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
                 }
             }
-
-            this.tabs.tabs.first.isSelected = true;
-        });
             this.range = range;
+            this.tabs.tabs.first.isSelected = true;
+            if (JSON.stringify(this.formatting.range) !== JSON.stringify(this.range)) {
+                this.formatting.range = this.range;
+            }
+        });
+
             this.renderButton();
         });
     }
@@ -290,8 +294,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public previewChartTypes = ["Column", "Area", "Line", "Bar"];
 
     public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter"];
-
-    public numericFormatings = ["Data Bars", "Color Scale"];
 
     public pieChartArgs: IChartArgs = {
         chartType: "Pie",
@@ -347,9 +349,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
-    public analyse() {
-        this.formatting.range = this.range;
-        this.formatting.formatCells();
+    public formattersNames = [];
+    public analyse(type) {
+        this.formatting.formatCells(type);
     }
 
     public rightClick(eventArgs: any) {
@@ -357,9 +359,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             return;
         }
 
-        const gridRange = this.grid.selectionService.ranges[0];
-
-        if (gridRange.columnEnd === gridRange.columnStart && gridRange.rowEnd === gridRange.rowStart) {
+        if (this.range.columnEnd === this.range.columnStart && this.range.rowEnd === this.range.rowStart) {
             return;
         }
 
