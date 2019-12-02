@@ -195,7 +195,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public ngOnInit() {
-        
+
         this.formatting.onFormattersReady.subscribe( names => this.formattersNames = names);
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
@@ -270,9 +270,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             }
             this.range = range;
             this.tabs.tabs.first.isSelected = true;
-            if (JSON.stringify(this.formatting.range) !== JSON.stringify(this.range)) {
-                this.formatting.range = this.range;
-            }
+            if (JSON.stringify(this.formatting.range) !== JSON.stringify(range)) {
+                this.formatting.clearFormatting();
+                this.formatting.range = range;
+             }
         });
 
             this.renderButton();

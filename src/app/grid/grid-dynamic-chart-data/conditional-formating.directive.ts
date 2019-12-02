@@ -16,8 +16,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     public set range(range: GridSelectionRange) {
         if (range) {
             this._range = range;
-            let minCol;
-            let minRow;
+
             let maxValue;
             const formattersName = ["Duplicate Values", "Unique Values", "Empty Values"];
             const selectedData = this.grid.getSelectedData().reduce((accumulator, currentValue) => {
@@ -31,8 +30,6 @@ export class ConditionalFormatingDirective implements AfterViewInit {
                 this._textData = selectedData.filter(value => typeof value === "string");
                 if (this._numericData.length === 0) {
                     this.formatType = CellFormatType.TEXT;
-                    minCol = range.columnStart;
-                    minRow = range.rowStart;
                     this._valueForComparison = this._textData[0];
                     formattersName.splice(0, 0, ...this._textFormatters);
                 } else if (this._textData.length === 0) {
@@ -45,8 +42,6 @@ export class ConditionalFormatingDirective implements AfterViewInit {
                     this._averageValue = this.getAvgValue(this._numericData);
                     formattersName.splice(0, 0, ...this._numericFormatters);
                 } else {
-                    minCol = range.columnStart;
-                    minRow = range.rowStart;
                     this._valueForComparison = this._textData[0];
                     maxValue = Math.max(...this._numericData);
                     this._maxValue = maxValue;
@@ -92,24 +87,16 @@ export class ConditionalFormatingDirective implements AfterViewInit {
 
     public top10Percent = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex)) {
-                if (cellValue > this._top10Value) {
-                    return this._top10Color;
-                } else {
-                    return this.colorScale.backgroundColor(rowData, colname, cellValue, rowIndex);
-                }
+            if (this.isWithingRange(rowIndex) && cellValue > this._top10Value) {
+                return this._top10Color;
             }
         }
     };
 
     public greaterThan = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex)) {
-                if (cellValue > this._averageValue) {
-                    return this._averageColor;
-                } else {
-                    return this.colorScale.backgroundColor(rowData, colname, cellValue, rowIndex);
-                }
+            if (this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
+                return this._averageColor;
             }
         }
     };
@@ -195,7 +182,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
             if (!(c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd)) {
                 this.removeFormatting(c);
             } else {
-                this.applyFormatting(c, formatType, formatter)
+                this.applyFormatting(c, formatType, formatter);
             }
         });
 
@@ -215,7 +202,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
 
     private applyFormatting(column: IgxColumnComponent, type: CellFormatType, formatter: any) {
         if ((column.dataType as string) === (type as string) || type === CellFormatType.COMPOSITE) {
-            column.cellStyles = { ...column.cellStyles, ...formatter };
+            column.cellStyles = column.cellStyles ? { ...column.cellStyles, ...formatter } : formatter;
             this.grid.notifyChanges();
         }
     }
