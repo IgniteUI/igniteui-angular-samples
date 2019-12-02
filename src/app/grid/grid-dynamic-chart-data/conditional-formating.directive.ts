@@ -1,5 +1,5 @@
-import { AfterViewInit, Directive, Inject, Input, NgZone, Output, EventEmitter } from "@angular/core";
-import { IgxGridCellComponent, IgxGridComponent, IgxColumnComponent } from "igniteui-angular";
+import { AfterViewInit, Directive, EventEmitter, Inject, Input, NgZone, Output } from "@angular/core";
+import { IgxColumnComponent, IgxGridCellComponent, IgxGridComponent } from "igniteui-angular";
 import { GridSelectionRange } from "igniteui-angular/lib/grids/selection/selection.service";
 
 export enum CellFormatType {
@@ -11,7 +11,7 @@ export enum CellFormatType {
 @Directive({
     selector: "[conditionalFormating]"
 })
-export class ConditionalFormatingDirective implements AfterViewInit {
+export class ConditionalFormatingDirective {
 
     public set range(range: GridSelectionRange) {
         if (range) {
@@ -177,7 +177,7 @@ export class ConditionalFormatingDirective implements AfterViewInit {
     public formatCells(formatterName) {
         const formatter = this._formattersData.get(formatterName);
         const formatType = this._numericFormatters.indexOf(formatterName) !== -1 ? CellFormatType.NUMERIC :
-                           this._textFormatters.indexOf(formatterName) !== - 1 ? CellFormatType.TEXT : CellFormatType.COMPOSITE; 
+                           this._textFormatters.indexOf(formatterName) !== - 1 ? CellFormatType.TEXT : CellFormatType.COMPOSITE;
         this.grid.visibleColumns.forEach(c => {
             if (!(c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd)) {
                 this.removeFormatting(c);
@@ -205,10 +205,6 @@ export class ConditionalFormatingDirective implements AfterViewInit {
             column.cellStyles = column.cellStyles ? { ...column.cellStyles, ...formatter } : formatter;
             this.grid.notifyChanges();
         }
-    }
-
-    public ngAfterViewInit() {
-
     }
 
     private isWithingRange(rowId) {
