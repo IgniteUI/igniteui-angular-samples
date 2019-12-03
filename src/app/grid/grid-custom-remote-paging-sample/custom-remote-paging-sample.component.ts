@@ -19,7 +19,6 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
     public pages = [];
     public title = "gridPaging";
     public data: Observable<any[]>;
-    public selectOptions = [5, 10, 15, 25, 50];
 
     @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
     @ViewChild("grid1", { static: true }) public grid1: IgxGridComponent;
@@ -57,7 +56,9 @@ export class CustomRemotePagingGridSample implements OnInit, AfterViewInit, OnDe
             this.totalPages = Math.ceil(data / this.perPage);
             this.buttonDeselection(this.page, this.totalPages);
             this.grid1.isLoading = false;
+            this.setNumberOfPagingItems(this.page, this.totalPages);
         });
+
     }
 
     public ngOnDestroy() {
