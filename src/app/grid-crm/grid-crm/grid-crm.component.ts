@@ -90,11 +90,11 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
-    @ViewChild("toggleRefHiding", { static: false }) public toggleRefHiding: IgxToggleDirective;
-    @ViewChild("toggleRefPinning", { static: false }) public toggleRefPinning: IgxToggleDirective;
+    @ViewChild("toggleRefHiding") public toggleRefHiding: IgxToggleDirective;
+    @ViewChild("toggleRefPinning") public toggleRefPinning: IgxToggleDirective;
 
-    @ViewChild("hidingButton", { static: false }) public hidingButton: ElementRef;
-    @ViewChild("pinningButton", { static: false }) public pinningButton: ElementRef;
+    @ViewChild("hidingButton") public hidingButton: ElementRef;
+    @ViewChild("pinningButton") public pinningButton: ElementRef;
 
     public localData: any[];
     public dealsSummary = DealsSummary;
