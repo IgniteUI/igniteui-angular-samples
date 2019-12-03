@@ -151,6 +151,7 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
+import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 
 export const treeGridRoutes: Routes = [
     {
@@ -487,6 +488,11 @@ export const treeGridRoutes: Routes = [
         component: TreeGridConditionalCellStyle2Component,
         data: treeGridRoutesData["tree-grid-cell-cellStyling"],
         path: "tree-grid-cell-cellStyling"
+    },
+    {
+        component: TreeGridAllDataSummaryComponent,
+        data: treeGridRoutesData["tree-grid-allData-summary"],
+        path: "tree-grid-allData-summary"
     }
 ];
 

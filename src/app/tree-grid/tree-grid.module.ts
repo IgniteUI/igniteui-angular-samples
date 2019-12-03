@@ -178,6 +178,7 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
+import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 @NgModule({
     declarations: [
         TreeGridChilddatakeySampleComponent,
@@ -248,7 +249,8 @@ import {
         TreeGridStyleComponent,
         TreeGridExternalExcelStyleFilteringComponent,
         TreeGridExternalAdvancedFilteringComponent,
-        TreeGridConditionalCellStyle2Component
+        TreeGridConditionalCellStyle2Component,
+        TreeGridAllDataSummaryComponent
     ],
     imports: [
         CommonModule,
