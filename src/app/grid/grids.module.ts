@@ -40,6 +40,7 @@ import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-mo
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from './grid-allData-summary/grid-allData-summary.component';
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
@@ -221,7 +222,8 @@ import { DataService } from "./services/data.service";
         GridMultipleRowDragComponent,
         ChartHostDirective,
         ChartArgsPipe,
-        GridExternalAdvancedFilteringComponent
+        GridExternalAdvancedFilteringComponent,
+        GridAllDataSummaryComponent
     ],
     imports: [
         CommonModule,

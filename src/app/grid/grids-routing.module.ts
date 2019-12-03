@@ -75,6 +75,7 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from './grid-allData-summary/grid-allData-summary.component';
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import {
     GridConditionalRowSelectorsComponent
@@ -508,6 +509,11 @@ export const gridsRoutes: Routes = [
         component: GridDynamicChartDataComponent,
         data: gridsRoutesData["grid-dynamic-chart-data"],
         path: "grid-dynamic-chart-data"
+    },
+    {
+        component: GridAllDataSummaryComponent,
+        data: gridsRoutesData["grid-alldata-summaries"],
+        path: "grid-alldata-summaries"
     }
 ];
 
