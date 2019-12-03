@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import {
-    IgxColumnComponent,
     IgxGridComponent,
     IgxNumberSummaryOperand,
     IgxSummaryResult } from "igniteui-angular";
@@ -38,7 +37,6 @@ class DiscountedSummary extends IgxNumberSummaryOperand {
   }
 }
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: "grid-allData-summary",
   styleUrls: ["./grid-allData-summary.component.scss"],
   templateUrl: "./grid-allData-summary.component.html"
