@@ -17,14 +17,12 @@ class PTOSummary extends IgxSummaryOperand {
       result.push({
         key: "devs", label: "Developers",
         summaryResult: IgxSummaryOperand.count(
-        allData.filter((rec) =>  rec[fieldName].includes("Developer") && rec["OnPTO"])
-            .map(r => r[fieldName]))
+        allData.filter((rec) =>  rec[fieldName].includes("Developer") && rec["OnPTO"]).map(r => r[fieldName]))
         });
       result.push({
         key: "tl", label: "Team Leads",
         summaryResult: IgxSummaryOperand.count(
-        allData.filter((rec) =>  rec[fieldName].includes("Team Lead") && rec["OnPTO"])
-            .map(r => r[fieldName]))
+        allData.filter((rec) =>  rec[fieldName].includes("Team Lead") && rec["OnPTO"]).map(r => r[fieldName]))
         });
       result.push({
         key: "managers", label: "Managers/Directors",

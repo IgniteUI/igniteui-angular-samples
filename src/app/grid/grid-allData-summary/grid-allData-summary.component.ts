@@ -47,11 +47,9 @@ export class GridAllDataSummaryComponent implements OnInit {
   public grid1: IgxGridComponent;
   public discountedSummary = DiscountedSummary;
   public data;
-  public productId = 0;
 
   constructor() {
     this.data = DATA;
-    this.productId = DATA.length;
    }
 
   public ngOnInit() {
