@@ -11,7 +11,7 @@ class CustomNumberSummary extends IgxNumberSummaryOperand {
       super();
     }
 
-    public operate(data?: any[], allData = [], fieldName = ""): IgxSummaryResult[] {
+    public operate(data?: any[]): IgxSummaryResult[] {
         const result = super.operate(data);
         result.pop();
         result.pop();
