@@ -13,6 +13,7 @@ import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
@@ -82,6 +83,7 @@ import {
 import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
+import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
@@ -375,6 +377,11 @@ export const gridsRoutes: Routes = [
         path: "grid-remote-paging-sample"
     },
     {
+        component: CustomRemotePagingGridSample,
+        data: gridsRoutesData["grid-custom-remote-paging-sample"],
+        path: "grid-custom-remote-paging-sample"
+    },
+    {
         component: GridPasteSampleComponent,
         data: gridsRoutesData["grid-paste"],
         path: "grid-paste"
@@ -508,6 +515,11 @@ export const gridsRoutes: Routes = [
         component: GridDynamicChartDataComponent,
         data: gridsRoutesData["grid-dynamic-chart-data"],
         path: "grid-dynamic-chart-data"
+    },
+    {
+        component: GridMasterDetailSampleComponent,
+        data: gridsRoutesData["grid-master-detail"],
+        path: "grid-master-detail"
     }
 ];
 

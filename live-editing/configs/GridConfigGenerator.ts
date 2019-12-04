@@ -26,7 +26,8 @@ import {
     IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
-    IgxTooltipModule
+    IgxTooltipModule,
+    IgxTabsModule
 } from "igniteui-angular";
 // tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
@@ -78,6 +79,8 @@ import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-fil
 import {
     GridCustomKBNavigationComponent
 } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+// tslint:disable-next-line: max-line-length
+import { CustomRemotePagingGridSample } from "../../src/app/grid/grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import {
     GridCustomSummariesSelection
 } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
@@ -93,6 +96,7 @@ import {
 } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import {
     GridExcelStyleFilteringLoadOnDemandComponent
+// tslint:disable-next-line: max-line-length
 } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import {
@@ -209,6 +213,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridMasterDetailSampleComponent } from '../../src/app/grid/grid-master-detail/grid-master-detail.component';
+import { IgxCategoryChartModule } from 'igniteui-angular-charts/ES5/igx-category-chart-module';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -546,6 +552,20 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // master-detail sample
+        configs.push(new Config({
+            component: GridMasterDetailSampleComponent,
+            additionalFiles: ["/src/app/grid-crm/grid-crm/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
+                     IgxAvatarModule, IgxTabsModule],
+                ngDeclarations: [GridMasterDetailSampleComponent],
+                ngImports: [IgxGridModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
         configs.push(new Config({
             component: GridMovingStyledSampleComponent,
             additionalFiles: ["/src/app/grid/services/financialData.ts"],
@@ -676,6 +696,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [RemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule, RemotePagingService,
                     IgxSelectModule],
                 ngDeclarations: [RemotePagingGridSample],
+                ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule, IgxSelectModule],
+                ngProviders: [RemotePagingService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: CustomRemotePagingGridSample,
+            additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [CustomRemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule,
+                    RemotePagingService, IgxSelectModule],
+                ngDeclarations: [CustomRemotePagingGridSample],
                 ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule, IgxSelectModule],
                 ngProviders: [RemotePagingService]
             })
