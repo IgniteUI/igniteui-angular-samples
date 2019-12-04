@@ -21,7 +21,7 @@ export class ListReorderSampleComponent {
     @ViewChildren("dragDirRef", { read: IgxDragDirective })
     public dragDirs: QueryList<IgxDragDirective>;
 
-    @ViewChild("listContainer", { read: ElementRef, static: false })
+    @ViewChild("listContainer", { read: ElementRef })
     public listContainer: ElementRef;
 
     public employees = [

@@ -19,7 +19,7 @@ export class HGridRemotePagingSampleComponent implements OnInit, AfterViewInit, 
     public selectOptions = [5, 10, 25, 50];
 
     @ViewChild("customPager", { read: TemplateRef, static: true }) public remotePager: TemplateRef<any>;
-    @ViewChild("layout1", { static: false }) public layout1: IgxRowIslandComponent;
+    @ViewChild("layout1") public layout1: IgxRowIslandComponent;
     @ViewChild("hierarchicalGrid", { static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
 
     private _perPage = 10;
