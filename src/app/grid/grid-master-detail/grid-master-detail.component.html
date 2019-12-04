@@ -1,0 +1,62 @@
+    <igx-grid displayDensity="cosy" [data]="data" [autoGenerate]="false" [height]="'600px'" [width]="'738px'">
+        <igx-column field="name" header="Name" width="150px"></igx-column>
+        <igx-column field="position" header="Position" width="200px"></igx-column>
+        <igx-column field="company" header="Company" width="130px"></igx-column>
+        <igx-column field="email" header="Email" width="240px"></igx-column>
+        <ng-template igxGridDetail let-dataItem>
+            <div style='width:100%;'>
+                <igx-tabs>
+                        <igx-tabs-group label="Details">
+                            <div class='tabContent'>
+                                <igx-avatar src="https://www.infragistics.com/angular-demos/{{dataItem.avatar}}" roundShape="false" size="large"></igx-avatar>
+                                <div class='tabInnerContent'>
+                                    <div>
+                                            <div><span class='categoryStyle'>Country:</span> {{dataItem.country}}</div>
+                                            <div><span class='categoryStyle'>City:</span> {{dataItem.city}}</div>
+                                            <div><span class='categoryStyle'>Street:</span> {{dataItem.street}}</div>
+                                    </div>
+                                    <div>
+                                            <div> <span class='categoryStyle'>Work Phone:</span> {{dataItem.work_phone}}</div>
+                                            <div> <span class='categoryStyle'>Mobile Phone:</span> {{dataItem.mobile_phone}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </igx-tabs-group>
+                        <igx-tabs-group label="Deals">
+                        <div class='tabContent'>
+                            <igx-pie-chart [dataSource]="getPieData(dataItem)"
+                                width="50%"
+                                height="200px"
+                                [outlines]="['transparent']"
+                                leaderLineVisibility='collapsed'
+                                labelMemberPath="Label" [formatLabel]='formatPieLabel'
+                                valueMemberPath="Value" [brushes]='["rgb(171, 223, 29)", "rgb(228, 19, 16)", "rgb(0, 111, 138)"]'
+                               [labelsPosition]="'outsideEnd'">
+                            </igx-pie-chart>
+                            <igx-grid style='margin:10px;' displayDensity="compact" (onColumnInit)='columnInit($event)' [autoGenerate]='true' [columnWidth]='"70px"' width='260px' [data]='dataItem.gridData ? dataItem.gridData: gridData(dataItem)'>
+                            </igx-grid>
+                        </div>
+                        </igx-tabs-group>
+                        <igx-tabs-group label="Sales">
+                            <div class='tabContent' style='flex-direction: column;'>
+                                <igx-legend #legend orientation="horizontal"></igx-legend>
+                                <igx-category-chart height="300px" [legend]="legend"
+                                    [dataSource]="dataItem.chartData ? dataItem.chartData : getChartData(dataItem)"
+                                    chartType="Line"
+                                    chartTitle="Sales"
+                                    subtitle="(Estimated, Actual)"
+                                    xAxisInterval="1"
+                                    [brushes]='["rgb(0, 111, 138)", "rgb(171, 223, 29)"]'
+                                    [xAxisFormatLabel]="formatDateLabel"
+                                    [includedProperties]="include"
+                                    [crosshairsDisplayMode]="'Horizontal'"
+                                    [crosshairsAnnotationEnabled]="true"
+                                    isHorizontalZoomEnabled="false"
+                                    isVerticalZoomEnabled="false">
+                                </igx-category-chart>
+                            </div>
+                        </igx-tabs-group>
+                </igx-tabs>
+            </div>
+        </ng-template>
+</igx-grid>

@@ -26,7 +26,8 @@ import {
     IgxSnackbarModule,
     IgxSwitchModule,
     IgxToastModule,
-    IgxTooltipModule
+    IgxTooltipModule,
+    IgxTabsModule
 } from "igniteui-angular";
 // tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
@@ -212,6 +213,8 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
+import { GridMasterDetailSampleComponent } from '../../src/app/grid/grid-master-detail/grid-master-detail.component';
+import { IgxCategoryChartModule } from 'igniteui-angular-charts/ES5/igx-category-chart-module';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -545,6 +548,20 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
                 ngDeclarations: [GridMovingSampleComponent],
                 ngImports: [IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        // master-detail sample
+        configs.push(new Config({
+            component: GridMasterDetailSampleComponent,
+            additionalFiles: ["/src/app/grid-crm/grid-crm/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
+                     IgxAvatarModule, IgxTabsModule],
+                ngDeclarations: [GridMasterDetailSampleComponent],
+                ngImports: [IgxGridModule, IgxIconModule],
                 ngProviders: []
             })
         }));
