@@ -1,16 +1,15 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%" [paging]="true">
+    <igx-grid #grid1 [data]="data" [autoGenerate]="false" height="600px" width="100%" [paging]="false">
         <igx-column field="ProductID" header="Product ID" width="17%" [headerClasses]="'prodId'">
         </igx-column>
-        <igx-column field="ProductName" header="Product Name" width="17%" [headerClasses]="'prodId'" [hasSummary]="true">
+        <igx-column field="ProductName" header="Product Name" width="17%" [headerClasses]="'prodId'" >
         </igx-column>
-        <igx-column field="UnitPrice" header="Price" [filterable]="false" width="17%" editable="true" dataType="number"
-            [hasSummary]="true">
+        <igx-column field="UnitPrice" header="Price" [filterable]="false" width="17%" editable="true" dataType="number">
         </igx-column>
         <igx-column field="UnitsInStock" header="Units In Stock" width="17%" dataType="number" editable="true"
             [hasSummary]="true" [summaries]="discountedSummary">
         </igx-column>
-        <igx-column field="Discontinued" header="Discontinued" width="17%" [hasSummary]="true" [dataType]="'boolean'">
+        <igx-column field="Discontinued" header="Discontinued" [editable]="true" width="17%" [dataType]="'boolean'">
         </igx-column>
         <igx-column field="OrderDate" width="15%" [dataType]="'date'" [hasSummary]="true">
         </igx-column>
