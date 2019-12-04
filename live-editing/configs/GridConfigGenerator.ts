@@ -78,6 +78,8 @@ import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-fil
 import {
     GridCustomKBNavigationComponent
 } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+// tslint:disable-next-line: max-line-length
+import { CustomRemotePagingGridSample } from "../../src/app/grid/grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import {
     GridCustomSummariesSelection
 } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
@@ -93,6 +95,7 @@ import {
 } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import {
     GridExcelStyleFilteringLoadOnDemandComponent
+// tslint:disable-next-line: max-line-length
 } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import {
@@ -676,6 +679,18 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [RemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule, RemotePagingService,
                     IgxSelectModule],
                 ngDeclarations: [RemotePagingGridSample],
+                ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule, IgxSelectModule],
+                ngProviders: [RemotePagingService]
+            })
+        }));
+
+        configs.push(new Config({
+            component: CustomRemotePagingGridSample,
+            additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [CustomRemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule,
+                    RemotePagingService, IgxSelectModule],
+                ngDeclarations: [CustomRemotePagingGridSample],
                 ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule, IgxSelectModule],
                 ngProviders: [RemotePagingService]
             })
