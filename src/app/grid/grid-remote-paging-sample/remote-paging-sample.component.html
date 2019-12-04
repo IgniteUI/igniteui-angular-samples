@@ -1,5 +1,5 @@
 <div class="grid__wrapper">
-    <igx-grid #grid1 [data]="data | async" width="100%" height="540px" [paging]="true" [perPage]="perPage">
+    <igx-grid #grid1 [data]="data | async" width="100%" height="540px" [paging]="true" [perPage]="perPage" [paginationTemplate]="customPager">
         <igx-column field="ID"></igx-column>
         <igx-column field="ProductName"></igx-column>
         <igx-column field="QuantityPerUnit"></igx-column>
@@ -8,60 +8,13 @@
         <igx-column field="Rating"></igx-column>
     </igx-grid>
     <ng-template #customPager let-api>
-        <div class="igx-grid__footer">
-            <div class="igx-paginator">
-                <div class="igx-paginator__select">
-                    <label class="igx-paginator__label">Items per page</label>
-                    <div class="igx-paginator__select-input">
-                        <igx-select [(ngModel)]="perPage" type="border">
-                            <igx-select-item *ngFor=" let item of [5, 10, 15, 25, 50, 100, 500]" [value]="item">
-                                {{item}}
-                            </igx-select-item>
-                        </igx-select>
-                    </div>
-                </div>
-                <div class="igx-paginator__pager">
-                    <button [disabled]="firstPage" (click)="paginate(0, false)" igxButton="icon" igxRipple
-                        igxRippleCentered="true">
-                        <igx-icon fontSet="material">first_page</igx-icon>
-                    </button>
-                    <button [disabled]="firstPage" (click)="previousPage()" igxButton="icon" igxRipple
-                        igxRippleCentered="true">
-                        <igx-icon fontSet="material">chevron_left</igx-icon>
-                    </button>
-                    <span>{{ page + 1 }} of {{totalPages}}</span>
-                    <button [disabled]="lastPage" (click)="nextPage()" igxRipple igxRippleCentered="true"
-                        igxButton="icon">
-                        <igx-icon fontSet="material">chevron_right</igx-icon>
-                    </button>
-                    <button [disabled]="lastPage" (click)="paginate(totalPages - 1, false)" igxButton="icon" igxRipple
-                        igxRippleCentered="true">
-                        <igx-icon fontSet="material">last_page</igx-icon>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <igx-paginator #paginator
+            [totalRecords]="totalCount"
+            [(perPage)]="perPage"
+            [selectLabel]="'Records per page:'"
+            [selectOptions]="selectOptions"
+            [displayDensity]="grid1.displayDensity"
+            (pageChange)="paginate($event)">
+        </igx-paginator>
     </ng-template>
-    <ng-template #secCustomPager let-api>
-        <div class="igx-grid__footer">
-            <div id="numberPager" class="igx-paginator" style="justify-content: center;">
-                <button [disabled]="firstPage" (click)="previousPage()" igxButton="flat">
-                    PREV
-                </button>
-                <span *ngIf="shouldShowFirstPage" (click)="paginate(0, false)">
-                    <a class="pageNavLinks" [routerLink]=''>{{1}}</a> <span class="pageNavLinks">...</span>
-                </span>
-                <span *ngFor="let item of pages" (click)="paginate(item, false)">
-                    <a class="pageNavLinks {{activePage(item)}}" [routerLink]=''>{{item + 1}}</a>
-                </span>
-                <span *ngIf="shouldShowLastPage" (click)="paginate(totalPages - 1, false)">
-                    <span class="pageNavLinks">...</span> <a class="pageNavLinks" [routerLink]=''>{{ totalPages }}</a>
-                </span>
-                <button [disabled]="lastPage" (click)="nextPage()" igxButton="flat">
-                    NEXT
-                </button>
-            </div>
-        </div>
-    </ng-template>
-    <button (click)="changeTemplate()" igxButton="flat" style="margin-top: 10px">Change Paging Template</button>
 </div>
