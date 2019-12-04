@@ -5,7 +5,7 @@ import {
     IgxSummaryResult } from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 
-class DiscountedSummary extends IgxNumberSummaryOperand {
+class DiscontinuedSummary extends IgxNumberSummaryOperand {
 
   constructor() {
     super();
@@ -24,13 +24,13 @@ class DiscountedSummary extends IgxNumberSummaryOperand {
         summaryResult: IgxNumberSummaryOperand.sum(data)
       });
     result.push({
-        key: "discounted",
-        label: "Discounted Producs",
+        key: "discontinued",
+        label: "Discontinued Producs",
         summaryResult: allData.map(r => r["Discontinued"]).filter((rec) =>  rec).length
         });
     result.push({
-      key: "totalDiscounted",
-      label: "Total Discounted Items",
+      key: "totalDiscontinued",
+      label: "Total Discontinued Items",
       summaryResult: IgxNumberSummaryOperand.sum(allData.filter((rec) =>  rec["Discontinued"]).map(r => r[fieldName]))
     });
     return result;
@@ -45,7 +45,7 @@ export class GridAllDataSummaryComponent implements OnInit {
 
   @ViewChild("grid1", { read: IgxGridComponent, static: true })
   public grid1: IgxGridComponent;
-  public discountedSummary = DiscountedSummary;
+  public discontinuedSummary = DiscontinuedSummary;
   public data;
 
   constructor() {
