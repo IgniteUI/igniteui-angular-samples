@@ -16,7 +16,7 @@ export class SortingSampleComponent implements OnInit {
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
 
-    @ViewChild(IgxSelectComponent, { static: false })
+    @ViewChild(IgxSelectComponent)
     public igxSelect: IgxSelectComponent;
 
     public data: any[];

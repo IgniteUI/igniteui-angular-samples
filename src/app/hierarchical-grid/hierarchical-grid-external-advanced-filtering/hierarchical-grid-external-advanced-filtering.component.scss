@@ -1,0 +1,19 @@
+.grid__wrapper {
+    margin: 15px;
+    display: flex;
+    flex-flow: column;
+}
+
+.photo {
+    vertical-align: middle;
+    max-height: 62px;
+}
+.cell__inner_2 {
+    margin: 1px
+}
+
+.advanced-dialog {
+    margin-bottom: 2px;
+    width: 800px;
+    height: 350px;
+}

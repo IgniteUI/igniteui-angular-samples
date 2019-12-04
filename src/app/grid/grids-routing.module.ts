@@ -21,6 +21,8 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -82,6 +84,7 @@ import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-e
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
 import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
@@ -168,6 +171,11 @@ export const gridsRoutes: Routes = [
         path: "grid-row-drag-base"
     },
     {
+        component: GridMultipleRowDragComponent,
+        data:  gridsRoutesData["grid-multiple-row-drag"],
+        path: "grid-multiple-row-drag"
+    },
+    {
         component: GridRowReorderComponent,
         data: gridsRoutesData["grid-row-reorder"],
         path: "grid-row-reorder"
@@ -221,6 +229,16 @@ export const gridsRoutes: Routes = [
         component: ExcelStyleFilteringStyleComponent,
         data: gridsRoutesData["grid-excel-style-filtering-style"],
         path: "grid-excel-style-filtering-style"
+    },
+    {
+        component: GridExternalExcelStyleFilteringComponent,
+        data: gridsRoutesData["grid-external-excel-style-filtering"],
+        path: "grid-external-excel-style-filtering"
+    },
+    {
+        component: GridExternalAdvancedFilteringComponent,
+        data: gridsRoutesData["grid-external-advanced-filtering"],
+        path: "grid-external-advanced-filtering"
     },
     {
         component: GridCustomFilteringComponent,

@@ -69,6 +69,8 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -86,6 +88,7 @@ import { GridMultiCellSelectionComponent } from "./grid-multi-cell-selection/gri
 import { GridMultiRowLayoutConfigurationComponent } from "./grid-multi-row-layout-configuration/grid-multi-row-layout-configuration.component";
 import { GridMultiRowLayoutStylingComponent } from "./grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "./grid-multi-row-layout/grid-multi-row-layout.component";
+import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "./grid-nested-data-binding/grid-nested-data-bind";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "./grid-paging-sample/grid-paging-sample.component";
@@ -206,6 +209,7 @@ import { DataService } from "./services/data.service";
         GridPagerSampleComponent,
         GridFilteringStyleComponent,
         GridExcelStyleFilteringLoadOnDemandComponent,
+        GridExternalExcelStyleFilteringComponent,
         GridCustomSummariesSelection,
         GridMultiRowLayoutStylingComponent,
         PinningStylingComponent,
@@ -216,9 +220,11 @@ import { DataService } from "./services/data.service";
         GridConditionalRowSelectorsComponent,
         GridDynamicChartDataComponent,
         ContextMenuComponent,
+        GridMultipleRowDragComponent,
         ChartHostDirective,
         ChartArgsPipe,
-        GridMasterDetailSampleComponent
+        GridMasterDetailSampleComponent,
+        GridExternalAdvancedFilteringComponent
     ],
     imports: [
         CommonModule,

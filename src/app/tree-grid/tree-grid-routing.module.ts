@@ -60,6 +60,10 @@ import {
 import {
     TreeGridExcelStyleFilteringStyleComponent
 } from "./tree-grid-excel-style-filtering-style/tree-grid-excel-style-filtering-style.component";
+import { TreeGridExternalAdvancedFilteringComponent
+} from "./tree-grid-external-advanced-filtering/tree-grid-external-advanced-filtering.component";
+import { TreeGridExternalExcelStyleFilteringComponent
+} from "./tree-grid-external-excel-style-filtering/tree-grid-external-excel-style-filtering.component";
 import {
     TreeGridFilteringCustomSampleComponent
 } from "./tree-grid-filtering-custom-sample/tree-grid-filtering-custom-sample.component";
@@ -110,6 +114,7 @@ import { TreeGridEditingStyleComponent } from "./tree-grid-editing-style/tree-gr
 import {
     TreeGridMultiColumnHeadersStylingComponent
 } from "./tree-grid-multi-column-headers-styling/tree-grid-multi-column-headers-styling.component";
+import { TreeGridMultiRowDrag } from "./tree-grid-multi-row-drag/tree-grid-multi-row-drag.component";
 import {
     TreeGridResizeLineStylingSampleComponent
 } from "./tree-grid-resize-line-styling-sample/tree-grid-resize-line-styling-sample.component";
@@ -209,6 +214,11 @@ export const treeGridRoutes: Routes = [
         path: "tree-grid-row-drag-base"
     },
     {
+        component: TreeGridMultiRowDrag,
+        data: treeGridRoutesData["tree-grid-multi-row-drag"],
+        path: "tree-grid-multi-row-drag"
+    },
+    {
         component: TreeGridSelectionSampleComponent,
         data: treeGridRoutesData["treegrid-selection"],
         path: "treegrid-selection"
@@ -287,6 +297,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridExcelStyleFilteringStyleComponent,
         data: treeGridRoutesData["treegrid-excel-style-filtering-style"],
         path: "treegrid-excel-style-filtering-style"
+    },
+    {
+        component: TreeGridExternalExcelStyleFilteringComponent,
+        data: treeGridRoutesData["tree-grid-external-excel-style-filtering"],
+        path: "tree-grid-external-excel-style-filtering"
+    },
+    {
+        component: TreeGridExternalAdvancedFilteringComponent,
+        data: treeGridRoutesData["tree-grid-external-advanced-filtering"],
+        path: "tree-grid-external-advanced-filtering"
     },
     {
         component: TreeGridExcelStyleFilteringLoadOnDemandComponent,
