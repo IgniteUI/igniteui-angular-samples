@@ -1,0 +1,23 @@
+.grid__wrapper {
+    margin: 0 16px;
+    padding-top: 10px;
+}
+
+.pageNavLinks {
+    text-decoration: none;
+    font-size: 10.5pt;
+    color: #989898;
+}
+
+.activePage {
+    font-size: 11.5pt;
+    font-weight: bold;
+}
+
+.igx-input-group__input {
+    display: inline;
+}
+
+#numberPager > * {
+    margin-left: .5rem;
+}

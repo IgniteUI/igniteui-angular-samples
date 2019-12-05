@@ -12,6 +12,7 @@ import {
 } from "igniteui-angular";
 import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
+import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
 import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
@@ -56,6 +57,7 @@ import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/cont
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
@@ -78,6 +80,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -154,6 +157,7 @@ import { DataService } from "./services/data.service";
         GridPasteSampleComponent,
         RemoteFilteringSampleComponent,
         RemotePagingGridSample,
+        CustomRemotePagingGridSample,
         ResizingSampleComponent,
         GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
@@ -219,6 +223,7 @@ import { DataService } from "./services/data.service";
         GridMultipleRowDragComponent,
         ChartHostDirective,
         ChartArgsPipe,
+        GridMasterDetailSampleComponent,
         GridExternalAdvancedFilteringComponent
     ],
     imports: [
@@ -273,7 +278,8 @@ import { DataService } from "./services/data.service";
         IgxCardModule,
         IgxDividerModule,
         IgxDataChartScatterModule,
-        IgxBarSeriesModule
+        IgxBarSeriesModule,
+        IgxCategoryChartModule
     ],
     providers: [
         DataService,

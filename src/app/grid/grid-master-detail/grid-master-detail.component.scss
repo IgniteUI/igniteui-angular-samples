@@ -1,0 +1,17 @@
+.categoryStyle{
+    font-weight: 600;
+}
+.tabContent {
+    display:flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.tabInnerContent {
+    display:flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.tabInnerContent > div {
+    margin: 10px;
+}
