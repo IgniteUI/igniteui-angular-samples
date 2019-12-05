@@ -8,9 +8,9 @@ import { CITIES, ICity } from "./cities";
     styleUrls: ["combo-binding.component.scss"]
 })
 export class ComboBindingComponent {
-    @ViewChild("withValueKey", { read: IgxComboComponent, static: false })
+    @ViewChild("withValueKey", { read: IgxComboComponent })
     public comboValueKey: IgxComboComponent;
-    @ViewChild("noValueKey", { read: IgxComboComponent, static: false })
+    @ViewChild("noValueKey", { read: IgxComboComponent })
     public comboNoValueKey: IgxComboComponent;
 
     public cities: ICity[] = CITIES;
