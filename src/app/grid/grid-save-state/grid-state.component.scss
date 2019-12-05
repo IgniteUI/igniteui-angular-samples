@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .switches {
@@ -16,6 +17,7 @@
 }
 
 .control-item {
+    display: block;
     padding: 8px 0px;
     > span {
         cursor: pointer;
@@ -24,5 +26,5 @@
 
 .grid__wrapper {
     margin: 0 16px;
-    width: 950px;
+    width: 1150px;
 }
