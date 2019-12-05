@@ -17,6 +17,7 @@ import {
     IgxExpansionPanelModule,
     IgxFocusModule,
     IgxGridModule,
+    IgxGridStateDirective,
     IgxIconModule,
     IgxInputGroupModule,
     IgxProgressBarModule,
@@ -190,7 +191,6 @@ import {
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "../../src/app/grid/grid-save-state/about.component";
 import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
-import { IgxGridStateDirective } from "../../src/app/grid/grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { SortingStylingComponent } from "../../src/app/grid/grid-sorting-styling/grid-sorting-styling.component";
@@ -910,14 +910,13 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridSaveStateComponent,
             additionalFiles: [
                 "/src/app/grid/grid-save-state/localData.ts",
-                "/src/app/grid/grid-save-state/state.directive.ts",
                 "/src/app/grid/grid-save-state/about.component.ts",
                 "/src/app/grid/grid-save-state/about.component.html"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridSaveStateComponent, IgxGridModule, IgxTooltipModule,
-                    IgxToastModule, IgxSwitchModule, AboutComponent, Router, RouterModule, IgxGridStateDirective],
-                ngDeclarations: [GridSaveStateComponent, AboutComponent, IgxGridStateDirective],
+                    IgxToastModule, IgxSwitchModule, AboutComponent, Router, RouterModule],
+                ngDeclarations: [GridSaveStateComponent, AboutComponent],
                 ngImports: [IgxGridModule, IgxTooltipModule,
                     // tslint:disable-next-line:max-line-length
                     "RouterModule.forRoot([\{component: AboutComponent, path: 'grid-about'},\{component: GridSaveStateComponent, path: 'grid-state'},\{ path: '', redirectTo: '/grid-state', pathMatch: 'full' }])",

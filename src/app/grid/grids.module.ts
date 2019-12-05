@@ -117,7 +117,6 @@ import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-t
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
-import { IgxGridStateDirective } from "./grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
@@ -187,7 +186,6 @@ import { DataService } from "./services/data.service";
         GridCustomKBNavigationComponent,
         GridSaveStateComponent,
         AboutComponent,
-        IgxGridStateDirective,
         GridMultiCellSelectionComponent,
         GridMultiCellSelectionStyleComponent,
         GridNestedDataBindComponent,
