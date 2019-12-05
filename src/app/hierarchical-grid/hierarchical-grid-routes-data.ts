@@ -54,5 +54,6 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-advanced-filtering": { displayName: "Hierarchical Grid Advanced Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-advanced-filtering-style": { displayName: "Hierarchical Grid Advanced Filtering Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-conditional-row-selectors": { displayName: "HGrid Conditional Row Selectors", parentName: "Hierarchical Grid" }
+    "hierarchical-grid-conditional-row-selectors": { displayName: "HGrid Conditional Row Selectors", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-allData-summary": {displayName: "HGrid All Data Custom Summaries", parentName: "Hierarchical Grid"}
 };
