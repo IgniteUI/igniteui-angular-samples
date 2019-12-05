@@ -1,35 +1,43 @@
-::ng-deep {
-    .drop-down-wrapper{
-        display: flex;
-        flex-direction: column;
-        padding-top: 5px;
-    }
 
-    .igx-drop-down__list {
-        border-radius: 4px;
-    }
+// in component.scss
+@import '~igniteui-angular/lib/core/styles/themes/index';
 
-    .drop-down-wrapper {
-        .igx-navbar,
-        .textContainer
-        {
-            width: 30%;
-            margin: 0px 5px;
-            min-width: 280px;
-        }
+$custom-drop-down-theme: igx-drop-down-theme(
+    $border-radius: 4px
+);
 
-        .textContainer {
-            height: 100px;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
-            border-radius: 2px;
+:host {
+    ::ng-deep {
+        @include igx-drop-down($custom-drop-down-theme);
+
+        .igx-navbar {
+                width: 30%;
+                margin: 0px 5px;
+                min-width: 280px;
         }
     }
-    .textContainer label {
-        margin: 15px;
-    }
+}
 
-    .overlayOutlet {
-        z-index: 99;
-        position: relative;
+.overlayOutlet {
+    z-index: 99;
+    position: relative;
+}
+
+.drop-down-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+
+    .textContainer {
+        width: 30%;
+        margin: 0px 5px;
+        min-width: 280px;
+        height: 100px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+        border-radius: 2px;
+
+        label {
+            margin: 15px;
+        }
     }
-  }
+}
