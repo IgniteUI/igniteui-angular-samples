@@ -41,11 +41,13 @@ import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-mo
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
+import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
@@ -117,7 +119,6 @@ import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-t
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
-import { IgxGridStateDirective } from "./grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
@@ -187,7 +188,6 @@ import { DataService } from "./services/data.service";
         GridCustomKBNavigationComponent,
         GridSaveStateComponent,
         AboutComponent,
-        IgxGridStateDirective,
         GridMultiCellSelectionComponent,
         GridMultiCellSelectionStyleComponent,
         GridNestedDataBindComponent,
@@ -225,8 +225,10 @@ import { DataService } from "./services/data.service";
         GridMultipleRowDragComponent,
         ChartHostDirective,
         ChartArgsPipe,
-        GridMasterDetailSampleComponent,
-        GridExternalAdvancedFilteringComponent
+        GridExternalAdvancedFilteringComponent,
+        GridCollapsibleColumnGroupsComponent,
+        GridAllDataSummaryComponent,
+        GridMasterDetailSampleComponent
     ],
     imports: [
         CommonModule,

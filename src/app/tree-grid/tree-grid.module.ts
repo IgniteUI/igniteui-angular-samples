@@ -19,8 +19,10 @@ import {
     IgxSwitchModule,
     IgxToastModule,
     IgxToggleModule,
+    IgxTooltipModule,
     IgxTreeGridModule
 } from "igniteui-angular";
+// tslint:disable:max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { RemoteFilteringService } from "./services/remoteFilteringService";
@@ -40,8 +42,8 @@ import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
+import { TreeGridMultiCollapsibleColumnGroupsComponent } from "./tree-grid-collapsible-groups/tree-grid-collapsible-column-groups.component";
 import {
     TreeGridColumnHidingSampleComponent
 } from "./tree-grid-column-hiding-sample/tree-grid-column-hiding-sample.component";
@@ -109,14 +111,11 @@ import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tre
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridKBNavigationComponent } from "./tree-grid-keyboard-navigation/tree-grid-keyboard-navigation-sample.component";
 import {
     TreeGridLoadOnDemandSampleComponent
 } from "./tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionStyleComponent } from "./tree-grid-multi-cell-selection-style/tree-grid-multi-cell-selection-style.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
     TreeGridMultiColumnHeaderTemplateSampleComponent
@@ -178,6 +177,7 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
+import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 @NgModule({
     declarations: [
         TreeGridChilddatakeySampleComponent,
@@ -248,7 +248,9 @@ import {
         TreeGridStyleComponent,
         TreeGridExternalExcelStyleFilteringComponent,
         TreeGridExternalAdvancedFilteringComponent,
-        TreeGridConditionalCellStyle2Component
+        TreeGridConditionalCellStyle2Component,
+        TreeGridMultiCollapsibleColumnGroupsComponent,
+        TreeGridAllDataSummaryComponent
     ],
     imports: [
         CommonModule,
@@ -271,7 +273,8 @@ import {
         IgxSparklineModule,
         IgxSparklineCoreModule,
         IgxBannerModule,
-        IgxSnackbarModule
+        IgxSnackbarModule,
+        IgxTooltipModule
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
