@@ -21,7 +21,7 @@ export const DATA: any[] = [{
     UnitsInStock: 17,
     UnitsOnOrder: 40,
     ReorderLevel: 25,
-    Discontinued: false,
+    Discontinued: true,
     OrderDate: new Date("2003-03-17")
   }, {
     ProductID: 3,

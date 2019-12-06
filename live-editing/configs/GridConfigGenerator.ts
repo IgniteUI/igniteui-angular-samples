@@ -40,6 +40,7 @@ import {
 import {
     GridAdvancedFilteringStyleComponent
 } from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from "../../src/app/grid/grid-allData-summary/grid-allData-summary.component";
 import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
@@ -1116,6 +1117,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridConditionalRowSelectorsComponent],
                 ngImports: [IgxGridModule, IgxCheckboxModule],
                 ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridAllDataSummaryComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridAllDataSummaryComponent, IgxGridModule ],
+                ngDeclarations: [GridAllDataSummaryComponent],
+                ngImports: [IgxGridModule]
             })
         }));
         return configs;
