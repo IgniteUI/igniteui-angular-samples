@@ -19,7 +19,7 @@ export class GridEditingEventsComponent implements OnInit {
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true })
     public toast: IgxToastComponent;
 
-    @ViewChild("myTemplate", { read: NgModel, static: false })
+    @ViewChild("myTemplate", { read: NgModel })
     public myTemplate: NgModel;
 
     public ngOnInit() {

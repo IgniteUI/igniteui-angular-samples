@@ -1,3 +1,5 @@
+import { Injectable } from "@angular/core";
+@Injectable()
 export class DateParser {
 
     public getDatePart(val: any, component: any, datePart: string) {
