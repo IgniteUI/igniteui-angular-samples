@@ -1,5 +1,5 @@
 /* tslint:disable:object-literal-sort-keys */
-import { IgxInputGroupModule, IgxSliderModule } from "igniteui-angular";
+import { IgxButtonModule, IgxIconModule, IgxInputGroupModule, IgxSliderModule } from "igniteui-angular";
 import {
     SliderDiscreteTicksBottomComponent
 } from "../../src/app/interactions/slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component";
@@ -101,9 +101,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: SliderSecondaryTicksMirrorComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSliderModule, SliderSecondaryTicksMirrorComponent],
+                imports: [IgxButtonModule, IgxIconModule, IgxSliderModule, SliderSecondaryTicksMirrorComponent],
                 ngDeclarations: [SliderSecondaryTicksMirrorComponent],
-                ngImports: [IgxSliderModule]
+                ngImports: [IgxButtonModule, IgxIconModule, IgxSliderModule]
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
@@ -121,9 +121,9 @@ export class SliderConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: SliderTicksBottomtotopLabelsComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: [IgxSliderModule, SliderTicksBottomtotopLabelsComponent],
+                imports: [IgxInputGroupModule, IgxSliderModule, SliderTicksBottomtotopLabelsComponent],
                 ngDeclarations: [SliderTicksBottomtotopLabelsComponent],
-                ngImports: [IgxSliderModule]
+                ngImports: [IgxInputGroupModule, IgxSliderModule]
             }),
             shortenComponentPathBy: "/interactions/slider/"
         }));
