@@ -17,7 +17,6 @@ import {
     IgxExpansionPanelModule,
     IgxFocusModule,
     IgxGridModule,
-    IgxGridStateDirective,
     IgxIconModule,
     IgxInputGroupModule,
     IgxProgressBarModule,
@@ -26,10 +25,11 @@ import {
     IgxSelectModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    IgxTabsModule,
     IgxToastModule,
-    IgxTooltipModule,
-    IgxTabsModule
+    IgxTooltipModule
 } from "igniteui-angular";
+import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 // tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
@@ -52,6 +52,8 @@ import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelectio
 import {
     GridClipboardSampleComponent
 } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
+// tslint:disable-next-line: max-line-length
+import { GridCollapsibleColumnGroupsComponent } from "../../src/app/grid/grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -133,6 +135,7 @@ import {
 import {
     GridGroupBySummaryStylingSampleComponent
 } from "../../src/app/grid/grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridMasterDetailSampleComponent } from "../../src/app/grid/grid-master-detail/grid-master-detail.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import {
     GridMovingStyledSampleComponent
@@ -152,8 +155,8 @@ import {
     GridMultiRowLayoutStylingComponent
 } from "../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
-import { GridMultipleRowDragComponent } from
-    "../../src/app/grid/grid-multiple-row-drag/grid-multiple-row-drag.component";
+// tslint:disable-next-line: max-line-length
+import { GridMultipleRowDragComponent } from "../../src/app/grid/grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { GridPagerSampleComponent } from "../../src/app/grid/grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -214,8 +217,6 @@ import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
-import { GridMasterDetailSampleComponent } from '../../src/app/grid/grid-master-detail/grid-master-detail.component';
-import { IgxCategoryChartModule } from 'igniteui-angular-charts/ES5/igx-category-chart-module';
 
 export class GridConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
@@ -1167,6 +1168,16 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridAllDataSummaryComponent, IgxGridModule ],
                 ngDeclarations: [GridAllDataSummaryComponent],
                 ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCollapsibleColumnGroupsComponent,
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCollapsibleColumnGroupsComponent, IgxGridModule, IgxTooltipModule],
+                ngDeclarations: [GridCollapsibleColumnGroupsComponent],
+                ngImports: [IgxGridModule, IgxTooltipModule]
             })
         }));
         return configs;

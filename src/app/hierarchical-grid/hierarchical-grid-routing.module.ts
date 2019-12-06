@@ -6,6 +6,7 @@ import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanc
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
 import { HGridBatchEditingSampleComponent } from "./hierarchical-grid-batch-editing/hierarchical-grid-batch-editing.component";
+import { HGridCollapsibleColumnGroupComponent } from "./hierarchical-grid-collapsible-column-groups/hierarchical-grid-collapsible-column-groups.component";
 import { HierarchicalGridColumnHidingToolbarStyleComponent } from "./hierarchical-grid-column-hiding-toolbar-style/hierarchical-grid-column-hiding-toolbar-style.component";
 import { HGridCostumHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-custom-hiding.component";
 import { HGridColumnHidingSampleComponent } from "./hierarchical-grid-column-hiding/hierarchical-grid-hiding.component";
@@ -385,6 +386,11 @@ export const hierarchicalGridRoutes: Routes = [
         component: HGridConditionalRowSelectorsComponent,
         data: hierarchicalGridRoutesData["hierarchical-grid-conditional-row-selectors"],
         path: "hierarchical-grid-conditional-row-selectors"
+    },
+    {
+        component: HGridCollapsibleColumnGroupComponent,
+        data: hierarchicalGridRoutesData["hierarchical-grid-collapsible-column-groups"],
+        path: "hierarchical-grid-collapsible-column-groups"
     },
     {
         component: HGridAllDataSummaryComponent,
