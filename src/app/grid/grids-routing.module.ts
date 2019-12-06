@@ -13,6 +13,7 @@ import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
@@ -362,6 +363,11 @@ export const gridsRoutes: Routes = [
         component: RemotePagingGridSample,
         data: gridsRoutesData["grid-remote-paging-sample"],
         path: "grid-remote-paging-sample"
+    },
+    {
+        component: CustomRemotePagingGridSample,
+        data: gridsRoutesData["grid-custom-remote-paging-sample"],
+        path: "grid-custom-remote-paging-sample"
     },
     {
         component: GridPasteSampleComponent,
