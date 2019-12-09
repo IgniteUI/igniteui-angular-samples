@@ -17,18 +17,11 @@ export class DocsLayoutComponent implements OnInit {
 
     @HostListener("window:message", ["$event"])
     private onMessage(e: MessageEvent) {
-        if (e.origin === e.data.origin) {
-            // this.document.body.classList.remove(this.theme);
-            // this.document.body.classList.add(e.data.theme);
-            // this.theme = e.data.theme;
-        }
-
-        // TODO add origin check
-        if (typeof e.data === "string") {
+        if (e.origin === e.data.origin && typeof e.data.themeStyle === "string") {
             //document.querySelectorAll("style").forEach(element => element.remove());
 
             var style = document.createElement('style');
-            style.textContent = e.data;
+            style.textContent = e.data.themeStyle;
             document.head.insertBefore(style, this.document.head.lastElementChild);
         }
     }
