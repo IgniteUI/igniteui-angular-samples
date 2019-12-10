@@ -8,21 +8,25 @@ import { Component, HostListener, Inject, OnInit } from "@angular/core";
 })
 
 export class DocsLayoutComponent implements OnInit {
-    private theme = "default-theme";
+
+    private styleElem: HTMLStyleElement;
+
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
     public ngOnInit() {
-        //this.document.body.classList.add(this.theme);
+        this.createThemeStyle();
     }
 
     @HostListener("window:message", ["$event"])
     private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === "string") {
-            //document.querySelectorAll("style").forEach(element => element.remove());
-
-            var style = document.createElement('style');
-            style.textContent = e.data.themeStyle;
-            document.head.insertBefore(style, this.document.head.lastElementChild);
+            this.styleElem.textContent = e.data.themeStyle;
         }
+    }
+
+    private createThemeStyle() {
+        this.styleElem = document.createElement("style");
+        this.styleElem.id = "igniteui-theme";
+        document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
     }
 }
