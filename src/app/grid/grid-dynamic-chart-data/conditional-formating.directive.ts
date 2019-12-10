@@ -18,6 +18,7 @@ export class ConditionalFormatingDirective {
             this._range = range;
 
             let maxValue;
+            let minValue;
             const formattersName = ["Duplicate Values", "Unique Values", "Empty Values"];
             const selectedData = this.grid.getSelectedData().reduce((accumulator, currentValue) => {
                 return Object.values(accumulator).concat(Object.values(currentValue));
@@ -35,7 +36,9 @@ export class ConditionalFormatingDirective {
                 } else if (this._textData.length === 0) {
                     this.formatType = CellFormatType.NUMERIC;
                     maxValue = Math.max(...this._numericData);
+                    minValue = Math.min(...this._numericData);
                     this._maxValue = maxValue;
+                    this._minValue = minValue;
                     this._warnValue = this.middleTresholdValue();
                     this._errorValue = this.lowTresholdValue();
                     this._top10Value = this.top10PercentTreshold();
@@ -44,7 +47,9 @@ export class ConditionalFormatingDirective {
                 } else {
                     this._valueForComparison = this._textData[0];
                     maxValue = Math.max(...this._numericData);
+                    minValue = Math.min(...this._numericData);
                     this._maxValue = maxValue;
+                    this._minValue = minValue;
                     this.formatType = CellFormatType.COMPOSITE;
                     this._warnValue = this.middleTresholdValue();
                     this._errorValue = this.lowTresholdValue();
@@ -67,6 +72,9 @@ export class ConditionalFormatingDirective {
 
     public colorScale = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "number") {
+                return;
+        }
             if (this.isWithingRange(rowIndex)) {
                 return this._errorValue >= cellValue ? this._errorColor :
                     this._warnValue >= cellValue ? this._warningColor : this._successColor;
@@ -76,8 +84,17 @@ export class ConditionalFormatingDirective {
 
     public dataBars = {
         backgroundImage: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "number") {
+                    return;
+            }
             if (this.isWithingRange(rowIndex)) {
-                return `linear-gradient(90deg, rgb(0, 194, 255) ${this.getPercentage(cellValue)}%, transparent 0%)`;
+                if (cellValue < 0) {
+                    return `linear-gradient(to left, rgb(255, 0, 0) ${this.getNegativePercentage(cellValue)}%, transparent 0%)`;
+                } else if (cellValue < 1) {
+                    return `linear-gradient(90deg, rgb(0, 194, 255) ${1}%, transparent 0%)`;
+                } else {
+                    return `linear-gradient(90deg, rgb(0, 194, 255) ${this.getPositivePercentage(cellValue)}%, transparent 0%)`;
+                }
             }
         },
         backgroundSize: "90% 70%",
@@ -87,6 +104,9 @@ export class ConditionalFormatingDirective {
 
     public top10Percent = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "number") {
+                return;
+        }
             if (this.isWithingRange(rowIndex) && cellValue > this._top10Value) {
                 return this._top10Color;
             }
@@ -95,6 +115,9 @@ export class ConditionalFormatingDirective {
 
     public greaterThan = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "number") {
+                return;
+        }
             if (this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
                 return this._averageColor;
             }
@@ -123,6 +146,9 @@ export class ConditionalFormatingDirective {
 
     public textContains = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "string") {
+                return;
+        }
             if (this.isWithingRange(rowIndex) && cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
                 return this._warningColor;
             }
@@ -147,10 +173,10 @@ export class ConditionalFormatingDirective {
     private _errorColor = "rgba(255,19,74, .7)";
     private _top10Color = "rgb(78, 150, 98)";
     private _averageColor = "rgba(78, 184, 98, .5)";
-
     private _numericFormatters = ["Data Bars", "Color Scale", "Top 10%", "Greater Than"];
     private _textFormatters = ["Text Contains"];
 
+    private _minValue;
     private _top10Value;
     private _errorValue;
     private _warnValue;
@@ -202,7 +228,7 @@ export class ConditionalFormatingDirective {
 
     private applyFormatting(column: IgxColumnComponent, type: CellFormatType, formatter: any) {
         if ((column.dataType as string) === (type as string) || type === CellFormatType.COMPOSITE) {
-            column.cellStyles = column.cellStyles ? { ...column.cellStyles, ...formatter } : formatter;
+            column.cellStyles = formatter;
             this.grid.notifyChanges();
         }
     }
@@ -228,7 +254,13 @@ export class ConditionalFormatingDirective {
         return Math.floor((data.reduce((a, b) => a + b, 0)) / data.length);
     }
 
-    private getPercentage(val) {
-        return (Math.ceil(val) / Math.ceil(this._maxValue)) * 100;
+    private getPositivePercentage(val) {
+        const result = (Math.ceil(val) / Math.ceil(this._maxValue)) * 100;
+        return result < 1 ? 1 : result;
+    }
+
+    private getNegativePercentage(val) {
+        const result = (val / this._minValue) * 100;
+        return result;
     }
 }

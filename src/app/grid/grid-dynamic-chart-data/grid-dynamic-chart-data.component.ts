@@ -434,7 +434,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public onPointerDown(event) {
         if (!event.target.parentElement.classList.contains("analytics-btn") &&
             !event.target.classList.contains("more-btn") &&
-            event.target.className.indexOf("igx-button") === -1) {
+            event.target.className.indexOf("igx-button") === -1 &&
+            event.target.className.indexOf("tab-option") === -1) {
             this.disableContextMenu();
         }
     }

@@ -13,6 +13,14 @@
             </ng-template>
         </igx-column>
 
+        <igx-column field='PriceDiff' dataType="number" [width]="'120px'" [sortable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div class="finjs-icons">
+                    <span>{{cell.value | number:'1.4-4'}}%</span>
+                </div>
+            </ng-template>
+        </igx-column>
+
         <igx-column field='Buy' [width]="'100px'" dataType="number"
             [formatter]="formatCurrency"  [sortable]="true"></igx-column>
 
@@ -57,10 +65,8 @@
     <igx-dialog #chartSelectionDialog>
             <igx-tabs tabsType="fixed">
                     <igx-tabs-group label="Cell Formatting">
-                        <div class="tab-option">
-                            <div *ngFor="let name of formattersNames" class="formatting-container">
-                                <button igxButton="raised" (click)=analyse(name)>{{name}}</button>
-                            </div> 
+                        <div class="tab-option formatting-container" style="max-width: 344px; overflow-x: auto;">
+                                <button  *ngFor="let name of formattersNames"  igxButton="raised" (click)=analyse(name)>{{name}}</button>
                         </div>
                     </igx-tabs-group >
                   

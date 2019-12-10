@@ -897,6 +897,7 @@ export class FinancialData {
 
             dataObj.Settlement = Settlement[this.generateRandomNumber(0, 1)];
             dataObj.Contract = Contract[this.generateRandomNumber(0, 4)];
+            dataObj["PriceDiff"] = ((dataObj["Open Price"] - dataObj["Price"]) / dataObj["Price"]) * 100;
             const region = REGIONS[this.generateRandomNumber(0, 5)];
             dataObj.Region = region.Region;
             dataObj.Country = this.randomizeCountry(region);

@@ -309,9 +309,11 @@
 }
 
 .formatting-container{
-
     display: inline-flex;
     margin: 5px;
+    button + button{
+        margin-right: 2px;
+    }
 }
 
 .chart-btn{
