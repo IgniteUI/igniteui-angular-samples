@@ -28,8 +28,8 @@ export class GridRowReorderComponent {
     private getCurrentRowIndex(rowList, cursorPosition) {
         for (const row of rowList) {
             const rowRect = row.nativeElement.getBoundingClientRect();
-            if (cursorPosition.y > rowRect.top && cursorPosition.y < rowRect.bottom &&
-                cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
+            if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
+                cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 // return the index of the targeted row
                 return this.data.indexOf(this.data.find((r) => r.ID === row.rowData.ID));
             }
