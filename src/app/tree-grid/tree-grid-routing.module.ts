@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+// tslint:disable:max-line-length
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import {
     TreeGridChilddatakeySampleComponent
 } from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import {
     TreeGridColumnHidingSampleComponent
@@ -41,7 +41,6 @@ import {
     TreeGridConditionalCellStyleComponent
 } from "./tree-grid-conditional-cell-style-sample/tree-grid-conditional-cell-style-sample.component";
 
-// tslint:disable-next-line: max-line-length
 import { TreeGridDisplaydensitySampleComponent } from "./tree-grid-displaydensity-sample/tree-grid-displaydensity-sample.component";
 import { TreeGridEditingSampleComponent } from "./tree-grid-editing-sample/tree-grid-editing-sample.component";
 import { TreeGridEmployeesSampleComponent } from "./tree-grid-employees-sample/tree-grid-employees-sample.component";
@@ -72,14 +71,11 @@ import { TreeGridFilteringStyleComponent } from "./tree-grid-filtering-style/tre
 import {
     TreeGridFilteringTemplateSampleComponent
 } from "./tree-grid-filtering-template-sample/tree-grid-filtering-template-sample.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridKBNavigationComponent } from "./tree-grid-keyboard-navigation/tree-grid-keyboard-navigation-sample.component";
 import {
     TreeGridLoadOnDemandSampleComponent
 } from "./tree-grid-load-on-demand-sample/tree-grid-load-on-demand-sample.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionStyleComponent } from "./tree-grid-multi-cell-selection-style/tree-grid-multi-cell-selection-style.component";
-// tslint:disable-next-line: max-line-length
 import { TreeGridMultiCellSelectionComponent } from "./tree-grid-multi-cell-selection/tree-grid-multi-cell-selection.component";
 import {
     TreeGridMultiColumnHeaderTemplateSampleComponent
@@ -106,6 +102,7 @@ import {
     TreeGridAdvancedFilteringStyleComponent
 } from "./tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
+import { TreeGridMultiCollapsibleColumnGroupsComponent } from "./tree-grid-collapsible-groups/tree-grid-collapsible-column-groups.component";
 import {
     TreeGridConditionalRowSelectorsSampleComponent
 } from "./tree-grid-conditional-row-selectors/tree-grid-conditional-row-selectors.component";
@@ -151,6 +148,7 @@ import { TreeGridToolbarStyleComponent } from "./tree-grid-toolbar-style/tree-gr
 import {
     TreeGridVirtualizationSampleComponent
 } from "./tree-grid-virtualization-sample/tree-grid-virtualization-sample.component";
+import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 
 export const treeGridRoutes: Routes = [
     {
@@ -487,6 +485,16 @@ export const treeGridRoutes: Routes = [
         component: TreeGridConditionalCellStyle2Component,
         data: treeGridRoutesData["tree-grid-cell-cellStyling"],
         path: "tree-grid-cell-cellStyling"
+    },
+    {
+        component: TreeGridMultiCollapsibleColumnGroupsComponent,
+        data: treeGridRoutesData["tree-grid-collapsible-groups"],
+        path: "tree-grid-collapsible-groups"
+    },
+    {
+        component: TreeGridAllDataSummaryComponent,
+        data: treeGridRoutesData["tree-grid-allData-summary"],
+        path: "tree-grid-allData-summary"
     }
 ];
 

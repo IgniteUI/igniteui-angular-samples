@@ -12,6 +12,7 @@ import {
 } from "igniteui-angular";
 import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
+import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
 import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
 import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
@@ -40,11 +41,13 @@ import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-mo
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
+import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
@@ -56,6 +59,7 @@ import { ContextmenuComponent } from "./grid-contextmenu-sample/contextmenu/cont
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
@@ -78,6 +82,7 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -114,7 +119,6 @@ import { GridSelectionTemplateNumbersComponent } from "./grid-sample-selection-t
 import { GridSelectionSampleComponent } from "./grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "./grid-save-state/about.component";
 import { GridSaveStateComponent } from "./grid-save-state/grid-state.component";
-import { IgxGridStateDirective } from "./grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "./grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "./grid-sorting-sample/grid-sorting-sample.component";
 import { SortingStylingComponent } from "./grid-sorting-styling/grid-sorting-styling.component";
@@ -155,6 +159,7 @@ import { DataService } from "./services/data.service";
         GridPasteSampleComponent,
         RemoteFilteringSampleComponent,
         RemotePagingGridSample,
+        CustomRemotePagingGridSample,
         ResizingSampleComponent,
         GridResizeLineStylingSampleComponent,
         GridRowEditSampleComponent,
@@ -183,7 +188,6 @@ import { DataService } from "./services/data.service";
         GridCustomKBNavigationComponent,
         GridSaveStateComponent,
         AboutComponent,
-        IgxGridStateDirective,
         GridMultiCellSelectionComponent,
         GridMultiCellSelectionStyleComponent,
         GridNestedDataBindComponent,
@@ -221,7 +225,10 @@ import { DataService } from "./services/data.service";
         GridMultipleRowDragComponent,
         ChartHostDirective,
         ChartArgsPipe,
-        GridExternalAdvancedFilteringComponent
+        GridExternalAdvancedFilteringComponent,
+        GridCollapsibleColumnGroupsComponent,
+        GridAllDataSummaryComponent,
+        GridMasterDetailSampleComponent
     ],
     imports: [
         CommonModule,
@@ -275,7 +282,8 @@ import { DataService } from "./services/data.service";
         IgxCardModule,
         IgxDividerModule,
         IgxDataChartScatterModule,
-        IgxBarSeriesModule
+        IgxBarSeriesModule,
+        IgxCategoryChartModule
     ],
     providers: [
         DataService,

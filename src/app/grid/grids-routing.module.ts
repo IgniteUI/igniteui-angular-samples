@@ -13,6 +13,7 @@ import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
@@ -75,13 +76,16 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
+import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
 import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
+import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
@@ -375,6 +379,11 @@ export const gridsRoutes: Routes = [
         path: "grid-remote-paging-sample"
     },
     {
+        component: CustomRemotePagingGridSample,
+        data: gridsRoutesData["grid-custom-remote-paging-sample"],
+        path: "grid-custom-remote-paging-sample"
+    },
+    {
         component: GridPasteSampleComponent,
         data: gridsRoutesData["grid-paste"],
         path: "grid-paste"
@@ -508,6 +517,21 @@ export const gridsRoutes: Routes = [
         component: GridDynamicChartDataComponent,
         data: gridsRoutesData["grid-dynamic-chart-data"],
         path: "grid-dynamic-chart-data"
+    },
+    {
+        component: GridCollapsibleColumnGroupsComponent,
+        data: gridsRoutesData["grid-collapsible-groups"],
+        path: "grid-collapsible-groups"
+    },
+    {
+        component: GridAllDataSummaryComponent,
+        data: gridsRoutesData["grid-alldata-summaries"],
+        path: "grid-alldata-summaries"
+    },
+    {
+        component: GridMasterDetailSampleComponent,
+        data: gridsRoutesData["grid-master-detail"],
+        path: "grid-master-detail"
     }
 ];
 

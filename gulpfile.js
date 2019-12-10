@@ -9,6 +9,13 @@ const tsNode = require('ts-node').register({
     }
 });
 
+// Workaround for require error with LiveEditingManager
+global['KeyboardEvent'] = null
+global['MouseEvent'] = null
+global['Event'] = null
+global['FocusEvent'] = null
+global['PointerEvent'] = null
+
 //  Workaround for exception with Excel samples running product code during generate-live-editing task.
 navigator = { language: "en-US" };
 

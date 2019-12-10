@@ -92,5 +92,7 @@ export const treeGridRoutesData = {
     "treegrid-cell-selection": { displayName: "TreeGrid Cell Selection", parentName: "TreeGrid" },
     "treegrid-conditional-row-selectors": { displayName: "TreeGrid Conditional Row Selectors", parentName: "TreeGrid" },
     "treegrid-style": { displayName: "TreeGrid Style", parentName: "TreeGrid" },
-    "tree-grid-cell-cellStyling": { displayName: "TreeGrid Conditional Cell Styling", parentName: "TreeGrid" }
+    "tree-grid-cell-cellStyling": { displayName: "TreeGrid Conditional Cell Styling", parentName: "TreeGrid" },
+    "tree-grid-collapsible-groups": {displayName: "TreeGrid Collapsible Column Groups", parentName: "TreeGrid"},
+    "tree-grid-allData-summary": { displayName: "TreeGrid All Data Custom Summaries", parentName: "TreeGrid" }
 };
