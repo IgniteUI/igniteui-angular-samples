@@ -2,12 +2,12 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
+import { debounceTime } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
 import { ConditionalFormattingDirective } from "./conditional-formatting.directive";
 import { IChartArgs } from "./context-menu/context-menu.component";
 import { IChartComponentOptions, IChartOptions, IChartSeriesOptions, IXAxesOptions, IYAxesOptions } from "./initializers";
-import { debounceTime, tap } from 'rxjs/operators';
 @Directive({
     selector: "[chartHost]"
 })
@@ -221,7 +221,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
         this.data = new FinancialData().generateData(1000);
 
-        this.grid.onRangeSelection.pipe(debounceTime(100))
+        this.grid.onRangeSelection.pipe(debounceTime(200))
                 .subscribe(range => {
 
             this.chartsToDisable = {
@@ -272,10 +272,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             }
             this.range = range;
             this.tabs.tabs.first.isSelected = true;
-            if (JSON.stringify(this.formatting.range) !== JSON.stringify(range)) {
-                this.formatting.clearFormatting();
-                this.formatting.range = range;
-             }
+            this.formatting.range = range;
+
         });
 
             this.renderButton();
@@ -358,7 +356,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public rightClick(eventArgs: any) {
-        if (this.gridDataSelection.length === 0) {
+        if (this.grid.getSelectedData().length === 0) {
             return;
         }
 

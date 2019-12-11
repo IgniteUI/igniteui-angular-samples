@@ -69,7 +69,7 @@
                                 <div *ngFor="let condition of formattersNames; trackBy: trackByFn" class="action">
                                     <div class="btn" (click)="analyse(condition)">
                                         <img style="width: 36px; height: 36px; pointer-events: none;" src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg"/>
-                                        <span class="name">{{condition.replace('10', '10%')}}</span>
+                                        <span class="name" style="pointer-events: none;">{{condition.replace('10', '10%')}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                      (mouseleave)="chartPreviewDialog.close()"
                                      (mouseenter)="previewChart(chart)" >
                                     <img style="width: 58px; height: 58px; pointer-events: none;" src="assets/images/svg/charts/Grouped{{chart}}.svg"/>
-                                     <span class="name">{{chart}}</span>
+                                     <span class="name" style="pointer-events: none;">{{chart}}</span>
                                 </div>
                             </div>
                             <button class="more-btn" (click)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)" igxButton="fab" igxButtonBackground="white" igxButtonColor="black">
