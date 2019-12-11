@@ -1,5 +1,5 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper" >
-    <igx-grid #grid  conditionalFormating  primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
+    <igx-grid #grid  conditionalFormatting  primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false" (onContextMenu)="rightClick($event)">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [sortable]='true' [width]="'110px'"></igx-column>
         <igx-column field='Type' [sortable]='true' [filterable]='false' [width]="'130px'">
@@ -64,21 +64,26 @@
 
     <igx-dialog #chartSelectionDialog>
             <igx-tabs tabsType="fixed">
-                    <igx-tabs-group label="Cell Formatting">
-                        <div class="tab-option formatting-container" style="max-width: 344px; overflow-x: auto;">
-                                <button  *ngFor="let name of formattersNames"  igxButton="raised" (click)=analyse(name)>{{name}}</button>
-                        </div>
+                    <igx-tabs-group label="Conditional Formatting">
+                            <div  class="tab-option">
+                                <div *ngFor="let condition of formattersNames; trackBy: trackByFn" class="action">
+                                    <div class="btn" (click)="analyse(condition)">
+                                        <img style="width: 36px; height: 36px; pointer-events: none;" src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg"/>
+                                        <span class="name">{{condition.replace('10', '10%')}}</span>
+                                    </div>
+                                </div>
+                            </div>
                     </igx-tabs-group >
                   
-                    <igx-tabs-group  label="Create Chart" icon="insert_chart"
+                    <igx-tabs-group  label="Create Chart"
                     [disabled]="disableCreateChart">
-                    <div class="chart-types tab-option">
-                            <div *ngFor="let chart of previewChartTypes; trackBy: trackByFn" class="chart-btn">
-                                <div (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                    <div class="tab-option">
+                            <div *ngFor="let chart of previewChartTypes; trackBy: trackByFn" class="action">
+                                <div class="btn" (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                                      (mouseleave)="chartPreviewDialog.close()"
                                      (mouseenter)="previewChart(chart)" >
-                                    <img style="width: 100%" src="assets/images/svg/charts/Grouped{{chart}}.svg"/>
-                                     <span class="chart-name">{{chart}}</span>
+                                    <img style="width: 58px; height: 58px; pointer-events: none;" src="assets/images/svg/charts/Grouped{{chart}}.svg"/>
+                                     <span class="name">{{chart}}</span>
                                 </div>
                             </div>
                             <button class="more-btn" (click)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)" igxButton="fab" igxButtonBackground="white" igxButtonColor="black">

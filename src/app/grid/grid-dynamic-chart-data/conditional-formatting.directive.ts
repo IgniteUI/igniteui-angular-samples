@@ -9,9 +9,9 @@ export enum CellFormatType {
 }
 
 @Directive({
-    selector: "[conditionalFormating]"
+    selector: "[conditionalFormatting]"
 })
-export class ConditionalFormatingDirective {
+export class ConditionalFormattingDirective {
 
     public set range(range: GridSelectionRange) {
         if (range) {
@@ -19,7 +19,7 @@ export class ConditionalFormatingDirective {
 
             let maxValue;
             let minValue;
-            const formattersName = ["Duplicate Values", "Unique Values", "Empty Values"];
+            const formattersName = ["Duplicate Values", "Unique Values", "Empty"];
             const selectedData = this.grid.getSelectedData().reduce((accumulator, currentValue) => {
                 return Object.values(accumulator).concat(Object.values(currentValue));
             });
@@ -173,7 +173,7 @@ export class ConditionalFormatingDirective {
     private _errorColor = "rgba(255,19,74, .7)";
     private _top10Color = "rgb(78, 150, 98)";
     private _averageColor = "rgba(78, 184, 98, .5)";
-    private _numericFormatters = ["Data Bars", "Color Scale", "Top 10%", "Greater Than"];
+    private _numericFormatters = ["Data Bars", "Color Scale", "Top 10", "Greater Than"];
     private _textFormatters = ["Text Contains"];
 
     private _minValue;
@@ -193,11 +193,11 @@ export class ConditionalFormatingDirective {
         this._formattersData.set("Data Bars", this.dataBars);
         this._formattersData.set("Color Scale", this.colorScale);
         this._formattersData.set("Greater Than", this.greaterThan);
-        this._formattersData.set("Top 10%", this.top10Percent);
+        this._formattersData.set("Top 10", this.top10Percent);
         this._formattersData.set("Text Contains", this.textContains);
         this._formattersData.set("Duplicate Values", this.duplicates);
         this._formattersData.set("Unique Values", this.uniques);
-        this._formattersData.set("Empty Values", this.empty);
+        this._formattersData.set("Empty", this.empty);
     }
 
     public formatCells(formatterName) {

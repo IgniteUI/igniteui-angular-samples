@@ -4,9 +4,10 @@ import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCard
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
-import { ConditionalFormatingDirective } from "./conditional-formating.directive";
+import { ConditionalFormattingDirective } from "./conditional-formatting.directive";
 import { IChartArgs } from "./context-menu/context-menu.component";
 import { IChartComponentOptions, IChartOptions, IChartSeriesOptions, IXAxesOptions, IYAxesOptions } from "./initializers";
+import { debounceTime, tap } from 'rxjs/operators';
 @Directive({
     selector: "[chartHost]"
 })
@@ -48,8 +49,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public data;
     public opened = true;
-    @ViewChild(ConditionalFormatingDirective, {read: ConditionalFormatingDirective, static: true})
-    public formatting: ConditionalFormatingDirective;
+    @ViewChild(ConditionalFormattingDirective, {read: ConditionalFormattingDirective, static: true})
+    public formatting: ConditionalFormattingDirective;
 
     @ViewChild("grid", {read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
@@ -220,7 +221,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
         this.data = new FinancialData().generateData(1000);
 
-        this.grid.onRangeSelection.subscribe(range => {
+        this.grid.onRangeSelection.pipe(debounceTime(100))
+                .subscribe(range => {
 
             this.chartsToDisable = {
                 BubbleScatter: false,
@@ -434,7 +436,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public onPointerDown(event) {
         if (!event.target.parentElement.classList.contains("analytics-btn") &&
             !event.target.classList.contains("more-btn") &&
-            event.target.className.indexOf("igx-button") === -1 &&
+            event.target.className.indexOf("btn") === -1 &&
+            event.target.className.indexOf("action") === -1 &&
             event.target.className.indexOf("tab-option") === -1) {
             this.disableContextMenu();
         }
