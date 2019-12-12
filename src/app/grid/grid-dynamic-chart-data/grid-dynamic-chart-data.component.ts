@@ -1,12 +1,13 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, NgZone, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
+import { debounceTime } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
+import { ConditionalFormattingDirective } from "./conditional-formatting.directive";
 import { IChartArgs } from "./context-menu/context-menu.component";
 import { IChartComponentOptions, IChartOptions, IChartSeriesOptions, IXAxesOptions, IYAxesOptions } from "./initializers";
-import { ConditionalFormatingDirective } from './conditional-formating.directive';
 @Directive({
     selector: "[chartHost]"
 })
@@ -48,8 +49,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public data;
     public opened = true;
-    @ViewChild(ConditionalFormatingDirective, {read: ConditionalFormatingDirective, static: true})
-    public formatting: ConditionalFormatingDirective;
+    @ViewChild(ConditionalFormattingDirective, {read: ConditionalFormattingDirective, static: true})
+    public formatting: ConditionalFormattingDirective;
 
     @ViewChild("grid", {read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
@@ -196,6 +197,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public ngOnInit() {
 
+        this.formatting.onFormattersReady.subscribe(names => this.formattersNames = names);
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
         this.chartSelectionDialog.onOpen.subscribe(() => {
@@ -219,7 +221,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
         this.data = new FinancialData().generateData(1000);
 
-        this.grid.onRangeSelection.subscribe(range => {
+        this.grid.onRangeSelection.pipe(debounceTime(200))
+                .subscribe(range => {
 
             this.chartsToDisable = {
                 BubbleScatter: false,
@@ -267,11 +270,12 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
                     this.gridDataSelection.push({ selectedData: chartData[i], subjectArea: this.colForSubjectArea, rowID: this.dataRows[i] });
                 }
             }
-
-            this.tabs.tabs.first.isSelected = true;
             this.range = range;
+            this.tabs.tabs.first.isSelected = true;
             this.formatting.range = range;
+
         });
+
             this.renderButton();
         });
     }
@@ -279,64 +283,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public ngAfterViewInit(): void {
         this.grid.headerContainer.getScroll().onscroll = () => this.disableContextMenu();
     }
-
-    // private negative = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] < 0;
-    // }
-    // private positive = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] > 0;
-    // }
-    // private changeNegative = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] < 0 && rowData["Change(%)"] > -1;
-    // }
-    // private changePositive = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] > 0 && rowData["Change(%)"] < 1;
-    // }
-    // private strongPositive = (rowData: any): boolean => {
-    //     return rowData["Change(%)"] >= 1;
-    // }
-    // private strongNegative = (rowData: any, key: string): boolean => {
-    //     return rowData["Change(%)"] <= -1;
-    // }
-
-    // private strongPositiveOnYear = (rowData: any): boolean => {
-    //     return rowData["Change On Year(%)"] >= 1;
-    // }
-    // private positiveOnYear = (rowData: any): boolean => {
-    //     return rowData["Change On Year(%)"] > 0;
-    // }
-
-    // private strongNegativeOnYear = (rowData: any, key: string): boolean => {
-    //     return rowData["Change On Year(%)"] <= -1;
-    // }
-    // private negativeOnYear = (rowData: any, key: string): boolean => {
-    //     return rowData["Change On Year(%)"] < 0;
-    // }
-
-    // // tslint:disable:member-ordering
-    // public trends = {
-    //     changeNeg: this.changeNegative,
-    //     changePos: this.changePositive,
-    //     negative: this.negative,
-    //     positive: this.positive,
-    //     strongNegative: this.strongNegative,
-    //     strongPositive: this.strongPositive
-    // };
-
-    // public trendsOnYear = {
-    //     changeNeg2: this.negativeOnYear,
-    //     changePos2: this.positiveOnYear,
-    //     strongNegative2: this.strongNegativeOnYear,
-    //     strongPositive2: this.strongPositiveOnYear
-    // };
-
-    // public trendsChange = {
-    //     changeNeg2: this.changeNegative,
-    //     changePos2: this.changePositive,
-    //     strongNegative2: this.strongNegative,
-    //     strongPositive2: this.strongPositive
-    // };
-    // tslint:disable-next-line: align
 
     public formatCurrency(value: number) {
         return "$" + value.toFixed(3);
@@ -350,8 +296,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter"];
 
-    public numericFormatings = ["Data Bars", "Color Scale"];
-
     public pieChartArgs: IChartArgs = {
         chartType: "Pie",
         seriesType: undefined
@@ -362,6 +306,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             switch (k) {
                 case "Price":
                 case "Open Price":
+                case "OpenPriceDiff":
+                case "BuyDiff":
+                case "SellDiff":
                 case "Buy":
                 case "Sell":
                 case "Start(Y)":
@@ -406,19 +353,17 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
-    public analyse() {
-        this.formatting.formatCells();
-        this.grid.reflow()
+    public formattersNames = [];
+    public analyse(type) {
+        this.formatting.formatCells(type);
     }
 
     public rightClick(eventArgs: any) {
-        if (this.gridDataSelection.length === 0) {
+        if (this.grid.getSelectedData().length === 0) {
             return;
         }
 
-        const gridRange = this.grid.selectionService.ranges[0];
-
-        if (gridRange.columnEnd === gridRange.columnStart && gridRange.rowEnd === gridRange.rowStart) {
+        if (this.range.columnEnd === this.range.columnStart && this.range.rowEnd === this.range.rowStart) {
             return;
         }
 
@@ -492,7 +437,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public onPointerDown(event) {
         if (!event.target.parentElement.classList.contains("analytics-btn") &&
             !event.target.classList.contains("more-btn") &&
-            event.target.className.indexOf("igx-button") === -1) {
+            event.target.className.indexOf("btn") === -1 &&
+            event.target.className.indexOf("action") === -1 &&
+            event.target.className.indexOf("tab-option") === -1) {
             this.disableContextMenu();
         }
     }
