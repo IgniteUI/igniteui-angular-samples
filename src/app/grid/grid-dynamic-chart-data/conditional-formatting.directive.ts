@@ -111,10 +111,10 @@ export class ConditionalFormattingDirective {
                 if (cellValue < 0) {
                     const negativeStartingPoint = 100 - treshold;
                     gradientPercents = this.getNegativePercentage(cellValue);
-                    return `linear-gradient(to left, transparent 0% ${negativeStartingPoint}%, rgb(255, 0, 0) ${negativeStartingPoint}% ${ negativeStartingPoint + gradientPercents}%, transparent ${gradientPercents}% 100%)`;
+                    return `linear-gradient(to left, transparent 0% ${negativeStartingPoint}%, ${this._errorColor} ${negativeStartingPoint}% ${ negativeStartingPoint + gradientPercents}%, transparent ${gradientPercents}% 100%)`;
                 } else {
                     gradientPercents = this.getPositivePercentage(cellValue);
-                    return `linear-gradient(to right, transparent 0% ${treshold}%, rgb(0, 194, 255) ${treshold}% ${treshold + gradientPercents}%, transparent ${treshold + gradientPercents}% 100%)`;
+                    return `linear-gradient(to right, transparent 0% ${treshold}%, ${this._successColor} ${treshold}% ${treshold + gradientPercents}%, transparent ${treshold + gradientPercents}% 100%)`;
                 }
             }
         },
@@ -129,7 +129,15 @@ export class ConditionalFormattingDirective {
                 return;
             }
             if (this.isWithingRange(rowIndex) && cellValue > this._top10Value) {
-                return this._top10Color;
+                return this._infoColor;
+            }
+        },
+        color: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "number") {
+                return;
+            }
+            if (this.isWithingRange(rowIndex) && cellValue > this._top10Value) {
+                return "#FFF";
             }
         }
     };
@@ -140,7 +148,15 @@ export class ConditionalFormattingDirective {
                 return;
             }
             if (this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
-                return this._averageColor;
+                return this._infoColor;
+            }
+        },
+        color: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "number") {
+                return;
+            }
+            if (this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
+                return "#FFF";
             }
         }
     };
@@ -148,7 +164,12 @@ export class ConditionalFormattingDirective {
     public empty = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
             if (this.isWithingRange(rowIndex) && cellValue === undefined) {
-                return this._errorColor;
+                return this._infoColor;
+            }
+        },
+        color: (rowData, colname, cellValue, rowIndex) => {
+            if (this.isWithingRange(rowIndex) && cellValue === undefined) {
+                return "#FFF";
             }
         }
     };
@@ -158,7 +179,16 @@ export class ConditionalFormattingDirective {
             if (this.isWithingRange(rowIndex)) {
                 const color = this.zone.runOutsideAngular(() => {
                     const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                    return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ? this._warningColor : "";
+                    return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ? this._infoColor : "";
+                });
+                return color;
+            }
+        },
+        color: (rowData, colname, cellValue, rowIndex) => {
+            if (this.isWithingRange(rowIndex)) {
+                const color = this.zone.runOutsideAngular(() => {
+                    const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
+                    return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ? "#FFF" : "";
                 });
                 return color;
             }
@@ -171,7 +201,15 @@ export class ConditionalFormattingDirective {
                 return;
             }
             if (this.isWithingRange(rowIndex) && cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
-                return this._warningColor;
+                return this._infoColor;
+            }
+        },
+        color: (rowData, colname, cellValue, rowIndex) => {
+            if (typeof cellValue !== "string") {
+                return;
+            }
+            if (this.isWithingRange(rowIndex) && cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
+                return "#FFF";
             }
         }
     };
@@ -181,7 +219,16 @@ export class ConditionalFormattingDirective {
             if (this.isWithingRange(rowIndex)) {
                 const color = this.zone.runOutsideAngular(() => {
                     const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                    return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ? this._warningColor : "";
+                    return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ? this._infoColor : "";
+                });
+                return color;
+            }
+        },
+        color: (rowData, colname, cellValue, rowIndex) => {
+            if (this.isWithingRange(rowIndex)) {
+                const color = this.zone.runOutsideAngular(() => {
+                    const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
+                    return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ? "#FFF" : "";
                 });
                 return color;
             }
@@ -189,11 +236,10 @@ export class ConditionalFormattingDirective {
     };
 
     private formatType;
-    private _successColor = "rgba(78, 184, 98, .7)";
-    private _warningColor = "rgba(251,177,60, .7)";
-    private _errorColor = "rgba(255,19,74, .7)";
-    private _top10Color = "rgb(78, 150, 98)";
-    private _averageColor = "rgba(78, 184, 98, .5)";
+    private _successColor = "#4EB862";
+    private _warningColor = "#FBB13C";
+    private _errorColor = "#FF134A";
+    private _infoColor = "#1377D5";
     private _numericFormatters = ["Data Bars", "Color Scale", "Top 10", "Greater Than"];
     private _textFormatters = ["Text Contains"];
 
