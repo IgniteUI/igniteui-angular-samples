@@ -30,6 +30,8 @@ import {
     IgxTooltipModule
 } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
+import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxPieChartModule } from "igniteui-angular-charts/ES5/igx-pie-chart-module";
 // tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
@@ -558,12 +560,13 @@ export class GridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: GridMasterDetailSampleComponent,
             additionalFiles: ["/src/app/grid-crm/grid-crm/data.ts"],
-            additionalDependencies: ["igniteui-angular-charts"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
-                     IgxAvatarModule, IgxTabsModule],
+                     IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxPieChartModule, IgxLegendModule],
                 ngDeclarations: [GridMasterDetailSampleComponent],
-                ngImports: [IgxGridModule, IgxIconModule],
+                ngImports: [IgxGridModule, IgxCategoryChartModule, IgxPieChartModule, IgxLegendModule,
+                    IgxAvatarModule, IgxTabsModule, IgxIconModule],
                 ngProviders: []
             })
         }));
