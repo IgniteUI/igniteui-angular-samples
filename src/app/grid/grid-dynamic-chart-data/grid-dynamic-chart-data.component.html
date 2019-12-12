@@ -17,7 +17,7 @@
         <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [sortable]="true">
         </igx-column>
 
-        <igx-column field='Start(Y)' dataType="number" [width]="'120px'" [sortable]="true">
+        <igx-column field='Start(Y)Diff' dataType="number" [width]="'120px'" [sortable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
                     <span>{{cell.value | number:'1.4-4'}}%</span>
