@@ -54,8 +54,9 @@ export class ConditionalFormattingDirective {
                 } else if (this._textData.length === 0) {
                     this.formatType = CellFormatType.NUMERIC;
                     maxValue = Math.max(...this._numericData);
-                    minValue = Math.min(...this._numericData);
-                    this._maxValue = maxValue < Math.abs(minValue) ? Math.abs(minValue) : maxValue;
+                    minValue = Math.min(...this._numericData.filter(value => value < 0)) | 0;
+                    this._maxValue = maxValue;
+                    this._minValue = minValue;
                     this._warnValue = this.middleTresholdValue();
                     this._errorValue = this.lowTresholdValue();
                     this._top10Value = this.top10PercentTreshold();
@@ -64,8 +65,9 @@ export class ConditionalFormattingDirective {
                 } else {
                     this._valueForComparison = this._textData[0];
                     maxValue = Math.max(...this._numericData);
-                    minValue = Math.min(...this._numericData);
-                    this._maxValue = maxValue < Math.abs(minValue) ? Math.abs(minValue) : maxValue;
+                    minValue = Math.min(...this._numericData.filter(value => value < 0)) | 0;
+                    this._maxValue = maxValue;
+                    this._minValue = minValue;
                     this.formatType = CellFormatType.COMPOSITE;
                     this._warnValue = this.middleTresholdValue();
                     this._errorValue = this.lowTresholdValue();
@@ -74,6 +76,8 @@ export class ConditionalFormattingDirective {
                     formattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
                 }
             });
+            this.minMaxValueTreshold = this._maxValue <= Math.abs(this._minValue) ? this.setTreshold(this._minValue) : this.setTreshold(this._maxValue);
+            console.log(this.minMaxValueTreshold)
             this.onFormattersReady.emit(formattersName);
         }
 
@@ -106,13 +110,13 @@ export class ConditionalFormattingDirective {
             if (this.isWithingRange(rowIndex)) {
 
                 if (cellValue < 0) {
-                    return `linear-gradient(to left, rgb(255, 0, 0) ${Math.floor(this.getPercentage(Math.abs(cellValue)))}%, transparent ${100 - Math.floor(this.getPercentage(Math.abs(cellValue)))}%)`;
+                    return `linear-gradient(to left, transparent 0% ${100 - this.setTreshold(this._minValue)}%, rgb(255, 0, 0) ${100 - this.setTreshold(this._minValue)}% ${ 100 - this.setTreshold(this._minValue) + this.getNegativePercentage(cellValue)}%, transparent ${this.getNegativePercentage(cellValue)}% 100%)`;
                 } else {
-                    return `linear-gradient(to right, rgb(0, 194, 255) ${this.getPercentage(cellValue)}%, transparent 0%)`;
+                    return `linear-gradient(to right, transparent 0% ${this.setTreshold(this._minValue)}%, rgb(0, 194, 255) ${this.setTreshold(this._minValue)}% ${this.setTreshold(this._minValue) + this.getPositivePercentage(cellValue)}%, transparent ${this.setTreshold(this._minValue) + this.getPositivePercentage(cellValue)}% 100%)`;
                 }
             }
         },
-        backgroundSize: "90% 70%",
+        backgroundSize: "100% 80%",
         backgroundRepeat: "no-repeat",
         backgroundPositionY: "center"
     };
@@ -191,6 +195,7 @@ export class ConditionalFormattingDirective {
     private _numericFormatters = ["Data Bars", "Color Scale", "Top 10", "Greater Than"];
     private _textFormatters = ["Text Contains"];
 
+    private minMaxValueTreshold;
     private _minValue;
     private _top10Value;
     private _errorValue;
@@ -248,23 +253,38 @@ export class ConditionalFormattingDirective {
     }
 
     private middleTresholdValue() {
-        return (66 * Math.floor(this._maxValue)) / 100;
+        return (66 * Math.ceil(this._maxValue)) / 100;
     }
 
     private lowTresholdValue() {
-        return (33 * Math.floor(this._maxValue)) / 100;
+        return (33 * Math.ceil(this._maxValue)) / 100;
     }
 
     private top10PercentTreshold() {
-        return (90 * Math.floor(this._maxValue)) / 100;
+        return (90 * Math.ceil(this._maxValue)) / 100;
     }
 
     private getAvgValue(data: number[]) {
-        return Math.floor((data.reduce((a, b) => a + b, 0)) / data.length);
+        return Math.ceil((data.reduce((a, b) => a + b, 0)) / data.length);
     }
 
     private getPercentage(val) {
-        const result = (Math.ceil(val) / Math.ceil(this._maxValue)) * 100;
-        return result < 1 ? 1 : result;
+
+    }
+
+    private getPositivePercentage(val) {
+        const result = (Math.ceil(val) / (this._maxValue + Math.abs(this._minValue))) * 100;
+        // return Math.max(result, 1);
+        return  Math.ceil(result);
+    }
+
+    private getNegativePercentage(val) {
+        const result = (Math.abs(val) / (this._maxValue + Math.abs(this._minValue))) * 100;
+        // return Math.max(result, 1);
+        return Math.ceil(result);
+    }
+
+    private setTreshold(value) {
+        return Math.ceil((Math.abs(value) / (this._maxValue + Math.abs(this._minValue))) * 100);
     }
 }
