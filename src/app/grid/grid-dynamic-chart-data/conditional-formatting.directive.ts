@@ -76,8 +76,6 @@ export class ConditionalFormattingDirective {
                     formattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
                 }
             });
-            this.minMaxValueTreshold = this._maxValue <= Math.abs(this._minValue) ? this.setTreshold(this._minValue) : this.setTreshold(this._maxValue);
-            console.log(this.minMaxValueTreshold)
             this.onFormattersReady.emit(formattersName);
         }
 
@@ -108,11 +106,15 @@ export class ConditionalFormattingDirective {
                 return;
             }
             if (this.isWithingRange(rowIndex)) {
-
+                const treshold = this.setTreshold(this._minValue);
+                let gradientPercents;
                 if (cellValue < 0) {
-                    return `linear-gradient(to left, transparent 0% ${100 - this.setTreshold(this._minValue)}%, rgb(255, 0, 0) ${100 - this.setTreshold(this._minValue)}% ${ 100 - this.setTreshold(this._minValue) + this.getNegativePercentage(cellValue)}%, transparent ${this.getNegativePercentage(cellValue)}% 100%)`;
+                    const negativeStartingPoint = 100 - treshold;
+                    gradientPercents = this.getNegativePercentage(cellValue);
+                    return `linear-gradient(to left, transparent 0% ${negativeStartingPoint}%, rgb(255, 0, 0) ${negativeStartingPoint}% ${ negativeStartingPoint + gradientPercents}%, transparent ${gradientPercents}% 100%)`;
                 } else {
-                    return `linear-gradient(to right, transparent 0% ${this.setTreshold(this._minValue)}%, rgb(0, 194, 255) ${this.setTreshold(this._minValue)}% ${this.setTreshold(this._minValue) + this.getPositivePercentage(cellValue)}%, transparent ${this.setTreshold(this._minValue) + this.getPositivePercentage(cellValue)}% 100%)`;
+                    gradientPercents = this.getPositivePercentage(cellValue);
+                    return `linear-gradient(to right, transparent 0% ${treshold}%, rgb(0, 194, 255) ${treshold}% ${treshold + gradientPercents}%, transparent ${treshold + gradientPercents}% 100%)`;
                 }
             }
         },
@@ -195,7 +197,6 @@ export class ConditionalFormattingDirective {
     private _numericFormatters = ["Data Bars", "Color Scale", "Top 10", "Greater Than"];
     private _textFormatters = ["Text Contains"];
 
-    private minMaxValueTreshold;
     private _minValue;
     private _top10Value;
     private _errorValue;

@@ -897,7 +897,15 @@ export class FinancialData {
 
             dataObj.Settlement = Settlement[this.generateRandomNumber(0, 1)];
             dataObj.Contract = Contract[this.generateRandomNumber(0, 4)];
-            dataObj["PriceDiff"] = (((dataObj["Open Price"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 400;
+            dataObj["OpenPriceDiff"] = (((dataObj["Open Price"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+            dataObj["BuyDiff"] = (((dataObj["Buy"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+            dataObj["SellDiff"] = (((dataObj["Sell"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+            dataObj["Start(Y)Diff"] = (((dataObj["Start(Y)"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+            dataObj["High(Y)Diff"] = (((dataObj["High(Y)"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+            dataObj["Low(Y)Diff"] = (((dataObj["Low(Y)"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+            dataObj["High(D)Diff"] = (((dataObj["High(D)"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+            dataObj["Low(D)Diff"] = (((dataObj["Low(D)"] - dataObj["Price"]) / dataObj["Price"]) * 100) * 150;
+
             const region = REGIONS[this.generateRandomNumber(0, 5)];
             dataObj.Region = region.Region;
             dataObj.Country = this.randomizeCountry(region);

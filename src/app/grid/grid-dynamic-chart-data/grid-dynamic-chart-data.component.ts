@@ -306,6 +306,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             switch (k) {
                 case "Price":
                 case "Open Price":
+                case "OpenPriceDiff":
+                case "BuyDiff":
+                case "SellDiff":
                 case "Buy":
                 case "Sell":
                 case "Start(Y)":
