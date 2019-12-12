@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxButtonGroupComponent, IgxSelectComponent } from "igniteui-angular";
+import {ChangeDetectorRef, Component, HostBinding, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
+import {IgxButtonGroupComponent, IgxSelectComponent} from "igniteui-angular";
 
 @Component({
     selector: "select-header-footer",
     styleUrls: ["select-header-footer.component.scss"],
-    templateUrl: "select-header-footer.component.html"
+    templateUrl: "select-header-footer.component.html",
+    encapsulation: ViewEncapsulation.None
 })
 export class SelectHeaderFooterComponent implements OnInit {
     @ViewChild(IgxSelectComponent) public select: IgxSelectComponent;
