@@ -57,6 +57,7 @@ export const gridsRoutesData = {
     "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "multi-column-headers-styling": { displayName: "Grid Multi Column Headers Styling", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
+    "grid-custom-remote-paging-sample": { displayName: "Grid Custom Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
     "grid-custom-keyboard-navigation": { displayName: "Custom Keyboard Navigation", parentName: "Grid" },
     "grid-state": { displayName: "Grid Save and Load State", parentName: "Grid" },
@@ -85,5 +86,8 @@ export const gridsRoutesData = {
         { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
     "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" },
     "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" },
-    "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"}
+    "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"},
+    "grid-collapsible-groups": { displayName: "Grid Collapsible Column Groups", parentName: "Grid"},
+    "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"},
+    "grid-master-detail": { displayName: "Grid Master Detail", parentName: "Grid" }
 };
