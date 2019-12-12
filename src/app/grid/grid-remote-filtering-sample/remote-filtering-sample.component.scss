@@ -32,3 +32,12 @@
 .badge-left {
     float: left;
 }
+
+:host {
+    ::ng-deep {
+        .igx-overlay__wrapper--modal {
+            background: none;
+            pointer-events: initial;
+        }
+    }
+}
