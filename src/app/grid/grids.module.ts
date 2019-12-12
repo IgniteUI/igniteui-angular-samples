@@ -223,7 +223,6 @@ import { DataService } from "./services/data.service";
         ChartHostDirective,
         ChartArgsPipe,
         GridAllDataSummaryComponent,
-        GridExternalAdvancedFilteringComponent,
         ConditionalFormattingDirective
     ],
     imports: [
