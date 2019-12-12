@@ -24,7 +24,7 @@ export class GridMasterDetailSampleComponent {
     }
 
     public formatDateLabel(item: any): string {
-        return item.date.toLocaleDateString(undefined, {month: "short"});
+        return item.date.toLocaleDateString(undefined, { month: "short" });
     }
 
     public formatValue(val: any): string {
@@ -32,9 +32,9 @@ export class GridMasterDetailSampleComponent {
     }
     public getPieData(dataItem) {
         return [
-            { Label: "Won", Value: dataItem.deals_won},
-            { Label: "Lost", Value: dataItem.deals_lost},
-            { Label: "Pending", Value: dataItem.deals_pending}];
+            { Label: "Won", Value: dataItem.deals_won },
+            { Label: "Lost", Value: dataItem.deals_lost },
+            { Label: "Pending", Value: dataItem.deals_pending }];
     }
 
     public getChartData(dataItem) {
@@ -43,8 +43,9 @@ export class GridMasterDetailSampleComponent {
         for (let i = 0; i < 12; i++) {
             const value = this.getRandomNumber(2000, 10000);
             sales.push({
-                estimated: value + this.getRandomNumber(-2000 , 1000),
-                actual: value, date: new Date(year, i, 1) });
+                estimated: value + this.getRandomNumber(-2000, 1000),
+                actual: value, date: new Date(year, i, 1)
+            });
         }
         dataItem.chartData = sales;
         return dataItem.chartData;
@@ -86,5 +87,4 @@ export class GridMasterDetailSampleComponent {
     public getRandomNumber(min: number, max: number): number {
         return Math.round(min + Math.random() * (max - min));
     }
-
 }
