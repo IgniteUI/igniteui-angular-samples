@@ -1,11 +1,12 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, NgZone } from "@angular/core";
+import { AfterViewInit, Component, Directive, ElementRef, HostListener, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef, NgZone, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
 import { IChartArgs } from "./context-menu/context-menu.component";
 import { IChartComponentOptions, IChartOptions, IChartSeriesOptions, IXAxesOptions, IYAxesOptions } from "./initializers";
+import { ConditionalFormatingDirective } from './conditional-formating.directive';
 @Directive({
     selector: "[chartHost]"
 })
@@ -37,13 +38,6 @@ export class ChartArgsPipe implements PipeTransform {
         }
     }
 }
-
-enum CellFormatType {
-    NUMERIC = "numeric",
-    TEXT = "text",
-    COMPOSITE = "composite"
-}
-
 @Component({
     selector: "app-grid-dynamic-chart-data",
     templateUrl: "./grid-dynamic-chart-data.component.html",
@@ -54,7 +48,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public data;
     public opened = true;
-    @ViewChild(IgxGridComponent, { static: true })
+    @ViewChild(ConditionalFormatingDirective, {read: ConditionalFormatingDirective, static: true})
+    public formatting: ConditionalFormatingDirective;
+
+    @ViewChild("grid", {read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
 
     @ViewChild("chart", { read: ChartHostDirective, static: true })
@@ -192,7 +189,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     private chartComponentOptions: IChartComponentOptions;
 
-    constructor(private chartService: ChartService, private zone: NgZone) {
+    constructor(private chartService: ChartService, private zone: NgZone, private cdr: ChangeDetectorRef) {
         this.bubbleChartSizeScale.maximumValue = 60;
         this.bubbleChartSizeScale.minimumValue = 10;
     }
@@ -204,7 +201,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.chartSelectionDialog.onOpen.subscribe(() => {
             this.currentChartArg = { chartType: "Column", seriesType: "Grouped" };
         });
-
         this.dialog.onOpen.subscribe(() => {
             this.resetChartDialogInitialDimensions();
             this.chartSelectionDialog.close();
@@ -233,36 +229,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
             this.gridDataSelection = [];
             this.colForSubjectArea = null;
-            let minCol;
-            let minRow;
-            let maxValue;
-            let cellForComparison;
 
             this.zone.runOutsideAngular(() => {
-            this.cellsToFormat = (this.grid.selectedCells as IgxGridCellComponent[]).map(cell => ({value: cell.value, column: cell.column.field, cellID: cell.cellID}));
-            const numericCells = this.cellsToFormat.filter(c =>  typeof c.value === "number");
-            const textCells = this.cellsToFormat.filter(c =>  typeof c.value === "string");
-
-            if (numericCells.length === 0) {
-                this.cellsFormatType = CellFormatType.TEXT;
-                minCol = Math.min.apply(Math, textCells.map(c => c.cellID.columnID));
-                minRow = Math.min.apply(Math, textCells.map(c => c.cellID.rowID as number));
-                cellForComparison = this.cellsToFormat.find(cell => {
-
-                    return cell.cellID.columnID === minCol && cell.cellID.rowID === minRow;
-                });
-            } else if (textCells.length === 0) {
-                this.cellsFormatType = CellFormatType.NUMERIC;
-                maxValue = Math.max.apply(Math, numericCells.map(c => c.value));
-            } else {
-                 minCol = Math.min.apply(Math, textCells.map(c => c.cellID.columnID));
-                 minRow = Math.min.apply(Math, textCells.map(c => c.cellID.rowID as number));
-                 cellForComparison = this.cellsToFormat.find(cell => {
-                    return cell.cellID.columnID === minCol && cell.cellID.rowID === minRow;
-                });
-                 maxValue = Math.max.apply(Math, numericCells.map(c => c.value));
-                 this.cellsFormatType = CellFormatType.COMPOSITE;
-            }
 
             const chartData = this.grid.getSelectedData()
                 .map(this.dataMap)
@@ -270,7 +238,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
             if (chartData.length === 0) {
                 this.disableCreateChart = true;
-                this.cellsFormatType = CellFormatType.TEXT;
             } else {
                 this.disableCreateChart = false;
                 const valueMemberPaths = Object.keys(chartData[0]);
@@ -303,9 +270,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
             this.tabs.tabs.first.isSelected = true;
             this.range = range;
+            this.formatting.range = range;
         });
-            console.log(maxValue);
-            console.log(cellForComparison);
             this.renderButton();
         });
     }
@@ -440,6 +406,11 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
+    public analyse() {
+        this.formatting.formatCells();
+        this.grid.reflow()
+    }
+
     public rightClick(eventArgs: any) {
         if (this.gridDataSelection.length === 0) {
             return;
@@ -520,7 +491,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     @HostListener("pointerdown", ["$event"])
     public onPointerDown(event) {
         if (!event.target.parentElement.classList.contains("analytics-btn") &&
-            !event.target.classList.contains("more-btn")) {
+            !event.target.classList.contains("more-btn") &&
+            event.target.className.indexOf("igx-button") === -1) {
             this.disableContextMenu();
         }
     }
@@ -577,6 +549,4 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
         this.contextmenu = true;
     }
-
-    
 }
