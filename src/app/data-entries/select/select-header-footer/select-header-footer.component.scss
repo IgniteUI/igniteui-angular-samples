@@ -1,0 +1,40 @@
+//Ignite UI for Angular Theming engine related styling
+// in component.scss
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.select-wrapper {
+    display: flex;
+    padding-top: 220px;
+    padding-left: 40px;
+}
+
+.icon {
+    padding-left: 10px;
+    padding-left: 10px;
+}
+
+igx-icon {
+    color: rgba(0, 0, 0, 0.62)
+}
+.blue {
+    color: igx-color($default-palette, "primary", 500);
+}
+
+.custom-select-header,
+.custom-select-footer {
+    display: flex;
+    background: rgba($color: #F5F5F5, $alpha: 255);
+}
+
+.custom-select-header {
+    height: 56px;
+}
+
+.custom-select-footer {
+    height: 44px;
+}
+
+span {
+    color: igx-color($default-palette, "secondary", 600); // secondary color white theme
+}
+
