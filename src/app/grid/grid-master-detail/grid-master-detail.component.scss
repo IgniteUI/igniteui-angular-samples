@@ -1,17 +1,41 @@
 .categoryStyle{
     font-weight: 600;
 }
+
 .tabContent {
-    display:flex;
-    justify-content: space-between;
+    padding: 24px 8px;
+    display: flex;
+    justify-content: flex-start;
     margin: 10px;
 }
 
-.tabInnerContent {
-    display:flex;
-    justify-content: space-around;
-    width: 100%;
+.avatarContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
-.tabInnerContent > div {
-    margin: 10px;
+
+igx-divider {
+    margin: 0 24px !important;
+}
+
+h6 {
+    margin-top: 1em;
+}
+
+.details-chart {
+    width: 200px;
+    background: rgba(0, 0, 0, .04);
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.tabContent igx-grid {
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.grid__wrapper {
+    margin: 4px 16px;
 }

@@ -1,62 +1,69 @@
-    <igx-grid displayDensity="cosy" [data]="data" [autoGenerate]="false" [height]="'600px'" [width]="'738px'">
-        <igx-column field="name" header="Name" width="150px"></igx-column>
-        <igx-column field="position" header="Position" width="200px"></igx-column>
-        <igx-column field="company" header="Company" width="130px"></igx-column>
-        <igx-column field="email" header="Email" width="240px"></igx-column>
+<div class="grid__wrapper">
+    <igx-grid displayDensity="cosy" [data]="data" [autoGenerate]="false" height="592px" width="100%">
+        <igx-column field="name" header="Name" width="250px"></igx-column>
+        <igx-column field="position" header="Position"></igx-column>
+        <igx-column field="company" header="Company"></igx-column>
+        <igx-column field="email" header="Email"></igx-column>
+        <igx-column field="referred_by" header="Referrer"></igx-column>
         <ng-template igxGridDetail let-dataItem>
-            <div style='width:100%;'>
+            <div style="width:100%;">
                 <igx-tabs>
-                        <igx-tabs-group label="Details">
-                            <div class='tabContent'>
-                                <igx-avatar src="https://www.infragistics.com/angular-demos/{{dataItem.avatar}}" roundShape="false" size="large"></igx-avatar>
-                                <div class='tabInnerContent'>
-                                    <div>
-                                            <div><span class='categoryStyle'>Country:</span> {{dataItem.country}}</div>
-                                            <div><span class='categoryStyle'>City:</span> {{dataItem.city}}</div>
-                                            <div><span class='categoryStyle'>Street:</span> {{dataItem.street}}</div>
+                    <igx-tabs-group label="Details">
+                        <div class="tabContent">
+                            <div class="avatarContainer">
+                                <igx-avatar src="https://www.infragistics.com/angular-demos/{{dataItem.avatar}}"
+                                    roundShape="false" size="large"></igx-avatar>
+                                <h6>{{dataItem.name}}</h6>
+                            </div>
+                            <igx-divider [vertical]="true"></igx-divider>
+                            <div class="tabInnerContent">
+                                <div class="breathingcontent">
+                                    <div><span
+                                            class="categoryStyle">Country:&nbsp;</span><span>{{dataItem.country}}</span>
                                     </div>
-                                    <div>
-                                            <div> <span class='categoryStyle'>Work Phone:</span> {{dataItem.work_phone}}</div>
-                                            <div> <span class='categoryStyle'>Mobile Phone:</span> {{dataItem.mobile_phone}}</div>
+                                    <div><span class="categoryStyle">City:&nbsp;</span><span>{{dataItem.city}}</span>
                                     </div>
+                                    <div><span
+                                            class="categoryStyle">Street:&nbsp;</span><span>{{dataItem.street}}</span>
+                                    </div>
+                                    <div><span class="categoryStyle">Work
+                                            Phone:&nbsp;</span><span>{{dataItem.work_phone}}</span></div>
+                                    <div><span class="categoryStyle">Mobile
+                                            Phone:&nbsp;</span><span>{{dataItem.mobile_phone}}</span></div>
                                 </div>
                             </div>
-                        </igx-tabs-group>
-                        <igx-tabs-group label="Deals">
-                        <div class='tabContent'>
-                            <igx-pie-chart [dataSource]="getPieData(dataItem)"
-                                width="50%"
-                                height="200px"
+                        </div>
+                    </igx-tabs-group>
+                    <igx-tabs-group label="Deals">
+                        <div class="tabContent">
+                            <igx-pie-chart [dataSource]="getPieData(dataItem)" [formatLabel]="formatPieLabel"
                                 [outlines]="['transparent']"
-                                leaderLineVisibility='collapsed'
-                                labelMemberPath="Label" [formatLabel]='formatPieLabel'
-                                valueMemberPath="Value" [brushes]='["rgb(171, 223, 29)", "rgb(228, 19, 16)", "rgb(0, 111, 138)"]'
-                               [labelsPosition]="'outsideEnd'">
+                                [brushes]="['rgb(171, 223, 29)', 'rgb(228, 19, 16)', 'rgb(0, 111, 138)']"
+                                class="details-chart" labelsPosition="insideEnd" leaderLineVisibility="collapsed"
+                                labelMemberPath="Label" valueMemberPath="Value">
                             </igx-pie-chart>
-                            <igx-grid style='margin:10px;' displayDensity="compact" (onColumnInit)='columnInit($event)' [autoGenerate]='true' [columnWidth]='"70px"' width='260px' [data]='dataItem.gridData ? dataItem.gridData: gridData(dataItem)'>
+                            <igx-divider [vertical]="true"></igx-divider>
+                            <igx-grid [data]="dataItem.gridData ? dataItem.gridData: gridData(dataItem)"
+                                [autoGenerate]="true" class="details-grid" columnWidth="70px" displayDensity="cosy"
+                                width="260px" height="206px" (onColumnInit)="columnInit($event)">
                             </igx-grid>
                         </div>
-                        </igx-tabs-group>
-                        <igx-tabs-group label="Sales">
-                            <div class='tabContent' style='flex-direction: column;'>
-                                <igx-legend #legend orientation="horizontal"></igx-legend>
-                                <igx-category-chart height="300px" [legend]="legend"
-                                    [dataSource]="dataItem.chartData ? dataItem.chartData : getChartData(dataItem)"
-                                    chartType="Line"
-                                    chartTitle="Sales"
-                                    subtitle="(Estimated, Actual)"
-                                    xAxisInterval="1"
-                                    [brushes]='["rgb(0, 111, 138)", "rgb(171, 223, 29)"]'
-                                    [xAxisFormatLabel]="formatDateLabel"
-                                    [includedProperties]="include"
-                                    [crosshairsDisplayMode]="'Horizontal'"
-                                    [crosshairsAnnotationEnabled]="true"
-                                    isHorizontalZoomEnabled="false"
-                                    isVerticalZoomEnabled="false">
-                                </igx-category-chart>
-                            </div>
-                        </igx-tabs-group>
+                    </igx-tabs-group>
+                    <igx-tabs-group label="Sales">
+                        <div class="tabContent" style="flex-direction: column;">
+                            <igx-legend #legend orientation="horizontal"></igx-legend>
+                            <igx-category-chart height="250px" [legend]="legend"
+                                [dataSource]="dataItem.chartData ? dataItem.chartData : getChartData(dataItem)"
+                                chartType="Line" chartTitle="Sales" subtitle="(Estimated, Actual)" xAxisInterval="1"
+                                [brushes]="['rgb(0, 111, 138)', 'rgb(171, 223, 29)']"
+                                [xAxisFormatLabel]="formatDateLabel" [includedProperties]="include"
+                                [crosshairsDisplayMode]="'Horizontal'" [crosshairsAnnotationEnabled]="true"
+                                isHorizontalZoomEnabled="false" isVerticalZoomEnabled="false">
+                            </igx-category-chart>
+                        </div>
+                    </igx-tabs-group>
                 </igx-tabs>
             </div>
         </ng-template>
-</igx-grid>
+    </igx-grid>
+</div>
