@@ -1,28 +1,28 @@
 <div class="select-wrapper">
-    <igx-select #select style="min-width: 272px;">
-        <label igxLabel>Select With Header & Footer</label>
-            <igx-select-item *ngFor="let item of fruitsDS" [value]="item.type" [text]="item.type" [ngSwitch]="item.delivery">
-                {{item.type}}
-                <igx-icon *ngSwitchCase="'airplane'">flight</igx-icon>
+    <igx-select style="min-width: 272px;">
+        <label igxLabel>Pick your fruit</label>
+            <igx-select-item *ngFor="let fruit of fruits" [value]="fruit.type" [text]="fruit.type" [ngSwitch]="fruit.delivery">
+                {{fruit.type}}
+                <igx-icon *ngSwitchCase="'flight'">flight</igx-icon>
                 <igx-icon *ngSwitchCase="'train'">train</igx-icon>
                 <igx-icon *ngSwitchCase="'boat'">directions boat</igx-icon>
             </igx-select-item>
         <ng-template igxSelectHeader>
             <div class="custom-select-header">
                 <span>DELIVERY METHOD</span>
-                <igx-buttongroup [multiSelection]="false" [alignment]="horizontal">
-                        <button igxButton (click)="filterFlight()"><igx-icon>flight</igx-icon></button>
-                        <button igxButton (click)="filterTrain()"><igx-icon>train</igx-icon></button>
-                        <button igxButton (click)="filterBoat()"><igx-icon>directions boat</igx-icon></button>
+                <igx-buttongroup [multiSelection]="false" [alignment]="horizontal" (click)="filter($event.target.title)">
+                        <button igxButton title="flight"><igx-icon title="flight">flight</igx-icon></button>
+                        <button igxButton title="train"><igx-icon title="train">train</igx-icon></button>
+                        <button igxButton title="boat"><igx-icon title="boat">directions boat</igx-icon></button>
                 </igx-buttongroup>
             </div>
         </ng-template>
         <ng-template igxSelectFooter>
             <div class="custom-select-footer">
                 <span>TOTAL</span>
-                <igx-icon title="flight" [class.blue]="selected ==='airplane'">flight</igx-icon>{{flightCount}}
+                <igx-icon title="flight" [class.blue]="selected ==='flight'">flight</igx-icon>{{flightCount}}
                 <igx-icon title="train" [class.blue]="selected === 'train'" >train</igx-icon> {{trainCount}}
-                <igx-icon title="directions boat" [class.blue]="selected  === 'boat'" >directions boat</igx-icon> {{boatCount}}
+                <igx-icon title="boat" [class.blue]="selected  === 'boat'" >directions boat</igx-icon> {{boatCount}}
             </div>
         </ng-template>
     </igx-select>
