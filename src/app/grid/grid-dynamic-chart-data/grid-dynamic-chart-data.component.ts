@@ -1,8 +1,9 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IGridEditEventArgs, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
-import { debounceTime } from "rxjs/operators";
+import { noop, pipe} from "rxjs";
+import { debounceTime, tap} from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
 import { ChartService, IGridDataSelection } from "./chart.service";
 import { ConditionalFormattingDirective } from "./conditional-formatting.directive";
@@ -97,6 +98,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public disableCreateChart = false;
     public cellsToFormat = [];
     public cellsFormatType;
+    public currentFormatter;
     // Dialogs options
     public _chartDialogOverlaySettings = {
         closeOnOutsideClick: false,
@@ -197,6 +199,15 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public ngOnInit() {
 
+        this.grid.onCellEdit.subscribe((args: IGridEditEventArgs) => {
+            Promise.resolve().then(() => {
+                this.grid.selectRange(this.range);
+                console.log(`onCellEdit`, this.grid.getSelectedData());
+                this.formatting.ensureValues();
+                this.formatting.formatCells(this.currentFormatter);
+            });
+       });
+
         this.formatting.onFormattersReady.subscribe(names => this.formattersNames = names);
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
@@ -217,7 +228,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
         this.chartSelectionDialog.onClose.subscribe((evt) => this.chartPreviewDialog.close());
 
-        this.grid.onDataPreLoad.subscribe((evt) => this.disableContextMenu());
+        this.grid.onDataPreLoad.pipe(tap(() => this.disableContextMenu()), debounceTime(200)).subscribe((evt) => this.range ? this.renderButton() : noop());
 
         this.data = new FinancialData().generateData(1000);
 
@@ -281,7 +292,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        this.grid.headerContainer.getScroll().onscroll = () => this.disableContextMenu();
+        this.grid.headerContainer.getScroll().onscroll = this.zone.runOutsideAngular(() => {
+            pipe(tap(() => this.disableContextMenu()), debounceTime(200), tap());
+            return () => this.renderButton();
+        });
     }
 
     public formatCurrency(value: number) {
@@ -355,7 +369,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
     public formattersNames = [];
     public analyse(type) {
-        this.formatting.formatCells(type);
+        this.currentFormatter = type;
+        this.formatting.formatCells(this.currentFormatter);
     }
 
     public rightClick(eventArgs: any) {
@@ -491,9 +506,16 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         } else {
             this.clickedCell = this.grid.getCellByColumn(this.rowIndex, this.grid.visibleColumns[this.colIndex].field);
         }
-
         this.contextmenuX = this.clickedCell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = this.clickedCell.element.nativeElement.getClientRects()[0].bottom;
-        this.contextmenu = true;
+        this.contextmenu = this.isWithinRange(this.clickedCell);
+        this.cdr.detectChanges();
+    }
+
+    private isWithinRange(cell: IgxGridCellComponent) {
+        return cell.visibleColumnIndex >= this.range.columnStart &&
+               cell.visibleColumnIndex <= this.range.columnEnd &&
+               cell.rowIndex >= this.range.rowStart &&
+               cell.rowIndex <= this.range.rowEnd;
     }
 }

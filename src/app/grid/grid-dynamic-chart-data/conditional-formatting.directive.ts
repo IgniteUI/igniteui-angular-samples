@@ -16,69 +16,8 @@ export class ConditionalFormattingDirective {
     public set range(range: GridSelectionRange) {
         if (range) {
             this._range = range;
-            this._selectedData = undefined;
-            this._valueForComparison = undefined;
-            this._maxValue = undefined;
-            this._minValue = undefined;
-            this.formatType = undefined;
-            this._warnValue = undefined;
-            this._errorValue = undefined;
-            this._top10Value = undefined;
-            this._averageValue = undefined;
-            this._textData = [];
-            this._numericData = [];
-            let maxValue;
-            let minValue;
-            const formattersName = ["Duplicate Values", "Unique Values", "Empty"];
-            const gridSelectedData = this.grid.getSelectedData();
-            let selectedData;
-
-            if (gridSelectedData.length < 2) {
-                selectedData = Object.values(gridSelectedData[0]);
-            } else {
-                selectedData = gridSelectedData.reduce((accumulator, currentValue) => {
-                    return Object.values(accumulator).concat(Object.values(currentValue));
-                });
-            }
-
-            this._selectedData = selectedData;
-            this.zone.runOutsideAngular(() => {
-
-                // tslint:disable: max-line-length
-                this._numericData = selectedData.filter(value => typeof value === "number");
-                this._textData = selectedData.filter(value => typeof value === "string");
-                if (this._numericData.length === 0) {
-                    this.formatType = CellFormatType.TEXT;
-                    this._valueForComparison = this._textData[0];
-                    formattersName.splice(0, 0, ...this._textFormatters);
-                } else if (this._textData.length === 0) {
-                    this.formatType = CellFormatType.NUMERIC;
-                    maxValue = Math.max(...this._numericData);
-                    minValue = Math.min(...this._numericData.filter(value => value < 0)) | 0;
-                    this._maxValue = maxValue;
-                    this._minValue = minValue;
-                    this._warnValue = this.middleTresholdValue();
-                    this._errorValue = this.lowTresholdValue();
-                    this._top10Value = this.top10PercentTreshold();
-                    this._averageValue = this.getAvgValue(this._numericData);
-                    formattersName.splice(0, 0, ...this._numericFormatters);
-                } else {
-                    this._valueForComparison = this._textData[0];
-                    maxValue = Math.max(...this._numericData);
-                    minValue = Math.min(...this._numericData.filter(value => value < 0)) | 0;
-                    this._maxValue = maxValue;
-                    this._minValue = minValue;
-                    this.formatType = CellFormatType.COMPOSITE;
-                    this._warnValue = this.middleTresholdValue();
-                    this._errorValue = this.lowTresholdValue();
-                    this._top10Value = this.top10PercentTreshold();
-                    this._averageValue = this.getAvgValue(this._numericData);
-                    formattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
-                }
-            });
-            this.onFormattersReady.emit(formattersName);
+            this.ensureValues();
         }
-
     }
 
     public get range() {
@@ -111,7 +50,8 @@ export class ConditionalFormattingDirective {
                 if (cellValue < 0) {
                     const negativeStartingPoint = 100 - treshold;
                     gradientPercents = this.getNegativePercentage(cellValue);
-                    return `linear-gradient(to left, transparent 0% ${negativeStartingPoint}%, ${this._errorColor} ${negativeStartingPoint}% ${ negativeStartingPoint + gradientPercents}%, transparent ${gradientPercents}% 100%)`;
+                    // tslint:disable: max-line-length
+                    return `linear-gradient(to left, transparent 0% ${negativeStartingPoint}%, ${this._errorColor} ${negativeStartingPoint}% ${negativeStartingPoint + gradientPercents}%, transparent ${gradientPercents}% 100%)`;
                 } else {
                     gradientPercents = this.getPositivePercentage(cellValue);
                     return `linear-gradient(to right, transparent 0% ${treshold}%, ${this._successColor} ${treshold}% ${treshold + gradientPercents}%, transparent ${treshold + gradientPercents}% 100%)`;
@@ -277,7 +217,6 @@ export class ConditionalFormattingDirective {
                 this.applyFormatting(c, formatType, formatter);
             }
         });
-
     }
 
     public clearFormatting() {
@@ -285,6 +224,68 @@ export class ConditionalFormattingDirective {
             c.cellStyles = undefined;
             this.grid.cdr.detectChanges();
         });
+    }
+
+    public ensureValues() {
+        this._valueForComparison = undefined;
+        this._maxValue = undefined;
+        this._minValue = undefined;
+        this.formatType = undefined;
+        this._warnValue = undefined;
+        this._errorValue = undefined;
+        this._top10Value = undefined;
+        this._averageValue = undefined;
+        this._textData = [];
+        this._numericData = [];
+        let maxValue;
+        let minValue;
+        const formattersName = ["Duplicate Values", "Unique Values", "Empty"];
+        const gridSelectedData = this.grid.getSelectedData();
+        let selectedData;
+
+        if (gridSelectedData.length < 2) {
+            selectedData = Object.values(gridSelectedData[0]);
+        } else {
+            selectedData = gridSelectedData.reduce((accumulator, currentValue) => {
+                return Object.values(accumulator).concat(Object.values(currentValue));
+            });
+        }
+
+        this.zone.runOutsideAngular(() => {
+
+            // tslint:disable: max-line-length
+            this._numericData = selectedData.filter(value => typeof value === "number");
+            this._textData = selectedData.filter(value => typeof value === "string");
+            if (this._numericData.length === 0) {
+                this.formatType = CellFormatType.TEXT;
+                this._valueForComparison = this._textData[0];
+                formattersName.splice(0, 0, ...this._textFormatters);
+            } else if (this._textData.length === 0) {
+                this.formatType = CellFormatType.NUMERIC;
+                maxValue = Math.max(...this._numericData);
+                minValue = Math.min(...this._numericData.filter(value => value < 0)) | 0;
+                this._maxValue = maxValue;
+                this._minValue = minValue;
+                this._warnValue = this.middleTresholdValue();
+                this._errorValue = this.lowTresholdValue();
+                this._top10Value = this.top10PercentTreshold();
+                this._averageValue = this.getAvgValue(this._numericData);
+                formattersName.splice(0, 0, ...this._numericFormatters);
+            } else {
+                this._valueForComparison = this._textData[0];
+                maxValue = Math.max(...this._numericData);
+                minValue = Math.min(...this._numericData.filter(value => value < 0)) | 0;
+                this._maxValue = maxValue;
+                this._minValue = minValue;
+                this.formatType = CellFormatType.COMPOSITE;
+                this._warnValue = this.middleTresholdValue();
+                this._errorValue = this.lowTresholdValue();
+                this._top10Value = this.top10PercentTreshold();
+                this._averageValue = this.getAvgValue(this._numericData);
+                formattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
+            }
+        });
+        this.onFormattersReady.emit(formattersName);
     }
 
     private applyFormatting(column: IgxColumnComponent, type: CellFormatType, formatter: any) {
@@ -322,7 +323,7 @@ export class ConditionalFormattingDirective {
     private getPositivePercentage(val) {
         const result = (Math.ceil(val) / (this._maxValue + Math.abs(this._minValue))) * 100;
         // return Math.max(result, 1);
-        return  Math.ceil(result);
+        return Math.ceil(result);
     }
 
     private getNegativePercentage(val) {
