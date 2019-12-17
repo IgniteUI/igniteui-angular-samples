@@ -27,7 +27,8 @@ import {
     IgxSwitchModule,
     IgxTabsModule,
     IgxToastModule,
-    IgxTooltipModule
+    IgxTooltipModule,
+    IgxDividerModule
 } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
@@ -563,10 +564,11 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
-                     IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxPieChartModule, IgxLegendModule],
+                     IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxPieChartModule, IgxLegendModule,
+                     IgxDividerModule ],
                 ngDeclarations: [GridMasterDetailSampleComponent],
                 ngImports: [IgxGridModule, IgxCategoryChartModule, IgxPieChartModule, IgxLegendModule,
-                    IgxAvatarModule, IgxTabsModule, IgxIconModule],
+                    IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxDividerModule],
                 ngProviders: []
             })
         }));
