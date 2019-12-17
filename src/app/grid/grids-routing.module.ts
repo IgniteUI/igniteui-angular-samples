@@ -8,10 +8,12 @@ import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/gri
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
 import { GridColumnHidingToolbarStyleComponent } from "./grid-column-hiding-toolbar-style/grid-column-hiding-toolbar-style.component";
 import { GridCompositeDataComponent } from "./grid-composite-data-binding/grid-composite-data.component";
+import { GridConditionalCellStyle2Component } from "./grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
 import { GridConditionalCellStyleComponent } from "./grid-conditional-cell-style/grid-conditional-cell-style.component";
 import { GridContextmenuSampleComponent } from "./grid-contextmenu-sample/grid-contextmenu-sample.component";
 import { GridCustomFilteringComponent } from "./grid-custom-filtering/grid-custom-filtering.component";
 import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
@@ -20,6 +22,8 @@ import { ExcelStyleFilteringSample1Component } from "./grid-excel-style-filterin
 import { ExcelStyleFilteringSample2Component } from "./grid-excel-style-filtering-sample-2/grid-excel-style-filtering-sample-2.component";
 import { ExcelStyleFilteringSample3Component } from "./grid-excel-style-filtering-sample-3/grid-excel-style-filtering-sample-3.component";
 import { ExcelStyleFilteringStyleComponent } from "./grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent } from "./grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent } from "./grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "./grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "./grid-filtering-style/grid-filtering-style.component";
 import { FilteringTemplateSampleComponent } from "./grid-filtering-template-sample/grid-filtering-template-sample.component";
@@ -72,13 +76,18 @@ import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-co
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
+import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
+import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
+import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
+import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
 import { GridResizeLineStylingSampleComponent } from "./grid-resize-line-styling-sample/grid-resize-line-styling-sample";
 import { PinningStylingComponent } from "./grid-sample-pinning-styling/grid-pinning-styling.component";
@@ -165,6 +174,11 @@ export const gridsRoutes: Routes = [
         path: "grid-row-drag-base"
     },
     {
+        component: GridMultipleRowDragComponent,
+        data:  gridsRoutesData["grid-multiple-row-drag"],
+        path: "grid-multiple-row-drag"
+    },
+    {
         component: GridRowReorderComponent,
         data: gridsRoutesData["grid-row-reorder"],
         path: "grid-row-reorder"
@@ -183,6 +197,11 @@ export const gridsRoutes: Routes = [
         component: GridConditionalCellStyleComponent,
         data: gridsRoutesData["grid-cell-styling"],
         path: "grid-cell-styling"
+    },
+    {
+        component: GridConditionalCellStyle2Component,
+        data: gridsRoutesData["grid-cell-cellStyling"],
+        path: "grid-cell-cellStyling"
     },
     {
         component: FilteringSampleComponent,
@@ -213,6 +232,16 @@ export const gridsRoutes: Routes = [
         component: ExcelStyleFilteringStyleComponent,
         data: gridsRoutesData["grid-excel-style-filtering-style"],
         path: "grid-excel-style-filtering-style"
+    },
+    {
+        component: GridExternalExcelStyleFilteringComponent,
+        data: gridsRoutesData["grid-external-excel-style-filtering"],
+        path: "grid-external-excel-style-filtering"
+    },
+    {
+        component: GridExternalAdvancedFilteringComponent,
+        data: gridsRoutesData["grid-external-advanced-filtering"],
+        path: "grid-external-advanced-filtering"
     },
     {
         component: GridCustomFilteringComponent,
@@ -350,6 +379,11 @@ export const gridsRoutes: Routes = [
         path: "grid-remote-paging-sample"
     },
     {
+        component: CustomRemotePagingGridSample,
+        data: gridsRoutesData["grid-custom-remote-paging-sample"],
+        path: "grid-custom-remote-paging-sample"
+    },
+    {
         component: GridPasteSampleComponent,
         data: gridsRoutesData["grid-paste"],
         path: "grid-paste"
@@ -478,6 +512,26 @@ export const gridsRoutes: Routes = [
         component: GridConditionalRowSelectorsComponent,
         data: gridsRoutesData["grid-conditional-row-selectors"],
         path: "grid-conditional-row-selectors"
+    },
+    {
+        component: GridDynamicChartDataComponent,
+        data: gridsRoutesData["grid-dynamic-chart-data"],
+        path: "grid-dynamic-chart-data"
+    },
+    {
+        component: GridCollapsibleColumnGroupsComponent,
+        data: gridsRoutesData["grid-collapsible-groups"],
+        path: "grid-collapsible-groups"
+    },
+    {
+        component: GridAllDataSummaryComponent,
+        data: gridsRoutesData["grid-alldata-summaries"],
+        path: "grid-alldata-summaries"
+    },
+    {
+        component: GridMasterDetailSampleComponent,
+        data: gridsRoutesData["grid-master-detail"],
+        path: "grid-master-detail"
     }
 ];
 

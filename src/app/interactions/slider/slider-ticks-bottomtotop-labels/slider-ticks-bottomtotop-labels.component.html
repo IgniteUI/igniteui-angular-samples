@@ -1,0 +1,24 @@
+<div class="container">
+    <igx-slider
+        [maxValue]="50"
+        [continuous]="true"
+        [type]="type"
+        [showTicks]="true"
+        [primaryTicks]="6"
+        [secondaryTicks]="4"
+        [secondaryTickLabels]="false"
+        [tickLabelsOrientation]="labelsOrientation"
+        [(ngModel)]="priceRange"></igx-slider>
+
+    <div class="wrapper">
+        <igx-input-group>
+            <input igxInput id="lowerPrice" type="text" [ngModel]="priceRange.lower | currency" />
+            <label igxLabel for="lowerPrice">Lower price:</label>
+        </igx-input-group>
+        <igx-input-group>
+            <input igxInput id="upperPrice" type="text" [ngModel]="priceRange.upper | currency" />
+            <label igxLabel for="upperPrice">Upper price:</label>
+        </igx-input-group>
+    </div>
+</div>
+

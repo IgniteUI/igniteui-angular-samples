@@ -1,5 +1,4 @@
 import { Component, ViewChildren } from "@angular/core";
-import { IGridDataBindable, IgxGridBaseComponent, IgxRowComponent } from "igniteui-angular";
 import { moonData, planetData } from "./data";
 import { PlanetComponent as PlanetComponent } from "./planet/planet.component";
 
@@ -49,7 +48,7 @@ export class GridDragSampleComponent {
     }
 
     public onDrop(args, planet: PlanetComponent) {
-        const row: IgxRowComponent<IgxGridBaseComponent & IGridDataBindable> = args.dragData;
+        const row: any = args.dragData;
         if (this.isDropAllowed(row.rowData.name, planet.name)) {
             row.rowData.planet = planet.name;
             row.grid.selectRows([row.rowID]);

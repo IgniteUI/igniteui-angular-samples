@@ -25,9 +25,13 @@ import {
     IgxSelectModule,
     IgxSnackbarModule,
     IgxSwitchModule,
+    IgxTabsModule,
     IgxToastModule,
     IgxTooltipModule
 } from "igniteui-angular";
+import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
+import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
+import { IgxPieChartModule } from "igniteui-angular-charts/ES5/igx-pie-chart-module";
 // tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
@@ -40,6 +44,7 @@ import {
 import {
     GridAdvancedFilteringStyleComponent
 } from "../../src/app/grid/grid-advanced-filtering-style/grid-advanced-filtering-style.component";
+import { GridAllDataSummaryComponent } from "../../src/app/grid/grid-allData-summary/grid-allData-summary.component";
 import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
@@ -49,6 +54,8 @@ import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelectio
 import {
     GridClipboardSampleComponent
 } from "../../src/app/grid/grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
+// tslint:disable-next-line: max-line-length
+import { GridCollapsibleColumnGroupsComponent } from "../../src/app/grid/grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
 import {
     GridColumnHidingSampleComponent
 } from "../../src/app/grid/grid-column-hiding-sample/grid-column-hiding-sample.component";
@@ -61,6 +68,9 @@ import {
 import {
     GridCompositeDataComponent
 } from "../../src/app/grid/grid-composite-data-binding/grid-composite-data.component";
+import {
+    GridConditionalCellStyle2Component
+} from "../../src/app/grid/grid-conditional-cell-style-2/grid-conditional-cell-style-2.component";
 import {
     GridConditionalCellStyleComponent
 } from "../../src/app/grid/grid-conditional-cell-style/grid-conditional-cell-style.component";
@@ -75,12 +85,11 @@ import { GridCustomFilteringComponent } from "../../src/app/grid/grid-custom-fil
 import {
     GridCustomKBNavigationComponent
 } from "../../src/app/grid/grid-custom-kb-navigation/grid-custom-kb-navigation-sample.component";
+// tslint:disable-next-line: max-line-length
+import { CustomRemotePagingGridSample } from "../../src/app/grid/grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import {
     GridCustomSummariesSelection
 } from "../../src/app/grid/grid-custom-summaries-selection/grid-custom-summaries-selection.component";
-import {
-    SummariesData
-} from "../../src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component";
 import {
     GridDisplayDensitySampleComponent
 } from "../../src/app/grid/grid-displaydensity-sample/grid-displaydensity-sample.component";
@@ -93,6 +102,7 @@ import {
 } from "../../src/app/grid/grid-editing-style-sample/grid-editing-style-sample.component";
 import {
     GridExcelStyleFilteringLoadOnDemandComponent
+// tslint:disable-next-line: max-line-length
 } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/grid-excel-style-filtering-load-on-demand.component";
 import { RemoteValuesService } from "../../src/app/grid/grid-excel-style-filtering-load-on-demand/remoteValues.service";
 import {
@@ -107,6 +117,10 @@ import {
 import {
     ExcelStyleFilteringStyleComponent
 } from "../../src/app/grid/grid-excel-style-filtering-style/grid-excel-style-filtering-style.component";
+import { GridExternalAdvancedFilteringComponent
+} from "../../src/app/grid/grid-external-advanced-filtering/grid-external-advanced-filtering.component";
+import { GridExternalExcelStyleFilteringComponent
+} from "../../src/app/grid/grid-external-excel-style-filtering/grid-external-excel-style-filtering.component";
 import { FilteringSampleComponent } from "../../src/app/grid/grid-filtering-sample/grid-filtering-sample.component";
 import { GridFilteringStyleComponent } from "../../src/app/grid/grid-filtering-style/grid-filtering-style.component";
 import {
@@ -123,6 +137,7 @@ import {
 import {
     GridGroupBySummaryStylingSampleComponent
 } from "../../src/app/grid/grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
+import { GridMasterDetailSampleComponent } from "../../src/app/grid/grid-master-detail/grid-master-detail.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import {
     GridMovingStyledSampleComponent
@@ -142,6 +157,8 @@ import {
     GridMultiRowLayoutStylingComponent
 } from "../../src/app/grid/grid-multi-row-layout-styling/grid-multi-row-layout-styling.component";
 import { GridMultiRowLayoutComponent } from "../../src/app/grid/grid-multi-row-layout/grid-multi-row-layout.component";
+// tslint:disable-next-line: max-line-length
+import { GridMultipleRowDragComponent } from "../../src/app/grid/grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridNestedDataBindComponent } from "../../src/app/grid/grid-nested-data-binding/grid-nested-data-bind";
 import { GridPagerSampleComponent } from "../../src/app/grid/grid-pager-sample/grid-pager-sample.component";
 import { PagingSampleComponent } from "../../src/app/grid/grid-paging-sample/grid-paging-sample.component";
@@ -180,7 +197,6 @@ import {
 import { GridSelectionSampleComponent } from "../../src/app/grid/grid-sample-selection/grid-selection.component";
 import { AboutComponent } from "../../src/app/grid/grid-save-state/about.component";
 import { GridSaveStateComponent } from "../../src/app/grid/grid-save-state/grid-state.component";
-import { IgxGridStateDirective } from "../../src/app/grid/grid-save-state/state.directive";
 import { GridSearchSampleComponent } from "../../src/app/grid/grid-search-sample/grid-search-sample.component";
 import { SortingSampleComponent } from "../../src/app/grid/grid-sorting-sample/grid-sorting-sample.component";
 import { SortingStylingComponent } from "../../src/app/grid/grid-sorting-styling/grid-sorting-styling.component";
@@ -242,7 +258,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridSample3Component,
-            additionalFiles: ["/src/app/grid/grid-sample-3/data.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxButtonModule, IgxGridModule, IgxInputGroupModule,
                     IgxRippleModule, IgxSwitchModule, GridSample3Component, LocalService, IgxIconModule],
@@ -254,7 +270,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-groupby-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -265,7 +281,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummarySampleComponent,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummarySampleComponent, IgxIconModule, IgxBadgeModule],
@@ -277,7 +293,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridGroupBySummaryStylingSampleComponent,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule, IgxGridModule,
                     IgxSwitchModule, GridGroupBySummaryStylingSampleComponent, IgxIconModule, IgxBadgeModule],
@@ -404,7 +420,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, IgxRadioModule,
                     IgxColumnHidingModule, GridColumnHidingSampleComponent],
@@ -416,7 +432,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingToolbarSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarSampleComponent],
                 ngDeclarations: [GridColumnHidingToolbarSampleComponent],
@@ -427,7 +443,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridColumnHidingToolbarStyleComponent,
-            additionalFiles: ["/src/app/grid/grid-column-hiding-toolbar-style/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxGridModule, GridColumnHidingToolbarStyleComponent],
                 ngDeclarations: [GridColumnHidingToolbarStyleComponent],
@@ -438,7 +454,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: ResizingSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-resizing-sample/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, ResizingSampleComponent],
                 ngDeclarations: [ResizingSampleComponent],
@@ -508,7 +524,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: PinningSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [PinningSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningSampleComponent],
@@ -519,7 +535,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: PinningToolbarSampleComponent,
-            additionalFiles: ["/src/app/grid/grid-sample-pinning/data.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [PinningToolbarSampleComponent, IgxGridModule, IgxIconModule],
                 ngDeclarations: [PinningToolbarSampleComponent],
@@ -536,6 +552,21 @@ export class GridConfigGenerator implements IConfigGenerator {
                 imports: [GridMovingSampleComponent, IgxGridModule, IgxBadgeModule, IgxIconModule],
                 ngDeclarations: [GridMovingSampleComponent],
                 ngImports: [IgxGridModule, IgxBadgeModule, IgxIconModule],
+                ngProviders: []
+            })
+        }));
+
+        // master-detail sample
+        configs.push(new Config({
+            component: GridMasterDetailSampleComponent,
+            additionalFiles: ["/src/app/grid-crm/grid-crm/data.ts"],
+            additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
+                     IgxAvatarModule, IgxTabsModule, IgxIconModule, IgxPieChartModule, IgxLegendModule],
+                ngDeclarations: [GridMasterDetailSampleComponent],
+                ngImports: [IgxGridModule, IgxCategoryChartModule, IgxPieChartModule, IgxLegendModule,
+                    IgxAvatarModule, IgxTabsModule, IgxIconModule],
                 ngProviders: []
             })
         }));
@@ -676,8 +707,20 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: CustomRemotePagingGridSample,
+            additionalFiles: ["/src/app/grid/services/remotePagingService.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [CustomRemotePagingGridSample, IgxGridModule, RouterModule, HttpClientModule,
+                    RemotePagingService, IgxSelectModule],
+                ngDeclarations: [CustomRemotePagingGridSample],
+                ngImports: ["RouterModule.forRoot([])", IgxGridModule, HttpClientModule, IgxSelectModule],
+                ngProviders: [RemotePagingService]
+            })
+        }));
+
+        configs.push(new Config({
             component: GridDisplayDensitySampleComponent,
-            additionalFiles: ["/src/app/grid/grid-displaydensity-sample/data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxButtonModule, IgxButtonGroupModule,
                     IgxGridModule, GridDisplayDensitySampleComponent],
@@ -687,12 +730,24 @@ export class GridConfigGenerator implements IConfigGenerator {
             })
         }));
 
+        // Grid cellClasses
         configs.push(new Config({
             component: GridConditionalCellStyleComponent,
             additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyleComponent],
                 ngDeclarations: [GridConditionalCellStyleComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        // Grid cellStyles
+        configs.push(new Config({
+            component: GridConditionalCellStyle2Component,
+            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridConditionalCellStyle2Component],
+                ngDeclarations: [GridConditionalCellStyle2Component],
                 ngImports: [IgxGridModule]
             })
         }));
@@ -714,13 +769,10 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid Custom Summaries
         configs.push(new Config({
             component: GridCustomSummariesSelection,
-            additionalFiles: ["/src/app/data/nwindData.ts",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.html",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.scss",
-                "/src/app/grid/grid-custom-summaries-selection/summaries-data/summaries-data.component.ts"],
+            additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
-                imports: [SummariesData, GridCustomSummariesSelection, IgxGridModule],
-                ngDeclarations: [SummariesData, GridCustomSummariesSelection],
+                imports: [GridCustomSummariesSelection, IgxGridModule],
+                ngDeclarations: [GridCustomSummariesSelection],
                 ngImports: [IgxGridModule]
             })
         }));
@@ -810,6 +862,26 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridExternalExcelStyleFilteringComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridExternalExcelStyleFilteringComponent, IgxGridModule ],
+                ngDeclarations: [GridExternalExcelStyleFilteringComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridExternalAdvancedFilteringComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridExternalAdvancedFilteringComponent, IgxGridModule ],
+                ngDeclarations: [GridExternalAdvancedFilteringComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
             component: GridMultiCellSelectionComponent,
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
@@ -843,15 +915,14 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: GridSaveStateComponent,
             additionalFiles: [
                 "/src/app/grid/grid-save-state/localData.ts",
-                "/src/app/grid/grid-save-state/state.directive.ts",
                 "/src/app/grid/grid-save-state/about.component.ts",
                 "/src/app/grid/grid-save-state/about.component.html"
             ],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridSaveStateComponent, IgxGridModule, IgxTooltipModule,
-                    IgxToastModule, IgxSwitchModule, AboutComponent, Router, RouterModule, IgxGridStateDirective],
-                ngDeclarations: [GridSaveStateComponent, AboutComponent, IgxGridStateDirective],
-                ngImports: [IgxGridModule.forRoot(), IgxTooltipModule,
+                    IgxToastModule, IgxSwitchModule, AboutComponent, Router, RouterModule],
+                ngDeclarations: [GridSaveStateComponent, AboutComponent],
+                ngImports: [IgxGridModule, IgxTooltipModule,
                     // tslint:disable-next-line:max-line-length
                     "RouterModule.forRoot([\{component: AboutComponent, path: 'grid-about'},\{component: GridSaveStateComponent, path: 'grid-state'},\{ path: '', redirectTo: '/grid-state', pathMatch: 'full' }])",
                     IgxToastModule, IgxSwitchModule]
@@ -893,7 +964,7 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridCompositeDataComponent,
-            additionalFiles: ["/src/app/grid/grid-composite-data-binding/localData.ts"],
+            additionalFiles: ["/src/app/data/customers.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCompositeDataComponent, IgxGridModule, IgxInputGroupModule],
                 ngDeclarations: [GridCompositeDataComponent],
@@ -970,6 +1041,18 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: GridMultipleRowDragComponent,
+            additionalFiles: [
+                "/src/app/data/customers.ts"
+            ],
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxGridModule, GridMultipleRowDragComponent, IgxDragDropModule],
+                ngDeclarations: [GridMultipleRowDragComponent],
+                ngImports: [IgxGridModule, IgxDragDropModule]
+            })
+        }));
+
+        configs.push(new Config({
             component: GridRowReorderComponent,
             additionalFiles: [
                 "/src/app/data/customers.ts"
@@ -980,6 +1063,7 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngImports: [IgxGridModule, IgxDragDropModule]
             })
         }));
+
         configs.push(new Config({
             component: GridGroupByPagingSampleComponent,
             additionalFiles: [
@@ -1020,7 +1104,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
         configs.push(new Config({
             component: GridGroupByStyling,
-            additionalFiles: ["/src/app/data/grid-groupby-summary-data.ts"],
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridGroupByStyling, IgxGridModule],
                 ngDeclarations: [GridGroupByStyling],
@@ -1032,10 +1116,9 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ["/src/app/data/nwindData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridCellSelectionComponent, IgxGridModule, IgxSwitchModule,
-                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule],
-                ngDeclarations: [GridCellSelectionComponent, IgxGridModule, IgxIconModule, IgxSwitchModule,
-                    IgxButtonGroupModule, IgxAvatarModule],
-                ngImports: [IgxGridModule]
+                    IgxIconModule, IgxButtonGroupModule, IgxAvatarModule, IgxSnackbarModule],
+                ngDeclarations: [GridCellSelectionComponent],
+                ngImports: [IgxGridModule, IgxSnackbarModule]
             })
         }));
 
@@ -1078,6 +1161,26 @@ export class GridConfigGenerator implements IConfigGenerator {
                 ngDeclarations: [GridConditionalRowSelectorsComponent],
                 ngImports: [IgxGridModule, IgxCheckboxModule],
                 ngProviders: []
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridAllDataSummaryComponent,
+            additionalFiles: ["/src/app/data/nwindData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridAllDataSummaryComponent, IgxGridModule ],
+                ngDeclarations: [GridAllDataSummaryComponent],
+                ngImports: [IgxGridModule]
+            })
+        }));
+
+        configs.push(new Config({
+            component: GridCollapsibleColumnGroupsComponent,
+            additionalFiles: ["/src/app/data/invoiceData.ts"],
+            appModuleConfig: new AppModuleConfig({
+                imports: [GridCollapsibleColumnGroupsComponent, IgxGridModule, IgxTooltipModule],
+                ngDeclarations: [GridCollapsibleColumnGroupsComponent],
+                ngImports: [IgxGridModule, IgxTooltipModule]
             })
         }));
         return configs;

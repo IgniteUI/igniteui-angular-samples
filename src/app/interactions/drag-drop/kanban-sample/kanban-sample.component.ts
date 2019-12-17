@@ -25,13 +25,13 @@ export class KanbanSampleComponent implements OnInit {
     private lastDragEnterList: string;
     private currentList: string;
 
-    @ViewChild("toDo", {static: false})
+    @ViewChild("toDo")
     private toDo: ElementRef;
 
-    @ViewChild("inProgress", {static: false})
+    @ViewChild("inProgress")
     private inProgress: ElementRef;
 
-    @ViewChild("done", {static: false})
+    @ViewChild("done")
     private done: ElementRef;
 
     constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
@@ -85,6 +85,18 @@ export class KanbanSampleComponent implements OnInit {
         })[0];
     }
 
+    public dragEndHandler(event) {
+        this.toDoList = this.toDoList.filter((x) => {
+            return x.id !== "dummy";
+        });
+        this.inProgressList = this.inProgressList.filter((x) => {
+            return x.id !== "dummy";
+        });
+        this.doneList = this.doneList.filter((x) => {
+            return x.id !== "dummy";
+        });
+    }
+
     public onItemEnter(event: IDropBaseEventArgs) {
         // Applying the container highlighting again
         const listContainer = event.owner.element.nativeElement.dataset.state;
@@ -115,7 +127,9 @@ export class KanbanSampleComponent implements OnInit {
                 const dummyObjIndex = this[currentList].findIndex((item) => {
                     return item.id === "dummy";
                 });
-                this.swapTiles(dummyObjIndex, currentItemIndex, currentList);
+                if (dummyObjIndex !== -1) {
+                    this.swapTiles(dummyObjIndex, currentItemIndex, currentList);
+                }
             }
         }
     }

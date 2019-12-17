@@ -10,6 +10,8 @@ import { TextHighlightSample1Component
 } from "../../src/app/data-display/text-highlight/text-highlight-sample-1/text-highlight-sample-1.component";
 import { TextHighlightSample2Component
 } from "../../src/app/data-display/text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { TextHighlightStyleComponent
+} from "../../src/app/data-display/text-highlight/text-highlight-style/text-highlight-style.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
 import { IConfigGenerator } from "./core/IConfigGenerator";
@@ -36,6 +38,18 @@ export class TextHighlightConfigGenerator implements IConfigGenerator {
                 imports: [IgxButtonModule, IgxInputGroupModule,
                     IgxIconModule, IgxRippleModule, IgxTextHighlightModule, TextHighlightSample2Component],
                 ngDeclarations: [TextHighlightSample2Component],
+                ngImports: [IgxButtonModule, IgxIconModule,
+                    IgxInputGroupModule, IgxRippleModule, IgxTextHighlightModule]
+            }),
+            shortenComponentPathBy: "/data-display/text-highlight/"
+        }));
+
+        configs.push(new Config({
+            component: TextHighlightStyleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxButtonModule, IgxInputGroupModule,
+                    IgxIconModule, IgxRippleModule, IgxTextHighlightModule, TextHighlightStyleComponent],
+                ngDeclarations: [TextHighlightStyleComponent],
                 ngImports: [IgxButtonModule, IgxIconModule,
                     IgxInputGroupModule, IgxRippleModule, IgxTextHighlightModule]
             }),

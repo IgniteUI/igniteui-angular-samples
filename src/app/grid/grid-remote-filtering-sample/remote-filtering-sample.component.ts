@@ -1,6 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { IgxGridComponent, IgxToastComponent } from "igniteui-angular";
+import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { debounceTime, takeUntil } from "rxjs/operators";
 import { RemoteFilteringService } from "../services/remoteFilteringService";
+
+const DEBOUNCE_TIME = 300;
 
 @Component({
     providers: [RemoteFilteringService],
@@ -11,9 +15,12 @@ import { RemoteFilteringService } from "../services/remoteFilteringService";
 export class RemoteFilteringSampleComponent implements OnInit {
     public remoteData: any;
     @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
-    @ViewChild("toast", { static: true }) public toast: IgxToastComponent;
+    public noopFilterStrategy = NoopFilteringStrategy.instance();
+    public noopSortStrategy = NoopSortingStrategy.instance();
+
     private _prevRequest: any;
     private _chunkSize: number;
+    private destroy$ = new Subject<boolean>();
 
     constructor(private _remoteService: RemoteFilteringService, public cdr: ChangeDetectorRef) { }
 
@@ -38,18 +45,35 @@ export class RemoteFilteringSampleComponent implements OnInit {
                 this.grid.totalItemCount = data["@odata.count"];
                 this.grid.isLoading = false;
             });
+
+        this.grid.onDataPreLoad.pipe(
+            debounceTime(DEBOUNCE_TIME),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData();
+        });
+        this.grid.filteringExpressionsTreeChange.pipe(
+            debounceTime(DEBOUNCE_TIME),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData(true);
+        });
+        this.grid.sortingExpressionsChange.pipe(
+            debounceTime(DEBOUNCE_TIME),
+            takeUntil(this.destroy$)
+        ).subscribe(() => {
+            this.processData();
+        });
     }
 
-    public processData() {
+    public processData(isFiltering: boolean = false) {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
 
-        this.toast.message = "Loading Remote Data...";
-        this.toast.position = 1;
-        this.toast.displayTime = 1000;
-        this.toast.show();
-        this.cdr.detectChanges();
+        if (!this.grid.isLoading) {
+            this.grid.isLoading = true;
+        }
 
         const virtualizationState = this.grid.virtualizationState;
         const filteringExpr = this.grid.filteringExpressionsTree.filteringOperands;
@@ -58,14 +82,15 @@ export class RemoteFilteringSampleComponent implements OnInit {
         this._prevRequest = this._remoteService.getData(
             {
                 chunkSize: this._chunkSize,
-                startIndex: virtualizationState.startIndex
+                startIndex: isFiltering ? 0 : virtualizationState.startIndex
             },
             filteringExpr,
             sortingExpr,
             (data) => {
                 this.grid.totalItemCount = data["@odata.count"];
-                this.toast.hide();
-                this.cdr.detectChanges();
+                if (this.grid.isLoading) {
+                    this.grid.isLoading = false;
+                }
             });
     }
 
@@ -81,5 +106,7 @@ export class RemoteFilteringSampleComponent implements OnInit {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
         }
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 }

@@ -29,12 +29,26 @@ import { RippleSample4Component } from "./ripple/ripple-sample-4/ripple-sample-4
 import { RippleSample5Component } from "./ripple/ripple-sample-5/ripple-sample-5.component";
 import { RippleSample6Component } from "./ripple/ripple-sample-6/ripple-sample-6.component";
 import { RippleStylingSampleComponent } from "./ripple/ripple-stying/ripple-styling-sample.component";
+import {
+    SliderDiscreteTicksBottomComponent
+} from "./slider/discrete-slider-ticks-bottom/discrete-slider-ticks-bottom.component";
+import {
+    SliderPrimaryTicksTopComponent
+} from "./slider/slider-primary-ticks-top/slider-primary-ticks-top.component";
 import { SliderSample1Component } from "./slider/slider-sample-1/slider-sample-1.component";
 import { SliderSample2Component } from "./slider/slider-sample-2/slider-sample-2.component";
 import { SliderSample3Component } from "./slider/slider-sample-3/slider-sample-3.component";
 import { SliderSample4Component } from "./slider/slider-sample-4/slider-sample-4.component";
 import { SliderSample5Component } from "./slider/slider-sample-5/slider-sample-5.component";
 import { SliderSample6Component } from "./slider/slider-sample-6/slider-sample-6.component";
+import {
+    SliderSecondaryTicksMirrorComponent
+} from "./slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component";
+import { TickLabelsTemplateComponent } from "./slider/slider-tick-labels-template/tick-labels-template.component";
+import {
+    SliderTicksBottomtotopLabelsComponent
+} from "./slider/slider-ticks-bottomtotop-labels/slider-ticks-bottomtotop-labels.component";
+import { SliderTimeframeComponent } from "./slider/slider-timeframe/slider-timeframe.component";
 import { ToggleSample1Component } from "./toggle/toggle-sample-1/toggle-sample-1.component";
 import { ToggleSample2Component } from "./toggle/toggle-sample-2/toggle-sample-2.component";
 import { ToggleSample3Component } from "./toggle/toggle-sample-3/toggle-sample-3.component";
@@ -103,6 +117,36 @@ export const interactionsRoutes: Routes = [
         component: SliderSample6Component,
         data: interactionsRoutesData["slider-sample-6"],
         path: "slider-sample-6"
+    },
+    {
+        component: SliderSecondaryTicksMirrorComponent,
+        data: interactionsRoutesData["slider-secondary-ticks-mirror"],
+        path: "slider-secondary-ticks-mirror"
+    },
+    {
+        component: SliderTicksBottomtotopLabelsComponent,
+        data: interactionsRoutesData["slider-ticks-bottomtotop-labels"],
+        path: "slider-ticks-bottomtotop-labels"
+    },
+    {
+        component: SliderTimeframeComponent,
+        data: interactionsRoutesData["slider-timeframe"],
+        path: "slider-timeframe"
+    },
+    {
+        component: SliderDiscreteTicksBottomComponent,
+        data: interactionsRoutesData["discrete-slider-ticks-bottom"],
+        path: "discrete-slider-ticks-bottom"
+    },
+    {
+        component: SliderPrimaryTicksTopComponent,
+        data: interactionsRoutesData["slider-primary-ticks-top"],
+        path: "slider-primary-ticks-top"
+    },
+    {
+        component: TickLabelsTemplateComponent,
+        data: interactionsRoutesData["slider-tick-labels-template"],
+        path: "slider-tick-labels-template"
     },
     {
         component: RippleSample1Component,

@@ -5,7 +5,6 @@ import {
 } from "igniteui-angular";
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
     selector: "app-dropdown-menu",
     styleUrls: ["./dropdown-menu.component.scss"],
     templateUrl: "./dropdown-menu.component.html"

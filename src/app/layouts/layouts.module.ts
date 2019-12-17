@@ -33,14 +33,14 @@ import { CardSample3Component } from "./card/card-sample-3/card-sample-3.compone
 import { CardSample4Component } from "./card/card-sample-4/card-sample-4.component";
 import { CardStylingSampleComponent } from "./card/card-styling-sample/card-styling-sample.component";
 import { CardComponent } from "./card/card.component";
+import { CarouselAnimationsSampleComponent
+    } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
+import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/carousel-base-sample.component";
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
-import { CarouselSample1Component } from "./carousel/carousel-sample-1/carousel-sample-1.component";
-import { CarouselSample2Component } from "./carousel/carousel-sample-2/carousel-sample-2.component";
-import { CarouselSample3Component } from "./carousel/carousel-sample-3/carousel-sample-3.component";
-import { CarouselSample4Component } from "./carousel/carousel-sample-4/carousel-sample-4.component";
-import {
-    CarouselStylingSampleComponent
-} from "./carousel/carousel-styling-sample/carousel-styling-sample.component";
+import { CarouselNoNavigationSampleComponent
+    } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
+import { CarouselStylingSampleComponent
+    } from "./carousel/carousel-styling-sample/carousel-styling-sample.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
@@ -64,6 +64,7 @@ import {
     BottomNavRoutingView3Component,
     TabbarSample3Component
 } from "./tabbar/tabbar-sample-3/tabbar-sample-3.component";
+import { TabbarStyleComponent } from "./tabbar/tabbar-style/tabbar-style.component";
 import { TabbarComponent } from "./tabbar/tabbar.component";
 import { TabsSample1Component } from "./tabs/tabs-sample-1/tabs-sample-1.component";
 import { TabsSample2Component } from "./tabs/tabs-sample-2/tabs-sample-2.component";
@@ -92,11 +93,10 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         CardSample4Component,
         CardComponent,
         CarouselDetailsViewComponent,
-        CarouselSample1Component,
-        CarouselSample2Component,
-        CarouselSample3Component,
+        CarouselNoNavigationSampleComponent,
+        CarouselAnimationsSampleComponent,
+        CarouselBaseSampleComponent,
         CarouselStylingSampleComponent,
-        CarouselSample4Component,
         CarouselComponent,
         DividerDefaultComponent,
         DividerVerticalComponent,
@@ -125,7 +125,8 @@ import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
         TabsSample4Component,
         TabsSample5Component,
         CardStylingSampleComponent,
-        TabsStyleComponent
+        TabsStyleComponent,
+        TabbarStyleComponent
     ],
     exports: [
         CardSample1Component
