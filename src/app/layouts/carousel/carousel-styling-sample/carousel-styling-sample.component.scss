@@ -3,8 +3,12 @@
 /*BASIC THEMING*/
 
 $custom-theme: igx-carousel-theme(
+    $slide-background: rgb(247, 233, 233),
     $button-background: gray,
     $button-hover-background: #764949,
+    $border-radius: 10%,
+    $button-disabled-background:  rgb(184, 184, 184),
+    $button-disabled-arrow-color: gray,
     $button-arrow-color: black,
     $button-hover-arrow-color: #171717,
     $indicator-dot-color: #515151,
@@ -25,8 +29,11 @@ $custom-theme: igx-carousel-theme(
 // );
 
 // $custom-theme: igx-carousel-theme(
+//     $slide-background: igx-color($my-custom-palette, "secondary", 200),
 //     $button-background: igx-color($my-custom-palette, "secondary", 500),
+//     $border-radius: 10%,
 //     $button-hover-background: igx-color($my-custom-palette, "secondary", 800),
+//     $button-disabled-background: igx-color($my-custom-palette, "secondary", 100),
 //     $button-arrow-color: igx-color($my-custom-palette, "primary"),
 //     $button-hover-arrow-color: igx-color($my-custom-palette, "primary", 100),
 //     $indicator-dot-color: igx-color($my-custom-palette, "primary", 100),
@@ -38,8 +45,11 @@ $custom-theme: igx-carousel-theme(
 
 // $my-carousel-schema: extend($_light-carousel,
 //     (
+//         slide-background: (igx-color: ("secondary", 200)),
 //         button-background: (igx-color: ('secondary', 500)),
+//         border-radius: 10%,
 //         button-hover-background: (igx-color: ("secondary", 800)),
+//         button-disabled-background: (igx-color: ("secondary", 100),  hexrgba: ()),
 //         button-arrow-color: (igx-color: ("primary", 500)),
 //         button-hover-arrow-color: (igx-color: ("primary", 300)),
 //         indicator-dot-color: (igx-color: ("primary", 100)),
@@ -66,18 +76,17 @@ $custom-theme: igx-carousel-theme(
 :host {
     ::ng-deep {
         @include igx-carousel($custom-theme);
-        .igx-carousel__inner {
-            width: 100%;
-            text-align: center; 
-        }
-                
-        span.progress-linear__value {
-            display: none;
-        }
-    
-        div.igx-slide img {
-            width: 80%
-        }
     }
 }
 
+.carousel-container{
+    width: 60%;
+    height: 80%;
+    margin: 16px auto;
+}
+
+.slide-wrapper{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
