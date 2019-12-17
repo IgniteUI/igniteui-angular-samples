@@ -18,7 +18,8 @@ export const gridsRoutesData = {
     "grid-row-reorder": { displayName: "Grid Row Reorder", parentName: "Grid" },
     "grid-batch-editing": { displayName: "Grid Batch Editing", parentName: "Grid" },
     "grid-displayDensity": { displayName: "Grid Display Density", parentName: "Grid" },
-    "grid-cell-styling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
+    "grid-cell-styling": { displayName: "Grid Conditional Cell Classes", parentName: "Grid" },
+    "grid-cell-cellStyling": { displayName: "Grid Conditional Cell Styling", parentName: "Grid" },
     "grid-filtering-sample": { displayName: "Grid Filtering", parentName: "Grid" },
     "grid-filtering-template-sample": { displayName: "Grid Filtering Template", parentName: "Grid" },
     "grid-excel-style-filtering-sample-1": { displayName: "Grid Excel Style Filtering", parentName: "Grid" },
@@ -26,6 +27,8 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-sample-3": { displayName: "Grid Excel Style Filtering Templates", parentName: "Grid" },
     "grid-excel-style-filtering-style": { displayName: "Grid Excel Style Filtering Styling", parentName: "Grid" },
     "grid-filter-conditions": { displayName: "Custom Filtering Conditions", parentName: "Grid" },
+    "grid-external-excel-style-filtering": { displayName: "Grid External Excel Style Filtering", parentName: "Grid" },
+    "grid-external-advanced-filtering": { displayName: "Grid External Advanced Filtering", parentName: "Grid" },
     "grid-pager-sample": { displayName: "Grid Pager", parentName: "Grid" },
     "grid-paging-sample": { displayName: "Grid Paging", parentName: "Grid" },
     "grid-pinning-styling": { displayName: "Grid Pinning Styling", parentName: "Grid" },
@@ -54,6 +57,7 @@ export const gridsRoutesData = {
     "multi-column-header-template": { displayName: "Grid Multi Column Header Template", parentName: "Grid" },
     "multi-column-headers-styling": { displayName: "Grid Multi Column Headers Styling", parentName: "Grid" },
     "grid-remote-paging-sample": { displayName: "Grid Remote Paging", parentName: "Grid" },
+    "grid-custom-remote-paging-sample": { displayName: "Grid Custom Remote Paging", parentName: "Grid" },
     "grid-paste": { displayName: "Grid Paste From Excel", parentName: "Grid" },
     "grid-custom-keyboard-navigation": { displayName: "Custom Keyboard Navigation", parentName: "Grid" },
     "grid-state": { displayName: "Grid Save and Load State", parentName: "Grid" },
@@ -80,5 +84,10 @@ export const gridsRoutesData = {
     "grid-advanced-filtering-style": { displayName: "Grid Advanced Filtering Style", parentName: "Grid" },
     "grid-excel-style-filtering-load-on-demand":
         { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
-    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" }
+    "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" },
+    "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" },
+    "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"},
+    "grid-collapsible-groups": { displayName: "Grid Collapsible Column Groups", parentName: "Grid"},
+    "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"},
+    "grid-master-detail": { displayName: "Grid Master Detail", parentName: "Grid" }
 };

@@ -25,13 +25,13 @@ export class KanbanSampleComponent implements OnInit {
     private lastDragEnterList: string;
     private currentList: string;
 
-    @ViewChild("toDo", {static: false})
+    @ViewChild("toDo")
     private toDo: ElementRef;
 
-    @ViewChild("inProgress", {static: false})
+    @ViewChild("inProgress")
     private inProgress: ElementRef;
 
-    @ViewChild("done", {static: false})
+    @ViewChild("done")
     private done: ElementRef;
 
     constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }

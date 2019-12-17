@@ -6,6 +6,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-editing-style": { displayName: "Hierarchical Grid Editing Style", parentName: "Hierarchical Grid"},
     "hierarchical-grid-row-editing": { displayName: "Hierarchical Grid Row Editing", parentName: "Hierarchical Grid" },
     "hierarchical-grid-row-drag": { displayName: "Hierarchical Grid Row Drag", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-multi-row-drag": { displayName: "Hierarchical Grid Multi Row Drag", parentName: "Hierarchical Grid" },
     "hierarchical-row-drag-base": { displayName: "Hierarchical Grid Row Drag - Base", parentName: "Hierarchical Grid" },
     "hierarchical-row-reorder": { displayName: "Hierarchical Grid Row Reorder", parentName: "Hierarchical Grid" },
     "hierarchical-grid-batch-editing": { displayName: "Hierarchical Grid Batch Editing", parentName: "Hierarchical Grid" },
@@ -16,6 +17,8 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-excel-style-filtering-sample-3": { displayName: "Hierarchical Grid Excel Style Filtering Templates", parentName: "Hierarchical Grid" },
     "hierarchical-grid-excel-style-filtering-load-on-demand": { displayName: "Hierarchical Grid Excel Style Filtering Load On Demand", parentName: "Hierarchical Grid" },
     "hierarchical-grid-excel-style-filtering-style": { displayName: "Hierarchical Grid Excel Style Filtering Styling", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-external-excel-style-filtering": { displayName: "Hierarchical Grid External Excel Style Filtering", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-external-advanced-filtering": { displayName: "Hierarchical Grid External Advanced Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-custom-filtering": { displayName: "Hierarchical Grid Custom Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting": { displayName: "Hierarchical Grid Sorting", parentName: "Hierarchical Grid" },
     "hierarchical-grid-sorting-styling": { displayName: "Hierarchical Grid Sorting Styling", parentName: "Hierarchical Grid" },
@@ -51,5 +54,7 @@ export const hierarchicalGridRoutesData = {
     "hierarchical-grid-advanced-filtering": { displayName: "Hierarchical Grid Advanced Filtering", parentName: "Hierarchical Grid" },
     "hierarchical-grid-advanced-filtering-style": { displayName: "Hierarchical Grid Advanced Filtering Style", parentName: "Hierarchical Grid" },
     "hierarchical-grid-filtering-style": { displayName: "HGrid Filtering Style", parentName: "Hierarchical Grid" },
-    "hierarchical-grid-conditional-row-selectors": { displayName: "HGrid Conditional Row Selectors", parentName: "Hierarchical Grid" }
+    "hierarchical-grid-conditional-row-selectors": { displayName: "HGrid Conditional Row Selectors", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-collapsible-column-groups": { displayName: "HGrid Collapsible Column Grous", parentName: "Hierarchical Grid" },
+    "hierarchical-grid-allData-summary": {displayName: "HGrid All Data Custom Summaries", parentName: "Hierarchical Grid"}
 };

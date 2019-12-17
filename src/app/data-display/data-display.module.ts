@@ -49,6 +49,7 @@ import {
 import {
     TextHighlightSample2Component
 } from "./text-highlight/text-highlight-sample-2/text-highlight-sample-2.component";
+import { TextHighlightStyleComponent } from "./text-highlight/text-highlight-style/text-highlight-style.component";
 
 @NgModule({
     declarations: [
@@ -79,7 +80,8 @@ import {
         TextHighlightSample2Component,
         CircularIndeterminateProgressbarComponent,
         CircularStylingSampleComponent,
-        ChipStylingSampleComponent
+        ChipStylingSampleComponent,
+        TextHighlightStyleComponent
     ],
     imports: [
         CommonModule,
