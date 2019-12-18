@@ -239,7 +239,6 @@ export class ConditionalFormattingDirective {
         this._numericData = [];
         let maxValue;
         let minValue;
-        const formattersName = ["Duplicate Values", "Unique Values", "Empty"];
         const gridSelectedData = this.grid.getSelectedData();
         let selectedData;
 
@@ -259,7 +258,6 @@ export class ConditionalFormattingDirective {
             if (this._numericData.length === 0) {
                 this.formatType = CellFormatType.TEXT;
                 this._valueForComparison = this._textData[0];
-                formattersName.splice(0, 0, ...this._textFormatters);
             } else if (this._textData.length === 0) {
                 this.formatType = CellFormatType.NUMERIC;
                 maxValue = Math.max(...this._numericData);
@@ -270,7 +268,6 @@ export class ConditionalFormattingDirective {
                 this._errorValue = this.lowTresholdValue();
                 this._top10Value = this.top10PercentTreshold();
                 this._averageValue = this.getAvgValue(this._numericData);
-                formattersName.splice(0, 0, ...this._numericFormatters);
             } else {
                 this._valueForComparison = this._textData[0];
                 maxValue = Math.max(...this._numericData);
@@ -282,10 +279,34 @@ export class ConditionalFormattingDirective {
                 this._errorValue = this.lowTresholdValue();
                 this._top10Value = this.top10PercentTreshold();
                 this._averageValue = this.getAvgValue(this._numericData);
-                formattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
             }
         });
-        this.onFormattersReady.emit(formattersName);
+    }
+
+    public determineFormatters() {
+        const gridSelectedData = this.grid.getSelectedData();
+        let selectedData;
+
+        if (gridSelectedData.length < 2) {
+            selectedData = Object.values(gridSelectedData[0]);
+        } else {
+            selectedData = gridSelectedData.reduce((accumulator, currentValue) => {
+                return Object.values(accumulator).concat(Object.values(currentValue));
+            });
+        }
+        const commonFormattersName = ["Duplicate Values", "Unique Values", "Empty"];
+        const numericValues = selectedData.filter(value => typeof value === "number");
+        const textData = selectedData.filter(value => typeof value === "string");
+
+        if (numericValues.length === 0 && textData.length > 0) {
+
+            commonFormattersName.splice(0, 0, ...this._textFormatters);
+        } else if (numericValues.length > 0 && textData.length === 0) {
+            commonFormattersName.splice(0, 0, ...this._numericFormatters);
+        } else {
+            commonFormattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
+        }
+        this.onFormattersReady.emit(commonFormattersName);
     }
 
     private applyFormatting(column: IgxColumnComponent, type: CellFormatType, formatter: any) {
