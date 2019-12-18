@@ -62,6 +62,7 @@ import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/gri
 import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
+import { ConditionalFormattingDirective } from "./grid-dynamic-chart-data/conditional-formatting.directive";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
 import { ChartArgsPipe, ChartHostDirective, GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
@@ -226,6 +227,7 @@ import { DataService } from "./services/data.service";
         ChartHostDirective,
         ChartArgsPipe,
         GridExternalAdvancedFilteringComponent,
+        ConditionalFormattingDirective,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
         GridMasterDetailSampleComponent
