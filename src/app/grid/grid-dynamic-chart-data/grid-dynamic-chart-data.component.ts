@@ -204,7 +204,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         });
 
         this.grid.onCellEdit.subscribe((args: IGridEditEventArgs) => {
-            if (this.formatting.range) {
+            if (this.formatting.range && this.currentFormatter) {
                 if ((args.newValue === args.oldValue)) {
                     args.cancel = true;
                 } else {
@@ -391,6 +391,11 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.formatting.range = this.range;
         this.currentFormatter = type;
         this.formatting.formatCells(this.currentFormatter);
+    }
+
+    public clearFormatting() {
+        this.formatting.clearFormatting();
+        this.currentFormatter = undefined;
     }
 
     public createChart(args: IChartArgs, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {

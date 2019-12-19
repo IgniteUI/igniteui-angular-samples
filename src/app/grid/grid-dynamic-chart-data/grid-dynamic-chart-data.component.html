@@ -127,13 +127,21 @@
 <igx-dialog #chartSelectionDialog>
     <igx-tabs tabsType="fixed">
         <igx-tabs-group label="Conditional Formatting">
-            <div class="tab-option">
-                <div *ngFor="let condition of formattersNames; trackBy: trackByFn" class="action">
-                    <div class="btn" (click)="analyse(condition)">
-                        <img style="width: 36px; height: 36px; pointer-events: none;"
-                            src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
-                        <span class="name" style="pointer-events: none;">{{condition.replace('10', '10%')}}</span>
+            <div class="tab-options-wrapper">
+                <div class="tab-option">
+                    <div *ngFor="let condition of formattersNames; trackBy: trackByFn" class="action">
+                        <div class="btn" (click)="analyse(condition)">
+                            <img style="width: 36px; height: 36px;"
+                                src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
+                            <span class="name">{{condition.replace('10', '10%')}}</span>
+                        </div>
                     </div>
+                </div>
+                <div class="clear action">
+                    <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
+                            <igx-icon class="icon" fontSet="material">undo</igx-icon>
+                            <span class="name">Clear</span>
+                    </div> 
                 </div>
             </div>
         </igx-tabs-group>
@@ -144,15 +152,15 @@
                     <div class="btn"
                         (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                         (mouseleave)="chartPreviewDialog.close()" (mouseenter)="previewChart(chart)">
-                        <img style="width: 58px; height: 58px; pointer-events: none;"
+                        <img style="width: 58px; height: 58px;"
                             src="assets/images/svg/charts/Grouped{{chart}}.svg" />
-                        <span class="name" style="pointer-events: none;">{{chart}}</span>
+                        <span class="name">{{chart}}</span>
                     </div>
                 </div>
                 <button class="more-btn"
                     (click)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                     igxButton="fab" igxButtonBackground="white" igxButtonColor="black">
-                    <igx-icon class="icon" style="pointer-events: none;" fontSet="material">more</igx-icon>
+                    <igx-icon class="icon" fontSet="material">more</igx-icon>
                 </button>
             </div>
         </igx-tabs-group>

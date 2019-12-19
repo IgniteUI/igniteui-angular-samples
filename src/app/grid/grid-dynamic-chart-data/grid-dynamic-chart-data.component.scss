@@ -119,15 +119,15 @@
 
 }
 
+.disableButton {
+    opacity: .4;
+    pointer-events: none;
+}
+
 .wrapper {
     padding: 3px;
 
     .types-section {
-
-        .disableButton {
-            opacity: .4;
-            pointer-events: none;
-        }
 
         display: flex;
         flex-wrap: wrap;
@@ -144,31 +144,54 @@
     }
 }
 
-.tab-option {
-    padding: .9rem;
+.tab-options-wrapper{
+    display: flex;
     max-height: 100px;
     max-width: 350px;
+}
+
+.tab-option {
+    padding: .9rem;
+    height: 100px;
+    width: 350px;
     display: inline-flex;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     align-content: center;
+}
 
-    .action {
-        cursor: pointer;
+.action {
+    cursor: pointer;
 
-        .name {
-            font-size: .9rem;
-            font-weight: 400;
-            text-align: center;
+    .name {
+        font-size: .9rem;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .btn {
+        margin-right: 5px;
+        padding: 3px;
+        display: inline-flex;
+        flex-flow: column;
+        align-items: center;
+
+        img{
+            pointer-events: none;
         }
-
-        .btn {
-            margin-right: 5px;
-            padding: 3px;
-            display: inline-flex;
-            flex-flow: column;
-            align-items: center;
+        span {
+            pointer-events: none;
+        }
+        igx-icon{
+            pointer-events: none;
         }
     }
+}
+
+.clear{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border-left-style: groove;
 }
