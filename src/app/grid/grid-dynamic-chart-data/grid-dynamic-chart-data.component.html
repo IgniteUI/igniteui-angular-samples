@@ -130,7 +130,7 @@
             <div class="tab-options-wrapper">
                 <div class="tab-option">
                     <div *ngFor="let condition of formattersNames; trackBy: trackByFn" class="action">
-                        <div class="btn" (click)="analyse(condition)">
+                        <div class="btn condition" (click)="analyse(condition)">
                             <img style="width: 36px; height: 36px;"
                                 src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
                             <span class="name">{{condition.replace('10', '10%')}}</span>
@@ -139,8 +139,9 @@
                 </div>
                 <div class="clear action">
                     <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
-                            <igx-icon class="icon" fontSet="material">undo</igx-icon>
-                            <span class="name">Clear</span>
+                        <img style="width: 36px; height: 36px;"
+                             src="assets/images/svg/conditions/Clear.svg" />
+                         <span class="name">Clear</span>
                     </div> 
                 </div>
             </div>
@@ -149,18 +150,18 @@
         <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart">
             <div class="tab-option">
                 <div *ngFor="let chart of previewChartTypes; trackBy: trackByFn" class="action">
-                    <div class="btn"
+                    <div class="btn chart"
                         (pointerdown)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
                         (mouseleave)="chartPreviewDialog.close()" (mouseenter)="previewChart(chart)">
-                        <img style="width: 58px; height: 58px;"
+                        <img style="width: 48px; height: 48px;"
                             src="assets/images/svg/charts/Grouped{{chart}}.svg" />
                         <span class="name">{{chart}}</span>
                     </div>
                 </div>
                 <button class="more-btn"
                     (click)="createChart(currentChartArg, chartHost, chartDialog, _chartDialogOverlaySettings)"
-                    igxButton="fab" igxButtonBackground="white" igxButtonColor="black">
-                    <igx-icon class="icon" fontSet="material">more</igx-icon>
+                    igxButton="icon" igxButtonBackground="#EBEBEB" igxButtonColor="black" style="width: 36px; height: 36px; border-radius: 50px; align-self: center;">
+                    <igx-icon class="icon" fontSet="material">more_horiz</igx-icon>
                 </button>
             </div>
         </igx-tabs-group>
