@@ -68,8 +68,8 @@ export class TreeGridRowReorderComponent {
         : IgxTreeGridRowComponent {
         for (const row of rowListArr) {
             const rowRect = row.nativeElement.getBoundingClientRect();
-            if (rowRect.top < cursorPosition.y && cursorPosition.y < rowRect.bottom &&
-                cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
+            if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
+                cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
                 return row;
             }
         }
