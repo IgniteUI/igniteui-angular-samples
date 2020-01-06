@@ -1,4 +1,4 @@
-//Ignite UI for Angular Theming engine related styling
+// Ignite UI for Angular Theming engine related styling
 // in component.scss
 @import '~igniteui-angular/lib/core/styles/themes/index';
 
@@ -81,7 +81,6 @@ $light-sample-btn-group: igx-button-group-theme(
     @include igx-button-group($light-sample-btn-group);
 }
 
-
 .dark-theme {
     .custom-select-header,
     .custom-select-footer {
@@ -101,8 +100,6 @@ $light-sample-btn-group: igx-button-group-theme(
     .sample-template-heading {
         color: igx-color($green-palette, "secondary", 600);
     }
-
-
 
     $dark-sample-btn-group: igx-button-group-theme(
         $schema: $dark-schema,
