@@ -87,7 +87,7 @@ export class CarouselConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: CarouselStylingSampleComponent,
             appModuleConfig: new AppModuleConfig({
-                imports: ["Direction", IgxCarouselComponent, IgxCarouselModule,
+                imports: [IgxCarouselComponent, IgxCarouselModule,
                     IgxLinearProgressBarComponent, IgxProgressBarModule,
                     IgxSliderModule, CarouselStylingSampleComponent],
                 ngDeclarations: [CarouselStylingSampleComponent],
