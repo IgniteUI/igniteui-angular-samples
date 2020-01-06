@@ -47,6 +47,7 @@ export class SelectHeaderFooterComponent implements OnInit {
         if (this.newSelection === this.selected) {
             this.fruits = this.fruitsDS;
             this.selected = "allData";
+            this.cdr.detectChanges();
             return;
         }
         this.selected = value;
