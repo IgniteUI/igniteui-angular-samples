@@ -25,6 +25,10 @@ export class GridRemoteVirtualizationSampleComponent {
     private _isColumnCellTemplateReset: boolean = false;
     private _prevRequest: any;
 
+    private _loadedCellStyle = {
+        animation: "fade-in-left .6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"
+    };
+
     constructor(private _remoteService: RemoteServiceVirt, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
@@ -48,6 +52,7 @@ export class GridRemoteVirtualizationSampleComponent {
     public applyLoadingStyles() {
         if (this.grid.columns.length > 0) {
             this.grid.columns.forEach((column: IgxColumnComponent) => {
+                column.cellStyles = undefined;
                 if (column.bodyTemplate && !this._isColumnCellTemplateReset) {
                     this._columnCellCustomTemplates.set(column, column.bodyTemplate);
                 }
@@ -79,6 +84,7 @@ export class GridRemoteVirtualizationSampleComponent {
                     this.grid.columns.forEach((column: IgxColumnComponent) => {
                         oldTemplate = this._columnCellCustomTemplates.get(column);
                         column.bodyTemplate = oldTemplate;
+                        column.cellStyles = this._loadedCellStyle;
                     });
                     this._columnCellCustomTemplates.clear();
                     this._isColumnCellTemplateReset = false;
