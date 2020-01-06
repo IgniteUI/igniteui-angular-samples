@@ -3,12 +3,12 @@
 /*BASIC THEMING*/
 
 $custom-theme: igx-carousel-theme(
-    $slide-background: rgb(247, 233, 233),
+    $slide-background: #b0b0b0,
     $button-background: gray,
     $button-hover-background: #764949,
     $border-radius: 10%,
-    $button-disabled-background:  rgb(184, 184, 184),
-    $button-disabled-arrow-color: gray,
+    $button-disabled-background: #d1d1d1,
+    $button-disabled-arrow-color: rgba(0, 0, 0, 0.26),
     $button-arrow-color: black,
     $button-hover-arrow-color: #171717,
     $indicator-dot-color: #515151,
@@ -34,7 +34,7 @@ $custom-theme: igx-carousel-theme(
 //     $border-radius: 10%,
 //     $button-hover-background: igx-color($my-custom-palette, "secondary", 800),
 //     $button-disabled-background: igx-color($my-custom-palette, "secondary", 100),
-//     $button-arrow-color: igx-color($my-custom-palette, "primary"),
+//     $button-arrow-color: igx-color($my-custom-palette, "primary", 500),
 //     $button-hover-arrow-color: igx-color($my-custom-palette, "primary", 100),
 //     $indicator-dot-color: igx-color($my-custom-palette, "primary", 100),
 //     $indicator-border-color: igx-color($my-custom-palette, "primary", 500),
@@ -51,7 +51,7 @@ $custom-theme: igx-carousel-theme(
 //         button-hover-background: (igx-color: ("secondary", 800)),
 //         button-disabled-background: (igx-color: ("secondary", 100),  hexrgba: ()),
 //         button-arrow-color: (igx-color: ("primary", 500)),
-//         button-hover-arrow-color: (igx-color: ("primary", 300)),
+//         button-hover-arrow-color: (igx-color: ("primary", 100)),
 //         indicator-dot-color: (igx-color: ("primary", 100)),
 //         indicator-border-color: (igx-color: ("primary", 500)),
 //         indicator-active-border-color: (igx-color: ("secondary", 500))
