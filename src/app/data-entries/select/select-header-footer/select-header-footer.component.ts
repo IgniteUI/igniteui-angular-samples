@@ -10,7 +10,6 @@ export class SelectHeaderFooterComponent implements OnInit {
     public trainCount: number;
     public boatCount: number;
     public selected: string;
-    public newSelection: string;
     public fruits: Array<{ type: string, delivery: string }>;
 
     public fruitsDS: Array<{ type: string, delivery: string }> = [
@@ -43,8 +42,7 @@ export class SelectHeaderFooterComponent implements OnInit {
     }
 
     public filter(value) {
-        this.newSelection = value;
-        if (this.newSelection === this.selected) {
+        if (this.selected === value) {
             this.fruits = this.fruitsDS;
             this.selected = "allData";
             this.cdr.detectChanges();
