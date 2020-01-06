@@ -12,6 +12,7 @@ import { CardStylingSampleComponent } from "./card/card-styling-sample/card-styl
 import { CardComponent } from "./card/card.component";
 import { CarouselAnimationsSampleComponent
     } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
+import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/carousel-base-sample.component";
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
 import { CarouselNoNavigationSampleComponent
     } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
@@ -50,7 +51,6 @@ import { TabsRoutingView1Component,
          TabsRoutingView3Component,
          TabsSample6Component } from "./tabs/tabs-sample-6/tabs-sample-6.component";
 import { TabsStyleComponent } from "./tabs/tabs-style/tabs-style.component";
-import { CarouselBaseSampleComponent } from './carousel/carousel-base-sample/carousel-base-sample.component';
 
 export const layoutsRoutes: Routes = [
     {
