@@ -14,12 +14,8 @@ export class GridRemoteVirtualizationSampleComponent {
     public remoteData: any;
 
     @ViewChild("grid", { static: true }) public grid: IgxGridComponent;
-    @ViewChild("remoteDataLoadingLarge", { read: TemplateRef, static: true })
-    protected remoteDataLoadingLargeTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingMedium", { read: TemplateRef, static: true })
-    protected remoteDataLoadingMediumTemplate: TemplateRef<any>;
-    @ViewChild("remoteDataLoadingSmall", { read: TemplateRef, static: true })
-    protected remoteDataLoadingSmallTemplate: TemplateRef<any>;
+    @ViewChild("emptyTemplate", { read: TemplateRef, static: true })
+    protected emptyTemplate: TemplateRef<any>;
 
     private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
     private _isColumnCellTemplateReset: boolean = false;
@@ -57,7 +53,7 @@ export class GridRemoteVirtualizationSampleComponent {
                     this._columnCellCustomTemplates.set(column, column.bodyTemplate);
                 }
 
-                column.bodyTemplate = this.getDataLoadingTemplate();
+                column.bodyTemplate = this.emptyTemplate;
             });
 
             this._isColumnCellTemplateReset = true;
@@ -105,16 +101,6 @@ export class GridRemoteVirtualizationSampleComponent {
     public ngOnDestroy() {
         if (this._prevRequest) {
             this._prevRequest.unsubscribe();
-        }
-    }
-
-    private getDataLoadingTemplate(): TemplateRef<any> {
-        const val = Math.floor(Math.random() * 3) + 1;
-
-        switch (val) {
-            case 1: return this.remoteDataLoadingLargeTemplate;
-            case 2: return this.remoteDataLoadingMediumTemplate;
-            case 3: return this.remoteDataLoadingSmallTemplate;
         }
     }
 }
