@@ -36,7 +36,7 @@ export class DocsLayoutComponent implements OnInit {
             this.styleElem = document.createElement("style");
             this.styleElem.id = "igniteui-theme";
             document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
-            this.document.body.classList.add('custom-body');
+            this.document.body.classList.add("custom-body");
         }
     }
 }
