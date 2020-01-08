@@ -91,10 +91,10 @@ export class SelectConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxSelectModule, SelectHeaderFooterComponent, IgxInputGroupModule,
-                    IgxDropDownModule, IgxIconModule, IgxButtonGroupModule],
+                    IgxDropDownModule, IgxIconModule, IgxButtonGroupModule, IgxButtonModule],
                 ngDeclarations: [SelectHeaderFooterComponent],
                 ngImports: [IgxSelectModule, IgxInputGroupModule,
-                    IgxDropDownModule, IgxIconModule, IgxButtonGroupModule]
+                    IgxDropDownModule, IgxIconModule, IgxButtonGroupModule, IgxButtonModule]
             }),
             component: SelectHeaderFooterComponent,
             shortenComponentPathBy: "/data-entries/select/"
