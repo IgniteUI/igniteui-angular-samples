@@ -57,6 +57,7 @@ import { RadioGroupSampleComponent } from "./radio/radio-group-sample/radio-grou
 import { RadioSample1Component } from "./radio/radio-sample-1/radio-sample-1.component";
 import { RadioSample2Component } from "./radio/radio-sample-2/radio-sample-2.component";
 import { SelectFormComponent } from "./select/select-form/select-form.component";
+import { SelectHeaderFooterComponent } from "./select/select-header-footer/select-header-footer.component";
 import { SelectInputDirectivesComponent } from "./select/select-input-directives/select-input-directives";
 import { SelectSample1Component } from "./select/select-sample-1/select-sample-1.component";
 import { SelectSample2Component } from "./select/select-sample-2/select-sample-2.component";
@@ -119,6 +120,7 @@ import { SwitchSample2Component } from "./switch/switch-sample-2/switch-sample-2
         SelectSample4Component,
         SelectStylingComponent,
         SelectInputDirectivesComponent,
+        SelectHeaderFooterComponent,
         ButtonGroupSampleComponent,
         ButtonsDisplayDensityComponent,
         ButtonsStyleComponent,
