@@ -11,7 +11,7 @@ export class DocsLayoutComponent implements OnInit {
     private isIE = !((window as any).ActiveXObject) && "ActiveXObject" in window;
     private theme = "default-theme";
     private styleElem: HTMLStyleElement;
-    private typefacesLoaded = [];
+    private typefacesLoaded = ["Titillium Web", "Roboto"];
     private typefaceUrl = "https://fonts.googleapis.com/css?family=";
 
     constructor(@Inject(DOCUMENT) private document: Document) {}
@@ -44,10 +44,6 @@ export class DocsLayoutComponent implements OnInit {
             this.styleElem = document.createElement("style");
             this.styleElem.id = "igniteui-theme";
             document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
-
-            // Load default typeface
-            this.typefacesLoaded.push("Titillium Web");
-            this.createTypefaceLink("Titillium Web");
         }
     }
 
