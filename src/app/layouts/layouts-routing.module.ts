@@ -10,12 +10,14 @@ import { CardSample3Component } from "./card/card-sample-3/card-sample-3.compone
 import { CardSample4Component } from "./card/card-sample-4/card-sample-4.component";
 import { CardStylingSampleComponent } from "./card/card-styling-sample/card-styling-sample.component";
 import { CardComponent } from "./card/card.component";
-// tslint:disable-next-line: max-line-length
-import { CarouselAnimationsSampleComponent } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
+import { CarouselAnimationsSampleComponent
+    } from "./carousel/carousel-animations-sample/carousel-animations-sample.component";
 import { CarouselBaseSampleComponent } from "./carousel/carousel-base-sample/carousel-base-sample.component";
 import { CarouselDetailsViewComponent } from "./carousel/carousel-details/carousel-details.component";
-// tslint:disable-next-line: max-line-length
-import { CarouselNoNavigationSampleComponent } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
+import { CarouselNoNavigationSampleComponent
+    } from "./carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
+import { CarouselStylingSampleComponent
+} from "./carousel/carousel-styling-sample/carousel-styling-sample.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DividerDashedComponent } from "./divider/dashed/divider-dashed.component";
 import { DividerDefaultComponent } from "./divider/default/divider-default.component";
@@ -80,6 +82,11 @@ export const layoutsRoutes: Routes = [
         component: CarouselBaseSampleComponent,
         data: layoutsRoutesData["carousel-base-sample"],
         path: "carousel-base-sample"
+    },
+    {
+        component: CarouselStylingSampleComponent,
+        data: layoutsRoutesData["carousel-styling-sample"],
+        path: "carousel-styling-sample"
     },
     {
         component: CarouselComponent,
