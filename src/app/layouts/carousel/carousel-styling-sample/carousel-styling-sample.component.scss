@@ -1,0 +1,92 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+/*BASIC THEMING*/
+
+$custom-theme: igx-carousel-theme(
+    $slide-background: #b0b0b0,
+    $button-background: gray,
+    $button-hover-background: #764949,
+    $border-radius: 10%,
+    $button-disabled-background: #d1d1d1,
+    $button-disabled-arrow-color: rgba(0, 0, 0, 0.26),
+    $button-arrow-color: black,
+    $button-hover-arrow-color: #171717,
+    $indicator-dot-color: #515151,
+    $indicator-border-color: black,
+    $indicator-active-border-color: gray
+);
+
+/*ENHANCED APPROACHES*/
+
+// $black-color: black;
+// $gray-color: gray;
+
+/*PALETTE*/
+
+// $my-custom-palette: igx-palette(
+//     $primary: $black-color,
+//     $secondary: $gray-color
+// );
+
+// $custom-theme: igx-carousel-theme(
+//     $slide-background: igx-color($my-custom-palette, "secondary", 200),
+//     $button-background: igx-color($my-custom-palette, "secondary", 500),
+//     $border-radius: 10%,
+//     $button-hover-background: igx-color($my-custom-palette, "secondary", 800),
+//     $button-disabled-background: igx-color($my-custom-palette, "secondary", 100),
+//     $button-arrow-color: igx-color($my-custom-palette, "primary", 500),
+//     $button-hover-arrow-color: igx-color($my-custom-palette, "primary", 100),
+//     $indicator-dot-color: igx-color($my-custom-palette, "primary", 100),
+//     $indicator-border-color: igx-color($my-custom-palette, "primary", 500),
+//     $indicator-active-border-color: igx-color($my-custom-palette, "secondary", 500)
+// );
+
+/*SCHEMAS*/
+
+// $my-carousel-schema: extend($_light-carousel,
+//     (
+//         slide-background: (igx-color: ("secondary", 200)),
+//         button-background: (igx-color: ('secondary', 500)),
+//         border-radius: 10%,
+//         button-hover-background: (igx-color: ("secondary", 800)),
+//         button-disabled-background: (igx-color: ("secondary", 100),  hexrgba: ()),
+//         button-arrow-color: (igx-color: ("primary", 500)),
+//         button-hover-arrow-color: (igx-color: ("primary", 100)),
+//         indicator-dot-color: (igx-color: ("primary", 100)),
+//         indicator-border-color: (igx-color: ("primary", 500)),
+//         indicator-active-border-color: (igx-color: ("secondary", 500))
+//     )
+// );
+
+// $my-custom-schema: extend($light-schema,
+//     (
+//         igx-carousel: $my-carousel-schema
+//     )
+// );
+
+/*THEME*/
+
+// $custom-theme: igx-carousel-theme(
+//     $palette: $my-custom-palette,
+//     $schema: $my-custom-schema
+// );
+
+/*INCLUSION by DEFAULT ViewEncapsulation strategy*/
+
+:host {
+    ::ng-deep {
+        @include igx-carousel($custom-theme);
+    }
+}
+
+.carousel-container{
+    width: 60%;
+    height: 80%;
+    margin: 16px auto;
+}
+
+.slide-wrapper{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

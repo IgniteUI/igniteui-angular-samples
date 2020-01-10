@@ -1,17 +1,25 @@
-/* tslint:disable:object-literal-sort-keys */
 import { RouterModule } from "@angular/router";
 import { IgxButtonModule,
          IgxCardModule,
+         IgxCarouselComponent,
          IgxCarouselModule,
-         IgxIconModule, IgxInputGroupModule, IgxListModule, IgxSelectModule, IgxSliderModule } from "igniteui-angular";
-// tslint:disable-next-line: max-line-length
-import { CarouselAnimationsSampleComponent } from "../../src/app/layouts/carousel/carousel-animations-sample/carousel-animations-sample.component";
-// tslint:disable-next-line: max-line-length
-import { CarouselBaseSampleComponent } from "../../src/app/layouts/carousel/carousel-base-sample/carousel-base-sample.component";
-// tslint:disable-next-line: max-line-length
-import { CarouselDetailsViewComponent } from "../../src/app/layouts/carousel/carousel-details/carousel-details.component";
-// tslint:disable-next-line: max-line-length
-import { CarouselNoNavigationSampleComponent } from "../../src/app/layouts/carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
+         IgxIconModule,
+         IgxInputGroupModule,
+         IgxLinearProgressBarComponent,
+         IgxListModule,
+         IgxProgressBarModule,
+         IgxSelectModule,
+         IgxSliderModule } from "igniteui-angular";
+import { CarouselAnimationsSampleComponent
+    } from "../../src/app/layouts/carousel/carousel-animations-sample/carousel-animations-sample.component";
+import { CarouselBaseSampleComponent
+    } from "../../src/app/layouts/carousel/carousel-base-sample/carousel-base-sample.component";
+import { CarouselDetailsViewComponent
+    } from "../../src/app/layouts/carousel/carousel-details/carousel-details.component";
+import { CarouselNoNavigationSampleComponent
+    } from "../../src/app/layouts/carousel/carousel-no-navigation-sample/carousel-no-navigation-sample.component";
+import { CarouselStylingSampleComponent
+    } from "../../src/app/layouts/carousel/carousel-styling-sample/carousel-styling-sample.component";
 import { CarouselComponent } from "../../src/app/layouts/carousel/carousel.component";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -75,6 +83,18 @@ export class CarouselConfigGenerator implements IConfigGenerator {
         });
         routingConfig.usesRouting = true;
         configs.push(routingConfig);
+
+        configs.push(new Config({
+            component: CarouselStylingSampleComponent,
+            appModuleConfig: new AppModuleConfig({
+                imports: [IgxCarouselComponent, IgxCarouselModule,
+                    IgxLinearProgressBarComponent, IgxProgressBarModule,
+                    IgxSliderModule, CarouselStylingSampleComponent],
+                ngDeclarations: [CarouselStylingSampleComponent],
+                ngImports: [IgxCarouselModule, IgxProgressBarModule, IgxSliderModule]
+            }),
+            shortenComponentPathBy: "/layouts/carousel/"
+        }));
 
         return configs;
     }
