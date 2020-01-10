@@ -133,6 +133,7 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
+import { ChartIntegrationDirective } from './grid-dynamic-chart-data/chart-integration.directive';
 
 @NgModule({
     declarations: [
@@ -230,7 +231,8 @@ import { DataService } from "./services/data.service";
         ConditionalFormattingDirective,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
-        GridMasterDetailSampleComponent
+        GridMasterDetailSampleComponent,
+        ChartIntegrationDirective
     ],
     imports: [
         CommonModule,

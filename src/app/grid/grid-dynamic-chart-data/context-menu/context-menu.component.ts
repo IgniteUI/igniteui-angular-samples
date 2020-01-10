@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { IGridDataSelection } from "../chart.service";
 export interface IChartArgs {
     chartType: string;
     seriesType: string;

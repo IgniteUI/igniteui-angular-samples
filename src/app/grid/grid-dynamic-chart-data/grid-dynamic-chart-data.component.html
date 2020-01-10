@@ -1,5 +1,9 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-    <igx-grid #grid conditionalFormatting primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false">
+    <igx-grid #grid chartIntegration  conditionalFormatting 
+        scatterChartYAxisValueMemberPath="Price" 
+        bubbleChartRadiusMemberPath ="Open Price"
+        [defaultLabelMemberPath]="'Type'"
+         primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
         <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'">
