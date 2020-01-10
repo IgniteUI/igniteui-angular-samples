@@ -25,7 +25,7 @@
 }
 
 .currency-badge-container {
-    width: 80px; 
+    width: 80px;
     float: right;
 }
 
@@ -34,7 +34,8 @@
 }
 
 .remote-data-loading-template {
-    background-color: lightgrey;
+    animation: content-placeholder-animation .5s infinite;
+    background-color: lightgray;
     height: 15px;
 }
 
@@ -51,4 +52,19 @@
 .remote-data-loading-template-small {
     @extend .remote-data-loading-template;
     width: 20px;
+}
+
+@keyframes content-placeholder-animation {
+    0% {
+        opacity: .75;
+        transform: scaleX(.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1.1);
+    }
+    100% {
+        opacity: .75;
+        transform: scaleX(.9);
+    }
 }
