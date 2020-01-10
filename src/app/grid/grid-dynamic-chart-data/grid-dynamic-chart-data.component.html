@@ -3,8 +3,7 @@
          primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
-        <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'">
-        </igx-column>
+        <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'"></igx-column>
         <igx-column field='Country' [editable]="true" [width]="'100px'"></igx-column>
         <igx-column field='Price' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
@@ -28,7 +27,6 @@
         <igx-column field='Buy' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
 
-
         <igx-column field='BuyDiff' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -36,7 +34,6 @@
                 </div>
             </ng-template>
         </igx-column>
-
 
         <igx-column field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
@@ -58,7 +55,6 @@
                 </div>
             </ng-template>
         </igx-column>
-
 
         <igx-column field='OpenPriceDiff' dataType="number" [width]="'140px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
@@ -112,7 +108,6 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='Region' [editable]="true"></igx-column>
         <igx-column field='Contract' [editable]="true"></igx-column>
         <igx-column field='Settlement' [width]="'150px'" [editable]="true"></igx-column>
@@ -124,13 +119,13 @@
         <igx-icon #icon style="pointer-events: none;" class="icon" fontSet="material">insert_chart_outlined</igx-icon>
     </button>
 </span>
-
+<!-- this block can be moved in another component -->
 <igx-dialog #chartSelectionDialog>
     <igx-tabs tabsType="fixed">
         <igx-tabs-group label="Conditional Formatting">
             <div class="tab-options-wrapper">
                 <div class="tab-option">
-                    <div *ngFor="let condition of formattersNames; trackBy: trackByFn" class="action">
+                    <div *ngFor="let condition of formattersNames" class="action">
                         <div class="btn condition" (click)="analyse(condition)">
                             <img style="width: 36px; height: 36px;"
                                 src="assets/images/svg/conditions/{{condition.replace(' ', '')}}.svg" />
@@ -143,7 +138,7 @@
                         <img style="width: 36px; height: 36px;"
                              src="assets/images/svg/conditions/Clear.svg" />
                          <span class="name">Clear All</span>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </igx-tabs-group>
@@ -151,7 +146,7 @@
         <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart">
             <div class="tab-options-wrapper">
                 <div class="tab-option">
-                    <div *ngFor="let chart of availableCharts | slice:0:4; trackBy: trackByFn" class="action">
+                    <div *ngFor="let chart of availableCharts | slice:0:4" class="action">
                         <div class="btn chart"
                             (pointerdown)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
                             (mouseleave)="chartPreviewDialog.close();"
@@ -175,7 +170,7 @@
                         <span class="name">More...</span>
                     </div>
                 </div>
-            </div>  
+            </div>
         </igx-tabs-group>
     </igx-tabs>
 </igx-dialog>
@@ -221,7 +216,7 @@
                 <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
                     <div>{{chartType | titlecase}} Chart</div>
                     <div class="types-section">
-                        <div *ngFor="let chart of (availableCharts | filterType: chartType); trackBy: trackByFn" 
+                        <div *ngFor="let chart of (availableCharts | filterType: chartType); trackBy: trackByFn"
                              (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
                              style="width: 40%; margin-right: 5px; cursor: pointer;"
                              [ngClass]="{'selected': chart === currentChartType}">
