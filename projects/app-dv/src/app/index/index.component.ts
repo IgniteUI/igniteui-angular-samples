@@ -3,6 +3,7 @@ import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm/grid-crm-routes-data";
+import { gridfinjsRoutesData} from "../grid-finjs/grid-finjs-routes-data"
 
 @Component({
     selector: "app-index",
@@ -47,10 +48,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         //     path: "tree-grid",
         //     routesData: treeGridRoutesData
         // },
-        // {
-        //     path: "finjs-sample",
-        //     routesData: gridfinjsRoutesData
-        // },
+        {
+            path: "finjs-sample",
+            routesData: gridfinjsRoutesData
+        }
         // {
         //     path: "treegrid-finjs-sample",
         //     routesData: treegridfinjsRoutesData

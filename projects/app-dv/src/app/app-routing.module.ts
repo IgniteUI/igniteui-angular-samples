@@ -15,6 +15,11 @@ export const samplesRoutes: Routes = [
         data: ["GridCRMModule"],
         loadChildren: () => import("./grid-crm//grid-crm/grid-crm.module").then(m => m.GridCRMModule),
         path: "grid-crm"
+    },
+    {
+        data: ["GridFinjsModule"],
+        loadChildren: () => import("./grid-finjs/grid-finjs.module").then(m => m.GridFinjsModule),
+        path: "finjs-sample"
     }
 ];
 export const appRoutes: Routes = [
