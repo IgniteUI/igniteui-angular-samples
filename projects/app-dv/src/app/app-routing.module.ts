@@ -25,17 +25,17 @@ export const samplesRoutes: Routes = [
         data: ["TreeGridFinjsModule"],
         loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
         path: "treegrid-finjs-sample"
-    }
+    },
     // {
     //     data: ["TreeGridModule"],
     //     loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridModule),
     //     path: "tree-grid"
     // },
-    // {
-    //     data: ["GridsModule"],
-    //     loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
-    //     path: "grid"
-    // },
+    {
+        data: ["GridsModule"],
+        loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
+        path: "grid/grid"
+    }
     // {
     //     data: ["HierarchicalGridModule"],
     //     loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridModule),
