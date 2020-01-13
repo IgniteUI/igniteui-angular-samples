@@ -40,7 +40,7 @@ export class GridRemoteVirtualizationSampleComponent {
             this.grid.isLoading = false;
         });
 
-        this.grid.onDataPreLoad.pipe(debounceTime(250)).subscribe(() => {
+        this.grid.onDataPreLoad.pipe(debounceTime(500)).subscribe(() => {
             this.processData(false);
         });
     }
@@ -51,7 +51,6 @@ export class GridRemoteVirtualizationSampleComponent {
                 if (column.bodyTemplate && !this._isColumnCellTemplateReset) {
                     this._columnCellCustomTemplates.set(column, column.bodyTemplate);
                 }
-
                 column.bodyTemplate = this.getDataLoadingTemplate();
             });
 
