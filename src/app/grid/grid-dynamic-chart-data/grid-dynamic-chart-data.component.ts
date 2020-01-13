@@ -5,6 +5,7 @@ import { noop } from "rxjs";
 import { debounceTime, filter, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
 import { ChartIntegrationDirective } from "./chart-integration.directive";
+import { CHART_TYPE } from "./chart-types";
 import { ConditionalFormattingDirective } from "./conditional-formatting.directive";
 import { IChartArgs } from "./context-menu/context-menu.component";
 @Directive({
@@ -81,6 +82,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     @ViewChild("configArea", { static: true })
     public area: ElementRef;
 
+    public chartData = [];
     public chartCondigAreaState = "opened";
     public contextmenu = false;
     public contextmenuX = 0;
@@ -88,7 +90,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public clickedCell = null;
     public dataRows = [];
     public currentChart;
-    public currentChartArg: IChartArgs = { chartType: "column", seriesType: "Grouped" };
+    public currentChartType: CHART_TYPE = CHART_TYPE.COLUMN_GROUPED;
     public fullScreenOpened = false;
     public row;
     public range;
@@ -168,7 +170,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         (this.tabs.headerContainer.nativeElement as HTMLElement).onpointerdown = event => event.stopPropagation();
 
         this.chartSelectionDialog.onOpen.subscribe(() => {
-            this.currentChartArg = { chartType: "Column", seriesType: "Grouped" };
+            this.currentChartType = CHART_TYPE.COLUMN_GROUPED;
         });
 
         this.dialog.onOpen.subscribe(() => {
@@ -195,8 +197,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
                 this.zone.runOutsideAngular(() => {
 
-                    this.chartIntegration.range = range;
-                    this.chartIntegration.chartData = this.grid.getSelectedData();
+                    this.chartData = this.grid.getSelectedData();
                     this.range = range;
                     this.tabs.tabs.first.isSelected = true;
                     this.formatting.determineFormatters();
@@ -210,6 +211,22 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         const horizontalScroll = new EventEmitter();
         this.grid.headerContainer.getScroll().onscroll = () => this.range ? horizontalScroll.emit(true) : horizontalScroll.emit(false);
         horizontalScroll.pipe(filter((value) => value), tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(250)).subscribe(() => { this.renderButton(); });
+
+        this.chartIntegration.disableCharts(CHART_TYPE.AREA_GROUPED, CHART_TYPE.COLUMN_GROUPED);
+
+        this.chartIntegration.onChartTypesDetermined.subscribe(chartTypes => {
+            this.chartIntegration.chartTypesAvailability.forEach((isAvailable, type, map) => {
+                if (chartTypes.indexOf(type) !== -1) {
+                    map.set(type, true);
+                } else {
+                    map.set(type, false);
+                }
+            });
+        });
+
+        this.chartIntegration.onChartCreationDone.subscribe(chart => {
+            console.log(chart);
+        });
     }
 
     public formatCurrency(value: number) {
@@ -220,7 +237,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public chartTypesMenuX;
     public chartTypesMenuY;
 
-    public previewChartTypes = ["Column", "Area", "Line", "Bar"];
+    public previewChartTypes = [CHART_TYPE.COLUMN_GROUPED, CHART_TYPE.AREA_GROUPED, CHART_TYPE.LINE_GROUPED, CHART_TYPE.BAR_GROUPED];
 
     public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter"];
 
@@ -252,10 +269,10 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public previewChart(chart: string) {
+    public previewChart(chart: CHART_TYPE) {
         this._chartPreviewDialogOverlaySettings.positionStrategy.settings.target = this.tabs.tabsContainer.nativeElement;
         this.chartPreviewDialog.toggleRef.element.style.width = (this.chartSelectionDialog.toggleRef as any).elementRef.nativeElement.clientWidth + "px";
-        this.createChart({ chartType: chart, seriesType: "Grouped" }, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
+        this.createChart(chart, this.chartPreview, this.chartPreviewDialog, this._chartPreviewDialogOverlaySettings);
     }
 
     public formattersNames = [];
@@ -271,14 +288,14 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.currentFormatter = undefined;
     }
 
-    public createChart(args: IChartArgs, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
+    public createChart(type: CHART_TYPE, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
         const chartHost = host;
         const dialogToOpen = dialog;
         const dialogOverlaySettings = overlaySettings;
-        this.currentChartArg = args;
+        this.currentChartType = type;
         chartHost.viewContainerRef.clear();
         requestAnimationFrame(() => {
-            this.currentChart = this.chartIntegration.chartFactory(args, chartHost.viewContainerRef);
+            this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
             if (dialogToOpen.isCollapsed) {
                 dialogOverlaySettings.outlet = this.outlet;
                 dialogToOpen.open(overlaySettings);

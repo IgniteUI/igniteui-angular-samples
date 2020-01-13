@@ -1,7 +1,6 @@
 // tslint:disable: member-ordering
 // tslint:disable: max-line-length
-import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Directive, EventEmitter, Inject, Input, NgZone, Output, Type, ViewContainerRef } from "@angular/core";
-import { IgxGridComponent } from "igniteui-angular";
+import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Directive, EventEmitter, Input, Output, Type, ViewContainerRef } from "@angular/core";
 import { IgxAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-area-series-component";
 import { IgxBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-bar-series-component";
 import { IgxBubbleSeriesComponent } from "igniteui-angular-charts/ES5/igx-bubble-series-component";
@@ -22,19 +21,22 @@ import { IgxStackedAreaSeriesComponent } from "igniteui-angular-charts/ES5/igx-s
 import { IgxStackedBarSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-bar-series-component";
 import { IgxStackedColumnSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-column-series-component";
 import { IgxStackedLineSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-line-series-component";
-import { ChartComponentOptions,
-         ChartInitializer,
-         IChartOptions,
-         IChartSeriesOptions,
-         IgxBarDataChartInitializer,
-         IgxDataChartInitializer,
-         IgxPieChartInitializer,
-         IgxScatterChartInitializer,
-         IgxStackedBarDataChartInitializer,
-         IgxStackedDataChartInitializer,
-         IStackedFragmentOptions,
-         IXAxesOptions,
-         IYAxesOptions } from "./initializers";
+import { CHART_TYPE } from "./chart-types";
+import {
+    ChartComponentOptions,
+    ChartInitializer,
+    IChartOptions,
+    IChartSeriesOptions,
+    IgxBarDataChartInitializer,
+    IgxDataChartInitializer,
+    IgxPieChartInitializer,
+    IgxScatterChartInitializer,
+    IgxStackedBarDataChartInitializer,
+    IgxStackedDataChartInitializer,
+    IStackedFragmentOptions,
+    IXAxesOptions,
+    IYAxesOptions
+} from "./initializers";
 export interface IChartArgs {
     chartType: string;
     seriesType: string;
@@ -43,51 +45,82 @@ export interface IChartArgs {
     selector: "[chartIntegration]"
 })
 export class ChartIntegrationDirective {
+    @Input()
     public get chartData() {
         return this._chartData;
     }
 
     public set chartData(selectedData: any[]) {
-        const dataModel = selectedData[0];
-        this.labelMemberPaths = Object.keys(dataModel).filter(key => typeof dataModel[key] === "string");
-        this.valueMemberPaths = Object.keys(dataModel).filter(key => typeof dataModel[key] === "number");
-        this.selectedRows = this.grid.filteredSortedData.slice(this.range.rowStart, this.range.rowEnd + 1);
-        this._chartData = selectedData;
-        if (this.labelMemberPaths.length !== 0) {
-            this.labelMemberPath = this.labelMemberPaths[0];
-        } else if (this.defaultLabelMemberPath !== "") {
-            this.labelMemberPath = this.defaultLabelMemberPath;
-            this._chartData = this._chartData.map((dataRecord, index) => this.addMemberPath(dataRecord, this.selectedRows[index], this.labelMemberPath));
-        } else {
-            this.labelMemberPath = undefined;
+        let chartsForCreation = this._dataChartTypes;
+        if (selectedData.length === 0) {
+            this.onChartTypesDetermined.emit([]);
+            return;
+        } else if (selectedData.length === 1) {
+            chartsForCreation = this._dataChartTypes.filter(chart => chart.indexOf("Column") !== - 1 || chart.indexOf("Bar") !== -1 || chart.indexOf("Pie") !== -1);
         }
 
-        if (this.valueMemberPaths.indexOf(this._bubbleChartRadiusMemberPath) === -1) {
-            this._chartData = this._chartData.map((dataRecord, index) => this.addMemberPath(dataRecord, this.selectedRows[index], this.bubbleChartRadiusMemberPath));
-            }
+        this._chartData = selectedData.map((dataRecord, index) => this.addIndexMemberPath(dataRecord, index + 1));
 
-        if (this.valueMemberPaths.indexOf(this.scatterChartYAxisValueMemberPath) === -1) {
-            this._chartData = this._chartData.map((dataRecord, index) => this.addMemberPath(dataRecord, this.selectedRows[index], this.scatterChartYAxisValueMemberPath));
+        const dataModel = selectedData[0];
+
+        this._labelMemberPaths = Object.keys(dataModel).filter(key => typeof dataModel[key] === "string");
+        this._valueMemberPaths = Object.keys(dataModel).filter(key => typeof dataModel[key] === "number");
+
+        // Label member paths config
+        if (this.defaultLabelMemberPath) {
+            this._labelMemberPath = this._labelMemberPaths.indexOf(this.defaultLabelMemberPath) !== -1 ? this.defaultLabelMemberPath : this._indexMemberPath;
+        } else if (this._labelMemberPaths.length !== 0) {
+            this._labelMemberPath = this._labelMemberPaths[0];
+        } else {
+            this._labelMemberPath = this._indexMemberPath;
+        }
+
+        // Config scatter chart member paths
+        const availableScatterCharts = this.getChartAvailabilityByType("Scatter");
+        const canCreateScatterChart = this._valueMemberPaths.length >= 2 && availableScatterCharts.length > 0;
+        const canCreateBubbleChart = this._valueMemberPaths.length >= 3 && this.getChartAvailabilityByType("ScatterBubble").available;
+
+        if (canCreateScatterChart) {
+            const isYAxisMemberPathOmitted = !this.scatterChartYAxisValueMemberPath;
+            const isYAxisMemberPathMissing = this._valueMemberPaths.indexOf(this.scatterChartYAxisValueMemberPath) === -1;
+            if (isYAxisMemberPathOmitted || isYAxisMemberPathMissing) {
+                availableScatterCharts.forEach(scatter => this.chartComponentOptions.get(scatter.type).seriesModel["yMemberPath"] = this._valueMemberPaths[0]);
             }
+        } else {
+            chartsForCreation = chartsForCreation.filter(chart => chart.indexOf("Scatter") === -1);
+        }
+
+        if (canCreateBubbleChart) {
+            const isRadiusMemberPathOmitted = !this.bubbleChartRadiusMemberPath;
+            const isRadiusMemberPathMissing = this._valueMemberPaths.indexOf(this.bubbleChartRadiusMemberPath) === -1;
+            if (isRadiusMemberPathOmitted || isRadiusMemberPathMissing) {
+                this.chartComponentOptions.get("ScatterBubble").seriesModel["radiusMemberPath"] = this._valueMemberPaths[1];
+            }
+        } else {
+            chartsForCreation =  chartsForCreation.filter(chart => chart.indexOf("ScatterBubble") === -1);
+        }
+
+        this.onChartTypesDetermined.emit(chartsForCreation);
     }
-
-    public range;
 
     @Output()
     public onChartTypesDetermined = new EventEmitter<string[]>();
+
+    @Output()
+    public onChartCreationDone = new EventEmitter<any>();
 
     @Input()
     public useLegend: boolean = true;
 
     @Input()
-    public defaultLabelMemberPath: string = "";
+    public defaultLabelMemberPath: string = undefined;
 
     @Input()
     public set scatterChartYAxisValueMemberPath(path: string) {
         this._scatterChartYAxisValueMemberPath = path;
-        this.chartComponentOptions.get("ScatterPoint").seriesModel["yMemberPath"] = path;
-        this.chartComponentOptions.get("ScatterBubble").seriesModel["yMemberPath"] = path;
-        this.chartComponentOptions.get("ScatterLine").seriesModel["yMemberPath"] = path;
+        this.getChartAvailabilityByType("Scatter").filter(chart => chart.available).forEach(scatterChart => {
+            this.chartComponentOptions.get(scatterChart.type).seriesModel["yMemberPath"] = path;
+        });
     }
 
     public get scatterChartYAxisValueMemberPath() {
@@ -97,8 +130,9 @@ export class ChartIntegrationDirective {
     @Input()
     public set bubbleChartRadiusMemberPath(path: string) {
         this._bubbleChartRadiusMemberPath = path;
-        this.chartComponentOptions.get("ScatterBubble").seriesModel["radiusMemberPath"] = path;
-
+        if (this.getChartAvailabilityByType("ScatterBubble").available) {
+            this.chartComponentOptions.get("ScatterBubble").seriesModel["radiusMemberPath"] = path;
+        }
     }
 
     public get bubbleChartRadiusMemberPath() {
@@ -106,18 +140,19 @@ export class ChartIntegrationDirective {
     }
 
     public chartComponentOptions = new Map<string, ChartComponentOptions>();
-
-    private _scatterChartYAxisValueMemberPath = "";
-    private _bubbleChartRadiusMemberPath = "";
-    private labelMemberPath: string;
-    private selectedRows;
-    private _chart;
+    public chartTypesAvailability = new Map<string, boolean>();
     private dataCharts = new Map<string, Type<any>>();
-    private labelMemberPaths = [];
-    private valueMemberPaths = [];
+
+    private _scatterChartYAxisValueMemberPath = undefined;
+    private _bubbleChartRadiusMemberPath = undefined;
+    private _indexMemberPath: string = "Index";
+    private _labelMemberPath: string;
+    private _chart;
+    private _labelMemberPaths: string[] = [];
+    private _valueMemberPaths = [];
     private _chartData: any[];
     private _dataChartTypes = [];
-    private bubbleChartSizeScale = new IgxSizeScaleComponent();
+    private _sizeScale = new IgxSizeScaleComponent();
 
     private pieChartOptions: IChartOptions = {
         width: "85%",
@@ -140,7 +175,7 @@ export class ChartIntegrationDirective {
     };
 
     private bubbleChartSeriesOptionsModel: IChartSeriesOptions = {
-        radiusScale: this.bubbleChartSizeScale
+        radiusScale: this._sizeScale
     };
 
     private scatterChartXAxisOptions: IXAxesOptions = {
@@ -159,27 +194,27 @@ export class ChartIntegrationDirective {
         isHorizontalZoomEnabled: true
     };
 
-    constructor(@Inject(IgxGridComponent) private grid: IgxGridComponent, private factoryResolver: ComponentFactoryResolver, private zone: NgZone) {
+    constructor(private factoryResolver: ComponentFactoryResolver) {
         let iterable;
-        this.dataCharts.set("Pie", IgxPieChartComponent);
-        this.dataCharts.set("ColumnGrouped", IgxColumnSeriesComponent);
-        this.dataCharts.set("AreaGrouped", IgxAreaSeriesComponent);
-        this.dataCharts.set("LineGrouped", IgxLineSeriesComponent);
-        this.dataCharts.set("BarGrouped", IgxBarSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.PIE, IgxPieChartComponent);
+        this.dataCharts.set(CHART_TYPE.COLUMN_GROUPED, IgxColumnSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.AREA_GROUPED, IgxAreaSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.LINE_GROUPED, IgxLineSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.BAR_GROUPED, IgxBarSeriesComponent);
 
-        this.dataCharts.set("ColumnStacked", IgxStackedColumnSeriesComponent);
-        this.dataCharts.set("AreaStacked", IgxStackedAreaSeriesComponent);
-        this.dataCharts.set("LineStacked", IgxStackedLineSeriesComponent);
-        this.dataCharts.set("BarStacked", IgxStackedBarSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.COLUMN_STACKED, IgxStackedColumnSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.AREA_STACKED, IgxStackedAreaSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.LINE_STACKED, IgxStackedLineSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.BAR_STACKED, IgxStackedBarSeriesComponent);
 
-        this.dataCharts.set("Column100Stacked", IgxStacked100ColumnSeriesComponent);
-        this.dataCharts.set("Area100Stacked", IgxStacked100AreaSeriesComponent);
-        this.dataCharts.set("Line100Stacked", IgxStacked100LineSeriesComponent);
-        this.dataCharts.set("Bar100Stacked", IgxStacked100BarSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.COLUMN_100_STACKED, IgxStacked100ColumnSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.AREA_100_STACKED, IgxStacked100AreaSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.LINE_100_STACKED, IgxStacked100LineSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.BAR_100_STACKED, IgxStacked100BarSeriesComponent);
 
-        this.dataCharts.set("ScatterPoint", IgxScatterSeriesComponent);
-        this.dataCharts.set("ScatterBubble", IgxBubbleSeriesComponent);
-        this.dataCharts.set("ScatterLine", IgxScatterLineSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.SCATTER_POINT, IgxScatterSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.SCATTER_BUBBLE, IgxBubbleSeriesComponent);
+        this.dataCharts.set(CHART_TYPE.SCATTER_LINE, IgxScatterLineSeriesComponent);
 
         iterable = this.dataCharts.keys();
         for (let head = iterable.next().value; head !== undefined; head = iterable.next().value) {
@@ -188,77 +223,92 @@ export class ChartIntegrationDirective {
 
         [...this._dataChartTypes].forEach(type => {
             this.chartComponentOptions.set(type, new ChartComponentOptions());
+            this.chartTypesAvailability.set(type, true);
         });
-        this.bubbleChartSizeScale.maximumValue = 60;
-        this.bubbleChartSizeScale.minimumValue = 10;
 
         this.setChartOptions();
     }
 
-    public chartFactory(chartArgs: IChartArgs, viewContainerRef: ViewContainerRef) {
+    public disableCharts(...types: CHART_TYPE[]) {
+        types.forEach(type => {
+            if (this.chartTypesAvailability.has(type)) {
+                this.chartTypesAvailability.set(type, false);
+            }
+        });
+    }
 
-        const chartType = chartArgs.chartType;
-        const seriesType = chartArgs.seriesType;
+    public chartFactory(type: CHART_TYPE, viewContainerRef: ViewContainerRef) {
 
         let componentFactory: ComponentFactory<any>;
         let componentRef: ComponentRef<any>;
 
         let initializer: ChartInitializer;
 
-        const options = this.chartComponentOptions.get(`${chartType + (seriesType || "")}`);
-        const type = this.dataCharts.get(`${chartType + (seriesType || "")}`);
+        const options = this.chartComponentOptions.get(type);
+        const chartType = this.dataCharts.get(type);
 
-        if (!seriesType) {
+        if (type === CHART_TYPE.PIE) {
             componentFactory = this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
             componentRef = viewContainerRef.createComponent(componentFactory);
             this.addPieChartDataOptions(options);
             initializer = new IgxPieChartInitializer();
         } else {
-
             componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
             componentRef = viewContainerRef.createComponent(componentFactory);
-            switch (chartType) {
-                case "Column":
-                case "Area":
-                case "Line":
+            switch (type) {
+                case CHART_TYPE.COLUMN_GROUPED:
+                case CHART_TYPE.AREA_GROUPED:
+                case CHART_TYPE.LINE_GROUPED:
                     options.xAxisOptions = {
-                        label: this.labelMemberPath
+                        label: this._labelMemberPath
                     };
-                    if (seriesType.indexOf("Stacked") !== -1) {
-                        this.addDataChartDataOptions(options, true);
-                        initializer = new IgxStackedDataChartInitializer(type);
-                    } else {
-                        this.addDataChartDataOptions(options, false);
-                        initializer = new IgxDataChartInitializer(type);
-                    }
+                    this.addDataChartDataOptions(options, false);
+                    initializer = new IgxDataChartInitializer(chartType);
                     break;
-                case "Bar":
+                case CHART_TYPE.COLUMN_100_STACKED:
+                case CHART_TYPE.COLUMN_STACKED:
+                case CHART_TYPE.AREA_100_STACKED:
+                case CHART_TYPE.AREA_STACKED:
+                case CHART_TYPE.LINE_100_STACKED:
+                case CHART_TYPE.LINE_STACKED:
+                    options.xAxisOptions = {
+                        label: this._labelMemberPath
+                    };
+                    this.addDataChartDataOptions(options, true);
+                    initializer = new IgxStackedDataChartInitializer(chartType);
+                    break;
+                case CHART_TYPE.BAR_GROUPED:
                     options.yAxisOptions = {
-                        label: this.labelMemberPath
+                        label: this._labelMemberPath
                     };
-                    if (seriesType.indexOf("Stacked") !== -1) {
-                        this.addDataChartDataOptions(options, true);
-                        initializer = new IgxStackedBarDataChartInitializer(type);
-                    } else {
-                        this.addDataChartDataOptions(options, false);
-                        initializer = new IgxBarDataChartInitializer(type);
-                    }
+                    this.addDataChartDataOptions(options, false);
+                    initializer = new IgxBarDataChartInitializer(chartType);
                     break;
-                case "Scatter":
+                case CHART_TYPE.BAR_STACKED:
+                case CHART_TYPE.BAR_100_STACKED:
+                    options.yAxisOptions = {
+                        label: this._labelMemberPath
+                    };
+                    this.addDataChartDataOptions(options, true);
+                    initializer = new IgxStackedBarDataChartInitializer(chartType);
+                    break;
+                case CHART_TYPE.SCATTER_BUBBLE:
+                case CHART_TYPE.SCATTER_LINE:
+                case CHART_TYPE.SCATTER_POINT:
                     this.addScatterChartDataOptions(options);
-                    initializer = new IgxScatterChartInitializer(type);
+                    initializer = new IgxScatterChartInitializer(chartType);
                     break;
             }
         }
         if (this.useLegend) {
-            const legendFactory: ComponentFactory<any> = chartType === "Pie" ? this.factoryResolver.resolveComponentFactory(IgxItemLegendComponent) :
+            const legendFactory: ComponentFactory<any> = type === CHART_TYPE.PIE ? this.factoryResolver.resolveComponentFactory(IgxItemLegendComponent) :
                 this.factoryResolver.resolveComponentFactory(IgxLegendComponent);
             const legendComponentRef: ComponentRef<any> = viewContainerRef.createComponent(legendFactory);
             options.chartOptions["legend"] = legendComponentRef.instance;
         }
         this.chartInstance(initializer, componentRef.instance, options);
 
-        return this._chart;
+        this.onChartCreationDone.emit(this._chart);
     }
 
     private chartInstance(initializer: ChartInitializer, chart: any, options?: ChartComponentOptions) {
@@ -271,11 +321,11 @@ export class ChartIntegrationDirective {
 
     private addPieChartDataOptions(options: ChartComponentOptions) {
         options.chartOptions["dataSource"] = this.chartData;
-        options.chartOptions["valueMemberPath"] = this.valueMemberPaths[0];
-        if (!this.labelMemberPath) {
-            options.chartOptions["labelMemberPath"] = this.valueMemberPaths[0];
+        options.chartOptions["valueMemberPath"] = this._valueMemberPaths[0];
+        if (!this._labelMemberPath) {
+            options.chartOptions["labelMemberPath"] = this._valueMemberPaths[0];
         } else {
-            options.chartOptions["labelMemberPath"] = this.labelMemberPath;
+            options.chartOptions["labelMemberPath"] = this._labelMemberPath;
         }
     }
 
@@ -284,7 +334,7 @@ export class ChartIntegrationDirective {
         options.chartOptions["dataSource"] = this.chartData;
         if (stacked) {
             const fragmentOptions: IStackedFragmentOptions[] = [];
-            this.valueMemberPaths.forEach(valueMemberPath => {
+            this._valueMemberPaths.forEach(valueMemberPath => {
                 const tempObj = new Object();
                 tempObj["title"] = valueMemberPath;
                 tempObj["valueMemberPath"] = valueMemberPath;
@@ -293,7 +343,7 @@ export class ChartIntegrationDirective {
             options.stackedFragmentOptions = fragmentOptions;
         } else if (model) {
             const seriesOptions: IChartSeriesOptions[] = [];
-            this.valueMemberPaths.forEach(valueMemberPath => {
+            this._valueMemberPaths.forEach(valueMemberPath => {
                 const tempObj = new Object();
                 tempObj["title"] = valueMemberPath;
                 tempObj["valueMemberPath"] = valueMemberPath;
@@ -308,37 +358,47 @@ export class ChartIntegrationDirective {
         if (model) {
             options.chartOptions["dataSource"] = this.chartData;
             const seriesOptions: IChartSeriesOptions[] = [];
-            this.valueMemberPaths.filter(v => !(v === model["yMemberPath"] || v === model["radiusMemberPath"])).forEach(valueMemberPath => {
+            this._valueMemberPaths.filter(v => !(v === model["yMemberPath"] || v === model["radiusMemberPath"])).forEach(valueMemberPath => {
                 const tempObj = new Object();
                 tempObj["title"] = `${model["yMemberPath"]} vs ${valueMemberPath}`;
                 tempObj["xMemberPath"] = valueMemberPath;
-                tempObj["labelMemberPath"] = this.labelMemberPath;
+                tempObj["labelMemberPath"] = this._labelMemberPath;
                 seriesOptions.push({ ...tempObj, ...model });
             });
             options.seriesOptions = seriesOptions;
         }
     }
 
-    private addMemberPath(dataRecord, selectedRow, path) {
-        dataRecord = { ...{ [path]: selectedRow[path] }, ...dataRecord };
+    private addIndexMemberPath(dataRecord, index) {
+        dataRecord = { ...{ [this._indexMemberPath]: index }, ...dataRecord };
         return dataRecord;
+    }
+
+    private getChartAvailabilityByType(type: string) {
+        const res = [];
+        const arr = this._dataChartTypes.filter(charts => charts.indexOf(type) !== -1);
+        arr.forEach(chart => res.push({ type: chart, available: this.chartTypesAvailability.get(chart) }));
+
+        return res.length === 1 ? res[0] : res;
     }
 
     private setChartOptions() {
         this.chartComponentOptions.forEach((option, chart) => {
             if (chart === "Pie") {
-                option.chartOptions = {...this.pieChartOptions};
+                option.chartOptions = { ...this.pieChartOptions };
             } else if (chart.indexOf("Scatter") !== -1) {
-                option.chartOptions = {...this.dataChartOptions};
-                option.xAxisOptions = {...this.scatterChartXAxisOptions};
-                option.yAxisOptions = {...this.scatterChartYAxisOptions};
+                option.chartOptions = { ...this.dataChartOptions };
+                option.xAxisOptions = { ...this.scatterChartXAxisOptions };
+                option.yAxisOptions = { ...this.scatterChartYAxisOptions };
             } else {
-                option.chartOptions = {...this.dataChartOptions};
-                option.seriesModel = {...this.dataChartSeriesOptionsModel};
+                option.chartOptions = { ...this.dataChartOptions };
+                option.seriesModel = { ...this.dataChartSeriesOptionsModel };
             }
         });
-        this.chartComponentOptions.get("ScatterBubble").seriesModel = {...this.scatterChartSeriesOptionsModel, ...this.bubbleChartSeriesOptionsModel};
-        this.chartComponentOptions.get("ScatterLine").seriesModel = {...this.scatterChartSeriesOptionsModel};
-        this.chartComponentOptions.get("ScatterPoint").seriesModel = {...this.scatterChartSeriesOptionsModel};
+        this._sizeScale.maximumValue = 60;
+        this._sizeScale.minimumValue = 10;
+        this.chartComponentOptions.get("ScatterBubble").seriesModel = { ...this.scatterChartSeriesOptionsModel, ...this.bubbleChartSeriesOptionsModel };
+        this.chartComponentOptions.get("ScatterLine").seriesModel = { ...this.scatterChartSeriesOptionsModel };
+        this.chartComponentOptions.get("ScatterPoint").seriesModel = { ...this.scatterChartSeriesOptionsModel };
     }
 }
