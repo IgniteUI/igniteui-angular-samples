@@ -1,4 +1,5 @@
 import * as fs from "fs";
+// tslint:disable-next-line: no-implicit-dependencies
 import * as fsExtra from "fs-extra";
 import * as path from "path";
 
@@ -27,9 +28,9 @@ class LiveEditingManager {
 
         let logInfo = "";
         if (styleSyntax === StyleSyntax.CSS) {
-            logInfo = "CSS syntax"
+            logInfo = "CSS syntax";
         } else {
-            logInfo = "Sass syntax"
+            logInfo = "Sass syntax";
         }
         console.log("-----------------------------------------------------");
         console.log("Live-Editing - with " + logInfo);

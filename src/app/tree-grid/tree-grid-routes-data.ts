@@ -4,8 +4,6 @@ export const treeGridRoutesData = {
     "tree-grid-row-drag": { displayName: "Tree Grid Row Drag", parentName: "TreeGrid" },
     "tree-grid-multi-row-drag": { displayName: "Tree Grid Multi Row Drag", parentName: "TreeGrid" },
     "tree-grid-row-drag-base": { displayName: "Tree Grid Row Drag - Base", parentName: "TreeGrid" },
-    "treegrid-childdatakey": { displayName: "TreeGrid ChildDataKey", parentName: "TreeGrid" },
-    "treegrid-primaryforeignkey": { displayName: "TreeGrid Primary/Foreign key", parentName: "TreeGrid" },
     "treegrid-row-edit": { displayName: "TreeGrid Row Editing", parentName: "TreeGrid" },
     "treegrid-row-edit-style": { displayName: "TreeGrid Row Edit Style", parentName: "TreeGrid" },
     "treegrid-batchediting": { displayName: "TreeGrid Batch Editing", parentName: "TreeGrid" },

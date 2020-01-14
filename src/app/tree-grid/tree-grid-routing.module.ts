@@ -4,9 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 import {
     TreeGridBatchEditingSampleComponent
 } from "./tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
-import {
-    TreeGridChilddatakeySampleComponent
-} from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import {
     TreeGridColumnHidingSampleComponent
@@ -86,9 +83,6 @@ import {
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
-    TreeGridPrimaryforeignkeySampleComponent
-} from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
-import {
     TreeGridRemoteFilteringSampleComponent
 } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import {
@@ -151,16 +145,6 @@ import {
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 
 export const treeGridRoutes: Routes = [
-    {
-        component: TreeGridChilddatakeySampleComponent,
-        data: treeGridRoutesData["treegrid-childdatakey"],
-        path: "treegrid-childdatakey"
-    },
-    {
-        component: TreeGridPrimaryforeignkeySampleComponent,
-        data: treeGridRoutesData["treegrid-primaryforeignkey"],
-        path: "treegrid-primaryforeignkey"
-    },
     {
         component: TreeGridRowEditSampleComponent,
         data: treeGridRoutesData["treegrid-row-edit"],

@@ -10,6 +10,12 @@ import {
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
 import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
@@ -44,7 +50,6 @@ import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-s
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
-import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
@@ -183,7 +188,6 @@ import { DataService } from "./services/data.service";
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
         GridMultiColumnHeadersStylingComponent,
-        GridComponent,
         PasteHandler,
         GridCustomKBNavigationComponent,
         GridSaveStateComponent,
