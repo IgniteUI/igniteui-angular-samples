@@ -34,7 +34,7 @@ export const samplesRoutes: Routes = [
     {
         data: ["GridsModule"],
         loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
-        path: "grid/grid"
+        path: "grid"
     },
     {
         data: ["HierarchicalGridModule"],

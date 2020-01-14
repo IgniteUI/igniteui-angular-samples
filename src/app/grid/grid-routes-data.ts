@@ -88,6 +88,5 @@ export const gridsRoutesData = {
     "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" },
     "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"},
     "grid-collapsible-groups": { displayName: "Grid Collapsible Column Groups", parentName: "Grid"},
-    "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"},
-    "grid-master-detail": { displayName: "Grid Master Detail", parentName: "Grid" }
+    "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"}
 };

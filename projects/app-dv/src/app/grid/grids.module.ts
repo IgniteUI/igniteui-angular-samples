@@ -39,13 +39,14 @@ import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { DataService } from "../services/data.service";
-// import { GridsRoutingModule } from "./grids-routing.module";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
+import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridsRoutingModule } from "./grids-routing.module";
 
 @NgModule({
     declarations: [
-        GridComponent
+        GridComponent,
+        GridMasterDetailSampleComponent
     ],
     imports: [
         CommonModule,
