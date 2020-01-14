@@ -1,5 +1,5 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-    <igx-grid #grid chartIntegration  conditionalFormatting [chartData]="chartData"
+    <igx-grid #grid chartIntegration  conditionalFormatting [chartData]="chartData" [defaultLabelMemberPath]="'Country'"
          primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
@@ -142,29 +142,39 @@
                     <div class="btn" (click)="clearFormatting()" [ngClass]="{'disableButton': !currentFormatter}">
                         <img style="width: 36px; height: 36px;"
                              src="assets/images/svg/conditions/Clear.svg" />
-                         <span class="name">Clear</span>
+                         <span class="name">Clear all</span>
                     </div> 
                 </div>
             </div>
         </igx-tabs-group>
 
         <igx-tabs-group label="Create Chart" [disabled]="disableCreateChart">
-            <div class="tab-option">
-                <div *ngFor="let chart of previewChartTypes; trackBy: trackByFn" class="action">
-                    <div class="btn chart"
-                        (pointerdown)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
-                        (mouseleave)="chartPreviewDialog.close()" (mouseenter)="previewChart(chart)">
-                        <img style="width: 48px; height: 48px;"
-                            src="assets/images/svg/charts/{{chart}}.svg" />
-                        <span class="name">{{chart}}</span>
+            <div class="tab-options-wrapper">
+                <div class="tab-option">
+                    <div *ngFor="let chart of availableCharts | slice:0:4; trackBy: trackByFn" class="action">
+                        <div class="btn chart"
+                            (pointerdown)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                            (mouseleave)="chartPreviewDialog.close();"
+                            (mouseenter)="previewChart(chart)"
+                            [ngClass]="{'selected': chart === currentChartType}">
+                            <img style="width: 48px; height: 48px;"
+                                 src="assets/images/svg/charts/{{chart}}.svg" />
+                            <span class="name">{{chart | name}}</span>
+                        </div>
+                    </div>
+                    <div class="more-action">
+                        <div class="btn chart">
+                            <button class="more-btn" (click)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
+                                    igxButton="icon"
+                                    igxButtonBackground="#EBEBEB"
+                                    igxButtonColor="black"
+                                    style="width: 36px; height: 36px; border-radius: 50px; align-self: center;">
+                                    <igx-icon class="icon" style="pointer-events: none;" fontSet="material">more_horiz</igx-icon>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <button class="more-btn"
-                    (click)="createChart(currentChartType, chartHost, chartDialog, _chartDialogOverlaySettings)"
-                    igxButton="icon" igxButtonBackground="#EBEBEB" igxButtonColor="black" style="width: 36px; height: 36px; border-radius: 50px; align-self: center;">
-                    <igx-icon class="icon" style="pointer-events: none;" fontSet="material">more_horiz</igx-icon>
-                </button>
-            </div>
+            </div>  
         </igx-tabs-group>
     </igx-tabs>
 </igx-dialog>
@@ -181,8 +191,7 @@
 <igx-dialog #chartDialog class="chart-dialog" [closeOnOutsideSelect]="true">
     <div class="header">
         <span class="header-text">
-            {{currentChartType ? (currentChartType.replace('100', '100% ') | titlecase) : '' }}
-            {{currentChartType | titlecase }} Chart
+            {{ currentChartType.replace('100', ' 100% ') | name | titlecase }} Chart
         </span>
         <div class="action-buttons-wrapper">
             <button igxButton="icon" (click)="toggleFullScreen()">
@@ -207,24 +216,18 @@
                 <span style="font-weight: bold;">Chart Types</span>
             </div>
             <igx-divider class="divider"></igx-divider>
-            <div *ngFor="let chartType of chartTypes" class="wrapper">
-                <div>{{chartType | titlecase}}</div>
-                <div class="types-section">
-                    <div (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
-                        [ngClass]="{'disableButton': chartsToDisable[chart.seriesType + chart.chartType]}"
-                        *ngFor="let chart of (chartType | getChartArgs); trackBy: trackByFn"
-                        style="width: 40%;margin-right: 5px; cursor: pointer;">
-                        <img src="assets/images/svg/charts/{{chart.seriesType}}{{chart.chartType}}.svg" />
+            <div *ngFor="let chartType of chartTypes">
+                <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
+                    <div>{{chartType | titlecase}} Chart</div>
+                    <div class="types-section">
+                        <div *ngFor="let chart of (availableCharts | filterType: chartType); trackBy: trackByFn" 
+                             (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
+                             style="width: 40%; margin-right: 5px; cursor: pointer;"
+                             [ngClass]="{'selected': chart === currentChartType}">
+                            <img src="assets/images/svg/charts/{{chart}}.svg" />
+                        </div>
                     </div>
-                </div>
-                <igx-divider></igx-divider>
-            </div>
-            <div class="wrapper">
-                <div style="text-align: centre;">{{'pie' | titlecase}}</div>
-                <div style="text-align: center">
-                    <div style="width: 50%; cursor: pointer;"
-                        (click)="createChart(pieChartArgs, chartHost, chartDialog, chartDialog)"><img
-                            src="assets/images/svg/charts/Pie.svg"></div>
+                    <igx-divider></igx-divider>
                 </div>
             </div>
         </div>

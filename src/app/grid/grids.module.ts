@@ -62,9 +62,10 @@ import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/gri
 import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
+import { ChartHostDirective, ChartIntegrationDirective } from "./grid-dynamic-chart-data/chart-integration.directive";
 import { ConditionalFormattingDirective } from "./grid-dynamic-chart-data/conditional-formatting.directive";
 import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
-import { ChartArgsPipe, ChartHostDirective, GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
+import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
@@ -133,7 +134,6 @@ import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-te
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
 import { DataService } from "./services/data.service";
-import { ChartIntegrationDirective } from './grid-dynamic-chart-data/chart-integration.directive';
 
 @NgModule({
     declarations: [
@@ -226,13 +226,14 @@ import { ChartIntegrationDirective } from './grid-dynamic-chart-data/chart-integ
         ContextMenuComponent,
         GridMultipleRowDragComponent,
         ChartHostDirective,
-        ChartArgsPipe,
+        NamePipe,
         GridExternalAdvancedFilteringComponent,
         ConditionalFormattingDirective,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
         GridMasterDetailSampleComponent,
-        ChartIntegrationDirective
+        ChartIntegrationDirective,
+        FilterTypePipe
     ],
     imports: [
         CommonModule,

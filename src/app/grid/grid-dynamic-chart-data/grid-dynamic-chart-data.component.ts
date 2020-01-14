@@ -1,49 +1,44 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, ChangeDetectorRef, Component, Directive, ElementRef, EventEmitter, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
 import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IGridCellEventArgs, IGridEditEventArgs, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, ISortingExpression, VerticalAlignment } from "igniteui-angular";
 import { noop } from "rxjs";
 import { debounceTime, filter, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
-import { ChartIntegrationDirective } from "./chart-integration.directive";
+import { ChartHostDirective, ChartIntegrationDirective } from "./chart-integration.directive";
 import { CHART_TYPE } from "./chart-types";
 import { ConditionalFormattingDirective } from "./conditional-formatting.directive";
-import { IChartArgs } from "./context-menu/context-menu.component";
-@Directive({
-    selector: "[chartHost]"
+
+@Pipe({
+    name: "name"
 })
-export class ChartHostDirective {
-    constructor(public viewContainerRef: ViewContainerRef) { }
+export class NamePipe implements PipeTransform {
+    public transform(name: string): string {
+        let res = "";
+        const upperCaseChars = name.match(/[A-Z]{1,}/g);
+        for (let index = 0; index < upperCaseChars.length; index++) {
+          if (!(index === upperCaseChars.length - 1)) {
+            res += name.substring(name.indexOf(upperCaseChars[index]),
+              name.indexOf(upperCaseChars[index + 1])) + " ";
+          } else {
+            res += name.substring(name.indexOf(upperCaseChars[index]));
+          }
+        }
+        return res;
+      }
 }
 
 @Pipe({
-    name: "getChartArgs"
+    name: "filterType"
 })
-export class ChartArgsPipe implements PipeTransform {
-    public transform(value: string): IChartArgs[] {
-        switch (value) {
-            case "Column":
-            case "Area":
-            case "Line":
-            case "Bar":
-                return [
-                    { chartType: value, seriesType: "Grouped" },
-                    { chartType: value, seriesType: "Stacked" },
-                    { chartType: value, seriesType: "100Stacked" }
-                ];
-            case "Scatter":
-                return [
-                    { chartType: value, seriesType: "Bubble" },
-                    { chartType: value, seriesType: "Point" },
-                    { chartType: value, seriesType: "Line" }
-                ];
-        }
-    }
+export class FilterTypePipe implements PipeTransform {
+    public transform(collection: string[], type: string): string[] {
+        return collection.filter(types => types.indexOf(type) !== -1 && types.indexOf(type, type.length - 1) === -1);
+      }
 }
 @Component({
     selector: "app-grid-dynamic-chart-data",
     templateUrl: "./grid-dynamic-chart-data.component.html",
-    styleUrls: ["./grid-dynamic-chart-data.component.scss"],
-    providers: []
+    styleUrls: ["./grid-dynamic-chart-data.component.scss"]
 })
 export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
@@ -194,10 +189,13 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 
         this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
-
                 this.zone.runOutsideAngular(() => {
-
-                    this.chartData = this.grid.getSelectedData();
+                    if (this.grid.getSelectedRanges().length > 1) {
+                        this.disableCreateChart = true;
+                    } else {
+                        this.disableCreateChart = false;
+                        this.chartData = this.grid.getSelectedData();
+                    }
                     this.range = range;
                     this.tabs.tabs.first.isSelected = true;
                     this.formatting.determineFormatters();
@@ -215,17 +213,18 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.chartIntegration.disableCharts(CHART_TYPE.AREA_GROUPED, CHART_TYPE.COLUMN_GROUPED);
 
         this.chartIntegration.onChartTypesDetermined.subscribe(chartTypes => {
+            if (chartTypes.length === 0) {
+                this.disableCreateChart = true;
+            }
+            this.availableCharts = [];
             this.chartIntegration.chartTypesAvailability.forEach((isAvailable, type, map) => {
                 if (chartTypes.indexOf(type) !== -1) {
                     map.set(type, true);
+                    this.availableCharts.push(type);
                 } else {
                     map.set(type, false);
                 }
             });
-        });
-
-        this.chartIntegration.onChartCreationDone.subscribe(chart => {
-            console.log(chart);
         });
     }
 
@@ -237,14 +236,8 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     public chartTypesMenuX;
     public chartTypesMenuY;
 
-    public previewChartTypes = [CHART_TYPE.COLUMN_GROUPED, CHART_TYPE.AREA_GROUPED, CHART_TYPE.LINE_GROUPED, CHART_TYPE.BAR_GROUPED];
-
-    public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter"];
-
-    public pieChartArgs: IChartArgs = {
-        chartType: "Pie",
-        seriesType: undefined
-    };
+    public availableCharts: CHART_TYPE[] = [];
+    public chartTypes = ["Column", "Area", "Bar", "Line", "Scatter", "Pie"];
 
     public toggleChartSelectionDialog(event) {
 
@@ -289,6 +282,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
     }
 
     public createChart(type: CHART_TYPE, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
+
         const chartHost = host;
         const dialogToOpen = dialog;
         const dialogOverlaySettings = overlaySettings;

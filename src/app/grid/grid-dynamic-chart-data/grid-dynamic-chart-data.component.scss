@@ -119,6 +119,10 @@
 
 }
 
+.selected {
+    opacity: .5;
+}
+
 .disableButton {
     opacity: .4;
     pointer-events: none;
@@ -161,6 +165,11 @@
     align-content: center;
 }
 
+.more-action{
+    display: flex;
+    align-items: center;
+}
+
 .action {
     cursor: pointer;
 
@@ -169,28 +178,28 @@
         font-weight: 400;
         text-align: center;
     }
+}
 
-    .btn {
+.btn {
 
-        &.condition {
-            padding-right: 16px;
-        }
+    &.condition {
+        padding-right: 16px;
+    }
 
-        &.chart {
-            padding-right: 24px;
-        }
+    &.chart {
+        padding-right: 24px;
+    }
 
-        display: inline-flex;
-        flex-flow: column;
-        align-items: center;
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
 
-        img{
-            pointer-events: none;
-        }
+    img{
+        pointer-events: none;
+    }
 
-        span {
-            pointer-events: none;
-        }
+    span {
+        pointer-events: none;
     }
 }
 
