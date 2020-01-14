@@ -1,12 +1,12 @@
 // tslint:disable: max-line-length
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IGridCellEventArgs, IGridEditEventArgs, IgxCardComponent, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxIconService, IgxOverlayOutletDirective, IgxTabsComponent, ISortingExpression, VerticalAlignment } from "igniteui-angular";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, NgZone, OnInit, Pipe, PipeTransform, ViewChild } from "@angular/core";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IGridCellEventArgs, IGridEditEventArgs, IgxDialogComponent, IgxGridCellComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { noop } from "rxjs";
 import { debounceTime, filter, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
-import { ChartHostDirective, ChartIntegrationDirective } from "./chart-integration.directive";
-import { CHART_TYPE } from "./chart-types";
-import { ConditionalFormattingDirective } from "./conditional-formatting.directive";
+import { ChartHostDirective, ChartIntegrationDirective } from "./directives/chart-integration/chart-integration.directive";
+import { CHART_TYPE } from "./directives/chart-integration/chart-types";
+import { ConditionalFormattingDirective } from "./directives/conditional-formatting/conditional-formatting.directive";
 
 @Pipe({
     name: "name"

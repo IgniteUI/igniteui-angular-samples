@@ -62,9 +62,8 @@ import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/gri
 import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
-import { ChartHostDirective, ChartIntegrationDirective } from "./grid-dynamic-chart-data/chart-integration.directive";
-import { ConditionalFormattingDirective } from "./grid-dynamic-chart-data/conditional-formatting.directive";
-import { ContextMenuComponent } from "./grid-dynamic-chart-data/context-menu/context-menu.component";
+import { ChartHostDirective, ChartIntegrationDirective } from "./grid-dynamic-chart-data/directives/chart-integration/chart-integration.directive";
+import { ConditionalFormattingDirective } from "./grid-dynamic-chart-data/directives/conditional-formatting/conditional-formatting.directive";
 import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
@@ -223,7 +222,6 @@ import { DataService } from "./services/data.service";
         GridCellSelectionComponent,
         GridConditionalRowSelectorsComponent,
         GridDynamicChartDataComponent,
-        ContextMenuComponent,
         GridMultipleRowDragComponent,
         ChartHostDirective,
         NamePipe,
