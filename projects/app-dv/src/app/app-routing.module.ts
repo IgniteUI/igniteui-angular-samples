@@ -26,11 +26,11 @@ export const samplesRoutes: Routes = [
         loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
         path: "treegrid-finjs-sample"
     },
-    // {
-    //     data: ["TreeGridModule"],
-    //     loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridModule),
-    //     path: "tree-grid"
-    // },
+    {
+        data: ["TreeGridModule"],
+        loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridModule),
+        path: "tree-grid"
+    },
     {
         data: ["GridsModule"],
         loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
