@@ -35,12 +35,12 @@ export const samplesRoutes: Routes = [
         data: ["GridsModule"],
         loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
         path: "grid/grid"
+    },
+    {
+        data: ["HierarchicalGridModule"],
+        loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridModule),
+        path: "hierarchical-grid"
     }
-    // {
-    //     data: ["HierarchicalGridModule"],
-    //     loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridModule),
-    //     path: "hierarchical-grid"
-    // }
 ];
 export const appRoutes: Routes = [
     {
