@@ -18,7 +18,9 @@
     "build": "gulp generate-live-editing && gulp overwrite-package-json && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --aot=true --vendor-source-map=false --progress=true",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:app-dv": "ng serve app-dv",
+    "start:app-dv:live-editing": "gulp generate-live-editing && ng serve app-dv --configuration es5 -o --progress=true"
   },
   "repository": {
     "type": "git",

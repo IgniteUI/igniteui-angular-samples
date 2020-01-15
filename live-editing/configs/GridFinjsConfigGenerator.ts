@@ -13,8 +13,8 @@ import {
     IgxToggleModule
 } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
-import { FinJSDemoComponent } from "../../src/app/grid-finjs/grid-finjs-demo.component";
-import { LocalDataService } from "../../src/app/grid-finjs/localData.service";
+import { FinJSDemoComponent } from "../../projects/app-dv/src/app/grid-finjs/grid-finjs-demo.component";
+import { LocalDataService } from "../../projects/app-dv/src/app/grid-finjs/localData.service";
 import { DependenciesType } from "../services/DependenciesType";
 import { AppModuleConfig } from "./core/AppModuleConfig";
 import { Config } from "./core/Config";
@@ -27,8 +27,8 @@ export class GridFinjsConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: FinJSDemoComponent,
             dependenciesType: DependenciesType.Charts,
-            additionalFiles: ["/src/app/grid-finjs/localData.service.ts",
-                "/src/app/grid/services/financialData.ts"],
+            additionalFiles: ["/projects/app-dv/src/app/grid-finjs/localData.service.ts",
+                "/projects/app-dv/src/app/services/financialData.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxCategoryChartModule,
                     IgxGridModule, IgxButtonGroupModule, IgxIconModule, IgxSliderModule, IgxToggleModule,

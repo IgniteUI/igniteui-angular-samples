@@ -13,7 +13,7 @@
           "options": {
             "aot": true,
             "sourceMap": false,
-            "outputPath": "dist",
+            "outputPath": "dist/app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -197,6 +197,15 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "es5": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "tsConfig": "projects/app-dv/tsconfig-es5.app.json"
             }
           }
         },
@@ -208,6 +217,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app-dv:build:production"
+            },
+            "es5": {
+              "browserTarget": "app-dv:build:es5"
             }
           }
         },
