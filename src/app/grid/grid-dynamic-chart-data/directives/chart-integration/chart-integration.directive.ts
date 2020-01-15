@@ -37,10 +37,12 @@ import {
     IXAxesOptions,
     IYAxesOptions
 } from "./initializers";
-export interface IChartArgs {
-    chartType: string;
-    seriesType: string;
+
+export interface IDeterminedChartTypesArgs {
+    availableCharts: Map<CHART_TYPE, boolean>;
+    chartsForCreation: CHART_TYPE[];
 }
+
 @Directive({
     selector: "[chartHost]"
 })
@@ -57,12 +59,20 @@ export class ChartIntegrationDirective {
     }
 
     public set chartData(selectedData: any[]) {
-        let chartsForCreation = this._dataChartTypes;
+        const chartsForCreation = new Set(this._dataChartTypes);
+
         if (selectedData.length === 0) {
-            this.onChartTypesDetermined.emit([]);
+            this.onChartTypesDetermined.emit(undefined);
             return;
         } else if (selectedData.length === 1) {
-            chartsForCreation = this._dataChartTypes.filter(chart => chart.indexOf("Column") !== - 1 || chart.indexOf("Bar") !== -1 || chart.indexOf("Pie") !== -1);
+            chartsForCreation.forEach((chart, _, set) => {
+                const isColumnChart = chart.indexOf("Column") !== -1;
+                const isBarChart = chart.indexOf("Bar") !== -1;
+                const isPieChart = chart.indexOf("Pie") !== -1;
+                if (!(isColumnChart || isBarChart || isPieChart)) {
+                    set.delete(chart);
+                }
+            });
         }
 
         this._chartData = selectedData.map((dataRecord, index) => this.addIndexMemberPath(dataRecord, index + 1));
@@ -71,10 +81,18 @@ export class ChartIntegrationDirective {
 
         this._labelMemberPaths = Object.keys(dataModel).filter(key => typeof dataModel[key] === "string");
         this._valueMemberPaths = Object.keys(dataModel).filter(key => typeof dataModel[key] === "number");
+
         if (this._valueMemberPaths.length === 0) {
-            this.onChartTypesDetermined.emit([]);
+            this.onChartTypesDetermined.emit(undefined);
             return;
         }
+
+        const cannotCreatePieChart = selectedData.some(record => record[this._valueMemberPaths[0]] <= 0);
+
+        if (cannotCreatePieChart) {
+            chartsForCreation.delete(CHART_TYPE.PIE);
+        }
+
         // Label member paths config
         if (this.defaultLabelMemberPath) {
             this._labelMemberPath = this._labelMemberPaths.indexOf(this.defaultLabelMemberPath) !== -1 ? this.defaultLabelMemberPath : this._indexMemberPath;
@@ -99,7 +117,9 @@ export class ChartIntegrationDirective {
                 });
             }
         } else {
-            chartsForCreation = chartsForCreation.filter(chart => chart.indexOf("Scatter") === -1);
+            chartsForCreation.delete(CHART_TYPE.SCATTER_BUBBLE);
+            chartsForCreation.delete(CHART_TYPE.SCATTER_LINE);
+            chartsForCreation.delete(CHART_TYPE.SCATTER_POINT);
         }
 
         if (canCreateBubbleChart) {
@@ -109,13 +129,20 @@ export class ChartIntegrationDirective {
                 this.chartComponentOptions.get("ScatterBubble").seriesModel["radiusMemberPath"] = this._valueMemberPaths[1];
             }
         } else {
-            chartsForCreation =  chartsForCreation.filter(chart => chart.indexOf("ScatterBubble") === -1);
+            chartsForCreation.delete(CHART_TYPE.SCATTER_BUBBLE);
         }
-        this.onChartTypesDetermined.emit(chartsForCreation);
+
+        const args: IDeterminedChartTypesArgs = {
+            availableCharts: this.chartTypesAvailability,
+            chartsForCreation: [...chartsForCreation]
+        };
+
+        this.onChartTypesDetermined.emit(args);
+
     }
 
     @Output()
-    public onChartTypesDetermined = new EventEmitter<string[]>();
+    public onChartTypesDetermined = new EventEmitter<IDeterminedChartTypesArgs | undefined>();
 
     @Output()
     public onChartCreationDone = new EventEmitter<any>();
@@ -150,8 +177,20 @@ export class ChartIntegrationDirective {
         return this._bubbleChartRadiusMemberPath;
     }
 
+    public getAvailableCharts() {
+        const res = [];
+        this.chartTypesAvailability.forEach((isAvailable, chartType) => {
+            if (isAvailable) {
+                res.push(chartType);
+            }
+        });
+        return res;
+    }
+
     public chartComponentOptions = new Map<string, ChartComponentOptions>();
-    public chartTypesAvailability = new Map<CHART_TYPE, boolean>();
+
+    private chartTypesAvailability = new Map<CHART_TYPE, boolean>();
+
     private dataCharts = new Map<string, Type<any>>();
 
     private _scatterChartYAxisValueMemberPath = undefined;
@@ -162,8 +201,18 @@ export class ChartIntegrationDirective {
     private _labelMemberPaths: string[] = [];
     private _valueMemberPaths = [];
     private _chartData: any[];
-    private _dataChartTypes = [];
+    private _dataChartTypes = new Set<CHART_TYPE>();
     private _sizeScale = new IgxSizeScaleComponent();
+
+    private _availableCharts: Set<CHART_TYPE> = new Set();
+
+    private set availableCharts(types: CHART_TYPE[]) {
+        types.forEach((chartType) => {
+            if (this.chartTypesAvailability.get(chartType)) {
+                this._availableCharts.add(chartType);
+            }
+        });
+    }
 
     private pieChartOptions: IChartOptions = {
         width: "85%",
@@ -230,7 +279,7 @@ export class ChartIntegrationDirective {
 
         iterable = this.dataCharts.keys();
         for (let head = iterable.next().value; head !== undefined; head = iterable.next().value) {
-            this._dataChartTypes.push(head);
+            this._dataChartTypes.add(head);
         }
 
         [...this._dataChartTypes].forEach(type => {
@@ -243,10 +292,9 @@ export class ChartIntegrationDirective {
 
     public disableCharts(...types: CHART_TYPE[]) {
         types.forEach(type => {
-            if (this.chartTypesAvailability.has(type)) {
-                this.chartTypesAvailability.set(type, false);
-            }
+            this.chartTypesAvailability.set(type, false);
         });
+        this.availableCharts = types;
     }
 
     public chartFactory(type: CHART_TYPE, viewContainerRef: ViewContainerRef) {
@@ -332,9 +380,9 @@ export class ChartIntegrationDirective {
     }
 
     private addPieChartDataOptions(options: ChartComponentOptions) {
-      options.chartOptions["dataSource"] = this._chartData;
-      options.chartOptions["valueMemberPath"]  = this._valueMemberPaths[0];
-      options.chartOptions["labelMemberPath"] = this._labelMemberPath;
+        options.chartOptions["dataSource"] = this._chartData;
+        options.chartOptions["valueMemberPath"] = this._valueMemberPaths[0];
+        options.chartOptions["labelMemberPath"] = this._labelMemberPath;
     }
 
     private addDataChartDataOptions(options: ChartComponentOptions, stacked: boolean) {
@@ -384,7 +432,7 @@ export class ChartIntegrationDirective {
 
     private getChartAvailabilityByType(type: string) {
         const res = [];
-        const arr = this._dataChartTypes.filter(charts => charts.indexOf(type) !== -1);
+        const arr = [...this._dataChartTypes].filter(charts => charts.indexOf(type) !== -1);
         arr.forEach(chart => res.push({ type: chart, available: this.chartTypesAvailability.get(chart) }));
 
         return res.length === 1 ? res[0] : res;

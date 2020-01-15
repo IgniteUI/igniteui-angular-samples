@@ -4,7 +4,7 @@ import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IGridCe
 import { noop } from "rxjs";
 import { debounceTime, filter, tap } from "rxjs/operators";
 import { FinancialData } from "../services/financialData";
-import { ChartHostDirective, ChartIntegrationDirective } from "./directives/chart-integration/chart-integration.directive";
+import { ChartHostDirective, ChartIntegrationDirective, IDeterminedChartTypesArgs } from "./directives/chart-integration/chart-integration.directive";
 import { CHART_TYPE } from "./directives/chart-integration/chart-types";
 import { ConditionalFormattingDirective } from "./directives/conditional-formatting/conditional-formatting.directive";
 
@@ -190,7 +190,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.grid.onRangeSelection.pipe(tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(200))
             .subscribe(range => {
                 this.zone.runOutsideAngular(() => {
-                    if (this.grid.getSelectedRanges().length > 1) {
+                    const areAllRangesUnderSameColumns = this.grid.getSelectedRanges().every(r => (r.columnEnd === range.columnEnd && r.columnStart === range.columnStart) ||
+                                                                                                   r.rowEnd === range.rowEnd && r.rowStart === range.rowStart);
+                    if (!areAllRangesUnderSameColumns) {
                         this.disableCreateChart = true;
                     } else {
                         this.disableCreateChart = false;
@@ -210,21 +212,19 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         this.grid.headerContainer.getScroll().onscroll = () => this.range ? horizontalScroll.emit(true) : horizontalScroll.emit(false);
         horizontalScroll.pipe(filter((value) => value), tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(250)).subscribe(() => { this.renderButton(); });
 
-        this.chartIntegration.disableCharts(CHART_TYPE.AREA_GROUPED, CHART_TYPE.COLUMN_GROUPED);
-
-        this.chartIntegration.onChartTypesDetermined.subscribe(chartTypes => {
-            if (chartTypes.length === 0) {
+        this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
+            if (!args) {
                 this.disableCreateChart = true;
+            } else {
+                args.availableCharts.forEach((isAvailable, chart, map) => {
+                    if (args.chartsForCreation.indexOf(chart) === -1) {
+                        map.set(chart, false);
+                    } else {
+                        map.set(chart, true);
+                    }
+                });
+                this.availableCharts = this.chartIntegration.getAvailableCharts();
             }
-            this.availableCharts = [];
-            this.chartIntegration.chartTypesAvailability.forEach((isAvailable, type, map) => {
-                if (chartTypes.indexOf(type) !== -1) {
-                    map.set(type, true);
-                    this.availableCharts.push(type);
-                } else {
-                    map.set(type, false);
-                }
-            });
         });
     }
 

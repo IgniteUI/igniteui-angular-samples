@@ -203,14 +203,19 @@
     }
 }
 
-.clear{
+.clear, .more-action{
     display: flex;
     flex-flow: column;
     justify-content: center;
     border-left: 1px solid #BDBDBD;
-    .btn{
+    .btn, .more-btn {
         width: 68px;
         margin: 0 0 7px 0;
         padding: 0;
+    }
+    .name {
+        font-size: .9rem;
+        font-weight: 400;
+        text-align: center;
     }
 }
