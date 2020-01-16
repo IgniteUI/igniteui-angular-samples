@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { AfterViewInit, ChangeDetectorRef, Component, Directive, HostListener, OnDestroy, OnInit, Pipe, PipeTransform, ViewChild, ViewContainerRef } from "@angular/core";
-import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IGridEditEventArgs, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
+import { AutoPositionStrategy, CloseScrollStrategy, HorizontalAlignment, IgxDialogComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxTabsComponent, VerticalAlignment } from "igniteui-angular";
 import { IgxSizeScaleComponent } from "igniteui-angular-charts/ES5/igx-size-scale-component";
 import { noop, Subject } from "rxjs";
 import { debounceTime, takeUntil, tap } from "rxjs/operators";
@@ -165,7 +165,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
                 }
                 this.range = range;
                 this.tabs.tabs.first.isSelected = true;
-                this.formatting.determineFormatters();
                 this.renderButton();
             });
     }
@@ -186,24 +185,6 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
             }
         });
         this.formatting.onFormattersReady.pipe(takeUntil(this.destroy$)).subscribe(names => this.formattersNames = names);
-        this.grid.onCellClick
-        .pipe(takeUntil(this.destroy$))
-        .subscribe(() => {
-            this.range = undefined;
-            this.contextmenu = false;
-        });
-        this.grid.onCellEdit.subscribe((args: IGridEditEventArgs) => {
-            if (this.formatting.range && this.currentFormatter) {
-                if ((args.newValue === args.oldValue)) { return; } // why was necessary to cancel the event
-                if (this.isCellWithinRange(args.cellID, this.formatting.range)) {
-                    // Promise.resolve().then(() => { // why do we need promise
-                        this.grid.selectRange(this.formatting.range);
-                        this.formatting.ensureValues();
-                        this.formatting.formatCells(this.currentFormatter);
-                    // });
-                }
-            }
-        });
         this.grid.onDataPreLoad.pipe(
             tap(() => this.contextmenu ? this.disableContextMenu() : noop()),
             debounceTime(250),
@@ -265,19 +246,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
     public formattersNames = [];
 
-    public analyse(type) {
-        this.formatting.range = this.range;
-        this.currentFormatter = type;
-        this.formatting.formatCells(this.currentFormatter);
-    }
-
-    public clearFormatting() {
-        this.formatting.clearFormatting();
-        this.currentFormatter = undefined;
-    }
-
     public createChart(type: CHART_TYPE, host: ChartHostDirective, dialog: IgxDialogComponent, overlaySettings: any) {
-
         const chartHost = host;
         const dialogToOpen = dialog;
         const dialogOverlaySettings = overlaySettings;
@@ -306,6 +275,15 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
             event.target.className.indexOf("tab-option") === -1) {
             this.disableContextMenu();
         }
+    }
+
+    public analyse(condition) {
+        this.currentFormatter = condition;
+        this.formatting.formatCells(condition);
+    }
+
+    public clearFormatting() {
+        this.formatting.clearFormatting();
     }
 
     public toggle() {
@@ -353,12 +331,7 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
         }
         this.contextmenuX = cell.element.nativeElement.getClientRects()[0].right;
         this.contextmenuY = cell.element.nativeElement.getClientRects()[0].bottom;
-        this.contextmenu = this.isCellWithinRange(cell.cellID, this.range);
+        this.contextmenu = this.formatting.isWithInRange(cell.rowIndex, cell.visibleColumnIndex);
         this.cdr.detectChanges();
-    }
-
-    private isCellWithinRange(cellID, range) {
-        return cellID.columnID - 1 >= range.columnStart && cellID.columnID - 1 <= range.columnEnd &&
-        cellID.rowIndex >= range.rowStart && cellID.rowIndex <= range.rowEnd;
     }
 }

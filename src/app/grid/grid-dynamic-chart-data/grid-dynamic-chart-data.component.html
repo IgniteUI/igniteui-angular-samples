@@ -1,5 +1,5 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-    <igx-grid #grid chartIntegration  conditionalFormatting [chartData]="chartData" [defaultLabelMemberPath]="'Country'"
+    <igx-grid #grid chartIntegration  conditionalFormatting [formatter]="currentFormatter" [chartData]="chartData" [defaultLabelMemberPath]="'Country'"
          primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
@@ -12,10 +12,8 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='Start(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
-
         <igx-column field='Start(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -23,10 +21,8 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='Buy' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
-
         <igx-column field='BuyDiff' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -34,10 +30,8 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='High(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
-
         <igx-column field='High(Y)Diff' [width]="'120px'" dataType="number" [formatter]="formatCurrency"
             [editable]="true">
             <ng-template igxCell let-cell="cell">
@@ -46,7 +40,6 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='Open Price' dataType="number" [formatter]="formatCurrency" [editable]="true"
             [width]="'130px'">
             <ng-template igxCell let-cell="cell">
@@ -55,7 +48,6 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='OpenPriceDiff' dataType="number" [width]="'140px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -63,10 +55,8 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='Low(Y)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
-
         <igx-column field='Low(Y)Diff' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -74,11 +64,9 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='High(D)' [width]="'100px'" dataType="number" [headerClasses]="'headerAlignSyle'"
             [editable]="true" [formatter]="formatCurrency">
         </igx-column>
-
         <igx-column field='High(D)Diff' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -86,10 +74,8 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='Low(D)' [width]="'100px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
-
         <igx-column field='Low(D)Diff' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
@@ -97,10 +83,8 @@
                 </div>
             </ng-template>
         </igx-column>
-
         <igx-column field='Sell' [width]="'110px'" dataType="number" [formatter]="formatCurrency" [editable]="true">
         </igx-column>
-
         <igx-column field='SellDiff' dataType="number" [width]="'120px'" [editable]="true">
             <ng-template igxCell let-cell="cell">
                 <div class="finjs-icons">
