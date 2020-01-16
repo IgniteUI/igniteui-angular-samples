@@ -1,13 +1,17 @@
-import {  Directive, EventEmitter, Inject, NgZone, Output } from "@angular/core";
-import { IgxColumnComponent, IgxGridComponent } from "igniteui-angular";
-import { GridSelectionRange } from "igniteui-angular/lib/grids/selection/selection.service";
+import { AfterViewInit, Directive, EventEmitter, Inject, Input, OnDestroy, Output } from "@angular/core";
+import { IgxGridComponent } from "igniteui-angular";
+import { Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
 
-export enum CellFormatType {
-    NUMERIC = "number",
-    TEXT = "string",
-    COMPOSITE = "composite"
+export enum ConditionalFormatingType {
+    dataBars = "Data Bars",
+    colorScale = "Color Scale",
+    top10 = "Top 10",
+    textContains = "Text Contains",
+    single = "Duplicate Values",
+    unique = "Unique Values",
+    empty = "Empty"
 }
-
 export interface IFormatColors {
     success: string;
     error: string;
@@ -19,17 +23,35 @@ export interface IFormatColors {
 @Directive({
     selector: "[conditionalFormatting]"
 })
-export class ConditionalFormattingDirective {
+export class ConditionalFormattingDirective implements AfterViewInit, OnDestroy {
 
-    public set range(range: GridSelectionRange) {
-        if (range) {
-            this._range = range;
-            this.ensureValues();
-        }
+    public formatedRange: Map<number, Set<number>> = new Map<number, Set<number>>();
+
+    @Input()
+    public formatter: string | ConditionalFormatingType;
+
+    @Input()
+    public set formatColors(val: IFormatColors)  {
+        this._formatColors = val;
     }
 
-    public get range() {
-        return this._range;
+    public get formatColors() {
+        return this._formatColors;
+    }
+
+    public get selectedData() {
+        if (!this._selectedData.length) {
+            this._selectedData = this.toArray(this.grid.getSelectedData());
+        }
+        return this._selectedData;
+    }
+
+    public get textData() {
+        return this.selectedData.filter(val => typeof val === "string");
+    }
+
+    public get numericData() {
+        return this.selectedData.filter(val => typeof val === "number");
     }
 
     @Output()
@@ -37,27 +59,27 @@ export class ConditionalFormattingDirective {
 
     public colorScale = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (!(typeof cellValue === "number" && this.isWithingRange(rowIndex))) { return; }
-            return this._errorValue >= cellValue ? this._formatColors.error :
-                this._warnValue >= cellValue ? this._formatColors.warning :  this._formatColors.success;
+            if (!(typeof cellValue === "number" && this.isWithInRange(rowIndex, colname))) { return; }
+            return this.lowTresholdValue >= cellValue ? this.formatColors.error :
+                this.middleTresholdValue >= cellValue ? this.formatColors.warning :  this.formatColors.success;
         }
     };
 
     public dataBars = {
         backgroundImage: (rowData, colname, cellValue, rowIndex) => {
-            if (!(typeof cellValue === "number" && this.isWithingRange(rowIndex))) { return; }
-            const treshold = this.setTreshold(this._minValue);
+            if (!(typeof cellValue === "number" && this.isWithInRange(rowIndex, colname))) { return; }
+            const treshold = this.threshold;
             let gradientPercents;
             if (cellValue < 0) {
                 const negativeStartingPoint = 100 - treshold;
                 gradientPercents = this.getNegativePercentage(cellValue);
                 return `linear-gradient(to left, transparent 0% ${negativeStartingPoint}%,
-                    ${ this._formatColors.error} ${negativeStartingPoint}% ${negativeStartingPoint + gradientPercents}%,
+                    ${ this.formatColors.error} ${negativeStartingPoint}% ${negativeStartingPoint + gradientPercents}%,
                     transparent ${gradientPercents}% 100%)`;
             } else {
                 gradientPercents = this.getPositivePercentage(cellValue);
                 return `linear-gradient(to right, transparent 0% ${treshold}%,
-                    ${ this._formatColors.success} ${treshold}% ${treshold + gradientPercents}%,
+                    ${ this.formatColors.success} ${treshold}% ${treshold + gradientPercents}%,
                     transparent ${treshold + gradientPercents}% 100%)`;
             }
         },
@@ -68,89 +90,89 @@ export class ConditionalFormattingDirective {
 
     public top10Percent = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithingRange(rowIndex) && cellValue > this._top10Value) {
-                return  this._formatColors.info;
+            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+                && cellValue > this.top10PercentTreshold) {
+                return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithingRange(rowIndex) && cellValue > this._top10Value) {
-                return  this._formatColors.text;
+            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+                && cellValue > this.top10PercentTreshold) {
+                return  this.formatColors.text;
             }
         }
     };
 
     public greaterThan = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
-                return  this._formatColors.info;
+            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+            && cellValue > this.avgValue) {
+                return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "number" && this.isWithingRange(rowIndex) && cellValue > this._averageValue) {
-                return  this._formatColors.text;
+            if (typeof cellValue === "number" && this.isWithInRange(rowIndex, colname)
+            && cellValue > this.avgValue) {
+                return  this.formatColors.text;
             }
         }
     };
 
     public empty = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex) && cellValue === undefined) {
-                return  this._formatColors.info;
+            if (this.isWithInRange(rowIndex, colname) && cellValue === undefined) {
+                return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex) && cellValue === undefined) {
-                return  this._formatColors.text;
+            if (this.isWithInRange(rowIndex, colname) && cellValue === undefined) {
+                return  this.formatColors.text;
             }
         }
     };
 
     public duplicates = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex)) {
-                const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this._formatColors.info : "";
-            }
+            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.info : "";
+
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex)) {
-                const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this._formatColors.text : "";
-            }
+            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) !== arr.lastIndexOf(cellValue) ?  this.formatColors.text : "";
         }
     };
 
     public textContains = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "string" && this.isWithingRange(rowIndex) &&
-            cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
-                return  this._formatColors.info;
+            if (typeof cellValue === "string" && this.isWithInRange(rowIndex, colname) &&
+                cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
+                return  this.formatColors.info;
             }
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (typeof cellValue === "string" && this.isWithingRange(rowIndex) &&
-            cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
-                return  this._formatColors.text;
+            if (typeof cellValue === "string" && this.isWithInRange(rowIndex, colname) &&
+                cellValue.toLowerCase().indexOf(this._valueForComparison.toLowerCase()) !== -1) {
+                return  this.formatColors.text;
             }
         }
     };
 
     public uniques = {
         backgroundColor: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex)) {
-                const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this._formatColors.info : "";
-            }
+            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.info : "";
         },
         color: (rowData, colname, cellValue, rowIndex) => {
-            if (this.isWithingRange(rowIndex)) {
-                const arr: any[] = typeof cellValue === "number" ? this._numericData : this._textData;
-                return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this._formatColors.text : "";
-            }
+            if (!this.isWithInRange(rowIndex, colname)) { return; }
+            const arr: any[] = typeof cellValue === "number" ? this.numericData : this.textData;
+            return arr.indexOf(cellValue) === arr.lastIndexOf(cellValue) ?  this.formatColors.text : "";
         }
     };
 
-    private formatType;
     private _formatColors: IFormatColors = {
         success: "#4EB862",
         error: "#FF134A",
@@ -161,136 +183,141 @@ export class ConditionalFormattingDirective {
     private _numericFormatters = ["Data Bars", "Color Scale", "Top 10", "Greater Than"];
     private _textFormatters = ["Text Contains"];
     private _commonFormattersName = ["Duplicate Values", "Unique Values", "Empty"];
+    private _selectedData = [];
     private _minValue;
-    private _top10Value;
-    private _errorValue;
-    private _warnValue;
-    private _averageValue;
-    private _range: GridSelectionRange;
     private _maxValue;
-    private _selectedData;
-    private _numericData;
-    private _textData;
+    private _startColumn;
+    private _endColumn;
     private _valueForComparison;
     private _formattersData = new Map<string, any>();
+    private destroy$ = new Subject<any>();
 
-    constructor(@Inject(IgxGridComponent) public grid: IgxGridComponent, private zone: NgZone) {
+    constructor(@Inject(IgxGridComponent) public grid: IgxGridComponent) {
         this._formattersData.set("Data Bars", this.dataBars);
         this._formattersData.set("Color Scale", this.colorScale);
-        this._formattersData.set("Greater Than", this.greaterThan);
         this._formattersData.set("Top 10", this.top10Percent);
+        this._formattersData.set("Greater Than", this.greaterThan);
         this._formattersData.set("Text Contains", this.textContains);
         this._formattersData.set("Duplicate Values", this.duplicates);
         this._formattersData.set("Unique Values", this.uniques);
         this._formattersData.set("Empty", this.empty);
     }
 
-    public formatCells(formatterName) {
+    public ngAfterViewInit(): void {
+        this.grid.onCellClick.pipe(takeUntil(this.destroy$)).subscribe(() => {
+            this.resetRange();
+        });
+        this.grid.onRangeSelection.pipe(takeUntil(this.destroy$)).subscribe(() => {
+            this.resetRange();
+            this.determineFormatters();
+        });
+        this.grid.onCellEdit.pipe(takeUntil(this.destroy$)).subscribe((args: any) => {
+            if ((args.newValue === args.oldValue || !this.formatter)) { return; }
+            if (this.isWithInRange(args.cellID.rowIndex, args.cellID.columnID - 1)) {
+                const value = Number(args.newValue);
+                this.selectedData.push(!Number.isNaN(value) && Number.isFinite(value) ? value : args.newValue);
+                this.recalcCachedValues();
+                this.formatCells(this.formatter);
+            }
+        });
+    }
+
+    public ngOnDestroy(): void {
+        this.destroy$.next(true);
+        this.destroy$.complete();
+    }
+
+    public addToCache(rowIndex, colIndex) {
+        this.formatedRange.has(rowIndex) ? this.formatedRange.get(rowIndex).add(colIndex) :
+        this.formatedRange.set(rowIndex, new Set<number>()).get(rowIndex).add(colIndex);
+    }
+
+    public formatCells(formatterName, formatRange?: []) {
+        if (formatRange) {this.resetRange(formatRange); }
         this.clearFormatting();
-        const formatter = this._formattersData.get(formatterName);
-        const formatType = this._numericFormatters.indexOf(formatterName) !== -1 ? CellFormatType.NUMERIC :
-            this._textFormatters.indexOf(formatterName) !== - 1 ? CellFormatType.TEXT : CellFormatType.COMPOSITE;
+        this.formatter = formatterName;
         this.grid.visibleColumns.forEach(c => {
-            if (c.visibleIndex >= this.range.columnStart && c.visibleIndex <= this.range.columnEnd) {
-                this.applyFormatting(c, formatType, formatter);
+            if (c.visibleIndex >= this._startColumn && c.visibleIndex <= this._endColumn) {
+                c.cellStyles = this._formattersData.get(this.formatter);
+                this.grid.notifyChanges();
             }
         });
     }
 
     public clearFormatting() {
-        // should clear the style for the cells inside the selected range ????
+        this.formatter = undefined;
         this.grid.visibleColumns.forEach(c => {
             c.cellStyles = undefined;
             this.grid.cdr.detectChanges();
         });
     }
 
-    public ensureValues() {
-        const selectedData = this.toArray(this.grid.getSelectedData());
-        this.zone.runOutsideAngular(() => {
-            this._numericData = selectedData.filter(value => typeof value === "number");
-            this._textData = selectedData.filter(value => typeof value === "string");
-            if (this._numericData.length === 0) {
-                this.formatType = CellFormatType.TEXT;
-                this._valueForComparison = this._textData[0];
-            } else if (this._textData.length === 0) {
-                this.formatType = CellFormatType.NUMERIC;
-                this.recalcValues();
-            } else {
-                this.formatType = CellFormatType.COMPOSITE;
-                this._valueForComparison = this._textData[0];
-                this.recalcValues();
-            }
-        });
-    }
-
     public determineFormatters() {
-        const selectedData = this.toArray(this.grid.getSelectedData());
-        const hasNumericValues = selectedData.some((val) => typeof val === "number");
-        const hasTextData = selectedData.some((val) => typeof val === "string");
-
-        if (!hasNumericValues && hasTextData) {
-            this._commonFormattersName.splice(0, 0, ...this._textFormatters);
-        } else if (hasNumericValues && !hasTextData) {
-            this._commonFormattersName.splice(0, 0, ...this._numericFormatters);
+        const formatters =  Array.of(...this._commonFormattersName);
+        if (!(this.numericData.length > 0) && this.textData.length > 0) {
+            formatters.splice(0, 0, ...this._textFormatters);
+        } else if (this.numericData.length > 0 && !(this.textData.length > 0)) {
+            formatters.splice(0, 0, ...this._numericFormatters);
         } else {
-            this._commonFormattersName.splice(0, 0, "Data Bars", "Color Scale", "Text Contains");
+            formatters.splice(0, 0, ...["Data Bars", "Color Scale", "Text Contains"]);
         }
-        this.onFormattersReady.emit(this._commonFormattersName);
+        this.onFormattersReady.emit(formatters);
     }
 
-    private applyFormatting(column: IgxColumnComponent, type: CellFormatType, formatter: any) {
-        // if ((column.dataType as string) === (type as string) || type === CellFormatType.COMPOSITE) {
-            column.cellStyles = formatter;
-            this.grid.notifyChanges();
-        // }
+    public recalcCachedValues(clearAll = false) {
+        if (clearAll) {
+            this._startColumn = Math.min(...this.grid.getSelectedRanges().map(r => Number(r.columnStart)));
+            this._endColumn = Math.max(...this.grid.getSelectedRanges().map(r => Number(r.columnEnd)));
+            this._selectedData = [];
+        }
+        this._valueForComparison = this.textData[0];
+        this._maxValue = Math.max(...this.numericData);
+        this._minValue = Math.min(...this.numericData.filter(value => value < 0)) | 0;
     }
 
-    private recalcValues() {
-        this._maxValue = Math.max(...this._numericData);
-        this._minValue = Math.min(...this._numericData.filter(value => value < 0)) | 0;
-        this._warnValue = this.middleTresholdValue();
-        this._errorValue = this.lowTresholdValue();
-        this._top10Value = this.top10PercentTreshold();
-        this._averageValue = this.getAvgValue(this._numericData);
+    public isWithInRange(rowIndex, colID) {
+        const visibleIndex = typeof colID === "string" ? this.grid.getColumnByName(colID).visibleIndex : colID;
+        if (!this.formatedRange.size) { return false; }
+        return this.formatedRange.has(rowIndex) && this.formatedRange.get(rowIndex).has(visibleIndex);
     }
 
-    private isWithingRange(rowIndex) {
-        return rowIndex >= this.range.rowStart &&
-        rowIndex <= this.range.rowEnd;
+    private get middleTresholdValue() { return 0.66 * Math.ceil(this._maxValue); }
+
+    private get lowTresholdValue() { return 0.33 * Math.ceil(this._maxValue); }
+
+    private get top10PercentTreshold() { return 0.9 * Math.ceil(this._maxValue); }
+
+    private get avgValue() {
+        return Math.ceil((this.numericData.reduce((a, b) => a + b, 0)) / this.numericData.length);
     }
 
-    private middleTresholdValue() {
-        return (66 * Math.ceil(this._maxValue)) / 100;
-    }
-
-    private lowTresholdValue() {
-        return (33 * Math.ceil(this._maxValue)) / 100;
-    }
-
-    private top10PercentTreshold() {
-        return (90 * Math.ceil(this._maxValue)) / 100;
-    }
-
-    private getAvgValue(data: number[]) {
-        return Math.ceil((data.reduce((a, b) => a + b, 0)) / data.length);
+    private get threshold() {
+        return Math.ceil(Math.abs(this._minValue) / (this._maxValue + Math.abs(this._minValue)) * 100);
     }
 
     private getPositivePercentage(val) {
-        const result = (Math.ceil(val) / (this._maxValue + Math.abs(this._minValue))) * 100;
-        return Math.ceil(result);
+        return Math.ceil(Math.ceil(val) / (this._maxValue + Math.abs(this._minValue)) * 100);
     }
 
     private getNegativePercentage(val) {
-        const result = (Math.abs(val) / (this._maxValue + Math.abs(this._minValue))) * 100;
-        return Math.ceil(result);
+        return Math.ceil(Math.abs(val) / (this._maxValue + Math.abs(this._minValue)) * 100);
     }
 
-    private setTreshold(value) {
-        return Math.ceil((Math.abs(value) / (this._maxValue + Math.abs(this._minValue))) * 100);
+    private resetRange(formatRange?: []) {
+        if (this.formatter) { return; }
+        this.formatedRange.clear();
+        const customRange = formatRange ? formatRange : this.grid.getSelectedRanges();
+        customRange.forEach(range => {
+            for (let ri = range.rowStart; ri <= Number(range.rowEnd); ri++) {
+                for (let ci = Number(range.columnStart); ci <= Number(range.columnEnd); ci++) {
+                    this.addToCache(ri, ci);
+                }
+            }
+        });
+        this.recalcCachedValues(true);
     }
 
-    private toArray(data) {
+    private toArray(data: any[]) {
         let result = [];
         data.forEach(rec => result = result.concat(Object.values(rec)));
         return result;
