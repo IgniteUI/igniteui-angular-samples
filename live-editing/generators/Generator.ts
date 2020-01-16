@@ -1,4 +1,4 @@
-import { ASSETS_SAMPLES_CSS_SUPPORT_DIR, ASSETS_SAMPLES_DIR } from "../LiveEditingManager";
+import { LiveEditingManager } from "../LiveEditingManager";
 import { StyleSyntax } from "./misc/StyleSyntax";
 
 export const SAMPLE_SRC_FOLDER = "src/";
@@ -13,9 +13,9 @@ export abstract class Generator {
 
     protected getAssetsSamplesDir() {
         if (this.styleSyntax === StyleSyntax.CSS) {
-            return ASSETS_SAMPLES_CSS_SUPPORT_DIR;
+            return LiveEditingManager.ASSETS_SAMPLES_CSS_SUPPORT_DIR;
         }
 
-        return ASSETS_SAMPLES_DIR;
+        return LiveEditingManager.ASSETS_SAMPLES_DIR;
     }
 }

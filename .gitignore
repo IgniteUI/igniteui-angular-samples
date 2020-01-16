@@ -10,6 +10,7 @@
 
 # samples assets
 /src/assets/samples
+/projects/app-dv/src/assets/samples
 
 # IDEs and editors
 /.idea

@@ -8,20 +8,26 @@ import { StyleSyntax } from "./generators/misc/StyleSyntax";
 import { SampleAssetsGenerator } from "./generators/SampleAssetsGenerator";
 import { SharedAssetsGenerator } from "./generators/SharedAssetsGenerator";
 
-export const ASSETS_SAMPLES_DIR = path.join(__dirname, "../src/assets/samples/");
-export const ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../src/assets/samples/css-support/");
+export class LiveEditingManager {
+    public static  ASSETS_SAMPLES_DIR = path.join(__dirname, "../src/assets/samples/");
+    public static  ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../src/assets/samples/css-support/");
+    public run(changeAssetsPath?: boolean) {
 
-class LiveEditingManager {
-    public run() {
-        fsExtra.removeSync(ASSETS_SAMPLES_DIR);
-        fs.mkdirSync(ASSETS_SAMPLES_DIR);
-        fs.mkdirSync(ASSETS_SAMPLES_CSS_SUPPORT_DIR);
+        if (changeAssetsPath) {
+            // tslint:disable-next-line: max-line-length
+            LiveEditingManager.ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../projects/app-dv/src/assets/samples/css-support/");
+            LiveEditingManager.ASSETS_SAMPLES_DIR = path.join(__dirname, "../projects/app-dv/src/assets/samples/");
+
+        }
+        fsExtra.removeSync( LiveEditingManager.ASSETS_SAMPLES_DIR);
+        fs.mkdirSync(LiveEditingManager.ASSETS_SAMPLES_DIR);
+        fs.mkdirSync(LiveEditingManager.ASSETS_SAMPLES_CSS_SUPPORT_DIR);
 
         this.generate(StyleSyntax.CSS, false);
         this.generate(StyleSyntax.Sass, false);
 
         console.log("-----------------------------------------------------");
-        console.log("Live-Editing - output folder: " + ASSETS_SAMPLES_DIR);
+        console.log("Live-Editing - output folder: " +  LiveEditingManager.ASSETS_SAMPLES_DIR);
     }
 
     private generate(styleSyntax: StyleSyntax, showLogs?: boolean) {
@@ -40,5 +46,3 @@ class LiveEditingManager {
         new MetaDataGenerator(styleSyntax).Generate();
     }
 }
-
-new LiveEditingManager().run();
