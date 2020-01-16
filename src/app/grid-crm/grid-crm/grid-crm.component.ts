@@ -10,9 +10,9 @@ import {
     CloseScrollStrategy,
     ConnectedPositioningStrategy,
     HorizontalAlignment,
+    IColumnExportingEventArgs,
     IgxColumnComponent,
     IgxDateSummaryOperand,
-    IgxExcelExporterOptions,
     IgxExcelExporterService,
     IgxGridComponent,
     IgxNumberSummaryOperand,
@@ -20,7 +20,8 @@ import {
     IgxToggleDirective,
     OverlaySettings,
     PositionSettings,
-    VerticalAlignment} from "igniteui-angular";
+    VerticalAlignment
+} from "igniteui-angular";
 import { data } from "./data";
 
 function formatDate(val: Date) {
@@ -38,7 +39,7 @@ class DealsSummary extends IgxNumberSummaryOperand {
                 const summaryResult = obj.summaryResult;
                 // apply formatting to float numbers
                 if (Number(summaryResult) === summaryResult) {
-                    obj.summaryResult = summaryResult.toLocaleString("en-us", {maximumFractionDigits: 2});
+                    obj.summaryResult = summaryResult.toLocaleString("en-us", { maximumFractionDigits: 2 });
                 }
                 return obj;
             }
@@ -148,6 +149,18 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         this.hiddenColsLength = this.cols.filter((col) => col.hidden).length;
         this.pinnedColsLength = this.cols.filter((col) => col.pinned).length;
         this.grid1.toolbar.columnPinningDropdown.width = "250px";
+
+        this.grid1.toolbar.excelExporter.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
+            if (args.field === "Deals") {
+                args.cancel = true;
+            }
+        });
+
+        this.grid1.toolbar.csvExporter.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {
+            if (args.field === "Deals") {
+                args.cancel = true;
+            }
+        });
     }
 
     public toggleVisibility(col: IgxColumnComponent) {
@@ -171,10 +184,6 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
                 evt.checkbox.checked = false;
             }
         }
-    }
-
-    public exportData() {
-        this.excelExporterService.exportData(this.localData, new IgxExcelExporterOptions("Report"));
     }
 
     public formatDate(val: Date) {
@@ -219,12 +228,12 @@ export class GridCRMComponent implements OnInit, AfterViewInit {
         const deals: any[] = [];
         for (let m = 0; m < months; m++) {
             const value = this.getRandomNumber(-20, 30);
-            deals.push({Deals: value, Month: m});
+            deals.push({ Deals: value, Month: m });
         }
         return deals;
     }
 
-    public  getRandomNumber(min: number, max: number): number {
+    public getRandomNumber(min: number, max: number): number {
         return Math.round(min + Math.random() * (max - min));
     }
 }
