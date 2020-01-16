@@ -12,7 +12,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "sourceMap": true,
+            "sourceMap": false,
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
