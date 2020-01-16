@@ -41,7 +41,7 @@ import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-mo
 import { DataService } from "../services/data.service";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
-import { GridsRoutingModule } from "./grids-routing.module";
+import { GridsDVRoutingModule } from "./grids-routing.module";
 
 @NgModule({
     declarations: [
@@ -52,7 +52,7 @@ import { GridsRoutingModule } from "./grids-routing.module";
         CommonModule,
         FormsModule,
         HttpClientModule,
-        GridsRoutingModule,
+        GridsDVRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxBannerModule,
@@ -119,4 +119,4 @@ import { GridsRoutingModule } from "./grids-routing.module";
         IgxPieChartComponent
     ]
 })
-export class GridsModule { }
+export class GridsDVModule { }

@@ -4,7 +4,7 @@ import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { gridsRoutesData } from "./grid-routes-data";
 
-export const gridsRoutes: Routes = [
+export const gridsDVRoutes: Routes = [
     {
         component: GridComponent,
         data: gridsRoutesData["grid"],
@@ -22,7 +22,7 @@ export const gridsRoutes: Routes = [
         RouterModule
     ],
     imports: [
-        RouterModule.forChild(gridsRoutes)
+        RouterModule.forChild(gridsDVRoutes)
     ]
 })
-export class GridsRoutingModule { }
+export class GridsDVRoutingModule { }

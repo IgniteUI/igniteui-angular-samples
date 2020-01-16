@@ -5,6 +5,15 @@ import * as GridFinjsRouting from "../../projects/app-dv/src/app/grid-finjs/grid
 import { GridFinjsModule } from "../../projects/app-dv/src/app/grid-finjs/grid-finjs.module";
 import * as TreeGridFinjsRouting from "../../projects/app-dv/src/app/treegrid-finjs/treegrid-finjs-routing.module";
 import { TreeGridFinjsModule } from "../../projects/app-dv/src/app/treegrid-finjs/treegrid-finjs.module";
+
+import * as GridsDVRouting from "../../projects/app-dv/src/app/grid/grids-routing.module";
+import { GridsDVModule } from "../../projects/app-dv/src/app/grid/grids.module";
+// tslint:disable-next-line: max-line-length
+import * as HieararchicalGridsDVRouting from "../../projects/app-dv/src/app/hierarchical-grid/hierarchical-grid-routing.module";
+import { HierarchicalGridDVModule } from "../../projects/app-dv/src/app/hierarchical-grid/hierarchical-grid.module";
+import * as TreeGridDvRoutingModule from "../../projects/app-dv/src/app/tree-grid/tree-grid-routing.module";
+import { TreeGridDVModule } from "../../projects/app-dv/src/app/tree-grid/tree-grid.module";
+
 import * as DataDisplayRouting from "../../src/app/data-display/data-display-routing.module";
 import { DataDisplayModule } from "../../src/app/data-display/data-display.module";
 import * as DataEntriesRouting from "../../src/app/data-entries/data-entries-routing.module";
@@ -82,12 +91,12 @@ export const MODULE_ROUTES = [
         routes: HierarchicalGridRouting.hierarchicalGridRoutes
     },
     {
-        module: GridCRMModule,
-        routes: GridCRMRouting.gridcrmRoutes
-    },
-    {
         module: ServicesModule,
         routes: ServicesRouting.servicesRoutes
+    },
+    {
+        module: GridCRMModule,
+        routes: GridCRMRouting.gridcrmRoutes
     },
     {
         module: GridFinjsModule,
@@ -96,5 +105,17 @@ export const MODULE_ROUTES = [
     {
         module: TreeGridFinjsModule,
         routes: TreeGridFinjsRouting.treegridfinjsRoutes
+    },
+    {
+        module: GridsDVModule,
+        routes: GridsDVRouting.gridsDVRoutes
+    },
+    {
+        module: TreeGridDVModule,
+        routes: TreeGridDvRoutingModule.treeGridDVRoutes
+    },
+    {
+        module: HierarchicalGridDVModule,
+        routes: HieararchicalGridsDVRouting.hierarchicalGridDVRoutes
     }
 ];

@@ -33,7 +33,7 @@ import {
 import {
     TreeGridPrimaryforeignkeySampleComponent
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
-import { TreeGridRoutingModule } from "./tree-grid-routing.module";
+import { TreeGridDvRoutingModule } from "./tree-grid-routing.module";
 
 @NgModule({
     declarations: [
@@ -43,7 +43,7 @@ import { TreeGridRoutingModule } from "./tree-grid-routing.module";
     imports: [
         CommonModule,
         FormsModule,
-        TreeGridRoutingModule,
+        TreeGridDvRoutingModule,
         IgxTreeGridModule,
         IgxGridModule,
         IgxButtonGroupModule,
@@ -66,4 +66,4 @@ import { TreeGridRoutingModule } from "./tree-grid-routing.module";
     ],
     providers: [IgxExcelExporterService, IgxCsvExporterService, RemoteFilteringService]
 })
-export class TreeGridModule { }
+export class TreeGridDVModule { }

@@ -9,7 +9,7 @@ import {
 } from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { treeGridRoutesData } from "./tree-grid-routes-data";
 
-export const treeGridRoutes: Routes = [
+export const treeGridDVRoutes: Routes = [
     {
         component: TreeGridChilddatakeySampleComponent,
         data: treeGridRoutesData["treegrid-childdatakey"],
@@ -27,7 +27,7 @@ export const treeGridRoutes: Routes = [
         RouterModule
     ],
     imports: [
-        RouterModule.forChild(treeGridRoutes)
+        RouterModule.forChild(treeGridDVRoutes)
     ]
 })
-export class TreeGridRoutingModule { }
+export class TreeGridDvRoutingModule { }

@@ -9,7 +9,8 @@ import { TsImportsService } from "./../services/TsImportsService";
 import { Generator, SAMPLE_APP_FOLDER, SAMPLE_SRC_FOLDER } from "./Generator";
 import { StyleSyntax } from "./misc/StyleSyntax";
 
-import * as Routing from "../../src/app/app-routing.module";
+import * as AppDvRouting from "../../projects/app-dv/src/app/app-routing.module";
+import * as AppRouting from "../../src/app/app-routing.module";
 
 import { ModuleWithProviders, Type } from "@angular/core";
 
@@ -95,8 +96,11 @@ export class SampleAssetsGenerator extends Generator {
 
     private _generateRoutes() {
         let modulePaths = new Map<string, string>();
-        for (let i = 0; i < Routing.samplesRoutes.length; i++) {
-            let route: Route = Routing.samplesRoutes[i];
+        const routing = {
+            samplesRoutes: AppRouting.samplesRoutes.concat(AppDvRouting.samplesRoutes)
+        };
+        for (let i = 0; i < routing.samplesRoutes.length; i++) {
+            let route: Route = routing.samplesRoutes[i];
             if (route.component) {
                 this._componentRoutes.set(route.component.name, route.path);
             } else if (route.loadChildren) {

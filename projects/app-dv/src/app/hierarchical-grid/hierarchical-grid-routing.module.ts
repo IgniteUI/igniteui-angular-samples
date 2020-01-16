@@ -5,7 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import { hierarchicalGridRoutesData } from "./hierarchical-grid-routes-data";
 
-export const hierarchicalGridRoutes: Routes = [
+export const hierarchicalGridDVRoutes: Routes = [
     {
         component: HGridColumnResizingSampleComponent,
         // tslint:disable-next-line:no-string-literal
@@ -19,7 +19,7 @@ export const hierarchicalGridRoutes: Routes = [
         RouterModule
     ],
     imports: [
-        RouterModule.forChild(hierarchicalGridRoutes)
+        RouterModule.forChild(hierarchicalGridDVRoutes)
     ]
 })
-export class HierarchicalGridRoutingModule { }
+export class HierarchicalGridDVRoutingModule { }

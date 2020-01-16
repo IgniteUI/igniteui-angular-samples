@@ -27,18 +27,19 @@ export const samplesRoutes: Routes = [
         path: "treegrid-finjs-sample"
     },
     {
-        data: ["TreeGridModule"],
-        loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridModule),
+        data: ["TreeGridDVModule"],
+        loadChildren: () => import("./tree-grid/tree-grid.module").then(m => m.TreeGridDVModule),
         path: "tree-grid"
     },
     {
-        data: ["GridsModule"],
-        loadChildren: () => import("./grid/grids.module").then(m => m.GridsModule),
+        data: ["GridsDVModule"],
+        loadChildren: () => import("./grid/grids.module").then(m => m.GridsDVModule),
         path: "grid"
     },
     {
-        data: ["HierarchicalGridModule"],
-        loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridModule),
+        data: ["HierarchicalGridDVModule"],
+        // tslint:disable-next-line: max-line-length
+        loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridDVModule),
         path: "hierarchical-grid"
     }
 ];

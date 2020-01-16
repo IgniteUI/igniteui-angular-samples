@@ -12,7 +12,7 @@ import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparklin
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 
 import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
-import { HierarchicalGridRoutingModule } from "./hierarchical-grid-routing.module";
+import { HierarchicalGridDVRoutingModule } from "./hierarchical-grid-routing.module";
 
 @NgModule({
     declarations: [
@@ -22,7 +22,7 @@ import { HierarchicalGridRoutingModule } from "./hierarchical-grid-routing.modul
         CommonModule,
         FormsModule,
         HttpClientModule,
-        HierarchicalGridRoutingModule,
+        HierarchicalGridDVRoutingModule,
         IgxAvatarModule,
         IgxBadgeModule,
         IgxButtonGroupModule,
@@ -59,4 +59,4 @@ import { HierarchicalGridRoutingModule } from "./hierarchical-grid-routing.modul
         IgxExcelExporterService
     ]
 })
-export class HierarchicalGridModule { }
+export class HierarchicalGridDVModule { }
