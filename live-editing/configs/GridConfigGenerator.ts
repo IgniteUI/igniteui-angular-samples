@@ -214,7 +214,6 @@ import {
     GridMultiColumnHeadersStylingComponent
 } from "../../src/app/grid/multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
-import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
@@ -228,18 +227,17 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridComponent,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridComponent, DataService,
+                    IgxRippleModule, IgxSwitchModule, GridComponent,
                     IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
-                    IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule],
-                ngProviders: [DataService]
+                    IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule]
             })
         }));
 
@@ -345,16 +343,15 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: PagingSampleComponent,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, PagingSampleComponent, DataService],
+                    IgxRippleModule, IgxSwitchModule, PagingSampleComponent],
                 ngDeclarations: [PagingSampleComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
-                ngProviders: [DataService]
+                    IgxRippleModule, IgxSwitchModule, HttpClientModule]
             })
         }));
 
@@ -561,7 +558,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // master-detail sample
         configs.push(new Config({
             component: GridMasterDetailSampleComponent,
-            additionalFiles: ["/projects/app-dv/src/app/grid-crm/grid-crm/grid-crm/data.ts"],
+            additionalFiles: ["/projects/app-dv/src/app/services/athletesData.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
@@ -736,7 +733,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid cellClasses
         configs.push(new Config({
             component: GridConditionalCellStyleComponent,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyleComponent],
                 ngDeclarations: [GridConditionalCellStyleComponent],
@@ -747,7 +744,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid cellStyles
         configs.push(new Config({
             component: GridConditionalCellStyle2Component,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyle2Component],
                 ngDeclarations: [GridConditionalCellStyle2Component],

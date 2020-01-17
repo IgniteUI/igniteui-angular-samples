@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { IgxColumnComponent } from "igniteui-angular";
 import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
-import { data } from "../../grid-crm/grid-crm/grid-crm/data";
+import { data } from "../../services/athletesData";
 
 @Component({
     selector: "grid-master-detail",

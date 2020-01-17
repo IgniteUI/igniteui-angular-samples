@@ -189,7 +189,7 @@ export class SampleAssetsGenerator extends Generator {
         for (let i = 0; i < COMPONENT_FILE_EXTENSIONS.length; i++) {
             let componentFilePath = componentPath + "." + COMPONENT_FILE_EXTENSIONS[i];
             let fileContent = fs.readFileSync(path.join(BASE_PATH, componentFilePath), "utf8");
-            let file = new LiveEditingFile(componentFilePath, fileContent);
+            let file = new LiveEditingFile(componentFilePath.replace("projects/app-dv/", ""), fileContent);
             this._shortenComponentPath(config, file);
             componentFiles.push(file);
         }

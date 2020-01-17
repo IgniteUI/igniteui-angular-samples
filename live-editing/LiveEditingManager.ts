@@ -19,7 +19,7 @@ export class LiveEditingManager {
             LiveEditingManager.ASSETS_SAMPLES_DIR = path.join(__dirname, "../projects/app-dv/src/assets/samples/");
 
         }
-        fsExtra.removeSync( LiveEditingManager.ASSETS_SAMPLES_DIR);
+        fsExtra.removeSync(LiveEditingManager.ASSETS_SAMPLES_DIR);
         fs.mkdirSync(LiveEditingManager.ASSETS_SAMPLES_DIR);
         fs.mkdirSync(LiveEditingManager.ASSETS_SAMPLES_CSS_SUPPORT_DIR);
 

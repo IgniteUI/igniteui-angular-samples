@@ -136,7 +136,6 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
-import { DataService } from "./services/data.service";
 
 @NgModule({
     declarations: [
@@ -290,7 +289,6 @@ import { DataService } from "./services/data.service";
         IgxCategoryChartModule
     ],
     providers: [
-        DataService,
         IgxCsvExporterService,
         IgxExcelExporterService
     ],

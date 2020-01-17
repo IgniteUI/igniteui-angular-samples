@@ -22,7 +22,7 @@ import {
     PositionSettings,
     VerticalAlignment
 } from "igniteui-angular";
-import { data } from "./data";
+import { data } from "../../../services/athletesData";
 
 function formatDate(val: Date) {
     return new Intl.DateTimeFormat("en-US").format(val);

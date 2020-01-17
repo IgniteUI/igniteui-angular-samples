@@ -20,7 +20,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:app-dv": "ng serve app-dv",
-    "start:app-dv:live-editing": "gulp generate-live-editing && ng serve app-dv --configuration es5 -o --progress=true"
+    "start:app-dv:live-editing": "gulp generate-live-editing --appDv=true && ng serve app-dv --configuration es5 -o --progress=true"
   },
   "repository": {
     "type": "git",

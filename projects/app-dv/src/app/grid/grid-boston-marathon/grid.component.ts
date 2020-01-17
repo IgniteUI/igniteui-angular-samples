@@ -12,8 +12,7 @@ import {
     IgxStringFilteringOperand,
     IgxSummaryResult
 } from "igniteui-angular";
-import { athletesData } from "../../services/data";
-import { DataService } from "../../services/data.service";
+import { athletesData } from "./../services/data";
 
 @Component({
     selector: "app-grid",
@@ -53,7 +52,7 @@ export class GridComponent implements OnInit, OnDestroy {
         return this.windowWidth && this.windowWidth < 860;
     }
 
-    constructor(private zone: NgZone, private dataService: DataService) { }
+    constructor(private zone: NgZone) { }
 
     public ngOnInit() {
         const athletes = athletesData;

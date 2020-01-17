@@ -38,7 +38,6 @@ import { IgxPieChartModule} from "igniteui-angular-charts/ES5/igx-pie-chart-modu
 import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
 import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
-import { DataService } from "../services/data.service";
 import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridsDVRoutingModule } from "./grids-routing.module";
@@ -104,7 +103,6 @@ import { GridsDVRoutingModule } from "./grids-routing.module";
         IgxCategoryChartModule
     ],
     providers: [
-        DataService,
         IgxCsvExporterService,
         IgxExcelExporterService
     ],
