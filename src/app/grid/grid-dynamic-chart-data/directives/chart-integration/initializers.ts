@@ -46,7 +46,8 @@ export abstract class ChartInitializer {
     protected xAxis;
     protected seriesFactory = new SeriesFactory();
     constructor() { }
-        public applyOptions(target: any, options: IOptions) {
+
+    public applyOptions(target: any, options: IOptions) {
         if (options) {
             Object.keys(options).forEach(key => {
                 if (target[key] instanceof EventEmitter) {
@@ -57,6 +58,7 @@ export abstract class ChartInitializer {
             });
         }
     }
+
     public abstract initChart(chart: any, options?: ChartComponentOptions): any;
 }
 
