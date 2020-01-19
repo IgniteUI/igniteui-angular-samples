@@ -8,49 +8,13 @@ import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeri
 import { IgxPieChartComponent } from "igniteui-angular-charts/ES5/igx-pie-chart-component";
 import { IgxStackedFragmentSeriesComponent } from "igniteui-angular-charts/ES5/igx-stacked-fragment-series-component";
 
-function applyXAxisOptions(xAxis: any, options: IXAxesOptions) {
+function applyOptions(target: any, options: IOptions) {
     if (options) {
         Object.keys(options).forEach(key => {
-            if (xAxis[key] instanceof EventEmitter) {
-                xAxis[key].subscribe(options[key]);
+            if (target[key] instanceof EventEmitter) {
+                target[key].subscribe(options[key]);
             } else {
-                xAxis[key] = options[key];
-            }
-        });
-    }
-}
-
-function applyYAxisOptions(yAxis: any, options: IYAxesOptions) {
-    if (options) {
-        Object.keys(options).forEach(key => {
-            if (yAxis[key] instanceof EventEmitter) {
-                yAxis[key].subscribe(options[key]);
-            } else {
-                yAxis[key] = options[key];
-            }
-        });
-    }
-}
-
-function applyChartOptions(chart: any, options: IChartOptions) {
-    if (options) {
-        Object.keys(options).forEach(key => {
-            if (chart[key] instanceof EventEmitter) {
-                chart[key].subscribe(options[key]);
-            } else {
-                chart[key] = options[key];
-            }
-        });
-    }
-}
-
-function applySeriesOptions(series: any, options: IChartSeriesOptions | IStackedFragmentOptions) {
-    if (options) {
-        Object.keys(options).forEach(key => {
-            if (series[key] instanceof EventEmitter) {
-                series[key].subscribe(options[key]);
-            } else {
-                series[key] = options[key];
+                target[key] = options[key];
             }
         });
     }
@@ -62,33 +26,17 @@ class SeriesFactory {
     }
 }
 
-export interface IChartOptions {
-    [key: string]: any;
-}
-
-export interface IChartSeriesOptions {
-    [key: string]: any;
-}
-
-export interface IXAxesOptions {
-    [key: string]: any;
-}
-
-export interface IYAxesOptions {
-    [key: string]: any;
-}
-
-export interface IStackedFragmentOptions {
+export interface IOptions {
     [key: string]: any;
 }
 
 export class ChartComponentOptions {
-    public chartOptions?: IChartOptions;
-    public seriesOptions?: IChartSeriesOptions[];
-    public xAxisOptions?: IXAxesOptions;
-    public seriesModel?: IChartSeriesOptions;
-    public yAxisOptions?: IYAxesOptions;
-    public stackedFragmentOptions?: IStackedFragmentOptions;
+    public chartOptions?: IOptions;
+    public seriesOptions?: IOptions[];
+    public xAxisOptions?: IOptions;
+    public seriesModel?: IOptions;
+    public yAxisOptions?: IOptions;
+    public stackedFragmentOptions?: IOptions;
     constructor()  {
     }
 }
@@ -98,6 +46,17 @@ export abstract class ChartInitializer {
     protected xAxis;
     protected seriesFactory = new SeriesFactory();
     constructor() { }
+        public applyOptions(target: any, options: IOptions) {
+        if (options) {
+            Object.keys(options).forEach(key => {
+                if (target[key] instanceof EventEmitter) {
+                    target[key].subscribe(options[key]);
+                } else {
+                    target[key] = options[key];
+                }
+            });
+        }
+    }
     public abstract initChart(chart: any, options?: ChartComponentOptions): any;
 }
 
@@ -108,7 +67,7 @@ export class IgxPieChartInitializer extends ChartInitializer {
 
     public initChart(chart: IgxPieChartComponent, options?: ChartComponentOptions) {
 
-        applyChartOptions(chart, options.chartOptions);
+        this.applyOptions(chart, options.chartOptions);
         return chart;
     }
 }
@@ -129,12 +88,12 @@ export class IgxDataChartInitializer extends ChartInitializer {
             const series = this.seriesFactory.create(this.seriesType);
             series.xAxis = this.xAxis;
             series.yAxis = this.yAxis;
-            applySeriesOptions(series, option);
+            this.applyOptions(series, option);
             chart.series.add(series);
         });
-        applyChartOptions(chart, options.chartOptions);
-        applyXAxisOptions(this.xAxis, options.xAxisOptions);
-        applyYAxisOptions(this.yAxis, options.yAxisOptions);
+        this.applyOptions(chart, options.chartOptions);
+        this.applyOptions(this.xAxis, options.xAxisOptions);
+        this.applyOptions(this.yAxis, options.yAxisOptions);
         chart.axes.add(this.xAxis);
         chart.axes.add(this.yAxis);
         return chart;
@@ -161,13 +120,13 @@ export class IgxStackedDataChartInitializer extends IgxDataChartInitializer {
         series.yAxis = this.yAxis;
         options.stackedFragmentOptions.forEach(fragOpt => {
             const frag = new IgxStackedFragmentSeriesComponent();
-            applySeriesOptions(frag, fragOpt);
+            this.applyOptions(frag, fragOpt);
             series.series.add(frag);
         });
-        applySeriesOptions(series, options.seriesOptions);
-        applyChartOptions(chart, options.chartOptions);
-        applyXAxisOptions(this.xAxis, options.xAxisOptions);
-        applyYAxisOptions(this.yAxis, options.yAxisOptions);
+        this.applyOptions(series, options.seriesOptions);
+        this.applyOptions(chart, options.chartOptions);
+        this.applyOptions(this.xAxis, options.xAxisOptions);
+        this.applyOptions(this.yAxis, options.yAxisOptions);
         chart.series.add(series);
         chart.axes.add(this.xAxis);
         chart.axes.add(this.yAxis);

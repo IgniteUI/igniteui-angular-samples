@@ -25,17 +25,13 @@ import { CHART_TYPE } from "./chart-types";
 import {
     ChartComponentOptions,
     ChartInitializer,
-    IChartOptions,
-    IChartSeriesOptions,
     IgxBarDataChartInitializer,
     IgxDataChartInitializer,
     IgxPieChartInitializer,
     IgxScatterChartInitializer,
     IgxStackedBarDataChartInitializer,
     IgxStackedDataChartInitializer,
-    IStackedFragmentOptions,
-    IXAxesOptions,
-    IYAxesOptions
+    IOptions
 } from "./initializers";
 
 export interface IDeterminedChartTypesArgs {
@@ -214,7 +210,7 @@ export class ChartIntegrationDirective {
         });
     }
 
-    private pieChartOptions: IChartOptions = {
+    private pieChartOptions: IOptions = {
         width: "85%",
         height: "75%",
         labelsPosition: 3,
@@ -222,31 +218,31 @@ export class ChartIntegrationDirective {
         sliceClick: (evt) => { evt.args.isExploded = !evt.args.isExploded; }
     };
 
-    private dataChartSeriesOptionsModel: IChartSeriesOptions = {
+    private dataChartSeriesOptionsModel: IOptions = {
         isHighlightingEnabled: true,
         areaFillOpacity: .4,
         markerType: 3,
         showDefaultTooltip: true
     };
 
-    private scatterChartSeriesOptionsModel: IChartSeriesOptions = {
+    private scatterChartSeriesOptionsModel: IOptions = {
         markerType: 3,
         showDefaultTooltip: true
     };
 
-    private bubbleChartSeriesOptionsModel: IChartSeriesOptions = {
+    private bubbleChartSeriesOptionsModel: IOptions = {
         radiusScale: this._sizeScale
     };
 
-    private scatterChartXAxisOptions: IXAxesOptions = {
+    private scatterChartXAxisOptions: IOptions = {
         formatLabel: (value) => "$" + value.toFixed(3)
     };
 
-    private scatterChartYAxisOptions: IYAxesOptions = {
+    private scatterChartYAxisOptions: IOptions = {
         formatLabel: (value) => "$" + value.toFixed(3)
     };
 
-    private dataChartOptions: IChartOptions = {
+    private dataChartOptions: IOptions = {
         width: "100%",
         height: "85%",
         autoMarginWidth: 50,
@@ -389,7 +385,7 @@ export class ChartIntegrationDirective {
         const model = options.seriesModel;
         options.chartOptions["dataSource"] = this.chartData;
         if (stacked) {
-            const fragmentOptions: IStackedFragmentOptions[] = [];
+            const fragmentOptions: IOptions[] = [];
             this._valueMemberPaths.forEach(valueMemberPath => {
                 const tempObj = new Object();
                 tempObj["title"] = valueMemberPath;
@@ -398,7 +394,7 @@ export class ChartIntegrationDirective {
             });
             options.stackedFragmentOptions = fragmentOptions;
         } else if (model) {
-            const seriesOptions: IChartSeriesOptions[] = [];
+            const seriesOptions: IOptions[] = [];
             this._valueMemberPaths.forEach(valueMemberPath => {
                 const tempObj = new Object();
                 tempObj["title"] = valueMemberPath;
@@ -413,7 +409,7 @@ export class ChartIntegrationDirective {
         const model = options.seriesModel;
         if (model) {
             options.chartOptions["dataSource"] = this.chartData;
-            const seriesOptions: IChartSeriesOptions[] = [];
+            const seriesOptions: IOptions[] = [];
             this._valueMemberPaths.filter(v => !(v === model["yMemberPath"] || v === model["radiusMemberPath"])).forEach(valueMemberPath => {
                 const tempObj = new Object();
                 tempObj["title"] = `${model["yMemberPath"]} vs ${valueMemberPath}`;
