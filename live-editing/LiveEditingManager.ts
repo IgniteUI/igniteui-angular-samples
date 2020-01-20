@@ -15,8 +15,8 @@ export class LiveEditingManager {
 
         if (changeAssetsPath) {
             // tslint:disable-next-line: max-line-length
-            LiveEditingManager.ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../projects/app-dv/src/assets/samples/css-support/");
-            LiveEditingManager.ASSETS_SAMPLES_DIR = path.join(__dirname, "../projects/app-dv/src/assets/samples/");
+            LiveEditingManager.ASSETS_SAMPLES_CSS_SUPPORT_DIR = path.join(__dirname, "../projects/app-lob/src/assets/samples/css-support/");
+            LiveEditingManager.ASSETS_SAMPLES_DIR = path.join(__dirname, "../projects/app-lob/src/assets/samples/");
 
         }
         fsExtra.removeSync(LiveEditingManager.ASSETS_SAMPLES_DIR);

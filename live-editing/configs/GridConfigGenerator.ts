@@ -36,9 +36,9 @@ import { IgxPieChartModule } from "igniteui-angular-charts/ES5/igx-pie-chart-mod
 // tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
-import { GridComponent } from "../../projects/app-dv/src/app/grid/grid-boston-marathon/grid.component";
+import { GridComponent } from "../../projects/app-lob/src/app/grid/grid-boston-marathon/grid.component";
 // tslint:disable-next-line: max-line-length
-import { GridMasterDetailSampleComponent } from "../../projects/app-dv/src/app/grid/grid-master-detail/grid-master-detail.component";
+import { GridMasterDetailSampleComponent } from "../../projects/app-lob/src/app/grid/grid-master-detail/grid-master-detail.component";
 import {
      CustomGridPagingStyleSample
     } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
@@ -558,7 +558,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // master-detail sample
         configs.push(new Config({
             component: GridMasterDetailSampleComponent,
-            additionalFiles: ["/projects/app-dv/src/app/services/athletesData.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/services/athletesData.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,

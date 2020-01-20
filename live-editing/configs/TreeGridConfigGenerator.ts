@@ -26,7 +26,7 @@ import {
 } from "igniteui-angular";
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
-import { TreeGridChilddatakeySampleComponent } from "../../projects/app-dv/src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
+import { TreeGridChilddatakeySampleComponent } from "../../projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridBatchEditingSampleComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-batch-editing-sample.component";
 import { TreeGridWithTransactionsComponent } from "../../src/app/tree-grid/tree-grid-batch-editing/tree-grid-with-transactions.component";
 import { TreeGridClipboardSampleComponent } from "../../src/app/tree-grid/tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
@@ -38,7 +38,7 @@ import { TreeGridColumnMovingStyledSampleComponent } from "../../src/app/tree-gr
 import { TreeGridColumnPinningSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-column-pinning-sample.component";
 import { TreeGridPinningToolbarSampleComponent } from "../../src/app/tree-grid/tree-grid-column-pinning-sample/tree-grid-toolbar-pinning.component";
 
-import { TreeGridPrimaryforeignkeySampleComponent } from "../../projects/app-dv/src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
+import { TreeGridPrimaryforeignkeySampleComponent } from "../../projects/app-lob/src/app/tree-grid/tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
 import { TreeGridAdvancedFilteringSampleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-sample/tree-grid-advanced-filtering-sample.component";
 import { TreeGridAdvancedFilteringStyleComponent } from "../../src/app/tree-grid/tree-grid-advanced-filtering-style/tree-grid-advanced-filtering-style.component";
 import { TreeGridCellSelectionComponent } from "../../src/app/tree-grid/tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
@@ -121,7 +121,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid ChildDataKey Sample
         configs.push(new Config({
-            additionalFiles: ["/projects/app-dv/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridChilddatakeySampleComponent, IgxExcelExporterService, IgxCsvExporterService, IgxSparklineCoreModule, IgxSparklineModule],
@@ -135,7 +135,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Primary/Foreign Key Sample
         configs.push(new Config({
-            additionalFiles: ["/projects/app-dv/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-primaryforeignkey-sample/data.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridPrimaryforeignkeySampleComponent, IgxSparklineCoreModule, IgxSparklineModule],
@@ -782,7 +782,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // Tree Grid Keyboard Navigation Sample
         configs.push(new Config({
-            additionalFiles: ["/projects/app-dv/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridKBNavigationComponent],
                 ngDeclarations: [TreeGridKBNavigationComponent],
@@ -830,7 +830,7 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
 
         // TreeGrid Clipboard actions sample
         configs.push(new Config({
-            additionalFiles: ["/projects/app-dv/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/tree-grid/tree-grid-childdatakey-sample/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxTreeGridModule, TreeGridClipboardSampleComponent, IgxSwitchModule],
                 ngDeclarations: [TreeGridClipboardSampleComponent],

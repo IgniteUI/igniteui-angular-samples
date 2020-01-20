@@ -11,7 +11,7 @@
             "runtimeExecutable": "npm",
             "runtimeArgs": [
                 "run-script",
-                "generate-live-editing:app-dv",
+                "generate-live-editing:app-lob",
             ],
             "cwd": "${workspaceRoot}",
             "console": "internalConsole",

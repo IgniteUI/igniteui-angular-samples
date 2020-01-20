@@ -10,12 +10,12 @@ import {
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
-// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
-// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
-// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
-// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
-// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
-// Should be removed after migrating grid-dynamic-chart-data to projects/app-dv
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
 import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
