@@ -213,16 +213,17 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         horizontalScroll.pipe(filter((value) => value), tap(() => this.contextmenu ? this.disableContextMenu() : noop()), debounceTime(250)).subscribe(() => { this.renderButton(); });
 
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
-            if (!args) {
+            if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
                 this.disableCreateChart = true;
             } else {
-                args.availableCharts.forEach((isAvailable, chart, map) => {
+                args.chartsAvailabilty.forEach((isAvailable, chart) => {
                     if (args.chartsForCreation.indexOf(chart) === -1) {
-                        map.set(chart, false);
+                        this.chartIntegration.disableChart(chart);
                     } else {
-                        map.set(chart, true);
+                        this.chartIntegration.enableChart(chart);
                     }
                 });
+
                 this.availableCharts = this.chartIntegration.getAvailableCharts();
             }
         });
