@@ -34,10 +34,6 @@ import {
     IOptions
 } from "./initializers";
 
-export interface IChartTypeMetaData {
-
-}
-
 export interface IDeterminedChartTypesArgs {
     chartsAvailabilty: Map<CHART_TYPE, boolean>;
     chartsForCreation: CHART_TYPE[];
