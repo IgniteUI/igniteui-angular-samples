@@ -218,9 +218,9 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
             } else {
                 args.chartsAvailabilty.forEach((isAvailable, chart) => {
                     if (args.chartsForCreation.indexOf(chart) === -1) {
-                        this.chartIntegration.disableChart(chart);
+                        this.chartIntegration.disableCharts(chart);
                     } else {
-                        this.chartIntegration.enableChart(chart);
+                        this.chartIntegration.enableCharts(chart);
                     }
                 });
 
