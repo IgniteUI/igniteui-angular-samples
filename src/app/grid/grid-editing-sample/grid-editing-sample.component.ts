@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { IgxDialogComponent, IgxGridComponent } from "igniteui-angular";
 import { DATA, LOCATIONS } from "./data";
 import { Product } from "./product";
@@ -8,7 +8,7 @@ import { Product } from "./product";
     styleUrls: ["./grid-editing-sample.component.scss"],
     templateUrl: "./grid-editing-sample.component.html"
 })
-export class GridEditingSampleComponent implements OnInit,AfterViewInit {
+export class GridEditingSampleComponent implements OnInit, AfterViewInit {
 
     @ViewChild("grid1", { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
@@ -29,11 +29,11 @@ export class GridEditingSampleComponent implements OnInit,AfterViewInit {
         this.product = new Product();
         this.locations = LOCATIONS;
     }
-    
-    public ngAfterViewInit(){
+
+    public ngAfterViewInit() {
         this.customOverlaySettings = {
             outlet: this.grid1.outletDirective
-        }
+        };
     }
 
     public removeRow(rowIndex) {
