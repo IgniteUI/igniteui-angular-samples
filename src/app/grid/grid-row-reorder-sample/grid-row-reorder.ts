@@ -19,7 +19,7 @@ export class GridRowReorderComponent {
     public onDropAllowed(args) {
         const event = args.originalEvent;
         const currRowIndex = this.getCurrentRowIndex(this.grid.rowList.toArray(),
-            { x: event.pageX, y: event.pageY });
+            { x: event.clientX, y: event.clientY });
         // remove the row that was dragged and place it onto its new location
         this.grid.deleteRow(args.dragData.rowID);
         this.data.splice(currRowIndex, 0, args.dragData.rowData);

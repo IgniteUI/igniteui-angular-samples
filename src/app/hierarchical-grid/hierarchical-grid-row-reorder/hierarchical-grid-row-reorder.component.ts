@@ -31,7 +31,7 @@ export class HGridRowReorderComponent {
     public rowDrop(args: IDropDroppedEventArgs): void {
         const targetRow = args.dragData;
         const event = args.originalEvent;
-        const cursorPosition: Point = { x: event.pageX, y: event.pageY };
+        const cursorPosition: Point = { x: event.clientX, y: event.clientY };
         this.moveRow(targetRow, cursorPosition);
     }
 
