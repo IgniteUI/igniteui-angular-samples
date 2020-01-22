@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IGridKeydownEventArgs, IgxGridCellComponent, IgxTreeGridComponent } from "igniteui-angular";
-import { EMPLOYEE_DATA } from "../tree-grid-childdatakey-sample/data";
+import { EMPLOYEE_DATA } from "../tree-grid-clipboard-operations-sample/data";
 
 @Component({
     selector: "tree-grid-keyboard-navigation-sample",

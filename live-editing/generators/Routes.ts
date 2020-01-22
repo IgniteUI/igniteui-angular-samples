@@ -1,12 +1,23 @@
 
+import * as GridCRMRouting from "../../projects/app-lob/src/app/grid-crm/grid-crm/grid-crm-routing.module";
+import { GridCRMModule } from "../../projects/app-lob/src/app/grid-crm/grid-crm/grid-crm.module";
+import * as GridFinjsRouting from "../../projects/app-lob/src/app/grid-finjs/grid-finjs-routing.module";
+import { GridFinjsModule } from "../../projects/app-lob/src/app/grid-finjs/grid-finjs.module";
+import * as TreeGridFinjsRouting from "../../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs-routing.module";
+import { TreeGridFinjsModule } from "../../projects/app-lob/src/app/treegrid-finjs/treegrid-finjs.module";
+
+import * as GridsDVRouting from "../../projects/app-lob/src/app/grid/grids-routing.module";
+import { GridsDVModule } from "../../projects/app-lob/src/app/grid/grids.module";
+// tslint:disable-next-line: max-line-length
+import * as HieararchicalGridsDVRouting from "../../projects/app-lob/src/app/hierarchical-grid/hierarchical-grid-routing.module";
+import { HierarchicalGridDVModule } from "../../projects/app-lob/src/app/hierarchical-grid/hierarchical-grid.module";
+import * as TreeGridDvRoutingModule from "../../projects/app-lob/src/app/tree-grid/tree-grid-routing.module";
+import { TreeGridDVModule } from "../../projects/app-lob/src/app/tree-grid/tree-grid.module";
+
 import * as DataDisplayRouting from "../../src/app/data-display/data-display-routing.module";
 import { DataDisplayModule } from "../../src/app/data-display/data-display.module";
 import * as DataEntriesRouting from "../../src/app/data-entries/data-entries-routing.module";
 import { DataEntriesModule } from "../../src/app/data-entries/data-entries.module";
-import * as GridCRMRouting from "../../src/app/grid-crm/grid-crm-routing.module";
-import { GridCRMModule } from "../../src/app/grid-crm/grid-crm.module";
-import * as GridFinjsRouting from "../../src/app/grid-finjs/grid-finjs-routing.module";
-import { GridFinjsModule } from "../../src/app/grid-finjs/grid-finjs.module";
 import * as GridRouting from "../../src/app/grid/grids-routing.module";
 import { GridsModule } from "../../src/app/grid/grids.module";
 import * as HierarchicalGridRouting from "../../src/app/hierarchical-grid/hierarchical-grid-routing.module";
@@ -29,8 +40,6 @@ import * as ThemingRouting from "../../src/app/theming/theming-routing.module";
 import { ThemingModule } from "../../src/app/theming/theming.module";
 import * as TreeGridRouting from "../../src/app/tree-grid/tree-grid-routing.module";
 import { TreeGridModule } from "../../src/app/tree-grid/tree-grid.module";
-import * as TreeGridFinjsRouting from "../../src/app/treegrid-finjs/treegrid-finjs-routing.module";
-import { TreeGridFinjsModule } from "../../src/app/treegrid-finjs/treegrid-finjs.module";
 
 export const MODULE_ROUTES = [
     {
@@ -82,12 +91,12 @@ export const MODULE_ROUTES = [
         routes: HierarchicalGridRouting.hierarchicalGridRoutes
     },
     {
-        module: GridCRMModule,
-        routes: GridCRMRouting.gridcrmRoutes
-    },
-    {
         module: ServicesModule,
         routes: ServicesRouting.servicesRoutes
+    },
+    {
+        module: GridCRMModule,
+        routes: GridCRMRouting.gridcrmRoutes
     },
     {
         module: GridFinjsModule,
@@ -96,5 +105,17 @@ export const MODULE_ROUTES = [
     {
         module: TreeGridFinjsModule,
         routes: TreeGridFinjsRouting.treegridfinjsRoutes
+    },
+    {
+        module: GridsDVModule,
+        routes: GridsDVRouting.gridsDVRoutes
+    },
+    {
+        module: TreeGridDVModule,
+        routes: TreeGridDvRoutingModule.treeGridDVRoutes
+    },
+    {
+        module: HierarchicalGridDVModule,
+        routes: HieararchicalGridsDVRouting.hierarchicalGridDVRoutes
     }
 ];

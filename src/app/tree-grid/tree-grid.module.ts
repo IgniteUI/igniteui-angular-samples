@@ -23,8 +23,6 @@ import {
     IgxTreeGridModule
 } from "igniteui-angular";
 // tslint:disable:max-line-length
-import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
-import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { RemoteFilteringService } from "./services/remoteFilteringService";
 import {
     TreeGridAdvancedFilteringSampleComponent
@@ -39,9 +37,6 @@ import {
     TreeGridWithTransactionsComponent
 } from "./tree-grid-batch-editing/tree-grid-with-transactions.component";
 import { TreeGridCellSelectionComponent } from "./tree-grid-cellSelection-sample/tree-grid-cellSelection.component";
-import {
-    TreeGridChilddatakeySampleComponent
-} from "./tree-grid-childdatakey-sample/tree-grid-childdatakey-sample.component";
 import { TreeGridClipboardSampleComponent } from "./tree-grid-clipboard-operations-sample/tree-grid-clipboard-operations-sample.component";
 import { TreeGridMultiCollapsibleColumnGroupsComponent } from "./tree-grid-collapsible-groups/tree-grid-collapsible-column-groups.component";
 import {
@@ -130,9 +125,6 @@ import { TreeGridMultiRowDrag } from "./tree-grid-multi-row-drag/tree-grid-multi
 import { TreeGridPagingSampleComponent } from "./tree-grid-paging-sample/tree-grid-paging-sample.component";
 import { TreeGridPagingStyleSampleComponent } from "./tree-grid-paging-style/tree-grid-paging-style-sample.component";
 import {
-    TreeGridPrimaryforeignkeySampleComponent
-} from "./tree-grid-primaryforeignkey-sample/tree-grid-primaryforeignkey-sample.component";
-import {
     TreeGridRemoteFilteringSampleComponent
 } from "./tree-grid-remote-filtering-sample/tree-grid-remote-filtering-sample.component";
 import {
@@ -180,8 +172,6 @@ import {
 import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/treegrid-allData-summary.component";
 @NgModule({
     declarations: [
-        TreeGridChilddatakeySampleComponent,
-        TreeGridPrimaryforeignkeySampleComponent,
         TreeGridRowEditSampleComponent,
         TreeGridRowEditStyleComponent,
         TreeGridBatchEditingSampleComponent,
@@ -270,8 +260,6 @@ import { TreeGridAllDataSummaryComponent } from "./treegrid-allData-summary/tree
         IgxAvatarModule,
         IgxToastModule,
         IgxSelectModule,
-        IgxSparklineModule,
-        IgxSparklineCoreModule,
         IgxBannerModule,
         IgxSnackbarModule,
         IgxTooltipModule
