@@ -35,9 +35,11 @@ export class EmailSampleComponent implements OnInit {
 
     constructor() { }
 
-    public ngOnInit() { }
+    public ngOnInit() { 
+        
+    }
 
-    public toggleCheck(email: any, checkbox: any): void {
+    public toggleCheck(event: any, email: any, checkbox: any): void {
         this.emails.forEach(x => x.checked = false);
         email.checked = true;
         checkbox.checked = true;
