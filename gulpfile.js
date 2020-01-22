@@ -8,6 +8,8 @@ const tsNode = require('ts-node').register({
         allowJs: true
     }
 });
+const argv = require("yargs").argv;
+
 
 // Workaround for require error with LiveEditingManager
 global['KeyboardEvent'] = null
@@ -25,7 +27,14 @@ function requireFile(path) {
 }
 
 gulp.task("generate-live-editing", (done) => {
-    requireFile("./live-editing/LiveEditingManager.ts");
+    const liveEditing = requireFile("./live-editing/LiveEditingManager.ts");
+    const manager = new liveEditing.LiveEditingManager();
+    var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true"
+    if(appDv) {
+        manager.run(true);
+    } else {
+        manager.run();
+    }
     done();
 });
 

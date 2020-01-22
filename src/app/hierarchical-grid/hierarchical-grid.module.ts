@@ -7,9 +7,6 @@ import { IgxAvatarModule, IgxBadgeModule, IgxBannerModule, IgxButtonGroupModule,
     IgxComboModule, IgxCsvExporterService, IgxDatePickerModule, IgxDialogModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxHierarchicalGridModule,
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule,
     IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule } from "igniteui-angular";
-import { IgxPieChartModule} from "igniteui-angular-charts/ES5/igx-pie-chart-module";
-import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
-import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { HGridAdvancedFilteringStyleComponent } from "./hierarchical-grid-advanced-filtering-style/hierarchical-grid-advanced-filtering-style.component";
 import { HGridAdvancedFilteringSampleComponent } from "./hierarchical-grid-advanced-filtering/hierarchical-grid-advanced-filtering.component";
 import { HGridAllDataSummaryComponent } from "./hierarchical-grid-allData-summary/hierarchical-grid-allData-summary.component";
@@ -23,7 +20,6 @@ import { HGridColumnMovingSampleComponentStyled } from "./hierarchical-grid-colu
 import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridToolbarPinningComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
-import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import {
     HGridConditionalRowSelectorsComponent
 } from "./hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component";
@@ -88,7 +84,6 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         HGridRemotePagingSampleComponent,
         HGridPinningSampleComponent,
         HGridToolbarPinningComponent,
-        HGridColumnResizingSampleComponent,
         HGridColumnHidingSampleComponent,
         HGridCostumHidingSampleComponent,
         HGridDisplayDensitySampleComponent,
@@ -161,13 +156,10 @@ import { HGridToolbarTitleSampleComponent } from "./hierarchical-grid-toolbar/hi
         IgxToastModule,
         IgxToggleModule,
         IgxSelectModule,
-        IgxSparklineModule,
-        IgxSparklineCoreModule,
         IgxBannerModule,
         IgxSnackbarModule,
         IgxTooltipModule,
-        IgxTabsModule,
-        IgxPieChartModule
+        IgxTabsModule
     ],
     providers: [
         IgxCsvExporterService,

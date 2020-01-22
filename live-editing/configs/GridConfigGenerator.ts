@@ -12,6 +12,7 @@ import {
     IgxCsvExporterService,
     IgxDatePickerModule,
     IgxDialogModule,
+    IgxDividerModule,
     IgxDragDropModule,
     IgxExcelExporterService,
     IgxExpansionPanelModule,
@@ -27,8 +28,7 @@ import {
     IgxSwitchModule,
     IgxTabsModule,
     IgxToastModule,
-    IgxTooltipModule,
-    IgxDividerModule
+    IgxTooltipModule
 } from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
 import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
@@ -36,6 +36,9 @@ import { IgxPieChartModule } from "igniteui-angular-charts/ES5/igx-pie-chart-mod
 // tslint:disable-next-line: max-line-length
 import { IgxSparklineCoreModule} from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
 import { IgxSparklineModule} from "igniteui-angular-charts/ES5/igx-sparkline-module";
+import { GridComponent } from "../../projects/app-lob/src/app/grid/grid-boston-marathon/grid.component";
+// tslint:disable-next-line: max-line-length
+import { GridMasterDetailSampleComponent } from "../../projects/app-lob/src/app/grid/grid-master-detail/grid-master-detail.component";
 import {
      CustomGridPagingStyleSample
     } from "../../src/app/grid/custom-grid-paging-style/custom-grid-paging-style.component";
@@ -50,7 +53,6 @@ import {
     GridBatchEditingSampleComponent
 } from "../../src/app/grid/grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "../../src/app/grid/grid-batch-editing/grid-transaction.component";
-import { GridComponent } from "../../src/app/grid/grid-boston-marathon/grid.component";
 import { GridCellSelectionComponent } from "../../src/app/grid/grid-cellSelection-sample/grid-cellSelection.component";
 import {
     GridClipboardSampleComponent
@@ -138,7 +140,6 @@ import {
 import {
     GridGroupBySummaryStylingSampleComponent
 } from "../../src/app/grid/grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
-import { GridMasterDetailSampleComponent } from "../../src/app/grid/grid-master-detail/grid-master-detail.component";
 import { GridMovingSampleComponent } from "../../src/app/grid/grid-moving-sample/grid-moving-sample.component";
 import {
     GridMovingStyledSampleComponent
@@ -213,7 +214,6 @@ import {
     GridMultiColumnHeadersStylingComponent
 } from "../../src/app/grid/multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "../../src/app/grid/multi-column-headers/multi-column-headers";
-import { DataService } from "../../src/app/grid/services/data.service";
 import { RemoteFilteringService } from "../../src/app/grid/services/remoteFilteringService";
 import { RemotePagingService } from "../../src/app/grid/services/remotePagingService";
 import { RemoteServiceVirt } from "../../src/app/grid/services/remoteService";
@@ -227,18 +227,17 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: GridComponent,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, GridComponent, DataService,
+                    IgxRippleModule, IgxSwitchModule, GridComponent,
                     IgxSparklineCoreModule, IgxSparklineModule],
                 ngDeclarations: [GridComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRippleModule,
-                    IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule],
-                ngProviders: [DataService]
+                    IgxSwitchModule, HttpClientModule, IgxSparklineCoreModule, IgxSparklineModule]
             })
         }));
 
@@ -344,16 +343,15 @@ export class GridConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: PagingSampleComponent,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxButtonModule,
                     IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, PagingSampleComponent, DataService],
+                    IgxRippleModule, IgxSwitchModule, PagingSampleComponent],
                 ngDeclarations: [PagingSampleComponent],
                 ngImports: [IgxAvatarModule, IgxBadgeModule, IgxButtonModule, IgxGridModule,
                     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule,
-                    IgxRippleModule, IgxSwitchModule, HttpClientModule],
-                ngProviders: [DataService]
+                    IgxRippleModule, IgxSwitchModule, HttpClientModule]
             })
         }));
 
@@ -560,7 +558,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // master-detail sample
         configs.push(new Config({
             component: GridMasterDetailSampleComponent,
-            additionalFiles: ["/src/app/grid-crm/grid-crm/data.ts"],
+            additionalFiles: ["/projects/app-lob/src/app/services/athletesData.ts"],
             additionalDependencies: ["igniteui-angular-charts", "igniteui-angular-core"],
             appModuleConfig: new AppModuleConfig({
                 imports: [GridMasterDetailSampleComponent, IgxGridModule, IgxCategoryChartModule,
@@ -735,7 +733,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid cellClasses
         configs.push(new Config({
             component: GridConditionalCellStyleComponent,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyleComponent],
                 ngDeclarations: [GridConditionalCellStyleComponent],
@@ -746,7 +744,7 @@ export class GridConfigGenerator implements IConfigGenerator {
         // Grid cellStyles
         configs.push(new Config({
             component: GridConditionalCellStyle2Component,
-            additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+            additionalFiles: ["/src/app/grid/services/data.ts"],
             appModuleConfig: new AppModuleConfig({
                 imports: [IgxGridModule, GridConditionalCellStyle2Component],
                 ngDeclarations: [GridConditionalCellStyle2Component],
