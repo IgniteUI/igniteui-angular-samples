@@ -10,6 +10,12 @@ import {
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
+// Should be removed after migrating grid-dynamic-chart-data to projects/app-lob
 import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
 import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
 import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
@@ -44,7 +50,6 @@ import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-s
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
-import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
@@ -83,7 +88,6 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
-import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -132,7 +136,6 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
-import { DataService } from "./services/data.service";
 
 @NgModule({
     declarations: [
@@ -184,7 +187,6 @@ import { DataService } from "./services/data.service";
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
         GridMultiColumnHeadersStylingComponent,
-        GridComponent,
         PasteHandler,
         GridCustomKBNavigationComponent,
         GridSaveStateComponent,
@@ -229,7 +231,6 @@ import { DataService } from "./services/data.service";
         ConditionalFormattingDirective,
         GridCollapsibleColumnGroupsComponent,
         GridAllDataSummaryComponent,
-        GridMasterDetailSampleComponent,
         ChartIntegrationDirective,
         FilterTypePipe
     ],
@@ -289,7 +290,6 @@ import { DataService } from "./services/data.service";
         IgxCategoryChartModule
     ],
     providers: [
-        DataService,
         IgxCsvExporterService,
         IgxExcelExporterService
     ],

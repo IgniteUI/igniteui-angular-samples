@@ -14,7 +14,6 @@ import { HGridColumnMovingSampleComponentStyled } from "./hierarchical-grid-colu
 import { HGridColumnMovingSampleComponent } from "./hierarchical-grid-column-moving/hierarchical-grid-moving.component";
 import { HGridPinningSampleComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-pinning.component";
 import { HGridToolbarPinningComponent } from "./hierarchical-grid-column-pinning/hierarchical-grid-toolbar-pinning.component";
-import { HGridColumnResizingSampleComponent } from "./hierarchical-grid-column-resizing/hierarchical-grid-resizing.component";
 import {
     HGridConditionalRowSelectorsComponent
 } from "./hierarchical-grid-conditional-row-selectors/hierarchical-grid-conditional-row-selectors.component";
@@ -193,12 +192,6 @@ export const hierarchicalGridRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: hierarchicalGridRoutesData["hierarchical-grid-toolbar-pinning"],
         path: "hierarchical-grid-toolbar-pinning"
-    },
-    {
-        component: HGridColumnResizingSampleComponent,
-        // tslint:disable-next-line:no-string-literal
-        data: hierarchicalGridRoutesData["hierarchical-grid-resizing"],
-        path: "hierarchical-grid-resizing"
     },
     {
         component: HGridResizeLineStylingComponent,

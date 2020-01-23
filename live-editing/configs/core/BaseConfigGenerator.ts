@@ -4,15 +4,15 @@
 // tslint:disable:member-ordering
 // tslint:disable:prefer-const
 import { Type } from "@angular/core";
+import { DependenciesType } from "../../services/DependenciesType";
+import { AppModuleConfig } from "./AppModuleConfig";
 import { Config } from "./Config";
 import { IConfigGenerator } from "./IConfigGenerator";
-import { AppModuleConfig } from "./AppModuleConfig";
-import { DependenciesType } from "../../services/DependenciesType";
 
 export abstract class BaseConfigGenerator implements IConfigGenerator {
-    abstract generateConfigs(): Config[];
-    dependenciesType: DependenciesType;
-    componentPathBy: string;
+    public abstract generateConfigs(): Config[];
+    public dependenciesType: DependenciesType;
+    public componentPathBy: string;
 
     constructor(dependenciesType: DependenciesType, componentPathBy: string) {
         this.dependenciesType = dependenciesType;

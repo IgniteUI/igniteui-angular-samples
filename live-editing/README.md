@@ -9,7 +9,7 @@ The live editing engine converts each sample into a full-blown Angular applicati
 ```typescript
 new Config({
     component: GridComponent,
-    additionalFiles: ["/src/app/grid/services/data.service.ts", "/src/app/grid/services/data.ts"],
+    additionalFiles: ["/src/app/grid/services/data.ts"],
     appModuleConfig: new AppModuleConfig({
         imports: [HttpClientModule, IgxAvatarModule, IgxBadgeModule, IgxGridModule,
             GridComponent, DataService],
