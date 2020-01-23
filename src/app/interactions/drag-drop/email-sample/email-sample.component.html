@@ -27,16 +27,14 @@
                 [ghostOffsetY]="-5"
                 (dragStart)="onDragStart($event)"
                 class="email-content flexlist" 
-                (click)="toggleCheck(email, checkbox)"
-                style="z-index: 0;">
+                (click)="toggleCheck(email, checkbox)">
                 <span igxListLineTitle>{{ email.sender }}</span>
                 <span igxListLineSubTitle>{{ email.title }}</span>
                 <igx-checkbox #checkbox
                     [(ngModel)]="email.checked" 
                     (change)="toggleCheckbox(email)"
                     (pointerdown)="stopEventPropagation($event)"
-                    (click)="stopEventPropagation($event)"
-                    style="z-index: 9999;">
+                    (click)="stopEventPropagation($event)">
                 </igx-checkbox>
             </igx-list-item>
         </igx-list>
