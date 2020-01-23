@@ -1,6 +1,6 @@
 <div igxOverlayOutlet class="grid-chart-contextmenu-wrapper">
-    <igx-grid #grid chartIntegration  conditionalFormatting [formatter]="currentFormatter" [chartData]="chartData" [defaultLabelMemberPath]="'Country'"
-         primaryKey='ID' displayDensity="compact" [data]="data" [autoGenerate]="false">
+    <igx-grid #grid chartIntegration  conditionalFormatting [formatter]="currentFormatter" [chartData]="chartData"
+         primaryKey='ID' displayDensity="compact" [data]="data">
         <igx-column field='ID' [hidden]='true'></igx-column>
         <igx-column field='Category' [editable]="true" [width]="'110px'"></igx-column>
         <igx-column field='Type' [editable]="true" [filterable]='false' [width]="'130px'"></igx-column>
@@ -200,7 +200,7 @@
                 <div *ngIf="(availableCharts |filterType:chartType).length > 0" class="wrapper">
                     <div>{{chartType | titlecase}} Chart</div>
                     <div class="types-section">
-                        <div *ngFor="let chart of (availableCharts | filterType: chartType); trackBy: trackByFn"
+                        <div *ngFor="let chart of (availableCharts | filterType: chartType)"
                              (click)="createChart(chart, chartHost, chartDialog, chartDialog)"
                              style="width: 40%; margin-right: 5px; cursor: pointer;"
                              [ngClass]="{'selected': chart === currentChartType}">

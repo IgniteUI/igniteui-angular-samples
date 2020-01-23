@@ -171,16 +171,17 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit, OnD
 
     public ngAfterViewInit(): void {
         this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
-            if (!args) {
+            if (args.chartsAvailabilty.size === 0 || args.chartsForCreation.length === 0) {
                 this.disableCreateChart = true;
             } else {
-                args.availableCharts.forEach((isAvailable, chart, map) => {
+                args.chartsAvailabilty.forEach((isAvailable, chart) => {
                     if (args.chartsForCreation.indexOf(chart) === -1) {
-                        map.set(chart, false);
+                        this.chartIntegration.disableCharts([chart]);
                     } else {
-                        map.set(chart, true);
+                        this.chartIntegration.enableCharts([chart]);
                     }
                 });
+
                 this.availableCharts = this.chartIntegration.getAvailableCharts();
             }
         });
