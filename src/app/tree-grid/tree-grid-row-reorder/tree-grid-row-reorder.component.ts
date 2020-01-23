@@ -55,6 +55,7 @@ export class TreeGridRowReorderComponent {
         draggedRow: IgxTreeGridRowComponent, targetRow: IgxTreeGridRowComponent) {
         const draggedRowIndex = this.getRowIndex(draggedRow.rowData);
         const targetRowIndex: number = this.getRowIndex(targetRow.rowData);
+        if (draggedRowIndex === -1 || targetRowIndex === -1) { return; }
         this.localData.splice(draggedRowIndex, 1);
         this.localData.splice(targetRowIndex, 0, draggedRow.rowData);
         return this.localData[targetRowIndex];

@@ -38,6 +38,7 @@ export class HGridRowReorderComponent {
     private moveRow(draggedRow: IgxHierarchicalRowComponent, cursorPosition: Point): void {
         const parent: IgxHierarchicalGridComponent = draggedRow.grid;
         const rowIndex: number = this.getTargetRowIndex(parent.rowList.toArray(), cursorPosition);
+        if (rowIndex === -1) { return; }
         // delete the dragged row and then insert it at its new position
         draggedRow.delete();
         parent.data.splice(rowIndex, 0, draggedRow.rowData);
