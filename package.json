@@ -16,9 +16,12 @@
     "watch-live-editing": "gulp watch-live-editing",
     "sass-js-compile-check": "gulp sass-js-compile-check",
     "build": "gulp generate-live-editing && gulp overwrite-package-json && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --aot=true --vendor-source-map=false --progress=true",
+    "build:app-lob": "gulp generate-live-editing --appDv=true && gulp overwrite-package-json && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build app-lob --prod --aot=true --vendor-source-map=false --progress=true",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:app-lob": "ng serve app-lob --configuration es5 -o --progress=true",
+    "start:app-lob:live-editing": "gulp generate-live-editing --appDv=true && ng serve app-lob --configuration es5 -o --progress=true"
   },
   "repository": {
     "type": "git",

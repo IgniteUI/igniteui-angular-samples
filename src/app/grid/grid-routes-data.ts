@@ -1,7 +1,6 @@
 // tslint:disable:object-literal-sort-keys
 
 export const gridsRoutesData = {
-    "grid": { displayName: "Grid Basic Features", parentName: "Grid" },
     "grid-summary": { displayName: "Grid Summary", parentName: "Grid" },
     "grid-groupby": { displayName: "Grid GroupBy", parentName: "Grid" },
     "grid-groupby-paging": { displayName: "Grid GroupBy Paging", parentName: "Grid" },
@@ -85,9 +84,7 @@ export const gridsRoutesData = {
     "grid-excel-style-filtering-load-on-demand":
         { displayName: "Grid Excel Style Filtering Load On Demand", parentName: "Grid" },
     "grid-conditional-row-selectors": { displayName: "Grid Conditional Row Selectors", parentName: "Grid" },
-    "grid-dynamic-chart-data": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" },
     "grid-multiple-row-drag": { displayName: "Grid Multi Row Drag",  parentName: "Grid"},
     "grid-collapsible-groups": { displayName: "Grid Collapsible Column Groups", parentName: "Grid"},
-    "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"},
-    "grid-master-detail": { displayName: "Grid Master Detail", parentName: "Grid" }
+    "grid-alldata-summaries": {displayName: "Grid AllData Summaries", parentName: "Grid"}
 };

@@ -76,21 +76,6 @@ export const samplesRoutes: Routes = [
         data: ["HierarchicalGridModule"],
         loadChildren: () => import("./hierarchical-grid/hierarchical-grid.module").then(m => m.HierarchicalGridModule),
         path: "hierarchical-grid"
-    },
-    {
-        data: ["GridCRMModule"],
-        loadChildren: () => import("./grid-crm/grid-crm.module").then(m => m.GridCRMModule),
-        path: "grid-crm"
-    },
-    {
-        data: ["GridFinjsModule"],
-        loadChildren: () => import("./grid-finjs/grid-finjs.module").then(m => m.GridFinjsModule),
-        path: "finjs-sample"
-    },
-    {
-        data: ["TreeGridFinjsModule"],
-        loadChildren: () => import("./treegrid-finjs/treegrid-finjs.module").then(m => m.TreeGridFinjsModule),
-        path: "treegrid-finjs-sample"
     }
 ];
 export const appRoutes: Routes = [

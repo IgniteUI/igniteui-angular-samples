@@ -5,13 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch via NPM",
             "type": "node",
             "request": "launch",
-            "name": "Gulp generate-live-editing",
-            "program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js",
-            "args": [
-                "generate-live-editing"
-            ]
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "generate-live-editing:app-lob",
+            ],
+            "cwd": "${workspaceRoot}",
+            "console": "internalConsole",
+            "port": 9229
+        },
+        {
+            "name": "Live-editing Gulp",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "stopOnEntry": false,
+            "args": ["generate-live-editing", "--appDv=true"],
+            "cwd": "${workspaceRoot}",
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "console": "internalConsole",
         }
     ]
 }

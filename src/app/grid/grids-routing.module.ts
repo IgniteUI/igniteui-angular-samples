@@ -2,7 +2,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
-import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridColumnHidingSampleComponent } from "./grid-column-hiding-sample/grid-column-hiding-sample.component";
 import { GridColumnHidingToolbarSampleComponent } from "./grid-column-hiding-toolbar-sample/grid-column-hiding-toolbar-sample.component";
@@ -82,10 +81,8 @@ import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnG
 import {
     GridConditionalRowSelectorsComponent
 } from "./grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component";
-import { GridDynamicChartDataComponent } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
-import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
 import { GridMultipleRowDragComponent } from "./grid-multiple-row-drag/grid-multiple-row-drag.component";
 import { GridPagerSampleComponent } from "./grid-pager-sample/grid-pager-sample.component";
@@ -97,12 +94,6 @@ import {
 // tslint:enable:max-line-length
 
 export const gridsRoutes: Routes = [
-    {
-        component: GridComponent,
-        // tslint:disable-next-line:no-string-literal
-        data: gridsRoutesData["grid"],
-        path: "grid"
-    },
     {
         component: GridSample3Component,
         data: gridsRoutesData["grid-summary"],
@@ -514,11 +505,6 @@ export const gridsRoutes: Routes = [
         path: "grid-conditional-row-selectors"
     },
     {
-        component: GridDynamicChartDataComponent,
-        data: gridsRoutesData["grid-dynamic-chart-data"],
-        path: "grid-dynamic-chart-data"
-    },
-    {
         component: GridCollapsibleColumnGroupsComponent,
         data: gridsRoutesData["grid-collapsible-groups"],
         path: "grid-collapsible-groups"
@@ -527,11 +513,6 @@ export const gridsRoutes: Routes = [
         component: GridAllDataSummaryComponent,
         data: gridsRoutesData["grid-alldata-summaries"],
         path: "grid-alldata-summaries"
-    },
-    {
-        component: GridMasterDetailSampleComponent,
-        data: gridsRoutesData["grid-master-detail"],
-        path: "grid-master-detail"
     }
 ];
 

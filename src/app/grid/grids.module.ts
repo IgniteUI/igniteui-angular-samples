@@ -10,41 +10,12 @@ import {
     IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule,
     IgxSwitchModule, IgxTabsModule, IgxToastModule, IgxToggleModule, IgxTooltipModule
 } from "igniteui-angular";
-import { IgxBarSeriesModule} from "igniteui-angular-charts/ES5/igx-bar-series-module";
-import { IgxBollingerBandsOverlayModule } from "igniteui-angular-charts/ES5/igx-bollinger-bands-overlay-module";
-import { IgxCategoryChartModule } from "igniteui-angular-charts/ES5/igx-category-chart-module";
-import { IgxCategoryXAxisComponent } from "igniteui-angular-charts/ES5/igx-category-x-axis-component";
-import { IgxCategoryXAxisModule } from "igniteui-angular-charts/ES5/igx-category-x-axis-module";
-import { IgxDataChartCategoryModule } from "igniteui-angular-charts/ES5/igx-data-chart-category-module";
-import { IgxDataChartComponent } from "igniteui-angular-charts/ES5/igx-data-chart-component";
-import { IgxDataChartCoreModule } from "igniteui-angular-charts/ES5/igx-data-chart-core-module";
-import { IgxDataChartInteractivityModule } from "igniteui-angular-charts/ES5/igx-data-chart-interactivity-module";
-import { IgxDataChartScatterModule } from "igniteui-angular-charts/ES5/igx-data-chart-scatter-module";
-import { IgxDataChartStackedModule } from "igniteui-angular-charts/ES5/igx-data-chart-stacked-module";
-import { IgxDoughnutChartComponent } from "igniteui-angular-charts/ES5/igx-doughnut-chart-component";
-import { IgxDoughnutChartModule } from "igniteui-angular-charts/ES5/igx-doughnut-chart-module";
-import { IgxFinancialPriceSeriesModule } from "igniteui-angular-charts/ES5/igx-financial-price-series-module";
-import { IgxIndicatorsModule } from "igniteui-angular-charts/ES5/igx-indicators-module";
-import { IgxItemLegendComponent } from "igniteui-angular-charts/ES5/igx-item-legend-component";
-import {IgxItemLegendModule} from "igniteui-angular-charts/ES5/igx-item-legend-module";
-import { IgxLegendComponent } from "igniteui-angular-charts/ES5/igx-legend-component";
-import { IgxLegendModule } from "igniteui-angular-charts/ES5/igx-legend-module";
-import { IgxNumericXAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-component";
-import { IgxNumericXAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-x-axis-module";
-import { IgxNumericYAxisComponent } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-component";
-import { IgxNumericYAxisModule } from "igniteui-angular-charts/ES5/igx-numeric-y-axis-module";
-import { IgxPieChartComponent} from "igniteui-angular-charts/ES5/igx-pie-chart-component";
-import { IgxPieChartModule} from "igniteui-angular-charts/ES5/igx-pie-chart-module";
-import { IgxRingSeriesModule } from "igniteui-angular-charts/ES5/igx-ring-series-module";
-import { IgxSparklineCoreModule } from "igniteui-angular-charts/ES5/igx-sparkline-core-module";
-import { IgxSparklineModule } from "igniteui-angular-charts/ES5/igx-sparkline-module";
 import { CustomGridPagingStyleSample } from "./custom-grid-paging-style/custom-grid-paging-style.component";
 import { GridAdvancedFilteringSampleComponent } from "./grid-advanced-filtering-sample/grid-advanced-filtering-sample.component";
 import { GridAdvancedFilteringStyleComponent } from "./grid-advanced-filtering-style/grid-advanced-filtering-style.component";
 import { GridAllDataSummaryComponent } from "./grid-allData-summary/grid-allData-summary.component";
 import { GridBatchEditingSampleComponent } from "./grid-batch-editing/grid-batch-editing-sample.component";
 import { GridWithTransactionsComponent } from "./grid-batch-editing/grid-transaction.component";
-import { GridComponent } from "./grid-boston-marathon/grid.component";
 import { GridCellSelectionComponent } from "./grid-cellSelection-sample/grid-cellSelection.component";
 import { GridClipboardSampleComponent } from "./grid-clipboard-operations-sample/grid-clipboard-operations-sample.component";
 import { GridCollapsibleColumnGroupsComponent } from "./grid-collapsible-columnGroups/grid-collapsible-column-groups.component";
@@ -62,9 +33,6 @@ import { GridCustomKBNavigationComponent } from "./grid-custom-kb-navigation/gri
 import { CustomRemotePagingGridSample } from "./grid-custom-remote-paging-sample/custom-remote-paging-sample.component";
 import { GridCustomSummariesSelection } from "./grid-custom-summaries-selection/grid-custom-summaries-selection.component";
 import { GridDisplayDensitySampleComponent } from "./grid-displaydensity-sample/grid-displaydensity-sample.component";
-import { ChartHostDirective, ChartIntegrationDirective } from "./grid-dynamic-chart-data/directives/chart-integration/chart-integration.directive";
-import { ConditionalFormattingDirective } from "./grid-dynamic-chart-data/directives/conditional-formatting/conditional-formatting.directive";
-import { FilterTypePipe, GridDynamicChartDataComponent, NamePipe } from "./grid-dynamic-chart-data/grid-dynamic-chart-data.component";
 import { GridEditingEventsComponent } from "./grid-editing-events/grid-editing-events.component";
 import { GridEditingSampleComponent } from "./grid-editing-sample/grid-editing-sample.component";
 import { GridEditingStyleSample } from "./grid-editing-style-sample/grid-editing-style-sample.component";
@@ -83,7 +51,6 @@ import { GridGroupBySampleComponent } from "./grid-groupby-sample/grid-groupby-s
 import { GridGroupByStyling } from "./grid-groupby-styling/grid-groupby-styling.component";
 import { GridGroupBySummarySampleComponent } from "./grid-groupby-summary-sample/grid-groupby-summary-sample.component";
 import { GridGroupBySummaryStylingSampleComponent } from "./grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component";
-import { GridMasterDetailSampleComponent } from "./grid-master-detail/grid-master-detail.component";
 import { GridMovingSampleComponent } from "./grid-moving-sample/grid-moving-sample.component";
 import { GridMovingStyledSampleComponent } from "./grid-moving-styled-sample/grid-moving-styled-sample.component";
 import { GridMRLCustomNavigationComponent } from "./grid-mrl-custom-navigation/grid-mrl-custom-navigation.component";
@@ -132,7 +99,6 @@ import { GridsRoutingModule } from "./grids-routing.module";
 import { GridMultiColumnHeaderTemplateComponent } from "./multi-column-header-template/multi-column-header-template";
 import { GridMultiColumnHeadersStylingComponent } from "./multi-column-headers-styling/multi-column-headers-styling.component";
 import { GridMultiColumnHeadersComponent } from "./multi-column-headers/multi-column-headers";
-import { DataService } from "./services/data.service";
 
 @NgModule({
     declarations: [
@@ -184,7 +150,6 @@ import { DataService } from "./services/data.service";
         GridToolbarSample4Component,
         GridMultiColumnHeadersComponent,
         GridMultiColumnHeadersStylingComponent,
-        GridComponent,
         PasteHandler,
         GridCustomKBNavigationComponent,
         GridSaveStateComponent,
@@ -221,17 +186,10 @@ import { DataService } from "./services/data.service";
         GridAdvancedFilteringStyleComponent,
         GridCellSelectionComponent,
         GridConditionalRowSelectorsComponent,
-        GridDynamicChartDataComponent,
         GridMultipleRowDragComponent,
-        ChartHostDirective,
-        NamePipe,
         GridExternalAdvancedFilteringComponent,
-        ConditionalFormattingDirective,
         GridCollapsibleColumnGroupsComponent,
-        GridAllDataSummaryComponent,
-        GridMasterDetailSampleComponent,
-        ChartIntegrationDirective,
-        FilterTypePipe
+        GridAllDataSummaryComponent
     ],
     imports: [
         CommonModule,
@@ -263,45 +221,14 @@ import { DataService } from "./services/data.service";
         IgxTooltipModule,
         IgxExpansionPanelModule,
         IgxSelectModule,
-        IgxSparklineModule,
-        IgxSparklineCoreModule,
         IgxSnackbarModule,
-        IgxDataChartCategoryModule,
-        IgxDataChartCoreModule,
-        IgxLegendModule,
-        IgxIndicatorsModule,
-        IgxFinancialPriceSeriesModule,
-        IgxDataChartInteractivityModule,
-        IgxBollingerBandsOverlayModule,
-        IgxNumericXAxisModule,
-        IgxNumericYAxisModule,
-        IgxCategoryXAxisModule,
-        IgxDoughnutChartModule,
-        IgxRingSeriesModule,
-        IgxItemLegendModule,
-        IgxPieChartModule,
         IgxTabsModule,
-        IgxDataChartStackedModule,
         IgxCardModule,
-        IgxDividerModule,
-        IgxDataChartScatterModule,
-        IgxBarSeriesModule,
-        IgxCategoryChartModule
+        IgxDividerModule
     ],
     providers: [
-        DataService,
         IgxCsvExporterService,
         IgxExcelExporterService
-    ],
-    entryComponents: [
-        IgxDoughnutChartComponent,
-        IgxDataChartComponent,
-        IgxCategoryXAxisComponent,
-        IgxNumericYAxisComponent,
-        IgxItemLegendComponent,
-        IgxLegendComponent,
-        IgxNumericXAxisComponent,
-        IgxPieChartComponent
     ]
 })
 export class GridsModule { }
