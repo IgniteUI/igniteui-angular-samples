@@ -1,4 +1,4 @@
 
 export const gridDynamicChartRoutesData = {
-    "empty-path": { displayName: "Grid Dynamicc Chart Data", parentName: "Grid" }
+    "empty-path": { displayName: "Grid Dynamic Chart Data", parentName: "Grid" }
 };

@@ -20,7 +20,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:app-lob": "ng serve app-lob",
+    "start:app-lob": "ng serve app-lob --configuration es5 -o --progress=true",
     "start:app-lob:live-editing": "gulp generate-live-editing --appDv=true && ng serve app-lob --configuration es5 -o --progress=true"
   },
   "repository": {
