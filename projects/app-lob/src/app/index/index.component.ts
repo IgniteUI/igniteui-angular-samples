@@ -3,7 +3,7 @@ import { NavigationStart, Route, Router } from "@angular/router";
 import { IgxNavigationDrawerComponent } from "igniteui-angular";
 import { filter } from "rxjs/operators";
 import { gridcrmRoutesData } from "../grid-crm/grid-crm/grid-crm-routes-data";
-import { gridDynamicChartRoutes } from "../grid-dynamic-chart-data/grid-dynamic-chart-data-routing.module";
+import { gridDynamicChartRoutesData } from "../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data";
 import { gridfinjsRoutesData} from "../grid-finjs/grid-finjs-routes-data";
 import { gridsRoutesData } from "../grid/grid-routes-data";
 import { hierarchicalGridRoutesData } from "../hierarchical-grid/hierarchical-grid-routes-data";
@@ -67,7 +67,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
         },
         {
             path: "grid-dynamic-chart-data",
-            routesData: gridDynamicChartRoutes
+            routesData: gridDynamicChartRoutesData
         }
     ];
 
