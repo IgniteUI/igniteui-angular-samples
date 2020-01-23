@@ -35,11 +35,10 @@ export class EmailSampleComponent implements OnInit {
 
     constructor() { }
 
-    public ngOnInit() { 
-        
+    public ngOnInit() {
     }
 
-    public toggleCheck(event: any, email: any, checkbox: any): void {
+    public toggleCheck(email: any, checkbox: any): void {
         this.emails.forEach(x => x.checked = false);
         email.checked = true;
         checkbox.checked = true;
@@ -49,8 +48,11 @@ export class EmailSampleComponent implements OnInit {
         email.checked = !email.checked;
     }
 
+    public stopEventPropagation(event: any): void {
+        event.stopPropagation();
+    }
+
     public dropElement(event: any): void {
-        const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
         this.emails = this.emails.filter(x => x.checked !== true);
         event.dragData = {};
         event.cancel = true;
@@ -58,7 +60,6 @@ export class EmailSampleComponent implements OnInit {
     }
 
     public enterDropZone(event: any): void {
-        const folderTitle = event.owner.element.nativeElement.querySelector(".folder-title").innerText;
         event.owner.element.nativeElement.style.background = DROP_ZONE_ACTIVE_COLOR;
     }
 

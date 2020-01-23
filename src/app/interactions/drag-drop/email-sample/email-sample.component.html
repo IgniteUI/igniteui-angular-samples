@@ -10,39 +10,6 @@
         </li>
     </ul>
     <div class="emails-container flexlist">
-        <!-- <div class="period">
-            Today
-        </div> -->
-        <!-- <ul class="emails">
-            <ng-template #customGhost>
-                <div class="dragGhost">
-                    <igx-icon fontSet="material">email</igx-icon> 
-                    Moving {{ draggedElements }} item{{ (draggedElements > 1 ? 's' : '')}}
-                </div>
-            </ng-template>
-            <li *ngFor="let email of emails"
-                [class.email-checked]="email.checked">
-                <div class="email-content flexlist"
-                    [igxDrag]="email"
-                    [dragChannel]="['starred', 'important', 'personal', 'work', 'finances']"
-                    [ghostTemplate]="customGhost"
-                    [ghostOffsetX]="-5"
-                    [ghostOffsetY]="-5"
-                    (dragStart)="onDragStart($event)" 
-                    (click)="toggleCheck(email, checkbox)" >
-                    <div class="sender">
-                        {{email.sender}} 
-                    </div>
-                    <div class="email-title">
-                        {{email.title}}
-                    </div>
-                </div>
-                <igx-checkbox #checkbox 
-                    [(ngModel)]="email.checked" 
-                    (change)="toggleCheckbox(email)">
-                </igx-checkbox>
-            </li>
-        </ul> -->
         <ng-template #customGhost>
             <div class="dragGhost">
                 <igx-icon fontSet="material">email</igx-icon> 
@@ -60,12 +27,16 @@
                 [ghostOffsetY]="-5"
                 (dragStart)="onDragStart($event)"
                 class="email-content flexlist" 
-                (click)="toggleCheck($event, email, checkbox)">
+                (click)="toggleCheck(email, checkbox)"
+                style="z-index: 0;">
                 <span igxListLineTitle>{{ email.sender }}</span>
                 <span igxListLineSubTitle>{{ email.title }}</span>
                 <igx-checkbox #checkbox
                     [(ngModel)]="email.checked" 
-                    (change)="toggleCheckbox(email)">
+                    (change)="toggleCheckbox(email)"
+                    (pointerdown)="stopEventPropagation($event)"
+                    (click)="stopEventPropagation($event)"
+                    style="z-index: 9999;">
                 </igx-checkbox>
             </igx-list-item>
         </igx-list>
